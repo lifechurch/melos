@@ -119,9 +119,10 @@
       -# !iPad hero screenshot
       -#- if not i18n_image_dir.present?
       .hero
-        = image_tag "campaigns/kids/hero.jpg", class: "hero-screen", alt: t.call('kids.story text 1')
-        .youtube-embed
-          %iframe{width:"805", height:"607", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
+        = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "hero-screen", alt: t.call('kids.story text 1')
+        - if youtube_url.present?
+          .youtube-embed
+            %iframe{width:"805", height:"607", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
         %p.hero-copy
           = t.call('kids.interact text')
 
