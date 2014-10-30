@@ -721,8 +721,8 @@ en:
         one:                                    "%{count} friend subscribed to this plan"
         other:                                  "%{count} friends subscribed to this plan"
       friends completed:                         
-        one:                                    "%{count} friend completed this plan"
-        other:                                  "%{count} friends completed this plan"
+        one:                                    "%{count} friend has completed this plan"
+        other:                                  "%{count} friends have completed this plan"
       total completions:                        "Over %{count} completions"
       view all:                                 "View All"
       close:                                    "Close"
