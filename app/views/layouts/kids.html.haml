@@ -12,22 +12,22 @@
   if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then
     i18n_css_class = "es"
     i18n_image_dir = "/es"
-    meta_url = "https://www.bible.com/es/kids"
+    meta_url = "#{request.protocol}#{request.host_with_port}/es/kids"
     facebook_locale = "es_ES"
     youtube_url = "//www.youtube.com/embed/2iWQlDXReYI?rel=0"
     # prelaunch = true
   elsif (I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN")) then
     i18n_css_class = "zh-CN"
     i18n_image_dir = "/zh-CN"
-    meta_url = "https://www.bible.com/zh-CN/kids"
+    meta_url = "#{request.protocol}#{request.host_with_port}/zh-CN/kids"
     facebook_locale = "zh_CN"
     youtube_url = ""
     # prelaunch = true
   elsif (I18n.locale.to_s.eql?("ko")) then
     i18n_css_class = "ko"
     i18n_image_dir = "/ko"
-    meta_url = "https://www.bible.com/ko/kids"
-    facebook_locale = "ko"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ko/kids"
+    facebook_locale = "ko_KR"
     youtube_url = ""
     # prelaunch = true
   end
@@ -58,11 +58,11 @@
     %meta{name: "twitter:description",      content: meta_description}
     %meta{name: "twitter:image",            content: "#{url_for(asset_path('BibleAppForKids-icon-120x120.png'))}"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
-    %link{:href=> "https://www.bible.com/kids",:rel=>"alternate",:hreflang=>"en"}
-    %link{:href=> "https://www.bible.com/es/kids",:rel=>"alternate",:hreflang=>"es"}
-    %link{:href=> "https://www.bible.com/ko/kids",:rel=>"alternate",:hreflang=>"ko"}
-    %link{:href=> "https://www.bible.com/zh-CN/kids",:rel=>"alternate",:hreflang=>"zh-cn"}
-    %link{rel: "canonical", href: "https://www.bible.com/kids"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/es/kids",:rel=>"alternate",:hreflang=>"es"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ko/kids",:rel=>"alternate",:hreflang=>"ko"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-CN/kids",:rel=>"alternate",:hreflang=>"zh-cn"}
+    %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}/kids"}
 
     = stylesheet_link_tag "campaigns/kids"
     = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
