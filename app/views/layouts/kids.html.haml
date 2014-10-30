@@ -91,11 +91,11 @@
       -# !App store buttons
       - if not prelaunch
         .download
-          %a.download-ios{href: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center"}
+          %a.download-ios{href: t.call('kids.links.apple'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center"}
             = t.call('kids.app store')
-          %a.download-play{href: "http://play.google.com/store/apps/details?id=com.bible.kids", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
+          %a.download-play{href: t.call('kids.links.google'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
             = t.call('kids.google play')
-          %a.download-amazon{href: "http://www.amazon.com/gp/product/B00GURLC40", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
+          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
             = t.call('kids.amazon')
 
       -# !iPad hero screenshot

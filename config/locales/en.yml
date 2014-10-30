@@ -127,6 +127,10 @@ en:
       youversion:                               "YouVersion: The world’s most popular Bible App"
       in partnership:                           "in partnership with"
       one hope:                                 "One Hope: Extraordinary Bible content for Kids"
+    links:
+      apple:                                    "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+      google:                                   "http://play.google.com/store/apps/details?id=com.bible.kids"
+      amazon:                                   "http://www.amazon.com/gp/product/B00GURLC40"
   now:                                          "Now"
   celebrating 50MM:                             "Celebrating 50 Million App Installs!"
   link:                                         "Link"
