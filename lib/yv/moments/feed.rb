@@ -54,7 +54,7 @@ module YV
 
         merged.concat(ms)
         merged.concat(vods)
-        merged.concat(client_side_moments)
+        merged.concat(client_side_moments) if client_side_moments.present?
         merged.sort_by {|obj| obj.created_at}.reverse
       end
 
