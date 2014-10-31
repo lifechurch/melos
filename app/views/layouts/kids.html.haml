@@ -86,13 +86,25 @@
     .kids
 
       -# !Logo and intro copy
-      %h1.intro-bible
-        = t.call('kids.bible app')
-      .intro-forkids
-        %h2.intro-for
-          = t.call('kids.for')
-        %h2.intro-kids
-          = t.call('kids.kids')
+      -# This is way too hackish, but it works for now I suppose
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN"))
+        %h1.intro-bible
+          = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
+        .intro-forkids
+          %h2.intro-for
+            &nbsp;
+          %h2.intro-kids
+            &nbsp;
+      - else
+        %h1.intro-bible
+          = t.call('kids.bible app')
+        .intro-forkids
+          %h2.intro-for
+            = t.call('kids.for')
+          %h2.intro-kids
+            = t.call('kids.kids')
+
+
       %h3.intro-yv
         = t.call('kids.by youversion')
 
@@ -126,8 +138,10 @@
         %p.hero-copy
           = t.call('kids.interact text')
 
-      .youtube-mobile
-        %iframe{width:"100%", height:"auto", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
+      - if youtube_url.present?
+        .youtube-mobile
+          %iframe{width:"100%", height:"auto", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
+
       -#- else
       -#  .alt-hero
       -#    = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "alt-hero-screen", alt: t.call('kids.bible app')
