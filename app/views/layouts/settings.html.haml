@@ -1,6 +1,7 @@
 - # sub template should define a @setting_selected variable with allowed values of:
 - # :edit, :notifications, :email, :password, :devices, :account, :vod_subscriptions
 - # found in users/_mobile_menu partial
+- current_user ||= @current_user
 
 - content_for :title do
   = t('users.settings')

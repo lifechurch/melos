@@ -1,6 +1,6 @@
 class RedirectsController < ApplicationController
 
-  before_filter :force_login, except: [:settings_notifications, :lifechurchtv, :ninos]
+  before_filter :force_login, except: [:settings_notifications, :settings_vod_subscriptions, :lifechurchtv, :ninos]
   prepend_before_filter :mobile_redirect, only: [:bookmarks, :profile, :friends, :notes, :badges, :highlights, :connections]
   # skip_filter :set_page,
   #             :set_locale,
@@ -64,7 +64,7 @@ class RedirectsController < ApplicationController
   end
 
   def settings_vod_subscriptions
-    redirect_to(user_vod_subscriptions_url(current_user.username))
+    redirect_to(vod_subscriptions_url(token: params[:token]))
   end
 
   def delete_account

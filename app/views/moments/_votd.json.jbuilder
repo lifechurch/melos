@@ -37,7 +37,7 @@ json.object do
 
   if current_user
     json.subscription do 
-      json.path            user_vod_subscriptions_path(current_user.username)
+      json.path            vod_subscriptions_path
       json.time            subscription.email.time if subscription.has_key?(:email)
       json.version_id      subscription.email.version_id if subscription.has_key?(:email)
     end
