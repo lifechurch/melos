@@ -237,15 +237,12 @@ module ApplicationHelper
       version = reference.version
     end
 
-    #until page content is unique for references with verses canonical and hreflang tags will be chapter based
-    fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}"
-    #after page content is unique for verse reference / partial chapter content - uncomment the below and remove line above
-    # if reference.verses.nil? || reference.verses.empty? then
-    #   fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}"
-    # else
-    #   fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}-#{reference.verses.last}" if reference.verses.length > 1
-    #   fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}" if reference.verses.length == 1
-    # end
+    if reference.verses.nil? || reference.verses.empty? then
+      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}"
+    else
+      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}-#{reference.verses.last}" if reference.verses.length > 1
+      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}" if reference.verses.length == 1
+    end
     fullpath
   end
 
