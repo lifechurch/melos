@@ -21,7 +21,7 @@ module YV
 
           def from_client_side_items(results)
             return results if results.empty?
-            return [] if results.errors
+            return [] if results.is_a? Hashie::Mash and results.errors.present?
             results.collect do |client_side|
               map_from_kind(client_side)
             end
