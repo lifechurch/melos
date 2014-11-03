@@ -7,4 +7,6 @@
   - href = "#{request.protocol}#{request.host_with_port}#{locale_dir}#{fullpath}"
 
   %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
+  - if a_locale.to_s.eql?("en")
+    %link{href: href, rel: "alternate", hreflang: "x-default"}
 
