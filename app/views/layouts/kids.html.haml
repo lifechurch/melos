@@ -1,8 +1,8 @@
 - t = Proc.new do |key, options={}|
   - I18n.t(key, options.merge(:locale => @locale))
 :ruby
-  meta_title        = t.call("meta.kids_app.title")
-  meta_description  = t.call("meta.kids_app.description")
+  meta_title        = t("meta.kids_app.title")
+  meta_description  = t("meta.kids_app.description")
   meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
   i18n_image_dir  = ""
   i18n_css_class = "en"
@@ -69,73 +69,73 @@
 
       -# !Logo and intro copy
       %h1.intro-bible
-        = t.call('kids.bible app')
+        = t('kids.bible app')
       .intro-forkids
         %h2.intro-for
-          = t.call('kids.for')
+          = t('kids.for')
         %h2.intro-kids
-          = t.call('kids.kids')
+          = t('kids.kids')
       %h3.intro-yv
-        = t.call('kids.by youversion')
+        = t('kids.by youversion')
 
-      %img.intro-icon{ src: "/assets/campaigns/kids/app-icon.png", alt: t.call('kids.app icon')}
+      %img.intro-icon{ src: "/assets/campaigns/kids/app-icon.png", alt: t('kids.app icon')}
 
       %p.intro-help
-        = t.call('kids.help your kids')
+        = t('kids.help your kids')
 
-      %img.intro-img{ src: "/assets/campaigns/kids/hdr-jesus.png", alt: t.call('kids.jesus and friends')}
+      %img.intro-img{ src: "/assets/campaigns/kids/hdr-jesus.png", alt: t('kids.jesus and friends')}
 
       %p.intro-coming
-        = t.call('kids.free download')
+        = t('kids.free download')
 
       -# !App store buttons
       - if not prelaunch
         .download
-          %a.download-ios{href: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center"}
-            = t.call('kids.app store')
-          %a.download-play{href: "http://play.google.com/store/apps/details?id=com.bible.kids", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
-            = t.call('kids.google play')
-          %a.download-amazon{href: "http://www.amazon.com/gp/product/B00GURLC40", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
-            = t.call('kids.amazon')
+          %a.download-ios{href: t('kids.links.apple'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center"}
+            = t('kids.app store')
+          %a.download-play{href: t('kids.links.google'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
+            = t('kids.google play')
+          %a.download-amazon{href: t('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
+            = t('kids.amazon')
 
       -# !iPad hero screenshot
       -#- if not i18n_image_dir.present?
       .hero
-        = image_tag "campaigns/kids/hero.jpg", class: "hero-screen", alt: t.call('kids.story text 1')
+        = image_tag "campaigns/kids/hero.jpg", class: "hero-screen", alt: t('kids.story text 1')
         .youtube-embed
           %iframe{width:"805", height:"607", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
         %p.hero-copy
-          = t.call('kids.interact text')
+          = t('kids.interact text')
 
       .youtube-mobile
         %iframe{width:"100%", height:"auto", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
       -#- else
       -#  .alt-hero
-      -#    = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "alt-hero-screen", alt: t.call('kids.bible app')
+      -#    = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "alt-hero-screen", alt: t('kids.bible app')
       -#    %p.hero-copy
-      -#      = t.call('kids.interact text')
+      -#      = t('kids.interact text')
 
       -# !Smaller screenshots
 
       .screens
-        = image_tag "campaigns/kids#{i18n_image_dir}/screens-1.jpg", alt: t.call('kids.story text 2')
-        = image_tag "campaigns/kids/screens-2.jpg", alt: t.call('kids.story text 3')
-        = image_tag "campaigns/kids/screens-3.jpg", alt: t.call('kids.story text 4')
-        = image_tag "campaigns/kids/screens-4.jpg", alt: t.call('kids.story text 5')
+        = image_tag "campaigns/kids#{i18n_image_dir}/screens-1.jpg", alt: t('kids.story text 2')
+        = image_tag "campaigns/kids/screens-2.jpg", alt: t('kids.story text 3')
+        = image_tag "campaigns/kids/screens-3.jpg", alt: t('kids.story text 4')
+        = image_tag "campaigns/kids/screens-4.jpg", alt: t('kids.story text 5')
 
       -# !Features list
 
       .features
         %p.features-1
-          = t.call('kids.feature 1')
+          = t('kids.feature 1')
         %p.features-2
-          = t.call('kids.feature 2')
+          = t('kids.feature 2')
         %p.features-3
-          = t.call('kids.feature 3')
+          = t('kids.feature 3')
         %p.features-4
-          = t.call('kids.feature 4')
+          = t('kids.feature 4')
         %p.features-5
-          = t.call('kids.feature 5')
+          = t('kids.feature 5')
 
       / -# !App store buttons
       / .download
@@ -156,11 +156,11 @@
     .logos
       .logos-box
         %a{href: "http://bible.com"}
-          = image_tag "campaigns/kids#{i18n_image_dir}/logos-yv.png", class: "logos-yv", alt: t.call('kids.partner.youversion')
+          = image_tag "campaigns/kids#{i18n_image_dir}/logos-yv.png", class: "logos-yv", alt: t('kids.partner.youversion')
         %p.logos-copy
-          = t.call('kids.partner.in partnership')
+          = t('kids.partner.in partnership')
         %a{href: "http://onehope.net"}
-          = image_tag "campaigns/kids#{i18n_image_dir}/logos-oh.png", class: "logos-oh", alt: t.call('kids.partner.one hope')
+          = image_tag "campaigns/kids#{i18n_image_dir}/logos-oh.png", class: "logos-oh", alt: t('kids.partner.one hope')
 
     -# !Retina JS
 
