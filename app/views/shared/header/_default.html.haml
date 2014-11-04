@@ -18,18 +18,18 @@
       -# Sign in and user id
       - if current_auth
         %nav.sign_in
-          %a{href: user_path(current_auth.username)}
+          %a{href: user_path(current_auth.username), title: t("users.go to your profile")}
             %span
               %img{src: current_user.user_avatar_url["px_24x24"]}
               %span.user_name=current_auth.username
 
         %ul.nav_user
           %li.highlights
-            %a{href: highlights_user_path(current_auth.username)}
+            %a{href: highlights_user_path(current_auth.username), title: t("highlights.title") }
           %li.bookmarks
-            %a{href: bookmarks_user_path(current_auth.username)}
+            %a{href: bookmarks_user_path(current_auth.username), title: t("bookmarks.title")}
           %li.notes
-            %a{href: notes_user_path(current_auth.username)}
+            %a{href: notes_user_path(current_auth.username), title: t("notes title")}
           %li.auth
             %a#header_profile_trigger{:href => '#'}
               =t("more")
@@ -54,14 +54,14 @@
                     =t("sign out")
 
         .user_options
-          %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
+          %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("friendships.requests title") }
             =t("friendships.requests title")
           - if current_user.enable_friendships?
             = render partial: "shared/header/friends"
           - else
             = render partial: "shared/header/update_profile"
 
-          %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : ''}
+          %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("notifications.title") }
             =t("notifications.title")
           = render partial: "shared/header/notifications"
 
