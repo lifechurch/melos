@@ -128,6 +128,10 @@
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Nå"
     celebrating 50MM: "Vi feirer 50 millioner Bibel-app-installasjoner!"
     link: "Lenke"
@@ -192,6 +196,7 @@
     reader: "Leser"
     lifechurch short url: "LifeChurch.tv"
     about: "Om"
+    versions link: "Versions"
     jobs: "Jobber"
     privacy policy: "Personvernserklæring"
     terms: "Vilkår"
@@ -711,6 +716,16 @@
             reading: "tekst"
             readings: "tekster"
             readings 5 or more: "tekster"
+        stats: 
+            friends reading: 
+                one: "%{count} venn fulgte denne planen"
+                other: "%{count} venner fulgte denne planen"
+            friends completed: 
+                one: "%{count} venn har fullført denne planen"
+                other: "%{count} venner har fullført denne planen"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "Innstillinger"
         privacy: 
             visible to friends?: "Vil du at dine venner skal se leseplanaktivitetene dine?"
@@ -1000,7 +1015,7 @@
                 now skipped: "Denne siden vil ikke lenger vises."
             features: 
                 read heading: "Les Bibelen."
-                read description: "Velg blant <strong>hundrevis av bibelutgaver og språk</strong>. Sammenlikne to versjoner side om side. Du kan til og med velge skrifttype og -størrelse. Gjør opplevelsen av Bibelen på nett slik du selv ønsker den."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "Studer Bibelen."
                 study description: "<strong>Marker</strong> med din favorittfarge, <strong>legg inn bokmerker</strong> ved dine favorittvers, og skriv notater om det du lærer. Ikke bare bruker du tid på Guds ord, du får også en oversikt over hvordan du bruker Bibelen."
                 subscribe heading: "Abonner på en leseplan."

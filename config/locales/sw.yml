@@ -128,6 +128,10 @@ sw:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "saa hii"
     celebrating 50MM: "Tunasherehekea ufunguaji wa App milioni 50!"
     link: "Kiungo"
@@ -192,6 +196,7 @@ sw:
     reader: "msomaji"
     lifechurch short url: "LifeChurch.tv"
     about: "kuhusu"
+    versions link: "Versions"
     jobs: "kazi"
     privacy policy: "sera za usiri"
     terms: "masharti"
@@ -711,6 +716,16 @@ sw:
             reading: "kusoma"
             readings: "masomo"
             readings 5 or more: "masomo"
+        stats: 
+            friends reading: 
+                one: "%{count} friend subscribed to this plan"
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                one: "%{count} friend has completed this plan"
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "mipangilio"
         privacy: 
             visible to friends?: "Unataka marafiki zako waone shughuli za mpango wako?"
@@ -1000,7 +1015,7 @@ sw:
                 now skipped: "Kurasa hili sasa litarukwa"
             features: 
                 read heading: "Soma bibilia"
-                read description: "Chugua kutoka mamia <nguvu> ya matoleo ya Biblia na lugha </nguvu>. Linganisha matoleo mawili upande kwa upande. Unaweza hata kuchagua font yako na ukubwa wa kuonyesha. Fanya utumizi wako wa Biblia iliyo wenye tuvuti iwe tu unavyopenda."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "Jifunze bibilia"
                 study description: "<strong> Bainisha&lt;/ strong&gt; katika rangi yako unayopenda, <strong> alamisha &lt;/ strong&gt; mistari ya bibilia unayopenda, na utengeneze vidokezo kuhusuulichojifunza. Hautumi muda katika Neno la Mungu tu bali, unajenga historia ya mwingiliano wako na Biblia."
                 subscribe heading: "Jiandikishe kwa mipango ya Bibilia"

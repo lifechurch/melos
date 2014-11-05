@@ -128,6 +128,10 @@ ko:
             youversion: "YouVersion:가장 인기있는 성경 앱"
             in partnership: "결연을 맺어"
             one hope: "One hope: 어린이들을 위한 훌륭한 성경 내용"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "실시간 현황"
     celebrating 50MM: "축 5천만째 설치!"
     link: "링크"
@@ -192,6 +196,7 @@ ko:
     reader: "리더"
     lifechurch short url: "LifeChurch.tv"
     about: "소개"
+    versions link: "번역본"
     jobs: "채용정보"
     privacy policy: "개인정보취급정책"
     terms: "약관"
@@ -711,6 +716,14 @@ ko:
             reading: "읽기"
             readings: "읽기"
             readings 5 or more: "읽기"
+        stats: 
+            friends reading: 
+                other: "이 계획에 %{count} 명의 친구들이 신청하였습니다."
+            friends completed: 
+                other: "%{count}명의 친구가 이 계획을 마쳤습니다."
+            total completions: "%{count}명이 넘는 분들이 이 계획을 마쳤습니다."
+            view all: "전체 보기"
+            close: "닫기"
         settings: "설정"
         privacy: 
             visible to friends?: "친구들이 회원님의 성경읽기계획을 볼 수있도록 하겠습니까?"
@@ -1000,7 +1013,7 @@ ko:
                 now skipped: "더 이상 이 페이지를 보여주지 않습니다."
             features: 
                 read heading: "성경 읽기"
-                read description: "<strong>각종언어로 번역된 수백개의 번역본</strong> 이 있습니다 . 두개의 번역본을 비교하면서 읽거나, 원하시는 글꼴이나 크기로 온라인에서 성경을 읽을 수 있습니다."
+                read description: "<a href='%{versions_path}'>각종언어로 번역된 수백개의 번역본</a> 이 있습니다. 두개의 번역본을 비교하면서 읽거나, 원하시는 글꼴이나 크기로 온라인에서 성경을 읽을 수 있습니다. "
                 study heading: "성경 연구"
                 study description: "선호하시는 색깔로 본문을 <strong>하이라이트</strong> 하시거나, 원하는 구절을 <strong>책갈피</strong> 할 수있습니다. 그리고 묵상 내용을 노트에 남길 수도 있습니다. 하나님의 말씀을 읽는 것에 그치지 않고 읽으면서 느낀 점을 기록으로도 남길 수있습니다."
                 subscribe heading: "성경 읽기계획"

@@ -4,7 +4,7 @@ pl:
         formats: 
             votd: "%-d %B, %Y"
     counter: 
-        format: "999,999,999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Rozmowa i Odkrycia"
@@ -86,7 +86,7 @@ pl:
             description: "Czytaj Słowo Boże w dowolnym czasie, w dowolnym miejscu używając Aplikacji Biblii YouVersion. Dziel się Pismem Świętym ze znajomymi, zakreślaj fragmenty, dodawaj zakładki i czytaj codziennie z planami Biblii. Dostępne dla iOS, Androida, Blackberry, Windows Phone i inne systemy."
         site: 
             title: "Bible.com"
-            description: "Sprowadź piękno i prawdę Biblii do twojego codziennego życia. Z aplikacją Biblia, wydaną przez YouVersion, możesz czytać, oglądać, słuchać i dzielić się, na twoim urządzeniu lud internecie, na Bible.com"
+            description: "Sprowadź piękno i prawdę Biblii do twojego codziennego życia. Z Aplikacją Biblii YouVersion, możesz czytać, oglądać, słuchać i dzielić się, na twoim urządzeniu lub on-line, na Bible.com."
         connections: 
             index: 
                 title: "Połączone konta"
@@ -128,6 +128,10 @@ pl:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Teraz"
     celebrating 50MM: "Świętujemy 50 milionów instalacji aplikacji!"
     link: "Odnośnik"
@@ -192,6 +196,7 @@ pl:
     reader: "Czytnik"
     lifechurch short url: "LifeChurch.tv"
     about: "O YouVersion"
+    versions link: "Versions"
     jobs: "Praca"
     privacy policy: "Polityka prywatności"
     terms: "Regulamin"
@@ -213,7 +218,7 @@ pl:
     cancel: "Anuluj"
     try the beta: "Wypróbuj wersję Beta"
     welcome to the beta: "Witamy w Bible.com!"
-    highlight: "Podświetl werset"
+    highlight: "Zakreśl werset"
     comment: "Nowy komentarz"
     note: "Nowa notatka"
     selected: "wybrane"
@@ -471,8 +476,8 @@ pl:
         edit notifications: "Zarządzaj powiadomieniami"
         edit connections: "Połączone konta"
         edit devices: "Połączone urządzenia"
-        vod_subscriptions: "Subskrypcja Werset dnia "
-        vod_subscription success: "Udało ci się uaktualnić subskrypcję Werset dnia!"
+        vod_subscriptions: "Subskrypcja wersetu dnia "
+        vod_subscription success: "Udało ci się uaktualnić subskrypcję wersetu dnia!"
         vod_subscription failure: "Przepraszamy, wystąpił błąd podczas aktualizowania subskrypcji Werset dnia."
         daily email delivery: "Codzienna wysyłka mailowa"
         time: "Czas"
@@ -485,7 +490,7 @@ pl:
         no devices download copy: "Aplikacja Biblii jest darmową mobilną Biblią, bazującą na Biblii on-line YouVersion, którą można zainstalować na niemal każdym urządzeniu. Aplikacja Biblii pozwala użytkownikom na czytanie Biblii, dzielenie się wersetami, zaznaczanie ulubionych fragmentów i korzystanie z innych funkcji—wszystko to w formie przyjaznej dla mobilnego trybu życia. Odwiedź <a href='https://www.bible.com/app'>bible.com/app</a> ze swojego urządzenia, aby pobrać Aplikację Biblii i połączyć swoje konto!"
         yes delete: "Tak, usuń moje konto"
         account delete success: "Twoje konto YouVersion zostało usunięte. Mamy nadzieję, że będzie nadal znajdował sposoby, aby studiować Biblię. Niektóre z tych aplikacji mogą być Ci pomocne:  <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
-        delete account description: "Jeżeli usuniesz swoje konto, całkowicie wyeliminujesz wszystkie swoje informacje, historię i własne ustawienia (takie jak notatki, zakładki, podświetlenia, itp.) z Biblia.com, jak i w aplikacji Biblia. Skutki tej decyzji będą nie nieodwracalne, ani przez ciebie, ani przez nasz zespół. Jeżeli jesteś pewny, że chcesz to zrobić, poniżej możesz kontynuować."
+        delete account description: "Jeżeli usuniesz swoje konto, całkowicie pozbędziesz się wszystkich swoich informacji, historii i własnych ustawień (takich jak notatki, zakładki, podświetlenia, itp.) z Biblia.com, jak również z Aplikacji Biblii. Skutki tej decyzji będą nieodwracalne, dla ciebie, jak również dla naszego zespołu. Jeżeli jesteś pewny, że chcesz to zrobić, możesz kontynuować."
         user recent activity: "Ostatnia aktywność użytkownika %{user}"
         my notes: "Notatki"
         user notes: "Notatki użytkownika %{user}"
@@ -645,7 +650,7 @@ pl:
             badges: "Powiadamiaj mnie o zdobytych odznaczeniach."
             follower: "Powiadom mnie, gdy ktoś za mną podąży."
             newsletter: "Powiadamiaj mnie o ogłoszeniach YouVersion."
-            contact_joins: "Notify me when a Contact joins"
+            contact_joins: "Powiadom mnie, kiedy kontakt dołączy"
             note_like: "Powiadamiaj mnie, gdy ktoś polubi moje notatki."
             reading_plans: "Powiadamiaj mnie o informacjach dotyczących planów czytania, które rozpocząłem."
             publishing partners: "Informuj mnie o nowościach na stronach partnerów YouVersion."
@@ -665,7 +670,7 @@ pl:
         labels label: "Etykiety:"
         title: "Zakładki"
         my labels: "Moje etykiety"
-        all labels: "Show All"
+        all labels: "Pokaż wszystko"
         not found: "Korzystanie z zakładek ułatwi ci znalezienie ulubionych fragmentów, lub wersetu, który ostatnio czytałeś w określonej księdze. Aby dodać zakładkę, wybierz werset w czytniku Biblii, a następnie kliknij przycisk Wybrane na górze czytnika."
         other user not found: "%{username} nie zachował jeszcze żadnych zakładek."
         creation form errors: "Poniższe błędy nie pozwoliły na utworzenie zakładki:"
@@ -711,6 +716,20 @@ pl:
             reading: "fragment"
             readings: "fragmenty"
             readings 5 or more: "fragmentów"
+        stats: 
+            friends reading: 
+                one: "%{count} friend subscribed to this plan"
+                few: "%{count} friends subscribed to this plan"
+                many: "%{count} friends subscribed to this plan"
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                one: "%{count} friend has completed this plan"
+                few: "%{count} friends have completed this plan"
+                many: "%{count} friends have completed this plan"
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "Ustawienia"
         privacy: 
             visible to friends?: "Czy chcesz aby twoi znajomi widzieli twoją aktywność czytania planów?"
@@ -915,7 +934,7 @@ pl:
         creation form errors: "Poniższe błędy nie pozwoliły na dotację:"
     download ad: 
         title: "Pobierz bezpłatną Aplikację Biblii"
-        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
+        description copy: "Setki wersji w ponad %{language_count} różnych językach - Biblia, która idzie z tobą wszędzie."
         line 1: "Setki przekładów w ponad 100"
         line 2: "językach - Biblia, która"
         line 3: "idzie z tobą wszędzie."
@@ -943,7 +962,7 @@ pl:
         facebook: "YouVersion na Facebooku"
         twitter: "YouVersion na Twitterze"
         support: "Potrzebujesz pomocy z YouVersion?"
-        lead copy: "Opierając się na serwisach Biblia, Bible.com, aplikacja Biblii jest darmową mobliną Biblią, którą możesz zainstalować nie mal każdym telefonie. Aplikacja Biblii pozwala użytkownikowi na czytanie Biblii, dzielenie się wersetami na portalach społecznościowych, tworzenie zakładek z ulubionymi fragmentami i wiele więcej-wszystko w takiej formie, która umożliwia mobilny styl życia."
+        lead copy: "Aplikacja Biblii, która została oparta na serwisie Biblii on-line - Bible.com jest darmową mobliną Biblią, którą możesz zainstalować na niemal każdym telefonie. Aplikacja Biblii pozwala użytkownikowi na czytanie Biblii, dzielenie się wersetami w portalach społecznościowych, tworzenie zakładek z ulubionymi fragmentami i wiele innych - wszystko w formie, która pasuje do mobilnego stylu życia."
         resources title: "Materiały dla prasy"
         now title: "Dzisiaj w społeczności YouVersion"
         resources: 
@@ -963,7 +982,7 @@ pl:
     mobile page: 
         h2: "Słowo Boże jest z tobą."
         h3: "YouVersion jest globalne"
-        h3 sub: "Available in more than %{language_count} languages worldwide."
+        h3 sub: "Dostępne w ponad %{language_count} językach na całym świecie."
         main: "Dziesiątki milionów ludzi używają Aplikacji Biblii, aby uczynić Słowo Boże częścią swojego życia. Pobierz darmową aplikację i uzykaj dostęp do zakładek, notatek oraz planów czytania z dowolnego miejsca. Ciesz się setkami przekładów i wersjami audio - dostępne na twoim mobilnym urządzeniu."
         button h4: "Przejdź do Bible.com/app"
         button h4 sub: "Na twoim urządzeniu mobilnym"
@@ -984,7 +1003,7 @@ pl:
         symbian: "Symbian"
         mobile web: "Sieć mobilna"
         amazon: "Kindle Fire"
-        free overlay: "100% Free"
+        free overlay: "Darmowe w 100%"
     pages: 
         generic_error: 
             title: "Ups!"
@@ -1000,13 +1019,13 @@ pl:
                 now skipped: "Ta strona zostanie pominięta."
             features: 
                 read heading: "Czytaj tę Biblię."
-                read description: "Wybieraj spośród <strong>setek przekładów i języków Biblii</strong>. Porównuj dwa przekłady obok siebie. Możesz wybrać czcionkę i jej wielkość. Dostosuj czytanie Biblii on-line do twoich upodobań."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "Studiuj tę Biblię."
                 study description: "<strong>Podkreślaj</strong> w swoim ulubionym kolorze, <strong>zaznaczaj</strong> swoje ulubione wersety i zapisuj notatki o tym czego się nauczyłeś. Nie tylko spędzasz czas ze Słowem Bożym, ale budujesz historię swojej relacji z Biblią."
                 subscribe heading: "Zapisz się do planów Biblii."
                 subscribe description: "Przeglądnij całą Biblię, skup się na temacie lub czytaj przemyślenia uzdolnionych nauczycieli. Wybierz plan a każdego dnia otrzymasz odpowiedni fragment Biblii."
                 download heading: "Weź tę Biblię ze sobą."
-                download description: "<a href='https://bible.com/download'>Pobierz</a> Aplikację Biblii za darmo na dowolne urządzenie. Używaj aplikacji, notatek, zakładek, podkreśleń, planów czytania i innych funkcji a twoje treści będą automatycznie synchronizowane."
+                download description: "<a href='https://bible.com/download'>Pobierz</a> Aplikację Biblii za darmo na dowolne urządzenie. Gdy używasz mobilnej aplikacji, notatki, zakładki, zakreślenia, plany czytania i inne funkcje synchronizują się automatycznie na wszystkich twoich urządzeniach."
             get started: "Użyj swojego darmowego konta."
             word with you: "Słowo Boże jest z tobą."
             download action: "Pobierz Aplikację Biblii"

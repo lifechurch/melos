@@ -128,6 +128,10 @@ ar:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "الأن"
     celebrating 50MM: "نحتفل بـ 50 مليون تحميل للتطبيق!"
     link: "رابط"
@@ -192,6 +196,7 @@ ar:
     reader: "القارئ"
     lifechurch short url: "LifeChurch.tv"
     about: "حول‌"
+    versions link: "نسخات"
     jobs: "فرص عمل"
     privacy policy: "سياسة الخصوصية"
     terms: "الشروط"
@@ -711,6 +716,24 @@ ar:
             reading: "قراءة"
             readings: "قراءات"
             readings 5 or more: "قراءات"
+        stats: 
+            friends reading: 
+                zero: "لم يشترك أحد من الأصدقاء في خطة القراءة هذه."
+                one: "إشترك صديق في خطة القراءة هذه."
+                two: "إشترك صديقين في خطة القراءة هذه."
+                few: " إشترك %{count} أصدقاء في خطة القراءة هذه."
+                many: " إشترك %{count} أصدقاء في خطة القراءة هذه."
+                other: " إشترك %{count} أصدقاء في خطة القراءة هذه."
+            friends completed: 
+                zero: "%{count} friends have completed this plan"
+                one: "%{count} friend has completed this plan"
+                two: "%{count} friends have completed this plan"
+                few: "%{count} friends have completed this plan"
+                many: "%{count} friends have completed this plan"
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "الاعدادات"
         privacy: 
             visible to friends?: "هل تريد السماح لاصدقائك برؤية انشطة خطتك؟"
@@ -1000,7 +1023,7 @@ ar:
                 now skipped: "من الآن سيتم تخطي هذه الصفحة."
             features: 
                 read heading: "قراءة الكتاب المقدس."
-                read description: "اختر من <strong>مئات من إصدارات الكتاب المقدس واللغات</strong>. قارن إصدارين جنبا إلى جنب. يمكنك حتى اختيار الخط الخاص بك وحجم العرض. اجعل تجربتك مع الكتاب المقدس بالطريقة التي ترغب بها."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "دراسة الكتاب المقدس."
                 study description: "<strong>ميز النص</strong> بلونك المفضل، حدد <strong> إشاراتك المرجعية</strong> لآيات الكتاب المقدس المفضلة لديك، وسجل ملاحظاتك حول ما تعلمت. بهذل انت لست فقط تقضي الوقت مع كلمة الله، ولكنك ايضا تحفظ تاريخ تعاملتك مع الكتاب المقدس."
                 subscribe heading: "الاشتراك في خطط الكتاب المقدس."

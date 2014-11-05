@@ -128,6 +128,10 @@ sk:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Teraz"
     celebrating 50MM: "Oslavujeme 50 miliónov inštalacií našej aplikácie!"
     link: "Odkaz"
@@ -192,6 +196,7 @@ sk:
     reader: "Čítanie"
     lifechurch short url: "LifeChurch.tv"
     about: "O nás"
+    versions link: "Preklady"
     jobs: "Kariéra"
     privacy policy: "Ochrana údajov"
     terms: "Podmienky"
@@ -711,6 +716,18 @@ sk:
             reading: "čítanie"
             readings: "čítania"
             readings 5 or more: "čítaní"
+        stats: 
+            friends reading: 
+                one: "%{count} friend subscribed to this plan"
+                few: "%{count} friends subscribed to this plan"
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                one: "%{count} priateľ dokončil tento plán čítania Biblie"
+                few: "%{count} priatelia dokončili tento plán čítania Biblie"
+                other: "%{count} priateľov dokončilo tento plán čítania Biblie"
+            total completions: "Vyše %{count} dokončení"
+            view all: "Zobraziť všetky"
+            close: "Zatvoriť"
         settings: "Nastavenia"
         privacy: 
             visible to friends?: "Chcete, aby vaši priatelia videli vašu aktivitu v plánoch čítania?"
@@ -1000,7 +1017,7 @@ sk:
                 now skipped: "Táto stránka bude vynechaná."
             features: 
                 read heading: "Čítajte Bibliu."
-                read description: "Vyberte si zo <strong>stoviek prekladov Biblie v mnohých jazykoch</strong>. Porovnávajte paralelne dva preklady. Nastavte si vlastný typ písma a veľkosť. Prispôsobte si svoju online Bibliu tak, ako vám to vyhovuje."
+                read description: "Vyberte si spomedzi <a href='%{versions_path}'>stoviek prekladov Biblie a jazykov</a>. Porovnajte si dva preklady vedľa seba. Môžete si dokonca zvoliť typ písma a veľkosť zobrazenia. Prispôsobte si vašu skúsenosť s online Bibliou presne tak, ako to chcete."
                 study heading: "Študujte Bibliu."
                 study description: "<strong>Zvýraznite</strong> si verše vašou obľúbenou farbou, pridajte si ich medzi <strong>záložky</strong> a robte si poznámky o tom, čo vás zaujalo. Okrem trávenia času s Božím Slovom si tak môžete tvoriť denník toho, čo vás oslovilo."
                 subscribe heading: "Využite plány čítania."

@@ -128,6 +128,10 @@ nl:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Nu"
     celebrating 50MM: "We vieren de 50 miljoenste installatie!"
     link: "Link"
@@ -192,6 +196,7 @@ nl:
     reader: "Leesvenster"
     lifechurch short url: "LifeChurch.tv"
     about: "Over"
+    versions link: "Versions"
     jobs: "Vacatures"
     privacy policy: "Privacybeleid"
     terms: "Voorwaarden"
@@ -711,6 +716,16 @@ nl:
             reading: "Lezing"
             readings: "Lezingen"
             readings 5 or more: "Lezingen"
+        stats: 
+            friends reading: 
+                one: "%{count} friend subscribed to this plan"
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                one: "%{count} friend has completed this plan"
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "Instellingen"
         privacy: 
             visible to friends?: "Wil jij dat jouw Leesplan activiteit zichtbaar is voor jouw vrienden?"
@@ -1000,7 +1015,7 @@ nl:
                 now skipped: "Deze pagina wordt nu overgeslaan."
             features: 
                 read heading: "Lees de Bijbel."
-                read description: "Maak een keuze uit <strong>honderden Bijbel-vertalingen en talen</strong>. Vergelijk twee verschillende vertalingen naast elkaar. Je kan zelf bepalen welke letter je wil gebruiken en hoe groot die moet zijn. Je bepaalt zelf hoe je online Bijbelervaring eruit ziet."
+                read description: "Maak een keus uit honderden Bijbel versies en vertalingen. <a href='%{versions_path}'></a>Vergelijk twee versies naast elkaar. Je kunt zelfs je lettertype en lettergrootte kiezen. Pas je online Bijbel ervaring aan zoals jij het wilt."
                 study heading: "Bestudeer de Bijbel."
                 study description: "<strong>Markeer</strong> in je lievelingskleur, plaats <strong>bladwijzers</strong> bij je favoriete Bijbel-verzen en schrijf notities over wat jij hebt geleerd. Je brengt niet alleen tijd door met Gods Woord, maar je bouwt aan een geschiedenis van jouw interactie met de Bijbel."
                 subscribe heading: "Abonneer je op Bijbelleesplannen."

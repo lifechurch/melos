@@ -128,6 +128,10 @@ id:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Sekarang"
     celebrating 50MM: "Merayakan 50 Juta Instalasi Ap!"
     link: "Tautan"
@@ -192,6 +196,7 @@ id:
     reader: "Pembaca"
     lifechurch short url: "LifeChurch.tv"
     about: "Perihal"
+    versions link: "Versions"
     jobs: "Lowongan Kerja"
     privacy policy: "Kebijakan Privasi"
     terms: "Persyaratan"
@@ -711,6 +716,14 @@ id:
             reading: "bacaan"
             readings: "bacaan"
             readings 5 or more: "bacaan"
+        stats: 
+            friends reading: 
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "Pengaturan"
         privacy: 
             visible to friends?: "Anda ingin teman-teman Anda melihat aktifitas Rencana Anda?"
@@ -1000,7 +1013,7 @@ id:
                 now skipped: "Halaman ini akan dilewatkan sekarang."
             features: 
                 read heading: "Baca Alkitab."
-                read description: "Pilih dari <strong>ratusan versi dan bahasa Alkitab</strong>. Bandingkan dua versi berdampingan. Anda bahkan bisa pilih huruf dan ukuran tampilan. Buat pengalaman Alkitab daring sesuka Anda."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "Pelajari Alkitab."
                 study description: "<strong>Soroti</strong> dengan warna favorit Anda,<strong>markahi</strong> ayat-ayat Alkitab favorit Anda, dan buat catatan tentang apa yang Anda pelajari. Bukan hanya meluangkan waktu bersama Firman Tuhan, Anda sedang membangun riwayat interaksi dengan Alkitab."
                 subscribe heading: "Berlangganan Rencana Alkitab."
