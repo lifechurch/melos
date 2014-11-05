@@ -34,7 +34,6 @@
 
 = content_for?(:additional_meta) ? yield(:additional_meta) : nil
 = content_for?(:stylesheets) ? yield(:stylesheets) : nil
-= content_for?(:javascripts) ? yield(:javascripts) : nil
 
 - @native_url = session[:native_url] if session[:native_url].present?
 - @user_agent = session[:user_agent] if session[:user_agent].present?
