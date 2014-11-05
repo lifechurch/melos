@@ -4,6 +4,8 @@
 // alt_version:
 
 - invalid_ref = defined?(invalid) and invalid == true
+- content_for :additional_meta do
+  %meta{property: "og:description", content: t("meta.site.description") }
 
 #m-toolbar.mobile
   %div.verse_toolbar{class: ('authed' if current_auth)}
@@ -64,16 +66,20 @@
     %ul.float_left
       %li{class: version.rtl? ? "rtl" : nil}
         %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_book_chapter', id:"menu_book_chapter_trigger", :title => t("ref.choose book and chapter")}
-          %b
+          %h1
             = truncate(reference.to_s(version: false), length: 40, separator: " ")
           %span
             = t('ref.choose book and chapter')
       %li
         %a.dynamic_menu_trigger.drop_down_select{href:"#menu_version", id:"menu_version_trigger", title: t("ref.choose version")}
-          %b
+          %h2
             = version.human
           %span
             =t("ref.choose version")
+      %li{style: 'display:none;'}
+        %a{href: version_path(version)}
+          %h2
+            = version.to_s
     - unless invalid_ref
       %ul.float_right.header-options
         - if alt_version.present?
