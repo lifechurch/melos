@@ -32,10 +32,11 @@
             - ref_str = presenter.reference_string
             - chapter, version = "1", ref_str.version
             - version_id = presenter.version.id
+            - version_abbr = presenter.version.abbreviation.downcase
             - presenter.version.books.each do |book_usfm, book_info|
               %li{"data-meta" => truncate(book_info.to_meta, length: 40, separator: " ")}
                 - book = book_usfm.downcase
-                - url = "/bible/#{version_id}/#{book}.#{chapter}.#{version}"
+                - url = "/bible/#{version_id}/#{book}.#{chapter}.#{version_abbr}"
                 %a{href: url, "data-book" => book_usfm.downcase}
                   = truncate(book_info.human, length: 40, separator: " ")
       #menu_chapter
