@@ -12,66 +12,66 @@ only screen and (                min-resolution: 2dppx) {
 
   // !Primary nav
 
-  #nav_primary_home a.icon span {
+  #nav_primary_home a.icon  {
     background-image: image-url("nav-sprite@2x.png");
     background-position: center -87px;
   }
 
-  #nav_primary_bible a.icon span {
+  #nav_primary_bible a.icon  {
     background-image: image-url("nav-sprite@2x.png");
     background-position: center -278px;
   }
 
-  #nav_primary_plans a.icon span {
+  #nav_primary_plans a.icon  {
     background-image: image-url("nav-sprite@2x.png");
     background-position: center -470px;
   }
 
-  #nav_primary_friends a.icon span {
+  #nav_primary_friends a.icon  {
     background-image: image-url("nav-sprite@2x.png");
     background-position: center -1819px;
   }
 
-  #nav_primary_live a.icon span {
+  #nav_primary_live a.icon  {
     background-image: image-url("nav-sprite@2x.png");
     background-position: center -1238px;
   }
 
-  #nav_primary_mobile a.icon span {
+  #nav_primary_mobile a.icon  {
     background-image: image-url("nav-sprite@2x.png");
     background-position: center -1622px;
   }
 
-  #nav_primary_videos a.icon span {
+  #nav_primary_videos a.icon  {
     background-image: image-url("nav-sprite@2x.png");
     background-position: center -565px;
   }
 
-  #nav_primary_bookmarks a.icon span {
+  #nav_primary_bookmarks a.icon  {
     background-image: image-url("nav-sprite@2x.png");
     background-position: center -852px;
   }
 
-  #nav_primary_notes a.icon span {
+  #nav_primary_notes a.icon  {
     background-image: image-url("nav-sprite@2x.png");
     background-position: center -1045px;
   }
 
-  #nav_primary_highlights a.icon span {
+  #nav_primary_highlights a.icon  {
     background-image: image-url("nav-sprite@2x.png");
     background-position: center -2004px;
   }
 
-  #nav_primary_home a.icon span,
-  #nav_primary_bible a.icon span,
-  #nav_primary_plans a.icon span,
-  #nav_primary_friends a.icon span,
-  #nav_primary_live a.icon span,
-  #nav_primary_mobile a.icon span,
-  #nav_primary_videos a.icon span,
-  #nav_primary_bookmarks a.icon span,
-  #nav_primary_notes a.icon span,
-  #nav_primary_highlights a.icon span, {
+  #nav_primary_home a.icon,
+  #nav_primary_bible a.icon,
+  #nav_primary_plans a.icon,
+  #nav_primary_friends a.icon,
+  #nav_primary_live a.icon,
+  #nav_primary_mobile a.icon,
+  #nav_primary_videos a.icon,
+  #nav_primary_bookmarks a.icon,
+  #nav_primary_notes a.icon,
+  #nav_primary_highlights a.icon, {
     background-size: 32px 2100px;
   }
 
