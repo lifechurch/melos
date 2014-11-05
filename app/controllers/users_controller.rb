@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @page ||= params[:page]
     @kind ||= params[:kind]
     @moments = Moment.all(moment_all_params)
+    @subscriptions = Subscription.all(@user, auth: current_auth).map! { |s| s.id }
     render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
   end
 
