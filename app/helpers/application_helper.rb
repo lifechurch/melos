@@ -232,10 +232,7 @@ module ApplicationHelper
   end
 
   def get_localized_reference_link(reference, a_locale)
-    version = Version.default_for(a_locale) || Version.default
-    if a_locale.to_s.eql?("en") then
-      version = reference.version
-    end
+    version = reference.version
 
     if reference.verses.nil? || reference.verses.empty? then
       fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}"
