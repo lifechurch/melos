@@ -235,10 +235,10 @@ module ApplicationHelper
     version = reference.version
 
     if reference.verses.nil? || reference.verses.empty? then
-      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}"
+      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.version_string.downcase}"
     else
-      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}-#{reference.verses.last}" if reference.verses.length > 1
-      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}" if reference.verses.length == 1
+      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}-#{reference.verses.last}.#{reference.version_string.downcase}" if reference.verses.length > 1
+      fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}.#{reference.version_string.downcase}" if reference.verses.length == 1
     end
     fullpath
   end
