@@ -4,6 +4,7 @@
   title << (@subtitle || @site.title).to_s
 
 %title= title
+%meta{name: 'Description', content: @meta_description || t("meta.site.description")}
 
 = cache "head_meta_#{@site}_#{locale}", expires_in: YV::Caching.a_short_time do
   %link{rel: "shortcut icon", href:"/favicon.ico"}
@@ -11,7 +12,6 @@
   %meta{'http-equiv' => 'content-language', :content => I18n.locale.downcase}
   %meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
   %meta{property: "og:image", content: "#{url_for(asset_path('Bible-app-icon-english-200x200.png'))}"}
-  %meta{name: 'Description', content: @meta_description || t("meta.site.description")}
   %meta{name: "HandheldFriendly", content: "True"}
   %meta{name: "MobileOptimized", content: "320"}
   %meta{name: "viewport", content: "width=device-width, initial-scale=1.0, user-scalable=no"}
