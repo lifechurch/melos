@@ -128,6 +128,10 @@ mk:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Сега"
     celebrating 50MM: "Славиме 50 Милиони инсталирани апликации!"
     link: "Врска"
@@ -192,6 +196,7 @@ mk:
     reader: "Читач"
     lifechurch short url: "LifeChurch.tv"
     about: "За"
+    versions link: "Versions"
     jobs: "Работи"
     privacy policy: "Политика на приватност"
     terms: "Услови"
@@ -711,6 +716,16 @@ mk:
             reading: "читање"
             readings: "читања"
             readings 5 or more: "читања"
+        stats: 
+            friends reading: 
+                one: "%{count} friend subscribed to this plan"
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                one: "%{count} friend has completed this plan"
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Затвори"
         settings: "Уредувања"
         privacy: 
             visible to friends?: "Дали сакаш твоите пријатели да ги гледаат твоите активности во планот за читање?"
@@ -1000,7 +1015,7 @@ mk:
                 now skipped: "Оваа страна сега ќе биде скокната."
             features: 
                 read heading: "Читај ја Библијата."
-                read description: "Избери од <strong>стотици Библиски верзии и јазици</strong>. Спореди две верзии една до друга. Дури можеш да ја избереш и величината на фонтот и на дисплејот. Направи го твоето онлајн Библиски искуство токму како што сакаш."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "Проучувај ја Библијата."
                 study description: "<strong>Обележи</strong> во твојата омилена боја, <strong>зачувај го</strong> твојот омилен Библиски стих, и забележи за тоа што го проучуваш. Не само што минуваш време во Божјиот збор, туку и ја градиш историјата на твојата интеракција со Библијата."
                 subscribe heading: "Претплати се на Библиски план."

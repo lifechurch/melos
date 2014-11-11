@@ -128,6 +128,10 @@ sv:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Nu"
     celebrating 50MM: "Firar 50 miljoner installationer!"
     link: "Länk"
@@ -192,6 +196,7 @@ sv:
     reader: "Läsare"
     lifechurch short url: "LifeChurch.tv"
     about: "Om"
+    versions link: "Översättningar"
     jobs: "Jobb"
     privacy policy: "Integritetspolicy"
     terms: "Villkor"
@@ -711,6 +716,16 @@ sv:
             reading: "läsning"
             readings: "läsningar"
             readings 5 or more: "läsningar"
+        stats: 
+            friends reading: 
+                one: "{0} vän prenumererar på denna plan"
+                other: "%{count} vänner prenumererar på denna plan"
+            friends completed: 
+                one: "{0} vän har fullföljt denna plan"
+                other: "%{count} vänner har fullföljt denna plan"
+            total completions: "Över %{count} färdigt"
+            view all: "Visa alla"
+            close: "Stäng"
         settings: "Inställningar"
         privacy: 
             visible to friends?: "Vill du att dina vänner ska se dina planaktiviteter?"
@@ -1000,7 +1015,7 @@ sv:
                 now skipped: "Den här sidan hoppas nu över."
             features: 
                 read heading: "Läs Bibeln."
-                read description: "Välj bland <strong>hundratals bibelöversättningar och språk</strong>. Jämför två översättningar sida vid sida. Du kan till och med välja vilket typsnitt och storlek som visas. Anpassa din Bibelupplevelse helt efter din personliga smak."
+                read description: "Välj bland <a href='%{versions_path}'>hundratals bibelöversättningar och språk</a>. Jämför två översättningar sida vid sida. Du kan till och med välja typsnitt och visningsstorlek. Gör din bibelupplevelse online precis som du vill ha den."
                 study heading: "Studera Bibeln."
                 study description: "<strong>Markera</strong> i din favoritfärg, <strong>spara</strong> dina favoritverser och anteckna det du lär dig. Du spenderar inte bara tid i Guds Ord, utan du bygger din historia över hur du interagerar med Bibeln."
                 subscribe heading: "Följ bibelplaner."

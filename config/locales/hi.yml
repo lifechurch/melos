@@ -128,6 +128,10 @@ hi:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "अभी"
     celebrating 50MM: "50 मिलियन app स्थापना उत्सव!"
     link: "लिंक"
@@ -192,6 +196,7 @@ hi:
     reader: "पाठक"
     lifechurch short url: "Lifechurch.tv"
     about: "के विषय में"
+    versions link: "Versions"
     jobs: "करियर"
     privacy policy: "निजी नीति"
     terms: "शर्तें"
@@ -711,6 +716,16 @@ hi:
             reading: "अध्ययन"
             readings: "अध्ययन"
             readings 5 or more: "अध्ययन"
+        stats: 
+            friends reading: 
+                one: "%{count} friend subscribed to this plan"
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                one: "%{count} friend has completed this plan"
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "सेटिंग्स"
         privacy: 
             visible to friends?: "क्या आप इस पाठक योजना के साथ अपनी गतिविधि मित्रों के बीच प्रत्य्क्ष करना चाहते हैं?"
@@ -1000,7 +1015,7 @@ hi:
                 now skipped: "यह पेज अब स्किप किया जायेगा।"
             features: 
                 read heading: "बाइबिल पढ़िए।"
-                read description: "मनपसंद चुने <strong>सौ से अधिक बाइबिल संस्करणों और भाषाओँ में </strong>। दो संस्करणों का सामानांतर तुलना करे। आप फॉण्ट और डिस्प्ले साइज़ भी चुन सकते हैं।अपना ऑनलाइन बाइबिल अनुभव अपने रुचि के अनुसार करे।"
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "बाइबिल अध्ययन करे।"
                 study description: "<strong>हाईलाइट </strong> करे अपने पसंदीदा रंगों में, <strong>बुकमार्क </strong> करे अपने पसंदीदा बाइबिल वचनों को तथा अध्ययन किये गए वचनों से अपना लेख बनाये।आपके द्वारा प्रभु के वचन अध्ययन में व्यतीत समय,आपका बाइबिल से पारस्परिक संबंध निर्माण का इतिहास रचा जा रहा हैं।"
                 subscribe heading: "बाइबिल पाठक योजना के सदस्य बने।"

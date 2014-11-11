@@ -128,6 +128,10 @@ vi:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Bây giờ"
     celebrating 50MM: "Chúc mừng 50 triệu lượt cài đặt ứng dụng!"
     link: "Đường dẫn"
@@ -192,6 +196,7 @@ vi:
     reader: "Bài đọc"
     lifechurch short url: "LifeChurch.tv"
     about: "Thông tin chung"
+    versions link: "Bản dịch"
     jobs: "Việc làm"
     privacy policy: "Quy định riêng tư"
     terms: "Điều khoản"
@@ -711,6 +716,14 @@ vi:
             reading: "bài đọc"
             readings: "bài đọc"
             readings 5 or more: "bài đọc"
+        stats: 
+            friends reading: 
+                other: "Có %{count} người bạn từng đăng ký kế hoạch này"
+            friends completed: 
+                other: "Có %{count} người bạn đã hoàn tất kế hoạch này"
+            total completions: "Hơn %{count} lượt hoàn tất"
+            view all: "Xem tất cả"
+            close: "Đóng"
         settings: "Cài đặt"
         privacy: 
             visible to friends?: "Bạn muốn bạn bè thấy được các hoạt động về kế hoạch của bạn?"
@@ -1000,7 +1013,7 @@ vi:
                 now skipped: "Trang này sẽ được bỏ qua."
             features: 
                 read heading: "Đọc Kinh Thánh"
-                read description: "Hãy lựa chọn từ <strong>hàng trăm bản Kinh Thánh và ngôn ngữ</strong>. Xem và so sánh hai bản cùng lúc. Chọn phông chữ và cỡ chữ. Trải nghiệm đọc Kinh Thánh theo ý bạn."
+                read description: "Lựa chọn từ <a href='%{versions_path}'>hàng trăm ngôn ngữ và bản dịch Kinh Thánh</a>. Xem hai bản dịch cùng lúc. Chọn phông chữ và cỡ chữ. Trải nghiệm Kinh Thánh trực tuyến theo cách của riêng bạn."
                 study heading: "Học Kinh Thánh"
                 study description: "Chọn <strong>màu tô</strong> bạn muốn, <strong>đánh dấu</strong> câu Kinh Thánh bạn yêu thích, và tạo ghi chú về những gì bạn học được. Bạn không chỉ dành thời gian cho Kinh Thánh mà còn ghi lại quá trình kinh nghiệm Lời Chúa của mình."
                 subscribe heading: "Đăng ký kế hoạch đọc Kinh Thánh"

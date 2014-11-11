@@ -128,6 +128,10 @@ tl:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Ngayon"
     celebrating 50MM: "Ipinagdiriwang 50 Million App Installs!"
     link: "Link"
@@ -192,6 +196,7 @@ tl:
     reader: "Mambabasa"
     lifechurch short url: "LifeChurch.tv"
     about: "Tungkol"
+    versions link: "Versions"
     jobs: "Mga Trabaho"
     privacy policy: "Patakaran sa Privacy"
     terms: "Mga Tuntunin"
@@ -711,6 +716,16 @@ tl:
             reading: "Babasahin"
             readings: "Mga Babasahin"
             readings 5 or more: "Mga Babasahin"
+        stats: 
+            friends reading: 
+                one: "%{count} friend subscribed to this plan"
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                one: "%{count} friend has completed this plan"
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "Mga Setting"
         privacy: 
             visible to friends?: "Gusto mo bang ipakita sa iyong mga kaibigan ang mga kaganapan sa iyong Plano?"
@@ -1000,7 +1015,7 @@ tl:
                 now skipped: "Ang pahinang ito ay lalaktawan na."
             features: 
                 read heading: "Basahin ang Bibliya."
-                read description: "Mamili mula sa <strong>daan-daang salin ng Bibliya at wika</strong>. Paghambingin ang dalawang salin. Maari ka ring pumili ng istilo ng titik at sukat nito. Iayon ang iyong online Bible experience sa iyong kagustuhan."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "Aralin ang Bibliya."
                 study description: "<strong>Mag-highlight</strong> gamit ang iyong gustong kulay,\n<strong>maglagay ng palatandaan</strong> sa mga paboritong bersikulo, at gumawa ng sariling tala sa mga aral na natututunan. Di ka lamang nagbibigay ng oras sa Salita ng Diyos, nakalilikha ka rin ng kasaysayan ng iyong pakikipag-ugnayan sa Bibliya."
                 subscribe heading: "Mag-subscribe sa mga Babasahing Gabay."

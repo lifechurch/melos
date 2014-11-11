@@ -128,6 +128,10 @@ it:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Ora"
     celebrating 50MM: "Celebrando 50 milioni di installazioni!"
     link: "Collegamento"
@@ -192,6 +196,7 @@ it:
     reader: "Lettore"
     lifechurch short url: "LifeChurch.tv"
     about: "Informazione"
+    versions link: "Versions"
     jobs: "Lavori"
     privacy policy: "Privacy"
     terms: "Condizioni"
@@ -711,6 +716,16 @@ it:
             reading: "lettura"
             readings: "letture"
             readings 5 or more: "letture"
+        stats: 
+            friends reading: 
+                one: "%{count} amico ha sottoscritto questo piano"
+                other: "%{count}amici hanno sottoscritto questo piano"
+            friends completed: 
+                one: "%{count} amico ha completato questo piano"
+                other: "%{count}amici hanno completato questo piano"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "Opzioni"
         privacy: 
             visible to friends?: "Vuoi che i tuoi amici vedano la tua attività con il Piano?"
@@ -1000,7 +1015,7 @@ it:
                 now skipped: "Questa pagina ora sara saltata."
             features: 
                 read heading: "Leggi la Bibbia"
-                read description: "Scegli tra <strong>centinaia di versioni della Bibba in tante lingue</strong>. Confronta due versioni affiancate. Puoi perfino scegliere il tuo font e grandezza caratteri. Adatta la tua esperienza della Bibbia online alle tue preferenze.."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "Studia la Bibbia"
                 study description: "<strong>Evidenzia</strong> nel tuo colore preferito, <strong>crea segnalibri</strong> per i tuoi versetti biblici preferiti, e scrivi delle note su quello che stai imparando. Oltre a passare del tempo nella Parola di Dio, stai costruendo la storia della tua interazione con la Bibbia."
                 subscribe heading: "Sottoscrivi dei Piani di Lettura della Bibbia."

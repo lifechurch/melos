@@ -4,7 +4,7 @@ fr:
         formats: 
             votd: "%-d %B %Y"
     counter: 
-        format: "999,999,999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Conversation et Découverte"
@@ -128,6 +128,10 @@ fr:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Maintenant"
     celebrating 50MM: "Célébration des 50 millions d'installations de cette app!"
     link: "Lien"
@@ -192,6 +196,7 @@ fr:
     reader: "Lecteur"
     lifechurch short url: "LifeChurch.tv"
     about: "À propos de"
+    versions link: "Versions"
     jobs: "Postes à pourvoir"
     privacy policy: "Politique de confidentialité"
     terms: "Conditions"
@@ -212,8 +217,8 @@ fr:
     save: "Sauver"
     cancel: "Annuler"
     try the beta: "Essayer la version bêta"
-    welcome to the beta: "Bienvenue à Bible.com!"
-    highlight: "verset en surbrillance"
+    welcome to the beta: "Bienvenue sur Bible.com !"
+    highlight: "Surligner le Verset"
     comment: "Nouveau commentaire"
     note: "Nouvelle note"
     selected: "Sélectionné"
@@ -222,7 +227,7 @@ fr:
     notes title: "Notes"
     friends: "Amis"
     groups: "Groupes"
-    mobile: "Applications mobile"
+    mobile: "Applications Mobiles"
     live: "Live/Groupes"
     first page: "Première page"
     last page: "Dernière page"
@@ -396,7 +401,7 @@ fr:
         all notes: "Toutes les notes"
         community notes: "Les notes de la communauté"
         new note: "Nouvelle note"
-        status field: "État de la note"
+        status field: "État de la note :"
         edit: "Modifier"
         delete: "Supprimer cette note"
         confirm delete: "Oui, je suis sûr"
@@ -409,7 +414,7 @@ fr:
         create failure: "Erreur d'enregistrement de la  note"
         destroy success: "Note supprimée"
         destroy failure: "Erreur de suppression de la  note"
-        update success: "Note actualisée"
+        update success: "Note mise à jour"
     ref: 
         loading secondary: "Charge les références dans la version secondaire..."
         clear verses: "Effacer les versets selectionnés"
@@ -485,7 +490,7 @@ fr:
         no devices download copy: "Basée sur la bible en ligne, YouVersion, la Bible App est une application biblique gratuite qui peut être installée sur n'importe quel appareil mobile. La Bible App permet aux utilisateurs de lire la Bible, partager des versets sur leurs réseaux sociaux, enregistrer leurs passages préférés et plus — le tout dans un format compatible avec leur mode de vie de plus en plus mobile. Consultez <a href='https://www.bible.com/fr/app'>bible.com/fr/app</a> depuis votre appareil mobile pour télécharger la Bible App et connecter votre compte !"
         yes delete: "Oui, supprimer mon compte."
         account delete success: "Votre compte YouVersion a été supprimé avec succès . Nous espérons que vous continuerez à trouver des moyens de méditer la Bible. Certaines de ces applications pourraient vous être utiles pour la suite : <a href='https://www.bible.com/free-bible-apps'>http://www.bible.com/free-bible-apps</a>"
-        delete account description: "Si vous supprimez votre compte, vous éliminerez de façon permanente tous vos informations, votre histoire, et vos données personnalisées (par exemple les notes, les marque-pages, les textes en surbrillance, etc.) sur Bible.com et l'appli Bible.   Cette action ne peut pas être annulée ou par vous ou par notre équipe.  Si vous êtes certain que vous voudriez procéder, allez-y en-dessous. "
+        delete account description: "Si vous supprimez votre compte, vous éliminerez de façon permanente toutes vos informations, votre histoire, et vos données personnalisées (par exemple les notes, les marque-pages, les textes en surbrillance, etc.) sur Bible.com et la Bible App. Cette action ne pourra pas être annulée par vous ou par notre équipe. Si vous êtes certain que vous voudriez continuer, poursuivez ci-dessous."
         user recent activity: "Les activités récentes de %{user}"
         my notes: "Mes notes"
         user notes: "Les notes de %{user}"
@@ -636,7 +641,7 @@ fr:
             notification errors: "Les erreurs suivantes ont empêché la mise à jour de vos notifications:"
             edit: "Modifier"
             bio: "Biographie"
-            complete_first_last: "Complétez votre profil en indiquant votre nom et prénom"
+            complete_first_last: "Complétez votre profil en indiquant vos nom et prénom"
         password: 
             updated: "Votre mot de passe a été mis à jour avec succès."
             error: "Désolé, une erreur s'est produite lors de la modification de votre mot de passe."
@@ -645,7 +650,7 @@ fr:
             badges: "M'informer des nouveaux badges gagnés"
             follower: "M'informer lorsqu'une personne me suit"
             newsletter: "Me informé des annonces de YouVersion"
-            contact_joins: "Notify me when a Contact joins"
+            contact_joins: "M'avertir lorsqu'un Contact s'inscrit"
             note_like: "Me signaler quand une personne aime mes notes"
             reading_plans: "M'informer au sujet des plans de lecture que j'ai commencés"
             publishing partners: "Tenez-moi informés au sujet des nouvelles concernant les partenaires de contenu de YouVersion."
@@ -665,7 +670,7 @@ fr:
         labels label: "Étiquettes:"
         title: "Favoris"
         my labels: "Mes Etiquettes"
-        all labels: "Show All"
+        all labels: "Tout Montrer"
         not found: "Les signets vous permettent de vous souvenir de ce que vous avez lu en dernier, vous servant ainsi de guide de référence rapide vers vos passages préférés ou encore vers le dernier chapitre que vous avez lu dans un livre en particulier. Afin de créer un signet, sélectionnez un verset dans le lecteur de la Bible, puis cliquez le bouton Signet."
         other user not found: "%{username} n'a pas encore de favoris."
         creation form errors: "L'erreur suivante a empêché la création de votre signet:"
@@ -711,6 +716,16 @@ fr:
             reading: "lecture"
             readings: "lectures"
             readings 5 or more: "lectures"
+        stats: 
+            friends reading: 
+                one: "%{count} ami est abonné à ce plan"
+                other: "%{count} amis sont abonnés à ce plan"
+            friends completed: 
+                one: "%{count} ami a terminé ce plan"
+                other: "%{count} amis ont terminé ce plan"
+            total completions: "Plus de %{count} terminés"
+            view all: "Tout Voir"
+            close: "Fermer"
         settings: "Paramètres"
         privacy: 
             visible to friends?: "Voulez-vous que vos amis voient votre activité de Plans de Lecture ?"
@@ -915,7 +930,7 @@ fr:
         creation form errors: "L'erreur suivante a empêché l'enregistrement de votre don:"
     download ad: 
         title: "Télécharger la Bible App gratuite"
-        description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
+        description copy: "Des centaines de versions dans plus de %{language_count} langues différentes - la Bible qui vous accompagne partout."
         line 1: "Des centaines de traductions"
         line 2: "dans plus de 100 langues. La"
         line 3: "Bible qui vous suit partout."
@@ -943,7 +958,7 @@ fr:
         facebook: "YouVersion sur Facebook"
         twitter: "YouVersion sur Twitter"
         support: "Besoin d'aide avec YouVersion?"
-        lead copy: "Basée sur la Bible en ligne, Bible.com/fr, la Bible App est une Bible mobile gratuite qui peut être installée sur presque n'importe quel téléphone. La Bible App permet aux utilisateurs de lire la Bible, de partager des versets sur leurs réseaux sociaux, de marquer leurs passages favoris, et bien plus encore! Le tout dans un format correspondant à leur mode de vie actif."
+        lead copy: "Basée sur la Bible en ligne, Bible.com/fr, la Bible App est une Bible mobile gratuite qui peut être installée sur presque n'importe quel téléphone. La Bible App permet aux utilisateurs de lire la Bible, de partager des versets sur leurs réseaux sociaux, de marquer leurs passages favoris, et bien plus encore ! Le tout dans un format correspondant à leur mode de vie actif."
         resources title: "Revue de presse"
         now title: "Actuel dans la communauté YouVersion"
         resources: 
@@ -963,7 +978,7 @@ fr:
     mobile page: 
         h2: "La Parole de Dieu vous accompagne."
         h3: "YouVersion est Planétaire"
-        h3 sub: "Available in more than %{language_count} languages worldwide."
+        h3 sub: "Disponible dans plus de %{language_count} langues dans le monde entier."
         main: "Des dizaines de millions de personnes utilisent l'application Bible App™ pour appliquer la Parole de Dieu dans leur quotidien. Téléchargez l'application gratuite et accédez à vos favoris, notes et plans de lecture où que vous vous trouviez. Profitez des centaines de versions disponibles, y compris des versions audio, tout cela à partir de votre appareil mobile."
         button h4: "Aller sur Bible.com/fr/app"
         button h4 sub: "Sur votre appareil mobile"
@@ -984,7 +999,7 @@ fr:
         symbian: "Symbian"
         mobile web: "Mobile Web"
         amazon: "Tablette Kindle Fire"
-        free overlay: "100% Free"
+        free overlay: "100% Gratuit"
     pages: 
         generic_error: 
             title: "Oups!"
@@ -1000,7 +1015,7 @@ fr:
                 now skipped: "Cette page sera maintenant passée."
             features: 
                 read heading: "Lire la Bible."
-                read description: "Faites votre choix à partir <strong>de centaines de versions bibliques et langues</strong>. Comparez deux versions l'une à côté de l'autre. Vous pouvez même choisir votre police et la taille de l'écran. Personnalisez autant que vous le souhaitez votre utilisation de la Bible en ligne."
+                read description: "Faites votre choix <a href='%{versions_path}'>parmi des centaines de langues et traductions bibliques</a>. Comparez deux versions côte à côte. Vous pouvez même choisir la taille d'affichage et de police. Faites de votre expérience de la Bible ce que vous attendez."
                 study heading: "Etudier la Bible"
                 study description: "<strong>Surlignez</strong>avec votre couleur préférée, <strong>sauvegardez</strong> vos versets bibliques préférés, et prenez des notes à propos de ce que vous apprenez. Non seulement vous passez le temps dans la Parole de Dieu, mais vous bâtissez aussi une histoire de votre interaction avec la Bible."
                 subscribe heading: "S'abonner aux Plans biblques."

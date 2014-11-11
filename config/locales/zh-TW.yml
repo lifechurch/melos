@@ -128,6 +128,10 @@ zh-TW:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "現在"
     celebrating 50MM: "慶祝5000萬次的安裝！"
     link: "鏈結"
@@ -192,6 +196,7 @@ zh-TW:
     reader: "閱讀器"
     lifechurch short url: "LifeChurch.tv"
     about: "關於"
+    versions link: "譯本"
     jobs: "工作機會"
     privacy policy: "隱私政策"
     terms: "使用條款"
@@ -711,6 +716,14 @@ zh-TW:
             reading: "個閱讀內容"
             readings: "個閱讀內容"
             readings 5 or more: "個閱讀內容"
+        stats: 
+            friends reading: 
+                other: "%{count}位朋友訂閱了此計劃"
+            friends completed: 
+                other: "%{count}位朋友完成此計劃"
+            total completions: "完成次數超過%{count}"
+            view all: "查看全部"
+            close: "關閉"
         settings: "設定"
         privacy: 
             visible to friends?: "您是否要公開您的計劃活動給朋友看？"
@@ -1000,7 +1013,7 @@ zh-TW:
                 now skipped: "從現在起，將被自動跳過此頁。"
             features: 
                 read heading: "閱讀聖經"
-                read description: "從<strong>數以百計的聖經譯本和語言</strong>中任意選擇。並排比較兩個譯本。甚至可以選擇字體和顯示大小。用您自己喜歡的方式來閱讀線上聖經。"
+                read description: "從<a href='%{versions_path}'>數以百計的聖經譯本和語言</a>中任意選擇。並排比較兩個譯本。甚至可以選擇字體和顯示大小。用您自己喜歡的方式來閱讀線上聖經。"
                 study heading: "研讀聖經"
                 study description: "用您喜愛的顏色來設定<strong>醒目標記</strong>、為您喜歡的聖經經節設定<strong>標籤</strong>、還有將您的學習心得寫在筆記裡。您其實不只是花時間閱讀神的話語，您也同時在記錄親身體驗聖經的過程。"
                 subscribe heading: "訂閱讀經計畫"

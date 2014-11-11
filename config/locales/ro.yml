@@ -128,6 +128,10 @@ ro:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Acum"
     celebrating 50MM: "Sărbătorind 50 de milioane de instalări ale aplicației!"
     link: "Legătură"
@@ -192,6 +196,7 @@ ro:
     reader: "Cititor"
     lifechurch short url: "LifeChurch.tv"
     about: "Despre"
+    versions link: "Versiuni"
     jobs: "Angajări"
     privacy policy: "Politica de confidențialitate"
     terms: "Termeni"
@@ -711,6 +716,18 @@ ro:
             reading: "lectură"
             readings: "lecturi"
             readings 5 or more: "lecturi"
+        stats: 
+            friends reading: 
+                one: "%{count} prieten s-a abonat la acest plan"
+                few: "%{count} prieteni s-au abonat la acest plan"
+                other: "%{count} prieteni s-au abonat la acest plan"
+            friends completed: 
+                one: "%{count} prieten a terminat acest plan"
+                few: "%{count} prieteni au terminat acest plan"
+                other: "%{count} prieteni au terminat acest plan"
+            total completions: "Completat de peste %{count} de ori"
+            view all: "Vezi tot"
+            close: "Închide"
         settings: "Setări"
         privacy: 
             visible to friends?: "Dorești ca prietenii tăi să vadă activitatea ta legată de Planurile de citire?"
@@ -1000,7 +1017,7 @@ ro:
                 now skipped: "Această pagină va fi sărită."
             features: 
                 read heading: "Citește Biblia."
-                read description: "Alege din <strong>sute de versiuni și limbi ale Bibliei</strong>. Compară două versiuni afișate una alături de alta. Poți chiar să-ți alegi mărimea textului și a modului de afișare. Poți experimenta Biblia online exact așa cum îți dorești."
+                read description: "Alege din <a href='%{versions_path}'>sute de versiuni și limbi ale Bibliei</a>. Compară două versiuni una lângă alta. Poți chiar să alegi fontul și mărimea afișării. Creează-ți experiența Bibliei on-line exact așa cum îți place."
                 study heading: "Studiază Biblia."
                 study description: "<strong>Evidențiază</strong> cu culoarea favorită, <strong>marchează-ți</strong> versetele favorite și ia notițe din ceea ce înveți. Nu numai că petreci timp cu Cuvântul lui Dumnezeu dar îți faci și un istoric al interacțiunii tale cu Biblia."
                 subscribe heading: "Abonează-te la Planurile de citire."

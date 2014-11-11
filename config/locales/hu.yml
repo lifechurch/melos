@@ -128,6 +128,10 @@ hu:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Most"
     celebrating 50MM: "50 millió applikáció telepítésének ünneplése"
     link: "Link"
@@ -192,6 +196,7 @@ hu:
     reader: "Olvasó"
     lifechurch short url: "LifeChurch.tv"
     about: "Rólunk"
+    versions link: "Fordítások"
     jobs: "Álláslehetőség"
     privacy policy: "Adatvédelmi irányelvek"
     terms: "ÁSZF"
@@ -711,6 +716,16 @@ hu:
             reading: "Biblia olvasás"
             readings: "Biblia olvasás"
             readings 5 or more: "Biblia olvasás"
+        stats: 
+            friends reading: 
+                one: "{0} barát iratkozott fel erre a tervre"
+                other: "%{count} barát iratkozott fel erre a tervre"
+            friends completed: 
+                one: "%{count} barát végezte el ezt a tervet"
+                other: "%{count} barát végezte el ezt a tervet"
+            total completions: "Több mint %{count} elvégzett terv"
+            view all: "Összes megtekintése"
+            close: "Bezár"
         settings: "Beállítások"
         privacy: 
             visible to friends?: "Szeretnéd, hogy a barátaid lássák a tevékenységed a tervben?"
@@ -1000,7 +1015,7 @@ hu:
                 now skipped: "Ez az oldal ki lesz hagyva."
             features: 
                 read heading: "Olvasd a Bibliát."
-                read description: "Válassz <strong>több száz Biblia fordítás és nyelv</strong>közül. Hasonlíts össze két fordítást egymás mellett. Még a betűtípust és a méretet is kiválaszthatod.Tedd az online Biblia élményedet pontosan olyanná, amilyennek szeretnéd!"
+                read description: "Válassz <a href='%{versions_path}'>több száz Biblia fordítás és nyelv közül</a>. Hasonlíts össze két fordítást egymás mellett. A betűtípust és a méretet is kiválaszthatod. Legyen az online Biblia élményed olyan, amilyennek szeretnéd."
                 study heading: "Tanulmányozd a Bibliát."
                 study description: "<strong>Emeld ki</strong>kedvelt színeddel, <strong>tégy könyvjelzőt</strong> kedvelt Biblia verseidhez és jegyzeteld ki, amit tanultál. Nem csupán Isten Igéjével töltesz időt, hanem feljegyzést is készíthesz a Bibliával való foglalkozásaidról."
                 subscribe heading: "Iratkozz fel Biblia tervekre."
