@@ -196,7 +196,7 @@ sv:
     reader: "Läsare"
     lifechurch short url: "LifeChurch.tv"
     about: "Om"
-    versions link: "Versions"
+    versions link: "Översättningar"
     jobs: "Jobb"
     privacy policy: "Integritetspolicy"
     terms: "Villkor"
@@ -718,14 +718,14 @@ sv:
             readings 5 or more: "läsningar"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "{0} vän prenumererar på denna plan"
+                other: "%{count} vänner prenumererar på denna plan"
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+                one: "{0} vän har fullföljt denna plan"
+                other: "%{count} vänner har fullföljt denna plan"
+            total completions: "Över %{count} färdigt"
+            view all: "Visa alla"
+            close: "Stäng"
         settings: "Inställningar"
         privacy: 
             visible to friends?: "Vill du att dina vänner ska se dina planaktiviteter?"
@@ -1015,7 +1015,7 @@ sv:
                 now skipped: "Den här sidan hoppas nu över."
             features: 
                 read heading: "Läs Bibeln."
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "Välj bland <a href='%{versions_path}'>hundratals bibelöversättningar och språk</a>. Jämför två översättningar sida vid sida. Du kan till och med välja typsnitt och visningsstorlek. Gör din bibelupplevelse online precis som du vill ha den."
                 study heading: "Studera Bibeln."
                 study description: "<strong>Markera</strong> i din favoritfärg, <strong>spara</strong> dina favoritverser och anteckna det du lär dig. Du spenderar inte bara tid i Guds Ord, utan du bygger din historia över hur du interagerar med Bibeln."
                 subscribe heading: "Följ bibelplaner."

@@ -18,7 +18,9 @@ module YV
             instance.kind_color       = plan_data.kind_color
             instance.moment_title     = t(plan_data.base.title["l_str"],plan_data.base.title["l_args"])
             instance.body_text        = plan_data.base.body.str
-            instance.action_url       = (plan_data.extras.plan_id.nil? or plan_data.extras.slug.nil?) ? "" :"/reading-plans/" + plan_data.extras.plan_id.to_s + "-" + plan_data.extras.slug.to_s
+            instance.action_url       = "/reading-plans/#{plan_data.extras.plan_id}-#{plan_data.extras.slug}" if (plan_data.extras.plan_id.present? and plan_data.extras.slug.present?)
+            instance.action_url       ||= "/reading-plans/#{plan_data.extras.plan_id}" if plan_data.extras.plan_id.present?
+            instance.action_url       ||= ""
             instance.plan_id          = plan_data.extras.plan_id
 
             # Common moment elements

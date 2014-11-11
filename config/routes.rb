@@ -29,7 +29,8 @@ YouversionWeb::Application.routes.draw do
   end
   
   resource :notifications, only: [:show, :edit, :update]
-  
+  resources :vod_subscriptions, only: [:index, :create, :destroy]
+
   # Custom campaign pages
   scope module: 'campaigns' do
     get "/100million",    to: "pages#hundred_million"
@@ -76,7 +77,6 @@ YouversionWeb::Application.routes.draw do
     resource :password, only: [:show,:update]
     resource :avatar,   only: [:show,:update],  path: "picture"
     resources :devices, only: [:index,:destroy]
-    resources :vod_subscriptions
 
     # bible.com/users/:id/connections => connections#index    
     get :connections, on: :member, to: "connections#index", as: 'connections'

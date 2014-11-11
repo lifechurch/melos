@@ -196,7 +196,7 @@
     reader: "Leser"
     lifechurch short url: "LifeChurch.tv"
     about: "Om"
-    versions link: "Versions"
+    versions link: "Versjoner"
     jobs: "Jobber"
     privacy policy: "Personvernserklæring"
     terms: "Vilkår"
@@ -723,9 +723,9 @@
             friends completed: 
                 one: "%{count} venn har fullført denne planen"
                 other: "%{count} venner har fullført denne planen"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+            total completions: "Mer enn %{count} fullførte"
+            view all: "Se alle"
+            close: "Lukk"
         settings: "Innstillinger"
         privacy: 
             visible to friends?: "Vil du at dine venner skal se leseplanaktivitetene dine?"
@@ -1015,7 +1015,7 @@
                 now skipped: "Denne siden vil ikke lenger vises."
             features: 
                 read heading: "Les Bibelen."
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "Velg mellom <a href='%{versions_path}'>hundre bibelversjoner og språk</a>. Sammenlign to versjoner ved siden av hverandre. Du kan også velge skrifttype og størrelse. La din opplevelse av Bibelen på nett bli slik du vil ha den."
                 study heading: "Studer Bibelen."
                 study description: "<strong>Marker</strong> med din favorittfarge, <strong>legg inn bokmerker</strong> ved dine favorittvers, og skriv notater om det du lærer. Ikke bare bruker du tid på Guds ord, du får også en oversikt over hvordan du bruker Bibelen."
                 subscribe heading: "Abonner på en leseplan."

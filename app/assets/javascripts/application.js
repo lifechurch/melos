@@ -45,6 +45,7 @@
 //= require ./menus/friends
 //= require ./menus/nav_mobile
 //= require ./menus/menu_group
+//= require slick.min
 //= require_self
 //= require jquery.slimscroll.min.js
 //= require jstz-1.0.4

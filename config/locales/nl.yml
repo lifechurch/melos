@@ -196,7 +196,7 @@ nl:
     reader: "Leesvenster"
     lifechurch short url: "LifeChurch.tv"
     about: "Over"
-    versions link: "Versions"
+    versions link: "Versies"
     jobs: "Vacatures"
     privacy policy: "Privacybeleid"
     terms: "Voorwaarden"
@@ -718,14 +718,14 @@ nl:
             readings 5 or more: "Lezingen"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count} vriend heeft zich voor dit leesplan aangemeld"
+                other: "%{count} vrienden hebben zich voor dit leesplan aangemeld"
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+                one: "%{count} vriend heeft dit leesplan voltooid"
+                other: "%{count} vrienden hebben dit leesplan voltooid"
+            total completions: "Meer dan %{count} voltooid"
+            view all: "Bekijk alles"
+            close: "Sluiten"
         settings: "Instellingen"
         privacy: 
             visible to friends?: "Wil jij dat jouw Leesplan activiteit zichtbaar is voor jouw vrienden?"

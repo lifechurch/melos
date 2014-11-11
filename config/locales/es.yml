@@ -196,7 +196,7 @@ es:
     reader: "Lector"
     lifechurch short url: "LifeChurch.tv"
     about: "Acerca de"
-    versions link: "Versions"
+    versions link: "Versiones"
     jobs: "Empleos"
     privacy policy: "Políticas de Privacidad"
     terms: "Términos"
@@ -718,14 +718,14 @@ es:
             readings 5 or more: "lecturas"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count} amigo inscrito en este pan."
+                other: "%{count} amigos inscritos en este plan."
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+                one: "%{count} amigo ha terminado este plan"
+                other: "%{count} amigos han terminado este plan "
+            total completions: "Más de un %{count} terminados"
+            view all: "Ver todos"
+            close: "finalizado"
         settings: "Configuración"
         privacy: 
             visible to friends?: "¿Desea que sus amigos vean la actividad de su Plan?"
@@ -1015,7 +1015,7 @@ es:
                 now skipped: "Esta página ya no será mostrada."
             features: 
                 read heading: "Lee la Biblia."
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "  <a href='%{versions_path}'>Escoja una opción entre los centenares de versiones e idiomas de la Biblia.</a>Compare dos versiones una al lado de la otra. Puede incluso elegir el tipo y el tamaño de letra en la pantalla.  Haga que su experiencia en linea sea exactamente lo que desea."
                 study heading: "Estudia la Biblia."
                 study description: "<strong>Resalta</strong> tus versículos con tu color favorito, <strong>Marca</strong> tus versículos favoritos, y crea notas acerca de lo que estas aprendiendo. No solo estás invirtiendo tiempo en la Palabra de Dios, también estás construyendo una historia de tu interacción con la Biblia."
                 subscribe heading: "Subscribete a los Planes de Lectura de la Biblia."

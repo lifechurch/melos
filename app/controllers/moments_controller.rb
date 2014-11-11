@@ -65,6 +65,8 @@ class MomentsController < BaseMomentsController
   # Before filter looks up the moment type and redirects to the appropriate resourceful route if present
   # TODO - skip any before filters that arent necessary
   def show
+    @user           = current_user
+    @subscriptions  = Subscription.all(@user, auth: current_auth).map! { |s| s.id }
     respond_to do |format|
       format.html
       format.json # renders show.json.jbuilder

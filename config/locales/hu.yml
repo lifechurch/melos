@@ -196,7 +196,7 @@ hu:
     reader: "Olvasó"
     lifechurch short url: "LifeChurch.tv"
     about: "Rólunk"
-    versions link: "Versions"
+    versions link: "Fordítások"
     jobs: "Álláslehetőség"
     privacy policy: "Adatvédelmi irányelvek"
     terms: "ÁSZF"
@@ -718,14 +718,14 @@ hu:
             readings 5 or more: "Biblia olvasás"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "{0} barát iratkozott fel erre a tervre"
+                other: "%{count} barát iratkozott fel erre a tervre"
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+                one: "%{count} barát végezte el ezt a tervet"
+                other: "%{count} barát végezte el ezt a tervet"
+            total completions: "Több mint %{count} elvégzett terv"
+            view all: "Összes megtekintése"
+            close: "Bezár"
         settings: "Beállítások"
         privacy: 
             visible to friends?: "Szeretnéd, hogy a barátaid lássák a tevékenységed a tervben?"
@@ -1015,7 +1015,7 @@ hu:
                 now skipped: "Ez az oldal ki lesz hagyva."
             features: 
                 read heading: "Olvasd a Bibliát."
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "Válassz <a href='%{versions_path}'>több száz Biblia fordítás és nyelv közül</a>. Hasonlíts össze két fordítást egymás mellett. A betűtípust és a méretet is kiválaszthatod. Legyen az online Biblia élményed olyan, amilyennek szeretnéd."
                 study heading: "Tanulmányozd a Bibliát."
                 study description: "<strong>Emeld ki</strong>kedvelt színeddel, <strong>tégy könyvjelzőt</strong> kedvelt Biblia verseidhez és jegyzeteld ki, amit tanultál. Nem csupán Isten Igéjével töltesz időt, hanem feljegyzést is készíthesz a Bibliával való foglalkozásaidról."
                 subscribe heading: "Iratkozz fel Biblia tervekre."

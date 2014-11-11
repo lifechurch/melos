@@ -54,7 +54,7 @@ module YV
 
         merged.concat(ms)
         merged.concat(vods)
-        merged.concat(client_side_moments)
+        merged.concat(client_side_moments) if client_side_moments.present?
         merged.sort_by {|obj| obj.created_at}.reverse
       end
 
@@ -106,7 +106,7 @@ module YV
       end
 
       def client_side_moments
-        @client_side_moments ||= Moment.client_side_items(auth: @auth)
+        @client_side_moments = Moment.client_side_items(auth: @auth)
         # Trim down the array of CSM to moments with dates that are today or recent 
         @client_side_moments = @client_side_moments.select{|m| m.expanded_dt.any?{|d| d.to_date <= Date.today } } if @client_side_moments.present?
         # Set the created_dt on the moments so the moment merges into the feed

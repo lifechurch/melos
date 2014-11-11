@@ -718,14 +718,14 @@ fr:
             readings 5 or more: "lectures"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count} ami est abonné à ce plan"
+                other: "%{count} amis sont abonnés à ce plan"
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+                one: "%{count} ami a terminé ce plan"
+                other: "%{count} amis ont terminé ce plan"
+            total completions: "Plus de %{count} terminés"
+            view all: "Tout Voir"
+            close: "Fermer"
         settings: "Paramètres"
         privacy: 
             visible to friends?: "Voulez-vous que vos amis voient votre activité de Plans de Lecture ?"
@@ -1015,7 +1015,7 @@ fr:
                 now skipped: "Cette page sera maintenant passée."
             features: 
                 read heading: "Lire la Bible."
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "Faites votre choix <a href='%{versions_path}'>parmi des centaines de langues et traductions bibliques</a>. Comparez deux versions côte à côte. Vous pouvez même choisir la taille d'affichage et de police. Faites de votre expérience de la Bible ce que vous attendez."
                 study heading: "Etudier la Bible"
                 study description: "<strong>Surlignez</strong>avec votre couleur préférée, <strong>sauvegardez</strong> vos versets bibliques préférés, et prenez des notes à propos de ce que vous apprenez. Non seulement vous passez le temps dans la Parole de Dieu, mais vous bâtissez aussi une histoire de votre interaction avec la Bible."
                 subscribe heading: "S'abonner aux Plans biblques."

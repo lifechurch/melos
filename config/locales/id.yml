@@ -196,7 +196,7 @@ id:
     reader: "Pembaca"
     lifechurch short url: "LifeChurch.tv"
     about: "Perihal"
-    versions link: "Versions"
+    versions link: "Versi"
     jobs: "Lowongan Kerja"
     privacy policy: "Kebijakan Privasi"
     terms: "Persyaratan"
@@ -718,12 +718,12 @@ id:
             readings 5 or more: "bacaan"
         stats: 
             friends reading: 
-                other: "%{count} friends subscribed to this plan"
+                other: "%{count} teman berlangganan rencana ini"
             friends completed: 
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+                other: "%{count} teman menyelesaikan rencana ini"
+            total completions: "Lebih dari %{count} penyelesaian"
+            view all: "Lihat Semua"
+            close: "Tutup"
         settings: "Pengaturan"
         privacy: 
             visible to friends?: "Anda ingin teman-teman Anda melihat aktifitas Rencana Anda?"
@@ -1013,7 +1013,7 @@ id:
                 now skipped: "Halaman ini akan dilewatkan sekarang."
             features: 
                 read heading: "Baca Alkitab."
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "Pilih dari <a href='%{versions_path}'>ratusan versi dan bahasa Alkitab</a>. Bandingkan dua versi berdampingan. Anda bahkan bisa pilih huruf dan ukuran tampilan. Buat pengalaman Alkitab daring sesuka Anda."
                 study heading: "Pelajari Alkitab."
                 study description: "<strong>Soroti</strong> dengan warna favorit Anda,<strong>markahi</strong> ayat-ayat Alkitab favorit Anda, dan buat catatan tentang apa yang Anda pelajari. Bukan hanya meluangkan waktu bersama Firman Tuhan, Anda sedang membangun riwayat interaksi dengan Alkitab."
                 subscribe heading: "Berlangganan Rencana Alkitab."

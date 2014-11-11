@@ -718,9 +718,9 @@ ms:
             readings 5 or more: "pembacaan"
         stats: 
             friends reading: 
-                other: "%{count} rakan melanggan pelan ini"
+                other: "%{count} sahabat melanggan pelan ini"
             friends completed: 
-                other: "%{count} rakan telah melengkapkan pelan ini"
+                other: "%{count} sahabat telah melengkapkan pelan ini"
             total completions: "Lebih %{count} pelengkapan"
             view all: "Lihat Semua"
             close: "Tutup"
