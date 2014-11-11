@@ -64,6 +64,7 @@
 
           %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("notifications.title") }
             =t("notifications.title")
+            %span.notifications-count
           = render partial: "shared/header/notifications"
 
       - else
