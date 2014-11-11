@@ -128,6 +128,10 @@ de:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Jetzt"
     celebrating 50MM: "Zur Feier der 50 Mio. Downloads!"
     link: "Link"
@@ -192,6 +196,7 @@ de:
     reader: "Leseansicht"
     lifechurch short url: "LifeChurch.tv"
     about: "Über"
+    versions link: "Übersetzungen"
     jobs: "Stellen"
     privacy policy: "Datenschutzrichtlinie"
     terms: "AGB"
@@ -711,6 +716,16 @@ de:
             reading: "Lesung"
             readings: "Lesungen"
             readings 5 or more: "Lesungen"
+        stats: 
+            friends reading: 
+                one: "%{count} Freund hat diesen Leseplan abonniert"
+                other: "%{count} Freunde haben diesen Leseplan abonniert"
+            friends completed: 
+                one: "%{count} Freund hat diesen Leseplan abgeschlossen"
+                other: "%{count} Freunde haben diesen Leseplan abgeschlossen"
+            total completions: "Über %{count} Leute haben diesen Leseplan wurde abgeschlossen"
+            view all: "Alle anzeigen"
+            close: "Schließen"
         settings: "Einstellungen"
         privacy: 
             visible to friends?: "Sollen deine Freunde deine Leseplanaktivitäten sehen?"
@@ -1000,7 +1015,7 @@ de:
                 now skipped: "Diese Seite wird von nun an übersprungen."
             features: 
                 read heading: "Lies die Bibel."
-                read description: "Du kannst zwischen <strong>hunderten von Bibelübersetzungen und Sprachen</strong> wählen, jeweils zwei Übersetzungen parallel lesen und die Schriftart und -größe so einstellen, wie es dir gefällt. Die Online-Bibel maßgeschneidert!"
+                read description: "Wähle zwischen <a href='%{versions_path}'>hunderten von Bibelübersetzungen und Sprachen</a>. Du kannst zwei Übersetzungen parallel lesen und wählen, wie groß die Schrift und die Anzeige sein sollen. So passt du die Art und Weise, wie du die Bibel online erlebst, ganz deinen Bedürfnissen an."
                 study heading: "Studiere die Bibel."
                 study description: "<strong>Markiere</strong> Verse in deiner Lieblingsfarbe, lege <strong>Lesezeichen</strong> für Lieblingsverse an und mache Notizen über das, was du lernst. Du verbringst nicht nur Zeit im Wort Gottes, du baust auch eine Chronik deines Bibelstudiums auf."
                 subscribe heading: "Abonniere Bibellesepläne."

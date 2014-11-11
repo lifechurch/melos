@@ -128,6 +128,10 @@ af:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Nou"
     celebrating 50MM: "Vier 50 Miljoen App Installasies!"
     link: "Skakel"
@@ -192,6 +196,7 @@ af:
     reader: "Leser"
     lifechurch short url: "LifeChurch.tv"
     about: "Omtrent Ons"
+    versions link: "Vertalings"
     jobs: "Werk"
     privacy policy: "Privaatheidsbeleid"
     terms: "Terme"
@@ -711,6 +716,16 @@ af:
             reading: "leesstuk"
             readings: "lees gedeeltes"
             readings 5 or more: "Lees gedeeltes"
+        stats: 
+            friends reading: 
+                one: "%{count} vriend het vir hierdie plan ingeskryf"
+                other: "%{count} vriende het vir hierdie plan ingeskryf"
+            friends completed: 
+                one: "%{count} vriend het hierdie plan voltooi"
+                other: "%{count} vriende het hierdie plan voltooi"
+            total completions: "Meer as %{count} voltooi"
+            view all: "Kyk na almal"
+            close: "Maak toe"
         settings: "Verstellings"
         privacy: 
             visible to friends?: "Wil jy hê jou vriende moet jou Plan aktiwiteite sien?"
@@ -1000,7 +1015,7 @@ af:
                 now skipped: "Hierdie bladsy sal nou oorgeslaan word."
             features: 
                 read heading: "Lees die Bybel."
-                read description: "Kies uit <strong>honderde Bybelweergawes en tale</strong>. Vergelyk twee weergawes sy aan sy. Jy kan selfs jou lettertipe en -grootte kies. Maak jou aanlyn-Bybelondervinding net soos jy daarvan hou."
+                read description: "Maak u keuse van honderde Bybel-vertalings en tale. <a href='%{versions_path}'>Maak u keuse uit honderde Bybel-vertalings en tale.</a>Maak u keuse uit honderde Bybel-vertalings en tale. Vergelyk twee vertaling langs mekaar. Jy kan selfs jou letter- en skermgrootte kies. Maak u aanlyn Bybel ervaring presies soos u dit verkies."
                 study heading: "Bestudeer die Bybel"
                 study description: "<sterk>Kleurmerk</sterk> in jou gunsteling kleur,<sterk>boekmerk</sterk> jou gunsteling Bybelverse en maak notas van wat jy leer. Nie alleenlik spandeer jy tyd met God se Woord nie, maar jy bou ook 'n geskiedenis van jou interaksie met die Bybel op."
                 subscribe heading: "Teken in op Bybelplanne."

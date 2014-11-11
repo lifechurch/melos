@@ -128,6 +128,10 @@ km:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "ឥឡូវ"
     celebrating 50MM: "អប​អរសាទការ​តម្លើងកម្មវិធី 50លាន​ដង!"
     link: "តំណ​ភ្ជាប់"
@@ -192,6 +196,7 @@ km:
     reader: "កម្ម​វិធី​អាន"
     lifechurch short url: "LifeChurch.tv"
     about: "អំពីរ"
+    versions link: "Versions"
     jobs: "ការងារ"
     privacy policy: "ច្បាប់​ជាឯកជន"
     terms: "លក្ខខណ្ឌ័"
@@ -711,6 +716,14 @@ km:
             reading: "ការ​អាន"
             readings: "ការ​អាន"
             readings 5 or more: "ការ​អាន"
+        stats: 
+            friends reading: 
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "ការ​កំណត់"
         privacy: 
             visible to friends?: "តើ​លោក​អ្នក​ចង់​អោយ​មិត្ត​ភ័ក្រ្ត​របស់​លោក​អ្នក​ឃើញ​គំរោង​ផែន​ការ​សកម្ម​ភាព​របស់​លោក​អ្នក​ដែរ​ឬទេ?"
@@ -1000,7 +1013,7 @@ km:
                 now skipped: "ទំព័រនៃនឹងមិនត្រូវបានរំលងទេ ។"
             features: 
                 read heading: "អានព្រះគម្ពីរ"
-                read description: "យកជម្រើសរបស់អ្នកពី <strong>​ព្រះគម្ពីររាប់រយជំនាន់ និង រាប់រយភាសា​</strong>. ប្រៀបធៀបជំនាន់ពីរ​ នៅម្ខាងមួយជំនាន់ជាប់គ្នា ។ អ្នក​ក៏អាច​ជ្រើស​រើសពុម្ពអក្សរ និងទំហំបញ្ចាំងផងដែរ ។​ សូមធ្វើឱ្យបទ​ពិសោធន៍​ព្រះគម្ពីរ​លើបណ្ដាញរបស់អ្នក ស្ថិតក្នុងលក្ខណៈដែលអ្នក​ពេញចិត្ត ។"
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "សិក្សាព្រះគម្ពីរ ។"
                 study description: "<strong>គូសពណ៌</strong> តាម​ពណ៌​ចំណូល​ចិត្ត​របស់​អ្នក, <strong>កំណត់​ចំណាំ</strong> នូវ​ខព្រះគម្ពីរចំណូលចិត្ត​របស់​អ្នក ហើយ​បង្កើត​កំណត់ត្រា​អំពីរ​អ្វី​ដែល​អ្នក​បាន​រៀន។ មិន​ត្រឹម​តែ​បាន​ចំណាយ​ពេល​ជាមួយ​នឹង​ព្រះបន្ទូល​របស់​ព្រះប៉ុណ្ណោះ​ទេ អ្នក​កំពុង​តែ​បង្កើត​ប្រវត្តិនៃ​ការ​ប្រស្រ័យ​របស់​អ្នក​ជាមួយ​ព្រះ​គម្ពីរ"
                 subscribe heading: "ជាវគម្រោងសិក្សាព្រះគម្ពីរជាប្រចាំ"

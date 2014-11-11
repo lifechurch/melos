@@ -128,6 +128,10 @@ tr:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Şu Anki Durum"
     celebrating 50MM: "50 Milyon Uygulama İndirildi!"
     link: "Link"
@@ -192,6 +196,7 @@ tr:
     reader: "Okuyucu"
     lifechurch short url: "LifeChurch.tv"
     about: "Hakkında"
+    versions link: "Versions"
     jobs: "Çalışma İmkânları"
     privacy policy: "Gizlilik Politikası"
     terms: "Koşullar"
@@ -665,7 +670,7 @@ tr:
         labels label: "Etiketler:"
         title: "Yer İmleri"
         my labels: "Etiketlerim"
-        all labels: "Show All"
+        all labels: "Hepsini Gör"
         not found: "Yer imleri en sevdiğiniz ayetleri veya herhangi bir kitapta son okuduğunuz bölümü çabukça bulmanızı sağlar. Yer imi nasıl eklenir: Kutsal Kitap Okuyucusunda bir ayet seçin. Ondan sonra okuyucunun araç çubuğundaki Seçim düğmesini tıklayın."
         other user not found: "%{username} henüz yer imi kaydetmedi."
         creation form errors: "Şu hata(lar) yer iminizin kaydedilmesini engelledi:"
@@ -711,6 +716,16 @@ tr:
             reading: "okuma"
             readings: "okumalar"
             readings 5 or more: "okumalar"
+        stats: 
+            friends reading: 
+                one: "%{count} friend subscribed to this plan"
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                one: "%{count} friend has completed this plan"
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "Ayarlar"
         privacy: 
             visible to friends?: "Arkadaşlarınızın okuma planı etkinliğinizi görmesini istiyor musunuz?"
@@ -1000,7 +1015,7 @@ tr:
                 now skipped: "Bu sayfa artık gösterilmeyecek."
             features: 
                 read heading: "Kutsal Kitap'ı okuyun."
-                read description: "<strong>Yüzlerce dildeki yüzlerce çeviriden</strong> seçiniz. İki  çeviriyi yan yana koyup karşılaştırın. Yazı tipi ve görüntü boyutunu bile ayarlayabilirsiniz. On-line Kutsal Kitap deneyiminiz tam istediğiniz gibi olsun."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "Kutsal Kitap'ı çalışın."
                 study description: "En sevdiğiniz renkleri kullanarak <strong>vurgalayın</strong>, en sevdiğiniz Kutsal Kitap ayetleri <strong>yer imlerinize ekleyin</strong>, ve öğrendikleriniz hakkında notlar yazın. Tanrı'nın Sözü ile vakit geçirmekten öte, Kutsal Kitap ile etkileşiminizin tarihini kaydediyorsunuz."
                 subscribe heading: "Kutsal Kitap okuma planlarına abone olun."

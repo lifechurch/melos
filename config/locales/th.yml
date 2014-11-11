@@ -128,6 +128,10 @@ th:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "ตอนนี้"
     celebrating 50MM: "ร่วมฉลองการติดตั้งแอพครบ 50 ล้านครั้ง!"
     link: "ลิงค์"
@@ -192,6 +196,7 @@ th:
     reader: "ตัวอ่าน"
     lifechurch short url: "LifeChurch.tv"
     about: "เกี่ยวกับ"
+    versions link: "ฉบับ"
     jobs: "งาน"
     privacy policy: "นโยบายความเป็นส่วนตัว"
     terms: "ข้อตกลง"
@@ -711,6 +716,14 @@ th:
             reading: "ตัวอ่าน"
             readings: "กำลังอ่าน"
             readings 5 or more: "กำลังอ่าน"
+        stats: 
+            friends reading: 
+                other: "เพื่อน %{count} คนได้สมัครแผนการอ่านนี้"
+            friends completed: 
+                other: "เพื่อน %{count} คนได้อ่านแผนการอ่านนี้จบแล้ว"
+            total completions: "มากกว่า %{count} คนที่อ่านจบแล้ว"
+            view all: "แสดงทั้งหมด"
+            close: "ปิด"
         settings: "การตั้งค่า"
         privacy: 
             visible to friends?: "คุณต้องการให้เพื่อนของคุณเห็นความเคลื่อนไหวของแผนการอ่านหรือไม่?"
@@ -1000,7 +1013,7 @@ th:
                 now skipped: "จากนี้ไป หน้านี้จะถูกข้ามไป"
             features: 
                 read heading: "อ่านพระคัมภีร์"
-                read description: "เลือกจาก <strong>พระคัมภีร์กว่าร้อยฉบับในหลากหลายภาษา</strong> เปรียบเทียบระหว่างพระคัมภีร์สองฉบับแบบเทียบเคียงกัน คุณสามารถเลือกได้แม้กระทั่ง รูปแบบตัวอักษร และขนาดของตัวอักษร เชิญรับประสบการณ์พระคัมภีร์ออนไลน์ในแบบที่คุณต้องการ"
+                read description: "เลือกจากพระคัมภีร์ที่ถูกแปลไว้ <a href='%{versions_path}'>หลายร้อยฉบับและภาษา</a>เปรียบเทียบฉบับแปล คุณสามารถเลือกแบบและขนาดอักษร เลือกประสบการณ์กับพระคัมภีร์ออนไลน์ด้วยตัวคุณเอง"
                 study heading: "การศึกษาพระคัมภีร์"
                 study description: "<strong>เน้นข้อพระคำ</strong> ด้วยสีที่คุณชื่นชอบ <strong>คั่นหน้า</strong> ข้อพระคัมภีร์ที่คุณชื่นชอบ และจดบันทึกเกี่ยวกับสิ่งที่คุณเรียนรู้ ไม่เพียงแต่คุณได้ใช้เวลากับพระคำของพระเจ้า แต่คุณจะกำลังสร้างเรื่องราวของคุณในการมีปฏิสัมพันธ์กับพระคัมภีร์"
                 subscribe heading: "สมัครรับแผนการอ่านพระคัมภีร์"

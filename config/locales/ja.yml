@@ -128,6 +128,10 @@ ja:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "現在…"
     celebrating 50MM: "アプリのインストール数が5000万に達しました!"
     link: "リンク"
@@ -192,6 +196,7 @@ ja:
     reader: "聖書リーダー"
     lifechurch short url: "LifeChurch.tv"
     about: "概要"
+    versions link: "Versions"
     jobs: "求人"
     privacy policy: "プライバシー規約"
     terms: "利用規約"
@@ -711,6 +716,14 @@ ja:
             reading: "読書"
             readings: "読書"
             readings 5 or more: "読書"
+        stats: 
+            friends reading: 
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "設定"
         privacy: 
             visible to friends?: "この読書プランでのアクティビティを、友だちから見えるようにしたいですか？"
@@ -1000,7 +1013,7 @@ ja:
                 now skipped: "今後はこのページは表示されません"
             features: 
                 read heading: "聖書を読む"
-                read description: "<strong>豊富な数の聖書訳と言語</strong>から選べます。2つの聖書訳を並べて、比較することも出来ます。文字フォントやサイズも選べます。お好みに合わせてアレンジして、オンライン聖書を 活用しましょう。"
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "聖書を学ぶ"
                 study description: "お好きな色で<strong>ハイライト</strong> できます。お気に入りの聖句に<strong>ブックマーク</strong> をつけたり、学んだことをノートに書き留めることも出来ます。神様の御言葉を学ぶだけでなく、聖書との交わりの歴史を築いていけるのです。"
                 subscribe heading: "聖書プランに参加"

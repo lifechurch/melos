@@ -128,6 +128,10 @@ es:
             youversion: "YouVersion: La Biblia App Más Popular Del Mundo"
             in partnership: "en alianza con"
             one hope: "One Hope: Extraordinario Contenido Bíblico Para Niños"
+        links: 
+            apple: "https://itunes.apple.com/es/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=es"
+            amazon: "http://www.amazon.es/gp/product/B00GURLC40/ref=s9_simh_gw_p405_d0_i1?pf_rd_m=A1AT7YVPFBWXBL&pf_rd_s=center-2&pf_rd_r=1WX8YET74CZYR4SQJW9A&pf_rd_t=101&pf_rd_p=455357367&pf_rd_i=602357031"
     now: "Ahora"
     celebrating 50MM: "¡Celebrando 50 millones de instalaciones!"
     link: "Enlace"
@@ -192,6 +196,7 @@ es:
     reader: "Lector"
     lifechurch short url: "LifeChurch.tv"
     about: "Acerca de"
+    versions link: "Versiones"
     jobs: "Empleos"
     privacy policy: "Políticas de Privacidad"
     terms: "Términos"
@@ -711,6 +716,16 @@ es:
             reading: "lectura"
             readings: "lecturas"
             readings 5 or more: "lecturas"
+        stats: 
+            friends reading: 
+                one: "%{count} amigo inscrito en este pan."
+                other: "%{count} amigos inscritos en este plan."
+            friends completed: 
+                one: "%{count} amigo ha terminado este plan"
+                other: "%{count} amigos han terminado este plan "
+            total completions: "Más de un %{count} terminados"
+            view all: "Ver todos"
+            close: "finalizado"
         settings: "Configuración"
         privacy: 
             visible to friends?: "¿Desea que sus amigos vean la actividad de su Plan?"
@@ -1000,7 +1015,7 @@ es:
                 now skipped: "Esta página ya no será mostrada."
             features: 
                 read heading: "Lee la Biblia."
-                read description: "Haz tu elección de entre <strong>cientos de Versiones Bíblicas</strong>. Compara dos versiones paralelamente. Elige el tipo y tamaño de letra. Personaliza a tu gusto tu experiencia de la Biblia en-línea."
+                read description: "  <a href='%{versions_path}'>Escoja una opción entre los centenares de versiones e idiomas de la Biblia.</a>Compare dos versiones una al lado de la otra. Puede incluso elegir el tipo y el tamaño de letra en la pantalla.  Haga que su experiencia en linea sea exactamente lo que desea."
                 study heading: "Estudia la Biblia."
                 study description: "<strong>Resalta</strong> tus versículos con tu color favorito, <strong>Marca</strong> tus versículos favoritos, y crea notas acerca de lo que estas aprendiendo. No solo estás invirtiendo tiempo en la Palabra de Dios, también estás construyendo una historia de tu interacción con la Biblia."
                 subscribe heading: "Subscribete a los Planes de Lectura de la Biblia."
