@@ -1,5 +1,7 @@
 class NotificationsController < ApplicationController
 
+  layout 'settings'
+
   respond_to :html, :json
 
   before_filter :force_login, only: [:show]
@@ -10,15 +12,12 @@ class NotificationsController < ApplicationController
     respond_with @notifications
   end
 
-
   def edit
-    @user = get_user
+    @current_user = get_user
     @results = NotificationSettings.find(params[:token].present? ? {token: params[:token]} : {auth: current_auth})
     @settings = @results.data
     self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)
-    render layout: "settings"
   end
-
 
   def update
     @settings = NotificationSettings.find(params[:token] ? {token: params[:token]} : {auth: current_auth})
@@ -29,7 +28,6 @@ class NotificationsController < ApplicationController
     else
       @user = get_user
       flash[:error] = t('users.profile.notification errors')
-      render :settings
     end
   end
 

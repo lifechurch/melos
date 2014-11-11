@@ -6,7 +6,10 @@ class VodSubscriptionsController < ApplicationController
   before_filter :find_vod_subscription
 
   def index
-    @devices = current_user.devices
+   @devices = current_user.devices if current_user.present? and current_user.auth.present?
+   # One of these might work, depending on how the API returns devices with token auth.
+   # @devices = current_user.present? ? current_user.devices : User.find(@vod_subscription.user.devices)
+   # @devices ||= @current_user.devices if @current_user.present?
   end
 
   def create
@@ -15,27 +18,35 @@ class VodSubscriptionsController < ApplicationController
     time = "#{params[:hour]}:#{params[:minute]}:00"
     @vod_subscription = {email: {version_id: nil}, push: {version_id: nil}} if @vod_subscription.errors.present?
     @vod_subscription[params[:type].to_sym] = { time: time, version_id: params[:version_id] }
-    @vod_subscription.merge!(auth: current_user.auth)
+    params[:token].present? ? @vod_subscription.merge!(token: params[:token]) : @vod_subscription.merge!(auth: current_user.auth)
     @results = VodSubscription.create(@vod_subscription)
     flash[:notice] = t('users.vod_subscription success') unless @results.errors.present?
     flash[:notice] = t('users.vod_subscription failure') if @results.errors.present?
     return redirect_to moments_path if params[:redirect_to] == "moments"
-    return redirect_to user_vod_subscriptions_path
+    return redirect_to vod_subscriptions_path
   end
 
   def destroy
    @vod_subscription[params[:id].to_sym] = { email: {time: nil, version_id: nil} }
-   @results = VodSubscription.delete(@vod_subscription.merge(auth: current_user.auth))
+   params[:token].present? ? @vod_subscription.merge!(token: params[:token]) : @vod_subscription.merge!(auth: current_user.auth)
+   @results = VodSubscription.delete(@vod_subscription)
    flash[:notice] = t('users.vod_subscription success') unless @results.respond_to? :errors
    flash[:notice] = t('users.vod_subscription failure') if @results.respond_to? :errors
-   return redirect_to user_vod_subscriptions_path(user_id: current_user.username)
+   return redirect_to vod_subscriptions_path
 
+  end
+
+  def current_user
+    @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
+    if settings = NotificationSettings.find({token: params[:token]})
+      @current_user ||= User.find(settings.user_id)
+    end
   end
 
   private
 
   def find_vod_subscription
-    @vod_subscription = VodSubscription.all(auth: current_user.auth)
+    @vod_subscription =  params[:token].present? ? VodSubscription.all(token: params[:token]) : VodSubscription.all(auth: current_user.auth)
   end
 
 end
