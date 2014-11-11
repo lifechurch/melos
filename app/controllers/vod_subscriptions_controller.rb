@@ -37,8 +37,9 @@ class VodSubscriptionsController < ApplicationController
   end
 
   def current_user
+    @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
     if settings = NotificationSettings.find({token: params[:token]})
-      @current_user = User.find(settings.user_id)
+      @current_user ||= User.find(settings.user_id)
     end
   end
 
