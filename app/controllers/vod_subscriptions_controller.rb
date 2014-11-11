@@ -6,8 +6,10 @@ class VodSubscriptionsController < ApplicationController
   before_filter :find_vod_subscription
 
   def index
+   @devices = current_user.devices if current_user.present? and current_user.auth.present?
+   # One of these might work, depending on how the API returns devices with token auth.
    # @devices = current_user.present? ? current_user.devices : User.find(@vod_subscription.user.devices)
-   @devices = current_user.devices if current_user.present?
+   # @devices ||= @current_user.devices if @current_user.present?
   end
 
   def create
@@ -32,6 +34,12 @@ class VodSubscriptionsController < ApplicationController
    flash[:notice] = t('users.vod_subscription failure') if @results.respond_to? :errors
    return redirect_to vod_subscriptions_path
 
+  end
+
+  def current_user
+    if settings = NotificationSettings.find({token: params[:token]})
+      @current_user = User.find(settings.user_id)
+    end
   end
 
   private
