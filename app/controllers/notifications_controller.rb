@@ -33,6 +33,14 @@ class NotificationsController < ApplicationController
     end
   end
 
+  def destroy
+    # This method is for clearing (marking as read) notifications
+    # Rather than shoehorning this into update (messy), or separating controllers (probably the best option, but most complex)
+    Notification.read!(auth: current_auth)
+    # No error checking client side, so pull a Nike and Just Do It
+    render json: true
+  end
+
   private
 
   def get_user

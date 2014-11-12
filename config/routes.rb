@@ -24,7 +24,7 @@ YouversionWeb::Application.routes.draw do
     post :offer, on: :collection
   end
   
-  resource :notifications, only: [:show, :edit, :update]
+  resource :notifications, only: [:show, :edit, :update, :destroy]
   
   # Custom campaign pages
   scope module: 'campaigns' do

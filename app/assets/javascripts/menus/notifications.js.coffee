@@ -16,15 +16,18 @@ class window.Menus.Notifications extends window.Menus.Base
 
     @container        = @base_element.find(".popover-data-container")    
     @template         = JST["menus/notifications"]
-    @api_url          = "/notifications.json?length=5"
+    @api_url         = "/notifications"
     @popover          = $(@trigger_el).next('.header-popover')
     @badge            = $('.notifications-count')
     @preload()
 
   preload: ->
-    request = $.ajax @api_url,
+    request = $.ajax 
+        url: @api_url
         type: "GET"
         dataType: "json"
+        data:
+          length: 5
 
     request.done (data) =>
       @data = data
@@ -32,7 +35,6 @@ class window.Menus.Notifications extends window.Menus.Base
 
   setupBadge: ->
     if @data && @data[0]
-      # console.log(@data[0].attributes.new_count)
       unless @data[0].attributes.new_count == 0
         @badge.html(@data[0].attributes.new_count)
         @badge.show()
@@ -44,13 +46,27 @@ class window.Menus.Notifications extends window.Menus.Base
     if @data?
       @show()
     else
-      request = $.ajax @api_url,
+      request = $.ajax 
+        url: @api_url
         type: "GET"
         dataType: "json"
+        data:
+          length: 5
+
 
       request.done (data) =>
         @data = data
         @show
+
+  readNotifications: ->
+    request = $.ajax
+      url: @api_url
+      type: "DELETE"
+      dataType: "json"
+
+    request.done (data) =>
+      @badge.html("0")
+      @badge.hide()
 
   # Present our data to the template and render it to our container.
   show: ()->
@@ -61,9 +77,11 @@ class window.Menus.Notifications extends window.Menus.Base
     )
     Page.prototype.orientAndResize()
 
+
   open: ->
     super
     @popover.show().animate({'opacity' : '1'}, 200);
+    @readNotifications()
     @load()
 
   close: ->

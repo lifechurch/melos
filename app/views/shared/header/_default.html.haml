@@ -57,6 +57,7 @@
         .user_options
           %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("friendships.requests title") }
             =t("friendships.requests title")
+            %span.friend-request-count.badge
           - if current_user.enable_friendships?
             = render partial: "shared/header/friends"
           - else
@@ -64,7 +65,7 @@
 
           %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("notifications.title") }
             =t("notifications.title")
-            %span.notifications-count
+            %span.notifications-count.badge
           = render partial: "shared/header/notifications"
 
       - else
