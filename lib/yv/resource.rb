@@ -484,6 +484,9 @@ module YV
       self.class.cache_for(length,opts)
     end
 
+    def inspect
+      self.attributes
+    end
 
     private
 

@@ -40,7 +40,7 @@ class window.Menus.Friends extends window.Menus.Base
   setupBadge: ->
     if @data && @data.incoming && @data.incoming.length
       @badge.html(@data.incoming.length)
-      @badge.show()
+      @badge.css('display', 'inline-block');
 
   load: ->
     if @data?

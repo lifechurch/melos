@@ -37,7 +37,7 @@ class window.Menus.Notifications extends window.Menus.Base
     if @data && @data[0]
       unless @data[0].attributes.new_count == 0
         @badge.html(@data[0].attributes.new_count)
-        @badge.show()
+        @badge.css('display', 'inline-block');
         
  
   load: ->
