@@ -20,13 +20,27 @@ class window.Menus.Friends extends window.Menus.Base
     @template     = JST["menus/friends"]
     @api_url      = "/friendships/requests.json"
     @popover      = $(@trigger_el).next('.header-popover')
+    @badge        = $('.friend-request-count')
+    @preload()
 
     # Listen for a specific event to open this menu (moment intro page)
     Events.Emitter.addListener "menu:friend-requests:open", $.proxy(@open,@)
     Events.Emitter.addListener "menu:friend-requests:close", $.proxy(@close,@)
 
-    return
 
+  preload: ->
+    request = $.ajax @api_url,
+        type: "GET"
+        dataType: "json"
+
+    request.done (data) =>
+      @data = data
+      @setupBadge()
+
+  setupBadge: ->
+    if @data && @data.incoming && @data.incoming.length
+      @badge.html(@data.incoming.length)
+      @badge.show()
 
   load: ->
     if @data?
@@ -39,10 +53,6 @@ class window.Menus.Friends extends window.Menus.Base
       request.done (data) =>
         @data = data
         @show()
-        return
-
-    return
-    
 
   show: ()->
     $(@container).html(@template({requests: @data, i18n: @i18n}))
@@ -54,11 +64,6 @@ class window.Menus.Friends extends window.Menus.Base
     @popover.show().animate({'opacity' : '1'}, 200);
     @load()
 
-    return
-
-
   close: ->
     super
     @popover.animate({'opacity' : '0'}, 200, "swing", @popover.hide());
-
-    return
