@@ -141,7 +141,11 @@ module ApplicationHelper
   end
 
   def app_page_path
-    "https://bible.com/#{I18n.locale}/app"
+    "https://www.bible.com/#{I18n.locale}/app"
+  end
+
+  def kids_page_path
+    "https://www.bible.com/#{I18n.locale}/kids"
   end
 
   def bible_path(ref=nil, opts={})
