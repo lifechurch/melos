@@ -128,6 +128,10 @@ sq:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Tani"
     celebrating 50MM: "Duke festuar 50 milion instalime të programit!"
     link: "Lidhje"
@@ -192,6 +196,7 @@ sq:
     reader: "Lexuesi"
     lifechurch short url: "LifeChurch.tv"
     about: "Rreth nesh"
+    versions link: "Versionet"
     jobs: "Vende pune"
     privacy policy: "Politika e privatësisë"
     terms: "Kushtet"
@@ -711,6 +716,16 @@ sq:
             reading: "lexim"
             readings: "lexime"
             readings 5 or more: "lexime"
+        stats: 
+            friends reading: 
+                one: "%{count} mik është pajtuar në këtë plan"
+                other: "%{count} miq janë pajtuar në këtë plan"
+            friends completed: 
+                one: "%{count} mik e ka përfunduar këtë plan"
+                other: "%{count} miq e kanë përfunduar këtë plan"
+            total completions: "Mbi %{count} përfundime"
+            view all: "Shiko të gjitha"
+            close: "Mbylli"
         settings: "Cilësimet"
         privacy: 
             visible to friends?: "A doni që miqtë ta shohin aktivitetin tuaj të planit?"
@@ -1000,7 +1015,7 @@ sq:
                 now skipped: "Kjo faqe do të kalohet tani."
             features: 
                 read heading: "Lexo Biblën."
-                read description: "Bëje zgjedhjen tënde nga <strong> qindra versione dhe gjuhë të Biblës</strong>. Krahaso dy versione përballë njëri-tjetrit. Madje mund të zgjedhësh llojin e shkrimit dhe madhësinë e tij. Bëjeni përvojën tuaj online të Biblës pikërisht ashtu siç e pëlqeni."
+                read description: "Bëj zgjedhjen tënde nga <a href='%{versions_path}'>qindra versione dhe gjuhë të Biblës.</a>. Krahaso dy versione përkrah njëri-tjetrit. Mund të zgjedhësh edhe shkrimin dhe madhësinë e tekstit që të pëlqen. Bëje përvojën tënde të Biblës në internet ashtu siç të pëlqen."
                 study heading: "Studio Biblën."
                 study description: "<strong>Theksoni</strong> me ngjyrën tuaj të preferuar, <strong>shënoni</strong> vargjet tuaja biblike të preferuara dhe krijoni shënime rreth asaj që mësoni. Jo vetëm që kaloni kohë në Fjalën e Perëndisë, por edhe ndërtoni një histori të bashkëveprimit tuaj me Biblën."
                 subscribe heading: "Pajtohu te planet e leximit"

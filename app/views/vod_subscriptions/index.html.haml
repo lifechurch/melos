@@ -1,4 +1,15 @@
 :ruby
+  settings = {
+    "moments"       => t('users.notifications.moments'),
+    "contact_joins"  => t('users.notifications.contact_joins'),
+    "comments"      => t('users.notifications.comments'),
+    "likes"         => t('users.notifications.likes'),
+    "friendships"   => t('users.notifications.friendships'),
+    "reading_plans" => t('users.notifications.reading_plans'),
+    "badges"        => t('users.notifications.badges'),
+    "newsletter"    => t('users.notifications.newsletter')
+  }
+  
   @title = t('users.vod_subscriptions')
   @setting_selected = :vod_subscriptions
   @allowed_hours = (1..12).to_a.map { |n| n.to_s.rjust(2, '0') }

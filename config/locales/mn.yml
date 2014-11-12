@@ -128,6 +128,10 @@ mn:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Одоо"
     celebrating 50MM: "50 Сая Апп суулгагдсан баяраа тэмдэглэж байна!"
     link: "Холбоос"
@@ -192,6 +196,7 @@ mn:
     reader: "Уншигч"
     lifechurch short url: "LifeChurch.tv"
     about: "Тухай"
+    versions link: "Библийн хувилбарууд"
     jobs: "Aжлын байр"
     privacy policy: "Хувийн мэдээллийн талаарх Баримтлал"
     terms: "Журам"
@@ -711,6 +716,16 @@ mn:
             reading: "уншлага"
             readings: "уншлагууд"
             readings 5 or more: "уншлагууд"
+        stats: 
+            friends reading: 
+                one: " {0} найз энэ төлөвлөгөөг эхлэсэн"
+                other: "%{count} 2 с дээш найзууд энэ төлөвлөгөөг эхлэсэн"
+            friends completed: 
+                one: "%{count} 2 с дээш найзууд энэ уншлагын төлөвлөгөөг дуусгасан."
+                other: "%{count} 2 с дээш найзууд энэ уншлагын төлөвлөгөөг дуусгасан."
+            total completions: "%{count} гаруй уншиж дуусгасан"
+            view all: "Бүгдийг нь Харах"
+            close: "Хаах"
         settings: "Тохиргоо"
         privacy: 
             visible to friends?: "Та өөрийн найзууддаа Төлөвлөгөөний үйл ажиллагаагаа харуулахыг хүсч байна уу?"
@@ -1000,7 +1015,7 @@ mn:
                 now skipped: "Хуудсыг дахин харуулахгүй."
             features: 
                 read heading: "Библи Унш."
-                read description: "100 гаруй <strong>төрлийн орчуулга болон хэлний сонголт бий</strong>. Хоёр орчуулга хамт харьцуулаж болно.  Үсэг болно дэлгэцний хэмжээг сонгож болно. Та онлайн Библийн туршлагаа ѳѳрийнхѳѳ хувд бие болох үү."
+                read description: "Библийн &lt;a href='%{versions_path}'&gt;хэдэн зуун хувилбарууд болон орчуулгуудаас сонголтоо хийгээрэй&lt;/a&gt;. <a href='%{versions_path}'>Библийн &lt;a href='%{versions_path}'&gt;хэдэн зуун хувилбарууд болон орчуулгуудаас сонголтоо хийгээрэй&lt;/a&gt;. %{versions_path}'&gt;&lt;/a&gt; </a>Хоёр хувилбарыг зэрэгцүүлэн харж харьцуулаарай. Үсгийн хэмжээ, фонтоо хүртэл сонгох боломжтой. Библийг онлайнаар судлахдаа хүссэн хэлбэрээрээ судла."
                 study heading: "Библи Сур."
                 study description: "Ѳнгѳѳр <strong>тодруулах</strong>, таалагдсан Библийн ишлэлүүдээ <strong>хавчуурга</strong> үүсгэх, мѳн сураж байгаа зүйлсийг тэмдэглэж болно. Та зөвхөн Бурханы Үгэнд цагийг өгч байгаа биш, та Библитэй харилцах түүхээ бичиж/байгуулж байна."
                 subscribe heading: "Библийн Тѳлѳвлѳгѳѳг Бүртгүүлэх."

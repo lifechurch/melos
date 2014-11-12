@@ -128,6 +128,10 @@ cs:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Aktuálně"
     celebrating 50MM: "Oslavujeme 50 milionů instalací aplikace!"
     link: "Odkaz"
@@ -192,6 +196,7 @@ cs:
     reader: "Čtenář"
     lifechurch short url: "LifeChurch.tv"
     about: "O aplikaci"
+    versions link: "Versions"
     jobs: "Zaměstnání"
     privacy policy: "Ochrana soukromí"
     terms: "Podmínky"
@@ -665,7 +670,7 @@ cs:
         labels label: "Štítky:"
         title: "Záložky"
         my labels: "Moje štítky"
-        all labels: "Show All"
+        all labels: "Zobrazit vše"
         not found: "Záložky vám dají rychlý přehled vašich oblíbených pasáží nebo poslední kapitolu, kterou jste četli v dané knize. Pro přidání záložky zvolte verš v prohlížení Bible a klikněte na tlačítko v horní části prohlížeče."
         other user not found: "Uživatel %{username} zatím neuložil žádné záložky."
         creation form errors: "Následující chyby neumožnily vytvořit záložku:"
@@ -711,6 +716,18 @@ cs:
             reading: "čtení"
             readings: "čtení"
             readings 5 or more: "čtení"
+        stats: 
+            friends reading: 
+                one: "%{count} friend subscribed to this plan"
+                few: "%{count} friends subscribed to this plan"
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                one: "%{count} friend has completed this plan"
+                few: "%{count} friends have completed this plan"
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "Nastavení"
         privacy: 
             visible to friends?: "Přejete si, aby mohli vaši přátelé zobrazovat vaši aktivitu u Plánů čtení?"
@@ -1000,7 +1017,7 @@ cs:
                 now skipped: "Tato stránka bude přeskočena."
             features: 
                 read heading: "Čtěte Bibli."
-                read description: "Vyberte si ze <strong>stovek jazyků a překladů Bible</strong>. Porovnávejte dva překlady vedle sebe. Můžete si také zvolit font a velikost písma. Uzpůsobte si váš online zážitek s Biblí tak, jak vám to vyhovuje."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "Studujte Bibli."
                 study description: "<strong>Zvýrazňujte</strong> vaší oblíbenou barvou, vytvářejte <strong>záložky</strong> k vašim oblíbeným biblickým veršům a pište si poznámky o tom, co se právě učíte. Netrávíte jen čas s Božím Slovem, vytváříte historii vaší interakce s Biblí."
                 subscribe heading: "Vyberte si plán čtení Bible."

@@ -128,6 +128,10 @@ ca:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Ara"
     celebrating 50MM: "Estem celebrant que l'aplicació s'ha instal·lat 50 milions de vegades!"
     link: "Enllaç"
@@ -192,6 +196,7 @@ ca:
     reader: "Lector"
     lifechurch short url: "LifeChurch.tv"
     about: "Sobre"
+    versions link: "Versions"
     jobs: "Treballa"
     privacy policy: "Política de privacitat"
     terms: "Termes"
@@ -711,6 +716,16 @@ ca:
             reading: "lectura"
             readings: "lectures"
             readings 5 or more: "lectures"
+        stats: 
+            friends reading: 
+                one: "%{count} amistat està subscrita a aquest pla"
+                other: "%{count}amistats estan subscrites a aquest pla"
+            friends completed: 
+                one: "%{count} amistat ha completat aquest pla"
+                other: "%{count}amistats han completat aquest pla"
+            total completions: "Aquest pla ha estat completat més de %{count}vegades"
+            view all: "Veure-ho tot"
+            close: "Tanca"
         settings: "Configuració"
         privacy: 
             visible to friends?: "Vols que els teus amics vegin l'activitat del teu Pla?"
@@ -1000,7 +1015,7 @@ ca:
                 now skipped: "Aquesta pàgina ja no es mostrarà."
             features: 
                 read heading: "Llegeix la Bíblia"
-                read description: "Escull entre <strong>centenars d'idiomes i de versions de la Bíblia</strong>. Compara dues versions, una al costat de l'altra. Tria el tipus i la mida de la lletra. Fes que la teva experiència de la Bíblia en línia sigui tal i com a tu t'agrada."
+                read description: "Escull entre centenars d'idiomes i versions de la Bíblia. <a href='%{versions_path}'></a>Compara dues versions de costat. Fins i tot pots escollir el teu tipus i mida de lletra. Fes que la teva experiència en línia amb la Bíblia sigui exactament com a tu t'agrada."
                 study heading: "Estudia la Bíblia."
                 study description: "<strong>Ressalta</strong> en el teu color preferit, <strong>marca</strong> els teus versets preferits, i pren notes sobre el que estàs aprenent. No només estàs passant temps amb la Paraula de Déu; estàs construint una història de la teva interacció amb la Bíblia."
                 subscribe heading: "Subscriu-te a Plans de la Bíblia."

@@ -128,6 +128,10 @@ pt:
             youversion: "YouVersion: o App da Bíblia mais popular do mundo"
             in partnership: "em parceria com"
             one hope: "One Hope: Extraordinário conteúdo Bíblico para Crianças"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Agora"
     celebrating 50MM: "Comemorando 50 milhões de instalações!"
     link: "Link"
@@ -192,6 +196,7 @@ pt:
     reader: "Bíblia"
     lifechurch short url: "LifeChurch.tv"
     about: "Sobre"
+    versions link: "Versões"
     jobs: "Empregos"
     privacy policy: "Política de Privacidade"
     terms: "Termos"
@@ -711,6 +716,16 @@ pt:
             reading: "leitura"
             readings: "Leitura"
             readings 5 or more: "Leitura"
+        stats: 
+            friends reading: 
+                one: "%{count} amigo se inscreveu neste plano"
+                other: "%{count} amigos se increveram neste plano"
+            friends completed: 
+                one: "%{count} amigo completou este plano"
+                other: "%{count} amigos completaram este plano"
+            total completions: "Mais de %{count} completaram"
+            view all: "Ver Todos"
+            close: "Fechar"
         settings: "Configurações"
         privacy: 
             visible to friends?: "Gostaria que suas atividades neste Plano sejam visíveis aos seus amigos?"
@@ -1000,7 +1015,7 @@ pt:
                 now skipped: "Esta página não será pulada"
             features: 
                 read heading: "Leia a Bíblia."
-                read description: "Escolha entre <strong>centenas de versões Bíblicas e idiomas</strong>. Compare duas versões lado a lado. Você pode até mesmo escolher a fonte e o tamanho da exibição. Personalize sua experiência online da Bíblia."
+                read description: "Escolha entre <a href='%{versions_path}'>centenas de idiomas e versões da Bíblia</a>. Compare duas versões lado a lado. Você pode até escolher o tipo e tamanho da fonte. Tenha uma experiência com a Bíblia online do jeito que você gosta."
                 study heading: "Estude a Bíblia."
                 study description: "<strong>Destaque</strong> com sua cor favorita, <strong>marque</strong> seus versículos favoritos, e faça anotações sobre o que está aprendendo. Você não estará apenas passando um tempo na Palavra de Deus, mas estará construindo uma história de interação com a Bíblia."
                 subscribe heading: "Inscreva-se em Planos de Leitura de Bíblia."

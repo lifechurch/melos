@@ -1,12 +1,13 @@
 - # sub template should define a @setting_selected variable with allowed values of:
 - # :edit, :notifications, :email, :password, :devices, :account, :vod_subscriptions
 - # found in users/_mobile_menu partial
+- current_user ||= @current_user
 
 - content_for :title do
   = t('users.settings')
 
 - content_for :sidebar do
-  = render partial: "widgets/settings" if current_user.present?
+  = render partial: "widgets/settings", locals: {current_user: current_user} if current_user.present?
 
 = render layout: "layouts/base" do
   

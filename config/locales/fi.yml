@@ -128,6 +128,10 @@ fi:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Nyt"
     celebrating 50MM: "Juhlimme 50 miljoonatta asennettua sovellusta!"
     link: "Linkki"
@@ -192,6 +196,7 @@ fi:
     reader: "Lukija"
     lifechurch short url: "LifeChurch.tv"
     about: "Tietoa"
+    versions link: "Käännökset"
     jobs: "Töihin"
     privacy policy: "Yksityisyyskäytännöt"
     terms: "Käyttöehdot"
@@ -711,6 +716,16 @@ fi:
             reading: "kohta"
             readings: "kohdat"
             readings 5 or more: "kohdat"
+        stats: 
+            friends reading: 
+                one: "%{count} ystävä aloitti tämän suunnitelman"
+                other: "%{count} ystävää aloitti tämän suunnitelman"
+            friends completed: 
+                one: "%{count} ystävä on suorittanut tämän suunnitelman"
+                other: "%{count} ystävää on suorittanut tämän suunnitelman"
+            total completions: "Yli %{count} suorituskertaa"
+            view all: "Näytä kaikki"
+            close: "Sulje"
         settings: "Asetukset"
         privacy: 
             visible to friends?: "Haluatko ystäviesi näkevän suunnitelmaan liittyvän toimintasi?"
@@ -1000,7 +1015,7 @@ fi:
                 now skipped: "Tämä sivu ohitetaan."
             features: 
                 read heading: "Lue Raamattua."
-                read description: "Valitse <strong>sadoista Raamatun käännöksistä ja kielistä</strong>. Vertaile kahta käännöstä rinnakkain. Voit jopa valita kirjasimen ja sen koon. Tee Raamatun lukemisesta omanlaisesi kokemus."
+                read description: "Valitse <a href='%{versions_path}'>sadoista raamatun käännöksistä ja kielistä</a>. Vertaile kahta käännöstä vieretysten. Voit myös valita kirjasimen tyylin ja koon. Tee verkkoraamatustasi juuri sellainen kuin haluat."
                 study heading: "Perehdy Raamattuun."
                 study description: "<strong>Korosta</strong> lempivärilläsi, <strong>merkitse</strong> lempijakeesi, tee muistiinpanoja oppimastasi. Et ainoastaan vietä aikaa Jumalan sanan parissa, teet historiaa vuorovaikutuksestasi Raamatun kanssa."
                 subscribe heading: "Kirjaudu lukusuunnitelmiin."

@@ -128,6 +128,10 @@ pt-PT:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Agora"
     celebrating 50MM: "A celebrar 50 milhões de instalações da App!"
     link: "Link"
@@ -192,6 +196,7 @@ pt-PT:
     reader: "Bíblia"
     lifechurch short url: "LifeChurch.tv"
     about: "Sobre"
+    versions link: "Versões"
     jobs: "Empregos"
     privacy policy: "Política de Privacidade"
     terms: "Termos e Condições"
@@ -665,7 +670,7 @@ pt-PT:
         labels label: "Etiquetas:"
         title: "Marcadores"
         my labels: "As minhas etiquetas"
-        all labels: "Show All"
+        all labels: "Mostrar tudo"
         not found: "Marcadores dão-lhe um guia de referência rápido para as suas passagens favoritas ou para o último capítulo lido num dos livros da Bíblia. Para adicionar um marcador, selecione um versículo no leitor da Bíblia e depois clique o botão Selecionado no topo do leitor."
         other user not found: "%{username} ainda não guardou nenhum marcador."
         creation form errors: "O(s) seguinte(s) erro(s) não permite(m) a criação do seu marcador:"
@@ -711,6 +716,16 @@ pt-PT:
             reading: "pessoa a ler"
             readings: "pessoas a ler"
             readings 5 or more: "pessoas a ler"
+        stats: 
+            friends reading: 
+                one: "%{count} amigo aderiu a este plano"
+                other: "%{count} amigos aderiram a este plano"
+            friends completed: 
+                one: "%{count} amigo concluiu este plano"
+                other: "%{count} amigos concluíram este plano"
+            total completions: "Mais de %{count} planos concluídos"
+            view all: "Ver todos os planos"
+            close: "Fechar"
         settings: "Definições"
         privacy: 
             visible to friends?: "Deseja que os seus amigos vejam a sua atividade dos Planos?"
@@ -1000,7 +1015,7 @@ pt-PT:
                 now skipped: "Não acederá mais a esta página"
             features: 
                 read heading: "Leia a Bíblia."
-                read description: "Faça a sua escolha a partir de <strong>centenas de versões da Bíblia em múltiplos idiomas</strong>. Compare duas versões em paralelo. Pode até escolher o tamanho e o tipo de fonte. Desfrute da leitura online da Bíblia da maneira mais conveniente para si."
+                read description: "Escolha entre <a href='%{versions_path}'>centenas de versões e idiomas</a>. Compare duas versões lado a lado. Até podes escolher o tipo e o tamanho da letra. Crie a sua experiência na Bíblia online da maneira que mais gostas."
                 study heading: "Estude a Bíblia."
                 study description: "<strong>Destaque</strong> na sua cor preferida, <strong>adicione marcadores</strong> aos seus versículos da Bíblia preferidos, e crie notas sobre o que está a aprender, construindo assim um histórico da sua interação com a Bíblia."
                 subscribe heading: "Subscreva um Plano de Leitura."

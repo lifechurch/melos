@@ -128,6 +128,10 @@ ta:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
+        links: 
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "இப்பொழுது"
     celebrating 50MM: "50 மில்லியன் பயன்பாடு நிறுவல்களை கொண்டாடுகிறது!"
     link: "தொடர்பு"
@@ -192,6 +196,7 @@ ta:
     reader: "படிப்பான்"
     lifechurch short url: "LifeChurch.tv"
     about: "பற்றி"
+    versions link: "Versions"
     jobs: "வேலைகள்"
     privacy policy: "தனியுரிமை கொள்கை"
     terms: "விதிமுறைகள்"
@@ -711,6 +716,16 @@ ta:
             reading: "வாசிப்பு"
             readings: "வாசிப்புகள்"
             readings 5 or more: "வாசிப்புகள்"
+        stats: 
+            friends reading: 
+                one: "%{count} friend subscribed to this plan"
+                other: "%{count} friends subscribed to this plan"
+            friends completed: 
+                one: "%{count} friend has completed this plan"
+                other: "%{count} friends have completed this plan"
+            total completions: "Over %{count} completions"
+            view all: "View All"
+            close: "Close"
         settings: "அமைப்புகள்"
         privacy: 
             visible to friends?: "நீங்கள் இந்த திட்டத்தின் செயற்பாட்டை உங்கள் நண்பர்கள் அறிய விரும்புகிறீர்களா?"
@@ -1000,7 +1015,7 @@ ta:
                 now skipped: "இந்த பக்கம் இனி தவிர்க்கப்படும்"
             features: 
                 read heading: "பைபிளை வாசிக்கவும்."
-                read description: "நூற்றுக்கணக்கான <strong> பைபிள் பதிப்புகள் மற்றும்  &lt;/ strong&gt; மொழிகளிலிருந்து உங்களுக்கு விருப்பப்பட்டதை எடுங்கள். இரண்டு பதிப்புகளை  அருகருகில் வைத்து ஒப்பிட்டு பாருங்கள். எழுத்துரு மற்றும் காட்சி அளவுகளை  கூட உங்களால்  தேர்வு செய்ய முடியும். உங்கள் ஆன்லைன் பைபிள் அனுபவத்தை நீங்கள் விரும்பும் வழியில் செய்து கொள்ளலாம்."
+                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
                 study heading: "வேதாகமத்தை ஆய்க"
                 study description: "உங்களுக்கு பிடித்த நிறத்தில் <strong> தனிப்படுத்தி  &lt;/ strong&gt; காட்டவும், உங்களுக்கு பிடித்த வேதாகம வசனங்களை <strong> புக்மார்க் &lt;/ strong&gt; செய்யவும் , மற்றும் நீங்கள் கற்பதை பற்றி குறித்து வைக்கவும் செய்யுங்கள். நீங்கள் கடவுளின் வார்த்தையோடு நேரம் செலவு செய்கிறது மட்டுமல்ல, நீங்கள் வேதாகமத்தோடுள்ள உங்கள் தொடர்பின் விவர குறிப்பை  உருவாக்கி வருகிறீர்கள்."
                 subscribe heading: "வேதாகமம் திட்டங்களுக்கு குழுசேர்க."
