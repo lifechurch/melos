@@ -15,22 +15,24 @@ module YV
             # If the data is a blank/empty array, return it
             return results if results.blank?
             results.items.collect do |item|
-              map_to_instance(::Notification.new,item.merge(last_viewed_dt: results.last_viewed_dt))
+              map_to_instance(::Notification.new,item.merge({last_viewed_dt: results.last_viewed_dt, new_count: results.new_count}))
             end
           end
 
           def map_to_instance(instance,results)
+
             instance = build_for_identifier(results.id,results,instance)
 
             instance.type             = results.id
             instance.created_dt       = results.created_dt
             instance.last_viewed_at   = results.last_viewed_dt
-
+            instance.new_count        = results.new_count
             # Base data
             base = results.base
             instance.action_url       = base.action_url
             instance.color            = base.color
-            instance.moment_title     = t(base.title.l_str,base.title.l_args) # TODO: Localize
+            instance.moment_title     = t(base.title.l_str,base.title.l_args) if base.title and base.title.l_str and base.title.l_args
+            instance.moment_title   ||= base.title.str if base.title and base.title.str
 
             instance.icons            = map_to_icons(results.base.images.icon)
             instance.avatars          = map_to_avatars(results.base.images.avatar)

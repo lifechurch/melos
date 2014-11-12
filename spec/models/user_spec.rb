@@ -44,22 +44,25 @@ describe User do
       result.should be_true
     end
 
-    it 'makes a bunch of users' do
-      # 1.upto(10).each do |n|
-      #   result = User.register(email: "webtest#{n}@youversion.com", username: "webtest#{n}", password: 'passverd', agree: true, verified: true, first_name: 'greatest', last_name: 'ever')
-      #   puts result.inspect
-      # end
-
-      # 1.upto(10) do |n|
-      #   test_user = User.authenticate("webtest#{n}", "passverd")
-      #   Friendships.offer(user_id: 7830, auth: test_user.auth)
-      #   user = User.authenticate("matt", "staging")
-      #   Friendships.accept(user_id: test_user.id, auth: user.auth)
-      # end
-
+    it 'makes a bunch of users', :focus  do
       # 1.upto(10).each do |n|
       #   puts destroy_user({username: "webtest#{n}", password: 'passverd'})
       # end
+
+      # 10.upto(15).each do |n|
+      #   result = User.register(email: "webtest#{n}@youversion.com", username: "webtest#{n}", password: 'passverd', agree: true, verified: true, first_name: 'greatest', last_name: 'ever')
+      #   puts result.inspect
+      # end
+# matt 7830
+# hugh 7648
+      10.upto(15) do |n|
+        # test_user = User.authenticate("webtest#{n}", "passverd")
+        # puts Friendships.offer(user_id: 7830, auth: test_user.auth).inspect
+        # user = User.authenticate("matt", "staging")
+        # puts Friendships.decline(user_id: test_user.id, auth: user.auth).inspect
+      end
+
+
     end
 
     it "returns false for invalid params" do

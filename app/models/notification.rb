@@ -40,6 +40,7 @@ class Notification < YV::Resource
   attribute :extras
   attribute :avatars
   attribute :icons
+  attribute :new_count
 
   # Notifications::User
   # not necessarily always used. Depends on type & extras data.  See mapper.
