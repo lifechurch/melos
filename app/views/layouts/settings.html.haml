@@ -7,7 +7,7 @@
   = t('users.settings')
 
 - content_for :sidebar do
-  = render partial: "widgets/settings" if current_user.present?
+  = render partial: "widgets/settings", locals: {current_user: current_user} if current_user.present?
 
 = render layout: "layouts/base" do
   
