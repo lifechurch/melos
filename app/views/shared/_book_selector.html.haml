@@ -4,7 +4,13 @@
 -# Local Variables
 -# presenter(required) - Presenter::Reference or Presenter::Subscription
 
-- cache "#{presenter.version.id}_#{I18n.locale}", :expires_in => YV::Caching.a_long_time do
+- cache "#{presenter.version.id}_#{I18n.locale.to_s}_#{presenter.reference.book}", :expires_in => YV::Caching.a_long_time do
+  - current_book_chapters = nil
+  - ref_str = presenter.reference_string
+  - chapter, version = "1", ref_str.version
+  - version_id = presenter.version.id
+  - version_abbr = presenter.version.abbreviation.downcase
+  - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
   #menu_book_chapter.dynamic_menu
     .mobile
       .reader_modal_header
@@ -29,18 +35,28 @@
           =t("book")
         .scroll
           %ul
-            - ref_str = presenter.reference_string
-            - chapter, version = "1", ref_str.version
-            - version_id = presenter.version.id
-            - version_abbr = presenter.version.abbreviation.downcase
             - presenter.version.books.each do |book_usfm, book_info|
               %li{"data-meta" => truncate(book_info.to_meta, length: 40, separator: " ")}
                 - book = book_usfm.downcase
-                - url = "/bible/#{version_id}/#{book}.#{chapter}.#{version_abbr}"
+                - url = "#{locale_dir}/bible/#{version_id}/#{book}.#{chapter}.#{version_abbr}"
                 %a{href: url, "data-book" => book_usfm.downcase}
                   = truncate(book_info.human, length: 40, separator: " ")
+                - current_book_chapters = book_info.chapters if presenter.reference.book.downcase.eql?(book)
       #menu_chapter
         %header
           =t("chapter")
         .scroll
           %ol#chapter_selector
+            -#we want these chapter links available on page load for SEO
+            -unless current_book_chapters.nil?
+              - current_book_chapters.each do |chapter_info|
+                - canonical = chapter_info.canonical
+                - chapter_name = chapter_info.human
+                - chapter_usfm = chapter_info.usfm.downcase
+                - link_body = canonical ? chapter_name : "i"
+                -#js will add active class - we don't here because this is cached per book
+                - classes = canonical ? " canonical" : " info"
+                - chapter_url = "#{locale_dir}/bible/#{version_id}/#{chapter_usfm}.#{version_abbr}"
+                %li{class: classes}
+                  %a{href: chapter_url}
+                    = link_body
