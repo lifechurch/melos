@@ -15,7 +15,7 @@ module YV
         @recent_versions = cookies[:recent_versions].split('/').map{|v| Version.find(v) rescue nil}.compact.uniq
         # Handle conversion from API2 (osis) to API3 (version_ids)
         # But not a bad idea in general to validate/curate user's recent versions
-        cookies[:recent_versions] = @recent_versions.map{|v| v.to_param}.join('/') rescue nil
+        cookies[:recent_versions] = @recent_versions.map{|v| v.to_id}.join('/') rescue nil
         @recent_versions
       end
 
@@ -26,7 +26,7 @@ module YV
 
         lookup_id = client_settings.version || @site.default_version || Version.default_for(params[:locale].try(:to_s) || I18n.default_locale.to_s)
         # check to make sure it's a valid version (handling version deprecation)
-        @current_version = Version.find(lookup_id).to_param rescue Version.default
+        @current_version = Version.find(lookup_id).to_id rescue Version.default
       end
 
       def versions_for_current_language
@@ -58,8 +58,8 @@ module YV
 
         # new user or bad version was in cookie
         # Find recent version that is not the current version and includes ref.
-        recent = recent_versions.find{|v| v.to_param != current_version && v.include?(ref)}
-        cookies[:alt_version] = recent.to_param if recent
+        recent = recent_versions.find{|v| v.to_id != current_version && v.include?(ref)}
+        cookies[:alt_version] = recent.to_id if recent
 
         # Nothing? Okay let's call sample_for with locale, version and validating ref
         cookies[:alt_version] ||= Version.sample_for((params[:locale] || "en"), except: current_version, has_ref: ref)
