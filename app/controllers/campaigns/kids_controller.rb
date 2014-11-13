@@ -1,4 +1,5 @@
 class Campaigns::KidsController < ApplicationController
+  include ApplicationHelper
   
   layout 'kids'
 
@@ -58,12 +59,6 @@ class Campaigns::KidsController < ApplicationController
     when /silk|Silk/
       'http://www.amazon.com/gp/mas/dl/android?p=com.bible.kids'
     end
-  end
-
-  def i18n_kids_whitelist
-    # the following localizations will allow translation for the kids page
-    # the others will default to en
-    [ :en, :es, :"zh-CN", :ko ]
   end
 
 end
