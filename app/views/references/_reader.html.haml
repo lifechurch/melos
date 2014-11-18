@@ -57,7 +57,7 @@
       = presenter.content.html_safe if presenter.content
     
     -# Read Chapter button
-    - if presenter.verses
+    - if presenter.verses.present?
       %p#read_chapter
         %a.action_button_blue{href: reference_path(reference: reference.chapter_usfm.downcase)}
           = t("read reference", reference: reference.to_chapter.human)
