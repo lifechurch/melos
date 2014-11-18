@@ -15,7 +15,7 @@ module Presenter
     end
 
     def content
-      reference.content(chapter: true)
+      reference.content(chapter: verses.blank?)
     end
 
     def valid_reference?
@@ -52,10 +52,7 @@ module Presenter
 
     # implementation for Presenter::ReaderInterface method
     def modal_verse
-      # If the reference was a single verse, set that up so we can display the modal
-      if reference_hash[:verses].present? && (controller.send(:external_request?) || params[:modal] == "true") && params[:modal] != "false"
-        @modal_verse = ::Reference.new(reference_hash)
-      end
+      nil
     end
 
   end
