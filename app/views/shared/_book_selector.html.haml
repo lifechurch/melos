@@ -55,8 +55,8 @@
                 - chapter_usfm = chapter_info.usfm.downcase
                 - link_body = canonical ? chapter_name : "i"
                 -#js will add active class - we don't here because this is cached per book
-                - classes = canonical ? " canonical" : " info"
+                - css_class = canonical ? "canonical" : "info"
                 - chapter_url = "#{locale_dir}/bible/#{version_id}/#{chapter_usfm}.#{version_abbr}"
-                %li{class: classes}
+                %li{class: css_class}
                   %a{href: chapter_url}
                     = link_body
