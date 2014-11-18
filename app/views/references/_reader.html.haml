@@ -15,9 +15,8 @@
   modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
   a_chapter     = presenter.try(:is_chapter?)
 
-  #TODO presenter.content - extract 125 char max from first verse of chapter or first modal_verse to append to meta_description
-  #meta_verse    = modal_verse.nil? ? "ex" : truncate(modal_verse.content(as: :plaintext), length: 125, separator: " ")
-- @meta_description = "#{reference.human} #{presenter.version}"
+- content_for :meta_description do
+  = "#{reference.human} #{presenter.version} #{truncate(strip_tags(presenter.content.html_safe), length: 125, separator: " ", omission: '')}"
 
 - content_for :mobile_right_nav do
   = link_to(version.abbreviation, 'javascript:void(0);', id: "m_version_btn" )
