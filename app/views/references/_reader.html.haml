@@ -30,7 +30,6 @@
   "data-setting-font" => client_settings.reader_font,
   "data-setting-size" => client_settings.reader_font_size,
   "data-fullscreen"   => client_settings.reader_full_screen,
-  "data-selected-verses" => (focus_verses ? nil : verses.try(:join,",")),
   "data-focused-verses" => (focus_verses ? verses.try(:join,",") : nil),
   "data-book"       => reference[:book].to_s.downcase,
   "data-book-api"   => reference[:book].sub(/[A-Z]+/) {|m| m.downcase},
