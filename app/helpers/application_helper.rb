@@ -148,6 +148,10 @@ module ApplicationHelper
     "https://www.bible.com/#{I18n.locale}/kids"
   end
 
+  def bible_localized_path
+    I18n.locale.to_s.eql?("en") ? "/bible" : "/#{I18n.locale}/bible"
+  end
+
   def bible_path(ref=nil, opts={})
     ref = last_read || default_reference if ref.nil?
     ver = opts.delete(:version)
