@@ -25,7 +25,6 @@ class window.Reader
 
     @book_chapter_menu  = new BookChapterMenu({trigger: "#menu_book_chapter_trigger", menu: "#menu_book_chapter"})
 
-
     @processSelectedVerses
 
     # fire initial events
@@ -407,7 +406,7 @@ class window.Reader
       scroll_verse = $('#version_primary .focused:first')
 
 
-    if scroll_verse.length != 0 && $('head meta[name="apple-itunes-app"]').length == 0 && $('#mobile-sb-subscription.initial').length == 0
+    if scroll_verse != undefined && scroll_verse.length != 0 && $('head meta[name="apple-itunes-app"]').length == 0 && $('#mobile-sb-subscription.initial').length == 0
       # TODO: make the 2nd part actually if there is modal display
       # DOM is loaded, wait a bit for css to load then scroll to first verse
       $(document).ready ()=>

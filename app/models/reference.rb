@@ -294,7 +294,7 @@ class Reference < YV::Resource
   end
 
   def to_path
-    "/bible/#{version}/#{usfm.downcase}.#{version_string.downcase}"
+    "/bible/#{version}/#{usfm}.#{version_string}".downcase
   end
 
 
