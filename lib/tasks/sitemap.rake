@@ -8,7 +8,7 @@ namespace :sitemap do
     locale = "/uk"
     # locale = ""
 
-    filename = "public/sm-version-#{version_id}.xml"
+    filename = "public/sitemaps/sm-version-#{version_id}.xml"
     aFile = File.new(filename, 'w+')
     data = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     aFile.syswrite(data)
