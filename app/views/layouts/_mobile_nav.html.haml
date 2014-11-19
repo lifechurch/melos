@@ -15,20 +15,20 @@
         %a.icon{href: moments_path}
           %span= t('home')
       %li#nav_mobile_bible
-        %a.icon{href:'/bible'}
+        %a.icon{href: bible_path}
           %span= t('bible')
       %li#nav_mobile_plans
         %a.icon{href: plan_href}
           %span=t("plans.title")
       %li#nav_mobile_videos
-        %a.icon{href: '/videos'}
+        %a.icon{href: videos_path}
           %span=t("videos.title")
       /
         %li#nav_mobile_live
           %a.icon{href: live_href}
             %span=t("live")
       %li#nav_mobile_mobile
-        %a.icon{href:'/mobile'}
+        %a.icon{href: app_page_path}
           %span=t("mobile apps")
       - if current_auth
         %li#nav_mobile_profile
