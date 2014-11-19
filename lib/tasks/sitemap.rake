@@ -1,7 +1,7 @@
 namespace :sitemap do
   desc "Generate version sitesmaps"
   task :create_version => :environment do
-    # currently automates craetion of sm-version files for all versions in available_locales
+    # automate creation of sm-version files for all versions in available_locales
     sm_index = []
     locales = I18n.available_locales
     locales.each do |l|
@@ -35,7 +35,8 @@ namespace :sitemap do
     end
     puts "versions without a home locale - building sitemaps..."
     puts "========="
-    # versions that dont have a home locale - all these will be canonical to en locale
+    # automate creation of sm-version files for all versions in WITHOUT a home locale
+    # all these versions will be canonical to en locale
     locale = ""
     versions = Version.all()
     versions.each do |v|
