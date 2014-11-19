@@ -21,7 +21,9 @@ gem 'gabba'
 gem 'memcachier'
 gem 'fast_gettext'
 gem 'smartling'
-gem 'stringex', '~> 2.5.2'
+# we are using 1.5.1 of stringex because later versions added i18n translation
+# if we want to use a later version will need to resolve the pt-BR locale of stringex gem
+gem 'stringex', '~> 1.5.1'
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
