@@ -723,7 +723,7 @@ mk:
             friends completed: 
                 one: "%{count} friend has completed this plan"
                 other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
+            total completions: "Над %{count} луѓе прочитале"
             view all: "View All"
             close: "Затвори"
         settings: "Уредувања"
@@ -1019,7 +1019,7 @@ mk:
                 now skipped: "Оваа страна сега ќе биде скокната."
             features: 
                 read heading: "Читај ја Библијата."
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "Избери од <a href='%{versions_path}'>стотици Библиски верзии и јазици</a>. Спореди две верзии една до друга. Можеш дури да си избереш твој фонт и големина на текстот. Направи го твоето онлајн Библиско искуство токму како што сакаш."
                 study heading: "Проучувај ја Библијата."
                 study description: "<strong>Обележи</strong> во твојата омилена боја, <strong>зачувај го</strong> твојот омилен Библиски стих, и забележи за тоа што го проучуваш. Не само што минуваш време во Божјиот збор, туку и ја градиш историјата на твојата интеракција со Библијата."
                 subscribe heading: "Претплати се на Библиски план."
