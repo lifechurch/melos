@@ -25,20 +25,20 @@
           %a.icon{href: moments_path, "data-title" => "Home"}
 
       %li#nav_primary_bible{class: highlight.call(is_bible_url) }
-        %a.icon{href: '/bible', "data-title" => t("bible")}
+        %a.icon{href: bible_localized_path, "data-title" => t("bible")}
 
       %li#nav_primary_plans{class: highlight.call(is_plans_url)}
         %a.icon{href: plan_href, "data-title" => t("plans.title")  }
 
       - if Video.available_locales.include? I18n.locale
         %li#nav_primary_videos{class: highlight.call(is_videos_url)}
-          %a.icon{href:"/videos", "data-title" => t("videos.title")}
+          %a.icon{href: videos_path, "data-title" => t("videos.title")}
 
       %li#nav_primary_live
         %a.icon{href: live_href, "data-title" => t("live")}
 
       %li#nav_primary_mobile
-        %a.icon{href: '/mobile', "data-title" => t("mobile")}
+        %a.icon{href: app_page_path, "data-title" => t("mobile")}
 
       / - if current_auth
       /   %li#nav_primary_bookmarks{class: highlight.call(is_bookmarks_url)}

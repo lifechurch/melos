@@ -1,0 +1,10 @@
+-#TODO refactor this logic after ko and zh-CN go live
+- if [ :en, :es ].include? I18n.locale
+  #widget-download.widget.simple
+    %div.bd.bafk
+      %h3= t("download bafk ad.title")
+      %img.bafk-icon{src: image_path("BibleAppForKids-icon.png")}
+      %p
+        = t('download bafk ad.description copy')
+      %a.action_button_green{href: kids_page_path}
+        = t("download bafk ad.download")

@@ -101,7 +101,9 @@ BookChapterMenu.prototype = {
           classes += (book == this.loaded_book && chapter_name == this.current_chapter) ? this.active_class : '';
           classes += (canonical) ? " canonical" : " info";
 
-      list += '<li class="' + classes + '"><a href="/bible/' + version + "/" + chapter_usfm + '.' + abbrev + '">' + link_body + '</a></li>';
+      var locale = $('html').data("locale")
+      locale = (locale == "en") ? '' : "/" + locale;
+      list += '<li class="' + classes + '"><a href="' + locale + '/bible/' + version + "/" + chapter_usfm + '.' + abbrev + '">' + link_body + '</a></li>';
     }
     var chapters_ol = $("#chapter_selector");
         chapters_ol.html(list);

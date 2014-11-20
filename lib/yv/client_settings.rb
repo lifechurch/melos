@@ -63,7 +63,7 @@ module YV
     end
 
     def version=(version)
-      @cookies.permanent[:version] = version.to_param
+      @cookies.permanent[:version] = version.to_id
     end
 
     def last_read
