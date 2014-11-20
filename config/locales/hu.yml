@@ -935,6 +935,10 @@ hu:
         line 2: "különböző nyelven - a Biblia"
         line 3: "ami bárhová elkísér."
         download: "Letöltés most"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Fontosság"
         relevancy copy: "A múltban nagyon kevesen fértek hozzá a Bibliához. Mára ez megváltozott. Mégis sokan, akik hozzáférnek a Bibliához, úgy gondolják, hogy az üzenete nem vonatkozik az életükre. Ugyanakkor mások elhiszik, hogy mindennapi megtapasztalásaik kapcsolatban vannak a Bibliával."

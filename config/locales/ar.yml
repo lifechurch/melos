@@ -4,7 +4,7 @@ ar:
         formats: 
             votd: "%B %-d, %Y"
     counter: 
-        format: "٩٩٩,٩٩٩,٩٩٩"
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "المحادثات والاستكشاف"
@@ -943,6 +943,10 @@ ar:
         line 2: "لغات مختلفة - الكتاب المقدس"
         line 3: "الذي يذهب معك الي اي مكان"
         download: "حمل الآن"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "الصلة"
         relevancy copy: "في اجيال سابقة، كان وصول الناس الي الكتاب المقدس محدود للغاية. اليوم، لم تعد الحالة هكذا. ولكن مع الأسف، الكثير ممن لديهم امكانية الوصول للكتاب المقدس لا يعتقدون أن رسالته تنطبق علي حياتهم الشخصية. وفي الوقت نفسه، يوجد الكثير من الذين يؤمنون أنه هناك صلة بين الكتاب المقدس وبين تجربتهم اليومية."

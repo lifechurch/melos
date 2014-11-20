@@ -935,6 +935,10 @@ sw:
         line 2: "lugha tofauti - biblia ambayo"
         line 3: "itaenda na wewe sehemu yoyote."
         download: "Download saa hii"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Umuhimu"
         relevancy copy: "Katika kipindi cha vizazi vilivyopita, watu kupata Biblia ilikuwa nadra mno. Leo, hii kesi imebadilika. Hata hivyo, watu wengi ambao wanapata Biblia wanafikiri ujumbe wake hauwahusu maishani mwao. Wakati huo huo, kuna wengine ambao wanaamini kuwa kuna uhusiano kati ya Biblia na uzoefu wao kila siku."

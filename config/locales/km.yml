@@ -4,7 +4,7 @@ km:
         formats: 
             votd: "%B %-d, %Y"
     counter: 
-        format: "៩៩៩.៩៩៩.៩៩៩"
+        format: "999.999.999"
     social: 
         intro page: 
             main heading: "កិច្ច​សន្ទនា និង ការ​រកឃើញថ្មី"
@@ -933,6 +933,10 @@ km:
         line 2: "ច្រើន​ភាសា- ជា​ព្រះ​គម្ពីរ​"
         line 3: "ដែល​ទៅ​ជាមួយ​អ្នក​គ្រប់​ទី​កន្លែង"
         download: "ដោន​ឡូដ​យក​ឥឡូវ"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "ភាព​ពាក់ពន្ធ័"
         relevancy copy: "មួយ​ជំនាន់​កន្លង​ទៅ ដែល​មនុស្ស​ម្នាក់​មាន​ព្រះ​គម្ពីរគឺ​ពិបាក​ណាស់។ ថ្ងៃ​នេះ​វា​មិន​មែន​ជា​រឿង​ដែល​ពិ​បាក​បែប​ហ្នឹង​ឡើយ។ យ៉ាងណា​ម៉ិញ មនុស្ស​ជា​ច្រើន​អាច​មាន​​ព្រះ​គម្ពីរ​ ហើយ​គិត​ថា​សារ​នៅ​ក្នុង​ព្រះគម្ពីរ​មិន​មាន​ប្រសិទ្ធិភាព​នៅ​ក្នុង​ការ​រស់​នៅ​របស់​ពួក​គេ​ទេ។ ទន្ទឹម​នេះ​ផង​ដែរ ក៏​មាន​មនុស្ស​ខ្លះ​គេ​ជឿ​ថា ព្រះគម្ពីរគឺ​ផ្សារភ្ជាប់​នឹង​បទ​ពិសោធន៍​រស់​នៅ​ប្រចាំ​ថ្ងៃ​របស់​ពួក​គេ។"
@@ -1013,7 +1017,7 @@ km:
                 now skipped: "ទំព័រនៃនឹងមិនត្រូវបានរំលងទេ ។"
             features: 
                 read heading: "អានព្រះគម្ពីរ"
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "សូម​ជ្រើស​រើស​ព្រះ​គម្ពីរ​របស់​លោក​អ្នក​ពី​ក្នុង​ចំណោ​ម​ជំនាន់​ព្រះ​គម្ពីរ​រាប់​រយ​ជំនាន់​ និង ជាច្រើន​​រយ​ភាសារ។ <a href='%{versions_path}'></a>"
                 study heading: "សិក្សាព្រះគម្ពីរ ។"
                 study description: "<strong>គូសពណ៌</strong> តាម​ពណ៌​ចំណូល​ចិត្ត​របស់​អ្នក, <strong>កំណត់​ចំណាំ</strong> នូវ​ខព្រះគម្ពីរចំណូលចិត្ត​របស់​អ្នក ហើយ​បង្កើត​កំណត់ត្រា​អំពីរ​អ្វី​ដែល​អ្នក​បាន​រៀន។ មិន​ត្រឹម​តែ​បាន​ចំណាយ​ពេល​ជាមួយ​នឹង​ព្រះបន្ទូល​របស់​ព្រះប៉ុណ្ណោះ​ទេ អ្នក​កំពុង​តែ​បង្កើត​ប្រវត្តិនៃ​ការ​ប្រស្រ័យ​របស់​អ្នក​ជាមួយ​ព្រះ​គម្ពីរ"
                 subscribe heading: "ជាវគម្រោងសិក្សាព្រះគម្ពីរជាប្រចាំ"

@@ -943,6 +943,10 @@ cy:
         line 2: "o iethoedd gwahanol - y Beibl sy’n"
         line 3: "mynd gyda chi i bobman."
         download: "Lawrlwythwch Nawr"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Perthnasedd"
         relevancy copy: "Roedd y cyfleoedd oedd gan bobl i weld Beibl ers talwm yn gyfyng iawn. Erbyn heddiw mae pethau'n wahanol iawn. Ond mae llawer o bobl yn meddwl nad ydy neges y Beibl yn berthnasol o gwbl i’w bywydau. Ar yr un pryd mae yna eraill sy'n credu fod cyswllt agos rhwng y Beibl a profiadau bywyd bob dydd."
