@@ -140,6 +140,12 @@ module ApplicationHelper
     "/bible/#{version}/#{usfm.downcase}"
   end
 
+  def i18n_kids_whitelist
+    # the following localizations will allow translation for the kids page
+    # the others will default to en
+    [ :en, :es, :"zh-CN", :ko ]
+  end
+
   def app_page_path
     "https://www.bible.com/#{I18n.locale}/app"
   end

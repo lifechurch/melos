@@ -196,7 +196,7 @@ ja:
     reader: "聖書リーダー"
     lifechurch short url: "LifeChurch.tv"
     about: "概要"
-    versions link: "Versions"
+    versions link: "聖書訳"
     jobs: "求人"
     privacy policy: "プライバシー規約"
     terms: "利用規約"
@@ -718,12 +718,12 @@ ja:
             readings 5 or more: "読書"
         stats: 
             friends reading: 
-                other: "%{count} friends subscribed to this plan"
+                other: "%{count}人の友達がこの読書プランを利用しています"
             friends completed: 
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+                other: "%{count}人の友達がこの読書プランを修了しました"
+            total completions: " %{count}人以上が完了しました"
+            view all: "全てを見る"
+            close: "閉じる"
         settings: "設定"
         privacy: 
             visible to friends?: "この読書プランでのアクティビティを、友だちから見えるようにしたいですか？"
@@ -933,6 +933,10 @@ ja:
         line 2: "何百種もの訳が利用可能な"
         line 3: "いつでもどこでも使える聖書"
         download: "今すぐダウンロード"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "聖書との関係"
         relevancy copy: "何世代も昔の世の中では、聖書を直接読むことができる人は非常に限られていました。もはや今日ではそのようなことはありません。しかしながら、聖書を読むことができても多くの人は、聖書の中のメッセージは自分の人生には無関係だと考えています。一方で、聖書と毎日の自分たちの体験には関係性があると信じている人たちもいます。"
@@ -1013,7 +1017,7 @@ ja:
                 now skipped: "今後はこのページは表示されません"
             features: 
                 read heading: "聖書を読む"
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "<a href='%{versions_path}'>多数の聖書訳と言語</a>から選んでいただけます。2種類の訳を並列して読み比べられます。フォントや表示サイズもお好みで設定できます。オンライン聖書をあなたピッタリにカスタマイズできます。"
                 study heading: "聖書を学ぶ"
                 study description: "お好きな色で<strong>ハイライト</strong> できます。お気に入りの聖句に<strong>ブックマーク</strong> をつけたり、学んだことをノートに書き留めることも出来ます。神様の御言葉を学ぶだけでなく、聖書との交わりの歴史を築いていけるのです。"
                 subscribe heading: "聖書プランに参加"

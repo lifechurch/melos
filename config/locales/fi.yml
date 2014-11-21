@@ -935,6 +935,10 @@ fi:
         line 2: "eri kielellä - Raamattu"
         line 3: "joka kulkee kanssasi minne menetkin"
         download: "Lataa nyt"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Ajankohtaisuus"
         relevancy copy: "Aiempien sukupolvien aikana Raamatun saatavuus oli hyvin rajallista. Tänä päivänä on toisin. Silti monet ihmiset, joille raamattu on saatavilla, ajattelevat ettei sen sanoma enää koske heidän elämäänsä. Samaan aikaan on myös ihmisiä, jotka uskovat, että Raamatun ja heidän jokapäiväisten kokemustensa välillä on yhteys."
