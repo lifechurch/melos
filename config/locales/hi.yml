@@ -935,6 +935,10 @@ hi:
         line 2: "बाइबिल अब अनेक भाषाओँ में"
         line 3: "हमेशा आपके साथ"
         download: "कृपया डाउनलोड करें"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "प्रासंगिकता"
         relevancy copy: "हमारे अतीत की पीढ़ी को बाइबिल का एक्सेस बहुत सीमित था। आजकल यह मामला नहीं हैं। हालांकि कई लोग जो बाइबिल का उपयोग करते हैं उनका मान्यता यह हैं की यह सन्देश हमारे जीवन पर लागु नहीं होता वही दुसरे लोग हैं जिनकी मान्यता हैं की बाइबिल और उनके नित्य जीवन के अनुभव के बीच कनेक्शन हैं।"

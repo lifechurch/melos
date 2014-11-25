@@ -196,7 +196,7 @@ it:
     reader: "Lettore"
     lifechurch short url: "LifeChurch.tv"
     about: "Informazione"
-    versions link: "Versions"
+    versions link: "Versioni"
     jobs: "Lavori"
     privacy policy: "Privacy"
     terms: "Condizioni"
@@ -723,9 +723,9 @@ it:
             friends completed: 
                 one: "%{count} amico ha completato questo piano"
                 other: "%{count}amici hanno completato questo piano"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+            total completions: "Completato più di %{count}volte"
+            view all: "Vedi Tutti"
+            close: "Chiudere"
         settings: "Opzioni"
         privacy: 
             visible to friends?: "Vuoi che i tuoi amici vedano la tua attività con il Piano?"
@@ -935,6 +935,10 @@ it:
         line 2: "lingue diverse - la Bibbia"
         line 3: "che ti segue ovunque."
         download: "Scarica Ora"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Pertinenza"
         relevancy copy: "Nelle passate generazioni, l'accesso alla Bibbia era molto limitato per le persone. Oggi non è più così. Tuttavia, molte persone che hanno accesso alla Bibbia pensano che il suo messaggio non si applichi alla loro vita. Allo stesso tempo, ci sono altri che credono che c'è un collegamento tra la Bibbia e le loro esperienze di ogni giorno."
@@ -1015,7 +1019,7 @@ it:
                 now skipped: "Questa pagina ora sara saltata."
             features: 
                 read heading: "Leggi la Bibbia"
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "Scegli tra <a href='%{versions_path}'>centinaia di versioni della Bibbia e lingue.</a>Confronta due versioni in parallelo. Puoi perfino scegliere il tipo e grandezza dei caratteri. Imposta la tua esperienza online della Bibbia secondo le tue preferenze."
                 study heading: "Studia la Bibbia"
                 study description: "<strong>Evidenzia</strong> nel tuo colore preferito, <strong>crea segnalibri</strong> per i tuoi versetti biblici preferiti, e scrivi delle note su quello che stai imparando. Oltre a passare del tempo nella Parola di Dio, stai costruendo la storia della tua interazione con la Bibbia."
                 subscribe heading: "Sottoscrivi dei Piani di Lettura della Bibbia."

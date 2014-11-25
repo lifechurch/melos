@@ -196,7 +196,7 @@ lv:
     reader: "Lasītājs"
     lifechurch short url: "LifeChurch.tv"
     about: "Par"
-    versions link: "Versions"
+    versions link: "Tulkojumu veidi"
     jobs: "Vakances"
     privacy policy: "Konfidencionalitātes politika"
     terms: "Nosacījumi"
@@ -718,15 +718,15 @@ lv:
             readings 5 or more: "lasījumi"
         stats: 
             friends reading: 
-                zero: "%{count} friends subscribed to this plan"
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                zero: "%{count} draugi pierakstījušies šim lasīšanas plānam"
+                one: "%{count} draugs pierakstījies šim lasīšanas plānam"
+                other: "%{count} draugi pierakstījušies šim lasīšanas plānam"
             friends completed: 
-                zero: "%{count} friends have completed this plan"
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
-            view all: "View All"
+                zero: "%{count} draugi pabeiguši šo lasīšanas plānu"
+                one: "%{count} draugs pabeidzis šo lasīšanas plānu"
+                other: "%{count}draugi pabeiguši šo lasīšanas plānu"
+            total completions: "Vairāk nekā %{count} ir izlasīts"
+            view all: "Apskatīt visu"
             close: "Tuvu"
         settings: "Uzstādījumi"
         privacy: 
@@ -937,6 +937,10 @@ lv:
         line 2: "dažādas valodas - Bībele"
         line 3: "Tas jebkur dodas jums līdzi."
         download: "Lejuplādēt tagad"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "piemērotība"
         relevancy copy: "Pieeja Bībelei, kas bija iepriekšējām paaudzēm, bija ļoti ierobežota. Šodien tas tā vairs nav. Tomēr, tie cilvēki, kam ir pieeja Bībelei, domā, ka tās ziņa neattiecas uz viņu dzīvēm. Tajā pašā brīdī ir cilvēki, kas tic, ka ir saistība starp viņu ikdienas dzīvēm un Bībeli."

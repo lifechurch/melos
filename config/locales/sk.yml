@@ -718,9 +718,9 @@ sk:
             readings 5 or more: "čítaní"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                few: "%{count} friends subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count} priateľ sa prihlásil na tento plán"
+                few: "%{count} priatelia sa prihlásili na tento plán"
+                other: "%{count} priateľov sa prihlásilo na tento plán"
             friends completed: 
                 one: "%{count} priateľ dokončil tento plán čítania Biblie"
                 few: "%{count} priatelia dokončili tento plán čítania Biblie"
@@ -937,6 +937,10 @@ sk:
         line 2: "ako 100 jazykoch — Biblia,"
         line 3: "ktorá ide všade s vami."
         download: "Stiahnuť teraz"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Význam"
         relevancy copy: "V predošlých generáciách mali ľudia veľmi obmedzený prístup k Biblii. Dnes to už neplatí, avšak mnoho ľudí, ktorí prístup k Biblii majú, si myslia, že odkaz Biblie sa na ich životy nevzťahuje. Sú tiež aj druhí, ktorí veria, že Biblia s ich každodenným životom súvisí."

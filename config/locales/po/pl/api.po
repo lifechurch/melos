@@ -1,16 +1,3 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#
-# Polish translations for Backend (YouVersion).
-# Copyright (C) 2014 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Translators:
-# sferdyn <sferdyn@gmail.com>, 2013-2014
-# #-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#
 # Polish translations for Backend (YouVersion).
 # Copyright (C) 2014 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
@@ -21,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-09-26 14:14-0609\n"
+"PO-Revision-Date: 2014-09-26 14:14-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pl <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -30,18 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2014-05-28 00:11+0000\n"
-"Last-Translator: sferdyn <sferdyn@gmail.com>\n"
-"Language-Team: Polish (http://www.transifex.com/projects/p/yv-backend/language/pl/)\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-11-10 12:34-0609\n"
+"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: pl <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Generated-By: Babel 1.3\n"
 "#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
@@ -244,6 +231,9 @@ msgstr "{name} rozpoczął nowy plan, {title}"
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} rozpoczął nowy plan czytania Biblii, {title}"
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} właśnie dołączył do YouVersion. Naciśnij tu, aby dodać do znajomych."
+
 msgid "notifications.system.test"
 msgstr "Pobierz naszą Aplikację Biblii dla dzieci!!!"
 
@@ -276,10 +266,3 @@ msgstr "YouVersion Aplikacja Biblii ma stałe miejsce na moim ekranie. Czytaj, o
 
 msgid "share.invite_twitter_direct"
 msgstr "Masz już Aplikację Biblii od YouVersion? Kocham ją i myślę, że tobie też się spododa.Tutaj masz odnośnik:"
-
-#. TRANSLATORS: Plural test
-msgid "notifications.friendships.count"
-msgid_plural "You have %d friend requests"
-msgstr[0] "Masz jedno zaproszenie"
-msgstr[1] "Masz %d zaproszenia"
-msgstr[2] "Masz %d zaproszeń"

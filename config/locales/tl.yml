@@ -196,7 +196,7 @@ tl:
     reader: "Mambabasa"
     lifechurch short url: "LifeChurch.tv"
     about: "Tungkol"
-    versions link: "Versions"
+    versions link: "Mga Salin"
     jobs: "Mga Trabaho"
     privacy policy: "Patakaran sa Privacy"
     terms: "Mga Tuntunin"
@@ -718,14 +718,14 @@ tl:
             readings 5 or more: "Mga Babasahin"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count} kaibigan ang nagbabasa ng plano"
+                other: "%{count} mga kaibigan ang nagbabasa ng gabay"
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+                one: "%{count} kaibigan ang nakatapos ng babasahin"
+                other: "%{count} mga kaibigan ang nakatapos ng babasahin"
+            total completions: "Higit sa %{count} ang natapos basahin"
+            view all: "Tingnan Lahat"
+            close: "Isara"
         settings: "Mga Setting"
         privacy: 
             visible to friends?: "Gusto mo bang ipakita sa iyong mga kaibigan ang mga kaganapan sa iyong Plano?"
@@ -935,6 +935,10 @@ tl:
         line 2: "iba't ibang wika - ang Bibliya"
         line 3: "na kasama mo kahit saan."
         download: "I-download na."
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Kaugnayan"
         relevancy copy: "Sa mga nakaraang henerasyon, ang paf-gamit ng tao sa Bibliya ay napakalimitado.  Ngayon, hindi na. Ganun pa man, marami sa mga taong gumagamit ng Bibliya ang nag-aakalang hindi akma ang mensahe nito sa kanilang buhay.  Kasabay nito, maraming naniniwala na mahalaga ito sa kanilang pang-araw araw na buhay."
@@ -1015,7 +1019,7 @@ tl:
                 now skipped: "Ang pahinang ito ay lalaktawan na."
             features: 
                 read heading: "Basahin ang Bibliya."
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "Pumili mulang sa daan-daang salin ng Bibliya at wika. <a href='%{versions_path}'></a>Sabay na basahin ang dalawang salin nang magkatabi. Maari ding baguhin ang laki at uri ng font. Iayos ang pagbabasa ng Bibliya ayon sa nais."
                 study heading: "Aralin ang Bibliya."
                 study description: "<strong>Mag-highlight</strong> gamit ang iyong gustong kulay,\n<strong>maglagay ng palatandaan</strong> sa mga paboritong bersikulo, at gumawa ng sariling tala sa mga aral na natututunan. Di ka lamang nagbibigay ng oras sa Salita ng Diyos, nakalilikha ka rin ng kasaysayan ng iyong pakikipag-ugnayan sa Bibliya."
                 subscribe heading: "Mag-subscribe sa mga Babasahing Gabay."

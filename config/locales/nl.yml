@@ -935,6 +935,10 @@ nl:
         line 2: "verschillende talen - de Bijbel"
         line 3: "die overal met je meegaat."
         download: "Nu downloaden"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Relevantie"
         relevancy copy: "Voor vroegere generaties was de toegang tot de Bijbel heel beperkt. Tegenwoordig is dat niet meer zo. Hoewel veel mensen toegang hebben tot de Bijbel, denken ze dat de boodschap niet meer van toepassing is voor hun leven. Tegelijk zijn er anderen die geloven dat er verband is tussen de Bijbel en hun dagelijkse ervaringen."

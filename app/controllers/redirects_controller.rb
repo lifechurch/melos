@@ -1,6 +1,7 @@
 class RedirectsController < ApplicationController
 
-  before_filter :force_login, except: [:settings_notifications, :settings_vod_subscriptions, :lifechurchtv, :ninos]
+  before_filter :force_login, except: [:settings_notifications, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul]
+
   prepend_before_filter :mobile_redirect, only: [:bookmarks, :profile, :friends, :notes, :badges, :highlights, :connections]
   # skip_filter :set_page,
   #             :set_locale,
@@ -78,6 +79,16 @@ class RedirectsController < ApplicationController
 
   def ninos
     redirect_to('/es/kids')
+  end
+
+  def ertong
+    # Chinese Simplified Redirect to Kids
+    redirect_to('/zh-CN/kids')
+  end
+
+  def aideul
+    # Korean Redirect to Kids
+    redirect_to('/ko/kids')
   end
 
 end

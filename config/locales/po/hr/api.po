@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-10 12:32-0609\n"
+"PO-Revision-Date: 2014-11-10 12:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hr <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -59,6 +59,9 @@ msgstr "Označen je <b>{reference_human}</b>"
 
 msgid "moment.bookmark.title"
 msgstr "<b>{reference_human}</b> - označeno od strane korisnika: {name}"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Pripremi se za Božić s adventnim planom čitanja"
 
 msgid "moment.friendship.self.title"
 msgstr "<b>{friend_name}</b> i ti ste sad prijatelji"
@@ -231,6 +234,9 @@ msgstr "{name} pokreće novi plan, {title}"
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} pokreće novi plan čitanja, {title}"
 
+msgid "notifications.people.contact.joined"
+msgstr "Korisnik {name} se upravo pridružio YouVersionu. Klikni da ga dodaš kao prijatelja."
+
 msgid "notifications.system.test"
 msgstr "Preuzmi aplikaciju Dječja Biblija!!!"
 
@@ -271,6 +277,3 @@ msgstr "Aplikacija Biblija od YouVersiona ima trajno mjesto na mom početnom zas
 
 msgid "share.invite_twitter_direct"
 msgstr "Imaš li aplikaciju Biblija od YouVersiona? Meni je super i mislim da će se i tebi svidjeti. Evo linka:"
-
-msgid "notifications.people.contact.joined"
-msgstr "Korisnik {name} se upravo pridružio YouVersionu. Klikni da ga dodaš kao prijatelja."

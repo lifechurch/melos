@@ -4,7 +4,7 @@ pt-PT:
         formats: 
             votd: "%-d %B %Y"
     counter: 
-        format: "999 999 999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Conversa & Descoberta"
@@ -935,6 +935,10 @@ pt-PT:
         line 2: "idiomas - a Bíblia que"
         line 3: "vai consigo para todo o lado"
         download: "Descarregue Agora"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Relevância"
         relevancy copy: "Nas gerações anteriores, o acesso que as pessoas tinham à Bíblia era muito limitado. Hoje isso já não acontece. Todavia, muitas pessoas que têm acesso à Bíblia acham que a sua mensagem não diz respeito às suas vidas. Ao mesmo tempo, existem outras pessoas que acreditam que existe uma ligação entre a Bíblia e as suas experiências diárias."

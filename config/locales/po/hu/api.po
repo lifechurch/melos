@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-10 12:32-0609\n"
+"PO-Revision-Date: 2014-11-10 12:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hu <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -59,6 +59,9 @@ msgstr "Könyvjelzővel megjelölted <b>{reference_human}</b>"
 
 msgid "moment.bookmark.title"
 msgstr "{name} könyvjelzővel megjelölte a/z <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Készülj fel a karácsonyra egy adventi olvasási tervvel"
 
 msgid "moment.friendship.self.title"
 msgstr "<b>{friend_name}</b> mostantól a barátod lett"
@@ -231,6 +234,9 @@ msgstr "{name} elkezdett egy új tervet: {title}"
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} elkezdett egy új Biblia tervet: {title}"
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} éppen most csatlakozott a YouVersion-höz. Koppints, ha ismerősnek szeretnéd jelölni."
+
 msgid "notifications.system.test"
 msgstr "Töltsd le a gyerekeknek szóló Biblia Appet!!!"
 
@@ -271,6 +277,3 @@ msgstr "A YouVersion Biblia alkalmazásának állandó helye van a kezdőképern
 
 msgid "share.invite_twitter_direct"
 msgstr "Letöltötted már a YouVersion Bibla alkalmazását? Én nagyon szeretem és szerintem neked is tetszene. Itt van a letöltő link:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} éppen most csatlakozott a YouVersion-höz. Koppints, ha ismerősnek szeretnéd jelölni."

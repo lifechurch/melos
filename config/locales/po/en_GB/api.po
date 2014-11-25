@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-17 13:12-0609\n"
+"PO-Revision-Date: 2014-11-17 13:12-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en_GB <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -60,6 +60,9 @@ msgstr "You bookmarked <b>{reference_human}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} bookmarked <b>{reference_human}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Get ready for Christmas with an Advent Bible plan"
+
 msgid "moment.friendship.self.title"
 msgstr "You are now friends with <b>{friend_name}</b>"
 
@@ -98,6 +101,9 @@ msgstr "You started a new plan"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} started a plan"
+
+msgid "moment.system.bafk.title"
+msgstr "Help your kids fall in love with God's Word."
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Watch the <i>Bible series</i> tonight!"
@@ -231,6 +237,9 @@ msgstr "{name} started a new plan, {title}"
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} started a new Bible plan, {title}"
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} just joined YouVersion. Tap to add them as a friend."
+
 msgid "notifications.system.test"
 msgstr "Download our kids Bible App now!!!"
 
@@ -271,6 +280,3 @@ msgstr "The @YouVersion Bible App has a permanent spot on my home screen. Read, 
 
 msgid "share.invite_twitter_direct"
 msgstr "Do you have the Bible App from @YouVersion? I love it, and I think you would too. Here's the link:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} just joined YouVersion. Tap to add them as a friend."

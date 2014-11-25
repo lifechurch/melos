@@ -935,6 +935,10 @@ es:
         line 2: "diferentes idiomas - la Biblia"
         line 3: "va con usted a cualquier lugar."
         download: "Descargar ahora"
+    download bafk ad: 
+        title: "Descarga la Biblia App para Niños"
+        description copy: "La Biblia App para Niños es una maravillosa forma para que tus hijos aprendan historias Bíblicas sobre Jesús."
+        download: "Descárgala ahora."
     about page: 
         relevancy: "Pertinencia"
         relevancy copy: "En las generaciones pasadas, el acceso a la Biblia que tenian las personas era muy limitado. Hoy en día, este ya no es el caso. Sin embargo, muchas personas que tienen acceso a la Biblia piensan que su mensaje no se aplica a sus vidas. Pero al mismo tiempo, hay otros que creen que hay una conexión entre la Biblia y sus experiencias cotidianas."

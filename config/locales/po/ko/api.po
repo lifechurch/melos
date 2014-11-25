@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-10 12:32-0609\n"
+"PO-Revision-Date: 2014-11-10 12:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ko <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -60,6 +60,9 @@ msgstr "<b>{reference_human}</b>에 책갈피를 표시 하셨습니다."
 msgid "moment.bookmark.title"
 msgstr "{name}님이 <b>{reference_human}</b>에 책갈피를 표시했습니다."
 
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "대강절 묵상계획을 시작으로 성탄절을 준비해보세요,"
+
 msgid "moment.friendship.self.title"
 msgstr "이제 <b>{friend_name}</b>님과 친구입니다"
 
@@ -98,6 +101,9 @@ msgstr "묵상을 시작하셨습니다."
 
 msgid "moment.plan_subscription.title"
 msgstr "{name}님께서 묵상 계획을 시작하셨습니다."
+
+msgid "moment.system.bafk.title"
+msgstr "댁의 자녀들이 하나님의 말씀을 사랑할 수있도록 도와주세요."
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "오늘밤 <i>성경 시리즈</i>를 시청해 보세요!"
@@ -231,6 +237,9 @@ msgstr "{name}님이 {title} 새 묵상 계획을 시작하였습니다."
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name}님이 {title}이라는 새 성경 읽기계획을 시작하였습니다."
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} 님께서 YouVersion 에 가입하셨습니다. 탭하셔서 친구 신청하세요."
+
 msgid "notifications.system.test"
 msgstr "지금 어린이 성경 앱을  다운로드하세요!!!"
 
@@ -263,6 +272,3 @@ msgstr "저는 @YouVersion의 성경 앱을 홈 스크린에 올려놓았습니�
 
 msgid "share.invite_twitter_direct"
 msgstr "@YouVersion 에서 나온 성경 앱 사용해보셨나요?  너무 좋아요.  한 번 사용하시면 좋아하실거예요.  이 링크를 따라가보세요:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} 님께서 YouVersion 에 가입하셨습니다. 탭하셔서 친구 신청하세요."

@@ -196,7 +196,7 @@ cs:
     reader: "Čtenář"
     lifechurch short url: "LifeChurch.tv"
     about: "O aplikaci"
-    versions link: "Versions"
+    versions link: "Překlady"
     jobs: "Zaměstnání"
     privacy policy: "Ochrana soukromí"
     terms: "Podmínky"
@@ -718,16 +718,16 @@ cs:
             readings 5 or more: "čtení"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                few: "%{count} friends subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count} přítel odebírá tento plán"
+                few: "%{count} přátelé odebírají tento plán"
+                other: "%{count} přátel odebírá tento plán"
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                few: "%{count} friends have completed this plan"
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
-            view all: "View All"
-            close: "Close"
+                one: "%{count} přítel dokončil tento plán"
+                few: "%{count} přátelé dokončili tento plán"
+                other: "%{count} přátel dokončilo tento plán"
+            total completions: "Více než %{count} dokončení"
+            view all: "Zobrazit vše"
+            close: "Zavřít"
         settings: "Nastavení"
         privacy: 
             visible to friends?: "Přejete si, aby mohli vaši přátelé zobrazovat vaši aktivitu u Plánů čtení?"
@@ -937,6 +937,10 @@ cs:
         line 2: "100 různých jazycích - Bible,"
         line 3: "která je všude s vámi."
         download: "Stahujte nyní"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Význam"
         relevancy copy: "V dřívějších generacích měli lidé k Bibli velmi omezený přístup. Dnes to již neplatí. Nicméně, mnoho lidí, kteří mají přístup k Bibli, si myslí, že její poselství se nedá aplikovat na jejich životy. V tu samou dobu jsou tu další lidé, kteří věří, že existuje propojení mezi Biblí a jejich každodenními zkušenostmi."
@@ -1017,7 +1021,7 @@ cs:
                 now skipped: "Tato stránka bude přeskočena."
             features: 
                 read heading: "Čtěte Bibli."
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "Vyberte si ze stovek <a href='%{versions_path}'>překladů Bible a jazyků.</a>Porovnejte dva překlady vedle sebe. Můžete si vybrat velikost písma a font. Aby vaše online zážitky ze čtení Bible byly podle vašich představ."
                 study heading: "Studujte Bibli."
                 study description: "<strong>Zvýrazňujte</strong> vaší oblíbenou barvou, vytvářejte <strong>záložky</strong> k vašim oblíbeným biblickým veršům a pište si poznámky o tom, co se právě učíte. Netrávíte jen čas s Božím Slovem, vytváříte historii vaší interakce s Biblí."
                 subscribe heading: "Vyberte si plán čtení Bible."

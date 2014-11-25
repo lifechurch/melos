@@ -935,6 +935,10 @@ mn:
         line 2: "өөр хэл дээр - Хаана ч"
         line 3: "тантай хамт байх Библи."
         download: "Одоо Татах"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Хамаарал"
         relevancy copy: "Өнгөрсөн үеүдэд, хүмүүсийн Библитэй байх боломж маш хязгаарлагдмал байсан. Өнөөдөр, энэ нь тийм асуудал байхаа болисон. Гэсэн хэдий ч, Библитэй олон хүмүүс тэдгээрт бичигдсэн үгс өөрсдийнх нь амьдралд тусан хэрэгжих боломжгүй гэж боддог. Үүний зэрэгцээ, Библи болон тэдний өдөр тутмын амьдралын үйл ажиллагаа хоёрын хооронд холбоо бий гэж итгэдэг хүмүүс бас бий."

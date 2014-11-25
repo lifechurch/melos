@@ -1,4 +1,9 @@
 - @title = @version.to_s
+- unless is_whitelabel_site
+  - content_for :additional_meta do
+    - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+    - canonicalHref = "https://www.bible.com#{locale_dir}/versions/#{@version.id}"
+    %link{rel: "canonical", href: canonicalHref}
 - content_for :sidebar do
 
   .widget-button
@@ -37,3 +42,4 @@
   %h1= @version
   .copyright= @version.info.try :html_safe
   = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
+  = link_to t("mobile page.download now"), app_page_path, class: 'mobile version_download action_button_green'

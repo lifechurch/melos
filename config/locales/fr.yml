@@ -935,6 +935,10 @@ fr:
         line 2: "dans plus de 100 langues. La"
         line 3: "Bible qui vous suit partout."
         download: "Télécharger maintenant"
+    download bafk ad: 
+        title: "Download the Bible App for Kids"
+        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        download: "Download Now"
     about page: 
         relevancy: "Pertinence"
         relevancy copy: "Les générations qui nous ont précédés avaient un accès limité à la Bible. Nous ne sommes plus à ce stade de nos jours. Cependant, plusieurs personnes ayant accès à la Bible pensent que Son message est en décalage par rapport à leur vie. Contrairement à ceux qui réussissent à établir un lien entre la Bible et leurs expériences de tous les jours."

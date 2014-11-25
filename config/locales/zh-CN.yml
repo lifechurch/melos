@@ -129,8 +129,8 @@ zh-CN:
             in partnership: "合作"
             one hope: "一个愿望：为儿童提供超凡的圣经内容"
         links: 
-            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
-            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            apple: "https://itunes.apple.com/cn/app/bible-for-kids/id668692393?mt=8"
+            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=zh_cn"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "今日社区"
     celebrating 50MM: "庆祝5000万的安装！"
@@ -933,6 +933,10 @@ zh-CN:
         line 2: "上百种不同语言的译本"
         line 3: "让圣经随时随地陪伴您！"
         download: "点击下载圣经软件"
+    download bafk ad: 
+        title: "下载儿童圣经软件"
+        description copy: "儿童圣经软件是您孩子学习有关耶稣故事的好途径。"
+        download: "现在就下载"
     about page: 
         relevancy: "关联"
         relevancy copy: "在过去的年代，人们能够接触到圣经的方式是很有限的。现今的时代，这不再是个问题了。然而，很多有机会接触到圣经的人认为圣经当中的信息对于他们的生活完全没有用处。与此同时，有另外一些人却相信圣经与他们每日的生活紧密相连。"

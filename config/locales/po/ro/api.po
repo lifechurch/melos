@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-10 12:32-0609\n"
+"PO-Revision-Date: 2014-11-10 12:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ro <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2)\n"
@@ -59,6 +59,9 @@ msgstr "Ai marcat <b>{reference_human}</b>"
 
 msgid "moment.bookmark.title"
 msgstr "{name} a marcat <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Pregătește-te de Crăciun cu un plan de citire potrivit pentru perioada Adventului."
 
 msgid "moment.friendship.self.title"
 msgstr "Acum ești prieten cu <b>{friend_name}</b>"
@@ -231,6 +234,9 @@ msgstr "{name} a început un nou plan, {title}"
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} a început un nou plan biblic, {title}"
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} tocmai s-au înscris pe YouVersion. Apasă pentru adăugare la Prieteni."
+
 msgid "notifications.system.test"
 msgstr "Descarcă aplicația noastră Biblia pentru copii acum!!!"
 
@@ -271,6 +277,3 @@ msgstr "Aplicația Biblia de la @YouVersion are un loc permanent pe ecranul meu 
 
 msgid "share.invite_twitter_direct"
 msgstr "Ai aplicația Biblia de la @YouVersion? Mie îmi place foarte mult și cred că ți-ar place și ție. Iată legătura:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} tocmai s-au înscris pe YouVersion. Apasă pentru adăugare la Prieteni."

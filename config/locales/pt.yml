@@ -935,6 +935,10 @@ pt:
         line 2: "de 100 idiomas - a Bíblia que"
         line 3: "vai com você a qualquer lugar."
         download: "Baixar Agora"
+    download bafk ad: 
+        title: "Baixe o App da Bíblia para Crianças"
+        description copy: "O App da Bíblia para Crianças é uma ótima maneira para suas crianças aprenderem histórias Bíblicas sobre Jesus."
+        download: "Baixe Agora"
     about page: 
         relevancy: "Relevância"
         relevancy copy: "Nas gerações passadas, o acesso das pessoas à Bíblia era muito limitado. Hoje esse não é mais o caso. No entanto, muitas pessoas que tem acesso à Bíblia acham que sua mensagem não se aplica a suas vidas. Ao mesmo tempo, há outras que acreditam que há uma conexão entre a Bíblia e suas experiências do dia-a-dia."

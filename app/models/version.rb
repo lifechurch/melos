@@ -279,6 +279,10 @@ class Version < YV::Resource
   # kjv.to_param
   # => "1"
   def to_param
+    "#{id} #{abbreviation} #{title.to_url}".parameterize
+  end
+
+  def to_id
     "#{id}"
   end
 
