@@ -66,8 +66,8 @@
       "data-reference"     => alt_reference.to_param,
       "data-abbreviation"  => alt_version.try(:abbreviation).try(:downcase),
       "data-usfm"          => reference.chapter_usfm}
-      
-      = t('ref.loading secondary')
+      - unless presenter.verses.present? or presenter.respond_to?(:subscription)
+        = t('ref.loading secondary')
 
 
 %footer
