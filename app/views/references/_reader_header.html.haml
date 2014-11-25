@@ -81,7 +81,7 @@
         %a{href: version_path(version)}
           %h2
             = version.to_s
-    - unless invalid_ref or presenter.verses.present?
+    - unless invalid_ref
       %ul.float_right.header-options
         - if alt_version.present?
           %li.show_in_parallel_mode
@@ -102,10 +102,11 @@
           %a.button.header-options-full#button_full_screen{:href => '#', :title => t("ref.full screen")}
             %span.icon_full_screen
               =t("ref.full screen")
-        %li.float_right_in_parallel_mode
-          %a.header-options-parallel#button_read_parallel.button{:href => '#', :title => t("ref.parallel")}
-            %span.icon_parallel
-              =t("ref.parallel")
+        - unless presenter.verses.present? and !presenter.respond_to?(:subscription)
+          %li.float_right_in_parallel_mode
+            %a.header-options-parallel#button_read_parallel.button{:href => '#', :title => t("ref.parallel")}
+              %span.icon_parallel
+                =t("ref.parallel")
 
 #menu_verse_actions.clearfix
   .references

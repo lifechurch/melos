@@ -13,6 +13,7 @@
   verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
   focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
   a_chapter     = presenter.try(:is_chapter?)
+  verse_view    = presenter.verses.present? and !presenter.respond_to?(:subscription)
 
 - content_for :meta_description do
   = "#{reference.human} #{presenter.version} #{truncate(strip_tags(presenter.content).html_safe, length: 125, separator: " ", omission: '')}"
@@ -48,7 +49,7 @@
         = reader_next_link(reference, {classes: "reader-next #{direction}"})
 
     // Primary version content
-    #version_primary{class: version.try(:text_direction),
+    #version_primary{class: "#{version.try(:text_direction)} #{"verse-view" if verse_view}",
       "data-reference"     => reference.to_param,
       "data-abbreviation"  => version.try(:abbreviation).downcase,
       "data-usfm"          => reference.chapter_usfm}
@@ -56,7 +57,7 @@
       = presenter.content.html_safe if presenter.content
     
     -# Read Chapter button
-    - if presenter.verses.present? and !presenter.respond_to?(:subscription)
+    - if verse_view
       %h2#read_chapter
         %a.action_button_blue{href: reference_path(reference: reference.chapter_usfm.downcase)}
           = t("read reference", reference: reference.to_chapter.human)
@@ -71,7 +72,7 @@
       "data-reference"     => alt_reference.to_param,
       "data-abbreviation"  => alt_version.try(:abbreviation).try(:downcase),
       "data-usfm"          => reference.chapter_usfm}
-      - unless presenter.verses.present? or presenter.respond_to?(:subscription)
+      - unless verse_view
         = t('ref.loading secondary')
 
 
