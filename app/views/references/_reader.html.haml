@@ -15,7 +15,7 @@
   a_chapter     = presenter.try(:is_chapter?)
 
 - content_for :meta_description do
-  = "#{reference.human} #{presenter.version} #{truncate(strip_tags(presenter.content.html_safe), length: 125, separator: " ", omission: '')}"
+  = "#{reference.human} #{presenter.version} #{truncate(strip_tags(presenter.content).html_safe, length: 125, separator: " ", omission: '')}"
 
 - content_for :mobile_right_nav do
   = link_to(version.abbreviation, 'javascript:void(0);', id: "m_version_btn" )
