@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-10 12:32-0609\n"
+"PO-Revision-Date: 2014-11-10 12:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: vi <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -43,10 +43,10 @@ msgstr ""
 "Generated-By: Babel 1.3\n"
 
 msgid "moment.badge.earned.self.title"
-msgstr "Bạn đạt huy hiệu <b>&quot;{title}&quot;</b>"
+msgstr "Bạn đạt huy hiệu <b>\"{title}\"</b>"
 
 msgid "moment.badge.earned.title"
-msgstr "{name} đạt huy hiệu <b>&quot;{title}&quot;</b>"
+msgstr "{name} đạt huy hiệu <b>\"{title}\"</b>"
 
 msgid "moment.bible.download.self.title"
 msgstr "Bạn tải xuống bản dịch <b>{version}</b>"
@@ -59,6 +59,9 @@ msgstr "Bạn đánh dấu <b>{reference_human}</b>"
 
 msgid "moment.bookmark.title"
 msgstr "{name} đánh dấu <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Đón Giáng Sinh bằng một kế hoạch về Mùa Vọng"
 
 msgid "moment.friendship.self.title"
 msgstr "Bạn vừa kết bạn với <b>{friend_name}</b>"
@@ -73,10 +76,10 @@ msgid "moment.highlight.title"
 msgstr "{name} tô màu <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
-msgstr "Bạn tạo ghi chú <b>&quot;{title}&quot;</b>"
+msgstr "Bạn tạo ghi chú <b>\"{title}\"</b>"
 
 msgid "moment.note.title"
-msgstr "{name} tạo ghi chú <b>&quot;{title}&quot;</b>"
+msgstr "{name} tạo ghi chú <b>\"{title}\"</b>"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Bạn đã hoàn tất kế hoạch"
@@ -100,7 +103,7 @@ msgid "moment.plan_subscription.title"
 msgstr "{name} bắt đầu một kế hoạch mới"
 
 msgid "moment.system.bible_series_promo.body"
-msgstr "Đón xem <i>&quot;Bible Series&quot;</i> tối nay!"
+msgstr "Đón xem <i>\"Bible Series\"</i> tối nay!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Bible Series</i>"
@@ -109,10 +112,10 @@ msgid "moment.system.find_friends.title"
 msgstr "Hãy tìm bạn bè trong danh bạ của bạn để App Kinh Thánh càng trở nên thú vị hơn!"
 
 msgid "moment.video.watched.self.title"
-msgstr "Bạn xem <b>&quot;{title}&quot;</b>"
+msgstr "Bạn xem <b>\"{title}\"</b>"
 
 msgid "moment.video.watched.title"
-msgstr "{name} xem <b>&quot;{title}&quot;</b>"
+msgstr "{name} xem <b>\"{title}\"</b>"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} bình luận về đánh dấu của bạn: “{comment}”"
@@ -231,6 +234,9 @@ msgstr "{name} bắt đầu kế hoạch \"{title}\""
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} bắt đầu kế hoạch đọc Kinh Thánh \"{title}\""
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} vừa tham gia YouVersion. Gõ vào đây để kết bạn."
+
 msgid "notifications.system.test"
 msgstr "Tải Ứng dụng Kinh Thánh cho Trẻ em!!!"
 
@@ -271,6 +277,3 @@ msgstr "App Kinh Thánh @YouVersion chiếm giữ một vị trí cố định t
 
 msgid "share.invite_twitter_direct"
 msgstr "Bạn đã tải App Kinh Thánh @YouVersion chưa? Tôi nghĩ bạn cũng sẽ thích nó như tôi vậy. Nếu bạn chưa tải thì đã có đường dẫn ở đây:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} vừa tham gia YouVersion. Gõ vào đây để kết bạn."

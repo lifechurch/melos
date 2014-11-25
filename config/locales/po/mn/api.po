@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-10 12:32-0609\n"
+"PO-Revision-Date: 2014-11-10 12:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mn <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -59,6 +59,9 @@ msgstr "Та <b>{reference_human}</b> хавчуурга хийсэн"
 
 msgid "moment.bookmark.title"
 msgstr "{name} <b>{reference_human}</b> хавчуурга хийсэн"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Адвент Тѳлѳвлѳгѳѳгѳѳр Кристмасийн Баярыг тэмдэглэхээр бэлдэх үү"
 
 msgid "moment.friendship.self.title"
 msgstr "Та <b>{friend_name}</b> -тай холбогдсон"
@@ -231,6 +234,9 @@ msgstr "{name} шинэ тѳлѳвлѳгѳѳ эхлэсэн, {title}"
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} Шинэ Уншлагын Төлөвлөгөө Эхлэсэн, {title}"
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} сая YouVersion-ний данстай болсон. Найзтай болохоор энд дар."
+
 msgid "notifications.system.test"
 msgstr "Хүүхдийн Библи Апп-ийг одоо татаж авна уу!!"
 
@@ -276,6 +282,3 @@ msgstr "@YouVersion-ий Библи Апп миний утасны нүүр ху
 
 msgid "share.invite_twitter_direct"
 msgstr "Танд @YouVersion -ны Библи Апп байгаа юу? Надад таалагдаж байна, таньд ч гэсэн таалагдах байхаа. Линк нь:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} сая YouVersion-ний данстай болсон. Найзтай болохоор энд дар."

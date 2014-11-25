@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-10 12:32-0609\n"
+"PO-Revision-Date: 2014-11-10 12:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: tr <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -59,6 +59,9 @@ msgstr "Siz <b>{reference_human}</b> ayetini yer imlerine eklediniz"
 
 msgid "moment.bookmark.title"
 msgstr "{name} <b>{reference_human}</b> ayetini yer imlerine ekledi"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Noel Hazırlığı Kutsal Kitap Okuma Planını kullanarak kendinizi Doğuş Bayramı'na hazırlayın!"
 
 msgid "moment.friendship.self.title"
 msgstr "Siz <b>{friend_name}</b> ile arkadaş oldunuz."
@@ -231,6 +234,9 @@ msgstr "{name} {title} isimli yeni bir okuma planına başladı"
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} {title} isimli yeni bir Kutsal Kitap okuma planına başladı"
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} az önce YouVersion yükledi. Arkadaş listenize eklemek için tıklayın."
+
 msgid "notifications.system.test"
 msgstr "Çocuklar için Kutsal Kitap Uygulamamızı indirin!!!"
 
@@ -263,6 +269,3 @@ msgstr "@YouVersion Kutsal Kitap Uygulaması ana ekranımda! Oku, izle, dinle ve
 
 msgid "share.invite_twitter_direct"
 msgstr "@YouVersion Kutsal Kitap Uygulaması sende yüklü mü? Ben kullanıyorum ve onu çok beğeniyorum. Sen de beğenirsin düşünüyorum. İşte linki:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} az önce YouVersion yükledi. Arkadaş listenize eklemek için tıklayın."

@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-10 12:32-0609\n"
+"PO-Revision-Date: 2014-11-10 12:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: th <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -59,6 +59,9 @@ msgstr "คุณได้คั่นหน้า <b>{reference_human}</b>"
 
 msgid "moment.bookmark.title"
 msgstr "{name} ได้คั่นหน้า <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "เตรียมพร้อมสำหรับช่วงเวลาคริสมาสต์กับแผนการอ่านเกี่ยวกับการประสูติ"
 
 msgid "moment.friendship.self.title"
 msgstr "ตอนนี้คุณเป็นเพื่อนกับ <b>{friend_name}</b>"
@@ -231,6 +234,9 @@ msgstr "{name} ได้เริ่มแผนการอ่านใหม�
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} ได้เริ่มแผนการอ่านพระคัมภีร์ใหม่, {title}"
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} ได้เข้าร่วมใน YouVersion แตะเพื่อเพิ่มเขาเป็นเพื่อน"
+
 msgid "notifications.system.test"
 msgstr "ดาวน์โหลดแอพพระคัมภีร์สำหรับเด็กได้แล้วตอนนี้ !!!"
 
@@ -273,6 +279,3 @@ msgstr "แอพพระคัมภีร์จาก @YouVersion ฝัง�
 
 msgid "share.invite_twitter_direct"
 msgstr "คุณมีแอพพระคัมภีร์จาก @YouVersion หรือยัง? ฉันชอบมัน และคิดว่าคุณต้องชอบด้วย กดลิงค์นี้นะ:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} ได้เข้าร่วมใน YouVersion แตะเพื่อเพิ่มเขาเป็นเพื่อน"

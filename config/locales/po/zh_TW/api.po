@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-09-26 14:14-0609\n"
+"PO-Revision-Date: 2014-09-26 14:14-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_TW <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -231,6 +231,9 @@ msgstr "{name} 開始了新的計劃, {title}"
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} 開始了新的讀經計劃, {title}"
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} 剛加入 YouVersion。點擊以添加他或她為您的朋友。"
+
 msgid "notifications.system.test"
 msgstr "馬上下載我們的兒童聖經軟體!!!"
 
@@ -263,6 +266,3 @@ msgstr "我將 @YouVersion 的聖經軟體長駐在我的主熒幕上。無論�
 
 msgid "share.invite_twitter_direct"
 msgstr "你有 @YouVersion 的聖經軟體嗎？我很喜歡用，猜想你也會喜歡。這是聖經軟體的鏈結:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} 剛加入 YouVersion。點擊以添加他或她為您的朋友。"
