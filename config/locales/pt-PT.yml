@@ -4,7 +4,7 @@ pt-PT:
         formats: 
             votd: "%-d %B %Y"
     counter: 
-        format: "999 999 999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Conversa & Descoberta"
