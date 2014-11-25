@@ -42,11 +42,10 @@
 
   .wrap
     %div.reader-nav
-      :ruby
-        direction = 'rtl' if version.try(:rtl?)
-
-      = reader_previous_link(reference, {classes: "reader-prev #{direction}"})
-      = reader_next_link(reference, {classes: "reader-next #{direction}"})
+      - direction = 'rtl' if version.try(:rtl?)
+      - unless presenter.verses.present?
+        = reader_previous_link(reference, {classes: "reader-prev #{direction}"})
+        = reader_next_link(reference, {classes: "reader-next #{direction}"})
 
     // Primary version content
     #version_primary{class: version.try(:text_direction),
