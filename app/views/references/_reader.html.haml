@@ -60,6 +60,11 @@
       %h2#read_chapter
         %a.action_button_blue{href: reference_path(reference: reference.chapter_usfm.downcase)}
           = t("read reference", reference: reference.to_chapter.human)
+      %div#download.mobile{href:"/app"}
+        -# - style = "background: url(#{image_path(localized_bible_icon(58))}) no-repeat right center" if localized_bible_icon
+        -# %span.icon{style: style}
+        %a.action_button_blue{href:"/app"}
+          = t('mobile page.download now')
 
     // Secondary version content
     #version_secondary{class: alt_version.try(:text_direction),
