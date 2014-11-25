@@ -2,6 +2,7 @@
 // version:
 // reference:
 // alt_version:
+// presenter:
 
 - invalid_ref = defined?(invalid) and invalid == true
 - content_for :additional_meta do
@@ -80,7 +81,7 @@
         %a{href: version_path(version)}
           %h2
             = version.to_s
-    - unless invalid_ref
+    - unless invalid_ref or presenter.verses.present?
       %ul.float_right.header-options
         - if alt_version.present?
           %li.show_in_parallel_mode
