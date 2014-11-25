@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-10 12:32-0609\n"
+"PO-Revision-Date: 2014-11-10 12:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: da <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -59,6 +59,9 @@ msgstr "Du bogmærkede <b>{reference_human}</b>"
 
 msgid "moment.bookmark.title"
 msgstr "{name} bogmærkede <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Bliv klar til Jul med en Advent Bibel Plan"
 
 msgid "moment.friendship.self.title"
 msgstr "Du er nu venner med <b>{friend_name}</b>"
@@ -231,6 +234,9 @@ msgstr "{name} startede en ny Plan, {title}"
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} startede en ny Bibel Plan, {title}"
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} er lige tilmeldt YouVersion. Marker for at tilføje dem som Ven."
+
 msgid "notifications.system.test"
 msgstr "Hent vores Kids Bibel App nu!!!"
 
@@ -271,6 +277,3 @@ msgstr "@YouVersion´s Bible App har en permanent ikon på min startskærm. Læs
 
 msgid "share.invite_twitter_direct"
 msgstr "Har du Bibel App´en fra @YouVersion? Jeg elsker den og tror at det vil du også gøre. Her er et link:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} er lige tilmeldt YouVersion. Marker for at tilføje dem som Ven."

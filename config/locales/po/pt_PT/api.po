@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:14-0600\n"
-"PO-Revision-Date: 2014-09-25 16:14-0600\n"
+"POT-Creation-Date: 2014-11-10 12:32-0609\n"
+"PO-Revision-Date: 2014-11-10 12:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt_PT <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -59,6 +59,9 @@ msgstr "Você criou o marcador <b>{reference_human}</b>"
 
 msgid "moment.bookmark.title"
 msgstr "{name} criou o marcador <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Prepare-se para o Natal com um Plano de Leitura da Bíblia sobre o Advento"
 
 msgid "moment.friendship.self.title"
 msgstr "Você é agora amigo/a de <b>{friend_name}</b>"
@@ -231,6 +234,9 @@ msgstr "{name} começou um plano novo: {title}"
 msgid "notifications.moments.create.plan_subscription.push"
 msgstr "{name} começou um plano da Bíblia novo: {title}"
 
+msgid "notifications.people.contact.joined"
+msgstr "{name} acabou de registar-se no YouVersion. Clique para adicionar como amigo."
+
 msgid "notifications.system.test"
 msgstr "Descarregue já a nossa App da Bíblia para Crianças!!!"
 
@@ -271,6 +277,3 @@ msgstr "A App da Bíblia do @YouVersion tem um lugar permanente na minha página
 
 msgid "share.invite_twitter_direct"
 msgstr "Já tem a App da Bíblia do @YouVersion? Eu gosto, e acho que também irá gostar. Aqui tem o link:"
-
-msgid "notifications.people.contact.joined"
-msgstr "{name} acabou de registar-se no YouVersion. Clique para adicionar como amigo."
