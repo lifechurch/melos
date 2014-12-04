@@ -27,7 +27,7 @@
 
 = render partial: "references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
-%article#reader.reader{"class" => (focus_verses && (not a_chapter)) ? "mute" : nil,
+%article#reader.reader{"class" => "#{"mute" if focus_verses && (not a_chapter)} #{"verse-view" if verse_view}",
   "data-setting-font" => client_settings.reader_font,
   "data-setting-size" => client_settings.reader_font_size,
   "data-fullscreen"   => client_settings.reader_full_screen,
