@@ -30,6 +30,13 @@
     facebook_locale = "ko_KR"
     youtube_url = ""
     # prelaunch = true
+  elsif (I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR")) then
+    i18n_css_class = "pt-BR"
+    i18n_image_dir = "/pt-BR"
+    meta_url = "#{request.protocol}#{request.host_with_port}/pt-BR/kids"
+    facebook_locale = "pt_BR"
+    youtube_url = ""
+    # prelaunch = true
   end
 
 
@@ -52,6 +59,7 @@
     %meta{property: "og:locale:alternate", content: "es_ES"}
     %meta{property: "og:locale:alternate", content: "ko_KR"}
     %meta{property: "og:locale:alternate", content: "zh_CN"}
+    %meta{property: "og:locale:alternate", content: "pt_BR"}
     %meta{name: "twitter:card",             content: "summary"}
     %meta{name: "twitter:url",              content: meta_url}
     %meta{name: "twitter:title" ,           content: meta_title}
@@ -62,6 +70,7 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/es/kids",:rel=>"alternate",:hreflang=>"es"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ko/kids",:rel=>"alternate",:hreflang=>"ko"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-CN/kids",:rel=>"alternate",:hreflang=>"zh-cn"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/pt-BR/kids",:rel=>"alternate",:hreflang=>"pt-br"}
     %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}/kids"}
 
     = stylesheet_link_tag "campaigns/kids"
@@ -87,7 +96,7 @@
 
       -# !Logo and intro copy
       -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN"))
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR"))
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids
