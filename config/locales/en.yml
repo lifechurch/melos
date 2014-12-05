@@ -1077,6 +1077,8 @@ en:
     loading:                                    "Loading More Versions..."
     load error:                                 "Sorry, there was a problem loading more versions. Close this menu and reopen to try again."
   campaigns:
+    christmas:
+      tracker title:                            "Christmas Story Tracker"
     100m:
       logo:                                     "YouVersion: The Bible app"
       tagline:                                  "It starts with <em>100 million</em>"

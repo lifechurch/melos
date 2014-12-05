@@ -35,6 +35,7 @@ YouversionWeb::Application.routes.draw do
   scope module: 'campaigns' do
     get "/100million",    to: "pages#hundred_million"
     resources 'kids',     only: [:index, :create]
+    resources 'christmas', only: [:index]
   end
 
   # Bible
