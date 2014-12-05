@@ -654,19 +654,6 @@ body {
 
 /* Custom css
 ----------------------------------------------------------------------------------------------------*/
-@font-face {
-    font-family: 'BebasNeueRegular';
-    src: url('/assets/fonts/BebasNeue-webfont.eot');
-    src: url('/assets/fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/BebasNeue-webfont.woff') format('woff'),
-    url('/assets/fonts/BebasNeue-webfont.ttf') format('truetype'),
-    url('/assets/fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    text-transform: capitalize;
-}
-
-/** { font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif; font-size: 12px; }*/
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
@@ -938,7 +925,7 @@ svg.map {
 }
 
 .verse span {
-    font: 70px 'BebasNeueRegular', Helvetica, Arial, sans-serif;
+    font: 56px 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 .verse p {
