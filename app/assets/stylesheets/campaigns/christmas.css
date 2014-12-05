@@ -654,17 +654,6 @@ body {
 
 /* Custom css
 ----------------------------------------------------------------------------------------------------*/
-/*@font-face {*/
-    /*font-family: 'AmaticBold';*/
-    /*src: url('/assets/fonts/Amatic-Bold-webfont.eot');*/
-    /*src: url('/assets/fonts/Amatic-Bold-webfont.eot?#iefix') format('embedded-opentype'),*/
-    /*url('/assets/fonts/Amatic-Bold-webfont.woff') format('woff'),*/
-    /*url('/assets/fonts/Amatic-Bold-webfont.ttf') format('truetype'),*/
-    /*url('/assets/fonts/Amatic-Bold-webfont.svg#AmaticBold') format('svg');*/
-    /*font-weight: normal;*/
-    /*font-style: normal;*/
-/*}*/
-
 @font-face {
     font-family: 'BebasNeueRegular';
     src: url('/assets/fonts/BebasNeue-webfont.eot');
@@ -677,7 +666,7 @@ body {
     text-transform: capitalize;
 }
 
-* { font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif; font-size: 12px; }
+/** { font-family: "Helvetica Neue",Arial,"Liberation Sans",FreeSans,sans-serif; font-size: 12px; }*/
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
@@ -784,8 +773,7 @@ body {
 }
 
 .main h1 {
-    /*font: 57px "AmaticBold",sans-serif;*/
-    font: 32px sans-serif;
+    font: 57px "Amatic SC",sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -866,7 +854,9 @@ svg.map {
     right: 80px;
     top: 100px;
 }
-
+.figures h3 {
+    font-size: 12px;
+}
 .figures h2, .figures h3 {
     color: #FACD10;
     margin:0;
@@ -874,7 +864,7 @@ svg.map {
 
 .figures .figure {
     color:#fff;
-    font-family:"AmaticBold",sans-serif;
+    font-family:"Amatic SC",sans-serif;
     font-size:75px;
     margin-top:0;
 }
@@ -905,9 +895,12 @@ svg.map {
 }
 
 .footer {
-    background-color:#000;
+    background-color: #000;
+    color: #777;
     margin-top: -159px;
-    padding-bottom: 20px;
+}
+.footer a {
+    color: #777;
 }
 
 .footer .container_12 .grid_8 {
@@ -939,7 +932,7 @@ svg.map {
 .verse .installs {
     display: block;
     margin-top: -25px;
-    color: #666;
+    color: #777;
     text-align: right;
     padding-right: 10px;
 }
@@ -965,10 +958,6 @@ svg.map {
     color:#3A84D9;
     font-weight:700;
     text-decoration:none;
-}
-
-.download {
-    background:url(/assets/campaigns/christmas/app-icon.png) no-repeat 25px 5px;
 }
 
 .social {

@@ -38,13 +38,6 @@ function tickInfographic() {
             initial: addCommas(corrected_total_downloads_not_round),
             interval: single_pace
         });
-
-//        var now = new Date();
-//        var dif = Math.abs((Date.parse(now) - Date.parse(last_modified[i]))/1000);
-//
-//        var currentRatio = (now - new Date((last_modified[i].getMonth() + 1) + "/" + last_modified[i].getDate() + "/" + last_modified[i].getFullYear())) / 86400000;
-//        var figure = Math.ceil((infographic[i].total) + (infographic[i].daily * currentRatio));
-//        $("." + i).text(addCommas(figure));
     }
 }
 
@@ -120,13 +113,9 @@ function christmas_chapters(data) {
 }
 
 $(document).ready(function() {
-    // install counter init
     $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js");
-
     $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_chapter_calls_jsonp.js");
-
     $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_map_jsonp.js");
-
     setInterval(function() {
         $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_map_jsonp.js");
     }, 30 * 60 * 1000); // Fetch a new dataset every 30 minutes

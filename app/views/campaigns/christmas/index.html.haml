@@ -2,26 +2,20 @@
   - I18n.t(key, options.merge(:locale => @locale))
 
 .main.container_12
-  %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=174707456001921&amp;link=http://christmas.youversion.com&amp;picture=http://christmas.youversion.com/css/images/star.png&amp;name=Christmas%20Story%20Tracker&amp;caption=christmas.youversion.com&amp;description=See%20a%20live%20map%20as%20people%20around%20the%20world%20read%20about%20the%20birth%20of%20Jesus.%20In%20church%20or%20at%20home%2C%20near%20people%20we%20love%20or%20during%20a%20quiet%20moment%20alone%2C%20we%27re%20pausing%20to%20reflect%20on%20the%20wonder%20of%20God%27s%20love%20for%20us.&amp;redirect_uri=http://christmas.youversion.com/", :target => "_blank"}
+  -#TODO fix the twitter and fb links from christmas.youversion.com to bible.com
+  %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=174707456001921&link=http://christmas.youversion.com&picture=http://christmas.youversion.com/css/images/star.png&name=Christmas%20Story%20Tracker&caption=christmas.youversion.com&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=http://christmas.youversion.com/", :target => "_blank"}
     = image_tag "campaigns/christmas/facebook-icon.png"
-  %a#twitter.twitter{:href => "https://twitter.com/intent/tweet?source=webclient&amp;text=Watch%20the%20world%20read%20about%20the%20birth%20of%20Jesus.%20Live%20map%20on%20%40YouVersion%3A%20http%3A//christmas.youversion.com/&hashtags=ChristmasTracker", :target => "_blank"}
+  %a#twitter.twitter{:href => "https://twitter.com/intent/tweet?source=webclient&text=#{t('campaigns.christmas.twitter text')}&hashtags=ChristmasTracker", :target => "_blank"}
     = image_tag "campaigns/christmas/twitter-icon.png"
   .copy
     %p
-      %sup 10
-      But the angel said to them,
-      %br
-        “Do not be afraid. I bring you good news that will cause great joy for all the people.
-        %sup 11
-        Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.
+      = t('campaigns.christmas.verse').html_safe
     %p
       %a{:href => "https://www.bible.com/bible/111/luk.2.niv"}
-        Read more of the Christmas story
-        %br in the book of Luke
+        = t('campaigns.christmas.read more').html_safe
   .grid_3
     %a#logo{:href => "https://www.bible.com/app"}
       = image_tag "campaigns/christmas/logo.png", alt: "YouVersion logo"
-      -#TODO localize the above app icon
   .grid_3.star
   .title.grid_6
     %h1
@@ -30,8 +24,10 @@
     /
   #map.grid_12
     .figures.grid_4.hidden
-      %h2 Reading about the birth of Jesus
-      %h3 YouVersion totals since December 1, 2014:
+      %h2
+        = t('campaigns.christmas.read about')
+      %h3
+        = t('campaigns.christmas.totals since')
       .chapter_requests.figure
 .hills
   .container_12
@@ -42,14 +38,17 @@
     .flurry.grid_8
       .verse.hidden
         %span.installs
-        %p Total installs on smartphones and tablets
+        %p
+          = t('campaigns.christmas.total installs')
       .action
-    .grid_3.prefix_1.download
+    .grid_3.prefix_1.download{style: "background: url('#{image_path(localized_bible_icon)}') no-repeat 25px 5px;"}
       %a{:href => "https://www.bible.com/app?ref=christmas"}
-        %h3 Download the free Bible App
+        %h3
+          = t('campaigns.christmas.download')
         %span
-          Over 1000 versions in 700+ languages
-          %br the Bible that goes with you anywhere
+          = t('campaigns.christmas.versions')
+          %br
+          = t('campaigns.christmas.tagline')
 
 %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
 = javascript_include_tag "campaigns/christmas/polymaps.min.js"
