@@ -77,12 +77,10 @@ function addPoint() {
 function installs_data(STATS) {
   var start_count = STATS.start_count;
   var start_date = STATS.start_date;
-    console.log("start_dateI" + start_date);
   var average_per_day = STATS.average_per_day;
   var single_pace = 1/(average_per_day/24/60/60)*1000;
   var today_date = Math.round((new Date()).getTime() / 1000);
   var date_difference_seconds = Math.abs(today_date - start_date);
-    console.log("date_difference_secondsI" + date_difference_seconds);
   var date_difference_days_not_round = (date_difference_seconds / 86400);
   var corrected_total_downloads_not_round = Math.round(start_count + (average_per_day*date_difference_days_not_round));
 
