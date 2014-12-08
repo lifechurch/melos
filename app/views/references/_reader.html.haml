@@ -12,12 +12,11 @@
   alt_reference = presenter.respond_to?(:alt_reference) ? presenter.alt_reference : nil
   verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
   focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
-  modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
   a_chapter     = presenter.try(:is_chapter?)
+  verse_view    = presenter.verses.present? and !presenter.respond_to?(:subscription)
 
-  #TODO presenter.content - extract 125 char max from first verse of chapter or first modal_verse to append to meta_description
-  #meta_verse    = modal_verse.nil? ? "ex" : truncate(modal_verse.content(as: :plaintext), length: 125, separator: " ")
-- @meta_description = "#{reference.human} #{presenter.version}"
+- content_for :meta_description do
+  = "#{reference.human} #{presenter.version} #{truncate(strip_tags(presenter.content).html_safe, length: 125, separator: " ", omission: '')}"
 
 - content_for :mobile_right_nav do
   = link_to(version.abbreviation, 'javascript:void(0);', id: "m_version_btn" )
@@ -28,13 +27,11 @@
 
 = render partial: "references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
-%article#reader.reader{"class" => (focus_verses && (not a_chapter)) ? "mute" : nil,
+%article#reader.reader{"class" => "#{"mute" if focus_verses && (not a_chapter)} #{"verse-view" if verse_view}",
   "data-setting-font" => client_settings.reader_font,
   "data-setting-size" => client_settings.reader_font_size,
   "data-fullscreen"   => client_settings.reader_full_screen,
-  "data-selected-verses" => (focus_verses ? nil : verses.try(:join,",")),
   "data-focused-verses" => (focus_verses ? verses.try(:join,",") : nil),
-  "data-verse-modal-enabled" => "#{!modal_verse.nil?}",
   "data-book"       => reference[:book].to_s.downcase,
   "data-book-api"   => reference[:book].sub(/[A-Z]+/) {|m| m.downcase},
   "data-book-human" => truncate(version.books[reference[:book]].human, length: 40, separator: " "),
@@ -46,27 +43,37 @@
 
   .wrap
     %div.reader-nav
-      :ruby
-        direction = 'rtl' if version.try(:rtl?)
-
-      = reader_previous_link(reference, {classes: "reader-prev #{direction}"})
-      = reader_next_link(reference, {classes: "reader-next #{direction}"})
+      - direction = 'rtl' if version.try(:rtl?)
+      - unless presenter.verses.present?
+        = reader_previous_link(reference, {classes: "reader-prev #{direction}"})
+        = reader_next_link(reference, {classes: "reader-next #{direction}"})
 
     // Primary version content
-    #version_primary{class: version.try(:text_direction),
+    #version_primary{class: "#{version.try(:text_direction)} #{"verse-view" if verse_view}",
       "data-reference"     => reference.to_param,
       "data-abbreviation"  => version.try(:abbreviation).downcase,
       "data-usfm"          => reference.chapter_usfm}
       
       = presenter.content.html_safe if presenter.content
+    
+    -# Read Chapter button
+    - if verse_view
+      %h2#read_chapter
+        %a.action_button_blue{href: reference_path(reference: reference.chapter_usfm.downcase)}
+          = t("read chapter")
+      %div#download.mobile{href:"/app"}
+        -# - style = "background: url(#{image_path(localized_bible_icon(58))}) no-repeat right center" if localized_bible_icon
+        -# %span.icon{style: style}
+        %a.action_button_blue{href:"/app"}
+          = t('mobile page.download now')
 
     // Secondary version content
     #version_secondary{class: alt_version.try(:text_direction),
       "data-reference"     => alt_reference.to_param,
       "data-abbreviation"  => alt_version.try(:abbreviation).try(:downcase),
       "data-usfm"          => reference.chapter_usfm}
-      
-      = t('ref.loading secondary')
+      - unless verse_view
+        = t('ref.loading secondary')
 
 
 %footer

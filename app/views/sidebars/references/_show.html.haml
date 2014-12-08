@@ -4,9 +4,9 @@
   
   reference = presenter.reference
 
-= render partial: 'widgets/find_friends'
+= render partial: 'widgets/find_friends' unless presenter.verses.present?
 = render partial: 'widgets/my_plans' if logged_in?
 = render partial: 'widgets/featured_plans' if logged_out?
-= render partial: 'sidebars/notes/stub', locals: {reference: reference}
+= render partial: 'sidebars/notes/stub', locals: {reference: reference} unless presenter.verses.present?
 = render partial: 'widgets/download_app'
-= render partial: 'widgets/bible_app_for_kids'
+= render partial: 'widgets/bible_app_for_kids' unless presenter.verses.present?

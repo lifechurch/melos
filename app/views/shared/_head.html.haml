@@ -4,7 +4,7 @@
   title << (@subtitle || @site.title).to_s
 
 %title= title
-%meta{name: 'Description', content: @meta_description || t("meta.site.description")}
+%meta{name: 'Description', content: content_for?(:meta_description) ? yield(:meta_description) : t("meta.site.description")}
 
 = cache "head_meta_#{@site}_#{locale}", expires_in: YV::Caching.a_short_time do
   %link{rel: "shortcut icon", href:"/favicon.ico"}

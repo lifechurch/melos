@@ -166,6 +166,7 @@ en:
   badges title:                                 "Badges"
   currently selected:                           "Currently Selected:"
   read reference:                               "Read %{reference}"
+  read chapter:                                 "Read full chapter"
   compare all versions:                         "Compare All Versions"
   link will be added:                           "Will Be Added"
   my picture:                                   "Update My Picture"

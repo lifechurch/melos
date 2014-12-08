@@ -9,7 +9,6 @@
 - alt_reference = presenter.respond_to?(:alt_reference) ? presenter.alt_reference : nil
 - verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
 - focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
-- modal_verse   = presenter.respond_to?(:modal_verse)   ? presenter.modal_verse : nil
 - a_subscription_chapter = presenter.is_a?(Presenter::Subscription) && presenter.is_chapter?
 
 - content_for   :javascripts do
@@ -38,8 +37,6 @@
 - if reader_menus == true
   = render partial: 'shared/book_selector', locals: {presenter: presenter}
   = render partial: 'shared/version_selector/display', locals: {presenter: presenter}
-  - if modal_verse.present?
-    = render partial: 'shared/modal_single_verse', locals: {modal_verse: modal_verse, reference: reference, version: version}  unless @verse_modals == false || modal_verse == nil
   = render partial: 'shared/menu_settings'
   = render partial: 'shared/menu_audio_player', locals: {reference: reference}
 

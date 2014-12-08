@@ -913,6 +913,21 @@ article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .labe
 .callout_green
   background: #ddfad5
 
+#read_chapter
+  letter-spacing: 0.01em
+
+#download
+  span.icon
+    width: 60px
+    height: 65px
+    display: block
+    position: absolute
+    top: -30px
+    left: 15px
+    background:
+      image: image-url("ad_bible_app.png")
+      position: -50px 0px
+
 // !Type
 //---------------------------------------------------------------------------------------
 
@@ -1064,3 +1079,12 @@ article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .labe
 // it can be implemented properly
 .verse_toolbar nav a.share_btn
   display: none
+
+
+// !Single verse page
+
+#main article.reader.verse-view
+
+  .verse
+    display: block
+    margin: 0 0 20px
