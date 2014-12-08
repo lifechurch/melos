@@ -27,9 +27,9 @@
 
   %link{href: "//fonts.googleapis.com/css?family=Fjalla+One&subset=latin,cyrillic-ext,cyrillic,greek-ext,vietnamese,latin-ext", rel: "stylesheet", type: "text/css"}
 
-  - if version.attributes.has_key? "font"
+  - if version.attributes.font
     %style
-      = "@font-face { font-family: '#{version.attributes.font.title}'; src: url('#{version.attributes.font.url}#{version.attributes.font.name}.eot') format('eot'), url('#{version.attributes.font.url}#{version.attributes.font.name}.woff') format('woff'), url('#{version.attributes.font.url}#{version.attributes.font.name}.ttf') format('truetype'); }"
+      = "@font-face { font-family: '#{version.attributes.font.title}'; src: url('#{version.attributes.font.url}#{version.attributes.font.name}.eot?') format('eot'), url('#{version.attributes.font.url}#{version.attributes.font.name}.woff') format('woff'), url('#{version.attributes.font.url}#{version.attributes.font.name}.ttf') format('truetype'); }"
       = ".reader { font-family: '#{version.attributes.font.title}','Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif }"
 
 = render partial: 'reader', locals: {presenter: @presenter}
