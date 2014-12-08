@@ -12,12 +12,13 @@
   - else
     %h1
       = "#{t('bible versions')}"
-  %ul
-    - @versions_by_lang.each do |lang, versions|
-      - if versions.present?
-        %li
-          = t("versions.language and count", language_name: versions.first.language.human,  language_count: versions.count)
-          %ul
-            - versions.each do |version|
-              %li
-                = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+  = cache "versions_bylang_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
+    %ul
+      - @versions_by_lang.each do |lang, versions|
+        - if versions.present?
+          %li
+            = t("versions.language and count", language_name: versions.first.language.human,  language_count: versions.count)
+            %ul
+              - versions.each do |version|
+                %li
+                  = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)

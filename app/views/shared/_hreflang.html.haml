@@ -11,12 +11,8 @@
       - showCanonical = true  #only for reader pages where there is a verse reference
     - href = "#{request.protocol}#{request.host_with_port}#{locale_dir}#{fullpath}"
 
-    - if showCanonical
-      - if a_locale.to_s.eql?("en") and canonicalHref.nil?
-        - canonicalHref = href    #used for all versions not currently localized
-      - canonical_locale = a_locale.to_s == "pt" ? "pt-BR" : a_locale.to_s  # so that pt-BR versions will match
-      - if Version.find(presenter.reference.version).language.tag == canonical_locale
-        - canonicalHref = href   #used for versions that are localized (eg.  Afrikaans versions canonical url is af)
+    - if showCanonical and canonicalHref.nil?
+      - canonicalHref = bible_url(presenter.reference)
 
     %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
     - if a_locale.to_s.eql?("en")
