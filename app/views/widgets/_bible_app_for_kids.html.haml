@@ -1,5 +1,4 @@
--#TODO refactor this logic after ko and zh-CN go live
-- if [ :en, :es ].include? I18n.locale
+- if i18n_kids_whitelist.include? I18n.locale
   #widget-download.widget.simple
     %div.bd.bafk
       %h3= t("download bafk ad.title")
