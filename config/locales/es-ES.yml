@@ -718,12 +718,12 @@ es-ES:
             readings 5 or more: "lecturas"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count}amigos suscritos a este plan"
+                other: "%{count}amigos suscritos a este plan"
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
-            total completions: "Over %{count} completions"
+                one: "%{count} amigos completaron este plan"
+                other: "%{count} amigos completaron este plan"
+            total completions: "Alrededor de %{count} completados"
             view all: "Ver Todo"
             close: "Cerrado"
         settings: "Configuración"
@@ -1019,7 +1019,7 @@ es-ES:
                 now skipped: "Esta página será saltada."
             features: 
                 read heading: "Lee la Biblia."
-                read description: "Take your choice from <a href='%{versions_path}'>hundreds of Bible versions and languages</a>. Compare two versions side by side. You can even choose your font and display size. Make your online Bible experience just the way you like it."
+                read description: "Elige entre <a href='%{versions_path}'>cientos de versiones de la Biblia y lenguas</a>. Compara dos versiones de punta a punta. Incluso puedes elegir la fuente y el tamaño de la misma. Haz tu experiencia online con la Biblia de la manera que te gusta."
                 study heading: "Estudia la Biblia."
                 study description: "<strong>Destaca</strong> en tu color favorito, <strong>marca</strong> tus versículos favoritos, y crea notas sobre lo que vas aprendiendo. No sólo pasas tiempo leyendo la Palabra de Dios, sino que además estás construyendo una historia de tu interacción con la Biblia."
                 subscribe heading: "Subscríbete a planes de la Biblia."

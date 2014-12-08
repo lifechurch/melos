@@ -1025,7 +1025,7 @@ sw:
                 subscribe heading: "Jiandikishe kwa mipango ya Bibilia"
                 subscribe description: "Maliza Biblia nzima, kuzingatia mada, au kusoma ibada kutoka kwa mwalimu mzuri. Chagua mpango wako na kila siku utapata sehemu ya Biblia teule ikikusubiri."
                 download heading: "Chukua Biblia na wewe."
-                download description: "<a href='https://bible.com/download'> Download </a> App ya Biblia ya bure kwenye kifaa chochote cha rununu. Unapo tumia App hii ya rununu, vidokezo vyako, maalamisho yako, mambo muhimu, mipango, na zaidi itaunganishwa moja kwa moja kwenye vifaa vyako vyote."
+                download description: "<a href='https://bible.com/download'>Download </a>App ya Biblia ya bure kwenye kifaa chochote cha rununu. Unapo tumia App hii ya rununu, vidokezo vyako, maalamisho yako, mambo muhimu, mipango, na zaidi itaunganishwa moja kwa moja kwenye vifaa vyako vyote."
             get started: "Anza na akaunti yako ya bure."
             word with you: "Neno la Mungu iko pamoja na wewe."
             download action: "Download App ya Bibilia"
