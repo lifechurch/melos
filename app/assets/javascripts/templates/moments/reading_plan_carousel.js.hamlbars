@@ -3,9 +3,11 @@
     .moment-featured-rp
       .featured-rp-title
         %span.moment-avatar
-          %img{src: "{{avatar}}"}
-        %h2.moment-rp-text
-          {{moment_title}}
+          %a{href: "/reading-plans?category={{category}}"}
+            %img{src: "{{avatar}}"}
+        %h2.moment-rp-text{"title" => "{{created_dt}}"}
+          %a{href: "/reading-plans?category={{category}}"}
+            {{moment_title}}
       .featured-rp-box
         {{#each plans}}
         .featured-rp-box-plan
@@ -16,9 +18,3 @@
             .length
               {{formatted_length}}
         {{/each}}
-
-        .featured-rp-box-plan
-          %a{href: "/reading-plans?category={{category}}"}
-            -# NOTE: Need an image for "View all"
-            %p
-              {{I18n 'plans.stats.view all'}}
