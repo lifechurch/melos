@@ -763,6 +763,8 @@ body {
     font: 57px "Amatic SC",sans-serif;
     margin: 0;
     padding: 0;
+    max-height: 66px;
+    overflow: hidden;
 }
 
 .star {
