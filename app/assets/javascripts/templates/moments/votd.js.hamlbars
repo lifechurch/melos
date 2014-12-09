@@ -6,7 +6,7 @@
         {{week_day}}
       .moment-vod-calendar-img
         {{{calendar_img}}}
-    %span.moment-time
+    %span.moment-time{"title" => "{{created_dt}}"}
       {{created_dt}}
     .moment-vod-title
       {{{title}}}

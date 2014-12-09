@@ -17,6 +17,7 @@ class window.Moments.ReadingPlanCarousel extends window.Moments.Base
         moment_title:   @data.moment_title
         avatar:         @data.avatar
         avatar_style:   @data.avatar_style
+        created_dt:     @data.created_dt
       return html
 
   initInteractions: ()->

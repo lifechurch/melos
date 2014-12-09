@@ -4,7 +4,7 @@
       .featured-rp-title
         %span.moment-avatar
           %img{src: "{{avatar}}"}
-        %h2.moment-rp-text
+        %h2.moment-rp-text{"title" => "{{created_dt}}"}
           {{moment_title}}
       .featured-rp-box
         {{#each plans}}
