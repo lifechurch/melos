@@ -54,8 +54,12 @@ module YV
 
         merged.concat(ms)
         merged.concat(vods)
-        merged.concat(client_side_moments) if client_side_moments.present?
-        merged.sort_by {|obj| obj.created_at}.reverse
+        merged.sort_by! {|obj| obj.created_at}
+        if client_side_moments.present? and client_side_moments.first.created_at < merged.last.created_at
+          merged.concat(client_side_moments)
+          merged.sort_by! {|obj| obj.created_at}
+        end
+        merged.reverse
       end
 
       def next_page
