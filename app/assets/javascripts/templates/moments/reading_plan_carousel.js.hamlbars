@@ -3,9 +3,11 @@
     .moment-featured-rp
       .featured-rp-title
         %span.moment-avatar
-          %img{src: "{{avatar}}"}
+          %a{href: "/reading-plans?category={{category}}"}
+            %img{src: "{{avatar}}"}
         %h2.moment-rp-text{"title" => "{{created_dt}}"}
-          {{moment_title}}
+          %a{href: "/reading-plans?category={{category}}"}
+            {{moment_title}}
       .featured-rp-box
         {{#each plans}}
         .featured-rp-box-plan
