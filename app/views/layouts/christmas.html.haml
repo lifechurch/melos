@@ -1,0 +1,61 @@
+- t = Proc.new do |key, options={}|
+  - I18n.t(key, options.merge(:locale => @locale))
+:ruby
+  meta_title        = t("campaigns.christmas.tracker title")
+  meta_description  = t("campaigns.christmas.tracker title")
+  meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  i18n_image_dir  = ""
+  i18n_css_class = "en"
+  prelaunch = false
+  youtube_url = "//www.youtube.com/embed/97YQAoCjpcs?rel=0"
+  facebook_locale = "en_US"
+
+!!! 5
+%html
+  %head
+    %title= strip_tags(meta_title)
+    %link{rel: "shortcut icon", href:"/favicon.ico"}
+    %link{href: "http://fonts.googleapis.com/css?family=Amatic+SC:700", rel:"stylesheet", type: "text/css"}
+    %link{href: "http://fonts.googleapis.com/css?family=Open+Sans", rel:"stylesheet", type: "text/css"}
+    %meta{charset:"utf-8"}
+    %meta{name: "description",    content: meta_description}
+    -#%meta{name: "url",            content: meta_url}
+    -#%meta{property: "og:title",       content: meta_title }
+    -#%meta{property: "og:url",         content: meta_url }
+    -#%meta{property: "og:description", content: meta_description }
+    -#%meta{property: "og:image", content: "#{url_for(asset_path('BibleAppForKids-icon-200x200.png'))}"}
+    -#%meta{property: "og:image", content: "#{url_for(asset_path('/campaign/kids/hero.png'))}"}
+    -#%meta{property: "og:locale", content: facebook_locale}
+    -#%meta{property: "og:locale:alternate", content: "en_US"}
+    -#%meta{property: "og:locale:alternate", content: "es_ES"}
+    -#%meta{property: "og:locale:alternate", content: "ko_KR"}
+    -#%meta{property: "og:locale:alternate", content: "zh_CN"}
+    -#%meta{name: "twitter:card",             content: "summary"}
+    -#%meta{name: "twitter:url",              content: meta_url}
+    -#%meta{name: "twitter:title" ,           content: meta_title}
+    -#%meta{name: "twitter:description",      content: meta_description}
+    -#%meta{name: "twitter:image",            content: "#{url_for(asset_path('BibleAppForKids-icon-120x120.png'))}"}
+    -#%meta{name: "twitter:site",             content: "@BibleAppForKids"}
+    -#%link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en"}
+    -#%link{:href=> "#{request.protocol}#{request.host_with_port}/es/kids",:rel=>"alternate",:hreflang=>"es"}
+    -#%link{:href=> "#{request.protocol}#{request.host_with_port}/ko/kids",:rel=>"alternate",:hreflang=>"ko"}
+    -#%link{:href=> "#{request.protocol}#{request.host_with_port}/zh-CN/kids",:rel=>"alternate",:hreflang=>"zh-cn"}
+
+    = stylesheet_link_tag "campaigns/christmas"
+
+    :javascript
+      try{Typekit.load();}catch(e){}
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3571547-76']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_setDomainName', 'bible.com']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  %body
+    = yield

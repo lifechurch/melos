@@ -52,8 +52,7 @@ YouversionWeb::Application.configure do
 
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( ie7.css ie8.css ie9.css donate.css status.css mobile.css mobile/donate.css bdc_home.css campaigns/kids.css retina.js campaigns/100m.css campaigns/100m/jquery.counter.js campaigns/100m/jquery.countdown.min.js slick.css)
-
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css donate.css status.css mobile.css mobile/donate.css bdc_home.css campaigns/kids.css retina.js campaigns/100m.css campaigns/100m/jquery.counter.js campaigns/100m/jquery.countdown.min.js slick.css  campaigns/christmas/polymaps.min.js campaigns/christmas/plugins.js campaigns/christmas/script.js campaigns/christmas.css)
   # Precompile JS locale files
   config.assets.precompile += ['i18n/*']
 
