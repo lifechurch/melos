@@ -4,7 +4,7 @@ fi:
         formats: 
             votd: "%-d. %B'ta', %Y"
     counter: 
-        format: "999 999 999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Keskustelut ja oivallukset"
