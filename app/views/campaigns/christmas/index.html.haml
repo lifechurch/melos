@@ -2,8 +2,7 @@
   - I18n.t(key, options.merge(:locale => @locale))
 
 .main.container_12
-  -#TODO fix the twitter and fb links from christmas.youversion.com to bible.com
-  %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=174707456001921&link=http://christmas.youversion.com&picture=http://christmas.youversion.com/css/images/star.png&name=Christmas%20Story%20Tracker&caption=christmas.youversion.com&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=http://christmas.youversion.com/", :target => "_blank"}
+  %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=174707456001921&link=https://www.bible.com/christmas&picture=https://www.bible.com/christmas/assets/christmas/star.png&name=Christmas%20Story%20Tracker&caption=bible.com/christmas&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=https://www.bible.com/christmas", :target => "_blank"}
     = image_tag "campaigns/christmas/facebook-icon.png"
   %a#twitter.twitter{:href => "https://twitter.com/intent/tweet?source=webclient&text=#{t('campaigns.christmas.twitter text')}&hashtags=ChristmasTracker", :target => "_blank"}
     = image_tag "campaigns/christmas/twitter-icon.png"
