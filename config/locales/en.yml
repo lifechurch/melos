@@ -1088,7 +1088,7 @@ en:
       totals since:                             "YouVersion totals since December 1, 2014:"
       total installs:                           "Total installs on smartphones and tablets"
       download:                                 "Download the free Bible App"
-      versions:                                 "Over 1000 versions in 700+ languages"
+      versions:                                 "Over %{version_count} versions in %{language_count} languages"
       tagline:                                  "the Bible that goes with you anywhere"
     100m:
       logo:                                     "YouVersion: The Bible app"
