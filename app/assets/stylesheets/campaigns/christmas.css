@@ -772,8 +772,12 @@ img[alt="YouVersion logo"] {
     font: 50px "skippy-sharp",sans-serif;
     margin: 0;
     padding: 0;
-    max-height: 66px;
     overflow: hidden;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    line-height: .8em;
+    width: 500px;
 }
 
 .star {
@@ -855,7 +859,7 @@ svg.map {
     text-align:right;
     position: absolute;
     right: 80px;
-    top: 100px;
+    top: 140px;
     width: 330px !important
 }
 .figures h3 {
