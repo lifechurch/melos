@@ -868,7 +868,7 @@ svg.map {
 
 .figures .figure {
     color:#fff;
-    font-family:"proxima-nova",sans-serif;
+    font-family:"fira-mono",sans-serif;
     font-size:75px;
     margin-top:0;
 }
@@ -938,7 +938,7 @@ svg.map {
 }
 
 .verse span {
-    font: 56px "proxima-nova", Helvetica, Arial, sans-serif;
+    font: 56px "fira-mono", Helvetica, Arial, sans-serif;
 }
 
 .verse p {
