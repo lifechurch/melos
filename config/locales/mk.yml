@@ -167,6 +167,7 @@ mk:
     badges title: "Беџови"
     currently selected: "Селектирано:"
     read reference: "Прочитај %{reference}"
+    read chapter: "Прочитај ја целата глава"
     compare all versions: "Спореди ги сите верзии"
     link will be added: "Ќе биде додадено"
     my picture: "Ажурирај ја мојата слика"
@@ -196,7 +197,7 @@ mk:
     reader: "Читач"
     lifechurch short url: "LifeChurch.tv"
     about: "За"
-    versions link: "Versions"
+    versions link: "Верзија"
     jobs: "Работи"
     privacy policy: "Политика на приватност"
     terms: "Услови"
@@ -223,6 +224,7 @@ mk:
     note: "Нова белешка"
     selected: "Селектирано"
     chapter: "Глава"
+    home: "Home"
     bible: "Библија"
     notes title: "Белешки"
     friends: "Пријатели"
@@ -718,13 +720,13 @@ mk:
             readings 5 or more: "читања"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count} пријател е претплатен на овој план "
+                other: "%{count} пријатели се претплатени на овој план "
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
+                one: "%{count} пријател го заврши овој план "
+                other: "%{count} пријатели го завршија овој план "
             total completions: "Над %{count} луѓе прочитале"
-            view all: "View All"
+            view all: "Види сè"
             close: "Затвори"
         settings: "Уредувања"
         privacy: 
@@ -1076,6 +1078,19 @@ mk:
         loading: "Се вчитуваат повеќе верзии..."
         load error: "Се извинуваме, има проблем со вчитување на повеќе верзии. Затворете го менито и обидете се повторно со отварање на истото."
     campaigns: 
+        christmas: 
+            tracker title: "Christmas Story Tracker"
+            twitter text: "Watch the world read about the birth of Jesus. Share the Christmas Story Tracker @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Share the Christmas Story Tracker as people around the world read about the birth of Jesus.  In church or at home, near people we love or during a quiet moment alone, we're pausing to reflect on the wonder of God's love for us."
+            verse: "<sup>10</sup> But the angel said to them,<br>“Do not be afraid. I bring you good news that will cause great joy for all the people. <sup>11</sup> Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.”"
+            read more: "Read the amazing story of Christmas"
+            read about: "Reading about the birth of Jesus"
+            totals since: "YouVersion totals since December 1, 2014:"
+            total installs: "Total installs on smartphones and tablets"
+            download: "Download the free Bible App"
+            versions: "Over %{version_count} versions in %{language_count} languages"
+            tagline: "the Bible that goes with you anywhere"
+            chapter counter format: "9,999,999"
         100m: 
             logo: "YouVersion: апликација „Библија“"
             tagline: "Започнува со <em>100 милиони</em>"
