@@ -89,6 +89,9 @@ body {
 .container_16 .grid_16 {
   width: 940px;
 }
+.title.grid_6 {
+    width: 500px;
+}
 
 /* `Grid >> Children (Alpha ~ First, Omega ~ Last)
 ----------------------------------------------------------------------------------------------------*/
@@ -760,7 +763,7 @@ body {
 }
 
 .main h1 {
-    font: 57px "Amatic SC",sans-serif;
+    font: 50px "Amatic SC",sans-serif;
     margin: 0;
     padding: 0;
     max-height: 66px;
@@ -768,9 +771,10 @@ body {
 }
 
 .star {
-    background:url(/assets/campaigns/christmas/star.png) no-repeat 50% 50%;
+    background:url(/assets/campaigns/christmas/star.png) no-repeat 72px 50%;
     height:70px;
     z-index: 100 !important;
+    width: 180px !important;
 }
 
 .title {
