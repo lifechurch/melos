@@ -1058,7 +1058,7 @@ body {
 }
 
 .container_12 .grid_3, .container_12 .grid_4, .title.grid_6, .container_12, .container_16 {
-  width: auto;
+  width: auto !important;
   margin: 0;
 }
 
@@ -1105,6 +1105,10 @@ div, .main, #map, .copy {
   max-height: none;
   text-align: center;
   line-height: .8em;
+  position: relative;
+  width: auto;
+  top: auto;
+  right: auto;
 }
 
 .figures {
