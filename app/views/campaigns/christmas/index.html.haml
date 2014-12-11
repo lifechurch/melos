@@ -2,7 +2,7 @@
   - I18n.t(key, options.merge(:locale => @locale))
 
 .main.container_12
-  %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=105030176203924&link=https://www.bible.com/christmas&picture=https://www.bible.com/assets/campaigns/christmas/christmas-tracker.png&name=Christmas%20Story%20Tracker&caption=bible.com/christmas&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=https://www.bible.com/christmas", :target => "_blank"}
+  %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=105030176203924&link=https://www.bible.com/christmas&picture=https://www.bible.com/assets/campaigns/christmas/christmas-tracker.png&name=Christmas%20Story%20Tracker&caption=bible.com/christmas%20%23ChristmasTracker&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=https://www.bible.com/christmas", :target => "_blank"}
     = image_tag "campaigns/christmas/facebook-icon.png"
   %a#twitter.twitter{:href => "https://twitter.com/intent/tweet?source=webclient&text=#{t('campaigns.christmas.twitter text')}&hashtags=ChristmasTracker", :target => "_blank"}
     = image_tag "campaigns/christmas/twitter-icon.png"
