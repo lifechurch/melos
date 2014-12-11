@@ -97,7 +97,7 @@
 
           $("." + i).counter({
               direction: "up",
-              format: "#{t("campaigns.christmas.chapter counter format").gsub(" ", "&nbsp;")}",
+              format: "#{t("campaigns.christmas.chapter counter format")}",
               initial: addCommas(corrected_total_downloads_not_round),
               interval: single_pace
           });
@@ -169,7 +169,7 @@
       $('.verse').hide().removeClass('hidden').fadeIn('slow');
       $(".installs").counter({
           direction: "up",
-          format: "#{t("counter.format").gsub(" ", "&nbsp;")}",
+          format: "#{t("counter.format")}",
           initial: addCommas(corrected_total_downloads_not_round),
           interval: single_pace
       });
