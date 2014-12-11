@@ -1,13 +1,3 @@
-GIT
-  remote: https://github.com/getsentry/raven-ruby.git
-  revision: 267b33417a3ed43f552911cf353561a641ba9fb2
-  specs:
-    sentry-raven (0.4.6)
-      faraday (>= 0.7.6)
-      hashie (>= 1.1.0)
-      multi_json (~> 1.0)
-      uuidtools
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -359,6 +349,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    sentry-raven (0.12.2)
+      faraday (>= 0.7.6)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -400,7 +392,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    uuidtools (2.1.4)
     viximo-rack-throttle (0.5.0)
       rack (>= 1.0.0)
     webrobots (0.1.1)
@@ -477,7 +468,7 @@ DEPENDENCIES
   rspec-cells
   rspec-rails
   sass-rails (= 3.2.5)
-  sentry-raven!
+  sentry-raven (~> 0.12.2)
   simplecov
   smartling
   sqlite3
