@@ -754,7 +754,7 @@ h2 { font-size: 16px;}
 
 /* Christmas styles start here */
 body {
-    background:#111 url(/assets/campaigns/christmas/hills.svg) repeat-x center -50px;
+    background:#111 url(/assets/campaigns/christmas/hills.svg) no-repeat center -50px;
     background-size: 1550px;
     width: 100%;
 }
@@ -772,7 +772,6 @@ img[alt="YouVersion logo"] {
     font: 50px "skippy-sharp",sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     position: absolute;
     top: 20px;
     right: 30px;
