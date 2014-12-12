@@ -1,20 +1,17 @@
 - t = Proc.new do |key, options={}|
   - I18n.t(key, options.merge(:locale => @locale))
+- locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
 
 .main.container_12
+
   %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=105030176203924&link=https://www.bible.com/christmas&picture=https://www.bible.com/assets/campaigns/christmas/christmas-tracker.png&name=Christmas%20Story%20Tracker&caption=bible.com/christmas&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=https://www.bible.com/christmas", :target => "_blank"}
-    = image_tag "campaigns/christmas/facebook-icon.png"
+    = image_tag "svg/facebook-logo.svg"
   %a#twitter.twitter{:href => "https://twitter.com/intent/tweet?source=webclient&text=#{t('campaigns.christmas.twitter text')}&hashtags=ChristmasTracker", :target => "_blank"}
-    = image_tag "campaigns/christmas/twitter-icon.png"
-  .copy
-    %p
-      = t('campaigns.christmas.verse').html_safe
-    %p
-      %a{:href => "https://www.bible.com/bible/111/luk.2.niv"}
-        = t('campaigns.christmas.read more').html_safe
+    = image_tag "svg/twitter-logo.svg"
+
   .grid_3
     %a#logo{:href => "https://www.bible.com/app"}
-      = image_tag "campaigns/christmas/logo.png", alt: "YouVersion logo"
+      = image_tag "campaigns/christmas/logo.svg", alt: "YouVersion logo"
   .grid_3.star
   .title.grid_6
     %h1
@@ -28,6 +25,13 @@
       %h3
         = t('campaigns.christmas.totals since')
       .chapter_requests.figure
+
+  .copy
+    %p
+      = t('campaigns.christmas.verse').html_safe
+    %p
+      %a{:href => "https://www.bible.com/bible/111/luk.2.niv"}
+        = t('campaigns.christmas.read more').html_safe
 .hills
   .container_12
     .little_sheep.grid_3
@@ -52,6 +56,9 @@
 %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
 = javascript_include_tag "campaigns/christmas/polymaps.min.js"
 = javascript_include_tag "campaigns/christmas/plugins.js"
+
+:javascript
+      try{Typekit.load();}catch(e){}
 
 :javascript
   var infographic = {};
@@ -90,7 +97,7 @@
 
           $("." + i).counter({
               direction: "up",
-              format: "#{t("campaigns.christmas.chapter counter format").gsub(" ", "&nbsp;")}",
+              format: "#{t("campaigns.christmas.chapter counter format")}",
               initial: addCommas(corrected_total_downloads_not_round),
               interval: single_pace
           });
@@ -162,7 +169,7 @@
       $('.verse').hide().removeClass('hidden').fadeIn('slow');
       $(".installs").counter({
           direction: "up",
-          format: "#{t("counter.format").gsub(" ", "&nbsp;")}",
+          format: "#{t("counter.format")}",
           initial: addCommas(corrected_total_downloads_not_round),
           interval: single_pace
       });

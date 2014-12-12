@@ -12,11 +12,10 @@
   %head
     %title= strip_tags(meta_title)
     %link{rel: "shortcut icon", href:"/favicon.ico"}
-    %link{href: "//fonts.googleapis.com/css?family=Amatic+SC:700", rel:"stylesheet", type: "text/css"}
-    %link{href: "//fonts.googleapis.com/css?family=Open+Sans", rel:"stylesheet", type: "text/css"}
     %meta{charset:"utf-8"}
     %meta{name: "description",    content: meta_description}
     %meta{name: "url",            content: meta_url}
+    %meta{name: "viewport",       content: "width=device-width, target-densitydpi=160, initial-scale=1.0"}
     %meta{property: "og:title",       content: meta_title }
     %meta{property: "og:url",         content: meta_url }
     %meta{property: "og:description", content: meta_description }
@@ -34,6 +33,7 @@
     %meta{name: "twitter:site",             content: "@YouVersion"}
 
     = stylesheet_link_tag "campaigns/christmas"
+    = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
 
     :javascript
       try{Typekit.load();}catch(e){}

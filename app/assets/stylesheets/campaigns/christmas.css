@@ -754,8 +754,14 @@ h2 { font-size: 16px;}
 
 /* Christmas styles start here */
 body {
-    background:#000 url(/assets/campaigns/christmas/hills.jpg) repeat-x center -50px;
+    background:#111 url(/assets/campaigns/christmas/hills.svg) repeat-x center -50px;
+    background-size: 1550px;
     width: 100%;
+}
+
+img[alt="YouVersion logo"] {
+  width: 236px;
+  padding: 10px 0 0;
 }
 
 .main,.footer {
@@ -763,15 +769,19 @@ body {
 }
 
 .main h1 {
-    font: 50px "Amatic SC",sans-serif;
+    font: 50px "skippy-sharp",sans-serif;
     margin: 0;
     padding: 0;
-    max-height: 66px;
     overflow: hidden;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    line-height: .8em;
+    width: 500px;
 }
 
 .star {
-    background:url(/assets/campaigns/christmas/star.png) no-repeat 72px 50%;
+    background:url(/assets/campaigns/christmas/star.svg) no-repeat 72px 50%;
     height:70px;
     z-index: 100 !important;
     width: 180px !important;
@@ -814,10 +824,14 @@ svg.map {
 }
 #twitter {
     position: absolute;
-    left: 902px;
-    top: 600px;
+    left: 912px;
+    top: 603px;
     cursor: pointer;
     z-index: 100 !important;
+}
+
+#facebook img, #twitter img {
+  width: 40px;
 }
 
 #map image {
@@ -845,7 +859,8 @@ svg.map {
     text-align:right;
     position: absolute;
     right: 80px;
-    top: 100px;
+    top: 140px;
+    width: 330px !important
 }
 .figures h3 {
     font-size: 12px;
@@ -857,28 +872,24 @@ svg.map {
 
 .figures .figure {
     color:#fff;
-    font-family:"Amatic SC",sans-serif;
-    font-size:75px;
+    font-family:"fira-mono",sans-serif;
+    font-size:50px;
     margin-top:0;
 }
 
-.figures h2, .figures h3, .figures .figure {
-    text-shadow: 3px 3px 1px #000;
-}
-
 .little_sheep {
-    background:url(/assets/campaigns/christmas/sheep.png) no-repeat bottom right;
+    background:url(/assets/campaigns/christmas/sheep.svg) no-repeat bottom right;
     height:100px;
     position: absolute;
-    top: 588px;
+    top: 625px;
     width: 575px;
 }
 
 .shepherds,.container_12 .grid_5, .container_12 .prefix_4 {
-    background:url(/assets/campaigns/christmas/sheps.png) no-repeat 485px 0;
+    background:url(/assets/campaigns/christmas/sheps.svg) no-repeat 485px 0;
     height:276px;
     position: absolute;
-    top: 470px;
+    top: 450px;
     width: 740px;
 }
 
@@ -888,7 +899,7 @@ svg.map {
 }
 
 .footer {
-    background-color: #000;
+    background-color: #111;
     color: #777;
     margin-top: -159px;
 }
@@ -898,13 +909,13 @@ svg.map {
 
 .footer .container_12 .grid_8 {
     width: 509px;
-    margin: 20px 0 0 0;
+    margin: 40px 0 0 0;
     padding: 10px 20px 0 0;
 }
 
 .footer .container_12 .download {
     width: 334px;
-    margin: 20px 0 0 0;
+    margin: 30px 0 0 0;
     padding: 0 0 20px 96px;
 }
 
@@ -931,7 +942,7 @@ svg.map {
 }
 
 .verse span {
-    font: 56px 'Open Sans', Helvetica, Arial, sans-serif;
+    font: 56px "fira-mono", Helvetica, Arial, sans-serif;
 }
 
 .verse p {
@@ -1011,4 +1022,159 @@ svg.map {
     color: #fff;
     text-decoration: underline;
     font-size: 14px;
+}
+
+
+/* !Mobile----------------------------- */
+
+@media screen and (max-width: 600px) {
+
+body {
+  min-width: 0;
+}
+
+#facebook, #twitter {
+  position: relative;
+  left: auto;
+  top: 570px;
+}
+
+#facebook img, #twitter img {
+  width: 40px;
+}
+
+
+#facebook {
+  left: 15%;
+}
+
+#twitter {
+  left: 17%;
+}
+
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12, .grid_13, .grid_14, .grid_15, .grid_16 {
+  display: block;
+  float: none;
+}
+
+.container_12 .grid_3, .container_12 .grid_4, .title.grid_6, .container_12, .container_16 {
+  width: auto !important;
+  margin: 0;
+}
+
+#logo {
+  width: auto;
+  text-align: center;
+}
+
+div, .main, #map, .copy {
+  width: auto;
+  float: none;
+}
+
+#map-bkg, .map, .little_sheep {
+  display: none;
+}
+
+.star {
+  position: absolute;
+  top: 13px;
+  left: -93px;
+}
+
+#map {
+  height: auto;
+  margin: 0;
+}
+
+.copy, .finished-copy {
+  position: relative;
+  text-align: left;
+  z-index: 10;
+  top: auto;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.title.grid_6 {
+  width: 80%;
+  margin: 15px auto 0;
+}
+
+.main h1 {
+  max-height: none;
+  text-align: center;
+  line-height: .8em;
+  position: relative;
+  width: auto;
+  top: auto;
+  right: auto;
+}
+
+.figures {
+  text-align: center;
+  position: relative;
+  right: auto;
+  top: auto;
+}
+
+.hills {
+  height: auto;
+}
+
+.shepherds, .container_12 .grid_5, .container_12 .prefix_4 {
+  background-position: 90% 10px;
+  background-size: 200px;
+  height: 230px;
+  position: relative;
+  top: auto;
+  width: auto;
+}
+
+.footer {
+  margin: 0;
+}
+
+.footer .container_12 .grid_8 {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.verse .installs {
+  margin: 0;
+  text-align: center;
+  padding: 0;
+}
+
+.verse p {
+  margin: 0;
+  text-align: center;
+  padding: 0;
+  font-size: 14px;
+}
+
+.footer .container_12 .download {
+  width: 72%;
+  margin: 30px auto;
+  padding: 0 0 0 22%;
+}
+
+.verse span {
+    font: 36px "fira-mono", Helvetica, Arial, sans-serif;
+}
+.figures .figure {
+    font-size:40px;
+}
+.footer .container_12 h3 {
+    font-size: 12px;
+}
+.footer .container_12 .grid_3 span {
+    font-size: 12px;
+}
+.grid_3.prefix_1.download {
+    background-position: 15px 5px !important;
+}
+
+
 }
