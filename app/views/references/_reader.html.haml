@@ -60,7 +60,8 @@
     - if verse_view
       %h2#read_chapter
         %a.action_button_blue{href: reference_path(reference: reference.chapter_usfm.downcase)}
-          = t("read chapter")
+          -#= t("read chapter")
+          = t("read reference", reference: reference.to_chapter.human)
       %div#download.mobile{href:"/app"}
         -# - style = "background: url(#{image_path(localized_bible_icon(58))}) no-repeat right center" if localized_bible_icon
         -# %span.icon{style: style}
