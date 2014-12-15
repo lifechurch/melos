@@ -224,7 +224,7 @@ mk:
     note: "Нова белешка"
     selected: "Селектирано"
     chapter: "Глава"
-    home: "Home"
+    home: "Дома"
     bible: "Библија"
     notes title: "Белешки"
     friends: "Пријатели"
@@ -1088,7 +1088,7 @@ mk:
             totals since: "YouVersion totals since December 1, 2014:"
             total installs: "Total installs on smartphones and tablets"
             download: "Download the free Bible App"
-            versions: "Over %{version_count} versions in %{language_count} languages"
+            versions: "Преку %{version_count} верзии на %{language_count} јазици"
             tagline: "the Bible that goes with you anywhere"
             chapter counter format: "9,999,999"
         100m: 
