@@ -1058,7 +1058,7 @@ ro:
     app errors: 
         404 plans explanation: "Cauți planul <a href='%{plan_path}'>%{title}</a>?"
         404 contact support: "Întâmpini probleme? Contactează <a href='%{support_url}'>echipa noastră de asistență</a>."
-        404 explanation: "Încearcă să reîncepi de aici <a href='%{reader_path}'>home page</a>. Nu merge nici așa? Contactează <a href='%{support_url}'>echipa de asistență</a>."
+        404 explanation: "Încearcă să reiei căutarea de la <a href='%{reader_path}'>pagina Acasă</a>. Nu merge nici așa? Contactează <a href='%{support_url}'>echipa de asistență</a>."
         404 message: "Ne pare rău, pagina pe care o cauți nu poate fi găsită."
         408 message: "Din păcate, serverele noastre nu au răspuns în timp util."
         408 explanation: "Am fost notificați și ne vom ocupa de toate problemele persistente în cel mai scurt timp. Acum încercăm să te ducem înapoi la planul tău de citire."
@@ -1081,9 +1081,9 @@ ro:
         load error: "S-a produs o eroare la încărcarea mai multor versiuni. Pentru a încerca din nou, închide și apoi redeschide acest meniu."
     campaigns: 
         christmas: 
-            tracker title: "Christmas Story Tracker"
-            twitter text: "Watch the world read about the birth of Jesus. Share the Christmas Story Tracker @YouVersion: https://www.bible.com/christmas"
-            facebook text: "Share the Christmas Story Tracker as people around the world read about the birth of Jesus.  In church or at home, near people we love or during a quiet moment alone, we're pausing to reflect on the wonder of God's love for us."
+            tracker title: "Pe Urmele CRĂCIUNULUI"
+            twitter text: "Urmărește o lume întreagă citind despre nașterea lui Isus. Distribuie Pe Urmele Crăciunului @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Distribuie Pe Urmele Crăciunului pe măsură ce oameni din întreaga lume citesc despre nașterea lui Isus.  La biserică sau acasă, lângă cei dragi sau într-un moment de singurătate, ne oprim să ne gândim la minunea dragostei lui Dumnezeu pentru noi."
             verse: "<sup>10</sup> Dar îngerul le-a zis,<br>„Nu vă temeți. Vă aduc o veste bună, care va fi o mare bucurie pentru tot norodul. <sup>11</sup> Astăzi în cetetea lui David, vi s-a născut un Mântuitor; care este Hristos, Domnul.”"
             read more: "Citește uimitoarea poveste a Crăciunului"
             read about: "Lecturi despre Nașterea lui Isus"

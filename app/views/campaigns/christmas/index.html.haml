@@ -3,8 +3,7 @@
 - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
 
 .main.container_12
-
-  %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=105030176203924&link=https://www.bible.com/christmas&picture=https://www.bible.com/assets/campaigns/christmas/christmas-tracker2.png&name=Christmas%20Story%20Tracker&caption=bible.com/christmas&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=https://www.bible.com/christmas", :target => "_blank"}
+  %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=105030176203924&link=https://www.bible.com#{locale_dir}/christmas&picture=https://www.bible.com/assets/campaigns/christmas/christmas-tracker.png&name=#{t("campaigns.christmas.tracker title")}&caption=bible.com%20%20%23ChristmasTracker&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=https://www.bible.com#{locale_dir}/christmas", :target => "_blank"}
     = image_tag "svg/facebook-logo.svg"
   %a#twitter.twitter{:href => "https://twitter.com/intent/tweet?source=webclient&text=#{t('campaigns.christmas.twitter text')}&hashtags=ChristmasTracker", :target => "_blank"}
     = image_tag "svg/twitter-logo.svg"
