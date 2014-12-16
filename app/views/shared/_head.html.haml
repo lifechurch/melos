@@ -38,8 +38,10 @@
 - @native_url = session[:native_url] if session[:native_url].present?
 - @user_agent = session[:user_agent] if session[:user_agent].present?
 - session.delete(:native_url) if session[:native_url].present?
+
 - if @native_url.present?
   %meta{name: "native-url", content: @native_url}
+  %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{@native_path}"}
 
   - if @user_agent == "ios"
     :javascript

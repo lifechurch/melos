@@ -128,7 +128,8 @@ module YV
         when /android|Android/
           @user_agent = "android"
         end
-        @native_url = "youversion://#{dict[controller_name][action_name]}" rescue nil
+        @native_path = dict[controller_name][action_name] rescue nil
+        @native_url = "youversion://#{@native_path}" if @native_path.present?
         if current_auth.nil?
           session[:native_url] = @native_url
           session[:user_agent] = @user_agent
