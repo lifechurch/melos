@@ -778,6 +778,10 @@ img[alt="YouVersion logo"] {
     line-height: .8em;
     width: 500px;
 }
+.body-ko .main h1,
+.body-ru .main h1 {
+    font: 32px "skippy-sharp",sans-serif;
+}
 
 .star {
     background:url(/assets/campaigns/christmas/star.svg) no-repeat 72px 50%;
