@@ -45,8 +45,7 @@ module YV
       end
 
       def mobile_redirect
-        return unless request.env["X_MOBILE_DEVICE"].present?
-
+        
         # todo: model
         # for now use a dictionary here
 
