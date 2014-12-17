@@ -4,7 +4,7 @@ pl:
         formats: 
             votd: "%-d %B, %Y"
     counter: 
-        format: "999 999 999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Rozmowa i Odkrycia"
@@ -167,6 +167,7 @@ pl:
     badges title: "Odznaczenia"
     currently selected: "Obecnie wybrane:"
     read reference: "Czytaj %{reference}"
+    read chapter: "Czytaj cały rozdział"
     compare all versions: "Porównaj wszystkie wersje"
     link will be added: "zostanie dodane"
     my picture: "Uaktualnij moje zdjęcie"
@@ -223,6 +224,7 @@ pl:
     note: "Nowa notatka"
     selected: "wybrane"
     chapter: "Rozdział"
+    home: "§"
     bible: "Biblia"
     notes title: "Notatki"
     friends: "Przyjaciele"
@@ -1080,6 +1082,19 @@ pl:
         loading: "Ładowanie kolejnych przekładów..."
         load error: "Pojawił się problem z ładowaniem przekładów. Zamknij to menu i otwórz ponownie, aby spróbować jeszcze raz."
     campaigns: 
+        christmas: 
+            tracker title: "Historia Bożego Narodzenia"
+            twitter text: "Oglądaj świat czytający o narodzinach Jezusa. Podziel się historią Bożego Narodzenia @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Podziel się historią Bożego Narodzenia kiedy ludzie na całym świecie czytają o narodzinach Jezusa.  W kościele czy domu, w pobliżu ludzi których kochamy czy podczas spokojnej samotnej chwili, zatrzymujemy się aby zastanowić się nad cudowną miłością Boga do nas."
+            verse: "<sup>10 </sup> I rzekł do nich anioł:<br>“ Nie bójcie się, bo oto zwiastuję wam radość wielką, która będzie udziałem wszystkiego ludu, <sup>11 </sup> Gdyż dziś narodził się wam Zbawiciel, którym jest Chrystus Pan, w mieście Dawidowym.”"
+            read more: "Czytaj niesamowitą historię Bożego Narodzenia"
+            read about: "Czytamy o narodzinach Jezusa"
+            totals since: "Licznik YouVersion licznik od 1 grudnia 2014:"
+            total installs: "Łączna ilość zainstalowań na smartfonach i tabletach"
+            download: "Pobierz darmową wersję Aplikacji Biblii"
+            versions: "Pond %{version_count} wersji w %{language_count} językach"
+            tagline: "Biblia, która idzie z tobą wszędzie"
+            chapter counter format: "9 999 999"
         100m: 
             logo: "YouVersion: Aplikacja Biblii"
             tagline: "Zaczyna się od <em>100 milionów</em>"

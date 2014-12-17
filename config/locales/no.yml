@@ -4,7 +4,7 @@
         formats: 
             votd: "%-d. %B, %Y"
     counter: 
-        format: "999 999 999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Samtale og utforske"
@@ -167,6 +167,7 @@
     badges title: "Merker"
     currently selected: "Markert nå:"
     read reference: "Les %{reference}"
+    read chapter: "Les hele kapittelet"
     compare all versions: "Sammenlign alle versjoner"
     link will be added: "Vil bli lagt til"
     my picture: "Oppdater mitt bilde"
@@ -223,6 +224,7 @@
     note: "Nytt notat"
     selected: "Markert"
     chapter: "Kapittel"
+    home: "Hjem"
     bible: "Bibel"
     notes title: "Notater"
     friends: "Venner"
@@ -1076,6 +1078,19 @@
         loading: "Laster inn flere oversettelser..."
         load error: "Et problem oppstod i forbindelse med nedlastning av flere oversettelser. Lukk denne menyen og åpne på nytt for å prøve igjen."
     campaigns: 
+        christmas: 
+            tracker title: "Julehistorien er lest"
+            twitter text: "Se verden lese om Jesu fødsel. Del juleevangelietelleren @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Del juleevangelietelleren mens folk over hele verden leser om Jesu fødsel.  I kirken eller hjemme, sammen med folk vi er glad i eller i et stille øyeblikk alene. Vi stopper opp for å ta til oss det underet Guds kjærlighet er for oss."
+            verse: "<sup>10</sup> Men engelen sa til dem,<br>“Frykt ikke! For se, jeg forkynner dere en stor glede - en glede for alt folket. <sup>11</sup> I dag er det født dere en frelser, som er Messias, Herren - i Davids by.”"
+            read more: "Les den fantastiske historien om julen"
+            read about: "Les om Jesu fødsel"
+            totals since: "Samlet på YouVersion siden 1. desember 2014:"
+            total installs: "Antall installasjoner på smarttelefoner og nettbrett"
+            download: "Last ned Bibel-appen gratis"
+            versions: "Over %{version_count} oversettelser på %{language_count} språk"
+            tagline: "Bibelen du kan ta med deg over alt"
+            chapter counter format: "9 999 999"
         100m: 
             logo: "YouVersion: Bibel-appen"
             tagline: "Det begynner med <em>100 millioner</em>"

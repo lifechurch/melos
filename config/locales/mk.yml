@@ -167,6 +167,7 @@ mk:
     badges title: "Беџови"
     currently selected: "Селектирано:"
     read reference: "Прочитај %{reference}"
+    read chapter: "Прочитај ја целата глава"
     compare all versions: "Спореди ги сите верзии"
     link will be added: "Ќе биде додадено"
     my picture: "Ажурирај ја мојата слика"
@@ -196,7 +197,7 @@ mk:
     reader: "Читач"
     lifechurch short url: "LifeChurch.tv"
     about: "За"
-    versions link: "Versions"
+    versions link: "Верзија"
     jobs: "Работи"
     privacy policy: "Политика на приватност"
     terms: "Услови"
@@ -223,6 +224,7 @@ mk:
     note: "Нова белешка"
     selected: "Селектирано"
     chapter: "Глава"
+    home: "Дома"
     bible: "Библија"
     notes title: "Белешки"
     friends: "Пријатели"
@@ -718,13 +720,13 @@ mk:
             readings 5 or more: "читања"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count} пријател е претплатен на овој план "
+                other: "%{count} пријатели се претплатени на овој план "
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
+                one: "%{count} пријател го заврши овој план "
+                other: "%{count} пријатели го завршија овој план "
             total completions: "Над %{count} луѓе прочитале"
-            view all: "View All"
+            view all: "Види сè"
             close: "Затвори"
         settings: "Уредувања"
         privacy: 
@@ -1076,6 +1078,19 @@ mk:
         loading: "Се вчитуваат повеќе верзии..."
         load error: "Се извинуваме, има проблем со вчитување на повеќе верзии. Затворете го менито и обидете се повторно со отварање на истото."
     campaigns: 
+        christmas: 
+            tracker title: "Божиќен локатор на приказни"
+            twitter text: "Гледај како светот чита за Исусовото раѓање. Сподели го Божиќниот локатор на приказни @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Сподели го Божиќниот локатор на приказни додека луѓето во светот читаат за Исусовото раѓање.  Во црква или дома, во присуство на луѓе кои ги сакаме или за време на нашите тивки моменти, паузираме да се потсетиме на чудесната Божја љубов кон нас."
+            verse: "<sup>10</sup> Но ангелот им рече,<br>“Не плашете се. Ви носам радосна вест, што ќе ги зарадува сите народи. <sup>11</sup> Денес, во Давидовиот град, во Витлеем, ви се роди Спасителот - Месијата, Господ.”"
+            read more: "Read the amazing story of Christmas"
+            read about: "Приказна за раѓањето на Исус"
+            totals since: "YouVersion вкупно од 1 декември 2014:"
+            total installs: "Вкупно инсталирани на телефони и таблети"
+            download: "Преземи ја бесплатно Апликацијата Библија"
+            versions: "Преку %{version_count} верзии на %{language_count} јазици"
+            tagline: "Библија која е постојано со тебе."
+            chapter counter format: "9,999,999"
         100m: 
             logo: "YouVersion: апликација „Библија“"
             tagline: "Започнува со <em>100 милиони</em>"

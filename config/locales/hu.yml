@@ -4,7 +4,7 @@ hu:
         formats: 
             votd: "%Y. %B %-d"
     counter: 
-        format: "999 999 999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Beszélgetés és felfedezés"
@@ -167,6 +167,7 @@ hu:
     badges title: "Jelvények"
     currently selected: "Kiválasztva:"
     read reference: "Olvasás %{reference}"
+    read chapter: "Egész fejezet elolvasása"
     compare all versions: "Összes verzió összehasonlítása"
     link will be added: "Hozzá lesz adva"
     my picture: "Fényképem Frissítése"
@@ -223,6 +224,7 @@ hu:
     note: "Új jegyzet"
     selected: "Kiválasztva"
     chapter: "Fejezet"
+    home: "Kezdőoldal"
     bible: "Biblia"
     notes title: "Jegyzetek"
     friends: "Barátok"
@@ -1076,6 +1078,19 @@ hu:
         loading: "További verzió betöltése..."
         load error: "Sajnos probléma lépett fel a további verziók betöltése során. Zárd be ezt a menüt és próbáld újra megnyitni."
     campaigns: 
+        christmas: 
+            tracker title: "Karácsonyi történet nyomozó"
+            twitter text: "Figyeld a világot, ahogy Jézus születéséről olvas. Oszd meg a Karácsonyi Történet nyomozót @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Oszd meg a Karácsonyi történet nyomozót, miközben az egész világon emberek olvasnak Jézus születéséről.  A templomban vagy otthon, szeretteink közelében vagy egyedül egy csendes pillanatban, megállunk, hogy Isten irántunk való szeretetéről elmélkedjünk."
+            verse: "<sup>10</sup> De az angyal így szólt hozzájuk:<br>„Ne féljetek! Íme, nagy örömet adok tudtul nektek és az lesz majd az egész népnek. <sup>11</sup> Ma megszületett a Megváltó nektek, Krisztus, az Úr, Dávid városában."
+            read more: "Olvasd el karácsony csodálatos történetét"
+            read about: "Olvasás Jézus születéséről"
+            totals since: "összes YouVersion felhasználó 2014. december 1-je óta"
+            total installs: "Összes telepítés okostelefonokon és táblagépeken"
+            download: "Töltsd le az ingyenes Biblia alkalmazást"
+            versions: "Több mint %{version_count} fordítás %{language_count} nyelven"
+            tagline: "a Biblia, ami mindenhová elkísér."
+            chapter counter format: "9 999 999"
         100m: 
             logo: "YouVersion: A Biblia alkalmazás"
             tagline: "100 millióval <em>kezdődik</em>"

@@ -167,6 +167,7 @@ de:
     badges title: "Abzeichen"
     currently selected: "Zur Zeit ausgewählt:"
     read reference: "%{reference} lesen"
+    read chapter: "Das ganze Kapitel lesen"
     compare all versions: "Alle Übersetzungen vergleichen"
     link will be added: "wird hinzugefügt"
     my picture: "Mein Bild aktualisieren"
@@ -223,6 +224,7 @@ de:
     note: "Neue Notiz"
     selected: "Ausgewählt"
     chapter: "Kapitel"
+    home: "Home"
     bible: "Bibel"
     notes title: "Notizen"
     friends: "Freunde"
@@ -1011,7 +1013,7 @@ de:
             our action: "Wir wurden hierüber informiert und werden uns so bald wie möglich darum kümmern."
         home: 
             hero: 
-                heading: "Eine kostenlose Bibel fürs Handy, Tablet & den PC."
+                heading: "Eine kostenlose Bibel fürs Handy, Tablet & den PC!"
                 description: "YouVersion, eine einfache, werbefreie Bibel, bringt Gottes Wort in deinen Alltag."
                 learn more: "Mehr dazu weiter unten."
                 start reading: "Fang an zu lesen."
@@ -1076,6 +1078,19 @@ de:
         loading: "Lade weitere Übersetzungen..."
         load error: "Leider gab es ein Problem beim Laden weiterer Übersetzungen. Schließe dieses Menü und öffne es erneut, um es noch einmal zu versuchen."
     campaigns: 
+        christmas: 
+            tracker title: "Die Weihnachtsgeschichte"
+            twitter text: "Schau zu, wie die Welt die Geschichte von der Geburt Jesu liest. Teile den Weihnachtsgeschichten-Tracker @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Teile den Weihnachtsgeschichten-Tracker, während die Menschen weltweit von Jesu Geburt lesen.  In der Kirche wie auch zuhause, bei unseren Geliebten oder alleine während einem ruhigen Moment verharren wir, um über das Wunder von Gottes Liebe zu uns nachzudenken."
+            verse: "<sup>10</sup> aber der Engel sagte:<br/> »Fürchtet euch nicht! Ich verkünde euch eine Botschaft, die das ganze Volk mit großer Freude erfüllt: <sup>11</sup> Heute ist für euch in der Stadt, in der schon David geboren wurde, der lang ersehnte Retter zur Welt gekommen. Es ist Christus, der Herr.&quot;"
+            read more: "Lies die Weihnachtsgeschichte. Sie ist herrlich!"
+            read about: "Von Jesu Geburt lesen"
+            totals since: "wurde seit dem 1. Dezember 2014 schon so oft aufgerufen:"
+            total installs: "Installationen auf Smartphones und Tablets"
+            download: "Lade dir die Bibel App gratis herunter!"
+            versions: "Mit der Bibel hast du über %{version_count} Übersetzungen in %{language_count} Sprachen"
+            tagline: "immer dabei - egal wo du bist!"
+            chapter counter format: "9.999.999"
         100m: 
             logo: "YouVersion: Die Bibel App"
             tagline: "Es beginnt mit <em>100 Millionen</em>"

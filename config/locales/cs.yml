@@ -4,7 +4,7 @@ cs:
         formats: 
             votd: "%-d. %B %Y"
     counter: 
-        format: "999 999 999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Diskuze & Objevování"
@@ -167,6 +167,7 @@ cs:
     badges title: "Odznaky"
     currently selected: "Právě zvoleno:"
     read reference: "Číst %{reference}"
+    read chapter: "Číst celou kapitolu"
     compare all versions: "Porovnat všechny překlady"
     link will be added: "Bude přidáno"
     my picture: "Aktualizovat moji fotku"
@@ -223,6 +224,7 @@ cs:
     note: "Nová poznámka"
     selected: "Zvolené"
     chapter: "Kapitola"
+    home: "Domů"
     bible: "Bible"
     notes title: "Poznámky"
     friends: "Přátelé"
@@ -1078,6 +1080,19 @@ cs:
         loading: "Načítání více překladů..."
         load error: "Omlouváme se, nepodařilo se načíst více překladů. Zavřete toto menu a otevřte jej znovu."
     campaigns: 
+        christmas: 
+            tracker title: "Po stopách vánočního příběhu"
+            twitter text: "Sledujte svět, který čte příběh o narození Ježíše. Sdílejte \"Po stopách vánočního příběhu\" na @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Rozdělte se s vánočním příběhem o narození Ježíše, aby si jej lidé na celém světe mohli přečíst.  Ve společenství věřících nebo doma, s blízkými milými lidmi nebo během ztišení o samotě, se nyní zastavme nad zázrakem lásky, kterou nám projevil Bůh."
+            verse: "<sup>10</sup> Tedy řekl jim anděl: <br>“Nebojte se! Přináším vám dobrou zprávu, ze které se mohou radovat všichni lidé. <sup>11</sup> Dnes ve městě Davidově se vám narodil Zachránce; Kristus Pán.&quot;"
+            read more: "Přečtěte si úchvatný vánoční příběh"
+            read about: "Čtení o narození Ježíše Krista"
+            totals since: "Celkem přečetlo v aplikaci Bible od 1. prosince 2014:"
+            total installs: "Instalací celkem na mobilních zařízeních."
+            download: "Stáhněte si aplikaci Bible zdarma"
+            versions: "Přes %{version_count} překladů v %{language_count} jazicích"
+            tagline: "Bible, která je stále s vámi"
+            chapter counter format: "9 999 999"
         100m: 
             logo: "YouVersion: Aplikace Bible"
             tagline: "Začíná to se <em>100 milióny</em>"

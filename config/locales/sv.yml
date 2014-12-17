@@ -4,7 +4,7 @@ sv:
         formats: 
             votd: "%-d %B, %Y"
     counter: 
-        format: "999 999 999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Samtal & Utforskning"
@@ -167,6 +167,7 @@ sv:
     badges title: "Medaljer"
     currently selected: "Nu markerat:"
     read reference: "Läs %{reference}"
+    read chapter: "Läs helt kapitel"
     compare all versions: "Jämför alla översättningarna"
     link will be added: "Kommer att läggas till"
     my picture: "Uppdatera min bild"
@@ -223,6 +224,7 @@ sv:
     note: "Ny anteckning"
     selected: "Markerat"
     chapter: "Kapitel"
+    home: "Hem"
     bible: "Bibeln"
     notes title: "Anteckningar"
     friends: "Vänner"
@@ -1076,6 +1078,19 @@ sv:
         loading: "Laddar fler översättningar..."
         load error: "Beklagar, ett problem uppstod och det gick inte att ladda ner fler översättningar. Stäng denna meny och starta om för att försöka igen."
     campaigns: 
+        christmas: 
+            tracker title: "Räknare för julberättelse"
+            twitter text: "Se världen läsa om Jesu födelse. Dela räknaren över julberättelse @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Dela räknaren över julberättelse medan folk runt om i världen läser om Jesu födelse.   I kyrkan eller hemma, tillsammans med människor vi älskar eller under en lugn stund i ensamhet, stannar vi upp och reflektera över det underbara kärlek Gud ger till oss."
+            verse: "<sup>10</sup> Men ängeln sade till dem:<br> »Var inte rädda. Jag bär bud till er om en stor glädje, en glädje för hela folket. <sup>11</sup> I dag har en frälsare fötts åt er i Davids stad, han är Messias, Herren. "
+            read more: "Läs den fantastiska berättelsen om julen"
+            read about: "Läst om Jesu födelse"
+            totals since: "Totalt på YouVersion sedan 1 december 2014:"
+            total installs: "Antal installationer på mobiltelefoner och pekplattor"
+            download: "Ladda ner den fria Bibelappen"
+            versions: "Över %{version_count} översättningar på %{language_count} språk"
+            tagline: "Bibeln som följer med dig överallt"
+            chapter counter format: "9 999 999"
         100m: 
             logo: "YouVersion: Bibelappen"
             tagline: "Det närmar sig <em>100 miljoner</em>"

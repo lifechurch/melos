@@ -4,7 +4,7 @@ fi:
         formats: 
             votd: "%-d. %B'ta', %Y"
     counter: 
-        format: "999 999 999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Keskustelut ja oivallukset"
@@ -167,6 +167,7 @@ fi:
     badges title: "Ansiomerkit"
     currently selected: "Tällä hetkellä valittuna:"
     read reference: "Lue %{reference}"
+    read chapter: "Lue koko kappale"
     compare all versions: "Vertaile kaikkia käännöksiä"
     link will be added: "Lisätään"
     my picture: "Päivitä profiilikuvani"
@@ -223,6 +224,7 @@ fi:
     note: "Uusi muistiinpano"
     selected: "Valittu"
     chapter: "Luku"
+    home: "Koti"
     bible: "Raamattu"
     notes title: "Muistiinpanot"
     friends: "Ystävät"
@@ -1076,6 +1078,19 @@ fi:
         loading: "Ladataan enemmän käännöksiä..."
         load error: "Käännöksien latauksessa tapahtui valitettavasti virhe. Sulje tämä valikko ja avaa uudestaan."
     campaigns: 
+        christmas: 
+            tracker title: "Joulun Sanoma -laskuri"
+            twitter text: "Seuraa miten maailma lukee Jeesuksen syntymästä. Jaa Joulun Sanoma -laskuri @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Jaa Joulun Sanoma -laskuri, jonka avulla näkee miten maailma lukee Jeesuksen syntymästä.Seurakunnissa tai kotona, läheistemme keskellä tai itseksemme hiljentyessä, pysähdymme pohtimaan Jumalan ihmeellistä rakkautta meitä kohtaan."
+            verse: "<sup>10</sup> mutta enkeli sanoi heille:<br/>&quot;Älkää pelätkö! Minä ilmoitan teille ilosanoman, suuren ilon koko kansalle. <sup>11</sup> Tänään on teille Daavidin kaupungissa syntynyt Vapahtaja. Hän on Kristus, Herra.&quot;"
+            read more: "Lue joulun ihmeellisestä sanomasta"
+            read about: "Jeesuksen syntymästä lukijoita"
+            totals since: "YouVersionin kokonaismäärä 1. joulukuuta 2014 lähtien:"
+            total installs: "Asennusten määrä älypuhelimilla ja tableteilla"
+            download: "Lataa ilmainen Raamattusovellus"
+            versions: "Yli %{version_count} käännöstä %{language_count} kielellä"
+            tagline: "Raamattu kulkee mukanasi minne menetkin"
+            chapter counter format: "9 999 999"
         100m: 
             logo: "YouVersion: Raamattusovellus"
             tagline: "Se alkaa <em>100 miljoonalla</em>"

@@ -4,7 +4,7 @@ fr:
         formats: 
             votd: "%-d %B %Y"
     counter: 
-        format: "999 999 999"
+        format: "999 999 999"
     social: 
         intro page: 
             main heading: "Conversation et Découverte"
@@ -167,6 +167,7 @@ fr:
     badges title: "Badges"
     currently selected: "Sélection en cours:"
     read reference: "Lire %{reference}"
+    read chapter: "Lire le chapitre entier"
     compare all versions: "Comparer toutes les versions"
     link will be added: "Sera ajouté"
     my picture: "Mettre à jour ma photo"
@@ -223,6 +224,7 @@ fr:
     note: "Nouvelle note"
     selected: "Sélectionné"
     chapter: "Chapitre"
+    home: "Accueil"
     bible: "Bible"
     notes title: "Notes"
     friends: "Amis"
@@ -1076,6 +1078,19 @@ fr:
         loading: "Chargement d'autres versions..."
         load error: "Désolé, il y a eu un problème de chargement d'autres versions. Fermez ce menu et rouvrez-le pour réessayer."
     campaigns: 
+        christmas: 
+            tracker title: "Compteur de l'Histoire de Noël"
+            twitter text: "Regardez le monde lire l'histoire de la naissance de Jésus. Partagez le Compteur de l'Histoire de Noël @YouVersion: https://www.bible.com/christmas"
+            facebook text: "Partagez le Compteur de l'Histoire de Noël pendant que des personnes tout autour du monde lisent l'histoire de la naissance de Jésus. A l'église ou à la maison, avec les gens que l'on aime ou durant un moment calme tout seul, nous prenons le temps de réfléchir à l'amour merveilleux de Dieu pour nous."
+            verse: "<sup>10</sup> L’ange leur dit : <br/>“N’ayez pas peur. Oui, je viens vous annoncer une bonne nouvelle qui sera une grande joie pour tout votre peuple. <sup>11</sup> Aujourd’hui, dans la ville de David, un Sauveur est né pour vous. C’est le Christ, le Seigneur.”"
+            read more: "Lisez la formidable histoire de Noël"
+            read about: "Lecture du récit de la naissance de Jésus"
+            totals since: "Total YouVersion depuis le 1er Décembre 2014 :"
+            total installs: "Total des installations sur smartphones et tablettes"
+            download: "Télécharger la Bible App gratuite"
+            versions: "Plus de %{version_count} versions en %{language_count} langues"
+            tagline: "la Bible qui vous accompagne partout"
+            chapter counter format: "9 999 999"
         100m: 
             logo: "YouVersion : La Bible App"
             tagline: "Ca commence avec <em>100 millions</em>"
