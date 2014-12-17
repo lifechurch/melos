@@ -131,7 +131,7 @@ pt:
         links: 
             apple: "https://itunes.apple.com/pt/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=pt_br"
-            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
+            amazon: "http://www.amazon.com.br/YouVersion-Bible-for-Kids/dp/B00GURLC40/ref=sr_1_2?ie=UTF8&qid=1418837056&sr=8-2&keywords=bible+for+kids"
     now: "Agora"
     celebrating 50MM: "Comemorando 50 milhões de instalações!"
     link: "Link"
@@ -1080,7 +1080,7 @@ pt:
     campaigns: 
         christmas: 
             tracker title: "História do Natal"
-            twitter text: "Assista o mundo lendo sobre o nascimento de Jesus. Compartilhe a História do Natal @YouVersion:https://www.bible.com/christmas"
+            twitter text: "Veja o mundo lendo sobre o nascimento de Jesus. Compartilhe a História do Natal @YouVersion:https://www.bible.com/christmas"
             facebook text: "Compartilhe a História do Natal com as pessoas ao redor do mundo enquanto lemos sobre o nascimento de Jesus.  Na igreja ou em casa, perto das pessoas que amamos ou durante um momento a sós, paremos para refletir sobre o maravilhoso amor de Deus por nós."
             verse: "<sup>10</sup> Mas o anjo disse:<br>— “Não tenham medo!  Estou aqui a fim de trazer uma boa notícia para vocês, e ela será motivo de grande alegria também para todo o povo! <sup>11</sup> Hoje mesmo, na cidade de Davi, nasceu o Salvador de vocês — o Messias, o Senhor!”"
             read more: "Leia a incrível história do Natal"

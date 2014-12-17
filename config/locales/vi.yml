@@ -1077,8 +1077,8 @@ vi:
         load error: "Xin lỗi bạn, có vấn đề khi tải thêm bản dịch. Hãy đóng trình đơn này rồi mở ra thử lại."
     campaigns: 
         christmas: 
-            tracker title: "Mạng Theo Dõi Câu Chuyện Giáng Sinh"
-            twitter text: "Xem toàn thế giới đọc về sự giáng sinh của Chúa Jêsus. Chia sẻ \"Mạng Theo Dõi Câu Chuyện Giáng Sinh\" @YouVersion: https://www.bible.com/christmas"
+            tracker title: "Dõi Theo Câu Chuyện Giáng Sinh"
+            twitter text: "Xem toàn thế giới đọc về sự giáng sinh của Chúa Jêsus. Chia sẻ trang \"Dõi Theo Câu Chuyện Giáng Sinh\" @YouVersion: https://www.bible.com/christmas"
             facebook text: "Chia sẻ câu chuyện Giáng Sinh để mọi người trên thế giới biết về sự giáng thế của Chúa Jêsus.  Ở Hội Thánh hoặc ở nhà, bên cạnh những người chúng ta yêu thương hoặc trong những khoảnh khắc yên tĩnh một mình, chúng ta ngừng lại để chiêm nghiệm tình yêu Chúa dành cho chúng ta thật tuyệt vời biết bao."
             verse: "<sup>10</sup> Nhưng thiên sứ bảo họ:<br>“Đừng sợ! Nầy, ta báo cho các ngươi một tin lành, đây sẽ là niềm vui lớn cho mọi người. <sup>11</sup> Vì hôm nay tại thành Đa-vít, một Đấng Cứu Thế, là Đấng Christ, là Chúa đã được sinh ra cho các ngươi.”"
             read more: "Đọc câu chuyện Giáng Sinh diệu kỳ"
