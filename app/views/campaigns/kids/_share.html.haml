@@ -1,28 +1,28 @@
-- t = Proc.new do |key, options={}|
-  - I18n.t(key, options.merge(:locale => @locale))
+-# - t = Proc.new do |key, options={}|
+-#   - I18n.t(key, options.merge(:locale => @locale))
 -# !Share chunk
 
 .share
   %p.share-copy
-    = t.call('kids.share.tell friends')
+    = t('kids.share.tell friends')
 
   - fb_app_id   = Cfg.facebook_app_id
-  - fb_name     = t.call('kids.share.facebook name')
-  - fb_desc     = t.call('kids.share.facebook description')
-  - fb_link     = t.call('kids.share.facebook link')
-  - fb_redirect = t.call('kids.share.facebook redirect')
+  - fb_name     = t('kids.share.facebook name')
+  - fb_desc     = t('kids.share.facebook description')
+  - fb_link     = t('kids.share.facebook link')
+  - fb_redirect = t('kids.share.facebook redirect')
 
   %a.share-fb{target:"_blank", href: "https://www.facebook.com/dialog/feed?app_id=#{fb_app_id}&name=#{fb_name}&description=#{fb_desc}&link=#{fb_link}&redirect_uri=#{fb_redirect}"}
     Facebook
 
 
-  - twitter     = t.call('kids.share.twitter description')
-  - twitter_hashtags = t.call('kids.share.twitter hashtags')
+  - twitter     = t('kids.share.twitter description')
+  - twitter_hashtags = t('kids.share.twitter hashtags')
   %a.share-tw{target:"_blank", href: "https://twitter.com/intent/tweet?text=#{twitter}&hashtags=#{twitter_hashtags}"}
     Twitter
 
 
-  - subject     = t.call('kids.share.email subject')
-  - body        = t.call('kids.share.email body')
+  - subject     = t('kids.share.email subject')
+  - body        = t('kids.share.email body')
   %a.share-em{href: "mailto:?subject=#{subject}&body=#{body}"}
-    = t.call('kids.share.email')
+    = t('kids.share.email')
