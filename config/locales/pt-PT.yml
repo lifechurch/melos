@@ -1079,12 +1079,12 @@ pt-PT:
         load error: "Desculpe, houve um problema ao descarregar mais versões. Feche este menu e tente novamente."
     campaigns: 
         christmas: 
-            tracker title: "Contabilidade da História de Natal"
-            twitter text: "Veja o mundo a ler sobre o nascimento de Jesus. Partilhe o contador da história de natal @YouVersion: https://www.bible.com/christmas"
-            facebook text: "Partilhe o contador da história de Natal à medida que pessoas ao redor do mundo lêem sobre o nascimento de Jesus.  Na igreja ou em casa, perto de pessoas que ama ou durante momentos de silêncio sozinho, façamos uma pausa para reflectir na maravilha do amor de Deus por nós."
+            tracker title: "A História do Natal"
+            twitter text: "Veja o mundo a ler sobre o nascimento de Jesus. Partilhe o contador da História do Natal @YouVersion: https://www.bible.com/pt-PT/christmas"
+            facebook text: "Partilhe o contador da História do Natal à medida que pessoas ao redor do mundo lêem sobre o nascimento de Jesus.  Na igreja ou em casa, perto de pessoas que ama ou durante momentos de silêncio sozinho, façamos uma pausa para reflectir na maravilha do amor de Deus por nós."
             verse: "<sup>10</sup> Mas o anjo disse-lhes,<br>“Não tenham medo!  Venho aqui trazer-vos uma boa nova que será motivo de alegria para todo o povo. <sup>11</sup> Pois nasceu hoje, na cidade de David, o vosso Salvador que é Cristo,o Senhor!”"
-            read more: "Leia a surpreendente história de Natal"
-            read about: "Pessoas a ler sobre o nascimento de Jesus"
+            read more: "Leia a surpreendente História do Natal"
+            read about: "Quantidade de pessoas a ler sobre o nascimento de Jesus"
             totals since: "Totais YouVersion desde 1 de Dezembro de 2014:"
             total installs: "Downloads em smartphones e tablets"
             download: "Transfira gratuitamente a App da Bíblia"
