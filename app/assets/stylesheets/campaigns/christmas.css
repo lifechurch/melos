@@ -782,6 +782,10 @@ img[alt="YouVersion logo"] {
 .body-ru .main h1 {
     font: 32px "skippy-sharp",sans-serif;
 }
+.body-cs .main h1,
+.body-ro .main h1 {
+    font: 32px sans-serif;
+}
 
 .star {
     background:url(/assets/campaigns/christmas/star.svg) no-repeat 72px 50%;

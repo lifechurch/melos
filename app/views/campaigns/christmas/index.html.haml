@@ -28,8 +28,10 @@
   .copy
     %p
       = t('campaigns.christmas.verse').html_safe
+    - version_id = Version.default_for(I18n.locale.to_s.eql?('en-GB') ? "en" : I18n.locale)
+    - localized_link = "/bible/#{version_id}/luk.2"
     %p
-      %a{:href => "https://www.bible.com/bible/111/luk.2.niv"}
+      %a{:href => localized_link}
         = t('campaigns.christmas.read more').html_safe
 .hills
   .container_12
