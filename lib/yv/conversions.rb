@@ -78,14 +78,16 @@ module YV
           'sw' => 'swh',
           'sq' => 'alb',
           'mn' => 'khk',
-          'ar' => 'arb'
-		    }
+          'ar' => 'arb',
+          'fa' => 'pes'
+        }
         # norwegian macro languages: api has default under 'nob' not 'nor' as returned by LanguageInfo.find ISO 639-3
         # norwegian has two macro languages 'nob' and 'nno' not technically a part of ISO 639-3
         # swahili is using 'swh' for default version (Coastal Swahili) instead of 'swa' - (inclusive code for Swahili)
         # sq default version requires ISO 639-3 = 'alb' not 'sqi' default version is (292)
         # mn default version requires ISO 639-3 = 'khk' default version is (369)
         # ar default version requires ISO 639-3 = 'arb' not 'ara' default version is (101)
+        # fa default version requires ISO 639-3 = 'pes' default version is (181)
 		  end
 
       # Method(s) not found in the rest of the app - commenting out for now.
