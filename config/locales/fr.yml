@@ -870,7 +870,7 @@ fr:
         bookmark blurb: "Besoin d'utiliser la fonction \"favoris\"? Excellente idée! Elle permet de noter les versets que vous voulez mémoriser, partager ou les marquer. Connectez-vous ou créez un compte en cliquant sur le lien ci-dessous, puis commencez!"
         friends blurb: "Envie d'échanger avec des amis? Excellent! Vous pourrez partager vos expériences et vous entraider pour atteindre vos objectifs de lecture. Connectez-vous ou créez un compte en cliquant sur le lien ci-dessous, et jetez-vous à l'eau!"
         share blurb: "Il semble que vous vouliez partager des versets. Formidable ! Vous allez pouvoir le faire via Facebook ou Twitter. Connectez-vous ou créez un compte ci-dessous pour démarrer !"
-        highlight blurb: "Vous voulez suligner ce passage? Bonne idée! Surligner peut vous aider à organiser et garder le fil des vos passages préférés. Connectez-vous ou créez un compte en cliquant sur le lien ci-dessous, puis commencez!"
+        highlight blurb: "Vous voulez surligner ce passage? Bonne idée! Surligner peut vous aider à organiser et garder le fil des vos passages préférés. Connectez-vous ou créez un compte en cliquant sur le lien ci-dessous, puis commencez!"
         note blurb: "Vous voulez prendre des notes sur ce passage? Bonne idée! Les notes vous aident à organiser et vous remémorer les révélations que vous avez dans la Parole. Connectez-vous ou créez un compte en cliquant sur le lien ci-dessous et lancez-vous!"
     audio: 
         none: "Désolé, l'audio n'est pas disponible dans cette version"
