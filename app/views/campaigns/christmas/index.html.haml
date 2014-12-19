@@ -87,9 +87,9 @@
 
   function tickInfographic() {
       for (var i in infographic) {
-          var start_count = 8925000; //infographic[i].total;
-          var start_date = 1418860800; //last_modified[i];
-          var average_per_day = 170000; //infographic[i].daily;
+          var start_count = infographic[i].total;
+          var start_date = last_modified[i];
+          var average_per_day = infographic[i].daily;
           var single_pace = 1/(average_per_day/24/60/60)*1000;
           var today_date = Math.round((new Date()).getTime() / 1000);
           var date_difference_seconds = Math.abs(today_date - start_date);
@@ -150,7 +150,7 @@
       if (data.resultset && data.resultset[0]) {
           var item = data.resultset[0];
           infographic['chapter_requests'] = { total: item[0], daily: item[1] };
-          last_modified['chapter_requests'] = 1417737600; //item[2]; TODO put this to BQ
+          last_modified['chapter_requests'] = item[2];
 
           $(".figures").delay(2000).removeClass('hidden').hide().fadeIn('slow');
           tickInfographic();
