@@ -93,7 +93,7 @@ class RedirectsController < ApplicationController
 
   def criancas
     # Brazilian Portuguese Redirect to Kids
-    redirect_to('/pt-BR/kids')
+    redirect_to('/pt/kids')
   end
 
 end
