@@ -1086,8 +1086,8 @@ ko:
             totals since: "2014년 12월 1일 이후, YouVersion 총 설치수:"
             total installs: "스마트폰이나 태블랫에 설치"
             download: "무료 성경 앱을 다운로드하세요"
-            versions: "%{language_count} 이상의 언어로 된 %{version_count} 이상의 번역본"
-            tagline: "가는 곳마다 어디든지 함께하는 성경"
+            versions: "%{language_count} 언어로 된 %{version_count} 이상의 번역본"
+            tagline: "어느 곳에서나 여러분과 함께 하는 성경"
             chapter counter format: "9,999,999"
         100m: 
             logo: "YouVersion: 성경 앱"
