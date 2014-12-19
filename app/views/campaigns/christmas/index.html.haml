@@ -87,9 +87,9 @@
 
   function tickInfographic() {
       for (var i in infographic) {
-          var start_count = infographic[i].total;
-          var start_date = last_modified[i];
-          var average_per_day = infographic[i].daily;
+          var start_count = 8925000; //infographic[i].total;
+          var start_date = 1418860800; //last_modified[i];
+          var average_per_day = 170000; //infographic[i].daily;
           var single_pace = 1/(average_per_day/24/60/60)*1000;
           var today_date = Math.round((new Date()).getTime() / 1000);
           var date_difference_seconds = Math.abs(today_date - start_date);
