@@ -5,6 +5,7 @@
 
 - @main_nav = false
 - @sidebar = false
+- rtl_class = is_rtl? ? "rtl" : ""
 
 - content_for :stylesheets do
   = stylesheet_link_tag "bdc_home"
@@ -32,7 +33,7 @@
 
 = cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
   %article
-    #hero
+    #hero{class: rtl_class}
       #hero_content
         %h1= t(".hero.heading")
         %p=  t(".hero.description")
@@ -72,7 +73,7 @@
         %span.email
           = link_to(t("registration.with email"), sign_up_path)
 
-    %ul.home-features
+    %ul.home-features{class: rtl_class}
       %li.read_bible.first#scroll-point
         %div.pod_content
           %h2= t(".features.read heading")

@@ -14,7 +14,7 @@ body, html
   .hero_pics,
   .bottom_cta h2,
   .bottom_cta .counter,
-  #hero_content form,
+  #hero_content form
     display: none !important
 
   .bottom_cta .mobile_platforms
@@ -234,6 +234,23 @@ body, html
 
       p
         display: inline
+
+  #main article ul.rtl
+    li.read_bible
+      div
+        background: #FFF image-url("read_bible_icon_m.png") no-repeat 7% 20px
+
+    li.study_bible
+      div
+        background: #FFF image-url("highlight_bible_icon_m.png") no-repeat 7% 20px
+
+    li.subscribe_bible
+      div
+        background: #FFF image-url("subscribe_bible_icon_m.png") no-repeat 7% 20px
+
+    .take_bible
+      div
+        background: #FFF image-url("take_bible_icon_m.png") no-repeat 7% 20px
 
   .home-features
     margin-top: 0 !important
@@ -498,6 +515,12 @@ body, html
     padding: 0
     box-shadow: none
     width: 100%
+
+  #hero.rtl
+    background: image-url("laptop.jpg") no-repeat 0px 30px
+
+    #hero_content h1
+      width: 540px
 
   #hero
     background: image-url("laptop.jpg") no-repeat 500px 30px

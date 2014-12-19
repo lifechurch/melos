@@ -241,6 +241,10 @@ module ApplicationHelper
     convert_to_brightness_value(hex_color) <= 382.5 #halfway between black (0+0+0 = 0) and white (255+255+255 = 765)
   end
 
+  def is_rtl?
+    I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ar")
+  end
+
   def is_whitelabel_site
     @site.to_s != "Bible(dot)com"
   end
