@@ -95,10 +95,9 @@
           var date_difference_seconds = Math.abs(today_date - start_date);
           var date_difference_days_not_round = (date_difference_seconds / 86400);
           var corrected_total_downloads_not_round = Math.round(start_count + (average_per_day*date_difference_days_not_round));
-
           $("." + i).counter({
               direction: "up",
-              format: "#{t("campaigns.christmas.chapter counter format")}",
+              format: "99,999,999",
               initial: addCommas(corrected_total_downloads_not_round),
               interval: single_pace
           });
