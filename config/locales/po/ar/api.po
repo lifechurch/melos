@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ar <LL@li.org>\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
@@ -63,6 +63,9 @@ msgstr "{name} اختار الإشارة المرجعية <b>{reference_human}</
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "استعد لعيد الميلاد المجيد مع خطة قراءة الكتاب المقدس خاصة لمجيء المسيح"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "اقرء الكتاب المقدس يوميا في 2015.  الخطط ستساعدك! "
+
 msgid "moment.friendship.self.title"
 msgstr "لقد أصبحت صديق مع <b>{friend_name}</b>"
 
@@ -107,6 +110,9 @@ msgstr "شاهد <i>سلسلة الكتاب المقدس</i>الليلة!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>سلسلة الكتاب المقدس</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "شارك الأخبار السارة: ولد لنا مخلص!"
 
 msgid "moment.system.find_friends.title"
 msgstr "تطبيق الكتاب المقدس اكثر متعة بوجود الاصدقاء. ابحث في جهات الاتصال الخاصة بك لتجد اصدقاء"

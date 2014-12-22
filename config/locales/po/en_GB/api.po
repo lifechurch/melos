@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-17 13:12-0609\n"
-"PO-Revision-Date: 2014-11-17 13:12-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en_GB <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} bookmarked <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Get ready for Christmas with an Advent Bible plan"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Read the Bible daily in 2015. Plans help!"
+
 msgid "moment.friendship.self.title"
 msgstr "You are now friends with <b>{friend_name}</b>"
 
@@ -110,6 +113,9 @@ msgstr "Watch the <i>Bible series</i> tonight!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Bible series</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Share the good news: the Saviour is born!"
 
 msgid "moment.system.find_friends.title"
 msgstr "The Bible App is even better with friends. Search your contacts to find friends."

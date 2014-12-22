@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: af <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} het die <b>{reference_human}</b> geboekmerk"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Wees gereed vir Kersfees met 'n Advent Bybelplan."
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Lees die Bybel elke dag in 2015. Planne help! Planne help!"
+
 msgid "moment.friendship.self.title"
 msgstr "Jy is nou vriende met <b>{friend_name}</b>"
 
@@ -107,6 +110,9 @@ msgstr "Kyk die <i>Bybel Reeks</i> vanaand!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Bybel Reeks</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Deel die goeie nuus: die Verlosser is gebore!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Die Bybeltoepassing is nog beter met Vriende.  Deursoek jou Kontakte om vriende te vind"

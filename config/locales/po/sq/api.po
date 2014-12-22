@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:30-0609\n"
+"PO-Revision-Date: 2014-12-19 09:30-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sq <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} shënoi <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Bëhu gati për Krishtlindjen me një plan leximi për Ardhjen"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Lexo Biblën përditë më 2015. Planet ju ndihmojnë!"
+
 msgid "moment.friendship.self.title"
 msgstr "Ju jeni tani mik me <b>{friend_name}</b>"
 
@@ -107,6 +110,9 @@ msgstr "Shikoni sonte <i>Serinë e Biblës</i>!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Seria e Biblës</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Shpërndaje lajmin e mirë: Shpëtimtari ka lindur!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Programi i Biblës është akoma më i mirë bashkë me miq. Kërkoni kontaktet tuaja për të gjetur miq."

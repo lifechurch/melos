@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cs <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -63,6 +63,9 @@ msgstr "{name} uložil záložku <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Připravte se na vánoce s naším Adventním plánem čtení Bible"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Čtěte Bibli každý den v roce 2015. Plány pomáhají!"
+
 msgid "moment.friendship.self.title"
 msgstr "Stali jste se přáteli s <b>{friend_name}</b>"
 
@@ -107,6 +110,9 @@ msgstr "Sledujte <i>Seriál Bible</i> dnes!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Seriál Bible</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Sdílejte dobrou zprávu: Narodil se Spasitel!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Aplikace Bible je s přáteli ještě lepší. Prohledejte vaše kontakty a přidejte si své přátele."

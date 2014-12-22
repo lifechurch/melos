@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-26 14:15-0609\n"
-"PO-Revision-Date: 2014-09-26 14:15-0609\n"
+"POT-Creation-Date: 2014-12-19 09:30-0609\n"
+"PO-Revision-Date: 2014-12-19 09:30-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sw <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -60,6 +60,9 @@ msgstr "Ulialamisha <b>{reference_human}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} alialamisha <b>{reference_human}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Läs Bibeln dagligen under 2015. Planer hjälper!"
+
 msgid "moment.friendship.self.title"
 msgstr "Sasa wewe ni rafiki na<b>{friend_name}</b>"
 
@@ -104,6 +107,9 @@ msgstr "Tazama <i>mfululizo wa Bibilia</i> leo usiku!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Mfululizo wa bibilia</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Sprid den glada nyhetern: Frälsaren är född!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Apu ya Biblia ni bora zaidi ukiwa na Marafiki. Tafuta Marafiki zako kwenye Mawasiliano."

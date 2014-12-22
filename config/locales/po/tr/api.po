@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: tr <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -63,6 +63,9 @@ msgstr "{name} <b>{reference_human}</b> ayetini yer imlerine ekledi"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Noel Hazırlığı Kutsal Kitap Okuma Planını kullanarak kendinizi Doğuş Bayramı'na hazırlayın!"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "2015'te Kutsap Kitap'ı her gün okuyun. Bir Okuma Planı yardımcı olabilir!"
+
 msgid "moment.friendship.self.title"
 msgstr "Siz <b>{friend_name}</b> ile arkadaş oldunuz."
 
@@ -107,6 +110,9 @@ msgstr "Bu gece <i>Kutsal Kitap Dizisi</i>’ni izleyin!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Kutsal Kitap Dizisi</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Müjdeyi duyurun: Kurtarıcımız doğudu!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Kutsal Kitap Uygulaması'nı Arkadaşlarınızla kullanmak çok daha iyi. Arkadaşlarınızı bulmak için Kişilerinizi arayın."

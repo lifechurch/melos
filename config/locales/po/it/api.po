@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-02 16:14-0609\n"
-"PO-Revision-Date: 2014-12-02 16:14-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: it <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} ha contrassegnato <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Preparati per il Natale con un Piano di Lettura per l'Avvento"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Leggi la Bibbia ogni giorno nel 2015. I piani di lettura aiutano!"
+
 msgid "moment.friendship.self.title"
 msgstr "Ora hai stretto amicizia con <b>{friend_name}</b>"
 
@@ -107,6 +110,9 @@ msgstr "Guarda <i>Bible Series</i> stasera!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Bible Series</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Condividi la Buona Novella: il Salvatore è nato!"
 
 msgid "moment.system.find_friends.title"
 msgstr "L'App Bibbia è ancora migliore con Amici. Cerca i tuoi Contatti per trovare Amici."

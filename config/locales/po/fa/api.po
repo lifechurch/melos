@@ -1,297 +1,232 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
+# Persian translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
 #
-# Translators:
-# Translators:
-# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
-# #-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#
-# API Strings
-#
-# Translators:
-# Translators:
-# Brad Belyeu <brad.belyeu@lifechurch.tv>, 2013
-# Chris Vaughn <chris.vaughn@liefchurch.tv>, 2013
-# chrisvaughn <chris.vaughn@lifechurch.tv>, 2013
-# #-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#
-# App sharing
-#
-# Translators:
-# Chris Vaughn <chris.vaughn@lifechurch.tv>, 2013
 #, fuzzy
 msgid ""
 msgstr ""
-"#-#-#-#-#  moments.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-15 20:32+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-12-22 10:03-0609\n"
+"PO-Revision-Date: 2014-12-22 10:03-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: fa <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  notifications.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: brad.belyeu@lifechurch.tv\n"
-"POT-Creation-Date: 2013-08-30 11:23-0500\n"
-"PO-Revision-Date: 2013-11-15 20:31+0000\n"
-"Last-Translator: chrisvaughn <chris.vaughn@lifechurch.tv>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-12-22 10:04-0609\n"
+"PO-Revision-Date: 2014-12-22 10:04-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: fa <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  share.po (Backend (YouVersion))  #-#-#-#-#\n"
-"Project-Id-Version: Backend (YouVersion)\n"
-"Report-Msgid-Bugs-To: chris.vaughn@lifechurch.tv\n"
-"POT-Creation-Date: 2013-04-30 11:23-0500\n"
-"PO-Revision-Date: 2014-06-20 14:52-0600\n"
-"Last-Translator: Tommy George <tommy.george@lifechurch.tv>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 1.3\n"
 
 msgid "moment.badge.earned.self.title"
-msgstr "You earned the <b>{title}</b> badge"
+msgstr "به شما نشان افتخار <b>{title}</b> اهدا شده است"
 
 msgid "moment.badge.earned.title"
-msgstr "{name} earned the <b>{title}</b> badge"
+msgstr "{name} نشان  <b>{title} را کسب کرده است.</b>"
 
 msgid "moment.bible.download.self.title"
-msgstr "You downloaded the version, <b>{version}</b>"
+msgstr "شما ترجمۀ <b>{version} را دانلود کرده‌اید.</b>"
 
 msgid "moment.bible.download.title"
-msgstr "{name} downloaded the version, <b>{version}</b>"
+msgstr "{name} نشخه <b>{version}</b>کتاب مقدس را بارگذاری کرده است"
 
 msgid "moment.bookmark.self.title"
-msgstr "You bookmarked <b>{reference_human}</b>"
+msgstr "شما <b>{reference_human}را نشانه‌گزاری کرده‌اید.</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} bookmarked <b>{reference_human}</b>"
+msgstr "{name} <b>{reference_human}را نشانه‌گزاری کرد.</b>"
+
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "کتاب‌مقدس را به‌صورت روزانه در سال ۲۰۱۵ مطالعه کنید! راهنمای برنامه‌های مطالعه!"
 
 msgid "moment.friendship.self.title"
-msgstr "You are now friends with <b>{friend_name}</b>"
+msgstr "شما اکنون با <b>{friend_name}دوست هستید.</b>"
 
 msgid "moment.friendship.title"
-msgstr "{user_name} is now friends with <b>{friend_name}</b>"
+msgstr "{user_name} با <b>{friend_name}</b>دوست شده است"
 
 msgid "moment.highlight.self.title"
-msgstr "You highlighted <b>{reference_human}</b>"
+msgstr "شما <b>{reference_human} را هایلایت کرده اید.</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} highlighted <b>{reference_human}</b>"
+msgstr "{name} <b>{reference_human}</b>را هایلات کرده است"
 
 msgid "moment.note.self.title"
-msgstr "You added a note, <b>{title}</b>"
+msgstr "شما یک یادداشت اضافه کردید. <b>{title}</b>"
 
 msgid "moment.note.title"
-msgstr "{name} added a note, <b>{title}</b>"
+msgstr "{name} <b>{title}</b>را به یاد داشتهای خود اضافه کرده است"
 
 msgid "moment.plan_completion.self.title"
-msgstr "You completed your Plan"
+msgstr "شما برنامه مطالعه را تکمیل نموده اید"
 
 msgid "moment.plan_completion.title"
-msgstr "{name} completed a Plan"
+msgstr "{name} یک برنامه مطالعه را تکمیل کرده است."
 
 msgid "moment.plan_segment_completion.body"
-msgstr "Day {segment} of {total_segments} ({percent_complete}%)"
+msgstr "روز{segment}از{total_segments}({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "You completed day <b>{segment}</b> of the Plan, <b>{title}</b>"
+msgstr "شما روز  <b>{segment}</b> از برنامه  <b>{title} را کامل کرده اید.</b>"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} completed day <b>{segment}</b> of the Plan, <b>{title}</b>"
+msgstr "{name} <b>مطالعه {segment} روز </b> برنامه مطالعه <b>{title}</b>را تکمیل کرده است"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "You started a new Plan"
+msgstr "شما برنامه مطالعه جدیدی را آغاز نموده اید"
 
 msgid "moment.plan_subscription.title"
-msgstr "{name} started a new Plan"
+msgstr "{name} استفاده از برنامه مطالعه جدیدی را آغاز نموده است"
 
 msgid "moment.system.bible_series_promo.body"
-msgstr "Watch the <i>Bible Series</i> tonight!"
+msgstr " امشب<i>سریال کتاب مقدس</i>را تماشا کنید!"
 
 msgid "moment.system.bible_series_promo.title"
-msgstr "<i>Bible Series</i>"
+msgstr "<i>سری کتاب‌مقدس</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "خبر خوش را به همه اعلام کنید: نجات‌دهندۀ عالم به دنیا آمد!"
 
 msgid "moment.system.find_friends.title"
-msgstr "The Bible App is even better with Friends. Search your Contacts to find Friends."
+msgstr "استفاده بهتر از برنامه کتاب مقدس با دوستانتان جستجوی لیست دوستان شما برای یافتن آندسته از دوستانی که از برنامه کتاب مقدس استفاده می کنند. "
 
 msgid "moment.video.watched.self.title"
-msgstr "You watched <b>{title}</b>"
+msgstr "شما <b>{title}</b>را تماشا نموده اید"
 
 msgid "moment.video.watched.title"
-msgstr "{name} watched <b>{title}</b>"
-
-msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Get ready for Christmas with an Advent Bible Plan"
-
-msgid "moment.system.bafk.title"
-msgstr "Help your kids fall in love with God's Word."
+msgstr "{name} ویدیوی <b>{title}</b>را مشاهده نموده اید"
 
 msgid "notifications.comments.moment.mine.bookmark"
-msgstr "{name} commented on your bookmark: “{comment}”"
+msgstr "{name}برای نشانه گزاری شما نظر نوشته است. “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} commented on your new friendship with {friend_name}: “{comment}”"
+msgstr "{name} به دوستی جدید شما با {friend_name} نظر نوشت: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
-msgstr "{name} commented on your highlight: “{comment}”"
+msgstr "{name}برای هایلایت شما نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
-msgstr "{name} commented on your note: “{comment}”"
+msgstr "{name}برای یادداشت شما نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
-msgstr "{name} commented on your Plan: “{comment}”"
+msgstr "{name} برای برنامه شما نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "{name} commented on your Bible Plan: “{comment}”"
+msgstr "{name} برای برنامه مطالعه کتاب مقدس شما نظر نوشت: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s bookmark: “{comment}”"
+msgstr "{commenter_name}همچنین برای نشانه گزاری{moment_owner_name}نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s new friendship with {friend_name}: “{comment}”"
+msgstr "{commenter_name} نیز برای دوستی جدید {moment_owner_name} همراه {friend_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s highlight: “{comment}”"
+msgstr "{commenter_name} نیز برای هایلایت {moment_owner_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s note: “{comment}”"
+msgstr "{commenter_name} نیز برای یادداشت {moment_owner_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} also commented on their bookmark: “{comment}”"
+msgstr "{moment_owner_name} نیز بر نشانه گزاری خویش نظر داد: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
-msgstr "{moment_owner_name} also commented on their new friendship with {friend_name}: “{comment}”"
+msgstr "{moment_owner_name} نیز برای دوستی جدید با{friend_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} also commented on their highlight: “{comment}”"
+msgstr "{moment_owner_name} نیز برای هایلایت خویش نظر داده است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} also commented on their note: “{comment}”"
+msgstr "{moment_owner_name} نیز برای یادداشت خویش نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} also commented on their Plan: “{comment}”"
+msgstr "{moment_owner_name} نیز برای برنامه مطالعه خویش نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} also commented on their Bible Plan: “{comment}”"
+msgstr "{moment_owner_name} نیز بر برنامه مطالعه کتاب مقدس خویش نظر داده است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s Plan: “{comment}”"
+msgstr "{commenter_name} نیز برای برنامه مطالعه {moment_owner_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} also commented on {moment_owner_name}'s Bible Plan: “{comment}”"
+msgstr "{commenter_name} نیز بر برنامه مطالعه {moment_owner_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.friendships.accept"
-msgstr "{name} accepted your friend request"
+msgstr "{name} درخواست دوستی شما را پذیرفت."
 
 msgid "notifications.friendships.nowfriends"
-msgstr "{name} is now your friend"
+msgstr "{name} اکنون با شما دوست است."
 
 msgid "notifications.friendships.offer"
-msgstr "{name} wants to be your friend on YouVersion"
+msgstr "{name} می خواهد با شما در YouVersion دوست شود."
 
 msgid "notifications.friendships.suggestion"
-msgstr "Do you want to be friends with {name} on YouVersion?"
+msgstr "آیا می خواهید با {name} در YouVersion دوست شوید؟"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name} likes your bookmark, {reference_human}"
+msgstr "{name} نشانه گزاری شما را پسندید، {reference_human}"
 
 msgid "notifications.likes.moment.mine.friendship"
-msgstr "{name} likes your new friendship with {friend_name}"
+msgstr "{name} دوستی جدید شما را با {friend_name} پسندیده است."
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name} likes your highlight, {reference_human}"
+msgstr "{name} هایلایت شما پسندید، {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} likes your note"
+msgstr "{name}یادداشت شما را پسندید."
 
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name} likes your note on {reference_human}"
+msgstr "{name} یادداشت شما را بر {reference_human} پسندید."
 
 msgid "notifications.likes.moment.mine.note.title"
-msgstr "{name} likes your note, “{title}”"
+msgstr "{name} یادداشت شما را پسندید، “{title}”"
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} likes your Plan activity"
+msgstr "{name} فعالیت برنامه شما را پسندید."
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} likes your Bible Plan activity"
+msgstr "{name} فعالیت برنامه مطالعه کتاب مقدس شما را پسندید."
 
 msgid "notifications.moments.create.bookmark"
-msgstr "{name} bookmarked {reference_human}"
+msgstr "{name}، {reference_human} را نشانه گزاری کرد."
 
 msgid "notifications.moments.create.highlight"
-msgstr "{name} highlighted {reference_human}"
+msgstr "{name}، {reference_human} را هایلایت کرد."
 
 msgid "notifications.moments.create.note.no_title_no_reference"
-msgstr "{name} added a note"
+msgstr "{name}یک یادداشت اضافه کرد."
 
 msgid "notifications.moments.create.note.reference"
-msgstr "{name} added a note on {reference_human}"
+msgstr "{name} یک یادداشت برای {reference_human} اضافه کرد."
 
 msgid "notifications.moments.create.note.title"
-msgstr "{name} added a note, “{title}”"
+msgstr "{name} یک یادداشت اضافه کرد، “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name} completed their Plan, {title}"
+msgstr "{name}برنامه مطالعه خویش را به اتمام رسانده، {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} completed their Bible Plan, {title}"
+msgstr "{name} برنامه مطالعه خویش را به اتمام رسانده است، {title}"
 
 msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} started a new Plan, {title}"
+msgstr "{name} یک برنامه جدید مطالعه را آغاز کرده است، {title}"
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} started a new Bible Plan, {title}"
+msgstr "{name} یک برنامه مطالعه جدید را آغاز کرد، {title}"
 
 msgid "notifications.people.contact.joined"
-msgstr "{name} just joined YouVersion. Tap to add them as a Friend."
+msgstr "{name} به‌تازگی عضو یوورژن شده است. برای افزودن به لیست دوستان لطفاً اینجا کلیک کنید."
 
 msgid "notifications.system.test"
-msgstr "Download our Kids Bible App now!!!"
-
-msgid "share.find_friends.invite_email_html"
-msgstr "<p>Hi!</p><p>I'm using the Bible App from YouVersion and wanted to share it with you. If you're new to the app, it's a simple way to bring the beauty and truth of the Bible into everyday life. </p><p><strong>Get the Bible App:</strong> read, watch, listen, and share on your smartphone or tablet, and online at Bible.com</p><p><strong>Set up Your Account:</strong> subscribe to Bible Plans and access bookmarks, highlights, and notes across devices</p><p><strong>Add Friends (Like Me!):</strong> explore and discuss the Bible with people you care about</p><p>It's all in the Bible App—get started here: </p>"
-
-msgid "share.invite_email_body"
-msgstr ""
-"Hello!\n"
-"\n"
-"I'm using the Bible App from YouVersion and wanted to share it with you. If you're new to the app, it's a simple way to bring the beauty and truth of the Bible into everyday life.\n"
-"\n"
-"Get the Bible App: read, watch, listen, and share on your smartphone or tablet, and online at Bible.com.\n"
-"\n"
-"Set up your account: subscribe to Bible Plans and access bookmarks, highlights, and notes across devices.\n"
-"\n"
-"Add friends (like me!): explore and discuss the Bible with people you care about.\n"
-"\n"
-"It's all in the Bible App—get started here: "
-
-msgid "share.invite_email_subject"
-msgstr "Join me on the Bible App!"
-
-msgid "share.invite_facebook"
-msgstr "I love the Bible App! It's really helped me make the Bible part of my everyday life. It lets me highlight, listen to audio Bibles, make notes, follow devotional plans…even watch videos! Go download it now (it's free):"
-
-msgid "share.invite_facebook_direct"
-msgstr "Do you have the Bible App? I love it, and I think you would too. Here's the link:"
-
-msgid "share.invite_sms"
-msgstr "Do you have the Bible App from YouVersion? I love it, and I think you would too. Here's the link:"
-
-msgid "share.invite_sms_prefix"
-msgstr "From {name}:"
-
-msgid "share.invite_twitter"
-msgstr "The @YouVersion Bible App has a permanent spot on my home screen. Read, watch, listen, and share…all in a free app:"
-
-msgid "share.invite_twitter_direct"
-msgstr "Do you have the Bible App from @YouVersion? I love it, and I think you would too. Here's the link:"
+msgstr "برنامه کتاب مقدس برای کودکان را همین الان دانلود کنید!!!"

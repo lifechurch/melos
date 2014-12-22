@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fil_PH <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "Ibinookmark ni {name} ang <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Maghanda para sa Pasko gamit ang Advent Bible Plan"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Magbasa ng Bibliya araw-araw sa 2015. Nakatutulong ang mga babasahin!"
+
 msgid "moment.friendship.self.title"
 msgstr "Kayo ay magkaibigan na ni <b>{friend_name}</b>"
 
@@ -107,6 +110,9 @@ msgstr "Panoorin ang <i>Mga Serye ng Bibliya</i> mamayang gabi!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Mga Serye ng Bibliya</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Ibahagi ang balita: isinilang si Jesus!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Ang Bible App ay mas magandang gamitin kasama ng mga Kaibigan. Tignan ang iyong mga Kontak at hanapin Sila."

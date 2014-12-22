@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-26 14:14-0609\n"
-"PO-Revision-Date: 2014-09-26 14:14-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pl <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -60,6 +60,12 @@ msgstr "Zaznaczyłeś <b>{reference_human}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} zaznaczył <b>{reference_human}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Przygotuj się na Boże Narodzenie z Adwentowym Planem Biblii"
+
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "W 2015 czytaj Biblię codziennie. Plany pomogą!"
+
 msgid "moment.friendship.self.title"
 msgstr "Jesteś teraz znajomym <b>{friend_name}</b>"
 
@@ -104,6 +110,9 @@ msgstr "Oglądnij <i>serial Biblia</i> dzisiaj wieczorem!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Serial Biblia</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Dziel się dobrą nowiną: Zbawiciel się narodził!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Aplikacja Biblii jest jeszcze lepsza ze znajomymi. Przeszukaj kontakty, aby znaleźć znajomych."

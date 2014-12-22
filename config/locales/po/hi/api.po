@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} बुकमार्क <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "नए बाइबिल पाठक योजना के साथ क्रिसमस की तैयारी करे"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "2015 में हररोज़ बाइबिल पढ़े।मददगार योजनाएँ उपलब्ध !"
+
 msgid "moment.friendship.self.title"
 msgstr "अभी आप  <b>{friend_name}</b> के मित्र हुए"
 
@@ -107,6 +110,9 @@ msgstr "आज रात <i>बाइबिल सीरीज</i>देखे !
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>बाइबिल सीरीज</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "सुसमाचार शेयर करे:मुक्तिदाता का जन्म हुआ "
 
 msgid "moment.system.find_friends.title"
 msgstr "बाइबिल App मित्रों के साथ उपयोग करने में एक शानदार अनुभव हैं। अपने मित्रों को खोजने के लिए कांटेक्ट सर्च करे।"

@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} 书签标记了 <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "以基督降临为主题的读经计划来准备迎接圣诞"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "2015年每天读经吧！读经计划可以帮助！"
+
 msgid "moment.friendship.self.title"
 msgstr "您现在和 <b>{friend_name}</b> 已成为朋友"
 
@@ -110,6 +113,9 @@ msgstr "今晚观看<i>圣经系列</i> ！"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>圣经系列</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "分享佳音：救主已降生！"
 
 msgid "moment.system.find_friends.title"
 msgstr "与朋友一起使用圣经软件会给您更佳体验。请在您的联系人中搜索朋友。"

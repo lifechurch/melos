@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-26 14:14-0609\n"
-"PO-Revision-Date: 2014-09-26 14:14-0609\n"
+"POT-Creation-Date: 2014-12-19 09:30-0609\n"
+"PO-Revision-Date: 2014-12-19 09:30-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_TW <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -60,6 +60,12 @@ msgstr "您書籤標記了 <b>{reference_human}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} 已把 <b>{reference_human}</b>加入書籤"
 
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "以基督降臨為主題的讀經計劃來準備迎接聖誕"
+
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "2015年每天讀經吧！讀經計劃可以幫助！"
+
 msgid "moment.friendship.self.title"
 msgstr "您現在已成為 <b>{friend_name}</b> 的好友"
 
@@ -104,6 +110,9 @@ msgstr "請在今晚觀看<i>聖經系列</i>!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>聖經系列</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "分享佳音：救主已降生！"
 
 msgid "moment.system.find_friends.title"
 msgstr "與朋友一起使用聖經軟體會給您更佳體驗。請在您的聯絡人裡搜尋朋友。"
