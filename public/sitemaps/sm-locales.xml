@@ -49,6 +49,10 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://www.bible.com/fa</loc>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>https://www.bible.com/ru</loc>
     <priority>1</priority>
   </url>
@@ -222,6 +226,10 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://www.bible.com/fa/app</loc>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>https://www.bible.com/ru/app</loc>
     <priority>1</priority>
   </url>
@@ -392,6 +400,10 @@
   </url>
   <url>
     <loc>https://www.bible.com/en-GB/versions</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/fa/versions</loc>
     <priority>1</priority>
   </url>
   <url>
