@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:30-0609\n"
+"PO-Revision-Date: 2014-12-19 09:30-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ro <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2)\n"
@@ -63,6 +63,9 @@ msgstr "{name} a marcat <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Pregătește-te de Crăciun cu un plan de citire potrivit pentru perioada Adventului."
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Citește zilnic Biblia în 2015. Planurile te ajută!"
+
 msgid "moment.friendship.self.title"
 msgstr "Acum ești prieten cu <b>{friend_name}</b>"
 
@@ -107,6 +110,9 @@ msgstr "Vizionează <i>Serialul Biblia</i> deseară!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Serialul Biblia</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Dă vestea bună: s-a născut Mântuitorul!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Aplicația Biblia este chiar mai bună cu Prieteni. Caută în Contactele tale pentru a găsi Prieteni."

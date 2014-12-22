@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: vi <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -63,6 +63,9 @@ msgstr "{name} đánh dấu <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Đón Giáng Sinh bằng một kế hoạch về Mùa Vọng"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Tĩnh nguyện mỗi ngày trong 2015. Hãy tìm hiểu thêm!"
+
 msgid "moment.friendship.self.title"
 msgstr "Bạn vừa kết bạn với <b>{friend_name}</b>"
 
@@ -107,6 +110,9 @@ msgstr "Đón xem <i>\"Bible Series\"</i> tối nay!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Bible Series</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Hãy chia sẻ tin mừng Cứu Chúa giáng sinh!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Hãy tìm bạn bè trong danh bạ của bạn để App Kinh Thánh càng trở nên thú vị hơn!"

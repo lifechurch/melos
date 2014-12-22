@@ -74,7 +74,7 @@ module YV
                                   {name: 'Sociedades Bíblicas Unidas', url: 'http://sociedadbiblicasunidas.org/', image: 'partners/es-ubs.jpg'}],
                     :"de"     => [{name: 'Biblica', url: 'http://www.biblica.com', image: 'partners/biblica.png'},
                                   {name: 'Société Biblique de Genève', url: 'http://www.societebiblique.com', image: 'partners/SBG.jpg'}],
-                    :"fa"     => [{name: 'Elam', url: 'http://www.elam.com', image: 'partners/elam.png'}],
+                    :"fa"     => [{name: 'Elam Ministries', url: 'http://www.kalameh.com/', image: 'partners/elam.png'}],
                     :"fr"     => [{name: 'Alliance biblique française – Bibli’O', url: 'http://www.la-bible.net.com', image: 'partners/ABF.jpg'},
                                   {name: 'Biblica', url: 'http://www.biblica.com', image: 'partners/biblica.png'},
                                   {name: 'Société Biblique de Genève', url: 'http://www.societebiblique.com', image: 'partners/SBG.jpg'},

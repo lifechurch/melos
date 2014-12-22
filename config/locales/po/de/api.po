@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-17 13:12-0609\n"
-"PO-Revision-Date: 2014-11-17 13:12-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} hat ein Lesezeichen für <b>{reference_human}</b> angelegt"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Bereite dich auf Weihnachten vor - mit einem Leseplan für den Advent"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Lies die Bibel 2015 jeden Tag. Lesepläne helfen!"
+
 msgid "moment.friendship.self.title"
 msgstr "Du bist nun mit <b>{friend_name}</b> befreundet"
 
@@ -107,6 +110,9 @@ msgstr "Sieh dir heute Abend die <i>Bibel-Serie</i> an!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Bibel-Serie</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Gib die Gute Botschaft weiter: Der Retter ist geboren!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Die Bibel App ist mit Freunden noch besser. Durchsuche deine Kontakte, um Freunde zu finden."

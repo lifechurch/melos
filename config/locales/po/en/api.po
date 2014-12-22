@@ -135,6 +135,12 @@ msgstr "Get ready for Christmas with an Advent Bible Plan"
 msgid "moment.system.bafk.title"
 msgstr "Help your kids fall in love with God's Word."
 
+msgid "moment.system.christmas.title"
+msgstr "Share the good news: the Savior is born!"
+
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Read the Bible daily in 2015. Plans help!"
+
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} commented on your bookmark: “{comment}”"
 

@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:30-0609\n"
+"PO-Revision-Date: 2014-12-19 09:30-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: id <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} telah memarkahi <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Bersiap untuk Natal dengan Rencana Alkitab Adven"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Baca Alkitab tiap hari di 2015. Rencanakanlah!"
+
 msgid "moment.friendship.self.title"
 msgstr "Anda sekarang berteman dengan <b>{friend_name}</b>"
 
@@ -107,6 +110,9 @@ msgstr "Saksikan <i>Seri Alkitab</i> malam ini!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Seri Alkitab</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Bagikan kabar baik: Juruselamat lahir!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Aplikasi Alkitab malah semakin baik bersama Teman. Telusuri Kontak Anda untuk menemukan Teman."

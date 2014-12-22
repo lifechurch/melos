@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mk <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} го обележа <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Подгответе се за Божиќ читајќи го Адвентниот библиски план"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Читај ја Библијата секојдневно во 2015. Плановите помагаат!"
+
 msgid "moment.friendship.self.title"
 msgstr "Сега вие сте пријатели со <b>{friend_name}</b>"
 
@@ -107,6 +110,9 @@ msgstr "Гледајте го <i>Библиски серијал</i> вечер�
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Библиски серијал</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Сподели ја радосната вест: Спасителот се роди!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Апликацијата „Библија“ е подобра кога се користи со пријатели. Пребарај ги твоите контакти за да најдеш пријатели."

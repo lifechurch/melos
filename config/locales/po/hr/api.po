@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hr <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -63,6 +63,9 @@ msgstr "<b>{reference_human}</b> - označeno od strane korisnika: {name}"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Pripremi se za Božić s adventnim planom čitanja"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Čitaj Bibliju dnevno u 2015. Planovi ti pomažu!"
+
 msgid "moment.friendship.self.title"
 msgstr "<b>{friend_name}</b> i ti ste sad prijatelji"
 
@@ -107,6 +110,9 @@ msgstr "Gledaj <i>Biblijske serije</i> večeras!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Biblijske serije</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Podijeli radosnu vijest: rodio se Spasitelj!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Aplikacija Biblija je još bolja ako uključiš prijatelje. Pretraži kontakte mobilnog uređaja da nađeš prijatelje."

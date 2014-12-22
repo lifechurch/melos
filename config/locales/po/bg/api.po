@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-26 14:14-0609\n"
-"PO-Revision-Date: 2014-09-26 14:14-0609\n"
+"POT-Creation-Date: 2014-12-19 09:30-0609\n"
+"PO-Revision-Date: 2014-12-19 09:30-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: bg <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -60,6 +60,9 @@ msgstr "Вие добавихте в показалеца <b>{reference_human}</
 msgid "moment.bookmark.title"
 msgstr "{name} добави в показалеца <b>{reference_human}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Чети Библията всеки ден през 2015. Планът ще ти помогне"
+
 msgid "moment.friendship.self.title"
 msgstr "Вече сте приятели с <b>{friend_name}</b>"
 
@@ -104,6 +107,9 @@ msgstr "Гледайте <i>серията за Библията</i> довеч�
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Библейска поредица</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Сподели благата вест: Спасител се роди!"
 
 msgid "moment.video.watched.self.title"
 msgstr "Вие гледахте <b>{title}</b>"

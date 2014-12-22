@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-26 14:15-0609\n"
-"PO-Revision-Date: 2014-09-26 14:15-0609\n"
+"POT-Creation-Date: 2014-12-19 09:30-0609\n"
+"PO-Revision-Date: 2014-12-19 09:30-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: km <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -60,6 +60,9 @@ msgstr "អ្នក​បាន​កត់​ចំណាំ <b>{reference_hum
 msgid "moment.bookmark.title"
 msgstr "{name}បាន​កត់​ចំណាំ <b>{reference_human}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "អាន​ព្រះ​គម្ពីរ​ប្រចាំ​ថ្ងៃ​ក្នុង​ឆ្នាំ​ 2015. ជំនួយលើ​គំរោង!"
+
 msgid "moment.friendship.self.title"
 msgstr "ឥឡូវ​នេះអ្នក​ជា​មិត្ត​ជាមួយ <b>{friend_name}</b>"
 
@@ -83,6 +86,9 @@ msgstr "មើល​<i>ភាគ​ព្រះ​គម្ពីរ</i> យប�
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>ភាគ​ព្រះ​គម្ពីរ​</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "ចែក​រំលែក​ដំណឹង​ល្អ. ព្រះ​សង្គ្រោះ​ប្រសូត​ហើយ!"
 
 msgid "moment.video.watched.self.title"
 msgstr "អ្នក​បាន​មើល <b>{title}</b>"

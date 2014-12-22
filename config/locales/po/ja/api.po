@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:30-0609\n"
+"PO-Revision-Date: 2014-12-19 09:30-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -63,6 +63,9 @@ msgstr "{name}さんが<b>{reference_human}</b>にブックマークしました
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "クリスマスに向けて、待降節の読書プランをどうぞ。"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "2015年は聖書を毎日読もう！プランが役に立つよ！"
+
 msgid "moment.friendship.self.title"
 msgstr "お友達になりました：<b>{friend_name}</b>さん"
 
@@ -107,6 +110,9 @@ msgstr "今夜、<i>聖書シリーズ</i>を観る"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>聖書シリーズ</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "福音を告げよう: 救い主が生まれた！"
 
 msgid "moment.system.find_friends.title"
 msgstr "お友達と一緒なら、聖書アプリをさらに活用できます。連絡先から、お友達を検索しましょう。"

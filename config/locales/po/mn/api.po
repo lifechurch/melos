@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mn <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} <b>{reference_human}</b> хавчуурга хийсэн"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Адвент Тѳлѳвлѳгѳѳгѳѳр Кристмасийн Баярыг тэмдэглэхээр бэлдэх үү"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "2015 онд Библи өдөр бүр унш. Уншлагын Төлөвлөгөөнүүд таньд туслах болно!"
+
 msgid "moment.friendship.self.title"
 msgstr "Та <b>{friend_name}</b> -тай холбогдсон"
 
@@ -107,6 +110,9 @@ msgstr "<i>Библийн Олон Ангит Цуврал Кино</i> үзээ
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Библийн Олон Ангит Цуврал Кино</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Сайн мэдээг хуваалц: Аврагч Эзэн мэндэллээ!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Библи Аппыг найзуудтайгаа үзвэл хамаагүй дээр. Харилцагчидаасаа Найз болох хүмүүсээ хайж ол."

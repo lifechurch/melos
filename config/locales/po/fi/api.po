@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:32-0609\n"
-"PO-Revision-Date: 2014-11-10 12:32-0609\n"
+"POT-Creation-Date: 2014-12-19 09:30-0609\n"
+"PO-Revision-Date: 2014-12-19 09:30-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,9 @@ msgstr "{name} lisäsi kirjanmerkin <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Valmistaudu jouluun adventin ajan lukusuunnitelmalla"
 
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Lue Raamattua päivittäin 2015. Suunnitelmat auttavat!"
+
 msgid "moment.friendship.self.title"
 msgstr "Olet nyt käyttäjän <b>{friend_name}</b> ystävä"
 
@@ -107,6 +110,9 @@ msgstr "Katso <i>Raamattu-sarjaa</i> tänään!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>Raamattu-sarja</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Jaa ilosanoma: Meille on syntynyt vapahtaja!"
 
 msgid "moment.system.find_friends.title"
 msgstr "Raamattusovellus on jopa parempi ystävien kanssa. Etsi ystäviä yhteystiedoistasi."
