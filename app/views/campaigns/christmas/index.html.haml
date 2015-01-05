@@ -1,12 +1,18 @@
 - t = Proc.new do |key, options={}|
   - I18n.t(key, options.merge(:locale => @locale))
 - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+- show_end_summary = true
 
 .main.container_12
   %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=105030176203924&link=https://www.bible.com#{locale_dir}/christmas&picture=https://www.bible.com/assets/campaigns/christmas/christmas-tracker.png&name=#{t("campaigns.christmas.tracker title")}&caption=bible.com%20%20%23ChristmasTracker&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=https://www.bible.com#{locale_dir}/christmas", :target => "_blank"}
     = image_tag "svg/facebook-logo.svg"
   %a#twitter.twitter{:href => "https://twitter.com/intent/tweet?source=webclient&text=#{t('campaigns.christmas.twitter text')}&hashtags=ChristmasTracker", :target => "_blank"}
     = image_tag "svg/twitter-logo.svg"
+
+  - if show_end_summary
+    .finished-copy
+      %p
+        = t('campaigns.christmas.summary')
 
   .grid_3
     %a#logo{:href => "https://www.bible.com/app"}
@@ -15,15 +21,21 @@
   .title.grid_6
     %h1
       = t('campaigns.christmas.tracker title')
-  #map-bkg
+  #map-bkg{class: show_end_summary}
     /
   #map.grid_12
     .figures.grid_4.hidden
       %h2
         = t('campaigns.christmas.read about')
-      %h3
-        = t('campaigns.christmas.totals since')
-      .chapter_requests.figure
+      - if show_end_summary
+        %h3
+          = t('campaigns.christmas.totals during')
+        .chapter_requests.figure
+          53,951,165
+      - else
+        %h3
+          = t('campaigns.christmas.totals since')
+        .chapter_requests.figure
 
   .copy
     %p
@@ -97,7 +109,7 @@
           var corrected_total_downloads_not_round = Math.round(start_count + (average_per_day*date_difference_days_not_round));
           $("." + i).counter({
               direction: "up",
-              format: "99,999,999",
+              format: "9#{t("campaigns.christmas.chapter counter format")}",
               initial: addCommas(corrected_total_downloads_not_round),
               interval: single_pace
           });
@@ -176,12 +188,19 @@
   }
 
   $(document).ready(function() {
-      $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js");
-      $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_chapter_calls_jsonp.js");
-      $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_map_jsonp.js");
-      setInterval(function() {
-          $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_map_jsonp.js");
-      }, 30 * 60 * 1000); // Fetch a new dataset every 30 minutes
+      showEndSummary = $('.finished-copy').length;
+
+      if (showEndSummary) {
+        $(".figures").delay(2000).removeClass('hidden').hide().fadeIn('slow');
+        //$.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/map_data.js");
+      } else {
+        $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_chapter_calls_jsonp.js");
+        $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js");
+        $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_map_jsonp.js");
+        setInterval(function() {
+            $.getScript("https://commondatastorage.googleapis.com/installs.youversion.com/christmas_map_jsonp.js");
+        }, 30 * 60 * 1000); // Fetch a new dataset every 30 minutes
+      }
 
       $(window).load(function(){
           map = po.map()
