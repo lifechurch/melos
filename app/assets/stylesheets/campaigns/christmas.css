@@ -820,6 +820,12 @@ img[alt="YouVersion logo"] {
     filter:alpha(opacity=50);
     z-index: -1;
 }
+#map-bkg.true {
+    background: transparent url(/assets/campaigns/christmas/world-bkg2014.png) -20px -40px no-repeat;
+    opacity:0.25;
+    filter:alpha(opacity=25);
+}
+
 svg.map {
     margin-top: -50px;
 }
@@ -999,9 +1005,9 @@ svg.map {
     background-color: #000;
     background-color: rgba(0, 0, 0, 0.6);
     top: 80px;
-    padding: 20px;
+    padding: 10px;
     font-style: italic;
-    width: 320px;
+    width: 310px;
     left: -10px;
     top:100px;
     border-radius: 10px;
@@ -1042,6 +1048,9 @@ body {
   min-width: 0;
 }
 
+.finished-copy {
+  display: none;
+}
 #facebook, #twitter {
   position: relative;
   left: auto;
