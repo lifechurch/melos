@@ -13,7 +13,7 @@
   verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
   focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
   a_chapter     = presenter.try(:is_chapter?)
-  verse_view    = presenter.verses.present? and !presenter.respond_to?(:subscription)
+  verse_view    = presenter.verses.present? && !presenter.respond_to?(:subscription)
 
 - content_for :meta_description do
   = "#{reference.human} #{presenter.version} #{truncate(strip_tags(presenter.content).html_safe, length: 125, separator: " ", omission: '')}"
