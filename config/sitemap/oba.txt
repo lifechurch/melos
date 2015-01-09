@@ -1,8 +1,3 @@
 oba.1.1
-oba.1.12
 oba.1.15
 oba.1.17
-oba.1.18
-oba.1.21
-oba.1.3
-oba.1.4
