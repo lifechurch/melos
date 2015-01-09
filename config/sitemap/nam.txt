@@ -1,15 +1,2 @@
-nam.1.1
-nam.1.12
-nam.1.13
-nam.1.15
-nam.1.2
 nam.1.3
-nam.1.5
-nam.1.6
 nam.1.7
-nam.1.8
-nam.1.9
-nam.2.1
-nam.2.13
-nam.2.2
-nam.3.1
