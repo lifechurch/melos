@@ -281,27 +281,29 @@ class User < YV::Resource
   def share(opts = {})
     # validate that a connection was specified.  TODO: populate errors object + I18n
     return false unless opts[:connections]
-    successful = true
-
-    opts[:connections] = opts[:connections].keys.join("+")
-    tw_data,tw_errs = self.class.post("share/send_twitter", opts.merge({auth: self.auth})) if opts[:connections].match(/twitter/) 
-    tw_results = YV::API::Results.new(tw_data,tw_errs)
-    if tw_results.invalid?
-       self.errors = tw_results.errors
-       successful = false
-    end
-    fb_data,fb_errs = self.class.post("share/send_facebook", opts.merge({auth: self.auth})) if opts[:connections].match(/facebook/) 
-    fb_results = YV::API::Results.new(fb_data,fb_errs)
-    if fb_results.invalid?
-      if self.errors[:base]
-        self.errors[:base] |= fb_results.errors[:base]
-      else
-        self.errors = fb_results.errors
+    opts[:body] = "#{opts[:body]} #{opts[:link]}"
+    opts[:connections] = opts[:connections].keys.join("+") if opts[:connections].is_a? Hash
+    if opts[:connections].match(/twitter/)     
+      tw_data,tw_errs = self.class.post("share/send_twitter", opts.merge({auth: self.auth}))
+      tw_results = YV::API::Results.new(tw_data,tw_errs)
+      if tw_results.invalid?
+         self.errors = tw_results.errors
       end
-       successful = false
     end
 
-    return successful
+    if opts[:connections].match(/facebook/) 
+      fb_data,fb_errs = self.class.post("share/send_facebook", opts.merge({auth: self.auth}))
+      fb_results = YV::API::Results.new(fb_data,fb_errs)
+      if fb_results.invalid?
+        if self.errors[:base]
+          self.errors[:base] |= fb_results.errors[:base]
+        else
+          self.errors = fb_results.errors
+        end
+      end
+    end
+
+    return self
   end
 
   def notes(opts = {})
