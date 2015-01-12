@@ -21,7 +21,7 @@ class window.Moments.ReadingPlanCarousel extends window.Moments.Base
       return html
 
   initInteractions: ()->
-    $('.featured-rp-box').first().slick
+    $('.featured-rp-box').slick
       centerMode: true
       centerPadding: "0px"
       slidesToShow: 1
