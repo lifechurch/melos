@@ -149,6 +149,10 @@ en:
   new note:                                     "Create a Note"
   share success:                                "Your message has been shared."
   share error:                                  "Sorry, there was an error sharing your message. Please try again."
+  share:
+    request:
+      no_twitter_connection:                    "You don't have a connected Twitter account. Please connect your account on the settings page."
+      no_facebook_connection:                   "You don't have a connected Facebook account. Please connect your account on the settings page."
   google plus:                                  "Google+"
   connect to:                                   "Connect to your %{connection} account"
   deleted connection:                           "Successfully removed your connection to %{connection}."
