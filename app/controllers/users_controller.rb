@@ -144,12 +144,12 @@ class UsersController < ApplicationController
   def share
     result = current_user.share(params[:share])
     unless result.errors
-      flash[:notice] = t('share success') and redirect_to :back
+      return redirect_to :back, flash: {notice: t('share success')}
     end
 
     # on hold until api gets translations for their errors
     # api_errors = result.errors[:base].each { |error| t(error) }
-    flash[:error] = "#{t('share error')}" and redirect_to :back
+    return redirect_to :back, flash: {notice: t('share error')}
   end
 
   def new_share

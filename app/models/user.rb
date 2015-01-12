@@ -283,8 +283,9 @@ class User < YV::Resource
     return false unless opts[:connections]
     opts[:body] = "#{opts[:body]} #{opts[:link]}"
     opts[:connections] = opts[:connections].keys.join("+") if opts[:connections].is_a? Hash
-    if opts[:connections].match(/twitter/)     
-      tw_data,tw_errs = self.class.post("share/send_twitter", opts.merge({auth: self.auth}))
+    opts.merge!({auth: self.auth}) if opts[:auth].blank?
+    if opts[:connections].match(/twitter/)
+      tw_data,tw_errs = self.class.post("share/send_twitter", opts)
       tw_results = YV::API::Results.new(tw_data,tw_errs)
       if tw_results.invalid?
          self.errors = tw_results.errors
@@ -292,7 +293,7 @@ class User < YV::Resource
     end
 
     if opts[:connections].match(/facebook/) 
-      fb_data,fb_errs = self.class.post("share/send_facebook", opts.merge({auth: self.auth}))
+      fb_data,fb_errs = self.class.post("share/send_facebook", opts)
       fb_results = YV::API::Results.new(fb_data,fb_errs)
       if fb_results.invalid?
         if self.errors[:base]
