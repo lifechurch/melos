@@ -149,7 +149,7 @@ class UsersController < ApplicationController
 
     # on hold until api gets translations for their errors
     # api_errors = result.errors[:base].each { |error| t(error) }
-    flash[:error] = "#{t('share error')} #{api_errors}" and redirect_to :back
+    flash[:error] = "#{t('share error')}" and redirect_to :back
   end
 
   def new_share
