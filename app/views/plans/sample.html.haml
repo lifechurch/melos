@@ -12,13 +12,18 @@
   %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
-- if @presenter.reference
-  = render partial: "/references/reader", locals: {presenter: @presenter}
-
+- if current_auth
+  - if @presenter.reference
+    = render partial: "/references/reader", locals: {presenter: @presenter}
+  - else
+    %article
+      %h1= t('plans.no verses')
+      %p= t('plans.no content')
 - else
-  %article
-    %h1= t('plans.no verses')
-    %p= t('plans.no content')
+  .sample_devotional
+    %h2
+      = "#{@plan.title} : #{t('plans.day number', day: @presenter.day)}"
+    %div.bd= @presenter.subscription.day(@presenter.day).devotional.html_safe
 
 - # has to be here so that title_link content in ^^ references/reader partial will get overwritten
 - overwrite_content_for(:title_link) do

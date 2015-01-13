@@ -71,7 +71,7 @@
             %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
               = ref_text
 
-- if reading.devotional
+- if current_auth and reading.devotional
   #widget-devotional.widget
     %h3.hd= t("plans.devotional")
     %div.bd= reading.devotional.html_safe
