@@ -76,12 +76,16 @@
     z-index: 1
     left: 258px
     top: 86px
-    font-size: 15px
-    font-weight: bold
-    color: #fff
     +transform(rotate(-30deg))
     width: 140px
     text-align: center
+
+    h2
+      font-size: 15px
+      font-weight: bold
+      color: #fff
+      line-height: 25px
+      margin-bottom: 0
 
   #mobile_content
     width: 50%
@@ -130,10 +134,14 @@
       margin: 10px 0
       padding-left: 30px
 
-
-    li a
-      font-weight: bold
-      color: $green
+    li h2
+      margin-bottom: 0
+      -webkit-font-smoothing: antialiased
+      line-height: 1
+      a
+        font-weight: bold
+        font-size: 13px
+        color: $green
 
   .left_column
     float: left
