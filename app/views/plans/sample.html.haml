@@ -1,4 +1,7 @@
-- @title = "#{t('plans.day number', day: params[:day])} - #{@plan.title} "
+- @title = "#{@plan.title}: #{t('plans.day number', day: params[:day])} | #{t('plans.title')}"
+
+- content_for :meta_description do
+  = "#{t('plans.title')}: #{truncate(strip_tags(@plan.about).html_safe, length: 138, separator: " ", omission: '')}.."
 
 - content_for :additional_meta do
 
@@ -21,9 +24,12 @@
       %p= t('plans.no content')
 - else
   .sample_devotional
-    %h2
+    %h1
       = "#{@plan.title} : #{t('plans.day number', day: @presenter.day)}"
-    %div.bd= @presenter.subscription.day(@presenter.day).devotional.html_safe
+    - if @presenter.devotional.nil?
+      %div.bd= @plan.about.html_safe
+    - else
+      %div.bd= @presenter.subscription.day(@presenter.day).devotional.html_safe
 
 - # has to be here so that title_link content in ^^ references/reader partial will get overwritten
 - overwrite_content_for(:title_link) do
