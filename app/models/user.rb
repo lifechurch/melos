@@ -281,7 +281,6 @@ class User < YV::Resource
   def share(opts = {})
     # validate that a connection was specified.  TODO: populate errors object + I18n
     return false unless opts[:connections]
-    opts[:body] = "#{opts[:body]} #{opts[:link]}"
     opts[:connections] = opts[:connections].keys.join("+") if opts[:connections].is_a? Hash
     opts.merge!({auth: self.auth}) if opts[:auth].blank?
     if opts[:connections].match(/twitter/)
