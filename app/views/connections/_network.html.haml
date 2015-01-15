@@ -3,9 +3,10 @@
 -# network
 
 - connection_name = t("social.#{network}.name")
+- connected = user.connections[network.to_s].present?
 %span{class: "#{network.to_s}-connect"}
-  = image_tag "svg/#{network.to_s}-logo.svg"
-  - if user.connections[network.to_s].present?
+  = image_tag "svg/#{network.to_s}-logo.svg", class: "#{"connected" if connected}"
+  - if connected
     %a{href: delete_connection_path(network.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", rel: "nofollow", class: "connect-delete"}
       = t('social.remove connection')
     - if @error.present?

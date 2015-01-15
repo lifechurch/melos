@@ -281,27 +281,36 @@ class User < YV::Resource
   def share(opts = {})
     # validate that a connection was specified.  TODO: populate errors object + I18n
     return false unless opts[:connections]
-    successful = true
-
-    opts[:connections] = opts[:connections].keys.join("+")
-    tw_data,tw_errs = self.class.post("share/send_twitter", opts.merge({auth: self.auth})) if opts[:connections].match(/twitter/) 
-    tw_results = YV::API::Results.new(tw_data,tw_errs)
-    if tw_results.invalid?
-       self.errors = tw_results.errors
-       successful = false
-    end
-    fb_data,fb_errs = self.class.post("share/send_facebook", opts.merge({auth: self.auth})) if opts[:connections].match(/facebook/) 
-    fb_results = YV::API::Results.new(fb_data,fb_errs)
-    if fb_results.invalid?
-      if self.errors[:base]
-        self.errors[:base] |= fb_results.errors[:base]
-      else
-        self.errors = fb_results.errors
+    opts[:connections] = opts[:connections].keys.join("+") if opts[:connections].is_a? Hash
+    opts.merge!({auth: self.auth}) if opts[:auth].blank?
+    if opts[:connections].match(/twitter/)
+      tw_data,tw_errs = self.class.post("share/send_twitter", opts)
+      tw_results = YV::API::Results.new(tw_data,tw_errs)
+      if tw_results.invalid?
+         if defined? tw_results.errors[:base]
+          self.errors = tw_results.errors[:base]
+        else
+          self.errors = tw_results.errors
+        end
       end
-       successful = false
+    end
+    
+    opts.merge!({auth: self.auth}) if opts[:auth].blank?
+    if opts[:connections].match(/facebook/) 
+      fb_data,fb_errs = self.class.post("share/send_facebook", opts)
+      fb_results = YV::API::Results.new(fb_data,fb_errs)
+      if fb_results.invalid?
+        if defined? tw_results.errors
+          self.errors = tw_results.errors[:base] | fb_results.errors[:base]
+        elsif defined? fb_results.errors[:base]
+          self.errors = fb_results.errors[:base]
+        else
+          self.errors = fb_results.errors
+        end
+      end
     end
 
-    return successful
+    return self
   end
 
   def notes(opts = {})

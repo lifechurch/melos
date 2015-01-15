@@ -9,7 +9,7 @@
 
   %form.clearfix.share{action: share_path, method: "post"}
     %div.share_message
-      %textarea{name: "share[message]", style: "margin-bottom: 8px"}= params[:share][:message]
+      %textarea{name: "share[body]", style: "margin-bottom: 8px"}= params[:share][:body]
       %div.float_right
         %b#short_link
           = params[:share][:link]

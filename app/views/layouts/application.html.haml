@@ -22,7 +22,7 @@
       = render(partial: "layouts/mobile_nav") unless @main_nav == false
 
       - flash.each do |key, msg|
-        %div{class: container_class_str, id: "flash_#{key}"}= msg
+        %div{class: container_class_str, id: "flash_#{key}"}= msg.html_safe
 
       #container{class: container_class_str}
         #main{role: "main", class: @is_reader == true ? 'main_reader' : ''}

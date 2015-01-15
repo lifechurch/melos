@@ -142,11 +142,12 @@ class UsersController < ApplicationController
 
 
   def share
-    if current_user.share(params[:share])
-      flash[:notice] = t('share success') and redirect_to :back
-    else
-      flash[:error] = t('share error') and redirect_to :back
+    result = current_user.share(params[:share])
+    unless result.errors
+      return redirect_to :back, flash: {notice: t('share success')}
     end
+    errors = result.errors.map { |error| t(error) }.join("<br/>")
+    return redirect_to :back, flash: {notice: "#{t('share error')} <br/> #{errors}" }
   end
 
   def new_share
