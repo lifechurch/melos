@@ -2,10 +2,12 @@
   @sidebar          = false
   @title            = t("meta.mobile.title")
   @meta_description = t("meta.mobile.description")
-  @meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
 
 - content_for :additional_meta do
-
+  - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}/app"
+  %link{rel: "canonical", href: canonicalHref}
   %meta{name: "url",            content: @meta_url}
   %meta{property: "og:title",       content: @title }
   %meta{property: "og:url",         content: @meta_url }
@@ -20,7 +22,8 @@
 %article.mobileapps
   - style = "position:absolute; z-index:1; margin-left: 572px; margin-top: -131px; height:80px; width:80px; background: url(#{image_path(localized_bible_icon(72))}); background-repeat: no-repeat;background-size:cover !important;" if localized_bible_icon
   %div.icon-overlay.hide-mobile{style: style}
-  %div.app-free-overlay.hide-mobile= t('mobile page.free overlay')
+  %div.app-free-overlay.hide-mobile
+    %h2= t('mobile page.free overlay')
   %section#mobile_content
     %h2= t('mobile page.h2')
     %section.main
@@ -35,17 +38,27 @@
   %section#mobile_downloads
     %h1= t('mobile page.download now')
     %ul.left_column
-      %li#dl_iphone= link_to t('mobile page.iphone ipad'), "http://itunes.apple.com/app/bible/id282935706"
-      %li#dl_android= link_to t('mobile page.android'), "https://market.android.com/details?id=com.sirma.mobile.bible.android"
-      %li#dl_blackberry= link_to t('mobile page.blackberry'), "http://appworld.blackberry.com/webstore/content/1222/"
-      %li#dl_windows= link_to t('mobile page.windows phone'), "http://windowsphone.com/s?appid=57f524fa-93e3-df11-a844-00237de2db9e"
-      %li#dl_windows8= link_to t('mobile page.windows 8'), "http://apps.microsoft.com/webpdp/app/bible/af5f6405-7860-49a9-a6b4-a47381974e1d"
+      %li#dl_iphone
+        %h2= link_to t('mobile page.iphone ipad'), "http://itunes.apple.com/app/bible/id282935706"
+      %li#dl_android
+        %h2= link_to t('mobile page.android'), "https://market.android.com/details?id=com.sirma.mobile.bible.android"
+      %li#dl_blackberry
+        %h2= link_to t('mobile page.blackberry'), "http://appworld.blackberry.com/webstore/content/1222/"
+      %li#dl_windows
+        %h2= link_to t('mobile page.windows phone'), "http://windowsphone.com/s?appid=57f524fa-93e3-df11-a844-00237de2db9e"
+      %li#dl_windows8
+        %h2= link_to t('mobile page.windows 8'), "http://apps.microsoft.com/webpdp/app/bible/af5f6405-7860-49a9-a6b4-a47381974e1d"
     %ul.right_column
-      %li#dl_hppalm= link_to t('mobile page.hp palm'), "https://developer.palm.com/appredirect/?packageid=com.youversion.palm"
-      %li#dl_java= link_to t('mobile page.java'), "http://www.getjar.com/mobile/29005/bible-app"
-      %li#dl_symbian= link_to t('mobile page.symbian'), "http://www.getjar.com/mobile/29005/bible-app"
-      %li#dl_mobile= link_to t('mobile page.mobile web'), "http://www.bible.com"
-      %li#dl_amazon= link_to t('mobile page.amazon'), "http://www.amazon.com/YouVersion-Bible/dp/B004MC8CA2"
+      %li#dl_hppalm
+        %h2= link_to t('mobile page.hp palm'), "https://developer.palm.com/appredirect/?packageid=com.youversion.palm"
+      %li#dl_java
+        %h2= link_to t('mobile page.java'), "http://www.getjar.com/mobile/29005/bible-app"
+      %li#dl_symbian
+        %h2= link_to t('mobile page.symbian'), "http://www.getjar.com/mobile/29005/bible-app"
+      %li#dl_mobile
+        %h2= link_to t('mobile page.mobile web'), "http://www.bible.com"
+      %li#dl_amazon
+        %h2= link_to t('mobile page.amazon'), "http://www.amazon.com/YouVersion-Bible/dp/B004MC8CA2"
     %a.cta
       %h4
         = t('mobile page.button h4')
