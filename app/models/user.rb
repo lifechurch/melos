@@ -295,7 +295,7 @@ class User < YV::Resource
       fb_data,fb_errs = self.class.post("share/send_facebook", opts)
       fb_results = YV::API::Results.new(fb_data,fb_errs)
       if fb_results.invalid?
-        if self.errors[:base]
+        if defined? self.errors[:base]
           self.errors[:base] |= fb_results.errors[:base]
         else
           self.errors = fb_results.errors
