@@ -6,7 +6,7 @@ function LanguageMenu( el , opts ) {
   // make sure all xx-XX format locales come first before any 2 letter locales.
   // has to do with matching /pt early when we're trying to match for /pt-PT
   // this should be updated to work better.
-  this.locales = ["zh-CN","zh-TW","es-ES","en-GB","pt-PT","af","ar","bg","ca","cs","cy","de","da","en","es","fi","fr","hi","hu","id","it","ja","km","ko","lv","mk","mn","ms","nl","no","pl","pt","ro","ru","sk","sq","sv","sw","ta","tl","tr","uk","vi"];
+  this.locales = ["zh-CN","zh-TW","es-ES","en-GB","pt-PT","af","ar","bg","ca","cs","cy","de","da","en","es","fa","fi","fr","hi","hu","id","it","ja","km","ko","lv","mk","mn","ms","nl","no","pl","pt","ro","ru","sk","sq","sv","sw","ta","th","tl","tr","uk","vi"];
 
   var path = window.location.pathname;
   var new_path = "";
