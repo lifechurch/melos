@@ -477,7 +477,7 @@ Page.prototype = {
     });
     window.setTimeout(function() {
       divs.slideUp(200);
-    }, 5000);
+    }, 6500);
   },
 
   initAjaxReplace : function() {
