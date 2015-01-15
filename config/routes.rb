@@ -10,7 +10,7 @@ YouversionWeb::Application.routes.draw do
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
   get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
-  get "/ni*os",         to: "redirects#ninos"
+  get "/ni%C3%B1os",         to: "redirects#ninos"
   get "/ertong",        to: "redirects#ertong"
   get "/%E5%84%BF%E7%AB%A5",           to: "redirects#ertong"
   get "/%EC%96%B4%EB%A6%B0%EC%9D%B4",  to: "redirects#aideul"
