@@ -1,7 +1,6 @@
 -#exclude reading plan pages from hreflang tags
 - unless request.fullpath.include? "reading-plans/"
   - canonicalHref = nil
-  - defaultHref = nil
   - I18n.available_locales.each do |a_locale|
     - locale_dir = a_locale.to_s.eql?("en") ? '' : '/' + a_locale.to_s
     - fullpath = request.fullpath
@@ -15,14 +14,9 @@
     - if showCanonical
       - if a_locale.to_s.eql?("en") and canonicalHref.nil?
         - canonicalHref = href    #used for all versions not currently localized
-        - defaultHref = href
-      - if Version.find(presenter.reference.version).language.tag == (a_locale.to_s == "pt" ? "pt-BR" : a_locale.to_s) # so that pt-BR versions will match
-        - if a_locale.to_s.eql?(I18n.locale.to_s)
-          - canonicalHref = href   #used for versions that are localized (eg.  Afrikaans versions canonical url is af when viewed from af)
-        - if ((I18n.locale.to_s == ("en") and a_locale.to_s != ("en")) or (I18n.locale.to_s != "en" and a_locale.to_s == I18n.locale.to_s))
-          %link{href: defaultHref, rel: "alternate", hreflang: "en"}
-          %link{href: defaultHref, rel: "alternate", hreflang: "x-default"}
-          %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
+      - canonical_locale = a_locale.to_s == "pt" ? "pt-BR" : a_locale.to_s  # so that pt-BR versions will match
+      - if Version.find(presenter.reference.version).language.tag == canonical_locale
+        - canonicalHref = href   #used for versions that are localized (eg.  Afrikaans versions canonical url is af)
     - else
       %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
       - if a_locale.to_s.eql?("en")
