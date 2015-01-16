@@ -12,6 +12,10 @@
   width: 150px
   height: 50px
 
+.mobile-client
+  #logo
+    display: none !important
+
 
 // !Header
 //----------------------------------------------------------------------------------------------------
@@ -32,7 +36,7 @@
   top: 0
   background-color: #dedddb
   padding: 0
-  z-index: 901
+  z-index: 10000
   position: fixed
   height: 47px
   width: 100%
@@ -107,6 +111,10 @@
 
 #header .close_btn
   background: image-url("mobile/close_btn.png") 12px 8px no-repeat
+
+.no_auth
+  .close_btn
+    display: none
 
 .reader_modal_header .close_btn,
 #header .back_btn

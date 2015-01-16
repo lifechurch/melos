@@ -66,16 +66,19 @@
         %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
           - ref_text = ref.reference.safe_human
           - if content_page == index
-            %span= ref_text
+            - if current_auth
+              %span= ref_text
+            - else
+              = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param)
           - else
             %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
               = ref_text
 
-- if current_auth and reading.devotional
-  #widget-devotional.widget
+
+- if reading.devotional
+  #widget-devotional.widget{class: "#{"no_auth" unless current_auth}"}
     %h3.hd= t("plans.devotional")
     %div.bd= reading.devotional.html_safe
-- else
 .widget
   %h3.hd
     =t("plans.publisher")
