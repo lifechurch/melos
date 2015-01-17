@@ -17,9 +17,6 @@
       - canonical_locale = a_locale.to_s == "pt" ? "pt-BR" : a_locale.to_s  # so that pt-BR versions will match
       - if Version.find(presenter.reference.version).language.tag == canonical_locale
         - canonicalHref = href   #used for versions that are localized (eg.  Afrikaans versions canonical url is af)
-      - if canonical_locale.eql?("en-GB") and I18n.locale.to_s.eql?("en-GB")
-        - canonicalHref = href
-
     - else
       %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
       - if a_locale.to_s.eql?("en")
