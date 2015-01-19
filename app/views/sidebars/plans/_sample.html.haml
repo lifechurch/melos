@@ -71,20 +71,24 @@
             - else
               = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param)
           - else
-            %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
-              = ref_text
+            - if current_auth
+              %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
+                = ref_text
+            - else
+              = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param)
 
-
-- if reading.devotional
-  #widget-devotional.widget{class: "#{"no_auth" unless current_auth}"}
-    %h3.hd= t("plans.devotional")
-    %div.bd= reading.devotional.html_safe
-.widget
-  %h3.hd
-    =t("plans.publisher")
-  %div.bd
-    %p= plan.copyright.html_safe
-  - unless plan.publisher_url.nil?
-    %div.ft.link
-      = link_to(t("plans.about publisher"), plan.publisher_url)
+- if current_auth
+  - if reading.devotional
+    #widget-devotional.widget
+      %h3.hd= t("plans.devotional")
+      %div.bd= reading.devotional.html_safe
+- else
+  .widget
+    %h3.hd
+      =t("plans.publisher")
+    %div.bd
+      %p= plan.copyright.html_safe
+    - unless plan.publisher_url.nil?
+      %div.ft.link
+        = link_to(t("plans.about publisher"), plan.publisher_url)
 

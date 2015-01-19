@@ -4,6 +4,9 @@
   = "#{t('plans.title')}: #{truncate(strip_tags(@plan.about).html_safe, length: 138, separator: " ", omission: '')}.."
 
 - content_for :additional_meta do
+  - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
+  %link{rel: "canonical", href: canonicalHref}
 
   %meta{property: "og:title",       content: @title }
   %meta{property: "og:url",         content: @meta_url}
@@ -23,15 +26,41 @@
       %h1= t('plans.no verses')
       %p= t('plans.no content')
 - else
-  - content_for :sidebar_class do
-    = "open no_auth"
+  -#- content_for :sidebar_class do
+  -#  = "open no_auth"
+
   .sample_devotional
     %h1
       = "#{@plan.title} : #{t('plans.day number', day: @presenter.day)}"
+    %div.mobile
+      = render partial: "/plans/button", locals: {plan: @plan}
     - if @presenter.devotional.nil?
       %div.bd= @plan.about.html_safe
     - else
       %div.bd= @presenter.subscription.day(@presenter.day).devotional.html_safe
+    %div.mobile
+      - day           = (params[:day] || 1).to_i
+      - content_page  = (params[:content] || 0).to_i
+      - reading       = @plan.day(day)
+      - references    = reading.references(version_id: @presenter.version)
+      .widget.scripture-links
+        %h3.hd
+          = t("plans.read today")
+        %ul.menu.basic
+          - unless references.empty?
+            - references.each_with_index do |ref|
+              %li.content_target
+                - ref_text = ref.reference.safe_human
+                = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param)
+
+      .widget
+        %h3.hd
+          =t("plans.publisher")
+        %div.bd
+          %p= @plan.copyright.html_safe
+        - unless @plan.publisher_url.nil?
+          %div.ft.link
+            = link_to(t("plans.about publisher"), @plan.publisher_url)
 
 - # has to be here so that title_link content in ^^ references/reader partial will get overwritten
 - overwrite_content_for(:title_link) do
