@@ -19,7 +19,9 @@
     try{Typekit.load();}catch(e){}
 
 - content_for :additional_meta do
-
+  - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}"
+  %link{rel: "canonical", href: canonicalHref}
   %meta{name: "url",            content: @meta_url}
   %meta{property: "og:title",       content: @title }
   %meta{property: "og:url",         content: @meta_url }
