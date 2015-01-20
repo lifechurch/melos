@@ -1,0 +1,293 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#
+# Latvian translations for Backend (YouVersion).
+# Copyright (C) 2015 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+# #-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#
+# Latvian translations for Backend (YouVersion).
+# Copyright (C) 2015 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+# #-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#
+# Latvian translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2015-01-08 17:34-0609\n"
+"PO-Revision-Date: 2015-01-08 17:34-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: lv <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2015-01-08 17:41-0609\n"
+"PO-Revision-Date: 2015-01-08 17:41-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: lv <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:06-0600\n"
+"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: lv <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Tu nopelnīji <b>{title}</b> nozīmīti"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} nopelnīja <b>{title}</b> nozīmīti"
+
+msgid "moment.bible.download.self.title"
+msgstr "Tu lejupielādēji tulkojumu, <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "{name} lejupielādēja tulkojumu, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Tu izveidoji grāmatzīmi <b>{reference_human}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "{name} izveidoja grāmatzīmi <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "2015. gadā lasi Bībeli katru dienu. Lasīšanas plāni palīdz!"
+
+msgid "moment.friendship.self.title"
+msgstr "Tu tagad esi draugos ar <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} tagad ir draugos ar <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Tu izcēli <b>{reference_human}</b>"
+
+msgid "moment.highlight.title"
+msgstr "{name} izcēla <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Tu pievienoji piezīmi, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} pievienoja piezīmi, <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Tu pabeidzi savu lasīšanas plānu"
+
+msgid "moment.plan_completion.title"
+msgstr "{name} pabeidza lasīšanas plānu"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "{segment} diena no {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Tu pabeidzi <b>{segment}</b> lasīšanas plāna dienu, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} pabeidza <b>{segment}</b> lasīšanas plāna dienu, <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Tu iesāki jaunu lasīšanas plānu"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} uzsāka jaunu lasīšanas plānu"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Skaties <i>Bībeles sērijas</i> šovakar!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Bībeles sērijas</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Dalies ar labo vēsti: Glābējs ir dzimis!"
+
+msgid "moment.system.find_friends.title"
+msgstr "Bībeles aplikācija ir daudzreiz jautrāka, ja to lieto kopā ar draugiem. Pārskati kontaktus, lai atrastu savus draugus."
+
+msgid "moment.video.watched.self.title"
+msgstr "Tu apskatīji <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "{name} apskatīja <b>{title}</b>"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} komentēja Tavu grāmatzīmi: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} komentēja tavu draudzību ar {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name}komentēja tevis izcelto \"{comment}\""
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} komentēja Tavu piezīmi: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name}komentēja tavu Bībeles lasīšanas plānu: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} komentēja tavu jauno Bībeles lasīšanas plānu: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name}arī komentēja {moment_owner_name}grāmatzīmi \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name}arī komentēja {moment_owner_name} jauno draudzību ar {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name}arī komentēja {moment_owner_name} izcelto \"{comment}\""
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name}arī komentēja {moment_owner_name} piezīmi: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name}arī komentēja savu grāmatzīmi: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name}arī komentēja savu jauno draudzību ar {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name} arī komentēja paša izcelto: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name}arī komentēja savu piezīmi: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name}arī komentēja savu Bībeles lasīšanas plānu: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} arī komentēja savu Bībeles lasīšanas plānu: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name}arī komentēja {moment_owner_name} Bībeles lasīšanas plānu: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name}arī komentēja {moment_owner_name} Bībeles lasīšanas plānu: \"{comment}\""
+
+msgid "notifications.friendships.accept"
+msgstr "{name}pieņēma tavu draudzības uzaicinājumu"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} nu ir tavs draugs"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} grib kļūt par tavu draugu YouVersion aplikācijā"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Vai vēlies YouVersion aplikācijā būt draugos ar {name}?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name}patīk tava grāmatzīme {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} patīk tava jaunā draudzība ar {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name}patīk tevis izceltais, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name}cilvēkiem patīk tava piezīme"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name}patīk tava piezīme par {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} patīk tava piezīme \"{title}\""
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name}patīk tava Bībeles lasīšanas plāna aktivitāte"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} patīk tavas Bībeles lasīšanas plāna aktivitātes"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name}ielika grāmatzīmi pie {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{name}izcēla {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} pievienoja piezīmi"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name}pievienoja piezīmi par {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} pievienoja piezīmi \"{title}\""
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name}pabeidza savu Bībeles lasīšanas plānu {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name}pabeidza Bībeles lasīšanas plānu {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name}sāka lasīt Bībeli pēc jauna lasīšanas plāna {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name}sāka lasīt Bībeli pēc {title} lasīšanas plāna."
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} tikko pievienojās YouVersion. Uzspied, lai pievienotu kā draugu."
+
+msgid "notifications.system.test"
+msgstr "Lejupielādē mūsu Bērnu Bībeles aplikāciju jau tagad!"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Sveiki!</p><p>Es gribēju padalīties ar Tevi, ka lietoju YouVersion Bībeles aplikāciju. Ja par aplikāciju neesi zinājis, tas ir vienkāršs veids kā savā ikdienā ieviest Bībeles skaistumu un patiesību. </p><p><strong>Iegūsti Bībeles Aplikāciju:</strong> lasi. skaties, klausies un dalies ar to caur savu viedtālruni vai planšetdatoru, un arī internetā Bible.com</p><p><strong>Uzstādi savu kontu:</strong> pieraksties Bībeles lasīšanas plāniem un piekļūsti grāmatzīmēm, izceltajam un piezīmēm visās ierīcēs</p><p><strong>Pievieno draugus (piemēram mani!):</strong> izpētiet un apspriediet Bībeli ar sev tuviem cilvēkiem</p><p>Tas viss Bībeles aplikācijā - sāc šeit: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Sveiki!\n"
+"\n"
+"Es gribēju padalīties ar Tevi, ka lietoju YouVersion Bībeles aplikāciju. Ja par aplikāciju neesi zinājis, tas ir vienkāršs veids kā savā ikdienā ieviest Bībeles skaistumu un patiesību.\n"
+"\n"
+"Iegūsti Bībeles Aplikāciju: lasi. skaties, klausies un dalies ar to caur savu viedtālruni vai planšetdatoru, un arī internetā Bible.com.\n"
+"\n"
+"Uzstādi savu kontu: pieraksties Bībeles lasīšanas plāniem un piekļūsti grāmatzīmēm, izceltajam un piezīmēm visās ierīcēs.\n"
+"\n"
+"Pievieno draugus (piemēram mani!): izpētiet un apspriediet Bībeli ar sev tuviem cilvēkiem.\n"
+"\n"
+"Tas viss Bībeles aplikācijā - sāc šeit: "
+
+msgid "share.invite_email_subject"
+msgstr "Pievienojies man Bībeles aplikācijas lietošanā?"
+
+msgid "share.invite_facebook"
+msgstr "Es mīlu Bībeles aplikāciju! Tā tiešām ir palīdzējusi padarīt Bībeli par daļu no manas ikdienas dzīves. Tā dod iespēju man iezīmēt, klausīties Bībeles audio ierakstus, veidot piezīmes, lasīt dievbijīgus plānus...pat skatīties video! Dodies un lejupielādē to tagad (tā ir bezmaksas):"
+
+msgid "share.invite_facebook_direct"
+msgstr "Vai tev jau ir Bībeles aplikācija? Man viņa ļoti patīk un es domāju tev arī patiks. Te būs adrese:"
+
+msgid "share.invite_sms"
+msgstr "Vai tev jau ir Bībeles aplikācija no YouVersion? Man viņa ļoti patīk un es domāju tev arī patiks. Te būs adrese:"
+
+msgid "share.invite_sms_prefix"
+msgstr "No {name}:"
+
+msgid "share.invite_twitter"
+msgstr "@YouVersion Bībeles aplikācijai ir pastāvīga vieta uz mana galvenā ekrāna. Lasi, skaties, klausies un dalies...tas viss bezmaksas aplikācijā:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Vai tev jau ir Bībeles aplikācija no @YouVersion? Man viņa ļoti patīk un es domāju tev arī patiks. Te būs adrese:"
