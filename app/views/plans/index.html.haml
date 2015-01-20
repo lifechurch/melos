@@ -1,5 +1,8 @@
-- @title = t("plans.title")
+- @title = "#{t('plans.title')}: #{t('plans.browse plans', category: @category.label || t('plans.all'))}"
 - translate = params[:translate] == "true"
+
+- content_for :meta_description do
+  = "#{t('plans.title')}: #{t('plans.browse plans', category: @category.label || t('plans.all'))}"
 
 - content_for :title do
   = t("plans.title")
@@ -83,10 +86,10 @@
         %ul.pagination
           - if @plans.prev_page || @page > 1
             %li.prev
-              =link_to t("ui.pagination.previous page"), url_for({query: params[:query], category: params[:category],page: @plans.prev_page || @page - 1, locale: params[:locale], lang: params[:lang]}) , class: "action_button_grey action_button"
+              =link_to t("ui.pagination.previous page"), url_for({query: params[:query], category: params[:category],page: @plans.prev_page || @page - 1, locale: params[:locale], lang: params[:lang]}), rel: 'prev', class: "action_button_grey action_button"
           - if @plans.next_page
             %li.next
-              =link_to t("ui.pagination.next page"), url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]}), class: "action_button_grey action_button"
+              =link_to t("ui.pagination.next page"), url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]}), rel: 'next', class: "action_button_grey action_button"
 
       -else
         .none{align: "center"}= t("plans.none found")

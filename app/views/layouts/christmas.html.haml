@@ -3,7 +3,8 @@
 :ruby
   meta_title        = t("campaigns.christmas.tracker title")
   meta_description  = t("campaigns.christmas.facebook text")
-  meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+  meta_url          = "#{request.protocol}#{request.host_with_port}#{locale_dir}#{request.fullpath}"
   i18n_css_class = I18n.locale.to_s
   facebook_locale = "en_US"
 
@@ -11,6 +12,7 @@
 %html
   %head
     %title= strip_tags(meta_title)
+    %link{rel: "canonical", href: meta_url}
     %link{rel: "shortcut icon", href:"/favicon.ico"}
     %meta{charset:"utf-8"}
     %meta{'http-equiv' => 'content-language', :content => I18n.locale.downcase}

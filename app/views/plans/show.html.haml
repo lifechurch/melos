@@ -1,7 +1,14 @@
-- @title = @plan.title.dup if @plan.present? && @plan.title.present?
+- @title = "#{@plan.title.dup} | #{t('plans.title')}" if @plan.present? && @plan.title.present?
 - @meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
 - content_for :sidebar_class, 'rp-about-sidebar'
+
+- content_for :meta_description do
+  = "#{t('plans.title')}: #{truncate(strip_tags(@plan.about).html_safe, length: 138, separator: " ", omission: '')}.."
+
 - content_for :additional_meta do
+  - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
+  %link{rel: "canonical", href: canonicalHref}
 
   %meta{property: "og:title",       content: @title }
   %meta{property: "og:url",         content: @meta_url}
