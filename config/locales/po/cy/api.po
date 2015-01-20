@@ -1,0 +1,222 @@
+# Welsh translations for Backend (YouVersion).
+# Copyright (C) 2015 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2015-01-13 17:08-0609\n"
+"PO-Revision-Date: 2015-01-13 17:08-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: cy <LL@li.org>\n"
+"Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Rwyt wedi ennill y bathodyn <b>{title}</b>"
+
+msgid "moment.badge.earned.title"
+msgstr "Ennillodd {name}  y bathodyn<b>{title}</b>"
+
+msgid "moment.bible.download.self.title"
+msgstr "Rwyt wedi lawrlwytho'r fersiwn <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "Lawrlwythodd {name} y fersiwn, <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Gosodaist Nod Tudalen ar <b>{reference_human}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "Rhoddodd {name}nod llyfr ar<b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "Bydd barod am y Nadolig gyda Cynllun Beibl yr Adfent"
+
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "Darllen y Beibl bob dydd yn 2015. Mae cynlluniau'n helpu!"
+
+msgid "moment.friendship.self.title"
+msgstr "Rwyt nawr yn ffrindiau gyda <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "Mae {user_name} bellach yn ffrindiau gyda <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Rwyt wedi aroleuo <b>{reference_human}</b>"
+
+msgid "moment.highlight.title"
+msgstr "Aroleuodd {name} <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Rwyt wedi ychwanegu nodyn, <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "Ychwanegodd {name} nodyn, <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Rwyt wedi cwblhau dy Gynllun"
+
+msgid "moment.plan_completion.title"
+msgstr "Cwblhaodd {name} Gynllun"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Diwrnod {segment} o {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Rwyt wedi cwblhau diwrnod <b>{segment}</b> o'r Cynllun, <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "Cwblhaodd {name} ddiwrnod <b>{segment}</b> o'r Cynllun <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Dechreuaist Gynllun newydd"
+
+msgid "moment.plan_subscription.title"
+msgstr "Dechreuodd {name} Gynllun newydd"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Gwylia'r<i>Gyfres Beibl</i>heno!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Cyfres Beibl</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Rhanna'r newyddion da: mae'r Gwaredwr wedi ei eni!"
+
+msgid "moment.system.find_friends.title"
+msgstr "Mae'r Ap Beibl yn well fyth gyda Ffrindiau. Chwilio Cysylltiadau am Ffrindiau"
+
+msgid "moment.video.watched.self.title"
+msgstr "Gwyliaist <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "Edrychodd <b>{name}</b>ar {title}"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "Gwnaeth {name} sylw ar dy Nod Tudalen: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "Gwnaeth {name} sylw ar dy gyfeillgarwch newydd gyda {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "Gwnaeth {name} sylw ar dy aroleuad: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "Gwnaeth {name} sylw ar dy nodyn: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "Gwnaeth {name} sylw ar dy Gynllun: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "Gwnaeth {name} sylw ar dy Gynllun Beibl: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "Gwnaeth {commenter_name} hefyd sylw ar Nod Llyfr {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "Gwnaeth {commenter_name} hefyd sylw ar gyfeillgarwch newydd {moment_owner_name} gyda {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "Gwnaeth {commenter_name} hefyd sylw ar aroleuad {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "Gwnaeth {commenter_name} hefyd sylw ar nodyn {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar eu Nod Tudalen: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar eu cyfeillgarwch gyda {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar yr aroleuad: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar ei nodyn: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar y Cynllun: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "Gwnaeth {moment_owner_name} sylw ar eu Cynllun Beibl: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "Gwnaeth {commenter_name} hefyd sylw ar Gynllun {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "Gwnaeth {commenter_name} hefyd sylw ar Gynllun Beibl {moment_owner_name}: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "Derbyniodd {name} dy gais ffrind"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "Mae {name} bellach yn ffrindiau gyda ti"
+
+msgid "notifications.friendships.offer"
+msgstr "Mae {name} eisiau bod yn ffrind i ti ar YouVersion"
+
+msgid "notifications.friendships.suggestion"
+msgstr "Wyt ti eisiau bod yn ffrindiau gyda {name} ar YouVersion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "Mae {name} yn hoffi dy nod tudalen, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "Mae {name} yn hoffi dy gyfeillgarwch newydd gyda {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "Mae {name} yn hoffi dy aroleuad, {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "Mae {name} yn hoffi dy nodyn"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "Mae {name} yn hoffi dy nodyn ar {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "Mae {name} yn hoffi dy nodyn, “{title}”"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "Mae {name} yn hoffi dy Weithgaredd Cynllun"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "Mae {name} yn hoffi dy weithgaredd Cynllun Beibl"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "Rhoddodd {name} nod llyfr ar {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "Aroleuodd {name} {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "Ychwanegodd {name} nodyn"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "Ychwanegodd {name} nodyn ar {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "Ychwanegodd {name} nodyn, “{title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "Cwblhaodd {name} y cynllun, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "Mae {name} wedi cwblhau'r Cynllun Beibl, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "Dechreuodd {name} Gynllun newydd, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "Dechreuodd {name} Gynllun Beibl newydd, {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "Ymunodd {name} ag YouVersion. Cyffwrdd yma i'w ychwanegu fel ffrind."
+
+msgid "notifications.system.test"
+msgstr "Lawrlwytha ein Ap Beibl Plant nawr!!!"
