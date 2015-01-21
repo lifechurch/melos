@@ -20,8 +20,8 @@ class PlansController < ApplicationController
     if params[:day] then redirect_to( sample_plan_url(id: params[:id], day: params[:day])) and return end
 
     @plan = Plan.find(params[:id])
-    @friends_reading = @plan.friends_reading(auth: current_user.auth) if current_user.respond_to?(:auth)
-    @friends_completed = @plan.friends_completed(auth: current_user.auth) if current_user.respond_to?(:auth)
+    @friends_reading = @plan.friends_reading(auth: current_auth)
+    @friends_completed = @plan.friends_completed(auth: current_auth)
     self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
   end
 
