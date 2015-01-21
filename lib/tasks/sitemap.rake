@@ -103,4 +103,65 @@ namespace :sitemap do
     # puts "^ add these nodes to sm-index.xml in the versions list \n"
     # puts "========="
   end
+  desc "Generate reading-plans sitesmap"
+  task :create_reading_plan_maps => :environment do
+
+    puts "reading plans - building sitemaps..."
+    # max 50000 lines per xml may need additional logic for en?
+
+    locales = I18n.available_locales
+    locales.each do |l|
+      if l.to_s.eql?("af")
+        if l.to_s.eql?("en-GB")
+          puts "### we love #{l} but we make you no maps\n\n"
+          next
+        end
+        puts "### we love #{l}\n\n"
+        locale = l.to_s.eql?("en") ? "" : "/#{l}"
+        plans_exist = true
+        page = 1
+        plan_count = 0
+        rp_file_count = 1
+
+        while plans_exist do
+          plans = Plan.all(page: page, language_tag: l)
+          if plans.to_s.eql?('[]')
+            break
+          end
+          filename = "public/sitemaps/plans/plans-#{l}.xml"
+          aFile = File.new(filename, 'w+')
+          data = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+          aFile.write data
+          if aFile
+            plans.each do |p|
+              puts p.id
+              plan_count+=1
+              if p.type.eql?("common")
+                puts "common"
+                # common - title page and day 1 sample 78 joy
+                aFile.write "\n<url><loc>https://www.bible.com#{locale}/reading-plans/#{p.id}-#{p.slug}</loc></url>" \
+                "\n<url><loc>https://www.bible.com#{locale}/reading-plans/#{p.id}-#{p.slug}/day/1</loc></url>"
+              else
+                puts "devo"
+                # devotional - title page and all days  65 love and marriage
+                aFile.write "\n<url><loc>https://www.bible.com#{locale}/reading-plans/#{p.id}-#{p.slug}</loc></url>"
+                aFile.flush
+                day_count = p.total_days.to_i
+                (1..day_count).each do |d|
+                  aFile.write "\n<url><loc>https://www.bible.com#{locale}/reading-plans/#{p.id}-#{p.slug}/day/#{d}</loc></url>"
+                end
+              end
+            end
+          else
+            puts "Unable to open file: #{filename}"
+          end
+          aFile.write "\n</urlset>"
+          aFile.close
+          page += 1
+        end
+        puts "#{plan_count} #{l} plans"
+        puts "================================="
+      end
+    end
+  end
 end
