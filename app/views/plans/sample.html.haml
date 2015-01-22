@@ -4,7 +4,7 @@
   = "#{t('plans.title')}: #{truncate(strip_tags(@plan.about).html_safe, length: 138, separator: " ", omission: '')}.."
 
 - content_for :additional_meta do
-  - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
   %link{rel: "canonical", href: canonicalHref}
 
