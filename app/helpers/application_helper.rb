@@ -143,15 +143,17 @@ module ApplicationHelper
   def i18n_kids_whitelist
     # the following localizations will allow translation for the kids page
     # the others will default to en
-    [ :en, :es, :"zh-CN", :ko, :"pt-BR" ]
+    [ :en, :"en-GB", :es, :"zh-CN", :ko, :pt ]
   end
 
   def app_page_path
-    "/#{I18n.locale}/app"
+    locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+    "#{locale_dir}/app"
   end
 
   def kids_page_path
-    "#{I18n.locale}/kids"
+    locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+    "#{locale_dir}/kids"
   end
 
   def bible_localized_path
