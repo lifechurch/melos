@@ -11,8 +11,10 @@ class AppStoreController < ActionController::Base
 
   # get /app/(:store)
   def index
-    return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
-    return redirect_to store_path(params[:store]) if params[:store].present?
+    unless googleBot?(request)
+      return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
+      return redirect_to store_path(params[:store]) if params[:store].present?
+    end
     render "pages/app", layout: "layouts/application"
   end
 
