@@ -67,7 +67,7 @@
     %ul.float_left
       %li{class: version.rtl? ? "rtl" : nil}
         %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_book_chapter', id:"menu_book_chapter_trigger", :title => t("ref.choose book and chapter")}
-          %h1
+          %h2
             = truncate(reference.to_s(version: false), length: 40, separator: " ")
           %span
             = t('ref.choose book and chapter')
