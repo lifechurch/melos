@@ -160,6 +160,12 @@ module ApplicationHelper
     I18n.locale.to_s.eql?("en") ? "/bible" : "/#{I18n.locale}/bible"
   end
 
+  def googleBot?(request)
+    if request.user_agent
+      !!request.user_agent.match(/Googlebot/i)
+    end
+  end
+
   def bible_path(ref=nil, opts={})
     ref = last_read || default_reference if ref.nil?
     ver = opts.delete(:version)

@@ -11,8 +11,10 @@ class AppStoreController < ActionController::Base
 
   # get /app/(:store)
   def index
-    return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil? or store_path_for_device(request.env["X_MOBILE_DEVICE"]).nil?
-    return redirect_to store_path(params[:store]) if params[:store].present?
+    unless googleBot?(request)
+      return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
+      return redirect_to store_path(params[:store]) if params[:store].present?
+    end
     render "pages/app", layout: "layouts/application"
   end
 
@@ -108,6 +110,8 @@ class AppStoreController < ActionController::Base
   # Rules for App Store url given the mobile device user agent string
   def store_path_for_device(device=nil)
     case device
+    when /iphone|iPhone|ipad|iPad|ipod|iPod/
+      store_path('ios')
     when /android|Android/
       'market://details?id=com.sirma.mobile.bible.android'
     when /silk|Silk/
@@ -124,10 +128,8 @@ class AppStoreController < ActionController::Base
       store_path('webos')
     when /Windows 8/
       store_path('windows8')
-    when /Googlebot/
+    else
       'https://bible.com'
-    when /iphone|iPhone|ipad|iPad|ipod|iPod/
-      store_path('ios')
     end
   end
 

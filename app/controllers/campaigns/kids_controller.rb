@@ -48,20 +48,18 @@ class Campaigns::KidsController < ApplicationController
 
   def kids_store_url
     # Rules for redirecting to App Store(s) given the mobile device user agent string
-    case request.env["X_MOBILE_DEVICE"] #rack_env["X_MOBILE_DEVICE"]
+    unless googleBot?(request)
+      case request.env["X_MOBILE_DEVICE"] #rack_env["X_MOBILE_DEVICE"]
 
-    when /android|Android/
-      'market://details?id=com.bible.kids'
+      when /iphone|iPhone|ipad|iPad|ipod|iPod/
+        'https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8'
 
-    when /silk|Silk/
-      'http://www.amazon.com/gp/mas/dl/android?p=com.bible.kids'
+      when /android|Android/
+        'market://details?id=com.bible.kids'
 
-    when /Googlebot/
-      nil
-
-    when /iphone|iPhone|ipad|iPad|ipod|iPod/
-      'https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8'
+      when /silk|Silk/
+        'http://www.amazon.com/gp/mas/dl/android?p=com.bible.kids'
+      end
     end
   end
-
 end
