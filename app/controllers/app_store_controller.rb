@@ -11,7 +11,7 @@ class AppStoreController < ActionController::Base
 
   # get /app/(:store)
   def index
-    return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
+    return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil? or store_path_for_device(request.env["X_MOBILE_DEVICE"]).nil?
     return redirect_to store_path(params[:store]) if params[:store].present?
     render "pages/app", layout: "layouts/application"
   end
@@ -128,8 +128,6 @@ class AppStoreController < ActionController::Base
       'https://bible.com'
     when /iphone|iPhone|ipad|iPad|ipod|iPod/
       store_path('ios')
-    else
-      'https://bible.com'
     end
   end
 
