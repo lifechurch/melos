@@ -17,12 +17,15 @@
         - canonicalHref = href    #used for all versions not currently localized
         - defaultHref = href
       - if Version.find(presenter.reference.version).language.tag == (a_locale.to_s == "pt" ? "pt-BR" : a_locale.to_s) # so that pt-BR versions will match
-        - if a_locale.to_s.eql?(I18n.locale.to_s)
-          - canonicalHref = href   #used for versions that are localized (eg.  Afrikaans versions canonical url is af when viewed from af)
-        - if ((I18n.locale.to_s == ("en") and a_locale.to_s != ("en")) or (I18n.locale.to_s != "en" and a_locale.to_s == I18n.locale.to_s))
-          %link{href: defaultHref, rel: "alternate", hreflang: "en"}
-          %link{href: defaultHref, rel: "alternate", hreflang: "x-default"}
-          %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
+        - if Version.find(presenter.reference.version).language.tag == "pt-BR"
+          - canonicalHref = href
+        - else
+          - if a_locale.to_s.eql?(I18n.locale.to_s)
+            - canonicalHref = href   #used for versions that are localized (eg.  Afrikaans versions canonical url is af when viewed from af)
+          - if ((I18n.locale.to_s == ("en") and a_locale.to_s != ("en")) or (I18n.locale.to_s != "en" and a_locale.to_s == I18n.locale.to_s))
+            %link{href: defaultHref, rel: "alternate", hreflang: "en"}
+            %link{href: defaultHref, rel: "alternate", hreflang: "x-default"}
+            %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
     - else
       %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
       - if a_locale.to_s.eql?("en")
