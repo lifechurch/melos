@@ -2,6 +2,7 @@
 - unless request.fullpath.include? "reading-plans/"
   - canonicalHref = nil
   - defaultHref = nil
+  - lang_array = ["pt-BR", "pt-PT", "es-ES", "af"]
   - I18n.available_locales.each do |a_locale|
     - locale_dir = a_locale.to_s.eql?("en") ? '' : '/' + a_locale.to_s
     - fullpath = request.fullpath
@@ -17,7 +18,7 @@
         - canonicalHref = href    #used for all versions not currently localized
         - defaultHref = href
       - if Version.find(presenter.reference.version).language.tag == (a_locale.to_s == "pt" ? "pt-BR" : a_locale.to_s) # so that pt-BR versions will match
-        - if Version.find(presenter.reference.version).language.tag == "pt-BR"
+        - if lang_array.include?(Version.find(presenter.reference.version).language.tag)
           - canonicalHref = href
         - else
           - if a_locale.to_s.eql?(I18n.locale.to_s)
