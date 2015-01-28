@@ -72,7 +72,7 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ko/kids",:rel=>"alternate",:hreflang=>"ko"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-CN/kids",:rel=>"alternate",:hreflang=>"zh-cn"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/pt-BR/kids",:rel=>"alternate",:hreflang=>"pt-br"}
-    - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+    - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
     %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}#{locale_dir}/kids"}
 
     = stylesheet_link_tag "campaigns/kids"
