@@ -5,7 +5,7 @@
     - canonicalHref = "https://www.bible.com#{locale_dir}/versions/#{@version.to_param}"
     %link{rel: "canonical", href: canonicalHref}
 - content_for :meta_description do
-  = @title
+  = "#{@title}: #{t('download ad.title')}"
 
 - content_for :sidebar do
 

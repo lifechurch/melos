@@ -3,6 +3,9 @@
 - content_for :title do
   = t('versions.index title')
 
+- content_for :meta_description do
+  = "#{t('bible versions')} - #{t("versions.number of versions field")} #{@versions_by_lang.values.flatten.count}, #{t("versions.number of languages field")} #{@versions_by_lang.count}"
+
 %article
   - case I18n.locale.to_s
   - when "en"
