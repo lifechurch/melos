@@ -51,6 +51,11 @@ class ReferencesController < ApplicationController
       if params[:reference]
         params[:reference] = params[:reference].encode('UTF-16le', invalid: :replace, replace: '')
         params[:reference] = params[:reference].encode('UTF-8')
+        # fix param references where reference only has the book
+        # coming in as /bible/nasb/gen or /bible/nkjv/gen etc  - from campus.316networks.com
+        if /^[a-zA-Z0-9]{3,}$/.match(params[:reference])
+          params[:reference] = "#{params[:reference]}.1"
+        end
       end
     end
 
