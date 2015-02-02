@@ -152,8 +152,8 @@ ko:
     share error: "메시지 공유 진행 중 오류가 발생했습니다. 다시 시도를 해주세요."
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "연결된 트위터 계정이 없습니다. 설정 페이지에서 계정을 연결하세요."
+            no_facebook_connection: "연결된 페이스북 계정이 없습니다. 설정 페이지에서 계정을 연결하세요."
     google plus: "구글 플러스"
     connect to: "회원님의 %{connection} 계정에 접속"
     deleted connection: "%{connection}  접속이 취소되었습니다."
@@ -988,7 +988,7 @@ ko:
         h3: "YouVersion은 세계적인 공동체입니다."
         h3 sub: "전세계적으로 %{language_count}개 이상의 언어로 제공되고 있습니다."
         main: "수천만의 사람들이 성경앱™을 통해서 하나님의 말씀이 그들의 일상 생활의 한 부분이 되도록 사용하고 있습니다. 이 무료 앱을 다운로드하여 책갈피, 노트및 성경읽기계획 등을 어디에서나 사용하세요. 수백 종의 번역본을 비롯한 오디오 성경을 여러분의 모바일 기기에서 사용하세요."
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "사용하는 기기로 Bible.com/ko/app<br> 에 접속하세요."
         download now: "지금 성경 앱 다운로드"
         what people: "무료 성경 앱에 대한 의견..."
         t1: "항상 말씀을 지니고 있습니다."

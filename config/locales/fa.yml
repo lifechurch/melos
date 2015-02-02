@@ -4,7 +4,7 @@ fa:
         formats: 
             votd: "%B %-d, %Y"
     counter: 
-        format: "۹۹۹،۹۹۹،۹۹۹"
+        format: "999,999,999"
     social: 
         intro page: 
             main heading: "گفتگوها و آموخته‌ها"
@@ -177,7 +177,7 @@ fa:
     my picture: "به‌روز رسانی عکس"
     my notifications: "تنظیم اعلانات"
     my devices: "دستگاه‌هاى متصل"
-    language name: "انگلیسی"
+    language name: "فارسی"
     sign in: "ورود به سيستم"
     sign up: "ثبت نام"
     have an account: "آیا حساب کاربری دارید؟"
@@ -453,7 +453,7 @@ fa:
         user name: "نام كاربری"
         first name: "نام"
         last name: "نام خانوادگى"
-        agreement: "شرایط %{terms_link} را می‌پذیرم."
+        agreement: "%{terms_link} را می‌پذیرم."
         terms and conditions: "ضوابط و شرایط"
         email: "ای‌میل"
         mobile: "تلفن همراه"

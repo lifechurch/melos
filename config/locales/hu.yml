@@ -724,8 +724,8 @@ hu:
             readings 5 or more: "Biblia olvasás"
         stats: 
             friends reading: 
-                one: "{0} barát iratkozott fel erre a tervre"
-                other: "%{count} barát iratkozott fel erre a tervre"
+                one: "%{count} barátod iratkozott fel erre a tervre"
+                other: "%{count} barátod iratkozott fel erre a tervre"
             friends completed: 
                 one: "%{count} barát végezte el ezt a tervet"
                 other: "%{count} barát végezte el ezt a tervet"

@@ -152,8 +152,8 @@ vi:
     share error: "Xin lỗi bạn, có lỗi kỹ thuật khi chia sẻ thông điệp. Xin hãy thử lại."
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "Bạn chưa kết nối với tài khoản Twitter của mình. Vui lòng tạo kết nối ở trang cài đặt."
+            no_facebook_connection: "Bạn chưa kết nối với tài khoản Facebook của mình. Vui lòng tạo kết nối ở trang cài đặt."
     google plus: "Google+"
     connect to: "Kết nối với tài khoản %{connection} của bạn"
     deleted connection: "Hủy bỏ thành công kết nối với %{connection}."
@@ -988,7 +988,7 @@ vi:
         h3: "YouVersion được phổ biến toàn cầu"
         h3 sub: "Hơn %{language_count} ngôn ngữ toàn cầu."
         main: "Hàng chục triệu người đang sử dụng App Kinh Thánh để Lời Chúa trở thành một phần trong cuộc sống hằng ngày của họ. Hãy tải ứng dụng miễn phí và truy cập các đánh dấu, ghi chú, và kế hoạch đọc Kinh Thánh của bạn từ bất cứ nơi đâu. Chọn lựa từ hàng trăm bản dịch, bao gồm Kinh Thánh phát thanh, tất cả chỉ trong thiết bị di động của bạn!"
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "Vào Bible.com/app<br>trên thiết bị di động của bạn"
         download now: "Tải App Kinh Thánh bây giờ"
         what people: "Mọi người đang nói gì về App Kinh Thánh miễn phí..."
         t1: "Tôi luôn mang theo Lời Chúa."

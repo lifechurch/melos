@@ -1031,7 +1031,7 @@ da:
                 subscribe heading: "Abonnér på læseplaner."
                 subscribe description: "Dækker hele Bibelen med fokus på et emne, eller giver dig andagter fra værdsatte undervisere. Vælg din plan, så vil du hver dag få skriftsteder, der venter på dig."
                 download heading: "Tag Bibelen med dig."
-                download description: "<a href='https://bible.com/download'>Hent</a> 'Bible App' gratis til enhver mobil enhed. Når du bruger den mobile app, vil dine noter, bogmærker, fremhævelser, planer og meget mere, automatisk blive synkroniseret på tværs af alle dine enheder."
+                download description: "<a href='https://bible.com/download'>Hent</a> Bible App gratis til enhver mobil enhed. Når du bruger den mobile app, vil dine noter, bogmærker, fremhævelser, planer og meget mere, automatisk blive synkroniseret på tværs af alle dine enheder."
             get started: "Kom i gang med en gratis konto."
             word with you: "Gud´s ord er med dig."
             download action: "Hent Bible App"
