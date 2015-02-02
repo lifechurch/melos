@@ -1,5 +1,5 @@
 # Danish translations for Backend (YouVersion).
-# Copyright (C) 2014 LifeChurch.tv
+# Copyright (C) 2015 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-19 09:29-0609\n"
-"PO-Revision-Date: 2014-12-19 09:29-0609\n"
+"POT-Creation-Date: 2015-02-02 11:20-0600\n"
+"PO-Revision-Date: 2015-02-02 11:20-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: da <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-01-26 12:23-0600\n"
+"PO-Revision-Date: 2015-01-26 12:23-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: da <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -32,8 +32,8 @@ msgstr ""
 "#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:06-0600\n"
-"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"POT-Creation-Date: 2015-01-26 12:32-0600\n"
+"PO-Revision-Date: 2015-01-26 12:32-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: da <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -61,7 +61,7 @@ msgid "moment.bookmark.title"
 msgstr "{name} bogmærkede <b>{reference_human}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "Bliv klar til Jul med en Advent Bibel Plan"
+msgstr "Bliv klar til Jul med en Advent bibellæseplan"
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Læs bibelen dagligt i 2015. En plan hjælper!"
@@ -115,7 +115,7 @@ msgid "moment.system.christmas.title"
 msgstr "Del de gode nyheder: Frelseren er født!"
 
 msgid "moment.system.find_friends.title"
-msgstr "Bibel App´en er endnu bedre med venner. Søg i dine kontakter for at finde venner."
+msgstr "Bibel App'en er endnu bedre med venner. Søg i dine kontakter for at finde venner."
 
 msgid "moment.video.watched.self.title"
 msgstr "Du så <b>{title}</b>"
@@ -139,7 +139,7 @@ msgid "notifications.comments.moment.mine.plan_activity"
 msgstr "{name} kommenterede på din plan: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "{name} kommenterede på din Bibel Plan: “{comment}”"
+msgstr "{name} kommenterede på din Bibelplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s bogmærke: “{comment}”"
@@ -148,7 +148,7 @@ msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s nye venskab med {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
-msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s highlight: “{comment}”"
+msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s markering: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s note: “{comment}”"
@@ -169,16 +169,16 @@ msgid "notifications.comments.moments.friend.owner.plan_activity"
 msgstr "{moment_owner_name} kommenterede også på deres Plan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} kommenterede også på deres Bibel Plan: “{comment}”"
+msgstr "{moment_owner_name} kommenterede også på deres Bibelplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity"
 msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s Plan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s Bibel Plan: “{comment}”"
+msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s Bibelplan: “{comment}”"
 
 msgid "notifications.friendships.accept"
-msgstr "{name} accepterede din venne forespørgsel"
+msgstr "{name} accepterede din venneforespørgsel"
 
 msgid "notifications.friendships.nowfriends"
 msgstr "{name} er nu din ven"
@@ -202,16 +202,16 @@ msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} synes om din note"
 
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name} synes om din note far {reference_human}"
+msgstr "{name} synes om din note om {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} synes om din note, “{title}”"
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} synes om din Plan aktivitet"
+msgstr "{name} synes om din Plan-aktivitet"
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} synes om din Bibel Plan aktivitet"
+msgstr "{name} synes om din Bibelplan-aktivitet"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} bogmærkede {reference_human}"
@@ -226,19 +226,19 @@ msgid "notifications.moments.create.note.reference"
 msgstr "{name} tilføjede en note på {reference_human}"
 
 msgid "notifications.moments.create.note.title"
-msgstr "{name} atilføjede en note, “{title}”"
+msgstr "{name} tilføjede en note, “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
 msgstr "{name} færdiggjorde deres Plan, {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} færdiggjorde deres Bibel Plan, {title}"
+msgstr "{name} færdiggjorde deres Bibelplan, {title}"
 
 msgid "notifications.moments.create.plan_subscription"
 msgstr "{name} startede en ny Plan, {title}"
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} startede en ny Bibel Plan, {title}"
+msgstr "{name} startede en ny Bibelplan, {title}"
 
 msgid "notifications.people.contact.joined"
 msgstr "{name} er lige tilmeldt YouVersion. Marker for at tilføje dem som Ven."
@@ -247,39 +247,39 @@ msgid "notifications.system.test"
 msgstr "Hent vores Kids Bibel App nu!!!"
 
 msgid "share.find_friends.invite_email_html"
-msgstr "<p> Hej! </p><p>Jeg bruger Bibel App´en fra YouVersion og ønsker at dele det med dig. Hvis du er ny i forhold til den app, er det en enkel måde at bringe skønheden og sandheden fra Bibelen i hverdagen. </p><p> <strong> Få Bibel App: </strong> Læs, se, lyt og del på din smartphone eller tablet, og online på Bible.com </p><p> <strong> Sæt Din konto op: </strong> abonner på Bibel Planer og få adgang til bogmærker, fremhævelser og noter på tværs af enheder </p><p> <strong>  Tilføj venner (Som mig!): </strong> udforsk og diskuter Bibelen med mennesker, du holder </p><p>  det er alt sammen i Bibel App´en - kom i gang her: </p>"
+msgstr "<p> Hej! </p><p>Jeg bruger Bibel App'en fra YouVersion og ønsker at dele det med dig. Hvis du er ny i forhold til den app, er det en enkel måde at bringe skønheden og sandheden fra Bibelen ind i hverdagen. </p><p> <strong> Få Bibel App'en: </strong> Læs, se, lyt og del på din smartphone eller tablet, og online på Bible.com </p><p> <strong> Sæt Din konto op: </strong> abonner på Bibelplaner og få adgang til bogmærker, fremhævelser og noter på tværs af enheder </p><p> <strong>Tilføj venner (som mig!): </strong> udforsk og diskuter Bibelen med mennesker, du holder af </p><p>det er alt sammen i Bibel App'en - kom i gang her: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""
-"Hej!  \n"
+"Hej! \n"
 "\n"
-"Jeg bruger Bibel App´en fra YouVersion og ønsker at dele det med dig. Hvis du er ny i forhold til Bibel app´en. Det er en enkel måde at bringe skønheden og sandheden fra Bibelen ind i hverdagen.  \n"
+"Jeg bruger Bibel App'en fra YouVersion og ønsker at dele det med dig. Hvis du er ny i forhold til Bibel app'en, er det en enkel måde at bringe skønheden og sandheden fra Bibelen ind i hverdagen.\n"
 "\n"
-"Få Bibel App: Læs, se, lyt og del på din smartphone eller tablet, og online på Bible.com. \n"
+"Få Bibel App'en: Læs, se, lyt og del på din smartphone eller tablet, og online på Bible.com. \n"
 " \n"
-"Opsæt din konto: abonner på Bibel Planer og få adgang til bogmærker, fremhævelser og noter på tværs af enheder. \n"
+"Opsæt din konto: abonner på Bibelplaner og få adgang til bogmærker, fremhævelser og noter på tværs af enheder. \n"
 "\n"
 "Tilføj venner (som mig!): Udforsk og diskuter Bibelen med mennesker, du holder af. \n"
 "\n"
-"Alt er i Bibel  App´en - kom i gang her: "
+"Alt er i Bibel App'en - kom i gang her: "
 
 msgid "share.invite_email_subject"
-msgstr "Brug Bibel App ligesom mig"
+msgstr "Brug Bibel App'en ligesom mig!"
 
 msgid "share.invite_facebook"
-msgstr "Jeg elsker Bibel App´en! Den hjælper mig med til gøre Bibelen til en del af min hverdag. Den lader mig markere, høre lyd bibler, skrive noter, følge læse planer...med tilhørende vidoer! Hent den nu (det er gratis):"
+msgstr "Jeg elsker Bibel App'en! Den hjælper mig med at gøre Bibelen til en del af min hverdag. Den lader mig markere, høre lydbibler, skrive noter, følge læseplaner... endda med tilhørende videoer! Hent den nu (det er gratis):"
 
 msgid "share.invite_facebook_direct"
-msgstr "Har du Bibel App´en? Jeg elsker den og tror at det vil du også gøre. Her er et link:"
+msgstr "Har du Bibel App'en? Jeg elsker den, og det tror jeg også, du vil gøre. Her er et link:"
 
 msgid "share.invite_sms"
-msgstr "Har du Bibel App´en fra YouVersion? Jeg elsker den og tror at det vil du også gøre. Her er et link:"
+msgstr "Har du Bibel App'en fra YouVersion? Jeg elsker den, og det tror jeg også, du vil gøre. Her er et link:"
 
 msgid "share.invite_sms_prefix"
 msgstr "Fra {name}:"
 
 msgid "share.invite_twitter"
-msgstr "@YouVersion´s Bible App har en permanent ikon på min startskærm. Læs, se, lyt og dele ... alt i en gratis app:"
+msgstr "@YouVersion's Bible App har et permanent ikon på min startskærm. Læs, se, lyt og del … alt i en gratis app:"
 
 msgid "share.invite_twitter_direct"
-msgstr "Har du Bibel App´en fra @YouVersion? Jeg elsker den og tror at det vil du også gøre. Her er et link:"
+msgstr "Har du Bibel App'en fra @YouVersion? Jeg elsker den, og det tror jeg også, du vil gøre. Her er et link:"

@@ -1,5 +1,5 @@
 # Persian translations for Backend (YouVersion).
-# Copyright (C) 2014 LifeChurch.tv
+# Copyright (C) 2015 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-22 10:03-0609\n"
-"PO-Revision-Date: 2014-12-22 10:03-0609\n"
+"POT-Creation-Date: 2015-01-26 10:05-0600\n"
+"PO-Revision-Date: 2015-01-26 10:05-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-22 10:04-0609\n"
-"PO-Revision-Date: 2014-12-22 10:04-0609\n"
+"POT-Creation-Date: 2015-01-26 12:23-0600\n"
+"PO-Revision-Date: 2015-01-26 12:23-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -40,7 +40,7 @@ msgid "moment.bible.download.self.title"
 msgstr "شما ترجمۀ <b>{version} را دانلود کرده‌اید.</b>"
 
 msgid "moment.bible.download.title"
-msgstr "{name} نشخه <b>{version}</b>کتاب مقدس را بارگذاری کرده است"
+msgstr "{name} ترجمهٔ <b>{version}</b>کتاب‌مقدس را دانلود کرده است"
 
 msgid "moment.bookmark.self.title"
 msgstr "شما <b>{reference_human}را نشانه‌گزاری کرده‌اید.</b>"
@@ -58,7 +58,7 @@ msgid "moment.friendship.title"
 msgstr "{user_name} با <b>{friend_name}</b>دوست شده است"
 
 msgid "moment.highlight.self.title"
-msgstr "شما <b>{reference_human} را هایلایت کرده اید.</b>"
+msgstr "شما <b>{reference_human} را هایلایت کرده‌اید.</b>"
 
 msgid "moment.highlight.title"
 msgstr "{name} <b>{reference_human}</b>را هایلات کرده است"
@@ -67,10 +67,10 @@ msgid "moment.note.self.title"
 msgstr "شما یک یادداشت اضافه کردید. <b>{title}</b>"
 
 msgid "moment.note.title"
-msgstr "{name} <b>{title}</b>را به یاد داشتهای خود اضافه کرده است"
+msgstr "{name} <b>{title}</b>را به یادداشت‌های خود اضافه کرده است"
 
 msgid "moment.plan_completion.self.title"
-msgstr "شما برنامه مطالعه را تکمیل نموده اید"
+msgstr "شما برنامهٔ مطالعه را تکمیل کرده‌اید"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} یک برنامه مطالعه را تکمیل کرده است."
@@ -82,16 +82,16 @@ msgid "moment.plan_segment_completion.self.title"
 msgstr "شما روز  <b>{segment}</b> از برنامه  <b>{title} را کامل کرده اید.</b>"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} <b>مطالعه {segment} روز </b> برنامه مطالعه <b>{title}</b>را تکمیل کرده است"
+msgstr "{name} <b>مطالعه {segment} روز </b> برنامهٔ مطالعه <b>{title}</b>را تکمیل کرده است"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "شما برنامه مطالعه جدیدی را آغاز نموده اید"
+msgstr "شما برنامهٔ مطالعهٔ جدیدی را آغاز کرده‌اید"
 
 msgid "moment.plan_subscription.title"
-msgstr "{name} استفاده از برنامه مطالعه جدیدی را آغاز نموده است"
+msgstr "{name} برنامهٔ مطالعهٔ جدیدی را آغاز کرده است"
 
 msgid "moment.system.bible_series_promo.body"
-msgstr " امشب<i>سریال کتاب مقدس</i>را تماشا کنید!"
+msgstr " امشب<i>سری برنامهٔ کتاب‌مقدس</i>را تماشا کنید!"
 
 msgid "moment.system.bible_series_promo.title"
 msgstr "<i>سری کتاب‌مقدس</i>"
@@ -100,19 +100,19 @@ msgid "moment.system.christmas.title"
 msgstr "خبر خوش را به همه اعلام کنید: نجات‌دهندۀ عالم به دنیا آمد!"
 
 msgid "moment.system.find_friends.title"
-msgstr "استفاده بهتر از برنامه کتاب مقدس با دوستانتان جستجوی لیست دوستان شما برای یافتن آندسته از دوستانی که از برنامه کتاب مقدس استفاده می کنند. "
+msgstr "استفادهٔ بهتر از برنامهٔ «کتاب‌مقدس» به همراه دوستان. برای یافتنن دوستان فهرست دوستان‌تان را جستجو کنید."
 
 msgid "moment.video.watched.self.title"
-msgstr "شما <b>{title}</b>را تماشا نموده اید"
+msgstr "شما <b>{title}</b>را تماشا کرده‌اید"
 
 msgid "moment.video.watched.title"
-msgstr "{name} ویدیوی <b>{title}</b>را مشاهده نموده اید"
+msgstr "{name} ویدیوی <b>{title}</b>را مشاهده کرده‌اید"
 
 msgid "notifications.comments.moment.mine.bookmark"
-msgstr "{name}برای نشانه گزاری شما نظر نوشته است. “{comment}”"
+msgstr "{name}برای نشانه‌گزاری شما نظر نوشته است. “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship"
-msgstr "{name} به دوستی جدید شما با {friend_name} نظر نوشت: “{comment}”"
+msgstr "{name} در مورد دوستی جدید شما با {friend_name} نظر نوشت: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}برای هایلایت شما نظر نوشته است: “{comment}”"
@@ -121,16 +121,16 @@ msgid "notifications.comments.moment.mine.note"
 msgstr "{name}برای یادداشت شما نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity"
-msgstr "{name} برای برنامه شما نظر نوشته است: “{comment}”"
+msgstr "{name} برای برنامهٔ مطالعهٔ شما نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moment.mine.plan_activity.push"
-msgstr "{name} برای برنامه مطالعه کتاب مقدس شما نظر نوشت: “{comment}”"
+msgstr "{name} برای برنامهٔ مطالعهٔ کتاب‌مقدس شما نظر نوشت: “{comment}”"
 
 msgid "notifications.comments.moments.friend.bookmark"
-msgstr "{commenter_name}همچنین برای نشانه گزاری{moment_owner_name}نظر نوشته است: “{comment}”"
+msgstr "{commenter_name}همچنین برای نشانه‌گزاری{moment_owner_name}نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.friendship"
-msgstr "{commenter_name} نیز برای دوستی جدید {moment_owner_name} همراه {friend_name} نظر نوشته است: “{comment}”"
+msgstr "{commenter_name} نیز برای دوستی جدید {moment_owner_name} با {friend_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} نیز برای هایلایت {moment_owner_name} نظر نوشته است: “{comment}”"
@@ -139,28 +139,28 @@ msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} نیز برای یادداشت {moment_owner_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} نیز بر نشانه گزاری خویش نظر داد: “{comment}”"
+msgstr "{moment_owner_name} نیز در مورد نشانه‌گزاری خود نظر داد: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} نیز برای دوستی جدید با{friend_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} نیز برای هایلایت خویش نظر داده است: “{comment}”"
+msgstr "{moment_owner_name} نیز برای هایلایت خود نظر داده است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
-msgstr "{moment_owner_name} نیز برای یادداشت خویش نظر نوشته است: “{comment}”"
+msgstr "{moment_owner_name} نیز برای یادداشت خود نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity"
-msgstr "{moment_owner_name} نیز برای برنامه مطالعه خویش نظر نوشته است: “{comment}”"
+msgstr "{moment_owner_name} نیز برای برنامه مطالعه خود نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} نیز بر برنامه مطالعه کتاب مقدس خویش نظر داده است: “{comment}”"
+msgstr "{moment_owner_name} نیز در مورد برنامهٔ مطالعهٔ کتاب‌مقدس خود نظر داده است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity"
-msgstr "{commenter_name} نیز برای برنامه مطالعه {moment_owner_name} نظر نوشته است: “{comment}”"
+msgstr "{commenter_name} نیز برای برنامهٔ مطالعهٔ {moment_owner_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity.push"
-msgstr "{commenter_name} نیز بر برنامه مطالعه {moment_owner_name} نظر نوشته است: “{comment}”"
+msgstr "{commenter_name} نیز در مورد برنامهٔ مطالعهٔ {moment_owner_name} نظر نوشته است: “{comment}”"
 
 msgid "notifications.friendships.accept"
 msgstr "{name} درخواست دوستی شما را پذیرفت."
@@ -169,37 +169,37 @@ msgid "notifications.friendships.nowfriends"
 msgstr "{name} اکنون با شما دوست است."
 
 msgid "notifications.friendships.offer"
-msgstr "{name} می خواهد با شما در YouVersion دوست شود."
+msgstr "{name} می‌خواهد با شما در یوورژن دوست شود."
 
 msgid "notifications.friendships.suggestion"
-msgstr "آیا می خواهید با {name} در YouVersion دوست شوید؟"
+msgstr "آیا می‌خواهید با {name} در یوورژن دوست شوید؟"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name} نشانه گزاری شما را پسندید، {reference_human}"
+msgstr "{name} نشانه‌گزاری شما را پسندید، {reference_human}"
 
 msgid "notifications.likes.moment.mine.friendship"
 msgstr "{name} دوستی جدید شما را با {friend_name} پسندیده است."
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name} هایلایت شما پسندید، {reference_human}"
+msgstr "{name} هایلایت شما را پسندید، {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name}یادداشت شما را پسندید."
 
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name} یادداشت شما را بر {reference_human} پسندید."
+msgstr "{name} یادداشت شما بر {reference_human} را پسندید."
 
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} یادداشت شما را پسندید، “{title}”"
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} فعالیت برنامه شما را پسندید."
+msgstr "{name} فعالیت برنامهٔ شما را پسندید."
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} فعالیت برنامه مطالعه کتاب مقدس شما را پسندید."
+msgstr "{name} فعالیت برنامهٔ مطالعهٔ کتاب‌مقدس شما را پسندید."
 
 msgid "notifications.moments.create.bookmark"
-msgstr "{name}، {reference_human} را نشانه گزاری کرد."
+msgstr "{name}، {reference_human} را نشانه‌گزاری کرد."
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name}، {reference_human} را هایلایت کرد."
@@ -208,16 +208,16 @@ msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name}یک یادداشت اضافه کرد."
 
 msgid "notifications.moments.create.note.reference"
-msgstr "{name} یک یادداشت برای {reference_human} اضافه کرد."
+msgstr "{name} یک یادداشت برای {reference_human} نوشت."
 
 msgid "notifications.moments.create.note.title"
-msgstr "{name} یک یادداشت اضافه کرد، “{title}”"
+msgstr "{name} یک یادداشت نوشت، “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name}برنامه مطالعه خویش را به اتمام رسانده، {title}"
+msgstr "{name}برنامه مطالعه خود را به اتمام رسانده، {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} برنامه مطالعه خویش را به اتمام رسانده است، {title}"
+msgstr "{name} برنامهٔ مطالعهٔ خود را به اتمام رسانده است، {title}"
 
 msgid "notifications.moments.create.plan_subscription"
 msgstr "{name} یک برنامه جدید مطالعه را آغاز کرده است، {title}"
@@ -229,4 +229,4 @@ msgid "notifications.people.contact.joined"
 msgstr "{name} به‌تازگی عضو یوورژن شده است. برای افزودن به لیست دوستان لطفاً اینجا کلیک کنید."
 
 msgid "notifications.system.test"
-msgstr "برنامه کتاب مقدس برای کودکان را همین الان دانلود کنید!!!"
+msgstr "اپ/برنامهٔ کتاب‌مقدس برای کودکان را همین الان دانلود کنید!!!"
