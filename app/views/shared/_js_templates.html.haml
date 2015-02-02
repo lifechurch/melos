@@ -128,38 +128,11 @@
   %script#pane-share-tmpl{type:"text/x-handlebars-template"}
     #share-pane.tab-panel
       .pane
-        #tab-side-container
-          %ul
-            %li
-              = link_to "#fb-share" do
-                %span.share_logo
-                  %span.share_logo_fb
-            %li
-              = link_to "#tw-share" do
-                %span.share_logo
-                  %span.share_logo_twitter
-            %li
-              = link_to "#g-share" do
-                %span.share_logo
-                  %span.share_logo_gplus
-          #fb-share.tab-content
-            .share_message
-              %span
-                %b#short_link
-                .fb-share-button{"data-href" => "", "data-layout" => "button"}
-            
-          #tw-share.tab-content
-            .share_message
-              %span
-                %b#short_link
-              %a.twitter-share-button{href: "https://twitter.com/share", "data-url" => "", "data-size" => "large", "data-count" => "none", "data-dnt" => "true", "data-text" => ""}
-                Tweet
-              
-          #g-share.tab-content
-            .share_message
-              %span
-                %b#short_link
-            .g-plus{"data-action"=>"share", "data-href" => ""}
+        %span#short_link
+        .fb-share-button{"data-href" => "", "data-layout" => "button"}
+        %a.twitter-share-button{href: "https://twitter.com/share", "data-url" => "", "data-size" => "large", "data-count" => "none", "data-dnt" => "true", "data-text" => ""}
+          Tweet
+        .g-plus{"data-action"=>"share", "data-href" => ""}
 
   %script#pane-link-tmpl{type:"text/x-handlebars-template"}
     :plain

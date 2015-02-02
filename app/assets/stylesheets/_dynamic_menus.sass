@@ -550,165 +550,23 @@
 #menu_verse_actions #share-pane
 
   .pane
-    padding: 0
-    width: 600px
+    padding: 20px 30px
+    width: 540px
     .share_errors
       color: red
       font-weight: bold
-  #tab-side-container  
-    height: 187px
-    .tab-content
-      margin-left: 105px
-  #tab-side-container ul  
-    list-style: none 
-    margin: 0 
 
-    float: left 
-  #tab-side-container ul li  
-    width: 60px 
-    margin: 0 
-    padding: 0 0 0 30px 
-    text-align: center 
-    background-color: #eee
-  #tab-side-container ul li.active
-    background-color: white    
-    border-right: none
-  #tab-side-container ul li a  
-    display: block 
-    padding: 15px 0 
-    outline: none 
-  #tab-side-container ul li a:hover  
-    text-decoration: underline 
-  #tab-side-container ul li.selected-tab  
-    background: #fff 
-    position: relative 
-    left: 1px 
-  #tab-side-container ul li:first-child.selected-tab  
-    border-top: none 
-  #tab-side-container ul li a.selected-tab  
-    font-weight: bold 
-    text-decoration: none 
-  #tab-side-container .panel-container  
-    padding-top: 5px 
-    padding-left: 120px   
-
-  .share_message
-    padding-top: 25px
-  .share_message textarea
-    margin-bottom: 8px
-    line-height: 18px
-    width: 300px
-
-  .share_services
-    overflow: hidden
-    margin-top: 10px
-    display: table
-    // width: 558px
-
-  .share_logo,
-  .share_checkbox,
-  .share_character_count
-    display: table-cell
-    height: 32px
-    vertical-align: center
-
-  .share_logo
-    width: 42px
-
-  .share_logo_fb,
-  .share_logo_twitter,
-  .share_logo_gplus
-    display: block
-    height: 32px
-    width: 32px
-
-  .share_logo_fb
-    background: image-url("reader-share-sprite.png") no-repeat 0 0
-
-  .share_logo_twitter
-    background: image-url("reader-share-sprite.png") no-repeat 0 -43px
-  
-  .share_logo_gplus
-    margin-top: -1px
-    background: image-url("reader-share-sprite.png") no-repeat 0 -155px
-
-  .share_checkbox
-    width: 46px
-
-  .share_character_count
-    width: 465px
-    overflow: hidden
-    padding: 0 0 0 15px
-
-  .share_action
-    clear: both
-    margin-top: 8px
-    float: none
-    margin-bottom: 20px
-    & button
-      color: #ffffff
-      font-size: 15px
-      font-weight: 500
-      letter-spacing: 0.30px
-      &:active
-        color: white
-      &:focus
-        color: white
-        position: relative
-        top: 1px
-
-#menu_verse_actions #share-pane .share_services
-  &::selection
-    background: transparent
-    cursor: default
-  .share_slider
-    display: block
-    cursor: default
-    &::selection
-      background: transparent
-      cursor: default
-    &::-moz-selection
-      background: transparent
-      cursor: default
-    .slider
+    #short_link
       display: block
-      width: 32px
-      border-radius: 12px
-      border: 1px solid #c7c7c7
-      height: 22px
-      background: image-url("reader-share-sprite.png") no-repeat 0 -84px
-      background-color: #c7c7c7
-      -webkit-transition: background-color 200ms, border-color 200ms
-      -moz-transition: background-color 200ms, border-color 200ms
-      -o-transition: background-color 200ms, border-color 200ms
-      transition: background-color 200ms, border-color 200ms
+      font-weight: bold
 
-      &.network_active
-        border: 1px solid #59b200
-        background: image-url("reader-share-sprite.png") no-repeat 0 -126px
-        background-color: #59b200
+    .fb_iframe_widget
+      display: block
+      margin: 0 0 15px
 
-
-  span:first-child
-    margin-left: 0
-
-
-
-#menu_verse_actions #share-pane .character_count
-  background-color: #efefef
-  border: 0
-  color: black
-  font-size: 12px
-  font-weight: bold
-  margin-top: 2px
-  padding: 1px 4px 0
-  height: 22px
-  display: inline-block
-  border-radius: 4px
-  &.exceeded
-    background-color: red
-  &.warning
-    background-color: yellow
+    #___plus_0
+      display: block !important
+      margin: 8px 0 0 !important
 
 #menu_verse_actions #share-pane .share_services .share_slider .translation_missing
   border: 0
