@@ -21,8 +21,9 @@ class window.Panes.Share extends window.Panes.Base
     @short_link         = @el.find("#short_link")
     @share_link_field   = @el.find("#share_link")
     @textarea_el        = @el.find("textarea")
-    @tw_btn             = @el.find(".twitter")
-    @fb_btn             = @el.find(".facebook")
+    @tw_btn             = @el.find(".tw-share-button")
+    @fb_btn             = @el.find(".fb-share-button")
+    @g_btn             = @el.find(".gplus")
     @tw_char_count      = @el.find(".share_character_count .tw")
     @fb_char_count      = @el.find(".share_character_count .fb")
     @char_count         = @el.find(".share_character_count")
@@ -33,25 +34,8 @@ class window.Panes.Share extends window.Panes.Base
 
     @share_errors.html("")
 
-    @tw_btn.click ()=>
-      @toggleShareButton(@tw_btn)
-    @fb_btn.click ()=> 
-      @toggleShareButton(@fb_btn)
+    @el.find("#tab-side-container").easytabs({'updateHash': false, 'animate': false})
 
-    @form_el.submit (e)=>
-
-      # validations
-      @share_errors.html("")
-
-      # none checked
-      if !@tw_checkbox.is(":checked") && !@fb_checkbox.is(":checked")
-        @share_errors.append(@share_errors.data("error-none-checked"))
-        e.preventDefault()
-
-      # too many characters
-      if (@tw_checkbox.prop("checked") && @tw_char_count.next().hasClass("exceeded")) || (@fb_checkbox.prop("checked") && @fb_char_count.next().hasClass("exceeded"))
-        @share_errors.append(@share_errors.data("error-character-limit"))
-        e.preventDefault()
 
   toggleShareButton: (btn)=>
 
@@ -104,6 +88,9 @@ class window.Panes.Share extends window.Panes.Base
       link = params.link.trim().toLowerCase()
       @short_link.html(link)
       @share_link_field.val(link)
+      @fb_btn.attr('data-href', link)
+      @tw_btn.attr('data-url', link)
+      @g_btn.attr('data-href', link)
 
       @el.find(".character_count").remove()
 

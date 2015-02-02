@@ -550,19 +550,60 @@
 #menu_verse_actions #share-pane
 
   .pane
+    padding: 0
+    width: 600px
     .share_errors
       color: red
       font-weight: bold
+  #tab-side-container  
+    height: 187px
+    .tab-content
+      margin-left: 105px
+  #tab-side-container ul  
+    list-style: none 
+    margin: 0 
 
+    float: left 
+  #tab-side-container ul li  
+    width: 60px 
+    margin: 0 
+    padding: 0 0 0 30px 
+    text-align: center 
+    background-color: #eee
+  #tab-side-container ul li.active
+    background-color: white    
+    border-right: none
+  #tab-side-container ul li a  
+    display: block 
+    padding: 15px 0 
+    outline: none 
+  #tab-side-container ul li a:hover  
+    text-decoration: underline 
+  #tab-side-container ul li.selected-tab  
+    background: #fff 
+    position: relative 
+    left: 1px 
+  #tab-side-container ul li:first-child.selected-tab  
+    border-top: none 
+  #tab-side-container ul li a.selected-tab  
+    font-weight: bold 
+    text-decoration: none 
+  #tab-side-container .panel-container  
+    padding-top: 5px 
+    padding-left: 120px   
+
+  .share_message
+    padding-top: 25px
   .share_message textarea
     margin-bottom: 8px
     line-height: 18px
+    width: 300px
 
   .share_services
     overflow: hidden
     margin-top: 10px
     display: table
-    width: 558px
+    // width: 558px
 
   .share_logo,
   .share_checkbox,
@@ -575,7 +616,8 @@
     width: 42px
 
   .share_logo_fb,
-  .share_logo_twitter
+  .share_logo_twitter,
+  .share_logo_gplus
     display: block
     height: 32px
     width: 32px
@@ -585,6 +627,10 @@
 
   .share_logo_twitter
     background: image-url("reader-share-sprite.png") no-repeat 0 -43px
+  
+  .share_logo_gplus
+    margin-top: -1px
+    background: image-url("reader-share-sprite.png") no-repeat 0 -155px
 
   .share_checkbox
     width: 46px
