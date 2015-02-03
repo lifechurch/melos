@@ -152,8 +152,8 @@ lv:
     share error: "Piedodiet, daloties ar jūsu ziņu radās kļūme. Lūdzu mēģiniet vēlreiz."
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "Tev nav pievienota Twitter konta. Lūdzu pievieno savu kontu Iestatījumu lapā."
+            no_facebook_connection: "Tev nav pievienota Facebook konta. Lūdzu pievieno savu kontu Iestatījumu lapā. "
     google plus: "Google+"
     connect to: "Pieslēgties jūsu %{connection} kontam."
     deleted connection: "Jūs veiksmīgi atslēdzāties no %{connection}"
@@ -992,7 +992,7 @@ lv:
         h3: "YouVersion ir globāla"
         h3 sub: "Pieejams vairāk kā %{language_count} valodās visā pasaulē."
         main: "Desmitiem miljonu cilvēku lieto Bībeles aplikāciju™ lai padarītu Dieva Vārdu par daļu no viņu ikdienas dzīves. Lejupielādē bezmaksas aplikāciju un piekļūsti savām grāmatzīmēm, piezīmēm un lasīšanas plāniem no jebkuras vietas. Izbaudi simtiem tulkojumu, ieskaitot audio, viss uz tavas mobilās ierīces."
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "Dodies uz Bible.com/app<br/> savā mobilajā ierīcē."
         download now: "Lejuplādējiet Bībeles aplikāciju tagad"
         what people: "Ko cilvēki saka par bezmaksas Bībeles aplikāciju..."
         t1: "Man vienmēr ir Vārds"

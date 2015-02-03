@@ -152,8 +152,8 @@
     share error: "Det skjedde en feil ved deling av meldingen din. Vennligst prøv igjen."
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "Du har ingen tilkyttet Twitter-konto. Kople til konten din på siden for innstillinger."
+            no_facebook_connection: "Du er ikke tilknyttet en Facebook-konto. Kople til din konto på siden for innstillinger."
     google plus: "Google+"
     connect to: "Koble til din %{connection} konto"
     deleted connection: "Din kobling til %{connection} er nå fjernet."
@@ -990,7 +990,7 @@
         h3: "YouVersion er verdensomspennende"
         h3 sub: "Tilgjengelig på mer enn %{language_count} språk verden over."
         main: "Et titalls millioner mennesker bruker 'the Bible App™' for å gjøre Guds ord til en del av sine daglige liv. Last ned denne gratis appen og få tilgang til dine bokmerker, notater og leseplaner overalt. Du tilbys hundrevis av ulike bibelutgaver, inkludert lydbibler - alt på din mobiltelefon eller ipad."
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "Gå til Bible.com/app<br>på din mobile enhet"
         download now: "Last ned Bibel-appen nå"
         what people: "Dette sier folk om den gratis Bibel-appen..."
         t1: "Jeg har alltid Ordet."
@@ -1059,7 +1059,7 @@
             cross references: "Kryssreferanser"
     app errors: 
         404 plans explanation: "Leter du etter denne planen: <a href='%{plan_path}'>%{title}</a> ?"
-        404 contact support: "Problemer? Kontakt vårt<a href='{support_url}'>&lt;a href='{support_url}'&gt;&lt;/a&gt;</a>support team."
+        404 contact support: "Problemer? Kontakt vårt<a href='{support_url}'>support team</a>."
         404 explanation: "Du kan kanskje prøve å starte igjen fra  <a href='%{reader_path}'>hjemmesiden</a>. Om du fremdeles har problemer, kontakt vårt  <a href='%{support_url}'>support team</a>."
         404 message: "Beklager, siden du ser etter finnes ikke."
         408 message: "Beklager,men våre servere har desverre ikke gitt respons innen rimelig tid."

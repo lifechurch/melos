@@ -152,8 +152,8 @@ nl:
     share error: "Sorry, er ging iets verkeerd tijdens het delen van je bericht. Probeer het nog eens."
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "Je hebt geen gekoppelde Twitter account. Verbind je account op de instellingen pagina."
+            no_facebook_connection: "Je hebt geen gekoppelde Facebook account. Verbind je account op de instellingen pagina."
     google plus: "Google+"
     connect to: "Verbinden met je %{connection}-account"
     deleted connection: "Succesvolle verwijdering van je verbinding met %{connection}."
@@ -990,7 +990,7 @@ nl:
         h3: "YouVersion is wereldwijd"
         h3 sub: "Beschikbaar in meer dan %{language_count} talen wereldwijd."
         main: "Tientallen millioenen mensen gebruiken de Bijbel App om Gods Woord een deel van hun leven te maken. Download de gratis app en krijg toegang op je bladwijzers, notitities en leesplannen vanaf elke plek. Geniet van honderden vertalingen, inclusief audio, alles op je mobiele apparaat."
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "Ga naar Bible.com/app<br>op jouw mobiele toestel"
         download now: "De Bijbel App nu downloaden"
         what people: "Wat mensen over de gratis Bijbel app zeggen…"
         t1: "Ik heb het Woord altijd bij me."

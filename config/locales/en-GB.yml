@@ -990,7 +990,7 @@ en-GB:
         h3: "YouVersion is global"
         h3 sub: "Available in more than %{language_count} languages worldwide."
         main: "Tens of millions of people are using the Bible App™ to make God's Word a part of their daily lives. Download the free app and access your bookmarks, notes, and reading plans from anywhere. Enjoy hundreds of versions, including audio, all on your mobile device."
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "Go to Bible.com/app<br>on your mobile device"
         download now: "Download the Bible App now"
         what people: "What people are saying about the free Bible app..."
         t1: "I always have the Word."

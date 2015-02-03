@@ -724,10 +724,10 @@ sv:
             readings 5 or more: "läsningar"
         stats: 
             friends reading: 
-                one: "{0} vän prenumererar på denna plan"
+                one: "%{count} vän prenumererar på denna plan"
                 other: "%{count} vänner prenumererar på denna plan"
             friends completed: 
-                one: "{0} vän har fullföljt denna plan"
+                one: "%{count} vän har fullföljt denna plan"
                 other: "%{count} vänner har fullföljt denna plan"
             total completions: "Över %{count} färdigt"
             view all: "Visa alla"

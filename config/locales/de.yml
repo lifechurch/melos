@@ -1060,7 +1060,7 @@ de:
     app errors: 
         404 plans explanation: "Suchst du nach dem <a href='%{plan_path}'>%{title}</a> Bibelleseplan?"
         404 contact support: "Gibt es Probleme? Kontaktiere unser <a href='%{support_url}'>Support-Team</a>."
-        404 explanation: "Du kannst es noch einmal von der <a href='%{reader_path}'>Hauptbildschirm</a> aus versuchen. Falls es da immer noch Probleme geben sollte, kontaktiere bitte unser <a href='%{support_url}'>Support-Team</a>."
+        404 explanation: "Du kannst es noch einmal vom <a href='%{reader_path}'>Hauptbildschirm</a> aus versuchen. Falls es da immer noch Probleme geben sollte, kontaktiere bitte unser <a href='%{support_url}'>Support-Team</a>."
         404 message: "Leider kann die Seite, die du suchst, nicht gefunden werden."
         408 message: "Leider haben unsere Server nicht schnell genug geantwortet."
         408 explanation: "Wir wurden benachrichtigt und werden alle bestehenden Probleme so schnell wie möglich lösen. Schauen wir mal, ob wir dir die Bibel nicht wieder zugänglich machen können!"

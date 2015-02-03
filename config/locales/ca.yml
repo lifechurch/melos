@@ -152,8 +152,8 @@ ca:
     share error: "Ens sap greu, però hi ha hagut un error en compartir el teu missatge. Si us plau, prova-ho una altra vegada."
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "No tens enllaçat un compte de Twitter. Connecta el teu compte a la pàgina de configuració."
+            no_facebook_connection: "No tens enllaçat un compte de Facebook. Connecta el teu compte a la pàgina de configuració."
     google plus: "Google+"
     connect to: "Connecta amb el teu compte de %{connection}"
     deleted connection: "T'has desconnectat correctament de %{connection}."
@@ -990,7 +990,7 @@ ca:
         h3: "YouVersion és global"
         h3 sub: "Disponible en més de %{language_count} idiomes d'arreu del món."
         main: "Desenes de milions de persones estan fent servir l'aplicació de la Bíblia™ per fer que la Paraula de Déu una part de les seves vides diàries. Descarrega l'aplicació gratuïta i accedeix als seus marcadors, notes, i els plans de lectura des de qualsevol lloc. Gaudeix de centenars de versions, incloent àudio, tot en el seu dispositiu mòbil."
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "Vés a Bible.com/app<br>amb el teu dispositiu mòbil"
         download now: "Descarrega l'aplicació de la Bíblia ara"
         what people: "El que diu la gent sobre l'aplicació de la Bíblia..."
         t1: "Sempre tinc la Paraula."
