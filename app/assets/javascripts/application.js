@@ -48,6 +48,7 @@
 //= require slick.min
 //= require_self
 //= require jquery.slimscroll.min.js
+//= require jquery.easytabs.min
 //= require jstz-1.0.4
 //= require_tree ./lib/
 //= require_tree ./menus/

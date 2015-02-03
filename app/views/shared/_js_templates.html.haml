@@ -1,4 +1,23 @@
 - if is_reader_page? && presenter.present?
+  :javascript
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : #{Cfg.facebook_app_id},
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
   %script#pane-highlight-tmpl{type:"text/x-handlebars-template"}
     :plain
       <div class="tab-panel highlight-pane" id="highlight-pane">
@@ -107,69 +126,13 @@
 
 
   %script#pane-share-tmpl{type:"text/x-handlebars-template"}
-    :plain
-      <div class="tab-panel" id="share-pane">
-        <div class="pane">
-          <form action="#{share_path}" method="post">
-            <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
-            <input type="hidden" name="share[link]" id="share_link" value="" />
-
-            <div class="share_message">
-              <textarea name="share[body]"></textarea>
-              <span>
-                <b id="short_link"></b>
-                #{t("link will be added")}
-              </span>
-              <span class='share_total_characters'>
-              </span>
-            </div>
-
-            <div class="share_services">
-              <span class="share_logo">
-                <span class="share_logo_fb">&nbsp;</span>
-              </span>
-              <span class="share_slider">
-                <input id="checkbox_share_facebook" type="checkbox" name="share[connections][facebook]" />
-                <span class="slider facebook">&nbsp;</span>
-              </span>
-              <span class="share_character_count">
-                <span class="fb"></span>
-                <span class="fb-text">
-                  Facebook
-                  #{t('ui.characters remaining')}
-                   (420 Maximum)
-                </span>
-              </span>
-            </div>
-
-           <div class="share_services">
-              <span class="share_logo">
-                <span class="share_logo_twitter">&nbsp;</span>
-              </span>
-              <span class="share_slider">
-                <input id="checkbox_share_twitter" type="checkbox" name="share[connections][twitter]" />
-                <span class="slider twitter">&nbsp;</span>
-              </span>
-              <span class="share_character_count">
-                <span class="tw"></span>
-                <span class="tw-text">
-                  Twitter
-                  #{t('ui.characters remaining')}
-                  (140 Maximum)
-                </span>
-              </span>
-            </div>
-
-            <div class="share_errors" data-error-none-checked="Please select at least one social network" data-error-character-limit="Please delete some characters or choose a different social network">
-            </div>
-            <div class="share_action">
-              <button id="share_action_submit" type="submit" name="share[submit]" value="submit" class="action_button_blue">
-                #{t('ref.share now')}
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+    #share-pane.tab-panel
+      .pane
+        %span#short_link
+        .fb-share-button{"data-href" => "", "data-layout" => "button"}
+        %a.twitter-share-button{href: "https://twitter.com/share", "data-url" => "", "data-size" => "medium", "data-count" => "none", "data-dnt" => "true", "data-text" => ""}
+          Tweet
+        .g-plus{"data-action"=>"share", "data-href" => ""}
 
   %script#pane-link-tmpl{type:"text/x-handlebars-template"}
     :plain
