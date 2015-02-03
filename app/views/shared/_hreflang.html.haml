@@ -2,7 +2,7 @@
 - unless request.fullpath.include? "reading-plans/"
   - canonicalHref = nil
   - defaultHref = nil
-  - lang_array = ["pt-BR", "pt-PT", "es-ES", "af", "es", "de", "fr", "ko", "zh-TW", "ru", "ar", "zh-CN", "fa"]
+  - lang_array = ["pt-BR", "pt-PT", "es-ES", "af", "es", "de", "fr", "ko", "zh-TW", "ru", "ar", "zh-CN", "fa", "ms"]
   - I18n.available_locales.each do |a_locale|
     - locale_dir = a_locale.to_s.eql?("en") ? '' : '/' + a_locale.to_s
     - fullpath = request.fullpath
