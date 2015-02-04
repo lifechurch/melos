@@ -2,7 +2,6 @@
 - unless request.fullpath.include? "reading-plans/"
   - canonicalHref = nil
   - defaultHref = nil
-  - lang_array = ["pt-BR", "pt-PT", "es-ES", "af", "es", "de", "fr", "ko", "zh-TW", "ru", "ar", "zh-CN", "fa", "ms"]
   - I18n.available_locales.each do |a_locale|
     - locale_dir = a_locale.to_s.eql?("en") ? '' : '/' + a_locale.to_s
     - fullpath = request.fullpath
@@ -18,15 +17,12 @@
         - canonicalHref = href    #used for all versions not currently localized
         - defaultHref = href
       - if Version.find(presenter.reference.version).language.tag == (a_locale.to_s == "pt" ? "pt-BR" : a_locale.to_s) # so that pt-BR versions will match
-        - if lang_array.include?(Version.find(presenter.reference.version).language.tag)
-          - canonicalHref = href
-        - else
-          - if a_locale.to_s.eql?(I18n.locale.to_s)
-            - canonicalHref = href   #used for versions that are localized (eg.  Afrikaans versions canonical url is af when viewed from af)
-          - if ((I18n.locale.to_s == ("en") and a_locale.to_s != ("en")) or (I18n.locale.to_s != "en" and a_locale.to_s == I18n.locale.to_s))
-            %link{href: defaultHref, rel: "alternate", hreflang: "en"}
-            %link{href: defaultHref, rel: "alternate", hreflang: "x-default"}
-            %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
+        - if a_locale.to_s.eql?(I18n.locale.to_s)
+          - canonicalHref = href   #used for versions that are localized (eg.  Afrikaans versions canonical url is af when viewed from af)
+        - if ((I18n.locale.to_s == ("en") and a_locale.to_s != ("en")) or (I18n.locale.to_s != "en" and a_locale.to_s == I18n.locale.to_s))
+          %link{href: defaultHref, rel: "alternate", hreflang: "en"}
+          %link{href: defaultHref, rel: "alternate", hreflang: "x-default"}
+          %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
     - else
       %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
       - if a_locale.to_s.eql?("en")
