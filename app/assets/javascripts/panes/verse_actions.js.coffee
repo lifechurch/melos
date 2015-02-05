@@ -123,7 +123,7 @@ class window.Panes.VerseActions
     register = @register_pane.pane()
     @link_pane.setPane(register)
     @related_pane.setPane(register)
-    @share_pane.setPane(register)
+#    @share_pane.setPane(register)
     @note_pane.setPane(register)
     @bookmark_pane.setPane(register)
     @highlight_pane.setPane(register)
