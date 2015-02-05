@@ -6,7 +6,19 @@ module YV
 
       # Set locale
       def set_locale_and_timezone
-        Time.zone = client_settings.time_zone || "GMT"
+
+        # The jstz javascript library attempts to determine
+        # users local timezone. If it fails, there is a
+        # scenario where the value of client_settings.time_zone = 'undefined'
+        # and Ruby throws an exception. Let's catch that here and default to
+        # GMT instead. It's heavy handed exception handling, but it should
+        # be ok since we fail to the default GMT anyway.
+        begin
+          Time.zone = client_settings.time_zone || "GMT"
+        rescue ArgumentError
+          Time.zone = "GMT"
+        end
+
         I18n.default_locale = @site.default_locale || :en
 
         # grab available locales as array of strings and compare against strings.
