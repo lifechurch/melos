@@ -46,17 +46,21 @@
 %h3.vod_title
   = @title
 
-- if @results.present?
-  = render partial: "shared/form_errors", locals: {errors: @results.errors }
-
-%h4
-  = t('users.daily email delivery')
-  = render partial: 'form', locals: {type: "email", version_id: @email_version_id, hour: @email_hour, minute: @email_minute, meridian: @email_meridian, versions: @versions_for_current_lang, allowed_hours: @allowed_hours, allowed_minutes: @allowed_minutes }
-
-%h4.push_notifications_header
-  = t('users.daily push notifications')
-
-- if @devices.present?
-  = render partial: 'form', locals: {type: "push", version_id: @push_version_id, hour: @push_hour, minute: @push_minute, meridian: @push_meridian, versions: @versions_for_current_lang, allowed_hours: @allowed_hours, allowed_minutes: @allowed_minutes }
+- if @current_user.present? == false
+  .form_errors
+    =t("users.vod_subscription failure")
 - else
-  %p= t('users.no devices')
+  - if @results.present?
+    = render partial: "shared/form_errors", locals: {errors: @results.errors }
+
+  %h4
+    = t('users.daily email delivery')
+    = render partial: 'form', locals: {type: "email", version_id: @email_version_id, hour: @email_hour, minute: @email_minute, meridian: @email_meridian, versions: @versions_for_current_lang, allowed_hours: @allowed_hours, allowed_minutes: @allowed_minutes }
+
+  %h4.push_notifications_header
+    = t('users.daily push notifications')
+
+  - if @devices.present?
+    = render partial: 'form', locals: {type: "push", version_id: @push_version_id, hour: @push_hour, minute: @push_minute, meridian: @push_meridian, versions: @versions_for_current_lang, allowed_hours: @allowed_hours, allowed_minutes: @allowed_minutes }
+  - else
+    %p= t('users.no devices')

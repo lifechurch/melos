@@ -27,6 +27,16 @@ module YV
         end
       end
 
+      def force_notification_token_or_login
+        force_login unless logged_in? or params[:token].present?
+
+        if params[:token]
+          if logged_in? && current_user.notifications_token != params[:token]
+            redirect_to sign_out_path(redirect: edit_notifications_url) and return
+          end
+        end
+      end
+
       def current_user
         return nil unless current_auth
         @current_user ||= User.find(current_auth.user_id, auth: current_auth)
