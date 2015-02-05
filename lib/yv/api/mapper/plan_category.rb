@@ -13,8 +13,8 @@ module YV
 
             # Populate current data
             if current = root.current
-              pc.slug = current.category 
-              pc.label = current.labels["default"]  #TODO localize
+              pc.slug = current.category
+              pc.label = current.labels[locale].present? ? current.labels[locale] : current.labels["default"]
             end
 
             # Populate parent data
