@@ -19,10 +19,11 @@ class window.Panes.Share extends window.Panes.Base
 
   setupPane: ()->
     @short_link         = @el.find("#short_link")
-    @textarea_el        = @el.find("textarea")
-    @tw_btn             = @el.find(".tw-share-button")
-    @fb_btn             = @el.find(".fb-share-button")
-    @g_btn              = @el.find(".gplus")
+#    @textarea_el        = @el.find("textarea")
+#    @tw_btn             = @el.find(".tw-share-button")
+#    @fb_btn             = @el.find(".fb-share-button")
+#    @g_btn              = @el.find(".gplus")
+    @sharethis_btn      = @el.find(".addthis_sharing_toolbox")
 
   getSelectedVersesContent: ()->
     return $('#version_primary .verse.selected .content')
@@ -33,9 +34,7 @@ class window.Panes.Share extends window.Panes.Base
     if params.link
       link = params.link.trim().toLowerCase()
       @short_link.html(link)
-      @fb_btn.attr('data-href', link)
-      @tw_btn.attr('data-url', link)
-      @g_btn.attr('data-href', link)
+      verses_str = ''
 
       # Populate textarea message field
       selected_content = this.getSelectedVersesContent();
@@ -44,3 +43,14 @@ class window.Panes.Share extends window.Panes.Base
           return $(el).html()
         )
         verses_str = verses_str.join(" ").trim()
+
+      if (verses_str.length > 102)
+        verses_str = verses_str.substring(0,100)
+        lastIndex = verses_str.lastIndexOf(" ")
+        verses_str = verses_str.substring(0,lastIndex).trim() + "..."
+
+      window.addthis_share =
+      {
+        title : verses_str,
+        url : link
+      }
