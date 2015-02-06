@@ -21,7 +21,7 @@
 
 .mobile
   %h3.hd
-    = links.delete(selected)[:string]
+    = links.delete(selected)[:string] unless selected.nil?
   .mobile-menu-wrap    
     %dl.tabs
       - links.each do |link_key,link_vals|
