@@ -2,7 +2,7 @@ class VodSubscriptionsController < ApplicationController
 
   layout 'settings'
 
-  before_filter :versions_for_current_language
+  before_filter :force_notification_token_or_login, :versions_for_current_language
   before_filter :find_vod_subscription
 
   def index
