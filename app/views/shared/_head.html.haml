@@ -41,7 +41,8 @@
 
 - if @native_url.present?
   %meta{name: "native-url", content: @native_url}
-  %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{@native_path}"}
+  - if I18n.locale == :en #hack until android supports multilingual deeplinking
+    %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{@native_path}"}
 
   - if @user_agent == "ios"
     :javascript
