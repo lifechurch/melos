@@ -62,13 +62,13 @@ class UsersController < ApplicationController
       cookies.signed[:a] = @user.id
 
       if next_redirect?(authorize_licenses_path)
-        redirect_to(authorize_licenses_path(confirm: true))
+        return redirect_to(authorize_licenses_path(confirm: true))
       else
-        redirect_to confirm_email_path
+        return redirect_to confirm_email_path
       end
 
     else
-      render action: "new", layout: "application"
+      return render action: "new", layout: "application"
     end
   end
 
