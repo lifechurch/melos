@@ -163,6 +163,8 @@ class Version < YV::Resource
         ver.to_i
       when /^(\d+)\-.*/   #  "1-KJV"
         $1.to_i
+      when /first/
+        1
       when String
         YV::Conversions.usfm_version(ver) || ver
       when Version
