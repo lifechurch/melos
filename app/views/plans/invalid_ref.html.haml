@@ -10,4 +10,5 @@
   = render partial: 'shared/version_selector/display', {presenter: @presenter}
 %article
   .wrap
-    .align_center= t('plans.invalid reference', support_url: external_url(:support)).html_safe
+    .align_center
+      = t('plans.invalid reference', support_url: external_url(:support)).html_safe
