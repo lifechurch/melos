@@ -228,9 +228,7 @@ private
   end
 
   def filter_spam_posts
-    validReferer = request.protocol + request.host + ":" + request.port.to_s + "/sign-up"
-
-    if request.post? && (request.referer != validReferer)
+    if request.post? && (request.referer != sign_up_url)
       return render_404
     end
   end
