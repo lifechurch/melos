@@ -54,6 +54,7 @@ gem 'pg'
 
 gem 'routing-filter',         '~> 0.3.1'
 gem "unicorn",               '~> 4.8.3'
+gem 'unicorn-worker-killer'
 # gem 'puma'
 
 # Gems used only for assets & not required in production environments by default
