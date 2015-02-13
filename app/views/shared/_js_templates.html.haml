@@ -1,23 +1,4 @@
 - if is_reader_page? && presenter.present?
-  -#:javascript
-  -#    window.fbAsyncInit = function() {
-  -#      FB.init({
-  -#        appId      : #{Cfg.facebook_app_id},
-  -#        xfbml      : true,
-  -#        version    : 'v2.1'
-  -#      });
-  -#    };
-  -#
-  -#    (function(d, s, id){
-  -#       var js, fjs = d.getElementsByTagName(s)[0];
-  -#       if (d.getElementById(id)) {return;}
-  -#       js = d.createElement(s); js.id = id;
-  -#       js.src = "//connect.facebook.net/en_US/sdk.js";
-  -#       fjs.parentNode.insertBefore(js, fjs);
-  -#     }(document, 'script', 'facebook-jssdk'));
-  -#
-  -#    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-
   %script#pane-highlight-tmpl{type:"text/x-handlebars-template"}
     :plain
       <div class="tab-panel highlight-pane" id="highlight-pane">
@@ -130,10 +111,6 @@
       .pane
         %span#short_link
         %div.addthis_sharing_toolbox{"data-url" => "", "data-title" => ""}
-        -#.fb-share-button{"data-href" => "", "data-layout" => "button"}
-        -#%a.twitter-share-button{href: "https://twitter.com/share", "data-url" => "", "data-size" => "medium", "data-count" => "none", "data-dnt" => "true", "data-text" => ""}
-        -#  Tweet
-        -#.g-plus{"data-action"=>"share", "data-href" => ""}
 
   %script#pane-link-tmpl{type:"text/x-handlebars-template"}
     :plain

@@ -19,10 +19,6 @@ class window.Panes.Share extends window.Panes.Base
 
   setupPane: ()->
     @short_link         = @el.find("#short_link")
-#    @textarea_el        = @el.find("textarea")
-#    @tw_btn             = @el.find(".tw-share-button")
-#    @fb_btn             = @el.find(".fb-share-button")
-#    @g_btn              = @el.find(".gplus")
     @sharethis_btn      = @el.find(".addthis_sharing_toolbox")
 
   getSelectedVersesContent: ()->
