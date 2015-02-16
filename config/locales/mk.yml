@@ -152,8 +152,8 @@ mk:
     share error: "Имаше проблем при споделување на твојата порака. Обиди се повторно."
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "Немаш поврзана Твитер сметка. Поврзи ја твојата сметка преку страната со поставки."
+            no_facebook_connection: " Немаш поврзана Фејсбук сметка. Поврзи ја твојата сметка преку страната со поставки."
     google plus: "Google+"
     connect to: "Поврзување со твојот %{connection} профил"
     deleted connection: "Успешно ја отстрани конекцијата со %{connection}."
@@ -990,7 +990,7 @@ mk:
         h3: "YouVersion е глобално"
         h3 sub: "Достапна во над %{language_count} јазици ширум светот."
         main: "Десетици милиони луѓе ја користат Библиската Апликација™ за да го користат Божјиот збор како дел од нивниот секојдневен живот. Симни ја бесплатната апликација и имај пристап до твоите обележувачи, белешки, планови за читање, каде и да си. Уживај во стотици верзии, вклучувајќи и аудио, сето тоа на твојот мобилен телефон."
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "Оди до Bible.com/app<br>преку твојот мобилен уред"
         download now: "Симни ја Библиската апликација сега"
         what people: "Што велат за Библиската апликација"
         t1: "Секогаш ја носам Библијата со себе."
@@ -1002,7 +1002,7 @@ mk:
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"
-        windows 8: "Windows 8"
+        windows 8: "Виндоус 8"
         windows phone: "Windows Phone"
         hp palm: "HP/Palm"
         java: "Java"

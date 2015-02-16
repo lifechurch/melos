@@ -76,7 +76,7 @@ tr:
         moments content required: "İçerik boş olamaz."
     meta: 
         kids_app: 
-            title: "The Bible App for Kids"
+            title: "Çocuklar İçin Kutsal Kitap Uygulaması"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
         100million: 
             title: "Hedefimiz 100 Milyon"
@@ -91,7 +91,7 @@ tr:
             index: 
                 title: "Bağlı Hesaplar"
     kids: 
-        bible app: "The Bible App"
+        bible app: "Kutsal Kitap Uygulaması"
         for: "for"
         kids: "kids"
         by youversion: "by YouVersion"
@@ -115,13 +115,13 @@ tr:
         feature 5: "Kid-friendly navigation"
         share: 
             tell friends: "Tell your friends about the Bible App for Kids."
-            facebook name: "The Bible App for Kids"
+            facebook name: "Çocuklar İçin Kutsal Kitap Uygulaması"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
             twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
             twitter hashtags: "kidsbible"
-            email: "Email"
+            email: "e-Posta"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
         partner: 
@@ -152,8 +152,8 @@ tr:
     share error: "İletinizi paylaşmaya çalışırken bir hata oluştu. Lütfen tekrar deneyiniz."
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "Bağlı bir Twitter hesabınız bulunmuyor. Lütfen hesabınızı ayarlar sayfasından bağlayın."
+            no_facebook_connection: "Bağlı bir Facebook hesabınız bulunmuyor. Lütfen hesabınızı ayarlar sayfasından bağlayın."
     google plus: "Google+"
     connect to: "%{connection} hesabınıza bağlanın"
     deleted connection: "%{connection} ile bağlantınız başarıyla kapatılmıştır."
@@ -990,7 +990,7 @@ tr:
         h3: "YouVersion Globaldir"
         h3 sub: "%{language_count} ve daha birçok dil seçeneği mevcuttur."
         main: "On milyonlarca insan Kutsal Kitap Uygulaması'nı kullanıyor ve Tanrı'nın Sözü'nü hayatlarının bir parçası haline getiriyor. Uygulamayı bedavaya indirip her yerden yer imlerinize, notlarınıza ve okuma planlarınıza ulaşın. Mobil cihazınızı kullanarak Kutsal Kitap'ın yüzlerce çevirisini okuyun ve dinleyin."
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "Mobil cihazınızı kullanarak Bible.com/app <br>adresine gidin"
         download now: "Kutsal Kitap Uygulamasını Hemen İndirin"
         what people: "Kutsal Kitap Uygulaması hakkında ne diyorlar?"
         t1: "Kelam hep yanımda."
@@ -1086,12 +1086,12 @@ tr:
             tracker title: "Noel Hikayesini Okuyanlar"
             twitter text: "Dünya'da kaç kişinin İsa Mesih'in doğuşunun hikayesini okuduğunu takip edin. Noel Hikayesini Okuyanlar listesine katılın ve @YouVersion: https://www.bible.com/christmas linkini kullanarak paylaşın"
             facebook text: "Siz de, dünyanın her yanından İsa Mesih'in doğuşunun hikayesini okuyan diğerleri gibi, Noel Hikayesini Okuyanlar listesini paylaşın.  Kilisede veya evimizde, sevdiklerimizin yanında veya sessiz zamanlarımızda yalnızken, Tanrı'nın bize olan sevgisinin ne denli muhteşem olduğunu derinlemesine düşünmek üzere Tanrı'nın önünde sakince duralım."
-            summary: "During December 2014, this is what it looked like to see the world read about the birth of Jesus."
+            summary: "2014'ün Aralık ayı boyunca, dünya İsa'nın doğumunun hikayesini böyle okudu."
             verse: "<sup>10-11</sup> Melek onlara,<br>“Korkmayın!&quot; dedi. &quot;Size, bütün halkı sevindirecek bir haber müjdeliyorum: <sup></sup> Bugün size, Davut'un kentinde bir Kurtarıcı doğdu. Bu, Rab olan Mesih'tir.”"
             read more: "Noel'in hayret verici hikayesini okuyun"
             read about: "İsa Mesih'in doğuşunun hikayesini okumak"
             totals since: "1 Aralık 2014'ten itibaren YouVersion kullanıcıları:"
-            totals during: "YouVersion totals during December 2014:"
+            totals during: "2014 Aralık ayı boyunca YouVersion kullanımları:"
             total installs: "indirme yapıldı akıllı telefonlara ve tabletlere"
             download: "Bible (Kutsal Kitap) Uygulamasını <br/>Ücretsiz İndirin!"
             versions: "%{language_count} dilden fazla, %{version_count}kadarını aşkın tercümeyle"

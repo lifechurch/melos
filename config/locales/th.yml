@@ -407,7 +407,7 @@ th:
         all notes: "โน้ตทั้งหมด"
         community notes: "โน้ตของผู้อื่น"
         new note: "โน้ตใหม่"
-        status field: "<br/>สถานะของสมุดบันทึก:"
+        status field: "<br/>สถานะของบันทึก:"
         edit: "แก้ไข"
         delete: "ลบโน้ตนี้"
         confirm delete: "ใช่, ฉันมั่นใจ"
