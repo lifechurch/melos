@@ -13,7 +13,7 @@ module YV
       def set_redirect(to = nil)
         clear_redirect if cookies[:auth_redirect] == "" #EVENTUALLY: understand why this cookie is "" instaed of nil/dead, to avoid this workaround
         cookies[:auth_redirect] = to unless to.nil?
-        cookies[:auth_redirect] ||= params[:redirect] if params[:redirect]
+        cookies[:auth_redirect] = params[:redirect] if params[:redirect]
       end
 
       def redirect_path
