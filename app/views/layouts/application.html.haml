@@ -42,11 +42,3 @@
       = render partial: '/shared/footer', locals: {footer_classes: container_class_str}
 
     = render partial: "/shared/js_templates"
-    %script{type:'text/javascript', src: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54d2b9d73051838d', async: 'async'}
-    %script
-      :plain
-        var addthis_config = {
-              ui_language: "#{I18n.locale[0..1]}",
-              services_exclude : 'print,email'
-        }
-        addthis_config.data_track_clickback = false;
