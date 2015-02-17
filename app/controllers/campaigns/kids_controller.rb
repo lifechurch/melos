@@ -55,9 +55,11 @@ class Campaigns::KidsController < ApplicationController
       when /iphone|iPhone|ipad|iPad|ipod|iPod/
         'https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8'
 
-        when /android|Android/
+      when /android|Android/
         # this link works from an app, not from web
         # 'market://details?id=com.bible.kids'
+
+        # Use this link from Web
         'http://play.google.com/store/apps/details?id=com.bible.kids'
 
       when /silk|Silk/
