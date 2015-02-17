@@ -1,0 +1,286 @@
+# #-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#
+# Tamil translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+# #-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#
+# Tamil translations for Backend (YouVersion).
+# Copyright (C) 2015 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+# #-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#
+# Tamil translations for Backend (YouVersion).
+# Copyright (C) 2014 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-12-19 09:29-0609\n"
+"PO-Revision-Date: 2014-12-19 09:29-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ta <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2015-02-02 11:23-0600\n"
+"PO-Revision-Date: 2015-02-02 11:23-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ta <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+"#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2014-09-25 16:06-0600\n"
+"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ta <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "நீங்கள் அடையாள வில்லை <b>{title}</b> சம்பாதித்துள்ளீர்கள்"
+
+msgid "moment.badge.earned.title"
+msgstr "{name} அடையாள வில்லை <b>{title}</b> சம்பாதித்துள்ளார்"
+
+msgid "moment.bible.download.self.title"
+msgstr "நீங்கள் <b>{version}</b> பதிப்பை பதிவிறக்கம் செய்துள்ளீர்கள்"
+
+msgid "moment.bible.download.title"
+msgstr "{name} அவர்கள் <b>{version}</b> பதிப்பை பதிவிறக்கம் செய்துள்ளார்"
+
+msgid "moment.bookmark.self.title"
+msgstr "நீங்கள் <b>{reference_human}</b>-யை புத்தகக்குறியிட்டுள்ளீர்கள்"
+
+msgid "moment.bookmark.title"
+msgstr "{name} அவர்கள் <b>{reference_human}</b>-யை புத்தகக்குறியிட்டுள்ளார்"
+
+msgid "moment.client_side.reading_plan_carousel.new_year.title"
+msgstr "2015இல் தினமும் வேதத்தை வாசியுங்கள். திட்டங்கள் உதவும்!"
+
+msgid "moment.friendship.self.title"
+msgstr "நீங்கள் இப்போது <b>{friend_name}</b>-னோடு நண்பராகியுள்ளீர்கள்"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} இப்போது <b>{friend_name}</b>-னோடு நண்பராகியுள்ளார்"
+
+msgid "moment.highlight.self.title"
+msgstr "நீங்கள் <b>{reference_human}</b>-யை சிறப்புக்கூறிட்டுள்ளீர்கள்"
+
+msgid "moment.highlight.title"
+msgstr "{name} அவர்கள் <b>{reference_human}</b>-யை சிறப்புக்கூறிட்டுள்ளார்"
+
+msgid "moment.note.self.title"
+msgstr "நீங்கள் ஒரு குறிப்பை சேர்த்துள்ளீர்கள், <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "{name} ஒரு குறிப்பை சேர்த்துள்ளார், <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "உங்கள் திட்டத்தை நீங்கள் முடித்து விட்டீர்கள்."
+
+msgid "moment.plan_completion.title"
+msgstr "{name} ஒரு திட்டத்தை பூர்த்தி செய்துள்ளார்"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "{total_segments}-ல் {segment}-வது நாள் ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "நீங்கள் திட்டத்தில் <b>{segment}</b> நாளை பூர்த்தி செய்துள்ளீர்கள், <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} திட்டத்தில் <b>{segment}</b> நாளை பூர்த்தி செய்துள்ளார், <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "நீங்கள் ஒரு புதிய திட்டத்தை தொடங்கியிருக்கிறீர்கள்."
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} ஒரு திட்டத்தை தொடங்கியுள்ளார்"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "இன்றிரவு<i>வேதாகம தொடர்</i> காணவும்!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>வேதாகம தொடர்</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "நற்செய்தியை பகிருங்கள். மீட்பர் பிறந்தார்!"
+
+msgid "moment.system.find_friends.title"
+msgstr "பைபிள் பயன்பாடு 'நண்பர்கள்' மூலம் மேலும் சிறப்படைந்திருக்கிறது. நண்பர்களை கண்டுபிடிக்க  உங்கள் தொடர்புகளை தேடவும்."
+
+msgid "moment.video.watched.self.title"
+msgstr "நீங்கள் <b>{title}</b>--ஐ பார்த்துள்ளீர்கள்"
+
+msgid "moment.video.watched.title"
+msgstr "{name}, <b>{title}</b>--ஐ பார்த்துள்ளார்"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "{name} உங்கள் புத்தகக்குறியில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} உங்களின் {friend_name} -னோடு உள்ள புதிய நட்பை குறித்து கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "{name} உங்கள் சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "{name} உங்கள் குறிப்பில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} உங்கள் திட்டத்தை பற்றி  கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} உங்கள் வேதாகம திட்டத்தை பற்றி  கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "{commenter_name}-ம் {moment_owner_name}-ன் புத்தகக்குறியில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} கூட {moment_owner_name}-க்கு {friend_name} -னோடுள்ள புதிய நட்பை குறித்து கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "{commenter_name}-ம் {moment_owner_name}-ன் சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "{commenter_name}-ம் {moment_owner_name}-ன் குறிப்பில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "{moment_owner_name}-ம் அவர்களது புத்தகக்குறியில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} - ம் கூட {friend_name} -னோடுள்ள அவர்களின் நட்பை குறித்து கருத்து தெரிவித்துள்ளனர்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "{moment_owner_name}-ம் அவர்களது சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "{moment_owner_name}-ம் அவர்களது குறிப்பில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} கூட அவர்களின் திட்டத்தை பற்றி கருத்து தெரிவித்துள்னர்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} கூட அவர்களின் திட்டத்தை பற்றி கருத்து தெரிவித்துள்னர்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} கூட {moment_owner_name} -ன் திட்டத்தை குறித்து கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} கூட {moment_owner_name} -ன் வேதாகம திட்டத்தை குறித்து கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "{name}  உங்கள் நட்பு கோரிக்கையை ஏற்றுக்கொண்டார்"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} இப்போது உங்கள் நண்பர்"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} YouVersion-ல் உங்கள் நண்பராக விரும்புகிறார்"
+
+msgid "notifications.friendships.suggestion"
+msgstr "நீங்கள் YouVersion-ல்  {name}-டு நண்பராக விரும்புகிறீர்களா?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "{name}, உங்கள் புத்தகக்குறியை {reference_human} விரும்பியிருக்கிறார்"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} உங்களின் {friend_name} -னோடு உள்ள புதிய நட்பை விரும்பியிருக்கிறார்"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "{name}, உங்கள் சிறப்புக்கூறை {reference_human} விரும்பியிருக்கிறார்"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "{name} உங்கள் குறிப்பை விரும்பியிருக்கிறார்"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "{name}, {reference_human}-ல்  உங்கள் குறிப்பை விரும்பியிருக்கிறார்"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "{name} உங்கள் குறிப்பை விரும்பியிருக்கிறார், “{title}”"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} உங்களின் திட்ட செயல்பாடுகளை விரும்பியிருக்கிறார்"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} உங்களின் வேதாகம திட்ட செயல்பாடுகளை விரும்பியிருக்கிறார்"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "{name} {reference_human}-ஐ புத்தகக்குறியிட்டுள்ளார்"
+
+msgid "notifications.moments.create.highlight"
+msgstr "{reference_human}-ஐ {name} சிறப்புக்கூறிட்டுள்ளார்"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "{name} ஒரு குறிப்பை சேர்த்துள்ளார்"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "{name}, {reference_human}-ல் ஒரு குறிப்பை சேர்த்துள்ளார்"
+
+msgid "notifications.moments.create.note.title"
+msgstr "{name} ஒரு குறிப்பை சேர்த்துள்ளார்,  “{title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} அவர்களுடைய திட்டத்தை பூர்த்தி செய்து விட்டார்கள், {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} அவர்களுடைய வேதாகம திட்டத்தை பூர்த்தி செய்து விட்டார்கள், {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} ஒரு புதிய திட்டத்தை தொடங்கியுள்ளார், {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} ஒரு புதிய வேதாகம  திட்டத்தை தொடங்கியுள்ளார், {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} YouVersion-இல் தற்போது இணைந்துள்ளார். நண்பராக அவர்களை சேர்க்க தட்டவும்."
+
+msgid "notifications.system.test"
+msgstr "எங்களது குழந்தைகள் வேதாகம பயன்பாட்டை இப்போது பதிவிறக்கம் செய்யுங்கள்!!!"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>வணக்கம்!</p><p>நான் பயன்படுத்திக்கொண்டிருக்கும் YouVersion வேதாகம பயன்பாட்டை உங்களோடு பகிர்ந்து கொள்ள விரும்பிறேன். நீங்கள் இந்த பயன்பாட்டிற்கு புதியவர்களென்றால், இது அன்றாட வாழ்க்கையில் வேதத்தின் சத்தியம் மற்றும் அழகை கொண்டு வரும் ஒரு எளிய வழியாய் இருக்கிறது.</p><p><strong>வேதாகம பயன்பாட்டை பெறுங்கள்:</strong> படியுங்கள், காணுங்கள், கேளுங்கள், நுண்ணறிபேசி அல்லது சுருள்பாசி மற்றும் நிகழ் நிலையில் bible.com மூலம் பகிருங்கள்</p><p><strong>உங்கள் கணக்கை அமையுங்கள்:</strong> வேதாகம திட்டங்களில் சேருங்கள். மேலும் புத்தககுறிகள், சிறப்புக்கூறுகள் மற்றும் குறிப்புகளை வெவ்வேறு சாதனங்களில் அணுகலாம்</p><p><strong>(என்னை போன்ற!) நண்பர்கள் சேர்க்கவும்:</strong> நீங்கள் அக்கறை கொண்ட மக்களோடு வேதத்தைப்பற்றி கலந்துரையாடுங்கள்</p><p>இது எல்லாம் வேதாகம பயன்பாட்டில் உள்ளது - இங்கே தொடங்குங்கள்: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"நான் உபயோகித்து வரும்  YouVersion இன் பைபிள் app உங்களுக்கும்  பிடிக்கும் என நினைக்கிறேன். நான் இப்போதெல்லாம் நிறைய பைபிள்  வாசிக்கிறேன்  ஏனென்றால் அது வாசிக்க, காண, கேள்க மற்றும் பகிர்ந்து கொள்ள  மிகவும் எளிது. தேர்ந்தெடுக்கப்பட்ட பைபிள்களும் வாசிப்பு திட்டங்களும் ஒவ்வொரு நாளும் எனக்காக காத்திருக்கின்றன. \n"
+"\n"
+"எந்த ஒரு மொபைல் சாதனத்திலும் மிக சுலபமாக (இலவசமாக) அதை இங்கிருந்து பெற முடியும்:\n"
+"http://www.bible.com/app "
+
+msgid "share.invite_email_subject"
+msgstr "உங்களிடம் வேதாகம App இருக்கின்றதா?"
+
+msgid "share.invite_facebook"
+msgstr "நான் இந்த பைபிள் பயன்பாட்டை மிகவும் விரும்புகிறேன்! அது உண்மையிலேயே பைபிளை என் அன்றாட வாழ்வின் பகுதியாக உருவாக்க உதவியது. முன்னிலைப்படுத்த, ஆடியோ வேதாகமத்தை கேட்க, குறிப்பெடுக்க, பக்தி திட்டங்களை பின்பற்ற விடுகிறது மட்டுமல்ல ...  அதில் வீடியோக்களை கூட பார்க்க முடியும்!  இப்போது பதிவிறக்க செய்க (இது முற்றிலும் இலவசம்):"
+
+msgid "share.invite_facebook_direct"
+msgstr "உங்களிடம் பைபிள் பயன்பாடு இருக்கிறதா? நான் மிகவும் விரும்புகிறேன், உங்களுக்கும் பிடிக்கும் என்று நினைக்கிறேன். அதற்கான இணைப்பு இங்கே இருக்கிறது:"
+
+msgid "share.invite_sms"
+msgstr "உங்களிடம் YouVersion வேதாகம App இருக்கின்றதா? இது எனக்கு மிகவும் பிடித்த ஒன்று; உங்களுக்கும் பிடிக்கும் என் நினைக்கின்றேன்.  உங்களிடத்தில் இது இல்லை என்றால் இதோ அதற்கான இணைப்பு;"
+
+msgid "share.invite_sms_prefix"
+msgstr "அனுப்புனர் {name}"
+
+msgid "share.invite_twitter"
+msgstr "@ YouVersion பைபிள் app என் முகப்பு திரையில் ஒரு நிரந்தர இடத்தை கொண்டுள்ளது. கேட்க, பகிர்ந்து, பார்க்க, படிக்க ... அனைத்தும் ஒரு இலவச பயன்பாட்டில்:"
+
+msgid "share.invite_twitter_direct"
+msgstr "உங்களிடம் YouVersion வேதாகம App இருக்கின்றதா? இது எனக்கு மிகவும் பிடித்த ஒன்று; உங்களுக்கும் பிடிக்கும் என் நினைக்கின்றேன்.  உங்களிடத்தில் இது இல்லை என்றால் இதோ அதற்கான இணைப்பு;"
