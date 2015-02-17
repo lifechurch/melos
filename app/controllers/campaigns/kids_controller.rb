@@ -42,7 +42,8 @@ class Campaigns::KidsController < ApplicationController
 
   def kids_store_redirect
     if request.env["X_MOBILE_DEVICE"].present?
-      redirect_to kids_store_url unless kids_store_url.nil?
+      # Don't redirect to Google Play Store if locale is zh-CN because store not available in mainland China
+      redirect_to kids_store_url unless kids_store_url.nil? || (kids_store_url == 'http://play.google.com/store/apps/details?id=com.bible.kids' && I18n.locale.to_s == 'zh-CN')
     end
   end
 
@@ -55,7 +56,11 @@ class Campaigns::KidsController < ApplicationController
         'https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8'
 
       when /android|Android/
-        'market://details?id=com.bible.kids'
+        # this link works from an app, not from web
+        # 'market://details?id=com.bible.kids'
+
+        # Use this link from Web
+        'http://play.google.com/store/apps/details?id=com.bible.kids'
 
       when /silk|Silk/
         'http://www.amazon.com/gp/mas/dl/android?p=com.bible.kids'
