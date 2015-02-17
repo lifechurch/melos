@@ -43,7 +43,7 @@ class Campaigns::KidsController < ApplicationController
   def kids_store_redirect
     if request.env["X_MOBILE_DEVICE"].present?
       # Don't redirect to Google Play Store if locale is zh-CN because store not available in mainland China
-      redirect_to kids_store_url unless kids_store_url.nil? || (kids_store_url == 'market://details?id=com.bible.kids' && I18n.locale == 'zh-CN')
+      redirect_to kids_store_url unless kids_store_url.nil? || (kids_store_url == 'market://details?id=com.bible.kids' && I18n.locale.to_s == 'zh-CN')
     end
   end
 
