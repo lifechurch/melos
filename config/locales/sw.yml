@@ -988,7 +988,7 @@ sw:
     mobile page: 
         h2: "Neno la Mungu lipo nawe."
         h3: "YouVersion ni ya kimataifa"
-        h3 sub: "Inapatikana kwenywe %{language_count}lugha duniani kote."
+        h3 sub: "Inapatikana kwenywe lugha zaidi ya %{language_count}duniani kote."
         main: "Mamilioni ya watu wanatumia App ya Bibilia ™ kufanya Neno la Mungu iwe sehemu ya maisha yao ya kila siku. Pakua programu ya bure na upate maelezo ya maalamisho yako, na mipango ya kusoma kutoka mahali popote. Furahia mamia ya matoleo, ikiwa pamoja na audio yote kwa rununu yako."
         button h4: "Go to Bible.com/app<br>on your Mobile Device"
         download now: "Pata programu ya bure ya Bibilia sasa hivi."
