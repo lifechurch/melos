@@ -59,13 +59,18 @@ class UsersController < ApplicationController
     return render_404                  unless params[:user].present?
     @user = User.register(params[:user].merge!(language_tag: I18n.locale))
     if @user.persisted?
-      # save username and password so we can sign them back in
+      # save username so we can populate sign in form
       cookies.signed[:a] = @user.id
+      cookies.signed[:b] = @user.username
+      # maybe something like this, but we have to globally rescue UnverifiedAccountError
+      # set_auth(@user.id, params[:user][:password])
 
       if next_redirect?(authorize_licenses_path)
         return redirect_to(authorize_licenses_path(confirm: true))
       else
         return redirect_to confirm_email_path
+        # maybe we can sign them in and redirect them. but maybe not.
+        # return follow_redirect(notice: "#{t("users.thanks for registering")} #{t("users.confirm email")}")
       end
 
     else
@@ -228,7 +233,7 @@ private
   end
 
   def filter_spam_posts
-    if request.post? && (request.referer != sign_up_url)
+    if request.post? && !(request.referer.match sign_up_url)
       return render_404
     end
   end
