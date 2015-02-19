@@ -35,14 +35,15 @@
 -# Preload Ruby vars into Angular module so Angular controllers
 -#  will have access to this data without having to make
 -#  additional XHR calls
-%script<
-  != "angular.module('$preloaded', [])"
-  != ".constant('$chapter', #{reference.to_json})"
-  != ".constant('$version', #{version.to_json})"
-  != ".constant('$content', '#{reference.content.delete!("\n")}')"
-  != ".constant('$next', #{reference.next_chapter_hash.to_json})"
-  != ".constant('$previous', #{reference.previous_chapter_hash.to_json})"
-  != ".constant('$current', '#{reference.safe_human}')"
-  != ";"
+- content_for :javascripts do
+  %script<
+    != "angular.module('$preloaded', [])"
+    != ".constant('$chapter', #{reference.to_json})"
+    != ".constant('$version', #{version.to_json})"
+    != ".constant('$content', '#{reference.content.delete!("\n")}')"
+    != ".constant('$next', #{reference.next_chapter_hash.to_json})"
+    != ".constant('$previous', #{reference.previous_chapter_hash.to_json})"
+    != ".constant('$current', '#{reference.safe_human}')"
+    != ";"
 
 = render partial: 'reader', locals: {presenter: @presenter}
