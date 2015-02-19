@@ -34,6 +34,8 @@ YouversionWeb::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
+  config.assets.js_compressor = Sprockets::LazyCompressor.new { Uglifier.new(:mangle => false) }
+  
   # Do not compress assets
   config.assets.compress = true
 
