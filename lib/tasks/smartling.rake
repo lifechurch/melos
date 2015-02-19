@@ -15,7 +15,7 @@ namespace :smartling do
     # https://docs.smartling.com/display/docs/Projects+API
 
     # these locales are not live yet
-    exclude_locales = [ 'hr', 'lt', 'my', 'sn' ]
+    exclude_locales = [ 'lt', 'my', 'sn' ]
 
     mappings = YAML::load_file(File.expand_path(Rails.root.join('config/smartling_mapping.yml'), __FILE__))
     mappings.each do |filename,locale|

@@ -125,6 +125,10 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://www.bible.com/hr</loc>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>https://www.bible.com/fi</loc>
     <priority>1</priority>
   </url>
@@ -302,6 +306,10 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://www.bible.com/hr/app</loc>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>https://www.bible.com/fi/app</loc>
     <priority>1</priority>
   </url>
@@ -476,6 +484,10 @@
   </url>
   <url>
     <loc>https://www.bible.com/hi/versions</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/hr/versions</loc>
     <priority>1</priority>
   </url>
   <url>

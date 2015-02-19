@@ -76,8 +76,8 @@ ar:
         moments content required: "المحتوى لا يمكن ان يكون فارغ"
     meta: 
         kids_app: 
-            title: "The Bible App for Kids"
-            description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+            title: "تطبيق الكتاب المقدس للأطفال"
+            description: "تطبيق الكتاب المقدس للاطفال هو طريقة رائعة لاطفالك ليتعلموا قصص كتابية عن يسوع، هبة الحياة الابدية، و الدروس الكثيرة التي يعلمها الله لنا. في هذه الخبرة التفاعلية، يتواصل الاطفال بصورة مباشرة مع كلمة الله، كما يشاهدون امور ممتعة ويحصدون النقاط للقراءة و يجمعون الكنوز."
         100million: 
             title: "تبدأ مع 100 مليون"
             description: "تم تثبيت تطبيق الكتاب المقدس ما يقرب من 100 مليون مرة - هذا انجاز لا يصدق! لكننا بدأنا للتو. نزل تطبيق  الكتاب المقدس مجانا اليوم - ومن ثم شارك التطبيق مع أصدقائك. دعونا نصنع التاريخ معا."
@@ -91,7 +91,7 @@ ar:
             index: 
                 title: "الحسابات المتصلة"
     kids: 
-        bible app: "The Bible App"
+        bible app: "تطبيق الكتاب المقدس"
         for: "for"
         kids: "kids"
         by youversion: "by YouVersion"
@@ -115,13 +115,13 @@ ar:
         feature 5: "Kid-friendly navigation"
         share: 
             tell friends: "Tell your friends about the Bible App for Kids."
-            facebook name: "The Bible App for Kids"
+            facebook name: "تطبيق الكتاب المقدس للأطفال"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
             twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
             twitter hashtags: "kidsbible"
-            email: "Email"
+            email: "بريد إلكتروني"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
         partner: 
