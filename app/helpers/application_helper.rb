@@ -269,6 +269,11 @@ module ApplicationHelper
     fullpath
   end
 
+  def get_verse_content(html_verse_content)
+    doc = Nokogiri::HTML(html_verse_content)
+    return doc.css('.content').text
+  end
+
   private
   def lang_code(locale, host=nil)
     case host

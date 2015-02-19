@@ -5,8 +5,6 @@
 // presenter:
 
 - invalid_ref = defined?(invalid) and invalid == true
-- content_for :additional_meta do
-  %meta{property: "og:description", content: t("meta.site.description") }
 
 #m-toolbar.mobile
   %div.verse_toolbar{class: ('authed' if current_auth)}
