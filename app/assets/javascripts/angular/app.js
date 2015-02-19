@@ -1,105 +1,65 @@
-angular.module('yv', ['$preloaded', 'ngSanitize', 'ngResource'])
+angular.module('yv', ['$preloaded'])
 
-.factory('Bible', [ '$resource', function($resource) {
-    return {
-        Chapter:	$resource('http://yv-node.herokuapp.com/api/bible/chapter'),
-        Versions:	$resource('http://yv-node.herokuapp.com/api/bible/versions'),
-        Version:	$resource('http://yv-node.herokuapp.com/api/bible/version')
+.controller("ReaderNotesCtrl", [ '$scope', '$timeout', '$http', '$chapter', '$version', function($scope, $timeout, $http, $chapter, $version) {
+    var allNotes;
+    var pageSize = 5;
+    $scope.currentPage = 0;
+    $scope.numberOfPages = 0;
+
+    $scope.collapsed = true;
+    $scope.notes = null;
+
+    $scope.toggle = function() {
+        // Toggle collapsed
+        $scope.collapsed = !$scope.collapsed;
+
+        // If notes is null and widget is open, load notes
+        if (!$scope.notes && !$scope.collapsed) {
+            var url = '/bible/' + $version.attributes.id + '/' + $chapter.book.toLowerCase() + "." + $chapter.chapter + './notes';
+            $scope.loadNotes(url);
+        }
     };
-}])
 
-.controller("ReaderCtrl", [ '$scope', '$chapter', '$version', '$content', 'Bible', '$next', '$previous', '$current', '$compile', function($scope, $chapter, $version, $content, Bible, $next, $previous, $current, $compile) {
+    $scope.isEnabled = function(step) {
+        if (allNotes && step > 0 && allNotes.length > (($scope.currentPage + step) * pageSize)) {
+            return true;
+        } else if (allNotes && step < 0 && ($scope.currentPage + step >= 0)) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
-    $scope.chapter = $chapter;
-    $scope.chapter.reference = { usfm: [ $chapter.book + "." + $chapter.chapter ], human: $current };
+    $scope.nextPage = function(step) {
+        var newPage = $scope.currentPage + step;
+        var start = newPage * pageSize;
+        if (allNotes.length >= start) {
+            $scope.currentPage = newPage;
+            $scope.notes = allNotes.slice(start, start+ pageSize);
+        }
+    };
 
-    $scope.version = $version;
-    $scope.version.abbreviation = $version.attributes.local_abbreviation.toUpperCase() || $version.attributes.abbreviation.toUpperCase();
-    $scope.version.id = $version.attributes.id;
+    $scope.loadNotes = function(url) {
+        $scope.notes = null;
 
-    $scope.content = $content;
-    $scope.chapter.next = $next;
-    $scope.chapter.previous = $previous;
+        // If collapsed, then expand
+        if ($scope.collapsed) {
+            $scope.collapsed = false;
+        }
 
-        $scope.compile = function(html) {
-            console.log("comp now");
-            return $compile(html)($scope);
-        };
-
-    //$("#chapter_selector").html($compile($("#chapter_selector").html())($scope));
-
-        $scope.loadVersion = function(id, reloadChapter) {
-            console.log("LOADING VERSION", id, reloadChapter);
-
-            Bible.Version.get({id:id}).$promise.then(function(version) {
-                //console.log(version);
-                version.abbreviation = version.abbreviation.toUpperCase();
-                $scope.version = version;
-                if (reloadChapter && $scope.chapter && $scope.version && ($scope.chapter.reference.version_id !== $scope.version.id)) {
-                    $scope.loadChapter($scope.chapter.reference.usfm, $scope.version.id);
-                } else {
-                    $scope.closeMenu();
-                }
+        // Fetch notes from API
+        $http.get(url, { cache: true, params: { json: 1 } })
+            .success(function(data, status, headers, config) {
+                allNotes = data;
+                $scope.nextPage(0);
+                $scope.numberOfPages = Math.ceil(allNotes.length / pageSize);
+            })
+            .error(function(data, status, headers, config) {
+                allNotes = [];
+                $scope.notes = [];
+                $scope.numberOfPages = 0;
             });
-
-//            if ($scope.chaptersModal) {
-//                if ($ionicModal) {
-//                    $scope.chaptersModal.hide();
-//                } else {
-//                    $scope.chaptersModal.dismiss("Version Selected");
-//                }
-//            }
-        };
-
-        $scope.loadChapter = function(reference, versionId) {
-          console.log("LOADING CHAPTER", reference, versionId);
-//        $scope.loadingChapter = true;
-//
-//        var hideLoader;
-//
-//        if ($ionicLoading) {
-//            $ionicLoading.show({
-//                content: 'Loading',
-//                animation: 'fade-in',
-//                showBackdrop: false,
-//                maxWidth: 200,
-//                showDelay: 0
-//            });
-//        }
-
-//        if ($scope.version && ($scope.version.id != versionId)) {
-//            console.log("calling version", $scope.version.id, versionId);
-//            $scope.loadVersion(versionId, false);
-//        }
-
-        Bible.Chapter.get({id:versionId, reference:reference}).$promise.then(function(chapter) {
-            console.log(chapter);
-            $scope.chapter = chapter;
-            $scope.content = chapter.content;
-            $scope.closeMenu('#menu_version');
-            $scope.closeMenu('#menu_book_chapter');
-
-            //$scope.loadingChapter = false;
-            //if (hideLoader) {
-            //hideLoader.hide();
-            //}
-
-//            if ($ionicLoading && $ionicNavBarDelegate) {
-//                //$ionicNavBarDelegate.title($scope.chapter.reference.human);
-//                $ionicLoading.hide();
-//            }
-        });
-
-        $scope.closeMenu = function(menuId) {
-            console.log("Closing Menu");
-            $(menuId).fadeOut('fast').removeClass('open');
-            $(document).scrollTop(0);
-            $('.version_close_btn').toggleClass('selected').scrollTop(0);
-            $(menuId + "_trigger").parent().removeClass("li_active");
-        };
-
-    };
-
+    }
 }])
 
 ;

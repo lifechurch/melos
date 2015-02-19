@@ -25,7 +25,7 @@
         %div{class: container_class_str, id: "flash_#{key}"}= msg.html_safe
 
       #container{class: container_class_str}
-        #main{role: "main", class: @is_reader == true ? 'main_reader' : '', "ng-controller" => @is_reader == true ? 'ReaderCtrl' : ''}
+        #main{role: "main", class: @is_reader == true ? 'main_reader' : '' }
 
           = render(partial: "layouts/primary_nav") unless @main_nav == false
           = content_for?(:main) ? yield(:main) : yield

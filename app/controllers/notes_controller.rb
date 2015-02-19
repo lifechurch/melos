@@ -46,11 +46,16 @@ class NotesController < BaseMomentsController
   # See routes.rb: match 'bible/:version/:reference/notes' => 'notes#sidebar', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   def sidebar
     ref    = ref_from_params rescue not_found
-    notes  = Note.community({usfm: ref_to_usfm_array(ref), version_id: params[:version], page: @page})
-    next_cursor = notes.next_cursor
-    start = (@page - 1) * 5
-    notes = notes.slice(start, 5)
-    render partial: 'sidebars/notes/list', locals: {notes: notes, ref: ref, next_cursor: next_cursor}, layout: false
+    notes  = Note.community({usfm: ref_to_usfm_array(ref)})
+    # next_cursor = notes.next_cursor
+    # start = (@page - 1) * 5
+    # notes = notes.slice(start, 5)
+
+    if params[:json]
+      render 'sidebars/note/async.json', locals: { notes: notes }
+    else
+      render partial: 'sidebars/notes/list', locals: {notes: notes, ref: ref, next_cursor: next_cursor}, layout: false
+    end
   end
 
 
