@@ -1,3 +1,5 @@
+angular.module('$preloaded', []);
+
 angular.module('yv', ['$preloaded'])
 
 .controller("ReaderNotesCtrl", [ '$scope', '$timeout', '$http', '$chapter', '$version', function($scope, $timeout, $http, $chapter, $version) {
