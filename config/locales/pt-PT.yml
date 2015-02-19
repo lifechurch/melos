@@ -152,8 +152,8 @@ pt-PT:
     share error: "Desculpe, aconteceu um erro a partilhar a sua mensagem. Por favor tente novamente."
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "Ainda não tem nenhuma conta de Twitter associada. Por favor, conecte a sua conta na página de configurações."
+            no_facebook_connection: "Ainda não tem nenhuma conta de Facebook associada. Por favor, conecte a sua conta na página de configurações."
     google plus: "Google+"
     connect to: "A associar à sua conta %{connection}"
     deleted connection: "Associação removida com sucesso a %{connection}"
@@ -990,7 +990,7 @@ pt-PT:
         h3: "YouVersion é Global"
         h3 sub: "Disponível em mais de %{language_count} línguas em todo o mundo."
         main: "Dezenas de milhões de pessoas estão a usar a App da Bíblia™ para fazerem da Palavra de Deus uma parte da sua vida. Transfira a app gratuita e aceda aos seus marcadores, notas, e planos de leitura em qualquer lugar. Desfrute de centenas de versões, incluindo áudio, tudo no seu dispositivo móvel."
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "Visite a Bible.com/app <br> no seu dispositivo móvel"
         download now: "Descarregue a App da Bíblia Agora"
         what people: "O que as pessoas dizem sobre a App gratuita da Bíblia..."
         t1: "Eu tenho sempre a Palavra."

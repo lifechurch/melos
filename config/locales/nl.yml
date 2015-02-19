@@ -76,8 +76,8 @@ nl:
         moments content required: "Mag niet leeg zijn"
     meta: 
         kids_app: 
-            title: "The Bible App for Kids"
-            description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+            title: "De Bijbel App voor kinderen"
+            description: "De Bijbel App voor Kinderen is een geweldige manier om ze Bijbelverhalen over Jezus te leren, het geschenk van het eeuwige leven en vele andere lessen die God ons leert. Met deze interactieve ervaring komen kinderen rechtstreeks in aanraking met het Woord van God, door prachtige beelden terwijl ze punten verdienen voor het lezen en schatten verzamelen."
         100million: 
             title: "Het begint met 100 miljoen"
             description: "De Bijbel App is al bijna 100 miljoen keer geïnstalleerd - een geweldige mijlpaal! Maar we zijn pas begonnen. Download vandaag de gratis Bijbel App nog -en deel de app met jouw vrienden. Laten we samen geschiedenis maken."
@@ -91,7 +91,7 @@ nl:
             index: 
                 title: "Verbonden Accounts"
     kids: 
-        bible app: "The Bible App"
+        bible app: "De Bijbel App"
         for: "for"
         kids: "kids"
         by youversion: "by YouVersion"
@@ -115,13 +115,13 @@ nl:
         feature 5: "Kid-friendly navigation"
         share: 
             tell friends: "Tell your friends about the Bible App for Kids."
-            facebook name: "The Bible App for Kids"
+            facebook name: "De Bijbel App voor kinderen"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
             twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
             twitter hashtags: "kidsbible"
-            email: "Email"
+            email: "E-mail"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
         partner: 
