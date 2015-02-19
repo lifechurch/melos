@@ -61,3 +61,4 @@
 //= require videos
 //= require_tree ./jw/
 //= require ./social/fb_remarketing
+//= require ./angular/app.js
