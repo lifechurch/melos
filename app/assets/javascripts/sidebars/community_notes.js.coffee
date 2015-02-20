@@ -23,11 +23,6 @@ class window.Sidebars.CommunityNotes
         page = current_page + 1
       @load("#{url}?page=#{page}")
 
-#    Events.Emitter.addListener "verses:selected", f_load
-#    Events.Emitter.addListener "verses:deselected", f_load
-#    Events.Emitter.addListener "community_notes:paginate", p_load
-
-
   load: (url)->
     el = $(@el_id)
     $.ajax

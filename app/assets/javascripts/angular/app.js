@@ -1,5 +1,10 @@
 angular.module('yv', ['$preloaded'])
 
+.run(['$http', function($http) {
+    $http.defaults.headers.common['Accept'] = 'application/json';
+    $http.defaults.headers.common['Content-Type'] = 'application/json';
+}])
+
 .controller("ReaderNotesCtrl", [ '$scope', '$timeout', '$http', '$chapter', '$version', function($scope, $timeout, $http, $chapter, $version) {
     var allNotes;
     var pageSize = 5;
