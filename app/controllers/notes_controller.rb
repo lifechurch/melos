@@ -49,7 +49,7 @@ class NotesController < BaseMomentsController
     notes  = Note.community({usfm: ref_to_usfm_array(ref)})
 
     respond_to do |format|
-      format.json { render 'sidebars/note/async.json', locals: { notes: notes } }
+      format.json { render 'sidebars/note/async', locals: { notes: notes } }
       format.html { render partial: 'sidebars/notes/list', locals: {notes: notes, ref: ref}, layout: false }
     end
   end

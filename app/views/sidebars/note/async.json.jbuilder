@@ -1,4 +1,4 @@
-json.array! @notes do |note|
+json.array! notes do |note|
   json.id         note.id
   json.title      note.title
   json.user do
