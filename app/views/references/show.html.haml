@@ -49,12 +49,13 @@
 -#- content_for :javascripts do
 %script<
   != "angular.module('$preloaded', [])"
-  != ".constant('$chapter', #{reference.to_json})"
-  != ".constant('$version', #{version.to_json})"
+  != ".constant('$notesUrl', '/bible/#{version.attributes.id}/#{reference.book}.#{reference.chapter}./notes')"
+  -#!= ".constant('$chapter', #{reference.to_json})"
+  -#!= ".constant('$version', #{version.to_json})"
   -#!= ".constant('$content', '#{reference.content.delete!("\n")}')"
-  != ".constant('$next', #{reference.next_chapter_hash.to_json})"
-  != ".constant('$previous', #{reference.previous_chapter_hash.to_json})"
-  != ".constant('$current', '#{reference.safe_human}')"
+  -#!= ".constant('$next', #{reference.next_chapter_hash.to_json})"
+  -#!= ".constant('$previous', #{reference.previous_chapter_hash.to_json})"
+  -#!= ".constant('$current', '#{reference.safe_human}')"
   != ";"
 
 = render partial: 'reader', locals: {presenter: @presenter}
