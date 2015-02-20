@@ -28,7 +28,7 @@ class window.Panes.Share extends window.Panes.Base
     super(params)
 
     if params.link
-      link = params.link.trim().toLowerCase()
+      link = params.link.trim()
       @short_link.html(link)
       verses_str = ''
 
