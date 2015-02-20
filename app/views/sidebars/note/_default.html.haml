@@ -1,0 +1,21 @@
+#widget-notes.comm-notes.notes.widget{"ng-controller" => "ReaderNotesCtrl", "ng-cloak" => "true", "ng-class" => "{ 'rp-friends-completed': collapsed }"}
+  %div.hd{"ng-click" => "toggle()"}
+    %span= t("notes.community notes")
+  %div.bd{"ng-show" => "collapsed", "style" => "padding:8px"}
+  %div.bd{"ng-hide" => "collapsed || notes"}
+    %p= t('notes.loading community')
+  %div.bd{"ng-show" => "!collapsed && notes && notes.length == 0"}
+    %p= t('notes.no community notes')
+  %ul{"ng-hide" => "collapsed"}
+  %li{"ng-repeat" => "note in notes track by $index","ng-hide" => "collapsed"}
+    %img{"ng-src" => "{{note.user.avatars.collection[0].url}}"}
+    %a{"ng-href" => "/notes/{{note.id}}"}
+      {{note.title}}&nbsp;
+    %p.mute.small= "{{note.user.name}}"
+  %div.rp-view-all{"style" => "padding-top:5px", "ng-if" => "collapsed"}
+    %hr
+    %a.open{href: "", "ng-show" => "collapsed", "ng-click" => "toggle()"}
+      =t("plans.stats.view all")
+  %div.ft{"ng-hide" => "collapsed"}
+    %span.link.pagination.next{"ng-click" => "nextPage(-1)", "ng-show" => "isEnabled(-1)"}= t('pagination.previous page')
+    %span.link.pagination.next{"ng-click" => "nextPage(1)", "ng-show" => "isEnabled(1)"}= t('pagination.next page')

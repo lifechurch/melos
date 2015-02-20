@@ -27,6 +27,12 @@ class window.Reader
 
     @processSelectedVerses
 
+    f_load = ()=>
+      angular.element($('#widget-notes.notes')).scope().loadNotes($("article").data("selected-verses-rel-link") + "/notes");
+
+    Events.Emitter.addListener "verses:selected", f_load
+    Events.Emitter.addListener "verses:deselected", f_load
+
     # fire initial events
     if @numSelectedVerses() >= 1
       Events.Emitter.emit("verses:first_selected")
@@ -49,15 +55,6 @@ class window.Reader
     @setupNavigation()        # next / prev links inside reader.
     @initializeVerses()       # setup selected and focused verses upon page load
     @loadHighlights("#version_primary")
-
-    $("#sidebar").on "click", "#widget-notes div.ft span.pagination", (event)=>
-      cls = $(event.target).parent().attr("class")
-      if cls.indexOf("next") != -1
-        $("#widget-notes").data("paginate-direction", "next")
-      else
-        $("#widget-notes").data("paginate-direction", "previous")
-      Events.Emitter.emit("community_notes:paginate", event)
-
 
   verseClicked: (verse)->
     v = $(verse)

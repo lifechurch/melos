@@ -54,10 +54,6 @@ jQuery(document).ready(function() {
   });
 
 
-  $("#widget-notes").each( function() {
-    new Sidebars.CommunityNotes({el: "#widget-notes"});
-  });
-
   // Toggle feature
   // Add  the attribute data-toggle-trigger="true" to any link
   // and data-toggle-target="#id-of-element"

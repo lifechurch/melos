@@ -11,6 +11,7 @@ class window.Sidebars.CommunityNotes
       url = @articleNotesUrl()
       $(@paginate_selector).data("paginate-link", url)
       @load(url)
+      angular.element($('#widget-notes.notes')).scope().loadNotes(url);
 
     p_load = ()=>
       url = $(@paginate_selector).data("paginate-link")
@@ -21,11 +22,6 @@ class window.Sidebars.CommunityNotes
       else
         page = current_page + 1
       @load("#{url}?page=#{page}")
-
-    Events.Emitter.addListener "verses:selected", f_load
-    Events.Emitter.addListener "verses:deselected", f_load
-    Events.Emitter.addListener "community_notes:paginate", p_load
-
 
   load: (url)->
     el = $(@el_id)
