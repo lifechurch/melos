@@ -47,13 +47,10 @@ class NotesController < BaseMomentsController
   def sidebar
     ref    = ref_from_params rescue not_found
     notes  = Note.community({usfm: ref_to_usfm_array(ref)})
-    render 'sidebars/note/async', locals: { notes: notes }
-
-    # Just respond with JSON and forget HTML: errors in HTML Template and Web is Not Using It
-    # respond_to do |format|
-    #   format.json { render 'sidebars/note/async', locals: { notes: notes } }
-    #   format.html { render partial: 'sidebars/notes/list', locals: {notes: notes, ref: ref}, layout: false }
-    # end
+    respond_to do |format|
+      format.json { render 'sidebars/note/async', locals: { notes: notes } }
+      format.html
+    end
   end
 
 
