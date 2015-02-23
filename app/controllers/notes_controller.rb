@@ -51,13 +51,6 @@ class NotesController < BaseMomentsController
       format.json { render 'sidebars/note/async', locals: { notes: notes } }
       format.html
     end
-
-
-    # Just respond with JSON and forget HTML: errors in HTML Template and Web is Not Using It
-    # respond_to do |format|
-    #   format.json { render 'sidebars/note/async', locals: { notes: notes } }
-    #   format.html { render partial: 'sidebars/notes/list', locals: {notes: notes, ref: ref}, layout: false }
-    # end
   end
 
 
