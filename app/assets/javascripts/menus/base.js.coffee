@@ -13,9 +13,6 @@ class window.Menus.Base
   isVisible: ->
     $(@trigger_el).hasClass("active")
 
-  userIsLoggedIn: ->
-    window.getCookie('a') and window.getCookie('b') and window.getCookie('c')
-    
   open: ->
     $(@trigger_el).addClass("active")
     Events.Emitter.emit "yv:menu:open", [{target: this}]

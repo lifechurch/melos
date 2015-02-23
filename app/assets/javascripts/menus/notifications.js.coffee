@@ -19,7 +19,7 @@ class window.Menus.Notifications extends window.Menus.Base
     @api_url         = "/notifications"
     @popover          = $(@trigger_el).next('.header-popover')
     @badge            = $('.notifications-count')
-    @preload() if userIsLoggedIn()
+    @preload() if Session.User.isLoggedIn()
 
   preload: ->
     request = $.ajax 
