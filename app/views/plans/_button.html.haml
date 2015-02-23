@@ -15,6 +15,6 @@
         = link_to(t('ui.yes button'), subscribe_private_url.call(false), class:"action_button_blue button-public", method: :post)
         = link_to(t('ui.no button'), subscribe_private_url.call(true), class:"action_button_grey button-private", method: :post)
   - else
-    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", id: plan.id, redirect: plan_path(plan)), class: 'action_button_green')
+    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: 'action_button_green')
     = link_to t("plans.view sample"), {day: "1"}, {class: 'action_button_dark_grey'}
 

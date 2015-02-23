@@ -21,8 +21,8 @@ class window.Menus.Friends extends window.Menus.Base
     @api_url      = "/friendships/requests.json"
     @popover      = $(@trigger_el).next('.header-popover')
     @badge        = $('.friend-request-count')
-    @preload()
-
+    @preload() if userIsLoggedIn()
+    
     # Listen for a specific event to open this menu (moment intro page)
     Events.Emitter.addListener "menu:friend-requests:open", $.proxy(@open,@)
     Events.Emitter.addListener "menu:friend-requests:close", $.proxy(@close,@)
