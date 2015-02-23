@@ -1,7 +1,3 @@
-require 'rubygems'
-require 'bundler'
-Bundler.setup
-
 # This file is used by Rack-based servers to start the application.
 
 max_request_min = Integer(ENV['UNICORN_MAX_WORKER_REQ'] || 500)
@@ -9,6 +5,9 @@ max_request_max = Integer(ENV['UNICORN_MAX_WORKER_REQ'] || 600)
 
 
 if ENV['RAILS_ENV'] == 'development'
+  require 'rubygems'
+  require 'bundler'
+  Bundler.setup
   require 'unicorn'
 end
 
