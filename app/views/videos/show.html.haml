@@ -2,6 +2,9 @@
 - publisher = @video.publisher
 - @sidebar = false
 - @title = "#{t('videos.title')}: #{strip_tags(@video.title)} - #{@video.credits}"
+- meta_title = strip_tags(@video.title)
+- meta_description = @title
+- meta_description = @video.description.html_safe if @video.description.present?
 
 - content_for :meta_description do
   = @title
@@ -10,6 +13,16 @@
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - canonicalHref = "https://www.bible.com#{locale_dir}/videos/#{@video.to_param}"
   %link{rel: "canonical", href: canonicalHref}
+  %meta{property: "og:title",       content: meta_title }
+  %meta{property: "og:url",         content: canonicalHref }
+  %meta{property: "og:description", content: meta_description }
+  %meta{property: "og:image", content: "#{@video.poster_image.url}"}
+  %meta{name: "twitter:card",             content: "summary"}
+  %meta{name: "twitter:url",              content: @video.short_url}
+  %meta{name: "twitter:title" ,           content: meta_title}
+  %meta{name: "twitter:description",      content: meta_description}
+  %meta{name: "twitter:image",            content: "#{@video.poster_image.url}"}
+  %meta{name: "twitter:site",             content: "@YouVersion"}
 
 %article
   #title-bar
