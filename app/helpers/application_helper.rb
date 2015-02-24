@@ -151,6 +151,40 @@ module ApplicationHelper
     "#{locale_dir}/app"
   end
 
+  def blog_url(locale)
+    case locale.to_s
+      when "zh-TW"
+        return "http://blog.youversion.com/zh-hant/" #zh-Hant = TW
+      when "zh-CN"
+        return "http://blog.youversion.com/zh-hans/" #zh-Hans = CN
+      when "nl"
+        return "http://blog.youversion.com/nl/"
+      when "fr"
+        return "http://blog.youversion.com/fr/"
+      when "de"
+        return "http://blog.youversion.com/de/"
+      when "ru"
+        return "http://blog.youversion.com/ru/"
+      when "es", "es-ES"
+        return "http://blog.youversion.com/es/"
+      when "ko"
+        return "http://blog.youversion.com/ko/"
+      when "no"
+        return "http://blog.youversion.com/nb/"
+      when "pl"
+        return "http://blog.youversion.com/pl/"
+      when "pt", "pt-PT"
+        return "http://blog.youversion.com/pt-br/"
+      when "ro"
+        return "http://blog.youversion.com/ro/"
+      when "sv"
+        return "http://blog.youversion.com/sv/"
+      else
+        return "http://blog.youversion.com/"
+    end
+
+  end
+
   def kids_page_path
     locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
     "#{locale_dir}/kids"
