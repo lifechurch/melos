@@ -1,5 +1,3 @@
-angular.module('$preloaded', []);
-
 angular.module('yv', ['$preloaded'])
 
     .run(['$http', function($http) {
