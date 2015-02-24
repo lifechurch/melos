@@ -1,10 +1,15 @@
 - html_attributes(id:"video-show",classes:"videos")
 - publisher = @video.publisher
 - @sidebar = false
-- @title = strip_tags(@video.title)
+- @title = "#{t('videos.title')}: #{strip_tags(@video.title)} - #{@video.credits}"
 
-- content_for :title do
-  = @video.title
+- content_for :meta_description do
+  = @title
+
+- content_for :additional_meta do
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://www.bible.com#{locale_dir}/videos/#{@video.to_param}"
+  %link{rel: "canonical", href: canonicalHref}
 
 %article
   #title-bar

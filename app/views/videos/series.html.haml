@@ -1,10 +1,10 @@
 - html_attributes(id: "video-series",classes:"videos")
 - publisher  = @video.publisher
 - @sidebar = false
-- @title = strip_tags(@video.title)
+- @title = "#{t('videos.title')}: #{strip_tags(@video.title)} - #{@video.credits}"
 
-- content_for :title do
-  = @video.title.html_safe
+- content_for :meta_description do
+  = @title
 
 %article{ style: "background-image: url('#{@video.hero_image.url}')"}
   #title-bar
