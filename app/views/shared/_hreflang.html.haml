@@ -20,12 +20,9 @@
         - canonicalHref = href   #used for versions that are localized (eg.  Afrikaans versions canonical url is af)
         - if ((I18n.locale.to_s == ("en") and a_locale.to_s != ("en")) or (I18n.locale.to_s != "en" and a_locale.to_s == I18n.locale.to_s))
           %link{href: defaultHref, rel: "alternate", hreflang: "en"}
-          %link{href: defaultHref, rel: "alternate", hreflang: "x-default"}
           %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
     - else
       %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
-      - if a_locale.to_s.eql?("en")
-        %link{href: href, rel: "alternate", hreflang: "x-default"}
 
   - unless canonicalHref.nil?
     %link{rel: "canonical", href: canonicalHref}
