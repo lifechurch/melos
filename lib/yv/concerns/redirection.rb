@@ -76,8 +76,8 @@ module YV
             videos:
               {
                 index:    "videos?",
-                show:     "videos?id=#{params[:id]}",
-                series:   "videos?id=#{params[:id]}"
+                show:     "videos?id=#{params[:id].to_i}",
+                series:   "videos?id=#{params[:id].to_i}"
               },
             plans:
               {
