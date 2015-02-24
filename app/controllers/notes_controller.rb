@@ -49,7 +49,7 @@ class NotesController < BaseMomentsController
     notes  = Note.community({usfm: ref_to_usfm_array(ref)})
     respond_to do |format|
       format.json { render 'sidebars/note/async', locals: { notes: notes } }
-      format.html
+      format.html { render text: "Forbidden", status: :forbidden }
     end
   end
 
