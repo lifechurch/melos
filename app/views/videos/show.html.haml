@@ -15,7 +15,7 @@
   #title-bar
     %h1= @video.title
 
-    %span.publisher
+    %h2.publisher
       =link_to(@video.credits, publisher_video_path(id: @video.id))
 
     = render partial: "videos/share", locals: {video: @video}

@@ -103,7 +103,7 @@ class Video < YV::Resource
   end
 
   def to_param
-    "#{id} #{title.to_url}".parameterize
+    "#{id} #{title.to_url} #{credits.to_url}".parameterize
   end
 
 end

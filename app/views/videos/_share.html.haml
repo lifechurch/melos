@@ -2,6 +2,10 @@
   %span.share_wrapper
     =link_to(t("social.share"),"#")
 %div.share_panel
-  %ul
-    %li
-      =link_to(t("social.twitter.name"), 'http://twitter.com/intent/tweet?text=' + u("I'm watching #{strip_tags(video.title)} on @YouVersion. #{video.short_url}"),{:class => "twitter_share_btn"})
+  %div.video.addthis_sharing_toolbox
+    :javascript
+      window.addthis_share =
+      {
+        title : "I'm watching #{strip_tags(video.title)} on @YouVersion.",
+        url : "#{video.short_url}"
+      }
