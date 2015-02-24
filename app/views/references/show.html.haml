@@ -33,16 +33,6 @@
       = ".reader { font-family: '#{version.attributes.font.title}','Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif }"
 
 
-- content_for :javascripts do
-  = javascript_include_tag "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54d2b9d73051838d", :defer => "defer"
-
-  :javascript
-    var addthis_config = {
-      ui_language: "#{I18n.locale[0..1]}",
-      services_exclude : 'print,email,google,favorites',
-    }
-    addthis_config.data_track_clickback = false;
-
 -# Preload Ruby vars into Angular module so Angular controllers
 -#  will have access to this data without having to make
 -#  additional XHR calls
