@@ -16,12 +16,12 @@
   %meta{property: "og:title",       content: meta_title }
   %meta{property: "og:url",         content: canonicalHref }
   %meta{property: "og:description", content: meta_description }
-  %meta{property: "og:image", content: "#{@video.poster_image.url}"}
+  %meta{property: "og:image", content: "https:#{@video.poster_image.url}"}
   %meta{name: "twitter:card",             content: "summary"}
   %meta{name: "twitter:url",              content: @video.short_url}
   %meta{name: "twitter:title" ,           content: meta_title}
   %meta{name: "twitter:description",      content: meta_description}
-  %meta{name: "twitter:image",            content: "#{@video.poster_image.url}"}
+  %meta{name: "twitter:image",            content: "https:#{@video.poster_image.url}"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 %article
