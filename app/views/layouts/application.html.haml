@@ -11,7 +11,7 @@
 
   %head{lang: I18n.locale}
     = csrf_meta_tags
-    = render '/shared/hreflang' if show_hreflang
+    = render '/shared/hreflang' unless is_whitelabel_site
     = render '/shared/head'
     = render '/shared/javascripts'
     = render '/shared/google_analytics'
