@@ -11,7 +11,7 @@
 
   %head{lang: I18n.locale}
     = csrf_meta_tags
-    = render '/shared/hreflang' unless is_whitelabel_site
+    = render '/shared/hreflang' if show_hreflang
     = render '/shared/head'
     = render '/shared/javascripts'
     = render '/shared/google_analytics'
@@ -42,3 +42,12 @@
       = render partial: '/shared/footer', locals: {footer_classes: container_class_str}
 
     = render partial: "/shared/js_templates"
+
+    = javascript_include_tag "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54d2b9d73051838d", :defer => "defer"
+
+    :javascript
+      var addthis_config = {
+        ui_language: "#{I18n.locale[0..1]}",
+        services_exclude : 'print,email,google,favorites',
+      }
+      addthis_config.data_track_clickback = false;

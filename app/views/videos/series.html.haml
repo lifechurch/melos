@@ -1,15 +1,33 @@
 - html_attributes(id: "video-series",classes:"videos")
 - publisher  = @video.publisher
 - @sidebar = false
-- @title = strip_tags(@video.title)
+- @title = "#{t('videos.title')}: #{strip_tags(@video.title)} - #{@video.credits}"
+- meta_title = strip_tags(@video.title)
+- meta_description = @title
+- meta_description = "#{truncate(strip_tags(@video.description.html_safe), length: 180, separator: " ", omission: '')}..." if @video.description.present?
 
-- content_for :title do
-  = @video.title.html_safe
+- content_for :meta_description do
+  = @title
+
+- content_for :additional_meta do
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
+  %link{rel: "canonical", href: canonicalHref}
+  %meta{property: "og:title",       content: meta_title }
+  %meta{property: "og:url",         content: canonicalHref }
+  %meta{property: "og:description", content: meta_description }
+  %meta{property: "og:image", content: "#{@video.hero_image.url}"}
+  %meta{name: "twitter:card",             content: "summary"}
+  %meta{name: "twitter:url",              content: @video.short_url}
+  %meta{name: "twitter:title" ,           content: meta_title}
+  %meta{name: "twitter:description",      content: meta_description}
+  %meta{name: "twitter:image",            content: "#{@video.hero_image.url}"}
+  %meta{name: "twitter:site",             content: "@YouVersion"}
 
 %article{ style: "background-image: url('#{@video.hero_image.url}')"}
   #title-bar
     %h1= @video.title.html_safe
-    %span.publisher
+    %h2.publisher
       =link_to(@video.credits, publisher_video_path(id: @video.id))
     = render partial: "videos/share", locals: {video: @video}
 

@@ -841,6 +841,7 @@ en:
     loading sidebar content:                    "Loading sidebar content..."
   videos:
     title:                                      "Videos"
+    watch videos:                               "Watch videos about the Bible"
     all:                                        "All videos"
     related scripture:                          "Related Scripture"
 

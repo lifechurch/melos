@@ -102,4 +102,8 @@ class Video < YV::Resource
     renditions.reject {|rend| rend.format != format && rend.protocol != protocol}
   end
 
+  def to_param
+    "#{id} #{title.to_url} #{credits.to_url}".parameterize
+  end
+
 end

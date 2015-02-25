@@ -1,9 +1,9 @@
 - html_attributes(id:"videos-index")
 - @sidebar = false
-- @title = "Watch videos"
+- @title = "#{t('videos.watch videos')}"
 
-- content_for :title do
-  = t("videos.title")
+- content_for :meta_description do
+  = @title
 
 %article
   .inner
