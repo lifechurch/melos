@@ -10,7 +10,8 @@
   = @title
 
 - content_for :additional_meta do
-  - canonicalHref = "https://#{request.host_with_port}#{request.fullpath}"
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
   %link{rel: "canonical", href: canonicalHref}
   %meta{property: "og:title",       content: meta_title }
   %meta{property: "og:url",         content: canonicalHref }

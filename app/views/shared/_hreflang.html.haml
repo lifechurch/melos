@@ -1,5 +1,5 @@
 -#exclude reading plan pages from hreflang tags
-- unless request.fullpath.include? "reading-plans/"
+- unless request.fullpath.include? "reading-plans/" or request.fullpath.include? "videos/"
   - canonicalHref = nil
   - defaultHref = nil
   - I18n.available_locales.each do |a_locale|
