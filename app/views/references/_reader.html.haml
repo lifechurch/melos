@@ -16,10 +16,12 @@
   verse_view    = presenter.verses.present? && !presenter.respond_to?(:subscription)
 
 - content_for :additional_meta do
-  - deep_link = "youversion://#{@presenter.reference.deep_link_path}"
-  - if deep_link.present?
+  - ref_deep_link = "#{@presenter.reference.deep_link_path}"
+  - deep_link = "youversion://#{ref_deep_link}" if ref_deep_link.present?
+
+  - if ref_deep_link.present?
     %meta{name: "apple-itunes-app",         content: "app-id=282935706, app-argument=#{deep_link}"}
-    %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{deep_link.gsub('version_id','version')}"}
+    %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{ref_deep_link.gsub('version_id','version')}"}
 
   - if verse_view
     - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
