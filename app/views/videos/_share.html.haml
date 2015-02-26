@@ -7,5 +7,5 @@
       window.addthis_share =
       {
         title : "I'm watching #{strip_tags(video.title)} on @YouVersion.",
-        url : "#{video.short_url}"
+        url : "#{video.short_url.gsub('http:', 'https:')}"
       }
