@@ -17,7 +17,9 @@
 
 - content_for :additional_meta do
   - deep_link = "youversion://#{@presenter.reference.deep_link_path}"
-  %meta{name: "apple-itunes-app",         content: "app-id=282935706, app-argument=#{deep_link}"}
+  - if deep_link.present?
+    %meta{name: "apple-itunes-app",         content: "app-id=282935706, app-argument=#{deep_link}"}
+    %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{deep_link.gsub('version_id','version')}"}
 
   - if verse_view
     - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
@@ -30,15 +32,16 @@
     %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
     %meta{name: "twitter:site",             content: "@YouVersion"}
 
-    %meta{name: "twitter:app:name:iphone",  content:"Bible"}
-    %meta{name: "twitter:app:id:iphone",    content:"282935706"}
-    %meta{name: "twitter:app:url:iphone",   content: deep_link}
-    %meta{name: "twitter:app:name:ipad",    content:"Bible"}
-    %meta{name: "twitter:app:id:ipad",      content:"282935706"}
-    %meta{name: "twitter:app:url:ipad",     content: deep_link}
-    %meta{name: "twitter:app:name:googleplay",  content:"Bible"}
-    %meta{name: "twitter:app:id:googleplay",    content:"com.sirma.mobile.bible.android"}
-    %meta{name: "twitter:app:url:googleplay",   content: deep_link }
+    - if deep_link.present?
+      %meta{name: "twitter:app:name:iphone",  content:"Bible"}
+      %meta{name: "twitter:app:id:iphone",    content:"282935706"}
+      %meta{name: "twitter:app:url:iphone",   content: deep_link}
+      %meta{name: "twitter:app:name:ipad",    content:"Bible"}
+      %meta{name: "twitter:app:id:ipad",      content:"282935706"}
+      %meta{name: "twitter:app:url:ipad",     content: deep_link}
+      %meta{name: "twitter:app:name:googleplay",  content:"Bible"}
+      %meta{name: "twitter:app:id:googleplay",    content:"com.sirma.mobile.bible.android"}
+      %meta{name: "twitter:app:url:googleplay",   content: deep_link }
 
     %meta{property: "og:title",       content: meta_title }
     %meta{property: "og:url",         content: meta_url }

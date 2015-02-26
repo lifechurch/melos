@@ -324,6 +324,9 @@ class Reference < YV::Resource
   # returns a String for a relative deep link path to be used for app urls.
   # ex: youversion://reference=REF&version_id=VER
   def deep_link_path
+    # deep links don't currently handle verse ranges
+    return nil if (verses.present? and verses.count > 1)
+    return "bible?reference=#{chapter_usfm}.#{verses[0]}&version_id=#{version}" if (verses.present? and version)
     return "bible?reference=#{chapter_usfm}&version_id=#{version}" if version
     return "bible?reference=#{chapter_usfm}"
   end
