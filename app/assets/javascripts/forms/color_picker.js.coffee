@@ -4,7 +4,7 @@ class window.Forms.ColorPicker
 
   constructor: (form)->
     @form_el = $(form)
-    @setupColorpicker()
+    @setupColorpicker() if Session.User.isLoggedIn()
     return
 
   setupColorpicker: ()->

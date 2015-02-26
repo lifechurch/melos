@@ -54,7 +54,7 @@ class window.Reader
     @setupTranslationNotes()
     @setupNavigation()        # next / prev links inside reader.
     @initializeVerses()       # setup selected and focused verses upon page load
-    @loadHighlights("#version_primary")
+    @loadHighlights("#version_primary") if Session.User.isLoggedIn()
 
   verseClicked: (verse)->
     v = $(verse)
@@ -513,11 +513,11 @@ class window.Reader
             target.html content
             target.fadeIn 200
             target.attr "style", original_styles
-            @loadHighlights("#version_secondary")
+            @loadHighlights("#version_secondary") if Session.User.isLoggedIn()
 
         else
           target.html content
-          @loadHighlights("#version_secondary")
+          @loadHighlights("#version_secondary") if Session.User.isLoggedIn()
 
       error: (jqXHR,status,err)->
         target.html("<h1>Error Loading Secondary Version</h1>\
