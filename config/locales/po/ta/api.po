@@ -1,16 +1,5 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#
-# Tamil translations for Backend (YouVersion).
-# Copyright (C) 2014 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
-# #-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#
 # Tamil translations for Backend (YouVersion).
 # Copyright (C) 2015 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
-# #-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#
-# Tamil translations for Backend (YouVersion).
-# Copyright (C) 2014 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -19,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-19 09:29-0609\n"
-"PO-Revision-Date: 2014-12-19 09:29-0609\n"
+"POT-Creation-Date: 2015-02-25 16:38-0600\n"
+"PO-Revision-Date: 2015-02-25 16:38-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ta <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -70,6 +59,12 @@ msgstr "நீங்கள் <b>{reference_human}</b>-யை புத்தக
 
 msgid "moment.bookmark.title"
 msgstr "{name} அவர்கள் <b>{reference_human}</b>-யை புத்தகக்குறியிட்டுள்ளார்"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "பிப்ரவரிகான உங்களுக்கு விருப்பமான வேத திட்டத்தை கண்டெடுங்கள்!"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "நம்பிக்கையையும் புதுப்பித்தலையும் மார்ச் திட்டங்களினூடாய் கண்டடையுங்கள்."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015இல் தினமும் வேதத்தை வாசியுங்கள். திட்டங்கள் உதவும்!"

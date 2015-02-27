@@ -1,16 +1,5 @@
-# #-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#
 # Latvian translations for Backend (YouVersion).
 # Copyright (C) 2015 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
-# #-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#
-# Latvian translations for Backend (YouVersion).
-# Copyright (C) 2015 LifeChurch.tv
-# This file is distributed under the same license as the Backend (YouVersion) project.
-#
-# #-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#
-# Latvian translations for Backend (YouVersion).
-# Copyright (C) 2014 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -19,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-09 15:48-0600\n"
-"PO-Revision-Date: 2015-02-09 15:48-0600\n"
+"POT-Creation-Date: 2015-02-23 09:46-0600\n"
+"PO-Revision-Date: 2015-02-23 09:46-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: lv <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
@@ -70,6 +59,12 @@ msgstr "Tu izveidoji grāmatzīmi <b>{reference_human}</b>"
 
 msgid "moment.bookmark.title"
 msgstr "{name} izveidoja grāmatzīmi <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Atrodi mīļāko Bībeles lasīšanas plānu feburārim!"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Atrodi cerību un atjaunošanos marta lasīšanas plānos."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015. gadā lasi Bībeli katru dienu. Lasīšanas plāni palīdz!"

@@ -1,5 +1,5 @@
 # Slovak translations for Backend (YouVersion).
-# Copyright (C) 2014 LifeChurch.tv
+# Copyright (C) 2015 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-19 09:30-0609\n"
-"PO-Revision-Date: 2014-12-19 09:30-0609\n"
+"POT-Creation-Date: 2015-02-25 16:38-0600\n"
+"PO-Revision-Date: 2015-02-25 16:38-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sk <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -62,6 +62,12 @@ msgstr "Používateľ {name} pridal <b>{reference_human}</b> medzi svoje zálož
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Pripravte sa na Vianoce s adventným plánom čítania Biblie"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Objavte svoj obľúbený plán čítania Biblie na február!"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Objavte nádej a obnovu v marcových plánoch čítania Biblie."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Čítajte Bibliu denne aj v roku 2015. Plány pomáhajú!"

@@ -1,5 +1,5 @@
 # Arabic translations for Backend (YouVersion).
-# Copyright (C) 2014 LifeChurch.tv
+# Copyright (C) 2015 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-19 09:29-0609\n"
-"PO-Revision-Date: 2014-12-19 09:29-0609\n"
+"POT-Creation-Date: 2015-02-23 09:46-0600\n"
+"PO-Revision-Date: 2015-02-23 09:46-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ar <LL@li.org>\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
@@ -62,6 +62,12 @@ msgstr "{name} اختار الإشارة المرجعية <b>{reference_human}</
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "استعد لعيد الميلاد المجيد مع خطة قراءة الكتاب المقدس خاصة لمجيء المسيح"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "اكتشف خطة قراءة مفضلة لشهر فبراير !"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "المس الرجاء و التجديد في خطط القراءة لشهر مارس"
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "اقرء الكتاب المقدس يوميا في 2015.  الخطط ستساعدك! "

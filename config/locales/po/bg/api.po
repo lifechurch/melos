@@ -1,5 +1,5 @@
 # Bulgarian translations for Backend (YouVersion).
-# Copyright (C) 2014 LifeChurch.tv
+# Copyright (C) 2015 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-19 09:30-0609\n"
-"PO-Revision-Date: 2014-12-19 09:30-0609\n"
+"POT-Creation-Date: 2015-02-23 09:46-0600\n"
+"PO-Revision-Date: 2015-02-23 09:46-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: bg <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -59,6 +59,12 @@ msgstr "Вие добавихте в показалеца <b>{reference_human}</
 
 msgid "moment.bookmark.title"
 msgstr "{name} добави в показалеца <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Намерете своя предпочитан план за прочит на Библията през февруари!"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Намерете надежда и обновление в плановете за месец март."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Чети Библията всеки ден през 2015. Планът ще ти помогне"
@@ -110,6 +116,9 @@ msgstr "<i>Библейска поредица</i>"
 
 msgid "moment.system.christmas.title"
 msgstr "Сподели благата вест: Спасител се роди!"
+
+msgid "moment.system.find_friends.title"
+msgstr "Приложение Библията е дори още по-добро с приятели. Потърсете сред вашите контакти, за да намерите приятели."
 
 msgid "moment.video.watched.self.title"
 msgstr "Вие гледахте <b>{title}</b>"

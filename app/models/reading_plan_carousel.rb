@@ -9,7 +9,8 @@ class ReadingPlanCarousel < YV::Resource
   end
 
   def plans
-    Plan.all(category: self.category, page: 1, cache_for: YV::Caching.a_very_short_time).take(8)
+    plans = Plan.all(category: self.category, page: 1, cache_for: YV::Caching.a_short_time)
+    plans.take(8) if plans.present?
   end
 
 end
