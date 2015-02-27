@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-01-26 10:05-0600\n"
-"PO-Revision-Date: 2015-01-26 10:05-0600\n"
+"POT-Creation-Date: 2015-02-25 16:38-0600\n"
+"PO-Revision-Date: 2015-02-25 16:38-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -47,6 +47,12 @@ msgstr "شما <b>{reference_human}را نشانه‌گزاری کرده‌ای�
 
 msgid "moment.bookmark.title"
 msgstr "{name} <b>{reference_human}را نشانه‌گزاری کرد.</b>"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "برنامه مطالعه کتاب مقدس مورد علاقه‌ی خود را برای ماه فوریه بیابید!"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "امید و تازگی جدیدی را در برنامه‌های مطالعه کتاب مقدس ماه مارس بیایبد."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "کتاب‌مقدس را به‌صورت روزانه در سال ۲۰۱۵ مطالعه کنید! راهنمای برنامه‌های مطالعه!"

@@ -144,6 +144,9 @@ msgstr "Read the Bible daily in 2015. Plans help!"
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Find your favorite Bible Plan for February!"
 
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Find hope and renewal in March Plans."
+
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} commented on your bookmark: “{comment}”"
 

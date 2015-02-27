@@ -1,5 +1,5 @@
 # Khmer translations for Backend (YouVersion).
-# Copyright (C) 2014 LifeChurch.tv
+# Copyright (C) 2015 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-19 09:30-0609\n"
-"PO-Revision-Date: 2014-12-19 09:30-0609\n"
+"POT-Creation-Date: 2015-02-25 16:38-0600\n"
+"PO-Revision-Date: 2015-02-25 16:38-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: km <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-02-25 16:41-0600\n"
+"PO-Revision-Date: 2015-02-25 16:41-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: km <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -59,6 +59,12 @@ msgstr "អ្នក​បាន​កត់​ចំណាំ <b>{reference_hum
 
 msgid "moment.bookmark.title"
 msgstr "{name}បាន​កត់​ចំណាំ <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "ស្វែងរកគំរោងអានដែលអ្នកចូលចិត្តសំរាប់ខែកុម្ភ"
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "ស្វែងរកសេចក្ដីសង្ឃឹម និងានសង្ឃឹមវិញក្នុងគំរោងអានខែមិនា"
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "អាន​ព្រះ​គម្ពីរ​ប្រចាំ​ថ្ងៃ​ក្នុង​ឆ្នាំ​ 2015. ជំនួយលើ​គំរោង!"
@@ -164,6 +170,9 @@ msgstr "{name} បាន​បន្ថែម​កំណត់​ត្រា�
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} បាន​បន្ថែម​កំណត់​ត្រា, “{title}”"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} ទើប​​តែ​​បាន​​ចូល​​រួម​​ជា​មួយ​​នឹង​ YouVersion។ សូមចុច​​ដើម្បី​​បន្ថែម​​ពួក​​គេ​​នៅ​​ក្នុង​​បញ្ជីរ​​មិត្ត​​ភាព"
 
 msgid "notifications.system.test"
 msgstr "ទាញ​យក​កម្ម​វិធី​ព្រះ​គម្ពីរ​សំរាប់​ក្មេង ឥឡូវ​នេះ!!!"
