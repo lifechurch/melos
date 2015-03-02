@@ -33,7 +33,11 @@ module YV
               # Raise an error here if response code is 400 or greater and the API hasn't sent back a response object.
               # IMPORTANTLY - This avoids us potentially caching a bad API request
               if response.code >= 400 && response.body.nil?
-                raise APIError, "API Error: Bad API Response (code: #{response.code}) "
+                Raven.capture do
+                  raise APIError, "API Error: Bad API Response (code: #{response.code}) "
+                end
+                render text: "Error", status: response.code
+
               end
               return response
 
@@ -41,10 +45,17 @@ module YV
               JSON_500
 
             rescue Timeout::Error => e
-              raise APITimeoutError, log_api_timeout(resource_url,started_at)
-            
+              Raven.capture do
+                raise APITimeoutError, log_api_timeout(resource_url,started_at)
+              end
+              render text: "Timeout", status: :timeout
+
             rescue Exception => e
-              raise APIError, log_api_error(resource_url,e)
+              Raven.capture do
+                raise APIError, log_api_error(resource_url,e)
+              end
+              render text: "Error", status: 500
+
             end
           end
 
