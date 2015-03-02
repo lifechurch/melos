@@ -339,6 +339,7 @@ GEM
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
     ruby-hmac (0.4.0)
+    ruby-prof (0.11.2)
     rubyzip (0.9.9)
     sass (3.2.8)
     sass-rails (3.2.5)
@@ -471,6 +472,7 @@ DEPENDENCIES
   rspec
   rspec-cells
   rspec-rails
+  ruby-prof
   sass-rails (= 3.2.5)
   sentry-raven (~> 0.12.2)
   simplecov
