@@ -225,7 +225,7 @@ class Version < YV::Resource
       #      "metadata_build"=>12},
 
       
-      data, errs = get("bible/versions", type: "all", cache_for: YV::Caching.a_short_time)
+      data, errs = get("bible/versions", type: "all", cache_for: YV::Caching.a_long_time)
       results = YV::API::Results.new(data,errs)
         raise_errors(results.errors, "Version#versions") unless results.valid?
         
