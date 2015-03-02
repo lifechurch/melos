@@ -25,7 +25,7 @@
     .sidebar
       .search
 
-        %form#plan-search{method: 'get', action: request.fullpath}
+        %form#plan-search{method: 'get', action: :plans_path }
           - if params[:category]
             %input{type: "hidden", name: "category", value: params[:category]}
           - if params[:translate]
@@ -35,7 +35,7 @@
           %input.field.autofocus{name: "query", type: 'search', placeholder: t("plans.search placeholder", category: @category.label || t("plans.all")), value: params[:query]}
           %input.submit{type: 'submit', value: t("plans.search"), onClick: "$('select.language').attr('disabled','true');"}
 
-        %form{method: 'get', action: request.fullpath}
+        %form{method: 'get', action: :plans_path }
           %input{type: "hidden", name: "translate", value: (params[:translate] || "true")}
           - if params[:category]
             %input{type: "hidden", name: "category", value: params[:category]}

@@ -1,6 +1,6 @@
 - version_id = params[:version_id].to_i if params[:version_id].present?
 
-%form#version_form{method: 'get', action: request.fullpath}
+%form#version_form{method: 'get', action: :search_path }
   %input{type: "hidden", name: "q", value: search.query}
   %input{type: "hidden", name: "category", value: :bible}
   - all_languages = Version.all_by_language
