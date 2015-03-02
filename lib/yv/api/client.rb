@@ -11,6 +11,8 @@ module YV
       # 500 Json response
 
         JSON_500 = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "MultiJson::DecodeError"}]}}}')
+        JSON_500_General = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "General API Error"}]}}}')
+        JSON_408 = JSON.parse('{"response": {"code": 408, "data": {"errors": [{"json": "API Timeout Error"}]}}}')
 
 
       class << self
@@ -36,7 +38,7 @@ module YV
                 Raven.capture do
                   raise APIError, "API Error: Bad API Response (code: #{response.code}) "
                 end
-                render text: "Error", status: response.code
+                JSON_500_General
 
               end
               return response
@@ -48,13 +50,13 @@ module YV
               Raven.capture do
                 raise APITimeoutError, log_api_timeout(resource_url,started_at)
               end
-              render text: "Timeout", status: :timeout
+              JSON_408
 
             rescue Exception => e
               Raven.capture do
                 raise APIError, log_api_error(resource_url,e)
               end
-              render text: "Error", status: 500
+              JSON_500_General
 
             end
           end
