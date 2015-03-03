@@ -23,7 +23,7 @@ de:
                     copy: "Tauscht euch offen über die Bibel aus."
                     button: "Suche dir erst einmal ein paar Freunde."
                 likes: 
-                    info: "und 4 weiteren Leuten gefällt das"
+                    info: "und 4 anderen Leuten gefällt das"
                 comments: 
                     first: 
                         text: "Das habe ich heute gebracht! Danke dir. Lass uns bald mal telefonieren!"
@@ -258,10 +258,10 @@ de:
         return to: "Zurück zu"
         time past: "vor %{ago}"
         user likes this: "%{last_liker_link} gefällt das"
-        likes count more: "%{likes_count} weitere Benutzer"
-        likes count 2 more: "%{likes_count} weiteren Leuten"
-        likes count 3 or more: "%{likes_count} weiteren Leuten"
-        users like this: "%{last_liker_link} und %{more_link} anderen Leuten gefällt das"
+        likes count more: "%{likes_count} anderen"
+        likes count 2 more: "%{likes_count} anderen"
+        likes count 3 or more: "%{likes_count} anderen"
+        users like this: "%{last_liker_link} und %{more_link} gefällt das"
         vod: 
             title: "Vers des Tages"
             get daily email: "Tägliche E-Mail erhalten"

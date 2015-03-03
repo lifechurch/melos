@@ -384,7 +384,7 @@ uk:
             save button: "Зберегти"
         status: 
             private: "Приватне"
-            public: "Публічне"
+            public: "Загальнодоступні"
             friends: "Лише друзі"
             draft: "Чернетка"
         list title: "Нотатки"
@@ -740,7 +740,7 @@ uk:
         privacy: 
             visible to friends?: "Ви хочете, щоб ваші друзі бачити вашу діяльність з планом?"
             private: "Приватне"
-            public: "Публічне"
+            public: "Загальнодоступне"
         title: "Плани читання"
         browse by category: "Пошук по категорії"
         browse plans: "Дослідити %{category} Плани"
@@ -784,7 +784,7 @@ uk:
         read today: "Читання на сьогодні"
         devotional: "Роздуми"
         completion status _ below percentage: "Завершено"
-        current progress html: "День<b>%{day}</b> з <b>%{total_days}</b>"
+        current progress html: "День <b>%{day}</b> з <b>%{total_days}</b>"
         start date _ before date string: "Дата початку:"
         end date _ before date string: "Дата закінчення:"
         are you behind: "Трішки відстали?"
@@ -940,7 +940,7 @@ uk:
         creation form errors: "При обробці пожертвування виникла така помилка(и):"
     download ad: 
         title: "Завантажте безкоштовну програму Біблія"
-        description copy: "Сотні версій %{language_count}різними мовами - Біблія, яка крокує скрізь із вами."
+        description copy: "Сотні перекладів на %{language_count}+ різних мовах - Біблія, яка завжди з вами."
         line 1: "Сотні перекладів на 100+"
         line 2: "різних мов - це все Біблія"
         line 3: "що всюди прямує з вами."
@@ -1072,7 +1072,7 @@ uk:
     versions: 
         filter: "Фільтр перекладів…"
         see all: "Побачити усі версії…"
-        courtesy of: "%{abbreviation} підготовлено для вас %{publisher}"
+        courtesy of: "%{abbreviation} надано вам %{publisher}"
         learn more: "Дізнатись більше"
         index title: "Доступні версії"
         publisher widget title: "Видавець"
