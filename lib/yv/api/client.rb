@@ -11,6 +11,8 @@ module YV
       # 500 Json response
 
         JSON_500 = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "MultiJson::DecodeError"}]}}}')
+        JSON_500_General = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "General API Error"}]}}}')
+        JSON_408 = JSON.parse('{"response": {"code": 408, "data": {"errors": [{"json": "API Timeout Error"}]}}}')
 
 
       class << self
@@ -33,7 +35,11 @@ module YV
               # Raise an error here if response code is 400 or greater and the API hasn't sent back a response object.
               # IMPORTANTLY - This avoids us potentially caching a bad API request
               if response.code >= 400 && response.body.nil?
-                raise APIError, "API Error: Bad API Response (code: #{response.code}) "
+                Raven.capture do
+                  raise APIError, "API Error: Bad API Response (code: #{response.code}) "
+                end
+                JSON_500_General
+
               end
               return response
 
@@ -41,10 +47,17 @@ module YV
               JSON_500
 
             rescue Timeout::Error => e
-              raise APITimeoutError, log_api_timeout(resource_url,started_at)
-            
+              Raven.capture do
+                raise APITimeoutError, log_api_timeout(resource_url,started_at)
+              end
+              JSON_408
+
             rescue Exception => e
-              raise APIError, log_api_error(resource_url,e)
+              Raven.capture do
+                raise APIError, log_api_error(resource_url,e)
+              end
+              JSON_500_General
+
             end
           end
 
