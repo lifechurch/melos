@@ -100,6 +100,7 @@ group :development, :tddium_ignore do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'zeus', '~> 0.15'
+  gem 'ruby-prof'
 end
 
 group :test, :development do

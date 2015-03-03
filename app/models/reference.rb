@@ -431,7 +431,8 @@ class Reference < YV::Resource
 
     opts = {
       id: version || Version.default,
-      reference: chapter_usfm
+      reference: chapter_usfm,
+      cache_for: YV::Caching.a_long_time
     }
 
     data, errs = self.class.get("bible/chapter", opts)
