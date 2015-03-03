@@ -9,7 +9,7 @@
         = t('Size')
       %a.extras{href: '#extras'}
         = t('Extras')
-  %form.dynamic_menu_inner{action: ''}
+  %form.dynamic_menu_inner{action: request.fullpath}
     %fieldset.clearfix#font_settings
       %p.gutter_bottom_half
         %b
