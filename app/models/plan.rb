@@ -202,13 +202,13 @@ class Plan < YV::Resource
 
   def friends_reading(opts={})
     response = Plan.stats(id: self.id, auth: opts[:auth])
-    return response["friends"]["subscribed"] || [] if response["friends"]
+    return response["friends"].try(:[], :subscribed) if response["friends"]
     return []
   end
 
   def friends_completed(opts={})
     response = Plan.stats(id: self.id, auth: opts[:auth])
-    return response["friends"]["completed"] || [] if response["friends"]
+    return response["friends"].try(:[], :completed) if response["friends"]
     return []
   end
 
