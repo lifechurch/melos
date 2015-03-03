@@ -22,7 +22,7 @@
 
     .content
       - if @category == :bible
-        = render partial: "bible_version_form", locals: {search: @search}
+        = render partial: "bible_version_form", locals: {search: @search, category: @category}
 
       - if @results.present? && @results.count > 0
         %ul.resource_list
