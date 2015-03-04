@@ -14,8 +14,8 @@ module YV
 
           def from_all(results)
             return results if results.empty? or results.moments.nil?
-            # Reject is temp hack
-            results.moment.reject! {|m| m.kind_id == "image.v2" }
+            # Temp hack
+            results.moments.reject! {|m| m.kind_id == "image.v2" }
             results.moments.collect do |moment_data|
               map_from_kind(moment_data)
             end 
