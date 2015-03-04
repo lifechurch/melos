@@ -25,32 +25,36 @@
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 %article
-  #title-bar
-    %h1= @video.title
+  %div{itemprop: "video", itemtype:"http://schema.org/VideoObject", itemscope: ""}
+    #title-bar
+      %h1
+        %span{itemprop: "name"}= @video.title
 
-    %h2.publisher
-      =link_to(@video.credits, publisher_video_path(id: @video.id))
+      %h2.publisher
+        =link_to(@video.credits, publisher_video_path(id: @video.id))
 
-    = render partial: "videos/share", locals: {video: @video}
+      = render partial: "videos/share", locals: {video: @video}
 
-  #player-container
-    #player
+    %meta{itemprop: "thumbnail", content: "https:#{@video.poster_image.url}"}
+    #player-container
+      #player
 
-  .inner
-    #details
-      %div.refs
-        - if @video.references
-          %span= t("videos.related scripture")
+    .inner
+      #details
+        %div.refs
+          - if @video.references
+            %span= t("videos.related scripture")
 
-          %ul
-            - @video.references.each do |ref|
-              %li= link_to(ref.human, bible_version_path(Reference.new(ref.usfm, version: current_version)))
-      %p.description= @video.description.html_safe if @video.description.present?
+            %ul
+              - @video.references.each do |ref|
+                %li= link_to(ref.human, bible_version_path(Reference.new(ref.usfm, version: current_version)))
+        %p.description
+          %span{itemprop: "description"}= @video.description.html_safe if @video.description.present?
 
-    #other
-      - video_series = client_settings.video_series
-      = link_to( t("videos.all"), video_series.blank? ? videos_path : series_video_path(video_series) , class: "action_button_green")
-      = render partial: "videos/publisher_banner", locals: {publisher: publisher}
+      #other
+        - video_series = client_settings.video_series
+        = link_to( t("videos.all"), video_series.blank? ? videos_path : series_video_path(video_series) , class: "action_button_green")
+        = render partial: "videos/publisher_banner", locals: {publisher: publisher}
 
 
 -content_for :javascripts do
