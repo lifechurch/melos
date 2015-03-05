@@ -1,6 +1,9 @@
 - @title = "#{t('plans.title')}: #{t('plans.browse plans', category: @category.label || t('plans.all'))}"
 - translate = params[:translate] == "true"
 
+- content_for :additional_meta do
+  = render '/shared/hreflang'
+
 - content_for :meta_description do
   = "#{t('plans.title')}: #{t('plans.browse plans', category: @category.label || t('plans.all'))}"
 

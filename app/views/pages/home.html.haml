@@ -19,6 +19,7 @@
     try{Typekit.load();}catch(e){}
 
 - content_for :additional_meta do
+  = render '/shared/hreflang'
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}"
   %link{rel: "canonical", href: canonicalHref}
