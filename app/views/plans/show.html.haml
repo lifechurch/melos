@@ -9,15 +9,17 @@
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
   %link{rel: "canonical", href: canonicalHref}
+  - social_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"
 
   %meta{property: "og:title",       content: @title }
   %meta{property: "og:url",         content: @meta_url}
   %meta{property: "og:description", content: @plan.about }
+  %meta{property: "og:image", content: social_image_url}
   %meta{name: "twitter:card",             content: "summary"}
   %meta{name: "twitter:url",              content: @meta_url}
   %meta{name: "twitter:title" ,           content: @title}
   %meta{name: "twitter:description",      content: @plan.about}
-  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
+  %meta{name: "twitter:image",            content: social_image_url}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 %article.reading_plan_index
