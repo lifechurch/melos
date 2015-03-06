@@ -1,5 +1,4 @@
--#exclude reading plan pages from hreflang tags
-- unless (request.fullpath.include? "reading-plans/" or request.fullpath.include? "videos/")
+- unless is_whitelabel_site
   - canonicalHref = nil
   - defaultHref = nil
   - I18n.available_locales.each do |a_locale|
@@ -22,8 +21,18 @@
           %link{href: defaultHref, rel: "alternate", hreflang: "en"}
           %link{href: defaultHref, rel: "alternate", hreflang: "x-default"}
           %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
+          - if a_locale.to_s.eql?("zh-TW")
+            %link{href: href, rel: "alternate", hreflang: "zh-hk"}
+          - if a_locale.to_s.eql?("es")
+            %link{href: href, rel: "alternate", hreflang: "es-419"}
+            %link{href: href, rel: "alternate", hreflang: "es-us"}
     - else
       %link{href: href, rel: "alternate", hreflang: "#{a_locale.downcase}"}
+      - if a_locale.to_s.eql?("zh-TW")
+        %link{href: href, rel: "alternate", hreflang: "zh-hk"}
+      - if a_locale.to_s.eql?("es")
+        %link{href: href, rel: "alternate", hreflang: "es-419"}
+        %link{href: href, rel: "alternate", hreflang: "es-us"}
       - if a_locale.to_s.eql?("en")
         %link{href: href, rel: "alternate", hreflang: "x-default"}
 

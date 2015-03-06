@@ -291,25 +291,6 @@ module ApplicationHelper
     @site.to_s != "Bible(dot)com"
   end
 
-  def show_hreflang
-    unless is_whitelabel_site
-      # controller actions for which we want to generate hreflang meta tags
-      # (i.e. mostly search landing pages where there is fully localized content)
-      controller_action_array = [
-          {controller: "pages", action: "home"},
-          {controller: "pages", action: "app"},
-          {controller: "references", action: "show"},
-          {controller: "videos", action: "index"},
-          {controller: "plans", action: "index"},
-          {controller: "versions", action: "index"},
-          {controller: "sessions", action: "new"},
-          {controller: "users", action: "new"}
-          ]
-      return true if controller_action_array.select! {|o| current_page?(controller: o[:controller], action: o[:action])}.present?
-    end
-    return false
-  end
-
   def get_localized_reference_link(reference, a_locale)
     version = reference.version
 

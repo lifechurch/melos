@@ -16,6 +16,7 @@
   verse_view    = presenter.verses.present? && !presenter.respond_to?(:subscription)
 
 - content_for :additional_meta do
+  = render '/shared/hreflang'
   - ref_deep_link = "#{@presenter.reference.deep_link_path}"
   - deep_link = "youversion://#{ref_deep_link}" if ref_deep_link.present?
 
