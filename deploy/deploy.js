@@ -68,7 +68,7 @@ function addOns() {
 }
 
 function displayApp() {
-	fs.writeFile("heroku_urls.txt", "git_url=" + HerokuApp.git_url.replace('git@heroku.com:', 'https://heroku.com/') + "\nweb_url=" + HerokuApp.web_url, function(err) {
+	fs.writeFile("heroku_urls.txt", "git_url=" + HerokuApp.git_url.replace('git@heroku.com:', 'https://:' + process.env.HEROKU_API_KEY + '@heroku.com/') + "\nweb_url=" + HerokuApp.web_url, function(err) {
 		if (err) {
 			reportError(1, "Failed to write Git/Web URLs to File", err);
 		}
