@@ -2,10 +2,4 @@
   %span.share_wrapper
     =link_to(t("social.share"),"#")
 %div.share_panel
-  %div.video.addthis_sharing_toolbox
-    :javascript
-      window.addthis_share =
-      {
-        title : "I'm watching #{strip_tags(video.title)} on @YouVersion.",
-        url : "#{video.short_url.gsub('http:', 'https:')}"
-      }
+  %div.video.addthis_sharing_toolbox{:data => {:url => "#{video.short_url.gsub('http:', 'https:')}", :title => "#{t('videos.share video', video_title: strip_tags(video.title))}"}}
