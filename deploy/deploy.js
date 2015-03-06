@@ -68,19 +68,12 @@ function addOns() {
 }
 
 function displayApp() {
-	fs.writeFile("heroku_git_url.txt", HerokuApp.git_url, function(err) {
+	fs.writeFile("heroku_urls.txt", "git_url=" + HerokuApp.git_url + "\nweb_url=" + HerokuApp.web_url, function(err) {
 		if (err) {
-			reportError(1, "Failed to set Git URL ENV Var", err);
+			reportError(1, "Failed to write Git/Web URLs to File", err);
 		}
-
-		fs.writeFile("heroku_web_url.txt", HerokuApp.web_url, function(err) {
-			if (err) {
-				reportError(1, "Failed to set Web URL ENV Var", err);
-			}
-
-			console.log("APP:", HerokuApp);
-			process.exit();			
-		});			
+		console.log("APP:", HerokuApp);
+		process.exit();			
 	});
 }
 
