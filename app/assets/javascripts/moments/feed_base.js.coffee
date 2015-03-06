@@ -96,6 +96,8 @@ class window.Moments.FeedBase
         new Moments.System(data,@)
       when "reading_plan_carousel"
         new Moments.ReadingPlanCarousel(data,@)
+      when "image"
+        new Moments.Image(data,@)
       else
         @renderNext()
 
