@@ -27,9 +27,8 @@
   %h1.keep= @plan.name
 
   .rp-plan-info
-    %div.left
+    %p
       = @plan.length
-    %div.right.addthis_sharing_toolbox{:data => {:url => "#{@plan.short_url.gsub('http:', 'https:')}", :title => "#{t('plans.share plan', plan_title: @plan.title.dup)}"}}
 
   .rp-plan-about
     .rp-plan-about-buttons
