@@ -5,6 +5,8 @@
  */
 
 var Heroku = require('heroku-client'),
+	exec = require('child_process').exec,
+	fs = require('fs'),
 	heroku = new Heroku({ token: process.env.HEROKU_API_KEY }),
 	HerokuApp = null;
 
@@ -65,8 +67,20 @@ function addOns() {
 }
 
 function displayApp() {
-	console.log("APP:", HerokuApp);
-	process.exit();
+	fs.writeFile("heroku_git_url.txt", HerokuApp.git_url, function(err) {
+		if (err) {
+			reportError(1, "Failed to set Git URL ENV Var", err);
+		}
+
+		fs.writeFile("heroku_web_url.txt", HerokuApp.web_url, function(err) {
+			if (err) {
+				reportError(1, "Failed to set Web URL ENV Var", err);
+			}
+
+			console.log("APP:", HerokuApp);
+			process.exit();			
+		});			
+	});
 }
 
 function reportError(exitCode, msg, err) {
