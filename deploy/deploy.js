@@ -55,6 +55,7 @@ function createApp() {
 	});
 }
 
+
 function addOns() {
 	// Very inefficient code. Should use map() or for() and then wait for all callbacks
 	heroku.apps(herokuAppName()).addons().create({ plan: 'heroku-postgresql' }, function(err, addon) {
