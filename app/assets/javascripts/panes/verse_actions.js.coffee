@@ -47,6 +47,7 @@ class window.Panes.VerseActions
 
   open: ()->
     #@initPanes() unless @isPanesLoaded()
+    Page.prototype.shareInit()
     return if @is_open
 
     @el.slideDown @speed, ()=>
