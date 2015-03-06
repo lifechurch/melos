@@ -1,0 +1,8 @@
+{
+  "name": "youversion-web-deploy",
+  "version": "0.0.1",
+  "description": "Deploy branches to Heroku as part of Bamboo CI",
+  "dependencies": {
+    "heroku-client": "1.9.1"
+  }
+ }

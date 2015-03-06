@@ -26,3 +26,5 @@ db/*.sqlite3
 .env
 
 .powenv
+
+deploy/node_modules
