@@ -12,6 +12,7 @@ class window.Moments.Image extends window.Moments.Base
         uuid:           @generateID()
         id:             @data.id
         created_dt:     moment(@data.created_dt).format('LL')
+        path:           @data.path
         moment_title:   @data.moment_title
         body_text:      @data.body_text
         body_image:     @data.body_image

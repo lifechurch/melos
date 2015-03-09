@@ -12,4 +12,8 @@ class Image < YV::Resource
     body_images.collection.sort_by{|i| i.width}.last.url if body_images.collection.present?
   end
 
+  def to_path
+    "/moments/#{id}"
+  end
+
 end

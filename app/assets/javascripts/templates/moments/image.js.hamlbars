@@ -6,13 +6,13 @@
       {{/if}}
       {{#if avatar}}
       %span{:class => 'moment-avatar {{avatar_style}}'}
-        %a{href: "{{action_url}}"}
+        %a{href: "{{user.path}}"}
           %img{src: "{{avatar}}"}/
       {{/if}}
       %span.moment-time
         {{created_dt}}
       %h2.moment-sys-text
-        %a{href: "{{action_url}}"}
+        %a{href: "{{path}}"}
           {{{moment_title}}}
       {{#if body_image}}
       .moment-sys-image
