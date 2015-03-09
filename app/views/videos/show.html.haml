@@ -59,6 +59,10 @@
 
 -content_for :javascripts do
 
+  = javascript_include_tag "/assets/jw/jwplayer.js"
+  = javascript_include_tag "/assets/jw/jwplayer.html5.js"
+  %script jwplayer.key="78lie9ccvQjr8uJGZzLhFeI1t94sTOzTqA3A9QpRvK0="
+
   - videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
   - # Create our player for all videos
 
