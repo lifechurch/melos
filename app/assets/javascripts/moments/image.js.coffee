@@ -10,6 +10,7 @@ class window.Moments.Image extends window.Moments.Base
     if @template
       html = @template
         uuid:           @generateID()
+        id:             @data.id
         created_dt:     moment(@data.created_dt).format('LL')
         moment_title:   @data.moment_title
         body_text:      @data.body_text
@@ -18,5 +19,13 @@ class window.Moments.Image extends window.Moments.Base
         avatar_style:   @data.avatar_style
         action_url:     @data.action_url
         kind_color:     @data.kind_color
-
+        comments:       @data.comments
+        likes:          @data.likes
+        actions:        @data.actions
+        labels:         @data.labels
+        interact_with:  true
+        user:
+          id:         @data.user.id
+          path:       @data.user.path
+          avatar:     Session.User.avatar()
       return html

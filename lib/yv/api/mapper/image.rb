@@ -18,10 +18,11 @@ module YV
           end
 
           def map_to_instance(instance,data)
+            instance.id               = data.id.to_s
             instance.created_dt       = data.created_dt
             # instance.extras           = data.extras
             instance.kind_id          = data.kind_id
-
+            instance.kind_color       = data.kind_color  
             instance.moment_title     = t(data.base.title["l_str"], data.base.title["l_args"]) if data.base.title.l_str
             instance.moment_title   ||= data.base.title["str"] if data.base.title.str
 

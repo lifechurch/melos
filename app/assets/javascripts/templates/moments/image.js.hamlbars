@@ -1,4 +1,4 @@
-.moment{"data-uuid" => "{{uuid}}"}
+.moment{"data-uuid" => "{{uuid}}", "data-moment-id" => "{{id}}", "data-moment-path" => "{{path}}"}
   .moment-top
     .moment-sys
       {{#if kind_color}}
@@ -23,3 +23,6 @@
       %div{style: "clear:both;"}
         {{{body_text}}}
       {{/if}}
+  .moment-btm
+    {{> moments/_actions_bar}}
+    {{> moments/_comments}}
