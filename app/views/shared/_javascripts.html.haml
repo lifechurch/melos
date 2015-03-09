@@ -7,14 +7,11 @@
 = javascript_include_tag "application"
 / JS locale file
 -if "en" != I18n.locale.to_s
-  = javascript_include_tag "i18n/en"
+  = javascript_include_tag "i18n/en", async: true
 
-= javascript_include_tag "i18n/#{I18n.locale}"
+= javascript_include_tag "i18n/#{I18n.locale}", async: true
 - if content_for? :javascripts
   = yield :javascripts
-
-:plain
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 -#twitter remarketing
 -# %script{:type => "text/javascript", :src  => "//platform.twitter.com/oct.js"}
