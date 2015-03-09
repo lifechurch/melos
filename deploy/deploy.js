@@ -1,8 +1,4 @@
-/**
- * Heroku Deploy Script for Bamboo
- *
- *
- */
+// Heroku Deploy Script for Bamboo
 
 var Heroku = require('heroku-client'),
 	exec = require('child_process').exec,
@@ -10,28 +6,34 @@ var Heroku = require('heroku-client'),
 	heroku = new Heroku({ token: process.env.HEROKU_API_KEY }),
 	HerokuApp = null;
 
-// heroku.addonServices("heroku-postgresql").info(function(err, addons) {
-// 	console.log(err, addons);
-// });
+if (herokuAppName() !== 'master') { 
+	heroku.apps(herokuAppName()).info(function(err, app) {
 
-heroku.apps(herokuAppName()).info(function(err, app) {
-	// App Doesn't Exist on Heroku
-	if (err && err.statusCode == 404) {
-		console.log("App Doesn't Exist. Creating...");
-		createApp();
-	} else if (err) {
-		reportError(1, "Some sort of error occurred while deploying app.", err);
+		// App Doesn't Exist on Heroku
+		if (err && err.statusCode == 404) {
+			console.log("App Doesn't Exist. Creating...");
+			createApp();
+		} else if (err) {
+			reportError(1, "Some sort of error occurred while deploying app.", err);
 
-	} else {
-		HerokuApp = app;
-		console.log("App already exists.");
-		displayApp();
-	}
-});
+		} else {
+			HerokuApp = app;
+			console.log("App already exists.");
+			displayApp();
+		}
+	});
+} else {
+	reportError(0, "Don't mess with Master branch. Ignoring.");
+}
 
 function herokuAppName() {
-	if (process.env.BRANCH) { 
-		return "dev-" + process.env.BRANCH.toLowerCase();
+	if (process.env.BRANCH) {
+		if (process.env.BRANCH.toLowerCase() == "integration") {
+			return "yv-staging";
+		} else { 
+			return "dev-" + process.env.BRANCH.toLowerCase();
+		}
+
 	} else {
 		reportError(9, "BRANCH Environment Variable wasn't set.");
 	}
