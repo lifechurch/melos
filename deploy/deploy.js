@@ -37,6 +37,10 @@ function herokuAppName() {
 	}
 }
 
+function hipchatToken() {
+	return process.env.HIPCHAT_TOKEN || null;	
+}
+
 function createApp() {
 	var attr = {
 		name: herokuAppName(),
@@ -62,7 +66,10 @@ function addOns() {
 		console.log(err, addon);
 		heroku.apps(herokuAppName()).addons().create({ plan: 'memcachier' }, function(err, addon) {
 			console.log(err, addon);
-			displayApp();		
+			heroku.apps(herokuAppName()).addons().create({ plan: 'deployhooks:hipchat', auth_token: hipchatToken(), room: "YouVersion Web", message: "{{app}} deployed by {{user}}. <a href='{{url}}'>Go There!</a>"  }, function(err, addon) {
+				console.log(err, addon);
+				displayApp();		
+			});
 		});		
 	});
 }
