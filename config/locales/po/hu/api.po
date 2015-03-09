@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hu <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hu <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -84,11 +84,17 @@ msgstr "Kiemelted <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} kiemelte <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Készítettél egy igeverset <b>{reference_human}</b> verséről"
+
+msgid "moment.image.title"
+msgstr "{name} készített egy igeképet <b>{reference_human}</b> verséről."
+
 msgid "moment.note.self.title"
-msgstr "Hozzáadtál egy jegyzetet, <b>{title}</b>"
+msgstr "Készítettél egy <b>\"{title}\"</b> című jegyzetet"
 
 msgid "moment.note.title"
-msgstr "{name} hozzáadott egy jegyzetet, <b>{title}</b>"
+msgstr "{name} készített egy <b>\"{title}\"</b> című jegyzetet"
 
 msgid "moment.plan_completion.self.title"
 msgstr "Befejeztél egy tervet"
@@ -138,6 +144,9 @@ msgstr "{name} megjegyzést fűzött az új barátságodhoz a következővel {fr
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} hozzászólt a kiemelésedhez: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} hozzászólt az igeképedhez “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} hozzászólt a jegyzetedhez: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} is fűzött megjegyzést a {moment_owner_name} új bar�
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} kiemeléséhez: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} igeképéhez: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} jegyzetéhez: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} is megjegyzést fűztött új barátságukhoz a köv
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} szintén hozzászólt a kiemeléséhez: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} szintén hozzászólt az igeképükhöz: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} szintén hozzászólt a jegyzetéhez: “{comment}”"
@@ -190,7 +205,7 @@ msgid "notifications.friendships.nowfriends"
 msgstr "{name} mostantól a barátod"
 
 msgid "notifications.friendships.offer"
-msgstr "{name} szeretne a barátod lenni a YouVersionön"
+msgstr "{name} szeretne barátod lenni a YouVersion-ön."
 
 msgid "notifications.friendships.suggestion"
 msgstr "Szeretnél {name} barátja lenni a YouVersionön?"
@@ -203,6 +218,9 @@ msgstr "{name} kedveli a barátságodat a következővel {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} kedveli a kiemelésed: {reference_human}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} kedveli a(z) {reference_human} verséről való igeképedet."
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} kedveli a jegyzeted"
@@ -225,11 +243,14 @@ msgstr "{name} könyvjelzőzte {reference_human}"
 msgid "notifications.moments.create.highlight"
 msgstr "{name} kiemelte {reference_human}"
 
+msgid "notifications.moments.create.image"
+msgstr "{name} készített egy igeképet {reference_human} verséről."
+
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} jegyzetelt"
 
 msgid "notifications.moments.create.note.reference"
-msgstr "{name} jegyzetet fűzött ehez: {reference_human}"
+msgstr "{name} jegyzetet fűzött ehhez: {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} jegyzetelt, “{title}”"
@@ -241,10 +262,10 @@ msgid "notifications.moments.create.plan_completion.push"
 msgstr "{name} befejezték a tervüket: {title}"
 
 msgid "notifications.moments.create.plan_subscription"
-msgstr "{name} elkezdett egy új tervet: {title}"
+msgstr "{name} elkezdett egy új tervet, melynek neve: \"{title}\""
 
 msgid "notifications.moments.create.plan_subscription.push"
-msgstr "{name} elkezdett egy új Biblia tervet: {title}"
+msgstr "{name} elkezdett egy új Biblia tervet, melynek neve: \"{title}\""
 
 msgid "notifications.people.contact.joined"
 msgstr "{name} éppen most csatlakozott a YouVersion-höz. Koppints, ha ismerősnek szeretnéd jelölni."

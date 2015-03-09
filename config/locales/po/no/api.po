@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nb_NO <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:49-0600\n"
-"PO-Revision-Date: 2015-02-23 09:49-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nb_NO <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -84,6 +84,12 @@ msgstr "Du markerte <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} markerte <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Du laget et bibelbilde til <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} laget et bibelbilde til <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Du la til et notat, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} kommenterte ditt nye vennskap med {friend_name}: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} kommenterte din markering: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} kommenterte også bibelbildet ditt: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} kommenterte notatet: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} kommenterte også {moment_owner_name}s nye vennskap med
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} kommenterte også {moment_owner_name} sin utheving: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} kommenterte også {moment_owner_name}s bibelbilde: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} kommenterte også {moment_owner_name} sitt notat: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} kommenterte også sitt nye vennskap med {friend_name
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} kommenterte også sin utheving: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} kommenterte også sitt bibelvers: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} kommenterte også notatet sitt: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} liker ditt nye vennskap med {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} liker markeringen din, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} liker bibelbilde ditt til {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} liker ditt notat"
 
@@ -224,6 +242,9 @@ msgstr "{name} bokmerket {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} markerte {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} laget et bibelbilde til {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} la til et notat"

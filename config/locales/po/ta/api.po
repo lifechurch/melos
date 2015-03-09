@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ta <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-02 11:23-0600\n"
-"PO-Revision-Date: 2015-02-02 11:23-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ta <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -81,6 +81,12 @@ msgstr "நீங்கள் <b>{reference_human}</b>-யை சிறப்ப
 msgid "moment.highlight.title"
 msgstr "{name} அவர்கள் <b>{reference_human}</b>-யை சிறப்புக்கூறிட்டுள்ளார்"
 
+msgid "moment.image.self.title"
+msgstr "நீங்கள், <b>{reference_human}பற்றிய வசனப் படத்தை உருவாக்கியுள்ளீர்கள்</b>"
+
+msgid "moment.image.title"
+msgstr "{name}, <b>{reference_human} பற்றிய வசனப் படத்தை உருவாக்கி இருக்கிறார்</b>"
+
 msgid "moment.note.self.title"
 msgstr "நீங்கள் ஒரு குறிப்பை சேர்த்துள்ளீர்கள், <b>{title}</b>"
 
@@ -135,6 +141,9 @@ msgstr "{name} உங்களின் {friend_name} -னோடு உள்ள
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} உங்கள் சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name}, உங்கள் வசனப் படத்தில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} உங்கள் குறிப்பில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
@@ -153,6 +162,9 @@ msgstr "{commenter_name} கூட {moment_owner_name}-க்கு {friend_name
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}-ம் {moment_owner_name}-ன் சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}-ம் {moment_owner_name}-ன் வசனப் படத்தில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name}-ம் {moment_owner_name}-ன் குறிப்பில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
@@ -164,6 +176,9 @@ msgstr "{moment_owner_name} - ம் கூட {friend_name} -னோடுள்
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}-ம் அவர்களது சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name}-ம் அவர்களது வசனப் படத்தில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name}-ம் அவர்களது குறிப்பில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
@@ -201,6 +216,9 @@ msgstr "{name} உங்களின் {friend_name} -னோடு உள்ள
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name}, உங்கள் சிறப்புக்கூறை {reference_human} விரும்பியிருக்கிறார்"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name}, {reference_human} பற்றிய வசனப் படத்தை விரும்பியுள்ளார்"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} உங்கள் குறிப்பை விரும்பியிருக்கிறார்"
 
@@ -221,6 +239,9 @@ msgstr "{name} {reference_human}-ஐ புத்தகக்குறியி�
 
 msgid "notifications.moments.create.highlight"
 msgstr "{reference_human}-ஐ {name} சிறப்புக்கூறிட்டுள்ளார்"
+
+msgid "notifications.moments.create.image"
+msgstr "{name}, {reference_human} பற்றிய வசனப் படத்தை உருவாக்கி இருக்கிறார்"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} ஒரு குறிப்பை சேர்த்துள்ளார்"

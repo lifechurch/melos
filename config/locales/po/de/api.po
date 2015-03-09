@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:34-0609\n"
-"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -84,6 +84,12 @@ msgstr "Du hast <b>{reference_human}</b> markiert"
 msgid "moment.highlight.title"
 msgstr "{name} hat <b>{reference_human}</b> markiert"
 
+msgid "moment.image.self.title"
+msgstr "Du hast ein Versbild für <b>{reference_human} erstellt.</b>"
+
+msgid "moment.image.title"
+msgstr "{name} hat ein Versbild für <b>{reference_human} erstellt.</b>"
+
 msgid "moment.note.self.title"
 msgstr "Du hast eine Notiz hinzugefügt mit dem Titel: <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} hat deine neue Freundschaft mit {friend_name} kommentiert: “{co
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} hat deine Markierung so kommentiert: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} hat dein Versbild wie folgt kommentiert: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} hat deine Notiz kommentiert: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} hat die neue Freundschaft von {moment_owner_name} mit {
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} hat {moment_owner_name}s Markierung auch kommentiert: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} hat auch {moment_owner_name}s Versbild kommentiert: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} hat {moment_owner_name}s Notiz ebenfalls kommentiert: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} hat deine neue Freundschaft mit {friend_name} auch k
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} hat seine/ihre Markierung ebenfalls kommentiert: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} hat sein/ihr Versbild auch kommentiert: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} hat deine Notiz ebenfalls kommentiert: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} gefällt, dass du nun mit {friend_name} befreundet bist"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} gefällt deine Hervorhebung für {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} gefällt dein Versbild für {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} gefällt deine Notiz"
 
@@ -224,6 +242,9 @@ msgstr "{name} hat ein Lesezeichen für {reference_human} angelegt."
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} hat {reference_human} markiert"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} hat ein Versbild für {reference_human} erstellt."
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} hat eine Notiz angelegt"
