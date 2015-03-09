@@ -16,7 +16,8 @@
           {{{moment_title}}}
       {{#if body_image}}
       .moment-sys-image
-        %img{src: "{{body_image}}"}/
+        %a{href: "{{path}}"}
+          %img{src: "{{body_image}}"}/
       {{/if}}
       
       {{#if body_text}}
