@@ -1,7 +1,6 @@
 // Heroku Deploy Script for Bamboo
 
 var Heroku = require('heroku-client'),
-	exec = require('child_process').exec,
 	fs = require('fs'),
 	heroku = new Heroku({ token: process.env.HEROKU_API_KEY }),
 	HerokuApp = null;
