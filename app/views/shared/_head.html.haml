@@ -23,8 +23,6 @@
 
   = stylesheet_link_tag 'mobile', media: "all and (max-width: 768px)"
   = stylesheet_link_tag 'application', media: "all and (min-width: 769px)"
-  = javascript_include_tag "/assets/jw/jwplayer.js"
-  %script jwplayer.key="78lie9ccvQjr8uJGZzLhFeI1t94sTOzTqA3A9QpRvK0="
 
   /[if IE]
     %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
@@ -76,17 +74,3 @@
         });
         window.location = nativeUrl;
       }());
-
-:javascript
-  var isMobile = {
-      BlackBerry: function() {
-          var ua = navigator.userAgent;
-          return (ua.indexOf("BlackBerry") >= 0) ? true : false;
-      } // you can add more tests here for other phones
-  };
-
-  var ua = navigator.userAgent;
-  if( isMobile.BlackBerry() ) {
-      var SplitUA = ua.split("/");
-      document.write("BB OS Version :: " + SplitUA[1].substring(0, 3));
-  }
