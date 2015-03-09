@@ -1,6 +1,6 @@
 .moment{"data-uuid" => "{{uuid}}", "data-moment-id" => "{{id}}", "data-moment-path" => "{{path}}"}
   .moment-top
-    .moment-sys
+    .moment-vimg
       {{#if kind_color}}
       %span.moment-icon
       {{/if}}
@@ -11,15 +11,15 @@
       {{/if}}
       %span.moment-time
         {{created_dt}}
-      %h2.moment-sys-text
+      %h2.moment-vimg-text
         %a{href: "{{path}}"}
           {{{moment_title}}}
       {{#if body_image}}
-      .moment-sys-image
+      .moment-vimg-image
         %a{href: "{{path}}"}
           %img{src: "{{body_image}}"}/
       {{/if}}
-      
+
       {{#if body_text}}
       %div{style: "clear:both;"}
         {{{body_text}}}
