@@ -16,6 +16,7 @@
       .moment-vimg-image
         %a{href: "{{path}}"}
           %img{src: "{{body_image}}"}/
+          %img{src: "image-loader.gif"}
       {{/if}}
 
       {{#if body_text}}
