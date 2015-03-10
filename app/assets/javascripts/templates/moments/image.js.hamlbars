@@ -1,9 +1,7 @@
 .moment{"data-uuid" => "{{uuid}}", "data-moment-id" => "{{id}}", "data-moment-path" => "{{path}}"}
   .moment-top
     .moment-vimg
-      {{#if kind_color}}
       %span.moment-icon
-      {{/if}}
       {{#if avatar}}
       %span{:class => 'moment-avatar {{avatar_style}}'}
         %a{href: "{{user.path}}"}
