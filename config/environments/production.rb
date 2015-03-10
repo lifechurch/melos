@@ -22,7 +22,6 @@ YouversionWeb::Application.configure do
   puts "ENV['SECURE_TRAFFIC'] => #{ENV['SECURE_TRAFFIC']}"
 
   # Compress JavaScripts and CSS into one file for each
-  config.assets.js_compressor = Sprockets::LazyCompressor.new { Uglifier.new(:mangle => false) }
   config.assets.compress = true
 
 
