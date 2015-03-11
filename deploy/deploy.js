@@ -67,7 +67,7 @@ function addOns() {
 		console.log(err, addon);
 		heroku.apps(herokuAppName()).addons().create({ plan: 'memcachier' }, function(err, addon) {
 			console.log(err, addon);
-			heroku.apps(herokuAppName()).addons().create({ plan: 'deployhooks:hipchat', config: { auth_token: hipchatToken(), room: "YouVersion Web", message: "{{app}} deployed by {{user}}. <a href='{{url}}'>Go There!</a>"  }}, function(err, addon) {
+			heroku.apps(herokuAppName()).addons().create({ plan: 'deployhooks:hipchat', config: { auth_token: hipchatToken(), room: "YouVersion Web", message: "{{app}} deployed by {{user}}. <a href='{{url}}'>Go There!</a> (<a href='https://github.com/lifechurch/youversion-web/commits/{{head}}'>View on GitHub: {{head}}</a>)"  }}, function(err, addon) {
 				console.log(err, addon);
 				displayApp();		
 			});
