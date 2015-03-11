@@ -6,6 +6,7 @@ $(function(){
 	  	e.preventDefault();
 	    $(this).parents('.share_wrapper').addClass('share_bg_effect');
 		$(this).parents('.share').next('.share_panel').show();
+        Page.prototype.shareInit();
 		$('.share').css({'z-index':'1999'});
 	  } else {
 	  	e.preventDefault();

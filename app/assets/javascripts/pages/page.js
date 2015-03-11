@@ -67,7 +67,7 @@ function Page() {
   this.new_note_widget = undefined;
   this.reader = undefined;
   this.fixedRightColumn = false;
-
+  this.shareInitialized = false;
 
   this.initConstants();
   this.initHTML();
@@ -478,6 +478,13 @@ Page.prototype = {
     window.setTimeout(function() {
       divs.slideUp(200);
     }, 6500);
+  },
+
+  shareInit : function() {
+      if (!this.shareInitialized) {
+          addthis.init();
+          this.shareInitialized = true;
+      }
   },
 
   initAjaxReplace : function() {
