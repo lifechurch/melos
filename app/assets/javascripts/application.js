@@ -59,4 +59,3 @@
 //= require main
 //= require analytics
 //= require videos
-//= require ./social/fb_remarketing
