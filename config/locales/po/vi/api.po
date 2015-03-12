@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: vi <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: vi <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -84,6 +84,12 @@ msgstr "Bạn tô màu <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} tô màu <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Bạn vừa tạo một hình ảnh câu Kinh Thánh cho <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} vừa tạo một hình ảnh câu Kinh Thánh cho <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Bạn tạo ghi chú <b>\"{title}\"</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} bình luận về việc kết bạn với {friend_name}: “{com
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} bình luận về tô màu của bạn: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} bình luận về hình ảnh câu Kinh Thánh của bạn: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} bình luận về ghi chú của bạn: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} cũng bình luận về việc kết bạn giữa {mome
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} bình luận về tô màu của {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} cũng bình luận về hình ảnh câu Kinh Thánh của {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} bình luận về ghi chú của {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} cũng bình luận về việc kết bạn với {fr
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} bình luận về tô màu của bạn ấy: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} cũng bình luận về hình ảnh câu Kinh Thánh của bạn ấy: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} bình luận về ghi chú của bạn ấy: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} thích việc kết bạn với {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} thích tô màu {reference_human} của bạn"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} thích hình ảnh câu Kinh Thánh của bạn cho {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} thích ghi chú của bạn"
 
@@ -224,6 +242,9 @@ msgstr "{name} đánh dấu {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} tô màu {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} vừa tạo một hình ảnh câu Kinh Thánh cho {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} tạo một ghi chú"

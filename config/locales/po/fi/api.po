@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-18 12:38-0609\n"
-"PO-Revision-Date: 2015-02-18 12:38-0609\n"
+"POT-Creation-Date: 2015-03-09 13:08-0600\n"
+"PO-Revision-Date: 2015-03-09 13:08-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:34-0609\n"
-"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"POT-Creation-Date: 2015-03-09 13:09-0600\n"
+"PO-Revision-Date: 2015-03-09 13:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -84,6 +84,12 @@ msgstr "Korostit <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} korosti <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Loit huoneentaulun kohdasta <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} loi huoneentaulun kohdasta <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Lisäsit muistiinpanon, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} kommentoi uutta ystävyyttäsi käyttäjän {friend_name} kanssa:
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} kommentoi korostustasi: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} kommentoi huoneentauluasi: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} kommentoi muistiinpanoasi: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} uutta 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} korostusta: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} huoneentaulua: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} muistiinpanoa: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} kommentoi myös uutta ystävyyttään käyttäjän {
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} kommentoi myös korostustaan: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} kommentoi myös huoneentauluaan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} kommentoi myös muistiinpanoaan: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} tykkää ystävyydestäsi käyttäjän {friend_name} kanssa"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} tykkää korostuksestasi, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} tykkää huoneentaulustasi kohdasta {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} tykkää muistiinpanostasi"
 
@@ -224,6 +242,9 @@ msgstr "{name} lisäsi kirjanmerkin {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} lisäsi korostuksen {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} loi huoneentaulun kohdasta {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} lisäsi muistiinpanon"

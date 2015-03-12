@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mk <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mk <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -84,6 +84,12 @@ msgstr "Вие го/ја означивте <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} го/ја означи <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Ти создаде слика со стих за <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} создаде слика со стих за <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Вие додадовте белешка, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} коментираше на твоето ново пријате�
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} коментираше на вашето нагласување: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} коментираше на твојата слика со стих: „{comment}“"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} коментираше на вашата белешка: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} коментираше и на новото прија�
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} исто така коментираше на нагласувачот на {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} коментираше на сликата со стих креирана од {moment_owner_name}: „{comment}“"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} исто така коментираше на белешката на {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} коментираше и на своето ново
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} исто така коментираше на нивниот нагласувач: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "И {moment_owner_name} коментираше на својата слика со стих: „{comment}“"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} исто така коментираше на нивната белешка: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "На {name} му/ѝ се допаѓа твоето ново пријат
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "На {name} му/ѝ се допаѓа твојот нагласувач, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "На {name} му/ѝ се допаѓа твојата слика со стих за {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "На {name} му/ѝ се допаѓа твојата белешка"
 
@@ -224,6 +242,9 @@ msgstr "{name} го/ја обележа {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} го/ја нагласи {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} создаде слика со стих за {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name}додаде белешка"

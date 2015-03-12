@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_TW <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_TW <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -84,6 +84,12 @@ msgstr "您已把 <b>{reference_human}</b> 加入重點"
 msgid "moment.highlight.title"
 msgstr "{name} 已把 <b>{reference_human}</b> 加入重點"
 
+msgid "moment.image.self.title"
+msgstr "您為<b>{reference_human}創作了經句圖</b>"
+
+msgid "moment.image.title"
+msgstr "{name}為<b>{reference_human}創作了經句圖</b>"
+
 msgid "moment.note.self.title"
 msgstr "您已新增筆記, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} 評論了您的新聯繫 {friend_name}: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} 在您的重點上留言: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name}評論了您的經句圖：“{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} 在您的筆記上留言: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} 也評論了 {moment_owner_name} 的新聯繫 {friend_n
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} 也在 {moment_owner_name} 的重點上留言: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}也評論了{moment_owner_name}的經句圖：“{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} 也在 {moment_owner_name} 的筆記上留言: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} 也評論了他/她的新聯繫 {friend_name}: “{c
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} 也在他/她的重點上留言: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name}也評論了他的經句圖：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} 也在他/她的筆記上留言: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} 點讚了您的新聯繫 {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} 喜歡您的醒目標示，{reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name}點讚了您為{reference_human}創作的經句圖"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} 喜歡您的筆記"
 
@@ -224,6 +242,9 @@ msgstr "{name} 已把 {reference_human} 加入書籤"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} 已把 {reference_human} 加入重點"
+
+msgid "notifications.moments.create.image"
+msgstr "{name}為{reference_human}創作了經句圖"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} 已新增筆記"

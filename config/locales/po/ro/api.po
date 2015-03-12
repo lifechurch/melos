@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ro <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ro <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2)\n"
@@ -84,6 +84,12 @@ msgstr "Ai evidențiat <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} a evidențiat <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Ai creat un verset ilustrat pentru <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} a creat un verset ilustrat pentru <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Ai adăugat o notiță, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} a comentat asupra prieteniei tale cu {friend_name}: „{comment}�
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} a comentat la evidențierea ta: „{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} a comentat la versetul tău ilustrat: „{comment}\""
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} a comentat la notița ta: „{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} a comentat de asemenea asupra prieteniei lui {moment_ow
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} a comentat de asemenea la evidențierea lui {moment_owner_name}: „{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} a comentat deasemenea: „{comment}” la versetul ilustrat al lui {moment_owner_name}"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} a comentat de asemenea la notița lui {moment_owner_name}: „{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} a comentat de asemenea asupra noii prietenii cu {fri
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} a comentat de asemenea la evidențierea lor: „{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} a comentat la propriul verset ilustrat: „{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} a comentat de asemenea la notița lor: „{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} apreciază prietenia ta cu {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} apreciază evidențiere ta, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} apreciază versetul tău ilustrat: {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} apreciază notița ta"
 
@@ -224,6 +242,9 @@ msgstr "{name} a marcat {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} a evidențiat {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} a creat un verset ilustrat pentru {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} a adăugat o notiță"

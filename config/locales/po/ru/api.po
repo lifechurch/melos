@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-09 13:08-0600\n"
+"PO-Revision-Date: 2015-03-09 13:08-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-09 13:09-0600\n"
+"PO-Revision-Date: 2015-03-09 13:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -84,6 +84,12 @@ msgstr "Вы выделили маркером <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} выделил маркером <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Вы создали фото-стих <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} создал фото-стих <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Вы добавили заметку <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} оставил комментарий к вашей новой д
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} оставил комментарий к вашему выделению маркером: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} прокомментировал ваш фото-стих: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} оставил комментарий к вашей заметке: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} также оставил комментарий к н�
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} оставил комментарий к выделению маркером {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} также прокомментировал фото-стих, который создал {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} оставил комментарий к заметке {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} также оставил комментарий к 
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} оставил комментарий к своему выделению маркером: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} также прокомментировал свой фото-стих: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} оставил комментарий к своей заметке: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} нравится ваша новая дружба с {friend_name
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} нравится ваше выделение маркером, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name}нравится ваш фото-стих {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} нравится ваша заметка"
 
@@ -224,6 +242,9 @@ msgstr "{name} добавил в закладки {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} выделил маркером {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} создал фото-стих {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} добавил заметку"

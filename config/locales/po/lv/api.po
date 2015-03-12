@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-12 10:45-0600\n"
+"PO-Revision-Date: 2015-03-12 10:45-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: lv <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-01-08 17:41-0609\n"
-"PO-Revision-Date: 2015-01-08 17:41-0609\n"
+"POT-Creation-Date: 2015-03-12 10:45-0600\n"
+"PO-Revision-Date: 2015-03-12 10:45-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: lv <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
@@ -81,6 +81,12 @@ msgstr "Tu izcēli <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} izcēla <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Tu izveidoji Bībeles panta attēlu <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} izveidoja Bībeles panta attēlu <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Tu pievienoji piezīmi, <b>{title}</b>"
 
@@ -135,6 +141,9 @@ msgstr "{name} komentēja tavu draudzību ar {friend_name}: \"{comment}\""
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}komentēja tevis izcelto \"{comment}\""
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name}komentēja tavu Bībeles panta attēlu: \"{comment}\""
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} komentēja Tavu piezīmi: “{comment}”"
 
@@ -153,6 +162,9 @@ msgstr "{commenter_name}arī komentēja {moment_owner_name} jauno draudzību ar 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}arī komentēja {moment_owner_name} izcelto \"{comment}\""
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}arī komentēja {moment_owner_name} Bībeles panta attēlu: \"{comment}\""
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name}arī komentēja {moment_owner_name} piezīmi: \"{comment}\""
 
@@ -164,6 +176,9 @@ msgstr "{moment_owner_name}arī komentēja savu jauno draudzību ar {friend_name
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} arī komentēja paša izcelto: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} arī komentēja savu Bībeles panta attēlu: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name}arī komentēja savu piezīmi: \"{comment}\""
@@ -201,6 +216,9 @@ msgstr "{name} patīk tava jaunā draudzība ar {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name}patīk tevis izceltais, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} atzīmēja \"patīk\" tavam Bībeles panta attēlam {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name}cilvēkiem patīk tava piezīme"
 
@@ -221,6 +239,9 @@ msgstr "{name}ielika grāmatzīmi pie {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name}izcēla {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} izveidoja Bībeles panta attēlu {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} pievienoja piezīmi"
