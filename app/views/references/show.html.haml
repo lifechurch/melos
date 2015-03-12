@@ -19,7 +19,7 @@
 -#  additional XHR calls
 -#- content_for :javascripts do
 
-- content_for :lower_javascript do
+-#- content_for :lower_javascript do
   %script
     != "angular.module('$preloaded', [])"
     != ".constant('$notesUrl', '/bible/#{version.attributes.id}/#{reference.book}.#{reference.chapter}./notes')"
