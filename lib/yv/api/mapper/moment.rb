@@ -14,8 +14,8 @@ module YV
 
           def from_all(results)
             return results if results.empty? or results.moments.nil?
-            # Temp hack
-            results.moments.reject! {|m| m.kind_id == "image.v2" }
+            # # Temp hack
+            # results.moments.reject! {|m| m.kind_id == "image.v2" }
             results.moments.collect do |moment_data|
               map_from_kind(moment_data)
             end 
@@ -40,6 +40,7 @@ module YV
               when "plan_completion.v1"            then to_plan_completion(::PlanCompletion.new,data)
               when "plan_segment_completion.v1"    then to_plan_segment_completion(::PlanSegmentCompletion.new,data)
               when "reading_plan_carousel.v1"      then to_reading_plan_carousel(::ReadingPlanCarousel.new,data)
+              when "image.v2"                      then to_image(::Image.new,data)
               when "system.v1"                     then to_system(::SystemMoment.new,data)
               else                                      to_generic(::GenericMoment.new,data)
             end
@@ -75,6 +76,10 @@ module YV
 
           def to_reading_plan_carousel(instance,data)
             YV::API::Mapper::ReadingPlanCarousel.map_to_instance(instance,data)
+          end
+
+          def to_image(instance,data)
+            YV::API::Mapper::Image.map_to_instance(instance,data)
           end
 
           def to_generic(instance,data)

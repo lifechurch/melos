@@ -326,9 +326,10 @@ only screen and (                min-resolution: 2dppx) {
   .moment-no .moment-icon,
   .moment-vod .moment-icon,
   .moment-sys .moment-icon,
-  .moment-fr .moment-icon {
+  .moment-fr .moment-icon,
+  .moment-vimg .moment-icon {
     background: image-url("moment-icon-sprite@2x.png") no-repeat;
-    background-size: 520px 52px;
+    background-size: 572px 52px;
   }
 
 
@@ -376,6 +377,10 @@ only screen and (                min-resolution: 2dppx) {
 
   .moment-fr .moment-icon {
     background-position: -207px 0;
+  }
+
+  .moment-vimg .moment-icon {
+    background-position: -520px 0;
   }
 
   .moment-comment-delete {

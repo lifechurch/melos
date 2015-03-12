@@ -425,7 +425,8 @@ body.transition .moment
 .moment-vod,
 .moment-sys,
 .moment-fr,
-.moment-featured-rp
+.moment-featured-rp,
+.moment-vimg
   position: relative
   padding: 15px
   overflow: hidden
@@ -456,7 +457,8 @@ body.transition .moment
   .moment-bdg-text,
   .moment-vid-text,
   .moment-sys-text,
-  .moment-fr-text
+  .moment-fr-text,
+  .moment-vimg-text
     float: left
     width: 70%
     margin-bottom: 15px
@@ -1146,6 +1148,23 @@ input[type="submit"].moment-fr-name-add
       .slick-center
         opacity: 1 !important
         transition: all 300ms ease
+
+
+// !Versie/image moment
+
+.moment-vimg
+  .moment-icon
+    background-position: -520px 0
+
+.moment-vimg-image
+
+  img
+    width: 100%
+  .body-image
+    display: none
+  .image-loader
+    content: image-url("image-loader.gif")
+
 
 // !------------------------ Detail page -------------------------
 

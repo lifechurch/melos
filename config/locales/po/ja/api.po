@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:34-0609\n"
-"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -84,6 +84,12 @@ msgstr "<b>{reference_human}</b>にハイライトしました"
 msgid "moment.highlight.title"
 msgstr "{name}さんが<b>{reference_human}</b>にハイライトしました"
 
+msgid "moment.image.self.title"
+msgstr "<b>{reference_human}</b>用の聖書画像を作成しました"
+
+msgid "moment.image.title"
+msgstr "{name}さんが<b>{reference_human}用の聖書画像を作成しました</b>"
+
 msgid "moment.note.self.title"
 msgstr "「<b>{title}</b>」というノートを追加しました"
 
@@ -138,6 +144,9 @@ msgstr "{friend_name} さんとお友達になったことに、{name}さんが�
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}さんがあなたのハイライトにコメントしました： “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name}さんがあなたの聖書画像に次のコメントをしました:「{comment}」"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name}さんがあなたのノートにコメントしました： “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{moment_owner_name}さんが{friend_name}さんとお友達になった�
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}さんが{moment_owner_name}さんのハイライトにコメントしました： “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}さんが{moment_owner_name}さんの聖書画像に次のコメントをしました: 「{comment}」"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name}さんが{moment_owner_name}さんのノートにコメントしました： “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{friend_name}さんとお友達になったことにも、{moment_owner_
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}さんがハイライトにコメントしました： “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name}さんが自分の聖書画像にも次のコメントをしました: 「{comment}」"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name}さんがノートにコメントしました： “{comment}”"
@@ -196,22 +211,25 @@ msgid "notifications.friendships.suggestion"
 msgstr "{name}さんとYouVersionで友達になりますか？"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name}さんがあなたのブックマーク、{reference_human}をいいねといっています"
+msgstr "{name}さんがあなたのブックマーク、{reference_human}をいいね！しました"
 
 msgid "notifications.likes.moment.mine.friendship"
 msgstr "{friend_name}さんとお友達になったことに、{name}さんがいいね！しました。"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name}さんがあなたのハイライト、{reference_human}をいいねといっています"
+msgstr "{name}さんがあなたのハイライト、{reference_human}をいいね！しました"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name}さんがあなたの{reference_human}用の聖書画像にいいね！しました"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} があなたのノートをいいねといっています"
+msgstr "{name} があなたのノートをいいね！しました"
 
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name}さんがあなたのノート、{reference_human}をいいねといっています"
+msgstr "{name}さんがあなたのノート、{reference_human}をいいね！しました"
 
 msgid "notifications.likes.moment.mine.note.title"
-msgstr "{name}さんがあなたのノート、“{title}”をいいねといっています"
+msgstr "{name}さんがあなたのノート、“{title}”をいいね！しました"
 
 msgid "notifications.likes.moment.mine.plan_activity"
 msgstr "{name}さんがあなたのプランについていいね！しました。"
@@ -224,6 +242,9 @@ msgstr "{name}さんが{reference_human}にブックマークしました"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name}さんが{reference_human}にハイライトしました"
+
+msgid "notifications.moments.create.image"
+msgstr "{name}さんが{reference_human}用の聖書画像を作成しました"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name}さんがノートを追加しました"

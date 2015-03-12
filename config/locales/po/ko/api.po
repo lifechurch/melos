@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ko <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ko <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -84,6 +84,12 @@ msgstr "<b>{reference_human}</b>에 하이라이트 하셨습니다."
 msgid "moment.highlight.title"
 msgstr "{name}님이 <b>{reference_human}</b>에 하이라이트를 했습니다."
 
+msgid "moment.image.self.title"
+msgstr "회원님이  <b>{reference_human}</b> 말씀 이미지를 만드셨습니다."
+
+msgid "moment.image.title"
+msgstr "{name}님이  <b>{reference_human}</b> 말씀 이미지를 만들었습니다."
+
 msgid "moment.note.self.title"
 msgstr "<b>{title}</b> 노트를 추가 하셨습니다."
 
@@ -141,6 +147,9 @@ msgstr "{name} 님이  {friend_name}님과 친구맺은 것에 대해서 글을 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}님이 회원님의 하이라이트에 댓글을 남겼습니다: \"{comment}\""
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name}님이 회원님의 말씀 이미지에 댓글을 달았습니다.:{comment}"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name}님이 회원님의 노트에 댓글을 남겼습니다: \"{comment}\""
 
@@ -159,6 +168,9 @@ msgstr "{commenter_name}도 {moment_owner_name}이 {friend_name}과 새로 친�
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}님도 {moment_owner_name}님의 하이라이트에 댓글을 남겼습니다: \"{comment}\""
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}님도 {moment_owner_name}님의 말씀 이미지에 댓글을 남겼습니다.:{comment}"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name}님도 {moment_owner_name}님의 노트에 댓글을 남겼습니다: \"{comment}\""
 
@@ -170,6 +182,9 @@ msgstr "{moment_owner_name}님도 {friend_name}님과 새로 친구 맺은 것�
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}님도 하이라이트에 댓글을 남겼습니다: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name}님도 말씀 이미지에 댓글을 남겼습니다.:{comment}"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name}님도 노트에 댓글을 남겼습니다: \"{comment}\""
@@ -207,6 +222,9 @@ msgstr "{name}님이 {friend_name}님과 새로 친구 맺은 것을 좋아합�
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name}님이 회원님의 {reference_human} 하이라이트를 좋아합니다."
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name}님이 회원님의 {reference_human} 말씀 이미지를 좋아합니다."
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name}님이 회원님의 노트를 좋아합니다."
 
@@ -227,6 +245,9 @@ msgstr "{name}님이 {reference_human} 책갈피를 만들었습니다."
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name}님이 {reference_human} 하이라이트를 했습니다."
+
+msgid "notifications.moments.create.image"
+msgstr "{name}님이 {reference_human} 말씀 이미지를 만들었습니다."
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name}님이 노트를 추가했습니다."

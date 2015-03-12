@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: da <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:41-0600\n"
-"PO-Revision-Date: 2015-02-25 16:41-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: da <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -84,6 +84,12 @@ msgstr "Du markerede <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} markeret <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Du oprettede et versbillede til <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} oprettede et versbillede til <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Du tilføjede en note, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} kommenterede på dit nye venskab med  {friend_name}: “{comment}
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} kommenterede din markering: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} kommenterede på dit versbillede: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} kommenterede på din note: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s nye venska
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s markering: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} kommenterede også på{moment_owner_name}'s versbillede: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} kommenterede også på {moment_owner_name}'s note: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} kommenterede også på deres nye venskab med {friend
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} kommenterede også på deres markering: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} kommenterede også deres versbillede: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} kommenterede også på deres note: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} synes om dit nye venskab med {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} synes om din markering, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} synes om dit versbillede til {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} synes om din note"
 
@@ -224,6 +242,9 @@ msgstr "{name} bogmærkede {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} markerede {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} oprettede et billede til verset {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} tilføjede en note"

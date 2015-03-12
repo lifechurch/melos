@@ -34,8 +34,6 @@ YouversionWeb::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
-  config.assets.js_compressor = Sprockets::LazyCompressor.new { Uglifier.new(:mangle => false) }
-  
   # Do not compress assets
   config.assets.compress = true
 
@@ -59,7 +57,7 @@ YouversionWeb::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # Note: asset precompilation task uses production env configuration
-  config.assets.precompile += %w( ie7.css ie8.css ie9.css donate.css status.css mobile.css mobile/donate.css bdc_home.css campaigns/kids.css retina.js campaigns/100m.css campaigns/100m/jquery.counter.js campaigns/100m/jquery.countdown.min.js slick.css campaigns/christmas/polymaps.min.js campaigns/christmas/plugins.js campaigns/christmas.css jw/jwplayer.js jw/jwplayer.html5.js)
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css donate.css status.css mobile.css mobile/donate.css bdc_home.css campaigns/kids.css retina.js campaigns/100m.css campaigns/100m/jquery.counter.js campaigns/100m/jquery.countdown.min.js slick.css campaigns/christmas/polymaps.min.js campaigns/christmas/plugins.js campaigns/christmas.css jw/jwplayer.js jw/jwplayer.html5.js angular/app.js)
   
   # Precompile JS locale files
   config.assets.precompile += ['i18n/*']

@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cs <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:34-0609\n"
-"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cs <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -84,6 +84,12 @@ msgstr "Zvýraznili jste <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} zvýraznil <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Vytvořili jste obrázkový verš <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} vytvořil/a obrázkový verš <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Přidali jste poznámku, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} přidal/a komentář k vašemu novému přátelství s {friend_na
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} přidal komentář k vašemu zvýraznění: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} přidal/a komentář k vašemu obrázkovému verši: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} přidal komentář k vaší poznámce: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} přidal/a komentář k novému přátelství uživ. {mo
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} také okomentoval zvýraznění uživatele {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} také přidal/a komentář k {moment_owner_name} obrázkovému verši: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} také okomentoval poznámku uživatele {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} přidal/a komentář k přátelství s {friend_name}
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} také okomentoval svoje zvýraznění: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} také přidal/a komentář ke svému obrázkovému verši: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} také okomentoval svoji poznámku: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "uživ. {name} se líbí vaše nové přátelství s {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Uživateli {name} se líbí vaše označení, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} se libí váš obrázkový verš {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "Uživateli {name} se líbí vaše poznámka"
 
@@ -224,6 +242,9 @@ msgstr "{name} vytvořil záložku {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} zvýraznil {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} vytvořil/a obrázkový verš {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} přidal poznámku"

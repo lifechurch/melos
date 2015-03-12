@@ -1,0 +1,28 @@
+.moment{"data-uuid" => "{{uuid}}", "data-moment-id" => "{{id}}", "data-moment-path" => "{{path}}"}
+  .moment-top
+    .moment-vimg
+      %span.moment-icon
+      {{#if avatar}}
+      %span{:class => 'moment-avatar {{avatar_style}}'}
+        %a{href: "{{user.path}}"}
+          %img{src: "{{avatar}}"}/
+      {{/if}}
+      %span.moment-time
+        {{created_dt}}
+      %h2.moment-vimg-text
+        %a{href: "{{path}}"}
+          {{{moment_title}}}
+      {{#if body_image}}
+      .moment-vimg-image
+        %a{href: "{{path}}"}
+          %img{class: "body-image", src: "{{body_image}}"}/
+          %img{class: "image-loader"}
+      {{/if}}
+
+      {{#if body_text}}
+      %div{style: "clear:both;"}
+        {{{body_text}}}
+      {{/if}}
+  .moment-btm
+    {{> moments/_actions_bar}}
+    {{> moments/_comments}}
