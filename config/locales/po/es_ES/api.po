@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-09 13:08-0600\n"
+"PO-Revision-Date: 2015-03-09 13:08-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es_ES <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:34-0609\n"
-"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"POT-Creation-Date: 2015-03-09 13:09-0600\n"
+"PO-Revision-Date: 2015-03-09 13:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es_ES <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -84,6 +84,12 @@ msgstr "Destacaste <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} destacó <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Creaste una imagen del versículo para {reference_human} <b></b>"
+
+msgid "moment.image.title"
+msgstr "{name} creó una imagen del versículo para {reference_human} <b></b>"
+
 msgid "moment.note.self.title"
 msgstr "Añadiste una nota, <b>{title}</b>"
 
@@ -141,6 +147,9 @@ msgstr "{name} comentó sobre vuestra nueva amistad con {friend_name}: “{comme
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} comentó sobre lo destacado: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} comentó en tu imagen del versículo “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} comentó sobre tu nota: “{comment}”"
 
@@ -159,6 +168,9 @@ msgstr "{commenter_name} también comentó sobre la nueva amistad de {moment_own
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} también comentó sobre el destacado de {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} también comentó en {moment_owner_name} imagen del versículo: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} también comentó sobre la nota de {moment_owner_name}: “{comment}”"
 
@@ -170,6 +182,9 @@ msgstr "{moment_owner_name} también comentó sobre su nueva amistad con {friend
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} también comentó sobre su destacado: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} también comentó en su imagen del versículo: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} también comentó sobre su nota: “{comment}”"
@@ -207,6 +222,9 @@ msgstr "{name} le gusta tu nueva amistad con {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} le gusta tu destacado, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} le gusta tu imagen del versículo para {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} le gusta tu nota"
 
@@ -227,6 +245,9 @@ msgstr "{name} marcó {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} destacó {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} creó una imagen del versículo para {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} añadió una nota"

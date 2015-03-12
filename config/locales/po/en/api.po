@@ -147,6 +147,12 @@ msgstr "Find your favorite Bible Plan for February!"
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Find hope and renewal in March Plans."
 
+msgid "moment.image.self.title"
+msgstr "You created a verse image for <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} created a verse image for <b>{reference_human}</b>"
+
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} commented on your bookmark: “{comment}”"
 
@@ -269,6 +275,21 @@ msgstr "{name} just joined YouVersion. Tap to add them as a Friend."
 
 msgid "notifications.system.test"
 msgstr "Download our Kids Bible App now!!!"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} commented on your verse image: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} also commented on {moment_owner_name}'s verse image: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} also commented on their verse image: “{comment}”"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} likes your verse image for {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} created a verse image for {reference_human}"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Hi!</p><p>I'm using the Bible App from YouVersion and wanted to share it with you. If you're new to the app, it's a simple way to bring the beauty and truth of the Bible into everyday life. </p><p><strong>Get the Bible App:</strong> read, watch, listen, and share on your smartphone or tablet, and online at Bible.com</p><p><strong>Set up Your Account:</strong> subscribe to Bible Plans and access bookmarks, highlights, and notes across devices</p><p><strong>Add Friends (Like Me!):</strong> explore and discuss the Bible with people you care about</p><p>It's all in the Bible App—get started here: </p>"

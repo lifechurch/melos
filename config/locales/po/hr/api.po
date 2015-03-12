@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-09 13:08-0600\n"
+"PO-Revision-Date: 2015-03-09 13:08-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hr <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-09 13:09-0600\n"
+"PO-Revision-Date: 2015-03-09 13:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hr <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -84,6 +84,12 @@ msgstr "Istaknut je <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "Korisnik {name} je istaknuo <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Kreirana je slika stiha iz <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "Korisnik {name} je kreirao sliku stiha iz <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Dodana je bilješka, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "Korisnik {name} je komentirao tvoje prijateljstvo s korisnikom {friend_n
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Korisnik {name} je komentirao istaknuto: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} komentira tvoju sliku stiha: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "Korisnik {name} je komentirao tvoju bilješku: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} također komentira prijateljstvo vlasnika trenutka {mom
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Korisnik {commenter_name} je isto komentirao: “{comment}”, što je istaknuo korisnik {moment_owner_name}"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} isto komentira sliku stiha korisnika {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "Bilješku: “{comment}” korisnika {moment_owner_name} je komentirao korisnik {commenter_name}"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} također komentira tvoje novo prijateljstvo s korisn
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Korisnik {moment_owner_name} je također komentirao istaknuto: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} isto komentira svoju sliku stiha: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "Korisnik {moment_owner_name} je isto komentirao svoju bilješku: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "Korisniku {name} se sviđa tvoje prijateljstvo s korisnikom {friend_name
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Korisniku {name} se sviđa istaknuto, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "Korisniku {name} se sviđa tvoja slika stiha iz {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "Korisniku {name} se sviđa tvoja bilješka"
 
@@ -224,6 +242,9 @@ msgstr "Korisnik {name} je označio {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "Korisnik {name} je istaknuo {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "Korisnik {name} je kreirao sliku stiha iz {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "Korisnik {name} je dodao bilješku"

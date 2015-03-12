@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-09 13:08-0600\n"
+"PO-Revision-Date: 2015-03-09 13:08-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-01-26 12:23-0600\n"
-"PO-Revision-Date: 2015-01-26 12:23-0600\n"
+"POT-Creation-Date: 2015-03-09 13:09-0600\n"
+"PO-Revision-Date: 2015-03-09 13:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -49,10 +49,10 @@ msgid "moment.bookmark.title"
 msgstr "{name} <b>{reference_human}را نشانه‌گزاری کرد.</b>"
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "برنامه مطالعه کتاب مقدس مورد علاقه‌ی خود را برای ماه فوریه بیابید!"
+msgstr "برنامۀ مطالعۀ کتاب‌مقدس مورد علاقۀ خود را برای ماه فوریه بیابید!"
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "امید و تازگی جدیدی را در برنامه‌های مطالعه کتاب مقدس ماه مارس بیایبد."
+msgstr "در برنامه‌های مطالعۀ کتاب‌مقدس ماه مارس، امید و احیای روحانی به‌دست آورید."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "کتاب‌مقدس را به‌صورت روزانه در سال ۲۰۱۵ مطالعه کنید! راهنمای برنامه‌های مطالعه!"
@@ -68,6 +68,12 @@ msgstr "شما <b>{reference_human} را هایلایت کرده‌اید.</b>"
 
 msgid "moment.highlight.title"
 msgstr "{name} <b>{reference_human}</b>را هایلات کرده است"
+
+msgid "moment.image.self.title"
+msgstr "شما یک تصویر-آیه برای این بخش از کتاب مقدس درست کردید <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} یک تصویر-آیه برای این بخش از کتاب مقدس درست کرده <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "شما یک یادداشت اضافه کردید. <b>{title}</b>"
@@ -123,6 +129,9 @@ msgstr "{name} در مورد دوستی جدید شما با {friend_name} نظ�
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}برای هایلایت شما نظر نوشته است: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} در مورد تصویری که شما از آیه درست کردید نظر داد: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name}برای یادداشت شما نظر نوشته است: “{comment}”"
 
@@ -141,6 +150,9 @@ msgstr "{commenter_name} نیز برای دوستی جدید {moment_owner_name}
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} نیز برای هایلایت {moment_owner_name} نظر نوشته است: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} هم در مورد آیۀ تصویری {moment_owner_name} نظر داد: ”{comment}“"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} نیز برای یادداشت {moment_owner_name} نظر نوشته است: “{comment}”"
 
@@ -152,6 +164,9 @@ msgstr "{moment_owner_name} نیز برای دوستی جدید با{friend_name
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} نیز برای هایلایت خود نظر داده است: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} هم در مورد آیۀ تصویری خود نظر داد: ”{comment}“"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} نیز برای یادداشت خود نظر نوشته است: “{comment}”"
@@ -189,6 +204,9 @@ msgstr "{name} دوستی جدید شما را با {friend_name} پسندیده
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} هایلایت شما را پسندید، {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} آیۀ تصویری شما از{reference_human} را دوست دارد"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name}یادداشت شما را پسندید."
 
@@ -209,6 +227,9 @@ msgstr "{name}، {reference_human} را نشانه‌گزاری کرد."
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name}، {reference_human} را هایلایت کرد."
+
+msgid "notifications.moments.create.image"
+msgstr "{name} یک آیۀ تصویری برای آیۀ {reference_human} درست کرد."
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name}یک یادداشت اضافه کرد."

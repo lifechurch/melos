@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-09 13:08-0600\n"
+"PO-Revision-Date: 2015-03-09 13:08-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: bg <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-12 10:46-0600\n"
+"PO-Revision-Date: 2015-03-12 10:46-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: bg <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -81,6 +81,12 @@ msgstr "Вие маркирахте <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} маркира <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Създадохте стих в снимка за <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} създаде стих в снимка за <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Вие добавихте бележка, <b>{title}</b>"
 
@@ -129,17 +135,35 @@ msgstr "{name} гледа <b>{title}</b>"
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} коментира вашия показалец: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} коментира вашето ново приятелство с {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} коментира маркираното от вас: “{comment}”"
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} коментира вашия стих в снимка: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} коментира вашата бележка: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} коментира вашия план: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} коментира вашя план за прочит на Библията: “{comment}”"
+
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} също коментира показалеца на {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} също коментира новото приятелство на {moment_owner_name} с {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} също коментира маркираното от {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} също коментира стиха в снимка на {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} също коментира бележката на {moment_owner_name}: “{comment}”"
@@ -147,11 +171,29 @@ msgstr "{commenter_name} също коментира бележката на {mo
 msgid "notifications.comments.moments.friend.owner.bookmark"
 msgstr "{moment_owner_name} също коментира техния показалец: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} също коментира тяхното ново приятелство с {friend_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} също коментира маркираното от тях: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} също коментира техния стих в снимка: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} също коментира тяхната бележка: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} също коментира техния план: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} също коментира техния план за прочит на Библията: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} също коментира плана на {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} също коментира плана за прочит на Библията на {moment_owner_name}: “{comment}”"
 
 msgid "notifications.friendships.accept"
 msgstr "{name} прие молбата ви за приятелство"
@@ -168,8 +210,14 @@ msgstr "Искате ли да бъдете приятели с {name} в YouVer
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "{name} харесва вашия показалец, {reference_human}"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} харесва вашето ново приятелство с {friend_name}"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} харесва вашия акцент, {reference_human}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} харесва вашия сти в снимка за {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} харесва вашата бележка"
@@ -180,11 +228,20 @@ msgstr "{name} харесва вашата бележка за {reference_human}
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} харесва вашата бележка, “{title}”"
 
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} Харесва дейността Ви по плана за прочит"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} харесва дейността Ви по плана за прочит на Библията"
+
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} добави в показалеца {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} маркира {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} създаде стих в снимка за {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} добави бележка"
@@ -194,6 +251,21 @@ msgstr "{name} добави бележка на {reference_human}"
 
 msgid "notifications.moments.create.note.title"
 msgstr "{name} добави бележка, “{title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} са завършили техния план, {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} завършиха техния план за прочит на Библията, {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} започна нов план, {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} започна нов план за прочит на Библията, {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "{name} току-що се присъедини към YouVersion. Докоснете, за да ги добавите като приятели."
 
 msgid "notifications.system.test"
 msgstr "Изтеглете нашето приложение за Детска Библия сега!!"

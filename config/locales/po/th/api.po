@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: th <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: th <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -84,6 +84,12 @@ msgstr "คุณได้เน้นพระคำ <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} เน้นข้อพระคำ <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "คุณได้เพิ่มรูปข้อพระคัมภีร์ <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} ได้เพิ่มรูปข้อพระคัมภีร์ <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "คุณได้เพิ่มโน้ต <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} ได้แสดงความคิดเห็นบนค�
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของคุณ: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} แสดงความเห็นบนรูปข้อพระคัมภีร์ของคุณ: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name}  ได้แสดงความคิดเห็นบนโน้ตของคุณ: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} ได้แสดงความคิดเห็น�
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของ {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} ได้แสดงความเห็นบนรูปข้อพระคัมภีร์ของ {moment_owner_name} : “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} ได้แสดงความคิดเห็นบนโน้ตของ {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} ได้แสดงความคิดเห็�
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของเขา: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} ได้แสดงความเห็นบนรูปข้อพระคัมภีร์ของเขา: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนโน้ตของเขา: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} ถูกใจในความสัมพันธ์ให�
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} ถูกใจการเน้นข้อพระคำของคุณ {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} ถูกใจรูปข้อพระคัมภีร์สำหรับ {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} ถูกใจโน้ตของคุณ"
 
@@ -224,6 +242,9 @@ msgstr "{name} ได้คั่นหน้า {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} ได้เน้นข้อพระคำ {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} ได้เพิ่มรูปข้อพระคัมภีร์สำหรับ {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} ได้เพิ่มโน้ต"

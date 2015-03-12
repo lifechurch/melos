@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-09 13:08-0600\n"
+"PO-Revision-Date: 2015-03-09 13:08-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ca <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:34-0609\n"
-"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"POT-Creation-Date: 2015-03-09 13:09-0600\n"
+"PO-Revision-Date: 2015-03-09 13:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ca <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -84,6 +84,12 @@ msgstr "Has ressaltat <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} ha ressaltat <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Has creat una Imatge el Verset <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} ha creat una Imatge amb Verset per a <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Has afegit una nota, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} ha comentat la teva nova amistat amb {friend_name}: “{comment}�
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ha comentat la teva marca: \"{comment}\""
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} ha fet un comentari sobre la teva Imatge amb Verset: “{comment}” "
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} ha comentat la teva nota: \"{comment}\""
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} també ha comentat la nova amistat de {moment_owner_nam
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} també ha comentat la marca de {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} també ha comentat la Imatge amb Verset de {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} també ha comentat la nota de {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} també ha comentat la seva nova amistat amb {friend_
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} també ha comentat la seva marca: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} també ha comentat la seva Imatge amb Verset: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} també ha comentat la seva nota: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "A {name} li agrada la teva nova amistat amb {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "A {name} li agrada el que has ressaltat, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "A {name} li agrada la teva Imatge amb Verset per a {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "A {name} li agrada la teva nota"
 
@@ -224,6 +242,9 @@ msgstr "{name} ha posat un marcador a {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} ha ressaltat {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} ha creat una Imatge amb Verset per a {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} ha afegit una nota"

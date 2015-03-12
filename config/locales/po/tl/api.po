@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-03 14:06-0600\n"
+"PO-Revision-Date: 2015-03-03 14:06-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fil_PH <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-03 14:07-0600\n"
+"PO-Revision-Date: 2015-03-03 14:07-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fil_PH <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,7 +67,7 @@ msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Hanapin ang paboritong Babasahing Pambibliya sa Pebrero!"
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Hanapin ang pag-asa at pagbabago sa Babasahing Pang-marso."
+msgstr "Hanapin ang pag-asa at pagbabago sa mga Babasahin ngayong Marso."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Magbasa ng Bibliya araw-araw sa 2015. Nakatutulong ang mga babasahin!"
@@ -83,6 +83,12 @@ msgstr "Hinaylayt mo ang <b>{reference_human}</b>"
 
 msgid "moment.highlight.title"
 msgstr "Hinaylayt ni {name} ang <b>{reference_human}</b>"
+
+msgid "moment.image.self.title"
+msgstr "Ikaw ay gumawa ng verse image para sa <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "Si {name} ay gumawa ng verse image para sa <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Ikaw ay nagdagdag ng tala, <b>{title}</b>"
@@ -138,6 +144,9 @@ msgstr "Si {name} ay nagkomento sa iyong pakikipagkaibigan kay {friend_name}: �
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Nagkomento si {name} sa iyong inihaylayt: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "Si {name} ay nagkomento sa iyong verse image: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "Nagkomento si {name} sa iyong tala: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "Si {commenter_name} ay nagkomento rin sa pakikipagkaibigan ni {moment_ow
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Si {commenter_name} ay nagkomento rin sa haylayt ni {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "Si {commenter_name} ay nagkomento rin sa verse image ni {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "Nagkomento rin si {commenter_name} sa tala ni {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "Si {moment_owner_name} ay nagkomento rin sa kanyang pakikipagkaibigan ka
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Nagkomento rin si {moment_owner_name} sa kanilang haylayt: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "Si {moment_owner_name}ay nagkomento rin sa kanilang verse image: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "Nagkomento rin si {moment_owner_name} sa kanilang tala: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "Nagustuhan at ni-like ni {name} ang iyong pakikipagkaibigan kay {friend_
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Nagustuhan ni {name} ang iyong haylayt, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "Nagustuhan ni{name} ang iyong verse image para sa{reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "Nagustuhan ni {name} ang iyong tala"
 
@@ -224,6 +242,9 @@ msgstr "Ibinookmark ni {name} ang {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "Hinaylayt ni {name} ang {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "Si {name} ay gumawa ng verse image para sa {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "Si {name} ay nagdagdag ng tala"
