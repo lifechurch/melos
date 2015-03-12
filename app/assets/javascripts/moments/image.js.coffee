@@ -30,3 +30,10 @@ class window.Moments.Image extends window.Moments.Base
           path:       @data.user.path
           avatar:     Session.User.avatar()
       return html
+
+
+
+  finalizeSetup: ()->
+    @moment_el.find(".body-image").on 'load', ->
+      $(this).show()
+      $(this).parent().find(".image-loader").hide()
