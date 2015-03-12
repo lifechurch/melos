@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-09 13:08-0600\n"
+"PO-Revision-Date: 2015-03-09 13:08-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: id <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-09 13:09-0600\n"
+"PO-Revision-Date: 2015-03-09 13:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: id <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -84,6 +84,12 @@ msgstr "Anda menyoroti <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} menyoroti <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Anda membuat sebuah gambar ayat untuk {reference_human} <b></b>"
+
+msgid "moment.image.title"
+msgstr "{name} membuat sebuat gambar ayat untuk {reference_human} <b></b>"
+
 msgid "moment.note.self.title"
 msgstr "Anda menambahkan catatan, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} mengomentari pertemanan baru Anda dengan {friend_name}: “{comme
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} mengomentari sorotan Anda: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} mengomentari gambar ayat Anda: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} mengomentari catatan Anda: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} juga mengomentari pertemanan baru {moment_owner_name} d
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} juga mengomentari sorotan {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} juga mengomentari pada gambar ayat milik {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} juga mengomentari catatan {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} juga mengomentari pertemanan baru mereka dengan {fri
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} juga mengomentari sorotan mereka: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} juga mengomentari gambar ayatnya: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} juga mengomentari catatan mereka: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} menyukai pertemanan baru Anda dengan {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} suka sorotan Anda, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} menyukai gambar ayat untuk {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} suka catatan Anda"
 
@@ -224,6 +242,9 @@ msgstr "{name} telah memarkahi {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} telah menyoroti {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} membuat sebuah gambar ayat untuk {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} telah menambahkan sebuah catatan"

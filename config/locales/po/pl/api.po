@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-09 13:08-0600\n"
+"PO-Revision-Date: 2015-03-09 13:08-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pl <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:34-0609\n"
-"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"POT-Creation-Date: 2015-03-09 13:09-0600\n"
+"PO-Revision-Date: 2015-03-09 13:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pl <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -64,10 +64,10 @@ msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Przygotuj się na Boże Narodzenie z Adwentowym Planem Biblii"
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Znajdź swój ulubiony Plan Biblijny na Luty!"
+msgstr "Znajdź swój ulubiony Plan Biblii na luty!"
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Znajdź nadzieję i odnowienie w marcowych Planach."
+msgstr "Znajdź nadzieję i odnowienie w marcowych planach."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "W 2015 czytaj Biblię codziennie. Plany pomogą!"
@@ -83,6 +83,12 @@ msgstr "Zakreśliłeś <b>{reference_human}</b>"
 
 msgid "moment.highlight.title"
 msgstr "{name} zakreślił <b>{reference_human}</b>"
+
+msgid "moment.image.self.title"
+msgstr "Utworzyłeś obraz z wersetem dla <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} utworzył obraz z wersetem dla <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Dodałeś notatkę, <b>{title}</b>"
@@ -138,6 +144,9 @@ msgstr "{name} skomentował twoją nową znajomość z {friend_name}: “{commen
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} skomentował twoje zakreślenie: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} skomentował twój obraz z wersetem: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} skomentował twoją notatkę: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} również skomentował nową znajomość {moment_owner_
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} również skomentował zakreślenie {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} również skomentował obraz z wersetem {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} również skomentował notatkę {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} również skomentował swoją nową znajomość z {f
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} również skomentował swoje zakreślenie: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} również skomentował swój obraz z wersetem: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} również skomentował swoją notatkę: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} lubi twoją nową znajomość z {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} lubi twoje zakreślenie, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} lubi twój obraz z wersetem dla {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} lubi twoją notatkę"
 
@@ -224,6 +242,9 @@ msgstr "{name} zaznaczył {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} zakreślił {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} utworzył obraz z wersetem dla {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} dodał notatkę"

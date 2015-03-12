@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-09 13:08-0600\n"
+"PO-Revision-Date: 2015-03-09 13:08-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ar <LL@li.org>\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:34-0609\n"
-"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"POT-Creation-Date: 2015-03-09 13:09-0600\n"
+"PO-Revision-Date: 2015-03-09 13:09-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ar <LL@li.org>\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
@@ -84,6 +84,12 @@ msgstr "لقد ميّزت النص<b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "{name} قد ميّز النص <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "لقد أنشأت صورة للآية <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "أنشأ {name} صورة للآية <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "لقد أضفت ملاحظة, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} علق على صداقتك مع {friend_name}: “{comment}”"
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} علّق على نصك المميز: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "علق {name} على صورتك للآية: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} علّق على ملاحظتك: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} ايضا علق على الصداقة  {moment_owner_na
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} علّق أيضاً على نص {moment_owner_name} المميز: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "علق {commenter_name} أيضاً على صورة {moment_owner_name} للآية: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} أيضاً علّق على ملاحظة {moment_owner_name} الخاصة: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} ايضا علقوا على صداقتهم الجدي
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}أيضاً علق على احد أبرز الأيات : ”{comment}“"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "علق {moment_owner_name} أيضاً على صورته للآية: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} علّق أيضاً على ملاحظتهم : “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} معجب بصداقتك الجديدية مع {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} معجب بنصك المميز {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "أعجب {name} صورتك للآية {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} معجب  بملاحظتك"
 
@@ -224,6 +242,9 @@ msgstr "{name} أضاف إشارة مرجعية {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} ميّز {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "أنشأ {name} صورة للآية {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} أضاف ملاحظة"
