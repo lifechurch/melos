@@ -1,0 +1,30 @@
+- @title = t('versions.index title')
+
+- content_for :additional_meta do
+  = render '/shared/hreflang'
+
+- content_for :title do
+  = t('versions.index title')
+
+- content_for :meta_description do
+  = "#{t('bible versions')} - #{t("versions.number of versions field")} #{@versions_by_lang.values.flatten.count}, #{t("versions.number of languages field")} #{@versions_by_lang.count}"
+
+%article
+  %h1
+    = "Audio #{t('bible versions')}"
+  -#= cache "versions_bylang_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
+  %ul
+    - @versions_by_lang.each do |lang, versions|
+      - if versions.present?
+        -#- show_title = true
+        - versions.each do |version|
+          - if version.audio
+            -#- if show_title
+            -#  - show_title = false
+            -#  %li
+            -#    = t("versions.language and count", language_name: versions.first.language.human,  language_count: versions.count)
+            -#      %ul
+            %li
+              = version.id
+              = versions.first.language.human
+              = link_to "#{version.title} (#{version.abbreviation.upcase})" , audiobible_path(version)
