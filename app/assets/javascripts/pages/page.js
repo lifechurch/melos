@@ -482,7 +482,7 @@ Page.prototype = {
 
   shareInit : function() {
       if (!this.shareInitialized) {
-//          addthis.init();
+          addthis.init();
           this.shareInitialized = true;
       }
   },
