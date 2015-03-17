@@ -713,6 +713,7 @@ uk:
         none me: "Ви поки що не заробили жодного значка."
         none user: "%{username} ще не заробив жодного значка."
     plans: 
+        share plan: "Спробуйте цей @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Мої плани"
             start reading: "Почати читання"
@@ -845,8 +846,10 @@ uk:
         loading sidebar content: "Завантаження вмісту бічної панелі…"
     videos: 
         title: "Відео"
+        watch videos: "Дивіться відео про Біблію"
         all: "Усі відео"
         related scripture: "Пов'язане Писання"
+        share video: "Переглядаю %{video_title} на @YouVersion."
     licenses: 
         authorized: 
             heading: "Ваш зміст дозволено"

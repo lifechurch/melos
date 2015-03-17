@@ -713,6 +713,7 @@ es:
         none me: "Usted no ha obtenido ninguna insignia aún."
         none user: "%{username} no ha obtenido ninguna insignia aún."
     plans: 
+        share plan: "Dale un vistazo a @YouVersion#BiblePlan:%{plan_title}"
         widget: 
             my plans: "Mis Planes"
             start reading: "Iniciar lectura"
@@ -841,8 +842,10 @@ es:
         loading sidebar content: "Cargando contenido de barra lateral..."
     videos: 
         title: "Videos"
+        watch videos: "Ver videos acerca de la Biblia"
         all: "Todos los videos"
         related scripture: "Versículos Relacionados"
+        share video: "Estoy viendo %{video_title} en @YouVersion."
     licenses: 
         authorized: 
             heading: "Su contenido ha sido autorizado"

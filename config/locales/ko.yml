@@ -713,6 +713,7 @@ ko:
         none me: "아직 받으신 배지가 없습니다."
         none user: "%{username}님은 아직 받은 배지가 없습니다."
     plans: 
+        share plan: "이 묵상 계획을 나눕니다 @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "내 계획"
             start reading: "읽기 시작"
@@ -839,8 +840,10 @@ ko:
         loading sidebar content: "사이드 바 내용을 로딩중입니다..."
     videos: 
         title: "동영상"
+        watch videos: "성경에 관한동영상 보기"
         all: "모든 동영상"
         related scripture: "관련 말씀"
+        share video: " %{video_title} 비데오를 YouVersion 에서 보고 있습니다."
     licenses: 
         authorized: 
             heading: "콘텐츠가 공인되었습니다."

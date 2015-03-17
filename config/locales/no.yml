@@ -713,6 +713,7 @@
         none me: "Du har ikke fått noen merker ennå"
         none user: "%{username} har ikke fått noen merker ennå."
     plans: 
+        share plan: "Sjekk ut denne @YouVersion #Bibelleseplan: %{plan_title}"
         widget: 
             my plans: "Mine leseplaner"
             start reading: "Begynn å lese"
@@ -841,8 +842,10 @@
         loading sidebar content: "Laster innhold fra sidemenyen..."
     videos: 
         title: "Videoer"
+        watch videos: "Se videoer om Bibelen"
         all: "Alle videoer"
         related scripture: "Relaterte skriftsteder"
+        share video: "Jeg ser på %{video_title} på @YouVersion."
     licenses: 
         authorized: 
             heading: "Innholdet er godkjent"

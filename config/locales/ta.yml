@@ -713,6 +713,7 @@ ta:
         none me: "நீங்கள் இன்னும் எந்த badges-யும் பெற வில்லை."
         none user: "%{username} இன்னும் எந்த badges-யும் பெற வில்லை."
     plans: 
+        share plan: "இந்த @YouVersion #BiblePlan ஐ காண்க: %{plan_title}"
         widget: 
             my plans: "என்னுடைய திட்டங்கள்"
             start reading: "வாசிப்பை ஆரம்பிக்கவும்"
@@ -841,8 +842,10 @@ ta:
         loading sidebar content: "பக்கப்பட்டியின் உள்ளடக்கத்தை ஏற்றிகொண்டிருக்ககிறது ..."
     videos: 
         title: "காணொளிகள்"
+        watch videos: "வேதாகமத்தைக் குறித்த காணொளிகளைக் காண்க"
         all: "அனைத்து காணொளிகள்"
         related scripture: "தொடர்புடைய வேதபகுதி"
+        share video: "நான் @YouVersion இல்  %{video_title} ஐ பார்த்துக் கொண்டிருக்கிறேன் "
     licenses: 
         authorized: 
             heading: "உங்களின்  தகவல்கள் அங்கீகரிக்கப் பட்ருக்கிறது"

@@ -713,6 +713,7 @@ zh-TW:
         none me: "您還未獲得任何徽章。"
         none user: "%{username}還未獲得任何徽章。"
     plans: 
+        share plan: "查看此計劃 @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "我的計劃"
             start reading: "開始閱讀"
@@ -839,8 +840,10 @@ zh-TW:
         loading sidebar content: "載入提要欄位內容..."
     videos: 
         title: "視訊"
+        watch videos: "觀賞有關聖經的視訊"
         all: "所有錄像"
         related scripture: "相關經文"
+        share video: "我在 @YouVersion 觀賞 %{video_title}。"
     licenses: 
         authorized: 
             heading: "您的內容已被授權。"

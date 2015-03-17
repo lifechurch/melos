@@ -713,6 +713,7 @@ ja:
         none me: "まだバッジを獲得していません"
         none user: "%{username} さんはまだバッジを獲得していません"
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "マイ・プラン"
             start reading: "読書を開始"
@@ -839,8 +840,10 @@ ja:
         loading sidebar content: "サイドバーの内容を読み込み中…"
     videos: 
         title: "ビデオ"
+        watch videos: "Watch videos about the Bible"
         all: "全てのビデオ"
         related scripture: "関連聖句"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "内容が認証されました。"

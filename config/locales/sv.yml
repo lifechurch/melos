@@ -713,6 +713,7 @@ sv:
         none me: "Du har inte fått några medaljer än."
         none user: "%{username} har inte fått några medaljer än."
     plans: 
+        share plan: "Kolla in denna  #BiblePlan från @YouVersion: %{plan_title}"
         widget: 
             my plans: "Mina planer"
             start reading: "Börja läsa"
@@ -841,8 +842,10 @@ sv:
         loading sidebar content: "Laddar innehåll i sidofällt..."
     videos: 
         title: "Videor"
+        watch videos: "Se på filmer om Bibeln"
         all: "Alla videor"
         related scripture: "Relaterad text"
+        share video: "Jag tittar på %{video_title} på @YouVersion."
     licenses: 
         authorized: 
             heading: "Ditt innehåll har godkänts"

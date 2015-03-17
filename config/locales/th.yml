@@ -713,6 +713,7 @@ th:
         none me: "คุณยังไม่ได้เหรียญตราใดๆ"
         none user: "%{username} ยังไม่ได้รางวัลเหรียญตราใดๆ"
     plans: 
+        share plan: "ลองดู @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "แผนฯ ของฉัน"
             start reading: "เริ่มต้นอ่าน"
@@ -839,8 +840,10 @@ th:
         loading sidebar content: "กำลังโหลดข้อมูลแถบด้านข้าง..."
     videos: 
         title: "วิดีโอ"
+        watch videos: "รับชมวีดีโอเกี่ยวกับพระคัมภีร์"
         all: "วิดีโอทั้งหมด"
         related scripture: "ข้อพระคัมภีร์ที่เกี่ยวข้อง"
+        share video: "ฉันกำลังดู %{video_title} ทาง @YouVersion"
     licenses: 
         authorized: 
             heading: "เนื้อหาของคุณได้รับอนุญาตให้เข้าถึง"

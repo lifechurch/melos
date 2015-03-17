@@ -713,6 +713,7 @@ de:
         none me: "Du hast bisher keine Abzeichen bekommen."
         none user: "%{username} hat bisher keine Abzeichen bekommen."
     plans: 
+        share plan: "Schau dir diesen @YouVersion #BibelPlan an: %{plan_title}"
         widget: 
             my plans: "Meine Lesepläne"
             start reading: "Fang an zu lesen."
@@ -791,7 +792,7 @@ de:
         restart description: "Du kannst deinen Plan neu starten. Deine gelesenen Passagen werden zurückgesetzt und alles fängt von vorne an."
         restart: "Plan erneut starten"
         privacy description: 
-            private: "Dein Plan ist \"privat\". Ändere deine Einstellungen zu \"Mit Freunden teilen\", um deine Leseplanaktivitäten mit deinen Freunden zu teilen."
+            private: "Dein Plan ist \"privat\". Klicke auf \"Mit Freunden teilen\", um deine Leseplanaktivitäten mit deinen Freunden zu teilen."
             public: "Dein Plan ist für Freunde sichtbar. Ändere die Einstellung zu \"privat\". Dann siehst nur du deine Leseplanaktivitäten."
         make private: "Als \"privat\" markieren"
         make public: "Mit Freunden teilen"
@@ -841,8 +842,10 @@ de:
         loading sidebar content: "Seitenleiste wird geladen..."
     videos: 
         title: "Videos"
+        watch videos: "Bibel-Videos anschauen"
         all: "Alle Videos"
         related scripture: "Ähnliche Schriftstelle"
+        share video: "Ich schaue %{video_title} auf @YouVersion."
     licenses: 
         authorized: 
             heading: "Dein Inhalt ist nun bestätigt."

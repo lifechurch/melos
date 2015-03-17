@@ -713,6 +713,7 @@ id:
         none me: "Anda belum memperoleh lencana apapun."
         none user: "%{username} belum memperoleh lencana apapun."
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Rencana Saya"
             start reading: "Mulai baca"
@@ -839,8 +840,10 @@ id:
         loading sidebar content: "Memuat konten  bilah samping..."
     videos: 
         title: "Video"
+        watch videos: "Watch videos about the Bible"
         all: "Semua video"
         related scripture: "Firman Tuhan Terkait"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "Konten Anda telah disahkan"
