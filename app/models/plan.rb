@@ -55,7 +55,7 @@ class Plan < YV::Resource
     # TODO pagination + facets
 
     def all(opts = {})
-      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_long_time
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
       cache_for(cache_time, opts)
       opts[:query] = '*' if opts[:query].blank?
       super(opts)
@@ -65,16 +65,16 @@ class Plan < YV::Resource
       all opts.merge(category: "featured_plans")
     end
 
-
     def find(param, opts ={})
       id, slug = id_and_slug_from_param param
       raise YouVersion::API::RecordNotFound unless id.present?
       # Dont cache if we tell cache_for to be zero (coming from subscription)
-      opts[:cache_for] = (opts[:cache_for] == 0) ? nil : YV::Caching.a_long_time
+      opts[:cache_for] = (opts[:cache_for] == 0) ? nil : YV::Caching.a_longer_time
       super(id, opts)
     end
 
     def stats(opts={})
+      opts[:cache_for] ||= YV::Caching.a_longer_time unless opts[:cache_for] == 0
       raise YouVersion::API::RecordNotFound unless opts[:id].present? 
       data, errs = get(stats_path, opts)
       errs || data
@@ -115,13 +115,10 @@ class Plan < YV::Resource
       end
     end
 
-
     # Check if an API call is for a specific user (user_id is present in options)
     def request_for_user?(opts)
       opts[:user_id].present?
     end
-
-
 
   end
   # END Class method definitions ------------------------------------------------------------------------
@@ -152,7 +149,6 @@ class Plan < YV::Resource
     #just give the first day if requested for a plan
     #(i.e. not in context of a subscription)
   end
-
 
   # we don't auth or send user_id because this is just a plan (not a subscription) that doesn't know about a user
   # to be overriden by Subscription model to send auth and user_id
