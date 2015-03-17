@@ -56,7 +56,7 @@ class Plan < YV::Resource
 
     def all(opts = {})
       cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
-      cache_for(cache_time, opts)
+      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
       opts[:query] = '*' if opts[:query].blank?
       super(opts)
     end
