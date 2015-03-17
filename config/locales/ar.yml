@@ -713,6 +713,7 @@ ar:
         none me: "لم تحصل على أي شارات بعد."
         none user: "%{username} لم يحصل على أي شارات بعد."
     plans: 
+        share plan: "أنظر هذه #BiblePlan من @YouVersion: %{plan_title}"
         widget: 
             my plans: "خططي"
             start reading: "ابدأ القراءة"
@@ -849,8 +850,10 @@ ar:
         loading sidebar content: "تحميل محتوى الشريط الجانبي ..."
     videos: 
         title: "فيديو"
+        watch videos: "شاهد مقاطع فيديو عن الكتاب المقدس"
         all: "كل الفيديوهات"
         related scripture: "آيات الكتاب المقدس ذات الصلة"
+        share video: "أنا أشاهد %{video_title} على @YouVersion."
     licenses: 
         authorized: 
             heading: "تم التصريح للمحتوى الخاص بك"

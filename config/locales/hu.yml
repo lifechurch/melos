@@ -334,7 +334,7 @@ hu:
         blank slate: 
             heading: "Jelenleg nincsenek barátaid"
             description: "Barátoknak kell lennetek ezzel a személlyel ahhoz, hogy láthasd a barátait."
-        limit notice: "Akár 150 barátod is lehet"
+        limit notice: "Összesen 150 lehet"
         limit description: "Ha korlátozod a Biblia alkalmazáson a barátaidat olyan emberekre, akiket jól ismersz, ez  lehetőséget teremt őszinte beszélgetésekre és közös felfedezésekre a megbízható barátaiddal."
     friendships: 
         name required: "Annak érdekében, hogy megtapasztald a Bibliát a barátaiddal, add meg a profilodon a vezeték- és keresztnevedet."
@@ -625,7 +625,7 @@ hu:
             location: "Helyszín"
             postal code: "Irányítószám"
             website: "Honlap"
-            country: "Orszag vagy regio"
+            country: "Ország vagy régió"
             timezone: "Időzóna"
             language: "Nyelv"
             updated: "Sikerült! Frissítetted a profilodat."
@@ -713,6 +713,7 @@ hu:
         none me: "Még nem szereztél jelvényt."
         none user: "%{username} még nem szerzett jelvényt."
     plans: 
+        share plan: "Nézd meg ezt a @YouVersion-ön #BibliaTerv: \"%{plan_title}\""
         widget: 
             my plans: "Terveim"
             start reading: "Olvasás elkezdése"
@@ -841,8 +842,10 @@ hu:
         loading sidebar content: "Oldalsáv tartalmának betöltése..."
     videos: 
         title: "Videók"
+        watch videos: "Nézz videókat a Bibliáról"
         all: "Összes videó"
         related scripture: "Utalás"
+        share video: "A(z) \"%{video_title}\" videót nézem a YouVersion-ön."
     licenses: 
         authorized: 
             heading: "A tartalmad engedélyezve lett."

@@ -713,6 +713,7 @@ hi:
         none me: "आपके द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
         none user: "%{username} के द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "मेरी योजनाएँ"
             start reading: "अध्ययन प्रारंभ करे"
@@ -841,8 +842,10 @@ hi:
         loading sidebar content: "साइड बार विषय सूची लोड किया जा रहा हैं............."
     videos: 
         title: "वीडियो"
+        watch videos: "Watch videos about the Bible"
         all: "समस्त विडियो"
         related scripture: "संबधित लेख"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "आपका विषय सूची अधीकृत हुआ"

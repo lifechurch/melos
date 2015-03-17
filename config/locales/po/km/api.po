@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-16 08:33-0600\n"
+"PO-Revision-Date: 2015-03-16 08:33-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: km <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:41-0600\n"
-"PO-Revision-Date: 2015-02-25 16:41-0600\n"
+"POT-Creation-Date: 2015-03-16 08:34-0600\n"
+"PO-Revision-Date: 2015-03-16 08:34-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: km <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -32,8 +32,8 @@ msgstr ""
 "#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:07-0600\n"
-"PO-Revision-Date: 2014-09-25 16:07-0600\n"
+"POT-Creation-Date: 2015-03-16 08:35-0600\n"
+"PO-Revision-Date: 2015-03-16 08:35-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: km <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -59,6 +59,9 @@ msgstr "អ្នក​បាន​កត់​ចំណាំ <b>{reference_hum
 
 msgid "moment.bookmark.title"
 msgstr "{name}បាន​កត់​ចំណាំ <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.advent.title"
+msgstr "ត្រៀម​សំរាប់​បុណ្យ​ណូអែល​ជាមួយ​នឹងគំរោង​ព្រះ​គម្ពីរ Advent"
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "ស្វែងរកគំរោងអានដែលអ្នកចូលចិត្តសំរាប់ខែកុម្ភ"
@@ -87,6 +90,27 @@ msgstr "អ្នក​បាន​បន្ថែម​កំណត់​ត្
 msgid "moment.note.title"
 msgstr "{name} បាន​បន្ថែម​កំណត់​ត្រា​មួយ, <b>{title}</b>"
 
+msgid "moment.plan_completion.self.title"
+msgstr "លោកអ្នក​បាន​បញ្ចប់​គំរោង​ថ្មី​"
+
+msgid "moment.plan_completion.title"
+msgstr "{name}បាន​បញ្ចប់​គំរោងមួយ"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "ថ្ងៃទី​{segment} នៃ {total_segments}({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "លោក​អ្នក​បាន​បញ្ចប់​ថ្ងៃទី​{segment}​នៃ​គំរោង {title} <b></b><b></b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "{name} បានបញ្ចប់​ថ្ងៃទី {segment} នៃ​គំរោង {title} <b></b><b></b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "លោក​អ្នក​បាន​ចាប់​ផ្ដើម​គំរោង​ថ្មី"
+
+msgid "moment.plan_subscription.title"
+msgstr "{name} បាន​ចាប់​ផ្ដើម​គំរោង​ថ្មី"
+
 msgid "moment.system.bible_series_promo.body"
 msgstr "មើល​<i>ភាគ​ព្រះ​គម្ពីរ</i> យប់​នេះ!"
 
@@ -95,6 +119,9 @@ msgstr "<i>ភាគ​ព្រះ​គម្ពីរ​</i>"
 
 msgid "moment.system.christmas.title"
 msgstr "ចែក​រំលែក​ដំណឹង​ល្អ. ព្រះ​សង្គ្រោះ​ប្រសូត​ហើយ!"
+
+msgid "moment.system.find_friends.title"
+msgstr "កម្ម​វិធី​ព្រះ​គម្ពីរ​កាន់​តែ​ប្រសើរ​ប្រសិន​បើ​លោក​អ្នក​ប្រើ​ជាមួយ​នឹង​មិត្ត​ភ័ក្ត្រ។ ស្វែង​រក​មិត្ត​ភ័ក្ត្រ​នៅក្នុង​បញ្ជីរ​អ្នក​ដែល​មាន​ទំនាក់​ទំនង​ជាមួយ​លោក​អ្នក។"
 
 msgid "moment.video.watched.self.title"
 msgstr "អ្នក​បាន​មើល <b>{title}</b>"
@@ -105,14 +132,26 @@ msgstr "{name} បាន​មើល <b>{title}</b>"
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} បញ្ចេញ​មតិលើ​កំណត់​ចំណាំ​របស់​អ្នក: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "{name} បាន​បញ្ចេញ​មតិ​យោបល់​អំពី​មិត្ត​ភាព​ថ្មីរបស់​លោក​អ្នក​ជាមួយ​នឹង {friend_name} ថា៖ “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} បាន​បញ្ចេញ​មតិ​លើ​គំនូសពណ៌របស់​អ្នក: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} បាន​បញ្ចេញ​មតិលើកំណត់​ត្រា​របស់​អ្នក: “{comment}”"
 
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "{name} បាន​បញ្ចេញ​មតិយោបល់​នៅ​ក្នុង​គំរោងរបស់​លោក​អ្នក​ថា៖ “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "{name} បាន​បញ្ចេញ​មតិ​យោបល់​អំពី​គំរោង​ផែនការ​ព្រះ​គម្ពីរ​របស់​លោក​អ្នក​ថា៖ “{comment}”"
+
 msgid "notifications.comments.moments.friend.bookmark"
 msgstr "{commenter_name} ក៏​បាន​បញ្ចេញ​មតិលើកំណត់​ចំណាំ​របស់ {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "{commenter_name} ក៏​បាន​បញ្ចេញ​មតិ​យោបល់​អំពីមិត្ត​ភាព​របស់ {moment_owner_name} ជាមួយ​នឹង {friend_name} ថា៖ “{comment}”"
 
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} ក៏បាន​បញ្ចេញ​មតិលើគំនូស​ពណ៌​របស់ {moment_owner_name}: “{comment}”"
@@ -123,11 +162,26 @@ msgstr "{commenter_name} ក៏បាន​បញ្ចេញ​មតិលើ�
 msgid "notifications.comments.moments.friend.owner.bookmark"
 msgstr "{moment_owner_name} ក៏បាន​បញ្ចេញ​មតិលើកំណត់​ចំណាំរបស់​គាត់ដែរ: “{comment}”"
 
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "{moment_owner_name} ក៏​បាន​បញ្ចេញ​មតិយោបល់​អំពី​មិត្ត​ភាព​ថ្មីៗ​របស់​ពួកគេជាមួយ​នឹង {friend_name}៖ “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ក៏បាន​បញ្ចេញ​មតិលើគំនូស​ពណ៌របស់​គាត់ដែរ: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ក៏បាន​បញ្ចេញ​មតិលើកំណត់​ត្រារបស់​គាត់ដែរ: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "{moment_owner_name} ក៏បាន​បញ្ចេញ​មតិ​យោបល់​អំពី​គំរោងផែនការ៖ “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "{moment_owner_name} ក៏​បាន​បញ្ចេញ​មតិយោបល់​អំពីគំរោង​ព្រះ​គម្ពីររបស់​ពួក​គេ​ថា៖ “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "{commenter_name} ក៏​បាន​បញ្ចេញ​មតិយោបល់​អំពីគំរោង​ផែនការ​របស់ {moment_owner_name} ថា៖ “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "{commenter_name} ក៏​បាន​បញ្ចេញ​មតិ​យោបល់​អំពី {moment_owner_name} ក្នុង​គំរោងព្រះ​គម្ពីរ៖ “{comment}”"
 
 msgid "notifications.friendships.accept"
 msgstr "{name} បាន​ទទួល​សំណើរ​ជា​មិត្ត​របស់​អ្នក"
@@ -144,6 +198,9 @@ msgstr "តើ​អ្នក​ចង់​ធ្វើ​ជា​មិត្
 msgid "notifications.likes.moment.mine.bookmark"
 msgstr "{name} ចូល​ចិត្ត កំណត់​ចំណាំ​របស់​អ្នក, {reference_human}"
 
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "{name} ចូលចិត្តមិត្ត​ភាព​ថ្មី​របស់​លោក​អ្នក​ជាមួយ​នឹង {friend_name}"
+
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} ចូល​ចិត្ត​ គំនូស​ពណ៌​របស់​អ្នក, {reference_human}"
 
@@ -155,6 +212,12 @@ msgstr "{name} ចូល​ចិត្ត​កំណត់​ត្រា​�
 
 msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} ចូល​ចិត្ត​កំណត់​ត្រា​របស់​អ្នក, “{title}”"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "{name} ចូល​ចិត្ត​ផែន​ការ​សកម្ម​ភាព​របស់​លោក​អ្នក"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "{name} ចូល​ចិត្ត​គំរោង​ផែនការ​សកម្ម​ភាព​ព្រះ​គម្ពីរ​របស់​លោក​អ្នក"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} បាន​កត់​ចំណាំ {reference_human}"
@@ -171,11 +234,26 @@ msgstr "{name} បាន​បន្ថែម​កំណត់​ត្រា�
 msgid "notifications.moments.create.note.title"
 msgstr "{name} បាន​បន្ថែម​កំណត់​ត្រា, “{title}”"
 
+msgid "notifications.moments.create.plan_completion"
+msgstr "{name} បាន​បញ្ចប់​គំរោង​របស់​ពួក​គេ {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "{name} បាន​បញ្ចប់​គំរោង​អាន​ព្រះ​គម្ពីរ {title} របស់​ពួក​គេ"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "{name} បាន​ចាប់​ផ្ដើម​គំរោងថ្មី {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "{name} បាន​ចាប់​ផ្ដើម​គំរោង​អាន​ព្រះ​គម្ពីរ​ថ្មី {title}"
+
 msgid "notifications.people.contact.joined"
 msgstr "{name} ទើប​​តែ​​បាន​​ចូល​​រួម​​ជា​មួយ​​នឹង​ YouVersion។ សូមចុច​​ដើម្បី​​បន្ថែម​​ពួក​​គេ​​នៅ​​ក្នុង​​បញ្ជីរ​​មិត្ត​​ភាព"
 
 msgid "notifications.system.test"
 msgstr "ទាញ​យក​កម្ម​វិធី​ព្រះ​គម្ពីរ​សំរាប់​ក្មេង ឥឡូវ​នេះ!!!"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>សួស្ដី! </p><p>ខ្ញុំ​កំពុង​ប្រើប្រាស់​កម្ម​វិធី​ព្រះ​គម្ពីរ​ YouVersion ដែល​ខ្ញុំ​ចង់​ចែក​រំលែក​ជាមួយ​នឹង​លោក​អ្នក។ ប្រសិន​បើ​លោក​អ្នក​ទើប​នឹង​ប្រើ​ប្រាស់​កម្មវិធី​នេះ​ជា​លើក​ដំបូង លោក​អ្នក​នឹង​ស្វែង​យល់​ថា​វា​ជា​វិធីដ៏​សមញ្ញ​នឹង​ងាយ​ស្រួល​ក្នុង​ការ​នាំ​យក​សម្ផ័ស្ស និង សេចក្ដី​ពិត​របស់​ព្រះ​គម្ពីរ​ចូល​មក​ក្នុង​ជីវិត​រស់​នៅ​ប្រចាំថ្ងៃ​។ </p><p><strong>សូម​ទាញ​យកកម្ម​វិធី​ព្រះ​គម្ពីរ​នេះដើម្បី៖ </strong> អាន ទស្សនា ស្ដាប់ និង ចែក​ចាយ​តាមរយៈ ទូរស័ព្ទ ឬ ថេប្លែត និង គេហទំព័រ Bible.com។ </p><p><strong>សូម​បង្កើត​គណនី </strong> ដោយចុះ​ឈ្មោះ ក្នុង​គំរោង​អាន​ព្រះ​គម្ពីរ និង ទាញយក ការ​ចំណាំទុក គំនូស​ចំណាំ និង កំណត់​ចំណាំ តាម​រយៈឧបករណ៍​ផ្សេងៗ។ </p><p><strong>សូម​បន្ថែម​មិត្ត​ភ័ក្ត្រ​ចូល​ក្នុង​បញ្ជីរ​មិត្ត​ភាព (ដូច​ខ្ញុំ!)៖ </strong> សូម​ស្វែង​ និង ពិភាក្សាអំពី​ព្រះ​គម្ពីរ​ជាមួយ​នឹង​មនុស្ស​ដែល​លោក​អ្នក​ស្រឡាញ់។ </p><p>អ្វីៗ​ទាំង​អស់​នេះ​ មាន​នៅ​ក្នុង​កម្ម​វីធី​ព្រះ​គម្ពីរ — សូម​ចាប់​ផ្ដើម​នៅ​ទីនេះ៖ </p>"
 
 msgid "share.invite_email_body"
 msgstr ""

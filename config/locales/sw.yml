@@ -713,6 +713,7 @@ sw:
         none me: "Haujapata beji zozote."
         none user: "%{username} hajapata beji zozote."
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "mipango yangu"
             start reading: "Anza kusoma"
@@ -841,8 +842,10 @@ sw:
         loading sidebar content: "Inapakia maudhui ya upau wa kando.."
     videos: 
         title: "Video"
+        watch videos: "Watch videos about the Bible"
         all: "Video zote"
         related scripture: "Neno linalohusiana"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "Maudhui yako imeidhinishwa"

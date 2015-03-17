@@ -713,6 +713,7 @@ ms:
         none me: "Anda belum memperolehi sebarang lencana."
         none user: "%{username} belum memperolehi sebarang lencana."
     plans: 
+        share plan: "Lihat #PelanAlkitab @YouVersion: %{plan_title}"
         widget: 
             my plans: "Pelan Saya"
             start reading: "Mula membaca"
@@ -839,8 +840,10 @@ ms:
         loading sidebar content: "Memuat isi kandungan sidebar..."
     videos: 
         title: "Video"
+        watch videos: "Tonton video-video tentang Alkitab"
         all: "Semua video"
         related scripture: "Kitab Berkaitan"
+        share video: "Saya sedang menonton %{video_title} di @YouVersion."
     licenses: 
         authorized: 
             heading: "Isi kandungan anda telah disahkan"

@@ -713,6 +713,7 @@ cy:
         none me: "Dwyt ti ddim wedi ennill yr un bathodyn eto."
         none user: "Dydy %{username}heb ennill yr un bathodyn eto."
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Fy Nghynlluniau"
             start reading: "Dechrau darllen"
@@ -849,8 +850,10 @@ cy:
         loading sidebar content: "Llwytho cynnwys ochr..."
     videos: 
         title: "Videos"
+        watch videos: "Watch videos about the Bible"
         all: "Pob fideo"
         related scripture: "Ysgrythur berthnasol"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "Mae'r cynnwys wedi ei awdurdodi"

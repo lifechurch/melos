@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-16 08:33-0600\n"
+"PO-Revision-Date: 2015-03-16 08:33-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nl <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:34-0609\n"
-"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"POT-Creation-Date: 2015-03-16 08:34-0600\n"
+"PO-Revision-Date: 2015-03-16 08:34-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nl <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -84,6 +84,12 @@ msgstr "Je hebt <b>{reference_human}</b> gemarkeerd"
 msgid "moment.highlight.title"
 msgstr "{name} markeerde <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Je hebt een vers afbeelding gemaakt voor <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} heeft een vers afbeelding gecreëerd voor <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Je hebt een notitie toegevoegd, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "{name} heeft gereageerd op jouw nieuwe vriendschap met {friend_name}: �
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} heeft gereageerd op jouw markering: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} heeft gereageerd op jouw vers afbeelding: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} heeft gereageerd op jouw notitie: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "{commenter_name} heeft ook gereageerd op de nieuwe vriendschap van {mome
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} heeft ook gereageerd op de markering van {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} heeft ook gereageerd op {moment_owner_name}'s vers afbeelding: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} heeft ook gereageerd op de notitie van {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "{moment_owner_name} heeft ook gereageerd op zijn/haar nieuwe vriendschap
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} heeft ook gereageerd op hun markering: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} heeft ook gereageerd op hun vers afbeelding: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} heeft ook gereageerd op hun notitie: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "{name} vindt jouw nieuwe vriendschap met {friend_name} leuk"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} vindt jouw markering leuk, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} vind je vers afbeelding leuk voor {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} vindt jouw notitie leuk"
 
@@ -224,6 +242,9 @@ msgstr "{name} heeft een bladwijzer aangemaakt {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} heeft een markering aangemaakt {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} heeft een vers afbeelding gecreëerd voor {reference_human} "
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} heeft een notitie toegevoegd"

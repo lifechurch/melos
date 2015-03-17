@@ -713,6 +713,7 @@ it:
         none me: "Non hai ancora guadagnato nessun distintivo."
         none user: "%{username} non ha ancora guadagnato nessun distintivo."
     plans: 
+        share plan: "Dai un'occhiata a questo #PianoDiLettura @YouVersion: %{plan_title}"
         widget: 
             my plans: "I Miei Piani"
             start reading: "Inizia a leggere"
@@ -841,8 +842,10 @@ it:
         loading sidebar content: "Caricando il contenuto della barra laterale..."
     videos: 
         title: "Video"
+        watch videos: "Guarda dei video sulla Bibbia"
         all: "Tutti i video"
         related scripture: "Scritture collegate"
+        share video: "Sto guardando %{video_title}su @YouVersion."
     licenses: 
         authorized: 
             heading: "Il tuo contenuto è stato autorizzato"

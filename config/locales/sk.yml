@@ -713,6 +713,7 @@ sk:
         none me: "Zatiaľ ste nezískali žiadne odznaky."
         none user: "Používateľ %{username} zatiaľ nezískal žiadne odznaky."
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Moje plány"
             start reading: "Začať čítať"
@@ -843,8 +844,10 @@ sk:
         loading sidebar content: "Načítava sa obsah bočného panela..."
     videos: 
         title: "Videá"
+        watch videos: "Watch videos about the Bible"
         all: "Všetky videá"
         related scripture: "Súvisiace súradnice"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "Váš obsah bol potvrdený"
