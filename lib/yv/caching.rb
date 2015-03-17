@@ -9,6 +9,10 @@ module YV
       def a_very_long_time
         @very_long_time ||= Cfg.very_long_cache_expiration.to_f.minutes
       end
+
+      def a_longer_time
+        @longer_time ||= Cfg.longer_cache_expiration.to_f.minutes
+      end
       
       # 45 minutes
       def a_long_time
