@@ -713,6 +713,7 @@ vi:
         none me: "Bạn chưa có huy hiệu nào."
         none user: "%{username} chưa có huy hiệu nào."
     plans: 
+        share plan: "Hãy thử xem kế hoạch \"%{plan_title}\" của @YouVersion #BiblePlan!"
         widget: 
             my plans: "Kế hoạch của tôi"
             start reading: "Bắt đầu đọc"
@@ -839,8 +840,10 @@ vi:
         loading sidebar content: "Đang tải nội dung của thanh bên..."
     videos: 
         title: "Video"
+        watch videos: "Xem các video về Kinh Thánh"
         all: "Tất cả video"
         related scripture: "Kinh Thánh liên quan"
+        share video: "Tôi đang xem \"%{video_title}\" trên @YouVersion."
     licenses: 
         authorized: 
             heading: "Nội dung của bạn đã được cho phép"

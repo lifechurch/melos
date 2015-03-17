@@ -713,6 +713,7 @@ da:
         none me: "Du har ikke optjent nogen mærker endnu."
         none user: "%{username} har ikke optjent nogen mærker endnu."
     plans: 
+        share plan: "Tjek denne @YouVersion #BibelPlan: %{plan_title}"
         widget: 
             my plans: "Mine Planer"
             start reading: "Start læsning"
@@ -841,8 +842,10 @@ da:
         loading sidebar content: "Indlæser sidemenu indhold..."
     videos: 
         title: "Videoer"
+        watch videos: "Se videoer om Bibelen"
         all: "Alle videoer"
         related scripture: "Forbundne skriftsteder"
+        share video: "Jeg ser %{video_title} på @YouVersion."
     licenses: 
         authorized: 
             heading: "Dit indhold er blevet autorisereret!"

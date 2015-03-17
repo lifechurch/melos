@@ -713,6 +713,7 @@ ru:
         none me: "Вы ещё не заработали значков."
         none user: "%{username} ещё не заработал значков."
     plans: 
+        share plan: "Очень интересный план чтения от @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Мои планы чтения"
             start reading: "Начать чтение"
@@ -845,8 +846,10 @@ ru:
         loading sidebar content: "Загрузка боковой панели..."
     videos: 
         title: "Видео"
+        watch videos: "Смотрите видео о Библии"
         all: "Все видео"
         related scripture: "Параллельные места Писания"
+        share video: "Я смотрю %{video_title} на @YouVersion."
     licenses: 
         authorized: 
             heading: "Контент был одобрен"

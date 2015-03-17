@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-25 16:38-0600\n"
-"PO-Revision-Date: 2015-02-25 16:38-0600\n"
+"POT-Creation-Date: 2015-03-17 08:41-0600\n"
+"PO-Revision-Date: 2015-03-17 08:41-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cy <LL@li.org>\n"
 "Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-01-13 17:08-0609\n"
-"PO-Revision-Date: 2015-01-13 17:08-0609\n"
+"POT-Creation-Date: 2015-03-16 08:34-0600\n"
+"PO-Revision-Date: 2015-03-16 08:34-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cy <LL@li.org>\n"
 "Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
@@ -84,6 +84,12 @@ msgstr "Rwyt wedi aroleuo <b>{reference_human}</b>"
 msgid "moment.highlight.title"
 msgstr "Aroleuodd {name} <b>{reference_human}</b>"
 
+msgid "moment.image.self.title"
+msgstr "Creodd ddelwedd adnod i <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "Creodd {name} ddelwedd adnod i <b>{reference_human}</b>"
+
 msgid "moment.note.self.title"
 msgstr "Rwyt wedi ychwanegu nodyn, <b>{title}</b>"
 
@@ -138,6 +144,9 @@ msgstr "Gwnaeth {name} sylw ar dy gyfeillgarwch newydd gyda {friend_name}: “{c
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Gwnaeth {name} sylw ar dy aroleuad: “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "Gwnaeth {name} sylw ar dy ddelwedd adnod: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "Gwnaeth {name} sylw ar dy nodyn: “{comment}”"
 
@@ -156,6 +165,9 @@ msgstr "Gwnaeth {commenter_name} hefyd sylw ar gyfeillgarwch newydd {moment_owne
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Gwnaeth {commenter_name} hefyd sylw ar aroleuad {moment_owner_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "Gwnaeth {commenter_name} hefyd sylw ar ddelwedd adnod {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "Gwnaeth {commenter_name} hefyd sylw ar nodyn {moment_owner_name}: “{comment}”"
 
@@ -167,6 +179,9 @@ msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar eu cyfeillgarwch gyda {friend_
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar yr aroleuad: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar ei ddelwedd adnod: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "Gwnaeth {moment_owner_name} hefyd sylw ar ei nodyn: “{comment}”"
@@ -204,6 +219,9 @@ msgstr "Mae {name} yn hoffi dy gyfeillgarwch newydd gyda {friend_name}"
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "Mae {name} yn hoffi dy aroleuad, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "Mae {name} yn hoffi dy ddelwedd adnod i {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "Mae {name} yn hoffi dy nodyn"
 
@@ -224,6 +242,9 @@ msgstr "Rhoddodd {name} nod llyfr ar {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "Aroleuodd {name} {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "Creodd {name} ddelwedd adnod i {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "Ychwanegodd {name} nodyn"

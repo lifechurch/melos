@@ -713,6 +713,7 @@ tr:
         none me: "Daha hiç rozet kazanmadınız."
         none user: "%{username} adlı kullanıcın rozeti yok."
     plans: 
+        share plan: "@YouVersion'ın şu #KutsalKitapPlanı'na bir göz atın: %{plan_title}"
         widget: 
             my plans: "Planlarım"
             start reading: "Okumaya başla"
@@ -841,8 +842,10 @@ tr:
         loading sidebar content: "Kenar çubuğunun içeriği yükleniyor..."
     videos: 
         title: "Videolar"
+        watch videos: "Kutsal Kitap'ı anlatan videoları izleyin"
         all: "Tüm videolar"
         related scripture: "İlgili Ayetler"
+        share video: "@YouVersion'ın %{video_title} adlı videosunu izliyorum."
     licenses: 
         authorized: 
             heading: "İçeriğiniz onaylandı."

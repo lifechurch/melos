@@ -713,6 +713,7 @@ km:
         none me: "លោក​អ្នក​មិន​ទទួល​បាន ផ្លាក់​សញ្ញា​ អី​នៅ​ឡើយ​ទេ"
         none user: "%{username} មិន​ទាន់​ទទួល​បាន ផ្លាក​សញ្ញា អី​នៅ​ឡើយ​ទេ"
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "គំរោង​របស់​ខ្ញុំ"
             start reading: "ចាប់ផ្ដើមអាន"
@@ -839,8 +840,10 @@ km:
         loading sidebar content: "កំពុងផ្ទុកមាតិការបារចំហៀង..."
     videos: 
         title: "វីដេអូច្រើន"
+        watch videos: "Watch videos about the Bible"
         all: "វីដេអូទាំងអស់"
         related scripture: "អត្តបទគម្ពីរដែលពាក់ព័ន្ធ"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "មាតិការបស់លោកអ្នកត្រូវបានអនុញ្ញាត្ត"

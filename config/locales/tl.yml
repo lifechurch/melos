@@ -713,6 +713,7 @@ tl:
         none me: "Wala ka pang nakukuhang sagisag."
         none user: "Si %{username} ay hindi pa nakakakuha ng anumang sagisag."
     plans: 
+        share plan: "Tingnan mo itong %{plan_title} ng @YouVersion #BiblePlan"
         widget: 
             my plans: "Ang aking mga Plano"
             start reading: "Simulan ang pagbabasa"
@@ -841,8 +842,10 @@ tl:
         loading sidebar content: "Naglo-load ng konteksto ng sidebar.."
     videos: 
         title: "Mga Palabas"
+        watch videos: "Manood ng mga video na tungkol sa Bibliya"
         all: "Mga Palabas"
         related scripture: "Kaugnay na Talata sa Bibliya"
+        share video: "Pinapanood ko ang %{video_title} sa @YouVersion."
     licenses: 
         authorized: 
             heading: "Ang iyong konteksto ay nabigyan pahintulot."

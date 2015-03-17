@@ -713,6 +713,7 @@ af:
         none me: "Jy het nog geen kentekens verwerf nie."
         none user: "%{username} het nog geen kentekens verwerf nie."
     plans: 
+        share plan: "Kyk bietjie na hierdie @YouVersion #Bybel Leesplan:%{plan_title}"
         widget: 
             my plans: "My Planne"
             start reading: "Begin lees"
@@ -841,8 +842,10 @@ af:
         loading sidebar content: "Laai die kant  paal inligting..."
     videos: 
         title: "Videos"
+        watch videos: "Kyk na videos oor die Bybel"
         all: "Alle videos"
         related scripture: "Verwante Skrif"
+        share video: "Ek kyk na die%{video_title}op @YouVersion."
     licenses: 
         authorized: 
             heading: "Jou inhoud is goedgekeur."

@@ -713,6 +713,7 @@ lv:
         none me: "Jūs vēl neesat nopelnījis nevienu nozīmīti."
         none user: "%{username} nav nopelnījis nevienu nozīmīti vēl."
     plans: 
+        share plan: "Apskati šo @YouVersion Bībeles plānu:  %{plan_title}"
         widget: 
             my plans: "Mans plāns"
             start reading: "Sākt lasīt"
@@ -843,8 +844,10 @@ lv:
         loading sidebar content: "Ielādē sānu joslas saturu..."
     videos: 
         title: "Video"
+        watch videos: "Skaties video par Bībeli"
         all: "Visi Video"
         related scripture: "Saistīta rakstu vieta"
+        share video: "Es skatos %{video_title} @YouVersion"
     licenses: 
         authorized: 
             heading: "Jūsu saturs ir autorizēts"

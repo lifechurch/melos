@@ -713,6 +713,7 @@ ro:
         none me: "Încă nu ai primit nici o insignă."
         none user: "%{username} nu a primit nici o insignă încă."
     plans: 
+        share plan: "Încearcă acest plan de citire a Bibliei de la @YouVersion: %{plan_title}"
         widget: 
             my plans: "Planurile mele"
             start reading: "Începe să citești"
@@ -843,8 +844,10 @@ ro:
         loading sidebar content: "Se încarcă conținutul barei laterale..."
     videos: 
         title: "Videoclipuri"
+        watch videos: "Urmărește videoclipuri despre Biblie"
         all: "Toate videoclipurile"
         related scripture: "Scriptura înrudită"
+        share video: "Mă uit la:%{video_title}pe @YouVersion"
     licenses: 
         authorized: 
             heading: "Conținutul tău a fost autorizat"

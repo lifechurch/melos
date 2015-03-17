@@ -713,6 +713,7 @@ bg:
         none me: "Нямате значки."
         none user: "%{username} не е получил значки."
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Моите планове"
             start reading: "Започни четене"
@@ -841,8 +842,10 @@ bg:
         loading sidebar content: "Зареждане на съдържанието..."
     videos: 
         title: "Видеа"
+        watch videos: "Watch videos about the Bible"
         all: "Всички видеа"
         related scripture: "Подобни стихове"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "Вашето съдържание беше удобрено"

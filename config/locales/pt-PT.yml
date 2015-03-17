@@ -713,6 +713,7 @@ pt-PT:
         none me: "Ainda não ganhou nenhuma medalha."
         none user: "%{username} ainda não ganhou qualquer medalha."
     plans: 
+        share plan: "Veja este #planodeleitura do @YouVersion: %{plan_title}"
         widget: 
             my plans: "Os meus planos"
             start reading: "Começar a ler"
@@ -841,8 +842,10 @@ pt-PT:
         loading sidebar content: "A carregar os conteúdos da barra lateral..."
     videos: 
         title: "Vídeos"
+        watch videos: "Veja videos Bíblicos"
         all: "Todos os vídeos"
         related scripture: "Escrituras Relacionadas"
+        share video: "Eu estou a assistir %{video_title} no @YouVersion."
     licenses: 
         authorized: 
             heading: "O seu conteúdo foi autorizado"

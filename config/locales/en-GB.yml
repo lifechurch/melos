@@ -713,6 +713,7 @@ en-GB:
         none me: "You haven't earnt any badges yet."
         none user: "%{username} hasn't earnt any badges yet."
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "My plans"
             start reading: "Start reading"
@@ -841,8 +842,10 @@ en-GB:
         loading sidebar content: "Loading sidebar content..."
     videos: 
         title: "Videos"
+        watch videos: "Watch videos about the Bible"
         all: "Alle Videos"
         related scripture: "Related scripture"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "Your content has been authorized"

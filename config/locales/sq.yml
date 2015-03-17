@@ -713,6 +713,7 @@ sq:
         none me: "Ju nuk keni fituar akoma ndonjë emblemë."
         none user: "Përdoruesi %{username} nuk ka fituar akoma ndonjë emblemë."
     plans: 
+        share plan: "Hidhi një sy këtij #PlaniBiblik @YouVersion: %{plan_title}"
         widget: 
             my plans: "Planet e mia"
             start reading: "Fillo leximin"
@@ -841,8 +842,10 @@ sq:
         loading sidebar content: "Duke vendosur përmbajtjen e kolonës anësore..."
     videos: 
         title: "Video"
+        watch videos: "Shiko video rreth Biblës"
         all: "Të gjitha videot"
         related scripture: "Vargje të përafërta"
+        share video: "Jam duke parë videon %{video_title} në @YouVersion."
     licenses: 
         authorized: 
             heading: "Përmbajtja tuaj u autorizua"

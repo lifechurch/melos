@@ -713,6 +713,7 @@ ca:
         none me: "Encara no tens cap insígnia."
         none user: "El/la %{username} encara no té cap insígnia."
     plans: 
+        share plan: "Mira això @YouVersion #PladelaBíblia: %{plan_title}"
         widget: 
             my plans: "Els meus plans"
             start reading: "Comença a llegir"
@@ -841,8 +842,10 @@ ca:
         loading sidebar content: "Carregant el contingut de la barra lateral..."
     videos: 
         title: "Vídeos"
+        watch videos: "Mira vídeos sobre la Bíblia"
         all: "Tots els vídeos"
         related scripture: "Passatge bíblic relacionat"
+        share video: "Estic mirant %{video_title} a @YouVersion."
     licenses: 
         authorized: 
             heading: "El teu contingut ha estat autoritzat."

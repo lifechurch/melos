@@ -713,6 +713,7 @@ fi:
         none me: "Et ole vielä ansainnut yhtään ansiomerkkiä."
         none user: "%{username} ei ole ansainnut yhtään ansiomerkkiä."
     plans: 
+        share plan: "Vilkaise tätä @YouVersion -lukusuunnitelmaa #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Omat suunnitelmat"
             start reading: "Aloita lukeminen"
@@ -841,8 +842,10 @@ fi:
         loading sidebar content: "Ladataan sisältöä..."
     videos: 
         title: "Videot"
+        watch videos: "Katso Raamattu-aiheisia videoita"
         all: "Kaikki videot"
         related scripture: "Aiheeseen liittyvät kohdat"
+        share video: "Katson videota %{video_title} @YouVersion."
     licenses: 
         authorized: 
             heading: "Sisältösi on auktorisoitu"
