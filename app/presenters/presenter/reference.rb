@@ -42,7 +42,7 @@ module Presenter
     def subscriptions
       # used in sidebar partial
       current_user = controller.send(:current_user)
-      ::Subscription.all(current_user, cache_for: YV::Caching.a_very_short_time) if current_user.present?
+      ::Subscription.all(current_user, cache_for: YV::Caching.a_short_time) if current_user.present?
     end
 
     # implementation for Presenter::ReaderInterface method
