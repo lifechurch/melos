@@ -31,6 +31,7 @@ common:
   very_short_cache_expiration: 2
   short_cache_expiration: 10
   long_cache_expiration: 45
+  longer_cache_expiration: 240
   very_long_cache_expiration: 720
   rate_limit: 120
 
