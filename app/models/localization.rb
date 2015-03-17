@@ -5,10 +5,6 @@
 
 class Localization < YV::Resource
 
-  
-  HTTParty.get('http://twitter.com/statuses/public_timeline.json')
-
-
 
   class << self
 
