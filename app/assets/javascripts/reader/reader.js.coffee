@@ -27,11 +27,11 @@ class window.Reader
 
     @processSelectedVerses
 
-#    f_load = ()=>
-#      angular.element($('#widget-notes.notes')).scope().loadNotes($("article").data("selected-verses-rel-link") + "/notes");
+    f_load = ()=>
+      angular.element($('#widget-notes.notes')).scope().loadNotes($("article").data("selected-verses-rel-link") + "/notes");
 
-#    Events.Emitter.addListener "verses:selected", f_load
-#    Events.Emitter.addListener "verses:deselected", f_load
+    Events.Emitter.addListener "verses:selected", f_load
+    Events.Emitter.addListener "verses:deselected", f_load
 
     # fire initial events
     if @numSelectedVerses() >= 1
