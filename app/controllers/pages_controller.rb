@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
 
+  before_filter :force_login, only: [:donate]
+
   def about;        end
   def press;        end
   def mobile;       end
-  def donate;       end
   def status;       end
   def api_timeout;  end
   def generic_error;end
@@ -44,6 +45,20 @@ class PagesController < ApplicationController
     # legally appropriate to show in a localized state
     [ :da, :en, :ja, :lv, :sv, :vi, :nl, :"pt", :"no", :"zh-CN",
       :"zh-TW", :ms, :ru, :ro, :"es-ES", :uk, :ko ]
+  end
+
+  def donate
+    @user = current_user
+    ts_auth = {
+      :email => @user.email,
+      :first_name => @user.first_name,
+      :id => @user.id.to_s,
+      :language_tag => @user.language_tag,
+      :last_name => @user.last_name,
+      :source => 'youversion'
+    }
+
+    @ts_signature = Licenses::Request.sign( ts_auth , ENV["TREADSTONE_SECRET"] ) unless ENV["TREADSTONE_SECRET"].nil?
   end
 
 end
