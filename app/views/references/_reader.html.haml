@@ -49,7 +49,7 @@
     %meta{property: "og:title",       content: meta_title }
     %meta{property: "og:url",         content: meta_url }
     %meta{property: "og:description", content: meta_description }
-    %meta{property: "og:image", content: "#{url_for(asset_path('Bible-app-icon-english-200x200.png'))}"}
+    %meta{property: "og:image", content: url_for(image_path(localized_bible_icon(200))) }
 
 - content_for :meta_description do
   = "#{reference.human} #{presenter.version} #{truncate(get_verse_content(presenter.content), length: 125, separator: " ", omission: '')}.."

@@ -14,7 +14,7 @@
   %meta{:charset => 'utf-8'}
   %meta{'http-equiv' => 'content-language', :content => I18n.locale.downcase}
   %meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
-  %meta{property: "og:image", content: "#{url_for(asset_path('Bible-app-icon-english-200x200.png'))}"}
+  %meta{property: "og:image", content: url_for(image_path(localized_bible_icon(200)))}
   %meta{name: "HandheldFriendly", content: "True"}
   %meta{name: "MobileOptimized", content: "320"}
   %meta{name: "viewport", content: "width=device-width, initial-scale=1.0, user-scalable=no"}
