@@ -30,7 +30,7 @@
     %section.main
       %p= t('mobile page.main').html_safe
     %section.multilingual
-      - style = "z-index:1; margin:0 auto; height:72px; width:72px; background: url(#{image_path(localized_bible_icon(72))}) center 10px no-repeat;" if localized_bible_icon
+      - style = "z-index:1; margin:0 auto; height:72px; width:72px; background: url(#{image_path(localized_bible_icon(72))}) center 2px no-repeat;background-size: 72px 72px;" if localized_bible_icon
       %div.multi
         %div.icon-overlay{style: style}
       -#= image_tag "mobile_multilingual.png"
