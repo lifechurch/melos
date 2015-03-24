@@ -48,17 +48,22 @@ class PagesController < ApplicationController
   end
 
   def donate
-    @user = current_user
-    ts_auth = {
-      :email => @user.email,
-      :first_name => @user.first_name,
-      :id => @user.id.to_s,
-      :language_tag => @user.language_tag,
-      :last_name => @user.last_name,
-      :source => 'youversion'
+    user = current_user
+
+    ts_payload = {
+      :email => user.email,
+      :first_name => user.first_name,
+      :id => user.id.to_s,
+      :language_tag => user.language_tag,
+      :last_name => user.last_name,
+      :source => 'youversion',
+      :created => ((Time.now.to_f * 1000).to_i).to_s
     }
 
-    @ts_signature = Licenses::Request.sign( ts_auth , ENV["TREADSTONE_SECRET"] ) unless ENV["TREADSTONE_SECRET"].nil?
+    ts_signature = Licenses::Request.sign( ts_payload , ENV["TREADSTONE_SECRET"] ) unless ENV["TREADSTONE_SECRET"].nil?
+    ts_payload[:signature] = @ts_signature
+    @ts_url = Cfg.treadstone_base_url + "?" + ts_payload.to_query
+    redirect_to @ts_url
   end
 
 end
