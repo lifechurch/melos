@@ -32,7 +32,7 @@
     %meta{name: "twitter:url",              content: meta_url}
     %meta{name: "twitter:title" ,           content: meta_title}
     %meta{name: "twitter:description",      content: meta_description}
-    %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(120)))}
+    %meta{name: "twitter:image",            content: url_for(image_path(bible_icon_for_version(size: 120, version: version)))}
     %meta{name: "twitter:site",             content: "@YouVersion"}
 
     - if deep_link.present?
@@ -49,7 +49,7 @@
     %meta{property: "og:title",       content: meta_title }
     %meta{property: "og:url",         content: meta_url }
     %meta{property: "og:description", content: meta_description }
-    %meta{property: "og:image", content: url_for(image_path(localized_bible_icon(200))) }
+    %meta{property: "og:image", content: url_for(image_path(bible_icon_for_version(size: 200, version: version))) }
 
 - content_for :meta_description do
   = "#{reference.human} #{presenter.version} #{truncate(get_verse_content(presenter.content), length: 125, separator: " ", omission: '')}.."
