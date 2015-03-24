@@ -3,7 +3,7 @@ module YV
     class Bible < Site
 
       def donate_path
-        "http://www.bible.com/donate"
+        "/donate"
       end
 
       def title
