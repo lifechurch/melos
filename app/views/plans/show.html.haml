@@ -1,5 +1,8 @@
 - @title = "#{@plan.title.dup} | #{t('plans.title')}" if @plan.present? && @plan.title.present?
 - @meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+- tw_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 120, version: @plan.version)))
+- fb_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 200, version: @plan.version)))
+
 - content_for :sidebar_class, 'rp-about-sidebar'
 
 - content_for :meta_description do
@@ -9,8 +12,6 @@
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
   %link{rel: "canonical", href: canonicalHref}
-  - social_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"
-
   %meta{property: "og:title",       content: @title }
   %meta{property: "og:url",         content: @meta_url}
   %meta{property: "og:description", content: @plan.about }
@@ -19,8 +20,13 @@
   %meta{name: "twitter:url",              content: @meta_url}
   %meta{name: "twitter:title" ,           content: @title}
   %meta{name: "twitter:description",      content: @plan.about}
-  %meta{name: "twitter:image",            content: social_image_url}
   %meta{name: "twitter:site",             content: "@YouVersion"}
+
+- content_for :twitter_meta do
+  %meta{name: "twitter:image", content: tw_image_url}
+
+- content_for :facebook_meta do
+  %meta{property: "og:image", content: fb_image_url}
 
 %article.reading_plan_index
   = image_tag @plan.hero_image.url, class: 'rp-hero-img' if @plan.hero_image.present?
