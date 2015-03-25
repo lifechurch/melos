@@ -106,6 +106,7 @@ module ApplicationHelper
   end
 
   def localized_bible_icon( size = 48, locale=I18n.locale )
+    locale = I18n.locale unless I18n.available_locales.include? locale #ensure file will exist
     "icons/bible/#{size.to_s}/#{locale}.png"
   end
 
