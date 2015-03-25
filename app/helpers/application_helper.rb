@@ -106,13 +106,14 @@ module ApplicationHelper
   end
 
   def localized_bible_icon( size = 48, locale=I18n.locale )
-    locale = I18n.locale unless I18n.available_locales.include? locale #ensure file will exist
     "icons/bible/#{size.to_s}/#{locale}.png"
   end
 
   def bible_icon_for_version(opts={})
     opts.reverse_merge!({size: 120})
     lang = opts[:version].language.tag.present? ? opts[:version].language.tag : nil
+    lang = "pt" if lang.eql?("pt-BR")
+    lang = I18n.locale unless I18n.available_locales.to_s.include? lang #ensure current version lang is available locale
     localized_bible_icon(opts[:size], lang)
   end
 
