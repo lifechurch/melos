@@ -1,6 +1,3 @@
-# config valid only for current version of Capistrano
-lock '3.4.0'
-
 set :application, 'youversion-web'
 set :repo_url, 'git@github.com:lifechurch/youversion-web.git'
 set :deploy_to, '/var/www/youversion-web'
@@ -19,8 +16,7 @@ namespace :deploy do
 
   before :starting, :highstate do
     on roles(:app) do
-      #execute "cd /srv ; git pull"
-      #execute "sudo salt-call state.highstate --local"
+      #execute "sudo salt-call state.highstate
     end
   end
 

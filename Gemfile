@@ -5,12 +5,11 @@ gem 'rails', '3.2.13'
 
 gem 'asset_sync',             '~> 0.5.3'
 gem 'awesome_print',          '~> 1.0.2'
-gem 'capistrano'
+gem 'capistrano',             '~> 3.4.0'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 gem 'capistrano-rvm'
 gem 'capistrano-passenger'
-gem 'capistrano-unicorn-nginx'
 gem 'countries',              '~> 0.8.2'
 gem 'dalli',                  '~> 2.6.3'
 gem 'descriptive_statistics', '~> 1.1.0', require: false
