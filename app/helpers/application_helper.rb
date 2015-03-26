@@ -105,9 +105,16 @@ module ApplicationHelper
     @current_locale ||= I18n.locale
   end
 
+  def localized_bible_icon( size = 48, locale=I18n.locale )
+    "icons/bible/#{size.to_s}/#{locale}.png"
+  end
 
-  def localized_bible_icon( size = 48 )
-    "icons/bible/#{size.to_s}/#{I18n.locale}.png"
+  def bible_icon_for_version(opts={})
+    opts.reverse_merge!({size: 120})
+    lang = opts[:version].language.tag.present? ? opts[:version].language.tag : nil
+    lang = "pt" if lang.eql?("pt-BR")
+    lang = I18n.locale unless I18n.available_locales.to_s.include? lang #ensure current version lang is available locale
+    localized_bible_icon(opts[:size], lang)
   end
 
   def overwrite_content_for(name, content = nil, &block)
