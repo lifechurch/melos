@@ -27,7 +27,7 @@ gem 'stringex', '~> 1.5.1'
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
-
+gem 'curb'
 gem 'http_accept_language',   '~> 1.0.2'
 gem 'koala',                  '~> 1.10.0'
 gem 'language_list',          '~> 0.0.3'
