@@ -111,6 +111,7 @@ module ApplicationHelper
 
   def bible_icon_for_version(opts={})
     opts.reverse_merge!({size: 120})
+    opts.reverse_merge!({version: Version.find(opts[:version_id]})) if opts[:version_id].present?
     lang = opts[:version].language.tag.present? ? opts[:version].language.tag : nil
     lang = "pt" if lang.eql?("pt-BR")
     lang = I18n.locale unless I18n.available_locales.to_s.include? lang #ensure current version lang is available locale
