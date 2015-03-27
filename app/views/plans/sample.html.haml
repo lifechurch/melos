@@ -17,10 +17,10 @@
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 - content_for :twitter_meta do
- %meta{name: "twitter:image", content: url_for(image_path(bible_icon_for_version(size: 120, version: @plan.version)))}
+  %meta{name: "twitter:image", content: url_for(image_path(bible_icon_for_version(size: 120, version_id: @plan.version_id)))}
 
 - content_for :facebook_meta do
-  %meta{property: "og:image", content: url_for(image_path(bible_icon_for_version(size: 200, version: @plan.version)))}
+  %meta{property: "og:image", content: url_for(image_path(bible_icon_for_version(size: 200, version_id: @plan.version_id)))}
 
 - if current_auth
   - if @presenter.reference
