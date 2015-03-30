@@ -15,7 +15,10 @@ exports.config = {
 	],
 	params: {
 		testUrl: ""
-	}
+	},
+	capabilities: {
+    browserName: 'firefox'
+  }	
 	// , multiCapabilities: [
 	// 	{}
 	// 	{
