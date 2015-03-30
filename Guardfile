@@ -1,5 +1,5 @@
 # More info at https://github.com/guard/guard#readme
-guard :rspec, cmd: 'zeus rspec', failed_mode: :focus do
+guard :rspec, cmd: 'zeus rspec', failed_mode: :focus, all_on_start: false do
   watch(%r{^spec/.+_spec\.rb$})
   watch('spec/spec_helper.rb')                        { "spec" }
   watch(%r{^spec/support/(.+)\.rb$})                  { "spec/" }
@@ -15,16 +15,16 @@ guard :rspec, cmd: 'zeus rspec', failed_mode: :focus do
 
 end
 
-guard 'cucumber', :all_after_pass => false, :all_on_start => false, zeus: true, parallel: true, bundler: false do
-  watch(%r{^features/.+\.feature$})
-  watch(%r{^features/support/.+$})          { 'features' }
-  watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
-end
+# guard 'cucumber', :all_after_pass => false, :all_on_start => false, zeus: true, parallel: true, bundler: false do
+#   watch(%r{^features/.+\.feature$})
+#   watch(%r{^features/support/.+$})          { 'features' }
+#   watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
+# end
 
-guard 'bundler' do
-  watch('Gemfile')
-  # Uncomment next line if Gemfile contain `gemspec' command
-  # watch(/^.+\.gemspec/)
-end
+# guard 'bundler' do
+#   watch('Gemfile')
+#   # Uncomment next line if Gemfile contain `gemspec' command
+#   # watch(/^.+\.gemspec/)
+# end
 
 

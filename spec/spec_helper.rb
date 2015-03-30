@@ -6,12 +6,14 @@ ENV["RAILS_ENV"] = 'test'
 # Reference: https://github.com/burke/zeus/wiki/Spork
 
 prefork = lambda {
+  require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
+  require 'rspec/autorun'
   require 'capybara/rspec'
   require 'capybara-screenshot/rspec'
   require 'simplecov'
   SimpleCov.start 'rails'
-  require File.expand_path("../../config/environment", __FILE__)
+
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   RSpec.configure do |c|
