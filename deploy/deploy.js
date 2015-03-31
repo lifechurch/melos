@@ -30,7 +30,7 @@ function herokuAppName() {
 		if (process.env.BRANCH.toLowerCase() == "integration") {
 			return "yv-staging";
 		} else { 
-			return "dev-" + process.env.BRANCH.toLowerCase();
+			return "dev-" + process.env.BRANCH.toLowerCase().replace(/\//g, "-");
 		}
 
 	} else {
