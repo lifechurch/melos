@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:06-0600\n"
-"PO-Revision-Date: 2015-03-03 14:06-0600\n"
+"POT-Creation-Date: 2015-03-19 13:47-0600\n"
+"PO-Revision-Date: 2015-03-19 13:47-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_TW <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,11 +63,23 @@ msgstr "{name} 已把 <b>{reference_human}</b>加入書籤"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "以基督降臨為主題的讀經計劃來準備迎接聖誕"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "讓新的讀經計劃更新您的信心。"
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "尋找二月份裡備受歡迎的讀經計劃！"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "每天沉浸在神的話語裡帶來持久的心靈自由。"
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "透過每天沉浸在神的話語裡找到您的節奏。"
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "在三月份的讀經計劃裡尋找希望與更新。"
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "每天全情投入神的話語裡尋求祂。"
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015年每天讀經吧！讀經計劃可以幫助！"

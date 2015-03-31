@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:06-0600\n"
-"PO-Revision-Date: 2015-03-03 14:06-0600\n"
+"POT-Creation-Date: 2015-03-24 07:55-0600\n"
+"PO-Revision-Date: 2015-03-24 07:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fil_PH <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,11 +63,23 @@ msgstr "Ibinookmark ni {name} ang <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Maghanda para sa Pasko gamit ang Advent Bible Plan"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Sariwain ang pananampalataya gamit ang mga bagong Babasahin."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Hanapin ang paboritong Babasahing Pambibliya sa Pebrero!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Ang pagbabasa araw-araw ng Salita ng Diyos ay nagbibigay ng matagalang kalayaan."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Hanapin ang ritmo mula sa araw-araw na pagbabasa ng Salita ng Diyos."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Hanapin ang pag-asa at pagbabago sa mga Babasahin ngayong Marso."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Maglaan araw-araw ng pagbabasa ng Salita ng Diyos."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Magbasa ng Bibliya araw-araw sa 2015. Nakatutulong ang mga babasahin!"

@@ -153,6 +153,18 @@ msgstr "You created a verse image for <b>{reference_human}</b>"
 msgid "moment.image.title"
 msgstr "{name} created a verse image for <b>{reference_human}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Refresh your faith with new Plans."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Devote yourself daily to seeking God in His Word."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Find your rhythm through daily time in God’s Word."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Daily time in God’s Word yields lasting freedom."
+
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} commented on your bookmark: “{comment}”"
 

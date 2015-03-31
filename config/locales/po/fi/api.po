@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-09 13:08-0600\n"
-"PO-Revision-Date: 2015-03-09 13:08-0600\n"
+"POT-Creation-Date: 2015-03-24 07:56-0600\n"
+"PO-Revision-Date: 2015-03-24 07:56-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,11 +63,23 @@ msgstr "{name} lisäsi kirjanmerkin <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Valmistaudu jouluun adventin ajan lukusuunnitelmalla"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Virkistä uskoasi uusien lukusuunnitelmien avulla."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Löydä suosikkisuunnitelmasi helmikuulle!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Päivittäin Jumalan Sanan parissa vietetty aika saa aikaan kestävän vapauden."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Löydä oma päivittäinen rytmi Jumalan Sanan parissa."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Löydä maaliskuun suunnitelmista toivoa ja uudistumista."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Omistaudu etsimään Jumalaa päivittäin Hänen Sanansa kautta."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Lue Raamattua päivittäin 2015. Suunnitelmat auttavat!"
