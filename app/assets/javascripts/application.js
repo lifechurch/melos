@@ -7,6 +7,12 @@
 //= require jquery.ui.mouse
 //= require jquery.ui.position
 //= require jquery.ui.autocomplete
+//= require jquery.slimscroll.min.js
+//= require jquery.easytabs.min
+//= require jstz-1.0.4
+//= require slick.min
+//= require ./lib/jRespond
+//= require_tree ./lib/
 //= require i18n
 //= require handlebars.runtime
 //= require ./templates/handlebars_helpers
@@ -46,12 +52,6 @@
 //= require ./menus/friends
 //= require ./menus/nav_mobile
 //= require ./menus/menu_group
-//= require slick.min
-//= require_self
-//= require jquery.slimscroll.min.js
-//= require jquery.easytabs.min
-//= require jstz-1.0.4
-//= require_tree ./lib/
 //= require_tree ./menus/
 //= require_tree ./modals/
 //= require_tree ./panes/
@@ -60,3 +60,4 @@
 //= require main
 //= require analytics
 //= require videos
+//= require_self

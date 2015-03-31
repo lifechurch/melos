@@ -17,7 +17,7 @@
   %meta{name: "twitter:url",              content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
   %meta{name: "twitter:title" ,           content: @title}
   %meta{name: "twitter:description",      content: @meta_description}
-  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
+  %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(120)))}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 %article.mobileapps
@@ -30,7 +30,7 @@
     %section.main
       %p= t('mobile page.main').html_safe
     %section.multilingual
-      - style = "z-index:1; margin:0 auto; height:72px; width:72px; background: url(#{image_path(localized_bible_icon(72))}) center 10px no-repeat;" if localized_bible_icon
+      - style = "z-index:1; margin:0 auto; height:72px; width:72px; background: url(#{image_path(localized_bible_icon(72))}) center 2px no-repeat;background-size: 72px 72px;" if localized_bible_icon
       %div.multi
         %div.icon-overlay{style: style}
       -#= image_tag "mobile_multilingual.png"

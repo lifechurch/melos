@@ -5,6 +5,11 @@ gem 'rails', '3.2.13'
 
 gem 'asset_sync',             '~> 0.5.3'
 gem 'awesome_print',          '~> 1.0.2'
+gem 'capistrano',             '~> 3.4.0'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
+gem 'capistrano-passenger'
 gem 'countries',              '~> 0.8.2'
 gem 'dalli',                  '~> 2.6.3'
 gem 'descriptive_statistics', '~> 1.1.0', require: false
@@ -27,7 +32,7 @@ gem 'stringex', '~> 1.5.1'
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
-
+gem 'curb'
 gem 'http_accept_language',   '~> 1.0.2'
 gem 'koala',                  '~> 1.10.0'
 gem 'language_list',          '~> 0.0.3'
