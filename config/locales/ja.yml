@@ -152,8 +152,8 @@ ja:
     share error: "メッセージのシェアに失敗しました。もう一度、実行してください。"
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "Twitterのアカウントと連携されていません。設定からアカウントを連携してください。"
+            no_facebook_connection: "Facebookのアカウントと連携されていません。設定からアカウントを連携させてください。"
     google plus: "Google+"
     connect to: "%{connection} アカウントに連携"
     deleted connection: "%{connection} への連携設定が問題なく解除されました。"
@@ -469,7 +469,7 @@ ja:
         reading: "このプランに参加中のユーザ"
         subscribed previously: "%{time_ago} 前に開始しました"
         sign in for settings: "自己プロフィールへのアクセスにはサインインする必要があります。"
-        my profile: "わたしのプロフィール"
+        my profile: "プロフィール"
         edit profile: "プロフィールの編集"
         update profile: "プロフィールの更新"
         go to your profile: "自分のプロフィールを見る"
@@ -713,7 +713,7 @@ ja:
         none me: "まだバッジを獲得していません"
         none user: "%{username} さんはまだバッジを獲得していません"
     plans: 
-        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
+        share plan: "#読書プラン %{plan_title}をチェック@YouVersion #BiblePlan "
         widget: 
             my plans: "マイ・プラン"
             start reading: "読書を開始"
@@ -840,10 +840,10 @@ ja:
         loading sidebar content: "サイドバーの内容を読み込み中…"
     videos: 
         title: "ビデオ"
-        watch videos: "Watch videos about the Bible"
+        watch videos: "聖書についての動画を見よう"
         all: "全てのビデオ"
         related scripture: "関連聖句"
-        share video: "I'm watching %{video_title} on @YouVersion."
+        share video: "%{video_title}の動画を@YouVersionで見ています。"
     licenses: 
         authorized: 
             heading: "内容が認証されました。"
@@ -945,7 +945,7 @@ ja:
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        download: "今すぐダウンロード"
     about page: 
         relevancy: "聖書との関係"
         relevancy copy: "何世代も昔の世の中では、聖書を直接読むことができる人は非常に限られていました。もはや今日ではそのようなことはありません。しかしながら、聖書を読むことができても多くの人は、聖書の中のメッセージは自分の人生には無関係だと考えています。一方で、聖書と毎日の自分たちの体験には関係性があると信じている人たちもいます。"
@@ -991,7 +991,7 @@ ja:
         h3: "YouVersion はグローバルです"
         h3 sub: "世界%{language_count}カ国語以上の言語での利用が可能"
         main: "何千万人ものユーザが聖書アプリを利用して、神様の御言葉を日常生活の一環に取り入れています。無料のアプリをダウンロードして、ブックマーク、ノート、読書プランにどこからでもアクセスしましょう。何百種もの聖書訳（音読聖書も有り）をご利用のモバイル機器からお楽しみください。"
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "携帯機器から<br>Bible.com/appを見る"
         download now: "聖書アプリを今すぐダウンロード"
         what people: "聖書アプリについて、どんなことが言われているのでしょう・・・"
         t1: "いつでも聖書を読むことができる。"
@@ -1087,12 +1087,12 @@ ja:
             tracker title: "クリスマスのお話読者"
             twitter text: "世界中の人々がイエス・キリスト誕生のお話を読んでいるのを見るYouVersion: https://www.bible.com/christmasでクリスマスのお話読者をシェアする"
             facebook text: "世界中の人々がイエス・キリスト誕生のお話を読むたびにクリスマスのお話読者をシェアします。教会でご自宅で、仲の良いお友達・ご家族とご一緒にまたはおひとりで、神様の愛の素晴らしさを振り返ります"
-            summary: "During December 2014, this is what it looked like to see the world read about the birth of Jesus."
+            summary: "2014年12月中に全世界でこんなにもイエスの誕生について読まれていました。"
             verse: "<sup>10</sup>御使は言った。<br>「恐れるな。見よ、すべての民に与えられる大きな喜びを、あなたがたに伝える。<sup>11</sup>きょうダビデの町に、あなたがたのために救主がお生れになった。このかたこそ主なるキリストである。"
             read more: "素晴らしいクリスマスのお話を読む"
             read about: "イエス・キリスト誕生のお話を読む"
             totals since: "2014年12月1日以降のYouVersionビジター総数:"
-            totals during: "YouVersion totals during December 2014:"
+            totals during: "2014年12月中のYouVersion統計："
             total installs: "　スマートフォン及びタブレットへのインストール総数"
             download: "無料聖書アプリをダウンロードする"
             versions: "%{version_count} 種類以上の聖書訳が%{language_count} ヵ国語の言語で"
