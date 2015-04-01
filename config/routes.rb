@@ -88,6 +88,7 @@ YouversionWeb::Application.routes.draw do
     get :bookmarks,   on: :member, as: 'bookmarks'
     get '_bookmarks', on: :member
     get :highlights,  on: :member, as: 'highlights'
+    get :images,      on: :member, as: 'images'
     get :badges,      on: :member, as: 'badges'
 
     match 'badge/:id' => 'badges#show', as: 'badge'

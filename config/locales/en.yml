@@ -369,6 +369,11 @@ en:
       accept request button:                    "Accept request"
       ignore button:                            "Decline"
       ignore request button:                    "Decline request"
+  images:
+    none user:                                  "%{username} hasn't created any images yet."
+    blank slate:
+      heading:                                  "You don’t have any images yet"
+      description:                              "Use the YouVersion mobile app to create verse images."
   notes:
     none user:                                  "%{username} hasn't taken any notes yet."
     blank slate:
@@ -501,6 +506,8 @@ en:
     user notes:                                 "%{user}'s Notes"
     my friends:                                 "Friends"
     my notes:                                   "Notes"
+    my images:                                  "Images"
+    user images:                                 "%{user}'s Images"
     user friends:                               "%{user}'s Friends"
     my bookmarks:                               "My Bookmarks"
     user bookmarks:                             "%{user}'s Bookmarks"
@@ -618,6 +625,7 @@ en:
       tab notes:                                "Notes"
       tab bookmarks:                            "Bookmarks"
       tab highlights:                           "Highlights"
+      tab images:                               "Images"
       tab badges:                               "Badges"
       first name:                               "First Name"
       last name:                                "Last Name"
