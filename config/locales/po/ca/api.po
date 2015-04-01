@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-09 13:08-0600\n"
-"PO-Revision-Date: 2015-03-09 13:08-0600\n"
+"POT-Creation-Date: 2015-03-19 13:47-0600\n"
+"PO-Revision-Date: 2015-03-19 13:47-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ca <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,11 +63,23 @@ msgstr "{name} ha posat un marcador a <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Prepara't pel Nadal amb un Pla d'Advent de lectura de la Bíblia"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Renova la teva fe amb nous Plans de Lectura."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Troba el teu pla de lectura de la Bíblia preferit per al febrer"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Un temps diari amb la Paraula de Déu produeix llibertat perdurable."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Troba el teu ritme en el teu temps diari en la paraula de Déu."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Troba esperança i renovació als plans de lectura de març"
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Dedica't diàriament a buscar Déu en la seva Paraula."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Al 2015 llegeix la Bíblia cada dia. Els Plans t'ajuden!"

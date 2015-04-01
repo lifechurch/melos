@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:06-0600\n"
-"PO-Revision-Date: 2015-03-03 14:06-0600\n"
+"POT-Creation-Date: 2015-03-24 07:56-0600\n"
+"PO-Revision-Date: 2015-03-24 07:56-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ko <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -63,11 +63,23 @@ msgstr "{name}님이 <b>{reference_human}</b>에 책갈피를 표시했습니다
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "대강절 묵상계획을 시작으로 성탄절을 준비해보세요,"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "새로운 묵상 계획을 통해서 당신의 믿음을 새롭게 해보세요."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "2월에 시작할 성경읽기 계획을 찾아 보세요!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "하나님의 말씀과 매일 동행하는 것은 영속되는 자유를 얻는 것입니다."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "하나님의 말씀을 매일 묵상하면서 삶의 리듬을 찾아보세요."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "이번 3월, 날마다 말씀으로 새로워지는 경험을 해 보세요."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "매일 말씀을 묵상하면서 하나님을 찾는 시간을 가져보세요."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "읽기계획을 통해 2015년에는 성경을 매일 읽으세요 !"
