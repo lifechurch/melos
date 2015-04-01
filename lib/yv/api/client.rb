@@ -52,6 +52,12 @@ module YV
               end
               JSON_408
 
+            rescue Curl::Err::TimeoutError => e
+              Raven.capture do
+                raise APITimeoutError, log_api_timeout(resource_url,started_at)
+              end
+              JSON_408
+
             rescue Exception => e
               Raven.capture do
                 raise APIError, log_api_error(resource_url,e)
@@ -60,7 +66,7 @@ module YV
 
             end
           end
-                # binding.pry
+
           response = data_from_cache_or_api(cache_key(path, opts), curb_get, opts)
 
           if debug
