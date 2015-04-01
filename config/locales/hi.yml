@@ -725,11 +725,11 @@ hi:
             readings 5 or more: "अध्ययन"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count} मित्र इस योजना के सदस्य हैं "
+                other: "%{count} मित्र इस योजना के सदस्य हैं "
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
+                one: "%{count}के मित्रों द्वारा यह पाठक योजना सम्पूर्ण किया गया"
+                other: "%{count}के मित्रों द्वारा यह पाठक योजना सम्पूर्ण किया गया"
             total completions: "Over %{count} completions"
             view all: "View All"
             close: "Close"
@@ -1062,7 +1062,7 @@ hi:
             cross references: "प्रति संदर्भ"
     app errors: 
         404 plans explanation: "Are you looking for the <a href='%{plan_path}'>%{title}</a> plan?"
-        404 contact support: "क्या आपको शिकायत हैं?संपर्क करे <a href='%{support_url}'>सहायता टीम </a>"
+        404 contact support: "क्या आपको शिकायत हैं?संपर्क करे <a href='%{support_url}'>सहायता टीम </a>."
         404 explanation: "शुरुआत करने का पुन:कोशिश करे <a href='%{reader_path}'>home page</a>. अभी परेशानी हो रही ? संपर्क करिए <a href='%{support_url}'>support team</a>."
         404 message: "कृपया क्षमा कीजिए,आपके द्वारा अन्वेषित पेज नहीं मिल सका।"
         408 message: "हमारे सर्वर द्वारा प्रतिक्रिया नहीं जताने के क्षमा चाहते हैं।"

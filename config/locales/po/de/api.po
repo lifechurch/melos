@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:06-0600\n"
-"PO-Revision-Date: 2015-03-03 14:06-0600\n"
+"POT-Creation-Date: 2015-03-24 07:56-0600\n"
+"PO-Revision-Date: 2015-03-24 07:56-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,11 +63,23 @@ msgstr "{name} hat ein Lesezeichen für <b>{reference_human}</b> angelegt"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Bereite dich auf Weihnachten vor - mit einem Leseplan für den Advent"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Belebe deinen Glauben mit neuen Leseplänen."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Suche dir einen Plan für Februar aus!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Tägliche Zeit in Gottes Wort bringt anhaltende Freiheit."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Finde deinen Rhythmus, indem du dich täglich mit dem Wort Gottes Wort beschäftigst."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Finde neue Hoffnung und Erneuerung in den Leseplänen im März."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Nimm dir jeden Tag Zeit, um Gott beim Lesen der Bibel zu begegnen."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Lies die Bibel 2015 jeden Tag. Lesepläne helfen!"

@@ -713,7 +713,7 @@ de:
         none me: "Du hast bisher keine Abzeichen bekommen."
         none user: "%{username} hat bisher keine Abzeichen bekommen."
     plans: 
-        share plan: "Schau dir diesen @YouVersion #BibelPlan an: %{plan_title}"
+        share plan: "Schau dir diesen @YouVersion #BiblePlan an: %{plan_title}"
         widget: 
             my plans: "Meine Lesepläne"
             start reading: "Fang an zu lesen."
@@ -842,10 +842,10 @@ de:
         loading sidebar content: "Seitenleiste wird geladen..."
     videos: 
         title: "Videos"
-        watch videos: "Bibel-Videos anschauen"
+        watch videos: "Schaue dir Videos über die Bibel an"
         all: "Alle Videos"
         related scripture: "Ähnliche Schriftstelle"
-        share video: "Ich schaue %{video_title} auf @YouVersion."
+        share video: "Ich schaue mir %{video_title} auf @YouVersion an."
     licenses: 
         authorized: 
             heading: "Dein Inhalt ist nun bestätigt."
@@ -945,9 +945,9 @@ de:
         line 3: "die du überall hin mitnehmen kannst."
         download: "Jetzt herunterladen"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Lade die Bibel App für Kinder herunter"
+        description copy: "Mit der Bibel App für Kinder kann dein Nachwuchs die biblischen Geschichten von Jesus auf altersgerechte Art und Weise kennen lernen."
+        download: "Jetzt herunterladen"
     about page: 
         relevancy: "Bedeutung"
         relevancy copy: "In vergangenen Generationen war der Zugang der Menschen zur Bibel sehr begrenzt. Heute ist das nicht mehr der Fall. Trotzdem denken viele Menschen, die Zugang zur Bibel haben, dass deren Botschaft sich nicht in ihrem Leben anwenden lässt. Gleichzeitig gibt es andere, die an einen Zusammenhang zwischen der Bibel und ihren täglichen Erfahrungen glauben."

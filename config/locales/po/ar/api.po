@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-09 13:08-0600\n"
-"PO-Revision-Date: 2015-03-09 13:08-0600\n"
+"POT-Creation-Date: 2015-03-29 16:05-0600\n"
+"PO-Revision-Date: 2015-03-29 16:05-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ar <LL@li.org>\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
@@ -63,11 +63,23 @@ msgstr "{name} اختار الإشارة المرجعية <b>{reference_human}</
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "استعد لعيد الميلاد المجيد مع خطة قراءة الكتاب المقدس خاصة لمجيء المسيح"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "جدد إيمانك مع قراءة خطط جديدة."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "اكتشف خطة قراءة مفضلة لشهر فبراير !"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "يمنحك الوقت اليومي الذي تقضيه مع كلمة الله الحرية الدائمة."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "إيجاد ترنيمة خاصة لك أثناء قضاء الوقت اليومى فى كلمة الله. "
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "المس الرجاء و التجديد في خطط القراءة لشهر مارس"
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "كرس نفسك يوميّاً للسعي إلى الله من خلال كلمته."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "اقرء الكتاب المقدس يوميا في 2015.  الخطط ستساعدك! "

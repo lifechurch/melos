@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:06-0600\n"
-"PO-Revision-Date: 2015-03-03 14:06-0600\n"
+"POT-Creation-Date: 2015-03-19 13:47-0600\n"
+"PO-Revision-Date: 2015-03-19 13:47-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -63,11 +63,23 @@ msgstr "{name} a mis <b>{reference_human}</b> en favori"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Préparez-vous pour Noël avec un Plan de Lecture de l'Avent."
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Rafraîchissez votre foi avec de nouveaux plans de lecture."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Découvrez votre Plan de Lecture préféré pour Février !"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Le temps passé quotidiennement dans la Parole de Dieu engendre une liberté durable."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Trouvez votre rythme à travers un moment passé dans la Parole de Dieu chaque jour."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Trouvez espoir et renouvellement dans les Plans de Lecture de Mars."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Consacrez-vous quotidiennement pour rechercher Dieu à travers sa Parole."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Lisez la Bible en 2015 grâce aux plans!"

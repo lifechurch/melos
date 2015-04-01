@@ -713,7 +713,7 @@ mk:
         none me: "Немаш добиено ниту еден беџ."
         none user: "Корисникот %{username} нема добиено ниту еден беџ."
     plans: 
-        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
+        share plan: "Види го овој @YouVersion #БиблискиПлан: %{plan_title}"
         widget: 
             my plans: "Мои планови"
             start reading: "Започни со читање"
@@ -842,10 +842,10 @@ mk:
         loading sidebar content: "Ја вчитувам страничната лента..."
     videos: 
         title: "Видеа"
-        watch videos: "Watch videos about the Bible"
+        watch videos: "Гледај видеа за Библијата"
         all: "Сите видеа"
         related scripture: "Поврзани стихови"
-        share video: "I'm watching %{video_title} on @YouVersion."
+        share video: "Јас гледам %{video_title} на @YouVersion."
     licenses: 
         authorized: 
             heading: "Вашата содржина е одобрена"

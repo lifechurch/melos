@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:06-0600\n"
-"PO-Revision-Date: 2015-03-03 14:06-0600\n"
+"POT-Creation-Date: 2015-03-24 07:56-0600\n"
+"PO-Revision-Date: 2015-03-24 07:56-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mk <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,11 +63,23 @@ msgstr "{name} го обележа <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Подгответе се за Божиќ читајќи го Адвентниот библиски план"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Освежи ја вераta во Бога со нови планови за читање."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Најди го твојот омилен план за читање на Библијата за февруари!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Човечкиот дух трајно се ослободува преку редовното читање на Библијата."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Креирај го дневниот ритам низ Божјото Слово."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Најди надеж и обнова во мартовските планови."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Посвети дел од твоето секојдневие во читање на Божјото Слово."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Читај ја Библијата секојдневно во 2015. Плановите помагаат!"
