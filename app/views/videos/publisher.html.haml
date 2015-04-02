@@ -1,5 +1,5 @@
 - html_attributes(id:"video-publisher")
-- @title = "#{t('videos.title')}: #{@publisher.name.html_safe if @publisher.present? and @publisher.name.present?}"
+- @title = "#{t('videos.title')}: #{strip_tags @publisher.name.html_safe if @publisher.present? and @publisher.name.present?}"
 
 - content_for :meta_description do
   = @title
