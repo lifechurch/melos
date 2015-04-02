@@ -10,5 +10,5 @@
   .widget
     %h3.hd=t('audio.publisher website')
     %ul.menu
-        - publisher.links.each do |link|
-          %li= link_to(link.title, link.url, class: "video-pub")
+      - publisher.links.each do |link|
+        %li= link_to(link.title, link.url, class: "video-pub")
