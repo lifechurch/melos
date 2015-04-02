@@ -6,7 +6,7 @@
     = image_tag(thumb.url, {style:"width:100%;"})
 
 .widget
-  %h3.hd Publisher Website
+  %h3.hd #{t('audio.publisher website')}
   %ul.menu
     - publisher.links.each do |link|
       %li= link_to(link.title, link.url, class: "video-pub")
