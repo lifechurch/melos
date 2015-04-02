@@ -6,7 +6,7 @@
       - thumb = video.thumbnails.last
       = image_tag(thumb.url, {style:"width:100%;"})
   
-- if publisher.present and publisher.links.present?
+- if publisher.present? and publisher.links.present?
   .widget
     %h3.hd=t('audio.publisher website')
     %ul.menu
