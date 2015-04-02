@@ -1,13 +1,13 @@
 - html_attributes(id:"video-publisher")
-- @title = "#{t('videos.title')}: #{@publisher.name.html_safe}"
+- @title = "#{t('videos.title')}: #{@publisher.name.html_safe if @publisher.present? and @publisher.name.present?}"
 
 - content_for :meta_description do
   = @title
 
 - content_for :sidebar do
-  = render partial: "sidebars/videos/publisher", locals: {video: @video, publisher: @publisher}
+  = render partial: "sidebars/videos/publisher", locals: {video: @video, publisher: @publisher} if @publisher.present?
 
 %article.videos-publisher
-  %h1= @publisher.name.html_safe
+  %h1= @publisher.name.html_safe if @publisher.present? and @publisher.name.present?
 
-  %p.video-info= @publisher.description.html_safe
+  %p.video-info= @publisher.description.html_safe if @publisher.present? and @publisher.description.present?
