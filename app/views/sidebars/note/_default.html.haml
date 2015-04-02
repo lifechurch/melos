@@ -17,6 +17,6 @@
     %a.open{href: "", "ng-show" => "collapsed", "ng-click" => "toggle()"}
       =t("plans.stats.view all")
   %div.ft{"ng-hide" => "collapsed"}
-    %span.link.pagination.next{"ng-click" => "nextPage(-1)", "ng-show" => "isEnabled(-1)"}= t('pagination.previous page')
+    %span.link.pagination.next{"ng-click" => "nextPage(-1)", "ng-show" => "isEnabled(-1)"}= t('ui.pagination.previous page')
     %span{"ng-show" => "isEnabled(-1) && isEnabled(1)"}= " | "
-    %span.link.pagination.next{"ng-click" => "nextPage(1)", "ng-show" => "isEnabled(1)"}= t('pagination.next page')
+    %span.link.pagination.next{"ng-click" => "nextPage(1)", "ng-show" => "isEnabled(1)"}= t('ui.pagination.next page')
