@@ -111,6 +111,9 @@ YouversionWeb::Application.routes.draw do
     get "introduction", on: :collection
   end
 
+  get "/moments/:id/comments", to: "moments#show"
+  get "/moments/:id/comments/:comment_id", to: "moments#show"
+
   resources :notes, :except => [:index] do
     get "_cards", on: :collection
   end
