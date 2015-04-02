@@ -10,6 +10,7 @@ module YV
         @very_long_time ||= Cfg.very_long_cache_expiration.to_f.minutes
       end
 
+      # 240 minutes - 4 hours
       def a_longer_time
         @longer_time ||= Cfg.longer_cache_expiration.to_f.minutes
       end
