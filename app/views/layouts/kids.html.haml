@@ -136,15 +136,12 @@
             = t.call('kids.app store')
           %a.download-play{href: t.call('kids.links.google'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
             = t.call('kids.google play')
-          -if not I18n.locale.to_s.eql?("zh-CN")
-            %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
-              = t.call('kids.amazon')
-          -else
+          -if I18n.locale.to_s.eql?("zh-CN")
             %br.desktop-only
-            %a.download-apk{href: "https://s3.amazonaws.com/web-production/assets/KidsBible-China.apk", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px"}
+            %a.download-apk{href: "https://s3-ap-northeast-1.amazonaws.com/bafk-apk/KidsBible-China.apk", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px"}
               = t.call('kids.free download')
-            %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
-              = t.call('kids.amazon')
+          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
+            = t.call('kids.amazon')
 
 
       -# !iPad hero screenshot
