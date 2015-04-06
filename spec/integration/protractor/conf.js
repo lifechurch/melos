@@ -12,7 +12,13 @@ exports.config = {
 		'reader.spec.js',
 		'search.spec.js',
 		'signup.spec.js'
-	]
+	],
+	params: {
+		testUrl: ""
+	},
+	capabilities: {
+    browserName: 'firefox'
+  }	
 	// , multiCapabilities: [
 	// 	{}
 	// 	{

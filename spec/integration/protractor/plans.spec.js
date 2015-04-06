@@ -6,9 +6,10 @@ describe('youversion plans', function() {
 	var plans_header = element(by.css("#plan-index h1:first-child"));
 	var spanish_option = element(by.css("#plan-index select.language option[value='es']"));
 	var language_header = element(by.css("#filter-message"));
+	var testUrl = browser.params.testUrl;
 
 	beforeEach(function() {
-		browser.get('http://staging.bible.com/reading-plans');
+		browser.get(testUrl + '/reading-plans');
 	});
 
 	it('should perform a search', function() {

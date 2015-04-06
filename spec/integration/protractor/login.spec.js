@@ -7,9 +7,10 @@ describe('youversion login', function() {
 	var signout_button = element(by.css("#header li.header_profile_menu_signout"));
 	var signin_link = element(by.css("#header li a.sign_in"));
 	var more_link = element(by.css("#header_profile_trigger"));
+	var testUrl = browser.params.testUrl;
 
 	beforeEach(function() {
-		browser.get('http://staging.bible.com/sign-in');
+		browser.get(testUrl + '/sign-in');
 	});
 
 	it('should let you login with valid credentials', function() {
