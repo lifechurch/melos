@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
 
+  include YV::Concerns::Exceptions
   respond_to :html
   prepend_before_filter :mobile_redirect, only: [:index, :show, :series] 
   before_filter :check_locale
@@ -21,12 +22,14 @@ class VideosController < ApplicationController
   def show
     opts = current_auth ? {auth: current_auth, force_auth: true} : {}
     @video = Video.find(params[:id].to_i, opts )
-    redirect_to(series_video_path(@video)) and return if @video.series?
+    return render_404 if @video.errors.present?
+    return redirect_to(series_video_path(@video)) if @video.series?
     respond_with(@video)
   end
 
   def publisher
-    @video = Video.find params[:id].to_i
+    @video = Video.find(params[:id].to_i)
+    return render_404 if @video.errors.present?
     @publisher = @video.publisher
     respond_with(@publisher)
   end
