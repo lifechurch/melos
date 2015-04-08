@@ -160,7 +160,7 @@ module YV
           new_opts = {
             headers: default_headers,
             timeout: opts.delete(:timeout) || Cfg.api_default_timeout,
-            query:   opts.except(:cache_for)
+            query:   opts.except(:cache_for).except(:auth)
           }.merge(opts)
 
           # if we passed in a search 'query' option, merge it in here

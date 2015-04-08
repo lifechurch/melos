@@ -38,7 +38,7 @@ describe('youversion login', function() {
 		password_field.sendKeys(password);
 
 		signin_button.click();
-		expect(error_element.getText()).toEqual("No user with this username/email address");
+		expect(error_element.getText()).toEqual("The username or password you supplied is invalid.");
 	});	
 
 	it('should let you logout', function() {

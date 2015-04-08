@@ -73,21 +73,12 @@ class User < YV::Resource
     # returns a YV::API::Result with errors if authentication is invalid
     def authenticate(username, password)
       auth = {username: username, password: password}
-
-      # First make sure we have a user
-      initial_results = find_by_username(username)
-      return initial_results unless initial_results.valid?  #return here with invalid results if we didn't find a user
-
-      data, errs = post("users/authenticate", auth: auth  ) # Data returned: {"id"=>7541650, "username"=>"BrittTheIsh"}
-      results = YV::API::Results.new( data , errs )
-
-      if results.valid?
-         # we've successfully authenticated
-         # we now need to make another API view call with auth info to retrieve entire detailed user info.
-         results = find(data.id, auth: auth.merge(user_id: data.id)) # our user
+      id_results = find_id(username)
+      if id_results.valid?
+        return find(id_results.user_id, auth: auth.merge(user_id: id_results.user_id))
+      else
+        return id_results
       end
-
-      return results
     end
 
 
@@ -126,6 +117,7 @@ class User < YV::Resource
     # Find a user by id, username or email address
     # Returns YV::API::Results decorator for User instance
     def find(username_or_id, opts = {})
+      opts[:cache_for] = YV::Caching.a_short_time
       case username_or_id
         when String
           return find_by_username( username_or_id , opts )
