@@ -75,6 +75,12 @@ class User < YV::Resource
       auth = {username: username, password: password}
       id_results = find_id(username)
       if id_results.valid?
+
+        # We never want a user to authenticate with a cached user object
+        #  so delete the matched user from cache before authenticating
+        user_cache_key = YV::Caching::cache_key("users/view", {query: {id: id_results.user_id}})
+        Rails.cache.delete(user_cache_key)
+
         return find(id_results.user_id, auth: auth.merge(user_id: id_results.user_id))
       else
         return id_results
@@ -111,6 +117,13 @@ class User < YV::Resource
     # Returns YV::API::Results decorator for User instance
     def find_by_id( id , opts = {})
       data, errs = get("users/view", opts.merge(id: id))
+
+      # Don't cache an invalid user
+      if not errs.blank?
+        user_cache_key = YV::Caching::cache_key("users/view", {query: {id: id}})
+        Rails.cache.delete(user_cache_key)
+      end
+
       return YV::API::Results.new(new(data.merge!(auth: opts[:auth])), errs)
     end
 
