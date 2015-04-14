@@ -13,7 +13,32 @@ describe('youversion login', function() {
 		browser.get(testUrl + '/sign-in');
 	});
 
-	it('should let you login with valid credentials', function() {
+    it('should NOT cache bad credentials', function() {
+        var username = "matt";
+        var password = "badpass";
+
+        username_field.clear();
+        username_field.sendKeys(username);
+
+        password_field.clear();
+        password_field.sendKeys(password);
+
+        signin_button.click();
+        expect(error_element.getText()).toEqual("The username or password you supplied is invalid.");
+
+        password = "staging";
+
+        username_field.clear();
+        username_field.sendKeys(username);
+
+        password_field.clear();
+        password_field.sendKeys(password);
+
+        signin_button.click();
+        expect(username_element.getText()).toEqual(username);
+    });
+
+    it('should let you login with valid credentials', function() {
 		var username = "matt";
 		var password = "staging";
 

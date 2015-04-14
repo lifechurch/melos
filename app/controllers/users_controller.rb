@@ -87,6 +87,10 @@ class UsersController < ApplicationController
     @user.auth = current_auth # setup auth prior to update
     results = @user.update(params[:user])
     if results.valid?
+      #User has changed so delete cached user
+      user_cache_key = YV::Caching::cache_key("users/view", {query: {id: @user.id}})
+      Rails.cache.delete(user_cache_key)
+
       flash[:notice]= t('users.profile.updated')
       redirect_to edit_user_path(current_auth.username)
     else
