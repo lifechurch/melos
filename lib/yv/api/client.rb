@@ -67,7 +67,7 @@ module YV
             end
           end
 
-          response = data_from_cache_or_api(cache_key(path, opts), curb_get, opts)
+          response = data_from_cache_or_api(YV::Caching::cache_key(path, opts), curb_get, opts)
 
           if debug
             puts "---"
@@ -160,7 +160,7 @@ module YV
           new_opts = {
             headers: default_headers,
             timeout: opts.delete(:timeout) || Cfg.api_default_timeout,
-            query:   opts.except(:cache_for)
+            query:   opts.except(:cache_for).except(:auth)
           }.merge(opts)
 
           # if we passed in a search 'query' option, merge it in here
@@ -190,9 +190,6 @@ module YV
           opts
         end
 
-        def cache_key(path, opts={})
-          [path, opts[:query].sort_by{|k,v| k.to_s}].flatten.join("_")
-        end
 
         # Returns a complete resource url for making valid API calls given a API path string
         # opts optional at this point.
