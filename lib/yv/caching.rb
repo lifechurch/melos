@@ -7,8 +7,6 @@ module YV
 
       #Generates Cache Key
       def cache_key(path, opts={})
-        puts path
-        puts opts.to_s
         [path, opts[:query].sort_by{|k,v| k.to_s}].flatten.join("_")
       end
 
