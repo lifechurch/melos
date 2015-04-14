@@ -76,8 +76,8 @@ id:
         moments content required: "Isi tidak bisa kosong."
     meta: 
         kids_app: 
-            title: "Aplikasi Alkitab untuk Anak"
-            description: "Aplikasi Alkitab untuk Anak adalah cara yang bagus untuk anak Anda belajar kisah-kisah Alkitab mengenai Yesus, hadiah hidup kekal kita, dan banyak pelajaran yang Tuhan ajarkan pada kita. Dalam pengalaman interaktif ini, anak-anak terhubung langsung dengan Firman Tuhan melalui visual yang menarik sambil mendapatkan poin untuk membaca dan mengumpulkan harta karun."
+            title: "Ap Alkitab untuk Anak-anak"
+            description: "Ap Alkitab untuk Anak-anak adalah cara hebat untuk anak Anda belajar kisah-kisah Alkitab tentang Yesus, hadiah hidup kekal kita, dan banyak pelajaran yang Tuhan ajarkan pada kita. Dalam pengalaman interaktif ini, anak-anak terhubung langsung dengan Firman Tuhan melalui visual yang menarik sambil mendapatkan poin untuk membaca dan mengumpulkan harta karun."
         100million: 
             title: "Dimulai dengan 100 juta"
             description: "Ap Alkitab telah diinstal hampir 100 juta kali - tonggak sejarah yang luar biasa! Namun ini hanya permulaan saja. Unduh Ap Alkitab gratis hari ini - dan bagikan ap ini kepada teman-teman Anda. Mari kita bersama membuat sejarah."
@@ -100,7 +100,7 @@ id:
         app store: "Tersedia di App store"
         google play: "Dapatkan di Google Play"
         amazon: "Tersedia di Amazon Appstore untuk Android"
-        app icon: "ikon aplikasi untuk Ap Alkitab untuk Anak"
+        app icon: "ikon aplikasi untuk Ap Alkitab untuk Anak-anak"
         jesus and friends: "Yesus dan sahabat-sahabat-Nya"
         interact text: "Berinteraksi dengan Alkitab dan saksikan secara nyata."
         story text 1: "Taman Eden"
@@ -114,16 +114,16 @@ id:
         feature 4: "Permainan dan aktivitas membantu anak mengingat apa yang mereka pelajari"
         feature 5: "Navigasi khusus anak"
         share: 
-            tell friends: "Beritahu teman Anda tentang Ap Alkitab untuk Anak."
-            facebook name: "Aplikasi Alkitab untuk Anak"
-            facebook description: "Ap Alkitab untuk Anak ada di sini! Unduh aplikasi gratis untuk iOS dan Android hari ini: cerita-cerita Alkitab interaktif untuk membantu anak Anda belajar, bermain, dan bertumbuh dalam Firman Tuhan.\nwww.bible.com/kids"
+            tell friends: "Beritahu teman Anda tentang Ap Alkitab untuk Anak-anak."
+            facebook name: "Ap Alkitab untuk Anak-anak"
+            facebook description: "Ap Alkitab untuk Anak-anak ada di sini! Unduh aplikasi gratis untuk iOS dan Android hari ini: cerita-cerita Alkitab interaktif untuk membantu anak Anda belajar, bermain, dan bertumbuh dalam Firman Tuhan.\nwww.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
-            twitter description: "Aplikasi Alkitab untuk anak dari @YouVersion ada disini! Menyenangkan dan sepenuhnya gratis. Unduh: bible.com/kids"
+            twitter description: "Ap Alkitab untuk Anak-anak dari @YouVersion ada disini! Menyenangkan dan sepenuhnya gratis. Unduh: bible.com/kids"
             twitter hashtags: "kidsbible"
             email: "Email"
-            email subject: "Ap Alkitab untuk Anak ada di sini!"
-            email body: "Berita besar - Ap Alkitab untuk Anak ada di sini! Gratis total dan tersedia untuk perangkat iPhone, iPad, iPod touch, dan Android. Aplikasi ini adalah kumpulan cerita Alkitab yang terus bertambah dengan animasi sentuh-aktif dan aktivitas belajar, cocok untuk membantu anak memahami kisah-kisah besar Alkitab. Masuk ke bible.com/kids pada perangkat seluler Anda untuk mengunduhnya hari ini."
+            email subject: "Ap Alkitab untuk Anak-anak ada di sini!"
+            email body: "Berita besar - Ap Alkitab untuk Anak-anak ada di sini! Gratis total dan tersedia untuk perangkat iPhone, iPad, iPod touch, dan Android. Aplikasi ini adalah kumpulan cerita Alkitab yang terus bertambah dengan animasi sentuh-aktif dan aktivitas belajar, cocok untuk membantu anak memahami kisah-kisah besar Alkitab. Masuk ke bible.com/kids pada perangkat seluler Anda untuk mengunduhnya hari ini."
         partner: 
             youversion: "YouVersion: Aplikasi Alkitab terpopuler di dunia."
             in partnership: "rekanan dengan"
@@ -567,7 +567,7 @@ id:
             description title: "Deskripsi Layanan"
             description text: "do not translate"
             registration title: "Kewajiban Pendaftaran Anda"
-            registration text: "do not translate"
+            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li><li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
             privacy title: "Kebijakan Privasi YouVersion"
             privacy text: "do not translate"
             account title: "Akun Anggota, Kata Sandi dan Keamanan"
@@ -943,8 +943,8 @@ id:
         line 3: "yang selalu bersama Anda."
         download: "Unduh Sekarang"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
+        title: "Unduh Ap Alkitab untuk Anak-anak"
+        description copy: "Ap Alkitab untuk Anak-anak adalah cara hebat untuk anak Anda belajar kisah-kisah Alkitab tentang Yesus."
         download: "Unduh Sekarang"
     about page: 
         relevancy: "Relevansi"
