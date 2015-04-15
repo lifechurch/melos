@@ -3,6 +3,8 @@
   @title            = t("meta.mobile.title")
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
+  @text_versions_list = Version.all.find_all{|v| text_version_list(I18n.locale.to_s).include? v.id}
+  @audio_versions_list = Version.all.find_all{|v| audio_version_list(I18n.locale.to_s).include? v.id}
 
 - content_for :additional_meta do
   = render '/shared/hreflang'
@@ -76,3 +78,14 @@
       %li
         %h3= t('mobile page.t3')
         %p= t('mobile page.t3 copy')
+  Over 1000 versions including:
+  %ul
+    - @text_versions_list.each do |version|
+      %li
+        = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+  - if @audio_versions_list.present?
+    Listen to audio versions including:
+    %ul
+      - @audio_versions_list.each do |version|
+        %li
+          = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
