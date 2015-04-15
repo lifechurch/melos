@@ -11,10 +11,10 @@ describe('youversion reader', function() {
 	var versionSelectTrigger = element(by.id("menu_version_trigger"));
 	var nivLink = element(by.css("[data-abbrev='niv'] td a"));
 	var verse1Content = element(by.css("[data-usfm='GEN.2.1] .content"));
-
+	var testUrl = browser.params.testUrl;
 
 	beforeEach(function() {
-		browser.get('http://staging.bible.com/bible/1/gen.2.kjv');
+		browser.get(testUrl + '/bible/1/gen.2.kjv');
 	});
 
 	it('should have a title', function() {

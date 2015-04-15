@@ -6,9 +6,10 @@ describe('youversion signup', function() {
 	var pw_element = element(by.css("#user_password"));	
 	var register_button = element(by.css("#main input.action_button_green"));
 	var register_confirm = element(by.css("#main h1.keep"));
+	var testUrl = browser.params.testUrl;
 
 	beforeEach(function() {
-		browser.get('http://staging.bible.com/sign-up');
+		browser.get(testUrl + '/sign-up');
 	});
 
 	it('should let me register', function() {

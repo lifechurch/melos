@@ -116,7 +116,8 @@ class Reference < YV::Resource
     case opts[:as]
       when :plaintext
         selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
-        content_document.css(selector).text
+        # Some bibles split verses up into sub-verses. Join them together with spaces (and strip trailing whitespace)
+        content_document.css(selector).map(&:text).join(" ").rstrip
       else #:html
         selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
         content_document.css(selector).to_html

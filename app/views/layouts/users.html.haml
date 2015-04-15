@@ -32,10 +32,11 @@
     :ruby
       tabs = [
         {href: user_path(id: @user.username),                            type: "activity"},
-        {href: user_friends_path(user_id: @user.username),                    type: "friends"},
+        {href: user_friends_path(user_id: @user.username),               type: "friends"},
         {href: notes_user_path(id: @user.username),                      type: "notes"},
         {href: bookmarks_user_path(id: @user.username),                  type: "bookmarks"},
         {href: highlights_user_path(id: @user.username),                 type: "highlights"},
+        {href: images_user_path(id: @user.username),                     type: "images"},
         {href: badges_user_path(id: @user.username),                     type: "badges"}
       ]
 

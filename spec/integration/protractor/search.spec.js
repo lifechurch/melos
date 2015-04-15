@@ -4,9 +4,10 @@ describe('youversion search', function() {
 	var search_header = element(by.css("#main article h1"));
 	var niv_option = element(by.css("#version_form select option[value='111']"));
 	var noresults_header = element(by.css("#noresults"));
-
+	var testUrl = browser.params.testUrl;
+	
 	beforeEach(function() {
-		browser.get('http://staging.bible.com/');
+		browser.get(testUrl);
 	});
 
 	it('should search the bible', function() {

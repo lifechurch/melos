@@ -7,12 +7,38 @@ describe('youversion login', function() {
 	var signout_button = element(by.css("#header li.header_profile_menu_signout"));
 	var signin_link = element(by.css("#header li a.sign_in"));
 	var more_link = element(by.css("#header_profile_trigger"));
+	var testUrl = browser.params.testUrl;
 
 	beforeEach(function() {
-		browser.get('http://staging.bible.com/sign-in');
+		browser.get(testUrl + '/sign-in');
 	});
 
-	it('should let you login with valid credentials', function() {
+    it('should NOT cache bad credentials', function() {
+        var username = "matt";
+        var password = "badpass";
+
+        username_field.clear();
+        username_field.sendKeys(username);
+
+        password_field.clear();
+        password_field.sendKeys(password);
+
+        signin_button.click();
+        expect(error_element.getText()).toEqual("The username or password you supplied is invalid.");
+
+        password = "staging";
+
+        username_field.clear();
+        username_field.sendKeys(username);
+
+        password_field.clear();
+        password_field.sendKeys(password);
+
+        signin_button.click();
+        expect(username_element.getText()).toEqual(username);
+    });
+
+    it('should let you login with valid credentials', function() {
 		var username = "matt";
 		var password = "staging";
 
