@@ -6,6 +6,9 @@
   @text_versions_list = Version.all.find_all{|v| text_version_list(I18n.locale.to_s).include? v.id}
   @audio_versions_list = Version.all.find_all{|v| audio_version_list(I18n.locale.to_s).include? v.id}
 
+- content_for :stylesheets do
+  = stylesheet_link_tag "slick.css"
+
 - content_for :additional_meta do
   = render '/shared/hreflang'
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
@@ -66,26 +69,64 @@
       %h4
         = t('mobile page.button h4').html_safe
   %div.clear
-  %section.testimonials
-    %h2= t('mobile page.what people')
-    %ul
-      %li
-        %h3= t('mobile page.t1')
-        %p= t('mobile page.t1 copy')
-      %li
-        %h3= t('mobile page.t2')
-        %p= t('mobile page.t2 copy')
-      %li
-        %h3= t('mobile page.t3')
-        %p= t('mobile page.t3 copy')
-  Over 1000 versions including:
-  %ul
-    - @text_versions_list.each do |version|
-      %li
-        = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
-  - if @audio_versions_list.present?
-    Listen to audio versions including:
-    %ul
-      - @audio_versions_list.each do |version|
-        %li
-          = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+
+  %div.lower-content
+    %div.version-list
+      Over 1000 Bible versions including:
+      %ul
+        - @text_versions_list.each do |version|
+          %li
+            = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+    - if @audio_versions_list.present?
+      %div.version-list
+        Listen to Bible audio versions including:
+        %ul
+          - @audio_versions_list.each do |version|
+            %li
+              = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+
+    %section.testimonials
+      %h2= t('mobile page.what people')
+      %div.review-carousel
+        %div
+          %h3= t('mobile page.t1') + '1'
+          %p= t('mobile page.t1 copy')
+        %div
+          %h3= t('mobile page.t2') + '2'
+          %p= t('mobile page.t2 copy')
+        %div
+          %h3= t('mobile page.t3') + '3'
+          %p= t('mobile page.t3 copy')
+        %div
+          %h3= t('mobile page.t1') + '4'
+          %p= t('mobile page.t1 copy')
+        %div
+          %h3= t('mobile page.t2') + '5'
+          %p= t('mobile page.t2 copy')
+        %div
+          %h3= t('mobile page.t3') + '6'
+          %p= t('mobile page.t3 copy')
+
+- content_for :javascripts do
+  :javascript
+    $(document).ready(function(){
+      $('.review-carousel').slick({
+        centerMode: true,
+        centerPadding: "0px",
+        slidesToShow: 1,
+        infinite: false,
+        variableWidth: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerPadding: "10px",
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
