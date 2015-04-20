@@ -113,7 +113,7 @@ class AppStoreController < ActionController::Base
     when /iphone|iPhone|ipad|iPad|ipod|iPod/
       store_path('ios')
     when /android|Android/
-      'market://details?id=com.sirma.mobile.bible.android'
+      'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
     when /silk|Silk/
       store_path('amazon')
     when /blackberry|BlackBerry|bb/
