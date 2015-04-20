@@ -75,41 +75,47 @@
       %h2= t('mobile page.what people')
       %div.review-carousel
         %div
-          %h3= t('mobile page.t1') + '1'
+          %h3= t('mobile page.t1')
           %p= t('mobile page.t1 copy')
         %div
-          %h3= t('mobile page.t2') + '2'
+          %h3= t('mobile page.t2')
           %p= t('mobile page.t2 copy')
         %div
-          %h3= t('mobile page.t3') + '3'
+          %h3= t('mobile page.t3')
           %p= t('mobile page.t3 copy')
         %div
-          %h3
-            Highly recommended 4
-          %p
-            This is a really great Bible application .I love how you are able to connect with friends and the Bible reading plans are awesome. This application helps me also to stay consistent in reading because it has reminders for the plans. It also gives me another way to come closer to God. Download this and read every day!
+          %h3= t('mobile page.t4')
+          %p= t('mobile page.t4 copy')
         %div
-          %h3= t('mobile page.t2') + '5'
-          %p= t('mobile page.t2 copy')
+          %h3= t('mobile page.t5')
+          %p= t('mobile page.t5 copy')
         %div
-          %h3= t('mobile page.t3') + '6'
-          %p= t('mobile page.t3 copy')
+          %h3= t('mobile page.t6')
+          %p= t('mobile page.t6 copy')
+        %div
+          %h3= t('mobile page.t7')
+          %p= t('mobile page.t7 copy')
+        %div
+          %h3= t('mobile page.t8')
+          %p= t('mobile page.t8 copy')
+        %div
+          %h3= t('mobile page.t9')
+          %p= t('mobile page.t9 copy')
 
-    %div.version-list
-      %h2
-        Over 1000 Bible versions including:
-      %ul
-        - @text_versions_list.each do |version|
-          %li
-            = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
-    - if @audio_versions_list.present?
+    = cache "app_versions_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
       %div.version-list
-        %h2
-          Listen to Bible audio versions including:
+        %h2= t('mobile page.version list')
         %ul
-          - @audio_versions_list.each do |version|
+          - @text_versions_list.each do |version|
             %li
               = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+      - if @audio_versions_list.present?
+        %div.version-list
+          %h2= t('mobile page.audio version list')
+          %ul
+            - @audio_versions_list.each do |version|
+              %li
+                = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
 
 - content_for :javascripts do
   :javascript
@@ -121,7 +127,7 @@
         infinite: false,
         variableWidth: true,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 6000,
         arrows: false,
         responsive: [
           {
