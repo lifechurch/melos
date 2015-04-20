@@ -311,6 +311,14 @@ module ApplicationHelper
     fullpath
   end
 
+  def text_version_list(locale)
+    APP_PAGE_VERSION_LIST[locale]['text'].present? ? APP_PAGE_VERSION_LIST[locale]['text'] : APP_PAGE_VERSION_LIST['en']['text']
+  end
+
+  def audio_version_list(locale)
+    APP_PAGE_VERSION_LIST[locale]['audio'].present? ? APP_PAGE_VERSION_LIST[locale]['audio'] : APP_PAGE_VERSION_LIST['en']['audio']
+  end
+
   def get_verse_content(html_verse_content)
     doc = Nokogiri::HTML(html_verse_content)
     return doc.css('.content').text
