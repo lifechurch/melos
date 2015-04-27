@@ -30,7 +30,7 @@
           = content_for?(:main) ? yield(:main) : yield
 
         #sidebar{class: (content_for :sidebar_class if content_for? :sidebar_class)}
-          #sidebar-scroll{"ng-app" => "yv"}
+          #sidebar-scroll
             - if content_for? :sidebar
               = yield :sidebar
             - else
