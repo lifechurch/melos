@@ -136,7 +136,7 @@ class Plan < YV::Resource
 
   def search_thumbnail_image
     # Sort by height descending, then return the first only if it's greater than 200px wide
-     images.sort_by { |h| h.height }.reverse!.detect { |h| h.width <= 320 } if images.present?
+     images.sort_by { |h| h.height }.reverse!.detect { |h| h.width <= 160 } if images.present?
   end
 
   def widget_thumbnail_image
