@@ -49,8 +49,10 @@ class PagesController < ApplicationController
 
   def donate
     if params[:err].present?
-      Raven.capture do
+      begin
         raise TreadstoneAuthenticationError, "Treadstone Authentication Error: (Message: #{params[:err]}) "
+      rescue TreadstoneAuthenticationError => e
+        Raven.capture_exception(e)
       end
       render :generic_error
     else
