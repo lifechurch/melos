@@ -3,6 +3,11 @@
   @title            = t("meta.mobile.title")
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
+  @text_versions_list = Version.all.find_all{|v| text_version_list(I18n.locale.to_s).include? v.id}
+  @audio_versions_list = Version.all.find_all{|v| audio_version_list(I18n.locale.to_s).include? v.id}
+
+- content_for :stylesheets do
+  = stylesheet_link_tag "slick.css"
 
 - content_for :additional_meta do
   = render '/shared/hreflang'
@@ -26,7 +31,7 @@
   %div.app-free-overlay.hide-mobile
     %h2= t('mobile page.free overlay')
   %section#mobile_content
-    %h2= t('mobile page.h2')
+    %h2.title= t('mobile page.h2')
     %section.main
       %p= t('mobile page.main').html_safe
     %section.multilingual
@@ -64,15 +69,75 @@
       %h4
         = t('mobile page.button h4').html_safe
   %div.clear
-  %section.testimonials
-    %h2= t('mobile page.what people')
-    %ul
-      %li
-        %h3= t('mobile page.t1')
-        %p= t('mobile page.t1 copy')
-      %li
-        %h3= t('mobile page.t2')
-        %p= t('mobile page.t2 copy')
-      %li
-        %h3= t('mobile page.t3')
-        %p= t('mobile page.t3 copy')
+
+  %div.lower-content
+    %section.testimonials
+      %h2= t('mobile page.what people')
+      %div.review-carousel
+        %div
+          %h3= t('mobile page.t1')
+          %p= t('mobile page.t1 copy')
+        %div
+          %h3= t('mobile page.t2')
+          %p= t('mobile page.t2 copy')
+        %div
+          %h3= t('mobile page.t3')
+          %p= t('mobile page.t3 copy')
+        %div
+          %h3= t('mobile page.t4')
+          %p= t('mobile page.t4 copy')
+        %div
+          %h3= t('mobile page.t5')
+          %p= t('mobile page.t5 copy')
+        %div
+          %h3= t('mobile page.t6')
+          %p= t('mobile page.t6 copy')
+        %div
+          %h3= t('mobile page.t7')
+          %p= t('mobile page.t7 copy')
+        %div
+          %h3= t('mobile page.t8')
+          %p= t('mobile page.t8 copy')
+        %div
+          %h3= t('mobile page.t9')
+          %p= t('mobile page.t9 copy')
+
+    = cache "app_versions_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
+      %div.version-list
+        %h2= t('mobile page.version list')
+        %ul
+          - @text_versions_list.each do |version|
+            %li
+              = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+      - if @audio_versions_list.present?
+        %div.version-list
+          %h2= t('mobile page.audio version list')
+          %ul
+            - @audio_versions_list.each do |version|
+              %li
+                = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+
+- content_for :javascripts do
+  :javascript
+    $(document).ready(function(){
+      $('.review-carousel').slick({
+        centerMode: true,
+        centerPadding: "0px",
+        slidesToShow: 1,
+        infinite: false,
+        variableWidth: true,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerPadding: "10px",
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
