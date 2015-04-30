@@ -11,7 +11,7 @@ class window.Moments.Image extends window.Moments.Base
       html = @template
         uuid:           @generateID()
         id:             @data.id
-        created_dt:     moment(@data.created_dt).format('LL')
+        created_dt:     @data.time_ago
         path:           @data.path
         moment_title:   @data.moment_title
         body_text:      @data.body_text
