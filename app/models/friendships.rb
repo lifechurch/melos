@@ -66,8 +66,8 @@ class Friendships < YV::Resource
       in_and_out = all(opts.slice(:auth))
       id = user_or_id.is_a?(User) ? user_or_id.id : user_or_id
 
-      return :incoming if in_and_out.incoming.include?(id)
-      return :outgoing if in_and_out.outgoing.include?(id)
+      return :incoming if in_and_out.incoming.present? && in_and_out.incoming.include?(id)
+      return :outgoing if in_and_out.outgoing.present? && in_and_out.outgoing.include?(id)
       return nil
     end
 
