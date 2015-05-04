@@ -155,7 +155,7 @@ namespace :sitemap do
           # puts data
           aFile.syswrite('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
           aFile.syswrite data
-          aFile.syswrite('\n</urlset>')
+          aFile.syswrite('</urlset>')
           aFile.close
         else
           puts "Unable to open file: #{filename}"
@@ -166,4 +166,39 @@ namespace :sitemap do
       puts "================================="
     end
   end
+  desc "Generate search xml sitemap for a version using top chapters"
+  task :top_chapter_map => :environment do
+    puts "search: top chapters for a version - building sitemap..."
+    filename = Rails.root.join("config/sitemap/top-chapters.txt")
+    puts filename
+    ch_index = []
+    if File.exists?(filename)
+      File.open(filename).each do |ref|
+        ch_index.push(ref.strip)
+      end
+    else
+      puts "Unable to open file: #{filename}"
+    end
+
+    # manual for now...
+    locale = ''
+    vid = "1"
+
+    versions = Version.all(locale)
+    versions.each do |v|
+      version_id = v.attributes.id
+      if version_id.to_s.eql?(vid)
+        puts "#{version_id} - #{v}"
+        v.books.each do |b, book|
+          book.chapters.each do |chapter|
+            if ch_index.include? chapter.usfm.downcase
+              # puts "\n<url><loc>https://www.bible.com#{locale}/bible/#{version_id}/#{chapter.usfm.downcase}.#{v.abbreviation.downcase}</loc></url>"
+              puts "<url><loc>https://www.bible.com/#{locale}/search/bible?q=#{book.human.gsub(' ', '+')}+#{chapter.human}&amp;version_id=#{version_id}</loc></url>"
+            end
+          end
+        end
+      end
+    end
+  end
+
 end
