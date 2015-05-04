@@ -125,7 +125,8 @@ namespace :sitemap do
 
       while plans_exist do
         plans = Plan.all(page: page, language_tag: l)
-        if plans.to_s.eql?('[]')
+        puts plans.to_s
+        if plans.to_s.eql?('[]') or plans.nil?
           break
         end
         plans.each do |p|
