@@ -252,7 +252,7 @@ class Subscription < Plan
   end
 
   def day_statuses
-    data, errs = self.class.get("#{api_path_prefix}/calendar", {auth: auth, id: id, user_id: user_id})
+    data, errs = self.class.get("#{api_path_prefix}/calendar", {auth: auth, id: id, user_id: user_id, timeout: 15000})
     results = YV::API::Results.new(data,errs)
       raise_errors( results.errors, "subscription#day_statuses") unless results.valid?
 
