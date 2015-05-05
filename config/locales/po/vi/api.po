@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:06-0600\n"
-"PO-Revision-Date: 2015-03-03 14:06-0600\n"
+"POT-Creation-Date: 2015-04-23 15:05-0609\n"
+"PO-Revision-Date: 2015-04-23 15:05-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: vi <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -63,11 +63,23 @@ msgstr "{name} đánh dấu <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Đón Giáng Sinh bằng một kế hoạch về Mùa Vọng"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Làm tươi mới niềm tin qua các kế hoạch Kinh Thánh."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Tìm kế hoạch yêu thích của bạn cho tháng Hai!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Lời Chúa giải phóng tâm linh chúng ta mỗi ngày."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Tìm thấy nhịp sống của mình mỗi ngày qua Lời Chúa."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Tìm thấy hi vọng và sự đổi mới qua các kế hoạch của tháng Ba!"
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Hết lòng tìm kiếm Chúa mỗi ngày qua Thánh Kinh."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Tĩnh nguyện mỗi ngày trong 2015. Hãy tìm hiểu thêm!"

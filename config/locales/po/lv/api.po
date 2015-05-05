@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-12 10:45-0600\n"
-"PO-Revision-Date: 2015-03-12 10:45-0600\n"
+"POT-Creation-Date: 2015-04-23 15:05-0609\n"
+"PO-Revision-Date: 2015-04-23 15:05-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: lv <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
@@ -60,11 +60,23 @@ msgstr "Tu izveidoji grāmatzīmi <b>{reference_human}</b>"
 msgid "moment.bookmark.title"
 msgstr "{name} izveidoja grāmatzīmi <b>{reference_human}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Atsvaidzini savu ticību ar jauniem lasīšanas plāniem."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Atrodi mīļāko Bībeles lasīšanas plānu feburārim!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Ikdiena Dieva vārdā sniedz paliekošu brīvību."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Atrodi savu ikdienas ritmu Dieva Vārdā."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Atrodi cerību un atjaunošanos marta lasīšanas plānos."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Velti katru dienu Dieva meklēšanai viņa Vārdā."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015. gadā lasi Bībeli katru dienu. Lasīšanas plāni palīdz!"
