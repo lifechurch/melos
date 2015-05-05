@@ -34,6 +34,7 @@ common:
   longer_cache_expiration: 240
   very_long_cache_expiration: 720
   rate_limit: 120
+  treadstone_base_url: 'https://yv-giving-staging.lifechurch.tv/'
 
 development:
   api_root: youversionapistaging.com
@@ -76,3 +77,4 @@ production:
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
   facebook_app_id: 105030176203924
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
+  treadstone_base_url: 'https://donate.bible.com/'
