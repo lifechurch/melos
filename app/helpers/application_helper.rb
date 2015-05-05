@@ -89,8 +89,7 @@ module ApplicationHelper
     else
       DateTime.parse(api_created_dt)
     end
-    t('moments.time past', time: time_ago_in_words(time.in_time_zone))
-    time_ago_in_words(time.in_time_zone)
+    distance_of_time_in_words(time.in_time_zone, Time.current, false, scope: 'datetime.time_ago_in_words')
   end
 
   def prettify_date(api_created_dt)
@@ -99,7 +98,7 @@ module ApplicationHelper
     else
       DateTime.parse(api_created_dt)
     end
-    time.strftime("%A, %d %b %Y %l:%M %p")
+    I18n.l(time, format: :default)
   end
 
   def usfm_from_moment(references)
