@@ -1,10 +1,13 @@
 :ruby
   @title    = @search.query
-  @subtitle = t("site search")
+  @subtitle = "#{t("site search")} | #{t('meta.mobile.title')}"
   @sidebar  = false
   @category   = params[:category].downcase.to_sym
   @categories = [:bible,:users,:plans]
   html_attributes(id:"search-show")
+
+- content_for :meta_description do
+  = "#{t('searching.results for')} #{@title}"
 
 %article
   %h1
@@ -34,10 +37,10 @@
         %ul.pagination
           - if @results.prev_page || @results.prev_cursor || @page > 1
             %li.pagination_previous
-              =link_to t("previous page"), url_for({q: @search.query, version_id: params[:version_id], category: params[:category],page: @results.prev_page || @page - 1, cursor: @results.prev_cursor, locale: params[:locale]})
+              =link_to t("previous page"), url_for({q: @search.query, version_id: params[:version_id], category: params[:category],page: @results.prev_page || @page - 1, cursor: @results.prev_cursor, locale: params[:locale]}), rel: 'prev'
           - if @results.next_page || @results.next_cursor
             %li.pagination_next
-              =link_to t("next page"), url_for({q: @search.query, version_id: params[:version_id], category: params[:category], page: @results.next_page, cursor: @results.next_cursor, locale: params[:locale]})
+              =link_to t("next page"), url_for({q: @search.query, version_id: params[:version_id], category: params[:category], page: @results.next_page, cursor: @results.next_cursor, locale: params[:locale]}), rel: 'next'
 
       - else
         #noresults= t("none found")
