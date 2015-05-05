@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
 
+  before_filter :force_login, only: [:donate]
+
   def about;        end
   def press;        end
   def mobile;       end
-  def donate;       end
   def status;       end
   def api_timeout;  end
   def generic_error;end
@@ -44,6 +45,34 @@ class PagesController < ApplicationController
     # legally appropriate to show in a localized state
     [ :da, :en, :ja, :lv, :sv, :vi, :nl, :"pt", :"no", :"zh-CN",
       :"zh-TW", :ms, :ru, :ro, :"es-ES", :uk, :ko ]
+  end
+
+  def donate
+    if params[:err].present?
+      begin
+        raise TreadstoneAuthenticationError, "Treadstone Authentication Error: (Message: #{params[:err]}) "
+      rescue TreadstoneAuthenticationError => e
+        Raven.capture_exception(e)
+      end
+      return render :generic_error
+    else
+      user = current_user
+
+      ts_payload = {
+          created: Time.now.to_i.to_s,
+          email: user.email,
+          first_name: user.first_name.blank? ? "" : user.first_name,
+          id: user.id.to_s,
+          language_tag: user.language_tag.blank? ? "en" : user.language_tag,
+          last_name: user.last_name.blank? ? "" : user.last_name,
+          source: 'youversion'
+      }
+
+      ts_signature = Licenses::Request.sign( ts_payload , ENV["TREADSTONE_SECRET"] ) unless ENV["TREADSTONE_SECRET"].nil?
+      ts_payload[:signature] = ts_signature
+      @ts_url = Cfg.treadstone_base_url + "?" + ts_payload.to_query
+      return redirect_to @ts_url
+    end
   end
 
 end

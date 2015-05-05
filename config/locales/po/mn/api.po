@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-29 16:05-0600\n"
-"PO-Revision-Date: 2015-03-29 16:05-0600\n"
+"POT-Creation-Date: 2015-04-23 15:05-0609\n"
+"PO-Revision-Date: 2015-04-23 15:05-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mn <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -65,6 +65,9 @@ msgstr "Адвент Тѳлѳвлѳгѳѳгѳѳр Кристмасийн Бая�
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Шинэ тѳлѳвлѳгѳѳгѳѳр итгэлээ шинэжлэх уу."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Хоёрдугаар сарын дуртай Библи Уншлагын Төлөвлөгөөгөө хайж олоорой!"
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "Ѳдѳр бүр Бурханы Үгэнд байхад мѳнхийн эрх чѳлѳѳтэй замыг харуулна."

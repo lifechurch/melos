@@ -55,7 +55,7 @@
   %meta{property: "og:image",  content: url_for(image_path(bible_icon_for_version(size: 200, version: version)))}
 
 - content_for :meta_description do
-  = "#{reference.human} #{presenter.version} #{truncate(get_verse_content(presenter.content), length: 125, separator: " ", omission: '')}.."
+  = "#{reference.human}, #{presenter.version} #{truncate(get_verse_content(presenter.content), length: 125, separator: " ", omission: '')}.."
 
 - content_for :mobile_right_nav do
   = link_to(version.abbreviation, 'javascript:void(0);', id: "m_version_btn" )

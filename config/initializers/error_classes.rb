@@ -1,6 +1,7 @@
 class AuthError < StandardError; end
 class UnverifiedAccountError < AuthError; end
 class APIError < StandardError; end
+class TreadstoneAuthenticationError < StandardError; end
 class APITimeoutError < APIError; end
 class InvalidReferenceError < StandardError; end
 class NotAVersionError < InvalidReferenceError; end
