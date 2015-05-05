@@ -21,7 +21,6 @@
   - deep_link = "youversion://#{ref_deep_link}" if ref_deep_link.present?
 
   - if ref_deep_link.present?
-    %meta{name: "apple-itunes-app",         content: "app-id=282935706, app-argument=#{deep_link}"}
     %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{ref_deep_link.gsub('version_id','version')}"}
 
   - if verse_view
