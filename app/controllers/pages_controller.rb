@@ -54,7 +54,7 @@ class PagesController < ApplicationController
       rescue TreadstoneAuthenticationError => e
         Raven.capture_exception(e)
       end
-      render :generic_error
+      return render :generic_error
     else
       user = current_user
 
@@ -71,7 +71,7 @@ class PagesController < ApplicationController
       ts_signature = Licenses::Request.sign( ts_payload , ENV["TREADSTONE_SECRET"] ) unless ENV["TREADSTONE_SECRET"].nil?
       ts_payload[:signature] = ts_signature
       @ts_url = Cfg.treadstone_base_url + "?" + ts_payload.to_query
-      redirect_to @ts_url
+      return redirect_to @ts_url
     end
   end
 
