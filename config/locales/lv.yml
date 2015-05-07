@@ -3,53 +3,6 @@ lv:
     time: 
         formats: 
             votd: "%B %-d, %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                zero: "about %{count} hours ago"
-                one: "about 1 hour ago"
-                other: "about %{count} hours ago"
-            about_x_months: 
-                zero: "about %{count} months ago"
-                one: "about 1 month ago"
-                other: "about %{count} months ago"
-            about_x_years: 
-                zero: "about %{count} years ago"
-                one: "about 1 year ago"
-                other: "about %{count} years ago"
-            almost_x_years: 
-                zero: "almost %{count} years ago"
-                one: "almost 1 year ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
-            less_than_x_minutes: 
-                zero: "less than %{count} minutes ago"
-                one: "less than a minute ago"
-                other: "less than %{count} minutes ago"
-            less_than_x_seconds: 
-                zero: "less than %{count} seconds ago"
-                one: "less than 1 second ago"
-                other: "less than %{count} seconds ago"
-            over_x_years: 
-                zero: "over %{count} years ago"
-                one: "over 1 year ago"
-                other: "over %{count} years ago"
-            x_days: 
-                zero: "%{count} days ago"
-                one: "1 day ago"
-                other: "%{count} days ago"
-            x_minutes: 
-                zero: "%{count} minutes ago"
-                one: "1 minute ago"
-                other: "%{count} minutes ago"
-            x_months: 
-                zero: "%{count} months ago"
-                one: "1 month ago"
-                other: "%{count} months ago"
-            x_seconds: 
-                zero: "%{count} seconds ago"
-                one: "1 second ago"
-                other: "%{count} seconds ago"
     counter: 
         format: "999 999 999"
     social: 
@@ -303,7 +256,7 @@ lv:
         could not load verse: "Nevarēja ielādēt pantu"
         showing related: "Rāda saistītos mirkļus"
         return to: "Atgriezties pie"
-        time past: "%{time} atpakaļ"
+        time past: "%{ago} atpakaļ"
         user likes this: "%{last_liker_link} patīk šis"
         likes count more: "vēl %{likes_count}"
         likes count 2 more: "vēl %{likes_count}"

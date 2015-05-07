@@ -3,86 +3,6 @@ ar:
     time: 
         formats: 
             votd: "%B %-d, %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                zero: "about %{count} hours ago"
-                one: "about 1 hour ago"
-                two: "about %{count} hours ago"
-                few: "about %{count} hours ago"
-                many: "about %{count} hours ago"
-                other: "about %{count} hours ago"
-            about_x_months: 
-                zero: "about %{count} months ago"
-                one: "about 1 month ago"
-                two: "about %{count} months ago"
-                few: "about %{count} months ago"
-                many: "about %{count} months ago"
-                other: "about %{count} months ago"
-            about_x_years: 
-                zero: "about %{count} years ago"
-                one: "about 1 year ago"
-                two: "about %{count} years ago"
-                few: "about %{count} years ago"
-                many: "about %{count} years ago"
-                other: "about %{count} years ago"
-            almost_x_years: 
-                zero: "almost %{count} years ago"
-                one: "almost 1 year ago"
-                two: "almost %{count} years ago"
-                few: "almost %{count} years ago"
-                many: "almost %{count} years ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
-            less_than_x_minutes: 
-                zero: "less than %{count} minutes ago"
-                one: "less than a minute ago"
-                two: "less than %{count} minutes ago"
-                few: "less than %{count} minutes ago"
-                many: "less than %{count} minutes ago"
-                other: "less than %{count} minutes ago"
-            less_than_x_seconds: 
-                zero: "less than %{count} seconds ago"
-                one: "less than 1 second ago"
-                two: "less than %{count} seconds ago"
-                few: "less than %{count} seconds ago"
-                many: "less than %{count} seconds ago"
-                other: "less than %{count} seconds ago"
-            over_x_years: 
-                zero: "over %{count} years ago"
-                one: "over 1 year ago"
-                two: "over %{count} years ago"
-                few: "over %{count} years ago"
-                many: "over %{count} years ago"
-                other: "over %{count} years ago"
-            x_days: 
-                zero: "%{count} days ago"
-                one: "1 day ago"
-                two: "%{count} days ago"
-                few: "%{count} days ago"
-                many: "%{count} days ago"
-                other: "%{count} days ago"
-            x_minutes: 
-                zero: "%{count} minutes ago"
-                one: "1 minute ago"
-                two: "%{count} minutes ago"
-                few: "%{count} minutes ago"
-                many: "%{count} minutes ago"
-                other: "%{count} minutes ago"
-            x_months: 
-                zero: "%{count} months ago"
-                one: "1 month ago"
-                two: "%{count} months ago"
-                few: "%{count} months ago"
-                many: "%{count} months ago"
-                other: "%{count} months ago"
-            x_seconds: 
-                zero: "%{count} seconds ago"
-                one: "1 second ago"
-                two: "%{count} seconds ago"
-                few: "%{count} seconds ago"
-                many: "%{count} seconds ago"
-                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -336,7 +256,7 @@ ar:
         could not load verse: "تعذر تحميل الآية"
         showing related: "عرض اللحظات المرتبطة"
         return to: "العودة الى"
-        time past: "%{time} مضى"
+        time past: "%{ago} مضى"
         user likes this: "%{last_liker_link} اعجب بهذا"
         likes count more: "%{likes_count} اكثر"
         likes count 2 more: "%{likes_count} اكثر"

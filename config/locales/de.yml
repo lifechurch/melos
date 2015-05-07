@@ -3,42 +3,6 @@ de:
     time: 
         formats: 
             votd: "%-d. %B %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                one: "vor ungefähr 1 Stunde"
-                other: "vor ungefähr %{count}Stunden"
-            about_x_months: 
-                one: "vor ungefähr einem Monat"
-                other: "vor ungefähr %{count} Monaten"
-            about_x_years: 
-                one: "vor ungefähr einem Jahr"
-                other: "vor ungefähr %{count} Jahren"
-            almost_x_years: 
-                one: "vor fast einem Jahr"
-                other: "vor fast %{count} Jahren"
-            half_a_minute: "vor einer halben Minute"
-            less_than_x_minutes: 
-                one: "vor weniger als einer Minute"
-                other: "vor weniger als %{count} Minuten"
-            less_than_x_seconds: 
-                one: "vor weniger als einer Sekunde"
-                other: "vor weniger als %{count} Sekunden"
-            over_x_years: 
-                one: "vor über einem Jahr"
-                other: "vor über %{count} Jahren"
-            x_days: 
-                one: "vor einem Tag"
-                other: "vor %{count} Tagen"
-            x_minutes: 
-                one: "vor einer Minute"
-                other: "vor %{count} Minuten"
-            x_months: 
-                one: "vor einem Monat"
-                other: "vor %{count} Monaten"
-            x_seconds: 
-                one: "vor einer Sekunde"
-                other: "vor %{count} Sekunden"
     counter: 
         format: "999.999.999"
     social: 
@@ -292,7 +256,7 @@ de:
         could not load verse: "Vers konnte nicht geladen werden"
         showing related: "Ähnliche Momente anzeigen"
         return to: "Zurück zu"
-        time past: "vor %{time}"
+        time past: "vor %{ago}"
         user likes this: "%{last_liker_link} gefällt das"
         likes count more: "%{likes_count} anderen"
         likes count 2 more: "%{likes_count} anderen"

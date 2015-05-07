@@ -3,53 +3,6 @@ cs:
     time: 
         formats: 
             votd: "%-d. %B %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                one: "about 1 hour ago"
-                few: "about %{count} hours ago"
-                other: "about %{count} hours ago"
-            about_x_months: 
-                one: "about 1 month ago"
-                few: "about %{count} months ago"
-                other: "about %{count} months ago"
-            about_x_years: 
-                one: "about 1 year ago"
-                few: "about %{count} years ago"
-                other: "about %{count} years ago"
-            almost_x_years: 
-                one: "almost 1 year ago"
-                few: "almost %{count} years ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
-            less_than_x_minutes: 
-                one: "less than a minute ago"
-                few: "less than %{count} minutes ago"
-                other: "less than %{count} minutes ago"
-            less_than_x_seconds: 
-                one: "less than 1 second ago"
-                few: "less than %{count} seconds ago"
-                other: "less than %{count} seconds ago"
-            over_x_years: 
-                one: "over 1 year ago"
-                few: "over %{count} years ago"
-                other: "over %{count} years ago"
-            x_days: 
-                one: "1 day ago"
-                few: "%{count} days ago"
-                other: "%{count} days ago"
-            x_minutes: 
-                one: "1 minute ago"
-                few: "%{count} minutes ago"
-                other: "%{count} minutes ago"
-            x_months: 
-                one: "1 month ago"
-                few: "%{count} months ago"
-                other: "%{count} months ago"
-            x_seconds: 
-                one: "1 second ago"
-                few: "%{count} seconds ago"
-                other: "%{count} seconds ago"
     counter: 
         format: "999 999 999"
     social: 
@@ -303,7 +256,7 @@ cs:
         could not load verse: "Nelze načíst verš"
         showing related: "Zobrazuji souvísející události"
         return to: "Návrat"
-        time past: "před %{time}"
+        time past: "před %{ago}"
         user likes this: "Toto se líbí uživateli %{last_liker_link}"
         likes count more: "%{likes_count} dalším"
         likes count 2 more: "%{likes_count} dalším"

@@ -3,31 +3,6 @@ km:
     time: 
         formats: 
             votd: "%B %-d, %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                other: "about %{count} hours ago"
-            about_x_months: 
-                other: "about %{count} months ago"
-            about_x_years: 
-                other: "about %{count} years ago"
-            almost_x_years: 
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
-            less_than_x_minutes: 
-                other: "less than %{count} minutes ago"
-            less_than_x_seconds: 
-                other: "less than %{count} seconds ago"
-            over_x_years: 
-                other: "over %{count} years ago"
-            x_days: 
-                other: "%{count} days ago"
-            x_minutes: 
-                other: "%{count} minutes ago"
-            x_months: 
-                other: "%{count} months ago"
-            x_seconds: 
-                other: "%{count} seconds ago"
     counter: 
         format: "999.999.999"
     social: 
@@ -281,7 +256,7 @@ km:
         could not load verse: "មិន​អាច​ទាញ​យក​ខគម្ពីរ​បាន"
         showing related: "បង្ហាញ​ខណៈពេល​ដែល​ទាក់​ទង"
         return to: "ត្រឡប់​ទៅ"
-        time past: "%{time} កន្លង​ទៅ"
+        time past: "%{ago} កន្លង​ទៅ"
         user likes this: "%{last_liker_link} ចូល​ចិត្តចំណុច​នេះ"
         likes count more: "%{likes_count} ទៀត"
         likes count 2 more: "%{likes_count} ទៀត"
