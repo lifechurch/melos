@@ -291,7 +291,7 @@ en:
     could not load verse:                       "Could not load verse"
     showing related:                            "Showing related moments"
     return to:                                  "Return to"
-    time past:                                  "%{time} ago"
+    time past:                                  "%{ago} ago"
     user likes this:                            "%{last_liker_link} likes this"
     likes count more:                           "%{likes_count} more"
     likes count 2 more:                         "%{likes_count} more"
