@@ -4,35 +4,35 @@
 (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-v1.3.3.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"init data setIdentity logout track link sendSMS referrals credits redeem banner".split(" "),0);
 
 $(function() {
-    branch.init('key_live_jpmoQCKshT4dmEI1OZyuGmlmjffQNTlA', function(err, data) {
-    // callback to handle err or data
+    branch.init("key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta", function(err, data) {
+      // callback to handle err or data
 
-        branch.banner({
-            icon: '<%= asset_path localized_bible_icon(200) %>',
-            title: I18n.t('download ad.banner title'),
-            description: '',
-            openAppButtonText: I18n.t('download ad.banner open'),         // Text to show on button if the user has the app installed
-            downloadAppButtonText: I18n.t('download ad.banner action'), // Text to show on button if the user does not have the app installed
-            iframe: false,                      // Show banner in an iframe, recomended to isolate Branch banner CSS
-            showiOS: true,                     // Should the banner be shown on iOS devices?
-            showAndroid: true,                 // Should the banner be shown on Android devices?
-            showDesktop: false,                 // Should the banner be shown on desktop devices?
-            disableHide: false,                // Should the user have the ability to hide the banner? (show's X on left side)
-            forgetHide: true,                  // Should we remember or forget whether the user hid the banner?
-            make_new_link: true               // Should the banner create a new link, even if a link already exists?
-        }, {
-            stage: 'new user',
-            type: 1,
-            data: {
-                referring_url: window.location.origin,
-                '$desktop_url': 'https://www.bible.com/app',
-                '$ios_url': 'https://itunes.apple.com/us/app/bible/id282935706',
-                '$ipad_url': 'https://itunes.apple.com/us/app/bible/id282935706',
-                '$android_url': 'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android&hl=en',
-                '$og_app_id': '818055158234752',
-                '$og_title': 'YouVersion - The Bible App',
-                '$og_image_url': '<%= url_for(image_path(localized_bible_icon(200))) %>'
-            }
-        });
+      branch.banner({
+          icon: '<%= asset_path localized_bible_icon(200) %>',
+          title: I18n.t('download ad.banner title'),
+          description: '',
+          openAppButtonText: I18n.t('download ad.banner open'),         // Text to show on button if the user has the app installed
+          downloadAppButtonText: I18n.t('download ad.banner action'), // Text to show on button if the user does not have the app installed
+          iframe: false,                      // Show banner in an iframe, recomended to isolate Branch banner CSS
+          showiOS: true,                     // Should the banner be shown on iOS devices?
+          showAndroid: true,                 // Should the banner be shown on Android devices?
+          showDesktop: false,                 // Should the banner be shown on desktop devices?
+          disableHide: false,                // Should the user have the ability to hide the banner? (show's X on left side)
+          forgetHide: true,                  // Should we remember or forget whether the user hid the banner?
+          make_new_link: false               // Should the banner create a new link, even if a link already exists?
+      }, {
+          channel: 'Bible.com',
+          stage: 'new user',
+          type: 1,
+          data: {
+              referring_url: window.location.origin,
+              '$ios_url': 'https://itunes.apple.com/us/app/bible/id282935706',
+              '$ipad_url': 'https://itunes.apple.com/us/app/bible/id282935706',
+              '$android_url': 'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
+          }
+
+      }, function(err, link) {
+          console.log(err, link);
+      });
     });
 });
