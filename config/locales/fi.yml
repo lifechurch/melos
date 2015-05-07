@@ -3,6 +3,42 @@ fi:
     time: 
         formats: 
             votd: "%-d. %B'ta', %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999 999 999"
     social: 
@@ -256,7 +292,7 @@ fi:
         could not load verse: "Ei voitu ladata jaetta"
         showing related: "Aiheeseen liittyvät hetket"
         return to: "Palaa:"
-        time past: "%{ago} sitten"
+        time past: "%{time} sitten"
         user likes this: "%{last_liker_link} tykkää tästä"
         likes count more: "%{likes_count} muuta"
         likes count 2 more: "%{likes_count} muuta"

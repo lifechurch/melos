@@ -3,6 +3,31 @@ ja:
     time: 
         formats: 
             votd: "%Y年%B%-d日"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "about %{count} hours ago"
+            about_x_months: 
+                other: "about %{count} months ago"
+            about_x_years: 
+                other: "about %{count} years ago"
+            almost_x_years: 
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                other: "over %{count} years ago"
+            x_days: 
+                other: "%{count} days ago"
+            x_minutes: 
+                other: "%{count} minutes ago"
+            x_months: 
+                other: "%{count} months ago"
+            x_seconds: 
+                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -256,7 +281,7 @@ ja:
         could not load verse: "聖句の読み込みができませんでした"
         showing related: "関連する機会を表示"
         return to: "戻る"
-        time past: "%{ago} 前"
+        time past: "%{time} 前"
         user likes this: "%{last_liker_link} さんのお気に入りです"
         likes count more: "他に%{likes_count}人"
         likes count 2 more: "他に%{likes_count}人"

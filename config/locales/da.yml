@@ -3,6 +3,42 @@ da:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "for %{count} time siden"
+                other: "for %{count} timer siden"
+            about_x_months: 
+                one: "for %{count} måned siden"
+                other: "for %{count} måneder siden"
+            about_x_years: 
+                one: "for %{count} år siden"
+                other: "for %{count} år siden"
+            almost_x_years: 
+                one: "næsten %{count} år siden"
+                other: "næsten %{count} år siden"
+            half_a_minute: "et halvt minut siden"
+            less_than_x_minutes: 
+                one: "mindre end %{count} minut siden"
+                other: "mindre end %{count} minutter siden"
+            less_than_x_seconds: 
+                one: "mindre end %{count} sekund siden"
+                other: "mindre end %{count} sekunder siden"
+            over_x_years: 
+                one: "over %{count} år siden"
+                other: "over %{count} år siden"
+            x_days: 
+                one: "%{count} dag siden"
+                other: "%{count} dage siden"
+            x_minutes: 
+                one: "%{count} minut siden"
+                other: "%{count} minutter siden"
+            x_months: 
+                one: "%{count} måned siden"
+                other: "%{count} måneder siden"
+            x_seconds: 
+                one: "%{count} sekund siden"
+                other: "%{count} sekunder siden"
     counter: 
         format: "999.999.999"
     social: 
@@ -256,7 +292,7 @@ da:
         could not load verse: "Kan ikke indlæse vers"
         showing related: "Viser relaterede øjeblikke"
         return to: "Gå tilbage til"
-        time past: "%{ago} siden"
+        time past: "%{time} siden"
         user likes this: "%{last_liker_link} synes om dette"
         likes count more: "%{likes_count} mere"
         likes count 2 more: "%{likes_count} mere"

@@ -3,6 +3,31 @@ ko:
     time: 
         formats: 
             votd: "%Y.%B.%-d"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "about %{count} hours ago"
+            about_x_months: 
+                other: "about %{count} months ago"
+            about_x_years: 
+                other: "about %{count} years ago"
+            almost_x_years: 
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                other: "over %{count} years ago"
+            x_days: 
+                other: "%{count} days ago"
+            x_minutes: 
+                other: "%{count} minutes ago"
+            x_months: 
+                other: "%{count} months ago"
+            x_seconds: 
+                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -256,7 +281,7 @@ ko:
         could not load verse: "번역본을 올릴 수가 없습니다"
         showing related: "관련된 모멘트 보기"
         return to: "돌아가기"
-        time past: "%{ago} 전"
+        time past: "%{time} 전"
         user likes this: "%{last_liker_link}님이 좋아합니다."
         likes count more: "외 %{likes_count}명"
         likes count 2 more: "외 %{likes_count}명"

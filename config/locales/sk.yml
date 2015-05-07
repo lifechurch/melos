@@ -3,6 +3,53 @@ sk:
     time: 
         formats: 
             votd: "%-d. %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                few: "about %{count} hours ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                few: "about %{count} months ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                few: "about %{count} years ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                few: "almost %{count} years ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                few: "less than %{count} minutes ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                few: "less than %{count} seconds ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                few: "over %{count} years ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                few: "%{count} days ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                few: "%{count} minutes ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                few: "%{count} months ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                few: "%{count} seconds ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999 999 999"
     social: 
@@ -256,7 +303,7 @@ sk:
         could not load verse: "Nepodarilo sa načítať verš"
         showing related: "Zobrazujú sa súvisiace momenty"
         return to: "Vrátiť sa na"
-        time past: "pred %{ago}"
+        time past: "pred %{time}"
         user likes this: "Používateľovi %{last_liker_link} sa to páči"
         likes count more: "%{likes_count} ďalší"
         likes count 2 more: "%{likes_count} ďalší"
@@ -371,10 +418,10 @@ sk:
             ignore button: "Zamietnuť"
             ignore request button: "Odmietnuť žiadosť"
     images: 
-        none user: "%{username} hasn't created any images yet."
+        none user: "%{username} ešte nevytvoril žiadne obrázky."
         blank slate: 
-            heading: "You don’t have any images yet"
-            description: "Use the YouVersion mobile app to create verse images."
+            heading: "Ešte nemáš žiadne obrázky"
+            description: "Používajte aplikáciu YouVersion a vytvorte obrázky veršov."
     notes: 
         none user: "Používateľ %{username} zatiaľ nemá žiadne poznámky."
         blank slate: 
@@ -508,7 +555,7 @@ sk:
         my friends: "Priatelia"
         my notes: "Poznámky"
         my images: "Obrázky"
-        user images: "%{user}'s Images"
+        user images: "Obrázky užívateľa %{user}"
         user friends: "Priatelia používateľa %{user}"
         my bookmarks: "Moje záložky"
         user bookmarks: "Záložky používateľa %{user}"
@@ -574,7 +621,7 @@ sk:
             description title: "do not translate"
             description text: "do not translate"
             registration title: "do not translate"
-            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li><li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
+            registration text: "Beriete na vedomie a súhlasíte že:<ul><li>poskytnete pravdivé, presné súčastné a úplné informácie o sebe, ako to vyžaduje registračný formulár YouVersion (Registračné Dáta) a</li><li>tieto informácie budete aktualizovať tak, aby boli vždy pravdivé, presné a úplné. Ak bude mať LifeChurch.tv podozrenie o nepravosti, neúplnosti alebo o neaktuálnosti týchto informácí, LifeChurch.tv má právo pozastaviť alebo úplne zrušiť váš YouVersion účet a zamedziť akékoľvek ďalšie použitie YouVersion (alebo akúkoľvek jeho časť). LifeChurch.tv sa zaoberá bezpečnosťou a súkromím všetkých svojich používateľov a hlavne detí. Z toho dôvodu rodičia detí pod 13 rokov, ktorí dovolia svojím deťom prístup k YouVersion, musia brať na vedomie, že YouVersion je nevrhnuté pre širokú verejnosť. Preto, ako zákonný zástupca vášho dieťaťa, je vašou zodpovednosťou rozhodnúť, či je YouVersion vhodné pre vaše dieťa.</li></ul>"
             privacy title: "do not translate"
             privacy text: "do not translate"
             account title: "do not translate"
@@ -612,7 +659,7 @@ sk:
             trademark title: "do not translate"
             trademark text: "do not translate"
             copyright title: "do not translate"
-            copyright text: "LifeChurch.tv respects the intellectual property of others. We ask our users to do the same, particularly where it pertains to using YouVersion. LifeChurch.tv may, in appropriate circumstances and at its sole discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please send the following information to legal@youversion.com:<ul type='none'><li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest in question;</li><br><li>A written description of the copyrighted work or other intellectual property that you claim has been infringed;</li><br><li>A written description of where the material that you claim is infringing is located on YouVersion;</li><br><li>Your address, telephone number, and email address (all that apply);</li><br><li>A written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li><br><li>A written statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner, or that you are authorized to act on the behalf of the copyright or intellectual property owner. LifeChurch.tv's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:%{newline}By mail: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
+            copyright text: "LifeChurch.tv rešpektuje duševné vlastníctvo ostatných. Preto žiadame našich užívateľov, aby robili to isté, najmä vtedy ak sa to týka používania YouVersion. LifeChurch.tv môže za určitých okolností a podľa vlastného uváženia zakázať a/alebo zrušiť účty používateľov, ktorí opakovane porušujú autorské práva. Ak si myslíte, že vaša práca bola skopírovaná spôsobom, ktorý predstavuje porušenie autorských práv, alebo vaše práva duševného vlastníctva boli inak porušené, pošlite prosím nasledujúce informácie na legal@youversion.com:<ul type='none'><li>Elektronický alebo fyzický podpis osoby oprávnenej konať v mene vlastníka autorských práv alebo iného duševného vlastníctva dotknutého záujmu;</li><br><li>Písomný opis autorsky chráneného diela alebo iného duševného vlastníctva, ktoré bolo podľa Vášho názoru porušené;</li><br><li>Písomný opis, kde sa materiál, ktorý podľa vás porušuje vaše autorské práva, nachádza na YouVersion;</li><br><li>Vašu adresu, telefónne číslo a emailovú adresu (aspoň jedno z uvedených);</li><br><li>Písomné vyhlásenie, že máte dôveru, že sporné použitie nie je povolené vlastníkom autorských práv, jeho zástupcom alebo zákonom;</li><br><li>Písomné vyhlásenie o vás, vytvorené pod trestom krivej prísahy, že vyššie uvedené informácie vo vašom oznámení sú presné a že ste vlastníkom autorských práv alebo duševného vlastníctva, alebo že ste oprávnení konať v mene vlastníka autorských práv alebo duševného vlastníctva. Agenta LifeChurch.tv pre oznámenia o porušení autorských práv alebo iného duševného vlastníctva je možné dosiahnuť na:%{newline}Adrese: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline} Telefón: (405) 680-5433 %{newline} Fax: (405) 844-3002 %{newline}Email:%{mailto_link}</li></ul>"
             general title: "do not translate"
             general text: "do not translate"
         profile: 

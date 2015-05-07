@@ -3,6 +3,42 @@ de:
     time: 
         formats: 
             votd: "%-d. %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "vor ungefähr 1 Stunde"
+                other: "vor ungefähr %{count}Stunden"
+            about_x_months: 
+                one: "vor ungefähr einem Monat"
+                other: "vor ungefähr %{count} Monaten"
+            about_x_years: 
+                one: "vor ungefähr einem Jahr"
+                other: "vor ungefähr %{count} Jahren"
+            almost_x_years: 
+                one: "vor fast einem Jahr"
+                other: "vor fast %{count} Jahren"
+            half_a_minute: "vor einer halben Minute"
+            less_than_x_minutes: 
+                one: "vor weniger als einer Minute"
+                other: "vor weniger als %{count} Minuten"
+            less_than_x_seconds: 
+                one: "vor weniger als einer Sekunde"
+                other: "vor weniger als %{count} Sekunden"
+            over_x_years: 
+                one: "vor über einem Jahr"
+                other: "vor über %{count} Jahren"
+            x_days: 
+                one: "vor einem Tag"
+                other: "vor %{count} Tagen"
+            x_minutes: 
+                one: "vor einer Minute"
+                other: "vor %{count} Minuten"
+            x_months: 
+                one: "vor einem Monat"
+                other: "vor %{count} Monaten"
+            x_seconds: 
+                one: "vor einer Sekunde"
+                other: "vor %{count} Sekunden"
     counter: 
         format: "999.999.999"
     social: 
@@ -256,7 +292,7 @@ de:
         could not load verse: "Vers konnte nicht geladen werden"
         showing related: "Ähnliche Momente anzeigen"
         return to: "Zurück zu"
-        time past: "vor %{ago}"
+        time past: "vor %{time}"
         user likes this: "%{last_liker_link} gefällt das"
         likes count more: "%{likes_count} anderen"
         likes count 2 more: "%{likes_count} anderen"
@@ -487,9 +523,9 @@ de:
         edit notifications: "Benachrichtigungen verwalten"
         edit connections: "Verbundene Benutzerkonten"
         edit devices: "Verbundene Geräte"
-        vod_subscriptions: "Vers des Tages Abonnements"
+        vod_subscriptions: "Abonnements für Vers des Tages"
         vod_subscription success: "Du hast dein Abo für den \"Vers des Tages\" erfolgreich aktualisiert!"
-        vod_subscription failure: "Sorry, es gab ein Problem beim Aktualisieren des Vers des Tages Abonnements."
+        vod_subscription failure: "Es tut uns leid, aber es gab ein Problem beim Aktualisieren des Abonnements für den Vers des Tages."
         daily email delivery: "Täglicher E-Mail-Versand"
         time: "Uhrzeit"
         daily push notifications: "Tägliche Push-Nachrichten für mobile Apps"
@@ -497,7 +533,7 @@ de:
         unsubscribe: "Abmelden"
         edit account_existence: "Konto löschen"
         delete account button: "Mein YouVersion Konto löschen"
-        no devices: "Dein YouVersion-Konto ist mit keinem mobilen Gerät verbunden."
+        no devices: "Dein YouVersion-Konto ist noch nicht mit einem mobilen Gerät verbunden."
         no devices download copy: "Die Bibel App basiert auf der Online-Bibel von YouVersion.com und ist eine kostenlose, mobile Bibel, die auf fast allen Smartphones installiert werden kann. Die Bibel App gestattet es ihren Lesern, die Bibel zu lesen, Verse in sozialen Netzwerken zu teilen, Lieblingsschriftstellen mit Lesezeichen zu versehen u.v.m. All das in einem Format, das zu ihrem ständig mobiler werdenden Lebensstil passt. Geh mit deinem Smartphone zu <a href='https://www.bible.com/app'>bible.com/app</a>, um die Bibel App herunterzuladen und melde dich einfach mit deinem Konto an!"
         yes delete: "Ja, mein Konto löschen"
         account delete success: "Dein YouVersion-Konto wurde erfolgreich gelöscht. Wir hoffen, dass du andere Möglichkeiten nutzen wirst, um dich mit der Bibel zu beschäftigen. Die folgenden Apps beispielsweise könnten dazu hilfreich sein: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
@@ -663,8 +699,8 @@ de:
         notifications: 
             badges: "Benachrichtigt mich über Abzeichen, die ich verdient habe."
             follower: "Benachrichtigt mich, wenn mir jemand folgt."
-            newsletter: "Sendet mit Neues über YouVersion."
-            contact_joins: "Informiere mich, wenn ein Kontakt YV beitritt."
+            newsletter: "Sendet mir Neues über YouVersion."
+            contact_joins: "Informiert mich, wenn ein Kontakt YV beitritt."
             note_like: "Benachrichtigt mich, wenn jemandem meine Notizen gefallen."
             reading_plans: "Benachrichtigt mich über meine abonnierten Lesepläne."
             publishing partners: "Sendet mir bitte Nachrichten über den Inhalt von Partnern von YouVersion."

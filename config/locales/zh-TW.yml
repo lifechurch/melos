@@ -3,6 +3,31 @@ zh-TW:
     time: 
         formats: 
             votd: "%Y/%B/%-d"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "大約%{count}小時前"
+            about_x_months: 
+                other: "大約%{count}個月前"
+            about_x_years: 
+                other: "大約%{count}年前"
+            almost_x_years: 
+                other: "將近%{count}年前"
+            half_a_minute: "半分鐘前"
+            less_than_x_minutes: 
+                other: "不到%{count}分鐘前"
+            less_than_x_seconds: 
+                other: "不到%{count}秒前"
+            over_x_years: 
+                other: "超過%{count}年前"
+            x_days: 
+                other: "%{count}天前"
+            x_minutes: 
+                other: "%{count}分鐘前"
+            x_months: 
+                other: "%{count}個月前"
+            x_seconds: 
+                other: "%{count}秒前"
     counter: 
         format: "999,999,999"
     social: 
@@ -256,7 +281,7 @@ zh-TW:
         could not load verse: "無法載入經節"
         showing related: "顯示相關動態"
         return to: "返回"
-        time past: "%{ago} 前"
+        time past: "%{time} 前"
         user likes this: "%{last_liker_link} 點讚這個"
         likes count more: "另外 %{likes_count}"
         likes count 2 more: "另外 %{likes_count}"
