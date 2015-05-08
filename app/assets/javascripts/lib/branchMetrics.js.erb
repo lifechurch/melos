@@ -6,8 +6,8 @@
 $(function() {
   branch.init('<%= Cfg.branch_key %>', function(err, data) {
     // callback to handle err or data
-    console.log(err)
-    console.log(data)
+    // console.log(err)
+    // console.log(data)
   });
 
   branch.banner({
@@ -22,7 +22,7 @@ $(function() {
       showAndroid: true,                 // Should the banner be shown on Android devices?
       showDesktop: false,                 // Should the banner be shown on desktop devices?
       disableHide: false,                // Should the user have the ability to hide the banner? (show's X on left side)
-      forgetHide: true,                  // Should we remember or forget whether the user hid the banner?
+      forgetHide: false,                  // Should we remember or forget whether the user hid the banner?
       make_new_link: false               // Should the banner create a new link, even if a link already exists?
   }, {
       channel: 'Bible.com',
@@ -36,7 +36,7 @@ $(function() {
       }
 
   }, function(err, link) {
-      console.log(err, link);
+      //console.log(err, link);
   });
 
 });
