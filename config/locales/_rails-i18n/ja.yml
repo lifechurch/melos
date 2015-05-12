@@ -1,3 +1,4 @@
+---
 ja:
   date:
     abbr_day_names:
@@ -31,9 +32,9 @@ ja:
     - 金曜日
     - 土曜日
     formats:
-      default: ! '%Y/%m/%d'
-      long: ! '%Y年%m月%d日(%a)'
-      short: ! '%m/%d'
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
     month_names:
     - 
     - 1月
@@ -65,29 +66,29 @@ ja:
         other: 約%{count}年
       almost_x_years:
         one: 1年弱
-        other: ! '%{count}年弱'
+        other: "%{count}年弱"
       half_a_minute: 30秒前後
       less_than_x_minutes:
         one: 1分以内
-        other: ! '%{count}分以内'
+        other: "%{count}分未満"
       less_than_x_seconds:
         one: 1秒以内
-        other: ! '%{count}秒以内'
+        other: "%{count}秒未満"
       over_x_years:
         one: 1年以上
-        other: ! '%{count}年以上'
+        other: "%{count}年以上"
       x_days:
         one: 1日
-        other: ! '%{count}日'
+        other: "%{count}日"
       x_minutes:
         one: 1分
-        other: ! '%{count}分'
+        other: "%{count}分"
       x_months:
         one: 1ヶ月
-        other: ! '%{count}ヶ月'
+        other: "%{count}ヶ月"
       x_seconds:
         one: 1秒
-        other: ! '%{count}秒'
+        other: "%{count}秒"
     prompts:
       day: 日
       hour: 時
@@ -95,12 +96,13 @@ ja:
       month: 月
       second: 秒
       year: 年
-  errors: &errors
-    format: ! '%{attribute}%{message}'
+  errors:
+    format: "%{attribute}%{message}"
     messages:
       accepted: を受諾してください。
       blank: を入力してください。
-      confirmation: と確認の入力が一致しません。
+      present: は入力しないでください。
+      confirmation: と%{attribute}の入力が一致しません。
       empty: を入力してください。
       equal_to: は%{count}にしてください。
       even: は偶数にしてください。
@@ -115,15 +117,17 @@ ja:
       not_an_integer: は整数で入力してください。
       odd: は奇数にしてください。
       record_invalid: バリデーションに失敗しました。 %{errors}
+      restrict_dependent_destroy: "%{record}が存在しているので削除できません。"
       taken: はすでに存在します。
       too_long: は%{count}文字以内で入力してください。
       too_short: は%{count}文字以上で入力してください。
       wrong_length: は%{count}文字で入力してください。
+      other_than: は%{count}以外の値にしてください。
     template:
       body: 次の項目を確認してください。
       header:
-        one: ! '%{model}にエラーが発生しました。'
-        other: ! '%{model}に%{count}つのエラーが発生しました。'
+        one: "%{model}にエラーが発生しました。"
+        other: "%{model}に%{count}個のエラーが発生しました。"
   helpers:
     select:
       prompt: 選択してください。
@@ -134,22 +138,22 @@ ja:
   number:
     currency:
       format:
-        delimiter: ! ','
-        format: ! '%n%u'
+        delimiter: ","
+        format: "%n%u"
         precision: 0
-        separator: .
+        separator: "."
         significant: false
         strip_insignificant_zeros: false
         unit: 円
     format:
-      delimiter: ! ','
+      delimiter: ","
       precision: 3
-      separator: .
+      separator: "."
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: ! '%n %u'
+        format: "%n %u"
         units:
           billion: 十億
           million: 百万
@@ -163,7 +167,7 @@ ja:
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: ! '%n%u'
+        format: "%n%u"
         units:
           byte: バイト
           gb: ギガバイト
@@ -173,6 +177,7 @@ ja:
     percentage:
       format:
         delimiter: ''
+        format: "%n%"
     precision:
       format:
         delimiter: ''
@@ -184,14 +189,7 @@ ja:
   time:
     am: 午前
     formats:
-      default: ! '%Y/%m/%d %H:%M:%S'
-      long: ! '%Y年%m月%d日(%a) %H時%M分%S秒 %z'
-      short: ! '%y/%m/%d %H:%M'
+      default: "%Y/%m/%d %H:%M:%S"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      short: "%y/%m/%d %H:%M"
     pm: 午後
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors
