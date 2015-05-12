@@ -10,6 +10,7 @@ $(function() {
     // console.log(data)
   });
 
+  // TODO architect this so we can make the init call from specific pages passing in icon and deeplink path
   branch.banner({
       // this icon logic needs tweaked, as this code will only be compiled once and will not i18n the icon
       icon: '<%= asset_path localized_bible_icon(200) %>',
@@ -35,6 +36,9 @@ $(function() {
           '$ipad_url': 'https://itunes.apple.com/us/app/bible/id282935706',
           '$android_url': 'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
       }
+      // inside data:
+      // we can also include options like :   "$always_deeplink" : 'true',
+      //                                      "$deeplink_path": "bible?reference=JHN.3&version_id=116",
 
   }, function(err, link) {
       //console.log(err, link);
