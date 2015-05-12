@@ -1,3 +1,4 @@
+---
 fi:
   date:
     abbr_day_names:
@@ -9,7 +10,7 @@ fi:
     - pe
     - la
     abbr_month_names:
-    -
+    - 
     - tammi
     - helmi
     - maalis
@@ -31,11 +32,11 @@ fi:
     - perjantai
     - lauantai
     formats:
-      default: ! '%e. %Bta %Y'
-      long: ! '%A %e. %Bta %Y'
-      short: ! '%e.%m.%Y'
+      default: "%-d.%-m.%Y"
+      long: "%A %e. %Bta %Y"
+      short: "%d. %b"
     month_names:
-    -
+    - 
     - tammikuu
     - helmikuu
     - maaliskuu
@@ -78,25 +79,25 @@ fi:
         other: yli %{count} vuotta
       x_days:
         one: päivä
-        other: ! '%{count} päivää'
+        other: "%{count} päivää"
       x_minutes:
         one: minuutti
-        other: ! '%{count} minuuttia'
+        other: "%{count} minuuttia"
       x_months:
         one: kuukausi
-        other: ! '%{count} kuukautta'
+        other: "%{count} kuukautta"
       x_seconds:
         one: sekunti
-        other: ! '%{count} sekuntia'
+        other: "%{count} sekuntia"
     prompts:
-      day: Päivä
-      hour: Tunti
-      minute: Minuutti
-      month: Kuukausi
-      second: Sekunti
-      year: Vuosi
-  errors: &errors
-    format: ! '%{attribute} %{message}'
+      day: päivä
+      hour: tunti
+      minute: minuutti
+      month: kuukausi
+      second: sekunti
+      year: vuosi
+  errors:
+    format: "%{attribute} %{message}"
     messages:
       accepted: täytyy olla hyväksytty
       blank: ei voi olla sisällötön
@@ -112,18 +113,18 @@ fi:
       less_than: täytyy olla pienempi kuin %{count}
       less_than_or_equal_to: täytyy olla pienempi tai yhtä suuri kuin %{count}
       not_a_number: ei ole luku
-      not_an_integer: on kokonaisluku
+      not_an_integer: ei ole kokonaisluku
       odd: täytyy olla pariton
-      record_invalid: ! 'Validointi epäonnistui: %{errors}'
+      record_invalid: 'Validointi epäonnistui: %{errors}'
       taken: on jo käytössä
       too_long: on liian pitkä (saa olla enintään %{count} merkkiä)
       too_short: on liian lyhyt (oltava vähintään %{count} merkkiä)
       wrong_length: on väärän pituinen (täytyy olla täsmälleen %{count} merkkiä)
     template:
-      body: ! 'Seuraavat kentät aiheuttivat ongelmia:'
+      body: 'Seuraavat kentät aiheuttivat ongelmia:'
       header:
         one: Virhe syötteessä esti mallin %{model} tallentamisen
-        other: ! '%{count} virhettä esti mallin %{model} tallentamisen'
+        other: "%{count} virhettä esti mallin %{model} tallentamisen"
   helpers:
     select:
       prompt: Valitse
@@ -134,28 +135,28 @@ fi:
   number:
     currency:
       format:
-        delimiter: .
-        format: ! '%n %u'
+        delimiter: "."
+        format: "%n %u"
         precision: 2
-        separator: ! ','
+        separator: ","
         significant: false
         strip_insignificant_zeros: false
-        unit: €
+        unit: "€"
     format:
-      delimiter: ! ','
+      delimiter: "."
       precision: 3
-      separator: .
+      separator: ","
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: ! '%n %u'
+        format: "%n %u"
         units:
-          billion: Miljardia
-          million: Euroa
-          quadrillion: Kvadriljoona
-          thousand: Tuhatta
-          trillion: Biljoona
+          thousand: tuhatta
+          million: miljoonaa
+          billion: miljardia
+          trillion: biljoonaa
+          quadrillion: tuhatta biljoonaa
           unit: ''
       format:
         delimiter: ''
@@ -163,7 +164,7 @@ fi:
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: ! '%n %u'
+        format: "%n %u"
         units:
           byte:
             one: tavu
@@ -180,20 +181,13 @@ fi:
         delimiter: ''
   support:
     array:
-      last_word_connector: ! ' ja '
-      two_words_connector: ! ' ja '
-      words_connector: ! ', '
+      last_word_connector: " ja "
+      two_words_connector: " ja "
+      words_connector: ", "
   time:
     am: aamupäivä
     formats:
-      default: ! '%A %e. %Bta %Y %H:%M:%S %z'
-      long: ! '%e. %Bta %Y %H.%M'
-      short: ! '%e.%m. %H.%M'
+      default: "%A %e. %Bta %Y %H:%M:%S %z"
+      long: "%e. %Bta %Y %H.%M"
+      short: "%e.%m. %H.%M"
     pm: iltapäivä
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors

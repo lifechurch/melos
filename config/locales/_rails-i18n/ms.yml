@@ -1,53 +1,54 @@
+---
 ms:
   date:
     abbr_day_names:
-    - Min
-    - Sen
+    - Ahd
+    - Isn
     - Sel
     - Rab
-    - Kam
+    - Kha
     - Jum
     - Sab
     abbr_month_names:
-    -
+    - 
     - Jan
     - Feb
-    - Mar
+    - Mac
     - Apr
     - Mei
     - Jun
     - Jul
-    - Agu
+    - Ogo
     - Sep
     - Okt
     - Nov
-    - Des
+    - Dis
     day_names:
-    - Minggu
-    - Senin
+    - Ahad
+    - Isnin
     - Selasa
     - Rabu
-    - Kamis
-    - Jum'at
+    - Khamis
+    - Jumaat
     - Sabtu
     formats:
-      default: ! '%d %B %Y'
-      long: ! '%A, %d %B %Y'
-      short: ! '%d.%m.%Y'
+      default: "%d-%m-%Y"
+      long: "%d %B, %Y"
+      short: "%d %b"
     month_names:
-    -
+    - 
     - Januari
-    - Februari
-    - Maret
+    - Febuari
+    - Mac
     - April
     - Mei
-    - Juni
-    - Juli
-    - Agustus
+    - Jun
+    - Julai
+    - Ogos
     - September
     - Oktober
     - November
-    - Desember
+    - Disember
     order:
     - :day
     - :month
@@ -55,108 +56,113 @@ ms:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: sekitar satu jam
-        other: sekitar %{count} jam
+        one: lebih kurang 1 jam
+        other: lebih kurang %{count} jam
       about_x_months:
-        one: sekitar sebulan
-        other: sekitar %{count} bulan
+        one: lebih kurang 1 bulan
+        other: lebih kurang %{count} bulan
       about_x_years:
-        one: setahun
-        other: noin %{count} tahun
+        one: lebih kurang 1 tahun
+        other: lebih kurang %{count} tahun
       almost_x_years:
-        one: hampir setahun
+        one: hampir 1 tahun
         other: hampir %{count} tahun
-      half_a_minute: setengah menit
+      half_a_minute: setengah minit
       less_than_x_minutes:
-        one: kurang dari 1 menit
-        other: kurang dari  %{count} menit
-        zero: kurang dari 1 menit
+        one: kurang dari satu minit
+        other: kurang dari %{count} minit
       less_than_x_seconds:
-        one: kurang dari 1 detik
-        other: kurang dari %{count} detik
-        zero: kurang dari 1 detik
+        one: kurang dari satu saat
+        other: kurang dari %{count} saat
       over_x_years:
-        one: lebih dari setahun
-        other: lebih dari %{count} tahun
+        one: lebih 1 tahun
+        other: lebih %{count} tahun
       x_days:
-        one: sehari
-        other: ! '%{count} hari'
+        one: 1 hari
+        other: "%{count} hari"
       x_minutes:
-        one: satu menit
-        other: ! '%{count} menit'
+        one: 1 minit
+        other: "%{count} minit"
       x_months:
-        one: sebulan
-        other: ! '%{count} bulan'
+        one: 1 bulan
+        other: "%{count} bulan"
       x_seconds:
-        one: satu detik
-        other: ! '%{count} detik'
+        one: 1 saat
+        other: "%{count} saat"
     prompts:
       day: Hari
       hour: Jam
-      minute: Menit
+      minute: Minit
       month: Bulan
-      second: Detik
+      second: Saat
       year: Tahun
-  errors: &errors
-    format: ! '%{attribute} %{message}'
+  errors:
+    format: "%{attribute} %{message}"
     messages:
-      accepted: harus diterima
-      blank: tidak bisa kosong
-      confirmation: tidak sesuai dengan konfirmasi
-      empty: tidak bisa kosong
-      equal_to: harus sama dengan %{count}
-      even: harus genap
-      exclusion: sudah digunakan
-      greater_than: harus lebih besar dari %{count}
-      greater_than_or_equal_to: harus sama atau lebih besar dari %{count}
-      inclusion: tidak termasuk
-      invalid: tidak valid
-      less_than: harus lebih kecil dari %{count}
-      less_than_or_equal_to: harus sama atau lebih kecil dari %{count}
-      not_a_number: bukan angka
-      odd: harus ganjil
-      record_invalid: ! 'Verifikasi gagal: %{errors}'
-      taken: sudah digunakan
-      too_long: terlalu panjang (maksimum %{count} karakter)
-      too_short: terlalu pendek (minimum %{count} karakter)
-      wrong_length: jumlah karakter salah (seharusnya %{count} karakter)
+      accepted: wajib diterima
+      blank: tidak boleh dikosongkan
+      confirmation: tidak sama dengan penegasan
+      empty: tidak boleh dikosongkan
+      equal_to: mesti sama dengan %{count}
+      even: mesti genap
+      exclusion: telah terpelihara
+      greater_than: mesti lebih dari %{count}
+      greater_than_or_equal_to: mesti melibihi atau sama dengan %{count}
+      inclusion: tidak termasuk dalam senarai
+      invalid: adalah tidak laku
+      less_than: mesti kurang daripada %{count}
+      less_than_or_equal_to: mesti kurang daripada atat sama dengan %{count}
+      not_a_number: bukan nombor
+      not_an_integer: mestilah integer
+      odd: mesti ganjil
+      record_invalid: 'Pengesahan gagal: %{errors}'
+      taken: telah digunakan
+      too_long:
+        one: terlalu panjang (maksima adalah 1 karakter)
+        other: terlalu panjang (maksima adalah %{count} karakter)
+      too_short:
+        one: terlalu pendek (minima adalah 1 karakter)
+        other: terlalu pendek (minima adalah %{count} karakter)
+      wrong_length:
+        one: mempunyai panjang yang salah (sepatutnya 1 karakter sahaja)
+        other: mempunyai panjang yang salah(sepatutnya %{count} karakter sahaja)
     template:
-      body: ! 'Ada masalah dengan field berikut:'
+      body: 'Terdapat masalah dengan medan data tersebut:'
       header:
-        one: 1 kesalahan mengakibatkan %{model} ini tidak bisa disimpan
-        other: ! '%{count} kesalahan mengakibatkan %{model} ini tidak bisa disimpan'
+        one: 1 ralat menhalang  %{model} ini dari disimpan
+        other: "%{count} ralat menhalang %{model} ini dari disimpan"
   helpers:
     select:
-      prompt: Silahkan pilih
+      prompt: Sila pilih
     submit:
-      create: Buat %{model}
+      create: Cipta %{model}
       submit: Simpan %{model}
-      update: Update %{model}
+      update: Kemaskini %{model}
   number:
     currency:
       format:
-        delimiter: .
-        format: ! '%u%n'
+        delimiter: ","
+        format: "%u%n"
         precision: 2
-        separator: ! ','
+        separator: "."
         significant: false
         strip_insignificant_zeros: false
-        unit: Rp
+        unit: RM
     format:
-      delimiter: .
+      delimiter: ","
       precision: 3
-      separator: ! ','
+      separator: "."
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: ! '%n %u'
+        format: "%n %u"
         units:
-          billion: Miliar
+          billion: Ribu Juta
           million: Juta
-          quadrillion: Quadriliun
+          quadrillion: Juta-juta
           thousand: Ribu
-          trillion: Triliun
+          trillion: Trilion
           unit: ''
       format:
         delimiter: ''
@@ -164,11 +170,11 @@ ms:
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: ! '%n %u'
+        format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Byte
+            one: Bait
+            other: Bait
           gb: GB
           kb: KB
           mb: MB
@@ -181,20 +187,13 @@ ms:
         delimiter: ''
   support:
     array:
-      last_word_connector: ! ' dan '
-      two_words_connector: ! ', '
-      words_connector: ! ', '
+      last_word_connector: ", dan "
+      two_words_connector: " dan "
+      words_connector: ", "
   time:
     am: am
     formats:
-      default: ! '%a, %d %b %Y %H.%M.%S %z'
-      long: ! '%d %B %Y %H.%M'
-      short: ! '%d %b %H.%M'
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%d %B, %Y %H:%M"
+      short: "%d %b %H:%M"
     pm: pm
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors

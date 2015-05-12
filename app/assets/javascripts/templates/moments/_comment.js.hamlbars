@@ -5,7 +5,8 @@
   %p.moment-comments-list-text
     %a{href: "{{user.path}}"} {{user.name}}
     {{content}}
-    %span.moment-comment-dt {{time_ago}}
+    %span.moment-comment-dt{title: "{{created_dt}}"}
+      {{time_ago}}
   {{#if owned_by_me }}
   %a.moment-comment-delete{"data-comment-id" => "{{id}}", href: "#"} x
   {{/if}}
