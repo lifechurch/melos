@@ -1,5 +1,5 @@
 - @title = "#{@plan.title.dup} " if @plan.present? && @plan.title.present?
-- @title << " - #{strip_tags(@plan.about).html_safe}"
+- @title << " - #{strip_tags(@plan.about).html_safe}" if @title.present?
 - @title = truncate(@title, length: 160, separator: " ", omission: '')
 - @subtitle = '' # we don't want subtitle appended to single verse title so the verse gets more text space
 
