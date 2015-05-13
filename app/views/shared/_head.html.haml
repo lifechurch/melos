@@ -1,7 +1,8 @@
 :ruby
   title = ""
-  title << @title << " | " if @title.present?
-  title << (@subtitle || @site.title).to_s
+  title << @title if @title.present?
+  title << " | " if @subtitle.present?
+  title << (@subtitle || " | #{t('meta.mobile.title')}").to_s
 
 %title= title
 %meta{name: 'Description', content: content_for?(:meta_description) ? yield(:meta_description) : t("meta.site.description")}
