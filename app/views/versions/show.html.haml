@@ -1,4 +1,5 @@
-- @title = @version.to_s
+- @title = "#{@version.to_s} - #{t('download ad.title')}: #{t('download ad.description copy', language_count: 700)}"
+- @subtitle = ''
 - unless is_whitelabel_site
   - content_for :additional_meta do
     = render '/shared/hreflang'
@@ -6,7 +7,7 @@
     - canonicalHref = "https://www.bible.com#{locale_dir}/versions/#{@version.to_param}"
     %link{rel: "canonical", href: canonicalHref}
 - content_for :meta_description do
-  = "#{@title}: #{t('download ad.title')}"
+  = "#{@version.to_s} - #{t('download ad.description copy', language_count: 700)} #{t('download ad.download')}"
 
 - content_for :sidebar do
 

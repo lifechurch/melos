@@ -1,6 +1,6 @@
 :ruby
   @sidebar          = false
-  @title            = t("meta.mobile.title")
+  @title            = "#{t('mobile page.t9')} #{t('mobile page.free overlay')} - #{t('mobile page.download now')}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
   @text_versions_list = Version.all.find_all{|v| text_version_list(I18n.locale.to_s).include? v.id}
@@ -96,11 +96,11 @@
           %h3= t('mobile page.t7')
           %p= t('mobile page.t7 copy')
         %div
-          %h3= t('mobile page.t8')
-          %p= t('mobile page.t8 copy')
-        %div
           %h3= t('mobile page.t9')
           %p= t('mobile page.t9 copy')
+        %div
+          %h3= t('mobile page.t8')
+          %p= t('mobile page.t8 copy')
 
     = cache "app_versions_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
       %div.version-list

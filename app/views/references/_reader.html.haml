@@ -27,7 +27,9 @@
   - if verse_view
     - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
     - meta_title = @title
-    - meta_description = truncate(get_verse_content(presenter.content), length: 200, separator: " ")
+    - meta_description = truncate(get_verse_content(presenter.content), length: 170, separator: " ")
+    - @title = truncate("#{reference.human}, #{version} #{meta_description}", length: 200, separator: " ")
+    - @subtitle = ''  # we don't want subtitle appended to single verse title so the verse gets more text space
     %meta{name: "twitter:card",             content: "summary"}
     %meta{name: "twitter:url",              content: meta_url}
     %meta{name: "twitter:title" ,           content: meta_title}
