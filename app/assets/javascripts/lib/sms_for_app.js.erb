@@ -1,0 +1,773 @@
+function loadsms() {
+    for (var i = document.getElementsByClassName("sms_container"), t = 0; t < i.length; t++) {
+        i[t].getElementsByClassName("smsInput")[0].id = "numberToText_sms_" + t, i[t].getElementsByClassName("smsButton")[0].id = "sendButton_sms_" + t;
+        i[t].getElementsByClassName("smsButton")[0].setAttribute("onclick", "sendLink_sms('" + t + "');"), i[t].getElementsByClassName("smsError")[0].id = "smsError_" + t
+    }! function(i) {
+        "function" == typeof define && define.amd ? define(["jquery"], function(t) {
+            i(t, window, document)
+        }) : i(jQuery, window, document)
+    }(function(i, t, n, e) {
+        "use strict";
+
+        function a(t, n) {
+            this.a = t, n && i.extend(n, n, {
+                a: n.autoFormat,
+                h: n.autoHideDialCode,
+                d: n.defaultCountry,
+                i: n.ipinfoToken,
+                n: n.nationalMode,
+                t: n.numberType,
+                o: n.smsCountries,
+                p: n.preferredCountries,
+                v: n.preventInvalidNumbers,
+                u: n.utilsScript
+            }), this.b = i.extend({}, r, n), this.c = r, this.ns = "." + s + o++, this.d = Boolean(t.setSelectionRange), this.e = Boolean(i(t).attr("placeholder")), this.f = s
+        }
+        var s = "intlTelInput",
+            o = 1,
+            r = {
+                allowExtensions: !1,
+                a: !0,
+                autoPlaceholder: !0,
+                h: !0,
+                d: "",
+                i: "",
+                n: !0,
+                t: "MOBILE",
+                o: [],
+                p: ["us", "gb"],
+                u: ""
+            },
+            l = {
+                b: 38,
+                c: 40,
+                d: 13,
+                e: 27,
+                f: 43,
+                A: 65,
+                Z: 90,
+                g: 48,
+                h: 57,
+                i: 32,
+                Bi: 8,
+                k: 46,
+                l: 17,
+                m: 91,
+                n: 224
+            },
+            h = !1;
+        i(t).load(function() {
+            h = !0
+        }), a.prototype = {
+            _init: function() {
+                return this.b.n && (this.b.h = !1), navigator.userAgent.match(/IEMobile/i) && (this.b.a = !1), this.isMobile = /Android.+Mobile|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent), this.autoCountryDeferred = new i.Deferred, this.utilsScriptDeferred = new i.Deferred, this._b(), this._f(), this._h(), this._i(), this._initRequests(), [this.autoCountryDeferred, this.utilsScriptDeferred]
+            },
+            _b: function() {
+                this._d(), this._e()
+            },
+            _c: function(i, t, n) {
+                t in this.m || (this.m[t] = []);
+                var e = n || 0;
+                this.m[t][e] = i
+            },
+            _d: function() {
+                var t;
+                if (this.b.o.length) {
+                    for (t = 0; t < this.b.o.length; t++) this.b.o[t] = this.b.o[t].toLowerCase();
+                    for (this.l = [], t = 0; t < u.length; t++) - 1 != i.inArray(u[t].iso2, this.b.o) && this.l.push(u[t])
+                } else this.l = u;
+                for (this.m = {}, t = 0; t < this.l.length; t++) {
+                    var n = this.l[t];
+                    if (this._c(n.iso2, n.dialCode, n.priority), n.areaCodes)
+                        for (var e = 0; e < n.areaCodes.length; e++) this._c(n.iso2, n.dialCode + n.areaCodes[e])
+                }
+            },
+            _e: function() {
+                this.n = [];
+                for (var i = 0; i < this.b.p.length; i++) {
+                    var t = this.b.p[i].toLowerCase(),
+                        n = this._y(t, !1, !0);
+                    n && this.n.push(n)
+                }
+            },
+            _f: function() {
+                this.g = i(this.a), this.g.attr("autocomplete", "off"), this.g.wrap(i("<div>", {
+                    "class": "intl-tel-input"
+                }));
+                var t = i("<div>", {
+                        "class": "flag-dropdown"
+                    }).insertAfter(this.g),
+                    n = i("<div>", {
+                        "class": "selected-flag"
+                    }).appendTo(t);
+                this.h = i("<div>", {
+                    "class": "flag-i"
+                }).appendTo(n), i("<div>", {
+                    "class": "arrow"
+                }).appendTo(n), this.isMobile ? this.i = i("<select>").appendTo(t) : (this.i = i("<ul>", {
+                    "class": "country-list v-hide", id: "country-list"
+                }).appendTo(t), this.n.length && !this.isMobile && (this._g(this.n, "preferred"), i("<li>", {
+                    "class": "divider"
+                }).appendTo(this.i))), this._g(this.l, ""), this.isMobile || (this.j = this.i.outerHeight(), this.i.removeClass("v-hide").addClass("hide"), this.k = this.i.children(".country"))
+            },
+            _g: function(i, t) {
+                for (var n = "", e = 0; e < i.length; e++) {
+                    var a = i[e];
+                    this.isMobile ? (n += "<option data-dial-code='" + a.dialCode + "' value='" + a.iso2 + "'>", n += a.name + " +" + a.dialCode, n += "</option>") : (n += "<li class='country " + t + "' data-dial-code='" + a.dialCode + "' data-country-code='" + a.iso2 + "'>", n += "<div class='flag'><div class='flag-i " + a.iso2 + "'></div></div>", n += "<span class='country-name'>" + a.name + "</span>", n += "<span class='dial-code'>+" + a.dialCode + "</span>", n += "</li>")
+                }
+                this.i.append(n)
+            },
+            _h: function() {
+                var i = this.g.val();
+                this._af(i) ? this._v(i, !0) : "auto" != this.b.d && (this.b.d = this.b.d ? this._y(this.b.d.toLowerCase(), !1, !1) : this.n.length ? this.n[0] : this.l[0], this._z(this.b.d.iso2), i || this._ae(this.b.d.dialCode, !1)), i && this._u(i)
+            },
+            _i: function() {
+                var t = this;
+                if (this._j(), (this.b.h || this.b.a) && this._l(), this.isMobile) this.i.on("change" + this.ns, function() {
+                    t._ab(i(this).find("option:selected"))
+                });
+                else {
+                    var n = this.g.closest("label");
+                    n.length && n.on("click" + this.ns, function(i) {
+                        t.i.hasClass("hide") ? t.g.focus() : i.preventDefault()
+                    });
+                    var e = this.h.parent();
+                    e.on("click" + this.ns, function() {
+                        !t.i.hasClass("hide") || t.g.prop("disabled") || t.g.prop("readonly") || t._n()
+                    })
+                }
+            },
+            _initRequests: function() {
+                var n = this;
+                this.b.u ? h ? this.loadUtils() : i(t).load(function() {
+                    n.loadUtils()
+                }) : this.utilsScriptDeferred.resolve(), "auto" == this.b.d ? this._loadAutoCountry() : this.autoCountryDeferred.resolve()
+            },
+            _loadAutoCountry: function() {
+                var t = i.cookie ? i.cookie("itiAutoCountry") : "";
+                if (t && (i.fn[s].autoCountry = t), i.fn[s].autoCountry) this.autoCountryLoaded();
+                else if (!i.fn[s].startedLoadingAutoCountry) {
+                    i.fn[s].startedLoadingAutoCountry = !0;
+                    var n = "//ipinfo.io";
+                    this.b.i && (n += "?token=" + this.b.i), i.get(n, function() {}, "jsonp").always(function(t) {
+                        i.fn[s].autoCountry = t && t.country ? t.country.toLowerCase() : "", i.cookie && i.cookie("itiAutoCountry", i.fn[s].autoCountry, {
+                            path: "/"
+                        }), i(".intl-tel-input input").intlTelInput("autoCountryLoaded")
+                    })
+                }
+            },
+            _j: function() {
+                var i = this;
+                this.b.a && this.g.on("keypress" + this.ns, function(n) {
+                    if (n.which >= l.i && !n.ctrlKey && !n.metaKey && t.intlTelInputUtils && !i.g.prop("readonly")) {
+                        n.preventDefault();
+                        var e = n.which >= l.g && n.which <= l.h || n.which == l.f,
+                            a = i.g[0],
+                            s = i.d && a.selectionStart == a.selectionEnd,
+                            o = i.g.attr("maxlength"),
+                            r = i.g.val(),
+                            h = o ? r.length < o : !0;
+                        if (h && (e || s)) {
+                            var u = e ? String.fromCharCode(n.which) : null;
+                            i._k(u, !0, e), r != i.g.val() && i.g.trigger("input")
+                        }
+                        e || i._handleInvalidKey()
+                    }
+                }), this.g.on("cut" + this.ns + " paste" + this.ns, function() {
+                    setTimeout(function() {
+                        if (i.b.a && t.intlTelInputUtils) {
+                            var n = i.d && i.g[0].selectionStart == i.g.val().length;
+                            i._k(null, n), i._ensurePlus()
+                        } else i._v(i.g.val())
+                    })
+                }), this.g.on("keyup" + this.ns, function(n) {
+                    if (n.which == l.d || i.g.prop("readonly"));
+                    else if (i.b.a && t.intlTelInputUtils) {
+                        var e = i.d && i.g[0].selectionStart == i.g.val().length;
+                        i.g.val() ? (n.which == l.k && !e || n.which == l.Bi) && i._k() : i._v(""), i._ensurePlus()
+                    } else i._v(i.g.val())
+                })
+            },
+            _ensurePlus: function() {
+                if (!this.b.n) {
+                    var i = this.g.val(),
+                        t = this.g[0];
+                    if ("+" != i.charAt(0)) {
+                        var n = this.d ? t.selectionStart + 1 : 0;
+                        this.g.val("+" + i), this.d && t.setSelectionRange(n, n)
+                    }
+                }
+            },
+            _handleInvalidKey: function() {
+                var i = this;
+                this.g.trigger("invalidkey").addClass("iti-invalid-key"), setTimeout(function() {
+                    i.g.removeClass("iti-invalid-key")
+                }, 100)
+            },
+            _k: function(i, t, n) {
+                var e, a = this.g.val(),
+                    s = (this._getClean(a), this.g[0]),
+                    o = 0;
+                if (this.d ? (o = this._getDigitsOnRight(a, s.selectionEnd), i ? a = a.substr(0, s.selectionStart) + i + a.substring(s.selectionEnd, a.length) : e = a.substr(s.selectionStart - 2, 2)) : i && (a += i), this.setNumber(a, null, t, !0, n), this.d) {
+                    var r;
+                    a = this.g.val(), o ? (r = this._getCursorFromDigitsOnRight(a, o), i || (r = this._getCursorFromLeftChar(a, r, e))) : r = a.length, s.setSelectionRange(r, r)
+                }
+            },
+            _getCursorFromLeftChar: function(t, n, e) {
+                for (var a = n; a > 0; a--) {
+                    var s = t.charAt(a - 1);
+                    if (i.isNumeric(s) || t.substr(a - 2, 2) == e) return a
+                }
+                return 0
+            },
+            _getCursorFromDigitsOnRight: function(t, n) {
+                for (var e = t.length - 1; e >= 0; e--)
+                    if (i.isNumeric(t.charAt(e)) && 0 === --n) return e;
+                return 0
+            },
+            _getDigitsOnRight: function(t, n) {
+                for (var e = 0, a = n; a < t.length; a++) i.isNumeric(t.charAt(a)) && e++;
+                return e
+            },
+            _l: function() {
+                var i = this;
+                this.b.h && this.g.on("mousedown" + this.ns, function(t) {
+                    i.g.is(":focus") || i.g.val() || (t.preventDefault(), i.g.focus())
+                }), this.g.on("focus" + this.ns, function() {
+                    var n = i.g.val();
+                    i.g.data("focusVal", n), i.b.h && !n && !i.g.prop("readonly") && i.o.dialCode && (i._u("+" + i.o.dialCode, null, !0), i.g.one("keypress.plus" + i.ns, function(n) {
+                        if (n.which == l.f) {
+                            var e = i.b.a && t.intlTelInputUtils ? "+" : "";
+                            i.g.val(e)
+                        }
+                    }), setTimeout(function() {
+                        var t = i.g[0];
+                        if (i.d) {
+                            var n = i.g.val().length;
+                            t.setSelectionRange(n, n)
+                        }
+                    }))
+                }), this.g.on("blur" + this.ns, function() {
+                    if (i.b.h) {
+                        var n = i.g.val(),
+                            e = "+" == n.charAt(0);
+                        if (e) {
+                            var a = i._m(n);
+                            a && i.o.dialCode != a || i.g.val("")
+                        }
+                        i.g.off("keypress.plus" + i.ns)
+                    }
+                    i.b.a && t.intlTelInputUtils && i.g.val() != i.g.data("focusVal") && i.g.trigger("change")
+                })
+            },
+            _m: function(i) {
+                return i.replace(/\D/g, "")
+            },
+            _getClean: function(i) {
+                var t = "+" == i.charAt(0) ? "+" : "";
+                return t + this._m(i)
+            },
+            _n: function() {
+                this._o();
+                var i = this.i.children(".active");
+                i.length && this._x(i), this.i.removeClass("hide"), i.length && this._ad(i), this._p(), this.h.children(".arrow").addClass("up")
+            },
+            _o: function() {
+                var n = this.g.offset().top,
+                    e = i(t).scrollTop(),
+                    a = n + this.g.outerHeight() + this.j < e + i(t).height(),
+                    s = n - this.j > e,
+                    o = !a && s ? "-" + (this.j - 1) + "px" : "";
+                this.i.css("top", o)
+            },
+            _p: function() {
+                var t = this;
+                this.i.on("mouseover" + this.ns, ".country", function() {
+                    t._x(i(this))
+                }), this.i.on("click" + this.ns, ".country", function() {
+                    t._ab(i(this))
+                });
+                var e = !0;
+                i("html").on("click" + this.ns, function() {
+                    e || t._ac(), e = !1
+                });
+                var a = "",
+                    s = null;
+                i(n).on("keydown" + this.ns, function(i) {
+                    i.preventDefault(), i.which == l.b || i.which == l.c ? t._q(i.which) : i.which == l.d ? t._r() : i.which == l.e ? t._ac() : (i.which >= l.A && i.which <= l.Z || i.which == l.i) && (s && clearTimeout(s), a += String.fromCharCode(i.which), t._s(a), s = setTimeout(function() {
+                        a = ""
+                    }, 1e3))
+                })
+            },
+            _q: function(i) {
+                var t = this.i.children(".highlight").first(),
+                    n = i == l.b ? t.prev() : t.next();
+                n.length && (n.hasClass("divider") && (n = i == l.b ? n.prev() : n.next()), this._x(n), this._ad(n))
+            },
+            _r: function() {
+                var i = this.i.children(".highlight").first();
+                i.length && this._ab(i)
+            },
+            _s: function(i) {
+                for (var t = 0; t < this.l.length; t++)
+                    if (this._t(this.l[t].name, i)) {
+                        var n = this.i.children("[data-country-code=" + this.l[t].iso2 + "]").not(".preferred");
+                        this._x(n), this._ad(n, !0);
+                        break
+                    }
+            },
+            _t: function(i, t) {
+                return i.substr(0, t.length).toUpperCase() == t
+            },
+            _u: function(i, n, e, a, s) {
+                var o;
+                if (this.b.a && t.intlTelInputUtils && this.o) {
+                    o = "number" == typeof n && intlTelInputUtils.isValidNumber(i, this.o.iso2) ? intlTelInputUtils.formatNumberByType(i, this.o.iso2, n) : !a && this.b.n && "+" == i.charAt(0) && intlTelInputUtils.isValidNumber(i, this.o.iso2) ? intlTelInputUtils.formatNumberByType(i, this.o.iso2, intlTelInputUtils.numberFormat.NATIONAL) : intlTelInputUtils.formatNumber(i, this.o.iso2, e, this.b.allowExtensions, s);
+                    var r = this.g.attr("maxlength");
+                    r && o.length > r && (o = o.substr(0, r))
+                } else o = i;
+                this.g.val(o)
+            },
+            _v: function(t, n) {
+                t && this.b.n && this.o && "1" == this.o.dialCode && "+" != t.charAt(0) && ("1" != t.charAt(0) && (t = "1" + t), t = "+" + t);
+                var e = this._af(t),
+                    a = null;
+                if (e) {
+                    var s = this.m[this._m(e)],
+                        o = this.o && -1 != i.inArray(this.o.iso2, s);
+                    if (!o || this._w(t, e))
+                        for (var r = 0; r < s.length; r++)
+                            if (s[r]) {
+                                a = s[r];
+                                break
+                            }
+                } else "+" == t.charAt(0) && this._m(t).length ? a = "" : t && "+" != t || (a = this.b.d.iso2);
+                null !== a && this._z(a, n)
+            },
+            _w: function(i, t) {
+                return "+1" == t && this._m(i).length >= 4
+            },
+            _x: function(i) {
+                this.k.removeClass("highlight"), i.addClass("highlight")
+            },
+            _y: function(i, t, n) {
+                for (var e = t ? u : this.l, a = 0; a < e.length; a++)
+                    if (e[a].iso2 == i) return e[a];
+                if (n) return null;
+                throw new Error("No country data for '" + i + "'")
+            },
+            _z: function(i, t) {
+                this.o = i ? this._y(i, !1, !1) : {}, t && this.o.iso2 && (this.b.d = {
+                    iso2: this.o.iso2
+                }), this.h.attr("class", "flag-i " + i);
+                var n = i ? this.o.name + ": +" + this.o.dialCode : "Unknown";
+                this.h.parent().attr("title", n), this._aa(), this.isMobile ? this.i.val(i) : (this.k.removeClass("active"), i && this.k.find(".flag-i." + i).first().closest(".country").addClass("active"))
+            },
+            _aa: function() {
+                if (t.intlTelInputUtils && !this.e && this.b.autoPlaceholder && this.o) {
+                    var i = this.o.iso2,
+                        n = intlTelInputUtils.numberType[this.b.t || "FIXED_LINE"],
+                        e = i ? intlTelInputUtils.getExampleNumber(i, this.b.n, n) : "";
+                    this.g.attr("placeholder", e)
+                }
+            },
+            _ab: function(i) {
+                var t = this.isMobile ? "value" : "data-country-code";
+                if (this._z(i.attr(t), !0), this.isMobile || this._ac(), this._ae(i.attr("data-dial-code"), !0), this.g.trigger("change"), this.g.focus(), this.d) {
+                    var n = this.g.val().length;
+                    this.g[0].setSelectionRange(n, n)
+                }
+            },
+            _ac: function() {
+                this.i.addClass("hide"), this.h.children(".arrow").removeClass("up"), i(n).off(this.ns), i("html").off(this.ns), this.i.off(this.ns)
+            },
+            _ad: function(i, t) {
+                var n = this.i,
+                    e = n.height(),
+                    a = n.offset().top,
+                    s = a + e,
+                    o = i.outerHeight(),
+                    r = i.offset().top,
+                    l = r + o,
+                    h = r - a + n.scrollTop(),
+                    u = e / 2 - o / 2;
+                if (a > r) t && (h -= u), n.scrollTop(h);
+                else if (l > s) {
+                    t && (h += u);
+                    var d = e - o;
+                    n.scrollTop(h - d)
+                }
+            },
+            _ae: function(t, n) {
+                var e, a = this.g.val();
+                if (t = "+" + t, this.b.n && "+" != a.charAt(0)) e = a;
+                else if (a) {
+                    var s = this._af(a);
+                    if (s.length > 1) e = a.replace(s, t);
+                    else {
+                        var o = "+" != a.charAt(0) ? i.trim(a) : "";
+                        e = t + o
+                    }
+                } else e = !this.b.h || n ? t : "";
+                this._u(e, null, n)
+            },
+            _af: function(t) {
+                var n = "";
+                if ("+" == t.charAt(0))
+                    for (var e = "", a = 0; a < t.length; a++) {
+                        var s = t.charAt(a);
+                        if (i.isNumeric(s) && (e += s, this.m[e] && (n = t.substr(0, a + 1)), 4 == e.length)) break
+                    }
+                return n
+            },
+            autoCountryLoaded: function() {
+                "auto" == this.b.d && (this.b.d = i.fn[s].autoCountry, this._h(), this.autoCountryDeferred.resolve())
+            },
+            destroy: function() {
+                this.isMobile || this._ac(), this.g.off(this.ns), this.isMobile ? this.i.off(this.ns) : (this.h.parent().off(this.ns), this.g.closest("label").off(this.ns));
+                var i = this.g.parent();
+                i.before(this.g).remove()
+            },
+            getExtension: function() {
+                return this.g.val().split(" ext. ")[1] || ""
+            },
+            getNumber: function(i) {
+                return t.intlTelInputUtils ? intlTelInputUtils.formatNumberByType(this.g.val(), this.o.iso2, i) : ""
+            },
+            getNumberType: function() {
+                return t.intlTelInputUtils ? intlTelInputUtils.getNumberType(this.g.val(), this.o.iso2) : -99
+            },
+            getSelectedCountryData: function() {
+                return this.o || {}
+            },
+            getValidationError: function() {
+                return t.intlTelInputUtils ? intlTelInputUtils.getValidationError(this.g.val(), this.o.iso2) : -99
+            },
+            isValidNumber: function() {
+                var n = i.trim(this.g.val()),
+                    e = this.b.n ? this.o.iso2 : "";
+                return t.intlTelInputUtils ? intlTelInputUtils.isValidNumber(n, e) : !1
+            },
+            loadUtils: function(t) {
+                var n = this,
+                    e = t || this.b.u;
+                !i.fn[s].loadedUtilsScript && e ? (i.fn[s].loadedUtilsScript = !0, i.ajax({
+                    url: e,
+                    success: function() {
+                        i(".intl-tel-input input").intlTelInput("utilsLoaded")
+                    },
+                    complete: function() {
+                        n.utilsScriptDeferred.resolve()
+                    },
+                    dataType: "script",
+                    cache: !0
+                })) : this.utilsScriptDeferred.resolve()
+            },
+            selectCountry: function(i) {
+                i = i.toLowerCase(), this.h.hasClass(i) || (this._z(i, !0), this._ae(this.o.dialCode, !1))
+            },
+            setNumber: function(i, t, n, e, a) {
+                this.b.n || "+" == i.charAt(0) || (i = "+" + i), this._v(i), this._u(i, t, n, e, a)
+            },
+            utilsLoaded: function() {
+                this.b.a && this.g.val() && this._u(this.g.val()), this._aa()
+            }
+        }, i.fn[s] = function(t) {
+            var n = arguments;
+            if (t === e || "object" == typeof t) {
+                var o = [];
+                return this.each(function() {
+                    if (!i.data(this, "plugin_" + s)) {
+                        var n = new a(this, t),
+                            e = n._init();
+                        o.push(e[0]), o.push(e[1]), i.data(this, "plugin_" + s, n)
+                    }
+                }), i.when.apply(null, o)
+            }
+            if ("string" == typeof t && "_" !== t[0]) {
+                var r;
+                return this.each(function() {
+                    var e = i.data(this, "plugin_" + s);
+                    e instanceof a && "function" == typeof e[t] && (r = e[t].apply(e, Array.prototype.slice.call(n, 1))), "destroy" === t && i.data(this, "plugin_" + s, null)
+                }), r !== e ? r : this
+            }
+        }, i.fn[s].getCountryData = function() {
+            return u
+        };
+        for (var u = [
+            ["Afghanistan (‫افغانستان‬‎)", "af", "93"],
+            ["Albania (Shqipëri)", "al", "355"],
+            ["Algeria (‫الجزائر‬‎)", "dz", "213"],
+            ["American Samoa", "as", "1684"],
+            ["Andorra", "ad", "376"],
+            ["Angola", "ao", "244"],
+            ["Anguilla", "ai", "1264"],
+            ["Antigua and Barbuda", "ag", "1268"],
+            ["Argentina", "ar", "54"],
+            ["Armenia (Հայաստան)", "am", "374"],
+            ["Aruba", "aw", "297"],
+            ["Australia", "au", "61"],
+            ["Austria (Österreich)", "at", "43"],
+            ["Azerbaijan (Azərbaycan)", "az", "994"],
+            ["Bahamas", "bs", "1242"],
+            ["Bahrain (‫البحرين‬‎)", "bh", "973"],
+            ["Bangladesh (বাংলাদেশ)", "bd", "880"],
+            ["Barbados", "bb", "1246"],
+            ["Belarus (Беларусь)", "by", "375"],
+            ["Belgium (België)", "be", "32"],
+            ["Belize", "bz", "501"],
+            ["Benin (Bénin)", "bj", "229"],
+            ["Bermuda", "bm", "1441"],
+            ["Bhutan (འབྲུག)", "bt", "975"],
+            ["Bolivia", "bo", "591"],
+            ["Bosnia and Herzegovina (Босна и Херцеговина)", "ba", "387"],
+            ["Botswana", "bw", "267"],
+            ["Brazil (Brasil)", "br", "55"],
+            ["British Indian Ocean Territory", "io", "246"],
+            ["British Virgin Islands", "vg", "1284"],
+            ["Brunei", "bn", "673"],
+            ["Bulgaria (България)", "bg", "359"],
+            ["Burkina Faso", "bf", "226"],
+            ["Burundi (Uburundi)", "bi", "257"],
+            ["Cambodia (កម្ពុជា)", "kh", "855"],
+            ["Cameroon (Cameroun)", "cm", "237"],
+            ["Canada", "ca", "1", 1, ["204", "226", "236", "249", "250", "289", "306", "343", "365", "387", "403", "416", "418", "431", "437", "438", "450", "506", "514", "519", "548", "579", "581", "587", "604", "613", "639", "647", "672", "705", "709", "742", "778", "780", "782", "807", "819", "825", "867", "873", "902", "905"]],
+            ["Cape Verde (Kabu Verdi)", "cv", "238"],
+            ["Caribbean Netherlands", "bq", "599", 1],
+            ["Cayman Islands", "ky", "1345"],
+            ["Central African Republic (République centrafricaine)", "cf", "236"],
+            ["Chad (Tchad)", "td", "235"],
+            ["Chile", "cl", "56"],
+            ["China (中国)", "cn", "86"],
+            ["Colombia", "co", "57"],
+            ["Comoros (‫جزر القمر‬‎)", "km", "269"],
+            ["Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)", "cd", "243"],
+            ["Congo (Republic) (Congo-Brazzaville)", "cg", "242"],
+            ["Cook Islands", "ck", "682"],
+            ["Costa Rica", "cr", "506"],
+            ["Côte d’Ivoire", "ci", "225"],
+            ["Croatia (Hrvatska)", "hr", "385"],
+            ["Cuba", "cu", "53"],
+            ["Curaçao", "cw", "599", 0],
+            ["Cyprus (Κύπρος)", "cy", "357"],
+            ["Czech Republic (Česká republika)", "cz", "420"],
+            ["Denmark (Danmark)", "dk", "45"],
+            ["Djibouti", "dj", "253"],
+            ["Dominica", "dm", "1767"],
+            ["Dominican Republic (República Dominicana)", "do", "1", 2, ["809", "829", "849"]],
+            ["Ecuador", "ec", "593"],
+            ["Egypt (‫مصر‬‎)", "eg", "20"],
+            ["El Salvador", "sv", "503"],
+            ["Equatorial Guinea (Guinea Ecuatorial)", "gq", "240"],
+            ["Eritrea", "er", "291"],
+            ["Estonia (Eesti)", "ee", "372"],
+            ["Ethiopia", "et", "251"],
+            ["Falkland Islands (Islas Malvinas)", "fk", "500"],
+            ["Faroe Islands (Føroyar)", "fo", "298"],
+            ["Fiji", "fj", "679"],
+            ["Finland (Suomi)", "fi", "358"],
+            ["France", "fr", "33"],
+            ["French Guiana (Guyane française)", "gf", "594"],
+            ["French Polynesia (Polynésie française)", "pf", "689"],
+            ["Gabon", "ga", "241"],
+            ["Gambia", "gm", "220"],
+            ["Georgia (საქართველო)", "ge", "995"],
+            ["Germany (Deutschland)", "de", "49"],
+            ["Ghana (Gaana)", "gh", "233"],
+            ["Gibraltar", "gi", "350"],
+            ["Greece (Ελλάδα)", "gr", "30"],
+            ["Greenland (Kalaallit Nunaat)", "gl", "299"],
+            ["Grenada", "gd", "1473"],
+            ["Guadeloupe", "gp", "590", 0],
+            ["Guam", "gu", "1671"],
+            ["Guatemala", "gt", "502"],
+            ["Guinea (Guinée)", "gn", "224"],
+            ["Guinea-Bissau (Guiné Bissau)", "gw", "245"],
+            ["Guyana", "gy", "592"],
+            ["Haiti", "ht", "509"],
+            ["Honduras", "hn", "504"],
+            ["Hong Kong (香港)", "hk", "852"],
+            ["Hungary (Magyarország)", "hu", "36"],
+            ["Iceland (Ísland)", "is", "354"],
+            ["India (भारत)", "in", "91"],
+            ["Indonesia", "id", "62"],
+            ["Iran (‫ایران‬‎)", "ir", "98"],
+            ["Iraq (‫العراق‬‎)", "iq", "964"],
+            ["Ireland", "ie", "353"],
+            ["Israel (‫ישראל‬‎)", "il", "972"],
+            ["Italy (Italia)", "it", "39", 0],
+            ["Jamaica", "jm", "1876"],
+            ["Japan (日本)", "jp", "81"],
+            ["Jordan (‫الأردن‬‎)", "jo", "962"],
+            ["Kazakhstan (Казахстан)", "kz", "7", 1],
+            ["Kenya", "ke", "254"],
+            ["Kiribati", "ki", "686"],
+            ["Kuwait (‫الكويت‬‎)", "kw", "965"],
+            ["Kyrgyzstan (Кыргызстан)", "kg", "996"],
+            ["Laos (ລາວ)", "la", "856"],
+            ["Latvia (Latvija)", "lv", "371"],
+            ["Lebanon (‫لبنان‬‎)", "lb", "961"],
+            ["Lesotho", "ls", "266"],
+            ["Liberia", "lr", "231"],
+            ["Libya (‫ليبيا‬‎)", "ly", "218"],
+            ["Liechtenstein", "li", "423"],
+            ["Lithuania (Lietuva)", "lt", "370"],
+            ["Luxembourg", "lu", "352"],
+            ["Macau (澳門)", "mo", "853"],
+            ["Macedonia (FYROM) (Македонија)", "mk", "389"],
+            ["Madagascar (Madagasikara)", "mg", "261"],
+            ["Malawi", "mw", "265"],
+            ["Malaysia", "my", "60"],
+            ["Maldives", "mv", "960"],
+            ["Mali", "ml", "223"],
+            ["Malta", "mt", "356"],
+            ["Marshall Islands", "mh", "692"],
+            ["Martinique", "mq", "596"],
+            ["Mauritania (‫موريتانيا‬‎)", "mr", "222"],
+            ["Mauritius (Moris)", "mu", "230"],
+            ["Mexico (México)", "mx", "52"],
+            ["Micronesia", "fm", "691"],
+            ["Moldova (Republica Moldova)", "md", "373"],
+            ["Monaco", "mc", "377"],
+            ["Mongolia (Монгол)", "mn", "976"],
+            ["Montenegro (Crna Gora)", "me", "382"],
+            ["Montserrat", "ms", "1664"],
+            ["Morocco (‫المغرب‬‎)", "ma", "212"],
+            ["Mozambique (Moçambique)", "mz", "258"],
+            ["Myanmar (Burma) (မြန်မာ)", "mm", "95"],
+            ["Namibia (Namibië)", "na", "264"],
+            ["Nauru", "nr", "674"],
+            ["Nepal (नेपाल)", "np", "977"],
+            ["Netherlands (Nederland)", "nl", "31"],
+            ["New Caledonia (Nouvelle-Calédonie)", "nc", "687"],
+            ["New Zealand", "nz", "64"],
+            ["Nicaragua", "ni", "505"],
+            ["Niger (Nijar)", "ne", "227"],
+            ["Nigeria", "ng", "234"],
+            ["Niue", "nu", "683"],
+            ["Norfolk Island", "nf", "672"],
+            ["North Korea (조선 민주주의 인민 공화국)", "kp", "850"],
+            ["Northern Mariana Islands", "mp", "1670"],
+            ["Norway (Norge)", "no", "47"],
+            ["Oman (‫عُمان‬‎)", "om", "968"],
+            ["Pakistan (‫پاکستان‬‎)", "pk", "92"],
+            ["Palau", "pw", "680"],
+            ["Palestine (‫فلسطين‬‎)", "ps", "970"],
+            ["Panama (Panamá)", "pa", "507"],
+            ["Papua New Guinea", "pg", "675"],
+            ["Paraguay", "py", "595"],
+            ["Peru (Perú)", "pe", "51"],
+            ["Philippines", "ph", "63"],
+            ["Poland (Polska)", "pl", "48"],
+            ["Portugal", "pt", "351"],
+            ["Puerto Rico", "pr", "1", 3, ["787", "939"]],
+            ["Qatar (‫قطر‬‎)", "qa", "974"],
+            ["Réunion (La Réunion)", "re", "262"],
+            ["Romania (România)", "ro", "40"],
+            ["Russia (Россия)", "ru", "7", 0],
+            ["Rwanda", "rw", "250"],
+            ["Saint Barthélemy (Saint-Barthélemy)", "bl", "590", 1],
+            ["Saint Helena", "sh", "290"],
+            ["Saint Kitts and Nevis", "kn", "1869"],
+            ["Saint Lucia", "lc", "1758"],
+            ["Saint Martin (Saint-Martin (partie française))", "mf", "590", 2],
+            ["Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)", "pm", "508"],
+            ["Saint Vincent and the Grenadines", "vc", "1784"],
+            ["Samoa", "ws", "685"],
+            ["San Marino", "sm", "378"],
+            ["São Tomé and Príncipe (São Tomé e Príncipe)", "st", "239"],
+            ["Saudi Arabia (‫المملكة العربية السعودية‬‎)", "sa", "966"],
+            ["Senegal (Sénégal)", "sn", "221"],
+            ["Serbia (Србија)", "rs", "381"],
+            ["Seychelles", "sc", "248"],
+            ["Sierra Leone", "sl", "232"],
+            ["Singapore", "sg", "65"],
+            ["Sint Maarten", "sx", "1721"],
+            ["Slovakia (Slovensko)", "sk", "421"],
+            ["Slovenia (Slovenija)", "si", "386"],
+            ["Solomon Islands", "sb", "677"],
+            ["Somalia (Soomaaliya)", "so", "252"],
+            ["South Africa", "za", "27"],
+            ["South Korea (대한민국)", "kr", "82"],
+            ["South Sudan (‫جنوب السودان‬‎)", "ss", "211"],
+            ["Spain (España)", "es", "34"],
+            ["Sri Lanka (ශ්‍රී ලංකාව)", "lk", "94"],
+            ["Sudan (‫السودان‬‎)", "sd", "249"],
+            ["Suriname", "sr", "597"],
+            ["Swaziland", "sz", "268"],
+            ["Sweden (Sverige)", "se", "46"],
+            ["Switzerland (Schweiz)", "ch", "41"],
+            ["Syria (‫سوريا‬‎)", "sy", "963"],
+            ["Taiwan (台灣)", "tw", "886"],
+            ["Tajikistan", "tj", "992"],
+            ["Tanzania", "tz", "255"],
+            ["Thailand (ไทย)", "th", "66"],
+            ["Timor-Leste", "tl", "670"],
+            ["Togo", "tg", "228"],
+            ["Tokelau", "tk", "690"],
+            ["Tonga", "to", "676"],
+            ["Trinidad and Tobago", "tt", "1868"],
+            ["Tunisia (‫تونس‬‎)", "tn", "216"],
+            ["Turkey (Türkiye)", "tr", "90"],
+            ["Turkmenistan", "tm", "993"],
+            ["Turks and Caicos Islands", "tc", "1649"],
+            ["Tuvalu", "tv", "688"],
+            ["U.S. Virgin Islands", "vi", "1340"],
+            ["Uganda", "ug", "256"],
+            ["Ukraine (Україна)", "ua", "380"],
+            ["United Arab Emirates (‫الإمارات العربية المتحدة‬‎)", "ae", "971"],
+            ["United Kingdom", "gb", "44"],
+            ["United States", "us", "1", 0],
+            ["Uruguay", "uy", "598"],
+            ["Uzbekistan (Oʻzbekiston)", "uz", "998"],
+            ["Vanuatu", "vu", "678"],
+            ["Vatican City (Città del Vaticano)", "va", "39", 1],
+            ["Venezuela", "ve", "58"],
+            ["Vietnam (Việt Nam)", "vn", "84"],
+            ["Wallis and Futuna", "wf", "681"],
+            ["Yemen (‫اليمن‬‎)", "ye", "967"],
+            ["Zambia", "zm", "260"],
+            ["Zimbabwe", "zw", "263"]
+        ], d = 0; d < u.length; d++) {
+            var c = u[d];
+            u[d] = {
+                name: c[0],
+                iso2: c[1],
+                dialCode: c[2],
+                priority: c[3] || 0,
+                areaCodes: c[4] || null
+            }
+        }
+    }), $("input[id^=numberToText_sms]").intlTelInput({
+        preferredCountries: "undefined" == typeof preferredCountries ? ["us"] : preferredCountries,
+        defaultCountry: "undefined" == typeof smsDefaultCountry ? "us" : smsDefaultCountry,
+        ipinfoToken: "undefined" == typeof smsIpinfoToken ? "" : smsIpinfoToken,
+        smsCountries: "undefined" == typeof smsCountries ? void 0 : smsCountries,
+        nationalMode: !0,
+        utilsScript: 'https://commondatastorage.googleapis.com/installs.youversion.com/utils.js'
+    })
+}
+
+var sendLink_sms = function(t) {
+    document.getElementById("smsError_" + t).style.display = "none", document.getElementById("sendButton_sms_" + t).disabled = !0; {
+        var n = $("#numberToText_sms_" + t),
+            e = $("#numberToText_sms_" + t).intlTelInput("getNumber");
+        n.intlTelInput("getNumberType")
+    }
+    if (!e) return document.getElementById("sendButton_sms_" + t).disabled = !1, document.getElementById("smsError_" + t).innerHTML = "Please input a valid phone number.", void(document.getElementById("smsError_" + t).style.display = "block");
+//      alert('add branch SMS call: ');
+//      smsNumber = $("#country-list li.active").data("dial-code") + document.getElementById("numberToText_sms_" + t).value
+      smsNumber = document.getElementById("numberToText_sms_" + t).value
+//      console.log(document.getElementById("numberToText_sms_" + t).value);
+      alert(smsNumber);
+
+
+//    var a = new XMLHttpRequest;
+//    a.open("POST", "https://www.sms.com/sendLink", !0), a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onreadystatechange = function() {
+//        if (document.getElementById("sendButton_sms_" + t).disabled = !1, 4 === a.readyState && 200 === a.status) document.getElementById("numberToText_sms_" + t).value = "", document.getElementById("sendButton_sms_" + t).innerHTML = "Sent!";
+//        else if (4 === a.readyState && 200 !== a.status) {
+//            var i = JSON.parse(a.response);
+//            document.getElementById("smsError_" + t).innerHTML = i.error, document.getElementById("smsError_" + t).style.display = "block"
+//        }
+//    }, a.send("linkId=" + i + "&number=" + e)
+};
