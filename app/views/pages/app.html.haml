@@ -1,6 +1,6 @@
 :ruby
   @sidebar          = false
-  @title            = "#{t('mobile page.t9')} #{t('mobile page.free overlay')} - #{t('mobile page.download now')}"
+  @title            = "#{t('mobile page.t9')} #{t('mobile page.free overlay')} | #{t('mobile page.download now')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
   @text_versions_list = Version.all.find_all{|v| text_version_list(I18n.locale.to_s).include? v.id}
