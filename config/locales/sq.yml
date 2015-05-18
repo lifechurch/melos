@@ -3,6 +3,42 @@ sq:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "para rreth 1 ore"
+                other: "para rreth %{count} orësh"
+            about_x_months: 
+                one: "para rreth 1 muaji"
+                other: "para rreth %{count} muajsh"
+            about_x_years: 
+                one: "para rreth 1 viti"
+                other: "para rreth %{count} vjetësh"
+            almost_x_years: 
+                one: "para pothuaj 1 viti"
+                other: "para pothuaj %{count} vjetësh"
+            half_a_minute: "para më pak se një minutë"
+            less_than_x_minutes: 
+                one: "para më pak se një minutë"
+                other: "para më pak se %{count} minutash"
+            less_than_x_seconds: 
+                one: "para më pak se 1 sekondë"
+                other: "para më pak se %{count} sekondash"
+            over_x_years: 
+                one: "mbi 1 vit më parë"
+                other: "mbi %{count} vjet më parë"
+            x_days: 
+                one: "para 1 dite"
+                other: "para %{count} ditësh"
+            x_minutes: 
+                one: "para 1 minute"
+                other: "para %{count} minutash"
+            x_months: 
+                one: "para 1 muaji"
+                other: "para %{count} muajsh"
+            x_seconds: 
+                one: "para 1 sekonde"
+                other: "para %{count} sekondash"
     counter: 
         format: "999,999,999"
     social: 

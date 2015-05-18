@@ -1,8 +1,7 @@
 - content_for :additional_meta do
   = render '/shared/hreflang'
 
-- content_for :title do
-  =t('sign up')
+- @title = "#{t("users.sign up for an account")} | #{t('pages.home.features.study heading')} | #{t('pages.home.features.subscribe heading')} | #{t('pages.home.features.read heading')}"
 
 - content_for :sidebar do
   =render partial: "/sidebars/users/new"

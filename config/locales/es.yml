@@ -3,6 +3,42 @@ es:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "hace alrededor de 1 hora"
+                other: "hace alrededor de %{count} horas"
+            about_x_months: 
+                one: "hace alrededor de 1 mes"
+                other: "hace alrededor de %{count} meses"
+            about_x_years: 
+                one: "hace alrededor de 1 año"
+                other: "hace alrededor de %{count} años"
+            almost_x_years: 
+                one: "hace casi 1 año"
+                other: "hace casi %{count} años"
+            half_a_minute: "hace medio minuto"
+            less_than_x_minutes: 
+                one: "hace menos de un minuto"
+                other: "hace menos de %{count} minutos"
+            less_than_x_seconds: 
+                one: "hace menos de 1 segundo"
+                other: "hace menos de %{count} segundos"
+            over_x_years: 
+                one: "hace más de 1 año"
+                other: "hace más de %{count} años"
+            x_days: 
+                one: "hace 1 día"
+                other: "hace %{count} días"
+            x_minutes: 
+                one: "hace 1 minuto"
+                other: "hace %{count} minutos"
+            x_months: 
+                one: "hace 1 mes"
+                other: "hace %{count} meses"
+            x_seconds: 
+                one: "hace 1 segundo"
+                other: "hace %{count} segundos"
     counter: 
         format: "999.999.999"
     social: 

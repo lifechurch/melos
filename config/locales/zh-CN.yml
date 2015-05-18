@@ -3,6 +3,31 @@ zh-CN:
     time: 
         formats: 
             votd: "%Y/%B/%-d"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "大约%{count}小时前"
+            about_x_months: 
+                other: "大约%{count}个月前"
+            about_x_years: 
+                other: "大约%{count}年前"
+            almost_x_years: 
+                other: "将近%{count}年前"
+            half_a_minute: "半分钟前"
+            less_than_x_minutes: 
+                other: "不到%{count}分钟前"
+            less_than_x_seconds: 
+                other: "不到%{count}秒前"
+            over_x_years: 
+                other: "超过%{count}年前"
+            x_days: 
+                other: "%{count}天前"
+            x_minutes: 
+                other: "%{count}分钟前"
+            x_months: 
+                other: "%{count}个月前"
+            x_seconds: 
+                other: "%{count}秒前"
     counter: 
         format: "999,999,999"
     social: 

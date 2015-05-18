@@ -3,6 +3,31 @@ ko:
     time: 
         formats: 
             votd: "%Y.%B.%-d"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "%{count}시간 전"
+            about_x_months: 
+                other: "about %{count} months ago"
+            about_x_years: 
+                other: "about %{count} years ago"
+            almost_x_years: 
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                other: "over %{count} years ago"
+            x_days: 
+                other: "%{count} days ago"
+            x_minutes: 
+                other: "%{count} minutes ago"
+            x_months: 
+                other: "%{count} months ago"
+            x_seconds: 
+                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -838,7 +863,7 @@ ko:
         catch up successful: "성공! 이제 읽기계획의 일정이 재조정 되었습니다."
         restart successful: "계획이 처음부터 다시 시작되었습니다."
         subscribe successful: "아주 잘 하셨습니다! 계획을 시작하셨습니다."
-        day number: "%{day} 일일"
+        day number: "%{day} 일"
         which day in plan: "%{total}일 중 %{day}일"
         must start to complete: "읽기를 저장하려면 먼저 이 읽기계획을 시작해야 합니다."
         invalid reference: "죄송합니다.  이 성경읽기에서 언급된 참고 구절중 일부가 이 번역본에는 없습니다.  다른 번역본을 선택해주세요.  이 메시지가 반복적으로 나타나면 <a href='%{support_url}'>지원팀</a> 으로 연락주십시요."

@@ -3,6 +3,42 @@ bg:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -570,7 +606,7 @@ bg:
             title: "Условия за ползване"
             translation disclaimer: "Политиката за ползване е преведена за ваше удобство. LifeChurch.tv не дава гаранция за достоверността на превода. В случай на различия между двата текста, английската версия ще бъде предпочетена."
             acceptance title: "Приемане на условията"
-            acceptance text: "needs translationneeds translation<a href='https://www.bible.com'>needs translation</a>needs translationneeds translationneeds translation<a href='https://www.bible.com/terms'>needs translation</a>needs translationneeds translationneeds translationneeds translation<a href='mailto:legal@youversion.com'>needs translation</a>needs translation"
+            acceptance text: "При натискане на 'I agree' ,ти приемаш да прочетеш и се съгласяваш да се обвързан с YouVersion правила на използване.Lifechurch.tv осигурява <a href='https://www.bible.com'>needs translation</a>needs translationneeds translation<a href='https://www.bible.com/terms'>needs translation</a>needs translationneeds translationneeds translationneeds translation<a href='mailto:legal@youversion.com'>needs translation</a>needs translation"
             description title: "Описание на услугата"
             description text: "LifeChurch.tv provides Users with access to a variety of services through YouVersion, including but not limited to, online video viewing, blog posts and comments, commentary, other various communications tools, forums, and personalized content, at no charge to the user. By using YouVersion, you understand that such usage may include communications from LifeChurch.tv, including but not limited to service announcements, administrative messages, and other messages to which you have individually subscribed. You understand and agree that you are responsible for obtaining access to YouVersion, which may involve equipment and third-party fees (such as Internet service provider fees, airtime charges, or other charges associated with the display and delivery of messages)."
             registration title: "Регистрационни задължения"
@@ -1108,7 +1144,7 @@ bg:
         load error: "Проблем с зареждането на повече версии. Затвори това меню и опитай отново!"
     campaigns: 
         christmas: 
-            tracker title: "Christmas Story Tracker"
+            tracker title: "Рождество Христово проследяване на историята"
             twitter text: "Watch the world read about the birth of Jesus. Share the Christmas Story Tracker @YouVersion: https://www.bible.com/christmas"
             facebook text: "Share the Christmas Story Tracker as people around the world read about the birth of Jesus.  In church or at home, near people we love or during a quiet moment alone, we're pausing to reflect on the wonder of God's love for us."
             summary: "During December 2014, this is what it looked like to see the world read about the birth of Jesus."

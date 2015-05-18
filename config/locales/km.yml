@@ -3,6 +3,31 @@ km:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "about %{count} hours ago"
+            about_x_months: 
+                other: "about %{count} months ago"
+            about_x_years: 
+                other: "about %{count} years ago"
+            almost_x_years: 
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                other: "over %{count} years ago"
+            x_days: 
+                other: "%{count} days ago"
+            x_minutes: 
+                other: "%{count} minutes ago"
+            x_months: 
+                other: "%{count} months ago"
+            x_seconds: 
+                other: "%{count} seconds ago"
     counter: 
         format: "999.999.999"
     social: 
@@ -1004,13 +1029,13 @@ km:
         what people: "អ្វី​ដែល​មនុស្ស​បាន​និយាយ​អំពី​ Bible app ដោយ​ឥត​គិត​ថ្លៃ..."
         t1: "ខ្ញុំ​តែង​តែ​មាន​ព្រះបន្ទូល។"
         t1 copy: "ខ្ញុំ​បាន​កត់​ចំណាំ​នូវ​អត្ថបទ​ដែល​សំខាន់​សំរាប់​ខ្ញុំ។ ខ្ញុំ​ថែម​ទាំង​អាន​ព្រះ​គម្ពីរ​ពេញ​មួយ​ឆ្នាំ​តាម​គំរោង​អាន​គម្ពីរ។"
-        t2: "Highly recommended"
-        t2 copy: "I love how you are able to connect with friends and the Bible reading plans are awesome. This application helps me also to stay consistent in reading because it has reminders for the plans. It also gives me another way to come closer to God. Download this and read every day!"
+        t2: "ចង់​នែនាំ​អោយ​ប្រើ​ខ្លាំង"
+        t2 copy: "ខ្ញុំ​ចូល​ចិត្ត​ពេល​ដែល​អ្នក​អាច​ភ្ជាប់​ជាមួយ​មិត្ត​របស់​អ្នក និង​គំរោង​អាន​ព្រះ​គម្ពីរ​គឺពិតជាឡូយ​ណាស់។ កម្មវិធី​នេះ​នឹង​ជួយ​ខ្ញុំ​ ហើយ​ក៏​នៅ​ស្ថិត​ស្ថេរ​ក្នុង​ការ​អាន​ព្រោះ​វា​ជួយ​រំលឹក​ពី​គំរោង​អាន។ វា​ក៏​ជួយ​ខ្ញុំ​ដោយ​របៀប​មួយ​ផ្សេង​ទៀត​ក្នុង​ការ​ចូល​មក​ជិត​ព្រះ។ ដោ​នឡូដ​យក​ ហើយ​អា​ជា​ប្រចាំ​ថ្ងៃ។"
         t3: "កម្មវិធី​អស្ចារ្យ"
         t3 copy: "កម្ម​វិធី​ល្អ​មែន​ទែន​ ជាមួយ​នឹង​ជំរើស​នៃ​ព្រះ​គម្ពីរ​ជ្រើស​រើស​មក​ពី...ឯ​គម្ពីរ​ជា​សំលេង​ក៏​អស្ចារ្យ ហើយ​ងាយ​យល់​ទៀត​ផង។"
-        t4: "Great. Always improving!"
-        t4 copy: "Many translations and languages available, and many that can be downloaded to read offline. Many useful features, such as the ability to make notes and bookmarks."
-        t5: "The best Bible app ever!"
+        t4: "ល្អ​ណាស់។ តែង​តែ​រីក​ចំរើន!"
+        t4 copy: "មាន​ការ​បក​ប្រែ​ច្រើន​ភាសា ហើយ​អាច​ទាញ​យក​មក​អាន​នៅ​ក្រៅ​បណ្ដាញ។ មាន​មុខ​ងារ​មាន​ប្រយោជន៍ ដូចជា​មាន​សមត្ថ​ភាព​បង្កើត​កំណត់​ត្រា និង​កំណត់ចំណាំ។"
+        t5: "កម្មវិធីព្រះគម្ពីរ​ដែល​ល្អជាង​គេ!"
         t5 copy: "I love how it has a lot of versions and that there are verses of the day, devotions, plans and community. Thanks for this free app. :)"
         t6: "Multiple versions and offline reading!"
         t6 copy: "Great because there are many different versions and I could download multiple versions for offline reading.  I'm able to listen to this app."
