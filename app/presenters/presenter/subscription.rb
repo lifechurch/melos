@@ -9,7 +9,12 @@ module Presenter
     def initialize( subscription, params = {}, controller = nil )
       super(params,controller)
       @subscription = subscription
-      @subscription.version_id = params[:version] || @subscription.version_id || controller.send(:current_version)
+
+      if (initial_load?)
+        @subscription.version_id = params[:version] || @subscription.version_id || controller.send(:current_version)
+      else
+        @subscription.version_id = controller.send(:current_version) || params[:version] || @subscription.version_id
+      end
     end
 
     def initial_load?

@@ -28,7 +28,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.subscribe(params[:plan_id], auth: current_auth, private: params[:privacy].to_bool, language_tag: current_user.ensure_language_tag)
     flash[:notice] = t("plans.subscribe successful")
-    respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id]))
+    respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id], initial: 'true'))
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
