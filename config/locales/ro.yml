@@ -3,6 +3,53 @@ ro:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "cu %{count} oră în urmă"
+                few: "Cu %{count} ore în urmă"
+                other: "cu %{count} de ore în urmă"
+            about_x_months: 
+                one: "cu %{count} lună în urmă"
+                few: "cu %{count} luni în urmă"
+                other: "Cu %{count} luni în urmă"
+            about_x_years: 
+                one: "cu %{count} an în urmă"
+                few: "cu %{count} ani în urmă"
+                other: "cu %{count} de ani în urmă"
+            almost_x_years: 
+                one: "aproape %{count} an în urmă"
+                few: "aproape %{count} ani în urmă"
+                other: "aproape %{count} de ani în urmă"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "mai puțin de %{count} minut în urmă"
+                few: "mai puțin de %{count} minute în urmă"
+                other: "mai puțin de %{count} de minute în urmă"
+            less_than_x_seconds: 
+                one: "mai puțin de %{count} secundă în urmă"
+                few: "mai puțin de %{count} secunde în urmă"
+                other: "mai puțin de %{count} de secunde în urmă"
+            over_x_years: 
+                one: "peste %{count} an în urmă"
+                few: "peste %{count} ani în urmă"
+                other: "peste %{count} de ani în urmă"
+            x_days: 
+                one: "1 day ago"
+                few: "%{count} days ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                few: "%{count} minutes ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                few: "%{count} months ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                few: "%{count} seconds ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999.999.999"
     social: 

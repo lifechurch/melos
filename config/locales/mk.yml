@@ -3,6 +3,42 @@ mk:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "пред околу %{count} час"
+                other: "пред околу %{count} часа"
+            about_x_months: 
+                one: "пред околу %{count} месец"
+                other: "пред околу %{count} месеци"
+            about_x_years: 
+                one: "пред околу %{count} година"
+                other: "пред околу %{count} години"
+            almost_x_years: 
+                one: "пред скоро %{count} година"
+                other: "пред скоро %{count} години"
+            half_a_minute: "пред пола минута"
+            less_than_x_minutes: 
+                one: "пред помалку од %{count} минута"
+                other: "пред помалку од %{count} минути"
+            less_than_x_seconds: 
+                one: "пред помалку од %{count} секунда"
+                other: "пред помалку од %{count} секунди"
+            over_x_years: 
+                one: "пред повеќе од %{count} година"
+                other: "пред повеќе од %{count} години"
+            x_days: 
+                one: "пред %{count} ден"
+                other: "пред %{count} дена"
+            x_minutes: 
+                one: "пред %{count} минута"
+                other: "пред %{count} минути"
+            x_months: 
+                one: "пред %{count} месец"
+                other: "пред %{count} месеци"
+            x_seconds: 
+                one: "пред %{count} секунда"
+                other: "пред %{count} секунди"
     counter: 
         format: "999.999.999"
     social: 

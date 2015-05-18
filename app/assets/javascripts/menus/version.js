@@ -59,7 +59,7 @@ VersionMenu.prototype = {
         var url = document.location.href;
 
         if( url.indexOf("/reading-plans/") > -1) // on reading plan
-        { window.location.reload(); } // simply reload the page, cookie set in #setRecentVersion above will be observed
+        { window.location = window.location.pathname; } // simply reload the page, cookie set in #setRecentVersion above will be observed
         else
         {
           // using attr instead of data() to ensure that value doesn't get type cast to a number

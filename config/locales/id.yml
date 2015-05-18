@@ -3,6 +3,31 @@ id:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "sekitar %{count} jam yang lalu"
+            about_x_months: 
+                other: "sekitar %{count} bulan yang lalu"
+            about_x_years: 
+                other: "sekitar %{count} tahun yang lalu"
+            almost_x_years: 
+                other: "hampir %{count} tahun yang lalu"
+            half_a_minute: "setengah menit yang lalu"
+            less_than_x_minutes: 
+                other: "kurang dari %{count} menit yang lalu"
+            less_than_x_seconds: 
+                other: "kurang dari %{count} detik yang lalu"
+            over_x_years: 
+                other: "lebih dari %{count} tahun yang lalu"
+            x_days: 
+                other: "%{count} hari yang lalu"
+            x_minutes: 
+                other: "%{count} menit yang lalu"
+            x_months: 
+                other: "%{count} bulan yang lalu"
+            x_seconds: 
+                other: "%{count} detik yang lalu"
     counter: 
         format: "999.999.999"
     social: 

@@ -3,6 +3,42 @@ ca:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "fa aproximadament una hora"
+                other: "fa unes %{count} hores"
+            about_x_months: 
+                one: "fa aproximadament un mes"
+                other: "fa uns %{count} mesos"
+            about_x_years: 
+                one: "fa aproximadament un any"
+                other: "fa uns %{count} anys"
+            almost_x_years: 
+                one: "fa gairebé un any"
+                other: "fa gairebé %{count} anys"
+            half_a_minute: "fa mig minut"
+            less_than_x_minutes: 
+                one: "fa menys de un minut"
+                other: "fa menys de %{count} minuts"
+            less_than_x_seconds: 
+                one: "fa menys de un segon"
+                other: "fa menys de %{count} segons"
+            over_x_years: 
+                one: "fa més d'un any"
+                other: "fa més de %{count} anys"
+            x_days: 
+                one: "fa un dia"
+                other: "fa %{count} dies"
+            x_minutes: 
+                one: "fa un minut"
+                other: "fa %{count} minuts"
+            x_months: 
+                one: "fa un mes"
+                other: "fa %{count} mesos"
+            x_seconds: 
+                one: "fa un segon"
+                other: "fa %{count} segons"
     counter: 
         format: "999.999.999"
     social: 

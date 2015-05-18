@@ -3,6 +3,64 @@ uk:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "близько %{count} год. тому"
+                few: "близько %{count} год. тому"
+                many: "близько %{count} год. тому"
+                other: "близько %{count} год. тому"
+            about_x_months: 
+                one: "близько %{count} місяць тому"
+                few: "близько %{count} місяця тому"
+                many: "близько %{count} місяців тому"
+                other: "близько %{count} місяця тому"
+            about_x_years: 
+                one: "близько %{count} років тому"
+                few: "близько %{count} роки тому"
+                many: "близько %{count} років тому"
+                other: "близько %{count} року тому"
+            almost_x_years: 
+                one: "майже %{count} рік тому"
+                few: "майже %{count} роки тому"
+                many: "майже %{count} років тому"
+                other: "майже %{count} року тому"
+            half_a_minute: "пів хвилини тому"
+            less_than_x_minutes: 
+                one: "менше, ніж %{count} хв. тому"
+                few: "менше, ніж %{count} хв. тому"
+                many: "менше, ніж %{count} хв. тому"
+                other: "менше, ніж %{count} хв. тому"
+            less_than_x_seconds: 
+                one: "менше, ніж %{count} сек. тому"
+                few: "менше, ніж %{count} сек. тому"
+                many: "менше, ніж %{count} сек. тому"
+                other: "менше, ніж %{count} сек. тому"
+            over_x_years: 
+                one: "понад %{count} рік тому"
+                few: "понад %{count} роки тому"
+                many: "понад %{count} років тому"
+                other: "понад %{count} року тому"
+            x_days: 
+                one: "%{count} день тому"
+                few: "%{count} дні тому"
+                many: "%{count} днів тому"
+                other: "%{count} дня тому"
+            x_minutes: 
+                one: "%{count} хв. тому"
+                few: "%{count} хв. тому"
+                many: "%{count} хв. тому"
+                other: "%{count} хв. тому"
+            x_months: 
+                one: "%{count} місяць тому"
+                few: "%{count} місяці тому"
+                many: "%{count} місяців тому"
+                other: "%{count} місяця тому"
+            x_seconds: 
+                one: "%{count} сек. тому"
+                few: "%{count} сек. тому"
+                many: "%{count} сек. тому"
+                other: "%{count} сек. тому"
     counter: 
         format: "999 999 999"
     social: 
