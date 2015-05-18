@@ -3,6 +3,42 @@ sv:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "ungefär 1 timme sedan"
+                other: "ungefär%{count} timmar sedan"
+            about_x_months: 
+                one: "ungefär 1 månad sedan"
+                other: "ungefär %{count} månader sedan"
+            about_x_years: 
+                one: "ungefär 1 år sedan"
+                other: "ungefär %{count} år sedan"
+            almost_x_years: 
+                one: "ungefär 1 år sedan"
+                other: "ungefär %{count} år sedan"
+            half_a_minute: "en halv minut sedan"
+            less_than_x_minutes: 
+                one: "mindre än en minut sedan"
+                other: "mindre än %{count} minuter sedan"
+            less_than_x_seconds: 
+                one: "mindre än 1 sekund sedan"
+                other: "mindre än %{count} sekunder sedan"
+            over_x_years: 
+                one: "över 1 år sedan"
+                other: "över %{count} år sedan"
+            x_days: 
+                one: "1 dag sedan"
+                other: "%{count} dagar sedan"
+            x_minutes: 
+                one: "1 minut sedan"
+                other: "%{count} minuter sedan"
+            x_months: 
+                one: "1 månad sedan"
+                other: "%{count} månader sedan"
+            x_seconds: 
+                one: "1 sekund sedan"
+                other: "%{count} sekunder sedan"
     counter: 
         format: "999 999 999"
     social: 

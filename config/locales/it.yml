@@ -3,6 +3,42 @@ it:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "circa %{count} ora fa"
+                other: "circa %{count} ore fa"
+            about_x_months: 
+                one: "circa %{count} mese fa"
+                other: "circa %{count} mesi fa"
+            about_x_years: 
+                one: "circa %{count} anno fa"
+                other: "circa %{count} anni fa"
+            almost_x_years: 
+                one: "quasi %{count} anno fa"
+                other: "quasi %{count} anni fa"
+            half_a_minute: "mezzo minuto fa"
+            less_than_x_minutes: 
+                one: "meno di un minuto fa"
+                other: "meno di %{count} minuti fa"
+            less_than_x_seconds: 
+                one: "meno di %{count} secondo fa"
+                other: "meno di %{count} secondi fa"
+            over_x_years: 
+                one: "più di %{count} anno fa"
+                other: "più di %{count} anni fa"
+            x_days: 
+                one: "%{count} giorno fa"
+                other: "%{count} giorni fa"
+            x_minutes: 
+                one: "%{count} minuto fa"
+                other: "%{count} minuti fa"
+            x_months: 
+                one: "%{count} mese fa"
+                other: "%{count} mesi fa"
+            x_seconds: 
+                one: "%{count} secondo fa"
+                other: "%{count} secondi fa"
     counter: 
         format: "999.999.999"
     social: 

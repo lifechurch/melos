@@ -3,6 +3,31 @@ th:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "ประมาณ%{count}ชั่วโมงที่แล้ว"
+            about_x_months: 
+                other: "ประมาณ%{count}เดือนที่แล้ว"
+            about_x_years: 
+                other: "ประมาณ%{count}ปีที่แล้ว"
+            almost_x_years: 
+                other: "เกือบ%{count}ปีที่แล้ว"
+            half_a_minute: "ครึ่งนาทีที่แล้ว"
+            less_than_x_minutes: 
+                other: "ไม่เกิน%{count}นาทีที่แล้ว"
+            less_than_x_seconds: 
+                other: "ไม่เกิน%{count}วินาทีที่แล้ว"
+            over_x_years: 
+                other: "มากกว่า%{count}ปีที่แล้ว"
+            x_days: 
+                other: "%{count}วันที่แล้ว"
+            x_minutes: 
+                other: "%{count}นาทีที่แล้ว"
+            x_months: 
+                other: "%{count}เดือนที่แล้ว"
+            x_seconds: 
+                other: "%{count}วินาทีที่แล้ว"
     counter: 
         format: "999,999,999"
     social: 
