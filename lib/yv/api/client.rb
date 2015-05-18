@@ -21,7 +21,7 @@ module YV
             begin
               
             curl = Curl::Easy.new
-            curl.url = Curl::urlalize(resource_url, opts[:query])
+            curl.url = resource_url + "?" + opts[:query].to_query
             curl.headers = opts[:headers]
             curl.timeout = opts[:timeout] || Cfg.api_default_timeout.to_f
             if opts[:auth].present?
