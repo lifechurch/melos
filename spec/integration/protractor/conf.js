@@ -18,6 +18,12 @@ exports.config = {
 	},
     rootElement: 'div#widget-notes',
     onPrepare: function() {
+
+     // Default to ignoring Angular sync,
+     //  assuming most tests will not
+     //  need Angular
+     browser.ignoreSynchronization = true;
+        
      global.isAngular = function(flag) {
          browser.ignoreSynchronization = !flag;
      };
