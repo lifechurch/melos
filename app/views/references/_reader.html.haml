@@ -19,14 +19,14 @@
   = render '/shared/hreflang'
   - ref_deep_link = "#{@presenter.reference.deep_link_path}"
   - deep_link = "youversion://#{ref_deep_link}" if ref_deep_link.present?
-  - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
-  - meta_description = truncate(get_verse_content(presenter.content).strip, length: 170, separator: " ") if presenter.content.present?
 
   - if ref_deep_link.present?
     %meta{name: "apple-itunes-app",         content: "app-id=282935706, app-argument=#{deep_link}"}
     %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{ref_deep_link.gsub('version_id','version')}"}
 
   - if verse_view
+    - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+    - meta_description = truncate(get_verse_content(presenter.content), length: 170, separator: " ")
     - @title = truncate("#{reference.human}, #{version} #{meta_description}", length: 200, separator: " ")
     - @subtitle = ''  # we don't want subtitle appended to single verse title so the verse gets more text space
     %meta{name: "twitter:card",             content: "summary"}
@@ -51,9 +51,10 @@
     %meta{property: "og:description", content: meta_description }
   - else
     -# chapter view eg. jhn.3.kjv
+    - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
     %meta{property: "og:title",       content: @meta_title }
     %meta{property: "og:url",         content: meta_url }
-    %meta{property: "og:description", content: meta_description }
+    -#%meta{property: "og:description", content: meta_description }
 
 - content_for :twitter_meta do
   %meta{name: "twitter:image", content: url_for(image_path(bible_icon_for_version(size: 120, version: version)))}
