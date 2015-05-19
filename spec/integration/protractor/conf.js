@@ -15,25 +15,17 @@ exports.config = {
 	],
 	params: {
 		testUrl: ""
-	}
-	// , multiCapabilities: [
-	// 	{}
-	// 	{
-	// 		'browserName': 'iphone',
-	// 		'platform': 'OS X 10.10',
-	// 		'version': '8.0',
-	// 		'deviceName': 'iPhone Simulator',
-	// 		'device-orientation': 'portrait'
-	// 	}
-		// {
-		// 	'browserName': 'safari',
-		// 	'platform': 'OS X 10.9',
-		// 	'version': '7.0'
-		// },
-		// {
-		//   'browserName': 'firefox'
-		// }, {
-		//   'browserName': 'chrome'
-		// }
-	// ]
+	},
+    rootElement: 'div#widget-notes',
+    onPrepare: function() {
+
+     // Default to ignoring Angular sync,
+     //  assuming most tests will not
+     //  need Angular
+     browser.ignoreSynchronization = true;
+        
+     global.isAngular = function(flag) {
+         browser.ignoreSynchronization = !flag;
+     };
+    }
 }

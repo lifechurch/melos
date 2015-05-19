@@ -14,14 +14,16 @@ describe('youversion reader', function() {
 	var testUrl = browser.params.testUrl;
 
 	beforeEach(function() {
+        isAngular(false);
 		browser.get(testUrl + '/bible/1/gen.2.kjv');
 	});
 
 	it('should have a title', function() {
-		expect(browser.getTitle()).toEqual('Genesis 2 King James Version | Bible.com');
+		expect(browser.getTitle()).toEqual('Genesis 2, King James Version (KJV) | The Bible App');
 	});
 
 	it('should open public notes', function() {
+        isAngular(true);
 		expect(publicNotes.count()).toEqual(0);
 		expandNotesButton.click();
 		expect(publicNotes.count()).toEqual(5);
@@ -29,13 +31,13 @@ describe('youversion reader', function() {
 
 	it('should go to next chapter', function() {
 		chapterNextButton.click();
-		expect(browser.getTitle()).toEqual('Genesis 3 King James Version | Bible.com');
+		expect(browser.getTitle()).toEqual('Genesis 3, King James Version (KJV) | The Bible App');
 		expect(chapterDropDown.getText()).toEqual('Genesis 3');
 	});
 
 	it('should go to prev chapter', function() {
 		chapterPrevButton.click();
-		expect(browser.getTitle()).toEqual('Genesis 1 King James Version | Bible.com');
+		expect(browser.getTitle()).toEqual('Genesis 1, King James Version (KJV) | The Bible App');
 		expect(chapterDropDown.getText()).toEqual('Genesis 1');
 	});
 
@@ -43,7 +45,7 @@ describe('youversion reader', function() {
 		bookSelectTrigger.click();
 		johnLink.click();
 		john1Link.click();
-		expect(browser.getTitle()).toEqual('John 1 King James Version | Bible.com');
+		expect(browser.getTitle()).toEqual('John 1, King James Version (KJV) | The Bible App');
 		expect(chapterDropDown.getText()).toEqual('John 1');
 	});
 

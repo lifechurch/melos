@@ -7,6 +7,7 @@ describe('youversion search', function() {
 	var testUrl = browser.params.testUrl;
 	
 	beforeEach(function() {
+        isAngular(false);
 		browser.get(testUrl);
 	});
 

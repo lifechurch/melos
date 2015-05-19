@@ -9,6 +9,7 @@ describe('youversion plans', function() {
 	var testUrl = browser.params.testUrl;
 
 	beforeEach(function() {
+        isAngular(false);
 		browser.get(testUrl + '/reading-plans');
 	});
 
