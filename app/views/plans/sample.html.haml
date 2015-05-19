@@ -9,7 +9,7 @@
 - content_for :additional_meta do
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
-  - @meta_url = "https://#{request.host_with_port}#{locale_dir}/reading-plans/#{@plan.slug}/day/#{@presenter.day}"
+  - @meta_url = "https://#{request.host_with_port}#{locale_dir}/reading-plans/#{@plan.to_param}/day/#{@presenter.day}"
   %link{rel: "canonical", href: canonicalHref}
   %meta{property: "og:title",       content: @meta_title }
   %meta{property: "og:url",         content: @meta_url}
