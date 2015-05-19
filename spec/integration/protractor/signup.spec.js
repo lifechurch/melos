@@ -9,6 +9,7 @@ describe('youversion signup', function() {
 	var testUrl = browser.params.testUrl;
 
 	beforeEach(function() {
+        isAngular(false);
 		browser.get(testUrl + '/sign-up');
 	});
 

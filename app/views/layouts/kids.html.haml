@@ -1,7 +1,7 @@
 - t = Proc.new do |key, options={}|
   - I18n.t(key, options.merge(:locale => @locale))
 :ruby
-  meta_title        = "#{t.call("meta.kids_app.title")} - #{t.call("meta.best kids app")} #{t.call('kids.free download')} | #{t.call('kids.feature 2')} | Android, iPhone, iPad, Android tablets"
+  meta_title        = t.call("meta.kids_app.title")
   meta_description  = t.call("meta.kids_app.description")
   meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
   i18n_image_dir  = ""
@@ -43,7 +43,7 @@
 !!! 5
 %html
   %head
-    %title= strip_tags(meta_title)
+    %title= "#{t.call("meta.kids_app.title")} - #{t.call("meta.best kids app")} #{t.call('kids.free download')} | #{t.call('kids.feature 2')} | Android, iPhone, iPad, Android tablets"
     %link{rel: "shortcut icon", href:"/favicon.ico"}
     %meta{charset:"utf-8"}
     %meta{'http-equiv' => 'content-language', :content => I18n.locale.downcase}
