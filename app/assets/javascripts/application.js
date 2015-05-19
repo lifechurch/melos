@@ -61,4 +61,5 @@
 //= require main
 //= require analytics
 //= require videos
+//= require branch
 //= require_self

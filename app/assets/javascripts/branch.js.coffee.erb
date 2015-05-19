@@ -1,0 +1,41 @@
+class window.Branch
+
+  constructor: -> 
+
+    window.branch.init '<%= Cfg.branch_key %>', (err, data) ->
+      # callback to handle err or data
+      # console.log(err)
+      # console.log(data)
+
+  banner: (deeplink, app_icon) ->
+
+    window.branch.banner {
+      icon: app_icon || $('html').data('app-icon')
+      title: I18n.t('download ad.banner title')
+      description: ''
+      openAppButtonText: I18n.t('download ad.banner open') # Text to show on button if the user has the app installed
+      downloadAppButtonText: I18n.t('download ad.banner action') # Text to show on button if the user does not have the app installed
+      iframe: false # Show banner in an iframe, recomended to isolate Branch banner CSS
+      showiOS: true # Should the banner be shown on iOS devices?
+      showAndroid: true # Should the banner be shown on Android devices?
+      showDesktop: false # Should the banner be shown on desktop devices?
+      disableHide: false # Should the user have the ability to hide the banner? (show's X on left side)
+      forgetHide: false # Should we remember or forget whether the user hid the banner?
+      make_new_link: false # Should the banner create a new link, even if a link already exists?
+    }, {
+      channel: 'Bible.com'
+      feature: 'banner'
+      stage: 'new user'
+      type: 1
+      data:
+        referring_url: window.location.origin
+        '$ios_url': 'https://itunes.apple.com/us/app/bible/id282935706'
+        '$ipad_url': 'https://itunes.apple.com/us/app/bible/id282935706'
+        '$android_url': 'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
+        # we can also include options like 
+        # "$always_deeplink" : 'true',
+        # "deeplink_path": "bible?reference=JHN.3&version_id=116",
+    }, (err, link) ->
+      #console.log(err, link);
+      return
+
