@@ -1,6 +1,7 @@
 :ruby
   @sidebar          = false
   @title            = "#{t('mobile page.t9')} #{t('mobile page.free overlay')} | #{t('mobile page.download now')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8"
+  @meta_title       = "#{t('mobile page.download now')} - #{t('mobile page.free overlay')}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
   @text_versions_list = Version.all.find_all{|v| text_version_list(I18n.locale.to_s).include? v.id}
@@ -15,12 +16,12 @@
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}/app"
   %link{rel: "canonical", href: canonicalHref}
   %meta{name: "url",            content: @meta_url}
-  %meta{property: "og:title",       content: @title }
+  %meta{property: "og:title",       content: @meta_title }
   %meta{property: "og:url",         content: @meta_url }
   %meta{property: "og:description", content: @meta_description }
   %meta{name: "twitter:card",             content: "summary"}
   %meta{name: "twitter:url",              content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
-  %meta{name: "twitter:title" ,           content: @title}
+  %meta{name: "twitter:title" ,           content: @meta_title}
   %meta{name: "twitter:description",      content: @meta_description}
   %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(120)))}
   %meta{name: "twitter:site",             content: "@YouVersion"}
