@@ -58,12 +58,14 @@ class PagesController < ApplicationController
     else
       user = current_user
 
+      # language tags do not always match the list of available locales we are passing locale
+      # so that the donate site can match the language the user was in on bible.com when they clicked 'donate'
       ts_payload = {
           created: Time.now.to_i.to_s,
           email: user.email,
           first_name: user.first_name.blank? ? "" : user.first_name,
           id: user.id.to_s,
-          language_tag: user.language_tag.blank? ? "en" : user.language_tag,
+          language_tag: I18n.locale.to_s,
           last_name: user.last_name.blank? ? "" : user.last_name,
           source: 'youversion'
       }
