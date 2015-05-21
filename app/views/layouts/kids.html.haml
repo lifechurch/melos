@@ -61,12 +61,15 @@
     %meta{property: "og:locale:alternate", content: "ko_KR"}
     %meta{property: "og:locale:alternate", content: "zh_CN"}
     %meta{property: "og:locale:alternate", content: "pt_BR"}
-    %meta{name: "twitter:card",             content: "summary"}
-    %meta{name: "twitter:url",              content: meta_url}
-    %meta{name: "twitter:title" ,           content: meta_title}
-    %meta{name: "twitter:description",      content: meta_description}
-    %meta{name: "twitter:image",            content: "#{url_for(asset_path('BibleAppForKids-icon-120x120.png'))}"}
+    %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
+    %meta{name: "twitter:description",      content: meta_description}
+    %meta{name: "twitter:app:name:iphone", content: "Bible for Kids"}
+    %meta{name: "twitter:app:id:iphone", content: "668692393"}
+    %meta{name: "twitter:app:name:ipad", content: "Bible for Kids"}
+    %meta{name: "twitter:app:id:ipad", content: "668692393"}
+    %meta{name: "twitter:app:name:googleplay", content: "Bible for Kids"}
+    %meta{name: "twitter:app:id:googleplay", content: "com.bible.kids"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en-gb"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/es/kids",:rel=>"alternate",:hreflang=>"es"}
@@ -215,3 +218,21 @@
     -# !Retina JS
 
     = javascript_include_tag "retina.js"
+
+    %script{type: "application/ld+json"}
+      {
+      "@context": "http://schema.org/",
+      "@type": "MobileApplication",
+      "name": "#{t.call('meta.kids_app.title')}",
+      "image": "#{url_for(asset_path('BibleAppForKids-icon-200x200.png'))}",
+      "description": "#{t.call('meta.kids_app.description')}",
+      "aggregateRating":{
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "ratingCount": "55,278"
+      },
+      "offers":{
+      "@type": "Offer",
+      "price": "Free"
+      }
+      }
