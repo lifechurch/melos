@@ -1,5 +1,4 @@
-- @title = "#{@version.to_s} - #{t('download ad.title')}: #{t('download ad.description copy', language_count: 700)}"
-- @subtitle = ''
+- @title = "#{@version.to_s} - #{t('download ad.title')}: #{t('download ad.description copy', language_count: 700)} | #{@version.attributes.language.local_name} | #{@version.attributes.language.name}"
 - unless is_whitelabel_site
   - content_for :additional_meta do
     = render '/shared/hreflang'
