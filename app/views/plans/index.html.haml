@@ -3,6 +3,10 @@
 
 - content_for :additional_meta do
   = render '/shared/hreflang'
+  - unless is_whitelabel_site
+    - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+    - canonicalHref = "https://www.bible.com#{locale_dir}#{request.fullpath}"
+    %link{rel: "canonical", href: canonicalHref}
 
 - content_for :meta_description do
   = "#{t('plans.title')}: #{t('plans.browse plans', category: @category.label || t('plans.all'))}"
