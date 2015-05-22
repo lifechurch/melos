@@ -1,7 +1,7 @@
 - html_attributes(id:"video-show",classes:"videos")
 - publisher = @video.publisher
 - @sidebar = false
-- @title = "#{t('videos.title')}: #{strip_tags(@video.title)} - #{@video.credits}"
+- @title = "#{strip_tags(@video.title)} - #{@video.credits} | #{t('videos.title')}"
 - meta_title = strip_tags(@video.title)
 - meta_description = @title
 - meta_description = @video.description.html_safe if @video.description.present?

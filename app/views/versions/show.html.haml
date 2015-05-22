@@ -1,9 +1,8 @@
-- @title = "#{@version.to_s} - #{t('download ad.title')}: #{t('download ad.description copy', language_count: 700)}"
-- @subtitle = ''
+- @title = "#{@version.to_s} - #{t('download ad.title')}: #{t('download ad.description copy', language_count: 700)} | #{@version.attributes.language.local_name} | #{@version.attributes.language.name}"
 - unless is_whitelabel_site
   - content_for :additional_meta do
     = render '/shared/hreflang'
-    - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+    - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
     - canonicalHref = "https://www.bible.com#{locale_dir}/versions/#{@version.to_param}"
     %link{rel: "canonical", href: canonicalHref}
 - content_for :meta_description do
@@ -45,6 +44,10 @@
 
 %article
   %h1= @version
+  -#%h2.version
+  -#  %span= "#{t('language')}: #{@version.attributes.language.local_name}"
+  -#  %br
+  -#  %span= "#{t('translation')}: #{@version.attributes.language.name}"
   .copyright= @version.info.try :html_safe
   = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
   = link_to t("mobile page.download now"), app_page_path, class: 'mobile version_download action_button_green'
