@@ -13,8 +13,7 @@ class AudiobiblesController < ApplicationController
 
   def show
     @version = Version.find(params[:id])
-    @related = Version.all_by_publisher[@version.publisher_id].find_all{|v| v.language.tag == @version.language.tag}
-    @related = @related - [@version] if @related
-    self.sidebar_presenter = Presenter::Sidebar::Version.new(@version,params,self)
+    ref_string = YV::ReferenceString.new("mat.5", overrides: {version: @version.id})
+    @reference = Reference.new(ref_string)
   end
 end

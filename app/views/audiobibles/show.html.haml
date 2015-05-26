@@ -1,17 +1,22 @@
-- @title = @version.to_s
+- reference = @reference
+- meta_language = @version.attributes.language.local_name
+- meta_language = "#{meta_language} | #{@version.attributes.language.name}" if (@version.attributes.language.name.present? and not (meta_language.eql?(@version.attributes.language.name)))
+- @title = "#{t('audio bible app')} - #{@version.to_s} - #{t('download ad.meta copy title')} | #{meta_language} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8 | #{t('meta.mobile.title')}"
+- @subtitle = ''
+
 - unless is_whitelabel_site
   - content_for :additional_meta do
     = render '/shared/hreflang'
-    - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
-    - canonicalHref = "https://www.bible.com#{locale_dir}/versions/#{@version.to_param}"
+    - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+    - canonicalHref = "https://www.bible.com#{locale_dir}/audio-bible-app-download-listen/#{@version.to_param}"
     %link{rel: "canonical", href: canonicalHref}
 - content_for :meta_description do
-  = "#{@title}: #{t('download ad.title')}"
+  = "#{@version.abbreviation} #{t('audio bible')}: #{t('audio bible meta')}"
 
 - content_for :sidebar do
 
   .widget-button
-    = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
+    = link_to t("ref.listen"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
 
   - if @version.publisher.name.present? || @version.publisher.id.blank?
     - pub_name = @version.publisher.name || t('versions.public domain')
@@ -25,25 +30,24 @@
           -else
             %p= pub_name
 
-  - if @related.present?
-    .widget
-      %h3.hd
-        =t("versions.other versions")
-      %ul.menu
-        - @related.each do |v|
-          %li
-            = link_to v, v
-
   = render partial: 'widgets/download_app'
 
 - content_for :title do
   = @version
 
 - content_for :mobile_right_nav do
-  = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'save_btn'
+  = link_to t("ref.listen"), bible_version_path(reference), class: 'save_btn'
 
-%article
-  %h1= @version
-  .copyright= @version.info.try :html_safe
-  = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
-  = link_to t("mobile page.download now"), app_page_path, class: 'mobile version_download action_button_green'
+- if reference.audio
+  %article
+    %h1= "#{t('audio bible')}: #{@version}"
+
+    %h2
+      %span.icon_listen
+      = reference.audio.title
+
+    %p= reference.audio.copyright_short.html
+    %p= raw reference.audio.copyright_long.html
+
+    = link_to t("ref.listen"), bible_version_path(reference), class: 'action_button_blue'
+    = link_to t("mobile page.download now"), app_page_path, class: 'mobile version_download action_button_green'
