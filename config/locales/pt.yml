@@ -6,39 +6,39 @@ pt:
     datetime: 
         time_ago_in_words: 
             about_x_hours: 
-                one: "about 1 hour ago"
-                other: "about %{count} hours ago"
+                one: "cerca de %{count} hora atrás"
+                other: "cerca de %{count} horas atrás"
             about_x_months: 
-                one: "about 1 month ago"
-                other: "about %{count} months ago"
+                one: "cerca de %{count} mês atrás"
+                other: "cerca de %{count} meses atrás"
             about_x_years: 
-                one: "about 1 year ago"
-                other: "about %{count} years ago"
+                one: "cerca de %{count} ano atrás"
+                other: "cerca de %{count} anos atrás"
             almost_x_years: 
-                one: "almost 1 year ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
+                one: "quase %{count} ano atrás"
+                other: "quase %{count} anos atrás"
+            half_a_minute: "meio minuto atrás"
             less_than_x_minutes: 
-                one: "less than a minute ago"
-                other: "less than %{count} minutes ago"
+                one: "menos de %{count} minuto atrás"
+                other: "menos de %{count} minutos atrás"
             less_than_x_seconds: 
-                one: "less than 1 second ago"
-                other: "less than %{count} seconds ago"
+                one: "menos de %{count} segundo atrás"
+                other: "menos de %{count} segundos atrás"
             over_x_years: 
-                one: "over 1 year ago"
-                other: "over %{count} years ago"
+                one: "mais de %{count} ano atrás"
+                other: "mais de %{count} anos atrás"
             x_days: 
-                one: "1 day ago"
-                other: "%{count} days ago"
+                one: "%{count} dia atrás"
+                other: "%{count} dias atrás"
             x_minutes: 
-                one: "1 minute ago"
-                other: "%{count} minutes ago"
+                one: "%{count} minuto atrás"
+                other: "%{count} minutos atrás"
             x_months: 
-                one: "1 month ago"
-                other: "%{count} months ago"
+                one: "%{count} mês atrás"
+                other: "%{count} meses atrás"
             x_seconds: 
-                one: "1 second ago"
-                other: "%{count} seconds ago"
+                one: "%{count}segundo atrás"
+                other: "%{count} segundos atrás"
     counter: 
         format: "999.999,999"
     social: 
@@ -111,6 +111,8 @@ pt:
         users last name required: "Você deve digitar um sobrenome."
         moments content required: "Conteúdo não pode estar em branco."
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "O App da Bíblia para Crianças"
             description: "O App da Bíblia para Crianças é uma ótima maneira para suas crianças aprenderem histórias Bíblicas sobre Jesus, nosso presente de vida eterna e sobre as muitas lições que Deus nos ensina. Nesta experiência interativa, as crianças se envolvem com a Palavra de Deus com recursos visuais atrativos enquanto ganham pontos ao ler e colecionar tesouros."
@@ -783,6 +785,7 @@ pt:
             private: "Particular"
             public: "Público"
         title: "Planos de Leitura"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Buscar por Categoria"
         browse plans: "Procurar %{category} Planos"
         swap list localization: "(<a href='%{swap_link}'>Ver em %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ pt:
     download ad: 
         title: "Download  do App gratuito da Bíblia"
         description copy: "Centenas de versões em +%{language_count}línguas diferentes - a Bíblia que vai com você a qualquer lugar."
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Centenas de versões em mais"
         line 2: "de 100 idiomas - a Bíblia que"
         line 3: "vai com você a qualquer lugar."

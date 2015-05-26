@@ -122,6 +122,8 @@ lv:
         users last name required: "Jums jāievada uzvārds."
         moments content required: "Saturs nevar būt tukš."
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -796,6 +798,7 @@ lv:
             private: "Privāts"
             public: "Publisks"
         title: "Lasīšanas plāni"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Izvēlēties pēc kategorijas"
         browse plans: "Apskatīt %{category} plānus."
         swap list localization: "(<a href='%{swap_link}'>Aplūko šeit %{swap_locale}</a>)"
@@ -997,6 +1000,8 @@ lv:
     download ad: 
         title: "Lejuplādē bezmaksas Bībeles aplikāciju"
         description copy: "Simtiem versiju %{language_count}+ dažādās valodās - Bībele, kas dodas Tev līdzi jebkur."
+        meta copy title: "Lejuplādē bezmaksas Bībeles aplikāciju"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Iekšā \"100+\" simtiem versiju"
         line 2: "dažādas valodas - Bībele"
         line 3: "Tas jebkur dodas jums līdzi."

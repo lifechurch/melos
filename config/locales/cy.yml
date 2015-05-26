@@ -155,6 +155,8 @@ cy:
         users last name required: "You must enter a last name."
         moments content required: "All y cynnwys ddim bod yn wag."
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -835,6 +837,7 @@ cy:
             private: "Preifat"
             public: "Cyhoeddus"
         title: "Cynlluniau Darllen"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Chwilio yn ôl Categori"
         browse plans: "Pori Cynlluniau%{category}"
         swap list localization: "(<a href='%{swap_link}'>Gweld yn %{swap_locale}</a>)"
@@ -1036,6 +1039,8 @@ cy:
     download ad: 
         title: "Lawrlwythwch y Bible App am ddim"
         description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Cannoedd o fersiynau mewn 100+"
         line 2: "o iethoedd gwahanol - y Beibl sy’n"
         line 3: "mynd gyda chi i bobman."

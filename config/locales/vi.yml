@@ -6,28 +6,28 @@ vi:
     datetime: 
         time_ago_in_words: 
             about_x_hours: 
-                other: "about %{count} hours ago"
+                other: "khoảng %{count} giờ trước"
             about_x_months: 
-                other: "about %{count} months ago"
+                other: "khoảng %{count} tháng trước"
             about_x_years: 
-                other: "about %{count} years ago"
+                other: "khoảng %{count} năm trước"
             almost_x_years: 
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
+                other: "gần %{count} năm trước"
+            half_a_minute: "nửa phút trước"
             less_than_x_minutes: 
-                other: "less than %{count} minutes ago"
+                other: "chưa đến %{count} phút trước"
             less_than_x_seconds: 
-                other: "less than %{count} seconds ago"
+                other: "chưa đến %{count} giây trước"
             over_x_years: 
-                other: "over %{count} years ago"
+                other: "hơn %{count} năm trước"
             x_days: 
-                other: "%{count} days ago"
+                other: "%{count} ngày trước"
             x_minutes: 
-                other: "%{count} minutes ago"
+                other: "%{count} phút trước"
             x_months: 
-                other: "%{count} months ago"
+                other: "%{count} tháng trước"
             x_seconds: 
-                other: "%{count} seconds ago"
+                other: "%{count} giây trước"
     counter: 
         format: "999.999.999"
     social: 
@@ -100,6 +100,8 @@ vi:
         users last name required: "Xin điền họ của bạn."
         moments content required: "Không thể bỏ trống nội dung."
     meta: 
+        best kids app: "App hay nhất dành cho thiếu nhi!"
+        best educational app: "App giáo dục tốt nhất!"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -770,6 +772,7 @@ vi:
             private: "Riêng tư"
             public: "Công cộng"
         title: "Kế hoạch"
+        meta title: "Bài học Kinh Thánh, tĩnh nguyện, và các kế hoạch đọc trực tuyến"
         browse by category: "Tra tìm theo thể loại"
         browse plans: "Tra tìm các kế hoạch %{category}"
         swap list localization: "(<a href='%{swap_link}'>Xem trong %{swap_locale}</a>)"
@@ -971,6 +974,8 @@ vi:
     download ad: 
         title: "Tải Ứng dụng Kinh Thánh miễn phí"
         description copy: "Hàng trăm bản dịch thuộc hơn %{language_count} ngôn ngữ - Kinh Thánh đồng hành cùng bạn mọi nơi!"
+        meta copy title: "Tải App Kinh Thánh miễn phí"
+        meta copy versions: "Hàng trăm bản dịch từ hơn %{language_count} ngôn ngữ khác nhau"
         line 1: "Hàng trăm bản dịch Kinh Thánh"
         line 2: "các ngôn ngữ khác nhau - Kinh Thánh"
         line 3: "đồng hành cùng bạn ở mọi nơi."
@@ -1029,24 +1034,24 @@ vi:
         what people: "Mọi người đang nói gì về App Kinh Thánh miễn phí..."
         t1: "Tôi luôn mang theo Lời Chúa."
         t1 copy: "Tôi đánh dấu các phân đoạn quan trọng với mình. Nhờ các kế hoạch mà tôi đã đọc toàn bộ Kinh Thánh trong vòng một năm!"
-        t2: "Highly recommended"
-        t2 copy: "I love how you are able to connect with friends and the Bible reading plans are awesome. This application helps me also to stay consistent in reading because it has reminders for the plans. It also gives me another way to come closer to God. Download this and read every day!"
+        t2: "Rất đáng sử dụng thử!"
+        t2 copy: "Thật tuyệt khi chúng ta có thể kết nối bạn bè, và các kế hoạch đọc Kinh Thánh cũng rất hay! App giúp tôi đọc Kinh thánh đều đặn nhờ các thông báo nhắc nhở của kế hoạch. Một cách nữa để tôi đến gần Chúa hơn. Hãy thử tải về và đọc mỗi ngày!"
         t3: "Một ứng dụng tuyệt vời!"
         t3 copy: "Một ứng dụng hay, với hàng loạt lựa chọn Kinh Thánh... Các bản Kinh Thánh phát thanh cũng rất dễ nghe, dễ hiểu."
-        t4: "Great. Always improving!"
-        t4 copy: "Many translations and languages available, and many that can be downloaded to read offline. Many useful features, such as the ability to make notes and bookmarks."
-        t5: "The best Bible app ever!"
-        t5 copy: "I love how it has a lot of versions and that there are verses of the day, devotions, plans and community. Thanks for this free app. :)"
-        t6: "Multiple versions and offline reading!"
-        t6 copy: "Great because there are many different versions and I could download multiple versions for offline reading.  I'm able to listen to this app."
-        t7: "Great app!"
-        t7 copy: "Helps me to read the bible more. Love the search and share features and the variety of ways to share. Also like the audio versions."
-        t8: "Great app"
-        t8 copy: "This is a great tool for studying from multiple translations. It's also convenient for listening to the bible when you're driving."
-        t9: "Best Bible app!"
-        t9 copy: "This is the best bible app out there. It has the word in different languages and versions for online and offline use. It has devotionals for everything you could think of. You can connect with others and ultimately learn about God and his Word."
-        version list: "Over 1000 Bible versions including:"
-        audio version list: "Listen to Bible audio versions including:"
+        t4: "Rất tuyệt! Luôn luôn cải thiện!"
+        t4 copy: "Có vô số bản dịch từ nhiều ngôn ngữ, và nhiều bản còn có thể tải về để đọc ngoại tuyến. Rất nhiều tính năng hữu ích như tạo ghi chú và đánh dấu."
+        t5: "Ứng dụng Kinh Thánh tốt nhất từ trước nay!"
+        t5 copy: "Thật tuyệt vì App có nhiều bản dịch, có câu Kinh Thánh trong ngày, tĩnh nguyện, kế hoạch đọc Kinh Thánh, và kết nối cộng đồng! Cảm ơn ứng dụng miễn phí! :)"
+        t6: "Hàng trăm bản dịch và bản ngoại tuyến!"
+        t6 copy: "Thật tiện lợi vì có nhiều bản khác nhau và tôi có thể tải về một số bản để đọc ngoại tuyến.  Tôi còn có thể nghe đọc Kinh Thánh nữa!"
+        t7: "Ứng dụng tuyệt vời!"
+        t7 copy: "Giúp tôi đọc Kinh Thánh nhiều hơn. Tôi thích chức năng tìm kiếm và chia sẻ bằng nhiều cách. Tôi cũng yêu thích Kinh Thánh phát thanh nữa!"
+        t8: "Ứng dụng thật tuyệt!"
+        t8 copy: "Một công cụ hữu ích để học Kinh Thánh từ nhiều bản dịch khác nhau! Có thể nghe Kinh Thánh cả khi lái xe, thật tiện lợi!"
+        t9: "Ứng dụng Kinh Thánh tốt nhất!"
+        t9 copy: "Đây là ứng dụng Kinh Thánh tốt nhất hiện có. Kinh Thánh với các ngôn ngữ khác nhau và các phiên bản sử dụng trực tuyến cũng như ngoại tuyến. Có bài đọc tĩnh nguyện cho mọi chủ đề. Bạn có thể kết nối với mọi người và hơn hết là học biết về Chúa và Lời của Ngài."
+        version list: "Hơn 1000 bản dịch Kinh Thánh, bao gồm:"
+        audio version list: "Nghe các bản Kinh Thánh âm thanh, bao gồm:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"

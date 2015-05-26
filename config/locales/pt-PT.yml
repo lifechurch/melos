@@ -111,6 +111,8 @@ pt-PT:
         users last name required: "Deverá inserir o seu sobrenome."
         moments content required: "O conteúdo não pode estar em branco"
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ pt-PT:
             private: "Privado"
             public: "Público"
         title: "Planos de Leitura"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Navegar por Categoria"
         browse plans: "Veja Planos na Categoria %{category}"
         swap list localization: "(<a href='%{swap_link}'>Ver em %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ pt-PT:
     download ad: 
         title: "Transfira Gratuitamente a App da Bíblia"
         description copy: "Centenas de versões em mais de %{language_count} línguas diferentes - a Bíblia que vai consigo para todo o lado."
+        meta copy title: "Transfira Gratuitamente a App da Bíblia"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Centenas de versões em mais de 100"
         line 2: "idiomas - a Bíblia que"
         line 3: "vai consigo para todo o lado"

@@ -133,6 +133,8 @@ uk:
         users last name required: "Вам необхідно ввести своє прізвище."
         moments content required: "Вміст не може бути порожнім."
     meta: 
+        best kids app: "Найкраща дитяча програма!"
+        best educational app: "Найкраща освітня програма"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -809,6 +811,7 @@ uk:
             private: "Приватне"
             public: "Загальнодоступне"
         title: "Плани читання"
+        meta title: "Вивчення Біблії у інтернеті, молитовні роздуми і плани читання"
         browse by category: "Пошук по категорії"
         browse plans: "Дослідити %{category} Плани"
         swap list localization: "(<a href='%{swap_link}'>Переглянути у %{swap_locale}</a>)"
@@ -1010,6 +1013,8 @@ uk:
     download ad: 
         title: "Завантажте безкоштовну програму Біблія"
         description copy: "Сотні перекладів на %{language_count}+ різних мовах - Біблія, яка завжди з вами."
+        meta copy title: "Завантажте безкоштовну програму Біблія"
+        meta copy versions: "Сотні перекладів на %{language_count}різних мовах"
         line 1: "Сотні перекладів на 100+"
         line 2: "різних мов - це все Біблія"
         line 3: "що всюди прямує з вами."

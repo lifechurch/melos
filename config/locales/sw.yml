@@ -111,6 +111,8 @@ sw:
         users last name required: "Lazima uingize jina la mwisho."
         moments content required: "Maudhui haiwezi kuachwa tupu"
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ sw:
             private: "Binafsi"
             public: "Umma"
         title: "Mipango ya usomaji"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Tafuta kwa Jamii"
         browse plans: "Vingari %{category} mipango"
         swap list localization: "(<a href='%{swap_link}'>Ona kwa %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ sw:
     download ad: 
         title: "Pata programu ya bure ya Bibilia"
         description copy: "Mamia ya matoleo kwenye %{language_count}+ lugha tofauti - Biblia inayoeda na wewe kokote"
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "mamia ya matoleo yenye"
         line 2: "lugha tofauti - biblia ambayo"
         line 3: "itaenda na wewe sehemu yoyote."

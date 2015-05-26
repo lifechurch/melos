@@ -111,6 +111,8 @@ mn:
         users last name required: "Овогоо оруулах шаардлагатай."
         moments content required: "Энэ хэсэг хоосон байж болохгүй."
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ mn:
             private: "Хувийн"
             public: "Нийтийн"
         title: "Унших Төлөвлөгөөнүүд"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Тѳрѳл Үзэх"
         browse plans: "%{category}-н Тѳлѳвлөгѳѳнүүд Үзэх"
         swap list localization: "(<a href='%{swap_link}'>Харах %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ mn:
     download ad: 
         title: "Үнэгүй Библийн Апп татах"
         description copy: "Хэдэн зуун орчуулгууд %{language_count} олон хэл дээр бий - хаана ч тантай хамт байх Библи."
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Олон орчуулга 100+"
         line 2: "өөр хэл дээр - Хаана ч"
         line 3: "тантай хамт байх Библи."

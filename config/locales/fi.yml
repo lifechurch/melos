@@ -111,6 +111,8 @@ fi:
         users last name required: "Sukunimi täytyy syöttää."
         moments content required: "Sisältö puuttuu."
     meta: 
+        best kids app: "Paras lasten sovellus!"
+        best educational app: "Paras opetusohjelma"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ fi:
             private: "Yksityinen"
             public: "Julkinen"
         title: "Lukusuunnitelmat"
+        meta title: "Raamatun opiskelua verkossa, hartauksia ja lukusuunnitelmia."
         browse by category: "Selaa aiheittain"
         browse plans: "Selaa kategorian %{category} suunnitelmia"
         swap list localization: "(<a href='%{swap_link}'>Näytä kielellä %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ fi:
     download ad: 
         title: "Lataa ilmainen Raamattusovellus"
         description copy: "Satoja käännöksiä %{language_count}+ eri kielellä - Raamattu, joka kulkee mukanasi minne tahansa."
+        meta copy title: "Lataa ilmainen Raamattusovellus"
+        meta copy versions: "Satoja käännöksiä %{language_count}+ kielellä"
         line 1: "Satoja käännöksiä 100+"
         line 2: "eri kielellä - Raamattu"
         line 3: "joka kulkee kanssasi minne menetkin"

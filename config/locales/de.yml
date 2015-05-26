@@ -111,6 +111,8 @@ de:
         users last name required: "Du musst deinen Nachnamen eingeben."
         moments content required: "Diese Feld darf nicht leer sein."
     meta: 
+        best kids app: "Die beste App für Kids"
+        best educational app: "Die beste pädagogische App"
         kids_app: 
             title: "Die Bibel App für Kinder"
             description: "Die Bibel App für Kinder bietet den Kindern die Möglichkeit, biblische Geschichten über Jesus, das Geschenk des ewigen Lebens und viele andere Lektionen zu lernen, die Gott uns lehren möchte. Die Kinder interagieren mit dem Wort durch wunderbare Bilder und verdienen sich beim Lesen Punkte und sammeln Schätze. "
@@ -783,6 +785,7 @@ de:
             private: "Privat"
             public: "Öffentlich"
         title: "Lesepläne"
+        meta title: "Online Bibelstudium, Andachten und Lesepläne"
         browse by category: "Kategorien anschauen"
         browse plans: "%{category} Lesepläne anschauen"
         swap list localization: "(<a href='%{swap_link}'>Ansehen auf %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ de:
     download ad: 
         title: "Lade dir die Bibel App gratis herunter."
         description copy: "Hunderte von Bibelübersetzungen in über %{language_count} verschiedenen Sprachen. Mit der App hast du die Bibel überall dabei."
+        meta copy title: "Lade dir die Bibel App gratis herunter."
+        meta copy versions: "Hunderte Versionen auf %{language_count} + anderen Sprachen"
         line 1: "Hunderte Übersetzungen in über 100"
         line 2: "verschiedenen Sprachen - die Bibel,"
         line 3: "die du überall hin mitnehmen kannst."

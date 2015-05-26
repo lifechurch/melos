@@ -111,6 +111,8 @@ ca:
         users last name required: "Escriu el teu cognom"
         moments content required: "El contingut no pot estar buit"
     meta: 
+        best kids app: "La millor aplicació per a nens!"
+        best educational app: "La millor aplicació educativa"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ ca:
             private: "Privat"
             public: "Públic"
         title: "Plans de lectura"
+        meta title: "Estudi bíblic en línia, devocionals i plans de lectura"
         browse by category: "Explora per categories"
         browse plans: "Explorar plans de %{category}"
         swap list localization: "(<a href='%{swap_link}'>Veure-ho a %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ ca:
     download ad: 
         title: "Descarrega l'aplicació gratuïta de la Bíblia."
         description copy: "Centenars de versions en %{language_count} diferents llengües - la Bíblia que t'acompanya arreu."
+        meta copy title: "Descarrega l'aplicació gratuïta de la Bíblia."
+        meta copy versions: "Centenars de versions en + de %{language_count} idiomes diferents"
         line 1: "Centenars de versions en més de 100"
         line 2: "idiomes diferents - La Bíblia"
         line 3: "que va amb tu a qualsevol lloc."

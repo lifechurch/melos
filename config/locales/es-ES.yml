@@ -6,39 +6,39 @@ es-ES:
     datetime: 
         time_ago_in_words: 
             about_x_hours: 
-                one: "about 1 hour ago"
-                other: "about %{count} hours ago"
+                one: "hace una %{count} hora"
+                other: "hace unas %{count} horas"
             about_x_months: 
-                one: "about 1 month ago"
-                other: "about %{count} months ago"
+                one: "Hace uno %{count} mes"
+                other: "Hace unos %{count} meses"
             about_x_years: 
-                one: "about 1 year ago"
-                other: "about %{count} years ago"
+                one: "Hace un %{count} año"
+                other: "Hace unos %{count} años"
             almost_x_years: 
-                one: "almost 1 year ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
+                one: "hace casi %{count} año"
+                other: "hace casi %{count} años"
+            half_a_minute: "hace medio minuto"
             less_than_x_minutes: 
-                one: "less than a minute ago"
-                other: "less than %{count} minutes ago"
+                one: "hace menos de %{count} minuto"
+                other: "hace menos de %{count} minutos"
             less_than_x_seconds: 
-                one: "less than 1 second ago"
-                other: "less than %{count} seconds ago"
+                one: "hace menos de %{count} segundo"
+                other: "hace menos de %{count} segundos"
             over_x_years: 
-                one: "over 1 year ago"
-                other: "over %{count} years ago"
+                one: "más de %{count} año"
+                other: "más de %{count} años"
             x_days: 
-                one: "1 day ago"
-                other: "%{count} days ago"
+                one: "hace %{count} día"
+                other: "hace %{count} días"
             x_minutes: 
-                one: "1 minute ago"
-                other: "%{count} minutes ago"
+                one: "hace %{count} minuto"
+                other: "hace %{count} minutos"
             x_months: 
-                one: "1 month ago"
-                other: "%{count} months ago"
+                one: "hace %{count} mes"
+                other: "hace %{count} meses"
             x_seconds: 
-                one: "1 second ago"
-                other: "%{count} seconds ago"
+                one: "hace %{count} segundo"
+                other: "hace %{count} segundos"
     counter: 
         format: "999.999.999"
     social: 
@@ -111,6 +111,8 @@ es-ES:
         users last name required: "Debe introducir un apellido."
         moments content required: "El contenido no puede estar en blanco."
     meta: 
+        best kids app: "¡la mejor aplicación para niños!"
+        best educational app: "La mejor aplicación educativa"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ es-ES:
             private: "Privado"
             public: "Público"
         title: "Planes de lectura"
+        meta title: "Estudio bíblico online, devocionales y planes de lectura bíblica"
         browse by category: "Navegador por categorías"
         browse plans: "Navega %{category} Planes"
         swap list localization: "(<a href='%{swap_link}'>Ver en %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ es-ES:
     download ad: 
         title: "Descargar la Bible App gratis."
         description copy: "Cientos de versiones en más de %{language_count}idiomas diferentes - la Biblia que va contigo a todas partes."
+        meta copy title: "Descargar la Bible App gratis."
+        meta copy versions: "Cientos de versiones en %{language_count}+ idiomas diferentes"
         line 1: "Cientos de versiones en 100+"
         line 2: "diferentes idiomas - la Biblia"
         line 3: "que va contigo donde quieras."

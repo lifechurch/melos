@@ -21,7 +21,7 @@ ro:
                 one: "aproape %{count} an în urmă"
                 few: "aproape %{count} ani în urmă"
                 other: "aproape %{count} de ani în urmă"
-            half_a_minute: "half a minute ago"
+            half_a_minute: "jumătate de minut în urmă"
             less_than_x_minutes: 
                 one: "mai puțin de %{count} minut în urmă"
                 few: "mai puțin de %{count} minute în urmă"
@@ -35,21 +35,21 @@ ro:
                 few: "peste %{count} ani în urmă"
                 other: "peste %{count} de ani în urmă"
             x_days: 
-                one: "1 day ago"
-                few: "%{count} days ago"
-                other: "%{count} days ago"
+                one: "%{count} zi în urmă"
+                few: "%{count} zile în urmă"
+                other: "%{count} de zile în urmă"
             x_minutes: 
-                one: "1 minute ago"
-                few: "%{count} minutes ago"
-                other: "%{count} minutes ago"
+                one: "%{count} minut în urmă"
+                few: "%{count} minute în urmă"
+                other: "%{count} de minute în urmă"
             x_months: 
-                one: "1 month ago"
-                few: "%{count} months ago"
-                other: "%{count} months ago"
+                one: "%{count} lună în urmă"
+                few: "%{count} luni în urmă"
+                other: "%{count} de luni în urmă"
             x_seconds: 
-                one: "1 second ago"
-                few: "%{count} seconds ago"
-                other: "%{count} seconds ago"
+                one: "%{count} secundă în urmă"
+                few: "%{count} secunde în urmă"
+                other: "%{count} de secunde în urmă"
     counter: 
         format: "999.999.999"
     social: 
@@ -122,6 +122,8 @@ ro:
         users last name required: "Trebuie să introduci un nume."
         moments content required: "Conținutul nu poate fi necompletat."
     meta: 
+        best kids app: "Cea mai bună aplicație pentru copii!"
+        best educational app: "Cea mai bună aplicație educațională"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -796,6 +798,7 @@ ro:
             private: "Privat"
             public: "Public"
         title: "Planuri de citire"
+        meta title: "Studiu Biblic online, planuri deviționale și de citire"
         browse by category: "Răsfoiește după categorie"
         browse plans: "Răsfoiește %{category}"
         swap list localization: "(<a href='%{swap_link}'>Vezi în %{swap_locale}</a>)"
@@ -997,6 +1000,8 @@ ro:
     download ad: 
         title: "Descarcă gratuit aplicația Biblia"
         description copy: "Sute de versiuni în peste %{language_count} de limbi diferite - Biblia care te însoțește pretutindeni."
+        meta copy title: "Descarcă gratuit aplicația Biblia"
+        meta copy versions: "Sute de versiuni în %{language_count}+limbi diferite"
         line 1: "Sute de versiuni în 100+"
         line 2: "limbi diferite - Biblia care"
         line 3: "te însoțește pretutindeni."
