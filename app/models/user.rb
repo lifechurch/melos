@@ -73,21 +73,18 @@ class User < YV::Resource
     # returns a YV::API::Result with errors if authentication is invalid
     def authenticate(username, password)
       auth = {username: username, password: password}
+      id_results = find_id(username)
+      if id_results.valid?
 
-      # First make sure we have a user
-      initial_results = find_by_username(username)
-      return initial_results unless initial_results.valid?  #return here with invalid results if we didn't find a user
+        # We never want a user to authenticate with a cached user object
+        #  so delete the matched user from cache before authenticating
+        user_cache_key = YV::Caching::cache_key("users/view", {query: {id: id_results.user_id}})
+        Rails.cache.delete(user_cache_key)
 
-      data, errs = post("users/authenticate", auth: auth  ) # Data returned: {"id"=>7541650, "username"=>"BrittTheIsh"}
-      results = YV::API::Results.new( data , errs )
-
-      if results.valid?
-         # we've successfully authenticated
-         # we now need to make another API view call with auth info to retrieve entire detailed user info.
-         results = find(data.id, auth: auth.merge(user_id: data.id)) # our user
+        return find(id_results.user_id, auth: auth.merge(user_id: id_results.user_id))
+      else
+        return id_results
       end
-
-      return results
     end
 
 
@@ -120,12 +117,20 @@ class User < YV::Resource
     # Returns YV::API::Results decorator for User instance
     def find_by_id( id , opts = {})
       data, errs = get("users/view", opts.merge(id: id))
+
+      # Don't cache an invalid user
+      if not errs.blank?
+        user_cache_key = YV::Caching::cache_key("users/view", {query: {id: id}})
+        Rails.cache.delete(user_cache_key)
+      end
+
       return YV::API::Results.new(new(data.merge!(auth: opts[:auth])), errs)
     end
 
     # Find a user by id, username or email address
     # Returns YV::API::Results decorator for User instance
     def find(username_or_id, opts = {})
+      opts[:cache_for] = YV::Caching.a_short_time
       case username_or_id
         when String
           return find_by_username( username_or_id , opts )
@@ -425,6 +430,9 @@ class User < YV::Resource
       return (first_name.present? and last_name.present?)
   end
 
+  def ensure_language_tag
+    language_tag == "false" ? "en" : language_tag
+  end
 
   private
 

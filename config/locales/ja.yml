@@ -3,6 +3,31 @@ ja:
     time: 
         formats: 
             votd: "%Y年%B%-d日"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "about %{count} hours ago"
+            about_x_months: 
+                other: "about %{count} months ago"
+            about_x_years: 
+                other: "about %{count} years ago"
+            almost_x_years: 
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                other: "over %{count} years ago"
+            x_days: 
+                other: "%{count} days ago"
+            x_minutes: 
+                other: "%{count} minutes ago"
+            x_months: 
+                other: "%{count} months ago"
+            x_seconds: 
+                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -152,8 +177,8 @@ ja:
     share error: "メッセージのシェアに失敗しました。もう一度、実行してください。"
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "Twitterのアカウントと連携されていません。設定からアカウントを連携してください。"
+            no_facebook_connection: "Facebookのアカウントと連携されていません。設定からアカウントを連携させてください。"
     google plus: "Google+"
     connect to: "%{connection} アカウントに連携"
     deleted connection: "%{connection} への連携設定が問題なく解除されました。"
@@ -370,6 +395,11 @@ ja:
             accept request button: "申請を承認する"
             ignore button: "辞退"
             ignore request button: "リクエストの却下"
+    images: 
+        none user: "%{username} hasn't created any images yet."
+        blank slate: 
+            heading: "You don’t have any images yet"
+            description: "Use the YouVersion mobile app to create verse images."
     notes: 
         none user: "%{username} さんはまだノートがありません"
         blank slate: 
@@ -469,7 +499,7 @@ ja:
         reading: "このプランに参加中のユーザ"
         subscribed previously: "%{time_ago} 前に開始しました"
         sign in for settings: "自己プロフィールへのアクセスにはサインインする必要があります。"
-        my profile: "わたしのプロフィール"
+        my profile: "プロフィール"
         edit profile: "プロフィールの編集"
         update profile: "プロフィールの更新"
         go to your profile: "自分のプロフィールを見る"
@@ -502,6 +532,8 @@ ja:
         user notes: "%{user} さんのノート"
         my friends: "友だち"
         my notes: "ノート"
+        my images: "Images"
+        user images: "%{user}'s Images"
         user friends: "%{user} さんの友だち"
         my bookmarks: "わたしのブックマーク"
         user bookmarks: "%{user} さんのブックマーク"
@@ -567,7 +599,7 @@ ja:
             description title: "サービスの内容"
             description text: "LifeChurch.tv はYouVersionを通じてユーザーに各種のサービス（オンラインビデオ映像、ブログへの投稿及びコメント、注釈、その他各種のコミュニケーションの手段、フォーラム、及び個人化したコンテンツ等を含む）を無料で提供しています。YouVersionの使用には LifeChurch.tv から通信（サービス関連の発表、事務的メッセージ、その他個人的に申し込まれたメッセージ等を含む）が含まれることを理解されたものとします。YouVersionへのアクセスには機器の購入や第三者への料金の支払い（インターネット使用料、放送時間料、その他メッセージの表示・配達料等）を要することがありますが、それらはすべて利用者の責任となることを理解され、これに同意されたものとします。"
             registration title: "登録義務"
-            registration text: "<ul><li>YouVersionの登録フォームに、ご自分に関する正確かつ完全な情報（以下「登録データ」）を提供すること、及び</li>»<li>登録データが常に真実、正確、最新かつ完全な情報を含むよう、データを維持し、 速やかに更新することを利用者は理解され、これに同意されたものとします。かかるデータに虚偽の情報、不正確な情報、最新でない情報、あるいは不完全な情報を含むとの疑いがある場合には、LifeChurch.tvにはお客様のアカウント を停止または終止し、YouVersion （またはその一部）の現在または将来の使用を拒否する権利をことがあります。 LifeChurch.tv では特にお子様を含むユーザー全員の安全とプライバシーを重要視しています。このため、13歳以下のお子様のご両親でお子様のYouVersion へのアクセスを認められる方は、YouVersion が幅広い視聴者層に向けにデザインされていることを認めていただく必要があります。したがって、YouVersion がお子様に適切かどうかについては、お子様の法律上の保護者である方の責任で判断していただくことになります。</li></ul>"
+            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li><li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
             privacy title: "YouVersion プライバシー規約"
             privacy text: "登録データ及びその他の個人情報は、 <a href='https://www.bible.com/privacy'>https://bible.com/privacy</a>に掲載のプライバシー規約に基づいて取り扱います。YouVersion のご使用により、<a href='http://LifeChurch.tv'>Lifechurch.tv</a> による保管・処理・使用目的での米国または他の国への伝達を含めて、上記のプライバシー規約 に従った情報の収集と使用に(プライバシー規約に記載されているように)同意したこととなる旨を理解されたものとします。"
             account title: "メンバーアカウント、パスワード、及びセキュリティ"
@@ -605,7 +637,7 @@ ja:
             trademark title: "商標に関する情報"
             trademark text: "LifeChurch.tv 及びその活動に係るロゴ、役務商標、製品やサービスの名称はLifeChurch.tv の商標（以下「LifeChurch.tv マーク」）です。 LifeChurch.tv からの事前の書面による許可なしにLifeChurch.tv マークの如何なる表示・使用をも行わないことに同意されたものとします。"
             copyright title: "著作権侵害又は知的所有権侵害の申立てと手続"
-            copyright text: "LifeChurch.tv は他者の知的所有権を尊重します。ユーザの方にも、特にYouVersion の使用に際して、同様にしていただくようお願いします。LifeChurch.tv は、場合によっては 、独自の裁量で、知的所有権侵害を繰り返していると思われるユーザーのアカウントを無効にし、または終止することがあります。 お客様の著作が著作権侵害を構成するような方法で複製されたと思われたとき、或いは、その他の方法でお客様の知的所有権が侵されたときは、legal@youversion.com 宛に、下記の情報を提供してください。<ul type='none'><li> 当該著作権または知的所有権の所有者の代行権者の署名又は電子署名、</li><br><li>権利が侵害されたと思われる著作その他の知的財産についての記述文、</li><br><li>権利が侵害されたと思われるものがYouVersion のどこにあるかについての記述文、</li><br><li>住所、電話番号、メールアドレス（該当するものすべて）、</li><br><li>問題となる使用は、著作権者やその代行者の許可を得たものではなく、法律によって授権されたものでもない旨のお客様の誠実な信念を記述した文章、</li><br><li> 上記の申し立ての情報が正確であり、著作権者又は知的所有権者ご本人であること、または著作権者又は知的所有権者の代行権者であることを述べた、偽証罪の適用を受ける宣誓供述書。LifeChurch.tvの</li></ul>"
+            copyright text: "LifeChurch.tv respects the intellectual property of others. We ask our users to do the same, particularly where it pertains to using YouVersion. LifeChurch.tv may, in appropriate circumstances and at its sole discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please send the following information to legal@youversion.com:<ul type='none'><li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest in question;</li><br><li>A written description of the copyrighted work or other intellectual property that you claim has been infringed;</li><br><li>A written description of where the material that you claim is infringing is located on YouVersion;</li><br><li>Your address, telephone number, and email address (all that apply);</li><br><li>A written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li><br><li>A written statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner, or that you are authorized to act on the behalf of the copyright or intellectual property owner. LifeChurch.tv's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:%{newline}By mail: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "一般情報"
             general text: "完全合意 - この「利用規約」は、利用者のYouVersion の使用に関するLifeChurch.tv との完全な合意を構成し、YouVersion に関する利用者とLifeChurch.tv との間の従前の合意に取って代わるものです。これに加えて追加的な諸条件が課されることがあります。<br><br>準拠法、管轄裁判所について - この「利用規約」 及び、利用者とLifeChurch.tv との関係は、州の抵触法にかかわらず、オクラホマ州の法規に準拠します。利用者と LifeChurch.tv は、オクラホマ州オクラホマ郡内の裁判所の排他的対人管轄に服することに同意されたものとします。<br><br>権利放棄と 契約の可分性 - LifeChurch.tv がこの「利用規約」を実施・施行することを怠った場合にも、かかる権利または規定の放棄を意味するものではありません。管轄裁判所が「利用規約」の 特定の規定が無効であるとの判決を下した場合にも、裁判所は、当該規定に反映されている当事者の意向を 実行する努力をすべきであると当事者双方が同意するものとします。また、「利用規約」の他の規定の効力は維持されます。<br><br>生存者権・譲渡の禁止 - LifeChurch.tv のアカウントは譲渡できないこと、そして、LifeChurch.tv の利用者のIDへの権利またはアカウント内のコンテンツへの権利は利用者の死亡時に消滅することに同意されたものとします。死亡証明書 を受け取った時点で、LifeChurch.tv はお客様のアカウントを終止し、アカウント内のすべてのコンテンツを永久に削除 することができます。<br><br>時効 - 法令の定めがこれに異なる場合にも、YouVersion の使用またはこの「利用規約」から発生する、またはこれらに関連する申立てや訴訟は、その事由発生後1年以内に提訴しなければならず、これがなされない場合には、以後永久に提訴できない旨をご理解いただき、これに同意されたものとします。<br><br>この「利用規約」内の表題は、便宜上のものであって、法律上・契約上の効力はありません。"
         profile: 
@@ -618,6 +650,7 @@ ja:
             tab notes: "ノート"
             tab bookmarks: "ブックマーク"
             tab highlights: "ハイライト"
+            tab images: "Images"
             tab badges: "バッジ"
             first name: "名"
             last name: "姓"
@@ -713,6 +746,7 @@ ja:
         none me: "まだバッジを獲得していません"
         none user: "%{username} さんはまだバッジを獲得していません"
     plans: 
+        share plan: "#読書プラン %{plan_title}をチェック@YouVersion #BiblePlan "
         widget: 
             my plans: "マイ・プラン"
             start reading: "読書を開始"
@@ -839,8 +873,10 @@ ja:
         loading sidebar content: "サイドバーの内容を読み込み中…"
     videos: 
         title: "ビデオ"
+        watch videos: "聖書についての動画を見よう"
         all: "全てのビデオ"
         related scripture: "関連聖句"
+        share video: "%{video_title}の動画を@YouVersionで見ています。"
     licenses: 
         authorized: 
             heading: "内容が認証されました。"
@@ -942,7 +978,7 @@ ja:
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        download: "今すぐダウンロード"
     about page: 
         relevancy: "聖書との関係"
         relevancy copy: "何世代も昔の世の中では、聖書を直接読むことができる人は非常に限られていました。もはや今日ではそのようなことはありません。しかしながら、聖書を読むことができても多くの人は、聖書の中のメッセージは自分の人生には無関係だと考えています。一方で、聖書と毎日の自分たちの体験には関係性があると信じている人たちもいます。"
@@ -988,15 +1024,29 @@ ja:
         h3: "YouVersion はグローバルです"
         h3 sub: "世界%{language_count}カ国語以上の言語での利用が可能"
         main: "何千万人ものユーザが聖書アプリを利用して、神様の御言葉を日常生活の一環に取り入れています。無料のアプリをダウンロードして、ブックマーク、ノート、読書プランにどこからでもアクセスしましょう。何百種もの聖書訳（音読聖書も有り）をご利用のモバイル機器からお楽しみください。"
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "携帯機器から<br>Bible.com/appを見る"
         download now: "聖書アプリを今すぐダウンロード"
         what people: "聖書アプリについて、どんなことが言われているのでしょう・・・"
         t1: "いつでも聖書を読むことができる。"
         t1 copy: "個人的に意味深い聖句をブックマークしたり、読書プランのおかげで1年で聖書全体を読むこともできました。"
-        t2: "素晴らしいプログラム！"
-        t2 copy: "毎日このアプリのおかげで、神様の御言葉を整理したり読んだりできます。使い方も簡単で、機能も多数用意されていて、非常に気に入っています！"
+        t2: "Highly recommended"
+        t2 copy: "I love how you are able to connect with friends and the Bible reading plans are awesome. This application helps me also to stay consistent in reading because it has reminders for the plans. It also gives me another way to come closer to God. Download this and read every day!"
         t3: "素晴らしいアプリケーション！"
         t3 copy: "たくさんの種類の聖書が用意された素晴らしいアプリ・・・音読聖書も解かりやすくて素晴らしいです。"
+        t4: "Great. Always improving!"
+        t4 copy: "Many translations and languages available, and many that can be downloaded to read offline. Many useful features, such as the ability to make notes and bookmarks."
+        t5: "The best Bible app ever!"
+        t5 copy: "I love how it has a lot of versions and that there are verses of the day, devotions, plans and community. Thanks for this free app. :)"
+        t6: "Multiple versions and offline reading!"
+        t6 copy: "Great because there are many different versions and I could download multiple versions for offline reading.  I'm able to listen to this app."
+        t7: "Great app!"
+        t7 copy: "Helps me to read the bible more. Love the search and share features and the variety of ways to share. Also like the audio versions."
+        t8: "Great app"
+        t8 copy: "This is a great tool for studying from multiple translations. It's also convenient for listening to the bible when you're driving."
+        t9: "Best Bible app!"
+        t9 copy: "This is the best bible app out there. It has the word in different languages and versions for online and offline use. It has devotionals for everything you could think of. You can connect with others and ultimately learn about God and his Word."
+        version list: "Over 1000 Bible versions including:"
+        audio version list: "Listen to Bible audio versions including:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"
@@ -1084,12 +1134,12 @@ ja:
             tracker title: "クリスマスのお話読者"
             twitter text: "世界中の人々がイエス・キリスト誕生のお話を読んでいるのを見るYouVersion: https://www.bible.com/christmasでクリスマスのお話読者をシェアする"
             facebook text: "世界中の人々がイエス・キリスト誕生のお話を読むたびにクリスマスのお話読者をシェアします。教会でご自宅で、仲の良いお友達・ご家族とご一緒にまたはおひとりで、神様の愛の素晴らしさを振り返ります"
-            summary: "During December 2014, this is what it looked like to see the world read about the birth of Jesus."
+            summary: "2014年12月中に全世界でこんなにもイエスの誕生について読まれていました。"
             verse: "<sup>10</sup>御使は言った。<br>「恐れるな。見よ、すべての民に与えられる大きな喜びを、あなたがたに伝える。<sup>11</sup>きょうダビデの町に、あなたがたのために救主がお生れになった。このかたこそ主なるキリストである。"
             read more: "素晴らしいクリスマスのお話を読む"
             read about: "イエス・キリスト誕生のお話を読む"
             totals since: "2014年12月1日以降のYouVersionビジター総数:"
-            totals during: "YouVersion totals during December 2014:"
+            totals during: "2014年12月中のYouVersion統計："
             total installs: "　スマートフォン及びタブレットへのインストール総数"
             download: "無料聖書アプリをダウンロードする"
             versions: "%{version_count} 種類以上の聖書訳が%{language_count} ヵ国語の言語で"

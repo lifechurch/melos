@@ -1,5 +1,5 @@
 :ruby
-  @title            = t("meta.mobile.title")
+  @title            = "#{t('pages.home.features.read heading')} #{t('pages.home.features.study heading')} #{t(".hero.heading")}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
 
@@ -22,6 +22,8 @@
   = render '/shared/hreflang'
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}"
+  - version_id = Version.default_for(I18n.locale.to_s.eql?('en-GB') ? "en" : I18n.locale)
+  %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/bible?reference=JHN.1&version=#{version_id}"}
   %link{rel: "canonical", href: canonicalHref}
   %meta{name: "url",            content: @meta_url}
   %meta{property: "og:title",       content: @title }
@@ -31,7 +33,7 @@
   %meta{name: "twitter:url",              content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
   %meta{name: "twitter:title" ,           content: @title}
   %meta{name: "twitter:description",      content: @meta_description}
-  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
+  %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(120)))}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 = cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do

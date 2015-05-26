@@ -3,6 +3,42 @@ tl:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -370,6 +406,11 @@ tl:
             accept request button: "Tanggapin ang kahilingan"
             ignore button: "Huwag Tanggapin"
             ignore request button: "Huwag tanggapin ang hiling"
+    images: 
+        none user: "%{username} ay wala pang nagawang mga larawan."
+        blank slate: 
+            heading: "Wala ka pang mga larawan"
+            description: "Gamitin ang YouVersion mobile app para gumawa ng verse images."
     notes: 
         none user: "Si %{username} ay wala pang mga tala."
         blank slate: 
@@ -502,6 +543,8 @@ tl:
         user notes: "Mga Tala ni %{user}"
         my friends: "Mga Kaibigan"
         my notes: "Mga tala"
+        my images: "Mga Larawan"
+        user images: "Mga Larawan ni %{user}"
         user friends: "Mga Kaibigan ni %{user}"
         my bookmarks: "Aking Mga Bookmarks"
         user bookmarks: "Mga Bookmarks ni %{user}"
@@ -567,7 +610,7 @@ tl:
             description title: "Paglalarawan ng Serbisyo"
             description text: "Ang LifeChurch.tv ay nagbibigay sa mga Tagasunod nito ng mga iba't-ibang serbisyo sa pamamagitan ng YouVersion, kabilang ngunit hindi limitado sa mga sumusunod, panonood ng video online, paglalathala ng blog posts at mga komento, komentaryo, iba't-ibang mga gamit sa komunikasyon, forums, at isinapersonal na nilalaman, ng walang bayad mula sa mga tagasunod. Sa pag-gamit mo ng YouVersion, nauunawaan mong maaaring kaakibat nito ang pagkakaroon ng komunikasyon mula sa LifeChurch.tv, kabilang ngunit hindi limitado sa mga anunsiyo tungkol sa serbisyo, mensaheng pang-administratibo, at iba pang mga mensahe na ikaw ay indibidwal na umayon. Nauunawaan mo at sang-ayon ka na ikaw ang responsable sa pagkuha ng pamamaraan upang magkaroon ng Internet access sa YouVersion, na maaaring kasama ang aparato at bayad sa third-party (gaya ng bayad sa Internet service provider, bayad sa airtime, o iba pang bayarin kaugnay sa paglalathala at paghahatid ng mensahe)."
             registration title: "Ang Iyong mga Pananagutan tungkol sa Pagpapatala"
-            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li> <li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
+            registration text: "Kinikilala mo at pumapayag kang:<ul><li>magbigay ng totoo, eksakto, kasalukuyan at buong impormasyon tungkol sa iyong sarili ayon sa registration form(s) (ang 'Registration Data') ng YouVersion at</li><li>panatilihing at daliang iayos ang Registration Data para mapanatili itong tooto, eksakto, kasalukuyan at buo. Kung ang LifeChurch.tv ay maghinala na ang mga impormasyong ito ay hindi totoo, eksakto o kulang, may karapatan ang LifeChurch.tv na suspindihin o tanggalin ang account at pagkaitan ng anuman at lahat o panghinaharap na paggamit ng YouVersion (o bahagi nito). Ang LifeChurch.tv ay nagmamalasakit sa kaligtasan at pagkapribado ng lahat ng mga gumagamit nito, lalo na ang mga bata. Sa ganitong kadahilanan, ang mga magulang ng mga batang edad 13 pababa na nagpapahintulot sa kanilang mga anak na gumamit ng YouVersion ay kinakailangang kumilala na ang YouVersion ay akma sa malawak na tagasubaybay. Kaya, bilang legal na tagapangalaga ng iyong anak, ika'y may responsibilidad na tukuyiin kung ang YouVersion ay angkop para sa iyong anak.</li></ul>"
             privacy title: "Ang Patakaran sa Privacy ng YouVersion"
             privacy text: "Ang mga impormasyon ukol sa pagpapatala at iba pang personal na bagay tungkol sa iyo ay nasasakop ng aming Patakaran sa Privacy, na matatagpuan sa <a href='https://bible.com/privacy'>https://bible.com/privacy</a>. Nauunawaan mo na sa paggamit mo ng YouVersion ay pumapayag kang makalap at magamit (gaya ng nakasaad sa Patakaran sa Privacy) ang mga impormasyong ito, kasama na ang paglipat ng mga impormasyong ito sa Estados Unidos at/o iba pang mga bansa para sa pagtatago, pag-proseso at paggamit ng <a href='http://lifechurch.tv'>Lifechurch.tv</a>."
             account title: "Member Account, Password and Security"
@@ -605,7 +648,7 @@ tl:
             trademark title: "Impormasyon tungkol sa Tatak Pangkalakal"
             trademark text: "Ang mga tatak-pangkalakal, logo, tatak-pangserbisyo, at produkto at mga pangalan ng mga serbisyo kaugnay sa LifeChurch.tv\nat mga ministri nito ay tanda o tatak-pangkalakal ngLifeChurch.tv (ang 'LifeChurch.tv Marks'). Dahil sa kawalan ng pahintulot mula sa LifeChurch.tv, ikaw ay sumasang-ayon na hindi i-display o gamitin ang anumang tanda o tatak ng LifeChurch.tv sa anumang paraan."
             copyright title: "Abiso at Pamamaraan sa Pagkuha ng Pag-angkin sa Karapatang Magpalathala o Paglabag sa Intelektwal na Ari-arian"
-            copyright text: "Ginagalang ng LifeChurch.tv ang intelektwal ng ari-arian ng iba. Hinihiling namin na gawin din ito ng aming mga taga-sunod, partikular na sa paggamit ng YouVersion. Ang LifeChurch.tv ay maaaring, sa mga angkop na pagkakataon at sa sarili nitong karunungan, alisin at/o tanggalin ang mga accounts ng mga taga-sunod na maaaring paulit-ulit na lumalabag. Kung sa iyong paniwala ay nakopya ang iyong mga gawa sa anumang paraan na lumabag sa iyong karapatang maglathala, o ang iyong intellectual property ay nilabag, maaring ipadala ang mga sumusunod na impormasyon sa legal@youversion.com:<ul type='none'><li>Electronic o pisikal na lagda ng taong awtorisadong kumatawan sa may-ari ng karapatang maglathala o iba pang intellectual property na kwestionable;</li><br><li>Nasusulat na paglalarawan ng likhang naka-copyright o may intellectual property na pinaniniwalaang nalabag;</li><br><li>Nasusulat na paglalarawan kung saan ang likha na pinaniniwalaang nalabag ay matatagpuan sa YouVersion;</li><br><li>Ang iyong adres, numero ng telepono, at email address (lahat ng mayroon);</li><br><li>Nasusulat na pahayag mula sa iyo na nagsasaad na ang pag-gamit ng iyong likha ay hindi awtorisado ng may ari, ng agente, o ng batas;</li><br><li>Nasusulat na pahayag mula sa iyo, na ginawa sa panunumpa nang buong katotohanan, na ang lahat ng impormasyon sa iyong Abiso ay wasto at ikaw ang may akda at nagtataglay ng karapatang maglathala, o kaya ay ikaw ay awtorisado kumatawan sa halip ng may-ari ng karapatang maglathala o mayari ng intellectual property. LifeChurch.tv's</li></ul>"
+            copyright text: "Ginagalang ng LifeChurch.tv ang intelektwal na pagaari ng iba. Hinihiling namin sa amng mga gumagamit o users na gayahin ito, lalung-lalo na sa paggamit ng YouVersion. Ang LifeChurch.tv ay maaring, sa angkop na kalagayan at sa sariling pagpapasiya nito, itigil at/o ihinto ang mga account ng mga gumagamit na may paulit-ulit na paglabag. Kung ikaw ay naniniwala na ang iyong gawa ay kinopya sa anumang paraan na nasasakop ng copyright infringement, o ang iyong karapatan sa intelektwal na pagaari ay nalabag, maaring ipadala ang mga sumusunod na detalye sa legal@youversion.com:<ul type='none'><li>Electronic o pisikal na lagda ng taong otorisadong umaksyon sa ngalan ng may-ari ng copyright o anumang intelektwal na pagaari na napag-uusapan;</li><br><li>Isang sulating naglalarawan ng gawang may copyright o anumang may intellectual property na nilabag;</li><br><li>Isang sulating naglalarawan kung saan ang materyal na sinasaad na nalabag ay makikita sa YouVersion;</li><br><li>Ang iyong tirahan, numero ng telepono, at email address (lahat ng mayroon);</li><br><li>Isang sulating nagsasaad na ikaw ay may may kompiyansa at nagtitiwalang ang pinagtatalunang likha ay walang pahintulot mula sa may-ari ng copyright, mga ahente nito, o ng batas;</li><br><li>Isang sulating nagsasaad mula sa iyo, nilikha sa ilalim ng parusa ng perjury, na ang lahat ng impormasyon sa iyong Abiso ay eksakto at ikaw ay may copyright o intellectual property, o ikaw ay may otoridad sa ngalan ng tunay na may copyright o may-ari ng intellectual property. Ang Ahente ng LifeChurch.tv's Agent para sa mga abiso sa mga pagangkin ng copyright o iba pang paglabag sa intellectual property ay maaring maabot Sa:%{newline}Pamamagitan ng sulat: LifeChurch.tv c/o - Contracts Coordinator %{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Telepono: +1(405) 680-5433%{newline}Fax: +1(405)844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "Pangkalahatang Impormasyon"
             general text: "Kabuuang Kasunduan. Ang MGA TUNTUNIN SA PAGGAMIT na ito ang bumubuo sa kabuuang kasunduan sa pagitan mo at ng LifeChurch.tv at sumasaklaw sa paggamit mo ng YouVersion, pinapalitan ang kahit anumang naunang kasunduan sa pagitan mo at LifeChurch.tv na kaugnay ang YouVersion. Maaari ka ring mapasailalim sa karagdagang alituntunin at kondisyon.<br><br>Pagpili ng Batas at Pagtitipon. Ang MGA TUNTUNIN SA PAGGAMIT at ang ugnayan sa pagitan mo at ng LifeChurch.tv ay masasaklawan ng mga batas ng Estado ng Oklahoma na walang pagtatangi sa pagkakaiba ng mga probisyon ng batas. Ikaw at ang LifeChurch.tv ay sumasang-ayon na mapasakot sa personal at ekslusibong hurisdiksyon ng mga korte na nasa probinsya ng Oklahoma County, Oklahoma.<br><br>Pagsusuko at Kakayahang Ihiwalay ng mga Tuntunin. Ang pagkabigo ng LifeChurch.tv na ipatupad o magpatupad ng kahit na anong karapatan o probisyon ng MGA TUNTUNIN SA PAGGAMIT ay hindi nangangahulugan ng pagpapaubay ng karapatan o probisyon na iyon. Kung ang anumang probisyon mula sa MGA TUNTUNIN SA PAGGAMIT ay mapagalaman ng korte na may maaasahang hurisdiksyon na maging walang bisa, ang mga partido ay gayunpamang sumasang-ayon na ang korte ay dapat pagsumikapan na bigyan ng bisa ang mga hangarin ng mga panig na sinasaad ng probisyon, at ang iba pang mga probisyon ng MGA TUNTUNIN SA PAGGAMIT na ito ay nananatiling gumagana.<br><br>Walang Karapatan sa Survivorship at Hindi Maaaring Ilipat. Sumasang-ayon ka ang ang iyong LifeChurch.tv account ay hindi maaaring maisalin sa iba, at ang anumang karapatan mo sa iyong LifeChurch.tv ID o nilalaman ng iyong account ay winawakasan sa iyong pagyao. Sa aming pagtanggap ng kopya ng sertipiko ng kamatayan, ang LifeChurch.tv ay maaaring magwakas sa iyong account at permanenteng burahin ang lahat ng nilalaman ng mga iyon.<br><br> Batas ng mga Limitasyon. Nauunawaan at natatanggap mo na ang anumang batas o kautusan ang lihis ang anumang paghahabol mula sa kaugnay na paggamit ng YouVersion o ng MGA TUNTUNIN SA PAGGAMIT at kinakailangang ihain sa loob ng isang (1) taon matapos kumuha ng claim o tuluyang mahadlangan.<br><br>Ang mga pamagat ng mga bahagi ng MGA TUNTUNIN SA PAGGAMIT ay para sa kaginhawahan lamang at walang legal o kasunduang mamamagitan."
         profile: 
@@ -618,6 +661,7 @@ tl:
             tab notes: "Mga tala"
             tab bookmarks: "Mga Pananda"
             tab highlights: "Mga Haylayt"
+            tab images: "Mga Larawan"
             tab badges: "Mga Sagisag"
             first name: "Pangalan"
             last name: "Apelyido"
@@ -713,6 +757,7 @@ tl:
         none me: "Wala ka pang nakukuhang sagisag."
         none user: "Si %{username} ay hindi pa nakakakuha ng anumang sagisag."
     plans: 
+        share plan: "Tingnan mo itong %{plan_title} ng @YouVersion #BiblePlan"
         widget: 
             my plans: "Ang aking mga Plano"
             start reading: "Simulan ang pagbabasa"
@@ -841,8 +886,10 @@ tl:
         loading sidebar content: "Naglo-load ng konteksto ng sidebar.."
     videos: 
         title: "Mga Palabas"
+        watch videos: "Manood ng mga video na tungkol sa Bibliya"
         all: "Mga Palabas"
         related scripture: "Kaugnay na Talata sa Bibliya"
+        share video: "Pinapanood ko ang %{video_title} sa @YouVersion."
     licenses: 
         authorized: 
             heading: "Ang iyong konteksto ay nabigyan pahintulot."
@@ -995,10 +1042,24 @@ tl:
         what people: "Mula sa mga taong gumagamit na ng libreng Bible app..."
         t1: "Lagi akong may Bibliya."
         t1 copy: "Binookmark ko na ang mga talatang mahalaga sa akin. Nabasa ko na ang lahat sa isang taon salamat sa mga plano ng pagbasa."
-        t2: "Magaling na programa!"
-        t2 copy: "Itong app ay nakatutulong sa aking mag-organisa at mabasa ang Salita ng Diyos araw araw. Madali itong gamitin at marami itong katangian...Mahal ko ito!"
+        t2: "Lubos na nirerekomenda"
+        t2 copy: "Gustung-gusto ko kung paano ko nkakasama ang aking mega kaibigan habang nagbabasa ng Bibliya at ang mga babasahing gabay ay napakaganda. Natutulungan din ako ng application na ito na manatili sa pagbabasa ko gamit ang paalala. Isa itong mainam na paraan upang mapalapit sa Diyos. I-download ito at basahin araw-araw!"
         t3: "Magaling na app."
         t3 copy: "Magaling na app na may maraming seleksyon ng Bibliya. ...Ang mga audio na Bibliya ay kahanga-hanga din at madaling maintindihan."
+        t4: "Kahanga-hanga. Laging pinabubuti!"
+        t4 copy: "Maraming salin at wikang pagpipilian, at marami ding maaring i-download at basahin kahit walang internet. Maraming mahalagang tampok, gaya ng paggawa ng tala at pagmarka ng mga talata ng Bibliya."
+        t5: "Ang pinakamahusay na Bible app kailanman!"
+        t5 copy: "Gustung-gusto ko na maraming salin at may mga piling bersikulo kada araw, devotions, plano at ugnayan sa mga kaibigan. Salamat para sa libreng app na ito. :)"
+        t6: "Maraming salin at maaring magbasa kahit walang Internet!"
+        t6 copy: "Kahanga-hanga dahil maraming salin at pwede kong ma-download ang iba't-ibang salin para sa pagbabasa habang offline.Nakapakikinig ako gamit ang app na ito."
+        t7: "Pambihirang app!"
+        t7 copy: "Natutulungan akong magbasa ng bibliya. Gustung-gusto ko ang search at share features at ang maraming paraan kung paano ko pwedeng magbahagi. Gusto ko din ang mga audio versions."
+        t8: "Napakabuting app"
+        t8 copy: "Ito'y isang pambihirang tool para maaral ang maraming salin. Maari ding gamitin para mapakinggan ang bibliya kapag nagmamaneho."
+        t9: "Ang pinakamagandang Bible app!"
+        t9 copy: "Ito ang pinakamahusay na bible app sa lahat. Maaring magbasa sa iba't-ibang wika at salin kung online o offline. May mga devotionals tungkol sa lahat ng paksa. Maaring makipag-ugnayan sa iba at matuto tungkol sa Salita ng Diyos."
+        version list: "May higit sa 1000 Bible versions gaya ng:"
+        audio version list: "Makinig sa Bible audio kabilang ang:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"

@@ -1,7 +1,7 @@
 - html_attributes(id: "video-series",classes:"videos")
 - publisher  = @video.publisher
 - @sidebar = false
-- @title = "#{t('videos.title')}: #{strip_tags(@video.title)} - #{@video.credits}"
+- @title = "#{strip_tags(@video.title)} - #{@video.credits} | #{t('videos.title')}"
 - meta_title = strip_tags(@video.title)
 - meta_description = @title
 - meta_description = "#{truncate(strip_tags(@video.description.html_safe), length: 180, separator: " ", omission: '')}..." if @video.description.present?
@@ -16,15 +16,17 @@
   %meta{property: "og:title",       content: meta_title }
   %meta{property: "og:url",         content: canonicalHref }
   %meta{property: "og:description", content: meta_description }
-  %meta{property: "og:image", content: "https:#{@video.hero_image.url}"}
+  - if @video.hero_image.present?
+    %meta{property: "og:image",     content: "https:#{@video.hero_image.url}"}
+    %meta{name: "twitter:image",    content: "https:#{@video.hero_image.url}"}
+
   %meta{name: "twitter:card",             content: "summary"}
   %meta{name: "twitter:url",              content: canonicalHref}
   %meta{name: "twitter:title" ,           content: meta_title}
   %meta{name: "twitter:description",      content: meta_description}
-  %meta{name: "twitter:image",            content: "https:#{@video.hero_image.url}"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
-%article{ style: "background-image: url('#{@video.hero_image.url}')"}
+%article{ style: "background-image: url('#{@video.hero_image.url if @video.hero_image.present?}')"}
   #title-bar
     %h1= @video.title.html_safe
     %h2.publisher

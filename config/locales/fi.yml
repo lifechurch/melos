@@ -3,6 +3,42 @@ fi:
     time: 
         formats: 
             votd: "%-d. %B'ta', %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "noin %{count} tunti sitten"
+                other: "noin %{count} tuntia sitten"
+            about_x_months: 
+                one: "noin %{count} kuukausi sitten"
+                other: "noin %{count} kuukautta sitten"
+            about_x_years: 
+                one: "noin %{count} vuosi sitten"
+                other: "noin %{count} vuotta sitten"
+            almost_x_years: 
+                one: "melkein %{count} vuosi sitten"
+                other: "melkein %{count} vuotta sitten"
+            half_a_minute: "puoli minuuttia sitten"
+            less_than_x_minutes: 
+                one: "alle %{count} minuutti sitten"
+                other: "alle %{count} minuuttia sitten"
+            less_than_x_seconds: 
+                one: "alle %{count} sekunti sitten"
+                other: "alle %{count} sekuntia sitten"
+            over_x_years: 
+                one: "yli %{count} vuosi sitten"
+                other: "yli %{count} vuotta sitten"
+            x_days: 
+                one: "%{count} päivä sitten"
+                other: "%{count} päivää sitten"
+            x_minutes: 
+                one: "%{count} minuutti sitten"
+                other: "%{count} minuuttia sitten"
+            x_months: 
+                one: "%{count} kuukausi sitten"
+                other: "%{count} kuukautta sitten"
+            x_seconds: 
+                one: "%{count} sekunti sitten"
+                other: "%{count} sekuntia sitten"
     counter: 
         format: "999 999 999"
     social: 
@@ -370,6 +406,11 @@ fi:
             accept request button: "Hyväksy pyyntö"
             ignore button: "Hylkää"
             ignore request button: "Hylkää pyyntö"
+    images: 
+        none user: "%{username}ei ole vielä luonut huoneentauluja."
+        blank slate: 
+            heading: "Et ole luonut vielä yhtään huoneentaulua. "
+            description: "Tee huoneentauluja YouVersionin Raamattusovelluksella. "
     notes: 
         none user: "%{username} ei ole vielä tehnyt muistiinpanoja."
         blank slate: 
@@ -502,6 +543,8 @@ fi:
         user notes: "Käyttäjän %{user} muistiinpanot"
         my friends: "Ystävät"
         my notes: "Muistiinpanot"
+        my images: "Kuvat"
+        user images: "Käyttäjän %{user} huoneentaulut"
         user friends: "Käyttäjän %{user} ystävät"
         my bookmarks: "Kirjanmerkkini"
         user bookmarks: "Käyttäjän %{user} kirjanmerkit"
@@ -567,7 +610,7 @@ fi:
             description title: "Palvelun kuvaus"
             description text: "do not translate"
             registration title: "Rekisteröitymisvelvollisuutesi"
-            registration text: "do not translate"
+            registration text: "Ymmärrät ja suostut:<ul><li>tarjoamaan paikkansa pitävät, ajankohtaiset ja täydelliset tiedot itsestäsi, kuten pyydetään YouVersionin rekisteröitymislomakkeella ('Rekisteröintitiedot') ja</li><li>ylläpitämään sekä viipymättä päivittämään rekisteröintitiedot pitääksesi ne ajantasalla. Jos LifeChurch.tv epäilee, että tiedot ovat epätodet, epätarkat, vanhentuneet tai epätäydelliset, LifeChurch.tv:lla on oikeus jäädyttää tai sulkea käyttäjätili ja kieltää kaikki nykyinen tai tuleva YouVersionin (tai sen minkä tahansa osan) käyttö. LifeChurch.tv suhtautuu vakavasti kaikkien käyttäjiensä, erityisesti lasten, turvallisuuteen ja yksityisyyteen. Tästä johtuen, alle 13-vuotiaiden lasten vanhempien, jotka sallivat lastensa käyttää YouVersionia pitää tiedostaa, että YouVersion on suunniteltu laajaa käyttäjäkuntaa varten. Näin ollen, lapsesi laillisena holhoojana, on sinun vastuullasi päättää, onko YouVersion sovelias lapsellesi.</li></ul>"
             privacy title: "YouVersionin yksityisyyskäytännöt"
             privacy text: "do not translate"
             account title: "Käyttäjätili, salasana ja turvallisuus"
@@ -605,7 +648,7 @@ fi:
             trademark title: "Tuotemerkin tiedot"
             trademark text: "do not translate"
             copyright title: "do not translate"
-            copyright text: "LifeChurch.tv kunnioittaa toisten immateriaalioikeuksia. Pyydämme käyttäjiämme tekemään samoin, erityisesti, kun se koskee YouVersionia. LifeChurch.tv saattaa sopivissa olosuhteissa hyvin hienotunteisesti estää tai lopettaa, niiden käyttäjien tilit, jotka toistuvasti rikkovat sääntöjä.\nJos uskot, että töitäsi on kopioitu tavalla, joka rikkoo tekijänoikeuksia tai immateriaalisia oikeuksiasi on jollakin muulla tavalla vahingoitettu, pyydämme, että toimitat seuraavat tiedot osoitteeseen: legal@youversion.com:<ul type='none'><li>kyseessä olevan tekijänoikeuden tai muun immateriaalisen oikeuden omistajan valtuuttaman henkilön elektroninen tai fyysinen allekirjoitus;</li><br><li>kirjallinen kuvaus tekijänoikeuden alaisesta työstä tai muusta immateriaalisesta oikeudesta, jonka epäilet joutuneen väärinkäytetyksi;</li><br><li>kirjallinen kuvaus, missä väärinkäytetty materiaali sijaitsee YouVersionin sivuilla;</li><br><li>osoitteesi, puhelinnumerosi ja sähköpostiosoitteesi (tai kaikki, jotka em. ovat käyttössä);</li><br><li>oma kirjallinen lausunto, josta käy ilmi syy uskoa, että tekijänoikeuksien omistaja eikä hänen edustajansa ole antanut lupaa tai se ei ole sallittua lain puitteissa;</li><br><li>kirjallinen vakuutus, väärän valan uhalla, edellä mainitun ilmoituksen paikkansapitävyydestä, ja että olet tekijänoikeuksien/immateriaalioikeuksien omistaja tai sinut on valtuutettu toimimaan tekijänoikeuksien/immateriaalioikeuksien omistajan puolesta. LifeChurch.tv:n</li></ul>"
+            copyright text: "LifeChurch.tv kunnioittaa toisten immateriaalioikeuksia. Pyydämme käyttäjiämme tekemään samoin, erityisesti, kun kyseessä on YouVersionin palveluiden käyttö. LifeChurch.tv voi, soveltuvissa olosuhteissa ja oman harkintansa mukaan, keskeyttää ja/tai sulkea käyttäjätilin niiltä käyttäjiltä, jotka toistuvasti rikkovat sääntöjä. Jos olet sitä mieltä, että töitäsi on kopioitu tavalla, joka rikkoo tekijänoikeuttasi, tai immateriaalioikeuksiasi on muuten käytetty väärin, lähetä seuraavat tiedot osoitteeseen: legal@youversion.com:<ul type='none'><li>Elektroninen tai fyysinen allekirjoitus henkilöltä, joka on valtuutettu toimimaan tekijänoikeuksien tai muiden immateriaalioikeuksien haltijan puolesta;</li><br/><li>Kirjallinen kuvaus tekijänoikeuden tai immateriaalioikeuden alaisesta työstä, jonka uskot joutuneen rikkeen kohteeksi;</li><br/><li>Kirjallinen kuvaus siitä, missä materiaali, jota rike koskee, sijaitsee YouVersionin palvelussa/palveluissa;</li><br/><li>Osoitteesi, puhelinnumerosi, ja sähköpostiosoitteesi (kaikki, jotka käytettävissä);</li><br/><li>Oma kirjallinen lausuntosi, että toimit hyvässä uskossa, että kiistanalaista käyttöä ei ole hyväksytty tekijänoikeuden haltijan, agentin tai lain puolesta;</li><br/><li>Oma kirjallinen lausuntosi, väärän valan rangaistuksen uhalla, että yllä olevat tiedot huomautuksessasi ovat paikkansa pitävät ja että olet tekijänoikeuksien tai immateriaalioikeuksien haltija, tai että olet valtuutettu toimimaan tekijänoikeuksien tai immateriaalioikeuksien haltijan puolesta. LifeChurch.tv:n tekijän- ja immateriaalioikeuksista vastaavan henkilön voit tavoittaa seuraavasti:%{newline}Postitse: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Puhelimitse: +1 405 680 5433%{newline}Faxilla: +1 405 844 3002%{newline}Sähköpostitse: %{mailto_link}</li></ul>"
             general title: "Yleistiedot"
             general text: "do not translate"
         profile: 
@@ -618,6 +661,7 @@ fi:
             tab notes: "Muistiinpanot"
             tab bookmarks: "Kirjanmerkit"
             tab highlights: "Korostukset"
+            tab images: "Kuvat"
             tab badges: "Ansiomerkit"
             first name: "Etunimi"
             last name: "Sukunimi"
@@ -713,6 +757,7 @@ fi:
         none me: "Et ole vielä ansainnut yhtään ansiomerkkiä."
         none user: "%{username} ei ole ansainnut yhtään ansiomerkkiä."
     plans: 
+        share plan: "Vilkaise tätä @YouVersion -lukusuunnitelmaa #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Omat suunnitelmat"
             start reading: "Aloita lukeminen"
@@ -841,8 +886,10 @@ fi:
         loading sidebar content: "Ladataan sisältöä..."
     videos: 
         title: "Videot"
+        watch videos: "Katso Raamattu-aiheisia videoita"
         all: "Kaikki videot"
         related scripture: "Aiheeseen liittyvät kohdat"
+        share video: "Katson videota %{video_title} @YouVersion."
     licenses: 
         authorized: 
             heading: "Sisältösi on auktorisoitu"
@@ -995,10 +1042,24 @@ fi:
         what people: "Mitä ihmiset sanovat Raamattusovelluksesta..."
         t1: "Minulla on aina Sana."
         t1 copy: "Lisäsin kirjanmerkin kappaleisiin, jotka ovat tärkeitä minulle. Luin jopa koko Raamatun läpi vuodessa, kiitos lukusuunnitelmien."
-        t2: "Mahtava sovellus!"
-        t2 copy: "Tämä sovellus pitää minut järjestyksessä ja Raamattua tulee luettua joka päivä. Se on helppokäyttöinen ja se sisältää useita ominaisuuksia ... Rakastan sitä!"
+        t2: "Suositellut"
+        t2 copy: "Minusta on upeaa, että voin olla yhteydessä ystäviini ja lukusuunnitelmat ovat loistavia. Tämä sovellus auttaa minua myös johdonmukaiseen lukemiseen, koska suunnitelmissa on muistutustoiminto. Se myös antaa minulle toisenlaisen tavan päästä lähemmäksi Jumalaa. Lataa tämä ja lue joka päivä!"
         t3: "Mahtava sovellus."
         t3 copy: "Mahtava sovellus ja laaja valikoima Raamattuja valittavana ... Ääni-Raamatut ovat myös mahtavia ja helppoja ymmärtää."
+        t4: "Mahtavaa. Paranee koko ajan!"
+        t4 copy: "Useita käännöksiä ja kieliversioita saatavana, ja monia jotka voi ladata ja lukea yhteydettömässä tilassa. Monia käyttökelpoisia toimintoja, kuten mahdollisuus tehdä muistiinpanoja ja asettaa kirjanmerkkejä."
+        t5: "Paras Raamattusovellus ikinä!"
+        t5 copy: "Mahtavaa, että on useita käännöksiä, päivän jakeita, hartauksia, lukusuunnitelmia sekä yhteisö. Kiitos tästä ilmaisesta sovelluksesta! :)"
+        t6: "Useita käännöksiä ja myös offline-käännöksiä!"
+        t6 copy: "Loistava, koska saatavilla on monia eri käännöksiä ja voin ladata useita käännöksiä luettavaksi yhteydettömässä tilassa.  Pystyn kuuntelemaan tällä sovelluksella."
+        t7: "Mahtava sovellus!"
+        t7 copy: "Auttaa minua lukemaan enemmän Raamattua. Pidän haku- ja jakotoiminnoista, ja siitä, että jakamiseen on useita tapoja. Tykkään myös ääniraamatuista."
+        t8: "Mahtava sovellus"
+        t8 copy: "Tämä on mahtava työkalu useiden käännösten tutkimiseen. Raamatun kuunteleminen käy myös mukavasti, kun ajat autoa. "
+        t9: "Paras Raamattusovellus!"
+        t9 copy: "Paras saatavilla oleva raamattusovellus. Sisältää Sanan monilla eri kielillä ja eri käännöksinä sekä online- että offline-käyttöä varten. Mukana on hartauksia kaikkiin kuviteltavissa oleviin tilanteisiin. Voit olla yhteydessä muihin ja, mikä tärkeintä, oppia Jumalasta ja hänen Sanastaan. "
+        version list: "Yli 1000 raamatunkäännöstä, sisältäen:"
+        audio version list: "Kuuntele ääniraamattuja, sisältäen:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"

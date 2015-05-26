@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:06-0600\n"
-"PO-Revision-Date: 2015-03-03 14:06-0600\n"
+"POT-Creation-Date: 2015-04-23 15:05-0609\n"
+"PO-Revision-Date: 2015-04-23 15:05-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-04-23 15:07-0609\n"
+"PO-Revision-Date: 2015-04-23 15:07-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,11 +63,23 @@ msgstr "{name} hat ein Lesezeichen für <b>{reference_human}</b> angelegt"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Bereite dich auf Weihnachten vor - mit einem Leseplan für den Advent"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Belebe deinen Glauben mit neuen Leseplänen."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Suche dir einen Plan für Februar aus!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Tägliche Zeit in Gottes Wort bringt anhaltende Freiheit."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Finde deinen Rhythmus, indem du dich täglich mit dem Wort Gottes Wort beschäftigst."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Finde neue Hoffnung und Erneuerung in den Leseplänen im März."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Nimm dir jeden Tag Zeit, um Gott beim Lesen der Bibel zu begegnen."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Lies die Bibel 2015 jeden Tag. Lesepläne helfen!"
@@ -79,13 +91,13 @@ msgid "moment.friendship.title"
 msgstr "{user_name} ist nun befreundet mit: <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Du hast <b>{reference_human}</b> markiert"
+msgstr "Du hast <b>{reference_human}</b> markiert."
 
 msgid "moment.highlight.title"
-msgstr "{name} hat <b>{reference_human}</b> markiert"
+msgstr "{name} hat <b>{reference_human}</b> markiert."
 
 msgid "moment.image.self.title"
-msgstr "Du hast ein Versbild für <b>{reference_human} erstellt.</b>"
+msgstr "Du hast ein Versbild für <b>{reference_human} </b>erstellt."
 
 msgid "moment.image.title"
 msgstr "{name} hat ein Versbild für <b>{reference_human} erstellt.</b>"
@@ -97,10 +109,10 @@ msgid "moment.note.title"
 msgstr "{name} hat eine Notiz verfasst mit dem Titel: <b>{title}</b>"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Du hast einen Leseplan abgeschlossen"
+msgstr "Du hast einen Leseplan abgeschlossen."
 
 msgid "moment.plan_completion.title"
-msgstr "{name} hat einen Leseplan abgeschlossen"
+msgstr "{name} hat einen Leseplan abgeschlossen."
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Tag {segment} von {total_segments} ({percent_complete}%)"
@@ -109,7 +121,7 @@ msgid "moment.plan_segment_completion.self.title"
 msgstr "Du hast Tag <b>{segment}</b> von <b>{title}</b> abgeschlossen."
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} hat Tag <b>{segment}</b> des Leseplans <b>{title}</b> abgeschlossen"
+msgstr "{name} hat Tag <b>{segment}</b> des Leseplans <b>{title}</b> abgeschlossen."
 
 msgid "moment.plan_subscription.self.title"
 msgstr "Du hast einen Leseplan begonnen"
@@ -241,7 +253,7 @@ msgid "notifications.moments.create.bookmark"
 msgstr "{name} hat ein Lesezeichen für {reference_human} angelegt."
 
 msgid "notifications.moments.create.highlight"
-msgstr "{name} hat {reference_human} markiert"
+msgstr "{name} hat {reference_human} markiert."
 
 msgid "notifications.moments.create.image"
 msgstr "{name} hat ein Versbild für {reference_human} erstellt."
@@ -256,10 +268,10 @@ msgid "notifications.moments.create.note.title"
 msgstr "{name} hat die Notiz “{title}” hinzugefügt"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name} hat seinen/ihren Plan \"{title}\" abgeschlossen"
+msgstr "{name} hat seinen/ihren Plan \"{title}\" abgeschlossen."
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} hat seinen/ihren Bibelleseplan \"{title}\" abgeschlossen"
+msgstr "{name} hat seinen/ihren Bibelleseplan \"{title}\" abgeschlossen."
 
 msgid "notifications.moments.create.plan_subscription"
 msgstr "{name} hat einen neuen Plan begonnen - und zwar \"{title}\""

@@ -3,6 +3,53 @@ sk:
     time: 
         formats: 
             votd: "%-d. %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "asi pred %{count} hodinou"
+                few: "asi pred %{count} hodinami"
+                other: "asi pred %{count} hodinami"
+            about_x_months: 
+                one: "asi pred %{count} mesiacom"
+                few: "asi pred %{count} mesiacmi"
+                other: "asi pred %{count} mesiacmi"
+            about_x_years: 
+                one: "asi pred %{count} rokom"
+                few: "asi pred %{count} rokmi"
+                other: "asi pred %{count} rokmi"
+            almost_x_years: 
+                one: "skoro pred %{count} rokom"
+                few: "skoro pred %{count} rokmi"
+                other: "skoro pred %{count} rokmi"
+            half_a_minute: "pred polminútou"
+            less_than_x_minutes: 
+                one: "pred menej ako%{count} minútou"
+                few: "pred menej ako%{count} minútami"
+                other: "pred menej ako%{count} minútami"
+            less_than_x_seconds: 
+                one: "pred menej ako %{count} sekundou"
+                few: "pred menej ako %{count} sekundami"
+                other: "pred menej ako %{count} sekundami"
+            over_x_years: 
+                one: "pred vyše %{count} rokom"
+                few: "pred vyše %{count} rokmi"
+                other: "pred vyše %{count} rokmi"
+            x_days: 
+                one: "pred %{count} dňom"
+                few: "pred %{count} dňami"
+                other: "pred %{count} dňami"
+            x_minutes: 
+                one: "pred %{count} minútou"
+                few: "pred %{count} minútami"
+                other: "pred %{count} minútami"
+            x_months: 
+                one: "pred %{count} mesiacom"
+                few: "pred %{count} mesiacmi"
+                other: "pred %{count} mesiacmi"
+            x_seconds: 
+                one: "pred %{count} sekundou"
+                few: "pred %{count} sekundami"
+                other: "pred %{count} sekundami"
     counter: 
         format: "999 999 999"
     social: 
@@ -370,6 +417,11 @@ sk:
             accept request button: "Prijať žiadosť"
             ignore button: "Zamietnuť"
             ignore request button: "Odmietnuť žiadosť"
+    images: 
+        none user: "%{username} ešte nevytvoril žiadne obrázky."
+        blank slate: 
+            heading: "Ešte nemáš žiadne obrázky"
+            description: "Používajte aplikáciu YouVersion a vytvorte obrázky veršov."
     notes: 
         none user: "Používateľ %{username} zatiaľ nemá žiadne poznámky."
         blank slate: 
@@ -502,6 +554,8 @@ sk:
         user notes: "Poznámky používateľa %{user}"
         my friends: "Priatelia"
         my notes: "Poznámky"
+        my images: "Obrázky"
+        user images: "Obrázky užívateľa %{user}"
         user friends: "Priatelia používateľa %{user}"
         my bookmarks: "Moje záložky"
         user bookmarks: "Záložky používateľa %{user}"
@@ -567,7 +621,7 @@ sk:
             description title: "do not translate"
             description text: "do not translate"
             registration title: "do not translate"
-            registration text: "do not translate"
+            registration text: "Beriete na vedomie a súhlasíte že:<ul><li>poskytnete pravdivé, presné súčastné a úplné informácie o sebe, ako to vyžaduje registračný formulár YouVersion (Registračné Dáta) a</li><li>tieto informácie budete aktualizovať tak, aby boli vždy pravdivé, presné a úplné. Ak bude mať LifeChurch.tv podozrenie o nepravosti, neúplnosti alebo o neaktuálnosti týchto informácí, LifeChurch.tv má právo pozastaviť alebo úplne zrušiť váš YouVersion účet a zamedziť akékoľvek ďalšie použitie YouVersion (alebo akúkoľvek jeho časť). LifeChurch.tv sa zaoberá bezpečnosťou a súkromím všetkých svojich používateľov a hlavne detí. Z toho dôvodu rodičia detí pod 13 rokov, ktorí dovolia svojím deťom prístup k YouVersion, musia brať na vedomie, že YouVersion je nevrhnuté pre širokú verejnosť. Preto, ako zákonný zástupca vášho dieťaťa, je vašou zodpovednosťou rozhodnúť, či je YouVersion vhodné pre vaše dieťa.</li></ul>"
             privacy title: "do not translate"
             privacy text: "do not translate"
             account title: "do not translate"
@@ -605,7 +659,7 @@ sk:
             trademark title: "do not translate"
             trademark text: "do not translate"
             copyright title: "do not translate"
-            copyright text: "do not translate"
+            copyright text: "LifeChurch.tv rešpektuje duševné vlastníctvo ostatných. Preto žiadame našich užívateľov, aby robili to isté, najmä vtedy ak sa to týka používania YouVersion. LifeChurch.tv môže za určitých okolností a podľa vlastného uváženia zakázať a/alebo zrušiť účty používateľov, ktorí opakovane porušujú autorské práva. Ak si myslíte, že vaša práca bola skopírovaná spôsobom, ktorý predstavuje porušenie autorských práv, alebo vaše práva duševného vlastníctva boli inak porušené, pošlite prosím nasledujúce informácie na legal@youversion.com:<ul type='none'><li>Elektronický alebo fyzický podpis osoby oprávnenej konať v mene vlastníka autorských práv alebo iného duševného vlastníctva dotknutého záujmu;</li><br><li>Písomný opis autorsky chráneného diela alebo iného duševného vlastníctva, ktoré bolo podľa Vášho názoru porušené;</li><br><li>Písomný opis, kde sa materiál, ktorý podľa vás porušuje vaše autorské práva, nachádza na YouVersion;</li><br><li>Vašu adresu, telefónne číslo a emailovú adresu (aspoň jedno z uvedených);</li><br><li>Písomné vyhlásenie, že máte dôveru, že sporné použitie nie je povolené vlastníkom autorských práv, jeho zástupcom alebo zákonom;</li><br><li>Písomné vyhlásenie o vás, vytvorené pod trestom krivej prísahy, že vyššie uvedené informácie vo vašom oznámení sú presné a že ste vlastníkom autorských práv alebo duševného vlastníctva, alebo že ste oprávnení konať v mene vlastníka autorských práv alebo duševného vlastníctva. Agenta LifeChurch.tv pre oznámenia o porušení autorských práv alebo iného duševného vlastníctva je možné dosiahnuť na:%{newline}Adrese: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline} Telefón: (405) 680-5433 %{newline} Fax: (405) 844-3002 %{newline}Email:%{mailto_link}</li></ul>"
             general title: "do not translate"
             general text: "do not translate"
         profile: 
@@ -618,6 +672,7 @@ sk:
             tab notes: "Poznámky"
             tab bookmarks: "Záložky"
             tab highlights: "Zvýraznenia"
+            tab images: "Obrázky"
             tab badges: "Odznaky"
             first name: "Meno"
             last name: "Priezvisko"
@@ -713,6 +768,7 @@ sk:
         none me: "Zatiaľ ste nezískali žiadne odznaky."
         none user: "Používateľ %{username} zatiaľ nezískal žiadne odznaky."
     plans: 
+        share plan: "Pozrite si tento #PlánČítania @YouVersion: %{plan_title}"
         widget: 
             my plans: "Moje plány"
             start reading: "Začať čítať"
@@ -843,8 +899,10 @@ sk:
         loading sidebar content: "Načítava sa obsah bočného panela..."
     videos: 
         title: "Videá"
+        watch videos: "Pozerajte videá o Biblii"
         all: "Všetky videá"
         related scripture: "Súvisiace súradnice"
+        share video: "Pozerám %{video_title} na @YouVersion."
     licenses: 
         authorized: 
             heading: "Váš obsah bol potvrdený"
@@ -997,10 +1055,24 @@ sk:
         what people: "Čo hovoria ľudia o našej bezplatnej aplikácii Biblia..."
         t1: "Vždy mám Slovo poruke."
         t1 copy: "Pasáže, ktoré sú pre mňa dôležité, som si pridal do záložiek. Dokonca som ju prečítal celú za jeden rok, len vďaka plánom čítania."
-        t2: "Skvelý program!"
-        t2 copy: "Táto aplikácia mi umožňuje udržiavať si prehľad a čítať Božie Slovo každý deň. Ľahko sa používa a ponúka mnohé funkcie ... Milujem ju!"
+        t2: "Vysoko doporučené"
+        t2 copy: "Páči sa mi ako sa viem spojiť so svojimi priateľmi a plány čítania sú úžasné. Táto aplikácia mi pomáha byť dôsledným v čítaní, pretože má pripomienky pre plány čítania. Je to pre mňa nový spôsob, ktorý ma privádza bližšie k Bohu. Stiahni si túto aplikáciu a čítaj každý deň!"
         t3: "Úžasná aplikácia."
         t3 copy: "Skvelá aplikácia so širokým výberom prekladov Biblií. ... Audio Biblie sú taktiež úžasné a ľahko pochopiteľné."
+        t4: "Super. Neustále zlepšenia!"
+        t4 copy: "Mnoho dostupných prekladov a jazykov, ktoré si môžete stiahnuť a čítať offline. Veľa užitočných funkcií, ako možnosť robenia poznámok a ukladania záložiek."
+        t5: "Najlepšia aplikácia Biblia!"
+        t5 copy: "Milujem rôzne preklady, verše dňa, plány a komunitu. Vďaka za túto neplatenú aplikáciu. :)"
+        t6: "Mnoho prekladov a čítanie offline."
+        t6 copy: "Skvelé, pretože obsahuje veľa rôznych prekladov a viaceré si môžem stiahnuť a čítať offline.  Môžem v tejto aplikácii aj počúvať."
+        t7: "Skvelá aplikácia!"
+        t7 copy: "Pomáha mi čítať bibliu viac. Páči sa mi vyhľadávanie a rôzne možnosti zdieľania. Tieť mám rád nahovorené verzie."
+        t8: "Skvelá aplikácia"
+        t8 copy: "Úžasná pomôcka pri štúdiu rôznych prekladov. Tiež je vhodná pre počúvanie biblie pri šoférovaní."
+        t9: "Najlepšia biblická aplikácia!"
+        t9 copy: "Najlepšia dostupná aplikácia biblia. Má slovo v rôznych jazykoch a prekladoch pre online aj offline používanie. Má krátke plány čítania pre všetko. Môžeš sa spájať s inými a učiť sa o Bohu a jeho Slove."
+        version list: "Cez 1 000 prekladov vrátane:"
+        audio version list: "Počuvajte nahovorené preklady ako:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"

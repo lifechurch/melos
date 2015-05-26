@@ -3,6 +3,53 @@ ro:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "cu %{count} oră în urmă"
+                few: "Cu %{count} ore în urmă"
+                other: "cu %{count} de ore în urmă"
+            about_x_months: 
+                one: "cu %{count} lună în urmă"
+                few: "cu %{count} luni în urmă"
+                other: "Cu %{count} luni în urmă"
+            about_x_years: 
+                one: "cu %{count} an în urmă"
+                few: "cu %{count} ani în urmă"
+                other: "cu %{count} de ani în urmă"
+            almost_x_years: 
+                one: "aproape %{count} an în urmă"
+                few: "aproape %{count} ani în urmă"
+                other: "aproape %{count} de ani în urmă"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "mai puțin de %{count} minut în urmă"
+                few: "mai puțin de %{count} minute în urmă"
+                other: "mai puțin de %{count} de minute în urmă"
+            less_than_x_seconds: 
+                one: "mai puțin de %{count} secundă în urmă"
+                few: "mai puțin de %{count} secunde în urmă"
+                other: "mai puțin de %{count} de secunde în urmă"
+            over_x_years: 
+                one: "peste %{count} an în urmă"
+                few: "peste %{count} ani în urmă"
+                other: "peste %{count} de ani în urmă"
+            x_days: 
+                one: "1 day ago"
+                few: "%{count} days ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                few: "%{count} minutes ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                few: "%{count} months ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                few: "%{count} seconds ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999.999.999"
     social: 
@@ -370,6 +417,11 @@ ro:
             accept request button: "Acceptă cererea"
             ignore button: "Refuză"
             ignore request button: "Refuză solicitarea"
+    images: 
+        none user: "%{username} nu a creat încă imagini."
+        blank slate: 
+            heading: "Nu ai încă imagini"
+            description: "Folosește aplicația mobilă de la YouVersion pentru a crea versete ilustrate."
     notes: 
         none user: "%{username} nu are notițe încă"
         blank slate: 
@@ -502,6 +554,8 @@ ro:
         user notes: "Notițele lui %{user}"
         my friends: "Prieteni"
         my notes: "Notițe"
+        my images: "Imagini"
+        user images: "Imaginile lui %{user}"
         user friends: "Prietenii lui %{user}"
         my bookmarks: "Marcajele mele"
         user bookmarks: "Marcajele lui %{user}"
@@ -567,7 +621,7 @@ ro:
             description title: "Descrierea serviciului"
             description text: "LifeChurch.tv asigură utilizatorilor acces gratuit la o varietate de servicii prin intermediul YouVersion, inclusiv dar nu limitat la, vizionare video prin internet, postări pe blog și discuții, comentarii, diverse alte mijloace de comunicare, forumuri și conținut personalizat. Folosind YouVersion, înțelegi că această utilizare poate include înștiințări din partea LifeChurch.tv, inclusiv dar nu limitat la, înștiințări de service, mesaje administrative și alte mesaje la care te-ai abonat personal. Înțelegi și ești de acord că ești responsabil pentru obținerea accesului la YouVersion, care poate implica taxe de echipament și terțe părți (precum taxe ale furnizorului de internet, taxe pentru timp de emisie sau alte taxe asociate afișării și livrării mesajelor)."
             registration title: "Obligațiile tale la înregistrare"
-            registration text: "Accepți și agreezi:<ul><li>să furnizezi informații adevărate, exacte, actuale și complete despre tine conform celor cerute de YouVersion în formularele de înregistrare („Date de înregistrare”) și</li>↵<li>să întreții și actualizezi la timp datele de înregistrare pentru a le menține adevărate, exacte, actuale și complete. Dacă LifeChurch.tv suspectează că aceste informații sunt neadevărate, inexacte, neactuale și incomplete, LifeChurch.tv are dreptul să suspende sau să-ți închidă contul și să-ți interzică cu desăvârșire utilizarea prezentă sau viitoare a YouVersion (sau a oricărei părți a acestuia). LifeChurch.tv se preocupă de siguranța și confidențialitatea tuturor utilizatorilor săi, în special a copiilor. De aceea, părinții copiilor cu vârsta sub 13 ani cărora le permit accesul la YouVersion trebuie să accepte că YouVersion este conceput pentru o audiență largă. În consecință, în calitate de tutore legal, ești responsabil să decizi dacă YouVersion este potrivit pentru copilul tău.</li></ul>"
+            registration text: "Accepți și agreezi:<ul><li>să furnizezi informații adevărate, exacte, actuale și complete despre tine conform celor cerute de YouVersion în formularele de înregistrare („Date de înregistrare”) și</li><li>să întreții și actualizezi la timp datele de înregistrare pentru a le menține adevărate, exacte, actuale și complete. Dacă LifeChurch.tv suspectează că aceste informații sunt neadevărate, inexacte, neactuale și incomplete, LifeChurch.tv are dreptul să suspende sau să-ți închidă contul și să-ți interzică cu desăvârșire utilizarea prezentă sau viitoare a YouVersion (sau a oricărei părți a acestuia). LifeChurch.tv se preocupă de siguranța și confidențialitatea tuturor utilizatorilor săi, în special a copiilor. De aceea, părinții copiilor cu vârsta sub 13 ani cărora le permit accesul la YouVersion trebuie să accepte că YouVersion este conceput pentru o audiență largă. În consecință, în calitate de tutore legal, ești responsabil să decizi dacă YouVersion este potrivit pentru copilul tău.</li></ul>"
             privacy title: "Politica de confidențialitate YouVersion"
             privacy text: "Datele de înregistrare și alte informații despre tine sunt supuse politicii noastre de confidențialitate, aflată aici: <a href='http://youversion.com/privacy'>http://youversion.com/privacy</a>. Înțelegi că utilizând YouVersion îți dai acordul în privința colectării și utilizării (conform cu politica de confidențialitate) acestor date, inclusiv transferul acestora în Statele Unite și/sau alte țări, pentru stocare, procesare și utilizare de către <a href='http://LifeChurch.tv'>Lifechurch.tv</a>."
             account title: "Cont de membru, parolă și securitate."
@@ -605,7 +659,7 @@ ro:
             trademark title: "Informații despre marca înregistrată"
             trademark text: "Mărcile înregistrate, siglele, mărcile de servicii și numele de produse și servicii legate de LifeChurch.tv și misiunile sale sunt mărci înregistrate ale LifeChurch.tv („Mărci ale LifeChurch.tv”). Fără permisiunea scrisă prealabilă din partea LifeChurch.tv, ești de acord să nu afișezi sau folosești în nici un fel mărcile LifeChurch.tv."
             copyright title: "Înștiințări și proceduri referitoare la reclamații împotriva încălcării dreptului de autor și a proprietății intelectuale"
-            copyright text: "LifeChurch.tv respectă proprietatea intelectuală a altora. Cerem utilizatorilor noștri același lucru, în special când e vorba de utilizarea  YouVersion. LifeChurch.tv poate, în împrejurări adecvate și la discreția LifeChurch.tv, să dezactiveze sau să închidă conturile utilizatorilor care încalcă în mod repetat regulile. Dacă consideri că munca ta a fost copiată astfel încât constituie încălcare a dreptului de autor, sau drepturile tale de proprietate intelectuală au fost încălcate în vreun fel, trimite următoarele informații pe adresa legal@youversion.com:<ul type='none'><li>Semnătura electronică sau fizică a persoanei autorizate să acționeze în numele proprietarului dreptului de autor sau al altei proprietăți intelectuale în cauză;</li><br><li>O prezentare în scris a locației în cadrul YouVersion a materialului care pretinzi că produce încălcarea;</li><br><li>Adresa ta, numărul de telefon și adresa de e-mail (oricare din acestea);</li><br><li>O declarație scrisă din partea ta cu bună credință că utilizarea contestată nu este autorizată de proprietarul dreptului de autor, de reprezentantul său sau de lege;</li><br><li>O declarație scrisă din partea ta, sub incidența pedepsei pentru mărturie mincinoasă, că informațiile sus-menționate în sesizarea ta sunt exacte și că ești proprietarul dreptului de autor sau proprietății intelectuale, sau că ești autorizat să acționezi în numele proprietarului dreptului de autor sau proprietății intelectuale. LifeChurch.tv's</li></ul>"
+            copyright text: "LifeChurch.tv respectă proprietatea intelectuală a altora. Cerem utilizatorilor noștri același lucru, în special când e vorba de utilizarea YouVersion. LifeChurch.tv poate, în împrejurări adecvate și la discreția LifeChurch.tv, să dezactiveze sau să închidă conturile utilizatorilor care încalcă în mod repetat regulile. Dacă consideri că munca ta a fost copiată astfel încât constituie încălcare a dreptului de autor, sau drepturile tale de proprietate intelectuală au fost încălcate în vreun fel, trimite următoarele informații pe adresa legal@youversion.com:<ul type='none'><li>Semnătura electronică sau fizică a persoanei autorizate să acționeze în numele proprietarului dreptului de autor sau al altei proprietăți intelectuale în cauză;</li><br><li>O prezentare în scris a materialului sau proprietății intelectuale cu privire la care pretinzi că s-a produs încălcarea dreptului de autor sau a drepturile tale de proprietate intelectuală;</li><br><li>O prezentare în scris a locației în cadrul YouVersion a materialului care pretinzi că produce încălcarea;</li><br><li>Adresa ta, numărul de telefon și adresa de e-mail (oricare din acestea);</li><br><li>O declarație scrisă din partea ta cu bună credință că utilizarea contestată nu este autorizată de proprietarul dreptului de autor, de reprezentantul său sau de lege;</li><br><li>O declarație scrisă din partea ta, sub incidența pedepsei pentru mărturie mincinoasă, că informațiile sus-menționate în sesizarea ta sunt exacte și că ești proprietarul dreptului de autor sau proprietății intelectuale, sau că ești autorizat să acționezi în numele proprietarului dreptului de autor sau proprietății intelectuale. Agentul pentru depunerea cererilor legate de drepturi de autor și proprietate intelectuală al LifeChurch.tv poate fi contactat după cum urmează:%{newline}Adresa Poștală: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Telefon: 01(405) 680-5433%{newline}%{newline}Fax: 01(405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "Informații generale"
             general text: "Acordul în întregime. Acești TERMENI DE UTILIZARE alcătuiesc întregul acord între tine și LifeChurch.tv și reglementează utilizarea YouVersion, înlocuind orice acorduri anterioare dintre tine și LifeChurch.tv cu privire la YouVersion. Poți fi supus la termeni și condiții adiționale.<br><br>Alegerea jurisdicției și tribunalului. TERMENII DE UTILIZARE și relația dintre tine și LifeChurch.tv sunt reglementate de legile statului Oklahoma. Tu și LifeChurch.tv agreați să vă supuneți jurisdicției exclusive și personale ale tribunalelor localizate în districtul Oklahoma County, Oklahoma.<br><br>Derogare și separabilitate a termenilor. Eșecul LifeChurch.tv de a exercita sau constrânge orice drept sau prevederi ale acestor TERMENI DE UTILIZARE nu constituie o derogare de la acestea. Dacă oricare din prevederile acestor TERMENI DE UTILIZARE sunt considerate neîntemeiate de către vreun tribunal din jurisdicția avizată, părțile sunt oricum de acord că tribunalul va căuta să dea curs intențiilor părților care sunt reflectate în prevederi, iar celelalte prevederi ale acestor TERMENI DE UTILIZARE rămân în vigoare în totalitate.<br><br>Drepturi de moștenire și transferabilitate. Ești de acord că contul tău LifeChurch.tv este netransferabil și orice drepturi la ID-ul LifeChurch.tv sau conținuturi din cadrul contului încetează după decesul utilizatorului. După primirea unei copii a certificatului de deces, LifeChurch.tv poate închide contul și șterge permanent toate conținuturile aferente.<br><br>Legea privitoare la prescriere. Înțelegi că fără o reglementare sau lege în sens contrar, orice revendicare sau cauză de punere sub acuzare rezultând din, sau legată de utilizarea de către tine a YouVersion sau din TERMENII DE UTILIZARE, trebuie înregistrată în interval de un an după ce asemenea revendicare sau punere sub acuzare a fost inițiată, altfel va fi prescrisă definitiv.<br><br>Titlurile secțiunilor din cadrul acestor TERMENI DE UTILIZARE au caracter convenabil și nu au efect legal sau contractual."
         profile: 
@@ -618,6 +672,7 @@ ro:
             tab notes: "Notițe"
             tab bookmarks: "Marcaje"
             tab highlights: "Evidențieri"
+            tab images: "Imagini"
             tab badges: "Insigne"
             first name: "Prenume"
             last name: "Nume de familie"
@@ -713,6 +768,7 @@ ro:
         none me: "Încă nu ai primit nici o insignă."
         none user: "%{username} nu a primit nici o insignă încă."
     plans: 
+        share plan: "Încearcă acest plan de citire a Bibliei de la @YouVersion: %{plan_title}"
         widget: 
             my plans: "Planurile mele"
             start reading: "Începe să citești"
@@ -843,8 +899,10 @@ ro:
         loading sidebar content: "Se încarcă conținutul barei laterale..."
     videos: 
         title: "Videoclipuri"
+        watch videos: "Urmărește videoclipuri despre Biblie"
         all: "Toate videoclipurile"
         related scripture: "Scriptura înrudită"
+        share video: "Mă uit la:%{video_title}pe @YouVersion"
     licenses: 
         authorized: 
             heading: "Conținutul tău a fost autorizat"
@@ -916,7 +974,7 @@ ro:
         promo 3: "În acest an peste 5 miliarde de persoane vor folosi un telefon mobil. Donează acum."
         headline: "Fiecare are nevoie de Cuvântul lui Dumnezeu."
         subhead: "Ajută oamenii de pretutindeni să aibă Biblia la îndemână."
-        copy: "Imaginează-ți că ai putea da fiecărei persoane din lume o Biblie gratuită. Când donezi către YouVersion, poți face chiar asta. Noi trăim într-un timp la care alții doar au visat – și anume când orice deținător de telefon mobil să poată accesa Biblia și să poată experimenta istorisirea dragostei lui Dumnezeu pentru noi.. Cu susținerea ta putem continua să ajutăm mai mulți oameni să petreacă mai mult timp cu Scriptura."
+        copy: "Imaginează-ți că ai putea da fiecărei persoane din lume o Biblie gratuită. Când donezi către YouVersion, poți face chiar asta. Noi trăim într-un timp la care alții doar au visat – când orice deținător de telefon mobil să poată accesa Biblia și să poată experimenta istoria dragostei lui Dumnezeu pentru noi. Cu susținerea ta, putem continua să ajutăm mai mulți oameni să petreacă mai mult timp în Scriptură."
         amount: "Suma donată"
         option once: "O dată"
         option monthly: "Lunar"
@@ -997,10 +1055,24 @@ ro:
         what people: "Ce spun oamenii despre Aplicația Biblia gratuită..."
         t1: "Am Cuvântul mereu cu mine."
         t1 copy: "Am  marcat pasaje importante pentru mine. Mai mult, am citit toată Biblia într-un an datorită planurilor de citire."
-        t2: "Un program excelent!"
-        t2 copy: "Această aplicație mă ajută să mă organizez și să citesc Cuvântul Lui Dumnezeu în fiecare zi. Este ușor de folosit și oferă multe caracteristici... Îmi place!"
+        t2: "Recomandată cu căldură"
+        t2 copy: "Iubesc felul în care poți interacționa cu prietenii și planurile de citire a Bibliei sunt super. Această aplicație mă ajută să fiu consecvent în citire pentru că îmi oferă notificări pentru planurile de citire. De asemenea, reprezintă un alt mod de a întra în legătură cu Dumnezeu. Descarcă-o și citește Biblia zilnic."
         t3: "Aplicație minunată."
         t3 copy: "O aplicație grozavă cu o vastă arie de selecție a versiunilor de Biblie... Bibliile audio sunt de asemenea minunate și ușor de înțeles."
+        t4: "Super. Din ce în ce mai bună! "
+        t4 copy: "Mai multe traduceri și limbi disponibile și multe din ele pot fi descărcate și citite în modul deconectat. Foarte multe opțiuni, precum posibilitatea de a crea notițe sau semne de carte."
+        t5: "Cea mai bună aplicație a Bibliei!"
+        t5 copy: "Îmi place foarte mult că are atât de multe versiuni și versetul zilei, devoționale, planuri de citire și posibilitatea de socializare. Mulțumesc pentru această aplicație gratuită. :)"
+        t6: "Versiuni foarte multe și posibilitatea citirii în modul deconectat!"
+        t6 copy: "Minunată pentru că are diferite versiuni ale Bibliei și pot descărca mai multe versiuni pentru citire în mod deconectat.  Pot să și ascult versiuni audio ale Bibliei în cadrul aplicației."
+        t7: "Super aplicație!"
+        t7 copy: "Mă ajută să citesc mai mult Biblia. Iubesc opțiunea de căutare și distribuire precum și varietatea metodelor prin care o poți face. Îmi plac și versiunile audio."
+        t8: "Super aplicație"
+        t8 copy: "Este un instrument extraordinar de studiu pe baza mai multor traduceri. Este de asemenea utilă pentru că poți asculta Biblia în timp ce conduci."
+        t9: "Cea mai bună aplicație pentru Biblie!"
+        t9 copy: "E cea mai bună aplicație existentă a Bibliei. Este Cuvântul lui Dumnezeu în diferite limbi și versiuni pe care le poți citi atât conectat, cât și deconectat de la internet. Are devoționale pe orice temă la care te-ai putea gândi. Poți să interacționezi cu alte persoane și să înveți despre Dumnezeu și Cuvântul Lui."
+        version list: "Mai mult de 1000 de versiuni ale Bibliei, precum:"
+        audio version list: "Ascultă versiuni audio ale Bibliei, precum:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"

@@ -43,7 +43,7 @@ module YV
             when 'pt-BR'
               'pt'
             when 'en-GB'
-              'en_GB'
+              'en'
             when 'es-ES'
               'es'
             when 'zh-CN'

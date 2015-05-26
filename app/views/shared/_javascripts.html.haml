@@ -3,9 +3,10 @@
 
 = javascript_include_tag "application"
 
--if "en" != I18n.locale.to_s
-  = javascript_include_tag "i18n/en", async: true
-= javascript_include_tag "i18n/#{I18n.locale}", async: true
+= javascript_include_tag "i18n/en" # always include for fallback
+
+- if I18n.locale.to_s != "en"
+  = javascript_include_tag "i18n/#{I18n.locale}"
 
 - if content_for? :javascripts
   = yield :javascripts

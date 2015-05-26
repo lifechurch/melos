@@ -3,6 +3,42 @@ es-ES:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999.999.999"
     social: 
@@ -370,6 +406,11 @@ es-ES:
             accept request button: "Petición aceptada"
             ignore button: "Declinar"
             ignore request button: "Declinar petición"
+    images: 
+        none user: "%{username} aún no ha creado imágenes."
+        blank slate: 
+            heading: "Aún no tienes ninguna imagen"
+            description: "Usa la aplicación para móviles de YouVersion para crear imágenes con versículos."
     notes: 
         none user: "%{username} todavía no ha tomado notas"
         blank slate: 
@@ -502,6 +543,8 @@ es-ES:
         user notes: "Notas de %{user}"
         my friends: "Amigos"
         my notes: "Notas"
+        my images: "Imágenes"
+        user images: "Las imágenes de %{user}"
         user friends: "Amigos de %{user}"
         my bookmarks: "Mis Marcadores"
         user bookmarks: "Marcadores de %{user}"
@@ -567,7 +610,7 @@ es-ES:
             description title: "Descripción del Servicio"
             description text: "LifeChurch.tv povee a los Usuarios con acceso a una variedad de servicios a través de YouVersion, incluyendo y no limitando, vista de vídeos online, publicaciones en blog y comentarios, otros tipos de herramientas de comunicación, foros, y contenido personalizado, sin cargos para el usuario. Al usar YouVersion, deberá entender que dicho empleo incluyen comunicaciones de LifeChurch.tv, incluyendo y no limitando el servicio de anuncios, mensajes administrativos, y otros mensajes a los cuales usted se suscribe individualmente. Deberá entender y aceptar que es responsable de tener acceso a YouVersion, lo que incluye equipamiento y comisión de terceros (como la comisión de los proveedores del servicio Internet, cargos de tiempo al aire, o otros cargos asociados con el anuncio y reparto de mensajes)."
             registration title: "Tus obligaciones de registro"
-            registration text: "Usted conoce y acepta que:<ul><li>provee verdadera, precisa, actual y completa información acerca de usted mismo como es requerido por la forma(s) de registro de YouVersion (the 'Registration Data') y</li>,,<li>que mantiene y actualiza rápidamente la Base de Datos de Registro para mantenerla verdadera, precisa, actual y completa. Si LifeChurch.tv sospecha que la información es falsa, imprecisa, inactual o incompleta, LifeChurch.tv tiene el derecho de suspender o eliminar su cuenta y rechazar cualquier y todo uso reciente y futuro de YouVersion (o cualquier parte del mismo). LifeChurch.tv cuida la seguridad y privacidad de todos sus usuarios, especialmente niños. Por esta razón, padres de niños menores de 13 años que permiten a sus hijos acceder a YouVersion deben conocer que YouVersion está diseñado para defender a una amplia audiencia. Consecuentemente, como guardin legal"
+            registration text: "Nuestro reconocimiento y agradecimiento por:<ul><li>proveer información fiable, segura, actualizada y completa sobre ti mismo en el formulario de registro en YouVersion (los Datos de Registro) y</li><li>mantener actualizada esa información de forma sincera, completa, actualizada y completa. Si LifeChurch.tv sospecha que esa información es falsa, imprecisa, desactualizada o incompleta, LifeChurch.tv tiene el derecho de cancelar tu cuenta e impedir el uso actual o futuro de YouVersion (o cualquiera de sus productos). LifeChurch.tv está comprometida con la privacidad de todos sus usuarios, especialmente si son niños. Por esa razón, los padres de hijos menores de 13 años que permitan a sus hijos acceder a YouVersion deben conocer que YouVersion está diseñada para llegar a una vasta audiencia. De acuerdo a esto, como guardián legal de los derechos de tu hijo/a, es tu responsabilidad determinar hasta qué punto YouVersion es apropiada para él o ella.</li></ul>"
             privacy title: "Política de Privacidad de YouVersion"
             privacy text: "El registro en la base de datos y otra información sobre usted están sometidos a nuestra Política de privacidad, localizada en<a href='http://youversion.com/privacy'>http://youversion.com/privacy</a>. Debe entender que a través del uso de YouVersion usted consciente la recopilación y uso (según lo establecido en la Política de Privacidad) de esta información, incluyendo la transferencia de esta información a los Estados Unidos y/u otros países para su almacenamiento, proceso y uso por <a href='http://LifeChurch.tv'>LifeChurch.tv</a>."
             account title: "Cuenta de miembro, contraseña y seguridad"
@@ -605,7 +648,7 @@ es-ES:
             trademark title: "Información de marca registrada"
             trademark text: "Marcas comerciales, logotipos, marcas de servicio y de productos, y los nombres de servicios relacionados con LifeChurch.tv y sus ministerios son marcas comerciales de LifeChurch.tv (las 'marcas de LifeChurch.tv'). Sin la previa autorización por escrito de LifeChurch.tv, usted se compromete a no mostrar o usar las Marcas de LifeChurch.tv de cualquier manera."
             copyright title: "Notificaciones y procedimiento de reclamaciones de Derechos de Autor o Infracción de Propiedad Intelectual"
-            copyright text: "LifeChurch.tv respeta la propiedad intelectual de otros. Pedimos a nuestros usuarios hacer lo mismo, en particular en lo concerniente al uso de YouVersion. LifeChurch.tv puede, en circunstancias apropiadas y a su sola discreción, desactivar y/o cancelar las cuantas de usuarios que pueden ser infractores reincidentes. Si usted cree que su trabajo ha sido copiado de una manera que constituya una violación a los derechos de autos, o sus derechos de propiedad intelectual han sido violados, por favor envíe la siguiente información a legal@youversion.com:<ul type='none'><li> Una firma electrónica o física de la persona autorizada para actuar en nombre del dueño de los derechos de autor u otro interés de propiedad intelectual en cuestión;</li><br><li> Una descripción escrita de la obra con derechos de autor u otra propiedad intelectual que usted afirma han sido violadas;</li><br><li> Una descripción escrita de donde el material el material que usted considera que ha sido infringido se encuentra localizado en YouVersion;</li><br><li> Su dirección, número de teléfono y dirección de correo electrónico (lo que corresponda);</li>-<br><li> Una declaración escrita por usted que usted tiene una creencia de buena fe que el uso disputado no está autorizado por el propietario de los derechos de autor, su agente o la ley;</li><br> Una declaración escrita por usted, hecha bajo pena de perjurio, que la información arriba mencionada en su notificación es exacta y que usted es el dueño del derecho de autor o dueño de la propiedad intelectual, o que está autorizado para actuar en el nombre del autor o dueño de la propiedad intelectual. LifeChurch.tv's</li></ul>"
+            copyright text: "LifeChurch.tv respeta los derechos intelectuales de otros. Pedimos a los usuarios que hagan lo mismo con los contenidos que pertenecen a YouVersion. LifeChurch.tv puede, en ciertas circunstancias y bajo su sola discreción, desactivar y/o terminar con las cuentas de usuarios que puedan hacer infracciones recurrentes. Si crees que tu trabajo ha sido copiado en una forma que constituye una infracción de tus derechos intelectuales, que hayan podido ser violados, por favor manda la siguiente información a legal@youversion.com:<ul type='none'><li>Una firma digital o física de la persona autorizada para actuar en representación del propietario del copyright o cualquier otra propiedad intelectual en entredicho;</li><br><li>Una descripción escrita del trabajo bajo copyright o cualquier otra propiedad intelectual que estés reclamando porque se haya inflingido.</li><br><li>Una descripción escrita de dónde se han inflingido tus derechos y dónde está localizado en YouVersion;</li><br><li>Tu dirección, número de teléfono y dirección de correo electrónico (todo lo que veas necesario);</li><br><li>Un escrito legal en el que des fe de que el uso disputado no está autorizado por el autor, su agente o la ley.</li><br><li>Un escrito legal hecho por ti, bajo penalización o perjurio, de que la información en tu reclamación es fiable y de que tu eres el propietario de los derechos intelectuales, o que estás autorizado a actuar como representante del propietario de los derechos intelectuales. Puedes ponerte en contacto con un agente de LifeChurch.tv para relcamaciones del derecho intelectual o cualquier otra infracción de la propiedad intelectual de las siguientes formas:%{newline}Por correo electrónico: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "Información general"
             general text: "Acuerdo completo. Estas Condiciones de Uso constituyen el acuerdo completo entre usted y LifeChurch.tv y regula el uso de YouVersion y reemplaza cualquier acuerdo anterior entre usted y LifeChurch.tv con respecto a YouVersion. Usted también puede estar sujeto a términos y condiciones adicionales.<br><br> Elección de Ley y Foro. Los TERMINOS DE USO y la relación entre usted y LifeChurch.tv se regirá por las leyes del Estado de Oklahoma sin tener en cuenta su conflicto de disposiciones legales. Usted y LifeChurch.tv acuerdan someterse a la jurisdicción personal y exclusiva de los tribunales ubicados dentro del Condado de Oklahoma, Oklahoma.<br><br> Renuncia e independencia de la condiciones. El fracaso de LifeChurch.tv para ejercer o hacer valer cualquier derecho o disposición de estos TERMINOS DE USO es considerada por un tribunal de jurisdicción  competente como no válida, las partes no obstante acuerdan que dicho tribunal debe procurar interpretar las intenciones de las partes reflejadas en dicha disposición, y las demás disposiciones de estos TERMINOS DE USO permanecerán en pleno vigor y efecto.<br><br> No Derecho de Supervivencia y No Transferibilidad. Usted acepta que su cuenta de LifeChurch.tv no es transferible, y ningún derecho sobre su identificación en LifeChurch.tv o el contenido de su cuenta se extinguen a su muerte. Tras la recepción de un copia de un certificado de defunción, LifeChurch.tv puede cancelar su cuenta y eliminar permanentemente los contenidos de ella.<br><br>Estatuto de Limitaciones. Usted entiende y acepta que, independientemente de cualquier estatuto o ley en contra, cualquier reclamo o causa de acción que surja de o este relacionado con el uso de YouVersion o de estos TERMINOS DE USO debe ser presentada de un (1) año después de dicho reclamo o causa de la acción sea presentada o prescribirá para siempre.<br><br> Los títulos de las secciones dentro de los presentes TERMINOS DE USO son sólo por conveniencia y no tienen ningún efecto legal o contractual."
         profile: 
@@ -618,6 +661,7 @@ es-ES:
             tab notes: "Notas"
             tab bookmarks: "Marcadores"
             tab highlights: "Destacados"
+            tab images: "Imágenes"
             tab badges: "Insignias"
             first name: "Nombre"
             last name: "Primer apellido"
@@ -713,6 +757,7 @@ es-ES:
         none me: "Aún no has ganado insignias."
         none user: "%{username} aún no ha ganado ninguna insignia."
     plans: 
+        share plan: "Echa un vistazo a este @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Mis Planes de lectura"
             start reading: "Comenzar a leer"
@@ -841,8 +886,10 @@ es-ES:
         loading sidebar content: "Cargando el contenido de la barra lateral..."
     videos: 
         title: "Vídeos"
+        watch videos: "Mira vídeos acerca de la Biblia"
         all: "Todos los vídeos"
         related scripture: "Versículos relacionados"
+        share video: "Estoy viendo %{video_title} en @YouVersion."
     licenses: 
         authorized: 
             heading: "Tu contenido ha sido autorizado"
@@ -995,10 +1042,24 @@ es-ES:
         what people: "Qué está diciendo la gente sobre la Biblia App..."
         t1: "Siempre tengo la Palabra."
         t1 copy: "He marcado los pasajes que son importantes para mi. Incluso he leído todo en un año gracias a los planes de lectura."
-        t2: "¡Programa increíble!"
-        t2 copy: "Esta aplicación me mantiene organizado y leyendo la Palabra de Dios todos los días. Es fácil de usar y ofrece múltiples características... ¡Me encanta!"
+        t2: "Muy recomendable"
+        t2 copy: "Me encanta la forma en que puedes conectar con amigos y los Planes de lectura son increíbles. Esta aplicación me ayuda a leer de forma continuada porque tiene recordatorios para los planes de lectura. Me proporciona otra manera de estar más cerca de Dios. ¡Descárgatela y lee cada día!"
         t3: "Espléndida aplicación."
         t3 copy: "Una aplicación increíble con un variada selección de Biblias para escoger... Las Biblia en audio también son increíbles y fáciles de entender."
+        t4: "Increíble. ¡Siempre está mejorando!"
+        t4 copy: "Muchas traduciones en diferentes idiomas disponibles, y muchas de ellas están disponibles para leer offline. Muchas funciones útiles, como la posibilidad e añadir notas y destacados."
+        t5: "¡La mejor aplicación de la Biblia que hay!"
+        t5 copy: "Me encanta que haya tantas versiones y versículos del día, devocionales, planes de lectura y una comunidad. Gracias por esta aplicación gratuita. :)"
+        t6: "¡Múltiples versiones que se pueden leer offline!"
+        t6 copy: "Es estupenda porque hay muchísimas versiones diferentes y puedo descargar muchas versiones para leer offline.  También puedo escuchar la Biblia en esta aplicación."
+        t7: "¡Estupenda aplicación"
+        t7 copy: "Me ayuda a leer más la Biblia. Me encanta la posibilidad de buscar y compartir en varias formas. También me gustan las versiones en audio."
+        t8: "Es una aplicación estupenda"
+        t8 copy: "Es una herramienta increíble para estudiar varias traduciones a la vez. También es muy práctica para escuchar la Biblia cuando estás conduciendo."
+        t9: "¡La mejor aplicación de la Biblia!"
+        t9 copy: "Es la mejor aplicación de la Biblia que hay Tiene disponible offline la Palabra en muchos idiomas y versiones para leer online y offline. Tiene todo tipo de devocionales que busques. Puedes conectar con  otros y aprender de Dios y su Palabra."
+        version list: "Más de 1000 versiones de la Biblia incluyendo:"
+        audio version list: "Escucha las en audio la Biblia incluyendo las versiones:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"

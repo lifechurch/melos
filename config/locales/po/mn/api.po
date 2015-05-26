@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-19 09:29-0609\n"
-"PO-Revision-Date: 2014-12-19 09:29-0609\n"
+"POT-Creation-Date: 2015-04-23 15:05-0609\n"
+"PO-Revision-Date: 2015-04-23 15:05-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mn <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:21-0600\n"
-"PO-Revision-Date: 2014-09-25 16:21-0600\n"
+"POT-Creation-Date: 2015-03-19 13:48-0600\n"
+"PO-Revision-Date: 2015-03-19 13:48-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mn <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,24 @@ msgstr "{name} <b>{reference_human}</b> хавчуурга хийсэн"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Адвент Тѳлѳвлѳгѳѳгѳѳр Кристмасийн Баярыг тэмдэглэхээр бэлдэх үү"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Шинэ тѳлѳвлѳгѳѳгѳѳр итгэлээ шинэжлэх уу."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Хоёрдугаар сарын дуртай Библи Уншлагын Төлөвлөгөөгөө хайж олоорой!"
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Ѳдѳр бүр Бурханы Үгэнд байхад мѳнхийн эрх чѳлѳѳтэй замыг харуулна."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Та ѳдѳр бүр Бурханы Үгэнд байх зуршилтай болоосой. "
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Гуравдугаар Сарын Тѳлѳвлѳгѳѳнд найдвар болон сэргээлт олох уу."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Ѳдѳр бүр Бүрханы Үгэн дотор Түүнийг эрэн хайхад ѳѳрийгѳѳ зориул."
+
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015 онд Библи өдөр бүр унш. Уншлагын Төлөвлөгөөнүүд таньд туслах болно!"
 
@@ -77,6 +95,12 @@ msgstr "Та <b>{reference_human}</b> д тодруулга хийсэн бай�
 
 msgid "moment.highlight.title"
 msgstr "{name} <b>{reference_human}</b> тодруулсан"
+
+msgid "moment.image.self.title"
+msgstr "Та ишлэлийн зураг үүссэн <b>{reference_human}</b>"
+
+msgid "moment.image.title"
+msgstr "{name} ишлэлийн зураг үүссэн <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Та <b>{title}</b> гэдэг тэмдэглэл нэмсэн"
@@ -132,6 +156,9 @@ msgstr "{name} таны{friend_name} тэй нөхөрлөх нөхөрлөлд 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} таны тодруулсан ишлэлд тайлбар хийгдсэн байна:“{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} таны ишлэлийн зурагнд тайлбар хийгдсэн: “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} таны тэмдэглэлд тайлбар хийгдсэн байна: “{comment}”"
 
@@ -150,6 +177,9 @@ msgstr "{commenter_name} д мөн сэтгэгдэл үлдээсэн{moment_ow
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} {moment_owner_name}-н тодруулсан ишлэлд сэтгэгдэл үлдээсэн: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name}{moment_owner_name}-н ишлэлийн зурагнд тайлбар хийгдсэн: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} {moment_owner_name}-н тэмдэглэл дээр сэтгэгдэл үлдээсэн: “{comment}”"
 
@@ -161,6 +191,9 @@ msgstr "{moment_owner_name} тэй нөхөрлөх шинэ нөхөрлөлд�
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ѳѳрийнхѳѳ тодруулсан ишлэлд сэтгэгдэл үлдээсэн: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} ѳѳрийнхѳѳ ишлэлийн зурагнд тайлбар хийгдсэн: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ѳѳрийнхѳѳ тэмдэглэлд сэтгэгдэл үлдээсэн: “{comment}”"
@@ -198,6 +231,9 @@ msgstr "{name} тэй нөхөрлөх шинэ нөхөрлөл чинь таа
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} таны тодруулга таалагдсан, {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{name} таны ишлэлийн зурагнд таалагдсан {reference_human}"
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} -д таны тэмдэглэл таалагдсан"
 
@@ -218,6 +254,9 @@ msgstr "{name} хавчуурга хийсэн {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} тодруулсан {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} ишлэлийн зураг үүссэн {reference_human}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} шинэ тэмдэглэл үүсгэсэн"

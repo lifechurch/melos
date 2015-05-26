@@ -2,5 +2,6 @@
 - # publisher (Video::Publisher)
 
 .pub-banner
-  = link_to(publisher.website.url, title: "#{publisher.name} Official Site") do
-    = image_tag(publisher.ad_image.url)
+  - if publisher.website.present and publisher.ad_image.present?
+    = link_to(publisher.website.url, title: "#{publisher.name} Official Site") do
+      = image_tag(publisher.ad_image.url)

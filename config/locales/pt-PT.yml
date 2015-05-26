@@ -3,6 +3,42 @@ pt-PT:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999 999 999"
     social: 
@@ -370,6 +406,11 @@ pt-PT:
             accept request button: "Aceitar pedido"
             ignore button: "Recusar"
             ignore request button: "Rejeitar pedido"
+    images: 
+        none user: "%{username} ainda não criou nenhuma imagem."
+        blank slate: 
+            heading: "Ainda não tem imagens."
+            description: "Use a app do YouVersion para criar imagens de versículo."
     notes: 
         none user: "%{username} ainda não tem notas criadas."
         blank slate: 
@@ -502,6 +543,8 @@ pt-PT:
         user notes: "Notas de %{user}"
         my friends: "Amigos"
         my notes: "Notas"
+        my images: "Imagens"
+        user images: "Imagens de %{user}"
         user friends: "Amigos de %{user}"
         my bookmarks: "Os Meus Marcadores"
         user bookmarks: "Marcadores de %{user}"
@@ -567,7 +610,7 @@ pt-PT:
             description title: "do not translate"
             description text: "do not translate"
             registration title: "do not translate"
-            registration text: "do not translate"
+            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li><li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
             privacy title: "do not translate"
             privacy text: "do not translate"
             account title: "do not translate"
@@ -605,7 +648,7 @@ pt-PT:
             trademark title: "do not translate"
             trademark text: "do not translate"
             copyright title: "do not translate"
-            copyright text: "do not translate"
+            copyright text: "LifeChurch.tv respects the intellectual property of others. We ask our users to do the same, particularly where it pertains to using YouVersion. LifeChurch.tv may, in appropriate circumstances and at its sole discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please send the following information to legal@youversion.com:<ul type='none'><li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest in question;</li><br><li>A written description of the copyrighted work or other intellectual property that you claim has been infringed;</li><br><li>A written description of where the material that you claim is infringing is located on YouVersion;</li><br><li>Your address, telephone number, and email address (all that apply);</li><br><li>A written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li><br><li>A written statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner, or that you are authorized to act on the behalf of the copyright or intellectual property owner. LifeChurch.tv's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:%{newline}By mail: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "do not translate"
             general text: "do not translate"
         profile: 
@@ -618,6 +661,7 @@ pt-PT:
             tab notes: "Notas"
             tab bookmarks: "Marcadores"
             tab highlights: "Destaques"
+            tab images: "Imagens"
             tab badges: "Medalhas"
             first name: "Nome"
             last name: "Apelido"
@@ -713,6 +757,7 @@ pt-PT:
         none me: "Ainda não ganhou nenhuma medalha."
         none user: "%{username} ainda não ganhou qualquer medalha."
     plans: 
+        share plan: "Veja este #planodeleitura do @YouVersion: %{plan_title}"
         widget: 
             my plans: "Os meus planos"
             start reading: "Começar a ler"
@@ -841,8 +886,10 @@ pt-PT:
         loading sidebar content: "A carregar os conteúdos da barra lateral..."
     videos: 
         title: "Vídeos"
+        watch videos: "Veja videos Bíblicos"
         all: "Todos os vídeos"
         related scripture: "Escrituras Relacionadas"
+        share video: "Eu estou a assistir %{video_title} no @YouVersion."
     licenses: 
         authorized: 
             heading: "O seu conteúdo foi autorizado"
@@ -995,10 +1042,24 @@ pt-PT:
         what people: "O que as pessoas dizem sobre a App gratuita da Bíblia..."
         t1: "Eu tenho sempre a Palavra."
         t1 copy: "Criei marcadores com as passagens que são importantes para mim. Li inclusive toda a Bíblia num ano, graças aos planos de leitura."
-        t2: "Grande programa!"
-        t2 copy: "Esta app ajuda-me a organizar e a ler a Palavra de Deus todos os dias. É fácil de se usar e oferece múltiplas características ... Adoro-a!"
+        t2: "Recomendado"
+        t2 copy: "Acho fantástica a ligação entre os planos da Bíblia e os meus amigos. Esta app também me ajuda a manter uma leitura consistente através dos alertas para os planos. Dá-me também outra forma de estar perto de Deus. Faça o download e leia todos os dias!"
         t3: "App maravilhosa."
         t3 copy: "Excelente app com uma variada seleção de Bíblias para escolha. ... As Bíblias em áudio são também maravilhosas e de fácil compreensão."
+        t4: "Ótimo! Sempre a melhorar!"
+        t4 copy: "Muitas traduções e línguas à disposição e muitas delas estdisponíveis para download e leitura offline. Muitas funcionalidades, tais como a possibilidade de criar notas e marcadores."
+        t5: "A melhor app da Bíblia de sempre!"
+        t5 copy: "Gosto do fato de ter muitas versões e por conter versículos do dia, devoção diária, planos e comunidade. Obrigado pela app gratuita. :)"
+        t6: "Múltiplas versões e leitura offline!"
+        t6 copy: "Excelente porque tem muitas versões diferentes e pude fazer download de várias versões para leitura offline.  Consigo ouvir esta app."
+        t7: "Excelente app!"
+        t7 copy: "Ajuda-me a ler mais a Bíblia. Gosto da função de pesquisa e a variedade de formas de partilha. Também gosto das versões em áudio."
+        t8: "Excelente app"
+        t8 copy: "É uma excelente ferramenta para o estudo através de múltiplas traduções. É também bastante conveniente ouvir a Bíblia enquanto conduz."
+        t9: "A melhor app da Bíblia!"
+        t9 copy: "A melhor app da Bíblia disponível. Tem a palavra de Deus em diferentes línguas e versões para uso online e offline. Tem devocionais para qualquer assunto. Pode conectar com outros e aprender sobre Deus e a Sua Palavra."
+        version list: "Mais de mil versões da Bíblia, incluindo:"
+        audio version list: "Ouça as versões da Bíblia, incluindo:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"

@@ -3,6 +3,42 @@ hi:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -370,6 +406,11 @@ hi:
             accept request button: "मित्रता कबूल करे"
             ignore button: "अस्वीकार "
             ignore request button: "निवेदन निरस्त करे "
+    images: 
+        none user: "%{username} hasn't created any images yet."
+        blank slate: 
+            heading: "You don’t have any images yet"
+            description: "Use the YouVersion mobile app to create verse images."
     notes: 
         none user: "%{username} के द्वारा कोई नोट्स निर्मित नहीं किया गया हैं।"
         blank slate: 
@@ -502,6 +543,8 @@ hi:
         user notes: "%{user}s के टिप्पणियाँ"
         my friends: "मित्र"
         my notes: "टिप्पणियाँ"
+        my images: "Images"
+        user images: "%{user}'s Images"
         user friends: "%{user}'s के मित्र"
         my bookmarks: "मेरे बुकमार्क्स"
         user bookmarks: "%{user}s के बुकमार्क्स"
@@ -567,7 +610,7 @@ hi:
             description title: "सेवा का विवरण"
             description text: "do not translate"
             registration title: "आपका registration दायित्व"
-            registration text: "do not translate"
+            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li><li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
             privacy title: "Lifechurch.tv की गोपनीयता नीति"
             privacy text: "do not translate"
             account title: "सदस्य के अकाउंट, पासवर्ड और उसकी सुरक्षा"
@@ -605,7 +648,7 @@ hi:
             trademark title: "trademark की जानकारियाँ"
             trademark text: "do not translate"
             copyright title: "copyright या बौधिक सम्पति का उलंगन दावा करने की प्रक्रिया और सूचनाये"
-            copyright text: "do not translate"
+            copyright text: "LifeChurch.tv respects the intellectual property of others. We ask our users to do the same, particularly where it pertains to using YouVersion. LifeChurch.tv may, in appropriate circumstances and at its sole discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please send the following information to legal@youversion.com:<ul type='none'><li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest in question;</li><br><li>A written description of the copyrighted work or other intellectual property that you claim has been infringed;</li><br><li>A written description of where the material that you claim is infringing is located on YouVersion;</li><br><li>Your address, telephone number, and email address (all that apply);</li><br><li>A written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li><br><li>A written statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner, or that you are authorized to act on the behalf of the copyright or intellectual property owner. LifeChurch.tv's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:%{newline}By mail: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "सामान्य जानकारियाँ"
             general text: "do not translate"
         profile: 
@@ -618,6 +661,7 @@ hi:
             tab notes: "टिप्पणीयाँ"
             tab bookmarks: "बुकमार्क्स"
             tab highlights: "हाइलाइट"
+            tab images: "Images"
             tab badges: "Badges"
             first name: "पहला नाम"
             last name: "आखरी नाम"
@@ -713,6 +757,7 @@ hi:
         none me: "आपके द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
         none user: "%{username} के द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "मेरी योजनाएँ"
             start reading: "अध्ययन प्रारंभ करे"
@@ -724,11 +769,11 @@ hi:
             readings 5 or more: "अध्ययन"
         stats: 
             friends reading: 
-                one: "%{count} friend subscribed to this plan"
-                other: "%{count} friends subscribed to this plan"
+                one: "%{count} मित्र इस योजना के सदस्य हैं "
+                other: "%{count} मित्र इस योजना के सदस्य हैं "
             friends completed: 
-                one: "%{count} friend has completed this plan"
-                other: "%{count} friends have completed this plan"
+                one: "%{count}के मित्रों द्वारा यह पाठक योजना सम्पूर्ण किया गया"
+                other: "%{count}के मित्रों द्वारा यह पाठक योजना सम्पूर्ण किया गया"
             total completions: "Over %{count} completions"
             view all: "View All"
             close: "Close"
@@ -841,8 +886,10 @@ hi:
         loading sidebar content: "साइड बार विषय सूची लोड किया जा रहा हैं............."
     videos: 
         title: "वीडियो"
+        watch videos: "Watch videos about the Bible"
         all: "समस्त विडियो"
         related scripture: "संबधित लेख"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "आपका विषय सूची अधीकृत हुआ"
@@ -995,10 +1042,24 @@ hi:
         what people: "लोगो की राय इस मुफ्त बाइबिल App के बारें में..."
         t1: "मेरे पास हमेशा प्रभु के वचन उपलब्ध हैं।"
         t1 copy: "मेरे द्वारा अंशों को बुकमार्क्स किया गया हैं जो मेरे लिए महत्वपूर्ण हैं। मैंने पाठक योजना के अनुसार एक साल में पूरे योजना को समाप्त किया हैं। इसके लिए धन्यवाद।"
-        t2: "अतिउत्तम कार्यक्रम!"
-        t2 copy: "यह app मुझे योजनाबद्ध तरीके से प्रभु के वचन हररोज़ पढने में सहायता करता हैं। उपयोग में आसान और विभिन विशेषताएँ भी उपलब्ध हैं ......मेरी पसंद!"
+        t2: "Highly recommended"
+        t2 copy: "I love how you are able to connect with friends and the Bible reading plans are awesome. This application helps me also to stay consistent in reading because it has reminders for the plans. It also gives me another way to come closer to God. Download this and read every day!"
         t3: "अद्भुत App"
         t3 copy: "बाइबिल के विस्तृत चयन के लिए एक शानदार app..... ऑडियो बाइबिल भी अद्भुत और समझने में आसान हैं।"
+        t4: "Great. Always improving!"
+        t4 copy: "Many translations and languages available, and many that can be downloaded to read offline. Many useful features, such as the ability to make notes and bookmarks."
+        t5: "The best Bible app ever!"
+        t5 copy: "I love how it has a lot of versions and that there are verses of the day, devotions, plans and community. Thanks for this free app. :)"
+        t6: "Multiple versions and offline reading!"
+        t6 copy: "Great because there are many different versions and I could download multiple versions for offline reading.  I'm able to listen to this app."
+        t7: "Great app!"
+        t7 copy: "Helps me to read the bible more. Love the search and share features and the variety of ways to share. Also like the audio versions."
+        t8: "Great app"
+        t8 copy: "This is a great tool for studying from multiple translations. It's also convenient for listening to the bible when you're driving."
+        t9: "Best Bible app!"
+        t9 copy: "This is the best bible app out there. It has the word in different languages and versions for online and offline use. It has devotionals for everything you could think of. You can connect with others and ultimately learn about God and his Word."
+        version list: "Over 1000 Bible versions including:"
+        audio version list: "Listen to Bible audio versions including:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"
@@ -1059,7 +1120,7 @@ hi:
             cross references: "प्रति संदर्भ"
     app errors: 
         404 plans explanation: "Are you looking for the <a href='%{plan_path}'>%{title}</a> plan?"
-        404 contact support: "क्या आपको शिकायत हैं?संपर्क करे <a href='%{support_url}'>सहायता टीम </a>"
+        404 contact support: "क्या आपको शिकायत हैं?संपर्क करे <a href='%{support_url}'>सहायता टीम </a>."
         404 explanation: "शुरुआत करने का पुन:कोशिश करे <a href='%{reader_path}'>home page</a>. अभी परेशानी हो रही ? संपर्क करिए <a href='%{support_url}'>support team</a>."
         404 message: "कृपया क्षमा कीजिए,आपके द्वारा अन्वेषित पेज नहीं मिल सका।"
         408 message: "हमारे सर्वर द्वारा प्रतिक्रिया नहीं जताने के क्षमा चाहते हैं।"

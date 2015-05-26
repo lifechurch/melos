@@ -1,8 +1,14 @@
 :ruby
   @sidebar          = false
-  @title            = t("meta.mobile.title")
+  @title            = "#{t('mobile page.t9')} #{t('mobile page.free overlay')} - #{t('mobile page.download now')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8"
+  @meta_title       = "#{t('mobile page.download now')} - #{t('mobile page.free overlay')}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
+  @text_versions_list = Version.all.find_all{|v| text_version_list(I18n.locale.to_s).include? v.id}
+  @audio_versions_list = Version.all.find_all{|v| audio_version_list(I18n.locale.to_s).include? v.id}
+
+- content_for :stylesheets do
+  = stylesheet_link_tag "slick.css"
 
 - content_for :additional_meta do
   = render '/shared/hreflang'
@@ -10,15 +16,22 @@
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}/app"
   %link{rel: "canonical", href: canonicalHref}
   %meta{name: "url",            content: @meta_url}
-  %meta{property: "og:title",       content: @title }
+  %meta{property: "og:title",       content: @meta_title }
   %meta{property: "og:url",         content: @meta_url }
   %meta{property: "og:description", content: @meta_description }
-  %meta{name: "twitter:card",             content: "summary"}
-  %meta{name: "twitter:url",              content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
-  %meta{name: "twitter:title" ,           content: @title}
-  %meta{name: "twitter:description",      content: @meta_description}
-  %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
+  %meta{name: "twitter:card",             content: "app"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
+  %meta{name: "twitter:description",      content: @meta_description}
+  %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(120)))}
+  %meta{name: "twitter:app:name:iphone", content: "Bible"}
+  %meta{name: "twitter:app:id:iphone", content: "282935706"}
+  %meta{name: "twitter:app:url:iphone", content: "youversion://"}
+  %meta{name: "twitter:app:name:ipad", content: "Bible"}
+  %meta{name: "twitter:app:id:ipad", content: "282935706"}
+  %meta{name: "twitter:app:url:ipad", content: "youversion://"}
+  %meta{name: "twitter:app:name:googleplay", content: "Bible"}
+  %meta{name: "twitter:app:id:googleplay", content: "com.sirma.mobile.bible.android"}
+  %meta{name: "twitter:app:url:googleplay", content: "youversion://"}
 
 %article.mobileapps
   - style = "position:absolute; z-index:1; margin-left: 572px; margin-top: -131px; height:80px; width:80px; background: url(#{image_path(localized_bible_icon(72))}); background-repeat: no-repeat;background-size:cover !important;" if localized_bible_icon
@@ -26,11 +39,11 @@
   %div.app-free-overlay.hide-mobile
     %h2= t('mobile page.free overlay')
   %section#mobile_content
-    %h2= t('mobile page.h2')
+    %h2.title= t('mobile page.h2')
     %section.main
       %p= t('mobile page.main').html_safe
     %section.multilingual
-      - style = "z-index:1; margin:0 auto; height:72px; width:72px; background: url(#{image_path(localized_bible_icon(72))}) center 10px no-repeat;" if localized_bible_icon
+      - style = "z-index:1; margin:0 auto; height:72px; width:72px; background: url(#{image_path(localized_bible_icon(72))}) center 2px no-repeat;background-size: 72px 72px;" if localized_bible_icon
       %div.multi
         %div.icon-overlay{style: style}
       -#= image_tag "mobile_multilingual.png"
@@ -64,15 +77,93 @@
       %h4
         = t('mobile page.button h4').html_safe
   %div.clear
-  %section.testimonials
-    %h2= t('mobile page.what people')
-    %ul
-      %li
-        %h3= t('mobile page.t1')
-        %p= t('mobile page.t1 copy')
-      %li
-        %h3= t('mobile page.t2')
-        %p= t('mobile page.t2 copy')
-      %li
-        %h3= t('mobile page.t3')
-        %p= t('mobile page.t3 copy')
+
+  %div.lower-content
+    %section.testimonials
+      %h2= t('mobile page.what people')
+      %div.review-carousel
+        %div
+          %h3= t('mobile page.t1')
+          %p= t('mobile page.t1 copy')
+        %div
+          %h3= t('mobile page.t2')
+          %p= t('mobile page.t2 copy')
+        %div
+          %h3= t('mobile page.t3')
+          %p= t('mobile page.t3 copy')
+        %div
+          %h3= t('mobile page.t4')
+          %p= t('mobile page.t4 copy')
+        %div
+          %h3= t('mobile page.t5')
+          %p= t('mobile page.t5 copy')
+        %div
+          %h3= t('mobile page.t6')
+          %p= t('mobile page.t6 copy')
+        %div
+          %h3= t('mobile page.t7')
+          %p= t('mobile page.t7 copy')
+        %div
+          %h3= t('mobile page.t9')
+          %p= t('mobile page.t9 copy')
+        %div
+          %h3= t('mobile page.t8')
+          %p= t('mobile page.t8 copy')
+
+    = cache "app_versions_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
+      %div.version-list
+        %h2= t('mobile page.version list')
+        %ul
+          - @text_versions_list.each do |version|
+            %li
+              = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+      - if @audio_versions_list.present?
+        %div.version-list
+          %h2= t('mobile page.audio version list')
+          %ul
+            - @audio_versions_list.each do |version|
+              %li
+                = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+
+- content_for :javascripts do
+  :javascript
+    $(document).ready(function(){
+      $('.review-carousel').slick({
+        centerMode: true,
+        centerPadding: "0px",
+        slidesToShow: 1,
+        infinite: false,
+        variableWidth: true,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerPadding: "10px",
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
+
+%script{type: "application/ld+json"}
+  {
+  "@context": "http://schema.org/",
+  "@type": "MobileApplication",
+  "name": "#{t('bible')}",
+  "image": "#{url_for(image_path(localized_bible_icon(120)))}",
+  "description": "#{t("meta.mobile.description")}",
+  "aggregateRating":{
+  "@type": "AggregateRating",
+  "ratingValue": "4.6",
+  "ratingCount": "1,229,869"
+  },
+  "offers":{
+  "@type": "Offer",
+  "price": "Free"
+  }
+  }

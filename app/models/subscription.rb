@@ -32,7 +32,6 @@ class Subscription < Plan
       :id
     end
 
-
     def find(plan, opts = {})
       raise YV::AuthRequired unless opts[:auth]
       auth = opts[:auth]
@@ -45,7 +44,6 @@ class Subscription < Plan
       return found
     end
 
-
     def list_path
       "reading-plans/items"
     end
@@ -56,7 +54,6 @@ class Subscription < Plan
       opts[:auth]     = user.auth
       super(opts)
     end
-
 
     def subscribe(plan, opts={})
       raise YV::AuthRequired unless opts[:auth]
@@ -77,7 +74,6 @@ class Subscription < Plan
       @api_response_mapper.map_subscribe(results)
     end
 
-
     def unsubscribe(plan,user,opts={})
       raise YV::AuthRequired unless opts[:auth]
 
@@ -89,7 +85,6 @@ class Subscription < Plan
     def unsubscribe_path
       "reading-plans/unsubscribe_user"
     end    
-
 
 
     private
@@ -139,7 +134,6 @@ class Subscription < Plan
     not email_delivery.nil?
   end
 
-
   # Human readable time range for email_delivery API value
   def email_delivery_time_range
     return nil if email_delivery.nil?
@@ -150,7 +144,6 @@ class Subscription < Plan
       else nil
     end
   end
-
 
   def disable_email_delivery
     update_subscription(email_delivery: nil)
@@ -169,7 +162,6 @@ class Subscription < Plan
     update_subscription(params)
   end
 
-
   def catch_up
     modify_subscription("reading-plans/reset_subscription","catch_up")
   end
@@ -186,7 +178,6 @@ class Subscription < Plan
     
     return self.class.map(results, self, :update)
   end
-
 
   def add_accountability_user(user)
     update_accountability(user, action: "add")
@@ -212,7 +203,6 @@ class Subscription < Plan
     raise "Auth required." unless auth
     destroy
   end
-
 
 
   # Auth required
@@ -262,7 +252,7 @@ class Subscription < Plan
   end
 
   def day_statuses
-    data, errs = self.class.get("#{api_path_prefix}/calendar", {auth: auth, id: id, user_id: user_id})
+    data, errs = self.class.get("#{api_path_prefix}/calendar", {auth: auth, id: id, user_id: user_id, timeout: 15000})
     results = YV::API::Results.new(data,errs)
       raise_errors( results.errors, "subscription#day_statuses") unless results.valid?
 
@@ -349,7 +339,6 @@ class Subscription < Plan
     return self.class.map(YV::API::Results.new(data,errs), self, :update)
   end
 
-
   # def update_accountability_partners
   #   @partners = Subscriptions::Partner.all(
   #     id: id,
@@ -372,9 +361,6 @@ class Subscription < Plan
 
   #   return results
   # end
-
-
-
 
   def delivery_time(time_range)
     hours = case time_range

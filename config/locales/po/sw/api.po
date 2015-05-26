@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-19 09:30-0609\n"
-"PO-Revision-Date: 2014-12-19 09:30-0609\n"
+"POT-Creation-Date: 2015-04-23 15:06-0609\n"
+"PO-Revision-Date: 2015-04-23 15:06-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sw <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -59,6 +59,18 @@ msgstr "Ulialamisha <b>{reference_human}</b>"
 
 msgid "moment.bookmark.title"
 msgstr "{name} alialamisha <b>{reference_human}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Fanya Upya Imani yako na Mipango mipya."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Kutumia muda kwenye Neno la Mungu kila siku kunazalisha uhuru wa kudumu."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Pata mwamko wako kwa kutumia muda wako kwenye Neno la Mungu kila siku."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Jitolee kila siku kumtafuta Mungu kwenye Neno Lake."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Läs Bibeln dagligen under 2015. Planer hjälper!"

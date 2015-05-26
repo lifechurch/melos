@@ -3,6 +3,31 @@ km:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "about %{count} hours ago"
+            about_x_months: 
+                other: "about %{count} months ago"
+            about_x_years: 
+                other: "about %{count} years ago"
+            almost_x_years: 
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                other: "over %{count} years ago"
+            x_days: 
+                other: "%{count} days ago"
+            x_minutes: 
+                other: "%{count} minutes ago"
+            x_months: 
+                other: "%{count} months ago"
+            x_seconds: 
+                other: "%{count} seconds ago"
     counter: 
         format: "999.999.999"
     social: 
@@ -152,8 +177,8 @@ km:
     share error: "សូមទោស មាន​កំហុស​ក្នុង​ពេល​ចែក​រំលែក​សារ​របស់​អ្នក។ សូម​ព្យាយាមម្ដង​ទៀត"
     share: 
         request: 
-            no_twitter_connection: "You don't have a connected Twitter account. Please connect your account on the settings page."
-            no_facebook_connection: "You don't have a connected Facebook account. Please connect your account on the settings page."
+            no_twitter_connection: "អ្នក​មិន​មាន​ភ្ជាប់​ទៅ​កាន់​គណនី Twitter​ទេ សូម​ភ្ជាប់​ទៅ​គណនី​របស់​អ្នក​លើ​ទំព័រ​ការ​កំណត់"
+            no_facebook_connection: "អ្នក​មិន​បាន​ភ្ជាប់​ទៅ​កាន់​គណនី​ហ្វេសប៊ុក​របស់​អ្នក​ទេ សូម​ភ្ជាប់​ទៅ​កាន់​គណនី​របស់​អ្នក​លើ​ទំព័រ​ការ​កំណត់។"
     google plus: "Google+"
     connect to: "ភ្ជាប់​គណនី​របស់​អ្នក %{connection}"
     deleted connection: "ការ​ភ្ជាប់​របស់​លោក​អ្នក​ត្រូវ​បាន​ដក​ចេញ​ទៅ %{connection}"
@@ -370,6 +395,11 @@ km:
             accept request button: "ទទួល​យក​សំណើរ"
             ignore button: "បដិសេធ"
             ignore request button: "បដិសេធសំណើ"
+    images: 
+        none user: "%{username} hasn't created any images yet."
+        blank slate: 
+            heading: "You don’t have any images yet"
+            description: "Use the YouVersion mobile app to create verse images."
     notes: 
         none user: "%{username} មិន​ទាន់​មាន​កំណត់​ត្រា​នៅ​ឡើយ​ទេ"
         blank slate: 
@@ -502,6 +532,8 @@ km:
         user notes: "កំណត់​ត្រា %{user}"
         my friends: "មិត្ត​ភក្តិ"
         my notes: "កំណត់​ត្រា"
+        my images: "រូប​ភាព"
+        user images: "%{user}'s Images"
         user friends: "មិត្ត​ភក្តិ​របស់​ %{user}"
         my bookmarks: "កំណត់​ចំណាំ​របស់​ខ្ញុំ"
         user bookmarks: "កំណត់​ចំណាំ​របស់ %{user}"
@@ -567,7 +599,7 @@ km:
             description title: "បរិយាយ​ពី​សេវា​កម្ម"
             description text: "do not translate"
             registration title: "កាតាព្វ​កិច្ច​នៃ​ការ​ចុះ​ឈ្មោះ​របស់​អ្នក"
-            registration text: "do not translate"
+            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li><li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
             privacy title: "បរិយាយ​នៃ​សេវាកម្ម​"
             privacy text: "do not translate"
             account title: "គណនី, ពាក្យ​សម្ងាត់, និង​សុវត្ថិភាព​របស់​សមាជិក"
@@ -605,7 +637,7 @@ km:
             trademark title: "ព័ត៌មាន​ពី​និក្ខិត្ត​សញ្ញា"
             trademark text: "do not translate"
             copyright title: "ទទួល​ស្គាល់​ហើយដំណើរ​ការ​ក្នុង​ការ​ប្រកាស​ពី​ការ​រក្សារសិទ្ធ ឬ​យល់​ដឹង​ពី​ការ​បំពាន​លើ​កម្ម​សិទ្ធ"
-            copyright text: "do not translate"
+            copyright text: "LifeChurch.tv respects the intellectual property of others. We ask our users to do the same, particularly where it pertains to using YouVersion. LifeChurch.tv may, in appropriate circumstances and at its sole discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please send the following information to legal@youversion.com:<ul type='none'><li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest in question;</li><br><li>A written description of the copyrighted work or other intellectual property that you claim has been infringed;</li><br><li>A written description of where the material that you claim is infringing is located on YouVersion;</li><br><li>Your address, telephone number, and email address (all that apply);</li><br><li>A written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li><br><li>A written statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner, or that you are authorized to act on the behalf of the copyright or intellectual property owner. LifeChurch.tv's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:%{newline}By mail: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "ព័ត៌មាន​ទូទៅ"
             general text: "do not translate"
         profile: 
@@ -618,6 +650,7 @@ km:
             tab notes: "កំណត់​ត្រា"
             tab bookmarks: "កំណត់​ចំណាំ​ច្រើន"
             tab highlights: "គូស​ចំណាំៈ"
+            tab images: "រូប​ភាព"
             tab badges: "ផ្លាក​សញ្ញា"
             first name: "នាម"
             last name: "កោត្ត​នាម"
@@ -713,6 +746,7 @@ km:
         none me: "លោក​អ្នក​មិន​ទទួល​បាន ផ្លាក់​សញ្ញា​ អី​នៅ​ឡើយ​ទេ"
         none user: "%{username} មិន​ទាន់​ទទួល​បាន ផ្លាក​សញ្ញា អី​នៅ​ឡើយ​ទេ"
     plans: 
+        share plan: "ឆែក​មើល​មក @YouVersion #គំរោង​អាន​គម្ពីរ: %{plan_title}"
         widget: 
             my plans: "គំរោង​របស់​ខ្ញុំ"
             start reading: "ចាប់ផ្ដើមអាន"
@@ -839,8 +873,10 @@ km:
         loading sidebar content: "កំពុងផ្ទុកមាតិការបារចំហៀង..."
     videos: 
         title: "វីដេអូច្រើន"
+        watch videos: "មើល​វីដេអូនេះ​អំពី​ព្រះ​គម្ពីរ"
         all: "វីដេអូទាំងអស់"
         related scripture: "អត្តបទគម្ពីរដែលពាក់ព័ន្ធ"
+        share video: "ខ្ញុំ​កំពុង​មើល​វីដេអូ %{video_title} លើ @YouVersion."
     licenses: 
         authorized: 
             heading: "មាតិការបស់លោកអ្នកត្រូវបានអនុញ្ញាត្ត"
@@ -988,15 +1024,29 @@ km:
         h3: "YouVersion គឺជា​សកល"
         h3 sub: "មាន​ច្រើន​ជាង​%{language_count} ភាសារ​ជុំវិញ​ពិភពលោក។"
         main: "មនុស្ស​ដប់​លាន​អ្នក​កំពុង​ប្រើ​ប្ាស់ Bible App™ ដើម្បី​ធ្វើ​អោយ​ព្រះបន្ទូល​របស់​ព្រះជាម្ចាស់​ជា​ផ្នែក​មួយ​នៅ​ក្នុង​ជីវិតរស់​នៅ​របស់​គេ។ ដោន​ឡូដ​កម្មវិធី​ដោយ​ឥត​គិត​ថ្លៃ​ហើយ​ចូល​ទៅ​កាន់​កំណត់​ចំណាំ, កំណត់​ត្រា, និង​គំរោង​អានគម្ពីរ​ពី​គ្រប់​ទៅ​កន្លែង។ សប្បាយ​ជាមួយ​នឹង​ជំនាន់​គម្ពីរ​រាប់​រយ រូម​បញ្ចូល​ទាំង​សំលេង​នៅ​លើ​ទូរសព្ទ័​ចល័ត​របស់​អ្នក"
-        button h4: "Go to Bible.com/app<br>on your Mobile Device"
+        button h4: "ចូល​ទៅ​កាន់​Bible.com/app<br/>លើ​ឧបករណ៍​ចល័ត​របស់​អ្នក"
         download now: "ដោន​ឡូដ​យក​ Bible App ឥឡូវនេះ"
         what people: "អ្វី​ដែល​មនុស្ស​បាន​និយាយ​អំពី​ Bible app ដោយ​ឥត​គិត​ថ្លៃ..."
         t1: "ខ្ញុំ​តែង​តែ​មាន​ព្រះបន្ទូល។"
         t1 copy: "ខ្ញុំ​បាន​កត់​ចំណាំ​នូវ​អត្ថបទ​ដែល​សំខាន់​សំរាប់​ខ្ញុំ។ ខ្ញុំ​ថែម​ទាំង​អាន​ព្រះ​គម្ពីរ​ពេញ​មួយ​ឆ្នាំ​តាម​គំរោង​អាន​គម្ពីរ។"
-        t2: "កម្ម​វិធី​ឡូយ!"
-        t2 copy: "កម្ម​វិធីនេះ​ជួយ​ខ្ញុំ​ក្នុង​ការ​រៀប​ចំ និង​អាន​នូវ​ព្រះ​បន្ទូល​របស់​ព្រះ​ជារៀង​រាល់​ថ្ងៃ។ វាងាយ​ស្រួល​ក្នុង​ការ​ប្រើ​ ដោយ​ផ្ដល់​មក​នូវ​លក្ខណះពិសេស​ជាច្រើន...ស្រឡាញ់​វា​ណាស់!"
+        t2: "ចង់​នែនាំ​អោយ​ប្រើ​ខ្លាំង"
+        t2 copy: "ខ្ញុំ​ចូល​ចិត្ត​ពេល​ដែល​អ្នក​អាច​ភ្ជាប់​ជាមួយ​មិត្ត​របស់​អ្នក និង​គំរោង​អាន​ព្រះ​គម្ពីរ​គឺពិតជាឡូយ​ណាស់។ កម្មវិធី​នេះ​នឹង​ជួយ​ខ្ញុំ​ ហើយ​ក៏​នៅ​ស្ថិត​ស្ថេរ​ក្នុង​ការ​អាន​ព្រោះ​វា​ជួយ​រំលឹក​ពី​គំរោង​អាន។ វា​ក៏​ជួយ​ខ្ញុំ​ដោយ​របៀប​មួយ​ផ្សេង​ទៀត​ក្នុង​ការ​ចូល​មក​ជិត​ព្រះ។ ដោ​នឡូដ​យក​ ហើយ​អា​ជា​ប្រចាំ​ថ្ងៃ។"
         t3: "កម្មវិធី​អស្ចារ្យ"
         t3 copy: "កម្ម​វិធី​ល្អ​មែន​ទែន​ ជាមួយ​នឹង​ជំរើស​នៃ​ព្រះ​គម្ពីរ​ជ្រើស​រើស​មក​ពី...ឯ​គម្ពីរ​ជា​សំលេង​ក៏​អស្ចារ្យ ហើយ​ងាយ​យល់​ទៀត​ផង។"
+        t4: "ល្អ​ណាស់។ តែង​តែ​រីក​ចំរើន!"
+        t4 copy: "មាន​ការ​បក​ប្រែ​ច្រើន​ភាសា ហើយ​អាច​ទាញ​យក​មក​អាន​នៅ​ក្រៅ​បណ្ដាញ។ មាន​មុខ​ងារ​មាន​ប្រយោជន៍ ដូចជា​មាន​សមត្ថ​ភាព​បង្កើត​កំណត់​ត្រា និង​កំណត់ចំណាំ។"
+        t5: "កម្មវិធីព្រះគម្ពីរ​ដែល​ល្អជាង​គេ!"
+        t5 copy: "I love how it has a lot of versions and that there are verses of the day, devotions, plans and community. Thanks for this free app. :)"
+        t6: "Multiple versions and offline reading!"
+        t6 copy: "Great because there are many different versions and I could download multiple versions for offline reading.  I'm able to listen to this app."
+        t7: "Great app!"
+        t7 copy: "Helps me to read the bible more. Love the search and share features and the variety of ways to share. Also like the audio versions."
+        t8: "Great app"
+        t8 copy: "This is a great tool for studying from multiple translations. It's also convenient for listening to the bible when you're driving."
+        t9: "Best Bible app!"
+        t9 copy: "This is the best bible app out there. It has the word in different languages and versions for online and offline use. It has devotionals for everything you could think of. You can connect with others and ultimately learn about God and his Word."
+        version list: "Over 1000 Bible versions including:"
+        audio version list: "Listen to Bible audio versions including:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"
@@ -1084,12 +1134,12 @@ km:
             tracker title: "តាម​ដាន​រឿង​គ្រិស្ត​ស្មាស់"
             twitter text: "មើល​ពី ពិភព​លោក​អាន​ពីកំណើត​ព្រះយេស៊ូ ចែក​រំលែក​រឿង​គ្រិស្ត​ស្មាស់@YouVersion​https://www.bible.com/christmas"
             facebook text: "ចែក​រំលែក​រឿង​គ្រិស្ត​ស្មាស់​ដូច​ជាមនុស្ស​នៅ​ជុំ​វិញពិភព​លោក​កំពុង​អាន​អំពី​រឿង​កំណើត​ព្រះយេស៊ូ  នៅ​ក្នុង​ក្រុម​ជំនុំ ឬ​នៅ​ផ្ទះ ជិត​មនុស្ស​ដែល​យើង​ស្រឡាញ់ ឬ​ក្នុង​កំឡុង​ពេល​ស្ងៀម​ស្ងាត់​តែ​ម្នាក់​ឯង យើង​កំពុត​តែ​ឆ្លុះ​បញ្ចាំង​​​ពី​ក្ដី​ស្រឡាញ់​ដ៏អស្ចារ្យ​របស់​ព្រះ​ចំពោះ​យើង។"
-            summary: "During December 2014, this is what it looked like to see the world read about the birth of Jesus."
+            summary: "ក្នុង​ខែ​ធ្នូ​2014​ពិភព​លោក​បាន​អាន​អំពី​កំណើត​ព្រះយេស៊ូ​មាន​លក្ខណះ​ដូច​នេះ។"
             verse: "<sup> ទេវតា​ពោល​ទៅ​គេ​ថា៖ «កុំ​ខ្លាច​អ្វី​ឡើយ </sup>ខ្ញុំ​នាំ​ដំណឹងល្អ​មួយ​មក​ប្រាប់​អ្នក​រាល់​គ្នា។ ដំណឹង​នេះ​នឹង​ធ្វើ​អោយ​ប្រជារាស្ត្រ​ទាំង​មូល មាន​អំណរ​ដ៏​លើសលប់។ <sup>យប់​នេះ នៅ​ក្នុង​ភូមិ​កំណើត​របស់​ព្រះបាទ​ដាវីឌ ព្រះសង្គ្រោះ​របស់​អ្នក​រាល់​គ្នា​ប្រសូត​ហើយ គឺ​ព្រះគ្រិស្ដ​ជា​អម្ចាស់។ </sup>"
             read more: "អាន​ពី​រឿងគ្រិស្ត​ស្មាស់​​ដ៏​អស្ចារ្យ"
             read about: "អាន​អំពី​កំណើត​ព្រះ​យេស៊ូ​គ្រិស្ត"
             totals since: "ចំនួន​សរុប​ YouVersion តាំង​ពី​ ខែធ្នូ 1, 2014:"
-            totals during: "YouVersion totals during December 2014:"
+            totals during: "ចំនួន​សរុប YouVersion  ក្នុង​ខែ​ធ្នូ​2014"
             total installs: "ចំនួន​សរុប​ដែល​បាន​តម្លើង​លើ​ទូរស័ព្ទ​ឆ្លាត​វៃ និង តាប្លែត"
             download: "ដោន​ឡូដ​យក​កម្មវិី ព្រះ​គម្ពីរ​ដោយ​ឥត​គិត​ថ្លៃ"
             versions: "លើស​ពី %{version_count} ជំនាក់​ក្នុង​ %{language_count} ភាសា"

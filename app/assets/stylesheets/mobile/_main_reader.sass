@@ -502,7 +502,7 @@ article .reader-nav,
   width: 212px
   height: 46px
   margin: 0 auto
-  position: relative
+  position: relative !important
   z-index: 194
   top: 0px
 
@@ -936,6 +936,10 @@ article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .labe
   font-size: 1.5em
   line-height: 1.5em
 
+#main dl.audio h2
+  font-size: 12px
+  margin-bottom: 0
+
 
 // !Book-chap-verse select table
 //---------------------------------------------------------------------------------------
@@ -1074,6 +1078,9 @@ article[data-setting-show-highlights="false"] .verse.highlighted.dark_bg > .labe
 
   a.close
     display: none
+
+#version_secondary
+  display: none
 
 // KM: temporary HACK to remove the share button for initial launch until
 // it can be implemented properly

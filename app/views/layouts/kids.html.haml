@@ -43,7 +43,7 @@
 !!! 5
 %html
   %head
-    %title= strip_tags(meta_title)
+    %title= "#{t.call("meta.kids_app.title")} - #{t.call("meta.best kids app")} #{t.call('kids.free download')} | #{t.call('kids.feature 2')} | Android, iPhone, iPad, Android tablets"
     %link{rel: "shortcut icon", href:"/favicon.ico"}
     %meta{charset:"utf-8"}
     %meta{'http-equiv' => 'content-language', :content => I18n.locale.downcase}
@@ -61,12 +61,15 @@
     %meta{property: "og:locale:alternate", content: "ko_KR"}
     %meta{property: "og:locale:alternate", content: "zh_CN"}
     %meta{property: "og:locale:alternate", content: "pt_BR"}
-    %meta{name: "twitter:card",             content: "summary"}
-    %meta{name: "twitter:url",              content: meta_url}
-    %meta{name: "twitter:title" ,           content: meta_title}
-    %meta{name: "twitter:description",      content: meta_description}
-    %meta{name: "twitter:image",            content: "#{url_for(asset_path('BibleAppForKids-icon-120x120.png'))}"}
+    %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
+    %meta{name: "twitter:description",      content: meta_description}
+    %meta{name: "twitter:app:name:iphone", content: "Bible for Kids"}
+    %meta{name: "twitter:app:id:iphone", content: "668692393"}
+    %meta{name: "twitter:app:name:ipad", content: "Bible for Kids"}
+    %meta{name: "twitter:app:id:ipad", content: "668692393"}
+    %meta{name: "twitter:app:name:googleplay", content: "Bible for Kids"}
+    %meta{name: "twitter:app:id:googleplay", content: "com.bible.kids"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en-gb"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/es/kids",:rel=>"alternate",:hreflang=>"es"}
@@ -136,8 +139,13 @@
             = t.call('kids.app store')
           %a.download-play{href: t.call('kids.links.google'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
             = t.call('kids.google play')
+          -if I18n.locale.to_s.eql?("zh-CN")
+            %br.desktop-only
+            %a.download-apk{href: "https://dugnyfr6fqjr8.cloudfront.net/KidsBible-China.apk", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px"}
+              = t.call('kids.free download')
           %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
             = t.call('kids.amazon')
+
 
       -# !iPad hero screenshot
       -#- if not i18n_image_dir.present?
@@ -210,3 +218,21 @@
     -# !Retina JS
 
     = javascript_include_tag "retina.js"
+
+    %script{type: "application/ld+json"}
+      {
+      "@context": "http://schema.org/",
+      "@type": "MobileApplication",
+      "name": "#{t.call('meta.kids_app.title')}",
+      "image": "#{url_for(asset_path('BibleAppForKids-icon-200x200.png'))}",
+      "description": "#{t.call('meta.kids_app.description')}",
+      "aggregateRating":{
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "ratingCount": "55,278"
+      },
+      "offers":{
+      "@type": "Offer",
+      "price": "Free"
+      }
+      }

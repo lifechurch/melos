@@ -10,11 +10,13 @@ YouversionWeb::Application.routes.draw do
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
   get "/confirm-email", to: "users#confirm_email",        as: "confirm_email"
-  get "/ni%C3%B1os",         to: "redirects#ninos"
+  get "/ni%C3%B1os",    to: "redirects#ninos"
+  get "/ninos",         to: "redirects#ninos"
   get "/ertong",        to: "redirects#ertong"
   get "/%E5%84%BF%E7%AB%A5",           to: "redirects#ertong"
   get "/%EC%96%B4%EB%A6%B0%EC%9D%B4",  to: "redirects#aideul"
   get "/criancas",      to: "redirects#criancas"
+  get "/crian%C3%A7as", to: "redirects#criancas"
 
 
   match "/app(/:store)", to: AppStoreController.action(:index)
@@ -89,6 +91,7 @@ YouversionWeb::Application.routes.draw do
     get :bookmarks,   on: :member, as: 'bookmarks'
     get '_bookmarks', on: :member
     get :highlights,  on: :member, as: 'highlights'
+    get :images,      on: :member, as: 'images'
     get :badges,      on: :member, as: 'badges'
 
     match 'badge/:id' => 'badges#show', as: 'badge'
@@ -111,6 +114,9 @@ YouversionWeb::Application.routes.draw do
     get "related", on: :collection
     get "introduction", on: :collection
   end
+
+  get "/moments/:id/comments", to: "moments#show"
+  get "/moments/:id/comments/:comment_id", to: "moments#show"
 
   resources :notes, :except => [:index] do
     get "_cards", on: :collection

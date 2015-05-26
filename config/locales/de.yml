@@ -3,6 +3,42 @@ de:
     time: 
         formats: 
             votd: "%-d. %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "vor ungefähr 1 Stunde"
+                other: "vor ungefähr %{count}Stunden"
+            about_x_months: 
+                one: "vor ungefähr einem Monat"
+                other: "vor ungefähr %{count} Monaten"
+            about_x_years: 
+                one: "vor ungefähr einem Jahr"
+                other: "vor ungefähr %{count} Jahren"
+            almost_x_years: 
+                one: "vor fast einem Jahr"
+                other: "vor fast %{count} Jahren"
+            half_a_minute: "vor einer halben Minute"
+            less_than_x_minutes: 
+                one: "vor weniger als einer Minute"
+                other: "vor weniger als %{count} Minuten"
+            less_than_x_seconds: 
+                one: "vor weniger als einer Sekunde"
+                other: "vor weniger als %{count} Sekunden"
+            over_x_years: 
+                one: "vor über einem Jahr"
+                other: "vor über %{count} Jahren"
+            x_days: 
+                one: "vor einem Tag"
+                other: "vor %{count} Tagen"
+            x_minutes: 
+                one: "vor einer Minute"
+                other: "vor %{count} Minuten"
+            x_months: 
+                one: "vor einem Monat"
+                other: "vor %{count} Monaten"
+            x_seconds: 
+                one: "vor einer Sekunde"
+                other: "vor %{count} Sekunden"
     counter: 
         format: "999.999.999"
     social: 
@@ -285,7 +321,7 @@ de:
             add friend button: "Als Freund/in hinzufügen"
             load more: "Mehr laden"
             like: "Gefällt mir"
-            liked: "Gefällt"
+            liked: "gefiel dies "
             like title: "Tippe auf \"Gefällt mir\""
             last comment: "Jüngster Kommentar"
             share: "Teilen"
@@ -370,6 +406,11 @@ de:
             accept request button: "Anfrage akzeptieren"
             ignore button: "Ablehnen"
             ignore request button: "Anfrage ablehnen"
+    images: 
+        none user: "%{username} hat noch kein Versbild erstellt."
+        blank slate: 
+            heading: "Du hast noch keine Versbilder"
+            description: "Nutze die YouVersion App auf deinem Smartphone, um Versbilder zu erstellen."
     notes: 
         none user: "%{username} hat bisher keine Notizen gemacht"
         blank slate: 
@@ -416,7 +457,7 @@ de:
         cancel: "Abbrechen"
         pop out: "In neuem Fenster anzeigen."
         none found: "Keine Notizen vorhanden"
-        create success: "Super! Deine Notiz wurde gespeichert."
+        create success: "Okay, deine Notiz wurde gespeichert!"
         create failure: "Fehler beim Speichern der Notiz"
         destroy success: "Notiz gelöscht"
         destroy failure: "Fehler beim Löschen der Notiz"
@@ -482,9 +523,9 @@ de:
         edit notifications: "Benachrichtigungen verwalten"
         edit connections: "Verbundene Benutzerkonten"
         edit devices: "Verbundene Geräte"
-        vod_subscriptions: "Vers des Tages Abonnements"
+        vod_subscriptions: "Abonnements für Vers des Tages"
         vod_subscription success: "Du hast dein Abo für den \"Vers des Tages\" erfolgreich aktualisiert!"
-        vod_subscription failure: "Sorry, es gab ein Problem beim Aktualisieren des Vers des Tages Abonnements."
+        vod_subscription failure: "Es tut uns leid, aber es gab ein Problem beim Aktualisieren des Abonnements für den Vers des Tages."
         daily email delivery: "Täglicher E-Mail-Versand"
         time: "Uhrzeit"
         daily push notifications: "Tägliche Push-Nachrichten für mobile Apps"
@@ -492,7 +533,7 @@ de:
         unsubscribe: "Abmelden"
         edit account_existence: "Konto löschen"
         delete account button: "Mein YouVersion Konto löschen"
-        no devices: "Dein YouVersion-Konto ist mit keinem mobilen Gerät verbunden."
+        no devices: "Dein YouVersion-Konto ist noch nicht mit einem mobilen Gerät verbunden."
         no devices download copy: "Die Bibel App basiert auf der Online-Bibel von YouVersion.com und ist eine kostenlose, mobile Bibel, die auf fast allen Smartphones installiert werden kann. Die Bibel App gestattet es ihren Lesern, die Bibel zu lesen, Verse in sozialen Netzwerken zu teilen, Lieblingsschriftstellen mit Lesezeichen zu versehen u.v.m. All das in einem Format, das zu ihrem ständig mobiler werdenden Lebensstil passt. Geh mit deinem Smartphone zu <a href='https://www.bible.com/app'>bible.com/app</a>, um die Bibel App herunterzuladen und melde dich einfach mit deinem Konto an!"
         yes delete: "Ja, mein Konto löschen"
         account delete success: "Dein YouVersion-Konto wurde erfolgreich gelöscht. Wir hoffen, dass du andere Möglichkeiten nutzen wirst, um dich mit der Bibel zu beschäftigen. Die folgenden Apps beispielsweise könnten dazu hilfreich sein: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
@@ -502,6 +543,8 @@ de:
         user notes: "%{user}s Notizen"
         my friends: "Freunde"
         my notes: "Notizen"
+        my images: "Bilder"
+        user images: "%{user}s Bilder"
         user friends: "%{user}s Freunde"
         my bookmarks: "Meine Lesezeichen"
         user bookmarks: "%{user}s Lesezeichen"
@@ -567,7 +610,7 @@ de:
             description title: "Beschreibung der Dienstleistung"
             description text: "LifeChurch.tv gewährt Nutzern kostenfreien Zugriff auf eine Vielzahl von Dienstleistungen durch YouVersion, einschließlich (aber nicht darauf beschränkt) die Anzeige von Online-Videos, Blogbeiträgen und Kommentaren, unterschiedliche Kommunikations-Tools, Foren und personalisierte Inhalte. Durch die Nutzung von YouVersion stimmst du zu, dass dies Mitteilungen von LifeChurch.tv einschließt, wie zum Beispiel Service-Ankündigungen, verwaltungstechnische und andere Nachrichten, die du selbst abonniert hast, sie sind allerdings nicht darauf beschränkt. Du erkennst an, dass du selbst verantwortlich bist für den Zugang zu YouVersion, was Ausrüstung und Kosten für Dritte betrifft (wie zum Beispiel die Gebühren für die Anbieter von Internetservice, Gesprächs- und sonstige Gebühren, die mit der Anzeige und Übermittlung von Nachrichten verbunden sind)."
             registration title: "Deine Pflichten bei der Anmeldung"
-            registration text: "Du bestätigst und stimmst zu:<ul><li>(a) dass die Daten über dich wahrheitsgemäß, genau, aktuell und vollständig sind, wie dies im Anmeldeformular von YouVersion (&quot;Registrierungsdaten&quot;) gefordert ist und</li>(b) dass du regelmäßig und zeitnah für evtl. nötige Aktualisierungen, Korrekturen oder Vervollständigungen der Registrierungsdaten sorgen wirst. Wenn LifeChurch.tv vermutet, dass deine Daten unwahr, ungenau, nicht aktuell oder unvollständig sind, hat LifeChurch.tv das Recht, dein Konto zu sperren oder zu löschen und jegliche Nutzung von YouVersion (oder Teilen davon) auch zukünftig zu untersagen.<li>LifeChurch.tv sorgt sich um die Sicherheit und Privatsphäre aller Nutzer, insbesondere von Kindern. Aus diesem Grund müssen Eltern von Kindern unter 13 Jahren, die ihre Kinder auf YouVersion zugreifen lassen, akzeptieren, dass YouVersion entwickelt wurde, um ein breites Publikum anzusprechen. Dementsprechend bist du als Erziehungsberechtigter verantwortlich, zu entscheiden, ob YouVersion für dein Kind geeignet ist.</li></ul>"
+            registration text: "Du bestätigst und stimmst zu:<ul><li>wahrheitsgemäße, genaue, aktuelle und vollständige Informationen über dich selbst zu machen, wie sie von  YouVersions Anmeldeformular(en) ('Registrierungsdaten') angefordert werden, und</li><li>diese Registrierungsdaten zeitnah zu aktualisieren, damit sie wahrheitsgemäß, genau, aktuell und vollständig bleiben. Wenn LifeChurch.tv vermutet, dass solche Informationen unwahr, ungenau, nicht aktuell oder unvollständig sind, behält LifeChurch.tv sich das Recht vor, deinen Zugang zu sperren oder zu beenden und jede bestehende oder zukünftige Nutzung von YouVersion (oder Teilen davon) zu verweigern. LifeChurch.tv sorgt für die Sicherheit und die Privatsphäre aller Nutzer, insbesondere der von Kindern. Aus diesem Grund müssen Eltern von Kindern unter 13 Jahren, die ihren Kindern den Zugriff auf YouVersion erlauben, wissen, dass YouVersion entwickelt wurde, um ein breites Publikum anzusprechen. Du, als Erziehungsberechtigte(r) des Kindes, musst daher prüfen, ob YouVersion für dein Kind geeignet ist.</li></ul>"
             privacy title: "Datenschutzrichtlinie von YouVersion"
             privacy text: "Registrierungsdaten und andere Informationen über dich unterliegen unseren Datenschutzbestimmungen, die du hier <a href='http://youversion.com/privacy'>http://youversion.com/privacy</a> findest. Du stimmst durch die Nutzung von YouVersion der Sammlung und Nutzung von Daten (wie in den Datenschutzbestimmungen festgelegt) zu, einschließlich der Übertragung dieser Informationen in die USA und/oder andere Länder zum Zwecke der Speicherung, Verarbeitung und Nutzung durch <a href='http://LifeChurch.tv'>Lifechurch.tv</a>."
             account title: "Mitgliederkonto, Passwort und Sicherheit"
@@ -605,7 +648,7 @@ de:
             trademark title: "Informationen über Markenzeichen"
             trademark text: "Die Logos, Service-Zeichen sowie Produkt- und Service-Namen, die zu LifeChurch.tv und seinen Diensten gehören, sind Handelsmarken von LifeChurch.tv (\"LifeChurch.tv Marks\"). Du stimmst zu, ohne vorherige schriftliche Genehmigung durch LifeChurch.tv, diese \"LifeChurch.tv Marks\" weder zu zeigen noch in irgendeiner anderen Art und Weise zu benutzen."
             copyright title: "Hinweise und Vorgehensweise für das Melden von Verletzungen des Copyrights oder geistigen Eigentums"
-            copyright text: "LifeChurch.tv achtet das geistign Eigentum anderer. Wir erwarten von unseren Nutzern, das gleiche zu tun, besonders wenn es die Nutzung von YouVersion betrifft. LifeChurch.tv kann unter bestimmten Umständen und in Abhängigkeit von unseren Datenschutzbestimmungen die Konten von Nutzern löschen oder zeitweise deaktivieren, die die Nutzungsbedingungen fortgesetzt verletzen. Wenn du glaubst, dass deine Arbeit auf eine Weise kopiert worden ist, die Copyright-Bestimmungen verletzt, oder dein geistiges Eigentum auf andere Weise verletzt worden ist, dann sende folgende Informationen an legal@youversion.com: <ul type='none'><li>Eine elektronische oder physische Unterschrift einer Person, die mit der Wahrung des Copyrights oder anderen Interessen des geistigen Eigentums des Besitzers in dieser Frage betraut ist;</li><br><li>Eine schriftliche Beschreibung de;</li><br><li>Eine schriftliche Beschreibung, wo das Material, das deiner Meinung nach betroffen ist, sich auf YouVersion befindet;</li><br><li>Deine Adresse, Telefonnummer und Email-Adresse (alles was nötig ist);</li><br><li>Deine schriftliche Stellungnahme, dass du guten Glaubens bist, dass der genannte Gebrauch nicht durch den Inhaber des Copyrights, seines Agenten oder per Gesetz erlaubt wurde.;</li><br><li>Deine eidesstattliche Versicherung, dass deine Angaben richtig sind und dass du Inhaber des Copyrights oder Besitzer des geistigen Eigentums bist, oder dass du vom Copyright Inhaber oder dem Besitzer des geistigen Eigentums beauftragt bist.</li></ul>\nDer LifeChurch.tv Mitarbeiter für Copyright Verletzungen oder Verletzungen des geistigen Eigentums kann folgendermaßen erreicht werden: <br>per Post:<br><br>LifeChurch.tv c/o Contracts Coordinator<br>4600 E. 2nd Street Edmond, OK 73034<br>Telefon: 001(405) 680-5433<br>FAX: 001(405)844-3002<br>Email: legal@youversion.com"
+            copyright text: "LifeChurch.tv respektiert das geistige Eigentum anderer. Wir bitten unsere Benutzer, dies genauso zu tun, besonders im Umgang mit YouVersion. LifeChurch.tv kann, bei gegebenen Umständen und aus eigenem Ermessen, die Konten von Nutzern sperren und/oder löschen, die wiederholt gegen die Rechte anderer verstossen. Wenn du glaubst, dass deine Arbeit in urheberrechtsverletzender Weise kopiert oder auf eine andere Art und Weise gegen dein Recht auf geistiges Eigentum verstossen wurde, sende bitte die nachfolgenden Informationen an legal@youversion.com:\n<ul type='none'><li>Eine digitale oder handschriftliche Unterschrift der Person, die bevollmächtigt ist, im Namen des Rechteinhabers des Streitgegenstandes zu agieren und dessen Interessen wahrzunehmen;</li><br/><li>Eine schriftliche Beschreibung des urheberrechtlich geschützten Werkes beziehungsweise anderer geistiger Eigentümer, die verletzt wurden;</li><br/><li>Eine schriftliche Beschreibung, wo sich das rechtsverletzende Material auf YouVersion befindet;</li><br/><li>Deine Adresse, Telefonnummer und E-Mail Adresse;</li><br/><li>Eine schriftliche Aussage von dir, dass du den begründeten Verdacht hast, dass die Verwendung des strittigen Werkes missbräuchlich ist und nicht vom Urinhaber oder dem Gesetzt zugelassen wird;</li><br/><li>Eine eidesstattliche Erklärung von dir, dass die vorgenannten Informationen korrekt sind, dass du der geistige Eigentümer bist, bzw. in dessen Namen zu handeln autorisiert bist.\nDer Beauftragte für Uhrheberrechtsverletzungen von LifeChurch.tv kann wie folgt kontaktiert werden:\n%{newline}Per Post: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Telefon: +1 405 680-5433%{newline}Fax: +1 405 844-3002%{newline}Email: legal@youversion.com%{mailto_link}</li></ul>"
             general title: "Allgemeine Informationen"
             general text: "Vollständige Vereinbarung. Diese Nutzerbedingungen stellen die vollständige Vereinbarung zwischen dir und LifeChurch.tv dar und regeln die Art und Weise, wie du YouVersion benutzen sollst; sie löst alle vorherigen Vereinbarungen zwischen dir und LifeChurch.tv hinsichtlich von YouVersion auf."
         profile: 
@@ -618,6 +661,7 @@ de:
             tab notes: "Notizen"
             tab bookmarks: "Lesezeichen"
             tab highlights: "Markierungen"
+            tab images: "Bilder"
             tab badges: "Abzeichen"
             first name: "Vorname"
             last name: "Nachname"
@@ -655,8 +699,8 @@ de:
         notifications: 
             badges: "Benachrichtigt mich über Abzeichen, die ich verdient habe."
             follower: "Benachrichtigt mich, wenn mir jemand folgt."
-            newsletter: "Sendet mit Neues über YouVersion."
-            contact_joins: "Informiere mich, wenn ein Kontakt YV beitritt."
+            newsletter: "Sendet mir Neues über YouVersion."
+            contact_joins: "Informiert mich, wenn ein Kontakt YV beitritt."
             note_like: "Benachrichtigt mich, wenn jemandem meine Notizen gefallen."
             reading_plans: "Benachrichtigt mich über meine abonnierten Lesepläne."
             publishing partners: "Sendet mir bitte Nachrichten über den Inhalt von Partnern von YouVersion."
@@ -713,6 +757,7 @@ de:
         none me: "Du hast bisher keine Abzeichen bekommen."
         none user: "%{username} hat bisher keine Abzeichen bekommen."
     plans: 
+        share plan: "Schau dir diesen @YouVersion #BiblePlan an: %{plan_title}"
         widget: 
             my plans: "Meine Lesepläne"
             start reading: "Fang an zu lesen."
@@ -791,7 +836,7 @@ de:
         restart description: "Du kannst deinen Plan neu starten. Deine gelesenen Passagen werden zurückgesetzt und alles fängt von vorne an."
         restart: "Plan erneut starten"
         privacy description: 
-            private: "Dein Plan ist \"privat\". Ändere deine Einstellungen zu \"Mit Freunden teilen\", um deine Leseplanaktivitäten mit deinen Freunden zu teilen."
+            private: "Dein Plan ist \"privat\". Klicke auf \"Mit Freunden teilen\", um deine Leseplanaktivitäten mit deinen Freunden zu teilen."
             public: "Dein Plan ist für Freunde sichtbar. Ändere die Einstellung zu \"privat\". Dann siehst nur du deine Leseplanaktivitäten."
         make private: "Als \"privat\" markieren"
         make public: "Mit Freunden teilen"
@@ -841,8 +886,10 @@ de:
         loading sidebar content: "Seitenleiste wird geladen..."
     videos: 
         title: "Videos"
+        watch videos: "Schaue dir Videos über die Bibel an"
         all: "Alle Videos"
         related scripture: "Ähnliche Schriftstelle"
+        share video: "Ich schaue mir %{video_title} auf @YouVersion an."
     licenses: 
         authorized: 
             heading: "Dein Inhalt ist nun bestätigt."
@@ -942,9 +989,9 @@ de:
         line 3: "die du überall hin mitnehmen kannst."
         download: "Jetzt herunterladen"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Lade dir die Bibel App für Kinder herunter"
+        description copy: "Mit der Bibel App für Kinder kann dein Nachwuchs die biblischen Geschichten von Jesus auf altersgerechte Art und Weise kennen lernen."
+        download: "Jetzt herunterladen"
     about page: 
         relevancy: "Bedeutung"
         relevancy copy: "In vergangenen Generationen war der Zugang der Menschen zur Bibel sehr begrenzt. Heute ist das nicht mehr der Fall. Trotzdem denken viele Menschen, die Zugang zur Bibel haben, dass deren Botschaft sich nicht in ihrem Leben anwenden lässt. Gleichzeitig gibt es andere, die an einen Zusammenhang zwischen der Bibel und ihren täglichen Erfahrungen glauben."
@@ -995,10 +1042,24 @@ de:
         what people: "Was Menschen über die kostenlose Bibel App sagen..."
         t1: "Ich habe Gottes Wort immer bei mir."
         t1 copy: "Für Passagen, die für mich wichtig sind, habe ich Lesezeichen angelegt. Mit Hilfe der Lesepläne habe ich sogar die ganze Bibel in einem Jahr durchgelesen."
-        t2: "Tolles Programm!"
-        t2 copy: "Diese App hilft mir dabei, organisiert zu bleiben und Gottes Wort jeden Tag zu lesen. Sie ist einfach zu bedienen und bietet viele Funktionen ... Einfach super! "
+        t2: "Sehr empfehlenswert!"
+        t2 copy: "Ich mag, dass man mit seinen Freunden in Verbindung bleiben kann und finde die Lesepläne wunderbar. Die App hilft mir durch die täglichen Erinnerungen für die Lesepläne, regelmäßig in der Bibel zu lesen. So kann ich Gott auf eine andere Art und Weise näher kommen. Lade dir die App herunter und lies jeden Tag in der Bibel!"
         t3: "Wunderbare App."
         t3 copy: "Großartige App mit einer tollen Auswahl an Bibeln... Die Hörbibeln sind auch prima und leicht zu verstehen."
+        t4: "Großartig! Sie wird immer besser!"
+        t4 copy: "Sie ist in vielen Übersetzungen und Sprachen verfügbar, von denen einige zum offline-lesen heruntergeladen werden können. Sie hat viele nützliche Funktionen, wie zum Beispiel Notizen und Lesezeichen."
+        t5: "Die beste Bibel App, die es je gab!"
+        t5 copy: "Ich mag die vielen Übersetzungen, den Vers des Tages, Andachten, Lesepläne und die Gemeinschaft. Danke für diese kostenlose App. :-)"
+        t6: "Zahlreiche Übersetzungen, die auch offline verfügbar sind!"
+        t6 copy: "Sie ist toll... mit all den verschiedenen Übersetzungen, von denen ich viele herunterladen kann, um sie offline zu lesen.  Ich liebe die Hörbibeln!"
+        t7: "Eine tolle App!"
+        t7 copy: "Sie hilft mir, mehr in der Bibel zu lesen. Ich mag die Suchoptionen und die verschiedenen Möglichkeiten zum Teilen. Und mir gefallen die Hörbibeln."
+        t8: "Eine tolle App!"
+        t8 copy: "Sie ist super zum Studieren der verschiedenen Übersetzungen. Sie ist auch toll als Hörbibel, wenn man mit dem Auto unterwegs ist."
+        t9: "Die beste Bibel App!"
+        t9 copy: "Das ist die beste App, die es gibt! Es gibt sie in verschiedenen Sprachen und Übersetzungen, sowohl online als auch offline. Es gibt für alles mögliche Andachten. Man kann mit anderen Benutzern in Verbindung treten und so mehr über Gott und Sein Wort herausfinden."
+        version list: "Über 1.000 Bibelübersetzungen, wie zum Beispiel:"
+        audio version list: "Höre dir die Bibel an:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"

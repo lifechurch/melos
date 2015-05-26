@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:06-0600\n"
-"PO-Revision-Date: 2015-03-03 14:06-0600\n"
+"POT-Creation-Date: 2015-03-24 07:56-0600\n"
+"PO-Revision-Date: 2015-03-24 07:56-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ta <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -60,11 +60,23 @@ msgstr "நீங்கள் <b>{reference_human}</b>-யை புத்தக
 msgid "moment.bookmark.title"
 msgstr "{name} அவர்கள் <b>{reference_human}</b>-யை புத்தகக்குறியிட்டுள்ளார்"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "புதிய திட்டங்கள் மூலம் உங்கள் விசுவாசத்தை புதுப்பிக்கவும்."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "பிப்ரவரிகான உங்களுக்கு விருப்பமான வேத திட்டத்தை கண்டெடுங்கள்!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "கடவுளுடைய வார்த்தையில் தினமும் நேரம் செலவிடுவது நீடித்த சுதந்திரத்தை விளைவிக்கிறது."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "தினசரி தேவ வார்த்தை மூலம் உங்கள் ஒத்திசைத்தலை(rhythm) கண்டறியுங்கள்."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "நம்பிக்கையையும் புதுப்பித்தலையும் மார்ச் திட்டங்களினூடாய் கண்டடையுங்கள்."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "தினமும் தேவ வார்த்தையில் அவரை தேடுவதில் உங்களை அர்ப்பணியுங்கள்."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015இல் தினமும் வேதத்தை வாசியுங்கள். திட்டங்கள் உதவும்!"

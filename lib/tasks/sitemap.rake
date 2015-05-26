@@ -6,7 +6,7 @@ namespace :sitemap do
     locales = I18n.available_locales
     locstring = "222,28,411,52,1076,89,753,103,127,128,197,146,147,149,150,176,178,210,214,53,442,"
     locales.each do |l|
-      if l.to_s.eql?("de")
+      if l.to_s.eql?("el")
         puts "#{l} versions - building sitemaps..."
         puts " "
         locale = l.to_s.eql?("en") ? "" : "/#{l}"
@@ -27,7 +27,7 @@ namespace :sitemap do
                 aFile.syswrite(data)
               end
               # output verses for this book
-              if version_id.to_s.eql?("73")
+              if version_id.to_s.eql?("173") || version_id.to_s.eql?("921")
                 filename = Rails.root.join("config/sitemap/#{b.downcase}.txt")
                 if File.exists?(filename)
                   File.open(filename).each do |ref|
@@ -125,7 +125,8 @@ namespace :sitemap do
 
       while plans_exist do
         plans = Plan.all(page: page, language_tag: l)
-        if plans.to_s.eql?('[]')
+        puts plans.to_s
+        if plans.to_s.eql?('[]') or plans.nil?
           break
         end
         plans.each do |p|
@@ -155,7 +156,7 @@ namespace :sitemap do
           # puts data
           aFile.syswrite('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
           aFile.syswrite data
-          aFile.syswrite('\n</urlset>')
+          aFile.syswrite('</urlset>')
           aFile.close
         else
           puts "Unable to open file: #{filename}"
@@ -166,4 +167,39 @@ namespace :sitemap do
       puts "================================="
     end
   end
+  desc "Generate search xml sitemap for a version using top chapters"
+  task :top_chapter_map => :environment do
+    puts "search: top chapters for a version - building sitemap..."
+    filename = Rails.root.join("config/sitemap/top-chapters.txt")
+    puts filename
+    ch_index = []
+    if File.exists?(filename)
+      File.open(filename).each do |ref|
+        ch_index.push(ref.strip)
+      end
+    else
+      puts "Unable to open file: #{filename}"
+    end
+
+    # manual for now...
+    locale = ''
+    vid = "1"
+
+    versions = Version.all(locale)
+    versions.each do |v|
+      version_id = v.attributes.id
+      if version_id.to_s.eql?(vid)
+        puts "#{version_id} - #{v}"
+        v.books.each do |b, book|
+          book.chapters.each do |chapter|
+            if ch_index.include? chapter.usfm.downcase
+              # puts "\n<url><loc>https://www.bible.com#{locale}/bible/#{version_id}/#{chapter.usfm.downcase}.#{v.abbreviation.downcase}</loc></url>"
+              puts "<url><loc>https://www.bible.com/#{locale}/search/bible?q=#{book.human.gsub(' ', '+')}+#{chapter.human}&amp;version_id=#{version_id}</loc></url>"
+            end
+          end
+        end
+      end
+    end
+  end
+
 end

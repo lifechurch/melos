@@ -2,23 +2,11 @@ module YV
   module API
     class Client
       
-      include HTTParty
-      
-      # HTTParty stuff
-        format :json
-        default_timeout Cfg.api_default_timeout.to_f
-
-      # 500 Json response
-
-        JSON_500 = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "MultiJson::DecodeError"}]}}}')
-        JSON_500_General = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "General API Error"}]}}}')
-        JSON_408 = JSON.parse('{"response": {"code": 408, "data": {"errors": [{"json": "API Timeout Error"}]}}}')
-
+      JSON_500 = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "MultiJson::DecodeError"}]}}}')
+      JSON_500_General = JSON.parse('{"response": {"code": 500, "data": {"errors": [{"json": "General API Error"}]}}}')
+      JSON_408 = JSON.parse('{"response": {"code": 408, "data": {"errors": [{"json": "API Timeout Error"}]}}}')
 
       class << self
-        
-        alias_method :httparty_get,  :get
-        alias_method :httparty_post, :post
 
         # Perform a GET request to YouVersion API
         # requires an appropriate API formatted path string: "search/notes", "reading-plans/view", etc
@@ -28,25 +16,43 @@ module YV
           opts          = options_for_get(prepare_opts!(opts))
           resource_url  = get_resource_url(path, opts)
 
-          lets_party = lambda do
+
+          curb_get = lambda do
             begin
-              response = httparty_get( resource_url , opts)
+              
+            curl = Curl::Easy.new
+            curl.url = "#{resource_url}?#{opts[:query].to_query}"
+            curl.headers = opts[:headers]
+            curl.timeout = opts[:timeout] || Cfg.api_default_timeout.to_f
+            if opts[:auth].present?
+              curl.http_auth_types = :basic
+              curl.username = opts[:auth][:username]
+              curl.password = opts[:auth][:password]
+            end
+            curl.perform
+            response = JSON.parse curl.body_str
 
-              # Raise an error here if response code is 400 or greater and the API hasn't sent back a response object.
-              # IMPORTANTLY - This avoids us potentially caching a bad API request
-              if response.code >= 400 && response.body.nil?
-                Raven.capture do
-                  raise APIError, "API Error: Bad API Response (code: #{response.code}) "
-                end
-                JSON_500_General
-
+            # Raise an error here if response code is 400 or greater and the API hasn't sent back a response object.
+            # IMPORTANTLY - This avoids us potentially caching a bad API request
+            if curl.response_code >= 400 && curl.body_str.nil?
+              Raven.capture do
+                raise APIError, "API Error: Bad API Response (code: #{response.code}) "
               end
-              return response
+              return JSON_500_General
+
+            end
+            return response
 
             rescue MultiJson::DecodeError => e
               JSON_500
 
             rescue Timeout::Error => e
+              Raven.capture do
+                raise APITimeoutError, log_api_timeout(resource_url,started_at)
+              end
+              JSON_408
+
+            rescue Curl::Err::TimeoutError => e
               Raven.capture do
                 raise APITimeoutError, log_api_timeout(resource_url,started_at)
               end
@@ -61,8 +67,7 @@ module YV
             end
           end
 
-          
-          response = data_from_cache_or_api(cache_key(path, opts), lets_party, opts)
+          response = data_from_cache_or_api(YV::Caching::cache_key(path, opts), curb_get, opts)
 
           if debug
             puts "---"
@@ -95,7 +100,19 @@ module YV
           end
 
           begin
-            response = httparty_post( resource_url , opts)          
+
+          curl = Curl::Easy.http_post(resource_url, opts[:body]) do |c|
+            c.headers = opts[:headers]
+            c.timeout = opts[:timeout] || Cfg.api_default_timeout.to_f
+            if opts[:auth].present?
+              puts 'auth'
+              c.http_auth_types = :basic
+              c.username = opts[:auth][:username]
+              c.password = opts[:auth][:password]
+            end
+          end    
+          response = JSON.parse curl.body_str
+
           rescue MultiJson::DecodeError => e
             response = JSON_500
 
@@ -129,65 +146,50 @@ module YV
 
         private # ------------------------------------------------------------------------------------------------
 
-        def data_from_cache_or_api(key,httparty_lambda,opts)
-          return httparty_lambda.call unless opts[:cache_for]
+        def data_from_cache_or_api(key, curl_lambda, opts={})
+          return curl_lambda.call unless opts[:cache_for]
           # try pulling from cache
           Rails.cache.fetch(key,expires_in: opts[:cache_for]) do
-            httparty_lambda.call # cache miss - we need to call to API
+            curl_lambda.call # cache miss - we need to call to API
           end
         end
 
-        def options_for_get(opts)
+        def options_for_get(opts={})
           query_from_search_call = opts.delete(:query)
 
           new_opts = {
             headers: default_headers,
             timeout: opts.delete(:timeout) || Cfg.api_default_timeout,
-            query:   opts.except(:cache_for) # this 'query' key is what HTTParty expects for a GET request
+            query:   opts.except(:cache_for).except(:auth)
           }.merge(opts)
 
-          # if we passed in a search 'query' option, merge it in here so that
-          # HTTParty gets  {query: {other:"stuff", query:"search term"}
+          # if we passed in a search 'query' option, merge it in here
           new_opts[:query].merge!(query: query_from_search_call) if query_from_search_call
           new_opts
         end
 
-        def options_for_post(opts)
+        def options_for_post(opts={})
           {
             headers: default_headers.merge('Content-Type' => 'application/json'),
             timeout: opts.delete(:timeout) || Cfg.api_default_timeout,
+            auth:    opts.delete(:auth),
             body:    opts.to_json
           }
         end
 
-        def prepare_opts!(opts)
-          opts = prepare_auth!(opts)
+        def prepare_opts!(opts={})
           opts = clean_request_opts!(opts)
         end
 
         # Filter request options to formalize, sanitize, whatever of opts
         # we don't use the cache expiration in the cache key so we need to remove the cache_for if invalid
         # so we don't pull from the cache when we shouldn't
-        def clean_request_opts!(opts)
+        def clean_request_opts!(opts = {})
           opts.delete :cache_for if opts[:cache_for].try(:<= , 0)
           opts[:language_tag] = YV::Conversions.to_api_lang_code(opts[:language_tag]) if opts[:language_tag]
           opts
         end
 
-        # prepare basic auth for HTTParty
-        # expects an opts hash with username and password key/values
-        def prepare_auth!(opts)
-          # Clear the auth state or it'll keep it around between requests
-          default_options.delete(:basic_auth)
-          if auth = opts.delete(:auth)
-            basic_auth(auth[:username], auth[:password])
-          end
-          opts
-        end
-
-        def cache_key(path, opts)
-          [path, opts[:query].sort_by{|k,v| k.to_s}].flatten.join("_")
-        end
 
         # Returns a complete resource url for making valid API calls given a API path string
         # opts optional at this point.

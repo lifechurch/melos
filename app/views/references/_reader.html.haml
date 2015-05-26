@@ -26,13 +26,13 @@
 
   - if verse_view
     - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
-    - meta_title = @title
-    - meta_description = truncate(get_verse_content(presenter.content), length: 200, separator: " ")
+    - meta_description = truncate(get_verse_content(presenter.content), length: 170, separator: " ")
+    - @title = truncate("#{reference.human}, #{version} #{meta_description}", length: 200, separator: " ")
+    - @subtitle = ''  # we don't want subtitle appended to single verse title so the verse gets more text space
     %meta{name: "twitter:card",             content: "summary"}
     %meta{name: "twitter:url",              content: meta_url}
-    %meta{name: "twitter:title" ,           content: meta_title}
+    %meta{name: "twitter:title" ,           content: @meta_title}
     %meta{name: "twitter:description",      content: meta_description}
-    %meta{name: "twitter:image",            content: "#{url_for(asset_path('Bible-app-icon-english-120x120.png'))}"}
     %meta{name: "twitter:site",             content: "@YouVersion"}
 
     - if deep_link.present?
@@ -46,13 +46,24 @@
       %meta{name: "twitter:app:id:googleplay",    content:"com.sirma.mobile.bible.android"}
       %meta{name: "twitter:app:url:googleplay",   content: deep_link }
 
-    %meta{property: "og:title",       content: meta_title }
+    %meta{property: "og:title",       content: @meta_title }
     %meta{property: "og:url",         content: meta_url }
     %meta{property: "og:description", content: meta_description }
-    %meta{property: "og:image", content: "#{url_for(asset_path('Bible-app-icon-english-200x200.png'))}"}
+  - else
+    -# chapter view eg. jhn.3.kjv
+    - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+    %meta{property: "og:title",       content: @meta_title }
+    %meta{property: "og:url",         content: meta_url }
+    -#%meta{property: "og:description", content: meta_description }
+
+- content_for :twitter_meta do
+  %meta{name: "twitter:image", content: url_for(image_path(bible_icon_for_version(size: 120, version: version)))}
+
+- content_for :facebook_meta do
+  %meta{property: "og:image",  content: url_for(image_path(bible_icon_for_version(size: 200, version: version)))}
 
 - content_for :meta_description do
-  = "#{reference.human} #{presenter.version} #{truncate(get_verse_content(presenter.content), length: 125, separator: " ", omission: '')}.."
+  = "#{reference.human}, #{presenter.version} #{truncate(get_verse_content(presenter.content), length: 125, separator: " ", omission: '')}.."
 
 - content_for :mobile_right_nav do
   = link_to(version.abbreviation, 'javascript:void(0);', id: "m_version_btn" )

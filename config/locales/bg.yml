@@ -3,6 +3,42 @@ bg:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -83,10 +119,10 @@ bg:
             description: "Приложението Bible е инсталирано почти 100 милиона пъти - едно невероятно постижение! Но ние сме само в началото. Изтеглете безплатното приложение Bible сега и след това го споделете с приятелите си. Нека правим история заедно."
         mobile: 
             title: "Библията"
-            description: "Read God’s Word at anytime, anywhere using the YouVersion Bible App. Share Scripture with friends, highlight and bookmark passages, and create a daily habit with Bible Plans. Available for iOS, Android, Blackberry, Windows Phone and more."
+            description: "Четете Божието Слово по всяко време и навсякъде с помощта на приложение Библията на YouVersion. Споделяйте Писанието с приятели, маркирайте и отбелязвайте пасажи, създайте си навик за ежедневно четене с Библейските планове. На разположение за IOS, Android, Blackberry, Windows Phone и други."
         site: 
             title: "Bible.com"
-            description: "Bring the beauty and truth of the Bible into everyday life. With the YouVersion Bible App, you can read, watch, listen, and share on your smartphone or tablet, and online at Bible.com."
+            description: "Внесете красотата и истината на Библията във всекидневието си. С приложение Библията на YouVersion, можете да четете, да гледате, слушате и споделят от вашия смартфон или таблет и онлайн на Bible.com."
         connections: 
             index: 
                 title: "Свързани профили"
@@ -370,6 +406,11 @@ bg:
             accept request button: "Приемете"
             ignore button: "Decline"
             ignore request button: "Decline request"
+    images: 
+        none user: "%{username} hasn't created any images yet."
+        blank slate: 
+            heading: "You don’t have any images yet"
+            description: "Use the YouVersion mobile app to create verse images."
     notes: 
         none user: "%{username} няма бележки."
         blank slate: 
@@ -502,6 +543,8 @@ bg:
         user notes: "Бележки на %{user}"
         my friends: "Моите приятели"
         my notes: "Бележки"
+        my images: "Снимки"
+        user images: "%{user}'s Images"
         user friends: "Приятели на %{user}"
         my bookmarks: "Моите отбелязвания"
         user bookmarks: "Отбелязвания на %{user}"
@@ -558,16 +601,16 @@ bg:
             enforcement title: "Изпълнение"
             enforcement text: "needs translationneeds translationneeds translation"
             questions title: "Въпроси"
-            questions text: "Any questions about the privacy policy can be directed to: <a href='mailto:legal@youversion.com'>legal@youversion.com</a>"
+            questions text: "Изпращай въпроси за Декларацията на поверителност на: legal@youversion.com"
         terms: 
             title: "Условия за ползване"
             translation disclaimer: "Политиката за ползване е преведена за ваше удобство. LifeChurch.tv не дава гаранция за достоверността на превода. В случай на различия между двата текста, английската версия ще бъде предпочетена."
             acceptance title: "Приемане на условията"
-            acceptance text: "needs translationneeds translation<a href='https://www.bible.com'>needs translation</a>needs translationneeds translationneeds translation<a href='https://www.bible.com/terms'>needs translation</a>needs translationneeds translationneeds translationneeds translation<a href='mailto:legal@youversion.com'>needs translation</a>needs translation"
+            acceptance text: "При натискане на 'I agree' ,ти приемаш да прочетеш и се съгласяваш да се обвързан с YouVersion правила на използване.Lifechurch.tv осигурява <a href='https://www.bible.com'>needs translation</a>needs translationneeds translation<a href='https://www.bible.com/terms'>needs translation</a>needs translationneeds translationneeds translationneeds translation<a href='mailto:legal@youversion.com'>needs translation</a>needs translation"
             description title: "Описание на услугата"
             description text: "LifeChurch.tv provides Users with access to a variety of services through YouVersion, including but not limited to, online video viewing, blog posts and comments, commentary, other various communications tools, forums, and personalized content, at no charge to the user. By using YouVersion, you understand that such usage may include communications from LifeChurch.tv, including but not limited to service announcements, administrative messages, and other messages to which you have individually subscribed. You understand and agree that you are responsible for obtaining access to YouVersion, which may involve equipment and third-party fees (such as Internet service provider fees, airtime charges, or other charges associated with the display and delivery of messages)."
             registration title: "Регистрационни задължения"
-            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li> <li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
+            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li><li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
             privacy title: "LifeChurch.tv Декларация за поверителност"
             privacy text: "needs translation<a href='https://www.bible.com/privacy'>needs translation</a>needs translationneeds translation<a href='http://lifechurch.tv'>needs translation</a>needs translation"
             account title: "Профил, парола и сигурност"
@@ -579,9 +622,9 @@ bg:
             content title: "Content Submitted or Made Available for Inclusion on the Service"
             content text: "needs translationneeds translation<ul type='none'><li>needs translation</li>needs translation<li>needs translation</li>needs translation<li>needs translation</li></ul>"
             contributions title: "Дарения за LifeChurch.tv"
-            contributions text: "By submitting ideas, suggestions, documents, and/or proposals ('Contributions') to YouVersion, you acknowledge and agree that:<ul><li> your Contributions do not contain confidential or proprietary information;</li><li> LifeChurch.tv is not under any obligation of confidentiality, express or implied, with respect to the Contributions;</li><li> LifeChurch.tv shall be entitled to use or disclose (or choose not to use or disclose) such Contributions for any purpose, in any way, in any media worldwide;</li><li> LifeChurch.tv may have something similar to the Contributions already under consideration or in development;</li><li> your Contributions automatically become the property of LifeChurch.tv without any obligation of LifeChurch.tv to you; and</li><li> you are not entitled to any compensation or reimbursement of any kind from LifeChurch.tv under any circumstances.</li></ul>"
+            contributions text: "needs translation<ul><li>needs translation</li><li>needs translation</li><li>needs translation</li><li>needs translation</li><li>needs translation</li><li>needs translation</li></ul>"
             indemnity title: "Обезщетение и освобождаване от отговорност"
-            indemnity text: "You agree to indemnify and hold LifeChurch.tv and its subsidiaries, affiliates, officers, agents, employees, partners and licensors harmless from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of Content you submit, post, transmit or otherwise make available through YouVersion, your use of YouVersion, your connection to YouVersion, your violation of the TERMS OF USE, or your violation of any rights of another. You expressly understand and agree that LifeChurch.tv and its subsidiaries, affiliates, officers, employees, agents, partners and licensors make no warranty that:<ul><li> YouVersion will meet your requirements;</li><li> YouVersion will be uninterrupted, timely, secure or error-free; and</li><li> the results that may be obtained from the use of YouVersion will be accurate or reliable. Under no circumstances will LifeChurch.tv be liable in any way for any loss or damage of any kind incurred as a result of the use of any Content made available via YouVersion.</li></ul>You expressly understand and agree that any material downloaded or otherwise obtained through the use of YouVersion is accessed at your own discretion and risk, and you will be solely responsible for any damage to your computer system or loss of data that results from the download of any such material."
+            indemnity text: "needs translationneeds translation<ul><li>needs translation</li><li>needs translation</li><li>needs translation</li></ul>needs translation"
             resale title: "Не за продажба"
             resale text: "You agree not to reproduce, duplicate, copy, sell, trade, resell or exploit for any commercial purposes, any portion of YouVersion (including your LifeChurch.tv ID), use of YouVersion, or access to YouVersion."
             storage title: "Общи практики относно използване и записване"
@@ -605,7 +648,7 @@ bg:
             trademark title: "Информация за запазената марка"
             trademark text: "The logos, service marks, and product and service names related to LifeChurch.tv and its ministries are trademarks of LifeChurch.tv (the 'LifeChurch.tv Marks'). Without prior written permission from LifeChurch.tv, you agree not to display or use the LifeChurch.tv Marks in any manner."
             copyright title: "Notice and Procedure for Making Claims of Copyright or Intellectual Property Infringement"
-            copyright text: "needs translationneeds translationneeds translationneeds translation<ul type='none'><li>needs translation</li>needs translation<li>needs translation</li>needs translation<li>needs translation</li>needs translation<li>needs translation</li>needs translation<li>needs translation</li>needs translation<li>needs translation</li></ul>"
+            copyright text: "LifeChurch.tv respects the intellectual property of others. We ask our users to do the same, particularly where it pertains to using YouVersion. LifeChurch.tv may, in appropriate circumstances and at its sole discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please send the following information to legal@youversion.com:<ul type='none'><li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest in question;</li><br><li>A written description of the copyrighted work or other intellectual property that you claim has been infringed;</li><br><li>A written description of where the material that you claim is infringing is located on YouVersion;</li><br><li>Your address, telephone number, and email address (all that apply);</li><br><li>A written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li><br><li>A written statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner, or that you are authorized to act on the behalf of the copyright or intellectual property owner. LifeChurch.tv's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:%{newline}By mail: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "Обща информация"
             general text: "needs translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translationneeds translation"
         profile: 
@@ -618,6 +661,7 @@ bg:
             tab notes: "Бележки"
             tab bookmarks: "Отбелязвания"
             tab highlights: "Маркирани"
+            tab images: "Снимки"
             tab badges: "Значки"
             first name: "Име"
             last name: "Фамилия"
@@ -713,11 +757,12 @@ bg:
         none me: "Нямате значки."
         none user: "%{username} не е получил значки."
     plans: 
+        share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Моите планове"
             start reading: "Започни четене"
             view my plans: "View My Plans"
-            featured plans: "Featured Plans"
+            featured plans: "Препоръчани планове"
             view all plans: "View All Plans"
             reading: "reading"
             readings: "readings"
@@ -841,8 +886,10 @@ bg:
         loading sidebar content: "Зареждане на съдържанието..."
     videos: 
         title: "Видеа"
+        watch videos: "Watch videos about the Bible"
         all: "Всички видеа"
         related scripture: "Подобни стихове"
+        share video: "I'm watching %{video_title} on @YouVersion."
     licenses: 
         authorized: 
             heading: "Вашето съдържание беше удобрено"
@@ -988,17 +1035,31 @@ bg:
     mobile page: 
         h2: "Божието слово е с теб"
         h3: "YouVersion е глобална"
-        h3 sub: "Available in more than %{language_count} languages worldwide."
+        h3 sub: "Вече на повече от %{language_count} езика по целия свят."
         main: "Десетки милиони хора изпозлват Библията™ като приложение правейки Божието слово част от тяхното ежедневие. Изтегли безплатното приложение и използвай своите бележки, маркировки и план от всяко място. Използвай стотици версии на Библията, както и аудио записи директно на мобилното си устроийство."
         button h4: "Go to Bible.com/app<br>on your Mobile Device"
         download now: "Изтегли БИБЛИЯТА сега"
         what people: "Какво казват другите за Библията"
         t1: "Винаги имам Словото."
         t1 copy: "Маркирал/а съм пасажи, които са важни за мен. Дори прочетох цялата Библия за една година благодарение на разнообразните планове за четене."
-        t2: "Страхотна програма!"
-        t2 copy: "Това приложение ми помага да подредя своя прочит на Божието слово всеки ден. То е лесно за ползване и има множество възможности. Препоръчвам!"
+        t2: "Highly recommended"
+        t2 copy: "I love how you are able to connect with friends and the Bible reading plans are awesome. This application helps me also to stay consistent in reading because it has reminders for the plans. It also gives me another way to come closer to God. Download this and read every day!"
         t3: "Чудесна апликация"
         t3 copy: "Добро приложение с богат избор на Библии. Аудио Библията е съще чудесна и лесноразбираема."
+        t4: "Great. Always improving!"
+        t4 copy: "Many translations and languages available, and many that can be downloaded to read offline. Many useful features, such as the ability to make notes and bookmarks."
+        t5: "The best Bible app ever!"
+        t5 copy: "I love how it has a lot of versions and that there are verses of the day, devotions, plans and community. Thanks for this free app. :)"
+        t6: "Multiple versions and offline reading!"
+        t6 copy: "Great because there are many different versions and I could download multiple versions for offline reading.  I'm able to listen to this app."
+        t7: "Great app!"
+        t7 copy: "Helps me to read the bible more. Love the search and share features and the variety of ways to share. Also like the audio versions."
+        t8: "Great app"
+        t8 copy: "This is a great tool for studying from multiple translations. It's also convenient for listening to the bible when you're driving."
+        t9: "Best Bible app!"
+        t9 copy: "This is the best bible app out there. It has the word in different languages and versions for online and offline use. It has devotionals for everything you could think of. You can connect with others and ultimately learn about God and his Word."
+        version list: "Over 1000 Bible versions including:"
+        audio version list: "Listen to Bible audio versions including:"
         iphone ipad: "iPhone/iPad"
         android: "Андроид"
         blackberry: "Блекбери"
@@ -1009,7 +1070,7 @@ bg:
         symbian: "Симбиан"
         mobile web: "Мобилен уеб"
         amazon: "Киндъл Файър"
-        free overlay: "100% Free"
+        free overlay: "100% Безплатно"
     pages: 
         generic_error: 
             title: "Грешка!"
@@ -1083,19 +1144,19 @@ bg:
         load error: "Проблем с зареждането на повече версии. Затвори това меню и опитай отново!"
     campaigns: 
         christmas: 
-            tracker title: "Christmas Story Tracker"
+            tracker title: "Рождество Христово проследяване на историята"
             twitter text: "Watch the world read about the birth of Jesus. Share the Christmas Story Tracker @YouVersion: https://www.bible.com/christmas"
             facebook text: "Share the Christmas Story Tracker as people around the world read about the birth of Jesus.  In church or at home, near people we love or during a quiet moment alone, we're pausing to reflect on the wonder of God's love for us."
             summary: "During December 2014, this is what it looked like to see the world read about the birth of Jesus."
             verse: "<sup>10</sup> But the angel said to them,<br>“Do not be afraid. I bring you good news that will cause great joy for all the people. <sup>11</sup> Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.”"
-            read more: "Read the amazing story of Christmas"
+            read more: "Прочетете удивителната история за раждането на Христос"
             read about: "Reading about the birth of Jesus"
             totals since: "YouVersion totals since December 1, 2014:"
             totals during: "YouVersion totals during December 2014:"
             total installs: "Total installs on smartphones and tablets"
-            download: "Download the free Bible App"
-            versions: "Over %{version_count} versions in %{language_count} languages"
-            tagline: "the Bible that goes with you anywhere"
+            download: "Изтеглете Билията безплатно"
+            versions: "Над %{version_count} версии на %{language_count} езици"
+            tagline: "Библията, която идва навсякъде с теб"
             chapter counter format: "9,999,999"
         100m: 
             logo: "YouVersion: приложение Библията"
@@ -1126,7 +1187,7 @@ bg:
                 tagline: "Нека създадем история!"
                 button: "Сподели Библията"
     ui: 
-        characters remaining: "characters remaining"
+        characters remaining: "оставащи символа"
         yes button: "Да"
         no button: "Не"
         cancel: "Откажи"

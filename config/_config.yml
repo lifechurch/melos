@@ -31,8 +31,10 @@ common:
   very_short_cache_expiration: 2
   short_cache_expiration: 10
   long_cache_expiration: 45
+  longer_cache_expiration: 240
   very_long_cache_expiration: 720
   rate_limit: 120
+  treadstone_base_url: 'https://yv-giving-staging.lifechurch.tv/'
 
 development:
   api_root: youversionapistaging.com
@@ -68,10 +70,11 @@ production:
   api_root: youversionapi.com
   api_referer: web.youversionapi.com
   api_version: "3.1"
-  api_default_timeout: 5
+  api_default_timeout: 10
   rack_execution_timeout: 22
   memcache_server: memcache.youversion.com
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
   facebook_app_id: 105030176203924
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
+  treadstone_base_url: 'https://donate.bible.com/'

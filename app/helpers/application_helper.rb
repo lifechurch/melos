@@ -89,9 +89,22 @@ module ApplicationHelper
     else
       DateTime.parse(api_created_dt)
     end
+
     t('moments.time past', ago: time_ago_in_words(time.in_time_zone))
+
+    # Swith to this method as soon as datetime.time_ago_in_words has been translated
+    #  then remove method above
+    # distance_of_time_in_words(time.in_time_zone, Time.current, false, scope: 'datetime.time_ago_in_words')
   end
 
+  def prettify_date(api_created_dt)
+    time = if api_created_dt.is_a?(Fixnum)
+      Time.at(api_created_dt)
+    else
+      DateTime.parse(api_created_dt)
+    end
+    I18n.l(time, format: :default)
+  end
 
   def usfm_from_moment(references)
     references.usfm.join("+")
@@ -105,9 +118,17 @@ module ApplicationHelper
     @current_locale ||= I18n.locale
   end
 
+  def localized_bible_icon( size = 48, locale=I18n.locale )
+    "icons/bible/#{size.to_s}/#{locale}.png"
+  end
 
-  def localized_bible_icon( size = 48 )
-    "icons/bible/#{size.to_s}/#{I18n.locale}.png"
+  def bible_icon_for_version(opts={})
+    opts.reverse_merge!({size: 120})
+    opts.reverse_merge!({version: Version.find(opts[:version_id])}) if opts[:version_id].present?
+    lang = ( opts[:version].present? and opts[:version].language.tag.present? ) ? opts[:version].language.tag : "en"
+    lang = "pt" if lang.eql?("pt-BR")
+    lang = I18n.locale unless I18n.available_locales.to_s.include? lang #ensure current version lang is available locale
+    localized_bible_icon(opts[:size], lang)
   end
 
   def overwrite_content_for(name, content = nil, &block)
@@ -301,6 +322,14 @@ module ApplicationHelper
       fullpath = "/#{version}/#{reference.book.downcase}.#{reference.chapter}.#{reference.verses.first}.#{reference.version_string.downcase}" if reference.verses.length == 1
     end
     fullpath
+  end
+
+  def text_version_list(locale)
+    APP_PAGE_VERSION_LIST[locale]['text'].present? ? APP_PAGE_VERSION_LIST[locale]['text'] : APP_PAGE_VERSION_LIST['en']['text']
+  end
+
+  def audio_version_list(locale)
+    APP_PAGE_VERSION_LIST[locale]['audio'].present? ? APP_PAGE_VERSION_LIST[locale]['audio'] : APP_PAGE_VERSION_LIST['en']['audio']
   end
 
   def get_verse_content(html_verse_content)

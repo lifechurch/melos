@@ -3,6 +3,31 @@ id:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "sekitar %{count} jam yang lalu"
+            about_x_months: 
+                other: "sekitar %{count} bulan yang lalu"
+            about_x_years: 
+                other: "sekitar %{count} tahun yang lalu"
+            almost_x_years: 
+                other: "hampir %{count} tahun yang lalu"
+            half_a_minute: "setengah menit yang lalu"
+            less_than_x_minutes: 
+                other: "kurang dari %{count} menit yang lalu"
+            less_than_x_seconds: 
+                other: "kurang dari %{count} detik yang lalu"
+            over_x_years: 
+                other: "lebih dari %{count} tahun yang lalu"
+            x_days: 
+                other: "%{count} hari yang lalu"
+            x_minutes: 
+                other: "%{count} menit yang lalu"
+            x_months: 
+                other: "%{count} bulan yang lalu"
+            x_seconds: 
+                other: "%{count} detik yang lalu"
     counter: 
         format: "999.999.999"
     social: 
@@ -76,8 +101,8 @@ id:
         moments content required: "Isi tidak bisa kosong."
     meta: 
         kids_app: 
-            title: "Aplikasi Alkitab untuk anak-anak."
-            description: "Ap Alkitab untuk Anak adalah cara ampuh untuk anak-anak Anda belajar cerita-cerita Alkitabiah tentang Yesus, hadiah kita atas kehidupan kekal, dan berbagai pelajaran yang diajarkan Tuhan. Dalam pengalaman interaktif ini, anak-anak secara langsung ikut serta dengan Firman Tuhan dengan visual penuh sukaria sembari mendapat poin untuk membaca dan mengumpulkan harta."
+            title: "Ap Alkitab untuk Anak-anak"
+            description: "Ap Alkitab untuk Anak-anak adalah cara hebat untuk anak Anda belajar kisah-kisah Alkitab tentang Yesus, hadiah hidup kekal kita, dan banyak pelajaran yang Tuhan ajarkan pada kita. Dalam pengalaman interaktif ini, anak-anak terhubung langsung dengan Firman Tuhan melalui visual yang menarik sambil mendapatkan poin untuk membaca dan mengumpulkan harta karun."
         100million: 
             title: "Dimulai dengan 100 juta"
             description: "Ap Alkitab telah diinstal hampir 100 juta kali - tonggak sejarah yang luar biasa! Namun ini hanya permulaan saja. Unduh Ap Alkitab gratis hari ini - dan bagikan ap ini kepada teman-teman Anda. Mari kita bersama membuat sejarah."
@@ -91,43 +116,43 @@ id:
             index: 
                 title: "Akun terkait"
     kids: 
-        bible app: "Aplikasi Alkitab"
+        bible app: "Ap Alkitab"
         for: "untuk"
         kids: "anak-anak"
         by youversion: "oleh YouVersion"
-        help your kids: "Bantu anak-anak Anda jatuh cinta dengan Firman Tuhan."
-        free download: "Unduh gratis!"
+        help your kids: "Bantu anak Anda jatuh cinta pada Firman Tuhan."
+        free download: "Unduh secara gratis!"
         app store: "Tersedia di App store"
         google play: "Dapatkan di Google Play"
         amazon: "Tersedia di Amazon Appstore untuk Android"
-        app icon: "Icon Ap untuk Ap Alkitab untuk Anak"
-        jesus and friends: "Yesus dan sahabat"
-        interact text: "Berinteraksi dengan Alkitab dan saksikan itu menjadi nyata."
+        app icon: "ikon aplikasi untuk Ap Alkitab untuk Anak-anak"
+        jesus and friends: "Yesus dan sahabat-sahabat-Nya"
+        interact text: "Berinteraksi dengan Alkitab dan saksikan secara nyata."
         story text 1: "Taman Eden"
-        story text 2: "Natal Pertama"
-        story text 3: "Yusuf, Maria, dan bayi Yesus di palungan"
-        story text 4: "Angels appear to the shepherds to tell them about the birth of Christ"
+        story text 2: "Natal pertama"
+        story text 3: "Yusuf, Maria dan bayi Yesus dalam palungan"
+        story text 4: "Malaikat-malaikat memperlihatkan diri pada para gembala untuk memberitahukan mereka tentang kelahiran Kristus"
         story text 5: "Yesus menyembuhkan orang lumpuh"
         feature 1: "Pengalaman Alkitab gratis untuk anak Anda"
-        feature 2: "Ap buku cerita animasi untuk smartphone dan tablet"
-        feature 3: "Ilustrasi berwarna dengan animasi sentuh-aktivasi"
-        feature 4: "Permainan dan aktifitas membantu anak-anak ingat apa yang mereka pelajari"
-        feature 5: "Navigasi akrab-anak"
+        feature 2: "Aplikasi buku cerita animasi untuk smartphone dan tablet"
+        feature 3: "Ilustrasi berwarna dengan animasi sentuh-aktif"
+        feature 4: "Permainan dan aktivitas membantu anak mengingat apa yang mereka pelajari"
+        feature 5: "Navigasi khusus anak"
         share: 
-            tell friends: "Beritahu teman Anda tentang Ap Alkitab untuk Anak."
-            facebook name: "Aplikasi Alkitab untuk anak-anak."
-            facebook description: "Ap Alkitab untuk Anak di sini! Unduh ap gratis untuk iOS dan Android hari ini: cerita Alkitab interaktif untuk membantu anak Anda belajar, bermain, dan bertumbuh dalam Firman Tuhan. www.bible.com/kids"
-            facebook link: "http://www.bible.com/anak"
-            facebook redirect: "http://www.bible.com/anak"
-            twitter description: "Aplikasi Alkitab untuk anak dari @YouVersion ada disini! Menyenangkan dan sepenuhnya gratis. Unduh: bible.com/kids"
-            twitter hashtags: "alkitabanak"
+            tell friends: "Beritahu teman Anda tentang Ap Alkitab untuk Anak-anak."
+            facebook name: "Ap Alkitab untuk Anak-anak"
+            facebook description: "Ap Alkitab untuk Anak-anak ada di sini! Unduh aplikasi gratis untuk iOS dan Android hari ini: cerita-cerita Alkitab interaktif untuk membantu anak Anda belajar, bermain, dan bertumbuh dalam Firman Tuhan.\nwww.bible.com/kids"
+            facebook link: "http://www.bible.com/kids"
+            facebook redirect: "http://www.bible.com/kids"
+            twitter description: "Ap Alkitab untuk Anak-anak dari @YouVersion ada disini! Menyenangkan dan sepenuhnya gratis. Unduh: bible.com/kids"
+            twitter hashtags: "kidsbible"
             email: "Email"
-            email subject: "Ap Alkitab untuk Anda telah hadir!"
-            email body: "Kabar baik - Ap Alkitab untuk Anak telah hadir! Gratis total dan tersedia sekarang untuk piranti iPhone, iPad, iPod touch, dan Android. Ap ini adalah cerita Alkitab yang terus bertambah dengan animasi sentuh-aktivasi dan aktifitas belajar, cocok untuk membantu anak-anak belajar kisah-kisah Alkitab. Pergi ke bible.com/anak di piranti bergerak Anda untuk mengunduhnya hari ini."
+            email subject: "Ap Alkitab untuk Anak-anak ada di sini!"
+            email body: "Berita besar - Ap Alkitab untuk Anak-anak ada di sini! Gratis total dan tersedia untuk perangkat iPhone, iPad, iPod touch, dan Android. Aplikasi ini adalah kumpulan cerita Alkitab yang terus bertambah dengan animasi sentuh-aktif dan aktivitas belajar, cocok untuk membantu anak memahami kisah-kisah besar Alkitab. Masuk ke bible.com/kids pada perangkat seluler Anda untuk mengunduhnya hari ini."
         partner: 
-            youversion: "YouVersion: Ap Alkitab paling populer di dunia"
-            in partnership: "rekan dengan"
-            one hope: "Satu Harapan: Isi Alkitab luar biasa untuk Anak"
+            youversion: "YouVersion: Aplikasi Alkitab terpopuler di dunia."
+            in partnership: "rekanan dengan"
+            one hope: "One Hope: Isi Alkitab yang luar biasa untuk Anak-anak"
         links: 
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
@@ -370,6 +395,11 @@ id:
             accept request button: "Menerima permintaan"
             ignore button: "Tolak"
             ignore request button: "Tolak permintaan"
+    images: 
+        none user: "%{username} belum membuat gambar apapun."
+        blank slate: 
+            heading: "Anda belum memiliki gambar apapun"
+            description: "Gunakan Ap selular YouVersion untuk membuat gambar ayat."
     notes: 
         none user: "%{username} belum membuat catatan apapun."
         blank slate: 
@@ -502,6 +532,8 @@ id:
         user notes: "Catatan %{user}"
         my friends: "Teman"
         my notes: "Catatan"
+        my images: "Gambar"
+        user images: "Gambar milik %{user}"
         user friends: "Teman %{user}"
         my bookmarks: "Markah Saya"
         user bookmarks: "Markah %{user}"
@@ -567,7 +599,7 @@ id:
             description title: "Deskripsi Layanan"
             description text: "do not translate"
             registration title: "Kewajiban Pendaftaran Anda"
-            registration text: "do not translate"
+            registration text: "Anda mengetahui dan setuju untuk:<ul><li>menyediakan informasi yang benar, akurat, terkini, dan lengkap tentang diri Anda sebagaimana tertera pada formulir pendaftaran YouVersion ('Data Pendaftaran') dan</li><li>menjaga dan terus memperbarui Data Pendaftaran agar selalu benar, akurat, terkini, dan lengkap. Bila LifeChurch.tv mencurigai bahwa informasi tersebut tidak benar, tidak akurat, tidak terkini, atau tidak lengkap, LifeChurch.tv berhak untuk menangguh atau menutup akun Anda dan menolak semua penggunaan YouVersion baik sekarang maupun akan datang (atau apapun di antaranya). LifeChurch.tv memperhatikan keamanan dan privasi dari semua penggunanya, terutama anak-anak. Karenanya, orang tua dari anak berusia di bawah 13 tahun yang mengijinkan anak mereka mengakses YouVersion harus mengetahui bahwa YouVersion didesain untuk menarik bagi banyak orang. Oleh karenanya, sebagai wali anak Anda, adalah kewajiban Anda untuk menentukan apakah YouVersion cocok untuk anak Anda.</li></ul>"
             privacy title: "Kebijakan Privasi YouVersion"
             privacy text: "do not translate"
             account title: "Akun Anggota, Kata Sandi dan Keamanan"
@@ -605,7 +637,7 @@ id:
             trademark title: "Informasi Merek Dagang"
             trademark text: "do not translate"
             copyright title: "Pemberitahuan dan Prosedur Pembuatan Gugatan Hak Cipta atau Pelanggaran Properti Intelektual"
-            copyright text: "do not translate"
+            copyright text: "LifeChurch.tv menghargai kekayaan intelektual orang lain. Kami mengajak pengguna kami untuk melakukan hal yang sama, terutama sehubungan dengan penggunaan YouVersion. LIfeChurch.tv dapat, pada kondisi tertentu dan atas kebijakannya sendiri, menonaktifkan dan/atau menutup akun dari para pengguna yang mengulangi pelanggaran. Apabila Anda yakin bahwa hasil karya Anda telah ditiru di mana secara konsitusi merupakan pelanggaran hak cipta, atau hak kekayaan intelektual telah dilanggar, harap kirim informasi terlampir ke legal@youversion.com:<ul type='none'><li>Tanda tangan elektronik atau fisik dari yang berwenang untuk bertindak atas nama pemilik hak cipta atau kepentingan kekayaan intelektual lainnya yang bersangkutan</li><br><li>Pernyataan tertulis dari karya berhak cipta atau kekayaan intelektual lainnya yang Anda klaim telah dilanggar;</li><br><li>Pernyataan tertulis di mana materi pelanggaran yang Anda klaim berlokasi di YouVersion;</li><br><li>Alamat, nomor telefon, dan alamat email Anda (semua yang berlaku);</li><br><li>Pernyataan tertulis oleh Anda bahwa Anda memiliki keyakinan yang kuat bahwa penggunaan yang disengketakan tidak diizinkan oleh pemilik hak cipta, agennya, atau oleh hukum;</li><br><li>Pernyataan tertulis oleh Anda, dibuat di bawah sumpah, bahwa informasi Pernyataan Anda di atas adalah akurat dan bahwa Anda adalah pemilik hak cipta atau kekayaan intelektual, atau bahwa Anda telah diberi wewenang untuk bertindak atas nama pemilik hak cipta atau kekayaan intelektual. Agen LifeChurch.tv untuk Pernyataan klaim atas pelanggaran hak cipta atau kekayaan intelektual lainnya dapat dihubungi di: %{newline}Via pos: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433 %{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "Informasi Umum"
             general text: "do not translate"
         profile: 
@@ -618,6 +650,7 @@ id:
             tab notes: "Catatan"
             tab bookmarks: "Markah"
             tab highlights: "Sorotan"
+            tab images: "Gambar"
             tab badges: "Lencana"
             first name: "Nama Depan"
             last name: "Nama Belakang"
@@ -713,6 +746,7 @@ id:
         none me: "Anda belum memperoleh lencana apapun."
         none user: "%{username} belum memperoleh lencana apapun."
     plans: 
+        share plan: "Cek ini @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Rencana Saya"
             start reading: "Mulai baca"
@@ -839,8 +873,10 @@ id:
         loading sidebar content: "Memuat konten  bilah samping..."
     videos: 
         title: "Video"
+        watch videos: "Tonton video tentang Alkitab"
         all: "Semua video"
         related scripture: "Firman Tuhan Terkait"
+        share video: "Saya menonton %{video_title} di @YouVersion."
     licenses: 
         authorized: 
             heading: "Konten Anda telah disahkan"
@@ -940,9 +976,9 @@ id:
         line 3: "yang selalu bersama Anda."
         download: "Unduh Sekarang"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Unduh Ap Alkitab untuk Anak-anak"
+        description copy: "Ap Alkitab untuk Anak-anak adalah cara hebat untuk anak Anda belajar kisah-kisah Alkitab tentang Yesus."
+        download: "Unduh Sekarang"
     about page: 
         relevancy: "Relevansi"
         relevancy copy: "Di generasi terdahulu, akses ke Alkitab sangat terbatas. Hari ini, tidak lagi masalah. Namun, banyak orang yang memiliki akses ke Alkitab berpikir bahwa pesannya tidak berlaku dalam hidup mereka. Pada saat bersamaan, ada mereka yang percaya adanya hubungan antara Alkitab dengan pengalaman keseharian mereka."
@@ -993,10 +1029,24 @@ id:
         what people: "Apa kata orang tentang Ap Alkitab gratis..."
         t1: "Saya selalu memiliki Firman Tuhan."
         t1 copy: "Saya telah memarkahi bagian yang penting bagi saya. Saya bahkan telah membaca seluruhnya dalam setahun berkat rencana bacaan."
-        t2: "Program Hebat!"
-        t2 copy: "Ap ini membantu saya terorganisir dan membaca Firman Tuhan setiap hari. Mudah digunakan dan menawarkan banyak fitur ... Saya suka!"
+        t2: "Sangat direkomendasikan"
+        t2 copy: "Saya suka bagaimana kita dapat terhubung dengan teman dan rencana bacaan Alkitab yang luar biasa. Aplikasi ini juga membantu saya untuk tetap konsisten dalam membaca karena ada fitur pengingatnya. Ini juga memberi saya cara lain untuk lebih dekat pada Tuhan. Unduh dan bacalah setiap hari!"
         t3: "Aplikasi hebat."
         t3 copy: "Ap hebat dengan pilihan Alkitab yang luas. ... Alkitab suara juga mengagumkan dan mudah dimengerti."
+        t4: "Hebat. Selalu meningkat!"
+        t4 copy: "Banyak terjemahan dan bahasa tersedia, dan banyak yang dapat diunduh untuk dibaca luring. Banyak fitur-fitur berguna, seperti kemampuan untuk membuat catatan dan markah."
+        t5: "Ap Alkitab terbaik yang pernah ada!"
+        t5 copy: "Saya suka ada banyak versi dan adanya ayat harian, renungan, rencana dan komunitas. Terima kasih untuk ap gratis ini. :)"
+        t6: "Banyak versi dan bacaan luring!"
+        t6 copy: "Hebat karena ada banyak versi berbeda dan saya dapat mengunduh beberapa versi untuk bacaan luring.  Saya dapat mendengarkan ap ini."
+        t7: "Ap hebat!"
+        t7 copy: "Membantu saya membaca Alkitab lebih sering. Suka fitur pencarian dan berbagi dan bermacam cara untuk berbagi. Juga suka versi audio."
+        t8: "Ap hebat"
+        t8 copy: "Ini alat hebat untuk belajar dari berbagai terjemahan. Juga nyaman untuk mendengarkan Alkitab ketika Anda mengemudi."
+        t9: "Ap Alkitab Terbaik!"
+        t9 copy: "Ini Ap Alkitab terbaik yang ada. Memiliki Firman dalam berbagai bahasa dan versi untuk penggunaan daring dan luring. Mempunyai renungan untuk segala hal yang dapat Anda pikirkan. Anda dapat berhubungan dengan orang lain dan tentunya belajar tentang Tuhan dan Firman-Nya."
+        version list: "Lebih dari 1000 versi Alkitab termasuk:"
+        audio version list: "Dengarkan versi audio Alkitab termasuk:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"

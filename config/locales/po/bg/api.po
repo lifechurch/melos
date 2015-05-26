@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-09 13:08-0600\n"
-"PO-Revision-Date: 2015-03-09 13:08-0600\n"
+"POT-Creation-Date: 2015-04-23 15:06-0609\n"
+"PO-Revision-Date: 2015-04-23 15:06-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: bg <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -32,8 +32,8 @@ msgstr ""
 "#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:07-0600\n"
-"PO-Revision-Date: 2014-09-25 16:07-0600\n"
+"POT-Creation-Date: 2015-04-23 15:08-0609\n"
+"PO-Revision-Date: 2015-04-23 15:08-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: bg <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -60,11 +60,23 @@ msgstr "Вие добавихте в показалеца <b>{reference_human}</
 msgid "moment.bookmark.title"
 msgstr "{name} добави в показалеца <b>{reference_human}</b>"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Освежете вярата си с нови планове."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Намерете своя предпочитан план за прочит на Библията през февруари!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Ежедневното време в Божието Слово произвежда трайна свобода."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Намерете своя ритъм в ежедневното време с Божието Слово."
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Намерете надежда и обновление в плановете за месец март."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Посветете се всекидневно да търсите Бог в Неговото Слово."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Чети Библията всеки ден през 2015. Планът ще ти помогне"
@@ -106,7 +118,7 @@ msgid "moment.plan_segment_completion.self.title"
 msgstr "Вие изпълнихте ден <b>{segment}</b> от плана, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name} е изпълнил ден <b>{segment}</b> от плана, <b>{title}</b>"
+msgstr "{name} изпълни ден <b>{segment}</b> от плана, <b>{title}</b>"
 
 msgid "moment.plan_subscription.self.title"
 msgstr "Стартиране на плана"
@@ -269,6 +281,9 @@ msgstr "{name} току-що се присъедини към YouVersion. Док
 
 msgid "notifications.system.test"
 msgstr "Изтеглете нашето приложение за Детска Библия сега!!"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Здравей!</p><p>Аз използвам приложение Библията на YouVersion и искам да го споделя с теб. Ако си нов в приложението, това е лесен начин да внесеш красотата и истината на Библията във всекидневния живот. </p><p><strong>Изтегли приложение Библията:</strong> чети, гледай, слушай и споделяй от своя смартфон или таблет, както и онлайн на Bible.com</p><p><strong>Настрой своя профил:</strong> Абонирай се за плановете за прочит на Библията, разглеждай отбелязвания, подчертавания и бележки на всичките си устройства</p><p><strong>Добави приятели (Като мен!):</strong> изследвай и обсъждай Библията с хората, на които държиш</p><p>Всичко това е в приложение Библията—започни тук: </p>"
 
 msgid "share.invite_email_body"
 msgstr ""

@@ -3,6 +3,42 @@ ca:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "fa aproximadament una hora"
+                other: "fa unes %{count} hores"
+            about_x_months: 
+                one: "fa aproximadament un mes"
+                other: "fa uns %{count} mesos"
+            about_x_years: 
+                one: "fa aproximadament un any"
+                other: "fa uns %{count} anys"
+            almost_x_years: 
+                one: "fa gairebé un any"
+                other: "fa gairebé %{count} anys"
+            half_a_minute: "fa mig minut"
+            less_than_x_minutes: 
+                one: "fa menys de un minut"
+                other: "fa menys de %{count} minuts"
+            less_than_x_seconds: 
+                one: "fa menys de un segon"
+                other: "fa menys de %{count} segons"
+            over_x_years: 
+                one: "fa més d'un any"
+                other: "fa més de %{count} anys"
+            x_days: 
+                one: "fa un dia"
+                other: "fa %{count} dies"
+            x_minutes: 
+                one: "fa un minut"
+                other: "fa %{count} minuts"
+            x_months: 
+                one: "fa un mes"
+                other: "fa %{count} mesos"
+            x_seconds: 
+                one: "fa un segon"
+                other: "fa %{count} segons"
     counter: 
         format: "999.999.999"
     social: 
@@ -370,6 +406,11 @@ ca:
             accept request button: "Accepta la sol·licitud"
             ignore button: "Rebutja"
             ignore request button: "Rebutja sol·licitud"
+    images: 
+        none user: "%{username} encara no ha creat cap imatge."
+        blank slate: 
+            heading: "Encara no has creat cap imatge."
+            description: "Utilitza l'aplicació mòbil de YouVersion per crear imatges amb versets."
     notes: 
         none user: "%{username} encara no ha pres notes."
         blank slate: 
@@ -502,6 +543,8 @@ ca:
         user notes: "Notes de %{user}"
         my friends: "Amics"
         my notes: "Notes"
+        my images: "Imatges"
+        user images: "Imatges de %{user}"
         user friends: "Amics de %{user}"
         my bookmarks: "Els meus marcadors"
         user bookmarks: "Marcadors de %{user}"
@@ -567,7 +610,7 @@ ca:
             description title: "Descripció del servei"
             description text: "LifeChurch.tv dóna accés als usuaris a una gran varietat de serveis a través de YouVersion, incloent el visionat de vídeo en línia, publicacions i comentaris a blogs, altres eines de comunicació, fòrums, i contingut personalitzat, de forma gratuïta pels usuaris. En utilitzar YouVersion, entens que aquest ús pot incloure comunicacions de LifeChurch.tv, incloent anuncis, missatges administratius, i altres missatges als quals et pots subscriure individualment. Tu entens i acceptes que ets responsable d'obtenir l'accés a YouVersion, que pot involucrar equips i honoraris de tercers (com ara honoraris al proveïdor de serveis d'Internet, costos del temps en antena, i altres costos relacionats amb el visionat i l'enviament de missatges)."
             registration title: "Les teves obligacions de registre"
-            registration text: "Tu reconeixes i acceptes: <ul><li>proporcionar informació certa, exacta, actual i completa sobre tu mateix segons es requereix al formulari o formularis de registre a YouVersion (les 'Dades de registre') i</li>»<li>actualitzar la teva informació de manera que sempre sigui precisa, exacta, actual i completa. Si LifeChurch.tv sospita que aquesta informació és falsa, inexacta, i no actual, LifeChurch.tv té dret a suspendre o expulsar el teu compte i rebutjar qualsevol ús actual o futur de YouVersion (o de qualsevol de les seves parts). LifeChurch.tv es preocupa per la seguretat i la privacitat de tots els usuaris, en especial els nens. Per aquesta raó, els pares de nens que tenen menys de 13 anys i tenen permís per accedir a YouVersion han de saber que YouVersion està dissenyat per atraure tota l'audiència. D'acord amb això, i com a tutor/a legal del teu fill/a, és la teva responsabilitat decidir si Youversion és apropiat per al teu fill/a."
+            registration text: "Com a usuari declara conèixer i acceptar:<ul><li>proveïr informació veraç, acurada, actualitzada i complerta sobre vostè, tal i com se sol·licita als formularis de registre de YouVersion (les &quot;dades de registre&quot;) i</li><li>mantenir i actualitzar puntualment les dades de registre, per a mantenir-les veraces, acurades, actuals i complertes. Si LifeChurch.tv sospita que aquesta informació és incerta, poc acurada, desactualitzada o incomplerta, LifeChurch.tv té el dret de suspendre o de donar de baixar el seu compte i refusar tots els usos actuals o futurs de YouVersion (o de parts de YouVersion). LifeChurch.tv es preocupa per la seguretat i privacitat de tots els seus usuaris, particularment dels nens. Per aquest motiu, els pares de nens menors de 13 anys que permeten els seus fills d'accedir a YouVersion han de saber que YouVersion està dissenyat per a arribar a una gran audiència. En consequència, com a tutor legal del seu fll, és la seva responsabilitat de decidir fins a quin punt YouVersion és apropiat per al seu fill.</li></ul>"
             privacy title: "Política de privacitat de YouVersion"
             privacy text: "Les dades de registre i la resta d'informació sobre tu està subjecta a la nostra política de privacitat, que pots trobar a <a href='http://youversion.com/privacy'>http://youversion.com/privacy</a>. Tu entens que a través del teu ús de YouVersion consents a la recopilació i l'ús (tal i com consta a la política de privacitat) d'aquesta informació, incloent la transferència d'aquesta informació als Estats Units d'Amèrica i/o altres països per emmagatzemar-la, processar-la i utilitzar-la per <a href='http://LifeChurch.tv'>LifeChurch.tv</a>."
             account title: "Compte del membre, contrasenya i seguretat"
@@ -605,7 +648,7 @@ ca:
             trademark title: "Informació sobre marques comercials"
             trademark text: "Les marques registrades, logotips, marques de servei i noms de productes i serveis relacionats amb LifeChurch.tv i els seus ministeris són marques comercials de LifeChurch.tv (les \"Marques LifeChurch.tv\"). Sense el permís previ per escrit de LifeChurch.tv, et compromets a no mostrar o utilitzar les Marques LifeChurch.tv de qualsevol manera."
             copyright title: "Notificacions i Procediment de demandes d'infracció Drets d'Autor o Propietat Intel·lectual"
-            copyright text: "LifeChurch.tv respecta la propietat intel·lectual d'altres. Demanem als nostres usuaris que facin el mateix, sobretot, pel que fa a la utilització de YouVersion. LifeChurch.tv pot, en circumstàncies apropiades a la seva discreció, desactivar i/o cancel·lar els comptes d'usuaris que poden ser infractors reincidents. Si creus que el seu treball ha estat copiat d'una manera que constitueix una infracció de copyright, o els seus drets de propietat intel·lectual s'han violat d'una altra manera, si us plau envieu la següent informació a legal@youversion.com:<ul type='none'><li>una signatura electrònica o física de la persona autoritzada per actuar en nom del propietari dels drets d'autor o un altre interès de propietat intel·lectual en qüestió;</li><br><li>una descripció escrita del treball amb drets d'autor o una altra propietat intel·lectual que afirmes han estat violades;</li><br><li>Una descripció escrita d'on es troba a YouVersion el material que considera que infringeix,</li><br><li>la teva adreça, número de telèfon i direcció de correu electrònic (el que correspongui);</li><br><li>Una declaració escrita per tu que mostri que tens una creença de bona fe que l'ús disputat no està autoritzat pel propietari del copyright, el teu agent o la llei; </li><br><li>Una declaració escrita per tu, feta sota pena de perjuri, que la informació esmentada en la notificació és exacta i que tu ets l'autor o propietari de la propietat intel·lectual, o que pot actuar en nom dels drets d'autor o propietat intel·lectual. LifeChurch.tv</li></ul>"
+            copyright text: "LifeChurch.tv respecta els drets de propietat intel·lectual d'altres. Demanem els usuaris que feu el mateix, especialment pel que respecta a l'ús de YouVersion. LifeChurch.tv pot, segons el seu criteri i en circumstàncies adequades, deshabilitar o esborrar comptes d'usuaris que cometin infraccions reiteradament. Si creu que la seva obra ha estat copiada de forma que constitueixi una infracció dels drets d'autor o violació dels drets de propietat intel·lectual, enviï la següent informació a legal@youversion.com:<ul type='none'><li>La signatura física o electrònica de la persona autoritzada a actuar en nom dels interessos del propietari dels drets d'autor o altres drets de propietat intel·lectual en qüestió;</li><br><li>Un escrit que descrigui l'obra subjecta a drets d'autor o altra propietat intel·lectual de la qual vostè denuncia la infracció;</li><br><li>Un escrit que descrigui en quin lloc de YouVersion està localitzat el material denunciat;</li><br><li>La seva adreça, número de telèfon i correu electrònic (si correspon);</li><br><li>Una declaració per escrit per la qual vostè declara la ferma convicció que l'ús en qüestió no està autoritzat per el propietari dels drets, el seu representant o la legislació vigent;</li><br><li>Una declaració per escrit, sota pena de perjuri, en la que vostè declara que la informació de la seva notificació és certa i vostè és el propietari dels drets d'autor o de propietat intel·lectual, o be que n'és el representant autoritzat a tal efecte. El representat de LifeChurch.tv per a les Reclamacions sobre infraccions en els drets d'autor o de propietat intel·lectual es pot contactar de la següent manera: %{newline} per correu: LifeChurch.tv c/o - Contracts Coordinator %{newline} 4600 E. 2nd Street Edmond, OK 73034 %{newline} Telèfon: +1 (405) 680-5433 %{newline} Fax: +1 (405) 844-3002%{newline}Correu electrònic: %{mailto_link}</li></ul>"
             general title: "Informació general"
             general text: "Acord complet. Aquestes Condicions d'ús constitueixen l'acord complet entre tu i LifeChurch.tv, que regeix l'ús de YouVersion i substitueix qualsevol acord anterior entre vostè i LifeChurch.tv pel que fa a YouVersion. També pots estar subjecte a termes i condicions addicionals.<br><br>Elecció de jurisdicció i tall. Les condicions d'ús i la relació entre tu i LifeChurch.tv es regirà per les lleis de l'Estat d'Oklahoma, sense tenir en compte conflictes de disposicions legals. Tu i LifeChurch.tv acordeu sotmetre a la jurisdicció personal i exclusiva dels tribunals ubicats dins del comtat d'Oklahoma County, Oklahoma.<br><br>Renúncia i separació de termes. El fracàs de LifeChurch.tv per exercir o fer valer qualsevol dret o disposició d'aquestes condicions d'ús no constituirà una renúncia a aquest dret o disposició. Si alguna disposició d'aquestes condicions d'ús és considerada per un tribunal de jurisdicció competent com no vàlida, les parts acorden que aquest tribunal ha de procurar interpretar les intencions de les parts tal i com es reflecteix en la disposició, i les altres disposicions de les presents condicions d'ús romandran en ple vigor i efecte.<br><br>Dret de supervivència i transferibilitat. Tu acceptes que el teu compte de LifeChurch.tv és intransferible i que qualsevol dret a identificar LifeChurch.tv o continguts dins del seu compte s'extingeixen a la seva mort. Després de la recepció d'una còpia d'un certificat de defunció, LifeChurch.tv pot cancel·lar el seu compte i eliminar permanentment tots els continguts del compte.<br><br>Estatut de Limitacions. Entens i acceptes que independentment de qualsevol estatut o llei que disposi el contrari, qualsevol reclamació o motiu d'acció que sorgeixi de o estigui relacionada amb l'ús de YouVersion o aquestes condicions d'ús s'ha de presentar dins d'un (1) any després d'aquest reclam o causa d'acció o prescriurà per sempre.<br><br>Els títols de les seccions en les presents condicions d'ús són per conveniència només i no tenen cap efecte legal o contractual."
         profile: 
@@ -618,6 +661,7 @@ ca:
             tab notes: "Notes"
             tab bookmarks: "Marcadors"
             tab highlights: "Subratllats"
+            tab images: "Imatges"
             tab badges: "Insígnies"
             first name: "Nom"
             last name: "Cognom"
@@ -713,6 +757,7 @@ ca:
         none me: "Encara no tens cap insígnia."
         none user: "El/la %{username} encara no té cap insígnia."
     plans: 
+        share plan: "Mira això @YouVersion #PladelaBíblia: %{plan_title}"
         widget: 
             my plans: "Els meus plans"
             start reading: "Comença a llegir"
@@ -841,8 +886,10 @@ ca:
         loading sidebar content: "Carregant el contingut de la barra lateral..."
     videos: 
         title: "Vídeos"
+        watch videos: "Mira vídeos sobre la Bíblia"
         all: "Tots els vídeos"
         related scripture: "Passatge bíblic relacionat"
+        share video: "Estic mirant %{video_title} a @YouVersion."
     licenses: 
         authorized: 
             heading: "El teu contingut ha estat autoritzat."
@@ -995,10 +1042,24 @@ ca:
         what people: "El que diu la gent sobre l'aplicació de la Bíblia..."
         t1: "Sempre tinc la Paraula."
         t1 copy: "Tinc passatges favorits que són importants per a mi. Fins i tot he llegit tota la Bíblia en un any gràcies als plans de lectura."
-        t2: "Bon programa!"
-        t2 copy: "Aquesta aplicació m'ajuda a organitzar-me i a llegir la Paraula de Déu cada dia. És fàcil d'utilitzar i té moltes opcions ... M'encanta!"
+        t2: "Molt recomanada."
+        t2 copy: "M'agrada com et permet connectar amb amics i els plans de lectura bíblica són impressionants. Aquesta aplicació m'ajuda a mantenir-me constant en la lectura perquè té recordatoris pels plans. Em dóna una altra manera d'estar més a prop de Déu. Descarrega-la i llegeix cada dia!"
         t3: "Molt bona aplicació!"
         t3 copy: "Gran aplicació amb una àmplia selecció de Bíblies per triar. Les Bíblies d'àudio són també meravelloses i fàcils d'entendre."
+        t4: "Genial. Sempre millorant-se!"
+        t4 copy: "Té disponibles moltes traduccions i idiomes, i una gran quantitat es poden descarregar per a llegir sense connexió. Moltes característiques útils, com la capacitat de crear notes i marcadors."
+        t5: "La millor app de la Bíblia que mai s'hagi vist."
+        t5 copy: "M'agrada com incorpora un munt de versions i que conté versets del dia, devocionals, plans de lectura i accés a la comunitat. Gràcies per aquesta aplicació gratuïta. :)"
+        t6: "Múltiples versions i lectura fora de línia!"
+        t6 copy: "Genial perquè hi ha moltes versions diferents i en vaig poder descarregar moltes per llegir fora de línia. Fins i tot puc escoltar versets des de l'aplicació."
+        t7: "Una gran aplicació!"
+        t7 copy: "M'ajuda a llegir més la bíblia. M'agrada a possibilitat de cercar i participar i la varietat de formes de compartir. També m'agraden les versions en àudio."
+        t8: "Una gran aplicació."
+        t8 copy: "És una gran eina per a estudiar des de múltiples traduccions. També és adient per a escoltar la Bíblia mentre condueixes."
+        t9: "La millor aplicació de la Bíblia!"
+        t9 copy: "És la millor aplicació de la Bíblia que puguis trobar. Té la Paraula en diferents idiomes i versions tant si estàs connectat com fora de línia. Té devocionals per a qualsevol tema que et puguis imaginar. Pots connectar-te amb altra gent i en última instància aprendre més de Déu i la seva Paraula."
+        version list: "Més de 1000 versions bíbliques com:"
+        audio version list: "Escolta versions en àudio com:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"

@@ -30,7 +30,7 @@ function herokuAppName() {
 		if (process.env.BRANCH.toLowerCase() == "integration") {
 			return "yv-staging";
 		} else { 
-			return "dev-" + process.env.BRANCH.toLowerCase();
+            return "dev-" + process.env.BRANCH.toLowerCase().replace(/\//g, "-");
 		}
 
 	} else {
@@ -69,14 +69,14 @@ function addOns() {
 			console.log(err, addon);
 			heroku.apps(herokuAppName()).addons().create({ plan: 'deployhooks:hipchat', config: { auth_token: hipchatToken(), room: "YouVersion Web", message: "{{app}} deployed by {{user}}. <a href='{{url}}'>Go There!</a> (<a href='https://github.com/lifechurch/youversion-web/commits/{{head}}'>View on GitHub: {{head}}</a>)"  }}, function(err, addon) {
 				console.log(err, addon);
-				displayApp();		
+				displayApp();
 			});
 		});		
 	});
 }
 
 function displayApp() {
-	fs.writeFile("heroku_urls.txt", "git_url=" + HerokuApp.git_url.replace('git@heroku.com:', 'https://:' + process.env.HEROKU_API_KEY + '@git.heroku.com/') + "\nweb_url=" + HerokuApp.web_url, function(err) {
+	fs.writeFile("heroku_urls.txt", "git_url=" + HerokuApp.git_url.replace('git@heroku.com:', 'https://:' + process.env.HEROKU_API_KEY + '@git.heroku.com/') + "\nweb_url=" + HerokuApp.web_url.replace('://', '://youversion:yv123@'), function(err) {
 		if (err) {
 			reportError(1, "Failed to write Git/Web URLs to File", err);
 		}

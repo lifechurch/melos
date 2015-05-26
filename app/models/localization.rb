@@ -5,18 +5,14 @@
 
 class Localization < YV::Resource
 
-  
-  HTTParty.get('http://twitter.com/statuses/public_timeline.json')
-
-
 
   class << self
 
 
     def po(language)
       default_headers = YV::API::Client.default_headers
-      query           = {language_tag: language.to_s}
-      HTTParty.get('https://localization.youversionapistaging.com/3.1/items.po', {
+      query           = {language_tag: language.to_s, cache: 'busted'}
+      HTTParty.get('https://localization.youversionapi.com/3.1/items.po', {
         headers: default_headers,
         timeout: Cfg.api_default_timeout,
         query: query
@@ -27,9 +23,10 @@ class Localization < YV::Resource
 
     def language_tags
       default_headers = YV::API::Client.default_headers
-      resp = HTTParty.get('https://localization.youversionapistaging.com/3.1/configuration.json', {
+      resp = HTTParty.get('https://localization.youversionapi.com/3.1/configuration.json', {
         headers: default_headers,
-        timeout: Cfg.api_default_timeout
+        timeout: Cfg.api_default_timeout,
+        query: {cache: 'busted'}
       })
       Hashie::Mash.new(resp["response"]["data"]) if resp and resp["response"]
     end

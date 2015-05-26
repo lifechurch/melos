@@ -1,12 +1,14 @@
-.widget
-  %h3.hd
-    = link_to(video.title.html_safe, (video.series? ? series_video_path(video) : video_path(video)))
-  %div.bd.nopad
-    - thumb = video.thumbnails.last
-    = image_tag(thumb.url, {style:"width:100%;"})
-
-.widget
-  %h3.hd Publisher Website
-  %ul.menu
-    - publisher.links.each do |link|
-      %li= link_to(link.title, link.url, class: "video-pub")
+- if video.present? and video.title.present?
+  .widget
+    %h3.hd
+      = link_to(video.title.html_safe, (video.series? ? series_video_path(video) : video_path(video)))
+    %div.bd.nopad
+      - thumb = video.thumbnails.last
+      = image_tag(thumb.url, {style:"width:100%;"})
+  
+- if publisher.present? and publisher.links.present?
+  .widget
+    %h3.hd=t('audio.publisher website')
+    %ul.menu
+      - publisher.links.each do |link|
+        %li= link_to(link.title, link.url, class: "video-pub")

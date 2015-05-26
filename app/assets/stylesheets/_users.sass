@@ -121,10 +121,11 @@
   .profile-tabs-notes,
   .profile-tabs-bookmarks,
   .profile-tabs-highlights,
+  .profile-tabs-images,
   .profile-tabs-badges,
   .profile-tabs-settings
     display: block
-    width: 115px
+    width: 89px
     padding-left: 38px
     margin-left: 2px
     float: left
@@ -139,6 +140,7 @@
   .profile-tabs-bookmarks a,
   .profile-tabs-badges a,
   .profile-tabs-highlights a,
+  .profile-tabs-images a,
   .profile-tabs-settings a
     height: 42px
     line-height: 41px
@@ -169,6 +171,10 @@
 
   .profile-tabs-settings
     background-position: 15px -371px
+
+  .profile-tabs-images
+    background: #EEEDEB image-url("svg/icon-versie-black.svg") no-repeat 15px 13px
+    background-size: 16px
 
   .profile-tabs
     .highlight
@@ -201,6 +207,9 @@
 
   .profile-tabs-settings.highlight
     background-position: 15px -374px
+
+  .profile-tabs-images.highlight
+    background-position: 15px 11px
 
 
 // !Content area with feed etc.
@@ -356,6 +365,7 @@
   .slate-activity,
   .slate-bookmarks,
   .slate-highlights,
+  .slate-images,
   .slate-notes,
   .slate-badges,
   .slate-friends
@@ -395,6 +405,10 @@
 
   .slate-activity
     background: #fff image-url("icon-activity-64.png") no-repeat center 40px
+
+  .slate-images
+    background: #fff image-url("svg/icon-versie-color.svg") no-repeat center 40px
+    background-size: 64px
 
 
 // !Profile settings pages

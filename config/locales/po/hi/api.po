@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-23 09:46-0600\n"
-"PO-Revision-Date: 2015-02-23 09:46-0600\n"
+"POT-Creation-Date: 2015-03-29 16:05-0600\n"
+"PO-Revision-Date: 2015-03-29 16:05-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-12-08 10:02-0609\n"
-"PO-Revision-Date: 2014-12-08 10:02-0609\n"
+"POT-Creation-Date: 2015-03-17 08:43-0600\n"
+"PO-Revision-Date: 2015-03-17 08:43-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,11 +63,23 @@ msgstr "{name} बुकमार्क <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "नए बाइबिल पाठक योजना के साथ क्रिसमस की तैयारी करे"
 
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "नए पाठक योजना से श्रद्धा बढ़ाये। "
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "फरवरी के लिए अपना पसंदीदा बाइबिल पाठक योजना चुने!"
 
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "प्रभु के वचन अध्ययन में बिताया पल से ज़िन्दगी बार आज़ादी पाये। "
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "हर रोज़ प्रभु के वचन अध्ययन से दिल को सुकून पाइये। "
+
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "मार्च के योजना में आशा और नवीनीकरण पाए। "
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "हर दिन बाइबिल अध्ययन पल से प्रभु को नज़दीक पाये। "
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015 में हररोज़ बाइबिल पढ़े।मददगार योजनाएँ उपलब्ध !"
@@ -83,6 +95,12 @@ msgstr "आपके द्वारा हाइलाइटेड <b>{referenc
 
 msgid "moment.highlight.title"
 msgstr "{name} ने भी हाईलाइट<b> {reference_human}</b>"
+
+msgid "moment.image.self.title"
+msgstr "आपने पद्य इमेज निर्मित किया {reference_human} <b></b>"
+
+msgid "moment.image.title"
+msgstr "{name} ने पद्य इमेज निर्मित किया <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "आपके द्वारा नया नोट जोड़ा गया, <b>{title}</b>"
@@ -138,6 +156,9 @@ msgstr "{name} नए दोस्त {friend_name} के साथ दोस�
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ने आपके हाईलाइट पर कमेंट किया “{comment}”"
 
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name} ने आपके पद्य इमेज पर अपना विचार व्यक्त किया हैं : “{comment}”"
+
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} ने आपके नोट पर कमेंट किया “{comment}”"
 
@@ -156,6 +177,9 @@ msgstr "{commenter_name} ने {moment_owner_name} नए दोस्त {frie
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} ने भी  {moment_owner_name}'s हाईलाइट पर कमेंट किया: “{comment}”"
 
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} ने भी {moment_owner_name}के पद्य इमेज पर अपना विचार व्यक्त किया हैं: “{comment}”"
+
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} ने भी {moment_owner_name}'sनोट पर कमेंट किया: “{comment}”"
 
@@ -167,6 +191,9 @@ msgstr "{moment_owner_name} नए दोस्त {friend_name} के सा�
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ने भी आपके हाईलाइट पर कमेंट किया : “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{moment_owner_name} ने भी इस पद्य इमेज पर अपना विचार व्यक्त किया हैं: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} ने भी आपके नोट पर कमेंट किया: “{comment}”"
@@ -204,6 +231,9 @@ msgstr "{name} आपकी {friend_name}के साथ दोस्ती क
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} ने आपका हाईलाइट पसंद किया {reference_human}"
 
+msgid "notifications.likes.moment.mine.image"
+msgstr "{reference_human} के लिए निर्मित पद्य इमेज {name} ने पसंद किया "
+
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} ने नोट को पसंद किया"
 
@@ -224,6 +254,9 @@ msgstr "{name} ने भी बुकमार्क {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} ने भी हाईलाइट {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{name} ने {reference_human} के लिए पद्य इमेज निर्मित किया "
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} के द्वारा एक नया नोट जोड़ा गया"

@@ -3,6 +3,42 @@ fr:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999 999 999"
     social: 
@@ -76,8 +112,8 @@ fr:
         moments content required: "Le contenu ne peut pas être vide."
     meta: 
         kids_app: 
-            title: "La Bible App pour Enfants"
-            description: "La Bible App pour Enfants est un formidable moyen pour vos enfants d'apprendre les histoires bibliques de Jésus, le cadeau de la vie éternelle, et les nombreuses leçons que Dieu nous enseigne. Au travers de cette expérience interactive, les enfants peuvent directement se plonger dans la Parole de Dieu avec des graphismes adorables, en gagnants de points lorsqu'ils lisent et collectent des trésors."
+            title: "La Bible App pour les Enfants"
+            description: "La Bible App pour les Enfants est un excellent moyen pour que vos enfants apprennent les histoires bibliques de Jésus, le don de la vie éternelle, et les nombreuses leçons que Dieu nous enseigne. Au travers de cette expérience interactive, les enfants découvrent la Bible par des illustrations magnifiques tout en gagnant des points en lisant et en récoltant des trésors."
         100million: 
             title: "Ça démarre avec 100 Millions"
             description: "La Bible App a été installée pratiquement 100 millions de fois - une étape incroyable! Cela dit, ce n'est que le début. Aujourd'hui téléchargez gratuitement la Bible App et partagez-la avec vos amis. Ensemble, réécrivons l'histoire."
@@ -95,39 +131,39 @@ fr:
         for: "pour"
         kids: "enfants"
         by youversion: "par YouVersion"
-        help your kids: "Aidez vos enfants à aimer la Parole de Dieu."
-        free download: "À télécharger gratuitement."
+        help your kids: "Aidez vos enfants à tomber amoureux de la Parole de Dieu."
+        free download: "Téléchargez gratuitement!"
         app store: "Disponible sur l'App Store"
-        google play: "À trouver sur Google Play"
-        amazon: "Disponible sur l'Amazon Appstore pour Android"
-        app icon: "Icône de la Bible App pour Enfants"
+        google play: "Téléchargez sur Google Play"
+        amazon: "Disponible sur l'Amazone App Store pour Android"
+        app icon: "Icône de l'App pour la Bible App pour les Enfants"
         jesus and friends: "Jésus et ses amis"
-        interact text: "Interagissez avec la Bible et voyez comme elle prend vie."
-        story text 1: "Le jardin d’Éden"
+        interact text: "Plongez-vous dans la Bible et regardez la prendre vie."
+        story text 1: "Le jardin d'Eden"
         story text 2: "Le premier Noël"
-        story text 3: "Joseph, Marie et l'enfant Jésus dans la mangeoire."
-        story text 4: "Angels appear to the shepherds to tell them about the birth of Christ"
-        story text 5: "Jésus guéri le paralysé"
-        feature 1: "Une expérience de la Bible gratuite pour vos enfants"
-        feature 2: "Une app de livre animé pour les smartphones et tablettes"
-        feature 3: "Des illustrations hautes en couleurs avec des animations tactiles"
-        feature 4: "Des jeux et activités pour aider les enfants à retenir ce qu'ils apprennent"
-        feature 5: "Une navigation adaptée aux enfants"
+        story text 3: "Joseph, Marie, et le bébé Jésus dans l'étable"
+        story text 4: "Des anges apparaissent aux bergers pour leur raconter la naissance de Christ"
+        story text 5: "Jésus guérit le paralytique"
+        feature 1: "Une expérience biblique gratuite pour vos enfants"
+        feature 2: "Des histoires animées pour smartphones et tablettes"
+        feature 3: "Des illustrations colorées avec des animations tactiles"
+        feature 4: "Des jeux et activités pour ne pas oublier ce que vos enfants apprennent "
+        feature 5: "Une navigation intuitive"
         share: 
-            tell friends: "Parler de la Bible App pour Enfants avec vos amis."
+            tell friends: "Parlez à vos amis de la Bible App pour les Enfants"
             facebook name: "La Bible App pour les Enfants"
-            facebook description: "La Bible App pour Enfants est ici ! Téléchargez-la gratuitement pour iOS et Android aujourd'hui: Des histoires de la Bible pour aider vos enfants à apprendre, jouer et grandir dans la Parole de Dieu. www.bible.com/kids"
+            facebook description: "La Bible App pour les Enfants est arrivée ! Téléchargez l'application gratuite sur iOS et Android aujourd'hui: Des histoires interactives pour aider votre enfant à apprendre, jouer et grandir dans la Parole de Dieu. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
-            twitter description: "La Bible App pour Enfantss de @YouVersion est ici ! C'est amusant et totalement gratuit. Télégarger: bible.com/kids"
-            twitter hashtags: "biblepourenfants"
+            twitter description: "La Bible pour les Enfants de @YouVersion est arrivée ! C'est amusant et entièrement gratuit. Téléchargez-la ici: bible.com/kids"
+            twitter hashtags: "La Bible des enfants"
             email: "Email"
-            email subject: "La Bible App pour Enfants est ici !"
-            email body: "Grande nouvelle - la Bible App pour Enfants est ici ! Elle est totalement gratuite et disponible dès maintenant pour iPhone, iPad, iPod touch, et Android. Cette app est une collection d'histoires de la Bible avec des animations tactiles et des activités d'apprentissage, parfait pour aider les enfants à apprendre les grandes histoires de la Bible. Allez sur bible.com/kids sur votre appareil mobile pour la télécharger aujourd'hui."
+            email subject: "La Bible App pour les Enfants est arrivée !"
+            email body: "Grande nouvelle - la Bible App pour les Enfants est arrivée ! Elle est entièrement gratuite et disponible maintenant sur iPhone, iPad, iPod touch et sur les appareils Android. Cette App est une collection grandissante d'histoires bibliques avec des animations tactiles et des activités d'apprentissage, des outils parfaits pour aider vos enfants à apprendre les grandes histoires de la Bible. Allez sur bible.com/kids sur votre appareil mobile pour la télécharger aujourd'hui."
         partner: 
-            youversion: "YouVersion: The world’s most popular Bible App"
-            in partnership: "in partnership with"
-            one hope: "One Hope: Extraordinary Bible content for Kids"
+            youversion: "YouVersion: l'application biblique la plus populaire au monde"
+            in partnership: "en partenariat avec"
+            one hope: "One Hope: un contenu biblique extraordinaire pour les enfants"
         links: 
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
@@ -370,6 +406,11 @@ fr:
             accept request button: "Accepter la demande"
             ignore button: "Décliner"
             ignore request button: "Refuser la demande"
+    images: 
+        none user: "%{username} n'a pas encore créé de verset illustré."
+        blank slate: 
+            heading: "Vous n'avez pas encore de verset illustré"
+            description: "Utilisez la version mobile de l'app Youversion pour créer des versets illustrés."
     notes: 
         none user: "%{username} n'a pas encore pris de notes."
         blank slate: 
@@ -502,6 +543,8 @@ fr:
         user notes: "Les notes de %{user}"
         my friends: "Mes amis"
         my notes: "Notes"
+        my images: "Images"
+        user images: "Versets illustrés de %{user}"
         user friends: "Les amis de %{user}"
         my bookmarks: "Mes signets"
         user bookmarks: "Les signets de %{user}"
@@ -567,7 +610,7 @@ fr:
             description title: "Description du service"
             description text: "LifeChurch.tv fournit aux utilisateurs un accès à une variété de services par le biais de YouVersion, y compris mais non limité à: le visionnement de vidéos en ligne, les messages du blog et les commentaires, les commentaires, divers outils de communication, des forums, et un contenu personnalisé, sans frais pour l'utilisateur. En utilisant YouVersion, vous comprenez que l'utilisation de telles communications peuvent inclure des annonces de service, des messages administratifs et d'autres messages auxquels vous avez souscrit individuellement. Vous comprenez et acceptez que vous êtes responsable pour avoir accès à YouVersion, ce qui peut impliquer l'équipement et les frais de tiers (tels que les frais de fournisseur de services Internet, les frais de temps d'antenne ou d'autres frais associés à l'exposition et de livraison de messages)."
             registration title: "Vos obligations suite à votre inscription"
-            registration text: "needs translation<ul><li>needs translation</li>needs translation<li>needs translation</li></ul>"
+            registration text: "Vous reconnaissez et acceptez de:<ul><li>fournir des informations réelles, précises, à jour et complètes en ce qui vous concerne tel que demandé sur les formulaires d'enregistrement Youversion (les 'informations d'enregsitrement') et</li><li>de maintenir ou mettre à jour ces informations d'enregistrement pour qu'elles demeurent vraies, précises et complètes. Si LifeChurch.tv venait à suspecter que ces informations soient fausses, imprécises, incomplètes ou obsolètes, LifeChurch.tv se réserve le droit de suspendre ou supprimer votre compte et de vous refuser toute ou n'importe quelle utilisation d'un support YouVersion (quel qu'il soit). LifeChurch.tv s'engage à défendre la sécurité et la vie privée de tous ses utilisateurs, en particulier les enfants. C'est pour cette raison que les parents qui permettent à leurs enfants de moins de 13 ans d'accéder à Youversion doivent reconnaître que YouVersion est conçu pour atteindre une audience très large. En tant que gardien légal de votre enfant, il est donc de votre responsabilité de déterminer si Youversion est approprié pour votre enfant ou pas.</li></ul>"
             privacy title: "Politique de confidentialité de LifeChurch.tv"
             privacy text: "Les données d'Inscription et autres informations vous concernant sont sujettes à notre politique de confidentialité, situé à <a href='http://youversion.com/privacy'>http://youversion.com/privacy</a>. Vous comprenez que, grâce à l'utilisation de YouVersion vous consentez à la collecte et l'utilisation (comme énoncé dans la Politique de confidentialité) de ces informations, y compris le transfert de celles-ci aux États-Unis et/ou dans d'autres pays pour le stockage, le traitement et l'utilisation par <a href='http://LifeChurch.tv'>Lifechurch.tv</a>."
             account title: "Compte, mot de passe et sécurité des membres"
@@ -579,9 +622,9 @@ fr:
             content title: "Contenu soumis ou mis à disposition pour l'inclusion dans le service"
             content text: "LifeChurch.tv n'est pas propriétaire du Contenu que vous fournissez ou rendez disponible sur YouVersion. Toutefois, par respect pour le Contenu que vous fournissez ou rendez disponible sur des emplacements accessibles à la publicité sur YouVersion, vous permettez à LifeChurch.tv les licences mondiales, libres de droits et non-exhaustives, comme suit: <ul type='none'><li>Avec respect pour le Contenu que vous fournissez ou rendez disponible sur des emplacements accessibles à la publicité sur YouVersion, la licence d'utiliser, distribuer, reproduire, modifier, adapter, démontrer publiquement, diffuser de la publicité et de produire des travaux dérivés tels que du Contenu afin de fournir et de promouvoir de domaine spécifique de YouVersion pour lequel ce Contenu à été soumis ou rendu accessible.</li>Avec respect envers du Contenu autre que des photographies, graphiques, audio ou vidéo que vous fournissez ou rendez disponibles sur des emplacements accessibles à la publicité sur YouVersion, la licence perpétuelle, irrévocable et totalement sous-licenciable d'utiliser, distribuer, reproduire, modifier, adapter, publier, traduire, démontrer publiquement, diffuser de la publicité et de créer des travaux dérivés (en tout ou en partie) et d'incorporer ce Contenu dans d'autres travaux sous n'importe quel format ou média connu dès maintenant ou développé plus tard.<li>'Accessible publiquement.' Les zones 'Accessibles publiquement' de YouVersion sont des zones conçues afin d'être disponible au grand public.</li>Les zones accessibles publiquement de YouVersion incluent, mais ne sont pas limitées aux, tableaux de messages, commentaires des blogs, zones communautaires, et les forums qui sont accessibles aux membres et aux visiteurs.<li></li></ul>"
             contributions title: "Remerciements à LifeChurch.tv"
-            contributions text: "needs translation<ul><li>needs translation</li><li>needs translation</li><li>needs translation</li><li>needs translation</li><li>needs translation</li><li>needs translation</li></ul>"
+            contributions text: "En soumettant des idées, des suggestions, des documents, ou des propositions («contributions») à LifeChurch.tv, vous reconnaissez et acceptez que :<ul><li> vos Contributions ne contiennent pas de renseignements confidentiels ou exclusifs ;</li><li> LifeChurch.tv n'est soumis à aucune obligation de confidentialité, expresse ou implicite, en ce qui concerne les Contributions ;</li><li>LifeChurch.tv doit être autorisé à utiliser ou divulguer (ou choisir de ne pas utiliser ou divulguer) telles Contributions pour n'importe quel but, de quelque façon que ce soit, dans tous les médias du monde entier ;</li><li>LifeChurch.tv peut avoir quelque chose de semblable aux Contributions déjà à l'étude ou en développement ;</li><li>vos Contributions deviennent automatiquement la propriété de LifeChurch.tv sans aucune obligation de LifeChurch.tv envers vous, et </li><li>vous n'avez droit à aucun dédommagement ou remboursement d'aucune sorte de LifeChurch.tv sous aucun prétexte.</li></ul>"
             indemnity title: "Indemnisation et décharge de responsabilité"
-            indemnity text: "needs translationneeds translation<ul><li>needs translation</li><li>needs translation</li><li>needs translation</li></ul>needs translation"
+            indemnity text: "Vous acceptez de dispenser LifeChurch.tv et ses filiales, sociétés affiliées, dirigeants, agents, employés, partenaires et concédants de licence de toute réclamation ou demande, y compris les honoraires raisonnables d'avocat, faite par une tierce partie liée à ou découlant du Contenu que vous présentez, affichez, transmettez ou rendez disponible de quelque autre manière par le biais de YouVersion, votre utilisation de YouVersion, votre connexion à YouVersion, votre violation des CONDITIONS D'UTILISATION, ou votre violation de tout autre droit.Vous comprenez et acceptez expressément que LifeChurch.tv et ses filiales, sociétés affiliées, dirigeants, employés, agents, partenaires et concédants de licence n'offrent aucune garantie que :<ul><li>YouVersion répondra à vos exigences ; </li><li>YouVersion sera ininterrompu, opportun, sûr ou sans erreur, et </li><li> les résultats qui peuvent être obtenus à partir de l'utilisation de YouVersion seront exacts ou fiables. En aucun cas, LifeChurch.tv se sera tenu responsable pour toute perte ou dommage de quelque nature que ce soit résultant de l'utilisation de tout Contenu mis à disposition via YouVersion. </li></ul>Vous comprenez et acceptez expressément que tout matériel téléchargé ou autrement obtenu par l'utilisation de YouVersion est accessible de votre propre gré et à vos propres risques, et vous serez seul responsable pour tout dommage à votre système informatique ou de la perte de données résultant du téléchargement de tel matériel."
             resale title: "Interdiction de revente des services"
             resale text: "Vous acceptez de ne pas reproduire, dupliquer, copier, vendre, échanger, revendre ou exploiter à des fins commerciales, toute partie de YouVersion (y compris votre Identification LifeChurch.tv), l'utilisation de YouVersion, ou l'accès à YouVersion."
             storage title: "Règles générales concernant l'utilisation et le stockage des données"
@@ -605,7 +648,7 @@ fr:
             trademark title: "Marques déposées"
             trademark text: "Les logos, marques de service, produits et services liés à LifeChurch.tv et ses ministères sont des marques déposées de LifeChurch.tv ( 'les marques de LifeChurch.tv '). Sans autorisation écrite préalable de LifeChurch.tv, vous acceptez de ne pas afficher ou utiliser les marques LifeChurch.tv de quelque manière."
             copyright title: "Avis et procédure de réclamation pour violation de droit d'auteur ou de la propriété intellectuelle"
-            copyright text: "LifeChurch.tv respecte la propriété intellectuelle de chacun. Nous demandons à nos utilisateurs de faire de même, particulièrement lorsque cela concerne l'utilisation de YouVersion. LifeChurch.tv peut, dans certaines circonstances et à sa seule discrétion, désactiver et/ou supprimer les comptes d'utilisateurs qui se montreraient être des récidivistes. Si vous soupçonnez votre travail d'avoir été copié d'une façon qui constituerait une atteinte à vos droits, ou que votre propriété intellectuelle aurait été violée, veuillez envoyer les informations suivantes à legal@youversion.com:<ul type='none'><li>Une signature électronique ou physique de la personne authorisèe à agir en faveur du propriétaire des droit ou de la propriété intellectuelle en question</li>Une description écrite de l’œuvre protégée ou de toute autre propriété intellectuelle qui aurait été violée;<br><li>Une description écrite de l'endroit où se trouve le matériau qui aurait été violé dans YouVersion;<br>Votre adresse, numéro de téléphone, et adresse email (Tout ce qui s'applique);<br></li>Une déclaration écrite par vous attestant de votre bonne foi de croire que l'utilisation discutée ici n'est pas autorisée par les droits d'auteur,son agent, ou par la loi;<li>Une déclaration écrite par vous, faite sous peine de parjure, que les informations précédentes dans votre Notice sont exactes et que vous êtes seul propriétaire des droits ou de la propriété intellectuelle, ou que vous êtes autorisé à agir en faveur du propriétaire des droits ou de la propriété intellectuelle. LifeChurch.tv's</li><li></li><li></li><li></li></ul>"
+            copyright text: "LifeChurch.tv respecte la propriété intellectuelle des tiers. Nous demandons à nos utilisateurs de faire de-même, surtout lorsque cela concerne l'utilisation de YouVersion. LifeChurch.tv peut, si les circonstances l'exigent, et à sa seule discrétion, désactiver ou supprimer les comptes d'utilisateurs considérés comme transgresseurs répétés. Si vous pensez que votre travail a été plagié de manière à transgresser les droits de la propriété intellectuelle, ou que vos droits ont été bafoués de quelque manière que ce soit, veuillez nous envoyer les informations suivantes à legal@youversion.com:<ul type='none'><li>Une signature électronique ou physique de la personne autorisée à agir au nom du propriétaire des droits d'auteurs ou de propriété intellectuelle en question;</li><br><li>Une description écrite du travail soumis à droit d'auteur ou de toute propriété intellectuelle sujette à contrefaçon;</li><br><li>Une description écrite de la location du contenu contrefait sur Youversion;</li><br><li>Votre adresse, numéro de téléphone, et adresse e-mail (tout ce qui s'y rapporte);</li><br><li>Une déclaration écrite de votre part rapportant que c'est en toute bonne foi que vous nous avertissez que l'utilisation frauduleuse en question n'est permise ni par le propriétaire des droits d'auteurs, ni par son agent ou même par la loi;</li><br><li>Une déclaration écrite de votre part, sujette à une pénalité en cas de parjure, indiquant que les informations reprises dans votre déclaration sont exactes et que vous êtes le propriétaire intellectuel ou de droits, ou que vous êtes autorisé à agir de la part de celui-ci. Vous pouvez joindre les agents de LifeChurch.tv qui gèrent les rapports de fraude à la propriété intellectuelle ou de droits d'auteurs en utilisant un des moyens suivants:%{newline}Par courrier: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Téléphone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "Informations générales"
             general text: "Intégralité de l'accord.Ces CONDITIONS D'UTILISATION constituent l'intégralité de l'accord passé entre vous et LifeChurch.tv et dirige votre utilisation de YouVersion, remplaçant tout accord précédent entre vous et LifeChurch.tv dans le respect de YouVersion. Vous pouvez aussi être sujet à des conditions d'utilisation additionnelles.<br><br>Choix de la Loi et du Forum. Les CONDITIONS D'UTILISATION et la relation entre vous et LifeChurch.tv sont sous la tutelle des lois de l'état d'Oklahoma sans égard pour les conflits de lois. Vous et LifeChurch.tv acceptez de vous soumettre à la juridiction personnelle et exclusive des tribunaux situés dans le compté de l'Oklahoma, en Oklahoma.<br><br>Renonciation et divisibilité des Conditions.L'échec de LifeChurch.tv d'exercer ou d'imposer certains droits ou provisions de ces CONDITIONS D'UTILISATION ne constitue pas une renonciation de ces droits ou provisions. Si une quelconque provision de ces CONDITIONS D'UTILISATION est reconnue invalide par un tribunal d'une juridiction compétente, les différentes parties acceptent néanmoins que le tribunal s'efforce de donner suite aux intentions des parties comme mentionné dans la provision, et les autres provisions de ces CONDITIONS D'UTILISATION demeurent pleinement effectives.<br><br>Pas de droit de survie et de non transférabilité.Vous aceptez que votre compte chez LifeChurch.tv est non transférable, et que tous les droits appartiennent à LifeChurch.tv L'identité ou le contenu de votre compte prennent fin à votre décès. Dès réception d'une copie d'un certificat de décès, LifeChurch.tv peut résilier votre compte et supprimer définitivement tous le contenu qui s'y trouve.<br><br>Lois de prescriptionsVous comprenez et acceptez qu'en l'absence de loi contraire, toute réclamation ou cause d'action découlant de ou relative à l'utilisation de YouVersion ou des CONDITIONS D'UTILISATION doit être déposée dans l'année (1) sous peine d'être prescrite à tout jamais.<br><br>Les sections titres contenues dans les CONDITIONS D'UTILISATION ne sont présentes que pour la forme et n'ont aucun effet légal ou contractuel."
         profile: 
@@ -618,6 +661,7 @@ fr:
             tab notes: "Notes"
             tab bookmarks: "Favori"
             tab highlights: "Surbrillances"
+            tab images: "Images"
             tab badges: "Badges"
             first name: "Prénom"
             last name: "Nom"
@@ -713,6 +757,7 @@ fr:
         none me: "Vous n'avez gagné aucun badge pour l'instant."
         none user: "%{username} n'a gagné aucun badge pour l'instant."
     plans: 
+        share plan: "Jetez un oeil à ce nouveau #PlanDeLecture de @YouVersion : %{plan_title}"
         widget: 
             my plans: "Mes plans"
             start reading: "Commencer à lire"
@@ -841,8 +886,10 @@ fr:
         loading sidebar content: "Chargement de la barre de menu..."
     videos: 
         title: "Vidéos"
+        watch videos: "Regardez des vidéos à propos de la Bible"
         all: "Toutes les vidéos"
         related scripture: "Versets associés"
+        share video: "Je regarde %{video_title} sur @YouVersion."
     licenses: 
         authorized: 
             heading: "Votre contenu a été autorisé."
@@ -942,9 +989,9 @@ fr:
         line 3: "Bible qui vous suit partout."
         download: "Télécharger maintenant"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Téléchargez la Bible App pour les Enfants"
+        description copy: "La Bible App pour les Enfants est un bon moyen pour vos enfants de découvrir les histoires bibliques concernant Jésus."
+        download: "Télécharger maintenant"
     about page: 
         relevancy: "Pertinence"
         relevancy copy: "Les générations qui nous ont précédés avaient un accès limité à la Bible. Nous ne sommes plus à ce stade de nos jours. Cependant, plusieurs personnes ayant accès à la Bible pensent que Son message est en décalage par rapport à leur vie. Contrairement à ceux qui réussissent à établir un lien entre la Bible et leurs expériences de tous les jours."
@@ -995,10 +1042,24 @@ fr:
         what people: "Ce que les gens disent à propos de la Bible App..."
         t1: "J'ai toujours la Parole avec moi."
         t1 copy: "J'ai mis des signets sur les passages importants pour moi. J'ai même lu la totalité de la Bible en une année grâce aux plans de lecture."
-        t2: "Super application !"
-        t2 copy: "Cette app m'aide à rester organisé et à lire la Parole de Dieu chaque jour. Elle est simple d'utilisation et offre de nombreuses fonctionnalités. J'en suis fan !"
+        t2: "Hautement recommandé"
+        t2 copy: "J'aime la façon dont je peux me connecter avec mes amis, et les plans de lectures sont fantastiques. Cette application m'aide aussi à rester régulier dans ma lecture, car il y a des rappels dans les plans. Cela m'offre également une autre manière de m'approcher de Dieu. Téléchargez cette app et lisez tous les jours!"
         t3: "Superbe app."
         t3 copy: "Super application, avec un large choix de traductions. Les bibles audios sont aussi formidables et faciles à comprendre."
+        t4: "Très Bien ! En constante amélioration!"
+        t4 copy: "Beaucoup de traductions et de langues disponibles, dont beaucoup peuvent être téléchargées et lues hors ligne. Beaucoup de fonctions utiles, comme les possibilités d'écrire des notes et des marque pages."
+        t5: "La meilleure app de la Bible au monde!"
+        t5 copy: "J'aime toutes les versions disponibles, les versets du jour, les dévotions, les plans et la communauté. Merci pour cette app gratuite. :)"
+        t6: "De nombreuses versions et une lecture hors ligne!"
+        t6 copy: "Très bien parce qu'elle contient beaucoup de versions différentes et je peux en télécharger plusieurs pour les lire hors ligne.  Je peux même écouter cette app."
+        t7: "Super app!"
+        t7 copy: "Elle m'aide à lire la Bible davantage. J'aime les fonctions de recherche et de partage, et les nombreuses manières de partager. J'aime aussi les versions audio."
+        t8: "Très bonne app"
+        t8 copy: "C'est un très bon outil pour étudier plusieurs traductions. C'est aussi pratique pour écouter la Bible lorsque vous conduisez."
+        t9: "La meilleure app de la Bible!"
+        t9 copy: "C'est la meilleure app biblique existante. Elle possède différentes langues et traductions pour des utilisations en ligne et hors ligne. Elle possède des dévotions pour tous les sujets auxquels vous pouvez penser. Vous pouvez vous connecter aux autres et apprendre de Dieu et de sa Parole."
+        version list: "Plus de 1000 versions comprenant:"
+        audio version list: "Ecoutez les versions audio, comprenant:"
         iphone ipad: "Iphone/Ipad"
         android: "Android"
         blackberry: "BlackBerry"

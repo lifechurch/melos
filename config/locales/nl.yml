@@ -3,6 +3,42 @@ nl:
     time: 
         formats: 
             votd: "%-d, %b, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -77,7 +113,7 @@ nl:
     meta: 
         kids_app: 
             title: "De Bijbel App voor kinderen"
-            description: "De Bijbel App voor Kinderen is een geweldige manier om ze Bijbelverhalen over Jezus te leren, het geschenk van het eeuwige leven en vele andere lessen die God ons leert. Met deze interactieve ervaring komen kinderen rechtstreeks in aanraking met het Woord van God, door prachtige beelden terwijl ze punten verdienen voor het lezen en schatten verzamelen."
+            description: "De Bijbel app voor kinderen is een geweldige manier voor kinderen om de Bijbelse verhalen over Jezus, ons geschenk op eeuwig leven, en de vele lessen die God ons leert, te ontdekken. In deze interactieve ervaring houden kinderen zich rechtstreeks bezig met het Woord van God met verrukkelijke visuele beelden terwijl ze punten verdienen en schatten verzamelen door het lezen."
         100million: 
             title: "Het begint met 100 miljoen"
             description: "De Bijbel App is al bijna 100 miljoen keer geïnstalleerd - een geweldige mijlpaal! Maar we zijn pas begonnen. Download vandaag de gratis Bijbel App nog -en deel de app met jouw vrienden. Laten we samen geschiedenis maken."
@@ -93,41 +129,41 @@ nl:
     kids: 
         bible app: "De Bijbel App"
         for: "voor"
-        kids: "kids"
-        by youversion: "by YouVersion"
-        help your kids: "Help your kids fall in love with God’s Word."
-        free download: "Download for free!"
-        app store: "Available on the App store"
-        google play: "Get it on Google Play"
-        amazon: "Available at Amazon Appstore for Android"
-        app icon: "App icon for The Bible App for Kids"
-        jesus and friends: "Jesus and friends"
-        interact text: "Interact with the Bible and see it come to life."
-        story text 1: "The garden of Eden"
-        story text 2: "The first Christmas"
-        story text 3: "Joseph, Mary, and the baby Jesus in the manger"
-        story text 4: "Angels appear to the shepherds to tell them about the birth of Christ"
-        story text 5: "Jesus heals the paralytic"
-        feature 1: "A free Bible experience for your kids"
-        feature 2: "Animated storybook app for smartphones and tablets"
-        feature 3: "Colorful illustrations with touch-activated animations"
-        feature 4: "Games and activities help kids remember what they learn"
-        feature 5: "Kid-friendly navigation"
+        kids: "kinderen"
+        by youversion: "door YouVersion"
+        help your kids: "Help je kinderen te houden van Gods Woord."
+        free download: "Download gratis!"
+        app store: "Te verkrijgen in de App store"
+        google play: "Verkrijg het op Google Play"
+        amazon: "Beschikbaar in de Amazon Appstore voor Android"
+        app icon: "App icoon voor de Bijbel App voor kinderen"
+        jesus and friends: "Jezus en vrienden"
+        interact text: "Werk met de Bijbel en kijk hoe hij tot leven komt."
+        story text 1: "De tuin van Eden"
+        story text 2: "De eerste kerstmis"
+        story text 3: "Jozef, Maria en baby Jezus in de kribbe"
+        story text 4: "Engelen verschijnen bij de herders om hen te vertellen over de geboorte van Jezus Christus"
+        story text 5: "Jezus geneest de lamme"
+        feature 1: "Een gratis Bijbel ervaring voor uw kinderen"
+        feature 2: "Geanimeerd verhalenboek app voor smartphones en tablets"
+        feature 3: "Kleurrijke illustraties met animaties die worden geactiveerd door aanraken"
+        feature 4: "Spelletjes en activiteiten helpen kinderen te herinneren wat ze geleerd hebben"
+        feature 5: "Kindvriendelijke navigatie"
         share: 
-            tell friends: "Tell your friends about the Bible App for Kids."
-            facebook name: "De Bijbel App voor kinderen"
-            facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
+            tell friends: "Vertel je vrienden over de Bijbel app voor kinderen"
+            facebook name: "De Bijbel app voor kinderen"
+            facebook description: "De Bijbel App voor kinderen is er! Download de gratis app voor iOS en Android vandaag: interactieve Bijbel verhalen helpen kinderen te leren, spelen en groeien met Gods Woord. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
-            twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
-            twitter hashtags: "kidsbible"
+            twitter description: "De Bijbel App voor kinderen van @YouVersion is er! Het is leuk en volledig gratis. Download: bible.com/kids"
+            twitter hashtags: "kinderbijbel"
             email: "E-mail"
-            email subject: "The Bible App for Kids is here!"
-            email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
+            email subject: "De Bijbel App voor kinderen is er!"
+            email body: "Geweldig nieuws - de Bijbel App voor kinderen is er! Het is geheel gratis en nu beschikbaar voor iPhone, iPad, iPod touch en Android toestellen. De app is een groeiende collectie van Bijbel verhalen met animatie door aanraking en leeractiviteiten. Perfect om kinderen de grote verhalen uit de Bijbel te leren. Ga naar bible.com/kids op uw mobiele apparaat om het vandaag te downloaden. "
         partner: 
-            youversion: "YouVersion: The world’s most popular Bible App"
-            in partnership: "in partnership with"
-            one hope: "One Hope: Extraordinary Bible content for Kids"
+            youversion: "YouVersion: 's werelds meest populaire Bijbel app"
+            in partnership: "in samenwerking met"
+            one hope: "One Hope: bijzondere Bijbelse inhoud voor kinderen"
         links: 
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
@@ -370,6 +406,11 @@ nl:
             accept request button: "Accepteer verzoek"
             ignore button: "Afwijzen"
             ignore request button: "Verzoek afwijzen"
+    images: 
+        none user: "%{username} heeft nog geen afbeeldingen gecreëerd. "
+        blank slate: 
+            heading: "Je hebt nog geen afbeeldingen"
+            description: "Gebruik de YouVersion mobiele app om vers afbeeldingen te creëren."
     notes: 
         none user: "%{username} heeft nog geen notities gemaakt."
         blank slate: 
@@ -502,6 +543,8 @@ nl:
         user notes: "Notities van %{user}"
         my friends: "Vrienden"
         my notes: "Notities"
+        my images: "Afbeeldingen"
+        user images: "%{user}'s afbeeldingen."
         user friends: "Vrienden van %{user}"
         my bookmarks: "Mijn bladwijzers"
         user bookmarks: "Bladwijzers van %{user}"
@@ -567,7 +610,7 @@ nl:
             description title: "Beschrijving van de dienst"
             description text: "LifeChurch.tv voorziet gebruikers van toegang tot een verzameling van diensten door middel van YouVersion, die omvatten, maar niet beperkt zijn tot: online video bekijken, blogartikelen en opmerkingen, commentaar, andere soorten communicatiemiddelen, forums en persoonlijke inhoud, zonder kosten voor de gebruiker. Door YouVersion te gebruiken begrijp je dat dit gebruik ook de communicaties vanuit LifeChurch.tv omvat, zoals, maar niet beperkt tot, aankondiging van diensten, administratieve berichten en andere berichten waar je persoonlijk voor bent ingeschreven. Je begrijpt en bent het ermee eens dat je zelf verantwoordelijk bent voor het verkrijgen van toegang tot YouVersion, dus voor de kosten van je apparaten en vergoedingen aan derden (zoals voor je internetaanbieder, kosten voor beltegoed of andere kosten die te maken hebben met het tonen en afleveren van berichten)."
             registration title: "Je registratieverplichtingen"
-            registration text: "Je erkent en stemt ermee in om: <ul> <li>correcte, accurate, actuele en volledige informatie over jezelf, zoals gevraagd in het registratieformulier van YouVersion (de 'Registratiegegevens') en </li> <li> de registratiegegevens te beheren en tijdig te actualiseren om ze waarheidsgetrouw, nauwkeurig, actueel en volledig te houden. Als LifeChurch.tv vermoedt dat dergelijke informatie onwaar, onnauwkeurig, niet actueel of onvolledig is, heeft LifeChurch.tv het recht om je account op te schorten of te beëindigen en om je het huidige of toekomstige gebruik van YouVersion (of een deel daarvan) te ontzeggen. LifeChurch.tv is bezorgd over de veiligheid en privacy van al haar gebruikers, met name kinderen. Om deze reden moeten de ouders van kinderen onder de 13 jaar er bewust van zijn dat hun kinderen een site (YouVersion) bezoeken die is ontworpen voor een zo breed mogelijk publiek. Daarom is het de verantwoordelijkheid van de ouders als juridische voogd van hun kind om te bepalen of YouVersion geschikt is voor je kind.</li></ul>"
+            registration text: "U bevestigt en komt overeen dat u:<ul><li>waarheid getrouwe, accurate en volledige informatie over uzelf verstrekt zoals aangegeven in het YouVersion registratie formulier(en) (de &quot;Registratie Data&quot;) en</li><li>dat u de Registratie Data regelmatig naar waarheid bijwerkt. Mocht LifeChurch.tv vermoeden dat deze informatie niet waar, inaccuraat, niet actueel of compleet is, dan heeft LifeChurch.tv het recht uw inschrijving en het huidige of toekomstige gebruik van YouVersion te beëindigen of weigeren (geldt ook voor onderdelen van). LifeChurch.tv hecht veel waarde aan de veiligheid en privacy van al zijn gebruikers, in het bijzonder kinderen. Om deze rede, dienen ouders van kinderen ermee in te stemmen dat kinderen tot 13 jaar kennis nemen van het feit dat YouVersion is ontwikkeld voor een breed publiek. Dienovereenkomstig, als voogd van uw kind, is het uw verantwoordelijkheid om te bepalen of YouVersion geschikt is voor uw kind.</li></ul>"
             privacy title: "YouVersion Privacybeleid"
             privacy text: "Registratiegegevens en andere informatie over jou is onderhavig aan ons Privacybeleid, te vinden in <a href='http://youversion.com/privacy'>http://youversion.com/privacy</a>. Je begrijpt dat je door je gebruik van YouVersion toestemming geeft voor het verzamelen en gebruik (zoals beschreven in het Privacybeleid) van deze informatie, inclusief het overbrengen van deze informatie naar de Verenigde Staten en/of andere landen voor opslag, verwerking en gebruik door <a href='http://LifeChurch.tv'>Lifechurch.tv</a>."
             account title: "Gebruikersaccount, wachtwoord en beveiliging"
@@ -605,7 +648,7 @@ nl:
             trademark title: "Handelsmerkinformatie"
             trademark text: "De handelsmerken, logo's, dienstmerken, en product- en dienstnamen die verband houden met LifeChurch.tv en de aanverwante bedieningen, zijn handelsmerken van LifeChurch.tv (de 'LifeChurch.tv Marks'). Zonder voorafgaande schriftelijke toestemming van LifeChurch.tv, ga je ermee akkoord die niet weer te geven of gebruik te maken van de LifeChurch.tv Marks op welke manier dan ook."
             copyright title: "Mededelingen en procedure voor het aanspraak maken op auteursrecht of inbreuk op intellectuele eigendomsrechten"
-            copyright text: "LifeChurch.tv respecteert het intellectuele eigendom van anderen. We vragen onze gebruikers hetzelfde te doen, met name waar het gaat om het gebruik op YouVersion. LifeChurch.tv mag, in passende omstandigheden en naar eigen goeddunken accounts van gebruikers die mogelijk herhaaldelijk hierop inbreuk maken uitschakelen en/of beëindigen. Als je van mening bent dat jouw werk is gekopieerd op een wijze die inbreuk maakt op auteursrechten, of dat je intellectuele eigendomsrechten op een andere manier misbruikt zijn, stuur dan de volgende informatie naar legal@youversion.com:<ul type='none'><li>Een elektronische of fysieke handtekening van de persoon die gemachtigd is om op te treden namens de eigenaar van het auteursrecht of andere intellectuele eigendomsrechten in kwestie;</li><li>Een schriftelijke omschrijving van het auteursrechtelijk beschermd werk of ander intellectueel eigendom waarvan je beweert dat het overtreden is;</li><li>Een schriftelijke beschrijving van waar het materiaal dat je eist wordt overtreden geplaatst is op YouVersion;</li><li> Je adres, telefoonnummer en e-mailadres (alles wat van toepassing is);</li><li>Een schriftelijke verklaring van jou dat je te goeder trouw meent dat het betwiste gebruik niet is toegestaan ​​door de auteursrechthebbende, diens vertegenwoordiger of de wet;</li><li>Een schriftelijke verklaring van jou, op straffe van meineed, dat de bovenstaande informatie in je bericht nauwkeurig is en dat jij de auteursrechtelijke of intellectuele eigenaar bent, of dat jij bevoegd bent om op te treden namens de auteursrechtelijke of intellectuele eigenaar. </li></ul>"
+            copyright text: "LifeChurch.tv respecteert het intellectuele eigendom van anderen. We vragen onze gebruikers hetzelfde te doen, vooral als het om het gebruik van YouVersion gaat. LifeChurch.tv kan, in de juiste omstandigheden en naar eigen goeddunken, gebruikersaccounts van herhaalde overtreders blokkeren of beëindigen. Als je denkt dat je werk is gekopieerd wat geldt als auteursrechtschending, of als het is misbruikt op een andere manier, zend dan asjeblieft de volgende informatie naar: legal@youversion.com:<ul type='none'><li>Een elektronische of fysieke handtekening van de persoon die namens de eigenaar van het auteursrecht of ander intellectueel eigendom optreedt;</li><br><li>Een geschreven beschrijving van het auteursrechtelijk werk, of ander intellectueel eigendom waarvan je denkt dat het misbruikt is;</li><br><li>Een geschreven beschrijving van de plek op YouVersion waar het materiaal staat, waarvan je claimt dat deze is misbruikt;</li><br><li>Je adres, telefoonnummer, en emailadres (alles wat van toepassing is);</li><br><li>Een geschreven statement door jou, dat je goede reden hebt te denken dat het betwiste gebruik niet is geautoriseerd door de eigenaar van het auteursrecht, zijn bemiddelaar, of de wet;</li><br><li>Een geschreven statement door jou, op straffe van meineed, dat bovenstaande informatie in je Notitie juist is, en dat je de eigenaar van het auteursrecht of ander intellectueel eigendom bent, of dat je bent geautoriseerd door de eigenaar daarvan om te handelen. LifeChurch.tv's Bemiddelaar voor de Notitie van auteursrechtclaims, of claims van ander intellectueel eigendom, kan als volgt worden bereikt: %{newline}Door email: LifeChurch.tv c/o - Contract Coordinator %{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Telefoonnummer: (405) 680 - 5433 %{newline} Fax: (405) 844-3002 %{newline} Email: %{mailto_link}</li></ul>"
             general title: "Algemene informatie"
             general text: "Volledige overeenkomst. Deze GEBRUIKERSVOORWAARDEN vormen de gehele overeenkomst tussen jou en LifeChurch.tv en bepalen het gebruik van YouVersion en vervangen tevens alle voorgaande overeenkomsten tussen jou en LifeChurch.tv met betrekking tot YouVersion. Je kunt ook onderworpen zijn aan aanvullende bepalingen en voorwaarden.<br><br>Keuze van wetgeving en forum. De GEBRUIKERSVOORWAARDEN en de relatie tussen jou en LifeChurch.tv worden bepaald door de wetten van de staat Oklahoma, zonder verwijzing naar zijn conflict van wettelijke bepalingen. Jij en LifeChurch.tv stemmen in met de persoonlijke en exclusieve jurisdictie van de rechtbanken in het graafschap van Oklahoma County, Oklahoma.<br><br>Vrijstelling en afstandneming van voorwaarden. Het falen van LifeChurch.tv om uit te oefenen of af te dwingen enig recht of bepaling van deze GEBRUIKERSVOORWAARDEN doet geen afstand van dit recht of deze bepaling. Indien enige bepaling van deze GEBRUIKERSVOORWAARDEN ongeldig wordt gevonden door een bevoegde rechtbank, dan stemmende partijen ermee in dat de rechtbank moet proberen uitvoering te geven aan de bedoelingen van de partijen zoals aangegeven in de bepaling; en de andere bepalingen van deze GEBRUIKERSVOORWAARDEN blijven onverkort van kracht.<br><br>Geen recht op overleving en Niet-overdraagbaarheid. Je stemt ermee in dat jouw LifeChurch.tv-account niet overdraagbaar is, en alle rechten op je LifeChurch.tv-ID of de inhoud in jouw account wegvallen als je overlijdt. Na ontvangst van een kopie van een overlijdensakte, kan LifeChurch.tv je account opzeggen en permanent daarmee alle inhoud verwijderen.<br><br>Statuut van beperkingen. Je begrijpt en stemt ermee in dat onafhankelijk van enige wet of verordening van het tegendeel, elke claim of rechtszaak die voortvloeit uit of verband houdende met het gebruik van YouVersion of deze GEBRUIKERSVOORWAARDEN moet worden ingediend binnen één (1) jaar nadat deze claim of actie is ontstaan ​​of anders voorgoed wordt uitgesloten.<br><br>De deeltitels binnen deze GEBRUIKERSVOORWAARDEN zijn voor de duidelijkheid en hebben geen wettelijke of contractuele invloed."
         profile: 
@@ -618,6 +661,7 @@ nl:
             tab notes: "Notities"
             tab bookmarks: "Bladwijzers"
             tab highlights: "Markeringen"
+            tab images: "Afbeeldingen"
             tab badges: "Medailles"
             first name: "Voornaam"
             last name: "Achternaam"
@@ -713,6 +757,7 @@ nl:
         none me: "Je hebt nog geen medaille verdiend."
         none user: "%{username} heeft nog geen medaille verdiend."
     plans: 
+        share plan: "Bekijk deze @YouVersion #Bijbelplan: %{plan_title}"
         widget: 
             my plans: "Mijn Leesplannen"
             start reading: "Begin met lezen"
@@ -841,8 +886,10 @@ nl:
         loading sidebar content: "Zijbalk inhoud aan het laden..."
     videos: 
         title: "Video's"
+        watch videos: "Bekijk video's over de Bijbel"
         all: "Alle Video's"
         related scripture: "Gerelateerde Bijbeltekst"
+        share video: "Ik kijk %{video_title} op @YouVersion."
     licenses: 
         authorized: 
             heading: "Je account is geverifieerd!"
@@ -942,9 +989,9 @@ nl:
         line 3: "die overal met je meegaat."
         download: "Nu downloaden"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Download de Bijbel App voor Kinderen"
+        description copy: "De Bijbel App voor Kinderen is een fantastische manier om je kinderen bekend te maken met de Bijbelse verhalen over Jezus."
+        download: "Nu downloaden"
     about page: 
         relevancy: "Relevantie"
         relevancy copy: "Voor vroegere generaties was de toegang tot de Bijbel heel beperkt. Tegenwoordig is dat niet meer zo. Hoewel veel mensen toegang hebben tot de Bijbel, denken ze dat de boodschap niet meer van toepassing is voor hun leven. Tegelijk zijn er anderen die geloven dat er verband is tussen de Bijbel en hun dagelijkse ervaringen."
@@ -995,10 +1042,24 @@ nl:
         what people: "Wat mensen over de gratis Bijbel app zeggen…"
         t1: "Ik heb het Woord altijd bij me."
         t1 copy: "Ik heb bladwijzers geplaatst bij verzen die voor mij belangrijk zijn. Ik heb zelfs de Bijbel in een jaar helemaal uitgelezen dankzij de leesplannen."
-        t2: "Leuk programma!"
-        t2 copy: "Deze app helpt mij om alles in orde te hebben en om elke dag in Gods Woord te lezen. Hij is makkelijk te bedienen en biedt veel fucties. Ik ben er dol op!"
+        t2: "Sterk aanbevolen"
+        t2 copy: "Ik vind het geweldig hoe je met vrienden kunt verbinden en de Bijbel leesplannen zijn geweldig Deze applicatie helpt mij ook om consistent te blijven in het lezen omdat het herinneringen heeft voor de plannen. Het geeft me ook een andere manier om dichter tot God te komen. Download dit en lees elke dag!"
         t3: "Geweldige app."
         t3 copy: "Leuke app met een brede keuze aan Bijbels. De audio-Bijbels zijn ook geweldig en makkelijk te begrijpen."
+        t4: "Geweldig.Elke keer beter!"
+        t4 copy: "Veel vertalingen en talen beschikbaar en veel die gedownload kunnen worden om offline te lezen. Veel bruikbare kenmerken, zoals de mogelijkheid om notities en bladwijzers te maken."
+        t5: "De beste Bijbelapp ooit!"
+        t5 copy: "Fantastisch dat er zoveel vertalingen zijn en ook verzen van de dag, toewijdingen, leesplannen en gemeenschap. Bedankt voor deze gratis app. :)"
+        t6: "Meerdere versies en offline lezen!"
+        t6 copy: "Geweldig, omdat er veel verschillende vertalingen zijn en dat ik verscheidene vertalingen kon downloaden om offline te lezen.  Ik kan naar deze app luisteren."
+        t7: "Geweldige app!"
+        t7 copy: "Helpt me om de Bijbel meer te lezen. De zoek en deel functies en de verschillende manieren om te delen zijn fantastisch. Waardeer ook de audio versies."
+        t8: "Geweldige app"
+        t8 copy: "Dit is een geweldig hulpmiddel voor het bestuderen van meerdere vertalingen. Het is ook handig voor het luisteren naar de bijbel als je rijdt."
+        t9: "Beste Bijbel app!"
+        t9 copy: "Dit is de beste Bijbel app die er is. Het heeft het woord in verschillende talen en versies voor online en offline gebruik. Er zijn overdenkingen voor alles wat je kan bedenken. Je kan met anderen verbinden en uiteindelijk leren over God en zijn Woord,"
+        version list: "Meer dan 1000 Bijbel vertalingen, inclusief:"
+        audio version list: "Luister naar Bijbel audio vertalingen, inclusief:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"
