@@ -10,7 +10,7 @@
       = link_to( t("press"), press_path)
       = link_to( t("get support"), external_url(:support) )
       - if @site.allow_donate? && [:es, :"es-ES", :pt, :"pt-PT", :"pt", :tr].exclude?(current_locale)
-        = link_to( t("donate title"), (@site.donate_path || donate_path), rel: "nofollow")
+        = link_to( t("donate title"), (@site.donate_path || donate_path))
     - unless ENV['RACK_ENV'] =~ /production/i
       %p.small.mute.environment
         ="Non-production deployment, pointing at: #{Cfg.try :api_root}"
@@ -22,9 +22,9 @@
 
     %p.social-links
       = link_to("Blog", blog_url(current_locale), class: "blog")
-      = link_to("Facebook", "http://www.facebook.com/YouVersion", class: "fb", rel: "nofollow")
-      = link_to("Twitter", "http://www.twitter.com/youversion", class: "tw", rel: "nofollow")
-      = link_to("Instagram", "http://www.instagram.com/youversion", class: "ig", rel: "nofollow")
-      = link_to("Pinterest", "http://www.pinterest.com/lifechurchtv/youversion-the-bible-app/", class: "pn", rel: "nofollow")
-      = link_to("YouTube", "http://www.youtube.com/youversion", class: "yt", rel: "nofollow")
+      = link_to("Facebook", "http://www.facebook.com/YouVersion", class: "fb")
+      = link_to("Twitter", "http://www.twitter.com/youversion", class: "tw")
+      = link_to("Instagram", "http://www.instagram.com/youversion", class: "ig")
+      = link_to("Pinterest", "http://www.pinterest.com/lifechurchtv/youversion-the-bible-app/", class: "pn")
+      = link_to("YouTube", "http://www.youtube.com/youversion", class: "yt")
 
