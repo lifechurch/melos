@@ -1,0 +1,18 @@
+- @title = "Trending Bible Verses"
+
+- content_for :additional_meta do
+  = render '/shared/hreflang'
+
+- content_for :meta_description do
+  = "trending meta"
+
+- content_for :sidebar do
+  = render partial: 'widgets/download_app'
+  = render partial: 'widgets/bible_app_for_kids'
+
+%article
+  %h1
+    Trending Bible verses
+  - @trending_verses.each do |usfm|
+    %p= usfm
+
