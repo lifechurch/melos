@@ -13,6 +13,7 @@
 - content_for :additional_meta do
   = render '/shared/hreflang'
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - locale_dir = '/es' if I18n.locale.to_s.eql?('es-ES')
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}/app"
   %link{rel: "canonical", href: canonicalHref}
   %meta{name: "url",            content: @meta_url}

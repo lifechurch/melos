@@ -7,6 +7,7 @@
   - content_for :additional_meta do
     = render '/shared/hreflang'
     - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+    - locale_dir = '/es' if I18n.locale.to_s.eql?('es-ES')
     - canonicalHref = "https://www.bible.com#{locale_dir}/versions/#{@version.to_param}"
     %link{rel: "canonical", href: canonicalHref}
 - content_for :meta_description do
