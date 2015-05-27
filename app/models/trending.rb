@@ -2,7 +2,8 @@
 
 class Trending < YV::Resource
 
-  # attributes [:images, :moment_title, :expanded_dt, :category, :body_images]
+  attributes [:verse]
+  api_response_mapper YV::API::Mapper::Trending
 
   class << self
 
@@ -45,14 +46,8 @@ class Trending < YV::Resource
     # }
     # }
 
-    def trending_path
+    def list_path
       "moments/trending"
-    end
-
-    def all()
-      data, errs = get(trending_path)
-      results = YV::API::Results.new(data,errs)
-      return results
     end
 
   end

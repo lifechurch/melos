@@ -1,19 +1,19 @@
-# module YV
-#   module API
-#     module Mapper
-#       class Trending < Base
-#
-#         class << self
-#
-#           def from_all(results)
-#             results.map do |ref|
-#                Reference.new(ref)
-#             end
-#           end
-#
-#         end
-#
-#       end
-#     end
-#   end
-# end
+module YV
+  module API
+    module Mapper
+      class Trending < Base
+
+        class << self
+
+          def from_all(results)
+            sp = results
+            sp = sp.take(10) if sp.present?
+            YV::API::Results.new(sp)
+          end
+
+        end
+
+      end
+    end
+  end
+end
