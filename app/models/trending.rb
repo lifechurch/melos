@@ -2,8 +2,6 @@
 
 class Trending < YV::Resource
 
-  include YV::Concerns::Moments
-
   # attributes [:images, :moment_title, :expanded_dt, :category, :body_images]
 
   class << self
