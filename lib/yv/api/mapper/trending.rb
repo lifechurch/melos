@@ -6,7 +6,9 @@
 #         class << self
 #
 #           def from_all(results)
-#             results
+#             results.map do |ref|
+#                Reference.new(ref)
+#             end
 #           end
 #
 #         end
