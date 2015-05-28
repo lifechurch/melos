@@ -100,6 +100,8 @@ ko:
         users last name required: "성을 입력해 주세요."
         moments content required: "내용이 있어야 합니다."
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "어린이들을 위한 성경 앱"
             description: "어린이 성경앱은 자녀들에게 예수님, 영생 구원의 선물 등 하나님께서 우리에게 가르쳐 주신 것들을 이야기를 통해서 배울 수있습니다.   쌍방 대화식의 경험을 통해서 아이들이 하나님의 말씀을 시청각 자료들을 통해서 직접 체험하게 됩니다.  그리고 말씀을 읽으면서 포인트도 적립하고 보물도 모으게 됩니다."
@@ -770,6 +772,7 @@ ko:
             private: "비공개"
             public: "공개"
         title: "묵상"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "카테고리별 보기"
         browse plans: "%{category} 항목의 계획 보기"
         swap list localization: "(<a href='%{swap_link}'> %{swap_locale}에서 보기</a>)"
@@ -971,6 +974,8 @@ ko:
     download ad: 
         title: "무료 성경 앱을 다운로드하세요"
         description copy: "%{language_count}개 이상의 언어로 제공되는 수백개의 번역본 - 성경이 여러분과 늘 함께 합니다."
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "어디서나 함께 할 수 있는"
         line 2: "수백개의 언어로 수백개의"
         line 3: "번역본을 제공하는 성경앱."

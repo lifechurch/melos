@@ -111,6 +111,8 @@ da:
         users last name required: "Du skal indtaste efternavnet"
         moments content required: "Indhold må ikke være tomt."
     meta: 
+        best kids app: "Bedste Børne App!"
+        best educational app: "Bedste Uddannelses App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ da:
             private: "Privat"
             public: "Offentlig"
         title: "Læse planer"
+        meta title: "Online Bibel studie, vejledninger og læseplaner"
         browse by category: "Kig via kategori"
         browse plans: "Kig %{category} planer"
         swap list localization: "(<a href='%{swap_link}'>Se i %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ da:
     download ad: 
         title: "Hent den gratis Bible App"
         description copy: "Hundrede af versioner i %{language_count}+ forskellige sprog - Bibelen er altid med dig overalt."
+        meta copy title: "Hent den gratis Bible App"
+        meta copy versions: "Hundrede af versioner på %{language_count} + forskellige sprog"
         line 1: "Hundrede af versioner i 100+"
         line 2: "forskellige sprog - Bibelen"
         line 3: "den er med dig overalt."

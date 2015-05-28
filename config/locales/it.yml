@@ -111,6 +111,8 @@ it:
         users last name required: "Devi scrivere un cognome."
         moments content required: "Il campo non può essere vuoto."
     meta: 
+        best kids app: "Migliore App per Ragazzi!"
+        best educational app: "Migliore App Educativa"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ it:
             private: "Privato"
             public: "Pubblico"
         title: "Piani di Lettura"
+        meta title: "Studio della Bibbia, devozionali e piani di lettura online"
         browse by category: "Sfoglia per Categoria"
         browse plans: "Sfoglia i Piani di %{category}"
         swap list localization: "(<a href='%{swap_link}'>Vedere in %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ it:
     download ad: 
         title: "Scarica l'App Bibbia gratuita."
         description copy: "Centinaia di versioni nel %{language_count}+diverse lingue-la Bibbia che va con te ovunque."
+        meta copy title: "Scarica l'App Bibbia gratuita."
+        meta copy versions: "Centinaia di versioni in + di %{language_count} lingue diverse"
         line 1: "Centinaia di versioni in 100+"
         line 2: "lingue diverse - la Bibbia"
         line 3: "che ti segue ovunque."

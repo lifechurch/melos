@@ -100,6 +100,8 @@ zh-TW:
         users last name required: "您必須鍵入一個姓氏。"
         moments content required: "内容不能留白。"
     meta: 
+        best kids app: "最棒的兒童應用！"
+        best educational app: "最棒的教育應用"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -770,6 +772,7 @@ zh-TW:
             private: "保密"
             public: "公開"
         title: "讀經計劃"
+        meta title: "線上聖經研習、靈修與讀經計劃"
         browse by category: "分目錄瀏覽"
         browse plans: "瀏覽 %{category} 計劃"
         swap list localization: "(<a href='%{swap_link}'>以 %{swap_locale} 檢視</a>)"
@@ -971,6 +974,8 @@ zh-TW:
     download ad: 
         title: "免費下載聖經軟體"
         description copy: "數以百計以超過%{language_count} 種不同語言譯成的版本 - 聖經軟體伴您左右。"
+        meta copy title: "免費下載聖經軟體"
+        meta copy versions: "上百個%{language_count} 多種不同語言的譯本"
         line 1: "幾百種不同的譯本"
         line 2: "上百種不同的語言 —— 這聖經"
         line 3: "都能隨身跟着您"

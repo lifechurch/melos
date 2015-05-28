@@ -100,6 +100,8 @@ th:
         users last name required: "คุณต้องใส่นามสกุลของคุณ"
         moments content required: "ไม่อาจเว้นว่างในช่องข้อมูลนี้"
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -770,6 +772,7 @@ th:
             private: "ส่วนตัว"
             public: "สาธารณะ"
         title: "แผนการอ่าน"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "สำรวจโดยหมวดหมู่"
         browse plans: "สำรวจตามแผนฯ %{category}"
         swap list localization: "(<a href='%{swap_link}'>ดูใน %{swap_locale}</a>)"
@@ -971,6 +974,8 @@ th:
     download ad: 
         title: "ดาวน์โหลดแอพพระคัมภีร์ฟรี"
         description copy: "พระคัมภีร์กว่าร้อยเล่มจาก %{language_count} ภาษา - ให้พระคัมภีร์นี้ติดตัวคุณไปในทุกที่"
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "หลายร้อยฉบับใน 100+"
         line 2: "ต่างภาษา - พระคัมภีร์"
         line 3: "ที่จะไปกับคุณทุกหนทุกแห่ง"

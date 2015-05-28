@@ -111,6 +111,8 @@ mk:
         users last name required: "Внеси го презимето"
         moments content required: "Содржината не може да биде празна."
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ mk:
             private: "Лични"
             public: "Јавни"
         title: "Планови за читање"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Преглед по категории"
         browse plans: "Разгледај ги плановите од %{category}"
         swap list localization: "(<a href='%{swap_link}'>Види во %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ mk:
     download ad: 
         title: "Симни ја бесплатната Библиска Апликација"
         description copy: "Стотици верзии во над %{language_count} различни јазици - Библијата која оди насекаде заедно со тебе."
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Стотици верзии на 100 +"
         line 2: "различни јазици - Библија"
         line 3: "која е постојано со тебе."

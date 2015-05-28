@@ -111,6 +111,8 @@ el:
         users last name required: "Πρέπει να εισάγετε ένα επώνυμο."
         moments content required: "Το περιεχόμενο δεν μπορεί να είναι κενό."
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "Εφαρμογή \"Αγία Γραφή\" για Παιδιά"
             description: "Η εφαρμογή Αγία Γραφή για Παιδιά είναι ένας υπέροχος τρόπος για να παιδιά σας να μάθουν βιβλικές ιστορίες για τον Ιησού, το δώρο της αιώνιας ζωής και όλα αυτά τα μαθήματα που μας διδάσκει ο Θεός. Σε αυτή τη διαδραστική εμπειρία, τα παιδιά συνδέονται απευθείας με το Λόγο του Θεού μέσω ευχάριστων εικόνων ενώ ταυτόχρονα κερδίζουν πόντους από βιβλική μελέτη και συλλογή θησαυρών."
@@ -293,7 +295,7 @@ el:
         showing related: "Εμφάνιση σχετικών σημειώσεων"
         return to: "Επιστροφή στο"
         time past: "%{ago} πριν"
-        user likes this: "Αρέσει στον/ην%{last_liker_link}"
+        user likes this: "Αρέσει στον/ην %{last_liker_link}"
         likes count more: "%{likes_count} περισσότερα"
         likes count 2 more: "%{likes_count} περισσότερα"
         likes count 3 or more: "%{likes_count} περισσότερα"
@@ -783,6 +785,7 @@ el:
             private: "Ιδιωτικό"
             public: "Δημόσιο"
         title: "Σχέδια Μελέτης"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Περιήγηση ανά κατηγορία "
         browse plans: "Περιήγηση σε Σχέδια %{category}"
         swap list localization: "(<a href='%{swap_link}'>Προβολή σε %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ el:
     download ad: 
         title: "Κατεβάστε δωρεάν την εφαρμογή \"Αγία Γραφή\""
         description copy: "Εκατοντάδες εκδόσεις σε %{language_count} διαφορετικές γλώσσες - η Αγία Γραφή που πάει μαζί σας παντού."
+        meta copy title: "Κατεβάστε δωρεάν την εφαρμογή \"Αγία Γραφή\""
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Εκατοντάδες εκδόσεων σε 100+"
         line 2: "διαφορετικές γλώσσες - Η Αγία Γραφή"
         line 3: "που έρχεται μαζί σας παντού."
