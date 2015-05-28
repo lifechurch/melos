@@ -100,6 +100,8 @@ id:
         users last name required: "Anda harus masukkan nama belakang."
         moments content required: "Isi tidak bisa kosong."
     meta: 
+        best kids app: "Aplikasi terbaik untuk anak-anak!"
+        best educational app: "Aplikasi Terbaik untuk Pendidikan"
         kids_app: 
             title: "Ap Alkitab untuk Anak-anak"
             description: "Ap Alkitab untuk Anak-anak adalah cara hebat untuk anak Anda belajar kisah-kisah Alkitab tentang Yesus, hadiah hidup kekal kita, dan banyak pelajaran yang Tuhan ajarkan pada kita. Dalam pengalaman interaktif ini, anak-anak terhubung langsung dengan Firman Tuhan melalui visual yang menarik sambil mendapatkan poin untuk membaca dan mengumpulkan harta karun."
@@ -141,14 +143,14 @@ id:
         share: 
             tell friends: "Beritahu teman Anda tentang Ap Alkitab untuk Anak-anak."
             facebook name: "Ap Alkitab untuk Anak-anak"
-            facebook description: "Ap Alkitab untuk Anak-anak ada di sini! Unduh aplikasi gratis untuk iOS dan Android hari ini: cerita-cerita Alkitab interaktif untuk membantu anak Anda belajar, bermain, dan bertumbuh dalam Firman Tuhan.\nwww.bible.com/kids"
-            facebook link: "http://www.bible.com/kids"
-            facebook redirect: "http://www.bible.com/kids"
-            twitter description: "Ap Alkitab untuk Anak-anak dari @YouVersion ada disini! Menyenangkan dan sepenuhnya gratis. Unduh: bible.com/kids"
+            facebook description: "Ap Alkitab untuk Anak-anak ada di sini! Unduh aplikasi gratis untuk iOS dan Android hari ini: cerita-cerita Alkitab interaktif untuk membantu anak Anda belajar, bermain, dan bertumbuh dalam Firman Tuhan. www.bible.com/anak"
+            facebook link: "http://www.bible.com/anak"
+            facebook redirect: "http://www.bible.com/anak"
+            twitter description: "Ap Alkitab untuk Anak-anak dari @YouVersion ada disini! Menyenangkan dan sepenuhnya gratis. Unduh: bible.com/anak"
             twitter hashtags: "kidsbible"
             email: "Email"
             email subject: "Ap Alkitab untuk Anak-anak ada di sini!"
-            email body: "Berita besar - Ap Alkitab untuk Anak-anak ada di sini! Gratis total dan tersedia untuk perangkat iPhone, iPad, iPod touch, dan Android. Aplikasi ini adalah kumpulan cerita Alkitab yang terus bertambah dengan animasi sentuh-aktif dan aktivitas belajar, cocok untuk membantu anak memahami kisah-kisah besar Alkitab. Masuk ke bible.com/kids pada perangkat seluler Anda untuk mengunduhnya hari ini."
+            email body: "Berita besar - Ap Alkitab untuk Anak-anak ada di sini! Gratis total dan tersedia untuk perangkat iPhone, iPad, iPod touch, dan Android. Aplikasi ini adalah kumpulan cerita Alkitab yang terus bertambah dengan animasi sentuh-aktif dan aktivitas belajar, cocok untuk membantu anak memahami kisah-kisah besar Alkitab. Masuk ke bible.com/anak pada perangkat seluler Anda untuk mengunduhnya hari ini."
         partner: 
             youversion: "YouVersion: Aplikasi Alkitab terpopuler di dunia."
             in partnership: "rekanan dengan"
@@ -770,6 +772,7 @@ id:
             private: "Pribadi"
             public: "Publik"
         title: "Rencana Bacaan"
+        meta title: "Pendidikan Alkitab daring, renungan dan rencana bacaan"
         browse by category: "Telusuri menurut Kategori"
         browse plans: "Telusuri Rencana %{category}"
         swap list localization: "(<a href='%{swap_link}'>Lihat di %{swap_locale}</a>)"
@@ -971,6 +974,8 @@ id:
     download ad: 
         title: "Unduh Aplikasi Alkitab Gratis"
         description copy: "Ratusan versi dalam %{language_count}+ bahasa berbeda - Alkitab yang ikut ke manapun Anda pergi."
+        meta copy title: "Unduh Aplikasi Alkitab Gratis"
+        meta copy versions: "Ratusan versi dalam %{language_count} + bahasa lain"
         line 1: "Ratusan versi dalam 100+"
         line 2: "bahasa berbeda - Alkitab"
         line 3: "yang selalu bersama Anda."

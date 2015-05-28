@@ -111,6 +111,8 @@ hi:
         users last name required: "आखरी नाम इंटर करना अनिवार्य हैं।"
         moments content required: "सारांश रिक्त अस्वीकार्य"
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ hi:
             private: "निजी"
             public: "सार्वजनिक"
         title: "पाठक योजनाएँ"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "श्रेणी के अनुसार ब्राउस कीजिए"
         browse plans: "%{category} योजनाएँ ब्राउस कीजिए"
         swap list localization: "(<a href='%{swap_link}'>में देखे%{swap_locale}</a>)"
@@ -984,6 +987,8 @@ hi:
     download ad: 
         title: "मुफ्त बाइबिल App डाउनलोड कीजिए"
         description copy: "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "100 से अधिक संस्करण"
         line 2: "बाइबिल अब अनेक भाषाओँ में"
         line 3: "हमेशा आपके साथ"

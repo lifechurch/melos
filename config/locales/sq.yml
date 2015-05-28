@@ -111,6 +111,8 @@ sq:
         users last name required: "Ju duhet të futni mbiemrin tuaj"
         moments content required: "Përmbajtja nuk mund të jetë bosh."
     meta: 
+        best kids app: "Programi për Fëmijë më i mirë!"
+        best educational app: "Programi më i mirë edukativ"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ sq:
             private: "Private"
             public: "Publike"
         title: "Planet e leximit"
+        meta title: "Plane leximi, devocionale dhe studime biblike në internet"
         browse by category: "Shfletoni sipas kategorisë"
         browse plans: "Shfleto planet %{category}"
         swap list localization: "(<a href='%{swap_link}'>Shiko në %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ sq:
     download ad: 
         title: "Shkarko Programin e Biblës Falas."
         description copy: "Qindra versione në %{language_count}+ gjuhë të ndryshme - Bibla që vjen me ju kudo."
+        meta copy title: "Shkarko falas Programin e Biblës"
+        meta copy versions: "Qindra versione në %{language_count}+ gjuhë të ndryshme"
         line 1: "Qindra versione në 100+"
         line 2: "gjuhë të ndryshme - Bibla"
         line 3: "që shkon me ju kudo."

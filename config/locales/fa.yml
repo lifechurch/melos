@@ -6,28 +6,28 @@ fa:
     datetime: 
         time_ago_in_words: 
             about_x_hours: 
-                other: "about %{count} hours ago"
+                other: "حدود %{count} ساعت پیش"
             about_x_months: 
-                other: "about %{count} months ago"
+                other: "حدود %{count} ماه پیش"
             about_x_years: 
-                other: "about %{count} years ago"
+                other: "حدود %{count} سال پیش"
             almost_x_years: 
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
+                other: "تقریباً %{count} سال پیش"
+            half_a_minute: "نیم دقیقه پیش"
             less_than_x_minutes: 
-                other: "less than %{count} minutes ago"
+                other: "کمتر از %{count} دقیقه پیش"
             less_than_x_seconds: 
-                other: "less than %{count} seconds ago"
+                other: "کمتر از %{count} ثانیه پیش"
             over_x_years: 
-                other: "over %{count} years ago"
+                other: "بیش از %{count} سال پیش"
             x_days: 
-                other: "%{count} days ago"
+                other: "%{count} روز پیش"
             x_minutes: 
-                other: "%{count} minutes ago"
+                other: "%{count} دقیقه پیش"
             x_months: 
-                other: "%{count} months ago"
+                other: "%{count} ماه پیش"
             x_seconds: 
-                other: "%{count} seconds ago"
+                other: "%{count} ثانیه پیش"
     counter: 
         format: "999,999,999"
     social: 
@@ -100,6 +100,8 @@ fa:
         users last name required: "درج نام خانوادگی الزامی است"
         moments content required: "درج اطلاعات الزامی است!‏"
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "اَپ/برنامۀ «کتاب‌مقدس» برای کودکان"
             description: "اَپ «کتاب‌مقدس برای کودکان» وسیله‌ای عالی تا از طریق آن، فرزندان شما داستانهای کتاب‌مقدس دربارۀ عیسای مسیح، هدیۀ حیات جاودان و بسیاری از تعالیم الاهی را بیاموزند. در این برنامۀ جذاب، بچه‌ها از طریق برنامه‌های بصری، همزمان با کسب امتیازاتی در خواندن و نیز جمع‌آوری گنجینه‌های کلام، مستقیماً با کلام خدا مشغول می‌شوند."
@@ -141,14 +143,14 @@ fa:
         share: 
             tell friends: "اَپ «کتاب‌مقدس برای کودکان» را به دوستان خود معرفی کنید."
             facebook name: "اَپ «کتاب‌مقدس» برای کودکان"
-            facebook description: "اَپ/برنامۀ «کتاب‌مقدس» برای کودکان اکنون آمادۀ ارائه است! این برنامه را به‌صورت رایگان برای دستگاه‌های iOS و Android دانلود کنید. داستان‌های سرگرم‌کنندۀ این برنامه به کودکان شما در آموختن و رشد کردن در کلام خدا کمک می کند. www.bible.com/kids"
-            facebook link: "http://www.bible.com/kids‌"
-            facebook redirect: "http://www.bible.com/kids‌"
-            twitter description: "برنامۀ «کتاب‌مقدس کودکان» محصولی از @YouVersion اکنون آمادۀ ارائه است! این برنامه آموزنده و رایگان است. آدرس دانلود: bible.com/kids"
+            facebook description: "اَپ/برنامۀ «کتاب‌مقدس» برای کودکان اکنون آمادۀ ارائه است! این برنامه را به‌صورت رایگان برای دستگاه‌های iOS و Android دانلود کنید. داستان‌های سرگرم‌کنندۀ این برنامه به کودکان شما در آموختن و رشد کردن در کلام خدا کمک می کند. www.bible.com/fa/kids"
+            facebook link: "http://www.bible.com/fa/kids‌"
+            facebook redirect: "http://www.bible.com/fa/kids‌"
+            twitter description: "برنامۀ «کتاب‌مقدس کودکان» محصولی از @YouVersion اکنون آمادۀ ارائه است! این برنامه آموزنده و رایگان است. آدرس دانلود: bible.com/fa/kids"
             twitter hashtags: "برنامۀ «کتاب‌مقدس» برای کودکان"
             email: "ای‌میل"
             email subject: "اَپ/برنامۀ «کتاب‌مقدس» برای کودکان آمادۀ ارائه است!‌"
-            email body: "مژده! - برنامۀ «کتاب‌مقدس» کودکان آمادۀ ارائه است! این برنامه رایگان است و برای سیستم‌های آیفون، آیپد، آیپاد تاچ و اندروید قابل دانلود می‌باشد. داستان‌های متنوع کتاب‌مقدس به‌صورت انیمیشن در این برنامه ارائه می‌شود، و به مرور زمان داستان‌های جدید نیز به آنها افزوده می گردد. این برنامه شامل فعالیت‌های آموزشی مناسب برای تعلیم داستان‌های طولانی کتاب‌مقدس به کودکان است. برای دانلود این برنامه لطفاً به آدرس bible.com/kids بروید."
+            email body: "مژده! - برنامۀ «کتاب‌مقدس» کودکان آمادۀ ارائه است! این برنامه رایگان است و برای سیستم‌های آیفون، آیپد، آیپاد تاچ و اندروید قابل دانلود می‌باشد. داستان‌های متنوع کتاب‌مقدس به‌صورت انیمیشن در این برنامه ارائه می‌شود، و به مرور زمان داستان‌های جدید نیز به آنها افزوده می گردد. این برنامه شامل فعالیت‌های آموزشی مناسب برای تعلیم داستان‌های طولانی کتاب‌مقدس به کودکان است. برای دانلود این برنامه لطفاً به آدرس bible.com/fa/kids بروید."
         partner: 
             youversion: "یوورژن: محبوبترین اَپ کتاب‌مقدس در دنیا!"
             in partnership: "با همکاری"
@@ -584,9 +586,9 @@ fa:
             information security title: "ما از اطلاعات شما چگونه محافظت می‌کنیم؟"
             information security text: "LifeChurch.tv اطلاعات شخصی شما را بدون کسب اجازۀ صریح از شما با هیچ مؤسسۀ دیگری خارج از این وب‌سایت به اشتراک نخواهد گذاشت. این وب‌سایت تنها در صورتی اطلاعات شخصی شما را به اشتراک خواهد گذاشت که محتوای ایمانی خوبی دارند که دسترسی، استفاده، حفظ یا علنی ساختن آنها به منظور (الف) اجرای هر گونه قانون، مقررات، فرایند حقوقی یا درخواست دولتی قابل اجرا، (ب) اجرای شروط قابل اعمال استفاده از اطلاعات شامل تحقیق و بررسی هر گونه نقض بالقوۀ قانون، (ج) بازرسی، پیشگیری یا کلاهبرداری از طریق دادن آدرسِ غیر، مسائل امنیتی و فنی یا (د) محافظت در برابر وارد شدن هر گونه آسیب قریب‌الوقوع به حقوق، دارایی یا ایمنی LifeChurch.tv، کاربران آن یا عموم مردم که طبق قانون لازم یا مجاز دانسته شده‌ است، به‌شکلی منطقی ضروری می‌باشد. LifeChurch.tv جهت مقابله با دسترسی یا تغییر، افشا یا از بین بردن اطلاعات، اقدامات امنیتی مناسبی به عمل می‌آورد که عبارتند از: مرور داخلی مجموعۀ داده‌ها، اقدامات مرتبط با ذخیره، پردازش داده‌ها و اقدامات ایمنی و نیز اقدامات امنیتی فیزیکی به منظور حفاظت در برابر دسترسی غیرمجاز افراد به سیستمهایی که اطلاعات شخصی را در آنها ذخیره می‌کنیم. جز در مواردی که LifeChurch.tv اجازۀ صریح شما را کسب نموده باشد، دسترسی به اطلاعات شخصی صرفاً محدود به کارمندان، پیمانکاران و کارگزارانی در این وب‌سایت است که جهت راه‌اندازی، توسعه یا بهبود بخشیدن به خدمات‌ ما نیازمند آگاهی از آنها هستند. این افراد به تعهدات محرمانه بودن اطلاعات پایبند می‌باشند و در صورت عمل نکردن به این تعهدات، مشمول مجازاتهایی از قبیل پایان خدمت و تعقیب کیفری خواهند شد."
             data integrity title: "صداقت در استفاده از داده‌ها"
-            data integrity text: "LifeChurch.tv reviews our data collection, storage and processing practices to ensure that we only collect, store and process the personal information needed to provide or improve our services. We take reasonable steps to ensure that the personal information we process is accurate, complete, and current, but we depend on our users to update or correct their personal information whenever necessary."
+            data integrity text: "LifeChurch.tv اقدامات مربوط به جمع‌آوری، ذخیره و پردازش داده‌ها را مرور و بررسی می‌کند تا اطمینان حاصل گردد که صرفاً اطلاعات شخصی مورد نیاز جهت ارائۀ خدمات یا بهبود بخشیدن به آنها را جمع‌آوری، ذخیره و پردازش کرده‌ایم. ما به منظور تضمین اینکه اطلاعات شخصی‌ مورد پردازش دقیق، کامل و به‌روز هستند، اقدامات لازم را انجام می‌دهیم، ولی به‌روزرسانی یا تصحیح اطلاعات شخصی کاربران در هر زمان لازم، برعهدۀ خود آنهاست."
             information access title: "دسترسی و به روز رسانی اطلاعات شخصی"
-            information access text: "When you use any LifeChurch.tv service, we make good faith efforts to provide you with access to your personal information and either to correct this data if it is inaccurate or to delete such data at your request if it is not otherwise required to be retained by law or for legitimate service purposes. We ask individual users to identify themselves and the information requested to be accessed, corrected or removed before processing such requests, and we may decline to process requests that are unreasonably repetitive or systematic, require disproportionate technical effort, jeopardize the privacy of others, or would be extremely impractical (for instance, requests concerning information residing on backup tapes), or for which access is not otherwise required. In any case where we provide information access and correction, we perform this service free of charge, except if doing so would require a disproportionate effort. Some of our services have different procedures to access, correct or delete users' personal information."
+            information access text: "وقتی از هر گونه خدمات LifeChurch.tv استفاده می‌کنید، ما خالصانه تمام تلاش خود را می‌کنیم تا شما به اطلاعات شخصی خویش دسترسی داشته باشید؛ یا اینکه در صورت دقیق نبودن چنین اطلاعاتی، آنها را تصحیح نموده و اگر طبق قانون و بنابر اهداف قانونی ارائۀ خدمات، نیازی به نگهداری آنها نباشد، به درخواست شما حذفشان کنیم. ما از یکایک کاربران خواهشمندیم پیش از طرح درخواست دسترسی، تصحیح یا حذف اطلاعات مورد نیاز، خود را معرفی و اطلاعات خویش را شناسایی کنند. در همین راستا، این امکان وجود دارد که از رسیدگی به درخواستهای پردازشی که به‌ شکلی غیر منطقی تکراری یا سیستماتیک بوده، نیازمند اقدامات فنی بسیار زیادی هستند، حریم خصوصی دیگران را به خطر می‌اندازند، شدیداً ناشدنی هستند (به‌طور مثال، درخواستهای مربوط به اطلاعات موجود بر روی نوارهای بَک‌آپ) یا اطلاعاتی را دربرمی‌گیرند که دسترسی به آنها اصولاً لازم نیست، امتناع کنیم. در مواردی که امکان دسترسی به اطلاعات و تصحیح آنها را فراهم می‌سازیم، ارائۀ این خدمات جز در مواقعی که انجام آنها مستلزم تلاشی بسیار زیاد باشد، رایگان خواهد بود. برخی از خدمات ما مراحل دسترسی، تصحیح یا حذف متفاوتی در رابطه با اطلاعات شخصی کاربران دارند."
             enforcement title: "اجراگذاری"
             enforcement text: "LifeChurch.tv پایبندی خود به سیاست حریم خصوصی را به‌طور دوره‌ای مرور و بررسی می‌کند. هنگامی که شکایات مکتوب رسمی در رابطه با مسائل حریم خصوصی دریافت می‌کنیم، بنابر سیاست کاری‌ خود، با کاربر شاکی در خصوص نگرانیهای وی تماس خواهیم گرفت. ضمناً، جهت رسیدگی به هر گونه شکایت در خصوص انتقال داده‌های شخصی که قابل حل بین LifeChurch.tv و فرد شاکی نیستند، با مقامات قانونگذار ذیربط من‌جمله مقامات حفاظت از داده‌های محلی همکاری خواهیم کرد."
             questions title: "پرسش‌ها"
@@ -770,6 +772,7 @@ fa:
             private: "خصوصی"
             public: "عمومی"
         title: "برنامه‌هاى مطالعه"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "جستجو براساس طبقه‌بندی"
         browse plans: "%{category} جستجوى برنامه‌ها براساس"
         swap list localization: "(<a href='%{swap_link}'> در %{swap_locale} مشاهده کنید </a>)"
@@ -971,6 +974,8 @@ fa:
     download ad: 
         title: "دانلود برنامۀ کتاب‌مقدس"
         description copy: "صدها ترجمه به زبان‌های مختلف - کتاب‌مقدسی که همه جا همراه شماست %{language_count}.‌"
+        meta copy title: "دانلود برنامۀ کتاب‌مقدس"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "صدها ترجمه در +۱۰۰"
         line 2: "زبان‌های مختلف - کتاب‌مقدس"
         line 3: "در هر جا با شماست‏.‏"

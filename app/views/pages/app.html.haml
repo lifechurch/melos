@@ -13,6 +13,7 @@
 - content_for :additional_meta do
   = render '/shared/hreflang'
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - locale_dir = '/es' if I18n.locale.to_s.eql?('es-ES')
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}/app"
   %link{rel: "canonical", href: canonicalHref}
   %meta{name: "url",            content: @meta_url}
@@ -66,9 +67,9 @@
       %li#dl_hppalm
         %h2= link_to t('mobile page.hp palm'), "https://developer.palm.com/appredirect/?packageid=com.youversion.palm"
       %li#dl_java
-        %h2= link_to t('mobile page.java'), "http://www.getjar.com/mobile/29005/bible-app"
+        %h2= link_to t('mobile page.java'), "http://java.apps.opera.com/en_us/bible_000261.html?p=11"
       %li#dl_symbian
-        %h2= link_to t('mobile page.symbian'), "http://www.getjar.com/mobile/29005/bible-app"
+        %h2= link_to t('mobile page.symbian'), "http://java.apps.opera.com/en_us/bible_000261.html?p=11"
       %li#dl_mobile
         %h2= link_to t('mobile page.mobile web'), "http://www.bible.com"
       %li#dl_amazon

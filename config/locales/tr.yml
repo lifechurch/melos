@@ -111,6 +111,8 @@ tr:
         users last name required: "Soyadınızı girlmelisiniz."
         moments content required: "İçerik boş olamaz."
     meta: 
+        best kids app: "En İyi \"Çocuklar İçin\" Uygulaması!"
+        best educational app: "En İyi Eğitim Uygulaması"
         kids_app: 
             title: "Çocuklar için Kutsal Kitap Uygulaması"
             description: "Çocuklar için Kutsal Kitap Uygulaması, çocuklarınızın İsa ve sonsuz yaşam armağanımız hakkında ve Tanrı'nın bizim ders almamız için anlattığı birçok yaşanmış Kutsal Kitap hikayesini öğrenmesinin harika bir yoludur. Birebir katılım gerektiren özelliği sayesinde, çocuklarınızın keyifli görsellerle okuma yaparak ve hazineler biriktirerek puan toplarken Tanrı'nın sözüyle meşgul olmasını sağlar."
@@ -152,14 +154,14 @@ tr:
         share: 
             tell friends: "Çocuklar için Kutsal Kitap Uygulaması'nı Arkadaşlarınıza da Önerin"
             facebook name: "Çocuklar için Kutsal Kitap Uygulaması"
-            facebook description: "Çocuklar için Kutsal Kitap Uygulaması burada! İOS ve Android için ücretsiz uygulamayı buradan indirebilirsiniz. Katılıma imkan veren Kutsal Kitap hikayeleri, çocuğunuzun öğrenim, oyun ve Tanrı'nın sözünde gelişim yetilerine yardımcıdır. www.bible.com/kids"
-            facebook link: "http://www.bible.com/kids"
-            facebook redirect: "http://www.bible.com/kids"
-            twitter description: "@YouVersion'dan Çocuklar için Kutsal Kitap Uygulaması başladı! Eğlenceli ve tümüyle ücretsiz. İndirme için: bible.com/kids"
+            facebook description: "Çocuklar için Kutsal Kitap Uygulaması burada! İOS ve Android için ücretsiz uygulamayı buradan indirebilirsiniz. Katılıma imkan veren Kutsal Kitap hikayeleri, çocuğunuzun öğrenim, oyun ve Tanrı'nın sözünde gelişim yetilerine yardımcıdır. www.bible.com/cocuk"
+            facebook link: "http://www.bible.com/cocuk"
+            facebook redirect: "http://www.bible.com/cocuk"
+            twitter description: "@YouVersion'dan Çocuklar için Kutsal Kitap Uygulaması başladı! Eğlenceli ve tümüyle ücretsiz. İndirme için: bible.com/cocuk"
             twitter hashtags: "cocuklarakutsalkitap"
             email: "e-posta"
             email subject: "Çocuklar için Kutsal Kitap burada!"
-            email body: "Size harika bir haberimiz var: Çocuklar için Kutsal Kitap Uygulaması hazır! Tamamı ücretsiz ve iPhone, iPad, iPod touch ve Android cihazlarda kullanıma uygun. Uygulama, sürekli geliştirilen, çocukların Kutsal Kitap'ta anlatılan önemli olayları öğrenmesine mükemmel şekilde yardımcı olan, dokunarak aktif katılım sağlayan animasyonlarla ve öğretici aktivitelerle sunulmuş Kutsal Kitap hikayeleriyle dolu. Uygulamayı hemen indirmek için mobil cihazınızda bible.com/kids web sayfasını açın."
+            email body: "Size harika bir haberimiz var: Çocuklar için Kutsal Kitap Uygulaması hazır! Tamamı ücretsiz ve iPhone, iPad, iPod touch ve Android cihazlarda kullanıma uygun. Uygulama, sürekli geliştirilen, çocukların Kutsal Kitap'ta anlatılan önemli olayları öğrenmesine mükemmel şekilde yardımcı olan, dokunarak aktif katılım sağlayan animasyonlarla ve öğretici aktivitelerle sunulmuş Kutsal Kitap hikayeleriyle dolu. Uygulamayı hemen indirmek için mobil cihazınızda bible.com/cocuk web sayfasını açın."
         partner: 
             youversion: "YouVersion: En çok tercih edilen Kutsal Kitap Uygulaması"
             in partnership: "ve ortak katkı sağlayan"
@@ -783,6 +785,7 @@ tr:
             private: "Özel"
             public: "Topluma Açık"
         title: "Okuma Planları"
+        meta title: "Çevrimiçi Kutsal Kitap çalışması, ibadete yönelik dualar ve okuma planları"
         browse by category: "Türüne Göre Gözat"
         browse plans: "%{category} Okuma Planlarına Gözat"
         swap list localization: "(<a href='%{swap_link}'>Şurada görüntüle: %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ tr:
     download ad: 
         title: "Kutsal Kitap Uygulamasını ücretsiz indirin"
         description copy: "%{language_count} ve daha birçok dilde yüzlerce Kutsal Kitap tercümesi bulunduğunuz her yerde elinizin altında."
+        meta copy title: "Ücretsiz Kutsal Kitap Uygulaması'nı İndirin"
+        meta copy versions: "%{language_count} dilde yüzlerce çeviri + farklı diller"
         line 1: "Yüzden fazla dilde yüzlerce"
         line 2: "değişik çeviriyi içeren, sizinle"
         line 3: "her yere gidebilen Kutsal Kitap."

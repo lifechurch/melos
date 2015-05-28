@@ -6,39 +6,39 @@ tl:
     datetime: 
         time_ago_in_words: 
             about_x_hours: 
-                one: "about 1 hour ago"
-                other: "about %{count} hours ago"
+                one: "may%{count} oras nang nakalipas"
+                other: "mga %{count} oras nang nakalipas"
             about_x_months: 
-                one: "about 1 month ago"
-                other: "about %{count} months ago"
+                one: "may%{count} buwan nang nakalipas"
+                other: "mga %{count} buwan nang nakalipas"
             about_x_years: 
-                one: "about 1 year ago"
-                other: "about %{count} years ago"
+                one: "may %{count} taon nang nakalipas"
+                other: "mga %{count} taon nang nakalipas"
             almost_x_years: 
-                one: "almost 1 year ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
+                one: "halos %{count} taon nang nakalipas"
+                other: "halos %{count} taon nang nakalipas"
+            half_a_minute: "kalahating minuto nang nakalipas"
             less_than_x_minutes: 
-                one: "less than a minute ago"
-                other: "less than %{count} minutes ago"
+                one: "kumulang %{count} minuto nang nakalipas"
+                other: "kumulang %{count} minuto nang nakalipas"
             less_than_x_seconds: 
-                one: "less than 1 second ago"
-                other: "less than %{count} seconds ago"
+                one: "kumulang %{count} segundo nang nakalipas"
+                other: "kumulang %{count} segundo nang nakalipas"
             over_x_years: 
-                one: "over 1 year ago"
-                other: "over %{count} years ago"
+                one: "humigit %{count} taon nang nakalipas"
+                other: "humigit %{count} taon nang nakalipas"
             x_days: 
-                one: "1 day ago"
-                other: "%{count} days ago"
+                one: "%{count} araw nang nakalipas"
+                other: "%{count} araw nang nakalipas"
             x_minutes: 
-                one: "1 minute ago"
-                other: "%{count} minutes ago"
+                one: "%{count} minuto nang nakalipas"
+                other: "%{count} minuto nang nakalipas"
             x_months: 
-                one: "1 month ago"
-                other: "%{count} months ago"
+                one: "%{count} buwan nang nakalipas"
+                other: "%{count} buwan nang nakalipas"
             x_seconds: 
-                one: "1 second ago"
-                other: "%{count} seconds ago"
+                one: "%{count} segundo nang nakalipas"
+                other: "%{count} segundo nang nakalipas"
     counter: 
         format: "999,999,999"
     social: 
@@ -111,6 +111,8 @@ tl:
         users last name required: "Kinakailangang magbigay ng apelyido."
         moments content required: "Hindi maaring blangko ang nilalaman."
     meta: 
+        best kids app: "Ang pinakamahusay na Pambatang App!"
+        best educational app: "Pinakamahusay na Pang-Edukasyong App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -783,6 +785,7 @@ tl:
             private: "Pribado"
             public: "Pampubliko"
         title: "Mga Babasahing Gabay"
+        meta title: "Online ng pagaaral ng Bibliya, mga debosyonal at mga babasahing gabay"
         browse by category: "Tumingin ayon sa Kategorya"
         browse plans: "Tingnan ang mga Babasahing Gabay para sa %{category}"
         swap list localization: "(<a href='%{swap_link}'>Paki-view sa %{swap_locale}</a>)"
@@ -984,6 +987,8 @@ tl:
     download ad: 
         title: "I-download ang Libreng Bible App"
         description copy: "Daan-daang salin sa %{language_count}+ na iba't-ibang wika - ang Bibliya na makakasama mo kahit saan."
+        meta copy title: "I-download ang Libreng Bible App"
+        meta copy versions: "Daan-daang salin sa %{language_count}+ na iba't-ibang mga wika"
         line 1: "Daan-daang salin sa 100+"
         line 2: "iba't ibang wika - ang Bibliya"
         line 3: "na kasama mo kahit saan."
