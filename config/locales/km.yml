@@ -100,6 +100,8 @@ km:
         users last name required: "អ្នក​ត្រូវ​បញ្ចូល​នាម"
         moments content required: "មាតិការ​មិន​អាច​ទទេ​រ​បាន​ឡើយ។"
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -770,6 +772,7 @@ km:
             private: "ឯក​ជន"
             public: "សាធារណះ"
         title: "គំរោង​អាន​"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "រុក​រក​តាម​ប្រភេទ"
         browse plans: "គំរោង​រុក​រក %{category}"
         swap list localization: "(<a href='%{swap_link}'>មើល​ក្នុង %{swap_locale}</a>)"
@@ -971,6 +974,8 @@ km:
     download ad: 
         title: "ដោន​ឡូដ​យក​ Bible App ដោយ​ឥត​គិតថ្លៃ"
         description copy: "មាន​ជំនាន់​រាប់​រយ​ត្រូវ​បាន​បក​ប្រែ​ជា %{language_count} ភាសារ​ផ្សេងៗ​គ្នា - ជា​ព្រះ​គម្ពីរ​ដែល​ទៅ​ជា​មួយ​លោក​អ្នក​គ្រប់​ទី​កន្លែង​ទាំងអស់។"
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "ជំនាន់​គម្ពីរ​រាប់​រយ​ក្នុង​ចំណោម 100+"
         line 2: "ច្រើន​ភាសា- ជា​ព្រះ​គម្ពីរ​"
         line 3: "ដែល​ទៅ​ជាមួយ​អ្នក​គ្រប់​ទី​កន្លែង"

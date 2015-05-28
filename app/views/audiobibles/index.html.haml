@@ -1,0 +1,25 @@
+- @title = "#{t('audio bibles title')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8"
+
+- content_for :additional_meta do
+  = render '/shared/hreflang'
+
+- content_for :meta_description do
+  = "#{t('audio bible meta')}"
+
+%article
+  %h1
+    = "#{t('audio bibles title')}"
+  = cache "audio_versions_bylang_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
+    %ul
+      - @versions_by_lang.each do |lang, versions|
+        - if versions.present?
+          - show_title = true
+          - versions.each do |version|
+            - if version.audio
+              - if show_title
+                - show_title = false
+                - language_title = versions.first.language.human
+                - language_title = "#{language_title} - #{version.attributes.language.name}" if (version.attributes.language.name.present? and not (language_title.eql?(version.attributes.language.name)))
+                %li= "#{language_title}"
+              %li
+                = link_to "#{t('audio bible')}: #{version.title} (#{version.abbreviation.upcase})" , audiobible_path(version)

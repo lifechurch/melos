@@ -100,6 +100,8 @@ ja:
         users last name required: "苗字（姓）の入力が必要です。"
         moments content required: "空欄のままでは残せません。"
     meta: 
+        best kids app: "もっとも良いこども用アプリです！"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "子ども用聖書アプリ"
             description: "子ども用聖書アプリは、イエス様、私たちがいただいた永遠の命、そして神様の教えなどといった、聖書のお話を学べるとても良い手段です。この対話式アプリを使うことにより、子どもたちは聖書を読んだり、宝物を集めたりするたびにポイントを集めながら、美しい画像と合わせて、神様との関係を直接築くことができます。"
@@ -770,6 +772,7 @@ ja:
             private: "非公開"
             public: "公開"
         title: "読書プラン"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "カテゴリー別に閲覧する"
         browse plans: "%{category}プランを閲覧"
         swap list localization: "(<a href='%{swap_link}'>%{swap_locale}で表示</a>)"
@@ -971,6 +974,8 @@ ja:
     download ad: 
         title: "無料聖書アプリをダウンロード"
         description copy: "%{language_count}カ国語以上の言語で多数の聖書訳を備えた、どこにでも携帯できる聖書"
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "100ヶ国語以上で書かれた"
         line 2: "何百種もの訳が利用可能な"
         line 3: "いつでもどこでも使える聖書"

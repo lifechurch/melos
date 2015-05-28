@@ -48,6 +48,7 @@ YouversionWeb::Application.routes.draw do
 
   
   resources "versions",   only:   [:index, :show]
+  resources "audiobibles", :path => '/audio-bible-app-versions', only: [:index, :show]
   
 
   resources :licenses, except: [:index,:show,:new,:create,:edit,:update,:destroy] do

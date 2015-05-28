@@ -155,6 +155,8 @@ ar:
         users last name required: "يجب عليك إدخال اسم العائلة."
         moments content required: "المحتوى لا يمكن ان يكون فارغ"
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "تطبيق الإنجيل المقدس للأطفال"
             description: "تطبيق الإنجيل المقدس للأطفال هو طريقة رائعة لكي يتعلم الأطفال القصص الإنجيليّة عن يسوع, عن هدية الحياة الأبديّة لنا, وعن الدروس العديدة التي يعلمنا الله بها. في هذه التجربة التفاعليّة, يتواصل الأطفال مباشرةً مع كلمة الله من خلال صورٍ ممتعةٍ وفي الوقت ذاته يكسبون نقاطاً بفضل القراءة وكسب الكنوز."
@@ -196,14 +198,14 @@ ar:
         share: 
             tell friends: "أخبر أصدقائك عن تطبيق الإنجيل المقدس للأطفال."
             facebook name: "تطبيق الإنجيل المقدس للأطفال"
-            facebook description: "ها قد وصل تطبيق الإنجيل المقدس للأطفال! حمِّل التطبيق المجاني لiOS وAndroid اليوم: قصص تفاعليّة من الكتاب المقدس لمساعدة طفلك كي يتعلم, يلعب, ويكبر في كلمة الله. www.bible.com/kids"
-            facebook link: "http://www.bible.com/kids"
-            facebook redirect: "http://www.bible.com/kids"
-            twitter description: "تطبيق الإنجيل المقدس للأطفال من @YouVersion وصل! إنه ممتعٌ ومجانيٌ كلياً. تحميل: bible.com/kids"
+            facebook description: "ها قد وصل تطبيق الإنجيل المقدس للأطفال! حمِّل التطبيق المجاني لiOS وAndroid اليوم: قصص تفاعليّة من الكتاب المقدس لمساعدة طفلك كي يتعلم, يلعب, ويكبر في كلمة الله. www.bible.com/ar/kids"
+            facebook link: "http://www.bible.com/ar/kids"
+            facebook redirect: "http://www.bible.com/ar/kids"
+            twitter description: "تطبيق الإنجيل المقدس للأطفال من @YouVersion وصل! إنه ممتعٌ ومجانيٌ كلياً. تحميل: bible.com/ar/kids"
             twitter hashtags: "kidsbible"
             email: "البريد الإلكتروني"
             email subject: "ها قد وصل تطبيق الإنجيل المقدس للأطفال!"
-            email body: "أخبارٌ رائعةٌ - لقد وصل تطبيق الإنجيل المقدس للأطفال! إنه مجاني كلياً ومتوفر الآن على أجهزة iPhone, iPad, iPod touch وAndroid. يتألف التطبيق من مجموعة متنامية من قصص الإنجيل المقدس مع رسوم متحركة تعمل باللمس وأنشطة تعليميّة, مناسبة لمساعدة الأطفال كي يتعلموا قصص الإنجيل الكبيرة. إذهب إلى bible.com/kids من خلال جهازك الجوال لتحميلها اليوم."
+            email body: "أخبارٌ رائعةٌ - لقد وصل تطبيق الإنجيل المقدس للأطفال! إنه مجاني كلياً ومتوفر الآن على أجهزة iPhone, iPad, iPod touch وAndroid. يتألف التطبيق من مجموعة متنامية من قصص الإنجيل المقدس مع رسوم متحركة تعمل باللمس وأنشطة تعليميّة, مناسبة لمساعدة الأطفال كي يتعلموا قصص الإنجيل الكبيرة. إذهب إلى bible.com/ar/kids من خلال جهازك الجوال لتحميلها اليوم."
         partner: 
             youversion: "YouVersion: تطبيق الإنجيل المقدس الأكثر شهرة في العالم"
             in partnership: "بالتعاون مع"
@@ -835,6 +837,7 @@ ar:
             private: "خاصة"
             public: "عام"
         title: "خطط القراءة‌"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "تصفح بالفئة"
         browse plans: "تصفح %{category} خطط"
         swap list localization: "(<a href='%{swap_link}'>شاهد في %{swap_locale}</a>)"
@@ -1036,6 +1039,8 @@ ar:
     download ad: 
         title: "حمل تطبيق الكتاب المقدس المجاني"
         description copy: "مئات من الإصدارات في أكثر من %{language_count} لغة - الإنجيل المقدس معك في كل مكان."
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "المئات من الاصدارات في 100+"
         line 2: "لغات مختلفة - الكتاب المقدس"
         line 3: "الذي يذهب معك الي اي مكان"
