@@ -10,9 +10,12 @@
   = render partial: 'widgets/download_app'
   = render partial: 'widgets/bible_app_for_kids'
 
-%article
-  %h1
-    Trending Bible verses
-  - @trending_verses.each do |usfm|
-    %p= usfm
+= cache "trending_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
+  %article#trending-verses
+    %h1
+      Trending Bible verses
+    - rank = 0
+    - @trending_verses.each do |verse|
+      - rank = rank + 1
+      %h2= link_to "#{rank}. #{verse.human}", reference_path(version: verse.version, reference: verse.to_param)
 

@@ -6,9 +6,11 @@ module YV
         class << self
 
           def from_all(results)
-            sp = results
-            sp = sp.take(10) if sp.present?
-            YV::API::Results.new(sp)
+            return results if results.empty?
+            results.collect do |ref|
+              verse = Reference.new(ref.try(:to_param), version: Version.default_for(I18n.locale.to_s))
+              verse
+            end
           end
 
         end
