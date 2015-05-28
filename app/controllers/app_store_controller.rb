@@ -118,7 +118,7 @@ class AppStoreController < ActionController::Base
       store_path('amazon')
     when /blackberry|BlackBerry|bb/
       store_path('bb')
-    when /SymbianOS/
+    when /SymbianOS|Symbian/
       store_path('symbian')
     when /J2ME/
       store_path('j2me')
