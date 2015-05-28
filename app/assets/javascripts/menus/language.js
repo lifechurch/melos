@@ -11,6 +11,7 @@ function LanguageMenu( el , opts ) {
   var path = window.location.pathname;
   var new_path = "";
   var replacement_locale_str = "";
+  var page_locale = $('html').data('locale');
 
   _this = this;
 
@@ -23,16 +24,24 @@ function LanguageMenu( el , opts ) {
       var rstr = "^(\\/" + locale + "\\/*)";    // (\/es\/+)
       var regex = new RegExp(rstr);             // build dynamic regex to check locale: /:locale
       var match = path.match(regex);
-      if( match && match.length > 0 ) {
-        // match found, replace the match with our new locale
-        new_path = path.replace(regex, replacement_locale_str + "/");
-        break
+      if (locale == page_locale) {
+          if (match && match.length > 0) {
+              // match found, replace the match with our new locale
+              new_path = path.replace(regex, replacement_locale_str + "/");
+              break
+          }
       }
     }
 
     // match wasn't found, add the locale extension to our current path
     if(new_path == "")
        new_path = replacement_locale_str + path;
+
+    // adjust video to generic video path since locales have unique video url scheme
+    var video_prefix = replacement_locale_str + '/videos';
+    if(new_path.indexOf(video_prefix) != -1) {
+        new_path = video_prefix;
+    }
 
     // Post new locale to server endpoint
     $.ajax({
