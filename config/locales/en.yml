@@ -1110,6 +1110,9 @@ en:
       download action:                          "Download the Bible App"
       download description:                     "Download the free YouVersion Bible App on your mobile device and you'll have your Bible with you no matter where you go."
       world installs:                           "Installs around the world"
+    trending verses:
+      title:                                    "Trending Bible verses"
+      headline:                                 "Bible verses currently trending in the YouVersion Bible App and Bible.com"
   shared:
     menu_settings:
         title:                                  "Reader Settings"

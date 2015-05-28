@@ -77,4 +77,8 @@ class PagesController < ApplicationController
     end
   end
 
+  def trending
+    @trending_verses = Trending.all()
+  end
+
 end
