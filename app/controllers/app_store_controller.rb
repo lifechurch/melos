@@ -129,7 +129,7 @@ class AppStoreController < ActionController::Base
     when /Windows 8/
       store_path('windows8')
     else
-      "?user-agent=#{URI::encode(device)}"
+      "https://bible.com"
     end
   end
 
