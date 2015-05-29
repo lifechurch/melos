@@ -17,7 +17,8 @@ exports.config = {
 		testUrl: ""
 	},
 
-//    capabilities: {
+    capabilities: JSON.parse(process.env.bamboo_SAUCE_ONDEMAND_BROWSERS),
+// {
 //        'browserName': 'chrome',
 //        'platform': 'Windows 7',
 //        'screen-resolution': '1024x768'
