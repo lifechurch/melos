@@ -19,7 +19,7 @@ describe('youversion reader', function() {
 	});
 
 	it('should have a title', function() {
-		expect(browser.getTitle()).toEqual('Genesis 2, King James Version (KJV) | The Bible App');
+		expect(browser.getTitle()).toEqual('Genesis 2, King James Version (KJV) | Chapter 2 | The Bible App | Bible.com');
 	});
 
 	it('should open public notes', function() {
@@ -31,13 +31,13 @@ describe('youversion reader', function() {
 
 	it('should go to next chapter', function() {
 		chapterNextButton.click();
-		expect(browser.getTitle()).toEqual('Genesis 3, King James Version (KJV) | The Bible App');
+		expect(browser.getTitle()).toEqual('Genesis 3, King James Version (KJV) | Chapter 3 | The Bible App | Bible.com');
 		expect(chapterDropDown.getText()).toEqual('Genesis 3');
 	});
 
 	it('should go to prev chapter', function() {
 		chapterPrevButton.click();
-		expect(browser.getTitle()).toEqual('Genesis 1, King James Version (KJV) | The Bible App');
+		expect(browser.getTitle()).toEqual('Genesis 1, King James Version (KJV) | Chapter 1 | The Bible App | Bible.com');
 		expect(chapterDropDown.getText()).toEqual('Genesis 1');
 	});
 
@@ -45,7 +45,7 @@ describe('youversion reader', function() {
 		bookSelectTrigger.click();
 		johnLink.click();
 		john1Link.click();
-		expect(browser.getTitle()).toEqual('John 1, King James Version (KJV) | The Bible App');
+		expect(browser.getTitle()).toEqual('John 1, King James Version (KJV) | Chapter 1 | The Bible App | Bible.com');
 		expect(chapterDropDown.getText()).toEqual('John 1');
 	});
 
