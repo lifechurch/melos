@@ -1,7 +1,8 @@
 exports.config = {
 //	sauceUser: 'michael_martin',
 //	sauceKey: '46521038-bc8d-4948-8dd9-c2bbd536a7e8',
-
+    sauceUser: process.env.SAUCE_USERNAME,
+    sauceKey: process.env.SAUCE_ACCESS_KEY,
   	// seleniumAddress: 'http://localhost:4444/wd/hub',
 
 	specs: [
