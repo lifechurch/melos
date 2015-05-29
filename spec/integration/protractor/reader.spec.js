@@ -30,21 +30,27 @@ describe('youversion reader', function() {
 	});
 
 	it('should go to next chapter', function() {
+        browser.wait(protractor.ExpectedConditions.elementToBeClickable(chapterNextButton), "10000", "The element is still not visible.");
 		chapterNextButton.click();
+        browser.wait(protractor.ExpectedConditions.visibilityOf(chapterDropDown), "30000", "The element is still not visible.");
 		expect(browser.getTitle()).toEqual('Genesis 3, King James Version (KJV) | Chapter 3 | The Bible App | Bible.com');
 		expect(chapterDropDown.getText()).toEqual('Genesis 3');
 	});
 
 	it('should go to prev chapter', function() {
+        browser.wait(protractor.ExpectedConditions.elementToBeClickable(chapterPrevButton), "10000", "The element is still not visible.");
 		chapterPrevButton.click();
+        browser.wait(protractor.ExpectedConditions.visibilityOf(chapterDropDown), "30000", "The element is still not visible.");
 		expect(browser.getTitle()).toEqual('Genesis 1, King James Version (KJV) | Chapter 1 | The Bible App | Bible.com');
 		expect(chapterDropDown.getText()).toEqual('Genesis 1');
 	});
 
 	it('should go to john 1', function() {
+        browser.wait(protractor.ExpectedConditions.elementToBeClickable(bookSelectTrigger), "10000", "The element is still not visible.");
 		bookSelectTrigger.click();
 		johnLink.click();
 		john1Link.click();
+        browser.wait(protractor.ExpectedConditions.visibilityOf(chapterDropDown), "30000", "The element is still not visible.");
 		expect(browser.getTitle()).toEqual('John 1, King James Version (KJV) | Chapter 1 | The Bible App | Bible.com');
 		expect(chapterDropDown.getText()).toEqual('John 1');
 	});
