@@ -10,7 +10,7 @@ describe('youversion signup', function() {
 
 	beforeEach(function() {
         isAngular(false);
-		browser.get(testUrl + '/sign-up');
+		browser.get(testUrl + 'sign-up');
 	});
 
 	it('should let me register', function() {

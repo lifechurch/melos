@@ -11,7 +11,7 @@ describe('youversion login', function() {
 
 	beforeEach(function() {
         isAngular(false);
-		browser.get(testUrl + '/sign-in');
+		browser.get(testUrl + 'sign-in');
 	});
 
     it('should NOT cache bad credentials', function() {

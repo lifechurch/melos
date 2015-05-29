@@ -10,7 +10,7 @@ describe('youversion plans', function() {
 
 	beforeEach(function() {
         isAngular(false);
-		browser.get(testUrl + '/reading-plans');
+		browser.get(testUrl + 'reading-plans');
 	});
 
 	it('should perform a search', function() {

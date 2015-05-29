@@ -15,7 +15,7 @@ describe('youversion reader', function() {
 
 	beforeEach(function() {
         isAngular(false);
-		browser.get(testUrl + '/bible/1/gen.2.kjv');
+		browser.get(testUrl + 'bible/1/gen.2.kjv');
 	});
 
 	it('should have a title', function() {
