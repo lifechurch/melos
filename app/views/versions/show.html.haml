@@ -1,6 +1,6 @@
 - meta_language = @version.attributes.language.local_name
 - meta_language = "#{meta_language} | #{@version.attributes.language.name}" if (@version.attributes.language.name.present? and not (meta_language.eql?(@version.attributes.language.name)))
-- @title = "#{@version.to_s} - #{t('download ad.meta copy title')} | #{meta_language} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8 | #{t('meta.mobile.title')}"
+- @title = "#{@version.to_s} - #{t('download ad.meta copy title')} | #{meta_language} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8, Nokia, Java, Symbian | #{t('meta.mobile.title')}"
 - @subtitle = ''
 
 - unless is_whitelabel_site
@@ -8,6 +8,7 @@
     = render '/shared/hreflang'
     - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
     - locale_dir = '/es' if I18n.locale.to_s.eql?('es-ES')
+    - locale_dir = '/pt' if I18n.locale.to_s.eql?('pt-PT')
     - canonicalHref = "https://www.bible.com#{locale_dir}/versions/#{@version.to_param}"
     %link{rel: "canonical", href: canonicalHref}
 - content_for :meta_description do

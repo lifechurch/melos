@@ -1,6 +1,6 @@
 :ruby
   @sidebar          = false
-  @title            = "#{t('mobile page.t9')} #{t('mobile page.free overlay')} - #{t('mobile page.download now')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8"
+  @title            = "#{t('mobile page.t9')} #{t('mobile page.free overlay')} - #{t('mobile page.download now')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8, Nokia, Java, Symbian"
   @meta_title       = "#{t('mobile page.download now')} - #{t('mobile page.free overlay')}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
@@ -14,6 +14,7 @@
   = render '/shared/hreflang'
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - locale_dir = '/es' if I18n.locale.to_s.eql?('es-ES')
+  - locale_dir = '/pt' if I18n.locale.to_s.eql?('pt-PT')
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}/app"
   %link{rel: "canonical", href: canonicalHref}
   %meta{name: "url",            content: @meta_url}
