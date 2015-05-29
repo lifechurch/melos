@@ -22,7 +22,7 @@ describe('youversion signup', function() {
 		var un = "User" + randomString;
 		var pw = "password";
 
-        browser.wait(protractor.ExpectedConditions.elementToBeClickable(register_button), "10000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.elementToBeClickable(register_button), 10000, "The element is still not visible.");
 
 		email_element.sendKeys(email);
 		fn_element.sendKeys(fn);
@@ -32,7 +32,7 @@ describe('youversion signup', function() {
 
 		register_button.click();
 
-        browser.wait(protractor.ExpectedConditions.visibilityOf(register_confirm), "30000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(register_confirm), 30000, "The element is still not visible.");
 
         expect(register_confirm.getText()).toEqual("Thanks for registering!");
 	});	

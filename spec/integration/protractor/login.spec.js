@@ -18,7 +18,7 @@ describe('youversion login', function() {
         var username = "matt";
         var password = "badpass";
 
-        browser.wait(protractor.ExpectedConditions.visibilityOf(username_field), "30000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(username_field), 30000, "The element is still not visible.");
 
         username_field.clear();
         username_field.sendKeys(username);
@@ -28,7 +28,7 @@ describe('youversion login', function() {
 
         signin_button.click();
 
-        browser.wait(protractor.ExpectedConditions.visibilityOf(error_element), "30000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(error_element), 30000, "The element is still not visible.");
 
         expect(error_element.getText()).toEqual("The username or password you supplied is invalid.");
 
@@ -42,7 +42,7 @@ describe('youversion login', function() {
 
         signin_button.click();
 
-        browser.wait(protractor.ExpectedConditions.visibilityOf(username_element), "30000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(username_element), 30000, "The element is still not visible.");
 
         expect(username_element.getText()).toEqual(username);
     });
@@ -51,7 +51,7 @@ describe('youversion login', function() {
 		var username = "matt";
 		var password = "staging";
 
-        browser.wait(protractor.ExpectedConditions.visibilityOf(username_field), "30000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(username_field), 30000, "The element is still not visible.");
 
 		username_field.clear();
 		username_field.sendKeys(username);
@@ -67,7 +67,7 @@ describe('youversion login', function() {
 		var username = "smeagol";
 		var password = "MyPrecious";
 
-        browser.wait(protractor.ExpectedConditions.visibilityOf(username_field), "30000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(username_field), 30000, "The element is still not visible.");
 
 		username_field.clear();
 		username_field.sendKeys(username);
@@ -77,7 +77,7 @@ describe('youversion login', function() {
 
 		signin_button.click();
 
-        browser.wait(protractor.ExpectedConditions.visibilityOf(error_element), "30000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(error_element), 30000, "The element is still not visible.");
 
 		expect(error_element.getText()).toEqual("No user with this username/email address");
 	});	
@@ -86,7 +86,7 @@ describe('youversion login', function() {
 		var username = "matt";
 		var password = "staging";
 
-        browser.wait(protractor.ExpectedConditions.visibilityOf(username_field), "30000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(username_field), 30000, "The element is still not visible.");
 
 		username_field.clear();
 		username_field.sendKeys(username);
@@ -96,7 +96,7 @@ describe('youversion login', function() {
 		
 		signin_button.click();
 
-        browser.wait(protractor.ExpectedConditions.visibilityOf(username_element), "30000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(username_element), 30000, "The element is still not visible.");
 
 		expect(username_element.getText()).toEqual(username);
 
@@ -106,7 +106,7 @@ describe('youversion login', function() {
 
 		signout_button.click();
 
-        browser.wait(protractor.ExpectedConditions.visibilityOf(signin_link), "30000", "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(signin_link), 30000, "The element is still not visible.");
 
 		expect(signin_link.getText()).toEqual("Sign in");
 	});	
