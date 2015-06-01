@@ -3,11 +3,11 @@ exports.config = {
     sauceKey: process.env.SAUCE_ACCESS_KEY,
 
     specs: [
-		//'login.spec.js',
-		//'plans.spec.js',
-		//'reader.spec.js',
-		'search.spec.js'
-		//'signup.spec.js'
+		'login.spec.js',
+		'plans.spec.js',
+		'reader.spec.js',
+		'search.spec.js',
+		'signup.spec.js'
 	],
 
 	params: {
@@ -17,6 +17,12 @@ exports.config = {
     //capabilities: JSON.parse(process.env.bamboo_SAUCE_ONDEMAND_BROWSERS),
 
     rootElement: 'div#widget-notes',
+
+    idleTimeout: 180,
+
+    commandTimeout: 300,
+
+    maxDuration: 10800,
 
     onPrepare: function() {
 
