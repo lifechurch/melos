@@ -6,7 +6,7 @@
   = @title
 
 %p= t('users.delete account description')
-= form_tag user_path(@user), method: :delete do
+= form_tag user_path(@user.username), method: :delete do
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
   %p
