@@ -257,6 +257,12 @@ zh-TW:
     chapter: "章節"
     home: "首頁"
     bible: "聖經"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "筆記"
     friends: "朋友"
     groups: "群組"
@@ -1090,6 +1096,9 @@ zh-TW:
             download action: "下載聖經軟體"
             download description: "下載免費的 YouVersion 聖經軟體到您的行動設備上吧！無論何時何地、神的話語都將伴您左右！"
             world installs: "全球軟體安裝次數"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "閱讀器設定"

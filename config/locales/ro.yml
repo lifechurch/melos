@@ -279,6 +279,12 @@ ro:
     chapter: "Capitolul"
     home: "Acasă"
     bible: "Biblia"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Notițe"
     friends: "Prieteni"
     groups: "Grupuri"
@@ -536,7 +542,7 @@ ro:
         edit notifications: "Gestionează notificările"
         edit connections: "Conturi conectate"
         edit devices: "Dispozitive conectate"
-        vod_subscriptions: "Abonare la Versetul Zilei"
+        vod_subscriptions: "Abonare la versetul zilei"
         vod_subscription success: "Ți-ai actualizat cu succes abonamentul la Versetul Zilei!"
         vod_subscription failure: "Ne pare rău, a fost o problemă cu actualizarea abonamentului tău la Versetul Zilei."
         daily email delivery: "E-mail zilnic"
@@ -1116,6 +1122,9 @@ ro:
             download action: "Descarcă Aplicația Biblia"
             download description: "Descarcă gratuit Aplicația Biblia pe dispozitivul tău mobil și vei avea Biblia cu tine oriunde mergi."
             world installs: "Instalări pe tot globul"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Setări cititor"

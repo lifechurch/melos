@@ -100,8 +100,8 @@ fa:
         users last name required: "درج نام خانوادگی الزامی است"
         moments content required: "درج اطلاعات الزامی است!‏"
     meta: 
-        best kids app: "Best Kids App!"
-        best educational app: "Best Educational App"
+        best kids app: "بهترین اَپ برای کودکان!"
+        best educational app: "بهترین اَپ آموزشی"
         kids_app: 
             title: "اَپ/برنامۀ «کتاب‌مقدس» برای کودکان"
             description: "اَپ «کتاب‌مقدس برای کودکان» وسیله‌ای عالی تا از طریق آن، فرزندان شما داستانهای کتاب‌مقدس دربارۀ عیسای مسیح، هدیۀ حیات جاودان و بسیاری از تعالیم الاهی را بیاموزند. در این برنامۀ جذاب، بچه‌ها از طریق برنامه‌های بصری، همزمان با کسب امتیازاتی در خواندن و نیز جمع‌آوری گنجینه‌های کلام، مستقیماً با کلام خدا مشغول می‌شوند."
@@ -257,6 +257,12 @@ fa:
     chapter: "باب"
     home: "خانه"
     bible: "كتاب‌مقدس"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "يادداشت‌ها"
     friends: "دوستان"
     groups: "گروه‌ها"
@@ -772,7 +778,7 @@ fa:
             private: "خصوصی"
             public: "عمومی"
         title: "برنامه‌هاى مطالعه"
-        meta title: "Online Bible study, devotionals and reading plans"
+        meta title: "مطالعۀ کتاب‌مقدس، نیایشها و برنامه‌های مطالعۀ کتاب‌مقدسی آنلاین"
         browse by category: "جستجو براساس طبقه‌بندی"
         browse plans: "%{category} جستجوى برنامه‌ها براساس"
         swap list localization: "(<a href='%{swap_link}'> در %{swap_locale} مشاهده کنید </a>)"
@@ -975,7 +981,7 @@ fa:
         title: "دانلود برنامۀ کتاب‌مقدس"
         description copy: "صدها ترجمه به زبان‌های مختلف - کتاب‌مقدسی که همه جا همراه شماست %{language_count}.‌"
         meta copy title: "دانلود برنامۀ کتاب‌مقدس"
-        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
+        meta copy versions: "صدها نسخه به %{language_count}زبان مختلف"
         line 1: "صدها ترجمه در +۱۰۰"
         line 2: "زبان‌های مختلف - کتاب‌مقدس"
         line 3: "در هر جا با شماست‏.‏"
@@ -1090,6 +1096,9 @@ fa:
             download action: "دانلود برنامهٔ کتاب‌مقدس"
             download description: "برنامۀ رایگان «کتاب‌مقدس» را در دستگاه موبایل خود نصب کنید تا کلام خدا را همه جا همراه داشته باشید.‏"
             world installs: "تعداد نصب در سراسر جهان"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "تنظيمات خواندن"

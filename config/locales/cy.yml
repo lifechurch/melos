@@ -312,6 +312,12 @@ cy:
     chapter: "Pennod"
     home: "Home"
     bible: "Beibl"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Nodiadau"
     friends: "Ffrindiau"
     groups: "Grwpiau"
@@ -1155,6 +1161,9 @@ cy:
             download action: "Lawrlwytha'r Ap Beibl"
             download description: "Lawrlwytha Ap Beibl YouVersion i'th ddyfais symudol am ddim, a bydd y Beibl gyda ti ble bynnag wyt ti'n mynd."
             world installs: "wedi ei osod drwy'r byd."
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Gosodiadau Darllenydd"

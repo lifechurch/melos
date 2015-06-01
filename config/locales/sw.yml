@@ -268,6 +268,12 @@ sw:
     chapter: "Sura"
     home: "Home"
     bible: "Bibilia"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "maelezo"
     friends: "Marafiki"
     groups: "makundi"
@@ -1103,6 +1109,9 @@ sw:
             download action: "Download App ya Bibilia"
             download description: "Download App ya Bibilia ya YouVersion bure  kwenye kifaa chako cha mkononi na utakuwa na  Biblia yako popote uendapo."
             world installs: "Sakinisho duniani kote"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "mipangilio yako"

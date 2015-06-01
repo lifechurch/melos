@@ -257,6 +257,12 @@ km:
     chapter: "ជំពូក"
     home: "ទំព័រ​ដើម"
     bible: "ព្រះគម្ពីរ"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "កំណត់​ត្រា"
     friends: "មិត្ត​ភ័ក្ត្រ"
     groups: "ក្រុម"
@@ -1090,6 +1096,9 @@ km:
             download action: "ដោនឡូដ Bible App"
             download description: "ដោនឡូដ YouVersion Bible App ដោយឥតគិតថ្លៃលើ​ទូរស័ព្ទចល័តរបស់អ្នក​ហើយអ្នកនឹង​មាន​ព្រះគម្ពីរនៅជាប់ជាមួយ ទោះបីទៅទីណាក្ដី ។"
             world installs: "តំឡើងទូទាំងពិភពលោក"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "ការ​កំណត់​របស់​អ្នក"

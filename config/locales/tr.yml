@@ -6,39 +6,39 @@ tr:
     datetime: 
         time_ago_in_words: 
             about_x_hours: 
-                one: "about 1 hour ago"
-                other: "about %{count} hours ago"
+                one: "1 saat kadar önce"
+                other: "%{count} saat kadar önce"
             about_x_months: 
-                one: "about 1 month ago"
-                other: "about %{count} months ago"
+                one: "1 ay kadar önce"
+                other: "%{count} ay kadar önce"
             about_x_years: 
-                one: "about 1 year ago"
-                other: "about %{count} years ago"
+                one: "1 yıl kadar önce"
+                other: "%{count} yıl kadar önce"
             almost_x_years: 
-                one: "almost 1 year ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
+                one: "yaklaşık 1 yıl önce"
+                other: "yaklaşık %{count} yıl önce"
+            half_a_minute: "yarım dakika önce"
             less_than_x_minutes: 
-                one: "less than a minute ago"
-                other: "less than %{count} minutes ago"
+                one: "bir dakikadan daha az önce"
+                other: "%{count} dakikadan daha az önce"
             less_than_x_seconds: 
-                one: "less than 1 second ago"
-                other: "less than %{count} seconds ago"
+                one: "bir saniyeden daha az önce"
+                other: "%{count} saniyeden daha az önce"
             over_x_years: 
-                one: "over 1 year ago"
-                other: "over %{count} years ago"
+                one: "bir yılı aşkın öncesi"
+                other: "%{count} yılı aşkın öncesi"
             x_days: 
-                one: "1 day ago"
-                other: "%{count} days ago"
+                one: "bir gün önce"
+                other: "%{count} gün önce"
             x_minutes: 
-                one: "1 minute ago"
-                other: "%{count} minutes ago"
+                one: "bir dakika önce"
+                other: "%{count} dakika önce"
             x_months: 
-                one: "1 month ago"
-                other: "%{count} months ago"
+                one: "1 ay önce"
+                other: "%{count} ay önce"
             x_seconds: 
-                one: "1 second ago"
-                other: "%{count} seconds ago"
+                one: "1 saniye önce"
+                other: "%{count} saniye önce"
     counter: 
         format: "999.999.999"
     social: 
@@ -268,6 +268,12 @@ tr:
     chapter: "Bölüm"
     home: "Ana Sayfa"
     bible: "Kutsal Kitap"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Notlar"
     friends: "Arkadaşlar"
     groups: "Gruplar"
@@ -1103,6 +1109,9 @@ tr:
             download action: "Kutsal Kitap Uygulamasını İndirin"
             download description: "YouVersion Kutsal Kitap Uygulamasını mobil cihazınıza indirin. Kutsal Kitap nerede olursanız olun yanınızda olsun."
             world installs: "Dünya çapındaki yüklemeler"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Okuyucu Ayarları"
