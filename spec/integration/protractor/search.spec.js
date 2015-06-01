@@ -8,14 +8,14 @@ describe('youversion search', function() {
 	
 	beforeEach(function() {
         isAngular(false);
-        browser.manage().window().setSize(1280, 1024);
 		browser.get(testUrl);
+        browser.manage().window().setSize(1280, 1024);
 	});
 
 	it('should search the bible', function() {
 		var search_phrase = "Fawns";
 
-        browser.wait(protractor.ExpectedConditions.presenceOf(search_field), 10000, "The element is still not visible.");
+        browser.wait(protractor.ExpectedConditions.presenceOf(search_field), 30000, "The element is still not visible.");
 
 		search_field.sendKeys(search_phrase);
 		search_button.click();
