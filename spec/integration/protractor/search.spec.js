@@ -8,7 +8,7 @@ describe('youversion search', function() {
 	
 	beforeEach(function() {
         isAngular(false);
-		browser.get(testUrl);
+		browser.get(testUrl + "search/bible");
         browser.manage().window().setSize(1280, 1024);
 	});
 
