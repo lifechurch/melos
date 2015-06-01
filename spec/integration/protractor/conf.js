@@ -24,6 +24,10 @@ exports.config = {
 
     maxDuration: 10800,
 
+    jasmineNodeOpts: {
+        defaultTimeoutInterval: 120000
+    },
+
     onPrepare: function() {
 
         browser.driver.manage().window().setSize(1280, 1024);
