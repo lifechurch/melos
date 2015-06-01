@@ -3,11 +3,11 @@ exports.config = {
     sauceKey: process.env.SAUCE_ACCESS_KEY,
 
     specs: [
-		'login.spec.js',
-		'plans.spec.js',
-		'reader.spec.js',
-		'search.spec.js',
-		'signup.spec.js'
+		//'login.spec.js',
+		//'plans.spec.js',
+		//'reader.spec.js',
+		'search.spec.js'
+		//'signup.spec.js'
 	],
 
 	params: {

@@ -8,6 +8,7 @@ describe('youversion search', function() {
 	
 	beforeEach(function() {
         isAngular(false);
+        browser.manage().window().setSize(1280, 1024);
 		browser.get(testUrl);
 	});
 

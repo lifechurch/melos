@@ -69,7 +69,10 @@ function addOns() {
 			console.log(err, addon);
 			heroku.apps(herokuAppName()).addons().create({ plan: 'deployhooks:hipchat', config: { auth_token: hipchatToken(), room: "YouVersion Web", message: "{{app}} deployed by {{user}}. <a href='{{url}}'>Go There!</a> (<a href='https://github.com/lifechurch/youversion-web/commits/{{head}}'>View on GitHub: {{head}}</a>)"  }}, function(err, addon) {
 				console.log(err, addon);
-				displayApp();
+                heroku.apps(herokuAppName()).configVars().update({'RAILS_ENV': 'staging', 'RACK_ENV': 'staging'}, function(err) {
+                    console.log(err);
+                    displayApp();
+                });
 			});
 		});		
 	});
