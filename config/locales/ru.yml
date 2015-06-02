@@ -290,6 +290,12 @@ ru:
     chapter: "Глава"
     home: "Домой"
     bible: "Библия"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Заметки"
     friends: "Друзья"
     groups: "Группы"
@@ -1129,6 +1135,9 @@ ru:
             download action: "Установить приложение Библия"
             download description: "Загрузите бесплатное приложение Библия на своё мобильное устройство, и Библия будет всегда под рукой, где бы вы ни находились."
             world installs: "людей уже установили приложение Библия!"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Настройки окна чтения"

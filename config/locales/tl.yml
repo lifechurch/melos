@@ -268,6 +268,12 @@ tl:
     chapter: "Kabanata"
     home: "Home"
     bible: "Bibliya"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Mga tala"
     friends: "Mga Kaibigan"
     groups: "Mga Grupo"
@@ -1103,6 +1109,9 @@ tl:
             download action: "I-download ang Bible App"
             download description: "I-download ang libreng YouVersion Bible App sa iyong aparato at makakasama mo na ang Bibliya saan ka man magpunta."
             world installs: "Magagamit kahit saang bahagi ng mundo"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Ang Iyong mga Setting"

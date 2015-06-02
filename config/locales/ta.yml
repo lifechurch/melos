@@ -6,39 +6,39 @@ ta:
     datetime: 
         time_ago_in_words: 
             about_x_hours: 
-                one: "about 1 hour ago"
-                other: "about %{count} hours ago"
+                one: "சுமார் 1 மணி நேரத்திற்கு முன்"
+                other: "சுமார் %{count} மணி நேரங்களுக்கு முன்"
             about_x_months: 
-                one: "about 1 month ago"
-                other: "about %{count} months ago"
+                one: "சுமார் 1 மாதத்திற்கு முன்"
+                other: "சுமார் %{count} மாதங்களுக்கு முன்"
             about_x_years: 
-                one: "about 1 year ago"
-                other: "about %{count} years ago"
+                one: "சுமார் 1 ஆண்டுக்கு முன்"
+                other: "சுமார் %{count} ஆண்டுகளுக்கு முன்"
             almost_x_years: 
-                one: "almost 1 year ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
+                one: "கிட்டத்தட்ட 1 ஆண்டுக்கு முன்"
+                other: "கிட்டத்தட்ட %{count} ஆண்டுகளுக்கு முன்"
+            half_a_minute: "அரை நிமிடத்திற்கு முன்"
             less_than_x_minutes: 
-                one: "less than a minute ago"
-                other: "less than %{count} minutes ago"
+                one: "ஒரு நிமிடத்திற்கு முன்"
+                other: "%{count} க்கு குறைவான நிமிடங்களுக்கு முன்"
             less_than_x_seconds: 
-                one: "less than 1 second ago"
-                other: "less than %{count} seconds ago"
+                one: "ஒரு வினாடிக்கு முன்"
+                other: "%{count} வினாடிகளுக்கு முன்"
             over_x_years: 
-                one: "over 1 year ago"
-                other: "over %{count} years ago"
+                one: "ஒரு ஆண்டிற்கு மேல்"
+                other: "%{count} ஆண்டுகளுக்கு மேல்"
             x_days: 
-                one: "1 day ago"
-                other: "%{count} days ago"
+                one: "ஒரு நாளுக்கு முன்"
+                other: "%{count} நாட்களுக்கு முன்"
             x_minutes: 
-                one: "1 minute ago"
-                other: "%{count} minutes ago"
+                one: "ஒரு நிமிடத்திற்கு முன்"
+                other: "%{count} நிமிடங்களுக்கு முன்"
             x_months: 
-                one: "1 month ago"
-                other: "%{count} months ago"
+                one: "ஒரு மாதத்திற்கு முன்"
+                other: "%{count} மாதங்களுக்கு முன்"
             x_seconds: 
-                one: "1 second ago"
-                other: "%{count} seconds ago"
+                one: "ஒரு வினாடிக்கு முன்"
+                other: "%{count} வினாடிகளுக்கு முன்"
     counter: 
         format: "99,99,99,999"
     social: 
@@ -111,8 +111,8 @@ ta:
         users last name required: "நீங்கள் கடைசி பெயரை உள்ளிட வேண்டும்"
         moments content required: "உள்ளடக்கம் காலியாக இருக்க முடியாது."
     meta: 
-        best kids app: "Best Kids App!"
-        best educational app: "Best Educational App"
+        best kids app: "தலைசிறந்த சிறுவர் பயன்பாடு!"
+        best educational app: "தலைசிறந்த கல்வி பயன்பாடு!"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -268,6 +268,12 @@ ta:
     chapter: "அதிகாரம்"
     home: "முகப்பு"
     bible: "வேதாகமம்"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "குறிப்புகள்"
     friends: "நண்பர்கள்"
     groups: "குழுக்கள்"
@@ -409,10 +415,10 @@ ta:
             ignore button: "புறக்கணி"
             ignore request button: "கோரிக்கையை புறக்கணி"
     images: 
-        none user: "%{username} hasn't created any images yet."
+        none user: "%{username} இன்னும் படங்களை உருவாக்கவில்லை."
         blank slate: 
-            heading: "You don’t have any images yet"
-            description: "Use the YouVersion mobile app to create verse images."
+            heading: "உங்களிடம் இன்னும் எந்த படங்களும் இல்லை."
+            description: "YouVersion கைபேசி பயன்பாட்டைக் கொண்டு வசன படங்களை உருவாக்கவும்."
     notes: 
         none user: "%{username} இன்னும் எந்த குறிப்புகளும் எடுக்கவில்லை."
         blank slate: 
@@ -545,8 +551,8 @@ ta:
         user notes: "%{user} -யின் குறிப்புகள்"
         my friends: "நண்பர்கள்"
         my notes: "குறிப்புகள்"
-        my images: "Images"
-        user images: "%{user}'s Images"
+        my images: "படங்கள்"
+        user images: "%{user} உடைய படங்கள்"
         user friends: "%{user} -யின் நண்பர்கள்"
         my bookmarks: "என் புத்தக அடையாள குறிகள்"
         user bookmarks: "%{user} -யின் புத்தக அடையாள குறிகள்"
@@ -612,7 +618,7 @@ ta:
             description title: "do not translate"
             description text: "do not translate"
             registration title: "do not translate"
-            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li><li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
+            registration text: "கீழ்க்கண்டவற்றை ஒப்புக்கொண்டு ஏற்கிறீர்கள்:<ul><li>YouVersionஇன் ('Registration Data') பதிவு படிவத்தில் வலியுறுத்தப்படுவதன்படி தங்களைப்பற்றிய உண்மையான, சரியான, தற்போதிய, முழுமையான தகவலை கொடுக்கவும்</li><li>பதிவு தகவலை உண்மையாகவும், துல்லியமாகவும், தற்போதியதாகவும், முழுமையாகவும் பராமரிக்கவும் உடனுக்குடன் புதுப்பிக்கவும் ஏற்கிறீர்கள். ஏதேனும் தகவல் உண்மையற்றதகவோ, துல்லியமற்றதாகவோ, தற்போதையதல்லாததாகவோ, முழுமையற்றதாகவோ இருப்பதாக LifeChurch.tv யால் சந்தேகிக்கப்பட்டால், தங்கள் கணக்கை இடைநிறுத்தம் செய்யவோ அல்லது நிறுத்தவோ, மற்றும் YouVersion இன் (அல்லது அதன் ஒரு பகுதியின்) தற்போதைய, வருங்கால பயனை மறுக்கவும் LifeChurch.tv க்கு அதிகாரம் உள்ளது. LifeChurch.tv தனது அனைத்து பயனர்கள், குறிப்பாக சிறுவர்களின் பாதுகாப்பையும் தனியுரிமையையும் பற்றி அக்கறை கொண்டுள்ளது. இந்த காரணத்தால் 13 வயதிற்கு உட்பட்ட தங்கள் சிறுவர்களை YouVersion ஐ அணுக அனுமதிக்கும் பெற்றோர் YouVersion பல்வேறு பார்வையாளர்களை சென்றடைய வடிவமைக்கப்பட்டுள்ளது என்பதை ஒப்புக் கொள்ளவும். எனவே YouVersion தங்கள் பிள்ளைக்கு ஏற்றதா என்பதை நிர்ணயம் செய்வது அவர்களின் சட்டபூர்வ காப்பாளராகிய உங்கள் பொறுப்பு.</li></ul>"
             privacy title: "do not translate"
             privacy text: "do not translate"
             account title: "do not translate"
@@ -650,7 +656,7 @@ ta:
             trademark title: "do not translate"
             trademark text: "LifeChurch.tv மற்றும் அதன் ஊழியங்கள் தொடர்பான வர்த்தகச் சின்னங்கள், முத்திரைகள், சின்னங்கள், சேவை முத்திரைகள், மற்றும் தயாரிப்பு மற்றும் சேவை பெயர்கள் LifeChurch.tv யின் வர்த்தகச் சின்னங்களாகும் (the 'LifeChurch.tv Marks'). LifeChurch.tv யின் எழுத்துமூல அனுமதியின்றி, நீங்கள் எந்த முறையிலும் LifeChurch.tv யின் சின்னங்களை காட்டவோ அல்லது பயன்படுத்தவோ மாட்டேன் என்று ஒப்பு கொள்கிறீர்கள்."
             copyright title: "பதிப்புரிமை அல்லது அறிவுசார் சொத்து மீறல் கோரிக்கை செய்வதற்கான அறிவிப்பு மற்றும் நடைமுறை"
-            copyright text: "LifeChurch.tv respects the intellectual property of others. We ask our users to do the same, particularly where it pertains to using YouVersion. LifeChurch.tv may, in appropriate circumstances and at its sole discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please send the following information to legal@youversion.com:<ul type='none'><li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest in question;</li><br><li>A written description of the copyrighted work or other intellectual property that you claim has been infringed;</li><br><li>A written description of where the material that you claim is infringing is located on YouVersion;</li><br><li>Your address, telephone number, and email address (all that apply);</li><br><li>A written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li><br><li>A written statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner, or that you are authorized to act on the behalf of the copyright or intellectual property owner. LifeChurch.tv's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:%{newline}By mail: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
+            copyright text: "LifeChurch.tv மற்றவர்களின் அறிவுசார் சொத்துக்கு மதிப்பு கொடுப்பது. முக்கியமாக YouVersion இன் பயனை சார்ந்த இடங்களில், எங்கள் பயனர்களையும் அவ்வணமே செய்யுமாறு கேட்கிறோம்.  மீண்டும் மீண்டும் விதி மீறலில் ஈடுபடும் பயனர்களின் கணக்குகளை LifeChurch.tv ஏற்ற சூழ்நிலைகளில் தனது சொந்த உசிதத்தின் படி முடக்கம் மற்றும்/அல்லது நிறுத்தம் செய்யலாம். பதிப்புரிமை மீறல் செய்யும் வகையிலோ, பிற அறிவுசார் சொத்து மீறல் செய்யும் வகையிலோ தங்கள் பணி நகல் செய்யப்பட்டதாக நீங்கள் நம்பினால் கீழ்கண்ட தகவலை legal@youversion.com க்கு அனுப்பவும்.<ul type='none'><li>பதிப்புரிமை அல்லது கேள்விக்குரிய அறிவுசார் சொத்தின் உரிமையாளரின் சார்பாக செயல்பட அங்கீகரிக்கப்பட்டவரின் இயல்பான அல்லது மின் கையொப்பம்</li><br><li>மீறப்பட்டதாக நீங்கள் கோரும் பதிப்புரிமைக்குட்பட்ட பணி அல்லது மற்ற அறிவுசார் சொத்து பற்றி எழுத்து வடிவத்தில் விளக்கம்</li><br><li>மீறப்பட்டதாக நீங்கள் கோரும் பொருள் YouVersion இல் அமைந்துள்ள இடத்தை பற்றிய எழுத்துவடிவ விளக்கம்</li><br><li>தங்கள் முகவரி, தொலைபேசி எண் மற்றும் email முகவரி (பொருத்தமுள்ள அனைத்தும்)</li><br><li>சர்ச்சைக்குரிய பயன் பதிப்புரிமையாளராலோ, அதன் முகவராலோ அல்லது சட்டத்தாலோ அனுமதிக்கப்படவில்லை என்று நீங்கள் நல்நம்பிக்கை கொண்டுள்ளதாக எழுதப்பட்ட அறிக்கை</li><br><li>தங்கள் அறிவிப்பில் மேற்கூறப்பட்ட தகவல் துல்லியமானது என்றும், தாங்கள் பதிப்புரிமை அல்லது அறிவுசார் சொத்தின் உரிமையாளர் அல்லது பதிப்புரிமை அல்லது அறிவுசார் சொத்தின் உரிமையாளரின் சார்பாக செயல்பட அங்கீகரிக்கப்பட்டவர் என்றும் தங்களால் எழுதப்பட்ட வாக்குமூலம். LifeChurch.tv இன் பதிப்புரிமை அல்லது அறிவுசார் சொத்து மீறல் கோரிக்கைகளின் அறிக்கைகுரிய முகவரை பின்வருமாறு தொடர்பு கொள்ளலாம்:%{newline}அஞ்சல் LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}தொலைபேசி: (405) 680-5433%{newline}தொலைநகல்: (405) 844-3002%{newline}மின்னஞ்சல்: %{mailto_link}</li></ul>"
             general title: "பொதுவான தகவல்கள்"
             general text: "முழு ஒப்பந்தம். இந்த உபயோக விதிமுறைகள், உங்களுக்கும்  LifeChurch.tv -க்கு மிடையேயான  முழு உடன்பாடாய் அமைந்து   உங்கள் YouVersion பயன்பாட்டை கட்டுப்படுத்தவும், YouVersion சம்பந்தமாக உங்களுக்கும் LifeChurch.tv -க்குமிடையே உள்ள எந்த முன் ஒப்பந்தங்களையும்  தள்ளி வைக்கவும் செய்கிறது. நீங்கள் கூடுதல் விதிமுறைகள் மற்றும் நிபந்தனைகளுக்கு உட்பட்டு இருக்கலாம்.  சட்டம் மற்றும் மன்றத்தின் தேர்ந்தெடுப்பு.உபயோக விதிமுறைகள் மற்றும் உங்களுக்கும்   LifeChurch.tv -க்கும் இடையே உள்ள உறவு சட்ட, விதி முரண்பாடுகளை சாராமல் ஓக்லஹோமா மாநில சட்டங்கள் மூலம் நிர்வகிக்கப்படுகிறது.நீங்களும் LifeChurch.tv -யும் ஓக்லஹோமா, ஓக்லஹோமா மாவட்டத்தில் அமைந்துள்ள நீதிமன்றங்களின் தனிப்பட்ட மற்றும் பிரத்தியேக அதிகார வரம்பிற்குள் சமர்ப்பிக்க சம்மதிக்கிறோம். <br><br> விலக்கு அளித்தலும் விதிகளின் தீவிரமும்.இந்த விதிமுறைகளில் எதையாவது செயல்படுத்தவோ அமல்படுத்தவோ LifeChurch.tv தவறி விடுவது அப்படிப்பட்ட எந்த உரிமை அல்லது கட்டுப்பாட்டு விதிகளை பின்பற்றுவதிலிருந்து விலக்கு அளித்தலாக அமையாது. (1)"
         profile: 
@@ -663,7 +669,7 @@ ta:
             tab notes: "குறிப்புகள்"
             tab bookmarks: "புத்தகக்குறிகள்"
             tab highlights: "சிறப்புக்கூறுகள்"
-            tab images: "Images"
+            tab images: "படங்கள்"
             tab badges: "Badges"
             first name: "முதல் பெயர்"
             last name: "கடைசிப் பெயர்"
@@ -785,7 +791,7 @@ ta:
             private: "தனிமறைவானது"
             public: "பொதுவானது"
         title: "வாசிப்பு திட்டங்கள்"
-        meta title: "Online Bible study, devotionals and reading plans"
+        meta title: "Online வேதாகம ஆராய்ச்சி, தியானங்கள் மற்றும் வாசிப்பு திட்டங்கள்"
         browse by category: "வகை வாரியாக உலவ"
         browse plans: "%{category} திட்டங்களை காண்க"
         swap list localization: "(<a href='%{swap_link}'>உள்ளில் பார்வையிட%{swap_locale}</a>)"
@@ -987,8 +993,8 @@ ta:
     download ad: 
         title: "இலவச Bible App பதிவிறக்கம் செய்க"
         description copy: "நூற்றுக்கணக்கான பதிப்புகள் %{language_count}+ வேவ்வேறு மொழிகளில் - உங்களோடு எங்கும் செல்லும் வேதம்."
-        meta copy title: "Download the Free Bible App"
-        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
+        meta copy title: "இலவச Bible App பதிவிறக்கம் செய்க"
+        meta copy versions: " %{language_count}க்கும் மேற்பட்ட பல்வேறு மொழிகளில் நூற்றுக்கணக்கான பதிப்புகள்."
         line 1: "100+ ல் நூற்றுக்கணக்கான பதிப்புகள்"
         line 2: "பல்வேறு மொழிகள் - the Bible"
         line 3: "அது உங்களோடு எங்கும் செல்கிறது."
@@ -1054,15 +1060,15 @@ ta:
         t4: "மிக நன்று. எப்பொழுதும் மேம்படுகிறீர்கள்!"
         t4 copy: "பல மொழிபெயர்ப்புகளும், மொழிகளும் உள்ளன, அவற்றுள் பலவற்றை பதிவிறக்கம் செய்து ஆஃப்லைனிலும் வாசித்துக் கொள்ளலாம். குறிப்பெடுத்தல், புக்மார்க் செய்தல் போன்ற பல பயனுள்ள அம்சங்கள்."
         t5: "எப்போதும் மிகச்சிறந்த வேதாகம பயன்பாடு!"
-        t5 copy: "I love how it has a lot of versions and that there are verses of the day, devotions, plans and community. Thanks for this free app. :)"
+        t5 copy: "இதில் பல பதிப்புகள், தினசரி வசனங்கள், தியானங்கள், திட்டங்கள், சமுதாயம் ஆகியவை உள்ளதால் எனக்கு மிகவும் பிடிக்கும். இந்த இலவச பயன்பாட்டிற்காக நன்றி. :)"
         t6: "பல்வேறு பதிப்புகள் மற்றும் ஆஃப்லைன் வாசிப்பு!"
-        t6 copy: "Great because there are many different versions and I could download multiple versions for offline reading.  I'm able to listen to this app."
+        t6 copy: "பல்வேறு பதிப்புகள் உள்ளதால் சபாஷ். Offline இல் படிப்பதற்கு என்னால் பல பதிப்புகளை பதிவிறக்கம் செய்ய முடிகிறது.  இந்த பயன்பாட்டை என்னால் கேட்கவும் முடிகிறது."
         t7: "சிறந்த பயன்பாடு!"
-        t7 copy: "Helps me to read the bible more. Love the search and share features and the variety of ways to share. Also like the audio versions."
+        t7 copy: "வேதாகமத்தை நான் அதிகமாக படிக்க உதவுகிறது. தேடுதல் மற்றும் பகிருதல் அம்சங்களும் பல விதங்களில் பகிரக்கூடிய வாய்ப்பும் மிகவும் பிடித்திருக்கிறது. ஒலி பதிப்புகளும் பிடித்துள்ளது."
         t8: "சிறந்த பயன்பாடு"
-        t8 copy: "This is a great tool for studying from multiple translations. It's also convenient for listening to the bible when you're driving."
+        t8 copy: "பல்வேறு மொழிபெயர்ப்புகளை ஆய்வு செய்வதற்கு இது சிறந்த கருவி. வாகனத்தை ஒட்டும் பொழுது வேதாகமத்தை கேட்பதற்கும் வசதியாக உள்ளது."
         t9: "மிகச்சிறந்த வேதாகம பயன்பாடு!"
-        t9 copy: "This is the best bible app out there. It has the word in different languages and versions for online and offline use. It has devotionals for everything you could think of. You can connect with others and ultimately learn about God and his Word."
+        t9 copy: "இது தான் இருப்பதிலேயே மிக சிறந்த வேதாகம பயன்பாடு. வார்த்தையை பல மொழிகளில் கொண்டுள்ளது மட்டுமன்றி, offline லும் online லும் பயன்படுத்த வெவ்வேறு பதிப்புகளும் கொண்டுள்ளது. நினைத்து பார்க்ககூடிய எல்லாவற்றை குறித்தும் தியானங்கள் உள்ளன. மற்றவர்களோடு தொடர்பு கொள்ளவும், அதன் வாயிலாக தேவனை பற்றியும் அவர் வார்த்தையை பற்றியும் கற்றுக்கொள்ள முடிகிறது."
         version list: "இது போன்று 1000க்கும் மேற்பட்ட வேதாகம பதிப்புகள்:"
         audio version list: "இது போன்ற ஆடியோ வேதாகம பதிப்புகளைக் கேளுங்கள்:"
         iphone ipad: "iPhone/iPad"
@@ -1103,6 +1109,9 @@ ta:
             download action: "வேதாகம பயன்பாட்டை பதிவிறக்குக"
             download description: "உங்கள் மொபைல் சாதனத்தில் இலவச YouVersion வேதாகம பயன்பாட்டை பதிவிறக்கம் செய்யுங்கள். நீங்கள் எங்கு சென்றாலும் உங்கள் வேதாகமத்தை பெற்றிருப்பீர்கள்."
             world installs: "உலகம் முழுவதும் நிறுவுகிறது"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "வாசிப்பவரின் அமைவுகள்"

@@ -268,6 +268,12 @@ mn:
     chapter: "Бүлэг"
     home: "Нүүр хуудас"
     bible: "Библи"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Тэмдэглэлүүд"
     friends: "Найзууд"
     groups: "Группүүд"
@@ -1103,6 +1109,9 @@ mn:
             download action: "Библи Апп Татаж Авах"
             download description: "Энэхүү үнэгүй Библи Апп хаана ч тантай хамт байх Библи зөөврийн хэрэгсэл дээрээ татан ав."
             world installs: "Дэлхий даяархи суулгац"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Таны Тохиргоо"

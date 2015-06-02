@@ -268,6 +268,12 @@ nl:
     chapter: "Hoofdstuk"
     home: "Thuisscherm"
     bible: "Bijbel"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Notities"
     friends: "Vrienden"
     groups: "Groepen"
@@ -1103,6 +1109,9 @@ nl:
             download action: "Download de Bijbel App"
             download description: "Download de gratis Bijbel App op je mobiele toestel en je hebt de Bijbel bij je, ongeacht waar je bent."
             world installs: "Installaties wereldwijd"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Leesvensterinstellingen"

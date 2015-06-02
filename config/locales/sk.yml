@@ -122,8 +122,8 @@ sk:
         users last name required: "Musíte zadať priezvisko."
         moments content required: "Obsah nemôže byť prázdny."
     meta: 
-        best kids app: "Best Kids App!"
-        best educational app: "Best Educational App"
+        best kids app: "Najlepšia apka pre deti!"
+        best educational app: "Najlepšia vzdelávacia apka"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -279,6 +279,12 @@ sk:
     chapter: "Kapitola"
     home: "Domov"
     bible: "Biblia"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Poznámky"
     friends: "Priatelia"
     groups: "Skupiny"
@@ -798,7 +804,7 @@ sk:
             private: "Súkromný"
             public: "Verejné"
         title: "Plány čítania"
-        meta title: "Online Bible study, devotionals and reading plans"
+        meta title: "Štúdium Biblie online, stíšenia a čítacie plány"
         browse by category: "Prehľadávať podľa kategórie"
         browse plans: "Prehľadávať plány: %{category}"
         swap list localization: "(<a href='%{swap_link}'>Zobraziť v jazyku %{swap_locale}</a>)"
@@ -1001,7 +1007,7 @@ sk:
         title: "Stiahnite si bezplatnú aplikáciu Biblia"
         description copy: "Stovky prekladov vo vyše %{language_count} rôznych jazykoch - Biblia, ktorá ide všade s vami."
         meta copy title: "Stiahnite si bezplatnú aplikáciu Biblia"
-        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
+        meta copy versions: "Stovky verzii v %{language_count} a viac rozličných jazykoch"
         line 1: "Stovky prekladov vo viac"
         line 2: "ako 100 jazykoch — Biblia,"
         line 3: "ktorá ide všade s vami."
@@ -1116,6 +1122,9 @@ sk:
             download action: "Stiahnite si aplikáciu Biblia"
             download description: "Stiahnite si bezplatnú aplikáciu YouVersion Biblia do vášho mobilného zariadenia a Bibliu budete mať so sebou kamkoľvek pôjdete."
             world installs: "Inštalácií po celom svete"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Nastavenia zobrazenia"

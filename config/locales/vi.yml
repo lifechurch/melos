@@ -257,6 +257,12 @@ vi:
     chapter: "Đoạn"
     home: "Trang nhà"
     bible: "Kinh Thánh"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Ghi chú"
     friends: "Bạn bè"
     groups: "Nhóm"
@@ -1090,6 +1096,9 @@ vi:
             download action: "Tải App Kinh Thánh"
             download description: "Tải App Kinh Thánh miễn phí YouVersion về thiết bị di động của bạn và mang Kinh Thánh theo bất cứ nơi nào bạn đi."
             world installs: "Cài đặt trên toàn cầu"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Cài đặt giao diện đọc"

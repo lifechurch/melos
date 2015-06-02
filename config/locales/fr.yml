@@ -268,6 +268,12 @@ fr:
     chapter: "Chapitre"
     home: "Accueil"
     bible: "Bible"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Notes"
     friends: "Amis"
     groups: "Groupes"
@@ -1103,6 +1109,9 @@ fr:
             download action: "Téléchargez la Bible App"
             download description: "Téléchargez gratuitement la Bible App YouVersion sur votre appareil mobile et vous aurez toujours votre Bible avec vous."
             world installs: "Installations dans le monde"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Paramètres de Lecture"

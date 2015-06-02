@@ -290,6 +290,12 @@ hr:
     chapter: "Poglavlje"
     home: "Početna"
     bible: "Biblija"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Bilješke"
     friends: "Prijatelji"
     groups: "Grupe"
@@ -1129,6 +1135,9 @@ hr:
             download action: "Preuzmi aplikaciju Biblija"
             download description: "Preuzmi besplatnu YouVersion aplikaciju Biblija na mobilni uređaj i imat ćeš Bibliju sa sobom kod god da pođeš."
             world installs: "Instalacija diljem svijeta"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Postavke čitanja"
