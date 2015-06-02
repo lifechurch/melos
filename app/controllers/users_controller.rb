@@ -174,20 +174,20 @@ class UsersController < ApplicationController
 
     begin
       #auth first to give the validate user is at keyboard, and doesn't just have valid cookies
-      user = @user = User.authenticate(current_user.username, params[:password])
+      user = User.authenticate(current_user.username, params[:password])
     rescue AuthError
       user = false
     end
 
-    if user
+    if user && user.valid?
       @results = @user.destroy
       if @results.valid?
-         sign_out
+        sign_out
         return render "delete_account_success", layout: "application"
       end
     else
       flash.now[:error] = t("invalid password")
-      render action: "delete_account", layout: "application"
+      return render "delete_account", layout: "settings"
     end
     
   end

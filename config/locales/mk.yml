@@ -268,6 +268,12 @@ mk:
     chapter: "Глава"
     home: "Дома"
     bible: "Библија"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Белешки"
     friends: "Пријатели"
     groups: "Групи"
@@ -409,9 +415,9 @@ mk:
             ignore button: "Одбиј"
             ignore request button: "Одбиј ја поканата"
     images: 
-        none user: "%{username} hasn't created any images yet."
+        none user: "%{username} сеуште нема креирано слики."
         blank slate: 
-            heading: "You don’t have any images yet"
+            heading: "Ти сеуште немаш ниту една слика"
             description: "Use the YouVersion mobile app to create verse images."
     notes: 
         none user: "%{username} нема земено воопшто белешки."
@@ -987,7 +993,7 @@ mk:
     download ad: 
         title: "Симни ја бесплатната Библиска Апликација"
         description copy: "Стотици верзии во над %{language_count} различни јазици - Библијата која оди насекаде заедно со тебе."
-        meta copy title: "Download the Free Bible App"
+        meta copy title: "Симни ја бесплатната Библиска Апликација"
         meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Стотици верзии на 100 +"
         line 2: "различни јазици - Библија"
@@ -1047,7 +1053,7 @@ mk:
         what people: "Што велат за Библиската апликација"
         t1: "Секогаш ја носам Библијата со себе."
         t1 copy: "Ги обележав сите стихови кои се важни за мене. Прочитав дури се за една година благодарение на плановите за читање."
-        t2: "Highly recommended"
+        t2: "Силно препорачано"
         t2 copy: "I love how you are able to connect with friends and the Bible reading plans are awesome. This application helps me also to stay consistent in reading because it has reminders for the plans. It also gives me another way to come closer to God. Download this and read every day!"
         t3: "Прекрасна апликација."
         t3 copy: "Одлична апликација со огромен избор на Библии... Аудио Библијата е исто така прекрасна и лесна за разбирање."
@@ -1063,8 +1069,8 @@ mk:
         t8 copy: "This is a great tool for studying from multiple translations. It's also convenient for listening to the bible when you're driving."
         t9: "Best Bible app!"
         t9 copy: "This is the best bible app out there. It has the word in different languages and versions for online and offline use. It has devotionals for everything you could think of. You can connect with others and ultimately learn about God and his Word."
-        version list: "Over 1000 Bible versions including:"
-        audio version list: "Listen to Bible audio versions including:"
+        version list: "Преку 1000 верзии на Библијата, меѓу кои:"
+        audio version list: "Слушај ја Библијата во една од следните аудио верзии:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"
@@ -1103,6 +1109,9 @@ mk:
             download action: "Симни ја апликацијата Библија"
             download description: "Симни ја бесплатно апликацијата Библија од YouVersion на твојот мобилен уред и ќе ја имаш твојата Библија без разлика каде одиш."
             world installs: "Се инсталира насекаде низ светот."
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Твоите уредувања"

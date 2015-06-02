@@ -279,6 +279,12 @@ cs:
     chapter: "Kapitola"
     home: "Domů"
     bible: "Bible"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Poznámky"
     friends: "Přátelé"
     groups: "Skupiny"
@@ -1116,6 +1122,9 @@ cs:
             download action: "Stáhněte si aplikaci Bible"
             download description: "Stáhněte si bezplatnou aplikaci Bible na vaše mobilní zařízení a budete mít vaši Bibli vždy s sebou, ať půjdete kamkoli."
             world installs: "Instalací po celém světě"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Nastavení zobrazení"

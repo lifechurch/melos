@@ -257,6 +257,12 @@ ms:
     chapter: "Bab"
     home: "Halaman Utama"
     bible: "Alkitab"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Nota"
     friends: "Sahabat"
     groups: "Group"
@@ -1090,6 +1096,9 @@ ms:
             download action: "Muat turun Bible App"
             download description: "Muat turun YouVersion Bible App secara percuma dalam alat peranti mudah alih anda dan anda akan ada bersama Alkitab anda di mana sahaja anda pergi."
             world installs: "Install di seluruh dunia"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Setting Anda"

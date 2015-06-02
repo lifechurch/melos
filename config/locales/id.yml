@@ -257,6 +257,12 @@ id:
     chapter: "Pasal"
     home: "Beranda"
     bible: "Alkitab"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Catatan"
     friends: "Teman"
     groups: "Grup"
@@ -1090,6 +1096,9 @@ id:
             download action: "Unduh Aplikasi Alkitab"
             download description: "Unduh Ap Alkitab gratis YouVersion di piranti selular Anda dan Anda akan memiliki Alkitab ke manapun Anda pergi."
             world installs: "Instal seluruh dunia"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Pengaturan Pembaca"

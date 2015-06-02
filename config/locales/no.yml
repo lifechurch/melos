@@ -268,6 +268,12 @@
     chapter: "Kapittel"
     home: "Hjem"
     bible: "Bibel"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Notater"
     friends: "Venner"
     groups: "Grupper"
@@ -1103,6 +1109,9 @@
             download action: "Last ned Bibel-appen"
             download description: "Last ned Bibel-appen fra YouVersion gratis til din mobile enhet, så har du Bibelen med deg over alt."
             world installs: "Installeringer verden rundt"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Leseinnstillinger"
