@@ -95,5 +95,6 @@ describe('youversion signup', function() {
 //
 //        expect(dl_free_link.getText()).toEqual("http://www.bible.com/free-bible-apps");
 //    });
+    
 
 });
