@@ -33,6 +33,8 @@ describe('youversion signup', function() {
 	it('should let me register', function() {
         browser.get(testUrl + '/sign-up');
 
+        browser.wait(protractor.ExpectedConditions.elementToBeClickable(register_button), 10000, "The element is still not visible.");
+
 		email_element.sendKeys(email);
 		fn_element.sendKeys(fn);
 		ln_element.sendKeys(ln);
@@ -41,7 +43,9 @@ describe('youversion signup', function() {
 
 		register_button.click();
 
-		expect(register_confirm.getText()).toEqual("Thanks for registering!");
+        browser.wait(protractor.ExpectedConditions.visibilityOf(register_confirm), 30000, "The element is still not visible.");
+
+        expect(register_confirm.getText()).toEqual("Thanks for registering!");
 	});
 
 // These lines need to be left in place:
@@ -91,4 +95,5 @@ describe('youversion signup', function() {
 //
 //        expect(dl_free_link.getText()).toEqual("http://www.bible.com/free-bible-apps");
 //    });
+
 });
