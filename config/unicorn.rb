@@ -1,24 +1,18 @@
 # Set environment to development unless something else is specified
 env = ENV["RAILS_ENV"] || "production"
 
-# See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete
-# documentation.
-worker_processes 4
+pid "/tmp/unicorn.youversion-web.pid"
+worker_processes Integer(ENV["UNICORN_WORKERS"] || 2)
+timeout Integer(ENV['UNICORN_TIMEOUT'] || 25)
 
-# listen on both a Unix domain socket and a TCP port,
-# we use a shorter backlog for quicker failover when busy
 listen 3000
-
-# Preload our app for more speed
 preload_app true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
 
-pid "/tmp/unicorn.youversion-web.pid"
-
 # Production specific settings
-if env == "production_yv"
+if env == "production"
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
   working_directory "/var/www/youversion-web/current"
