@@ -58,9 +58,6 @@ gem 'pg'
 # gem 'rails-i18n',           '~> 0.6.3'
 
 gem 'routing-filter',         '~> 0.3.1'
-gem "unicorn",               '~> 4.8.3'
-gem 'unicorn-worker-killer'
-# gem 'puma'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do
@@ -94,7 +91,6 @@ group :development, :tddium_ignore do
   gem 'guard-cucumber'
   gem 'guard-bundler'
   gem 'guard-rspec'
-  gem 'hooves'
   gem 'pry', require: false
   gem 'pry-rails'
   gem 'quiet_assets'
