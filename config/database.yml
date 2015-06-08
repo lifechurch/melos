@@ -11,12 +11,3 @@ test:
   database: db/test.sqlite3
   pool: 5
   timeout: 5000
-
-staging:
-  <<: *common
-
-production:
-  <<: *common
-
-cucumber:
-  <<: *test
