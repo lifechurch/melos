@@ -5,6 +5,7 @@ require "capistrano/bundler"
 require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
 require "capistrano/rvm"
+require "capistrano/passenger"
 
 set :default_env, {
   'FOG_DIRECTORY' => 'web-production',
