@@ -6,5 +6,13 @@ require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
 require "capistrano/rvm"
 
+set :default_env, {
+  'FOG_DIRECTORY' => 'web-production',
+  'FOG_PROVIDER' => 'AWS',
+  'AWS_ACCESS_KEY_ID' => 'AKIAJTVJ5UNUPLF7N43Q',
+  'AWS_SECRET_ACCESS_KEY' => '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',
+  'SECURE_TRAFFIC' => true
+}
+
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
