@@ -1039,6 +1039,9 @@ en:
     mobile web:                                 "Mobile Web"
     amazon:                                     "Kindle Fire"
     free overlay:                               "100% Free"
+    sms button:                                 "Text me a link"
+    sms error:                                  "Sorry, something went wrong. Please try again."
+    sms success:                                "Great! Check your mobile device for the link."
   pages:
     generic_error:
       title:                                    "Oops!"
