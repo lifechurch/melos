@@ -165,7 +165,7 @@ module YouversionWeb
 
     # Setting up memcached.
     config.after_initialize do
-      config.cache_store = :dalli_store, nil, {namespace: "yv", expires_in: 24.hours, compression: true}
+      config.cache_store = :dalli_store, {namespace: "yv", expires_in: 24.hours, compression: true}
     end
 
   end
