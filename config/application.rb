@@ -9,7 +9,7 @@ require "rack/rewrite"
 require 'rack/throttle'
 
 require File.join(File.dirname(__FILE__), '../lib/bb.rb')
-require File.join(File.dirname(__FILE__), '../lib/yv_logger.rb')
+#require File.join(File.dirname(__FILE__), '../lib/yv_logger.rb')
 
 require File.expand_path('../_config', __FILE__)
 
