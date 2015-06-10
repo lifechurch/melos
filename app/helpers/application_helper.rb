@@ -89,9 +89,22 @@ module ApplicationHelper
     else
       DateTime.parse(api_created_dt)
     end
+
     t('moments.time past', ago: time_ago_in_words(time.in_time_zone))
+
+    # Swith to this method as soon as datetime.time_ago_in_words has been translated
+    #  then remove method above
+    # distance_of_time_in_words(time.in_time_zone, Time.current, false, scope: 'datetime.time_ago_in_words')
   end
 
+  def prettify_date(api_created_dt)
+    time = if api_created_dt.is_a?(Fixnum)
+      Time.at(api_created_dt)
+    else
+      DateTime.parse(api_created_dt)
+    end
+    I18n.l(time, format: :default)
+  end
 
   def usfm_from_moment(references)
     references.usfm.join("+")

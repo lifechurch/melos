@@ -3,31 +3,6 @@ km:
     time: 
         formats: 
             votd: "%B %-d, %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                other: "about %{count} hours ago"
-            about_x_months: 
-                other: "about %{count} months ago"
-            about_x_years: 
-                other: "about %{count} years ago"
-            almost_x_years: 
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
-            less_than_x_minutes: 
-                other: "less than %{count} minutes ago"
-            less_than_x_seconds: 
-                other: "less than %{count} seconds ago"
-            over_x_years: 
-                other: "over %{count} years ago"
-            x_days: 
-                other: "%{count} days ago"
-            x_minutes: 
-                other: "%{count} minutes ago"
-            x_months: 
-                other: "%{count} months ago"
-            x_seconds: 
-                other: "%{count} seconds ago"
     counter: 
         format: "999.999.999"
     social: 
@@ -100,8 +75,6 @@ km:
         users last name required: "អ្នក​ត្រូវ​បញ្ចូល​នាម"
         moments content required: "មាតិការ​មិន​អាច​ទទេ​រ​បាន​ឡើយ។"
     meta: 
-        best kids app: "Best Kids App!"
-        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -257,12 +230,6 @@ km:
     chapter: "ជំពូក"
     home: "ទំព័រ​ដើម"
     bible: "ព្រះគម្ពីរ"
-    audio bible: "Audio Bible"
-    audio bible app: "Audio Bible App"
-    audio bibles title: "Listen to Audio Bibles"
-    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
-    language: "Language"
-    translation: "Translation"
     notes title: "កំណត់​ត្រា"
     friends: "មិត្ត​ភ័ក្ត្រ"
     groups: "ក្រុម"
@@ -778,7 +745,6 @@ km:
             private: "ឯក​ជន"
             public: "សាធារណះ"
         title: "គំរោង​អាន​"
-        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "រុក​រក​តាម​ប្រភេទ"
         browse plans: "គំរោង​រុក​រក %{category}"
         swap list localization: "(<a href='%{swap_link}'>មើល​ក្នុង %{swap_locale}</a>)"
@@ -980,12 +946,13 @@ km:
     download ad: 
         title: "ដោន​ឡូដ​យក​ Bible App ដោយ​ឥត​គិតថ្លៃ"
         description copy: "មាន​ជំនាន់​រាប់​រយ​ត្រូវ​បាន​បក​ប្រែ​ជា %{language_count} ភាសារ​ផ្សេងៗ​គ្នា - ជា​ព្រះ​គម្ពីរ​ដែល​ទៅ​ជា​មួយ​លោក​អ្នក​គ្រប់​ទី​កន្លែង​ទាំងអស់។"
-        meta copy title: "Download the Free Bible App"
-        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "ជំនាន់​គម្ពីរ​រាប់​រយ​ក្នុង​ចំណោម 100+"
         line 2: "ច្រើន​ភាសា- ជា​ព្រះ​គម្ពីរ​"
         line 3: "ដែល​ទៅ​ជាមួយ​អ្នក​គ្រប់​ទី​កន្លែង"
         download: "ដោន​ឡូដ​យក​ឥឡូវ"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1069,6 +1036,9 @@ km:
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
         free overlay: "ពិត​ជាឥត​គិត​ថ្លៃ ១០០%"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Oops!"
@@ -1096,9 +1066,6 @@ km:
             download action: "ដោនឡូដ Bible App"
             download description: "ដោនឡូដ YouVersion Bible App ដោយឥតគិតថ្លៃលើ​ទូរស័ព្ទចល័តរបស់អ្នក​ហើយអ្នកនឹង​មាន​ព្រះគម្ពីរនៅជាប់ជាមួយ ទោះបីទៅទីណាក្ដី ។"
             world installs: "តំឡើងទូទាំងពិភពលោក"
-        trending verses: 
-            title: "Trending Bible verses"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "ការ​កំណត់​របស់​អ្នក"

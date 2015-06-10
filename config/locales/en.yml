@@ -2,6 +2,42 @@ en:
   time:
     formats:
       votd: "%B %-d, %Y"
+  datetime:
+    time_ago_in_words:
+      about_x_hours:
+        one: "about 1 hour ago"
+        other: "about %{count} hours ago"
+      about_x_months:
+        one: "about 1 month ago"
+        other: "about %{count} months ago"
+      about_x_years:
+        one: "about 1 year ago"
+        other: "about %{count} years ago"
+      almost_x_years:
+        one: "almost 1 year ago"
+        other: "almost %{count} years ago"
+      half_a_minute: "half a minute ago"
+      less_than_x_minutes:
+        one: "less than a minute ago"
+        other: "less than %{count} minutes ago"
+      less_than_x_seconds:
+        one: "less than 1 second ago"
+        other: "less than %{count} seconds ago"
+      over_x_years:
+        one: "over 1 year ago"
+        other: "over %{count} years ago"
+      x_days:
+        one: "1 day ago"
+        other: "%{count} days ago"
+      x_minutes:
+        one: "1 minute ago"
+        other: "%{count} minutes ago"
+      x_months:
+        one: "1 month ago"
+        other: "%{count} months ago"
+      x_seconds:
+        one: "1 second ago"
+        other: "%{count} seconds ago"
   counter:
     format: "999,999,999"
   social:
@@ -74,6 +110,8 @@ en:
     users last name required:                   "You must enter a last name."
     moments content required:                   "Content cannot be blank."
   meta:
+    best kids app:                              "Best Kids App!"
+    best educational app:                       "Best Educational App"
     kids_app:
       title:                                    "The Bible App for Kids"
       description:                              "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -229,6 +267,12 @@ en:
   chapter:                                      "Chapter"
   home:                                         "Home"
   bible:                                        "Bible"
+  audio bible:                                  "Audio Bible"
+  audio bible app:                              "Audio Bible App"
+  audio bibles title:                           "Listen to Audio Bibles"
+  audio bible meta:                             "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+  language:                                     "Language"
+  translation:                                  "Translation"
   notes title:                                  "Notes"
   friends:                                      "Friends"
   groups:                                       "Groups"
@@ -747,6 +791,7 @@ en:
       private:                                  "Private"
       public:                                   "Public"
     title:                                      "Reading Plans"
+    meta title:                                 "Online Bible study, devotionals and reading plans"
     browse by category:                         "Browse by Category"
     browse plans:                               "Browse %{category} Plans"
     swap list localization:                     "(<a href='%{swap_link}'>View in %{swap_locale}</a>)"
@@ -949,6 +994,8 @@ en:
   download ad:
     title:                                      "Download the Free Bible App"
     description copy:                           "Hundreds of versions in %{language_count}+ different languages - the Bible that goes with you anywhere."
+    meta copy title:                            "Download the Free Bible App"
+    meta copy versions:                         "Hundreds of versions in %{language_count}+ different languages"
     line 1:                                     "Hundreds of versions in 100+"
     line 2:                                     "different languages - the Bible"
     line 3:                                     "that goes with you anywhere."
@@ -1069,6 +1116,9 @@ en:
       download action:                          "Download the Bible App"
       download description:                     "Download the free YouVersion Bible App on your mobile device and you'll have your Bible with you no matter where you go."
       world installs:                           "Installs around the world"
+    trending verses:
+      title:                                    "Trending Bible verses"
+      headline:                                 "Bible verses currently trending in the YouVersion Bible App and Bible.com"
   shared:
     menu_settings:
         title:                                  "Reader Settings"

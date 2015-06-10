@@ -42,7 +42,7 @@ module YouversionWeb
     config.middleware.insert_after(
       Bb::EndPoint,
       Rack::MobileDetect,
-      targeted: /Android|android|iPhone|iphone|iPod|ipod|iPad|ipad|BlackBerry|blackberry|Silk|silk|SymbianOS|J2ME|Windows Phone OS|webOS|hpwOS/
+      targeted: /Android|android|iPhone|iphone|iPod|ipod|iPad|ipad|BlackBerry|blackberry|Silk|silk|SymbianOS|symbian|Symbian|J2ME|Windows Phone OS|webOS|hpwOS/
     )
 
     config.middleware.insert_after(Rack::MobileDetect, Rack::Rewrite) do

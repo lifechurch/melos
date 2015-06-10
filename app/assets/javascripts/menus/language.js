@@ -6,11 +6,12 @@ function LanguageMenu( el , opts ) {
   // make sure all xx-XX format locales come first before any 2 letter locales.
   // has to do with matching /pt early when we're trying to match for /pt-PT
   // this should be updated to work better.
-  this.locales = ["zh-CN","zh-TW","es-ES","en-GB","pt-PT","af","ar","bg","ca","cs","cy","de","da","en","es","fa","fi","fr","hi","hu","hr","id","it","ja","km","ko","lv","mk","mn","ms","nl","no","pl","pt","ro","ru","sk","sq","sv","sw","ta","th","tl","tr","uk","vi"];
+  this.locales = ["zh-CN","zh-TW","es-ES","en-GB","pt-PT","af","ar","bg","ca","cs","cy","de","da","el","en","es","fa","fi","fr","hi","hu","hr","id","it","ja","km","ko","lv","mk","mn","ms","nl","no","pl","pt","ro","ru","sk","sq","sv","sw","ta","th","tl","tr","uk","vi"];
 
   var path = window.location.pathname;
   var new_path = "";
   var replacement_locale_str = "";
+  var page_locale = $('html').data('locale');
 
   _this = this;
 
@@ -23,16 +24,24 @@ function LanguageMenu( el , opts ) {
       var rstr = "^(\\/" + locale + "\\/*)";    // (\/es\/+)
       var regex = new RegExp(rstr);             // build dynamic regex to check locale: /:locale
       var match = path.match(regex);
-      if( match && match.length > 0 ) {
-        // match found, replace the match with our new locale
-        new_path = path.replace(regex, replacement_locale_str + "/");
-        break
+      if (locale == page_locale) {
+          if (match && match.length > 0) {
+              // match found, replace the match with our new locale
+              new_path = path.replace(regex, replacement_locale_str + "/");
+              break
+          }
       }
     }
 
     // match wasn't found, add the locale extension to our current path
     if(new_path == "")
        new_path = replacement_locale_str + path;
+
+    // adjust video to generic video path since locales have unique video url scheme
+    var video_prefix = replacement_locale_str + '/videos';
+    if(new_path.indexOf(video_prefix) != -1) {
+        new_path = video_prefix;
+    }
 
     // Post new locale to server endpoint
     $.ajax({

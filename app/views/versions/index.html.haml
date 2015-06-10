@@ -1,13 +1,10 @@
-- @title = t('versions.index title')
+- @title = "#{t('download ad.description copy', language_count: 700)} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8, Nokia, Java, Symbian"
 
 - content_for :additional_meta do
   = render '/shared/hreflang'
 
-- content_for :title do
-  = t('versions.index title')
-
 - content_for :meta_description do
-  = "#{t('bible versions')} - #{t("versions.number of versions field")} #{@versions_by_lang.values.flatten.count}, #{t("versions.number of languages field")} #{@versions_by_lang.count}"
+  = "#{t('bible versions')} - #{t("versions.number of versions field")} #{@versions_by_lang.values.flatten.count}, #{t("versions.number of languages field")} #{@versions_by_lang.count}.  #{t('download ad.meta copy title')}"
 
 %article
   - case I18n.locale.to_s

@@ -14,36 +14,44 @@ describe('youversion reader', function() {
 	var testUrl = browser.params.testUrl;
 
 	beforeEach(function() {
-		browser.get(testUrl + '/bible/1/gen.2.kjv');
+        isAngular(false);
+		browser.get(testUrl + 'bible/1/gen.2.kjv');
 	});
 
 	it('should have a title', function() {
-		expect(browser.getTitle()).toEqual('Genesis 2 King James Version | Bible.com');
+		expect(browser.getTitle()).toEqual('Genesis 2, King James Version (KJV) | Chapter 2 | The Bible App | Bible.com');
 	});
 
 	it('should open public notes', function() {
+        isAngular(true);
 		expect(publicNotes.count()).toEqual(0);
 		expandNotesButton.click();
 		expect(publicNotes.count()).toEqual(5);
 	});
 
 	it('should go to next chapter', function() {
+        browser.wait(protractor.ExpectedConditions.elementToBeClickable(chapterNextButton), 10000, "The element is still not visible.");
 		chapterNextButton.click();
-		expect(browser.getTitle()).toEqual('Genesis 3 King James Version | Bible.com');
+        browser.wait(protractor.ExpectedConditions.visibilityOf(chapterDropDown), 30000, "The element is still not visible.");
+		expect(browser.getTitle()).toEqual('Genesis 3, King James Version (KJV) | Chapter 3 | The Bible App | Bible.com');
 		expect(chapterDropDown.getText()).toEqual('Genesis 3');
 	});
 
 	it('should go to prev chapter', function() {
+        browser.wait(protractor.ExpectedConditions.elementToBeClickable(chapterPrevButton), 10000, "The element is still not visible.");
 		chapterPrevButton.click();
-		expect(browser.getTitle()).toEqual('Genesis 1 King James Version | Bible.com');
+        browser.wait(protractor.ExpectedConditions.visibilityOf(chapterDropDown), 30000, "The element is still not visible.");
+		expect(browser.getTitle()).toEqual('Genesis 1, King James Version (KJV) | Chapter 1 | The Bible App | Bible.com');
 		expect(chapterDropDown.getText()).toEqual('Genesis 1');
 	});
 
 	it('should go to john 1', function() {
+        browser.wait(protractor.ExpectedConditions.elementToBeClickable(bookSelectTrigger), 10000, "The element is still not visible.");
 		bookSelectTrigger.click();
 		johnLink.click();
 		john1Link.click();
-		expect(browser.getTitle()).toEqual('John 1 King James Version | Bible.com');
+        browser.wait(protractor.ExpectedConditions.visibilityOf(chapterDropDown), 30000, "The element is still not visible.");
+		expect(browser.getTitle()).toEqual('John 1, King James Version (KJV) | Chapter 1 | The Bible App | Bible.com');
 		expect(chapterDropDown.getText()).toEqual('John 1');
 	});
 

@@ -93,9 +93,9 @@ class AppStoreController < ActionController::Base
     when /bb/
       'http://appworld.blackberry.com/webstore/content/1222'
     when /symbian/
-      'http://store.ovi.mobi/content/47384'
+      'http://java.apps.opera.com/en_us/bible_000261.html?p=11'
     when /j2me/
-      'http://getjar.com/bible-app'
+      'http://java.apps.opera.com/en_us/bible_000261.html?p=11'
     when /windowsphone/
       'zune://navigate/?phoneappid=57f524fa-93e3-df11-a844-00237de2db9e'
     when /webos/
@@ -118,7 +118,7 @@ class AppStoreController < ActionController::Base
       store_path('amazon')
     when /blackberry|BlackBerry|bb/
       store_path('bb')
-    when /SymbianOS/
+    when /SymbianOS|Symbian/
       store_path('symbian')
     when /J2ME/
       store_path('j2me')
@@ -129,7 +129,7 @@ class AppStoreController < ActionController::Base
     when /Windows 8/
       store_path('windows8')
     else
-      'https://bible.com'
+      "https://bible.com"
     end
   end
 

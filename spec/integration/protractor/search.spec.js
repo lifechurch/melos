@@ -7,13 +7,21 @@ describe('youversion search', function() {
 	var testUrl = browser.params.testUrl;
 	
 	beforeEach(function() {
-		browser.get(testUrl);
+        isAngular(false);
+		browser.get(testUrl + "search/bible");
+        browser.manage().window().setSize(1280, 1024);
 	});
 
 	it('should search the bible', function() {
 		var search_phrase = "Fawns";
+
+        browser.wait(protractor.ExpectedConditions.presenceOf(search_field), 30000, "The element is still not visible.");
+
 		search_field.sendKeys(search_phrase);
 		search_button.click();
+
+        browser.wait(protractor.ExpectedConditions.visibilityOf(search_header), 30000, "The element is still not visible.");
+
 		expect(search_header.getText()).toEqual("Search results for: " + search_phrase);
 
 		niv_option.click();

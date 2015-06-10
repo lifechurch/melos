@@ -34,7 +34,7 @@ json.comments do
     json.array! moment.comments do |comment|
       json.id          comment.id
       json.content     comment.content
-      json.created_dt  comment.created_dt
+      json.created_dt  prettify_date(comment.created_dt)
       json.set! :time_ago, api_dt_time_ago(comment.created_dt)
       json.set! :owned_by_me, (comment.user.id == current_auth.user_id  if current_auth.present?) || (current_user_moment?(moment) if current_user.present?)
 

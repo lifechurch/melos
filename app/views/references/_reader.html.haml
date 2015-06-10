@@ -25,11 +25,12 @@
 
   - if verse_view
     - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
-    - meta_title = @title
-    - meta_description = truncate(get_verse_content(presenter.content), length: 200, separator: " ")
+    - meta_description = truncate(get_verse_content(presenter.content), length: 170, separator: " ")
+    - @title = truncate("#{reference.human}, #{version} #{meta_description}", length: 200, separator: " ")
+    - @subtitle = ''  # we don't want subtitle appended to single verse title so the verse gets more text space
     %meta{name: "twitter:card",             content: "summary"}
     %meta{name: "twitter:url",              content: meta_url}
-    %meta{name: "twitter:title" ,           content: meta_title}
+    %meta{name: "twitter:title" ,           content: @meta_title}
     %meta{name: "twitter:description",      content: meta_description}
     %meta{name: "twitter:site",             content: "@YouVersion"}
 
@@ -44,9 +45,15 @@
       %meta{name: "twitter:app:id:googleplay",    content:"com.sirma.mobile.bible.android"}
       %meta{name: "twitter:app:url:googleplay",   content: deep_link }
 
-    %meta{property: "og:title",       content: meta_title }
+    %meta{property: "og:title",       content: @meta_title }
     %meta{property: "og:url",         content: meta_url }
     %meta{property: "og:description", content: meta_description }
+  - else
+    -# chapter view eg. jhn.3.kjv
+    - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+    %meta{property: "og:title",       content: @meta_title }
+    %meta{property: "og:url",         content: meta_url }
+    -#%meta{property: "og:description", content: meta_description }
 
 - content_for :twitter_meta do
   %meta{name: "twitter:image", content: url_for(image_path(bible_icon_for_version(size: 120, version: version)))}

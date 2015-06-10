@@ -1,3 +1,4 @@
+---
 mk:
   date:
     abbr_day_names:
@@ -9,7 +10,7 @@ mk:
     - Пет
     - Саб
     abbr_month_names:
-    -
+    - 
     - Јан
     - Фев
     - Мар
@@ -31,11 +32,11 @@ mk:
     - Петок
     - Сабота
     formats:
-      default: ! '%d/%m/%Y'
-      long: ! '%B %e, %Y'
-      short: ! '%e %b'
+      default: "%d/%m/%Y"
+      long: "%B %e, %Y"
+      short: "%e %b"
     month_names:
-    -
+    - 
     - Јануари
     - Февруари
     - Март
@@ -55,45 +56,48 @@ mk:
   datetime:
     distance_in_words:
       about_x_hours:
-        few: околу %{count} часа
-        one: околу 1 час
+        one: околу %{count} час
         other: околу %{count} часа
       about_x_months:
-        few: околу %{count} месеци
-        one: околу 1 месец
+        one: околу %{count} месец
         other: околу %{count} месеци
       about_x_years:
-        one: околу 1 година
+        one: околу %{count} година
         other: околу %{count} години
+      almost_x_years:
+        one: скоро %{count} година
+        other: скоро %{count} години
       half_a_minute: пола минута
       less_than_x_minutes:
-        one: помалку од 1 минута
+        one: помалку од %{count} минута
         other: помалку од %{count} минути
-        zero: помалку од минута
       less_than_x_seconds:
-        few: помалку од %{count} секунди
-        one: помалку од 1 секунда
+        one: помалку од %{count} секунда
         other: помалку од %{count} секунди
-        zero: помалку од секунда
       over_x_years:
-        one: над 1 година
+        one: над %{count} година
         other: над %{count} години
       x_days:
-        one: 1 ден
-        other: ! '%{count} денови'
+        one: "%{count} ден"
+        other: "%{count} денови"
       x_minutes:
-        one: 1 минута
-        other: ! '%{count} минути'
+        one: "%{count} минута"
+        other: "%{count} минути"
       x_months:
-        few: ! '%{count} месеци'
-        one: 1 месец
-        other: ! '%{count} месеци'
+        one: "%{count} месец"
+        other: "%{count} месеци"
       x_seconds:
-        few: ! '%{count} секунди'
-        one: 1 секунда
-        other: ! '%{count} секунди'
-  errors: &errors
-    format: ! '%{attribute} %{message}'
+        one: "%{count} секунда"
+        other: "%{count} секунди"
+    prompts:
+      day: Ден
+      hour: Час
+      minute: Минута
+      month: Месец
+      second: Секунди
+      year: Година
+  errors:
+    format: "%{attribute} %{message}"
     messages:
       accepted: мора да биде прифатен
       blank: мора да биде зададен
@@ -108,38 +112,57 @@ mk:
       invalid: не е исправен
       less_than: мора да биде помало од %{count}
       less_than_or_equal_to: мора да биде помало или еднакво на %{count}
-      not_a_number: ! 'не е број '
+      not_a_number: 'не е број '
+      not_an_integer: не е цел број
       odd: мора да биде непарно
+      record_invalid: 'неуспешна валидација: %{errors}'
       taken: е зафатено
-      too_long: е предолг (не повеќе од %{count} карактери)
-      too_short: е прекраток (не помалку од %{count} карактери)
-      wrong_length: несоодветна должина (мора да имате %{count} карактери)
+      too_long:
+        one: е предолг (не повеќе од %{count} карактер)
+        other: е предолг (не повеќе од %{count} карактери)
+      too_short:
+        one: е прекраток (не помалку од %{count} карактер)
+        other: е прекраток (не помалку од %{count} карактери)
+      wrong_length:
+        one: несоодветна должина (мора да имате %{count} карактер)
+        other: несоодветна должина (мора да имате %{count} карактери)
     template:
-      body: ! 'Ве молиме проверете ги следните полиња:'
+      body: 'Ве молиме проверете ги следните полиња:'
       header:
-        few: ! 'Не успеав да го зачувам %{model}: %{count} грешки.'
-        one: ! 'Не успеав да го зачувам %{model}: 1 грешка.'
-        other: ! 'Не успеав да го зачувам %{model}: %{count} грешки.'
+        one: 'Не успеав да го зачувам %{model}: %{count} грешка.'
+        other: 'Не успеав да го зачувам %{model}: %{count} грешки.'
+  helpers:
+    select:
+      prompt: Одберете
+    submit:
+      create: Креира %{model}
+      submit: Зачувај %{model}
+      update: Измени %{model}
   number:
     currency:
       format:
-        delimiter: ! ','
-        format: ! '%n %u'
+        delimiter: ","
+        format: "%n %u"
         precision: 2
-        separator: .
+        separator: "."
         significant: false
         strip_insignificant_zeros: false
         unit: MKD
     format:
-      delimiter: .
+      delimiter: "."
       precision: 3
-      separator: ! ','
+      separator: ","
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: ! '%n %u'
+        format: "%n %u"
         units:
+          billion: илјади
+          million: милјони
+          quadrillion: милјарди
+          thousand: трилјони
+          trillion: квадрилјони
           unit: ''
       format:
         delimiter: ''
@@ -147,24 +170,30 @@ mk:
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: ! '%n %u'
+        format: "%n %u"
+        units:
+          byte:
+            one: бајт
+            other: бајти
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
     percentage:
       format:
         delimiter: ''
     precision:
       format:
         delimiter: ''
+  support:
+    array:
+      last_word_connector: ", и "
+      two_words_connector: " и "
+      words_connector: ", "
   time:
     am: АМ
     formats:
-      default: ! '%a %b %d %H:%M:%S %Z %Y'
-      long: ! '%B %d, %Y %H:%M'
-      short: ! '%d %b %H:%M'
+      default: "%a %b %d %H:%M:%S %Z %Y"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
     pm: ПМ
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors

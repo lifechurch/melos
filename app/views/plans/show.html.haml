@@ -1,4 +1,9 @@
-- @title = "#{@plan.title.dup} | #{t('plans.title')}" if @plan.present? && @plan.title.present?
+- @title = "#{@plan.title.dup}" if @plan.present? && @plan.title.present?
+- @meta_title = "#{@plan.title.dup}" if @plan.present? && @plan.title.present?
+- @title << " - #{strip_tags(@plan.about).html_safe}" if @title.present?
+- @title = truncate(@title, length: 160, separator: " ", omission: '')
+- @subtitle = '' # we don't want subtitle appended to single verse title so the verse gets more text space
+
 - @meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
 - tw_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 120, version_id: @plan.version_id)))
 - fb_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 200, version_id: @plan.version_id))) 
@@ -6,19 +11,18 @@
 - content_for :sidebar_class, 'rp-about-sidebar'
 
 - content_for :meta_description do
-  = "#{t('plans.title')}: #{truncate(strip_tags(@plan.about).html_safe, length: 138, separator: " ", omission: '')}.."
+  = "#{t('plans.title')}: #{truncate(strip_tags(@plan.about).html_safe, length: 138, separator: " ", omission: '')}"
 
 - content_for :additional_meta do
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
   %link{rel: "canonical", href: canonicalHref}
-  %meta{property: "og:title",       content: @title }
+  %meta{property: "og:title",       content: @meta_title }
   %meta{property: "og:url",         content: @meta_url}
   %meta{property: "og:description", content: @plan.about }
-  %meta{property: "og:image", content: fb_image_url}
   %meta{name: "twitter:card",             content: "summary"}
   %meta{name: "twitter:url",              content: @meta_url}
-  %meta{name: "twitter:title" ,           content: @title}
+  %meta{name: "twitter:title" ,           content: @meta_title}
   %meta{name: "twitter:description",      content: @plan.about}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 

@@ -430,6 +430,9 @@ class User < YV::Resource
       return (first_name.present? and last_name.present?)
   end
 
+  def ensure_language_tag
+    language_tag == "false" ? "en" : language_tag
+  end
 
   private
 

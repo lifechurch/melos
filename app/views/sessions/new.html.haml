@@ -1,8 +1,8 @@
 - content_for :additional_meta do
   = render '/shared/hreflang'
+  %link{rel: "canonical", href: "https://#{request.host_with_port}/sign-in"}
 
-- content_for :title do
-  =t('sign in')
+- @title = "#{t('pages.home.features.study heading')} #{t('pages.home.features.subscribe heading')} #{t("sign in to youversion")}"
 
 - content_for :sidebar do
   =render partial: "/sidebars/sessions/new"
