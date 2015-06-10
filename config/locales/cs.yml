@@ -3,6 +3,53 @@ cs:
     time: 
         formats: 
             votd: "%-d. %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "před %{count} hodinou"
+                few: "před %{count} hodinami"
+                other: "před %{count} hodinami"
+            about_x_months: 
+                one: "před %{count} měsícem"
+                few: "před %{count} měsíci"
+                other: "před %{count} měsíci"
+            about_x_years: 
+                one: "před %{count} rokem"
+                few: "před %{count} roky"
+                other: "před %{count} roky"
+            almost_x_years: 
+                one: "téměř před %{count} rokem"
+                few: "téměř před %{count} roky"
+                other: "téměř před %{count} roky"
+            half_a_minute: "před minutou"
+            less_than_x_minutes: 
+                one: "před %{count} minutou"
+                few: "před %{count} minutami"
+                other: "před %{count} minutami"
+            less_than_x_seconds: 
+                one: "před %{count} sekudnou"
+                few: "před %{count} sekundami"
+                other: "před %{count} sekudami"
+            over_x_years: 
+                one: "starší než %{count} rok"
+                few: "starší %{count} let"
+                other: "starší %{count} let"
+            x_days: 
+                one: "před %{count} dnem"
+                few: "před %{count} dny"
+                other: "před %{count} dny"
+            x_minutes: 
+                one: "před %{count} minutou"
+                few: "před %{count} minutami"
+                other: "před %{count} minutami"
+            x_months: 
+                one: "před %{count} měsícem"
+                few: "před %{count} měsíci"
+                other: "před %{count} měsíci"
+            x_seconds: 
+                one: "před %{count} sekundou"
+                few: "před %{count} sekundami"
+                other: "před %{count} sekundami"
     counter: 
         format: "999 999 999"
     social: 
@@ -75,6 +122,8 @@ cs:
         users last name required: "Musíte zadat příjmení."
         moments content required: "Obsah nemůže být prázdný."
     meta: 
+        best kids app: "Nejlepší aplikace pro děti!"
+        best educational app: "Nejlepší výuková aplikace"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +279,12 @@ cs:
     chapter: "Kapitola"
     home: "Domů"
     bible: "Bible"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Poznámky"
     friends: "Přátelé"
     groups: "Skupiny"
@@ -371,10 +426,10 @@ cs:
             ignore button: "Odmítnout"
             ignore request button: "Odmítnout žádost"
     images: 
-        none user: "%{username} hasn't created any images yet."
+        none user: "%{username} zatím nevytvořil žádné obrázky."
         blank slate: 
-            heading: "You don’t have any images yet"
-            description: "Use the YouVersion mobile app to create verse images."
+            heading: "Zatím nemáte žádné obrázky"
+            description: "Použijte aplikaci YouVersion a vytvořte obrázky s verši."
     notes: 
         none user: "%{username} zatím neudělal žádnou poznámku."
         blank slate: 
@@ -507,8 +562,8 @@ cs:
         user notes: "Poznámky uživatele %{user}"
         my friends: "Přátelé"
         my notes: "Poznámky"
-        my images: "Images"
-        user images: "%{user}'s Images"
+        my images: "Obrázky"
+        user images: "Obrázky uživatele %{user}"
         user friends: "Přátelé uživatele %{user}"
         my bookmarks: "Moje záložky"
         user bookmarks: "Záložky uživatele %{user}"
@@ -567,14 +622,14 @@ cs:
             questions title: "do not translate"
             questions text: "do not translate"
         terms: 
-            title: "do not translate"
+            title: "Podmínky užití"
             translation disclaimer: "Podmínky používání byly přeloženy do vašeho jazyka, pro vaše pohodlí. Avšak LifeChurch.tv nebere žádnou odpovědnost za přesnost totoho překladu. V případě jakýchkoli nesrovnalostí mezi překladem a anglickým originálem, vždy má originál vyšší prioritu."
-            acceptance title: "do not translate"
+            acceptance title: "Souhlas s podmínkami"
             acceptance text: "do not translate"
             description title: "do not translate"
             description text: "do not translate"
             registration title: "do not translate"
-            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li><li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
+            registration text: "Berete na vědomí a souhlasíte s tím, že:<ul><li>poskytujete pravdivé, přesné, aktuální a kompletní informace o sobě vyplněné v registračním formuláři YouVersion ('Registrační údaje') a</li><li>budete udržovat a ihned upravovat údaje, aby byly pravdivé, přesné, aktuální a kompletní. Pokud bude LifeChruch.tv považovat údaje za nepravdivé, nepřesné, neaktuální nebo nekompletní, má LifeChruch.tv právo pozastavit nebo ukončit váš účet a zamítnout veškeré současné i budoucí použití YouVersion (nebo jakékoliv jeho části). LifeChurch.tv se stará o bezpečí a soukromí všech svých uživatelů, především dětí. Z tohoto důvodu rodiče dětí mladších 13 let, kteří dovolují svým dětem přistupovat na YouVersion, musí vzít na vědomí, že YouVersion je navržen pro široké spektrum uživatelů. Proto je, jako zákonným zástupcům vašich dětí, vaší zodpovědností rozhodnout, zda je YouVersion vhodné pro vaše dítě.</li></ul>"
             privacy title: "do not translate"
             privacy text: "do not translate"
             account title: "do not translate"
@@ -612,8 +667,8 @@ cs:
             trademark title: "do not translate"
             trademark text: "do not translate"
             copyright title: "do not translate"
-            copyright text: "LifeChurch.tv respects the intellectual property of others. We ask our users to do the same, particularly where it pertains to using YouVersion. LifeChurch.tv may, in appropriate circumstances and at its sole discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please send the following information to legal@youversion.com:<ul type='none'><li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest in question;</li><br><li>A written description of the copyrighted work or other intellectual property that you claim has been infringed;</li><br><li>A written description of where the material that you claim is infringing is located on YouVersion;</li><br><li>Your address, telephone number, and email address (all that apply);</li><br><li>A written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li><br><li>A written statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner, or that you are authorized to act on the behalf of the copyright or intellectual property owner. LifeChurch.tv's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:%{newline}By mail: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
-            general title: "do not translate"
+            copyright text: "LifeChurch.tv uznává duševní vlastnictví ostatních. Žádáme své uživatele, aby konali také tak, především ve věcech týkajících se používání YouVersion. LifeChurch.tv může, za příslušných okolností a dle svého uvážení, zakázat nebo ukončit účty uživatelů, kteří opakovaně porušují pravidla. Pokud si myslíte, že vaše dílo bylo zkopírováno způsobem, který představuje porušení autorských práv, nebo byla vaše práva duševního vlastnictví jinak porušena, napište nám následující informace na legal@youversion.com:<ul type='none'><li>Elektronický nebo fyzický podpis osoby oprávněné jednat v zastoupení vlastníka autorských práv nebo jiného duševního vlastnictví v dané věci.</li><li>Popis díla, na nějž se vztahuje autorské právo nebo jiné duševní vlastnictví, jež bylo podle vás porušeno.</li><li>Popis, kde na YouVersion je umístěný obsah, který je podle vás zneužit.</li><li>Vaši adresu, telefonní číslo a e-mailovou adresu (vše platné);</li><li>Vaše prohlášení, že máte dobrou víru, že sporné použití není povoleno vlastníkem autorských práv, jeho zástupcem nebo zákonem.</li><li>Vaše prohlášení, vytvořené s vědomím možného trestu křivé výpovědi, že výše uvedené informace ve vašem oznámení jsou přesné a že jste vlastníkem autorských práv, nebo jeho zástupcem, nebo že jste oprávněn jednat v zastoupení vlastníka díla. LifeChurch.tv jednatel jednající ve věcech porušení autorských práv nebo jiného duševního vlastnictví je dostupný:%{newline}Na adrese: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Telefon: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
+            general title: "Obecné informace"
             general text: "do not translate"
         profile: 
             blank slate: 
@@ -625,7 +680,7 @@ cs:
             tab notes: "Poznámky"
             tab bookmarks: "Záložky"
             tab highlights: "Zvýraznění"
-            tab images: "Images"
+            tab images: "Obrázky"
             tab badges: "Odznaky"
             first name: "Křestní jméno"
             last name: "Příjmení"
@@ -749,6 +804,7 @@ cs:
             private: "Soukromé"
             public: "Veřejné"
         title: "Plány čtení"
+        meta title: "Online studium Bible, výklady a plány čtení Bible."
         browse by category: "Prohlížet podle kategorie"
         browse plans: "Procházet plány v kategorii %{category}"
         swap list localization: "(<a href='%{swap_link}'>Zobrazit v jazyce %{swap_locale}</a>)"
@@ -950,6 +1006,8 @@ cs:
     download ad: 
         title: "Stáhněte si bezplatnou aplikaci Bible"
         description copy: "%{language_count} různých jazyků se stovkami překladů Biblí - Bible, která je s vámi kdekoliv."
+        meta copy title: "Stáhněte si bezplatnou aplikaci Bible"
+        meta copy versions: "Dostupných překladů: %{language_count} + rozdílné jazyky"
         line 1: "Stovky překladů ve více než"
         line 2: "100 různých jazycích - Bible,"
         line 3: "která je všude s vámi."
@@ -1008,24 +1066,24 @@ cs:
         what people: "Co lidé říkají o bezplatné aplikaci Bible..."
         t1: "Vždycky mám Slovo."
         t1 copy: "Zazáložkoval jsem si pasáže, které jsou pro mě důležité. Dokonce jsem přečetl celou Bibli během jednoho roku díky plánům čtení."
-        t2: "Highly recommended"
-        t2 copy: "I love how you are able to connect with friends and the Bible reading plans are awesome. This application helps me also to stay consistent in reading because it has reminders for the plans. It also gives me another way to come closer to God. Download this and read every day!"
+        t2: "Vřele doporučujeme"
+        t2 copy: "Líbí se mi jak jsme ve spojení s přáteli a plány čtení Bible jsou úžasné. Tato aplikace mi pomáhá v pravidelné četbě, protože u plánů se dá nastavit upozornění. Dává mi také další způsob, jak se přiblížit Bohu. Stáhněte si ji a čtěte každý den!"
         t3: "Úžasná aplikace."
         t3 copy: "Skvělá aplikace s širokou nabídkou Biblí, z kterých si můžu vybrat. ... Audio Bible jsou také skvělé a jednoduché na porozumění."
-        t4: "Great. Always improving!"
-        t4 copy: "Many translations and languages available, and many that can be downloaded to read offline. Many useful features, such as the ability to make notes and bookmarks."
-        t5: "The best Bible app ever!"
-        t5 copy: "I love how it has a lot of versions and that there are verses of the day, devotions, plans and community. Thanks for this free app. :)"
-        t6: "Multiple versions and offline reading!"
-        t6 copy: "Great because there are many different versions and I could download multiple versions for offline reading.  I'm able to listen to this app."
-        t7: "Great app!"
-        t7 copy: "Helps me to read the bible more. Love the search and share features and the variety of ways to share. Also like the audio versions."
-        t8: "Great app"
-        t8 copy: "This is a great tool for studying from multiple translations. It's also convenient for listening to the bible when you're driving."
-        t9: "Best Bible app!"
-        t9 copy: "This is the best bible app out there. It has the word in different languages and versions for online and offline use. It has devotionals for everything you could think of. You can connect with others and ultimately learn about God and his Word."
-        version list: "Over 1000 Bible versions including:"
-        audio version list: "Listen to Bible audio versions including:"
+        t4: "Skvělé. Stálá vylepšení!"
+        t4 copy: "Je k dispozici mnoho překladů a jazyků, mnoho se dá stáhnout k offline čtení. Mnoho užitečných funkcí, jako možnost dělat si poznámky a vytvářet záložky."
+        t5: "Nejlepší aplikace Bible!"
+        t5 copy: "Líbí se mi, jak to má mnoho překladů, verše pro každý den, plány čtení a komunitu. Díky za tuto bezplatnou aplikaci. :)"
+        t6: "Více překladů a čtení offline!"
+        t6 copy: "Skvělé, protože to má více různých překladů a můžu si stáhnout několik překladů pro offline čtení.Můžu v aplikaci přehrávat audio."
+        t7: "Skvělá aplikace!"
+        t7 copy: "Pomáhá mi více číst bibli. Mám rád vyhledávání a možnosti sdílení různými způsoby. Také se mi líbí audio překlady."
+        t8: "Skvělá aplikace"
+        t8 copy: "Toto je skvělý nástroj pro studium více překladů. Je zároveň pohodlný pro poslech bible, když řídíte."
+        t9: "Nejlepší aplikace Bible!"
+        t9 copy: "Nejlepší dostupná aplikace pro čtení bible. Nabízí Slovo v různých jazycích a překladech pro online i offline použití. Má plány čtení na všechno, co si jen vymyslíte. Můžete se spojit s ostatními a skvělým způsobem se učit o Bohu a jeho Slovu."
+        version list: "Více než 1000 překladů Bible včetně:"
+        audio version list: "Poslouchejte audio verze Bible překladů:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"
@@ -1064,6 +1122,9 @@ cs:
             download action: "Stáhněte si aplikaci Bible"
             download description: "Stáhněte si bezplatnou aplikaci Bible na vaše mobilní zařízení a budete mít vaši Bibli vždy s sebou, ať půjdete kamkoli."
             world installs: "Instalací po celém světě"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Nastavení zobrazení"

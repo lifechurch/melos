@@ -3,6 +3,31 @@ ko:
     time: 
         formats: 
             votd: "%Y.%B.%-d"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "%{count}시간 전"
+            about_x_months: 
+                other: "약 %{count}개월 전"
+            about_x_years: 
+                other: "약 %{count}년 전"
+            almost_x_years: 
+                other: "거의 %{count}년 전"
+            half_a_minute: "30초 전"
+            less_than_x_minutes: 
+                other: "%{count}분 전"
+            less_than_x_seconds: 
+                other: "%{count}초 전"
+            over_x_years: 
+                other: "%{count}년도 더 전에"
+            x_days: 
+                other: "%{count}일 전"
+            x_minutes: 
+                other: "%{count}분 전"
+            x_months: 
+                other: "%{count}개월 전"
+            x_seconds: 
+                other: "%{count}초 전"
     counter: 
         format: "999,999,999"
     social: 
@@ -75,6 +100,8 @@ ko:
         users last name required: "성을 입력해 주세요."
         moments content required: "내용이 있어야 합니다."
     meta: 
+        best kids app: "최고의 어린이용 앱!"
+        best educational app: "최고의 교육 앱"
         kids_app: 
             title: "어린이들을 위한 성경 앱"
             description: "어린이 성경앱은 자녀들에게 예수님, 영생 구원의 선물 등 하나님께서 우리에게 가르쳐 주신 것들을 이야기를 통해서 배울 수있습니다.   쌍방 대화식의 경험을 통해서 아이들이 하나님의 말씀을 시청각 자료들을 통해서 직접 체험하게 됩니다.  그리고 말씀을 읽으면서 포인트도 적립하고 보물도 모으게 됩니다."
@@ -230,6 +257,12 @@ ko:
     chapter: "장"
     home: "홈"
     bible: "성경"
+    audio bible: "오디오 성경"
+    audio bible app: "오디오 성경 앱"
+    audio bibles title: "오디오 성경 듣기"
+    audio bible meta: "무료로 온라인에서 들으시거나 YouVersion 성경 앱을 다운로드 하셔서 최고의 평가를 받은 성경 앱과 함께 오디오 성경을 들으세요."
+    language: "언어"
+    translation: "번역선택"
     notes title: "노트"
     friends: "내 친구"
     groups: "그룹"
@@ -745,6 +778,7 @@ ko:
             private: "비공개"
             public: "공개"
         title: "묵상"
+        meta title: "온라인 성경공부, 묵상, 성경읽기 계획"
         browse by category: "카테고리별 보기"
         browse plans: "%{category} 항목의 계획 보기"
         swap list localization: "(<a href='%{swap_link}'> %{swap_locale}에서 보기</a>)"
@@ -838,7 +872,7 @@ ko:
         catch up successful: "성공! 이제 읽기계획의 일정이 재조정 되었습니다."
         restart successful: "계획이 처음부터 다시 시작되었습니다."
         subscribe successful: "아주 잘 하셨습니다! 계획을 시작하셨습니다."
-        day number: "%{day} 일일"
+        day number: "%{day} 일"
         which day in plan: "%{total}일 중 %{day}일"
         must start to complete: "읽기를 저장하려면 먼저 이 읽기계획을 시작해야 합니다."
         invalid reference: "죄송합니다.  이 성경읽기에서 언급된 참고 구절중 일부가 이 번역본에는 없습니다.  다른 번역본을 선택해주세요.  이 메시지가 반복적으로 나타나면 <a href='%{support_url}'>지원팀</a> 으로 연락주십시요."
@@ -946,6 +980,8 @@ ko:
     download ad: 
         title: "무료 성경 앱을 다운로드하세요"
         description copy: "%{language_count}개 이상의 언어로 제공되는 수백개의 번역본 - 성경이 여러분과 늘 함께 합니다."
+        meta copy title: "무료 성경 앱 다운로드"
+        meta copy versions: "%{language_count} 이상의 언어로 제공되는 수백개의 번역본"
         line 1: "어디서나 함께 할 수 있는"
         line 2: "수백개의 언어로 수백개의"
         line 3: "번역본을 제공하는 성경앱."
@@ -1060,6 +1096,9 @@ ko:
             download action: "성경 앱 다운로드 하기"
             download description: "YouVersion 무료 성경 앱을 여러분의 이동기기에 다운로드하시면 어디서든 성경과 함께 하실 수있습니다.수자"
             world installs: "지구촌 전체에 설치되고 있는 성경 앱 숫자"
+        trending verses: 
+            title: "자주 사용되는 성경 구절"
+            headline: "최근에 YouVersion 성경 앱과 Bible.com에서 자주 사용되는 성경 구절"
     shared: 
         menu_settings: 
             title: "설정내용"

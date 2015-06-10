@@ -3,6 +3,42 @@ fi:
     time: 
         formats: 
             votd: "%-d. %B'ta', %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "noin %{count} tunti sitten"
+                other: "noin %{count} tuntia sitten"
+            about_x_months: 
+                one: "noin %{count} kuukausi sitten"
+                other: "noin %{count} kuukautta sitten"
+            about_x_years: 
+                one: "noin %{count} vuosi sitten"
+                other: "noin %{count} vuotta sitten"
+            almost_x_years: 
+                one: "melkein %{count} vuosi sitten"
+                other: "melkein %{count} vuotta sitten"
+            half_a_minute: "puoli minuuttia sitten"
+            less_than_x_minutes: 
+                one: "alle %{count} minuutti sitten"
+                other: "alle %{count} minuuttia sitten"
+            less_than_x_seconds: 
+                one: "alle %{count} sekunti sitten"
+                other: "alle %{count} sekuntia sitten"
+            over_x_years: 
+                one: "yli %{count} vuosi sitten"
+                other: "yli %{count} vuotta sitten"
+            x_days: 
+                one: "%{count} päivä sitten"
+                other: "%{count} päivää sitten"
+            x_minutes: 
+                one: "%{count} minuutti sitten"
+                other: "%{count} minuuttia sitten"
+            x_months: 
+                one: "%{count} kuukausi sitten"
+                other: "%{count} kuukautta sitten"
+            x_seconds: 
+                one: "%{count} sekunti sitten"
+                other: "%{count} sekuntia sitten"
     counter: 
         format: "999 999 999"
     social: 
@@ -75,6 +111,8 @@ fi:
         users last name required: "Sukunimi täytyy syöttää."
         moments content required: "Sisältö puuttuu."
     meta: 
+        best kids app: "Paras lasten sovellus!"
+        best educational app: "Paras opetusohjelma"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +268,12 @@ fi:
     chapter: "Luku"
     home: "Koti"
     bible: "Raamattu"
+    audio bible: "Ääniraamattu"
+    audio bible app: "Ääniraamattu-sovellus"
+    audio bibles title: "Kuuntele ääniraamattuja"
+    audio bible meta: "Kuuntele verkossa ilmaiseksi tai lataa YouVersionin Raamattusovellus ja kuuntele ääniraamattuja puhelimellasi, parhaaksi arvioidulla Raamattusovelluksella."
+    language: "Kieli"
+    translation: "Käännös"
     notes title: "Muistiinpanot"
     friends: "Ystävät"
     groups: "Ryhmät"
@@ -574,7 +618,7 @@ fi:
             description title: "Palvelun kuvaus"
             description text: "do not translate"
             registration title: "Rekisteröitymisvelvollisuutesi"
-            registration text: "You acknowledge and agree to:<ul><li>provide true, accurate, current and complete information about yourself as prompted by YouVersion's registration form(s) (the 'Registration Data') and</li><li>maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If LifeChurch.tv suspects that such information is untrue, inaccurate, not current or incomplete, LifeChurch.tv has the right to suspend or terminate your account and refuse any and all current or future use of YouVersion (or any portion thereof). LifeChurch.tv is concerned about the safety and privacy of all its users, particularly children. For this reason, parents of children under the age of 13 who allow their children to access YouVersion must acknowledge that YouVersion is designed to appeal to a broad audience. Accordingly, as your child's legal guardian, it is your responsibility to determine whether YouVersion is appropriate for your child.</li></ul>"
+            registration text: "Ymmärrät ja suostut:<ul><li>tarjoamaan paikkansa pitävät, ajankohtaiset ja täydelliset tiedot itsestäsi, kuten pyydetään YouVersionin rekisteröitymislomakkeella ('Rekisteröintitiedot') ja</li><li>ylläpitämään sekä viipymättä päivittämään rekisteröintitiedot pitääksesi ne ajantasalla. Jos LifeChurch.tv epäilee, että tiedot ovat epätodet, epätarkat, vanhentuneet tai epätäydelliset, LifeChurch.tv:lla on oikeus jäädyttää tai sulkea käyttäjätili ja kieltää kaikki nykyinen tai tuleva YouVersionin (tai sen minkä tahansa osan) käyttö. LifeChurch.tv suhtautuu vakavasti kaikkien käyttäjiensä, erityisesti lasten, turvallisuuteen ja yksityisyyteen. Tästä johtuen, alle 13-vuotiaiden lasten vanhempien, jotka sallivat lastensa käyttää YouVersionia pitää tiedostaa, että YouVersion on suunniteltu laajaa käyttäjäkuntaa varten. Näin ollen, lapsesi laillisena holhoojana, on sinun vastuullasi päättää, onko YouVersion sovelias lapsellesi.</li></ul>"
             privacy title: "YouVersionin yksityisyyskäytännöt"
             privacy text: "do not translate"
             account title: "Käyttäjätili, salasana ja turvallisuus"
@@ -612,7 +656,7 @@ fi:
             trademark title: "Tuotemerkin tiedot"
             trademark text: "do not translate"
             copyright title: "do not translate"
-            copyright text: "LifeChurch.tv respects the intellectual property of others. We ask our users to do the same, particularly where it pertains to using YouVersion. LifeChurch.tv may, in appropriate circumstances and at its sole discretion, disable and/or terminate the accounts of users who may be repeat infringers. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please send the following information to legal@youversion.com:<ul type='none'><li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest in question;</li><br><li>A written description of the copyrighted work or other intellectual property that you claim has been infringed;</li><br><li>A written description of where the material that you claim is infringing is located on YouVersion;</li><br><li>Your address, telephone number, and email address (all that apply);</li><br><li>A written statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li><br><li>A written statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner, or that you are authorized to act on the behalf of the copyright or intellectual property owner. LifeChurch.tv's Agent for Notice of claims of copyright or other intellectual property infringement can be reached as follows:%{newline}By mail: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Phone: (405) 680-5433%{newline}Fax: (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
+            copyright text: "LifeChurch.tv kunnioittaa toisten immateriaalioikeuksia. Pyydämme käyttäjiämme tekemään samoin, erityisesti, kun kyseessä on YouVersionin palveluiden käyttö. LifeChurch.tv voi, soveltuvissa olosuhteissa ja oman harkintansa mukaan, keskeyttää ja/tai sulkea käyttäjätilin niiltä käyttäjiltä, jotka toistuvasti rikkovat sääntöjä. Jos olet sitä mieltä, että töitäsi on kopioitu tavalla, joka rikkoo tekijänoikeuttasi, tai immateriaalioikeuksiasi on muuten käytetty väärin, lähetä seuraavat tiedot osoitteeseen: legal@youversion.com:<ul type='none'><li>Elektroninen tai fyysinen allekirjoitus henkilöltä, joka on valtuutettu toimimaan tekijänoikeuksien tai muiden immateriaalioikeuksien haltijan puolesta;</li><br/><li>Kirjallinen kuvaus tekijänoikeuden tai immateriaalioikeuden alaisesta työstä, jonka uskot joutuneen rikkeen kohteeksi;</li><br/><li>Kirjallinen kuvaus siitä, missä materiaali, jota rike koskee, sijaitsee YouVersionin palvelussa/palveluissa;</li><br/><li>Osoitteesi, puhelinnumerosi, ja sähköpostiosoitteesi (kaikki, jotka käytettävissä);</li><br/><li>Oma kirjallinen lausuntosi, että toimit hyvässä uskossa, että kiistanalaista käyttöä ei ole hyväksytty tekijänoikeuden haltijan, agentin tai lain puolesta;</li><br/><li>Oma kirjallinen lausuntosi, väärän valan rangaistuksen uhalla, että yllä olevat tiedot huomautuksessasi ovat paikkansa pitävät ja että olet tekijänoikeuksien tai immateriaalioikeuksien haltija, tai että olet valtuutettu toimimaan tekijänoikeuksien tai immateriaalioikeuksien haltijan puolesta. LifeChurch.tv:n tekijän- ja immateriaalioikeuksista vastaavan henkilön voit tavoittaa seuraavasti:%{newline}Postitse: LifeChurch.tv c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034%{newline}Puhelimitse: +1 405 680 5433%{newline}Faxilla: +1 405 844 3002%{newline}Sähköpostitse: %{mailto_link}</li></ul>"
             general title: "Yleistiedot"
             general text: "do not translate"
         profile: 
@@ -625,7 +669,7 @@ fi:
             tab notes: "Muistiinpanot"
             tab bookmarks: "Kirjanmerkit"
             tab highlights: "Korostukset"
-            tab images: "Images"
+            tab images: "Kuvat"
             tab badges: "Ansiomerkit"
             first name: "Etunimi"
             last name: "Sukunimi"
@@ -747,6 +791,7 @@ fi:
             private: "Yksityinen"
             public: "Julkinen"
         title: "Lukusuunnitelmat"
+        meta title: "Raamatun opiskelua verkossa, hartauksia ja lukusuunnitelmia."
         browse by category: "Selaa aiheittain"
         browse plans: "Selaa kategorian %{category} suunnitelmia"
         swap list localization: "(<a href='%{swap_link}'>Näytä kielellä %{swap_locale}</a>)"
@@ -948,6 +993,8 @@ fi:
     download ad: 
         title: "Lataa ilmainen Raamattusovellus"
         description copy: "Satoja käännöksiä %{language_count}+ eri kielellä - Raamattu, joka kulkee mukanasi minne tahansa."
+        meta copy title: "Lataa ilmainen Raamattusovellus"
+        meta copy versions: "Satoja käännöksiä %{language_count}+ kielellä"
         line 1: "Satoja käännöksiä 100+"
         line 2: "eri kielellä - Raamattu"
         line 3: "joka kulkee kanssasi minne menetkin"
@@ -1062,6 +1109,9 @@ fi:
             download action: "Lataa Raamattusovellus"
             download description: "Lataa ilmainen YouVersionin Raamattusovellus mobiililaitteeseesi ja sinulla on Raamattu mukanasi mihin tahansa menetkin."
             world installs: "asennusta ympäri maailman"
+        trending verses: 
+            title: "Pinnalla olevia raamatunjakeita"
+            headline: "Tällä hetkellä pinnalla olevia raamatunjakeita Raamattusovelluksessa ja Bible.com-sivustolla"
     shared: 
         menu_settings: 
             title: "Lukijan asetukset"

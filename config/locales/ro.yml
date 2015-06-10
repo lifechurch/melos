@@ -487,7 +487,7 @@ ro:
         edit notifications: "Gestionează notificările"
         edit connections: "Conturi conectate"
         edit devices: "Dispozitive conectate"
-        vod_subscriptions: "Abonare la Versetul Zilei"
+        vod_subscriptions: "Abonare la versetul zilei"
         vod_subscription success: "Ți-ai actualizat cu succes abonamentul la Versetul Zilei!"
         vod_subscription failure: "Ne pare rău, a fost o problemă cu actualizarea abonamentului tău la Versetul Zilei."
         daily email delivery: "E-mail zilnic"
@@ -954,6 +954,9 @@ ro:
         line 2: "limbi diferite - Biblia care"
         line 3: "te însoțește pretutindeni."
         download: "Descarcă acum"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1037,6 +1040,9 @@ ro:
         mobile web: "Web Mobil"
         amazon: "Kindle Fire"
         free overlay: "Gratuit 100%"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Oops!"

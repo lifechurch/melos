@@ -952,6 +952,9 @@ sq:
         line 2: "gjuhë të ndryshme - Bibla"
         line 3: "që shkon me ju kudo."
         download: "Shkarko tani"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1035,6 +1038,9 @@ sq:
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
         free overlay: "100% Falas"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Ups!"

@@ -116,14 +116,14 @@ tr:
         share: 
             tell friends: "Çocuklar için Kutsal Kitap Uygulaması'nı Arkadaşlarınıza da Önerin"
             facebook name: "Çocuklar için Kutsal Kitap Uygulaması"
-            facebook description: "Çocuklar için Kutsal Kitap Uygulaması burada! İOS ve Android için ücretsiz uygulamayı buradan indirebilirsiniz. Katılıma imkan veren Kutsal Kitap hikayeleri, çocuğunuzun öğrenim, oyun ve Tanrı'nın sözünde gelişim yetilerine yardımcıdır. www.bible.com/kids"
-            facebook link: "http://www.bible.com/kids"
-            facebook redirect: "http://www.bible.com/kids"
-            twitter description: "@YouVersion'dan Çocuklar için Kutsal Kitap Uygulaması başladı! Eğlenceli ve tümüyle ücretsiz. İndirme için: bible.com/kids"
+            facebook description: "Çocuklar için Kutsal Kitap Uygulaması burada! İOS ve Android için ücretsiz uygulamayı buradan indirebilirsiniz. Katılıma imkan veren Kutsal Kitap hikayeleri, çocuğunuzun öğrenim, oyun ve Tanrı'nın sözünde gelişim yetilerine yardımcıdır. www.bible.com/cocuk"
+            facebook link: "http://www.bible.com/cocuk"
+            facebook redirect: "http://www.bible.com/cocuk"
+            twitter description: "@YouVersion'dan Çocuklar için Kutsal Kitap Uygulaması başladı! Eğlenceli ve tümüyle ücretsiz. İndirme için: bible.com/cocuk"
             twitter hashtags: "cocuklarakutsalkitap"
             email: "e-posta"
             email subject: "Çocuklar için Kutsal Kitap burada!"
-            email body: "Size harika bir haberimiz var: Çocuklar için Kutsal Kitap Uygulaması hazır! Tamamı ücretsiz ve iPhone, iPad, iPod touch ve Android cihazlarda kullanıma uygun. Uygulama, sürekli geliştirilen, çocukların Kutsal Kitap'ta anlatılan önemli olayları öğrenmesine mükemmel şekilde yardımcı olan, dokunarak aktif katılım sağlayan animasyonlarla ve öğretici aktivitelerle sunulmuş Kutsal Kitap hikayeleriyle dolu. Uygulamayı hemen indirmek için mobil cihazınızda bible.com/kids web sayfasını açın."
+            email body: "Size harika bir haberimiz var: Çocuklar için Kutsal Kitap Uygulaması hazır! Tamamı ücretsiz ve iPhone, iPad, iPod touch ve Android cihazlarda kullanıma uygun. Uygulama, sürekli geliştirilen, çocukların Kutsal Kitap'ta anlatılan önemli olayları öğrenmesine mükemmel şekilde yardımcı olan, dokunarak aktif katılım sağlayan animasyonlarla ve öğretici aktivitelerle sunulmuş Kutsal Kitap hikayeleriyle dolu. Uygulamayı hemen indirmek için mobil cihazınızda bible.com/cocuk web sayfasını açın."
         partner: 
             youversion: "YouVersion: En çok tercih edilen Kutsal Kitap Uygulaması"
             in partnership: "ve ortak katkı sağlayan"
@@ -952,6 +952,9 @@ tr:
         line 2: "değişik çeviriyi içeren, sizinle"
         line 3: "her yere gidebilen Kutsal Kitap."
         download: "Hemen İndir"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Çocuklar için Kutsal Kitap Uygulaması'nı İndirin"
         description copy: "Çocuklar için Kutsal Kitap Uygulaması, çocuklarınızın İsa Mesih'le ilgili İncil'de anlatılan hikayeleri öğrenmesine yardımcı olacak harika bir seçimdir!"
@@ -1035,6 +1038,9 @@ tr:
         mobile web: "Mobil Ağ"
         amazon: "Kindle Fire"
         free overlay: "%100 Ücretsiz!"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Eyvah!"

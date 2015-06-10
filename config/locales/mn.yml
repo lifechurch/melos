@@ -952,6 +952,9 @@ mn:
         line 2: "өөр хэл дээр - Хаана ч"
         line 3: "тантай хамт байх Библи."
         download: "Одоо Татах"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1035,6 +1038,9 @@ mn:
         mobile web: "Гар Утсны Вэб"
         amazon: "Kindle Fire"
         free overlay: "100% Үнэгүй"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Өөөх!"

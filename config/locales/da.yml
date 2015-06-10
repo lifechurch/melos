@@ -3,6 +3,42 @@ da:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "for %{count} time siden"
+                other: "for %{count} timer siden"
+            about_x_months: 
+                one: "for %{count} måned siden"
+                other: "for %{count} måneder siden"
+            about_x_years: 
+                one: "for %{count} år siden"
+                other: "for %{count} år siden"
+            almost_x_years: 
+                one: "næsten %{count} år siden"
+                other: "næsten %{count} år siden"
+            half_a_minute: "et halvt minut siden"
+            less_than_x_minutes: 
+                one: "mindre end %{count} minut siden"
+                other: "mindre end %{count} minutter siden"
+            less_than_x_seconds: 
+                one: "mindre end %{count} sekund siden"
+                other: "mindre end %{count} sekunder siden"
+            over_x_years: 
+                one: "over %{count} år siden"
+                other: "over %{count} år siden"
+            x_days: 
+                one: "%{count} dag siden"
+                other: "%{count} dage siden"
+            x_minutes: 
+                one: "%{count} minut siden"
+                other: "%{count} minutter siden"
+            x_months: 
+                one: "%{count} måned siden"
+                other: "%{count} måneder siden"
+            x_seconds: 
+                one: "%{count} sekund siden"
+                other: "%{count} sekunder siden"
     counter: 
         format: "999.999.999"
     social: 
@@ -75,6 +111,8 @@ da:
         users last name required: "Du skal indtaste efternavnet"
         moments content required: "Indhold må ikke være tomt."
     meta: 
+        best kids app: "Bedste Børne App!"
+        best educational app: "Bedste Uddannelses App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +268,12 @@ da:
     chapter: "Kapitel"
     home: "Hjem"
     bible: "Bibel"
+    audio bible: "Lyd Bibel"
+    audio bible app: "Lyd Bibel App"
+    audio bibles title: "Lyt til Lyd Bibler"
+    audio bible meta: "Lyt gratis online eller hent YouVersion Bibel App og lyt til lyd Bibler på din telefon med den #1 vurderede Bibel App."
+    language: "Sprog"
+    translation: "Oversættelse"
     notes title: "Noter"
     friends: "Venner"
     groups: "Grupper"
@@ -747,6 +791,7 @@ da:
             private: "Privat"
             public: "Offentlig"
         title: "Læse planer"
+        meta title: "Online Bibel studie, vejledninger og læseplaner"
         browse by category: "Kig via kategori"
         browse plans: "Kig %{category} planer"
         swap list localization: "(<a href='%{swap_link}'>Se i %{swap_locale}</a>)"
@@ -948,6 +993,8 @@ da:
     download ad: 
         title: "Hent den gratis Bible App"
         description copy: "Hundrede af versioner i %{language_count}+ forskellige sprog - Bibelen er altid med dig overalt."
+        meta copy title: "Hent den gratis Bible App"
+        meta copy versions: "Hundrede af versioner på %{language_count} + forskellige sprog"
         line 1: "Hundrede af versioner i 100+"
         line 2: "forskellige sprog - Bibelen"
         line 3: "den er med dig overalt."
@@ -1062,6 +1109,9 @@ da:
             download action: "Hent Bible App"
             download description: "Hent den gratis YouVersion Bible App til din mobile enhed og du kan have Bibelen med dig overalt."
             world installs: "Installationer i hele verden"
+        trending verses: 
+            title: "Populære Bibel Vers"
+            headline: "Bibel Vers der er populære i YouVerisons Bibel App og på Bible.com"
     shared: 
         menu_settings: 
             title: "Læse indstillinger"

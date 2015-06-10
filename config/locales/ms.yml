@@ -3,6 +3,31 @@ ms:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "kira-kira %{count} jam yang lalu"
+            about_x_months: 
+                other: "kira-kira %{count} bulan yang lalu"
+            about_x_years: 
+                other: "kira-kira %{count} tahun yang lalu"
+            almost_x_years: 
+                other: "kira-kira %{count} tahun yang lalu"
+            half_a_minute: "setengah minit yang lalu"
+            less_than_x_minutes: 
+                other: "kurang daripada %{count} minit sebelum ini"
+            less_than_x_seconds: 
+                other: "kurang daripada %{count} saat yang lepas"
+            over_x_years: 
+                other: "lebih daripada %{count} tahun yang lalu"
+            x_days: 
+                other: "%{count} hari yang lalu"
+            x_minutes: 
+                other: "%{count} minit yang lalu"
+            x_months: 
+                other: "%{count} bulan yang lepas"
+            x_seconds: 
+                other: "%{count} saat yang lepas"
     counter: 
         format: "999,999,999"
     social: 
@@ -75,6 +100,8 @@ ms:
         users last name required: "Anda harus masukkan nama terakhir."
         moments content required: "Ruangan tidak boleh kosong"
     meta: 
+        best kids app: "Aplikasi Kanak-kanak yang Terbaik!"
+        best educational app: "Aplikasi Pendidikan yang Terbaik"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +257,12 @@ ms:
     chapter: "Bab"
     home: "Halaman Utama"
     bible: "Alkitab"
+    audio bible: "Alkitab Audio"
+    audio bible app: "App Alkitab Audio"
+    audio bibles title: "Dengar Alkitab Audio"
+    audio bible meta: "Dengar secara online dengan percuma atau muat turun App Alkitab YouVersion dan dengarkan Alkitab audio dalam telefon bimbit anda melalui App Alkitab #1."
+    language: "Bahasa"
+    translation: "Terjemahan"
     notes title: "Nota"
     friends: "Sahabat"
     groups: "Group"
@@ -745,6 +778,7 @@ ms:
             private: "Private"
             public: "Awam"
         title: "Pelan Bacaan"
+        meta title: "Pengajian Alkitab, renungan dan pelan bacaan dalam talian"
         browse by category: "Browse secara Kategori"
         browse plans: "Lihat Pelan %{category}"
         swap list localization: "(<a href='%{swap_link}'>Lihat di %{swap_locale}</a>)"
@@ -946,6 +980,8 @@ ms:
     download ad: 
         title: "Muat turun App Alkitab secara Percuma"
         description copy: "Beratus versi dalam %{language_count}+ bahasa berlainan - Alkitab yang mengikuti anda ke mana sahaja."
+        meta copy title: "Muat turun App Alkitab secara Percuma"
+        meta copy versions: "Beratus-ratus versi dalam %{language_count}+ bahasa yang berlainan"
         line 1: "Beratusan versi dalam 100+"
         line 2: "bahasa yang berbeza - Alkitab yang"
         line 3: "menurut anda ke manapun."
@@ -1060,6 +1096,9 @@ ms:
             download action: "Muat turun Bible App"
             download description: "Muat turun YouVersion Bible App secara percuma dalam alat peranti mudah alih anda dan anda akan ada bersama Alkitab anda di mana sahaja anda pergi."
             world installs: "Install di seluruh dunia"
+        trending verses: 
+            title: "Ayat Alkitab yang menjadi trend"
+            headline: "Ayat Alkitab pada masa ini sedang menjadi trend dalam App Alkitab YouVersion dan Bible.com"
     shared: 
         menu_settings: 
             title: "Setting Anda"

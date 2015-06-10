@@ -3,6 +3,42 @@ mk:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "пред околу %{count} час"
+                other: "пред околу %{count} часа"
+            about_x_months: 
+                one: "пред околу %{count} месец"
+                other: "пред околу %{count} месеци"
+            about_x_years: 
+                one: "пред околу %{count} година"
+                other: "пред околу %{count} години"
+            almost_x_years: 
+                one: "пред скоро %{count} година"
+                other: "пред скоро %{count} години"
+            half_a_minute: "пред пола минута"
+            less_than_x_minutes: 
+                one: "пред помалку од %{count} минута"
+                other: "пред помалку од %{count} минути"
+            less_than_x_seconds: 
+                one: "пред помалку од %{count} секунда"
+                other: "пред помалку од %{count} секунди"
+            over_x_years: 
+                one: "пред повеќе од %{count} година"
+                other: "пред повеќе од %{count} години"
+            x_days: 
+                one: "пред %{count} ден"
+                other: "пред %{count} дена"
+            x_minutes: 
+                one: "пред %{count} минута"
+                other: "пред %{count} минути"
+            x_months: 
+                one: "пред %{count} месец"
+                other: "пред %{count} месеци"
+            x_seconds: 
+                one: "пред %{count} секунда"
+                other: "пред %{count} секунди"
     counter: 
         format: "999.999.999"
     social: 
@@ -75,6 +111,8 @@ mk:
         users last name required: "Внеси го презимето"
         moments content required: "Содржината не може да биде празна."
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +268,12 @@ mk:
     chapter: "Глава"
     home: "Дома"
     bible: "Библија"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Јазик"
+    translation: "Превод"
     notes title: "Белешки"
     friends: "Пријатели"
     groups: "Групи"
@@ -371,9 +415,9 @@ mk:
             ignore button: "Одбиј"
             ignore request button: "Одбиј ја поканата"
     images: 
-        none user: "%{username} hasn't created any images yet."
+        none user: "%{username} сеуште нема креирано слики."
         blank slate: 
-            heading: "You don’t have any images yet"
+            heading: "Ти сеуште немаш ниту една слика"
             description: "Use the YouVersion mobile app to create verse images."
     notes: 
         none user: "%{username} нема земено воопшто белешки."
@@ -747,6 +791,7 @@ mk:
             private: "Лични"
             public: "Јавни"
         title: "Планови за читање"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Преглед по категории"
         browse plans: "Разгледај ги плановите од %{category}"
         swap list localization: "(<a href='%{swap_link}'>Види во %{swap_locale}</a>)"
@@ -948,6 +993,8 @@ mk:
     download ad: 
         title: "Симни ја бесплатната Библиска Апликација"
         description copy: "Стотици верзии во над %{language_count} различни јазици - Библијата која оди насекаде заедно со тебе."
+        meta copy title: "Симни ја бесплатната Библиска Апликација"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Стотици верзии на 100 +"
         line 2: "различни јазици - Библија"
         line 3: "која е постојано со тебе."
@@ -1006,7 +1053,7 @@ mk:
         what people: "Што велат за Библиската апликација"
         t1: "Секогаш ја носам Библијата со себе."
         t1 copy: "Ги обележав сите стихови кои се важни за мене. Прочитав дури се за една година благодарение на плановите за читање."
-        t2: "Highly recommended"
+        t2: "Силно препорачано"
         t2 copy: "I love how you are able to connect with friends and the Bible reading plans are awesome. This application helps me also to stay consistent in reading because it has reminders for the plans. It also gives me another way to come closer to God. Download this and read every day!"
         t3: "Прекрасна апликација."
         t3 copy: "Одлична апликација со огромен избор на Библии... Аудио Библијата е исто така прекрасна и лесна за разбирање."
@@ -1022,8 +1069,8 @@ mk:
         t8 copy: "This is a great tool for studying from multiple translations. It's also convenient for listening to the bible when you're driving."
         t9: "Best Bible app!"
         t9 copy: "This is the best bible app out there. It has the word in different languages and versions for online and offline use. It has devotionals for everything you could think of. You can connect with others and ultimately learn about God and his Word."
-        version list: "Over 1000 Bible versions including:"
-        audio version list: "Listen to Bible audio versions including:"
+        version list: "Преку 1000 верзии на Библијата, меѓу кои:"
+        audio version list: "Слушај ја Библијата во една од следните аудио верзии:"
         iphone ipad: "iPhone/iPad"
         android: "Android"
         blackberry: "BlackBerry"
@@ -1062,6 +1109,9 @@ mk:
             download action: "Симни ја апликацијата Библија"
             download description: "Симни ја бесплатно апликацијата Библија од YouVersion на твојот мобилен уред и ќе ја имаш твојата Библија без разлика каде одиш."
             world installs: "Се инсталира насекаде низ светот."
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Твоите уредувања"

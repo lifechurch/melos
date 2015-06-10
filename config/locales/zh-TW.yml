@@ -950,6 +950,9 @@ zh-TW:
         line 2: "上百種不同的語言 —— 這聖經"
         line 3: "都能隨身跟着您"
         download: "現在就下載"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1033,6 +1036,9 @@ zh-TW:
         mobile web: "行動網路"
         amazon: "Kindle Fire"
         free overlay: "100% 免費"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "抱歉！"

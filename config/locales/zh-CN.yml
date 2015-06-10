@@ -950,6 +950,9 @@ zh-CN:
         line 2: "上百种不同语言的译本"
         line 3: "让圣经随时随地陪伴您！"
         download: "点击下载圣经软件"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "下载儿童圣经软件"
         description copy: "儿童圣经软件是您孩子学习有关耶稣故事的好途径。"
@@ -1033,6 +1036,9 @@ zh-CN:
         mobile web: "移动网络"
         amazon: "Kindle Fire"
         free overlay: "100% 免费"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "对不起！"

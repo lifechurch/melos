@@ -956,6 +956,9 @@ uk:
         line 2: "різних мов - це все Біблія"
         line 3: "що всюди прямує з вами."
         download: "Завантажити зараз"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1039,6 +1042,9 @@ uk:
         mobile web: "Мобільний Інтернет"
         amazon: "Kindle Fire"
         free overlay: "Безкоштовно"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Йой!"

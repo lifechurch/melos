@@ -3,6 +3,42 @@ de:
     time: 
         formats: 
             votd: "%-d. %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "vor ungefähr 1 Stunde"
+                other: "vor ungefähr %{count}Stunden"
+            about_x_months: 
+                one: "vor ungefähr einem Monat"
+                other: "vor ungefähr %{count} Monaten"
+            about_x_years: 
+                one: "vor ungefähr einem Jahr"
+                other: "vor ungefähr %{count} Jahren"
+            almost_x_years: 
+                one: "vor fast einem Jahr"
+                other: "vor fast %{count} Jahren"
+            half_a_minute: "vor einer halben Minute"
+            less_than_x_minutes: 
+                one: "vor weniger als einer Minute"
+                other: "vor weniger als %{count} Minuten"
+            less_than_x_seconds: 
+                one: "vor weniger als einer Sekunde"
+                other: "vor weniger als %{count} Sekunden"
+            over_x_years: 
+                one: "vor über einem Jahr"
+                other: "vor über %{count} Jahren"
+            x_days: 
+                one: "vor einem Tag"
+                other: "vor %{count} Tagen"
+            x_minutes: 
+                one: "vor einer Minute"
+                other: "vor %{count} Minuten"
+            x_months: 
+                one: "vor einem Monat"
+                other: "vor %{count} Monaten"
+            x_seconds: 
+                one: "vor einer Sekunde"
+                other: "vor %{count} Sekunden"
     counter: 
         format: "999.999.999"
     social: 
@@ -75,6 +111,8 @@ de:
         users last name required: "Du musst deinen Nachnamen eingeben."
         moments content required: "Diese Feld darf nicht leer sein."
     meta: 
+        best kids app: "Die beste App für Kids"
+        best educational app: "Die beste pädagogische App"
         kids_app: 
             title: "Die Bibel App für Kinder"
             description: "Die Bibel App für Kinder bietet den Kindern die Möglichkeit, biblische Geschichten über Jesus, das Geschenk des ewigen Lebens und viele andere Lektionen zu lernen, die Gott uns lehren möchte. Die Kinder interagieren mit dem Wort durch wunderbare Bilder und verdienen sich beim Lesen Punkte und sammeln Schätze. "
@@ -230,6 +268,12 @@ de:
     chapter: "Kapitel"
     home: "Home"
     bible: "Bibel"
+    audio bible: "Hörbibel"
+    audio bible app: "Hörbibel-App"
+    audio bibles title: "Höre die Bibel"
+    audio bible meta: "Höre gratis online oder lade die YouVersion Bibel App herunter und höre dir mit der beliebtesten Bibel App die Bibel auf deinem Telefon an."
+    language: "Sprache"
+    translation: "Übersetzung"
     notes title: "Notizen"
     friends: "Freunde"
     groups: "Gruppen"
@@ -285,7 +329,7 @@ de:
             add friend button: "Als Freund/in hinzufügen"
             load more: "Mehr laden"
             like: "Gefällt mir"
-            liked: "Gefällt"
+            liked: "gefiel dies "
             like title: "Tippe auf \"Gefällt mir\""
             last comment: "Jüngster Kommentar"
             share: "Teilen"
@@ -421,7 +465,7 @@ de:
         cancel: "Abbrechen"
         pop out: "In neuem Fenster anzeigen."
         none found: "Keine Notizen vorhanden"
-        create success: "Super! Deine Notiz wurde gespeichert."
+        create success: "Okay, deine Notiz wurde gespeichert!"
         create failure: "Fehler beim Speichern der Notiz"
         destroy success: "Notiz gelöscht"
         destroy failure: "Fehler beim Löschen der Notiz"
@@ -487,9 +531,9 @@ de:
         edit notifications: "Benachrichtigungen verwalten"
         edit connections: "Verbundene Benutzerkonten"
         edit devices: "Verbundene Geräte"
-        vod_subscriptions: "Vers des Tages Abonnements"
+        vod_subscriptions: "Abonnements für Vers des Tages"
         vod_subscription success: "Du hast dein Abo für den \"Vers des Tages\" erfolgreich aktualisiert!"
-        vod_subscription failure: "Sorry, es gab ein Problem beim Aktualisieren des Vers des Tages Abonnements."
+        vod_subscription failure: "Es tut uns leid, aber es gab ein Problem beim Aktualisieren des Abonnements für den Vers des Tages."
         daily email delivery: "Täglicher E-Mail-Versand"
         time: "Uhrzeit"
         daily push notifications: "Tägliche Push-Nachrichten für mobile Apps"
@@ -497,7 +541,7 @@ de:
         unsubscribe: "Abmelden"
         edit account_existence: "Konto löschen"
         delete account button: "Mein YouVersion Konto löschen"
-        no devices: "Dein YouVersion-Konto ist mit keinem mobilen Gerät verbunden."
+        no devices: "Dein YouVersion-Konto ist noch nicht mit einem mobilen Gerät verbunden."
         no devices download copy: "Die Bibel App basiert auf der Online-Bibel von YouVersion.com und ist eine kostenlose, mobile Bibel, die auf fast allen Smartphones installiert werden kann. Die Bibel App gestattet es ihren Lesern, die Bibel zu lesen, Verse in sozialen Netzwerken zu teilen, Lieblingsschriftstellen mit Lesezeichen zu versehen u.v.m. All das in einem Format, das zu ihrem ständig mobiler werdenden Lebensstil passt. Geh mit deinem Smartphone zu <a href='https://www.bible.com/app'>bible.com/app</a>, um die Bibel App herunterzuladen und melde dich einfach mit deinem Konto an!"
         yes delete: "Ja, mein Konto löschen"
         account delete success: "Dein YouVersion-Konto wurde erfolgreich gelöscht. Wir hoffen, dass du andere Möglichkeiten nutzen wirst, um dich mit der Bibel zu beschäftigen. Die folgenden Apps beispielsweise könnten dazu hilfreich sein: <a href= http://www.youversion.com/free-bible-apps> http://www.youversion.com/free-bible-apps </a>"
@@ -663,8 +707,8 @@ de:
         notifications: 
             badges: "Benachrichtigt mich über Abzeichen, die ich verdient habe."
             follower: "Benachrichtigt mich, wenn mir jemand folgt."
-            newsletter: "Sendet mit Neues über YouVersion."
-            contact_joins: "Informiere mich, wenn ein Kontakt YV beitritt."
+            newsletter: "Sendet mir Neues über YouVersion."
+            contact_joins: "Informiert mich, wenn ein Kontakt YV beitritt."
             note_like: "Benachrichtigt mich, wenn jemandem meine Notizen gefallen."
             reading_plans: "Benachrichtigt mich über meine abonnierten Lesepläne."
             publishing partners: "Sendet mir bitte Nachrichten über den Inhalt von Partnern von YouVersion."
@@ -747,6 +791,7 @@ de:
             private: "Privat"
             public: "Öffentlich"
         title: "Lesepläne"
+        meta title: "Online Bibelstudium, Andachten und Lesepläne"
         browse by category: "Kategorien anschauen"
         browse plans: "%{category} Lesepläne anschauen"
         swap list localization: "(<a href='%{swap_link}'>Ansehen auf %{swap_locale}</a>)"
@@ -948,6 +993,8 @@ de:
     download ad: 
         title: "Lade dir die Bibel App gratis herunter."
         description copy: "Hunderte von Bibelübersetzungen in über %{language_count} verschiedenen Sprachen. Mit der App hast du die Bibel überall dabei."
+        meta copy title: "Lade dir die Bibel App gratis herunter."
+        meta copy versions: "Hunderte Versionen auf %{language_count} + anderen Sprachen"
         line 1: "Hunderte Übersetzungen in über 100"
         line 2: "verschiedenen Sprachen - die Bibel,"
         line 3: "die du überall hin mitnehmen kannst."
@@ -1062,6 +1109,9 @@ de:
             download action: "Lade die Bibel App herunter."
             download description: "Lade die kostenlose YouVersion Bibel App auf deine mobilen Geräte herunter. So hast du die Bibel immer dabei, egal wo du bist."
             world installs: "Downloads weltweit"
+        trending verses: 
+            title: "Aktuell beliebte Bibelverse"
+            headline: "Aktuell beliebte Bibelverse in der YouVersion Bibel App und auf Bible.com"
     shared: 
         menu_settings: 
             title: "Einstellungen der Leseansicht"

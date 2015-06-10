@@ -3,6 +3,42 @@ nl:
     time: 
         formats: 
             votd: "%-d, %b, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "ca %{count} uur geleden"
+                other: "ca %{count} uur geleden"
+            about_x_months: 
+                one: "ca %{count} maand geleden"
+                other: "ca %{count} maanden geleden"
+            about_x_years: 
+                one: "ca %{count} jaar geleden"
+                other: "ca %{count} jaar geleden"
+            almost_x_years: 
+                one: "bijna %%{count} jaar geleden"
+                other: "bijna %{count} jaar geleden"
+            half_a_minute: "een halve minuut geleden"
+            less_than_x_minutes: 
+                one: "minder dan %{count} minuut geleden"
+                other: "minder dan %{count} minuten geleden"
+            less_than_x_seconds: 
+                one: "minder dan %{count} seconde geleden"
+                other: "minder dan %{count} seconden geleden"
+            over_x_years: 
+                one: "meer dan %{count} jaar geleden"
+                other: "meer dan %{count} jaar geleden"
+            x_days: 
+                one: "%{count} dag geleden"
+                other: "%{count} dagen geleden"
+            x_minutes: 
+                one: "%{count} minuut geleden"
+                other: "%{count} minuten geleden"
+            x_months: 
+                one: "%{count} maand geleden"
+                other: "%{count} maanden geleden"
+            x_seconds: 
+                one: "%{count} seconde geleden"
+                other: "%{count} seconden geleden"
     counter: 
         format: "999,999,999"
     social: 
@@ -75,6 +111,8 @@ nl:
         users last name required: "Je moet een achternaam invoeren."
         moments content required: "Mag niet leeg zijn"
     meta: 
+        best kids app: "Beste app voor kinderen!"
+        best educational app: "Beste Educatieve App"
         kids_app: 
             title: "De Bijbel App voor kinderen"
             description: "De Bijbel app voor kinderen is een geweldige manier voor kinderen om de Bijbelse verhalen over Jezus, ons geschenk op eeuwig leven, en de vele lessen die God ons leert, te ontdekken. In deze interactieve ervaring houden kinderen zich rechtstreeks bezig met het Woord van God met verrukkelijke visuele beelden terwijl ze punten verdienen en schatten verzamelen door het lezen."
@@ -116,14 +154,14 @@ nl:
         share: 
             tell friends: "Vertel je vrienden over de Bijbel app voor kinderen"
             facebook name: "De Bijbel app voor kinderen"
-            facebook description: "De Bijbel App voor kinderen is er! Download de gratis app voor iOS en Android vandaag: interactieve Bijbel verhalen helpen kinderen te leren, spelen en groeien met Gods Woord. www.bible.com/kids"
-            facebook link: "http://www.bible.com/kids"
-            facebook redirect: "http://www.bible.com/kids"
-            twitter description: "De Bijbel App voor kinderen van @YouVersion is er! Het is leuk en volledig gratis. Download: bible.com/kids"
+            facebook description: "De Bijbel App voor kinderen is er! Download de gratis app voor iOS en Android vandaag: interactieve Bijbel verhalen helpen kinderen te leren, spelen en groeien met Gods Woord. www.bible.com/kinderen"
+            facebook link: "http://www.bible.com/kinderen"
+            facebook redirect: "http://www.bible.com/kinderen"
+            twitter description: "De Bijbel App voor kinderen van @YouVersion is er! Het is leuk en volledig gratis. Download: bible.com/kinderen"
             twitter hashtags: "kinderbijbel"
             email: "E-mail"
             email subject: "De Bijbel App voor kinderen is er!"
-            email body: "Geweldig nieuws - de Bijbel App voor kinderen is er! Het is geheel gratis en nu beschikbaar voor iPhone, iPad, iPod touch en Android toestellen. De app is een groeiende collectie van Bijbel verhalen met animatie door aanraking en leeractiviteiten. Perfect om kinderen de grote verhalen uit de Bijbel te leren. Ga naar bible.com/kids op uw mobiele apparaat om het vandaag te downloaden. "
+            email body: "Geweldig nieuws - de Bijbel App voor kinderen is er! Het is geheel gratis en nu beschikbaar voor iPhone, iPad, iPod touch en Android toestellen. De app is een groeiende collectie van Bijbel verhalen met animatie door aanraking en leeractiviteiten. Perfect om kinderen de grote verhalen uit de Bijbel te leren. Ga naar bible.com/kinderen op uw mobiele apparaat om het vandaag te downloaden. "
         partner: 
             youversion: "YouVersion: 's werelds meest populaire Bijbel app"
             in partnership: "in samenwerking met"
@@ -230,6 +268,12 @@ nl:
     chapter: "Hoofdstuk"
     home: "Thuisscherm"
     bible: "Bijbel"
+    audio bible: "Audiobijbel"
+    audio bible app: "Audiobijbel App"
+    audio bibles title: "Luister naar Audiobijbels"
+    audio bible meta: "Luister gratis online, of download de YouVersion Bijbel App, en luister naar audiobijbels op je telefoon met de best beoordeelde Bijbel App."
+    language: "Taal"
+    translation: "Vertaling"
     notes title: "Notities"
     friends: "Vrienden"
     groups: "Groepen"
@@ -747,6 +791,7 @@ nl:
             private: "Privé"
             public: "Openbaar"
         title: "Leesplannen"
+        meta title: "Online bijbelstudie, toewijdingen, en leesplannen"
         browse by category: "Per categorie bladeren"
         browse plans: "Door %{category} leesplannen bladeren"
         swap list localization: "(<a href='%{swap_link}'>In %{swap_locale} weergeven</a>)"
@@ -948,6 +993,8 @@ nl:
     download ad: 
         title: "Download de gratis Bijbel App"
         description copy: "Honderden versies %{language_count}+ verschillende talen - de Bijbel die u overal vergezelt."
+        meta copy title: "Download de gratis Bijbel App"
+        meta copy versions: "Honderden versies in %{language_count} + verschillende talen"
         line 1: "Honderden vertalingen in 100+"
         line 2: "verschillende talen - de Bijbel"
         line 3: "die overal met je meegaat."
@@ -1062,6 +1109,9 @@ nl:
             download action: "Download de Bijbel App"
             download description: "Download de gratis Bijbel App op je mobiele toestel en je hebt de Bijbel bij je, ongeacht waar je bent."
             world installs: "Installaties wereldwijd"
+        trending verses: 
+            title: "Trending Bijbelverzen."
+            headline: "Bijbelverzen die op dit moment populair zijn in de YouVersion Bijbel App en op Bijbel.com."
     shared: 
         menu_settings: 
             title: "Leesvensterinstellingen"
