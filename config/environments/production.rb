@@ -12,12 +12,10 @@ YouversionWeb::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
-  # Compress JavaScripts and CSS
-  #config.assets.js_compressor = Sprockets::LazyCompressor.new { Uglifier.new(:mangle => false) }
-  #config.assets.compress = true
-
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
+
+  #### REENABLE ...
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" if ENV['FOG_DIRECTORY']
@@ -25,6 +23,8 @@ YouversionWeb::Application.configure do
 
   # Compress JavaScripts and CSS into one file for each
   config.assets.compress = true
+
+
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -37,7 +37,7 @@ YouversionWeb::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  #config.force_ssl = false
 
   # The available log levels are: :debug, :info, :warn, :error, :fatal
   # corresponding to the log level numbers from 0 up to 4 respectively
@@ -52,7 +52,9 @@ YouversionWeb::Application.configure do
 
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( ie7.css ie8.css ie9.css donate.css status.css )  # Precompile JS locale files
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css donate.css status.css mobile.css mobile/donate.css bdc_home.css campaigns/kids.css retina.js campaigns/100m.css campaigns/100m/jquery.counter.js campaigns/100m/jquery.countdown.min.js slick.css  campaigns/christmas/polymaps.min.js campaigns/christmas/plugins.js campaigns/christmas.css jw/jwplayer.js jw/jwplayer.html5.js angular/app.js)
+  # Precompile JS locale files
+  config.assets.precompile += ['i18n/*']
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
