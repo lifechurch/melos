@@ -11,6 +11,7 @@ set :rvm_ruby_version, 'ruby-1.9.3-p551@youversion-web'
 
 set :branch, ENV.fetch('BRANCH', 'master')
 
+set :passenger_roles, :web
 
 namespace :deploy do
 

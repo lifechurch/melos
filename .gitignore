@@ -1,4 +1,4 @@
-tmp/*
+tmp/cache
 .DS_Store
 *.DS_Store
 log/*
