@@ -40,6 +40,7 @@ class window.Branch
       return false
 
   sms: (phone) ->
+    console.log(phone);
     branch.sendSMS phone,
       {
         channel: 'Bible.com'
