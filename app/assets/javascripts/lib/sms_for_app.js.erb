@@ -20,16 +20,9 @@ function loadsms() {
 }
 
 var sendLink_sms = function(v) {
-  // document.getElementById("sendButton_sms").disabled = !0; {
-  //     var n = $("#numberToText_sms"),
-  //         e = $("#numberToText_sms").intlTelInput("getNumber");
-  //     n.intlTelInput("getNumberType")
-  // }
-  // if (!e) return document.getElementById("sendButton_sms").disabled = !1, document.getElementById("smsError").innerHTML = "Please input a valid phone number.", void(document.getElementById("smsError").style.display = "block");
-
   smsNumber = $("#numberToText_sms").intlTelInput("getNumber");
   b = new Branch();
-  result = b.sms(smsNumber); 
+  result = b.sms(smsNumber);
 
   if (result != false) {
     $('.sms_success').show().fadeOut(4000);

@@ -78,9 +78,7 @@
     %a.cta
       %h4
         = t('mobile page.button h4').html_safe
-    -# whitelist locale. also whitelisted in sms_for_app.js
-    - if I18n.locale == :en
-      = render partial: '/shared/sms_form'
+    = render partial: '/shared/sms_form'
 
   %div.clear
 
@@ -136,8 +134,6 @@
 
     $(document).ready(function(){
       loadsms();
-      b = new Branch();
-      b.banner();
 
       $('.review-carousel').slick({
         centerMode: true,
