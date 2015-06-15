@@ -40,7 +40,7 @@ class window.Branch
       return false
 
   sms: (phone) ->
-    console.log(phone);
+    #console.log(phone);
     branch.sendSMS phone,
       {
         channel: 'Bible.com'
@@ -52,10 +52,6 @@ class window.Branch
             '$ios_url': 'https://itunes.apple.com/us/app/bible/id282935706'
             '$ipad_url': 'https://itunes.apple.com/us/app/bible/id282935706'
             '$android_url': 'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
-            '$og_app_id': '12345'
-            '$og_title': 'My App'
-            '$og_description': 'My app\'s description.'
-            '$og_image_url': 'http://myappwebsite.com/image.png'
         }
       },
       make_new_link: true, # Default: false. If set to true, sendSMS will generate a new link even if one already exists. 
