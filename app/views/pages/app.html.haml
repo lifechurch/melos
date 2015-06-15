@@ -78,7 +78,9 @@
     %a.cta
       %h4
         = t('mobile page.button h4').html_safe
-    = render partial: '/shared/sms_form'
+    -# whitelist locale. also whitelisted in sms_for_app.js
+    - if I18n.locale == :en
+      = render partial: '/shared/sms_form'
 
   %div.clear
 
