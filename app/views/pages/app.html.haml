@@ -1,6 +1,6 @@
 :ruby
   @sidebar          = false
-  @title            = "#{t('mobile page.t9')} #{t('mobile page.free overlay')} - #{t('mobile page.download now')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8, Nokia, Java, Symbian"
+  @title            = "#{t('mobile page.t9')} #{t('mobile page.download now')} - #{t('mobile page.free overlay')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8, Nokia, Java, Symbian"
   @meta_title       = "#{t('mobile page.download now')} - #{t('mobile page.free overlay')}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
@@ -125,7 +125,7 @@
           %ul
             - @audio_versions_list.each do |version|
               %li
-                = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+                = link_to "#{version.title} (#{version.abbreviation.upcase})" , audiobible_path(version)
 
 - content_for :javascripts do
   :javascript
