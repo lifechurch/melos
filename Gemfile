@@ -10,6 +10,7 @@ gem 'capistrano-bundler'
 gem 'capistrano-rails'
 gem 'capistrano-rvm'
 gem 'capistrano-passenger'
+gem 'hipchat'
 gem 'countries',              '~> 0.8.2'
 gem 'dalli',                  '~> 2.6.3'
 gem 'descriptive_statistics', '~> 1.1.0', require: false

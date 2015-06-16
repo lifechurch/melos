@@ -173,6 +173,9 @@ GEM
     hashie (1.2.0)
     highline (1.6.18)
     hike (1.2.2)
+    hipchat (1.5.1)
+      httparty
+      mimemagic
     http_accept_language (1.0.2)
     httparty (0.8.2)
       multi_json
@@ -210,6 +213,7 @@ GEM
     memcachier (0.0.2)
     method_source (0.8.2)
     mime-types (1.23)
+    mimemagic (0.3.0)
     minitest (4.7.3)
     multi_json (1.10.1)
     multi_xml (0.5.3)
@@ -423,6 +427,7 @@ DEPENDENCIES
   hamlbars (~> 2.1)
   handlebars_assets (~> 0.14.0)
   hashie (~> 1.2.0)
+  hipchat
   http_accept_language (~> 1.0.2)
   httparty (= 0.8.2)
   i18n-js (~> 3.0.0.rc6)
