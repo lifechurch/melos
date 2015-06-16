@@ -484,6 +484,3 @@ DEPENDENCIES
   unicorn-worker-killer
   viximo-rack-throttle (~> 0.5.0)
   zeus (~> 0.15)
-
-BUNDLED WITH
-   1.10.3

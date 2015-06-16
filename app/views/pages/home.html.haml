@@ -36,6 +36,13 @@
   %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(120)))}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
+-#- content_for :javascripts do
+-#  :javascript
+-#    $( document ).ready(function() {
+-#      b = new Branch();
+-#      b.banner();
+-#    });
+
 = cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
   %article
     #hero{class: rtl_class}

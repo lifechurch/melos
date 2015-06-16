@@ -3,42 +3,6 @@ fr:
     time: 
         formats: 
             votd: "%-d %B %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                one: "about 1 hour ago"
-                other: "about %{count} hours ago"
-            about_x_months: 
-                one: "about 1 month ago"
-                other: "about %{count} months ago"
-            about_x_years: 
-                one: "about 1 year ago"
-                other: "about %{count} years ago"
-            almost_x_years: 
-                one: "almost 1 year ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
-            less_than_x_minutes: 
-                one: "less than a minute ago"
-                other: "less than %{count} minutes ago"
-            less_than_x_seconds: 
-                one: "less than 1 second ago"
-                other: "less than %{count} seconds ago"
-            over_x_years: 
-                one: "over 1 year ago"
-                other: "over %{count} years ago"
-            x_days: 
-                one: "1 day ago"
-                other: "%{count} days ago"
-            x_minutes: 
-                one: "1 minute ago"
-                other: "%{count} minutes ago"
-            x_months: 
-                one: "1 month ago"
-                other: "%{count} months ago"
-            x_seconds: 
-                one: "1 second ago"
-                other: "%{count} seconds ago"
     counter: 
         format: "999 999 999"
     social: 
@@ -111,8 +75,6 @@ fr:
         users last name required: "Vous devez saisir un nom."
         moments content required: "Le contenu ne peut pas être vide."
     meta: 
-        best kids app: "Best Kids App!"
-        best educational app: "Best Educational App"
         kids_app: 
             title: "La Bible App pour les Enfants"
             description: "La Bible App pour les Enfants est un excellent moyen pour que vos enfants apprennent les histoires bibliques de Jésus, le don de la vie éternelle, et les nombreuses leçons que Dieu nous enseigne. Au travers de cette expérience interactive, les enfants découvrent la Bible par des illustrations magnifiques tout en gagnant des points en lisant et en récoltant des trésors."
@@ -268,12 +230,6 @@ fr:
     chapter: "Chapitre"
     home: "Accueil"
     bible: "Bible"
-    audio bible: "Audio Bible"
-    audio bible app: "Audio Bible App"
-    audio bibles title: "Listen to Audio Bibles"
-    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
-    language: "Language"
-    translation: "Translation"
     notes title: "Notes"
     friends: "Amis"
     groups: "Groupes"
@@ -791,7 +747,6 @@ fr:
             private: "Privé"
             public: "Public"
         title: "Plans de lecture"
-        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Parcourir par catégorie"
         browse plans: "Parcourir la catégorie %{category}"
         swap list localization: "(<a href='%{swap_link}'>View in %{swap_locale}</a>)"
@@ -993,12 +948,13 @@ fr:
     download ad: 
         title: "Télécharger la Bible App gratuite"
         description copy: "Des centaines de versions dans plus de %{language_count} langues différentes - la Bible qui vous accompagne partout."
-        meta copy title: "Download the Free Bible App"
-        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Des centaines de traductions"
         line 2: "dans plus de 100 langues. La"
         line 3: "Bible qui vous suit partout."
         download: "Télécharger maintenant"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Téléchargez la Bible App pour les Enfants"
         description copy: "La Bible App pour les Enfants est un bon moyen pour vos enfants de découvrir les histoires bibliques concernant Jésus."
@@ -1082,6 +1038,9 @@ fr:
         mobile web: "Mobile Web"
         amazon: "Tablette Kindle Fire"
         free overlay: "100% Gratuit"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Oups!"
@@ -1109,9 +1068,6 @@ fr:
             download action: "Téléchargez la Bible App"
             download description: "Téléchargez gratuitement la Bible App YouVersion sur votre appareil mobile et vous aurez toujours votre Bible avec vous."
             world installs: "Installations dans le monde"
-        trending verses: 
-            title: "Trending Bible verses"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Paramètres de Lecture"

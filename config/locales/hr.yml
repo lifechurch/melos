@@ -3,64 +3,6 @@ hr:
     time: 
         formats: 
             votd: "%-d.%B.%Y."
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                one: "prije %{count} sat"
-                few: "prije %{count} sata"
-                many: "prije %{count} sati"
-                other: "prije %{count} sati"
-            about_x_months: 
-                one: "prije %{count} mjeseca"
-                few: "prije %{count} mjeseca"
-                many: "prije %{count} mjeseci"
-                other: "prije %{count} mjeseci"
-            about_x_years: 
-                one: "prije %{count} godine"
-                few: "prije %{count} godine"
-                many: "prije %{count} godina"
-                other: "prije %{count} godine"
-            almost_x_years: 
-                one: "prije skoro %{count} godinu"
-                few: "prije skoro %{count} godine"
-                many: "prije skoro %{count} godina"
-                other: "prije skoro %{count} godina"
-            half_a_minute: "prije pola minute"
-            less_than_x_minutes: 
-                one: "prije manje od %{count} minutu"
-                few: "prije manje od %{count} minute"
-                many: "prije manje od %{count} minuta"
-                other: "prije manje od %{count} minuta"
-            less_than_x_seconds: 
-                one: "prije manje od %{count} sekundu"
-                few: "prije manje od %{count} sekunde"
-                many: "prije manje od %{count} sekundi"
-                other: "prije manje od %{count} sekundi"
-            over_x_years: 
-                one: "prije više od %{count} godinu"
-                few: "prije više od %{count} godine"
-                many: "prije više od %{count} godina"
-                other: "prije više od %{count} godina"
-            x_days: 
-                one: "prije %{count} dana"
-                few: "prije %{count} dana"
-                many: "prije %{count} dana"
-                other: "prije %{count} dana"
-            x_minutes: 
-                one: "prije %{count} minute"
-                few: "prije %{count} minute"
-                many: "prije %{count} minuta"
-                other: "prije %{count} minuta"
-            x_months: 
-                one: "prije %{count} mjeseca"
-                few: "prije %{count} mjeseca"
-                many: "prije %{count} mjeseci"
-                other: "prije %{count} mjeseci"
-            x_seconds: 
-                one: "prije %{count} sekunde"
-                few: "prije %{count} sekunde"
-                many: "prije %{count} sekundi"
-                other: "prije %{count} sekundi"
     counter: 
         format: "999,999,999"
     social: 
@@ -133,8 +75,6 @@ hr:
         users last name required: "Treba upisati prezime."
         moments content required: "Sadržaj ne smije biti prazan."
     meta: 
-        best kids app: "Best Kids App!"
-        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -290,12 +230,6 @@ hr:
     chapter: "Poglavlje"
     home: "Početna"
     bible: "Biblija"
-    audio bible: "Audio Bible"
-    audio bible app: "Audio Bible App"
-    audio bibles title: "Listen to Audio Bibles"
-    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
-    language: "Language"
-    translation: "Translation"
     notes title: "Bilješke"
     friends: "Prijatelji"
     groups: "Grupe"
@@ -817,7 +751,6 @@ hr:
             private: "Privatno"
             public: "Javno"
         title: "Planovi čitanja"
-        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Pretraži po kategorijama"
         browse plans: "Pretraži %{category} planove"
         swap list localization: "(<a href='%{swap_link}'>Pregled u %{swap_locale}</a>)"
@@ -1019,12 +952,13 @@ hr:
     download ad: 
         title: "Preuzmi besplatnu aplikaciju Biblija"
         description copy: "Stotine prijevoda Biblije na %{language_count} i više različitih jezika - Biblja koja s tobom ide bilo kuda."
-        meta copy title: "Download the Free Bible App"
-        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Stotine prijevoda u više na 100"
         line 2: "različitih jezika - Biblija"
         line 3: "koju nosiš sviuda sa sobom."
         download: "Preuzmi sad"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1108,6 +1042,9 @@ hr:
         mobile web: "Web za mobilne uređaje"
         amazon: "Kindle Fire"
         free overlay: "100% besplatno"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Opa!"
@@ -1135,9 +1072,6 @@ hr:
             download action: "Preuzmi aplikaciju Biblija"
             download description: "Preuzmi besplatnu YouVersion aplikaciju Biblija na mobilni uređaj i imat ćeš Bibliju sa sobom kod god da pođeš."
             world installs: "Instalacija diljem svijeta"
-        trending verses: 
-            title: "Trending Bible verses"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Postavke čitanja"

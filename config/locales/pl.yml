@@ -3,64 +3,6 @@ pl:
     time: 
         formats: 
             votd: "%-d %B, %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                one: "about 1 hour ago"
-                few: "about %{count} hours ago"
-                many: "about %{count} hours ago"
-                other: "about %{count} hours ago"
-            about_x_months: 
-                one: "about 1 month ago"
-                few: "about %{count} months ago"
-                many: "about %{count} months ago"
-                other: "about %{count} months ago"
-            about_x_years: 
-                one: "about 1 year ago"
-                few: "about %{count} years ago"
-                many: "about %{count} years ago"
-                other: "about %{count} years ago"
-            almost_x_years: 
-                one: "almost 1 year ago"
-                few: "almost %{count} years ago"
-                many: "almost %{count} years ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
-            less_than_x_minutes: 
-                one: "less than a minute ago"
-                few: "less than %{count} minutes ago"
-                many: "less than %{count} minutes ago"
-                other: "less than %{count} minutes ago"
-            less_than_x_seconds: 
-                one: "less than 1 second ago"
-                few: "less than %{count} seconds ago"
-                many: "less than %{count} seconds ago"
-                other: "less than %{count} seconds ago"
-            over_x_years: 
-                one: "over 1 year ago"
-                few: "over %{count} years ago"
-                many: "over %{count} years ago"
-                other: "over %{count} years ago"
-            x_days: 
-                one: "1 day ago"
-                few: "%{count} days ago"
-                many: "%{count} days ago"
-                other: "%{count} days ago"
-            x_minutes: 
-                one: "1 minute ago"
-                few: "%{count} minutes ago"
-                many: "%{count} minutes ago"
-                other: "%{count} minutes ago"
-            x_months: 
-                one: "1 month ago"
-                few: "%{count} months ago"
-                many: "%{count} months ago"
-                other: "%{count} months ago"
-            x_seconds: 
-                one: "1 second ago"
-                few: "%{count} seconds ago"
-                many: "%{count} seconds ago"
-                other: "%{count} seconds ago"
     counter: 
         format: "999 999 999"
     social: 
@@ -133,8 +75,6 @@ pl:
         users last name required: "Musisz wpisać nazwisko."
         moments content required: "Treść nie może być pusta."
     meta: 
-        best kids app: "Best Kids App!"
-        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -290,12 +230,6 @@ pl:
     chapter: "Rozdział"
     home: "§"
     bible: "Biblia"
-    audio bible: "Audio Bible"
-    audio bible app: "Audio Bible App"
-    audio bibles title: "Listen to Audio Bibles"
-    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
-    language: "Language"
-    translation: "Translation"
     notes title: "Notatki"
     friends: "Przyjaciele"
     groups: "Grupy"
@@ -817,7 +751,6 @@ pl:
             private: "Prywatne"
             public: "Publiczne"
         title: "Plany czytania"
-        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Przeglądaj według kategorii"
         browse plans: "Przeglądaj plany w kategorii %{category}"
         swap list localization: "(<a href='%{swap_link}'>Przeglądaj w %{swap_locale}</a>)"
@@ -1019,12 +952,13 @@ pl:
     download ad: 
         title: "Pobierz bezpłatną Aplikację Biblii"
         description copy: "Setki wersji w ponad %{language_count} różnych językach - Biblia, która idzie z tobą wszędzie."
-        meta copy title: "Download the Free Bible App"
-        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Setki przekładów w ponad 100"
         line 2: "językach - Biblia, która"
         line 3: "idzie z tobą wszędzie."
         download: "Pobierz teraz"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1108,6 +1042,9 @@ pl:
         mobile web: "Sieć mobilna"
         amazon: "Kindle Fire"
         free overlay: "Darmowe w 100%"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Ups!"
@@ -1135,9 +1072,6 @@ pl:
             download action: "Pobierz Aplikację Biblii"
             download description: "Pobierz darmową Aplikację Biblii YouVersion na swoje urządzenie i miej swoją Biblię zawsze ze sobą, gdziekolwiek idziesz."
             world installs: "Instalacje na świecie"
-        trending verses: 
-            title: "Trending Bible verses"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Ustawienia czytnika"
