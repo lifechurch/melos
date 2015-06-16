@@ -3,31 +3,6 @@ zh-CN:
     time: 
         formats: 
             votd: "%Y/%B/%-d"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                other: "大约%{count}小时前"
-            about_x_months: 
-                other: "大约%{count}个月前"
-            about_x_years: 
-                other: "大约%{count}年前"
-            almost_x_years: 
-                other: "将近%{count}年前"
-            half_a_minute: "半分钟前"
-            less_than_x_minutes: 
-                other: "不到%{count}分钟前"
-            less_than_x_seconds: 
-                other: "不到%{count}秒前"
-            over_x_years: 
-                other: "超过%{count}年前"
-            x_days: 
-                other: "%{count}天前"
-            x_minutes: 
-                other: "%{count}分钟前"
-            x_months: 
-                other: "%{count}个月前"
-            x_seconds: 
-                other: "%{count}秒前"
     counter: 
         format: "999,999,999"
     social: 
@@ -100,8 +75,6 @@ zh-CN:
         users last name required: "您必须键入一个姓氏"
         moments content required: "内容不能为空。"
     meta: 
-        best kids app: "最棒的儿童应用！"
-        best educational app: "最棒的教育应用"
         kids_app: 
             title: "儿童圣经软件"
             description: "儿童圣经软件（Bible App for Kids）为您的孩子提供了一个很棒的途径来了解关于耶稣的圣经故事、永生的赏赐以及神对我们的教导。在这个互动的体验中，孩子直接接触神的话以及与之相配的生动画面，在阅读的同时赢得积点和收集宝藏。"
@@ -778,7 +751,6 @@ zh-CN:
             private: "保密"
             public: "公开"
         title: "读经计划"
-        meta title: "在线圣经研习、灵修和读经计划"
         browse by category: "分目录浏览"
         browse plans: "浏览 %{category} 类读经计划"
         swap list localization: "(<a href='%{swap_link}'>View in %{swap_locale}</a>)"
@@ -980,12 +952,13 @@ zh-CN:
     download ad: 
         title: "免费下载圣经软件"
         description copy: "提供了上百个以%{language_count}多种不同语言译成的版本 - 您可随身携带的圣经。"
-        meta copy title: "免费下载圣经软件"
-        meta copy versions: "上百个%{language_count}多种不同语言的译本"
         line 1: "几百种不同版本的选择"
         line 2: "上百种不同语言的译本"
         line 3: "让圣经随时随地陪伴您！"
         download: "点击下载圣经软件"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "下载儿童圣经软件"
         description copy: "儿童圣经软件是您孩子学习有关耶稣故事的好途径。"
@@ -1069,6 +1042,9 @@ zh-CN:
         mobile web: "移动网络"
         amazon: "Kindle Fire"
         free overlay: "100% 免费"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "对不起！"

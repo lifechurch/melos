@@ -3,42 +3,6 @@ sv:
     time: 
         formats: 
             votd: "%-d %B, %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                one: "ungefär 1 timme sedan"
-                other: "ungefär%{count} timmar sedan"
-            about_x_months: 
-                one: "ungefär 1 månad sedan"
-                other: "ungefär %{count} månader sedan"
-            about_x_years: 
-                one: "ungefär 1 år sedan"
-                other: "ungefär %{count} år sedan"
-            almost_x_years: 
-                one: "ungefär 1 år sedan"
-                other: "ungefär %{count} år sedan"
-            half_a_minute: "en halv minut sedan"
-            less_than_x_minutes: 
-                one: "mindre än en minut sedan"
-                other: "mindre än %{count} minuter sedan"
-            less_than_x_seconds: 
-                one: "mindre än 1 sekund sedan"
-                other: "mindre än %{count} sekunder sedan"
-            over_x_years: 
-                one: "över 1 år sedan"
-                other: "över %{count} år sedan"
-            x_days: 
-                one: "1 dag sedan"
-                other: "%{count} dagar sedan"
-            x_minutes: 
-                one: "1 minut sedan"
-                other: "%{count} minuter sedan"
-            x_months: 
-                one: "1 månad sedan"
-                other: "%{count} månader sedan"
-            x_seconds: 
-                one: "1 sekund sedan"
-                other: "%{count} sekunder sedan"
     counter: 
         format: "999 999 999"
     social: 
@@ -111,8 +75,6 @@ sv:
         users last name required: "Du måste ange ett efternamn."
         moments content required: "Innehåll kan inte vara tomt."
     meta: 
-        best kids app: "Bästa barnappen!"
-        best educational app: "Bästa utbildningsappen"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -791,7 +753,6 @@ sv:
             private: "Privata"
             public: "Offentliga"
         title: "Läsplaner"
-        meta title: "Bibelstudier, andakter och läsplaner online"
         browse by category: "Bläddra efter katergori"
         browse plans: "Bläddra planer i %{category}"
         swap list localization: "(<a href='%{swap_link}'>Visa i %{swap_locale}</a>)"
@@ -993,12 +954,13 @@ sv:
     download ad: 
         title: "Ladda ner den fria Bibelappen"
         description copy: "Hundratals översättningar på över %{language_count} olika språk - Bibeln du tar med dig överallt."
-        meta copy title: "Ladda ner den kostnadsfria Bibelappen"
-        meta copy versions: "Hundratals versioner i %{language_count}+ olika språk"
         line 1: "Hundratals översättningar på mer"
         line 2: "än 100 olika språk—Bibeln"
         line 3: "som följer med dig överallt."
         download: "Ladda ner nu"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1082,6 +1044,9 @@ sv:
         mobile web: "Mobil-Webb"
         amazon: "Kindle Fire"
         free overlay: "100% gratis"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Upps!"

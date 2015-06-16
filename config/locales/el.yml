@@ -3,42 +3,6 @@ el:
     time: 
         formats: 
             votd: "%B %-d, %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
-                one: "about 1 hour ago"
-                other: "about %{count} hours ago"
-            about_x_months: 
-                one: "about 1 month ago"
-                other: "about %{count} months ago"
-            about_x_years: 
-                one: "about 1 year ago"
-                other: "about %{count} years ago"
-            almost_x_years: 
-                one: "almost 1 year ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
-            less_than_x_minutes: 
-                one: "less than a minute ago"
-                other: "less than %{count} minutes ago"
-            less_than_x_seconds: 
-                one: "less than 1 second ago"
-                other: "less than %{count} seconds ago"
-            over_x_years: 
-                one: "over 1 year ago"
-                other: "over %{count} years ago"
-            x_days: 
-                one: "1 day ago"
-                other: "%{count} days ago"
-            x_minutes: 
-                one: "1 minute ago"
-                other: "%{count} minutes ago"
-            x_months: 
-                one: "1 month ago"
-                other: "%{count} months ago"
-            x_seconds: 
-                one: "1 second ago"
-                other: "%{count} seconds ago"
     counter: 
         format: "999.999.999"
     social: 
@@ -111,8 +75,6 @@ el:
         users last name required: "Πρέπει να εισάγετε ένα επώνυμο."
         moments content required: "Το περιεχόμενο δεν μπορεί να είναι κενό."
     meta: 
-        best kids app: "Best Kids App!"
-        best educational app: "Best Educational App"
         kids_app: 
             title: "Εφαρμογή \"Αγία Γραφή\" για Παιδιά"
             description: "Η εφαρμογή Αγία Γραφή για Παιδιά είναι ένας υπέροχος τρόπος για να παιδιά σας να μάθουν βιβλικές ιστορίες για τον Ιησού, το δώρο της αιώνιας ζωής και όλα αυτά τα μαθήματα που μας διδάσκει ο Θεός. Σε αυτή τη διαδραστική εμπειρία, τα παιδιά συνδέονται απευθείας με το Λόγο του Θεού μέσω ευχάριστων εικόνων ενώ ταυτόχρονα κερδίζουν πόντους από βιβλική μελέτη και συλλογή θησαυρών."
@@ -791,7 +753,6 @@ el:
             private: "Ιδιωτικό"
             public: "Δημόσιο"
         title: "Σχέδια Μελέτης"
-        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Περιήγηση ανά κατηγορία "
         browse plans: "Περιήγηση σε Σχέδια %{category}"
         swap list localization: "(<a href='%{swap_link}'>Προβολή σε %{swap_locale}</a>)"
@@ -993,12 +954,13 @@ el:
     download ad: 
         title: "Κατεβάστε δωρεάν την εφαρμογή \"Αγία Γραφή\""
         description copy: "Εκατοντάδες εκδόσεις σε %{language_count} διαφορετικές γλώσσες - η Αγία Γραφή που πάει μαζί σας παντού."
-        meta copy title: "Κατεβάστε δωρεάν την εφαρμογή \"Αγία Γραφή\""
-        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Εκατοντάδες εκδόσεων σε 100+"
         line 2: "διαφορετικές γλώσσες - Η Αγία Γραφή"
         line 3: "που έρχεται μαζί σας παντού."
         download: "Λήψη τώρα"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1082,6 +1044,9 @@ el:
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
         free overlay: "100% Δωρεάν"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Ωχ!"
@@ -1109,9 +1074,6 @@ el:
             download action: "Λήψη της εφαρμογής"
             download description: "Κάντε λήψη της δωρεάν εφαρμογής \"Αγία Γραφή\" της YouVersion στη συσκευή σας και θα έχετε την Αγία Γραφή μαζί σας οπουδήποτε πηγαίνετε. "
             world installs: "Εγκαταστάσεις παγκοσμίως"
-        trending verses: 
-            title: "Trending Bible verses"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Ρυθμίσεις Προβολέα"

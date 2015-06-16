@@ -44,6 +44,7 @@ development:
   rack_execution_timeout: 15000
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
+  branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
 
 staging:
   #api_root: youversionapi.com
@@ -58,6 +59,8 @@ staging:
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
   facebook_app_id: 105030176203924
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
+#  branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
+  branch_key: "key_live_jpmoQCKshT4dmEI1OZyuGmlmjffQNTlA"
 
 test:
   api_root: youversionapistaging.com
@@ -78,3 +81,4 @@ production:
   facebook_app_id: 105030176203924
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
   treadstone_base_url: 'https://donate.bible.com/'
+  branch_key: "key_live_jpmoQCKshT4dmEI1OZyuGmlmjffQNTlA"

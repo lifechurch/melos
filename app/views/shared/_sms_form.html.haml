@@ -1,0 +1,9 @@
+%div.sms_container.hide-mobile
+  %div.sms_wrap
+    %input{class: "smsInput", type: "tel", id: "numberToText_sms"}
+    %button{class: "smsButton", type: "button", id:"sendButton_sms"}
+      = t("mobile page.sms button")
+  %div.sms_success
+    = t("mobile page.sms success")
+  %div{id: "smsError", class: "sms_error"}
+    = t("mobile page.sms error")

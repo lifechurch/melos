@@ -78,6 +78,10 @@
     %a.cta
       %h4
         = t('mobile page.button h4').html_safe
+    -# whitelist locale. en only until translation strings return
+    - if I18n.locale == :en
+      = render partial: '/shared/sms_form'
+
   %div.clear
 
   %div.lower-content
@@ -129,7 +133,10 @@
 
 - content_for :javascripts do
   :javascript
+
     $(document).ready(function(){
+      loadsms();
+
       $('.review-carousel').slick({
         centerMode: true,
         centerPadding: "0px",
