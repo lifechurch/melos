@@ -230,6 +230,12 @@ sv:
     chapter: "Kapitel"
     home: "Hem"
     bible: "Bibeln"
+    audio bible: "Ljudbibel"
+    audio bible app: "Ljudbibelapp"
+    audio bibles title: "Lyssna på ljudbiblar"
+    audio bible meta: "Lyssna gratis online eller ladda ner YouVersions Bibelapp och lyssna på ljudbiblar i din mobil med den topprankade Bibelappen."
+    language: "Språk"
+    translation: "Översättning"
     notes title: "Anteckningar"
     friends: "Vänner"
     groups: "Grupper"
@@ -1068,6 +1074,9 @@ sv:
             download action: "Ladda ner Bibelappen"
             download description: "Ladda ner din gratisversion av Bibelappen till din mobila enhet så har du med dig Bibeln var du än går."
             world installs: "Installationer runt om i världen"
+        trending verses: 
+            title: "Bibelverstrender"
+            headline: "Bibelverstrender just nu i Youversions Bibelapp och Bible.com"
     shared: 
         menu_settings: 
             title: "Läsinställningar"

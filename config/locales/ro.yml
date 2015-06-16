@@ -230,6 +230,12 @@ ro:
     chapter: "Capitolul"
     home: "Acasă"
     bible: "Biblia"
+    audio bible: "Biblie audio"
+    audio bible app: "Aplicația Biblia Audio"
+    audio bibles title: "Acultă Biblii audio"
+    audio bible meta: "Ascultă online gratuit sau descarcă Aplicația Biblia de la YouVersion și ascultă Biblia audio pe telefonul tău cu ajutorul celei mai bine cotate aplicații: Aplicației Biblia."
+    language: "Limbă"
+    translation: "Traducere"
     notes title: "Notițe"
     friends: "Prieteni"
     groups: "Grupuri"
@@ -1070,6 +1076,9 @@ ro:
             download action: "Descarcă Aplicația Biblia"
             download description: "Descarcă gratuit Aplicația Biblia pe dispozitivul tău mobil și vei avea Biblia cu tine oriunde mergi."
             world installs: "Instalări pe tot globul"
+        trending verses: 
+            title: "Versete din Biblie în trend"
+            headline: "Versete din Biblie care sunt acum în trend în Aplicația Biblia de la YouVersion și pe Bible.com"
     shared: 
         menu_settings: 
             title: "Setări cititor"

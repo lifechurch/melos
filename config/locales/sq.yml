@@ -230,6 +230,12 @@ sq:
     chapter: "Kapitulli"
     home: "Kreu"
     bible: "Bibla"
+    audio bible: "Bibla Audio"
+    audio bible app: "Programi i Biblës Audio"
+    audio bibles title: "Dëgjo Bibla Audio"
+    audio bible meta: "Dëgjoni falas në internet ose shkarkoni Programin e Biblës YouVersion dhe dëgjoni Bibla audio në telefonin tuaj me Programin e Biblës #1."
+    language: "Gjuha"
+    translation: "Përkthimi"
     notes title: "Shënimet"
     friends: "Miqtë"
     groups: "Grupet"
@@ -1068,6 +1074,9 @@ sq:
             download action: "Shkarko Programin e Biblës"
             download description: "Shkarko falas Programin e Biblës YouVersion në pajisjen tënde të lëvizshme dhe do ta kesh Biblën me vete në çdo vend që të shkosh."
             world installs: "instalime nëpër botë"
+        trending verses: 
+            title: "Vargje të pëlqyera nga Bibla"
+            headline: "Vargje nga Bibla që janë pëlqyer tani në Programin e Biblës YouVersion dhe në Bible.com"
     shared: 
         menu_settings: 
             title: "Cilësimet e tua"

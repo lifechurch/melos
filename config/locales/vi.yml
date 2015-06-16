@@ -230,6 +230,12 @@ vi:
     chapter: "Đoạn"
     home: "Trang nhà"
     bible: "Kinh Thánh"
+    audio bible: "Kinh Thánh âm thanh"
+    audio bible app: "App Kinh Thánh âm thanh"
+    audio bibles title: "Nghe Kinh Thánh"
+    audio bible meta: "Nghe Kinh Thánh miễn phí trực tuyến hoặc tải App Kinh Thánh hàng đầu của YouVersion để nghe trên thiết bị di động của bạn!"
+    language: "Ngôn ngữ"
+    translation: "Bản dịch"
     notes title: "Ghi chú"
     friends: "Bạn bè"
     groups: "Nhóm"
@@ -1066,6 +1072,9 @@ vi:
             download action: "Tải App Kinh Thánh"
             download description: "Tải App Kinh Thánh miễn phí YouVersion về thiết bị di động của bạn và mang Kinh Thánh theo bất cứ nơi nào bạn đi."
             world installs: "Cài đặt trên toàn cầu"
+        trending verses: 
+            title: "Được chia sẻ nhiều nhất"
+            headline: "Các câu Kinh Thánh đang được chia sẻ nhiều nhất trên App Kinh Thánh YouVersion và trang Bible.com"
     shared: 
         menu_settings: 
             title: "Cài đặt giao diện đọc"

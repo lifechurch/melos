@@ -229,7 +229,12 @@ tr:
     selected: "Seçili"
     chapter: "Bölüm"
     home: "Ana Sayfa"
-    bible: "Kutsal Kitap"
+    audio bible: "Sesli Kutsal Kitap"
+    audio bible app: "Sesli Kutsal Kitap Uygulaması"
+    audio bibles title: "Sesli Kutsal Kitapları Dinle"
+    audio bible meta: "1 Numara Kutsal Kitap uygulaması aracılığıyla telefonunuzdan YouVersion Kutsal Kitap Uygulamasını indirerek sesli Kutsal Kitaplar dinleyin ya da online olarak ücretsiz dinleyin."
+    language: "Dil"
+    translation: "Çeviri"
     notes title: "Notlar"
     friends: "Arkadaşlar"
     groups: "Gruplar"
@@ -1068,6 +1073,9 @@ tr:
             download action: "Kutsal Kitap Uygulamasını İndirin"
             download description: "YouVersion Kutsal Kitap Uygulamasını mobil cihazınıza indirin. Kutsal Kitap nerede olursanız olun yanınızda olsun."
             world installs: "Dünya çapındaki yüklemeler"
+        trending verses: 
+            title: "En çok kullanılan Kutsal Kitap ayetleri"
+            headline: "YouVersion Kutsal Kitap Uygulaması ve Bible.com'da en çok kullanılan ayetler"
     shared: 
         menu_settings: 
             title: "Okuyucu Ayarları"

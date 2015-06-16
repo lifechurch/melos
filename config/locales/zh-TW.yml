@@ -230,6 +230,12 @@ zh-TW:
     chapter: "章節"
     home: "首頁"
     bible: "聖經"
+    audio bible: "有聲聖經"
+    audio bible app: "有聲聖經軟體"
+    audio bibles title: "聆聽有聲聖經"
+    audio bible meta: "免費線上聆聽或下載YouVersion首屈一指的聖經軟體到您的手機來聆聽有聲聖經。"
+    language: "語言"
+    translation: "譯本"
     notes title: "筆記"
     friends: "朋友"
     groups: "群組"
@@ -1066,6 +1072,9 @@ zh-TW:
             download action: "下載聖經軟體"
             download description: "下載免費的 YouVersion 聖經軟體到您的行動設備上吧！無論何時何地、神的話語都將伴您左右！"
             world installs: "全球軟體安裝次數"
+        trending verses: 
+            title: "正流行的聖經經節"
+            headline: "目前在YouVersion聖經軟體和Bible.com流行的聖經經節"
     shared: 
         menu_settings: 
             title: "閱讀器設定"

@@ -230,6 +230,12 @@ tl:
     chapter: "Kabanata"
     home: "Home"
     bible: "Bibliya"
+    audio bible: "Awdyo Na Bibliya"
+    audio bible app: "Awdyong App Na Bibliya"
+    audio bibles title: "Making Sa mga Awdyo Na Bibliya"
+    audio bible meta: "Makinig nang libre online o i-download ang YouVersion Bible App at makinig sa mga awdyo ns Bibliya sa inyong cellphone gamit ang nangungunang Bible App."
+    language: "Wika"
+    translation: "Salin"
     notes title: "Mga tala"
     friends: "Mga Kaibigan"
     groups: "Mga Grupo"
@@ -1068,6 +1074,9 @@ tl:
             download action: "I-download ang Bible App"
             download description: "I-download ang libreng YouVersion Bible App sa iyong aparato at makakasama mo na ang Bibliya saan ka man magpunta."
             world installs: "Magagamit kahit saang bahagi ng mundo"
+        trending verses: 
+            title: "Mga Usong Berso sa Bibliya"
+            headline: "Mga nauuso at nangungunang Berso sa Bibliya sa Youversion Bible App at Bible.com ngayon"
     shared: 
         menu_settings: 
             title: "Ang Iyong mga Setting"

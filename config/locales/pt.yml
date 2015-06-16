@@ -230,6 +230,12 @@ pt:
     chapter: "Capítulo"
     home: "Página Inicial"
     bible: "Bíblia"
+    audio bible: "Áudio da Bíblia"
+    audio bible app: "Áudio do App da Bíblia"
+    audio bibles title: "Ouvir os Áudios Bíblicos"
+    audio bible meta: "Ouça on-line gratuitamente ou baixe o App da Bíblia YouVersion e ouça aos áudios bíblicos em seu telefone com o App número 1 da Bíblia."
+    language: "Idioma"
+    translation: "Tradução"
     notes title: "Anotações"
     friends: "Amigos"
     groups: "Grupos"
@@ -1068,6 +1074,9 @@ pt:
             download action: "Baixe o App da Bíblia"
             download description: "Baixe de forma gratuita o App da Bíblia YouVersion no seu dispositivo móvel e tenha a Bíblia com você não importa aonde vá."
             world installs: "Instalações em todo o mundo"
+        trending verses: 
+            title: "Versículos Bíblicos Mais Populares"
+            headline: "Versículos bíblicos atualmente mais populares no App da Bíblia YouVersion e Bible.com"
     shared: 
         menu_settings: 
             title: "Configurações do Leitor"
