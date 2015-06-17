@@ -17,6 +17,7 @@ YouversionWeb::Application.routes.draw do
   get "/%EC%96%B4%EB%A6%B0%EC%9D%B4",  to: "redirects#aideul"
   get "/criancas",      to: "redirects#criancas"
   get "/crian%C3%A7as", to: "redirects#criancas"
+  get "/deti",          to: "redirects#deti"
   get "/trending-bible-verses", to: "pages#trending"
 
 
