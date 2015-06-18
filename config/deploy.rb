@@ -17,10 +17,6 @@ set :passenger_restart_with_sudo, true
 set :datadog_api_key, "f0bc018e3f69961214ea44382eb0ad52"
 
 set :default_env, {
-  'FOG_DIRECTORY' => 'web-production',
-  'FOG_PROVIDER' => 'AWS',
-  'AWS_ACCESS_KEY_ID' => 'AKIAJTVJ5UNUPLF7N43Q',
-  'AWS_SECRET_ACCESS_KEY' => '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',
   'SECURE_TRAFFIC' => true
 }
 
