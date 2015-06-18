@@ -1,6 +1,8 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
+  get "/ping",          to: "ping#ping"
+  get "/running",       to: "ping#running"
   get "/terms",         to: "pages#terms"
   get "/privacy",       to: "pages#privacy"
   get "/donate",        to: "pages#donate"
