@@ -23,7 +23,21 @@ set :default_env, {
 namespace :deploy do
   before :starting, :highstate do
     on roles(:web) do
-      execute "sudo salt-call state.highstate"
+      #execute "sudo salt-call state.highstate"
     end
   end
+
+  Rake::Task["deploy:symlink:release"].clear_actions
+    namespace :symlink do
+      desc 'OVERRIIIIIIDE'
+      task :release do
+        on roles(:web), in: :sequence do
+          execute "ln -s #{release_path} #{deploy_to}/releases/current"
+          execute "sudo ln -nfs #{release_path}/nginx.conf-#{fetch(:stage)} /etc/nginx/nginx.conf"
+          execute "sudo service nginx reload"
+        end
+      end
+    end
+
+
 end
