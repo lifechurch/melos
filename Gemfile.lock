@@ -111,6 +111,8 @@ GEM
     debugger-ruby_core_source (1.3.8)
     descriptive_statistics (1.1.1)
     diff-lcs (1.2.4)
+    dogapi (1.18.0)
+      multi_json
     erubis (2.7.0)
     excon (0.20.1)
     execjs (1.4.0)
@@ -415,6 +417,7 @@ DEPENDENCIES
   dalli (~> 2.6.3)
   debugger
   descriptive_statistics (~> 1.1.0)
+  dogapi
   fast_gettext
   gabba
   geokit (~> 1.6.5)
