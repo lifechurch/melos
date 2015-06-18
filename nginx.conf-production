@@ -25,7 +25,7 @@ http {
 
 	passenger_fly_with /var/run/passenger/flying-passenger.sock;
   server {
-      server_name bible.com www.bible.com sl.bible.com localdev.bible.com;
+      server_name bible.com www.bible.com sl.bible.com local.bible.com assets.bible.com;
       listen 80;
       passenger_enabled on;
       root /var/www/youversion-web/current/public;
