@@ -33,7 +33,8 @@ module YouversionWeb
       "YV::Middleware::Halt",
       Rack::SslEnforcer,
       ignore: ['/app', '/download', '/mobile', '/100million'],
-      only_environments: 'production'
+      except_hosts: ['local.bible.com', 'assets.bible.com'],
+      except_environments: [ 'development' ]
     )
 
     #handle high-frequency bb/test.json (etc) traffic in middleware so app isn't fully loaded
