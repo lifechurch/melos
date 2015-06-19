@@ -14,8 +14,6 @@ set :branch, ENV.fetch('BRANCH', 'master')
 set :passenger_roles, :web
 set :passenger_restart_with_sudo, true
 
-set :datadog_api_key, "f0bc018e3f69961214ea44382eb0ad52"
-
 set :default_env, {
   'SECURE_TRAFFIC' => true
 }

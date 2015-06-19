@@ -33,13 +33,15 @@ http {
       passenger_memory_limit 600;
       passenger_rolling_restarts on;
       passenger_resist_deployment_errors on;
-      passenger_env_var FOG_DIRECTORY web-production;
-      passenger_env_var FOG_PROVIDER AWS;
       passenger_env_var SECURE_TRAFFIC true;
       passenger_env_var NEW_RELIC_LICENSE_KEY 148b7b0a47e0219bd1117c19b692c94c779cdf33;
       passenger_env_var NEW_RELIC_APP_NAME bible.com;
       passenger_env_var NEW_RELIC_LOG_LEVEL info;
       passenger_env_var MEMCACHE_SERVERS 10.36.123.78:11211,10.36.123.109:11211;
       passenger_env_var LOG_LEVEL warn;
+      location /k2k-server-status {
+        stub_status on;
+        access_log off;
+      }
   }
 }
