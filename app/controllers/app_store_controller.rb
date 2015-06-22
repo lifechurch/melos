@@ -93,9 +93,9 @@ class AppStoreController < ActionController::Base
     when /bb/
       'http://appworld.blackberry.com/webstore/content/1222'
     when /symbian/
-      'http://java.apps.opera.com/en_us/bible_000261.html?p=11'
+      'http://java.apps.opera.com/en_us/bible_000261.html'
     when /j2me/
-      'http://java.apps.opera.com/en_us/bible_000261.html?p=11'
+      'http://java.apps.opera.com/en_us/bible_000261.html'
     when /windowsphone/
       'zune://navigate/?phoneappid=57f524fa-93e3-df11-a844-00237de2db9e'
     when /webos/
