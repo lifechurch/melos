@@ -3,6 +3,53 @@ cs:
     time: 
         formats: 
             votd: "%-d. %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "před %{count} hodinou"
+                few: "před %{count} hodinami"
+                other: "před %{count} hodinami"
+            about_x_months: 
+                one: "před %{count} měsícem"
+                few: "před %{count} měsíci"
+                other: "před %{count} měsíci"
+            about_x_years: 
+                one: "před %{count} rokem"
+                few: "před %{count} roky"
+                other: "před %{count} roky"
+            almost_x_years: 
+                one: "téměř před %{count} rokem"
+                few: "téměř před %{count} roky"
+                other: "téměř před %{count} roky"
+            half_a_minute: "před minutou"
+            less_than_x_minutes: 
+                one: "před %{count} minutou"
+                few: "před %{count} minutami"
+                other: "před %{count} minutami"
+            less_than_x_seconds: 
+                one: "před %{count} sekudnou"
+                few: "před %{count} sekundami"
+                other: "před %{count} sekudami"
+            over_x_years: 
+                one: "starší než %{count} rok"
+                few: "starší %{count} let"
+                other: "starší %{count} let"
+            x_days: 
+                one: "před %{count} dnem"
+                few: "před %{count} dny"
+                other: "před %{count} dny"
+            x_minutes: 
+                one: "před %{count} minutou"
+                few: "před %{count} minutami"
+                other: "před %{count} minutami"
+            x_months: 
+                one: "před %{count} měsícem"
+                few: "před %{count} měsíci"
+                other: "před %{count} měsíci"
+            x_seconds: 
+                one: "před %{count} sekundou"
+                few: "před %{count} sekundami"
+                other: "před %{count} sekundami"
     counter: 
         format: "999 999 999"
     social: 
@@ -75,6 +122,8 @@ cs:
         users last name required: "Musíte zadat příjmení."
         moments content required: "Obsah nemůže být prázdný."
     meta: 
+        best kids app: "Nejlepší aplikace pro děti!"
+        best educational app: "Nejlepší výuková aplikace"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +279,12 @@ cs:
     chapter: "Kapitola"
     home: "Domů"
     bible: "Bible"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Poznámky"
     friends: "Přátelé"
     groups: "Skupiny"
@@ -749,6 +804,7 @@ cs:
             private: "Soukromé"
             public: "Veřejné"
         title: "Plány čtení"
+        meta title: "Online studium Bible, výklady a plány čtení Bible."
         browse by category: "Prohlížet podle kategorie"
         browse plans: "Procházet plány v kategorii %{category}"
         swap list localization: "(<a href='%{swap_link}'>Zobrazit v jazyce %{swap_locale}</a>)"
@@ -950,13 +1006,15 @@ cs:
     download ad: 
         title: "Stáhněte si bezplatnou aplikaci Bible"
         description copy: "%{language_count} různých jazyků se stovkami překladů Biblí - Bible, která je s vámi kdekoliv."
+        meta copy title: "Stáhněte si bezplatnou aplikaci Bible"
+        meta copy versions: "Dostupných překladů: %{language_count} + rozdílné jazyky"
         line 1: "Stovky překladů ve více než"
         line 2: "100 různých jazycích - Bible,"
         line 3: "která je všude s vámi."
         download: "Stahujte nyní"
-        banner title: "The Bible App"
-        banner action: "Download"
-        banner open: "Open"
+        banner title: "Aplikace Bible"
+        banner action: "Stáhnout"
+        banner open: "Otevřít"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1040,9 +1098,9 @@ cs:
         mobile web: "Web v mobilu"
         amazon: "Kindle Fire"
         free overlay: "100% zdarma"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
+        sms button: "Odeslat SMS odkaz"
+        sms error: "Omlouváme se, něco se pokazilo. Prosím zkuste to znovu."
+        sms success: "Fajné! Zkontrolujte odkaz na vašem zařízení."
     pages: 
         generic_error: 
             title: "Ups!"
@@ -1070,6 +1128,9 @@ cs:
             download action: "Stáhněte si aplikaci Bible"
             download description: "Stáhněte si bezplatnou aplikaci Bible na vaše mobilní zařízení a budete mít vaši Bibli vždy s sebou, ať půjdete kamkoli."
             world installs: "Instalací po celém světě"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Nastavení zobrazení"

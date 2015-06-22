@@ -3,6 +3,42 @@ el:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999.999.999"
     social: 
@@ -75,6 +111,8 @@ el:
         users last name required: "Πρέπει να εισάγετε ένα επώνυμο."
         moments content required: "Το περιεχόμενο δεν μπορεί να είναι κενό."
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "Εφαρμογή \"Αγία Γραφή\" για Παιδιά"
             description: "Η εφαρμογή Αγία Γραφή για Παιδιά είναι ένας υπέροχος τρόπος για να παιδιά σας να μάθουν βιβλικές ιστορίες για τον Ιησού, το δώρο της αιώνιας ζωής και όλα αυτά τα μαθήματα που μας διδάσκει ο Θεός. Σε αυτή τη διαδραστική εμπειρία, τα παιδιά συνδέονται απευθείας με το Λόγο του Θεού μέσω ευχάριστων εικόνων ενώ ταυτόχρονα κερδίζουν πόντους από βιβλική μελέτη και συλλογή θησαυρών."
@@ -545,31 +583,31 @@ el:
         resend confirmation button: "Αποστολή Επαλήθευσης ξανά"
         privacy: 
             policy: "%{youversion} Πολιτική απορρήτου"
-            intro: "YouVersion, a Website and Application owned and operated by LifeChurch.tv, knows you care how information about you is used and shared. We hope the following statements will help you understand how YouVersion will collect, use and protect the information you provide to us on our site or app."
+            intro: "YouVersion: η ιστοσελίδα και η εφαρμογή ανήκουν στην και λειτουργούν από την LifeChurch.tv. Γνωρίζει ότι σας ενδιαφέρει χρησιμοποιύναι και κοινοποιούνται οι πληροφορίες για εσάς. Ελπίζουμε ότι οι ακόλουθες δηλώσεις θα σας βοηθήσουν να καταλάβετε πως η YouVersion θα συλλέγει, χρήσιμοποιεί και προστατεύει τις πληροφορίες που μας παρέχετε στην ιστοσελίδα ή στην εφαρμογή μας."
             translation disclaimer: "Η πολιτική απορρήτου έχει μεταφραστεί για τη δική σας ευκολία. Παρόλα αυτά, η LifeChurch.tv δε δίνει καμία εγγύηση ή διάβημα όσον αφορά την ακρίβεια της μετάφρασης. Αν βρεθούν τυχόν ασάφειες μεταξύ του αγγλικού κειμένου και της μετάφρασης, η αγγλική έκδοση θα ισχύει."
-            what we collect: "What we collect and how we use it"
-            your information title: "Information you provide"
-            your information text: "When you sign up for a YouVersion account, or another LifeChurch.tv service or promotion that requires registration, we ask you for personal information (such as your name, email address and an account password). We may combine the information you submit under your account, with information from other LifeChurch.tv services or third parties to provide you with a better experience and to improve the quality of our services. For certain services, we may allow you to opt out of combining such information."
-            device id title: "Unique Device ID and GPS location"
-            device id text: "When you access the YouVersion Bible Application, we may collect your Unique Device ID ('UDID') and/or IP address and/or GPS location. We use this information to provide a tailored experience for you. The information is collected in order to determine the aggregate number of unique devices using our service or parts of our service, to track total usage, analyze data, and communicate with you more effectively. We may combine this information with information from third parties to provide you with a better experience and to improve the quality of our service. We do not share any personally identifiable information with third parties in association with your UDID or GPS location without your explicit permission."
+            what we collect: "Τι συλλέγουμε και πως το χρησιμοποιούμε"
+            your information title: "Πληροφορίες που παρέχετε"
+            your information text: "Κατά την εγγραφή σας για ένα λογαριασμό YouVersion, ή άλλη υπηρεσία ή προσφορά της LifeChurch.tv που απαιτεί εγγραφή, σας ζητάμε τα προσωπικά σας στοιχεία (όπως το όνομά σας, τη διεύθυνση ηλεκτρονικού ταχυδρομείου και έναν κωδικό). Μπορεί να συνδυάσουμε τις πληροφορίες που καταχψρείτε στο λογαριασμό σας, με πληροφορίες από άλλες υπηρεσίες της LifeChurch.tv ή από τρίτους, για να σας παρέχουμε καλύτερη εξυπηρέτηση και να βελτιώσουμε την ποιότητα των υπηρεσιών μας. Για ορισμένες υπηρεσίες, ενδέχεται να σας επιτρέψουμε να απαγορεύεσετε το συνδυασμό αυτών των πληροφοριών."
+            device id title: "Μοναδικό αναγνωριστικό συσκευής και τοποθεσία GPS"
+            device id text: "Όταν χρησιμοποιείτε την εφαμοργή Αγία Γραφή της YouVersion, μπορεί να συλλέξουμε το μοναδικό αναγνωριστικό της συσκευής (UDID) ή/και τη διεύθυνση IP ή/και την τοποθεσία GPS. Χρησιμοποιούμε αυτές τις πληροφορίες για να σας παρέχουμε προσαρμοσμένη εξυπηρέτηση. Οι πληροφορίες που συλλέγονται για να καταγράφεται ο συνολικός αριθμός των μοναδικών συσκευών που χρησιμοποιούν τις υπηρεσιες μας, για την παρακολούθηση της συνολικής χρήσης, για να αναλύουν δεδομένα και για να επικοινωνούν μαζί σας πιο αποτελεσματικά. Μπορεί να συνδυάσουμε τις πληροφορίες αυτές με τις πληροφορίες που προέρχονται από τρίτους για να σας παρέχουμε καλύτερη εξυπηρέτηση και να βελτιώσουμε την ποιότητα των υπηρεσιών μας. Δεν κοινοποιούμε καμία προσωπική πληροφορία με τρίτα μέρη, για το UDID σας ή την τοποθεσία GPS χωρίς ρητή έγκρισή σας."
             cookies title: "LifeChurch.tv cookies"
-            cookies text: "When you visit <a href='https://www.bible.com'>www.bible.com</a>, we may send one or more cookies to your computer, so that we may uniquely identify your browser. (A cookie is simply a tiny text file containing a string of characters.) Accepting our cookies allows you to keep your user preferences from session to session. Although most browsers accept cookies by default, you can set your browser to refuse all cookies, or to tell you when you're being sent a cookie. Some YouVersion features and services may not function properly if you have cookies disabled."
-            log title: "Log information"
+            cookies text: "Όταν επισκέπτεστε το <a href='https://www.bible.com'> www.bible.com </a> , μπορεί να αποστείλουμε ένα ή περισσότερα cookies στον υπολογιστή σας, έτσι ώστε να αγανωριστεί ξεχωριστά ο περιηγητής σας. (Cookie είναι απλά ένα μικρό αρχείο κειμένου που περιέχει μια σειρά χαρακτήρων.) Η αποδοχή των cookies μας σας επιτρέπει να κρατήσετε τις προσωπικές σας προτιμήσεις σε διαδοχικές επισκέψεις. Αν και οι περισσότεροι περιηγητές αποδέχονται cookies ως προεπιλογή, μπορείτε να ρυθμίσετε τον πρειηγητή σας να αρνείται τα cookies, ή να σας ενημερώνει πότε αποστέλλεται ένα cookie. Ορισμένες λειτουργίες και υπηρεσίες της YouVersion ενδέχεται να μην λειτουργούν σωστά εάν τα cookies είναι απενεργοποιημένα."
+            log title: "Πληροφορίες σύνδεσης"
             log text: "When you use YouVersion, our servers automatically record information that your browser sends when you visit one of our websites. These server logs may include information such as your web request, Internet Protocol address, browser type, browser language, the date and time of your request, and one or more cookies that may uniquely identify your browser."
-            communications title: "User communications"
-            communications text: "Personal information or requests that you submit via <a href='https://www.bible.com/live'>www.bible.com/live</a> will be sent to the group administrator. The group administrator and/or one of their members will have access to this information. When you send email or other communication to any LifeChurch.tv owned website, we may retain those communications to process your inquiries, respond to your requests and improve our services."
-            third party title: "Third party sites"
-            third party text: "This Privacy Policy applies only to sites and apps that are owned and operated by LifeChurch.tv. LifeChurch.tv cannot regulate other sites linked from within our various web sites and services. These other sites may place their own cookies or other files on your computer, collect data or solicit personal information from you. You should familiarize yourself with their unique Privacy Policies, should you choose to visit their sites."
-            information use title: "How do we use your information?"
-            information use text: "When you sign up for a particular service that requires registration, we ask you to provide personal information. If LifeChurch.tv would like to use this information in a manner different than the purpose for which it was collected, then we will ask for your consent prior to such use. You may decline to submit personal information to any of our services, in which case we may not be able to provide those services to you."
-            information security title: "How do we protect your information?"
+            communications title: "Επικοινωνία χρήστη"
+            communications text: "Τα προσωπικά σας δεδομένα και οι αιτήσεις που υποβάλλετε στο <a href='https://www.bible.com/live'>www.bible.com/live</a>θα σταλούν στον διαχειριστή της ομάδας. Ο διαχειριστής της ομάδας και/ή ένα από τα μέλη της θα έχουν πρόσβαση σε αυτές τις πληροφορίες. Όταν στέλνετε email ή άλλο μήνυμα σε οποιοδήποτε ιστοτόπο που ανήκει στη LifeChurch.tv, μπορεί να διατηρήσουμε αυτές τα μηνύματα για να επεξεργαστούμε τα αιτήματά σας, να ανταποκριθούμε στις απαιτήσεις σας και να βελτιώσουμε τις υπηρεσίες μας."
+            third party title: "Ιστοτόποι τρίτων"
+            third party text: "Η πολιτική απορρήτου εφαρμόζεται μόνο στυος ιστοτόπους και τις εφαρμογές που της ανήκουν και διαχειρίζεται η LifeChurh.tv. H LifeChurch.tv δεν μπορεί να ρυθμίσει άλλους ιστοτόπους που συνδέονται μέσα από τις διάφορες ιστοσελίδες και υπηρεσίες μας. Αυτοί ιστοτόποι μπορεί να τοποθετούν τα δικά τους cookies ή άλλα αρχεία στον υπολογιστή σας, να συλλέγουν δεδομένα ή να σας ζητούν προσωπικά δεδομένα. Θα πρέπει να ενημερωθείτε για τις ισχύουσες πολιτικές απορρήτου τους, ώστε να αποφασίσετε αν θα επιισκεφθείτε τους ιστοτόπους τους."
+            information use title: "Πως χρησιμοποιούμε τα στοιχεία σας;"
+            information use text: "Όταν εγγραφείτε για μια συγκεκριμένη υπηρεσία που απαιτεί εγγραφή, σας ζητάμε να δώσετε προσωπικά στοιχεία. Αν LifeChurch.tv θα ήθελε να χρησιμοποιήσει αυτές τις πληροφορίες με τρόπο διαφορετικό από τον σκοπό για τον οποίο συνελέγησαν, τότε θα ζητήσουμε τη συγκατάθεσή σας πριν από τη χρήση. Μπορείτε να αρνηθείτε την υποβολή προσωπικών στοιχείων σε οποιαδήποτε υπηρεσία μας. Σε αυτή την περίπτωση μπορεί να μην είμαστε σε θέση να σας παρέχουμε αυτές τις υπηρεσίες."
+            information security title: "Πως προστατεύουμε τα προσωπικά σας δεδομένα;"
             information security text: "LifeChurch.tv does not share your personal information with other institutions outside of LifeChurch.tv without your explicit consent. LifeChurch.tv may share your personal information only if it has a good faith belief that access, use, preservation or disclosure of such information is reasonably necessary to (a) satisfy any applicable law, regulation, legal process or enforceable governmental request, (b) enforce applicable Terms Of Use, including investigation of potential violations thereof, (c) detect, prevent, or otherwise address fraud, security or technical issues, or (d) protect against imminent harm to the rights, property or safety of LifeChurch.tv, its users or the public as required or permitted by law.LifeChurch.tv takes appropriate security measures to protect against unauthorized access to or unauthorized alteration, disclosure or destruction of data. including internal reviews of our data collection, storage and processing practices and security measures, as well as physical security measures to guard against unauthorized access to systems where we store personal data. Unless explicit permission is obtained from you, LifeChurch.tv restricts access to personal information to  its employees, contractors and agents who need to know that information to operate, develop or improve our services. These individuals are bound by confidentiality obligations and may be subject to discipline, including termination and criminal prosecution, if they fail to meet these obligations."
-            data integrity title: "Data Integrity"
+            data integrity title: "Ακεραιότητα δεδομένων"
             data integrity text: "LifeChurch.tv reviews our data collection, storage and processing practices to ensure that we only collect, store and process the personal information needed to provide or improve our services. We take reasonable steps to ensure that the personal information we process is accurate, complete, and current, but we depend on our users to update or correct their personal information whenever necessary."
-            information access title: "Accessing and updating personal information"
+            information access title: "Πρόσβαση και ενημέρωση προσωπικών δεδομένων"
             information access text: "When you use any LifeChurch.tv service, we make good faith efforts to provide you with access to your personal information and either to correct this data if it is inaccurate or to delete such data at your request if it is not otherwise required to be retained by law or for legitimate service purposes. We ask individual users to identify themselves and the information requested to be accessed, corrected or removed before processing such requests, and we may decline to process requests that are unreasonably repetitive or systematic, require disproportionate technical effort, jeopardize the privacy of others, or would be extremely impractical (for instance, requests concerning information residing on backup tapes), or for which access is not otherwise required. In any case where we provide information access and correction, we perform this service free of charge, except if doing so would require a disproportionate effort. Some of our services have different procedures to access, correct or delete users' personal information."
-            enforcement title: "Enforcement"
-            enforcement text: "LifeChurch.tv periodically reviews its compliance with this Privacy Policy. When we receive formal written complaints regarding privacy issues, it is our policy to contact the complaining user regarding his or her concerns. We will cooperate with the appropriate regulatory authorities, including local data protection authorities, to resolve any complaints regarding the transfer of personal data that cannot be resolved between LifeChurch.tv and an individual."
+            enforcement title: "Επιβολή"
+            enforcement text: "H LifeChurch.tv εξετάζει περιοδικά τη συμμόρφωσή της με την παρούσα πολιτική προστασίας προσωπικών δεδομένων. Όταν λάβουμε γραπτώς παράπονα σχετικά με ζητήματα ιδιωτικότητας, η πολιτική μας είναι να επικοινωνούμε με τον/ην παραπονούμενο/η χρήστη. Θα συνεργαστούμε με τις αρμόδιες ρυθμιστικές αρχές, συμπεριλαμβανομένων των τοπικών αρχών προστασίας δεδομένων, για την επίλυση τυχόν διαφορών, σχετικών με την τήρηση προσωπικών δεδομένων, που δεν μπορούν να επιλυθούν μεταξύ της LifeChurch.tv και του/της καταγγέλοντα/ουσας."
             questions title: "Ερωτήσεις"
             questions text: "Οποιεσδήποτε ερωτήσεις για την πολιτική απορρήτου μπορούν να σταλούν στο: <a href='mailto:legal@youversion.com'>legal@youversion.com</a>"
         terms: 
@@ -753,6 +791,7 @@ el:
             private: "Ιδιωτικό"
             public: "Δημόσιο"
         title: "Σχέδια Μελέτης"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Περιήγηση ανά κατηγορία "
         browse plans: "Περιήγηση σε Σχέδια %{category}"
         swap list localization: "(<a href='%{swap_link}'>Προβολή σε %{swap_locale}</a>)"
@@ -954,13 +993,15 @@ el:
     download ad: 
         title: "Κατεβάστε δωρεάν την εφαρμογή \"Αγία Γραφή\""
         description copy: "Εκατοντάδες εκδόσεις σε %{language_count} διαφορετικές γλώσσες - η Αγία Γραφή που πάει μαζί σας παντού."
+        meta copy title: "Κατεβάστε δωρεάν την εφαρμογή \"Αγία Γραφή\""
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "Εκατοντάδες εκδόσεων σε 100+"
         line 2: "διαφορετικές γλώσσες - Η Αγία Γραφή"
         line 3: "που έρχεται μαζί σας παντού."
         download: "Λήψη τώρα"
-        banner title: "The Bible App"
-        banner action: "Download"
-        banner open: "Open"
+        banner title: "Εφαρμογή Αγίας Γραφής"
+        banner action: "Λήψη"
+        banner open: "Άνοιγμα"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1044,9 +1085,9 @@ el:
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
         free overlay: "100% Δωρεάν"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
+        sms button: "Στείλτε μου το σύνδεσμο με μήνυμα SMS"
+        sms error: "Συγνώμη, κάτι πήγε στραβά. Προσπαθήστε αργότερα."
+        sms success: "Θαυμάσια! Ελέγξτε το κινητό σας για το σύνδεσμο."
     pages: 
         generic_error: 
             title: "Ωχ!"
@@ -1074,6 +1115,9 @@ el:
             download action: "Λήψη της εφαρμογής"
             download description: "Κάντε λήψη της δωρεάν εφαρμογής \"Αγία Γραφή\" της YouVersion στη συσκευή σας και θα έχετε την Αγία Γραφή μαζί σας οπουδήποτε πηγαίνετε. "
             world installs: "Εγκαταστάσεις παγκοσμίως"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Ρυθμίσεις Προβολέα"

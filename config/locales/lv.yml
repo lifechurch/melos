@@ -1012,6 +1012,9 @@ lv:
         line 2: "dažādas valodas - Bībele"
         line 3: "Tas jebkur dodas jums līdzi."
         download: "Lejuplādēt tagad"
+        banner title: "Bībeles aplikācija"
+        banner action: "Lejuplādēt"
+        banner open: "Atvērt"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1095,6 +1098,9 @@ lv:
         mobile web: "mobilais internets"
         amazon: "Kindle Fire"
         free overlay: "100% bezmaksas"
+        sms button: "Sūti man saiti"
+        sms error: "Atvaino, kaut kas neizdevās. Lūdzu, mēģini vēlreiz."
+        sms success: "Lieliski! Meklē savā mobilajā ierīcē saiti."
     pages: 
         generic_error: 
             title: "Ak vai!"

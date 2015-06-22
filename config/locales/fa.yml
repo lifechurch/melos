@@ -257,9 +257,9 @@ fa:
     chapter: "باب"
     home: "خانه"
     bible: "كتاب‌مقدس"
-    audio bible: "Audio Bible"
-    audio bible app: "Audio Bible App"
-    audio bibles title: "Listen to Audio Bibles"
+    audio bible: "«کتاب‌مقدس» صوتی"
+    audio bible app: "اَپ/برنامهٔ «کتاب‌مقدس» صوتی"
+    audio bibles title: "به کتاب‌مقدس صوتی گوش دهید"
     audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
     language: "زبان"
     translation: "ترجمه"
@@ -986,6 +986,9 @@ fa:
         line 2: "زبان‌های مختلف - کتاب‌مقدس"
         line 3: "در هر جا با شماست‏.‏"
         download: "همین الآن دانلود کنید"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "دانلود برنامۀ «کتاب‌مقدس برای کودکان»‌"
         description copy: "برنامۀ «کتاب‌مقدس برای کودکان» وسیله‌ای است عالی برای مطالعۀ داستان‌های کتاب‌مقدس و آشنایی کودکان با عیسای مسیح."
@@ -1069,6 +1072,9 @@ fa:
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
         free overlay: "٪۱۰۰ رایگان"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "آاخخخ!"

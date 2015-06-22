@@ -986,6 +986,9 @@ ja:
         line 2: "何百種もの訳が利用可能な"
         line 3: "いつでもどこでも使える聖書"
         download: "今すぐダウンロード"
+        banner title: "聖書アプリ"
+        banner action: "ダウンロード"
+        banner open: "開く"
     download bafk ad: 
         title: "こども聖書アプリをダウンロードしましょう"
         description copy: "こども聖書アプリは、子どもたちがイエスについての物語を学ぶのにぴったりです。"
@@ -1069,6 +1072,9 @@ ja:
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
         free overlay: "全て無料"
+        sms button: "リンクをメールする"
+        sms error: "上手くいかなかったようです。もう一度お願いします。"
+        sms success: "完了！ご利用のデバイスからリンクをご覧ください。"
     pages: 
         generic_error: 
             title: "申し訳ありません。"

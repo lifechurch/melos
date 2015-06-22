@@ -999,6 +999,9 @@ fi:
         line 2: "eri kielellä - Raamattu"
         line 3: "joka kulkee kanssasi minne menetkin"
         download: "Lataa nyt"
+        banner title: "Raamattusovellus"
+        banner action: "Lataa"
+        banner open: "Avaa"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1082,6 +1085,9 @@ fi:
         mobile web: "Mobiilisivusto"
         amazon: "Kindle Fire"
         free overlay: "100% ilmainen"
+        sms button: "Lähetä minulle linkki"
+        sms error: "Pahoittelut, jokin meni pieleen. Yritä uudelleen."
+        sms success: "Hienoa! Avaa linkki mobiililaitteellasi."
     pages: 
         generic_error: 
             title: "Oho!"
