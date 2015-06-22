@@ -39,6 +39,11 @@ http {
       passenger_env_var NEW_RELIC_LOG_LEVEL info;
       passenger_env_var MEMCACHE_SERVERS 10.36.123.78:11211,10.36.123.109:11211;
       passenger_env_var LOG_LEVEL warn;
+
+      location ~*  \.(jpg|jpeg|png|gif|ico|css|js)$ {
+        expires 365d;
+      }
+
       location /k2k-server-status {
         stub_status on;
         access_log off;
