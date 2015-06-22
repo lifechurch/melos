@@ -999,6 +999,9 @@ af:
         line 2: "verskillende tale - die Bybel wat"
         line 3: "orals saam met jou gaan."
         download: "Laai Nou Af"
+        banner title: "Die Bybel App"
+        banner action: "Aflaai"
+        banner open: "Maak oop"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1082,6 +1085,9 @@ af:
         mobile web: "Mobiele Web"
         amazon: "Kindle Fire"
         free overlay: "100 % Gratis"
+        sms button: "Stuur vir my 'n skakel in 'n teksboodskap"
+        sms error: "Jammer, iets het verkeerdgeloop. Probeer asseblief weer."
+        sms success: "Great! Kyk na jou foon vir die skakel."
     pages: 
         generic_error: 
             title: "Oeps!"

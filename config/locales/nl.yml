@@ -999,6 +999,9 @@ nl:
         line 2: "verschillende talen - de Bijbel"
         line 3: "die overal met je meegaat."
         download: "Nu downloaden"
+        banner title: "De Bijbel App"
+        banner action: "Downloaden"
+        banner open: "Openen"
     download bafk ad: 
         title: "Download de Bijbel App voor Kinderen"
         description copy: "De Bijbel App voor Kinderen is een fantastische manier om je kinderen bekend te maken met de Bijbelse verhalen over Jezus."
@@ -1082,6 +1085,9 @@ nl:
         mobile web: "Mobiel internet"
         amazon: "Kindle Fire"
         free overlay: "100% Gratis"
+        sms button: "Stuur me een link"
+        sms error: "Sorry, er is iets fout gegaan. Probeer het alstublieft opnieuw"
+        sms success: "Fantastisch! Controleer of je de link hebt ontvangen op je mobiel."
     pages: 
         generic_error: 
             title: "Oeps!"

@@ -3,6 +3,42 @@ ca:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "fa aproximadament una hora"
+                other: "fa unes %{count} hores"
+            about_x_months: 
+                one: "fa aproximadament un mes"
+                other: "fa uns %{count} mesos"
+            about_x_years: 
+                one: "fa aproximadament un any"
+                other: "fa uns %{count} anys"
+            almost_x_years: 
+                one: "fa gairebé un any"
+                other: "fa gairebé %{count} anys"
+            half_a_minute: "fa mig minut"
+            less_than_x_minutes: 
+                one: "fa menys de un minut"
+                other: "fa menys de %{count} minuts"
+            less_than_x_seconds: 
+                one: "fa menys de un segon"
+                other: "fa menys de %{count} segons"
+            over_x_years: 
+                one: "fa més d'un any"
+                other: "fa més de %{count} anys"
+            x_days: 
+                one: "fa un dia"
+                other: "fa %{count} dies"
+            x_minutes: 
+                one: "fa un minut"
+                other: "fa %{count} minuts"
+            x_months: 
+                one: "fa un mes"
+                other: "fa %{count} mesos"
+            x_seconds: 
+                one: "fa un segon"
+                other: "fa %{count} segons"
     counter: 
         format: "999.999.999"
     social: 
@@ -75,6 +111,8 @@ ca:
         users last name required: "Escriu el teu cognom"
         moments content required: "El contingut no pot estar buit"
     meta: 
+        best kids app: "La millor aplicació per a nens!"
+        best educational app: "La millor aplicació educativa"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +268,12 @@ ca:
     chapter: "Capítol"
     home: "Inici"
     bible: "La Bíblia"
+    audio bible: "Bíblia en àudio"
+    audio bible app: "Aplicació de la Bíblia en àudio"
+    audio bibles title: "Escolta la Bíblia en àudio"
+    audio bible meta: "Escolta gratuïtament en línia o descarrega l'Aplicació de la Bíblia i escolta la Bíblia en àudio al teu telèfon amb l'aplicació de la Bíblia més ben valorada."
+    language: "Idioma"
+    translation: "Traducció"
     notes title: "Notes"
     friends: "Amics"
     groups: "Grups"
@@ -747,6 +791,7 @@ ca:
             private: "Privat"
             public: "Públic"
         title: "Plans de lectura"
+        meta title: "Estudi bíblic en línia, devocionals i plans de lectura"
         browse by category: "Explora per categories"
         browse plans: "Explorar plans de %{category}"
         swap list localization: "(<a href='%{swap_link}'>Veure-ho a %{swap_locale}</a>)"
@@ -948,13 +993,15 @@ ca:
     download ad: 
         title: "Descarrega l'aplicació gratuïta de la Bíblia."
         description copy: "Centenars de versions en %{language_count} diferents llengües - la Bíblia que t'acompanya arreu."
+        meta copy title: "Descarrega l'aplicació gratuïta de la Bíblia."
+        meta copy versions: "Centenars de versions en + de %{language_count} idiomes diferents"
         line 1: "Centenars de versions en més de 100"
         line 2: "idiomes diferents - La Bíblia"
         line 3: "que va amb tu a qualsevol lloc."
         download: "Descarrega-la ara"
-        banner title: "The Bible App"
-        banner action: "Download"
-        banner open: "Open"
+        banner title: "L'aplicació de la Bíblia"
+        banner action: "Descarrega"
+        banner open: "Obrir"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1038,9 +1085,9 @@ ca:
         mobile web: "Web per a mòbils"
         amazon: "Kindle Fire"
         free overlay: "100% gratuïta"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
+        sms button: "Introdueix un enllaç"
+        sms error: "Disculpa, alguna cosa no ha anat bé. Torna-ho a provar."
+        sms success: "Genial! Comprova l'enllaç al teu mòbil."
     pages: 
         generic_error: 
             title: "Alguna cosa ha sortit malament!"
@@ -1068,6 +1115,9 @@ ca:
             download action: "Descarrega l'aplicació de la Bíblia"
             download description: "Descarrega YouVersion, l'aplicació gratuïta de la Bíblia, en el teu dispositiu mòbil i tindràs la teva Bíblia amb tu allà on vagis."
             world installs: "Instal·lacions a tot el món"
+        trending verses: 
+            title: "Versets bíblics més populars"
+            headline: "Els versets bíblics més populars a l'Aplicació de la Bíblia de YouVersion i a Bible.com"
     shared: 
         menu_settings: 
             title: "Configuració del lector"

@@ -999,6 +999,9 @@ es-ES:
         line 2: "diferentes idiomas - la Biblia"
         line 3: "que va contigo donde quieras."
         download: "Descargar ahora"
+        banner title: "La Biblia App"
+        banner action: "Descargar"
+        banner open: "Abrir"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1082,6 +1085,9 @@ es-ES:
         mobile web: "Red móvil"
         amazon: "Kindle Fire"
         free overlay: "Totalmente gratis"
+        sms button: "mándame un enlace"
+        sms error: "Perdón, algo ha ido mal. Por favor, prueba otra vez."
+        sms success: "¡Genial! Comprueba el enlace en tu dispositivo móvil."
     pages: 
         generic_error: 
             title: "Uy!"

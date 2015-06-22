@@ -986,6 +986,9 @@ ko:
         line 2: "수백개의 언어로 수백개의"
         line 3: "번역본을 제공하는 성경앱."
         download: "지금 다운로드"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "어린이용 성경 앱을 다운로드하세요."
         description copy: "어린이용 성경앱은 여러분의 자녀들이 예수님에 관한 성경 이야기를 배우는데 참 좋은 방법입니다."
@@ -1069,6 +1072,9 @@ ko:
         mobile web: "모바일 웹"
         amazon: "킨들 파이어"
         free overlay: "100% 무료"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "죄송합니다."

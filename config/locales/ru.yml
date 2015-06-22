@@ -132,7 +132,7 @@ ru:
         users first name required: "Необходимо ввести имя."
         users last name required: "Необходимо ввести фамилию."
         moments content required: "Введите текст"
-    meta:
+    meta: 
         best kids app: "Лучшее приложение для детей!"
         best educational app: "Лучшее обучающее приложение"
         kids_app: 
@@ -190,7 +190,7 @@ ru:
             one hope: "One Hope: необычные библейские материалы для детей"
         links: 
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
-            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=ru"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Сейчас"
     celebrating 50MM: "Отмечаем 50 миллионов установок!"

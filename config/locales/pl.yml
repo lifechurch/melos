@@ -3,6 +3,64 @@ pl:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "około godziny temu"
+                few: "około %{count} godzin temu"
+                many: "około %{count} godzin temu"
+                other: "około %{count} godziny temu"
+            about_x_months: 
+                one: "około miesiąca temu"
+                few: "około %{count} miesięcy temu"
+                many: "około %{count} miesięcy temu"
+                other: "około %{count} miesiąca temu"
+            about_x_years: 
+                one: "około roku temu"
+                few: "około %{count} lat temu"
+                many: "około %{count} lat temu"
+                other: "około %{count} roku temu"
+            almost_x_years: 
+                one: "prawie rok temu"
+                few: "prawie %{count} lata temu"
+                many: "prawie %{count} lat temu"
+                other: "prawie %{count} roku temu"
+            half_a_minute: "pół minuty temu"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                few: "less than %{count} minutes ago"
+                many: "less than %{count} minutes ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                few: "less than %{count} seconds ago"
+                many: "less than %{count} seconds ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "ponad rok temu"
+                few: "ponad %{count} lata temu"
+                many: "ponad %{count} lat temu"
+                other: "ponad %{count} roku temu"
+            x_days: 
+                one: "dzień temu"
+                few: "%{count} dni temu"
+                many: "%{count} dni temu"
+                other: "%{count} dnia temu"
+            x_minutes: 
+                one: "minutę temu"
+                few: "%{count} minuty temu"
+                many: "%{count} minut temu"
+                other: "%{count} minuty temu"
+            x_months: 
+                one: "miesiąc temu"
+                few: "%{count} miesiące temu"
+                many: "%{count} miesięcy temu"
+                other: "%{count} miesięcy temu"
+            x_seconds: 
+                one: "sekundę temu"
+                few: "%{count} sekundy temu"
+                many: "%{count} sekund temu"
+                other: "%{count} sekundy temu"
     counter: 
         format: "999 999 999"
     social: 
@@ -75,6 +133,8 @@ pl:
         users last name required: "Musisz wpisać nazwisko."
         moments content required: "Treść nie może być pusta."
     meta: 
+        best kids app: "Najlepsza aplikacja dla dzieci!"
+        best educational app: "Najlepsza aplikacja edukacyjna"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +290,12 @@ pl:
     chapter: "Rozdział"
     home: "§"
     bible: "Biblia"
+    audio bible: "Biblia audio"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Słuchaj Biblii audio"
+    audio bible meta: "Słuchaj on-line za darmo lub pobierz Aplikację Biblii YouVersion i słuchaj Biblii audio na swoim telefonie z najlepszą Aplikacją Biblii."
+    language: "Język"
+    translation: "Tłumaczenie"
     notes title: "Notatki"
     friends: "Przyjaciele"
     groups: "Grupy"
@@ -371,10 +437,10 @@ pl:
             ignore button: "Odmów"
             ignore request button: "Odrzuć prośbę"
     images: 
-        none user: "%{username} hasn't created any images yet."
+        none user: "%{username} nie utworzył jeszcze żadnych obrazków."
         blank slate: 
-            heading: "You don’t have any images yet"
-            description: "Use the YouVersion mobile app to create verse images."
+            heading: "Nie masz jeszcze żadnych obrazków"
+            description: "Używaj mobilnej aplikacji YouVersion do tworzenia obrazków z wersetami."
     notes: 
         none user: "%{username} nie ma jeszcze żadnych notatek."
         blank slate: 
@@ -507,8 +573,8 @@ pl:
         user notes: "Notatki użytkownika %{user}"
         my friends: "Przyjaciele"
         my notes: "Notatki"
-        my images: "Images"
-        user images: "%{user}'s Images"
+        my images: "Obrazki"
+        user images: "Obrazki %{user}"
         user friends: "Przyjaciele użytkownika %{user}"
         my bookmarks: "Moje zakładki"
         user bookmarks: "Zakładki użytkownika %{user}"
@@ -625,7 +691,7 @@ pl:
             tab notes: "Notatki"
             tab bookmarks: "Zakładki"
             tab highlights: "Zaznaczenia"
-            tab images: "Images"
+            tab images: "Obrazki"
             tab badges: "Odznaczenia"
             first name: "Imię"
             last name: "Nazwisko"
@@ -751,6 +817,7 @@ pl:
             private: "Prywatne"
             public: "Publiczne"
         title: "Plany czytania"
+        meta title: "Studiowanie Biblii on-line, rozważania i plany czytania"
         browse by category: "Przeglądaj według kategorii"
         browse plans: "Przeglądaj plany w kategorii %{category}"
         swap list localization: "(<a href='%{swap_link}'>Przeglądaj w %{swap_locale}</a>)"
@@ -952,13 +1019,15 @@ pl:
     download ad: 
         title: "Pobierz bezpłatną Aplikację Biblii"
         description copy: "Setki wersji w ponad %{language_count} różnych językach - Biblia, która idzie z tobą wszędzie."
+        meta copy title: "Pobierz bezpłatną Aplikację Biblii"
+        meta copy versions: "Setki przekładów w ponad %{language_count} różnych językach."
         line 1: "Setki przekładów w ponad 100"
         line 2: "językach - Biblia, która"
         line 3: "idzie z tobą wszędzie."
         download: "Pobierz teraz"
-        banner title: "The Bible App"
-        banner action: "Download"
-        banner open: "Open"
+        banner title: "Aplikacja Biblii"
+        banner action: "Pobierz"
+        banner open: "Otwórz"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1013,21 +1082,21 @@ pl:
         what people: "Co ludzie mówią o darmowej Aplikacji Biblii..."
         t1: "Zawsze mam ze sobą Słowo."
         t1 copy: "Zaznaczyłem zakładkami fragmenty, które są dla mnie ważne. Przeczytałem nawet całość w ciągu roku dzięki planom czytania."
-        t2: "Highly recommended"
-        t2 copy: "I love how you are able to connect with friends and the Bible reading plans are awesome. This application helps me also to stay consistent in reading because it has reminders for the plans. It also gives me another way to come closer to God. Download this and read every day!"
+        t2: "Szczególnie polecane"
+        t2 copy: "Uwielbiam to w jaki sposób łączysz się z przyjaciółmi a plany czytania Biblii są niesamowite. Ta aplikacja pomaga mi również regularnym czytania, ponieważ ma przypomnienia o planach czytania.   Daje mi również kolejny sposób na przybliżenie się do Boga. Pobierz i czytaj każdego dnia!"
         t3: "Wspaniała aplikacja."
         t3 copy: "Świetna aplikacja z szerokim wyborem przekładów Biblii. ... Biblia w wersjach audio jest wspaniała i łatwa do zrozumienia."
-        t4: "Great. Always improving!"
+        t4: "Świetna.  Ciągle co raz lepsza!"
         t4 copy: "Many translations and languages available, and many that can be downloaded to read offline. Many useful features, such as the ability to make notes and bookmarks."
-        t5: "The best Bible app ever!"
+        t5: "Najlepsza aplikacja Biblii!"
         t5 copy: "I love how it has a lot of versions and that there are verses of the day, devotions, plans and community. Thanks for this free app. :)"
         t6: "Multiple versions and offline reading!"
         t6 copy: "Great because there are many different versions and I could download multiple versions for offline reading.  I'm able to listen to this app."
-        t7: "Great app!"
+        t7: "Świetna aplikacja!"
         t7 copy: "Helps me to read the bible more. Love the search and share features and the variety of ways to share. Also like the audio versions."
-        t8: "Great app"
-        t8 copy: "This is a great tool for studying from multiple translations. It's also convenient for listening to the bible when you're driving."
-        t9: "Best Bible app!"
+        t8: "Świetna aplikacja"
+        t8 copy: "To świetne narzędzie do studiowania wielu przekładów. Jest również wygodna do słuchania biblii podczas prowadzenia samochodu."
+        t9: "Najlepsza aplikacja Biblii!"
         t9 copy: "This is the best bible app out there. It has the word in different languages and versions for online and offline use. It has devotionals for everything you could think of. You can connect with others and ultimately learn about God and his Word."
         version list: "Over 1000 Bible versions including:"
         audio version list: "Listen to Bible audio versions including:"
@@ -1042,9 +1111,9 @@ pl:
         mobile web: "Sieć mobilna"
         amazon: "Kindle Fire"
         free overlay: "Darmowe w 100%"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
+        sms button: "Wyślij mi odnośnik"
+        sms error: "Przepraszamy, coś poszło nie tak. Prosimy spróbuj ponownie."
+        sms success: "Świetnie! Sprawdź czy dostałeś odnośnik na swój telefon."
     pages: 
         generic_error: 
             title: "Ups!"
@@ -1072,6 +1141,9 @@ pl:
             download action: "Pobierz Aplikację Biblii"
             download description: "Pobierz darmową Aplikację Biblii YouVersion na swoje urządzenie i miej swoją Biblię zawsze ze sobą, gdziekolwiek idziesz."
             world installs: "Instalacje na świecie"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Ustawienia czytnika"

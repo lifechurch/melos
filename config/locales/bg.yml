@@ -999,6 +999,9 @@ bg:
         line 2: "различен език - Библията"
         line 3: "вземи с теб"
         download: "Изтегли"
+        banner title: "Библията"
+        banner action: "Изтегляне"
+        banner open: "Отворено"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1082,6 +1085,9 @@ bg:
         mobile web: "Мобилен уеб"
         amazon: "Киндъл Файър"
         free overlay: "100% Безплатно"
+        sms button: "Прати ми линк"
+        sms error: "Извинете стана грешка. Моля опитайте отново."
+        sms success: "Страхотно.Проверете вашето мобилно устройство за линк."
     pages: 
         generic_error: 
             title: "Грешка!"

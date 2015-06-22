@@ -986,6 +986,9 @@ id:
         line 2: "bahasa berbeda - Alkitab"
         line 3: "yang selalu bersama Anda."
         download: "Unduh Sekarang"
+        banner title: "The Bible App"
+        banner action: "Download"
+        banner open: "Open"
     download bafk ad: 
         title: "Unduh Ap Alkitab untuk Anak-anak"
         description copy: "Ap Alkitab untuk Anak-anak adalah cara hebat untuk anak Anda belajar kisah-kisah Alkitab tentang Yesus."
@@ -1069,6 +1072,9 @@ id:
         mobile web: "Web Seluler"
         amazon: "Kindle Fire"
         free overlay: "100% Gratis"
+        sms button: "Text me a link"
+        sms error: "Sorry, something went wrong. Please try again."
+        sms success: "Great! Check your mobile device for the link."
     pages: 
         generic_error: 
             title: "Duh!"
