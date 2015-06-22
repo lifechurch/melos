@@ -1,6 +1,6 @@
 :ruby
   @sidebar          = false
-  @title            = "#{t('mobile page.t9')} #{t('mobile page.download now')} - #{t('mobile page.free overlay')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8, Nokia, Java, Symbian"
+  @title            = "#{t('mobile page.t9')} #{t('mobile page.download now')} - #{t('mobile page.free overlay')} | #{t('audio bible')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8"
   @meta_title       = "#{t('mobile page.download now')} - #{t('mobile page.free overlay')}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
@@ -118,14 +118,16 @@
 
     = cache "app_versions_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
       %div.version-list
-        %h2= t('mobile page.version list')
+        %h2
+          = link_to "#{t('mobile page.version list')}" , versions_path
         %ul
           - @text_versions_list.each do |version|
             %li
               = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
       - if @audio_versions_list.present?
         %div.version-list
-          %h2= t('mobile page.audio version list')
+          %h2
+            = link_to "#{t('mobile page.version list')}" , audiobibles_path
           %ul
             - @audio_versions_list.each do |version|
               %li

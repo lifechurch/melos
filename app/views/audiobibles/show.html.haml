@@ -1,7 +1,7 @@
 - reference = @reference
 - meta_language = @version.attributes.language.local_name
 - meta_language = "#{meta_language} | #{@version.attributes.language.name}" if (@version.attributes.language.name.present? and not (meta_language.eql?(@version.attributes.language.name)))
-- @title = "#{t('audio bible app')} - #{@version.to_s} - #{t('download ad.meta copy title')} | #{meta_language} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8, Nokia, Java, Symbian | #{t('meta.mobile.title')}"
+- @title = "#{t('audio bible app')} - #{@version.to_s} - #{t('download ad.meta copy title')} | #{meta_language} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8 | #{t('meta.mobile.title')}"
 - @subtitle = ''
 
 - unless is_whitelabel_site
@@ -32,7 +32,7 @@
           -else
             %p= pub_name
 
-  = render partial: 'widgets/download_app'
+  = render partial: 'widgets/download_app', :locals => {show_sms: true}
 
 - content_for :title do
   = @version
@@ -49,7 +49,8 @@
       = reference.audio.title
 
     %p= reference.audio.copyright_short.html
-    %p= raw reference.audio.copyright_long.html
+    - if not reference.audio.copyright_long.html.eql?(reference.audio.copyright_long.html)
+      %p= raw reference.audio.copyright_long.html
 
     = link_to t("ref.listen"), bible_version_path(reference), class: 'action_button_blue'
     = link_to t("mobile page.download now"), app_page_path, class: 'mobile version_download action_button_green'
