@@ -46,10 +46,17 @@ http {
       add_header  Cache-Control public;
       add_header  Last-Modified "";
       add_header  ETag "";
+      gzip on;
+      gzip_vary on;
+      gzip_proxied any;
+      gzip_disable "MSIE [1-6]\.";
+      gzip_comp_level 6;
+      gzip_types application/x-javascript text/css text/html image/x-icon image/png image/jpeg image/gif;
   }
-      location /k2k-server-status {
-        stub_status on;
-        access_log off;
-      }
+
+  location /k2k-server-status {
+    stub_status on;
+    access_log off;
+  }
   }
 }
