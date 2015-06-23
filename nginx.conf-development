@@ -1,0 +1,44 @@
+user yvdep;
+worker_processes 4;
+pid /run/nginx.pid;
+
+events {
+	worker_connections 768;
+	# multi_accept on;
+}
+
+http {
+	sendfile on;
+	tcp_nopush on;
+	tcp_nodelay on;
+	keepalive_timeout 65;
+	types_hash_max_size 2048;
+
+	include /etc/nginx/mime.types;
+	default_type application/octet-stream;
+
+	access_log /var/log/nginx/access.log;
+	error_log /var/log/nginx/error.log;
+
+	gzip on;
+	gzip_disable "msie6";
+
+	passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
+	passenger_ruby /home/yvdep/.rvm/wrappers/ruby-1.9.3-p551@youversion-web/ruby;
+
+  server {
+      server_name bible.com www.bible.com localdev.bible.com;
+      listen *:443;
+      ssl on;
+      ssl_certificate /etc/nginx/certs/selfsigned.crt;
+      ssl_certificate_key /etc/nginx/certs/selfsigned.key;
+      ssl_buffer_size 8k;
+      ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH AES128-SHA DHE-DSS-DES-CBC3-SHA !RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS";
+      ssl_prefer_server_ciphers on;
+      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+      passenger_enabled on;
+      root /var/www/youversion-web/current/public;
+      passenger_env_var MEMCACHE_SERVERS 127.0.0.1:11211;
+      rails_env development;
+  }
+}

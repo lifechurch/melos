@@ -3,13 +3,14 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 gem 'rails', '3.2.13'
 
-gem 'asset_sync',             '~> 0.5.3'
 gem 'awesome_print',          '~> 1.0.2'
 gem 'capistrano',             '~> 3.4.0'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 gem 'capistrano-rvm'
 gem 'capistrano-passenger'
+gem 'hipchat'
+gem 'dogapi'
 gem 'countries',              '~> 0.8.2'
 gem 'dalli',                  '~> 2.6.3'
 gem 'descriptive_statistics', '~> 1.1.0', require: false
@@ -49,7 +50,6 @@ gem 'rack-timeout',           '~> 0.0.3'
 gem 'rack-ssl-enforcer'
 gem 'viximo-rack-throttle',   '~> 0.5.0'
 gem 'handlebars_assets',      '~> 0.14.0'
-gem 'pg'
 
 # Using locale files directly in /config/locales/rails-i18n until gem supports
 # aliasing (or we come up with a way to resolve differences between gem lang
@@ -58,9 +58,6 @@ gem 'pg'
 # gem 'rails-i18n',           '~> 0.6.3'
 
 gem 'routing-filter',         '~> 0.3.1'
-gem "unicorn",               '~> 4.8.3'
-gem 'unicorn-worker-killer'
-# gem 'puma'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do
@@ -94,7 +91,6 @@ group :development, :tddium_ignore do
   gem 'guard-cucumber'
   gem 'guard-bundler'
   gem 'guard-rspec'
-  gem 'hooves'
   gem 'pry', require: false
   gem 'pry-rails'
   gem 'quiet_assets'

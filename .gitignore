@@ -29,3 +29,4 @@ db/*.sqlite3
 
 deploy/node_modules
 deploy/*.txt
+public
