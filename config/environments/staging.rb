@@ -53,7 +53,7 @@ YouversionWeb::Application.configure do
   config.assets.digest = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://www.bible.com"
+  config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://staging.bible.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # Note: asset precompilation task uses production env configuration
