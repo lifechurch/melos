@@ -25,8 +25,15 @@ http {
 
 	passenger_fly_with /var/run/passenger/flying-passenger.sock;
   server {
-      server_name bible.com www.bible.com sl.bible.com local.bible.com assets.bible.com staging.bible.com;
-      listen 80;
+      server_name local.bible.com staging.bible.com;
+      listen *:443;
+      ssl on;
+      ssl_certificate /etc/nginx/certs/selfsigned.crt;
+      ssl_certificate_key /etc/nginx/certs/selfsigned.key;
+      ssl_buffer_size 8k;
+      ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH AES128-SHA DHE-DSS-DES-CBC3-SHA !RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS";
+      ssl_prefer_server_ciphers on;
+      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
       passenger_enabled on;
       root /var/www/youversion-web/current/public;
       passenger_min_instances 16;

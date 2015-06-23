@@ -31,7 +31,7 @@ http {
       listen *:443;
       ssl on;
       ssl_certificate /etc/nginx/certs/selfsigned.crt;
-		  ssl_certificate_key /etc/nginx/certs/selfsigned.key;
+      ssl_certificate_key /etc/nginx/certs/selfsigned.key;
       ssl_buffer_size 8k;
       ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH AES128-SHA DHE-DSS-DES-CBC3-SHA !RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS";
       ssl_prefer_server_ciphers on;
