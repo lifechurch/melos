@@ -18,7 +18,7 @@ YouversionWeb::Application.configure do
   #### REENABLE ...
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://d1d07yab398s35.cloudfront.net"
+  config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://www.bible.com"
   puts "ENV['SECURE_TRAFFIC'] => #{ENV['SECURE_TRAFFIC']}"
 
   # Compress JavaScripts and CSS into one file for each
