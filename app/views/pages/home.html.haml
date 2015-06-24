@@ -36,14 +36,6 @@
   %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(120)))}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
-- content_for :lower_javascript do
-  :javascript
-    $( document ).ready(function() {
-      b = new Branch();
-      options = {title: "#{t('download ad.banner title')}", action: "#{t('download ad.banner action')}", open: "#{t('download ad.banner open')}"}
-      b.banner(options);
-    });
-
 = cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
   %article
     #hero{class: rtl_class}
@@ -109,6 +101,8 @@
           %h2= t(".features.download heading")
           %p
             %span.narrow= t(".features.download description").html_safe
+
+= render '/shared/app_banner'
 
 - content_for :javascripts do
   :javascript

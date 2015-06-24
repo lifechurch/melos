@@ -64,3 +64,5 @@
   .copyright= @version.info.try :html_safe
   = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
   = link_to t("mobile page.download now"), app_page_path, class: 'mobile version_download action_button_green'
+
+= render '/shared/app_banner'
