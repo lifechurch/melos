@@ -10,10 +10,3 @@
   - if local_assigns.has_key? :show_sms
     %div.sms
       = render partial: '/shared/sms_form'
-
-      :javascript
-        $(document).ready(function(){
-          if (!$('html').hasClass('mobile-client')) {
-            loadsms();
-          }
-        })
