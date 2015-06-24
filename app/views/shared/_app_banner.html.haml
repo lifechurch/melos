@@ -1,7 +1,9 @@
 - content_for :lower_javascript do
   :javascript
     $( document ).ready(function() {
-      b = new Branch();
-      options = {title: "#{t('download ad.banner title')}", action: "#{t('download ad.banner action')}", open: "#{t('download ad.banner open')}"}
-      b.banner(options);
+      if ($('html').hasClass('mobile-client')) {
+        b = new Branch();
+        options = {title: "#{t('download ad.banner title')}", action: "#{t('download ad.banner action')}", open: "#{t('download ad.banner open')}"}
+        b.banner(options);
+      }
     });
