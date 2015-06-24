@@ -174,12 +174,12 @@ ru:
         feature 4: "Игры и задания помогут детям запомнить то, чему они научились"
         feature 5: "Понятная для детей навигация"
         share: 
-            tell friends: "Tell your friends about the Bible App for Kids."
+            tell friends: "Расскажи своим друзьям о приложении \"Библия для детей\"."
             facebook name: "Библия для детей"
             facebook description: "Приложение \"Библия для детей\" уже доступно! Загрузите бесплатное приложение для iOS и Android сегодня: интерактивные библейские истории помогут вашему ребёнку в игровой форме познавать и возрастать в Божьем Слове. www.bible.com/deti"
             facebook link: "http://www.bible.com/deti"
             facebook redirect: "http://www.bible.com/deti"
-            twitter description: "Приложение \"Библия для детей\" от @YouVersion уже доступно! Оно весёлое и совершенно бесплатное. Загрузить: bible.com/deti"
+            twitter description: "\"Библия для детей\" @YouVersion уже доступна! Она весёлая и совершенно бесплатна. Загрузить: bible.com/deti"
             twitter hashtags: "детская библия"
             email: "Email"
             email subject: "Приложение \"Библия для детей\" уже доступно!"
@@ -189,7 +189,7 @@ ru:
             in partnership: "в сотрудничестве с"
             one hope: "One Hope: необычные библейские материалы для детей"
         links: 
-            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            apple: "https://itunes.apple.com/ru/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=ru"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Сейчас"

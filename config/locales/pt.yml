@@ -1085,7 +1085,7 @@ pt:
         mobile web: "Web Móvel"
         amazon: "Kindle Fire"
         free overlay: "100% Gratuita"
-        sms button: "Text me a link"
+        sms button: "Me envie um link por mensagem de texto"
         sms error: "Desculpe, algo deu errado. Tente novamente."
         sms success: "Ótimo! Confira seu dispositivo móvel para acessar o link."
     pages: 
