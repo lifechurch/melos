@@ -11,12 +11,13 @@ function loadsms() {
       onlyCountries: "undefined" == typeof onlyCountries ? ["us"] : onlyCountries
   });
 
-  // Whitelist locale
-  if (I18n.locale == "en") {
-    $('#sendButton_sms').click(function() {
-        sendLink_sms();
-    });
-  }
+  $('#sendButton_sms').click(function() {
+      if (!$(this).prop('disabled')) {
+          $(this).prop('disabled', true);
+          sendLink_sms();
+          setTimeout(function(){ $('#sendButton_sms').prop('disabled', false); }, 10000);
+      }
+  });
 }
 
 var sendLink_sms = function(v) {
