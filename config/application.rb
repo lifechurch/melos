@@ -32,7 +32,7 @@ module YouversionWeb
       "YV::Middleware::Halt",
       Rack::SslEnforcer,
       ignore: ['/app', '/download', '/mobile', '/100million'],
-      except_hosts: ['local.bible.com', 'assets.bible.com'],
+      except_hosts: ['local.bible.com', 'assets.bible.com', 'staging.bible.com'],
       except_environments: [ 'development' ]
     )
 
