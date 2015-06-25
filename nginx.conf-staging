@@ -26,8 +26,8 @@ http {
 	passenger_fly_with /var/run/passenger/flying-passenger.sock;
   server {
       server_name local.bible.com staging.bible.com;
-      listen *:443;
-      ssl on;
+      listen *:80;
+      listen *:443 ssl;
       ssl_certificate /etc/nginx/certs/star_bible_com.crt;
       ssl_certificate_key /etc/nginx/certs/star_bible_com.key;
       ssl_buffer_size 8k;
