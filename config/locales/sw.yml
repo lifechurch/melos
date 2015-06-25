@@ -3,6 +3,42 @@ sw:
     time: 
         formats: 
             votd: "%M %-d, %M"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "about 1 hour ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                one: "about 1 month ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                one: "about 1 year ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                one: "almost 1 year ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                one: "less than a minute ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                one: "less than 1 second ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                one: "over 1 year ago"
+                other: "over %{count} years ago"
+            x_days: 
+                one: "1 day ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                one: "1 minute ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                one: "1 month ago"
+                other: "%{count} months ago"
+            x_seconds: 
+                one: "1 second ago"
+                other: "%{count} seconds ago"
     counter: 
         format: "999,999,999"
     social: 
@@ -75,6 +111,8 @@ sw:
         users last name required: "Lazima uingize jina la mwisho."
         moments content required: "Maudhui haiwezi kuachwa tupu"
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +268,12 @@ sw:
     chapter: "Sura"
     home: "Home"
     bible: "Bibilia"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "maelezo"
     friends: "Marafiki"
     groups: "makundi"
@@ -747,6 +791,7 @@ sw:
             private: "Binafsi"
             public: "Umma"
         title: "Mipango ya usomaji"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "Tafuta kwa Jamii"
         browse plans: "Vingari %{category} mipango"
         swap list localization: "(<a href='%{swap_link}'>Ona kwa %{swap_locale}</a>)"
@@ -948,6 +993,8 @@ sw:
     download ad: 
         title: "Pata programu ya bure ya Bibilia"
         description copy: "Mamia ya matoleo kwenye %{language_count}+ lugha tofauti - Biblia inayoeda na wewe kokote"
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "mamia ya matoleo yenye"
         line 2: "lugha tofauti - biblia ambayo"
         line 3: "itaenda na wewe sehemu yoyote."
@@ -1068,6 +1115,9 @@ sw:
             download action: "Download App ya Bibilia"
             download description: "Download App ya Bibilia ya YouVersion bure  kwenye kifaa chako cha mkononi na utakuwa na  Biblia yako popote uendapo."
             world installs: "Sakinisho duniani kote"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "mipangilio yako"

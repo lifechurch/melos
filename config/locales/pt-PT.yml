@@ -3,6 +3,42 @@ pt-PT:
     time: 
         formats: 
             votd: "%-d %B %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "há uma hora atrás"
+                other: "há %{count} horas atrás"
+            about_x_months: 
+                one: "há um mês atrás"
+                other: "há %{count} meses atrás"
+            about_x_years: 
+                one: "há um ano atrás"
+                other: "há %{count} anos atrás"
+            almost_x_years: 
+                one: "há quase um ano atrás"
+                other: "há quase %{count} anos atrás"
+            half_a_minute: "há meio minuto atrás"
+            less_than_x_minutes: 
+                one: "há menos de um minuto atrás"
+                other: "há menos de %{count} minutos atrás"
+            less_than_x_seconds: 
+                one: "a menos de um segundo atrás"
+                other: "há menos de %{count} segundos atrás"
+            over_x_years: 
+                one: "há mais de um ano atrás"
+                other: "há mais de %{count} anos atrás"
+            x_days: 
+                one: "há um dia atrás"
+                other: "há %{count} dias atrás"
+            x_minutes: 
+                one: "há um minuto atrás"
+                other: "há %{count} minutos atrás"
+            x_months: 
+                one: "há um mês atrás"
+                other: "há %{count} meses atrás"
+            x_seconds: 
+                one: "há um segundo atrás"
+                other: "%{count}há segundos atrás"
     counter: 
         format: "999 999 999"
     social: 
@@ -75,6 +111,8 @@ pt-PT:
         users last name required: "Deverá inserir o seu sobrenome."
         moments content required: "O conteúdo não pode estar em branco"
     meta: 
+        best kids app: "Melhor app para crianças!"
+        best educational app: "Melhor app educativa"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +268,12 @@ pt-PT:
     chapter: "Capítulo"
     home: "Início"
     bible: "Bíblia"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "Notas"
     friends: "Amigos"
     groups: "Grupos"
@@ -747,6 +791,7 @@ pt-PT:
             private: "Privado"
             public: "Público"
         title: "Planos de Leitura"
+        meta title: "Estudo da Bíblia online, devocionais e planos de leitura"
         browse by category: "Navegar por Categoria"
         browse plans: "Veja Planos na Categoria %{category}"
         swap list localization: "(<a href='%{swap_link}'>Ver em %{swap_locale}</a>)"
@@ -948,6 +993,8 @@ pt-PT:
     download ad: 
         title: "Transfira Gratuitamente a App da Bíblia"
         description copy: "Centenas de versões em mais de %{language_count} línguas diferentes - a Bíblia que vai consigo para todo o lado."
+        meta copy title: "Transfira Gratuitamente a App da Bíblia"
+        meta copy versions: "Centenas de versões em mais de %{language_count} idiomas"
         line 1: "Centenas de versões em mais de 100"
         line 2: "idiomas - a Bíblia que"
         line 3: "vai consigo para todo o lado"
@@ -1068,6 +1115,9 @@ pt-PT:
             download action: "Transfira a App da Bíblia"
             download description: "Transfira gratuitamente a App da Bíblia no seu dispositivo móvel e terá a Palavra de Deus consigo em qualquer lugar."
             world installs: "Instalações ao redor do mundo"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "Definições do Leitor"

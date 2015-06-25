@@ -3,6 +3,42 @@ pt:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "cerca de %{count} hora atrás"
+                other: "cerca de %{count} horas atrás"
+            about_x_months: 
+                one: "cerca de %{count} mês atrás"
+                other: "cerca de %{count} meses atrás"
+            about_x_years: 
+                one: "cerca de %{count} ano atrás"
+                other: "cerca de %{count} anos atrás"
+            almost_x_years: 
+                one: "quase %{count} ano atrás"
+                other: "quase %{count} anos atrás"
+            half_a_minute: "meio minuto atrás"
+            less_than_x_minutes: 
+                one: "menos de %{count} minuto atrás"
+                other: "menos de %{count} minutos atrás"
+            less_than_x_seconds: 
+                one: "menos de %{count} segundo atrás"
+                other: "menos de %{count} segundos atrás"
+            over_x_years: 
+                one: "mais de %{count} ano atrás"
+                other: "mais de %{count} anos atrás"
+            x_days: 
+                one: "%{count} dia atrás"
+                other: "%{count} dias atrás"
+            x_minutes: 
+                one: "%{count} minuto atrás"
+                other: "%{count} minutos atrás"
+            x_months: 
+                one: "%{count} mês atrás"
+                other: "%{count} meses atrás"
+            x_seconds: 
+                one: "%{count}segundo atrás"
+                other: "%{count} segundos atrás"
     counter: 
         format: "999.999,999"
     social: 
@@ -75,6 +111,8 @@ pt:
         users last name required: "Você deve digitar um sobrenome."
         moments content required: "Conteúdo não pode estar em branco."
     meta: 
+        best kids app: "Melhor Aplicativo para crianças!"
+        best educational app: "Melhor Aplicativo Educacional"
         kids_app: 
             title: "O App da Bíblia para Crianças"
             description: "O App da Bíblia para Crianças é uma ótima maneira para suas crianças aprenderem histórias Bíblicas sobre Jesus, nosso presente de vida eterna e sobre as muitas lições que Deus nos ensina. Nesta experiência interativa, as crianças se envolvem com a Palavra de Deus com recursos visuais atrativos enquanto ganham pontos ao ler e colecionar tesouros."
@@ -753,6 +791,7 @@ pt:
             private: "Particular"
             public: "Público"
         title: "Planos de Leitura"
+        meta title: "Estudo biblico online, devocionais e planos de leitura"
         browse by category: "Buscar por Categoria"
         browse plans: "Procurar %{category} Planos"
         swap list localization: "(<a href='%{swap_link}'>Ver em %{swap_locale}</a>)"
@@ -954,13 +993,15 @@ pt:
     download ad: 
         title: "Download  do App gratuito da Bíblia"
         description copy: "Centenas de versões em +%{language_count}línguas diferentes - a Bíblia que vai com você a qualquer lugar."
+        meta copy title: "Download gratuito do App da Bíblia"
+        meta copy versions: "Centenas de versões em + %{language_count} idiomas differentes"
         line 1: "Centenas de versões em mais"
         line 2: "de 100 idiomas - a Bíblia que"
         line 3: "vai com você a qualquer lugar."
         download: "Baixar Agora"
-        banner title: "The Bible App"
-        banner action: "Download"
-        banner open: "Open"
+        banner title: "O App da Bíblia"
+        banner action: "Baixar"
+        banner open: "Abrir"
     download bafk ad: 
         title: "Baixe o App da Bíblia para Crianças"
         description copy: "O App da Bíblia para Crianças é uma ótima maneira para suas crianças aprenderem histórias Bíblicas sobre Jesus."
@@ -1044,9 +1085,9 @@ pt:
         mobile web: "Web Móvel"
         amazon: "Kindle Fire"
         free overlay: "100% Gratuita"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
+        sms button: "Me envie um link por mensagem de texto"
+        sms error: "Desculpe, algo deu errado. Tente novamente."
+        sms success: "Ótimo! Confira seu dispositivo móvel para acessar o link."
     pages: 
         generic_error: 
             title: "Opa!"

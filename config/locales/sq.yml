@@ -3,6 +3,42 @@ sq:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "para rreth 1 ore"
+                other: "para rreth %{count} orësh"
+            about_x_months: 
+                one: "para rreth 1 muaji"
+                other: "para rreth %{count} muajsh"
+            about_x_years: 
+                one: "para rreth 1 viti"
+                other: "para rreth %{count} vjetësh"
+            almost_x_years: 
+                one: "para pothuaj 1 viti"
+                other: "para pothuaj %{count} vjetësh"
+            half_a_minute: "para më pak se një minutë"
+            less_than_x_minutes: 
+                one: "para më pak se një minutë"
+                other: "para më pak se %{count} minutash"
+            less_than_x_seconds: 
+                one: "para më pak se 1 sekondë"
+                other: "para më pak se %{count} sekondash"
+            over_x_years: 
+                one: "mbi 1 vit më parë"
+                other: "mbi %{count} vjet më parë"
+            x_days: 
+                one: "para 1 dite"
+                other: "para %{count} ditësh"
+            x_minutes: 
+                one: "para 1 minute"
+                other: "para %{count} minutash"
+            x_months: 
+                one: "para 1 muaji"
+                other: "para %{count} muajsh"
+            x_seconds: 
+                one: "para 1 sekonde"
+                other: "para %{count} sekondash"
     counter: 
         format: "999,999,999"
     social: 
@@ -75,6 +111,8 @@ sq:
         users last name required: "Ju duhet të futni mbiemrin tuaj"
         moments content required: "Përmbajtja nuk mund të jetë bosh."
     meta: 
+        best kids app: "Programi për Fëmijë më i mirë!"
+        best educational app: "Programi më i mirë edukativ"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -753,6 +791,7 @@ sq:
             private: "Private"
             public: "Publike"
         title: "Planet e leximit"
+        meta title: "Plane leximi, devocionale dhe studime biblike në internet"
         browse by category: "Shfletoni sipas kategorisë"
         browse plans: "Shfleto planet %{category}"
         swap list localization: "(<a href='%{swap_link}'>Shiko në %{swap_locale}</a>)"
@@ -954,13 +993,15 @@ sq:
     download ad: 
         title: "Shkarko Programin e Biblës Falas."
         description copy: "Qindra versione në %{language_count}+ gjuhë të ndryshme - Bibla që vjen me ju kudo."
+        meta copy title: "Shkarko falas Programin e Biblës"
+        meta copy versions: "Qindra versione në %{language_count}+ gjuhë të ndryshme"
         line 1: "Qindra versione në 100+"
         line 2: "gjuhë të ndryshme - Bibla"
         line 3: "që shkon me ju kudo."
         download: "Shkarko tani"
-        banner title: "The Bible App"
-        banner action: "Download"
-        banner open: "Open"
+        banner title: "Programi i Biblës"
+        banner action: "Shkarko"
+        banner open: "Hap"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1044,9 +1085,9 @@ sq:
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
         free overlay: "100% Falas"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
+        sms button: "Më dërgo një lidhje"
+        sms error: "Na falni, diçka nuk shkoi mirë. Ju lutemi provoni sërish."
+        sms success: "Shumë mirë! Kontrolloni celularin tuaj për lidhjen."
     pages: 
         generic_error: 
             title: "Ups!"

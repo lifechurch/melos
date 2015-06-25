@@ -1,6 +1,6 @@
 :ruby
   @sidebar          = false
-  @title            = "#{t('mobile page.t9')} #{t('mobile page.download now')} - #{t('mobile page.free overlay')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8, Nokia, Java, Symbian"
+  @title            = "#{t('mobile page.t9')} #{t('mobile page.download now')} - #{t('mobile page.free overlay')} | #{t('audio bible')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8"
   @meta_title       = "#{t('mobile page.download now')} - #{t('mobile page.free overlay')}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
@@ -68,9 +68,9 @@
       %li#dl_hppalm
         %h2= link_to t('mobile page.hp palm'), "https://developer.palm.com/appredirect/?packageid=com.youversion.palm"
       %li#dl_java
-        %h2= link_to t('mobile page.java'), "http://java.apps.opera.com/en_us/bible_000261.html?p=11"
+        %h2= link_to t('mobile page.java'), "http://java.apps.opera.com/en_us/bible_000261.html"
       %li#dl_symbian
-        %h2= link_to t('mobile page.symbian'), "http://java.apps.opera.com/en_us/bible_000261.html?p=11"
+        %h2= link_to t('mobile page.symbian'), "http://java.apps.opera.com/en_us/bible_000261.html"
       %li#dl_mobile
         %h2= link_to t('mobile page.mobile web'), "http://www.bible.com"
       %li#dl_amazon
@@ -78,9 +78,8 @@
     %a.cta
       %h4
         = t('mobile page.button h4').html_safe
-    -# whitelist locale. en only until translation strings return
-    - if I18n.locale == :en
-      = render partial: '/shared/sms_form'
+
+    = render partial: '/shared/sms_form'
 
   %div.clear
 
@@ -118,14 +117,16 @@
 
     = cache "app_versions_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
       %div.version-list
-        %h2= t('mobile page.version list')
+        %h2
+          = link_to "#{t('mobile page.version list')}" , versions_path
         %ul
           - @text_versions_list.each do |version|
             %li
               = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
       - if @audio_versions_list.present?
         %div.version-list
-          %h2= t('mobile page.audio version list')
+          %h2
+            = link_to "#{t('mobile page.version list')}" , audiobibles_path
           %ul
             - @audio_versions_list.each do |version|
               %li
@@ -135,8 +136,6 @@
   :javascript
 
     $(document).ready(function(){
-      loadsms();
-
       $('.review-carousel').slick({
         centerMode: true,
         centerPadding: "0px",

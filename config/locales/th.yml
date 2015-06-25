@@ -3,6 +3,31 @@ th:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "ประมาณ%{count}ชั่วโมงที่แล้ว"
+            about_x_months: 
+                other: "ประมาณ%{count}เดือนที่แล้ว"
+            about_x_years: 
+                other: "ประมาณ%{count}ปีที่แล้ว"
+            almost_x_years: 
+                other: "เกือบ%{count}ปีที่แล้ว"
+            half_a_minute: "ครึ่งนาทีที่แล้ว"
+            less_than_x_minutes: 
+                other: "ไม่เกิน%{count}นาทีที่แล้ว"
+            less_than_x_seconds: 
+                other: "ไม่เกิน%{count}วินาทีที่แล้ว"
+            over_x_years: 
+                other: "มากกว่า%{count}ปีที่แล้ว"
+            x_days: 
+                other: "%{count}วันที่แล้ว"
+            x_minutes: 
+                other: "%{count}นาทีที่แล้ว"
+            x_months: 
+                other: "%{count}เดือนที่แล้ว"
+            x_seconds: 
+                other: "%{count}วินาทีที่แล้ว"
     counter: 
         format: "999,999,999"
     social: 
@@ -75,6 +100,8 @@ th:
         users last name required: "คุณต้องใส่นามสกุลของคุณ"
         moments content required: "ไม่อาจเว้นว่างในช่องข้อมูลนี้"
     meta: 
+        best kids app: "แอพพระคัมภีร์สำหรับเด็กที่ดีที่สุด!"
+        best educational app: "แอพเพื่อการศึกษาที่ดีที่สุด!"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -230,6 +257,12 @@ th:
     chapter: "บทที่"
     home: "หน้าหลัก"
     bible: "พระคัมภีร์"
+    audio bible: "เสียงอ่านพระคัมภีร์"
+    audio bible app: "แอพเสียงอ่านพระคัมภีร์"
+    audio bibles title: "ฟังเสียงอ่านพระคัมภีร์"
+    audio bible meta: "ฟังออนไลน์ฟรีหรือดาวน์โหลดแอพพระคัมภีร์ และฟังเสียงอ่านพระคัมภีร์จากโทรศัพท์ของคุณผ่านแอพพระคัมภีร์อันดับ 1"
+    language: "ภาษา"
+    translation: "การแปล"
     notes title: "โน้ต"
     friends: "เพื่อนๆ"
     groups: "กลุ่ม"
@@ -745,6 +778,7 @@ th:
             private: "ส่วนตัว"
             public: "สาธารณะ"
         title: "แผนการอ่าน"
+        meta title: "ศึกษาพระคัมภีร์ออนไลน์ เผ้าเดี่ยว และการอ่านแผนพระคัมภีร์"
         browse by category: "สำรวจโดยหมวดหมู่"
         browse plans: "สำรวจตามแผนฯ %{category}"
         swap list localization: "(<a href='%{swap_link}'>ดูใน %{swap_locale}</a>)"
@@ -946,13 +980,15 @@ th:
     download ad: 
         title: "ดาวน์โหลดแอพพระคัมภีร์ฟรี"
         description copy: "พระคัมภีร์กว่าร้อยเล่มจาก %{language_count} ภาษา - ให้พระคัมภีร์นี้ติดตัวคุณไปในทุกที่"
+        meta copy title: "ดาวน์โหลดแอพพระคัมภีร์ฟรี"
+        meta copy versions: "หลายร้อยฉบับแปลใน %{language_count}+ ภาษา"
         line 1: "หลายร้อยฉบับใน 100+"
         line 2: "ต่างภาษา - พระคัมภีร์"
         line 3: "ที่จะไปกับคุณทุกหนทุกแห่ง"
         download: "ดาวน์โหลดเดี๋ยวนี้"
-        banner title: "The Bible App"
-        banner action: "Download"
-        banner open: "Open"
+        banner title: "แอพพระคัมภีร์"
+        banner action: "ดาวน์โหลด"
+        banner open: "เปิด"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1036,9 +1072,9 @@ th:
         mobile web: "เว็บมือถือ"
         amazon: "คินเดิล ไฟร์"
         free overlay: "100% ฟรี"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
+        sms button: "ส่ง link มาให้ฉัน"
+        sms error: "ขออภัย เกิดข้อผิดพลาด โปรดลองอีกครั้ง"
+        sms success: "ยอดเยี่ยม! กรุณาตรวจสอบ link จากโทรศัพท์มือถือของคุณ"
     pages: 
         generic_error: 
             title: "อุ๊ปส์!"
@@ -1066,6 +1102,9 @@ th:
             download action: "ดาวน์โหลดแอพพระคัมภีร์"
             download description: "ดาวน์โหลด YouVersion แอพพระคัมภีร์ฟรี บนโทรศัพท์มือถือของคุณ และคุณจะมีพระคัมภีร์ติดตัวไปกับคุณไม่ว่าคุณจะไปที่ไหน"
             world installs: "มีการติดตั้งในทั่วโลก"
+        trending verses: 
+            title: "ข้อพระคัมภีร์ที่กำลังฮิต"
+            headline: "ข้อพระคัมภีร์เหล่านี้กำลังฮิตในแอพพระคัมภีร์ และ Bible.com"
     shared: 
         menu_settings: 
             title: "การตั้งค่าการอ่าน"
