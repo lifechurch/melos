@@ -999,6 +999,9 @@
         line 2: "100 forskjellige språk—Bibelen som"
         line 3: "er med deg over alt."
         download: "Last ned nå"
+        banner title: "Bibel-appen"
+        banner action: "Last ned"
+        banner open: "Åpne"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1082,6 +1085,9 @@
         mobile web: "Mobilt nett"
         amazon: "Kindle Fire"
         free overlay: "100% gratis"
+        sms button: "Send meg en sms med link"
+        sms error: "Beklager, noe gikk galt. Vennligst prøv igjen."
+        sms success: "Flott! Sjekk din mobile enhet for å finne linken."
     pages: 
         generic_error: 
             title: "Ojsann!"

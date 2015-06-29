@@ -1,6 +1,6 @@
 - meta_language = @version.attributes.language.local_name
 - meta_language = "#{meta_language} | #{@version.attributes.language.name}" if (@version.attributes.language.name.present? and not (meta_language.eql?(@version.attributes.language.name)))
-- @title = "#{@version.to_s} - #{t('download ad.meta copy title')} | #{meta_language} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8, Nokia, Java, Symbian | #{t('meta.mobile.title')}"
+- @title = "#{@version.to_s} - #{t('download ad.meta copy title')} | #{meta_language} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8 | #{t('meta.mobile.title')}"
 - @subtitle = ''
 
 - unless is_whitelabel_site
@@ -18,6 +18,10 @@
 
   .widget-button
     = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
+
+  - if @version.audio
+    .widget-button
+      = link_to t("audio bible"), audiobible_path(@version), class: 'action_button_green audio-link'
 
   - if @version.publisher.name.present? || @version.publisher.id.blank?
     - pub_name = @version.publisher.name || t('versions.public domain')
@@ -40,7 +44,7 @@
           %li
             = link_to v, v
 
-  = render partial: 'widgets/download_app'
+  = render partial: 'widgets/download_app', :locals => {show_sms: true}
 
 - content_for :title do
   = @version
@@ -50,10 +54,15 @@
 
 %article
   %h1= @version
-  -#%h2.version
-  -#  %span= "#{t('language')}: #{@version.attributes.language.local_name}"
-  -#  %br
-  -#  %span= "#{t('translation')}: #{@version.attributes.language.name}"
+  - display_language = @version.attributes.language.name
+  - display_language = "#{display_language} - #{@version.attributes.language.local_name}" if not display_language.eql?(@version.attributes.language.local_name)
+  %h2.version
+    %div= "#{display_language}"
+    - if @version.audio
+      = link_to t("audio bible"), audiobible_path(@version), class: 'mobile'
+
   .copyright= @version.info.try :html_safe
   = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
   = link_to t("mobile page.download now"), app_page_path, class: 'mobile version_download action_button_green'
+
+= render '/shared/app_banner'

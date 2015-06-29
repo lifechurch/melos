@@ -999,6 +999,9 @@ hu:
         line 2: "különböző nyelven - a Biblia"
         line 3: "ami bárhová elkísér."
         download: "Letöltés most"
+        banner title: "A Biblia alkalmazás"
+        banner action: "Letöltés"
+        banner open: "Megnyitás"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1082,6 +1085,9 @@ hu:
         mobile web: "Mobil Web"
         amazon: "Kindle Fire"
         free overlay: "100% ingyenes"
+        sms button: "Link elküldése sms-ben"
+        sms error: "Sajnáljuk, hiba történt. Kérünk, próbálkozz újra."
+        sms success: "Nagyszerű! A linket elküldtük a mobilodra."
     pages: 
         generic_error: 
             title: "Hoppá!"

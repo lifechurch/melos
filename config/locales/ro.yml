@@ -3,6 +3,53 @@ ro:
     time: 
         formats: 
             votd: "%-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "cu %{count} oră în urmă"
+                few: "Cu %{count} ore în urmă"
+                other: "cu %{count} de ore în urmă"
+            about_x_months: 
+                one: "cu %{count} lună în urmă"
+                few: "cu %{count} luni în urmă"
+                other: "Cu %{count} luni în urmă"
+            about_x_years: 
+                one: "cu %{count} an în urmă"
+                few: "cu %{count} ani în urmă"
+                other: "cu %{count} de ani în urmă"
+            almost_x_years: 
+                one: "aproape %{count} an în urmă"
+                few: "aproape %{count} ani în urmă"
+                other: "aproape %{count} de ani în urmă"
+            half_a_minute: "jumătate de minut în urmă"
+            less_than_x_minutes: 
+                one: "mai puțin de %{count} minut în urmă"
+                few: "mai puțin de %{count} minute în urmă"
+                other: "mai puțin de %{count} de minute în urmă"
+            less_than_x_seconds: 
+                one: "mai puțin de %{count} secundă în urmă"
+                few: "mai puțin de %{count} secunde în urmă"
+                other: "mai puțin de %{count} de secunde în urmă"
+            over_x_years: 
+                one: "peste %{count} an în urmă"
+                few: "peste %{count} ani în urmă"
+                other: "peste %{count} de ani în urmă"
+            x_days: 
+                one: "%{count} zi în urmă"
+                few: "%{count} zile în urmă"
+                other: "%{count} de zile în urmă"
+            x_minutes: 
+                one: "%{count} minut în urmă"
+                few: "%{count} minute în urmă"
+                other: "%{count} de minute în urmă"
+            x_months: 
+                one: "%{count} lună în urmă"
+                few: "%{count} luni în urmă"
+                other: "%{count} de luni în urmă"
+            x_seconds: 
+                one: "%{count} secundă în urmă"
+                few: "%{count} secunde în urmă"
+                other: "%{count} de secunde în urmă"
     counter: 
         format: "999.999.999"
     social: 
@@ -75,6 +122,8 @@ ro:
         users last name required: "Trebuie să introduci un nume."
         moments content required: "Conținutul nu poate fi necompletat."
     meta: 
+        best kids app: "Cea mai bună aplicație pentru copii!"
+        best educational app: "Cea mai bună aplicație educațională"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -755,6 +804,7 @@ ro:
             private: "Privat"
             public: "Public"
         title: "Planuri de citire"
+        meta title: "Studiu Biblic online, planuri deviționale și de citire"
         browse by category: "Răsfoiește după categorie"
         browse plans: "Răsfoiește %{category}"
         swap list localization: "(<a href='%{swap_link}'>Vezi în %{swap_locale}</a>)"
@@ -956,13 +1006,15 @@ ro:
     download ad: 
         title: "Descarcă gratuit aplicația Biblia"
         description copy: "Sute de versiuni în peste %{language_count} de limbi diferite - Biblia care te însoțește pretutindeni."
+        meta copy title: "Descarcă gratuit aplicația Biblia"
+        meta copy versions: "Sute de versiuni în %{language_count}+limbi diferite"
         line 1: "Sute de versiuni în 100+"
         line 2: "limbi diferite - Biblia care"
         line 3: "te însoțește pretutindeni."
         download: "Descarcă acum"
-        banner title: "The Bible App"
-        banner action: "Download"
-        banner open: "Open"
+        banner title: "Aplicația Biblia"
+        banner action: "Descarcă"
+        banner open: "Deschide"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1046,9 +1098,9 @@ ro:
         mobile web: "Web Mobil"
         amazon: "Kindle Fire"
         free overlay: "Gratuit 100%"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
+        sms button: "Trimite-mi un link"
+        sms error: "Ne pare rău, ceva nu a funcționat. Te rugăm să încerci din nou."
+        sms success: "Super! Verifică-ți dispozitivul mobil pentru link."
     pages: 
         generic_error: 
             title: "Oops!"

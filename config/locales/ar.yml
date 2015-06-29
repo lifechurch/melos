@@ -3,6 +3,86 @@ ar:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                zero: "about %{count} hours ago"
+                one: "about 1 hour ago"
+                two: "about %{count} hours ago"
+                few: "about %{count} hours ago"
+                many: "about %{count} hours ago"
+                other: "about %{count} hours ago"
+            about_x_months: 
+                zero: "about %{count} months ago"
+                one: "about 1 month ago"
+                two: "about %{count} months ago"
+                few: "about %{count} months ago"
+                many: "about %{count} months ago"
+                other: "about %{count} months ago"
+            about_x_years: 
+                zero: "about %{count} years ago"
+                one: "about 1 year ago"
+                two: "about %{count} years ago"
+                few: "about %{count} years ago"
+                many: "about %{count} years ago"
+                other: "about %{count} years ago"
+            almost_x_years: 
+                zero: "almost %{count} years ago"
+                one: "almost 1 year ago"
+                two: "almost %{count} years ago"
+                few: "almost %{count} years ago"
+                many: "almost %{count} years ago"
+                other: "almost %{count} years ago"
+            half_a_minute: "half a minute ago"
+            less_than_x_minutes: 
+                zero: "less than %{count} minutes ago"
+                one: "less than a minute ago"
+                two: "less than %{count} minutes ago"
+                few: "less than %{count} minutes ago"
+                many: "less than %{count} minutes ago"
+                other: "less than %{count} minutes ago"
+            less_than_x_seconds: 
+                zero: "less than %{count} seconds ago"
+                one: "less than 1 second ago"
+                two: "less than %{count} seconds ago"
+                few: "less than %{count} seconds ago"
+                many: "less than %{count} seconds ago"
+                other: "less than %{count} seconds ago"
+            over_x_years: 
+                zero: "over %{count} years ago"
+                one: "over 1 year ago"
+                two: "over %{count} years ago"
+                few: "over %{count} years ago"
+                many: "over %{count} years ago"
+                other: "over %{count} years ago"
+            x_days: 
+                zero: "%{count} days ago"
+                one: "1 day ago"
+                two: "%{count} days ago"
+                few: "%{count} days ago"
+                many: "%{count} days ago"
+                other: "%{count} days ago"
+            x_minutes: 
+                zero: "%{count} minutes ago"
+                one: "1 minute ago"
+                two: "%{count} minutes ago"
+                few: "%{count} minutes ago"
+                many: "%{count} minutes ago"
+                other: "%{count} minutes ago"
+            x_months: 
+                zero: "منذ %{count} شهر"
+                one: "منذ %{count} شهر"
+                two: "منذ %{count} أشهر"
+                few: "منذ %{count} أشهر"
+                many: "منذ %{count}شهراً"
+                other: "منذ %{count} شهر"
+            x_seconds: 
+                zero: "منذ %{count} ثانية"
+                one: "منذ %{count} ثانية"
+                two: "منذ %{count} ثانية"
+                few: "منذ %{count} ثوان"
+                many: "منذ %{count} ثانية"
+                other: "منذ %{count} ثانية"
     counter: 
         format: "999,999,999"
     social: 
@@ -75,6 +155,8 @@ ar:
         users last name required: "يجب عليك إدخال اسم العائلة."
         moments content required: "المحتوى لا يمكن ان يكون فارغ"
     meta: 
+        best kids app: "Best Kids App!"
+        best educational app: "Best Educational App"
         kids_app: 
             title: "تطبيق الإنجيل المقدس للأطفال"
             description: "تطبيق الإنجيل المقدس للأطفال هو طريقة رائعة لكي يتعلم الأطفال القصص الإنجيليّة عن يسوع, عن هدية الحياة الأبديّة لنا, وعن الدروس العديدة التي يعلمنا الله بها. في هذه التجربة التفاعليّة, يتواصل الأطفال مباشرةً مع كلمة الله من خلال صورٍ ممتعةٍ وفي الوقت ذاته يكسبون نقاطاً بفضل القراءة وكسب الكنوز."
@@ -230,6 +312,12 @@ ar:
     chapter: "إصحاح"
     home: "الصفحة الرئيسية"
     bible: "الكتاب المقدس"
+    audio bible: "Audio Bible"
+    audio bible app: "Audio Bible App"
+    audio bibles title: "Listen to Audio Bibles"
+    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    language: "Language"
+    translation: "Translation"
     notes title: "ملاحظات"
     friends: "أصدقاء"
     groups: "مجموعات"
@@ -755,6 +843,7 @@ ar:
             private: "خاصة"
             public: "عام"
         title: "خطط القراءة‌"
+        meta title: "Online Bible study, devotionals and reading plans"
         browse by category: "تصفح بالفئة"
         browse plans: "تصفح %{category} خطط"
         swap list localization: "(<a href='%{swap_link}'>شاهد في %{swap_locale}</a>)"
@@ -956,6 +1045,8 @@ ar:
     download ad: 
         title: "حمل تطبيق الكتاب المقدس المجاني"
         description copy: "مئات من الإصدارات في أكثر من %{language_count} لغة - الإنجيل المقدس معك في كل مكان."
+        meta copy title: "Download the Free Bible App"
+        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
         line 1: "المئات من الاصدارات في 100+"
         line 2: "لغات مختلفة - الكتاب المقدس"
         line 3: "الذي يذهب معك الي اي مكان"
@@ -1076,6 +1167,9 @@ ar:
             download action: "تحميل تطبيق الكتاب المقدس"
             download description: "حمل تطبيق الكتاب المقدس YouVersion  مجانا على جهازك المحمول وسيكون الكتاب المقدس معك في اي مكان."
             world installs: "تثبيت في جميع أنحاء العالم"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "إعدادات القارئ"

@@ -7,3 +7,12 @@
     = t("mobile page.sms success")
   %div{id: "smsError", class: "sms_error"}
     = t("mobile page.sms error")
+
+- content_for :javascripts do
+  :javascript
+
+    $(document).ready(function(){
+      if (!$('html').hasClass('mobile-client')) {
+        loadsms();
+      }
+    })

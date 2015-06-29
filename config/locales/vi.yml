@@ -3,6 +3,31 @@ vi:
     time: 
         formats: 
             votd: "Ngày %-d %B, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                other: "khoảng %{count} giờ trước"
+            about_x_months: 
+                other: "khoảng %{count} tháng trước"
+            about_x_years: 
+                other: "khoảng %{count} năm trước"
+            almost_x_years: 
+                other: "gần %{count} năm trước"
+            half_a_minute: "nửa phút trước"
+            less_than_x_minutes: 
+                other: "chưa đến %{count} phút trước"
+            less_than_x_seconds: 
+                other: "chưa đến %{count} giây trước"
+            over_x_years: 
+                other: "hơn %{count} năm trước"
+            x_days: 
+                other: "%{count} ngày trước"
+            x_minutes: 
+                other: "%{count} phút trước"
+            x_months: 
+                other: "%{count} tháng trước"
+            x_seconds: 
+                other: "%{count} giây trước"
     counter: 
         format: "999.999.999"
     social: 
@@ -75,6 +100,8 @@ vi:
         users last name required: "Xin điền họ của bạn."
         moments content required: "Không thể bỏ trống nội dung."
     meta: 
+        best kids app: "App hay nhất dành cho thiếu nhi!"
+        best educational app: "App giáo dục tốt nhất!"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -751,6 +778,7 @@ vi:
             private: "Riêng tư"
             public: "Công cộng"
         title: "Kế hoạch"
+        meta title: "Bài học Kinh Thánh, tĩnh nguyện, và các kế hoạch đọc trực tuyến"
         browse by category: "Tra tìm theo thể loại"
         browse plans: "Tra tìm các kế hoạch %{category}"
         swap list localization: "(<a href='%{swap_link}'>Xem trong %{swap_locale}</a>)"
@@ -952,13 +980,15 @@ vi:
     download ad: 
         title: "Tải Ứng dụng Kinh Thánh miễn phí"
         description copy: "Hàng trăm bản dịch thuộc hơn %{language_count} ngôn ngữ - Kinh Thánh đồng hành cùng bạn mọi nơi!"
+        meta copy title: "Tải App Kinh Thánh miễn phí"
+        meta copy versions: "Hàng trăm bản dịch từ hơn %{language_count} ngôn ngữ khác nhau"
         line 1: "Hàng trăm bản dịch Kinh Thánh"
         line 2: "các ngôn ngữ khác nhau - Kinh Thánh"
         line 3: "đồng hành cùng bạn ở mọi nơi."
         download: "Tải bây giờ"
-        banner title: "The Bible App"
-        banner action: "Download"
-        banner open: "Open"
+        banner title: "App Kinh Thánh"
+        banner action: "Tải xuống"
+        banner open: "Mở"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1042,9 +1072,9 @@ vi:
         mobile web: "Mobile Web"
         amazon: "Kindle Fire"
         free overlay: "Miễn phí 100%!"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
+        sms button: "Nhắn tin đường dẫn cho tôi"
+        sms error: "Cáo lỗi vì trục trặc kỹ thuật. Xin vui lòng thử lại!"
+        sms success: "Rất tốt! Hãy kiểm tra xem bạn đã nhận tin nhắn hay chưa."
     pages: 
         generic_error: 
             title: "Ối!"

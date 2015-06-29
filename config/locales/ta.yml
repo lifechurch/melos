@@ -3,6 +3,42 @@ ta:
     time: 
         formats: 
             votd: "%B %-d, %Y"
+    datetime: 
+        time_ago_in_words: 
+            about_x_hours: 
+                one: "சுமார் 1 மணி நேரத்திற்கு முன்"
+                other: "சுமார் %{count} மணி நேரங்களுக்கு முன்"
+            about_x_months: 
+                one: "சுமார் 1 மாதத்திற்கு முன்"
+                other: "சுமார் %{count} மாதங்களுக்கு முன்"
+            about_x_years: 
+                one: "சுமார் 1 ஆண்டுக்கு முன்"
+                other: "சுமார் %{count} ஆண்டுகளுக்கு முன்"
+            almost_x_years: 
+                one: "கிட்டத்தட்ட 1 ஆண்டுக்கு முன்"
+                other: "கிட்டத்தட்ட %{count} ஆண்டுகளுக்கு முன்"
+            half_a_minute: "அரை நிமிடத்திற்கு முன்"
+            less_than_x_minutes: 
+                one: "ஒரு நிமிடத்திற்கு முன்"
+                other: "%{count} க்கு குறைவான நிமிடங்களுக்கு முன்"
+            less_than_x_seconds: 
+                one: "ஒரு வினாடிக்கு முன்"
+                other: "%{count} வினாடிகளுக்கு முன்"
+            over_x_years: 
+                one: "ஒரு ஆண்டிற்கு மேல்"
+                other: "%{count} ஆண்டுகளுக்கு மேல்"
+            x_days: 
+                one: "ஒரு நாளுக்கு முன்"
+                other: "%{count} நாட்களுக்கு முன்"
+            x_minutes: 
+                one: "ஒரு நிமிடத்திற்கு முன்"
+                other: "%{count} நிமிடங்களுக்கு முன்"
+            x_months: 
+                one: "ஒரு மாதத்திற்கு முன்"
+                other: "%{count} மாதங்களுக்கு முன்"
+            x_seconds: 
+                one: "ஒரு வினாடிக்கு முன்"
+                other: "%{count} வினாடிகளுக்கு முன்"
     counter: 
         format: "99,99,99,999"
     social: 
@@ -75,6 +111,8 @@ ta:
         users last name required: "நீங்கள் கடைசி பெயரை உள்ளிட வேண்டும்"
         moments content required: "உள்ளடக்கம் காலியாக இருக்க முடியாது."
     meta: 
+        best kids app: "தலைசிறந்த சிறுவர் பயன்பாடு!"
+        best educational app: "தலைசிறந்த கல்வி பயன்பாடு!"
         kids_app: 
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
@@ -753,6 +791,7 @@ ta:
             private: "தனிமறைவானது"
             public: "பொதுவானது"
         title: "வாசிப்பு திட்டங்கள்"
+        meta title: "Online வேதாகம ஆராய்ச்சி, தியானங்கள் மற்றும் வாசிப்பு திட்டங்கள்"
         browse by category: "வகை வாரியாக உலவ"
         browse plans: "%{category} திட்டங்களை காண்க"
         swap list localization: "(<a href='%{swap_link}'>உள்ளில் பார்வையிட%{swap_locale}</a>)"
@@ -954,6 +993,8 @@ ta:
     download ad: 
         title: "இலவச Bible App பதிவிறக்கம் செய்க"
         description copy: "நூற்றுக்கணக்கான பதிப்புகள் %{language_count}+ வேவ்வேறு மொழிகளில் - உங்களோடு எங்கும் செல்லும் வேதம்."
+        meta copy title: "இலவச Bible App பதிவிறக்கம் செய்க"
+        meta copy versions: " %{language_count}க்கும் மேற்பட்ட பல்வேறு மொழிகளில் நூற்றுக்கணக்கான பதிப்புகள்."
         line 1: "100+ ல் நூற்றுக்கணக்கான பதிப்புகள்"
         line 2: "பல்வேறு மொழிகள் - the Bible"
         line 3: "அது உங்களோடு எங்கும் செல்கிறது."
@@ -1074,6 +1115,9 @@ ta:
             download action: "வேதாகம பயன்பாட்டை பதிவிறக்குக"
             download description: "உங்கள் மொபைல் சாதனத்தில் இலவச YouVersion வேதாகம பயன்பாட்டை பதிவிறக்கம் செய்யுங்கள். நீங்கள் எங்கு சென்றாலும் உங்கள் வேதாகமத்தை பெற்றிருப்பீர்கள்."
             world installs: "உலகம் முழுவதும் நிறுவுகிறது"
+        trending verses: 
+            title: "Trending Bible verses"
+            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
     shared: 
         menu_settings: 
             title: "வாசிப்பவரின் அமைவுகள்"

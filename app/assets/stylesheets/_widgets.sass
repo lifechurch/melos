@@ -7,6 +7,9 @@
   p
     margin: 0
 
+.widget.simple.app
+  z-index: 2
+
 .widget-button
   margin: 0 0 10px
 
@@ -105,7 +108,6 @@
     padding: 20px
     font-weight: normal
     +border-radius(3px)
-    overflow: hidden
     background-color: #fff
 
     p
@@ -347,8 +349,9 @@
   .bd
     background:
       image: image-url("ad_bible_platforms.png")
-      position: 96% 84%
+      position: 180px 120px
       repeat: no-repeat
+    @extend .clearfix
 
     h3
       margin-bottom: 1.3em
@@ -360,6 +363,20 @@
       padding: 7px 10px
       font-size: 15px
       float: left
+
+  .sms
+    padding: 0 15px 15px 15px
+    background-color: #fff
+    .sms_container
+      clear: both
+      margin: 0
+
+    .smsButton
+      display: block
+
+      li
+        list-style: none
+        padding: 0
 
 #widget-devotional
   h2
@@ -840,8 +857,7 @@ html[data-locale="en"]
     text-decoration: none
     vertical-align: top
     white-space: nowrap
-    width: 135px
-    font-size: 14px
+    font-size: 13px
     margin: 0
     font-family: Helvetica,sans-serif
     outline: 0!important
@@ -963,7 +979,7 @@ html[data-locale="en"]
     width: 23px
 
   .intl-tel-input .country-list .divider
-    padding-bottom: 5px
+    padding: 0 0 5px 0
     margin-bottom: 5px
     border-bottom: 1px solid #CCC
   .intl-tel-input .country-list .country
@@ -1028,7 +1044,9 @@ html[data-locale="en"]
   .iti-flag.bb
     background-position: -451px -1px
   .iti-flag.bd
-    background-position: -476px -1px
+    background-position: -476px -1px !important
+    padding: 0 !important
+    border-radius: 0 !important
   .iti-flag.be
     background-position: -501px -1px
   .iti-flag.bf
@@ -1513,7 +1531,7 @@ html[data-locale="en"]
     width: 23px
     height: 16px
     box-shadow: 0 0 1px 0 #888
-    background-image: image-url("yv-flags.png")
+    background-image: image-url("yv-flags.png") !important
     background-color: #DBDBDB
     background-position: 100% 100%
     background-size: 2050px 59px

@@ -18,7 +18,7 @@ YouversionWeb::Application.configure do
   #### REENABLE ...
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com" if ENV['FOG_DIRECTORY']
+  config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://www.bible.com"
   puts "ENV['SECURE_TRAFFIC'] => #{ENV['SECURE_TRAFFIC']}"
 
   # Compress JavaScripts and CSS into one file for each
@@ -37,7 +37,7 @@ YouversionWeb::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  #config.force_ssl = false
 
   # The available log levels are: :debug, :info, :warn, :error, :fatal
   # corresponding to the log level numbers from 0 up to 4 respectively
@@ -48,7 +48,7 @@ YouversionWeb::Application.configure do
   # config.logger = SyslogLogger.new
 
   # Use a different cache store in production
-  # config.cache_store = :dalli_store
+  config.cache_store = :dalli_store
 
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
@@ -60,7 +60,7 @@ YouversionWeb::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Enable threaded mode
-  # config.threadsafe!
+  #config.threadsafe!
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
@@ -70,7 +70,7 @@ YouversionWeb::Application.configure do
   config.active_support.deprecation = :notify
 
   # Enable Rack::Cache
-  config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHIER_SERVERS'] || ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHIER_SERVERS'] || ENV['MEMCACHE_SERVERS']}/body"
+  config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHE_SERVERS']}/body", :verbose => true
 
   # Add HTTP headers to cache static assets for an hour
   config.static_cache_control = "public, max-age=3600"

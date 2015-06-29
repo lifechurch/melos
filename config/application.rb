@@ -2,7 +2,6 @@ require File.expand_path('../boot', __FILE__)
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
-require "active_record/railtie"
 require "sprockets/railtie"
 require "rack"
 require "rack/mobile-detect"
@@ -10,7 +9,7 @@ require "rack/rewrite"
 require 'rack/throttle'
 
 require File.join(File.dirname(__FILE__), '../lib/bb.rb')
-require File.join(File.dirname(__FILE__), '../lib/yv_logger.rb')
+#require File.join(File.dirname(__FILE__), '../lib/yv_logger.rb')
 
 require File.expand_path('../_config', __FILE__)
 
@@ -33,7 +32,8 @@ module YouversionWeb
       "YV::Middleware::Halt",
       Rack::SslEnforcer,
       ignore: ['/app', '/download', '/mobile', '/100million'],
-      only_environments: 'production'
+      except_hosts: ['local.bible.com', 'assets.bible.com', 'staging.bible.com'],
+      except_environments: [ 'development' ]
     )
 
     #handle high-frequency bb/test.json (etc) traffic in middleware so app isn't fully loaded
