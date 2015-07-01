@@ -341,10 +341,21 @@ Page.prototype = {
         var version_menu    = new VersionMenu({triggers: version_triggers , menu: version_menu});
       }
 
-      var pro_trigger  = "#header_profile_trigger";
-      var pro_menu     = "#header_profile_menu";
-      if($(pro_trigger).length && $(pro_menu).length) {
-        var profile_menu    = new ProfileMenu({trigger: pro_trigger , menu: pro_menu });
+      if (Session && Session.User && Session.User.isLoggedIn()) {
+          $("#header .header-user").load('/header', null, function () {
+              var pro_trigger = "#header_profile_trigger";
+              var pro_menu = "#header_profile_menu";
+              if ($(pro_trigger).length && $(pro_menu).length) {
+                  var profile_menu = new ProfileMenu({trigger: pro_trigger, menu: pro_menu });
+              }
+              var nm = new Menus.NavMobile("#slideToNav", "#nav_mobile");
+              var n = new Menus.Notifications("#header .notifications-btn", ".header-popover.notifications");
+              var f = new Menus.Friends("#header .friend-requests-btn", ".header-popover.friend-requests");
+              var mg = new Menus.MenuGroup("#header");
+              mg.addMenu(nm);
+              mg.addMenu(n);
+              mg.addMenu(f);
+          });
       }
 
       var choose_language  = "#choose_language";
