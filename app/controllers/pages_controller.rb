@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
 
   before_filter :force_login, only: [:donate]
+  before_filter -> { set_cache_headers 'short' }, only: [:about, :press, :privacy, :terms]
 
+  def about; end
+  def press; end
   def mobile;       end
   def status;       end
   def api_timeout;  end
@@ -21,21 +24,12 @@ class PagesController < ApplicationController
     return redirect_store! unless request.env["X_MOBILE_DEVICE"].nil?
   end
 
-  def about
-    expires_in 30.days, public: true
-  end
-
-  def press
-    expires_in 30.days, public: true
-  end
 
   def privacy
-    expires_in 30.days, public: true
     @locale = :en unless i18n_terms_whitelist.include? I18n.locale
   end
 
   def terms
-    expires_in 30.days, public: true
     @locale = :en unless i18n_terms_whitelist.include? I18n.locale
   end
 
@@ -44,6 +38,7 @@ class PagesController < ApplicationController
     render page, status: 404
   end
 
+  # Partial Header Template Loaded via AJAX
   def header
     render "shared/header/_header_auth", layout: false
   end

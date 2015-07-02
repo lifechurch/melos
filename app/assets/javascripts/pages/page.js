@@ -342,6 +342,10 @@ Page.prototype = {
       }
 
       if (Session && Session.User && Session.User.isLoggedIn()) {
+          // Show the Home Button
+          $("#nav_primary_home").show();
+
+          // Fetch the Header Bar via AJAX
           $("#header .header-user").load('/header', null, function () {
               var pro_trigger = "#header_profile_trigger";
               var pro_menu = "#header_profile_menu";
@@ -356,6 +360,8 @@ Page.prototype = {
               mg.addMenu(n);
               mg.addMenu(f);
           });
+      } else {
+          $("#nav_primary_home").remove();
       }
 
       var choose_language  = "#choose_language";
