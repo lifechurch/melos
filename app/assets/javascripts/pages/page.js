@@ -362,6 +362,7 @@ Page.prototype = {
           });
       } else {
           $("#nav_primary_home").remove();
+          $("#header .header-user ul").show();
       }
 
       var choose_language  = "#choose_language";

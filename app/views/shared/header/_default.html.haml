@@ -17,7 +17,7 @@
 
     .header-user
       %nav.no_auth
-        %ul
+        %ul{style: "display:none"}
           %li
             = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "sign_in"
           %li
