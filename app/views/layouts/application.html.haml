@@ -16,29 +16,30 @@
     = render '/shared/google_analytics'
 
   %body{class: (yield(:body_class) if content_for? :body_class)}
-    #wrapper
-      = content_for?(:header) ? yield(:header) : render("/shared/header/default")
-      = render(partial: "layouts/mobile_nav") unless @main_nav == false
 
-      - flash.each do |key, msg|
-        %div{class: container_class_str, id: "flash_#{key}"}= msg.html_safe
+    / #wrapper
+    = content_for?(:header) ? yield(:header) : render("/shared/header/default")
+    /   = render(partial: "layouts/mobile_nav") unless @main_nav == false
 
-      #container{class: container_class_str}
-        #main{role: "main", class: @is_reader == true ? 'main_reader' : '' }
+    /   - flash.each do |key, msg|
+    /     %div{class: container_class_str, id: "flash_#{key}"}= msg.html_safe
 
-          = render(partial: "layouts/primary_nav") unless @main_nav == false
-          = content_for?(:main) ? yield(:main) : yield
+    /   #container{class: container_class_str}
+    /     #main{role: "main", class: @is_reader == true ? 'main_reader' : '' }
 
-        #sidebar{class: (content_for :sidebar_class if content_for? :sidebar_class)}
-          #sidebar-scroll
-            - if content_for? :sidebar
-              = yield :sidebar
-            - else
-              - unless (@sidebar == false || sidebar_presenter.blank?)
-                = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
+    /       = render(partial: "layouts/primary_nav") unless @main_nav == false
+    = content_for?(:main) ? yield(:main) : yield
+
+    /   #sidebar{class: (content_for :sidebar_class if content_for? :sidebar_class)}
+    /     #sidebar-scroll
+    /       - if content_for? :sidebar
+    /         = yield :sidebar
+    /       - else
+    /         - unless (@sidebar == false || sidebar_presenter.blank?)
+    /           = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
 
 
-      = render partial: '/shared/footer', locals: {footer_classes: container_class_str}
+    / = render partial: '/shared/footer', locals: {footer_classes: container_class_str}
 
     = render partial: "/shared/js_templates"
     = render partial: "/shared/js_footer"

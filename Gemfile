@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.2.2'
 gem 'rails', '3.2.13'
 
 gem 'awesome_print',          '~> 1.0.2'
@@ -16,7 +16,7 @@ gem 'dalli',                  '~> 2.6.3'
 gem 'descriptive_statistics', '~> 1.1.0', require: false
 gem 'geokit',                 '~> 1.6.5'
 gem 'grackle',                '~> 0.3.0'
-gem 'haml-rails',             '~> 0.3.4'
+gem 'haml-rails'
 gem 'hashie',                 '~> 1.2.0'
 gem 'oj'
 gem 'sentry-raven',           '~> 0.12.2'
@@ -50,6 +50,7 @@ gem 'rack-timeout',           '~> 0.0.3'
 gem 'rack-ssl-enforcer'
 gem 'viximo-rack-throttle',   '~> 0.5.0'
 gem 'handlebars_assets',      '~> 0.14.0'
+gem 'foundation-rails',       '~> 5.5.2.1'
 
 # Using locale files directly in /config/locales/rails-i18n until gem supports
 # aliasing (or we come up with a way to resolve differences between gem lang
@@ -61,9 +62,9 @@ gem 'routing-filter',         '~> 0.3.1'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do
-  gem 'sass-rails',       '3.2.5'
+  gem 'sass-rails'
   gem 'coffee-rails',  '~> 3.2.2'
-  gem 'compass-rails', '~> 1.0.3'
+  gem 'compass-rails'
   gem 'uglifier',      '~> 1.3.0'
   gem 'css_parser',    '~> 1.2.6'
   gem 'jquery-rails',  '~> 2.1.4'
@@ -72,7 +73,7 @@ group :assets do
 end
 
 group :test do
-  gem 'debugger'
+  # gem 'debugger'
   gem 'cucumber-rails', '~> 1.3.0', require: false
   gem 'rspec-cells'
   gem 'rspec'

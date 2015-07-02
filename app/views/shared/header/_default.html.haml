@@ -1,97 +1,117 @@
 :ruby
   is_home_url       = current_page?(moments_path)
+  plan_href = logged_in? ? subscriptions_path(user_id: current_auth.username) : plans_path
 
-#header_outer
+.row
+  .medium-12.columns
+    .icon-bar.five-up
+      %a.item{href: moments_path}
+        %img{src: "http://placehold.it/24x24/"}
+        %label=t("home")
+      %a.item{href: bible_localized_path}
+        %img{src: "http://placehold.it/24x24/"}
+        %label=t("bible")
+      %a.item{href: plan_href}
+        %img{src: "http://placehold.it/24x24/"}
+        %label=t("plans.title")
+      %a.item{href: videos_path}
+        %img{src: "http://placehold.it/24x24/"}
+        %label=t("videos.title")
+      %a.item{href: '#'}
+        %img{src: "http://placehold.it/24x24/"}
+        %label=t("more")
 
-  %header#header{role:"banner"}
-    %a#logo{href: "/", style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})"}
-      = @site.title
+/ #header_outer
 
-    %form#header_search_form{action: search_path(category: params[:category] || :bible), method: "GET"}
-      %input#header_search_input{type: 'search', name:"q", placeholder: t("search placeholder")}
-      %input#header_search_button{type: 'submit', value: t("search")}
-      -if params[:version_id]
-        %input{type: 'hidden', name: "version_id", value: params[:version_id], extra:'first'}
-      -elsif params[:version]
-        %input{type:'hidden', name:"version_id", value:params[:version], extra:'second'}
+/   %header#header{role:"banner"}
+/     %a#logo{href: "/", style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})"}
+/       = @site.title
 
-    .header-user
-      -# Sign in and user id
-      - if current_auth
-        %nav.sign_in
-          %a{href: user_path(current_auth.username), title: t("users.go to your profile")}
-            %span
-              %img{src: current_user.user_avatar_url["px_24x24"]}
-              %span.user_name=current_auth.username
+/     %form#header_search_form{action: search_path(category: params[:category] || :bible), method: "GET"}
+/       %input#header_search_input{type: 'search', name:"q", placeholder: t("search placeholder")}
+/       %input#header_search_button{type: 'submit', value: t("search")}
+/       -if params[:version_id]
+/         %input{type: 'hidden', name: "version_id", value: params[:version_id], extra:'first'}
+/       -elsif params[:version]
+/         %input{type:'hidden', name:"version_id", value:params[:version], extra:'second'}
 
-        %ul.nav_user
-          %li.highlights
-            %a{href: highlights_user_path(current_auth.username), title: t("highlights.title") }
-          %li.bookmarks
-            %a{href: bookmarks_user_path(current_auth.username), title: t("bookmarks.title")}
-          %li.notes
-            %a{href: notes_user_path(current_auth.username), title: t("notes title")}
-          %li.auth
-            %a#header_profile_trigger{:href => '#'}
-              =t("more")
+/     .header-user
+/       -# Sign in and user id
+/       - if current_auth
+/         %nav.sign_in
+/           %a{href: user_path(current_auth.username), title: t("users.go to your profile")}
+/             %span
+/               %img{src: current_user.user_avatar_url["px_24x24"]}
+/               %span.user_name=current_auth.username
 
-            #header_profile_menu
-              %span.arrow
-              %ol
-                %li.header_profile_menu_activity
-                  %a{href: user_path(current_auth.username)}
-                    =t("users.profile.tab activity")
-                %li.header_profile_menu_friends
-                  %a{href: user_friends_path(user_id: current_auth.username)}
-                    =t("users.profile.tab friends")
-                - #%li
-                - #  %a{href: badges_user_path(current_auth.username)}
-                - #    =t("users.profile.tab badges")
-                %li.header_profile_menu_settings
-                  %a{href: "/settings"}
-                    =t("settings")
-                %li.header_profile_menu_signout
-                  %a{href: sign_out_path}
-                    =t("sign out")
+/         %ul.nav_user
+/           %li.highlights
+/             %a{href: highlights_user_path(current_auth.username), title: t("highlights.title") }
+/           %li.bookmarks
+/             %a{href: bookmarks_user_path(current_auth.username), title: t("bookmarks.title")}
+/           %li.notes
+/             %a{href: notes_user_path(current_auth.username), title: t("notes title")}
+/           %li.auth
+/             %a#header_profile_trigger{:href => '#'}
+/               =t("more")
 
-        .user_options
-          %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("friendships.requests title") }
-            =t("friendships.requests title")
-            %span.friend-request-count.badge
-          - if current_user.enable_friendships?
-            = render partial: "shared/header/friends"
-          - else
-            = render partial: "shared/header/update_profile"
+/             #header_profile_menu
+/               %span.arrow
+/               %ol
+/                 %li.header_profile_menu_activity
+/                   %a{href: user_path(current_auth.username)}
+/                     =t("users.profile.tab activity")
+/                 %li.header_profile_menu_friends
+/                   %a{href: user_friends_path(user_id: current_auth.username)}
+/                     =t("users.profile.tab friends")
+/                 - #%li
+/                 - #  %a{href: badges_user_path(current_auth.username)}
+/                 - #    =t("users.profile.tab badges")
+/                 %li.header_profile_menu_settings
+/                   %a{href: "/settings"}
+/                     =t("settings")
+/                 %li.header_profile_menu_signout
+/                   %a{href: sign_out_path}
+/                     =t("sign out")
 
-          %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("notifications.title") }
-            =t("notifications.title")
-            %span.notifications-count.badge
-          = render partial: "shared/header/notifications"
+/         .user_options
+/           %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("friendships.requests title") }
+/             =t("friendships.requests title")
+/             %span.friend-request-count.badge
+/           - if current_user.enable_friendships?
+/             = render partial: "shared/header/friends"
+/           - else
+/             = render partial: "shared/header/update_profile"
 
-      - else
-        %nav.no_auth
-          %ul
-            %li
-              = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "sign_in"
-            %li
-              = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "sign_in"
+/           %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("notifications.title") }
+/             =t("notifications.title")
+/             %span.notifications-count.badge
+/           = render partial: "shared/header/notifications"
+
+/       - else
+/         %nav.no_auth
+/           %ul
+/             %li
+/               = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "sign_in"
+/             %li
+/               = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "sign_in"
 
 
-    .mobile
-      - if content_for? :mobile_left_nav
-        = yield :mobile_left_nav
-      - else
-        %a#slideToNav.nav_btn{href: 'javascript:void(0);'}
-          View Navigation
-      - if content_for? :title
-        %h1#page_title= yield :title
-      - if content_for? :title_link
-        %h1#chapter_title= yield :title_link
-      - if content_for? :mobile_right_nav
-        %nav.right_nav
-          - if content_for? :mobile_subscription_nav
-            = yield :mobile_subscription_nav
-          - else
-            = yield :mobile_right_nav
+/     .mobile
+/       - if content_for? :mobile_left_nav
+/         = yield :mobile_left_nav
+/       - else
+/         %a#slideToNav.nav_btn{href: 'javascript:void(0);'}
+/           View Navigation
+/       - if content_for? :title
+/         %h1#page_title= yield :title
+/       - if content_for? :title_link
+/         %h1#chapter_title= yield :title_link
+/       - if content_for? :mobile_right_nav
+/         %nav.right_nav
+/           - if content_for? :mobile_subscription_nav
+/             = yield :mobile_subscription_nav
+/           - else
+/             = yield :mobile_right_nav
 
 

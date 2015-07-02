@@ -14,21 +14,22 @@
   %meta{'http-equiv' => 'x-ua-compatible', :content => 'ie=edge, chrome=1'}
   %meta{name: "HandheldFriendly", content: "True"}
   %meta{name: "MobileOptimized", content: "320"}
-  %meta{name: "viewport", content: "width=device-width, initial-scale=1.0, user-scalable=no"}
+  %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
   %meta{name: "msApplication-ID", content: "af5f6405-7860-49a9-a6b4-a47381974e1d"}
   %meta{name: "msApplication-PackageFamilyName", content: "LifeChurch.tv.Bible_d1phjsdba8cbj"}
 
-  = stylesheet_link_tag 'mobile', media: "all and (max-width: 768px)"
-  = stylesheet_link_tag 'application', media: "all and (min-width: 769px)"
+  / = stylesheet_link_tag 'mobile', media: "all and (max-width: 768px)"
+  / = stylesheet_link_tag 'application', media: "all and (min-width: 769px)"
+  = stylesheet_link_tag "application"
 
   /[if IE]
-    %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
+  /  %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
   /[if IE 9]
-    = stylesheet_link_tag "ie9.css"
+  /  = stylesheet_link_tag "ie9.css"
   /[if IE 8]
-    = stylesheet_link_tag "ie8"
+  /  = stylesheet_link_tag "ie8"
   /[if IE 7]
-    = stylesheet_link_tag "ie7"
+  /  = stylesheet_link_tag "ie7"
 
 - if content_for?(:twitter_meta)
   = yield :twitter_meta

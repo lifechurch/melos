@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require jquery.ui.core
 //= require jquery.ui.effect.all
 //= require jquery.ui.effect
@@ -63,3 +64,4 @@
 //= require videos
 //= require branch
 //= require_self
+$(function(){ $(document).foundation(); });
