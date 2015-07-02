@@ -24,7 +24,6 @@ class PagesController < ApplicationController
     return redirect_store! unless request.env["X_MOBILE_DEVICE"].nil?
   end
 
-
   def privacy
     @locale = :en unless i18n_terms_whitelist.include? I18n.locale
   end
