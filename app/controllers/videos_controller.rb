@@ -4,6 +4,8 @@ class VideosController < ApplicationController
   respond_to :html
   prepend_before_filter :mobile_redirect, only: [:index, :show, :series] 
   before_filter :check_locale
+  before_filter -> { set_cache_headers 'short' }, only: [:index, :series]
+  before_filter -> { set_cache_headers 'long' }, only: [:show, :publisher]
 
   rescue_from YV::ResourceError, with: :resource_error
 
