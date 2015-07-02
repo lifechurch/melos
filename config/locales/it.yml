@@ -1000,8 +1000,8 @@ it:
         line 3: "che ti segue ovunque."
         download: "Scarica Ora"
         banner title: "L'App Bibbia"
-        banner action: "Scarica"
-        banner open: "Aperto"
+        banner action: "Scaricare"
+        banner open: "Aprire"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
