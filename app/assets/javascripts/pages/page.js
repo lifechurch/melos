@@ -360,9 +360,19 @@ Page.prototype = {
               mg.addMenu(n);
               mg.addMenu(f);
           });
+
+          // Show My Plans Sidebar Widget / Remove Featured
+          $("#my_plans_placeholder").load('/myPlans', function(responseText, textStatus, jqXHR) {
+              if (responseText == "") {
+                $(".widget.featured-plans").show();
+              }
+          });
+          $(".widget.featured-plans").hide();
+
       } else {
           $("#nav_primary_home").remove();
           $("#header .header-user ul").show();
+          $(".widget.featured-plans").show();
       }
 
       var choose_language  = "#choose_language";
