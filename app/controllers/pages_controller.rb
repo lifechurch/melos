@@ -3,8 +3,8 @@ class PagesController < ApplicationController
   before_filter :force_login, only: [:donate]
   before_filter -> { set_cache_headers 'short' }, only: [:about, :press, :privacy, :terms]
 
-  def about; end
-  def press; end
+  def about;        end
+  def press;        end
   def mobile;       end
   def status;       end
   def api_timeout;  end
