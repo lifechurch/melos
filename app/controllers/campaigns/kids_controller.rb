@@ -13,7 +13,6 @@ class Campaigns::KidsController < ApplicationController
   skip_before_filter :set_default_sidebar
   before_filter :track_event
   before_filter :kids_store_redirect, only: [:index]
-  before_filter -> { set_cache_headers 'long' }, only: [:index]
 
   def index
     # /kids
