@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
   before_filter :force_login, only: [:donate]
+  before_filter -> { set_cache_headers 'long' }, only: [:home, :about, :press, :privacy, :terms]
 
   def about;        end
   def press;        end
@@ -8,6 +9,7 @@ class PagesController < ApplicationController
   def status;       end
   def api_timeout;  end
   def generic_error;end
+  def home;         end
 
   def feed;end
   def notifications;end
@@ -34,6 +36,11 @@ class PagesController < ApplicationController
   def routing_error
     page = bdc_user? ? 'pages/bdc_home' : 'pages/error_404'
     render page, status: 404
+  end
+
+  # Partial Header Template Loaded via AJAX
+  def header
+    render "shared/header/_header_auth", layout: false
   end
 
   def error_404
