@@ -352,11 +352,9 @@ Page.prototype = {
               if ($(pro_trigger).length && $(pro_menu).length) {
                   var profile_menu = new ProfileMenu({trigger: pro_trigger, menu: pro_menu });
               }
-              var nm = new Menus.NavMobile("#slideToNav", "#nav_mobile");
               var n = new Menus.Notifications("#header .notifications-btn", ".header-popover.notifications");
               var f = new Menus.Friends("#header .friend-requests-btn", ".header-popover.friend-requests");
               var mg = new Menus.MenuGroup("#header");
-              mg.addMenu(nm);
               mg.addMenu(n);
               mg.addMenu(f);
           });
