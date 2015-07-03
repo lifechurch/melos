@@ -352,17 +352,25 @@ Page.prototype = {
               if ($(pro_trigger).length && $(pro_menu).length) {
                   var profile_menu = new ProfileMenu({trigger: pro_trigger, menu: pro_menu });
               }
-              var nm = new Menus.NavMobile("#slideToNav", "#nav_mobile");
               var n = new Menus.Notifications("#header .notifications-btn", ".header-popover.notifications");
               var f = new Menus.Friends("#header .friend-requests-btn", ".header-popover.friend-requests");
               var mg = new Menus.MenuGroup("#header");
-              mg.addMenu(nm);
               mg.addMenu(n);
               mg.addMenu(f);
           });
+
+          // Show My Plans Sidebar Widget / Remove Featured
+          $("#my_plans_placeholder").load('/myPlans', function(responseText, textStatus, jqXHR) {
+              if ((textStatus != "success" && textStatus !== "notmodified") || responseText == "") {
+                $(".widget.featured-plans").show();
+              }
+          });
+          $(".widget.featured-plans").hide();
+
       } else {
           $("#nav_primary_home").remove();
           $("#header .header-user ul").show();
+          $(".widget.featured-plans").show();
       }
 
       var choose_language  = "#choose_language";
