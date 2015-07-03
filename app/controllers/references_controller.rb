@@ -7,7 +7,6 @@ class ReferencesController < ApplicationController
   before_filter :setup_presenters,              only: [:show]
 
   rescue_from InvalidReferenceError, with: :ref_not_found
-  before_filter -> { set_cache_headers 'long' }, only: [:show]
 
   def show
     now_reading(self.presenter.reference)

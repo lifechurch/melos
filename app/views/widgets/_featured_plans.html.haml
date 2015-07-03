@@ -2,7 +2,7 @@
 - plans = featured_plans.nil? ? [] : featured_plans.shuffle![0..2] 
 
 - if plans.present?
-  .widget.featured-plans{style: "display:none"}
+  .widget.featured-plans
     %h3.hd
       = t("plans.widget.featured plans")
     .plans-list

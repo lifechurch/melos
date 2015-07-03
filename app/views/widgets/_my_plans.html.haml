@@ -1,14 +1,11 @@
-:ruby
-  user = current_user
-  subscriptions = Subscription.all(user, auth: user.auth)
-  presenter = Presenter::Sidebar::Subscriptions.new(subscriptions,params,self)
-
 -# locals:
 -# presenter (Reference Presenter)
 -# called from:
 -# sidebar/reference/show
 
-- if not presenter.subscriptions.blank?
+- if presenter.subscriptions.blank?
+  = render partial: 'widgets/featured_plans'
+- else
   .widget.my-plans
     %h3.hd
       = t("plans.widget.my plans")

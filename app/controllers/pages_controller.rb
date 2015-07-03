@@ -43,10 +43,6 @@ class PagesController < ApplicationController
     render "shared/header/_header_auth", layout: false
   end
 
-  def my_plans
-    render "widgets/_my_plans", layout: false
-  end
-
   def error_404
     render "pages/error_404", status: 404 and return
   end
