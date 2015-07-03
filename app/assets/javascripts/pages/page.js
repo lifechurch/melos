@@ -363,7 +363,7 @@ Page.prototype = {
 
           // Show My Plans Sidebar Widget / Remove Featured
           $("#my_plans_placeholder").load('/myPlans', function(responseText, textStatus, jqXHR) {
-              if (responseText == "") {
+              if ((textStatus != "success" && textStatus !== "notmodified") || responseText == "") {
                 $(".widget.featured-plans").show();
               }
           });
