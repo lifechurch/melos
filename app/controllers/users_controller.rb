@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   prepend_before_filter :mobile_redirect, only: [:show, :notes, :bookmarks, :badges]
   before_filter :filter_spam_posts, only: [:create]
   before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture,:delete_account, :delete_account_form]
-  before_filter :find_user, except: [:_cards,:sign_up_success, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
+  before_filter :find_user, except: [:is_logged_in, :_cards,:sign_up_success, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
   before_filter :authorize, only: [:edit,:update,:delete_account,:destroy]
 
@@ -203,6 +203,14 @@ class UsersController < ApplicationController
       end
     end
     render action: "resend_confirmation", layout: "application"
+  end
+
+  def is_logged_in
+    if current_auth
+      return render :text => true
+    else
+      return render :text => false
+    end
   end
 
 

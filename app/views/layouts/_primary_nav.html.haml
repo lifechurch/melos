@@ -12,9 +12,6 @@
 
   # quick method to return a class of "highlighted"/" " depending on whether the passed test evaluates to true/false
   highlight = Proc.new {|test| test ? "highlighted" : ""}
-
-  plan_href = logged_in? ? subscriptions_path(user_id: current_auth.username) : plans_path
-
   live_href = "http://#{([:de, :es, :fr, :ko, :nl, :no, :pt, :ru, :zh_CN, :zh_TW].include?(I18n.locale) ? I18n.locale : :www).to_s.downcase.gsub("_", "-")}.a.youversion.com/live"
 
 #nav_primary{role: "navigation"}
@@ -28,7 +25,7 @@
         %a.icon{href: bible_localized_path, "data-title" => t("bible")}
 
       %li#nav_primary_plans{class: highlight.call(is_plans_url)}
-        %a.icon{href: plan_href, "data-title" => t("plans.title")  }
+        %a.icon{href: plans_path, "data-title" => t("plans.title")  }
 
       - if Video.available_locales.include? I18n.locale
         %li#nav_primary_videos{class: highlight.call(is_videos_url)}
