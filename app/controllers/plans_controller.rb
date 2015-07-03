@@ -56,6 +56,14 @@ class PlansController < ApplicationController
     render "error_404"
   end
 
+  def my_plans_link
+    if current_auth
+      return render :text => subscriptions_path(user_id: current_auth.username)
+    else
+      return render nothing: true
+    end
+  end
+
   # Actions needed to capture legacy links sent via email to our users. DO NOT remove
   # ---------------------------------------------------------------------------------
   # See routes.rb: "Community emails send this link"

@@ -345,6 +345,13 @@ Page.prototype = {
           // Show the Home Button
           $("#nav_primary_home").show();
 
+          $.get("/myPlansLink", function(data, textStatus, xhr) {
+              if ((textStatus == 'success' || textStatus == 'notmodified') && data !== "") {
+                $("#nav_primary_plans a").attr("href", data);
+                $("#plans_nav_container").show();
+              }
+          });
+
           // Fetch the Header Bar via AJAX
           $("#header .header-user").load('/header', null, function () {
               var pro_trigger = "#header_profile_trigger";
