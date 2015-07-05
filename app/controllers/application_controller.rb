@@ -77,7 +77,7 @@ class ApplicationController < ActionController::Base
       elsif maxage == 'short'
         maxage = 24.hours
       end
-      expires_in maxage, public: true
+      expires_in 0, public: false
     end
 
 end
