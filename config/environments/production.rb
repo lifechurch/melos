@@ -71,6 +71,7 @@ YouversionWeb::Application.configure do
 
   # Enable Rack::Cache
   # config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHE_SERVERS']}/body", :verbose => true
+  config.action_dispatch.rack_cache =  nil
 
   # Add HTTP headers to cache static assets for an hour
   config.static_cache_control = "public, max-age=3600"
