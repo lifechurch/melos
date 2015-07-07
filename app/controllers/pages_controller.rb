@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   before_filter :force_login, only: [:donate]
-  before_filter -> { set_cache_headers 'long' }, only: [:home, :about, :press, :privacy, :terms]
+  before_filter -> { set_cache_headers 'long' }, only: [:about, :press, :privacy, :terms]
 
   def about;        end
   def press;        end
