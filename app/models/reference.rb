@@ -436,7 +436,7 @@ class Reference < YV::Resource
       cache_for: YV::Caching.a_longer_time
     }
 
-    data, errs = self.class.get("bible/chapter", opts)
+    data, errs = self.class.get("biblecdn/chapter", opts)
     results = YV::API::Results.new(data,errs)
 
     unless results.valid?
