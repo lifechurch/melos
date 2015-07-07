@@ -1,7 +1,7 @@
 class AudiobiblesController < ApplicationController
 
-  # before_filter -> { set_cache_headers 'short' }, only: [:index]
-  # before_filter -> { set_cache_headers 'long' }, only: [:show]
+  before_filter -> { set_cache_headers 'short' }, only: [:index]
+  before_filter -> { set_cache_headers 'long' }, only: [:show]
 
   def index
     @versions_by_lang = Version.all_by_language({:only => @site.versions, :audio => true})
