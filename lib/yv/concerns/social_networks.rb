@@ -39,7 +39,7 @@ module YV
                 # that stopping all site access
               end
             end
-          else
+          #else
             #set_facebook_cookie current_user
           end
         end
