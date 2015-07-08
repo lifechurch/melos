@@ -40,7 +40,7 @@ module YV
               end
             end
           else
-            set_facebook_cookie current_user
+            #set_facebook_cookie current_user
           end
         end
       end
