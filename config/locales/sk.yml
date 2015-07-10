@@ -282,7 +282,7 @@ sk:
     audio bible: "Audio Biblia"
     audio bible app: "Aplikácia Audio Biblia"
     audio bibles title: "Vypočujte si Audio Bibliu"
-    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    audio bible meta: "Počúvajte zadarmo online alebo si stiahnite aplikáciu YouVersion Biblia a počúvajte audio Biblie na Vašom telefóne s najlepšie hodnotenou aplikáciou Biblia."
     language: "Jazyk"
     translation: "Preklad"
     notes title: "Poznámky"
@@ -1130,7 +1130,7 @@ sk:
             world installs: "Inštalácií po celom svete"
         trending verses: 
             title: "Obľúbené biblické verše"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
+            headline: "Biblické verše, ktorých popularita stúpa v aplikácii YouVersion Biblia a na Bible.com"
     shared: 
         menu_settings: 
             title: "Nastavenia zobrazenia"

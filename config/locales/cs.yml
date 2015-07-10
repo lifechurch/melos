@@ -280,9 +280,9 @@ cs:
     home: "Domů"
     bible: "Bible"
     audio bible: "Audio Bible"
-    audio bible app: "Audio Bible App"
-    audio bibles title: "Listen to Audio Bibles"
-    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    audio bible app: "Aplikace audio Bible"
+    audio bibles title: "Poslouchat audio Bible"
+    audio bible meta: "Poslechněte si zdarma online nebo si stáhněte aplikaci Bible a můžete poslouchat Bible na vašem telefonu díky nejlépe hodnocené aplikace Bible."
     language: "Jazyk"
     translation: "Překlad"
     notes title: "Poznámky"
@@ -1130,7 +1130,7 @@ cs:
             world installs: "Instalací po celém světě"
         trending verses: 
             title: "Trendy biblických veršů"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
+            headline: "Aktuální biblické verše, které mají vzestupný trend v aplikaci a na Bible.com"
     shared: 
         menu_settings: 
             title: "Nastavení zobrazení"
