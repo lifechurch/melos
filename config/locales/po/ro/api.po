@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-24 07:56-0600\n"
-"PO-Revision-Date: 2015-03-24 07:56-0600\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ro <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2)\n"
@@ -66,6 +66,12 @@ msgstr "Pregătește-te de Crăciun cu un plan de citire potrivit pentru perioad
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Înviorează-ți credința cu planuri noi."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Găsește înțelepciune în Cuvântul lui Dumnezeu în fiecare zi."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Pregătește-ți inima în perioada aceasta."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Descoperă planul tău de citire favorit pentru februarie!"
 
@@ -83,6 +89,15 @@ msgstr "Propune-ți zilnic să îl cauți pe Dumnezeu în Cuvântul Său."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Citește zilnic Biblia în 2015. Planurile te ajută!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Descoperă mulțumirea în promisiunile lui Dumnezeu."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Acest Cuvânt este viu. Lasă-L să-ți vorbească zilnic."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Cuvântul lui Dumnezeu face totul nou."
 
 msgid "moment.friendship.self.title"
 msgstr "Acum ești prieten cu <b>{friend_name}</b>"
@@ -114,6 +129,12 @@ msgstr "Am completat un plan"
 msgid "moment.plan_completion.title"
 msgstr "{name} a completat un plan"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Ai completat planul de citire <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} a completat un plan de citire, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Ziua {segment} din {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Am început un plan"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} a început un plan"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr " Ai început un nou plan, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} a început un nou plan, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Vizionează <i>Serialul Biblia</i> deseară!"

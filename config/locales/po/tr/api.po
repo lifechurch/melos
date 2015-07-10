@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-29 16:04-0600\n"
-"PO-Revision-Date: 2015-03-29 16:04-0600\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: tr <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -66,6 +66,12 @@ msgstr "Noel Hazırlığı Kutsal Kitap Okuma Planını kullanarak kendinizi Do�
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Yeni okuma planlarıyla imanınızı tazeleyin."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Her gün Tanrı'nın sözündeki hikmeti keşfedin."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Bu dönem yüreğinizi hazırlayın."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Şubat ayı için Okuma Planlarına göz atın ve en beğendiklerinizden başlayın!"
 
@@ -83,6 +89,15 @@ msgstr "Kendinizi her gün Tanrı'nın sözünde Tanrı'yı keşfetmeye adayın.
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015'te Kutsap Kitap'ı her gün okuyun. Bir Okuma Planı yardımcı olabilir!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Tanrı'nın vaatlerindeki minnettarlığı keşfedin."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Söz diridir. Sizinle her gün konuşmasına fırsat verin."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Tanrı'nın sözü her şeyi yeniler."
 
 msgid "moment.friendship.self.title"
 msgstr "Siz <b>{friend_name}</b> ile arkadaş oldunuz."
@@ -114,6 +129,12 @@ msgstr "Okuma planı tamamlandı"
 msgid "moment.plan_completion.title"
 msgstr "{name} bir okuma planını tamamladı"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Okuma Planınızı tamamladınız, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name}Okuma Planını tamamladı, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Toplam {total_segments} günden {segment} (%{percent_complete})"
 
@@ -128,6 +149,12 @@ msgstr "Okuma planını başlandı"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} bir okuma planını başladı"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Yeni Okuma Planınızı başlattınız, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name}Yeni Okuma Planını başlattı. <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Bu gece <i>Kutsal Kitap Dizisi</i>’ni izleyin!"

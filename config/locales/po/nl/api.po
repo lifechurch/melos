@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-24 07:56-0600\n"
-"PO-Revision-Date: 2015-03-24 07:56-0600\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nl <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -114,6 +114,12 @@ msgstr "Jij  voltooide jouw leesplan"
 msgid "moment.plan_completion.title"
 msgstr "{name} heeft een leesplan voltooid"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Jij voltooide jouw leesplan, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} voltooide een leesplan, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Dag {segment} van {total_segments} ({percent_complete}%)"
 
@@ -128,6 +134,12 @@ msgstr "Jij bent een leesplan begonnen"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} is een leesplan begonnen"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Jij begon een nieuw leesplan <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} begon een nieuw leesplan, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Kijk vanavond naar de <i>Bijbel Serie</i>!"

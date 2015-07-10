@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-24 07:56-0600\n"
-"PO-Revision-Date: 2015-03-24 07:56-0600\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "Valmistaudu jouluun adventin ajan lukusuunnitelmalla"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Virkistä uskoasi uusien lukusuunnitelmien avulla."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Löydä viisautta Jumalan Sanasta päivittän."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Valmistele sydäntäsi tämän kauden aikana."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Löydä suosikkisuunnitelmasi helmikuulle!"
 
@@ -83,6 +89,15 @@ msgstr "Omistaudu etsimään Jumalaa päivittäin Hänen Sanansa kautta."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Lue Raamattua päivittäin 2015. Suunnitelmat auttavat!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Löydä kiitollisuutta Jumalan lupauksista."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Tämä Sana elää. Anna sen puhua sinulle joka päivä."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Jumalan Sana uudistaa kaiken."
 
 msgid "moment.friendship.self.title"
 msgstr "Olet nyt käyttäjän <b>{friend_name}</b> ystävä"
@@ -114,6 +129,12 @@ msgstr "Suunnitelma suoritettu"
 msgid "moment.plan_completion.title"
 msgstr "{name} suoritti suunnitelman"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Suoritit suunnitelman <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} suoritti suunnitelman <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Päivä {segment} / {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Aloitit suunnitelman"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} aloitti suunnitelman"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Aloitit uuden suunnitelman <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} aloitti suunnitelman <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Katso <i>Raamattu-sarjaa</i> tänään!"

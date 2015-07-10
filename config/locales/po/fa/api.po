@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:06-0609\n"
-"PO-Revision-Date: 2015-04-23 15:06-0609\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -63,6 +63,12 @@ msgstr "{name} <b>{reference_human}را نشانه‌گذاری کرد.</b>"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "به کمک برنامه‌های مطالعۀ جدید ایمان خود را احیا سازید."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "حکمت را هر روزه در کلام خدا بیابید."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "پس در این فصل، قلب خود را آماده کنید."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "برنامۀ مطالعۀ کتاب‌مقدس مورد علاقۀ خود را برای ماه فوریه بیابید!"
 
@@ -80,6 +86,15 @@ msgstr "هرروزه خود را به تأمل و تعمق در کلام خدا 
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "کتاب‌مقدس را به‌صورت روزانه در سال ۲۰۱۵ مطالعه کنید! راهنمای برنامه‌های مطالعه!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "در وعده‌های خدا، دلیل شکرگزاری را بیابید."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "این کلام زنده است. اجازه دهید هر روزه با شما سخن بگوید."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "کلام خدا همه چیز را تازه و نو می‌سازد."
 
 msgid "moment.friendship.self.title"
 msgstr "شما اکنون با <b>{friend_name}دوست هستید.</b>"

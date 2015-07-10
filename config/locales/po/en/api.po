@@ -165,6 +165,21 @@ msgstr "Find your rhythm through daily time in God’s Word."
 msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "Daily time in God’s Word yields lasting freedom."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Find wisdom in God’s Word every day."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "God’s Word makes everything new."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "This Word is alive. Let it speak to you every day."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Discover thankfulness in God’s promises."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Prepare your heart this season."
+
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} commented on your bookmark: “{comment}”"
 

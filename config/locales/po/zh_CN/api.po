@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-19 13:47-0600\n"
-"PO-Revision-Date: 2015-03-19 13:47-0600\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "以基督降临为主题的读经计划来准备迎接圣诞"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "让新的读经计划更新您的信心。"
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "每天从神的话语里寻找智慧。"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "趁此节日预备你的心。"
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "寻找二月份里备受欢迎的读经计划！"
 
@@ -83,6 +89,15 @@ msgstr "每天全情投入神的话语里寻求祂。"
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015年每天读经吧！读经计划可以帮助！"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "从神的应许里学习感恩。"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "神的话语是活泼有功效的，让它每天对你说话吧。"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "神的话语使万物更新。"
 
 msgid "moment.friendship.self.title"
 msgstr "您现在和 <b>{friend_name}</b> 已成为朋友"
@@ -114,6 +129,12 @@ msgstr "你完成了一个读经计划"
 msgid "moment.plan_completion.title"
 msgstr "{name} 完成一个读经计划"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "您完成了计划，<b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} 完成了计划, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "{total_segments} 中的第 {segment} 天 ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "你开始了一个读经计划"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} 开始一个读经计划"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "您开始了新计划，<b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} 开始了新计划，<b>{title}</b>"
 
 msgid "moment.system.bafk.title"
 msgstr "帮助您的孩子爱上神的话语。"
