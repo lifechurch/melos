@@ -95,7 +95,7 @@ group :development, :tddium_ignore do
   gem 'pry', require: false
   gem 'pry-rails'
   gem 'quiet_assets'
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'binding_of_caller'
   gem 'zeus', '~> 0.15'
   gem 'ruby-prof'
