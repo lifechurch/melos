@@ -34,7 +34,7 @@ module YV
 
             # Raise an error here if response code is 400 or greater and the API hasn't sent back a response object.
             # IMPORTANTLY - This avoids us potentially caching a bad API request
-            if curl.response_code >= 400 || curl.body_str.nil?
+            if curl.response_code >= 400 && curl.body_str.nil?
               Raven.capture do
                 raise APIError, "API Error: Bad API Response (code: #{response.code}) "
               end
