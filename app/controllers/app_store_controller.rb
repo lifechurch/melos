@@ -12,8 +12,11 @@ class AppStoreController < ActionController::Base
   # get /app/(:store)
   def index
     unless googleBot?(request)
-      return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
-      return redirect_to store_path(params[:store]) if params[:store].present?
+      # for chinese locale we do not want to auto-redirect to google playstore
+      unless (I18n.locale.to_s.eql?("zh-CN") and "android".casecmp(request.env["X_MOBILE_DEVICE"].nil? ? "" : request.env["X_MOBILE_DEVICE"]))
+        return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
+        return redirect_to store_path(params[:store]) if params[:store].present?
+      end
     end
     render "pages/app", layout: "layouts/application"
   end
