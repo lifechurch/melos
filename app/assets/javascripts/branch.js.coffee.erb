@@ -48,8 +48,8 @@ class window.Branch
       #console.log(err, link) if err
       return false
 
-  sms: (phone) ->
-    #console.log(phone);
+  sms: (phone, sms_text) ->
+    sms_text = sms_text + ' {{ link }}'
     branch.sendSMS phone,
       {
         channel: 'Bible.com'
@@ -58,6 +58,7 @@ class window.Branch
         type: 1
         data: {
             referring_url: window.location.origin
+            '$custom_sms_text': sms_text
             '$ios_url': 'https://itunes.apple.com/us/app/bible/id282935706'
             '$ipad_url': 'https://itunes.apple.com/us/app/bible/id282935706'
             '$android_url': Branch.prototype.android_url()

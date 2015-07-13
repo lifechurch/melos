@@ -20,10 +20,10 @@ function loadsms() {
   });
 }
 
-var sendLink_sms = function(v) {
+var sendLink_sms = function() {
   smsNumber = $("#numberToText_sms").intlTelInput("getNumber");
   b = new Branch();
-  result = b.sms(smsNumber);
+  result = b.sms(smsNumber, $('#sms_download').text());
 
   if (result != false) {
     $('.sms_success').show().fadeOut(4000);
