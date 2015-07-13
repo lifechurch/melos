@@ -56,6 +56,9 @@
     %ul.left_column
       %li#dl_iphone
         %h2= link_to t('mobile page.iphone ipad'), "http://itunes.apple.com/app/bible/id282935706"
+      - if I18n.locale.to_s.eql?('zh-CN')
+        %li#dl_android
+          %h2= link_to "#{t('mobile page.android')} - 豌豆荚", "http://www.wandoujia.com/apps/com.sirma.mobile.bible.android"
       %li#dl_android
         %h2= link_to t('mobile page.android'), "https://market.android.com/details?id=com.sirma.mobile.bible.android"
       %li#dl_blackberry
