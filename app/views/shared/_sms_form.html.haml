@@ -3,6 +3,11 @@
     %input{class: "smsInput", type: "tel", id: "numberToText_sms"}
     %button{class: "smsButton", type: "button", id:"sendButton_sms"}
       = t("mobile page.sms button")
+
+  %div.sms_info
+    = t("mobile page.sms info")
+  %div#sms_download.hide
+    = t("mobile page.sms download")
   %div.sms_success
     = t("mobile page.sms success")
   %div{id: "smsError", class: "sms_error"}

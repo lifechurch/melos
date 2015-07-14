@@ -1089,6 +1089,8 @@ en:
     sms button:                                 "Text me a link"
     sms error:                                  "Sorry, something went wrong. Please try again."
     sms success:                                "Great! Check your mobile device for the link."
+    sms info:                                   "You will receive a one time SMS to download the app"
+    sms download:                               "Click to download the Bible App:"
   pages:
     generic_error:
       title:                                    "Oops!"
