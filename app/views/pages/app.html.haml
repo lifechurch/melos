@@ -85,7 +85,7 @@
     = render partial: '/shared/sms_form'
 
     - if I18n.locale.to_s.eql?('ko') or I18n.locale.to_s.eql?('ja')
-      %div#qrcode
+      %div#qrcode.hide-mobile
       - content_for :javascripts do
         :javascript
           $( document ).ready(function() {
