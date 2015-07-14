@@ -36,7 +36,7 @@ module YV
             # IMPORTANTLY - This avoids us potentially caching a bad API request
             if curl.response_code >= 400 && curl.body_str.nil?
               Raven.capture do
-                raise APIError, "API Error: Bad API Response (code: #{response.code}) "
+                raise APIError, "API Error: Bad API Response (code: #{curl.response_code}) "
               end
               return JSON_500_General
 
