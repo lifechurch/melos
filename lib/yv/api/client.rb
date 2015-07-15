@@ -29,6 +29,7 @@ module YV
               curl.username = opts[:auth][:username]
               curl.password = opts[:auth][:password]
             end
+            curl.encoding = ''
             curl.perform
             response = JSON.parse curl.body_str
 
