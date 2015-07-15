@@ -14,6 +14,7 @@
 //= require_tree ./templates
 //= require jquery.slimscroll.min.js
 //= require jquery.easytabs.min
+//= require jquery.qrcode.min.js
 //= require jstz-1.0.4
 //= require slick.min
 //= require ./lib/jRespond

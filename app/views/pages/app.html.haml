@@ -84,6 +84,14 @@
 
     = render partial: '/shared/sms_form'
 
+    - if I18n.locale.to_s.eql?('ko') or I18n.locale.to_s.eql?('ja')
+      %div#qrcode.hide-mobile
+      - content_for :javascripts do
+        :javascript
+          $( document ).ready(function() {
+            $('#qrcode').qrcode({width: 80,height: 80,text: "http://app.bible.com/QR-#{I18n.locale.to_s}"});
+          });
+
   %div.clear
 
   %div.lower-content
