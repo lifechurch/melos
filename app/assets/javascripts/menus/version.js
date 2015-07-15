@@ -46,6 +46,12 @@ VersionMenu.prototype = {
       var menu          = $(this).closest(".dynamic_menu.version_select");
       var path_chapter  = $('article .chapter').data('usfm') || 'JHN.1'; //TODO: grab first ref usfm in this version (from json model of version)
 
+      // allow single verse page to change versions
+      if ($('article .verse-view').length) {
+          ref_strip_version = reader.reference.substring(0, reader.reference.lastIndexOf("."));
+          path_chapter  = ref_strip_version || 'JHN.1';
+      }
+
       // hack, but works for now.
       if(_this.isAlternateVersion()) {
         setCookie('alt_version', version_id);
