@@ -27,7 +27,7 @@ http {
 	passenger_ruby /home/yvdep/.rvm/wrappers/ruby-1.9.3-p551@youversion-web/ruby;
 
   server {
-      server_name bible.com www.bible.com localdev.bible.com;
+      server_name bible.com www.bible.com localdev.bible.com review01.bible.com;
       listen *:80;
       listen *:443 ssl;
       ssl_certificate /etc/nginx/certs/selfsigned.crt;
