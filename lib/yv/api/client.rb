@@ -105,6 +105,7 @@ module YV
           curl = Curl::Easy.http_post(resource_url, opts[:body]) do |c|
             c.headers = opts[:headers]
             c.timeout = opts[:timeout] || Cfg.api_default_timeout.to_f
+            c.encoding = ''
             if opts[:auth].present?
               puts 'auth'
               c.http_auth_types = :basic
