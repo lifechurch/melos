@@ -35,7 +35,7 @@ class VodSubscription < YV::Resource
     # }
 
     def delete(opts={})
-      raise YV::AuthRequired unless opts[:auth]
+      raise YV::AuthRequired unless opts[:auth] || opts[:token]
       data,errs = post(delete_path,opts)  
       # map_delete(YV::API::Results.new(data,errs))
     end
