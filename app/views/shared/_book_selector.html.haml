@@ -12,53 +12,59 @@
   - version_id = presenter.version.id
   - version_abbr = presenter.version.abbreviation.downcase
   - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
-  #menu_book_chapter.dynamic_menu
-    .mobile
-      .reader_modal_header
-        %nav
-          %a.close_btn.reference_close_btn
-      .tab_navigation.ref
-        .inner_wrapper
-          %a.book{href: '#book', class: 'selected'}
-            = t('Book')
-          %a.chapter{href:'#chapter'}
-            = t('Chapter')
-    %br.clear
-    .spinner_wrapper{style: "display: none;"}
-      #book_chapter_spinner.dynamic_menu_spinner
-    .search
-      %input{type: "text", placeholder: t('filter book')}
-    .browse
-      %span.menu_arrow
-        &nbsp;
-      #menu_book
-        %header
-          =t("book")
-        .scroll
-          %ul
-            - presenter.version.books.each do |book_usfm, book_info|
-              %li{"data-meta" => truncate(book_info.to_meta, length: 40, separator: " ")}
-                - book = book_usfm.downcase
-                - url = "#{locale_dir}/bible/#{version_id}/#{book}.#{chapter}.#{version_abbr}"
-                %a{href: url, "data-book" => book_usfm.downcase}
-                  = truncate(book_info.human, length: 40, separator: " ")
-                - current_book_chapters = book_info.chapters if presenter.reference.book.downcase.eql?(book)
-                - current_book = book_info.human if presenter.reference.book.downcase.eql?(book)
-      #menu_chapter
-        %header
-          =t("chapter")
-        .scroll
-          %ol#chapter_selector
-            -#we want these chapter links available on page load for SEO
-            -unless current_book_chapters.nil?
-              - current_book_chapters.each do |chapter_info|
-                - canonical = chapter_info.canonical
-                - chapter_name = "#{current_book} #{chapter_info.human}"
-                - chapter_usfm = chapter_info.usfm.downcase
-                - link_body = canonical ? chapter_name : "i"
-                -#js will add active class - we don't here because this is cached per book
-                - css_class = canonical ? "canonical" : "info"
-                - chapter_url = "#{locale_dir}/bible/#{version_id}/#{chapter_usfm}.#{version_abbr}"
-                %li{class: css_class}
-                  %a{href: chapter_url}
-                    = link_body
+  .row.full
+    .medium-12.columns
+      ="Books"
+
+  %ul
+    - presenter.version.books.each do |book_usfm, book_info|
+      %li{"data-meta" => truncate(book_info.to_meta, length: 40, separator: " ")}
+        - book = book_usfm.downcase
+        - url = "#{locale_dir}/bible/#{version_id}/#{book}.#{chapter}.#{version_abbr}"
+        %a{href: url, "data-book" => book_usfm.downcase}
+          = truncate(book_info.human, length: 40, separator: " ")
+        - current_book_chapters = book_info.chapters if presenter.reference.book.downcase.eql?(book)
+        - current_book = book_info.human if presenter.reference.book.downcase.eql?(book)
+
+  %ol#chapter_selector
+    -#we want these chapter links available on page load for SEO
+    -unless current_book_chapters.nil?
+      - current_book_chapters.each do |chapter_info|
+        - canonical = chapter_info.canonical
+        - chapter_name = "#{current_book} #{chapter_info.human}"
+        - chapter_usfm = chapter_info.usfm.downcase
+        - link_body = canonical ? chapter_name : "i"
+        - css_class = canonical ? "canonical" : "info"
+        - chapter_url = "#{locale_dir}/bible/#{version_id}/#{chapter_usfm}.#{version_abbr}"
+        %li{class: css_class}
+          %a{href: chapter_url}
+            = link_body        
+
+  / #menu_book_chapter.dynamic_menu
+  /   .mobile
+  /     .reader_modal_header
+  /       %nav
+  /         %a.close_btn.reference_close_btn
+  /     .tab_navigation.ref
+  /       .inner_wrapper
+  /         %a.book{href: '#book', class: 'selected'}
+  /           = t('Book')
+  /         %a.chapter{href:'#chapter'}
+  /           = t('Chapter')
+  /   %br.clear
+  /   .spinner_wrapper{style: "display: none;"}
+  /     #book_chapter_spinner.dynamic_menu_spinner
+  /   .search
+  /     %input{type: "text", placeholder: t('filter book')}
+  /   .browse
+  /     %span.menu_arrow
+  /       &nbsp;
+  /     #menu_book
+  /       %header
+  /         =t("book")
+  /       .scroll
+
+  /     #menu_chapter
+  /       %header
+  /         =t("chapter")
+  /       .scroll

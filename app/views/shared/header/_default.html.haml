@@ -46,10 +46,10 @@
         .row.collapse
           .small-12.columns        
             .hdr-about
-              %a{:href => "#"}
-            .hdr-notify
               %a{:href => "#"}              
             - if current_auth
+              .hdr-notify
+                %a{:href => "#"}            
               .hdr-profile
                 %a{href: user_path(current_user.username), title: t("users.go to your profile")}
                   %img.hdr-profile-img{src: current_user.user_avatar_url["px_48x48"]}
@@ -58,6 +58,10 @@
                     %span.hdr-profile-name.medium= current_user.username
                   -else
                     %span.hdr-profile-name= current_user.username
+            - else
+              = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "hollow-button right"
+              = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "hollow-button right"
+
             .row.collapse.postfix-radius.hdr-search
               .small-8.small-offset-1.columns
                 %input{type: 'search', name:"q", placeholder: t("search placeholder")}
@@ -69,19 +73,6 @@
                   %input{type:'hidden', name:"version_id", value:params[:version], extra:'second'}                    
 
 
-/ #header_outer
-
-/   %header#header{role:"banner"}
-/     %a#logo{href: "/", style: "#{@site.logo_style}; background-image: url(#{asset_path(@site.logo_image)})"}
-/       = @site.title
-
-/     %form#header_search_form{action: search_path(category: params[:category] || :bible), method: "GET"}
-/       %input#header_search_input{type: 'search', name:"q", placeholder: t("search placeholder")}
-/       %input#header_search_button{type: 'submit', value: t("search")}
-/       -if params[:version_id]
-/         %input{type: 'hidden', name: "version_id", value: params[:version_id], extra:'first'}
-/       -elsif params[:version]
-/         %input{type:'hidden', name:"version_id", value:params[:version], extra:'second'}
 
 /     .header-user
 /       -# Sign in and user id

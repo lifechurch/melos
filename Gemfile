@@ -67,8 +67,8 @@ group :assets do
   gem 'compass-rails'
   gem 'uglifier',      '~> 1.3.0'
   gem 'css_parser',    '~> 1.2.6'
-  gem 'jquery-rails',  '~> 2.1.4'
-  gem 'jquery-ui-rails','~> 4.1.1'
+  gem 'jquery-rails',  '~> 3.1.3'
+  # gem 'jquery-ui-rails','~> 4.1.1'
   gem 'hamlbars',       '~> 2.1'
 end
 
