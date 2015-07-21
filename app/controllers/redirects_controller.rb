@@ -1,6 +1,6 @@
 class RedirectsController < ApplicationController
 
-  before_filter :force_login, except: [:settings_notifications, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti, :kinderen]
+  before_filter :force_login, except: [:settings_notifications, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti, :kinderen, :kinder]
 
   prepend_before_filter :mobile_redirect, only: [:bookmarks, :profile, :friends, :notes, :badges, :highlights, :connections]
   # skip_filter :set_page,
@@ -75,6 +75,11 @@ class RedirectsController < ApplicationController
   def lifechurchtv
     # Resolves to a.youversion.com/groups/lifechurchtv
     redirect_to('/groups/lifechurchtv')
+  end
+
+  def kinder
+    # German redirect to kids
+    redirect_to('/de/kids')
   end
 
   def ninos
