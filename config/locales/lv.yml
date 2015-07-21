@@ -1101,6 +1101,8 @@ lv:
         sms button: "Sūti man saiti"
         sms error: "Atvaino, kaut kas neizdevās. Lūdzu, mēģini vēlreiz."
         sms success: "Lieliski! Meklē savā mobilajā ierīcē saiti."
+        sms info: "Tu saņemsi sms, lai lejupielādētu aplikāciju."
+        sms download: "Klikšķini, lai lejupielādētu Bībeles aplikāciju."
     pages: 
         generic_error: 
             title: "Ak vai!"

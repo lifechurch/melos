@@ -1088,6 +1088,8 @@ sv:
         sms button: "SMS:a mig en länk."
         sms error: "Ursäkta, något gick fel. Var vänlig försök igen."
         sms success: "Perfekt! Kolla din mobil för länken."
+        sms info: "Du får ett SMS för att ladda ner appen"
+        sms download: "Klicka för att ladda ner Bibelappen:"
     pages: 
         generic_error: 
             title: "Upps!"

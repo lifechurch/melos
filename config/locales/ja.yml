@@ -1075,6 +1075,8 @@ ja:
         sms button: "リンクをメールする"
         sms error: "上手くいかなかったようです。もう一度お願いします。"
         sms success: "完了！ご利用のデバイスからリンクをご覧ください。"
+        sms info: "ダウンロード用のリンクがSMSで携帯に届きます。"
+        sms download: "クリックして聖書アプリをダウンロード:"
     pages: 
         generic_error: 
             title: "申し訳ありません。"

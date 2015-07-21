@@ -1088,6 +1088,8 @@ de:
         sms button: "Sende mir einen Link"
         sms error: "Sorry, da ist etwas falsch gelaufen. Bitte versuche es erneut."
         sms success: "Super! Schau auf deinem mobilen Gerät nach dem Link."
+        sms info: "Du wirst eine einmalige SMS erhalten um die App herunterzuladen"
+        sms download: "Klicken um die Bibel App herunterzuladen:"
     pages: 
         generic_error: 
             title: "Hoppla!"

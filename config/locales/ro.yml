@@ -1101,6 +1101,8 @@ ro:
         sms button: "Trimite-mi un link"
         sms error: "Ne pare rău, ceva nu a funcționat. Te rugăm să încerci din nou."
         sms success: "Super! Verifică-ți dispozitivul mobil pentru link."
+        sms info: "Vei primi un SMS unic pentru a descarca aplicatia"
+        sms download: "Apasă pentru a descarca Aplicația Biblia:"
     pages: 
         generic_error: 
             title: "Oops!"

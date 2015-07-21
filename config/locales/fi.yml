@@ -1088,6 +1088,8 @@ fi:
         sms button: "Lähetä minulle linkki"
         sms error: "Pahoittelut, jokin meni pieleen. Yritä uudelleen."
         sms success: "Hienoa! Avaa linkki mobiililaitteellasi."
+        sms info: "Saat kertakäyttöisen tekstiviestin, jonka kautta voit ladata sovelluksen"
+        sms download: "Klikkaa ladataksesi Raamattusovelluksen"
     pages: 
         generic_error: 
             title: "Oho!"

@@ -1088,6 +1088,8 @@ af:
         sms button: "Stuur vir my 'n skakel in 'n teksboodskap"
         sms error: "Jammer, iets het verkeerdgeloop. Probeer asseblief weer."
         sms success: "Great! Kyk na jou foon vir die skakel."
+        sms info: "Jy sal ‘n SMS ontvang om die toepassing af te laai"
+        sms download: "Kliek om die Bybel Toepassing af te laai"
     pages: 
         generic_error: 
             title: "Oeps!"

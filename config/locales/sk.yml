@@ -1101,6 +1101,8 @@ sk:
         sms button: "Pošli mi link SMSkou"
         sms error: "Prepáčte, niečo nefunguje. Skúste prosím znova."
         sms success: "Skvelé! Skontrolujte si link na mobilnom zariadení."
+        sms info: "Dostanete jednorázovú SMS pre stiahnutie aplikácie"
+        sms download: "Po kliknutí si stiahnete aplikáciu Biblia:"
     pages: 
         generic_error: 
             title: "Hups!"

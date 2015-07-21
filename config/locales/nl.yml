@@ -115,7 +115,7 @@ nl:
         best educational app: "Beste Educatieve App"
         kids_app: 
             title: "De Bijbel App voor kinderen"
-            description: "De Bijbel app voor kinderen is een geweldige manier voor kinderen om de Bijbelse verhalen over Jezus, ons geschenk op eeuwig leven, en de vele lessen die God ons leert, te ontdekken. In deze interactieve ervaring houden kinderen zich rechtstreeks bezig met het Woord van God met verrukkelijke visuele beelden terwijl ze punten verdienen en schatten verzamelen door het lezen."
+            description: "De Bijbel App voor kinderen is een geweldige manier voor kinderen om de Bijbelse verhalen over Jezus, ons geschenk op eeuwig leven, en de vele lessen die God ons leert, te ontdekken. In deze interactieve ervaring houden kinderen zich rechtstreeks bezig met het Woord van God met verrukkelijke visuele beelden terwijl ze punten verdienen en schatten verzamelen door het lezen."
         100million: 
             title: "Het begint met 100 miljoen"
             description: "De Bijbel App is al bijna 100 miljoen keer geïnstalleerd - een geweldige mijlpaal! Maar we zijn pas begonnen. Download vandaag de gratis Bijbel App nog -en deel de app met jouw vrienden. Laten we samen geschiedenis maken."
@@ -147,13 +147,13 @@ nl:
         story text 4: "Engelen verschijnen bij de herders om hen te vertellen over de geboorte van Jezus Christus"
         story text 5: "Jezus geneest de lamme"
         feature 1: "Een gratis Bijbel ervaring voor uw kinderen"
-        feature 2: "Geanimeerd verhalenboek app voor smartphones en tablets"
+        feature 2: "Geanimeerde verhalenboek app voor smartphones en tablets"
         feature 3: "Kleurrijke illustraties met animaties die worden geactiveerd door aanraken"
         feature 4: "Spelletjes en activiteiten helpen kinderen te herinneren wat ze geleerd hebben"
         feature 5: "Kindvriendelijke navigatie"
         share: 
-            tell friends: "Vertel je vrienden over de Bijbel app voor kinderen"
-            facebook name: "De Bijbel app voor kinderen"
+            tell friends: "Vertel je vrienden over de Bijbel App voor kinderen"
+            facebook name: "De Bijbel App voor kinderen"
             facebook description: "De Bijbel App voor kinderen is er! Download de gratis app voor iOS en Android vandaag: interactieve Bijbel verhalen helpen kinderen te leren, spelen en groeien met Gods Woord. www.bible.com/kinderen"
             facebook link: "http://www.bible.com/kinderen"
             facebook redirect: "http://www.bible.com/kinderen"
@@ -1088,6 +1088,8 @@ nl:
         sms button: "Stuur me een link"
         sms error: "Sorry, er is iets fout gegaan. Probeer het alstublieft opnieuw"
         sms success: "Fantastisch! Controleer of je de link hebt ontvangen op je mobiel."
+        sms info: "U zal eenmalig een SMS ontvangen om de app te downloaden"
+        sms download: "Klik om de Bijbel app te downloaden"
     pages: 
         generic_error: 
             title: "Oeps!"

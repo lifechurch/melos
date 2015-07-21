@@ -1088,6 +1088,8 @@ tl:
         sms button: "Magtext sa akin ng link"
         sms error: "Paunawa, may pagkakamaling naganap. Subukan muli."
         sms success: "Mahusay! Tingnan ang iyong mobile na aparato para sa link."
+        sms info: "Ikaw ay makatatanggap ng isang text kung paano i-download ang app"
+        sms download: "Pindutin upang i-download ang App na Bibliya"
     pages: 
         generic_error: 
             title: "Oops!"

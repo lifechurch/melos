@@ -601,7 +601,7 @@ cs:
             your information text: "do not translate"
             device id title: "do not translate"
             device id text: "do not translate"
-            cookies title: "do not translate"
+            cookies title: "LifeChurch.tv cookies"
             cookies text: "do not translate"
             log title: "do not translate"
             log text: "do not translate"
@@ -1101,6 +1101,8 @@ cs:
         sms button: "Odeslat SMS odkaz"
         sms error: "Omlouváme se, něco se pokazilo. Prosím zkuste to znovu."
         sms success: "Fajné! Zkontrolujte odkaz na vašem zařízení."
+        sms info: "Obdržíte jednorázovou SMS s odkazem ke stažení aplikace Bible"
+        sms download: "Klikněte ke stažení aplikace Bible:"
     pages: 
         generic_error: 
             title: "Ups!"

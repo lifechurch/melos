@@ -1088,6 +1088,8 @@
         sms button: "Send meg en sms med link"
         sms error: "Beklager, noe gikk galt. Vennligst prøv igjen."
         sms success: "Flott! Sjekk din mobile enhet for å finne linken."
+        sms info: "Du vil motta en SMS en gang for å laste ned appen"
+        sms download: "Klikk for å laste ned Bibel-appen:"
     pages: 
         generic_error: 
             title: "Ojsann!"

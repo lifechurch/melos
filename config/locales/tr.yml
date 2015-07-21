@@ -1088,6 +1088,8 @@ tr:
         sms button: "Bağlantıyı gönder"
         sms error: "Üzgünüz, bir terslik oldu. Lütfen tekrar deneyiniz."
         sms success: "Harika! Bağlantı için mobil cihazınızı kontrol ediniz."
+        sms info: "Uygulamayı indirmek için bir kez SMS alacaksınız."
+        sms download: "Kutsal Kitap Uygulaması'nı indirmek için tıklayınız:"
     pages: 
         generic_error: 
             title: "Eyvah!"

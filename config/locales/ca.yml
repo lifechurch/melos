@@ -1088,6 +1088,8 @@ ca:
         sms button: "Introdueix un enllaç"
         sms error: "Disculpa, alguna cosa no ha anat bé. Torna-ho a provar."
         sms success: "Genial! Comprova l'enllaç al teu mòbil."
+        sms info: "Rebràs un SMS d'un sol ús per descarregar l'aplicació"
+        sms download: "Clica per descarregar l'Aplicació de la Bíblia:"
     pages: 
         generic_error: 
             title: "Alguna cosa ha sortit malament!"

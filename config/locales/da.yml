@@ -1088,6 +1088,8 @@ da:
         sms button: "Send et link via SMS"
         sms error: "Undskyld, noget gik galt. Prøv venligst igen."
         sms success: "Skønt, Tjek din mobile enhed for linket."
+        sms info: "Du vil modtage én SMS for hente app´en."
+        sms download: "Klik for at hente Bibel App´en."
     pages: 
         generic_error: 
             title: "Upss!"

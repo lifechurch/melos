@@ -1075,6 +1075,8 @@ vi:
         sms button: "Nhắn tin đường dẫn cho tôi"
         sms error: "Cáo lỗi vì trục trặc kỹ thuật. Xin vui lòng thử lại!"
         sms success: "Rất tốt! Hãy kiểm tra xem bạn đã nhận tin nhắn hay chưa."
+        sms info: "Bạn sẽ nhận được SMS để tải app về."
+        sms download: "Bấm vào đây để tải App Kinh Thánh:"
     pages: 
         generic_error: 
             title: "Ối!"

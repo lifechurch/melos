@@ -1075,6 +1075,8 @@ zh-CN:
         sms button: "给我链接短信"
         sms error: "抱歉，出错了。请稍后再试。"
         sms success: "太好了！请查看你的行动设备。"
+        sms info: "您将收到一个附有链接的短信给您下载应用"
+        sms download: "点击下载圣经软件："
     pages: 
         generic_error: 
             title: "对不起！"

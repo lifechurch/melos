@@ -1075,6 +1075,8 @@ ko:
         sms button: "링크를 문자로 보내 주십시오"
         sms error: "죄송합니다, 오류가 있습니다. 다시 시도해 주십시오."
         sms success: "좋습니다! 모바일 장치에서 링크를 확인하십시오."
+        sms info: "이 앱을 다운로드하려면 문자 메세지를 한 번 받게 됩니다."
+        sms download: "클릭하면 성경 앱을 다운로드 받을 수 있습니다:"
     pages: 
         generic_error: 
             title: "죄송합니다."

@@ -1088,6 +1088,8 @@ pt:
         sms button: "Me envie um link por mensagem de texto"
         sms error: "Desculpe, algo deu errado. Tente novamente."
         sms success: "Ótimo! Confira seu dispositivo móvel para acessar o link."
+        sms info: "Você receberá uma única mensagem de texto para baixar o aplicativo."
+        sms download: "Clique para baixar o App da Bíblia:"
     pages: 
         generic_error: 
             title: "Opa!"

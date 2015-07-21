@@ -1088,6 +1088,8 @@ sq:
         sms button: "Më dërgo një lidhje"
         sms error: "Na falni, diçka nuk shkoi mirë. Ju lutemi provoni sërish."
         sms success: "Shumë mirë! Kontrolloni celularin tuaj për lidhjen."
+        sms info: "Ju do të merrni një SMS të vetme për të shkarkuar aplikacionin"
+        sms download: "Kliko për të shkarkuar Programin e Biblës:"
     pages: 
         generic_error: 
             title: "Ups!"

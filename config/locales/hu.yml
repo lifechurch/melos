@@ -1088,6 +1088,8 @@ hu:
         sms button: "Link elküldése sms-ben"
         sms error: "Sajnáljuk, hiba történt. Kérünk, próbálkozz újra."
         sms success: "Nagyszerű! A linket elküldtük a mobilodra."
+        sms info: "Egyszeri SMS értesítést kapsz az alkalmazás letöltéséről."
+        sms download: "Töltsd le a Biblia alkalmazást:"
     pages: 
         generic_error: 
             title: "Hoppá!"

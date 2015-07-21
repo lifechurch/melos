@@ -1114,6 +1114,8 @@ pl:
         sms button: "Wyślij mi odnośnik"
         sms error: "Przepraszamy, coś poszło nie tak. Prosimy spróbuj ponownie."
         sms success: "Świetnie! Sprawdź czy dostałeś odnośnik na swój telefon."
+        sms info: "You will receive a one time SMS to download the app"
+        sms download: "Click to download the Bible App:"
     pages: 
         generic_error: 
             title: "Ups!"

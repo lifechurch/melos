@@ -1075,6 +1075,8 @@ zh-TW:
         sms button: "給我鏈結簡訊"
         sms error: "抱歉，出現了錯誤。請稍候再試。"
         sms success: "太好了！請查看你的行動設備。"
+        sms info: "您將收到一個附有鏈結的簡訊給您下載應用"
+        sms download: "點擊下載聖經軟體："
     pages: 
         generic_error: 
             title: "抱歉！"

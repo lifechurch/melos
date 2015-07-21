@@ -1025,9 +1025,9 @@ ru:
         line 2: "множестве различных языков —"
         line 3: "Библия, которая везде с тобой."
         download: "Загрузить сейчас"
-        banner title: "The Bible App"
-        banner action: "Download"
-        banner open: "Open"
+        banner title: "Приложение Библия"
+        banner action: "Загрузить"
+        banner open: "Открыть"
     download bafk ad: 
         title: "Загрузите приложение \"Библия для детей\""
         description copy: "Библия для детей — отличный способ вашим детям открыть для себя библейские истории об Иисусе."
@@ -1111,9 +1111,11 @@ ru:
         mobile web: "Мобильный сайт"
         amazon: "Kindle Fire"
         free overlay: "100% Бесплатно"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
+        sms button: "Отправьте мне ссылку текстовым сообщением"
+        sms error: "Извините, что-то пошло не так. Пожалуйста, попробуйте ещё раз."
+        sms success: "Отлично! Проверьте своё мобильной устройство на наличие отправленной ссылки."
+        sms info: "Вы получите разовое текстовое сообщение, через которое сможете загрузить приложение."
+        sms download: "Нажмите, чтобы загрузить приложение Библия:"
     pages: 
         generic_error: 
             title: "Ой-ой-ой!"
