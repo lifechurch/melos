@@ -32,7 +32,7 @@ class VodSubscriptionsController < ApplicationController
    @results = VodSubscription.delete(@vod_subscription)
    flash[:notice] = t('users.vod_subscription success') unless @results.respond_to? :errors
    flash[:notice] = t('users.vod_subscription failure') if @results.respond_to? :errors
-   return redirect_to vod_subscriptions_path
+   return redirect_to vod_subscriptions_path(token: params[:token])
 
   end
 

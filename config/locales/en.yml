@@ -534,6 +534,7 @@ en:
     vod_subscription success:                   "You have successfully updated your Verse of the Day subscription!"
     vod_subscription failure:                   "Sorry, there was a problem updating your Verse of the Day subscription."
     daily email delivery:                       "Daily email delivery"
+    vod_not_subscribed:                         "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
     time:                                       "Time"
     daily push notifications:                   "Daily push notifications for mobile apps"
     subscribe:                                  "Subscribe"

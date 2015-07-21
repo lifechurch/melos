@@ -55,7 +55,7 @@
 
   %h4
     = t('users.daily email delivery')
-    = render partial: 'form', locals: {type: "email", version_id: @email_version_id, hour: @email_hour, minute: @email_minute, meridian: @email_meridian, versions: @versions_for_current_lang, allowed_hours: @allowed_hours, allowed_minutes: @allowed_minutes }
+  = render partial: 'form', locals: {type: "email", version_id: @email_version_id, hour: @email_hour, minute: @email_minute, meridian: @email_meridian, versions: @versions_for_current_lang, allowed_hours: @allowed_hours, allowed_minutes: @allowed_minutes }
 
   %h4.push_notifications_header
     = t('users.daily push notifications')
