@@ -1,13 +1,13 @@
 - if content_for? :typekit_javascripts
   = yield :typekit_javascripts
 
-= javascript_include_tag "vendor/modernizr"
+-#= javascript_include_tag "vendor/modernizr"
 = javascript_include_tag "application", 'data-turbolinks-track' => true
 
-= javascript_include_tag "i18n/en" # always include for fallback
+-#= javascript_include_tag "i18n/en" # always include for fallback
 
-- if I18n.locale.to_s != "en"
-  = javascript_include_tag "i18n/#{I18n.locale}"
+-#- if I18n.locale.to_s != "en"
+-#  = javascript_include_tag "i18n/#{I18n.locale}"
 
 - if content_for? :javascripts
   = yield :javascripts

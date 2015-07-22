@@ -14,11 +14,11 @@
   .row.full.b-border.white.collapse
     .medium-12.columns.text-center
       .bcv-button-box
-        =reader_previous_link(reference, {classes: "prev #{direction}"})
-        %a.book{:href => "#"}= reference.human[0, reference.human.length - (reference.chapter.to_s.length + 1)]
-        %a.chapter{:href => "#"}= reference.chapter
-        %a.version{:href => "#"}= version.human
-        =reader_next_link(reference, {classes: "next #{direction}"})
+        =reader_previous_link(reference, {classes: "prev #{direction}", "uisref": "reader({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
+        %a.book{:href => "#", :id => "reader_book", "ng-bind" => "reader_book"}= reference.human[0, reference.human.length - (reference.chapter.to_s.length + 1)]
+        %a.chapter{:href => "#", :id => "reader_chapter", "ng-bind" => "reader_chapter"}= reference.chapter
+        %a.version{:href => "#", :id => "reader_version", "ng-bind" => "reader_version"}= version.human
+        =reader_next_link(reference, {classes: "next #{direction}", "uisref": "reader({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
       %a.icon.left
         %svg{"enable-background" => "new -322.2 298.5 726.6 612", :viewBox => "-322.2 298.5 726.6 612", :xmlns => "http://www.w3.org/2000/svg"}
           %path{:d => "M60.2,298.5H22h-344.2v612H22h38.2h344.2v-612H60.2z M22,872.2h-306V336.8H22C22,336.8,22,872.2,22,872.2z\n\t M366.2,872.2h-306V336.8h306V872.2z"}
