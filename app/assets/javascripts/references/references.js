@@ -1,9 +1,38 @@
 angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 
-.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$http", "$rootScope", "$state", "$sce", function($scope, $stateParams, $location, $http, $rootScope, $state, $sce) {
-	console.log("ReaderCtrl");	
+.config([ '$stateProvider', function($stateProvider) {
+	$stateProvider
+	.state('reader', {
+		url: '/bible/:version/:usfm',
+		controller: 'ReaderCtrl',
+		templateProvider: function() { return angular.element(document.getElementById("current-ui-view")).html(); }
+	})
+	;
+}])
+
+.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$http", "$rootScope", "$state", "$sce", "$rootScope", "$timeout", function($scope, $stateParams, $location, $http, $rootScope, $state, $sce, $rootScope, $timeout) {
 	$scope.version = $stateParams.version;
 	$scope.usfm = $stateParams.usfm;
+	$scope.showReaderAudio = false;
+	$scope.showReaderFont = false;
+	$scope.readerFontSize = 19;
+
+	function hideAllPanels() {
+		$scope.showReaderAudio = false;
+		$scope.showReaderFont = false;		
+	}
+
+	$scope.togglePanel = function(panel) {
+		var originalValue = $scope[panel];
+		hideAllPanels();
+		$scope[panel] = !originalValue;
+
+		if (panel == "showReaderFont" && $scope[panel]) {
+			$timeout(function() {
+				$rootScope.$broadcast('reCalcViewDimensions');			
+			}, 50);
+		}
+	};
 
 	function loadChapter(location_path) {
 
@@ -21,12 +50,15 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 	function fillScope(newScope) {
 		angular.extend($scope, newScope);
 		if ($scope.reader_audio && $scope.reader_audio.url) {
-			$scope.reader_audio.trustedUrl = $sce.trustAsResourceUrl($scope.reader_audio.url);		
+			var player = document.getElementById("reader_audio_player");
+			player.src = $sce.trustAsResourceUrl($scope.reader_audio.url);
+			player.load();
+			//$scope.reader_audio.trustedUrl = $sce.trustAsResourceUrl($scope.reader_audio.url);
 		}
 	}
 
-	if (template.hasOwnProperty($location.path())) {
-		fillScope($scope, template[$location.path()]);
+	if (TEMPLATE_FROM_RAILS.hasOwnProperty($location.path())) {
+		fillScope(TEMPLATE_FROM_RAILS[$location.path()]);
 	} else {
 		loadChapter($location.path());
 	}

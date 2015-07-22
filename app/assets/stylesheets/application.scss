@@ -1,4 +1,5 @@
 @import "foundation_and_overrides";
+@import "vendor/angular-slider/angular-slider";
 
 $green: #6ab750;
 $red: #CC0000;
@@ -304,6 +305,10 @@ a.icon {
     border-bottom: solid rem-calc(3) $darkGray;
   }
 
+  &.active {
+    border-bottom: solid rem-calc(3) $green;
+  }  
+
   svg {
     height: rem-calc(16);
     width: rem-calc(16);
@@ -535,4 +540,71 @@ input {
 
 .hidden {
   display: none !important;
+}
+
+.reader-panel {
+  position: absolute;
+  min-width: rem-calc(100) !important;
+  border: solid rem-calc(1) $lightGray;
+  border-radius: (0 0 $global-radius $global-radius);
+  padding: rem-calc(20);
+
+  &.right {
+    right: rem-calc(0);  	
+  }	
+}
+
+.blue-text {
+	color: $blue !important;
+}
+
+.rz-bar-wrapper, .rz-bar, .rz-limit {
+	left: 0;
+}
+
+.rz-bar {
+	background: $lightGray !important;
+}
+
+.rz-pointer {
+	width: rem-calc(20) !important;
+	height: rem-calc(20) !important;
+	background-color: $darkGray !important;
+	border-radius: rem-calc(10) !important;
+	top: rem-calc(-10) !important;
+}
+
+.vertical-middle {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex; 
+
+	justify-content: center;
+	-webkit-justify-content: center;
+
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	
+	align-content: center;
+	-webkit-align-content: center;	
+}
+
+.font-selector {
+	td {
+		padding: 0;
+
+		label {
+			width: 100%;
+			height: 100%;
+			padding: rem-calc(10);			
+			margin: 0;
+			display: block;
+		}
+
+		&:hover {
+			background-color: $lightGray;
+		}
+	}
 }
