@@ -627,3 +627,15 @@ a {
       	pointer-events: none;
       }	
 }
+
+.verse {
+	&.selected {
+		.content {
+			border-bottom: dotted rem-calc(1) $darkGray;
+		}
+	}
+
+	.content {
+		cursor: pointer;
+	}
+}

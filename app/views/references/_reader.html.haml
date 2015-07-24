@@ -77,12 +77,15 @@
   .medium-1.large-3.columns
     %br
   .medium-10.large-6.columns
-    #reader.reader{"ng-bind-html" => "reader_html", "ng-style" => "{ 'font-size': readerFontSize + 'px', 'font-family': readerFontFamily}"}
+    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily"}
       = presenter.content.html_safe if presenter.content
       .copyright
         = (version.blurb || version.copyright).try :html_safe
   .medium-1.large-3.columns
     %br
+    
+%script{'type' => 'text/ng-template', 'id' => '/reader.tpl.html'}
+  %div{ "ng-style" => "{ 'font-size': fontSize + 'px', 'font-family': fontFamily}", "ng-html-compile"=>"content" }
 
 / %article#reader.reader{"class" => "#{"mute" if focus_verses && (not a_chapter)} #{"verse-view" if verse_view}",
 /   "data-setting-font" => client_settings.reader_font,

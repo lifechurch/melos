@@ -15,7 +15,9 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 	$scope.usfm = $stateParams.usfm;
 	$scope.readerFontSize = 19;
 	$scope.readerPlaybackSpeed = 1;
+	$scope.versions = null;
 	$scope.working = false;
+	$scope.isLoggedIn = false;
 
 	hideAllPanels();
 
@@ -55,9 +57,24 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 	function loadChapter(location_path) {
 		$scope.working = true;
 		$scope.showReaderBooks = false;
-		$scope.showReaderChapters = false;		
+		$scope.showReaderChapters = false;
+		$scope.readerSelection = [];		
 
 		$http.get(location_path, { cache: true, responseType: 'json', headers: { 'Accept' : 'application/json' } })
+
+		.success(function(data, status, headers, config) {
+			fillScope(data);
+			$scope.working = false;
+		})
+
+		.error(function(data, status, headers, config) {
+			//TO-DO: Handle Error!
+			$scope.working = false;			
+		});
+	}
+
+	function loadVersions() {
+		$http.get('/versions', { params: { "context_version": $scope.version_id }, cache: true, responseType: 'json', headers: { 'Accept' : 'application/json' } })
 
 		.success(function(data, status, headers, config) {
 			fillScope(data);
@@ -115,10 +132,26 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 		if (toState.name == fromState.name) {
 			event.preventDefault();
 			loadChapter($state.href(toState, toParams));
+			$state.go(toState, toParams, { notify: false});
 		} else {
 			stopListener();
 		}
-	});	
+	});
+
+	$timeout(function() {
+		$http.get('/isLoggedIn', {responseType: 'json', headers: { 'Accept' : 'application/json' } } )
+
+		.success(function(data){
+			if (data === true) {
+				$scope.isLoggedIn = true;
+			}
+		})
+
+		.error(function(data) {
+
+		});
+
+	}, 100);
 }])
 
 .directive("readerChapterList", function() {
@@ -130,6 +163,57 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 		controller: ["$scope", function($scope) {	
 		}],
 		templateUrl: '/reader-chapter-selector.tpl.html'
+	};
+})
+
+.directive("reader", function() {
+	return {
+		restrict: 'A',
+		scope: {
+			content: '=',
+			selection: '=',
+			fontSize: '=',
+			fontFamily: '=',
+			showFootnotes: '=',
+			showCrossReferences: '=',
+			showNumbersAndTitles: '='
+		},
+		controller: ["$scope", function($scope) {	
+		}],
+		templateUrl: '/reader.tpl.html'
+	};
+})
+
+.directive('ngHtmlCompile', function($compile) {
+	return {
+		restrict: 'A',
+		link: function(scope, element, attrs) {
+			scope.$watch(attrs.ngHtmlCompile, function(newValue, oldValue) {
+				element.html(newValue);
+				$compile(element.contents())(scope);
+			});
+		}
+	};
+})
+
+.directive("verse", function() {
+	return {
+		restrict: 'C',
+		link: function(scope, element) {
+			element.on('mouseup', function(event) {
+				element.toggleClass("selected");
+				if (!scope.selection) {
+					scope.selection = [];
+				}
+				scope.$apply(function() { 
+					if (element.hasClass("selected")) {
+						scope.selection.push(element[0].dataset.usfm); 
+					} else {
+						scope.selection.splice(scope.selection.indexOf(element[0].dataset.usfm), 1);
+					}
+				});
+			});
+		},
 	};
 })
 
