@@ -83,15 +83,29 @@
         = (version.blurb || version.copyright).try :html_safe
   .medium-1.large-3.columns
     %br
-    %div{"verse-action" => true, "selection" => "readerSelection", "ng-show" => "readerSelection.length" }
+    %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen" }
     
 %script{'type' => 'text/ng-template', 'id' => '/reader.tpl.html'}
   %div{ "ng-style" => "{ 'font-size': fontSize + 'px', 'font-family': fontFamily}", "ng-html-compile"=>"content" }
-%script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
-  %div
-    ="Verse Action: {{selection.length}} verses selected"
 
- 
+%script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
+  %md-fab-speed-dial{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'"}  
+    %md-fab-actions
+      %md-button.md-fab.md-raised.md-mini{"aria-label" => "Note"}
+        %md-tooltip{"md-direction" => "left"} Create a Note
+        %md-icon{"md-svg-src" => "/assets/notes-solid.svg"}
+      %md-button.md-fab.md-raised.md-mini{"aria-label" => "Highlight"}
+        %md-tooltip{"md-direction" => "left"} Highlight
+        %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
+      %md-button.md-fab.md-raised.md-mini{"aria-label" => "Bookmark"}
+        %md-tooltip{"md-direction" => "left"} Bookmark
+        %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
+      %md-button.md-fab.md-raised.md-mini{"aria-label" => "Share"}
+        %md-tooltip{"md-direction" => "left"} Share
+        %md-icon{"md-svg-src" => "/assets/icon-share.svg"}        
+      %md-button.md-fab.md-raised.md-mini{"aria-label" => "Related"}
+        %md-tooltip{"md-direction" => "left"} Related
+        %md-icon{"md-svg-src" => "/assets/icon-related.svg"}          
 
 
     

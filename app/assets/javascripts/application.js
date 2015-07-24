@@ -1,9 +1,11 @@
 //= require angular
 //= require angular-ui-router
 //= require angular-sanitize
+//= require angular-animate
+//= require angular-aria
+//= require vendor/angular-material/angular-material
 //= require main
 //= require references/references
-//= require vendor/angular-slider/angular-slider
 
 var TEMPLATE_FROM_RAILS = {};
 

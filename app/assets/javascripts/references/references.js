@@ -18,8 +18,20 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 	$scope.versions = null;
 	$scope.working = false;
 	$scope.isLoggedIn = false;
+	$scope.verseActionOpen = false;
+	$scope.readerSelection = [];
 
 	hideAllPanels();
+
+	$scope.$watch('readerSelection.length', function(newVal, oldVal) {
+		if (oldVal !== newVal) {
+			if (newVal > 0) {
+				$scope.verseActionOpen = true;
+			} else {
+				$scope.verseActionOpen = false;
+			}
+		}
+	});
 
 	function hideAllPanels() {
 		$scope.showReaderAudio = false;
@@ -188,7 +200,8 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 	return {
 		restrict: 'A',
 		scope: {
-			selection: '='
+			selection: '=',
+			isOpen: '='
 		},
 		templateUrl: '/reader-verse-action.tpl.html'
 	}

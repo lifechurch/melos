@@ -53,6 +53,7 @@ gem 'handlebars_assets',      '~> 0.14.0'
 gem 'foundation-rails',       '~> 5.5.2.1'
 gem 'angularjs-rails'
 gem 'angular-ui-router-rails', :git => 'git@github.com:iven/angular-ui-router-rails.git'
+# gem 'rails-angular-material', '0.10.1-rc3'
 
 # Using locale files directly in /config/locales/rails-i18n until gem supports
 # aliasing (or we come up with a way to resolve differences between gem lang

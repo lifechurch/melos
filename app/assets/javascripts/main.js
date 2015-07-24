@@ -1,5 +1,6 @@
 angular.module('yv', [
-	'rzModule',
+	//'rzModule',
+	'ngMaterial',
 	'yv.references'
 ])
 

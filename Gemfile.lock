@@ -297,6 +297,7 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails-angular-material (0.10.1.pre.rc3)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -466,6 +467,7 @@ DEPENDENCIES
   rack-ssl-enforcer
   rack-timeout (~> 0.0.3)
   rails (= 3.2.13)
+  rails-angular-material (= 0.10.1.pre.rc3)
   rails_12factor
   routing-filter (~> 0.3.1)
   rspec

@@ -1,3 +1,4 @@
+@import "vendor/angular-material/angular-material";
 @import "foundation_and_overrides";
 @import "vendor/angular-slider/angular-slider";
 
@@ -638,4 +639,11 @@ a {
 	.content {
 		cursor: pointer;
 	}
+}
+
+div[verse-action] {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	padding: rem-calc(23 12 23 15);
 }
