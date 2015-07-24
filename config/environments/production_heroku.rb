@@ -1,4 +1,4 @@
-require 'rack-cache'
+# require 'rack-cache'
 YouversionWeb::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -62,6 +62,7 @@ YouversionWeb::Application.configure do
 
   # Enable Rack::Cache
   #config.middleware.use Rack::Cache, :metastore => "memcached://#{ENV['MEMCACHIER_SERVERS'] || ENV['MEMCACHE_SERVERS']}/meta", :entitystore => "memcached://#{ENV['MEMCACHIER_SERVERS'] || ENV['MEMCACHE_SERVERS']}/body"
+  config.action_dispatch.rack_cache =  nil
 
   # Add HTTP headers to cache static assets for an hour
   config.static_cache_control = "public, max-age=3600"

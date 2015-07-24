@@ -7,6 +7,9 @@ YouversionWeb::Application.routes.draw do
   get "/privacy",       to: "pages#privacy"
   get "/donate",        to: "pages#donate"
   get "/about",         to: "pages#about"
+  get "/header",        to: "pages#header"
+  get "/myPlansLink",   to: "plans#my_plans_link"
+  get "/isLoggedIn",    to: "users#is_logged_in"
   # get "/press",         to: redirect("http://youversion.com/press")
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
@@ -19,6 +22,7 @@ YouversionWeb::Application.routes.draw do
   get "/%EC%96%B4%EB%A6%B0%EC%9D%B4",  to: "redirects#aideul"
   get "/criancas",      to: "redirects#criancas"
   get "/crian%C3%A7as", to: "redirects#criancas"
+  get "/deti",          to: "redirects#deti"
   get "/trending-bible-verses", to: "pages#trending"
 
 

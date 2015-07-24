@@ -7,6 +7,12 @@ class window.Branch
       # console.log(err) if err
       return
 
+  android_url: ->
+    if $('html').data('locale') == 'zh-CN'
+      'http://www.wandoujia.com/apps/com.sirma.mobile.bible.android'
+    else
+      'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
+
   banner: (options) ->
     branch.banner {
       icon: $('html').data('app-icon')
@@ -31,7 +37,7 @@ class window.Branch
         referring_url: window.location.origin
         '$ios_url': 'https://itunes.apple.com/us/app/bible/id282935706'
         '$ipad_url': 'https://itunes.apple.com/us/app/bible/id282935706'
-        '$android_url': 'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
+        '$android_url': Branch.prototype.android_url()
         '$fire_url': 'http://www.amazon.com/YouVersion-Bible/dp/B004MC8CA2'
         '$blackberry_url': 'http://appworld.blackberry.com/webstore/content/1222/'
         '$windows_phone_url': 'http://www.windowsphone.com/en-us/store/app/bible/57f524fa-93e3-df11-a844-00237de2db9e'
@@ -42,8 +48,8 @@ class window.Branch
       #console.log(err, link) if err
       return false
 
-  sms: (phone) ->
-    #console.log(phone);
+  sms: (phone, sms_text) ->
+    sms_text = sms_text + ' {{ link }}'
     branch.sendSMS phone,
       {
         channel: 'Bible.com'
@@ -52,9 +58,10 @@ class window.Branch
         type: 1
         data: {
             referring_url: window.location.origin
+            '$custom_sms_text': sms_text
             '$ios_url': 'https://itunes.apple.com/us/app/bible/id282935706'
             '$ipad_url': 'https://itunes.apple.com/us/app/bible/id282935706'
-            '$android_url': 'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
+            '$android_url': Branch.prototype.android_url()
             '$blackberry_url': 'http://appworld.blackberry.com/webstore/content/1222/'
             '$windows_phone_url': 'http://www.windowsphone.com/en-us/store/app/bible/57f524fa-93e3-df11-a844-00237de2db9e'
         }

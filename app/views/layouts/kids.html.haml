@@ -37,6 +37,12 @@
     facebook_locale = "pt_BR"
     youtube_url = ""
     # prelaunch = true
+  elsif I18n.locale.to_s.eql?("ru") then
+    i18n_css_class = "ru"
+    i18n_image_dir = "/ru"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ru/kids"
+    facebook_locale = "ru"
+    youtube_url = ""
   end
 
 
@@ -61,6 +67,7 @@
     %meta{property: "og:locale:alternate", content: "ko_KR"}
     %meta{property: "og:locale:alternate", content: "zh_CN"}
     %meta{property: "og:locale:alternate", content: "pt_BR"}
+    %meta{property: "og:locale:alternate", content: "ru_RU"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -76,6 +83,8 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ko/kids",:rel=>"alternate",:hreflang=>"ko"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-CN/kids",:rel=>"alternate",:hreflang=>"zh-cn"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/pt-BR/kids",:rel=>"alternate",:hreflang=>"pt-br"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ru/kids",:rel=>"alternate",:hreflang=>"ru"}
+
     - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
     %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}#{locale_dir}/kids"}
 
@@ -102,7 +111,7 @@
 
       -# !Logo and intro copy
       -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR"))
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru"))
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids
@@ -143,6 +152,11 @@
             %br.desktop-only
             %a.download-apk{href: "https://dugnyfr6fqjr8.cloudfront.net/KidsBible-China.apk", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px"}
               = t.call('kids.free download')
+          -if I18n.locale.to_s.eql?("ru")
+            %br.desktop-only
+            %a.download-apk{href: "https://store.yandex.ru/", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/yandex-appstore-badge.png') no-repeat center center; background-size: 245px"}
+              = t.call('kids.free download')
+
           %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
             = t.call('kids.amazon')
 

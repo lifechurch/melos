@@ -168,7 +168,7 @@ module ApplicationHelper
   def i18n_kids_whitelist
     # the following localizations will allow translation for the kids page
     # the others will default to en
-    [ :en, :"en-GB", :es, :"zh-CN", :ko, :pt ]
+    [ :en, :"en-GB", :es, :"zh-CN", :ko, :pt, :ru ]
   end
 
   def app_page_path

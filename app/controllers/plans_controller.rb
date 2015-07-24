@@ -1,6 +1,8 @@
 class PlansController < ApplicationController
   before_filter :mobile_redirect, only: [:index, :show, :sample]
   before_filter :force_login, only: [:start, :update, :settings, :calendar, :mail_settings, :calendar]
+  # before_filter -> { set_cache_headers 'short' }, only: [:index, :show, :sample]
+
   rescue_from InvalidReferenceError, with: :ref_not_found
   rescue_from YouVersion::API::RecordNotFound, with: :handle_404
 
@@ -52,6 +54,14 @@ class PlansController < ApplicationController
   def handle_404(ex = nil)
     @suggestion = ex.try(:suggestion)
     render "error_404"
+  end
+
+  def my_plans_link
+    if current_auth
+      return render :text => subscriptions_path(user_id: current_auth.username)
+    else
+      return render nothing: true
+    end
   end
 
   # Actions needed to capture legacy links sent via email to our users. DO NOT remove

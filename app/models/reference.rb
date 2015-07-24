@@ -50,7 +50,7 @@ class Reference < YV::Resource
     #API attributes
 
     ref_hash = case ref
-      
+
       when /(.{3}\.[^\+]+\.[^\+]+)\+(?:.*)(?:.{3}\..+\.(.+))/ # + separated API string - Reference.new("GEN.15.1+GEN.15.2+GEN.15.3+GEN.15.4+GEN.15.5+GEN.15.6")
         # to be a valid reference, these have to be verses
         # regex selected first usfm and last verse
@@ -61,13 +61,13 @@ class Reference < YV::Resource
 
       when String
         YV::ReferenceString.new(ref).to_hash
-      
+
       when Reference
         ref.to_hash
 
       when Hash
         ref
-          
+
       else
         {}
     end
@@ -129,7 +129,7 @@ class Reference < YV::Resource
   end
 
   # Human readable version of the reference
-  # Ex: 
+  # Ex:
   #   Genesis 1:2 for GEN.1.2 reference
   #   Genesis 1:2-4 for GEN.1 with verses 2-4
 
@@ -146,7 +146,7 @@ class Reference < YV::Resource
   # Return raw hash data for previous reference.
   # Useful for when we don't want to instantiate a Reference object using #previous_chapter
   # which incurs an API call.
-  # 
+  #
   # "previous"=>
   #   {"toc"=>true,
   #    "canonical"=>true,
@@ -187,10 +187,10 @@ class Reference < YV::Resource
     Reference.new(self, verses: nil)
   end
 
-  
+
   # Reference for a previous chapter for a Reference instance
   # Example api response
-  # "previous"=>{"toc"=>true, "canonical"=>true, "version_id"=>1, "human"=>"Luke 24", "usfm"=>["LUK.24"]}, 
+  # "previous"=>{"toc"=>true, "canonical"=>true, "version_id"=>1, "human"=>"Luke 24", "usfm"=>["LUK.24"]},
   def previous_chapter
     select_chapter(:previous)
   end
@@ -251,7 +251,7 @@ class Reference < YV::Resource
   # A usfm representation scoped to just book / chapter for a reference
   # Ex: GEN.3 for Genesis 3 | Genesis 3:1
   # returns a string
-  def chapter_usfm    
+  def chapter_usfm
     @chapter_usfm ||= "#{book}.#{chapter}" #memoizing because of chapter_list indexing
   end
 
@@ -338,7 +338,7 @@ class Reference < YV::Resource
 
   def copyright
     self.class.i18nize(attributes.copyright) if version
-  end  
+  end
 
   def valid?
     return content != ""
@@ -394,7 +394,7 @@ class Reference < YV::Resource
 
     opts = {id: attributes.audio[0].id, cache_for: YV::Caching.a_very_long_time}
 
-    
+
     data, errs = self.class.get("audio-bible/view", opts)
     results = YV::API::Results.new(data,errs)
     unless results.valid?

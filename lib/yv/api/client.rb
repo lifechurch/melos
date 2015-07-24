@@ -29,6 +29,7 @@ module YV
               curl.username = opts[:auth][:username]
               curl.password = opts[:auth][:password]
             end
+            curl.encoding = ''
             curl.perform
             response = JSON.parse curl.body_str
 
@@ -36,7 +37,7 @@ module YV
             # IMPORTANTLY - This avoids us potentially caching a bad API request
             if curl.response_code >= 400 || curl.body_str.nil?
               Raven.capture do
-                raise APIError, "API Error: Bad API Response (code: #{response.code}) "
+                raise APIError, "API Error: Bad API Response (code: #{curl.response_code}) "
               end
               return JSON_500_General
 
@@ -104,6 +105,7 @@ module YV
           curl = Curl::Easy.http_post(resource_url, opts[:body]) do |c|
             c.headers = opts[:headers]
             c.timeout = opts[:timeout] || Cfg.api_default_timeout.to_f
+            c.encoding = ''
             if opts[:auth].present?
               puts 'auth'
               c.http_auth_types = :basic
@@ -136,10 +138,11 @@ module YV
         def default_headers
           { 
             "Referer"                   => "http://" + Cfg.api_referer,
-            "User-Agent"                => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize}",  # API 3.1 requires a user agent to be set
+            "User-Agent"                => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize} GZIP",  # API 3.1 requires a user agent to be set
             "X-YouVersion-Client"       => "youversion",                                           # API 3.1 requires a youversion client header to be set: http://developers.youversion.com/api/docs/3.1/intro.html#headers
             "X-YouVersion-App-Platform" => "web",
-            "X-YouVersion-App-Version"  => "0"
+            "X-YouVersion-App-Version"  => "0",
+            "Accept-Encoding"           => "gzip, deflate"
           }
         end
 

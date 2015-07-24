@@ -65,4 +65,5 @@ YouversionWeb::Application.configure do
   # To enable JS export
   config.middleware.use I18n::JS::Middleware
 
+  config.action_dispatch.rack_cache =  nil
 end
