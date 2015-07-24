@@ -30,129 +30,130 @@
       =render partial: 'shared/menu_settings'
       =render partial: 'shared/book_selector', locals: {presenter: presenter}
       =render partial: 'shared/menu_audio_player', locals: { reference: reference }    
-/ #m-toolbar.mobile
-/   %div.verse_toolbar{class: ('authed' if current_auth)}
-/     %nav
-/       %a.submenu_btn.highlight_btn{href: 'javascript:void(0);'}
-/       %a.submenu_btn.bookmark_btn{href: 'javascript:void(0);', "data-action" => bookmarks_path, "data-method" => 'POST'}
-/       %a.submenu_btn.note_btn{href: 'javascript:void(0);', "data-action" => new_note_path, "data-method" => 'GET'}
-/       %a.submenu_btn.related_btn{href: "/moments/related?v=#{version.id}&usfm=#{reference.chapter_usfm}"}
-/       %a.submenu_btn.share_btn{href: 'javascript:void(0);', "data-action" => new_share_path, "data-method" => 'GET'}
-/     %div.close_tab
-/       %span.first
-/       %div.mid
-/         %a.menu_close.verse_close_btn
-/       %span.last
+-#
+  / #m-toolbar.mobile
+  /   %div.verse_toolbar{class: ('authed' if current_auth)}
+  /     %nav
+  /       %a.submenu_btn.highlight_btn{href: 'javascript:void(0);'}
+  /       %a.submenu_btn.bookmark_btn{href: 'javascript:void(0);', "data-action" => bookmarks_path, "data-method" => 'POST'}
+  /       %a.submenu_btn.note_btn{href: 'javascript:void(0);', "data-action" => new_note_path, "data-method" => 'GET'}
+  /       %a.submenu_btn.related_btn{href: "/moments/related?v=#{version.id}&usfm=#{reference.chapter_usfm}"}
+  /       %a.submenu_btn.share_btn{href: 'javascript:void(0);', "data-action" => new_share_path, "data-method" => 'GET'}
+  /     %div.close_tab
+  /       %span.first
+  /       %div.mid
+  /         %a.menu_close.verse_close_btn
+  /       %span.last
 
-/   %div.color_toolbar
-/     %nav
-/       %form.highlights{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
-/         - if current_auth.nil?
-/           %input{type: 'hidden', name: 'redirect', value: "/bible"}
-/           %input{type: 'hidden', name: 'source', value: "highlight"}
+  /   %div.color_toolbar
+  /     %nav
+  /       %form.highlights{action: (current_auth ? highlights_path : sign_up_path), method: (current_auth ? "POST" : "GET")}
+  /         - if current_auth.nil?
+  /           %input{type: 'hidden', name: 'redirect', value: "/bible"}
+  /           %input{type: 'hidden', name: 'source', value: "highlight"}
 
-/         %input.references.verses_selected_input{name: "highlight[references]", type: "hidden"}
+  /         %input.references.verses_selected_input{name: "highlight[references]", type: "hidden"}
 
-/         %div.color_picker_list
-/           %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
-/           %span#dup_mobile_highlights
+  /         %div.color_picker_list
+  /           %button.color.color_picker_clear{type:"submit", name: "remove", value: "true", id:"clear_highlights"}
+  /           %span#dup_mobile_highlights
 
-/       %div.clear
-/     .mobile
-/       %div.close_tab
-/         %span.first
-/         %div.mid
-/           %a.menu_close.highlight_close_btn
-/         %span.last
+  /       %div.clear
+  /     .mobile
+  /       %div.close_tab
+  /         %span.first
+  /         %div.mid
+  /           %a.menu_close.highlight_close_btn
+  /         %span.last
 
-/ #m-navitems.mobile
+  / #m-navitems.mobile
 
-/   %div.reader-nav{class: reference.audio ? nil : "audio-disabled"}
-/     %span.first
-/     %ul
-/       %li=reader_previous_link(reference, {classes: "prev #{direction}"})
-/       %li
-/         %a.button.reader_settings_btn{:href => 'javascript:void(0);'}
-/           %span.icon_reader_settings
-/       %li{class: ("audio-disabled" unless version.audio_version?)}
-/         %a.button.audio_btn{:href => '#menu_audio_player', :title => t("ref.listen")}
-/           %span.icon_listen
-/           =t("ref.listen")
-/       %li= reader_next_link(reference, {classes: "next #{direction}"})
-/     %span.last
-/   %br.clear
+  /   %div.reader-nav{class: reference.audio ? nil : "audio-disabled"}
+  /     %span.first
+  /     %ul
+  /       %li=reader_previous_link(reference, {classes: "prev #{direction}"})
+  /       %li
+  /         %a.button.reader_settings_btn{:href => 'javascript:void(0);'}
+  /           %span.icon_reader_settings
+  /       %li{class: ("audio-disabled" unless version.audio_version?)}
+  /         %a.button.audio_btn{:href => '#menu_audio_player', :title => t("ref.listen")}
+  /           %span.icon_listen
+  /           =t("ref.listen")
+  /       %li= reader_next_link(reference, {classes: "next #{direction}"})
+  /     %span.last
+  /   %br.clear
 
-/ #reader_header
-/   %header
-/     %ul.float_left
-/       %li{class: version.rtl? ? "rtl" : nil}
-/         %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_book_chapter', id:"menu_book_chapter_trigger", :title => t("ref.choose book and chapter")}
-/           %h2
-/             = truncate(reference.to_s(version: false), length: 40, separator: " ")
-/           %span
-/             = t('ref.choose book and chapter')
-/       %li
-/         %a.dynamic_menu_trigger.drop_down_select{href:"#menu_version", id:"menu_version_trigger", title: t("ref.choose version")}
-/           %h2
-/             = version.human
-/           %span
-/             =t("ref.choose version")
-/       %li{style: 'display:none;'}
-/         %a{href: version_path(version)}
-/           %h2
-/             = version.to_s
-/     - unless invalid_ref
-/       %ul.float_right.header-options
-/         - if alt_version.present?
-/           %li.show_in_parallel_mode
-/             %a.dynamic_menu_trigger.drop_down_select.header-options-version{href:"#menu_version", id:"menu_alt_version_trigger", title: t("ref.choose second version")}
-/               %b
-/                 = alt_version.human
-/               %span
-/                 =t("ref.choose version")
-/         %li.hide_in_parallel_mode
-/           %a.button.dynamic_menu_trigger.header-options-settings{href:"#menu_settings", id:"menu_settings_trigger", title:t("ref.settings")}
-/             %span.icon_settings
-/               =t("ref.settings")
-/         %li.hide_in_parallel_mode
-/           %a.button.header-options-audio{:href => reference.audio ? '#menu_audio_player' : nil, :title => reference.audio ? t("ref.listen"): t('audio.none'), class: reference.audio ? "dynamic_menu_trigger" : "disabled"}
-/             %span.icon_listen{class: reference.audio ? nil : "disabled"}
-/               =t("ref.listen")
-/         %li.hide_in_parallel_mode
-/           %a.button.header-options-full#button_full_screen{:href => '#', :title => t("ref.full screen")}
-/             %span.icon_full_screen
-/               =t("ref.full screen")
-/         - unless presenter.verses.present? and !presenter.respond_to?(:subscription)
-/           %li.float_right_in_parallel_mode
-/             %a.header-options-parallel#button_read_parallel.button{:href => '#', :title => t("ref.parallel")}
-/               %span.icon_parallel
-/                 =t("ref.parallel")
+  / #reader_header
+  /   %header
+  /     %ul.float_left
+  /       %li{class: version.rtl? ? "rtl" : nil}
+  /         %a.dynamic_menu_trigger.drop_down_select{:href => '#menu_book_chapter', id:"menu_book_chapter_trigger", :title => t("ref.choose book and chapter")}
+  /           %h2
+  /             = truncate(reference.to_s(version: false), length: 40, separator: " ")
+  /           %span
+  /             = t('ref.choose book and chapter')
+  /       %li
+  /         %a.dynamic_menu_trigger.drop_down_select{href:"#menu_version", id:"menu_version_trigger", title: t("ref.choose version")}
+  /           %h2
+  /             = version.human
+  /           %span
+  /             =t("ref.choose version")
+  /       %li{style: 'display:none;'}
+  /         %a{href: version_path(version)}
+  /           %h2
+  /             = version.to_s
+  /     - unless invalid_ref
+  /       %ul.float_right.header-options
+  /         - if alt_version.present?
+  /           %li.show_in_parallel_mode
+  /             %a.dynamic_menu_trigger.drop_down_select.header-options-version{href:"#menu_version", id:"menu_alt_version_trigger", title: t("ref.choose second version")}
+  /               %b
+  /                 = alt_version.human
+  /               %span
+  /                 =t("ref.choose version")
+  /         %li.hide_in_parallel_mode
+  /           %a.button.dynamic_menu_trigger.header-options-settings{href:"#menu_settings", id:"menu_settings_trigger", title:t("ref.settings")}
+  /             %span.icon_settings
+  /               =t("ref.settings")
+  /         %li.hide_in_parallel_mode
+  /           %a.button.header-options-audio{:href => reference.audio ? '#menu_audio_player' : nil, :title => reference.audio ? t("ref.listen"): t('audio.none'), class: reference.audio ? "dynamic_menu_trigger" : "disabled"}
+  /             %span.icon_listen{class: reference.audio ? nil : "disabled"}
+  /               =t("ref.listen")
+  /         %li.hide_in_parallel_mode
+  /           %a.button.header-options-full#button_full_screen{:href => '#', :title => t("ref.full screen")}
+  /             %span.icon_full_screen
+  /               =t("ref.full screen")
+  /         - unless presenter.verses.present? and !presenter.respond_to?(:subscription)
+  /           %li.float_right_in_parallel_mode
+  /             %a.header-options-parallel#button_read_parallel.button{:href => '#', :title => t("ref.parallel")}
+  /               %span.icon_parallel
+  /                 =t("ref.parallel")
 
-/ #menu_verse_actions.clearfix
-/   .references
-/     %ul.reference_tokens
+  / #menu_verse_actions.clearfix
+  /   .references
+  /     %ul.reference_tokens
 
-/   .panel-tabs
-/     %span.highlight.tab-trigger{"data-pane-type"=>"highlight"}
-/       = t("highlight")
-/       .arrow
-/     %span.bookmark.tab-trigger{"data-pane-type"=>"bookmark"}
-/       = t("bookmark")
-/       .arrow
-/     %span.note.tab-trigger{"data-pane-type" => "note"}
-/       = t("new note")
-/       .arrow
-/     %span.link.tab-trigger
-/       = t("link")
-/       .arrow
-/     %span.share.tab-trigger{"data-pane-type"=>"share"}
-/       = t("ref.share")
-/       .arrow
-/     %span.related.tab-trigger
-/       %span.count
-/     %span.clear-selected.tab-trigger
-/       = t('ref.clear verses')
+  /   .panel-tabs
+  /     %span.highlight.tab-trigger{"data-pane-type"=>"highlight"}
+  /       = t("highlight")
+  /       .arrow
+  /     %span.bookmark.tab-trigger{"data-pane-type"=>"bookmark"}
+  /       = t("bookmark")
+  /       .arrow
+  /     %span.note.tab-trigger{"data-pane-type" => "note"}
+  /       = t("new note")
+  /       .arrow
+  /     %span.link.tab-trigger
+  /       = t("link")
+  /       .arrow
+  /     %span.share.tab-trigger{"data-pane-type"=>"share"}
+  /       = t("ref.share")
+  /       .arrow
+  /     %span.related.tab-trigger
+  /       %span.count
+  /     %span.clear-selected.tab-trigger
+  /       = t('ref.clear verses')
 
-/   .panels
+  /   .panels
 
 

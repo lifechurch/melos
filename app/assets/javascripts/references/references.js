@@ -184,6 +184,16 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 	};
 })
 
+.directive("verseAction", function() {
+	return {
+		restrict: 'A',
+		scope: {
+			selection: '='
+		},
+		templateUrl: '/reader-verse-action.tpl.html'
+	}
+})
+
 .directive('ngHtmlCompile', function($compile) {
 	return {
 		restrict: 'A',

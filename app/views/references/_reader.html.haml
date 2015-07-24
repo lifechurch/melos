@@ -83,71 +83,80 @@
         = (version.blurb || version.copyright).try :html_safe
   .medium-1.large-3.columns
     %br
+    %div{"verse-action" => true, "selection" => "readerSelection", "ng-show" => "readerSelection.length" }
     
 %script{'type' => 'text/ng-template', 'id' => '/reader.tpl.html'}
   %div{ "ng-style" => "{ 'font-size': fontSize + 'px', 'font-family': fontFamily}", "ng-html-compile"=>"content" }
+%script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
+  %div
+    ="Verse Action: {{selection.length}} verses selected"
 
-/ %article#reader.reader{"class" => "#{"mute" if focus_verses && (not a_chapter)} #{"verse-view" if verse_view}",
-/   "data-setting-font" => client_settings.reader_font,
-/   "data-setting-size" => client_settings.reader_font_size,
-/   "data-fullscreen"   => client_settings.reader_full_screen,
-/   "data-focused-verses" => (focus_verses ? verses.try(:join,",") : nil),
-/   "data-book"       => reference[:book].to_s.downcase,
-/   "data-book-api"   => reference[:book].sub(/[A-Z]+/) {|m| m.downcase},
-/   "data-book-human" => truncate(version.books[reference[:book]].human, length: 40, separator: " "),
-/   "data-chapter"    => reference[:chapter].to_s,
-/   "data-version"    => reference[:version].to_s,
-/   "data-setting-trans-notes" => client_settings.reader_trans_notes,
-/   "data-setting-cross-refs" => client_settings.reader_cross_refs,
-/   "data-setting-show-highlights" => client_settings.reader_highlights}
+ 
 
-/   .wrap
-/     %div.reader-nav
-/       - direction = 'rtl' if version.try(:rtl?)
-/       - unless presenter.verses.present?
-/         = reader_previous_link(reference, {classes: "reader-prev #{direction}"})
-/         = reader_next_link(reference, {classes: "reader-next #{direction}"})
 
-/     // Primary version content
-/     #version_primary{class: "#{version.try(:text_direction)} #{"verse-view" if verse_view}",
-/       "data-reference"     => reference.to_param,
-/       "data-abbreviation"  => version.try(:abbreviation).downcase,
-/       "data-usfm"          => reference.chapter_usfm}
-      
-/       = presenter.content.html_safe if presenter.content
     
-/     -# Read Chapter button
-/     - if verse_view
-/       %h2#read_chapter
-/         %a.action_button_blue{href: reference_path(reference: reference.chapter_usfm.downcase)}
-/           -#= t("read chapter")
-/           = t("read reference", reference: reference.to_chapter.human)
+-#
+  %article#reader.reader{"class" => "#{"mute" if focus_verses && (not a_chapter)} #{"verse-view" if verse_view}",
+    "data-setting-font" => client_settings.reader_font,
+    "data-setting-size" => client_settings.reader_font_size,
+    "data-fullscreen"   => client_settings.reader_full_screen,
+    "data-focused-verses" => (focus_verses ? verses.try(:join,",") : nil),
+    "data-book"       => reference[:book].to_s.downcase,
+    "data-book-api"   => reference[:book].sub(/[A-Z]+/) {|m| m.downcase},
+    "data-book-human" => truncate(version.books[reference[:book]].human, length: 40, separator: " "),
+    "data-chapter"    => reference[:chapter].to_s,
+    "data-version"    => reference[:version].to_s,
+    "data-setting-trans-notes" => client_settings.reader_trans_notes,
+    "data-setting-cross-refs" => client_settings.reader_cross_refs,
+    "data-setting-show-highlights" => client_settings.reader_highlights}
 
-/       -#%div.addthis_sharing_toolbox
-/       %div#download.mobile{href:"/app"}
-/         -# - style = "background: url(#{image_path(localized_bible_icon(58))}) no-repeat right center" if localized_bible_icon
-/         -# %span.icon{style: style}
-/         %a.action_button_blue{href:"/app"}
-/           = t('mobile page.download now')
+    .wrap
+      %div.reader-nav
+        - direction = 'rtl' if version.try(:rtl?)
+        - unless presenter.verses.present?
+          = reader_previous_link(reference, {classes: "reader-prev #{direction}"})
+          = reader_next_link(reference, {classes: "reader-next #{direction}"})
 
-/     // Secondary version content
-/     #version_secondary{class: alt_version.try(:text_direction),
-/       "data-reference"     => alt_reference.to_param,
-/       "data-abbreviation"  => alt_version.try(:abbreviation).try(:downcase),
-/       "data-usfm"          => reference.chapter_usfm}
-/       - unless verse_view
-/         = t('ref.loading secondary')
+      // Primary version content
+      #version_primary{class: "#{version.try(:text_direction)} #{"verse-view" if verse_view}",
+        "data-reference"     => reference.to_param,
+        "data-abbreviation"  => version.try(:abbreviation).downcase,
+        "data-usfm"          => reference.chapter_usfm}
+        
+        = presenter.content.html_safe if presenter.content
+      
+      -# Read Chapter button
+      - if verse_view
+        %h2#read_chapter
+          %a.action_button_blue{href: reference_path(reference: reference.chapter_usfm.downcase)}
+            -#= t("read chapter")
+            = t("read reference", reference: reference.to_chapter.human)
+
+        -#%div.addthis_sharing_toolbox
+        %div#download.mobile{href:"/app"}
+          -# - style = "background: url(#{image_path(localized_bible_icon(58))}) no-repeat right center" if localized_bible_icon
+          -# %span.icon{style: style}
+          %a.action_button_blue{href:"/app"}
+            = t('mobile page.download now')
+
+      // Secondary version content
+      #version_secondary{class: alt_version.try(:text_direction),
+        "data-reference"     => alt_reference.to_param,
+        "data-abbreviation"  => alt_version.try(:abbreviation).try(:downcase),
+        "data-usfm"          => reference.chapter_usfm}
+        - unless verse_view
+          = t('ref.loading secondary')
 
 
-/ %footer
-/   - if version.has_publisher?
-/     .publisher.as_table
-/       .vcenter
-/         .courtesy
-/           %strong= t("versions.courtesy of", abbreviation: version.abbreviation, publisher: version.publisher.name) if version.blurb
-/         .blurb= (version.blurb || version.copyright).try :html_safe
-/       .vcenter
-/         =link_to t('versions.learn more'), version.url || version_path(version), class: 'button'
+  %footer
+    - if version.has_publisher?
+      .publisher.as_table
+        .vcenter
+          .courtesy
+            %strong= t("versions.courtesy of", abbreviation: version.abbreviation, publisher: version.publisher.name) if version.blurb
+          .blurb= (version.blurb || version.copyright).try :html_safe
+        .vcenter
+          =link_to t('versions.learn more'), version.url || version_path(version), class: 'button'
 
 
-/ = render partial: "references/js", locals: {presenter: @presenter}
+  = render partial: "references/js", locals: {presenter: @presenter}
