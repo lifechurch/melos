@@ -47,7 +47,7 @@ YouversionWeb::Application.routes.draw do
   # Bible
   match 'bible(/:version/:reference)' => 'references#show', :as => 'reference', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible/:version/:reference/notes' => 'notes#sidebar', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
-
+  match 'bible-chapters/:version/:reference' => 'references#chapters', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   
   resources "versions",   only:   [:index, :show]
   resources "audiobibles", :path => '/audio-bible-app-versions', only: [:index, :show]

@@ -548,10 +548,16 @@ input {
   border: solid rem-calc(1) $lightGray;
   border-radius: (0 0 $global-radius $global-radius);
   padding: rem-calc(20);
+  background-color: $white;
 
   &.right {
     right: rem-calc(0);  	
   }	
+
+  &.full {
+  	overflow: scroll;
+  	height: rem-calc(400);
+  }
 }
 
 .blue-text {
@@ -607,4 +613,17 @@ input {
 			background-color: $lightGray;
 		}
 	}
+}
+
+.menuitem {
+	&.disabled {
+		opacity: 0.5;
+	}
+}
+
+a {
+      &[disabled] {
+      	opacity: 0.5;
+      	pointer-events: none;
+      }	
 }

@@ -1,10 +1,10 @@
 class ReferencesController < ApplicationController
 
-  # before_filter :mobile_redirect,               only: [:show, :show_chapter]
-  before_filter :check_site_requirements,       only: [:show, :show_chapter]
-  before_filter :fix_invalid_reference,         only: [:show, :show_chapter]
-  before_filter :strip_format,                  only: [:show, :show_chapter]
-  before_filter :setup_presenters,              only: [:show, :show_chapter]
+  # before_filter :mobile_redirect,               only: [:show]
+  before_filter :check_site_requirements,       only: [:show]
+  before_filter :fix_invalid_reference,         only: [:show]
+  before_filter :strip_format,                  only: [:show]
+  before_filter :setup_presenters,              only: [:show]
 
   rescue_from InvalidReferenceError, with: :ref_not_found
 
@@ -12,7 +12,7 @@ class ReferencesController < ApplicationController
     now_reading(self.presenter.reference)
     respond_to do |format|
       format.html 
-      format.xml  { render :nothing }
+      format.xml  { render nothing: true }
       format.json { render "show.json.rabl" }
     end      
   end

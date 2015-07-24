@@ -11,7 +11,7 @@ module ApplicationHelper
     uisref = opts.delete(:uisref)
     id = opts.delete(:id)
     next_chapter  = reference.next_chapter_hash
-    link_to( next_chapter.human, reference_path(version: next_chapter.version_id, reference: next_chapter.usfm.first.downcase), class: classes, "ui-sref" => uisref, id: id ) if next_chapter
+    link_to( next_chapter.human, reference_path(version: next_chapter.version_id, reference: next_chapter.usfm.first.downcase), class: classes, "ui-sref" => uisref, id: id, 'ng-disabled' => 'working' ) if next_chapter
   end
 
   # Generate a link to previous chapter
@@ -26,7 +26,7 @@ module ApplicationHelper
     uisref = opts.delete(:uisref)
     id = opts.delete(:id)
     prev_chapter  = reference.previous_chapter_hash
-    link_to( prev_chapter.human, reference_path(version: prev_chapter.version_id, reference: prev_chapter.usfm.first.downcase), class: classes, "ui-sref" => uisref, id: id ) if prev_chapter
+    link_to( prev_chapter.human, reference_path(version: prev_chapter.version_id, reference: prev_chapter.usfm.first.downcase), class: classes, "ui-sref" => uisref, id: id, 'ng-disabled' => 'working' ) if prev_chapter
   end
 
   def moment_whos_liked_string(moment)

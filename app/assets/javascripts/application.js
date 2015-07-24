@@ -7,7 +7,7 @@
 
 var TEMPLATE_FROM_RAILS = {};
 
-function init() {
+function parseReaderVars() {
  	var prev_link = angular.element(document.getElementById("reader_previous")).attr("href").split("/");
  	var next_link = angular.element(document.getElementById("reader_next")).attr("href").split("/");
 
@@ -32,6 +32,9 @@ function init() {
 			usfm: [ next_link[3] ]
 		} 
 	};
+}
 
+function init() {
+	parseReaderVars();
 	angular.bootstrap(document, ['yv']);
 }
