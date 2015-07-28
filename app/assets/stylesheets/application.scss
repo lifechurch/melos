@@ -700,3 +700,15 @@ div[verse-action] {
 	height: rem-calc(60);
 	cursor: pointer;
 }
+
+:focus {
+	outline: 0;
+}
+
+h5.bookLabel {
+	padding: 0.4375rem 0.875rem;
+}
+
+.inline {
+	display: inline !important;
+}

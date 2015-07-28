@@ -5,7 +5,9 @@ angular.module('yv', [
 	'ngMaterial',
 	'yv.reader',
 	'api.authentication',
-	'api.railsHttp'
+	'api.railsHttp',
+	'common.fixTop',
+	'common.userSettings'
 ])
 
 .config([ '$locationProvider', function($locationProvider) {

@@ -82,12 +82,13 @@
       .copyright
         = (version.blurb || version.copyright).try :html_safe
   .medium-1.large-3.columns
-    %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel" }
-    %div.ng-hide{"ng-show"=>"isLoggedIn"}
-      %span{"ng-show" => "readerSelection.length"}
-        %b{"ng-bind" => "readerSelection.length"}
-        =" verses selected"
-      %div{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "version", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights"}
+    %div{"fix-top" => true}
+      %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel" }
+      %div.ng-hide{"ng-show"=>"isLoggedIn"}
+        %span{"ng-show" => "readerSelection.length"}
+          %b{"ng-bind" => "readerSelection.length"}
+          =" verses selected"
+        %div{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "version", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights", "toggle-side-panel"=>"toggleSidePanel"}
 
 -# =render partial: 'shared/js_templates', locals: { reference: reference }
 

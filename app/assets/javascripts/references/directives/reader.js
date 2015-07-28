@@ -1,6 +1,6 @@
 angular.module('reader.reader',  [])
 
-.directive("reader", function() {
+.directive("reader", ['UserSettings', function(UserSettings) {
 	return {
 		restrict: 'A',
 		scope: {
@@ -14,6 +14,8 @@ angular.module('reader.reader',  [])
 			highlights: '='
 		},
 		controller: ["$scope",  function($scope) {
+			angular.extend($scope, UserSettings.get("ReaderTextSettings"));
+
 			$scope.verseHighlights = {};
 			$scope.$watch('highlights', function(newVal, oldVal) {
 				if (newVal && newVal.length) {
@@ -33,6 +35,6 @@ angular.module('reader.reader',  [])
 		}],
 		templateUrl: '/reader.tpl.html'
 	};
-})
+}])
 
 ;

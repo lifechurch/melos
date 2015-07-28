@@ -1,45 +1,4 @@
-#reader-font-dropdown.ng-hide.large-3.medium-1.reader-panel.right{ "tabindex" => "-1", "ng-show" => "showReaderFont" }
-  .row
-    .small-3.columns.vertical-middle{"style" => "height:62px"}
-      %div.text-left="Size"
-    .small-9.columns
-      %rzslider{"rz-slider-ceil" => "24", "rz-slider-floor" => "6", "rz-slider-model" => "readerFontSize", "rz-slider-hide-limit-labels" => "true"}
-  .row
-    .small-12.columns
-      %table.font-selector{"style" => "width: 100%"}
-        %tr
-          %td.text-center
-            %input#reader_font_arial.hidden{:type => "radio", :value => "Arial", "ng-model" => "readerFontFamily"}
-            %label{:for => "reader_font_arial", "style" => "font-family:'Arial'"} Arial
-          %td.text-center
-            %input#reader_font_avenir.hidden{:type => "radio", :value => "Avenir", "ng-model" => "readerFontFamily"}
-            %label{:for => "reader_font_avenir", "style" => "font-family:'Avenir'"} Avenir
-        %tr
-          %td.text-center
-            %input#reader_font_tisapro.hidden{:type => "radio", :value => "Tisa Pro", "ng-model" => "readerFontFamily"}
-            %label{:for => "reader_font_tisapro", "style" => "font-family:'Tisa Pro'"} Tisa Pro
-          %td.text-center
-            %input#reader_font_helvetica.hidden{:type => "radio", :value => "Helvetica", "ng-model" => "readerFontFamily"}
-            %label{:for => "reader_font_helvetica", "style" => "font-family:'Helvetica'"} Helvetica
-        %tr
-          %td.text-center
-            %input#reader_font_baskerville.hidden{:type => "radio", :value => "Baskerville", "ng-model" => "readerFontFamily"}
-            %label{:for => "reader_font_baskerville", "style" => "font-family:'Baskerville'"} Baskerville
-          %td.text-center
-            %input#reader_font_verdana.hidden{:type => "radio", :value => "Verdana", "ng-model" => "readerFontFamily"}
-            %label{:for => "reader_font_verdana", "style" => "font-family:'Verdana'"} Verdana
-  .row
-    .small-12.columns.text-left
-      %input#reader_show_footnotes{:type => "checkbox", "ng-model" => "readerShowFootnotes"}
-      %label{:for => "reader_show_footnotes"} Footnotes
-  .row
-    .small-12.columns.text-left
-      %input#reader_show_cross_references{:type => "checkbox", "ng-model" => "readerShowCrossReferences"}
-      %label{:for => "reader_show_cross_references"} Cross References
-  .row
-    .small-12.columns.text-left
-      %input#reader_show_numbers_and_titles{:type => "checkbox", "ng-model" => "readerShowNumbersAndTitles"}
-      %label{:for => "reader_show_numbers_and_titles"} Numbers and Titles
+
 
 / #menu_settings.dynamic_menu
 /   %span.menu_arrow

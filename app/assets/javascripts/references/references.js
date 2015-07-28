@@ -3,6 +3,8 @@ angular.module('yv.reader', [
 	'reader.reader',
 	'reader.verseAction',
 	'reader.highlightPanel',
+	'reader.textSettingsPanel',
+	'reader.audioPanel',
 	'reader.verse',
 	'reader.bookList',
 	'api.highlights',
@@ -20,7 +22,7 @@ angular.module('yv.reader', [
 	;
 }])
 
-.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Authentication", "Versions", "Bible", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Authentication, Versions, Bible) {
+.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Authentication", "Versions", "Bible", "UserSettings", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Authentication, Versions, Bible, UserSettings) {
 	$scope.version 					= $stateParams.version;
 	$scope.usfm 						= $stateParams.usfm;
 	$scope.readerFontSize 			= 19;
@@ -34,7 +36,6 @@ angular.module('yv.reader', [
 
 	hideAllPanels();
 	hideAllSidePanels();
-
 
 	$scope.$watch('readerSelection.length', function(newVal, oldVal) {
 		if (oldVal !== newVal) {
@@ -129,6 +130,8 @@ angular.module('yv.reader', [
 	 *  the HTML generated server-side
 	 */
 	function parseBookLinks() {
+		parseVersionLinks();
+
 		if (!$scope.reader_book_list || $scope.reader_book_list.length == 0) {
 			var reader_book_children = angular.element(document.getElementById("reader_book_list")).children();
 			$scope.reader_book_list = [];
@@ -146,12 +149,30 @@ angular.module('yv.reader', [
 
 				$scope.reader_book_list.push({
 					usfm: reader_book_children[i].children[0].dataset.book,
+					canon: reader_book_children[i].children[0].dataset.canon,
 					name: reader_book_children[i].children[0].innerText.trim(),
 					chapters: chapters
 				});
 			}
 		}
+	}
+
+	function parseVersionLinks() {
+		if (!$scope.reader_version_list || $scope.reader_version_list.length == 0) {
+			var reader_version_children = angular.element(document.getElementById("reader_version_list")).children();
+			$scope.reader_version_list = [];
+			for (var i = 0; i < reader_version_children.length; i++) {
+				$scope.reader_version_list.push({
+					abbrev: reader_version_children[i].dataset.abbrev,
+					meta: reader_version_children[i].dataset.meta,
+					title: reader_version_children[i].dataset.title,
+					version: reader_version_children[i].dataset.version
+				});
+			}
+		}
+		console.log($scope.reader_version_list);
 	}	
+
 
 	/**
 	 * Use this method to toggle header panels

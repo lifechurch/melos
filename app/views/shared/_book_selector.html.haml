@@ -17,7 +17,7 @@
       %li{"data-meta" => truncate(book_info.to_meta, length: 40, separator: " ")}
         - book = book_usfm.downcase
         - url = "#{locale_dir}/bible/#{version_id}/#{book}.#{chapter}.#{version_abbr}"
-        %a{href: url, "data-book" => book_usfm.downcase}
+        %a{href: url, "data-book" => book_usfm.downcase, "data-canon" => book_info.canon}
           = truncate(book_info.human, length: 40, separator: " ")
         - is_current_book = presenter.reference.book.downcase.eql?(book)
         %ol
@@ -35,27 +35,35 @@
     .row.full.scroll
       .medium-12.columns
         %div{"reader-chapter-list" => true, "selected-book" => "selectedBook", "ng-show" => "selectedBook" }
-  #reader-book-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderBooks" }
-    .row.full.scroll
-      .medium-12.columns
-        %h2="Books"
+
+  #reader-book-dropdown.ng-hide.medium-12.reader-panel.full.scroll{ "tabindex" => "-1", "ng-show" => "showReaderBooks" }
+    .row.full
+      .medium-4.columns.text-left
+        %h3.inline="Books"
+        %a{"href" => "#", "ng-click" => "cancel()" } Cancel
+      .medium-4.columns.text-center
         %input{"ng-model" => "bookFilter", "type" => "text"}
+      .medium-4.columns.text-right        
         .switch
           %input#exampleCheckboxSwitch{:type => "checkbox", "ng-model" => "sort", "value" => "alphabetic"}
-            %label{:for => "exampleCheckboxSwitch"}        
-        %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version", "selected-book"=>'selectedBook', "ng-hide" => 'selectedBook', 'on-book-selected' => 'toggleChaptersPanel'}
+            %label{:for => "exampleCheckboxSwitch"}
+    %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version", "selected-book"=>'selectedBook', "ng-hide" => 'selectedBook', 'on-book-selected' => 'toggleChaptersPanel'}
 
   %script{'type' => 'text/ng-template', 'id' => '/reader-book-selector.tpl.html'}
-    .row
+    .row.full
       %div{:class => "{{$last ? 'end' : ''}}", "ng-class" => "foundationColumnSize", "ng-repeat" => "column in columns"}
         %ul.side-nav{:role => "navigation"}
           %li.menuitem{"ng-if" => "filterBook(filter, book.name)", "ng-repeat" => "book in column"}
-            %a{:href => "#", "ng-click" => "showChapters(book)"} {{book.name}}
+            %a{:href => "#", "ng-click" => "showChapters(book)", "ng-if" => "!book.labelOnly"}
+              = "{{book.name}}"
+              %b{"ng-if" => "sort"} ( {{book.canon | uppercase}} )
+            %h5.bookLabel{"ng-if" => "book.labelOnly"} {{book.name}}
   
   %script{'type' => 'text/ng-template', 'id' => '/reader-chapter-selector.tpl.html'}
     .row
-      .medium-12.columns
-        %h2 {{selectedBook.name}}
-        %ol.tabs{"data-tab" => ""}
+      .medium-12.columns.text-left
+        %h3.inline {{selectedBook.name}} > Chapters
+        %a{"href" => "#", "ng-click" => "cancel()"} Cancel
+        %ol.tabs.pad-head{"data-tab" => ""}
           %li.tab-title{"ng-repeat" => "chapter in selectedBook.chapters"}
             %a{"ng-href" => "{{chapter.href}}"} {{chapter.name}}  

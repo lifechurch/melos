@@ -7,6 +7,7 @@
 //= require vendor/angular-material/angular-material
 //= require main
 //= require_tree ./api
+//= require_tree ./common
 //= require_tree ./references
 //= require vendor/angular-cache/angular-cache
 
@@ -26,7 +27,7 @@ function parseReaderVars() {
 			copyright_short: {
 				text: angular.element(document.getElementById("reader_audio_copyright_short")).text()
 			},
-			url: angular.element(document.getElementById("reader_audio")).attr("src")
+			url: angular.element(document.getElementById("reader_audio_player")).attr("src")
 		},
 		previous_chapter_hash: {
 			version_id: prev_link[2],

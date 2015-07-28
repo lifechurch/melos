@@ -1,8 +1,79 @@
 - if is_reader_page? && presenter.present?
 
+  -# 
+  -# Reader Text Settings Panel
+  -#
+  %script{'type' => 'text/ng-template', 'id' => '/reader-text-settings-panel.tpl.html'}
+    #reader-font-dropdown.large-3.medium-1.reader-panel.right
+      .row
+        .small-3.columns.vertical-middle{"style" => "height:62px"}
+          %div.text-left="Size"
+        .small-9.columns
+          %md-slider{:max => "24", :min => "6", "ng-model" => "fontSize"}
+      .row
+        .small-12.columns
+          %table.font-selector{"style" => "width: 100%"}
+            %tr
+              %td.text-center
+                %input#reader_font_arial.hidden{:type => "radio", :value => "Arial", "ng-model" => "fontFamily"}
+                %label{:for => "reader_font_arial", "style" => "font-family:'Arial'"} Arial
+              %td.text-center
+                %input#reader_font_avenir.hidden{:type => "radio", :value => "Avenir", "ng-model" => "fontFamily"}
+                %label{:for => "reader_font_avenir", "style" => "font-family:'Avenir'"} Avenir
+            %tr
+              %td.text-center
+                %input#reader_font_tisapro.hidden{:type => "radio", :value => "Tisa Pro", "ng-model" => "fontFamily"}
+                %label{:for => "reader_font_tisapro", "style" => "font-family:'Tisa Pro'"} Tisa Pro
+              %td.text-center
+                %input#reader_font_helvetica.hidden{:type => "radio", :value => "Helvetica", "ng-model" => "fontFamily"}
+                %label{:for => "reader_font_helvetica", "style" => "font-family:'Helvetica'"} Helvetica
+            %tr
+              %td.text-center
+                %input#reader_font_baskerville.hidden{:type => "radio", :value => "Baskerville", "ng-model" => "fontFamily"}
+                %label{:for => "reader_font_baskerville", "style" => "font-family:'Baskerville'"} Baskerville
+              %td.text-center
+                %input#reader_font_verdana.hidden{:type => "radio", :value => "Verdana", "ng-model" => "fontFamily"}
+                %label{:for => "reader_font_verdana", "style" => "font-family:'Verdana'"} Verdana
+      .row
+        .small-12.columns.text-left
+          %input#reader_show_footnotes{:type => "checkbox", "ng-model" => "showFootnotes"}
+          %label{:for => "reader_show_footnotes"} Footnotes
+      .row
+        .small-12.columns.text-left
+          %input#reader_show_cross_references{:type => "checkbox", "ng-model" => "showCrossReferences"}
+          %label{:for => "reader_show_cross_references"} Cross References
+      .row
+        .small-12.columns.text-left
+          %input#reader_show_numbers_and_titles{:type => "checkbox", "ng-model" => "showNumbersAndTitles"}
+          %label{:for => "reader_show_numbers_and_titles"} Numbers and Titles  
+      .row
+        .small-12.columns.text-left
+          %button.solid-button.green{"ng-click" => "save()"} Save
+  
+
+  -#
+  -# Reader Audio Panel
+  -#
+  #reader-audio-panel.ng-hide
+    .large-3.medium-1.reader-panel.right
+      %h3#reader_audio_title{"ng-bind" => "audioData.title"}
+        = presenter.reference.audio.title
+      %p#reader_audio_copyright_short.blue-text{"ng-bind" => "audioData.copyright_short.text"}
+        = presenter.reference.audio.copyright_short.text
+      %audio#reader_audio_player{src:presenter.reference.audio.url, "ng-src" => '{{audioData.trustedUrl}}', :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
+        ="Your browser does not support the audio element."
+
+
+  -# 
+  -# Reader Text 
+  -#
   %script{'type' => 'text/ng-template', 'id' => '/reader.tpl.html'}
     %div{ "ng-style" => "{ 'font-size': fontSize + 'px', 'font-family': fontFamily}", "ng-html-compile"=>"content" }
 
+
+  -#
+  -# Verse Action 
+  -#
   %script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
     %md-fab-speed-dial{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'"}  
       %md-fab-actions
@@ -22,6 +93,9 @@
           %md-tooltip{"md-direction" => "left"} Related
           %md-icon{"md-svg-src" => "/assets/icon-related.svg"}
 
+  -#
+  -# Reader Highlight Panel
+  -# 
   %script{type:"text/ng-template", id: "/reader-highlight-panel.tpl.html"}
     :plain
       <div>
@@ -51,6 +125,9 @@
         </form>
       </div>
 
+  -#
+  -#
+  -#
   %script#pane-bookmark-tmpl{type:"text/ng-template"}
     :plain
       <div class="tab-panel bookmark-pane" id="bookmark-pane">
@@ -98,6 +175,10 @@
         </div>
       </div>
 
+
+  -#
+  -#
+  -#
   %script#pane-note-tmpl{type:"text/ng-template"}
     #note-pane.tab-panel
       .pane
@@ -129,14 +210,19 @@
               = t('notes.form.save button')
 
 
-
-
+  -#
+  -#
+  -#
   %script#pane-share-tmpl{type:"text/ng-template"}
     #share-pane.tab-panel
       .pane
         %span#short_link
         %div.addthis_sharing_toolbox{"data-url" => "", "data-title" => ""}
 
+
+  -#
+  -#
+  -#
   %script#pane-link-tmpl{type:"text/ng-template"}
     :plain
       <div class="tab-panel" id="link-pane">
@@ -152,6 +238,10 @@
         </div>
       </div>
 
+
+  -#
+  -#
+  -# 
   %script#pane-register-tmpl{type:"text/ng-template"}
     .account.hide.tab-trigger
       = t("registration.with email")
@@ -171,6 +261,9 @@
           %span.email
             = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'action_button_blue'})
 
+  -#
+  -#
+  -#
   %script#moment-share-layer-tmpl{type:"text/ng-template"}
     %div.moment-actions-share-box
       %span.moment-actions-share-arrow

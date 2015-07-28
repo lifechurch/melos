@@ -17,7 +17,7 @@ angular.module("reader.bookList", [])
 		controller: ["$scope", function($scope) {
 			var booksPerColumn;
 			if (!$scope.booksPerColumn) { $scope.booksPerColumn = 16; }	
-			if (!$scope.maxColumns) { $scope.maxColumns = 5; }
+			if (!$scope.maxColumns) { $scope.maxColumns = 4; }
 			if (!$scope.displayMode) { $scope.displayMode = "alphabetic"; }
 
 			$scope.filterBook = function(filter, book) {
@@ -49,19 +49,35 @@ angular.module("reader.bookList", [])
 					$scope.columns = [];
 					var currentColumnIndex = 0;
 					var currentColumnCount = 0;
+					var lastCanon;
+					var firstIterationForCanon = !$scope.sort;
 					for(var i = 0; i < books.length; i++) {
-				
+						if (lastCanon && (lastCanon != books[i].canon) && !$scope.sort) {
+							currentColumnIndex++;
+							currentColumnCount = 0;
+							firstIterationForCanon = true;
+						}
+
 						if (!$scope.columns[currentColumnIndex]) {
 							$scope.columns[currentColumnIndex] = [];
+						}
+
+						if (firstIterationForCanon) {
+							currentColumnCount++;
+							var name = (books[i].canon == 'ot') ? "Old Testament" : "New Testament";
+							$scope.columns[currentColumnIndex].push({name: name, labelOnly: true});	
 						}
 
 						currentColumnCount++;
 						$scope.columns[currentColumnIndex].push(books[i]);
 
-						if (currentColumnCount == $scope.booksPerColumn) {
+						if (currentColumnCount == booksPerColumn) {
 							currentColumnIndex++;
 							currentColumnCount = 0;
 						}
+
+						lastCanon = books[i].canon;
+						firstIterationForCanon = false;
 					}
 
 					$scope.foundationColumnSize = "text-left columns medium-" + (Math.floor(12 / $scope.columns.length)).toString();
