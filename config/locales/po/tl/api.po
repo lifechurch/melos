@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-24 07:55-0600\n"
-"PO-Revision-Date: 2015-03-24 07:55-0600\n"
+"POT-Creation-Date: 2015-07-13 10:03-0609\n"
+"PO-Revision-Date: 2015-07-13 10:03-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fil_PH <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "Maghanda para sa Pasko gamit ang Advent Bible Plan"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Sariwain ang pananampalataya gamit ang mga bagong Babasahin."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Hanapin ang karunungan sa Salita ng Diyos araw-araw."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Ihanda ang puso mo sa panahong ito."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Hanapin ang paboritong Babasahing Pambibliya sa Pebrero!"
 
@@ -83,6 +89,15 @@ msgstr "Maglaan araw-araw ng pagbabasa ng Salita ng Diyos."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Magbasa ng Bibliya araw-araw sa 2015. Nakatutulong ang mga babasahin!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Tuklasin ang pasasalamat sa mga pangako ng Diyos."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Ang Salita ay buhay. Hayaan mong mangusap ito sa iyo araw-araw."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Ang Salita ng Diyos ay binabago ang lahat ng bagay."
 
 msgid "moment.friendship.self.title"
 msgstr "Kayo ay magkaibigan na ni <b>{friend_name}</b>"
@@ -114,6 +129,12 @@ msgstr "Natapos mo ang iyong Plano"
 msgid "moment.plan_completion.title"
 msgstr "Natapos ni {name} ang Plano"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Natapos mo na ang Planong, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "Natapos ni {name} ang Planong, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Araw {segment} ng {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Ikaw ay nagsimula ng bagong Plano"
 
 msgid "moment.plan_subscription.title"
 msgstr "Nagsimula ng bagong Plano si {name}"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Sinumulan mo ang Planong, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "Sinimulan ni {name} ang Planong, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Panoorin ang <i>Mga Serye ng Bibliya</i> mamayang gabi!"

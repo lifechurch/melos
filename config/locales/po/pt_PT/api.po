@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-24 07:56-0600\n"
-"PO-Revision-Date: 2015-03-24 07:56-0600\n"
+"POT-Creation-Date: 2015-07-24 14:49-0609\n"
+"PO-Revision-Date: 2015-07-24 14:49-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt_PT <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "Prepare-se para o Natal com um Plano de Leitura da Bíblia sobre o Adven
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Renove a sua fé com novos planos."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Encontre sabedoria q cada dia na Palavra de Deus."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Prepara o seu coração."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Encontre o seu plano favorito da Bíblia para Fevereiro!"
 
@@ -83,6 +89,15 @@ msgstr "Dedique-se a procurar Deus diariamente na Sua Palavra."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Em 2015 leia a Bíblia diariamente. Os Planos ajudam!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Descubra gratidão nas promessas de Deus."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Esta Palavra é viva. Deixe que ela fale consigo a cada dia."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "A Palavra de Deus torna tudo novo."
 
 msgid "moment.friendship.self.title"
 msgstr "Você é agora amigo/a de <b>{friend_name}</b>"

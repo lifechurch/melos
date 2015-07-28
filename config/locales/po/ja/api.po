@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-24 07:56-0600\n"
-"PO-Revision-Date: 2015-03-24 07:56-0600\n"
+"POT-Creation-Date: 2015-07-13 10:04-0609\n"
+"PO-Revision-Date: 2015-07-13 10:04-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -66,6 +66,12 @@ msgstr "クリスマスに向けて、待降節の読書プランをどうぞ。
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "新しい読書プランで信仰を新たにしよう。"
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "毎日、神様の御言葉から学びましょう。"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "この季節、心を整えましょう。"
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "2月はお気に入りの読書プランを見つけよう！"
 
@@ -83,6 +89,15 @@ msgstr "神様の御言葉を通して、毎日神様との関係を深めまし
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015年は聖書を毎日読もう！プランが役に立つよ！"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "神様の約束から感謝の気持ち得ましょう。"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "御言葉は生きています。毎日、心から読みましょう。"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "神様の御言葉は全てを新しくします。"
 
 msgid "moment.friendship.self.title"
 msgstr "お友達になりました：<b>{friend_name}</b>さん"
@@ -114,6 +129,12 @@ msgstr "読書プランを完了しました"
 msgid "moment.plan_completion.title"
 msgstr "{name}さんが読書プランを完了しました"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "<b>「{title}」</b>の読書プランを完了しました。"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name}さんが<b>「{title}」の読書プランを完了しました。</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "{total_segments}日中の{segment}日({percent_complete}%完了)"
 
@@ -128,6 +149,12 @@ msgstr "読書プランを開始しました"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name}さんが読書プランを開始しました"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "<b>「{title}」</b>の読書プランを開始しました。"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name}さんが<b>「{title}」の読書プランを開始しました。</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "今夜、<i>聖書シリーズ</i>を観る"

@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-07 13:31-0609\n"
-"PO-Revision-Date: 2015-07-07 13:31-0609\n"
+"POT-Creation-Date: 2015-07-13 10:04-0609\n"
+"PO-Revision-Date: 2015-07-13 10:04-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: id <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -129,6 +129,12 @@ msgstr "Anda telah menyelesaikan Rencana Anda"
 msgid "moment.plan_completion.title"
 msgstr "{name} telah menyelesaikan sebuah Rencana"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Anda telah menyelesaikan Rencana Anda, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} telah menyelesaikan Rencana, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Hari {segment} dari {total_segments} ({percent_complete}%)"
 
@@ -143,6 +149,12 @@ msgstr "Anda memulai Rencana baru"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} memulai Rencana baru"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Anda memulai Rencana yang baru, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} memulai Rencana yang baru, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Saksikan <i>Seri Alkitab</i> malam ini!"

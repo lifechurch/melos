@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-07 13:31-0609\n"
-"PO-Revision-Date: 2015-07-07 13:31-0609\n"
+"POT-Creation-Date: 2015-07-13 10:04-0609\n"
+"PO-Revision-Date: 2015-07-13 10:04-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -126,6 +126,12 @@ msgstr "شما برنامهٔ مطالعه را تکمیل کرده‌اید"
 msgid "moment.plan_completion.title"
 msgstr "{name} یک برنامه مطالعه را تکمیل کرده است."
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "شما برنامۀ مطالعۀ {title} خود را به پایان رساندید. <b></b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name}یک برنامۀ مطالعه را به پایان رساند،{title} <b></b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "روز{segment}از{total_segments}({percent_complete}%)"
 
@@ -140,6 +146,12 @@ msgstr "شما برنامهٔ مطالعهٔ جدیدی را آغاز کرده�
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} برنامهٔ مطالعهٔ جدیدی را آغاز کرده است"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "شما برنامۀ مطالعۀ جدید{title}را شروع کردید <b></b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name}برنامۀ مطالعۀ {title} جدیدی را آغاز کرده است <b></b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr " امشب<i>سری برنامهٔ کتاب‌مقدس</i>را تماشا کنید!"

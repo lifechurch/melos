@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:05-0609\n"
-"PO-Revision-Date: 2015-04-23 15:05-0609\n"
+"POT-Creation-Date: 2015-07-24 14:49-0609\n"
+"PO-Revision-Date: 2015-07-24 14:49-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cy <LL@li.org>\n"
 "Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
@@ -66,6 +66,12 @@ msgstr "Bydd barod am y Nadolig gyda Cynllun Beibl yr Adfent"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Adnewydda dy ffydd gyda Chylluniau newydd."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Cei ddoethineb yng Ngair Duw bob dydd."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Paratoa dy galon ar gyfer yr Ŵyl."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Chwilia am dy hoff Gynllun Beibl yn Chwefror."
 
@@ -83,6 +89,15 @@ msgstr "Rho dy hun i geisio Duw drwy ei Air bob dydd."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Darllen y Beibl bob dydd yn 2015. Mae cynlluniau'n helpu!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Mae addewidion Duw yn arwain i ddiolchgarwch."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Mae’r Gair hwn yn fyw. Gad iddo siarad gyda ti bob dydd."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Mae Gair Duw yn gwneud popeth yn newydd."
 
 msgid "moment.friendship.self.title"
 msgstr "Rwyt nawr yn ffrindiau gyda <b>{friend_name}</b>"

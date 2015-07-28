@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-07 13:31-0609\n"
-"PO-Revision-Date: 2015-07-07 13:31-0609\n"
+"POT-Creation-Date: 2015-07-13 10:04-0609\n"
+"PO-Revision-Date: 2015-07-13 10:04-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ar <LL@li.org>\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
@@ -67,10 +67,10 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "جدد إيمانك مع قراءة خطط جديدة."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "اعثر على حكمة في كلمة الله كل يوم."
+msgstr "أعثر على حكمة في كلمة الله كل يوم."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
-msgstr "جهز قلبك في هذا الوقت."
+msgstr "جهز قلبك في هذا الفصل."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "اكتشف خطة قراءة مفضلة لشهر فبراير !"
@@ -91,13 +91,13 @@ msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "اقرء الكتاب المقدس يوميا في 2015.  الخطط ستساعدك! "
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
-msgstr "اكتشف الشكر و الامتنان في وعود الله."
+msgstr "إكتشف الشكر و الإمتنان في وعود الله."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "هذه الكلمة حية اتركها تتحدث إليك كل يوم."
+msgstr "هذه الكلمة حيّة دعها تتحدث معك كل يوم."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
-msgstr "كلمة الله تجعل كل شئ جديدًا."
+msgstr "تجعل كلمة الله كل شئٍ جديدٍ."
 
 msgid "moment.friendship.self.title"
 msgstr "لقد أصبحت صديق مع <b>{friend_name}</b>"
@@ -129,6 +129,12 @@ msgstr "لقد أنهيت خطة قراءة"
 msgid "moment.plan_completion.title"
 msgstr "{name} انتهى من خطة قراءة"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "لقد أكملت خطة القراءة, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "أكمل {name} خطة قراءة، <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "يوم {segment} من {total_segments} ({percent_complete}%)"
 
@@ -143,6 +149,12 @@ msgstr "انت بدأت خطة قراءة جديدة"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} بدأ خطة قراءة جديدة"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "لقد بدأت خطة قراءة جديدة, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "بدأ {name} خطة قراءة جديدة، <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "شاهد <i>سلسلة الكتاب المقدس</i>الليلة!"

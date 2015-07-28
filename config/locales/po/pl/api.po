@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-29 16:05-0600\n"
-"PO-Revision-Date: 2015-03-29 16:05-0600\n"
+"POT-Creation-Date: 2015-07-13 10:03-0609\n"
+"PO-Revision-Date: 2015-07-13 10:03-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pl <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -66,6 +66,12 @@ msgstr "Przygotuj się na Boże Narodzenie z Adwentowym Planem Biblii"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Odśwież swoją wiarę z nowymi planami."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Znajdź mądrość w słowie Bożym codziennie."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Przygotuj swoje serce w tym sezonie."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Znajdź swój ulubiony Plan Biblii na luty!"
 
@@ -83,6 +89,15 @@ msgstr "Oddawaj się codziennie poszukiwaniu Boga w Jego Słowie."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "W 2015 czytaj Biblię codziennie. Plany pomogą!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Odkryj wdzięczność w obietnicach Bożych."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "To słowo jest żywe. Pozwól, aby przemawiało do ciebie codziennie."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Słowo Boże sprawia, że wszystko jest nowe."
 
 msgid "moment.friendship.self.title"
 msgstr "Jesteś teraz znajomym <b>{friend_name}</b>"
@@ -114,6 +129,12 @@ msgstr "Ukończył plan"
 msgid "moment.plan_completion.title"
 msgstr "{name} ukończył plan"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Zakończyłeś(aś) plan, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} zakończenie planu, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Dzień {segment} z {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Rozpoczął plan"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} rozpoczął plan"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Zacząłeś/zaczęłaś nowy plan, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} zacząłeś/zaczęłaś, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Oglądnij <i>serial Biblia</i> dzisiaj wieczorem!"
