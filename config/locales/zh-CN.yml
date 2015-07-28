@@ -524,6 +524,7 @@ zh-CN:
         vod_subscription success: "您已成功更新了今日经文的订阅！"
         vod_subscription failure: "抱歉，在更新您今日经文的订阅时出了一点状况。"
         daily email delivery: "每日电邮传递"
+        vod_not_subscribed: "您没有订阅任何每日经文的电子邮件。如果您要订阅请登录"
         time: "时间"
         daily push notifications: "行动应用程序的每日推送通知"
         subscribe: "订阅"

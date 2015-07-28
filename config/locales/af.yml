@@ -535,6 +535,7 @@ af:
         vod_subscription success: "Jy het jou \"Vers vir die Dag\" intekening suksesvol opgedateer!"
         vod_subscription failure: "Jammer, daar was 'n probleem met die opdatering van jou Verse van die Dag intekening."
         daily email delivery: "Daaglikse epos aflewering"
+        vod_not_subscribed: "Jy is nie ingeskryf op enige vers van die dag eposse nie. Teken asseblief in as jy wil inskryf."
         time: "Tyd"
         daily push notifications: "Daaglikse kennisgewings vir mobiele apps"
         subscribe: "Teken In"

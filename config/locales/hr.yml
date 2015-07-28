@@ -557,6 +557,7 @@ hr:
         vod_subscription success: "Pretplata na stih dana je uspješno ažurirana!"
         vod_subscription failure: "Nažalost, došlo je do problema kod ažuriranja pretplate na stih dana."
         daily email delivery: "Svakodnevna isporuka maila"
+        vod_not_subscribed: "Nema pretplate na email za stih dana. Ako se želiš pretplatiti, molimo prijavi se."
         time: "Vrijeme"
         daily push notifications: "Svakodnevno slanje obavijesti za mobilne aplikacije"
         subscribe: "Pretplati se"

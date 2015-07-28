@@ -579,6 +579,7 @@ ar:
         vod_subscription success: "لقد حَدثت بنجاح إشتراكك في خدمة آية اليوم."
         vod_subscription failure: "عفواً, طرأت مشكلة خلال تحديث إشتراكك في خدمة آية اليوم."
         daily email delivery: "تسليم البريد الإلكتروني اليومي"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "الوقت"
         daily push notifications: "تنبيهات يوميّة لتطبيقات الجوال"
         subscribe: "الإشتراك"

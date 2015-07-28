@@ -535,6 +535,7 @@ sq:
         vod_subscription success: "Ju e përditësuat me sukses pajtimin e Vargut të Ditës!"
         vod_subscription failure: "Na vjen keq, pati një problem me përditësimin e pajtimit të Vargut të Ditës."
         daily email delivery: "Dorëzim me e-postë përditë"
+        vod_not_subscribed: "Ju nuk jeni pajtuar në asnjë nga e-postat e vargut të ditës. Nëse dëshironi të pajtoheni, hyni në llogarinë tuaj."
         time: "Koha"
         daily push notifications: "Njoftime 'push' përditë për aplikacione të lëvizshme"
         subscribe: "Pajtohu"

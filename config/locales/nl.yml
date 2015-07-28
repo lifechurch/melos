@@ -535,6 +535,7 @@ nl:
         vod_subscription success: "Je hebt de instellingen voor Vers van de Dag met succes aangepast!"
         vod_subscription failure: "Excuses, er was een probleem bij het aanpassen van je Vers van de Dag instellingen."
         daily email delivery: "Dagelijkse e-mailbezorging"
+        vod_not_subscribed: "U bent niet aangemeld voor de Vers van de Dag e-mails. Log alstublieft in als u zich hiervoor wilt aanmelden."
         time: "Tijd"
         daily push notifications: "Dagelijkse push melding voor mobiele apps"
         subscribe: "Aanmelden"

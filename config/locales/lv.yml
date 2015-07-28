@@ -546,6 +546,7 @@ lv:
         vod_subscription success: "Tu esi veiksmīgi atjaunojis savu Dienas Panta abonementu!"
         vod_subscription failure: "Atvaino, radās problēma, atjaunojot Tavu Dienas Panta abonementu."
         daily email delivery: "Dienas e-pasta piegāde"
+        vod_not_subscribed: "Tu neesi pierakstījies dienas panta e-pastiem. Ja vēlies to darīt, lūdzu, ielogojies."
         time: "Laiks"
         daily push notifications: "Ikdienas atgādinājums mobilajām aplikācijām"
         subscribe: "Abonēt"

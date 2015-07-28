@@ -524,6 +524,7 @@ ko:
         vod_subscription success: "오늘의 말씀 구독 내용 업데이트를 완료했습니다."
         vod_subscription failure: "죄송합니다.  오늘의 말씀 구독 내용을 업데이트하는 중 오류가 발생했습니다."
         daily email delivery: "매일 이메일 전송"
+        vod_not_subscribed: "아직 이메일로 구독하고 있는 오늘의 말씀이 없습니다. 구독을 원하시면 신청하세요."
         time: "시간"
         daily push notifications: "모바일 앱에 있는  매일 자동알림 수신"
         subscribe: "수신"

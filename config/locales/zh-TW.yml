@@ -524,6 +524,7 @@ zh-TW:
         vod_subscription success: "您已成功更新您的今日經文訂閱！"
         vod_subscription failure: "抱歉， 更新您的今日經文訂閱時出錯。"
         daily email delivery: "每日電郵傳遞"
+        vod_not_subscribed: "您還没有訂閱每日經文的電子郵件。如果您想訂閱，請登入帳戶。"
         time: "時間"
         daily push notifications: "行動軟體的每日推送通知"
         subscribe: "訂閱"

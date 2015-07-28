@@ -405,7 +405,7 @@ de:
         user wants friendship: "%{user} möchte mit dir befreundet sein"
         user wants friendship partial: "möchte mit dir befreundet sein"
         form: 
-            remove friend button: "Freund entfernen"
+            remove friend button: "Freund(in) entfernen"
             remove friend button title: "Entferne diese Person von deiner Freundesliste"
             add friend button: "Als Freund/in hinzufügen"
             add friend button short: "Hinzufügen"
@@ -535,6 +535,7 @@ de:
         vod_subscription success: "Du hast dein Abo für den \"Vers des Tages\" erfolgreich aktualisiert!"
         vod_subscription failure: "Es tut uns leid, aber es gab ein Problem beim Aktualisieren des Abonnements für den Vers des Tages."
         daily email delivery: "Täglicher E-Mail-Versand"
+        vod_not_subscribed: "Du hast nicht die E-Mails mit dem Vers des Tages abonniert. Wenn Du abonnieren willst, melden Dich bitte an."
         time: "Uhrzeit"
         daily push notifications: "Tägliche Push-Nachrichten für mobile Apps"
         subscribe: "Abonnieren"

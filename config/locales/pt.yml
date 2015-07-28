@@ -535,6 +535,7 @@ pt:
         vod_subscription success: "Você atualizou com sucesso sua inscrição no Versículo do Dia!"
         vod_subscription failure: "Desculpe, mas houve um problema ao atualizar sua inscrição no Versículo do Dia."
         daily email delivery: "Entrega de e-mail diária"
+        vod_not_subscribed: "Você não está inscrito em nenhum e-mail do versículo do dia. Se você deseja se inscrever, por favor faça login."
         time: "Hora"
         daily push notifications: "Notificações push diárias para apps móveis"
         subscribe: "Inscrever-se"

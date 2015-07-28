@@ -524,6 +524,7 @@ ms:
         vod_subscription success: "Anda telah berjaya mengemaskini langganan Ayat Hari Ini anda!"
         vod_subscription failure: "Maaf, terdapat masalah untuk mengemaskini langganan Ayat Hari Ini anda."
         daily email delivery: "Penghantaran e-mel harian"
+        vod_not_subscribed: "Anda tidak melanggan sebarang e-mel untuk ayat harian. Jika anda berminat untuk melanggan, sila log masuk."
         time: "Masa"
         daily push notifications: "Notifikasi push harian untuk aplikasi mudah alih"
         subscribe: "Langgan"
@@ -988,7 +989,7 @@ ms:
         download: "Download Sekarang"
         banner title: "App Alkitab"
         banner action: "Download"
-        banner open: "Open"
+        banner open: "Buka"
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
@@ -1072,11 +1073,11 @@ ms:
         mobile web: "Web Mobil"
         amazon: "Kindle Fire"
         free overlay: "100% Percuma"
-        sms button: "Text me a link"
-        sms error: "Sorry, something went wrong. Please try again."
-        sms success: "Great! Check your mobile device for the link."
-        sms info: "You will receive a one time SMS to download the app"
-        sms download: "Click to download the Bible App:"
+        sms button: "Hantarkan link melalui teks"
+        sms error: "Harap maaf, kesilapan telah berlaku. Sila cuba lagi."
+        sms success: "Hebat! Sila cek peranti mudah alih anda untuk link."
+        sms info: "Anda akan menerima SMS untuk memuat turun app"
+        sms download: "Sila klik untuk memuat turun App Alkitab:"
     pages: 
         generic_error: 
             title: "Maaf!"

@@ -524,6 +524,7 @@ km:
         vod_subscription success: "លោក​អ្នក​បាន​ធ្វើ​បច្ចុប្បន្ន​ភាពការ​ចុះ​ឈ្មោះ​ទទួល​ខគម្ពីរ​ប្រចាំ​ថ្ងៃ​ដោយ​ជោគ​ជ័យ!"
         vod_subscription failure: "សូម​អភ័យ​ទោស​ មាន​បញ្ហា​ខ្លះ​ៗ​ជា​មួយ​នឹង​ការ​ធ្វើ​បច្ចុប្បន្នភាព ទៅលើ​ការ​ចុះ​ឈ្មោះ​ទទួល​ព្រះ​គម្ពីរ​ប្រចាំ​ថ្ងៃរបស់លោក​អ្នក។"
         daily email delivery: "បញ្ជូន​អ៊ីម៉េល​ប្រចាំ​ថ្ងៃ"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "ពេល"
         daily push notifications: "កម្មវិធី​​ជូន​ដំណឹង​ភ្លាមៗ​ជារៀង​រាល់​ថ្ងៃ"
         subscribe: "ចុះ​ឈ្មោះ"

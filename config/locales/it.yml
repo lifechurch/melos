@@ -535,6 +535,7 @@ it:
         vod_subscription success: "Hai aggiornato con successo la tua sottoscrizione al Versetto del Giorno!"
         vod_subscription failure: "Ci dispiace; c'è stato un problema nell'aggiornamento della tua sottoscrizione al Versetto del Giorno."
         daily email delivery: "Consegna quotidiana e-mail"
+        vod_not_subscribed: "Non ti sei abbonato all'invio di e-mail riguardanti il versetto del giorno. Accedi se vuoi abbonarti."
         time: "Tempo"
         daily push notifications: "Notifiche push quotidiane per app mobili"
         subscribe: "Sottoscrivi"

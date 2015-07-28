@@ -535,6 +535,7 @@ fi:
         vod_subscription success: "Päivän jakeen tilauksesi päivitettiin onnistuneesti!"
         vod_subscription failure: "Pahoittelut, päivitettäessä päivän jakeen tilaustasi tapahtui virhe."
         daily email delivery: "Päivittäinen sähköpostin toimitus"
+        vod_not_subscribed: "Et ole tilannut yhtään Päivän jae -sähköpostia. Jos haluat tilata Päivän jakeen sähköpostiisi, kirjaudu sisään."
         time: "Aika"
         daily push notifications: "Päivittäiset push-ilmoitukset mobiilisovelluksille"
         subscribe: "Tilaa"
