@@ -2,10 +2,13 @@
 //= require angular-ui-router
 //= require angular-sanitize
 //= require angular-animate
+//= require angular-resource
 //= require angular-aria
 //= require vendor/angular-material/angular-material
 //= require main
-//= require references/references
+//= require_tree ./api
+//= require_tree ./references
+//= require vendor/angular-cache/angular-cache
 
 var TEMPLATE_FROM_RAILS = {};
 

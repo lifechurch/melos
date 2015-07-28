@@ -1,4 +1,14 @@
-angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
+angular.module('yv.reader', [ 
+	'reader.chapterList',
+	'reader.reader',
+	'reader.verseAction',
+	'reader.highlightPanel',
+	'reader.verse',
+	'reader.bookList',
+	'api.highlights',
+	'api.versions',
+	'api.bible'
+])
 
 .config([ '$stateProvider', function($stateProvider) {
 	$stateProvider
@@ -10,18 +20,21 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 	;
 }])
 
-.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$http", "$rootScope", "$state", "$sce", "$rootScope", "$timeout", function($scope, $stateParams, $location, $http, $rootScope, $state, $sce, $rootScope, $timeout) {
-	$scope.version = $stateParams.version;
-	$scope.usfm = $stateParams.usfm;
-	$scope.readerFontSize = 19;
-	$scope.readerPlaybackSpeed = 1;
-	$scope.versions = null;
-	$scope.working = false;
-	$scope.isLoggedIn = false;
-	$scope.verseActionOpen = false;
-	$scope.readerSelection = [];
+.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Authentication", "Versions", "Bible", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Authentication, Versions, Bible) {
+	$scope.version 					= $stateParams.version;
+	$scope.usfm 						= $stateParams.usfm;
+	$scope.readerFontSize 			= 19;
+	$scope.readerPlaybackSpeed 	= 1;
+	$scope.versions 					= null;
+	$scope.working 					= false;
+	$scope.isLoggedIn 				= false;
+	$scope.verseActionOpen 			= false;
+	$scope.readerSelection 			= [];
+	$scope.highlights 					= [];
 
 	hideAllPanels();
+	hideAllSidePanels();
+
 
 	$scope.$watch('readerSelection.length', function(newVal, oldVal) {
 		if (oldVal !== newVal) {
@@ -33,82 +46,88 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 		}
 	});
 
+
+	/**
+	 * Hide all the header panels
+	 */
 	function hideAllPanels() {
-		$scope.showReaderAudio = false;
-		$scope.showReaderFont = false;		
-		$scope.showReaderBooks = false;
+		$scope.showReaderAudio 	= false;
+		$scope.showReaderFont 		= false;		
+		$scope.showReaderBooks 	= false;
 	}
 
-	$scope.togglePanel = function(panel) {
-		var originalValue = $scope[panel];
-		hideAllPanels();
-		$scope[panel] = !originalValue;
 
-		if ((panel == "showReaderFont" || panel == "showReaderAudio") && $scope[panel]) {
-			$timeout(function() {
-				$rootScope.$broadcast('reCalcViewDimensions');			
-			}, 50);
-		} else if (panel == "showReaderBooks") {
-			$scope.selectedBook = null;			
-			parseBookLinks();
-		} else if (panel == "showReaderChapters") {
-			parseBookLinks();			
-			if (!$scope.selectedBook) {
-				$scope.showReaderChapters = false;
-				$scope.showReaderBooks = true;
-			}			
-		}
-	};
+	/**
+	 * Hide all the side panels
+	 */
+	function hideAllSidePanels() {
+		$scope.showReaderHighlight 	= false;		
+	}
 
-	$scope.toggleChaptersPanel = function(book) {
-		$scope.selectedBook = book;
-		console.log("Chapter Show", $scope.selectedBook);
-		$scope.togglePanel("showReaderChapters");
-	};
 
+	/**
+	 * Load bible chapter from url path
+	 */
 	function loadChapter(location_path) {
-		$scope.working = true;
-		$scope.showReaderBooks = false;
+
+		// Reset some scope vars
+		$scope.working 				= true;
+		$scope.showReaderBooks 	= false;
 		$scope.showReaderChapters = false;
-		$scope.readerSelection = [];		
+		$scope.readerSelection 		= [];		
+		$scope.highlights 				= [];
 
-		$http.get(location_path, { cache: true, responseType: 'json', headers: { 'Accept' : 'application/json' } })
-
-		.success(function(data, status, headers, config) {
+		Bible.getChapter(location_path).success(function(data, status, headers, config) {
 			fillScope(data);
 			$scope.working = false;
-		})
-
-		.error(function(data, status, headers, config) {
+		}).error(function(data, status, headers, config) {
 			//TO-DO: Handle Error!
 			$scope.working = false;			
 		});
 	}
 
+
+	/**
+	 * Fetch list of versions from server 
+	 */
 	function loadVersions() {
-		$http.get('/versions', { params: { "context_version": $scope.version_id }, cache: true, responseType: 'json', headers: { 'Accept' : 'application/json' } })
-
-		.success(function(data, status, headers, config) {
+		Versions.get($scope.version).success(function(data, status, headers, config) {
 			fillScope(data);
 			$scope.working = false;
-		})
-
-		.error(function(data, status, headers, config) {
+		}).error(function(data, status, headers, config) {
 			//TO-DO: Handle Error!
 			$scope.working = false;			
 		});
 	}
 
+
+	/**
+	 * Take all the key/value pairs from an
+	 *  object and make them available as 
+	 *  part of $scope
+	 */
 	function fillScope(newScope) {
 		angular.extend($scope, newScope);
+
+		//TO-DO: Make Audio Directive
 		if ($scope.reader_audio && $scope.reader_audio.url) {
 			var player = document.getElementById("reader_audio_player");
 			player.src = $sce.trustAsResourceUrl($scope.reader_audio.url);
-			//player.load();
-			//player.playbackRate = 2;
 		}
+
+		Highlights.get($scope.version, $scope.usfm).success(function(data) {
+			$scope.highlights = data;
+		}).error(function(err) {
+			//TO-DO: Handle Error
+		});
+
 	}
 
+
+	/**
+	 * Get list of books for this version from 
+	 *  the HTML generated server-side
+	 */
 	function parseBookLinks() {
 		if (!$scope.reader_book_list || $scope.reader_book_list.length == 0) {
 			var reader_book_children = angular.element(document.getElementById("reader_book_list")).children();
@@ -132,184 +151,102 @@ angular.module('yv.references', [ 'ui.router', 'ngSanitize' ])
 				});
 			}
 		}
-	}
+	}	
 
+	/**
+	 * Use this method to toggle header panels
+	 * Possible values are:
+	 *  - showReaderFont
+	 *  - showReaderAudio
+	 *  - showReaderBooks
+	 *  - showReaderChapters
+	 */
+	$scope.togglePanel = function(panel) {
+		var originalValue = $scope[panel];
+		hideAllPanels();
+		$scope[panel] = !originalValue;
+
+		if ((panel == "showReaderFont" || panel == "showReaderAudio") && $scope[panel]) {
+
+		} else if (panel == "showReaderBooks") {
+			$scope.selectedBook = null;
+			parseBookLinks();
+		} else if (panel == "showReaderChapters") {
+			parseBookLinks();
+			if (!$scope.selectedBook) {
+				$scope.showReaderChapters 	= false;
+				$scope.showReaderBooks 		= true;
+			}			
+		}
+	};
+
+
+	/**
+	 * Use this method to toggle side panels
+	 * Possible values are:
+	 *  - showHighlightPanel
+	 */
+	$scope.toggleSidePanel = function(panel) {
+		var originalValue = $scope[panel];
+		hideAllSidePanels();
+		$scope[panel] = !originalValue;
+	};
+
+
+	/**
+	 * This panel has its own toggle method so
+	 * we can ensure a book has been selected
+	 * before opening book panel
+	 */
+	$scope.toggleChaptersPanel = function(book) {
+		$scope.selectedBook = book;
+		$scope.togglePanel("showReaderChapters");
+	};
+
+
+	// Load data from page variable or ajax
 	if (TEMPLATE_FROM_RAILS.hasOwnProperty($location.path())) {
 		fillScope(TEMPLATE_FROM_RAILS[$location.path()]);
 	} else {
 		loadChapter($location.path());
 	}
 
+
+	/**
+	 * Don't reload controller of navigating back to this same state, instead
+	 * just make the new chapter call and switch the URL in the browser
+	 */
 	var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 		if (toState.name == fromState.name) {
+
+			// Stop State Change
 			event.preventDefault();
+
+			// Get new scope values from params
+			$scope.version 	= toParams.version;
+			$scope.usfm 		= toParams.usfm;
+
+			// Fetch new data
 			loadChapter($state.href(toState, toParams));
-			$state.go(toState, toParams, { notify: false});
+
+			// Switch to the new URL without loading the controller again
+			$state.go(toState, toParams, { notify: false});			
+
 		} else {
+
+			// If we're going somewhere else, disconnect this listener
 			stopListener();
 		}
 	});
 
-	$timeout(function() {
-		$http.get('/isLoggedIn', {responseType: 'json', headers: { 'Accept' : 'application/json' } } )
 
-		.success(function(data){
-			if (data === true) {
-				$scope.isLoggedIn = true;
-			}
-		})
-
-		.error(function(data) {
-
-		});
-
-	}, 100);
-}])
-
-.directive("readerChapterList", function() {
-	return {
-		restrict: 'A',
-		scope: {
-			selectedBook: '='
-		},
-		controller: ["$scope", function($scope) {	
-		}],
-		templateUrl: '/reader-chapter-selector.tpl.html'
-	};
-})
-
-.directive("reader", function() {
-	return {
-		restrict: 'A',
-		scope: {
-			content: '=',
-			selection: '=',
-			fontSize: '=',
-			fontFamily: '=',
-			showFootnotes: '=',
-			showCrossReferences: '=',
-			showNumbersAndTitles: '='
-		},
-		controller: ["$scope", function($scope) {	
-		}],
-		templateUrl: '/reader.tpl.html'
-	};
-})
-
-.directive("verseAction", function() {
-	return {
-		restrict: 'A',
-		scope: {
-			selection: '=',
-			isOpen: '='
-		},
-		templateUrl: '/reader-verse-action.tpl.html'
-	}
-})
-
-.directive('ngHtmlCompile', function($compile) {
-	return {
-		restrict: 'A',
-		link: function(scope, element, attrs) {
-			scope.$watch(attrs.ngHtmlCompile, function(newValue, oldValue) {
-				element.html(newValue);
-				$compile(element.contents())(scope);
-			});
+	Authentication.isLoggedIn('/isLoggedIn').success(function(data) {
+		if (data === true) {
+			$scope.isLoggedIn = true;
 		}
-	};
-})
-
-.directive("verse", function() {
-	return {
-		restrict: 'C',
-		link: function(scope, element) {
-			element.on('mouseup', function(event) {
-				element.toggleClass("selected");
-				if (!scope.selection) {
-					scope.selection = [];
-				}
-				scope.$apply(function() { 
-					if (element.hasClass("selected")) {
-						scope.selection.push(element[0].dataset.usfm); 
-					} else {
-						scope.selection.splice(scope.selection.indexOf(element[0].dataset.usfm), 1);
-					}
-				});
-			});
-		},
-	};
-})
-
-.directive("readerBookList", function() {
-	return {
-		restrict: 'A',
-		scope: {
-			books: '=',
-			booksPerColumn: '=',
-			maxColumns: '=',
-			displayMode: '=', //traditional or alphabetic/
-			filter: '=',
-			sort: '=',
-			version: '=',
-			selectedBook: '=',
-			onBookSelected: '='
-		},
-		controller: ["$scope", function($scope) {
-			var booksPerColumn;
-			if (!$scope.booksPerColumn) { $scope.booksPerColumn = 16; }	
-			if (!$scope.maxColumns) { $scope.maxColumns = 5; }
-			if (!$scope.displayMode) { $scope.displayMode = "alphabetic"; }
-
-			$scope.filterBook = function(filter, book) {
-				return typeof(filter) === 'undefined' || filter === null || filter == "" || book.toLowerCase().indexOf(filter.toLowerCase()) > -1;
-			};
-
-			$scope.showChapters = function(book) {
-				$scope.selectedBook = book;
-				if ($scope.onBookSelected && typeof $scope.onBookSelected === 'function') {
-					$scope.onBookSelected(book);
-				}
-			};
-
-			$scope.$watchGroup(["books", "sort"], function(oldVal, newVal) {
-				if (oldVal != newVal) {
-					var books = angular.copy($scope.books);
-					if (books.length / $scope.booksPerColumn > $scope.maxColumns) {
-						booksPerColumn = Math.ceil(books.length / $scope.maxColumns);
-					} else {
-						booksPerColumn = $scope.booksPerColumn;
-					}
-
-					if ($scope.sort) {
-						books.sort(function(a, b) {
-							return (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : 1;
-						});
-					}
-
-					$scope.columns = [];
-					var currentColumnIndex = 0;
-					var currentColumnCount = 0;
-					for(var i = 0; i < books.length; i++) {
-				
-						if (!$scope.columns[currentColumnIndex]) {
-							$scope.columns[currentColumnIndex] = [];
-						}
-
-						currentColumnCount++;
-						$scope.columns[currentColumnIndex].push(books[i]);
-
-						if (currentColumnCount == $scope.booksPerColumn) {
-							currentColumnIndex++;
-							currentColumnCount = 0;
-						}
-					}
-
-					$scope.foundationColumnSize = "text-left columns medium-" + (Math.floor(12 / $scope.columns.length)).toString();
-				}
-			});	
-		}],
-		templateUrl: '/reader-book-selector.tpl.html'
-	};	
-})
+	}).error(function(data) {
+		//TO-DO: Handle Error
+	});
+}])
 
 ;

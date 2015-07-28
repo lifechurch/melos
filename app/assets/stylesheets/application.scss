@@ -1,6 +1,5 @@
 @import "vendor/angular-material/angular-material";
 @import "foundation_and_overrides";
-@import "vendor/angular-slider/angular-slider";
 
 $green: #6ab750;
 $red: #CC0000;
@@ -363,6 +362,7 @@ a.icon {
   border-radius:          20px;
   z-index: 100;
   position: relative;
+  border: solid 1px #ddd;
 }
 
 .hdr-profile-name {
@@ -539,6 +539,52 @@ input {
   }
 }
 
+.solid-button {
+  @include button(
+    // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
+    $padding: rem-calc(2),
+    // Background color. We can set $bg:false for a transparent background. Default: $primary-color.
+    $bg: false,
+    // If true, set to button radius which is $global-radius or explicitly set radius amount in px (ex. $radius:10px). Default:false.
+    $radius: true,
+    // We can set $full-width:true to remove side padding extend width. Default:false
+    $full-width: false,
+    // We can set $disabled:true to create a disabled transparent button. Default:false
+    $disabled: false
+  );
+  
+  font-size: rem-calc(14);
+  padding: rem-calc(10 15);
+  border: none;
+
+  &:hover {
+    background-color: $primary-color !important;
+    color: #ffffff !important;
+  }
+
+  &.green {
+    background-color: $green !important;
+    color: #ffffff !important;  	
+
+    &:hover {
+      background-color: lighten($green, 15%) !important;
+      color: darken(#ffffff, 5%) !important;    	
+    }
+  }
+
+  @media #{$large-up} {
+    margin-right: rem-calc(20) !important;   
+  }
+
+  @media #{$medium-only} {
+    margin-right: rem-calc(10) !important; 
+  }    
+
+  @media #{$medium-small-only} {
+    padding: rem-calc(5 5);    
+  }
+}
+
 .hidden {
   display: none !important;
 }
@@ -646,4 +692,11 @@ div[verse-action] {
 	bottom: 0;
 	right: 0;
 	padding: rem-calc(23 12 23 15);
+}
+
+.colorButton {
+	width: rem-calc(60);
+	float: left;
+	height: rem-calc(60);
+	cursor: pointer;
 }

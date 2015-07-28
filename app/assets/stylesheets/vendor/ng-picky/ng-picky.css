@@ -1,0 +1,245 @@
+/* ng-picky v0.1.2 | (c) 2015 Dan Prince | MIT */
+/* Picker CSS */
+
+/* Table of Contents
+ * -----------------
+ * #1 - Main Element Styles
+ * #2 - Generic Canvas Styles
+ * #3 - Generic Input Styles
+ * #4 - Generic Cursor Styles
+ * #5 - Component Styles
+ * #6 - Hue Space Components
+ * #7 - Main Square Canvas
+ * #8 - Misc Components
+ * #9 - BugFixes
+ */
+
+/* #1 - Main Element Styles */
+/* ------------------------ */
+.picker {
+  font-size:1.5rem; /* 1.5rem */
+  padding:0.5em;
+  background:#333;
+  box-shadow:0 3px 5px rgba(0, 0, 0, 0.1);
+
+  /* let user style width */
+  width:300px;
+
+  user-select:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+}
+
+
+/* #2 - Generic Canvas Styles */
+/* -------------------------- */
+.picker canvas {
+  cursor:crosshair;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* #3 - Generic Input Styles */
+/* ------------------------- */
+.picker input[type=text] {
+  font-size:16px; /* 1rem */
+  background:#222;
+  color:#aaa;
+  border:none;
+  width:100%;
+  padding:0.5em;
+  text-transform:uppercase;
+
+  user-select:text;
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+
+  border-radius:0.2em;
+  -webkit-border-radius:0.2em;
+  -moz-border-radius:0.2em;
+
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+
+/* #4 - Generic Cursor Styles */
+/* -------------------------- */
+.picker-cursor {
+  font-style:normal;
+  text-rendering:auto;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  pointer-events:none;
+}
+
+/* #5 - Component Styles */
+/* --------------------- */
+
+  /* #5.1 - Colorspace Wrapper */
+  .picker-wrapper {
+    position:relative;
+    /* Make space for right hand side element */
+    padding-right:1.8em;
+    /* Don't allow to be selected */
+    user-select:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+  }
+
+  /* #5.2 - Simple Row Class
+   * Provides row-like functionality for
+   * input elements in the form */
+  .picker-row {
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* #5.3 - Three Columns
+   * One third width columns for
+   * input elements in the form
+   */
+  .picker-three {
+    position:relative;
+    float:left;
+    width:33.33% !important;
+    padding-right:0.25em;
+
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+  }
+
+
+/* ------------------------- */
+/* #6 - Hue Space Components */
+/* ------------------------- */
+
+/* #6.1 Sidebar */
+.picker-huespace {
+  position:absolute;
+  right:0;
+  top:0;
+  width:0.7em;
+  height:100%;
+}
+
+/* #6.2 Huespace Canvas */
+.picker-huespace canvas {
+  cursor:crosshair;
+  background:white;
+}
+
+/* #6.3 Cursor next to sidebar */
+.picker-huespace .picker-cursor {
+  position:absolute;
+  top:0;
+  left:0;
+  font-size:0.8em;
+  color:#5b5b5b;
+
+  /* tweak cursor into place */
+  margin-left:-0.8em;
+  margin-top:-0.65em;
+}
+
+/* ----------------------- */
+/* #7 - Main Square Canvas */
+/* ----------------------- */
+
+/* #7.1 Square container */
+.picker-colorspace {
+  width:8.5em;
+  width:auto;
+  height:8.5em;
+  height:auto;
+}
+
+/* #7.2 Cursor above main square */
+.picker-colorspace .picker-cursor {
+  position:absolute;
+  top:0;
+  left:0;
+  color:#f3f3f3;
+  font-size:1.5em;
+
+  /* tweak cursor into place */
+  line-height:0;
+  margin-left:-0.3em;
+  margin-top:-0.05em;
+}
+
+/* #7.3 Cursor */
+.picker-colorspace canvas {
+  background:white;
+}
+
+/* #8 - Misc Components */
+/* -------------------- */
+
+/* #8.1 Generic styles for (pre|suf)fixes. */
+.picker-prefix, .picker-suffix {
+  position:absolute;
+  top:0;
+  color:#444;
+  line-height:1.75em;
+}
+
+/* #8.2 Position prefix */
+.picker-prefix {
+  left:0.25em;
+}
+/* #8.3  Position suffix */
+.picker-suffix {
+  right:0.25em;
+}
+
+.picker-input {
+  margin-top:0.3em;
+}
+
+/* Ensure that inputs within columns
+ * don't expand to 100% width and
+ * clobber the padding */
+.picker-three input[type=text] {
+  width:auto;
+}
+
+/* Make room for prefixes */
+.picker-prefix + input[type=text] {
+  padding-left:1.5em !important;
+}
+
+/* Make room for suffixes */
+.picker-suffix + input[type=text] {
+  padding-right:1.5em !important;
+}
+
+/* Placeholder styles for all browsers */
+.picker-input input[type=text]::-webkit-input-placeholder {
+  color:#555;
+}
+.picker-input input[type=text]::-moz-placeholder {
+  color:#555;
+}
+.picker-input input[type=text]:-moz-placeholder {
+  color:#555;
+}
+.picker-input input[type=text]::-ms-input-placeholder {
+  color:#555;
+}
+
+
+/* #9 - Bug Fixes */
+/* -------------- */
+
+  /* #5.1 - Foundation uses border-box */
+  .picker, .picker *:after, .picker *:before {
+    box-sizing:content-box !important;
+    -webkit-box-sizing:content-box !important;
+    -moz-box-sizing:content-box !important;
+  }

@@ -77,38 +77,21 @@
   .medium-1.large-3.columns
     %br
   .medium-10.large-6.columns
-    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily"}
+    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights"}
       = presenter.content.html_safe if presenter.content
       .copyright
         = (version.blurb || version.copyright).try :html_safe
   .medium-1.large-3.columns
-    %br
-    %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen" }
-    
-%script{'type' => 'text/ng-template', 'id' => '/reader.tpl.html'}
-  %div{ "ng-style" => "{ 'font-size': fontSize + 'px', 'font-family': fontFamily}", "ng-html-compile"=>"content" }
+    %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel" }
+    %div.ng-hide{"ng-show"=>"isLoggedIn"}
+      %span{"ng-show" => "readerSelection.length"}
+        %b{"ng-bind" => "readerSelection.length"}
+        =" verses selected"
+      %div{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "version", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights"}
 
-%script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
-  %md-fab-speed-dial{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'"}  
-    %md-fab-actions
-      %md-button.md-fab.md-raised.md-mini{"aria-label" => "Note"}
-        %md-tooltip{"md-direction" => "left"} Create a Note
-        %md-icon{"md-svg-src" => "/assets/notes-solid.svg"}
-      %md-button.md-fab.md-raised.md-mini{"aria-label" => "Highlight"}
-        %md-tooltip{"md-direction" => "left"} Highlight
-        %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
-      %md-button.md-fab.md-raised.md-mini{"aria-label" => "Bookmark"}
-        %md-tooltip{"md-direction" => "left"} Bookmark
-        %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
-      %md-button.md-fab.md-raised.md-mini{"aria-label" => "Share"}
-        %md-tooltip{"md-direction" => "left"} Share
-        %md-icon{"md-svg-src" => "/assets/icon-share.svg"}        
-      %md-button.md-fab.md-raised.md-mini{"aria-label" => "Related"}
-        %md-tooltip{"md-direction" => "left"} Related
-        %md-icon{"md-svg-src" => "/assets/icon-related.svg"}          
+-# =render partial: 'shared/js_templates', locals: { reference: reference }
 
-
-    
+  
 -#
   %article#reader.reader{"class" => "#{"mute" if focus_verses && (not a_chapter)} #{"verse-view" if verse_view}",
     "data-setting-font" => client_settings.reader_font,

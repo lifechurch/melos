@@ -1,32 +1,57 @@
 - if is_reader_page? && presenter.present?
-  %script#pane-highlight-tmpl{type:"text/x-handlebars-template"}
+
+  %script{'type' => 'text/ng-template', 'id' => '/reader.tpl.html'}
+    %div{ "ng-style" => "{ 'font-size': fontSize + 'px', 'font-family': fontFamily}", "ng-html-compile"=>"content" }
+
+  %script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
+    %md-fab-speed-dial{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'"}  
+      %md-fab-actions
+        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Note"}
+          %md-tooltip{"md-direction" => "left"} Create a Note
+          %md-icon{"md-svg-src" => "/assets/notes-solid.svg"}
+        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Highlight", "ng-click" => "toggleSidePanel('showReaderHighlight')" }
+          %md-tooltip{"md-direction" => "left"} Highlight
+          %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
+        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Bookmark"}
+          %md-tooltip{"md-direction" => "left"} Bookmark
+          %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
+        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Share"}
+          %md-tooltip{"md-direction" => "left"} Share
+          %md-icon{"md-svg-src" => "/assets/icon-share.svg"}        
+        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Related"}
+          %md-tooltip{"md-direction" => "left"} Related
+          %md-icon{"md-svg-src" => "/assets/icon-related.svg"}
+
+  %script{type:"text/ng-template", id: "/reader-highlight-panel.tpl.html"}
     :plain
-      <div class="tab-panel highlight-pane" id="highlight-pane">
-        <div class="pane">
-          <span class="verse-actions-success-message success" style="display:none;">
-            #{t("highlights.create success")}
-            <div class="post-verse-action-add-comment">
-              <a href="#" class="verse-actions-success-link">
-                #{t("social.add comment")}
-              </a>
+      <div>
+        <span class="success ng-hide">
+          #{t("highlights.create success")}
+        </span>
+        <span class="success ng-hide">
+            <a href="#" class="verse-actions-success-link">
+              #{t("social.add comment")}
+            </a>
+        </span>        
+        <form>
+          <input type="hidden" ng-model="highlight.color" class="selected-color" />
+          <div class="row">
+            <div class="small-12 columns">
+              <div ng-style="{'background-color': '#' + color}" class="colorButton vertical-middle text-center" ng-class="{active: highlight.color == color}" ng-repeat="color in colors" ng-click="highlight.color = color"><span ng-if="highlight.color == color">X</span></div>
+              <div class="colorButton vertical-middle text-center" ng-click="highlight.color = color"><span>+</span></div>
             </div>
-          </span>
-          <form action="/highlights" method="post" id="highlight-form">
-            <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}" />
-            <input type="hidden" name="highlight[version_id]" value="#{presenter.version.id}" />
-            <input type="hidden" name="highlight[usfm_references]" class="references verses_selected_input" />
-            <input type="hidden" name="highlight[color]" class="selected-color" />
-            <div class="color_picker_list">
-              <div class="color_picker"></div>
+          </div>
+          <div class="row pad-head">
+            <div class="small-12 columns">
+              <button type="submit" ng-click="submit(highlight)" value="submit" class="solid-button green">
+                #{t('highlights.form.save button')}
+              </button>
             </div>
-            <button type="submit" name="bookmark[submit]" value="submit" class="action_button_green">
-              #{t('highlights.form.save button')}
-            </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
 
-  %script#pane-bookmark-tmpl{type:"text/x-handlebars-template"}
+  %script#pane-bookmark-tmpl{type:"text/ng-template"}
     :plain
       <div class="tab-panel bookmark-pane" id="bookmark-pane">
         <div class="pane">
@@ -73,7 +98,7 @@
         </div>
       </div>
 
-  %script#pane-note-tmpl{type:"text/x-handlebars-template"}
+  %script#pane-note-tmpl{type:"text/ng-template"}
     #note-pane.tab-panel
       .pane
         %p.verse-actions-success-message.success{style: "display: none;"}
@@ -106,13 +131,13 @@
 
 
 
-  %script#pane-share-tmpl{type:"text/x-handlebars-template"}
+  %script#pane-share-tmpl{type:"text/ng-template"}
     #share-pane.tab-panel
       .pane
         %span#short_link
         %div.addthis_sharing_toolbox{"data-url" => "", "data-title" => ""}
 
-  %script#pane-link-tmpl{type:"text/x-handlebars-template"}
+  %script#pane-link-tmpl{type:"text/ng-template"}
     :plain
       <div class="tab-panel" id="link-pane">
         <div class="pane">
@@ -127,7 +152,7 @@
         </div>
       </div>
 
-  %script#pane-register-tmpl{type:"text/x-handlebars-template"}
+  %script#pane-register-tmpl{type:"text/ng-template"}
     .account.hide.tab-trigger
       = t("registration.with email")
     #need-account.tab-panel
@@ -146,7 +171,7 @@
           %span.email
             = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'action_button_blue'})
 
-  %script#moment-share-layer-tmpl{type:"text/x-handlebars-template"}
+  %script#moment-share-layer-tmpl{type:"text/ng-template"}
     %div.moment-actions-share-box
       %span.moment-actions-share-arrow
         &nbsp;
