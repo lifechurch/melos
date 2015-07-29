@@ -38,10 +38,10 @@
         %h3.inline="Versions"
         %a{"href" => "#", "ng-click" => "cancel()" } Cancel
       .medium-4.columns.text-center
-        %input{"ng-model" => "bookFilter", "type" => "text"}
+        %input{"ng-model" => "versionFilter", "type" => "text"}
       .medium-4.columns.text-right        
         %br
-    %div{"reader-version-list" => true, "versions" => "reader_version_list" }
+    %div{"reader-version-list" => true, "versions" => "reader_version_list", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel" }
 
   #reader-chapter-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderChapters" }
     .row.full.scroll
@@ -63,11 +63,13 @@
 
   %script{'type' => 'text/ng-template', 'id' => '/reader-version-selector.tpl.html'}
     .row.full
-      %div{"ng-repeat" => "version in versions"}
-        %ul.side-nav{:role => "navigation"}
-          %li.menuitem
-            %a{:href => "#", "ng-click" => "showChapters(version)", "ng-if" => "!version.labelOnly"}
-              = "{{version.title}}"
+      .small-12.columns.text-left
+        %div{"ng-repeat" => "version in versions | filter: filter"}
+          %ul.side-nav{:role => "navigation"}
+            %li.menuitem
+              %a{"ng-click" => "loadVersion(version.version)", "href" => "#"}
+                %b {{version.abbrev | uppercase}} 
+                {{version.title}}
 
   %script{'type' => 'text/ng-template', 'id' => '/reader-book-selector.tpl.html'}
     .row.full

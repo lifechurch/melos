@@ -4,13 +4,19 @@ angular.module("reader.versionList", [])
 	return {
 		restrict: 'A',
 		scope: {
-			versions: '='
+			versions: '=',
+			filter: '=',
+			usfm: '=',
+			togglePanel: '='
 		},
-		controller: ["$scope", function($scope) {
-			console.log("VV", $scope);
+		controller: ["$scope", "$state", function($scope, $state) {
+			$scope.loadVersion = function(version) {
+				$scope.togglePanel('showReaderVersions');
+				$scope.filter = "";
+				$state.go("reader", { usfm: $scope.usfm, version: version });
+			}
 		}],
 		templateUrl: '/reader-version-selector.tpl.html'
-		//template: angular.element(document.getElementById("reader-versions-panel")).html(),		
 	};
 })
 
