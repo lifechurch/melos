@@ -7,7 +7,7 @@ set :scm, :git
 set :pty, true
 set :keep_releases, 5
 set :rvm_type, :user
-set :rvm_ruby_version, 'ruby-1.9.3-p551@youversion-web'
+set :rvm_ruby_version, 'ruby-2.2.2@youversion-web'
 
 set :branch, ENV.fetch('BRANCH', 'master')
 

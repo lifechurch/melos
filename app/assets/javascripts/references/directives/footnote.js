@@ -1,10 +1,10 @@
 angular.module('reader.Footnote', [])
 
-.directive('readerFootnote', [function() {
+.directive('readerFootnote', function() {
 	return {
-		
+
 	}
 	
-}])
+})
 
 ;
