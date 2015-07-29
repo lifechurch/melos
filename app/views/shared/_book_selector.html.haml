@@ -31,6 +31,18 @@
                 - if is_current_book
                   %a{href: chapter_url}
                     = chapter_name
+
+  #reader-chapter-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderVersions" }
+    .row.full
+      .medium-4.columns.text-left
+        %h3.inline="Versions"
+        %a{"href" => "#", "ng-click" => "cancel()" } Cancel
+      .medium-4.columns.text-center
+        %input{"ng-model" => "bookFilter", "type" => "text"}
+      .medium-4.columns.text-right        
+        %br
+    %div{"reader-version-list" => true, "versions" => "reader_version_list" }
+
   #reader-chapter-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderChapters" }
     .row.full.scroll
       .medium-12.columns
@@ -48,6 +60,14 @@
           %input#exampleCheckboxSwitch{:type => "checkbox", "ng-model" => "sort", "value" => "alphabetic"}
             %label{:for => "exampleCheckboxSwitch"}
     %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version", "selected-book"=>'selectedBook', "ng-hide" => 'selectedBook', 'on-book-selected' => 'toggleChaptersPanel'}
+
+  %script{'type' => 'text/ng-template', 'id' => '/reader-version-selector.tpl.html'}
+    .row.full
+      %div{"ng-repeat" => "version in versions"}
+        %ul.side-nav{:role => "navigation"}
+          %li.menuitem
+            %a{:href => "#", "ng-click" => "showChapters(version)", "ng-if" => "!version.labelOnly"}
+              = "{{version.title}}"
 
   %script{'type' => 'text/ng-template', 'id' => '/reader-book-selector.tpl.html'}
     .row.full

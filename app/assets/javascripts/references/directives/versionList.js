@@ -4,11 +4,13 @@ angular.module("reader.versionList", [])
 	return {
 		restrict: 'A',
 		scope: {
-			selectedVersion: '='
+			versions: '='
 		},
-		controller: ["$scope", function($scope) {	
+		controller: ["$scope", function($scope) {
+			console.log("VV", $scope);
 		}],
-		template: angular.element(document.getElementById("reader-versions-panel")).html(),		
+		templateUrl: '/reader-version-selector.tpl.html'
+		//template: angular.element(document.getElementById("reader-versions-panel")).html(),		
 	};
 })
 

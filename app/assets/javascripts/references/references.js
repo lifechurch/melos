@@ -1,5 +1,6 @@
 angular.module('yv.reader', [ 
 	'reader.chapterList',
+	'reader.versionList',
 	'reader.reader',
 	'reader.verseAction',
 	'reader.highlightPanel',
@@ -130,8 +131,6 @@ angular.module('yv.reader', [
 	 *  the HTML generated server-side
 	 */
 	function parseBookLinks() {
-		parseVersionLinks();
-
 		if (!$scope.reader_book_list || $scope.reader_book_list.length == 0) {
 			var reader_book_children = angular.element(document.getElementById("reader_book_list")).children();
 			$scope.reader_book_list = [];
@@ -198,6 +197,8 @@ angular.module('yv.reader', [
 				$scope.showReaderChapters 	= false;
 				$scope.showReaderBooks 		= true;
 			}			
+		} else if (panel == "showReaderVersions") {
+			parseVersionLinks();
 		}
 	};
 
