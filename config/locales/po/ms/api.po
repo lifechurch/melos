@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-29 16:05-0600\n"
-"PO-Revision-Date: 2015-03-29 16:05-0600\n"
+"POT-Creation-Date: 2015-07-24 14:49-0609\n"
+"PO-Revision-Date: 2015-07-24 14:49-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ms <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "Bersiap untuk Krismas dengan Pelan Alkitab Adven"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Segarkan iman anda dengan Pelan-Pelan yang baru."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Carilah kebijaksanaan di dalam Firman Tuhan setiap hari."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Persiapkan hati anda musim perayaan ini."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Ketemui Pelan Alkitab kegemaran anda untuk bulan Februari!"
 
@@ -83,6 +89,15 @@ msgstr "Tumpukan diri anda setiap hari untuk mencari Allah dalam Firman-Nya."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Bacalah Alkitab setiap hari dalam 2015. Pelan bacaan pasti membantu anda!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Temui kesyukuran di dalam janji-janji Tuhan."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Perkataan ini hidup. Biarlah ia berkata-kata kepada anda setiap hari."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Firman Tuhan membuat segalanya baru."
 
 msgid "moment.friendship.self.title"
 msgstr "Anda kini bersahabat dengan <b>{friend_name}</b>"

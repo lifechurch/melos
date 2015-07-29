@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-05-18 09:56-0609\n"
-"PO-Revision-Date: 2015-05-18 09:56-0609\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "Bereite dich auf Weihnachten vor - mit einem Leseplan für den Advent"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Belebe deinen Glauben mit neuen Leseplänen."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Entdecke in Gottes Wort jeden Tag Weisheit."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Bereite dein Herz in der Weihnachtszeit vor."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Suche dir einen Plan für Februar aus!"
 
@@ -73,7 +79,7 @@ msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "Tägliche Zeit in Gottes Wort bringt anhaltende Freiheit."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Finde deinen Rhythmus, indem du dich täglich mit dem Wort Gottes Wort beschäftigst."
+msgstr "Finde deinen Rhythmus durch tägliches Bibellesen."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Finde neue Hoffnung und Erneuerung in den Leseplänen im März."
@@ -83,6 +89,15 @@ msgstr "Nimm dir jeden Tag Zeit, um Gott beim Lesen der Bibel zu begegnen."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Lies die Bibel 2015 jeden Tag. Lesepläne helfen!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Entdecke Dankbarkeit gegenüber Gottes Verheißungen."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Dieses Wort ist lebendig. Lass es täglich zu dir sprechen."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Gottes Wort macht alles neu."
 
 msgid "moment.friendship.self.title"
 msgstr "Du bist nun mit <b>{friend_name}</b> befreundet"
@@ -114,6 +129,12 @@ msgstr "Du hast einen Leseplan abgeschlossen."
 msgid "moment.plan_completion.title"
 msgstr "{name} hat einen Leseplan abgeschlossen."
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Du hast deinen Leseplan <b>{title}</b> abgeschlossen."
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} hat den Leseplan <b>{title}</b> abgeschlossen."
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Tag {segment} von {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Du hast einen Leseplan begonnen"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} hat einen Leseplan begonnen."
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Du hast den neuen Leseplan <b>{title}</b> begonnen."
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} hat den Leseplan <b>{title}</b> begonnen."
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Sieh dir heute Abend die <i>Bibel-Serie</i> an!"

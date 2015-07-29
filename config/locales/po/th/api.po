@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-19 13:47-0600\n"
-"PO-Revision-Date: 2015-03-19 13:47-0600\n"
+"POT-Creation-Date: 2015-07-13 10:03-0609\n"
+"PO-Revision-Date: 2015-07-13 10:03-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: th <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -66,6 +66,12 @@ msgstr "เตรียมพร้อมสำหรับช่วงเวล
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "ฟื้นฟูความเชื่อของคุณด้วยแผนการอ่านใหม่ๆ"
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "พบสติปัญญาในพระวจนะของพระเจ้าทุกวัน"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "เตรียมหัวใจของคุณสำหรับฤดูกาลนี้"
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "ลองหาแผนการอ่านสำหรับคุณในเดือนกุมภาพันธ์ดูสิ!"
 
@@ -83,6 +89,15 @@ msgstr "ตั้งใจที่จะแสวงหาพระเจ้า
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "ตั้งใจอ่านพระคัมภีร์รายวันในปี 2015 แผนการอ่านช่วยได้ !"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "ค้นพบความขอบคุณในพระสัญญาของพระเจ้า"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "พระวจนะพระเจ้ายังมีชีวิตอยู่ ให้พระคำของพระเจ้าพูดกับคุณทุกวัน"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "พระวจนะคำของพระเจ้าทำให้ทุกอย่างเป็นสิ่งใหม่"
 
 msgid "moment.friendship.self.title"
 msgstr "ตอนนี้คุณเป็นเพื่อนกับ <b>{friend_name}</b>"
@@ -114,6 +129,12 @@ msgstr "อ่านแผนการอ่านสำเร็จ"
 msgid "moment.plan_completion.title"
 msgstr "{name} อ่านแผนการอ่านสำเร็จแล้ว"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "คุณอ่านแผนการอ่านนี้จบแล้ว, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} ได้อ่านแผนการอ่าน , <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "วันที่ {segment} จาก {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "เริ่มต้นแผนการอ่าน"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} ได้เริ่มต้นแผนการอ่าน"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "คุณได้เริ่มอ่านแผนการอ่านแผนใหม่, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name}  ได้เริ่มแผนการอ่าน,  <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "รับชม <i>เรื่องราวจากพระคัมภีร์</i> ได้คืนนี้!"

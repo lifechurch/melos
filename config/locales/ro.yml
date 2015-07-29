@@ -546,6 +546,7 @@ ro:
         vod_subscription success: "Ți-ai actualizat cu succes abonamentul la Versetul Zilei!"
         vod_subscription failure: "Ne pare rău, a fost o problemă cu actualizarea abonamentului tău la Versetul Zilei."
         daily email delivery: "E-mail zilnic"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "Ora"
         daily push notifications: "Notificări automate zilnice pentru aplicațiile mobile"
         subscribe: "Abonează-te"
@@ -1101,6 +1102,8 @@ ro:
         sms button: "Trimite-mi un link"
         sms error: "Ne pare rău, ceva nu a funcționat. Te rugăm să încerci din nou."
         sms success: "Super! Verifică-ți dispozitivul mobil pentru link."
+        sms info: "Vei primi un SMS unic pentru a descarca aplicatia"
+        sms download: "Apasă pentru a descarca Aplicația Biblia:"
     pages: 
         generic_error: 
             title: "Oops!"

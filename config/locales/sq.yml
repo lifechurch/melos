@@ -535,6 +535,7 @@ sq:
         vod_subscription success: "Ju e përditësuat me sukses pajtimin e Vargut të Ditës!"
         vod_subscription failure: "Na vjen keq, pati një problem me përditësimin e pajtimit të Vargut të Ditës."
         daily email delivery: "Dorëzim me e-postë përditë"
+        vod_not_subscribed: "Ju nuk jeni pajtuar në asnjë nga e-postat e vargut të ditës. Nëse dëshironi të pajtoheni, hyni në llogarinë tuaj."
         time: "Koha"
         daily push notifications: "Njoftime 'push' përditë për aplikacione të lëvizshme"
         subscribe: "Pajtohu"
@@ -1088,6 +1089,8 @@ sq:
         sms button: "Më dërgo një lidhje"
         sms error: "Na falni, diçka nuk shkoi mirë. Ju lutemi provoni sërish."
         sms success: "Shumë mirë! Kontrolloni celularin tuaj për lidhjen."
+        sms info: "Ju do të merrni një SMS të vetme për të shkarkuar aplikacionin"
+        sms download: "Kliko për të shkarkuar Programin e Biblës:"
     pages: 
         generic_error: 
             title: "Ups!"

@@ -524,6 +524,7 @@ id:
         vod_subscription success: "Anda telah berhasil memperbarui langganan Ayat Hari Ini!"
         vod_subscription failure: "Maaf, ada masalah dalam memperbarui langganan Ayat Hari Ini."
         daily email delivery: "Pengiriman email harian"
+        vod_not_subscribed: "Anda tidak berlangganan email ayat hari ini. Silakan daftar bila Anda ingin berlangganan."
         time: "Waktu"
         daily push notifications: "Push notifikasi harian untuk ap seluler"
         subscribe: "Berlangganan"
@@ -1075,6 +1076,8 @@ id:
         sms button: "Sms tautan"
         sms error: "Maaf, telah terjadi kesalahan. Silakan coba lagi."
         sms success: "Mantap! Periksa perangkat seluler Anda untuk tautan."
+        sms info: "Anda akan menerima SMS satu kali untuk mengunduh aplikasi"
+        sms download: "Klik untuk mengunduh Ap Alkitab:"
     pages: 
         generic_error: 
             title: "Duh!"

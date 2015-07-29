@@ -280,9 +280,9 @@ cs:
     home: "Domů"
     bible: "Bible"
     audio bible: "Audio Bible"
-    audio bible app: "Audio Bible App"
-    audio bibles title: "Listen to Audio Bibles"
-    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    audio bible app: "Aplikace audio Bible"
+    audio bibles title: "Poslouchat audio Bible"
+    audio bible meta: "Poslechněte si zdarma online nebo si stáhněte aplikaci Bible a můžete poslouchat Bible na vašem telefonu díky nejlépe hodnocené aplikace Bible."
     language: "Jazyk"
     translation: "Překlad"
     notes title: "Poznámky"
@@ -546,6 +546,7 @@ cs:
         vod_subscription success: "Úspěšně jste změnil nastavení pro odběr verše dne!"
         vod_subscription failure: "Omlouváme se, objevila se chyba během ukládání změn odebírání."
         daily email delivery: "Denní zasílání emailů"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "Čas"
         daily push notifications: "Denní nastavení oznámení pro mobilní aplikace"
         subscribe: "Odebírat"
@@ -601,7 +602,7 @@ cs:
             your information text: "do not translate"
             device id title: "do not translate"
             device id text: "do not translate"
-            cookies title: "do not translate"
+            cookies title: "LifeChurch.tv cookies"
             cookies text: "do not translate"
             log title: "do not translate"
             log text: "do not translate"
@@ -1101,6 +1102,8 @@ cs:
         sms button: "Odeslat SMS odkaz"
         sms error: "Omlouváme se, něco se pokazilo. Prosím zkuste to znovu."
         sms success: "Fajné! Zkontrolujte odkaz na vašem zařízení."
+        sms info: "Obdržíte jednorázovou SMS s odkazem ke stažení aplikace Bible"
+        sms download: "Klikněte ke stažení aplikace Bible:"
     pages: 
         generic_error: 
             title: "Ups!"
@@ -1130,7 +1133,7 @@ cs:
             world installs: "Instalací po celém světě"
         trending verses: 
             title: "Trendy biblických veršů"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
+            headline: "Aktuální biblické verše, které mají vzestupný trend v aplikaci a na Bible.com"
     shared: 
         menu_settings: 
             title: "Nastavení zobrazení"

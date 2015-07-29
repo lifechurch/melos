@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-19 13:47-0600\n"
-"PO-Revision-Date: 2015-03-19 13:47-0600\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_TW <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "以基督降臨為主題的讀經計劃來準備迎接聖誕"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "讓新的讀經計劃更新您的信心。"
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "每天從神的話語裡尋找智慧。"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "趁此節日預備你的心。"
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "尋找二月份裡備受歡迎的讀經計劃！"
 
@@ -83,6 +89,15 @@ msgstr "每天全情投入神的話語裡尋求祂。"
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015年每天讀經吧！讀經計劃可以幫助！"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "從神的應許裡學習感恩。"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "神的話語是活潑有功效的，讓它每天對你說話吧。"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "神的話語使萬物更新。"
 
 msgid "moment.friendship.self.title"
 msgstr "您現在已成為 <b>{friend_name}</b> 的好友"
@@ -114,6 +129,12 @@ msgstr "完成了讀經計劃"
 msgid "moment.plan_completion.title"
 msgstr "{name} 完成了讀經計劃"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "您完成了計劃，<b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} 完成了計劃, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "{total_segments} 中的第 {segment} 天 ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "開始了讀經計劃"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} 開始了讀經計劃"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "您開始了新計劃，<b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} 開始了新計劃，<b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "請在今晚觀看<i>聖經系列</i>!"

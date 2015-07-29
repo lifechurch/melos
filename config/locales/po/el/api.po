@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-05-04 09:47-0609\n"
-"PO-Revision-Date: 2015-05-04 09:47-0609\n"
+"POT-Creation-Date: 2015-07-22 12:14-0609\n"
+"PO-Revision-Date: 2015-07-22 12:14-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: el <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "Ετοιμάσου για τα Χριστούγεννα με ένα Πρ
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Ανανέωσε την πίστη σου με καινούργια Πλάνα ανάγνωσης."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Ανακαλύψτε σοφία στο Λόγο του Θεού κάθε μέρα."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Προετοιμάστε την καρδιά σας αυτή τη σεζόν."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Βρες το αγαπημένο σου Πρόγραμμα Ανάγνωσης της Αγίας Γραφής για τον Φεβρουάριο!"
 
@@ -83,6 +89,15 @@ msgstr "Αφιέρωσε καθημερινά χρόνο για να αναζη�
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Διάβαζε την Αγία Γραφή καθημερινά μέσα στο 2015. Βοήθεια στα Προγράμματα Ανάγνωσης!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr " Ανακαλύψτε ευγνωμοσύνη στις υποσχέσεις του Θεού."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Ο Λόγος είναι ζωντανός. Επίτρεψέ του να σου μιλάει κάθε μέρα."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Ο Λόγος του Θεού κάνει τα πάντα νέα."
 
 msgid "moment.friendship.self.title"
 msgstr "Είστε πλέον φίλοι με τον χρήστη <b>{friend_name}</b>"
@@ -114,6 +129,12 @@ msgstr "Ολοκλήρωσες το Πρόγραμμα Ανάγνωσης"
 msgid "moment.plan_completion.title"
 msgstr "Ο χρήστης {name} ολοκλήρωσε ένα Πρόγραμμα Ανάγνωσης"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Ολοκληρώσατε το σχέδιο: <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "Ο/Η {name} ολοκκλήρωσε το σχέδιο: <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Ημέρα {segment} από {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Ξεκίνησες ένα καινούργιο Πρόγραμμα Ανά
 
 msgid "moment.plan_subscription.title"
 msgstr "Ο χρήστης {name} ξεκίνησε ένα καινούργιο Πρόγραμμα Ανάγνωσης"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Ξεκινήσατε το σχέδιο: <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "Ο.Η {name} ξεκίνησε το σχέδιο: <b>{title}</b>"
 
 msgid "moment.system.bafk.title"
 msgstr "Βοήθησε τα παιδιά σου να αγαπήσουν τον Λόγο του Θεού."

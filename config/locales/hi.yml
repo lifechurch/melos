@@ -535,6 +535,7 @@ hi:
         vod_subscription success: "आज का वचन आपने सफलतापूर्वक प्रारंभ किया "
         vod_subscription failure: "कृपया क्षमा करे, आज का वचन सब्सक्राइब करने में कठनाई हैं। "
         daily email delivery: "हर रोज़ इमेल डिलीवरी "
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "समय"
         daily push notifications: "मोबाइल App के लिए रोज़ाना पुश की सूचना "
         subscribe: "सदस्य बने"
@@ -1088,6 +1089,8 @@ hi:
         sms button: "Text me a link"
         sms error: "Sorry, something went wrong. Please try again."
         sms success: "Great! Check your mobile device for the link."
+        sms info: "You will receive a one time SMS to download the app"
+        sms download: "Click to download the Bible App:"
     pages: 
         generic_error: 
             title: "Oops!"

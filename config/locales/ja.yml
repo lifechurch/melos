@@ -524,6 +524,7 @@ ja:
         vod_subscription success: "今日の聖句の受信を更新しました！"
         vod_subscription failure: "申し訳ありませんが、今日の聖句の受信の更新の際に問題が発生しました。"
         daily email delivery: "毎日のEメール配信"
+        vod_not_subscribed: "今日の聖句のメール配信に登録されていません。登録を希望される場合は、まずサインインしてください。"
         time: "期間"
         daily push notifications: "携帯アプリ用　毎日のプッシュ通知"
         subscribe: "登録"
@@ -1075,6 +1076,8 @@ ja:
         sms button: "リンクをメールする"
         sms error: "上手くいかなかったようです。もう一度お願いします。"
         sms success: "完了！ご利用のデバイスからリンクをご覧ください。"
+        sms info: "ダウンロード用のリンクがSMSで携帯に届きます。"
+        sms download: "クリックして聖書アプリをダウンロード:"
     pages: 
         generic_error: 
             title: "申し訳ありません。"

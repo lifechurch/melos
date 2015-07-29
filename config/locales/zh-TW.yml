@@ -524,6 +524,7 @@ zh-TW:
         vod_subscription success: "您已成功更新您的今日經文訂閱！"
         vod_subscription failure: "抱歉， 更新您的今日經文訂閱時出錯。"
         daily email delivery: "每日電郵傳遞"
+        vod_not_subscribed: "您還没有訂閱每日經文的電子郵件。如果您想訂閱，請登入帳戶。"
         time: "時間"
         daily push notifications: "行動軟體的每日推送通知"
         subscribe: "訂閱"
@@ -1075,6 +1076,8 @@ zh-TW:
         sms button: "給我鏈結簡訊"
         sms error: "抱歉，出現了錯誤。請稍候再試。"
         sms success: "太好了！請查看你的行動設備。"
+        sms info: "您將收到一個附有鏈結的簡訊給您下載應用"
+        sms download: "點擊下載聖經軟體："
     pages: 
         generic_error: 
             title: "抱歉！"

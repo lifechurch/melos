@@ -535,6 +535,7 @@ sv:
         vod_subscription success: "Du har uppdaterat prenumerationen på dagens vers!"
         vod_subscription failure: "Ett problem uppstod vid uppdateringen av prenumerationen på dagens vers."
         daily email delivery: "Daglig e-brevleverans"
+        vod_not_subscribed: "Du prenumererar inte på Dagens vers via email. Logga in om du vill prenumerera."
         time: "Tid"
         daily push notifications: "Dagliga push-meddelanden för mobilappar"
         subscribe: "Prenumeration"
@@ -1088,6 +1089,8 @@ sv:
         sms button: "SMS:a mig en länk."
         sms error: "Ursäkta, något gick fel. Var vänlig försök igen."
         sms success: "Perfekt! Kolla din mobil för länken."
+        sms info: "Du får ett SMS för att ladda ner appen"
+        sms download: "Klicka för att ladda ner Bibelappen:"
     pages: 
         generic_error: 
             title: "Upps!"

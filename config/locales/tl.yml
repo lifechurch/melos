@@ -535,6 +535,7 @@ tl:
         vod_subscription success: "Matagumpay mong na-update ang iyong suskripsyon ng Bersikulo Ngayon!"
         vod_subscription failure: "Paumanhin, nagkaroon ng problema sa pagbago mo ng subskripsyon ng Bersikulo Ngayon."
         daily email delivery: "Araw-araw na pagpapadala ng email"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "Oras"
         daily push notifications: "Araw-araw na abiso para sa mobile app"
         subscribe: "Sumuskribi"
@@ -1088,6 +1089,8 @@ tl:
         sms button: "Magtext sa akin ng link"
         sms error: "Paunawa, may pagkakamaling naganap. Subukan muli."
         sms success: "Mahusay! Tingnan ang iyong mobile na aparato para sa link."
+        sms info: "Ikaw ay makatatanggap ng isang text kung paano i-download ang app"
+        sms download: "Pindutin upang i-download ang App na Bibliya"
     pages: 
         generic_error: 
             title: "Oops!"

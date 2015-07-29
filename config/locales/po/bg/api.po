@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:06-0609\n"
-"PO-Revision-Date: 2015-04-23 15:06-0609\n"
+"POT-Creation-Date: 2015-07-13 10:04-0609\n"
+"PO-Revision-Date: 2015-07-13 10:04-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: bg <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,12 @@ msgstr "{name} добави в показалеца <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Освежете вярата си с нови планове."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Намирай мъдрост в Божието Слово всеки ден."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Подготви сърцето си този сезон."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Намерете своя предпочитан план за прочит на Библията през февруари!"
 
@@ -80,6 +86,15 @@ msgstr "Посветете се всекидневно да търсите Бо�
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Чети Библията всеки ден през 2015. Планът ще ти помогне"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Откривай благодарност в Божиите обещания."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Това Слово е живо. Нека ти говори всеки ден."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Божието Слово прави всичко ново."
 
 msgid "moment.friendship.self.title"
 msgstr "Вече сте приятели с <b>{friend_name}</b>"
@@ -111,6 +126,12 @@ msgstr "Изпълняване на плана"
 msgid "moment.plan_completion.title"
 msgstr "{name} е изпълнил плана"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Ти завърши своя план, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name}завърши план, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Ден {segment} от {total_segments} ({percent_complete}%)"
 
@@ -125,6 +146,12 @@ msgstr "Стартиране на плана"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} стартиране на плана"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Ти започна нов план, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} започна нов план, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Гледайте <i>серията за Библията</i> довечера!"

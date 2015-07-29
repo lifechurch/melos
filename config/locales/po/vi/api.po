@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:05-0609\n"
-"PO-Revision-Date: 2015-04-23 15:05-0609\n"
+"POT-Creation-Date: 2015-07-20 10:21-0609\n"
+"PO-Revision-Date: 2015-07-20 10:21-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: vi <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -66,6 +66,12 @@ msgstr "Đón Giáng Sinh bằng một kế hoạch về Mùa Vọng"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Làm tươi mới niềm tin qua các kế hoạch Kinh Thánh."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Tìm kiếm sự khôn ngoan từ Lời Chúa mỗi ngày."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Hãy dọn lòng mình cho mùa lễ này!"
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Tìm kế hoạch yêu thích của bạn cho tháng Hai!"
 
@@ -83,6 +89,15 @@ msgstr "Hết lòng tìm kiếm Chúa mỗi ngày qua Thánh Kinh."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Tĩnh nguyện mỗi ngày trong 2015. Hãy tìm hiểu thêm!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Tin cậy và biết ơn những lời Chúa hứa."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Lời Kinh Thánh thật sống động. Hãy lắng nghe tiếng Chúa mỗi ngày."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Lời Chúa đổi mới mọi sự."
 
 msgid "moment.friendship.self.title"
 msgstr "Bạn vừa kết bạn với <b>{friend_name}</b>"
@@ -114,6 +129,12 @@ msgstr "Bạn đã hoàn tất kế hoạch"
 msgid "moment.plan_completion.title"
 msgstr "{name} hoàn tất một kế hoạch"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Bạn đã hoàn tất kế hoạch <b>\"{title}\"</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} đã hoàn tất kế hoạch <b>\"{title}\"</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Ngày {segment} trong {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Bắt đầu một kế hoạch mới"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} bắt đầu một kế hoạch mới"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Bạn vừa bắt đầu kế hoạch <b>\"{title}\"</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} vừa bắt đầu kế hoạch <b>\"{title}\"</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Đón xem <i>\"Bible Series\"</i> tối nay!"

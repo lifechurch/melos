@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-19 13:47-0600\n"
-"PO-Revision-Date: 2015-03-19 13:47-0600\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cs <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -66,6 +66,12 @@ msgstr "Připravte se na vánoce s naším Adventním plánem čtení Bible"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Oživte svojí víru pomocí nových plánů čtení Bible."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Objevte moudrost v Božím slově pro každý den."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Připravte své srdce na toto období."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Objevte svůj oblíbený plán čtení Bible na měsíc únor!"
 
@@ -83,6 +89,15 @@ msgstr "Věnujte se denně hledání Boha v Jeho slově."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Čtěte Bibli každý den v roce 2015. Plány pomáhají!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Objevte vaše díky v tom, co pro vás Bůh naplnil."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Slovo je živé. Dovolte mu k vám promlouvat den co den."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Bůh tvoří vše zcela nové."
 
 msgid "moment.friendship.self.title"
 msgstr "Stali jste se přáteli s <b>{friend_name}</b>"
@@ -114,6 +129,12 @@ msgstr "Dokončili jste plán"
 msgid "moment.plan_completion.title"
 msgstr "{name} dokončil/a plán"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Dokončili jste plán čtení: <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} dokončil/a plán čtení: <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Den {segment} z {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Začali jste nový plán"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} začal/a nový plán"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Zahájili jste nový plán čtení: <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} zahájil/a nový plán čtení: <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Sledujte <i>Seriál Bible</i> dnes!"

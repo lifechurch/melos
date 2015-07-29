@@ -535,6 +535,7 @@ it:
         vod_subscription success: "Hai aggiornato con successo la tua sottoscrizione al Versetto del Giorno!"
         vod_subscription failure: "Ci dispiace; c'è stato un problema nell'aggiornamento della tua sottoscrizione al Versetto del Giorno."
         daily email delivery: "Consegna quotidiana e-mail"
+        vod_not_subscribed: "Non ti sei abbonato all'invio di e-mail riguardanti il versetto del giorno. Accedi se vuoi abbonarti."
         time: "Tempo"
         daily push notifications: "Notifiche push quotidiane per app mobili"
         subscribe: "Sottoscrivi"
@@ -1088,6 +1089,8 @@ it:
         sms button: "Mandami un link per SMS"
         sms error: "Ci dispiace, qualcosa è andata storta. Prova di nuovo, per favore."
         sms success: "Ottimo! Cerca il link sul tuo dispositivo mobile."
+        sms info: "Riceverai un SMS una tantum per scaricare l'app"
+        sms download: "Clicca per scaricare l'App Bibbia"
     pages: 
         generic_error: 
             title: "Ops!"

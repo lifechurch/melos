@@ -535,6 +535,7 @@ fi:
         vod_subscription success: "Päivän jakeen tilauksesi päivitettiin onnistuneesti!"
         vod_subscription failure: "Pahoittelut, päivitettäessä päivän jakeen tilaustasi tapahtui virhe."
         daily email delivery: "Päivittäinen sähköpostin toimitus"
+        vod_not_subscribed: "Et ole tilannut yhtään Päivän jae -sähköpostia. Jos haluat tilata Päivän jakeen sähköpostiisi, kirjaudu sisään."
         time: "Aika"
         daily push notifications: "Päivittäiset push-ilmoitukset mobiilisovelluksille"
         subscribe: "Tilaa"
@@ -1088,6 +1089,8 @@ fi:
         sms button: "Lähetä minulle linkki"
         sms error: "Pahoittelut, jokin meni pieleen. Yritä uudelleen."
         sms success: "Hienoa! Avaa linkki mobiililaitteellasi."
+        sms info: "Saat kertakäyttöisen tekstiviestin, jonka kautta voit ladata sovelluksen"
+        sms download: "Klikkaa ladataksesi Raamattusovelluksen"
     pages: 
         generic_error: 
             title: "Oho!"

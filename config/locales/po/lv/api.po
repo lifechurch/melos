@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:05-0609\n"
-"PO-Revision-Date: 2015-04-23 15:05-0609\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: lv <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
@@ -63,6 +63,12 @@ msgstr "{name} izveidoja grāmatzīmi <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Atsvaidzini savu ticību ar jauniem lasīšanas plāniem."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Atrodi gudrību Dieva Vārdā katru dienu."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Sagatavo savu sirdi šai sezonai."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Atrodi mīļāko Bībeles lasīšanas plānu feburārim!"
 
@@ -80,6 +86,15 @@ msgstr "Velti katru dienu Dieva meklēšanai viņa Vārdā."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015. gadā lasi Bībeli katru dienu. Lasīšanas plāni palīdz!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Atrodi pateicību Dieva apsolījumos."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Šis Vārds ir dzīvs. Ļauj, lai tas uzrunā Tevi katru dienu."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Dieva Vārds visu dara jaunu."
 
 msgid "moment.friendship.self.title"
 msgstr "Tu tagad esi draugos ar <b>{friend_name}</b>"
@@ -111,6 +126,12 @@ msgstr "Tu pabeidzi savu lasīšanas plānu"
 msgid "moment.plan_completion.title"
 msgstr "{name} pabeidza lasīšanas plānu"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Tu pabeidzi savu lasīšanas plānu, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} pabeidza lasīšanas plānu, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "{segment} diena no {total_segments} ({percent_complete}%)"
 
@@ -125,6 +146,12 @@ msgstr "Tu iesāki jaunu lasīšanas plānu"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} uzsāka jaunu lasīšanas plānu"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Tu iesāki jaunu lasīšanas plānu, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name}uzsāka jaunu lasīšanas plānu, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Skaties <i>Bībeles sērijas</i> šovakar!"

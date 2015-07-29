@@ -557,6 +557,7 @@ pl:
         vod_subscription success: "Udało ci się uaktualnić subskrypcję wersetu dnia!"
         vod_subscription failure: "Przepraszamy, wystąpił błąd podczas aktualizowania subskrypcji Werset dnia."
         daily email delivery: "Codzienna wysyłka mailowa"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "Czas"
         daily push notifications: "Codzienne powiadomienia push dla urządzeń mobilnych"
         subscribe: "Zasubskrybuj"
@@ -1114,6 +1115,8 @@ pl:
         sms button: "Wyślij mi odnośnik"
         sms error: "Przepraszamy, coś poszło nie tak. Prosimy spróbuj ponownie."
         sms success: "Świetnie! Sprawdź czy dostałeś odnośnik na swój telefon."
+        sms info: "You will receive a one time SMS to download the app"
+        sms download: "Click to download the Bible App:"
     pages: 
         generic_error: 
             title: "Ups!"

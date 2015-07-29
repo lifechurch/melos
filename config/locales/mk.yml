@@ -535,6 +535,7 @@ mk:
         vod_subscription success: "Успешно ја ажурираше претплатата за Стих на денот!"
         vod_subscription failure: "Жалам, имаше проблем со ажурирањето на твојата претплата за Стих на денот!"
         daily email delivery: "Испорака на дневна е-пошта"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "Време"
         daily push notifications: "Дневни принудни известувања за мобилни апликации"
         subscribe: "Претплати се"
@@ -994,7 +995,7 @@ mk:
         title: "Симни ја бесплатната Библиска Апликација"
         description copy: "Стотици верзии во над %{language_count} различни јазици - Библијата која оди насекаде заедно со тебе."
         meta copy title: "Симни ја бесплатната Библиска Апликација"
-        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
+        meta copy versions: "Стотици верзии на %{language_count} + различни јазици"
         line 1: "Стотици верзии на 100 +"
         line 2: "различни јазици - Библија"
         line 3: "која е постојано со тебе."
@@ -1088,6 +1089,8 @@ mk:
         sms button: "Text me a link"
         sms error: "Sorry, something went wrong. Please try again."
         sms success: "Great! Check your mobile device for the link."
+        sms info: "You will receive a one time SMS to download the app"
+        sms download: "Click to download the Bible App:"
     pages: 
         generic_error: 
             title: "Упс!"

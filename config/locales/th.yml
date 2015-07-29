@@ -524,6 +524,7 @@ th:
         vod_subscription success: "คุณได้อัพเดทการติดตามข้อพระคัมภีร์ประจำวันสำเร็จ!"
         vod_subscription failure: "ขออภัย มีปัญหาในการอัพเดทการติดตามข้อพระคัมภีร์ประจำวัน"
         daily email delivery: "อีเมล์แจ้งเตือนประจำวัน"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "ตั้งเวลา"
         daily push notifications: "บอกรับการแจ้งเตือนประจำวันสำหรับแอพบนโทรศัพท์"
         subscribe: "บอกรับเป็นสมาชิก"
@@ -1075,6 +1076,8 @@ th:
         sms button: "ส่ง link มาให้ฉัน"
         sms error: "ขออภัย เกิดข้อผิดพลาด โปรดลองอีกครั้ง"
         sms success: "ยอดเยี่ยม! กรุณาตรวจสอบ link จากโทรศัพท์มือถือของคุณ"
+        sms info: "คุณจะได้รับข้อความสำหรับดาวน์โหลดแอพ"
+        sms download: "กดเพื่อดาวน์โหลดแอพพระคัมภีร์"
     pages: 
         generic_error: 
             title: "อุ๊ปส์!"

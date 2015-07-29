@@ -70,10 +70,10 @@ msgid "moment.bible.download.title"
 msgstr "{name} downloaded the version, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "You bookmarked <b>{reference_human}</b>"
+msgstr "You bookmarked <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} bookmarked <b>{reference_human}</b>"
+msgstr "{name} bookmarked <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.friendship.self.title"
 msgstr "You are now friends with <b>{friend_name}</b>"
@@ -82,10 +82,10 @@ msgid "moment.friendship.title"
 msgstr "{user_name} is now friends with <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "You highlighted <b>{reference_human}</b>"
+msgstr "You highlighted <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} highlighted <b>{reference_human}</b>"
+msgstr "{name} highlighted <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "You added a note, <b>{title}</b>"
@@ -98,6 +98,12 @@ msgstr "You completed your Plan"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} completed a Plan"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "You completed your Plan, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} completed a Plan, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Day {segment} of {total_segments} ({percent_complete}%)"
@@ -113,6 +119,12 @@ msgstr "You started a new Plan"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} started a new Plan"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "You started a new Plan, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} started a new Plan, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Watch the <i>Bible Series</i> tonight!"
@@ -148,10 +160,10 @@ msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Find hope and renewal in March Plans."
 
 msgid "moment.image.self.title"
-msgstr "You created a verse image for <b>{reference_human}</b>"
+msgstr "You created a verse image for <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} created a verse image for <b>{reference_human}</b>"
+msgstr "{name} created a verse image for <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Refresh your faith with new Plans."
@@ -164,6 +176,21 @@ msgstr "Find your rhythm through daily time in God’s Word."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "Daily time in God’s Word yields lasting freedom."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Find wisdom in God’s Word every day."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "God’s Word makes everything new."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "This Word is alive. Let it speak to you every day."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Discover thankfulness in God’s promises."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Prepare your heart this season."
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} commented on your bookmark: “{comment}”"

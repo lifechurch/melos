@@ -535,6 +535,7 @@ es:
         vod_subscription success: "¡Ha actualizado exitosamente su suscripción al Versículo del Día!"
         vod_subscription failure: "Disculpe, ha habido un problema al actualizar su suscripción al Versículo del Día."
         daily email delivery: "Envío diario de email"
+        vod_not_subscribed: "No está suscrito para recibir por correo el versículo del día. Si desea suscribirse por favor regístrese."
         time: "Hora"
         daily push notifications: "Notificaciones Instantáneas diarias para aplicaciones móviles"
         subscribe: "Suscríbase"
@@ -1088,6 +1089,8 @@ es:
         sms button: "Envíeme el enlace al correo "
         sms error: "Lo siento, algo salió mal. Por favor trate de nuevo."
         sms success: "Genial! Revise el enlace en su dispositivo móvil."
+        sms info: "Recibirás un único mensaje SMS para descargar la aplicación"
+        sms download: "Haz clic para descargar la Biblia App:"
     pages: 
         generic_error: 
             title: "¡Lo sentimos!"

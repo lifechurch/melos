@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:06-0609\n"
-"PO-Revision-Date: 2015-04-23 15:06-0609\n"
+"POT-Creation-Date: 2015-07-24 14:50-0609\n"
+"PO-Revision-Date: 2015-07-24 14:50-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sw <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -63,6 +63,12 @@ msgstr "{name} alialamisha <b>{reference_human}</b>"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Fanya Upya Imani yako na Mipango mipya."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Pata hekima kupitia neno la Mungu kila siku."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Uandae moyo wako wakati huu wa majira ya krismasi."
+
 msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "Kutumia muda kwenye Neno la Mungu kila siku kunazalisha uhuru wa kudumu."
 
@@ -74,6 +80,15 @@ msgstr "Jitolee kila siku kumtafuta Mungu kwenye Neno Lake."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Läs Bibeln dagligen under 2015. Planer hjälper!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Vumbua' shukrani kwenye ahadi za Mungu."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Neno la Mungu li hai,  liruhusu kuongea nawe kila siku."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Neno la mungu linafanya kila kitu upya."
 
 msgid "moment.friendship.self.title"
 msgstr "Sasa wewe ni rafiki na<b>{friend_name}</b>"

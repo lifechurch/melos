@@ -524,6 +524,7 @@ vi:
         vod_subscription success: "Bạn đã cập nhật thành công việc đăng ký Câu Kinh Thánh trong ngày!"
         vod_subscription failure: "Cáo lỗi! Việc cập nhật đăng ký Câu Kinh Thánh trong ngày có vấn đề."
         daily email delivery: "Gởi email mỗi ngày"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "Thời gian"
         daily push notifications: "Gởi thông báo nhắc nhở mỗi ngày trên app"
         subscribe: "Đăng ký"
@@ -1075,6 +1076,8 @@ vi:
         sms button: "Nhắn tin đường dẫn cho tôi"
         sms error: "Cáo lỗi vì trục trặc kỹ thuật. Xin vui lòng thử lại!"
         sms success: "Rất tốt! Hãy kiểm tra xem bạn đã nhận tin nhắn hay chưa."
+        sms info: "Bạn sẽ nhận được SMS để tải app về."
+        sms download: "Bấm vào đây để tải App Kinh Thánh:"
     pages: 
         generic_error: 
             title: "Ối!"

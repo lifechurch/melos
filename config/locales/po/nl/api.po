@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-24 07:56-0600\n"
-"PO-Revision-Date: 2015-03-24 07:56-0600\n"
+"POT-Creation-Date: 2015-07-20 10:21-0609\n"
+"PO-Revision-Date: 2015-07-20 10:21-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nl <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "Bereid je voor op Kerst met een Advent Bijbelplan"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Vernieuw je geloof met nieuwe Plannen."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Vind elke dag wijsheid in Gods Woord."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Bereidt dit seizoen je hart voor."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Vind uw favoriete Bijbel leesplan voor februari!"
 
@@ -83,6 +89,15 @@ msgstr "Wijd jezelf dagelijks aan het zoeken van God in Zijn Woord."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Lees in 2015 de Bijbel, dankzij leesplannen!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Ontdek dankbaarheid in Gods beloften."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Dit Woord is levend. Laat het elke dag tot je spreken."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Gods Woord maakt alles nieuw."
 
 msgid "moment.friendship.self.title"
 msgstr "Je bent nu bevriend met <b>{friend_name}</b>"
@@ -114,6 +129,12 @@ msgstr "Jij  voltooide jouw leesplan"
 msgid "moment.plan_completion.title"
 msgstr "{name} heeft een leesplan voltooid"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Jij voltooide jouw leesplan, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} voltooide een leesplan, <b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Dag {segment} van {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Jij bent een leesplan begonnen"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} is een leesplan begonnen"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Jij begon een nieuw leesplan <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} begon een nieuw leesplan, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Kijk vanavond naar de <i>Bijbel Serie</i>!"

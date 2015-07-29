@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-29 16:05-0600\n"
-"PO-Revision-Date: 2015-03-29 16:05-0600\n"
+"POT-Creation-Date: 2015-07-07 13:31-0609\n"
+"PO-Revision-Date: 2015-07-07 13:31-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sv <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "Förbered dig inför jul med en läsplan om advent"
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Ge ny kraft till din tro genom nya planer."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Hitta visdom varje dag i Guds ord."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Förbered ditt hjärta den här säsongen."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Hitta din favoritbibelplan för februari!"
 
@@ -83,6 +89,15 @@ msgstr "Ägna dig dagligen åt att söka Gud i Hans Ord."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Läs Bibeln dagligen under 2015. Planer hjälper!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Upptäck tacksamhet i Guds löften."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Detta Ord är levande. Låt det tala till dig varje dag."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Guds ord gör allting nytt."
 
 msgid "moment.friendship.self.title"
 msgstr "Du är nu vän med <b>{friend_name}</b>"
@@ -114,6 +129,12 @@ msgstr "Har fullföljt en plan"
 msgid "moment.plan_completion.title"
 msgstr "{name} har fullföljt en plan"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Du har avslutat din läsplan, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} avslutade en läsplan,<b>{title}</b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Dag {segment} av {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Har påbörjat en plan"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} har påbörjat en plan"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Du har startat en ny läsplan, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} har påbörjat en ny läsplan, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Titta på <i>bibelserien</i> i kväll!"

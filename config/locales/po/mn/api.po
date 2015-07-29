@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:05-0609\n"
-"PO-Revision-Date: 2015-04-23 15:05-0609\n"
+"POT-Creation-Date: 2015-07-20 10:21-0609\n"
+"PO-Revision-Date: 2015-07-20 10:21-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mn <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "Адвент Тѳлѳвлѳгѳѳгѳѳр Кристмасийн Бая�
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Шинэ тѳлѳвлѳгѳѳгѳѳр итгэлээ шинэжлэх уу."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Өдөр бүр Бурханы Үгнээс мэргэн оюун ухааныг олж ав."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Энэхүү үед зориулж өөрийнхөө зүрх сэтгэлийг бэлтгэ."
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Хоёрдугаар сарын дуртай Библи Уншлагын Төлөвлөгөөгөө хайж олоорой!"
 
@@ -83,6 +89,15 @@ msgstr "Ѳдѳр бүр Бүрханы Үгэн дотор Түүнийг эрэ
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015 онд Библи өдөр бүр унш. Уншлагын Төлөвлөгөөнүүд таньд туслах болно!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Эзэнний амлалтуудаас талархалтай байдлыг олж нээ."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Энэ бол амьд Үг. Өдөр бүр таньд ямар нэг зүйлийг хэлэх боломж олго."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Бурханы Үг бүхнийг шинэчилдэг."
 
 msgid "moment.friendship.self.title"
 msgstr "Та <b>{friend_name}</b> -тай холбогдсон"
@@ -114,6 +129,12 @@ msgstr "Таэхлэсэн уншлагын Tөлөвлөгөөгөө дуусг
 msgid "moment.plan_completion.title"
 msgstr "{name} төлөвлөгөөг дуусгасан"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "<b>Та {title}</b>гэдэг тѳлѳвлѳгѳѳг дусгасан"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} {title}Уншлагын Төлөвлөгөөг уншиж дууссан. <b></b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "Ѳдѳр {segment} -с {total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "Та Шинэ Тѳлѳвлѳгѳѳ эхлэсэн"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} шинэ тѳлѳвлѳгѳѳ эхлэсэн"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "<b>Та {title}</b>гэдэг шинэ Тѳлѳвлѳгѳѳг эхлэсэн"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} <b>{title}</b>гэдэг шинэ Тѳлѳвлѳгѳѳг эхлэсэн"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "<i>Библийн Олон Ангит Цуврал Кино</i> үзээрэй!"

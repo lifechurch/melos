@@ -535,6 +535,7 @@ en-GB:
         vod_subscription success: "You have successfully updated your verse of the day subscription!"
         vod_subscription failure: "Sorry, there was a problem updating your verse of the day subscription."
         daily email delivery: "Daily e-mail delivery"
+        vod_not_subscribed: "You are not subscribed to any verse of the day e-mails. If you would like to subscribe please sign in."
         time: "Time"
         daily push notifications: "Daily push notifications for mobile apps"
         subscribe: "Subscribe"
@@ -1088,6 +1089,8 @@ en-GB:
         sms button: "Text me a link"
         sms error: "Sorry, something went wrong. Please try again."
         sms success: "Great! Check your mobile device for the link."
+        sms info: "You will receive a one time SMS to download the app"
+        sms download: "Click to download the Bible App:"
     pages: 
         generic_error: 
             title: "Oops!"

@@ -282,7 +282,7 @@ sk:
     audio bible: "Audio Biblia"
     audio bible app: "Aplikácia Audio Biblia"
     audio bibles title: "Vypočujte si Audio Bibliu"
-    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    audio bible meta: "Počúvajte zadarmo online alebo si stiahnite aplikáciu YouVersion Biblia a počúvajte audio Biblie na Vašom telefóne s najlepšie hodnotenou aplikáciou Biblia."
     language: "Jazyk"
     translation: "Preklad"
     notes title: "Poznámky"
@@ -546,6 +546,7 @@ sk:
         vod_subscription success: "Úspešne ste aktualizovali vaše odoberanie Verša dňa!"
         vod_subscription failure: "Prepáčte, ale vyskytol sa problém pri aktualizovaní vášho odoberania Verša dňa."
         daily email delivery: "Denné zasielanie emailov"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "Čas"
         daily push notifications: "Denné push notifikácie pre mobilné aplikácie"
         subscribe: "Prihlásiť sa na odber"
@@ -1101,6 +1102,8 @@ sk:
         sms button: "Pošli mi link SMSkou"
         sms error: "Prepáčte, niečo nefunguje. Skúste prosím znova."
         sms success: "Skvelé! Skontrolujte si link na mobilnom zariadení."
+        sms info: "Dostanete jednorázovú SMS pre stiahnutie aplikácie"
+        sms download: "Po kliknutí si stiahnete aplikáciu Biblia:"
     pages: 
         generic_error: 
             title: "Hups!"
@@ -1130,7 +1133,7 @@ sk:
             world installs: "Inštalácií po celom svete"
         trending verses: 
             title: "Obľúbené biblické verše"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
+            headline: "Biblické verše, ktorých popularita stúpa v aplikácii YouVersion Biblia a na Bible.com"
     shared: 
         menu_settings: 
             title: "Nastavenia zobrazenia"

@@ -535,6 +535,7 @@ tr:
         vod_subscription success: "Günün Ayeti üyeliğinizi başarıyla güncellediniz."
         vod_subscription failure: "Özür dileriz, Günün Ayeti üyeliğinizi güncellerken bir hata oluştu."
         daily email delivery: "Günlük e-posta gönderimi"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "Saat"
         daily push notifications: "Mobil uygulamalar için günlük bildirimler"
         subscribe: "Abone Ol"
@@ -1088,6 +1089,8 @@ tr:
         sms button: "Bağlantıyı gönder"
         sms error: "Üzgünüz, bir terslik oldu. Lütfen tekrar deneyiniz."
         sms success: "Harika! Bağlantı için mobil cihazınızı kontrol ediniz."
+        sms info: "Uygulamayı indirmek için bir kez SMS alacaksınız."
+        sms download: "Kutsal Kitap Uygulaması'nı indirmek için tıklayınız:"
     pages: 
         generic_error: 
             title: "Eyvah!"

@@ -524,6 +524,7 @@ fa:
         vod_subscription success: "شما تنظیمات مربوط به اشتراک در «آیۀ روز» را با موفقیت به‌روز رساندید.‏"
         vod_subscription failure: "متأسفانه در به روزرسانی اشتراک «آیهٔ روز»، مشکلی پیش آمد!"
         daily email delivery: "دریافت روزانۀ ای‌میل"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "ساعت"
         daily push notifications: "ارسال خودکار روزانه برای برنامۀ کتاب‌مقدس در دستگاه‌های موبایل"
         subscribe: "آبونمان"
@@ -1075,6 +1076,8 @@ fa:
         sms button: "لینک را به‌صورت پیامک به شماره تلفن من بفرست "
         sms error: "متأسفانه مشکلی رخ داد. لطفاً دوباره اقدام کنید."
         sms success: "لینک به شماره تلقن شما با موفقیت ارسال گردید!"
+        sms info: "جهت دانلود این اَپ، پیامکی دریافت خواهید کرد که فقط یک بار فرستاده خواهد شد"
+        sms download: "لطفاً جهت دانلود اَپ کتاب‌مقدس کلیک کنید:"
     pages: 
         generic_error: 
             title: "آاخخخ!"
@@ -1103,8 +1106,8 @@ fa:
             download description: "برنامۀ رایگان «کتاب‌مقدس» را در دستگاه موبایل خود نصب کنید تا کلام خدا را همه جا همراه داشته باشید.‏"
             world installs: "تعداد نصب در سراسر جهان"
         trending verses: 
-            title: "Trending Bible verses"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
+            title: "آیات محبوب و رایج"
+            headline: "آیاتی که به‌طور روزمره در سایت یوورژن و اَپ کتاب‌مقدس به‌کار می‌روند."
     shared: 
         menu_settings: 
             title: "تنظيمات خواندن"

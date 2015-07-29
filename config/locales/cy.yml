@@ -579,6 +579,7 @@ cy:
         vod_subscription success: "You have successfully updated your Verse of the Day subscription!"
         vod_subscription failure: "Mae’n flin gennym, roedd problem wrth ddiweddaru dy danysgrifiad i Adnod y Dydd."
         daily email delivery: "Daily email delivery"
+        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
         time: "Time"
         daily push notifications: "Daily push notifications for mobile apps"
         subscribe: "Subscribe"
@@ -1140,6 +1141,8 @@ cy:
         sms button: "Text me a link"
         sms error: "Sorry, something went wrong. Please try again."
         sms success: "Great! Check your mobile device for the link."
+        sms info: "You will receive a one time SMS to download the app"
+        sms download: "Click to download the Bible App:"
     pages: 
         generic_error: 
             title: "Daria!"
