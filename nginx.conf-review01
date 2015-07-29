@@ -39,6 +39,6 @@ http {
       passenger_enabled on;
       root /var/www/youversion-web/current/public;
       passenger_env_var MEMCACHE_SERVERS 127.0.0.1:11211;
-      rails_env development;
+      rails_env staging;
   }
 }

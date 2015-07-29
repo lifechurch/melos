@@ -1,4 +1,5 @@
 @import "vendor/angular-material/angular-material";
+@import "vendor/angular-tooltips/angular-tooltips.min.css";
 @import "foundation_and_overrides";
 
 $green: #6ab750;
@@ -712,3 +713,7 @@ h5.bookLabel {
 .inline {
 	display: inline !important;
 }
+
+// .note.f {
+// 	display: ;
+// }

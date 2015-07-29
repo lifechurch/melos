@@ -1453,4 +1453,12 @@ $icon-bar-item-padding: rem-calc(15 15 1 15);
 // $include-legacy-visibility-classes: true;
 // $include-accessibility-classes: true;
 
-@import 'foundation';
+//@import 'foundation';
+@import 'foundation/components/global';
+@import 'foundation/components/grid';
+@import 'foundation/components/buttons';
+@import 'foundation/components/icon-bar';
+@import 'foundation/components/forms';
+@import 'foundation/components/type';
+@import 'foundation/components/tables';
+@import 'foundation/components/top-bar';

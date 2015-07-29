@@ -10,6 +10,7 @@
 //= require_tree ./common
 //= require_tree ./references
 //= require vendor/angular-cache/angular-cache
+//= require vendor/angular-tooltips/angular-tooltips.min.js
 
 var TEMPLATE_FROM_RAILS = {};
 

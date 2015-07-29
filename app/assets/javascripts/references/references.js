@@ -7,10 +7,12 @@ angular.module('yv.reader', [
 	'reader.textSettingsPanel',
 	'reader.audioPanel',
 	'reader.verse',
+	'reader.footnote',
 	'reader.bookList',
 	'api.highlights',
 	'api.versions',
-	'api.bible'
+	'api.bible',
+	'720kb.tooltips'
 ])
 
 .config([ '$stateProvider', function($stateProvider) {
