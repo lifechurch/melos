@@ -25,6 +25,7 @@ YouversionWeb::Application.routes.draw do
   get "/deti",          to: "redirects#deti"
   get "/kinderen",      to: "redirects#kinderen"
   get "/kinder",        to: "redirects#kinder"
+  get "/enfants",       to: "redirects#enfants"
   get "/trending-bible-verses", to: "pages#trending"
 
 
