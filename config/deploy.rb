@@ -52,7 +52,9 @@ namespace :memcached do
   desc "Flush memcached"
   task :flush do
     on roles(:web) do
-      execute :rake, 'memcached:flush'
+      within release_path do
+        execute :rake, 'memcached:flush'
+      end
     end
   end
 end
