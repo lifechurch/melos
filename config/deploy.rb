@@ -50,7 +50,9 @@ end
 
 namespace :memcached do
   desc "Flush memcached"
-  task :flush, :roles => [:web] do
-    execute "cd #{current_release} && RAILS_ENV=#{rails_env} rake memcached:flush"
+  task :flush do
+    on roles(:web) do
+      execute "cd #{current_release} && RAILS_ENV=#{rails_env} rake memcached:flush"
+    end
   end
 end
