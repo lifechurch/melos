@@ -475,10 +475,12 @@ input {
 
 [layout=column] {
   flex-direction: column;
+  -webkit-flex-direction: column;
 }
 
 [layout=row] {
   flex-direction: row;
+  -webkit-flex-direction: row;
 }
 
 [layout-padding] > [flex-sm],
@@ -1042,6 +1044,49 @@ md-autocomplete {
   }
 }
 
+md-backdrop {
+  z-index: $z-index-backdrop;
+  &.md-menu-backdrop {
+    z-index: $z-index-menu - 1;
+  }
+  &.md-select-backdrop {
+    z-index: $z-index-dialog + 1;
+    transition-duration: 0;
+  }
+  &.md-dialog-backdrop {
+    z-index: $z-index-dialog - 1;
+  }
+  &.md-bottom-sheet-backdrop {
+    z-index: $z-index-bottom-sheet - 1;
+  }
+  &.md-sidenav-backdrop {
+    z-index: $z-index-sidenav - 1;
+  }
+
+  opacity: 1;
+
+  // - Animate background-color alpha only for `.md-opaque` stylings
+  // !!Important - Theme-based Background-color and animations can be enabled in backdrop-theme.scss
+
+  transition: background-color 450ms $swift-ease-in-timing-function;
+
+  position: absolute;
+  top:0;
+  bottom:0;
+  left: 0;
+  right: 0;
+
+  &.md-click-catcher {
+    position: absolute;
+  }
+
+  &.md-opaque.ng-leave {
+    transition: background-color 400ms linear;
+  }
+
+}
+
+
 $bottom-sheet-horizontal-padding: 2 * $baseline-grid !default;
 $bottom-sheet-vertical-padding: 1 * $baseline-grid !default;
 $bottom-sheet-icon-after-margin: 4 * $baseline-grid !default;
@@ -1227,62 +1272,6 @@ md-bottom-sheet {
     border: 1px solid #fff;
   }
 }
-
-md-backdrop {
-  z-index: $z-index-backdrop;
-  &.md-menu-backdrop {
-    z-index: $z-index-menu - 1;
-  }
-  &.md-select-backdrop {
-    z-index: $z-index-dialog + 1;
-  }
-  &.md-dialog-backdrop {
-    z-index: $z-index-dialog - 1;
-  }
-  &.md-bottom-sheet-backdrop {
-    z-index: $z-index-bottom-sheet - 1;
-  }
-  &.md-sidenav-backdrop {
-    z-index: $z-index-sidenav - 1;
-  }
-
-  opacity: 1;
-  transition: background-color 500ms $swift-ease-in-timing-function;
-
-  background-color: rgba(0,0,0,0);
-
-  position: absolute;
-  top:0;
-  bottom:0;
-  left: 0;
-  right: 0;
-
-  &.md-click-catcher {
-    position: fixed;
-  }
-
-  &.md-opaque.ng-enter {
-    background-color: rgba(0,0,0,0);
-
-    &.md-opaque.ng-enter-active {
-      background-color: rgba(0,0,0,0.42);
-    }
-  }
-
-  &.md-opaque.ng-leave {
-    transition: background-color 400ms linear;
-
-    &.md-opaque.ng-leave-active {
-      background-color: rgba(0,0,0,0);
-    }
-  }
-
-  &.md-opaque {
-    background-color: rgba(0,0,0,0.42);
-  }
-
-}
-
 
 $button-line-height: rem(3.60) !default;
 $button-padding: 0 rem(0.600) !default;
@@ -1515,47 +1504,6 @@ $icon-button-margin: rem(0.600) !default;
     border: 1px solid #fff;
   }
 }
-
-$card-padding: 16px !default;
-$card-box-shadow: $whiteframe-shadow-z1 !default;
-
-md-card {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  margin: $baseline-grid;
-
-  box-shadow: $card-box-shadow;
-
-  > img,
-  > :not(md-card-content) img {
-    width: 100%;
-  }
-
-  md-card-content {
-    padding: $card-padding;
-  }
-  .md-actions {
-    margin: 0;
-
-    .md-button {
-      margin-bottom: $baseline-grid;
-      margin-top: $baseline-grid;
-      margin-right: $baseline-grid * .5;
-      margin-left: $baseline-grid * .5;
-    }
-  }
-  md-card-footer {
-    padding: $card-padding;
-  }
-}
-
-@media screen and (-ms-high-contrast: active) {
-  md-card {
-    border: 1px solid #fff;
-  }
-}
-
 
 $checkbox-width: 18px !default;
 $checkbox-height: $checkbox-width !default;
@@ -1923,6 +1871,7 @@ $dialog-padding: $baseline-grid * 3;
   width: 100%;
   height: 100%;
   z-index: $z-index-dialog;
+  overflow: hidden;
 }
 
 md-dialog {
@@ -2019,6 +1968,47 @@ md-dialog {
   }
 }
 
+$card-padding: 16px !default;
+$card-box-shadow: $whiteframe-shadow-z1 !default;
+
+md-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: $baseline-grid;
+
+  box-shadow: $card-box-shadow;
+
+  > img,
+  > :not(md-card-content) img {
+    width: 100%;
+  }
+
+  md-card-content {
+    padding: $card-padding;
+  }
+  .md-actions {
+    margin: 0;
+
+    .md-button {
+      margin-bottom: $baseline-grid;
+      margin-top: $baseline-grid;
+      margin-right: $baseline-grid * .5;
+      margin-left: $baseline-grid * .5;
+    }
+  }
+  md-card-footer {
+    padding: $card-padding;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  md-card {
+    border: 1px solid #fff;
+  }
+}
+
+
 md-divider {
   display: block;
   border-top-width: 1px;
@@ -2050,7 +2040,7 @@ md-fab-speed-dial {
     display: flex;
 
     // Set the height so that the z-index in the JS animation works
-    height: initial;
+    height: auto;
 
     .md-fab-action-item {
       visibility: hidden;
@@ -2146,8 +2136,8 @@ md-fab-toolbar {
     position: relative;
     overflow: hidden;
 
-    // Account for the size of the trigger (5.6rem) plus it's margin/shadow (0.6rem * 2)
-    height: 6.8rem;
+    // Account for the size of the trigger plus it's margin/shadow
+    height: $button-fab-width + ($icon-button-margin * 2);
   }
 
   md-fab-trigger {
@@ -2214,6 +2204,7 @@ md-fab-toolbar {
 
   md-toolbar {
     background-color: transparent !important;
+    pointer-events: none;
     z-index: $z-index-fab + 3;
 
     .md-toolbar-tools {
@@ -2330,204 +2321,6 @@ md-grid-list {
   }
 }
 
-
-$icon-size: rem(2.4);
-
-md-icon {
-  margin: auto;
-  background-repeat: no-repeat no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  fill: currentColor;
-  height: $icon-size;
-  width: $icon-size;
-
-  svg {
-    pointer-events: none;
-  }
-
-  &[md-font-icon] {
-    line-height: 1;
-    width: auto;
-  }
-}
-
-//
-//@font-face {
-//  font-family:"material";
-//  src:url("/dist/material-font/material.eot");
-//  font-weight:normal;
-//  font-style:normal;
-//}
-//
-//@font-face {
-//  font-family:"material";
-//  src:url("/dist/material-font/material.eot");
-//  src:url("/dist/material-font/material.eot?#iefix") format("embedded-opentype"),
-//    url("/dist/material-font/material.woff") format("woff"),
-//    url("/dist/material-font/material.ttf") format("truetype"),
-//    url("/dist/material-font/material.svg?#material") format("svg");
-//  font-weight:normal;
-//  font-style:normal;
-//}
-//
-///* Bootstrap Overrides */
-//[class^="icon-"]:before,
-//[class*=" icon-"]:before {
-//  font-family:"material";
-//  display:inline-block;
-//  vertical-align:middle;
-//  line-height:1;
-//  font-weight:normal;
-//  font-style:normal;
-//  speak:none;
-//  text-decoration:inherit;
-//  text-transform:none;
-//  text-rendering:optimizeLegibility;
-//  -webkit-font-smoothing:antialiased;
-//  -moz-osx-font-smoothing:grayscale;
-//}
-
-$menu-border-radius: 2px;
-$max-visible-items: 6;
-$menu-item-height: 6 * $baseline-grid;
-$dense-menu-item-height: 4 * $baseline-grid;
-$max-menu-height: 2 * $baseline-grid + $max-visible-items * $menu-item-height;
-$max-dense-menu-height: 2 * $baseline-grid + $max-visible-items * $dense-menu-item-height;
-
-.md-open-menu-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: $z-index-menu;
-  opacity: 0;
-  border-radius: $menu-border-radius;
-  overflow: hidden;
-
-  md-menu-divider {
-    margin-top: $baseline-grid / 2;
-    margin-bottom: $baseline-grid / 2;
-    height: 1px;
-    width: 100%;
-  }
-
-  md-menu-content > * {
-    opacity: 0;
-  }
-
-  // Don't let the user click something until it's animated
-  &:not(.md-clickable) {
-    pointer-events: none;
-  }
-
-  // enter: menu scales in, then list fade in.
-  &.md-active {
-    opacity: 1;
-    transition: $swift-ease-out;
-    transition-duration: 200ms;
-    > md-menu-content > * {
-      opacity: 1;
-      transition: $swift-ease-in;
-      transition-duration: 200ms;
-      transition-delay: 100ms;
-    }
-  }
-  // leave: the container fades out
-  &.md-leave {
-    opacity: 0;
-    transition: $swift-ease-in;
-    transition-duration: 250ms;
-  }
-}
-
-md-menu-content {
-  display: flex;
-  flex-direction: column;
-  padding: $baseline-grid 0;
-  max-height: $max-menu-height;
-  overflow-y: auto;
-  &.md-dense {
-    max-height: $max-dense-menu-height;
-    md-menu-item {
-      height: $dense-menu-item-height;
-    }
-  }
-}
-
-md-menu-item {
-  display: flex;
-  flex-direction: row;
-  min-height: $menu-item-height;
-  height: $menu-item-height;
-  align-content: center;
-  justify-content: flex-start;
-
-  > * {
-    width: 100%;
-    margin: auto 0;
-    padding-left: 2*$baseline-grid;
-    padding-right: 2*$baseline-grid;
-  }
-
-  > .md-button {
-    border-radius: 0;
-    margin: auto 0;
-    font-size: (2*$baseline-grid) - 1;
-    text-transform: none;
-    font-weight: 400;
-    text-align: start;
-    height: 100%;
-    padding-left: 2*$baseline-grid;
-    padding-right: 2*$baseline-grid;
-    display: inline-block;
-    align-items: baseline;
-    align-content: left;
-    width:100%;
-    md-icon {
-      margin: auto 2*$baseline-grid auto 0;
-    }
-    p {
-      display:inline-block;
-      margin: auto;
-    }
-    span {
-      margin-top: auto;
-      margin-bottom: auto;
-    }
-  }
-}
-
-.md-menu {
-  padding: $baseline-grid 0;
-}
-
-md-toolbar {
-  .md-menu {
-    height: auto;
-    margin: auto;
-  }
-}
-
-@media (max-width: $layout-breakpoint-sm - 1) {
-  md-menu-content {
-    min-width: 112px;
-  }
-  @for $i from 3 through 7 {
-    md-menu-content[width="#{$i}"] {
-      min-width: $i * 56px;
-    }
-  }
-}
-@media (min-width: $layout-breakpoint-sm) {
-  md-menu-content {
-    min-width: 96px;
-  }
-  @for $i from 3 through 7 {
-    md-menu-content[width="#{$i}"] {
-      min-width: $i * 64px;
-    }
-  }
-}
 
 $input-container-padding: 2px !default;
 
@@ -2769,12 +2562,14 @@ md-input-container.md-icon-float {
   > md-icon {
     top: 26px;
     left: 2px;
-    + input {
+    + input,
+    + textarea {
           margin-left: $icon-offset;
     }
   }
 
-  > input {
+  > input,
+  > textarea {
     padding-top : $input-line-height - $input-container-padding;
   }
 
@@ -2796,6 +2591,599 @@ md-input-container.md-icon-float {
     fill: #fff;
   }
 }
+
+$list-h3-margin: 0 0 6px 0 !default;
+$list-h4-margin: 10px 0 5px 0 !default;
+$list-h4-font-weight: 400 !default;
+$list-header-line-height: 0.75em !default;
+$list-p-margin: 0 0 0 0 !default;
+$list-p-line-height: 1.6em !default;
+
+$list-padding-top: $baseline-grid !default;
+$list-padding-right: 0px !default;
+$list-padding-left: 0px !default;
+$list-padding-bottom: $baseline-grid !default;
+
+$item-padding-top: 0px !default;
+$item-padding-right: 0px !default;
+$item-padding-left: 0px !default;
+$item-padding-bottom: 0px !default;
+$list-item-padding-vertical: 0px !default;
+$list-item-padding-horizontal: $baseline-grid * 2 !default;
+$list-item-primary-width: $baseline-grid * 7 !default;
+$list-item-primary-avatar-width: $baseline-grid * 5 !default;
+$list-item-primary-icon-width: $baseline-grid * 3 !default;
+$list-item-secondary-left-margin: $baseline-grid * 2 !default;
+$list-item-secondary-button-width: $baseline-grid * 6 !default;
+$list-item-text-padding-top: $baseline-grid * 2 !default;
+$list-item-text-padding-bottom: $baseline-grid * 2.5 !default;
+$list-item-inset-divider-offset: 12 * $baseline-grid !default;
+
+md-list {
+  display: block;
+  padding: $list-padding-top $list-padding-right $list-padding-bottom $list-padding-left;
+
+  .md-subheader {
+    @include md-body-2();
+    /* @alternate */ line-height: $list-header-line-height;
+  }
+}
+
+md-list-item {
+  &.md-proxy-focus.md-focused .md-no-style {
+    transition: background-color 0.15s linear;
+  }
+  &.md-no-proxy,
+  .md-no-style {
+    position: relative;
+    padding: $list-item-padding-vertical $list-item-padding-horizontal;
+    flex: 1;
+    
+    &.md-button {
+      font-size: inherit;
+      height: inherit;
+      text-align: left;
+      text-transform: none;
+      width: 100%;
+      white-space: normal;
+      flex-direction: inherit;
+      align-items: inherit;
+    }
+    &:focus {
+      outline: none
+    }
+  }
+  &.md-with-secondary {
+    position: relative;
+  }
+  &.md-clickable:hover {
+    cursor: pointer;
+  }
+
+  md-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    &[md-inset] {
+      left: $list-item-inset-divider-offset;
+      width: calc(100% - #{$list-item-inset-divider-offset});
+      margin: 0;
+    }
+  }
+}
+
+md-list-item, md-list-item .md-list-item-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 48px;
+
+  // Layout for controls in primary or secondary divs, or auto-infered first child
+  & > div.md-primary > md-icon,
+  & > div.md-secondary > md-icon,
+  & > md-icon:first-child, 
+  > md-icon.md-secondary {
+    width: $list-item-primary-icon-width;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    box-sizing: content-box;
+  }
+  & > div.md-primary > md-checkbox,
+  & > div.md-secondary > md-checkbox,
+  & > md-checkbox:first-child,
+  md-checkbox.md-secondary {
+    align-self: center;
+    .md-label { display: none; }
+  }
+
+  & > md-icon:first-child {
+    margin-right: $list-item-primary-width - $list-item-primary-icon-width;
+  }
+  & > md-checkbox:first-child {
+    width: 3 * $baseline-grid;
+    margin-left: 3px;
+    margin-right: 29px;
+  }
+  & > .md-avatar:first-child {
+    width: $list-item-primary-avatar-width;
+    height: $list-item-primary-avatar-width;
+    margin-top: $baseline-grid;
+    margin-bottom: $baseline-grid;
+    margin-right: $list-item-primary-width - $list-item-primary-avatar-width;
+    border-radius: 50%;
+    box-sizing: content-box;
+  }
+
+  md-checkbox.md-secondary,
+  md-switch.md-secondary {
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  button.md-button.md-secondary-container {
+    background-color: transparent;
+    align-self: center;
+    border-radius: 50%;
+    margin: 0px;
+    min-width: 0px;
+    .md-ripple,
+    .md-ripple-container {
+      border-radius: 50%;
+    }
+  }
+
+  .md-secondary-container,
+  .md-secondary {
+    margin-left: $list-item-secondary-left-margin;
+    position: absolute;
+    right: $list-item-padding-horizontal;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  & > .md-button.md-secondary-container > .md-secondary {
+    margin-left: 0px;
+    position: static;
+  }
+
+  & > p, & > .md-list-item-inner > p {
+    flex: 1;
+    margin: 0;
+  }
+}
+
+
+md-list-item.md-2-line,
+md-list-item.md-2-line > .md-no-style,
+md-list-item.md-3-line,
+md-list-item.md-3-line > .md-no-style {
+  align-items: flex-start;
+
+  .md-list-item-text {
+    flex: 1;
+    padding: $baseline-grid * 2 0;
+    text-overflow: ellipsis;
+
+    &.md-offset {
+      margin-left: $list-item-primary-width;
+    }
+
+    h3 {
+      @include md-subhead();
+      margin: $list-h3-margin;
+      /* @alternate */ line-height: $list-header-line-height;
+    }
+    h4 {
+      @include md-body-2();
+      margin: $list-h4-margin;
+      /* @alternate */ font-weight: $list-h4-font-weight;
+      /* @alternate */ line-height: $list-header-line-height;
+    }
+    p {
+      @include md-body-2();
+      margin: $list-p-margin;
+      /* @alternate */ line-height: $list-p-line-height;
+    }
+  }
+}
+
+md-list-item.md-2-line,
+md-list-item.md-2-line > .md-no-style {
+  > .md-avatar:first-child {
+    margin-top: $baseline-grid * 1.5;
+  }
+  > md-icon:first-child {
+    align-self: flex-start;
+  }
+  .md-list-item-text {
+    flex: 1;
+    padding-top: ($baseline-grid * 2.5) - 1;
+  }
+}
+
+md-list-item.md-3-line,
+md-list-item.md-3-line > .md-no-style {
+  > md-icon:first-child, 
+  > .md-avatar:first-child {
+    margin-top: $baseline-grid * 2;
+  }
+}
+
+$menu-border-radius: 2px;
+$max-visible-items: 6;
+$menu-item-height: 6 * $baseline-grid;
+$dense-menu-item-height: 4 * $baseline-grid;
+$max-menu-height: 2 * $baseline-grid + $max-visible-items * $menu-item-height;
+$max-dense-menu-height: 2 * $baseline-grid + $max-visible-items * $dense-menu-item-height;
+
+.md-open-menu-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: $z-index-menu;
+  opacity: 0;
+  border-radius: $menu-border-radius;
+  overflow: hidden;
+
+  md-menu-divider {
+    margin-top: $baseline-grid / 2;
+    margin-bottom: $baseline-grid / 2;
+    height: 1px;
+    width: 100%;
+  }
+
+  md-menu-content > * {
+    opacity: 0;
+  }
+
+  // Don't let the user click something until it's animated
+  &:not(.md-clickable) {
+    pointer-events: none;
+  }
+
+  // enter: menu scales in, then list fade in.
+  &.md-active {
+    opacity: 1;
+    transition: $swift-ease-out;
+    transition-duration: 200ms;
+    > md-menu-content > * {
+      opacity: 1;
+      transition: $swift-ease-in;
+      transition-duration: 200ms;
+      transition-delay: 100ms;
+    }
+  }
+  // leave: the container fades out
+  &.md-leave {
+    opacity: 0;
+    transition: $swift-ease-in;
+    transition-duration: 250ms;
+  }
+}
+
+md-menu-content {
+  display: flex;
+  flex-direction: column;
+  padding: $baseline-grid 0;
+  max-height: $max-menu-height;
+  overflow-y: auto;
+  &.md-dense {
+    max-height: $max-dense-menu-height;
+    md-menu-item {
+      height: $dense-menu-item-height;
+    }
+  }
+}
+
+md-menu-item {
+  display: flex;
+  flex-direction: row;
+  min-height: $menu-item-height;
+  height: $menu-item-height;
+  align-content: center;
+  justify-content: flex-start;
+
+  > * {
+    width: 100%;
+    margin: auto 0;
+    padding-left: 2*$baseline-grid;
+    padding-right: 2*$baseline-grid;
+  }
+
+  > .md-button {
+    border-radius: 0;
+    margin: auto 0;
+    font-size: (2*$baseline-grid) - 1;
+    text-transform: none;
+    font-weight: 400;
+    text-align: start;
+    height: 100%;
+    padding-left: 2*$baseline-grid;
+    padding-right: 2*$baseline-grid;
+    display: inline-block;
+    align-items: baseline;
+    align-content: left;
+    width:100%;
+    md-icon {
+      margin: auto 2*$baseline-grid auto 0;
+    }
+    p {
+      display:inline-block;
+      margin: auto;
+    }
+    span {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}
+
+.md-menu {
+  padding: $baseline-grid 0;
+}
+
+md-toolbar {
+  .md-menu {
+    height: auto;
+    margin: auto;
+  }
+}
+
+@media (max-width: $layout-breakpoint-sm - 1) {
+  md-menu-content {
+    min-width: 112px;
+  }
+  @for $i from 3 through 7 {
+    md-menu-content[width="#{$i}"] {
+      min-width: $i * 56px;
+    }
+  }
+}
+@media (min-width: $layout-breakpoint-sm) {
+  md-menu-content {
+    min-width: 96px;
+  }
+  @for $i from 3 through 7 {
+    md-menu-content[width="#{$i}"] {
+      min-width: $i * 64px;
+    }
+  }
+}
+
+$progress-circular-ease-in-out : cubic-bezier(0.35, 0, 0.25, 1) !default;
+$progress-circular-duration : 5.25s !default;
+$progress-circular-circle-duration : $progress-circular-duration * 0.25 !default;
+$progress-circular-outer-duration : $progress-circular-duration * (5 / 9) !default;
+$progress-circular-sporadic-duration : $progress-circular-duration !default;
+$progress-circular-size : 50px !default;
+
+@keyframes outer-rotate {
+  100% { transform: rotate(360deg); }
+}
+@keyframes left-wobble {
+  0%, 100% { transform: rotate(130deg); }
+  50% { transform: rotate( -5deg); }
+}
+@keyframes right-wobble {
+  0%, 100% { transform: rotate(-130deg); }
+  50% { transform: rotate(   5deg); }
+}
+@keyframes sporadic-rotate {
+  12.5% { transform: rotate( 135deg); }
+  25% { transform: rotate( 270deg); }
+  37.5% { transform: rotate( 405deg); }
+  50% { transform: rotate( 540deg); }
+  62.5% { transform: rotate( 675deg); }
+  75% { transform: rotate( 810deg); }
+  87.5% { transform: rotate( 945deg); }
+  100% { transform: rotate(1080deg); }
+}
+
+md-progress-circular {
+  width: $progress-circular-size;
+  height: $progress-circular-size;
+  display: block;
+  position: relative;
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+  overflow: hidden;
+  .md-inner {
+    width: $progress-circular-size;
+    height: $progress-circular-size;
+    position: relative;
+    .md-gap {
+      position: absolute;
+      left: $progress-circular-size * 0.5 - 1;
+      right: $progress-circular-size * 0.5 - 1;
+      top: 0;
+      bottom: 0;
+      border-top-width: 5px;
+      border-top-style: solid;
+      box-sizing: border-box;
+    }
+    .md-left, .md-right {
+      position: absolute;
+      top: 0;
+      height: $progress-circular-size;
+      width: $progress-circular-size * 0.5;
+      overflow: hidden;
+      .md-half-circle {
+        position: absolute;
+        top: 0;
+        width: $progress-circular-size;
+        height: $progress-circular-size;
+        box-sizing: border-box;
+        border-width: 5px;
+        border-style: solid;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+      }
+    }
+    .md-left {
+      left: 0;
+      .md-half-circle {
+        left: 0;
+        border-right-color: transparent;
+      }
+    }
+    .md-right {
+      right: 0;
+      .md-half-circle {
+        right: 0;
+        border-left-color: transparent;
+      }
+    }
+  }
+
+  // TODO: This while-loop generates about 2 kilobytes of css after gzip.
+  // Refactor progressCircular to animate with javascript.
+  $i: 0;
+  @while $i <= 100 {
+    &[value="#{$i}"] {
+      .md-inner {
+        .md-left {
+          .md-half-circle {
+            @if $i <= 50 {
+              transform: rotate(135deg);
+            } @else {
+              transition: transform 0.1s linear;
+              $deg: ($i - 50) / 50 * 180 + 135;
+              transform: rotate(#{$deg}deg);
+            }
+          }
+        }
+        .md-right {
+          .md-half-circle {
+            @if $i <= 50 {
+              transition: transform 0.1s linear;
+              $deg: $i / 50 * 180 - 135;
+              transform: rotate(#{$deg}deg);
+            } @else {
+              transform: rotate(45deg);
+            }
+          }
+        }
+        .md-gap {
+          border-bottom-width: 5px;
+          border-bottom-style: solid;
+          @if $i <= 50 {
+            border-bottom-color: transparent !important;
+          } @else {
+            transition: border-bottom-color 0.1s linear;
+          }
+        }
+      }
+    }
+    $i: $i + 1;
+  }
+
+  &[md-mode=indeterminate] {
+    .md-spinner-wrapper {
+      animation: outer-rotate $progress-circular-outer-duration linear infinite;
+      .md-inner {
+        animation: sporadic-rotate $progress-circular-sporadic-duration $progress-circular-ease-in-out infinite;
+        .md-left, .md-right {
+          .md-half-circle {
+            animation-iteration-count: infinite;
+            animation-duration: ($progress-circular-duration * 0.25);
+            animation-timing-function: $progress-circular-ease-in-out;
+          }
+        }
+        .md-left {
+          .md-half-circle {
+            animation-name: left-wobble;
+          }
+        }
+        .md-right {
+          .md-half-circle {
+            animation-name: right-wobble;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ng-hide md-progress-circular,
+md-progress-circular.ng-hide {
+  &[md-mode=indeterminate] {
+    .md-spinner-wrapper {
+      animation: none;
+      .md-inner {
+        animation: none;
+        .md-left {
+          .md-half-circle {
+            animation-name: none;
+          }
+        }
+        .md-right {
+          .md-half-circle {
+            animation-name: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+$icon-size: rem(2.4);
+
+md-icon {
+  margin: auto;
+  background-repeat: no-repeat no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+  height: $icon-size;
+  width: $icon-size;
+
+  svg {
+    pointer-events: none;
+  }
+
+  &[md-font-icon] {
+    line-height: 1;
+    width: auto;
+  }
+}
+
+//
+//@font-face {
+//  font-family:"material";
+//  src:url("/dist/material-font/material.eot");
+//  font-weight:normal;
+//  font-style:normal;
+//}
+//
+//@font-face {
+//  font-family:"material";
+//  src:url("/dist/material-font/material.eot");
+//  src:url("/dist/material-font/material.eot?#iefix") format("embedded-opentype"),
+//    url("/dist/material-font/material.woff") format("woff"),
+//    url("/dist/material-font/material.ttf") format("truetype"),
+//    url("/dist/material-font/material.svg?#material") format("svg");
+//  font-weight:normal;
+//  font-style:normal;
+//}
+//
+///* Bootstrap Overrides */
+//[class^="icon-"]:before,
+//[class*=" icon-"]:before {
+//  font-family:"material";
+//  display:inline-block;
+//  vertical-align:middle;
+//  line-height:1;
+//  font-weight:normal;
+//  font-style:normal;
+//  speak:none;
+//  text-decoration:inherit;
+//  text-transform:none;
+//  text-rendering:optimizeLegibility;
+//  -webkit-font-smoothing:antialiased;
+//  -moz-osx-font-smoothing:grayscale;
+//}
 
 $progress-linear-bar-height: 5px !default;
 
@@ -2984,737 +3372,6 @@ md-progress-linear[md-mode="indeterminate"] {
   }
   100% {
     left: 422.6 * 100% / 360;
-  }
-}
-
-$list-h3-margin: 0 0 6px 0 !default;
-$list-h4-margin: 10px 0 5px 0 !default;
-$list-h4-font-weight: 400 !default;
-$list-header-line-height: 0.75em !default;
-$list-p-margin: 0 0 0px 0 !default;
-$list-p-line-height: 1.6em !default;
-
-$list-padding-top: $baseline-grid !default;
-$list-padding-right: 0px !default;
-$list-padding-left: 0px !default;
-$list-padding-bottom: $baseline-grid !default;
-
-$item-padding-top: 0px !default;
-$item-padding-right: 0px !default;
-$item-padding-left: 0px !default;
-$item-padding-bottom: 0px !default;
-$list-item-padding-vertical: 0px !default;
-$list-item-padding-horizontal: $baseline-grid * 2 !default;
-$list-item-primary-width: $baseline-grid * 7 !default;
-$list-item-primary-avatar-width: $baseline-grid * 5 !default;
-$list-item-primary-icon-width: $baseline-grid * 3 !default;
-$list-item-secondary-left-margin: $baseline-grid * 2 !default;
-$list-item-secondary-button-width: $baseline-grid * 6 !default;
-$list-item-text-padding-top: $baseline-grid * 2 !default;
-$list-item-text-padding-bottom: $baseline-grid * 2.5 !default;
-$list-item-inset-divider-offset: 12 * $baseline-grid !default;
-
-md-list {
-  display: block;
-  padding: $list-padding-top $list-padding-right $list-padding-bottom $list-padding-left;
-
-  .md-subheader {
-    @include md-body-2();
-    line-height: $list-header-line-height;
-  }
-}
-
-md-list-item {
-  &.md-proxy-focus.md-focused .md-no-style {
-    transition: background-color 0.15s linear;
-  }
-  &.md-no-proxy,
-  .md-no-style {
-    position: relative;
-    padding: $list-item-padding-vertical $list-item-padding-horizontal;
-    flex: 1;
-    
-    &.md-button {
-      font-size: inherit;
-      height: inherit;
-      text-align: left;
-      text-transform: none;
-      width: 100%;
-      white-space: normal;
-      flex-direction: inherit;
-      align-items: inherit;
-    }
-    &:focus {
-      outline: none
-    }
-  }
-  &.md-with-secondary {
-    position: relative;
-  }
-  &.md-clickable:hover {
-    cursor: pointer;
-  }
-
-  md-divider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    &[md-inset] {
-      left: $list-item-inset-divider-offset;
-      width: calc(100% - #{$list-item-inset-divider-offset});
-      margin: 0;
-    }
-  }
-}
-
-md-list-item, md-list-item .md-list-item-inner {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 48px;
-
-  // Layout for controls in primary or secondary divs, or auto-infered first child
-  & > div.md-primary > md-icon,
-  & > div.md-secondary > md-icon,
-  & > md-icon:first-child, 
-  > md-icon.md-secondary {
-    width: $list-item-primary-icon-width;
-    margin-top: 16px;
-    margin-bottom: 12px;
-    box-sizing: content-box;
-  }
-  & > div.md-primary > md-checkbox,
-  & > div.md-secondary > md-checkbox,
-  & > md-checkbox:first-child,
-  md-checkbox.md-secondary {
-    align-self: center;
-    .md-label { display: none; }
-  }
-
-  & > md-icon:first-child {
-    margin-right: $list-item-primary-width - $list-item-primary-icon-width;
-  }
-  & > md-checkbox:first-child {
-    width: 3 * $baseline-grid;
-    margin-left: 3px;
-    margin-right: 29px;
-  }
-  & > .md-avatar:first-child {
-    width: $list-item-primary-avatar-width;
-    height: $list-item-primary-avatar-width;
-    margin-top: $baseline-grid;
-    margin-bottom: $baseline-grid;
-    margin-right: $list-item-primary-width - $list-item-primary-avatar-width;
-    border-radius: 50%;
-    box-sizing: content-box;
-  }
-
-  md-checkbox.md-secondary,
-  md-switch.md-secondary {
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  button.md-button.md-secondary-container {
-    background-color: transparent;
-    align-self: center;
-    border-radius: 50%;
-    margin: 0px;
-    min-width: 0px;
-    .md-ripple,
-    .md-ripple-container {
-      border-radius: 50%;
-    }
-  }
-
-  .md-secondary-container,
-  .md-secondary {
-    margin-left: $list-item-secondary-left-margin;
-    position: absolute;
-    right: $list-item-padding-horizontal;
-    top: 50%;
-    transform: translate3d(0, -50%, 0);
-  }
-
-  & > .md-button.md-secondary-container > .md-secondary {
-    margin-left: 0px;
-    position: static;
-  }
-
-  & > p, & > .md-list-item-inner > p {
-    flex: 1;
-    margin: 0;
-  }
-}
-
-
-md-list-item.md-2-line,
-md-list-item.md-2-line > .md-no-style,
-md-list-item.md-3-line,
-md-list-item.md-3-line > .md-no-style {
-  align-items: flex-start;
-
-  .md-list-item-text {
-    flex: 1;
-    padding: $baseline-grid * 2 0;
-    text-overflow: ellipsis;
-
-    &.md-offset {
-      margin-left: $list-item-primary-width;
-    }
-
-    h3 {
-      @include md-subhead();
-      margin: $list-h3-margin;
-      line-height: $list-header-line-height;
-    }
-    h4 {
-      @include md-body-2();
-      font-weight: $list-h4-font-weight;
-      margin: $list-h4-margin;
-      line-height: $list-header-line-height;
-    }
-    p {
-      @include md-body-2();
-      margin: $list-p-margin;
-      line-height: $list-p-line-height;
-    }
-  }
-}
-
-md-list-item.md-2-line,
-md-list-item.md-2-line > .md-no-style {
-  > .md-avatar:first-child {
-    margin-top: $baseline-grid * 1.5;
-  }
-  > md-icon:first-child {
-    align-self: flex-start;
-  }
-  .md-list-item-text {
-    flex: 1;
-    padding-top: ($baseline-grid * 2.5) - 1;
-  }
-}
-
-md-list-item.md-3-line,
-md-list-item.md-3-line > .md-no-style {
-  > md-icon:first-child, 
-  > .md-avatar:first-child {
-    margin-top: $baseline-grid * 2;
-  }
-}
-
-$progress-circular-ease-in-out : cubic-bezier(0.35, 0, 0.25, 1) !default;
-$progress-circular-duration : 5.25s !default;
-$progress-circular-circle-duration : $progress-circular-duration * 0.25 !default;
-$progress-circular-outer-duration : $progress-circular-duration * (5 / 9) !default;
-$progress-circular-sporadic-duration : $progress-circular-duration !default;
-$progress-circular-size : 50px !default;
-
-@keyframes outer-rotate {
-  100% { transform: rotate(360deg); }
-}
-@keyframes left-wobble {
-  0%, 100% { transform: rotate(130deg); }
-  50% { transform: rotate( -5deg); }
-}
-@keyframes right-wobble {
-  0%, 100% { transform: rotate(-130deg); }
-  50% { transform: rotate(   5deg); }
-}
-@keyframes sporadic-rotate {
-  12.5% { transform: rotate( 135deg); }
-  25% { transform: rotate( 270deg); }
-  37.5% { transform: rotate( 405deg); }
-  50% { transform: rotate( 540deg); }
-  62.5% { transform: rotate( 675deg); }
-  75% { transform: rotate( 810deg); }
-  87.5% { transform: rotate( 945deg); }
-  100% { transform: rotate(1080deg); }
-}
-
-md-progress-circular {
-  width: $progress-circular-size;
-  height: $progress-circular-size;
-  display: block;
-  position: relative;
-  padding-top: 0 !important;
-  margin-bottom: 0 !important;
-  overflow: hidden;
-  .md-inner {
-    width: $progress-circular-size;
-    height: $progress-circular-size;
-    position: relative;
-    .md-gap {
-      position: absolute;
-      left: $progress-circular-size * 0.5 - 1;
-      right: $progress-circular-size * 0.5 - 1;
-      top: 0;
-      bottom: 0;
-      border-top-width: 5px;
-      border-top-style: solid;
-      box-sizing: border-box;
-    }
-    .md-left, .md-right {
-      position: absolute;
-      top: 0;
-      height: $progress-circular-size;
-      width: $progress-circular-size * 0.5;
-      overflow: hidden;
-      .md-half-circle {
-        position: absolute;
-        top: 0;
-        width: $progress-circular-size;
-        height: $progress-circular-size;
-        box-sizing: border-box;
-        border-width: 5px;
-        border-style: solid;
-        border-bottom-color: transparent;
-        border-radius: 50%;
-      }
-    }
-    .md-left {
-      left: 0;
-      .md-half-circle {
-        left: 0;
-        border-right-color: transparent;
-      }
-    }
-    .md-right {
-      right: 0;
-      .md-half-circle {
-        right: 0;
-        border-left-color: transparent;
-      }
-    }
-  }
-
-  // TODO: This while-loop generates about 2 kilobytes of css after gzip.
-  // Refactor progressCircular to animate with javascript.
-  $i: 0;
-  @while $i <= 100 {
-    &[value="#{$i}"] {
-      .md-inner {
-        .md-left {
-          .md-half-circle {
-            @if $i <= 50 {
-              transform: rotate(135deg);
-            } @else {
-              transition: transform 0.1s linear;
-              $deg: ($i - 50) / 50 * 180 + 135;
-              transform: rotate(#{$deg}deg);
-            }
-          }
-        }
-        .md-right {
-          .md-half-circle {
-            @if $i <= 50 {
-              transition: transform 0.1s linear;
-              $deg: $i / 50 * 180 - 135;
-              transform: rotate(#{$deg}deg);
-            } @else {
-              transform: rotate(45deg);
-            }
-          }
-        }
-        .md-gap {
-          border-bottom-width: 5px;
-          border-bottom-style: solid;
-          @if $i <= 50 {
-            border-bottom-color: transparent !important;
-          } @else {
-            transition: border-bottom-color 0.1s linear;
-          }
-        }
-      }
-    }
-    $i: $i + 1;
-  }
-
-  &[md-mode=indeterminate] {
-    .md-spinner-wrapper {
-      animation: outer-rotate $progress-circular-outer-duration linear infinite;
-      .md-inner {
-        animation: sporadic-rotate $progress-circular-sporadic-duration $progress-circular-ease-in-out infinite;
-        .md-left, .md-right {
-          .md-half-circle {
-            animation-iteration-count: infinite;
-            animation-duration: ($progress-circular-duration * 0.25);
-            animation-timing-function: $progress-circular-ease-in-out;
-          }
-        }
-        .md-left {
-          .md-half-circle {
-            animation-name: left-wobble;
-          }
-        }
-        .md-right {
-          .md-half-circle {
-            animation-name: right-wobble;
-          }
-        }
-      }
-    }
-  }
-}
-
-.ng-hide md-progress-circular,
-md-progress-circular.ng-hide {
-  &[md-mode=indeterminate] {
-    .md-spinner-wrapper {
-      animation: none;
-      .md-inner {
-        animation: none;
-        .md-left {
-          .md-half-circle {
-            animation-name: none;
-          }
-        }
-        .md-right {
-          .md-half-circle {
-            animation-name: none;
-          }
-        }
-      }
-    }
-  }
-}
-
-$select-option-height: 48px;
-$select-option-padding: 16px;
-$select-container-padding: 16px;
-$select-container-transition-duration: 350ms;
-
-$select-max-visible-options: 5;
-
-.md-select-menu-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: $z-index-select;
-  opacity: 0;
-
-  // Don't let the user select a new choice while it's animating
-  &:not(.md-clickable) {
-    pointer-events: none;
-  }
-
-  md-progress-circular {
-    display: table;
-    margin: 3*$baseline-grid auto !important;
-  }
-
-
-  // enter: md-select scales in, then options fade in.
-  &.md-active {
-    opacity: 1;
-    md-select-menu {
-      transition: $swift-ease-out;
-      transition-duration: 200ms;
-      > * {
-        opacity: 1;
-        transition: $swift-ease-in;
-        transition-duration: 200ms;
-        transition-delay: 100ms;
-      }
-    }
-  }
-
-  // leave: the container fades out
-  &.md-leave {
-    opacity: 0;
-    transition: $swift-ease-in;
-    transition-duration: 250ms;
-  }
-}
-
-md-input-container > md-select {
-  margin: auto 0 0 0;
-  order: 2;
-}
-
-md-select {
-  display: flex;
-  margin: 2.5*$baseline-grid 0 3*$baseline-grid + 2 0;
-  &:focus {
-    outline: none;
-  }
-  &[disabled]:hover {
-    cursor: default;
-  }
-  &:not([disabled]) {
-    &:hover {
-      cursor: pointer
-    }
-    &.ng-invalid.ng-dirty {
-      .md-select-value {
-        border-bottom: 2px solid;
-        padding-bottom: 0;
-      }
-    }
-    &:focus {
-      .md-select-value {
-        border-bottom-width: 2px;
-        border-bottom-style: solid;
-        padding-bottom: 0;
-      }
-    }
-  }
-}
-
-
-.md-select-value {
-  display: flex;
-  align-items: center;
-  padding: 2px 2px 1px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  position: relative;
-  box-sizing: content-box;
-  min-width: 8 * $baseline-grid;
-  min-height: 26px;
-  flex-grow: 1;
-
-  *:first-child {
-    flex: 1;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: calc(100% - 2*#{$baseline-grid});
-    transform: translate3d(0, 2px, 0);
-  }
-
-  .md-select-icon {
-    align-items: flex-end;
-    text-align: end;
-    width: 3 * $baseline-grid;
-    margin: 0 .5 * $baseline-grid;
-    transform: translate3d(0, 1px, 0);
-  }
-
-  .md-select-icon:after {
-    display: block;
-    content: '\25BC';
-    position: relative;
-    top: 2px;
-    speak: none;
-    transform: scaleY(0.6) scaleX(1);
-  }
-
-  &.md-select-placeholder {
-    display: flex;
-    order: 1;
-    pointer-events: none;
-    -webkit-font-smoothing: antialiased;
-    padding-left: 2px;
-    z-index: 1;
-  }
-}
-
-md-select-menu {
-  display: flex;
-  flex-direction: column;
-  &.md-reverse {
-    flex-direction: column-reverse;
-  }
-
-  &:not(.md-overflow) {
-    md-content {
-      padding-top: $baseline-grid;
-      padding-bottom: $baseline-grid;
-    }
-  }
-
-  box-shadow: $whiteframe-shadow-z1;
-  max-height: ($select-option-height * $select-max-visible-options) + 2 * $baseline-grid;
-  min-height: $select-option-height;
-  overflow-y: hidden;
-
-  @include rtl(transform-origin, left top, right top);
-
-  transform: scale(1.0);
-
-  md-content {
-    min-width: 136px;
-    min-height: $select-option-height;
-    max-height: ($select-option-height * $select-max-visible-options) + 2 * $baseline-grid;
-    overflow-y: auto;
-  }
-  > * {
-    opacity: 0;
-  }
-}
-
-md-option {
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: auto;
-
-  &:focus {
-    outline: none;
-  }
-
-  .md-text {
-    width: auto;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: rem(1.6);
-  }
-  padding: 0 $select-option-padding 0 $select-option-padding;
-  height: $select-option-height;
-}
-
-md-optgroup {
-  display: block;
-  label {
-    display: block;
-    font-size: rem(1.4);
-    text-transform: uppercase;
-    padding: $baseline-grid * 2;
-    font-weight: 500;
-  }
-  md-option {
-    padding-left: $select-option-padding * 2;
-    padding-right: $select-option-padding * 2;
-  }
-}
-
-@media screen and (-ms-high-contrast: active) {
-  .md-select-backdrop {
-    background-color: transparent;
-  }
-  md-select-menu {
-    border: 1px solid #fff;
-  }
-}
-
-$radio-width: 16px !default;
-$radio-height: $radio-width !default;
-$radio-text-margin: 10px !default;
-$radio-top-left: -15px !default;
-
-md-radio-button,
-.md-switch-thumb { // Used in switch
-  box-sizing: border-box;
-  display: block;
-  margin: 15px;
-  white-space: nowrap;
-  cursor: pointer;
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-
-  input {
-    display: none;
-  }
-
-  .md-container {
-    position: relative;
-    top: 4px;
-    display: inline-block;
-    width: $radio-width;
-    height: $radio-width;
-    cursor: pointer;
-
-    .md-ripple-container {
-      position: absolute;
-      display: block;
-      width: $radio-width * 3;
-      height: $radio-width * 3;
-      left: -$radio-width;
-      top: -$radio-width;
-    }
-
-    &:before {
-      background-color: transparent;
-      border-radius: 50%;
-      content: '';
-      position: absolute;
-      display: block;
-      height: auto;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      transition: all 0.5s;
-      width: auto;
-    }
-  }
-
-  &.md-align-top-left > div.md-container {
-     top: $radio-top-left;
-   }
-
-  .md-off {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $radio-width;
-    height: $radio-width;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 50%;
-    transition: border-color ease 0.28s;
-  }
-
-  .md-on {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $radio-width;
-    height: $radio-width;
-    border-radius: 50%;
-    transition: transform ease 0.28s;
-    transform: scale(0);
-  }
-
-  &.md-checked .md-on {
-    transform: scale(0.50);
-  }
-
-  .md-label {
-    position: relative;
-    display: inline-block;
-
-    @include rtl(margin-left, $radio-text-margin, 0);
-    @include rtl(margin-right, 0, $radio-text-margin);
-
-    vertical-align: middle;
-    white-space: normal;
-    pointer-events: none;
-    width: auto;
-  }
-
-  .circle {
-    border-radius: 50%;
-  }
-
-}
-md-radio-group {
-  &:focus {
-    outline: none;
-  }
-  &.md-focused {
-    .md-checked .md-container:before {
-      left: -8px;
-      top: -8px;
-      right: -8px;
-      bottom: -8px;
-    }
-  }
-}
-
-@media screen and (-ms-high-contrast: active) {
-  md-radio-button.md-default-theme .md-on {
-    background-color: #fff;
   }
 }
 
@@ -4013,6 +3670,427 @@ md-slider {
 }
 
 
+$radio-width: 16px !default;
+$radio-height: $radio-width !default;
+$radio-text-margin: 10px !default;
+$radio-top-left: -15px !default;
+
+md-radio-button,
+.md-switch-thumb { // Used in switch
+  box-sizing: border-box;
+  display: block;
+  margin: 15px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  input {
+    display: none;
+  }
+
+  .md-container {
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    width: $radio-width;
+    height: $radio-width;
+    cursor: pointer;
+
+    .md-ripple-container {
+      position: absolute;
+      display: block;
+      width: $radio-width * 3;
+      height: $radio-width * 3;
+      left: -$radio-width;
+      top: -$radio-width;
+    }
+
+    &:before {
+      background-color: transparent;
+      border-radius: 50%;
+      content: '';
+      position: absolute;
+      display: block;
+      height: auto;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transition: all 0.5s;
+      width: auto;
+    }
+  }
+
+  &.md-align-top-left > div.md-container {
+     top: $radio-top-left;
+   }
+
+  .md-off {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $radio-width;
+    height: $radio-width;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 50%;
+    transition: border-color ease 0.28s;
+  }
+
+  .md-on {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $radio-width;
+    height: $radio-width;
+    border-radius: 50%;
+    transition: transform ease 0.28s;
+    transform: scale(0);
+  }
+
+  &.md-checked .md-on {
+    transform: scale(0.50);
+  }
+
+  .md-label {
+    position: relative;
+    display: inline-block;
+
+    @include rtl(margin-left, $radio-text-margin, 0);
+    @include rtl(margin-right, 0, $radio-text-margin);
+
+    vertical-align: middle;
+    white-space: normal;
+    pointer-events: none;
+    width: auto;
+  }
+
+  .circle {
+    border-radius: 50%;
+  }
+
+}
+md-radio-group {
+  &:focus {
+    outline: none;
+  }
+  &.md-focused {
+    .md-checked .md-container:before {
+      left: -8px;
+      top: -8px;
+      right: -8px;
+      bottom: -8px;
+    }
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  md-radio-button.md-default-theme .md-on {
+    background-color: #fff;
+  }
+}
+
+$select-option-height: 48px;
+$select-option-padding: 16px;
+$select-container-padding: 16px;
+$select-container-transition-duration: 350ms;
+
+$select-max-visible-options: 5;
+
+.md-select-menu-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: $z-index-select;
+  opacity: 0;
+
+  // Don't let the user select a new choice while it's animating
+  &:not(.md-clickable) {
+    pointer-events: none;
+  }
+
+  md-progress-circular {
+    display: table;
+    margin: 3*$baseline-grid auto !important;
+  }
+
+
+  // enter: md-select scales in, then options fade in.
+  &.md-active {
+    opacity: 1;
+    md-select-menu {
+      transition: $swift-ease-out;
+      transition-duration: 150ms;
+      > * {
+        opacity: 1;
+        transition: $swift-ease-in;
+        transition-duration: 150ms;
+        transition-delay: 100ms;
+      }
+    }
+  }
+
+  // leave: the container fades out
+  &.md-leave {
+    opacity: 0;
+    transition: $swift-ease-in;
+    transition-duration: 250ms;
+  }
+}
+
+md-input-container > md-select {
+  margin: auto 0 0 0;
+  order: 2;
+}
+
+md-select {
+  display: flex;
+  margin: 2.5*$baseline-grid 0 3*$baseline-grid + 2 0;
+  &:focus {
+    outline: none;
+  }
+  &[disabled]:hover {
+    cursor: default;
+  }
+  &:not([disabled]) {
+    &:hover {
+      cursor: pointer
+    }
+    &.ng-invalid.ng-dirty {
+      .md-select-value {
+        border-bottom: 2px solid;
+        padding-bottom: 0;
+      }
+    }
+    &:focus {
+      .md-select-value {
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+
+.md-select-value {
+  display: flex;
+  align-items: center;
+  padding: 2px 2px 1px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  background-color: rgba(0,0,0,0);
+  position: relative;
+  box-sizing: content-box;
+  min-width: 8 * $baseline-grid;
+  min-height: 26px;
+  flex-grow: 1;
+
+  *:first-child {
+    flex: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: calc(100% - 2*#{$baseline-grid});
+    transform: translate3d(0, 2px, 0);
+  }
+
+  .md-select-icon {
+    align-items: flex-end;
+    text-align: end;
+    width: 3 * $baseline-grid;
+    margin: 0 .5 * $baseline-grid;
+    transform: translate3d(0, 1px, 0);
+  }
+
+  .md-select-icon:after {
+    display: block;
+    content: '\25BC';
+    position: relative;
+    top: 2px;
+    speak: none;
+    transform: scaleY(0.6) scaleX(1);
+  }
+
+  &.md-select-placeholder {
+    display: flex;
+    order: 1;
+    pointer-events: none;
+    -webkit-font-smoothing: antialiased;
+    padding-left: 2px;
+    z-index: 1;
+  }
+}
+
+md-select-menu {
+  display: flex;
+  flex-direction: column;
+  &.md-reverse {
+    flex-direction: column-reverse;
+  }
+
+  &:not(.md-overflow) {
+    md-content {
+      padding-top: $baseline-grid;
+      padding-bottom: $baseline-grid;
+    }
+  }
+
+  box-shadow: $whiteframe-shadow-z1;
+  max-height: ($select-option-height * $select-max-visible-options) + 2 * $baseline-grid;
+  min-height: $select-option-height;
+  overflow-y: hidden;
+
+  @include rtl(transform-origin, left top, right top);
+
+  transform: scale(1.0);
+
+  md-content {
+    min-width: 136px;
+    min-height: $select-option-height;
+    max-height: ($select-option-height * $select-max-visible-options) + 2 * $baseline-grid;
+    overflow-y: auto;
+  }
+  > * {
+    opacity: 0;
+  }
+}
+
+md-option {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: auto;
+
+  &:focus {
+    outline: none;
+  }
+
+  .md-text {
+    @include not-selectable();
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: rem(1.6);
+  }
+  padding: 0 $select-option-padding 0 $select-option-padding;
+  height: $select-option-height;
+}
+
+md-optgroup {
+  display: block;
+  label {
+    display: block;
+    font-size: rem(1.4);
+    text-transform: uppercase;
+    padding: $baseline-grid * 2;
+    font-weight: 500;
+  }
+  md-option {
+    padding-left: $select-option-padding * 2;
+    padding-right: $select-option-padding * 2;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .md-select-backdrop {
+    background-color: transparent;
+  }
+  md-select-menu {
+    border: 1px solid #fff;
+  }
+}
+
+$subheader-line-height: 1em !default;
+$subheader-font-size: rem(1.4) !default;
+$subheader-padding: ($baseline-grid * 2) 0px ($baseline-grid * 2) ($baseline-grid * 2) !default;
+$subheader-font-weight: 500 !default;
+$subheader-margin: 0 0 0 0 !default;
+$subheader-margin-right: 16px !default;
+$subheader-sticky-shadow: 0px 2px 4px 0 rgba(0,0,0,0.16) !default;
+
+@keyframes subheaderStickyHoverIn {
+  0% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    box-shadow: $subheader-sticky-shadow;
+  }
+}
+@keyframes subheaderStickyHoverOut {
+  0% {
+    box-shadow: $subheader-sticky-shadow;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.md-subheader {
+  display: block;
+  font-size: $subheader-font-size;
+  font-weight: $subheader-font-weight;
+  line-height: $subheader-line-height;
+  margin: $subheader-margin;
+  margin-right: $subheader-margin-right;
+  position: relative;
+
+  .md-subheader-inner {
+    padding: $subheader-padding;
+  }
+
+  &:not(.md-sticky-no-effect) {
+    &:after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      right: -$subheader-margin-right;
+      content: '';
+    }
+
+    transition: 0.2s ease-out margin;
+    &.md-sticky-clone {
+      z-index: 2;
+    }
+    &[sticky-state="active"] {
+      margin-top: -2px;
+    }
+    &:not(.md-sticky-clone)[sticky-prev-state="active"] .md-subheader-inner:after {
+      animation: subheaderStickyHoverOut 0.3s ease-out both;
+    }
+  }
+
+  .md-subheader-content {
+    z-index: 1;
+    position: relative;
+  }
+}
+
+.md-sticky-clone {
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute !important;
+
+  transform: translate3d(-9999px,-9999px,0);
+
+  &[sticky-state="active"] {
+    transform: translate3d(0, 0, 0);
+    &:not(.md-sticky-no-effect) .md-subheader-inner {
+      animation: subheaderStickyHoverIn 0.3s ease-out both;
+    }
+  }
+}
+
 $sidenav-default-width: 304px !default;
 $sidenav-min-space: 56px !default;
 
@@ -4133,89 +4211,6 @@ md-sidenav {
   }
   .md-sidenav-right {
     border-left: 1px solid #fff;
-  }
-}
-
-.md-sticky-clone {
-  z-index: 2;
-  top: 0;
-  left: 0;
-  right: 0;
-  position: absolute !important;
-
-  transform: translate3d(-9999px,-9999px,0);
-
-  &[sticky-state="active"] {
-    transform: translate3d(0, 0, 0);
-    &:not(.md-sticky-no-effect) .md-subheader-inner {
-      animation: subheaderStickyHoverIn 0.3s ease-out both;
-    }
-  }
-}
-
-$subheader-line-height: 1em !default;
-$subheader-font-size: rem(1.4) !default;
-$subheader-padding: ($baseline-grid * 2) 0px ($baseline-grid * 2) ($baseline-grid * 2) !default;
-$subheader-font-weight: 500 !default;
-$subheader-margin: 0 0 0 0 !default;
-$subheader-margin-right: 16px !default;
-$subheader-sticky-shadow: 0px 2px 4px 0 rgba(0,0,0,0.16) !default;
-
-@keyframes subheaderStickyHoverIn {
-  0% {
-    box-shadow: 0 0 0 0 transparent;
-  }
-  100% {
-    box-shadow: $subheader-sticky-shadow;
-  }
-}
-@keyframes subheaderStickyHoverOut {
-  0% {
-    box-shadow: $subheader-sticky-shadow;
-  }
-  100% {
-    box-shadow: 0 0 0 0 transparent;
-  }
-}
-
-.md-subheader {
-  display: block;
-  font-size: $subheader-font-size;
-  font-weight: $subheader-font-weight;
-  line-height: $subheader-line-height;
-  margin: $subheader-margin;
-  margin-right: $subheader-margin-right;
-  position: relative;
-
-  .md-subheader-inner {
-    padding: $subheader-padding;
-  }
-
-  &:not(.md-sticky-no-effect) {
-    &:after {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      top: 0;
-      right: -$subheader-margin-right;
-      content: '';
-    }
-
-    transition: 0.2s ease-out margin;
-    &.md-sticky-clone {
-      z-index: 2;
-    }
-    &[sticky-state="active"] {
-      margin-top: -2px;
-    }
-    &:not(.md-sticky-clone)[sticky-prev-state="active"] .md-subheader-inner:after {
-      animation: subheaderStickyHoverOut 0.3s ease-out both;
-    }
-  }
-
-  .md-subheader-content {
-    z-index: 1;
-    position: relative;
   }
 }
 
@@ -4656,6 +4651,8 @@ md-toolbar + md-tabs {
 md-toast {
   display: flex;
   position:absolute;
+  z-index: $z-index-toast;
+
   box-sizing: border-box;
   align-items: center;
 
@@ -4668,11 +4665,13 @@ md-toast {
   font-size: 14px;
   cursor: default;
 
-  max-width: 100%;
-  max-height: 40px;
+  height:auto;
+  min-height: 2*$toast-height;
+  max-height: 7*$toast-height;
 
-  height: $toast-height;
-  z-index: $z-index-toast;
+  max-width: 100%;
+
+  overflow:hidden;
 
   &.md-capsule {
     border-radius: 24px;
@@ -4867,7 +4866,7 @@ md-toolbar {
 
 .md-toolbar-tools {
   @include md-title();
-  font-weight: 400;
+  /* @alternate */ font-weight: 400;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -4912,6 +4911,66 @@ md-toolbar {
 
   @media screen and (-ms-high-contrast: active) {
     border-bottom: 1px solid #fff;
+  }
+}
+
+$virtual-repeat-scrollbar-width: 16px;
+
+.md-virtual-repeat-container {
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+
+  .md-virtual-repeat-scroller {
+    bottom: 0;
+    box-sizing: border-box;
+    left: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .md-virtual-repeat-sizer {
+    box-sizing: border-box;
+    height: 1px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 1px;
+  }
+
+  .md-virtual-repeat-offsetter {
+    box-sizing: border-box;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    // Leave room for the scroll bar.
+    // TODO: Will probably need to perform measurements at runtime.
+    right: $virtual-repeat-scrollbar-width;
+    top: 0;
+  }
+}
+
+.md-virtual-repeat-container.md-orient-horizontal {
+  .md-virtual-repeat-scroller {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .md-virtual-repeat-offsetter {
+    // Leave room for the scroll bar.
+    // TODO: Will probably need to perform measurements at runtime.
+    bottom: $virtual-repeat-scrollbar-width;
+    right: auto;
+    white-space: nowrap;
   }
 }
 
@@ -5002,66 +5061,6 @@ md-tooltip {
     transition: $swift-ease-out;
     pointer-events: auto;
     transform: translate3d(0,0,0);
-  }
-}
-
-$virtual-repeat-scrollbar-width: 16px;
-
-.md-virtual-repeat-container {
-  box-sizing: border-box;
-  display: block;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-
-  .md-virtual-repeat-scroller {
-    bottom: 0;
-    box-sizing: border-box;
-    left: 0;
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .md-virtual-repeat-sizer {
-    box-sizing: border-box;
-    height: 1px;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    width: 1px;
-  }
-
-  .md-virtual-repeat-offsetter {
-    box-sizing: border-box;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    // Leave room for the scroll bar.
-    // TODO: Will probably need to perform measurements at runtime.
-    right: $virtual-repeat-scrollbar-width;
-    top: 0;
-  }
-}
-
-.md-virtual-repeat-container.md-orient-horizontal {
-  .md-virtual-repeat-scroller {
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-
-  .md-virtual-repeat-offsetter {
-    // Leave room for the scroll bar.
-    // TODO: Will probably need to perform measurements at runtime.
-    bottom: $virtual-repeat-scrollbar-width;
-    right: auto;
-    white-space: nowrap;
   }
 }
 

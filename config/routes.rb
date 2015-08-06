@@ -69,6 +69,7 @@ YouversionWeb::Application.routes.draw do
   get "/highlights/:version/:reference", to: JsonController.action(:reference_highlights), constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
   get "/highlights/colors", to: JsonController.action(:highlight_colors)
   get "/bookmarks/labels", to: JsonController.action(:bookmarks_labels)
+  get "/bookmarks/:version/:reference", to: JsonController.action(:reference_bookmarks), constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
 
 
   resources :videos, only: [:index,:show] do

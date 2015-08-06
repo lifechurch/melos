@@ -1,20 +1,16 @@
-angular.module('yv.reader', [
+angular.module('yv.reader', [ 
 	'reader.chapterList',
 	'reader.versionList',
 	'reader.reader',
 	'reader.verseAction',
 	'reader.highlightPanel',
-	'reader.bookmarkPanel',
-	'reader.notePanel',
 	'reader.textSettingsPanel',
 	'reader.audioPanel',
 	'reader.verse',
 	'reader.footnote',
 	'reader.bookList',
 	'api.highlights',
-	'api.bookmarks',
 	'api.versions',
-	'api.notes',
 	'api.bible',
 	'720kb.tooltips'
 ])
@@ -22,14 +18,14 @@ angular.module('yv.reader', [
 .config([ '$stateProvider', function($stateProvider) {
 	$stateProvider
 	.state('reader', {
-		url: 				'/bible/:version/:usfm',
-		controller: 			'ReaderCtrl',
-		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
+		url: '/bible/:version/:usfm',
+		controller: 'ReaderCtrl',
+		templateProvider: function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
 	;
 }])
 
-.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings) {
+.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Authentication", "Versions", "Bible", "UserSettings", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Authentication, Versions, Bible, UserSettings) {
 	$scope.version 					= $stateParams.version;
 	$scope.usfm 						= $stateParams.usfm;
 	$scope.readerFontSize 			= 19;
@@ -40,8 +36,6 @@ angular.module('yv.reader', [
 	$scope.verseActionOpen 			= false;
 	$scope.readerSelection 			= [];
 	$scope.highlights 					= [];
-	$scope.bookmarks 				= [];
-	$scope.notes 						= [];
 
 	hideAllPanels();
 	hideAllSidePanels();
@@ -72,9 +66,7 @@ angular.module('yv.reader', [
 	 * Hide all the side panels
 	 */
 	function hideAllSidePanels() {
-		$scope.showReaderHighlight 		= false;		
-		$scope.showReaderBookmark 	= false;	
-		$scope.showReaderNote 			= false;
+		$scope.showReaderHighlight 	= false;		
 	}
 
 
@@ -89,8 +81,6 @@ angular.module('yv.reader', [
 		$scope.showReaderChapters = false;
 		$scope.readerSelection 		= [];		
 		$scope.highlights 				= [];
-		$scope.bookmarks 			= [];
-		$scope.notes 					= [];
 
 		Bible.getChapter(location_path).success(function(data, status, headers, config) {
 			fillScope(data);
@@ -136,12 +126,6 @@ angular.module('yv.reader', [
 			//TO-DO: Handle Error
 		});
 
-		Bookmarks.get($scope.version, $scope.usfm).success(function(data) {
-			$scope.bookmarks = data;
-		}).error(function(err) {
-			//TO-DO: Handle Error
-		});		
-
 	}
 
 
@@ -160,16 +144,16 @@ angular.module('yv.reader', [
 				for (var c = 0; c < reader_book_child_chapters.length; c++) {
 					var this_chapter = reader_book_child_chapters[c];
 					chapters.push({
-						href: 	this_chapter.dataset.chapterHref,
-						name: 	this_chapter.dataset.chapterNumber
+						href: this_chapter.dataset.chapterHref,
+						name: this_chapter.dataset.chapterNumber
 					});
 				}
 
 				$scope.reader_book_list.push({
-					usfm: 		reader_book_children[i].children[0].dataset.book,
-					canon: 		reader_book_children[i].children[0].dataset.canon,
-					name: 		reader_book_children[i].children[0].innerText.trim(),
-					chapters: 	chapters
+					usfm: reader_book_children[i].children[0].dataset.book,
+					canon: reader_book_children[i].children[0].dataset.canon,
+					name: reader_book_children[i].children[0].innerText.trim(),
+					chapters: chapters
 				});
 			}
 		}
@@ -181,10 +165,10 @@ angular.module('yv.reader', [
 			$scope.reader_version_list = [];
 			for (var i = 0; i < reader_version_children.length; i++) {
 				$scope.reader_version_list.push({
-					abbrev: 	reader_version_children[i].dataset.abbrev,
-					meta: 		reader_version_children[i].dataset.meta,
-					title: 		reader_version_children[i].dataset.title,
-					version: 	reader_version_children[i].dataset.version
+					abbrev: reader_version_children[i].dataset.abbrev,
+					meta: reader_version_children[i].dataset.meta,
+					title: reader_version_children[i].dataset.title,
+					version: reader_version_children[i].dataset.version
 				});
 			}
 		}

@@ -1,22 +1,22 @@
-angular.module('reader.highlightPanel', [])
+angular.module('reader.bookmarkPanel', [])
 
-.directive("readerHighlightPanel", function() {
+.directive("readerBookmarkPanel", function() {
 	return {
 		restrict: 'A',
 		scope: {
 			selection: '=',
 			version: '=',
 			token: '=',
-			highlights: '=',
+			bookmarks: '=',
 			toggleSidePanel: '=',
 			isLoggedIn: '='
 		},
-		templateUrl: '/reader-highlight-panel.tpl.html',
-		controller: ['$scope', '$element', 'Highlights', '$timeout', function($scope, $element, Highlights, $timeout) {
+		templateUrl: '/reader-bookmark-panel.tpl.html',
+		controller: ['$scope', '$element', 'Bookmarks', 'Highlights', '$timeout', function($scope, $element, Bookmarks, Highlights, $timeout) {
 			$scope.success = false;
 
 			if ($scope.selection && $scope.version && $scope.token) {
-				$scope.highlight 	= {};
+				$scope.bookmark 	= { labels: [] };
 				$scope.colors 		= [];
 
 				Highlights.getColors().success(function(data) {
@@ -25,22 +25,23 @@ angular.module('reader.highlightPanel', [])
 					//TO-DO: Handle Error
 				});
 
-				$scope.submit = function(highlightForm) {
+				$scope.submit = function(bookmarkForm) {
 					$scope.success = false;
 
-					var highlight = {
-						color: highlightForm.color,
+					var bookmark = {
+						color: bookmarkForm.color,
 						usfm_references: $scope.selection.join('+'),
-						version_id: $scope.version
+						version_id: $scope.version,
+						labels: bookmarkForm.labels
 					};
 
-					Highlights.create(highlight, $scope.token).success(function(data) {
-						var highlights = angular.copy($scope.highlights);
-						highlights.push(data);
-						$scope.highlights = highlights;
+					Bookmarks.create(bookmark, $scope.token).success(function(data) {
+						var bookmarks = angular.copy($scope.bookmarks);
+						bookmarks.push(data);
+						$scope.bookmarks = bookmarks;
 						$scope.success = true;
 						$timeout(function() { 
-							$scope.toggleSidePanel("showReaderHighlight"); 
+							$scope.toggleSidePanel("showReaderBookmark"); 
 							$scope.selection = [];
 							$scope.success = false;
 						}, 5000);

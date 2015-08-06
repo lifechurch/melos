@@ -1,22 +1,22 @@
-angular.module('reader.highlightPanel', [])
+angular.module('reader.notePanel', [])
 
-.directive("readerHighlightPanel", function() {
+.directive("readerNotePanel", function() {
 	return {
 		restrict: 'A',
 		scope: {
 			selection: '=',
 			version: '=',
 			token: '=',
-			highlights: '=',
+			notes: '=',
 			toggleSidePanel: '=',
 			isLoggedIn: '='
 		},
-		templateUrl: '/reader-highlight-panel.tpl.html',
-		controller: ['$scope', '$element', 'Highlights', '$timeout', function($scope, $element, Highlights, $timeout) {
+		templateUrl: '/reader-note-panel.tpl.html',
+		controller: ['$scope', '$element', 'Notes', 'Highlights', '$timeout', function($scope, $element, Notes, Highlights, $timeout) {
 			$scope.success = false;
 
 			if ($scope.selection && $scope.version && $scope.token) {
-				$scope.highlight 	= {};
+				$scope.notes 		= {};
 				$scope.colors 		= [];
 
 				Highlights.getColors().success(function(data) {
@@ -25,22 +25,23 @@ angular.module('reader.highlightPanel', [])
 					//TO-DO: Handle Error
 				});
 
-				$scope.submit = function(highlightForm) {
+				$scope.submit = function(noteForm) {
 					$scope.success = false;
 
-					var highlight = {
-						color: highlightForm.color,
+					var note = {
+						color: noteForm.color,
 						usfm_references: $scope.selection.join('+'),
-						version_id: $scope.version
+						version_id: $scope.version,
+						content: noteForm.content
 					};
 
-					Highlights.create(highlight, $scope.token).success(function(data) {
-						var highlights = angular.copy($scope.highlights);
-						highlights.push(data);
-						$scope.highlights = highlights;
+					Notes.create(note, $scope.token).success(function(data) {
+						var notes = angular.copy($scope.notes);
+						notes.push(data);
+						$scope.notes = notes;
 						$scope.success = true;
 						$timeout(function() { 
-							$scope.toggleSidePanel("showReaderHighlight"); 
+							$scope.toggleSidePanel("showReaderNote"); 
 							$scope.selection = [];
 							$scope.success = false;
 						}, 5000);

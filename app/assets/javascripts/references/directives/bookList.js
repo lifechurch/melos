@@ -16,9 +16,9 @@ angular.module("reader.bookList", [])
 		},
 		controller: ["$scope", function($scope) {
 			var booksPerColumn;
-			if (!$scope.booksPerColumn) { $scope.booksPerColumn = 16; }	
-			if (!$scope.maxColumns) { $scope.maxColumns = 4; }
-			if (!$scope.displayMode) { $scope.displayMode = "alphabetic"; }
+			if (!$scope.booksPerColumn) 	{ $scope.booksPerColumn = 16; 		}		
+			if (!$scope.maxColumns) 		{ $scope.maxColumns = 4; 			}
+			if (!$scope.displayMode) 		{ $scope.displayMode = "alphabetic"; 	}
 
 			$scope.filterBook = function(filter, book) {
 				return typeof(filter) === 'undefined' || filter === null || filter == "" || book.toLowerCase().indexOf(filter.toLowerCase()) > -1;

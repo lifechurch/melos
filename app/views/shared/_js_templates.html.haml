@@ -77,15 +77,15 @@
   %script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
     %md-fab-speed-dial{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'"}  
       %md-fab-actions
-        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Note"}
-          %md-tooltip{"md-direction" => "left"} Create a Note
+        %md-button.md-fab.md-raised.md-mini.note-button{"aria-label" => "Note", "ng-click" => "toggleSidePanel('showReaderNote')"}
+          %md-tooltip{"md-direction" => "left"} Note
           %md-icon{"md-svg-src" => "/assets/notes-solid.svg"}
-        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Highlight", "ng-click" => "toggleSidePanel('showReaderHighlight')" }
+        %md-button.md-fab.md-raised.md-mini.highlight-button{"aria-label" => "Highlight", "ng-click" => "toggleSidePanel('showReaderHighlight')" }
           %md-tooltip{"md-direction" => "left"} Highlight
           %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
-        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Bookmark"}
+        %md-button.md-fab.md-raised.md-mini.bookmark-button{"aria-label" => "Bookmark", "ng-click" => "toggleSidePanel('showReaderBookmark')"}
           %md-tooltip{"md-direction" => "left"} Bookmark
-          %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
+          %md-icon{"md-svg-src" => "/assets/bookmark-solid.svg"}
         %md-button.md-fab.md-raised.md-mini{"aria-label" => "Share"}
           %md-tooltip{"md-direction" => "left"} Share
           %md-icon{"md-svg-src" => "/assets/icon-share.svg"}        
@@ -93,37 +93,107 @@
           %md-tooltip{"md-direction" => "left"} Related
           %md-icon{"md-svg-src" => "/assets/icon-related.svg"}
 
+
   -#
   -# Reader Highlight Panel
   -# 
   %script{type:"text/ng-template", id: "/reader-highlight-panel.tpl.html"}
-    :plain
-      <div>
-        <span class="success ng-hide">
-          #{t("highlights.create success")}
-        </span>
-        <span class="success ng-hide">
-            <a href="#" class="verse-actions-success-link">
-              #{t("social.add comment")}
-            </a>
-        </span>        
-        <form>
-          <input type="hidden" ng-model="highlight.color" class="selected-color" />
-          <div class="row">
-            <div class="small-12 columns">
-              <div ng-style="{'background-color': '#' + color}" class="colorButton vertical-middle text-center" ng-class="{active: highlight.color == color}" ng-repeat="color in colors" ng-click="highlight.color = color"><span ng-if="highlight.color == color">X</span></div>
-              <div class="colorButton vertical-middle text-center" ng-click="highlight.color = color"><span>+</span></div>
-            </div>
-          </div>
-          <div class="row pad-head">
-            <div class="small-12 columns">
-              <button type="submit" ng-click="submit(highlight)" value="submit" class="solid-button green">
-                #{t('highlights.form.save button')}
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
+    %div.pad-head{"ng-if" => "!isLoggedIn && selection.length"}
+      %p.highlight= t('registration.highlight blurb');
+      %span.fb
+        = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: 'solid-button green')
+      %span.or
+        = t("or.upper")
+      %span.email
+        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'solid-button green'})      
+    %div.pad-head{"ng-if" => "isLoggedIn && selection.length"}
+      .ng-hide{"ng-show"=>"success"}
+        %span.success= t("highlights.create success")
+        %span.success
+          %a.solid-button.green{:href => "#"}= t("social.add comment")
+      %form{"ng-hide"=>"success"}
+        %input.selected-color{"ng-model" => "highlight.color", :type => "hidden"}/
+        .row
+          .small-12.columns
+            .colorButton.vertical-middle.text-center{"ng-class" => "{active: highlight.color == color}", "ng-click" => "highlight.color = color", "ng-repeat" => "color in colors", "ng-style" => "{'background-color': '#' + color}"}
+              %span{"ng-if" => "highlight.color == color"} X
+            .colorButton.vertical-middle.text-center{"ng-click" => "highlight.color = color"}
+              %span +
+        .row.pad-head
+          .small-12.columns
+            %button.solid-button.green{"ng-click" => "submit(highlight)", :type => "submit", :value => "submit"}= t('highlights.form.save button')
+
+
+  -#
+  -# Reader Bookmark Panel
+  -# 
+  %script{type:"text/ng-template", id: "/reader-bookmark-panel.tpl.html"}
+    %div.pad-head{"ng-if" => "!isLoggedIn && selection.length"}
+      %p.bookmark= t('registration.bookmark blurb');
+      %span.fb
+        = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: 'solid-button green')
+      %span.or
+        = t("or.upper")
+      %span.email
+        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'solid-button green'})      
+    %div.pad-head{"ng-if" => "isLoggedIn && selection.length"}
+      .ng-hide{"ng-show"=>"success"}
+        %span.success= t("bookmarks.create success")
+        %span.success
+          %a.solid-button.green{:href => "#"}= t("social.add comment")
+      %form{"ng-hide"=>"success"}
+        %input.selected-color{"ng-model" => "bookmark.color", :type => "hidden"}
+        .row
+          .small-12.columns
+            .colorButton.vertical-middle.text-center{"ng-class" => "{active: bookmark.color == color}", "ng-click" => "bookmark.color = color", "ng-repeat" => "color in colors", "ng-style" => "{'background-color': '#' + color}"}
+              %span{"ng-if" => "bookmark.color == color"} X
+            .colorButton.vertical-middle.text-center{"ng-click" => "bookmark.color = color"}
+              %span +
+        .row.pad-head
+          .small-12.columns
+            %input.selected-color{"ng-model" => "bookmark.title", :type => "text"}
+        .row.pad-head
+          .small-12.columns
+            %md-chips{"ng-model"=> "bookmark.labels", "placeholder" => "Labels", "readonly" => "false", "delete-button-label" => "Remove Label", "delete-hint" => "Press delete to remove label", "secondary-placeholder" => "+Label"} 
+        .row.pad-head
+          .small-12.columns
+            %button.solid-button.green{"ng-click" => "submit(bookmark)", :type => "submit", :value => "submit"}= t('bookmarks.form.save button')
+ 
+  -#
+  -# Reader Note Panel
+  -# 
+  %script{type:"text/ng-template", id: "/reader-note-panel.tpl.html"}
+    %div.pad-head{"ng-if" => "!isLoggedIn && selection.length"}
+      %p.note= t('registration.note blurb');
+      %span.fb
+        = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: 'solid-button green')
+      %span.or
+        = t("or.upper")
+      %span.email
+        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'solid-button green'})      
+    %div.pad-head{"ng-if" => "isLoggedIn && selection.length"}
+      .ng-hide{"ng-show"=>"success"}
+        %span.success= t("notes.create success")
+        %span.success
+          %a.solid-button.green{:href => "#"}= t("social.add comment")
+      %form{"ng-hide"=>"success"}
+        %input.selected-color{"ng-model" => "note.color", :type => "hidden"}
+        .row
+          .small-12.columns
+            .colorButton.vertical-middle.text-center{"ng-class" => "{active: note.color == color}", "ng-click" => "note.color = color", "ng-repeat" => "color in colors", "ng-style" => "{'background-color': '#' + color}"}
+              %span{"ng-if" => "note.color == color"} X
+            .colorButton.vertical-middle.text-center{"ng-click" => "note.color = color"}
+              %span +
+        .row.pad-head
+          .small-12.columns
+            %input.selected-color{"ng-model" => "note.title", :type => "text"}
+        .row.pad-head
+          .small-12.columns
+            %textarea{"ng-model"=>"note.content"}
+        .row.pad-head
+          .small-12.columns
+            %button.solid-button.green{"ng-click" => "submit(note)", :type => "submit", :value => "submit"}= t('notes.form.save button')
+  
 
   -#
   -#

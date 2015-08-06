@@ -10,6 +10,12 @@ angular.module('reader.verse', [])
 				}
 			});
 
+			scope.$watch("verseBookmarks['" + element[0].dataset.usfm + "']", function(newVal, oldVal) {
+				if (newVal) {
+					element.css("background-color", "#" + newVal);
+				}
+			});			
+
 			element.on('mouseup', function(event) {
 				element.toggleClass("selected");
 				if (!scope.selection) {

@@ -717,3 +717,27 @@ h5.bookLabel {
 // .note.f {
 // 	display: ;
 // }
+
+.highlight-button {
+	background-color: red !important;
+
+	.st0 {
+		fill: white;
+	}
+}
+
+.bookmark-button {
+	background-color: orange !important;
+
+	.st0 {
+		fill: white;
+	}
+}
+
+.note-button {
+	background-color: blue !important;
+
+	.st0 {
+		fill: white;
+	}
+}

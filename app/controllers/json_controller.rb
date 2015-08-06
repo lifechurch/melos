@@ -16,6 +16,11 @@ class JsonController < ActionController::Metal
     render json: highlights.to_json
   end
 
+  def reference_bookmarks
+    bookmarks = current_auth ? Bookmark.for_reader(auth: current_auth, user_id: current_auth.user_id, version_id: params[:version], usfm: usfm_param) : []
+    render json: bookmarks.to_json
+  end
+
   include NewRelic::Agent::Instrumentation::ControllerInstrumentation
   add_transaction_tracer :reference_highlights
 

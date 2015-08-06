@@ -77,18 +77,20 @@
   .medium-1.large-3.columns
     %br
   .medium-10.large-6.columns
-    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "show-footnotes" => "showFootnotes"}
+    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes"}
       = presenter.content.html_safe if presenter.content
       .copyright
         = (version.blurb || version.copyright).try :html_safe
   .medium-1.large-3.columns
     %div{"fix-top" => true}
       %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel" }
-      %div.ng-hide{"ng-show"=>"isLoggedIn"}
+      %div{}
         %span{"ng-show" => "readerSelection.length"}
           %b{"ng-bind" => "readerSelection.length"}
           =" verses selected"
-        %div{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "version", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights", "toggle-side-panel"=>"toggleSidePanel"}
+        %div{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "version", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
+        %div{'reader-bookmark-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderBookmark", "version" => "version", "token" => "'#{form_authenticity_token}'", "bookmarks" => "bookmarks", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
+        %div{'reader-note-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderNote", "version" => "version", "token" => "'#{form_authenticity_token}'", "notes" => "notes", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
 
 -# =render partial: 'shared/js_templates', locals: { reference: reference }
 
