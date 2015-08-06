@@ -18,6 +18,8 @@ set :default_env, {
   'SECURE_TRAFFIC' => true
 }
 
+require 'socket'
+
 namespace :deploy do
   before :starting, :highstate do
     on roles(:web) do
@@ -44,4 +46,11 @@ namespace :deploy do
     end
   end
 
+end
+
+namespace :memcached do
+  desc "Flush memcached"
+  task :flush, :roles => [:web] do
+    execute "cd #{current_release} && RAILS_ENV=#{rails_env} rake memcached:flush"
+  end
 end
