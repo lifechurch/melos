@@ -140,7 +140,13 @@ angular.module('yv.reader', [
 			$scope.bookmarks = data;
 		}).error(function(err) {
 			//TO-DO: Handle Error
-		});		
+		});	
+
+		// Notes.get($scope.version, $scope.usfm).success(function(data) {
+		// 	$scope.notes = data;
+		// }).error(function(err) {
+		// 	//TO-DO: Handle Error
+		// });			
 
 	}
 

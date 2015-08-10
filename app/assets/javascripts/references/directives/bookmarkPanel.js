@@ -32,7 +32,8 @@ angular.module('reader.bookmarkPanel', [])
 						color: bookmarkForm.color,
 						usfm_references: $scope.selection.join('+'),
 						version_id: $scope.version,
-						labels: bookmarkForm.labels
+						labels: bookmarkForm.labels,
+						title: bookmarkForm.title
 					};
 
 					Bookmarks.create(bookmark, $scope.token).success(function(data) {
@@ -40,6 +41,7 @@ angular.module('reader.bookmarkPanel', [])
 						bookmarks.push(data);
 						$scope.bookmarks = bookmarks;
 						$scope.success = true;
+						$scope.bookmark = { labels: [] };
 						$timeout(function() { 
 							$scope.toggleSidePanel("showReaderBookmark"); 
 							$scope.selection = [];

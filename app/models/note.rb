@@ -57,6 +57,26 @@ class Note < YV::Resource
       super(opts)
     end
 
+    def by_reference(params={})
+      all_moments = Moment.all(params.slice(:auth,:user_id,:usfm,:version_id))
+      all_moments.reject {|moment| moment.class != self } 
+      # TODO: Get API to implement filtering while passing a kind
+      # would allow Highlight.all(params.slice(:auth,:user_id,:usfm,:version_id)) without the second 'reject' line of code.
+    end
+    
+    def for_reader(params={})
+      notes  = by_reference(params)
+      return notes if notes.blank?
+
+      hs = notes.collect do |h|
+        {
+          id: h.id,
+          references: h.references,
+          color: h.color
+        }
+      end
+    end        
+
     # YV::Concerns::Searchable
     # usfm, version_id
     def community(opts={})

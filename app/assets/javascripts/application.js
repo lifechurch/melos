@@ -9,6 +9,7 @@
 //= require_tree ./api
 //= require_tree ./common
 //= require_tree ./references
+//= require_tree ./moments
 //= require vendor/angular-cache/angular-cache
 //= require vendor/angular-tooltips/angular-tooltips.min.js
 
@@ -42,6 +43,8 @@ function parseReaderVars() {
 }
 
 function init() {
-	parseReaderVars();
+	if (window.location.pathname.indexOf("/bible") == 0) {
+		parseReaderVars();
+	}
 	angular.bootstrap(document, ['yv']);
 }

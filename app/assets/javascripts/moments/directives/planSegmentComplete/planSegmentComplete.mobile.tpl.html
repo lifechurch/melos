@@ -1,0 +1,13 @@
+<div class="item item-avatar-left item-text-wrap">
+	<div>
+		<p ng-if="data.extras.references" class="padding-bottom">
+			<span ng-repeat="ref in data.extras.references">
+				{{ ref.human }}<span ng-if="!$last">, </span>
+			</span>
+		</p>		
+		<div class="progressBar">
+			<div ng-style="{ width: data.extras.percent_complete + '%' }"></div>
+		</div>
+		<p class="padding-top" translate="{{data.base.body.l_str}}" translate-values="data.base.body.l_args"></p>
+	</div>
+</div>

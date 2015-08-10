@@ -39,6 +39,7 @@ angular.module('reader.highlightPanel', [])
 						highlights.push(data);
 						$scope.highlights = highlights;
 						$scope.success = true;
+						$scope.highlight = {};
 						$timeout(function() { 
 							$scope.toggleSidePanel("showReaderHighlight"); 
 							$scope.selection = [];

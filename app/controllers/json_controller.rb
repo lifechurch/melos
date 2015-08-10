@@ -21,6 +21,11 @@ class JsonController < ActionController::Metal
     render json: bookmarks.to_json
   end
 
+  def reference_notes
+    notes = current_auth ? Note.for_reader(auth: current_auth, user_id: current_auth.user_id, version_id: params[:version], usfm: usfm_param) : []
+    render json: notes.to_json
+  end
+
   include NewRelic::Agent::Instrumentation::ControllerInstrumentation
   add_transaction_tracer :reference_highlights
 

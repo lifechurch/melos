@@ -16,7 +16,7 @@ angular.module('reader.notePanel', [])
 			$scope.success = false;
 
 			if ($scope.selection && $scope.version && $scope.token) {
-				$scope.notes 		= {};
+				$scope.note		= {};
 				$scope.colors 		= [];
 
 				Highlights.getColors().success(function(data) {
@@ -32,7 +32,8 @@ angular.module('reader.notePanel', [])
 						color: noteForm.color,
 						usfm_references: $scope.selection.join('+'),
 						version_id: $scope.version,
-						content: noteForm.content
+						content: noteForm.content,
+						title: noteForm.title
 					};
 
 					Notes.create(note, $scope.token).success(function(data) {
@@ -40,6 +41,7 @@ angular.module('reader.notePanel', [])
 						notes.push(data);
 						$scope.notes = notes;
 						$scope.success = true;
+						$scope.note = {};
 						$timeout(function() { 
 							$scope.toggleSidePanel("showReaderNote"); 
 							$scope.selection = [];

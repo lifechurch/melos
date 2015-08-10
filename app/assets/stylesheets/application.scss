@@ -72,6 +72,7 @@ $reader_line_height: 2em;
 
 
 @import "reader_text";
+@import "moments/moments";
 
 
 .fixed {
@@ -719,7 +720,7 @@ h5.bookLabel {
 // }
 
 .highlight-button {
-	background-color: red !important;
+	background-color: #FFCD00 !important;
 
 	.st0 {
 		fill: white;
@@ -727,7 +728,7 @@ h5.bookLabel {
 }
 
 .bookmark-button {
-	background-color: orange !important;
+	background-color: #A9321E !important;
 
 	.st0 {
 		fill: white;
@@ -735,7 +736,31 @@ h5.bookLabel {
 }
 
 .note-button {
-	background-color: blue !important;
+	background-color: #785549 !important;
+
+	.st0 {
+		fill: white;
+	}
+}
+
+.related-button {
+	background-color: #939393 !important;
+
+	.st0 {
+		fill: white;
+	}
+}
+
+.share-button {
+	background-color: #0088C5 !important;
+
+	.st0 {
+		fill: white;
+	}
+}
+
+.url-button {
+	background-color: #F57C2C !important;
 
 	.st0 {
 		fill: white;

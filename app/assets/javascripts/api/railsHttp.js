@@ -12,7 +12,12 @@ angular.module('api.railsHttp', [])
 		var f = "authenticity_token=" + token;
 		for (var key in o) {
 			if (o.hasOwnProperty(key)) {
-				f += "&" + encodeURIComponent(name + "[" + key + "]") + "=" + encodeURIComponent(o[key]);
+				if (name === null) {
+					f += "&" + encodeURIComponent(key) + "=" + encodeURIComponent(o[key]);
+				} else {
+					f += "&" + encodeURIComponent(name + "[" + key + "]") + "=" + encodeURIComponent(o[key]);					
+				}
+
 			}
 		}
 		return f;

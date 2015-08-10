@@ -1,0 +1,8 @@
+<div class="item item-avatar item-text-wrap">
+	<img ng-src="http://{{data.user.avatar.renditions[0].url}}" style="height:24px;width:24px">
+	<h2>{{data.user.name}}</h2>
+	<p>
+		{{data.content}}
+	</p>
+	<p am-time-ago="data.created_dt"></p>
+</div>

@@ -4,6 +4,7 @@ angular.module('yv', [
 	'angular-cache',
 	'ngMaterial',
 	'yv.reader',
+	'yv.moments',
 	'api.authentication',
 	'api.railsHttp',
 	'common.fixTop',
