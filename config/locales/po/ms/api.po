@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-24 14:49-0609\n"
-"PO-Revision-Date: 2015-07-24 14:49-0609\n"
+"POT-Creation-Date: 2015-07-31 10:29-0609\n"
+"PO-Revision-Date: 2015-07-31 10:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ms <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -55,10 +55,10 @@ msgid "moment.bible.download.title"
 msgstr "{name} telah memuat turun versi, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Anda telah bookmark <b>{reference_human}</b>"
+msgstr "Anda telah bookmark <b> {reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} bookmark <b>{reference_human}</b>"
+msgstr "{name}   bookmark<b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Bersiap untuk Krismas dengan Pelan Alkitab Adven"
@@ -106,16 +106,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} kini bersahabat dengan <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Anda telah highlight <b>{reference_human}</b>"
+msgstr "Anda telah highlight <b> {reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} highlight <b>{reference_human}</b>"
+msgstr "{name}  highlight<b> {reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "Anda telah membuat imej ayat untuk <b>{reference_human}</b>"
+msgstr "Anda telah membuat imej ayat untuk <b> {reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} telah membuat imej ayat untuk <b>{reference_human}</b>"
+msgstr "{name} telah membuat imej ayat untuk<b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Anda telah menambah nota, <b>{title}</b>"
@@ -128,6 +128,12 @@ msgstr "Telah melengkapkan pelan"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} telah melengkapkan pelan"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Anda menglengkapkan rancangan mu <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} telah melengkapkan pelan,<b> {title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Hari {segment} {total_segments} ({percent_complete}%)"
@@ -143,6 +149,12 @@ msgstr "Telah memulakan pelan"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} telah memulakan pelan"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Telah memulakan pelan, <b> {title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} telah memulakan Pelan yang baru,<b> {title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Lihat <i>Siri Alkitab</i>malam ini!"

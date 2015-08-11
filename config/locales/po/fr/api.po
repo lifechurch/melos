@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-24 14:50-0609\n"
-"PO-Revision-Date: 2015-07-24 14:50-0609\n"
+"POT-Creation-Date: 2015-07-31 10:29-0609\n"
+"PO-Revision-Date: 2015-07-31 10:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -55,10 +55,10 @@ msgid "moment.bible.download.title"
 msgstr "{name} a téléchargé la version, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Vous avez mis <b>{reference_human}</b> en favori"
+msgstr "Vous avez enregistré en favori <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} a mis <b>{reference_human}</b> en favori"
+msgstr "{name} a enregistré en favori <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Préparez-vous pour Noël avec un Plan de Lecture de l'Avent."
@@ -106,16 +106,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} est maintenant ami avec  <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Vous  avez surligné <b>{reference_human}</b>"
+msgstr "Vous avez surligné <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} a surligné <b>{reference_human}</b>"
+msgstr "{name} a surligné <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "Vous avez créé un verset illustré pour <b>{reference_human}</b>"
+msgstr "Vous avez créé un verset illustré pour <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} a créé un verset illustré pour <b>{reference_human}</b>"
+msgstr "{name} a créé un verset illustré pour <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Vous avez ajouté une note, <b>{title}</b>"
@@ -130,10 +130,10 @@ msgid "moment.plan_completion.title"
 msgstr "{name} a terminé un plan"
 
 msgid "moment.plan_completion.v2.self.title"
-msgstr "Tu a complété votre plan <b>{title}</b>"
+msgstr "Vous avez complété votre plan, <b>{title}</b>"
 
 msgid "moment.plan_completion.v2.title"
-msgstr "{name}, a complété un Plan de lecture, {title} <b></b>"
+msgstr "{name} a terminé un Plan de lecture, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Jour {segment} de {total_segments} ({percent_complete}%)"
@@ -151,10 +151,10 @@ msgid "moment.plan_subscription.title"
 msgstr "{name} a démarré un plan"
 
 msgid "moment.plan_subscription.v2.self.title"
-msgstr "Tu as commençé un nouveau Plan <b>{title}</b>"
+msgstr "Vous avez commencé un nouveau Plan, <b>{title}</b>"
 
 msgid "moment.plan_subscription.v2.title"
-msgstr "{name}, a commençé un plan de lecture, {title} <b>{name} a commençé un nouveau plan de lecture, {title}</b>"
+msgstr "{name} a commencé un nouveau Plan, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Regardez les <i>Séries Bibliques</i> ce soir !"

@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-07 13:31-0609\n"
-"PO-Revision-Date: 2015-07-07 13:31-0609\n"
+"POT-Creation-Date: 2015-07-31 10:29-0609\n"
+"PO-Revision-Date: 2015-07-31 10:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sv <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -55,10 +55,10 @@ msgid "moment.bible.download.title"
 msgstr "{name} har laddat ner översättningen <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Du har bokmärkt <b>{reference_human}</b>"
+msgstr "Du har bokmärkt {reference_human} <b>{version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} har bokmärkt <b>{reference_human}</b>"
+msgstr "{name} har bokmärkt {reference_human} <b>{version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Förbered dig inför jul med en läsplan om advent"
@@ -106,16 +106,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} är nu vän med <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Du har markerat  <b>{reference_human}</b>"
+msgstr "Du har markerat {reference_human} <b>{version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} har markerat <b>{reference_human}</b>"
+msgstr "{name} har markerat {reference_human} <b>{version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "Du har skapat ett bibelkort för <b>{reference_human}</b>"
+msgstr "Du har skapat ett Bibelkort för {reference_human} <b>{version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} har skapat ett bibelkort för <b>{reference_human}</b>"
+msgstr "{name} har skapat ett Bibelkort för {reference_human} <b>{version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Du har lagt till en anteckning, <b>{title}</b>"
@@ -133,7 +133,7 @@ msgid "moment.plan_completion.v2.self.title"
 msgstr "Du har avslutat din läsplan, <b>{title}</b>"
 
 msgid "moment.plan_completion.v2.title"
-msgstr "{name} avslutade en läsplan,<b>{title}</b>"
+msgstr "{name} avslutade en läsplan, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Dag {segment} av {total_segments} ({percent_complete}%)"
