@@ -24,82 +24,50 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 			single: '='
 		},
 		templateUrl: '/moment.tpl.html',
-		controller: function($scope, Like, /* Comment, Authentication,*/ $element, $timeout) {
-			var myId;
-			
-			$scope.showComments = false;
-
-			if (!$scope.data) {
-				$scope.data = { liking: {} };
-			}
-
-			$timeout(function() { 
-				$scope.$watch("data", function(newValue, oldValue) {
-					//var myId = Authentication.currentUser().id;
-				
-					if ($scope.data && $scope.data.liking && $scope.data.liking.all_users) { 
-						$scope.data.iLike = $scope.data.liking.all_users.indexOf(myId) >= 0;
-					}
-				});
-			}, 100);
-
-			
+		controller: function($scope, Like, Comment, /* Authentication,*/ $element, $timeout) {
+			$scope.newComment = {};			
 			$scope.like = function() {
-				Like.create($scope.data.object.id, $scope.token).success(function(data) {
-					// if (!moment.iLike) {
-					// 	if (!moment.liking) {
-					// 		moment.liking = { total: 0 };
-					// 	}
-					// 	if (!moment.liking.total) {
-					// 		moment.liking.total = 0;
-					// 	}
-					// 	if (!moment.liking.all_users) {
-					// 		moment.liking.all_users = [];
-					// 	}
-					// 	moment.liking.all_users.push(myId);
-					// 	moment.liking.total++;
-					// 	moment.iLike = true;
-					// }
-				}).error(function(err) {
+				if (!$scope.data.object.likes.is_liked) {
+					$scope.data.object.likes.is_liked = true;
+					$scope.data.object.likes.count++;
+					Like.create($scope.data.object.id, $scope.token).success(function(data) {
 
-				});
-			};
+					}).error(function(err) {
+						$scope.data.object.likes.is_liked = false;
+						$scope.data.object.likes.count--;					
+					});
+				} else {
+					$scope.data.object.likes.is_liked = false;
+					$scope.data.object.likes.count--;
+					Like.delete($scope.data.object.id, $scope.token).success(function(data) {
 
-			$scope.comment = function(moment, comment) {
-				console.log("Comment has been called");
-				Comment.Create.save({moment_id: moment.id, content: comment}).$promise.then(
-					function(data) {
-						console.log("Success!");
-
-					},
-					function(err) {
-						console.log("Failure!", err);
-					}
-				);
-			};			
-
-			$scope.momentIcon = function() {
-				if ($scope.data) { 
-					switch ($scope.data.kind_id) {
-						case 'plan_subscription.v1':
-						case 'plan_completion.v1':
-						case 'plan_segment_completion.v1':
-							return 'moment-icon-plan';
-						case 'highlight.v1':
-							return 'moment-icon-highlight';
-						case 'bookmark.v1':
-							return 'moment-icon-bookmark';
-						case 'friendship.v2':
-							return 'moment-icon-friend';
-						case 'image.v2':
-							return 'moment-icon-image';
-						case 'note.v1':
-							return 'moment-icon-note';
-						default:
-							return 'moment-icon';
-					}
+					}).error(function(err) {
+						$scope.data.object.likes.is_liked = true;
+						$scope.data.object.likes.count++;					
+					});
 				}
 			};
+
+			$scope.comment = function(event, comment) {
+				if (event.keyCode == 13) {
+					event.preventDefault();
+					$scope.newComment = {};					
+					Comment.create($scope.data.object.id, comment, $scope.token).success(function(data) {
+						for( var i = 0; i < data.user.avatars.collection.length; i++) {
+							var avatar = data.user.avatars.collection[i];
+							if (avatar.height == 48) {
+								data.user.avatar = avatar.url;
+								break;
+							}
+						}
+						data.time_ago = "Just now";
+						$scope.data.object.comments.all.push(data);
+
+					}).error(function(err) {
+						//TO-DO: Handle Error
+					});
+				}
+			};			
 
 			$scope.momentDirective = function() {
 				if ($scope.data) { 

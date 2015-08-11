@@ -29,7 +29,7 @@ angular.module('yv.reader', [
 	;
 }])
 
-.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings) {
+.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window) {
 	$scope.version 					= $stateParams.version;
 	$scope.usfm 						= $stateParams.usfm;
 	$scope.readerFontSize 			= 19;
@@ -280,9 +280,9 @@ angular.module('yv.reader', [
 			$state.go(toState, toParams, { notify: false});			
 
 		} else {
-
 			// If we're going somewhere else, disconnect this listener
 			stopListener();
+			//$window.location.href = $state.href(toState, toParams);
 		}
 	});
 

@@ -1,9 +1,13 @@
 angular.module('yv.moments', [
 	'api.moments',
 	'api.likes',
+	'api.comments',
 	'yv.moments.moment',
 	'yv.moments.bookmark',
 	'yv.moments.highlight',	
+	'yv.moments.friendship',
+	'yv.moments.image',
+	'yv.moments.note',
 	'yv.moments.votd'
 ])
 
@@ -25,21 +29,35 @@ angular.module('yv.moments', [
 	;
 }])
 
-.controller("MomentsCtrl", ["$scope", "Moments", function($scope, Moments) {
+.controller("MomentsCtrl", ["$scope", "$rootScope", "$window", "Moments", function($scope, $rootScope, $window, Moments) {
 	$scope.moments = [];
 	$scope.currentPage = 0;
 
 	$scope.loadMore = function() {
+		$scope.loading = true;
 		$scope.currentPage++;
 		Moments.get($scope.currentPage).success(function(data) {
 			console.log(data);
 			$scope.moments = $scope.moments.concat(data);
+			$scope.loading = false;
 		}).error(function(err) {
 			//TO-DO: Handle Error
+			$scope.loading = false;			
 		});
 	};
 
 	$scope.loadMore();
+
+	console.log("Listen up!");
+	var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+		console.log("Yo");
+		if (toState.name !== fromState.name) {
+			console.log("in");
+			// If we're going somewhere else, disconnect this listener
+			stopListener();
+			$window.location.href = $state.href(toState, toParams);
+		}
+	});	
 }])
 
 ;

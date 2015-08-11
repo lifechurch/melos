@@ -7,7 +7,7 @@
       .moment-top-avatar
         %img.avatar{"ng-src" => "{{data.object.avatar}}"}
       .moment-divider{"ng-bind-html" => "data.object.title", "ng-if" => "data.object.title && !data.object.moment_title"}
-      .moment-divider{"ng-bind-html" => "data.object.moment_title", "ng-if" => "!data.object.title && data.object.moment_title"}
+      .moment-divider{"ng-bind-html" => "data.object.moment_title", "ng-if" => "data.object.moment_title"}
       .moment-ago{"am-time-ago" => "data.object.created_dt"} {{data.object.created_dt}}
     .moment-content
       %div{"ng-if" => "data.kind == 'votd'", "moment-votd" => ""}
@@ -22,15 +22,31 @@
       -# %p.binding Whoever disregards discipline comes to poverty and shame, but whoever heeds correction is honored.
     .moment-bottom
       .moment-actions
-        %a.moment-actions-like{:href => "#", "ng-click" => "like()"} Like
+        %a.moment-actions-like{:href => "#", "ng-click" => "like()", "ng-if" => "data.object.likes.enabled", "ng-class" => "{ active: data.object.likes.is_liked}"} Like
         %a.moment-actions-more{:href => "#"} More
-      .moment-comments
+      .moment-likes{"ng-if" => "data.object.likes.enabled && data.object.likes.count"}
+        .moment-likes-count
+          %a{:href => "#"} {{data.object.likes.count}} likes
+        .moment-likes-avatars
+          %a{:href => "#", "ng-repeat" => "like in data.object.likes.all"}
+            %img{:alt => "", "ng-src" => "{{like.user.avatar}}"}
+      .moment-comments{"ng-if" => "data.object.comments.enabled"}
+        %ul.moment-comments-list
+          %li.moment-comments-list-comment{"ng-repeat" => "comment in data.object.comments.all"}
+            .moment-comments-list-avatar
+              %a{"ng-href" => "{{comment.user.path}}"}
+                %img{:alt => "", "ng-src" => "{{comment.user.avatar}}"}
+            %p.moment-comments-list-text
+              %a{"ng-href" => "{{comment.user.path}}"} {{comment.user.name}}
+              {{comment.content}}
+            %span.moment-comment-dt{:title => "{{comment.created_dt}}"}
+              {{comment.time_ago}}
         .moment-comments-self-box
           .moment-comments-self-avatar
-            %img{:alt => "", :src => "http://d34xairzvf2fpg.cloudfront.net/users/images/07f1517a344f04340dc080fef8c163a1_48x48.png"}/
+            %img{:alt => "", :src => "http://d34xairzvf2fpg.cloudfront.net/users/images/07f1517a344f04340dc080fef8c163a1_48x48.png"}
           .moment-comments-self-input
             %form
-              %textarea{:placeholder => "Comment..."}
+              %textarea{:placeholder => "Comment...", "ng-model"=>"newComment.content", "ng-keypress" => "comment($event, newComment.content);"}
 
 -#
 -# Bookmark Moment
@@ -49,6 +65,29 @@
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment-votd.tpl.html'}
   %p.binding{"ng-bind-html" => "verseContent"}
+
+-#
+-# Friendship Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-friendship.tpl.html'}
+  %img.friend-image{"ng-src" => "{{data.object.friend_avatar}}"}
+  
+-#
+-# Image Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-image.tpl.html'}
+  %img.versie{"ng-src" => "{{data.object.body_image}}"}
+
+-#
+-# Note Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-note.tpl.html'}
+  %p.moment-no-note-text {{data.object.content}}
+
+-#
+-# Plan Complete Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-plan-complete.tpl.html'}
 
 -#
   %md-card

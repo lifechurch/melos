@@ -8,24 +8,11 @@
  */
 angular.module('yv.moments.note', [])
 
-
-/**
- * @ngdoc directive
- * @name note
- * @restrict A
- */
-.directive('note', function() {
-	return {
-		restrict: 'A',
-		templateUrl: '../src/moments/directives/note/note.tpl.html'
-	};
-})
-
-.directive('noteMobile', function() {
+.directive('momentNote', function() {
 	return {
 		replace: true,
 		restrict: 'A',
-		templateUrl: '../src/moments/directives/note/note.mobile.tpl.html'
+		templateUrl: '/moment-note.tpl.html'
 	};
 })
 

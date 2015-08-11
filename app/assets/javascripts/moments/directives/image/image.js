@@ -1,31 +1,17 @@
 /**
  * @ngdoc module
- * @name yv.moments.planComplete
+ * @name yv.moments.image
  * @module yv.moments
  * @description
  *
- * Directive for displaying PlanComplete moments
+ * Directive for displaying Image moments
  */
 angular.module('yv.moments.image', [])
 
-
-/**
- * @ngdoc directive
- * @name image
- * @restrict A
- */
-.directive('image', function() {
+.directive('momentImage', function() {
 	return {
 		restrict: 'AC',
-		templateUrl: '../src/moments/directives/image/image.tpl.html'
-	};
-})
-
-.directive('imageMobile', function() {
-	return {
-		replace: true,
-		restrict: 'AC',
-		templateUrl: '../src/moments/directives/image/image.mobile.tpl.html'
+		templateUrl: '/moment-image.tpl.html'
 	};
 })
 

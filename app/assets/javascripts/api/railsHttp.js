@@ -46,7 +46,19 @@ angular.module('api.railsHttp', [])
 			.error(function(err) {
 				//TO-DO: Handle Error
 			});
-		}
+		},
+
+		delete: function(path, token) {
+			return $http.delete( path, {responseType: 'json', headers: {'Accept' : 'application/json, text/javascript, *.*', 'Content-Type': 'application/x-www-form-urlencoded', 'X-CSRF-Token': token}})
+
+			.success(function(data) {
+
+			})
+
+			.error(function(err) {
+				//TO-DO: Handle Error
+			});
+		}		
 	}
 }])
 
