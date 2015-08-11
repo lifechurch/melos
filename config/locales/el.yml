@@ -6,39 +6,39 @@ el:
     datetime: 
         time_ago_in_words: 
             about_x_hours: 
-                one: "about 1 hour ago"
-                other: "about %{count} hours ago"
+                one: "περίπου %{count} ώρα πριν"
+                other: "περίπου %{count} ώρες πριν"
             about_x_months: 
-                one: "about 1 month ago"
-                other: "about %{count} months ago"
+                one: "περίπου %{count} μήνα πριν"
+                other: "περίπου %{count} μήνες πριν"
             about_x_years: 
-                one: "about 1 year ago"
-                other: "about %{count} years ago"
+                one: "περίπου %{count} έτος πριν"
+                other: "περίπου %{count} έτη πριν"
             almost_x_years: 
-                one: "almost 1 year ago"
-                other: "almost %{count} years ago"
-            half_a_minute: "half a minute ago"
+                one: "σχεδόν %{count} έτος πριν"
+                other: "σχεδόν %{count} έτη πριν"
+            half_a_minute: "μισό λεπτό πριν"
             less_than_x_minutes: 
-                one: "less than a minute ago"
-                other: "less than %{count} minutes ago"
+                one: "λιγότερο από %{count} λεπτό πριν"
+                other: "λιγότερο από %{count} λεπτά πριν"
             less_than_x_seconds: 
-                one: "less than 1 second ago"
-                other: "less than %{count} seconds ago"
+                one: "λιγότερο από %{count} δευτερόλεπτο πριν"
+                other: "λιγότερο από %{count} δευτερόλεπτα πριν"
             over_x_years: 
-                one: "over 1 year ago"
-                other: "over %{count} years ago"
+                one: "πάνω από %{count} έτος πριν"
+                other: "πάνω από %{count} έτη πριν"
             x_days: 
-                one: "1 day ago"
-                other: "%{count} days ago"
+                one: "%{count} ημέρα πριν"
+                other: "%{count} ημέρες πριν"
             x_minutes: 
-                one: "1 minute ago"
-                other: "%{count} minutes ago"
+                one: "%{count} λεπτό πριν"
+                other: "%{count} λεπτά πριν"
             x_months: 
-                one: "1 month ago"
-                other: "%{count} months ago"
+                one: "%{count} μήνα πριν"
+                other: "%{count} μήνες πριν"
             x_seconds: 
-                one: "1 second ago"
-                other: "%{count} seconds ago"
+                one: "%{count} δευτερόλεπτο πριν"
+                other: "%{count} δευτερόλεπτα πριν"
     counter: 
         format: "999.999.999"
     social: 
@@ -111,8 +111,8 @@ el:
         users last name required: "Πρέπει να εισάγετε ένα επώνυμο."
         moments content required: "Το περιεχόμενο δεν μπορεί να είναι κενό."
     meta: 
-        best kids app: "Best Kids App!"
-        best educational app: "Best Educational App"
+        best kids app: "Η καλύτερη εφαρμογή για παιδιά!"
+        best educational app: "Η καλύτερη εκπαιδευτική εφαρμογή"
         kids_app: 
             title: "Εφαρμογή \"Αγία Γραφή\" για Παιδιά"
             description: "Η εφαρμογή Αγία Γραφή για Παιδιά είναι ένας υπέροχος τρόπος για να παιδιά σας να μάθουν βιβλικές ιστορίες για τον Ιησού, το δώρο της αιώνιας ζωής και όλα αυτά τα μαθήματα που μας διδάσκει ο Θεός. Σε αυτή τη διαδραστική εμπειρία, τα παιδιά συνδέονται απευθείας με το Λόγο του Θεού μέσω ευχάριστων εικόνων ενώ ταυτόχρονα κερδίζουν πόντους από βιβλική μελέτη και συλλογή θησαυρών."
@@ -268,10 +268,10 @@ el:
     chapter: "Κεφάλαιο"
     home: "Αρχική"
     bible: "Αγία Γραφή"
-    audio bible: "Audio Bible"
-    audio bible app: "Audio Bible App"
-    audio bibles title: "Listen to Audio Bibles"
-    audio bible meta: "Listen online for free or download the YouVersion Bible App and listen to audio Bibles on your phone with the #1 rated Bible App."
+    audio bible: "Ηχογραφημένη Αγία Γραφή"
+    audio bible app: "Εφαρμογή ηχογραφημένης Αγίας Γραφής"
+    audio bibles title: "Ακούστε ηχογραφημένη Αγία Γραφή"
+    audio bible meta: "Ακούστε σε σύνδεση δωρεάν ή κατεβάσετε την εφαρμογή Αγία Γραφή της YouVersion και ακούστε την Αγία Γραφή στο τηλέφωνό σας με την κορυφαία εφαρμογή Αγία Γραφή."
     language: "Γλώσσα"
     translation: "Μετάφραση"
     notes title: "Σημειώσεις"
@@ -535,7 +535,7 @@ el:
         vod_subscription success: "Έχετε ενημερώσει επιτυχώς την εγγραφή σας στο \"Εδάφιο Της Ημέρας\"!"
         vod_subscription failure: "Λυπούμαστε, υπήρξε ένα πρόβλημα κατά την ενημέρωση της συνδρομής σας στο Εδάφιο της Ημέρας."
         daily email delivery: "Ημερήσια Παράδοση στο email σας"
-        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
+        vod_not_subscribed: "Δεν έχετε εγγραφεί να λαμβάνετε το εδάφιο ή το μήνυμα της ημέρας. Αν επιθυμείτε να εγγραφείτε, παρακαλούμε συνδεθείτε."
         time: "Χρόνος"
         daily push notifications: "Ημερήσιες ειδοποιήσεις για φορητές εφαρμογές"
         subscribe: "Εγγραφείτε"
@@ -792,7 +792,7 @@ el:
             private: "Ιδιωτικό"
             public: "Δημόσιο"
         title: "Σχέδια Μελέτης"
-        meta title: "Online Bible study, devotionals and reading plans"
+        meta title: "Μελέτη της Αγίας Γραφής, πνευματικά αναγνώσματα και σχέδια μελέτης σε σύνδεση"
         browse by category: "Περιήγηση ανά κατηγορία "
         browse plans: "Περιήγηση σε Σχέδια %{category}"
         swap list localization: "(<a href='%{swap_link}'>Προβολή σε %{swap_locale}</a>)"
@@ -995,7 +995,7 @@ el:
         title: "Κατεβάστε δωρεάν την εφαρμογή \"Αγία Γραφή\""
         description copy: "Εκατοντάδες εκδόσεις σε %{language_count} διαφορετικές γλώσσες - η Αγία Γραφή που πάει μαζί σας παντού."
         meta copy title: "Κατεβάστε δωρεάν την εφαρμογή \"Αγία Γραφή\""
-        meta copy versions: "Hundreds of versions in %{language_count}+ different languages"
+        meta copy versions: "Εκατοντάδες εκδόσεις σε %{language_count}+ διαφορετικές γλώσσες"
         line 1: "Εκατοντάδες εκδόσεων σε 100+"
         line 2: "διαφορετικές γλώσσες - Η Αγία Γραφή"
         line 3: "που έρχεται μαζί σας παντού."
@@ -1089,8 +1089,8 @@ el:
         sms button: "Στείλτε μου το σύνδεσμο με μήνυμα SMS"
         sms error: "Συγνώμη, κάτι πήγε στραβά. Προσπαθήστε αργότερα."
         sms success: "Θαυμάσια! Ελέγξτε το κινητό σας για το σύνδεσμο."
-        sms info: "You will receive a one time SMS to download the app"
-        sms download: "Click to download the Bible App:"
+        sms info: "Θα λάβετε ένα μήνυμα SMS για να κατεβάσετε την εφαρμογή"
+        sms download: "Κλικ για να κατεβάσετε την εφαρμογή Αγία Γραφή:"
     pages: 
         generic_error: 
             title: "Ωχ!"
@@ -1119,8 +1119,8 @@ el:
             download description: "Κάντε λήψη της δωρεάν εφαρμογής \"Αγία Γραφή\" της YouVersion στη συσκευή σας και θα έχετε την Αγία Γραφή μαζί σας οπουδήποτε πηγαίνετε. "
             world installs: "Εγκαταστάσεις παγκοσμίως"
         trending verses: 
-            title: "Trending Bible verses"
-            headline: "Bible verses currently trending in the YouVersion Bible App and Bible.com"
+            title: "Πρόσφατες εκδόσεις της Αγίας Γραφής"
+            headline: "Επίκαιρα βιβλικά εδάφια στην εφαρμογή Αγία Γραφή και στο Bible.com"
     shared: 
         menu_settings: 
             title: "Ρυθμίσεις Προβολέα"

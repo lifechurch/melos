@@ -535,7 +535,7 @@
         vod_subscription success: "Du har nå endret ditt abonnement på dagens bibelvers!"
         vod_subscription failure: "Beklager, det oppstod et problem med endringen av abonnement på dagens bibelvers."
         daily email delivery: "Daglig mottak av e-post"
-        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
+        vod_not_subscribed: "Du abonnerer ikke på e-post med dagens vers. Logg inn hvis du vil abonnere."
         time: "Tid"
         daily push notifications: "Daglige varslingsmeldinger for mobilapp"
         subscribe: "Abonner"
