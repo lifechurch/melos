@@ -43,7 +43,7 @@
               {{comment.time_ago}}
         .moment-comments-self-box
           .moment-comments-self-avatar
-            %img{:alt => "", :src => "http://d34xairzvf2fpg.cloudfront.net/users/images/07f1517a344f04340dc080fef8c163a1_48x48.png"}
+            %img{:alt => "", :src => current_user.user_avatar_url["px_48x48"]}
           .moment-comments-self-input
             %form
               %textarea{:placeholder => "Comment...", "ng-model"=>"newComment.content", "ng-keypress" => "comment($event, newComment.content);"}
