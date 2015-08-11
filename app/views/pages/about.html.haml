@@ -1,32 +1,34 @@
 - @title = t("about title")
 - @sidebar = false
 
-%article
-  %img{src: asset_path('bible.com-logo-700x150.png'), title: t('bible versions'), class: 'b-logo float_right'}
-  %h1= t('about title')
-  .about_content
-    %h2= t('about page.relevancy')
-    %p= t('about page.relevancy copy')
+.row
+  .medium-12.columns
+    %img{src: asset_path('bible.com-logo-280x60.png'), title: t('bible versions'), class: 'b-logo show-for-large-up'}
+    %h1= t('about title')
+    .about_content
+      %h2= t('about page.relevancy')
+      %p= t('about page.relevancy copy')
 
-    %h2= t('about page.information revolution')
-    %p= t('about page.information revolution copy')
+      %h2= t('about page.information revolution')
+      %p= t('about page.information revolution copy')
 
-    %h2= t('youversion')
-    %p= t('about page.youversion copy')
+      %h2= t('youversion')
+      %p= t('about page.youversion copy')
 
-    %p= t('about page.youversion copy 2')
+      %p= t('about page.youversion copy 2')
 
-  - if bdc_user?
-    %h2= t('about page.bible dot com title')
-    %p= t('about page.bible dot com copy').html_safe
+    - if bdc_user?
+      %h2= t('about page.bible dot com title')
+      %p= t('about page.bible dot com copy').html_safe
 
-  - if partners = @site.partners.try(:[], I18n.locale)
-    .partners_content
-      %h2= t('about page.partners title')
-      %p= t('about page.partners text')
+    - if partners = @site.partners.try(:[], I18n.locale)
 
-      - partners.each do |p|
-        .partners_box
-          %div
-            %img{src: asset_path(p[:image]), title: p[:name]}
-          %div=link_to t('about page.learn more'), p[:url], class: 'sm_action_button_blue'
+      .partners_content
+        %h2= t('about page.partners title')
+        %p= t('about page.partners text')
+
+        - partners.each do |p|
+          .partners_box
+            %div
+              %img{src: asset_path(p[:image]), title: p[:name]}
+            %div=link_to t('about page.learn more'), p[:url], class: 'solid-button blue small'
