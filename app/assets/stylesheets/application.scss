@@ -72,7 +72,19 @@ $reader_line_height: 2em;
 
 
 @import "reader_text";
+@import "about/about";
 @import "moments/moments";
+
+#current-ui-view {
+    padding-bottom: 100px;
+}
+
+h1 {
+  font-weight: 100;
+}
+h1, h2 {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
 
 
 .fixed {
@@ -556,7 +568,8 @@ input {
   );
   
   font-size: rem-calc(14);
-  padding: rem-calc(10 15);
+  padding: rem-calc(5 10);
+  font-weight: bold;
   border: none;
 
   &:hover {
@@ -571,6 +584,16 @@ input {
     &:hover {
       background-color: lighten($green, 15%) !important;
       color: darken(#ffffff, 5%) !important;    	
+    }
+  }
+
+  &.blue {
+    background-color: $blue !important;
+    color: #ffffff !important;
+
+    &:hover {
+      background-color: lighten($blue, 15%) !important;
+      color: darken(#ffffff, 5%) !important;
     }
   }
 
