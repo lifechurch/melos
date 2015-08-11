@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-13 10:04-0609\n"
-"PO-Revision-Date: 2015-07-13 10:04-0609\n"
+"POT-Creation-Date: 2015-07-31 10:29-0609\n"
+"PO-Revision-Date: 2015-07-31 10:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -55,10 +55,10 @@ msgid "moment.bible.download.title"
 msgstr "{name} ترجمهٔ <b>{version}</b>کتاب‌مقدس را دانلود کرده است"
 
 msgid "moment.bookmark.self.title"
-msgstr "شما <b>{reference_human}را نشانه‌گذاری کرده‌اید.</b>"
+msgstr "شما <b>{reference_human} {version_abbreviation}</b>را نشانه گذاری کرده‌اید"
 
 msgid "moment.bookmark.title"
-msgstr "{name} <b>{reference_human}را نشانه‌گذاری کرد.</b>"
+msgstr "{name} <b>{reference_human} {version_abbreviation}</b>را نشانه گذاری کرده است"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "به کمک برنامه‌های مطالعۀ جدید ایمان خود را احیا سازید."
@@ -103,16 +103,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} با <b>{friend_name}</b>دوست شده است"
 
 msgid "moment.highlight.self.title"
-msgstr "شما <b>{reference_human} را هایلایت کرده‌اید.</b>"
+msgstr "شما <b>{reference_human} {version_abbreviation}</b>را هایلایت کرده‌اید"
 
 msgid "moment.highlight.title"
-msgstr "{name} <b>{reference_human}</b>را هایلات کرده است"
+msgstr "{name} <b>{reference_human} {version_abbreviation}</b>را هایلایت کرده است"
 
 msgid "moment.image.self.title"
-msgstr "شما برای متن زیر آیۀ تصویری درست کردید: <b>{reference_human}</b>"
+msgstr "شما برای <b>{reference_human} {version_abbreviation}</b>یک آیه تصویری درست کرده‌اید"
 
 msgid "moment.image.title"
-msgstr "{name} برای متن زیر آیۀ تصویری درست کرد: <b>{reference_human}</b>"
+msgstr "{name}برای <b>{reference_human} {version_abbreviation}</b>یک آیه تصویری درست کرده است"
 
 msgid "moment.note.self.title"
 msgstr "شما یک یادداشت اضافه کردید. <b>{title}</b>"
@@ -148,7 +148,7 @@ msgid "moment.plan_subscription.title"
 msgstr "{name} برنامهٔ مطالعهٔ جدیدی را آغاز کرده است"
 
 msgid "moment.plan_subscription.v2.self.title"
-msgstr "شما برنامۀ مطالعۀ جدید{title}را شروع کردید <b></b>"
+msgstr "شما برنامۀ مطالعۀ جدید <b>{title}</b> را شروع کرده‌اید"
 
 msgid "moment.plan_subscription.v2.title"
 msgstr "{name}برنامۀ مطالعۀ {title} جدیدی را آغاز کرده است <b></b>"

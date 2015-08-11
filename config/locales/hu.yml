@@ -815,7 +815,7 @@ hu:
         month: "Naptár"
         publisher: "Kiadó"
         success widget title: "Hozd ki a legtöbbet az olvasási tervedből."
-        success blurb: "A legjobb módja annak, hogy Isten Igéje a mindennapjaid részéve váljon, ha feliratkozol egy olvasási tervre. Persze, mindenkivel megesik néha, hogy még így is lemarad. Viszont nagyon fontos, hogy mindennap meghalljuk Isten üzenetét; ezért összeírtunk pár ötletet, melyek segítenek lépést tartani."
+        success blurb: "A legjobb módja annak, hogy Isten Igéje a mindennapjaid részéve váljon, ha feliratkozol egy olvasási tervre. Persze mindenkivel megesik néha, hogy még így is lemarad. Viszont nagyon fontos, hogy mindennap meghalljuk Isten üzenetét; ezért összeírtunk pár ötletet, melyek segítenek lépést tartani."
         success blog link title: "Blog bejegyzés elolvasása"
         a users plans: "%{username} tervei"
         you have no plans: "Jelenleg egy olvasási tervre sem vagy feliratkozva."

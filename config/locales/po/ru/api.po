@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-24 14:49-0609\n"
-"PO-Revision-Date: 2015-07-24 14:49-0609\n"
+"POT-Creation-Date: 2015-07-31 10:29-0609\n"
+"PO-Revision-Date: 2015-07-31 10:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -55,10 +55,10 @@ msgid "moment.bible.download.title"
 msgstr "{name} загрузил перевод <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Вы добавили <b>{reference_human}</b> в закладки"
+msgstr "Вы добавили <b>{reference_human} {version_abbreviation}</b>в закладки"
 
 msgid "moment.bookmark.title"
-msgstr "{name} добавил в закладки <b>{reference_human}</b>"
+msgstr "{name} добавил в закладки <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Приготовьтесь к Рождеству c планами чтения Библии в этот Адвент"
@@ -106,16 +106,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} и <b>{friend_name}</b> теперь друзья"
 
 msgid "moment.highlight.self.title"
-msgstr "Вы выделили маркером <b>{reference_human}</b>"
+msgstr "Вы выделили маркером <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} выделил маркером <b>{reference_human}</b>"
+msgstr "{name} выделил маркером <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "Вы создали фото-стих <b>{reference_human}</b>"
+msgstr "Вы создали фото-стих <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} создал фото-стих <b>{reference_human}</b>"
+msgstr "{name} создал фото-стих <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Вы добавили заметку <b>{title}</b>"
@@ -128,6 +128,12 @@ msgstr "План завершён"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} завершил план"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Вы завершили план чтения Библии <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} завершил(а) план чтения Библии <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "День {segment} из {total_segments} ({percent_complete}%)"
@@ -143,6 +149,12 @@ msgstr "Начат план"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} начал план"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Вы начали новый план чтения Библии <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} начал(а) новый план чтения Библии <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Смотрите <i>Сериал Bible</i> сегодня вечером!"

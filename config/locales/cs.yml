@@ -546,7 +546,7 @@ cs:
         vod_subscription success: "Úspěšně jste změnil nastavení pro odběr verše dne!"
         vod_subscription failure: "Omlouváme se, objevila se chyba během ukládání změn odebírání."
         daily email delivery: "Denní zasílání emailů"
-        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
+        vod_not_subscribed: "Nemáte žádné přihlášené odběry emailem pro verš dne. Pokud chcete dostávat oznámení, přihlašte se prosím."
         time: "Čas"
         daily push notifications: "Denní nastavení oznámení pro mobilní aplikace"
         subscribe: "Odebírat"

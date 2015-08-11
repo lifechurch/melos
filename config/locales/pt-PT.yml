@@ -535,7 +535,7 @@ pt-PT:
         vod_subscription success: "Alterou com sucesso a sua subscrição do Versículo do Dia!"
         vod_subscription failure: "Desculpe mas houve um problema ao atualizar a sua subscrição do versículo do dia. "
         daily email delivery: "Definições do email diário "
-        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
+        vod_not_subscribed: "Você não está inscrito em qualquer email do versículo do dia. Se pretender subscrever, por favor autentique-se."
         time: "Tempo"
         daily push notifications: "Alertas de notificação para apps"
         subscribe: "Subscrever"

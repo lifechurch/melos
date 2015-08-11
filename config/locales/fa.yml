@@ -524,7 +524,7 @@ fa:
         vod_subscription success: "شما تنظیمات مربوط به اشتراک در «آیۀ روز» را با موفقیت به‌روز رساندید.‏"
         vod_subscription failure: "متأسفانه در به روزرسانی اشتراک «آیهٔ روز»، مشکلی پیش آمد!"
         daily email delivery: "دریافت روزانۀ ای‌میل"
-        vod_not_subscribed: "You are not subscribed to any verse of the day emails. If you would like to subscribe please sign in."
+        vod_not_subscribed: "شما برای دریاف آیۀ روز از طریق پست الکترونیکی ثبت‌نام نکرده‌اید. اگر تمایل به ثبت‌نام دارید لطفاً وارد برنامه شوید."
         time: "ساعت"
         daily push notifications: "ارسال خودکار روزانه برای برنامۀ کتاب‌مقدس در دستگاه‌های موبایل"
         subscribe: "آبونمان"
