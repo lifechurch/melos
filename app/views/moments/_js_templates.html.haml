@@ -8,7 +8,7 @@
         %img.avatar{"ng-src" => "{{data.object.avatar}}"}
       .moment-divider{"ng-bind-html" => "data.object.title", "ng-if" => "data.object.title && !data.object.moment_title"}
       .moment-divider{"ng-bind-html" => "data.object.moment_title", "ng-if" => "data.object.moment_title"}
-      .moment-ago{"am-time-ago" => "data.object.created_dt"} {{data.object.created_dt}}
+      .moment-ago{"am-time-ago" => "data.object.created_dt"} {{data.object.time_ago}}
     .moment-content
       %div{"ng-if" => "data.kind == 'votd'", "moment-votd" => ""}
       %div{"ng-if" => "data.kind == 'plan_subscription.v1'", "moment-plan-start" => ""}
@@ -19,7 +19,6 @@
       %div{"ng-if" => "data.kind == 'friendship'", "moment-friendship" => ""}
       %div{"ng-if" => "data.kind == 'image'", "moment-image" => ""}
       %div{"ng-if" => "data.kind == 'note'", "moment-note" => ""}
-      -# %p.binding Whoever disregards discipline comes to poverty and shame, but whoever heeds correction is honored.
     .moment-bottom
       .moment-actions
         %a.moment-actions-like{:href => "#", "ng-click" => "like()", "ng-if" => "data.object.likes.enabled", "ng-class" => "{ active: data.object.likes.is_liked}"} Like
@@ -88,54 +87,3 @@
 -# Plan Complete Moment
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment-plan-complete.tpl.html'}
-
--#
-  %md-card
-    %md-card-content
-      %img.avatar{"ng-src" => "{{data.object.avatar}}"}
-      %h2.md-title{"ng-bind-html" => "data.object.title", "ng-if" => "data.object.title && !data.object.moment_title"}
-      %h2.md-title{"ng-bind-html" => "data.object.moment_title", "ng-if" => "!data.object.title && data.object.moment_title"}
-      %p.subheader{"am-time-ago" => "data.object.created_dt"}
-
-    %img.md-card-image{:alt => "Washed Out", "ng-src" => "{{imagePath}}", "ng-if" => "imagePath"}
-    .md-actions{:layout => "row", "layout-align" => "end center"}
-      %md-button Action 1
-      %md-button Action 2
-
-
--#
-  .card
-    %span{"ng-class" => "momentIcon()"}
-    %img.avatar{"ng-src" => "http://{{data.extras.user.avatar.renditions[1].url}}"}
-      %h2.header{:translate => "{{data.base.title.l_str}}", "translate-values" => "data.base.title.l_args"}
-      %p.subheader{"am-time-ago" => "data.created_dt"}
-      %div{"ng-if" => "single"}
-        %div{"ng-if" => "data.kind_id == 'plan_subscription.v1'", "plan-start-mobile" => ""}
-        %div{"ng-if" => "data.kind_id == 'plan_completion.v1'", "plan-complete-mobile" => ""}
-        %div{"ng-if" => "data.kind_id == 'plan_segment_completion.v1'", "plan-segment-complete-mobile" => ""}
-        %div{"highlight-mobile" => "", "ng-if" => "data.kind_id == 'highlight.v1'"}
-        %div{"bookmark-mobile" => "", "ng-if" => "data.kind_id == 'bookmark.v1'"}
-        %div{"friendship-mobile" => "", "ng-if" => "data.kind_id == 'friendship.v2'"}
-        %div{"image-mobile" => "", "ng-if" => "data.kind_id == 'image.v2'"}
-        %div{"ng-if" => "data.kind_id == 'note.v1'", "note-mobile" => ""}
-        %div{"ng-show" => "showComments"}
-          .list
-            .item.item-input-inset
-              %label.item-input-wrapper
-                %input{"ng-model" => "commentContent", :type => "text"}
-              %button.button.icon.ion-android-send.button-small{"ng-click" => "comment(data,commentContent)"}
-        .item.item-divider{"ng-if" => "data.liking.total || data.commenting.total"}
-          %span.subdued{"ng-if" => "data.liking.total"} {{data.liking.total}} {{data.liking.total > 1 ? 'likes' : 'like'}}
-          %span.subdued{"ng-if" => "data.commenting.total"}
-            {{data.commenting.total}} {{data.commenting.total > 1 ? 'comments' : 'comment'}}
-            %br/
-            %br/
-          .list{"ng-if" => "data.commenting.total"}
-            %comment-mobile{:data => "comment", "ng-repeat" => "comment in data.commenting.comments"}
-      .tabs
-        %a{:href => "#", "ng-click" => "like(data)"}
-          %i.fa.fa-heart{"ng-class" => "{assertive:data.iLike}"}
-        %a{:href => "#", "ng-click" => "showComments = !showComments"}
-          %i.fa.fa-comment
-        %a{:href => "#"}
-          %i.fa.fa-ellipsis-h
