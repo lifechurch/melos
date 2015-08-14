@@ -572,6 +572,11 @@ input {
   font-weight: bold;
   border: none;
 
+  &.full {
+  	width: 100%;
+  	padding: 15px;
+  }
+
   &:hover {
     background-color: $primary-color !important;
     color: #ffffff !important;

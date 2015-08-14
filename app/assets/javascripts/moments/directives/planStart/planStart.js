@@ -8,24 +8,11 @@
  */
 angular.module('yv.moments.planStart', [])
 
-
-/**
- * @ngdoc directive
- * @name planStart
- * @restrict A
- */
-.directive('planStart', function() {
-	return {
-		restrict: 'AC',
-		templateUrl: '../src/moments/directives/planStart/planStart.tpl.html'
-	};
-})
-
-.directive('planStartMobile', function() {
+.directive('momentPlanStart', function() {
 	return {
 		replace: true,
 		restrict: 'AC',
-		templateUrl: '../src/moments/directives/planStart/planStart.mobile.tpl.html'
+		templateUrl: '/moment-plan-start.tpl.html'
 	};
 })
 

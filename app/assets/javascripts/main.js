@@ -16,7 +16,6 @@ angular.module('yv', [
 	$locationProvider.hashPrefix('!');
 }])
 
-
 .directive('ngHtmlCompile', function($compile) {
 	return {
 		restrict: 'A',

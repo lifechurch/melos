@@ -8,7 +8,10 @@ angular.module('yv.moments', [
 	'yv.moments.friendship',
 	'yv.moments.image',
 	'yv.moments.note',
-	'yv.moments.votd'
+	'yv.moments.votd',
+	'yv.moments.planStart',
+	'yv.moments.planComplete',
+	'yv.moments.planSegmentComplete'
 ])
 
 .config([ '$stateProvider', function($stateProvider) {
@@ -17,7 +20,7 @@ angular.module('yv.moments', [
 	.state('moments', {
 		url: 		'/moments',
 		controller: 	'MomentsCtrl',
-		template: 	'<div class="row"><div class="medium-8 columns medium-offset-2"><div ng-repeat="moment in moments"><moment data="moment"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green" ng-if="!loading">Load More</button></div></div>'
+		template: 	'<div class="row"><div class="medium-8 columns medium-offset-2"><div ng-repeat="moment in moments"><moment data="moment"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full" ng-if="!loading">Load More</button></div></div>'
 	})
 
 	.state('moments.locale', {

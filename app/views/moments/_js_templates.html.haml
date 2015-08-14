@@ -11,9 +11,9 @@
       .moment-ago{"am-time-ago" => "data.object.created_dt"} {{data.object.time_ago}}
     .moment-content
       %div{"ng-if" => "data.kind == 'votd'", "moment-votd" => ""}
-      %div{"ng-if" => "data.kind == 'plan_subscription.v1'", "moment-plan-start" => ""}
-      %div{"ng-if" => "data.kind == 'plan_completion.v1'", "moment-plan-complete" => ""}
-      %div{"ng-if" => "data.kind == 'plan_segment_completion.v1'", "moment-plan-segment-complete" => ""}
+      %div{"ng-if" => "data.kind == 'plan_subscription'", "moment-plan-start" => ""}
+      %div{"ng-if" => "data.kind == 'plan_completion'", "moment-plan-complete" => ""}
+      %div{"ng-if" => "data.kind == 'plan_segment_completion'", "moment-plan-segment-complete" => ""}
       %div{"ng-if" => "data.kind == 'highlight'", "moment-highlight" => ""}
       %div{"ng-if" => "data.kind == 'bookmark'", "moment-bookmark" => ""}
       %div{"ng-if" => "data.kind == 'friendship'", "moment-friendship" => ""}
@@ -75,7 +75,7 @@
 -# Image Moment
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment-image.tpl.html'}
-  %img.versie{"ng-src" => "{{data.object.body_image}}"}
+  %img{"ng-src" => "{{data.object.body_image}}"}
 
 -#
 -# Note Moment
@@ -87,3 +87,22 @@
 -# Plan Complete Moment
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment-plan-complete.tpl.html'}
+  %img{"ng-src" => "{{data.object.body_images[2].url}}"}
+
+-#
+-# Plan Start Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-plan-start.tpl.html'}
+  %img{"ng-src" => "{{data.object.body_images[2].url}}"}
+
+-#
+-# Plan Segment Complete Moment
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-plan-segment-complete.tpl.html'}
+  .row
+    .columns.small-2
+      %img.plan-icon{"ng-src" => "{{data.object.body_images[2].url}}"}
+    .columns.small-10
+      %md-progress-linear{"md-mode" => "determinate", :value => "{{data.object.percent_complete}}"}
+      %span.moment-plan-progress
+        Day {{data.object.segment}} of {{data.object.total_segments}}

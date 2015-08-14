@@ -8,24 +8,11 @@
  */
 angular.module('yv.moments.planSegmentComplete', [])
 
-
-/**
- * @ngdoc directive
- * @name planSegmentComplete
- * @restrict A
- */
-.directive('planSegmentComplete', function() {
-	return {
-		restrict: 'AC',
-		templateUrl: '../src/moments/directives/planSegmentComplete/planSegmentComplete.tpl.html'
-	};
-})
-
-.directive('planSegmentCompleteMobile', function() {
+.directive('momentPlanSegmentComplete', function() {
 	return {
 		replace: true,
 		restrict: 'AC',
-		templateUrl: '../src/moments/directives/planSegmentComplete/planSegmentComplete.mobile.tpl.html'
+		templateUrl: '/moment-plan-segment-complete.tpl.html'
 	};
 })
 

@@ -27,7 +27,8 @@ module YV
             instance                  = map_to_user_fields(instance,plan_data.extras.user)
             instance.icons            = map_to_icons(plan_data.base.images.icon)
             instance.avatars          = map_to_avatars(plan_data.base.images.avatar)
-            
+            instance.body_images      = plan_data.extras.images
+
             instance.comments         = map_to_comments(plan_data.commenting.comments)
             instance.commenting       = plan_data.commenting.enabled
             instance.comments_count   = plan_data.commenting.total
