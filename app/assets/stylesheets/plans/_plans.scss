@@ -1,0 +1,95 @@
+.plan-title {
+    font-size: 18px;
+		color: $anchor-font-color;
+		padding-top: 10px;
+
+		&:hover {
+			color: $anchor-font-color-hover;
+		}    
+}
+
+.plan-length {
+  color: #444;
+  display: block;
+  padding: 5px 0 0 20px;
+  background: url("/assets/icon-calendar.svg") no-repeat left 5px;
+  background-size: 13px;
+}
+
+img.radius {
+	-webkit-border-radius: $global-radius;
+	-moz-border-radius: $global-radius;
+	border-radius: $global-radius;
+}
+
+.cat-box {
+  li {
+    border-left: solid 1px $lightGray;
+    padding: 30px;
+
+    &:first-child {
+      border: none;  
+    }
+
+    a {
+      img {
+        max-height: 50px;
+      }
+
+      label {
+        color: #666;
+        font-size: 16px;
+        text-align:center;
+        margin: 10px 0 0 0;        
+      }
+
+      &:hover {
+        img {
+          height: 110%;
+        }
+      }
+    }
+  }  
+}
+
+.list-box {
+  .list-box-card {
+    display: table;
+    width: 100%;
+    border: 1px solid #ddd;
+    -webkit-border-radius:  5px;
+    -moz-border-radius:     5px;
+    border-radius:          5px;
+    margin: 10px 0 0;
+
+    &:first-child {
+      margin: 30px 0 0;
+    }    
+
+    div {
+      display: table-cell;
+      vertical-align: top;
+      padding: 15px 15px 15px 0;
+
+      &:first-child {
+        width: 105px;
+        padding: 15px 15px 13px;
+      }
+
+      img {
+        width: 75px;
+        -webkit-border-radius:  5px;
+        -moz-border-radius:     5px;
+        border-radius:          5px;
+        margin: 0;
+        padding: 0;
+      }      
+    }    
+  }
+}
+
+ul.plan-results {
+  li {
+    list-style: none;
+  }
+}

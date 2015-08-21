@@ -11,9 +11,19 @@ class PlansController < ApplicationController
   # TODO - this needs serious refactoring controller, model, service object and template - A MESS.
   def index
     @plan_lang      = available_plan_language()
-    @plans = Plan.all( query: params[:query], page: @page, category: params[:category], language_tag: @plan_lang)
     @category = PlanCategory.find(params[:category], language_tag: @plan_lang)# rescue Hashie::Mash.new({current_name: t("plans.all"), breadcrumbs: [], items: []})
+    @plan_lengths = []
+    if params[:category].nil?
+      params[:category] = "featured_plans"
+    end
+
+    @plans = Plan.all( query: params[:query], page: @page, category: params[:category], language_tag: @plan_lang)
     @sidebar = false
+    @plans.each do |plan|
+      @plan_lengths.push plan.total_days unless @plan_lengths.include? plan.total_days
+    end
+    @plan_lengths = @plan_lengths.sort
+    @stophere = 1
     #PERF: We are wasting an API query here, maybe there is an elegant solution?
   end
 

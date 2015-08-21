@@ -46,5 +46,8 @@ function init() {
 	if (window.location.pathname.indexOf("/bible") == 0) {
 		parseReaderVars();
 	}
-	angular.bootstrap(document, ['yv']);
+	if (window.location.pathname.indexOf("/bible") == 0 ||
+			window.location.pathname.indexOf("/moments") == 0) {
+		angular.bootstrap(document, ['yv']);
+	}
 }

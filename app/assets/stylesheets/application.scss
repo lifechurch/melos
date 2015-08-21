@@ -74,6 +74,7 @@ $reader_line_height: 2em;
 @import "reader_text";
 @import "about/about";
 @import "moments/moments";
+@import "plans/plans";
 
 #current-ui-view {
     padding-bottom: 100px;
@@ -310,6 +311,16 @@ a.icon {
 
   &.left {
     float:left;
+  }
+
+  &.text {
+ 		font-size: 13px;
+  	color: gray;
+  	line-height: 30px;
+
+  	&:hover {
+  		line-height: 27px;  		
+  	}
   }
   
   padding: rem-calc(10 10 1 10);

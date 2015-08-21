@@ -144,7 +144,7 @@ $body-font-family: $font-family-sans-serif;
 // $last-child-float: $opposite-direction;
 
 // We use these to make sure border radius matches unless we want it different.
-$global-radius: rem-calc(4);
+$global-radius: rem-calc(5);
 $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -1465,4 +1465,4 @@ $icon-bar-item-padding: rem-calc(15 15 1 15);
 @import 'foundation/components/visibility';
 @import 'foundation/components/side-nav';
 @import 'foundation/components/tabs';
-
+@import 'foundation/components/block-grid';
