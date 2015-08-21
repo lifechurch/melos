@@ -27,6 +27,8 @@ YouversionWeb::Application.routes.draw do
   get "/kinder",        to: "redirects#kinder"
   get "/enfants",       to: "redirects#enfants"
   get "/trending-bible-verses", to: "pages#trending"
+  get "/wmf",           to: "redirects#wmf"
+  get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
 
 
   match "/app(/:store)", to: AppStoreController.action(:index)

@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-24 14:50-0609\n"
-"PO-Revision-Date: 2015-07-24 14:50-0609\n"
+"POT-Creation-Date: 2015-08-04 09:54-0609\n"
+"PO-Revision-Date: 2015-08-04 09:54-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sw <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -55,10 +55,10 @@ msgid "moment.bible.download.title"
 msgstr "{name} alidownload toleo, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Ulialamisha <b>{reference_human}</b>"
+msgstr "Ulialamisha <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} alialamisha <b>{reference_human}</b>"
+msgstr "{name} alialamisha <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Fanya Upya Imani yako na Mipango mipya."
@@ -97,10 +97,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} sasa ni rafiki na <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Ulibainisha </b>{reference_human}</b>"
+msgstr "Umetia kivuli  <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} alibainisha  <b>{reference_human}</b>"
+msgstr "{name} alibainisha <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.self.title"
+msgstr "Umetengeneza picha ya mstari wa <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name}ametengeneza picha ya kifungu kwa <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "uliongeza elezo ,<b>{title}</b>"
@@ -113,6 +119,12 @@ msgstr "Mpango umekamilika"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} amemaliza mpango"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Umemaliza Mpango,  <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} amemaliza Mpango wake,  <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Siku {segment} cha {total_segments} ({percent_complete}%)"
@@ -128,6 +140,12 @@ msgstr "Mpango umeanzwa"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} umeanza mpango"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Mpango umeanzwa, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} ameanza Mpango mpya,  <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Tazama <i>mfululizo wa Bibilia</i> leo usiku!"
