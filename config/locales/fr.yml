@@ -15,8 +15,8 @@ fr:
                 one: "Il y a environ %{count} an"
                 other: "Il y a environ %{count} ans"
             almost_x_years: 
-                one: "Il y a environ %{count} an"
-                other: "Il y a environ %{count} ans"
+                one: "Il y a presque %{count} an"
+                other: "Il y a presque %{count} ans"
             half_a_minute: "Il y a moins d'une minute"
             less_than_x_minutes: 
                 one: "Il y a moins d'%{count} minute"
@@ -25,8 +25,8 @@ fr:
                 one: "Il y a moins d'%{count} seconde"
                 other: "Il y a moins de %{count} secondes"
             over_x_years: 
-                one: "Il y a plus d'%{count}an"
-                other: "Il y a plus de %{count}ans"
+                one: "Il y a plus de %{count} an"
+                other: "Il y a plus de %{count} ans"
             x_days: 
                 one: "Il y a %{count} jour"
                 other: "Il y a %{count} jours"
@@ -111,8 +111,8 @@ fr:
         users last name required: "Vous devez saisir un nom."
         moments content required: "Le contenu ne peut pas être vide."
     meta: 
-        best kids app: "La meilleure app pour les enfants!"
-        best educational app: "La meilleure App éducative!"
+        best kids app: "La meilleure app pour les enfants !"
+        best educational app: "La meilleure App éducative !"
         kids_app: 
             title: "La Bible App pour les Enfants"
             description: "La Bible App pour les Enfants est un excellent moyen pour que vos enfants apprennent les histoires bibliques de Jésus, le don de la vie éternelle, et les nombreuses leçons que Dieu nous enseigne. Au travers de cette expérience interactive, les enfants découvrent la Bible par des illustrations magnifiques tout en gagnant des points en lisant et en récoltant des trésors."
@@ -995,7 +995,7 @@ fr:
         title: "Télécharger la Bible App gratuite"
         description copy: "Des centaines de versions dans plus de %{language_count} langues différentes - la Bible qui vous accompagne partout."
         meta copy title: "Télécharger la Bible App gratuite"
-        meta copy versions: "Des centaines de versions en %{language_count}+ différentes langues"
+        meta copy versions: "Des centaines de versions en plus de %{language_count} différentes langues"
         line 1: "Des centaines de traductions"
         line 2: "dans plus de 100 langues. La"
         line 3: "Bible qui vous suit partout."
@@ -1090,7 +1090,7 @@ fr:
         sms error: "Désolé, une erreur est survenue. Veuillez recommencer."
         sms success: "Magnifique ! Consultez votre appareil mobile pour le lien."
         sms info: "Vous recevrez un seul SMS pour télécharger l'application"
-        sms download: "Cliquer pour télécharger l'application Bible"
+        sms download: "Cliquer pour télécharger la Bible App :"
     pages: 
         generic_error: 
             title: "Oups!"

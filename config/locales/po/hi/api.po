@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-08-11 11:23-0609\n"
+"PO-Revision-Date: 2015-08-11 11:23-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,6 +66,12 @@ msgstr "नए बाइबिल पाठक योजना के साथ 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "नए पाठक योजना से श्रद्धा बढ़ाये। "
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "परमेश्वर के वचन से प्रतिदिन बुद्धिमत्ता प्राप्त करें "
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "इस ऋतु के लिए ह्रदय को तैयार करो "
+
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "फरवरी के लिए अपना पसंदीदा बाइबिल पाठक योजना चुने!"
 
@@ -83,6 +89,15 @@ msgstr "हर दिन बाइबिल अध्ययन पल से प
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015 में हररोज़ बाइबिल पढ़े।मददगार योजनाएँ उपलब्ध !"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "परमेश्वर की प्रतिज्ञायों के लिए धन्यवादी हों "
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "वचन जीवित है  यह आपसे प्रतिदिन बात करता है "
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "परमेश्वर का वचन सभी को नया बनता है "
 
 msgid "moment.friendship.self.title"
 msgstr "अभी आप  <b>{friend_name}</b> के मित्र हुए"
@@ -114,6 +129,12 @@ msgstr "योजना सम्पूर्ण हुआ"
 msgid "moment.plan_completion.title"
 msgstr "{name} योजना सम्पूर्ण हुआ"
 
+msgid "moment.plan_completion.v2.self.title"
+msgstr "आपकी योजना पूरी हो गयी {title} <b></b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} ने योजना पूरी कर ली {title} <b></b>"
+
 msgid "moment.plan_segment_completion.body"
 msgstr "दिन {segment} का{total_segments} ({percent_complete}%)"
 
@@ -128,6 +149,12 @@ msgstr "योजना प्रारंभ हुआ"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} ने पाठक योजना प्रारंभ किया"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "आपने नयी योजना आरम्भ की है {title} <b>आपने नयी योजना आरम्भ की है {title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name}ने नयी योजना आरंभ की है {title} <b></b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "आज रात <i>बाइबिल सीरीज</i>देखे !"

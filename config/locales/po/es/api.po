@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-12 10:46-0600\n"
-"PO-Revision-Date: 2015-03-12 10:46-0600\n"
+"POT-Creation-Date: 2015-08-17 09:45-0609\n"
+"PO-Revision-Date: 2015-08-17 09:45-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -178,13 +178,13 @@ msgid "moment.video.watched.title"
 msgstr "{name} vio <b>{title}</b>"
 
 msgid "notifications.comments.moment.mine.bookmark"
-msgstr "{name} comentó en su marcador: \"{comment}\""
+msgstr "{name} comentó en su marcador: {comment}"
 
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} comentó sobre su nueva amistad con {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
-msgstr "{name} comentó en su resaltado: \"{comment}\""
+msgstr "{name} comentó en su resaltado: {comment}"
 
 msgid "notifications.comments.moment.mine.image"
 msgstr "{name} ha comentado tu imagen de versículo: “{comment}”"
@@ -214,13 +214,13 @@ msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} también comentó en la nota de {moment_owner_name}: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.bookmark"
-msgstr "{moment_owner_name} también comentó en su marcador: \"{comment}\""
+msgstr "{moment_owner_name} también comentó en su marcador: {comment}"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} también comentó sobre su nueva amistad con {friend_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
-msgstr "{moment_owner_name} también comentó en su resaltado: \"{comment}\""
+msgstr "{moment_owner_name} también comentó en su resaltado: {comment}"
 
 msgid "notifications.comments.moments.friend.owner.image"
 msgstr "{moment_owner_name} también comentó su imagen de versículo: “{comment}”"
