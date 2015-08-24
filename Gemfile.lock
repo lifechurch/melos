@@ -210,7 +210,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
     netrc (0.7.7)
-    newrelic_rpm (3.9.9.275)
+    newrelic_rpm (3.13.0.299)
     nokogiri (1.5.9)
     oauth (0.4.7)
     oauth2 (1.0.0)
@@ -425,7 +425,7 @@ DEPENDENCIES
   language_list (~> 0.0.3)
   memcachier
   minitest
-  newrelic_rpm (~> 3.9.9.275)
+  newrelic_rpm
   nokogiri (~> 1.5.2)
   oj
   omniauth-facebook (~> 2.0.0)
