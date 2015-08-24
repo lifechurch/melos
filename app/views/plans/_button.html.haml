@@ -4,17 +4,27 @@
 .rp-subscription-info
   - if logged_in?
     -if current_user.subscribed_to?(plan)
-      = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'action_button_green')
+      .row
+        .columns.medium-12
+          = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'solid-button full green')
     - else
-      = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'action_button_green', "data-toggle-trigger" => "true", "data-toggle-target" => "#toggle-#{unique_id}" )
-      = link_to t("plans.view sample"), {day: "1"}, {class: 'action_button_dark_grey'}
-      .plan-privacy-buttons{id: "toggle-#{unique_id}"}
-        %p.detail-text
-          = t("plans.privacy.visible to friends?")
-          - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: plan.to_param, privacy: private_bool) }
-        = link_to(t('ui.yes button'), subscribe_private_url.call(false), class:"action_button_blue button-public", method: :post)
-        = link_to(t('ui.no button'), subscribe_private_url.call(true), class:"action_button_grey button-private", method: :post)
+      .row
+        .columns.medium-6
+          = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button full green', "data-toggle-trigger" => "true", "data-toggle-target" => "#toggle-#{unique_id}" )
+          .plan-privacy-buttons.show-for-sr{id: "toggle-#{unique_id}"}
+            %p.detail-text
+              = t("plans.privacy.visible to friends?")
+            - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: plan.to_param, privacy: private_bool) }              
+            .row
+              .columns.small-6
+                = link_to(t('ui.yes button'), subscribe_private_url.call(false), class:"solid-button full blue", method: :post)
+              .columns.small-6
+                = link_to(t('ui.no button'), subscribe_private_url.call(true), class:"solid-button full gray", method: :post)         
+        .columns.medium-6
+          = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button full gray'}
   - else
-    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: 'action_button_green')
-    = link_to t("plans.view sample"), {day: "1"}, {class: 'action_button_dark_grey'}
-
+    .row
+      .columns.medium-6
+        = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: 'solid-button full green')
+      .columns.medium-6
+        = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button full gray'}

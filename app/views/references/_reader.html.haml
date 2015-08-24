@@ -82,10 +82,13 @@
       .copyright
         = (version.blurb || version.copyright).try :html_safe
   .medium-1.large-3.columns
+    %div
+      =yield :sidebar
+      =yield :sidebar_class
     %div{"fix-top" => true}
       %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel" }
       %div{}
-        %span{"ng-show" => "readerSelection.length"}
+        %span.ng-hide{"ng-show" => "readerSelection.length"}
           %b{"ng-bind" => "readerSelection.length"}
           =" verses selected"
         %div{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "version", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}

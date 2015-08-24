@@ -603,6 +603,16 @@ input {
     }
   }
 
+  &.gray {
+    background-color: $gray !important;
+    color: #ffffff !important;  	
+
+    &:hover {
+      background-color: lighten($gray, 15%) !important;
+      color: darken(#ffffff, 5%) !important;    	
+    }
+  }  
+
   &.blue {
     background-color: $blue !important;
     color: #ffffff !important;

@@ -39,7 +39,7 @@
       = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon left text'
 
 %article.reading_plan_index
-  .row.full
+  .row
     .medium-8.columns
       = image_tag @plan.hero_image.url, class: 'rp-hero-img' if @plan.hero_image.present?
       %h1.keep= @plan.name
@@ -52,7 +52,7 @@
         %p!= @plan.about
 
     .medium-4.columns
-      Right
+      = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
 
   
 

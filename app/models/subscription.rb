@@ -40,7 +40,7 @@ class Subscription < Plan
       found = super(plan, opts)
       found.auth = auth
       return found if found.valid?
-      return nil if found.invalid? and found.errors.full_messages.include? "Reading plan not found"
+      return nil if found.invalid? and found.errors.full_messages.include? "reading_plans.reading_plan.not_found"
       return found
     end
 
