@@ -40,7 +40,6 @@ angular.module('yv.moments', [
 		$scope.loading = true;
 		$scope.currentPage++;
 		Moments.get($scope.currentPage).success(function(data) {
-			console.log(data);
 			$scope.moments = $scope.moments.concat(data);
 			$scope.loading = false;
 		}).error(function(err) {
@@ -51,16 +50,16 @@ angular.module('yv.moments', [
 
 	$scope.loadMore();
 
-	console.log("Listen up!");
-	var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-		console.log("Yo");
-		if (toState.name !== fromState.name) {
-			console.log("in");
-			// If we're going somewhere else, disconnect this listener
-			stopListener();
-			$window.location.href = $state.href(toState, toParams);
-		}
-	});	
+	//console.log("Listen up!");
+	// var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+	// 	console.log("Yo");
+	// 	if (toState.name !== fromState.name) {
+	// 		console.log("in");
+	// 		// If we're going somewhere else, disconnect this listener
+	// 		stopListener();
+	// 		$window.location.href = $state.href(toState, toParams);
+	// 	}
+	// });	
 }])
 
 ;

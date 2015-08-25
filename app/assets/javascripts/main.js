@@ -28,4 +28,31 @@ angular.module('yv', [
 	};
 })
 
+.run(['$rootScope', '$window', function($rootScope, $window) {
+
+	// Intercept the stateChangeStart event, and determine if the whole state 
+	//  needs to be reloaded, or if we can just broadcast an event that lets
+	//  the view know to reload data
+	var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {		
+		if ((toState.name == fromState.name && fromState.name == 'reader') || fromState.name == "") {
+			if (fromState.name !== "") {
+				event.preventDefault();
+				$rootScope.$broadcast("YV:reloadState", [toState, toParams]);
+			}
+		}
+	});
+
+	//This is hacky, need to find a better way
+	//  Need a way to take an absolute URL and
+	//  resolve it to a state name
+	var stopLCSListener = $rootScope.$on('$locationChangeStart', function(event, newUrl, oldUrl, newState, oldState) {
+		var oldBaseRoute = oldUrl.split('/')[3];
+		var newBaseRoute = newUrl.split('/')[3];
+		if(oldBaseRoute !== newBaseRoute) {
+			event.preventDefault();
+			$window.location.href = newUrl;
+		}
+	});
+}])
+
 ;

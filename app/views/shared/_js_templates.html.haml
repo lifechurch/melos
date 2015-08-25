@@ -9,11 +9,11 @@
         .small-3.columns.vertical-middle{"style" => "height:62px"}
           %div.text-left="Size"
         .small-9.columns
-          %md-slider{:max => "24", :min => "6", "ng-model" => "fontSize"}
+          %md-slider{:max => "24", :min => "6", "ng-model" => "fontSize", "aria-label" => "Font Size"}
       .row
         .small-12.columns
           %table.font-selector{"style" => "width: 100%"}
-            %tr
+            %tr 
               %td.text-center
                 %input#reader_font_arial.hidden{:type => "radio", :value => "Arial", "ng-model" => "fontFamily"}
                 %label{:for => "reader_font_arial", "style" => "font-family:'Arial'"} Arial

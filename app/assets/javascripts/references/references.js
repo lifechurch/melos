@@ -93,7 +93,6 @@ angular.module('yv.reader', [
 	 * Load bible chapter from url path
 	 */
 	function loadChapter(location_path) {
-
 		// Reset some scope vars
 		$scope.working 						= true;
 		$scope.showReaderBooks 		= false;
@@ -211,7 +210,6 @@ angular.module('yv.reader', [
 				});
 			}
 		}
-		console.log($scope.reader_version_list);
 	}	
 
 
@@ -275,34 +273,24 @@ angular.module('yv.reader', [
 		loadChapter($location.path());
 	}
 
-
 	/**
 	 * Don't reload controller of navigating back to this same state, instead
 	 * just make the new chapter call and switch the URL in the browser
 	 */
-	var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-		if (toState.name == fromState.name) {
-
-			// Stop State Change
-			event.preventDefault();
-
-			// Get new scope values from params
-			$scope.version 	= toParams.version;
-			$scope.usfm 		= toParams.usfm;
+	$rootScope.$on("YV:reloadState", function(event, stateInfo) {
+		 	var toState 	= stateInfo[0]; 
+		 	var toParams 	= stateInfo[1];
 
 			// Fetch new data
 			loadChapter($state.href(toState, toParams));
 
 			// Switch to the new URL without loading the controller again
-			$state.go(toState, toParams, { notify: false});			
+			$state.go(toState, toParams, { notify: false});
 
-		} else {
-			// If we're going somewhere else, disconnect this listener
-			stopListener();
-			//$window.location.href = $state.href(toState, toParams);
-		}
+			// Get new scope values from params
+			$scope.version 	= toParams.version;
+			$scope.usfm 		= toParams.usfm;			
 	});
-
 
 	Authentication.isLoggedIn('/isLoggedIn').success(function(data) {
 		if (data === true) {

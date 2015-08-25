@@ -60,7 +60,7 @@
 .widget.scripture-links
   %h3.hd
     = t("plans.read today")
-  %ul.menu.basic
+  %ul.menu.basic 
     - unless references.empty?
       - references.each_with_index do |ref,index|
         %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
