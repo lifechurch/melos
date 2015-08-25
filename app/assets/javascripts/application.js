@@ -42,12 +42,25 @@ function parseReaderVars() {
 	};
 }
 
+function parsePlanVars() {
+	parseReaderVars();
+	TEMPLATE_FROM_RAILS[window.location.pathname].devotional_content = angular.element(document.getElementById('widget-devotional')).html();
+}
+
 function init() {
-	if (window.location.pathname.indexOf("/bible") == 0) {
+	var isReadingPlan = window.location.pathname.indexOf("/reading-plans") == 0 && window.location.pathname.indexOf("/day/") > 0;
+	var isReader 			= window.location.pathname.indexOf("/bible") == 0;
+	var isHomeFeed 		= window.location.pathname.indexOf("/moments") == 0;
+
+	if (isReader) {
 		parseReaderVars();
 	}
-	if (window.location.pathname.indexOf("/bible") == 0 ||
-			window.location.pathname.indexOf("/moments") == 0) {
+
+	if (isReadingPlan) {
+		parsePlanVars();
+	}	
+
+	if (isReader || isReadingPlan || isHomeFeed) {
 		angular.bootstrap(document, ['yv']);
 	}
 }

@@ -77,7 +77,7 @@
   .medium-1.large-3.columns
     - unless (@sidebar == false || sidebar_presenter.blank?)
       = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
-  .medium-10.large-6.columns
+  .medium-10.large-6.columns{class: controller_name == 'plans' ? 'ng-hide' : '', "ng-show" => "!isPlanState || planContentReady"}
     #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes"}
       = presenter.content.html_safe if presenter.content
       .copyright

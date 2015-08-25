@@ -75,6 +75,7 @@ $reader_line_height: 2em;
 @import "about/about";
 @import "moments/moments";
 @import "plans/plans";
+@import "home/home";
 
 #current-ui-view {
     padding-bottom: 100px;
@@ -216,16 +217,19 @@ body {
 	font-size: rem-calc(19);
 	font-color: $black;
 
-      .copyright {
-        font-size: rem-calc(16);
-        font-color: $darkGray;
-        margin-top: rem-calc(20);
+  p {
+    font-size: inherit;
+  }
+  .copyright {
+    font-size: rem-calc(16);
+    font-color: $darkGray;
+    margin-top: rem-calc(20);
 
-        p {
-          font-size: inherit;
-        }
+    p {
+      font-size: inherit;
+    }
 
-      }
+  }
 }
 
 .chapter>.label {
@@ -656,6 +660,11 @@ input {
   	overflow: scroll;
   	height: rem-calc(400);
   }
+}
+
+.small-title {
+	font-size: 15px;
+	font-weight: bold;
 }
 
 .blue-text {

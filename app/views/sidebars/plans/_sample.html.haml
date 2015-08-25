@@ -16,7 +16,7 @@
 
 
 #widget-plan-controls.widget
-  %h3.hd
+  %h1.small-title
     = link_to plan.name, plan_path(plan)
 
   #calendar.bd.nopad.rp-sample
@@ -79,9 +79,9 @@
 
 - if current_auth
   - if reading.devotional
-    #widget-devotional.widget
+    #widget-devotional.widget.ng-hide
       %h3.hd= t("plans.devotional")
-      %div.bd= reading.devotional.html_safe
+      #widget-devotional-body.bd= reading.devotional.html_safe
 - else
   .widget
     %h3.hd

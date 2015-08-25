@@ -38,13 +38,13 @@
 
 = cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
   %article
-    #hero{class: rtl_class}
-      #hero_content
+    #hero.row{class: rtl_class}
+      #hero_content.columns.medium-6
         %h1= t(".hero.heading")
         %p=  t(".hero.description")
 
         %span
-          = link_to(t(".hero.start reading"), bible_path, class: 'cta')
+          = link_to(t(".hero.start reading"), bible_path, class: 'solid-button green')
           &nbsp;
           = t("or.lower")
           &nbsp;
@@ -53,20 +53,23 @@
           %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
           %label{for:"setting-skip-home",id:"label-setting-skip-home"}
             =t(".hero.skip in future")
-    .hero_pics
-      &nbsp;
+      .columns.medium-6
+        %img{src:'assets/laptop@2x.jpg'}
 
-    .bottom_cta
-      %div
-        %div
-          - style = "background-image: url(#{image_path(localized_bible_icon)})" if localized_bible_icon
-          %h2{style: style}= t(".word with you")
-          %p{style: style}= t(".download description")
-          %span.counter#download-counter
-            %p#counter &nbsp;
-            %p= t(".world installs")
-        %div.mobile_platforms
-          = link_to(t(".download action"), app_page_path)
+    .hero_pics
+
+    .row
+      .columns.medium-9
+        -#- style = "background-image: url()" if localized_bible_icon
+        %h1
+          %img{src: "#{image_path(localized_bible_icon)}"}
+          = t(".word with you")
+        %p= t(".download description")
+        %span.counter#download-counter
+          %p#counter &nbsp;
+          %p= t(".world installs")
+      .columns.medium-3
+        = link_to(t(".download action"), app_page_path, {class: 'solid-button green full'})
 
     .explore_cta
       %h2= t(".get started")

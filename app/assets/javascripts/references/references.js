@@ -21,27 +21,38 @@ angular.module('yv.reader', [
 
 .config([ '$stateProvider', function($stateProvider) {
 	$stateProvider
+
+	//Basic Reader
 	.state('reader', {
 		url: 				'/bible/:version/:usfm',
 		controller: 			'ReaderCtrl',
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
+
+	//Bible Plan Sample Reader with Devo Content
+	.state('planSample', {
+		url: 				'/reading-plans/:plan/day/:day',
+		controller: 			'ReaderCtrl',
+		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
+	})	
 	;
 }])
 
 .controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window) {
-	$scope.version 					= $stateParams.version;
-	$scope.usfm 						= $stateParams.usfm;
+	$scope.version 							= $stateParams.version;
+	$scope.usfm 								= $stateParams.usfm;
 	$scope.readerFontSize 			= 19;
 	$scope.readerPlaybackSpeed 	= 1;
-	$scope.versions 					= null;
-	$scope.working 					= false;
-	$scope.isLoggedIn 				= false;
+	$scope.versions 						= null;
+	$scope.working 							= false;
+	$scope.isLoggedIn 					= false;
 	$scope.verseActionOpen 			= false;
 	$scope.readerSelection 			= [];
 	$scope.highlights 					= [];
-	$scope.bookmarks 				= [];
-	$scope.notes 						= [];
+	$scope.bookmarks 						= [];
+	$scope.notes 								= [];
+	$scope.isPlanState 					= $state.current.name == 'planSample';
+	$scope.planContentReady			= false;
 
 	hideAllPanels();
 	hideAllSidePanels();
@@ -49,9 +60,9 @@ angular.module('yv.reader', [
 	$scope.$watch('readerSelection.length', function(newVal, oldVal) {
 		if (oldVal !== newVal) {
 			if (newVal > 0) {
-				$scope.verseActionOpen = true;
+				$scope.verseActionOpen 	= true;
 			} else {
-				$scope.verseActionOpen = false;
+				$scope.verseActionOpen 	= false;
 			}
 		}
 	});
@@ -61,10 +72,10 @@ angular.module('yv.reader', [
 	 * Hide all the header panels
 	 */
 	function hideAllPanels() {
-		$scope.showReaderAudio 	= false;
-		$scope.showReaderFont 		= false;		
-		$scope.showReaderBooks 	= false;
-		$scope.showReaderVersions  = false;
+		$scope.showReaderAudio 			= false;
+		$scope.showReaderFont 			= false;		
+		$scope.showReaderBooks 			= false;
+		$scope.showReaderVersions  	= false;
 	}
 
 
@@ -72,7 +83,7 @@ angular.module('yv.reader', [
 	 * Hide all the side panels
 	 */
 	function hideAllSidePanels() {
-		$scope.showReaderHighlight 		= false;		
+		$scope.showReaderHighlight 	= false;		
 		$scope.showReaderBookmark 	= false;	
 		$scope.showReaderNote 			= false;
 	}
@@ -84,13 +95,13 @@ angular.module('yv.reader', [
 	function loadChapter(location_path) {
 
 		// Reset some scope vars
-		$scope.working 				= true;
-		$scope.showReaderBooks 	= false;
+		$scope.working 						= true;
+		$scope.showReaderBooks 		= false;
 		$scope.showReaderChapters = false;
 		$scope.readerSelection 		= [];		
 		$scope.highlights 				= [];
-		$scope.bookmarks 			= [];
-		$scope.notes 					= [];
+		$scope.bookmarks 					= [];
+		$scope.notes 							= [];
 
 		Bible.getChapter(location_path).success(function(data, status, headers, config) {
 			fillScope(data);
@@ -123,6 +134,12 @@ angular.module('yv.reader', [
 	 */
 	function fillScope(newScope) {
 		angular.extend($scope, newScope);
+
+		if ($scope.isPlanState) {
+			$scope.devotional_first_chapter = $scope.reader_html;
+			$scope.reader_html = $scope.devotional_content;
+			$scope.planContentReady = true;
+		}
 
 		//TO-DO: Make Audio Directive
 		if ($scope.reader_audio && $scope.reader_audio.url) {
