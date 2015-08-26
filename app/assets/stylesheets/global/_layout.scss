@@ -1,0 +1,65 @@
+#current-ui-view {
+	padding-bottom: 100px;
+}
+
+:focus {
+	outline: 0;
+}
+
+.fixed {
+	@media #{$small-only} {
+		bottom: 0;
+		top: auto;        
+	}
+
+	.t-border {
+		@media #{$medium-up} {
+			border-top: none !important;
+		}          
+		@media #{$small-only} {
+			border-bottom: none !important;
+		}
+	}
+	
+
+
+	&.after-header {
+		@media #{$medium-up} {
+			margin-top: rem-calc(73);
+		}
+
+		bottom: auto !important;
+		top: 0 !important;
+	}
+}
+
+.fixed.header {
+	box-shadow: 2px -1px 10px #888;
+}
+
+.row {
+	&.full {
+		max-width: 100%;
+		@media #{$large-up} {
+			padding-left: rem-calc(30);
+			padding-right: rem-calc(30);
+		}
+
+		@media #{$small-up} {
+			padding-left: rem-calc(15);
+			padding-right: rem-calc(15);
+		} 
+	}
+
+	&.b-border {
+		border-bottom: solid rem-calc(1) $lightGray;
+	}
+
+	&.t-border {
+		border-top: solid rem-calc(1) $lightGray;
+	}
+
+	&.white {
+		background-color: #ffffff;
+	}
+}

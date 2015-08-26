@@ -1,0 +1,20 @@
+$gray: #89847D;
+$lightGray: scale-color($gray, $lightness: 55%);
+$darkGray: #777777;
+$black: #444444;
+
+$green: #6ab750;
+$red: #CC0000;
+$blue: #0099CC;
+$dark_grey: #666;
+
+$gray_dark_1: #1e1e1f;
+$gray_dark_2: #424143;
+$gray_dark_3: #646367;
+$gray_medium: #807f83;
+$gray_light: #eeedeb;
+$green: #73a03d;
+$blue: #0084c8;
+$red: #c90000;
+$blue_light: lighten($blue, 15%);
+$blue_dark: darken($blue, 15%);

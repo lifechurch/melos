@@ -1,0 +1,39 @@
+@mixin round {
+  @include border-radius($radius);
+}
+
+@mixin round_top {
+  @include border-top-radius($radius);
+}
+
+@mixin round_top_none {
+  @include border-top-radius(0);
+}
+
+@mixin round_top_left {
+  @include border-top-left-radius($radius);
+}
+
+@mixin round_bottom_left {
+  @include border-bottom-left-radius($radius);
+}
+
+@mixin round_bottom {
+  @include border-bottom-radius($radius);
+}
+
+@mixin round_bottom_right {
+  @include border-bottom-right-radius($radius);
+}
+
+@mixin round_top_right {
+  @include border-top-right-radius($radius);
+}
+
+@mixin round_none {
+  @include border-radius(0);
+}
+
+@mixin glow {
+  @include box-shadow(inset rgba(white, 0.4) 0 1px 0 0, rgba($blue_light, 0.5) 0 0 5px 0);
+}

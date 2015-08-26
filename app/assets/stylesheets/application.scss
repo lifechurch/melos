@@ -1,74 +1,11 @@
 @import "vendor/angular-material/angular-material";
 @import "vendor/angular-tooltips/angular-tooltips.min.css";
+@import "config/colors";
+@import "config/fonts";
 @import "foundation_and_overrides";
-
-$green: #6ab750;
-$red: #CC0000;
-$blue: #0099CC;
-$dark_grey: #666;
 
 // For IE9.
 $experimental-support-for-svg: true;
-
-$body_font: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
-$fa_body_font: Tahoma, "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
-$text_size: 14px;
-
-$gray_dark_1: #1e1e1f;
-$gray_dark_2: #424143;
-$gray_dark_3: #646367;
-$gray_medium: #807f83;
-$gray_light: #eeedeb;
-$green: #73a03d;
-$blue: #0084c8;
-$red: #c90000;
-$blue_light: lighten($blue, 15%);
-$blue_dark: darken($blue, 15%);
-$body_text: #444444;
-$label_text: #666666;
-$radius: 4px;
-$mute: #888888;
-$reader_line_height: 2em;
-
-@mixin round {
-  @include border-radius($radius);
-}
-
-@mixin round_top {
-  @include border-top-radius($radius);
-}
-
-@mixin round_top_none {
-  @include border-top-radius(0);
-}
-
-@mixin round_top_left {
-  @include border-top-left-radius($radius);
-}
-
-@mixin round_bottom_left {
-  @include border-bottom-left-radius($radius);
-}
-
-@mixin round_bottom {
-  @include border-bottom-radius($radius);
-}
-
-@mixin round_bottom_right {
-  @include border-bottom-right-radius($radius);
-}
-
-@mixin round_top_right {
-  @include border-top-right-radius($radius);
-}
-
-@mixin round_none {
-  @include border-radius(0);
-}
-
-@mixin glow {
-  @include box-shadow(inset rgba(white, 0.4) 0 1px 0 0, rgba($blue_light, 0.5) 0 0 5px 0);
-}
 
 // TEMP: responsive screen-size - can go away after redesign
 #mode {
@@ -112,82 +49,30 @@ $reader_line_height: 2em;
 }
 // END responsive helper css
 
-@import "reader_text";
-@import "about/about";
+$radius: 4px;
+$mute: #888888;
+$reader_line_height: 2em;
+
+@import "global/mixins";
+@import "global/layout";
+
+@import "pages/home/home";
+@import "pages/about/about";
+
+@import "references/references";
+@import "references/reader_text";
 @import "versions/versions";
 @import "video/video";
 @import "moments/moments";
 @import "plans/plans";
-@import "home/home";
 
-#current-ui-view {
-    padding-bottom: 100px;
-}
 
 h1 {
   font-weight: 100;
 }
+
 h1, h2 {
   -webkit-font-smoothing: subpixel-antialiased;
-}
-
-
-.fixed {
-      @media #{$small-only} {
-        bottom: 0;
-        top: auto;        
-      }
-
-        .t-border {
-          @media #{$medium-up} {
-            border-top: none !important;
-          }          
-          @media #{$small-only} {
-            border-bottom: none !important;
-          }
-        }
-      
-
-
-	&.after-header {
-          @media #{$medium-up} {
-            margin-top: rem-calc(73);
-          }
-
-          bottom: auto !important;
-          top: 0 !important;
-	}
-}
-
-.fixed.header {
-  box-shadow: 2px -1px 10px #888;
-}
-
-.row {
-	&.full {
-		max-width: 100%;
-            @media #{$large-up} {
-              padding-left: rem-calc(30);
-              padding-right: rem-calc(30);
-            }
-
-            @media #{$small-up} {
-              padding-left: rem-calc(15);
-              padding-right: rem-calc(15);
-            } 
-	}
-
-	&.b-border {
-		border-bottom: solid rem-calc(1) $lightGray;
-	}
-
-      &.t-border {
-          border-top: solid rem-calc(1) $lightGray;
-      }
-
-	&.white {
-		background-color: #ffffff;
-	}
 }
 
 .logo {
@@ -392,125 +277,7 @@ a.icon {
   }
 }
 
-.hdr-search {
-  &.row {
-    &.postfix-radius {
-      float: left;
-      @media #{$medium-small-only} {
-          float: right;
-      }
-      display: inline-block;
-    }
-  }
-}
 
-/*  !Profile in header  */
-
-.hdr-profile {
-  margin-top: rem-calc(-5); 
-
-  @media #{$large-up} {
-    margin-right: rem-calc(20) !important;   
-  }
-
-  @media #{$medium-only} {
-    margin-right: rem-calc(10) !important; 
-  }  
-
-  @media #{$medium-small-only} {
-    display: none;
-  }  
-
-  float: right;
-}
-
-.hdr-profile a {
-  display: block;
-  position: relative;
-  color: #888;
-  height: 40px;   
-}
-
-.hdr-profile-img {
-  height: 40px;
-  -webkit-border-radius:  20px;
-  -moz-border-radius:     20px;
-  border-radius:          20px;
-  z-index: 100;
-  position: relative;
-  border: solid 1px #ddd;
-}
-
-.hdr-profile-name {
-  margin-left: rem-calc(-20);
-  z-index: 90;
-  padding: 5px 10px 6px 20px;
-  border: 1px solid #ddd;
-  -webkit-border-radius:  rem-calc(0 5 5 0);
-  -moz-border-radius:     rem-calc(0 5 5 0);
-  border-radius:          rem-calc(0 5 5 0);
-  position: relative;
-  white-space: nowrap;
-  font-size: rem-calc(15);
-  text-overflow: ellipsis;
-
-  &.large {
-    display: none;
-    @media #{$large-up} {
-      display:inline;
-    }
-  }
-
-  &.medium {
-    display: none;
-    @media #{$medium-only} {
-      display:inline;
-    }   
-  } 
-
-
-}
-
-.hdr-profile-name:hover {
-  background: #89847D;
-  color: #fff;
-  border: 1px solid #89847D;
-}
-
-.hdr-profile-name.active {
-  border: none;
-  background: #89847D;
-  color: #fff;
-}
-
-/*  !About - header  */
-
-.hdr-about {
-  display: inline-flex;
-  float: right;
-}
-
-.hdr-about a {
-  display: inline;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #ddd;
-  -webkit-border-radius:  5px;
-  -moz-border-radius:     5px;
-  border-radius:          5px;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  background: url("../assets/icon-about.svg") no-repeat center center;
-  background-size: rem-calc(16);
-
-  &:hover,
-  &:focus {
-  background: #89847D url("../assets/icon-about-white.svg") no-repeat center center;
-  background-size: rem-calc(16);
-  border: 1px solid #89847D;
-  }
-}
 
 input {
   padding: rem-calc(0 8 0 8) !important;
@@ -808,9 +575,6 @@ div[verse-action] {
 	cursor: pointer;
 }
 
-:focus {
-	outline: 0;
-}
 
 h5.bookLabel {
 	padding: 0.4375rem 0.875rem;
@@ -818,56 +582,4 @@ h5.bookLabel {
 
 .inline {
 	display: inline !important;
-}
-
-// .note.f {
-// 	display: ;
-// }
-
-.highlight-button {
-	background-color: #FFCD00 !important;
-
-	.st0 {
-		fill: white;
-	}
-}
-
-.bookmark-button {
-	background-color: #A9321E !important;
-
-	.st0 {
-		fill: white;
-	}
-}
-
-.note-button {
-	background-color: #785549 !important;
-
-	.st0 {
-		fill: white;
-	}
-}
-
-.related-button {
-	background-color: #939393 !important;
-
-	.st0 {
-		fill: white;
-	}
-}
-
-.share-button {
-	background-color: #0088C5 !important;
-
-	.st0 {
-		fill: white;
-	}
-}
-
-.url-button {
-	background-color: #F57C2C !important;
-
-	.st0 {
-		fill: white;
-	}
 }

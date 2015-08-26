@@ -1,0 +1,167 @@
+.hdr-search {
+  &.row {
+    &.postfix-radius {
+      float: left;
+      @media #{$medium-small-only} {
+          float: right;
+      }
+      display: inline-block;
+    }
+  }
+}
+
+/*  !Profile in header  */
+
+.hdr-profile {
+  margin-top: rem-calc(-5); 
+
+  @media #{$large-up} {
+    margin-right: rem-calc(20) !important;   
+  }
+
+  @media #{$medium-only} {
+    margin-right: rem-calc(10) !important; 
+  }  
+
+  @media #{$medium-small-only} {
+    display: none;
+  }  
+
+  float: right;
+}
+
+.hdr-profile a {
+  display: block;
+  position: relative;
+  color: #888;
+  height: 40px;   
+}
+
+.hdr-profile-img {
+  height: 40px;
+  -webkit-border-radius:  20px;
+  -moz-border-radius:     20px;
+  border-radius:          20px;
+  z-index: 100;
+  position: relative;
+  border: solid 1px #ddd;
+}
+
+.hdr-profile-name {
+  margin-left: rem-calc(-20);
+  z-index: 90;
+  padding: 5px 10px 6px 20px;
+  border: 1px solid #ddd;
+  -webkit-border-radius:  rem-calc(0 5 5 0);
+  -moz-border-radius:     rem-calc(0 5 5 0);
+  border-radius:          rem-calc(0 5 5 0);
+  position: relative;
+  white-space: nowrap;
+  font-size: rem-calc(15);
+  text-overflow: ellipsis;
+
+  &.large {
+    display: none;
+    @media #{$large-up} {
+      display:inline;
+    }
+  }
+
+  &.medium {
+    display: none;
+    @media #{$medium-only} {
+      display:inline;
+    }   
+  } 
+
+
+}
+
+.hdr-profile-name:hover {
+  background: #89847D;
+  color: #fff;
+  border: 1px solid #89847D;
+}
+
+.hdr-profile-name.active {
+  border: none;
+  background: #89847D;
+  color: #fff;
+}
+
+/*  !About - header  */
+
+.hdr-about {
+  display: inline-flex;
+  float: right;
+}
+
+.hdr-about a {
+  display: inline;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  -webkit-border-radius:  5px;
+  -moz-border-radius:     5px;
+  border-radius:          5px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url("../assets/icon-about.svg") no-repeat center center;
+  background-size: rem-calc(16);
+
+  &:hover,
+  &:focus {
+  background: #89847D url("../assets/icon-about-white.svg") no-repeat center center;
+  background-size: rem-calc(16);
+  border: 1px solid #89847D;
+  }
+}
+
+.highlight-button {
+	background-color: #FFCD00 !important;
+
+	.st0 {
+		fill: white;
+	}
+}
+
+.bookmark-button {
+	background-color: #A9321E !important;
+
+	.st0 {
+		fill: white;
+	}
+}
+
+.note-button {
+	background-color: #785549 !important;
+
+	.st0 {
+		fill: white;
+	}
+}
+
+.related-button {
+	background-color: #939393 !important;
+
+	.st0 {
+		fill: white;
+	}
+}
+
+.share-button {
+	background-color: #0088C5 !important;
+
+	.st0 {
+		fill: white;
+	}
+}
+
+.url-button {
+	background-color: #F57C2C !important;
+
+	.st0 {
+		fill: white;
+	}
+}
