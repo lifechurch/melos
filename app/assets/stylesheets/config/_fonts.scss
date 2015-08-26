@@ -17,3 +17,26 @@ $text_size: 14px;
 
 $body_text: #444444;
 $label_text: #666666;
+
+$reader_line_height: 2em;
+
+h1 {
+  font-weight: 100;
+}
+
+h1, h2 {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+h5.bookLabel {
+	padding: 0.4375rem 0.875rem;
+}
+
+.small-title {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.blue-text {
+	color: $blue !important;
+}

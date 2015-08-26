@@ -2,10 +2,9 @@
 @import "vendor/angular-tooltips/angular-tooltips.min.css";
 @import "config/colors";
 @import "config/fonts";
+@import "config/misc";
 @import "foundation_and_overrides";
 
-// For IE9.
-$experimental-support-for-svg: true;
 
 // TEMP: responsive screen-size - can go away after redesign
 #mode {
@@ -26,35 +25,13 @@ $experimental-support-for-svg: true;
     cursor: pointer;
   }
 }
-
-@media (min-width: 640px) {
-  #mode {
-    background-color: green;
-  }
-}
-@media (min-width: 1024px) {
-  #mode {
-    background-color: blue;
-  }
-}
-@media (min-width: 1440px) {
-  #mode {
-    background-color: purple;
-  }
-}
-@media (min-width: 1920px) {
-  #mode {
-    background-color: gold;
-  }
-}
 // END responsive helper css
 
-$radius: 4px;
-$mute: #888888;
-$reader_line_height: 2em;
 
 @import "global/mixins";
 @import "global/layout";
+@import "global/header";
+@import "globa/buttons";
 
 @import "pages/home/home";
 @import "pages/about/about";
@@ -66,69 +43,6 @@ $reader_line_height: 2em;
 @import "moments/moments";
 @import "plans/plans";
 
-
-h1 {
-  font-weight: 100;
-}
-
-h1, h2 {
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.logo {
-      position: absolute;
-      margin-top: rem-calc(13);  
-      img {
-        height: rem-calc(48);
-        width: rem-calc(48);
-        min-width: rem-calc(48);
-      }
-}
-
-.icon-bar > * svg {
-	width: $icon-bar-icon-size;
-      min-width: $icon-bar-icon-size;
-	height: $icon-bar-icon-size;
-}
-
-.icon-bar {
-      @media #{$medium-up} {  
-        margin-left: rem-calc(50);
-      }
-
-      @media #{$large-up} {
-        max-width: rem-calc(390);
-      }
-
-      @media #{$medium-only} {
-        max-width: rem-calc(320);
-      }
-
-      @media #{$medium-small-only} {  
-        max-width: rem-calc(290) !important;
-      }      
-
-	a { 
-		.fill {
-			fill: transparent;
-		}
-
-		.line {
-			fill: $icon-bar-icon-color;
-		}
-
-		&:hover {
-			.fill {
-				fill: $icon-bar-icon-color
-			}
-
-			.line {
-				fill: $icon-bar-icon-color;
-			}			
-		}
-	}
-}
-
 .label {
 	padding: inherit;
 	font-size: rem-calc(15);
@@ -138,146 +52,6 @@ h1, h2 {
 	margin-right: rem-calc(4);
 	color: $darkGray;
 }
-
-body {
-      @media #{$medium-up} {
-        margin-top: rem-calc(130);
-      }  
-}
-
-.reader {
-	font-size: rem-calc(19);
-	font-color: $black;
-
-  p {
-    font-size: inherit;
-  }
-  .copyright {
-    font-size: rem-calc(16);
-    font-color: $darkGray;
-    margin-top: rem-calc(20);
-
-    p {
-      font-size: inherit;
-    }
-
-  }
-}
-
-.chapter>.label {
-	display: none;
-}
-
-.bcv-button-box {
-  margin: rem-calc(6) auto 0;
-  overflow: hidden;
-  display: inline-block;
-
-  a {
-    display: block;
-    float: left;
-    font-size: rem-calc(13);
-    height: rem-calc(26);
-    line-height: rem-calc(25);
-    background: #e4e4e4;
-    color: #666;
-    padding: rem-calc(0 10);
-    font-weight: bold;
-    margin: rem-calc(0 0 0 2);
-
-    &.book {
-      -webkit-border-radius:  rem-calc(5 0 0 5);
-      -moz-border-radius:  rem-calc(5 0 0 5);
-      border-radius: rem-calc(5 0 0 5);
-      &:hover {
-        background: #eee;        
-      }
-      &:active, &:focus {
-        background: #ccc;
-      }
-    }
-
-    &.version {
-      -webkit-border-radius:  rem-calc(0 5 5 0);
-      -moz-border-radius:     rem-calc(0 5 5 0);
-      border-radius:          rem-calc(0 5 5 0);
-      &:hover {
-        background: #eee;        
-      }      
-      &:active, &:focus {
-        background: #ccc;
-      }      
-    }
-
-    &.chapter {
-      &:hover {
-        background: #eee;        
-      }
-      &:active, &:focus {
-        background: #ccc;
-      }      
-    }
-
-    &.prev, &.next {
-      background: #fff url("../assets/icon-reader-arrow.svg") no-repeat center center;
-      background-size: rem-calc(8);
-      text-indent: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      width: rem-calc(26);
-      padding: 0;
-    }
-
-    &.prev {
-      margin: 0;
-      -webkit-transform:  rotate(-180deg);
-      -moz-transform:     rotate(-180deg);
-      -ms-transform:      rotate(-180deg);
-      -o-transform:       rotate(-180deg);
-      transform:          rotate(-180deg);
-    }
-  }
-}
-
-a.icon {
-
-  &.right {
-    float:right;
-  }
-
-  &.left {
-    float:left;
-  }
-
-  &.text {
- 		font-size: 13px;
-  	color: gray;
-  	line-height: 30px;
-
-  	&:hover {
-  		line-height: 27px;  		
-  	}
-  }
-  
-  padding: rem-calc(10 10 1 10);
-  display: inline-block;
-
-  &:hover {
-    border-bottom: solid rem-calc(3) $darkGray;
-  }
-
-  &.active {
-    border-bottom: solid rem-calc(3) $green;
-  }  
-
-  svg {
-    height: rem-calc(16);
-    width: rem-calc(16);
-    fill: $gray;
-  }
-}
-
-
 
 input {
   padding: rem-calc(0 8 0 8) !important;
@@ -299,192 +73,6 @@ input {
   }
 }
 
-.pad-head {
-  margin-top: rem-calc(20) !important;
-}
-
-/*  !Notifications  */
-
-.hdr-notify {
-  display: inline-block;
-  float:right;
-
-  @media #{$large-up} {
-    margin-right: rem-calc(20) !important; 
-  }   
-
-  @media #{$medium-only} {
-    margin-right: rem-calc(10) !important; 
-  }   
-  // height: 70px;
-  // padding: 20px 0 0;
-}
-
-.hdr-notify a {
-  display: block;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #ddd;
-  -webkit-border-radius:  5px;
-  -moz-border-radius:     5px;
-  border-radius:          5px;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  background: url("../assets/icon-notifications.svg") no-repeat center center;
-  background-size: 16px;
-
-  &:hover,
-  &:focus {
-    background: #89847D url("../assets/icon-notifications-white.svg") no-repeat center center;
-    background-size: 16px;
-    border: 1px solid #89847D;
-  }
-}
-
-
-.hollow-button {
-  @include button(
-    // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
-    $padding: rem-calc(2),
-    // Background color. We can set $bg:false for a transparent background. Default: $primary-color.
-    $bg: false,
-    // If true, set to button radius which is $global-radius or explicitly set radius amount in px (ex. $radius:10px). Default:false.
-    $radius: true,
-    // We can set $full-width:true to remove side padding extend width. Default:false
-    $full-width: false,
-    // We can set $disabled:true to create a disabled transparent button. Default:false
-    $disabled: false
-  );
-  
-  font-size: rem-calc(14);
-  border-width: rem-calc(2);
-  padding: rem-calc(5 15);
-
-  &:hover {
-    background-color: $primary-color !important;
-    color: #ffffff !important;
-    border-width: rem-calc(2) !important;
-    border-style: solid !important;
-    border-color:$primary-color;
-  }
-
-  @media #{$large-up} {
-    margin-right: rem-calc(20) !important;   
-  }
-
-  @media #{$medium-only} {
-    margin-right: rem-calc(10) !important; 
-  }    
-
-  @media #{$medium-small-only} {
-    padding: rem-calc(5 5);    
-  }
-}
-
-.solid-button {
-  @include button(
-    // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
-    $padding: rem-calc(2),
-    // Background color. We can set $bg:false for a transparent background. Default: $primary-color.
-    $bg: false,
-    // If true, set to button radius which is $global-radius or explicitly set radius amount in px (ex. $radius:10px). Default:false.
-    $radius: true,
-    // We can set $full-width:true to remove side padding extend width. Default:false
-    $full-width: false,
-    // We can set $disabled:true to create a disabled transparent button. Default:false
-    $disabled: false
-  );
-  
-  font-size: rem-calc(14);
-  padding: rem-calc(5 10);
-  font-weight: bold;
-  border: none;
-
-  &.full {
-  	width: 100%;
-  	padding: 15px;
-  }
-
-  &:hover {
-    background-color: $primary-color !important;
-    color: #ffffff !important;
-  }
-
-  &.green {
-    background-color: $green !important;
-    color: #ffffff !important;  	
-
-    &:hover {
-      background-color: lighten($green, 15%) !important;
-      color: darken(#ffffff, 5%) !important;    	
-    }
-  }
-
-  &.gray {
-    background-color: $gray !important;
-    color: #ffffff !important;  	
-
-    &:hover {
-      background-color: lighten($gray, 15%) !important;
-      color: darken(#ffffff, 5%) !important;    	
-    }
-  }  
-
-  &.blue {
-    background-color: $blue !important;
-    color: #ffffff !important;
-
-    &:hover {
-      background-color: lighten($blue, 15%) !important;
-      color: darken(#ffffff, 5%) !important;
-    }
-  }
-
-  @media #{$large-up} {
-    margin-right: rem-calc(20) !important;   
-  }
-
-  @media #{$medium-only} {
-    margin-right: rem-calc(10) !important; 
-  }    
-
-  @media #{$medium-small-only} {
-    padding: rem-calc(5 5);    
-  }
-}
-
-.hidden {
-  display: none !important;
-}
-
-.reader-panel {
-  position: absolute;
-  min-width: rem-calc(100) !important;
-  border: solid rem-calc(1) $lightGray;
-  border-radius: (0 0 $global-radius $global-radius);
-  padding: rem-calc(20);
-  background-color: $white;
-
-  &.right {
-    right: rem-calc(0);  	
-  }	
-
-  &.full {
-  	overflow: scroll;
-  	height: rem-calc(400);
-  }
-}
-
-.small-title {
-	font-size: 15px;
-	font-weight: bold;
-}
-
-.blue-text {
-	color: $blue !important;
-}
-
 .rz-bar-wrapper, .rz-bar, .rz-limit {
 	left: 0;
 }
@@ -501,41 +89,6 @@ input {
 	top: rem-calc(-10) !important;
 }
 
-.vertical-middle {
-	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;      /* TWEENER - IE 10 */
-	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex; 
-
-	justify-content: center;
-	-webkit-justify-content: center;
-
-	flex-direction: column;
-	-webkit-flex-direction: column;
-	
-	align-content: center;
-	-webkit-align-content: center;	
-}
-
-.font-selector {
-	td {
-		padding: 0;
-
-		label {
-			width: 100%;
-			height: 100%;
-			padding: rem-calc(10);			
-			margin: 0;
-			display: block;
-		}
-
-		&:hover {
-			background-color: $lightGray;
-		}
-	}
-}
-
 .menuitem {
 	&.disabled {
 		opacity: 0.5;
@@ -543,43 +96,8 @@ input {
 }
 
 a {
-      &[disabled] {
-      	opacity: 0.5;
-      	pointer-events: none;
-      }	
-}
-
-.verse {
-	&.selected {
-		.content {
-			border-bottom: dotted rem-calc(1) $darkGray;
-		}
-	}
-
-	.content {
-		cursor: pointer;
-	}
-}
-
-div[verse-action] {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	padding: rem-calc(23 12 23 15);
-}
-
-.colorButton {
-	width: rem-calc(60);
-	float: left;
-	height: rem-calc(60);
-	cursor: pointer;
-}
-
-
-h5.bookLabel {
-	padding: 0.4375rem 0.875rem;
-}
-
-.inline {
-	display: inline !important;
+	&[disabled] {
+		opacity: 0.5;
+		pointer-events: none;
+	}	
 }

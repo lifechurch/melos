@@ -1,0 +1,251 @@
+.logo {
+      position: absolute;
+      margin-top: rem-calc(13);  
+      img {
+        height: rem-calc(48);
+        width: rem-calc(48);
+        min-width: rem-calc(48);
+      }
+}
+
+.icon-bar > * svg {
+	width: $icon-bar-icon-size;
+      min-width: $icon-bar-icon-size;
+	height: $icon-bar-icon-size;
+}
+
+.icon-bar {
+      @media #{$medium-up} {  
+        margin-left: rem-calc(50);
+      }
+
+      @media #{$large-up} {
+        max-width: rem-calc(390);
+      }
+
+      @media #{$medium-only} {
+        max-width: rem-calc(320);
+      }
+
+      @media #{$medium-small-only} {  
+        max-width: rem-calc(290) !important;
+      }      
+
+	a { 
+		.fill {
+			fill: transparent;
+		}
+
+		.line {
+			fill: $icon-bar-icon-color;
+		}
+
+		&:hover {
+			.fill {
+				fill: $icon-bar-icon-color
+			}
+
+			.line {
+				fill: $icon-bar-icon-color;
+			}			
+		}
+	}
+}
+
+a.icon {
+
+  &.right {
+    float:right;
+  }
+
+  &.left {
+    float:left;
+  }
+
+  &.text {
+ 		font-size: 13px;
+  	color: gray;
+  	line-height: 30px;
+
+  	&:hover {
+  		line-height: 27px;  		
+  	}
+  }
+  
+  padding: rem-calc(10 10 1 10);
+  display: inline-block;
+
+  &:hover {
+    border-bottom: solid rem-calc(3) $darkGray;
+  }
+
+  &.active {
+    border-bottom: solid rem-calc(3) $green;
+  }  
+
+  svg {
+    height: rem-calc(16);
+    width: rem-calc(16);
+    fill: $gray;
+  }
+}
+
+
+.hdr-search {
+  &.row {
+    &.postfix-radius {
+      float: left;
+      @media #{$medium-small-only} {
+          float: right;
+      }
+      display: inline-block;
+    }
+  }
+}
+
+/*  !Profile in header  */
+
+.hdr-profile {
+  margin-top: rem-calc(-5); 
+
+  @media #{$large-up} {
+    margin-right: rem-calc(20) !important;   
+  }
+
+  @media #{$medium-only} {
+    margin-right: rem-calc(10) !important; 
+  }  
+
+  @media #{$medium-small-only} {
+    display: none;
+  }  
+
+  float: right;
+}
+
+.hdr-profile a {
+  display: block;
+  position: relative;
+  color: #888;
+  height: 40px;   
+}
+
+.hdr-profile-img {
+  height: 40px;
+  -webkit-border-radius:  20px;
+  -moz-border-radius:     20px;
+  border-radius:          20px;
+  z-index: 100;
+  position: relative;
+  border: solid 1px #ddd;
+}
+
+.hdr-profile-name {
+  margin-left: rem-calc(-20);
+  z-index: 90;
+  padding: 5px 10px 6px 20px;
+  border: 1px solid #ddd;
+  -webkit-border-radius:  rem-calc(0 5 5 0);
+  -moz-border-radius:     rem-calc(0 5 5 0);
+  border-radius:          rem-calc(0 5 5 0);
+  position: relative;
+  white-space: nowrap;
+  font-size: rem-calc(15);
+  text-overflow: ellipsis;
+
+  &.large {
+    display: none;
+    @media #{$large-up} {
+      display:inline;
+    }
+  }
+
+  &.medium {
+    display: none;
+    @media #{$medium-only} {
+      display:inline;
+    }   
+  } 
+
+
+}
+
+.hdr-profile-name:hover {
+  background: #89847D;
+  color: #fff;
+  border: 1px solid #89847D;
+}
+
+.hdr-profile-name.active {
+  border: none;
+  background: #89847D;
+  color: #fff;
+}
+
+/*  !About - header  */
+
+.hdr-about {
+  display: inline-flex;
+  float: right;
+}
+
+.hdr-about a {
+  display: inline;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  -webkit-border-radius:  5px;
+  -moz-border-radius:     5px;
+  border-radius:          5px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url("../assets/icon-about.svg") no-repeat center center;
+  background-size: rem-calc(16);
+
+  &:hover,
+  &:focus {
+  background: #89847D url("../assets/icon-about-white.svg") no-repeat center center;
+  background-size: rem-calc(16);
+  border: 1px solid #89847D;
+  }
+}
+
+/*  !Notifications  */
+
+.hdr-notify {
+  display: inline-block;
+  float:right;
+
+  @media #{$large-up} {
+    margin-right: rem-calc(20) !important; 
+  }   
+
+  @media #{$medium-only} {
+    margin-right: rem-calc(10) !important; 
+  }   
+  // height: 70px;
+  // padding: 20px 0 0;
+}
+
+.hdr-notify a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  -webkit-border-radius:  5px;
+  -moz-border-radius:     5px;
+  border-radius:          5px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url("../assets/icon-notifications.svg") no-repeat center center;
+  background-size: 16px;
+
+  &:hover,
+  &:focus {
+    background: #89847D url("../assets/icon-notifications-white.svg") no-repeat center center;
+    background-size: 16px;
+    border: 1px solid #89847D;
+  }
+}
