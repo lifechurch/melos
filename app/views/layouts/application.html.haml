@@ -17,7 +17,7 @@
     = render '/shared/javascripts'
     = render '/shared/google_analytics'
 
-  %body{class: (yield(:body_class) if content_for? :body_class), onload: "init()" }
+  %body{class: "c_#{params[:controller]} a_#{params[:action]}", onload: "init()"}
 
     / #wrapper
     = content_for?(:header) ? yield(:header) : render("/shared/header/default")
@@ -50,3 +50,17 @@
     = render partial: "/shared/js_templates"
     = render partial: "/shared/js_footer"
     = content_for?(:lower_javascript) ? yield(:lower_javascript) : nil
+
+#mode
+  .show-for-small-only
+    sm &lt;640<br>phone
+  .show-for-medium-only
+    md 641 &lt; 1024<br>tablet
+  .show-for-large-only
+    lg 1025 &lt; 1440<br>desktop
+  .show-for-xlarge-only
+    x-lg 1440 &lt; 1920<br>x-large
+  .show-for-xxlarge-only
+    xx-lg &gt; 1920<br>xx-large
+  #rtl-toggle{onclick: "alert('toggle RTL mode');"}
+    TOGGLE RTL

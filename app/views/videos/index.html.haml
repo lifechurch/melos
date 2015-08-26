@@ -6,13 +6,15 @@
   = @title
 
 %article
-  .inner
-    %h1= t("videos.title")
+  .row
+    .medium-12.columns
+      %h1= t("videos.title")
 
-    %ul.resource_list
-      - @videos.each do |v|
-        %li.video{class:cycle('even', 'odd')}
+  .row.resource_list
+    - @videos.each do |v|
+      %div.medium-6.columns
+        %div.video
           =link_to( series_video_path(id:v.id)) do
             = image_tag( v.thumbnails.second.url )
-          %div.info
+          %h2.info
             =link_to(v.credits, publisher_video_path(id: v.id), {class: "publisher"})

@@ -2,7 +2,7 @@
   is_home_url       = current_page?(moments_path)
   plan_href = logged_in? ? subscriptions_path(user_id: current_auth.username) : plans_path
 
-.fixed
+.fixed.header
   .row.full.b-border.t-border.white.collapse
     .medium-6.large-5.columns
       %a.logo.show-for-medium-up{href: "/"}
