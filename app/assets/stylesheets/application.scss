@@ -70,9 +70,52 @@ $reader_line_height: 2em;
   @include box-shadow(inset rgba(white, 0.4) 0 1px 0 0, rgba($blue_light, 0.5) 0 0 5px 0);
 }
 
+// TEMP: responsive screen-size - can go away after redesign
+#mode {
+  display: block;
+  height: 60px;
+  color: #fff;
+  padding: 10px;
+  position: absolute;
+  right: 1px;
+  top: 300px;
+  z-index: 2000;
+  background-color: red;
+  #rtl-toggle {
+    margin-top: 5px;
+    color: #000;
+    padding: 0 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 640px) {
+  #mode {
+    background-color: green;
+  }
+}
+@media (min-width: 1024px) {
+  #mode {
+    background-color: blue;
+  }
+}
+@media (min-width: 1440px) {
+  #mode {
+    background-color: purple;
+  }
+}
+@media (min-width: 1920px) {
+  #mode {
+    background-color: gold;
+  }
+}
+// END responsive helper css
 
 @import "reader_text";
 @import "about/about";
+@import "versions/versions";
+@import "video/video";
 @import "moments/moments";
 @import "plans/plans";
 @import "home/home";
@@ -114,6 +157,10 @@ h1, h2 {
           bottom: auto !important;
           top: 0 !important;
 	}
+}
+
+.fixed.header {
+  box-shadow: 2px -1px 10px #888;
 }
 
 .row {
