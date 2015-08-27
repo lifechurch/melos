@@ -63,13 +63,39 @@
               .hdr-notify
                 %a{:href => "#"}            
               .hdr-profile
-                %a{href: user_path(current_user.username), title: t("users.go to your profile")}
-                  %img.hdr-profile-img{src: current_user.user_avatar_url["px_48x48"]}
-                  - if current_user.first_name.present? and current_user.last_name.present?
-                    %span.hdr-profile-name.large= current_user.first_name + " " + current_user.last_name
-                    %span.hdr-profile-name.medium= current_user.username
-                  -else
-                    %span.hdr-profile-name= current_user.username
+                %md-menu{"md-offset" => "-4 44", "md-position-mode" => "target-right target"}
+                  -#href: user_path(current_user.username),
+                  %a{ title: t("users.go to your profile"), "ng-click" => "ctrl.openMenu($mdOpenMenu, $event, $mdMenuIsOpen)"}
+                    %img.hdr-profile-img{src: current_user.user_avatar_url["px_48x48"]}
+                    - if current_user.first_name.present? and current_user.last_name.present?
+                      %span.hdr-profile-name.large= current_user.first_name + " " + current_user.last_name
+                      %span.hdr-profile-name.medium= current_user.username
+                    -else
+                      %span.hdr-profile-name= current_user.username                  
+                  %md-menu-content.ng-hide{:width => "4", "ng-show" => "true"}
+                    %md-menu-item
+                      %md-button
+                        %a{href: highlights_user_path(current_auth.username)}
+                          =t("highlights.title")
+                    %md-menu-item
+                      %md-button
+                        %a{href: bookmarks_user_path(current_auth.username)}
+                          =t("bookmarks.title")
+                    %md-menu-item
+                      %md-button
+                        %a{href: notes_user_path(current_auth.username)}
+                          =t("notes title")
+                    %md-menu-divider
+                    %md-menu-item
+                      %md-button                    
+                        %a{href: "/settings"}
+                          =t("settings")
+                    %md-menu-item
+                      %md-button                                          
+                        %a{href: sign_out_path}
+                          =t("sign out")
+
+
             - else
               = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "hollow-button right"
               = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "hollow-button right"
