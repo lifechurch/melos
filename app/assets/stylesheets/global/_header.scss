@@ -190,7 +190,7 @@ a.icon {
 }
 
 .hdr-about a {
-  display: inline;
+  display: block;
   width: 30px;
   height: 30px;
   border: 1px solid #ddd;
@@ -248,4 +248,13 @@ a.icon {
     background-size: 16px;
     border: 1px solid #89847D;
   }
+}
+
+.md-menu {
+	padding: 0 !important;
+}
+
+.menu-title {
+	padding: 16px;
+	font-weight: bold;
 }

@@ -5,6 +5,7 @@ angular.module('yv', [
 	'ngMaterial',
 	'yv.reader',
 	'yv.moments',
+	'yv.header',
 	'api.authentication',
 	'api.railsHttp',
 	'common.fixTop',

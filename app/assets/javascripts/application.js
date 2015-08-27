@@ -10,6 +10,7 @@
 //= require_tree ./common
 //= require_tree ./references
 //= require_tree ./moments
+//= require_tree ./header
 //= require vendor/angular-cache/angular-cache
 //= require vendor/angular-tooltips/angular-tooltips.min.js
 
