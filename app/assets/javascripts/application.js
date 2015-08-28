@@ -5,6 +5,11 @@
 //= require angular-resource
 //= require angular-aria
 //= require vendor/angular-material/angular-material
+//= require jquery
+//= require vendor/branch/branchMetrics
+//= require branch/intlTelInput.min
+//= require branch/sms_for_app
+//= require branch/branch
 //= require main
 //= require_tree ./api
 //= require_tree ./common

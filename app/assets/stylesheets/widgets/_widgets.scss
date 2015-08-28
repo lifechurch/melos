@@ -1,0 +1,14 @@
+#widget-download {
+  .dl-icon {
+    background: image_url('app_screen.png') no-repeat top left;
+    background-size: 80% auto ;
+    height: rem-calc(150);
+    @media #{$medium-only} {
+      height: rem-calc(130);
+    }
+  }
+  p.desc {
+    width: 70%;
+    margin-bottom: 0;
+  }
+}

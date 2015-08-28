@@ -57,8 +57,14 @@
   border: none;
 
   &.full {
-  	width: 100%;
-  	padding: 15px;
+    width: 100%;
+  }
+
+  &.mobile-full {
+    @media #{$small-only} {
+      width: 100%;
+      padding: 10px;
+    }
   }
 
   &:hover {
@@ -92,6 +98,16 @@
 
     &:hover {
       background-color: lighten($blue, 15%) !important;
+      color: darken(#ffffff, 5%) !important;
+    }
+  }
+
+  &.red {
+    background-color: $red !important;
+    color: #ffffff !important;
+
+    &:hover {
+      background-color: lighten($red, 15%) !important;
       color: darken(#ffffff, 5%) !important;
     }
   }

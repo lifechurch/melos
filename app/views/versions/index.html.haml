@@ -7,7 +7,7 @@
   = "#{t('bible versions')} - #{t("versions.number of versions field")} #{@versions_by_lang.values.flatten.count}, #{t("versions.number of languages field")} #{@versions_by_lang.count}.  #{t('download ad.meta copy title')}"
 
 .row
-  .medium-8.large-9.columns
+  .medium-8.columns
     %article
       %h1
         = "#{t('bible versions')}"
@@ -24,5 +24,5 @@
                   - versions.each do |version|
                     %li
                       = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
-  .medium-4.large-3.columns.show-for-medium-up
+  .medium-4.columns.show-for-medium-up.l-border
     = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
