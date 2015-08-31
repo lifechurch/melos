@@ -14,55 +14,56 @@
 - content_for :meta_description do
   = "#{@version.to_s} - #{t('download ad.description copy', language_count: 700)} #{t('download ad.download')}"
 
-- content_for :sidebar do
+.row
+  .medium-8.columns
+    %article
+      %h1= @version
+      - display_language = @version.attributes.language.name
+      - display_language = "#{display_language} - #{@version.attributes.language.local_name}" if not display_language.eql?(@version.attributes.language.local_name)
+      %h2.version
+        %div= "#{display_language}"
+        - if @version.audio
+          = link_to t("audio bible"), audiobible_path(@version), class: 'mobile'
 
-  .widget-button
-    = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
+      .copyright= @version.info.try :html_safe
+      = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'solid-button mobile-full blue'
+      = link_to t("mobile page.download now"), app_page_path, class: 'show-for-small-only version_download solid-button mobile-full green'
 
-  - if @version.audio
+  .medium-4.columns.show-for-medium-up.l-border
     .widget-button
-      = link_to t("audio bible"), audiobible_path(@version), class: 'action_button_green audio-link'
+      = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'solid-button blue full'
 
-  - if @version.publisher.name.present? || @version.publisher.id.blank?
-    - pub_name = @version.publisher.name || t('versions.public domain')
-    .widget
-      %h3.hd
-        =t("versions.publisher widget title")
-      %ul.menu
-        %li
-          - if @version.publisher.url.present?
-            = link_to pub_name, @version.publisher.url
-          -else
-            %p= pub_name
-
-  - if @related.present?
-    .widget
-      %h3.hd
-        =t("versions.other versions")
-      %ul.menu
-        - @related.each do |v|
-          %li
-            = link_to v, v
-
-  = render partial: 'widgets/download_app', :locals => {show_sms: true}
-
-- content_for :title do
-  = @version
-
-- content_for :mobile_right_nav do
-  = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'save_btn'
-
-%article
-  %h1= @version
-  - display_language = @version.attributes.language.name
-  - display_language = "#{display_language} - #{@version.attributes.language.local_name}" if not display_language.eql?(@version.attributes.language.local_name)
-  %h2.version
-    %div= "#{display_language}"
     - if @version.audio
-      = link_to t("audio bible"), audiobible_path(@version), class: 'mobile'
+      .widget-button
+        = link_to t("audio bible"), audiobible_path(@version), class: 'solid-button green audio-link full'
 
-  .copyright= @version.info.try :html_safe
-  = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
-  = link_to t("mobile page.download now"), app_page_path, class: 'mobile version_download action_button_green'
+    - if @version.publisher.name.present? || @version.publisher.id.blank?
+      - pub_name = @version.publisher.name || t('versions.public domain')
+      .widget
+        %h3.hd
+          =t("versions.publisher widget title")
+        %ul.menu
+          %li
+            - if @version.publisher.url.present?
+              = link_to pub_name, @version.publisher.url
+            -else
+              %p= pub_name
+
+    - if @related.present?
+      .widget
+        %h3.hd
+          =t("versions.other versions")
+        %ul.menu
+          - @related.each do |v|
+            %li
+              = link_to v, v
+
+    = render partial: 'widgets/download_app', :locals => {show_sms: true}
+
+  - content_for :title do
+    = @version
+
+  - content_for :mobile_right_nav do
+    = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'save_btn'
 
 = render '/shared/app_banner'

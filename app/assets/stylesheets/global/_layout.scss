@@ -61,7 +61,7 @@ body {
 }
 
 .fixed.header {
-	box-shadow: 2px -1px 10px #888;
+	box-shadow: 1px -1px 10px #888;
 }
 
 .row {
@@ -118,4 +118,14 @@ body {
 	
 	align-content: center;
 	-webkit-align-content: center;	
+}
+
+.columns {
+    &.l-border {
+      border-left: solid rem-calc(1) $gray_light;
+    }
+
+    &.r-border {
+      border-right: solid rem-calc(1) $gray_light;
+    }
 }

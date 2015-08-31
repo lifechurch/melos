@@ -31,7 +31,8 @@
 @import "global/mixins";
 @import "global/layout";
 @import "global/header";
-@import "globa/buttons";
+@import "global/buttons";
+@import "global/general";
 
 @import "pages/home/home";
 @import "pages/about/about";
@@ -42,6 +43,9 @@
 @import "video/video";
 @import "moments/moments";
 @import "plans/plans";
+@import "widgets/widgets";
+@import "widgets/sms";
+@import "audiobibles/audiobibles";
 
 .label {
 	padding: inherit;
