@@ -11,6 +11,7 @@ YouversionWeb::Application.routes.draw do
   get "/myPlansLink",   to: "plans#my_plans_link"
   get "/isLoggedIn",    to: "users#is_logged_in"
   # get "/press",         to: redirect("http://youversion.com/press")
+  get "/bibleappforkids", to: redirect("https://bibleappforkids.com")
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
