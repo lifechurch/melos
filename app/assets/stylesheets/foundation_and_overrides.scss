@@ -134,9 +134,9 @@ $body-font-family: $font-family-sans-serif;
 $font-smoothing: antialiased;
 
 // We use these to control text direction settings
-$text-direction: ltr;
-$opposite-direction: left;
-$default-float: left;
+$text-direction: ltr !default;
+$opposite-direction: right !default;
+$default-float: left !default;
 $last-child-float: $opposite-direction;
 
 // We use these to make sure border radius matches unless we want it different.

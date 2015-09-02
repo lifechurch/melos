@@ -53,7 +53,8 @@ YouversionWeb::Application.configure do
   # Debugger has issues with TDDium service
   #Debugger.settings[:autoeval] = true
 
-
+  config.assets.precompile += ['application-rtl']
+  
   # Fallback to assets pipeline to compile on-the-fly if a precompiled asset is missed
   # Default for development is true so we don't have to precompile assets
   # Set to false to debug asset compilation/inclusion issues with rake assets:precompile
