@@ -309,7 +309,7 @@ module ApplicationHelper
   end
 
   def is_rtl?
-    I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ar")
+    I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ar") or params.has_key?(:rtl)
   end
 
   def is_whitelabel_site
