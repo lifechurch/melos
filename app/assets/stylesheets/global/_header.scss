@@ -92,9 +92,13 @@ a.icon {
 
 
 .hdr-search {
+	input {
+		height: 30px !important;
+	}
+
   &.row {
     &.postfix-radius {
-      float: left;
+      float: right;
       @media #{$medium-small-only} {
           float: right;
       }
@@ -106,7 +110,7 @@ a.icon {
 /*  !Profile in header  */
 
 .hdr-profile {
-  margin-top: rem-calc(-5); 
+  margin-top: -3px; 
 
   @media #{$large-up} {
     margin-right: rem-calc(20) !important;   
@@ -143,7 +147,7 @@ a.icon {
 .hdr-profile-name {
   margin-left: rem-calc(-20);
   z-index: 90;
-  padding: 5px 10px 6px 20px;
+  padding: 4px 10px 4px 20px;
   border: 1px solid #ddd;
   -webkit-border-radius:  rem-calc(0 5 5 0);
   -moz-border-radius:     rem-calc(0 5 5 0);
@@ -190,7 +194,7 @@ a.icon {
 }
 
 .hdr-about a {
-  display: inline;
+  display: block;
   width: 30px;
   height: 30px;
   border: 1px solid #ddd;
@@ -248,4 +252,13 @@ a.icon {
     background-size: 16px;
     border: 1px solid #89847D;
   }
+}
+
+.md-menu {
+	padding: 0 !important;
+}
+
+.menu-title {
+	padding: 16px;
+	font-weight: bold;
 }
