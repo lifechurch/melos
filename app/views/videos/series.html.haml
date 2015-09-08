@@ -42,7 +42,7 @@
     #episodes
       - @video.videos.each do |vid|
         - thumb = vid.small_image
-        %div.medium-4.columns.end
+        %div.medium-6.large-4.columns.end
           =link_to(video_path(vid), class: "video-name", title: vid.title) do
             = image_tag(thumb.url)
             .info

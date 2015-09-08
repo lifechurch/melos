@@ -40,12 +40,14 @@ body.c_videos.a_series {
     min-height: 368px;
   }
   #episodes {
-    padding-top: 30px;
+    padding-top: 0px;
     margin: auto;
     @media #{$medium-only} {
+      padding-top: 30px;
       width: 95%;
     }
     @media #{$large-up} {
+      padding-top: 30px;
       width: 90%;
     }
 
@@ -64,31 +66,39 @@ body.c_videos.a_series {
       font-weight: bold;
     }
     a {
-      height: auto;
-      width: auto;
       display: block;
+      margin: 0;
+      text-decoration: none;
+      img {
+        display: block;
+        width: 100%;
+      }
       .info {
+        padding: 0;
+        height: 180px;
+        margin-top: -180px;
         background: image-url("videos-thumb-grad.png") no-repeat 0px 0px;
-        background-size: 100% auto;
+        background-size: cover;
         position: relative;
         margin-bottom: 1px;
-        box-shadow: 2px -1px 7px #a9a9a9;
+        @media #{$medium-up} {
+          box-shadow: 2px -1px 7px #ddd;
+        }
         @media #{$medium-only} {
           margin-bottom: 15px;
         }
         @media #{$large-up} {
           margin-bottom: 30px;
         }
-        img {
-          width: 100%;
-          height: auto;
-          background: image-url("videos-thumb-grad.png") no-repeat 0px 0px;
+      }
+      .info:hover {
+        @media #{$medium-up} {
+          background: image-url("videos-thumb-grad-play.png") no-repeat 0px 0px;
+          background-size: 100% 100%;
+          box-shadow: 2px -1px 7px #a9a9a9;
         }
       }
     }
-//    .info:hover {
-//      background-position: 0px -140px;
-//    }
     .runtime {
       color: #fff;
       font-size: 12px;
