@@ -12,7 +12,7 @@
 
   .row.resource_list
     - @videos.each do |v|
-      %div.medium-6.columns
+      %div.medium-6.columns.end
         %div.video
           =link_to( series_video_path(id:v.id)) do
             = image_tag( v.thumbnails.second.url )

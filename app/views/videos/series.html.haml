@@ -33,15 +33,30 @@
       %h2.publisher
         =link_to(@video.credits, publisher_video_path(id: @video.id))
       = render partial: "videos/share", locals: {video: @video}
+  %div.mobile-hero.show-for-small-only
+    %h1= @video.title.html_safe
+    %h2.publisher
+      =link_to(@video.credits, publisher_video_path(id: @video.id))
 
   .row
     #episodes
       - @video.videos.each do |vid|
         - thumb = vid.small_image
-        %div.medium-4.columns
-          .info
-            =link_to(video_path(vid), class: "video-name", title: vid.title) do
-              = image_tag(thumb.url)
+        %div.medium-6.large-4.columns.end
+          =link_to(video_path(vid), class: "video-name", title: vid.title) do
+            = image_tag(thumb.url)
+            .info
+              %h3.title= vid.title
+              %span.runtime= vid.runtime.gsub(/^0:[0]*/,"")
 
-            %h3.title= vid.title
-            %span.runtime= vid.runtime.gsub(/^0:[0]*/,"")
+
+  -#.inner
+  -#  %ul#episodes
+  -#    - @video.videos.each do |vid|
+  -#      - thumb = vid.small_image
+  -#      %li
+  -#        =link_to(video_path(vid), class: "video-name", title: vid.title) do
+  -#          = image_tag(thumb.url)
+  -#          .info
+  -#            %h3.title= vid.title
+  -#            %span.runtime= vid.runtime.gsub(/^0:[0]*/,"")
