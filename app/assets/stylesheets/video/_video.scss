@@ -69,26 +69,29 @@ body.c_videos.a_series {
       display: block;
       margin: 0;
       text-decoration: none;
+      position: relative;
       img {
         display: block;
         width: 100%;
-      }
-      .info {
-        padding: 0;
-        height: 180px;
-        margin-top: -180px;
-        background: image-url("videos-thumb-grad.png") no-repeat 0px 0px;
-        background-size: cover;
-        position: relative;
-        margin-bottom: 1px;
-        @media #{$medium-up} {
-          box-shadow: 2px -1px 7px #ddd;
-        }
         @media #{$medium-only} {
           margin-bottom: 15px;
         }
         @media #{$large-up} {
           margin-bottom: 30px;
+        }
+      }
+      .info {
+        padding: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: image-url("videos-thumb-grad.png") no-repeat 0px 0px;
+        background-size: cover;
+        margin-bottom: 1px;
+        @media #{$medium-up} {
+          position: absolute;
+          box-shadow: 2px -1px 7px #ddd;
         }
       }
       .info:hover {
