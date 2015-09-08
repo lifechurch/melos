@@ -12,3 +12,8 @@
     margin-bottom: 0;
   }
 }
+html[dir="rtl"] #widget-download {
+  .dl-icon {
+    background: image_url('app_screen.png') no-repeat top right;
+  }
+}
