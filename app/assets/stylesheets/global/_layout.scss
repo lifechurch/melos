@@ -120,12 +120,25 @@ body {
 	-webkit-align-content: center;	
 }
 
-.columns {
+html[dir="ltr"] {
+   .columns {
+     &.l-border {
+       border-left: solid rem-calc(1) $gray_light;
+     }
+
+     &.r-border {
+       border-right: solid rem-calc(1) $gray_light;
+     }
+   }
+ }
+html[dir="rtl"] {
+  .columns {
     &.l-border {
-      border-left: solid rem-calc(1) $gray_light;
+      border-right: solid rem-calc(1) $gray_light;
     }
 
     &.r-border {
-      border-right: solid rem-calc(1) $gray_light;
+      border-left: solid rem-calc(1) $gray_light;
     }
+  }
 }

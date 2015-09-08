@@ -23,66 +23,61 @@
   %meta{name: "twitter:description",      content: meta_description}
   %meta{name: "twitter:image",            content: "https:#{@video.poster_image.url}"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
+  %link{href:"http://vjs.zencdn.net/4.11/video-js.css", rel:"stylesheet"}
+  %script{src:"http://vjs.zencdn.net/4.11/video.js"}
+.row
+  .columns
+    %article
+      %div{itemprop: "video", itemtype:"http://schema.org/VideoObject", itemscope: ""}
+        .row
+          .columns.medium-8
+            #title-bar
+              %h1
+                %span{itemprop: "name"}= @video.title
 
-%article
-  %div{itemprop: "video", itemtype:"http://schema.org/VideoObject", itemscope: ""}
-    #title-bar
-      %h1
-        %span{itemprop: "name"}= @video.title
+              %h2.publisher
+                =link_to(@video.credits, publisher_video_path(id: @video.id))
+          .columns.medium-4.show-for-medium-up
+            = render partial: "videos/share", locals: {video: @video}
 
-      %h2.publisher
-        =link_to(@video.credits, publisher_video_path(id: @video.id))
+        %meta{itemprop: "thumbnail", content: "https:#{@video.poster_image.url}"}
+        #player-container
+          %video{id:"video", class: "video-js vjs-default-skin vjs-big-play-centered", controls: "controls", preload: "auto",
+          width: "100%", height: "100%", poster: "https:#{@video.poster_image.url}"}
 
-      = render partial: "videos/share", locals: {video: @video}
+            %source{src: "#{@video.webm.url}", type:'video/webm'}
+            %source{src: "#{@video.hls.url}", type:'video/mp4'}
+            %p.vjs-no-js
+              To view this video please enable JavaScript, and consider upgrading to a web browser that
+              =link_to("supports HTML5 video", "http://videojs.com/html5-video-support/", target: "_blank")
 
-    %meta{itemprop: "thumbnail", content: "https:#{@video.poster_image.url}"}
-    #player-container
-      #player
+        .row
+          #details.columns.medium-8
+            %div.refs
+              - if @video.references
+                %span= t("videos.related scripture")
 
-    .inner
-      #details
-        %div.refs
-          - if @video.references
-            %span= t("videos.related scripture")
+                %ul
+                  - @video.references.each do |ref|
+                    %li= link_to(ref.human, bible_version_path(Reference.new(ref.usfm, version: current_version)))
+            %p.description
+              %span{itemprop: "description"}= @video.description.html_safe if @video.description.present?
 
-            %ul
-              - @video.references.each do |ref|
-                %li= link_to(ref.human, bible_version_path(Reference.new(ref.usfm, version: current_version)))
-        %p.description
-          %span{itemprop: "description"}= @video.description.html_safe if @video.description.present?
+          #other.columns.medium-4
+            - video_series = client_settings.video_series
+            = link_to( t("videos.all"), video_series.blank? ? videos_path : series_video_path(video_series) , class: "solid-button green full")
+            = render partial: "videos/publisher_banner", locals: {publisher: publisher}
 
-      #other
-        - video_series = client_settings.video_series
-        = link_to( t("videos.all"), video_series.blank? ? videos_path : series_video_path(video_series) , class: "action_button_green")
-        = render partial: "videos/publisher_banner", locals: {publisher: publisher}
-
-
+- videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
 -content_for :javascripts do
-
-  = javascript_include_tag "/assets/jw/jwplayer.js"
-  = javascript_include_tag "/assets/jw/jwplayer.html5.js"
-  %script jwplayer.key="78lie9ccvQjr8uJGZzLhFeI1t94sTOzTqA3A9QpRvK0="
-
-  - videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
-  - # Create our player for all videos
-
   :javascript
     $(window).load(function () {
-      jwplayer('player').setup({
-        file: "#{@video_url}",
-        width: '100%',
-        height: '100%',
-        image: "#{@video.poster_image.url}"
-      })
-    });
+      videojs("video", { "controls": true, "autoplay": false, "preload": "auto", "width": '100%', "height": '100%', "poster": "https:#{@video.poster_image.url}" }).ready(function(){
 
-  - #only setup tracking at the moment for Jesus Film (id: 1)
-  - if publisher.id == 1
+      var publisher_id = #{publisher.id};
 
-    :javascript
-
-      $(window).load(function () {
-
+      //only setup tracking at the moment for Jesus Film (id: 1)
+      if (publisher_id == 1) {
         // create a custom tracker for video events
         var tracker = _gat._createTracker("#{publisher.ga_tracking_id}","videoTracker");
 
@@ -103,21 +98,25 @@
         // Each item in the array is an object: {start: 0, end: 2.4}
         // Custom total method setup to iterate through items and total up all segments into total time watched.
         var playTimes = [];
-        // Create a named function so that we can reassing the function later on after its cleared.
+
+        // Create a named function so that we can reassign the function later on after its cleared.
         var playTimeTotal = function() {
-              var timeWatched = 0;
-              for(var i = 0; i < this.length; i++) {
-                timeWatched += (this[i].end - this[i].start);
-              }
-              return Math.round(timeWatched);
-            }
-            playTimes.total = playTimeTotal;
+          var timeWatched = 0;
+          for(var i = 0; i < this.length; i++) {
+            timeWatched += (this[i].end - this[i].start);
+          }
+          return Math.round(timeWatched);
+        }
+        playTimes.total = playTimeTotal;
+
+        // the videojs object
+        player = this;
 
         // All video player api handlers below:
         // - onPlay: any time the video starts playing
         // - onPause: any time the video is paused
         // - onComplete: when the video has reached the end
-        jwplayer().onPlay( function(event) {
+        player.on("play", function(){
           if(videoStarted == false) {
             videoStarted = true;
           }
@@ -125,17 +124,17 @@
           startTime = jwplayer().getPosition()
         });
 
-        jwplayer().onSeek( function(event) {
+        player.on("seeked", function(){
           playTimes.push({start: startTime, end: jwplayer().getPosition()});
           startTime = event.offset;
           // event.offset is not super accurate - more than likely due to encoding with low number of key frames.
         });
 
-        jwplayer().onPause( function(event) {
+        player.on("pause", function(){
           playTimes.push({start: startTime, end: jwplayer().getPosition()});
         });
 
-        jwplayer().onComplete( function(event) {
+        player.on("ended", function(){
 
           playTimes.push({start: startTime, end: jwplayer().getPosition()})
 
@@ -172,5 +171,6 @@
             });
           }
         });
-
+      }
       });
+    })
