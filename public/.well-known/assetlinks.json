@@ -1,9 +1,28 @@
-[{
-    "relation": ["delegate_permission/common.handle_all_urls"],
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.example",
-      "sha256_cert_fingerprints":
-      ["14:6D:E9:83:C5:73:06:50:D8:EE:B9:95:2F:34:FC:64:16:A0:83:42:E6:1D:BE:A8:8A:04:96:B2:3F:CF:44:E5"]
+      "package_name": "com.sirma.mobile.bible.android",
+      "sha256_cert_fingerprints": [
+        "D7:91:23:85:62:E6:B7:15:90:E3:B9:11:E2:20:26:80:C4:B7:FE:B0:8A:45:FA:33:47:6F:58:07:AC:BA:D9:5F",
+        "8F:B3:2E:97:18:7B:E7:B0:30:4E:4E:F7:81:0F:1E:31:24:10:3F:17:8A:76:61:F9:21:CF:B3:5C:92:13:20:9E"
+      ]
     }
-}]
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.rei.bible",
+      "sha256_cert_fingerprints": [
+        "D7:91:23:85:62:E6:B7:15:90:E3:B9:11:E2:20:26:80:C4:B7:FE:B0:8A:45:FA:33:47:6F:58:07:AC:BA:D9:5F",
+        "8F:B3:2E:97:18:7B:E7:B0:30:4E:4E:F7:81:0F:1E:31:24:10:3F:17:8A:76:61:F9:21:CF:B3:5C:92:13:20:9E"
+      ]
+    }
+  }
+]
