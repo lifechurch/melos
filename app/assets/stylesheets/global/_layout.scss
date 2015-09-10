@@ -85,10 +85,14 @@ body {
 	&.t-border {
 		border-top: solid rem-calc(1) $lightGray;
 	}
+}
 
-	&.white {
-		background-color: #ffffff;
-	}
+.white {
+	background-color: #ffffff;
+}
+
+.gray {
+	background-color: $gray_light;
 }
 
 .inline {
@@ -97,6 +101,23 @@ body {
 
 .pad-head {
   margin-top: rem-calc(20) !important;
+}
+
+.pad-row-top {
+	padding-top: rem-calc(20) !important;
+}
+
+.pad-row {
+	padding-top: rem-calc(20) !important;
+	padding-bottom: rem-calc(20) !important;
+}
+
+.pad-all {
+	padding: 20px;
+}
+
+.round {
+	border-radius: $global-radius;
 }
 
 .hidden {

@@ -58,114 +58,123 @@
 
     .hero_pics
 
-    .row
+    .row.pad-row
       .columns.medium-9
-        -#- style = "background-image: url()" if localized_bible_icon
         %h1
           %img{src: "#{image_path(localized_bible_icon)}"}
           = t(".word with you")
-        %p= t(".download description")
-        %span.counter#download-counter
-          %p#counter &nbsp;
-          %p= t(".world installs")
+        .row.pad-row-top
+          .columns.medium-6.r-border
+            %p= t(".download description")
+          .columns.medium-6    
+            %span.counter#download-counter
+              %p#counter &nbsp;
+              %p= t(".world installs")
       .columns.medium-3
+        %img{src: "#{image_path('bdc_mobile_icons.png')}"}
         = link_to(t(".download action"), app_page_path, {class: 'solid-button green full'})
 
-    .explore_cta
-      %h2= t(".get started")
-      #get-started-buttons
-        %span.fb
-          = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
-        %span.or
-          = t("or.upper")
-        %span.email
-          = link_to(t("registration.with email"), sign_up_path)
+    .gray.pad-row
+      .row
+        .columns.medium-12.text-center
+          %h1= t(".get started")
+      .row.pad-row
+        .columns.medium-12.text-center
+          = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), {class: 'solid-button fixed blue'})
+          %span.or
+            = t("or.upper")
+          = link_to(t("registration.with email"), sign_up_path, {class: 'solid-button fixed gray'})
+      .row.pad-row.text-center
+        .columns.medium-3
+          %img{src: "#{image_path('read_bible_icon.png')}"}
+          %div.white.pad-all.round.text-left
+            %h2= t(".features.read heading")
+            %p
+              %span.narrow= t(".features.read description", versions_path: versions_path).html_safe
+        
+        .columns.medium-3.pad-row-top
+          %img{src: "#{image_path('highlight_bible_icon.png')}"}        
+          %div.white.pad-all.round.text-left
+            %h2= t(".features.study heading")
+            %p
+              %span.narrow= t(".features.study description").html_safe
 
-    %ul.home-features{class: rtl_class}
-      %li.read_bible.first#scroll-point
-        %div.pod_content
-          %h2= t(".features.read heading")
-          %p
-            %span.narrow= t(".features.read description", versions_path: versions_path).html_safe
+        .columns.medium-3.pad-row-top
+          %img{src: "#{image_path('subscribe_bible_icon.png')}"}        
+          %div.white.pad-all.round.text-left
+            %h2= t(".features.subscribe heading")
+            %p
+              %span.narrow= t(".features.subscribe description").html_safe
 
-      %li.study_bible
-        %div.pod_content
-          %h2= t(".features.study heading")
-          %p
-            %span.narrow= t(".features.study description").html_safe
+        .columns.medium-3
+          %img{src: "#{image_path('take_bible_icon.png')}"}        
+          %div.white.pad-all.round.text-left
+            %h2= t(".features.download heading")
+            %p
+              %span.narrow= t(".features.download description").html_safe
 
-      %li.subscribe_bible
-        %div.pod_content
-          %h2= t(".features.subscribe heading")
-          %p
-            %span.narrow= t(".features.subscribe description").html_safe
-      %li.take_bible.last
-        %div.pod_content
-          %h2= t(".features.download heading")
-          %p
-            %span.narrow= t(".features.download description").html_safe
+-#
+  = render '/shared/app_banner'
 
-= render '/shared/app_banner'
+  - content_for :javascripts do
+    :javascript
 
-- content_for :javascripts do
-  :javascript
-
-    function commas(nStr) {
-      nStr += '';
-      var rgx = /(\d+)(\d{3})/;
-      while (rgx.test(nStr)) { nStr = nStr.replace(rgx, '$1' + ',' + '$2');}
-      return nStr;
-    }
+      function commas(nStr) {
+        nStr += '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(nStr)) { nStr = nStr.replace(rgx, '$1' + ',' + '$2');}
+        return nStr;
+      }
 
 
-    function installs_data(data) {
-      STATS = data;
+      function installs_data(data) {
+        STATS = data;
 
-      var start_count = STATS.start_count;
-      var start_date = STATS.start_date;
-      var average_per_day = STATS.average_per_day;
-      var single_pace = 1/(average_per_day/24/60/60)*1000;
-      var today_date = Math.round((new Date()).getTime() / 1000);
-      var date_difference_seconds = Math.abs(today_date - start_date);
-      var date_difference_days_not_round = (date_difference_seconds / 86400);
-      var corrected_total_downloads_not_round = Math.round(start_count + (average_per_day*date_difference_days_not_round));
+        var start_count = STATS.start_count;
+        var start_date = STATS.start_date;
+        var average_per_day = STATS.average_per_day;
+        var single_pace = 1/(average_per_day/24/60/60)*1000;
+        var today_date = Math.round((new Date()).getTime() / 1000);
+        var date_difference_seconds = Math.abs(today_date - start_date);
+        var date_difference_days_not_round = (date_difference_seconds / 86400);
+        var corrected_total_downloads_not_round = Math.round(start_count + (average_per_day*date_difference_days_not_round));
 
-      $("#counter").counter({
-        direction: "up",
-        format: "#{t("counter.format").gsub(" ", "&nbsp;")}",
-        stop: "9,999,999,999",
-        initial: commas(corrected_total_downloads_not_round)
+        $("#counter").counter({
+          direction: "up",
+          format: "#{t("counter.format").gsub(" ", "&nbsp;")}",
+          stop: "9,999,999,999",
+          initial: commas(corrected_total_downloads_not_round)
+        });
+
+      }
+
+      // Fire off request for download stats jsonp
+      $(window).load(function() {
+
+        $.getScript('//commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js');
+
+        // Settings for skipping home page
+        $("#setting-skip-home").on("click",function(e) {
+          var checked = $(this).attr("checked");
+          var label = $("#label-setting-skip-home");
+          if(checked){
+            setCookie("setting-skip-home","true",365);
+            label.html("#{t(".hero.now skipped")}");
+          }
+          else {
+            deleteCookie("setting-skip-home");
+            label.html("#{t(".hero.skip in future")}");
+          }
+        });
+
+        $("#scroll-anchor").on("click", function(e) {
+          e.preventDefault();
+          var pos = $("#scroll-point").offset().top;
+          if(app.getPage().MODERN_BROWSER){
+            $('html:not(:animated),body:not(:animated)').animate({scrollTop:pos},{easing: 'easeInOutCirc', duration:1000});
+          } else {$(window).scrollTop(pos);}
+
+        });
+
+
       });
-
-    }
-
-    // Fire off request for download stats jsonp
-    $(window).load(function() {
-
-      $.getScript('//commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js');
-
-      // Settings for skipping home page
-      $("#setting-skip-home").on("click",function(e) {
-        var checked = $(this).attr("checked");
-        var label = $("#label-setting-skip-home");
-        if(checked){
-          setCookie("setting-skip-home","true",365);
-          label.html("#{t(".hero.now skipped")}");
-        }
-        else {
-          deleteCookie("setting-skip-home");
-          label.html("#{t(".hero.skip in future")}");
-        }
-      });
-
-      $("#scroll-anchor").on("click", function(e) {
-        e.preventDefault();
-        var pos = $("#scroll-point").offset().top;
-        if(app.getPage().MODERN_BROWSER){
-          $('html:not(:animated),body:not(:animated)').animate({scrollTop:pos},{easing: 'easeInOutCirc', duration:1000});
-        } else {$(window).scrollTop(pos);}
-
-      });
-
-
-    });
