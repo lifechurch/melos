@@ -1,0 +1,34 @@
+ul.search-result {
+	list-style: none;
+	margin-left: 0;
+
+	li {
+		padding-top: 25px;
+		padding-bottom: 25px;
+		border-bottom: solid 1px $gray_light;
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		&.user {
+		  p.name {
+		  	padding: 15px 0 0 15px;
+		  }
+		}
+
+		a {
+			h3 {
+				color: $blue;
+			}
+		}
+
+		span.length {
+			color: $gray;
+		}
+
+		.search_thumbnail {
+			padding: 6px 15px 0 0;
+		}
+	}	
+}
