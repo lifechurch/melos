@@ -88,4 +88,8 @@ class PagesController < ApplicationController
     @trending_verses = Trending.all()
   end
 
+  def apple_app_site_association
+    send_file 'apple-app-site-association', :type => 'application/pkcs7-mime'
+  end
+
 end
