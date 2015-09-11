@@ -56,3 +56,21 @@
     = link_to t("mobile page.download now"), app_page_path, class: 'mobile version_download action_button_green'
 
 = render '/shared/app_banner'
+
+%script{type: "application/ld+json"}
+  {
+  "@context": "http://schema.org/",
+  "@type": "MobileApplication",
+  "name": "#{t('bible')}",
+  "image": "#{url_for(image_path(localized_bible_icon(120)))}",
+  "description": "#{t("meta.mobile.description")}",
+  "aggregateRating":{
+  "@type": "AggregateRating",
+  "ratingValue": "4.6",
+  "ratingCount": "1,368,430"
+  },
+  "offers":{
+  "@type": "Offer",
+  "price": "Free"
+  }
+  }
