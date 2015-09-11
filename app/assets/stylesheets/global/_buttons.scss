@@ -69,6 +69,16 @@
     }
   }
 
+  &.fixed {
+  	@media #{$small-only} {
+  	  width: 100%;
+  	}
+
+  	@media #{$medium-up} {
+  		width: 400px;
+  	}
+  }
+
   &:hover {
     background-color: $primary-color !important;
     color: #ffffff !important;
@@ -112,17 +122,5 @@
       background-color: lighten($red, 15%) !important;
       color: darken(#ffffff, 5%) !important;
     }
-  }
-
-  @media #{$large-up} {
-    margin-right: rem-calc(20) !important;   
-  }
-
-  @media #{$medium-only} {
-    margin-right: rem-calc(10) !important; 
-  }    
-
-  @media #{$medium-small-only} {
-    padding: rem-calc(5 5);    
   }
 }
