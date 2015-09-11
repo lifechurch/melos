@@ -39,12 +39,14 @@
 = cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
   %article
     #hero.row{class: rtl_class}
-      #hero_content.columns.medium-6
+      #hero_content.columns.medium-6.small-12
         %h1= t(".hero.heading")
-        %p=  t(".hero.description")
+        .row
+          .columns.medium-8
+            %p=  t(".hero.description")
 
         %span
-          = link_to(t(".hero.start reading"), bible_path, class: 'solid-button green')
+          = link_to(t(".hero.start reading"), bible_path, class: 'solid-button green mobile-full')
           &nbsp;
           = t("or.lower")
           &nbsp;
@@ -53,17 +55,17 @@
           %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
           %label{for:"setting-skip-home",id:"label-setting-skip-home"}
             =t(".hero.skip in future")
-      .columns.medium-6
+      .columns.medium-6.show-for-medium-up
         %img{src:'assets/laptop@2x.jpg'}
 
-    .hero_pics
+    .hero_pics.show-for-medium-up
 
     .row.pad-row
       .columns.medium-9
         %h1
           %img{src: "#{image_path(localized_bible_icon)}"}
           = t(".word with you")
-        .row.pad-row-top
+        .row
           .columns.medium-6.r-border
             %p= t(".download description")
           .columns.medium-6    
@@ -71,7 +73,7 @@
               %p#counter &nbsp;
               %p= t(".world installs")
       .columns.medium-3
-        %img{src: "#{image_path('bdc_mobile_icons.png')}"}
+        %img{src: "#{image_path('bdc_mobile_icons.png')}", class: "app-icons"}
         = link_to(t(".download action"), app_page_path, {class: 'solid-button green full'})
 
     .gray.pad-row
@@ -81,7 +83,7 @@
       .row.pad-row
         .columns.medium-12.text-center
           = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), {class: 'solid-button fixed blue'})
-          %span.or
+          %span.or.pad-all
             = t("or.upper")
           = link_to(t("registration.with email"), sign_up_path, {class: 'solid-button fixed gray'})
       .row.pad-row.text-center

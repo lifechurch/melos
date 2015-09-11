@@ -112,6 +112,11 @@ body {
 	padding-bottom: rem-calc(20) !important;
 }
 
+.pad-row-small {
+	padding-top: rem-calc(10) !important;
+	padding-bottom: rem-calc(10) !important;
+}
+
 .pad-all {
 	padding: 20px;
 }
@@ -139,6 +144,13 @@ body {
 	
 	align-content: center;
 	-webkit-align-content: center;	
+}
+
+.mobile-full {
+		@media #{$small-only} {
+			width: 100%;
+			display: block;
+		}	
 }
 
 html[dir="ltr"] {
