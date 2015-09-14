@@ -6,14 +6,11 @@
     %a.settings_btn{:href => settings_profile_path}
 
 - content_for :main do
-
-  %section.top_section
-    .profile-hdr
-      %img.avatar_huge{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}
-
+  .row.b-border
+    %img.left.avatar_huge{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}
+    .columns.medium-8
       %h1.profile-hdr-name= @user.name || @user.username
-
-      %ul.profile-hdr-info
+      %ul.profile-hdr-info.inline-list
         - if user_name = @user.username
           %li.profile-hdr-info-user
             = user_name
@@ -23,33 +20,32 @@
         - if @user.website
           %li.profile-hdr-info-link
             = link_to @user.website_human, @user.website_url
-
       - if @user.bio
         %p.profile-hdr-info-about
           = @user.bio
+    .right
       = render partial: '/users/friend_button', locals: { user: @user }
+  .row.b-border
+    .columns.medium-12
+      :ruby
+        tabs = [
+          {href: user_path(id: @user.username),                            type: "activity"},
+          {href: user_friends_path(user_id: @user.username),               type: "friends"},
+          {href: notes_user_path(id: @user.username),                      type: "notes"},
+          {href: bookmarks_user_path(id: @user.username),                  type: "bookmarks"},
+          {href: highlights_user_path(id: @user.username),                 type: "highlights"},
+          {href: images_user_path(id: @user.username),                     type: "images"},
+          {href: badges_user_path(id: @user.username),                     type: "badges"}
+        ]
 
-    :ruby
-      tabs = [
-        {href: user_path(id: @user.username),                            type: "activity"},
-        {href: user_friends_path(user_id: @user.username),               type: "friends"},
-        {href: notes_user_path(id: @user.username),                      type: "notes"},
-        {href: bookmarks_user_path(id: @user.username),                  type: "bookmarks"},
-        {href: highlights_user_path(id: @user.username),                 type: "highlights"},
-        {href: images_user_path(id: @user.username),                     type: "images"},
-        {href: badges_user_path(id: @user.username),                     type: "badges"}
-      ]
+        # find the highlight method in /app/helpers/users_helper.rb
 
-      # find the highlight method in /app/helpers/users_helper.rb
-
-    %ul.profile-tabs
       - tabs.each do |tab|
         - type, href = tab[:type], tab[:href]
-        %li{class: "profile-tabs-#{type} #{highlight(href)}"}
-          = link_to(t("users.profile.tab #{type}"), href)
-
-
-  %article.profile
-    = content_for?(:user_main) ? yield(:user_main) : yield
+        -# %li{class: "profile-tabs-#{type} #{highlight(href)}"}
+        = link_to(t("users.profile.tab #{type}"), href, { class: 'icon left' })
+  .row.pad-row
+    .columns.medium-12
+      = content_for?(:user_main) ? yield(:user_main) : yield
 
 = render template: 'layouts/application'
