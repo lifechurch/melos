@@ -1,6 +1,9 @@
 :ruby
   @sidebar          = false
   @title            = "#{t('mobile page.t9')} #{t('mobile page.download now')} - #{t('mobile page.free overlay')} | #{t('audio bible')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8"
+  if (is_whitelabel_site and I18n.locale.to_s.eql?('pt'))
+    @title = "Bíblia Sagrada - #{t('mobile page.download now')} - #{t('mobile page.free overlay')} | #{t('audio bible')} | Bíblia Sagrada Grátis"
+  end if
   @meta_title       = "#{t('mobile page.download now')} - #{t('mobile page.free overlay')}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
