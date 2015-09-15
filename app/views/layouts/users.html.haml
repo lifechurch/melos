@@ -6,10 +6,10 @@
     %a.settings_btn{:href => settings_profile_path}
 
 - content_for :main do
-  .row.b-border
+  .row.b-border.relative
     %img.left.avatar_huge{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}
     .columns.medium-8
-      %h1.profile-hdr-name= @user.name || @user.username
+      %h1.strong.profile-hdr-name= @user.name || @user.username
       %ul.profile-hdr-info.inline-list
         - if user_name = @user.username
           %li.profile-hdr-info-user
@@ -23,7 +23,7 @@
       - if @user.bio
         %p.profile-hdr-info-about
           = @user.bio
-    .right
+    .right.profile-hdr-action
       = render partial: '/users/friend_button', locals: { user: @user }
   .row.b-border
     .columns.medium-12

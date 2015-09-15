@@ -1,0 +1,59 @@
+.avatar_huge {
+	border-radius: 64px;
+}
+
+ul.inline-list {
+	li {
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.profile-hdr-info-user {
+	background: url("../assets/me-solid.svg") no-repeat left;
+	background-size: 16px;
+	padding-left: 22px;
+	font-size: $text-size;
+}
+
+.profile-hdr-info-location {
+	background: url("../assets/icon-profile-location.svg") no-repeat left;
+	background-size: 10px;
+	padding-left: 14px;
+	font-size: $text-size;	
+}
+
+.profile-hdr-info-link {
+	background: url("../assets/icon-profile-link.svg") no-repeat left;
+	background-size: 15px;
+	padding-left: 18px;
+	font-size: $text-size;	
+}
+
+.profile-hdr-info-about {
+	margin-bottom: 20px;
+	font-size: $text-size;	
+}
+
+.profile-hdr-name {
+	font-weight: normal !important;
+	margin-top: 0;
+}
+
+.profile-hdr-btn {
+	margin: 0 !important;
+}
+
+.right {
+	&.profile-hdr-action {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin-bottom: 20px;
+	}
+}
+
+.relative {
+	position: relative;
+}
