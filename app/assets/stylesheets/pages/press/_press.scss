@@ -1,0 +1,34 @@
+body.c_pages.a_press {
+  article {
+    ul.press_resources {
+      li {
+        list-style: none;
+        clear: both;
+        @media #{$small-only} {
+          a {
+            margin: 20px 0 0 0;
+          }
+        }
+        @media #{$large-up} {
+          a {
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+html[dir="rtl"] body.c_pages.a_press {
+  article {
+    ul.press_resources {
+      li {
+        @media #{$large-up} {
+          a {
+            float: left;
+          }
+        }
+      }
+    }
+  }
+}
