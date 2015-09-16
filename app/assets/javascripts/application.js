@@ -54,11 +54,13 @@ function parsePlanVars() {
 }
 
 function init() {
-	var isReadingPlan = window.location.pathname.indexOf("/reading-plans") == 0 && window.location.pathname.indexOf("/day/") > 0;
-	var isReader 			= window.location.pathname.indexOf("/bible") == 0;
-	var isHomeFeed 		= window.location.pathname.indexOf("/moments") == 0;
-	var isNotesFeed		= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/notes") > 0;
-	var isUserProfile = window.location.pathname.indexOf("/users") == 0 && !isNotesFeed;
+	var isReadingPlan 		= window.location.pathname.indexOf("/reading-plans") == 0 && window.location.pathname.indexOf("/day/") > 0;
+	var isReader 					= window.location.pathname.indexOf("/bible") == 0;
+	var isHomeFeed 				= window.location.pathname.indexOf("/moments") == 0;
+	var isNotesFeed				= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/notes") > 0;
+	var isHighlightsFeed	= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/highlights") > 0;
+	var isBookmarksFeed		= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/bookmarks") > 0;	
+	var isUserProfile 		= window.location.pathname.indexOf("/users") == 0 && !isNotesFeed && !isHighlightsFeed;
 
 	if (isReader) {
 		parseReaderVars();
@@ -68,7 +70,7 @@ function init() {
 		parsePlanVars();
 	}	
 
-	if (isReader || isReadingPlan || isHomeFeed || isUserProfile || isNotesFeed) {
+	if (isReader || isReadingPlan || isHomeFeed || isUserProfile || isNotesFeed || isHighlightsFeed || isBookmarksFeed) {
 		angular.bootstrap(document, ['yv']);
 	}
 }

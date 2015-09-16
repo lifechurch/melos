@@ -41,7 +41,21 @@ angular.module('yv.moments', [
 		controller: 	'MomentsCtrl',
 		template: angular.element(document.getElementById("current-ui-view")).html(),
 		data: { inProfile: true, momentType: 'note' }
-	})	
+	})
+
+	.state('profileHighlights', {
+		url: 		'/users/:username/highlights',
+		controller: 	'MomentsCtrl',
+		template: angular.element(document.getElementById("current-ui-view")).html(),
+		data: { inProfile: true, momentType: 'highlight' }
+	})
+
+	.state('profileBookmarks', {
+		url: 		'/users/:username/bookmarks',
+		controller: 	'MomentsCtrl',
+		template: angular.element(document.getElementById("current-ui-view")).html(),
+		data: { inProfile: true, momentType: 'bookmark' }
+	})
 
 	;
 }])

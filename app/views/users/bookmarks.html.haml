@@ -1,38 +1,47 @@
-- @sidebar = false
-- @title = @me ? t('users.my bookmarks') : t('users.user bookmarks', user: @user.name || @user.username)
-- content_for :title do
-  = @title
+-#
+  - @sidebar = false
+  - @title = @me ? t('users.my bookmarks') : t('users.user bookmarks', user: @user.name || @user.username)
+  - content_for :title do
+    = @title
 
-- if current_user_is?(@user)
-  - unless @labels.blank?
-    .bookmarks-labels-wrap
-      %h3.labels-heading
-        = t("bookmarks.my labels")
+  - if current_user_is?(@user)
+    - unless @labels.blank?
+      .bookmarks-labels-wrap
+        %h3.labels-heading
+          = t("bookmarks.my labels")
 
-      - unless @labels.blank?
-        %ul.bookmarks-labels
-          %li.label.all-label{class: "#{'selected' unless @labels.any?{|h| h.label == @label}}"}
-            = link_to bookmarks_user_path(@user.username) do
-              =t('bookmarks.all labels')
-          - @labels.each do |label_and_count|
-            - label_name = "#{label_and_count["label"].strip}"
-            %li.label{class: "#{'selected' if @label == label_name}"}
-              = link_to bookmarks_user_path(@user.username, label: label_name) do
-                = label_name
-                %span.label-count=label_and_count["count"]
+        - unless @labels.blank?
+          %ul.bookmarks-labels
+            %li.label.all-label{class: "#{'selected' unless @labels.any?{|h| h.label == @label}}"}
+              = link_to bookmarks_user_path(@user.username) do
+                =t('bookmarks.all labels')
+            - @labels.each do |label_and_count|
+              - label_name = "#{label_and_count["label"].strip}"
+              %li.label{class: "#{'selected' if @label == label_name}"}
+                = link_to bookmarks_user_path(@user.username, label: label_name) do
+                  = label_name
+                  %span.label-count=label_and_count["count"]
 
-.social-feed-wrap{"data-username" => @user.username, "data-kind" => "bookmark", "data-label" => @label}
-  :javascript
-    $(document).ready(function(){
-      var feed = new Moments.UserBookmarkFeed();
-    });
-
-.profile-blank-slate.slate-bookmarks
-  - if current_user_is? @user
-    %h2
-      = t("bookmarks.blank slate.heading")
-    %p
-      = t("bookmarks.blank slate.description")
-  - else
-    %h2
-      = t("bookmarks.none user", username: @user.name)
+  .social-feed-wrap{"data-username" => @user.username, "data-kind" => "bookmark", "data-label" => @label}
+    :javascript
+      $(document).ready(function(){
+        var feed = new Moments.UserBookmarkFeed();
+      });
+.row.ng-hide{"ng-show" => "moments.length == 0"}
+  .columns.medium-12
+    .profile-blank-slate.slate-bookmarks
+      - if current_user_is? @user
+        %h2
+          = t("bookmarks.blank slate.heading")
+        %p
+          = t("bookmarks.blank slate.description")
+      - else
+        %h2
+          = t("bookmarks.none user", username: @user.name)
+.row.pad-row
+  .medium-8.columns.medium-offset-2
+    %div{"ng-repeat" => "moment in moments"}
+      %moment{:data => "moment", "social-enabled" => "false"}
+    %div{:layout => "row", "layout-align" => "space-around", "layout-sm" => "column", "ng-if" => "loading"}
+      %md-progress-circular{"md-mode" => "indeterminate"}
+    %button.solid-button.green.full{"ng-click" => "loadMore()", "ng-if" => "!loading"} Load More      
