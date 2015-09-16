@@ -5,6 +5,9 @@
   - content_for :mobile_right_nav do
     %a.settings_btn{:href => settings_profile_path}
 
+- content_for :lower_js_templates do
+  = render partial: "moments/js_templates"
+
 - content_for :main do
   .row.b-border.relative
     %img.left.avatar_huge{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}

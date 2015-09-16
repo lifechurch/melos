@@ -29,18 +29,39 @@ angular.module('yv.moments', [
 		template: 	'<div class="row"><div class="medium-8 columns medium-offset-2"><div ng-repeat="moment in moments"><moment data="moment"></moment></div></div></div>'
 	})
 
+	.state('profileActivity', {
+		url: 		'/users/:username',
+		controller: 	'MomentsCtrl',
+		template: angular.element(document.getElementById("current-ui-view")).html(),
+		data: { inProfile: true, momentType: null }
+	})
+
+	.state('profileNotes', {
+		url: 		'/users/:username/notes',
+		controller: 	'MomentsCtrl',
+		template: angular.element(document.getElementById("current-ui-view")).html(),
+		data: { inProfile: true, momentType: 'note' }
+	})	
+
 	;
 }])
 
-.controller("MomentsCtrl", ["$scope", "$rootScope", "$window", "Moments", function($scope, $rootScope, $window, Moments) {
-	$scope.moments = [];
+.controller("MomentsCtrl", ["$scope", "$rootScope", "$window", "Moments", "$state", "$stateParams", function($scope, $rootScope, $window, Moments, $state, $stateParams) {
 	$scope.currentPage = 0;
+	
+	var momentType = ($state.current.data && $state.current.data.momentType) ? $state.current.data.momentType : null;
+	var inProfile = ($state.current.data && $state.current.data.inProfile) ? $state.current.data.inProfile : false;
+	var getMoments =inProfile ? Moments.getByTypeAndUser : Moments.get;
 
 	$scope.loadMore = function() {
 		$scope.loading = true;
 		$scope.currentPage++;
-		Moments.get($scope.currentPage).success(function(data) {
-			$scope.moments = $scope.moments.concat(data);
+		getMoments($scope.currentPage, $stateParams["username"], momentType).success(function(data) {
+			if (!$scope.moments) { 
+				$scope.moments = data; 
+			} else { 			
+				$scope.moments = $scope.moments.concat(data);
+			}
 			$scope.loading = false;
 		}).error(function(err) {
 			//TO-DO: Handle Error
@@ -50,7 +71,7 @@ angular.module('yv.moments', [
 
 	$scope.loadMore();
 
-	//console.log("Listen up!");
+	//console.log("Listen up!", $templateCache.get('/moment.tpl.html'));
 	// var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 	// 	console.log("Yo");
 	// 	if (toState.name !== fromState.name) {

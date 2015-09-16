@@ -2,6 +2,100 @@
 	border-radius: 64px;
 }
 
+
+.friend-card-list {
+  overflow: hidden;
+  padding: 15px 0 0;
+}
+
+.friend-card-box {
+  border: 1px solid #ddd;
+  -webkit-border-radius:  5px;
+  -moz-border-radius:     5px;
+  border-radius:          5px;
+  width: 26%;
+  height: 70px;
+  margin: 0 3% 30px 35px;
+  float: left;
+  position: relative;
+}
+
+.friend-card-img {
+  width: 70px;
+  -webkit-border-radius:  35px;
+  -moz-border-radius:     35px;
+  border-radius:          35px;
+  margin: 0 0 0 -35px;
+}
+
+.friend-card-name {
+  display: block;
+  position: absolute;
+  left: 55px;
+  top: 13px;
+  font-size: 19px;
+}
+
+.friend-card-status {
+  position: absolute;
+  left: 55px;
+  bottom: 10px;
+  font-size: 13px;
+}
+
+.friend-card-status a {
+  
+}
+
+.friend-card-status span {
+  color: #888;
+}
+
+.friend-card-status:hover span {
+  display: none;
+}
+
+.friend-card-status:hover a {
+  display: inline-block;
+  color: #ff0000;
+}
+
+.friend-card-request {
+  display: block;
+  position: absolute;
+  left: 55px;
+  bottom: 10px;
+}
+
+.friend-card-accept,
+.friend-card-decline,
+.friend-card-box span  {
+  font-size: 13px;
+}
+
+.friend-card-accept {
+  color: #6AB750;
+}
+
+.friend-card-decline {
+  color: #ff0000;
+}
+
+.friends-count-have {
+	font-size: $text-size;
+	display: inline;
+}
+
+.friends-count-canhave {
+	font-size: $text-size;
+	display: inline;	
+}
+
+.friends-count-help {
+	font-size: $text-size;	
+	display: block;	
+}
+
 ul.inline-list {
 	li {
 		&:first-child {

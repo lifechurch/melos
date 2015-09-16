@@ -21,15 +21,15 @@
       %div{"ng-if" => "data.kind == 'note'", "moment-note" => ""}
     .moment-bottom
       .moment-actions
-        %a.moment-actions-like{:href => "#", "ng-click" => "like()", "ng-if" => "data.object.likes.enabled", "ng-class" => "{ active: data.object.likes.is_liked}"} Like
+        %a.moment-actions-like{:href => "#", "ng-click" => "like()", "ng-if" => "data.object.likes.enabled", "ng-class" => "{ active: data.object.likes.is_liked}", "ng-disabled" => "!socialEnabled"} Like
         %a.moment-actions-more{:href => "#"} More
-      .moment-likes{"ng-if" => "data.object.likes.enabled && data.object.likes.count"}
+      .moment-likes{"ng-if" => "data.object.likes.enabled && data.object.likes.count && socialEnabled"}
         .moment-likes-count
           %a{:href => "#"} {{data.object.likes.count}} likes
         .moment-likes-avatars
           %a{:href => "#", "ng-repeat" => "like in data.object.likes.all"}
             %img{:alt => "", "ng-src" => "{{like.user.avatar}}"}
-      .moment-comments{"ng-if" => "data.object.comments.enabled"}
+      .moment-comments{"ng-if" => "data.object.comments.enabled && socialEnabled"}
         %ul.moment-comments-list
           %li.moment-comments-list-comment{"ng-repeat" => "comment in data.object.comments.all"}
             .moment-comments-list-avatar

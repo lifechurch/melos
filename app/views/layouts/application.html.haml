@@ -34,6 +34,7 @@
 
     #current-ui-view{'ui-view' => ""}
       = content_for?(:main) ? yield(:main) : yield
+      = content_for?(:lower_js_templates) ? yield(:lower_js_templates) : nil
 
     -#
       /   #sidebar{class: (content_for :sidebar_class if content_for? :sidebar_class)}
@@ -46,6 +47,8 @@
 
 
       / = render partial: '/shared/footer', locals: {footer_classes: container_class_str}
+
+  
 
     = render partial: "/shared/js_templates"
     = render partial: "/shared/js_footer"
