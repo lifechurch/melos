@@ -57,6 +57,13 @@ angular.module('yv.moments', [
 		data: { inProfile: true, momentType: 'bookmark' }
 	})
 
+	.state('profileImages', {
+		url: 		'/users/:username/images',
+		controller: 	'MomentsCtrl',
+		template: angular.element(document.getElementById("current-ui-view")).html(),
+		data: { inProfile: true, momentType: 'image' }
+	})	
+
 	;
 }])
 
