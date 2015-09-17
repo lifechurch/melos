@@ -1,0 +1,9 @@
+body.c_users.a_new,
+body.c_users.a_create
+{
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 50%;
+  }
+}
