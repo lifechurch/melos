@@ -4,9 +4,6 @@
 
 - @title = "#{t("users.sign up for an account")} | #{t('pages.home.features.study heading')} | #{t('pages.home.features.subscribe heading')} | #{t('pages.home.features.read heading')}"
 
-- content_for :sidebar do
-  =render partial: "/sidebars/users/new"
-
 :ruby
   @blurb = if params[:source] && params[:source] != "licenses"
     t("registration.#{params[:source]} blurb")
@@ -22,17 +19,24 @@
     end
   end
 
-%article
-  %h1= t("users.sign up for an account")
+.row
+  .medium-8.columns
+    %article
+      %h1= t("users.sign up for an account")
 
-  -if licensing_flow
-    %p#license-notice= t("licenses.auth.signup notice", login:t("licenses.auth.login link text")).html_safe
+      -if licensing_flow
+        %p#license-notice= t("licenses.auth.signup notice", login:t("licenses.auth.login link text")).html_safe
 
-  - else # show blurb and facebook registration only if we're not in licensing flow.
-    -if @blurb
-      %hr
-      %p= @blurb
-      %hr
-      %p= link_to t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: "action_button_blue"
+      - else # show blurb and facebook registration only if we're not in licensing flow.
+        -if @blurb
+          %hr
+          %p= @blurb
+          %hr
+          %p= link_to t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: "action_button_blue"
 
-  = render 'create_form'
+      = render 'create_form'
+
+  .medium-4.columns.show-for-medium-up.l-border
+    =render partial: "/sidebars/users/new"
+    %br
+    =render partial: "/widgets/download_app"
