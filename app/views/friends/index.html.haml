@@ -12,9 +12,9 @@
     - if @friends.present?
       .friends-count
         %p.friends-count-have
-          = t("friends.you have N friends", count: @friends_count.count)
+          = t("friends.you have N friends", count: @friends_count.count) + "."
         %span.friends-count-canhave
-          = t("friends.limit notice")
+          = t("friends.limit notice") + "."
         %span.friends-count-help
           = t("friends.limit description")
 

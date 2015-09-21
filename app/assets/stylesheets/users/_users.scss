@@ -1,0 +1,172 @@
+.avatar_huge {
+	border-radius: 64px;
+}
+
+
+.friend-card-list {
+  overflow: hidden;
+  padding: 15px 0 0;
+}
+
+.friend-card-box {
+  border: 1px solid #ddd;
+  -webkit-border-radius:  5px;
+  -moz-border-radius:     5px;
+  border-radius:          5px;
+  width: 26%;
+  height: 70px;
+  margin: 0 3% 30px 35px;
+  float: left;
+  position: relative;
+}
+
+.friend-card-img {
+  width: 70px;
+  -webkit-border-radius:  35px;
+  -moz-border-radius:     35px;
+  border-radius:          35px;
+  margin: 0 0 0 -35px;
+}
+
+.friend-card-name {
+  display: block;
+  position: absolute;
+  left: 55px;
+  top: 13px;
+  font-size: 19px;
+}
+
+.friend-card-status {
+  position: absolute;
+  left: 55px;
+  bottom: 10px;
+  font-size: 13px;
+}
+
+.friend-card-status a {
+  
+}
+
+.friend-card-status span {
+  color: #888;
+}
+
+.friend-card-status:hover span {
+  display: none;
+}
+
+.friend-card-status:hover a {
+  display: inline-block;
+  color: #ff0000;
+}
+
+.friend-card-request {
+  display: block;
+  position: absolute;
+  left: 55px;
+  bottom: 10px;
+}
+
+.friend-card-accept,
+.friend-card-decline,
+.friend-card-box span  {
+  font-size: 13px;
+}
+
+.friend-card-accept {
+  color: #6AB750;
+}
+
+.friend-card-decline {
+  color: #ff0000;
+}
+
+.friends-count-have {
+	font-size: $text-size;
+	display: inline;
+}
+
+.friends-count-canhave {
+	font-size: $text-size;
+	display: inline;	
+}
+
+.friends-count-help {
+	font-size: $text-size;	
+	display: block;	
+}
+
+ul.inline-list {
+	li {
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.profile-hdr-info-user {
+	background: url("../assets/me-solid.svg") no-repeat left;
+	background-size: 16px;
+	padding-left: 22px;
+	font-size: $text-size;
+}
+
+.profile-hdr-info-location {
+	background: url("../assets/icon-profile-location.svg") no-repeat left;
+	background-size: 10px;
+	padding-left: 14px;
+	font-size: $text-size;	
+}
+
+.profile-hdr-info-link {
+	background: url("../assets/icon-profile-link.svg") no-repeat left;
+	background-size: 15px;
+	padding-left: 18px;
+	font-size: $text-size;	
+}
+
+.profile-hdr-info-about {
+	margin-bottom: 20px;
+	font-size: $text-size;	
+}
+
+.profile-hdr-name {
+	font-weight: normal !important;
+	margin-top: 0;
+}
+
+.profile-hdr-btn {
+	margin: 0 !important;
+}
+
+.right {
+	&.profile-hdr-action {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin-bottom: 20px;
+	}
+}
+
+.relative {
+	position: relative;
+}
+
+.network-logo {
+	width: 30px;
+	height: 30px;
+}
+
+.network-row {
+	padding-bottom: 20px;
+}
+
+.settings-group {
+	input {
+		height: inherit !important;
+	}
+
+	input[type="checkbox"] {
+		margin: 0;
+	}
+}

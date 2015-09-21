@@ -9,16 +9,20 @@
 - content_for :sidebar do
   = render partial: "widgets/settings", locals: {current_user: current_user} if current_user.present?
 
-= render layout: "layouts/base" do
-  
-  %div.settings-header
-    - if current_user.present?
-      %img.settings-header-avatar{src: current_user.user_avatar_url["px_128x128"]}
-      %h1.settings-header-name
-        = current_user.name
-      %a{href: user_path(current_user.username)} 
-        = t('users.go to your profile')
+-content_for :secondary_header do
+  = render partial: "users/header", locals: { user: @current_user }
 
-  %article
-    = render partial: "users/mobile_menu", locals: {selected: @setting_selected} if current_user.present?
-    = yield
+= render layout: "layouts/base" do
+  -#
+    %div.settings-header
+      - if current_user.present?
+        %img.settings-header-avatar{src: current_user.user_avatar_url["px_128x128"]}
+        %h1.settings-header-name
+          = current_user.name
+        %a{href: user_path(current_user.username)} 
+          = t('users.go to your profile')
+
+  .row
+    .columns.medium-12
+      -# = render partial: "users/mobile_menu", locals: {selected: @setting_selected} if current_user.present?
+      = yield

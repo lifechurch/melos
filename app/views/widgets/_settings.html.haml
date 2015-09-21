@@ -13,8 +13,8 @@
   %h3.hd
     %span
       = t('users.settings')
-  %ul.menu
+  %ul.side-nav
     - links.each do |l|
-      %li
+      %li{class: current_page?(l[:path]) ? 'active' : '' }
         = link_to_unless_current l[:string], l[:path] do
-          %a.selected= l[:string]
+          %a.active= l[:string]

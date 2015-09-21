@@ -18,26 +18,30 @@
   %body
     #wrapper
       = content_for?(:header) ? yield(:header) : render("/shared/header/default")
-      = render(partial: "layouts/mobile_nav") unless @main_nav == false    
+      = content_for?(:secondary_header) ? yield(:secondary_header) : ''
+      -#= render(partial: "layouts/mobile_nav") unless @main_nav == false    
 
-      - flash.each do |key, msg|
-        %div{class: container_class_str, id: "flash_#{key}"}= msg
+      - flash.each do |key, msg|      
+        .row.pad-row
+          .columns.medium-12      
+            %div{class: container_class_str + 'alert-box success radius', id: "flash_#{key}"}= msg
 
       #container{class: container_class_str}
-        #main{role: "main", class: @is_reader == true ? 'main_reader' : ''}
-          
-          = render(partial: "layouts/primary_nav") unless @main_nav == false
-          = content_for?(:main) ? yield(:main) : yield
+        .row.pad-row
+          .columns.medium-3
+            #sidebar{class: (content_for :sidebar_class if content_for? :sidebar_class)}
+              #sidebar-scroll
+                - if content_for? :sidebar
+                  = yield :sidebar
+                - else
+                  - unless (@sidebar == false || sidebar_presenter.blank?)
+                    = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}      
+          .columns.medium-9 
+            #main{role: "main", class: @is_reader == true ? 'main_reader' : ''}
+              -#= render(partial: "layouts/primary_nav") unless @main_nav == false
+              = content_for?(:main) ? yield(:main) : yield
 
-        #sidebar{class: (content_for :sidebar_class if content_for? :sidebar_class)}
-          #sidebar-scroll
-            - if content_for? :sidebar
-              = yield :sidebar
-            - else
-              - unless (@sidebar == false || sidebar_presenter.blank?)
-                = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
 
-
-      = render partial: '/shared/footer', locals: {footer_classes: container_class_str}
+      -#= render partial: '/shared/footer', locals: {footer_classes: container_class_str}
 
     -# = render partial: "/shared/js_templates"

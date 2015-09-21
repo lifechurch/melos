@@ -10,13 +10,21 @@
       var feed = new Moments.UserFeed();
     });
 
-.profile-blank-slate.slate-images
-  - if current_user_is? @user
-    %h2
-      = t("images.blank slate.heading")
-    %p
-      = raw t("images.blank slate.description")
-  - else
-    %h2
-      = t("images.none user", username: @user.name)
-      
+.row.ng-hide{"ng-show" => "moments.length == 0"}
+  .columns.medium-12
+    .profile-blank-slate.slate-images
+      - if current_user_is? @user
+        %h2
+          = t("images.blank slate.heading")
+        %p
+          = raw t("images.blank slate.description")
+      - else
+        %h2
+          = t("images.none user", username: @user.name)
+.row.pad-row
+  .medium-8.columns.medium-offset-2
+    %div{"ng-repeat" => "moment in moments"}
+      %moment{:data => "moment", "social-enabled" => "false"}
+    %div{:layout => "row", "layout-align" => "space-around", "layout-sm" => "column", "ng-if" => "loading"}
+      %md-progress-circular{"md-mode" => "indeterminate"}
+    %button.solid-button.green.full{"ng-click" => "loadMore()", "ng-if" => "!loading"} Load More

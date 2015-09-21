@@ -21,7 +21,8 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 		replace: true,
 		scope: {
 			data: '=',
-			single: '='
+			single: '=',
+			socialEnabled: '='
 		},
 		templateUrl: '/moment.tpl.html',
 		controller: function($scope, Like, Comment, /* Authentication,*/ $element, $timeout) {

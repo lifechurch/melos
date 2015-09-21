@@ -35,7 +35,8 @@
         .settings-group-item
           = render partial: "settings_group", locals: {type: type, info: info}
 
-    %div
-      %button{class: "action_button_green", action: "submit"}= t('users.notifications.update')
-    - if params[:token]
-      = hidden_field_tag :token, params[:token]
+    .row.pad-row
+      .columns.medium-12
+        %button{class: "solid-button green", action: "submit"}= t('users.notifications.update')
+        - if params[:token]
+          = hidden_field_tag :token, params[:token]
