@@ -30,9 +30,19 @@
         {href: badges_user_path(id: user.username),                     type: "badges"}
       ]
 
+      tabs_right = [
+        {href: edit_user_path(user.username), type: "settings", string_key: "settings"}
+      ]
+
       # find the highlight method in /app/helpers/users_helper.rb
 
     - tabs.each do |tab|
       - type, href = tab[:type], tab[:href]
       -# %li{class: "profile-tabs-#{type} #{highlight(href)}"}
-      = link_to(t("users.profile.tab #{type}"), href, { class: 'icon left' })
+      = link_to(t("users.profile.tab #{type}"), href, { class: current_page?(href) ? 'icon left active' : 'icon left' })
+
+    - if current_user_is? user
+      - tabs_right.each do |tab|
+        - type, href = tab[:type], tab[:href]
+        -# %li{class: "profile-tabs-#{type} #{highlight(href)}"}
+        = link_to(t(tab[:string_key]), href, { class: current_page?(href) ? 'icon right active' : 'icon right' })

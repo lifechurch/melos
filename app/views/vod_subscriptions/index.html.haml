@@ -43,7 +43,7 @@
 
   #todo: refactor above into controller/model/mapper
 
-%h3.vod_title
+%h2.vod_title
   = @title
 
 - if @current_user.present? == false
@@ -53,11 +53,11 @@
   - if @results.present?
     = render partial: "shared/form_errors", locals: {errors: @results.errors }
 
-  %h4
+  %h3
     = t('users.daily email delivery')
   = render partial: 'form', locals: {type: "email", version_id: @email_version_id, hour: @email_hour, minute: @email_minute, meridian: @email_meridian, versions: @versions_for_current_lang, allowed_hours: @allowed_hours, allowed_minutes: @allowed_minutes }
 
-  %h4.push_notifications_header
+  %h3.push_notifications_header
     = t('users.daily push notifications')
 
   - if @devices.present?

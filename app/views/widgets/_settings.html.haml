@@ -15,6 +15,6 @@
       = t('users.settings')
   %ul.side-nav
     - links.each do |l|
-      %li
+      %li{class: current_page?(l[:path]) ? 'active' : '' }
         = link_to_unless_current l[:string], l[:path] do
           %a.active= l[:string]

@@ -49,7 +49,9 @@ angular.module('yv', [
 	var stopLCSListener = $rootScope.$on('$locationChangeStart', function(event, newUrl, oldUrl, newState, oldState) {
 		var oldBaseRoute = oldUrl.split('/')[3];
 		var newBaseRoute = newUrl.split('/')[3];
-		if(oldBaseRoute !== newBaseRoute) {
+		var oldUserBaseRoute = oldUrl.split('/')[5] || true;
+		var newUserBaseRoute = newUrl.split('/')[5] || true;
+		if(oldBaseRoute !== newBaseRoute || oldUserBaseRoute !== newUserBaseRoute) {
 			event.preventDefault();
 			$window.location.href = newUrl;
 		}
