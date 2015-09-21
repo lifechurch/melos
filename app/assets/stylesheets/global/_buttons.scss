@@ -1,3 +1,5 @@
+$button-radius: $radius;
+
 .hollow-button {
   @include button(
     // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)

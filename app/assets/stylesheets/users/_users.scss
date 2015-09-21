@@ -151,3 +151,22 @@ ul.inline-list {
 .relative {
 	position: relative;
 }
+
+.network-logo {
+	width: 30px;
+	height: 30px;
+}
+
+.network-row {
+	padding-bottom: 20px;
+}
+
+.settings-group {
+	input {
+		height: inherit !important;
+	}
+
+	input[type="checkbox"] {
+		margin: 0;
+	}
+}
