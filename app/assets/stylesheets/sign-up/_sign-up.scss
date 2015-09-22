@@ -1,9 +1,28 @@
 body.c_users.a_new,
 body.c_users.a_create
 {
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: 50%;
+  @media #{$medium-up} {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 50%;
+    }
+  }
+  #user_password {
+    float: left;
+  }
+  #pwd-message {
+    float: left;
+    color: #7c7c7c;
+    margin-left: 10px;
+  }
+  .terms {
+    clear: both;
+    margin-bottom: 20px;
+  }
+  @media #{$small-only} {
+    .alt-path {
+      display: block;
+    }
   }
 }
