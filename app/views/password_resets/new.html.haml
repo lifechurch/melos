@@ -17,9 +17,9 @@
             = text_field_tag :email, nil, class: "field"
           %li
             - if current_auth
-              = submit_tag t('users.send new password button'), class: "confirm", "data-confirm-text" => t('users.yes reset and log out')
+              = submit_tag t('users.send new password button'), class: "confirm solid-button green", "data-confirm-text" => t('users.yes reset and log out')
             - else
-              = submit_tag t('users.send new password button'), class: "confirm", "data-confirm-text" => t('users.yes reset')
+              = submit_tag t('users.send new password button'), class: "confirm solid-button green", "data-confirm-text" => t('users.yes reset')
 
   .medium-4.columns.show-for-medium-up.l-border
     =render partial: "/widgets/download_app"

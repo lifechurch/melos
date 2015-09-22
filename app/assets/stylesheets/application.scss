@@ -31,6 +31,7 @@
 @import "global/header";
 @import "global/buttons";
 @import "global/general";
+@import "global/errors";
 
 @import "pages/home/home";
 @import "pages/about/about";
@@ -50,6 +51,10 @@
 @import "sign-in/sign-in";
 @import "passwords/passwords";
 @import "users/users";
+
+.clr {
+  clear: both;
+}
 
 .label {
 	padding: inherit;

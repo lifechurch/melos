@@ -1,8 +1,15 @@
 body.c_sessions.a_new,
 body.c_sessions.a_create {
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: 50%;
+  @media #{$medium-up} {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 50%;
+    }
+  }
+  @media #{$small-only} {
+    .alt-path {
+      display: block;
+    }
   }
 }

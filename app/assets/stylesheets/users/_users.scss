@@ -170,3 +170,22 @@ ul.inline-list {
 		margin: 0;
 	}
 }
+
+.img-email {
+  margin: 30px 0;
+}
+
+body.c_users.a_resend_confirmation,
+body.c_users.a_confirm_email {
+  article.centered {
+    text-align: center;
+  }
+  hr {
+    margin: 20px auto;
+    width: 15%;
+    padding: 0 auto;
+  }
+  #email {
+    width: 250px;
+  }
+}
