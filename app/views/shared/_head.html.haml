@@ -21,12 +21,12 @@
   / = stylesheet_link_tag 'mobile', media: "all and (max-width: 768px)"
   / = stylesheet_link_tag 'application', media: "all and (min-width: 769px)"
   
-  = stylesheet_link_tag "vendor"
-  - if is_rtl?
-    = stylesheet_link_tag "application-rtl"
-  - else
-    = stylesheet_link_tag "application"
-  
+= stylesheet_link_tag "vendor"
+- if is_rtl?
+  = stylesheet_link_tag "application-rtl"
+- else
+  = stylesheet_link_tag "application"
+
 
   /[if IE]
   /  %script{:src => "//html5shiv.googlecode.com/svn/trunk/html5.js"}
