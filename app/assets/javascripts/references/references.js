@@ -35,6 +35,14 @@ angular.module('yv.reader', [
 		controller: 			'ReaderCtrl',
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})	
+
+	//Bible Plan for User
+	.state('userPlan', {
+		url: 				'/users/:username/reading-plans/:plan',
+		controller: 			'ReaderCtrl',
+		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
+	})	
+
 	;
 }])
 

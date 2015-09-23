@@ -33,116 +33,123 @@
     readings_text = references.size.to_s + " " + t("plans.widget.readings 5 or more")
   end
 
-.mobile#mobile-sb-subscription{class: ('initial' if presenter.initial_load?)}
-  .reader_modal_header
-    %nav
-      %a.close_btn.subscription_close_btn
-    %nav.nav_right
-      = link_to t("plan settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), class: "settings_btn"
+%h6= subscription.name
+%ul.side-nav
+  %li= link_to t("plans.about this plan"), plan_path(subscription)
+  %li= link_to t("settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), class: "settings_btn"
 
-#widget-plan-controls.widget
-  - settings_text = t("settings")
-  %div.hd
-    %span.search_thumbnail
-      = image_tag subscription.widget_thumbnail_image.url, class: 'widget_thumbnail' if subscription.widget_thumbnail_image.present?
-    = link_to subscription.name, plan_path(subscription)
+= render partial: 'subscriptions/calendar', locals: { subscription: @subscription }
+-#
+  .mobile#mobile-sb-subscription{class: ('initial' if presenter.initial_load?)}
+    .reader_modal_header
+      %nav
+        %a.close_btn.subscription_close_btn
+      %nav.nav_right
 
 
-  #calendar.bd.nopad.calendar
-    - cal_text = t("plans.calendar")
+  #widget-plan-controls.widget
+    - settings_text = t("settings")
+    %div.hd
+      %span.search_thumbnail
+        = image_tag subscription.widget_thumbnail_image.url, class: 'widget_thumbnail' if subscription.widget_thumbnail_image.present?
 
-    .calendar-prev
-      - prev_text = t("plans.previous day") # used in 3 places below
-      - if day > 1
-        -# = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day - 1) == subscription.current_day) ? nil : (day - 1), version: params[:version]), {class: "prev", title: prev_text }) do
-        = link_to("#", class: "next") do
-          %span.calendar-arrows
-            &nbsp;
-      - else
-        = link_to("#", class: "disabled prev") do
-          %span.calendar-arrows
-            &nbsp;
 
-    - statuses = subscription.day_statuses
 
-    .calendar-cal
-      .calendar-cal-box{style: "width: 20000px"}
-        -# Start month container
-        - while !statuses.empty?
-          .calendar-cal-month
-            - first_date = Date.parse(statuses.first.date)
-            - last_date = first_date.next_month - (first_date.next_month.day)
-            - full_month = false
-            .calendar-cal-month-name
-              %span
-                = first_date.strftime('%b')
-            .calendar-cal-days
-              - # first calendar day (given tabular calendar starting on Sun)s
-              - cur_date = first_date - (first_date.day - 1) - (first_date - (first_date.day - 1)).cwday  
-              - # if first day of month is a sunday (more clear than doing on the previous line)     
-              - cur_date = cur_date.next_day(7) if first_date.prev_day(first_date.day - 1) - cur_date == 7
-              - cur_date = Date.parse(statuses.first.date)
-              - rows = 0
-              - 1.upto 7 do |n|      # List out one week
-                - break if statuses.empty?
-                - break if cur_date.month > first_date.month
-                - cur_status = statuses.delete_at(0)
-                - #raise 'the'
-                = link_to cur_date.strftime('%-d'), subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day), {class: "calendar-cal-day #{"week" if n == 1} #{(cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'partial' : '')} #{'current' if cur_date == current_date} #{'selected' if presenter.day == cur_status.day}" }
-                - cur_date = cur_date.next
-              :ruby
-                full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
+    #calendar.bd.nopad.calendar
+      - cal_text = t("plans.calendar")
 
-    .calendar-next
-      - next_text = t("plans.next day") # used in 3 places below
-      - if day <= subscription.total_days - 1
-        -# = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day + 1) == subscription.current_day) ? nil : (day + 1), version: params[:version]), {class: "next", title: next_text}) do
-        = link_to("#", class: "next") do
-          %span.calendar-arrows
-            &nbsp;
-      - else
-        = link_to("#", class: "disabled next") do
-          %span.calendar-arrows
-            &nbsp;
+      .calendar-prev
+        - prev_text = t("plans.previous day") # used in 3 places below
+        - if day > 1
+          -# = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day - 1) == subscription.current_day) ? nil : (day - 1), version: params[:version]), {class: "prev", title: prev_text }) do
+          = link_to("#", class: "next") do
+            %span.calendar-arrows
+              &nbsp;
+        - else
+          = link_to("#", class: "disabled prev") do
+            %span.calendar-arrows
+              &nbsp;
 
-  .ft.calendar-links
-    = link_to(plan_path(subscription),{class: "calendar-links-about"}) do
-      = t("plans.about this plan")
-    &nbsp;&#8226;&nbsp;
-    =link_to(calendar_subscription_path(user_id: current_user.to_param, id: subscription), {title: cal_text }) do
-      = t("plans.calendar")
-    &nbsp;&#8226;&nbsp;
-    = link_to(edit_subscription_path(user_id: current_user.to_param, id: subscription),{class: "calendar-links-settings", title: settings_text}) do
-      = settings_text
+      - statuses = subscription.day_statuses
 
--# Links to scripture
-.widget.scripture-links
-  %h3.hd
-    = t("plans.read today")
-  %ul.menu.basic
-    - unless references.empty?
-      - references.each_with_index do |ref,index|
-        %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
-          = form_tag(subscription_path(user_id: current_user.to_param, id: subscription), method: :put) do
-            - # todo: sometimes day isn't passed with params. need to investigate
-            = hidden_field_tag(:ref,            ref.reference.to_param)
-            = hidden_field_tag(:completed,      (!ref.completed))
-            = hidden_field_tag(:version,        subscription.version_id)
-            = hidden_field_tag(:day_target,     day.to_s)
-            = hidden_field_tag(:content_target, index )     if index != 0
-            = check_box_tag(:completion, nil, ref.completed, {id:"#{index}_box",onChange: "this.form.submit()"} )
+      .calendar-cal
+        .calendar-cal-box{style: "width: 20000px"}
+          -# Start month container
+          - while !statuses.empty?
+            .calendar-cal-month
+              - first_date = Date.parse(statuses.first.date)
+              - last_date = first_date.next_month - (first_date.next_month.day)
+              - full_month = false
+              .calendar-cal-month-name
+                %span
+                  = first_date.strftime('%b')
+              .calendar-cal-days
+                - # first calendar day (given tabular calendar starting on Sun)s
+                - cur_date = first_date - (first_date.day - 1) - (first_date - (first_date.day - 1)).cwday  
+                - # if first day of month is a sunday (more clear than doing on the previous line)     
+                - cur_date = cur_date.next_day(7) if first_date.prev_day(first_date.day - 1) - cur_date == 7
+                - cur_date = Date.parse(statuses.first.date)
+                - rows = 0
+                - 1.upto 7 do |n|      # List out one week
+                  - break if statuses.empty?
+                  - break if cur_date.month > first_date.month
+                  - cur_status = statuses.delete_at(0)
+                  - #raise 'the'
+                  = link_to cur_date.strftime('%-d'), subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day), {class: "calendar-cal-day #{"week" if n == 1} #{(cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'partial' : '')} #{'current' if cur_date == current_date} #{'selected' if presenter.day == cur_status.day}" }
+                  - cur_date = cur_date.next
+                :ruby
+                  full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
 
-          - if content_page == index
-            %span
-              %b.mobile= t("plans.read today").capitalize
-              = ref.reference.safe_human
-          - else
-            %a{href: (content_page == index) ? nil : subscription_path(user_id: current_user.to_param, id: subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
-              = ref.reference.safe_human
+      .calendar-next
+        - next_text = t("plans.next day") # used in 3 places below
+        - if day <= subscription.total_days - 1
+          -# = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: ((day + 1) == subscription.current_day) ? nil : (day + 1), version: params[:version]), {class: "next", title: next_text}) do
+          = link_to("#", class: "next") do
+            %span.calendar-arrows
+              &nbsp;
+        - else
+          = link_to("#", class: "disabled next") do
+            %span.calendar-arrows
+              &nbsp;
 
-- if reading.devotional
-  #widget-devotional.widget
+    .ft.calendar-links
+      = link_to(plan_path(subscription),{class: "calendar-links-about"}) do
+        = t("plans.about this plan")
+      &nbsp;&#8226;&nbsp;
+      =link_to(calendar_subscription_path(user_id: current_user.to_param, id: subscription), {title: cal_text }) do
+        = t("plans.calendar")
+      &nbsp;&#8226;&nbsp;
+      = link_to(edit_subscription_path(user_id: current_user.to_param, id: subscription),{class: "calendar-links-settings", title: settings_text}) do
+        = settings_text
+
+  -# Links to scripture
+  .widget.scripture-links
     %h3.hd
-      = t("plans.devotional")
-    %div.bd
-      = reading.devotional.html_safe
+      = t("plans.read today")
+    %ul.menu.basic
+      - unless references.empty?
+        - references.each_with_index do |ref,index|
+          %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
+            = form_tag(subscription_path(user_id: current_user.to_param, id: subscription), method: :put) do
+              - # todo: sometimes day isn't passed with params. need to investigate
+              = hidden_field_tag(:ref,            ref.reference.to_param)
+              = hidden_field_tag(:completed,      (!ref.completed))
+              = hidden_field_tag(:version,        subscription.version_id)
+              = hidden_field_tag(:day_target,     day.to_s)
+              = hidden_field_tag(:content_target, index )     if index != 0
+              = check_box_tag(:completion, nil, ref.completed, {id:"#{index}_box",onChange: "this.form.submit()"} )
+
+            - if content_page == index
+              %span
+                %b.mobile= t("plans.read today").capitalize
+                = ref.reference.safe_human
+            - else
+              %a{href: (content_page == index) ? nil : subscription_path(user_id: current_user.to_param, id: subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
+                = ref.reference.safe_human
+
+  - if reading.devotional
+    #widget-devotional.widget
+      %h3.hd
+        = t("plans.devotional")
+      %div.bd
+        = reading.devotional.html_safe
