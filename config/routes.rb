@@ -3,6 +3,8 @@ YouversionWeb::Application.routes.draw do
 
   get "*path",          to: redirect("http://www.nic.bible/?utm_source=com"),  constraints: { subdomain: 'nic' }
   get "*path",          to: redirect("http://american.bible/?utm_source=com"), constraints: { subdomain: 'american' }
+  get "/",          to: redirect("http://www.nic.bible/?utm_source=com"),  constraints: { subdomain: 'nic' }
+  get "/",          to: redirect("http://american.bible/?utm_source=com"), constraints: { subdomain: 'american' }
 
   get "/ping",          to: "ping#ping"
   get "/running",       to: "ping#running"
