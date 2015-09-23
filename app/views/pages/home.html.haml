@@ -74,18 +74,18 @@
               %p= t(".world installs")
       .columns.medium-3
         %img{src: "#{image_path('bdc_mobile_icons.png')}", class: "app-icons"}
-        = link_to(t(".download action"), app_page_path, {class: 'solid-button green full'})
+        = link_to(t(".download action"), app_page_path, {class: 'solid-button green mobile-full'})
 
-    .gray.pad-row
+    .gray.pad-row.get-started
       .row
         .columns.medium-12.text-center
           %h1= t(".get started")
       .row.pad-row
         .columns.medium-12.text-center
-          = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), {class: 'solid-button fixed blue'})
+          = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), {class: 'solid-button mobile-full blue'})
           %span.or.pad-all
             = t("or.upper")
-          = link_to(t("registration.with email"), sign_up_path, {class: 'solid-button fixed gray'})
+          = link_to(t("registration.with email"), sign_up_path, {class: 'solid-button mobile-full gray'})
       .row.pad-row.text-center
         .columns.medium-3
           %img{src: "#{image_path('read_bible_icon.png')}"}

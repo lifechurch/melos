@@ -8,3 +8,10 @@
  .app-icons {
  	margin-bottom: 56px;
  }
+ .get-started {
+   @media #{$medium-up} {
+     .mobile-full {
+       width: 400px;
+     }
+   }
+ }

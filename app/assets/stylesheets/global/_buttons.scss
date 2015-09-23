@@ -71,16 +71,6 @@ $button-radius: $radius;
     }
   }
 
-  &.fixed {
-  	@media #{$small-only} {
-  	  width: 100%;
-  	}
-
-  	@media #{$medium-up} {
-  		width: 400px;
-  	}
-  }
-
   &:hover {
     background-color: $primary-color !important;
     color: #ffffff !important;

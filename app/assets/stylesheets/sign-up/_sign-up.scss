@@ -1,20 +1,24 @@
 body.c_users.a_new,
 body.c_users.a_create
 {
+  #user_password {
+    float: $default-float;
+  }
+  #pwd-message {
+    float: $default-float;
+    color: #7c7c7c;
+    margin: -20px 0 20px 0;
+  }
   @media #{$medium-up} {
     input[type="text"],
     input[type="email"],
     input[type="password"] {
       width: 50%;
     }
-  }
-  #user_password {
-    float: left;
-  }
-  #pwd-message {
-    float: left;
-    color: #7c7c7c;
-    margin-left: 10px;
+    #pwd-message {
+      width: 40%;
+      margin: 0 10px;
+    }
   }
   .terms {
     clear: both;
