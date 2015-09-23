@@ -1,6 +1,9 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
+  get "*path",          to: redirect("http://www.nic.bible/?utm_source=com"),  constraints: { subdomain: 'nic' }
+  get "*path",          to: redirect("http://american.bible/?utm_source=com"), constraints: { subdomain: 'american' }
+
   get "/ping",          to: "ping#ping"
   get "/running",       to: "ping#running"
   get "/terms",         to: "pages#terms"
