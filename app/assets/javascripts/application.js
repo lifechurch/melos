@@ -11,6 +11,7 @@
 //= require branch/sms_for_app
 //= require branch/branch
 //= require main
+//= require slick.min
 //= require_tree ./api
 //= require_tree ./common
 //= require_tree ./references

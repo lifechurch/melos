@@ -34,9 +34,11 @@
 @import "global/errors";
 
 @import "pages/home/home";
+@import "pages/app/app";
 @import "pages/about/about";
 @import "pages/press/press";
 
+@import "slick";
 @import "references/references";
 @import "references/reader_text";
 @import "versions/versions";

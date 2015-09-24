@@ -55,11 +55,11 @@
 a.icon {
 
   &.right {
-    float:right;
+    float: right;
   }
 
   &.left {
-    float:left;
+    float: left;
   }
 
   &.text {
@@ -99,9 +99,9 @@ a.icon {
 
   &.row {
     &.postfix-radius {
-      float: right;
+      float: $opposite-direction;
       @media #{$medium-small-only} {
-          float: right;
+          float: $opposite-direction;
       }
       display: inline-block;
     }
@@ -125,7 +125,7 @@ a.icon {
     display: none;
   }  
 
-  float: right;
+  float: $default-float;
 }
 
 .hdr-profile a {
@@ -191,7 +191,7 @@ a.icon {
 
 .hdr-about {
   display: inline-flex;
-  float: right;
+  float: $default-float;
 }
 
 .hdr-about a {
@@ -220,7 +220,7 @@ a.icon {
 
 .hdr-notify {
   display: inline-block;
-  float:right;
+  float: $default-float;
 
   @media #{$large-up} {
     margin-right: rem-calc(20) !important; 
@@ -262,4 +262,23 @@ a.icon {
 .menu-title {
 	padding: 16px;
 	font-weight: bold;
+}
+
+div.header {
+  a.sign-up,
+  a.sign-in {
+    float: $opposite-direction;
+  }
+}
+
+html[dir="rtl"] {
+  .icon-bar > * {
+    float: right;
+  }
+  .icon-bar {
+    @media #{$medium-up} {
+      margin-right: rem-calc(50);
+      margin-left: 0;
+    }
+  }
 }

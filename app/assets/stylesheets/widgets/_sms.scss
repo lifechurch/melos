@@ -20,7 +20,7 @@
     width: 220px;
     padding: 7px !important;
     text-indent: 2%;
-    float: left;
+    float: $default-float;
     margin: 0 10px 0 0;
     border-radius: 4px;
     border: 1px solid #dddddd;
@@ -62,7 +62,7 @@
     background-color: #666666;
   }
   .intl-tel-input .country-list {
-    text-align: left;
+    text-align: $default-float;
     color: #333333;
     width: 365px;
   }
@@ -992,5 +992,29 @@
     background-color: #dbdbdb;
     background-position: 100% 100%;
     background-size: 2050px 59px;
+  }
+}
+
+html[dir="rtl"] .sms_container {
+  .smsInput {
+    margin: 0 0 0 10px;
+  }
+  .intl-tel-input input,
+  .intl-tel-input input[type=tel],
+  .intl-tel-input input[type=text] {
+    padding-right: 48px !important;
+  }
+  .intl-tel-input .selected-flag {
+    padding: 0 5px 0 0;
+  }
+  .intl-tel-input .selected-flag .arrow {
+    right: auto;
+    left: 4px;
+  }
+  .intl-tel-input .country-list .country-name,
+  .intl-tel-input .country-list .flag {
+    margin-right: 0px;
+    margin-left: 6px;
+    float: right;
   }
 }

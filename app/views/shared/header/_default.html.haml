@@ -143,8 +143,8 @@
                         =t("sign out")
 
             - else
-              = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "hollow-button right"
-              = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "hollow-button right"
+              = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "hollow-button sign-in"
+              = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "hollow-button sign-up"
 
             .row.collapse.postfix-radius.hdr-search
               .small-8.small-offset-1.columns
