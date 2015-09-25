@@ -1,7 +1,7 @@
 // Current Parameters:
 // presenter: Presenter::Sidebar::Subscription
 
-:javascript
+-#:javascript
   $(window).load(function(){ 
     $('.calendar-next').click(function(){
       PlanWidget.toNext();
@@ -37,8 +37,46 @@
 %ul.side-nav
   %li= link_to t("plans.about this plan"), plan_path(subscription)
   %li= link_to t("settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), class: "settings_btn"
+.calendar-container.ng-hide{"ng-show" => "true", "calendar-container" => "true"}
+  = render partial: 'subscriptions/calendar', locals: { subscription: @subscription }
 
-= render partial: 'subscriptions/calendar', locals: { subscription: @subscription }
+
+-# Links to scripture
+.widget.scripture-links
+  %h3.hd
+    = t("plans.read today")
+  %ul.menu.basic
+    %li= t("plans.devotional")  
+    - unless references.empty?
+      - references.each_with_index do |ref,index|
+        %li
+          -# form_tag(subscription_path(user_id: current_user.to_param, id: subscription), method: :put) do
+            - # todo: sometimes day isn't passed with params. need to investigate
+            = hidden_field_tag(:ref,            ref.reference.to_param)
+            = hidden_field_tag(:completed,      (!ref.completed))
+            = hidden_field_tag(:version,        subscription.version_id)
+            = hidden_field_tag(:day_target,     day.to_s)
+            = hidden_field_tag(:content_target, index )     if index != 0
+            = check_box_tag(:completion, nil, ref.completed, {id:"#{index}_box",onChange: "this.form.submit()"} )
+
+          -# if content_page == index
+            %span
+              -#%b.mobile= t("plans.read today").capitalize
+              = ref.reference.safe_human
+            - else
+          -# hrref: (content_page == index) ? nil : subscription_path(user_id: current_user.to_param, id: subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])
+          %a{"ui-sref-options"=>"{reload:true}", "ui-sref" => "userPlan({version: #{ref.reference.version.to_s}, usfm: '#{ref.reference.chapter_usfm.downcase}'})"}
+            = ref.reference.safe_human
+
+-# if reading.devotional
+  #widget-devotional.widget
+    %h3.hd
+
+    %div.bd
+      = reading.devotional.html_safe
+
+
+
 -#
   .mobile#mobile-sb-subscription{class: ('initial' if presenter.initial_load?)}
     .reader_modal_header
@@ -122,34 +160,3 @@
       = link_to(edit_subscription_path(user_id: current_user.to_param, id: subscription),{class: "calendar-links-settings", title: settings_text}) do
         = settings_text
 
-  -# Links to scripture
-  .widget.scripture-links
-    %h3.hd
-      = t("plans.read today")
-    %ul.menu.basic
-      - unless references.empty?
-        - references.each_with_index do |ref,index|
-          %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
-            = form_tag(subscription_path(user_id: current_user.to_param, id: subscription), method: :put) do
-              - # todo: sometimes day isn't passed with params. need to investigate
-              = hidden_field_tag(:ref,            ref.reference.to_param)
-              = hidden_field_tag(:completed,      (!ref.completed))
-              = hidden_field_tag(:version,        subscription.version_id)
-              = hidden_field_tag(:day_target,     day.to_s)
-              = hidden_field_tag(:content_target, index )     if index != 0
-              = check_box_tag(:completion, nil, ref.completed, {id:"#{index}_box",onChange: "this.form.submit()"} )
-
-            - if content_page == index
-              %span
-                %b.mobile= t("plans.read today").capitalize
-                = ref.reference.safe_human
-            - else
-              %a{href: (content_page == index) ? nil : subscription_path(user_id: current_user.to_param, id: subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
-                = ref.reference.safe_human
-
-  - if reading.devotional
-    #widget-devotional.widget
-      %h3.hd
-        = t("plans.devotional")
-      %div.bd
-        = reading.devotional.html_safe

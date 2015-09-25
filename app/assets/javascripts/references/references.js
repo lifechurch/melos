@@ -61,6 +61,7 @@ angular.module('yv.reader', [
 	$scope.notes 								= [];
 	$scope.isPlanState 					= $state.current.name == 'planSample';
 	$scope.planContentReady			= false;
+	$scope.month 								= 0;
 
 	hideAllPanels();
 	hideAllSidePanels();
@@ -282,10 +283,11 @@ angular.module('yv.reader', [
 	}
 
 	/**
-	 * Don't reload controller of navigating back to this same state, instead
+	 * Don't reload controller if navigating back to this same state, instead
 	 * just make the new chapter call and switch the URL in the browser
 	 */
 	$rootScope.$on("YV:reloadState", function(event, stateInfo) {
+			console.log(stateInfo);
 		 	var toState 	= stateInfo[0]; 
 		 	var toParams 	= stateInfo[1];
 
