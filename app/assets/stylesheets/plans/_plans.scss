@@ -93,3 +93,30 @@ ul.plan-results {
     list-style: none;
   }
 }
+
+#footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+	border-top: solid rem-calc(1) $lightGray;
+  z-index: 100;	
+}
+
+.widget {
+	&.scripture-links {
+		li {
+			a {
+				&.active {
+					color: $green;
+				}
+
+				&.complete {
+					text-decoration: line-through;
+					color: $gray;
+				}				
+			}
+		}
+	}
+}
+ 
