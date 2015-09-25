@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-29 16:06-0600\n"
-"PO-Revision-Date: 2015-03-29 16:06-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: id <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -180,6 +180,9 @@ msgstr "{name} mengomentari markah Anda: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} mengomentari pertemanan baru Anda dengan {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} mengomentari pertemanan baru Anda: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} mengomentari sorotan Anda: “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} juga mengomentari markah {moment_owner_name}: “{comme
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} juga mengomentari pertemanan baru {moment_owner_name} dengan {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} juga mengomentari pertemanan baru Anda dengan {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} juga mengomentari pertemanan baru mereka dengan {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} juga mengomentari sorotan {moment_owner_name}: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} juga mengomentari markah mereka: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} juga mengomentari pertemanan baru mereka dengan {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} juga mengomentari pertemanan baru mereka dengan Anda: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} juga mengomentari sorotan mereka: “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} sekarang menjadi teman Anda"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} ingin berteman dengan Anda di YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Anda memiliki permintaan Teman menunggu di Ap Alkitab"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Apakah Anda ingin berteman dengan {name} di YouVersion?"

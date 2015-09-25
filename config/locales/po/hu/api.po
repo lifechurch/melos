@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:28-0609\n"
-"PO-Revision-Date: 2015-07-31 10:28-0609\n"
+"POT-Creation-Date: 2015-09-09 16:32-0609\n"
+"PO-Revision-Date: 2015-09-09 16:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hu <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -180,6 +180,9 @@ msgstr "{name} hozzászólt a könyvjelződhöz: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} megjegyzést fűzött az új barátságodhoz a következővel {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} hozzászólt az új barátságodhoz: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} hozzászólt a kiemelésedhez: “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} könyvjelzőj
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} is fűzött megjegyzést a {moment_owner_name} új barátságához a következővel {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} szintén hozzászólt a(z){moment_owner_name} személlyel létrejött új barátságodhoz: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} szintén hozzászólt a(z){moment_owner_name} személlyel létrejött új barátságához: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} szintén hozzászólt {moment_owner_name} kiemeléséhez: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} szintén hozzászólt a könyvjelzőjéhez: “{comm
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} is megjegyzést fűztött új barátságukhoz a következővel {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} szintén hozzászólt a veled létrejött új barátságához: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} szintén hozzászólt a kiemeléséhez: “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} mostantól a barátod"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} szeretne barátod lenni a YouVersion-ön."
+
+msgid "notifications.friendships.pending"
+msgstr "Függőben lévő kapcsolatod van a Biblia alkalmazásban"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Szeretnél {name} barátja lenni a YouVersionön?"

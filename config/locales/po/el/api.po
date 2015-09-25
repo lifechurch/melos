@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:28-0609\n"
-"PO-Revision-Date: 2015-07-31 10:28-0609\n"
+"POT-Creation-Date: 2015-09-09 16:32-0609\n"
+"PO-Revision-Date: 2015-09-09 16:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: el <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -183,6 +183,9 @@ msgstr "Ο χρήστης {name} σχολίασε τον σελιδοδείκτ�
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "Ο χρήστης {name}σχολίασε την νέα σου φιλία με τον χρήστη {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "Ο/Η {name} σχολίασε τη νέα φιλία σας: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Ο χρήστης {name}σχολίασε την επισήμανσή σου: {comment}"
 
@@ -204,6 +207,12 @@ msgstr "Ο χρήστης {commenter_name}σχολίασε επίσης τον �
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "Ο χρήστης {commenter_name}σχολίασε επίσης την νέα φιλία του χρήστη {moment_owner_name}με τον χρήστη {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης τη νέα φιλία σας με τον/την {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "Ο/Η {commenter_name} σχολίασε επίσης τη νέα σας φιλία με τον/την {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Ο χρήστης {commenter_name}σχολίασε επίσης την επισήμανση του {moment_owner_name}: “{comment}”"
 
@@ -218,6 +227,9 @@ msgstr "Ο χρήστης {moment_owner_name}σχολίασε επίσης το�
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "Ο χρήστης {moment_owner_name} σχολίασε επίσης την νέα του φιλία με τον χρήστη {friend_name}: {comment}"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "Ο/Η {moment_owner_name} σχολίασε επίσης τη νέα φιλία σας: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Ο χρήστης {moment_owner_name}σχολίασε επίσης την επισήμανσή του:{comment}"
@@ -248,6 +260,9 @@ msgstr "Ο χρήστης {name} είναι τώρα φίλος σου"
 
 msgid "notifications.friendships.offer"
 msgstr "Ο χρήστης {name} θέλει να γίνετε φίλοι στο YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Έχετε αιτήματα φιλίας στην εφαρμογή Αγία Γραφή "
 
 msgid "notifications.friendships.suggestion"
 msgstr "Θέλεις να γίνετε φίλοι με τον χρήστη {name} στο YouVersion;"

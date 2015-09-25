@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ro <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2)\n"
@@ -180,6 +180,9 @@ msgstr "{name} a comentat la marcajul tău: „{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} a comentat asupra prieteniei tale cu {friend_name}: „{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} a comentat asupra prieteniei tale: „{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} a comentat la evidențierea ta: „{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} a comentat de asemenea la marcajul lui {moment_owner_na
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} a comentat de asemenea asupra prieteniei lui {moment_owner_name} cu {friend_name}: „{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} a comentat de asemenea asupra noii tale prietenii cu {moment_owner_name}: „{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} a comentat de asemenea asupra noii sale prietenii cu {moment_owner_name}: „{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} a comentat de asemenea la evidențierea lui {moment_owner_name}: „{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} a comentat de asemenea la marcajul său: „{comment
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} a comentat de asemenea asupra noii prietenii cu {friend_name}: „{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} a comentat de asemenea asupra noii lor prietenii cu tine: „{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} a comentat de asemenea la evidențierea lor: „{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} este acum prietenul tău"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} vrea să fie prietenul tău pe YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Ai cereri de prietenie în așteptare în Aplicația Biblia"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Vrei sa te împrietenești cu {name} pe YouVersion?"

@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-09 13:09-0600\n"
-"PO-Revision-Date: 2015-03-09 13:09-0600\n"
+"POT-Creation-Date: 2015-09-09 16:32-0609\n"
+"PO-Revision-Date: 2015-09-09 16:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ar <LL@li.org>\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
@@ -180,6 +180,9 @@ msgstr "{name} علّق على الإشارة المرجعية الخاصة بك
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} علق على صداقتك مع {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name}قام بالتعليق على صداقتك الجديدة: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} علّق على نصك المميز: “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} أيضاً علّق على إشارة {moment_owner_nam
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} ايضا علق على الصداقة  {moment_owner_name} الجديدة مع {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr " {commenter_name} أيضاً قام بالتعليق على صداقتك الجديدة مع {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} أيضاً قام بالتعليق على صداقته الجديدة مع {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} علّق أيضاً على نص {moment_owner_name} المميز: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} أيضاً علّق على إشارتهم المرج
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} ايضا علقوا على صداقتهم الجديدة مع {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} أيضاً قام بالتعليق على صداقته الجديدة معك :“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}أيضاً علق على احد أبرز الأيات : ”{comment}“"
@@ -245,6 +257,9 @@ msgstr "{name} أصبح الآن صديقك"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} يريد أن يصبح صديقك في YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "لديك طلبات صداقة تنتظرك في تطبيق الكتاب المقدس"
 
 msgid "notifications.friendships.suggestion"
 msgstr "هل تريد أن تصبح صديقاً مع {name} في YouVersion؟"

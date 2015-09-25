@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-17 08:43-0600\n"
-"PO-Revision-Date: 2015-03-17 08:43-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -180,6 +180,9 @@ msgstr "{name} ने आपके बुकमार्क पर कमें�
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} ने आपकी मित्रता पर टिपण्णी की है {comment}"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ने आपके हाईलाइट पर कमेंट किया “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} ने भी  {moment_owner_name}'s बुकमार
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} ने {moment_owner_name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} ने  भी आपकी नई मित्रता पर टिपण्णी की है {moment_owner_name}{comment}"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} ने भी {moment_owner_name}के साथ अपनी  नई मित्रता पर टिपण्णी की है{comment}"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} ने भी  {moment_owner_name}'s हाईलाइट पर कमेंट किया: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} ने उनके भी बुकमार्क 
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} नए दोस्त {friend_name} के साथ दोस्ती पर टिप्पणी किया “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name}ने भी आपकी नई मित्रता पर टिपण्णी की है {comment}"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ने भी आपके हाईलाइट पर कमेंट किया : “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} अब आपके मित्र हैं"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} YouVersion पर आपके मित्र बनने में इच्छुक हैं"
+
+msgid "notifications.friendships.pending"
+msgstr "बाइबिल एप्प में मित्रों की याचना आपकी प्रतीक्षा कर रही है. "
 
 msgid "notifications.friendships.suggestion"
 msgstr "क्या आप {name} से YouVersion पर मित्रता करना चाहते हैं?"
