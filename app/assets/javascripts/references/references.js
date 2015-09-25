@@ -16,6 +16,7 @@ angular.module('yv.reader', [
 	'api.versions',
 	'api.notes',
 	'api.bible',
+	'api.subscriptions',
 	'720kb.tooltips'
 ])
 
@@ -46,7 +47,7 @@ angular.module('yv.reader', [
 	;
 }])
 
-.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window) {
+.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", "Subscription", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window, Subscription) {
 	$scope.version 							= $stateParams.version;
 	$scope.usfm 								= $stateParams.usfm;
 	$scope.readerFontSize 			= 19;
@@ -59,8 +60,10 @@ angular.module('yv.reader', [
 	$scope.highlights 					= [];
 	$scope.bookmarks 						= [];
 	$scope.notes 								= [];
-	$scope.isPlanState 					= $state.current.name == 'planSample';
+	$scope.isPlanState 					= $state.current.name == 'planSample' || $state.current.name == 'userPlan';
 	$scope.planContentReady			= false;
+	$scope.devotionalActive			= false;
+	$scope.devotionalComplete		= false;
 	$scope.month 								= 0;
 
 	hideAllPanels();
@@ -101,7 +104,7 @@ angular.module('yv.reader', [
 	/**
 	 * Load bible chapter from url path
 	 */
-	function loadChapter(location_path) {
+	function loadChapter(location_path, hideDevotional) {
 		// Reset some scope vars
 		$scope.working 						= true;
 		$scope.showReaderBooks 		= false;
@@ -112,7 +115,7 @@ angular.module('yv.reader', [
 		$scope.notes 							= [];
 
 		Bible.getChapter(location_path).success(function(data, status, headers, config) {
-			fillScope(data);
+			fillScope(data, hideDevotional);
 			$scope.working = false;
 		}).error(function(data, status, headers, config) {
 			//TO-DO: Handle Error!
@@ -140,13 +143,16 @@ angular.module('yv.reader', [
 	 *  object and make them available as 
 	 *  part of $scope
 	 */
-	function fillScope(newScope) {
+	function fillScope(newScope, hideDevotional) {
 		angular.extend($scope, newScope);
 
-		if ($scope.isPlanState) {
+		if ($scope.isPlanState && !hideDevotional) {
 			$scope.devotional_first_chapter = $scope.reader_html;
 			$scope.reader_html = $scope.devotional_content;
 			$scope.planContentReady = true;
+			$scope.devotionalActive = true;
+		} else {
+			$scope.devotionalActive = false;
 		}
 
 		//TO-DO: Make Audio Directive
@@ -282,12 +288,28 @@ angular.module('yv.reader', [
 		loadChapter($location.path());
 	}
 
+	$scope.loadChapter = function(toState, toParams) {
+		$scope.usfm = toParams.usfm;
+		loadChapter($state.href(toState, toParams), true);
+		$scope.devotionalComplete = true;
+	};
+
+	$scope.loadDevotional = function() {
+		$scope.usfm = null;
+		$scope.devotionalActive = true;
+		$scope.reader_html = $scope.devotional_content;		
+	}
+
+	$scope.updateSubscription = function() {
+		Subscription.update('juliojones', '1239-craig-groeschels-from-this-day-forward', {}, 'token');
+	};
+
 	/**
 	 * Don't reload controller if navigating back to this same state, instead
 	 * just make the new chapter call and switch the URL in the browser
 	 */
 	$rootScope.$on("YV:reloadState", function(event, stateInfo) {
-			console.log(stateInfo);
+		  console.log("I got the YV:reloadState Event");
 		 	var toState 	= stateInfo[0]; 
 		 	var toParams 	= stateInfo[1];
 

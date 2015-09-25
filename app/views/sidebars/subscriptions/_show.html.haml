@@ -46,7 +46,9 @@
   %h3.hd
     = t("plans.read today")
   %ul.menu.basic
-    %li= t("plans.devotional")  
+    %li
+      %a{"ng-click" => "loadDevotional()", "ng-class" => "{ active: devotionalActive, complete: devotionalComplete }"}    
+        = t("plans.devotional")  
     - unless references.empty?
       - references.each_with_index do |ref,index|
         %li
@@ -65,17 +67,24 @@
               = ref.reference.safe_human
             - else
           -# hrref: (content_page == index) ? nil : subscription_path(user_id: current_user.to_param, id: subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])
-          %a{"ui-sref-options"=>"{reload:true}", "ui-sref" => "userPlan({version: #{ref.reference.version.to_s}, usfm: '#{ref.reference.chapter_usfm.downcase}'})"}
+          %a{"ng-click" => "loadChapter('reader', {version: #{ref.reference.version.to_s}, usfm: '#{ref.reference.chapter_usfm.downcase}'})", "ng-class" => "{active:usfm == '#{ref.reference.chapter_usfm.downcase}'}"}
             = ref.reference.safe_human
 
--# if reading.devotional
-  #widget-devotional.widget
+-if reading.devotional
+  #widget-devotional.widget.ng-hide
     %h3.hd
 
     %div.bd
       = reading.devotional.html_safe
 
-
+#footer-nav.white
+  .row.pad-row-top
+    .columns.large-6.medium-10.medium-offset-1.large-offset-3.text-center
+      %ul.button-group.radius.even-2
+        %li
+          %a.button.green= 'Previous'
+        %li
+          %a.button.green{"ng-click" => "updateSubscription()"}= 'Next'          
 
 -#
   .mobile#mobile-sb-subscription{class: ('initial' if presenter.initial_load?)}
