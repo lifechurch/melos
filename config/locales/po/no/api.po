@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nb_NO <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -180,6 +180,9 @@ msgstr "{name} kommenterte bokmerket: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} kommenterte ditt nye vennskap med {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name}kommenterte ditt nye vennskap“{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} kommenterte din markering: “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} kommenterte også {moment_owner_name} sitt bokmerke: �
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} kommenterte også {moment_owner_name}s nye vennskap med {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}kommenterte også det nye vennskapet ditt med {moment_owner_name}:“{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name}kommenterte også sitt nye vennskap med{moment_owner_name}:“{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} kommenterte også {moment_owner_name} sin utheving: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} kommenterte også bokmerket sitt: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} kommenterte også sitt nye vennskap med {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name}kommenterte også det nye vennskapet med deg:”{comment}“"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} kommenterte også sin utheving: “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} er nå din venn"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} ønsker å være din venn på YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Du har venneforespørsler som venter i Bibel-appen"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Vil du være venner med {name} på YouVersion?"

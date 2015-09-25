@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:28-0609\n"
-"PO-Revision-Date: 2015-07-31 10:28-0609\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -180,6 +180,9 @@ msgstr "{name}さんがあなたのブックマークにコメントしました
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{friend_name} さんとお友達になったことに、{name}さんがコメントしました: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name}さんが、あなたに新しい友だちができたことにコメントしました「{comment}」"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}さんがあなたのハイライトにコメントしました： “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name}さんが{moment_owner_name}さんのブックマーク�
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{moment_owner_name}さんが{friend_name}さんとお友達になったことにも、{commenter_name}さんがコメントしました: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}さんが、あなたと{moment_owner_name}さんが友だちになったことにコメントしました「{comment}」"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name}さんが、{moment_owner_name}さんと友だちになったことにコメントしました「{comment}」"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}さんが{moment_owner_name}さんのハイライトにコメントしました： “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name}さんがブックマークにコメントしまし�
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{friend_name}さんとお友達になったことにも、{moment_owner_name}さんがコメントしました: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name}さんが、あなたと友だちになったことにコメントしました「{comment}」"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}さんがハイライトにコメントしました： “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name}さんと友達になりました。"
 
 msgid "notifications.friendships.offer"
 msgstr "{name}さんがYouVersionで友達申請しています。"
+
+msgid "notifications.friendships.pending"
+msgstr "聖書アプリで未確認の友達申請があります"
 
 msgid "notifications.friendships.suggestion"
 msgstr "{name}さんとYouVersionで友達になりますか？"

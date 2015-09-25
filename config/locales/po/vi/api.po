@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-14 08:51-0600\n"
+"PO-Revision-Date: 2015-09-14 08:51-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: vi <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -180,6 +180,9 @@ msgstr "{name} bình luận về đánh dấu của bạn: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} bình luận về việc kết bạn với {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} bình luận về việc kết bạn vừa rồi: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} bình luận về tô màu của bạn: “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} bình luận về đánh dấu của {moment_owner_name
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} cũng bình luận về việc kết bạn giữa {moment_owner_name} và {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} cũng bình luận về việc bạn kết nối với {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} cũng bình luận về việc kết bạn với {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} bình luận về tô màu của {moment_owner_name}: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} bình luận về đánh dấu của bạn ấy: “
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} cũng bình luận về việc kết bạn với {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} cũng bình luận về việc kết bạn vừa qua: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} bình luận về tô màu của bạn ấy: “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} vừa kết bạn với bạn"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} muốn kết bạn với bạn trên YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Bạn nhận được yêu cầu kết bạn trong App Kinh Thánh"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Bạn muốn kết bạn với {name} trên YouVersion?"

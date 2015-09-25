@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-08 11:09-0609\n"
+"PO-Revision-Date: 2015-09-08 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cs <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -180,6 +180,9 @@ msgstr "{name} přidal komentář k vaší záložce: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} přidal/a komentář k vašemu novému přátelství s {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} přidal komentář nového přátelství: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} přidal komentář k vašemu zvýraznění: “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} také okomentoval záložku uživatele {moment_owner_na
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} přidal/a komentář k novému přátelství uživ. {moment_owner_name} s uživ. {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} také přídal komentář nové přátelství s {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} přidal komentář k novému přátelství s {moment_owner_name}:“{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} také okomentoval zvýraznění uživatele {moment_owner_name}: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} také okomentoval svoji záložku: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} přidal/a komentář k přátelství s {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} také přidal komentář k novému přátelství s: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} také okomentoval svoje zvýraznění: “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} je nyní vaším přítelem"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} se chce stát vaším přítelem na YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "V aplikaci Bible na vás čekají nové žádosti od přátel"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Chcete přidat uživatele {name} jako přítele na YouVersion?"

@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-17 08:43-0600\n"
-"PO-Revision-Date: 2015-03-17 08:43-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sk <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -180,6 +180,9 @@ msgstr "Používateľ {name} pridal komentár k vašej záložke: \"{comment}\""
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "Používateľ {name} pridal komentár k vášmu novému priateľstvu s používateľom {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name}pridal komentár k tvojmu novému Priateľstvu:“{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Používateľ {name} pridal komentár k vášmu zvýrazneniu: \"{comment}\""
 
@@ -201,6 +204,12 @@ msgstr "Používateľ {commenter_name} tiež pridal komentár k záložke použ�
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "Používateľ {commenter_name} tiež pridal komentár k novému priateľstvu používateľa {moment_owner_name} s používateľom {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}tiež pridal komentár k tvojmu novému Priateľstvu s{moment_owner_name}:“{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name}tiež pridal komentár k novému Priateľstvu s{moment_owner_name}:“{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Používateľ {commenter_name} tiež pridal komentár k zvýrazneniu používateľa {moment_owner_name}: \"{comment}\""
 
@@ -215,6 +224,9 @@ msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojej zálo�
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "Používateľ {moment_owner_name} tiež pridal komentár k jeho novému priateľstvu s používateľom {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name}tiež pridal komentár k novému Priateľstvu s tebou:{comment}"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojmu zvýrazneniu: \"{comment}\""
@@ -245,6 +257,9 @@ msgstr "Používateľ {name} je teraz vašim priateľom"
 
 msgid "notifications.friendships.offer"
 msgstr "Používateľ {name} chce byť vašim priateľom na YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Máte žiadosti o priateľstvo čakajúce v Aplikácii Biblia"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Chcete byť s používateľom {name} priateľom na YouVersion?"

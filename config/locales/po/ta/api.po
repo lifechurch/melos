@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-17 09:45-0609\n"
-"PO-Revision-Date: 2015-08-17 09:45-0609\n"
+"POT-Creation-Date: 2015-09-09 16:32-0609\n"
+"PO-Revision-Date: 2015-09-09 16:32-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ta <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -177,6 +177,9 @@ msgstr "{name} உங்கள் புத்தகக்குறியில�
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} உங்களின் {friend_name} -னோடு உள்ள புதிய நட்பை குறித்து கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "உங்கள் புதிய நட்பை பற்றி {name} ம் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} உங்கள் சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
@@ -198,6 +201,12 @@ msgstr "{commenter_name}-ம் {moment_owner_name}-ன் புத்தகக
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} கூட {moment_owner_name}-க்கு {friend_name} -னோடுள்ள புதிய நட்பை குறித்து கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{moment_owner_name} உடன் உங்கள் புதிய நட்பை பற்றி {commenter_name} ம் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{moment_owner_name} உடன் அவர்களின் புதிய நட்பை பற்றி {commenter_name} ம் கருத்து தெரிவித்துள்ளார்: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}-ம் {moment_owner_name}-ன் சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
@@ -212,6 +221,9 @@ msgstr "{moment_owner_name}-ம் அவர்களது புத்தக�
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} - ம் கூட {friend_name} -னோடுள்ள அவர்களின் நட்பை குறித்து கருத்து தெரிவித்துள்ளனர்: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "அவர்களுடன் உள்ள உங்கள் புதிய நட்பை பற்றி {moment_owner_name} ம் கருத்து தெரிவித்துள்ளார்: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}-ம் அவர்களது சிறப்புக்கூறில் கருத்து தெரிவித்துள்ளார்: “{comment}”"
@@ -242,6 +254,9 @@ msgstr "{name} இப்போது உங்கள் நண்பர்"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} YouVersion-ல் உங்கள் நண்பராக விரும்புகிறார்"
+
+msgid "notifications.friendships.pending"
+msgstr "பைபிள் பயன்பாட்டில் உங்களுக்கு நட்பு கோரிக்கைகள் காத்துக்கொண்டிருக்கின்றன."
 
 msgid "notifications.friendships.suggestion"
 msgstr "நீங்கள் YouVersion-ல்  {name}-டு நண்பராக விரும்புகிறீர்களா?"

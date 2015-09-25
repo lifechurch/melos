@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-09 13:09-0600\n"
-"PO-Revision-Date: 2015-03-09 13:09-0600\n"
+"POT-Creation-Date: 2015-09-14 08:51-0600\n"
+"PO-Revision-Date: 2015-09-14 08:51-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hr <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -180,6 +180,9 @@ msgstr "Korisnik {name} je komentirao tvoju oznaku: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "Korisnik {name} je komentirao tvoje prijateljstvo s korisnikom {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} komentira tvoje novo prijateljstvo: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Korisnik {name} je komentirao istaknuto: “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "Oznaka korisnika {moment_owner_name}, “{comment}”, je isto komentira
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} također komentira prijateljstvo vlasnika trenutka {moment_owner_name} s {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} također komentira tvoje novo prijateljstvo s korisnikom {moment_owner_name}:“{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} također komentira svoje novo prijateljstvo s korisnikom {moment_owner_name}:“{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Korisnik {commenter_name} je isto komentirao: “{comment}”, što je istaknuo korisnik {moment_owner_name}"
 
@@ -215,6 +224,9 @@ msgstr "Korisnik {moment_owner_name} je komentirao svoju oznaku: “{comment}”
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} također komentira tvoje novo prijateljstvo s korisnikom {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} također komentira svoje novo prijateljstvo s tobom: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Korisnik {moment_owner_name} je također komentirao istaknuto: “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} je sad tvoj prijatelj"
 
 msgid "notifications.friendships.offer"
 msgstr "Korisnik {name} želi biti tvoj prijatelj na YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Imaš zahtjeva za prijateljstvom na koje treba odgovoriti u aplikaciji Biblija"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Želiš li biti prijatelj s korisnikom {name} na YouVersion?"

@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: af <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -180,6 +180,9 @@ msgstr "{name} het op jou boekmerk kommentaar gelewer: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} het kommentaar gelewer op jou nuwe vriendskap met {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} het kommentaar gelewer oor u nuwe vriendskap: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} het op jou gemerkte nota kommentaar gelewer: “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} het ook op {moment_owner_name} se boekmerk kommentaar g
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} het ook kommentaar gelewer op {moment_owner_name} se nuwe vriendskap met {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} het ook kommentaar gelewer oor jou nuwe vriendskap met {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} het ook kommentaar gelewer oor hulle nuwe vriendskap met{moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} het ook op {moment_owner_name} se gemerkte nota kommentaar gelewer: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} het ook op hulle eie boekmerk kommentaar gelewer: �
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} het ook kommentaar gelewer op hulle nuwe vriendskap met  {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} het ook gereageer op hulle nuwe Vriendskap met jou: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} het ook op hulle gemerkte nota kommentaar gelewer: “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} is nou jou vriend"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} wil jou vriend wees op YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Jy het Vriendskap versoeke wat wag in die Bybel Toepassing"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Wil jy vriende wees met {name} op YouVersion?"

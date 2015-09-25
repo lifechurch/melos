@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-17 09:45-0609\n"
-"PO-Revision-Date: 2015-08-17 09:45-0609\n"
+"POT-Creation-Date: 2015-09-24 12:38-0609\n"
+"PO-Revision-Date: 2015-09-24 12:38-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fil_PH <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -180,6 +180,9 @@ msgstr "Nagkomento si {name} sa iyong bookmark: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "Si {name} ay nagkomento sa iyong pakikipagkaibigan kay {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} ay nagkomento sa iyong bagong Pakikipagkaibigan: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Nagkomento si {name} sa iyong inihaylayt: “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "Si {commenter_name} ay nagkomento rin sa bookmark ni {moment_owner_name}
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "Si {commenter_name} ay nagkomento rin sa pakikipagkaibigan ni {moment_owner_name} kay {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} ay nagkomento rin sa iyong bagong Pakikipagkaibigan kay {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} ay nagkomento rin sa kanilang bagong Pakikipagkaibigan kay {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Si {commenter_name} ay nagkomento rin sa haylayt ni {moment_owner_name}: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "Si {moment_owner_name} ay nagkomento rin sa kanilang bookmark: “{comme
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "Si {moment_owner_name} ay nagkomento rin sa kanyang pakikipagkaibigan kay {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} ay nagkomento rin sa kanilang bagong Pakikipagkaibigan sa iyo: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Nagkomento rin si {moment_owner_name} sa kanilang haylayt: “{comment}”"
@@ -245,6 +257,9 @@ msgstr "Ngayon ay kaibigan mo na si {name}"
 
 msgid "notifications.friendships.offer"
 msgstr "Nais kang maging kaibigan ni {name} sa YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "May mga hiling sa iyo ng Pakikipagkaibigan na naghihintay sa Bible App"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Nais mo bang kaibiganin si {name} sa YouVersion?"

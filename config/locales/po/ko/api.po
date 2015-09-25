@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-21 09:01-0600\n"
+"PO-Revision-Date: 2015-09-21 09:01-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ko <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -183,6 +183,9 @@ msgstr "{name}님이 회원님의 책갈피에 댓글을 남겼습니다. :\"{co
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} 님이  {friend_name}님과 친구맺은 것에 대해서 글을 남겼습니다:   {comment}"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} 님이 회원님이 새로 친구를 맺은 것에 대해 글을 남겼습니다: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}님이 회원님의 하이라이트에 댓글을 남겼습니다: \"{comment}\""
 
@@ -204,6 +207,12 @@ msgstr "{commenter_name}님도 {moment_owner_name}님의 책갈피에 댓글을 
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name}도 {moment_owner_name}이 {friend_name}과 새로 친구 맺은 것에 대하여 글을 남겼습니다: \"{comment}\""
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}님도 회원님이 {moment_owner_name}님과 새로 친구 맺은 것에 대해서 글을 남겼습니다: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name}님도 {moment_owner_name}님과 새로 친구 맺은 것에 대해 글을 남겼습니다: \"{comment}\""
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}님도 {moment_owner_name}님의 하이라이트에 댓글을 남겼습니다: \"{comment}\""
 
@@ -218,6 +227,9 @@ msgstr "{moment_owner_name}님도  책갈피에 댓글을 남겼습니다:  \"{c
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name}님도 {friend_name}님과 새로 친구 맺은 것에 대해서 글을 남겼습니다: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name}님도 회원님과 새로 친구를 맺은 것에 대해 글을 남겼습니다: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name}님도 하이라이트에 댓글을 남겼습니다: \"{comment}\""
@@ -248,6 +260,9 @@ msgstr "{name}님은 이제 회원님의 친구입니다."
 
 msgid "notifications.friendships.offer"
 msgstr "{name}님이 회원님과 YouVersion 친구가 되고 싶어합니다."
+
+msgid "notifications.friendships.pending"
+msgstr "성경 앱에 친구 요청이 기다리고 있습니다."
 
 msgid "notifications.friendships.suggestion"
 msgstr "{name}님과 YouVersion 친구가 되시겠습니까?"

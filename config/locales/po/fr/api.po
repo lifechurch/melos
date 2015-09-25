@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -180,6 +180,9 @@ msgstr "{name} a commenté votre favori : \"{comment}\""
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} a commenté votre nouvelle amitié avec {friend_name} : “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} a commenté à propos de votre amitié récente: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} a commenté votre centre d’intérêt: \"{comment}\""
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} a également commenté le favori de {moment_owner_name}
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} a aussi commenté la nouvelle amitié de {moment_owner_name} avec {friend_name} : “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} a aussi commenté à propos de votre amitié récente avec {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} a aussi commenté à propos de son amitié récente avec {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} a également commenté la surbrillance de {moment_owner_name}: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} a également commenté son favori : \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} a aussi commenté sa nouvelle amitié avec {friend_name} : “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} a aussi commenté à propos de votre amitié: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} a également commenté sa surbrillance : “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} est votre ami maintenant"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} veut être votre ami sur YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Une demande d'ami vous attend dans la Bible App"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Voulez-vous être amis avec {name} sur YouVersion?"

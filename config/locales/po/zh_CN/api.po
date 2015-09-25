@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -183,6 +183,9 @@ msgstr "{name} 评论了你的书签: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} 评论了您的新联系 {friend_name} : “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} 评论了你的新联系：“{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} 评论了你的高亮经文: “{comment}”"
 
@@ -204,6 +207,12 @@ msgstr "{commenter_name} 也评论了 {moment_owner_name} 的书签标记: “{c
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} 也评论了 {moment_owner_name} 的新联系 {friend_name} : “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}也评论了你与{moment_owner_name}的新联系：“{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} 也评论了他/她与{moment_owner_name}的新联系：“{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} 也评论了 {moment_owner_name} 的高亮标记: “{comment}”"
 
@@ -218,6 +227,9 @@ msgstr "{moment_owner_name} 也评论了他们的书签标记: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} 也评论了他的新联系 {friend_name} : “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} 也评论了他/她与你的新联系：“{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} 也评论了他们的高亮标记: “{comment}”"
@@ -248,6 +260,9 @@ msgstr "{name} 现已成为你的好友"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} 希望成为你在 YouVersion 的好友"
+
+msgid "notifications.friendships.pending"
+msgstr "圣经软件里有发自朋友的请求"
 
 msgid "notifications.friendships.suggestion"
 msgstr "你希望和 {name} 成为在 YouVersion 上的好友吗?"

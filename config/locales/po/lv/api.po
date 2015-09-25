@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:28-0609\n"
-"PO-Revision-Date: 2015-07-31 10:28-0609\n"
+"POT-Creation-Date: 2015-09-08 11:09-0609\n"
+"PO-Revision-Date: 2015-09-08 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: lv <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
@@ -177,6 +177,9 @@ msgstr "{name} komentēja Tavu grāmatzīmi: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} komentēja tavu draudzību ar {friend_name}: \"{comment}\""
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} komentēja Tavu jauno draudzību: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}komentēja tevis izcelto \"{comment}\""
 
@@ -198,6 +201,12 @@ msgstr "{commenter_name}arī komentēja {moment_owner_name}grāmatzīmi \"{comme
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name}arī komentēja {moment_owner_name} jauno draudzību ar {friend_name}: \"{comment}\""
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} arī komentēja Tavu jauno draudzību ar {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} arī komentēja jauno draudzību ar {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}arī komentēja {moment_owner_name} izcelto \"{comment}\""
 
@@ -212,6 +221,9 @@ msgstr "{moment_owner_name}arī komentēja savu grāmatzīmi: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name}arī komentēja savu jauno draudzību ar {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} arī komentēja viņu jauno draudzību ar Tevi: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} arī komentēja paša izcelto: \"{comment}\""
@@ -242,6 +254,9 @@ msgstr "{name} nu ir tavs draugs"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} grib kļūt par tavu draugu YouVersion aplikācijā"
+
+msgid "notifications.friendships.pending"
+msgstr "Bībeles aplikācijā Tevi gaida draudzības uzaicinājumi"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Vai vēlies YouVersion aplikācijā būt draugos ar {name}?"

@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-09 13:09-0600\n"
-"PO-Revision-Date: 2015-03-09 13:09-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -180,6 +180,9 @@ msgstr "{name} kommentoi kirjanmerkkiäsi: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} kommentoi uutta ystävyyttäsi käyttäjän {friend_name} kanssa: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} kommentoi uutta Ystävyyttäsi: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} kommentoi korostustasi: “{comment}”"
 
@@ -201,6 +204,12 @@ msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} kirjan
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} uutta ystävyyttä käyttäjän {friend_name} kanssa: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "Myös {commenter_name} kommentoi sinun uutta Ystävyyttäsi {moment_owner_name} kanssa: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "Myös {commenter_name} kommentoi uutta Ystävyyttään henkilön{moment_owner_name} kanssa: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} kommentoi myös käyttäjän {moment_owner_name} korostusta: “{comment}”"
 
@@ -215,6 +224,9 @@ msgstr "{moment_owner_name} kommentoi myös kirjanmerkkiään: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} kommentoi myös uutta ystävyyttään käyttäjän {friend_name} kanssa: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "Myös {moment_owner_name} kommentoi uutta Ystävyyttään sinun kanssasi: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} kommentoi myös korostustaan: “{comment}”"
@@ -245,6 +257,9 @@ msgstr "{name} on nyt ystäväsi"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} haluaa olla ystäväsi YouVersionissa"
+
+msgid "notifications.friendships.pending"
+msgstr "Sinulla on ystäväpyyntöjä odottamassa Raamattusovelluksessa"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Haluatko olla käyttäjän {name} ystävä YouVersionissa?"
