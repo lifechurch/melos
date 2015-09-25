@@ -11,6 +11,8 @@
     - locale_dir = '/pt' if I18n.locale.to_s.eql?('pt-PT')
     - canonicalHref = "https://www.bible.com#{locale_dir}/versions/#{@version.to_param}"
     %link{rel: "canonical", href: canonicalHref}
+    %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/version?id=#{@version.id}"}
+
 - content_for :meta_description do
   = "#{@version.to_s} - #{t('download ad.description copy', language_count: 700)} #{t('download ad.download')}"
 
