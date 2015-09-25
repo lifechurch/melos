@@ -22,6 +22,7 @@
 
   - if ref_deep_link.present?
     %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{ref_deep_link.gsub('version_id','version')}"}
+    %link{rel: "alternate", href: "ios-app://282935706/youversion/#{ref_deep_link}"}
 
   - if verse_view
     - meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
