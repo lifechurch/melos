@@ -1108,7 +1108,7 @@ fr:
                 read heading: "Lire la Bible."
                 read description: "Faites votre choix <a href='%{versions_path}'>parmi des centaines de langues et traductions bibliques</a>. Comparez deux versions côte à côte. Vous pouvez même choisir la taille d'affichage et de police. Faites de votre expérience de la Bible ce que vous attendez."
                 study heading: "Etudier la Bible"
-                study description: "<strong>Surlignez</strong>avec votre couleur préférée, <strong>sauvegardez</strong> vos versets bibliques préférés, et prenez des notes à propos de ce que vous apprenez. Non seulement vous passez le temps dans la Parole de Dieu, mais vous bâtissez aussi une histoire de votre interaction avec la Bible."
+                study description: "<strong>Surlignez</strong> avec votre couleur préférée, <strong>sauvegardez</strong> vos versets bibliques préférés, et prenez des notes à propos de ce que vous apprenez. Non seulement vous passez le temps dans la Parole de Dieu, mais vous bâtissez aussi une histoire de votre interaction avec la Bible."
                 subscribe heading: "S'abonner aux Plans bibliques."
                 subscribe description: "Parcourez la Bible en entier, concentrez-vous sur un sujet, ou lisez une pensée d'un enseignant qualifié. Choisissez votre plan et chaque jour vous trouverez une sélection rien que pour vous."
                 download heading: "Prenez la Bible avec vous."
