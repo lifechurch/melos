@@ -113,15 +113,26 @@ class Reference < YV::Resource
     for_chapter = opts[:chapter]
     return attributes.content if for_chapter || chapter?
 
+    # Partial Chapter Selection
     case opts[:as]
       when :plaintext
-        selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
-        # Some bibles split verses up into sub-verses. Join them together with spaces (and strip trailing whitespace)
-        content_document.css(selector).map(&:text).join(" ").rstrip
-      else #:html
-        selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
-        content_document.css(selector).to_html
+        plaintext = true
+      else
+        plaintext = false
     end
+
+    Rails.cache.fetch(partial_chapter_cache_key(plaintext, version, chapter_usfm, verses), expires_in: 12.hours) do
+      case opts[:as]
+        when :plaintext
+          selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
+          # Some bibles split verses up into sub-verses. Join them together with spaces (and strip trailing whitespace)
+          content_document.css(selector).map(&:text).join(" ").rstrip
+        else #:html
+          selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
+          content_document.css(selector).to_html
+      end
+    end
+
   end
 
   def content_plain
@@ -460,6 +471,14 @@ class Reference < YV::Resource
     # for lazy-loading to work
     if verses.nil? then @is_chapter = true and return [] end
     return YV::ReferenceString.parse_verses(verses).map(&:to_s)
+  end
+
+  def partial_chapter_cache_key(plaintext, version, chapter_usfm, verse_array)
+    if plaintext
+      "partial_chapter/" + version.to_s + "/" + chapter_usfm + "." + verse_array[0].to_s + "-" + verse_array[-1].to_s
+    else
+      "partial_chapter_html/" + version.to_s + "/" + chapter_usfm + "." + verse_array[0].to_s + "-" + verse_array[-1].to_s
+    end
   end
 
 end
