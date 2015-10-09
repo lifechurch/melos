@@ -110,27 +110,29 @@ class Reference < YV::Resource
   #   returns bible text in plain text
 
   def content(opts={})
-    for_chapter = opts[:chapter]
+    for_chapter = true
+    for_chapter = opts[:chapter] unless(opts.empty? || opts.nil? || !opts.has_key?(:chapter))
+
     return attributes.content if for_chapter || chapter?
 
-    # Partial Chapter Selection
     case opts[:as]
       when :plaintext
-        plaintext = true
-      else
-        plaintext = false
-    end
-
-    Rails.cache.fetch(partial_chapter_cache_key(plaintext, version, chapter_usfm, verses), expires_in: 12.hours) do
-      case opts[:as]
-        when :plaintext
-          selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
-          # Some bibles split verses up into sub-verses. Join them together with spaces (and strip trailing whitespace)
-          content_document.css(selector).map(&:text).join(" ").rstrip
-        else #:html
-          selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
-          content_document.css(selector).to_html
-      end
+        if attributes.partial_content_plaintext.nil?
+          attributes.partial_content_plaintext = Rails.cache.fetch(partial_chapter_cache_key(true, version, chapter_usfm, verses), expires_in: 12.hours) do
+            selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
+            # Some bibles split verses up into sub-verses. Join them together with spaces (and strip trailing whitespace)
+            content_document.css(selector).map(&:text).join(" ").rstrip
+          end
+        end
+        attributes.partial_content_plaintext
+      else #:html
+        if attributes.partial_content_html.nil?
+          attributes.partial_content_html = Rails.cache.fetch(partial_chapter_cache_key(false, version, chapter_usfm, verses), expires_in: 12.hours) do
+            selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
+            content_document.css(selector).to_html
+          end
+        end
+        attributes.partial_content_html
     end
 
   end
