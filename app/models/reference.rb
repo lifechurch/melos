@@ -118,7 +118,7 @@ class Reference < YV::Resource
     case opts[:as]
       when :plaintext
         if attributes.partial_content_plaintext.nil?
-          attributes.partial_content_plaintext = Rails.cache.fetch(partial_chapter_cache_key(true, version, chapter_usfm, verses), expires_in: 12.hours) do
+          attributes.partial_content_plaintext = Rails.cache.fetch(partial_chapter_cache_key(true, version, chapter_usfm, verses), expires_in: 48.hours) do
             selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
             # Some bibles split verses up into sub-verses. Join them together with spaces (and strip trailing whitespace)
             content_document.css(selector).map(&:text).join(" ").rstrip
