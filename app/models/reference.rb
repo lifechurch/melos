@@ -110,18 +110,31 @@ class Reference < YV::Resource
   #   returns bible text in plain text
 
   def content(opts={})
-    for_chapter = opts[:chapter]
+    for_chapter = true
+    for_chapter = opts[:chapter] unless(opts.empty? || opts.nil? || !opts.has_key?(:chapter))
+
     return attributes.content if for_chapter || chapter?
 
     case opts[:as]
       when :plaintext
-        selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
-        # Some bibles split verses up into sub-verses. Join them together with spaces (and strip trailing whitespace)
-        content_document.css(selector).map(&:text).join(" ").rstrip
+        if attributes.partial_content_plaintext.nil?
+          attributes.partial_content_plaintext = Rails.cache.fetch(partial_chapter_cache_key(true, version, chapter_usfm, verses), expires_in: 48.hours) do
+            selector = verses.map{|v_num|".v#{v_num} .content"}.join(', ')
+            # Some bibles split verses up into sub-verses. Join them together with spaces (and strip trailing whitespace)
+            content_document.css(selector).map(&:text).join(" ").rstrip
+          end
+        end
+        attributes.partial_content_plaintext
       else #:html
-        selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
-        content_document.css(selector).to_html
+        if attributes.partial_content_html.nil?
+          attributes.partial_content_html = Rails.cache.fetch(partial_chapter_cache_key(false, version, chapter_usfm, verses), expires_in: 12.hours) do
+            selector = verses.map{|v_num|".v#{v_num}"}.join(', ')
+            content_document.css(selector).to_html
+          end
+        end
+        attributes.partial_content_html
     end
+
   end
 
   def content_plain
@@ -460,6 +473,14 @@ class Reference < YV::Resource
     # for lazy-loading to work
     if verses.nil? then @is_chapter = true and return [] end
     return YV::ReferenceString.parse_verses(verses).map(&:to_s)
+  end
+
+  def partial_chapter_cache_key(plaintext, version, chapter_usfm, verse_array)
+    if plaintext
+      "partial_chapter/" + version.to_s + "/" + chapter_usfm + "." + verse_array[0].to_s + "-" + verse_array[-1].to_s
+    else
+      "partial_chapter_html/" + version.to_s + "/" + chapter_usfm + "." + verse_array[0].to_s + "-" + verse_array[-1].to_s
+    end
   end
 
 end
