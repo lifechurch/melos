@@ -110,7 +110,7 @@ class Reference < YV::Resource
   #   returns bible text in plain text
 
   def content(opts={})
-    for_chapter = true
+    for_chapter = false
     for_chapter = opts[:chapter] unless(opts.empty? || opts.nil? || !opts.has_key?(:chapter))
 
     return attributes.content if for_chapter || chapter?
