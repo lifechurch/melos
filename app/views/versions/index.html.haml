@@ -15,7 +15,7 @@
   - else
     %h1
       = "#{t('bible versions')}"
-  = cache "versions_bylang_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
+  = cache "versions_bylang_#{I18n.locale}", expires_in: YV::Caching.a_long_time do
     %ul
       - @versions_by_lang.each do |lang, versions|
         - if versions.present?
