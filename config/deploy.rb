@@ -54,6 +54,7 @@ namespace :memcached do
     on roles(:web) do
       within release_path do
         execute :rake, 'memcached:flush'
+        execute :rake, 'cache:clear'
       end
     end
   end
