@@ -58,3 +58,16 @@ namespace :memcached do
     end
   end
 end
+
+namespace :cache do
+  desc "Flush All Caches"
+  task :clearall do
+    on roles(:web) do
+      within release_path do
+        execute :rake, 'memcached:flush'
+        execute :rake, 'cache:clear'
+        execute :rake, 'tmp:cache:clear'
+      end
+    end
+  end
+end
