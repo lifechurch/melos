@@ -48,7 +48,7 @@ YouversionWeb::Application.configure do
   # config.logger = SyslogLogger.new
 
   # Use a different cache store in production
-  config.cache_store = :dalli_store
+  config.cache_store = :dalli_store, {  :expires_in => 1.day, :compress => true }
 
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
