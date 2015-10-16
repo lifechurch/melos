@@ -76,9 +76,9 @@ input {
     background-color: #FFFFFF;
     height: rem-calc(30);
     width: rem-calc(32);
-    border-color: #CCCCCC;
+    border-color: #DDDDDD;
     background: #fff url("../assets/icon-search.svg") no-repeat center center;
-    background-size: rem-calc(16);    
+    background-size: 16px;
     border-left:none;
 
     &:hover {
@@ -114,5 +114,5 @@ a {
 	&[disabled] {
 		opacity: 0.5;
 		pointer-events: none;
-	}	
+	}
 }
