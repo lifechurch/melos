@@ -8,6 +8,7 @@
   i18n_css_class = "en"
   prelaunch = false
   youtube_url = "//www.youtube.com/embed/97YQAoCjpcs?rel=0"
+  dir = "ltr"
   facebook_locale = "en_US"
   if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then
     i18n_css_class = "es"
@@ -61,11 +62,18 @@
     meta_url = "#{request.protocol}#{request.host_with_port}/ru/kids"
     facebook_locale = "ru"
     youtube_url = ""
+  elsif I18n.locale.to_s.eql?("ar") then
+    i18n_css_class = "ar"
+    i18n_image_dir = "/ar"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ar/kids"
+    facebook_locale = "ar"
+    youtube_url = ""
+    dir = "rtl"
   end
 
 
 !!! 5
-%html
+%html{dir: dir}
   %head
     %title= "#{t.call("meta.kids_app.title")} - #{t.call("meta.best kids app")} #{t.call('kids.free download')} | #{t.call('kids.feature 2')} | Android, iPhone, iPad, Android tablets"
     %link{rel: "shortcut icon", href:"/favicon.ico"}
@@ -89,6 +97,7 @@
     %meta{property: "og:locale:alternate", content: "nl_NL"}
     %meta{property: "og:locale:alternate", content: "de_DE"}
     %meta{property: "og:locale:alternate", content: "fr_FR"}
+    %meta{property: "og:locale:alternate", content: "ar_AR"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -108,6 +117,7 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/nl/kids",:rel=>"alternate",:hreflang=>"nl"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/de/kids",:rel=>"alternate",:hreflang=>"de"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/fr/kids",:rel=>"alternate",:hreflang=>"fr"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ar/kids",:rel=>"alternate",:hreflang=>"ar"}
 
     - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
     %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}#{locale_dir}/kids"}
@@ -145,7 +155,7 @@
 
       -# !Logo and intro copy
       -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr"))
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") )
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids
@@ -276,11 +286,12 @@
       "description": "#{t.call('meta.kids_app.description')}",
       "aggregateRating":{
       "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "ratingCount": "55,278"
+      "ratingValue": "4.6",
+      "ratingCount": "73,085"
       },
       "offers":{
       "@type": "Offer",
       "price": "Free"
-      }
+      },
+      "operatingSystem": "Android, iPhone, iPad"
       }

@@ -26,6 +26,7 @@ YouversionWeb::Application.routes.draw do
   get "/ertong",        to: "redirects#ertong"
   get "/%E5%84%BF%E7%AB%A5",           to: "redirects#ertong"
   get "/%EC%96%B4%EB%A6%B0%EC%9D%B4",  to: "redirects#aideul"
+  get "/%D8%A7%D8%B7%D9%81%D8%A7%D9%84",   to: "redirects#ar_kids"
   get "/criancas",      to: "redirects#criancas"
   get "/crian%C3%A7as", to: "redirects#criancas"
   get "/deti",          to: "redirects#deti"

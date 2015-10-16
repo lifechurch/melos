@@ -147,7 +147,7 @@ id:
             facebook link: "http://www.bible.com/anak"
             facebook redirect: "http://www.bible.com/anak"
             twitter description: "Aplikasi Alkitab untuk Anak-Anak dari @YouVersion ada di sini! Menyenangkan dan gratis total. Unduh: bible.com/anak"
-            twitter hashtags: "kidsbible"
+            twitter hashtags: "AlkitabAnak"
             email: "Email"
             email subject: "Aplikasi Alkitab untuk Anak-Anak ada di sini!"
             email body: "Berita besar - Aplikasi Alkitab untuk Anak-Anak ada di sini! Gratis total dan tersedia untuk perangkat iPhone, iPad, iPod touch, dan Android. Aplikasi ini adalah kumpulan cerita Alkitab yang terus bertambah dengan animasi sentuh-aktif dan aktivitas belajar, cocok untuk membantu anak memahami kisah-kisah besar Alkitab. Masuk ke bible.com/anak pada perangkat seluler Anda untuk mengunduhnya hari ini."
@@ -156,7 +156,7 @@ id:
             in partnership: "rekanan dengan"
             one hope: "One Hope: Isi Alkitab yang luar biasa untuk Anak-anak"
         links: 
-            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            apple: "https://itunes.apple.com/id/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Sekarang"

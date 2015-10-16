@@ -93,7 +93,7 @@ zh-CN:
         users password length: "密码应至少需要有6个字符。"
         users password required: "请务必输入密码。"
         users username alpha numeric extra: "用户名只能包含字母、数字和减号。"
-        users username not available: "您选择的用户名不可用。"
+        users username not available: "用户名已有人使用。"
         users username or password invalid: "您提供的用户名或密码无效。"
         users username required: "请务必输入用户名。"
         users first name required: "您必须键入一个名字"

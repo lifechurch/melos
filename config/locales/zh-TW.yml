@@ -93,7 +93,7 @@ zh-TW:
         users password length: "您的密碼應至少要有 6 個字符。"
         users password required: "您必須鍵入密碼。"
         users username alpha numeric extra: "用戶名必須是字母，數字或破折號."
-        users username not available: "您提供的用戶名不存在。"
+        users username not available: "用戶名已有人使用。"
         users username or password invalid: "您提供的用戶名或密碼無效。"
         users username required: "您必須鍵入用戶名。"
         users first name required: "您必須鍵入一個名字。"
