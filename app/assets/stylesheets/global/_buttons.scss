@@ -13,12 +13,13 @@ $button-radius: $radius;
     // We can set $disabled:true to create a disabled transparent button. Default:false
     $disabled: false
   );
-  
-  font-size: rem-calc(14);
-  border-width: rem-calc(2);
-  padding: rem-calc(5 15);
 
-  &:hover {
+  font-size: rem-calc(14);
+  border-width: rem-calc(1);
+  padding: rem-calc(4 10 6);
+
+  &:hover,
+  &:focus {
     background-color: $primary-color !important;
     color: #ffffff !important;
     border-width: rem-calc(2) !important;
@@ -27,15 +28,7 @@ $button-radius: $radius;
   }
 
   @media #{$large-up} {
-    margin-right: rem-calc(20) !important;   
-  }
-
-  @media #{$medium-only} {
-    margin-right: rem-calc(10) !important; 
-  }    
-
-  @media #{$medium-small-only} {
-    padding: rem-calc(5 5);    
+    margin-right: rem-calc(20) !important;
   }
 }
 
@@ -52,7 +45,7 @@ $button-radius: $radius;
     // We can set $disabled:true to create a disabled transparent button. Default:false
     $disabled: false
   );
-  
+
   font-size: rem-calc(14);
   padding: rem-calc(5 10);
   font-weight: bold;
@@ -71,36 +64,40 @@ $button-radius: $radius;
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $primary-color !important;
     color: #ffffff !important;
   }
 
   &.green {
     background-color: $green !important;
-    color: #ffffff !important;  	
+    color: #ffffff !important;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: lighten($green, 15%) !important;
-      color: darken(#ffffff, 5%) !important;    	
+      color: darken(#ffffff, 5%) !important;
     }
   }
 
   &.gray {
     background-color: $gray !important;
-    color: #ffffff !important;  	
+    color: #ffffff !important;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: lighten($gray, 15%) !important;
-      color: darken(#ffffff, 5%) !important;    	
+      color: darken(#ffffff, 5%) !important;
     }
-  }  
+  }
 
   &.blue {
     background-color: $blue !important;
     color: #ffffff !important;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: lighten($blue, 15%) !important;
       color: darken(#ffffff, 5%) !important;
     }
@@ -110,7 +107,8 @@ $button-radius: $radius;
     background-color: $red !important;
     color: #ffffff !important;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: lighten($red, 15%) !important;
       color: darken(#ffffff, 5%) !important;
     }

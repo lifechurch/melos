@@ -2,12 +2,10 @@
   is_home_url       = current_page?(moments_path)
   plan_href = logged_in? ? subscriptions_path(user_id: current_auth.username) : plans_path
 
-.fixed.header{"ng-controller" => "HeaderCtrl as ctrl"}
-  .row.full.b-border.t-border.white.collapse
-    .medium-6.large-5.columns
-      %a.logo.show-for-medium-up{href: "/"}
-        %img{src: "/assets/icons/bible/200/en.png"}      
-      .icon-bar.five-up
+.fixed.header-box{"ng-controller" => "HeaderCtrl as ctrl"}
+  .row.full.b-border.t-border.white.collapse.header
+    .medium-6.large-5.columns.header-left
+      .icon-bar.five-up.hdr-nav
         %a.item{href: moments_path}
           %svg{"enable-background" => "new -291.4 384.3 24.7 24.7", :viewBox => "-291.4 384.3 24.7 24.7", :xmlns => "http://www.w3.org/2000/svg"}
             %path{:class => "line", :d => "M-266.6 396.6l-12.3-12.4-12.4 12.4.7.7 1.6-1.6v13.3h8v-8h4v8h8v-13.3l1.6 1.7.8-.8zm-3.4 11.4h-6v-8h-6v8h-6v-13.3l9-9 9 9v13.3z"}
@@ -16,7 +14,7 @@
         %a.item{href: bible_localized_path}
           %svg{"enable-background" => "new -367 283 40 48", :viewBox => "-367 283 40 48", :xmlns => "http://www.w3.org/2000/svg"}
             %path{:class => "line", :d => "M-361 283c-3.3 0-6 2.7-6 6v36c0 3.3 2.7 6 6 6h30v-4h4v-44h-34zm10 46h-10c-2.2 0-4-1.8-4-4v-36h32v40h-18zm22-4h-2v-38h-33.5c.7-1.2 2-2 3.4-2h32v40z"}
-            %path{:class => "fill", :d => "M-361 283c-3.3 0-6 2.7-6 6v36c0 3.3 2.7 6 6 6h30v-4h4v-44h-34zm32 42h-2v-38h-33.5c.7-1.2 2-2 3.4-2h32v40z"}          
+            %path{:class => "fill", :d => "M-361 283c-3.3 0-6 2.7-6 6v36c0 3.3 2.7 6 6 6h30v-4h4v-44h-34zm32 42h-2v-38h-33.5c.7-1.2 2-2 3.4-2h32v40z"}
           %label=t("bible")
         %a.item{href: plan_href}
           %svg{"enable-background" => "new -282 371 46 50", :viewBox => "-282 371 46 50", :xmlns => "http://www.w3.org/2000/svg"}
@@ -36,125 +34,81 @@
           %label=t("videos.title")
         %a.item{href: '#'}
           %svg{"enable-background" => "new 0 0 24 23", :viewBox => "0 0 24 23", :xmlns => "http://www.w3.org/2000/svg"}
-            %path.line{:d => "M22.6 1c.2 0 .4.2.4.4v17c0 .2-.2.4-.4.4h-7.800000000000001l-.2.2-2.6 2.6-2.6-2.6-.3-.3h-7.7c-.2 0-.4-.2-.4-.4v-17c0-.1.2-.3.4-.3h21.2m0-1h-21.2c-.8 0-1.4.6-1.4 1.4v17c0 .8.6 1.4 1.4 1.4h7.4l3.2 3.2 3.3-3.3h7.4c.8 0 1.4-.6 1.4-1.4v-17c-.1-.7-.7-1.3-1.5-1.3z"}/
-            %path.line{"clip-rule" => "evenodd", :d => "M20.2 9.8c-2-2.3-4.9-3.8-8.2-3.8s-6.2 1.5-8.2 3.8l-1.6-1.5c2.4-2.7 5.9-4.4 9.8-4.4s7.4 1.7 9.8 4.4l-1.6 1.5zM17.1 12.9c-1.2-1.5-3-2.5-5.1-2.5-2.1 0-3.9 1-5.1 2.5l-1.5-1.6c1.6-1.9 4-3.1 6.7-3.1s5.1 1.2 6.7 3.1l-1.7 1.6zM8.4 14.5c.8-1.1 2.1-1.8 3.6-1.8s2.8.7 3.6 1.8l-1.6 1.6c-.4-.7-1.1-1.2-2-1.2-.9 0-1.6.5-2 1.2l-1.6-1.6z", "fill-rule" => "evenodd"}
-            %path.fill{"clip-rule" => "evenodd", :d => "M20.2 9.8c-2-2.3-4.9-3.8-8.2-3.8s-6.2 1.5-8.2 3.8l-1.6-1.5c2.4-2.7 5.9-4.4 9.8-4.4s7.4 1.7 9.8 4.4l-1.6 1.5zm-3.1 3.1c-1.2-1.5-3-2.5-5.1-2.5-2.1 0-3.9 1-5.1 2.5l-1.5-1.6c1.6-1.9 4-3.1 6.7-3.1s5.1 1.2 6.7 3.1l-1.7 1.6zm-8.7 1.6c.8-1.1 2.1-1.8 3.6-1.8s2.8.7 3.6 1.8l-1.6 1.6c-.4-.7-1.1-1.2-2-1.2-.9 0-1.6.5-2 1.2l-1.6-1.6zm15.6-13.1c0-.8-.6-1.4-1.4-1.4h-21.2c-.8 0-1.4.6-1.4 1.4v17c0 .8.6 1.4 1.4 1.4h7.4l3.2 3.2 3.3-3.3h7.4c.8 0 1.4-.6 1.4-1.4v-16.9z", "fill-rule" => "evenodd"}
-          %label Live
-    .medium-6.large-7.columns.pad-head.show-for-medium-up
+            %path.line{:d => "M20.2 9.8c-2-2.3-4.9-3.8-8.2-3.8s-6.2 1.5-8.2 3.8l-1.6-1.5c2.4-2.7 5.9-4.4 9.8-4.4s7.4 1.7 9.8 4.4l-1.6 1.5zM17.1 12.9c-1.2-1.5-3-2.5-5.1-2.5-2.1 0-3.9 1-5.1 2.5l-1.5-1.6c1.6-1.9 4-3.1 6.7-3.1s5.1 1.2 6.7 3.1l-1.7 1.6zM8.4 14.5c.8-1.1 2.1-1.8 3.6-1.8s2.8.7 3.6 1.8l-1.6 1.6c-.4-.7-1.1-1.2-2-1.2-.9 0-1.6.5-2 1.2l-1.6-1.6z"}
+            %path.line{:d => "M22.6 1c.2 0 .4.2.4.4v17c0 .2-.2.4-.4.4h-7.800000000000001l-.2.2-2.6 2.6-2.6-2.6-.3-.3h-7.7c-.2 0-.4-.2-.4-.4v-17c0-.1.2-.3.4-.3h21.2m0-1h-21.2c-.8 0-1.4.6-1.4 1.4v17c0 .8.6 1.4 1.4 1.4h7.4l3.2 3.2 3.3-3.3h7.4c.8 0 1.4-.6 1.4-1.4v-17c-.1-.7-.7-1.3-1.5-1.3z"}
+            %path.fill{:d => "M20.2 9.8c-2-2.3-4.9-3.8-8.2-3.8s-6.2 1.5-8.2 3.8l-1.6-1.5c2.4-2.7 5.9-4.4 9.8-4.4s7.4 1.7 9.8 4.4l-1.6 1.5zm-3.1 3.1c-1.2-1.5-3-2.5-5.1-2.5-2.1 0-3.9 1-5.1 2.5l-1.5-1.6c1.6-1.9 4-3.1 6.7-3.1s5.1 1.2 6.7 3.1l-1.7 1.6zm-8.7 1.6c.8-1.1 2.1-1.8 3.6-1.8s2.8.7 3.6 1.8l-1.6 1.6c-.4-.7-1.1-1.2-2-1.2-.9 0-1.6.5-2 1.2l-1.6-1.6zm15.6-13.1c0-.8-.6-1.4-1.4-1.4h-21.2c-.8 0-1.4.6-1.4 1.4v17c0 .8.6 1.4 1.4 1.4h7.4l3.2 3.2 3.3-3.3h7.4c.8 0 1.4-.6 1.4-1.4v-16.9z"}
+          %label=t("live")
+        - if current_auth
+          %a.item{href: user_path(current_user.username)}
+            %svg{"enable-background" => "new -291 385 24 23", :viewBox => "-291 385 24 23", :xmlns => "http://www.w3.org/2000/svg"}
+              %path{:class => "line", :d => "M-279 386.1c2.4 0 4.5 1.8 4.9 4.2.1.5.1.9 0 1.4l-.5 3.5c-.3 2.1-2.2 3.8-4.4 3.8h-.6c-1.9-.3-3.5-1.8-3.7-3.7l-.5-3.5c-.2-1.3.1-2.6.9-3.6.8-1.1 1.9-1.7 3.2-1.9.2-.2.5-.2.7-.2m-.3 17c3.4 0 6.8.6 9.1 1.1 1.2.3 2.1 1.4 2.1 2.7v.1h-21.9v-.3c0-1.3.9-2.4 2.2-2.7 2.1-.4 5.2-.9 8.5-.9m.3-18.1c-.3 0-.6 0-.9.1-3.3.5-5.5 3.5-5.1 6.8l.5 3.5c.3 2.3 2.2 4.3 4.6 4.6l.8.1c2.7 0 5-2 5.4-4.7l.5-3.5c.1-.5.1-1.1 0-1.7-.3-3.1-2.9-5.2-5.8-5.2zm-.3 17c-3.3 0-6.5.5-8.7.9-1.8.4-3 1.9-3 3.7v1.3h24v-1.1c0-1.8-1.2-3.3-2.9-3.7-2.4-.5-5.9-1.1-9.4-1.1z"}
+              %path{:class => "fill", :d => "M-273.6 395.3c-.4 3-3.2 5-6.2 4.6-2.5-.4-4.3-2.3-4.6-4.6l-.5-3.5c-.5-3.3 1.8-6.3 5.1-6.8s6.3 1.8 6.8 5c.1.6.1 1.2 0 1.7l-.6 3.6zm-17.4 12.7v-1.3c0-1.8 1.3-3.4 3-3.7 2.2-.4 5.4-.9 8.7-.9 3.5 0 7 .6 9.3 1.2 1.7.4 2.9 1.9 2.9 3.7v1.1h-23.9v-.1z"}
+            %label=t("myself")
+        -# This needs to link to the more page
+        %a.item{href: bible_localized_path}
+          %svg{"enable-background" => "new -383.5 295.5 25 22", :viewBox => "-383.5 295.5 25 22", :xmlns => "http://www.w3.org/2000/svg"}
+            %path{:class => "line", :d => "M-380.5 317.5c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm22 4h-16v-4h16v4zm-15-1h14v-2h-14v2zm-7-6c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm22 4h-16v-4h16v4zm-15-1h14v-2h-14v2zm-7-6c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm22 4h-16v-4h16v4zm-15-1h14v-2h-14v2z"}
+            %g{:class => "fill"}
+              %path{:d => "M-359 316h-15v-3h15v3zm0-8h-15v-3h15v3zm0-8h-15v-3h15v3zm-21.5 17c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5-2.5 1.1-2.5 2.5 1.1 2.5 2.5 2.5zm0-8c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5-2.5 1.1-2.5 2.5 1.1 2.5 2.5 2.5zm0-8c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5-2.5 1.1-2.5 2.5 1.1 2.5 2.5 2.5z"}
+              %path{:d => "M-380.5 317.5c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm22 4h-16v-4h16v4zm-15-1h14v-2h-14v2zm-7-6c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm22 4h-16v-4h16v4zm-15-1h14v-2h-14v2zm-7-6c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm22 4h-16v-4h16v4zm-15-1h14v-2h-14v2z"}
+          %label=t("more")
+
+    .medium-6.large-7.columns.pad-head.show-for-medium-up.header-right
       %form{action: search_path(category: params[:category] || :bible), method: "GET"}
-        .row.collapse
-          .small-12.columns
-            .hdr-about{"ng-cloak" => true}
-              %md-menu{"md-offset" => "-4 44", "md-position-mode" => "target-right target"}
-                %a{:href => "#", "ng-click" => "ctrl.openMenu($mdOpenMenu, $event)"}
-                %md-menu-content.ng-hide{:width => "4", "ng-show" => "true"}
-                  %md-menu-item
-                    .menu-title
-                      YouVersion
-                  %md-menu-divider                
-                  %md-menu-item
-                    %md-button{href: about_path}
-                      = t("about")
-                  %md-menu-item
-                    %md-button{href: versions_path}
-                      = t("versions link")
-                  %md-menu-item
-                    %md-button{href: external_url(:now)}                    
-                      = t("now")
-                  %md-menu-item
-                    %md-button{href: "https://www.youversion.com/jobs"}
-                      = t("jobs")
-                  %md-menu-item
-                    %md-button{href: privacy_path}
-                      = t("privacy policy")
-                  %md-menu-item
-                    %md-button{href: terms_path}
-                      = t("terms")
-                  %md-menu-item
-                    %md-button{href: press_path}  
-                      = t("press")
-                  %md-menu-item
-                    %md-button{href: external_url(:support)}
-                      = t("get support")
-                  - if @site.allow_donate? && [:es, :"es-ES", :pt, :"pt-PT", :"pt", :tr].exclude?(current_locale)
-                    %md-menu-item
-                      %md-button{href:  @site.donate_path || donate_path}
-                        = t("donate title")
-                  %md-menu-item
-                    .menu-title
-                      Follow Us
-                  %md-menu-divider  
-                  %md-menu-item
-                    %md-button{href: blog_url(current_locale)}                      
-                      = "Blog"
-                  %md-menu-item
-                    %md-button{href: "http://www.facebook.com/YouVersion"}                      
-                      = "Facebook"
-                  %md-menu-item
-                    %md-button{href: "http://www.twitter.com/youversion"}
-                      = "Twitter"
-                  %md-menu-item
-                    %md-button{href: "http://www.instagram.com/youversion"}
-                      = "Instagram"
-                  %md-menu-item
-                    %md-button{href: "http://www.pinterest.com/lifechurchtv/youversion-the-bible-app/" }
-                      = "Pinterest"
-                  %md-menu-item
-                    %md-button{href: "http://www.youtube.com/youversion" }
-                      = "YouTube"
-            - if current_auth
-              .hdr-notify
-                %a{:href => "#"}            
-              .hdr-profile
-                %md-menu{"md-offset" => "-4 44", "md-position-mode" => "target-right target"}
-                  -#href: user_path(current_user.username),
-                  %a{ title: t("users.go to your profile"), "ng-click" => "ctrl.openMenu($mdOpenMenu, $event)"}
-                    %img.hdr-profile-img{src: current_user.user_avatar_url["px_48x48"]}
-                    - if current_user.first_name.present? and current_user.last_name.present?
-                      %span.hdr-profile-name.large= current_user.first_name + " " + current_user.last_name
-                      %span.hdr-profile-name.medium= current_user.username
-                    -else
-                      %span.hdr-profile-name= current_user.username                  
-                  %md-menu-content.ng-hide{:width => "4", "ng-show" => "true"}
-                    %md-menu-item
-                      %md-button{href: highlights_user_path(current_auth.username)}
-                        =t("highlights.title")
-                    %md-menu-item
-                      %md-button{href: bookmarks_user_path(current_auth.username)}
-                        =t("bookmarks.title")
-                    %md-menu-item
-                      %md-button{href: notes_user_path(current_auth.username)}
-                        =t("notes title")
-                    %md-menu-item
-                      %md-button{href: images_user_path(current_auth.username)}
-                        =t("users.my images")
-                    %md-menu-item
-                      %md-button{href: user_friends_path(user_id: current_auth.username)}
-                        =t("users.profile.tab friends")
-                    %md-menu-item
-                      %md-button{href: badges_user_path(current_auth.username)}
-                        =t("badges title")                                                
-                    %md-menu-divider 
-                    %md-menu-item
-                      %md-button{href: "/settings"}
-                        =t("settings")
-                    %md-menu-item
-                      %md-button{href: sign_out_path}
-                        =t("sign out")
+        .hdr-search
+          %div
+            %input{type: 'search', name:"q", placeholder: t("search placeholder")}
+          %div
+            %input.search.postfix.button{type: 'submit', value: ''}
+            -if params[:version_id]
+              %input{type: 'hidden', name: "version_id", value: params[:version_id], extra:'first'}
+            -elsif params[:version]
+              %input{type:'hidden', name:"version_id", value:params[:version], extra:'second'}
 
-            - else
-              = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "hollow-button sign-in"
-              = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "hollow-button sign-up"
+        - if current_auth
+          .hdr-notify
+            %a{:href => "#"}
+          .hdr-profile
+            %md-menu{"md-offset" => "-4 44", "md-position-mode" => "target-right target"}
+              -#href: user_path(current_user.username),
+              %a{ title: t("users.go to your profile"), "ng-click" => "ctrl.openMenu($mdOpenMenu, $event)"}
+                %img.hdr-profile-img{src: current_user.user_avatar_url["px_48x48"]}
+                - if current_user.first_name.present? and current_user.last_name.present?
+                  %span.hdr-profile-name.large= current_user.first_name + " " + current_user.last_name
+                  %span.hdr-profile-name.medium= current_user.username
+                -else
+                  %span.hdr-profile-name= current_user.username
+              %md-menu-content.ng-hide{:width => "4", "ng-show" => "true"}
+                %md-menu-item
+                  %md-button{href: highlights_user_path(current_auth.username)}
+                    =t("highlights.title")
+                %md-menu-item
+                  %md-button{href: bookmarks_user_path(current_auth.username)}
+                    =t("bookmarks.title")
+                %md-menu-item
+                  %md-button{href: notes_user_path(current_auth.username)}
+                    =t("notes title")
+                %md-menu-item
+                  %md-button{href: images_user_path(current_auth.username)}
+                    =t("users.my images")
+                %md-menu-item
+                  %md-button{href: user_friends_path(user_id: current_auth.username)}
+                    =t("users.profile.tab friends")
+                %md-menu-item
+                  %md-button{href: badges_user_path(current_auth.username)}
+                    =t("badges title")
+                %md-menu-divider
+                %md-menu-item
+                  %md-button{href: "/settings"}
+                    =t("settings")
+                %md-menu-item
+                  %md-button{href: sign_out_path}
+                    =t("sign out")
 
-            .row.collapse.postfix-radius.hdr-search
-              .small-8.small-offset-1.columns
-                %input{type: 'search', name:"q", placeholder: t("search placeholder")}
-              .small-2.end.columns
-                %input.search.postfix.button{type: 'submit', value: ''}
-                -if params[:version_id]
-                  %input{type: 'hidden', name: "version_id", value: params[:version_id], extra:'first'}
-                -elsif params[:version]
-                  %input{type:'hidden', name:"version_id", value:params[:version], extra:'second'}                    
+        - else
+          .sign-inup
+            = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "hollow-button sign-in"
+            = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "hollow-button sign-up"
 
 
 

@@ -22,7 +22,7 @@
 body {
 	@media #{$medium-up} {
 	  margin-top: rem-calc(130);
-	}  
+	}
 }
 
 #current-ui-view {
@@ -39,13 +39,13 @@ body {
 .fixed {
 	@media #{$small-only} {
 		bottom: 0;
-		top: auto;        
+		top: auto;
 	}
 
 	.t-border {
 		@media #{$medium-up} {
 			border-top: none !important;
-		}          
+		}
 		@media #{$small-only} {
 			border-bottom: none !important;
 		}
@@ -63,30 +63,17 @@ body {
 	}
 }
 
-.fixed.header {
-	box-shadow: 1px -1px 10px #888;
-}
-
 .row {
 	&.full {
 		max-width: 100%;
-		@media #{$large-up} {
-			padding-left: rem-calc(30);
-			padding-right: rem-calc(30);
-		}
-
-		@media #{$small-up} {
-			padding-left: rem-calc(15);
-			padding-right: rem-calc(15);
-		} 
 	}
 
 	&.b-border {
-		border-bottom: solid rem-calc(1) $lightGray;
+		border-bottom: 1px solid $lightGray;
 	}
 
 	&.t-border {
-		border-top: solid rem-calc(1) $lightGray;
+		border-top: 1px solid $lightGray;
 	}
 }
 
@@ -103,7 +90,15 @@ body {
 }
 
 .pad-head {
-  margin-top: rem-calc(20) !important;
+  overflow: hidden;
+
+  div {
+    margin-top: rem-calc(17);
+
+    @media #{$medium-only} {
+      margin-top: auto !important;
+    }
+  }
 }
 
 .pad-row-top {
@@ -137,23 +132,23 @@ body {
 	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
 	display: -ms-flexbox;      /* TWEENER - IE 10 */
 	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex; 
+	display: flex;
 
 	justify-content: center;
 	-webkit-justify-content: center;
 
 	flex-direction: column;
 	-webkit-flex-direction: column;
-	
+
 	align-content: center;
-	-webkit-align-content: center;	
+	-webkit-align-content: center;
 }
 
 .mobile-full {
 		@media #{$small-only} {
 			width: 100%;
 			display: block;
-		}	
+		}
 }
 
 html[dir="ltr"] {
