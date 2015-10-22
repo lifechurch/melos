@@ -90,10 +90,14 @@ body {
 }
 
 .pad-head {
-  margin-top: rem-calc(17) !important;
+  overflow: hidden;
 
-  @media #{$medium-only} {
-    margin-top: auto !important;
+  div {
+    margin-top: rem-calc(17);
+
+    @media #{$medium-only} {
+      margin-top: auto !important;
+    }
   }
 }
 
