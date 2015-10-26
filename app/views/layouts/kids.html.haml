@@ -62,6 +62,12 @@
     meta_url = "#{request.protocol}#{request.host_with_port}/ru/kids"
     facebook_locale = "ru"
     youtube_url = ""
+    elsif I18n.locale.to_s.eql?("id") then
+      i18n_css_class = "id"
+      i18n_image_dir = "/id"
+      meta_url = "#{request.protocol}#{request.host_with_port}/id/kids"
+      facebook_locale = "id"
+      youtube_url = ""
   elsif I18n.locale.to_s.eql?("ar") then
     i18n_css_class = "ar"
     i18n_image_dir = "/ar"
@@ -98,6 +104,7 @@
     %meta{property: "og:locale:alternate", content: "de_DE"}
     %meta{property: "og:locale:alternate", content: "fr_FR"}
     %meta{property: "og:locale:alternate", content: "ar_AR"}
+    %meta{property: "og:locale:alternate", content: "id_ID"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -118,6 +125,7 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/de/kids",:rel=>"alternate",:hreflang=>"de"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/fr/kids",:rel=>"alternate",:hreflang=>"fr"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ar/kids",:rel=>"alternate",:hreflang=>"ar"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/id/kids",:rel=>"alternate",:hreflang=>"id"}
 
     - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
     %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}#{locale_dir}/kids"}
@@ -155,7 +163,7 @@
 
       -# !Logo and intro copy
       -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") )
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id"))
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids

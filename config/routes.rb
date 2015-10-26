@@ -33,6 +33,7 @@ YouversionWeb::Application.routes.draw do
   get "/kinderen",      to: "redirects#kinderen"
   get "/kinder",        to: "redirects#kinder"
   get "/enfants",       to: "redirects#enfants"
+  get "/anak",       to: "redirects#anak"
   get "/trending-bible-verses", to: "pages#trending"
   get "/wmf",           to: "redirects#wmf"
   get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
