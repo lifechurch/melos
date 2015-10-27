@@ -14,9 +14,9 @@ $button-radius: $radius;
     $disabled: false
   );
 
-  font-size: rem-calc(14);
+  font-size: rem-calc(13);
   border-width: rem-calc(1);
-  padding: rem-calc(4 10 6);
+  padding: rem-calc(4 15 6);
 
   &:hover,
   &:focus {
@@ -29,6 +29,10 @@ $button-radius: $radius;
 
   @media #{$large-up} {
     margin-right: rem-calc(20) !important;
+  }
+
+  @media #{$medium-only} {
+    margin-right: rem-calc(10) !important;
   }
 }
 
@@ -46,9 +50,8 @@ $button-radius: $radius;
     $disabled: false
   );
 
-  font-size: rem-calc(14);
-  padding: rem-calc(5 10);
-  font-weight: bold;
+  font-size: rem-calc(13);
+  padding: rem-calc(6 15 8);
   border: none;
 
   &.full {
