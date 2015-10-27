@@ -19,6 +19,7 @@
 //= require_tree ./header
 //= require vendor/angular-cache/angular-cache
 //= require vendor/angular-tooltips/angular-tooltips.min.js
+//= require vendor/ng-infinite-scroll/ng-infinite-scroll.js
 
 var TEMPLATE_FROM_RAILS = {};
 
