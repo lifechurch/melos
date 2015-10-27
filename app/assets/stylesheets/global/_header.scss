@@ -463,3 +463,11 @@ html[dir="rtl"] {
   }
 }
 
+.header-friendships, .header-notifications {
+  font-size: 13px;
+
+  .tight {
+    padding-top:3px;
+    line-height: 1.3;
+  }
+}

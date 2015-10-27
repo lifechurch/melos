@@ -67,7 +67,11 @@
 
         - if current_auth
           .hdr-notify
-            %a{:href => "#"}
+            %md-menu{"md-offset" => "-4 44", "md-position-mode" => "target-right target"}
+              %a{:href => "#", "ng-click" => "ctrl.openMenu($mdOpenMenu, $event)"}
+              %md-menu-content.ng-hide{:width => "4", "ng-show" => "true", "class" => "padded"}
+                %div{"header-friendships" => true}
+                %div{"header-notifications" => true}
           .hdr-profile
             %md-menu{"md-offset" => "-4 44", "md-position-mode" => "target-right target"}
               -#href: user_path(current_user.username),

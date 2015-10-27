@@ -1,4 +1,4 @@
-angular.module('yv.header', [])
+angular.module('yv.header', [ 'header.notifications', 'header.friendships' ])
 
 .controller('HeaderCtrl', ['$mdMenu', function($mdMenu) {
   this.openMenu = function($mdOpenMenu, ev) {
