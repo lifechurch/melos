@@ -209,9 +209,11 @@ div.hdr-search {
   float: $default-float;
   overflow: hidden;
   margin-top: 0;
+  padding: 19px;
 
   @media #{$medium-only} {
     padding: 7px 0 0;
+    width: 45%;
   }
 
   div {
@@ -226,6 +228,26 @@ div.hdr-search {
 
 	input {
 		height: 30px !important;
+		float: left;
+		width: 85%;
+    -webkit-border-radius:  3px 0 0 3px;
+    -moz-border-radius:     3px 0 0 3px;
+    border-radius:          3px 0 0 3px;
+
+    @media #{$medium-only} {
+      width: 75%;
+    }
+
+		&[type="submit"] {
+  		width: 15%;
+      -webkit-border-radius:  0 3px 3px 0;
+      -moz-border-radius:     0 3px 3px 0;
+      border-radius:          0 3px 3px 0;
+
+      @media #{$medium-only} {
+        width: 25%;
+      }
+		}
 
   	@media #{$medium-only} {
     	margin: 0;
