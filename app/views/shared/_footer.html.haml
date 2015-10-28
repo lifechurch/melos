@@ -1,15 +1,10 @@
 = cache "#{@site}_footer_#{current_locale}", expires_in: YV::Caching.a_long_time do
   #site-footer
-    .row.full
-      .medium-12.columns
-        %hr
-        .floating-icon
-          %img{ src: asset_path("youversion_logo_black_250.png") }
+    %img.footer-logo{ src: asset_path("yv-logo.svg") }
     .row
       .large-2.medium-3.large-offset-2.columns
         %ul.side-nav
           %li.label= t("youversion").to_s.upcase
-          %li.divider
           %li
             = link_to( t("about"), about_path)
           %li
@@ -33,7 +28,6 @@
       .large-2.medium-3.columns
         %ul.side-nav
           %li.label= t("download").to_s.upcase
-          %li.divider
           %li
             = link_to( t("kids.bible app"), app_page_path )
           %li
@@ -42,7 +36,6 @@
       .large-2.medium-3.columns
         %ul.side-nav
           %li.label= t("follow us").to_s.upcase
-          %li.divider
           %li
             = link_to("Blog", blog_url(current_locale), class: "blog")
           %li
@@ -59,7 +52,6 @@
       .large-2.medium-3.columns.end
         %ul.side-nav
           %li.label= t("language").to_s.upcase
-          %li.divider
           %li
             = render partial: "shared/language_selector"
 

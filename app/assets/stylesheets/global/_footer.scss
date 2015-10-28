@@ -1,5 +1,14 @@
 #site-footer {
   margin-bottom: 30px;
+  border-top: 1px solid #ddd;
+
+  .footer-logo {
+    display: block;
+    background-color: #fff;
+    padding: 0 15px;
+    margin: -14px auto 30px;
+    width: 200px;
+  }
 
   #languages label {
     font-size: 12px;
@@ -15,5 +24,20 @@
     background-color: white;
     padding: 5px;
     margin-bottom: 30px;
+  }
+
+  ul.side-nav li.label {
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 5px;
+  }
+
+  @media #{$small-only} {
+    div.columns {
+      margin: 0 0 15px;
+    }
+
+    a {
+      padding: 0;
+    }
   }
 }
