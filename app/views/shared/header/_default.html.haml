@@ -56,14 +56,12 @@
     .medium-6.large-7.columns.pad-head.show-for-medium-up.header-right
       %form{action: search_path(category: params[:category] || :bible), method: "GET"}
         .hdr-search
-          %div
-            %input{type: 'search', name:"q", placeholder: t("search placeholder")}
-          %div
-            %input.search.postfix.button{type: 'submit', value: ''}
-            -if params[:version_id]
-              %input{type: 'hidden', name: "version_id", value: params[:version_id], extra:'first'}
-            -elsif params[:version]
-              %input{type:'hidden', name:"version_id", value:params[:version], extra:'second'}
+          %input{type: 'search', name:"q", placeholder: t("search placeholder")}
+          %input.search.postfix.button{type: 'submit', value: ''}
+          -if params[:version_id]
+            %input{type: 'hidden', name: "version_id", value: params[:version_id], extra:'first'}
+          -elsif params[:version]
+            %input{type:'hidden', name:"version_id", value:params[:version], extra:'second'}
 
         - if current_auth
           .hdr-notify
