@@ -3,12 +3,3 @@ $opposite-direction: left;
 $default-float: right;
 
 @import "application";
-
-
-/* Bump the laptop image on the home page to the left side */
-
-.a_home #current-ui-view {
-    #hero {
-    background-position: 5% 10px;
-  }
-}

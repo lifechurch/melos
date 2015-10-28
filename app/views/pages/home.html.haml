@@ -85,7 +85,7 @@
             = t("or.upper")
           = link_to(t("registration.with email"), sign_up_path, {class: 'solid-button mobile-full gray'})
       .row.pad-row.text-center.home-features
-        .columns.large-3.medium-12.small-12.read-bible
+        #scroll-point.columns.large-3.medium-12.small-12.read-bible
           %div.white.pad-all.round.text-left
             %h2= t(".features.read heading")
             %p
@@ -109,7 +109,6 @@
             %p
               %span.narrow= t(".features.download description").html_safe
 
--#
   = render '/shared/app_banner'
 
   - content_for :javascripts do
@@ -146,7 +145,6 @@
 
       // Fire off request for download stats jsonp
       $(window).load(function() {
-
         $.getScript('//commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js');
 
         // Settings for skipping home page
@@ -166,10 +164,7 @@
         $("#scroll-anchor").on("click", function(e) {
           e.preventDefault();
           var pos = $("#scroll-point").offset().top;
-          if(app.getPage().MODERN_BROWSER){
-            $('html:not(:animated),body:not(:animated)').animate({scrollTop:pos},{easing: 'easeInOutCirc', duration:1000});
-          } else {$(window).scrollTop(pos);}
-
+          $('html:not(:animated),body:not(:animated)').animate({scrollTop:pos},{duration:1000});
         });
 
 

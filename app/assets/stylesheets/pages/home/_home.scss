@@ -45,7 +45,7 @@
     }
 
     h1 {
-      width: 60%;
+      width: 45%;
 
       @media #{$medium-only} {
         width: 45%;
@@ -57,11 +57,11 @@
     }
 
     p {
-      width: 50%;
+      width: 30%;
       margin: 0 0 15px 0;
 
       @media #{$medium-only} {
-        width: auto;
+        width: 50%;
       }
 
       @media #{$small-only} {
@@ -209,6 +209,19 @@
       background: none;
       padding-top: 0;
       margin: 10px 0 0;
+    }
+  }
+}
+
+/* RTL */
+html[dir="rtl"] {
+  .a_home #current-ui-view {
+    .bottom-cta h1 {
+      background-position: right top;
+      padding: 0 60px 0 0;
+    }
+    #hero {
+      background-position: 5% 10px;
     }
   }
 }
