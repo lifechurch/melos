@@ -39,11 +39,11 @@
 = cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
   %article
     #hero.row{class: rtl_class}
-      #hero_content.columns.medium-6.small-12
-        %h1= t(".hero.heading")
-        .row
-          .columns.medium-8
-            %p=  t(".hero.description")
+      #hero_content.columns
+        %h1
+          = t(".hero.heading")
+        %p
+          = t(".hero.description")
 
         %span
           = link_to(t(".hero.start reading"), bible_path, class: 'solid-button green mobile-full')
@@ -55,24 +55,22 @@
           %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
           %label{for:"setting-skip-home",id:"label-setting-skip-home"}
             =t(".hero.skip in future")
-      .columns.medium-6.show-for-medium-up
-        %img{src:'assets/laptop@2x.jpg'}
 
-    .hero_pics.show-for-medium-up
+    .hero_pics
+      &nbsp;
 
-    .row.pad-row
-      .columns.medium-9
-        %h1
-          %img{src: "#{image_path(localized_bible_icon)}"}
+    .row.pad-row.bottom-cta
+      .columns.large-8
+        %h1{:style => "background-image: url(#{image_path(localized_bible_icon)})"}
           = t(".word with you")
         .row
-          .columns.medium-6.r-border
+          .columns.large-6.r-border
             %p= t(".download description")
-          .columns.medium-6    
+          .columns.large-6
             %span.counter#download-counter
               %p#counter &nbsp;
               %p= t(".world installs")
-      .columns.medium-3
+      .columns.large-4
         %img{src: "#{image_path('bdc_mobile_icons.png')}", class: "app-icons"}
         = link_to(t(".download action"), app_page_path, {class: 'solid-button green mobile-full'})
 
@@ -80,42 +78,37 @@
       .row
         .columns.medium-12.text-center
           %h1= t(".get started")
-      .row.pad-row
+      .row.pad-row.explore-cta
         .columns.medium-12.text-center
           = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), {class: 'solid-button mobile-full blue'})
           %span.or.pad-all
             = t("or.upper")
           = link_to(t("registration.with email"), sign_up_path, {class: 'solid-button mobile-full gray'})
-      .row.pad-row.text-center
-        .columns.medium-3
-          %img{src: "#{image_path('read_bible_icon.png')}"}
+      .row.pad-row.text-center.home-features
+        #scroll-point.columns.large-3.medium-12.small-12.read-bible
           %div.white.pad-all.round.text-left
             %h2= t(".features.read heading")
             %p
               %span.narrow= t(".features.read description", versions_path: versions_path).html_safe
-        
-        .columns.medium-3.pad-row-top
-          %img{src: "#{image_path('highlight_bible_icon.png')}"}        
+
+        .columns.large-3.medium-12.small-12.study-bible
           %div.white.pad-all.round.text-left
             %h2= t(".features.study heading")
             %p
               %span.narrow= t(".features.study description").html_safe
 
-        .columns.medium-3.pad-row-top
-          %img{src: "#{image_path('subscribe_bible_icon.png')}"}        
+        .columns.large-3.medium-12.small-12.subscribe-bible
           %div.white.pad-all.round.text-left
             %h2= t(".features.subscribe heading")
             %p
               %span.narrow= t(".features.subscribe description").html_safe
 
-        .columns.medium-3
-          %img{src: "#{image_path('take_bible_icon.png')}"}        
+        .columns.large-3.medium-12.small-12.take-bible
           %div.white.pad-all.round.text-left
             %h2= t(".features.download heading")
             %p
               %span.narrow= t(".features.download description").html_safe
 
--#
   = render '/shared/app_banner'
 
   - content_for :javascripts do
@@ -152,7 +145,6 @@
 
       // Fire off request for download stats jsonp
       $(window).load(function() {
-
         $.getScript('//commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js');
 
         // Settings for skipping home page
@@ -172,10 +164,7 @@
         $("#scroll-anchor").on("click", function(e) {
           e.preventDefault();
           var pos = $("#scroll-point").offset().top;
-          if(app.getPage().MODERN_BROWSER){
-            $('html:not(:animated),body:not(:animated)').animate({scrollTop:pos},{easing: 'easeInOutCirc', duration:1000});
-          } else {$(window).scrollTop(pos);}
-
+          $('html:not(:animated),body:not(:animated)').animate({scrollTop:pos},{duration:1000});
         });
 
 
