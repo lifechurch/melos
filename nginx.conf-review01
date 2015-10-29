@@ -1,5 +1,5 @@
 user yvdep;
-worker_processes 2;
+worker_processes 4;
 pid /run/nginx.pid;
 
 events {
