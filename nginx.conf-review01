@@ -25,7 +25,7 @@ http {
 
 	passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
 	passenger_ruby /home/yvdep/.rvm/wrappers/ruby-2.2.2@youversion-web/ruby;
-        passenger_max_pool_size 1;
+        passenger_max_pool_size 8;
 
   server {
       server_name bible.com www.bible.com localdev.bible.com review01.bible.com;
