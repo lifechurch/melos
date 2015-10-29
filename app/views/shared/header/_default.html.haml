@@ -68,14 +68,14 @@
         - if current_auth
           .hdr-notify
             %md-menu{"md-offset" => "-4 44", "md-position-mode" => "target-right target"}
-              %a{:href => "#", "ng-click" => "ctrl.openMenu($mdOpenMenu, $event)"}
+              %a{:href => "#", "ng-click" => "ctrl.openMenu($mdOpenMenu, $event, 'notify-menu')"}
               %md-menu-content.ng-hide{:width => "4", "ng-show" => "true", "class" => "padded"}
                 %div{"header-friendships" => true}
                 %div{"header-notifications" => true}
           .hdr-profile
             %md-menu{"md-offset" => "-4 44", "md-position-mode" => "target-right target"}
               -#href: user_path(current_user.username),
-              %a{ title: t("users.go to your profile"), "ng-click" => "ctrl.openMenu($mdOpenMenu, $event)"}
+              %a{ title: t("users.go to your profile"), "ng-click" => "ctrl.openMenu($mdOpenMenu, $event, 'profile-menu')"}
                 %img.hdr-profile-img{src: current_user.user_avatar_url["px_48x48"]}
                 - if current_user.first_name.present? and current_user.last_name.present?
                   %span.hdr-profile-name.large= current_user.first_name + " " + current_user.last_name
