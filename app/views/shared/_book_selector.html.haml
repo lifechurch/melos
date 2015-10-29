@@ -36,7 +36,7 @@
     .row.full
       .medium-4.columns.text-left
         %h3.inline="Versions"
-        %a{"href" => "#", "ng-click" => "cancel()" } Cancel
+        %a{"href" => "#", "ng-click" => "cancel('showReaderVersions')" } Cancel
       .medium-4.columns.text-center
         %input{"ng-model" => "versionFilter", "type" => "text"}
       .medium-4.columns.text-right        
@@ -46,13 +46,13 @@
   #reader-chapter-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderChapters" }
     .row.full.scroll
       .medium-12.columns
-        %div{"reader-chapter-list" => true, "selected-book" => "selectedBook", "ng-show" => "selectedBook" }
+        %div{"reader-chapter-list" => true, "selected-book" => "selectedBook", "ng-show" => "selectedBook", "toggle-chapters-panel" => "toggleChaptersPanel" }
 
   #reader-book-dropdown.ng-hide.medium-12.reader-panel.full.scroll{ "tabindex" => "-1", "ng-show" => "showReaderBooks" }
     .row.full
       .medium-4.columns.text-left
         %h3.inline="Books"
-        %a{"href" => "#", "ng-click" => "cancel()" } Cancel
+        %a{"href" => "#", "ng-click" => "cancel('showReaderBooks')" } Cancel
       .medium-4.columns.text-center
         %input{"ng-model" => "bookFilter", "type" => "text"}
       .medium-4.columns.text-right        
