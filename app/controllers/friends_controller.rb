@@ -11,6 +11,7 @@ class FriendsController < ApplicationController
     @user  = User.find(params[:user_id])
     @friends_count = Friend.ids(auth: current_auth)
     @friends = Friend.all(page: @page, user_id: @user.id.to_i, auth: current_auth)
+    @friendships = Friendships.incoming(page: @page, auth: current_auth)
   end
 
   def destroy

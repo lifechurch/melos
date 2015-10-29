@@ -160,6 +160,7 @@ html[dir="ltr"] {
      }
    }
  }
+
 html[dir="rtl"] {
   .columns {
     &.l-border {
@@ -169,5 +170,13 @@ html[dir="rtl"] {
     &.r-border {
       border-left: solid rem-calc(1) $gray_light;
     }
+  }
+
+  .text-left {
+    text-align: right !important;
+  }
+
+  .text-right {
+    text-align: left !important;
   }
 }

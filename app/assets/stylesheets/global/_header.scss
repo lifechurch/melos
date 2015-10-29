@@ -447,12 +447,11 @@ html[dir="rtl"] {
   }
 }
 
-
 /*  !Reader header  */
 
 a.icon {
   display: inline-block;
-  border-bottom: solid 3px rgba(0,0,0,0);
+  border-bottom: solid 3px rgba(0, 0, 0, 0);
   height: 36px;
 
   @media #{$medium-only} {
@@ -472,13 +471,13 @@ a.icon {
   }
 
   &.text {
- 		font-size: 13px;
-  	color: gray;
-  	line-height: 30px;
+    font-size: 13px;
+    color: gray;
+    line-height: 30px;
 
-  	&:hover {
-  		line-height: 27px;
-  	}
+    &:hover {
+      line-height: 27px;
+    }
   }
 
   &:hover {
@@ -548,3 +547,13 @@ a.icon {
     }
   }
 }
+
+.header-friendships, .header-notifications {
+  font-size: 13px;
+
+  .tight {
+    padding-top: 3px;
+    line-height: 1.3;
+  }
+}
+
