@@ -48,8 +48,12 @@
 
 
 	&.after-header {
-		@media #{$medium-up} {
-			margin-top: rem-calc(73);
+		@media #{$large-up} {
+			margin-top: 70px;
+		}
+
+		@media #{$medium-only} {
+		  margin-top: 44px;
 		}
 
 		bottom: auto !important;
