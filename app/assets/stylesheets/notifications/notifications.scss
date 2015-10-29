@@ -1,0 +1,53 @@
+.notifications-list {
+
+  img.avatar {
+    float: if($text-direction == 'rtl', right, left);
+
+    @if ($text-direction == 'rtl') {
+      margin-left: 15px;
+    } @else {
+      margin-right: 15px;
+    }
+  }
+
+  dd {
+    padding: 0;
+    margin: 0px;
+    font-size: 14px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+
+  dt {
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    font-weight: normal;
+    min-height: 35px;
+  }
+
+}
+
+.friend-card-status {
+  form {
+    display: inline;
+  }
+
+  button.red, button.green {
+    border:none;
+    background-color:transparent;
+    padding:0;
+    margin:0;
+    font-size: 13px;
+  }
+
+  button.green {
+    color: $green;
+  }
+
+  button.red {
+    color: $red;
+  }
+}
