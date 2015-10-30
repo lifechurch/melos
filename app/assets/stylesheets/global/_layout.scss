@@ -19,12 +19,6 @@
   }
 }
 
-body {
-	@media #{$medium-up} {
-	  margin-top: rem-calc(130);
-	}
-}
-
 #current-ui-view {
 	padding-bottom: 100px;
     @media #{$medium-up} {
