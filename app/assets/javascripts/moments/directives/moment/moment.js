@@ -25,7 +25,7 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 			socialEnabled: '='
 		},
 		templateUrl: '/moment.tpl.html',
-		controller: function($scope, Like, Comment, $mdMenu, /* Authentication,*/ $element, $timeout) {
+		controller: function($scope, Like, Comment, $state, $mdMenu, /* Authentication,*/ $element, $timeout) {
 			$scope.newComment = {};			
 			$scope.like = function() {
 				if (!$scope.data.object.likes.is_liked) {
@@ -98,6 +98,12 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
                 originatorEv = ev;
                 $mdOpenMenu(ev);
             };
+
+            $scope.goSingle = function() {
+                if (!$scope.single && $scope.data.object.id) {
+                    $state.go("moment", { momentId: $scope.data.object.id});
+                }
+            }
 		}
 	};
 })
