@@ -13,9 +13,9 @@ angular.module('yv.moments', [
 	'yv.moments.planStart',
 	'yv.moments.planComplete',
 	'yv.moments.planSegmentComplete',
-  'yv.moments.moreMenu',
-  'yv.moments.subscribeMenu'
-  'infinite-scroll'
+    'yv.moments.moreMenu',
+    'yv.moments.subscribeMenu',
+    'infinite-scroll'
 ])
 
 .config([ '$stateProvider', function($stateProvider) {
