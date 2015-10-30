@@ -106,6 +106,10 @@
   position: absolute;
   right: 20px;
   top: 6px;
+
+  a:first-child {
+    margin-right:10px;
+  }
 }
 
 /*  !Moment likes */
@@ -293,3 +297,4 @@
 	-moz-border-radius:     5px;
 	border-radius:          5px;
 }
+

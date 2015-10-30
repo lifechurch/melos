@@ -28,7 +28,11 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.subscribe(params[:plan_id], auth: current_auth, private: params[:privacy].to_bool, language_tag: current_user.ensure_language_tag)
     flash[:notice] = t("plans.subscribe successful")
-    respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id], initial: 'true'))
+    respond_to do |format|
+      format.json { render json: { notice: t("plans.subscribe successful")} }
+      format.any { respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id], initial: 'true')) }
+    end
+
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
@@ -96,7 +100,10 @@ class SubscriptionsController < ApplicationController
   def check_existing_subscription
     plan_id = params[:plan_id]
     if subscription_for(plan_id)
-      redirect_to(subscription_path(user_id: current_user.to_param, id: plan_id), notice: t("plans.already subscribed")) and return
+      respond_to do |format|
+        format.json { render json: { notice: t("plans.already subscribed") } }
+        format.any  { redirect_to(subscription_path(user_id: current_user.to_param, id: plan_id), notice: t("plans.already subscribed")) and return }
+      end
     end
   end
 

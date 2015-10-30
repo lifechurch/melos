@@ -2,6 +2,7 @@ angular.module('yv.moments', [
 	'api.moments',
 	'api.likes',
 	'api.comments',
+    'api.votd',
 	'yv.moments.moment',
 	'yv.moments.bookmark',
 	'yv.moments.highlight',
@@ -11,16 +12,18 @@ angular.module('yv.moments', [
 	'yv.moments.votd',
 	'yv.moments.planStart',
 	'yv.moments.planComplete',
-	'yv.moments.planSegmentComplete'
+	'yv.moments.planSegmentComplete',
+    'yv.moments.moreMenu',
+    'yv.moments.subscribeMenu'
 ])
 
 .config([ '$stateProvider', function($stateProvider) {
 	$stateProvider
 
 	.state('moments', {
-		url: 		'/moments',
+		url: 		'/{locale:(?:[a-z]{2}\/)*}moments',
 		controller: 	'MomentsCtrl',
-		template: 	'<div class="row"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full" ng-if="!loading">Load More</button></div></div>'
+		template: 	'<div class="row"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full" ng-if="!loading">Load More</button></div></div>'
 	})
 
 	.state('moments.locale', {

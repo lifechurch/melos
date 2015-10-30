@@ -25,7 +25,7 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 			socialEnabled: '='
 		},
 		templateUrl: '/moment.tpl.html',
-		controller: function($scope, Like, Comment, /* Authentication,*/ $element, $timeout) {
+		controller: function($scope, Like, Comment, $mdMenu, /* Authentication,*/ $element, $timeout) {
 			$scope.newComment = {};			
 			$scope.like = function() {
 				if (!$scope.data.object.likes.is_liked) {
@@ -92,6 +92,12 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 					}
 				}
 			};
+
+            $scope.openMenu = function($mdOpenMenu, ev) {
+                ev.preventDefault();
+                originatorEv = ev;
+                $mdOpenMenu(ev);
+            };
 		}
 	};
 })

@@ -30,12 +30,10 @@ angular.module('yv', [
 })
 
 .run(['$rootScope', '$window', function($rootScope, $window) {
-
 	// Intercept the stateChangeStart event, and determine if the whole state 
 	//  needs to be reloaded, or if we can just broadcast an event that lets
 	//  the view know to reload data
 	var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-		console.log(toState, fromState);
 		if ((toState.name == fromState.name && (fromState.name == 'reader' || fromState.name == 'planSample' || fromState.name == 'userPlan')) || fromState.name == "") {
 			if (fromState.name !== "") {
 				event.preventDefault();

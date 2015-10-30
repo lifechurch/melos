@@ -22,7 +22,20 @@
     .moment-bottom
       .moment-actions
         %a.moment-actions-like{:href => "#", "ng-click" => "like()", "ng-if" => "data.object.likes.enabled", "ng-class" => "{ active: data.object.likes.is_liked}", "ng-disabled" => "!socialEnabled"} Like
-        %a.moment-actions-more{:href => "#"} More
+        .moment-actions-more
+          %md-menu{"ng-if" => "data.object.actions.subscribable || data.object.actions.edit_subscription"}
+            %a{"md-menu-origin" => true, title: t("users.subscribe"), "ng-click" => "openMenu($mdOpenMenu, $event)"}
+              %span{"ng-if" => "data.object.actions.subscribable"}
+                =t("users.subscribe")
+              %span{"ng-if" => "data.object.actions.edit_subscription"}
+                =t("moments.action.edit subscription").to_s.camelize
+            %md-menu-content{:width => "4"}
+              .subscribe-menu{"subscribe-menu" => true, "moment" => "data"}
+          %md-menu
+            %a{"md-menu-origin" => true, title: t("moments.action.more"), "ng-click" => "openMenu($mdOpenMenu, $event)"}
+              =t("moments.action.more")
+            %md-menu-content{:width => "4"}
+              .more-menu{"more-menu" => true, "moment" => "data"}
       .moment-likes{"ng-if" => "data.object.likes.enabled && data.object.likes.count && socialEnabled"}
         .moment-likes-count
           %a{:href => "#"} {{data.object.likes.count}} likes
@@ -106,3 +119,60 @@
       %md-progress-linear{"md-mode" => "determinate", :value => "{{data.object.percent_complete}}"}
       %span.moment-plan-progress
         Day {{data.object.segment}} of {{data.object.total_segments}}
+
+-#
+-# Subscribe Menu
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-subscribe-menu.tpl.html' }
+  .moment-subscribe-menu
+    .row
+      .small-12.columns
+        %h3
+          =t("moments.vod.get daily email")
+        %label
+          =t("moments.vod.version")
+          %select{"ng-model" => "subscription.version_id", "ng-options" => "version.id as version.title for version in versions"}
+    .row
+      .small-12.columns
+        .row.collapse
+          .small-2.columns
+            %label
+              =t("moments.vod.time")
+              %select{"ng-model" => "subscription.hour", "ng-options" => "hour for hour in allowedHours"}
+
+          .small-2.columns
+            %label
+              != "&nbsp;"
+              %select{"ng-model" => "subscription.minute", "ng-options" => "minute for minute in allowedMinutes"}
+
+          .small-2.columns.end
+            %label
+              != "&nbsp;"
+              %select{"ng-model" => "subscription.meridian", "ng-options" => "meridian for meridian in allowedMeridians"}
+
+    .row
+      .small-12.columns.text-right
+        %a.solid-button.green{"ng-click" => "save(subscription, $event)"}
+          %span{"ng-if" => "!isSubscribed"}
+            = t("moments.vod.subscribe")
+          %span{"ng-if" => "isSubscribed"}
+            = t("moments.vod.update")
+        %a.solid-button.red{"href" => "#{vod_subscriptions_path}", "ng-if" => "isSubscribed"}
+          = t("moments.vod.unsubscribe")
+        %a{"ng-click" => "cancel()"}
+          = t("moments.action.cancel")
+
+
+-#
+-# Moment More Menu
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-more-menu.tpl.html' }
+  %md-menu-item{"ng-if" => "moment.object.references.length"}
+    %md-button{"ng-href" => "{{getReadLink('#{reference_path}')}}"}
+      =t("moments.action.read in bible")
+  %md-menu-item{"ng-if" => "moment.object.actions.about_plan"}
+    %md-button{"ng-href" => "{{moment.object.action_url}}"}
+      =t("moments.action.about plan")
+  %md-menu-item{"ng-if" => "moment.object.actions.start_plan"}
+    %md-button{"ng-click" => "startPlan('#{t('ui.plans.privacy')}', '#{t('ui.yes button')}', '#{t('ui.no button')}', '#{t('ui.cancel')}', '#{t('moments.action.start plan')}', '#{subscriptions_path(user_id: current_user.to_param)}', '#{form_authenticity_token}', $event)"}
+      =t("moments.action.start plan")
