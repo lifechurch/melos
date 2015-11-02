@@ -28,8 +28,13 @@ angular.module('reader.notePanel', [])
 				$scope.submit = function(noteForm) {
 					$scope.success = false;
 
+                    var color = noteForm.color;
+                    if (color.slice(0,1) == "#") {
+                        color = color.slice(1);
+                    }
+
 					var note = {
-						color: noteForm.color,
+						color: color,
 						usfm_references: $scope.selection.join('+'),
 						version_id: $scope.version,
 						content: noteForm.content,
