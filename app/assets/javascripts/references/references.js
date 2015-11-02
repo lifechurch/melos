@@ -272,6 +272,9 @@ angular.module('yv.reader', [
 		$scope[panel] = !originalValue;
 	};
 
+    $scope.sortBooks = function(sortType) {
+        this.sort = sortType;
+    };
 
 	/**
 	 * This panel has its own toggle method so
