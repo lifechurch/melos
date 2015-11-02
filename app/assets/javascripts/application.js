@@ -19,6 +19,7 @@
 //= require_tree ./header
 //= require vendor/angular-cache/angular-cache
 //= require vendor/angular-tooltips/angular-tooltips.min.js
+//= require vendor/ng-infinite-scroll/ng-infinite-scroll.js
 
 var TEMPLATE_FROM_RAILS = {};
 
@@ -54,19 +55,39 @@ function parsePlanVars() {
 	TEMPLATE_FROM_RAILS[window.location.pathname].devotional_content = angular.element(document.getElementById('widget-devotional')).html();
 }
 
+function inDefaultLocale() {
+    return window.location.pathname.split("/")[1].length != 2;
+}
+
+function firstPos() {
+    if (inDefaultLocale()) {
+        return 0;
+    } else {
+        return 3;
+    }
+}
+
+function isFirst(segment) {
+    return window.location.pathname.indexOf(segment) == firstPos();
+}
+
+function inPathNotFirst(segment) {
+    return window.location.pathname.indexOf(segment) > firstPos();
+}
+
 function init() {
-	var isReadingPlanSample 	= window.location.pathname.indexOf("/reading-plans") == 0 && window.location.pathname.indexOf("/day/") > 0;
-	var isReader 							= window.location.pathname.indexOf("/bible") == 0;
-	var isHomeFeed 						= window.location.pathname.indexOf("/moments") == 0;
+	var isReadingPlanSample = isFirst("/reading-plans") && inPathNotFirst("/day/");
+	var isReader 			= isFirst("/bible");
+	var isHomeFeed 			= isFirst("/moments");
 	
-	var isFriendsFeed					= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/friends") > 0;
-	var isNotesFeed						= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/notes") > 0;
-	var isBookmarksFeed				= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/bookmarks") > 0;
-	var isHighlightsFeed			= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/highlights") > 0;
-	var isImagesFeed					= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/images") > 0;
-	var isBadgesFeed					= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/badges") > 0;
-	var isReaderPlanUser			= window.location.pathname.indexOf("/users") == 0 && window.location.pathname.indexOf("/reading-plans") > 0;
-	var isUserProfile 				= window.location.pathname.indexOf("/users") == 0 && !isNotesFeed && !isHighlightsFeed && !isBookmarksFeed && !isImagesFeed && !isBadgesFeed && !isFriendsFeed;
+	var isFriendsFeed		= isFirst("/users") && inPathNotFirst("/friends");
+	var isNotesFeed			= isFirst("/users") && inPathNotFirst("/notes");
+	var isBookmarksFeed		= isFirst("/users") && inPathNotFirst("/bookmarks");
+	var isHighlightsFeed	= isFirst("/users") && inPathNotFirst("/highlights");
+	var isImagesFeed		= isFirst("/users") && inPathNotFirst("/images");
+	var isBadgesFeed		= isFirst("/users") && inPathNotFirst("/badges");
+	var isReaderPlanUser	= isFirst("/users") && inPathNotFirst("/reading-plans");
+	var isUserProfile 		= isFirst("/users") && !isNotesFeed && !isHighlightsFeed && !isBookmarksFeed && !isImagesFeed && !isBadgesFeed && !isFriendsFeed;
 
 	if (isReader) {
 		parseReaderVars();

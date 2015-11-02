@@ -2,6 +2,7 @@
 @import "config/fonts";
 @import "config/misc";
 @import "foundation_and_overrides";
+//@import "vendor";
 
 
 // TEMP: responsive screen-size - can go away after redesign
@@ -29,6 +30,7 @@
 @import "global/mixins";
 @import "global/layout";
 @import "global/header";
+@import "global/footer";
 @import "global/buttons";
 @import "global/general";
 @import "global/errors";
@@ -53,6 +55,7 @@
 @import "sign-in/sign-in";
 @import "passwords/passwords";
 @import "users/users";
+@import "notifications/notifications";
 
 .clr {
   clear: both;
@@ -76,9 +79,9 @@ input {
     background-color: #FFFFFF;
     height: rem-calc(30);
     width: rem-calc(32);
-    border-color: #CCCCCC;
+    border-color: #DDDDDD;
     background: #fff url("../assets/icon-search.svg") no-repeat center center;
-    background-size: rem-calc(16);    
+    background-size: 16px;
     border-left:none;
 
     &:hover {
@@ -114,5 +117,5 @@ a {
 	&[disabled] {
 		opacity: 0.5;
 		pointer-events: none;
-	}	
+	}
 }

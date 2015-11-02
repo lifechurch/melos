@@ -22,6 +22,7 @@ class VodSubscriptionsController < ApplicationController
     @results = VodSubscription.create(@vod_subscription)
     flash[:notice] = t('users.vod_subscription success') unless @results.errors.present?
     flash[:notice] = t('users.vod_subscription failure') if @results.errors.present?
+    return render 'create' if request.format == 'application/json'
     return redirect_to moments_path if params[:redirect_to] == "moments"
     return redirect_to vod_subscriptions_path
   end

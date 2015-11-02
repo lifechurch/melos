@@ -2,7 +2,29 @@
   # Locals params
   #  friends: array of Friend instances
   #  user: a User instance of who's friends are being displayed
+- if current_user_is? @user
+  %h1
+    =t("friendships.requests title")
+  - if @friendships.incoming.present?
+    .friend-card-list
+      - @friendships.incoming.each do |user|
+        - avatar = user.avatars.lg_avatar
+        - friend_id = user.id
+        .friend-card-box
+          = image_tag avatar.url, class: "friend-card-img"
+          = link_to(user.name, user_path(user.to_param), class: "friend-card-name", title: t("users.profile.visit friend", friend: user.name))
+          .friend-card-status
+            = form_tag friendships_url(user_id: user.id) do
+              = button_tag t("friendships.form.accept button"), class: 'green'
+            != "&nbsp;/&nbsp;"
+            = form_tag friendship_url(user.id), method: "DELETE" do
+              = button_tag t("friendships.form.ignore button"), class: 'red'
+  - else
+    .blank-slate-friend-requests
+      %p= t("friendships.requests none")
 
+%h1
+  =t("friendships.status.friends")
 .friend-card-list
   - friends.each do |friend|
     - avatar = friend.avatars.lg_avatar

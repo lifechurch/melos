@@ -14,7 +14,7 @@
   .row
     .columns.medium-12
       = form_tag vod_subscriptions_path, class: 'vod_form' do
-        = hidden_field_tag(:type, type)  
+        = hidden_field_tag(:type, type)
         = label_tag do
           = t('notes.version field')
           = select_tag(:version_id, options_from_collection_for_select(versions, :id, :to_s, version_id || 1), :disabled => params[:token].present?)

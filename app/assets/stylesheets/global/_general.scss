@@ -1,9 +1,17 @@
+body {
+  font-family: arial, helvetica, sans-serif;
+}
+
 h1 {
   font-weight: 100;
+  font-size: 2.375em;
+  line-height: 1.2em;
+  letter-spacing: rem-calc(-.5)
 }
 
 h1, h2 {
   -webkit-font-smoothing: subpixel-antialiased;
+  font-family: "proxima-nova", "helvetica neue", arial, sans-serif;
 }
 
 h5.bookLabel {
@@ -22,4 +30,13 @@ h5.bookLabel {
 .icon_listen {
   background: image-url("icon_listen.png");
   background-position: center 3px !important;
+}
+
+ul.side-nav li.label {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+md-menu-content.padded {
+  padding:20px;
 }
