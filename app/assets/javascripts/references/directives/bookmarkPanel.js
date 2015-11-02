@@ -14,9 +14,10 @@ angular.module('reader.bookmarkPanel', [])
 		templateUrl: '/reader-bookmark-panel.tpl.html',
 		controller: ['$scope', '$element', 'Bookmarks', 'Highlights', '$timeout', function($scope, $element, Bookmarks, Highlights, $timeout) {
 			$scope.success = false;
+            $scope.labels = [];
 
 			if ($scope.selection && $scope.version && $scope.token) {
-				$scope.bookmark 	= { labels: [] };
+				$scope.bookmark 	= {};
 				$scope.colors 		= [];
 
 				Highlights.getColors().success(function(data) {
@@ -25,14 +26,18 @@ angular.module('reader.bookmarkPanel', [])
 					//TO-DO: Handle Error
 				});
 
-				$scope.submit = function(bookmarkForm) {
+				$scope.submit = function(bookmarkForm, labels) {
 					$scope.success = false;
 
+                    var color = bookmarkForm.color;
+                    if (color.slice(0,1) == "#") {
+                        color = color.slice(1);
+                    }
 					var bookmark = {
-						color: bookmarkForm.color,
+						color: color,
 						usfm_references: $scope.selection.join('+'),
 						version_id: $scope.version,
-						labels: bookmarkForm.labels,
+						labels: labels,
 						title: bookmarkForm.title
 					};
 

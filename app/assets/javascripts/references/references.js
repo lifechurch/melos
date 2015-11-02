@@ -17,7 +17,8 @@ angular.module('yv.reader', [
 	'api.notes',
 	'api.bible',
 	'api.subscriptions',
-	'720kb.tooltips'
+	'720kb.tooltips',
+    'mdColorPicker'
 ])
 
 .config([ '$stateProvider', function($stateProvider) {
@@ -306,6 +307,10 @@ angular.module('yv.reader', [
 	$scope.updateSubscription = function() {
 		Subscription.update('juliojones', '1239-craig-groeschels-from-this-day-forward', {}, 'token');
 	};
+
+    $scope.deselectAll = function() {
+        $scope.readerSelection = [];
+    };
 
 	/**
 	 * Don't reload controller if navigating back to this same state, instead

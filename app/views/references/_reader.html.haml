@@ -69,7 +69,6 @@
 
 - content_for :title_link do
   = link_to(reference.human, 'javascript:void(0);', id:"m_book_chap_btn")
- 
 
 = render partial: "references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
@@ -77,29 +76,29 @@
   .medium-1.large-3.columns
     - unless (controller_name == 'references' || @sidebar == false || sidebar_presenter.blank?)
       = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
-    -#
-      - unless (@sidebar == false || sidebar_presenter.blank?)
-        = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
     &nbsp;
   .medium-10.large-6.columns{class: controller_name == 'plans' ? 'ng-hide' : '', "ng-show" => "!isPlanState || planContentReady"}
     #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes"}
       = presenter.content.html_safe if presenter.content
       .copyright
         = (version.blurb || version.copyright).try :html_safe
-  .medium-1.large-3.columns
+  .medium-1.large-3.columns.verse-action-panels-container
     %div{"fix-top" => true}
       %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel" }
       %div{}
         %span.ng-hide{"ng-show" => "readerSelection.length"}
           %b{"ng-bind" => "readerSelection.length"}
-          =" verses selected"
+          =t("ui.verses selected")
+        %div
+          %a.ng-hide{"ng-click"=>"deselectAll()", "ng-show" => "readerSelection.length"}
+            =t("ref.clear verses")
         %div{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "version", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
         %div{'reader-bookmark-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderBookmark", "version" => "version", "token" => "'#{form_authenticity_token}'", "bookmarks" => "bookmarks", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
         %div{'reader-note-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderNote", "version" => "version", "token" => "'#{form_authenticity_token}'", "notes" => "notes", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
 
+
 -# =render partial: 'shared/js_templates', locals: { reference: reference }
 
-  
 -#
   %article#reader.reader{"class" => "#{"mute" if focus_verses && (not a_chapter)} #{"verse-view" if verse_view}",
     "data-setting-font" => client_settings.reader_font,

@@ -19,6 +19,10 @@
   }
 }
 
+#mode {
+  right: inherit !important;
+}
+
 #current-ui-view {
 	padding-bottom: 100px;
     @media #{$medium-up} {
