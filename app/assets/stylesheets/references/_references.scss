@@ -106,7 +106,7 @@
 	height: rem-calc(40);
 	cursor: pointer;
     margin-top: 0 !important;
-    .active {
+    &.active {
       border: solid 2px white;
     }
 
