@@ -28,8 +28,13 @@ angular.module('reader.highlightPanel', [])
 				$scope.submit = function(highlightForm) {
 					$scope.success = false;
 
+                    var color = highlightForm.color;
+                    if (color.slice(0,1) == "#") {
+                        color = color.slice(1);
+                    }
+
 					var highlight = {
-						color: highlightForm.color,
+						color: color,
 						usfm_references: $scope.selection.join('+'),
 						version_id: $scope.version
 					};
