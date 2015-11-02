@@ -6,39 +6,39 @@ bg:
     datetime: 
         time_ago_in_words: 
             about_x_hours: 
-                one: "преди 1 час"
+                one: "преди %{count} час"
                 other: "преди %{count} часа"
             about_x_months: 
                 one: "преди %{count} месец"
                 other: "преди %{count} месеца"
             about_x_years: 
-                one: "%{count}преди около 1 година"
-                other: "преди около%{count} години"
+                one: "преди около %{count} година"
+                other: "преди около %{count} години"
             almost_x_years: 
-                one: "преди почти 1 година"
-                other: "преди почти%{count}години"
+                one: "преди почти %{count} година"
+                other: "преди почти %{count} години"
             half_a_minute: "преди половин минута"
             less_than_x_minutes: 
-                one: "преди по- малко от минута"
-                other: "преди по-малко от %{count}минути"
+                one: "преди по-малко от %{count} минута"
+                other: "преди по-малко от %{count} минути"
             less_than_x_seconds: 
-                one: "преди по-малко от 1 секунда"
-                other: "преди по-малко от %{count}секунди"
+                one: "преди по-малко от %{count} секунда"
+                other: "преди по-малко от %{count} секунди"
             over_x_years: 
-                one: "преди над 1 година"
-                other: "преди над %{count}години"
+                one: "преди над %{count} година"
+                other: "преди над %{count} години"
             x_days: 
-                one: "преди 1 ден"
-                other: "преди%{count}дни"
+                one: "преди %{count} ден"
+                other: "преди %{count} дни"
             x_minutes: 
-                one: "преди 1 минута"
-                other: "преди %{count}минути"
+                one: "преди %{count} минута"
+                other: "преди %{count} минути"
             x_months: 
-                one: "преди 1 месец"
-                other: "преди %{count}месеца"
+                one: "преди %{count} месец"
+                other: "преди %{count} месеца"
             x_seconds: 
-                one: "преди 1 секунда"
-                other: "преди%{count}секунди"
+                one: "преди %{count} секунда"
+                other: "преди %{count} секунди"
     counter: 
         format: "999,999,999"
     social: 
@@ -59,7 +59,7 @@ bg:
                     copy: "Споделяйте честни разговори за Писанието."
                     button: "Започнете, като намерите приятели."
                 likes: 
-                    info: "и още 4 и като това"
+                    info: "и още 4 подобни"
                 comments: 
                     first: 
                         text: "Наистина имах нужда да чуя това днес, благодаря. До скоро!"
@@ -237,7 +237,7 @@ bg:
     version header: "Версия: %{version}"
     bible versions: "Библейски версии"
     reader: "Четец"
-    lifechurch short url: "LifeChurch.tv"
+    lifechurch short url: "Life.Church"
     about: "За нас"
     versions link: "Версии"
     jobs: "Проекти"
@@ -299,8 +299,8 @@ bg:
         could not load: "Не може да зареди"
         could not load verse: "Не може да зареди стиха"
         showing related: "Показване на свързаните моменти"
-        return to: "Върни до"
-        time past: "%{ago}преди"
+        return to: "Върни се към"
+        time past: "преди %{ago}"
         user likes this: "%{last_liker_link}харесва това"
         likes count more: "%{likes_count}повече"
         likes count 2 more: "%{likes_count}повече"
@@ -984,7 +984,7 @@ bg:
         header copy: "Заедно, ние сме най-свързаното с Библията поколение в историята. Вашата подкрепа означава, че много други хора ще могат да отворят Божието слово в различни платформи, на различни езици, с повече версии и в много повече държави. Попълни формуляра за да направиш дарение. Плащането ще бъде направено при зареждането на следващия екран."
         header confirm copy: "Заедно, ние сме най-свързаното с Библията поколение в историята. Вашата подкрепа означава, че много други хора ще могат да отворят Божието слово в различни платформи, на различни езици, с повече версии и в много повече държави. Натисни Дари сега за да направите дарение."
         donate now button: "Направи дарение"
-        email header: "YouVersion, едно служение на LifeChurch.tv, получи дарението ти. В замяна не са получавани никакви стоки или услуги, освен нематериална религиозна полза. Ако имате въпроси, свържете се с нас на адрес: giving@lifechurch.tv."
+        email header: "YouVersion, a ministry of Life.Church, has received your donation. No goods or services were provided in exchange for the donation, except intangible religious benefits. Please contact giving@life.church with questions."
         email footer: "Твоето дарение ще помогне на хората по света да прочетат Божието слово."
         address: "Адрес"
         city: "Град"
@@ -1012,8 +1012,8 @@ bg:
         relevancy copy: "В миналите поколения, достъпът до Библията винаги е бил ограничаван. Но днес вече не е така. Въпреки това, много хора които имат достъп до Библията мислят, че нейното послание не е за техния живот. В същото време, има други които вярват, че във връзка между Библията и всеки ден от живота им."
         information revolution: "Информационна революция"
         information revolution copy: "През последното десетилетие Интернт води със себе си революция, която дава на хората възможности както никога до сега. Днес, лесно можем да споделим кои сме и какво вярваме като създаваме, предаваме и комуникираме."
-        youversion copy: "Since its start in 1996, LifeChurch.tv's purpose has been to lead people to become fully devoted followers of Christ. In doing so, we have looked for new ways to help people connect the Bible to their daily lives. Our methods have changed over the years as we've incorporated various technologies and strategies. But at the core, our focus remains on relevancy as we consistently strive to demonstrate and teach people how God's Word relates to everyone, no matter where they are in life."
-        youversion copy 2: "YouVersion represents a new frontier in LifeChurch.tv's efforts. We aren't just building a tool to impact the world using innovative technology, more importantly, we are engaging people into relationships with God as they discover the relevance the Bible has for their lives."
+        youversion copy: "Since its start in 1996, Life.Church's purpose has been to lead people to become fully devoted followers of Christ. In doing so, we have looked for new ways to help people connect the Bible to their daily lives. Our methods have changed over the years as we've incorporated various technologies and strategies. But at the core, our focus remains on relevancy as we consistently strive to demonstrate and teach people how God's Word relates to everyone, no matter where they are in life."
+        youversion copy 2: "YouVersion represents a new frontier in Life.Church's efforts. We aren't just building a tool to impact the world using innovative technology, more importantly, we are engaging people into relationships with God as they discover the relevance the Bible has for their lives."
         partners title: "Партниращи издателста на Библията"
         partners text: "Without our generous Bible publishing partners, YouVersion simply would not be able to provide our worldwide community with so many Bibles. Many of you have asked how you can thank these vital supporters of YouVersion's mission. You can learn more about them, their ministries, and ways you can support them through the links below."
         translation title: "Нашият преводачески екип"
@@ -1170,7 +1170,7 @@ bg:
             tracker title: "Рождество Христово проследяване на историята"
             twitter text: "Гледайте света, прочете за раждането на Исус. Споделете проследяването на историята за Рождество Христово @YouVersion:https://wwww.bible.com/christmas"
             facebook text: "Споделете проследяването на историята за Рождество Христово ,така че хора в света да прочетат за раждането на Исус.  В църква или в дома близо до хора ,които обичаме или в тихото време сами,ние замлъкваме за да размислим за чудото на Божията любов към нас."
-            summary: "През декември 2014 ,раждането на Исус изглежда като това за което светът трябва да прочете."
+            summary: "През декември 2014, ето как изглеждаше да видим светът да чете за раждането на Исус."
             verse: "<sup>10 Но ангелът им каза, <br>“Не се бойте.</sup>Защото ви благовестявам голяма радост, която ще бъде за целия народ. <sup>11 Днес ви се роди, в града на Давид, Спасител който е Христос Господ.”</sup>"
             read more: "Прочетете удивителната история за раждането на Христос"
             read about: "Четене за раждането на Исус"
