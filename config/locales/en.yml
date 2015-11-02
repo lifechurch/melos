@@ -257,6 +257,8 @@ en:
   more:                                         "More"
   book:                                         "Book"
   filter book:                                  "Filter Books..."
+  old testament:                                "Old Testament"
+  new testament:                                "New Testament"
   save:                                         "Save"
   cancel:                                       "Cancel"
   try the beta:                                 "Try the Beta"
