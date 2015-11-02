@@ -4,9 +4,13 @@ angular.module('reader.chapterList', [])
 	return {
 		restrict: 'A',
 		scope: {
-			selectedBook: '='
+			selectedBook: '=',
+            toggleChaptersPanel: '='
 		},
-		controller: ["$scope", function($scope) {	
+		controller: ["$scope", function($scope) {
+            $scope.cancel = function() {
+                $scope.toggleChaptersPanel();
+            };
 		}],
 		templateUrl: '/reader-chapter-selector.tpl.html'
 	};

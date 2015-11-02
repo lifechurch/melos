@@ -8,8 +8,11 @@ class NotificationsController < ApplicationController
   before_filter :force_notification_token_or_login, only: [:edit, :update]
 
   def show
+    @user = get_user
     @notifications = get_notifications
-    respond_with @notifications
+    respond_with @notifications do |format|
+      format.html { render :layout => 'users' }
+    end
   end
 
   def edit

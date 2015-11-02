@@ -257,6 +257,9 @@ angular.module('yv.reader', [
 		}
 	};
 
+    $scope.cancel = function(panel) {
+        $scope.togglePanel(panel);
+    };
 
 	/**
 	 * Use this method to toggle side panels
