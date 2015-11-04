@@ -10,20 +10,20 @@
   = "#{t('searching.results for')} #{@title}"
 
 %article
-  .row.b-border
+  .row
     .columns.medium-12
       %h1
         = t('searching.results for')
         %em= @title
   .row
-    .columns.medium-2
+    .columns.medium-3
       %ul.side-nav
         - @categories.each do |category|
           %li{class: @category == category ? "highlighted" : ""}
             = link_to( search_path(category: category, q: params[:q])) do
               = t("searching.#{category}")
 
-    .columns.medium-10.pad-row
+    .columns.medium-9
       .content
         - if @category == :bible
           = render partial: "bible_version_form", locals: {search: @search, category: @category}
