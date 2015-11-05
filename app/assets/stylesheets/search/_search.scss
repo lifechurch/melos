@@ -57,27 +57,6 @@ body.c_search #current-ui-view {
     }
   }
 
-html[dir="rtl"] body.c_search {
-  @media #{$small-only} {
-    body.c_search #current-ui-view .side-nav li {
-      border-right: none;
-
-      &:first-child {
-        border-right: 1px solid $green;
-        -webkit-border-radius:  0;
-        -moz-border-radius:     0;
-        border-radius:          0;
-      }
-
-      &:last-child {
-        -webkit-border-radius:  0;
-        -moz-border-radius:     0;
-        border-radius:          0;
-      }
-    }
-  }
-}
-
   select {
     width: 350px;
   }
@@ -117,4 +96,25 @@ ul.search-result {
 			padding: 6px 15px 0 0;
 		}
 	}
+}
+
+html[dir="rtl"] body.c_search {
+  @media #{$small-only} {
+    #current-ui-view .side-nav li {
+      border-right: none;
+
+      &:first-child {
+        border-right: 1px solid $green;
+        -webkit-border-radius:  0;
+        -moz-border-radius:     0;
+        border-radius:          0;
+      }
+
+      &:last-child {
+        -webkit-border-radius:  0;
+        -moz-border-radius:     0;
+        border-radius:          0;
+      }
+    }
+  }
 }
