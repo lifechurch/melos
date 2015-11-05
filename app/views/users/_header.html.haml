@@ -20,7 +20,7 @@
   .profile-hdr-action
     = render partial: '/users/friend_button', locals: { user: user }
 .row.b-border
-  .columns.medium-12
+  .columns.medium-12.profile-nav-box
     :ruby
       tabs = [
         {href: user_path(id: user.username),                            type: "activity"},
@@ -41,10 +41,10 @@
     - tabs.each do |tab|
       - type, href = tab[:type], tab[:href]
       -# %li{class: "profile-tabs-#{type} #{highlight(href)}"}
-      = link_to(t("users.profile.tab #{type}"), href, { class: current_page?(href) ? 'icon left active' : 'icon left' })
+      = link_to(t("users.profile.tab #{type}"), href, { class: current_page?(href) ? 'icon active' : 'icon' })
 
     - if current_user_is? user
       - tabs_right.each do |tab|
         - type, href = tab[:type], tab[:href]
         -# %li{class: "profile-tabs-#{type} #{highlight(href)}"}
-        = link_to(t(tab[:string_key]), href, { class: current_page?(href) ? 'icon right active' : 'icon right' })
+        = link_to(t(tab[:string_key]), href, { class: current_page?(href) ? 'icon active' : 'icon' })

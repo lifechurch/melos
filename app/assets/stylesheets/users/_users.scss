@@ -1,3 +1,5 @@
+/* !Profile header */
+
 .profile-user {
   overflow: hidden;
 
@@ -47,6 +49,7 @@
 
 .profile-hdr-name {
 	margin: 15px 0;
+	font-size: 3em;
 
 	@media #{$small-only} {
 	  text-align: center;
@@ -73,6 +76,7 @@ li.profile-hdr-info-user {
 
   @media #{$medium-only} {
     background: none;
+    padding: 0;
   }
 
 	@media #{$small-only} {
@@ -88,6 +92,7 @@ li.profile-hdr-info-location {
 
   @media #{$medium-only} {
     background: none;
+    padding: 0;
   }
 
 	@media #{$small-only} {
@@ -106,6 +111,7 @@ li.profile-hdr-info-link {
 
   @media #{$medium-only} {
     background: none;
+    padding: 0;
   }
 
 	@media #{$small-only} {
@@ -136,6 +142,99 @@ li.profile-hdr-info-link {
 	margin: 50px 20px 0 20px;
 }
 
+
+/* !Profile nav */
+
+.profile-nav-box {
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  a {
+    margin: 0 20px 0 0;
+    color: $dark_grey;
+    line-height: 35px;
+    font-size: 0.813em;
+  }
+
+  a:first-child {
+    margin: 0 20px 0 14%;
+  }
+
+  @media #{$medium-only} {
+    a {
+      margin: 0 10px 0 0;
+      line-height: 43px;
+    }
+
+    a:first-child {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  @media #{$small-only} {
+    padding: 0;
+
+    a {
+      display: block;
+      float: $default-float;
+      width: 50%;
+      margin: 0;
+      border-bottom: 1px solid #ddd;
+      line-height: 43px;
+      font-size: 0.938em;
+      padding: 0 40px;
+    }
+
+    a:first-child,
+    a:last-child {
+      display: none;
+    }
+
+    a.icon.active {
+      border-bottom: 0;
+    }
+
+    a:nth-child(n+2) {
+      border-right: 1px solid #ddd;
+    }
+
+    a:nth-child(2) {
+      background: image-url("me-outline.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(3) {
+      background: image-url("notes-outline.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(4) {
+      background: image-url("bookmark-outline.svg") no-repeat 10px center;
+      background-size: 16px;
+    }
+
+    a:nth-child(5) {
+      background: image-url("highlight-outline.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(6) {
+      background: image-url("icon-images.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(7) {
+      background: image-url("icon-badges.svg") no-repeat 10px center;
+      background-size: 16px;
+    }
+  }
+}
+
+
+/* !Friends */
 
 .friend-card-list {
   overflow: hidden;
