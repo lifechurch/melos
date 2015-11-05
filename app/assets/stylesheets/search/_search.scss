@@ -57,8 +57,8 @@ body.c_search #current-ui-view {
     }
   }
 
-@media #{$small-only} {
-  html[dir="rtl"] {
+html[dir="rtl"] body.c_search {
+  @media #{$small-only} {
     body.c_search #current-ui-view .side-nav li {
       border-right: none;
 
