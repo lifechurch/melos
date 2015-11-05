@@ -65,8 +65,7 @@
 
 .profile-hdr-info li {
   @media #{$medium-only} {
-    margin: 0;
-    width: 33%;
+    float: none
   }
 
   @media #{$small-only} {
@@ -81,8 +80,7 @@ li.profile-hdr-info-user {
 	font-size: $text-size;
 
   @media #{$medium-only} {
-    background: none;
-    padding: 0;
+    display: none;
   }
 
 	@media #{$small-only} {
