@@ -14,9 +14,11 @@
     .medium-12.columns.text-center
       .bcv-button-box
         =reader_previous_link(reference, {classes: "prev #{direction}", "uisref": "reader({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
-        %a.book{:href => "#", :id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks')", 'ng-disabled' => 'working'}= reference.human[0, reference.human.length - (reference.chapter.to_s.length + 1)]
-        %a.chapter{:href => "#", :id => "reader_chapter", "ng-bind" => "reader_chapter", "ng-click" => "togglePanel('showReaderChapters')", 'ng-disabled' => 'working'}= reference.chapter
-        %a.version{:href => "#", :id => "reader_version", "ng-bind" => "reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions')"}= version.human
+        // need this H1 for SEO
+        %h1
+          %a.book{:href => "#", :id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks')", 'ng-disabled' => 'working'}= reference.human.split(" ")[0]
+          %a.chapter{:href => "#", :id => "reader_chapter", "ng-bind" => "reader_chapter", "ng-click" => "togglePanel('showReaderChapters')", 'ng-disabled' => 'working'}= reference.human.split(" ")[1]
+          %a.version{:href => "#", :id => "reader_version", "ng-bind" => "reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions')"}= version.human
         =reader_next_link(reference, {classes: "next #{direction}", "uisref": "reader({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
       %a.icon.left.parallel-link
         %svg{"enable-background" => "new -322.2 298.5 726.6 612", :viewBox => "-322.2 298.5 726.6 612", :xmlns => "http://www.w3.org/2000/svg"}

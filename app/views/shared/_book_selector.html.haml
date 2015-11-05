@@ -38,7 +38,7 @@
         %h3.inline="Versions"
         %a{"href" => "#", "ng-click" => "cancel('showReaderVersions')" } Cancel
       .medium-4.columns.text-center
-        %input{"ng-model" => "versionFilter", "type" => "text"}
+        %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter")}
       .medium-4.columns.text-right        
         %br
     %div{"reader-version-list" => true, "versions" => "reader_version_list", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel" }
@@ -54,12 +54,15 @@
         %h3.inline="Books"
         %a{"href" => "#", "ng-click" => "cancel('showReaderBooks')" } Cancel
       .medium-4.columns.text-center
-        %input{"ng-model" => "bookFilter", "type" => "text"}
+        %input{"ng-model" => "bookFilter", "type" => "text", "placeholder" => t("filter book")}
       .medium-4.columns.text-right        
         .switch
-          %input#exampleCheckboxSwitch{:type => "checkbox", "ng-model" => "sort", "value" => "alphabetic"}
+          %a{"href" => "#", "ng-click" => "sortBooks(false)"} Traditional
+          |
+          %a{"href" => "#", "ng-click" => "sortBooks(true)"} Alphabetic
+          %input#exampleCheckboxSwitch{:type => "checkbox", "ng-model" => "sort", "value" => "alphabetic", "ng-hide" => "true"}
             %label{:for => "exampleCheckboxSwitch"}
-    %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version", "selected-book"=>'selectedBook', "ng-hide" => 'selectedBook', 'on-book-selected' => 'toggleChaptersPanel'}
+    %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version", "selected-book"=>'selectedBook', "ng-hide" => 'selectedBook', 'on-book-selected' => 'toggleChaptersPanel', 'canon-ot' => "#{t('old testament')}", 'canon-nt' => "#{t('new testament')}"}
 
   %script{'type' => 'text/ng-template', 'id' => '/reader-version-selector.tpl.html'}
     .row.full
@@ -78,7 +81,7 @@
           %li.menuitem{"ng-if" => "filterBook(filter, book.name)", "ng-repeat" => "book in column"}
             %a{:href => "#", "ng-click" => "showChapters(book)", "ng-if" => "!book.labelOnly"}
               = "{{book.name}}"
-              %b{"ng-if" => "sort"} ( {{book.canon | uppercase}} )
+              -#%b{"ng-if" => "sort"} ( {{book.canon | uppercase}} )
             %h5.bookLabel{"ng-if" => "book.labelOnly"} {{book.name}}
   
   %script{'type' => 'text/ng-template', 'id' => '/reader-chapter-selector.tpl.html'}
