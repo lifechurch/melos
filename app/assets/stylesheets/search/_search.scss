@@ -105,15 +105,15 @@ html[dir="rtl"] body.c_search {
 
       &:first-child {
         border-right: 1px solid $green;
-        -webkit-border-radius:  0;
-        -moz-border-radius:     0;
-        border-radius:          0;
+        -webkit-border-radius:  0 5px 5px 0;
+        -moz-border-radius:     0 5px 5px 0;
+        border-radius:          0 5px 5px 0;
       }
 
       &:last-child {
-        -webkit-border-radius:  0;
-        -moz-border-radius:     0;
-        border-radius:          0;
+        -webkit-border-radius:  5px 0 0 5px;
+        -moz-border-radius:     5px 0 0 5px;
+        border-radius:          5px 0 0 5px;
       }
     }
   }
