@@ -8,7 +8,9 @@
     width: 77%;
 
     @media #{$medium-only} {
-      width: 70%;
+      width: auto;
+      float: none;
+      text-align: center;
     }
 
     @media #{$small-only} {
@@ -20,7 +22,7 @@
       width: 23%;
 
       @media #{$medium-only} {
-        width: 30%;
+        width: auto;
       }
 
       @media #{$small-only} {
@@ -37,6 +39,10 @@
   -moz-border-radius:     64px;
   border-radius:          64px;
 	float: $default-float;
+
+	@media #{$medium-only} {
+	  float: none;
+	}
 
   @media #{$small-only} {
     float: none;
@@ -59,8 +65,8 @@
 
 .profile-hdr-info li {
   @media #{$medium-only} {
-    float: none;
-    margin: 0 0 5px;
+    margin: 0;
+    width: 33%;
   }
 
   @media #{$small-only} {
@@ -125,6 +131,11 @@ li.profile-hdr-info-link {
 .profile-hdr-info-about {
 	margin: 0 0 30px;
 	font-size: $text-size;
+
+	@media #{$medium-only} {
+	  width: 80%;
+	  margin: 0 auto;
+	}
 
 	@media #{$small-only} {
 	  padding: 0;
