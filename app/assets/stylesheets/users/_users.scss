@@ -1,7 +1,250 @@
-.avatar_huge {
-	border-radius: 64px;
+/* !Profile header */
+
+.profile-user {
+  overflow: hidden;
+
+  div {
+    float: $default-float;
+    width: 77%;
+
+    @media #{$medium-only} {
+      width: auto;
+      float: none;
+      text-align: center;
+    }
+
+    @media #{$small-only} {
+      float: none;
+      width: auto;
+    }
+
+    &:first-child {
+      width: 23%;
+
+      @media #{$medium-only} {
+        width: auto;
+      }
+
+      @media #{$small-only} {
+        width: auto;
+        text-align: center;
+        padding: 20px 0 0;
+      }
+    }
+  }
 }
 
+.avatar_huge {
+  -webkit-border-radius:  64px;
+  -moz-border-radius:     64px;
+  border-radius:          64px;
+	float: $default-float;
+
+	@media #{$medium-only} {
+	  float: none;
+	}
+
+  @media #{$small-only} {
+    float: none;
+    width: 64px;
+    -webkit-border-radius:  32px;
+    -moz-border-radius:     32px;
+    border-radius:          32px;
+  }
+}
+
+.profile-hdr-name {
+	margin: 15px 0;
+	font-size: 3em;
+
+	@media #{$small-only} {
+	  text-align: center;
+	  font-size: 1.875em;
+	}
+}
+
+.profile-hdr-info li {
+  @media #{$medium-only} {
+    float: none
+  }
+
+  @media #{$small-only} {
+    float: none;
+  }
+}
+
+li.profile-hdr-info-user {
+	background: url("../assets/me-solid.svg") no-repeat left;
+	background-size: 16px;
+	padding-left: 22px;
+	font-size: $text-size;
+
+  @media #{$medium-only} {
+    display: none;
+  }
+
+	@media #{$small-only} {
+	  display: none;
+	}
+}
+
+li.profile-hdr-info-location {
+	background: url("../assets/icon-profile-location.svg") no-repeat left;
+	background-size: 10px;
+	padding-left: 14px;
+	font-size: $text-size;
+
+  @media #{$medium-only} {
+    background: none;
+    padding: 0;
+  }
+
+	@media #{$small-only} {
+	  background: none;
+	  padding: 0;
+	  margin: 0;
+	  text-align: center;
+	}
+}
+
+li.profile-hdr-info-link {
+	background: url("../assets/icon-profile-link.svg") no-repeat left;
+	background-size: 15px;
+	padding-left: 18px;
+	font-size: $text-size;
+
+  @media #{$medium-only} {
+    background: none;
+    padding: 0;
+  }
+
+	@media #{$small-only} {
+	  background: none;
+	  padding: 0;
+	  margin: 0;
+	  text-align: center;
+	}
+}
+
+.profile-hdr-info-about {
+	margin: 0 0 30px;
+	font-size: $text-size;
+
+	@media #{$medium-only} {
+	  width: 80%;
+	  margin: 0 auto;
+	}
+
+	@media #{$small-only} {
+	  padding: 0;
+	  margin: 0;
+	  text-align: center;
+	}
+}
+
+.profile-hdr-btn {
+	margin: 0 !important;
+}
+
+.profile-hdr-action {
+  float: $opposite-direction;
+	margin: 50px 20px 0 20px;
+}
+
+
+/* !Profile nav */
+
+.profile-nav-box {
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  a {
+    margin: 0 20px 0 0;
+    color: $dark_grey;
+    line-height: 35px;
+    font-size: 0.813em;
+  }
+
+  a:first-child {
+    margin: 0 20px 0 14%;
+  }
+
+  @media #{$medium-only} {
+    a {
+      margin: 0 10px 0 0;
+      line-height: 43px;
+    }
+
+    a:first-child {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  @media #{$small-only} {
+    padding: 0;
+
+    a {
+      display: block;
+      float: $default-float;
+      width: 50%;
+      margin: 0;
+      border-bottom: 1px solid #ddd;
+      line-height: 43px;
+      font-size: 0.938em;
+      padding: 0 40px;
+    }
+
+    a:first-child,
+    a:last-child {
+      display: none;
+    }
+
+    a.icon.active {
+      border-bottom: 0;
+      background-color: #e4e4e4;
+    }
+
+    a:nth-child(n+2) {
+      border-right: 1px solid #ddd;
+    }
+
+    a:nth-child(2) {
+      background: image-url("me-outline.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(3) {
+      background: image-url("notes-outline.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(4) {
+      background: image-url("bookmark-outline.svg") no-repeat 10px center;
+      background-size: 16px;
+    }
+
+    a:nth-child(5) {
+      background: image-url("highlight-outline.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(6) {
+      background: image-url("icon-images.svg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    a:nth-child(7) {
+      background: image-url("icon-badges.svg") no-repeat 10px center;
+      background-size: 16px;
+    }
+  }
+}
+
+
+/* !Friends */
 
 .friend-card-list {
   overflow: hidden;
@@ -44,7 +287,7 @@
 }
 
 .friend-card-status a {
-  
+
 }
 
 .friend-card-status span {
@@ -88,12 +331,12 @@
 
 .friends-count-canhave {
 	font-size: $text-size;
-	display: inline;	
+	display: inline;
 }
 
 .friends-count-help {
-	font-size: $text-size;	
-	display: block;	
+	font-size: $text-size;
+	display: block;
 }
 
 ul.inline-list {
@@ -101,50 +344,6 @@ ul.inline-list {
 		&:first-child {
 			margin-left: 0;
 		}
-	}
-}
-
-.profile-hdr-info-user {
-	background: url("../assets/me-solid.svg") no-repeat left;
-	background-size: 16px;
-	padding-left: 22px;
-	font-size: $text-size;
-}
-
-.profile-hdr-info-location {
-	background: url("../assets/icon-profile-location.svg") no-repeat left;
-	background-size: 10px;
-	padding-left: 14px;
-	font-size: $text-size;	
-}
-
-.profile-hdr-info-link {
-	background: url("../assets/icon-profile-link.svg") no-repeat left;
-	background-size: 15px;
-	padding-left: 18px;
-	font-size: $text-size;	
-}
-
-.profile-hdr-info-about {
-	margin-bottom: 20px;
-	font-size: $text-size;	
-}
-
-.profile-hdr-name {
-	font-weight: normal !important;
-	margin-top: 0;
-}
-
-.profile-hdr-btn {
-	margin: 0 !important;
-}
-
-.right {
-	&.profile-hdr-action {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		margin-bottom: 20px;
 	}
 }
 
