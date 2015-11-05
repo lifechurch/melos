@@ -1,5 +1,139 @@
+.profile-user {
+  overflow: hidden;
+
+  div {
+    float: $default-float;
+    width: 77%;
+
+    @media #{$medium-only} {
+      width: 70%;
+    }
+
+    @media #{$small-only} {
+      float: none;
+      width: auto;
+    }
+
+    &:first-child {
+      width: 23%;
+
+      @media #{$medium-only} {
+        width: 30%;
+      }
+
+      @media #{$small-only} {
+        width: auto;
+        text-align: center;
+        padding: 20px 0 0;
+      }
+    }
+  }
+}
+
 .avatar_huge {
-	border-radius: 64px;
+  -webkit-border-radius:  64px;
+  -moz-border-radius:     64px;
+  border-radius:          64px;
+	float: $default-float;
+
+  @media #{$small-only} {
+    float: none;
+    width: 64px;
+    -webkit-border-radius:  32px;
+    -moz-border-radius:     32px;
+    border-radius:          32px;
+  }
+}
+
+.profile-hdr-name {
+	margin: 15px 0;
+
+	@media #{$small-only} {
+	  text-align: center;
+	  font-size: 1.875em;
+	}
+}
+
+.profile-hdr-info li {
+  @media #{$medium-only} {
+    float: none;
+    margin: 0 0 5px;
+  }
+
+  @media #{$small-only} {
+    float: none;
+  }
+}
+
+li.profile-hdr-info-user {
+	background: url("../assets/me-solid.svg") no-repeat left;
+	background-size: 16px;
+	padding-left: 22px;
+	font-size: $text-size;
+
+  @media #{$medium-only} {
+    background: none;
+  }
+
+	@media #{$small-only} {
+	  display: none;
+	}
+}
+
+li.profile-hdr-info-location {
+	background: url("../assets/icon-profile-location.svg") no-repeat left;
+	background-size: 10px;
+	padding-left: 14px;
+	font-size: $text-size;
+
+  @media #{$medium-only} {
+    background: none;
+  }
+
+	@media #{$small-only} {
+	  background: none;
+	  padding: 0;
+	  margin: 0;
+	  text-align: center;
+	}
+}
+
+li.profile-hdr-info-link {
+	background: url("../assets/icon-profile-link.svg") no-repeat left;
+	background-size: 15px;
+	padding-left: 18px;
+	font-size: $text-size;
+
+  @media #{$medium-only} {
+    background: none;
+  }
+
+	@media #{$small-only} {
+	  background: none;
+	  padding: 0;
+	  margin: 0;
+	  text-align: center;
+	}
+}
+
+.profile-hdr-info-about {
+	margin: 0 0 30px;
+	font-size: $text-size;
+
+	@media #{$small-only} {
+	  padding: 0;
+	  margin: 0;
+	  text-align: center;
+	}
+}
+
+.profile-hdr-btn {
+	margin: 0 !important;
+}
+
+.profile-hdr-action {
+  float: $opposite-direction;
+	margin: 50px 20px 0 20px;
 }
 
 
@@ -44,7 +178,7 @@
 }
 
 .friend-card-status a {
-  
+
 }
 
 .friend-card-status span {
@@ -88,12 +222,12 @@
 
 .friends-count-canhave {
 	font-size: $text-size;
-	display: inline;	
+	display: inline;
 }
 
 .friends-count-help {
-	font-size: $text-size;	
-	display: block;	
+	font-size: $text-size;
+	display: block;
 }
 
 ul.inline-list {
@@ -101,50 +235,6 @@ ul.inline-list {
 		&:first-child {
 			margin-left: 0;
 		}
-	}
-}
-
-.profile-hdr-info-user {
-	background: url("../assets/me-solid.svg") no-repeat left;
-	background-size: 16px;
-	padding-left: 22px;
-	font-size: $text-size;
-}
-
-.profile-hdr-info-location {
-	background: url("../assets/icon-profile-location.svg") no-repeat left;
-	background-size: 10px;
-	padding-left: 14px;
-	font-size: $text-size;	
-}
-
-.profile-hdr-info-link {
-	background: url("../assets/icon-profile-link.svg") no-repeat left;
-	background-size: 15px;
-	padding-left: 18px;
-	font-size: $text-size;	
-}
-
-.profile-hdr-info-about {
-	margin-bottom: 20px;
-	font-size: $text-size;	
-}
-
-.profile-hdr-name {
-	font-weight: normal !important;
-	margin-top: 0;
-}
-
-.profile-hdr-btn {
-	margin: 0 !important;
-}
-
-.right {
-	&.profile-hdr-action {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		margin-bottom: 20px;
 	}
 }
 
