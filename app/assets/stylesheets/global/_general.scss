@@ -40,3 +40,12 @@ ul.side-nav li.label {
 md-menu-content.padded {
   padding:20px;
 }
+
+select {
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  -webkit-border-radius:  3px;
+  -moz-border-radius:     3px;
+  border-radius:          3px;
+  height: auto;
+}

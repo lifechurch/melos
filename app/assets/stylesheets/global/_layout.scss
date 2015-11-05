@@ -79,6 +79,16 @@
 	}
 }
 
+.columns {
+	&.b-border {
+		border-bottom: 1px solid $lightGray;
+	}
+
+	&.t-border {
+		border-top: 1px solid $lightGray;
+	}
+}
+
 .white {
 	background-color: #ffffff;
 }
