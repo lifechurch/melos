@@ -14,8 +14,10 @@
   focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
   a_chapter     = presenter.try(:is_chapter?)
   verse_view    = presenter.verses.present? && !presenter.respond_to?(:subscription)
-  subscription  = presenter.subscription
-  day           = presenter.day
+
+-if (controller_name == 'subscriptions')
+  - subscription  = presenter.subscription
+  - day           = presenter.day
 
 - content_for :additional_meta do
   = render '/shared/hreflang'
