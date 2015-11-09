@@ -1,15 +1,78 @@
+body.c_search #current-ui-view {
+
+  h1 {
+    margin: 0 0 30px;
+  }
+
+  .side-nav {
+    overflow: hidden;
+    li {
+      border-bottom: 1px solid $gray_light;
+      padding: 0 0 5px;
+
+      @media #{$small-only} {
+        float: $default-float;
+        width: 33%;
+        border: 1px solid $green;
+        border-left: none;
+        padding: 0;
+
+        &:first-child {
+          border-left: 1px solid $green;
+          -webkit-border-radius:  5px 0 0 5px;
+          -moz-border-radius:     5px 0 0 5px;
+          border-radius:          5px 0 0 5px;
+        }
+
+        &:last-child {
+          -webkit-border-radius:  0 5px 5px 0;
+          -moz-border-radius:     0 5px 5px 0;
+          border-radius:          0 5px 5px 0;
+        }
+
+        a {
+          text-align: center;
+          padding: 5px 0 6px;
+          color: $green;
+        }
+
+        &.highlighted {
+          background-color: $green;
+        }
+      }
+
+      &.highlighted a {
+        color: #444;
+        font-weight: bold;
+
+        @media #{$small-only} {
+          color: #fff;
+        }
+      }
+    }
+
+    li a:not(.button):hover,
+    li a:not(.button):focus {
+      background: none;
+    }
+  }
+
+  select {
+    width: 350px;
+  }
+}
+
 ul.search-result {
 	list-style: none;
 	margin-left: 0;
 
 	li {
-		padding-top: 25px;
-		padding-bottom: 25px;
-		border-bottom: solid 1px $gray_light;
-
-		&:first-child {
-			padding-top: 0;
-		}
+		padding: 20px;
+		margin: 0 0 10px;
+		border: solid 1px $gray_light;
+    -webkit-border-radius:  5px;
+    -moz-border-radius:     5px;
+    border-radius:          5px;
 
 		&.user {
 		  p.name {
@@ -20,15 +83,38 @@ ul.search-result {
 		a {
 			h3 {
 				color: $blue;
+				margin: 0;
 			}
 		}
 
 		span.length {
 			color: $gray;
+			font-size: 0.938em;
 		}
 
 		.search_thumbnail {
 			padding: 6px 15px 0 0;
 		}
-	}	
+	}
+}
+
+html[dir="rtl"] body.c_search {
+  @media #{$small-only} {
+    #current-ui-view .side-nav li {
+      border-right: none;
+
+      &:first-child {
+        border-right: 1px solid $green;
+        -webkit-border-radius:  0 5px 5px 0;
+        -moz-border-radius:     0 5px 5px 0;
+        border-radius:          0 5px 5px 0;
+      }
+
+      &:last-child {
+        -webkit-border-radius:  5px 0 0 5px;
+        -moz-border-radius:     5px 0 0 5px;
+        border-radius:          5px 0 0 5px;
+      }
+    }
+  }
 }

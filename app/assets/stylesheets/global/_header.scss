@@ -158,6 +158,72 @@
   }
 }
 
+body.c_subscriptions {
+  .icon-bar-plans {
+    .fill {
+      fill: #888888;
+    }
+
+    .line {
+      fill: transparent;
+    }
+  }
+}
+
+body.c_moments {
+  .icon-bar-home {
+    .fill {
+      fill: #888888;
+    }
+
+    .line {
+      fill: transparent;
+    }
+  }
+}
+
+body.c_references {
+  .icon-bar-bible {
+    .fill {
+      fill: #888888;
+    }
+
+    .line {
+      fill: transparent;
+    }
+  }
+}
+
+body.c_videos {
+  .icon-bar-videos {
+    .fill {
+      fill: #888888;
+    }
+
+    .line {
+      fill: transparent;
+    }
+  }
+}
+
+body.c_users {
+  .icon-bar-profile {
+    .fill {
+      fill: #888888;
+    }
+
+    .line {
+      fill: transparent;
+    }
+  }
+
+  .hdr-profile-name {
+    border: 0;
+    background-color: #888;
+    color: #fff;
+  }
+}
+
 .header-right div {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

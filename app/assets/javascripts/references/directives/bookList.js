@@ -12,7 +12,9 @@ angular.module("reader.bookList", [])
 			sort: '=',
 			version: '=',
 			selectedBook: '=',
-			onBookSelected: '='
+            onBookSelected: '=',
+            canonOt: '@',
+            canonNt: '@'
 		},
 		controller: ["$scope", function($scope) {
 			var booksPerColumn;
@@ -64,7 +66,7 @@ angular.module("reader.bookList", [])
 
 						if (firstIterationForCanon) {
 							currentColumnCount++;
-							var name = (books[i].canon == 'ot') ? "Old Testament" : "New Testament";
+							var name = (books[i].canon == 'ot') ? $scope.canonOt : $scope.canonNt;
 							$scope.columns[currentColumnIndex].push({name: name, labelOnly: true});	
 						}
 

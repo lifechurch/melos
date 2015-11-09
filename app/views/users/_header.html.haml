@@ -1,24 +1,26 @@
-.row.b-border.relative
-  %img.left.avatar_huge{src: (user.user_avatar_url["px_128x128"] if user.user_avatar_url)}
-  .columns.medium-8
-    %h1.strong.profile-hdr-name= user.name || user.username
-    %ul.profile-hdr-info.inline-list
-      - if user_name = user.username
-        %li.profile-hdr-info-user
-          = user_name
-      - if user_location = user.location
-        %li.profile-hdr-info-location
-          = user_location
-      - if user.website
-        %li.profile-hdr-info-link
-          = link_to user.website_human, user.website_url
-    - if user.bio
-      %p.profile-hdr-info-about
-        = user.bio
-  .right.profile-hdr-action
+.row.b-border.relative.profile-user-box
+  .columns.large-8.profile-user
+    %div
+      %img.avatar_huge{src: (user.user_avatar_url["px_128x128"] if user.user_avatar_url)}
+    %div
+      %h1.strong.profile-hdr-name= user.name || user.username
+      %ul.profile-hdr-info.inline-list
+        - if user_name = user.username
+          %li.profile-hdr-info-user
+            = user_name
+        - if user_location = user.location
+          %li.profile-hdr-info-location
+            = user_location
+        - if user.website
+          %li.profile-hdr-info-link
+            = link_to user.website_human, user.website_url
+      - if user.bio
+        %p.profile-hdr-info-about
+          = user.bio
+  .profile-hdr-action
     = render partial: '/users/friend_button', locals: { user: user }
 .row.b-border
-  .columns.medium-12
+  .columns.medium-12.profile-nav-box
     :ruby
       tabs = [
         {href: user_path(id: user.username),                            type: "activity"},

@@ -26,9 +26,25 @@
 
 #current-ui-view {
 	padding-bottom: 100px;
-    @media #{$medium-up} {
-      margin-top: 155px;
-    }
+	margin: 100px 0 0;
+
+  @media #{$medium-only} {
+    margin: 64px 0 0;
+  }
+
+  @media #{$small-only} {
+    margin: 64px 0 0;
+  }
+}
+
+.c_references #current-ui-view,
+.c_subscriptions #current-ui-view,
+.c_plans #current-ui-view {
+	margin: 145px 0 0;
+
+  @media #{$medium-only} {
+    margin: 108px 0 0;
+  }
 }
 
 :focus {
@@ -71,6 +87,16 @@
 		max-width: 100%;
 	}
 
+	&.b-border {
+		border-bottom: 1px solid $lightGray;
+	}
+
+	&.t-border {
+		border-top: 1px solid $lightGray;
+	}
+}
+
+.columns {
 	&.b-border {
 		border-bottom: 1px solid $lightGray;
 	}
