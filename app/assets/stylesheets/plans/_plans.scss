@@ -8,6 +8,12 @@
 		}    
 }
 
+.plan-detail-title {
+  font-size: 18px;
+  color: $black;
+  font-weight: bold;
+}
+
 .plan-length {
   color: #444;
   display: block;
@@ -119,4 +125,117 @@ ul.plan-results {
 		}
 	}
 }
- 
+
+.calendar-container {
+  caption {
+    font-weight: normal;
+    font-size: 14px;
+    padding: 5px;
+    border: solid 1px $lightGray;
+  }
+
+  th, td {
+    font-size: 14px;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  td {
+    font-weight: normal;
+
+    &.active-day {
+      background-color: $white;
+    }
+
+    &.inactive-day {
+      background-color: $lightGray;
+    }
+
+    .calendar-day-icon {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+
+    &.today {
+      font-weight: bold;
+    }
+
+    a {
+      color: $darkGray;
+    }
+  }
+
+
+}
+
+.plan-day-verse-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.plan-day-verse {
+  height: 40px;
+  line-height: 39px;
+  font-size: 13px;
+  color: #666;
+  background: url("../assets/plans-progress-off.svg") no-repeat left center;
+  background-size: 8px;
+  padding: 0 0 0 18px;
+}
+
+.plan-day-verse.completed {
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+.plan-day-verse:first-child {
+  background: url("../assets/plans-progress-start-off.svg") no-repeat left bottom;
+  background-size: 8px;
+}
+
+.plan-day-verse:last-child {
+  background: url("../assets/plans-progress-end-off.svg") no-repeat left top;
+  background-size: 8px;
+}
+
+.plan-day-verse.completed {
+  background: url("../assets/plans-progress-on.svg") no-repeat left center;
+  background-size: 8px;
+}
+
+.plan-day-verse.completed:first-child {
+  background: url("../assets/plans-progress-start-on.svg") no-repeat left bottom;
+  background-size: 8px;
+}
+
+.plan-day-verse.completed:last-child {
+  background: url("../assets/plans-progress-end-on.svg") no-repeat left top;
+  background-size: 8px;
+}
+
+.plan-day-progress {
+  font-size: 13px;
+  color: #666;
+  padding: 30px 0 5px;
+}
+
+.rp-image-settings {
+  width: 80px;
+  height: 80px;
+  border-radius: $global-radius;
+  float:left;
+
+  @if ($text-direction == 'rtl') {
+    margin-left: 15px;
+  } @else {
+    margin-right: 15px;
+  }
+}
+
+.rp-title-settings {
+  font-size: 30px;
+  font-weight: 300;
+}

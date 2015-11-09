@@ -79,7 +79,6 @@ angular.module('yv.moments', [
 
 .controller("MomentCtrl", ["$scope", "Moments", "$state", "$stateParams", function($scope, Moments, $state, $stateParams) {
     Moments.getSingle($stateParams.momentId).success(function(moment) {
-       console.log(moment);
        $scope.moment = moment[0];
     }).error(function() {
 
@@ -110,17 +109,6 @@ angular.module('yv.moments', [
 	};
 
 	$scope.loadMore();
-
-	//console.log("Listen up!", $templateCache.get('/moment.tpl.html'));
-	// var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-	// 	console.log("Yo");
-	// 	if (toState.name !== fromState.name) {
-	// 		console.log("in");
-	// 		// If we're going somewhere else, disconnect this listener
-	// 		stopListener();
-	// 		$window.location.href = $state.href(toState, toParams);
-	// 	}
-	// });
 }])
 
 ;

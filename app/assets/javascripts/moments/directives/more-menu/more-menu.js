@@ -42,22 +42,18 @@ angular.module('yv.moments.moreMenu', [])
 
                         $mdDialog.show(startDialog).then(function() {
                             Subscription.create(basePath, o.plan_id, 'false', token).success(function(resp) {
-                                console.log("Success YES ", resp);
                                 $window.location.href = basePath + "/" + o.plan_id;
                             }).error(function(err) {
-                                console.log("ERR", err);
+
                             });
 
                         }, function() {
                             Subscription.create(basePath, o.plan_id, 'true', token).success(function(resp) {
-                                console.log("Success NO ", resp);
                                 $window.location.href = basePath + "/" + o.plan_id;
                             }).error(function(err) {
-                                console.log("ERR", err);
+
                             });
                         });
-
-                        //redirect to plan page
                     }
                 };
             }]

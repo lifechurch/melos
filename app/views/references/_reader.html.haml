@@ -14,6 +14,8 @@
   focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
   a_chapter     = presenter.try(:is_chapter?)
   verse_view    = presenter.verses.present? && !presenter.respond_to?(:subscription)
+  subscription  = presenter.subscription
+  day           = presenter.day
 
 - content_for :additional_meta do
   = render '/shared/hreflang'
@@ -82,7 +84,10 @@
       = presenter.content.html_safe if presenter.content
       .copyright
         = (version.blurb || version.copyright).try :html_safe
+
   .medium-1.large-3.columns.verse-action-panels-container
+    - if (controller_name != 'references' && right_sidebar_presenter.present?)
+      = render partial: right_sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
     %div{"fix-top" => true}
       %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel" }
       %div{}
@@ -96,6 +101,17 @@
         %div{'reader-bookmark-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderBookmark", "version" => "version", "token" => "'#{form_authenticity_token}'", "bookmarks" => "bookmarks", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
         %div{'reader-note-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderNote", "version" => "version", "token" => "'#{form_authenticity_token}'", "notes" => "notes", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
 
+
+- if (controller_name == 'subscriptions')
+  .row.full.pad-row-top
+    .medium-10.large-6.small-centered.columns.text-center.t-border.pad-row-top
+      %ul.button-group
+        %li
+          %a.solid-button.green{"ng-click" => "prevPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-disabled" => "devotionalActive"}= 'Previous'
+        %li
+          %a.solid-button.green{"ng-click" => "nextPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')"}
+            %span{'ng-hide' => 'isLastPlanRef'}= 'Next'
+            %span.ng-hide{'ng-show' => 'isLastPlanRef'}= 'Finish'
 
 -# =render partial: 'shared/js_templates', locals: { reference: reference }
 
