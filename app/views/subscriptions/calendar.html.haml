@@ -1,18 +1,11 @@
 - @title = "Plan Calendar and Progress"
 - subscription = @presenter.subscription
 
-- content_for :mobile_right_nav do
-  =link_to t('plans.overview'), plan_path(subscription), class: 'info_btn'
-
-.tab_navigation.plan_settings.mobile
-  .inner_wrapper
-    = link_to t("plans.settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription)
-    = link_to t("plans.month"), calendar_subscription_path(user_id: current_user.to_param, id: subscription),{:class => "selected"}
-
-%article
-  %h1= t("plans.calendar")
-  %span.search_thumbnail
-    = image_tag subscription.widget_thumbnail_image.url, class: 'widget_thumbnail' if subscription.widget_thumbnail_image.present?
-  %h2.mobile= subscription.title
-
-  = render partial 'subscriptions/calendar', locals: { subscription: @subscription }
+.row
+  .columns.medium-8
+    =render partial: "editHeader"
+    .row.pad-row
+      .columns.small-8
+        = render partial: 'subscriptions/calendar', locals: { subscription: @subscription, showAll: true }
+  .columns.medium-4
+    = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
