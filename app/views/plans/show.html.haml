@@ -6,7 +6,7 @@
 
 - @meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
 - tw_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 120, version_id: @plan.version_id)))
-- fb_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 200, version_id: @plan.version_id))) 
+- fb_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 200, version_id: @plan.version_id)))
 
 - content_for :sidebar_class, 'rp-about-sidebar'
 
@@ -45,7 +45,7 @@
       %h1.keep= @plan.name
       .rp-plan-info
         %p
-          = @plan.length      
+          = @plan.length
       .rp-plan-about
         .rp-plan-about-buttons
           = render partial: "/plans/button", locals: {plan: @plan}
@@ -54,7 +54,7 @@
     .medium-4.columns
       = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
 
-  
 
-  
+
+
 
