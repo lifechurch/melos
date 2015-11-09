@@ -6,13 +6,28 @@ angular.module('yv.plans', [])
                 url: '/reading-plans/:planSlug',
                 controller: 'PlansCtrl'
             })
+            .state('plans-locale', {
+                url: '/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/reading-plans/:planSlug',
+                controller: 'PlansCtrl'
+            })
+
+
             .state('user-plan-edit', {
                 url: '/users/:user/reading-plans/:planSlug/edit',
                 controller: 'PlansCtrl'
             })
+            .state('user-plan-edit-locale', {
+                url: '/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:user/reading-plans/:planSlug/edit',
+                controller: 'PlansCtrl'
+            })
+
 
             .state('user-plan-calendar', {
                 url: '/users/:user/reading-plans/:planSlug/calendar',
+                controller: 'PlansCtrl'
+            })
+            .state('user-plan-calendar-locale', {
+                url: '/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:user/reading-plans/:planSlug/calendar',
                 controller: 'PlansCtrl'
             })
         ;
