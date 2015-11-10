@@ -135,7 +135,7 @@ html[dir="rtl"] body.c_subscriptions {
   }
 
   @media #{$small-only} {
-    padding: 0;
+    padding: 10px 0 0;
     margin: 0;
     font-size: 0.938em;
   }
