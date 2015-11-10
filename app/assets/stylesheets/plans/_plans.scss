@@ -18,18 +18,18 @@
       line-height: 37px;
 
       &:first-child {
-      	-webkit-border-radius:  5px 0 0 5px;
-      	-moz-border-radius:     5px 0 0 5px;
-      	border-radius:          5px 0 0 5px;
-      	border-left: 1px solid $green;
+        -webkit-border-radius:  5px 0 0 5px;
+        -moz-border-radius:     5px 0 0 5px;
+        border-radius:          5px 0 0 5px;
+        border-left: 1px solid $green;
       }
 
       &:last-child {
-      	-webkit-border-radius:  0 5px 5px 0;
-      	-moz-border-radius:     0 5px 5px 0;
-      	border-radius:          0 5px 5px 0;
+        -webkit-border-radius:  0 5px 5px 0;
+        -moz-border-radius:     0 5px 5px 0;
+        border-radius:          0 5px 5px 0;
       }
-  	}
+    }
   }
 
   a.icon.text {
@@ -87,20 +87,13 @@ html[dir="rtl"] body.c_subscriptions {
   }
 }
 
-[class*="block-grid-"] > li.subscription {
+.a_index .columns {
   @media #{$small-only} {
-    float: none;
-    padding: 10px;
-    margin: 0;
-    overflow: hidden;
-    border-bottom: 1px solid #ddd;
+    padding: 0;
   }
-}
 
-.search_thumbnail,
-.subscription-info {
-  @media #{$small-only} {
-    float: left;
+  [class*="block-grid-"] {
+    margin: 0;
   }
 }
 
@@ -133,18 +126,19 @@ html[dir="rtl"] body.c_subscriptions {
 
 .plan-title {
   font-size: 18px;
-	color: $anchor-font-color;
-	padding-top: 10px;
+  color: $anchor-font-color;
+  padding-top: 10px;
+  margin: 0;
 
-	&:hover {
-		color: $anchor-font-color-hover;
-	}
+  &:hover {
+    color: $anchor-font-color-hover;
+  }
 
-	@media #{$small-only} {
-	  padding: 0;
-	  margin: 0;
-	  font-size: 0.938em;
-	}
+  @media #{$small-only} {
+    padding: 10px 0 0;
+    margin: 0;
+    font-size: 0.938em;
+  }
 }
 
 .plan-detail-title {
@@ -162,38 +156,113 @@ html[dir="rtl"] body.c_subscriptions {
 }
 
 img.radius {
-	-webkit-border-radius: $global-radius;
-	-moz-border-radius: $global-radius;
-	border-radius: $global-radius;
+  -webkit-border-radius: $global-radius;
+  -moz-border-radius: $global-radius;
+  border-radius: $global-radius;
 }
 
 .cat-box {
+  overflow: hidden;
+
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
   li {
     border-left: solid 1px $lightGray;
-    padding: 30px;
+    padding: 0 30px;
+
+    @media #{$medium-only} {
+      width: 25%;
+      padding: 0 10px;
+      clear: none;
+    }
+
+    @media #{$small-only} {
+      width: auto;
+      float: none;
+      overflow: hidden;
+      border-bottom: 1px solid $lightGray;
+      border-left: 0;
+      padding: 0;
+    }
 
     &:first-child {
       border: none;
+
+      @media #{$small-only} {
+        border-bottom: 1px solid $lightGray;
+      }
     }
 
     a {
+      display: block;
+      height: 120px;
+      overflow: hidden;
+
+      @media #{$medium-only} {
+        height: 100px;
+      }
+
+      @media #{$small-only} {
+        height: auto;
+        padding: 15px 3%;
+      }
+
       img {
-        max-height: 50px;
+        max-height: 44px;
+
+        @media #{$small-only} {
+          display: block;
+          float: $default-float;
+          height: 24px;
+        }
       }
 
       label {
         color: #666;
-        font-size: 16px;
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 1.2em;
         text-align:center;
         margin: 10px 0 0 0;
+
+        @media #{$medium-only} {
+          font-size: 13px;
+        }
+
+        @media #{$small-only} {
+          float: $default-float;
+          width: 75%;
+          text-align: left;
+          margin: 5px 0 0;
+          padding: 0 0 0 15px;
+        }
       }
 
       &:hover {
         img {
-          height: 110%;
+          opacity: .5;
         }
       }
     }
+  }
+}
+
+.featured-title {
+  margin: 50px 0 30px;
+}
+
+.a_index .length {
+  font-size: 0.867em;
+  color: $gray;
+}
+
+.medium-block-grid-5 > li {
+  @media #{$medium-only} {
+    clear: none;
   }
 }
 
@@ -244,25 +313,25 @@ ul.plan-results {
   bottom: 0;
   left: 0;
   width: 100%;
-	border-top: solid rem-calc(1) $lightGray;
+  border-top: solid rem-calc(1) $lightGray;
   z-index: 100;
 }
 
 .widget {
-	&.scripture-links {
-		li {
-			a {
-				&.active {
-					color: $green;
-				}
+  &.scripture-links {
+    li {
+      a {
+        &.active {
+          color: $green;
+        }
 
-				&.complete {
-					text-decoration: line-through;
-					color: $gray;
-				}
-			}
-		}
-	}
+        &.complete {
+          text-decoration: line-through;
+          color: $gray;
+        }
+      }
+    }
+  }
 }
 
 .calendar-container {

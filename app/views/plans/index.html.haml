@@ -24,7 +24,7 @@
   - if @category.label.nil?
     .row.full
       .columns.medium-12.text-center
-        %ul.small-block-grid-3.medium-block-grid-5.large-block-grid-8.cat-box
+        %ul.medium-block-grid-4.large-block-grid-8.cat-box
           - if translate
             - orig_locale = I18n.locale
             - I18n.locale = @plan_lang
@@ -39,7 +39,7 @@
 
     .row.full
       .columns.medium-12
-        %h1.text-center= t('plans.featured plans')
+        %h1.text-center.featured-title= t('plans.featured plans')
         %ul.resource_list.medium-block-grid-3.small-block-grid-1
           - @plans.each do |plan|
             %li.plan
@@ -109,7 +109,7 @@
 
       /   -else
       /     .none{align: "center"}= t("plans.none found")
-  
+
       -#%h1.float_left
       -#  = t("plans.browse plans", category: @category.label || t("plans.all"))
       -# %dl.combo_button.float_right#plans_nav_container{:style => "display:none"}
