@@ -68,7 +68,7 @@
     .row.full
       .small-12.columns.text-left
         %div{"ng-if" => "recentVersionCount()"}
-          %h5= "Recently Used"
+          %h5= t("recent versions")
           %hr
           %div{"ng-repeat" => "version in recentVersions | filter: filter"}
             %ul.side-nav{:role => "navigation"}
