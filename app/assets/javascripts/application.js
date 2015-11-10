@@ -17,6 +17,7 @@
 //= require_tree ./references
 //= require_tree ./moments
 //= require_tree ./header
+//= require_tree ./footer
 //= require_tree ./plans
 //= require_tree ./catchAll
 //= require vendor/angular-cache/angular-cache
