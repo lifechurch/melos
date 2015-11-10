@@ -11,15 +11,28 @@ angular.module("reader.versionList", [])
             loadParallelChapter: '=',
             setParallelVersion: '='
 		},
-		controller: ["$scope", "$state", function($scope, $state) {
-			$scope.loadVersion = function(version) {
+		controller: ["$scope", "$state", "RecentVersions", function($scope, $state, RecentVersions) {
+
+            $scope.recentVersions = RecentVersions.all();
+
+            $scope.recentVersionCount = function() {
+                return RecentVersions.count();
+            };
+
+			$scope.loadVersion = function(version, saveToRecent) {
+
+                if (saveToRecent) {
+                    RecentVersions.add(version);
+                    $scope.recentVersions = RecentVersions.all();
+                }
+
                 $scope.togglePanel('showReaderVersions');
                 $scope.filter = "";
 
                 if ($scope.setParallelVersion) {
-                    $scope.loadParallelChapter($scope.usfm, version);
+                    $scope.loadParallelChapter($scope.usfm, version.version);
                 } else {
-                    $state.go("reader", { usfm: $scope.usfm, version: version });
+                    $state.go("reader", { usfm: $scope.usfm, version: version.version });
                 }
 			}
 		}],

@@ -67,10 +67,20 @@
   %script{'type' => 'text/ng-template', 'id' => '/reader-version-selector.tpl.html'}
     .row.full
       .small-12.columns.text-left
+        %div{"ng-if" => "recentVersionCount()"}
+          %h5= "Recently Used"
+          %hr
+          %div{"ng-repeat" => "version in recentVersions | filter: filter"}
+            %ul.side-nav{:role => "navigation"}
+              %li.menuitem
+                %a{"ng-click" => "loadVersion(version, false)", "href" => "#"}
+                  %b {{version.abbrev | uppercase}}
+                  {{version.title}}
+          %hr
         %div{"ng-repeat" => "version in versions | filter: filter"}
           %ul.side-nav{:role => "navigation"}
             %li.menuitem
-              %a{"ng-click" => "loadVersion(version.version)", "href" => "#"}
+              %a{"ng-click" => "loadVersion(version, true)", "href" => "#"}
                 %b {{version.abbrev | uppercase}} 
                 {{version.title}}
 

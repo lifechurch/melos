@@ -11,7 +11,8 @@ angular.module('yv', [
 	'api.authentication',
 	'api.railsHttp',
 	'common.fixTop',
-	'common.userSettings'
+	'common.userSettings',
+    'common.recentVersions'
 ])
 
 .config([ '$locationProvider', '$urlRouterProvider', '$windowProvider', function($locationProvider, $urlRouterProvider, $windowProvider) {
