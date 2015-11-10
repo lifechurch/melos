@@ -6,15 +6,20 @@ angular.module('yv', [
 	'yv.reader',
 	'yv.moments',
 	'yv.header',
+    'yv.plans',
+    'yv.catchAll',
 	'api.authentication',
 	'api.railsHttp',
 	'common.fixTop',
 	'common.userSettings'
 ])
 
-.config([ '$locationProvider', function($locationProvider) {
+.config([ '$locationProvider', '$urlRouterProvider', '$windowProvider', function($locationProvider, $urlRouterProvider, $windowProvider) {
 	$locationProvider.html5Mode(true);
 	$locationProvider.hashPrefix('!');
+
+    $urlRouterProvider.otherwise(function($injector, $location) {
+    });
 }])
 
 .directive('ngHtmlCompile', function($compile) {
@@ -29,17 +34,21 @@ angular.module('yv', [
 	};
 })
 
-.run(['$rootScope', '$window', function($rootScope, $window) {
-	// Intercept the stateChangeStart event, and determine if the whole state 
+.run(['$rootScope', '$window', '$location', function($rootScope, $window, $location) {
+	// Intercept the stateChangeStart event, and determine if the whole state
 	//  needs to be reloaded, or if we can just broadcast an event that lets
 	//  the view know to reload data
 	var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 		if ((toState.name == fromState.name && (fromState.name == 'reader' || fromState.name == 'planSample' || fromState.name == 'userPlan')) || fromState.name == "") {
-			if (fromState.name !== "") {
-				event.preventDefault();
-				$rootScope.$broadcast("YV:reloadState", [toState, toParams]);
-			}
-		}
+            if (fromState.name !== "") {
+                event.preventDefault();
+                $rootScope.$broadcast("YV:reloadState", [toState, toParams]);
+            }
+        }else if (fromState.name && toState.name && fromState.name !== toState.name) {
+            $window.location.href = $location.url();
+        }else if (fromState.name && toState.name == 'plans') {
+            $window.location.href = $location.url();
+        }
 	});
 
 	//This is hacky, need to find a better way

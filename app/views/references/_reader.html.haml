@@ -15,6 +15,10 @@
   a_chapter     = presenter.try(:is_chapter?)
   verse_view    = presenter.verses.present? && !presenter.respond_to?(:subscription)
 
+-if (controller_name == 'subscriptions')
+  - subscription  = presenter.subscription
+  - day           = presenter.day
+
 - content_for :additional_meta do
   = render '/shared/hreflang'
   - ref_deep_link = "#{@presenter.reference.deep_link_path}"
@@ -73,16 +77,24 @@
 = render partial: "references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
 .row.full
-  .medium-1.large-3.columns
+  .medium-1.large-3.columns{"ng-hide" => "isParallelMode"}
     - unless (controller_name == 'references' || @sidebar == false || sidebar_presenter.blank?)
       = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
     &nbsp;
-  .medium-10.large-6.columns{class: controller_name == 'plans' ? 'ng-hide' : '', "ng-show" => "!isPlanState || planContentReady"}
+
+  .medium-10.large-6.columns{class: controller_name == 'plans' ? 'ng-hide' : '', "ng-show" => "!isPlanState || planContentReady", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
     #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes"}
       = presenter.content.html_safe if presenter.content
       .copyright
         = (version.blurb || version.copyright).try :html_safe
-  .medium-1.large-3.columns.verse-action-panels-container
+
+  - if (controller_name == 'references')
+    .medium-10.large-6.columns{"ng-show" => "isParallelMode", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
+      #parallel_reader.reader{"reader" => true, "content" => "parallel_reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes"}
+
+  .medium-1.large-3.columns.verse-action-panels-container{"ng-hide" => "isParallelMode"}
+    - if (controller_name != 'references' && right_sidebar_presenter.present?)
+      = render partial: right_sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
     %div{"fix-top" => true}
       %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel" }
       %div{}
@@ -96,6 +108,17 @@
         %div{'reader-bookmark-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderBookmark", "version" => "version", "token" => "'#{form_authenticity_token}'", "bookmarks" => "bookmarks", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
         %div{'reader-note-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderNote", "version" => "version", "token" => "'#{form_authenticity_token}'", "notes" => "notes", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
 
+
+- if (controller_name == 'subscriptions')
+  .row.full.pad-row-top
+    .medium-10.large-6.small-centered.columns.text-center.t-border.pad-row-top
+      %ul.button-group
+        %li
+          %a.solid-button.green{"ng-click" => "prevPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-disabled" => "devotionalActive"}= 'Previous'
+        %li
+          %a.solid-button.green{"ng-click" => "nextPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')"}
+            %span{'ng-hide' => 'isLastPlanRef'}= 'Next'
+            %span.ng-hide{'ng-show' => 'isLastPlanRef'}= 'Finish'
 
 -# =render partial: 'shared/js_templates', locals: { reference: reference }
 

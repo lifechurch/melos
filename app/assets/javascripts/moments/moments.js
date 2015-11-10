@@ -22,22 +22,28 @@ angular.module('yv.moments', [
 	$stateProvider
 
 	.state('moments', {
-		url: 		'/{locale:(?:[a-z]{2}\/)*}moments',
+		url: 		'/moments',
+		controller: 	'MomentsCtrl',
+		template: 	'<div class="row moments-feed" infinite-scroll="loadMore()" infinite-scroll-distance="3" infinite-scroll-disabled="loading"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full" ng-if="!loading">Load More</button></div></div>'
+	})
+	.state('moments-locale', {
+		url: 		'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/moments',
 		controller: 	'MomentsCtrl',
 		template: 	'<div class="row moments-feed" infinite-scroll="loadMore()" infinite-scroll-distance="3" infinite-scroll-disabled="loading"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full" ng-if="!loading">Load More</button></div></div>'
 	})
 
+
     .state('moment', {
-        url: '/{locale:(?:[a-z]{2}\/)*}moments/:momentId',
+        url: '/moments/:momentId',
+        controller: 'MomentCtrl',
+        template: '<div class="row moments-feed"><div class="medium-10 large-7 columns small-centered"><moment data="moment" social-enabled="true"></moment></div></div>'
+    })
+    .state('moment-locale', {
+        url: '/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/moments/:momentId',
         controller: 'MomentCtrl',
         template: '<div class="row moments-feed"><div class="medium-10 large-7 columns small-centered"><moment data="moment" social-enabled="true"></moment></div></div>'
     })
 
-//	.state('moments.locale', {
-//		url: 		'/:locale/moments',
-//		controller: 	'MomentsCtrl',
-//		template: 	'<div class="row"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment"></moment></div></div></div>'
-//	})
 
 	.state('profileActivity', {
 		url: 		'/users/:username',
@@ -45,6 +51,13 @@ angular.module('yv.moments', [
 		template: angular.element(document.getElementById("current-ui-view")).html(),
 		data: { inProfile: true, momentType: null }
 	})
+	.state('profileActivity-locale', {
+		url: 		'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:username',
+		controller: 	'MomentsCtrl',
+		template: angular.element(document.getElementById("current-ui-view")).html(),
+		data: { inProfile: true, momentType: null }
+	})
+
 
 	.state('profileNotes', {
 		url: 		'/users/:username/notes',
@@ -52,6 +65,13 @@ angular.module('yv.moments', [
 		template: angular.element(document.getElementById("current-ui-view")).html(),
 		data: { inProfile: true, momentType: 'note' }
 	})
+	.state('profileNotes-locale', {
+		url: 		'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:username/notes',
+		controller: 	'MomentsCtrl',
+		template: angular.element(document.getElementById("current-ui-view")).html(),
+		data: { inProfile: true, momentType: 'note' }
+	})
+
 
 	.state('profileHighlights', {
 		url: 		'/users/:username/highlights',
@@ -59,9 +79,22 @@ angular.module('yv.moments', [
 		template: angular.element(document.getElementById("current-ui-view")).html(),
 		data: { inProfile: true, momentType: 'highlight' }
 	})
+	.state('profileHighlights-locale', {
+		url: 		'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:username/highlights',
+		controller: 	'MomentsCtrl',
+		template: angular.element(document.getElementById("current-ui-view")).html(),
+		data: { inProfile: true, momentType: 'highlight' }
+	})
+
 
 	.state('profileBookmarks', {
 		url: 		'/users/:username/bookmarks',
+		controller: 	'MomentsCtrl',
+		template: angular.element(document.getElementById("current-ui-view")).html(),
+		data: { inProfile: true, momentType: 'bookmark' }
+	})
+	.state('profileBookmarks-locale', {
+		url: 		'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:username/bookmarks',
 		controller: 	'MomentsCtrl',
 		template: angular.element(document.getElementById("current-ui-view")).html(),
 		data: { inProfile: true, momentType: 'bookmark' }
@@ -73,13 +106,18 @@ angular.module('yv.moments', [
 		template: angular.element(document.getElementById("current-ui-view")).html(),
 		data: { inProfile: true, momentType: 'image' }
 	})
+	.state('profileImages-locale', {
+		url: 		'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:username/images',
+		controller: 	'MomentsCtrl',
+		template: angular.element(document.getElementById("current-ui-view")).html(),
+		data: { inProfile: true, momentType: 'image' }
+	})
 
 	;
 }])
 
 .controller("MomentCtrl", ["$scope", "Moments", "$state", "$stateParams", function($scope, Moments, $state, $stateParams) {
     Moments.getSingle($stateParams.momentId).success(function(moment) {
-       console.log(moment);
        $scope.moment = moment[0];
     }).error(function() {
 
@@ -110,17 +148,6 @@ angular.module('yv.moments', [
 	};
 
 	$scope.loadMore();
-
-	//console.log("Listen up!", $templateCache.get('/moment.tpl.html'));
-	// var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-	// 	console.log("Yo");
-	// 	if (toState.name !== fromState.name) {
-	// 		console.log("in");
-	// 		// If we're going somewhere else, disconnect this listener
-	// 		stopListener();
-	// 		$window.location.href = $state.href(toState, toParams);
-	// 	}
-	// });
 }])
 
 ;

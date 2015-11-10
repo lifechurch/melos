@@ -29,6 +29,10 @@ module Presenter
       @subscription
     end
 
+    def plan
+      @subscription
+    end
+
     def day
       @params[:day] ||= subscription.current_day
       @day          ||= @params[:day].to_i
