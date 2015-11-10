@@ -2,18 +2,15 @@
 
 .plans-nav-box {
   overflow: hidden;
-  padding: 0 2%;
 
   a {
     float: $default-float;
-    margin: 0 2%;
 
     @media #{$small-only} {
       width: 50%;
       text-align: center;
       border: 1px solid $green;
       border-left: 0;
-      margin: 3px 0;
       height: 38px;
       line-height: 37px;
 
@@ -34,13 +31,17 @@
 
   a.icon.text {
     line-height: 35px;
+    margin: 0 2%;
 
     @media #{$medium-only} {
       line-height: 43px;
+      margin: 0 3%;
+      font-size: 0.867em;
     }
 
     @media #{$small-only} {
       color: $green;
+      margin: 0;
     }
   }
 }
