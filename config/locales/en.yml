@@ -106,6 +106,7 @@ en:
     users username not available:               "The username you supplied is not available."
     users username or password invalid:         "The username or password you supplied is invalid."
     users username required:                    "You must enter a username."
+    users xor username email token xor required: "You must enter a username or an email address."
     users first name required:                  "You must enter a first name."
     users last name required:                   "You must enter a last name."
     moments content required:                   "Content cannot be blank."

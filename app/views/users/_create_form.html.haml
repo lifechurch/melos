@@ -1,5 +1,8 @@
 = form_for :user, url: sign_up_path(source: params[:source], redirect: params[:redirect]) do |f|
   = render partial: "shared/form_errors", locals: {errors: @user.errors, heading: t("users.creation form errors")}
+
+  = f.hidden_field :agree, {value: true}
+
   %p
     = f.label :first_name, t("users.first name")
     = f.text_field :first_name, {autocorrect: "off", autocapitalize: "off"}
