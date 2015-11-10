@@ -17,6 +17,8 @@
 //= require_tree ./references
 //= require_tree ./moments
 //= require_tree ./header
+//= require_tree ./plans
+//= require_tree ./catchAll
 //= require vendor/angular-cache/angular-cache
 //= require vendor/angular-tooltips/angular-tooltips.min.js
 //= require vendor/ng-infinite-scroll/ng-infinite-scroll.js
@@ -26,8 +28,15 @@
 var TEMPLATE_FROM_RAILS = {};
 
 function parseReaderVars() {
- 	var prev_link = angular.element(document.getElementById("reader_previous")).attr("href").split("/");
- 	var next_link = angular.element(document.getElementById("reader_next")).attr("href").split("/");
+    var prev_link = [], next_link = [];
+
+    if (document.getElementById("reader_previous")) {
+        prev_link = angular.element(document.getElementById("reader_previous")).attr("href").split("/");
+    }
+
+    if (document.getElementById("reader_next")) {
+        next_link = angular.element(document.getElementById("reader_next")).attr("href").split("/");
+    }
 
 	TEMPLATE_FROM_RAILS[window.location.pathname] = { 
 		reader_book: angular.element(document.getElementById("reader_book")).text(),
@@ -97,9 +106,7 @@ function init() {
 
 	if (isReadingPlanSample || isReaderPlanUser) {
 		parsePlanVars();
-	}	
-
-	if (isReader || isReadingPlanSample || isReaderPlanUser || isHomeFeed || isUserProfile || isNotesFeed || isHighlightsFeed || isBookmarksFeed || isImagesFeed) {
-		angular.bootstrap(document, ['yv']);
 	}
+
+	angular.bootstrap(document, ['yv']);
 }

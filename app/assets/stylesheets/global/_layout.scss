@@ -21,6 +21,7 @@
 
 #mode {
   right: inherit !important;
+  top: 450px !important;
 }
 
 #current-ui-view {
@@ -81,7 +82,7 @@
 	}
 }
 
-.row {
+.row, .columns {
 	&.full {
 		max-width: 100%;
 	}
