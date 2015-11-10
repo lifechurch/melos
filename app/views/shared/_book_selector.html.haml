@@ -41,7 +41,7 @@
         %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter")}
       .medium-4.columns.text-right        
         %br
-    %div{"reader-version-list" => true, "versions" => "reader_version_list", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel" }
+    %div{"reader-version-list" => true, "versions" => "reader_version_list", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel", "load-parallel-chapter" => "loadParallelChapter", "set-parallel-version" => "setParallelVersion" }
 
   #reader-chapter-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderChapters" }
     .row.full.scroll

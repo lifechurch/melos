@@ -19,8 +19,9 @@
           %a.book{:href => "#", :id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks')", 'ng-disabled' => 'working'}= reference.human.split(" ")[0]
           %a.chapter{:href => "#", :id => "reader_chapter", "ng-bind" => "reader_chapter", "ng-click" => "togglePanel('showReaderChapters')", 'ng-disabled' => 'working'}= reference.human.split(" ")[1]
           %a.version{:href => "#", :id => "reader_version", "ng-bind" => "reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions')"}= version.human
+          %a.version.ng-hide{:href => "#", :id => "parallel_reader_version", "ng-bind" => "parallel_reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions', true)", "ng-show" => "isParallelMode"}
         =reader_next_link(reference, {classes: "next #{direction}", "uisref": "reader({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
-      %a.icon.left.parallel-link
+      %a.icon.left.parallel-link{"ng-click" => "toggleParallelMode()"}
         %svg{"enable-background" => "new -322.2 298.5 726.6 612", :viewBox => "-322.2 298.5 726.6 612", :xmlns => "http://www.w3.org/2000/svg"}
           %path{:d => "M60.2,298.5H22h-344.2v612H22h38.2h344.2v-612H60.2z M22,872.2h-306V336.8H22C22,336.8,22,872.2,22,872.2z\n\t M366.2,872.2h-306V336.8h306V872.2z"}
       %a.icon.right.settings-audio{:title => t("ref.listen"), :href => "#", "ng-click" => "togglePanel('showReaderAudio')", "ng-class" => "{ 'active': showReaderAudio }", "ng-show" => "reader_audio.title"}
