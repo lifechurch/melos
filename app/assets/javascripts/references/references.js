@@ -30,6 +30,12 @@ angular.module('yv.reader', [
 		controller: 			'ReaderCtrl',
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
+	.state('reader-locale', {
+		url: 				'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/bible/:version/:usfm',
+		controller: 			'ReaderCtrl',
+		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
+	})
+
 
 	//Bible Plan Sample Reader with Devo Content
 	.state('planSample', {
@@ -37,10 +43,21 @@ angular.module('yv.reader', [
 		controller: 			'ReaderCtrl',
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
+	.state('planSample-locale', {
+		url: 				'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/reading-plans/:plan/day/:day',
+		controller: 			'ReaderCtrl',
+		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
+	})
+
 
 	//Bible Plan for User
 	.state('userPlan', {
 		url: 				'/users/:username/reading-plans/:plan',
+		controller: 			'ReaderCtrl',
+		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
+	})
+	.state('userPlan-locale', {
+		url: 				'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:username/reading-plans/:plan',
 		controller: 			'ReaderCtrl',
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
