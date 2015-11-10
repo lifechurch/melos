@@ -7,13 +7,20 @@ angular.module("reader.versionList", [])
 			versions: '=',
 			filter: '=',
 			usfm: '=',
-			togglePanel: '='
+			togglePanel: '=',
+            loadParallelChapter: '=',
+            setParallelVersion: '='
 		},
 		controller: ["$scope", "$state", function($scope, $state) {
 			$scope.loadVersion = function(version) {
-				$scope.togglePanel('showReaderVersions');
-				$scope.filter = "";
-				$state.go("reader", { usfm: $scope.usfm, version: version });
+                $scope.togglePanel('showReaderVersions');
+                $scope.filter = "";
+
+                if ($scope.setParallelVersion) {
+                    $scope.loadParallelChapter($scope.usfm, version);
+                } else {
+                    $state.go("reader", { usfm: $scope.usfm, version: version });
+                }
 			}
 		}],
 		templateUrl: '/reader-version-selector.tpl.html'

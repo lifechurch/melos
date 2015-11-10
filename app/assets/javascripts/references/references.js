@@ -67,6 +67,7 @@ angular.module('yv.reader', [
 
 .controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", "Subscription", "$anchorScroll", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window, Subscription, $anchorScroll) {
 	$scope.version = $stateParams.version;
+    $scope.parallel_version = $stateParams.version;
 	$scope.usfm = $stateParams.usfm;
 	$scope.readerFontSize = 19;
 	$scope.readerPlaybackSpeed = 1;
@@ -87,6 +88,7 @@ angular.module('yv.reader', [
     $scope.planDays = {};
     $scope.orderedRefs = [];
     $scope.isLastPlanRef = false;
+    $scope.isParallelMode = false;
 
 	hideAllPanels();
 	hideAllSidePanels();
@@ -136,6 +138,7 @@ angular.module('yv.reader', [
 		$scope.bookmarks = [];
 		$scope.notes = [];
         $anchorScroll("top-of-page");
+
 		Bible.getChapter(location_path).success(function(data, status, headers, config) {
             if (data.hasOwnProperty('to_path')) {
                 $scope.version = data.to_path.split("/")[2];
@@ -146,7 +149,31 @@ angular.module('yv.reader', [
 			//TO-DO: Handle Error!
 			$scope.working = false;
 		});
+
+        if ($scope.isParallelMode) {
+            var params = location_path.split("/");
+            loadParallelChapter(params[3], $scope.parallel_version);
+        }
 	}
+
+
+    $scope.loadParallelChapter = function(usfm, version) {
+        loadParallelChapter(usfm, version);
+    };
+
+    function loadParallelChapter(usfm, version) {
+        var location_path = $state.href("reader", {usfm: usfm, version: version});
+        $scope.working = true;
+        $scope.parallel_version = version;
+
+        Bible.getChapter(location_path).success(function(data, status, headers, config) {
+            $scope.working = false;
+            $scope.parallel_reader_html = data.reader_html;
+            $scope.parallel_reader_version = data.reader_version;
+        }).error(function(error) {
+            $scope.working = false;
+        });
+    }
 
 
 	/**
@@ -260,7 +287,7 @@ angular.module('yv.reader', [
 	 *  - showReaderBooks
 	 *  - showReaderChapters
 	 */
-	$scope.togglePanel = function(panel) {
+	$scope.togglePanel = function(panel, setParallel) {
 		var originalValue = $scope[panel];
 		hideAllPanels();
 		$scope[panel] = !originalValue;
@@ -277,6 +304,11 @@ angular.module('yv.reader', [
 				$scope.showReaderBooks 		= true;
 			}
 		} else if (panel == "showReaderVersions") {
+            if (setParallel) {
+                $scope.setParallelVersion = true;
+            } else {
+                $scope.setParallelVersion = false;
+            }
 			parseVersionLinks();
 		}
 	};
@@ -579,7 +611,6 @@ angular.module('yv.reader', [
     }
 
 
-
     function getVerseArrayFromRange(rng) {
         var arr = rng.split(",");
         var ret = [];
@@ -595,6 +626,23 @@ angular.module('yv.reader', [
         }
         return ret;
     }
+
+
+    $scope.toggleParallelMode = function() {
+        if ($scope.isParallelMode) {
+            $scope.isParallelMode = false;
+        } else {
+            $scope.isParallelMode = true;
+
+            if (!$scope.parallel_version) {
+                $scope.parallel_version = $scope.version;
+                $scope.parallel_reader_version = $scope.reader_version;
+            }
+
+            loadParallelChapter($scope.usfm, $scope.parallel_version);
+        }
+    };
+
 
 	/**
 	 * Don't reload controller if navigating back to this same state, instead
@@ -612,7 +660,7 @@ angular.module('yv.reader', [
 
         // Get new scope values from params
         $scope.version 	= toParams.version;
-        $scope.usfm 		= toParams.usfm;
+        $scope.usfm     = toParams.usfm;
 	});
 
 	Authentication.isLoggedIn('/isLoggedIn').success(function(data) {
