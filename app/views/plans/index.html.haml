@@ -16,8 +16,8 @@
 
 .fixed.after-header
   .row.full.b-border.white.collapse
-    .medium-12.columns.text-center
-      = link_to t("plans.all plans"), plans_path, class: 'icon left text'
+    .medium-12.columns.text-center.plans-nav-box
+      = link_to t("plans.all plans"), plans_path, class: 'icon left text active'
       = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon left text' if current_user.present?
 
 %article#plan-index
