@@ -26,7 +26,28 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 		},
 		templateUrl: '/moment.tpl.html',
 		controller: function($scope, Like, Comment, $state, $mdMenu, /* Authentication,*/ $element, $timeout) {
-			$scope.newComment = {};			
+			$scope.newComment = {};
+
+            $scope.needsMoreMenu = function() {
+                if (
+                    (
+                        $scope.data.object.references &&
+                        $scope.data.object.references.length
+                    ) ||
+                    (
+                        $scope.data.object.actions &&
+                        (
+                            $scope.data.object.actions.about_plan ||
+                            $scope.data.object.actions.start_plan
+                        )
+                    )
+                   ){
+                    return true;
+                } else {
+                    return false;
+                }
+            };
+
 			$scope.like = function() {
 				if (!$scope.data.object.likes.is_liked) {
 					$scope.data.object.likes.is_liked = true;
