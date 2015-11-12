@@ -2,7 +2,7 @@
 // presenter: Presenter::Sidebar::Subscription
 
 -#:javascript
-  $(window).load(function(){ 
+  $(window).load(function(){
     $('.calendar-next').click(function(){
       PlanWidget.toNext();
     })
@@ -15,9 +15,9 @@
     /* init the fixed right column for reading plan area */
     Page.prototype.setFixedRightColumn()
   });
-    
 
-    
+
+
 :ruby
   subscription  = presenter.subscription
   day           = presenter.day
@@ -35,9 +35,9 @@
 
 %h1.plan-detail-title
   = subscription.name
-%ul.side-nav
-  %li= link_to t("plans.about this plan"), plan_path(subscription)
-  %li= link_to t("settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), class: "settings_btn"
+%div
+  = link_to t("plans.about this plan"), plan_path(subscription)
+  = link_to t("settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), class: "settings_btn"
 .calendar-container.ng-hide{"ng-show" => "true", "calendar-container" => "true"}
   = render partial: 'subscriptions/calendar', locals: { subscription: @subscription, showAll: false }
 
@@ -95,8 +95,8 @@
                   = first_date.strftime('%b')
               .calendar-cal-days
                 - # first calendar day (given tabular calendar starting on Sun)s
-                - cur_date = first_date - (first_date.day - 1) - (first_date - (first_date.day - 1)).cwday  
-                - # if first day of month is a sunday (more clear than doing on the previous line)     
+                - cur_date = first_date - (first_date.day - 1) - (first_date - (first_date.day - 1)).cwday
+                - # if first day of month is a sunday (more clear than doing on the previous line)
                 - cur_date = cur_date.next_day(7) if first_date.prev_day(first_date.day - 1) - cur_date == 7
                 - cur_date = Date.parse(statuses.first.date)
                 - rows = 0
