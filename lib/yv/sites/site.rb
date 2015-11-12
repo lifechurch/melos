@@ -20,7 +20,12 @@ module YV
       end
 
       def ga_code
-        'UA-351257-4'
+        'UA-3571547-76'
+      end
+
+      def ga_parallel_code
+        # using this site id temporarily while testing/transitioning to Google Universal analytics
+        'UA-3571547-115'
       end
 
       def ga_domain
