@@ -18,6 +18,11 @@ module YV
         'UA-3571547-76'
       end
 
+      def ga_parallel_code
+        # using this site id temporarily while testing/transitioning to Google Universal analytics
+        'UA-3571547-115'
+      end
+
       def ga_domain
         'bible.com'
       end
