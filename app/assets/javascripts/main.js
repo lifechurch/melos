@@ -68,10 +68,11 @@ angular.module('yv', [
         var segmentChanged = firstSegmentNew != firstSegmentOld;
 
         var isVideos = urlHasChanged && isFirst('videos', newUrl.replace(window.location.origin, ''));
+        var isSearch = urlHasChanged && isFirst('search', newUrl.replace(window.location.origin, ''));
         var isPlans = urlHasChanged && isFirst('reading-plans', newUrl.replace(window.location.origin, ''));
         var isUserPlans = urlHasChanged && isFirst('users', newUrl.replace(window.location.origin, '')) && inPathNotFirst('reading-plans', newUrl.replace(window.location.origin, ''));
 
-        if (segmentChanged || isVideos || isUserPlans || isPlans) {
+        if (segmentChanged || isVideos || isUserPlans || isPlans || isSearch) {
 			event.preventDefault();
 			$window.location.href = newUrl;
         }
