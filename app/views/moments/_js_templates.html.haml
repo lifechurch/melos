@@ -31,7 +31,7 @@
                 =t("moments.action.edit subscription").to_s.camelize
             %md-menu-content{:width => "4"}
               .subscribe-menu{"subscribe-menu" => true, "moment" => "data"}
-          %md-menu
+          %md-menu{"ng-if" => "needsMoreMenu()"}
             %a{"md-menu-origin" => true, title: t("moments.action.more"), "ng-click" => "openMenu($mdOpenMenu, $event)"}
               =t("moments.action.more")
             %md-menu-content{:width => "4"}

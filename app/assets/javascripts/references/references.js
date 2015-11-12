@@ -32,7 +32,7 @@ angular.module('yv.reader', [
 	})
 	.state('reader-locale', {
 		url: 				'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/bible/:version/:usfm',
-		controller: 			'ReaderCtrl',
+		controller: 		'ReaderCtrl',
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
 
@@ -426,7 +426,10 @@ angular.module('yv.reader', [
         }
     };
 
-	$scope.loadChapter = function(toState, toParams) {
+    $scope.loadChapter = function(toState, toParams) {
+        if (toState === null) {
+            toState = $state.current.name;
+        }
 		$scope.usfm = toParams.usfm;
 		loadChapter($state.href(toState, toParams), true);
 		$scope.devotionalComplete = true;
@@ -641,6 +644,11 @@ angular.module('yv.reader', [
 
             loadParallelChapter($scope.usfm, $scope.parallel_version);
         }
+    };
+
+
+    $scope.inNonDefaultLocale = function() {
+      return $stateParams.hasOwnProperty('locale');
     };
 
 

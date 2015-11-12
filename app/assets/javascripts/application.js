@@ -30,6 +30,16 @@ var TEMPLATE_FROM_RAILS = {};
 
 function parseReaderVars() {
     var prev_link = [], next_link = [];
+    var version_pos;
+    var usfm_pos;
+
+    if (!getLocale()) {
+        version_pos = 2;
+        usfm_pos = 3;
+    } else {
+        version_pos = 3;
+        usfm_pos = 4;
+    }
 
     if (document.getElementById("reader_previous")) {
         prev_link = angular.element(document.getElementById("reader_previous")).attr("href").split("/");
@@ -52,12 +62,12 @@ function parseReaderVars() {
 			url: angular.element(document.getElementById("reader_audio_player")).attr("src")
 		},
 		previous_chapter_hash: {
-			version_id: prev_link[2],
-			usfm: [ prev_link[3] ]
+			version_id: prev_link[version_pos],
+			usfm: [ prev_link[usfm_pos] ]
 		},
 		next_chapter_hash: {
-			version_id: next_link[2],
-			usfm: [ next_link[3] ]
+			version_id: next_link[version_pos],
+			usfm: [ next_link[usfm_pos] ]
 		} 
 	};
 }
@@ -67,39 +77,52 @@ function parsePlanVars() {
 	TEMPLATE_FROM_RAILS[window.location.pathname].devotional_content = angular.element(document.getElementById('widget-devotional')).html();
 }
 
-function inDefaultLocale() {
-    return window.location.pathname.split("/")[1].length != 2;
+function getLocale() {
+    var firstSegment = window.location.pathname.split("/")[1];
+    var re = /^[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*$/;
+    return re.exec(firstSegment);
 }
 
-function firstPos() {
-    if (inDefaultLocale()) {
-        return 0;
-    } else {
-        return 3;
+
+function isFirst(segment, path) {
+    if (!path) {
+        path = window.location.pathname;
     }
+    var segments = path.split("/");
+    segments.shift();
+    if (getLocale()) {
+        segments.shift();
+    }
+    return segments.indexOf(segment) == 0;
 }
 
-function isFirst(segment) {
-    return window.location.pathname.indexOf(segment) == firstPos();
+
+function getFirst(path) {
+    if (!path) {
+        path = window.location.pathname;
+    }
+    var segments = path.split("/");
+    segments.shift();
+    if (getLocale()) {
+        segments.shift();
+    }
+    return segments[0];
 }
 
-function inPathNotFirst(segment) {
-    return window.location.pathname.indexOf(segment) > firstPos();
+
+function inPathNotFirst(segment, path) {
+    if (!path) {
+        path = window.location.pathname;
+    }
+    var segments = path.split("/");
+    segments.shift();
+    if (getLocale()) {
+        segments.shift();
+    }
+    return segments.indexOf(segment) > 0;
 }
 
 function init() {
-	var isReadingPlanSample = isFirst("/reading-plans") && inPathNotFirst("/day/");
-	var isReader 			= isFirst("/bible");
-	var isHomeFeed 			= isFirst("/moments");
-	
-	var isFriendsFeed		= isFirst("/users") && inPathNotFirst("/friends");
-	var isNotesFeed			= isFirst("/users") && inPathNotFirst("/notes");
-	var isBookmarksFeed		= isFirst("/users") && inPathNotFirst("/bookmarks");
-	var isHighlightsFeed	= isFirst("/users") && inPathNotFirst("/highlights");
-	var isImagesFeed		= isFirst("/users") && inPathNotFirst("/images");
-	var isBadgesFeed		= isFirst("/users") && inPathNotFirst("/badges");
-	var isReaderPlanUser	= isFirst("/users") && inPathNotFirst("/reading-plans");
-	var isUserProfile 		= isFirst("/users") && !isNotesFeed && !isHighlightsFeed && !isBookmarksFeed && !isImagesFeed && !isBadgesFeed && !isFriendsFeed;
 
 	if (isReader) {
 		parseReaderVars();
@@ -111,3 +134,16 @@ function init() {
 
 	angular.bootstrap(document, ['yv']);
 }
+
+var isReadingPlanSample = isFirst("reading-plans") && inPathNotFirst("day");
+var isReader 			= isFirst("bible");
+var isHomeFeed 			= isFirst("moments");
+
+var isFriendsFeed		= isFirst("users") && inPathNotFirst("friends");
+var isNotesFeed			= isFirst("users") && inPathNotFirst("notes");
+var isBookmarksFeed		= isFirst("users") && inPathNotFirst("bookmarks");
+var isHighlightsFeed	= isFirst("users") && inPathNotFirst("highlights");
+var isImagesFeed		= isFirst("users") && inPathNotFirst("images");
+var isBadgesFeed		= isFirst("users") && inPathNotFirst("badges");
+var isReaderPlanUser	= isFirst("users") && inPathNotFirst("reading-plans");
+var isUserProfile 		= isFirst("users") && !isNotesFeed && !isHighlightsFeed && !isBookmarksFeed && !isImagesFeed && !isBadgesFeed && !isFriendsFeed;
