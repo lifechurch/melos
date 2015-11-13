@@ -36,18 +36,19 @@
 
   h1 {
     float: left;
+    margin: 0;
   }
 
   a {
     display: block;
     float: left;
     font-size: rem-calc(12);
+    font-family: arial, sans-serif;
     height: 26px;
     line-height: 25px;
     background: #e4e4e4;
     color: #666;
     padding: rem-calc(0 10);
-    font-weight: bold;
     margin: 0 0 0 2px;
 
     &.book {
