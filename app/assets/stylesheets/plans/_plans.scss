@@ -455,18 +455,17 @@ ul.plan-results {
 }
 
 .plan-day-verse-list {
-  list-style: none;
+  list-style: decimal-leading-zero;
   margin-left: 0;
 }
 
 .plan-day-verse {
-  height: 40px;
+  height: 25px;
   line-height: 39px;
   font-size: 13px;
   color: #666;
-  background: url("../assets/plans-progress-off.svg") no-repeat left center;
-  background-size: 8px;
-  padding: 0 0 0 18px;
+  padding: 0;
+  margin: 0 0 0 27px;
 
   a {
     color: $black;
@@ -480,31 +479,6 @@ ul.plan-results {
 .plan-day-verse.completed {
   color: #bbb;
   text-decoration: line-through;
-}
-
-.plan-day-verse:first-child {
-  background: url("../assets/plans-progress-start-off.svg") no-repeat left bottom;
-  background-size: 8px;
-}
-
-.plan-day-verse:last-child {
-  background: url("../assets/plans-progress-end-off.svg") no-repeat left top;
-  background-size: 8px;
-}
-
-.plan-day-verse.completed {
-  background: url("../assets/plans-progress-on.svg") no-repeat left center;
-  background-size: 8px;
-}
-
-.plan-day-verse.completed:first-child {
-  background: url("../assets/plans-progress-start-on.svg") no-repeat left bottom;
-  background-size: 8px;
-}
-
-.plan-day-verse.completed:last-child {
-  background: url("../assets/plans-progress-end-on.svg") no-repeat left top;
-  background-size: 8px;
 }
 
 .rp-image-settings {
@@ -548,6 +522,16 @@ ul.plan-results {
   bottom: 0;
   background-color: #fff;
   z-index: 100;
+
+  @media #{$medium-only} {
+    position: relative;
+    bottom: auto;
+  }
+
+  @media #{$small-only} {
+    position: relative;
+    bottom: auto;
+  }
 
   .button-group {
     width: 25%;
