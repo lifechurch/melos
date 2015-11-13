@@ -111,7 +111,7 @@
 
 - if (controller_name == 'subscriptions')
   .row.full.pad-row-top
-    .medium-10.large-6.small-centered.columns.text-center.t-border.pad-row-top
+    .day-controls-box.small-centered.columns.text-center.t-border
       %ul.button-group
         %li
           %a.solid-button.green{"ng-click" => "prevPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-disabled" => "devotionalActive"}= 'Previous'
@@ -149,9 +149,9 @@
         "data-reference"     => reference.to_param,
         "data-abbreviation"  => version.try(:abbreviation).downcase,
         "data-usfm"          => reference.chapter_usfm}
-        
+
         = presenter.content.html_safe if presenter.content
-      
+
       -# Read Chapter button
       - if verse_view
         %h2#read_chapter
