@@ -16,10 +16,10 @@
 .widget.scripture-links
   .plan-day-progress
     = t("plans.which day in plan", {day: day, total: subscription.total_days})
-  %ul.plan-day-verse-list
+  %ol.plan-day-verse-list
     %li.plan-day-verse{"ng-class" => "{ active: devotionalActive, completed: devotionalComplete }"}
       %a{"ng-click" => "loadDevotional()", "ng-class" => "{ active: devotionalActive, completed: devotionalComplete }"}
-        = t("plans.devotional")  
+        = t("plans.devotional")
     - unless references.empty?
       - references.each_with_index do |ref,index|
         %li.plan-day-verse{"ng-class" => "{ completed: isRefComplete('#{ref.reference.to_param.downcase}') || '#{ref.completed}' == 'true' }"}
