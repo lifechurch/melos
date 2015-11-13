@@ -43,11 +43,11 @@
           = t(".hero.description")
 
         %span
-          = link_to(t(".hero.start reading"), bible_path, class: 'solid-button green mobile-full')
+          = link_to(t(".hero.start reading"), bible_path, class: 'solid-button green mobile-full', target: "_self")
           &nbsp;
           = t("or.lower")
           &nbsp;
-          = link_to(t(".hero.learn more"),"#scroll-point", id: "scroll-anchor" )
+          = link_to(t(".hero.learn more"),"#scroll-point", id: "scroll-anchor", target: "_self")
         %form
           %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
           %label{for:"setting-skip-home",id:"label-setting-skip-home"}
@@ -69,7 +69,7 @@
               %p= t(".world installs")
       .columns.large-4
         %img{src: "#{image_path('bdc_mobile_icons.png')}", class: "app-icons"}
-        = link_to(t(".download action"), app_page_path, {class: 'solid-button green mobile-full'})
+        = link_to(t(".download action"), app_page_path, {class: 'solid-button green mobile-full', target: "_self"})
 
     .gray.pad-row.get-started
       .row
@@ -77,10 +77,10 @@
           %h1= t(".get started")
       .row.pad-row.explore-cta
         .columns.medium-12.text-center
-          = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), {class: 'solid-button mobile-full blue'})
+          = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), {class: 'solid-button mobile-full blue', target: "_self"})
           %span.or.pad-all
             = t("or.upper")
-          = link_to(t("registration.with email"), sign_up_path, {class: 'solid-button mobile-full gray'})
+          = link_to(t("registration.with email"), sign_up_path, {class: 'solid-button mobile-full gray', target: "_self"})
       .row.pad-row.text-center.home-features
         #scroll-point.columns.large-3.medium-12.small-12.read-bible
           %div.white.pad-all.round.text-left
