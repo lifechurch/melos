@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-19 13:47-0600\n"
-"PO-Revision-Date: 2015-03-19 13:47-0600\n"
+"POT-Creation-Date: 2015-08-04 09:53-0609\n"
+"PO-Revision-Date: 2015-08-04 09:53-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: th <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-08 11:09-0609\n"
+"PO-Revision-Date: 2015-09-08 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: th <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -55,16 +55,22 @@ msgid "moment.bible.download.title"
 msgstr "{name} ดาวน์โหลดพระคัมภีร์ฉบับ <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "คุณได้คั่นหน้า <b>{reference_human}</b>"
+msgstr "คุณได้คั่นหน้า <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} ได้คั่นหน้า <b>{reference_human}</b>"
+msgstr "{name} ได้คั่นหน้า <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "เตรียมพร้อมสำหรับช่วงเวลาคริสมาสต์กับแผนการอ่านเกี่ยวกับการประสูติ"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "ฟื้นฟูความเชื่อของคุณด้วยแผนการอ่านใหม่ๆ"
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "พบสติปัญญาในพระวจนะของพระเจ้าทุกวัน"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "เตรียมหัวใจของคุณสำหรับฤดูกาลนี้"
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "ลองหาแผนการอ่านสำหรับคุณในเดือนกุมภาพันธ์ดูสิ!"
@@ -84,6 +90,15 @@ msgstr "ตั้งใจที่จะแสวงหาพระเจ้า
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "ตั้งใจอ่านพระคัมภีร์รายวันในปี 2015 แผนการอ่านช่วยได้ !"
 
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "ค้นพบความขอบคุณในพระสัญญาของพระเจ้า"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "พระวจนะพระเจ้ายังมีชีวิตอยู่ ให้พระคำของพระเจ้าพูดกับคุณทุกวัน"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "พระวจนะคำของพระเจ้าทำให้ทุกอย่างเป็นสิ่งใหม่"
+
 msgid "moment.friendship.self.title"
 msgstr "ตอนนี้คุณเป็นเพื่อนกับ <b>{friend_name}</b>"
 
@@ -91,16 +106,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} ได้เป็นเพื่อนกับ <b>{friend_name}</b> แล้ว"
 
 msgid "moment.highlight.self.title"
-msgstr "คุณได้เน้นพระคำ <b>{reference_human}</b>"
+msgstr "คุณได้เน้นพระคำ <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} เน้นข้อพระคำ <b>{reference_human}</b>"
+msgstr "{name} เน้นข้อพระคำ <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "คุณได้เพิ่มรูปข้อพระคัมภีร์ <b>{reference_human}</b>"
+msgstr "คุณได้เพิ่มรูปข้อพระคัมภีร์ <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} ได้เพิ่มรูปข้อพระคัมภีร์ <b>{reference_human}</b>"
+msgstr "{name} ได้เพิ่มรูปข้อพระคัมภีร์ <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "คุณได้เพิ่มโน้ต <b>{title}</b>"
@@ -113,6 +128,12 @@ msgstr "อ่านแผนการอ่านสำเร็จ"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} อ่านแผนการอ่านสำเร็จแล้ว"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "คุณอ่านแผนการอ่านนี้จบแล้ว, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} ได้อ่านแผนการอ่าน , <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "วันที่ {segment} จาก {total_segments} ({percent_complete}%)"
@@ -128,6 +149,12 @@ msgstr "เริ่มต้นแผนการอ่าน"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} ได้เริ่มต้นแผนการอ่าน"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "คุณได้เริ่มอ่านแผนการอ่านแผนใหม่, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name}  ได้เริ่มแผนการอ่าน,  <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "รับชม <i>เรื่องราวจากพระคัมภีร์</i> ได้คืนนี้!"
@@ -153,6 +180,9 @@ msgstr "{name} ได้แสดงความคิดเห็นบนท�
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่ของคุณกับ {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} แสดงความคิดเห็นบนความสัมพันธ์ใหม่ของคุณ: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของคุณ: “{comment}”"
 
@@ -174,6 +204,12 @@ msgstr "{commenter_name} ได้แสดงความคิดเห็น�
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่ของ {moment_owner_name}'s กับ {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่กับ {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่กับ{moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของ {moment_owner_name}: “{comment}”"
 
@@ -188,6 +224,9 @@ msgstr "{moment_owner_name} ได้แสดงความคิดเห็�
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่ของคุณกับ {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนความสัมพันธ์ใหม่กับคุณ: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} ได้แสดงความคิดเห็นบนการเน้นข้อพระคำของเขา: “{comment}”"
@@ -218,6 +257,9 @@ msgstr "{name} เป็นเพื่อนของคุณแล้ว"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} ต้องการเป็นเพื่อนกับคุณบน YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "คุณมีคำขอเป็นเพื่อนที่รออยู่ในแอพพระคัมภีร์"
 
 msgid "notifications.friendships.suggestion"
 msgstr "คุณต้องการจะเป็นเพื่่อนกับ {name} บน YouVersion หรือไม่?"

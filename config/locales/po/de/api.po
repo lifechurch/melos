@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-05-18 09:56-0609\n"
-"PO-Revision-Date: 2015-05-18 09:56-0609\n"
+"POT-Creation-Date: 2015-08-31 12:42-0600\n"
+"PO-Revision-Date: 2015-08-31 12:42-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:07-0609\n"
-"PO-Revision-Date: 2015-04-23 15:07-0609\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -55,16 +55,22 @@ msgid "moment.bible.download.title"
 msgstr "{name} hat die <b>{version}</b> heruntergeladen"
 
 msgid "moment.bookmark.self.title"
-msgstr "Du hast ein Lesezeichen für <b>{reference_human}</b> angelegt."
+msgstr "Du hast ein Lesezeichen für <b> {reference_human} </b> ({version_abbreviation}) angelegt."
 
 msgid "moment.bookmark.title"
-msgstr "{name} hat ein Lesezeichen für <b>{reference_human}</b> angelegt"
+msgstr "{name} hat ein Lesezeichen für <b>{reference_human} </b> ({version_abbreviation}) angelegt. "
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Bereite dich auf Weihnachten vor - mit einem Leseplan für den Advent"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Belebe deinen Glauben mit neuen Leseplänen."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Entdecke in Gottes Wort täglich Weisheit."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Bereite dein Herz in der Weihnachtszeit vor."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Suche dir einen Plan für Februar aus!"
@@ -73,7 +79,7 @@ msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "Tägliche Zeit in Gottes Wort bringt anhaltende Freiheit."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Finde deinen Rhythmus, indem du dich täglich mit dem Wort Gottes Wort beschäftigst."
+msgstr "Finde deinen Rhythmus durch tägliches Bibellesen."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Finde neue Hoffnung und Erneuerung in den Leseplänen im März."
@@ -84,6 +90,15 @@ msgstr "Nimm dir jeden Tag Zeit, um Gott beim Lesen der Bibel zu begegnen."
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Lies die Bibel 2015 jeden Tag. Lesepläne helfen!"
 
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Entdecke Dankbarkeit gegenüber Gottes Verheißungen."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Dieses Wort ist lebendig. Lass es täglich zu dir sprechen."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Gottes Wort macht alles neu."
+
 msgid "moment.friendship.self.title"
 msgstr "Du bist nun mit <b>{friend_name}</b> befreundet"
 
@@ -91,16 +106,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} ist nun befreundet mit: <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Du hast <b>{reference_human}</b> markiert."
+msgstr "Du hast <b> {reference_human} </b> ({version_abbreviation}) markiert."
 
 msgid "moment.highlight.title"
-msgstr "{name} hat <b>{reference_human}</b> markiert."
+msgstr "{name} hat<b> {reference_human} </b> ({version_abbreviation}) markiert."
 
 msgid "moment.image.self.title"
-msgstr "Du hast ein Versbild für <b>{reference_human} </b>erstellt."
+msgstr "Du hast ein Versbild für<b> {reference_human} </b> ({version_abbreviation}) erstellt."
 
 msgid "moment.image.title"
-msgstr "{name} hat ein Versbild für <b>{reference_human} </b>erstellt."
+msgstr "{name} hat ein Versbild für <b> {reference_human} </b> ({version_abbreviation}) erstellt."
 
 msgid "moment.note.self.title"
 msgstr "Du hast eine Notiz hinzugefügt mit dem Titel: <b>{title}</b>"
@@ -113,6 +128,12 @@ msgstr "Du hast einen Leseplan abgeschlossen."
 
 msgid "moment.plan_completion.title"
 msgstr "{name} hat einen Leseplan abgeschlossen."
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Du hast deinen Leseplan <b>{title}</b> abgeschlossen."
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} hat den Leseplan <b>{title}</b> abgeschlossen."
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Tag {segment} von {total_segments} ({percent_complete}%)"
@@ -128,6 +149,12 @@ msgstr "Du hast einen Leseplan begonnen"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} hat einen Leseplan begonnen."
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Du hast den neuen Leseplan <b>{title}</b> begonnen."
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} hat den Leseplan <b>{title}</b> begonnen."
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Sieh dir heute Abend die <i>Bibel-Serie</i> an!"
@@ -153,6 +180,9 @@ msgstr "{name} hat dein Lesezeichen kommentiert: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} hat deine neue Freundschaft mit {friend_name} kommentiert: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} hat deine neue Freundschaft so kommentiert: \"{comment}\""
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} hat deine Markierung so kommentiert: “{comment}”"
 
@@ -174,6 +204,12 @@ msgstr "{commenter_name} hat {moment_owner_name}s Lesezeichen ebenfalls kommenti
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} hat die neue Freundschaft von {moment_owner_name} mit {friend_name} ebenfalls kommentiert: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} hat deine neue Freundschaft mit {moment_owner_name} auch kommentiert: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} hat seine/ihre neue Freundschaft mit {moment_owner_name} auch kommentiert: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} hat {moment_owner_name}s Markierung auch kommentiert: “{comment}”"
 
@@ -188,6 +224,9 @@ msgstr "{moment_owner_name} hat sein/ihr Lesezeichen ebenfalls kommentiert: “{
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} hat deine neue Freundschaft mit {friend_name} auch kommentiert: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} hat seine/ihre neue Freundschaft mit dir auch kommentiert: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} hat seine/ihre Markierung ebenfalls kommentiert: “{comment}”"
@@ -219,20 +258,23 @@ msgstr "Du bist jetzt mit {name} befreundet"
 msgid "notifications.friendships.offer"
 msgstr "{name} möchte auf YouVersion mit dir befreundet sein"
 
+msgid "notifications.friendships.pending"
+msgstr "Du hast in der Bibel App ausstehende Freundschaftsanfragen"
+
 msgid "notifications.friendships.suggestion"
 msgstr "Möchtest du auf YouVersion mit {name} befreundet sein?"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name} gefällt dein Lesezeichen für {reference_human}"
+msgstr "{name} gefällt dein Lesezeichen für {reference_human}."
 
 msgid "notifications.likes.moment.mine.friendship"
 msgstr "{name} gefällt, dass du nun mit {friend_name} befreundet bist"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name} gefällt deine Hervorhebung für {reference_human}"
+msgstr "{name} gefällt deine Hervorhebung für {reference_human}."
 
 msgid "notifications.likes.moment.mine.image"
-msgstr "{name} gefällt dein Versbild für {reference_human}"
+msgstr "{name} gefällt dein Versbild für {reference_human}."
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} gefällt deine Notiz"
@@ -247,7 +289,7 @@ msgid "notifications.likes.moment.mine.plan_activity"
 msgstr "{name} gefällt, was du in deinem Plan machst."
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} gefällt, was du mit deinem Plan machst"
+msgstr "{name} gefällt, was du mit deinem Plan machst."
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} hat ein Lesezeichen für {reference_human} angelegt."

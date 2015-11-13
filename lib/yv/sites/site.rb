@@ -20,7 +20,7 @@ module YV
       end
 
       def ga_code
-        'UA-351257-4'
+        'UA-3571547-76'
       end
 
       def ga_domain

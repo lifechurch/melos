@@ -18,6 +18,8 @@ set :default_env, {
   'SECURE_TRAFFIC' => true
 }
 
+require 'socket'
+
 namespace :deploy do
   before :starting, :highstate do
     on roles(:web) do
@@ -44,4 +46,28 @@ namespace :deploy do
     end
   end
 
+end
+
+namespace :memcached do
+  desc "Flush memcached"
+  task :flush do
+    on roles(:web) do
+      within release_path do
+        execute :rake, 'memcached:flush'
+      end
+    end
+  end
+end
+
+namespace :cache do
+  desc "Flush All Caches"
+  task :clearall do
+    on roles(:web) do
+      within release_path do
+        execute :rake, 'memcached:flush'
+        execute :rake, 'cache:clear'
+        execute :rake, 'tmp:cache:clear'
+      end
+    end
+  end
 end

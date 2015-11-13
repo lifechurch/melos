@@ -11,6 +11,8 @@
     - locale_dir = '/pt' if I18n.locale.to_s.eql?('pt-PT')
     - canonicalHref = "https://www.bible.com#{locale_dir}/versions/#{@version.to_param}"
     %link{rel: "canonical", href: canonicalHref}
+    %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/version?id=#{@version.id}"}
+
 - content_for :meta_description do
   = "#{@version.to_s} - #{t('download ad.description copy', language_count: 700)} #{t('download ad.download')}"
 
@@ -67,3 +69,21 @@
     = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'save_btn'
 
 = render '/shared/app_banner'
+
+%script{type: "application/ld+json"}
+  {
+  "@context": "http://schema.org/",
+  "@type": "MobileApplication",
+  "name": "#{t('bible')}",
+  "image": "#{url_for(image_path(localized_bible_icon(120)))}",
+  "description": "#{t("meta.mobile.description")}",
+  "aggregateRating":{
+  "@type": "AggregateRating",
+  "ratingValue": "4.6",
+  "ratingCount": "1,368,430"
+  },
+  "offers":{
+  "@type": "Offer",
+  "price": "Free"
+  }
+  }

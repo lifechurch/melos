@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-24 07:56-0600\n"
-"PO-Revision-Date: 2015-03-24 07:56-0600\n"
+"POT-Creation-Date: 2015-08-11 11:23-0609\n"
+"PO-Revision-Date: 2015-08-11 11:23-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt_PT <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-09 13:09-0600\n"
-"PO-Revision-Date: 2015-03-09 13:09-0600\n"
+"POT-Creation-Date: 2015-10-12 09:48-0600\n"
+"PO-Revision-Date: 2015-10-12 09:48-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt_PT <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -55,16 +55,22 @@ msgid "moment.bible.download.title"
 msgstr "{name} descarregou a versão, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Você criou o marcador <b>{reference_human}</b>"
+msgstr "Você criou o marcador <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} criou o marcador <b>{reference_human}</b>"
+msgstr "{name}  marcou<b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Prepare-se para o Natal com um Plano de Leitura da Bíblia sobre o Advento"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Renove a sua fé com novos planos."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Encontre sabedoria a cada dia na Palavra de Deus."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Prepare o seu coração."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Encontre o seu plano favorito da Bíblia para Fevereiro!"
@@ -84,6 +90,15 @@ msgstr "Dedique-se a procurar Deus diariamente na Sua Palavra."
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Em 2015 leia a Bíblia diariamente. Os Planos ajudam!"
 
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Descubra gratidão nas promessas de Deus."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Esta Palavra é viva. Deixe que ela fale consigo a cada dia."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "A Palavra de Deus torna tudo novo."
+
 msgid "moment.friendship.self.title"
 msgstr "Você é agora amigo/a de <b>{friend_name}</b>"
 
@@ -91,16 +106,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} é agora amigo/a de <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Você destacou <b>{reference_human}</b>"
+msgstr "Você destacou <b> {reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} criou o destaque <b>{reference_human}</b>"
+msgstr "{name}   criou o destaque<b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "Você criou uma imagem de versículo para <b>{reference_human}</b>"
+msgstr "Você criou uma imagem de versículo para <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} criou uma imagem de versículo para <b>{reference_human}</b>"
+msgstr "{name} criou uma imagem de versículo para<b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Você adicionou a nota, <b>{title}</b>"
@@ -113,6 +128,12 @@ msgstr "Completou o seu plano"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} completou um plano"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Completou o plano <b> {title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} completou um plano de leitura da Bíblia: <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Dia {segment} de {total_segments} ({percent_complete}%)"
@@ -128,6 +149,12 @@ msgstr "Começou um plano novo"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} começou um plano novo"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Começou um plano novo: <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name}  começou um plano novo: <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Veja a <i>Série da Bíblia</i> hoje à noite!"
@@ -153,6 +180,9 @@ msgstr "{name} comentou no seu marcador: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} comentou na sua nova amizade com {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} comentou na sua nova amizade: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} comentou no seu destaque: “{comment}”"
 
@@ -174,6 +204,12 @@ msgstr "{commenter_name} também comentou no marcador de {moment_owner_name}: �
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} também comentou na nova amizade de {moment_owner_name} com {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} também comentou na sua nova amizade com {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} também comentou na sua nova amizade com {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} também comentou no destaque de {moment_owner_name}: “{comment}”"
 
@@ -188,6 +224,9 @@ msgstr "{moment_owner_name} também comentou no seu marcador: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} também comentou na sua nova amizade com {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} também fez um comentário na sua nova amizade consigo: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} também comentou no seu destaque: “{comment}”"
@@ -218,6 +257,9 @@ msgstr "{name} é agora seu amigo/a"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} deseja ser seu amigo/a no YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Tem pedidos de Amizade à espera na App da Bíblia"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Deseja ser amigo/a de {name} no YouVersion?"

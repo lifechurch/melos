@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:06-0609\n"
-"PO-Revision-Date: 2015-04-23 15:06-0609\n"
+"POT-Creation-Date: 2015-08-31 12:42-0600\n"
+"PO-Revision-Date: 2015-08-31 12:42-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sk <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-17 08:43-0600\n"
-"PO-Revision-Date: 2015-03-17 08:43-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sk <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -55,16 +55,22 @@ msgid "moment.bible.download.title"
 msgstr "Používateľ {name} si stiahol preklad, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Pridali ste si <b>{reference_human}</b> medzi svoje záložky"
+msgstr "Pridali ste si <b> {reference_human} {version_abbreviation}</b> medzi svoje záložky"
 
 msgid "moment.bookmark.title"
-msgstr "Používateľ {name} pridal <b>{reference_human}</b> medzi svoje záložky"
+msgstr "Používateľ {name} pridal {reference_human} {version_abbreviation} medzi svoje záložky <b> </b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Pripravte sa na Vianoce s adventným plánom čítania Biblie"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Obnovte svoju vieru s novými plánmi čítania."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Nájdi múdrosť v Božom Slove každý deň."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Pripravte svoje srdce na toto obdobie."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Objavte svoj obľúbený plán čítania Biblie na február!"
@@ -84,6 +90,15 @@ msgstr "Venujte sa každodennému hľadaniu Boha v Jeho Slove."
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Čítajte Bibliu denne aj v roku 2015. Plány pomáhajú!"
 
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Objavte vďačnosť v Božích prisľúbeniach."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Toto Slovo je živé. Dovoľte, aby k Vám hovorilo každý deň."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Božie Slovo robí všetko novým."
+
 msgid "moment.friendship.self.title"
 msgstr "Odteraz ste priateľom s používateľom <b>{friend_name}</b>"
 
@@ -91,16 +106,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} je odteraz priateľom s používateľom <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Zvýraznili ste si <b>{reference_human}</b>"
+msgstr "Zvýraznili ste si <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "Používateľ {name} si zvýraznil <b>{reference_human}</b>"
+msgstr "Používateľ {name} si zvýraznil <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "Vytvorili ste obrázok verša <b>{reference_human}</b>"
+msgstr "Vytvorili ste obrázok verša <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} vytvorili ste obrázok verša <b>{reference_human}</b>"
+msgstr "{name} vytvorili ste obrázok verša <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Pridali ste poznámku, <b>{title}</b>"
@@ -113,6 +128,12 @@ msgstr "Dokončili ste plán čítania"
 
 msgid "moment.plan_completion.title"
 msgstr "Používateľ {name} dokončil plán čítania"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Dokončili ste svoj plán, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} dokončil plán čítania, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Deň {segment} z {total_segments} ({percent_complete}%)"
@@ -128,6 +149,12 @@ msgstr "Začali ste plán čítania"
 
 msgid "moment.plan_subscription.title"
 msgstr "Používateľ {name} začal plán čítania"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Začali ste nový plán čítania, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} začal nový plán, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Pozrite si <i>Biblické príbehy</i> ešte dnes!"
@@ -153,6 +180,9 @@ msgstr "Používateľ {name} pridal komentár k vašej záložke: \"{comment}\""
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "Používateľ {name} pridal komentár k vášmu novému priateľstvu s používateľom {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name}pridal komentár k tvojmu novému Priateľstvu:“{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "Používateľ {name} pridal komentár k vášmu zvýrazneniu: \"{comment}\""
 
@@ -174,6 +204,12 @@ msgstr "Používateľ {commenter_name} tiež pridal komentár k záložke použ�
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "Používateľ {commenter_name} tiež pridal komentár k novému priateľstvu používateľa {moment_owner_name} s používateľom {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}tiež pridal komentár k tvojmu novému Priateľstvu s{moment_owner_name}:“{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name}tiež pridal komentár k novému Priateľstvu s{moment_owner_name}:“{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "Používateľ {commenter_name} tiež pridal komentár k zvýrazneniu používateľa {moment_owner_name}: \"{comment}\""
 
@@ -188,6 +224,9 @@ msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojej zálo�
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "Používateľ {moment_owner_name} tiež pridal komentár k jeho novému priateľstvu s používateľom {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name}tiež pridal komentár k novému Priateľstvu s tebou:{comment}"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "Používateľ {moment_owner_name} tiež pridal komentár k svojmu zvýrazneniu: \"{comment}\""
@@ -218,6 +257,9 @@ msgstr "Používateľ {name} je teraz vašim priateľom"
 
 msgid "notifications.friendships.offer"
 msgstr "Používateľ {name} chce byť vašim priateľom na YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Máte žiadosti o priateľstvo čakajúce v Aplikácii Biblia"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Chcete byť s používateľom {name} priateľom na YouVersion?"

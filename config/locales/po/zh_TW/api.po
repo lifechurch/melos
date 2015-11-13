@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-19 13:47-0600\n"
-"PO-Revision-Date: 2015-03-19 13:47-0600\n"
+"POT-Creation-Date: 2015-07-31 10:29-0609\n"
+"PO-Revision-Date: 2015-07-31 10:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_TW <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hant_TW <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -55,16 +55,22 @@ msgid "moment.bible.download.title"
 msgstr "{name} 已下載這個譯本, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "您書籤標記了 <b>{reference_human}</b>"
+msgstr "您書籤標記了 <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} 已把 <b>{reference_human}</b>加入書籤"
+msgstr "{name} 書籤標記了<b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "以基督降臨為主題的讀經計劃來準備迎接聖誕"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "讓新的讀經計劃更新您的信心。"
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "每天從神的話語裡尋找智慧。"
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "趁此節日預備你的心。"
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "尋找二月份裡備受歡迎的讀經計劃！"
@@ -84,6 +90,15 @@ msgstr "每天全情投入神的話語裡尋求祂。"
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015年每天讀經吧！讀經計劃可以幫助！"
 
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "從神的應許裡學習感恩。"
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "神的話語是活潑有功效的，讓它每天對你說話吧。"
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "神的話語使萬物更新。"
+
 msgid "moment.friendship.self.title"
 msgstr "您現在已成為 <b>{friend_name}</b> 的好友"
 
@@ -91,16 +106,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} 加了好友 <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "您已把 <b>{reference_human}</b> 加入重點"
+msgstr "您醒目標示了 <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} 已把 <b>{reference_human}</b> 加入重點"
+msgstr "{name} 醒目顯示了 <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "您為<b>{reference_human}創作了經句圖</b>"
+msgstr "您製作了經句圖給 <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name}為<b>{reference_human}創作了經句圖</b>"
+msgstr "{name} 製作了經句圖給 <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "您已新增筆記, <b>{title}</b>"
@@ -113,6 +128,12 @@ msgstr "完成了讀經計劃"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} 完成了讀經計劃"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "您完成了計劃，<b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} 完成了計劃, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "{total_segments} 中的第 {segment} 天 ({percent_complete}%)"
@@ -128,6 +149,12 @@ msgstr "開始了讀經計劃"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} 開始了讀經計劃"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "您開始了新計劃，<b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} 開始了新計劃，<b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "請在今晚觀看<i>聖經系列</i>!"
@@ -153,6 +180,9 @@ msgstr "{name} 在您的書籤上留言: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} 評論了您的新聯繫 {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} 評論了你的新聯繫：“{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} 在您的重點上留言: “{comment}”"
 
@@ -174,6 +204,12 @@ msgstr "{commenter_name} 也在 {moment_owner_name} 的書籤上留言: “{comm
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} 也評論了 {moment_owner_name} 的新聯繫 {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} 也評論了你與 {moment_owner_name} 的新聯繫：“{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} 也評論了他/她與{moment_owner_name}的新聯繫：“{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} 也在 {moment_owner_name} 的重點上留言: “{comment}”"
 
@@ -188,6 +224,9 @@ msgstr "{moment_owner_name} 也在他/她的書籤上留言: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} 也評論了他/她的新聯繫 {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} 也評論了他/她與你的新聯繫: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} 也在他/她的重點上留言: “{comment}”"
@@ -218,6 +257,9 @@ msgstr "{name} 現在已是您的好友"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} 希望在 YouVersion 上成為您的好友"
+
+msgid "notifications.friendships.pending"
+msgstr "有『朋友』的請求在聖經軟體中待你處理"
 
 msgid "notifications.friendships.suggestion"
 msgstr "您是否接受 {name} 在 YouVersion 上的好友邀請？"

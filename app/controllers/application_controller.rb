@@ -73,9 +73,9 @@ class ApplicationController < ActionController::Base
 
     def set_cache_headers(maxage)
       if maxage == 'long'
-        maxage = 7.days
+        maxage = 1.days
       elsif maxage == 'short'
-        maxage = 24.hours
+        maxage = 8.hours
       end
       expires_in maxage, public: true
     end
