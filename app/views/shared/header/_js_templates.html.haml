@@ -31,9 +31,9 @@
             = "{{friendship.name}} "
           = "#{t("friendships.user wants friendship partial")}"
       .small-6.columns.text-right
-        %a{"href" => "", "ng-click" => "acceptFriendship(friendship.id, '#{form_authenticity_token}')"} #{t("friendships.form.accept button")}
+        %a{"ng-click" => "acceptFriendship(friendship.id, '#{form_authenticity_token}')"} #{t("friendships.form.accept button")}
         = " / "
-        %a{"href" => "", "ng-click" => "denyFriendship(friendship.id, '#{form_authenticity_token}')"} #{t("friendships.form.ignore button")}
+        %a{"ng-click" => "denyFriendship(friendship.id, '#{form_authenticity_token}')"} #{t("friendships.form.ignore button")}
     .row{"ng-if" => "friendships.incoming.length == 0"}
       .small-12.columns
         = t("friendships.requests none")

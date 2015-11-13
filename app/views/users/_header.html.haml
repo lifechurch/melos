@@ -41,10 +41,10 @@
     - tabs.each do |tab|
       - type, href = tab[:type], tab[:href]
       -# %li{class: "profile-tabs-#{type} #{highlight(href)}"}
-      = link_to(t("users.profile.tab #{type}"), href, { class: current_page?(href) ? 'icon text left active' : 'icon text left' })
+      = link_to(t("users.profile.tab #{type}"), href, { class: current_page?(href) ? 'icon text left active' : 'icon text left', target: "_self" })
 
     - if current_user_is? user
       - tabs_right.each do |tab|
         - type, href = tab[:type], tab[:href]
         -# %li{class: "profile-tabs-#{type} #{highlight(href)}"}
-        = link_to(t(tab[:string_key]), href, { class: current_page?(href) ? 'icon text right active' : 'icon text right' })
+        = link_to(t(tab[:string_key]), href, { class: current_page?(href) ? 'icon text right active' : 'icon text right', target: "_self" })

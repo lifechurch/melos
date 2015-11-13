@@ -39,12 +39,13 @@
               - else
                 - cur_status = statuses.delete_at(0)
                 %td.active-day{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'partial' : '') << ((cur_date == current_date) ? ' today' : '')}
-                  = link_to(cur_date.day.to_s, subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day), { "ng-click" => "goToDay(#{cur_status.day})" })
-                  - if cur_status.completed
-                    %img.calendar-day-icon{ src: "#{image_path('icon-plans-checkmark.svg')}"}
-                  - if !cur_status.completed
-                    %img.calendar-day-icon{ src: "#{image_path('icon-plans-uncomplete.svg')}", "ng-hide" => "isDayComplete(#{cur_status.day})"}
-                    %img.calendar-day-icon.ng-hide{ src: "#{image_path('icon-plans-checkmark.svg')}", "ng-show" => "isDayComplete(#{cur_status.day})"}
+                  = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day), "target" => "_self" ) do
+                    = cur_date.day.to_s
+                    - if cur_status.completed
+                      %img.calendar-day-icon{ src: "#{image_path('icon-plans-checkmark.svg')}"}
+                    - if !cur_status.completed
+                      %img.calendar-day-icon{ src: "#{image_path('icon-plans-uncomplete.svg')}", "ng-hide" => "isDayComplete(#{cur_status.day})"}
+                      %img.calendar-day-icon.ng-hide{ src: "#{image_path('icon-plans-checkmark.svg')}", "ng-show" => "isDayComplete(#{cur_status.day})"}
               - cur_date = cur_date.next
 
           :ruby

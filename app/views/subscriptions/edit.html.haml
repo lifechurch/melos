@@ -31,7 +31,7 @@
         -if subscription.delivered_by_email?
           %p
             = subscription.user.email
-            = link_to(t("plans.email edit"), user_email_path(current_user))
+            = link_to(t("plans.email edit"), user_email_path(current_user), target: "_self")
 
           = form_tag(subscription_path(user_id: current_user.to_param, id: subscription), method: :put) do
             %h4.info.text-left= t("plans.delivery time")

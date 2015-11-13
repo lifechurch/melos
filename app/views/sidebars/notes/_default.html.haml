@@ -1,6 +1,6 @@
 - content_for :sidebar do
   .widget-button
-    %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source:"note")}
+    %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source:"note"), target: "_self"}
       %span.icon_plus= t('new note')
 
   = render partial: 'sidebars/notes/list', locals: { notes: Note.search(language_tag: I18n.locale, cache_for: YV::Caching.a_very_short_time), title: t("notes.community notes") }

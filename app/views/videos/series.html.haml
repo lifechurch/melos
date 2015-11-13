@@ -31,19 +31,19 @@
     #title-bar
       %h1= @video.title.html_safe
       %h2.publisher
-        =link_to(@video.credits, publisher_video_path(id: @video.id))
+        =link_to(@video.credits, publisher_video_path(id: @video.id), { target: "_self" })
       = render partial: "videos/share", locals: {video: @video}
   %div.mobile-hero.show-for-small-only
     %h1= @video.title.html_safe
     %h2.publisher
-      =link_to(@video.credits, publisher_video_path(id: @video.id))
+      =link_to(@video.credits, publisher_video_path(id: @video.id), { target: "_self" })
 
   .row
     #episodes
       - @video.videos.each do |vid|
         - thumb = vid.small_image
         %div.medium-6.large-4.columns.end
-          =link_to(video_path(vid), class: "video-name", title: vid.title) do
+          =link_to(video_path(vid), class: "video-name", title: vid.title, target: "_self" ) do
             = image_tag(thumb.url)
             .info
               %h3.title= vid.title

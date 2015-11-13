@@ -6,9 +6,9 @@
         %ul.side-nav
           %li.label= t("youversion").to_s.upcase
           %li
-            = link_to( t("about"), about_path)
+            = link_to( t("about"), about_path, {target: "_self"})
           %li
-            = link_to( t("versions link"), versions_path)
+            = link_to( t("versions link"), versions_path, {target: "_self"})
           %li
             = link_to( t("jobs"), "https://www.youversion.com/jobs")
           %li
@@ -17,21 +17,21 @@
             = link_to( t("get support"), external_url(:support) )
           - if @site.allow_donate? && [:es, :"es-ES", :pt, :"pt-PT", :"pt", :tr].exclude?(current_locale)
             %li
-              = link_to( t("donate title"), (@site.donate_path || donate_path))
+              = link_to( t("donate title"), (@site.donate_path || donate_path), {target: "_self"})
           %li
-            = link_to( t("privacy policy"), privacy_path)
+            = link_to( t("privacy policy"), privacy_path, {target: "_self"})
           %li
-            = link_to( t("terms"), terms_path)
+            = link_to( t("terms"), terms_path, {target: "_self"})
           %li
-            = link_to( t("press"), press_path)
+            = link_to( t("press"), press_path, {target: "_self"})
 
       .large-2.medium-3.columns
         %ul.side-nav
           %li.label= t("download").to_s.upcase
           %li
-            = link_to( t("kids.bible app"), app_page_path )
+            = link_to( t("kids.bible app"), app_page_path, {target: "_self"} )
           %li
-            = link_to( t("meta.kids_app.title"), kids_path )
+            = link_to( t("meta.kids_app.title"), kids_path, {target: "_self"} )
 
       .large-2.medium-3.columns
         %ul.side-nav

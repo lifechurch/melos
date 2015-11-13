@@ -36,7 +36,7 @@
     .row.full
       .medium-4.columns.text-left
         %h3.inline="Versions"
-        %a{"href" => "#", "ng-click" => "cancel('showReaderVersions')" } Cancel
+        %a{"ng-click" => "cancel('showReaderVersions')" } Cancel
       .medium-4.columns.text-center
         %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter")}
       .medium-4.columns.text-right        
@@ -52,15 +52,15 @@
     .row.full
       .medium-4.columns.text-left
         %h3.inline="Books"
-        %a{"href" => "#", "ng-click" => "cancel('showReaderBooks')" } Cancel
+        %a{"ng-click" => "cancel('showReaderBooks')" } Cancel
       .medium-4.columns.text-center
         %input{"ng-model" => "bookFilter", "type" => "text", "placeholder" => t("filter book")}
       .medium-4.columns.text-right        
         .switch
-          %a{"href" => "#", "ng-click" => "sortBooks(false)"} Traditional
+          %a{"ng-click" => "sortBooks(false)"} Traditional
           |
-          %a{"href" => "#", "ng-click" => "sortBooks(true)"} Alphabetic
-          %input#exampleCheckboxSwitch{:type => "checkbox", "ng-model" => "sort", "value" => "alphabetic", "ng-hide" => "true"}
+          %a{"ng-click" => "sortBooks(true)"} Alphabetic
+          -# %input#exampleCheckboxSwitch{:type => "checkbox", "ng-model" => "sort", "value" => "alphabetic", "ng-hide" => "true"}
             %label{:for => "exampleCheckboxSwitch"}
     %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version", "selected-book"=>'selectedBook', "ng-hide" => 'selectedBook', 'on-book-selected' => 'toggleChaptersPanel', 'canon-ot' => "#{t('old testament')}", 'canon-nt' => "#{t('new testament')}"}
 
@@ -73,14 +73,14 @@
           %div{"ng-repeat" => "version in recentVersions | filter: filter"}
             %ul.side-nav{:role => "navigation"}
               %li.menuitem
-                %a{"ng-click" => "loadVersion(version, false)", "href" => "#"}
+                %a{"ng-click" => "loadVersion(version, false)"}
                   %b {{version.abbrev | uppercase}}
                   {{version.title}}
           %hr
         %div{"ng-repeat" => "version in versions | filter: filter"}
           %ul.side-nav{:role => "navigation"}
             %li.menuitem
-              %a{"ng-click" => "loadVersion(version, true)", "href" => "#"}
+              %a{"ng-click" => "loadVersion(version, true)"}
                 %b {{version.abbrev | uppercase}} 
                 {{version.title}}
 
@@ -89,7 +89,7 @@
       %div{:class => "{{$last ? 'end' : ''}}", "ng-class" => "foundationColumnSize", "ng-repeat" => "column in columns"}
         %ul.side-nav{:role => "navigation"}
           %li.menuitem{"ng-if" => "filterBook(filter, book.name)", "ng-repeat" => "book in column"}
-            %a{:href => "#", "ng-click" => "showChapters(book)", "ng-if" => "!book.labelOnly"}
+            %a{"ng-click" => "showChapters(book)", "ng-if" => "!book.labelOnly"}
               = "{{book.name}}"
               -#%b{"ng-if" => "sort"} ( {{book.canon | uppercase}} )
             %h5.bookLabel{"ng-if" => "book.labelOnly"} {{book.name}}
@@ -98,7 +98,7 @@
     .row
       .medium-12.columns.text-left
         %h3.inline {{selectedBook.name}} > Chapters
-        %a{"href" => "#", "ng-click" => "cancel()"} Cancel
+        %a{"ng-click" => "cancel()"} Cancel
         %ol.tabs.pad-head{"data-tab" => ""}
           %li.tab-title{"ng-repeat" => "chapter in selectedBook.chapters"}
             %a{"ng-href" => "{{chapter.href}}"} {{chapter.name}}  
