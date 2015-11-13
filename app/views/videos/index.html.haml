@@ -14,7 +14,7 @@
     - @videos.each do |v|
       %div.medium-6.columns.end
         %div.video
-          =link_to( series_video_path(id:v.id)) do
+          =link_to( series_video_path(id:v.id), { target: "_self" }) do
             = image_tag( v.thumbnails.second.url )
           %h2.info
-            =link_to(v.credits, publisher_video_path(id: v.id), {class: "publisher"})
+            =link_to(v.credits, publisher_video_path(id: v.id), {class: "publisher", target: "_self"})

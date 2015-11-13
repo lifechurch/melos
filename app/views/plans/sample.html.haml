@@ -56,7 +56,7 @@
           - references.each_with_index do |ref|
             %li.content_target
               - ref_text = ref.reference.safe_human
-              = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param)
+              = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param), target: "_self"
 
     .widget
       %h3.hd
@@ -65,7 +65,7 @@
         %p= @plan.copyright.html_safe
       - unless @plan.publisher_url.nil?
         %div.ft.link
-          = link_to(t("plans.about publisher"), @plan.publisher_url)
+          = link_to(t("plans.about publisher"), @plan.publisher_url), target: "_self"
 
 - # has to be here so that title_link content in ^^ references/reader partial will get overwritten
 - overwrite_content_for(:title_link) do

@@ -9,17 +9,9 @@
 .fixed.after-header
   .row.full.b-border.white.collapse
     .medium-12.columns.plans-nav-box
-      = link_to t("plans.all plans"), plans_path, class: 'icon left text'
-      = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon left text active'
+      = link_to t("plans.all plans"), plans_path, class: 'icon left text', target: "_self"
+      = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon left text active', target: "_self"
 %article
-  -# %h1.float_left= t("plans.my plans")
-    %dl.combo_button.float_right
-      %dt
-      %dd
-        = link_to t("plans.all plans"), plans_path
-      %dd.highlighted
-        = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param)
-
   - unless @subscriptions.empty?
     .row.full
       .columns.medium-12
@@ -32,25 +24,16 @@
                 - else
                   %img{src:'//placehold.it/640x360', class: 'radius'}
               .subscription-info
-                = link_to(subscription_path(user_id: @user.to_param, id: sub, initial: 'true'), class: "subscription-title") do
+                = link_to(subscription_path(user_id: @user.to_param, id: sub, initial: 'true'), class: "subscription-title", target: "_self") do
                   %h3.plan-title
                     =t(sub.name)
                 %span.subscription-privacy
                   = sub.private ? t("plans.privacy.private") : t("plans.privacy.public")
                   •
-                  = link_to( t("plans.settings"), edit_subscription_path(user_id: @user, id: sub))
+                  = link_to( t("plans.settings"), edit_subscription_path(user_id: @user, id: sub), target: "_self")
                 .progress_wrap
                   .progress_counter
                     =t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
-                  -#.progress_bar_outer
-                  -#  .progress_bar{:style => "width:#{sub.progress}%"}
-                  -#    &nbsp;
-                  -#.progress_bar_cap
-                  -#  &nbsp;
-                  / .progress_bar_shadow
-                  /   .progress_percent_complete{style: "left:#{sub.progress}%"}
-                  /     %b= t("percentage display", number: sub.progress)
-                  /     .small= t("plans.completion status _ below percentage")
     = render "shared/pagination", resource_list: @subscriptions
   - else
     %div{class: "none"}= (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)

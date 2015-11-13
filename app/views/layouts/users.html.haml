@@ -3,7 +3,7 @@
 
 - if current_user_is? @user
   - content_for :mobile_right_nav do
-    %a.settings_btn{:href => settings_profile_path}
+    %a.settings_btn{:href => settings_profile_path, target: "_self"}
 
 - content_for :lower_js_templates do
   = render partial: "moments/js_templates"

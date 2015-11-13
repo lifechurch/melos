@@ -72,10 +72,10 @@
               = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param)
           - else
             - if current_auth
-              %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])}
+              %a{href: sample_plan_path(plan.to_param , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version]), target: "_self"}
                 = ref_text
             - else
-              = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param)
+              = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param), target: "_self"
 
 - if current_auth
   - if reading.devotional

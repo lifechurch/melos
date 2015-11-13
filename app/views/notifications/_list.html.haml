@@ -8,7 +8,7 @@
       %dt.notifications-item
         - if notification.avatars
           %img.avatar{width: "48px", height: "48px", src: notification.avatars.md_avatar.url}
-        %a.activity-title{href: notification.action_url}
+        %a.activity-title{href: notification.action_url, target: "_self"}
           = notification.moment_title
       %dd.activity-timestamp
         = api_dt_time_ago(notification.created_dt)

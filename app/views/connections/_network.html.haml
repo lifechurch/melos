@@ -9,7 +9,7 @@
     %span{class: "#{network.to_s}-connect"}
       = image_tag "#{network.to_s}-logo.svg", class: "network-logo #{"connected" if connected}"
       - if connected
-        %a{href: delete_connection_path(network.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", rel: "nofollow", class: "connect-delete"}
+        %a{href: delete_connection_path(network.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", rel: "nofollow", class: "connect-delete", target: "_self"}
           = t('social.remove connection')
         - if @error.present?
           %p.error= @error

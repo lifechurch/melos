@@ -54,19 +54,19 @@
     = render partial: "/shared/js_footer"
     = content_for?(:lower_javascript) ? yield(:lower_javascript) : nil
 
-#mode
-  .show-for-small-only
-    sm &lt;640<br>phone
-  .show-for-medium-only
-    md 641 &lt; 1024<br>tablet
-  .show-for-large-only
-    lg 1025 &lt; 1440<br>desktop
-  .show-for-xlarge-only
-    x-lg 1440 &lt; 1920<br>x-large
-  .show-for-xxlarge-only
-    xx-lg &gt; 1920<br>xx-large
-  #rtl-toggle
-    - if params.has_key?(:rtl)
-      %a{onclick: "window.location.href = '#{request.protocol}#{request.host_with_port}#{request.path}'" }TOGGLE RTL
-    - else
-      %a{onclick: "window.location.href = '#{request.protocol}#{request.host_with_port}#{request.path}?rtl=1'" } TOGGLE RTL
+    #mode
+      .show-for-small-only
+        sm &lt;640<br>phone
+      .show-for-medium-only
+        md 641 &lt; 1024<br>tablet
+      .show-for-large-only
+        lg 1025 &lt; 1440<br>desktop
+      .show-for-xlarge-only
+        x-lg 1440 &lt; 1920<br>x-large
+      .show-for-xxlarge-only
+        xx-lg &gt; 1920<br>xx-large
+      #rtl-toggle
+        - if params.has_key?(:rtl)
+          %a{onclick: "window.location.href = '#{request.protocol}#{request.host_with_port}#{request.path}'" }TOGGLE RTL
+        - else
+          %a{onclick: "window.location.href = '#{request.protocol}#{request.host_with_port}#{request.path}?rtl=1'" } TOGGLE RTL

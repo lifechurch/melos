@@ -36,8 +36,8 @@
 %h1.plan-detail-title
   = subscription.name
 %div
-  = link_to t("plans.about this plan"), plan_path(subscription)
-  = link_to t("settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), class: "settings_btn"
+  =link_to t("plans.about this plan"), plan_path(subscription), target: "_self"
+  =link_to t("settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), class: "settings_btn", target: "_self"
 .calendar-container.ng-hide{"ng-show" => "true", "calendar-container" => "true"}
   = render partial: 'subscriptions/calendar', locals: { subscription: @subscription, showAll: false }
 

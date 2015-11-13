@@ -36,7 +36,7 @@
                 %span{itemprop: "name"}= @video.title
 
               %h2.publisher
-                =link_to(@video.credits, publisher_video_path(id: @video.id))
+                =link_to(@video.credits, publisher_video_path(id: @video.id), { target: "_self" })
           .columns.medium-4.show-for-medium-up
             = render partial: "videos/share", locals: {video: @video}
 
@@ -59,13 +59,13 @@
 
                 %ul
                   - @video.references.each do |ref|
-                    %li= link_to(ref.human, bible_version_path(Reference.new(ref.usfm, version: current_version)))
+                    %li= link_to(ref.human, bible_version_path(Reference.new(ref.usfm, version: current_version)), { target: "_self" })
             %p.description
               %span{itemprop: "description"}= @video.description.html_safe if @video.description.present?
 
           #other.columns.medium-4
             - video_series = client_settings.video_series
-            = link_to( t("videos.all"), video_series.blank? ? videos_path : series_video_path(video_series) , class: "solid-button green full")
+            = link_to( t("videos.all"), video_series.blank? ? videos_path : series_video_path(video_series) , class: "solid-button green full", target: "_self" )
             = render partial: "videos/publisher_banner", locals: {publisher: publisher}
 
 - videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"

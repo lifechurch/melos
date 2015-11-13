@@ -14,7 +14,7 @@
     %p.mute.small= "{{note.user.name}}"
   %div.rp-view-all{"style" => "padding-top:5px", "ng-if" => "collapsed"}
     %hr
-    %a.open{href: "", "ng-show" => "collapsed", "ng-click" => "toggle()"}
+    %a.open{"ng-show" => "collapsed", "ng-click" => "toggle()"}
       =t("plans.stats.view all")
   %div.ft{"ng-hide" => "collapsed"}
     %span.link.pagination.next{"ng-click" => "nextPage(-1)", "ng-show" => "isEnabled(-1)"}= t('ui.pagination.previous page')

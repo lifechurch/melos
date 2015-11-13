@@ -6,7 +6,7 @@
     -if current_user.subscribed_to?(plan)
       .row
         .columns.medium-12
-          = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'solid-button full green')
+          = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'solid-button full green', target: "_self")
     - else
       .row
         .columns.medium-6
@@ -25,10 +25,10 @@
                   =t('ui.no button')
                 -#= link_to(t('ui.no button'), subscribe_private_url.call(true), class:"solid-button full gray", method: :post)
         .columns.medium-6
-          = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button full gray'}
+          = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button full gray', target: "_self"}
   - else
     .row
       .columns.medium-6
-        = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: 'solid-button full green')
+        = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: 'solid-button full green', target: "_self")
       .columns.medium-6
-        = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button full gray'}
+        = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button full gray', target: "_self"}
