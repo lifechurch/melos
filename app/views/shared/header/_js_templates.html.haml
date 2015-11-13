@@ -7,10 +7,10 @@
       .small-5.columns
         %b #{t("notifications.title").upcase}
       .small-7.columns.text-right
-        = link_to( t("notifications.view all"), notifications_path )
+        = link_to( t("notifications.view all"), notifications_path, { "target" => "_self" } )
     .row{"ng-repeat"=>"notification in notifications"}
       .small-12.columns
-        %a{"ng-href" => "{{notification.attributes.action_url}}"}
+        %a{"ng-href" => "{{notification.attributes.action_url}}", "target" => "_self"}
           ="{{notification.attributes.moment_title}}"
 
 -#
@@ -23,7 +23,7 @@
       .small-5.columns
         %b #{t("friendships.status.friends").upcase}
       .small-7.columns.text-right
-        = link_to(t("friendships.requests view all"), friends_path)
+        = link_to(t("friendships.requests view all"), friends_path, { "target" => "_self" })
     .row{"ng-repeat"=>"friendship in friendships.incoming"}
       .small-6.columns
         .tight
