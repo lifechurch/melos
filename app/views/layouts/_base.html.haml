@@ -13,9 +13,9 @@
     = csrf_meta_tags
     = render '/shared/head'
     = render '/shared/javascripts'
-    = render '/shared/google_analytics'
 
   %body
+    = render '/shared/google_analytics'
     #wrapper
       = content_for?(:header) ? yield(:header) : render("/shared/header/default")
       = render(partial: "layouts/mobile_nav") unless @main_nav == false    
