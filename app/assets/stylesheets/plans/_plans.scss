@@ -47,8 +47,10 @@
 }
 
 a.icon.text.active {
-  background-color: $green;
-  color: #fff;
+  @media #{$small-only} {
+    background-color: $green;
+    color: #fff;
+  }
 }
 
 html[dir="rtl"] body.c_subscriptions {
