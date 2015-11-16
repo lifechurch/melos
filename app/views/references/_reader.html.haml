@@ -114,9 +114,9 @@
         %div
           %a.ng-hide{"ng-click"=>"deselectAll()", "ng-show" => "readerSelection.length"}
             =t("ref.clear verses")
-        %div{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "version", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
-        %div{'reader-bookmark-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderBookmark", "version" => "version", "token" => "'#{form_authenticity_token}'", "bookmarks" => "bookmarks", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
-        %div{'reader-note-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderNote", "version" => "version", "token" => "'#{form_authenticity_token}'", "notes" => "notes", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
+        %div{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
+        %div{'reader-bookmark-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderBookmark", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "bookmarks" => "bookmarks", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
+        %div{'reader-note-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderNote", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "notes" => "notes", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
 
 
 - if (controller_name == 'subscriptions')

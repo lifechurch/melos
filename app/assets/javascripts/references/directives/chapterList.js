@@ -5,7 +5,9 @@ angular.module('reader.chapterList', [])
 		restrict: 'A',
 		scope: {
 			selectedBook: '=',
-            toggleChaptersPanel: '='
+            toggleChaptersPanel: '=',
+            loadChapter: '=',
+            versionId: '='
 		},
 		controller: ["$scope", function($scope) {
             $scope.cancel = function() {

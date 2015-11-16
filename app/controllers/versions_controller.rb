@@ -25,9 +25,19 @@ class VersionsController < ApplicationController
   end
 
   def show
-    @version = Version.find(params[:id])
-    @related = Version.all_by_publisher[@version.publisher_id].find_all{|v| v.language.tag == @version.language.tag}
-    @related = @related - [@version] if @related
-    self.sidebar_presenter = Presenter::Sidebar::Version.new(@version,params,self)
+    respond_to do |format|
+      format.json {
+        @version = Version.get("bible/version", {id: params[:id] })
+        return render json: @version
+      }
+
+      format.any {
+        @version = Version.find(params[:id])
+        @related = Version.all_by_publisher[@version.publisher_id].find_all{|v| v.language.tag == @version.language.tag}
+        @related = @related - [@version] if @related
+        self.sidebar_presenter = Presenter::Sidebar::Version.new(@version,params,self)
+        return
+      }
+    end
   end
 end
