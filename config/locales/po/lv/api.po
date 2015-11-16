@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:05-0609\n"
-"PO-Revision-Date: 2015-04-23 15:05-0609\n"
+"POT-Creation-Date: 2015-07-31 10:29-0609\n"
+"PO-Revision-Date: 2015-07-31 10:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: lv <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-12 10:45-0600\n"
-"PO-Revision-Date: 2015-03-12 10:45-0600\n"
+"POT-Creation-Date: 2015-09-08 11:09-0609\n"
+"PO-Revision-Date: 2015-09-08 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: lv <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
@@ -55,13 +55,19 @@ msgid "moment.bible.download.title"
 msgstr "{name} lejupielādēja tulkojumu, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Tu izveidoji grāmatzīmi <b>{reference_human}</b>"
+msgstr "Tu izveidoji grāmatzīmi <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} izveidoja grāmatzīmi <b>{reference_human}</b>"
+msgstr "{name} izveidoja grāmatzīmi <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Atsvaidzini savu ticību ar jauniem lasīšanas plāniem."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Atrodi gudrību Dieva Vārdā katru dienu."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Sagatavo savu sirdi šai sezonai."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Atrodi mīļāko Bībeles lasīšanas plānu feburārim!"
@@ -81,6 +87,15 @@ msgstr "Velti katru dienu Dieva meklēšanai viņa Vārdā."
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "2015. gadā lasi Bībeli katru dienu. Lasīšanas plāni palīdz!"
 
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Atrodi pateicību Dieva apsolījumos."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Šis Vārds ir dzīvs. Ļauj, lai tas uzrunā Tevi katru dienu."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Dieva Vārds visu dara jaunu."
+
 msgid "moment.friendship.self.title"
 msgstr "Tu tagad esi draugos ar <b>{friend_name}</b>"
 
@@ -88,16 +103,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} tagad ir draugos ar <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Tu izcēli <b>{reference_human}</b>"
+msgstr "Tu izcēli <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} izcēla <b>{reference_human}</b>"
+msgstr "{name} izcēla <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "Tu izveidoji Bībeles panta attēlu <b>{reference_human}</b>"
+msgstr "Tu izveidoji Bībeles panta attēlu <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} izveidoja Bībeles panta attēlu <b>{reference_human}</b>"
+msgstr "{name} izveidoja Bībeles panta attēlu <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Tu pievienoji piezīmi, <b>{title}</b>"
@@ -110,6 +125,12 @@ msgstr "Tu pabeidzi savu lasīšanas plānu"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} pabeidza lasīšanas plānu"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Tu pabeidzi savu lasīšanas plānu, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} pabeidza lasīšanas plānu, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "{segment} diena no {total_segments} ({percent_complete}%)"
@@ -125,6 +146,12 @@ msgstr "Tu iesāki jaunu lasīšanas plānu"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} uzsāka jaunu lasīšanas plānu"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Tu iesāki jaunu lasīšanas plānu, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name}uzsāka jaunu lasīšanas plānu, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Skaties <i>Bībeles sērijas</i> šovakar!"
@@ -150,6 +177,9 @@ msgstr "{name} komentēja Tavu grāmatzīmi: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} komentēja tavu draudzību ar {friend_name}: \"{comment}\""
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} komentēja Tavu jauno draudzību: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name}komentēja tevis izcelto \"{comment}\""
 
@@ -171,6 +201,12 @@ msgstr "{commenter_name}arī komentēja {moment_owner_name}grāmatzīmi \"{comme
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name}arī komentēja {moment_owner_name} jauno draudzību ar {friend_name}: \"{comment}\""
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} arī komentēja Tavu jauno draudzību ar {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} arī komentēja jauno draudzību ar {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name}arī komentēja {moment_owner_name} izcelto \"{comment}\""
 
@@ -185,6 +221,9 @@ msgstr "{moment_owner_name}arī komentēja savu grāmatzīmi: \"{comment}\""
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name}arī komentēja savu jauno draudzību ar {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} arī komentēja viņu jauno draudzību ar Tevi: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} arī komentēja paša izcelto: \"{comment}\""
@@ -216,6 +255,9 @@ msgstr "{name} nu ir tavs draugs"
 msgid "notifications.friendships.offer"
 msgstr "{name} grib kļūt par tavu draugu YouVersion aplikācijā"
 
+msgid "notifications.friendships.pending"
+msgstr "Bībeles aplikācijā Tevi gaida draudzības uzaicinājumi"
+
 msgid "notifications.friendships.suggestion"
 msgstr "Vai vēlies YouVersion aplikācijā būt draugos ar {name}?"
 
@@ -226,7 +268,7 @@ msgid "notifications.likes.moment.mine.friendship"
 msgstr "{name} patīk tava jaunā draudzība ar {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name}patīk tevis izceltais, {reference_human}"
+msgstr "{name} patīk tevis izceltais, {reference_human}"
 
 msgid "notifications.likes.moment.mine.image"
 msgstr "{name} atzīmēja \"patīk\" tavam Bībeles panta attēlam {reference_human}"
@@ -241,7 +283,7 @@ msgid "notifications.likes.moment.mine.note.title"
 msgstr "{name} patīk tava piezīme \"{title}\""
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name}patīk tava Bībeles lasīšanas plāna aktivitāte"
+msgstr "{name} patīk tava Bībeles lasīšanas plāna aktivitāte"
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
 msgstr "{name} patīk tavas Bībeles lasīšanas plāna aktivitātes"

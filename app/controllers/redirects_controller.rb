@@ -1,6 +1,6 @@
 class RedirectsController < ApplicationController
 
-  before_filter :force_login, except: [:settings_notifications, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti]
+  before_filter :force_login, except: [:settings_notifications, :settings_vod_subscriptions, :lifechurchtv, :ninos, :ertong, :aideul, :criancas, :deti, :kinderen, :kinder, :enfants, :ar_kids, :wmf, :anak]
 
   prepend_before_filter :mobile_redirect, only: [:bookmarks, :profile, :friends, :notes, :badges, :highlights, :connections]
   # skip_filter :set_page,
@@ -77,6 +77,15 @@ class RedirectsController < ApplicationController
     redirect_to('/groups/lifechurchtv')
   end
 
+  def kinder
+    # German redirect to kids
+    redirect_to('/de/kids')
+  end
+
+  def wmf
+    redirect_to('/world-meeting-of-families-app')
+  end
+
   def ninos
     redirect_to('/es/kids')
   end
@@ -101,4 +110,23 @@ class RedirectsController < ApplicationController
     redirect_to('/ru/kids')
   end
 
+  def kinderen
+    # Dutch Redirect to Kids
+    redirect_to('/nl/kids')
+  end
+
+  def enfants
+    # French Redirect to Kids
+    redirect_to('/fr/kids')
+  end
+
+  def anak
+    # Indonesian Redirect to Kids
+    redirect_to('/id/kids')
+  end
+
+  def ar_kids
+    # Arabic Redirect to Kids
+    redirect_to('/ar/kids')
+  end
 end

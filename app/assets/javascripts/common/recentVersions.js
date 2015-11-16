@@ -19,7 +19,7 @@ angular.module('common.recentVersions', [])
             add: function(version) {
                 recentVersions.push(version);
                 if (recentVersions.length > max_versions) {
-                    var removeCount = max_versions - recentVersions.length;
+                    var removeCount = recentVersions.length - max_versions;
                     for (var x = 0; x < removeCount; x++) {
                         recentVersions.shift();
                     }

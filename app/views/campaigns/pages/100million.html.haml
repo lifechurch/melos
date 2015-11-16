@@ -24,9 +24,9 @@
     = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
     :javascript
       try{Typekit.load();}catch(e){}
-    = render '/shared/google_analytics'
-  %body
 
+  %body
+    = render '/shared/google_analytics'
     %article
       -# BA headline and logo
       .intro

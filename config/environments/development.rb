@@ -38,7 +38,8 @@ YouversionWeb::Application.configure do
   # config.quiet_assets = false
 
   # memcache for action and fragment caches
-  config.cache_store = :dalli_store
+  # config.cache_store = :dalli_store
+  config.cache_store = :dalli_store, {  :expires_in => 1.day, :compress => true }
 
   # For Twitter oAuth.
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE

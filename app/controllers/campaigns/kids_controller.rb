@@ -60,7 +60,7 @@ class Campaigns::KidsController < ApplicationController
         # 'market://details?id=com.bible.kids'
 
         # Use this link from Web
-        t('kids.links.google')
+        t('kids.links.google').strip
 
       when /silk|Silk/
         'http://www.amazon.com/gp/mas/dl/android?p=com.bible.kids'

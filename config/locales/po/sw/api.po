@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-04-23 15:06-0609\n"
-"PO-Revision-Date: 2015-04-23 15:06-0609\n"
+"POT-Creation-Date: 2015-09-21 09:02-0600\n"
+"PO-Revision-Date: 2015-09-21 09:02-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sw <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-11-10 12:34-0609\n"
-"PO-Revision-Date: 2014-11-10 12:34-0609\n"
+"POT-Creation-Date: 2015-09-21 09:01-0600\n"
+"PO-Revision-Date: 2015-09-21 09:01-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sw <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -55,13 +55,22 @@ msgid "moment.bible.download.title"
 msgstr "{name} alidownload toleo, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Ulialamisha <b>{reference_human}</b>"
+msgstr "Ulialamisha <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} alialamisha <b>{reference_human}</b>"
+msgstr "{name} alialamisha <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Fanya Upya Imani yako na Mipango mipya."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Pata hekima kupitia neno la Mungu kila siku."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Uandae moyo wako wakati huu wa majira ya krismasi."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Pata mpago upendao wa Bibilia kwa mwezi wa Februari!"
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "Kutumia muda kwenye Neno la Mungu kila siku kunazalisha uhuru wa kudumu."
@@ -69,11 +78,23 @@ msgstr "Kutumia muda kwenye Neno la Mungu kila siku kunazalisha uhuru wa kudumu.
 msgid "moment.client_side.reading_plan_carousel.june.title"
 msgstr "Pata mwamko wako kwa kutumia muda wako kwenye Neno la Mungu kila siku."
 
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Pata tumaini na upya kwa mpango wa mwezi wa Machi."
+
 msgid "moment.client_side.reading_plan_carousel.may.title"
 msgstr "Jitolee kila siku kumtafuta Mungu kwenye Neno Lake."
 
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Läs Bibeln dagligen under 2015. Planer hjälper!"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Vumbua' shukrani kwenye ahadi za Mungu."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Neno la Mungu li hai,  liruhusu kuongea nawe kila siku."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Neno la mungu linafanya kila kitu upya."
 
 msgid "moment.friendship.self.title"
 msgstr "Sasa wewe ni rafiki na<b>{friend_name}</b>"
@@ -82,10 +103,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} sasa ni rafiki na <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Ulibainisha </b>{reference_human}</b>"
+msgstr "Umetia kivuli  <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} alibainisha  <b>{reference_human}</b>"
+msgstr "{name} alibainisha <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.self.title"
+msgstr "Umetengeneza picha ya mstari wa <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "{name}ametengeneza picha ya kifungu kwa <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "uliongeza elezo ,<b>{title}</b>"
@@ -98,6 +125,12 @@ msgstr "Mpango umekamilika"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} amemaliza mpango"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Umemaliza Mpango,  <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} amemaliza Mpango wake,  <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Siku {segment} cha {total_segments} ({percent_complete}%)"
@@ -113,6 +146,12 @@ msgstr "Mpango umeanzwa"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} umeanza mpango"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Mpango umeanzwa, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} ameanza Mpango mpya,  <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Tazama <i>mfululizo wa Bibilia</i> leo usiku!"
@@ -138,8 +177,14 @@ msgstr "{name} ametoa maoni kwenye alamisho lako: \"{comment}\""
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} ametoa maoni juu ya urafiki wako mpya na {friend_name}: \"{comment}\""
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} maoni iliyo wekwa kwa urafiki mupya: “{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} ametoa maoni kwenye onyesho lako: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "{name}ameweka maelezo kwa shairi na picha yako: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} ametoa maoni kwenye maelezo yako: \"{comment}\""
@@ -156,8 +201,17 @@ msgstr "{commenter_name} pia ametoa maoni kwenye {moment_owner_name}'s alamisho:
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} pia ametoa maoni juu ya {moment_owner_name}'s urafiki mpya na {friend_name}: \"{comment}\""
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} tena maoni iliyo wekwa kwa urafiki wao pamoja nawe{moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name}tena maoni iliyo wekwa kwa urafiki wao mupya pamoja na {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} pia ametoa maoni kwenye {moment_owner_name}'s onyesho: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "{commenter_name} pia ameweka maelezo kwa{moment_owner_name}shairi na picha: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} pia ametoa maoni kwenye {moment_owner_name}'s maelezo: \"{comment}\""
@@ -168,8 +222,14 @@ msgstr "{moment_owner_name} pia wametoa maoni kwenye maalamisho yao: \"{comment}
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} pia ametoa maoni juu ya urafiki wake mpya na {friend_name}: \"{comment}\""
 
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name}tena maoni iliyo wekwa kwa urafiki wao pamoja nawe: “{comment}”"
+
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} pia wametoa maoni kwenye maonyesho yao: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "{comment} pia ametoa maoni ya picha ya kifungu cha  {moment_owner_name}."
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} pia wametoa maoni kwenye maelezo yao: \"{comment}\""
@@ -195,6 +255,9 @@ msgstr "{name} sasa ni rafiki yako"
 msgid "notifications.friendships.offer"
 msgstr "{name} anataka kuwa rafiki yako wa YouVersion"
 
+msgid "notifications.friendships.pending"
+msgstr "Una aliko za urafiki zikikungojea ndani ya Programu ya Bibilia"
+
 msgid "notifications.friendships.suggestion"
 msgstr "Je unataka kuwa rafiki wa {name} kwenye YouVersion?"
 
@@ -206,6 +269,9 @@ msgstr "{name} amependa urafiki wako mpya na {friend_name}"
 
 msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} amependa onyesho lako, {reference_human}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "{reference_human}  amependa picha yako ya fungu la  {name}."
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} amependa maelezo yako"
@@ -227,6 +293,9 @@ msgstr "{name} alialamisha {reference_human}"
 
 msgid "notifications.moments.create.highlight"
 msgstr "{name} alibainisha {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "{reference_human} ametengeneza picha ya kifungu kwa {name}"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} ameongeza maelezo"
