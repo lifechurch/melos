@@ -142,5 +142,4 @@ class AppStoreController < ActionController::Base
     tracker.event("App Download", "#{request.host_with_port}#{request.fullpath}")
   end
 
-
 end

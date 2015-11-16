@@ -70,10 +70,10 @@ msgid "moment.bible.download.title"
 msgstr "{name} downloaded the version, <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "You bookmarked <b>{reference_human}</b>"
+msgstr "You bookmarked <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} bookmarked <b>{reference_human}</b>"
+msgstr "{name} bookmarked <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.friendship.self.title"
 msgstr "You are now friends with <b>{friend_name}</b>"
@@ -82,10 +82,10 @@ msgid "moment.friendship.title"
 msgstr "{user_name} is now friends with <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "You highlighted <b>{reference_human}</b>"
+msgstr "You highlighted <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} highlighted <b>{reference_human}</b>"
+msgstr "{name} highlighted <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "You added a note, <b>{title}</b>"
@@ -98,6 +98,12 @@ msgstr "You completed your Plan"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} completed a Plan"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "You completed your Plan, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} completed a Plan, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Day {segment} of {total_segments} ({percent_complete}%)"
@@ -113,6 +119,12 @@ msgstr "You started a new Plan"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} started a new Plan"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "You started a new Plan, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} started a new Plan, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Watch the <i>Bible Series</i> tonight!"
@@ -148,10 +160,10 @@ msgid "moment.client_side.reading_plan_carousel.march.title"
 msgstr "Find hope and renewal in March Plans."
 
 msgid "moment.image.self.title"
-msgstr "You created a verse image for <b>{reference_human}</b>"
+msgstr "You created a verse image for <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} created a verse image for <b>{reference_human}</b>"
+msgstr "{name} created a verse image for <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Refresh your faith with new Plans."
@@ -165,11 +177,29 @@ msgstr "Find your rhythm through daily time in God’s Word."
 msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "Daily time in God’s Word yields lasting freedom."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Find wisdom in God’s Word every day."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "God’s Word makes everything new."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "This Word is alive. Let it speak to you every day."
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Discover thankfulness in God’s promises."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Prepare your heart this season."
+
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "{name} commented on your bookmark: “{comment}”"
 
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} commented on your new friendship with {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name} commented on your new Friendship: “{comment}”"
 
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} commented on your highlight: “{comment}”"
@@ -189,6 +219,12 @@ msgstr "{commenter_name} also commented on {moment_owner_name}'s bookmark: “{c
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} also commented on {moment_owner_name}'s new friendship with {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name} also commented on their new Friendship with {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name} also commented on your new Friendship with {moment_owner_name}: “{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} also commented on {moment_owner_name}'s highlight: “{comment}”"
 
@@ -200,6 +236,9 @@ msgstr "{moment_owner_name} also commented on their bookmark: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} also commented on their new friendship with {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name} also commented on their new Friendship with you: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} also commented on their highlight: “{comment}”"
@@ -302,6 +341,9 @@ msgstr "{name} likes your verse image for {reference_human}"
 
 msgid "notifications.moments.create.image"
 msgstr "{name} created a verse image for {reference_human}"
+
+msgid "notifications.friendships.pending"
+msgstr "You have Friend requests waiting in the Bible App"
 
 msgid "share.find_friends.invite_email_html"
 msgstr "<p>Hi!</p><p>I'm using the Bible App from YouVersion and wanted to share it with you. If you're new to the app, it's a simple way to bring the beauty and truth of the Bible into everyday life. </p><p><strong>Get the Bible App:</strong> read, watch, listen, and share on your smartphone or tablet, and online at Bible.com</p><p><strong>Set up Your Account:</strong> subscribe to Bible Plans and access bookmarks, highlights, and notes across devices</p><p><strong>Add Friends (Like Me!):</strong> explore and discuss the Bible with people you care about</p><p>It's all in the Bible App—get started here: </p>"

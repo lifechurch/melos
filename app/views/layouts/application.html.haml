@@ -15,9 +15,9 @@
     = csrf_meta_tags
     = render '/shared/head'
     = render '/shared/javascripts'
-    = render '/shared/google_analytics'
 
   %body{class: "c_#{params[:controller]} a_#{params[:action]}", onload: "init()"}
+    = render '/shared/google_analytics'
     %a#top-of-page
     / #wrapper
     = content_for?(:header) ? yield(:header) : render("/shared/header/default")

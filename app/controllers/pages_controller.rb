@@ -51,7 +51,7 @@ class PagesController < ApplicationController
     # the following localizations have the legal terms reviewed in a way that is
     # legally appropriate to show in a localized state
     [ :da, :en, :ja, :lv, :sv, :vi, :nl, :"pt", :"no", :"zh-CN",
-      :"zh-TW", :ms, :ru, :ro, :"es-ES", :uk, :ko ]
+      :"zh-TW", :ms, :ru, :ro, :"es-ES", :uk, :ko, :af, :ca, :fr, :el, :it, :es, :tl, :th, :tr, :cy ]
   end
 
   def donate
@@ -86,6 +86,10 @@ class PagesController < ApplicationController
 
   def trending
     @trending_verses = Trending.all()
+  end
+
+  def apple_app_site_association
+    send_file 'apple-app-site-association', :type => 'application/pkcs7-mime'
   end
 
 end

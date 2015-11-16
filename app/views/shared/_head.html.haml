@@ -59,6 +59,7 @@
   %meta{name: "native-url", content: @native_url}
   - if I18n.locale == :en #hack until android supports multilingual deeplinking
     %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{@native_path}"}
+    %link{rel: "alternate", href: "ios-app://282935706/youversion/#{@native_path}"}
 
   - if @user_agent == "ios"
     :javascript

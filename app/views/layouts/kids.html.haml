@@ -8,6 +8,7 @@
   i18n_css_class = "en"
   prelaunch = false
   youtube_url = "//www.youtube.com/embed/97YQAoCjpcs?rel=0"
+  dir = "ltr"
   facebook_locale = "en_US"
   if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then
     i18n_css_class = "es"
@@ -37,17 +38,48 @@
     facebook_locale = "pt_BR"
     youtube_url = ""
     # prelaunch = true
+  elsif I18n.locale.to_s.eql?("nl") then
+    i18n_css_class = "nl"
+    i18n_image_dir = "/nl"
+    meta_url = "#{request.protocol}#{request.host_with_port}/nl/kids"
+    facebook_locale = "nl"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("de") then
+    i18n_css_class = "de"
+    i18n_image_dir = "/de"
+    meta_url = "#{request.protocol}#{request.host_with_port}/de/kids"
+    facebook_locale = "de"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("fr") then
+    i18n_css_class = "fr"
+    i18n_image_dir = "/fr"
+    meta_url = "#{request.protocol}#{request.host_with_port}/fr/kids"
+    facebook_locale = "fr"
+    youtube_url = ""
   elsif I18n.locale.to_s.eql?("ru") then
     i18n_css_class = "ru"
     i18n_image_dir = "/ru"
     meta_url = "#{request.protocol}#{request.host_with_port}/ru/kids"
     facebook_locale = "ru"
     youtube_url = ""
+    elsif I18n.locale.to_s.eql?("id") then
+      i18n_css_class = "id"
+      i18n_image_dir = "/id"
+      meta_url = "#{request.protocol}#{request.host_with_port}/id/kids"
+      facebook_locale = "id"
+      youtube_url = ""
+  elsif I18n.locale.to_s.eql?("ar") then
+    i18n_css_class = "ar"
+    i18n_image_dir = "/ar"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ar/kids"
+    facebook_locale = "ar"
+    youtube_url = ""
+    dir = "rtl"
   end
 
 
 !!! 5
-%html
+%html{dir: dir}
   %head
     %title= "#{t.call("meta.kids_app.title")} - #{t.call("meta.best kids app")} #{t.call('kids.free download')} | #{t.call('kids.feature 2')} | Android, iPhone, iPad, Android tablets"
     %link{rel: "shortcut icon", href:"/favicon.ico"}
@@ -68,6 +100,11 @@
     %meta{property: "og:locale:alternate", content: "zh_CN"}
     %meta{property: "og:locale:alternate", content: "pt_BR"}
     %meta{property: "og:locale:alternate", content: "ru_RU"}
+    %meta{property: "og:locale:alternate", content: "nl_NL"}
+    %meta{property: "og:locale:alternate", content: "de_DE"}
+    %meta{property: "og:locale:alternate", content: "fr_FR"}
+    %meta{property: "og:locale:alternate", content: "ar_AR"}
+    %meta{property: "og:locale:alternate", content: "id_ID"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -84,6 +121,11 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-CN/kids",:rel=>"alternate",:hreflang=>"zh-cn"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/pt-BR/kids",:rel=>"alternate",:hreflang=>"pt-br"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ru/kids",:rel=>"alternate",:hreflang=>"ru"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/nl/kids",:rel=>"alternate",:hreflang=>"nl"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/de/kids",:rel=>"alternate",:hreflang=>"de"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/fr/kids",:rel=>"alternate",:hreflang=>"fr"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ar/kids",:rel=>"alternate",:hreflang=>"ar"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/id/kids",:rel=>"alternate",:hreflang=>"id"}
 
     - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
     %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}#{locale_dir}/kids"}
@@ -94,24 +136,14 @@
     :javascript
       try{Typekit.load();}catch(e){}
 
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-3571547-76']);
-      _gaq.push(['_trackPageview']);
-      _gaq.push(['_setDomainName', 'bible.com']);
-
-      (function() {
-        var ga = document.createElement.call('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
   %body{:class => "body-" + i18n_css_class}
+    = render '/shared/google_analytics'
 
     .kids
 
       -# !Logo and intro copy
       -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru"))
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id"))
         %h1.intro-bible
           = image_tag "kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids
@@ -242,11 +274,12 @@
       "description": "#{t.call('meta.kids_app.description')}",
       "aggregateRating":{
       "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "ratingCount": "55,278"
+      "ratingValue": "4.6",
+      "ratingCount": "73,085"
       },
       "offers":{
       "@type": "Offer",
       "price": "Free"
-      }
+      },
+      "operatingSystem": "Android, iPhone, iPad"
       }

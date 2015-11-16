@@ -1,6 +1,11 @@
 YouversionWeb::Application.routes.draw do
   filter :locale, exclude: /^\/auth\/facebook\/callback/, include_default_locale: false
 
+  get "*path",          to: redirect("http://www.nic.bible/?utm_source=com"),  constraints: { subdomain: 'nic' }
+  get "*path",          to: redirect("http://american.bible/?utm_source=com"), constraints: { subdomain: 'american' }
+  get "/",          to: redirect("http://www.nic.bible/?utm_source=com"),  constraints: { subdomain: 'nic' }
+  get "/",          to: redirect("http://american.bible/?utm_source=com"), constraints: { subdomain: 'american' }
+
   get "/ping",          to: "ping#ping"
   get "/running",       to: "ping#running"
   get "/terms",         to: "pages#terms"
@@ -11,6 +16,8 @@ YouversionWeb::Application.routes.draw do
   get "/myPlansLink",   to: "plans#my_plans_link"
   get "/isLoggedIn",    to: "users#is_logged_in"
   # get "/press",         to: redirect("http://youversion.com/press")
+  get "/bibleappforkids", to: redirect("https://bibleappforkids.com")
+  get "/marriage",      to: redirect("http://blog.youversion.com/2015/10/top-10-marriage-bible-plans-on-youversion/")
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
@@ -20,10 +27,18 @@ YouversionWeb::Application.routes.draw do
   get "/ertong",        to: "redirects#ertong"
   get "/%E5%84%BF%E7%AB%A5",           to: "redirects#ertong"
   get "/%EC%96%B4%EB%A6%B0%EC%9D%B4",  to: "redirects#aideul"
+  get "/%D8%A7%D8%B7%D9%81%D8%A7%D9%84",   to: "redirects#ar_kids"
   get "/criancas",      to: "redirects#criancas"
   get "/crian%C3%A7as", to: "redirects#criancas"
   get "/deti",          to: "redirects#deti"
+  get "/kinderen",      to: "redirects#kinderen"
+  get "/kinder",        to: "redirects#kinder"
+  get "/enfants",       to: "redirects#enfants"
+  get "/anak",       to: "redirects#anak"
   get "/trending-bible-verses", to: "pages#trending"
+  get "/wmf",           to: "redirects#wmf"
+  get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
+  get "/apple-app-site-association", to: "pages#apple_app_site_association"
 
 
   match "/app(/:store)", to: AppStoreController.action(:index)

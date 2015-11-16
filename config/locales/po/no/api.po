@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-24 07:56-0600\n"
-"PO-Revision-Date: 2015-03-24 07:56-0600\n"
+"POT-Creation-Date: 2015-07-31 10:29-0609\n"
+"PO-Revision-Date: 2015-07-31 10:29-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nb_NO <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-03-03 14:07-0600\n"
-"PO-Revision-Date: 2015-03-03 14:07-0600\n"
+"POT-Creation-Date: 2015-09-08 11:10-0609\n"
+"PO-Revision-Date: 2015-09-08 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nb_NO <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -55,16 +55,22 @@ msgid "moment.bible.download.title"
 msgstr "{name} lastet ned versjonen <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
-msgstr "Du bokmerket <b>{reference_human}</b>"
+msgstr "Du bokmerket <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "{name} bokmerket <b>{reference_human}</b>"
+msgstr "{name} bokmerket <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Gjør deg klar for julen med en leseplan for advent"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Forny troen din med nye leseplaner."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Finn visdom i Guds ord hver dag."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Forbered hjertet ditt i adventstiden."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
 msgstr "Finn din favorittplan for februar!"
@@ -84,6 +90,15 @@ msgstr "Sett som mål å daglig søke Gud i hans ord."
 msgid "moment.client_side.reading_plan_carousel.new_year.title"
 msgstr "Les bibelen daglig i 2015. Leseplaner hjelper!"
 
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Oppdag takknemlighet i Guds løfter."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Ordet er levende. La det tale til deg hver dag."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Guds ord gjør alle ting nye."
+
 msgid "moment.friendship.self.title"
 msgstr "Du er nå venn med <b>{friend_name}</b>"
 
@@ -91,16 +106,16 @@ msgid "moment.friendship.title"
 msgstr "{user_name} er nå venn med <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
-msgstr "Du markerte <b>{reference_human}</b>"
+msgstr "Du markerte <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "{name} markerte <b>{reference_human}</b>"
+msgstr "{name} markerte <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "Du laget et bibelbilde til <b>{reference_human}</b>"
+msgstr "Du laget et bibelbilde til <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} laget et bibelbilde til <b>{reference_human}</b>"
+msgstr "{name} laget et bibelbilde til <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Du la til et notat, <b>{title}</b>"
@@ -113,6 +128,12 @@ msgstr "Du fullførte en leseplan"
 
 msgid "moment.plan_completion.title"
 msgstr "{name} fullførte en leseplan"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Du har fullført planen din, <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "{name} fullførte en plan, <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "Dag {segment} av {total_segments} ({percent_complete}%)"
@@ -128,6 +149,12 @@ msgstr "Du begynte på en leseplan"
 
 msgid "moment.plan_subscription.title"
 msgstr "{name} begynte på en ny leseplan"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Du har startet en ny plan, <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "{name} begynte på en ny plan, <b>{title}</b>"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "Se <i>Bibel Series</i> i kveld!"
@@ -153,6 +180,9 @@ msgstr "{name} kommenterte bokmerket: “{comment}”"
 msgid "notifications.comments.moment.mine.friendship"
 msgstr "{name} kommenterte ditt nye vennskap med {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "{name}kommenterte ditt nye vennskap“{comment}”"
+
 msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} kommenterte din markering: “{comment}”"
 
@@ -174,6 +204,12 @@ msgstr "{commenter_name} kommenterte også {moment_owner_name} sitt bokmerke: �
 msgid "notifications.comments.moments.friend.friendship"
 msgstr "{commenter_name} kommenterte også {moment_owner_name}s nye vennskap med {friend_name}: “{comment}”"
 
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "{commenter_name}kommenterte også det nye vennskapet ditt med {moment_owner_name}:“{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "{commenter_name}kommenterte også sitt nye vennskap med{moment_owner_name}:“{comment}”"
+
 msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} kommenterte også {moment_owner_name} sin utheving: “{comment}”"
 
@@ -188,6 +224,9 @@ msgstr "{moment_owner_name} kommenterte også bokmerket sitt: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.friendship"
 msgstr "{moment_owner_name} kommenterte også sitt nye vennskap med {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "{moment_owner_name}kommenterte også det nye vennskapet med deg:”{comment}“"
 
 msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} kommenterte også sin utheving: “{comment}”"
@@ -218,6 +257,9 @@ msgstr "{name} er nå din venn"
 
 msgid "notifications.friendships.offer"
 msgstr "{name} ønsker å være din venn på YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "Du har venneforespørsler som venter i Bibel-appen"
 
 msgid "notifications.friendships.suggestion"
 msgstr "Vil du være venner med {name} på YouVersion?"
