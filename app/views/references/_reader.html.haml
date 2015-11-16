@@ -77,13 +77,13 @@
 
 = render partial: "references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
-.row.full
-  .large-3.columns{"ng-hide" => "isParallelMode"}
+.row.full.reader-content
+  .reader-left.large-3.columns{"ng-hide" => "isParallelMode"}
     - unless (controller_name == 'references' || @sidebar == false || sidebar_presenter.blank?)
       = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
     &nbsp;
 
-  .large-6.columns{class: controller_name == 'plans' ? 'ng-hide' : '', "ng-show" => "!isPlanState || planContentReady", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
+  .reader-center.large-6.columns{class: controller_name == 'plans' ? 'ng-hide' : '', "ng-show" => "!isPlanState || planContentReady", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
     #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes"}
       = presenter.content.html_safe if presenter.content
       -# Read Chapter button
@@ -99,10 +99,10 @@
         = (version.blurb || version.copyright).try :html_safe
 
   - if (controller_name == 'references')
-    .medium-10.large-6.columns{"ng-show" => "isParallelMode", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
+    .medium-10.medium-centered.large-6.columns{"ng-show" => "isParallelMode", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
       #parallel_reader.reader{"reader" => true, "content" => "parallel_reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes"}
 
-  .large-3.columns.verse-action-panels-container{"ng-hide" => "isParallelMode"}
+  .reader-right.large-3.columns.verse-action-panels-container{"ng-hide" => "isParallelMode"}
     - if (controller_name != 'references' && right_sidebar_presenter.present?)
       = render partial: right_sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
     %div{"fix-top" => true}
@@ -121,7 +121,7 @@
 
 - if (controller_name == 'subscriptions')
   .row.full.pad-row-top
-    .day-controls-box.small-centered.columns.text-center.t-border
+    .day-controls-box.small-centered.columns.text-center
       %ul.button-group
         %li
           %a.solid-button.green{"ng-click" => "prevPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-disabled" => "devotionalActive"}= 'Previous'

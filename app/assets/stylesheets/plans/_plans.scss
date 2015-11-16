@@ -315,10 +315,58 @@ ul.plan-results {
 
 /* !Plan day view */
 
+.reader-content {
+  .reader-left {
+    @media #{$medium-only} {
+      width: 50%;
+    }
+
+    @media #{$small-only} {
+      width: auto;
+      float: none;
+    }
+  }
+
+  .reader-center {
+    @media #{$medium-only} {
+      display: none;
+    }
+
+    @media #{$small-only} {
+      display: none;
+    }
+  }
+
+  .reader-right {
+    @media #{$medium-only} {
+      width: 50%;
+    }
+
+    @media #{$small-only} {
+      width: auto;
+      float: none;
+    }
+  }
+
+  .columns:last-child {
+    @media #{$small-only} {
+      float: none;
+    }
+  }
+}
+
 .plan-day-progress {
-  font-size: 13px;
+  font-size: 0.813em;
   color: #666;
   padding: 0 0 5px;
+
+  @media #{$medium-only} {
+    font-size: 1em;
+  }
+
+  @media #{$small-only} {
+    font-size: 1em;
+  }
 }
 
 .plan-detail-title {
@@ -462,10 +510,18 @@ ul.plan-results {
 .plan-day-verse {
   height: 25px;
   line-height: 39px;
-  font-size: 13px;
+  font-size: 0.813em;
   color: #666;
   padding: 0;
   margin: 0 0 0 27px;
+
+  @media #{$medium-only} {
+    font-size: 1em;
+  }
+
+  @media #{$small-only} {
+    font-size: 1em;
+  }
 
   a {
     color: $black;
@@ -514,6 +570,19 @@ ul.plan-results {
         }
       }
     }
+
+    .solid-button {
+      display: none;
+      margin: 20px 0 0;
+
+      @media #{$medium-only} {
+        display: block;
+      }
+
+      @media #{$small-only} {
+        display: block;
+      }
+    }
   }
 }
 
@@ -522,20 +591,37 @@ ul.plan-results {
   bottom: 0;
   background-color: #fff;
   z-index: 100;
+  border-top: 1px solid $lightGray;
 
   @media #{$medium-only} {
     position: relative;
     bottom: auto;
+    background-color: transparent;
+    border-top: 0;
+    z-index: auto;
+    display: none;
   }
 
   @media #{$small-only} {
     position: relative;
     bottom: auto;
+    background-color: transparent;
+    border-top: 0;
+    z-index: auto;
+    display: none;
   }
 
   .button-group {
     width: 25%;
     margin: 0 auto;
+
+    @media #{$medium-only} {
+      width: 50%;
+    }
+
+    @media #{$small-only} {
+      width: auto;
+    }
 
     & > li {
       width: 50%;
