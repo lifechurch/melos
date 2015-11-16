@@ -6,6 +6,7 @@
 
 :ruby
   direction = 'rtl' if version.try(:rtl?)
+  reference_without_version = reference.to_s.rpartition(' ').first
 
 - invalid_ref = defined?(invalid) and invalid == true
 
@@ -18,8 +19,8 @@
 
         // need this H1 for SEO
         %h1
-          %a.book{:id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks')", 'ng-disabled' => 'working'}= reference.human.split(" ")[0]
-          %a.chapter{:id => "reader_chapter", "ng-bind" => "reader_chapter", "ng-click" => "togglePanel('showReaderChapters')", 'ng-disabled' => 'working'}= reference.human.split(" ")[1]
+          %a.book{:id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks')", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').first
+          %a.chapter{:id => "reader_chapter", "ng-bind" => "reader_chapter", "ng-click" => "togglePanel('showReaderChapters')", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').last
           %a.version{:id => "reader_version", "ng-bind" => "reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions')"}= version.human
           %a.version.ng-hide{:id => "parallel_reader_version", "ng-bind" => "parallel_reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions', true)", "ng-show" => "isParallelMode"}
 
