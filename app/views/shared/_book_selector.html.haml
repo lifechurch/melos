@@ -38,7 +38,7 @@
         %h3.inline="Versions"
         %a{"ng-click" => "cancel('showReaderVersions')" } Cancel
       .medium-4.columns.text-center
-        %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter")}
+        %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter"), "ng-minlength" => "3"}
       .medium-4.columns.text-right        
         %br
     %div{"reader-version-list" => true, "versions" => "versions", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel", "load-parallel-chapter" => "loadParallelChapter", "set-parallel-version" => "setParallelVersion" }
@@ -70,17 +70,20 @@
         %div{"ng-if" => "recentVersionCount()"}
           %h5= t("recent versions")
           %hr
-          %div{"ng-repeat" => "version in recentVersions | filter: filter"}
+          %div{"ng-repeat" => "version in recentVersions"}
             %ul.side-nav{:role => "navigation"}
               %li.menuitem
                 %a{"ng-click" => "loadVersion(version, false)"}
                   %b {{version.abbrev | uppercase}}
                   {{version.title}}
           %hr
-        %div{"ng-repeat" => "language in versions | filter: filter"}
-          %h1 {{language.name}}
+        %div{"ng-repeat" => "language in versions", "ng-hide" => "allLangVersions.length == 0"}
+          %h1
+            = "{{language.name}}"
+            %span{"ng-hide" => "language.name == language.local_name"}
+              =" | {{language.local_name}}"
           %ul.side-nav{:role => "navigation"}
-            %li.menuitem{"ng-repeat" => "version in language.versions | filter: filter"}
+            %li.menuitem{"ng-repeat" => "version in allLangVersions = (language.versions | filter: filter)"}
               %a{"ng-click" => "loadVersion(version, true)"}
                 %b {{version.abbrev | uppercase}} 
                 {{version.title}}
