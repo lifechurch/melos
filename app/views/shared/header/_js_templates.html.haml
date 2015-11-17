@@ -4,14 +4,15 @@
 %script{type:"text/ng-template", id: "/header-notifications.tpl.html"}
   .header-notifications
     .row.b-border
-      .small-5.columns
-        %b #{t("notifications.title").upcase}
-      .small-7.columns.text-right
+      .small-5.columns.hn-title
+        %strong #{t("notifications.title").upcase}
+      .small-7.columns.text-right.hn-view
         = link_to( t("notifications.view all"), notifications_path, { "target" => "_self" } )
     .row{"ng-repeat"=>"notification in notifications"}
-      .small-12.columns
+      .small-12.columns.hn-content
         %a{"ng-href" => "{{notification.attributes.action_url}}", "target" => "_self"}
           ="{{notification.attributes.moment_title}}"
+
 
 -#
 -# Header Friendships
@@ -20,17 +21,16 @@
   -#%div.header-popover.friend-requests#requests-menu{"data-str-wants-friendship"=>t("friendships.user wants friendship partial"), "data-str-accept" => t("friendships.form.accept button"), "data-str-ignore" => t("friendships.form.ignore button"), "data-str-no-requests" => t("friendships.requests none"), "data-str-view-all" => t("friendships.requests view all"), "data-str-none"=>t("friendships.requests no new")}
   .header-friendships
     .row.b-border
-      .small-5.columns
-        %b #{t("friendships.status.friends").upcase}
-      .small-7.columns.text-right
+      .small-5.columns.hf-title
+        %strong #{t("friendships.status.friends").upcase}
+      .small-7.columns.text-right.hf-view
         = link_to(t("friendships.requests view all"), friends_path, { "target" => "_self" })
     .row{"ng-repeat"=>"friendship in friendships.incoming"}
-      .small-6.columns
-        .tight
-          %a{"ng-href" => "#{users_path}/{{friendship.username}}"}
-            = "{{friendship.name}} "
-          = "#{t("friendships.user wants friendship partial")}"
-      .small-6.columns.text-right
+      .small-6.columns.hf-username.tight
+        %a{"ng-href" => "#{users_path}/{{friendship.username}}"}
+          = "{{friendship.name}} "
+        = "#{t("friendships.user wants friendship partial")}"
+      .small-6.columns.text-right.hf-links.tight
         %a{"ng-click" => "acceptFriendship(friendship.id, '#{form_authenticity_token}')"} #{t("friendships.form.accept button")}
         = " / "
         %a{"ng-click" => "denyFriendship(friendship.id, '#{form_authenticity_token}')"} #{t("friendships.form.ignore button")}
