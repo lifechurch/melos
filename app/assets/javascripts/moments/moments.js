@@ -24,12 +24,12 @@ angular.module('yv.moments', [
 	.state('moments', {
 		url: 		'/moments',
 		controller: 	'MomentsCtrl',
-		template: 	'<div class="row moments-feed" infinite-scroll="loadMore()" infinite-scroll-distance="3" infinite-scroll-disabled="loading"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full ng-hide" ng-show="!loading">Load More</button></div></div>'
+		template: 	'<div class="row moments-feed" infinite-scroll="loadMore()" infinite-scroll-distance="3" infinite-scroll-disabled="loading || pagingFinished"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full ng-hide" ng-show="!loading && !pagingFinished">Load More</button></div></div>'
 	})
 	.state('moments-locale', {
 		url: 		'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/moments',
 		controller: 	'MomentsCtrl',
-		template: 	'<div class="row moments-feed" infinite-scroll="loadMore()" infinite-scroll-distance="3" infinite-scroll-disabled="loading"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full ng-hide" ng-show="!loading">Load More</button></div></div>'
+		template: 	'<div class="row moments-feed" infinite-scroll="loadMore()" infinite-scroll-distance="3" infinite-scroll-disabled="loading || pagingFinished"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full ng-hide" ng-show="!loading && !pagingFinished">Load More</button></div></div>'
 	})
 
 
@@ -126,6 +126,7 @@ angular.module('yv.moments', [
 
 .controller("MomentsCtrl", ["$scope", "$rootScope", "$window", "Moments", "$state", "$stateParams", function($scope, $rootScope, $window, Moments, $state, $stateParams) {
 	$scope.currentPage = 0;
+    $scope.pagingFinished = false;
 
 	var momentType = ($state.current.data && $state.current.data.momentType) ? $state.current.data.momentType : null;
 	var inProfile = ($state.current.data && $state.current.data.inProfile) ? $state.current.data.inProfile : false;
@@ -140,7 +141,10 @@ angular.module('yv.moments', [
 			} else {
 				$scope.moments = $scope.moments.concat(data);
 			}
-			$scope.loading = false;
+            $scope.loading = false;
+            if (data.length < 10) {
+                $scope.pagingFinished = true;
+            }
 		}).error(function(err) {
 			//TO-DO: Handle Error
 			$scope.loading = false;
