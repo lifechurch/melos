@@ -54,7 +54,7 @@
     = render partial: "/shared/js_footer"
     = content_for?(:lower_javascript) ? yield(:lower_javascript) : nil
 
-    #mode
+    #mode{onclick: 'document.getElementById("mode").style.display = "none";'}
       .show-for-small-only
         sm &lt;640<br>phone
       .show-for-medium-only
@@ -65,7 +65,7 @@
         x-lg 1440 &lt; 1920<br>x-large
       .show-for-xxlarge-only
         xx-lg &gt; 1920<br>xx-large
-      #rtl-toggle
+      #rtl-toggle{style: 'display:none;'}
         - if params.has_key?(:rtl)
           %a{onclick: "window.location.href = '#{request.protocol}#{request.host_with_port}#{request.path}'" }TOGGLE RTL
         - else

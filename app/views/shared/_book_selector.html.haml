@@ -38,15 +38,15 @@
         %h3.inline="Versions"
         %a{"ng-click" => "cancel('showReaderVersions')" } Cancel
       .medium-4.columns.text-center
-        %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter")}
+        %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter"), "ng-minlength" => "3"}
       .medium-4.columns.text-right        
         %br
-    %div{"reader-version-list" => true, "versions" => "reader_version_list", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel", "load-parallel-chapter" => "loadParallelChapter", "set-parallel-version" => "setParallelVersion" }
+    %div{"reader-version-list" => true, "versions" => "versions", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel", "load-parallel-chapter" => "loadParallelChapter", "set-parallel-version" => "setParallelVersion" }
 
   #reader-chapter-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderChapters" }
     .row.full.scroll
       .medium-12.columns
-        %div{"reader-chapter-list" => true, "selected-book" => "selectedBook", "ng-show" => "selectedBook", "toggle-chapters-panel" => "toggleChaptersPanel" }
+        %div{"reader-chapter-list" => true, "selected-book" => "selectedBook", "ng-show" => "selectedBook", "toggle-chapters-panel" => "toggleChaptersPanel", "load-chapter" => "loadChapter", "version-id" => "reader_version_id" }
 
   #reader-book-dropdown.ng-hide.medium-12.reader-panel.full.scroll{ "tabindex" => "-1", "ng-show" => "showReaderBooks" }
     .row.full
@@ -62,7 +62,7 @@
           %a{"ng-click" => "sortBooks(true)"} Alphabetic
           -# %input#exampleCheckboxSwitch{:type => "checkbox", "ng-model" => "sort", "value" => "alphabetic", "ng-hide" => "true"}
             %label{:for => "exampleCheckboxSwitch"}
-    %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version", "selected-book"=>'selectedBook', "ng-hide" => 'selectedBook', 'on-book-selected' => 'toggleChaptersPanel', 'canon-ot' => "#{t('old testament')}", 'canon-nt' => "#{t('new testament')}"}
+    %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version_id", "selected-book"=>'selectedBook', "ng-hide" => 'selectedBook', 'on-book-selected' => 'toggleChaptersPanel', 'canon-ot' => "#{t('old testament')}", 'canon-nt' => "#{t('new testament')}"}
 
   %script{'type' => 'text/ng-template', 'id' => '/reader-version-selector.tpl.html'}
     .row.full
@@ -70,16 +70,20 @@
         %div{"ng-if" => "recentVersionCount()"}
           %h5= t("recent versions")
           %hr
-          %div{"ng-repeat" => "version in recentVersions | filter: filter"}
+          %div{"ng-repeat" => "version in recentVersions"}
             %ul.side-nav{:role => "navigation"}
               %li.menuitem
                 %a{"ng-click" => "loadVersion(version, false)"}
                   %b {{version.abbrev | uppercase}}
                   {{version.title}}
           %hr
-        %div{"ng-repeat" => "version in versions | filter: filter"}
+        %div{"ng-repeat" => "language in versions", "ng-hide" => "allLangVersions.length == 0"}
+          %h1
+            = "{{language.name}}"
+            %span{"ng-hide" => "language.name == language.local_name"}
+              =" | {{language.local_name}}"
           %ul.side-nav{:role => "navigation"}
-            %li.menuitem
+            %li.menuitem{"ng-repeat" => "version in allLangVersions = (language.versions | filter: filter)"}
               %a{"ng-click" => "loadVersion(version, true)"}
                 %b {{version.abbrev | uppercase}} 
                 {{version.title}}
@@ -88,11 +92,11 @@
     .row.full
       %div{:class => "{{$last ? 'end' : ''}}", "ng-class" => "foundationColumnSize", "ng-repeat" => "column in columns"}
         %ul.side-nav{:role => "navigation"}
-          %li.menuitem{"ng-if" => "filterBook(filter, book.name)", "ng-repeat" => "book in column"}
+          %li.menuitem{"ng-if" => "filterBook(filter, book.human)", "ng-repeat" => "book in column"}
             %a{"ng-click" => "showChapters(book)", "ng-if" => "!book.labelOnly"}
-              = "{{book.name}}"
+              = "{{book.human}}"
               -#%b{"ng-if" => "sort"} ( {{book.canon | uppercase}} )
-            %h5.bookLabel{"ng-if" => "book.labelOnly"} {{book.name}}
+            %h5.bookLabel{"ng-if" => "book.labelOnly"} {{book.human}}
   
   %script{'type' => 'text/ng-template', 'id' => '/reader-chapter-selector.tpl.html'}
     .row
@@ -101,4 +105,5 @@
         %a{"ng-click" => "cancel()"} Cancel
         %ol.tabs.pad-head{"data-tab" => ""}
           %li.tab-title{"ng-repeat" => "chapter in selectedBook.chapters"}
-            %a{"ng-href" => "{{chapter.href}}"} {{chapter.name}}  
+            -#%a{"ng-href" => "{{chapter.href}}"} {{chapter.name}} {{chapter.usfm}}
+            %a{"ng-click" => "loadChapter(null, {usfm: chapter.usfm, version: versionId})"} {{chapter.human}}

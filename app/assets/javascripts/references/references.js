@@ -65,8 +65,8 @@ angular.module('yv.reader', [
 	;
 }])
 
-.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", "Subscription", "$anchorScroll", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window, Subscription, $anchorScroll) {
-	$scope.version = $stateParams.version;
+.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", "Subscription", "$anchorScroll", "$q", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window, Subscription, $anchorScroll, $q) {
+	$scope.reader_version_id = $stateParams.version;
     $scope.parallel_version = $stateParams.version;
 	$scope.usfm = $stateParams.usfm;
 	$scope.readerFontSize = 19;
@@ -79,7 +79,7 @@ angular.module('yv.reader', [
 	$scope.highlights = [];
 	$scope.bookmarks = [];
 	$scope.notes = [];
-	$scope.isPlanState = $state.current.name == 'planSample' || $state.current.name == 'userPlan';
+	$scope.isPlanState = ['planSample', 'planSample-locale', 'userPlan', 'userPlan-locale'].indexOf($state.current.name) > -1;
 	$scope.planContentReady = false;
 	$scope.devotionalActive = false;
 	$scope.devotionalComplete = false;
@@ -137,13 +137,17 @@ angular.module('yv.reader', [
 		$scope.highlights = [];
 		$scope.bookmarks = [];
 		$scope.notes = [];
+        $scope.reader_book_list = [];
+        $scope.filter = "";
+        $scope.selectedBook = null;
         $anchorScroll("top-of-page");
 
 		Bible.getChapter(location_path).success(function(data, status, headers, config) {
             if (data.hasOwnProperty('to_path')) {
-                $scope.version = data.to_path.split("/")[2];
+                $scope.reader_version_id = data.to_path.split("/")[2];
             }
 			fillScope(data, hideDevotional);
+            loadBooks($scope.reader_version_id);
 			$scope.working = false;
 		}).error(function(data, status, headers, config) {
 			//TO-DO: Handle Error!
@@ -180,14 +184,26 @@ angular.module('yv.reader', [
 	 * Fetch list of versions from server
 	 */
 	function loadVersions() {
-		Versions.get($scope.version).success(function(data, status, headers, config) {
-			fillScope(data);
-			$scope.working = false;
-		}).error(function(data, status, headers, config) {
-			//TO-DO: Handle Error!
-			$scope.working = false;
-		});
+        return $q(function(resolve, reject) {
+            Versions.get($scope.reader_version).success(function(data, status, headers, config) {
+                fillScope({versions: data.by_language});
+                $scope.working = false;
+                resolve();
+            }).error(function(data, status, headers, config) {
+                //TO-DO: Handle Error!
+                $scope.working = false;
+                reject();
+            });
+        });
 	}
+
+    function loadBooks(versionId) {
+        Versions.getSingle(versionId).success(function(v) {
+          $scope.reader_book_list = v[0].books;
+        }).error(function(error) {
+
+        });
+    }
 
 
 	/**
@@ -210,22 +226,24 @@ angular.module('yv.reader', [
 		//TO-DO: Make Audio Directive
 		if ($scope.reader_audio && $scope.reader_audio.url) {
 			var player = document.getElementById("reader_audio_player");
-			player.src = $sce.trustAsResourceUrl($scope.reader_audio.url);
+            if (player) {
+                player.src = $sce.trustAsResourceUrl($scope.reader_audio.url);
+            }
 		}
 
-		Highlights.get($scope.version, $scope.usfm).success(function(data) {
+		Highlights.get($scope.reader_version_id, $scope.usfm).success(function(data) {
 			$scope.highlights = data;
 		}).error(function(err) {
 			//TO-DO: Handle Error
 		});
 
-		Bookmarks.get($scope.version, $scope.usfm).success(function(data) {
+		Bookmarks.get($scope.reader_version_id, $scope.usfm).success(function(data) {
 			$scope.bookmarks = data;
 		}).error(function(err) {
 			//TO-DO: Handle Error
 		});
 
-		// Notes.get($scope.version, $scope.usfm).success(function(data) {
+		// Notes.get($scope.reader_version_id, $scope.usfm).success(function(data) {
 		// 	$scope.notes = data;
 		// }).error(function(err) {
 		// 	//TO-DO: Handle Error
@@ -263,20 +281,20 @@ angular.module('yv.reader', [
 		}
 	}
 
-	function parseVersionLinks() {
-		if (!$scope.reader_version_list || $scope.reader_version_list.length == 0) {
-			var reader_version_children = angular.element(document.getElementById("reader_version_list")).children();
-			$scope.reader_version_list = [];
-			for (var i = 0; i < reader_version_children.length; i++) {
-				$scope.reader_version_list.push({
-					abbrev: 	reader_version_children[i].dataset.abbrev,
-					meta: 		reader_version_children[i].dataset.meta,
-					title: 		reader_version_children[i].dataset.title,
-					version: 	reader_version_children[i].dataset.version
-				});
-			}
-		}
-	}
+//	function parseVersionLinks() {
+//		if (!$scope.reader_version_list || $scope.reader_version_list.length == 0) {
+//			var reader_version_children = angular.element(document.getElementById("reader_version_list")).children();
+//			$scope.reader_version_list = [];
+//			for (var i = 0; i < reader_version_children.length; i++) {
+//				$scope.reader_version_list.push({
+//					abbrev: 	reader_version_children[i].dataset.abbrev,
+//					meta: 		reader_version_children[i].dataset.meta,
+//					title: 		reader_version_children[i].dataset.title,
+//					version: 	reader_version_children[i].dataset.version
+//				});
+//			}
+//		}
+//	}
 
 
 	/**
@@ -309,7 +327,10 @@ angular.module('yv.reader', [
             } else {
                 $scope.setParallelVersion = false;
             }
-			parseVersionLinks();
+			//parseVersionLinks();
+            if (!$scope.versions || !$scope.versions.length) {
+                loadVersions();
+            }
 		}
 	};
 
@@ -386,7 +407,7 @@ angular.module('yv.reader', [
 
     $scope.completeReferenceAndLoadChapter = function(toState, toParams, refUsfm, userPlanUrl, dayTarget, token) {
         var usfm = $scope.refUsfm;
-        var version = $scope.version;
+        var version = $scope.reader_version_id;
         $scope.isLastPlanRef = (getRefIndex(refUsfm) == ($scope.orderedRefs.length - 1));
         if (usfm && version) {
             Subscription.completeReference(userPlanUrl, usfm, version, dayTarget, token).success(function(resp) {
@@ -408,7 +429,7 @@ angular.module('yv.reader', [
 
     $scope.completeReferenceAndLoadDay = function(userPlanUrl, dayTarget, token) {
         var usfm = $scope.refUsfm;
-        var version = $scope.version;
+        var version = $scope.reader_version_id;
         if (usfm && version) {
             Subscription.completeReference(userPlanUrl, usfm, version, dayTarget, token).success(function(resp) {
                 completeRef(resp.ref);
@@ -460,17 +481,22 @@ angular.module('yv.reader', [
         }
 
         if (nextRef) {
-            nextRefUsfm = orderedRefToUsfm(nextRef, true);
-            nextRefChapterUsfm = orderedRefToUsfm(nextRef, false);
+            orderedRefToUsfm(nextRef, true).then(function(nextRefUsfm) {
+                orderedRefToUsfm(nextRef, false).then(function(nextRefChapterUsfm) {
+                    $scope.completeReferenceAndLoadChapter(
+                        'reader',
+                        { version: nextRef.version, usfm: nextRefChapterUsfm },
+                        nextRefUsfm,
+                        userPlanUrl,
+                        dayTarget,
+                        token
+                    );
+                }, function(error) {
 
-            $scope.completeReferenceAndLoadChapter(
-                'reader',
-                { version: nextRef.version, usfm: nextRefChapterUsfm },
-                nextRefUsfm,
-                userPlanUrl,
-                dayTarget,
-                token
-            );
+                });
+            }, function(error) {
+
+            });
         } else {
             $scope.completeReferenceAndLoadDay(
                 userPlanUrl,
@@ -497,17 +523,22 @@ angular.module('yv.reader', [
                 }
 
                 if (prevRef) {
-                    prevRefUsfm = orderedRefToUsfm(prevRef, true);
-                    prevRefChapterUsfm = orderedRefToUsfm(prevRef, false);
+                    orderedRefToUsfm(prevRef, true).then(function(prevRefUsfm) {
+                        orderedRefToUsfm(prevRef, false).then(function(prevRefChapterUsfm) {
+                            $scope.completeReferenceAndLoadChapter(
+                                'reader',
+                                { version: prevRef.version, usfm: prevRefChapterUsfm },
+                                prevRefUsfm,
+                                userPlanUrl,
+                                dayTarget,
+                                token
+                            );
+                        }, function(error) {
 
-                    $scope.completeReferenceAndLoadChapter(
-                        'reader',
-                        { version: prevRef.version, usfm: prevRefChapterUsfm },
-                        prevRefUsfm,
-                        userPlanUrl,
-                        dayTarget,
-                        token
-                    );
+                        });
+                    }, function(error) {
+
+                    });
                 }
             }
         }
@@ -545,49 +576,47 @@ angular.module('yv.reader', [
     }
 
     function orderedRefToUsfm(ref, includeVerse) {
-        //completeReferenceAndLoadChapter(
-        // 'reader',
-        // {version: 1, usfm: 'pro.15'},
-        // 'pro.15.15.kjv',
-        // '/users/tjyeldon/reading-plans/1856-struggles?id=1856-struggles',
-        // '4',
-        // 'PPpHHCfd1VqiDbvlYGUi/IbINaEnNXemeyXKOHH7urE='
-        // )
+        return $q(function(resolve, reject) {
+            if (includeVerse) {
+                var verses = "";
+                if (ref.verses.length > 1) {
+                    var pv;
+                    var range;
+                    for (var i = 0; i < ref.verses.length; i++) {
+                        var v = parseInt(ref.verses[i]);
 
-        if (includeVerse) {
-            var verses = "";
-            if (ref.verses.length > 1) {
-                var pv;
-                var range;
-                for (var i = 0; i < ref.verses.length; i++) {
-                    var v = parseInt(ref.verses[i]);
-
-                    if (pv && pv + 1 !== v) {
-                        if (range) {
-                            verses += "-" + range.toString();
-                            range = null;
+                        if (pv && pv + 1 !== v) {
+                            if (range) {
+                                verses += "-" + range.toString();
+                                range = null;
+                            }
+                            verses += "," + v.toString();
+                        } else if (pv && pv + 1 == v) {
+                            range = v;
+                        } else if (!pv) {
+                            verses = v.toString();
                         }
-                        verses += "," + v.toString();
-                    } else if (pv && pv + 1 == v) {
-                        range = v;
-                    } else if (!pv) {
-                        verses = v.toString();
+                        pv = v;
                     }
-                    pv = v;
+
+                    if (range) {
+                        verses += "-" + range.toString();
+                        range = null;
+                    }
+                } else if (ref.verses.length == 1) {
+                    verses = ref.verses[0].toString();
                 }
 
-                if (range) {
-                    verses += "-" + range.toString();
-                    range = null;
-                }
-            } else if (ref.verses.length == 1) {
-                verses = ref.verses[0].toString();
+                getVersionAbbrFromId(ref.version).then(function(versionAbbr) {
+                    resolve([ ref.book.toLowerCase(), ref.chapter.toString(), verses, versionAbbr ].join("."));
+                }, function(err) {
+                    reject(err);
+                });
+
+            } else {
+                resolve([ ref.book.toLowerCase(), ref.chapter.toString() ].join("."));
             }
-            return [ ref.book.toLowerCase(), ref.chapter.toString(), verses, 'kjv' ].join(".");
-        } else {
-            return [ ref.book.toLowerCase(), ref.chapter.toString() ].join(".");
-        }
-
+        });
     }
 
     function getRefIndex(usfm) {
@@ -607,10 +636,54 @@ angular.module('yv.reader', [
     }
 
     function getVersionIdFromAbbr(abbr) {
-        switch(abbr.toLowerCase()) {
-            case "kjv":
-                return 1;
+        if (!$scope.versions || !$scope.versions.length) {
+            loadVersions().then(function(data) {
+                return getAbbr();
+            }, function(error) {
+
+            });
+        } else {
+            return getAbbr();
         }
+
+        function getAbbr() {
+            for (var x = 0; x < $scope.versions.length; x++) {
+                var lang = $scope.versions[x];
+                for (var y = 0; y < lang.versions.length; y++) {
+                    var v = lang.versions[y];
+                    if (v.abbr.toLowerCase() == abbr.toLowerCase()) {
+                        return v.id;
+                    }
+                }
+            }
+            return null;
+        }
+    }
+
+    function getVersionAbbrFromId(id) {
+        function getId() {
+            for (var x = 0; x < $scope.versions.length; x++) {
+                var lang = $scope.versions[x];
+                for (var y = 0; y < lang.versions.length; y++) {
+                    var v = lang.versions[y];
+                    if (v.id.toString() == id.toString()) {
+                        return v.abbr.toString().toLowerCase();
+                    }
+                }
+            }
+            return null;
+        }
+        return $q(function(resolve, reject) {
+            if (!$scope.versions || !$scope.versions.length) {
+                loadVersions().then(function(data) {
+                    resolve(getId());
+                }, function(error) {
+                    reject(error);
+                });
+            } else {
+                resolve(getId());
+            }
+        });
     }
 
 
@@ -638,7 +711,7 @@ angular.module('yv.reader', [
             $scope.isParallelMode = true;
 
             if (!$scope.parallel_version) {
-                $scope.parallel_version = $scope.version;
+                $scope.parallel_version = $scope.reader_version_id;
                 $scope.parallel_reader_version = $scope.reader_version;
             }
 
@@ -664,11 +737,11 @@ angular.module('yv.reader', [
         loadChapter($state.href(toState, toParams));
 
         // Switch to the new URL without loading the controller again
-        //$state.go(toState, toParams, { notify: false});
+        $state.go(toState, toParams, { notify: false});
 
         // Get new scope values from params
-        $scope.version 	= toParams.version;
-        $scope.usfm     = toParams.usfm;
+        $scope.reader_version_id = toParams.version;
+        $scope.usfm = toParams.usfm;
 	});
 
 	Authentication.isLoggedIn('/isLoggedIn').success(function(data) {
@@ -686,6 +759,9 @@ angular.module('yv.reader', [
         }).error(function (err) {
 
         });
+    } else {
+        loadBooks($scope.reader_version_id);
+        loadVersions();
     }
 }])
 

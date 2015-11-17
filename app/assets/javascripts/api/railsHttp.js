@@ -1,6 +1,6 @@
 angular.module('api.railsHttp', [])
 
-.factory('RailsHttp', ['$http', 'CacheFactory', function($http, CacheFactory) {
+.factory('RailsHttp', ['$http', 'CacheFactory', '$stateParams', function($http, CacheFactory, $stateParams) {
 	CacheFactory('dataCache', {
 		maxAge: 15 * 60 * 1000, 				// Items added to this cache expire after 15 minutes
 		cacheFlushInterval: 60 * 60 * 1000, 	// This cache will clear itself every hour
@@ -23,9 +23,22 @@ angular.module('api.railsHttp', [])
 		return f;
 	}
 
+    function prefixLocale(path) {
+        if ($stateParams.hasOwnProperty('locale')) {
+            var parts = path.split("/");
+            if (parts[1] == $stateParams.locale) {
+                return path;
+            } else {
+                return "/" + $stateParams.locale + path;
+            }
+        } else {
+            return path;
+        }
+    }
+
 	return {
 		get: function(path, cache, params) {
-			return $http.get(path, { params: params, cache: cache? CacheFactory.get('dataCache') : false, responseType: 'json', headers: { 'Accept' : 'application/json' } })
+			return $http.get(prefixLocale(path), { params: params, cache: cache? CacheFactory.get('dataCache') : false, responseType: 'json', headers: { 'Accept' : 'application/json' } })
 
 			.success(function(data) {
 
@@ -37,7 +50,7 @@ angular.module('api.railsHttp', [])
 		},
 
 		post: function(path, name, token, data) {
-			return $http.post( path, jsonToForm(data, name, token), {responseType: 'json', headers: {'Accept' : 'application/json, text/javascript, *.*', 'Content-Type': 'application/x-www-form-urlencoded', 'X-CSRF-Token': token}})
+			return $http.post( prefixLocale(path), jsonToForm(data, name, token), {responseType: 'json', headers: {'Accept' : 'application/json, text/javascript, *.*', 'Content-Type': 'application/x-www-form-urlencoded', 'X-CSRF-Token': token}})
 
 			.success(function(data) {
 
@@ -49,7 +62,7 @@ angular.module('api.railsHttp', [])
 		},
 
 		put: function(path, name, token, data) {
-			return $http.put( path, jsonToForm(data, name, token), {responseType: 'json', headers: {'Accept' : 'application/json, text/javascript, *.*', 'Content-Type': 'application/x-www-form-urlencoded', 'X-CSRF-Token': token}})
+			return $http.put( prefixLocale(path), jsonToForm(data, name, token), {responseType: 'json', headers: {'Accept' : 'application/json, text/javascript, *.*', 'Content-Type': 'application/x-www-form-urlencoded', 'X-CSRF-Token': token}})
 
 			.success(function(data) {
 
@@ -61,7 +74,7 @@ angular.module('api.railsHttp', [])
 		},		
 
 		delete: function(path, token) {
-			return $http.delete( path, {responseType: 'json', headers: {'Accept' : 'application/json, text/javascript, *.*', 'Content-Type': 'application/x-www-form-urlencoded', 'X-CSRF-Token': token}})
+			return $http.delete( prefixLocale(path), {responseType: 'json', headers: {'Accept' : 'application/json, text/javascript, *.*', 'Content-Type': 'application/x-www-form-urlencoded', 'X-CSRF-Token': token}})
 
 			.success(function(data) {
 

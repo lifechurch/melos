@@ -20,7 +20,6 @@ angular.module("reader.versionList", [])
             };
 
 			$scope.loadVersion = function(version, saveToRecent) {
-
                 if (saveToRecent) {
                     RecentVersions.add(version);
                     $scope.recentVersions = RecentVersions.all();
@@ -30,9 +29,9 @@ angular.module("reader.versionList", [])
                 $scope.filter = "";
 
                 if ($scope.setParallelVersion) {
-                    $scope.loadParallelChapter($scope.usfm, version.version);
+                    $scope.loadParallelChapter($scope.usfm, version.id);
                 } else {
-                    $state.go("reader", { usfm: $scope.usfm, version: version.version });
+                    $state.go($state.current.name, { usfm: $scope.usfm, version: version.id });
                 }
 			}
 		}],
