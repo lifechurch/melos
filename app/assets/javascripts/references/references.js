@@ -156,10 +156,14 @@ angular.module('yv.reader', [
 
         if ($scope.isParallelMode) {
             var params = location_path.split("/");
-            loadParallelChapter(params[3], $scope.parallel_version);
+            if ($stateParams.hasOwnProperty('locale')) {
+                var parallel_usfm = params[4];
+            } else {
+                var parallel_usfm = params[3];
+            }
+            loadParallelChapter(parallel_usfm, $scope.parallel_version);
         }
 	}
-
 
     $scope.loadParallelChapter = function(usfm, version) {
         loadParallelChapter(usfm, version);
