@@ -4,29 +4,32 @@
   html_attributes(id: "subscriptions-edit")
 
 .row
-  .columns.medium-8
+  .columns.large-8.large-centered.plan-settings
     =render partial: "editHeader"
-    .row.b-border.pad-row
-      .columns.small-8
-        %h3= t("plans.privacy title")
+    .row.pad-row.plan-settings-privacy-box
+      .columns.medium-8
+        %h3
+          = t("plans.privacy title")
         -if subscription.public?
           %p= t("plans.privacy description.public")
         -else
           %p= t("plans.privacy description.private")
 
-      .columns.small-4.text-right
+      .columns.medium-4
         -if subscription.public?
           = button_to(t('plans.make private'), subscription_path(user_id: current_user.to_param, id: subscription,make_private: "true"), method: :put, class: 'solid-button green')
         -else
           = button_to(t('plans.make public'), subscription_path(user_id: current_user.to_param, id: subscription,make_public: "true"), method: :put, class: 'solid-button green')
 
 
-    .row.b-border.pad-row
-      .columns.small-8
-        %h3= t("plans.email delivery")
-        %p= t("plans.email delivery text")
+    .row.pad-row.plan-settings-email-box
+      .columns.medium-8
+        %h3
+          = t("plans.email delivery")
+        %p
+          = t("plans.email delivery text")
 
-      .columns.small-4.text-right
+      .columns.medium-4
         = button_to(subscription.delivered_by_email? ? t('plans.email_off') : t('plans.email_on'),  subscription_path(user_id: current_user.to_param, id: subscription, email_delivery: (!subscription.delivered_by_email?).to_s), method: :put, class: 'solid-button green')
         -if subscription.delivered_by_email?
           %p
@@ -44,24 +47,29 @@
                 %optgroup{label: Version.languages[k]}
                 - v.each do |v|
                   %option{value: v.id, selected: v.id == subscription.email_delivery_version_id}= v
-    .row.b-border.pad-row
-      .columns.small-8
-        %h3= t("plans.are you behind")
+    .row.pad-row.plan-settings-catchup-box
+      .columns.medium-8
+        %h3
+          = t("plans.are you behind")
         - catch_up_text = subscription.last_completed_date ? t("plans.catch up text", last_completed_day: subscription.last_completed_day) : t("plans.catch up description only")
-        %p= catch_up_text
-      .columns.small-4.text-right
+        %p
+          = catch_up_text
+      .columns.medium-4
         = button_to(t('plans.catch me up'), subscription_path(user_id: current_user.to_param, id: subscription,catch_up: "true"), method: :put, class: 'solid-button green')
 
-    .row.b-border.pad-row
-      .columns.small-8
-        %h3= t("plans.do you want to reset")
-        %p= t("plans.restart description")
-      .columns.small-4.text-right
+    .row.pad-row.plan-settings-doover-box
+      .columns.medium-8
+        %h3
+          = t("plans.do you want to reset")
+        %p
+          = t("plans.restart description")
+      .columns.medium-4
         = button_to(t('plans.restart'), subscription_path(user_id: current_user.to_param, id: subscription,restart: "true"), method: :put, class: 'solid-button green', "data-confirm-text" => t("confirm danger"))
 
-    .row.pad-row
+    .row.pad-row.plan-settings-stop-box
       .columns.small-12
         = button_to(t('plans.stop reading'),subscription_path(user_id: current_user.to_param,id: subscription), method: :delete, id: "subscription-destroy", class: 'solid-button blue', "data-confirm-text" => t("confirm danger"))
 
-  .columns.medium-4
-    = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
+  -#
+    .columns.medium-4
+      = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
