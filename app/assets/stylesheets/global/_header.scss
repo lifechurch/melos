@@ -614,12 +614,52 @@ a.icon {
   }
 }
 
+
+/* !Header notifications */
+
 .header-friendships, .header-notifications {
-  font-size: 13px;
+  font-size: 0.813em;
 
   .tight {
     padding-top: 3px;
     line-height: 1.3;
   }
+
+  .columns {
+    padding: 0;
+  }
+
+  .hn-title,
+  .hn-view,
+  .hf-title,
+  .hf-view {
+    padding: 0 0 2px;
+    font-size: 0.85em;
+  }
 }
 
+.header-friendships {
+  .hf-username,
+  .hf-links {
+    padding: 10px 0 0;
+  }
+
+  .hf-links {
+    a {
+      color: #ff0000;
+    }
+
+    a:first-child {
+      color: $green;
+    }
+  }
+}
+
+.header-notifications {
+  .hn-content {
+    a {
+      color: $black;
+      display: block;
+    }
+  }
+}
