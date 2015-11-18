@@ -6,6 +6,6 @@
   = subscription.title
 .row.rp-settings-nav
   .columns
-    = link_to t("plans.settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), {class: "icon text plan-settings", target: "_self"}
-    = link_to t("plans.month"), calendar_subscription_path(user_id: current_user.to_param, id: subscription), {class: "icon text plan-calendar", target: "_self"}
-    = link_to t("plans.about this plan"), subscriptions_path(user_id: current_user.to_param), {class: "icon text plan-about", target: "_self"}
+    = link_to t("plans.settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), {class: "icon plan-settings", target: "_self"}
+    = link_to t("plans.month"), calendar_subscription_path(user_id: current_user.to_param, id: subscription), {class: "icon plan-calendar", target: "_self"}
+    = link_to t("plans.about this plan"), subscriptions_path(user_id: current_user.to_param), {class: "icon plan-about", target: "_self"}
