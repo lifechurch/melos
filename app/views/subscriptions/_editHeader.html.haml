@@ -4,8 +4,8 @@
 %h1.rp-title-settings.clearfix
   = image_tag subscription.search_thumbnail_image.url, class: 'rp-image-settings' if subscription.search_thumbnail_image.present?
   = subscription.title
-.row.t-border.b-border
-  .columns.medium-12
-    = link_to t("plans.settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), {class: "icon text left selected", target: "_self" }
-    = link_to t("plans.month"), calendar_subscription_path(user_id: current_user.to_param, id: subscription), {class: "icon text left", target: "_self" }
-    = link_to t("plans.about this plan"), plan_path(subscription), {class: "icon text left", target: "_self" }
+.row.rp-settings-nav
+  .columns
+    = link_to t("plans.settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), {class: "icon text plan-settings", target: "_self"}
+    = link_to t("plans.month"), calendar_subscription_path(user_id: current_user.to_param, id: subscription), {class: "icon text plan-calendar", target: "_self"}
+    = link_to t("plans.about this plan"), subscriptions_path(user_id: current_user.to_param), {class: "icon text plan-about", target: "_self"}
