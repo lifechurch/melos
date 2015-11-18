@@ -7,6 +7,7 @@ common:
   facebook_secret: 05d219f1c41d63f8ef34dd404cccb64d
   twitter_key: KobF6Lt0zWDFBDxZgZyg
   twitter_secret: GVXSAfboriqOLFDl6Ux1h9pJpDflkRKTzhap6pUOIOs
+  google_tag_container: GTM-52JZ7N
   avatar_path: https://d5xlnxqvcdji7.cloudfront.net/users/images/
   #note: this direct path will not work for users without avatars (404's)
   #workaround should be coming by EOY 2012
@@ -74,6 +75,7 @@ production:
   api_referer: web.youversionapi.com
   api_version: "3.1"
   api_default_timeout: 10
+  google_tag_container: GTM-NPBBBK
   rack_execution_timeout: 22
   memcache_server: memcache.youversion.com
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
