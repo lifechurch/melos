@@ -20,7 +20,7 @@
       %ul.side-nav
         - @categories.each do |category|
           %li{class: @category == category ? "highlighted" : ""}
-            = link_to( search_path(category: category, q: params[:q])) do
+            = link_to( search_path(category: category, q: params[:q]), { target: "_self" }) do
               = t("searching.#{category}")
 
     .columns.medium-9

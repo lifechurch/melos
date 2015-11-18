@@ -24,7 +24,7 @@
     .row.pad-row
       .columns.small-12
         %div.ft.link
-          = link_to(t("plans.about publisher"), plan.publisher_url)
+          = link_to(t("plans.about publisher"), plan.publisher_url, { target: "_self" })
 
   - if @friends_reading.present? and @friends_reading.length > 0
     .row.b-border.pad-row
