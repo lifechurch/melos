@@ -47,6 +47,15 @@
   }
 }
 
+.a_edit #current-ui-view {
+	margin: 100px 0 0;
+
+	@media #{$small-only} {
+	  margin: 64px 0 0;
+	}
+}
+
+
 :focus {
 	outline: 0;
 }
