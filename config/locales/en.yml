@@ -295,6 +295,9 @@ en:
   paginated items shown:                        "%{first_shown}&ndash;%{last_shown} of %{total_available}"
   160 character limit:                          "160 characters or less"
   recent versions:                              "Recently Used"
+  traditional:                                  "Traditional"
+  alphabetic:                                   "Alphabetic"
+  versions title:                               "Versions"
   or:
     lower:                                      "or"
     upper:                                      "OR"
@@ -780,6 +783,7 @@ en:
     none me:                                    "You haven't earned any badges yet."
     none user:                                  "%{username} hasn't earned any badges yet."
   plans:
+    bible plan language:                        "Bible Plan Language"
     share plan:                                 "Check out this @YouVersion #BiblePlan: %{plan_title}"
     widget:
       my plans:                                 "My Plans"
@@ -841,6 +845,9 @@ en:
     subscribe to plan:                          "Start This Plan"
     previous day:                               "PREV DAY"
     next day:                                   "NEXT DAY"
+    previous:                                   "Previous"
+    next:                                       "Next"
+    finish:                                     "Finish"
     reading completed _ mark and show next:     "Next: %{next_reference}"
     which reading:                              "%{current} of %{total}"
     done reading:                               "Done"
