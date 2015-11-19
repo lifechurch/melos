@@ -1,11 +1,25 @@
 angular.module('reader.footnote', [])
 
-.directive('note', function() {
+.factory('FootnoteCounter', function() {
+    var _notes = [];
+
+    return {
+        noteExists: function(key) {
+            return _notes.indexOf(key) > -1;
+        },
+
+        addNote: function(key) {
+            _notes.push(key);
+        }
+    };
+})
+
+.directive('note', [ 'FootnoteCounter', function(FootnoteCounter) {
 	return {
 		restrict: 'C',
 		compile: function(tElement, tAttrs, transclude) {
-			if (tElement[0] && tElement[0].children[1]) {
-				tElement[0].innerHTML = "<a href='#' tooltips tooltip-side='bottom' tooltip-try='1' tooltip-scroll='true' tooltip-title='tip' tooltip-html='" + tElement[0].children[1].innerHTML + "'>N</a>";
+            if (tElement[0] && tElement[0].children[1]) {
+				tElement[0].innerHTML = "<a href='#' tooltips tooltip-speed='fast' tooltip-html='" + tElement[0].children[1].innerHTML + "'><img class='footnote-icon' src='/assets/footnote.png'></a>";
 			}
 		},
 		controller: ['$scope', '$element',  function($scope, $element) {
@@ -18,6 +32,6 @@ angular.module('reader.footnote', [])
 			});
 		}]
 	}
-})
+}])
 
 ;
