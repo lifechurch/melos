@@ -295,6 +295,9 @@ en:
   paginated items shown:                        "%{first_shown}&ndash;%{last_shown} of %{total_available}"
   160 character limit:                          "160 characters or less"
   recent versions:                              "Recently Used"
+  traditional:                                  "Traditional"
+  alphabetic:                                   "Alphabetic"
+  versions title:                               "Versions"
   or:
     lower:                                      "or"
     upper:                                      "OR"

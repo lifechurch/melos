@@ -44,7 +44,7 @@ angular.module("reader.bookList", [])
 
 					if ($scope.sort) {
 						books.sort(function(a, b) {
-							return (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : 1;
+							return (a.human.toLowerCase() < b.human.toLowerCase()) ? -1 : 1;
 						});
 					}
 
@@ -67,7 +67,7 @@ angular.module("reader.bookList", [])
 						if (firstIterationForCanon) {
 							currentColumnCount++;
 							var name = (books[i].canon == 'ot') ? $scope.canonOt : $scope.canonNt;
-							$scope.columns[currentColumnIndex].push({name: name, labelOnly: true});	
+							$scope.columns[currentColumnIndex].push({human: name, labelOnly: true});
 						}
 
 						currentColumnCount++;

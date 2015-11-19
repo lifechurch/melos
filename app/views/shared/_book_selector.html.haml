@@ -35,8 +35,8 @@
   #reader-chapter-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderVersions" }
     .row.full
       .medium-4.columns.text-left
-        %h3.inline="Versions"
-        %a{"ng-click" => "cancel('showReaderVersions')" } Cancel
+        %h3.inline= t('versions title')
+        %a{"ng-click" => "cancel('showReaderVersions')" }= t('cancel')
       .medium-4.columns.text-center
         %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter"), "ng-minlength" => "3"}
       .medium-4.columns.text-right        
@@ -51,15 +51,15 @@
   #reader-book-dropdown.ng-hide.medium-12.reader-panel.full.scroll{ "tabindex" => "-1", "ng-show" => "showReaderBooks" }
     .row.full
       .medium-4.columns.text-left
-        %h3.inline="Books"
-        %a{"ng-click" => "cancel('showReaderBooks')" } Cancel
+        %h3.inline= t('book')
+        %a{"ng-click" => "cancel('showReaderBooks')" }= t('cancel')
       .medium-4.columns.text-center
         %input{"ng-model" => "bookFilter", "type" => "text", "placeholder" => t("filter book")}
       .medium-4.columns.text-right        
         .switch
-          %a{"ng-click" => "sortBooks(false)"} Traditional
+          %a{"ng-click" => "sortBooks(false)"}= t('traditional')
           |
-          %a{"ng-click" => "sortBooks(true)"} Alphabetic
+          %a{"ng-click" => "sortBooks(true)"}= t('alphabetic')
           -# %input#exampleCheckboxSwitch{:type => "checkbox", "ng-model" => "sort", "value" => "alphabetic", "ng-hide" => "true"}
             %label{:for => "exampleCheckboxSwitch"}
     %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version_id", "selected-book"=>'selectedBook', "ng-hide" => 'selectedBook', 'on-book-selected' => 'toggleChaptersPanel', 'canon-ot' => "#{t('old testament')}", 'canon-nt' => "#{t('new testament')}"}
@@ -101,8 +101,10 @@
   %script{'type' => 'text/ng-template', 'id' => '/reader-chapter-selector.tpl.html'}
     .row
       .medium-12.columns.text-left
-        %h3.inline {{selectedBook.name}} > Chapters
-        %a{"ng-click" => "cancel()"} Cancel
+        %h3.inline
+          {{selectedBook.name}} >
+          = t('chapter')
+        %a{"ng-click" => "cancel()"}= t('cancel')
         %ol.tabs.pad-head{"data-tab" => ""}
           %li.tab-title{"ng-repeat" => "chapter in selectedBook.chapters"}
             -#%a{"ng-href" => "{{chapter.href}}"} {{chapter.name}} {{chapter.usfm}}
