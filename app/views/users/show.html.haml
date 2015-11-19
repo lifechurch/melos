@@ -26,4 +26,4 @@
       %moment{:data => "moment", "social-enabled" => "false"}
     %div{:layout => "row", "layout-align" => "space-around", "layout-sm" => "column", "ng-if" => "loading"}
       %md-progress-circular{"md-mode" => "indeterminate"}
-    %button.solid-button.green.full{"ng-click" => "loadMore()", "ng-if" => "!loading"} Load More
+    %button.solid-button.green.full{"ng-click" => "loadMore()", "ng-if" => "!loading"}= t('moments.action.load more')

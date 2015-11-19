@@ -61,7 +61,7 @@
           .row
             .small-12.columns
               %label
-                Bible Plan Language
+                = t('plans.bible plan language')
                 %select.language{onChange: "this.form.submit();", name: "lang"}
                   - (Plan.available_locales & I18n.available_locales).each do |loc|
                     %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}

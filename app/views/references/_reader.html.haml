@@ -124,11 +124,11 @@
     .day-controls-box.small-centered.columns.text-center
       %ul.button-group
         %li
-          %a.solid-button.green{"ng-click" => "prevPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-disabled" => "devotionalActive"}= 'Previous'
+          %a.solid-button.green{"ng-click" => "prevPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-disabled" => "devotionalActive"}= t('plans.previous')
         %li
           %a.solid-button.green{"ng-click" => "nextPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')"}
-            %span{'ng-hide' => 'isLastPlanRef'}= 'Next'
-            %span.ng-hide{'ng-show' => 'isLastPlanRef'}= 'Finish'
+            %span{'ng-hide' => 'isLastPlanRef'}= t('plans.next')
+            %span.ng-hide{'ng-show' => 'isLastPlanRef'}= t('plans.finish')
 
 = render '/shared/app_banner'
 
