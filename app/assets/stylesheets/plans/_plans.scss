@@ -3,9 +3,7 @@
 .plans-nav-box {
   overflow: hidden;
 
-  a {
-    float: $default-float;
-
+  a.icon {
     @media #{$small-only} {
       width: 50%;
       text-align: center;
@@ -29,10 +27,7 @@
     }
   }
 
-  a.icon.text {
-    line-height: 35px;
-    margin: 0 2%;
-
+  a.icon {
     @media #{$medium-only} {
       line-height: 43px;
       margin: 0 3%;
@@ -46,7 +41,7 @@
   }
 }
 
-a.icon.text.active {
+a.icon.active {
   @media #{$small-only} {
     background-color: $green;
     color: #fff;

@@ -105,6 +105,108 @@
   }
 }
 
+a.icon {
+  &.parallel-link {
+    margin: 0 0 0 2%;
+    padding: 4px 0 0;
+
+    @media #{$medium-only} {
+      margin: 0 0 0 3%;
+      padding: 4px 0 0;
+    }
+
+    @media #{$small-only} {
+      display: none;
+    }
+
+    & svg {
+      width: 19px;
+      fill: $gray;
+    }
+  }
+
+  &.settings-audio {
+    margin: 0 2% 0 0;
+    padding: 4px 0 0;
+    float: $opposite-direction;
+
+    @media #{$medium-only} {
+      margin: 0 3% 0 0;
+      padding: 4px 0 0;
+    }
+
+    @media #{$small-only} {
+      margin: 0 4% 0 0;
+      padding: 4px 0 0;
+    }
+
+    & svg {
+      width: 16px;
+      fill: $gray;
+    }
+  }
+
+  &.settings-font {
+    margin: 0 2% 0 0;
+    padding: 3px 0 0;
+    float: $opposite-direction;
+
+    @media #{$medium-only} {
+      margin: 0 3% 0 0;
+      padding: 3px 0 0;
+    }
+
+    @media #{$small-only} {
+      margin: 0 4% 0 0;
+      padding: 3px 0 0;
+    }
+
+    & svg {
+      width: 20px;
+      fill: $gray;
+    }
+  }
+}
+
+html[dir="rtl"] {
+  a.icon {
+    &.parallel-link {
+      margin: 0 2% 0 0;
+
+      @media #{$medium-only} {
+        margin: 0 3% 0 0;
+      }
+    }
+
+    &.settings-audio {
+      margin: 0 0 0 2%;
+
+      @media #{$medium-only} {
+        margin: 0 0 0 3%;
+      }
+
+      @media #{$small-only} {
+        margin: 0 0 0 4%;
+      }
+    }
+
+    &.settings-font {
+      margin: 0 0 0 2%;
+
+      @media #{$medium-only} {
+        margin: 0 0 0 3%;
+      }
+
+      @media #{$small-only} {
+        margin: 0 0 0 4%;
+      }
+    }
+  }
+}
+
+
+/* !Verse task bar */
+
 .colorButton {
 	width: rem-calc(40);
 	float: left;
@@ -186,6 +288,9 @@ div[verse-action] {
 	right: 0;
 	padding: rem-calc(23 12 23 15);
 }
+
+
+/* !Font and audio popups */
 
 .reader-panel {
   position: absolute;
