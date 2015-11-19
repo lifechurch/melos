@@ -580,6 +580,9 @@ a.icon {
 }
 
 .header-friendships {
+  .hf-title, .hn-title {
+    text-transform: uppercase;
+  }
   .hf-username,
   .hf-links {
     padding: 10px 0 0;
