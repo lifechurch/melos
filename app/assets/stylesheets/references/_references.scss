@@ -298,11 +298,18 @@ md-chips-wrap {
     img.footnote-icon {
       width: 12px;
       height: 12px;
+      margin: 5px;
+      margin-top: -10px;
     }
   }
 }
 
+
 ._720kb-tooltip {
+ max-width: 300px;
+ max-height: 300px;
+ overflow: hidden;
+
  .fr {
   font-weight: bold;
   margin-right: 5px;

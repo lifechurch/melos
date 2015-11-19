@@ -18,10 +18,8 @@ angular.module('reader.footnote', [])
 	return {
 		restrict: 'C',
 		compile: function(tElement, tAttrs, transclude) {
-            if (!FootnoteCounter.noteExists(tElement[0].textContent)) {
-                FootnoteCounter.addNote(tElement[0].textContent);
-            } else if (tElement[0] && tElement[0].children[1]) {
-				tElement[0].innerHTML = "<a href='#' tooltips tooltip-html='" + tElement[0].children[1].innerHTML + "'><img class='footnote-icon' src='/assets/footnote.png'></a>";
+            if (tElement[0] && tElement[0].children[1]) {
+				tElement[0].innerHTML = "<a href='#' tooltips tooltip-speed='fast' tooltip-html='" + tElement[0].children[1].innerHTML + "'><img class='footnote-icon' src='/assets/footnote.png'></a>";
 			}
 		},
 		controller: ['$scope', '$element',  function($scope, $element) {
