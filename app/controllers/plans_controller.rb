@@ -19,8 +19,10 @@ class PlansController < ApplicationController
 
     @plans = Plan.all( query: params[:query], page: @page, category: params[:category], language_tag: @plan_lang)
     @sidebar = false
-    @plans.each do |plan|
-      @plan_lengths.push plan.total_days unless @plan_lengths.include? plan.total_days
+    if !@plans.nil?
+      @plans.each do |plan|
+        @plan_lengths.push plan.total_days unless @plan_lengths.include? plan.total_days
+      end
     end
     @plan_lengths = @plan_lengths.sort
     @stophere = 1
