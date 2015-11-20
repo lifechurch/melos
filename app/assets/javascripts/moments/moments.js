@@ -14,8 +14,7 @@ angular.module('yv.moments', [
 	'yv.moments.planComplete',
 	'yv.moments.planSegmentComplete',
     'yv.moments.moreMenu',
-    'yv.moments.subscribeMenu',
-    'infinite-scroll'
+    'yv.moments.subscribeMenu'
 ])
 
 .config([ '$stateProvider', function($stateProvider) {
@@ -24,12 +23,12 @@ angular.module('yv.moments', [
 	.state('moments', {
 		url: 		'/moments',
 		controller: 	'MomentsCtrl',
-		template: 	'<div class="row moments-feed" infinite-scroll="loadMore()" infinite-scroll-distance="3" infinite-scroll-disabled="loading || pagingFinished"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full ng-hide" ng-show="!loading && !pagingFinished">Load More</button></div></div>'
+		template: 	'<div class="row moments-feed"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full ng-hide" ng-show="!loading && !pagingFinished">Load More</button></div></div>'
 	})
 	.state('moments-locale', {
 		url: 		'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/moments',
 		controller: 	'MomentsCtrl',
-		template: 	'<div class="row moments-feed" infinite-scroll="loadMore()" infinite-scroll-distance="3" infinite-scroll-disabled="loading || pagingFinished"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full ng-hide" ng-show="!loading && !pagingFinished">Load More</button></div></div>'
+		template: 	'<div class="row moments-feed"><div class="medium-10 large-7 columns small-centered"><div ng-repeat="moment in moments"><moment data="moment" social-enabled="true"></moment></div><div layout="row" layout-sm="column" layout-align="space-around" ng-if="loading"><md-progress-circular md-mode="indeterminate"></md-progress-circular></div><button ng-click="loadMore()" class="solid-button green full ng-hide" ng-show="!loading && !pagingFinished">Load More</button></div></div>'
 	})
 
 

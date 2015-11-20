@@ -22,7 +22,6 @@
 //= require_tree ./catchAll
 //= require vendor/angular-cache/angular-cache
 //= require vendor/angular-tooltips/angular-tooltips.min.js
-//= require vendor/ng-infinite-scroll/ng-infinite-scroll.js
 //= require vendor/md-color-picker/tinycolor-min.js
 //= require vendor/md-color-picker/mdColorPicker.js
 
