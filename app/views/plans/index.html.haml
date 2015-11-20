@@ -44,15 +44,16 @@
           - @plans.each do |plan|
             %li.plan
               = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
-                %span.search_thumbnail
+                .search_thumbnail
                   - if plan.list_image.present?
                     = image_tag plan.list_image.url, class: 'subscription_thumbnail radius'
                   - else
                     %img{src:'//placehold.it/640x360', class: 'radius'}
-                %h3.plan-title
-                  =plan.name
-                %span.length
-                  = plan.formatted_length
+                .subscription-info
+                  %h3.plan-title
+                    =plan.name
+                  %span.length
+                    = plan.formatted_length
   - else
     .row.full
       .columns.medium-3

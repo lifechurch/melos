@@ -176,6 +176,10 @@ li.profile-hdr-info-link {
     a.icon:first-child {
       margin: 0 1% 0 15%;
     }
+
+    a.icon:last-child {
+      float: $opposite-direction;
+    }
   }
 
   @media #{$small-only} {
