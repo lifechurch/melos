@@ -29,6 +29,7 @@
   ul.side-nav li.label {
     border-bottom: 1px solid #ddd;
     padding: 0 0 5px;
+    text-transform: uppercase;
   }
 
   @media #{$small-only} {
