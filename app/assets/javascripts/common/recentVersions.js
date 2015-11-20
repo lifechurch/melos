@@ -9,6 +9,16 @@ angular.module('common.recentVersions', [])
             localStorage.setItem(key, JSON.stringify(recentVersions));
         }
 
+        function contains(version) {
+            for(var x = 0; x < recentVersions.length; x++) {
+                var v = recentVersions[x];
+                if (v.id == version.id) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         return {
             all: function() {
                 return recentVersions;
@@ -17,14 +27,16 @@ angular.module('common.recentVersions', [])
                return recentVersions.length;
             },
             add: function(version) {
-                recentVersions.push(version);
-                if (recentVersions.length > max_versions) {
-                    var removeCount = recentVersions.length - max_versions;
-                    for (var x = 0; x < removeCount; x++) {
-                        recentVersions.shift();
+                if (contains(version) == false) {
+                    recentVersions.push(version);
+                    if (recentVersions.length > max_versions) {
+                        var removeCount = recentVersions.length - max_versions;
+                        for (var x = 0; x < removeCount; x++) {
+                            recentVersions.shift();
+                        }
                     }
+                    save();
                 }
-                save();
             }
         }
     })
