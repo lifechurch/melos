@@ -5,6 +5,6 @@
     %p.left
       = image_tag(user.avatars.md_avatar.url, size:"48x48", style:"margin-top:2px" )
   %p.left.name
-    = link_to user.name || user.username, user
+    = link_to user.name || user.username, user, { target: '_self' }
     %br
     %span.mute= user.location || user.country

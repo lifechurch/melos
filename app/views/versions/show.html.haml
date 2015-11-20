@@ -25,19 +25,19 @@
       %h2.version
         %div= "#{display_language}"
         - if @version.audio
-          = link_to t("audio bible"), audiobible_path(@version), class: 'mobile'
+          = link_to t("audio bible"), audiobible_path(@version), { class: 'mobile', target: '_self' }
 
       .copyright= @version.info.try :html_safe
-      = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'solid-button mobile-full blue'
-      = link_to t("mobile page.download now"), app_page_path, class: 'show-for-small-only version_download solid-button mobile-full green'
+      = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), { class: 'solid-button mobile-full blue', target: '_self' }
+      = link_to t("mobile page.download now"), app_page_path, { class: 'show-for-small-only version_download solid-button mobile-full green', target: '_self' }
 
   .medium-4.columns.show-for-medium-up.l-border
     .widget-button
-      = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'solid-button blue full'
+      = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), { class: 'solid-button blue full', target: '_self' }
 
     - if @version.audio
       .widget-button
-        = link_to t("audio bible"), audiobible_path(@version), class: 'solid-button green audio-link full'
+        = link_to t("audio bible"), audiobible_path(@version), { class: 'solid-button green audio-link full', target: '_self' }
 
     - if @version.publisher.name.present? || @version.publisher.id.blank?
       - pub_name = @version.publisher.name || t('versions.public domain')
@@ -47,7 +47,7 @@
         %ul.menu
           %li
             - if @version.publisher.url.present?
-              = link_to pub_name, @version.publisher.url
+              = link_to pub_name, @version.publisher.url, { target: '_self' }
             -else
               %p= pub_name
 
@@ -58,7 +58,7 @@
         %ul.menu
           - @related.each do |v|
             %li
-              = link_to v, v
+              = link_to v, v, { target: '_self' }
 
     = render partial: 'widgets/download_app', :locals => {show_sms: true}
 
@@ -66,7 +66,7 @@
     = @version
 
   - content_for :mobile_right_nav do
-    = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'save_btn'
+    = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), { class: 'save_btn', target: '_self' }
 
 = render '/shared/app_banner'
 

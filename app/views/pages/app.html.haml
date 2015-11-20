@@ -49,29 +49,29 @@
             %h1= t('mobile page.download now')
             %ul.left_column.no-bullet
               %li#dl_iphone
-                %h2= link_to t('mobile page.iphone ipad'), "http://itunes.apple.com/app/bible/id282935706"
+                %h2= link_to t('mobile page.iphone ipad'), "http://itunes.apple.com/app/bible/id282935706", { target: '_self' }
               - if I18n.locale.to_s.eql?('zh-CN')
                 %li#dl_android
-                  %h2= link_to "#{t('mobile page.android')} - 豌豆荚", "http://www.wandoujia.com/apps/com.sirma.mobile.bible.android"
+                  %h2= link_to "#{t('mobile page.android')} - 豌豆荚", "http://www.wandoujia.com/apps/com.sirma.mobile.bible.android", { target: '_self' }
               %li#dl_android
-                %h2= link_to t('mobile page.android'), "https://market.android.com/details?id=com.sirma.mobile.bible.android"
+                %h2= link_to t('mobile page.android'), "https://market.android.com/details?id=com.sirma.mobile.bible.android", { target: '_self' }
               %li#dl_blackberry
-                %h2= link_to t('mobile page.blackberry'), "http://appworld.blackberry.com/webstore/content/1222/"
+                %h2= link_to t('mobile page.blackberry'), "http://appworld.blackberry.com/webstore/content/1222/", { target: '_self' }
               %li#dl_windows
-                %h2= link_to t('mobile page.windows phone'), "http://windowsphone.com/s?appid=57f524fa-93e3-df11-a844-00237de2db9e"
+                %h2= link_to t('mobile page.windows phone'), "http://windowsphone.com/s?appid=57f524fa-93e3-df11-a844-00237de2db9e", { target: '_self' }
               %li#dl_windows8
-                %h2= link_to t('mobile page.windows 8'), "http://apps.microsoft.com/webpdp/app/bible/af5f6405-7860-49a9-a6b4-a47381974e1d"
+                %h2= link_to t('mobile page.windows 8'), "http://apps.microsoft.com/webpdp/app/bible/af5f6405-7860-49a9-a6b4-a47381974e1d", { target: '_self' }
             %ul.right_column.no-bullet
               %li#dl_hppalm
-                %h2= link_to t('mobile page.hp palm'), "https://developer.palm.com/appredirect/?packageid=com.youversion.palm"
+                %h2= link_to t('mobile page.hp palm'), "https://developer.palm.com/appredirect/?packageid=com.youversion.palm", { target: '_self' }
               %li#dl_java
-                %h2= link_to t('mobile page.java'), "http://java.apps.opera.com/en_us/bible_000261.html"
+                %h2= link_to t('mobile page.java'), "http://java.apps.opera.com/en_us/bible_000261.html", { target: '_self' }
               %li#dl_symbian
-                %h2= link_to t('mobile page.symbian'), "http://java.apps.opera.com/en_us/bible_000261.html"
+                %h2= link_to t('mobile page.symbian'), "http://java.apps.opera.com/en_us/bible_000261.html", { target: '_self' }
               %li#dl_mobile
-                %h2= link_to t('mobile page.mobile web'), "http://www.bible.com"
+                %h2= link_to t('mobile page.mobile web'), "http://www.bible.com", { target: '_self' }
               %li#dl_amazon
-                %h2= link_to t('mobile page.amazon'), "http://www.amazon.com/YouVersion-Bible/dp/B004MC8CA2"
+                %h2= link_to t('mobile page.amazon'), "http://www.amazon.com/YouVersion-Bible/dp/B004MC8CA2", { target: '_self' }
             %div.cta
               %h4
                 = t('mobile page.button h4').html_safe
@@ -133,20 +133,20 @@
 
           .columns.medium-4.version-list
             %h2
-              = link_to "#{t('mobile page.version list')}" , versions_path
+              = link_to "#{t('mobile page.version list')}" , versions_path, { target: '_self' }
             %ul.no-bullet
               - @text_versions_list.each do |version|
                 %li
-                  = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
+                  = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version), { target: '_self' }
 
           .columns.medium-4.version-list
             - if @audio_versions_list.present?
               %h2
-                = link_to "#{t('mobile page.audio version list')}" , audiobibles_path
+                = link_to "#{t('mobile page.audio version list')}" , audiobibles_path, { target: '_self' }
               %ul.no-bullet
                 - @audio_versions_list.each do |version|
                   %li
-                    = link_to "#{version.title} (#{version.abbreviation.upcase})" , audiobible_path(version)
+                    = link_to "#{version.title} (#{version.abbreviation.upcase})" , audiobible_path(version), { target: '_self' }
 
 - content_for :javascripts do
   :javascript
