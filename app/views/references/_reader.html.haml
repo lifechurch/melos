@@ -84,7 +84,7 @@
     &nbsp;
 
   .reader-center.large-6.columns{class: controller_name == 'plans' ? 'ng-hide' : '', "ng-show" => "!isPlanState || planContentReady", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
-    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes"}
+    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes", "show-numbers-and-titles" => "showNumbersAndTitles"}
       = presenter.content.html_safe if presenter.content
       -# Read Chapter button
       - if verse_view

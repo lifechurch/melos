@@ -10,6 +10,7 @@ angular.module('yv.reader', [
 	'reader.audioPanel',
 	'reader.verse',
 	'reader.footnote',
+    'reader.verseNumbersAndTitles',
 	'reader.bookList',
 	'api.highlights',
 	'api.bookmarks',
