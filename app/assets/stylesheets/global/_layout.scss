@@ -55,6 +55,12 @@
 	}
 }
 
+.a_index #current-ui-view {
+  @media #{$small-only} {
+    margin: 44px 0 0;
+  }
+}
+
 
 :focus {
 	outline: 0;

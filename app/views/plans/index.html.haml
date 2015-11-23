@@ -45,15 +45,16 @@
             - @plans.each do |plan|
               %li.plan
                 = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
-                  %span.search_thumbnail
+                  .search_thumbnail
                     - if plan.list_image.present?
                       = image_tag plan.list_image.url, class: 'subscription_thumbnail radius'
                     - else
                       %img{src:'//placehold.it/640x360', class: 'radius'}
-                  %h3.plan-title
-                    =plan.name
-                  %span.length
-                    = plan.formatted_length
+                  .subscription-info
+                    %h3.plan-title
+                      =plan.name
+                    %span.length
+                      = plan.formatted_length
         -else
           .none{align: "center"}= t("plans.none found")
 
@@ -147,4 +148,3 @@
       /           - (Plan.available_locales & I18n.available_locales).each do |loc|
       /             %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
       /               = t("language name", locale: loc)
-

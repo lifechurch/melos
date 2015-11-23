@@ -206,17 +206,16 @@ img.radius {
       width: auto;
       float: none;
       overflow: hidden;
-      border-bottom: 1px solid $lightGray;
       border-left: 0;
       padding: 0;
+
+      &:last-child {
+        border-bottom: 1px solid $lightGray;
+      }
     }
 
     &:first-child {
       border: none;
-
-      @media #{$small-only} {
-        border-bottom: 1px solid $lightGray;
-      }
     }
 
     a {
@@ -230,7 +229,7 @@ img.radius {
 
       @media #{$small-only} {
         height: auto;
-        padding: 15px 3%;
+        padding: 0 3%;
       }
 
       img {
