@@ -1,4 +1,27 @@
--# 
+-#
+-# Moment Feed
+-#
+%script{'type' => 'text/ng-template', 'id' => '/moment-feed.tpl.html'}
+  .row.moments-feed
+    .medium-10.large-7.columns.small-centered
+      %div{"ng-repeat" => "moment in moments"}
+        %moment{:data => "moment", "social-enabled" => "true"}
+      %div{:layout => "row", "layout-align" => "space-around", "layout-sm" => "column", "ng-if" => "loading"}
+        %md-progress-circular{"md-mode" => "indeterminate"}
+      %button.solid-button.green.full.ng-hide{"ng-click" => "loadMore()", "ng-show" => "!loading && !pagingFinished"}
+        = t('moments.action.load more')
+
+
+-#
+-# Single Moment Feed
+-#
+%script{'type' => 'text/ng-template', 'id' => '/single-moment-feed.tpl.html'}
+  .row.moments-feed
+    .medium-10.large-7.columns.small-centered
+      %moment{:data => "moment", "social-enabled" => "true"}
+
+
+-#
 -# Moment
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment.tpl.html'}
