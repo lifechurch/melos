@@ -71,7 +71,9 @@
                   - (Plan.available_locales & I18n.available_locales).each do |loc|
                     %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
                       = t("language name", locale: loc)
-                - if @category.children
+              - if @category.children
+                %label
+                  = t("plans.subcategory")
                   %select.category{onChange: "this.form.submit();", name: "category"}
                     - @category.children.each do |category|
                       %option{value: category.slug, selected: @category.label == category.label}

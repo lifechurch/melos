@@ -813,6 +813,7 @@ en:
     title:                                      "Reading Plans"
     meta title:                                 "Online Bible study, devotionals and reading plans"
     browse by category:                         "Browse by Category"
+    subcategory:                                "Sub-category"
     browse plans:                               "Browse %{category} Plans"
     swap list localization:                     "(<a href='%{swap_link}' target='_self'>View in %{swap_locale}</a>)"
     showing language filtered:                  "Only showing plans available in %{lang_name}"
