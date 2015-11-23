@@ -430,3 +430,10 @@ md-chips-wrap {
  }
 }
 
+td.activeFont {
+  background-color: $blue;
+  label {
+    color: $white;
+  }
+}
+

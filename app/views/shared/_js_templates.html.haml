@@ -14,24 +14,24 @@
         .small-12.columns
           %table.font-selector{"style" => "width: 100%"}
             %tr 
-              %td.text-center
+              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Arial' }"}
                 %input#reader_font_arial.hidden{:type => "radio", :value => "Arial", "ng-model" => "fontFamily"}
                 %label{:for => "reader_font_arial", "style" => "font-family:'Arial'"} Arial
-              %td.text-center
+              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Avenir' }"}
                 %input#reader_font_avenir.hidden{:type => "radio", :value => "Avenir", "ng-model" => "fontFamily"}
                 %label{:for => "reader_font_avenir", "style" => "font-family:'Avenir'"} Avenir
             %tr
-              %td.text-center
+              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Tisa Pro' }"}
                 %input#reader_font_tisapro.hidden{:type => "radio", :value => "Tisa Pro", "ng-model" => "fontFamily"}
                 %label{:for => "reader_font_tisapro", "style" => "font-family:'Tisa Pro'"} Tisa Pro
-              %td.text-center
+              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Helvetica' }"}
                 %input#reader_font_helvetica.hidden{:type => "radio", :value => "Helvetica", "ng-model" => "fontFamily"}
                 %label{:for => "reader_font_helvetica", "style" => "font-family:'Helvetica'"} Helvetica
             %tr
-              %td.text-center
+              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Baskerville' }"}
                 %input#reader_font_baskerville.hidden{:type => "radio", :value => "Baskerville", "ng-model" => "fontFamily"}
                 %label{:for => "reader_font_baskerville", "style" => "font-family:'Baskerville'"} Baskerville
-              %td.text-center
+              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Verdana' }"}
                 %input#reader_font_verdana.hidden{:type => "radio", :value => "Verdana", "ng-model" => "fontFamily"}
                 %label{:for => "reader_font_verdana", "style" => "font-family:'Verdana'"} Verdana
       .row
@@ -49,6 +49,8 @@
       .row
         .small-12.columns.text-left
           %button.solid-button.green{"ng-click" => "save()"} Save
+          != "&nbsp;"
+          %a{"ng-click" => "cancel()"}= t('cancel')
   
 
   -#
