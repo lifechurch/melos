@@ -3,6 +3,7 @@
 //= require angular-sanitize
 //= require angular-animate
 //= require angular-resource
+//= require angular-cookies
 //= require angular-aria
 //= require vendor/angular-material/angular-material
 //= require jquery

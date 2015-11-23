@@ -50,9 +50,10 @@
           &nbsp;
           = link_to(t(".hero.learn more"),"#scroll-point", id: "scroll-anchor", target: "_self")
         %form
-          %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
-          %label{for:"setting-skip-home",id:"label-setting-skip-home"}
-            =t(".hero.skip in future")
+          %div{"skip-home" => true, "set-cookie" => "setCookie", "delete-cookie" => "deleteCookie", "now-skipped-text" => "#{html_escape(t(".hero.now skipped"))}", "future-skip-text" => "#{html_escape(t(".hero.skip in future"))}"}
+            %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
+            %label{for:"setting-skip-home",id:"label-setting-skip-home"}
+              =t(".hero.skip in future")
 
     .hero_pics
       &nbsp;
@@ -145,25 +146,10 @@
       $(window).load(function() {
         $.getScript('//commondatastorage.googleapis.com/installs.youversion.com/stats_jsonp.js');
 
-        // Settings for skipping home page
-        $("#setting-skip-home").on("click",function(e) {
-          var checked = $(this).attr("checked");
-          var label = $("#label-setting-skip-home");
-          if(checked){
-            setCookie("setting-skip-home","true",365);
-            label.html("#{t(".hero.now skipped")}");
-          }
-          else {
-            deleteCookie("setting-skip-home");
-            label.html("#{t(".hero.skip in future")}");
-          }
-        });
-
         $("#scroll-anchor").on("click", function(e) {
           e.preventDefault();
           var pos = $("#scroll-point").offset().top;
           $('html:not(:animated),body:not(:animated)').animate({scrollTop:pos},{duration:1000});
         });
-
 
       });
