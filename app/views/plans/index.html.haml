@@ -40,20 +40,24 @@
     .row.full
       .columns.medium-12
         %h1.text-center.featured-title= t('plans.widget.featured plans')
-        %ul.resource_list.medium-block-grid-3.small-block-grid-1
-          - @plans.each do |plan|
-            %li.plan
-              = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
-                .search_thumbnail
-                  - if plan.list_image.present?
-                    = image_tag plan.list_image.url, class: 'subscription_thumbnail radius'
-                  - else
-                    %img{src:'//placehold.it/640x360', class: 'radius'}
-                .subscription-info
-                  %h3.plan-title
-                    =plan.name
-                  %span.length
-                    = plan.formatted_length
+        -if !@plans.nil?
+          %ul.resource_list.medium-block-grid-3.small-block-grid-1
+            - @plans.each do |plan|
+              %li.plan
+                = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
+                  .search_thumbnail
+                    - if plan.list_image.present?
+                      = image_tag plan.list_image.url, class: 'subscription_thumbnail radius'
+                    - else
+                      %img{src:'//placehold.it/640x360', class: 'radius'}
+                  .subscription-info
+                    %h3.plan-title
+                      =plan.name
+                    %span.length
+                      = plan.formatted_length
+        -else
+          .none{align: "center"}= t("plans.none found")
+
   - else
     .row.full
       .columns.medium-3
@@ -67,8 +71,8 @@
                   - (Plan.available_locales & I18n.available_locales).each do |loc|
                     %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
                       = t("language name", locale: loc)
-                %select.category{onChange: "this.form.submit();", name: "category"}
-                  - if @category.children
+                - if @category.children
+                  %select.category{onChange: "this.form.submit();", name: "category"}
                     - @category.children.each do |category|
                       %option{value: category.slug, selected: @category.label == category.label}
                         = category.label
@@ -108,8 +112,7 @@
       /         %li.next
       /           =link_to t("ui.pagination.next page"), url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]}), rel: 'next', class: "action_button_grey action_button"
 
-      /   -else
-      /     .none{align: "center"}= t("plans.none found")
+
 
       -#%h1.float_left
       -#  = t("plans.browse plans", category: @category.label || t("plans.all"))
@@ -145,4 +148,3 @@
       /           - (Plan.available_locales & I18n.available_locales).each do |loc|
       /             %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
       /               = t("language name", locale: loc)
-

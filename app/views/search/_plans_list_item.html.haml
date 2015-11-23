@@ -1,6 +1,6 @@
 - plan = plans_list_item
 %li.plan
-  = link_to plan_path(plan) do
+  = link_to plan_path(plan), { target: '_self' } do
     %h3
       =plan.name
   %span.length.clearfix
