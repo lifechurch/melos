@@ -121,6 +121,7 @@ YouversionWeb::Application.routes.draw do
   end
 
   get "/confirm-update-email/:token",    to: "emails#confirm_update"
+  get "/confirm_update_email/:token",    to: "emails#confirm_update"
 
   # Top level LocationSettings route
   resource :language_settings, only: [:update]
