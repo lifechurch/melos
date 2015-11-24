@@ -20,6 +20,7 @@
 //= require_tree ./header
 //= require_tree ./footer
 //= require_tree ./plans
+//= require_tree ./videos
 //= require_tree ./catchAll
 //= require vendor/angular-cache/angular-cache
 //= require vendor/angular-tooltips/angular-tooltips.min.js
