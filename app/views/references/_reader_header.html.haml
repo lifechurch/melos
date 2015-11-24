@@ -45,6 +45,8 @@
       =render partial: 'shared/book_selector', locals: {presenter: presenter}
       =render partial: 'shared/version_selector/display', locals: {presenter: presenter}
       -#=render partial: 'shared/menu_audio_player', locals: { reference: reference }
+
+  %md-progress-linear.ng-hide.reader-progress{"md-mode" => "indeterminate", "ng-show" => "working"}
 -#
   / #m-toolbar.mobile
   /   %div.verse_toolbar{class: ('authed' if current_auth)}

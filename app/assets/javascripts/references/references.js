@@ -92,6 +92,7 @@ angular.module('yv.reader', [
     $scope.orderedRefs = [];
     $scope.isLastPlanRef = false;
     $scope.isParallelMode = false;
+    $scope.reader_book_list = [];
 
 	hideAllPanels();
 	hideAllSidePanels();
@@ -321,10 +322,15 @@ angular.module('yv.reader', [
 
 		} else if (panel == "showReaderBooks") {
 			$scope.selectedBook = null;
-			parseBookLinks();
+            if ($scope.reader_book_list.length == 0) {
+                loadBooks($scope.reader_version_id);
+            }
 		} else if (panel == "showReaderChapters") {
-			parseBookLinks();
-			if (!$scope.selectedBook) {
+            if ($scope.reader_book_list.length == 0) {
+                loadBooks($scope.reader_version_id);
+            }
+
+            if (!$scope.selectedBook) {
 				$scope.showReaderChapters 	= false;
 				$scope.showReaderBooks 		= true;
 			}
@@ -334,7 +340,7 @@ angular.module('yv.reader', [
             } else {
                 $scope.setParallelVersion = false;
             }
-			//parseVersionLinks();
+
             if (!$scope.versions || !$scope.versions.length) {
                 loadVersions();
             }
@@ -767,8 +773,12 @@ angular.module('yv.reader', [
 
         });
     } else {
-        loadBooks($scope.reader_version_id);
-        loadVersions();
+        $timeout(function() {
+            loadVersions();
+            if ($scope.reader_book_list.length == 0) {
+                loadBooks($scope.reader_version_id);
+            }
+        }, 3000);
     }
 }])
 

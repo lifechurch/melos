@@ -35,7 +35,7 @@ common:
   longer_cache_expiration: 240
   very_long_cache_expiration: 720
   rate_limit: 120
-  treadstone_base_url: 'https://yv-giving-staging.lifechurch.tv/'
+  treadstone_base_url: 'https://yv-giving-staging.life.church/'
 
 development:
   api_root: youversionapistaging.com
