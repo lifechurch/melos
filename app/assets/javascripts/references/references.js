@@ -10,6 +10,7 @@ angular.module('yv.reader', [
 	'reader.audioPanel',
 	'reader.verse',
 	'reader.footnote',
+    'reader.verseNumbersAndTitles',
 	'reader.bookList',
 	'api.highlights',
 	'api.bookmarks',
@@ -75,6 +76,8 @@ angular.module('yv.reader', [
 	$scope.working = false;
 	$scope.isLoggedIn = false;
 	$scope.verseActionOpen = false;
+    $scope.showNumbersAndTitles = true;
+    $scope.showFootnotes = true;
 	$scope.readerSelection = [];
 	$scope.highlights = [];
 	$scope.bookmarks = [];

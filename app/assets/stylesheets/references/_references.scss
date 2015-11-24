@@ -18,7 +18,7 @@
 }
 
 .chapter>.label {
-	display: none;
+	display: none !important;
 }
 
 .bcv-button-box {
@@ -428,6 +428,13 @@ md-chips-wrap {
    font-weight: normal;
    font-style: italic;
  }
+}
+
+td.activeFont {
+  background-color: $blue;
+  label {
+    color: $white;
+  }
 }
 
 div[audio-data="reader_audio"] {
