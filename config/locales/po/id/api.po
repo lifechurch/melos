@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: id <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Perbarui iman Anda dengan Rencana baru."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Temukan hikmat dalam Firman-Nya setiap hari."
+msgstr "Carilah Tuhan dalam Firman-Nya setiap hari."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Siapkan hati Anda musim ini."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Temukan Rencana Alkitab favorit Anda untuk Febuari!"
+msgstr "Temukan kasih Allah dalam Firman-Nya."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Tahun terbaik Anda dimulai sekarang."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Setiap hari di dalam Firman Tuhan menghasilkan kebebasan abadi."
+msgstr "Rayakan Kebebasan dalam Kristus."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Cari irama Anda dalam Firman Tuhan setiap hari."
+msgstr "Carilah Tuhan dalam Firman-Nya."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Temukan harapan dan pembaruan dalam Rencana Maret."
+msgstr "Temukan harapan dan pembaruan dalam Firman Tuhan."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Dedikasikan diri Anda tiap hari untuk mencari Tuhan dalam Firman-Nya."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Baca Alkitab tiap hari di 2015. Rencanakanlah!"
+msgstr "Dedikasikan diri Anda setiap hari pada Firman-Nya."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Temukan rasa syukur dalam janji-janji Tuhan."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Firman ini hidup. Biarkan Firman berbicara pada Anda setiap hari."
+msgstr "Hikmat ilahi dimulai dalam Firman Tuhan."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Firman Tuhan membuat segalanya baru."

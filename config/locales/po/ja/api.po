@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ja <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "新しい読書プランで信仰を新たにしよう。"
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "毎日、神様の御言葉から学びましょう。"
+msgstr "毎日、御言葉を通して神様を求めましょう。"
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "この季節、心を整えましょう。"
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "2月はお気に入りの読書プランを見つけよう！"
+msgstr "御言葉に神様の愛を見つけましょう。"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "今から最高の一年が始まります。"
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "毎日神様の御言葉を読むことで、いつまでも続く自由を得ることができます。"
+msgstr "キリストによる自由を喜びましょう。"
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "毎日神様の御言葉に耳を傾けて自分のリズムを見つけよう。"
+msgstr "御言葉を通して神様を求めましょう。"
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "3月の読書プランから希望と新しい始まりを見つけよう。"
+msgstr "神様の言葉に希望を見出し、新しく始めることができます。"
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "神様の御言葉を通して、毎日神様との関係を深めましょう。"
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "2015年は聖書を毎日読もう！プランが役に立つよ！"
+msgstr "毎日、神様の言葉で満たされましょう。"
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "神様の約束から感謝の気持ち得ましょう。"
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "御言葉は生きています。毎日、心から読みましょう。"
+msgstr "神聖な知恵は神様の言葉からです。"
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "神様の御言葉は全てを新しくします。"
