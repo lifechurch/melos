@@ -5,6 +5,7 @@
 - meta_title = strip_tags(@video.title)
 - meta_description = @title
 - meta_description = @video.description.html_safe if @video.description.present?
+- videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
 
 - content_for :meta_description do
   = @title
@@ -42,8 +43,12 @@
 
         %meta{itemprop: "thumbnail", content: "https:#{@video.poster_image.url}"}
         #player-container
-          %video{id:"video", class: "video-js vjs-default-skin vjs-big-play-centered", controls: "controls", preload: "auto",
-          width: "100%", height: "100%", poster: "https:#{@video.poster_image.url}"}
+          %video{ id:"video", class: "video-js vjs-default-skin vjs-big-play-centered", controls: "controls", preload: "auto", width: "100%", height: "100%",
+            "poster" => "https:#{@video.poster_image.url}",
+            "publisher-id" => "#{publisher.id}",
+            "publisher-ga-tracking-id" => "#{publisher.ga_tracking_id}",
+            "video-ref-id" => "#{videoRefId}",
+            "video-player" => true }
 
             %source{src: "#{@video.webm.url}", type:'video/webm'}
             %source{src: "#{@video.hls.url}", type:'video/mp4'}
@@ -68,8 +73,7 @@
             = link_to( t("videos.all"), video_series.blank? ? videos_path : series_video_path(video_series) , class: "solid-button green full", target: "_self" )
             = render partial: "videos/publisher_banner", locals: {publisher: publisher}
 
-- videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
--content_for :javascripts do
+-#content_for :javascripts do
   :javascript
     $(window).load(function () {
       videojs("video", { "controls": true, "autoplay": false, "preload": "auto", "width": '100%', "height": '100%', "poster": "https:#{@video.poster_image.url}" }).ready(function(){

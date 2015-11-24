@@ -12,7 +12,8 @@ angular.module('yv', [
 	'common.fixTop',
 	'common.userSettings',
     'common.recentVersions',
-    'common.skipHome'
+    'common.skipHome',
+    'videos.videoPlayer'
 ])
 
 .config([ '$locationProvider', '$urlRouterProvider', '$windowProvider', function($locationProvider, $urlRouterProvider, $windowProvider) {
