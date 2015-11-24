@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-11 11:24-0609\n"
-"PO-Revision-Date: 2015-08-11 11:24-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: bg <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -64,34 +64,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Освежете вярата си с нови планове."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Намирай мъдрост в Божието Слово всеки ден."
+msgstr "Търси Бог в Словото Му всеки ден."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Подготви сърцето си този сезон."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Намерете своя предпочитан план за прочит на Библията през февруари!"
+msgstr "Намери Божията любов в Неговото Слово."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Най-хубавата година от живота ти започва сега."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Ежедневното време в Божието Слово произвежда трайна свобода."
+msgstr "Празнувай свободата в Христос."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Намерете своя ритъм в ежедневното време с Божието Слово."
+msgstr "Потърси Бог в Неговото Слово."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Намерете надежда и обновление в плановете за месец март."
+msgstr "Намери надежда и обновление в Божието Слово."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Посветете се всекидневно да търсите Бог в Неговото Слово."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Чети Библията всеки ден през 2015. Планът ще ти помогне"
+msgstr "Посвещавай себе си ежедневно на Неговото Слово."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Откривай благодарност в Божиите обещания."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Това Слово е живо. Нека ти говори всеки ден."
+msgstr "Божествената мъдрост започва в Божието Слово."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Божието Слово прави всичко ново."

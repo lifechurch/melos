@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: it <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Ristora la tua fede con dei Piani nuovi."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Trova la saggezza ogni giorno nella Parola di Dio."
+msgstr "Cerca Dio ogni giorno nella Sua Parola."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Prepara il tuo cuore in questo periodo dell'anno."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Trova il tuo Piano di Lettura preferito per Febbraio!"
+msgstr "Trova l'amore di Dio nella Sua Parola."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Il tuo migliore anno di sempre inizia adesso."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Il frutto del passare del tempo con la Parola di Dio è la libertà duratura."
+msgstr "Celebra la Libertà in Cristo."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Trova il tuo ritmo passando del tempo ogni giorno nella Parola di Dio."
+msgstr "Cerca Dio nella Sua Parola."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Trova la speranza e il rinnovamento nei Piani di Lettura per Marzo."
+msgstr "Trova la speranza e il rinnovamento nella Parola di Dio."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Impegnati a cercare Dio ogni giorno nella Sua Parola."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Leggi la Bibbia ogni giorno nel 2015. I piani di lettura aiutano!"
+msgstr "Impegnati quotidianamente nella Sua Parola."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Scopri la gratitudine nelle promesse di Dio."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Questa Parola è viva. Lascia che ti parli ogni giorno."
+msgstr "La saggezza divina inizia nella Parola di Dio."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "La Parola di Dio rende ogni cosa nuova."

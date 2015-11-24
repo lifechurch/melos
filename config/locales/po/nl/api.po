@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nl <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Vernieuw je geloof met nieuwe Plannen."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Vind elke dag wijsheid in Gods Woord."
+msgstr "Zoek God in Zijn Woord, elke dag."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Bereidt dit seizoen je hart voor."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Vind uw favoriete Bijbel leesplan voor februari!"
+msgstr "Vind Gods liefde in Zijn Woord."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Je beste jaar ooit start nu."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Dagelijks tijd doorbrengen in Gods Woord levert eeuwige vrijheid op."
+msgstr "Vier de vrijheid in Christus."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Vind je ritme door dagelijks met Gods Woord bezig te zijn."
+msgstr "Zoek God in Zijn Woord."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Vind hoop en vernieuwing in plannen voor maart."
+msgstr "Vind hoop en vernieuwing in Gods Woord."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Wijd jezelf dagelijks aan het zoeken van God in Zijn Woord."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Lees in 2015 de Bijbel, dankzij leesplannen!"
+msgstr "Wijd je dagelijks toe aan Zijn Woord."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Ontdek dankbaarheid in Gods beloften."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Dit Woord is levend. Laat het elke dag tot je spreken."
+msgstr "Goddelijke wijsheid begint in Gods Woord."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Gods Woord maakt alles nieuw."

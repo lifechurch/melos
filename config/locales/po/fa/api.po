@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fa <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -64,34 +64,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "به کمک برنامه‌های مطالعۀ جدید ایمان خود را احیا سازید."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "حکمت را هر روزه در کلام خدا بیابید."
+msgstr "خدا را هر روزه در کلامش جستجو کنید."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "پس در این فصل، قلب خود را آماده کنید."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "برنامۀ مطالعۀ کتاب‌مقدس مورد علاقۀ خود را برای ماه فوریه بیابید!"
+msgstr "محبت خداوند را در کلامش بیابید."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "بهترین سال عمر شما اکنون آغاز می‌شود."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "مطالعۀ مرتب و روزانۀ کلام خدا آزادی جاودان به‌بار می‌آورد."
+msgstr "آزادی در مسیح را جشن بگیرید."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "با مطالعۀ مرتب و روزانۀ کلام خدا ضرب‌آهنگ زندگی خود را بیابید."
+msgstr "خدا را در کلامش بجویید."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "در برنامه‌های مطالعۀ کتاب‌مقدس ماه مارس، امید و احیای روحانی به‌دست آورید."
+msgstr "امید و تازگی جسم و جان را در کلام خداوند کشف کنید."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "هرروزه خود را به تأمل و تعمق در کلام خدا وقت کنید."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "کتاب‌مقدس را به‌صورت روزانه در سال ۲۰۱۵ مطالعه کنید! راهنمای برنامه‌های مطالعه!"
+msgstr "هرروزه خود را وقف کلام خدا کنید."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "در وعده‌های خدا، دلیل شکرگزاری را بیابید."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "این کلام زنده است. اجازه دهید هر روزه با شما سخن بگوید."
+msgstr "کسب حکمت آسمانی از کلام خداوند آغاز می‌شود."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "کلام خدا همه چیز را تازه و نو می‌سازد."
