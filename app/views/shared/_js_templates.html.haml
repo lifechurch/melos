@@ -1,10 +1,10 @@
 - if is_reader_page? && presenter.present?
 
-  -# 
+  -#
   -# Reader Text Settings Panel
   -#
   %script{'type' => 'text/ng-template', 'id' => '/reader-text-settings-panel.tpl.html'}
-    #reader-font-dropdown.large-3.medium-1.reader-panel.right
+    #reader-font-dropdown.large-3.medium-6.reader-panel.right
       .row
         .small-3.columns.vertical-middle{"style" => "height:62px"}
           %div.text-left="Size"
@@ -13,7 +13,7 @@
       .row
         .small-12.columns
           %table.font-selector{"style" => "width: 100%"}
-            %tr 
+            %tr
               %td.text-center
                 %input#reader_font_arial.hidden{:type => "radio", :value => "Arial", "ng-model" => "fontFamily"}
                 %label{:for => "reader_font_arial", "style" => "font-family:'Arial'"} Arial
@@ -45,17 +45,17 @@
       .row
         .small-12.columns.text-left
           %input#reader_show_numbers_and_titles{:type => "checkbox", "ng-model" => "showNumbersAndTitles"}
-          %label{:for => "reader_show_numbers_and_titles"} Numbers and Titles  
+          %label{:for => "reader_show_numbers_and_titles"} Numbers and Titles
       .row
         .small-12.columns.text-left
           %button.solid-button.green{"ng-click" => "save()"} Save
-  
+
 
   -#
   -# Reader Audio Panel
   -#
   #reader-audio-panel.ng-hide
-    .large-3.medium-1.reader-panel.right
+    .large-3.medium-6.reader-panel.right
       - if presenter.reference.audio.present?
         %h3#reader_audio_title{"ng-bind" => "audioData.title"}
           = presenter.reference.audio.title
@@ -65,15 +65,15 @@
           ="Your browser does not support the audio element."
 
 
-  -# 
-  -# Reader Text 
+  -#
+  -# Reader Text
   -#
   %script{'type' => 'text/ng-template', 'id' => '/reader.tpl.html'}
     %div{ "ng-style" => "{ 'font-size': fontSize + 'px', 'font-family': fontFamily}", "ng-html-compile"=>"content" }
 
 
   -#
-  -# Verse Action 
+  -# Verse Action
   -#
   %script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
     %md-fab-speed-dial.ng-hide{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'", "ng-show" => "selection.length"}
@@ -92,7 +92,7 @@
           %md-icon{"md-svg-src" => "/assets/bookmark-solid.svg"}
         %md-button.md-fab.md-raised.md-mini{"aria-label" => "Share"}
           %md-tooltip{"md-direction" => "left"} Share
-          %md-icon{"md-svg-src" => "/assets/icon-share.svg"}        
+          %md-icon{"md-svg-src" => "/assets/icon-share.svg"}
         %md-button.md-fab.md-raised.md-mini{"aria-label" => "Related"}
           %md-tooltip{"md-direction" => "left"} Related
           %md-icon{"md-svg-src" => "/assets/icon-related.svg"}
@@ -100,7 +100,7 @@
 
   -#
   -# Reader Highlight Panel
-  -# 
+  -#
   %script{type:"text/ng-template", id: "/reader-highlight-panel.tpl.html"}
     %div.pad-head{"ng-if" => "!isLoggedIn && selection.length"}
       %p.highlight= t('registration.highlight blurb');
@@ -109,7 +109,7 @@
       %span.or
         = t("or.upper")
       %span.email
-        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'solid-button green'})      
+        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'solid-button green'})
     %div.pad-head{"ng-if" => "isLoggedIn && selection.length"}
       .ng-hide{"ng-show"=>"success"}
         %span.success= t("highlights.create success")
@@ -129,7 +129,7 @@
 
   -#
   -# Reader Bookmark Panel
-  -# 
+  -#
   %script{type:"text/ng-template", id: "/reader-bookmark-panel.tpl.html"}
     %div.pad-head{"ng-if" => "!isLoggedIn && selection.length"}
       %p.bookmark= t('registration.bookmark blurb');
@@ -138,7 +138,7 @@
       %span.or
         = t("or.upper")
       %span.email
-        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'solid-button green'})      
+        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'solid-button green'})
     %div.pad-head{"ng-if" => "isLoggedIn && selection.length"}
       .ng-hide{"ng-show"=>"success"}
         %span.success= t("bookmarks.create success")
@@ -165,10 +165,10 @@
         .row.pad-head
           .small-12.columns
             %button.solid-button.green{"ng-click" => "submit(bookmark, labels)", :type => "submit", :value => "submit"}= t('bookmarks.form.save button')
- 
+
   -#
   -# Reader Note Panel
-  -# 
+  -#
   %script{type:"text/ng-template", id: "/reader-note-panel.tpl.html"}
     %div.pad-head{"ng-if" => "!isLoggedIn && selection.length"}
       %p.note= t('registration.note blurb');
@@ -177,7 +177,7 @@
       %span.or
         = t("or.upper")
       %span.email
-        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'solid-button green'})      
+        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email", class: 'solid-button green'})
     %div.pad-head{"ng-if" => "isLoggedIn && selection.length"}
       .ng-hide{"ng-show"=>"success"}
         %span.success= t("notes.create success")
