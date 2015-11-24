@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-24 09:47-0609\n"
-"PO-Revision-Date: 2015-08-24 09:47-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ar <LL@li.org>\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "جدد إيمانك مع قراءة خطط جديدة."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "أعثر على حكمة في كلمة الله كل يوم."
+msgstr "ابحث عن الله فى كلمته يوميا."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "جهز قلبك في هذا الفصل."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "اكتشف خطة قراءة مفضلة لشهر فبراير !"
+msgstr "ابحث عن محبه الله فى كلمته."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "افضل سنه لك على الاطلاق تبدا الان."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "يمنحك الوقت اليومي الذي تقضيه مع كلمة الله الحرية الدائمة."
+msgstr "احتفل بالحريه فى المسيح"
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "ابحث عن إيقاع يومي خاص بك من خلال كلمة الله."
+msgstr "فتش عن الله فى كلمته."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "المس الرجاء و التجديد في خطط القراءة لشهر مارس"
+msgstr "ابحث عن الرجاء والتجديد فى كلمه الله."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "كرس نفسك يوميّاً للسعي إلى الله من خلال كلمته."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "اقرء الكتاب المقدس يوميا في 2015.  الخطط ستساعدك! "
+msgstr "خصص نفسك يوميا لكلمته."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "إكتشف الشكر و الإمتنان في وعود الله."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "هذه الكلمة حيّة دعها تتحدث معك كل يوم."
+msgstr "الحكمه الالهيه تبدأ فى كلمه الله."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "تجعل كلمة الله كل شئٍ جديدٍ."
