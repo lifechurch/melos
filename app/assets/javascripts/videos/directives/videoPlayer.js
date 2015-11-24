@@ -7,8 +7,7 @@ angular.module('videos.videoPlayer', [])
                 poster: '@',
                 publisherId: '@',
                 publisherGaTrackingId: '@',
-                videoRefId: '@',
-                gat: '='
+                videoRefId: '@'
             },
             controller: ['$scope', '$element',  function($scope, $element) {
                 videojs($element.attr("id"), { "controls": true, "autoplay": false, "preload": "auto", "width": '100%', "height": '100%', "poster": $scope.poster }).ready(function(){
