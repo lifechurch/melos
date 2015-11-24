@@ -437,3 +437,19 @@ td.activeFont {
   }
 }
 
+div[audio-data="reader_audio"] {
+  #reader_audio_title {
+    font-size: 1em;
+    margin: 0;
+  }
+
+  .blue-text {
+    font-size: 0.875em;
+    color: $gray;
+    padding: 0 0 10px;
+  }
+
+  audio {
+    width: 100%;
+  }
+}

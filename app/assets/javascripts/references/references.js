@@ -76,6 +76,8 @@ angular.module('yv.reader', [
 	$scope.working = false;
 	$scope.isLoggedIn = false;
 	$scope.verseActionOpen = false;
+    $scope.showNumbersAndTitles = true;
+    $scope.showFootnotes = true;
 	$scope.readerSelection = [];
 	$scope.highlights = [];
 	$scope.bookmarks = [];

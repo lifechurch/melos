@@ -41,13 +41,6 @@
   }
 }
 
-a.icon.active {
-  @media #{$small-only} {
-    background-color: $green;
-    color: #fff;
-  }
-}
-
 html[dir="rtl"] body.c_subscriptions {
   @media #{$small-only} {
     .plans-nav-box a {
@@ -341,7 +334,7 @@ ul.plan-results {
 
 /* !Plan day view */
 
-.reader-content {
+.reader-plan-view .reader-content {
   .reader-left {
     @media #{$medium-only} {
       width: 50%;
