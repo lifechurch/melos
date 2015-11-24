@@ -6,15 +6,24 @@
   %script{'type' => 'text/ng-template', 'id' => '/reader-text-settings-panel.tpl.html'}
     #reader-font-dropdown.large-3.medium-1.reader-panel.right
       .row
-        .small-12.columns
+        .small-12.columns.text-left
+          %label
+            = t("shared.menu_settings.font size")
           %table
             %tr
-              - (12..22).step(2) do |i|
-                %td{"ng-class" => "{ activeFont: fontSize == #{i} }", "ng-click" => "fontSize = #{i}"}
-                  %label
-                    = i.to_s
+              %td{"ng-class" => "{ activeFont: fontSize == 14 }", "ng-click" => "fontSize = 14"}
+                %label
+                  = t("shared.menu_settings.small")
+              %td{"ng-class" => "{ activeFont: fontSize == 18 }", "ng-click" => "fontSize = 18"}
+                %label
+                  = t("shared.menu_settings.medium")
+              %td{"ng-class" => "{ activeFont: fontSize == 22 }", "ng-click" => "fontSize = 22"}
+                %label
+                  = t("shared.menu_settings.large")
       .row
-        .small-12.columns
+        .small-12.columns.text-left
+          %label
+            = t("shared.menu_settings.font")
           %table.font-selector{"style" => "width: 100%"}
             %tr 
               %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Arial' }"}
@@ -39,15 +48,22 @@
                 %label{:for => "reader_font_verdana", "style" => "font-family:'Verdana'"} Verdana
       .row
         .small-12.columns.text-left
+          %label
+            = t("shared.menu_settings.extras")
+      .row
+        .small-12.columns.text-left
           %input#reader_show_footnotes{:type => "checkbox", "ng-model" => "showFootnotes"}
-          %label{:for => "reader_show_footnotes"} Footnotes
+          %label{:for => "reader_show_footnotes"}
+            = t("shared.menu_settings.translation notes")
       .row
         .small-12.columns.text-left
           %input#reader_show_numbers_and_titles{:type => "checkbox", "ng-model" => "showNumbersAndTitles"}
-          %label{:for => "reader_show_numbers_and_titles"} Numbers and Titles  
+          %label{:for => "reader_show_numbers_and_titles"}
+            = t("shared.menu_settings.numbers and titles")
       .row
         .small-12.columns.text-left
-          %button.solid-button.green{"ng-click" => "save()"} Save
+          %button.solid-button.green{"ng-click" => "save()"}
+            =t(".save")
           != "&nbsp;"
           %a{"ng-click" => "cancel()"}= t('cancel')
   

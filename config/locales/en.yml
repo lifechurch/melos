@@ -1165,6 +1165,7 @@ en:
         extras:                                 "Extras:"
         translation notes:                      "Footnotes"
         cross references:                       "Cross References"
+        numbers and titles:                     "Numbers and Titles"
   app errors:
     404 plans explanation:                      "Are you looking for the <a href='%{plan_path}' target='_self'>%{title}</a> plan?"
     404 contact support:                        "Having trouble? Contact our <a href='%{support_url}' target='_self'>support team</a>."
