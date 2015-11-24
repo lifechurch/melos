@@ -150,14 +150,14 @@ msgstr "Help your kids fall in love with God's Word."
 msgid "moment.system.christmas.title"
 msgstr "Share the good news: the Savior is born!"
 
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Read the Bible daily in 2015. Plans help!"
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Your best year ever starts now."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Find your favorite Bible Plan for February!"
+msgstr "Find God’s love in His Word."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Find hope and renewal in March Plans."
+msgstr "Find hope and renewal in God's Word."
 
 msgid "moment.image.self.title"
 msgstr "You created a verse image for <b>{reference_human} {version_abbreviation}</b>"
@@ -169,22 +169,22 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Refresh your faith with new Plans."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Devote yourself daily to seeking God in His Word."
+msgstr "Devote yourself daily to His Word."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Find your rhythm through daily time in God’s Word."
+msgstr "Seek God in His Word."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Daily time in God’s Word yields lasting freedom."
+msgstr "Celebrate Freedom in Christ."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Find wisdom in God’s Word every day."
+msgstr "Seek God in His Word every day."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "God’s Word makes everything new."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "This Word is alive. Let it speak to you every day."
+msgstr "Godly wisdom begins in God’s Word."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Discover thankfulness in God’s promises."

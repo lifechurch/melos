@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: sq <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Fresko besimin tënd me plane të reja."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Gjej urtësi çdo ditë në Fjalën e Perëndisë."
+msgstr "Kërko Perëndinë në Fjalën e Tij çdo ditë."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Përgatit zemrën tënde këtë stinë."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Gjej planin e preferuar të Biblës për shkurtin!"
+msgstr "Gjej dashurinë e Perëndisë në Fjalën e Tij."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Viti yt më i mirë fillon tani."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Koha e përditshme me Fjalën e Zotit sjell liri të qëndrueshme."
+msgstr "Festo Liri në Krishtin."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Gjej ritmin tënd përmes kohës së përditshme me Fjalën e Perëndisë."
+msgstr "Kërko Perëndinë në Fjalën e Tij."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Gjej shpresë dhe përtëritje në planet e marsit."
+msgstr "Gjej shpresë dhe përtëritje në Fjalën e Perëndisë."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Kushtoju përditë kërkimit të Perëndisë në Fjalën e Tij."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Lexo Biblën përditë më 2015. Planet ju ndihmojnë!"
+msgstr "Përkushtoju çdo ditë Fjalës së Tij."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Zbulo mirënjohjen në premtimet e Perëndisë."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Kjo fjalë është e gjallë. Le të të flasë ajo çdo ditë."
+msgstr "Urtësia e perëndishme fillon në Fjalën e Perëndisë."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Fjala e Perëndisë e bën çdo gjë të re."

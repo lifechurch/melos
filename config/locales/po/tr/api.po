@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-31 12:41-0600\n"
-"PO-Revision-Date: 2015-08-31 12:41-0600\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: tr <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Yeni okuma planlarıyla imanınızı tazeleyin."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Her gün Tanrı'nın sözündeki hikmeti keşfedin."
+msgstr "Tanrı'yı hergün O'nun Kendi Sözü'nde ara."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Bu dönem yüreğinizi hazırlayın."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Şubat ayı için Okuma Planlarına göz atın ve en beğendiklerinizden başlayın!"
+msgstr "Tanrı’nın sevgisini Kendi Sözü'nde bulun."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "En iyi yılın şimdi başlıyor."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Tanrı'nın sözünden her gün okumak özgürlüğümüzü dayanıklı kılar."
+msgstr "Mesih'te Özgürlüğü Kutla."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Tanrı'nın sözüyle beslenmeniz günlük rutininiz olsun."
+msgstr "Kendi Sözü'nde Tanrı'yı arayın."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Mart ayının Okuma Planlarıyla umudunuzu yeşertin, tazelenin."
+msgstr "Tanrı'nın Sözü'nde umut ve yenilenme bulun."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Kendinizi her gün Tanrı'nın sözünde Tanrı'yı keşfetmeye adayın."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "2015'te Kutsap Kitap'ı her gün okuyun. Bir Okuma Planı yardımcı olabilir!"
+msgstr "Kendini hergün O'nun Sözü'ne ada."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Tanrı'nın vaatlerindeki minnettarlığı keşfedin."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Söz diridir. Sizinle her gün konuşmasına fırsat verin."
+msgstr "Tanrısal bilgelik Tanrı'nın Sözü'nde başlar."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Tanrı'nın sözü her şeyi yeniler."

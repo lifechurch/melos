@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: da <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Opfrisk din tro med nye Planer."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Find visdom i Guds ord hver dag."
+msgstr "Søg Gud i hans Ord hver dag."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Forbered dit hjerte i denne tid."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Find din favorit Bibellæseplan for februar!"
+msgstr "Find Guds kærlighed i hans Ord."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Dit bedste år nogensinde begynder nu."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Daglig tid med Gud´s Ord giver varig frihed."
+msgstr "Fejr frihed i Kristus fejres."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Find din rytme gennem daglig tid med Gud´s Ord."
+msgstr "Søg Gud i hans Ord."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Find håb og fornyelse i marts-planer."
+msgstr "Find håb og fornyelse i Guds Ord."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Brug hver dag tid på at søge i Gud´s ord."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Læs bibelen dagligt i 2015. En plan hjælper!"
+msgstr "Hengiv dig dagligt til Guds Ord."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Opdag taknemlighed i Guds løfter."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Ordet er levende. Lad det tale til dig hver dag."
+msgstr "Guddommelig visdom begynder i Guds Ord."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Guds ord gør alting nyt."

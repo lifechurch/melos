@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-11 11:24-0609\n"
-"PO-Revision-Date: 2015-08-11 11:24-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hu <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Újítsd meg hitedet új tervekkel."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Találj bölcsességet Isten Igéjében mindennap."
+msgstr "Mindennap keresd Istent az Igében."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Készítsd fel a szíved erre az időszakra."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Találd meg a kedvenc Biblia olvasási tervedet februárra!"
+msgstr "Találd meg Isten szeretetét az Ő Igéjében."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "A legjobb éved most kezdődik."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "A mindennapi ráfordított idő Isten Igéjére tartós szabadságot terem."
+msgstr "Ünnepeld a szabadságot Krisztusban."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Lelj rá ritmusodra az Isten Igéjével naponta töltött időd által."
+msgstr "Keresd Istent az Ő Igéjében."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Találj reményt és megújulást a márciusi tervekben."
+msgstr "Találj reményt és megújulást Isten Igéjében."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Szenteld magadat naponta Isten keresésére az Ő Igéjében."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Olvasd naponta a Bibliát 2015-ban. A tervek segítenek!"
+msgstr "Mindennap szánd oda magad az Ő igéjének."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Fedezd fel a hálaadást Isten ígéreteiben."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Ez az Ige élő. Engedd, hogy szóljon hozzád mindennap."
+msgstr "Az isteni bölcsesség Isten Igéjében kezdődik."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Isten Igéje mindent megújít."

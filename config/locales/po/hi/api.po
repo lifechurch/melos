@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-11 11:23-0609\n"
-"PO-Revision-Date: 2015-08-11 11:23-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,35 +66,17 @@ msgstr "नए बाइबिल पाठक योजना के साथ 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "नए पाठक योजना से श्रद्धा बढ़ाये। "
 
-msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "परमेश्वर के वचन से प्रतिदिन बुद्धिमत्ता प्राप्त करें "
-
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "इस ऋतु के लिए ह्रदय को तैयार करो "
 
-msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "फरवरी के लिए अपना पसंदीदा बाइबिल पाठक योजना चुने!"
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "आपका श्रेष्ठ वर्ष शुरू हुआ। "
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "प्रभु के वचन अध्ययन में बिताया पल से ज़िन्दगी बार आज़ादी पाये। "
-
-msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "हर रोज़ प्रभु के वचन अध्ययन से दिल को सुकून पाइये। "
-
-msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "मार्च के योजना में आशा और नवीनीकरण पाए। "
-
-msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "हर दिन बाइबिल अध्ययन पल से प्रभु को नज़दीक पाये। "
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "2015 में हररोज़ बाइबिल पढ़े।मददगार योजनाएँ उपलब्ध !"
+msgstr "ईसा मसीह के साथ मुक्ति पर्व मनाये। "
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "परमेश्वर की प्रतिज्ञायों के लिए धन्यवादी हों "
-
-msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "वचन जीवित है  यह आपसे प्रतिदिन बात करता है "
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "परमेश्वर का वचन सभी को नया बनता है "
