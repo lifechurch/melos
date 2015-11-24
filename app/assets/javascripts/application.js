@@ -1,3 +1,4 @@
+//= require jquery
 //= require angular
 //= require angular-ui-router
 //= require angular-sanitize
@@ -6,7 +7,6 @@
 //= require angular-cookies
 //= require angular-aria
 //= require vendor/angular-material/angular-material
-//= require jquery
 //= require vendor/branch/branchMetrics
 //= require branch/intlTelInput.min
 //= require branch/sms_for_app
