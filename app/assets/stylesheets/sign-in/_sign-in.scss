@@ -1,5 +1,9 @@
 body.c_sessions.a_new,
 body.c_sessions.a_create {
+  label {
+    padding: 0 0 5px;
+  }
+
   @media #{$medium-up} {
     input[type="text"],
     input[type="email"],

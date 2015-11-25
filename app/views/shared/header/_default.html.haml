@@ -110,8 +110,8 @@
 
         - else
           .sign-inup
-            = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "hollow-button sign-in", target: "_self"
-            = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "hollow-button sign-up", target: "_self"
+            = link_to t("sign in"), sign_in_path(redirect: params[:redirect]), class: "sign-in", target: "_self"
+            = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "sign-up", target: "_self"
 
 = render partial: 'shared/header/js_templates'
 

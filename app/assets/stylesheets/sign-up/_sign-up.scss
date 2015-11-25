@@ -9,6 +9,11 @@ body.c_users.a_create
     color: #7c7c7c;
     margin: -20px 0 20px 0;
   }
+
+  label {
+    padding: 0 0 5px;
+  }
+
   @media #{$medium-up} {
     input[type="text"],
     input[type="email"],
