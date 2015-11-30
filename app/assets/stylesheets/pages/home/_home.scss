@@ -1,13 +1,13 @@
 .a_home #current-ui-view {
-  margin: 90px 0 0;
+  padding: 90px 0 0;
   padding-bottom: 0;
 
   @media #{$medium-only} {
-    margin: 60px 0 0;
+    padding: 60px 0 0;
   }
 
   @media #{$small-only} {
-    margin: 10px 0 0;
+    padding: 10px 0 0;
   }
 
   & * {
