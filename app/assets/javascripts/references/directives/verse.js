@@ -3,6 +3,11 @@ angular.module('reader.verse', [])
 .directive("verse", function() {
 	return {
 		restrict: 'C',
+        controller: function($rootScope, $element) {
+          $rootScope.$on("ClearVerseSelection", function() {
+              $element.removeClass("selected");
+          });
+        },
 		link: function(scope, element) {
 			scope.$watch("verseHighlights['" + element[0].dataset.usfm + "']", function(newVal, oldVal) {
 				if (newVal) {
