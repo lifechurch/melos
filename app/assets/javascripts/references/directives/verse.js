@@ -3,7 +3,7 @@ angular.module('reader.verse', [])
 .directive("verse", function() {
 	return {
 		restrict: 'C',
-        controller: function($rootScope, $element) {
+        controller: function($rootScope, $element, $scope) {
           $rootScope.$on("ClearVerseSelection", function() {
               $element.removeClass("selected");
           });

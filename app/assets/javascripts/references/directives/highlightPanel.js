@@ -12,7 +12,7 @@ angular.module('reader.highlightPanel', [])
 			isLoggedIn: '='
 		},
 		templateUrl: '/reader-highlight-panel.tpl.html',
-		controller: ['$scope', '$element', 'Highlights', '$timeout', function($scope, $element, Highlights, $timeout) {
+		controller: ['$scope', '$element', 'Highlights', '$timeout', '$rootScope', function($scope, $element, Highlights, $timeout, $rootScope) {
 			$scope.success = false;
 
 			if ($scope.selection && $scope.version && $scope.token) {
@@ -45,9 +45,10 @@ angular.module('reader.highlightPanel', [])
 						$scope.highlights = highlights;
 						$scope.success = true;
 						$scope.highlight = {};
+                        $scope.selection = [];
+                        $rootScope.$broadcast("ClearVerseSelection");
 						$timeout(function() { 
-							$scope.toggleSidePanel("showReaderHighlight"); 
-							$scope.selection = [];
+							$scope.toggleSidePanel("showReaderHighlight");
 							$scope.success = false;
 						}, 5000);
 						
