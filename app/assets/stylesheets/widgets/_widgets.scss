@@ -7,11 +7,33 @@
       height: rem-calc(130);
     }
   }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  p,
   p.desc {
-    width: 70%;
+    width: 90%;
     margin-bottom: 0;
+    font-size: 0.875em;
+  }
+
+  a {
+    font-size: 0.875em;
   }
 }
+
+.a_new {
+  h1 {
+    padding: 0 0 10px;
+  }
+
+  #widget-download:last-child {
+    margin: 20px 0 0;
+  }
+}
+
 html[dir="rtl"] #widget-download {
   .dl-icon {
     background: image_url('app_screen.png') no-repeat top right;

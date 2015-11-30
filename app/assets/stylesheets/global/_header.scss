@@ -466,42 +466,6 @@ md-menu-item {
 	font-weight: bold;
 }
 
-.sign-inup {
-  float: $opposite-direction;
-}
-
-div.header {
-  a.sign-up,
-  a.sign-in {
-    float: $opposite-direction;
-    margin: 0 10px 0 0;
-  }
-}
-
-.hollow-button.sign-in,
-.hollow-button.sign-up {
-  @media #{$large-up} {
-    margin: 0 10px !important;
-  }
-
-  @media #{$medium-only} {
-    margin: 0;
-    border: none;
-    font-size: rem-calc(12);
-    padding: 0;
-    height: 44px;
-    line-height: 43px;
-
-    &:hover,
-    &:focus {
-      background-color: transparent !important;
-      color: $primary-color !important;
-      border-width: 0 !important;
-      border-color: none;
-    }
-  }
-}
-
 html[dir="rtl"] {
   .icon-bar > * {
     float: right;
@@ -604,6 +568,75 @@ a.icon {
     a {
       color: $black;
       display: block;
+    }
+  }
+}
+
+
+/* !Sign in/up buttons */
+
+.sign-inup {
+  float: $opposite-direction;
+  overflow: hidden;
+  width: 50%;
+}
+
+.sign-up,
+.sign-in {
+  float: $opposite-direction;
+  padding: 4px 10px 3px;
+  color: $gray;
+  border: 1px solid #ccc;
+  -webkit-border-radius:  5px;
+  -moz-border-radius:     5px;
+  border-radius:          5px;
+  display: inline-block;
+
+  @media #{$medium-up} {
+    margin: 0 5% 0 0;
+  }
+
+  @media #{$medium-only} {
+    border: none;
+    font-size: rem-calc(12);
+    padding: 0;
+    height: 44px;
+    line-height: 43px;
+  }
+
+  @media #{$large-only} {
+    &:hover,
+    &:focus {
+      border: 1px solid $blue;
+    }
+  }
+}
+
+.c_sessions.a_new {
+  .sign-up {
+    color: $blue;
+
+    @media #{$large-only} {
+      border: 1px solid $blue;
+    }
+  }
+}
+
+.c_users.a_new {
+  .sign-in {
+    color: $blue;
+
+    @media #{$large-only} {
+      border: 1px solid $blue;
+    }
+  }
+}
+
+html[dir="rtl"] {
+  .sign-up,
+  .sign-in {
+    @media #{$medium-up} {
+      margin: 0 0 0 5%;
     }
   }
 }
