@@ -13,6 +13,9 @@ class SubscriptionsController < ApplicationController
 
     @user = current_user
     @subscriptions = Subscription.all(@user, auth: @user.auth)
+
+    return redirect_to plans_path if @subscriptions.empty?
+
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
   end
