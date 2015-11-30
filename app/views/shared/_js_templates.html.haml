@@ -130,7 +130,7 @@
     %div.pad-head{"ng-if" => "isLoggedIn && selection.length"}
       .ng-hide{"ng-show"=>"success"}
         %span.success= t("highlights.create success")
-        %span.success
+        -#%span.success
           %a.solid-button.green{}= t("social.add comment")
       %form{"ng-hide"=>"success"}
         %input.selected-color{"ng-model" => "highlight.color", :type => "hidden"}
