@@ -13,6 +13,7 @@ angular.module('yv.moments', [
 	'yv.moments.planStart',
 	'yv.moments.planComplete',
 	'yv.moments.planSegmentComplete',
+    'yv.moments.planCarousel',
     'yv.moments.moreMenu',
     'yv.moments.subscribeMenu'
 ])

@@ -5,7 +5,7 @@
   .row.moments-feed
     .medium-10.large-7.columns.small-centered
       %div{"ng-repeat" => "moment in moments"}
-        %moment{:data => "moment", "social-enabled" => "true"}
+        %moment{:data => "moment", "social-enabled" => "true", "ng-if" => "moment.kind"}
       %div{:layout => "row", "layout-align" => "space-around", "layout-sm" => "column", "ng-if" => "loading"}
         %md-progress-circular{"md-mode" => "indeterminate"}
       %button.solid-button.green.full.ng-hide{"ng-click" => "loadMore()", "ng-show" => "!loading && !pagingFinished"}
@@ -42,6 +42,7 @@
       %div{"ng-if" => "data.kind == 'friendship'", "moment-friendship" => ""}
       %div{"ng-if" => "data.kind == 'image'", "moment-image" => ""}
       %div{"ng-if" => "data.kind == 'note'", "moment-note" => ""}
+      %div{"ng-if" => "data.kind == 'reading_plan_carousel'", "moment-plan-carousel" => ""}
     .moment-bottom
       .moment-actions
         %a.moment-actions-like{:href => "#", "ng-click" => "like()", "ng-if" => "data.object.likes.enabled", "ng-class" => "{ active: data.object.likes.is_liked}", "ng-disabled" => "!socialEnabled"} Like
