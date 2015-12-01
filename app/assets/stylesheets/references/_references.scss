@@ -209,12 +209,12 @@ html[dir="rtl"] {
 
 .colorButton {
 	width: rem-calc(40);
-	float: left;
+	float: $default_float;
 	height: rem-calc(40);
 	cursor: pointer;
     margin-top: 0 !important;
     &.active {
-      border: solid 2px white;
+      border: solid 2px $black;
     }
 
     &[md-color-picker] {
@@ -287,10 +287,18 @@ div[verse-action] {
 	bottom: 0;
 	right: 0;
 	padding: rem-calc(23 12 23 15);
+
+	@media #{$large-only} {
+  	right: 15%;
+	}
+
+	@media #{$small-only} {
+	  bottom: 50px;
+	}
 }
 
 
-/* !Font and audio popups */
+/* !Font and audio panels */
 
 .reader-panel {
   position: absolute;
@@ -451,5 +459,39 @@ div[audio-data="reader_audio"] {
 
   audio {
     width: 100%;
+  }
+}
+
+
+/* !Verse action panels */
+
+.verse-action-panels-container {
+  label {
+    padding: 0 0 5px;
+  }
+
+  .solid-button {
+    margin: 0 0 10px;
+  }
+
+  a[title="Cancel"] {
+    display: block;
+    font-size: 0.875em;
+  }
+}
+
+.reader-highlight-save,
+.reader-note-inputs,
+.reader-bookmark-inputs,
+.reader-bookmark-save {
+  clear: both;
+  padding: 20px 0 0;
+}
+
+.reader-verseaction-loggedout {
+  .highlight,
+  .bookmark,
+  .note {
+    padding: 0 0 20px;
   }
 }

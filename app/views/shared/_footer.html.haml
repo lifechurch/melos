@@ -4,7 +4,7 @@
     .row
       .large-2.medium-3.large-offset-2.columns
         %ul.side-nav
-          %li.label= t("youversion").to_s.upcase
+          %li.footer-label= t("youversion").to_s.upcase
           %li
             = link_to( t("about"), about_path, {target: "_self"})
           %li
@@ -27,7 +27,7 @@
 
       .large-2.medium-3.columns
         %ul.side-nav
-          %li.label= t("download").to_s.upcase
+          %li.footer-label= t("download").to_s.upcase
           %li
             = link_to( t("kids.bible app"), app_page_path, {target: "_self"} )
           %li
@@ -35,7 +35,7 @@
 
       .large-2.medium-3.columns
         %ul.side-nav
-          %li.label= t("follow us").to_s.upcase
+          %li.footer-label= t("follow us").to_s.upcase
           %li
             = link_to("Blog", blog_url(current_locale), class: "blog")
           %li
@@ -51,7 +51,7 @@
 
       .large-2.medium-3.columns.end
         %ul.side-nav
-          %li.label= t("language").to_s.upcase
+          %li.footer-label= t("language").to_s.upcase
           %li
             = render partial: "shared/language_selector"
 
