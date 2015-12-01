@@ -12,7 +12,7 @@ angular.module('reader.notePanel', [])
 			isLoggedIn: '='
 		},
 		templateUrl: '/reader-note-panel.tpl.html',
-		controller: ['$scope', '$element', 'Notes', 'Highlights', '$timeout', function($scope, $element, Notes, Highlights, $timeout) {
+		controller: ['$scope', '$element', 'Notes', 'Highlights', '$timeout', '$rootScope', function($scope, $element, Notes, Highlights, $timeout, $rootScope) {
 			$scope.success = false;
 
 			if ($scope.selection && $scope.version && $scope.token) {
@@ -47,9 +47,10 @@ angular.module('reader.notePanel', [])
 						$scope.notes = notes;
 						$scope.success = true;
 						$scope.note = {};
+                        $scope.selection = [];
+                        $rootScope.$broadcast("ClearVerseSelection");
 						$timeout(function() { 
-							$scope.toggleSidePanel("showReaderNote"); 
-							$scope.selection = [];
+							$scope.toggleSidePanel("showReaderNote");
 							$scope.success = false;
 						}, 5000);
 						

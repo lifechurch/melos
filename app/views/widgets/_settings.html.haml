@@ -16,5 +16,5 @@
   %ul.side-nav
     - links.each do |l|
       %li{class: current_page?(l[:path]) ? 'active' : '' }
-        = link_to_unless_current l[:string], l[:path] do
+        = link_to_unless_current l[:string], l[:path], { "target" => "_self" } do
           %a.active= l[:string]

@@ -477,6 +477,7 @@ angular.module('yv.reader', [
 
     $scope.deselectAll = function() {
         $scope.readerSelection = [];
+        $rootScope.$broadcast("ClearVerseSelection");
     };
 
     $scope.nextPlanRef = function(userPlanUrl, dayTarget, token) {

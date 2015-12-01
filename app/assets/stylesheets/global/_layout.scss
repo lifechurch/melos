@@ -26,38 +26,38 @@
 
 #current-ui-view {
 	padding-bottom: 100px;
-	margin: 100px 0 0;
+	padding: 100px 0 0;
 
   @media #{$medium-only} {
-    margin: 64px 0 0;
+    padding: 64px 0 0;
   }
 
   @media #{$small-only} {
-    margin: 64px 0 0;
+    padding: 64px 0 0;
   }
 }
 
 .c_references #current-ui-view,
 .c_subscriptions #current-ui-view,
 .c_plans #current-ui-view {
-	margin: 145px 0 0;
+	padding: 145px 0 0;
 
   @media #{$medium-only} {
-    margin: 108px 0 0;
+    padding: 108px 0 0;
   }
 }
 
 .a_edit #current-ui-view {
-	margin: 100px 0 0;
+	padding: 100px 0 0;
 
 	@media #{$small-only} {
-	  margin: 64px 0 0;
+	  padding: 64px 0 0;
 	}
 }
 
 .a_index #current-ui-view {
   @media #{$small-only} {
-    margin: 44px 0 0;
+    padding: 44px 0 0;
   }
 }
 

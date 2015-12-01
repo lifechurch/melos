@@ -12,7 +12,7 @@ angular.module('reader.bookmarkPanel', [])
 			isLoggedIn: '='
 		},
 		templateUrl: '/reader-bookmark-panel.tpl.html',
-		controller: ['$scope', '$element', 'Bookmarks', 'Highlights', '$timeout', function($scope, $element, Bookmarks, Highlights, $timeout) {
+		controller: ['$scope', '$element', 'Bookmarks', 'Highlights', '$timeout', '$rootScope', function($scope, $element, Bookmarks, Highlights, $timeout, $rootScope) {
 			$scope.success = false;
             $scope.labels = [];
 
@@ -47,9 +47,11 @@ angular.module('reader.bookmarkPanel', [])
 						$scope.bookmarks = bookmarks;
 						$scope.success = true;
 						$scope.bookmark = { labels: [] };
+                        $scope.selection = [];
+                        $rootScope.$broadcast("ClearVerseSelection");
 						$timeout(function() { 
 							$scope.toggleSidePanel("showReaderBookmark"); 
-							$scope.selection = [];
+
 							$scope.success = false;
 						}, 5000);
 						
