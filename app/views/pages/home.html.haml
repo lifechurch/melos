@@ -35,6 +35,87 @@
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
 = cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
+  .row.full
+    .columns.medium-12.text-right
+      %form
+        %div{"skip-home" => true, "set-cookie" => "setCookie", "delete-cookie" => "deleteCookie", "now-skipped-text" => "#{html_escape(t(".hero.now skipped"))}", "future-skip-text" => "#{html_escape(t(".hero.skip in future"))}"}
+          -#%input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
+          %label{for:"setting-skip-home",id:"label-setting-skip-home"}
+            =t(".hero.skip in future")
+  .row
+    .columns.large-7.medium-8.text-center.medium-centered
+      %h1.heading
+        %img.home-bible-icon{src: "#{image_path(localized_bible_icon(120))}"}
+        %p
+          = t("pages.home.heading")
+
+      =link_to(t("pages.home.cta"), bible_path, class: 'solid-button green padded mobile-full', target: "_self")
+
+  .row.text-center
+    .columns.medium-4
+      %img.heading{src: '/assets/read-stroked.png'}
+      %h2.heading
+        =t("pages.home.experience.title")
+      %p.body-text.padded
+        =t("pages.home.experience.body")
+      =link_to(t("pages.home.experience.action"), versions_path, { class: "heading" })
+
+    .columns.medium-4
+      %img.heading{src: '/assets/highlight-stroked.png'}
+      %h2.heading
+        =t("pages.home.make_yours.title")
+      %p.body-text.padded
+        =t("pages.home.make_yours.body")
+      =link_to(t("pages.home.make_yours.action"), sign_up_path, { class: "heading" })
+
+    .columns.medium-4
+      %img.heading{src: '/assets/smartphone-stroked.png'}
+      %h2.heading
+        =t("pages.home.install_now.title")
+      %p.body-text.padded
+        =t("pages.home.install_now.body")
+      =link_to(t("pages.home.install_now.action"), app_page_path, { class: "heading" })
+
+  .votd-row
+    .row
+      .columns.medium-11.medium-centered
+        %img.votd-image{src: 'http://placehold.it/400'}
+
+  .row
+    .columns.medium-6.medium-centered.text-center
+      %img.heading{src: '/assets/plans-stroked.png'}
+      %h2.heading
+        =t("pages.home.free_plans.title")
+      %p.body-text
+        =t("pages.home.free_plans.body")
+
+  .row.featured-plans-row
+    .columns.medium-9.text-center.medium-centered
+      %ul.medium-block-grid-3
+        - if(@featured_plans.present?)
+          - @featured_plans.each do |plan|
+            %li
+              - if plan.list_image.present?
+                = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
+                  = image_tag plan.list_image.url, class: ''
+              %p.fp-title
+                = plan.name
+              %div.fp-details
+                %span.fp-length
+                  = plan.length
+                %div.dot
+                = link_to(t('moments.action.start plan'), plan_path(plan, locale: I18n.locale), { class: 'fp-link', target: "_self" })
+      =link_to(t("pages.home.browse_plans"), plans_path, { class: 'browse-plans-link' })
+
+  %hr
+
+  .row.start-now-row
+    .columns.medium-7.text-center.medium-centered
+      %h2.heading
+        =t("pages.home.read_listen")
+      %a.solid-button.green.padded.start-now-link
+        =t("pages.home.start_now")
+-#
   %article
     #hero.row{class: rtl_class}
       #hero_content.columns
@@ -49,11 +130,7 @@
           = t("or.lower")
           &nbsp;
           = link_to(t(".hero.learn more"),"#scroll-point", id: "scroll-anchor", target: "_self")
-        %form
-          %div{"skip-home" => true, "set-cookie" => "setCookie", "delete-cookie" => "deleteCookie", "now-skipped-text" => "#{html_escape(t(".hero.now skipped"))}", "future-skip-text" => "#{html_escape(t(".hero.skip in future"))}"}
-            %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
-            %label{for:"setting-skip-home",id:"label-setting-skip-home"}
-              =t(".hero.skip in future")
+
 
     .hero_pics
       &nbsp;

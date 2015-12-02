@@ -9,12 +9,28 @@ class PagesController < ApplicationController
   def status;       end
   def api_timeout;  end
   def generic_error;end
-  def home;         end
 
   def feed;end
   def notifications;end
   def requests;end
   def intro;end
+
+  def home
+    available_locales = Plan.available_locales.map {|loc| loc.to_s}
+
+    if i18n_terms_whitelist.include? I18n.locale
+      @locale = I18n.locale
+    else
+      @locale = :en
+    end
+    langs = [ @locale.to_s, I18n.default_locale.to_s ].compact
+
+    langs.each do |l|
+        @plan_lang = l if available_locales.include?(l)
+    end
+
+    @featured_plans = Plan.all(category: "featured_plans", language_tag: @plan_lang).slice(0,9)
+  end
 
   # /app url - redirects to an store for mobile device if found
   # tracks requests to /app to GA custom event.

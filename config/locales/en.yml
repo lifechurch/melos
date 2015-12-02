@@ -1121,6 +1121,26 @@ en:
       explanation:                              "Something went wrong behind the scenes! You can try again by reloading the page, we're very sorry for the inconvenience!"
       our action:                               "We've been notified about this and will jump on it as soon as possible."
     home:
+      heading:                                  "Get a free Bible for your phone, tablet, and computer."
+      cta:                                      "Read the Bible Now"
+      experience:
+        title:                                  "EXPERIENCE IT ANYWHERE"
+        body:                                   "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+        action:                                 "View Versions"
+      make_yours:
+        title:                                  "MAKE IT YOUR BIBLE"
+        body:                                   "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+        action:                                 "Create Your Free Account"
+      install_now:
+        title:                                  "INSTALL THE APP NOW"
+        body:                                   "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+        action:                                 "Download the Free Bible App"
+      free_plans:
+        title:                                  "FREE READING PLANS AND DEVOTIONALS"
+        body:                                   "Bible Plans help you engage with God's Word every day, a little at a time."
+      browse_plans:                             "Browse All Plans"
+      read_listen:                              "READ, LISTEN, WATCH, SHARE"
+      start_now:                                "Start Now"
       hero:
         heading:                                "A free Bible on your phone, tablet, and computer."
         description:                            "YouVersion is a simple, ad-free Bible that brings God's Word into your daily life."
