@@ -88,9 +88,10 @@
       = presenter.content.html_safe if presenter.content
       -# Read Chapter button
       - if verse_view
-        %h2#read_chapter
-          %a{href: reference_path(reference: reference.chapter_usfm.downcase), class: "solid-button mobile-full blue"}
-            = t("read reference", reference: reference.to_chapter.human)
+        #read_chapter
+          %a{href: reference_path(reference: reference.chapter_usfm.downcase)}
+            %h2
+              = t("read reference", reference: reference.to_chapter.human)
 
         %div#download.mobile{class:"show-for-small-only"}
           %a{href:"/app", class: "solid-button mobile-full blue"}
