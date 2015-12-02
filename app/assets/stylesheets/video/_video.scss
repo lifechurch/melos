@@ -1,24 +1,48 @@
 body.c_videos.a_index {
   .video {
-    margin-bottom: 30px;
-    box-shadow: 1px -1px 7px #a9a9a9;
+    margin: 0 0 30px;
+
+    @media #{$small-only} {
+      margin: 0;
+    }
+
     img {
       width: 100%;
       border: 1px solid #e4e4e4;
     }
+
     h2.info {
-      padding: 0 10px;
+      padding: 4px 10px 5px;
+      margin: 0;
       overflow: hidden;
       font-size: rem-calc(14);
       min-height: 30px;
+      border: 1px solid $lightGray;
+      border-top: 0;
+
       @media #{$large-up} {
         font-size: rem-calc(16);
       }
+
+      @media #{$small-only} {
+        border: 0;
+        padding: 0;
+      }
     }
+
     .publisher {
-      padding-left: 22px;
-      background: image-url("icon_small_about.png") no-repeat 0px center;
+      padding: 0 0 0 22px;
+      background: image-url("icon-about.svg") no-repeat 0px center;
+      background-size: 16px 16px;
       color: #777;
+
+      @media #{$small-only} {
+        height: 44px;
+        line-height: 43px;
+        display: block;
+        background-position: 10px center;
+        padding: 0 0 0 35px;
+      }
     }
   }
 }
@@ -117,7 +141,14 @@ body.c_videos.a_series {
     display: inline-block;
     margin-top: -10px;
     padding-left: 22px;
-    background: image-url("icon_small_about.png") no-repeat 0px center;
+    background: image-url("icon-about-white.svg") no-repeat left 11px;
+    background-size: 16px 16px;
+
+    @media #{$small-only} {
+      background: image-url("icon-about.svg") no-repeat left 11px;
+      background-size: 16px 16px;
+    }
+
     a {
       font-size: 15px;
       font-weight: normal;
@@ -150,7 +181,8 @@ body.c_videos.a_show {
   }
   h2.publisher {
     padding-left: 22px;
-    background: image-url("icon_small_about.png") no-repeat 0px center;
+    background: image-url("icon-about.svg") no-repeat left 11px;
+    background-size: 16px 16px;
     margin: -15px 0 0px 0;
     a {
       font-size: 15px;
@@ -164,34 +196,40 @@ body.c_videos.a_show {
     float: right;
   }
   #details {
+    @media #{$small-only} {
+      padding-bottom: 20px;
+    }
+
     ul {
       margin: 0;
       li {
         list-style: none;
         padding: 0;
         display: inline-block;
-        margin-right: 5px;
+        margin-right: 10px;
         font-weight: bold;
       }
     }
     .refs {
       border-bottom: 1px solid #e1e1e1;
-      padding-bottom: 5px;
-      margin-bottom: 10px;
-      font-size: 12px;
+      padding: 0 0 10px;
+      margin: 0 0 10px;
+
       span {
         display: block;
         color: #666;
         text-transform: uppercase;
+        font-size: 0.750em;
+      }
+
+      a {
+        font-size: 0.938em;
       }
     }
   }
   #other {
     .pub-banner {
       padding-top: 20px;
-      @media #{$medium-up} {
-        border-top: 1px solid #e1e1e1;
-      }
     }
   }
 }
