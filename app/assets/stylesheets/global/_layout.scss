@@ -25,39 +25,46 @@
 }
 
 #current-ui-view {
-	padding-bottom: 100px;
-	padding: 100px 0 0;
-
-  @media #{$medium-only} {
-    padding: 64px 0 0;
-  }
-
-  @media #{$small-only} {
-    padding: 64px 0 0;
-  }
-}
-
-.c_references #current-ui-view,
-.c_subscriptions #current-ui-view,
-.c_plans #current-ui-view {
-	padding: 145px 0 0;
+	padding: 140px 0 0;
 
   @media #{$medium-only} {
     padding: 108px 0 0;
   }
-}
 
-.a_edit #current-ui-view {
-	padding: 100px 0 0;
-
-	@media #{$small-only} {
-	  padding: 64px 0 0;
-	}
-}
-
-.a_index #current-ui-view {
   @media #{$small-only} {
-    padding: 44px 0 0;
+    padding: 64px 0 0;
+  }
+}
+
+.c_pages,
+.c_moments,
+.c_videos,
+.c_notifications,
+.c_search,
+.c_sessions,
+.c_users,
+.c_versions,
+.c_friends,
+.c_ {
+  #current-ui-view {
+    padding: 100px 0 0;
+
+    @media #{$medium-only} {
+      padding: 64px 0 0;
+    }
+
+    @media #{$small-only} {
+      padding: 49px 0 0;
+    }
+  }
+}
+
+.c_subscriptions.a_index,
+.c_plans.a_index {
+  #current-ui-view {
+    @media #{$small-only} {
+      padding: 44px 0 0;
+    }
   }
 }
 
