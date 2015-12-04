@@ -1141,6 +1141,10 @@ en:
       browse_plans:                             "Browse All Plans"
       read_listen:                              "READ, LISTEN, WATCH, SHARE"
       start_now:                                "Start Now"
+      votd:
+        title:                                  "VERSE OF THE DAY"
+        highlight_bookmark:                     "Highlight, Bookmark, or share this verse"
+        subscribe:                              "Subscribe to the Verse of the Day"
       hero:
         heading:                                "A free Bible on your phone, tablet, and computer."
         description:                            "YouVersion is a simple, ad-free Bible that brings God's Word into your daily life."

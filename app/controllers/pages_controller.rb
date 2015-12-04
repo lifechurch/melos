@@ -16,20 +16,36 @@ class PagesController < ApplicationController
   def intro;end
 
   def home
-    available_locales = Plan.available_locales.map {|loc| loc.to_s}
+    @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
 
+    # Get Featured Plans for Locale
+    available_locales = Plan.available_locales.map {|loc| loc.to_s}
     if i18n_terms_whitelist.include? I18n.locale
       @locale = I18n.locale
     else
       @locale = :en
     end
+
     langs = [ @locale.to_s, I18n.default_locale.to_s ].compact
 
     langs.each do |l|
-        @plan_lang = l if available_locales.include?(l)
+      @plan_lang = l if available_locales.include?(l)
     end
 
     @featured_plans = Plan.all(category: "featured_plans", language_tag: @plan_lang).slice(0,9)
+
+
+    # Get VOD for Locale
+    @showVerseImage = I18n.locale == :en
+    @vodImage = VOD.image_for_day(Date.today.yday(), 640)
+
+    if (@showVerseImage)
+      version_id = @vodImage.version
+    else
+      version_id = Version.default_for(I18n.locale) || Version.default
+    end
+    @vodRef  = Reference.new(@vodImage.usfm, version: version_id)
+    @vodContent = @vodRef.content(as: :plaintext)
   end
 
   # /app url - redirects to an store for mobile device if found
