@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:28-0609\n"
-"PO-Revision-Date: 2015-07-31 10:28-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ca <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Renova la teva fe amb nous Plans de Lectura."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Troba saviesa en la Paraula de Déu cada dia."
+msgstr "Cerca Déu en la seva Paraula cada dia."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Prepara el teu cor aquesta temporada."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Troba el teu pla de lectura de la Bíblia preferit per al febrer"
+msgstr "Troba l'amor de Déu en la seva Paraula."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "El teu millor any comença ara mateix."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Un temps diari amb la Paraula de Déu produeix llibertat perdurable."
+msgstr "Celebra la llibertat en Crist."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Troba el teu ritme en el teu temps diari en la paraula de Déu."
+msgstr "Cerca Déu en la seva Paraula."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Troba esperança i renovació als plans de lectura de març"
+msgstr "Troba esperança i renovació en la Paraula de Déu."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Dedica't diàriament a buscar Déu en la seva Paraula."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Al 2015 llegeix la Bíblia cada dia. Els Plans t'ajuden!"
+msgstr "Dedica't diàriament a la seva Paraula."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Descobreix la gratitud per les promeses de Déu."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Aquesta Paraula es viva. Deixa que et parli cada dia."
+msgstr "La saviesa divina comença en la Paraula de Déu."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "La Paraula de Déu fa noves totes les coses."

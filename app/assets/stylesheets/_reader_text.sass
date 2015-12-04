@@ -6,9 +6,6 @@
 //----------------------------------------------------------------------------------------------------
 .reader
   // introductory paragraph after a header paragraph
-  .s + .p,
-  .s1 + .p,
-  .s2 + .p,
   .s + .pi,
   .s + .pi1,
   .s1 + .pi,
@@ -26,6 +23,8 @@
   .s, .s1
     line-height: 1em
 
+  .pi
+    text-indent: 1em
 
   // Giving top margins to body text that follows headers
   // and to headers that follow body text
@@ -37,12 +36,6 @@
   .p + .ms2,
   .p + .q,
   .p + .q1,
-  .p + .li,
-  .p + .li1,
-  .li + .li2,
-  .li1 + .li2,
-  .li2 + .li,
-  .li2 + .li1,
   .li + .s,
   .li1 + .s,
   .li2 + .s,
@@ -52,15 +45,6 @@
   .li + .s2,
   .li1 + .s2,
   .li2 + .s2,
-  .m + .s,
-  .m + .s1,
-  .m + .s2,
-  .m + .ms,
-  .m + .ms1,
-  .m + .ms2,
-  .m + .q,
-  .m + .q1,
-  .m + .p,
   .q + .p,
   .q1 + .p,
   .q1 + p,
@@ -94,6 +78,13 @@
   .q3 + .ms,
   .q3 + .ms1,
   .q3 + .ms2,
+  .q4 + .s,
+  .q4 + .s1,
+  .q4 + .s2,
+  .q4 + .m,
+  .q4 + .ms,
+  .q4 + .ms1,
+  .q4 + .ms2,
   .imt + .is,
   .imt + .is1,
   .imt1 + .is,
@@ -221,7 +212,7 @@
   // hanging indents for quotes
   .iq, .iq1, .q, .q1, .qm, .qm1
     padding-left: 2.5em
-    text-indent: -1em
+    text-indent: -1em !important
     //line-height: 1.5em
     line-height: $reader_line_height
 
@@ -230,9 +221,9 @@
     margin-left: 1em
 
 
-  .iq2, .q2, .qm2, .iq3, .q3, .qm3
+  .iq2, .q2, .qm2, .iq3, .q3, .qm3, .iq4, .q4, .qm4
     padding-left: 3.5em
-    text-indent: -1em
+    text-indent: -1em !important
     //line-height: 1.5em
     line-height: $reader_line_height
 
@@ -309,7 +300,7 @@
     text-indent: 1em
 
 
-  .q2, .q3
+  .q2, .q3, .q4
     text-indent: 2em
 
 
@@ -473,7 +464,12 @@
   .vid1260 .li
     margin-left: 1em
     text-indent: -1em
-    
+
   .vid1260 .pi3
     margin-left: 1em
     text-indent: 0 !important
+
+  /* Življenje z Jezusom (ŽJ) */
+  .vid1383 .li
+    display: list-item
+    margin-left: 2em

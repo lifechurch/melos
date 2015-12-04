@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:28-0609\n"
-"PO-Revision-Date: 2015-07-31 10:28-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cs <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Oživte svojí víru pomocí nových plánů čtení Bible."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Objevte moudrost v Božím slově pro každý den."
+msgstr "Denně nacházejte Boha v Jeho slově."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Připravte své srdce na toto období."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Objevte svůj oblíbený plán čtení Bible na měsíc únor!"
+msgstr "Objevte Boží lásku v Jeho slově."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Právě začíná váš nejlepší rok."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Každý den strávený v Božím slově vede k nekončícímu osvobození."
+msgstr "Radujte se ze svobody v Kristu."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Najděte si vlastní harmonogram pro trávení času v Božím slovu."
+msgstr "Objevujte Boha v Jeho slově."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Objevte naději a oživení v plánech pro březen."
+msgstr "Nalezněte naději a obnovu v Božím slově."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Věnujte se denně hledání Boha v Jeho slově."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Čtěte Bibli každý den v roce 2015. Plány pomáhají!"
+msgstr "Ponořte se denně do Jeho slova."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Objevte vaše díky v tom, co pro vás Bůh naplnil."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Slovo je živé. Dovolte mu k vám promlouvat den co den."
+msgstr "Pravá moudrost pramení z Božího slova."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Bůh tvoří vše zcela nové."

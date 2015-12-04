@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: el <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Ανανέωσε την πίστη σου με καινούργια Πλάνα ανάγνωσης."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Ανακαλύψτε σοφία στο Λόγο του Θεού κάθε μέρα."
+msgstr "Αναζητήστε τον Θεό στον Λόγο Του καθημερινά."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Προετοιμάστε την καρδιά σας αυτή τη σεζόν."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Βρες το αγαπημένο σου Πρόγραμμα Ανάγνωσης της Αγίας Γραφής για τον Φεβρουάριο!"
+msgstr "Βρείτε την αγάπη του Θεού στον Λόγο Του."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Η καλύτερη χρονιά σας ξεκινάει τώρα."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Καθημερινός χρόνος με τον Λόγο του Θεού προσφέρει ατελείωτη ελευθερία"
+msgstr "Γιορτάστε την Ελευθερία εν Χριστώ."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Βρες τον καθημερινό σου ρυθμό στη μελέτη του Λόγου του Θεού."
+msgstr "Αναζητήστε τον Θεό στον Λόγο Του."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Θα βρεις ελπίδα και ανανέωση στα Προγράμματα Ανάγνωσης του Μαρτίου."
+msgstr "Βρείτε ελπίδα και ανανέωση στον Λόγο του Θεού."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Αφιέρωσε καθημερινά χρόνο για να αναζητήσεις τον Θεό μέσα στον Λόγο Του."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Διάβαζε την Αγία Γραφή καθημερινά μέσα στο 2015. Βοήθεια στα Προγράμματα Ανάγνωσης!"
+msgstr "Αφιερωθείτε καθημερινά στον Λόγο Του."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr " Ανακαλύψτε ευγνωμοσύνη στις υποσχέσεις του Θεού."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Ο Λόγος είναι ζωντανός. Επίτρεψέ του να σου μιλάει κάθε μέρα."
+msgstr "Η σοφία του Θεού ξεκινά στον Λόγο Του."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Ο Λόγος του Θεού κάνει τα πάντα νέα."

@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: lv <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
@@ -64,34 +64,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Atsvaidzini savu ticību ar jauniem lasīšanas plāniem."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Atrodi gudrību Dieva Vārdā katru dienu."
+msgstr "Meklē Dievu Viņā Vārdā katru dienu."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Sagatavo savu sirdi šai sezonai."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Atrodi mīļāko Bībeles lasīšanas plānu feburārim!"
+msgstr "Rodi Dieva mīlestību Viņa Vārdā."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Tavs visu laiku labākais gads sākas tagad."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Ikdiena Dieva vārdā sniedz paliekošu brīvību."
+msgstr "Svini brīvību Kristū."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Atrodi savu ikdienas ritmu Dieva Vārdā."
+msgstr "Meklē Dievu Viņa Vārdā."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Atrodi cerību un atjaunošanos marta lasīšanas plānos."
+msgstr "Rodi cerību un atjaunotni Dieva Vārdā."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Velti katru dienu Dieva meklēšanai viņa Vārdā."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "2015. gadā lasi Bībeli katru dienu. Lasīšanas plāni palīdz!"
+msgstr "Velti sevi Viņa Vārdam katru dienu."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Atrodi pateicību Dieva apsolījumos."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Šis Vārds ir dzīvs. Ļauj, lai tas uzrunā Tevi katru dienu."
+msgstr "Dievišķā gudrība iesākas Dieva Vārdā."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Dieva Vārds visu dara jaunu."

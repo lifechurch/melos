@@ -111,6 +111,7 @@ en:
     users first name required:                  "You must enter a first name."
     users last name required:                   "You must enter a last name."
     moments content required:                   "Content cannot be blank."
+    users auth password required:               "You must enter a password."
   meta:
     best kids app:                              "Best Kids App!"
     best educational app:                       "Best Educational App"
@@ -812,6 +813,7 @@ en:
     title:                                      "Reading Plans"
     meta title:                                 "Online Bible study, devotionals and reading plans"
     browse by category:                         "Browse by Category"
+    subcategory:                                "Sub-category"
     browse plans:                               "Browse %{category} Plans"
     swap list localization:                     "(<a href='%{swap_link}' target='_self'>View in %{swap_locale}</a>)"
     showing language filtered:                  "Only showing plans available in %{lang_name}"
@@ -1163,6 +1165,7 @@ en:
         extras:                                 "Extras:"
         translation notes:                      "Footnotes"
         cross references:                       "Cross References"
+        numbers and titles:                     "Numbers and Titles"
   app errors:
     404 plans explanation:                      "Are you looking for the <a href='%{plan_path}' target='_self'>%{title}</a> plan?"
     404 contact support:                        "Having trouble? Contact our <a href='%{support_url}' target='_self'>support team</a>."

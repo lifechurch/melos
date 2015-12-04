@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hr <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Osvježi svoju vjeru novim planovima čitanja."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Svakog dana možeš naći mudrost u Božjoj Riječi."
+msgstr "Traži Gospoda u Njegovoj Riječi svaki dan."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Pripremi svoje srce."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Pronađi najdraži plan čitanja za veljaču!"
+msgstr "Pronađi Božju ljubav u Njegovoj Riječi."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Tvoja najbolja godina počinje sad."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Svakodnevno vrijeme provedeno s Božjom Riječi donosi trajnu slobodu."
+msgstr "Slavimo slobodu u Kristu."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Pronađi ritam u svakodnevnom provođenju vremena s Božjom Riječi."
+msgstr "Potraži Boga u Njegovoj Riječi."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Pronađi nadu i obnovu u planovima za ožujak."
+msgstr "Pronađi nadu i obnovu u Božjoj Riječi."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Posveti se svakodnevno traženju Boga u Njegovoj Riječi."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Čitaj Bibliju dnevno u 2015. Planovi ti pomažu!"
+msgstr "Posveti se svakodnevno Njegovoj Riječi."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Otkrij zahvalnost u Božjim obećanjima."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Ta Riječ je živa. Dopusti da ti govori svakog dana."
+msgstr "Božanska mudrost počinje u Božjoj Riječi."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Božja Riječ čini sve novo."

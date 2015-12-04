@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-16 09:55-0600\n"
+"PO-Revision-Date: 2015-11-16 09:55-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "让新的读经计划更新您的信心。"
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "每天从神的话语里寻找智慧。"
+msgstr "每天在神的话语里寻求祂。"
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "趁此节日预备你的心。"
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "寻找二月份里备受欢迎的读经计划！"
+msgstr "在神的话语里找到祂的爱。"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "你最好的一年从此开始。"
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "每天沉浸在神的话语里带来持久的心灵自由。"
+msgstr "欢庆在基督里的自由。"
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "通过每天沉浸在神的话语里找到您的节奏。"
+msgstr "在神的话语里寻求祂。"
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "在三月份的读经计划里寻找希望与更新。"
+msgstr "在神的话语里找到希望与更新。"
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "每天全情投入神的话语里寻求祂。"
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "2015年每天读经吧！读经计划可以帮助！"
+msgstr "每天潜心阅读神的话语。"
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "从神的应许里学习感恩。"
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "神的话语是活泼有功效的，让它每天对你说话吧。"
+msgstr "属天的智慧始于神的话语。"
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "神的话语使万物更新。"
