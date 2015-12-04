@@ -177,7 +177,7 @@ li.profile-hdr-info-link {
       margin: 0 1% 0 15%;
     }
 
-    a.icon:last-child {
+    a.icon:nth-child(8) {
       float: $opposite-direction;
     }
   }

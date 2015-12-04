@@ -1,4 +1,4 @@
-.row.b-border.relative.profile-user-box
+.row.full.b-border.relative.profile-user-box
   .columns.large-8.profile-user
     %div
       %img.avatar_huge{src: (user.user_avatar_url["px_128x128"] if user.user_avatar_url)}
@@ -19,7 +19,7 @@
           = user.bio
   .profile-hdr-action
     = render partial: '/users/friend_button', locals: { user: user }
-.row.b-border
+.row.full.b-border
   .columns.medium-12.profile-nav-box
     :ruby
       tabs = [
