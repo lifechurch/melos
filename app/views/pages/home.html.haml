@@ -34,92 +34,129 @@
   %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(120)))}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
-= cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
-  %article
-    #hero.row{class: rtl_class}
-      #hero_content.columns
-        %h1
-          = t(".hero.heading")
+= cache "bdc_welcome_#{I18n.locale}_#{Date.today.yday()}", expires_in: YV::Caching.a_short_time do
+  .row.full.show-for-medium-up
+    .columns.medium-12.text-right
+      %form
+        %div{"skip-home" => true, "set-cookie" => "setCookie", "delete-cookie" => "deleteCookie", "now-skipped-text" => "#{html_escape(t(".hero.now skipped"))}", "future-skip-text" => "#{html_escape(t(".hero.skip in future"))}"}
+          %a.setting-skip-home
+            =t(".hero.skip in future")
+
+  .row
+    .columns.large-7.medium-8.text-center.medium-centered
+      %h1.heading
+        %img.home-bible-icon{src: "#{image_path(localized_bible_icon(120))}"}
         %p
-          = t(".hero.description")
+          = t("pages.home.heading")
 
-        %span
-          = link_to(t(".hero.start reading"), bible_path, class: 'solid-button green mobile-full', target: "_self")
-          &nbsp;
-          = t("or.lower")
-          &nbsp;
-          = link_to(t(".hero.learn more"),"#scroll-point", id: "scroll-anchor", target: "_self")
-        %form
-          %div{"skip-home" => true, "set-cookie" => "setCookie", "delete-cookie" => "deleteCookie", "now-skipped-text" => "#{html_escape(t(".hero.now skipped"))}", "future-skip-text" => "#{html_escape(t(".hero.skip in future"))}"}
-            %input{type:"checkbox", name:"skip", checked: cookies["setting-skip-home"], id:"setting-skip-home"}
-            %label{for:"setting-skip-home",id:"label-setting-skip-home"}
-              =t(".hero.skip in future")
+      =link_to(t("pages.home.cta"), bible_path, class: 'solid-button green padded mobile-full', target: "_self")
 
-    .hero_pics
-      &nbsp;
+  .row.full.show-for-small-only
+    .columns.medium-12.text-center
+      %form
+        %div{"skip-home" => true, "set-cookie" => "setCookie", "delete-cookie" => "deleteCookie", "now-skipped-text" => "#{html_escape(t(".hero.now skipped"))}", "future-skip-text" => "#{html_escape(t(".hero.skip in future"))}"}
+          %a.setting-skip-home
+            =t(".hero.skip in future")
 
-    .row.pad-row.bottom-cta
-      .columns.large-8
-        %h1{:style => "background-image: url(#{image_path(localized_bible_icon)})"}
-          = t(".word with you")
-        .row
-          .columns.large-6.r-border
-            %p= t(".download description")
-          .columns.large-6
-            %span.counter#download-counter
-              %p#counter{ "install-counter" => true, "format" => "#{t("counter.format").gsub(" ", "&nbsp;")}" } &nbsp;
-              %p= t(".world installs")
-      .columns.large-4
-        %img{src: "#{image_path('bdc_mobile_icons.png')}", class: "app-icons"}
-        = link_to(t(".download action"), app_page_path, {class: 'solid-button green mobile-full', target: "_self"})
+  .row.text-center
+    .columns.medium-4
+      %img.heading{src: "#{image_path('read-stroked.png')}"}
+      %h2.heading
+        =t("pages.home.experience.title")
+      %p.body-text.padded
+        =t("pages.home.experience.body")
+      =link_to(t("pages.home.experience.action"), versions_path, { class: "heading" })
 
-    .gray.pad-row.get-started
-      .row
-        .columns.medium-12.text-center
-          %h1= t(".get started")
-      .row.pad-row.explore-cta
-        .columns.medium-12.text-center
-          = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), {class: 'solid-button mobile-full blue', target: "_self"})
-          %span.or.pad-all
-            = t("or.upper")
-          = link_to(t("registration.with email"), sign_up_path, {class: 'solid-button mobile-full gray', target: "_self"})
-      .row.pad-row.text-center.home-features
-        #scroll-point.columns.large-3.medium-12.small-12.read-bible
-          %div.white.pad-all.round.text-left
-            %h2= t(".features.read heading")
-            %p
-              %span.narrow= t(".features.read description", versions_path: versions_path).html_safe
+    .columns.medium-4
+      %img.heading{src: "#{image_path('highlight-stroked.png')}"}
+      %h2.heading
+        =t("pages.home.make_yours.title")
+      %p.body-text.padded
+        =t("pages.home.make_yours.body")
+      =link_to(t("pages.home.make_yours.action"), sign_up_path, { class: "heading" })
 
-        .columns.large-3.medium-12.small-12.study-bible
-          %div.white.pad-all.round.text-left
-            %h2= t(".features.study heading")
-            %p
-              %span.narrow= t(".features.study description").html_safe
+    .columns.medium-4
+      %img.heading{src: "#{image_path('smartphone-stroked.png')}"}
+      %h2.heading
+        =t("pages.home.install_now.title")
+      %p.body-text.padded
+        =t("pages.home.install_now.body")
+      %p#counter{ "install-counter" => true, "format" => "#{t("counter.format").gsub(" ", "&nbsp;")}" }
+      =link_to(t("pages.home.install_now.action"), app_page_path, { class: "heading" })
 
-        .columns.large-3.medium-12.small-12.subscribe-bible
-          %div.white.pad-all.round.text-left
-            %h2= t(".features.subscribe heading")
-            %p
-              %span.narrow= t(".features.subscribe description").html_safe
+  .votd-row
+    .row
+      .columns.medium-11.medium-centered
+        .row.collapse{class: @showVerseImage ? 'inner-row' : ''}
+          -if @showVerseImage
+            .columns.medium-5
+              %img.votd-image{src: "#{@vodImage.image_url}"}
+          .columns.medium-7{class: @showVerseImage ? '' : 'inner-row medium-centered'}
+            .votd-content
+              %h2.heading
+                %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
+                =t('pages.home.votd.title')
+              %p.votd-verse
+                =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm)) do
+                  =@vodContent
 
-        .columns.large-3.medium-12.small-12.take-bible
-          %div.white.pad-all.round.text-left
-            %h2= t(".features.download heading")
-            %p
-              %span.narrow= t(".features.download description").html_safe
+              %p.votd-ref
+                =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm)) do
+                  =@vodRef.to_s
+
+              - if @current_user.present?
+                - highlight_link = reference_path(version: @vodRef.version, reference: @vodRef.usfm)
+              - else
+                - highlight_link = sign_up_path(redirect: reference_path(version: @vodRef.version, reference: @vodRef.usfm))
+              =link_to(highlight_link, {class:'votd-link'}) do
+                %img.highlight-icon{src: "#{image_path('share.png')}"}
+                =t("pages.home.votd.highlight_bookmark")
+
+              %br
+              - if @current_user.present?
+                - subscribe_link = settings_vod_subscriptions_path
+              - else
+                - subscribe_link = sign_up_path(redirect: settings_vod_subscriptions_path)
+              =link_to(subscribe_link, {class:'votd-link'}) do
+                %img.subscribe-icon{src: "#{image_path('mail.png')}"}
+                =t("pages.home.votd.subscribe")
+
+  .row
+    .columns.medium-6.medium-centered.text-center
+      %img.heading{src: "#{image_path('plans-stroked.png')}"}
+      %h2.heading
+        =t("pages.home.free_plans.title")
+      %p.body-text
+        =t("pages.home.free_plans.body")
+
+  .row.featured-plans-row
+    .columns.medium-9.text-center.medium-centered
+      %ul{class: "#{@block_grid_size}"}
+        - if(@featured_plans.present?)
+          - @featured_plans.each do |plan|
+            %li
+              - if plan.list_image.present?
+                = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
+                  = image_tag plan.list_image.url, class: ''
+              %p.fp-title
+                = plan.name
+              %div.fp-details
+                %span.fp-length
+                  = plan.length
+                %div.dot
+                = link_to(t('moments.action.start plan'), plan_path(plan, locale: I18n.locale), { class: 'fp-link', target: "_self" })
+      =link_to(t("pages.home.browse_plans"), plans_path, { class: 'browse-plans-link' })
+
+  %hr
+
+  .row.start-now-row
+    .columns.medium-7.text-center.medium-centered
+      %h2.heading
+        =t("pages.home.read_listen")
+      - if @current_user.present?
+        - start_link = bible_path
+      - else
+        - start_link = sign_up_path
+      =link_to(t("pages.home.start_now"), start_link, { class: 'solid-button green padded start-now-link' })
 
   = render '/shared/app_banner'
-
-  - content_for :javascripts do
-    :javascript
-
-      // Fire off request for download stats jsonp
-      $(window).load(function() {
-
-        $("#scroll-anchor").on("click", function(e) {
-          e.preventDefault();
-          var pos = $("#scroll-point").offset().top;
-          $('html:not(:animated),body:not(:animated)').animate({scrollTop:pos},{duration:1000});
-        });
-
-      });

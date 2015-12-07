@@ -36,6 +36,7 @@ common:
   very_long_cache_expiration: 720
   rate_limit: 120
   treadstone_base_url: 'https://yv-giving-staging.life.church/'
+  vod_image_api_url: 'https://s3.amazonaws.com/votd-images-youversionapi-com/items.json'
 
 development:
   api_root: youversionapistaging.com

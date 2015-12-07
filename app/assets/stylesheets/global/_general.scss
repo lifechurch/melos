@@ -11,7 +11,7 @@ h1 {
 
 h1, h2 {
   -webkit-font-smoothing: subpixel-antialiased;
-  font-family: "proxima-nova", "helvetica neue", arial, sans-serif;
+  font-family: $title-font-family;
 }
 
 h5.bookLabel {

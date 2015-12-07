@@ -60,6 +60,10 @@ $button-radius: $radius;
     margin-right: 0 !important;
   }
 
+  &.padded {
+    min-width: 225px;
+  }
+
   &.mobile-full {
     @media #{$small-only} {
       width: 100%;
