@@ -29,11 +29,21 @@ class PagesController < ApplicationController
     langs = [ @locale.to_s, I18n.default_locale.to_s ].compact
 
     langs.each do |l|
-      @plan_lang = l if available_locales.include?(l)
+      if available_locales.include?(l)
+        @plan_lang = l
+        break
+      end
     end
 
-    @featured_plans = Plan.all(category: "featured_plans", language_tag: @plan_lang).slice(0,9)
-
+    @featured_plans = Plan.all(category: "featured_plans", language_tag: @plan_lang)
+    if @featured_plans.valid?
+      @featured_plans = @featured_plans.slice(0,9)
+      if (@featured_plans.length >= 3)
+        @block_grid_size = 'medium-block-grid-3'
+      else
+        @block_grid_size = 'medium-block-grid-'.concat(@featured_plans.length.to_s)
+      end
+    end
 
     # Get VOD for Locale
     @showVerseImage = I18n.locale == :en
@@ -44,8 +54,15 @@ class PagesController < ApplicationController
     else
       version_id = Version.default_for(I18n.locale) || Version.default
     end
-    @vodRef  = Reference.new(@vodImage.usfm, version: version_id)
-    @vodContent = @vodRef.content(as: :plaintext)
+
+    @vodRef = Reference.new(@vodImage.usfm, version: version_id)
+
+    begin
+      @vodContent = @vodRef.content(as: :plaintext)
+    rescue NotAChapterError
+      @vodRef = Reference.new(VOD.alternate_votd(Date.today.mday), version: version_id)
+      @vodContent = @vodRef.content(as: :plaintext)
+    end
   end
 
   # /app url - redirects to an store for mobile device if found

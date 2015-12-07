@@ -36,6 +36,11 @@ class VOD < YV::Resource
       VOD_Image.new(all_images()[day], size)
     end
 
+    def alternate_votd(dayOfMonth)
+      altVerse = ["MAT.18.4","LUK.11.13","JHN.10.11","MAT.24.14","MRK.2.17","JHN.3.3","MAT.16.24","JHN.13.34","MAT.5.44","MAT.5.3","MRK.3.35","MAT.12.50","JHN.8.12","MAT.11.28","LUK.15.7","JHN.11.25","MAT.7.7","LUK.6.35","MRK.16.15","MAT.22.37","LUK.12.28","MAT.13.44","MAT.10.39","MAT.6.21","LUK.19.10","JHN.1.14","MAT.9.38","JHN.6.35","MAT.6.33","MRK.10.45","MAT.24.35"]
+      altVerse[dayOfMonth - 1]
+    end
+
     def editable?; false; end
     def deletable?; false; end
 

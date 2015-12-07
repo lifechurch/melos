@@ -34,7 +34,7 @@
   %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(120)))}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
-= cache "bdc_welcome_#{I18n.locale}", expires_in: YV::Caching.a_short_time do
+= cache "bdc_welcome_#{I18n.locale}_#{Date.today.yday()}", expires_in: YV::Caching.a_short_time do
   .row.full.show-for-medium-up
     .columns.medium-12.text-right
       %form
@@ -129,7 +129,7 @@
 
   .row.featured-plans-row
     .columns.medium-9.text-center.medium-centered
-      %ul.medium-block-grid-3
+      %ul{class: "#{@block_grid_size}"}
         - if(@featured_plans.present?)
           - @featured_plans.each do |plan|
             %li
