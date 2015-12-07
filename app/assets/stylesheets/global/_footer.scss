@@ -1,13 +1,16 @@
 #site-footer {
   margin-bottom: 30px;
-  border-top: 1px solid #ddd;
+  padding: 40px 0 0;
+  background: image-url("hr.svg") repeat-x left 53px;
+  background-size: 1px 1px;
 
   .footer-logo {
     display: block;
     background-color: #fff;
     padding: 0 15px;
-    margin: -14px auto 30px;
+    margin: 0 auto 30px;
     width: 200px;
+    height: 24px;
   }
 
   #languages label {
