@@ -329,10 +329,14 @@ a.heading {
       line-height: 36px;
       font-weight: bold;
     }
+    .votd-verse a,
+    .votd-ref a
+    {
+      color: #000000;
+    }
 
     .votd-ref {
       font-size: 11px;
-      color: #000000;
       line-height: 20px;
       padding: 10px 0;
       margin-bottom:10px;

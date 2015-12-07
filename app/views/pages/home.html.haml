@@ -96,11 +96,13 @@
               %h2.heading
                 %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
                 =t('pages.home.votd.title')
-              %p
-                =@vodContent
+              %p.votd-verse
+                =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm)) do
+                  =@vodContent
 
               %p.votd-ref
-                =@vodRef.to_s
+                =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm)) do
+                  =@vodRef.to_s
 
               - if @current_user.present?
                 - highlight_link = reference_path(version: @vodRef.version, reference: @vodRef.usfm)
