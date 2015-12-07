@@ -37,6 +37,11 @@ module Plans
         refs = attributes.api_references.collect do |r|
           ref = Plans::Reference.new
           ref.reference = ::Reference.new(r.reference, version: opts[:version_id])
+          begin
+            testRef = ref.reference.content
+          rescue NotAChapterError
+            ref.reference = ::Reference.new(r.reference, version: 110)
+          end
           ref.completed = r.completed
           ref
         end

@@ -76,7 +76,13 @@ module Presenter
       return @reference if @reference.present?
 
       @reference = if reading.api_references.present?
-        ::Reference.new(reference_usfm,{version: subscription.version_id}).to_chapter
+        ref = ::Reference.new(reference_usfm,{version: subscription.version_id}).to_chapter
+        begin
+          testRef = ref.content
+        rescue NotAChapterError
+          ref = ::Reference.new(reference_usfm,{version: 110}).to_chapter
+        end
+        ref
       end
     end
 

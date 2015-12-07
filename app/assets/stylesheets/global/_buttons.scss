@@ -71,6 +71,10 @@ $button-radius: $radius;
     }
   }
 
+  &.caps {
+    text-transform: uppercase;
+  }
+
   &:hover,
   &:focus {
     background-color: $primary-color !important;
