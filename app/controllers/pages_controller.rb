@@ -20,11 +20,7 @@ class PagesController < ApplicationController
 
     # Get Featured Plans for Locale
     available_locales = Plan.available_locales.map {|loc| loc.to_s}
-    if i18n_terms_whitelist.include? I18n.locale
-      @locale = I18n.locale
-    else
-      @locale = :en
-    end
+    @locale = I18n.locale
 
     langs = [ @locale.to_s, I18n.default_locale.to_s ].compact
 
