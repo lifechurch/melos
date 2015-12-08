@@ -101,6 +101,7 @@ en:
     users hash verified:                        "This account has already been verified."
     users password change:                      "Your new password must be different than your old password."
     users password length:                      "Your password must be at least 6 characters."
+    users password less than minimum value 6:   "Your password must be at least 6 characters."
     users password required:                    "You must enter a password."
     user id users not found:                            "The username is invalid."
     users username alpha numeric extra:         "The username should be letters, numbers, or dashes."
