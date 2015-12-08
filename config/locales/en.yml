@@ -101,6 +101,7 @@ en:
     users hash verified:                        "This account has already been verified."
     users password change:                      "Your new password must be different than your old password."
     users password length:                      "Your password must be at least 6 characters."
+    users password less than minimum value 6:   "Your password must be at least 6 characters."
     users password required:                    "You must enter a password."
     user id users not found:                            "The username is invalid."
     users username alpha numeric extra:         "The username should be letters, numbers, or dashes."
@@ -242,6 +243,7 @@ en:
   reader:                                       "Reader"
   lifechurch short url:                         "Life.Church"
   about:                                        "About"
+  blog:                                         "Blog"
   versions link:                                "Versions"
   jobs:                                         "Jobs"
   privacy policy:                               "Privacy Policy"
@@ -314,6 +316,9 @@ en:
     likes count 2 more:                         "%{likes_count} more"
     likes count 3 or more:                      "%{likes_count} more"
     users like this:                            "%{last_liker_link} and %{more_link} like this"
+    like:                                       "like"
+    likes:                                      "likes"
+    more than one like:
     vod:
       title:                                    "Verse of the day"
       get daily email:                          "Get daily email"
@@ -799,7 +804,7 @@ en:
       friends reading:
         one:                                    "%{count} friend subscribed to this plan"
         other:                                  "%{count} friends subscribed to this plan"
-      friends completed:                         
+      friends completed:
         one:                                    "%{count} friend has completed this plan"
         other:                                  "%{count} friends have completed this plan"
       total completions:                        "Over %{count} completions"
@@ -1121,6 +1126,30 @@ en:
       explanation:                              "Something went wrong behind the scenes! You can try again by reloading the page, we're very sorry for the inconvenience!"
       our action:                               "We've been notified about this and will jump on it as soon as possible."
     home:
+      heading:                                  "Get a free Bible for your phone, tablet, and computer."
+      cta:                                      "Read the Bible Now"
+      experience:
+        title:                                  "Experience it anywhere"
+        body:                                   "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+        action:                                 "View Bible Versions"
+      make_yours:
+        title:                                  "Make it your Bible"
+        body:                                   "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+        action:                                 "Create Your Free Account"
+      install_now:
+        title:                                  "Install the App Now"
+        body:                                   "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+        action:                                 "Download the Free Bible App"
+      free_plans:
+        title:                                  "Free Reading Plans and Devotionals"
+        body:                                   "Bible Plans help you engage with God's Word every day, a little at a time."
+      browse_plans:                             "Browse All Plans"
+      read_listen:                              "Read, Listen, Watch, Share"
+      start_now:                                "Start Now"
+      votd:
+        title:                                  "Verse of the Day"
+        highlight_bookmark:                     "Highlight, Bookmark, or share this verse"
+        subscribe:                              "Subscribe to the Verse of the Day"
       hero:
         heading:                                "A free Bible on your phone, tablet, and computer."
         description:                            "YouVersion is a simple, ad-free Bible that brings God's Word into your daily life."
