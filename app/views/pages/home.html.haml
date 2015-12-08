@@ -65,7 +65,7 @@
         =t("pages.home.experience.title")
       %p.body-text.padded
         =t("pages.home.experience.body")
-      =link_to(t("pages.home.experience.action"), versions_path, { class: "heading" })
+      =link_to(t("pages.home.experience.action"), versions_path, { class: "heading", target: "_self" })
 
     .columns.medium-4
       %img.heading{src: "#{image_path('highlight-stroked.png')}"}
@@ -73,7 +73,7 @@
         =t("pages.home.make_yours.title")
       %p.body-text.padded
         =t("pages.home.make_yours.body")
-      =link_to(t("pages.home.make_yours.action"), sign_up_path, { class: "heading" })
+      =link_to(t("pages.home.make_yours.action"), sign_up_path, { class: "heading", target: "_self" })
 
     .columns.medium-4
       %img.heading{src: "#{image_path('smartphone-stroked.png')}"}
@@ -82,7 +82,7 @@
       %p.body-text.padded
         =t("pages.home.install_now.body")
       %p#counter{ "install-counter" => true, "format" => "#{t("counter.format").gsub(" ", "&nbsp;")}" }
-      =link_to(t("pages.home.install_now.action"), app_page_path, { class: "heading" })
+      =link_to(t("pages.home.install_now.action"), app_page_path, { class: "heading", target: "_self" })
 
   .votd-row
     .row
@@ -97,18 +97,18 @@
                 %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
                 =t('pages.home.votd.title')
               %p.votd-verse
-                =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm)) do
+                =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm), { target: "_self" }) do
                   =@vodContent
 
               %p.votd-ref
-                =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm)) do
+                =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm), { target: "_self" }) do
                   =@vodRef.to_s
 
               - if @current_user.present?
                 - highlight_link = reference_path(version: @vodRef.version, reference: @vodRef.usfm)
               - else
                 - highlight_link = sign_up_path(redirect: reference_path(version: @vodRef.version, reference: @vodRef.usfm))
-              =link_to(highlight_link, {class:'votd-link'}) do
+              =link_to(highlight_link, {class:'votd-link', target: "_self" }) do
                 %img.highlight-icon{src: "#{image_path('share.png')}"}
                 =t("pages.home.votd.highlight_bookmark")
 
@@ -117,7 +117,7 @@
                 - subscribe_link = settings_vod_subscriptions_path
               - else
                 - subscribe_link = sign_up_path(redirect: settings_vod_subscriptions_path)
-              =link_to(subscribe_link, {class:'votd-link'}) do
+              =link_to(subscribe_link, {class:'votd-link', target: "_self"}) do
                 %img.subscribe-icon{src: "#{image_path('mail.png')}"}
                 =t("pages.home.votd.subscribe")
 
@@ -145,7 +145,7 @@
                   = plan.length
                 %div.dot
                 = link_to(t('moments.action.start plan'), plan_path(plan, locale: I18n.locale), { class: 'fp-link', target: "_self" })
-      =link_to(t("pages.home.browse_plans"), plans_path, { class: 'browse-plans-link' })
+      =link_to(t("pages.home.browse_plans"), plans_path, { class: 'browse-plans-link', target: "_self" })
 
   %hr
 
@@ -157,6 +157,6 @@
         - start_link = bible_path
       - else
         - start_link = sign_up_path
-      =link_to(t("pages.home.start_now"), start_link, { class: 'solid-button green padded start-now-link' })
+      =link_to(t("pages.home.start_now"), start_link, { class: 'solid-button green padded start-now-link', target: "_self" })
 
   = render '/shared/app_banner'
