@@ -62,7 +62,8 @@
               .more-menu{"more-menu" => true, "moment" => "data"}
       .moment-likes{"ng-if" => "data.object.likes.enabled && data.object.likes.count && socialEnabled"}
         .moment-likes-count
-          %a{:href => "#"} {{data.object.likes.count}} likes
+          %a{:href => "#", "ng-if" => "data.object.likes.count == 1"} {{data.object.likes.count}} #{t("moments.like")}
+          %a{:href => "#", "ng-if" => "data.object.likes.count > 1"} {{data.object.likes.count}} #{t("moments.likes")}
         .moment-likes-avatars
           %a{:href => "#", "ng-repeat" => "like in data.object.likes.all"}
             %img{:alt => "", "ng-src" => "{{like.user.avatar}}"}

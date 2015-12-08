@@ -101,6 +101,7 @@ en:
     users hash verified:                        "This account has already been verified."
     users password change:                      "Your new password must be different than your old password."
     users password length:                      "Your password must be at least 6 characters."
+    users password less than minimum value 6:   "Your password must be at least 6 characters."
     users password required:                    "You must enter a password."
     user id users not found:                            "The username is invalid."
     users username alpha numeric extra:         "The username should be letters, numbers, or dashes."
@@ -242,6 +243,7 @@ en:
   reader:                                       "Reader"
   lifechurch short url:                         "Life.Church"
   about:                                        "About"
+  blog:                                         "Blog"
   versions link:                                "Versions"
   jobs:                                         "Jobs"
   privacy policy:                               "Privacy Policy"
@@ -314,6 +316,9 @@ en:
     likes count 2 more:                         "%{likes_count} more"
     likes count 3 or more:                      "%{likes_count} more"
     users like this:                            "%{last_liker_link} and %{more_link} like this"
+    like:                                       "like"
+    likes:                                      "likes"
+    more than one like:
     vod:
       title:                                    "Verse of the day"
       get daily email:                          "Get daily email"

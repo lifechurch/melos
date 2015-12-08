@@ -37,7 +37,7 @@
         %ul.side-nav
           %li.footer-label= t("follow us").to_s.upcase
           %li
-            = link_to("Blog", blog_url(current_locale), class: "blog")
+            = link_to(t("blog"), blog_url(current_locale), class: "blog")
           %li
             = link_to("Facebook", "http://www.facebook.com/YouVersion", class: "fb")
           %li
