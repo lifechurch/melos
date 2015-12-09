@@ -529,3 +529,29 @@ div[audio-data="reader_audio"] {
     padding: 0 0 20px;
   }
 }
+
+
+/* !Chapter doesn't exist page */
+
+#invalid_chapter {
+  text-align: center;
+
+  a {
+    display: inline-block;
+    font-size: 1em;
+    color: $gray;
+    margin: 20px 0 50px;
+    padding: 7px 15px 6px;
+    border: 1px solid #ccc;
+    -webkit-border-radius:  5px;
+    -moz-border-radius:     5px;
+    border-radius:          5px;
+    background-color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: #bbb;
+      color: $white;
+    }
+  }
+}
