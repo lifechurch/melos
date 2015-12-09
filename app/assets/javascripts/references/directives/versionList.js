@@ -9,7 +9,8 @@ angular.module("reader.versionList", [])
 			usfm: '=',
 			togglePanel: '=',
             loadParallelChapter: '=',
-            setParallelVersion: '='
+            setParallelVersion: '=',
+            loadChapter: '='
 		},
 		controller: ["$scope", "$state", "RecentVersions", function($scope, $state, RecentVersions) {
 
@@ -31,7 +32,7 @@ angular.module("reader.versionList", [])
                 if ($scope.setParallelVersion) {
                     $scope.loadParallelChapter($scope.usfm, version.id);
                 } else {
-                    $state.go($state.current.name, { usfm: $scope.usfm, version: version.id });
+                    $scope.loadChapter($state.current.name, { usfm: $scope.usfm, version: version.id })
                 }
 			}
 		}],
