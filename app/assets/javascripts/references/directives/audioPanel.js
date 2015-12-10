@@ -6,7 +6,7 @@ angular.module('reader.audioPanel', [])
 		scope: {
 			audioData: '='
 		},
-		template: angular.element(document.getElementById("reader-audio-panel")).html(),
+        templateUrl: '/reader-audio-panel.tpl.html',
 		controller: ['$scope', 'UserSettings', function($scope, UserSettings) {
 			//TO-DO: Store Playback Speed and Other Audio-Related Settings
 			//angular.extend($scope, UserSettings.get("ReaderTextSettings"));
