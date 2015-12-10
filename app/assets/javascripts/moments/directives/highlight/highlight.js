@@ -19,6 +19,7 @@ angular.module('yv.moments.highlight', [])
 				var version = $scope.data.object.references[0].version_id;
 				Bible.getVerse(usfm, version).success(function(verse) {
 					$scope.verseContent = verse.reader_html;
+                    $scope.verseHumanRef = verse.human;
 				}).error(function(err) {
 
 				});

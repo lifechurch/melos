@@ -22,6 +22,7 @@ angular.module('yv.moments.votd', [])
 			$timeout(function() {
 				Bible.getVerse(usfm, version.id).success(function(verse) {
 					$scope.verseContent = verse.reader_html;
+                    $scope.verseHumanRef = verse.human;
 					$scope.data.object.title += "<br/><b>" + verse.reader_book + " " + verse.reader_version + "</b>";
 
 				}).error(function(err) {
