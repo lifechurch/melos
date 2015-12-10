@@ -48,6 +48,13 @@ class PlansController < ApplicationController
       rescue => e
       end
       self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
+
+      # Need to query here to see if user has subscribe to any plans
+      if current_user.present?
+        @subscriptions = Subscription.all(current_user, auth: current_user.auth)
+        @show_my_plans = @subscriptions.present? && @subscriptions.length > 0
+      end
+      
     else
       render_404
     end
