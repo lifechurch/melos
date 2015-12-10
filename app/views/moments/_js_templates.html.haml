@@ -73,11 +73,12 @@
             .moment-comments-list-avatar
               %a{"ng-href" => "{{comment.user.path}}", target: "_self"}
                 %img{:alt => "", "ng-src" => "{{comment.user.avatar}}"}
-            %p.moment-comments-list-text
-              %a{"ng-href" => "{{comment.user.path}}", target: "_self"} {{comment.user.name}}
-              {{comment.content}}
-            %span.moment-comment-dt{:title => "{{comment.created_dt}}"}
-              {{comment.time_ago}}
+            .moment-comments-list-text
+              %p
+                %a{"ng-href" => "{{comment.user.path}}", target: "_self"} {{comment.user.name}}
+                {{comment.content}}
+              %span.moment-comment-dt{:title => "{{comment.created_dt}}"}
+                {{comment.time_ago}}
         .moment-comments-self-box
           .moment-comments-self-avatar
             %img{:alt => "", :src => current_user.user_avatar_url["px_48x48"]}
@@ -108,7 +109,7 @@
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment-friendship.tpl.html'}
   %img.friend-image{"ng-src" => "{{data.object.friend_avatar}}"}
-  
+
 -#
 -# Image Moment
 -#
@@ -137,10 +138,10 @@
 -# Plan Segment Complete Moment
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment-plan-segment-complete.tpl.html'}
-  .row
-    .columns.small-2
+  .moment-pc-progress
+    .moment-pc-progress-img
       %img.plan-icon{"ng-src" => "{{data.object.body_images[2].url}}"}
-    .columns.small-10
+    .moment-pc-progress-bar
       %md-progress-linear{"md-mode" => "determinate", :value => "{{data.object.percent_complete}}"}
       %span.moment-plan-progress
         Day {{data.object.segment}} of {{data.object.total_segments}}
