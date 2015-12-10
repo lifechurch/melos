@@ -39,7 +39,7 @@
         %a{"ng-click" => "cancel('showReaderVersions')" }= t('cancel')
       .medium-4.columns.text-center
         %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter"), "ng-minlength" => "3"}
-      .medium-4.columns.text-right        
+      .medium-4.columns.text-right
         %br
     %div{"reader-version-list" => true, "versions" => "versions", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel", "load-parallel-chapter" => "loadParallelChapter", "set-parallel-version" => "setParallelVersion", "load-chapter" => "loadChapter" }
 
@@ -55,7 +55,7 @@
         %a{"ng-click" => "cancel('showReaderBooks')" }= t('cancel')
       .medium-4.columns.text-center
         %input{"ng-model" => "bookFilter", "type" => "text", "placeholder" => t("filter book")}
-      .medium-4.columns.text-right        
+      .medium-4.columns.text-right
         .switch
           %a{"ng-click" => "sortBooks(false)"}= t('traditional')
           |
@@ -85,7 +85,7 @@
           %ul.side-nav{:role => "navigation"}
             %li.menuitem{"ng-repeat" => "version in allLangVersions = (language.versions | filter: filter)"}
               %a{"ng-click" => "loadVersion(version, true)"}
-                %b {{version.abbrev | uppercase}} 
+                %b {{version.abbrev | uppercase}}
                 {{version.title}}
 
   %script{'type' => 'text/ng-template', 'id' => '/reader-book-selector.tpl.html'}
@@ -97,15 +97,15 @@
               = "{{book.human}}"
               -#%b{"ng-if" => "sort"} ( {{book.canon | uppercase}} )
             %h5.bookLabel{"ng-if" => "book.labelOnly"} {{book.human}}
-  
+
   %script{'type' => 'text/ng-template', 'id' => '/reader-chapter-selector.tpl.html'}
     .row
       .medium-12.columns.text-left
-        %h3.inline
-          {{selectedBook.name}} >
+        %h3.inline.chapter-picker-title
+          {{selectedBook.name}} &#187;
           = t('chapter')
         %a{"ng-click" => "cancel()"}= t('cancel')
-        %ol.tabs.pad-head{"data-tab" => ""}
+        %ol.tabs.pad-head.chapter-picker{"data-tab" => ""}
           %li.tab-title{"ng-repeat" => "chapter in selectedBook.chapters"}
             -#%a{"ng-href" => "{{chapter.href}}"} {{chapter.name}} {{chapter.usfm}}
-            %a{"ng-click" => "loadChapter(null, {usfm: chapter.usfm, version: versionId})"} {{chapter.human}}
+            %a{"ng-click" => "loadChapter(null, {usfm: chapter.usfm, version: versionId})", class: "chap-list-no"} {{chapter.human}}
