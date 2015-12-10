@@ -553,7 +553,6 @@ ul.plan-results {
 
 .plan-day-verse.completed {
   color: #bbb;
-  text-decoration: line-through;
 }
 
 .rp-image-settings {
@@ -574,11 +573,12 @@ ul.plan-results {
     li {
       a {
         &.active {
-          color: $gray;
-          text-decoration: line-through;
+          color: $green !important;
+          font-weight:bold;
+          text-decoration: none !important;
         }
 
-        &.complete {
+        &.completed, &.complete {
           text-decoration: line-through;
           color: $gray;
         }
@@ -622,7 +622,6 @@ ul.plan-results {
     background-color: transparent;
     border-top: 0;
     z-index: auto;
-    display: none;
   }
 
   .button-group {

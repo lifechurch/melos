@@ -38,7 +38,7 @@ angular.module('api.railsHttp', [])
 
 	return {
 		get: function(path, cache, params) {
-			return $http.get(prefixLocale(path), { params: params, cache: cache? CacheFactory.get('dataCache') : false, responseType: 'json', headers: { 'Accept' : 'application/json' } })
+			return $http.get(prefixLocale(path) + ".json", { params: params, cache: cache? CacheFactory.get('dataCache') : false, responseType: 'json', headers: { 'Accept' : 'application/json' } })
 
 			.success(function(data) {
 
