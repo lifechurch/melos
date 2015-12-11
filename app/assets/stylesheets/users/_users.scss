@@ -360,12 +360,24 @@ ul.inline-list {
 }
 
 .settings-group {
+  @media #{$medium-only} {
+    text-align: center;
+  }
+
 	input {
 		height: inherit !important;
+
+		@media #{$medium-only} {
+		  display: block;
+		}
 	}
 
 	input[type="checkbox"] {
 		margin: 0;
+
+		@media #{$medium-only} {
+		  margin: 0 auto;
+		}
 	}
 }
 

@@ -17,6 +17,12 @@ class PlansController < ApplicationController
       params[:category] = "featured_plans"
     end
 
+    # Need to query here to see if user has subscribe to any plans
+    if current_user.present?
+      @subscriptions = Subscription.all(current_user, auth: current_user.auth)
+      @show_my_plans = @subscriptions.present? && @subscriptions.length > 0
+    end
+
     @plans = Plan.all( query: params[:query], page: @page, category: params[:category], language_tag: @plan_lang)
     @sidebar = false
     if !@plans.nil?
@@ -42,6 +48,13 @@ class PlansController < ApplicationController
       rescue => e
       end
       self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
+
+      # Need to query here to see if user has subscribe to any plans
+      if current_user.present?
+        @subscriptions = Subscription.all(current_user, auth: current_user.auth)
+        @show_my_plans = @subscriptions.present? && @subscriptions.length > 0
+      end
+      
     else
       render_404
     end
@@ -107,6 +120,11 @@ class PlansController < ApplicationController
     langs = [lang,locale,"en"].compact    #order here is important - we start with override lang, then locale as param, then default to "en"
     available_locales = Plan.available_locales.map {|loc| loc.to_s}   # get available locales in array of strings
     langs.each {|l| return l if available_locales.include?(l)}        # so we can compare lang to string rather than symbol
+  end
+
+  def current_user
+    return nil unless current_auth
+    @current_user ||= User.find(current_auth.user_id, auth: current_auth)
   end
 
 end

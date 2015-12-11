@@ -25,7 +25,7 @@
 .row.pad-row
   .medium-8.columns.medium-offset-2
     %div{"ng-repeat" => "moment in moments"}
-      %moment{:data => "moment", "social-enabled" => "false"}
+      %moment{:data => "moment", "social-enabled" => "true"}
     %div{:layout => "row", "layout-align" => "space-around", "layout-sm" => "column", "ng-if" => "loading"}
       %md-progress-circular{"md-mode" => "indeterminate"}
     %button.solid-button.green.full.ng-hide{"ng-click" => "loadMore()", "ng-show" => "!loading && !pagingFinished"}= t('moments.action.load more')

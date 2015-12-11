@@ -25,8 +25,17 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 			socialEnabled: '='
 		},
 		templateUrl: '/moment.tpl.html',
-		controller: function($scope, Like, Comment, $state, $mdMenu, /* Authentication,*/ $element, $timeout) {
+		controller: function($scope, Like, Comment, $state, $mdMenu, /* Authentication,*/ $element, $timeout, $stateParams, $state, $window) {
 			$scope.newComment = {};
+
+            $scope.getVerseUrl = function(usfm, version) {
+                var locale = $stateParams.locale;
+                if (locale) {
+                    return $state.href("reader-locale", {version:version, usfm:usfm, locale:locale});
+                } else {
+                    return $state.href("reader", {version:version, usfm:usfm});
+                }
+            };
 
             $scope.needsMoreMenu = function() {
                 if (

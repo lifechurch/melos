@@ -529,3 +529,92 @@ div[audio-data="reader_audio"] {
     padding: 0 0 20px;
   }
 }
+
+
+/* !Book/chap/verse pickers */
+
+.tabs dd > a, .tabs .tab-title > a {
+  display: block;
+  background-color: transparent;
+  color: #008CBA;
+  font-family: arial, sans-serif;
+  font-size: 1em;
+  padding: 0;
+}
+
+.chapter-book-title,
+.chapter-picker-title,
+.chapter-verse-title {
+  font: 100 2.375em "proxima-sans", "helvetica neue", arial, sans-serif;
+}
+
+.chapter-picker {
+  li {
+    display: block;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    width: 5%;
+  }
+
+  li:nth-child(-n+20) {
+    border-top: 1px solid #ddd;
+  }
+
+  li:nth-child(20n+0),
+  li:last-child {
+    border-right: 1px solid #ddd;
+  }
+
+  @media #{$medium-only} {
+    li {
+      display: block;
+      border-bottom: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      width: 10%;
+    }
+
+    li:nth-child(-n+10) {
+      border-top: 1px solid #ddd;
+    }
+
+    li:nth-child(10n+0),
+    li:last-child {
+      border-right: 1px solid #ddd;
+    }
+  }
+
+  @media #{$small-only} {
+    li {
+      display: block;
+      border-bottom: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      width: 20%;
+    }
+
+    li:nth-child(-n+5) {
+      border-top: 1px solid #ddd;
+    }
+
+    li:nth-child(5n+0),
+    li:last-child {
+      border-right: 1px solid #ddd;
+    }
+  }
+}
+
+.chap-list-no {
+  height: 47px;
+  text-align: center;
+  line-height: 47px;
+  display: block;
+}
+
+.chap-list-no:hover {
+  background: #eee;
+}
+
+.chap-list-no:focus,
+.chap-list-no:active {
+  background: #666;
+  color: #fff;
+}

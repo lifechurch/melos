@@ -13,13 +13,14 @@
   end
 
 -# Links to scripture
-.widget.scripture-links
+.widget.scripture-links{"fix-top" => true}
   .plan-day-progress
     = t("plans.which day in plan", {day: day, total: subscription.total_days})
   %ol.plan-day-verse-list
-    %li.plan-day-verse{"ng-class" => "{ active: devotionalActive, completed: devotionalComplete }"}
-      %a{"ng-click" => "loadDevotional()", "ng-class" => "{ active: devotionalActive, completed: devotionalComplete }"}
-        = t("plans.devotional")
+    -if presenter.reading.devotional
+      %li.plan-day-verse{"ng-class" => "{ active: devotionalActive, completed: devotionalComplete }"}
+        %a{"ng-click" => "loadDevotional()", "ng-class" => "{ active: devotionalActive, completed: devotionalComplete }"}
+          = t("plans.devotional")
     - unless references.empty?
       - references.each_with_index do |ref,index|
         %li.plan-day-verse{"ng-class" => "{ completed: isRefComplete('#{ref.reference.to_param.downcase}') || '#{ref.completed}' == 'true' }"}
@@ -38,9 +39,6 @@
               = ref.reference.safe_human
             - else
           -# hrref: (content_page == index) ? nil : subscription_path(user_id: current_user.to_param, id: subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])
-          %a{"ng-click" => "completeReferenceAndLoadChapter('reader', {version: #{ref.reference.version.to_s}, usfm: '#{ref.reference.chapter_usfm.downcase}'}, '#{ref.reference.to_param.downcase}', '#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-class" => "{active: refUsfm == '#{ref.reference.to_param.downcase}' }"}
+          %a{"ng-click" => "completeReferenceAndLoadChapter('reader', {version: #{ref.reference.version.to_s}, usfm: '#{ref.reference.chapter_usfm.downcase}'}, '#{ref.reference.to_param.downcase}', '#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-class" => "{active: isRefActive('#{ref.reference.to_param.downcase}') && !devotionalActive, completed: isRefComplete('#{ref.reference.to_param.downcase}') || '#{ref.completed}' == 'true' }"}
             -#%a{"ng-click" => "loadChapter('reader', {version: #{ref.reference.version.to_s}, usfm: '#{ref.reference.chapter_usfm.downcase}'})", "ng-class" => "{active:usfm == '#{ref.reference.chapter_usfm.downcase}'}"}
             = ref.reference.safe_human
-
-  %a{:href => "#", :class => "solid-button green"}
-    =t("Start reading")
