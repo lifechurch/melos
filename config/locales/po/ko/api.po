@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-31 12:42-0600\n"
-"PO-Revision-Date: 2015-08-31 12:42-0600\n"
+"POT-Creation-Date: 2015-12-07 09:51-0600\n"
+"PO-Revision-Date: 2015-12-07 09:51-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ko <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "새로운 묵상 계획을 통해서 당신의 믿음을 새롭게 해보세요."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "매일 하나님의 말씀에서 지혜를 찾으세요."
+msgstr "매일 말씀에서 하나님을 만나세요."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "이 계절을 맞을 마음의 준비를 하세요."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "2월에 시작할 성경읽기 계획을 찾아 보세요!"
+msgstr "말씀에서 하나님의 사랑을 찾아보세요."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "멋진 한해를 시작하세요."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "하나님의 말씀과 매일 동행하는 것은 영속되는 자유를 얻는 것입니다."
+msgstr "그리스도 안에서의 자유함을 기뻐하세요."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "하나님의 말씀을 매일 묵상하면서 삶의 리듬을 찾아보세요."
+msgstr "말씀에서 하나님을 만나세요."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "이번 3월, 날마다 말씀으로 새로워지는 경험을 해 보세요."
+msgstr "말씀에서 희망을 찾고 새롭게 하세요."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "매일 말씀을 묵상하면서 하나님을 찾는 시간을 가져보세요."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "읽기계획을 통해 2015년에는 성경을 매일 읽으세요 !"
+msgstr "매일 말씀에 삶을 헌신하세요."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "하나님의 약속에 감사하세요."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "이 말씀은 살아있습니다. 매일 이 말씀을 들으세요."
+msgstr "거룩한 지혜는 말씀에서 시작됩니다."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "하나님의 말씀은 모든 것을 새롭게 합니다."
