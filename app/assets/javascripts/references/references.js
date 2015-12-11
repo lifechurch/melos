@@ -210,6 +210,13 @@ angular.module('yv.reader', [
     function loadBooks(versionId) {
         Versions.getSingle(versionId).success(function(v) {
           $scope.reader_book_list = v[0].books;
+          for (var b = 0; b < $scope.reader_book_list.length; b++) {
+              var book = $scope.reader_book_list[b];
+              if (book.human == $scope.reader_book) {
+                  $scope.selectedBook = book;
+                  break;
+              }
+          }
         }).error(function(error) {
 
         });
@@ -359,7 +366,6 @@ angular.module('yv.reader', [
 		if ((panel == "showReaderFont" || panel == "showReaderAudio") && $scope[panel]) {
 
 		} else if (panel == "showReaderBooks") {
-			$scope.selectedBook = null;
             if ($scope.reader_book_list.length == 0) {
                 loadBooks($scope.reader_version_id);
             }
@@ -414,8 +420,10 @@ angular.module('yv.reader', [
 	 * before opening book panel
 	 */
 	$scope.toggleChaptersPanel = function(book) {
-		$scope.selectedBook = book;
-		$scope.togglePanel("showReaderChapters");
+        if (book) {
+            $scope.selectedBook = book;
+        }
+        $scope.togglePanel("showReaderChapters");
 	};
 
 
