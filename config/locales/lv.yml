@@ -113,6 +113,7 @@ lv:
         users hash verified: "Šis konts jau ir apstiprināts."
         users password change: "Jūsu jaunajai parolei ir jābūt atšķirīgai no vecās."
         users password length: "Jūsu parolei ir jābūt vismaz 6 simbolu garai."
+        users password less than minimum value 6: "Jūsu parolei ir jābūt vismaz 6 simbolu garai."
         users password required: "Jums jāievada parole."
         user id users not found: "Lietotājvārds ir nederīgs."
         users username alpha numeric extra: "Lietotājvārdam ir būtu jābūt ar burtiem,cipariem un pieturzīmēm."
@@ -123,7 +124,7 @@ lv:
         users first name required: "Jums jāievada vārds."
         users last name required: "Jums jāievada uzvārds."
         moments content required: "Saturs nevar būt tukš."
-        users auth password required: "You must enter a password."
+        users auth password required: "Jums jāievada parole."
     meta: 
         best kids app: "Vislabākā lietotne mazuļiem!"
         best educational app: "Vislabākā izglītojošā lietotne!"
@@ -254,6 +255,7 @@ lv:
     reader: "Lasītājs"
     lifechurch short url: "Life.Church"
     about: "Par"
+    blog: "Blogs"
     versions link: "Tulkojumu veidi"
     jobs: "Vakances"
     privacy policy: "Konfidencionalitātes politika"
@@ -326,6 +328,9 @@ lv:
         likes count 2 more: "vēl %{likes_count}"
         likes count 3 or more: "vēl %{likes_count}"
         users like this: "%{last_liker_link} un vēl %{more_link} patīk šis"
+        like: "Patīk"
+        likes: "Patīk"
+        more than one like: 
         vod: 
             title: "Dienas pants"
             get daily email: "Saņemt ikdienas e-pastu"
@@ -826,7 +831,7 @@ lv:
         title: "Lasīšanas plāni"
         meta title: "Bībeles studijas, pārdomas un lasīšanas plāni tiešsaistē"
         browse by category: "Izvēlēties pēc kategorijas"
-        subcategory: "Sub-category"
+        subcategory: "Apakškategorija"
         browse plans: "Apskatīt %{category} plānus."
         swap list localization: "(<a href='%{swap_link}' target='_self'>Aplūko šeit %{swap_locale}</a>)"
         showing language filtered: "Tiek parādīti tikai tie lasīšanas plāni, kas pieejami %{lang_name}"
@@ -1133,6 +1138,30 @@ lv:
             explanation: "Kaut kas nogāja greizi! Pamēģiniet vēlreiz, pārlādējot lapu, mēs ļoti atvainojamies par radītājām neērtībām!"
             our action: "Mēs esam lietas kursā par šo un ķersimies tam klāt pie pirmās iespējas."
         home: 
+            heading: "Iegūsti bezmaksas Bībeli savam telefonam, planšetdatoram un datoram."
+            cta: "Lasi Bībeli tagad"
+            experience: 
+                title: "Piedzīvo to jebkur"
+                body: "Izvēlies savā datorā, tālrunī vai planšetē no vairāk kā 1200 Bībeles tulkojumiem vairāk nekā 900 valodās, no kuriem daudzi ir pieejami kā audio Bībeles."
+                action: "Apskatīt Bībeles versijas"
+            make_yours: 
+                title: "Padari to par savu Bībeli"
+                body: "Izcel un atzīmē savas iemīļotās rakstuvietas, veido rakstuvietu attēlus, ar kuriem vari dalīties, un pievieno Bībeles pantiem visiem redzamus vai privātus komentārus."
+                action: "Izveido savu bezmaksas kontu"
+            install_now: 
+                title: "Instalē lietotni"
+                body: "Bībeles lietotne ir pilnībā bezmaksas, bez reklāmām un nepiedāvā pirkumus, izmantojot lietotni. Tā ir tikusi uzstādīta šādā skaitā unikālu ierīču (līdz šim brīdim):"
+                action: "Lejuplādē bezmaksas Bībeles aplikāciju"
+            free_plans: 
+                title: "Bezmaksas Lasīšanas plāni un Garīgas pārdomas"
+                body: "Bībeles Lasīšanas plāni dod iespēju saskarties ar Dieva vārdu katru dienu, kaut vai tikai uz īsu mirkli."
+            browse_plans: "Pārlūkot visus plānus"
+            read_listen: "Lasi, klausies, skaties un dalies"
+            start_now: "Sākt tagad"
+            votd: 
+                title: "Dienas rakstuvieta"
+                highlight_bookmark: "Izcel, atzīmē vai dalies ar šo rakstuvietu"
+                subscribe: "Abonē Dienas pantus"
             hero: 
                 heading: "Bezmaksas Bībele uz tava telefona, planšetdatora un datora."
                 description: "YouVersion ir vienkārša, no reklāmu baneriem brīva Bībele, kas atnes Dieva Vārdu tavā ikdienas dzīvē."
@@ -1177,7 +1206,7 @@ lv:
             extras: "Ekstras:"
             translation notes: "Kājenes"
             cross references: "Atsauces"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Skaitļi un virsraksti"
     app errors: 
         404 plans explanation: "Jūs meklējat <a href='%{plan_path}' target='_self'>%{title}</a> plānu?"
         404 contact support: "Radušās problēmas? Sazinieties ar mūsu <a href='%{support_url}' target='_self'>atbalsta komandu</a>."

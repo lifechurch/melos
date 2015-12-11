@@ -102,17 +102,18 @@ es-ES:
         users hash verified: "Esta cuenta ya ha sido verificada."
         users password change: "Tu nueva contraseña debe ser diferente a la antigua."
         users password length: "Su contraseña debe tener al menos 6 caracteres."
+        users password less than minimum value 6: "Su contraseña debe tener al menos 6 caracteres."
         users password required: "Debes introducir una contraseña."
-        user id users not found: "The username is invalid."
+        user id users not found: "El nombre de usuario no es correcto."
         users username alpha numeric extra: "El nombre de usuario debe de contener letras, números o guiones."
         users username not available: "El nombre de usuario que solicitaste no está disponible."
         users username or password invalid: "El nombre de usuario o contraseña que has proporcionado no es válido."
         users username required: "Debes introducir un nombre de usuario."
-        users xor username email token xor required: "You must enter a username or an email address."
+        users xor username email token xor required: "Debes introducir un nombre de usuario o una dirección de correo."
         users first name required: "Debes introducir un nombre."
         users last name required: "Debe introducir un apellido."
         moments content required: "El contenido no puede estar en blanco."
-        users auth password required: "You must enter a password."
+        users auth password required: "Debes introducir una contraseña."
     meta: 
         best kids app: "¡la mejor aplicación para niños!"
         best educational app: "La mejor aplicación educativa"
@@ -243,6 +244,7 @@ es-ES:
     reader: "Lector"
     lifechurch short url: "Life.Church"
     about: "Acerca de"
+    blog: "Blog"
     versions link: "Versiones"
     jobs: "Trabajos"
     privacy policy: "Políticas de privacidad"
@@ -298,7 +300,7 @@ es-ES:
     160 character limit: "160 caracteres o menos"
     recent versions: "Recientemente utilizados"
     traditional: "Tradicional"
-    alphabetic: "Alphabetic"
+    alphabetic: "Alfabético"
     versions title: "Versiones"
     or: 
         lower: "o"
@@ -315,6 +317,9 @@ es-ES:
         likes count 2 more: "%{likes_count} más"
         likes count 3 or more: "%{likes_count} más"
         users like this: "%{last_liker_link} y %{more_link} les gusta esto"
+        like: "Me gusta"
+        likes: "Me gusta"
+        more than one like: 
         vod: 
             title: "Versículo del día"
             get daily email: "Recibir un email diario"
@@ -432,7 +437,7 @@ es-ES:
         none user: "%{username} todavía no ha tomado notas"
         blank slate: 
             heading: "No tienes notas todavía"
-            description: "Cuando estés leyendo la Biblia y sienta que la apacible voz de Dios le habla, puedes agregar rápidamente esos pensamientos aquí. Tus notas se marcarán como <em>privada</em> por defecto. Si te quisieras compartir una nota con tus amigos, simplemente ábrela y cámbiala a <em>pública</em>"
+            description: "Mientras lees la Biblia, y sientes la voz de Dios hablándote, puedes añadir esos pensamientos rápidamente aquí. Se marcarán tus notas como <em>privada</em> por defecto. Si quieres compartir una nota con tus amigos, simplemente ábrela y cámbiala a <em>pública.</em>"
         form: 
             title field: "Título:"
             content field: "Contenido:"
@@ -503,7 +508,7 @@ es-ES:
         view in reader: "Ver %{reference} en Lector"
     users: 
         unverified heading: "¡Casi conseguido!"
-        unverified message: "It looks like you're trying to sign in to an account that hasn't been set up completely. You only have one more step: simply click on the verification link in the confirmation email you received from YouVersion. Can't find it? Check your spam folder or <a href='%{resend_path}' target='_self'>resend the confirmation email</a>."
+        unverified message: "Parece que están intentando acceder a una cuenta que no se ha completado Sólo necesitas un paso más: haz click simplemente en el link de verificación en el correo de confirmación que has recibido de YouVersion. ¿No puedes encontrarlo? Mira en tu carpeta Spam o <a href='%{resend_path}' target='_self'>reenvía el correo de confirmación.</a>"
         settings: "Configuración"
         creation form errors: "El siguiente error(s) ha impidido la creación de su cuenta:"
         profile form errors: "El siguiente error(s) impidió actualizar su perfil:"
@@ -746,7 +751,7 @@ es-ES:
         labels label: "Eiquetas:"
         title: "Marcadores"
         my labels: "Mis etiquetas"
-        remove label: "Remove Label"
+        remove label: "Quitar Etiqueta"
         all labels: "Mostrar Todo"
         not found: "Los marcadores te darán una guía de referencia rápida a tus pasajes favoritos o al último capítulo que leíste de un libro en particular. Para agregar un marcador, selecciona un versículo en el lector de la Biblia y luego haz clic en el botón Seleccionado en la parte superior del lector."
         other user not found: "%{username} no ha guardado ningún marcador todavía."
@@ -784,7 +789,7 @@ es-ES:
         none me: "Aún no has ganado insignias."
         none user: "%{username} aún no ha ganado ninguna insignia."
     plans: 
-        bible plan language: "Bible Plan Language"
+        bible plan language: "Idioma del Plan de la Biblia"
         share plan: "Echa un vistazo a este @YouVersion #BiblePlan: %{plan_title}"
         widget: 
             my plans: "Mis Planes de lectura"
@@ -813,7 +818,7 @@ es-ES:
         title: "Planes de lectura"
         meta title: "Estudio bíblico online, devocionales y planes de lectura bíblica"
         browse by category: "Navegador por categorías"
-        subcategory: "Sub-category"
+        subcategory: "Subcategoría"
         browse plans: "Navega %{category} Planes"
         swap list localization: "(<a href='%{swap_link}' target='_self'>Ver en %{swap_locale}</a>)"
         showing language filtered: "Mostrando sólo planes disponibles en %{lang_name}"
@@ -849,7 +854,7 @@ es-ES:
         next day: "PRÓXIMO DÍA"
         previous: "previo"
         next: "Siguiente"
-        finish: "Finish"
+        finish: "Terminar"
         reading completed _ mark and show next: "Siguiente: %{next_reference}"
         which reading: "%{current} de%{total}"
         done reading: "Hecho"
@@ -1120,6 +1125,30 @@ es-ES:
             explanation: "¡Algo inesperado ha ocurrido! Puedes intentar reiniciar la página de nuevo, sentimos los inconvenientes ocasionados."
             our action: "Hemos sido notificados sobre esto, procederemos a solucionarlo tan pronto como sea posible."
         home: 
+            heading: "Consigue la Biblia gratis en tu teléfono, tablet y ordenador."
+            cta: "Lee la Biblia ahora"
+            experience: 
+                title: "Experiméntalo sin límites"
+                body: "Elige entre más de 1.200 versiones de la Biblia en más de 900 idiomas en tu ordenador, teléfono o tablet -- muchas de ellas con Biblias en audio."
+                action: "Ver Versiones de Biblia"
+            make_yours: 
+                title: "Hazla tuya"
+                body: "Resalta o Marca tus versículos favoritos, haz Imágenes de Versículos que quieras compartir y adjunta Notas públicas o privadas a pasajes de la Biblia."
+                action: "Crea tu Cuenta Gratis"
+            install_now: 
+                title: "Instala la app ahora "
+                body: "La Biblia App es completamente gratis, sin anuncios y sin compras internas. Se ha instalado en montones de dispositivos distintos (por ahora):"
+                action: "Descargar la Bible App gratis."
+            free_plans: 
+                title: "Planes de Lectura y Devocionales Gratis"
+                body: "Los Planes de la Biblia te ayudan a involucrarte con la Palabra de Dios cada día, poco a poco."
+            browse_plans: "Navega Todos los Planes"
+            read_listen: "Lee, Escucha, Mira, Comparte"
+            start_now: "Comienza Ahora"
+            votd: 
+                title: "Versículo del día"
+                highlight_bookmark: "Resalta, Marca o comparte este Versículo"
+                subscribe: "Suscríbete al Versículo del Día"
             hero: 
                 heading: "Una Biblia gratis en tu teléfono, tablet y ordenador."
                 description: "YouVersion es una Biblia simple y sin publicidad que acerca la Palabra de Dios a tu vida diaria."
@@ -1164,10 +1193,10 @@ es-ES:
             extras: "Extras:"
             translation notes: "Notas pie de página"
             cross references: "Marcar referencias"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Números y Títulos"
     app errors: 
         404 plans explanation: "Estás buscando el plan <a href='%{plan_path}' target='_self'>%{title}</a>?"
-        404 contact support: "Having trouble? Contact our <a href='%{support_url}' target='_self'>support team</a>."
+        404 contact support: "¿Tienes problemas? Contacta nuestro <a href='%{support_url}' target='_self'>equipo de técnico</a>."
         404 explanation: "Puedes intentar comenzar de nuevo en <a href='%{reader_path}' target='_self'>inicio</a>.  ¿Todavía persiste el problema? Contacta con nuestro <a href='%{support_url}' target='_self'>equipo de soporte técnico</a>."
         404 message: "Lo sentimos, la página que estás buscando no puede ser encontrada."
         408 message: "Lo sentimos, nuestros servidores no han respondido en el tiempo estimado."
@@ -1247,4 +1276,4 @@ es-ES:
             previous page: "Página anterior"
         datetime: 
             just now: "ahora mismo"
-        verses selected: "verses selected"
+        verses selected: "versículos seleccionados"
