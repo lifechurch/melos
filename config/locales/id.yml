@@ -91,6 +91,7 @@ id:
         users hash verified: "Akun ini telah diverifikasi."
         users password change: "Kata sandi baru Anda harus berbeda dengan kata sandi lama."
         users password length: "Kata sandi Anda harus memiliki minimum 6 karakter."
+        users password less than minimum value 6: "Kata sandi Anda harus memiliki minimum 6 karakter."
         users password required: "Kata sandi wajib dimasukkan."
         user id users not found: "Nama pengguna tidak valid."
         users username alpha numeric extra: "Nama Pemakai harus berupa huruf, angka atau garis hubung."
@@ -101,7 +102,7 @@ id:
         users first name required: "Nama depan wajib dimasukkan."
         users last name required: "Nama belakang wajib dimasukkan."
         moments content required: "Isi tidak bisa kosong."
-        users auth password required: "You must enter a password."
+        users auth password required: "Kata sandi wajib dimasukkan."
     meta: 
         best kids app: "Aplikasi terbaik untuk anak-anak!"
         best educational app: "Aplikasi Terbaik untuk Pendidikan"
@@ -232,6 +233,7 @@ id:
     reader: "Pembaca"
     lifechurch short url: "Life.Church"
     about: "Perihal"
+    blog: "Blog"
     versions link: "Versi"
     jobs: "Lowongan Kerja"
     privacy policy: "Kebijakan Privasi"
@@ -304,6 +306,9 @@ id:
         likes count 2 more: "%{likes_count} orang lagi"
         likes count 3 or more: "%{likes_count} orang lagi"
         users like this: "%{last_liker_link} dan %{more_link} menyukai ini"
+        like: "Suka"
+        likes: "Suka"
+        more than one like: 
         vod: 
             title: "Ayat hari ini"
             get daily email: "Dapatkan email harian"
@@ -800,7 +805,7 @@ id:
         title: "Rencana Bacaan"
         meta title: "Pendidikan Alkitab daring, renungan dan rencana bacaan"
         browse by category: "Telusuri menurut Kategori"
-        subcategory: "Sub-category"
+        subcategory: "Sub-kategori"
         browse plans: "Telusuri Rencana %{category}"
         swap list localization: "(<a href='%{swap_link}' target='_self'>Lihat di %{swap_locale}</a>)"
         showing language filtered: "Hanya menampilkan rencana yang tersedia di %{lang_name}"
@@ -1107,6 +1112,30 @@ id:
             explanation: "Ada yang salah dibalik layar! Anda dapat mencoba lagi dengan memuat ulang halaman, kami mohon maaf untuk gangguan ini!"
             our action: "Kami telah dilapori tentang ini dan akan membereskan secepatnya."
         home: 
+            heading: "Dapatkan Alkitab gratis untuk ponsel, tablet, dan komputer Anda."
+            cta: "Baca Alkitab Sekarang"
+            experience: 
+                title: "Gunakan di manapun"
+                body: "Pilih dari lebih dari 1200 versi Alkitab dalam lebih dari 900 bahasa di komputer, ponsel, atau tablet Anda -- banyak tersedia dalam Alkitab suara."
+                action: "Lihat Versi Alkitab"
+            make_yours: 
+                title: "Jadikan sebagai Alkitab Anda"
+                body: "Soroti atau markahi ayat favorit Anda, buat Gambar Ayat yang dapat Anda bagikan, dan lampirkan Catatan pribadi atau publik pada perikop Alkitab."
+                action: "Buat Akun Gratis Anda"
+            install_now: 
+                title: "Instal Aplikasi Sekarang"
+                body: "Ap Alkitab gratis total, tanpa iklan dan tidak ada pembelian dalam aplikasi. Sudah diinstal pada banyak perangkat unik (sejauh ini):"
+                action: "Unduh Aplikasi Alkitab Gratis"
+            free_plans: 
+                title: "Rencana Bacaan dan Renungan Gratis"
+                body: "Rencana Alkitab menolong Anda terlibat dengan Firman Tuhan setiap hari, sedikit demi sedikit."
+            browse_plans: "Jelajahi Semua Rencana"
+            read_listen: "Baca, Simak, Tonton, Berbagi"
+            start_now: "Mulai Sekarang"
+            votd: 
+                title: "Ayat Hari Ini"
+                highlight_bookmark: "Soroti, Markahi, atau bagikan ayat ini"
+                subscribe: "Berlangganan Ayat Hari Ini"
             hero: 
                 heading: "Alkitab gratis untuk ponsel, tablet, dan komputer Anda."
                 description: "YouVersion adalah Alkitab sederhana tanpa iklan, yang membawa Firman Tuhan dalam hidup keseharian Anda."
@@ -1151,7 +1180,7 @@ id:
             extras: "Tambahan:"
             translation notes: "Catatan kaki"
             cross references: "Referensi silang"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Nomor dan Judul"
     app errors: 
         404 plans explanation: "Apakah Anda mencari <a href='%{plan_path}' target='_self'>rencana</a>%{title}?"
         404 contact support: "Ada masalah? Hubungi <a href='%{support_url}' target='_self'>tim pendukung</a> kami."

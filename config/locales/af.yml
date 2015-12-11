@@ -102,6 +102,7 @@ af:
         users hash verified: "Hierdie rekening is alreeds bevestig."
         users password change: "Jou nuwe wagwoord moet verskil van jou vorige wagwoord."
         users password length: "Jou wagwoord moet ten minste 6 karakters lank wees."
+        users password less than minimum value 6: "Jou wagwoord moet ten minste 6 karakters lank wees."
         users password required: "Jy moet jou wagwoord insleutel."
         user id users not found: "Die gebruikernaam is ongeldig."
         users username alpha numeric extra: "Die gebruikersnaam moet uit letters, nommers of strepies bestaan."
@@ -112,13 +113,13 @@ af:
         users first name required: "Jy moet jou noemnaam verskaf."
         users last name required: "Jy moet jou van verskaf."
         moments content required: "Inhoud kan nie leeg wees nie."
-        users auth password required: "You must enter a password."
+        users auth password required: "Jy moet jou wagwoord insleutel."
     meta: 
         best kids app: "Beste Kinders App!"
         best educational app: "Beste Opvoedkundige App"
         kids_app: 
-            title: "The Bible App for Kids"
-            description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+            title: "Die Bybel Toep vir Kinders"
+            description: "Die Bybel App vir kinders is `n goeie manier om jou kinders Bybelse stories oor Jesus te leer, ons geskenk van ewige lewe, en die baie lesse wat God ons leer. In hierdie interaktiewe ervaring, kinders raak direk betrokke met God se Woord met pragtige visuele terwyl hulle punte verdien vir lees en invordering van skatte."
         100million: 
             title: "Dit begin met 100 Miljoen"
             description: "Die Bybel Toep is amper 'n 100 miljoen keer geinstalleer - wat 'n ongelooflike mylpaal. Maar ons begin nou eers. Laai die gratis Bybel Toep vandag af - en deel dan die toep met jou vriende. Help ons om saam geskiedenis te maak."
@@ -156,15 +157,15 @@ af:
         feature 5: "Kid-friendly navigation"
         share: 
             tell friends: "Tell your friends about the Bible App for Kids."
-            facebook name: "The Bible App for Kids"
-            facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
+            facebook name: "Die Bybel Toep vir Kinders"
+            facebook description: "Die Bybel Toep vir Kinders is hier! Laai die gratis toep vir iOS en Android nog vandag af: interaktiewe Bybel stories om jou kind te help leer, speel en groei in God se woord. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
-            twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
-            twitter hashtags: "kidsbible"
-            email: "Email"
-            email subject: "The Bible App for Kids is here!"
-            email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
+            twitter description: "Die Bybel Toep vir Kinders van @YouVersion is hier! Dis pret en heeltemal gratis. Laai af: bible.com/kids"
+            twitter hashtags: "kinderbybel"
+            email: "E-pos"
+            email subject: "Die Bybel Toep vir Kinders is hier!"
+            email body: "Goeie nuus - die Bybel Toep vir Kinders is hier! Dis heeltemal gratis en is nou beskikbaar vir iPhone, iPad, iPod touch, en Android toestelle. Die toep is a groeiende versameling van Bybel stories met druk-geaktiveerde animasies en leer aktiwiteite, perfek om kinders te help om die groot stories van die Bybel te leer. Gaan na bible.com/kids op jou moebiele toestel om dit nog vandag af te laai."
         partner: 
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
@@ -243,6 +244,7 @@ af:
     reader: "Leser"
     lifechurch short url: "Life.Church"
     about: "Omtrent Ons"
+    blog: "Blog"
     versions link: "Vertalings"
     jobs: "Werk"
     privacy policy: "Privaatheidsbeleid"
@@ -315,6 +317,9 @@ af:
         likes count 2 more: "%{likes_count} meer"
         likes count 3 or more: "%{likes_count} meer"
         users like this: "%{last_liker_link} en %{more_link} hou van dit"
+        like: "Hou Van"
+        likes: "Gunstelinge"
+        more than one like: 
         vod: 
             title: "Vers van die dag"
             get daily email: "Ontvang daaglikse epos"
@@ -813,7 +818,7 @@ af:
         title: "Lees Planne"
         meta title: "Aanlyn Bybelstudie, dagstukkies en leesplanne"
         browse by category: "Blaai per Kategorie"
-        subcategory: "Sub-category"
+        subcategory: "Onderafdeling"
         browse plans: "Kyk na %{category} Planne"
         swap list localization: "(<a href='%{swap_link}' target='_self'>Vertoon in %{swap_locale}</a>)"
         showing language filtered: "Slegs leesplanne beskikbaar in %{lang_name} word vertoon."
@@ -1027,9 +1032,9 @@ af:
         banner action: "Aflaai"
         banner open: "Maak oop"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Laai die Bible App vir Kinders af"
+        description copy: "Die Bible App vir Kinders is 'n goeie manier vir jou kinders om Bybelse stories oor Jesus te leer ken."
+        download: "Laai Nou Af"
     about page: 
         relevancy: "Toepaslikheid"
         relevancy copy: "In vorige geslagte was die toegang wat mense tot die Bybel gehad het baie beperk. Vandag, is dit nie meer die geval nie. Baie mense wat toegang het tot die Bybel, dink egter dat die boodskap nie van toepassing op hul lewens is nie. Terselfdertyd is daar ander wat glo dat daar 'n verband is tussen die Bybel en hulle daaglikse belewenisse."
@@ -1120,6 +1125,30 @@ af:
             explanation: "Iets het verkeerd geloop agter die skerms! Jy kan weer probeer deur die bladsy te herlaai, ons is baie jammer vir die ongerief!"
             our action: "Ons is hieroor in kennis gestel en sal so spoedig moontlik hieraan aandag gee."
         home: 
+            heading: "Ontvang 'n gratis Bybel vir jou foon, tablet en rekenaar."
+            cta: "Lees die Bybel Nou"
+            experience: 
+                title: "Beleef dit op enige plek"
+                body: "Kies uit meer as 1,200 Bybelweergawes in meer as 900 tale vir jou rekenaar, foon of tablet -- met baie van hulle as klankweergawes beskikbaar."
+                action: "Bekyk die Bybelweergawes"
+            make_yours: 
+                title: "Maak hierdie Bybelweergawe jou keuse"
+                body: "Onderstreep of Merk jou gunsteling verse, maak Versbeelde wat jy kan deel, en maak notas by Bybelgedeeltes, wat jy as aanhegsel kan gebruik vir privaat of openbare gebruik."
+                action: "Skep Jou Gratis Rekening"
+            install_now: 
+                title: "Installeer die Toep Nou"
+                body: "Die Bybel Toep is heeltemal gratis, met geen advertensie of aankoop opsies nie. Huidiglik is dit al op so baie toestelle geïnstalleer:"
+                action: "Laai die Gratis Bible App af"
+            free_plans: 
+                title: "Gratis Leesplanne en Oordenkings"
+                body: "Bybelplanne help jou om elke dag in God se Woord te delf, 'n kort stukkie op 'n keer."
+            browse_plans: "Deursoek Al die Planne"
+            read_listen: "Lees, Luister, Kyk, Deel"
+            start_now: "Begin Nou"
+            votd: 
+                title: "Vers van die dag"
+                highlight_bookmark: "Onderstreep, Merk, of deel hierdie vers"
+                subscribe: "Teken in vir die Skrif van die Dag"
             hero: 
                 heading: "'n Gratis Bybel op jou foon, tablet en rekenaar."
                 description: "YouVersion is 'n eenvoudige, advertensievrye Bybel wat God se Woord in jou daaglikse lewe inbring."
@@ -1131,7 +1160,7 @@ af:
                 read heading: "Lees die Bybel."
                 read description: "Kies uit <a href='%{versions_path}' target='_self'>honderde Bybelweergawes en tale</a>. Vergelyk twee weergawes sy aan sy. Jy kan selfs jou lettertipe en -grootte kies. Maak jou aanlyn-Bybelondervinding net soos jy daarvan hou."
                 study heading: "Bestudeer die Bybel"
-                study description: "<sterk>Kleurmerk</sterk> in jou gunsteling kleur, <sterk>boekmerk</sterk> jou gunsteling Bybelverse en maak notas van wat jy leer. Nie alleenlik spandeer jy tyd met God se Woord nie, maar jy bou ook 'n geskiedenis van jou interaksie met die Bybel op."
+                study description: "<strong>Kleurmerk</strong> in jou gunsteling kleur, <strong>boekmerk</strong> jou gunsteling Bybelverse en maak notas van wat jy leer. Nie alleenlik spandeer jy tyd met God se Woord nie, maar jy bou ook 'n geskiedenis van jou interaksie met die Bybel op."
                 subscribe heading: "Teken in op Bybelplanne."
                 subscribe description: "Dek die hele Bybel, fokus op 'n onderwerp of lees 'n oordenking van 'n begaafde leraar.  Kies jou plan en jy sal elke dag 'n Bybelseleksie kry wat op jou wag."
                 download heading: "Neem die Bybel saam met jou."
@@ -1164,7 +1193,7 @@ af:
             extras: "Ekstras:"
             translation notes: "Voetnotas"
             cross references: "Kruis-verwysings"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Nommers en Titels"
     app errors: 
         404 plans explanation: "Soek jy die <a href='%{plan_path}' target='_self'>%{title}</a> plan?"
         404 contact support: "Sukkel jy? Kontak ons by <a href='%{support_url}' target='_self'>support team</a>."

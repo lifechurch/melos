@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-12-07 09:51-0600\n"
+"PO-Revision-Date: 2015-12-07 09:51-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Virkistä uskoasi uusien lukusuunnitelmien avulla."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Löydä viisautta Jumalan Sanasta päivittän."
+msgstr "Etsi Jumalaa Sanasta päivittäin."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Valmistele sydäntäsi tämän kauden aikana."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Löydä suosikkisuunnitelmasi helmikuulle!"
+msgstr "Löydä Jumalan rakkautta Sanasta."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Paras vuotesi ikinä alkaa nyt."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Päivittäin Jumalan Sanan parissa vietetty aika saa aikaan kestävän vapauden."
+msgstr "Juhli vapautta Kristuksessa."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Löydä oma päivittäinen rytmi Jumalan Sanan parissa."
+msgstr "Etsi Jumalaa hänen Sanastaan."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Löydä maaliskuun suunnitelmista toivoa ja uudistumista."
+msgstr "Löydä toivoa ja uudistumista Jumalan Sanasta."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Omistaudu etsimään Jumalaa päivittäin Hänen Sanansa kautta."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Lue Raamattua päivittäin 2015. Suunnitelmat auttavat!"
+msgstr "Omistaudu Hänen Sanalleen päivittäin."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Löydä kiitollisuutta Jumalan lupauksista."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Tämä Sana elää. Anna sen puhua sinulle joka päivä."
+msgstr "Jumalallinen viisaus alkaa Jumalan Sanasta."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Jumalan Sana uudistaa kaiken."

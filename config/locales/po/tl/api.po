@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-04 09:53-0609\n"
-"PO-Revision-Date: 2015-08-04 09:53-0609\n"
+"POT-Creation-Date: 2015-11-30 10:18-0600\n"
+"PO-Revision-Date: 2015-11-30 10:18-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fil_PH <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Sariwain ang pananampalataya gamit ang mga bagong Babasahin."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Hanapin ang karunungan sa Salita ng Diyos araw-araw."
+msgstr "Hanapin ang Diyos sa Kanyang Banal na Salita araw-araw."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Ihanda ang puso mo sa panahong ito."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Hanapin ang paboritong Babasahing Pambibliya sa Pebrero!"
+msgstr "Tuklasin ang pag-ibig ng Diyos sa Kanyang Banal na Salita."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Ngayon na ang simula ng iyong pinakamakabuluhang taon."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Ang pagbabasa araw-araw ng Salita ng Diyos ay nagbibigay ng matagalang kalayaan."
+msgstr "Ipagdiwang ang Kalayaan kay Kristo."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Hanapin ang ritmo mula sa araw-araw na pagbabasa ng Salita ng Diyos."
+msgstr "Tuklasin ang Diyos sa Kanyang Banal na Salita."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Hanapin ang pag-asa at pagbabago sa mga Babasahin ngayong Marso."
+msgstr "Tuklasin ang pag-asa at pagbabago sa Salita ng Diyos."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Maglaan araw-araw ng pagbabasa ng Salita ng Diyos."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Magbasa ng Bibliya araw-araw sa 2015. Nakatutulong ang mga babasahin!"
+msgstr "Ilaan ang sarili sa araw-araw na pagbabasa ng Banal na Salita."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Tuklasin ang pasasalamat sa mga pangako ng Diyos."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Ang Salita ay buhay. Hayaan mong mangusap ito sa iyo araw-araw."
+msgstr "Ang Salita ng Diyos ang pinagmumulan ng maka-Diyos na karunungan."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Ang Salita ng Diyos ay binabago ang lahat ng bagay."

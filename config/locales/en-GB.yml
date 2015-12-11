@@ -102,6 +102,7 @@ en-GB:
         users hash verified: "This account has already been verified."
         users password change: "Your new password must be different from your old password."
         users password length: "Your password must be at least 6 characters."
+        users password less than minimum value 6: "Your password must be at least 6 characters."
         users password required: "You must enter a password."
         user id users not found: "The username is invalid."
         users username alpha numeric extra: "The username should be letters, numbers or dashes."
@@ -118,7 +119,7 @@ en-GB:
         best educational app: "Best educational app"
         kids_app: 
             title: "The Bible App for Kids"
-            description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+            description: "The Bible App for kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
         100million: 
             title: "It Starts with 100 million"
             description: "The Bible App has been installed almost 100 million times - an incredible milestone! But we are just getting started. Download the free Bible App today - and then share the app with your friends. Let’s make history together."
@@ -151,7 +152,7 @@ en-GB:
         story text 5: "Jesus heals the paralytic"
         feature 1: "A free Bible experience for your kids"
         feature 2: "Animated storybook app for smartphones and tablets"
-        feature 3: "Colorful illustrations with touch-activated animations"
+        feature 3: "Colouful illustrations with touch-activated animations"
         feature 4: "Games and activities help kids remember what they learn"
         feature 5: "Kid-friendly navigation"
         share: 
@@ -162,7 +163,7 @@ en-GB:
             facebook redirect: "http://www.bible.com/kids"
             twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
             twitter hashtags: "kidsbible"
-            email: "Email"
+            email: "E-mail"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
         partner: 
@@ -243,6 +244,7 @@ en-GB:
     reader: "Reader"
     lifechurch short url: "Life.Church"
     about: "About"
+    blog: "Blog"
     versions link: "Versions"
     jobs: "Jobs"
     privacy policy: "Privacy policy"
@@ -315,6 +317,9 @@ en-GB:
         likes count 2 more: "%{likes_count} more"
         likes count 3 or more: "%{likes_count} more"
         users like this: "%{last_liker_link} and %{more_link} like this"
+        like: "Like"
+        likes: "Likes"
+        more than one like: 
         vod: 
             title: "Verse of the day"
             get daily email: "Get daily e-mail"
@@ -1029,7 +1034,7 @@ en-GB:
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        download: "Download now"
     about page: 
         relevancy: "Relevancy"
         relevancy copy: "In generations past, the access people had to the Bible was very limited. Today, this is no longer the case. However, many people who have access to the Bible think its message does not apply to their lives. At the same time, there are others who believe there is a connection between the Bible and their every day experiences."
@@ -1120,6 +1125,30 @@ en-GB:
             explanation: "Something went wrong behind the scenes! You can try again by reloading the page, we're very sorry for the inconvenience!"
             our action: "We've been notified about this and will jump on it as soon as possible."
         home: 
+            heading: "Get a free Bible for your phone, tablet, and computer."
+            cta: "Read the Bible Now"
+            experience: 
+                title: "Experience it anywhere"
+                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                action: "View Bible Versions"
+            make_yours: 
+                title: "Make it your Bible"
+                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+                action: "Create Your Free Account"
+            install_now: 
+                title: "Install the App Now"
+                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                action: "Download the free Bible App"
+            free_plans: 
+                title: "Free Reading Plans and Devotionals"
+                body: "Bible Plans help you engage with God's Word every day, a little at a time."
+            browse_plans: "Browse All Plans"
+            read_listen: "Read, Listen, Watch, Share"
+            start_now: "Start Now"
+            votd: 
+                title: "Verse of the day"
+                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                subscribe: "Subscribe to the Verse of the Day"
             hero: 
                 heading: "A free Bible on your phone, tablet, and computer."
                 description: "YouVersion is a simple, ad-free Bible that brings God's Word into your daily life."
