@@ -4,6 +4,7 @@ angular.module('yv.reader', [
 	'reader.reader',
 	'reader.verseAction',
 	'reader.highlightPanel',
+    'reader.sharePanel',
 	'reader.bookmarkPanel',
 	'reader.notePanel',
 	'reader.textSettingsPanel',
