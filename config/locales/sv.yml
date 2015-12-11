@@ -102,6 +102,7 @@ sv:
         users hash verified: "Kontot har redan verifierats."
         users password change: "Ditt nya lösenord måste skilja sig från ditt gamla lösenord."
         users password length: "Ditt lösenord måste bestå av minst 6 tecken."
+        users password less than minimum value 6: "Ditt lösenord måste bestå av minst 6 tecken."
         users password required: "Du måste ange ett lösenord."
         user id users not found: "Användarnamnet är ogiltigt."
         users username alpha numeric extra: "Användarnamnet ska innehålla bokstäver, siffror eller snedstreck."
@@ -112,7 +113,7 @@ sv:
         users first name required: "Du måste ange ett förnamn."
         users last name required: "Du måste ange ett efternamn."
         moments content required: "Innehåll kan inte vara tomt."
-        users auth password required: "You must enter a password."
+        users auth password required: "Du måste ange ett lösenord."
     meta: 
         best kids app: "Bästa barnappen!"
         best educational app: "Bästa utbildningsappen"
@@ -243,6 +244,7 @@ sv:
     reader: "Läsare"
     lifechurch short url: "Life.Church"
     about: "Om"
+    blog: "Blogg"
     versions link: "Översättningar"
     jobs: "Jobb"
     privacy policy: "Integritetspolicy"
@@ -315,6 +317,9 @@ sv:
         likes count 2 more: "%{likes_count} ytterligare"
         likes count 3 or more: "%{likes_count} ytterligare"
         users like this: "%{last_liker_link} och %{more_link} har gillat detta"
+        like: "Gilla"
+        likes: "Gillar"
+        more than one like: 
         vod: 
             title: "Dagens vers"
             get daily email: "Få dagliga e-brev"
@@ -813,7 +818,7 @@ sv:
         title: "Läsplaner"
         meta title: "Bibelstudier, andakter och läsplaner online"
         browse by category: "Bläddra efter katergori"
-        subcategory: "Sub-category"
+        subcategory: "Underkategori"
         browse plans: "Bläddra planer i %{category}"
         swap list localization: "(<a href='%{swap_link}' target='_self'>Visa i %{swap_locale}</a>)"
         showing language filtered: "Visa enbart planer tillgängliga på %{lang_name}"
@@ -1120,6 +1125,30 @@ sv:
             explanation: "Något gick fel bakom kulisserna! Du kan prova igen genom att ladda om sidan, vi är mycket ledsna för besväret!"
             our action: "Vi har meddelats om detta och kommer att ta tag i det så snart som möjligt."
         home: 
+            heading: "Skaffa en gratis Bibel till din telefon, surfplatta och dator."
+            cta: "Läs Bibeln nu"
+            experience: 
+                title: "Upplev den överallt"
+                body: "Välj från mer än 1200 Bibelöversättningar på över 900 språk på din dator, telefon eller surfplatta - med många tillgängliga som ljudbiblar."
+                action: "Se Bibelöversättningar"
+            make_yours: 
+                title: "Gör det till din Bibel"
+                body: "Markera eller Bokmärk dina favoritverser, gör Bibelkort som du kan dela och lägg till publika eller privata Anteckningar till Bibeltexter."
+                action: "Skapa ett gratis konto"
+            install_now: 
+                title: "Installera appen nu"
+                body: "Bibelappen är helt gratis utan annonsering och utan köp i appen. Den har installerats på så här många olika enheter (så långt):"
+                action: "Ladda ner den kostnadsfria Bibelappen"
+            free_plans: 
+                title: "Gratis läsplaner och andakter"
+                body: "Läsplaner hjälper dig att engagera dig med Guds Ord varje dag - lite i taget."
+            browse_plans: "Bläddra igenom alla läsplaner"
+            read_listen: "Läs, lyssna, titta och dela"
+            start_now: "Börja nu"
+            votd: 
+                title: "Dagens vers"
+                highlight_bookmark: "Markera, Bokmärk eller dela denna vers"
+                subscribe: "Prenumerera på Dagens vers"
             hero: 
                 heading: "En gratis Bibel i din telefon, läsplatta och dator."
                 description: "YouVersion är en enkel, reklamfri Bibelapp som tar Guds Ord in i ditt dagliga liv."
@@ -1164,7 +1193,7 @@ sv:
             extras: "Extra:"
             translation notes: "Fotnoter"
             cross references: "Korsreferenser"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Nummer och rubriker"
     app errors: 
         404 plans explanation: "Söker du efter planen <a href='%{plan_path}' target='_self'>%{title}</a>?"
         404 contact support: "Har du problem? Kontakta vår <a href='%{support_url}' target='_self'>supportgrupp</a>."

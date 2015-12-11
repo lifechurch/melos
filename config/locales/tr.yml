@@ -102,6 +102,7 @@ tr:
         users hash verified: "Bu hesap zaten doğrulandı."
         users password change: "Yeni parolanız eski parolanızdan farklı olmalı."
         users password length: "Parolanız en az 6 karakter uzunluğunda olmalıdır."
+        users password less than minimum value 6: "Parolanız en az 6 karakter uzunluğunda olmalıdır."
         users password required: "Yeni parola girmelisiniz."
         user id users not found: "Kullanıcı adı geçerli değil."
         users username alpha numeric extra: "Kullanıcı adı yalnızca harfler, rakamlar ve tireden oluşmalıdır."
@@ -143,7 +144,7 @@ tr:
         amazon: "Android için buradan da indirebilirsiniz amazon"
         app icon: "Çocuklar için Kutsal Kitap Uygulaması'nın uygulama simgesi"
         jesus and friends: "İsa ve arkadaşları"
-        interact text: "Kutsal Kitap'ı bir de böyle kullanın ve nasıl canlandığını görün"
+        interact text: " Kutsal Kitap’ı bir de böyle okuyun ve nasıl canlandığını görün."
         story text 1: "Aden bahçesi"
         story text 2: "İlk Noel"
         story text 3: "Yusuf, Meryem ve bebek İsa yemliğin başında"
@@ -152,7 +153,7 @@ tr:
         feature 1: "Çocuklarınız için ücretsiz Kutsal Kitap deneyimi"
         feature 2: "Akıllı telefonlar ve tabletler için hazırlanan animasyonlu hikayeler"
         feature 3: "Rengarenk çizimler, katılım sağlayan animasyonlar"
-        feature 4: "Öğrenmeyi ve hatırlamayı pekiştiren oyunlar ve aktiviteler"
+        feature 4: " Öğrendiklerini hatırlamayı pekiştirecek oyunlar ve aktiviteler"
         feature 5: "Çocukların kullanımına uygun"
         share: 
             tell friends: "Çocuklar için Kutsal Kitap Uygulaması'nı Arkadaşlarınıza da Önerin"
@@ -160,14 +161,14 @@ tr:
             facebook description: "Çocuklar için Kutsal Kitap Uygulaması burada! İOS ve Android için ücretsiz uygulamayı buradan indirebilirsiniz. Katılıma imkan veren Kutsal Kitap hikayeleri, çocuğunuzun öğrenim, oyun ve Tanrı'nın sözünde gelişim yetilerine yardımcıdır. www.bible.com/cocuk"
             facebook link: "http://www.bible.com/cocuk"
             facebook redirect: "http://www.bible.com/cocuk"
-            twitter description: "@YouVersion'dan Çocuklar için Kutsal Kitap Uygulaması başladı! Eğlenceli ve tümüyle ücretsiz. İndirme için: bible.com/cocuk"
-            twitter hashtags: "cocuklarakutsalkitap"
+            twitter description: "@YouVersion Çocuklar için Kutsal Kitap Uygulaması başladı! Eğlenceli ve tümüyle ücretsiz.İndirme için:bible.com/cocuk"
+            twitter hashtags: "kutsalöyküler"
             email: "e-posta"
             email subject: "Çocuklar için Kutsal Kitap burada!"
             email body: "Size harika bir haberimiz var: Çocuklar için Kutsal Kitap Uygulaması hazır! Tamamı ücretsiz ve iPhone, iPad, iPod touch ve Android cihazlarda kullanıma uygun. Uygulama, sürekli geliştirilen, çocukların Kutsal Kitap'ta anlatılan önemli olayları öğrenmesine mükemmel şekilde yardımcı olan, dokunarak aktif katılım sağlayan animasyonlarla ve öğretici aktivitelerle sunulmuş Kutsal Kitap hikayeleriyle dolu. Uygulamayı hemen indirmek için mobil cihazınızda bible.com/cocuk web sayfasını açın."
         partner: 
             youversion: "YouVersion: En çok tercih edilen Kutsal Kitap Uygulaması"
-            in partnership: "ve ortak katkı sağlayan"
+            in partnership: "aracılığıyla"
             one hope: "One Hope: Çocuklar için olağandışı bir Kutsal Kitap içeriği sunucusu"
         links: 
             apple: "https://itunes.apple.com/tr/app/bible-for-kids/id668692393?ls=1&mt=8"
@@ -243,6 +244,7 @@ tr:
     reader: "Okuyucu"
     lifechurch short url: "Life.Church"
     about: "Hakkında"
+    blog: "Blog"
     versions link: "Tercümeler"
     jobs: "Çalışma İmkânları"
     privacy policy: "Gizlilik Politikası"
@@ -315,6 +317,9 @@ tr:
         likes count 2 more: "%{likes_count} daha"
         likes count 3 or more: "%{likes_count} daha"
         users like this: "%{last_liker_link} ve%{more_link} kişi bunu beğendi"
+        like: "Beğen"
+        likes: "Beğendiklerim"
+        more than one like: 
         vod: 
             title: "Günün ayeti"
             get daily email: "Günlük bildirim almak için e-posta üyeliği"
@@ -1120,6 +1125,30 @@ tr:
             explanation: "Altyapımızda bir hata oldu. Sayfayı yeniden yüklemeyi deneyebilirsiniz. Bu aksaklıktan dolayı özür dileriz."
             our action: "Sorun bize bildirildi ve onu olabildiğince kadar çabuk çözmeye çabalıyoruz."
         home: 
+            heading: "Get a free Bible for your phone, tablet, and computer."
+            cta: "Read the Bible Now"
+            experience: 
+                title: "Experience it anywhere"
+                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                action: "View Bible Versions"
+            make_yours: 
+                title: "Make it your Bible"
+                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+                action: "Create Your Free Account"
+            install_now: 
+                title: "Install the App Now"
+                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                action: "Ücretsiz Kutsal Kitap Uygulaması'nı İndirin"
+            free_plans: 
+                title: "Free Reading Plans and Devotionals"
+                body: "Bible Plans help you engage with God's Word every day, a little at a time."
+            browse_plans: "Browse All Plans"
+            read_listen: "Read, Listen, Watch, Share"
+            start_now: "Start Now"
+            votd: 
+                title: "Günün Ayeti"
+                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                subscribe: "Subscribe to the Verse of the Day"
             hero: 
                 heading: "Cep telefonunuz, tabletiniz ve bilgisayarınız için ücretsiz bir Kutsal Kitap."
                 description: "YouVersion Tanrı'nın Sözünü hayatınızn bir parçası haline getiren basit, reklamsız Kutsal Kitap yazılımıdır."

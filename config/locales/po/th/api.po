@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-04 09:53-0609\n"
-"PO-Revision-Date: 2015-08-04 09:53-0609\n"
+"POT-Creation-Date: 2015-11-30 10:18-0600\n"
+"PO-Revision-Date: 2015-11-30 10:18-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: th <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "ฟื้นฟูความเชื่อของคุณด้วยแผนการอ่านใหม่ๆ"
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "พบสติปัญญาในพระวจนะของพระเจ้าทุกวัน"
+msgstr "แสวงหาพระเจ้าในพระวจนะของพระองค์ทุกวัน"
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "เตรียมหัวใจของคุณสำหรับฤดูกาลนี้"
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "ลองหาแผนการอ่านสำหรับคุณในเดือนกุมภาพันธ์ดูสิ!"
+msgstr "พบกับความรักของพระเจ้าในพระวจนะของพระองค์"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "ปีที่ดีที่สุดของคุณกำลังจะเริ่มต้นตอนนี้"
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "ใช้เวลากับพระคำของพระเจ้าเพื่อรับเสรีภาพของพระองค์"
+msgstr "ฉลองเสรีภาพในพระคริสต์"
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "ค้นหาจังหวะชีวิตของคุณผ่านพระวจนะของพระเจ้า"
+msgstr "แสวงหาพระเจ้าในพระวจนะของพระองค์"
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "ค้นหาความหวังและถูกสร้างใหม่ในเดือนมีนาคม"
+msgstr "พบความหวังและการรื้อฟื้นในพระวจนะของพระเจ้า"
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "ตั้งใจที่จะแสวงหาพระเจ้าผ่านพระคำของพระองค์"
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "ตั้งใจอ่านพระคัมภีร์รายวันในปี 2015 แผนการอ่านช่วยได้ !"
+msgstr "ถวายตัวในทุกๆ วันต่อพระคำของพระองค์"
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "ค้นพบความขอบคุณในพระสัญญาของพระเจ้า"
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "พระวจนะพระเจ้ายังมีชีวิตอยู่ ให้พระคำของพระเจ้าพูดกับคุณทุกวัน"
+msgstr "พระปัญญาพระเจ้าจะเริ่มต้นจากพระวจนะของพระเจ้า"
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "พระวจนะคำของพระเจ้าทำให้ทุกอย่างเป็นสิ่งใหม่"

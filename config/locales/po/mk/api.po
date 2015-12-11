@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-11 11:23-0609\n"
-"PO-Revision-Date: 2015-08-11 11:23-0609\n"
+"POT-Creation-Date: 2015-12-07 09:51-0600\n"
+"PO-Revision-Date: 2015-12-07 09:51-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mk <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -73,28 +73,28 @@ msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Подготви го срцето оваа сезона."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Најди го твојот омилен план за читање на Библијата за февруари!"
+msgstr "Најди ја Божјата љубов во Неговото Слово."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Твојата најдобра година почнува сега."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Човечкиот дух трајно се ослободува преку редовното читање на Библијата."
+msgstr "Прослави ја слободата во Христа."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Креирај го дневниот ритам низ Божјото Слово."
+msgstr "Барај го Бога во Неговото Слово."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Најди надеж и обнова во мартовските планови."
+msgstr "Најди надеж и обнова во Божјото Слово"
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Посвети дел од твоето секојдневие во читање на Божјото Слово."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Читај ја Библијата секојдневно во 2015. Плановите помагаат!"
+msgstr "Посвети се секојдневно на Божјото Слово."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Откриј благодарност во Божјите ветувања."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Овој Збор е жив. Нека те исполнува секој ден."
+msgstr "Божјата мудрост почнува со Божјото Слово."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Божјото Слово препораѓа сè."

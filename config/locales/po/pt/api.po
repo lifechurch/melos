@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-30 10:18-0600\n"
+"PO-Revision-Date: 2015-11-30 10:18-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pt <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Refresque sua fé com novos Planos."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Ache sabedoria na Palavra de Deus diariamente."
+msgstr "Busque a Deus em Sua Palavra todo dia."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Prepare seu coração para essa ocasião."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Encontre seu plano de Leitura da Bíblia favorito para Fevereiro!"
+msgstr "Encontre o amor de Deus em Sua Palavra."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Seu melhor ano de todos começa agora."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Tempo Diário na Palavra de Deus produz  liberdade duradoura."
+msgstr "Celebre a liberdade em Cristo."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Encontre seu ritmo através de um tempo diário na Palavra de Deus. "
+msgstr "Busque a Deus em Sua Palavra."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Encontre esperança e renovação nos Planos de Março."
+msgstr "Encontre esperança e renovação na Palavra de Deus."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Dedique-se diariamente para buscar a Deus em Sua Palavra."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Leia a Bíblia diariamente em 2015. Planos ajudam!"
+msgstr "Dedique-se diariamente a Sua Palavra."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Encontre gratidão nas promessas de Deus."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Essa Palavra é viva. Deixe ela falar com você diariamente."
+msgstr "Sabedoria divina começa na Palavra de Deus."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "A Palavra de Deus torna tudo novo."

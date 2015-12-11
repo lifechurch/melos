@@ -113,6 +113,7 @@ ro:
         users hash verified: "Contul acesta a fost deja verificat."
         users password change: "Parola nouă trebuie să fie diferită de cea veche."
         users password length: "Parola trebuie să conțină cel puțin 6 caractere."
+        users password less than minimum value 6: "Parola trebuie să conțină cel puțin 6 caractere."
         users password required: "Trebuie să introduci o parolă."
         user id users not found: "Numele de utilizator este invalid."
         users username alpha numeric extra: "Numele de utilizator trebuie să conțină litere, numere sau cratime."
@@ -123,13 +124,13 @@ ro:
         users first name required: "Trebuie să introduci un prenume."
         users last name required: "Trebuie să introduci un nume."
         moments content required: "Conținutul nu poate fi necompletat."
-        users auth password required: "You must enter a password."
+        users auth password required: "Trebuie să introduci o parolă."
     meta: 
         best kids app: "Cea mai bună aplicație pentru copii!"
         best educational app: "Cea mai bună aplicație educațională"
         kids_app: 
-            title: "The Bible App for Kids"
-            description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+            title: "Aplicația Biblia pentru copii"
+            description: "Aplicația Biblia pentru Copii este o modalitate foarte bună pentru copiii tăi, ca să învețe povestiri biblice despre Isus, darul vieții veșnice, și multele lecții pe care ni le dă Dumnezeu. În această experiență interactivă, copiii se implică direct în Cuvântul lui Dumnezeu cu imagini încântătoare, în timp ce câștigă puncte pentru citit și colecționează comori."
         100million: 
             title: "Începe cu 100 de milioane"
             description: "Aplicația Biblia a fost instalată de aproape 100 milioane de ori - un adevărat moment de referință! Dar acesta e doar începutul. Descarcă azi Aplicația Biblia gratuită și apoi împărtășește-o cu prietenii. Să facem istorie împreună."
@@ -167,13 +168,13 @@ ro:
         feature 5: "Kid-friendly navigation"
         share: 
             tell friends: "Tell your friends about the Bible App for Kids."
-            facebook name: "The Bible App for Kids"
+            facebook name: "Aplicația Biblia pentru copii"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
             twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
             twitter hashtags: "kidsbible"
-            email: "Email"
+            email: "E-mail"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
         partner: 
@@ -254,6 +255,7 @@ ro:
     reader: "Cititor"
     lifechurch short url: "Life.Church"
     about: "Despre"
+    blog: "Blog"
     versions link: "Versiuni"
     jobs: "Angajări"
     privacy policy: "Politica de confidențialitate"
@@ -326,6 +328,9 @@ ro:
         likes count 2 more: "%{likes_count} în plus"
         likes count 3 or more: "%{likes_count} în plus"
         users like this: "%{last_liker_link} și %{more_link} apreciază aceasta"
+        like: "Apreciez"
+        likes: "Aprecieri"
+        more than one like: 
         vod: 
             title: "Versetul zilei"
             get daily email: "Primește e-mail zilnic"
@@ -826,7 +831,7 @@ ro:
         title: "Planuri de citire"
         meta title: "Studiu Biblic online, planuri deviționale și de citire"
         browse by category: "Răsfoiește după categorie"
-        subcategory: "Sub-category"
+        subcategory: "Subcategorie"
         browse plans: "Răsfoiește %{category}"
         swap list localization: "(<a href='%{swap_link}' target='_self'>Vezi în %{swap_locale}</a>)"
         showing language filtered: "Se afișează doar planurile disponibile în %{lang_name}"
@@ -1040,9 +1045,9 @@ ro:
         banner action: "Descarcă"
         banner open: "Deschide"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Descarcă aplicația Biblia pentru Copii"
+        description copy: "Aplicația Biblia pentru copii este o cale minunată pentru copiii tăi de a învăța istorioare despre Isus."
+        download: "Descarcă acum"
     about page: 
         relevancy: "Relevanță"
         relevancy copy: "În generațiile anterioare, accesul oamenilor la Biblie era foarte limitat. Astăzi lucrurile stau altfel. Totuși, mulți oameni care au acces la Biblie cred că mesajul ei nu se aplică pentru viața lor. În același timp, sunt alții care cred că există o legătură între Biblie și experiența lor de zi cu zi."
@@ -1133,6 +1138,30 @@ ro:
             explanation: "Ceva nu a mers cum trebuie! Încearcă din nou reîncărcând pagina; ne pare rău de inconveniente!"
             our action: "Am fost înștiințați; vom rezolva cât mai curând."
         home: 
+            heading: "Get a free Bible for your phone, tablet, and computer."
+            cta: "Read the Bible Now"
+            experience: 
+                title: "Experience it anywhere"
+                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                action: "View Bible Versions"
+            make_yours: 
+                title: "Make it your Bible"
+                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+                action: "Create Your Free Account"
+            install_now: 
+                title: "Install the App Now"
+                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                action: "Descarcă gratuit aplicația Biblia"
+            free_plans: 
+                title: "Free Reading Plans and Devotionals"
+                body: "Bible Plans help you engage with God's Word every day, a little at a time."
+            browse_plans: "Browse All Plans"
+            read_listen: "Read, Listen, Watch, Share"
+            start_now: "Start Now"
+            votd: 
+                title: "Versetul zilei"
+                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                subscribe: "Subscribe to the Verse of the Day"
             hero: 
                 heading: "Biblia – gratuit pe telefon, tabletă și computer."
                 description: "Biblia de la YouVersion este o aplicație simplă, fără reclame, care îți aduce Cuvântul lui Dumnezeu în viața de zi cu zi."
@@ -1177,7 +1206,7 @@ ro:
             extras: "Extras:"
             translation notes: "Note de subsol"
             cross references: "Trimiteri la alte referințe"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Numere și titluri"
     app errors: 
         404 plans explanation: "Cauți planul <a href='%{plan_path}' target='_self'>%{title}</a>?"
         404 contact support: "Întâmpini probleme? Contactează <a href='%{support_url}' target='_self'>echipa noastră de asistență</a>."
