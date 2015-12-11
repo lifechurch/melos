@@ -5,6 +5,18 @@
   = @title
 
 
+
+
+.row
+  .columns.large-3.medium-5
+    %form{action: search_path(category: 'users'), method: "GET"}
+      .row.medium-collapse.postfix-radius
+        .columns.small-7
+          %input{type: 'search', name:"q", placeholder: t("friendships.search by name")}
+        .columns.small-5
+          %input.postfix.solid-button.green{type: 'submit', value: "#{t('friendships.find friends title')}"}
+
+
 - if current_user_is? @user
 
   .profile-friends
