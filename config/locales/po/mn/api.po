@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-11-16 09:55-0600\n"
-"PO-Revision-Date: 2015-11-16 09:55-0600\n"
+"POT-Creation-Date: 2015-11-30 10:18-0600\n"
+"PO-Revision-Date: 2015-11-30 10:18-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: mn <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,17 +66,35 @@ msgstr "Адвент Тѳлѳвлѳгѳѳгѳѳр Кристмасийн Бая�
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Шинэ тѳлѳвлѳгѳѳгѳѳр итгэлээ шинэжлэх уу."
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Өдөр бүр Түүний Үгэн дотор Бурханыг Хай."
+
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Энэхүү үед зориулж өөрийнхөө зүрх сэтгэлийг бэлтгэ."
 
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Түүний Үгэн дотроос Бурханы хайрыг эрж ол."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Таны хамгийн гайхалтай жил чинь яг одоо эхэлж байгаа."
+
 msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "Христ дотор Эрх чөлөөг Мэдэр."
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Түүний Үгнээс Бурханыг эрж хай."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Бурханы Үгэн дотроос итгэл найдвар ба шинэчлэлтийг олж ав."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
 msgstr "Өдөр бүр Түүний Үгэнд өөрийгөө зориул."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Эзэнний амлалтуудаас талархалтай байдлыг олж нээ."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Бурханлаг мэргэн ухаан Бурханы Үгэн дотроос эхлэдэг."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Бурханы Үг бүхнийг шинэчилдэг."

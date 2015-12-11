@@ -124,6 +124,7 @@ ru:
         users hash verified: "Ваш аккаунт уже был подтверждён."
         users password change: "Ваш новый пароль должен отличаться от старого."
         users password length: "Пароль должен содержать не менее 6 символов."
+        users password less than minimum value 6: "Пароль должен содержать не менее 6 символов."
         users password required: "Необходимо ввести пароль."
         user id users not found: "Неправильное имя пользователя."
         users username alpha numeric extra: "Имя пользователя может содержать буквы, цифры или дефис."
@@ -134,7 +135,7 @@ ru:
         users first name required: "Необходимо ввести имя."
         users last name required: "Необходимо ввести фамилию."
         moments content required: "Введите текст"
-        users auth password required: "You must enter a password."
+        users auth password required: "Необходимо ввести пароль."
     meta: 
         best kids app: "Лучшее приложение для детей!"
         best educational app: "Лучшее обучающее приложение"
@@ -265,6 +266,7 @@ ru:
     reader: "Окно чтения"
     lifechurch short url: "Life.Church"
     about: "О нас"
+    blog: "Блог"
     versions link: "Переводы"
     jobs: "Вакансии"
     privacy policy: "Политика конфиденциальности"
@@ -306,7 +308,7 @@ ru:
     friends: "Друзья"
     groups: "Группы"
     mobile: "Мобильные приложения"
-    live: "Live"
+    live: "События"
     first page: "Первая страница"
     last page: "Последняя страница"
     invalid username or password: "Неверное имя пользователя или пароль."
@@ -337,6 +339,9 @@ ru:
         likes count 2 more: "%{likes_count} еще"
         likes count 3 or more: "%{likes_count} еще"
         users like this: "%{last_liker_link} и %{more_link} нравится это"
+        like: "Мне нравится"
+        likes: "Понравившееся"
+        more than one like: 
         vod: 
             title: "Стих дня"
             get daily email: "Получать ежедневное электронное письмо"
@@ -839,7 +844,7 @@ ru:
         title: "Планы чтения"
         meta title: "Изучение Библии онлайн, молитвы и планы чтения Библии."
         browse by category: "Поиск по категориям"
-        subcategory: "Sub-category"
+        subcategory: "Подкатегория"
         browse plans: "Просмотреть планы: %{category}"
         swap list localization: "(<a href='%{swap_link}' target='_self'>Просмотреть в %{swap_locale}</a>)"
         showing language filtered: "Показывать только планы на языке: %{lang_name}"
@@ -1146,6 +1151,30 @@ ru:
             explanation: "Что-то пошло не так на сервере! Попробуйте обновить страницу и примите наши извинения за доставленные неудобства!"
             our action: "Мы получили уведомление об этой ошибке и займёмся её решением как можно скорее."
         home: 
+            heading: "Получите бесплатную Библию для вашего телефона, планшета и компьютера."
+            cta: "Читать Библию сейчас."
+            experience: 
+                title: "Используйте его везде"
+                body: "Выбирайте из более чем 1200 переводов Библии на более чем 900 языках на вашем компьютере, телефоне или планшете, где также доступно прослушивание аудио Библии."
+                action: "Увидеть переводы Библии."
+            make_yours: 
+                title: "Пусть это будет ваша Библия"
+                body: "Ставьте закладки и выделяйте маркером ваши любимые стихи, создавайте фото-стихи, которыми вы можете делиться, а также оставляйте общественные или личные заметки к отрывкам из Библии."
+                action: "Создать бесплатную учетную запись."
+            install_now: 
+                title: "Установите приложение сейчас"
+                body: "Приложение Библия является совершенно бесплатным, там нет рекламы и ничего в нем не продается. Оно было установлено на многих уникальных устройствах (на сегодняшний момент):"
+                action: "Загрузить бесплатное приложение Библия"
+            free_plans: 
+                title: "Бесплатные планы чтения Библии и наставления."
+                body: "Планы чтения помогут вам быть вовлечёнными в Слово Божье понемногу каждый день."
+            browse_plans: "Просмотреть все планы."
+            read_listen: "Читайте, слушайте, смотрите или делитесь."
+            start_now: "Начать сейчас"
+            votd: 
+                title: "Стих дня"
+                highlight_bookmark: "Выделить маркером, поставить закладку или поделиться этим стихом."
+                subscribe: "Подписаться на стих дня."
             hero: 
                 heading: "Бесплатная Библия на вашем мобильном устройстве и ПК."
                 description: "YouVersion — бесплатный онлайн сервис, который делает Слово Божие частью вашей повседневной жизни."
@@ -1190,7 +1219,7 @@ ru:
             extras: "Дополнительно:"
             translation notes: "Сноски"
             cross references: "Перекрёстные ссылки"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Числа и Заголовки"
     app errors: 
         404 plans explanation: "Возможно, вы ищете план чтения <a href='%{plan_path}' target='_self'>%{title}</a>?"
         404 contact support: "Возникли проблемы? Напишите в нашу <a href='%{support_url}' target='_self'>службу поддержки</a>."

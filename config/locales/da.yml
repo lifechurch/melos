@@ -102,6 +102,7 @@ da:
         users hash verified: "Denne konto er allerede blevet godkendt."
         users password change: "Dit nye password skal være forskelligt fra det gamle password."
         users password length: "Dit kodeord skal være mindst 6 bogstaver."
+        users password less than minimum value 6: "Dit kodeord skal være mindst 6 bogstaver."
         users password required: "Du skal indtaste et password."
         user id users not found: "Brugernavn er ugyldigt."
         users username alpha numeric extra: "Brugernavnet skal være bogstaver, numre eller streger."
@@ -112,7 +113,7 @@ da:
         users first name required: "Indtast et fornavn"
         users last name required: "Du skal indtaste efternavnet"
         moments content required: "Indhold må ikke være tomt."
-        users auth password required: "You must enter a password."
+        users auth password required: "Du skal indtaste et password."
     meta: 
         best kids app: "Bedste Børne App!"
         best educational app: "Bedste Uddannelses App"
@@ -243,6 +244,7 @@ da:
     reader: "Læser"
     lifechurch short url: "Life.Church"
     about: "Om"
+    blog: "Blog"
     versions link: "Versioner"
     jobs: "Job"
     privacy policy: "Privatlivs politik"
@@ -315,6 +317,9 @@ da:
         likes count 2 more: "%{likes_count} mere"
         likes count 3 or more: "%{likes_count} mere"
         users like this: "%{last_liker_link} og %{more_link} synes om dette"
+        like: "Synes om"
+        likes: "Synes Om"
+        more than one like: 
         vod: 
             title: "Dagens vers"
             get daily email: "Få daglig email"
@@ -813,7 +818,7 @@ da:
         title: "Bibellæseplaner"
         meta title: "Online Bibelstudie, vejledninger og læseplaner"
         browse by category: "Kig via kategori"
-        subcategory: "Sub-category"
+        subcategory: "Underkategori"
         browse plans: "Kig %{category} planer"
         swap list localization: "(<a href='%{swap_link}' target='_self'>Se i %{swap_locale}</a>)"
         showing language filtered: "Vis kun planer tilgængelige i %{lang_name}"
@@ -1120,6 +1125,30 @@ da:
             explanation: "Noget gik galt bag kulisserne! Du kan prøve igen ved at genindlæse siden,  vi beklager ulejligheden!"
             our action: "Vi er blevet underrettet om dette, og vil gå i gang med det så hurtigt som muligt."
         home: 
+            heading: "Få en gratis bibel til din smartphone, tablet og computer."
+            cta: "Læs i Bibelen nu"
+            experience: 
+                title: "Oplev den hvor som helst"
+                body: "Vælg mellem mere end 1200 bibeludgaver i over 900 sprog på din computer, smartphone eller tablet - mange af dem tilgængelige som lydbøger."
+                action: "Se bibeludgaver"
+            make_yours: 
+                title: "Gør det til din egen Bibel"
+                body: "Marker eller bogmærk dine favoritbibelvers, lav billeder med versene som du kan dele og tilføj offentlige eller private noter til bibeluddrag."
+                action: "Start din egen gratis konto"
+            install_now: 
+                title: "Installer app'en nu"
+                body: "Bibel app'en er fuldstændig gratis og uden reklamer og in-app køb. Så mange unikke enheder er den er blevet installeret på (indtil nu):"
+                action: "Hent den gratis Bible App"
+            free_plans: 
+                title: "Gratis bibellæseplaner og andagter"
+                body: "Bibellæseplaner hjælper dig med at engagere dig i Guds ord hver dag, en lille smule ad gangen."
+            browse_plans: "Gennemse alle planer"
+            read_listen: "Læs, lyt, se, del"
+            start_now: "Begynd nu"
+            votd: 
+                title: "Dagens vers"
+                highlight_bookmark: "Marker, bogmærk eller del dette vers"
+                subscribe: "Abonner på Dagens Vers"
             hero: 
                 heading: "En gratis bibel på din telefon, tablet og computer."
                 description: "YouVersion er en enkel, reklamefri Bibel, som bringer Guds ord ind i din dagligdag."
@@ -1164,7 +1193,7 @@ da:
             extras: "Ekstra:"
             translation notes: "Fodnoter"
             cross references: "Kryds referencer"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Nummer og Titel"
     app errors: 
         404 plans explanation: "Leder du efter <a href='%{plan_path}' target='_self'>%{title}</a> plan?"
         404 contact support: "Har du problemer? Kontact vores <a href='%{support_url}' target='_self'>support team</a>."
