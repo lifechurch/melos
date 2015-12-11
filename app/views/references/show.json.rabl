@@ -5,3 +5,7 @@ attributes :chapter => :reader_chapter, :version_string => :reader_version, :con
 node :reader_book do |r|
 	r.human[0, r.human.length - (r.chapter.to_s.length + 1)]
 end
+
+node :human do |r|
+    r.human
+end
