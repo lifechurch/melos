@@ -497,7 +497,9 @@ angular.module('yv.reader', [
 
         if(version) {
             toParams.version = version;
+            //toParams.usfm = removeVersionFromUsfm(refUsfm);
         }
+
 
         if (!usfm) {
             orderedRefToUsfm($scope.orderedRefs[0].reference, true).then(function (_usfm) {

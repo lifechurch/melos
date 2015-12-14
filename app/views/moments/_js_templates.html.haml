@@ -93,7 +93,7 @@
   %div
     %p.binding{"ng-bind-html" => "verseContent"}
     %p.binding.ng-hide{"ng-show" => "verseHumanRef"}
-      %a.solid-button.green{"ng-bind" => "verseHumanRef", "ng-href" => "{{getVerseUrl(data.object.references[0].usfm, data.object.references[0].version_id)}}", "target" => "_self"}
+      %a.solid-button.green{"ng-bind" => "verseHumanRef", "ng-href" => "{{getVerseUrl(usfm, data.object.references[0].version_id)}}", "target" => "_self"}
 -#
 -# Highlight Moment
 -#
@@ -101,7 +101,7 @@
   %div
     %p.binding{"ng-bind-html" => "verseContent"}
     %p.binding.ng-hide{"ng-show" => "verseHumanRef"}
-      %a.solid-button.green{"ng-bind" => "verseHumanRef", "ng-href" => "{{getVerseUrl(data.object.references[0].usfm, data.object.references[0].version_id)}}", "target" => "_self"}
+      %a.solid-button.green{"ng-bind" => "verseHumanRef", "ng-href" => "{{getVerseUrl(usfm, data.object.references[0].version_id)}}", "target" => "_self"}
 
 -#
 -# VOTD Moment
@@ -110,7 +110,7 @@
   %div
     %p.binding{"ng-bind-html" => "verseContent"}
     %p.binding.ng-hide{"ng-show" => "verseHumanRef"}
-      %a.solid-button.green{"ng-bind" => "verseHumanRef", "ng-href" => "{{getVerseUrl(data.object.references[0], data.object.recent_versions[0].id)}}", "target" => "_self"}
+      %a.solid-button.green{"ng-bind" => "verseHumanRef", "ng-href" => "{{getVerseUrl(usfm, data.object.recent_versions[0].id)}}", "target" => "_self"}
 
 
 -#
