@@ -1,6 +1,6 @@
 angular.module('reader.verseNumbersAndTitles', [])
 
-    .directive('label', [ function(FootnoteCounter) {
+    .directive('label', [ 'FootnoteCounter', function(FootnoteCounter) {
         return {
             restrict: 'C',
             require: '^^reader',

@@ -1204,7 +1204,7 @@ en:
     408 explanation:                            "We've been alerted and will address any persistent issues as quickly as possible. Let's see if we can get you back to your Bible reading!"
     try again:                                  "Try Again"
   versions:
-    filter:                                     "Filter Versions..."
+    filter:                                     "Start typing Version name (or Language)..."
     see all:                                    "See All Versions..."
     courtesy of:                                "%{abbreviation} brought to you by %{publisher}"
     learn more:                                 "Learn More"

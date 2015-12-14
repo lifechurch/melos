@@ -8,7 +8,7 @@ angular.module('common.branchMobileBanner', [])
                 bannerAction: '@',
                 bannerOpen: '@'
             },
-            controller: function($scope) {
+            controller: [ '$scope', function($scope) {
                 angular.element(document).ready(function() {
                     if (Foundation.utils.is_small_only()) {
                         b = new Branch();
@@ -16,7 +16,7 @@ angular.module('common.branchMobileBanner', [])
                         b.banner(options);
                     }
                 });
-            }
+            }]
         };
     })
 ;

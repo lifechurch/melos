@@ -343,7 +343,7 @@ GEM
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
     ruby-prof (0.15.8)
-    sass (3.4.16)
+    sass (3.4.2)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -467,6 +467,7 @@ DEPENDENCIES
   rspec-cells
   rspec-rails
   ruby-prof
+  sass (= 3.4.2)
   sass-rails
   sentry-raven (~> 0.12.2)
   simplecov
