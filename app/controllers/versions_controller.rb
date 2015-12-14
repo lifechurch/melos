@@ -27,7 +27,7 @@ class VersionsController < ApplicationController
   def show
     respond_to do |format|
       format.json {
-        @version = Version.get("bible/version", {id: params[:id] })
+        @version = Version.get("bible/version", {id: params[:id], cache_for: YV::Caching.a_very_long_time })
         return render json: @version
       }
 

@@ -64,8 +64,8 @@ YouversionWeb::Application.configure do
   # Set the log level from the environment variable.  (ex. info, debug, warn)
   config.log_level = ENV['LOG_LEVEL'].nil? ? :debug : ENV['LOG_LEVEL'].to_sym
 
-  # To enable JS export
-  config.middleware.use I18n::JS::Middleware
+  # To enable JS export [ no longer used in bible redesign branch]
+  # config.middleware.use I18n::JS::Middleware
 
   config.action_dispatch.rack_cache =  nil
 end
