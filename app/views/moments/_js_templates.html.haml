@@ -117,7 +117,15 @@
 -# Friendship Moment
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment-friendship.tpl.html'}
-  %img.friend-image{"ng-src" => "{{data.object.friend_avatar}}"}
+  %div
+    %img.friend-image{"ng-src" => "{{data.object.friend_avatar}}"}
+    %div.text-center.pad-row-top
+      %a.solid-button.green{"ng-disabled" => "working", "ng-click" => "offerFriendship(data.object.friendship_offer_path, '#{form_authenticity_token}')", "ng-show" => "data.object.friendship_offer_path && !offeredFriendship && !working"}
+        =t('moments.action.add friend button')
+      %span{"ng-show" => "offeredFriendship"}
+        =t('friendships.offer success')
+      %span{"ng-show" => "offerError"}
+        =t('friendships.offer failure')
 
 -#
 -# Image Moment
