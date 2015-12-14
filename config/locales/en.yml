@@ -852,7 +852,7 @@ en:
     subscribe to plan:                          "Start This Plan"
     previous day:                               "PREV DAY"
     next day:                                   "NEXT DAY"
-    previous:                                   "Previous  "
+    previous:                                   "Previous"
     next:                                       "Next"
     finish:                                     "Finish"
     reading completed _ mark and show next:     "Next: %{next_reference}"
