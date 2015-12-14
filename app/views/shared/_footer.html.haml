@@ -1,6 +1,6 @@
 = cache "#{@site}_footer_#{current_locale}", expires_in: YV::Caching.a_long_time do
   #site-footer
-    %img.footer-logo{ src: asset_path("yv-logo.svg") }
+    %img.footer-logo{ src: image_path("yv-logo.svg") }
     .row
       .large-2.medium-3.large-offset-2.columns
         %ul.side-nav
