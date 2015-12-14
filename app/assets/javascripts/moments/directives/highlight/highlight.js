@@ -15,9 +15,9 @@ angular.module('yv.moments.highlight', [])
 		templateUrl: '/moment-highlight.tpl.html',
 		controller: [ "$scope", "Bible", "$timeout", function($scope, Bible, $timeout) {
 			$timeout(function() {
-				var usfm = $scope.data.object.references[0].usfm;
+				$scope.usfm = Bible.fixVerseRange($scope.data.object.references[0].usfm);
 				var version = $scope.data.object.references[0].version_id;
-				Bible.getVerse(usfm, version).success(function(verse) {
+				Bible.getVerse($scope.usfm, version).success(function(verse) {
 					$scope.verseContent = verse.reader_html;
                     $scope.verseHumanRef = verse.human;
 				}).error(function(err) {
