@@ -37,7 +37,7 @@ http {
       passenger_env_var NEW_RELIC_LICENSE_KEY 148b7b0a47e0219bd1117c19b692c94c779cdf33;
       passenger_env_var NEW_RELIC_APP_NAME bible.com;
       passenger_env_var NEW_RELIC_LOG_LEVEL info;
-      passenger_env_var MEMCACHE_SERVERS 10.36.123.78:11211,10.36.123.109:11211;
+      passenger_env_var MEMCACHE_SERVERS 10.36.123.108:11211;
       passenger_env_var LOG_LEVEL warn;
       passenger_env_var TREADSTONE_SECRET 6Ag54rcIa7pS3DRs6jkzVRtceSUuGaqfU2Lxi57bZDozpTVcIYVZeRCXpmzmdJw;
 
