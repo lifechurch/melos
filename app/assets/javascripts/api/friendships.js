@@ -11,6 +11,10 @@ angular.module('api.friendships', [])
                 return RailsHttp.post('/friendships?user_id=' + id, 'friendship', token, null);
             },
 
+            offer: function(path, token) {
+                return RailsHttp.post(path, 'friendship', token, null);
+            },
+
             deny: function(id, token) {
                 return RailsHttp.delete('/friendships?user_id=' + id, token);
             }
