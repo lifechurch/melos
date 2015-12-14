@@ -3,7 +3,7 @@ angular.module('api.friendships', [])
     .factory('Friendships', ['RailsHttp', function(RailsHttp) {
         return {
             get: function() {
-                var url = "/friendships/requests.json";
+                var url = "/friendships/requests";
                 return RailsHttp.get( url, false);
             },
 
