@@ -3,7 +3,7 @@ angular.module('yv.moments.planCarousel', [])
     .directive('momentPlanCarousel', function() {
         return {
             restrict: 'AC',
-            controller: function($element, $scope, $timeout) {
+            controller: ["$element", "$scope", "$timeout", function($element, $scope, $timeout) {
                 var plans = [];
                 $element.addClass('featured-rp-box');
                 $element.slick({
@@ -42,7 +42,7 @@ angular.module('yv.moments.planCarousel', [])
                         stopWatching();
                     }
                 });
-            }
+            }]
         };
     })
 

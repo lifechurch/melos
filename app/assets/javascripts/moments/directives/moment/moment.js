@@ -25,7 +25,7 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 			socialEnabled: '='
 		},
 		templateUrl: '/moment.tpl.html',
-		controller: function($scope, Like, Comment, $state, $mdMenu, /* Authentication,*/ $element, $timeout, $stateParams, $state, $window) {
+		controller: ["$scope", "Like", "Comment", "$state", "$mdMenu", "$element", "$timeout", "$stateParams", "$state", "$window", function($scope, Like, Comment, $state, $mdMenu, $element, $timeout, $stateParams, $state, $window) {
 			$scope.newComment = {};
 
             $scope.getVerseUrl = function(usfm, version) {
@@ -134,7 +134,7 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
                     $state.go("moment", { momentId: $scope.data.object.id});
                 }
             }
-		}
+		}]
 	};
 })
 ;
