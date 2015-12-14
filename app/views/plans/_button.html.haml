@@ -4,31 +4,20 @@
 .rp-subscription-info
   - if logged_in?
     -if current_user.subscribed_to?(plan)
-      .row
-        .columns.medium-12
-          = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'solid-button full green', target: "_self")
+      = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'solid-button green', target: "_self")
     - else
-      .row
-        .columns.medium-6
-          = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button full green', "ng-click" => "showSubscribeButtons = true")
-          .plan-privacy-buttons.ng-hide{"ng-show" => "showSubscribeButtons"}
-            %p.detail-text
-              = t("plans.privacy.visible to friends?")
-            - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: plan.to_param, privacy: private_bool) }              
-            .row
-              .columns.small-6
-                %a{"class" => "solid-button full blue", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', false)"}
-                  =t('ui.yes button')
-                -#= link_to(t('ui.yes button'), subscribe_private_url.call(false), class:"solid-button full blue", method: :post)
-              .columns.small-6
-                %a{"class" => "solid-button full gray", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', true)"}
-                  =t('ui.no button')
-                -#= link_to(t('ui.no button'), subscribe_private_url.call(true), class:"solid-button full gray", method: :post)
-        .columns.medium-6
-          = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button full gray', target: "_self"}
+      = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button green', "ng-click" => "showSubscribeButtons = true")
+      .plan-privacy-buttons.ng-hide{"ng-show" => "showSubscribeButtons"}
+        %p.detail-text
+          = t("plans.privacy.visible to friends?")
+        - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: plan.to_param, privacy: private_bool) }
+        %a{"class" => "solid-button blue", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', false)"}
+          =t('ui.yes button')
+        -#= link_to(t('ui.yes button'), subscribe_private_url.call(false), class:"solid-button full blue", method: :post)
+        %a{"class" => "solid-button gray", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', true)"}
+          =t('ui.no button')
+        -#= link_to(t('ui.no button'), subscribe_private_url.call(true), class:"solid-button full gray", method: :post)
+      = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}
   - else
-    .row
-      .columns.medium-6
-        = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: 'solid-button full green', target: "_self")
-      .columns.medium-6
-        = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button full gray', target: "_self"}
+    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: 'solid-button green', target: "_self")
+    = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}

@@ -26,16 +26,10 @@
       - prev_text = t("plans.previous day") # used in 3 places below
       - if day > 1
         = link_to(sample_plan_path(plan.to_param, day: (day - 1)), {class: "prev", title: prev_text }) do
-          %span.calendar-arrows
-            &nbsp;
-          %span.calendar-arrow-txt
-            = prev_text
+          = prev_text
       - else
         = link_to("#", class: "disabled prev") do
-          %span.calendar-arrows
-            &nbsp;
-          %span.calendar-arrow-txt
-            = prev_text
+          = prev_text
 
     .calendar-day
       %h4
@@ -45,22 +39,16 @@
       - next_text = t("plans.next day") # used in 3 places below
       - if day <= plan.total_days - 1
         = link_to(sample_plan_path(plan.to_param, day: (day + 1)), {class: "next", title: next_text}) do
-          %span.calendar-arrows
-            &nbsp;
-          %span.calendar-arrow-txt
-            = next_text
+          = next_text
       - else
         = link_to("#", class: "disabled next") do
-          %span.calendar-arrows
-            &nbsp;
-          %span.calendar-arrow-txt
-            = next_text
+          = next_text
 
 -# Links to scripture
 .widget.scripture-links
   %h3.hd
     = t("plans.read today")
-  %ul.menu.basic 
+  %ul.menu.basic
     - unless references.empty?
       - references.each_with_index do |ref,index|
         %li.content_target{class: (content_page == index) ? "active #{content_page}" : nil }
