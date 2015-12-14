@@ -1,7 +1,7 @@
 require 'capistrano/datadog'
 set :datadog_api_key, "f0bc018e3f69961214ea44382eb0ad52"
 
-role :web, %w{yvdep@web01-dfw.youversion.com yvdep@web02-dfw.youversion.com yvdep@web03-dfw.youversion.com}
+role :web, %w{yvdep@web03-dfw.youversion.com}
 
 set :hipchat_token, '7b1159a956abe4c9923b54fa3b5ef6'
 set :hipchat_room_name, 'YouVersion Web'
