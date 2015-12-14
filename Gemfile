@@ -20,7 +20,9 @@ gem 'haml-rails'
 gem 'hashie',                 '~> 1.2.0'
 gem 'oj'
 gem 'sentry-raven',           '~> 0.12.2'
-gem 'i18n-js',                '~> 3.0.0.rc6'
+
+# comment i18n-js for redesign branch
+# gem 'i18n-js',                '~> 3.0.0.rc6'
 #gem 'oink'
 #gem 'rack-mini-profiler'
 gem 'gabba'

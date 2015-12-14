@@ -2,8 +2,8 @@ require 'smartling'
 
 namespace :smartling do
 
-  desc "Convenience method to download from Smartling, then export JS strings"
-  task :pull => ['download', 'i18n:js:export']
+  # desc "Convenience method to download from Smartling, then export JS strings"
+  # task :pull => ['download', 'i18n:js:export']
 
   desc "Download Translations from Smartling"
   task :download => :environment do
