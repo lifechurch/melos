@@ -5,6 +5,7 @@ angular.module('reader.verseAction', [])
 		restrict: 'A',
 		scope: {
 			selection: '=',
+            selectionText: '=',
 			isOpen: '=',
 			toggleSidePanel: '='
 		},
