@@ -245,6 +245,59 @@ li.profile-hdr-info-link {
 
 /* !Friends */
 
+.friends-count {
+  display: none;
+}
+
+.blank-slate-friend-requests {
+  padding: 0 0 30px;
+}
+
+.friend-search {
+  width: 500px;
+  padding: 0 0 30px;
+
+  input {
+    display: inline-block;
+    width: 39%;
+    margin: 0;
+  }
+
+  input[type="search"] {
+    width: 60%;
+    margin: 0 -5px 0 0;
+    border-right: 0;
+  }
+
+  input[type="submit"] {
+    -webkit-border-radius:  0 5px 5px 0;
+    -moz-border-radius:     0 5px 5px 0;
+    border-radius:          0 5px 5px 0;
+  }
+
+  @media #{$small-only} {
+    width: auto;
+    padding: 0 2% 30px;
+
+    input {
+      display: block;
+      width: 100%;
+    }
+
+    input[type="search"] {
+      width: 100%;
+      margin: 0 0 5px;
+      border-right: 1px solid $lightGray;
+    }
+
+    input[type="submit"] {
+      -webkit-border-radius:  5px;
+      -moz-border-radius:     5px;
+      border-radius:          5px;
+    }
+  }
+}
+
 .friend-card-list {
   overflow: hidden;
   padding: 15px 0 0;
@@ -286,15 +339,7 @@ li.profile-hdr-info-link {
 }
 
 .friend-card-status a {
-
-}
-
-.friend-card-status span {
   color: #888;
-}
-
-.friend-card-status:hover span {
-  display: none;
 }
 
 .friend-card-status:hover a {
@@ -336,6 +381,12 @@ li.profile-hdr-info-link {
 .friends-count-help {
 	font-size: $text-size;
 	display: block;
+	width: 550px;
+	padding: 0 0 15px;
+
+	@media #{$small-only} {
+	  width: auto;
+	}
 }
 
 ul.inline-list {

@@ -23,6 +23,11 @@
     .blank-slate-friend-requests
       %p= t("friendships.requests none")
 
+.friend-search
+  %form{action: search_path(category: 'users'), method: "GET"}
+    %input{type: 'search', name:"q", placeholder: t("friendships.search by name")}
+    %input.postfix.solid-button.green{type: 'submit', value: "#{t('friendships.find friends title')}"}
+
 %h1
   =t("friendships.status.friends")
 .friend-card-list
@@ -58,7 +63,7 @@
         dataType: "html",
 
         url: clicked.data("next-url"),
-        
+
         success: function (data) {
           clicked.remove();
           target.append(data);
