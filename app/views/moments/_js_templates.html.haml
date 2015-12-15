@@ -168,42 +168,29 @@
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment-subscribe-menu.tpl.html' }
   .moment-subscribe-menu
-    .row
-      .small-12.columns
-        %h3
-          =t("moments.vod.get daily email")
-        %label
-          =t("moments.vod.version")
-          %select{"ng-model" => "subscription.version_id", "ng-options" => "version.id as version.title for version in versions"}
-    .row
-      .small-12.columns
-        .row.collapse
-          .small-2.columns
-            %label
-              =t("moments.vod.time")
-              %select{"ng-model" => "subscription.hour", "ng-options" => "hour for hour in allowedHours"}
+    .subscribe-version
+      %h3
+        =t("moments.vod.get daily email")
+      %label
+        =t("moments.vod.version")
+      %select{"ng-model" => "subscription.version_id", "ng-options" => "version.id as version.title for version in versions"}
+    .subscribe-time
+      %label
+        =t("moments.vod.time")
+      %select{"ng-model" => "subscription.hour", "ng-options" => "hour for hour in allowedHours"}
+      %select{"ng-model" => "subscription.minute", "ng-options" => "minute for minute in allowedMinutes"}
+      %select{"ng-model" => "subscription.meridian", "ng-options" => "meridian for meridian in allowedMeridians"}
 
-          .small-2.columns
-            %label
-              != "&nbsp;"
-              %select{"ng-model" => "subscription.minute", "ng-options" => "minute for minute in allowedMinutes"}
-
-          .small-2.columns.end
-            %label
-              != "&nbsp;"
-              %select{"ng-model" => "subscription.meridian", "ng-options" => "meridian for meridian in allowedMeridians"}
-
-    .row
-      .small-12.columns.text-right
-        %a.solid-button.green{"ng-click" => "save(subscription, $event)"}
-          %span{"ng-if" => "!isSubscribed"}
-            = t("moments.vod.subscribe")
-          %span{"ng-if" => "isSubscribed"}
-            = t("moments.vod.update")
-        %a.solid-button.red{"href" => "#{vod_subscriptions_path}", "ng-if" => "isSubscribed", target: "_self"}
-          = t("moments.vod.unsubscribe")
-        %a{"ng-click" => "cancel()"}
-          = t("moments.action.cancel")
+    .subscribe-button
+      %a.solid-button.green{"ng-click" => "save(subscription, $event)"}
+        %span{"ng-if" => "!isSubscribed"}
+          = t("moments.vod.subscribe")
+        %span{"ng-if" => "isSubscribed"}
+          = t("moments.vod.update")
+      %a.solid-button.red{"href" => "#{vod_subscriptions_path}", "ng-if" => "isSubscribed", target: "_self"}
+        = t("moments.vod.unsubscribe")
+      %a{"ng-click" => "cancel()"}
+        = t("moments.action.cancel")
 
 
 -#
