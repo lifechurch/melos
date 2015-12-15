@@ -4,6 +4,7 @@ angular.module('yv.reader', [
 	'reader.reader',
 	'reader.verseAction',
 	'reader.highlightPanel',
+    'reader.sharePanel',
 	'reader.bookmarkPanel',
 	'reader.notePanel',
 	'reader.textSettingsPanel',
@@ -79,6 +80,7 @@ angular.module('yv.reader', [
     $scope.showNumbersAndTitles = true;
     $scope.showFootnotes = true;
 	$scope.readerSelection = [];
+    $scope.readerSelectionText = [];
 	$scope.highlights = [];
 	$scope.bookmarks = [];
 	$scope.notes = [];
@@ -140,6 +142,7 @@ angular.module('yv.reader', [
 		$scope.showReaderBooks = false;
 		$scope.showReaderChapters = false;
 		$scope.readerSelection = [];
+        $scope.readerSelectionText = [];
 		$scope.highlights = [];
 		$scope.bookmarks = [];
 		$scope.notes = [];
@@ -581,6 +584,7 @@ angular.module('yv.reader', [
 
     $scope.deselectAll = function() {
         $scope.readerSelection = [];
+        $scope.readerSelectionText = [];
         $rootScope.$broadcast("ClearVerseSelection");
     };
 
