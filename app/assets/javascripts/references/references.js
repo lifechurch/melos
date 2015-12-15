@@ -130,6 +130,7 @@ angular.module('yv.reader', [
 		$scope.showReaderHighlight = false;
 		$scope.showReaderBookmark = false;
 		$scope.showReaderNote = false;
+        $scope.showReaderShare = false;
 	}
 
 

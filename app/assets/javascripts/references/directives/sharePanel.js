@@ -76,6 +76,10 @@ angular.module('reader.sharePanel', [])
                     return [baseUrl, path].join("");
                 }
 
+                $scope.cancel = function() {
+                    $scope.toggleSidePanel('showReaderShare');
+                };
+
                 $scope.shareUrl = $location.absUrl();
 
                 $scope.$watch("selection.length", function(newVal, oldVal) {
