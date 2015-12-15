@@ -41,6 +41,13 @@
   }
 }
 
+a.icon.active {
+  @media #{$small-only} {
+    background-color: $green;
+    color: $white;
+  }
+}
+
 html[dir="rtl"] body.c_subscriptions {
   @media #{$small-only} {
     .plans-nav-box a {
@@ -200,6 +207,7 @@ img.radius {
       width: auto;
       float: none;
       overflow: hidden;
+      border-top: 1px solid $lightGray;
       border-left: 0;
       padding: 0;
 
@@ -223,7 +231,7 @@ img.radius {
 
       @media #{$small-only} {
         height: auto;
-        padding: 0 3%;
+        padding: 10px 3%;
       }
 
       img {
@@ -934,6 +942,46 @@ html[dir="rtl"] .plan-settings {
 
     &.next {
       float: $opposite-direction;
+    }
+  }
+}
+
+
+/* !All plans list views */
+
+.allplans-list-box {
+  label {
+    padding: 0 0 5px;
+  }
+
+  .highlighted a {
+    color: $black;
+  }
+
+  .breadcrumbs-item a {
+    padding: 4px 0;
+    display: block;
+  }
+
+  .breadcrumbs-item {
+    @media #{$small-only} {
+      border-bottom: 1px solid $lightGray;
+    }
+  }
+}
+
+
+/* !My plans */
+
+.c_subscriptions.a_index {
+  .resource_list {
+    @media #{$small-only} {
+      margin: 5px 0 0;
+
+      .subscription {
+        border-bottom: 1px solid $lightGray;
+        padding: 10px;
+      }
     }
   }
 }
