@@ -234,7 +234,7 @@ body.c_users {
 /*  !Search in header  */
 
 div.hdr-search {
-  float: $default-float;
+  float: $opposite-direction;
   overflow: hidden;
   margin-top: 0;
   padding: 19px;
@@ -592,7 +592,7 @@ a.icon {
   border-radius:          5px;
   display: inline-block;
   text-transform: uppercase;
-  
+
   @media #{$medium-up} {
     margin: 0 5% 0 0;
   }
