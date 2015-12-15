@@ -14,16 +14,4 @@
       = "@font-face { font-family: '#{version.attributes.font.title}'; src: url('#{version.attributes.font.url}#{version.attributes.font.name}.eot?') format('eot'), url('#{version.attributes.font.url}#{version.attributes.font.name}.woff') format('woff'), url('#{version.attributes.font.url}#{version.attributes.font.name}.ttf') format('truetype'); }"
       = ".reader { font-family: '#{version.attributes.font.title}','Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif }"
 
-
--# Preload Ruby vars into Angular module so Angular controllers
--#  will have access to this data without having to make
--#  additional XHR calls
--#- content_for :javascripts do
-
-- content_for :lower_javascript do
-  %script
-    != "angular.module('$preloaded', [])"
-    != ".constant('$notesUrl', '/bible/#{version.attributes.id}/#{reference.book}.#{reference.chapter}./notes')"
-    != ";"
-
 = render partial: 'reader', locals: {presenter: @presenter}
