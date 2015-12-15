@@ -84,7 +84,7 @@
     &nbsp;
 
   .reader-center.large-6.columns{class: controller_name == 'subscriptions' ? 'ng-hide' : '', "ng-show" => "!isPlanState || (planContentReady && showContent)", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
-    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes", "show-numbers-and-titles" => "showNumbersAndTitles"}
+    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "selection-text" => "readerSelectionText", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes", "show-numbers-and-titles" => "showNumbersAndTitles"}
       = presenter.content.html_safe if presenter.content
       -# Read Chapter button
       - if verse_view
@@ -113,7 +113,7 @@
         %div{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
         %div{'reader-bookmark-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderBookmark", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "bookmarks" => "bookmarks", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
         %div{'reader-note-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderNote", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "notes" => "notes", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
-
+        %div{'reader-share-panel' => true, "selection" => "readerSelection", "selection-text" => "readerSelectionText", "ng-show" => "showReaderShare", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
 
 - if (controller_name == 'subscriptions')
   .row.full.pad-row-top
