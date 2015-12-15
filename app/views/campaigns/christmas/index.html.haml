@@ -1,7 +1,7 @@
 - t = Proc.new do |key, options={}|
   - I18n.t(key, options.merge(:locale => @locale))
 - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
-- show_end_summary = true
+- show_end_summary = false
 
 .main.container_12
   %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=105030176203924&link=https://www.bible.com#{locale_dir}/christmas&picture=https://www.bible.com/assets/campaigns/christmas/christmas-tracker.png&name=#{t("campaigns.christmas.tracker title")}&caption=bible.com%20%20%23ChristmasTracker&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=https://www.bible.com#{locale_dir}/christmas", :target => "_blank"}
@@ -34,7 +34,7 @@
           53,951,165
       - else
         %h3
-          = t('campaigns.christmas.totals since')
+          = t('campaigns.christmas.totals since').gsub('2014', '2015')
         .chapter_requests.figure
 
   .copy
@@ -107,9 +107,13 @@
           var date_difference_seconds = Math.abs(today_date - start_date);
           var date_difference_days_not_round = (date_difference_seconds / 86400);
           var corrected_total_downloads_not_round = Math.round(start_count + (average_per_day*date_difference_days_not_round));
+          tick_format = "#{t("campaigns.christmas.chapter counter format")}";
+          if (corrected_total_downloads_not_round >= 10000000 ) {
+            tick_format = "9" + tick_format
+          }
           $("." + i).counter({
               direction: "up",
-              format: "9#{t("campaigns.christmas.chapter counter format")}",
+              format: tick_format,
               initial: addCommas(corrected_total_downloads_not_round),
               interval: single_pace
           });
@@ -124,8 +128,8 @@
 
       image.setAttribute("x", tl.x - 6);
       image.setAttribute("y", tl.y - 6);
-      image.setAttribute("width", 12);
-      image.setAttribute("height", 11);
+      image.setAttribute("width", 10);
+      image.setAttribute("height", 10);
       image.setAttribute("class", "point");
       image.setAttributeNS("http://www.w3.org/1999/xlink", "href", "/assets/campaigns/christmas/small_star.png");
       currentPoint++;
