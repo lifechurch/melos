@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-11-30 10:19-0600\n"
+"PO-Revision-Date: 2015-11-30 10:19-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ro <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Înviorează-ți credința cu planuri noi."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Găsește înțelepciune în Cuvântul lui Dumnezeu în fiecare zi."
+msgstr "Caută-L pe Dumnezeu în Cuvântul Lui în fiecare zi."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Pregătește-ți inima în perioada aceasta."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Descoperă planul tău de citire favorit pentru februarie!"
+msgstr "Găsește dragostea lui Dumnezeu în Cuvântul Său."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Cel mai bun an al tău începe acum."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Timpul petrecut zilnic în Cuvântul lui Dumnezeu aduce ca roadă libertate eternă. "
+msgstr "Celebrează libertatea în Hristos."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Află-ți propriul ritm prin timp petrecut zilnic în Cuvântul lui Dumnezeu."
+msgstr "Caută-L pe Dumnezeu în Cuvântul Lui."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Găsește speranță și noi începuturi în planurile din martie."
+msgstr "Găsește speranță și reînnoire în Cuvântul lui Dumnezeu."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Propune-ți zilnic să îl cauți pe Dumnezeu în Cuvântul Său."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Citește zilnic Biblia în 2015. Planurile te ajută!"
+msgstr "Dedică-te zilnic Cuvântului Lui."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Descoperă mulțumirea în promisiunile lui Dumnezeu."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Acest Cuvânt este viu. Lasă-L să-ți vorbească zilnic."
+msgstr "Înțelepciunea Dumnezeiască începe în Cuvântul lui Dumnezeu."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Cuvântul lui Dumnezeu face totul nou."

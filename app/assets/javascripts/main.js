@@ -24,7 +24,7 @@ angular.module('yv', [
 	$locationProvider.hashPrefix('!');
 }])
 
-.directive('ngHtmlCompile', function($compile) {
+.directive('ngHtmlCompile', ['$compile', function($compile) {
 	return {
 		restrict: 'A',
 		link: function(scope, element, attrs) {
@@ -34,7 +34,7 @@ angular.module('yv', [
 			});
 		}
 	};
-})
+}])
 
 .run(['$rootScope', '$window', '$location', '$anchorScroll', '$log', function($rootScope, $window, $location, $anchorScroll, $log) {
     $anchorScroll.yOffset = 150;

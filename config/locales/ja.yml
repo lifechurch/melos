@@ -91,6 +91,7 @@ ja:
         users hash verified: "このアカウントは確認済みです"
         users password change: "新しいパスワードは、古いパスワードとは異なるものにする必要があります。"
         users password length: "最低6文字のパスワードを設定して下さい。"
+        users password less than minimum value 6: "最低6文字のパスワードを設定して下さい。"
         users password required: "パスワードの入力が必要です。"
         user id users not found: "無効なユーザー名です。"
         users username alpha numeric extra: "ユーザ名には、文字、数字とダッシュ記号(-)のみが利用できます。"
@@ -101,7 +102,7 @@ ja:
         users first name required: "名前（名）の入力が必要です。"
         users last name required: "苗字（姓）の入力が必要です。"
         moments content required: "空欄のままでは残せません。"
-        users auth password required: "You must enter a password."
+        users auth password required: "パスワードの入力が必要です。"
     meta: 
         best kids app: "もっとも良いこども用アプリです！"
         best educational app: "学習アプリの最高峰"
@@ -232,6 +233,7 @@ ja:
     reader: "聖書リーダー"
     lifechurch short url: "Life.Church"
     about: "概要"
+    blog: "ブログ"
     versions link: "聖書訳"
     jobs: "求人"
     privacy policy: "プライバシー規約"
@@ -304,6 +306,9 @@ ja:
         likes count 2 more: "他に%{likes_count}人"
         likes count 3 or more: "他に%{likes_count}人"
         users like this: "%{last_liker_link}さんと%{more_link} がいいね！しました。"
+        like: "いいね！"
+        likes: "「いいね」と言っています"
+        more than one like: 
         vod: 
             title: "本日の聖句"
             get daily email: "毎日のEメールを受信する"
@@ -800,7 +805,7 @@ ja:
         title: "読書プラン"
         meta title: "オンラインの聖書研究、デボーションと読書プラン"
         browse by category: "カテゴリー別に閲覧する"
-        subcategory: "Sub-category"
+        subcategory: "サブカテゴリー"
         browse plans: "%{category}プランを閲覧"
         swap list localization: "(<a href='%{swap_link}' target='_self'>%{swap_locale}で表示</a>)"
         showing language filtered: "%{lang_name}で利用可能なプランのみを表示しています"
@@ -1107,6 +1112,30 @@ ja:
             explanation: "何かのエラーが発生したようです。ページをリロードしてみてください。ご迷惑をおかけして申し訳ございません。"
             our action: "こちらでも既知のエラーですので、早急に対応します。"
         home: 
+            heading: "Get a free Bible for your phone, tablet, and computer."
+            cta: "Read the Bible Now"
+            experience: 
+                title: "Experience it anywhere"
+                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                action: "View Bible Versions"
+            make_yours: 
+                title: "あなたの聖書にする"
+                body: "お気に入りの聖句に色をつけたり、印をつけたり、聖句に画像をつけて大衆や個人的にシェアできます。聖書のなかにメモを書き込むこともできます。"
+                action: "Create Your Free Account"
+            install_now: 
+                title: "Install the App Now"
+                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                action: "無料聖書アプリをダウンロード"
+            free_plans: 
+                title: "Free Reading Plans and Devotionals"
+                body: "Bible Plans help you engage with God's Word every day, a little at a time."
+            browse_plans: "Browse All Plans"
+            read_listen: "Read, Listen, Watch, Share"
+            start_now: "Start Now"
+            votd: 
+                title: "本日の聖句"
+                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                subscribe: "Subscribe to the Verse of the Day"
             hero: 
                 heading: "携帯、タブレット、PCから無料で使える聖書"
                 description: "YouVersion - シンプルで広告なしの聖書アプリ。神様の御言葉を日々の生活へお届けしています。"
@@ -1151,7 +1180,7 @@ ja:
             extras: "追加："
             translation notes: "脚注"
             cross references: "相互参照"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "数字とタイトル"
     app errors: 
         404 plans explanation: "<a href='%{plan_path}' target='_self'>%{title}</a>という読書プランをお探しですか？"
         404 contact support: "問題が発生しましたか？<a href='%{support_url}' target='_self'>サポートチーム</a>までご連絡ください。"

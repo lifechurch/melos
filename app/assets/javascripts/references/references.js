@@ -278,28 +278,34 @@ angular.module('yv.reader', [
                     finishFill();
                 }
             }
+        } else {
+            finishFill();
         }
 
         function finishFill() {
-            $scope.reader_version_id = getVersionIdFromAbbr($scope.reader_version);
+            getVersionIdFromAbbr($scope.reader_version).then(function(reader_version_id) {
+                $scope.reader_version_id = reader_version_id;
 
-            Highlights.get($scope.reader_version_id, $scope.usfm).success(function (data) {
-                $scope.highlights = data;
-            }).error(function (err) {
-                //TO-DO: Handle Error
+                if ($scope.reader_version_id && typeof $scope.reader_version_id !== 'undefined') {
+                    Highlights.get($scope.reader_version_id, $scope.usfm).success(function (data) {
+                        $scope.highlights = data;
+                    }).error(function (err) {
+                        //TO-DO: Handle Error
+                    });
+
+                    Bookmarks.get($scope.reader_version_id, $scope.usfm).success(function (data) {
+                        $scope.bookmarks = data;
+                    }).error(function (err) {
+                        //TO-DO: Handle Error
+                    });
+
+                    // Notes.get($scope.reader_version_id, $scope.usfm).success(function(data) {
+                    // 	$scope.notes = data;
+                    // }).error(function(err) {
+                    // 	//TO-DO: Handle Error
+                    // });
+                }
             });
-
-            Bookmarks.get($scope.reader_version_id, $scope.usfm).success(function (data) {
-                $scope.bookmarks = data;
-            }).error(function (err) {
-                //TO-DO: Handle Error
-            });
-
-            // Notes.get($scope.reader_version_id, $scope.usfm).success(function(data) {
-            // 	$scope.notes = data;
-            // }).error(function(err) {
-            // 	//TO-DO: Handle Error
-            // });
         }
 	}
 
@@ -497,7 +503,9 @@ angular.module('yv.reader', [
 
         if(version) {
             toParams.version = version;
+            //toParams.usfm = removeVersionFromUsfm(refUsfm);
         }
+
 
         if (!usfm) {
             orderedRefToUsfm($scope.orderedRefs[0].reference, true).then(function (_usfm) {
@@ -761,28 +769,31 @@ angular.module('yv.reader', [
     }
 
     function getVersionIdFromAbbr(abbr) {
-        if (!$scope.versions || !$scope.versions.length) {
-            loadVersions().then(function(data) {
-                return getAbbr();
-            }, function(error) {
+        return $q(function(resolve, reject) {
+            if (!$scope.versions || !$scope.versions.length) {
+                loadVersions().then(function(data) {
+                    getAbbr();
+                }, function(error) {
 
-            });
-        } else {
-            return getAbbr();
-        }
+                });
+            } else {
+                getAbbr();
+            }
 
-        function getAbbr() {
-            for (var x = 0; x < $scope.versions.length; x++) {
-                var lang = $scope.versions[x];
-                for (var y = 0; y < lang.versions.length; y++) {
-                    var v = lang.versions[y];
-                    if (v.abbr.toLowerCase() == abbr.toLowerCase()) {
-                        return v.id;
+            function getAbbr() {
+                for (var x = 0; x < $scope.versions.length; x++) {
+                    var lang = $scope.versions[x];
+                    for (var y = 0; y < lang.versions.length; y++) {
+                        var v = lang.versions[y];
+                        if (v.abbr.toLowerCase() == abbr.toLowerCase()) {
+                            resolve(v.id);
+                            break;
+                        }
                     }
                 }
+                resolve(null);
             }
-            return null;
-        }
+        });
     }
 
     function getVersionAbbrFromId(id) {
@@ -895,11 +906,15 @@ angular.module('yv.reader', [
         });
     } else {
         $timeout(function() {
-            loadVersions();
+            loadVersions().then(function(data) {
+                if ($scope.reader_book_list.length == 0) {
+                    loadBooks($scope.reader_version_id);
+                }
+            });
             if ($scope.reader_book_list.length == 0) {
                 loadBooks($scope.reader_version_id);
             }
-        }, 3000);
+        });
     }
 }])
 

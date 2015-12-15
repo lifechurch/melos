@@ -113,6 +113,7 @@ sk:
         users hash verified: "Tento účet už bol overený."
         users password change: "Vaše nové heslo musí byť odlišné od pôvodného hesla."
         users password length: "Vaše heslo musí mať aspoň 6 znakov."
+        users password less than minimum value 6: "Vaše heslo musí mať aspoň 6 znakov."
         users password required: "Musíte zadať heslo."
         user id users not found: "The username is invalid."
         users username alpha numeric extra: "Prihlasovacie meno môže obsahovať písmená, čísla a pomlčky."
@@ -123,7 +124,7 @@ sk:
         users first name required: "Musíte zadať meno."
         users last name required: "Musíte zadať priezvisko."
         moments content required: "Obsah nemôže byť prázdny."
-        users auth password required: "You must enter a password."
+        users auth password required: "Musíte zadať heslo."
     meta: 
         best kids app: "Najlepšia apka pre deti!"
         best educational app: "Najlepšia vzdelávacia apka"
@@ -254,6 +255,7 @@ sk:
     reader: "Čítanie"
     lifechurch short url: "Life.Church"
     about: "O nás"
+    blog: "Blog"
     versions link: "Preklady"
     jobs: "Kariéra"
     privacy policy: "Ochrana údajov"
@@ -326,6 +328,9 @@ sk:
         likes count 2 more: "%{likes_count} ďalší"
         likes count 3 or more: "%{likes_count} ďalší"
         users like this: "%{last_liker_link} a %{more_link} označili, že sa im to páči"
+        like: "Páči sa mi to"
+        likes: "Označenia páči sa mi to"
+        more than one like: 
         vod: 
             title: "Verš dňa"
             get daily email: "Denne dostávať email"
@@ -1133,6 +1138,30 @@ sk:
             explanation: "Pri načítavaní stránky sa niečo nepodarilo! Môžete sa pokúsiť stránku načítať znova. Ospravedlňujeme sa za nepríjemnosti!"
             our action: "Na chybu sme boli upozornení a pozrieme sa na ňu hneď, ako to bude možné."
         home: 
+            heading: "Get a free Bible for your phone, tablet, and computer."
+            cta: "Read the Bible Now"
+            experience: 
+                title: "Experience it anywhere"
+                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                action: "View Bible Versions"
+            make_yours: 
+                title: "Make it your Bible"
+                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+                action: "Create Your Free Account"
+            install_now: 
+                title: "Install the App Now"
+                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                action: "Stiahnite si bezplatnú aplikáciu Biblia"
+            free_plans: 
+                title: "Free Reading Plans and Devotionals"
+                body: "Bible Plans help you engage with God's Word every day, a little at a time."
+            browse_plans: "Browse All Plans"
+            read_listen: "Read, Listen, Watch, Share"
+            start_now: "Start Now"
+            votd: 
+                title: "Verš dňa"
+                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                subscribe: "Subscribe to the Verse of the Day"
             hero: 
                 heading: "Biblia vo vašom telefóne, tablete, či počítači."
                 description: "YouVersion je jednoduchá a bezplatná Biblia, ktorá prináša Božie Slovo do vášho každodenného života."

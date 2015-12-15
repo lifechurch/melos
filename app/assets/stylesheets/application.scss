@@ -1,8 +1,9 @@
+@import "vendor/angular-material/angular-material";
 @import "config/colors";
 @import "config/fonts";
 @import "config/misc";
 @import "foundation_and_overrides";
-//@import "vendor";
+
 
 
 // TEMP: responsive screen-size - can go away after redesign
@@ -56,8 +57,8 @@
 @import "passwords/passwords";
 @import "users/users";
 @import "notifications/notifications";
-@import "vendor/md-color-picker/mdColorPicker.css";
-@import "vendor/angular-tooltips/angular-tooltips.min.css";
+@import "vendor/md-color-picker/mdColorPicker";
+@import "vendor/angular-tooltips/angular-tooltips";
 
 .clr {
   clear: both;

@@ -91,6 +91,7 @@ km:
         users hash verified: "គណនីនេះត្រូវបាន​ពិនិត្យហើយ ។"
         users password change: "អក្សរសម្ងាត់ថ្មីរបស់លោកអ្នកត្រូវតែខុសពីអក្សរសម្ងាត់ចាស់ ។"
         users password length: "ពាក្យ​សម្ងាត់​យ៉ាង​តិច​បំផុត​6តួអក្សរ"
+        users password less than minimum value 6: "ពាក្យ​សម្ងាត់​យ៉ាង​តិច​បំផុត​6តួអក្សរ"
         users password required: "លោកអ្នកត្រូវតែ​បញ្ចូលអក្សរសម្ងាត់ ។"
         user id users not found: "The username is invalid."
         users username alpha numeric extra: "ឈ្មោះ​ត្រូវ​ជា​ តួ​អក្សរ, លេខ និង ត្រេ"
@@ -101,7 +102,7 @@ km:
         users first name required: "អ្នក​ត្រូវ​បញ្ចូល​កោត្ត​នាម"
         users last name required: "អ្នក​ត្រូវ​បញ្ចូល​នាម"
         moments content required: "មាតិការ​មិន​អាច​ទទេ​រ​បាន​ឡើយ។"
-        users auth password required: "You must enter a password."
+        users auth password required: "លោកអ្នកត្រូវតែ​បញ្ចូលអក្សរសម្ងាត់ ។"
     meta: 
         best kids app: "Best Kids App!"
         best educational app: "Best Educational App"
@@ -232,6 +233,7 @@ km:
     reader: "កម្ម​វិធី​អាន"
     lifechurch short url: "Life.Church"
     about: "អំពីរ"
+    blog: "កំណត់ហេតុបណ្ដាញ"
     versions link: "ជំនាន់"
     jobs: "ការងារ"
     privacy policy: "ច្បាប់​ជាឯកជន"
@@ -304,6 +306,9 @@ km:
         likes count 2 more: "%{likes_count} ទៀត"
         likes count 3 or more: "%{likes_count} ទៀត"
         users like this: "%{last_liker_link} និង %{more_link} ដូច​គ្នានេះ"
+        like: "ចូល​ចិត្ត"
+        likes: "ចូល​ចិត្តច្រើន"
+        more than one like: 
         vod: 
             title: "ខគម្ពីរ​ប្រចាំ​ថ្ងៃ"
             get daily email: "យក​អ៊ី​ម៉េល​ប្រចាំថ្ងៃ"
@@ -1107,6 +1112,30 @@ km:
             explanation: "មាន​អ្វី​មួយ​ខុស​ឆ្គង! សូម​ព្យាយាម​ម្ដង​ទៀត​ដោយ​ទាញ​យក​ទំព័រ​សារ​ជាថ្មី យើង​ខ្ញុំ​ពិត​ជាសូម​ទោស​រាល់កំហុស​ទាំង​នេះ។"
             our action: "យើង​បាន​ដឹង​ពី​ការ​ទាំង​នេះ ហើយ​យើង​នឹង​កែរ​សម្រួល​អោយ​បាន​ឆាប់​ជាទី​បំផុត។"
         home: 
+            heading: "Get a free Bible for your phone, tablet, and computer."
+            cta: "Read the Bible Now"
+            experience: 
+                title: "Experience it anywhere"
+                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                action: "View Bible Versions"
+            make_yours: 
+                title: "Make it your Bible"
+                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+                action: "Create Your Free Account"
+            install_now: 
+                title: "Install the App Now"
+                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                action: "ដោន​ឡូដ​យក​ Bible App ដោយ​ឥត​គិតថ្លៃ"
+            free_plans: 
+                title: "Free Reading Plans and Devotionals"
+                body: "Bible Plans help you engage with God's Word every day, a little at a time."
+            browse_plans: "Browse All Plans"
+            read_listen: "Read, Listen, Watch, Share"
+            start_now: "Start Now"
+            votd: 
+                title: "ខគម្ពីរ​សំរាប់​ថ្ងៃ​នេះ"
+                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                subscribe: "Subscribe to the Verse of the Day"
             hero: 
                 heading: "ព្រះ​គម្ពីរ​ដោយ​ឥត​គិត​ថ្លៃ​លើ​ទូរស័ព្ទ​ តាប្លេត និង​កុំព្យូទ័រ​របស់​អ្នក"
                 description: "YouVersion​ សាមញ្ញណាស់ ជាព្រះគម្ពីរ​ មិន​មាន​ការ​ផ្សាយ​ពានិជ្ជកម្ម ដែល​នាំ​ព្រះបន្ទូល​របស់ព្រះជាម្ចាស់​មក​ក្នុង​ជីវិត​ប្រចាំ​ថ្ងៃ​របស់​អ្នក"

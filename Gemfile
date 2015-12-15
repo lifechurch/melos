@@ -20,7 +20,7 @@ gem 'haml-rails'
 gem 'hashie',                 '~> 1.2.0'
 gem 'oj'
 gem 'sentry-raven',           '~> 0.12.2'
-gem 'i18n-js',                '~> 3.0.0.rc6'
+#gem 'i18n-js',                '~> 3.0.0.rc6'
 #gem 'oink'
 #gem 'rack-mini-profiler'
 gem 'gabba'
@@ -64,6 +64,7 @@ gem 'routing-filter',         '~> 0.3.1'
 
 # Gems used only for assets & not required in production environments by default
 group :assets do
+  gem 'sass',         '3.4.2'
   gem 'sass-rails'
   gem 'coffee-rails',  '~> 3.2.2'
   gem 'compass-rails'
@@ -110,5 +111,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-
-
