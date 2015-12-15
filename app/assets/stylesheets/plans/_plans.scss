@@ -78,26 +78,26 @@ html[dir="rtl"] body.c_subscriptions {
   }
 }
 
-.a_index .columns {
-  @media #{$small-only} {
-    padding: 0;
-  }
-
-  [class*="block-grid-"] {
-    margin: 0;
-  }
-}
-
-.a_index [class*="block-grid-"] > li {
-  @media #{$small-only} {
-    padding: 15px;
-    border-top: 1px solid $lightGray;
-
-    &:first-child {
-      border-top: 0;
-    }
-  }
-}
+//.a_index .columns {
+//  @media #{$small-only} {
+//    padding: 0;
+//  }
+//
+//  [class*="block-grid-"] {
+//    margin: 0;
+//  }
+//}
+//
+//.a_index [class*="block-grid-"] > li {
+//  @media #{$small-only} {
+//    padding: 15px;
+//    border-top: 1px solid $lightGray;
+//
+//    &:first-child {
+//      border-top: 0;
+//    }
+//  }
+//}
 
 .subscription {
   @media #{$small-only} {
@@ -163,7 +163,8 @@ html[dir="rtl"] body.c_subscriptions {
 }
 
 .plan-length {
-  color: #444;
+  color: $gray;
+  font-size: 0.813em;
   display: block;
   padding: 5px 0 0 20px;
   background: url("/assets/icon-calendar.svg") no-repeat left 5px;
@@ -267,11 +268,6 @@ img.radius {
 
 .featured-title {
   margin: 50px 0 30px;
-}
-
-.a_index .length {
-  font-size: 0.867em;
-  color: $gray;
 }
 
 .medium-block-grid-5 > li {
@@ -921,4 +917,23 @@ html[dir="rtl"] .plan-settings {
   -webkit-border-radius:  5px;
   -moz-border-radius:     5px;
   border-radius:          5px;
+}
+
+#plan-index ul.paginate {
+  margin: 30px 0 0;
+  overflow: hidden;
+
+  li {
+    list-style-type: none;
+    display: inline-block;
+    overflow: hidden;
+
+    &.prev {
+      float: $default-float;
+    }
+
+    &.next {
+      float: $opposite-direction;
+    }
+  }
 }
