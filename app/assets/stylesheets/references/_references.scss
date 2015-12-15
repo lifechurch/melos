@@ -19,6 +19,10 @@
 
 .reader-center {
   padding: 0 0 50px;
+
+  @media #{$small-only} {
+    padding: 0 30px 50px;
+  }
 }
 
 .chapter>.label {
