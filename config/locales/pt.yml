@@ -102,6 +102,7 @@ pt:
         users hash verified: "Essa conta já foi verificada."
         users password change: "Sua nova senha deve ser diferente da sua antiga senha."
         users password length: "Sua senha deve conter pelo menos 6 caracteres."
+        users password less than minimum value 6: "Sua senha deve conter pelo menos 6 caracteres."
         users password required: "Você deve inserir uma senha."
         user id users not found: "O usuário é inválido."
         users username alpha numeric extra: "O nome de usuário deve conter apenas letras, números ou traços."
@@ -112,7 +113,7 @@ pt:
         users first name required: "Você deve digitar um primeiro nome."
         users last name required: "Você deve digitar um sobrenome."
         moments content required: "Conteúdo não pode estar em branco."
-        users auth password required: "You must enter a password."
+        users auth password required: "Você deve inserir uma senha."
     meta: 
         best kids app: "Melhor Aplicativo para crianças!"
         best educational app: "Melhor Aplicativo Educacional"
@@ -243,6 +244,7 @@ pt:
     reader: "Bíblia"
     lifechurch short url: "Life.Church"
     about: "Sobre"
+    blog: "Blog"
     versions link: "Versões"
     jobs: "Empregos"
     privacy policy: "Política de Privacidade"
@@ -298,7 +300,7 @@ pt:
     160 character limit: "160 caracteres ou menos"
     recent versions: "Usado Recentemente"
     traditional: "Tradicional"
-    alphabetic: "Alphabetic"
+    alphabetic: "Em ordem alfabética"
     versions title: "Versões"
     or: 
         lower: "ou"
@@ -315,6 +317,9 @@ pt:
         likes count 2 more: "%{likes_count} mais"
         likes count 3 or more: "%{likes_count} mais"
         users like this: "%{last_liker_link} e %{more_link} curtir isto"
+        like: "Curtir"
+        likes: "Curtir"
+        more than one like: 
         vod: 
             title: "Versículo do dia"
             get daily email: "Receba e-mail diariamente"
@@ -813,7 +818,7 @@ pt:
         title: "Planos de Leitura"
         meta title: "Estudo biblico online, devocionais e planos de leitura"
         browse by category: "Buscar por Categoria"
-        subcategory: "Sub-category"
+        subcategory: "Sub-categoria"
         browse plans: "Procurar %{category} Planos"
         swap list localization: "(<a href='%{swap_link}' target='_self'>Ver em %{swap_locale}</a>)"
         showing language filtered: "Mostrando apenas os planos de leitura disponíveis em %{lang_name}"
@@ -1120,6 +1125,30 @@ pt:
             explanation: "Alguma coisa deu errado! Você pode tentar novamente recarregando a página, nós sentimos muito pelo incoveniente."
             our action: "Fomos notificados sobre isto e solucionaremos o mais breve possível."
         home: 
+            heading: "Tenha uma Bíblia gratuita para seu telefone, tablet e computador."
+            cta: "Leia a Bíblia Agora"
+            experience: 
+                title: "Experience it anywhere"
+                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                action: "Ver as Versões da Bíblia"
+            make_yours: 
+                title: "Faça dela a sua Bíblia"
+                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+                action: "Crie Sua Conta Gratuita"
+            install_now: 
+                title: "Instale o Aplicativo Agora"
+                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                action: "Download gratuito do App da Bíblia"
+            free_plans: 
+                title: "Planos de Leitura e Devocionais Gratuitos"
+                body: "Planos bíblicos ajudam você a se engajar com a Palavra de Deus todos os dias, um pouco de cada vez."
+            browse_plans: "Browse All Plans"
+            read_listen: "Leia, Ouça, Assista, Compartilhe"
+            start_now: "Começar agora"
+            votd: 
+                title: "Versículo do dia"
+                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                subscribe: "Inscreva-se para o Versículo do Dia"
             hero: 
                 heading: "Uma Bíblia gratuita no seu celular, tablet ou computador."
                 description: "YouVersion é uma Bíblia simples, sem propagandas, que traz a Palavra de Deus para sua vida diária."
@@ -1164,7 +1193,7 @@ pt:
             extras: "Extras:"
             translation notes: "Notas de Rodapé"
             cross references: "Cruzar Referências"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Números e títulos"
     app errors: 
         404 plans explanation: "Está procurando pelo plano <a href='%{plan_path}' target='_self'>%{title}</a>?"
         404 contact support: "Tendo problemas? Contate nosso <a href='%{support_url}' target='_self'>suporte</a>."

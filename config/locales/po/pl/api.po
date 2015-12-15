@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-11 11:23-0609\n"
-"PO-Revision-Date: 2015-08-11 11:23-0609\n"
+"POT-Creation-Date: 2015-11-30 10:18-0600\n"
+"PO-Revision-Date: 2015-11-30 10:18-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pl <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Odśwież swoją wiarę z nowymi planami."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Znajdź mądrość w słowie Bożym codziennie."
+msgstr "Szukaj Boga w Jego Słowie każdego dnia."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Przygotuj swoje serce w tym sezonie."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Znajdź swój ulubiony Plan Biblii na luty!"
+msgstr "Znajdź Bożą miłość w Jego Słowie."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Twόj najlepszy rok zaczyna się teraz."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Codzienny czas ze Słowem Bożym dostarcza trwałej wolności."
+msgstr "Świętuj Wolność w Chrystusie."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Znajdź swój rytm przez codzienny czas ze Słowem Bożym."
+msgstr "Szukaj Boga w Jego Słowie."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Znajdź nadzieję i odnowienie w marcowych planach."
+msgstr "Znajdź nadzieję i odnowienie w Słowie Bożym."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Oddawaj się codziennie poszukiwaniu Boga w Jego Słowie."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "W 2015 czytaj Biblię codziennie. Plany pomogą!"
+msgstr "Oddaj się Jego Słowu każdego dnia."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Odkryj wdzięczność w obietnicach Bożych."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "To słowo jest żywe. Pozwól, aby przemawiało do ciebie codziennie."
+msgstr "Pobożna mądrość zaczyna się w Bożym Słowie."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Słowo Boże sprawia, że wszystko jest nowe."

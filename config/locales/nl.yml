@@ -102,6 +102,7 @@ nl:
         users hash verified: "Dit account is al bevestigd."
         users password change: "jouw nieuwe wachtwoord moet verschillen van je oude wachtwoord."
         users password length: "Je wachtwoord moet uit minimaal 6 tekens bestaan."
+        users password less than minimum value 6: "Je wachtwoord moet uit minimaal 6 tekens bestaan."
         users password required: "Je moet een wachtwoord invoeren."
         user id users not found: "De gebruikersnaam is niet valide."
         users username alpha numeric extra: "De gebruikersnaam kan letters, nummers of tekens bevatten."
@@ -112,7 +113,7 @@ nl:
         users first name required: "Je moet een voornaam invoeren."
         users last name required: "Je moet een achternaam invoeren."
         moments content required: "Mag niet leeg zijn"
-        users auth password required: "You must enter a password."
+        users auth password required: "Je moet een wachtwoord invoeren."
     meta: 
         best kids app: "Beste app voor kinderen!"
         best educational app: "Beste Educatieve App"
@@ -243,6 +244,7 @@ nl:
     reader: "Leesvenster"
     lifechurch short url: "Life.Church"
     about: "Over"
+    blog: "Blog"
     versions link: "Versies"
     jobs: "Vacatures"
     privacy policy: "Privacybeleid"
@@ -315,6 +317,9 @@ nl:
         likes count 2 more: "%{likes_count} meer"
         likes count 3 or more: "%{likes_count} meer"
         users like this: "%{last_liker_link} en %{more_link} vinden dit leuk"
+        like: "Vind ik leuk"
+        likes: "Vind ik leuks"
+        more than one like: 
         vod: 
             title: "Vers van de dag"
             get daily email: "Ontvang dagelijkse e-mail"
@@ -813,7 +818,7 @@ nl:
         title: "Leesplannen"
         meta title: "Online bijbelstudie, toewijdingen, en leesplannen"
         browse by category: "Per categorie bladeren"
-        subcategory: "Sub-category"
+        subcategory: "Subcategorie"
         browse plans: "Door %{category} leesplannen bladeren"
         swap list localization: "(<a href='%{swap_link}' target='_self'>In %{swap_locale} weergeven</a>)"
         showing language filtered: "Alleen leesplannen in het %{lang_name} worden getoond"
@@ -1120,6 +1125,30 @@ nl:
             explanation: "Er ging iets mis achter de schermen! Je kan het opnieuw proberen door de website opnieuw te laden. Onze excuses voor het ongemak!"
             our action: "We zijn ervan op de hoogte gesteld en we gaan er binnenkort mee aan de gang."
         home: 
+            heading: "Ontvang een gratis Bijbel voor je telefoon, tablet en computer."
+            cta: "Lees Nu de Bijbel"
+            experience: 
+                title: "Ervaar het overal"
+                body: "Kies uit meer dan 1200 Bijbelversies in meer dan 900 talen, op je computer, telefoon, of tablet -- waarvan vele beschikbaar zijn als Luister-Bijbel."
+                action: "Toon Bijbelversies"
+            make_yours: 
+                title: "Maak het jouw Bijbel"
+                body: "Markeer je favoriete gedeelten, maak Bladwijzers en Versafbeeldingen aan die je kunt delen en voeg openbare of privé Notities toe aan Bijbel passages."
+                action: "Maak Je Gratis Account Aan"
+            install_now: 
+                title: "Installeer de App Nu"
+                body: "De Bijbel App is helemaal gratis en zonder advertenties en in-app aankopen. Geïnstalleerd op dit aantal unieke apparaten (tot nu toe):"
+                action: "Download de gratis Bijbel App"
+            free_plans: 
+                title: "Gratis Leesplannen en Devotionals"
+                body: "Leesplannen helpen je om elke dag met Gods Woord bezig te zijn, telkens heel even."
+            browse_plans: "Blader door Alle Leesplannen"
+            read_listen: "Lees, Luister, Kijk, Deel"
+            start_now: "Begin nu"
+            votd: 
+                title: "Vers van de Dag"
+                highlight_bookmark: "Markeer, maak een Bladwijzer aan, of Deel dit vers"
+                subscribe: "Abonneer op het Vers van de Dag"
             hero: 
                 heading: "Gratis Bijbel voor je telefoon, tablet en computer."
                 description: "YouVersion is een eenvoudige, reclamevrije Bijbel die Gods Woord je dagelijkse leven in brengt."
@@ -1164,7 +1193,7 @@ nl:
             extras: "Extra's:"
             translation notes: "Voetnoten"
             cross references: "Kruisverwijzingen"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Nummers en Titels"
     app errors: 
         404 plans explanation: "Ben je aan het zoeken naar de <a href='%{plan_path}' target='_self'>%{title}</a>leesplan?"
         404 contact support: "Problemen? Contacteer onze  <a href='%{support_url}' target='_self'>ondersteuning team</a>."

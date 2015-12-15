@@ -91,6 +91,7 @@ zh-CN:
         users hash verified: "这个账户已经被确认了。"
         users password change: "你的新密码必须和旧的不同才行。"
         users password length: "密码应至少需要有6个字符。"
+        users password less than minimum value 6: "密码应至少需要有6个字符。"
         users password required: "请务必输入密码。"
         user id users not found: "无效的用户名"
         users username alpha numeric extra: "用户名只能包含字母、数字和减号。"
@@ -101,7 +102,7 @@ zh-CN:
         users first name required: "您必须键入一个名字"
         users last name required: "您必须键入一个姓氏"
         moments content required: "内容不能为空。"
-        users auth password required: "You must enter a password."
+        users auth password required: "请务必输入密码。"
     meta: 
         best kids app: "最棒的儿童应用！"
         best educational app: "最棒的教育应用"
@@ -232,6 +233,7 @@ zh-CN:
     reader: "阅读器"
     lifechurch short url: "Life.Church"
     about: "关于我们"
+    blog: "博客"
     versions link: "译本"
     jobs: "工作机会"
     privacy policy: "隐私政策"
@@ -304,6 +306,9 @@ zh-CN:
         likes count 2 more: "%{likes_count} 以上"
         likes count 3 or more: "%{likes_count} 以上"
         users like this: "%{last_liker_link} 和 %{more_link} 赞了这个"
+        like: "赞"
+        likes: "点赞"
+        more than one like: 
         vod: 
             title: "今日经文"
             get daily email: "每天接收电邮"
@@ -800,7 +805,7 @@ zh-CN:
         title: "读经计划"
         meta title: "在线圣经研习、灵修和读经计划"
         browse by category: "分目录浏览"
-        subcategory: "Sub-category"
+        subcategory: "具体分类"
         browse plans: "浏览 %{category} 类读经计划"
         swap list localization: "(<a href='%{swap_link}' target='_self'>View in %{swap_locale}</a>)"
         showing language filtered: "只显示在 %{lang_name} 中的读经计划"
@@ -1107,6 +1112,30 @@ zh-CN:
             explanation: "对不起，系统出现故障，请尝试重新载入页面。"
             our action: "我们已经注意到这个问题并将尽快解决。"
         home: 
+            heading: "获取可在你的手机、平板与电脑上阅读的免费圣经"
+            cta: "现在就阅读圣经"
+            experience: 
+                title: "随时随地体验圣经"
+                body: "适用于你的电脑、手机或平板，有超过900种语言的1200多个圣经译本供你选择——有些译本甚至提供有声版让你聆听。"
+                action: "查看圣经译本"
+            make_yours: 
+                title: "使之成为你的圣经"
+                body: "给你喜爱的经文加高亮显示或书签标记，制作可供你分享的经句图，为圣经段落添加公开或非公开的笔记。"
+                action: "创建免费账户"
+            install_now: 
+                title: "立刻下载圣经软件"
+                body: "圣经软件完全免费，并且不含广告，也没有应用内置付费。下面的数字，是迄今为止已安装了圣经软件的设备总数："
+                action: "免费下载圣经软件"
+            free_plans: 
+                title: "免费的【读经计划】与灵修短文"
+                body: "【读经计划】帮助你一次一小段，每天花时间研读上帝的话语。"
+            browse_plans: "发掘全部读经计划"
+            read_listen: "阅读、聆听、观看、分享"
+            start_now: "现在就开始吧"
+            votd: 
+                title: "今日经文"
+                highlight_bookmark: "高亮、标记书签或分享这节经文"
+                subscribe: "订阅【今日经文】"
             hero: 
                 heading: "可用于手机、平板电脑或电脑上的免费圣经"
                 description: "YouVersion 是一款简单易用、全无广告的圣经软件，能将神的话语带入你的日常生活。"
@@ -1151,7 +1180,7 @@ zh-CN:
             extras: "附加功能："
             translation notes: "脚注"
             cross references: "交叉引用经节"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "数字和标题"
     app errors: 
         404 plans explanation: "您在寻找 <a href='%{plan_path}' target='_self'>%{title}</a> 读经计划？"
         404 contact support: "有困难的话，请联系我们的 <a href='%{support_url}' target='_self'>支持团队</a>."
