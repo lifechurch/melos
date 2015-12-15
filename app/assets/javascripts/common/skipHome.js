@@ -8,7 +8,7 @@ angular.module('common.skipHome', ['ngCookies'])
               futureSkipText: '@',
               checked: '='
             },
-            controller: function($element, $window, $scope, $cookies) {
+            controller: ["$element", "$window", "$scope", "$cookies", function($element, $window, $scope, $cookies) {
                 var link = angular.element($element.children()[0]);
                 $scope.checked = $cookies.getObject("setting-skip-home");
 
@@ -30,7 +30,7 @@ angular.module('common.skipHome', ['ngCookies'])
                 });
 
                 update();
-            }
+            }]
         };
     })
 ;

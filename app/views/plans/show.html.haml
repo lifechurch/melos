@@ -42,14 +42,14 @@
   .row
     .medium-8.columns
       = image_tag @plan.hero_image.url, class: 'rp-hero-img' if @plan.hero_image.present?
-      %h1.keep= @plan.name
-      .rp-plan-info
-        %p
+      .rp-plan-box
+        %h1.keep= @plan.name
+        %p.rp-plan-info
           = @plan.length
-      .rp-plan-about
-        .rp-plan-about-buttons
-          = render partial: "/plans/button", locals: {plan: @plan}
-        %p!= @plan.about
+        .rp-plan-about
+          .rp-plan-about-buttons
+            = render partial: "/plans/button", locals: {plan: @plan}
+          %p!= @plan.about
 
     .medium-4.columns
       = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}

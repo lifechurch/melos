@@ -38,6 +38,7 @@ YouversionWeb::Application.routes.draw do
   get "/kinder",        to: "redirects#kinder"
   get "/enfants",       to: "redirects#enfants"
   get "/anak",       to: "redirects#anak"
+  get "/cocuk",      to: "redirects#cocuk"
   get "/trending-bible-verses", to: "pages#trending"
   get "/wmf",           to: "redirects#wmf"
   get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
@@ -124,7 +125,6 @@ YouversionWeb::Application.routes.draw do
   end
 
   get "/confirm-update-email/:token",    to: "emails#confirm_update"
-  get "/confirm_update_email/:token",    to: "emails#confirm_update"
 
   # Top level LocationSettings route
   resource :language_settings, only: [:update]

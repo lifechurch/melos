@@ -36,6 +36,17 @@
   }
 }
 
+.md-open-menu-container {
+  md-menu-item {
+    a.md-button.md-focused {
+      background-color: transparent;
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+}
+
 .c_pages,
 .c_moments,
 .c_videos,
