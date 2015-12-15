@@ -22,6 +22,9 @@ angular.module('reader.bookmarkPanel', [])
 
 				Highlights.getColors().success(function(data) {
 					$scope.colors = data;
+                    if ($scope.colors && $scope.colors.length) {
+                        $scope.bookmark.color = $scope.colors[0];
+                    }
 				}).error(function(err) {
 					//TO-DO: Handle Error
 				});

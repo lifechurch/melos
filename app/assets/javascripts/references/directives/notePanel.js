@@ -21,6 +21,9 @@ angular.module('reader.notePanel', [])
 
 				Highlights.getColors().success(function(data) {
 					$scope.colors = data;
+                    if ($scope.colors && $scope.colors.length) {
+                        $scope.note.color = $scope.colors[0];
+                    }
 				}).error(function(err) {
 					//TO-DO: Handle Error
 				});
