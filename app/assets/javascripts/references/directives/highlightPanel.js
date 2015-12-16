@@ -25,6 +25,9 @@ angular.module('reader.highlightPanel', [])
 
 				Highlights.getColors().success(function(data) {
 					$scope.colors = data;
+                    if ($scope.colors && $scope.colors.length) {
+                        $scope.highlight.color = $scope.colors[0];
+                    }
 				}).error(function(err) {
 					//TO-DO: Handle Error
 				});
