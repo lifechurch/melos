@@ -5,63 +5,57 @@
   -#
   %script{'type' => 'text/ng-template', 'id' => '/reader-text-settings-panel.tpl.html'}
     #reader-font-dropdown.large-3.medium-6.reader-panel.right
-      .row
-        .small-12.columns.text-left
-          %label
-            = t("shared.menu_settings.font size")
-          %table
-            %tr
-              %td{"ng-class" => "{ activeFont: fontSize == 14 }", "ng-click" => "fontSize = 14"}
-                %label
-                  = t("shared.menu_settings.small")
-              %td{"ng-class" => "{ activeFont: fontSize == 18 }", "ng-click" => "fontSize = 18"}
-                %label
-                  = t("shared.menu_settings.medium")
-              %td{"ng-class" => "{ activeFont: fontSize == 22 }", "ng-click" => "fontSize = 22"}
-                %label
-                  = t("shared.menu_settings.large")
-      .row
-        .small-12.columns.text-left
-          %label
-            = t("shared.menu_settings.font")
-          %table.font-selector{"style" => "width: 100%"}
-            %tr
-              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Arial' }"}
-                %input#reader_font_arial.hidden{:type => "radio", :value => "Arial", "ng-model" => "fontFamily"}
-                %label{:for => "reader_font_arial", "style" => "font-family:'Arial'"} Arial
-              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Avenir' }"}
-                %input#reader_font_avenir.hidden{:type => "radio", :value => "Avenir", "ng-model" => "fontFamily"}
-                %label{:for => "reader_font_avenir", "style" => "font-family:'Avenir'"} Avenir
-            %tr
-              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Tisa Pro' }"}
-                %input#reader_font_tisapro.hidden{:type => "radio", :value => "Tisa Pro", "ng-model" => "fontFamily"}
-                %label{:for => "reader_font_tisapro", "style" => "font-family:'Tisa Pro'"} Tisa Pro
-              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Helvetica' }"}
-                %input#reader_font_helvetica.hidden{:type => "radio", :value => "Helvetica", "ng-model" => "fontFamily"}
-                %label{:for => "reader_font_helvetica", "style" => "font-family:'Helvetica'"} Helvetica
-            %tr
-              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Baskerville' }"}
-                %input#reader_font_baskerville.hidden{:type => "radio", :value => "Baskerville", "ng-model" => "fontFamily"}
-                %label{:for => "reader_font_baskerville", "style" => "font-family:'Baskerville'"} Baskerville
-              %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Verdana' }"}
-                %input#reader_font_verdana.hidden{:type => "radio", :value => "Verdana", "ng-model" => "fontFamily"}
-                %label{:for => "reader_font_verdana", "style" => "font-family:'Verdana'"} Verdana
-      .row
-        .small-12.columns.text-left
-          %label
-            = t("shared.menu_settings.extras")
-      .row
-        .small-12.columns.text-left
+      .font-sizes
+        %label
+          = t("shared.menu_settings.font size")
+        %table{cellpadding: "0", cellspacing: "0"}
+          %tr
+            %td{"ng-class" => "{ activeFont: fontSize == 14 }", "ng-click" => "fontSize = 14"}
+              %a{href: "#"}
+                = t("shared.menu_settings.small")
+            %td{"ng-class" => "{ activeFont: fontSize == 18 }", "ng-click" => "fontSize = 18"}
+              %a{href: "#"}
+                = t("shared.menu_settings.medium")
+            %td{"ng-class" => "{ activeFont: fontSize == 22 }", "ng-click" => "fontSize = 22"}
+              %a{href: "#"}
+                = t("shared.menu_settings.large")
+      .font-family
+        %label
+          = t("shared.menu_settings.font")
+        %table.font-selector{"style" => "width: 100%", cellpadding: "0", cellspacing: "0"}
+          %tr
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Arial' }"}
+              %input#reader_font_arial.hidden{:type => "radio", :value => "Arial", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_arial", "style" => "font-family:'Arial'"} Arial
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Avenir' }"}
+              %input#reader_font_avenir.hidden{:type => "radio", :value => "Avenir", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_avenir", "style" => "font-family:'Avenir'"} Avenir
+          %tr
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Tisa Pro' }"}
+              %input#reader_font_tisapro.hidden{:type => "radio", :value => "Tisa Pro", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_tisapro", "style" => "font-family:'Tisa Pro'"} Tisa Pro
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Helvetica' }"}
+              %input#reader_font_helvetica.hidden{:type => "radio", :value => "Helvetica", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_helvetica", "style" => "font-family:'Helvetica'"} Helvetica
+          %tr
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Baskerville' }"}
+              %input#reader_font_baskerville.hidden{:type => "radio", :value => "Baskerville", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_baskerville", "style" => "font-family:'Baskerville'"} Baskerville
+            %td.text-center{"ng-class" => "{ activeFont: fontFamily == 'Verdana' }"}
+              %input#reader_font_verdana.hidden{:type => "radio", :value => "Verdana", "ng-model" => "fontFamily"}
+              %label{:for => "reader_font_verdana", "style" => "font-family:'Verdana'"} Verdana
+      .font-extras
+        %label
+          = t("shared.menu_settings.extras")
+        %div
           %input#reader_show_footnotes{:type => "checkbox", "ng-model" => "showFootnotes"}
           %label{:for => "reader_show_footnotes"}
             = t("shared.menu_settings.translation notes")
-      .row
-        .small-12.columns.text-left
+        %div
           %input#reader_show_numbers_and_titles{:type => "checkbox", "ng-model" => "showNumbersAndTitles"}
           %label{:for => "reader_show_numbers_and_titles"}
             = t("shared.menu_settings.numbers and titles")
-      .row
-        .small-12.columns.text-left
+        %div
           %button.solid-button.green{"ng-click" => "save()"}
             =t(".save")
           != "&nbsp;"
@@ -102,24 +96,21 @@
   -# Verse Action
   -#
   %script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
-    %md-fab-speed-dial{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'", "ng-show" => "selection.length && !panelIsOpen"}
+    %md-fab-speed-dial.ng-hide{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'", "ng-show" => "selection.length"}
       %md-fab-trigger
         %md-button.md-fab.md-raised.md-mini{"aria-label" => "+"}
-          %span{"ng-show" => "isOpen"}
-            ="X"
-          %span{"ng-hide" => "isOpen"}
-            ="+"
+          ="+"
       %md-fab-actions
+        %md-button.md-fab.md-raised.md-mini.note-button{"aria-label" => "Note", "ng-click" => "toggleSidePanel('showReaderNote')"}
+          %md-tooltip{"md-direction" => "left"} Note
+          %md-icon{"md-svg-src" => "/assets/notes-solid.svg"}
         %md-button.md-fab.md-raised.md-mini.highlight-button{"aria-label" => "Highlight", "ng-click" => "toggleSidePanel('showReaderHighlight')" }
           %md-tooltip{"md-direction" => "left"} Highlight
           %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
         %md-button.md-fab.md-raised.md-mini.bookmark-button{"aria-label" => "Bookmark", "ng-click" => "toggleSidePanel('showReaderBookmark')"}
           %md-tooltip{"md-direction" => "left"} Bookmark
           %md-icon{"md-svg-src" => "/assets/bookmark-solid.svg"}
-        %md-button.md-fab.md-raised.md-mini.note-button{"aria-label" => "Note", "ng-click" => "toggleSidePanel('showReaderNote')"}
-          %md-tooltip{"md-direction" => "left"} Note
-          %md-icon{"md-svg-src" => "/assets/notes-solid.svg"}
-        %md-button.md-fab.md-raised.md-mini.shared-button{"aria-label" => "Share", "ng-click" => "toggleSidePanel('showReaderShare')"}
+        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Share", "ng-click" => "toggleSidePanel('showReaderShare')"}
           %md-tooltip{"md-direction" => "left"} Share
           %md-icon{"md-svg-src" => "/assets/icon-share.svg"}
 
