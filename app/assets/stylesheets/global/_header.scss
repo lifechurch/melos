@@ -469,6 +469,11 @@ md-menu-item {
 	font-weight: bold;
 }
 
+.md-button.md-fab.md-mini {
+  width: 60px;
+  height: 60px;
+}
+
 html[dir="rtl"] {
   .icon-bar > * {
     float: right;
