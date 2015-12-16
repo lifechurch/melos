@@ -140,6 +140,8 @@
         %label
           =t("social.share")
         %div.addthis_sharing_toolbox{"data-url" => "", "data-title" => ""}
+        %a{"ng-click" => "cancel()", title: "Cancel"}
+          =t("cancel")
 
   -#
   -# Reader Highlight Panel
@@ -167,8 +169,8 @@
           %div.colorButton.vertical-middle.text-center{"md-color-picker" => true, "value" => "highlight.color"}
         .reader-highlight-save
           %button.solid-button.green{"ng-click" => "submit(highlight)", :type => "submit", :value => "submit"}= t('highlights.form.save button')
-          %a{href: "#", title: "Cancel"}
-            Cancel
+          %a{"ng-click" => "cancel()", title: "Cancel"}
+            =t("cancel")
 
 
   -#
@@ -205,8 +207,8 @@
           %md-chips{"ng-model"=> "labels", "placeholder" => "#{t('bookmarks.labels')}", "readonly" => "false", "delete-button-label" => "#{t('bookmarks.remove label')}"}
         .reader-bookmark-save
           %button.solid-button.green{"ng-click" => "submit(bookmark, labels)", :type => "submit", :value => "submit"}= t('bookmarks.form.save button')
-          %a{href: "#", title: "Cancel"}
-            Cancel
+          %a{"ng-click" => "cancel()", title: "Cancel"}
+            =t("cancel")
 
   -#
   -# Reader Note Panel
@@ -241,8 +243,8 @@
           %textarea{"ng-model"=>"note.content"}
         .reader-note-save
           %button.solid-button.green{"ng-click" => "submit(note)", :type => "submit", :value => "submit"}= t('notes.form.save button')
-          %a{href: "#", title: "Cancel"}
-            Cancel
+          %a{"ng-click" => "cancel()", title: "Cancel"}
+            =t("cancel")
 
   -#
   -#
