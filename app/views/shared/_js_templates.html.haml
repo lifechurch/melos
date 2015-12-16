@@ -102,10 +102,13 @@
   -# Verse Action
   -#
   %script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
-    %md-fab-speed-dial.ng-hide{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'", "ng-show" => "selection.length"}
+    %md-fab-speed-dial{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'", "ng-show" => "selection.length && !panelIsOpen"}
       %md-fab-trigger
         %md-button.md-fab.md-raised.md-mini{"aria-label" => "+"}
-          ="+"
+          %span{"ng-show" => "isOpen"}
+            ="X"
+          %span{"ng-hide" => "isOpen"}
+            ="+"
       %md-fab-actions
         %md-button.md-fab.md-raised.md-mini.note-button{"aria-label" => "Note", "ng-click" => "toggleSidePanel('showReaderNote')"}
           %md-tooltip{"md-direction" => "left"} Note
@@ -116,7 +119,7 @@
         %md-button.md-fab.md-raised.md-mini.bookmark-button{"aria-label" => "Bookmark", "ng-click" => "toggleSidePanel('showReaderBookmark')"}
           %md-tooltip{"md-direction" => "left"} Bookmark
           %md-icon{"md-svg-src" => "/assets/bookmark-solid.svg"}
-        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Share", "ng-click" => "toggleSidePanel('showReaderShare')"}
+        %md-button.md-fab.md-raised.md-mini.shared-button{"aria-label" => "Share", "ng-click" => "toggleSidePanel('showReaderShare')"}
           %md-tooltip{"md-direction" => "left"} Share
           %md-icon{"md-svg-src" => "/assets/icon-share.svg"}
 

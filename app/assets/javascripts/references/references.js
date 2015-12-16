@@ -77,6 +77,7 @@ angular.module('yv.reader', [
 	$scope.working = false;
 	$scope.isLoggedIn = false;
 	$scope.verseActionOpen = false;
+    $scope.panelIsOpen = false;
     $scope.showNumbersAndTitles = true;
     $scope.showFootnotes = true;
 	$scope.readerSelection = [];
@@ -418,6 +419,14 @@ angular.module('yv.reader', [
 		var originalValue = $scope[panel];
 		hideAllSidePanels();
 		$scope[panel] = !originalValue;
+
+        // If we just opened a side panel, close verse action bar
+        if ($scope[panel]) {
+            $scope.verseActionOpen = false;
+            $scope.panelIsOpen = true;
+        } else {
+            $scope.panelIsOpen = false;
+        }
 	};
 
     $scope.sortBooks = function(sortType) {
