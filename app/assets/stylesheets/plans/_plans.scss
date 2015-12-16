@@ -946,6 +946,26 @@ html[dir="rtl"] .plan-settings {
   }
 }
 
+.c_subscriptions.a_calendar {
+  .plan-calendar-list {
+    float: left;
+    margin: 0 0 15px 15px;
+  }
+
+  .active-day {
+    a {
+      display: block;
+      text-align: center;
+    }
+
+    img {
+      width: 10px;
+      display: block;
+      margin: 3px auto 0;
+    }
+  }
+}
+
 
 /* !All plans list views */
 
