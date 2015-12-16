@@ -15,6 +15,10 @@ angular.module('reader.highlightPanel', [])
 		controller: ['$scope', '$element', 'Highlights', '$timeout', '$rootScope', function($scope, $element, Highlights, $timeout, $rootScope) {
 			$scope.success = false;
 
+            $scope.cancel = function() {
+                $scope.toggleSidePanel('showReaderHighlight');
+            };
+
 			if ($scope.selection && $scope.version && $scope.token) {
 				$scope.highlight 	= {};
 				$scope.colors 		= [];
