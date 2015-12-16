@@ -35,8 +35,8 @@
 .fixed.after-header
   .row.full.b-border.white.collapse
     .medium-12.columns.text-center
-      = link_to t("plans.all plans"), plans_path, class: 'icon', target: "_self"
       = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present? && @show_my_plans
+      = link_to t("plans.all plans"), plans_path, class: 'icon', target: "_self"
 
 %article.reading_plan_index
   .row
