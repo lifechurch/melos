@@ -27,8 +27,16 @@ class VersionsController < ApplicationController
   def show
     respond_to do |format|
       format.json {
-        @version = Version.get("bible/version", {id: params[:id], cache_for: YV::Caching.a_very_long_time })
-        return render json: @version
+        key = "json-single-version-rabl-#{params[:id]}"
+        keyExists = Rails.cache.fetch(key, expires_in: YV::Caching.a_very_long_time)
+        if !keyExists
+          @version = Version.get("bible/version", {id: params[:id], cache_for: YV::Caching.a_very_long_time })
+          json = render_to_string json: @version
+          Rails.cache.write(key, json)
+          return render :json => json
+        else
+          return render :json => Rails.cache.read(key)
+        end
       }
 
       format.any {
