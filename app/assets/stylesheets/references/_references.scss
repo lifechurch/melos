@@ -48,7 +48,7 @@
     display: block;
     float: left;
     font-size: rem-calc(12);
-    font-family: arial, sans-serif;
+    font-family: $font-family-sans-serif-alt;
     height: 26px;
     line-height: 25px;
     background: #e4e4e4;
@@ -562,7 +562,7 @@ div[audio-data="reader_audio"] {
   display: block;
   background-color: transparent;
   color: #008CBA;
-  font-family: arial, sans-serif;
+  font-family: $font-family-sans-serif-alt;
   font-size: 1em;
   padding: 0;
 }
@@ -570,7 +570,7 @@ div[audio-data="reader_audio"] {
 .chapter-book-title,
 .chapter-picker-title,
 .chapter-verse-title {
-  font: 100 2.375em "proxima-sans", "helvetica neue", arial, sans-serif;
+  font: 100 2.375em $title-font-family;
 }
 
 .chapter-picker {
