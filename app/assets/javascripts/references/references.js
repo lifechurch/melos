@@ -98,6 +98,7 @@ angular.module('yv.reader', [
     $scope.reader_book_list = [];
     $scope.isMobile = Foundation.utils.is_small_only() || Foundation.utils.is_medium_only();
     $scope.showContent = !$scope.isMobile;
+    $scope.topPanelOpen = false;
 
 	hideAllPanels();
 	hideAllSidePanels();
@@ -120,7 +121,9 @@ angular.module('yv.reader', [
 		$scope.showReaderAudio = false;
 		$scope.showReaderFont = false;
 		$scope.showReaderBooks = false;
+        $scope.showReaderChapters = false;
 		$scope.showReaderVersions = false;
+        $scope.topPanelOpen = false;
 	}
 
 
@@ -153,6 +156,7 @@ angular.module('yv.reader', [
         $scope.filter = "";
         $scope.selectedBook = null;
         $anchorScroll("top-of-page");
+        $scope.topPanelOpen = false;
 
 		Bible.getChapter(location_path).success(function(data, status, headers, config) {
             if (data.hasOwnProperty('to_path')) {
@@ -395,12 +399,15 @@ angular.module('yv.reader', [
 		$scope[panel] = !originalValue;
 
 		if ((panel == "showReaderFont" || panel == "showReaderAudio") && $scope[panel]) {
+            $scope.topPanelOpen = false;
 
 		} else if (panel == "showReaderBooks") {
+            $scope.topPanelOpen = $scope[panel];
             if ($scope.reader_book_list.length == 0) {
                 loadBooks($scope.reader_version_id);
             }
 		} else if (panel == "showReaderChapters") {
+            $scope.topPanelOpen = $scope[panel];
             if ($scope.reader_book_list.length == 0) {
                 loadBooks($scope.reader_version_id);
             }
@@ -410,6 +417,7 @@ angular.module('yv.reader', [
 				$scope.showReaderBooks 		= true;
 			}
 		} else if (panel == "showReaderVersions") {
+            $scope.topPanelOpen = $scope[panel];
             if (setParallel) {
                 $scope.setParallelVersion = true;
             } else {
@@ -419,7 +427,9 @@ angular.module('yv.reader', [
             if (!$scope.versions || !$scope.versions.length) {
                 loadVersions();
             }
-		}
+		} else {
+            $scope.topPanelOpen = false;
+        }
 	};
 
     $scope.cancel = function(panel) {

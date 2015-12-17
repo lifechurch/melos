@@ -319,7 +319,6 @@ div[verse-action] {
 
 
 /* !Font and audio panels */
-
 .reader-panel {
   position: absolute;
   min-width: rem-calc(100) !important;
@@ -333,8 +332,9 @@ div[verse-action] {
   }
 
   &.full {
-  	overflow: scroll;
-  	height: rem-calc(400);
+    position: inherit;
+  	overflow: visible;
+    border: none;
   }
 }
 
