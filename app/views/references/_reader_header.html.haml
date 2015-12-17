@@ -14,23 +14,26 @@
   .row.full.b-border.white.collapse.reader-header
     .medium-12.columns.text-center
       .bcv-button-box
-        =reader_previous_link(reference, {classes: "prev #{direction}","ngif": "!inNonDefaultLocale()", "uisref": "reader({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
-        =reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "inNonDefaultLocale()", "uisref": "reader-locale({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
+        =reader_previous_link(reference, {classes: "prev #{direction}","ngif": "!inNonDefaultLocale() && !devotionalActive", "uisref": "reader({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
+        =reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "inNonDefaultLocale() && !devotionalActive", "uisref": "reader-locale({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
 
-        %h1
+        %h1{"ng-hide" => "devotionalActive"}
           %a.book{:id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks')", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').first
           %a.chapter{:id => "reader_chapter", "ng-bind" => "reader_chapter", "ng-click" => "togglePanel('showReaderChapters')", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').last
           %a.version{:id => "reader_version", "ng-bind" => "reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions')"}= version.human
           %a.version.ng-hide{:id => "parallel_reader_version", "ng-bind" => "parallel_reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions', true)", "ng-show" => "isParallelMode"}
+        %h1.ng-hide{"ng-show" => "devotionalActive"}
+          %a.devotional
+            =t('plans.devotional')
 
-        =reader_next_link(reference, {classes: "next #{direction}","ngif": "!inNonDefaultLocale()", "uisref": "reader({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
-        =reader_next_link(reference, {classes: "next #{direction} ng-hide","ngif": "inNonDefaultLocale()", "uisref": "reader-locale({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
+        =reader_next_link(reference, {classes: "next #{direction}","ngif": "!inNonDefaultLocale() && !devotionalActive", "uisref": "reader({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
+        =reader_next_link(reference, {classes: "next #{direction} ng-hide","ngif": "inNonDefaultLocale() && !devotionalActive", "uisref": "reader-locale({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
 
       - if (controller_name == 'references')
         %a.icon.parallel-link{"ng-click" => "toggleParallelMode()"}
           %svg{"enable-background" => "new -322.2 298.5 726.6 612", :viewBox => "-322.2 298.5 726.6 612", :xmlns => "http://www.w3.org/2000/svg"}
             %path{:d => "M60.2,298.5H22h-344.2v612H22h38.2h344.2v-612H60.2z M22,872.2h-306V336.8H22C22,336.8,22,872.2,22,872.2z\n\t M366.2,872.2h-306V336.8h306V872.2z"}
-      %a.icon.settings-audio.ng-hide{:title => t("ref.listen"), "ng-click" => "togglePanel('showReaderAudio')", "ng-class" => "{ 'active': showReaderAudio }", "ng-show" => "reader_audio.title"}
+      %a.icon.settings-audio.ng-hide{:title => t("ref.listen"), "ng-click" => "togglePanel('showReaderAudio')", "ng-class" => "{ 'active': showReaderAudio }", "ng-show" => "reader_audio.title && !devotionalActive"}
         %svg{"enable-background" => "new -282 373 47 48", :viewBox => "-282 373 47 48", :xmlns => "http://www.w3.org/2000/svg"}
           %path{:d => "M-250 421l-1.6-3.4s12.8-5.4 12.8-20.6c0-15.3-12.8-20.5-12.8-20.5l1.6-3.5s15 6.5 15 24-15 24-15 24zm2.7-24c0 9-8.2 12.6-8.2 12.6l-1.6-3.5s5.9-2.4 5.9-9.1c0-7.3-5.8-9.4-5.8-9.4l2.1-3.4c.1 0 7.6 3.6 7.6 12.8zm-32.8 5.6c-1.2 0-1.9-.5-1.9-1.9v-6.5c0-1.1.8-1.8 1.9-1.8h5.3l10.4-10.5v31.1l-10.3-10.4h-5.4z"}
       %a.icon.settings-font{:title => t("ref.settings"), "ng-click" => "togglePanel('showReaderFont')", "ng-class" => "{ 'active': showReaderFont }"}

@@ -89,6 +89,10 @@
       }
     }
 
+    &.devotional {
+      border-radius: 5px;
+    }
+
     &.prev, &.next {
       background: #fff url("../assets/icon-reader-arrow.svg") no-repeat center center;
       background-size: rem-calc(8);
