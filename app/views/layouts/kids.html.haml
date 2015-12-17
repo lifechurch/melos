@@ -105,7 +105,7 @@
     %meta{property: "og:url",         content: meta_url }
     %meta{property: "og:description", content: meta_description }
     %meta{property: "og:image", content: "#{url_for(asset_path('BibleAppForKids-icon-200x200.png'))}"}
-    %meta{property: "og:image", content: "#{url_for(asset_path('/kids/hero.png'))}"}
+    %meta{property: "og:image", content: "#{url_for(asset_path('/campaign/kids/hero.png'))}"}
     %meta{property: "og:locale", content: facebook_locale}
     %meta{property: "og:locale:alternate", content: "en_US"}
     %meta{property: "og:locale:alternate", content: "es_ES"}
@@ -147,7 +147,7 @@
     - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
     %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}#{locale_dir}/kids"}
 
-    = stylesheet_link_tag "kids/kids"
+    = stylesheet_link_tag "campaigns/kids"
     = javascript_include_tag "//use.typekit.net/mgk8ovf.js"
 
     :javascript
@@ -162,7 +162,7 @@
       -# This is way too hackish, but it works for now I suppose
       - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa"))
         %h1.intro-bible
-          = image_tag "kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
+          = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids
           %h2.intro-for
             &nbsp;
@@ -180,12 +180,12 @@
       %h3.intro-yv
         = t.call('kids.by youversion')
 
-      %img.intro-icon{ src: "/assets/kids/app-icon.png", alt: t.call('kids.app icon')}
+      %img.intro-icon{ src: "/assets/campaigns/kids/app-icon.png", alt: t.call('kids.app icon')}
 
       %p.intro-help
         = t.call('kids.help your kids')
 
-      %img.intro-img{ src: "/assets/kids/hdr-jesus.png", alt: t.call('kids.jesus and friends')}
+      %img.intro-img{ src: "/assets/campaigns/kids/hdr-jesus.png", alt: t.call('kids.jesus and friends')}
 
       %p.intro-coming
         = t.call('kids.free download')
@@ -193,27 +193,27 @@
       -# !App store buttons
       - if not prelaunch
         .download
-          %a.download-ios{href: t.call('kids.links.apple'), style: "background: #111 url('/assets/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center", target: "_self"}
+          %a.download-ios{href: t.call('kids.links.apple'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/ios-appstore-badge.png') no-repeat center center"}
             = t.call('kids.app store')
-          %a.download-play{href: t.call('kids.links.google'), style: "background: #111 url('/assets/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center", target: "_self"}
+          %a.download-play{href: t.call('kids.links.google'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/play-appstore-badge.png') no-repeat center center"}
             = t.call('kids.google play')
           -if I18n.locale.to_s.eql?("zh-CN")
             %br.desktop-only
-            %a.download-apk{href: "https://dugnyfr6fqjr8.cloudfront.net/KidsBible-China.apk", style: "background: #111 url('/assets/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px"}
+            %a.download-apk{href: "https://dugnyfr6fqjr8.cloudfront.net/KidsBible-China.apk", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/android.svg') no-repeat center center; background-size: 245px"}
               = t.call('kids.free download')
           -if I18n.locale.to_s.eql?("ru")
             %br.desktop-only
-            %a.download-apk{href: "https://store.yandex.ru/", style: "background: #111 url('/assets/kids#{i18n_image_dir}/yandex-appstore-badge.png') no-repeat center center; background-size: 245px", target: "_self"}
+            %a.download-apk{href: "https://store.yandex.ru/", style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/yandex-appstore-badge.png') no-repeat center center; background-size: 245px"}
               = t.call('kids.free download')
 
-          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center", target: "_self"}
+          %a.download-amazon{href: t.call('kids.links.amazon'), style: "background: #111 url('/assets/campaigns/kids#{i18n_image_dir}/amazon-appstore-badge.png') no-repeat center center"}
             = t.call('kids.amazon')
 
 
       -# !iPad hero screenshot
       -#- if not i18n_image_dir.present?
       .hero
-        = image_tag "kids#{i18n_image_dir}/hero.png", class: "hero-screen", alt: t.call('kids.story text 1')
+        = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "hero-screen", alt: t.call('kids.story text 1')
         - if youtube_url.present?
           .youtube-embed
             %iframe{width:"805", height:"607", src: "#{youtube_url}", frameborder: "0", allowfullscreen: "true"}
@@ -227,17 +227,17 @@
 
       -#- else
       -#  .alt-hero
-      -#    = image_tag "kids#{i18n_image_dir}/hero.png", class: "alt-hero-screen", alt: t.call('kids.bible app')
+      -#    = image_tag "campaigns/kids#{i18n_image_dir}/hero.png", class: "alt-hero-screen", alt: t.call('kids.bible app')
       -#    %p.hero-copy
       -#      = t.call('kids.interact text')
 
       -# !Smaller screenshots
 
       .screens
-        = image_tag "kids#{i18n_image_dir}/screens-1.jpg", alt: t.call('kids.story text 2')
-        = image_tag "kids/screens-2.jpg", alt: t.call('kids.story text 3')
-        = image_tag "kids/screens-3.jpg", alt: t.call('kids.story text 4')
-        = image_tag "kids/screens-4.jpg", alt: t.call('kids.story text 5')
+        = image_tag "campaigns/kids#{i18n_image_dir}/screens-1.jpg", alt: t.call('kids.story text 2')
+        = image_tag "campaigns/kids/screens-2.jpg", alt: t.call('kids.story text 3')
+        = image_tag "campaigns/kids/screens-3.jpg", alt: t.call('kids.story text 4')
+        = image_tag "campaigns/kids/screens-4.jpg", alt: t.call('kids.story text 5')
 
       -# !Features list
 
@@ -271,12 +271,12 @@
 
     .logos
       .logos-box
-        %a{href: "http://bible.com", target: "_self"}
-          = image_tag "kids#{i18n_image_dir}/logos-yv.png", class: "logos-yv", alt: t.call('kids.partner.youversion')
+        %a{href: "http://bible.com"}
+          = image_tag "campaigns/kids#{i18n_image_dir}/logos-yv.png", class: "logos-yv", alt: t.call('kids.partner.youversion')
         %p.logos-copy
           = t.call('kids.partner.in partnership')
-        %a{href: "http://onehope.net", target: "_self"}
-          = image_tag "kids#{i18n_image_dir}/logos-oh.png", class: "logos-oh", alt: t.call('kids.partner.one hope')
+        %a{href: "http://onehope.net", id: "oh-logo"}
+          = image_tag "campaigns/kids#{i18n_image_dir}/logos-oh.png", class: "logos-oh", alt: t.call('kids.partner.one hope')
         %p.hide.tr-copy
           ortaklığıyla
 
