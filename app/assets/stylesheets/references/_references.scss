@@ -41,6 +41,7 @@
   h1 {
     float: left;
     margin: 0;
+    letter-spacing: normal;
   }
 
   a {
@@ -224,6 +225,11 @@ html[dir="rtl"] {
     &[md-color-picker] {
       background-image: url('../assets/icon_small_about.png');
     }
+
+    @media #{$small-only} {
+      width: rem-calc(30);
+      height: rem-calc(30);
+    }
 }
 
 .highlight-button {
@@ -237,9 +243,18 @@ html[dir="rtl"] {
 .bookmark-button {
 	background-color: #A9321E !important;
 
-	.st0 {
+	.st0,
+	.st1 {
 		fill: white;
 	}
+}
+
+.shared-button {
+  background-color: $blue !important;
+
+  .st0 {
+    fill: white;
+  }
 }
 
 .note-button {
@@ -288,16 +303,17 @@ html[dir="rtl"] {
 
 div[verse-action] {
 	position: fixed;
-	bottom: 0;
 	right: 0;
+    bottom: 0;
 	padding: rem-calc(23 12 23 15);
 
 	@media #{$large-only} {
-  	right: 15%;
+  	  right: 15%;
 	}
 
 	@media #{$small-only} {
 	  bottom: 50px;
+      margin-bottom: 50px;
 	}
 }
 
@@ -372,6 +388,11 @@ md-chips-wrap {
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
+
+    @media #{$small-only} {
+      height: rem-calc(30) !important;
+      width: rem-calc(30) !important;
+    }
   }
 
   .md-color-picker-result {

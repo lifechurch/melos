@@ -7,7 +7,8 @@ angular.module('reader.verseAction', [])
 			selection: '=',
             selectionText: '=',
 			isOpen: '=',
-			toggleSidePanel: '='
+			toggleSidePanel: '=',
+            panelIsOpen: '='
 		},
 		templateUrl: '/reader-verse-action.tpl.html'
 	}

@@ -375,6 +375,9 @@ md-menu-item {
   }
 }
 
+.md-open-menu-container {
+  z-index:101;
+}
 
 /*  !About - header  */
 
@@ -464,6 +467,11 @@ md-menu-item {
 .menu-title {
 	padding: 16px;
 	font-weight: bold;
+}
+
+.md-button.md-fab.md-mini {
+  width: 60px;
+  height: 60px;
 }
 
 html[dir="rtl"] {

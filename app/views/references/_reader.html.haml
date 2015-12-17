@@ -107,14 +107,13 @@
     - if (controller_name != 'references' && right_sidebar_presenter.present?)
       = render partial: right_sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
     %div{"fix-top" => true, "ng-hide" => "isParallelMode || (showContent && isMobile)"}
-      %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel" }
       %div{}
 
         %div.verse-action-panel.ng-hide{'reader-highlight-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderHighlight", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "highlights" => "highlights", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
         %div.verse-action-panel.ng-hide{'reader-bookmark-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderBookmark", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "bookmarks" => "bookmarks", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
         %div.verse-action-panel.ng-hide{'reader-note-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderNote", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "notes" => "notes", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
         %div.verse-action-panel.ng-hide{'reader-share-panel' => true, "selection" => "readerSelection", "selection-text" => "readerSelectionText", "ng-show" => "showReaderShare", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
-
+    %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel", "fix-bottom" => "", "panel-is-open" => "panelIsOpen"}
 - if (controller_name == 'subscriptions')
   .row.full.pad-row-top
     .day-controls-box.small-centered.columns.text-center
