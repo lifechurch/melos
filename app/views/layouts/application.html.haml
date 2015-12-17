@@ -34,7 +34,7 @@
 
     = content_for?(:lower_javascript) ? yield(:lower_javascript) : nil
 
-    #mode{onclick: 'document.getElementById("mode").style.display = "none";'}
+    #mode{style: 'display:none', onclick: 'document.getElementById("mode").style.display = "none";'}
       .show-for-small-only
         sm &lt;640<br>phone
       .show-for-medium-only
