@@ -139,6 +139,7 @@ angular.module('yv.reader', [
 	 * Load bible chapter from url path
 	 */
 	function loadChapter(location_path, hideDevotional) {
+//        console.log('LoadChapter.1');
 		// Reset some scope vars
 		$scope.working = true;
 		$scope.showReaderBooks = false;
@@ -160,6 +161,25 @@ angular.module('yv.reader', [
 			fillScope(data, hideDevotional);
             loadBooks($scope.reader_version_id);
 			$scope.working = false;
+
+            var toState = $state.current;
+            var toParams = {};
+            if ($stateParams.hasOwnProperty('locale')) {
+                toParams = { usfm: removeVersionFromUsfm($scope.usfm).toLowerCase(), version: $scope.reader_version_id, locale: $stateParams.locale};
+            } else {
+                toParams = { usfm: removeVersionFromUsfm($scope.usfm).toLowerCase(), version: $scope.reader_version_id};
+            }
+            var promise = $state.go(toState, toParams, { notify: false});
+            promise.then(function() {
+                // add g.a. virtual pageview
+                // console.log($location.path());
+                dataLayer.push({
+                    'event': 'VirtualPageview',
+                    'virtualPageURL': $location.path(),
+                    'virtualPageTitle' : 'VirtualPageview: ' + $location.path()
+                });
+            });
+
 		}).error(function(data, status, headers, config) {
 			//TO-DO: Handle Error!
 			$scope.working = false;
@@ -509,6 +529,7 @@ angular.module('yv.reader', [
     }
 
     $scope.completeReferenceAndLoadChapter = function(toState, toParams, refUsfm, userPlanUrl, dayTarget, token) {
+//        console.log('completeReferenceAndLoadChapter');
         $scope.working = true;
         var version = $scope.reader_version_id;
         var usfm = $scope.refUsfm;
@@ -574,6 +595,7 @@ angular.module('yv.reader', [
     };
 
     $scope.loadChapter = function(toState, toParams) {
+//        console.log('LoadChapter.2');
         if (toState === null) {
             toState = $state.current.name;
         } else if (['userPlan', 'userPlan-locale'].indexOf(toState) > -1) {
