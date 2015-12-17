@@ -102,6 +102,7 @@ de:
         users hash verified: "Dieses Konto ist bereits bestätigt worden."
         users password change: "Dein neues Passwort muss sich von deinem alten unterscheiden."
         users password length: "Dein Passwort muss aus mindestens 6 Zeichen bestehen."
+        users password less than minimum value 6: "Dein Passwort muss aus mindestens 6 Zeichen bestehen."
         users password required: "Du musst ein Passwort eingeben."
         user id users not found: "Der Benutzername ist ungültig."
         users username alpha numeric extra: "Der Benutzername sollte aus Buchstaben, Zahlen oder Bindestrichen bestehen."
@@ -112,7 +113,7 @@ de:
         users first name required: "Du musst deinen Vornamen eingeben."
         users last name required: "Du musst deinen Nachnamen eingeben."
         moments content required: "Diese Feld darf nicht leer sein."
-        users auth password required: "You must enter a password."
+        users auth password required: "Du musst ein Passwort eingeben."
     meta: 
         best kids app: "Die beste App für Kids"
         best educational app: "Die beste pädagogische App"
@@ -243,6 +244,7 @@ de:
     reader: "Leseansicht"
     lifechurch short url: "Life.Church"
     about: "Über"
+    blog: "Blog"
     versions link: "Übersetzungen"
     jobs: "Stellen"
     privacy policy: "Datenschutzrichtlinie"
@@ -315,6 +317,9 @@ de:
         likes count 2 more: "%{likes_count} anderen"
         likes count 3 or more: "%{likes_count} anderen"
         users like this: "%{last_liker_link} und %{more_link} gefällt das"
+        like: "Gefällt mir"
+        likes: "Gefällt mir"
+        more than one like: 
         vod: 
             title: "Vers des Tages"
             get daily email: "Tägliche E-Mail erhalten"
@@ -813,7 +818,7 @@ de:
         title: "Lesepläne"
         meta title: "Online Bibelstudium, Andachten und Lesepläne"
         browse by category: "Kategorien anschauen"
-        subcategory: "Sub-category"
+        subcategory: "Unterkategorie"
         browse plans: "%{category} Lesepläne anschauen"
         swap list localization: "(<a href='%{swap_link}' target='_self'>Ansehen auf %{swap_locale}</a>)"
         showing language filtered: "Zeigt nur auf %{lang_name} verfügbare Lesepläne"
@@ -847,9 +852,9 @@ de:
         subscribe to plan: "Diesen Leseplan beginnen"
         previous day: "Vorheriger Tag"
         next day: "Nächster Tag"
-        previous: "Vorheriger"
+        previous: "Zurück"
         next: "Weiter"
-        finish: "Beenden"
+        finish: "Abschließen"
         reading completed _ mark and show next: "Weiter zu: %{next_reference}"
         which reading: "%{current} von %{total}"
         done reading: "Erledigt."
@@ -915,7 +920,7 @@ de:
         invalid reference: "Sorry, eine der Schriftstellen für diesen Leseplan ist nicht in der ausgewählten Übersetzung vorhanden. Wähle oben eine andere aus. Wird diese Meldung weiterhin angezeigt, meldendieses Problem bitte unserem <a href='%{support_url}' target='_self'> Support-Team</a>."
         sidebar notice: "Du schaust dir einen Leseplan an."
         completed notice: "Herzlichen Glückwunsch! Du hast einen Leseplan abgeschlossen."
-        exit: "Beenden"
+        exit: "Abschließen"
         loading sidebar content: "Seitenleiste wird geladen..."
     videos: 
         title: "Videos"
@@ -1120,6 +1125,30 @@ de:
             explanation: "Etwas ist im Hintergrund schief gegangen! Du kannst es erneut versuchen, indem du die Seite neu lädst. Entschuldige die Unanehmlichkeit!"
             our action: "Wir wurden hierüber informiert und werden uns so bald wie möglich darum kümmern."
         home: 
+            heading: "Hole dir eine kostenlose Bibel für dein Smartphone, Tablet oder deinen Computer."
+            cta: "Lies die Bibel jetzt"
+            experience: 
+                title: "Erlebe die Bibel überall"
+                body: "Wähle auf deinem Computer, Handy oder Tablet zwischen mehr als 1.200 Bibelübersetzungen in über 900 Sprachen. Für viele gibt es auch eine Hörbibel!"
+                action: "Gehe zu den Bibelübersetzungen"
+            make_yours: 
+                title: "Mache sie zu deiner Bibel!"
+                body: "Markiere deine Lieblingsverse, erstelle Lesezeichen oder Versbilder, die du teilen kannst und füge bestimmten Abschnitten in der Bibel öffentliche oder private Notizen hinzu."
+                action: "Erstelle dein kostenloses Konto"
+            install_now: 
+                title: "Installiere die App jetzt"
+                body: "Die Bibel App ist vollkommen kostenlos, ohne Werbung und In-App-Käufe. Sie wurde inzwischen auf so vielen einzelnen Geräten installiert wie nie zuvor:"
+                action: "Lade dir die Bibel App gratis herunter."
+            free_plans: 
+                title: "Kostenlose Lesepläne und Andachten"
+                body: "Lesepläne helfen dir dabei, dich jeden Tag mit Gottes Wort zu beschäftigen."
+            browse_plans: "Durchstöbere alle Lesepläne"
+            read_listen: "Lesen, hören, anschauen, teilen"
+            start_now: "Fange gleich an"
+            votd: 
+                title: "Vers des Tages"
+                highlight_bookmark: "Markiere diesen Vers, lege ein Lesezeichen dafür an oder teile ihn."
+                subscribe: "Abonniere den Vers des Tages"
             hero: 
                 heading: "Eine kostenlose Bibel fürs Handy, Tablet & den PC!"
                 description: "YouVersion, eine einfache, werbefreie Bibel, bringt Gottes Wort in deinen Alltag."
@@ -1164,7 +1193,7 @@ de:
             extras: "Extras:"
             translation notes: "Fussnoten"
             cross references: "Querverweise"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Zahlen und Titel"
     app errors: 
         404 plans explanation: "Suchst du nach dem <a href='%{plan_path}' target='_self'>%{title}</a> Bibelleseplan?"
         404 contact support: "Gibt es Probleme? Kontaktiere unser <a href='%{support_url}' target='_self'>Support-Team</a>."

@@ -10,7 +10,6 @@ json.object do
 
   json.set! :votd_date,  l(moment.created_at, :format => :votd)
   json.set! :title,     t("moments.vod.title")
-  json.set! :calendar_img, image_tag("moment-vod-calendar-img.png")
 
   json.recent_versions do
     json.array! moment.recent_versions do |ver|

@@ -146,6 +146,7 @@ cy:
         users hash verified: "Mae'r cyfrif hwn eisoes wedi ei wiro."
         users password change: "Rhaid i'r cyfrinair newydd fod yn wahanol i'r hen gyfrinair."
         users password length: "Rhaid i'r cyfrinair fod o leiaf 6 llythyren."
+        users password less than minimum value 6: "Rhaid i'r cyfrinair fod o leiaf 6 llythyren."
         users password required: "Rhaid rhoi cyfrinair."
         user id users not found: "Mae'r enw defnyddiwr yn annilys."
         users username alpha numeric extra: "Dylai'r enw defnyddiwr gynnwys llythrennau, rhifau neu linell doriad."
@@ -156,7 +157,7 @@ cy:
         users first name required: "Rhaid rhoi enw cyntaf."
         users last name required: "Rhaid rhoi cyfenw."
         moments content required: "All y cynnwys ddim bod yn wag."
-        users auth password required: "You must enter a password."
+        users auth password required: "Rhaid rhoi cyfrinair."
     meta: 
         best kids app: "Yr Ap Plant gorau!"
         best educational app: "Yr Ap Addysgol gorau"
@@ -287,6 +288,7 @@ cy:
     reader: "Darllenydd"
     lifechurch short url: "Life.Church"
     about: "Am"
+    blog: "Blog"
     versions link: "Fersiynau"
     jobs: "Swyddi"
     privacy policy: "Polisi Preifatrwydd"
@@ -359,6 +361,9 @@ cy:
         likes count 2 more: "%{likes_count} mwy"
         likes count 3 or more: "%{likes_count} mwy"
         users like this: "Mae %{last_liker_link} a %{more_link} yn hoffi hwn"
+        like: "Hoffi"
+        likes: "Hoffterau"
+        more than one like: 
         vod: 
             title: "Adnod y Dydd"
             get daily email: "Derbyn ebost dyddiol"
@@ -1172,6 +1177,30 @@ cy:
             explanation: "Aeth rhywbeth o’i le! Ceisiwch eto drwy ail lwytho’r dudalen. R’yn ni’n flin iawn am yr anghyfleustra!"
             our action: "R’yn ni’n gwybod am y broblem. Ceisiwn ei datrys cyn gynted â phosib."
         home: 
+            heading: "Get a free Bible for your phone, tablet, and computer."
+            cta: "Read the Bible Now"
+            experience: 
+                title: "Experience it anywhere"
+                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                action: "View Bible Versions"
+            make_yours: 
+                title: "Make it your Bible"
+                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+                action: "Create Your Free Account"
+            install_now: 
+                title: "Install the App Now"
+                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                action: "Lawrlwythwch y Bible App am ddim"
+            free_plans: 
+                title: "Free Reading Plans and Devotionals"
+                body: "Bible Plans help you engage with God's Word every day, a little at a time."
+            browse_plans: "Browse All Plans"
+            read_listen: "Read, Listen, Watch, Share"
+            start_now: "Start Now"
+            votd: 
+                title: "Adnod y Dydd"
+                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                subscribe: "Subscribe to the Verse of the Day"
             hero: 
                 heading: "Beibl rhad ac am ddim ar dy ffôn, tablet a'th gyfrifiadur."
                 description: "Mae YouVersion yn Feibl syml, di-hysbyseb sy'n dod â Gair Duw i'th fywyd bob dydd."

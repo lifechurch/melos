@@ -41,13 +41,14 @@
   h1 {
     float: left;
     margin: 0;
+    letter-spacing: normal;
   }
 
   a {
     display: block;
     float: left;
     font-size: rem-calc(12);
-    font-family: arial, sans-serif;
+    font-family: $font-family-sans-serif-alt;
     height: 26px;
     line-height: 25px;
     background: #e4e4e4;
@@ -86,6 +87,10 @@
       &:active, &:focus {
         background: #ccc;
       }
+    }
+
+    &.devotional {
+      border-radius: 5px;
     }
 
     &.prev, &.next {
@@ -224,6 +229,11 @@ html[dir="rtl"] {
     &[md-color-picker] {
       background-image: url('../assets/icon_small_about.png');
     }
+
+    @media #{$small-only} {
+      width: rem-calc(30);
+      height: rem-calc(30);
+    }
 }
 
 .highlight-button {
@@ -237,9 +247,18 @@ html[dir="rtl"] {
 .bookmark-button {
 	background-color: #A9321E !important;
 
-	.st0 {
+	.st0,
+	.st1 {
 		fill: white;
 	}
+}
+
+.shared-button {
+  background-color: $blue !important;
+
+  .st0 {
+    fill: white;
+  }
 }
 
 .note-button {
@@ -288,22 +307,22 @@ html[dir="rtl"] {
 
 div[verse-action] {
 	position: fixed;
-	bottom: 0;
 	right: 0;
+    bottom: 0;
 	padding: rem-calc(23 12 23 15);
 
 	@media #{$large-only} {
-  	right: 15%;
+  	  right: 15%;
 	}
 
 	@media #{$small-only} {
 	  bottom: 50px;
+      margin-bottom: 50px;
 	}
 }
 
 
 /* !Font and audio panels */
-
 .reader-panel {
   position: absolute;
   min-width: rem-calc(100) !important;
@@ -317,8 +336,9 @@ div[verse-action] {
   }
 
   &.full {
-  	overflow: scroll;
-  	height: rem-calc(400);
+    position: inherit;
+  	overflow: visible;
+    border: none;
   }
 }
 
@@ -372,6 +392,11 @@ md-chips-wrap {
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
+
+    @media #{$small-only} {
+      height: rem-calc(30) !important;
+      width: rem-calc(30) !important;
+    }
   }
 
   .md-color-picker-result {
@@ -530,7 +555,6 @@ div[audio-data="reader_audio"] {
   }
 }
 
-
 /* !Chapter doesn't exist page */
 
 #invalid_chapter {
@@ -543,15 +567,140 @@ div[audio-data="reader_audio"] {
     margin: 20px 0 50px;
     padding: 7px 15px 6px;
     border: 1px solid #ccc;
-    -webkit-border-radius:  5px;
-    -moz-border-radius:     5px;
-    border-radius:          5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     background-color: $white;
 
     &:hover,
     &:focus {
       background-color: #bbb;
       color: $white;
+    }
+  }
+}
+
+/* !Book/chap/verse pickers */
+
+.tabs dd > a, .tabs .tab-title > a {
+  display: block;
+  background-color: transparent;
+  color: #008CBA;
+  font-family: $font-family-sans-serif-alt;
+  font-size: 1em;
+  padding: 0;
+}
+
+.chapter-book-title,
+.chapter-picker-title,
+.chapter-verse-title {
+  font: 100 2.375em $title-font-family;
+}
+
+.chapter-picker {
+  li {
+    display: block;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    width: 5%;
+  }
+
+  li:nth-child(-n+20) {
+    border-top: 1px solid #ddd;
+  }
+
+  li:nth-child(20n+0),
+  li:last-child {
+    border-right: 1px solid #ddd;
+  }
+
+  @media #{$medium-only} {
+    li {
+      display: block;
+      border-bottom: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      width: 10%;
+    }
+
+    li:nth-child(-n+10) {
+      border-top: 1px solid #ddd;
+    }
+
+    li:nth-child(10n+0),
+    li:last-child {
+      border-right: 1px solid #ddd;
+    }
+  }
+
+  @media #{$small-only} {
+    li {
+      display: block;
+      border-bottom: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      width: 20%;
+    }
+
+    li:nth-child(-n+5) {
+      border-top: 1px solid #ddd;
+    }
+
+    li:nth-child(5n+0),
+    li:last-child {
+      border-right: 1px solid #ddd;
+    }
+  }
+}
+
+.chap-list-no {
+  height: 47px;
+  text-align: center;
+  line-height: 47px;
+  display: block;
+}
+
+.chap-list-no:hover {
+  background: #eee;
+}
+
+.chap-list-no:focus,
+.chap-list-no:active {
+  background: #666;
+  color: #fff;
+}
+
+/* This may just be a temporary fix                      */
+/* This makes the verse actions more like a modal dialog */
+/*  but Product/Design hasn't signed off on this yet     */
+@media #{$small-only} {
+  .reader-right {
+    position: absolute;
+
+    div[fix-top] {
+      .verse-action-panel {
+        background-color: $white;
+        padding: 10px;
+        border-radius: 5px;
+        border: solid 2px $lightGray;
+        box-shadow: 10px 10px 5px $lightGray;
+      }
+    }
+  }
+}
+@media #{$medium-only} {
+  .reader-right {
+    position: absolute;
+
+    div[fix-top] {
+      .verse-action-panel {
+        background-color: $white;
+        padding: 10px;
+        border-radius: 5px;
+        border: solid 2px $lightGray;
+        box-shadow: 10px 10px 5px $lightGray;
+        width:40%;
+        float:right;
+        min-width:300px;
+      }
     }
   }
 }

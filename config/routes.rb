@@ -18,6 +18,9 @@ YouversionWeb::Application.routes.draw do
   # get "/press",         to: redirect("http://youversion.com/press")
   get "/bibleappforkids", to: redirect("https://bibleappforkids.com")
   get "/marriage",      to: redirect("http://blog.youversion.com/2015/10/top-10-marriage-bible-plans-on-youversion/")
+  get "/day-of-the-bible", to: redirect("http://blog.youversion.com/2015/11/its-international-day-of-the-bible/")
+  get "/thanksgiving", to: redirect("http://blog.youversion.com/?p=18397")
+  get "/200million",    to: redirect("http://installs.youversion.com/200million/index.html")
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
@@ -35,6 +38,7 @@ YouversionWeb::Application.routes.draw do
   get "/kinder",        to: "redirects#kinder"
   get "/enfants",       to: "redirects#enfants"
   get "/anak",       to: "redirects#anak"
+  get "/cocuk",      to: "redirects#cocuk"
   get "/trending-bible-verses", to: "pages#trending"
   get "/wmf",           to: "redirects#wmf"
   get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"

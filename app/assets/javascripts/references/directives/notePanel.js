@@ -15,12 +15,19 @@ angular.module('reader.notePanel', [])
 		controller: ['$scope', '$element', 'Notes', 'Highlights', '$timeout', '$rootScope', function($scope, $element, Notes, Highlights, $timeout, $rootScope) {
 			$scope.success = false;
 
+            $scope.cancel = function() {
+                $scope.toggleSidePanel('showReaderNote');
+            };
+
 			if ($scope.selection && $scope.version && $scope.token) {
 				$scope.note		= {};
 				$scope.colors 		= [];
 
 				Highlights.getColors().success(function(data) {
 					$scope.colors = data;
+                    if ($scope.colors && $scope.colors.length) {
+                        $scope.note.color = $scope.colors[0];
+                    }
 				}).error(function(err) {
 					//TO-DO: Handle Error
 				});

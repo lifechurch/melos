@@ -10,6 +10,7 @@ angular.module('yv', [
 	'api.authentication',
 	'api.railsHttp',
 	'common.fixTop',
+    'common.fixBottom',
 	'common.userSettings',
     'common.recentVersions',
     'common.skipHome',
@@ -24,7 +25,7 @@ angular.module('yv', [
 	$locationProvider.hashPrefix('!');
 }])
 
-.directive('ngHtmlCompile', function($compile) {
+.directive('ngHtmlCompile', ['$compile', function($compile) {
 	return {
 		restrict: 'A',
 		link: function(scope, element, attrs) {
@@ -34,9 +35,9 @@ angular.module('yv', [
 			});
 		}
 	};
-})
+}])
 
-.run(['$rootScope', '$window', '$location', '$anchorScroll', '$log', function($rootScope, $window, $location, $anchorScroll, $log) {
+.run(['$rootScope', '$window', '$location', '$anchorScroll', '$log', '$interval', function($rootScope, $window, $location, $anchorScroll, $log, $interval) {
     $anchorScroll.yOffset = 150;
 
 	// Intercept the stateChangeStart event, and determine if the whole state
@@ -49,6 +50,28 @@ angular.module('yv', [
             $rootScope.$broadcast("YV:reloadState", [toState, toParams]);
         }
 	});
+    $window.scrollWatchEnabled = true;
+
+    $window.onresize = function() {
+        $rootScope.$broadcast("Scroll", []);
+    }
+
+    $interval(function() {
+        $rootScope.$broadcast("Scroll", []);
+    }, 500);
+
+    $window.onscroll = function() {
+        if (!$window.scrollWatchEnabled) {
+            return;
+        }
+
+        $window.scrollWatchEnabled = false;
+        $rootScope.$broadcast("Scroll", []);
+
+        return setTimeout(function() {
+            $window.scrollWatchEnabled = true;
+        }, 10);
+    }
 }])
 
 ;

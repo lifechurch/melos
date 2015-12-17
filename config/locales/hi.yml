@@ -102,6 +102,7 @@ hi:
         users hash verified: "यह अकाउंट पहले से सुनिश्चित किया गया हैं।"
         users password change: "पुराने पासवर्ड से अलग नया पासवर्ड एंटर करे।"
         users password length: "आपका पासवर्ड कम से कम 6 अक्षरों का होना अनिवार्य हैं।"
+        users password less than minimum value 6: "आपका पासवर्ड कम से कम 6 अक्षरों का होना अनिवार्य हैं।"
         users password required: "पासवर्ड आवश्यक हैं।"
         user id users not found: "The username is invalid."
         users username alpha numeric extra: "username अक्षरों,अंकों या डाश के रूप में होना अनिवार्य हैं।"
@@ -112,13 +113,13 @@ hi:
         users first name required: "पहला नाम इंटर करना अनिवार्य हैं।"
         users last name required: "आखरी नाम इंटर करना अनिवार्य हैं।"
         moments content required: "सारांश रिक्त अस्वीकार्य"
-        users auth password required: "You must enter a password."
+        users auth password required: "पासवर्ड आवश्यक हैं।"
     meta: 
         best kids app: "बच्चों के लिए सर्वोतम एप्प "
         best educational app: "शिक्षा के लिए सर्वोत्तम एप्प"
         kids_app: 
-            title: "The Bible App for Kids"
-            description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+            title: "नन्हे-मुन्ने बच्चों के लिए बाइबिल App"
+            description: "बच्चों के लिए बाइबिल App अपने बच्चों को यीशु, अनन्त जीवन का उपहार, और भगवान ने हमें सिखाता कई सबक के बारे में बाइबिल कहानियों को जानने के लिए एक शानदार तरीका है. खजाने पढ़ने और इकट्ठा करने के लिए अंक अर्जित करते हुए इस इंटरैक्टिव अनुभव में, बच्चों को सीधे मनोहर दृश्यों के साथ भगवान के शब्द के साथ व्यस्त हैं।"
         100million: 
             title: "100 मिलियन से शुभारंभ हुआ।"
             description: "100 मिलियन से अधिक इन्स्टाल के साथ एक नया कीर्तिमान रचित हुआ। यह मात्र शुरुआत हैं। निशुल्क बाइबिल App आज ही डाउनलोड कर अपने  मित्रों के  साथ शेयर करे। आओ हम साथ मिलकर इतिहास की रचना करे।"
@@ -134,12 +135,12 @@ hi:
     kids: 
         bible app: "बाइबिल App"
         for: "for"
-        kids: "kids"
+        kids: "नन्हें मुन्ने बच्चों के लिए"
         by youversion: "by YouVersion"
         help your kids: "Help your kids fall in love with God’s Word."
-        free download: "Download for free!"
+        free download: "निःशुल्क डाउनलोड करे!"
         app store: "Available on the App store"
-        google play: "Get it on Google Play"
+        google play: "Google Play पर उपलब्ध"
         amazon: "Available at Amazon Appstore for Android"
         app icon: "App icon for The Bible App for Kids"
         jesus and friends: "Jesus and friends"
@@ -156,13 +157,13 @@ hi:
         feature 5: "Kid-friendly navigation"
         share: 
             tell friends: "Tell your friends about the Bible App for Kids."
-            facebook name: "The Bible App for Kids"
+            facebook name: "नन्हे-मुन्ने बच्चों के लिए बाइबिल App"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
             twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
             twitter hashtags: "kidsbible"
-            email: "Email"
+            email: "इमेल"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
         partner: 
@@ -243,6 +244,7 @@ hi:
     reader: "पाठक"
     lifechurch short url: "Life.Church"
     about: "के विषय में"
+    blog: "ब्लॉग "
     versions link: "संस्करण"
     jobs: "करियर"
     privacy policy: "निजी नीति"
@@ -315,6 +317,9 @@ hi:
         likes count 2 more: "%{likes_count} और अधिक"
         likes count 3 or more: "%{likes_count} और अधिक"
         users like this: "%{last_liker_link} और %{more_link} इसे पसंद करिए"
+        like: "पसंद करे"
+        likes: "पसंद"
+        more than one like: 
         vod: 
             title: "आज का पद्य"
             get daily email: "प्रतिदिन ईमेल प्राप्त करे "
@@ -1120,6 +1125,30 @@ hi:
             explanation: "तकनीकी कारणों से यह पृष्ट लोड नहीं हो सका| कृपया फिर से कोशिश करें। असुविधा के लिए खेद है।"
             our action: "हमे इसके बारे में सूचित किया गया हैं। जितनी जल्दी हो सके इसको सुधारने में जुट जायेंगे।"
         home: 
+            heading: "Get a free Bible for your phone, tablet, and computer."
+            cta: "Read the Bible Now"
+            experience: 
+                title: "Experience it anywhere"
+                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                action: "View Bible Versions"
+            make_yours: 
+                title: "Make it your Bible"
+                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+                action: "Create Your Free Account"
+            install_now: 
+                title: "Install the App Now"
+                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                action: "मुफ्त बाइबिल एप्प डाउनलोड कीजिए"
+            free_plans: 
+                title: "Free Reading Plans and Devotionals"
+                body: "Bible Plans help you engage with God's Word every day, a little at a time."
+            browse_plans: "Browse All Plans"
+            read_listen: "Read, Listen, Watch, Share"
+            start_now: "Start Now"
+            votd: 
+                title: "आज का पद्य"
+                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                subscribe: "Subscribe to the Verse of the Day"
             hero: 
                 heading: "एक मुफ्त बाइबिल आपके फ़ोन,टेबलेट और कंप्यूटर पर।"
                 description: "YouVersion उपयोग में आसान  बिना विज्ञापन का बाइबिल हैं जो आपके रोजाना ज़िन्दगी में प्रभु का  वचन उपलब्धित करायेगा।"

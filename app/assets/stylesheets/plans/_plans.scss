@@ -41,6 +41,13 @@
   }
 }
 
+a.icon.active {
+  @media #{$small-only} {
+    background-color: $green;
+    color: $white;
+  }
+}
+
 html[dir="rtl"] body.c_subscriptions {
   @media #{$small-only} {
     .plans-nav-box a {
@@ -78,26 +85,26 @@ html[dir="rtl"] body.c_subscriptions {
   }
 }
 
-.a_index .columns {
-  @media #{$small-only} {
-    padding: 0;
-  }
-
-  [class*="block-grid-"] {
-    margin: 0;
-  }
-}
-
-.a_index [class*="block-grid-"] > li {
-  @media #{$small-only} {
-    padding: 15px;
-    border-top: 1px solid $lightGray;
-
-    &:first-child {
-      border-top: 0;
-    }
-  }
-}
+//.a_index .columns {
+//  @media #{$small-only} {
+//    padding: 0;
+//  }
+//
+//  [class*="block-grid-"] {
+//    margin: 0;
+//  }
+//}
+//
+//.a_index [class*="block-grid-"] > li {
+//  @media #{$small-only} {
+//    padding: 15px;
+//    border-top: 1px solid $lightGray;
+//
+//    &:first-child {
+//      border-top: 0;
+//    }
+//  }
+//}
 
 .subscription {
   @media #{$small-only} {
@@ -163,7 +170,8 @@ html[dir="rtl"] body.c_subscriptions {
 }
 
 .plan-length {
-  color: #444;
+  color: $gray;
+  font-size: 0.813em;
   display: block;
   padding: 5px 0 0 20px;
   background: url("/assets/icon-calendar.svg") no-repeat left 5px;
@@ -199,6 +207,7 @@ img.radius {
       width: auto;
       float: none;
       overflow: hidden;
+      border-top: 1px solid $lightGray;
       border-left: 0;
       padding: 0;
 
@@ -222,7 +231,7 @@ img.radius {
 
       @media #{$small-only} {
         height: auto;
-        padding: 0 3%;
+        padding: 10px 3%;
       }
 
       img {
@@ -267,11 +276,6 @@ img.radius {
 
 .featured-title {
   margin: 50px 0 30px;
-}
-
-.a_index .length {
-  font-size: 0.867em;
-  color: $gray;
 }
 
 .medium-block-grid-5 > li {
@@ -329,6 +333,105 @@ ul.plan-results {
   width: 100%;
   border-top: solid rem-calc(1) $lightGray;
   z-index: 100;
+}
+
+
+/* !Plan detail view */
+
+.rp-hero-img {
+  -webkit-border-radius:  5px 5px 0 0;
+  -moz-border-radius:     5px 5px 0 0;
+  border-radius:          5px 5px 0 0;
+  width: 100%;
+}
+
+.rp-plan-box {
+  border: 1px solid $lightGray;
+  border-top: 0;
+  padding: 0 30px 30px;
+  -webkit-border-radius:  0 0 5px 5px;
+  -moz-border-radius:     0 0 5px 5px;
+  border-radius:          0 0 5px 5px;
+
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .keep {
+    margin: 0;
+    padding: 30px 0 0 0;
+  }
+}
+
+.rp-plan-info {
+  margin: 10px 0 20px;
+  background: image-url("icon-calendar.svg") no-repeat left center;
+  background-size: 13px 15px;
+  padding: 0 0 0 20px;
+}
+
+.detail-text {
+  line-height: 1.3em;
+  padding: 0 0 15px;
+}
+
+.c_plans.a_show {
+  .widget {
+    @media #{$small-only} {
+      margin: 20px 0 0;
+    }
+  }
+
+  .rp-subscription-info {
+    overflow: hidden;
+
+    .solid-button {
+      display: block;
+      float: $default-float;
+      width: 49%;
+
+      @media #{$medium-only} {
+        float: none;
+        width: auto;
+      }
+
+      @media #{$small-only} {
+        float: none;
+        width: auto;
+      }
+
+      &:first-child {
+        margin: 0 2% 0 0;
+
+        @media #{$medium-only} {
+          margin: 0 0 10px;
+        }
+
+        @media #{$small-only} {
+          margin: 0 0 10px;
+        }
+      }
+    }
+
+    .plan-privacy-buttons {
+      clear: both;
+      padding: 15px 0 0;
+
+      .detail-text + a {
+        margin: 0 2% 0 0;
+
+        @media #{$medium-only} {
+          margin: 0 0 10px;
+        }
+
+        @media #{$small-only} {
+          margin: 0 0 10px;
+        }
+      }
+    }
+  }
 }
 
 
@@ -553,7 +656,6 @@ ul.plan-results {
 
 .plan-day-verse.completed {
   color: #bbb;
-  text-decoration: line-through;
 }
 
 .rp-image-settings {
@@ -574,11 +676,12 @@ ul.plan-results {
     li {
       a {
         &.active {
-          color: $gray;
-          text-decoration: line-through;
+          color: $green !important;
+          font-weight:bold;
+          text-decoration: none !important;
         }
 
-        &.complete {
+        &.completed, &.complete {
           text-decoration: line-through;
           color: $gray;
         }
@@ -622,7 +725,6 @@ ul.plan-results {
     background-color: transparent;
     border-top: 0;
     z-index: auto;
-    display: none;
   }
 
   .button-group {
@@ -666,6 +768,75 @@ ul.plan-results {
   font: 1.5em arial, sans-serif;
   text-align: center;
 }
+
+
+/* !Plan sample view */
+
+.c_plans.a_sample {
+  .bcv-button-box {
+    .prev,
+    .next {
+      display: none;
+    }
+  }
+
+  #widget-plan-controls {
+    .small-title {
+      margin: 0 0 15px;
+
+      a {
+        color: $black;
+      }
+    }
+  }
+
+  .calendar-prev,
+  .calendar-next {
+    a {
+      display: block;
+      font-size: 0.813em;
+    }
+  }
+
+  .calendar-day {
+    h4 {
+      font-size: 0.813em;
+    }
+  }
+}
+
+.c_plans.a_sample {
+  .scripture-links {
+    font-size: 0.938em;
+
+    h3 {
+      font-size: 0.938em;
+      font-weight: bold;
+      border-top: 1px solid $lightGray;
+      padding: 15px 0 10px;
+      margin: 5px 0 0;
+    }
+
+    li {
+      list-style: decimal;
+
+      a {
+        color: $black;
+      }
+    }
+  }
+
+  .rp-subscription-info {
+    .solid-button {
+      display: block;
+    }
+  }
+
+  .plan-privacy-buttons + .solid-button {
+    display: none;
+  }
+}
+
 
 /* !Plan settings */
 
@@ -754,4 +925,63 @@ html[dir="rtl"] .plan-settings {
   -webkit-border-radius:  5px;
   -moz-border-radius:     5px;
   border-radius:          5px;
+}
+
+#plan-index ul.paginate {
+  margin: 30px 0 0;
+  overflow: hidden;
+
+  li {
+    list-style-type: none;
+    display: inline-block;
+    overflow: hidden;
+
+    &.prev {
+      float: $default-float;
+    }
+
+    &.next {
+      float: $opposite-direction;
+    }
+  }
+}
+
+
+/* !All plans list views */
+
+.allplans-list-box {
+  label {
+    padding: 0 0 5px;
+  }
+
+  .highlighted a {
+    color: $black;
+  }
+
+  .breadcrumbs-item a {
+    padding: 4px 0;
+    display: block;
+  }
+
+  .breadcrumbs-item {
+    @media #{$small-only} {
+      border-bottom: 1px solid $lightGray;
+    }
+  }
+}
+
+
+/* !My plans */
+
+.c_subscriptions.a_index {
+  .resource_list {
+    @media #{$small-only} {
+      margin: 5px 0 0;
+
+      .subscription {
+        border-bottom: 1px solid $lightGray;
+        padding: 10px;
+      }
+    }
+  }
 }

@@ -17,8 +17,8 @@
 .fixed.after-header
   .row.full.b-border.white.collapse
     .medium-12.columns.text-center.plans-nav-box
+      = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present? && @show_my_plans
       = link_to t("plans.all plans"), plans_path, class: 'icon active', target: "_self"
-      = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present?
 
 %article#plan-index
   - if @category.label.nil?
@@ -60,24 +60,47 @@
 
   - else
     .row.full
-      .columns.medium-3
+      .columns.medium-3.allplans-list-box
         %h1= @category.label
         %form
           .row
             .small-12.columns
               %label
                 = t('plans.bible plan language')
-                %select.language{onChange: "this.form.submit();", name: "lang"}
-                  - (Plan.available_locales & I18n.available_locales).each do |loc|
-                    %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
-                      = t("language name", locale: loc)
-              - if @category.children
-                %label
-                  = t("plans.subcategory")
-                  %select.category{onChange: "this.form.submit();", name: "category"}
-                    - @category.children.each do |category|
-                      %option{value: category.slug, selected: @category.label == category.label}
+              %select.language{onChange: "this.form.submit();", name: "lang"}
+                - (Plan.available_locales & I18n.available_locales).each do |loc|
+                  %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
+                    = t("language name", locale: loc)
+
+              -#  for mvp we've removed the sub category drop down and reverted to breadcrumbing code
+              -#  so we don't have to introduce new UI to deal with 'X'ing from a subcat page
+              -#  whatever new UI is built we need to be sure it accounts for pagination
+              -#- if @category
+              -#  - if @category.children
+              -#    %label
+              -#      = t("plans.subcategory")
+              -#      %select.category{onChange: "this.form.submit();", name: "category"}
+              -#        %option{value: ''}
+              -#          = t("plans.subcategory")
+              -#        - @category.children.each do |category|
+              -#          %option{value: category.slug, selected: @category.label == category.label}
+              -#            = category.label
+
+              - level = -1
+              - if @category
+                - if @category.breadcrumbs
+                  - @category.breadcrumbs.each do |category|
+                    - level += 1
+                    .breadcrumbs-item{class: params[:category] == category.slug ? "highlighted" : ""}
+                      %a{href: plans_path(params.merge(locale: orig_locale, category: category.slug, page: 1)), :target => "_self"}
+                        = (params[:category] == category.slug) ? t("plans.all category plans", category: category.label)  : category.label
+                  - level += 1
+                - if @category.children
+                  - @category.children.each do |category|
+                    .breadcrumbs-item{class: params[:category] == category.slug ? "highlighted" : ""}
+                      %a{:href => plans_path(params.merge(locale: orig_locale, category: category.slug, page: 1)), :target => "_self"}
                         = category.label
+
 
       .columns.medium-9
         .list-box
@@ -91,6 +114,15 @@
               %div
                 %h3.plan-title= plan.name
                 %p.plan-length= plan.formatted_length
+
+        %ul.paginate
+          - if @plans.prev_page || @page > 1
+            %li.prev
+              =link_to "&larr; #{t('ui.pagination.previous page')}".html_safe, url_for({query: params[:query], category: params[:category],page: @plans.prev_page || @page - 1, locale: params[:locale], lang: params[:lang]}), rel: 'prev', target: "_self", class: "previous"
+          - if @plans.next_page
+            %li.next
+              =link_to "#{t('ui.pagination.next page')} &rarr;".html_safe, url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]}), rel: 'next', target: "_self", class: "next"
+
     -#
       / .content
 

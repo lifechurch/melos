@@ -71,6 +71,16 @@
   -#
   -# Reader Audio Panel
   -#
+  %script{'type' => 'text/ng-template', 'id' => '/reader-audio-panel.tpl.html'}
+    #reader-audio-panel
+      .large-3.medium-6.reader-panel.right
+        - if presenter.reference.audio.present?
+          %h3#reader_audio_title{"ng-bind" => "audioData.title"}
+            = presenter.reference.audio.title
+          %p#reader_audio_copyright_short.blue-text{"ng-bind" => "audioData.copyright_short.text"}
+            = presenter.reference.audio.copyright_short.text
+          %audio#reader_audio_player{src:presenter.reference.audio.url, "ng-src" => '{{audioData.trustedUrl}}', :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
+            ="Your browser does not support the audio element."
   #reader-audio-panel.ng-hide
     .large-3.medium-6.reader-panel.right
       - if presenter.reference.audio.present?
@@ -93,27 +103,49 @@
   -# Verse Action
   -#
   %script{'type' => 'text/ng-template', 'id' => '/reader-verse-action.tpl.html'}
-    %md-fab-speed-dial.ng-hide{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'", "ng-show" => "selection.length"}
+    %md-fab-speed-dial{"md-direction" => "up", "md-open" => "isOpen", "ng-class" => "'md-fling'", "ng-show" => "selection.length && !panelIsOpen"}
       %md-fab-trigger
         %md-button.md-fab.md-raised.md-mini{"aria-label" => "+"}
-          ="+"
+          %span{"ng-show" => "isOpen"}
+            ="X"
+          %span{"ng-hide" => "isOpen"}
+            ="+"
       %md-fab-actions
-        %md-button.md-fab.md-raised.md-mini.note-button{"aria-label" => "Note", "ng-click" => "toggleSidePanel('showReaderNote')"}
-          %md-tooltip{"md-direction" => "left"} Note
-          %md-icon{"md-svg-src" => "/assets/notes-solid.svg"}
         %md-button.md-fab.md-raised.md-mini.highlight-button{"aria-label" => "Highlight", "ng-click" => "toggleSidePanel('showReaderHighlight')" }
           %md-tooltip{"md-direction" => "left"} Highlight
           %md-icon{"md-svg-src" => "/assets/highlight-solid.svg"}
         %md-button.md-fab.md-raised.md-mini.bookmark-button{"aria-label" => "Bookmark", "ng-click" => "toggleSidePanel('showReaderBookmark')"}
           %md-tooltip{"md-direction" => "left"} Bookmark
           %md-icon{"md-svg-src" => "/assets/bookmark-solid.svg"}
-        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Share"}
+        %md-button.md-fab.md-raised.md-mini.note-button{"aria-label" => "Note", "ng-click" => "toggleSidePanel('showReaderNote')"}
+          %md-tooltip{"md-direction" => "left"} Note
+          %md-icon{"md-svg-src" => "/assets/notes-solid.svg"}
+        %md-button.md-fab.md-raised.md-mini.shared-button{"aria-label" => "Share", "ng-click" => "toggleSidePanel('showReaderShare')"}
           %md-tooltip{"md-direction" => "left"} Share
           %md-icon{"md-svg-src" => "/assets/icon-share.svg"}
-        %md-button.md-fab.md-raised.md-mini{"aria-label" => "Related"}
-          %md-tooltip{"md-direction" => "left"} Related
-          %md-icon{"md-svg-src" => "/assets/icon-related.svg"}
 
+  -#
+  -# Reader Share Panel
+  -#
+  %script{type:"text/ng-template", id: "/reader-share-panel.tpl.html"}
+    .ng-hide.reader-verseaction-loggedout{"ng-show" => "!isLoggedIn && selection.length"}
+      %p.highlight
+        = t('registration.highlight blurb');
+      %span.fb
+        = link_to(t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path))
+      %span.or
+        = t("or.upper")
+      %span.email
+        = link_to(t("registration.with email"), sign_up_path, {id: "signup-via-email"})
+    %div.ng-hide{"ng-show" => "isLoggedIn && selection.length"}
+      .ng-hide{"ng-show"=>"success"}
+        %span.success= t("highlights.create success")
+      %div{"ng-hide"=>"success"}
+        %label
+          =t("social.share")
+        %div.addthis_sharing_toolbox{"data-url" => "", "data-title" => ""}
+        %a{"ng-click" => "cancel()", title: "Cancel"}
+          =t("cancel")
 
   -#
   -# Reader Highlight Panel
@@ -141,8 +173,8 @@
           %div.colorButton.vertical-middle.text-center{"md-color-picker" => true, "value" => "highlight.color"}
         .reader-highlight-save
           %button.solid-button.green{"ng-click" => "submit(highlight)", :type => "submit", :value => "submit"}= t('highlights.form.save button')
-          %a{href: "#", title: "Cancel"}
-            Cancel
+          %a{"ng-click" => "cancel()", title: "Cancel"}
+            =t("cancel")
 
 
   -#
@@ -179,8 +211,8 @@
           %md-chips{"ng-model"=> "labels", "placeholder" => "#{t('bookmarks.labels')}", "readonly" => "false", "delete-button-label" => "#{t('bookmarks.remove label')}"}
         .reader-bookmark-save
           %button.solid-button.green{"ng-click" => "submit(bookmark, labels)", :type => "submit", :value => "submit"}= t('bookmarks.form.save button')
-          %a{href: "#", title: "Cancel"}
-            Cancel
+          %a{"ng-click" => "cancel()", title: "Cancel"}
+            =t("cancel")
 
   -#
   -# Reader Note Panel
@@ -215,8 +247,8 @@
           %textarea{"ng-model"=>"note.content"}
         .reader-note-save
           %button.solid-button.green{"ng-click" => "submit(note)", :type => "submit", :value => "submit"}= t('notes.form.save button')
-          %a{href: "#", title: "Cancel"}
-            Cancel
+          %a{"ng-click" => "cancel()", title: "Cancel"}
+            =t("cancel")
 
   -#
   -#

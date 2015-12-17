@@ -56,6 +56,7 @@
 
 .moment-ago {
 	font-size: 12px;
+	line-height: 1.2em;
 	color: #999;
   display: table-cell;
   padding: 20px 15px 0 0;
@@ -66,14 +67,15 @@
 .moment-plan-progress {
 	font-size: 12px;
 	color: #999;
-  padding: 20px 15px 0 0;
+  padding: 8px 15px 0 0;
+  display: block;
 }
 
 .moment-content {
   border: 1px solid #ddd;
   border-top: none;
   border-bottom: none;
-  padding: 15px;
+  padding: 0 15px 15px 15px;
 }
 
 .moment-actions {
@@ -102,7 +104,7 @@
 
   &.active {
   	background: url("../assets/icon-like-color.svg") no-repeat left 4px;
-  	background-size: 16px;  	
+  	background-size: 16px;
   }
 }
 
@@ -131,17 +133,26 @@
   float: left;
   padding: 10px 15px;
   font-size: 13px;
+
+  @media #{$small-only} {
+    width: 30%;
+  }
 }
 
 .moment-likes-avatars {
   width: 80%;
   float: left;
   text-align: right;
-  padding: 10px 15px 5px 0;
+  padding: 10px 10px 5px 0;
+
+  @media #{$small-only} {
+    width: 70%;
+  }
 }
 
 .moment-likes-avatars a {
   display: inline-block;
+  margin: 0 3px 5px 3px;
 }
 
 .moment-likes-avatars a img {
@@ -173,27 +184,42 @@
 }
 
 .moment-comments-self-avatar {
-  width: 13%;
+  width: 10%;
   float: left;
-  padding: 10px 15px;
+  padding: 10px 0 0 15px;
+
+  @media #{$medium-only} {
+    padding: 10px 0 0 10px;
+  }
+
+  @media #{$small-only} {
+    padding: 10px 0 0 10px;
+    width: 13%;
+  }
 }
 
 .moment-comments-self-avatar img {
   width: 24px;
+  height: 24px;
 	-webkit-border-radius:  12px;
 	-moz-border-radius:     12px;
 	border-radius:          12px;
 }
 
 .moment-comments-self-input {
-  width: 87%;
+  width: 90%;
   float: left;
-  padding: 10px 10px 5px 0;
+  padding: 10px 10px 10px 0;
+
+  @media #{$small-only} {
+    width: 87%;
+  }
 }
 
 .moment-comments-self-input textarea {
   width: 100%;
   height: 38px;
+  margin: 0;
 }
 
 .moment-comments-list {
@@ -210,30 +236,54 @@
 }
 
 .moment-comments-list-avatar {
-  width: 13%;
+  width: 10%;
   float: left;
   padding: 10px 15px;
+
+  @media #{$medium-only} {
+    width: 12%;
+    padding: 10px;
+  }
+
+  @media #{$small-only} {
+    width: 13%;
+    padding: 10px;
+  }
 }
 
 .moment-comments-list-avatar img {
   width: 24px;
+  max-width: 24px;
 	-webkit-border-radius:  12px;
 	-moz-border-radius:     12px;
 	border-radius:          12px;
 }
 
 .moment-comments-list-text {
-  width: 80%;
+  width: 90%;
   float: left;
   padding: 10px 10px 10px 0;
   line-height: 1.2em;
+
+  @media #{$medium-only} {
+    width: 88%;
+  }
+
+  @media #{$small-only} {
+    width: 87%;
+  }
+
+  a {
+    display: block;
+  }
+
+  p {
+    font-size: 0.875em;
+  }
 }
 
 .moment-comment-dt {
   display: block;
-  position: absolute;
-  top: 10px;
-  right: 15px;
   font-size: 12px;
   color: #bbb;
 }
@@ -262,6 +312,49 @@
 
 /*  !Plan complete moment */
 
+.moment-pc-progress {
+  overflow: hidden;
+  padding: 0 0 0 12%;
+
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  @media #{$medium-only} {
+    padding: 0 0 0 15%;
+  }
+
+  @media #{$small-only} {
+    padding: 0 0 0 17%;
+  }
+
+  .moment-pc-progress-img,
+  .moment-pc-progress-bar {
+    float: $default-float;
+  }
+
+  .moment-pc-progress-img {
+    width: 20%;
+
+    img {
+    	-webkit-border-radius:  5px;
+    	-moz-border-radius:     5px;
+    	border-radius:          5px;
+    }
+  }
+
+  .moment-pc-progress-bar {
+    width: 80%;
+    padding: 25px 0 0 15px;
+
+    @media #{$small-only} {
+      padding: 15px 0 0 15px;
+    }
+  }
+}
+
 .moment-content .plan-image {
   width: 75%;
   padding: 0 15px 30px;
@@ -270,6 +363,18 @@
 	-moz-border-radius:     5px;
 	border-radius:          5px;
   display: block;
+}
+
+md-progress-linear.md-default-theme .md-container, md-progress-linear .md-container {
+  background-color: #ddd;
+}
+
+md-progress-linear.md-default-theme .md-bar, md-progress-linear .md-bar {
+  background-color: #6AB750;
+}
+
+md-progress-linear:not([md-mode="indeterminate"]) .md-container {
+  transform: none;
 }
 
 
@@ -387,5 +492,26 @@
   .slick-center {
     opacity: 1 !important;
     transition: all 300ms ease;
+  }
+}
+
+
+/* !Votd moment */
+
+.moment-subscribe-menu {
+  padding: 15px;
+
+  label {
+    display: block;
+    padding: 0 0 5px;
+  }
+
+  .subscribe-time select {
+    width: auto;
+    padding-right: 20px;
+  }
+
+  .solid-button {
+    margin: 0 10px 0 0;
   }
 }

@@ -6,6 +6,7 @@ angular.module('reader.reader',  [])
 		scope: {
 			content: '=',
 			selection: '=',
+            selectionText: '=',
 			fontSize: '=',
 			fontFamily: '=',
 			showFootnotes: '=',

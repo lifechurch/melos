@@ -18,7 +18,7 @@ YouversionWeb::Application.configure do
   #### REENABLE ...
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://www.bible.com"
+  config.action_controller.asset_host = "#{ENV['SECURE_TRAFFIC'] ? 'https' : 'http'}://lt.bible.com"
   puts "ENV['SECURE_TRAFFIC'] => #{ENV['SECURE_TRAFFIC']}"
 
   # Compress JavaScripts and CSS into one file for each
@@ -52,7 +52,7 @@ YouversionWeb::Application.configure do
 
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( ie7.css ie8.css ie9.css donate.css status.css mobile.css mobile/donate.css bdc_home.css kids/kids.css retina.js campaigns/100m.css campaigns/100m/jquery.counter.js campaigns/100m/jquery.countdown.min.js slick.css  campaigns/christmas/polymaps.min.js campaigns/christmas/plugins.js campaigns/christmas.css jw/jwplayer.js jw/jwplayer.html5.js angular/angular.min.js angular/app.js)
+  config.assets.precompile += %w( ie7.css ie8.css ie9.css donate.css status.css mobile.css mobile/donate.css bdc_home.css campaigns/kids.css retina.js campaigns/100m.css campaigns/100m/jquery.counter.js campaigns/100m/jquery.countdown.min.js slick.css  campaigns/christmas/polymaps.min.js campaigns/christmas/plugins.js campaigns/christmas.css jw/jwplayer.js jw/jwplayer.html5.js angular/angular.min.js angular/app.js)
   # Precompile JS locale files
   config.assets.precompile += ['i18n/*']
 

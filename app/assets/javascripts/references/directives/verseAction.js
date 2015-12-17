@@ -5,8 +5,10 @@ angular.module('reader.verseAction', [])
 		restrict: 'A',
 		scope: {
 			selection: '=',
+            selectionText: '=',
 			isOpen: '=',
-			toggleSidePanel: '='
+			toggleSidePanel: '=',
+            panelIsOpen: '='
 		},
 		templateUrl: '/reader-verse-action.tpl.html'
 	}

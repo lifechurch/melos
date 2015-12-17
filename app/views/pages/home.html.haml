@@ -46,8 +46,7 @@
     .columns.large-7.medium-8.text-center.medium-centered
       %h1.heading
         %img.home-bible-icon{src: "#{image_path(localized_bible_icon(120))}"}
-        %p
-          = t("pages.home.heading")
+        =link_to(t("pages.home.heading"), app_page_path, { class: "heading", target: "_self" })
 
       =link_to(t("pages.home.cta"), bible_path, class: 'solid-button green padded mobile-full', target: "_self")
 

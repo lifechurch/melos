@@ -227,13 +227,15 @@ html[dir="rtl"] {
 }
 
 h1.heading {
-  p {
+  a {
     font-size: 45.71px;
     color: #353535;
     line-height: 54px;
     font-size: 45px;
     margin: 30px 0;
     font-weight: bold;
+    display: block;
+    text-decoration: none;
   }
 }
 
@@ -273,6 +275,10 @@ img.heading {
   height: 50px;
   margin: 80px 0 30px;
 
+  @media #{$medium-only} {
+    margin: 40px 0 30px;
+  }
+
   @media #{$small-only} {
     margin-top: 30px;
   }
@@ -311,8 +317,16 @@ a.heading {
   .votd-content {
     padding:20px;
 
+    @media #{$medium-only} {
+      padding: 0 20px 20px;
+    }
+
     h2.heading {
       margin: 20px 0 30px;
+
+      @media #{$medium-only} {
+        margin: 20px 0 20px;
+      }
     }
 
     .votd-icon {
@@ -323,12 +337,16 @@ a.heading {
 
     p {
       -webkit-font-smoothing: subpixel-antialiased;
-      font-family: $title-font-family;
-      font-size: 28px;
+      font-size: 22px;
       color: #000000;
       line-height: 36px;
-      font-weight: bold;
+
+      @media #{$medium-only} {
+        font-size: 16px;
+        line-height: 30px;
+      }
     }
+
     .votd-verse a,
     .votd-ref a
     {
@@ -374,6 +392,10 @@ a.heading {
     text-align: left;
     font-weight: bold;
     margin: 10px 0 0 0;
+
+    @media #{$medium-only} {
+      font-size: 14px;
+    }
   }
 
   .fp-details {

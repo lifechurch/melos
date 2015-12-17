@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-11-16 09:55-0600\n"
-"PO-Revision-Date: 2015-11-16 09:55-0600\n"
+"POT-Creation-Date: 2015-11-30 10:18-0600\n"
+"PO-Revision-Date: 2015-11-30 10:18-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -66,8 +66,14 @@ msgstr "नए बाइबिल पाठक योजना के साथ 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "नए पाठक योजना से श्रद्धा बढ़ाये। "
 
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "प्रभु के वचन से उनका अनुसरण करें। "
+
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "इस ऋतु के लिए ह्रदय को तैयार करो "
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "प्रभु के वचन से उनका प्यार पाए। "
 
 msgid "moment.client_side.reading_plan_carousel.january.title"
 msgstr "आपका श्रेष्ठ वर्ष शुरू हुआ। "
@@ -75,8 +81,20 @@ msgstr "आपका श्रेष्ठ वर्ष शुरू हुआ�
 msgid "moment.client_side.reading_plan_carousel.july.title"
 msgstr "ईसा मसीह के साथ मुक्ति पर्व मनाये। "
 
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "प्रभु का अनुसरण उनके वचन से। "
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "आशा और नवीनीकरण प्रभु के वचन से।"
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "रोज़ाना प्रभु के वचन,अध्ययन करे। "
+
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "परमेश्वर की प्रतिज्ञायों के लिए धन्यवादी हों "
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "पवित्र समझ प्रभु के वचन से। "
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "परमेश्वर का वचन सभी को नया बनता है "

@@ -23,14 +23,7 @@
         - #%a{href: "#", class: "friends-count-find action_button_blue"}
         - #  = t("friends.find friends")
 
-    - if @friends.present? # show my friends
-      = render partial: "friends/list", locals: {friends: @friends, user: @user}
-
-    - else # I don't have friends
-      %p.friends-none
-        = t("friends.none me")
-        - #%a{href: "#", class: "friends-count-find action_button_blue"}
-        - #  = t("friends.find friends")
+    = render partial: "friends/list", locals: {friends: @friends, user: @user}
 
 - elsif Friend.with? @user, auth: current_auth # We can only
   .profile-friends
@@ -45,4 +38,3 @@
       = t("friends.blank slate.heading")
     %p
       = t("friends.blank slate.description")
-      

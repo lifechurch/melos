@@ -102,6 +102,7 @@ fr:
         users hash verified: "Ce compte a déjà été vérifié."
         users password change: "Votre nouveau mot de passe doit être différent de l'ancien."
         users password length: "Le mot de passe doit contenir au moins 6 caractères."
+        users password less than minimum value 6: "Le mot de passe doit contenir au moins 6 caractères."
         users password required: "Vous devez saisir un mot de passe."
         user id users not found: "Le nom d'utilisateur est invalide."
         users username alpha numeric extra: "Le nom d'utilisateur ne doit contenir que des lettres, des chiffres ou des tirets."
@@ -112,7 +113,7 @@ fr:
         users first name required: "Vous devez saisir un prénom."
         users last name required: "Vous devez saisir un nom."
         moments content required: "Le contenu ne peut pas être vide."
-        users auth password required: "You must enter a password."
+        users auth password required: "Vous devez saisir un mot de passe."
     meta: 
         best kids app: "La meilleure app pour les enfants !"
         best educational app: "La meilleure App éducative !"
@@ -243,6 +244,7 @@ fr:
     reader: "Lecteur"
     lifechurch short url: "Life.Church"
     about: "À propos de"
+    blog: "Blog"
     versions link: "Versions"
     jobs: "Postes à pourvoir"
     privacy policy: "Politique de confidentialité"
@@ -315,6 +317,9 @@ fr:
         likes count 2 more: "%{likes_count} autres"
         likes count 3 or more: "%{likes_count} autres"
         users like this: "%{last_liker_link} et %{more_link} aiment ça"
+        like: "J'aime"
+        likes: "J'aime"
+        more than one like: 
         vod: 
             title: "Verset du jour"
             get daily email: "Recevoir les emails quotidiens"
@@ -813,7 +818,7 @@ fr:
         title: "Plans de lecture"
         meta title: "Etudes bibliques en ligne, dévotions et plans de lecture"
         browse by category: "Parcourir par catégorie"
-        subcategory: "Sub-category"
+        subcategory: "Sous-catégorie"
         browse plans: "Parcourir la catégorie %{category}"
         swap list localization: "(<a href='%{swap_link}' target='_self'>View in %{swap_locale}</a>)"
         showing language filtered: "Ne montrer que les plans de lecture disponibles en %{lang_name}"
@@ -1120,6 +1125,30 @@ fr:
             explanation: "Quelque chose n'a pas fonctionné! Merci d'essayer encore une fois en rafraîchissant la page. Toutes nos excuses pour ce contretemps!"
             our action: "Nous avons été informés de cela et nous le réglerons dès que possible."
         home: 
+            heading: "Get a free Bible for your phone, tablet, and computer."
+            cta: "Read the Bible Now"
+            experience: 
+                title: "Experience it anywhere"
+                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                action: "View Bible Versions"
+            make_yours: 
+                title: "Make it your Bible"
+                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+                action: "Create Your Free Account"
+            install_now: 
+                title: "Install the App Now"
+                body: "La Bible App est entièrement gratuite, sans publicité et sans achats in-app. Elle a été installée sur cette nombreux appareils individuels (à ce jour):"
+                action: "Télécharger la Bible App gratuite"
+            free_plans: 
+                title: "Free Reading Plans and Devotionals"
+                body: "Bible Plans help you engage with God's Word every day, a little at a time."
+            browse_plans: "Browse All Plans"
+            read_listen: "Read, Listen, Watch, Share"
+            start_now: "Commencez maintenant"
+            votd: 
+                title: "Verset du jour"
+                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                subscribe: "Subscribe to the Verse of the Day"
             hero: 
                 heading: "Une Bible gratuite sur votre téléphone, tablette, et ordinateur."
                 description: "YouVersion est une simple Bible, sans publicité, qui amène la Parole de Dieu dans votre vie quotidienne."
@@ -1164,7 +1193,7 @@ fr:
             extras: "Extras :"
             translation notes: "Notes de bas de page"
             cross references: "Références croisées"
-            numbers and titles: "Numbers and Titles"
+            numbers and titles: "Nombres et Titres"
     app errors: 
         404 plans explanation: "Cherchez-vous le plan <a href='%{plan_path}' target='_self'>%{title}</a> ?"
         404 contact support: "Un problème ? Contactez <a href='%{support_url}' target='_self'>l'assistance</a>."

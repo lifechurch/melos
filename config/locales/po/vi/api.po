@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:29-0609\n"
-"PO-Revision-Date: 2015-07-31 10:29-0609\n"
+"POT-Creation-Date: 2015-12-07 09:51-0600\n"
+"PO-Revision-Date: 2015-12-07 09:51-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: vi <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Làm tươi mới niềm tin qua các kế hoạch Kinh Thánh."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Tìm kiếm sự khôn ngoan từ Lời Chúa mỗi ngày."
+msgstr "Tìm kiếm Chúa trong Lời Ngài mỗi ngày"
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Hãy dọn lòng mình cho mùa lễ này!"
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Tìm kế hoạch yêu thích của bạn cho tháng Hai!"
+msgstr "Tìm thấy tình yêu của Chúa trong Lời Ngài"
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Năm tuyệt vời nhất của bạn bắt đầu từ ngay bây giờ"
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Lời Chúa giải phóng tâm linh chúng ta mỗi ngày."
+msgstr "Vui hưởng tự do trong Đấng Christ"
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Tìm thấy nhịp sống của mình mỗi ngày qua Lời Chúa."
+msgstr "Tìm kiếm Chúa trong Lời Ngài"
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Tìm thấy hi vọng và sự đổi mới qua các kế hoạch của tháng Ba!"
+msgstr "Tìm thấy hi vọng và sự đổi mới trong Lời Chúa"
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Hết lòng tìm kiếm Chúa mỗi ngày qua Thánh Kinh."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Tĩnh nguyện mỗi ngày trong 2015. Hãy tìm hiểu thêm!"
+msgstr "Tĩnh nguyện mỗi ngày với Lời Chúa"
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Tin cậy và biết ơn những lời Chúa hứa."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Lời Kinh Thánh thật sống động. Hãy lắng nghe tiếng Chúa mỗi ngày."
+msgstr "Sự khôn ngoan thiên thượng bắt đầu từ Lời Chúa"
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Lời Chúa đổi mới mọi sự."
