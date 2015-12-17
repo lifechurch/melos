@@ -40,7 +40,7 @@
       %div{"reader-text-settings-panel" => true, "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "show-footnotes" => "showFootnotes", "show-cross-references" => "showCrossReferences", "show-numbers-and-titles" => "showNumbersAndTitles", "ng-show" => "showReaderFont", "toggle-panel" => "togglePanel" }
       %div{"reader-audio-panel" => true, "ng-show" => "showReaderAudio", "audio-data" => "reader_audio" }
 
-      =render partial: 'shared/book_selector', locals: {presenter: presenter}
-      =render partial: 'shared/version_selector/display', locals: {presenter: presenter}
-
   %md-progress-linear.ng-hide.reader-progress{"md-mode" => "indeterminate", "ng-show" => "working"}
+
+=render partial: 'shared/book_selector', locals: {presenter: presenter}
+=render partial: 'shared/version_selector/display', locals: {presenter: presenter}
