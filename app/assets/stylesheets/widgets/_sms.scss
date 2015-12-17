@@ -25,7 +25,7 @@
     border-radius: 4px;
     border: 1px solid #dddddd;
     font-size: 14px;
-    font-family: Helvetica, sans-serif;
+    font-family: $font-family-sans-serif;
     outline: 0 !important;
     height: 36px;
     color: #333333;
@@ -48,11 +48,11 @@
     white-space: nowrap;
     font-size: 13px;
     margin: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: $font-family-sans-serif;
     outline: 0 !important;
   }
   .smsError {
-    font-family: Helvetica;
+    font-family: $font-family-sans-serif;
     color: #cf6969;
     margin-top: 5px;
     margin-left: 0;
@@ -67,14 +67,14 @@
     width: 365px;
   }
   .poweredDiv {
-    font-family: Helvetica;
+    font-family: $font-family-sans-serif;
     color: #bbbbbb;
     font-size: 11px;
     letter-spacing: 1px;
     margin-top: 5px;
   }
   .poweredLink {
-    font-family: Helvetica;
+    font-family: $font-family-sans-serif;
     color: #bbbbbb;
     text-decoration: underline;
   }
