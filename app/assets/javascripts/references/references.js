@@ -164,9 +164,9 @@ angular.module('yv.reader', [
             var toState = $state.current;
             var toParams = {};
             if ($stateParams.hasOwnProperty('locale')) {
-                toParams = { usfm: $scope.usfm.toLowerCase(), version: $scope.reader_version_id, locale: $stateParams.locale};
+                toParams = { usfm: removeVersionFromUsfm($scope.usfm).toLowerCase(), version: $scope.reader_version_id, locale: $stateParams.locale};
             } else {
-                toParams = { usfm: $scope.usfm.toLowerCase(), version: $scope.reader_version_id};
+                toParams = { usfm: removeVersionFromUsfm($scope.usfm).toLowerCase(), version: $scope.reader_version_id};
             }
             var promise = $state.go(toState, toParams, { notify: false});
             promise.then(function() {
