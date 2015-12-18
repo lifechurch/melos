@@ -41,7 +41,6 @@
   h1 {
     float: left;
     margin: 0;
-    letter-spacing: normal;
   }
 
   a {
@@ -238,11 +237,6 @@ html[dir="rtl"] {
     &[md-color-picker] {
       background-image: url('../assets/icon_small_about.png');
     }
-
-    @media #{$small-only} {
-      width: rem-calc(30);
-      height: rem-calc(30);
-    }
 }
 
 .highlight-button {
@@ -256,18 +250,9 @@ html[dir="rtl"] {
 .bookmark-button {
 	background-color: #A9321E !important;
 
-	.st0,
-	.st1 {
+	.st0 {
 		fill: white;
 	}
-}
-
-.shared-button {
-  background-color: $blue !important;
-
-  .st0 {
-    fill: white;
-  }
 }
 
 .note-button {
@@ -316,17 +301,16 @@ html[dir="rtl"] {
 
 div[verse-action] {
 	position: fixed;
+	bottom: 0;
 	right: 0;
-    bottom: 0;
 	padding: rem-calc(23 12 23 15);
 
 	@media #{$large-only} {
-  	  right: 15%;
+  	right: 15%;
 	}
 
 	@media #{$small-only} {
 	  bottom: 50px;
-      margin-bottom: 50px;
 	}
 }
 
@@ -351,9 +335,48 @@ div[verse-action] {
   }
 }
 
+#reader-font-dropdown {
+  label {
+    text-align: left;
+  }
+}
+
+.font-sizes {
+  label {
+    padding: 0 0 5px;
+  }
+
+  td a {
+    color: $black;
+  }
+
+  td.activeFont a {
+    color: #fff;
+  }
+
+  td {
+    border-left: 1px solid $lightGray;
+  }
+
+  td:first-child {
+    border-left: 0;
+  }
+}
+
+.font-family {
+  label {
+    padding: 0 0 5px;
+  }
+}
+
 .font-selector {
 	td {
 		padding: 0;
+		border-right: 1px solid $lightGray;
+
+		&:nth-child(2n+0) {
+  		border-right: 0;
+		}
 
 		label {
 			width: 100%;
@@ -367,6 +390,24 @@ div[verse-action] {
 			background-color: $lightGray;
 		}
 	}
+}
+
+.font-extras {
+  text-align: left;
+
+  label:first-child {
+    padding: 0 0 10px;
+  }
+
+  input[type="checkbox"] {
+    height: auto !important;
+  }
+
+  input,
+  input[type="checkbox"] + label {
+    display: inline-block;
+    padding: 0;
+  }
 }
 
 md-chips-wrap {
@@ -401,11 +442,6 @@ md-chips-wrap {
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
-
-    @media #{$small-only} {
-      height: rem-calc(30) !important;
-      width: rem-calc(30) !important;
-    }
   }
 
   .md-color-picker-result {
