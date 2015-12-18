@@ -83,7 +83,7 @@
       = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
     &nbsp;
 
-  .reader-center.large-6.medium-centered.columns{class: controller_name == 'subscriptions' ? 'ng-hide' : '', "ng-show" => "!isPlanState || (planContentReady && showContent)", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
+  .reader-center.large-6.columns{class: controller_name == 'subscriptions' ? 'ng-hide' : '', "ng-show" => "!isPlanState || (planContentReady && showContent)", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-centered': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
     #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "selection-text" => "readerSelectionText", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes", "show-numbers-and-titles" => "showNumbersAndTitles"}
       = presenter.content.html_safe if presenter.content
       -# Read Chapter button
