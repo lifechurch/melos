@@ -84,7 +84,7 @@
             %img{:alt => "", :src => current_user.user_avatar_url["px_48x48"]}
           .moment-comments-self-input
             %form
-              %textarea{:placeholder => "Comment...", "ng-model"=>"newComment.content", "ng-keypress" => "comment($event, newComment.content);"}
+              %textarea{:placeholder => "#{t('moments.action.comment')}", "ng-model"=>"newComment.content", "ng-keypress" => "comment($event, newComment.content);"}
 
 -#
 -# Bookmark Moment
