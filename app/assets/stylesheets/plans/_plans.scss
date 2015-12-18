@@ -730,6 +730,7 @@ ul.plan-results {
   .button-group {
     width: 25%;
     margin: 0 auto;
+    overflow: hidden;
 
     @media #{$medium-only} {
       width: 50%;
@@ -741,6 +742,9 @@ ul.plan-results {
 
     & > li {
       width: 50%;
+      display: block;
+      float: left;
+      margin: 0;
 
       a {
         display: block;
