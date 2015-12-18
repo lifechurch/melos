@@ -48,7 +48,6 @@
 
 = content_for?(:additional_meta) ? yield(:additional_meta) : nil
 = content_for?(:stylesheets) ? yield(:stylesheets) : nil
-= javascript_include_tag "https://jira.lifechurch.tv/s/bddca35c2d97d42136b1a370cc1146c1-T/en_USowj4hg/64014/97/1.4.24/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=19f970dd"
 
 - @native_url ||= session[:native_url] if session[:native_url].present?
 - @user_agent ||= session[:user_agent] if session[:user_agent].present?
