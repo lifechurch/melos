@@ -137,7 +137,7 @@ tr:
         for: "için"
         kids: "çocuklar"
         by youversion: "YouVersion'un sunumuyla"
-        help your kids: "Çocuklarınızın Tanrı’nın sözüne gönül vermelerine yardımcı olun"
+        help your kids: "Çocuklarınızın\nTanrı’nın sözüne\ngönül vermelerine\nyardımcı olun"
         free download: "Ücretsiz İndirin!"
         app store: "Şu anda mevcut App Store"
         google play: "Hemen indirin Google play"
@@ -158,7 +158,7 @@ tr:
         share: 
             tell friends: "Çocuklar için Kutsal Kitap Uygulaması'nı Arkadaşlarınıza da Önerin"
             facebook name: "Çocuklar için Kutsal Kitap Uygulaması"
-            facebook description: "Çocuklar için Kutsal Kitap Uygulaması burada! İOS ve Android için ücretsiz uygulamayı buradan indirebilirsiniz. Katılıma imkan veren Kutsal Kitap hikayeleri, çocuğunuzun öğrenim, oyun ve Tanrı'nın sözünde gelişim yetilerine yardımcıdır. www.bible.com/cocuk"
+            facebook description: "Çocuklar için Kutsal Kitap Uygulaması burada! İOS ve Android için ücretsiz uygulamayı buradan indirebilirsiniz. www.bible.com/cocuk"
             facebook link: "http://www.bible.com/cocuk"
             facebook redirect: "http://www.bible.com/cocuk"
             twitter description: "@YouVersion Çocuklar için Kutsal Kitap Uygulaması başladı!Eğlenceli ve tümüyle ücretsiz.İndirmek için:bible.com/cocuk #kutsalöyküler"
