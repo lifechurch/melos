@@ -102,7 +102,7 @@
         .row.lower-content
           .columns.medium-4.testimonials
             %h2= t('mobile page.what people')
-            %div.review-carousel
+            %div{class: 'review-carousel', "carousel" => ""}
               %div
                 %h3= t('mobile page.t1')
                 %p= t('mobile page.t1 copy')
@@ -147,32 +147,6 @@
                 - @audio_versions_list.each do |version|
                   %li
                     = link_to "#{version.title} (#{version.abbreviation.upcase})" , audiobible_path(version), { target: '_self' }
-
-- content_for :javascripts do
-  :javascript
-
-    $(document).ready(function(){
-      $('.review-carousel').slick({
-        centerMode: true,
-        centerPadding: "0px",
-        slidesToShow: 1,
-        infinite: false,
-        variableWidth: true,
-        autoplay: true,
-        autoplaySpeed: 6000,
-        arrows: false,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerPadding: "10px",
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-    });
 
 %script{type: "application/ld+json"}
   {

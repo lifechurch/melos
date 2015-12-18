@@ -18,7 +18,8 @@ angular.module('yv', [
     'common.installCounter',
     'common.branchMobileBanner',
     'common.branchSms',
-    'common.hoverLink'
+    'common.hoverLink',
+    'common.carousel'
 ])
 
 .config([ '$locationProvider', '$urlRouterProvider', '$windowProvider', function($locationProvider, $urlRouterProvider, $windowProvider) {
