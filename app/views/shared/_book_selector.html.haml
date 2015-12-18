@@ -32,15 +32,13 @@
                   %a{href: chapter_url}
                     = chapter_name
 
-  #reader-chapter-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderVersions" }
-    .row.full
-      .medium-4.columns.text-left
-        %h3.inline= t('versions title')
-        %a{"ng-click" => "cancel('showReaderVersions')" }= t('cancel')
-      .medium-4.columns.text-center
-        %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter"), "ng-minlength" => "3"}
-      .medium-4.columns.text-right
-        %br
+  #reader-chapter-dropdown.row.ng-hide.large-7.large-centered.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderVersions" }
+    .medium-6.columns.text-left
+      %h3.version-picker-title= t('versions title')
+      %a{"ng-click" => "cancel('showReaderVersions')" }= t('cancel')
+    .medium-6.columns.text-center
+      %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter"), "ng-minlength" => "3"}
+
     %div{"reader-version-list" => true, "versions" => "versions", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel", "load-parallel-chapter" => "loadParallelChapter", "set-parallel-version" => "setParallelVersion", "load-chapter" => "loadChapter" }
 
   #reader-chapter-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderChapters" }
@@ -51,7 +49,7 @@
   #reader-book-dropdown.ng-hide.medium-12.reader-panel.full.scroll{ "tabindex" => "-1", "ng-show" => "showReaderBooks" }
     .row.full
       .medium-4.columns.text-left
-        %h3.inline= t('book')
+        %h3.book-picker-title= t('book')
         %a{"ng-click" => "cancel('showReaderBooks')" }= t('cancel')
       .medium-4.columns.text-center
         %input{"ng-model" => "bookFilter", "type" => "text", "placeholder" => t("filter book")}
@@ -69,14 +67,12 @@
       .small-12.columns.text-left
         %div{"ng-if" => "recentVersionCount()"}
           %h5= t("recent versions")
-          %hr
           %div{"ng-repeat" => "version in recentVersions"}
             %ul.side-nav{:role => "navigation"}
               %li.menuitem
                 %a{"ng-click" => "loadVersion(version, false)"}
                   %b {{version.abbrev | uppercase}}
                   {{version.title}}
-          %hr
         %div{"ng-repeat" => "language in versions", "ng-hide" => "allLangVersions.length == 0"}
           %h1
             = "{{language.name}}"
@@ -101,7 +97,7 @@
   %script{'type' => 'text/ng-template', 'id' => '/reader-chapter-selector.tpl.html'}
     .row
       .medium-12.columns.text-left
-        %h3.inline.chapter-picker-title
+        %h3.chapter-picker-title
           {{selectedBook.name}} &#187;
           = t('chapter')
         %a{"ng-click" => "cancel()"}= t('cancel')
