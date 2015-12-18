@@ -213,7 +213,16 @@ html[dir="rtl"] {
 }
 
 
-/* !Verse task bar */
+/* !Verse action bar */
+
+.md-button {
+  svg {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    display: block;
+  }
+}
 
 .colorButton {
 	width: rem-calc(40);
@@ -627,10 +636,79 @@ div[audio-data="reader_audio"] {
   padding: 0;
 }
 
-.chapter-book-title,
+#reader-book-dropdown,
+#reader-chapter-dropdown {
+  padding: 0 25px 25px;
+}
+
+.book-picker-title,
 .chapter-picker-title,
-.chapter-verse-title {
+.version-picker-title {
   font: 100 2.375em $title-font-family;
+  display: inline-block;
+  margin: 0 10px 20px 0;
+
+  @media #{$medium-only} {
+    + a {
+      font-size: 0.750em;
+    }
+  }
+
+  @media #{$small-only} {
+    margin: 0 10px 10px 0;
+  }
+}
+
+#reader-book-dropdown {
+  .switch {
+    padding: 10px 0 0;
+
+    @media #{$medium-only} {
+      font-size: 0.750em;
+      padding: 5px 0 0;
+    }
+
+    @media #{$small-only} {
+      padding: 0;
+      text-align: left;
+    }
+  }
+
+  div[books="reader_book_list"] {
+    h5.bookLabel {
+      color: #824F2B;
+      padding: 0.4375rem 0;
+    }
+  }
+}
+
+#reader-chapter-dropdown {
+  .medium-6.columns:nth-child(-n+2) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  h1,
+  h5 {
+    color: #824F2B;
+    font-size: 1.188em;
+    font-family: arial, sans-serif;
+    font-weight: normal;
+  }
+
+  h5 {
+    padding: 0 0 5px;
+    border-bottom: 1px solid $lightGray;
+  }
+
+  h1 {
+    padding: 10px 0;
+    border-bottom: 1px solid $lightGray;
+  }
+
+  .side-nav li a:not(.button) {
+    padding: 0;
+  }
 }
 
 .chapter-picker {
@@ -652,14 +730,15 @@ div[audio-data="reader_audio"] {
 
   @media #{$medium-only} {
     li {
-      display: block;
-      border-bottom: 1px solid #ddd;
-      border-left: 1px solid #ddd;
       width: 10%;
     }
 
     li:nth-child(-n+10) {
       border-top: 1px solid #ddd;
+    }
+
+    li:nth-child(n+11) {
+      border-top: 0;
     }
 
     li:nth-child(10n+0),
@@ -670,14 +749,15 @@ div[audio-data="reader_audio"] {
 
   @media #{$small-only} {
     li {
-      display: block;
-      border-bottom: 1px solid #ddd;
-      border-left: 1px solid #ddd;
       width: 20%;
     }
 
     li:nth-child(-n+5) {
       border-top: 1px solid #ddd;
+    }
+
+    li:nth-child(n+6) {
+      border-top: 0;
     }
 
     li:nth-child(5n+0),
