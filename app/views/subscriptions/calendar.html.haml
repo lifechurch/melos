@@ -2,10 +2,10 @@
 - subscription = @presenter.subscription
 
 .row
-  .columns.medium-8
+  .columns
     =render partial: "editHeader"
     .row.pad-row
-      .columns.small-8
+      .columns
         = render partial: 'subscriptions/calendar', locals: { subscription: @subscription, showAll: true }
-  .columns.medium-4
-    = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
+  -# .columns.medium-4
+  -#  = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}

@@ -5,51 +5,52 @@
   7.times {|i| days_of_week << sunday.next_day(i).strftime('%^a')[0]}
 - month = 0
 - while !statuses.empty?
-  %table.cal_month{:cellspacing => "0", :cellpadding => "0", "ng-show" => "month == #{month}" + (showAll ? ' || true' : ''), "class" => showAll ? '' : 'ng-hide'}
-    :ruby
-      first_date = Date.parse(statuses.first.date)
-      last_date = first_date.next_month - (first_date.next_month.day)
-      full_month = false
-    %caption
-      %a{"ng-click" => "month = month - 1", "ng-show" => "month > 0"}= '<<'
-      %span
-        =first_date.strftime('%B %Y')
-      %a{"ng-click" => "month = month + 1", "ng-show" => "month < #{statuses.length}"}= '>>'
-    %thead
-      %tr
-        -days_of_week.each do |day|
-          %th= day
-    %tbody
+  .plan-calendar-list
+    %table.cal_month{:cellspacing => "0", :cellpadding => "0", "ng-show" => "month == #{month}" + (showAll ? ' || true' : ''), "class" => showAll ? '' : 'ng-hide'}
       :ruby
-        rows = 0
-        cur_date = first_date - (first_date.day - 1) - (first_date - (first_date.day - 1)).cwday       # first calendar day (given tabular calendar starting on Sun)
-        cur_date = cur_date.next_day(7) if first_date.prev_day(first_date.day - 1) - cur_date == 7       # if first day of month is a sunday (more clear than doing on the previous line)
-      - # while there are remaining items that are in this current month  -OR-  we haven't listed a full month (of days or enough rows)
-      - while ((!statuses.empty? && (Date.parse((cur_status = statuses.first).date).month) == first_date.month)) || (!full_month) || rows < 6
+        first_date = Date.parse(statuses.first.date)
+        last_date = first_date.next_month - (first_date.next_month.day)
+        full_month = false
+      %caption
+        %a{"ng-click" => "month = month - 1", "ng-show" => "month > 0"}= '<<'
+        %span
+          =first_date.strftime('%B %Y')
+        %a{"ng-click" => "month = month + 1", "ng-show" => "month < #{statuses.length}"}= '>>'
+      %thead
         %tr
-          - 7.times do       # List out one week
-            - if full_month
-              %td.disabled.hidden
-            - else
-              - if cur_date.month != first_date.month || cur_date < first_date || statuses.empty?         # if not in current month  -OR-  not a day on the plan
-                - if cur_date.month != first_date.month
-                  %td.disabled{class: cur_date == current_date ? "today" : ""}
-                - else
-                  %td.inactive-day
-                    %span.inactive-day{class: cur_date == current_date ? "today" : ""}= cur_date.day.to_s
+          -days_of_week.each do |day|
+            %th= day
+      %tbody
+        :ruby
+          rows = 0
+          cur_date = first_date - (first_date.day - 1) - (first_date - (first_date.day - 1)).cwday       # first calendar day (given tabular calendar starting on Sun)
+          cur_date = cur_date.next_day(7) if first_date.prev_day(first_date.day - 1) - cur_date == 7       # if first day of month is a sunday (more clear than doing on the previous line)
+        - # while there are remaining items that are in this current month  -OR-  we haven't listed a full month (of days or enough rows)
+        - while ((!statuses.empty? && (Date.parse((cur_status = statuses.first).date).month) == first_date.month)) || (!full_month) || rows < 6
+          %tr
+            - 7.times do       # List out one week
+              - if full_month
+                %td.disabled.hidden
               - else
-                - cur_status = statuses.delete_at(0)
-                %td.active-day{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'partial' : '') << ((cur_date == current_date) ? ' today' : '')}
-                  = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day), "target" => "_self" ) do
-                    = cur_date.day.to_s
-                    - if cur_status.completed
-                      %img.calendar-day-icon{ src: "#{image_path('icon-plans-checkmark.svg')}"}
-                    - if !cur_status.completed
-                      %img.calendar-day-icon{ src: "#{image_path('icon-plans-uncomplete.svg')}", "ng-hide" => "isDayComplete(#{cur_status.day})"}
-                      %img.calendar-day-icon.ng-hide{ src: "#{image_path('icon-plans-checkmark.svg')}", "ng-show" => "isDayComplete(#{cur_status.day})"}
-              - cur_date = cur_date.next
+                - if cur_date.month != first_date.month || cur_date < first_date || statuses.empty?         # if not in current month  -OR-  not a day on the plan
+                  - if cur_date.month != first_date.month
+                    %td.disabled{class: cur_date == current_date ? "today" : ""}
+                  - else
+                    %td.inactive-day
+                      %span.inactive-day{class: cur_date == current_date ? "today" : ""}= cur_date.day.to_s
+                - else
+                  - cur_status = statuses.delete_at(0)
+                  %td.active-day{class: (cur_status.completed ? 'read' : !cur_status.references_completed.empty? ? 'partial' : '') << ((cur_date == current_date) ? ' today' : '')}
+                    = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day), "target" => "_self" ) do
+                      = cur_date.day.to_s
+                      - if cur_status.completed
+                        %img.calendar-day-icon{ src: "#{image_path('icon-plans-checkmark.svg')}"}
+                      - if !cur_status.completed
+                        %img.calendar-day-icon{ src: "#{image_path('icon-plans-uncomplete.svg')}", "ng-hide" => "isDayComplete(#{cur_status.day})"}
+                        %img.calendar-day-icon.ng-hide{ src: "#{image_path('icon-plans-checkmark.svg')}", "ng-show" => "isDayComplete(#{cur_status.day})"}
+                - cur_date = cur_date.next
 
-          :ruby
-            full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
-            rows += 1
-  -month = month + 1
+            :ruby
+              full_month = cur_date > last_date       # it's been a full month if the first day in the next week is after the last day of the current month
+              rows += 1
+    -month = month + 1
