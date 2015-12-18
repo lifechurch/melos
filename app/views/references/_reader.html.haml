@@ -77,7 +77,7 @@
 
 = render partial: "references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
-.row.full.reader-content
+.row.full.reader-content{"ng-hide" => "topPanelOpen"}
   .reader-left.large-3.columns{"ng-hide" => "isParallelMode || (showContent && isMobile)"}
     - unless (controller_name == 'references' || @sidebar == false || sidebar_presenter.blank?)
       = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}

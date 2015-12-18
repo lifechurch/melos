@@ -17,7 +17,9 @@ angular.module('yv', [
     'videos.videoPlayer',
     'common.installCounter',
     'common.branchMobileBanner',
-    'common.hoverLink'
+    'common.branchSms',
+    'common.hoverLink',
+    'common.carousel'
 ])
 
 .config([ '$locationProvider', '$urlRouterProvider', '$windowProvider', function($locationProvider, $urlRouterProvider, $windowProvider) {

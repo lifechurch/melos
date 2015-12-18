@@ -37,6 +37,7 @@ common:
   rate_limit: 120
   treadstone_base_url: 'https://yv-giving-staging.life.church/'
   vod_image_api_url: 'https://s3.amazonaws.com/votd-images-youversionapi-com/items.json'
+  branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
 
 development:
   api_root: youversionapistaging.com
@@ -61,8 +62,7 @@ staging:
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
   facebook_app_id: 105030176203924
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
-#  branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
-  branch_key: "key_live_jpmoQCKshT4dmEI1OZyuGmlmjffQNTlA"
+  branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
 
 test:
   api_root: youversionapistaging.com

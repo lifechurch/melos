@@ -98,6 +98,7 @@ angular.module('yv.reader', [
     $scope.reader_book_list = [];
     $scope.isMobile = Foundation.utils.is_small_only() || Foundation.utils.is_medium_only();
     $scope.showContent = !$scope.isMobile;
+    $scope.topPanelOpen = false;
 
 	hideAllPanels();
 	hideAllSidePanels();
@@ -120,7 +121,9 @@ angular.module('yv.reader', [
 		$scope.showReaderAudio = false;
 		$scope.showReaderFont = false;
 		$scope.showReaderBooks = false;
+        $scope.showReaderChapters = false;
 		$scope.showReaderVersions = false;
+        $scope.topPanelOpen = false;
 	}
 
 
@@ -139,6 +142,7 @@ angular.module('yv.reader', [
 	 * Load bible chapter from url path
 	 */
 	function loadChapter(location_path, hideDevotional) {
+//        console.log('LoadChapter.1');
 		// Reset some scope vars
 		$scope.working = true;
 		$scope.showReaderBooks = false;
@@ -152,6 +156,7 @@ angular.module('yv.reader', [
         $scope.filter = "";
         $scope.selectedBook = null;
         $anchorScroll("top-of-page");
+        $scope.topPanelOpen = false;
 
 		Bible.getChapter(location_path).success(function(data, status, headers, config) {
             if (data.hasOwnProperty('to_path')) {
@@ -160,6 +165,25 @@ angular.module('yv.reader', [
 			fillScope(data, hideDevotional);
             loadBooks($scope.reader_version_id);
 			$scope.working = false;
+
+            var toState = $state.current;
+            var toParams = {};
+            if ($stateParams.hasOwnProperty('locale')) {
+                toParams = { usfm: removeVersionFromUsfm($scope.usfm).toLowerCase(), version: $scope.reader_version_id, locale: $stateParams.locale};
+            } else {
+                toParams = { usfm: removeVersionFromUsfm($scope.usfm).toLowerCase(), version: $scope.reader_version_id};
+            }
+            var promise = $state.go(toState, toParams, { notify: false});
+            promise.then(function() {
+                // add g.a. virtual pageview
+                // console.log($location.path());
+                dataLayer.push({
+                    'event': 'VirtualPageview',
+                    'virtualPageURL': $location.path(),
+                    'virtualPageTitle' : 'VirtualPageview: ' + $location.path()
+                });
+            });
+
 		}).error(function(data, status, headers, config) {
 			//TO-DO: Handle Error!
 			$scope.working = false;
@@ -375,12 +399,15 @@ angular.module('yv.reader', [
 		$scope[panel] = !originalValue;
 
 		if ((panel == "showReaderFont" || panel == "showReaderAudio") && $scope[panel]) {
+            $scope.topPanelOpen = false;
 
 		} else if (panel == "showReaderBooks") {
+            $scope.topPanelOpen = $scope[panel];
             if ($scope.reader_book_list.length == 0) {
                 loadBooks($scope.reader_version_id);
             }
 		} else if (panel == "showReaderChapters") {
+            $scope.topPanelOpen = $scope[panel];
             if ($scope.reader_book_list.length == 0) {
                 loadBooks($scope.reader_version_id);
             }
@@ -390,6 +417,7 @@ angular.module('yv.reader', [
 				$scope.showReaderBooks 		= true;
 			}
 		} else if (panel == "showReaderVersions") {
+            $scope.topPanelOpen = $scope[panel];
             if (setParallel) {
                 $scope.setParallelVersion = true;
             } else {
@@ -399,7 +427,9 @@ angular.module('yv.reader', [
             if (!$scope.versions || !$scope.versions.length) {
                 loadVersions();
             }
-		}
+		} else {
+            $scope.topPanelOpen = false;
+        }
 	};
 
     $scope.cancel = function(panel) {
@@ -509,6 +539,7 @@ angular.module('yv.reader', [
     }
 
     $scope.completeReferenceAndLoadChapter = function(toState, toParams, refUsfm, userPlanUrl, dayTarget, token) {
+//        console.log('completeReferenceAndLoadChapter');
         $scope.working = true;
         var version = $scope.reader_version_id;
         var usfm = $scope.refUsfm;
@@ -574,6 +605,7 @@ angular.module('yv.reader', [
     };
 
     $scope.loadChapter = function(toState, toParams) {
+//        console.log('LoadChapter.2');
         if (toState === null) {
             toState = $state.current.name;
         } else if (['userPlan', 'userPlan-locale'].indexOf(toState) > -1) {

@@ -68,12 +68,13 @@
   %script{'type' => 'text/ng-template', 'id' => '/reader-audio-panel.tpl.html'}
     #reader-audio-panel
       .large-3.medium-6.reader-panel.right
-        %h3#reader_audio_title{"ng-bind" => "audioData.title"}
-          = presenter.reference.audio.title
-        %p#reader_audio_copyright_short.blue-text{"ng-bind" => "audioData.copyright_short.text"}
-          = presenter.reference.audio.copyright_short.text
-        %audio#reader_audio_player{src:presenter.reference.audio.url, "ng-src" => '{{audioData.trustedUrl}}', :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
-          ="Your browser does not support the audio element."
+        - if presenter.reference.audio.present?
+          %h3#reader_audio_title{"ng-bind" => "audioData.title"}
+            = presenter.reference.audio.title
+          %p#reader_audio_copyright_short.blue-text{"ng-bind" => "audioData.copyright_short.text"}
+            = presenter.reference.audio.copyright_short.text
+          %audio#reader_audio_player{src:presenter.reference.audio.url, "ng-src" => '{{audioData.trustedUrl}}', :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
+            ="Your browser does not support the audio element."
   #reader-audio-panel.ng-hide
     .large-3.medium-6.reader-panel.right
       - if presenter.reference.audio.present?

@@ -227,13 +227,15 @@ html[dir="rtl"] {
 }
 
 h1.heading {
-  p {
+  a {
     font-size: 45.71px;
     color: #353535;
     line-height: 54px;
     font-size: 45px;
     margin: 30px 0;
     font-weight: bold;
+    display: block;
+    text-decoration: none;
   }
 }
 
