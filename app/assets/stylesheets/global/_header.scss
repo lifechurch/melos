@@ -649,15 +649,22 @@ html[dir="rtl"] {
   }
 }
 
+body.c_references.a_show {
+  .nav-more-menu {
+    @media #{$medium-only} {
+      top: 88px;
+    }
+  }
+}
+
 .nav-more-menu {
   background-color: $white;
-  height: 126px;
   right: 0;
   left: 0;
   position: fixed;
   border-top: solid 2px $lightGray;
   @media #{$small-only} {
-    bottom: 51px;
+    bottom: 46px;
     top: auto;
   }
   @media #{$medium-only} {
