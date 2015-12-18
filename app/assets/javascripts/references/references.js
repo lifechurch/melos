@@ -67,7 +67,7 @@ angular.module('yv.reader', [
 	;
 }])
 
-.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", "Subscription", "$anchorScroll", "$q", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window, Subscription, $anchorScroll, $q) {
+.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", "Subscription", "$anchorScroll", "$q", "$cookies", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window, Subscription, $anchorScroll, $q, $cookies) {
 	$scope.reader_version_id = $stateParams.version;
     $scope.parallel_version = $stateParams.version;
 	$scope.usfm = $stateParams.usfm;
@@ -173,6 +173,17 @@ angular.module('yv.reader', [
             } else {
                 toParams = { usfm: removeVersionFromUsfm($scope.usfm).toLowerCase(), version: $scope.reader_version_id};
             }
+
+            var expires = new Date();
+            expires.setFullYear(expires.getFullYear() + 1);
+            if ($scope.usfm) {
+                $cookies.put("last_read", removeVersionFromUsfm($scope.usfm).toLowerCase(), { expires: expires });
+            }
+            if ($scope.reader_version_id) {
+                $cookies.put("version", $scope.reader_version_id, { expires: expires });
+            }
+
+
             var promise = $state.go(toState, toParams, { notify: false});
             promise.then(function() {
                 // add g.a. virtual pageview
