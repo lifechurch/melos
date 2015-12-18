@@ -17,6 +17,7 @@ angular.module('yv', [
     'videos.videoPlayer',
     'common.installCounter',
     'common.branchMobileBanner',
+    'common.branchSms',
     'common.hoverLink'
 ])
 
