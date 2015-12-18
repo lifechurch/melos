@@ -1,7 +1,9 @@
-angular.module('yv.header', [ 'header.notifications', 'header.friendships' ])
+angular.module('yv.header', [ 'header.notifications', 'header.friendships'])
 
-.controller('HeaderCtrl', ['$mdMenu', function($mdMenu) {
+.controller('HeaderCtrl', ['$mdMenu', '$scope', function($mdMenu, $scope) {
   var menuIsOpen = [];
+
+  $scope.isMoreOpen = false;
 
   function isOpen(key) {
       return menuIsOpen.hasOwnProperty(key) && menuIsOpen[key];
