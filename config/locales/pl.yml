@@ -1155,19 +1155,19 @@ pl:
             cta: "Czytaj Biblię teraz"
             experience: 
                 title: "Doświadczaj jej w dowolnym miejscu"
-                body: "Wybierz spośrόd więcej niż 1.200 wersji Biblii w ponad 900 językach na twoim komputerze, smartfonie, lub tablecie – z wieloma dostępymi jako Biblie Audio."
+                body: "Wybierz z ponad 1 200 wersji Biblii w ponad 900 językach na twoim komputerze, telefonie lub tablecie – z wieloma dostępnymi jako Biblie audio."
                 action: "Zobacz wersje Biblii"
             make_yours: 
                 title: "Uczyń ją twoją Biblią"
-                body: "Zakreśl lub zaznacz twoje ulubione wersety, udostępnij swoje obrazki wersetόw, oraz załącz publiczne lub prywatne Notatki do fragmentόw Biblii."
+                body: "Zakreśl lub zaznacz twoje ulubione wersety, utwórz swoje obrazki z wersetami do udostępnienia i dołącz publiczne lub prywatne notatki do fragmentόw Biblii."
                 action: "Utwόrz swoje darmowe konto"
             install_now: 
                 title: "Zainstaluj teraz Aplikację"
-                body: "Aplikacja Biblii jest całkiem darmowa, bez reklam oraz koniecznych zakupόw w ciągu ąplikacji. Była już zainstalowana na tylu rόżnych urządzeniach (na razie):"
+                body: "Aplikacja Biblii jest całkowicie darmowa, bez reklam oraz zakupów w aplikacji. Została już zainstalowana na tak wielu różnych urządzeniach (na razie):"
                 action: "Pobierz bezpłatną Aplikację Biblii"
             free_plans: 
-                title: "Darmowe Plany Czytania i Oddania"
-                body: "Plany Biblii pomagają Ci w angażowaniu się ze Słowem Bożym w każdy dzień, po trochu."
+                title: "Darmowe Plany Czytania i Rozważania"
+                body: "Plany Biblii pomagają ci w zaangażowaniu się w Słowo Boże każdego dnia, po trochu."
             browse_plans: "Przeglądaj wszystkie plany"
             read_listen: "Czytaj, Słuchaj, Oglądaj, Udostępniaj"
             start_now: "Zacznij teraz"
@@ -1180,7 +1180,7 @@ pl:
                 description: "YouVersion jest prostą, wolną od reklam Biblią, która wprowadza Słowo Boże w twoje życie."
                 learn more: "dowiedz się więcej poniżej"
                 start reading: "Rozpocznij czytanie"
-                skip in future: "Pomiń tą stronę w przyszłości"
+                skip in future: "Pomiń tę stronę w przyszłości"
                 now skipped: "Ta strona zostanie pominięta."
             features: 
                 read heading: "Czytaj tę Biblię."
