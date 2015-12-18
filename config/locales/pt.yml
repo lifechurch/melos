@@ -1128,26 +1128,26 @@ pt:
             heading: "Tenha uma Bíblia gratuita para seu telefone, tablet e computador."
             cta: "Leia a Bíblia Agora"
             experience: 
-                title: "Experience it anywhere"
-                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
+                title: "Use em qualquer lugar"
+                body: "Escolha entre mais de 1.200 versões da Bíblia em mais de 900 idiomas em seu computador, telefone ou tablet -- com várias Bíblias em áudio disponíveis."
                 action: "Ver as Versões da Bíblia"
             make_yours: 
                 title: "Faça dela a sua Bíblia"
-                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
+                body: "Destaque ou adicione Marcadores aos seus versículos favoritos, faça Imagem do Versículo que você poderá compartilhar e adicione Anotações públicas ou privadas à passagens da Bíblia."
                 action: "Crie Sua Conta Gratuita"
             install_now: 
                 title: "Instale o Aplicativo Agora"
-                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                body: "O App da Bíblia é totalmente gratuito, sem propagandas ou compras dentro do aplicativo. Já foi instalado nesta quantidade de dispositivos únicos (até agora):"
                 action: "Download gratuito do App da Bíblia"
             free_plans: 
                 title: "Planos de Leitura e Devocionais Gratuitos"
                 body: "Planos bíblicos ajudam você a se engajar com a Palavra de Deus todos os dias, um pouco de cada vez."
-            browse_plans: "Browse All Plans"
+            browse_plans: "Procure todos os Planos"
             read_listen: "Leia, Ouça, Assista, Compartilhe"
             start_now: "Começar agora"
             votd: 
                 title: "Versículo do dia"
-                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                highlight_bookmark: "Destaque, marque ou compartilhe esse versículo"
                 subscribe: "Inscreva-se para o Versículo do Dia"
             hero: 
                 heading: "Uma Bíblia gratuita no seu celular, tablet ou computador."
