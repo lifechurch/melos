@@ -66,7 +66,7 @@ angular.module("reader.bookList", [])
 
 						if (firstIterationForCanon) {
 							currentColumnCount++;
-							var name = (books[i].canon == 'ot') ? $scope.canonOt : $scope.canonNt;
+							var name = (books[i].canon == 'ot') ? $scope.canonOt : (books[i].canon == 'nt') ? $scope.canonNt: '';
 							$scope.columns[currentColumnIndex].push({human: name, labelOnly: true});
 						}
 
