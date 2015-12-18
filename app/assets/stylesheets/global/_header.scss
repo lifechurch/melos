@@ -652,11 +652,21 @@ html[dir="rtl"] {
 .nav-more-menu {
   background-color: $white;
   height: 126px;
-  bottom: 51px;
   right: 0;
   left: 0;
   position: fixed;
   border-top: solid 2px $lightGray;
+  @media #{$small-only} {
+    bottom: 51px;
+    top: auto;
+  }
+  @media #{$medium-only} {
+    bottom: auto;
+    top: 43px;
+  }
+  @media #{$large-up} {
+    display: none;
+  }
 
   ul {
     padding-top: 10px;
