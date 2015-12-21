@@ -164,7 +164,14 @@ li.profile-hdr-info-link {
 
 .profile-hdr-action {
   float: $opposite-direction;
-	margin: 50px 20px 0 20px;
+	margin: 85px 20px 0 20px;
+}
+
+.profile-hdr-friend {
+  display: block;
+  background: image-url("icon-checkmark.svg") no-repeat left center;
+  background-size: 24px 24px;
+  padding: 0 0 0 30px;
 }
 
 
