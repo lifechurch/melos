@@ -392,6 +392,10 @@ a.heading {
     text-align: left;
     font-weight: bold;
     margin: 10px 0 0 0;
+    a {
+      text-decoration: none;
+      color: #353535;
+    }
 
     @media #{$medium-only} {
       font-size: 14px;

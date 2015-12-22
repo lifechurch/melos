@@ -138,7 +138,7 @@
                 = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
                   = image_tag plan.list_image.url, class: ''
               %p.fp-title
-                = plan.name
+                = link_to(plan.name, plan_path(plan, locale: I18n.locale), {target: "_self" })
               %div.fp-details
                 %span.fp-length
                   = plan.length
