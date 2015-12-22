@@ -3,18 +3,18 @@
 
 - if current_auth
   %nav.sign_in
-    %a{href: user_path(current_auth.username), title: t("users.go to your profile")}
+    %a{href: user_path(current_auth.username), title: t("users.go to your profile"), target: "_self"}
       %span
         %img{src: current_user.user_avatar_url["px_24x24"]}
         %span.user_name=current_auth.username
 
   %ul.nav_user
     %li.highlights
-      %a{href: highlights_user_path(current_auth.username), title: t("highlights.title") }
+      %a{href: highlights_user_path(current_auth.username), title: t("highlights.title"), target: "_self" }
     %li.bookmarks
-      %a{href: bookmarks_user_path(current_auth.username), title: t("bookmarks.title")}
+      %a{href: bookmarks_user_path(current_auth.username), title: t("bookmarks.title"), target: "_self"}
     %li.notes
-      %a{href: notes_user_path(current_auth.username), title: t("notes title")}
+      %a{href: notes_user_path(current_auth.username), title: t("notes title"), target: "_self"}
     %li.auth
       %a#header_profile_trigger{:href => '#'}
         =t("more")
@@ -23,23 +23,23 @@
         %span.arrow
         %ol
           %li.header_profile_menu_activity
-            %a{href: user_path(current_auth.username)}
+            %a{href: user_path(current_auth.username), target: "_self"}
               =t("users.profile.tab activity")
           %li.header_profile_menu_friends
-            %a{href: user_friends_path(user_id: current_auth.username)}
+            %a{href: user_friends_path(user_id: current_auth.username), target: "_self"}
               =t("users.profile.tab friends")
           - #%li
           - #  %a{href: badges_user_path(current_auth.username)}
           - #    =t("users.profile.tab badges")
           %li.header_profile_menu_settings
-            %a{href: "/settings"}
+            %a{href: "/settings", target: "_self"}
               =t("settings")
           %li.header_profile_menu_signout
-            %a{href: sign_out_path}
+            %a{href: sign_out_path, target: "_self"}
               =t("sign out")
 
   .user_options
-    %a.friend-requests-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("friendships.requests title") }
+    %a.friend-requests-btn.popover-link{class: is_home_url ? 'home-url' : '', title: t("friendships.requests title") }
       =t("friendships.requests title")
       %span.friend-request-count.badge
     - if current_user.enable_friendships?
@@ -47,7 +47,7 @@
     - else
       = render partial: "shared/header/update_profile"
 
-    %a.notifications-btn.popover-link{href: "#", class: is_home_url ? 'home-url' : '', title: t("notifications.title") }
+    %a.notifications-btn.popover-link{class: is_home_url ? 'home-url' : '', title: t("notifications.title") }
       =t("notifications.title")
       %span.notifications-count.badge
     = render partial: "shared/header/notifications"

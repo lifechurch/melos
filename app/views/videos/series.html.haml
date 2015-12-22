@@ -26,22 +26,37 @@
   %meta{name: "twitter:description",      content: meta_description}
   %meta{name: "twitter:site",             content: "@YouVersion"}
 
-%article{ style: "background-image: url('#{@video.hero_image.url if @video.hero_image.present?}')"}
-  #title-bar
+.row
+  %div.hero.show-for-medium-up{ style: "background: #fff url('#{@video.hero_image.url if @video.hero_image.present?}') no-repeat center top; background-size: cover;"}
+    #title-bar
+      %h1= @video.title.html_safe
+      %h2.publisher
+        =link_to(@video.credits, publisher_video_path(id: @video.id), { target: "_self" })
+      = render partial: "videos/share", locals: {video: @video}
+  %div.mobile-hero.show-for-small-only
     %h1= @video.title.html_safe
     %h2.publisher
-      =link_to(@video.credits, publisher_video_path(id: @video.id))
-    = render partial: "videos/share", locals: {video: @video}
+      =link_to(@video.credits, publisher_video_path(id: @video.id), { target: "_self" })
 
-  .inner
-    %ul#episodes
+  .row
+    #episodes
       - @video.videos.each do |vid|
         - thumb = vid.small_image
-        %li
-          =link_to(video_path(vid), class: "video-name", title: vid.title) do
+        %div.medium-6.large-4.columns.end
+          =link_to(video_path(vid), class: "video-name", title: vid.title, target: "_self" ) do
             = image_tag(thumb.url)
             .info
               %h3.title= vid.title
               %span.runtime= vid.runtime.gsub(/^0:[0]*/,"")
 
-  = render partial: "videos/publisher_banner", locals: {publisher: publisher}
+
+  -#.inner
+  -#  %ul#episodes
+  -#    - @video.videos.each do |vid|
+  -#      - thumb = vid.small_image
+  -#      %li
+  -#        =link_to(video_path(vid), class: "video-name", title: vid.title) do
+  -#          = image_tag(thumb.url)
+  -#          .info
+  -#            %h3.title= vid.title
+  -#            %span.runtime= vid.runtime.gsub(/^0:[0]*/,"")

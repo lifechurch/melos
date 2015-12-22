@@ -8,4 +8,4 @@
     %p= plan.copyright.html_safe if plan.copyright.present?
   - if plan.publisher_url.present?
     %div.ft.link
-      = link_to(t("plans.about publisher"), plan.publisher_url)
+      = link_to(t("plans.about publisher"), plan.publisher_url, { target: "_self" } )

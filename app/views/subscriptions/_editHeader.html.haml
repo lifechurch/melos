@@ -1,0 +1,18 @@
+:ruby
+  subscription = @presenter.subscription
+
+%h1.rp-title-settings.clearfix
+  = image_tag subscription.search_thumbnail_image.url, class: 'rp-image-settings' if subscription.search_thumbnail_image.present?
+  = subscription.title
+.row.rp-settings-nav
+  .columns
+    - settings_href = edit_subscription_path(user_id: current_user.to_param, id: subscription)
+    - cal_href = calendar_subscription_path(user_id: current_user.to_param, id: subscription)
+    - about_href = subscriptions_path(user_id: current_user.to_param)
+
+    - is_settings = action_name == 'edit'
+    - is_cal = action_name == 'calendar'
+
+    = link_to t("plans.settings"), settings_href, {class: "icon plan-settings" + (is_settings ? ' active' : ''), target: "_self"}
+    = link_to t("plans.month"), cal_href, {class: "icon plan-calendar" + (is_cal ? ' active' : ''), target: "_self"}
+    = link_to t("plans.about this plan"), about_href, {class: "icon plan-about", target: "_self"}

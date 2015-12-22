@@ -15,45 +15,46 @@
 - content_for :meta_description do
   = "#{@version.abbreviation} #{t('audio bible')}: #{t('audio bible meta')}"
 
-- content_for :sidebar do
+.row
+  .medium-8.columns
+    - if reference.audio
+      %article
+        %h1= "#{t('audio bible')}: #{@version}"
 
-  .widget-button
-    = link_to t("ref.listen"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'action_button_blue'
+        %h2
+          %span.icon_listen
+          = reference.audio.title
 
-  - if @version.publisher.name.present? || @version.publisher.id.blank?
-    - pub_name = @version.publisher.name || t('versions.public domain')
-    .widget
-      %h3.hd
-        =t("versions.publisher widget title")
-      %ul.menu
-        %li
-          - if @version.publisher.url.present?
-            = link_to pub_name, @version.publisher.url
-          -else
-            %p= pub_name
+        %p= reference.audio.copyright_short.html
+        - if not reference.audio.copyright_long.html.eql?(reference.audio.copyright_long.html)
+          %p= raw reference.audio.copyright_long.html
 
-  = render partial: 'widgets/download_app', :locals => {show_sms: true}
+        = link_to t("ref.listen"), bible_version_path(reference), class: 'solid-button mobile-full blue'
+        = link_to t("mobile page.download now"), app_page_path, class: 'show-for-small-only version_download solid-button mobile-full green'
 
-- content_for :title do
-  = @version
+  .medium-4.columns.show-for-medium-up.l-border
+    .widget-button
+      = link_to t("ref.listen"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'solid-button blue full'
 
-- content_for :mobile_right_nav do
-  = link_to t("ref.listen"), bible_version_path(reference), class: 'save_btn'
+    - if @version.publisher.name.present? || @version.publisher.id.blank?
+      - pub_name = @version.publisher.name || t('versions.public domain')
+      .widget
+        %h3.hd
+          =t("versions.publisher widget title")
+        %ul.menu
+          %li
+            - if @version.publisher.url.present?
+              = link_to pub_name, @version.publisher.url
+            -else
+              %p= pub_name
 
-- if reference.audio
-  %article
-    %h1= "#{t('audio bible')}: #{@version}"
+    = render partial: 'widgets/download_app', :locals => {show_sms: true}
 
-    %h2
-      %span.icon_listen
-      = reference.audio.title
+  - content_for :title do
+    = @version
 
-    %p= reference.audio.copyright_short.html
-    - if not reference.audio.copyright_long.html.eql?(reference.audio.copyright_long.html)
-      %p= raw reference.audio.copyright_long.html
-
-    = link_to t("ref.listen"), bible_version_path(reference), class: 'action_button_blue'
-    = link_to t("mobile page.download now"), app_page_path, class: 'mobile version_download action_button_green'
+  - content_for :mobile_right_nav do
+    = link_to t("ref.listen"), bible_version_path(reference), class: 'save_btn'
 
 = render '/shared/app_banner'
 

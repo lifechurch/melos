@@ -5,6 +5,7 @@
 - meta_title = strip_tags(@video.title)
 - meta_description = @title
 - meta_description = @video.description.html_safe if @video.description.present?
+- videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
 
 - content_for :meta_description do
   = @title
@@ -23,154 +24,51 @@
   %meta{name: "twitter:description",      content: meta_description}
   %meta{name: "twitter:image",            content: "https:#{@video.poster_image.url}"}
   %meta{name: "twitter:site",             content: "@YouVersion"}
+  %link{href:"//vjs.zencdn.net/4.11/video-js.css", rel:"stylesheet"}
+  %script{src:"//vjs.zencdn.net/4.11/video.js"}
+.row
+  .columns
+    %article
+      %div{itemprop: "video", itemtype:"http://schema.org/VideoObject", itemscope: ""}
+        .row
+          .columns.medium-8
+            #title-bar
+              %h1
+                %span{itemprop: "name"}= @video.title
 
-%article
-  %div{itemprop: "video", itemtype:"http://schema.org/VideoObject", itemscope: ""}
-    #title-bar
-      %h1
-        %span{itemprop: "name"}= @video.title
+              %h2.publisher
+                =link_to(@video.credits, publisher_video_path(id: @video.id), { target: "_self" })
+          .columns.medium-4.show-for-medium-up
+            = render partial: "videos/share", locals: {video: @video}
 
-      %h2.publisher
-        =link_to(@video.credits, publisher_video_path(id: @video.id))
+        %meta{itemprop: "thumbnail", content: "https:#{@video.poster_image.url}"}
+        #player-container
+          %video{ id:"video", class: "video-js vjs-default-skin vjs-big-play-centered", controls: "controls", preload: "auto", width: "100%", height: "100%",
+            "poster" => "https:#{@video.poster_image.url}",
+            "publisher-id" => "#{publisher.id}",
+            "publisher-ga-tracking-id" => "#{publisher.ga_tracking_id}",
+            "video-ref-id" => "#{videoRefId}",
+            "video-player" => true }
 
-      = render partial: "videos/share", locals: {video: @video}
+            %source{src: "#{@video.webm.url}", type:'video/webm'}
+            %source{src: "#{@video.hls.url}", type:'video/mp4'}
+            %p.vjs-no-js
+              To view this video please enable JavaScript, and consider upgrading to a web browser that
+              =link_to("supports HTML5 video", "http://videojs.com/html5-video-support/", target: "_blank")
 
-    %meta{itemprop: "thumbnail", content: "https:#{@video.poster_image.url}"}
-    #player-container
-      #player
+        .row
+          #details.columns.medium-8
+            %div.refs
+              - if @video.references
+                %span= t("videos.related scripture")
 
-    .inner
-      #details
-        %div.refs
-          - if @video.references
-            %span= t("videos.related scripture")
+                %ul
+                  - @video.references.each do |ref|
+                    %li= link_to(ref.human, bible_version_path(Reference.new(ref.usfm, version: current_version)), { target: "_self" })
+            %p.description
+              %span{itemprop: "description"}= @video.description.html_safe if @video.description.present?
 
-            %ul
-              - @video.references.each do |ref|
-                %li= link_to(ref.human, bible_version_path(Reference.new(ref.usfm, version: current_version)))
-        %p.description
-          %span{itemprop: "description"}= @video.description.html_safe if @video.description.present?
-
-      #other
-        - video_series = client_settings.video_series
-        = link_to( t("videos.all"), video_series.blank? ? videos_path : series_video_path(video_series) , class: "action_button_green")
-        = render partial: "videos/publisher_banner", locals: {publisher: publisher}
-
-
--content_for :javascripts do
-
-  = javascript_include_tag "/assets/jw/jwplayer.js"
-  = javascript_include_tag "/assets/jw/jwplayer.html5.js"
-  %script jwplayer.key="78lie9ccvQjr8uJGZzLhFeI1t94sTOzTqA3A9QpRvK0="
-
-  - videoRefId = @video.publisher.try(:video_id) ? @video.publisher.video_id : "null"
-  - # Create our player for all videos
-
-  :javascript
-    $(window).load(function () {
-      jwplayer('player').setup({
-        file: "#{@video_url}",
-        width: '100%',
-        height: '100%',
-        image: "#{@video.poster_image.url}"
-      })
-    });
-
-  - #only setup tracking at the moment for Jesus Film (id: 1)
-  - if publisher.id == 1
-
-    :javascript
-
-      $(window).load(function () {
-
-        // create a custom tracker for video events
-        var tracker = _gat._createTracker("#{publisher.ga_tracking_id}","videoTracker");
-
-        var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-          var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-          return v.toString(16);
-        });
-
-        // Keep this around in case we ever need to wrap the tracking code.
-        var trackVideoEvent = function( fn ) {
-          fn();
-        }
-
-        var videoStarted  = false;
-        var startTime     = 0;
-
-        // Array to keep track of start/end segments that a user has watched.
-        // Each item in the array is an object: {start: 0, end: 2.4}
-        // Custom total method setup to iterate through items and total up all segments into total time watched.
-        var playTimes = [];
-        // Create a named function so that we can reassing the function later on after its cleared.
-        var playTimeTotal = function() {
-              var timeWatched = 0;
-              for(var i = 0; i < this.length; i++) {
-                timeWatched += (this[i].end - this[i].start);
-              }
-              return Math.round(timeWatched);
-            }
-            playTimes.total = playTimeTotal;
-
-        // All video player api handlers below:
-        // - onPlay: any time the video starts playing
-        // - onPause: any time the video is paused
-        // - onComplete: when the video has reached the end
-        jwplayer().onPlay( function(event) {
-          if(videoStarted == false) {
-            videoStarted = true;
-          }
-          // set the new start time every time the video begins playing
-          startTime = jwplayer().getPosition()
-        });
-
-        jwplayer().onSeek( function(event) {
-          playTimes.push({start: startTime, end: jwplayer().getPosition()});
-          startTime = event.offset;
-          // event.offset is not super accurate - more than likely due to encoding with low number of key frames.
-        });
-
-        jwplayer().onPause( function(event) {
-          playTimes.push({start: startTime, end: jwplayer().getPosition()});
-        });
-
-        jwplayer().onComplete( function(event) {
-
-          playTimes.push({start: startTime, end: jwplayer().getPosition()})
-
-          trackVideoEvent( function() {
-            var timestamp = Math.round((new Date()).getTime() / 1000);
-            _gaq.push(
-              ['videoTracker._setCustomVar',1,'apiSessionId', guid],
-              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total().toString() , 0],
-              ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp.toString() , 0],
-              ['videoTracker._trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]
-            );
-          });
-
-          // Reset to initial values.
-          videoStarted    = false;
-          startTime       = 0;
-          playTimes       = [];
-          playTimes.total = playTimeTotal;
-        });
-
-        $(window).unload(function() {
-          // dont track anything if the video is not in a started/playing state
-          if(videoStarted != false) {
-            playTimes.push({start: startTime, end: jwplayer().getPosition()})
-
-            trackVideoEvent( function() {
-              var timestamp = Math.round((new Date()).getTime() / 1000);
-              _gaq.push(
-                ['videoTracker._setCustomVar',1,'apiSessionId', guid],
-                ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaViewTime', playTimes.total().toString() , 0],
-                ['videoTracker._trackEvent', '#{videoRefId}' , 'mediaComplete', timestamp.toString() , 0],
-                ['videoTracker._trackEvent', '#{videoRefId}' , 'domain', 'YouVersion', 0]
-              );
-            });
-          }
-        });
-
-      });
+          #other.columns.medium-4
+            - video_series = client_settings.video_series
+            = link_to( t("videos.all"), video_series.blank? ? videos_path : series_video_path(video_series) , class: "solid-button green full", target: "_self" )
+            = render partial: "videos/publisher_banner", locals: {publisher: publisher}

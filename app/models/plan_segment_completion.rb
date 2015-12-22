@@ -2,7 +2,7 @@ class PlanSegmentCompletion < YV::Resource
 
   include YV::Concerns::Moments
 
-  attributes [:body_text, :action_url, :percent_complete, :segment, :total_segments, :plan_id]
+  attributes [:body_text, :action_url, :percent_complete, :segment, :total_segments, :plan_id, :body_images]
 
   def kind
     "plan_segment_completion"

@@ -1,0 +1,148 @@
+article.mobileapps {
+  h2.title {
+    font-size: rem-calc(38);
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-weight: 100;
+    @media #{$small-only} {
+      font-size: rem-calc(21);
+    }
+  }
+  #mobile_downloads {
+    h1 {
+      margin-top: 20px;
+      font-size: rem-calc(21);
+      font-weight: normal;
+    }
+    ul {
+      margin-bottom: 20px;
+    }
+    li {
+      margin: 10px 0;
+      padding: 0 30px;
+    }
+    li h2 {
+      margin-bottom: 0;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1;
+      a {
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+    .left_column {
+      float: $default-float;
+      width: 50%;
+    }
+    .right_column {
+      width: 50%;
+      float: $default-float;
+    }
+    .app-free-overlay {
+      margin-bottom: 40px;
+    }
+    .multi {
+      background: image-url("mobile_multilingual.png") top center no-repeat #fff;
+      width: 160px;
+      height: 97px;
+    }
+  }
+  div.app-display {
+    position: relative;
+    text-align: center;
+    img.app-img {
+      width: 75%;
+    }
+    div.icon-overlay {
+      @media #{$medium-only} {
+        width: 60px !important;
+        height: 60px !important;
+      }
+    }
+    .sms_container {
+      text-align: $default-float;
+      padding: 0 15%;
+      margin: 50px 0;
+    }
+    .sms_wrap {
+      margin: 0;
+    }
+  }
+  .version-list h2 a {
+    text-decoration: none;
+    color: #444;
+  }
+  .lower-content {
+    @media #{$medium-only} {
+      h2 {
+        font-size: 18px;
+      }
+      h3 {
+        font-size: 16px;
+      }
+    }
+    div.testimonials .review-carousel {
+      width: 300px;
+      height: 200px;
+      @media #{$medium-only} {
+        width: 250px;
+        font-size: rem-calc(1);
+      }
+      div {
+        width: 300px;
+        @media #{$medium-only} {
+          width: 250px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+#dl_iphone {
+  background: image-url("mobile_dl_icons.png") $default-float 0px no-repeat !important;
+}
+#dl_android {
+  background: image-url("mobile_dl_icons.png") $default-float -50px no-repeat !important;
+}
+#dl_blackberry {
+  background: image-url("mobile_dl_icons.png") $default-float -100px no-repeat !important;
+}
+#dl_windows {
+  background: image-url("mobile_dl_icons.png") $default-float -150px no-repeat !important;
+}
+#dl_windows8 {
+  background: image-url("mobile_dl_icons.png") $default-float -150px no-repeat !important;
+}
+#dl_hppalm {
+  background: image-url("mobile_dl_icons.png") $default-float -200px no-repeat !important;
+}
+#dl_java {
+  background: image-url("mobile_dl_icons.png") $default-float -250px no-repeat !important;
+}
+#dl_symbian {
+  background: image-url("mobile_dl_icons.png") $default-float -300px no-repeat !important;
+}
+#dl_mobile {
+  background: image-url("mobile_dl_icons.png") $default-float -350px no-repeat !important;
+}
+#dl_amazon {
+  background: image-url("mobile_dl_icons.png") $default-float -400px no-repeat !important;
+}
+div.cta {
+  clear: both;
+  h4 {
+    min-height: 60px;
+    padding: 0 70px;
+    background: image-url("mobile_download.png") $default-float 0px no-repeat !important;
+  }
+  h2 {
+    padding: 0 70px;
+  }
+}
+
+html[dir="rtl"] div.app-display {
+  div.icon-overlay {
+    margin-right: 53%;
+    margin-left: 0px;
+  }
+}

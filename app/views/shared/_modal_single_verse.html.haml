@@ -16,9 +16,9 @@
 
     %header
       %a#modal_logo
-      %div#modal_download.mobile{href:"http://www.bible.com/mobile"}
+      %div#modal_download.mobile{href:"http://www.bible.com/mobile", target: "_self"}
         %span.icon
-        %a.action_button_blue{href:"http://www.bible.com/mobile"}
+        %a.action_button_blue{href:"http://www.bible.com/mobile", target: "_self"}
           = t('mobile page.download now')
 
       %span#modal_ref= verse.human
@@ -27,7 +27,7 @@
         %span#modal_version
           = version
 
-      %a.close{href: '#'} Close
+      %a.close{} Close
     %section
       %p.big{itemprop:'description'}
         = verse.content.html_safe

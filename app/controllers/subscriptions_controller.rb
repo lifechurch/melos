@@ -1,6 +1,6 @@
 class SubscriptionsController < ApplicationController
 
-  respond_to :html
+  respond_to :html, :json
   prepend_before_filter :mobile_redirect, only: [:show]
   before_filter :check_existing_subscription, only: [:create]
   before_filter :force_login
@@ -13,6 +13,9 @@ class SubscriptionsController < ApplicationController
 
     @user = current_user
     @subscriptions = Subscription.all(@user, auth: @user.auth)
+
+    return redirect_to plans_path if @subscriptions.empty?
+
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
   end
@@ -21,14 +24,23 @@ class SubscriptionsController < ApplicationController
   def show
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
+    self.right_sidebar_presenter = Presenter::Sidebar::SubscriptionRight.new( @subscription , params, self)
     now_reading(presenter.reference)
-    respond_with(presenter.subscription)
+    refs = presenter.reading.references(version_id: @subscription.version_id)
+    respond_to do |format|
+      format.json { return render json: refs }
+      format.any { return respond_with(presenter.subscription) }
+    end
   end
 
   def create
     @subscription = Subscription.subscribe(params[:plan_id], auth: current_auth, private: params[:privacy].to_bool, language_tag: current_user.ensure_language_tag)
     flash[:notice] = t("plans.subscribe successful")
-    respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id], initial: 'true'))
+    respond_to do |format|
+      format.json { render json: { notice: t("plans.subscribe successful")} }
+      format.any { respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id], initial: 'true')) }
+    end
+
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
@@ -72,15 +84,22 @@ class SubscriptionsController < ApplicationController
     # Completing a day of reading
     if(params[:completed])
       @subscription.set_ref_completion(params[:day_target], params[:ref], params[:completed] == "true")
-      if @subscription.completed?
-        redirect_to(subscriptions_path(user_id: current_auth.username), notice: t("plans.completed notice")) and return
+
+      if !@subscription.completed?
+        dayComplete = @subscription.day_statuses[params[:day_target].to_i - 1].completed unless @subscription.day_statuses[params[:day_target].to_i - 1].blank?
+        redirectUrl = subscription_path(user_id: current_user.to_param, id: @subscription, content: params[:content_target], day: params[:day_target], version: params[:version])
       else
-        redirect_to subscription_path(user_id: current_user.to_param, id: @subscription, content: params[:content_target], day: params[:day_target], version: params[:version]) and return
+        dayComplete = @subscription.completed?
+        redirectUrl = subscriptions_path(user_id: current_auth.username) #, notice: t("plans.completed notice")
+      end
+      respond_to do |format|
+        format.json { render json: { success: true, ref: params[:ref], dayComplete: dayComplete, planComplete: @subscription.completed?, day: params[:day_target].to_i, redirectUrl: redirectUrl } and return }
+        format.any { redirect_to(redirectUrl) and return }
       end
     end
 
     flash[:notice] = t("plans.#{action} successful")
-    redirect_to edit_subscription_path(user_id: current_user.to_param, id: @subscription)
+    return redirect_to edit_subscription_path(user_id: current_user.to_param, id: @subscription)
   end
 
   def edit
@@ -96,7 +115,10 @@ class SubscriptionsController < ApplicationController
   def check_existing_subscription
     plan_id = params[:plan_id]
     if subscription_for(plan_id)
-      redirect_to(subscription_path(user_id: current_user.to_param, id: plan_id), notice: t("plans.already subscribed")) and return
+      respond_to do |format|
+        format.json { render json: { notice: t("plans.already subscribed") } }
+        format.any  { redirect_to(subscription_path(user_id: current_user.to_param, id: plan_id), notice: t("plans.already subscribed")) and return }
+      end
     end
   end
 

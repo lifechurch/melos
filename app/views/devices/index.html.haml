@@ -2,7 +2,7 @@
   @title = t('users.edit devices')
   @setting_selected = :devices
 
-%h1
+%h2
   = @title
 
 - if @results
@@ -22,5 +22,5 @@
 
 
 - else
-  %h2= t('users.no devices')
+  %h3= t('users.no devices')
   %p= t('users.no devices download copy').html_safe

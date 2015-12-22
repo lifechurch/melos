@@ -55,6 +55,26 @@ class Bookmark < YV::Resource
       super(opts.merge(kind: kind))
     end
 
+    def by_reference(params={})
+      all_moments = Moment.all(params.slice(:auth,:user_id,:usfm,:version_id))
+      all_moments.reject {|moment| moment.class != self } 
+      # TODO: Get API to implement filtering while passing a kind
+      # would allow Highlight.all(params.slice(:auth,:user_id,:usfm,:version_id)) without the second 'reject' line of code.
+    end
+    
+    def for_reader(params={})
+      bookmarks  = by_reference(params)
+      return bookmarks if bookmarks.blank?
+
+      hs = bookmarks.collect do |h|
+        {
+          id: h.id,
+          references: h.references,
+          color: h.color
+        }
+      end
+    end    
+
 
     # API Method
     # Lookup all bookmarks with a given label and params

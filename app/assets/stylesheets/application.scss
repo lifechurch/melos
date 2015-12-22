@@ -1,0 +1,126 @@
+@import "vendor/angular-material/angular-material";
+@import "config/colors";
+@import "config/fonts";
+@import "config/misc";
+@import "foundation_and_overrides";
+
+
+
+// TEMP: responsive screen-size - can go away after redesign
+#mode {
+  display: block;
+  height: 60px;
+  color: #fff;
+  padding: 10px;
+  position: absolute;
+  right: 1px;
+  top: 400px;
+  z-index: 2000;
+  background-color: red;
+  #rtl-toggle {
+    margin-top: 5px;
+    color: #000;
+    padding: 0 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+}
+// END responsive helper css
+
+
+@import "global/mixins";
+@import "global/layout";
+@import "global/header";
+@import "global/footer";
+@import "global/buttons";
+@import "global/general";
+@import "global/errors";
+
+@import "pages/home/home";
+@import "pages/app/app";
+@import "pages/about/about";
+@import "pages/press/press";
+@import "pages/trending/trending";
+@import "pages/votd/votd";
+
+@import "slick";
+@import "references/references";
+@import "references/reader_text";
+@import "versions/versions";
+@import "video/video";
+@import "moments/moments";
+@import "plans/plans";
+@import "widgets/widgets";
+@import "widgets/sms";
+@import "audiobibles/audiobibles";
+@import "search/search";
+@import "sign-up/sign-up";
+@import "sign-in/sign-in";
+@import "passwords/passwords";
+@import "users/users";
+@import "notifications/notifications";
+@import "vendor/md-color-picker/mdColorPicker";
+@import "vendor/angular-tooltips/angular-tooltips";
+
+.clr {
+  clear: both;
+}
+
+.label {
+	padding: inherit;
+	font-size: rem-calc(15);
+	background-color: transparent;
+	color: inherit;
+	display: inherit;
+	margin-right: rem-calc(4);
+	color: $darkGray;
+}
+
+input {
+  padding: rem-calc(0 8 0 8) !important;
+  height: rem-calc(30) !important;
+
+  &.search {
+    background-color: #FFFFFF;
+    height: rem-calc(30);
+    width: rem-calc(32);
+    border-color: #DDDDDD;
+    background: #fff url("../assets/icon-search.svg") no-repeat center center;
+    background-size: 16px 16px;
+    border-left:none;
+
+    &:hover {
+      background-color:#FFFFFF;
+      border-color: #CCCCCC;
+    }
+  }
+}
+
+.rz-bar-wrapper, .rz-bar, .rz-limit {
+	left: 0;
+}
+
+.rz-bar {
+	background: $lightGray !important;
+}
+
+.rz-pointer {
+	width: rem-calc(20) !important;
+	height: rem-calc(20) !important;
+	background-color: $darkGray !important;
+	border-radius: rem-calc(10) !important;
+	top: rem-calc(-10) !important;
+}
+
+.menuitem {
+	&.disabled {
+		opacity: 0.5;
+	}
+}
+
+a {
+	&[disabled] {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}

@@ -1,0 +1,2680 @@
+ DEBUG [c9b9e085] Running /usr/bin/env which passenger as yvdep@webreview01-ny.youversion.com
+ DEBUG [c9b9e085] Command: ( SECURE_TRAFFIC=true /usr/bin/env which passenger )
+ DEBUG [c9b9e085] 	/usr/bin/passenger
+ DEBUG [c9b9e085] 	
+ DEBUG [c9b9e085] Finished in 0.760 seconds with exit status 0 (successful).
+ DEBUG [0de56e3d] Running ~/.rvm/bin/rvm version as yvdep@webreview01-ny.youversion.com
+ DEBUG [0de56e3d] Command: ( SECURE_TRAFFIC=true ~/.rvm/bin/rvm version )
+ DEBUG [0de56e3d] 	rvm 1.26.11 (master) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+ DEBUG [0de56e3d] 	
+ DEBUG [0de56e3d] Finished in 0.461 seconds with exit status 0 (successful).
+rvm 1.26.11 (master) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+ DEBUG [fb5e70b4] Running ~/.rvm/bin/rvm current as yvdep@webreview01-ny.youversion.com
+ DEBUG [fb5e70b4] Command: ( SECURE_TRAFFIC=true ~/.rvm/bin/rvm current )
+ DEBUG [fb5e70b4] 	system
+ DEBUG [fb5e70b4] 	
+ DEBUG [fb5e70b4] Finished in 0.407 seconds with exit status 0 (successful).
+system
+ DEBUG [169352ec] Running ~/.rvm/bin/rvm ruby-2.2.2@youversion-web do ruby --version as yvdep@webreview01-ny.youversion.com
+ DEBUG [169352ec] Command: ( SECURE_TRAFFIC=true ~/.rvm/bin/rvm ruby-2.2.2@youversion-web do ruby --version )
+ DEBUG [169352ec] 	ruby 2.2.2p95 (2015-04-13 revision 50295) [x86_64-linux]
+ DEBUG [169352ec] 	
+ DEBUG [169352ec] Finished in 0.526 seconds with exit status 0 (successful).
+ruby 2.2.2p95 (2015-04-13 revision 50295) [x86_64-linux]
+  INFO [cced35d7] Running /usr/bin/env sudo salt-call state.highstate as yvdep@webreview01-ny.youversion.com
+ DEBUG [cced35d7] Command: sudo salt-call state.highstate
+ DEBUG [cced35d7] 	[INFO    ] Loading fresh modules for state activity
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://top.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Creating module dir '/var/cache/salt/minion/extmods/beacons'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Syncing beacons for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Loading cache from salt://_beacons, for base)
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Caching directory '_beacons/' for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Creating module dir '/var/cache/salt/minion/extmods/modules'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Syncing modules for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Loading cache from salt://_modules, for base)
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Caching directory '_modules/' for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Creating module dir '/var/cache/salt/minion/extmods/states'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Syncing states for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Loading cache from salt://_states, for base)
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Caching directory '_states/' for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Creating module dir '/var/cache/salt/minion/extmods/grains'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Syncing grains for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Loading cache from salt://_grains, for base)
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Caching directory '_grains/' for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Creating module dir '/var/cache/salt/minion/extmods/renderers'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Syncing renderers for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Loading cache from salt://_renderers, for base)
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Caching directory '_renderers/' for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Syncing returners for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Loading cache from salt://_returners, for base)
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Caching directory '_returners/' for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://_returners/lc_sentry.py'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Copying '/var/cache/salt/minion/files/base/_returners/lc_sentry.py' to '/var/cache/salt/minion/extmods/returners/lc_sentry.py'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Creating module dir '/var/cache/salt/minion/extmods/outputters'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Syncing outputters for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Loading cache from salt://_outputters, for base)
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Caching directory '_outputters/' for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Creating module dir '/var/cache/salt/minion/extmods/utils'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Syncing utils for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Loading cache from salt://_utils, for base)
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Caching directory '_utils/' for environment 'base'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Loading fresh modules for state activity
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://base/init.sls'
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://apt/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://dns/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://ssh/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://git/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://devops/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://ntp/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://narnia/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://rsync/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://exim/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://vim/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://fail2ban/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://logrotate/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://rsyslog/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://etckeeper/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://yvdeploy/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://yvweb/init.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://yvweb/hosts.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://yvweb/memcached.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://yvweb/rvm.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://yvweb/nodejs.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://yvweb/passenger.sls'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'npm --version' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/apt/sources.list] at time 11:36:40.401262
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/apt/sources.list
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://apt/files/sources.list.jinja'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/apt/sources.list is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/apt/sources.list] at time 11:36:40.469086
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/apt/preferences] at time 11:36:40.472587
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/apt/preferences
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://apt/files/preferences.jinja'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/apt/preferences is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/apt/preferences] at time 11:36:40.525118
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/usr/bin/apt-get update] at time 11:36:40.530508
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.wait for /usr/bin/apt-get update
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] No changes made for /usr/bin/apt-get update
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/usr/bin/apt-get update] at time 11:36:40.531761
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [dnsmasq] at time 11:36:40.532247
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.latest for dnsmasq
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['dpkg-query', '--showformat', '${Status} ${Package} ${Version} ${Architecture}\n', '-W'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'apt-get -q update' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['apt-cache', '-q', 'policy', 'dnsmasq'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command "dpkg --compare-versions '2.68-1ubuntu0.1' lt '2.68-1ubuntu0.1'" in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command "dpkg --compare-versions '2.68-1ubuntu0.1' eq '2.68-1ubuntu0.1'" in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package dnsmasq is already up-to-date.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [dnsmasq] at time 11:36:49.111542
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/default/dnsmasq] at time 11:36:49.113954
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/default/dnsmasq
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/default/dnsmasq is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/default/dnsmasq] at time 11:36:49.160809
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/dnsmasq.conf] at time 11:36:49.164964
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/dnsmasq.conf
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://dns/files/dnsmasq.conf.jinja'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/dnsmasq.conf is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/dnsmasq.conf] at time 11:36:49.232593
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/resolv.dnsmasq] at time 11:36:49.234889
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/resolv.dnsmasq
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/resolv.dnsmasq is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/resolv.dnsmasq] at time 11:36:49.281120
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [dnsmasq] at time 11:36:49.289078
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state service.running for dnsmasq
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['runlevel', '/run/utmp'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['service', 'dnsmasq', 'status'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Service dnsmasq is already enabled, and is in the desired state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [dnsmasq] at time 11:36:49.335349
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/resolv.conf] at time 11:36:49.337818
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/resolv.conf
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://dns/files/resolv.jinja'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/resolv.conf is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/resolv.conf] at time 11:36:49.386253
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/dhcp/dhclient.conf] at time 11:36:49.388438
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/dhcp/dhclient.conf
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/dhcp/dhclient.conf is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/dhcp/dhclient.conf] at time 11:36:49.436092
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [openssh-server] at time 11:36:49.436747
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for openssh-server
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package openssh-server is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [openssh-server] at time 11:36:49.439611
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/ssh/sshd_config] at time 11:36:49.443501
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/ssh/sshd_config
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://ssh/files/sshd_config.jinja'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/ssh/sshd_config is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/ssh/sshd_config] at time 11:36:49.499206
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh] at time 11:36:49.501555
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state service.running for ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['service', 'ssh', 'status'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Service ssh is already enabled, and is in the desired state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh] at time 11:36:49.542541
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [git] at time 11:36:49.542919
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for git
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package git is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [git] at time 11:36:49.544609
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [github.com] at time 11:36:49.547068
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_known_hosts.present for github.com
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'ssh-keygen -F "github.com" -f "/root/.ssh/known_hosts"' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] No changes made for github.com
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [github.com] at time 11:36:49.561597
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [sudo] at time 11:36:49.562229
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for sudo
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package sudo is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [sudo] at time 11:36:49.564695
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [www-data] at time 11:36:49.568359
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state group.present for www-data
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Group www-data is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [www-data] at time 11:36:49.570754
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [wplatnick] at time 11:36:49.574290
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for wplatnick
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User wplatnick is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [wplatnick] at time 11:36:49.578793
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/wplatnick] at time 11:36:49.581999
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.recurse for /home/wplatnick
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The directory /home/wplatnick is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/wplatnick] at time 11:36:49.847325
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [https://github.com/robbyrussell/oh-my-zsh.git] at time 11:36:49.849511
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state git.latest for https://github.com/robbyrussell/oh-my-zsh.git
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'git rev-parse HEAD' as user 'wplatnick' in directory '/home/wplatnick/.oh-my-zsh'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'git rev-parse --abbrev-ref HEAD' as user 'wplatnick' in directory '/home/wplatnick/.oh-my-zsh'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'git ls-remote -h https://github.com/robbyrussell/oh-my-zsh.git master | cut -f 1' as user 'wplatnick' in directory '/home/wplatnick/.oh-my-zsh'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] No changes made for https://github.com/robbyrussell/oh-my-zsh.git
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [https://github.com/robbyrussell/oh-my-zsh.git] at time 11:36:50.268938
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/wplatnick/.ssh] at time 11:36:50.271132
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/wplatnick/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/wplatnick/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/wplatnick/.ssh] at time 11:36:50.273089
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/wplatnick/.ssh/authorized_keys] at time 11:36:50.275332
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/wplatnick/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/wplatnick/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/wplatnick/.ssh/authorized_keys] at time 11:36:50.278168
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwzp+lyuzufHJ4J5gPubCLj3JQRil9NcmXu9WeMHlzL9KjO7X4sv2VfOaHLqU4WSVvykfxP8G/bxxGIQXpIbGbC/06ZMQGaRD3gFrFLsvcede/twNiJI0JVlLTvLkOiflADmYGkKKj4EJ40wavOA+HZckWJm2aZQXXuUmvnqZ+Jo27v7J5/pmI/zCYIV60NmtmKNE4JRcS+XPd+KVGSKWjZsoGM8RQGVVf81XeOTMMlnlhB9VTI3etOj4pwK6uJ6WOd8wltt0wtRf72aGjrjZ0wpTKKffZs+U2w+kSpYKn4iTsoo5sdOIVWUVs7U/lRrbn6r/ir73xAsJ6/vszhesf will.platnick@lifechurch.tv] at time 11:36:50.281862
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwzp+lyuzufHJ4J5gPubCLj3JQRil9NcmXu9WeMHlzL9KjO7X4sv2VfOaHLqU4WSVvykfxP8G/bxxGIQXpIbGbC/06ZMQGaRD3gFrFLsvcede/twNiJI0JVlLTvLkOiflADmYGkKKj4EJ40wavOA+HZckWJm2aZQXXuUmvnqZ+Jo27v7J5/pmI/zCYIV60NmtmKNE4JRcS+XPd+KVGSKWjZsoGM8RQGVVf81XeOTMMlnlhB9VTI3etOj4pwK6uJ6WOd8wltt0wtRf72aGjrjZ0wpTKKffZs+U2w+kSpYKn4iTsoo5sdOIVWUVs7U/lRrbn6r/ir73xAsJ6/vszhesf will.platnick@lifechurch.tv
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQCwzp+lyuzufHJ4J5gPubCLj3JQRil9NcmXu9WeMHlzL9KjO7X4sv2VfOaHLqU4WSVvykfxP8G/bxxGIQXpIbGbC/06ZMQGaRD3gFrFLsvcede/twNiJI0JVlLTvLkOiflADmYGkKKj4EJ40wavOA+HZckWJm2aZQXXuUmvnqZ+Jo27v7J5/pmI/zCYIV60NmtmKNE4JRcS+XPd+KVGSKWjZsoGM8RQGVVf81XeOTMMlnlhB9VTI3etOj4pwK6uJ6WOd8wltt0wtRf72aGjrjZ0wpTKKffZs+U2w+kSpYKn4iTsoo5sdOIVWUVs7U/lRrbn6r/ir73xAsJ6/vszhesf is already present for user wplatnick
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwzp+lyuzufHJ4J5gPubCLj3JQRil9NcmXu9WeMHlzL9KjO7X4sv2VfOaHLqU4WSVvykfxP8G/bxxGIQXpIbGbC/06ZMQGaRD3gFrFLsvcede/twNiJI0JVlLTvLkOiflADmYGkKKj4EJ40wavOA+HZckWJm2aZQXXuUmvnqZ+Jo27v7J5/pmI/zCYIV60NmtmKNE4JRcS+XPd+KVGSKWjZsoGM8RQGVVf81XeOTMMlnlhB9VTI3etOj4pwK6uJ6WOd8wltt0wtRf72aGjrjZ0wpTKKffZs+U2w+kSpYKn4iTsoo5sdOIVWUVs7U/lRrbn6r/ir73xAsJ6/vszhesf will.platnick@lifechurch.tv] at time 11:36:50.286381
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClJMyNapXYnn3t5mjgOdh5L17aSblZeszB9yzqacOMjiF6K0v2/cOi9cAW0l3LAa1x/0dbutFSQhTGU2Ik3qMGrtsxRfLxLrYqrb8LOkWychybquqCVIJkyNJePbouTB+VGeFs1H5kJn4/RkUj7Flg5HY4jmZwduBKQfcEj6VnJoPbFZubirgjR2ZpyinApTp9Tej78Uz2RHf7xwN0ETaRIKmASP3ta4eTdXeoGNiFTSUTEx+CEetBJxW9XfuTvWKO9SEoqpEtla8NrSMsAU3hungITbu363PSWKCmGkX2Ep+/5gEX81uB/mvRrwJokRPSX74xBj9F2nhI2dBDl8rR ssh_key_wplatnick_dea51a5191d9b0fce6bbee991fb0a6dc] at time 11:36:50.288259
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClJMyNapXYnn3t5mjgOdh5L17aSblZeszB9yzqacOMjiF6K0v2/cOi9cAW0l3LAa1x/0dbutFSQhTGU2Ik3qMGrtsxRfLxLrYqrb8LOkWychybquqCVIJkyNJePbouTB+VGeFs1H5kJn4/RkUj7Flg5HY4jmZwduBKQfcEj6VnJoPbFZubirgjR2ZpyinApTp9Tej78Uz2RHf7xwN0ETaRIKmASP3ta4eTdXeoGNiFTSUTEx+CEetBJxW9XfuTvWKO9SEoqpEtla8NrSMsAU3hungITbu363PSWKCmGkX2Ep+/5gEX81uB/mvRrwJokRPSX74xBj9F2nhI2dBDl8rR ssh_key_wplatnick_dea51a5191d9b0fce6bbee991fb0a6dc
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQClJMyNapXYnn3t5mjgOdh5L17aSblZeszB9yzqacOMjiF6K0v2/cOi9cAW0l3LAa1x/0dbutFSQhTGU2Ik3qMGrtsxRfLxLrYqrb8LOkWychybquqCVIJkyNJePbouTB+VGeFs1H5kJn4/RkUj7Flg5HY4jmZwduBKQfcEj6VnJoPbFZubirgjR2ZpyinApTp9Tej78Uz2RHf7xwN0ETaRIKmASP3ta4eTdXeoGNiFTSUTEx+CEetBJxW9XfuTvWKO9SEoqpEtla8NrSMsAU3hungITbu363PSWKCmGkX2Ep+/5gEX81uB/mvRrwJokRPSX74xBj9F2nhI2dBDl8rR is already present for user wplatnick
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClJMyNapXYnn3t5mjgOdh5L17aSblZeszB9yzqacOMjiF6K0v2/cOi9cAW0l3LAa1x/0dbutFSQhTGU2Ik3qMGrtsxRfLxLrYqrb8LOkWychybquqCVIJkyNJePbouTB+VGeFs1H5kJn4/RkUj7Flg5HY4jmZwduBKQfcEj6VnJoPbFZubirgjR2ZpyinApTp9Tej78Uz2RHf7xwN0ETaRIKmASP3ta4eTdXeoGNiFTSUTEx+CEetBJxW9XfuTvWKO9SEoqpEtla8NrSMsAU3hungITbu363PSWKCmGkX2Ep+/5gEX81uB/mvRrwJokRPSX74xBj9F2nhI2dBDl8rR ssh_key_wplatnick_dea51a5191d9b0fce6bbee991fb0a6dc] at time 11:36:50.290491
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [bbelyeu] at time 11:36:50.292341
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for bbelyeu
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User bbelyeu is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [bbelyeu] at time 11:36:50.294205
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/bbelyeu] at time 11:36:50.295975
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.recurse for /home/bbelyeu
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The directory /home/bbelyeu is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/bbelyeu] at time 11:36:50.964382
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/bbelyeu/.ssh] at time 11:36:50.966579
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/bbelyeu/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/bbelyeu/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/bbelyeu/.ssh] at time 11:36:50.968233
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/bbelyeu/.ssh/authorized_keys] at time 11:36:50.970477
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/bbelyeu/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/bbelyeu/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/bbelyeu/.ssh/authorized_keys] at time 11:36:50.972543
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUYqS4cexZXopNUYWPWs3eNggsO8Vpxj6kZdtCWIoTpc6Pwp58xYvEEpQjfn93hb6JGPrma2mokq70oyqek3fTWD/DwdkIwTjMy4SuEsK4PQOweZZ+38xtVrEYmzcDO0azLBhRyfJnOwoYflcyd6CN6bdEbyc3/yvb5MwmIH66s1bOrgu8Q5Hr2DyCFaplJM0IJXuXNSfWz/T42NIgPQ8CrPuUZkD2Vm6WVXJZL5/KHvBnZ0APe9PRcTtyPyzHoKRS8DtHTG+IUclqqNBmrMeaOGiUy4GVluKnGBmbrbU4ODeDmWJ6jE3XKVK0LO8TQbW99KOFKtr5dTQ4pmGP+5xj] at time 11:36:50.974776
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUYqS4cexZXopNUYWPWs3eNggsO8Vpxj6kZdtCWIoTpc6Pwp58xYvEEpQjfn93hb6JGPrma2mokq70oyqek3fTWD/DwdkIwTjMy4SuEsK4PQOweZZ+38xtVrEYmzcDO0azLBhRyfJnOwoYflcyd6CN6bdEbyc3/yvb5MwmIH66s1bOrgu8Q5Hr2DyCFaplJM0IJXuXNSfWz/T42NIgPQ8CrPuUZkD2Vm6WVXJZL5/KHvBnZ0APe9PRcTtyPyzHoKRS8DtHTG+IUclqqNBmrMeaOGiUy4GVluKnGBmbrbU4ODeDmWJ6jE3XKVK0LO8TQbW99KOFKtr5dTQ4pmGP+5xj
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQDUYqS4cexZXopNUYWPWs3eNggsO8Vpxj6kZdtCWIoTpc6Pwp58xYvEEpQjfn93hb6JGPrma2mokq70oyqek3fTWD/DwdkIwTjMy4SuEsK4PQOweZZ+38xtVrEYmzcDO0azLBhRyfJnOwoYflcyd6CN6bdEbyc3/yvb5MwmIH66s1bOrgu8Q5Hr2DyCFaplJM0IJXuXNSfWz/T42NIgPQ8CrPuUZkD2Vm6WVXJZL5/KHvBnZ0APe9PRcTtyPyzHoKRS8DtHTG+IUclqqNBmrMeaOGiUy4GVluKnGBmbrbU4ODeDmWJ6jE3XKVK0LO8TQbW99KOFKtr5dTQ4pmGP+5xj is already present for user bbelyeu
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUYqS4cexZXopNUYWPWs3eNggsO8Vpxj6kZdtCWIoTpc6Pwp58xYvEEpQjfn93hb6JGPrma2mokq70oyqek3fTWD/DwdkIwTjMy4SuEsK4PQOweZZ+38xtVrEYmzcDO0azLBhRyfJnOwoYflcyd6CN6bdEbyc3/yvb5MwmIH66s1bOrgu8Q5Hr2DyCFaplJM0IJXuXNSfWz/T42NIgPQ8CrPuUZkD2Vm6WVXJZL5/KHvBnZ0APe9PRcTtyPyzHoKRS8DtHTG+IUclqqNBmrMeaOGiUy4GVluKnGBmbrbU4ODeDmWJ6jE3XKVK0LO8TQbW99KOFKtr5dTQ4pmGP+5xj] at time 11:36:50.977281
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [cvaughn] at time 11:36:50.979248
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for cvaughn
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User cvaughn is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [cvaughn] at time 11:36:50.980891
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [https://github.com/robbyrussell/oh-my-zsh.git] at time 11:36:50.982876
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state git.latest for https://github.com/robbyrussell/oh-my-zsh.git
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'git rev-parse HEAD' as user 'cvaughn' in directory '/home/cvaughn/.oh-my-zsh'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'git rev-parse --abbrev-ref HEAD' as user 'cvaughn' in directory '/home/cvaughn/.oh-my-zsh'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'git ls-remote -h https://github.com/robbyrussell/oh-my-zsh.git master | cut -f 1' as user 'cvaughn' in directory '/home/cvaughn/.oh-my-zsh'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] No changes made for https://github.com/robbyrussell/oh-my-zsh.git
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [https://github.com/robbyrussell/oh-my-zsh.git] at time 11:36:51.414283
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/cvaughn/.ssh] at time 11:36:51.418611
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/cvaughn/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/cvaughn/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/cvaughn/.ssh] at time 11:36:51.421746
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/cvaughn/.ssh/authorized_keys] at time 11:36:51.425249
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/cvaughn/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/cvaughn/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/cvaughn/.ssh/authorized_keys] at time 11:36:51.428433
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArdmFmaafJWFmByYhxHMs5ll6z9v52yYO5nCozfud4cGsMYEUxlfnbV8dePRG3nU+Zns4/79wBWb3kpkwn3VJB0r1frzQV0bhANPWhkffFjtEQIll/zYIlthWpGTzGlRYuUKXKR9ktZ8QTtrKVAVC/3/PotoAthXyw7Hl/YkO76yqhOpepHPbMkGNbjLQJdq94aph1TaKr0d5QQcEhUGKsxFb7P0BJ78/1grKVXc/YQDgDWBPlXj2Rz9KEAs6LTVmBhO3FP5BUe1TjqoHoIlU1qpjhxTNVxcX4Z1yhSVQ/E44aAxyRB66sGRMrs41CLIttqbB1fvy18OiU7xK5ZGDJw== cvaughn@rspaceman] at time 11:36:51.431972
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArdmFmaafJWFmByYhxHMs5ll6z9v52yYO5nCozfud4cGsMYEUxlfnbV8dePRG3nU+Zns4/79wBWb3kpkwn3VJB0r1frzQV0bhANPWhkffFjtEQIll/zYIlthWpGTzGlRYuUKXKR9ktZ8QTtrKVAVC/3/PotoAthXyw7Hl/YkO76yqhOpepHPbMkGNbjLQJdq94aph1TaKr0d5QQcEhUGKsxFb7P0BJ78/1grKVXc/YQDgDWBPlXj2Rz9KEAs6LTVmBhO3FP5BUe1TjqoHoIlU1qpjhxTNVxcX4Z1yhSVQ/E44aAxyRB66sGRMrs41CLIttqbB1fvy18OiU7xK5ZGDJw== cvaughn@rspaceman
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAABIwAAAQEArdmFmaafJWFmByYhxHMs5ll6z9v52yYO5nCozfud4cGsMYEUxlfnbV8dePRG3nU+Zns4/79wBWb3kpkwn3VJB0r1frzQV0bhANPWhkffFjtEQIll/zYIlthWpGTzGlRYuUKXKR9ktZ8QTtrKVAVC/3/PotoAthXyw7Hl/YkO76yqhOpepHPbMkGNbjLQJdq94aph1TaKr0d5QQcEhUGKsxFb7P0BJ78/1grKVXc/YQDgDWBPlXj2Rz9KEAs6LTVmBhO3FP5BUe1TjqoHoIlU1qpjhxTNVxcX4Z1yhSVQ/E44aAxyRB66sGRMrs41CLIttqbB1fvy18OiU7xK5ZGDJw== is already present for user cvaughn
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArdmFmaafJWFmByYhxHMs5ll6z9v52yYO5nCozfud4cGsMYEUxlfnbV8dePRG3nU+Zns4/79wBWb3kpkwn3VJB0r1frzQV0bhANPWhkffFjtEQIll/zYIlthWpGTzGlRYuUKXKR9ktZ8QTtrKVAVC/3/PotoAthXyw7Hl/YkO76yqhOpepHPbMkGNbjLQJdq94aph1TaKr0d5QQcEhUGKsxFb7P0BJ78/1grKVXc/YQDgDWBPlXj2Rz9KEAs6LTVmBhO3FP5BUe1TjqoHoIlU1qpjhxTNVxcX4Z1yhSVQ/E44aAxyRB66sGRMrs41CLIttqbB1fvy18OiU7xK5ZGDJw== cvaughn@rspaceman] at time 11:36:51.436084
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7q8y0YQqUDxylChewT3BQSuM2atzZrToR3OPEDXpBQaFP7FM0ePWFt0+5CcdHFXw8SRmqa3NNZm2AwSFXtEgD6UpE528KIBlsJiOsDealJCK0mD1mgMpVhSN38jM8iiV1nzGq+A4+QJUlqEWtJxUDEOyBMJgkVlAU7DAlr9CnFlxj/yH+BXHx9Z1CB5f2h/HSoL0cGyo4lk+4BGqboEpYr4l7YwrpX8SWDaGZw/o60FtFNLu4OlQ+w5W+hL/u8Zfc+LxQAJblmW0IaFZyxRmpK3wSd+xLFwJJMYzQpRO32BQKwpDBKv9fiEmLaIJmneYHMOGi85G+GW27iMdYluTt cvaughn@ios] at time 11:36:51.439685
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7q8y0YQqUDxylChewT3BQSuM2atzZrToR3OPEDXpBQaFP7FM0ePWFt0+5CcdHFXw8SRmqa3NNZm2AwSFXtEgD6UpE528KIBlsJiOsDealJCK0mD1mgMpVhSN38jM8iiV1nzGq+A4+QJUlqEWtJxUDEOyBMJgkVlAU7DAlr9CnFlxj/yH+BXHx9Z1CB5f2h/HSoL0cGyo4lk+4BGqboEpYr4l7YwrpX8SWDaGZw/o60FtFNLu4OlQ+w5W+hL/u8Zfc+LxQAJblmW0IaFZyxRmpK3wSd+xLFwJJMYzQpRO32BQKwpDBKv9fiEmLaIJmneYHMOGi85G+GW27iMdYluTt cvaughn@ios
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQC7q8y0YQqUDxylChewT3BQSuM2atzZrToR3OPEDXpBQaFP7FM0ePWFt0+5CcdHFXw8SRmqa3NNZm2AwSFXtEgD6UpE528KIBlsJiOsDealJCK0mD1mgMpVhSN38jM8iiV1nzGq+A4+QJUlqEWtJxUDEOyBMJgkVlAU7DAlr9CnFlxj/yH+BXHx9Z1CB5f2h/HSoL0cGyo4lk+4BGqboEpYr4l7YwrpX8SWDaGZw/o60FtFNLu4OlQ+w5W+hL/u8Zfc+LxQAJblmW0IaFZyxRmpK3wSd+xLFwJJMYzQpRO32BQKwpDBKv9fiEmLaIJmneYHMOGi85G+GW27iMdYluTt is already present for user cvaughn
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7q8y0YQqUDxylChewT3BQSuM2atzZrToR3OPEDXpBQaFP7FM0ePWFt0+5CcdHFXw8SRmqa3NNZm2AwSFXtEgD6UpE528KIBlsJiOsDealJCK0mD1mgMpVhSN38jM8iiV1nzGq+A4+QJUlqEWtJxUDEOyBMJgkVlAU7DAlr9CnFlxj/yH+BXHx9Z1CB5f2h/HSoL0cGyo4lk+4BGqboEpYr4l7YwrpX8SWDaGZw/o60FtFNLu4OlQ+w5W+hL/u8Zfc+LxQAJblmW0IaFZyxRmpK3wSd+xLFwJJMYzQpRO32BQKwpDBKv9fiEmLaIJmneYHMOGi85G+GW27iMdYluTt cvaughn@ios] at time 11:36:51.443202
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [kbrock] at time 11:36:51.446630
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for kbrock
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User kbrock is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [kbrock] at time 11:36:51.449667
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/kbrock/.ssh] at time 11:36:51.453036
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/kbrock/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/kbrock/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/kbrock/.ssh] at time 11:36:51.457630
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/kbrock/.ssh/authorized_keys] at time 11:36:51.461005
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/kbrock/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/kbrock/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/kbrock/.ssh/authorized_keys] at time 11:36:51.463097
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIK6zlHawOUufhhuMx2KiVKqNBOz45brvstOqtGjZ8ml+YazPJJFrVPG59H7k6VXkWPK0adqTWhlyYLbSLfzF9F8nLIO5z1hXrad4A1Gfi1xtkBfaElBZXWFfUI+a7VDq7pvzqMAYxgR4dI+o8ooPoPfFSXPZgXTI+yAZazM6kw54fmusJjzGrcypsfq1UPw+/vBBosVq3UGMyIg1ejZ9UKXtx9yNG0BC6Dx3OE0rhd+1+JUtp7quOEhEH1DG8a/AK5NuO+hGPj11UEJHE2i9NGaio+MSs4CWk12npzcsZkNRTJZWzFZ+7tHpwhJpTdZUGhRu35sNrvm02H94C0Ln7] at time 11:36:51.465500
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIK6zlHawOUufhhuMx2KiVKqNBOz45brvstOqtGjZ8ml+YazPJJFrVPG59H7k6VXkWPK0adqTWhlyYLbSLfzF9F8nLIO5z1hXrad4A1Gfi1xtkBfaElBZXWFfUI+a7VDq7pvzqMAYxgR4dI+o8ooPoPfFSXPZgXTI+yAZazM6kw54fmusJjzGrcypsfq1UPw+/vBBosVq3UGMyIg1ejZ9UKXtx9yNG0BC6Dx3OE0rhd+1+JUtp7quOEhEH1DG8a/AK5NuO+hGPj11UEJHE2i9NGaio+MSs4CWk12npzcsZkNRTJZWzFZ+7tHpwhJpTdZUGhRu35sNrvm02H94C0Ln7
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQDIK6zlHawOUufhhuMx2KiVKqNBOz45brvstOqtGjZ8ml+YazPJJFrVPG59H7k6VXkWPK0adqTWhlyYLbSLfzF9F8nLIO5z1hXrad4A1Gfi1xtkBfaElBZXWFfUI+a7VDq7pvzqMAYxgR4dI+o8ooPoPfFSXPZgXTI+yAZazM6kw54fmusJjzGrcypsfq1UPw+/vBBosVq3UGMyIg1ejZ9UKXtx9yNG0BC6Dx3OE0rhd+1+JUtp7quOEhEH1DG8a/AK5NuO+hGPj11UEJHE2i9NGaio+MSs4CWk12npzcsZkNRTJZWzFZ+7tHpwhJpTdZUGhRu35sNrvm02H94C0Ln7 is already present for user kbrock
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIK6zlHawOUufhhuMx2KiVKqNBOz45brvstOqtGjZ8ml+YazPJJFrVPG59H7k6VXkWPK0adqTWhlyYLbSLfzF9F8nLIO5z1hXrad4A1Gfi1xtkBfaElBZXWFfUI+a7VDq7pvzqMAYxgR4dI+o8ooPoPfFSXPZgXTI+yAZazM6kw54fmusJjzGrcypsfq1UPw+/vBBosVq3UGMyIg1ejZ9UKXtx9yNG0BC6Dx3OE0rhd+1+JUtp7quOEhEH1DG8a/AK5NuO+hGPj11UEJHE2i9NGaio+MSs4CWk12npzcsZkNRTJZWzFZ+7tHpwhJpTdZUGhRu35sNrvm02H94C0Ln7] at time 11:36:51.468501
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [yvdep] at time 11:36:51.470734
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for yvdep
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User yvdep is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [yvdep] at time 11:36:51.472454
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/yvdep/.ssh] at time 11:36:51.474561
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/yvdep/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/yvdep/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/yvdep/.ssh] at time 11:36:51.475993
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/yvdep/.ssh/authorized_keys] at time 11:36:51.478070
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/yvdep/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/yvdep/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/yvdep/.ssh/authorized_keys] at time 11:36:51.479765
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDE7OwfcrXM4v0JF7oeknnyp6znbKUhto4Xq59Jh8TLM39B0jT2Oq9o05/PiC1OA0r3/FrV6MZYKz1XgBiKOTxecuF9+pFE/+tG1xKhb4/3sRrFGAIGVnC8rXpmJqiTmrQzGQfOLSv/JTvHryWA1v45Ii6kdoXzAnCGeS4erNk4QSqWS1LVp/Z6IHgXIdMHzxku/B4oFjpxxOXU6T5MzsyM8u8Q6KHzpNFffBMWfGH1JMsN27oysjSNgHPZk2gKXp0ZppG8sCMYcX21WIQULuXPFWWLOn8oi4Ng+Z0v0eyg/e/9pCbcsvBATTyoeq2MLZjs3336eG0WToTgOZwQovZh] at time 11:36:51.481769
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDE7OwfcrXM4v0JF7oeknnyp6znbKUhto4Xq59Jh8TLM39B0jT2Oq9o05/PiC1OA0r3/FrV6MZYKz1XgBiKOTxecuF9+pFE/+tG1xKhb4/3sRrFGAIGVnC8rXpmJqiTmrQzGQfOLSv/JTvHryWA1v45Ii6kdoXzAnCGeS4erNk4QSqWS1LVp/Z6IHgXIdMHzxku/B4oFjpxxOXU6T5MzsyM8u8Q6KHzpNFffBMWfGH1JMsN27oysjSNgHPZk2gKXp0ZppG8sCMYcX21WIQULuXPFWWLOn8oi4Ng+Z0v0eyg/e/9pCbcsvBATTyoeq2MLZjs3336eG0WToTgOZwQovZh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQDE7OwfcrXM4v0JF7oeknnyp6znbKUhto4Xq59Jh8TLM39B0jT2Oq9o05/PiC1OA0r3/FrV6MZYKz1XgBiKOTxecuF9+pFE/+tG1xKhb4/3sRrFGAIGVnC8rXpmJqiTmrQzGQfOLSv/JTvHryWA1v45Ii6kdoXzAnCGeS4erNk4QSqWS1LVp/Z6IHgXIdMHzxku/B4oFjpxxOXU6T5MzsyM8u8Q6KHzpNFffBMWfGH1JMsN27oysjSNgHPZk2gKXp0ZppG8sCMYcX21WIQULuXPFWWLOn8oi4Ng+Z0v0eyg/e/9pCbcsvBATTyoeq2MLZjs3336eG0WToTgOZwQovZh is already present for user yvdep
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDE7OwfcrXM4v0JF7oeknnyp6znbKUhto4Xq59Jh8TLM39B0jT2Oq9o05/PiC1OA0r3/FrV6MZYKz1XgBiKOTxecuF9+pFE/+tG1xKhb4/3sRrFGAIGVnC8rXpmJqiTmrQzGQfOLSv/JTvHryWA1v45Ii6kdoXzAnCGeS4erNk4QSqWS1LVp/Z6IHgXIdMHzxku/B4oFjpxxOXU6T5MzsyM8u8Q6KHzpNFffBMWfGH1JMsN27oysjSNgHPZk2gKXp0ZppG8sCMYcX21WIQULuXPFWWLOn8oi4Ng+Z0v0eyg/e/9pCbcsvBATTyoeq2MLZjs3336eG0WToTgOZwQovZh] at time 11:36:51.483985
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9mqLibhjzsfFYtCTOLuW/I45XKbIBjgx71mIJDM4isOxNdlvYzdiuN/H8T+NUrF4RUIxx9bzSoRIQZGKOUejt0FUk3yj+ogFN9nrg1Q4nAn77uYEfySE8+iggxTXNMB/Rfb0z2u6bSfpu/WVo8nL/Sn8WmoIudA60JFBtxeGbFX1/ZUYGL34+GV586Qe9C1BMmSw5TlsXSgi1BMBUOoAS4QIyfzZ/Wfg04porJllm8fp9pb91sRNU6/YlDwNNAQDocAXo7NVPTdM6kYoTyGN8xrzWRV2xYojAUJ9Mspd0zhwGeLxvd18ih8GHmt+TqyfsMx7nK3LVQrqP1ugNpcpD] at time 11:36:51.485958
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9mqLibhjzsfFYtCTOLuW/I45XKbIBjgx71mIJDM4isOxNdlvYzdiuN/H8T+NUrF4RUIxx9bzSoRIQZGKOUejt0FUk3yj+ogFN9nrg1Q4nAn77uYEfySE8+iggxTXNMB/Rfb0z2u6bSfpu/WVo8nL/Sn8WmoIudA60JFBtxeGbFX1/ZUYGL34+GV586Qe9C1BMmSw5TlsXSgi1BMBUOoAS4QIyfzZ/Wfg04porJllm8fp9pb91sRNU6/YlDwNNAQDocAXo7NVPTdM6kYoTyGN8xrzWRV2xYojAUJ9Mspd0zhwGeLxvd18ih8GHmt+TqyfsMx7nK3LVQrqP1ugNpcpD
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQC9mqLibhjzsfFYtCTOLuW/I45XKbIBjgx71mIJDM4isOxNdlvYzdiuN/H8T+NUrF4RUIxx9bzSoRIQZGKOUejt0FUk3yj+ogFN9nrg1Q4nAn77uYEfySE8+iggxTXNMB/Rfb0z2u6bSfpu/WVo8nL/Sn8WmoIudA60JFBtxeGbFX1/ZUYGL34+GV586Qe9C1BMmSw5TlsXSgi1BMBUOoAS4QIyfzZ/Wfg04porJllm8fp9pb91sRNU6/YlDwNNAQDocAXo7NVPTdM6kYoTyGN8xrzWRV2xYojAUJ9Mspd0zhwGeLxvd18ih8GHmt+TqyfsMx7nK3LVQrqP1ugNpcpD is already present for user yvdep
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9mqLibhjzsfFYtCTOLuW/I45XKbIBjgx71mIJDM4isOxNdlvYzdiuN/H8T+NUrF4RUIxx9bzSoRIQZGKOUejt0FUk3yj+ogFN9nrg1Q4nAn77uYEfySE8+iggxTXNMB/Rfb0z2u6bSfpu/WVo8nL/Sn8WmoIudA60JFBtxeGbFX1/ZUYGL34+GV586Qe9C1BMmSw5TlsXSgi1BMBUOoAS4QIyfzZ/Wfg04porJllm8fp9pb91sRNU6/YlDwNNAQDocAXo7NVPTdM6kYoTyGN8xrzWRV2xYojAUJ9Mspd0zhwGeLxvd18ih8GHmt+TqyfsMx7nK3LVQrqP1ugNpcpD] at time 11:36:51.488029
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+LJS5fgJ052zbCFZdb0AF16goftabWrb4/9hF1q7d6iEg7Cp5vdczwILTRw5EGoU7GgUwKYhWRoh+4Fwzm9j7N6P3lT3PCIBwKqXBB3bsP8Qi3g3lMsBE8rutZ4NCtdQyCgh43Tl1uI+b5/J12Q+5F1TgDpFrXjN6meDnYG/iK/CXYbcR1MTdQxVLJbdkz9IVTSao59hZwbVqueyShq9jwWm8DRmaq46rHIzNMaLUUMcg33WW1LA1nA3Jw+9R3Y9p54PT80Rxx1Uzc+w5BZEibgc6jNrX3Ojf+5+mr6p+lGe11tGHnDtZ+q3dKXlURUhv5RiPPKmkGvRFkbhHv0kR] at time 11:36:51.491064
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+LJS5fgJ052zbCFZdb0AF16goftabWrb4/9hF1q7d6iEg7Cp5vdczwILTRw5EGoU7GgUwKYhWRoh+4Fwzm9j7N6P3lT3PCIBwKqXBB3bsP8Qi3g3lMsBE8rutZ4NCtdQyCgh43Tl1uI+b5/J12Q+5F1TgDpFrXjN6meDnYG/iK/CXYbcR1MTdQxVLJbdkz9IVTSao59hZwbVqueyShq9jwWm8DRmaq46rHIzNMaLUUMcg33WW1LA1nA3Jw+9R3Y9p54PT80Rxx1Uzc+w5BZEibgc6jNrX3Ojf+5+mr6p+lGe11tGHnDtZ+q3dKXlURUhv5RiPPKmkGvRFkbhHv0kR
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQC+LJS5fgJ052zbCFZdb0AF16goftabWrb4/9hF1q7d6iEg7Cp5vdczwILTRw5EGoU7GgUwKYhWRoh+4Fwzm9j7N6P3lT3PCIBwKqXBB3bsP8Qi3g3lMsBE8rutZ4NCtdQyCgh43Tl1uI+b5/J12Q+5F1TgDpFrXjN6meDnYG/iK/CXYbcR1MTdQxVLJbdkz9IVTSao59hZwbVqueyShq9jwWm8DRmaq46rHIzNMaLUUMcg33WW1LA1nA3Jw+9R3Y9p54PT80Rxx1Uzc+w5BZEibgc6jNrX3Ojf+5+mr6p+lGe11tGHnDtZ+q3dKXlURUhv5RiPPKmkGvRFkbhHv0kR is already present for user yvdep
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+LJS5fgJ052zbCFZdb0AF16goftabWrb4/9hF1q7d6iEg7Cp5vdczwILTRw5EGoU7GgUwKYhWRoh+4Fwzm9j7N6P3lT3PCIBwKqXBB3bsP8Qi3g3lMsBE8rutZ4NCtdQyCgh43Tl1uI+b5/J12Q+5F1TgDpFrXjN6meDnYG/iK/CXYbcR1MTdQxVLJbdkz9IVTSao59hZwbVqueyShq9jwWm8DRmaq46rHIzNMaLUUMcg33WW1LA1nA3Jw+9R3Y9p54PT80Rxx1Uzc+w5BZEibgc6jNrX3Ojf+5+mr6p+lGe11tGHnDtZ+q3dKXlURUhv5RiPPKmkGvRFkbhHv0kR] at time 11:36:51.495756
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClJMyNapXYnn3t5mjgOdh5L17aSblZeszB9yzqacOMjiF6K0v2/cOi9cAW0l3LAa1x/0dbutFSQhTGU2Ik3qMGrtsxRfLxLrYqrb8LOkWychybquqCVIJkyNJePbouTB+VGeFs1H5kJn4/RkUj7Flg5HY4jmZwduBKQfcEj6VnJoPbFZubirgjR2ZpyinApTp9Tej78Uz2RHf7xwN0ETaRIKmASP3ta4eTdXeoGNiFTSUTEx+CEetBJxW9XfuTvWKO9SEoqpEtla8NrSMsAU3hungITbu363PSWKCmGkX2Ep+/5gEX81uB/mvRrwJokRPSX74xBj9F2nhI2dBDl8rR] at time 11:36:51.499948
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClJMyNapXYnn3t5mjgOdh5L17aSblZeszB9yzqacOMjiF6K0v2/cOi9cAW0l3LAa1x/0dbutFSQhTGU2Ik3qMGrtsxRfLxLrYqrb8LOkWychybquqCVIJkyNJePbouTB+VGeFs1H5kJn4/RkUj7Flg5HY4jmZwduBKQfcEj6VnJoPbFZubirgjR2ZpyinApTp9Tej78Uz2RHf7xwN0ETaRIKmASP3ta4eTdXeoGNiFTSUTEx+CEetBJxW9XfuTvWKO9SEoqpEtla8NrSMsAU3hungITbu363PSWKCmGkX2Ep+/5gEX81uB/mvRrwJokRPSX74xBj9F2nhI2dBDl8rR
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQClJMyNapXYnn3t5mjgOdh5L17aSblZeszB9yzqacOMjiF6K0v2/cOi9cAW0l3LAa1x/0dbutFSQhTGU2Ik3qMGrtsxRfLxLrYqrb8LOkWychybquqCVIJkyNJePbouTB+VGeFs1H5kJn4/RkUj7Flg5HY4jmZwduBKQfcEj6VnJoPbFZubirgjR2ZpyinApTp9Tej78Uz2RHf7xwN0ETaRIKmASP3ta4eTdXeoGNiFTSUTEx+CEetBJxW9XfuTvWKO9SEoqpEtla8NrSMsAU3hungITbu363PSWKCmGkX2Ep+/5gEX81uB/mvRrwJokRPSX74xBj9F2nhI2dBDl8rR is already present for user yvdep
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClJMyNapXYnn3t5mjgOdh5L17aSblZeszB9yzqacOMjiF6K0v2/cOi9cAW0l3LAa1x/0dbutFSQhTGU2Ik3qMGrtsxRfLxLrYqrb8LOkWychybquqCVIJkyNJePbouTB+VGeFs1H5kJn4/RkUj7Flg5HY4jmZwduBKQfcEj6VnJoPbFZubirgjR2ZpyinApTp9Tej78Uz2RHf7xwN0ETaRIKmASP3ta4eTdXeoGNiFTSUTEx+CEetBJxW9XfuTvWKO9SEoqpEtla8NrSMsAU3hungITbu363PSWKCmGkX2Ep+/5gEX81uB/mvRrwJokRPSX74xBj9F2nhI2dBDl8rR] at time 11:36:51.503789
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDg1xKMJlkMZPn4YbOmAmqZ1GYzbAlkpRxRFdUixs72fHnrmv1bOTmQRxA0zK6Rvtym682ZkFe6MxVfoUc3qbLlgV8D8lR1IFaBNQHwkywf5GjijtzL34nLbvIpB20FJaIrWk27tNwBXNYHa3HGxuJO+5O7/MW+MFaVL7seVvs6Vqr/zNZpQRtr1SZarOfs69n9M+UlR4Fi3OC5myCavf+G1GMwYlXesZVMIvj52+7jcmOuZZW/2cqxXQd1a93bJhAFEmS6DR19/DZIbHGsEtrQ5o+WDQ/TvRVHgaGCJpJO9PWwDTPU58ik9ySpY/4KMpqde8qAVV5ydrOvO6Z1Lzpv admin@youversion.com] at time 11:36:51.507157
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDg1xKMJlkMZPn4YbOmAmqZ1GYzbAlkpRxRFdUixs72fHnrmv1bOTmQRxA0zK6Rvtym682ZkFe6MxVfoUc3qbLlgV8D8lR1IFaBNQHwkywf5GjijtzL34nLbvIpB20FJaIrWk27tNwBXNYHa3HGxuJO+5O7/MW+MFaVL7seVvs6Vqr/zNZpQRtr1SZarOfs69n9M+UlR4Fi3OC5myCavf+G1GMwYlXesZVMIvj52+7jcmOuZZW/2cqxXQd1a93bJhAFEmS6DR19/DZIbHGsEtrQ5o+WDQ/TvRVHgaGCJpJO9PWwDTPU58ik9ySpY/4KMpqde8qAVV5ydrOvO6Z1Lzpv admin@youversion.com
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQDg1xKMJlkMZPn4YbOmAmqZ1GYzbAlkpRxRFdUixs72fHnrmv1bOTmQRxA0zK6Rvtym682ZkFe6MxVfoUc3qbLlgV8D8lR1IFaBNQHwkywf5GjijtzL34nLbvIpB20FJaIrWk27tNwBXNYHa3HGxuJO+5O7/MW+MFaVL7seVvs6Vqr/zNZpQRtr1SZarOfs69n9M+UlR4Fi3OC5myCavf+G1GMwYlXesZVMIvj52+7jcmOuZZW/2cqxXQd1a93bJhAFEmS6DR19/DZIbHGsEtrQ5o+WDQ/TvRVHgaGCJpJO9PWwDTPU58ik9ySpY/4KMpqde8qAVV5ydrOvO6Z1Lzpv is already present for user yvdep
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDg1xKMJlkMZPn4YbOmAmqZ1GYzbAlkpRxRFdUixs72fHnrmv1bOTmQRxA0zK6Rvtym682ZkFe6MxVfoUc3qbLlgV8D8lR1IFaBNQHwkywf5GjijtzL34nLbvIpB20FJaIrWk27tNwBXNYHa3HGxuJO+5O7/MW+MFaVL7seVvs6Vqr/zNZpQRtr1SZarOfs69n9M+UlR4Fi3OC5myCavf+G1GMwYlXesZVMIvj52+7jcmOuZZW/2cqxXQd1a93bJhAFEmS6DR19/DZIbHGsEtrQ5o+WDQ/TvRVHgaGCJpJO9PWwDTPU58ik9ySpY/4KMpqde8qAVV5ydrOvO6Z1Lzpv admin@youversion.com] at time 11:36:51.511006
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [jrichert] at time 11:36:51.514649
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for jrichert
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User jrichert is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [jrichert] at time 11:36:51.517779
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [https://github.com/robbyrussell/oh-my-zsh.git] at time 11:36:51.521254
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state git.latest for https://github.com/robbyrussell/oh-my-zsh.git
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'git rev-parse HEAD' as user 'jrichert' in directory '/home/jrichert/.oh-my-zsh'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'git rev-parse --abbrev-ref HEAD' as user 'jrichert' in directory '/home/jrichert/.oh-my-zsh'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'git ls-remote -h https://github.com/robbyrussell/oh-my-zsh.git master | cut -f 1' as user 'jrichert' in directory '/home/jrichert/.oh-my-zsh'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] No changes made for https://github.com/robbyrussell/oh-my-zsh.git
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [https://github.com/robbyrussell/oh-my-zsh.git] at time 11:36:51.902772
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/jrichert/.ssh] at time 11:36:51.907121
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/jrichert/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/jrichert/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/jrichert/.ssh] at time 11:36:51.915116
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/jrichert/.ssh/authorized_keys] at time 11:36:51.920627
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/jrichert/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/jrichert/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/jrichert/.ssh/authorized_keys] at time 11:36:51.926380
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9WizTRqmbrm8VSvV2AzkTYU2gLDduGbSjChzJM9SHwgrctz8uZhJ8pC6b9b7Hj1Tp2bpAHP6YBwtiTmNa3UfqOz8CdfAuoAhthtzmZGeFLA8DeIrcEXoGmMBvq0Pz1ZWOk7g3lwWVDKVxRGwC4UXq3a6kWYeCxo3871n3QkUaYKCNG/Unug1iq/2ytwFr0v46imBYlIqD6w2h1uTOHnUeXuUazNUSDo5BWhkt6gT9MbEHnP4qNivaqCLvzb/+TJP9+LRM1BXXpdOeqfYyHDicFjOx337rT7GQst0xT/bDoydwv4ATYONx3OKmuG8EPYHkxqxl3fSWvrBzxMKfF+LV justin.richert@lifechurch.tv] at time 11:36:51.929549
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9WizTRqmbrm8VSvV2AzkTYU2gLDduGbSjChzJM9SHwgrctz8uZhJ8pC6b9b7Hj1Tp2bpAHP6YBwtiTmNa3UfqOz8CdfAuoAhthtzmZGeFLA8DeIrcEXoGmMBvq0Pz1ZWOk7g3lwWVDKVxRGwC4UXq3a6kWYeCxo3871n3QkUaYKCNG/Unug1iq/2ytwFr0v46imBYlIqD6w2h1uTOHnUeXuUazNUSDo5BWhkt6gT9MbEHnP4qNivaqCLvzb/+TJP9+LRM1BXXpdOeqfYyHDicFjOx337rT7GQst0xT/bDoydwv4ATYONx3OKmuG8EPYHkxqxl3fSWvrBzxMKfF+LV justin.richert@lifechurch.tv
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQC9WizTRqmbrm8VSvV2AzkTYU2gLDduGbSjChzJM9SHwgrctz8uZhJ8pC6b9b7Hj1Tp2bpAHP6YBwtiTmNa3UfqOz8CdfAuoAhthtzmZGeFLA8DeIrcEXoGmMBvq0Pz1ZWOk7g3lwWVDKVxRGwC4UXq3a6kWYeCxo3871n3QkUaYKCNG/Unug1iq/2ytwFr0v46imBYlIqD6w2h1uTOHnUeXuUazNUSDo5BWhkt6gT9MbEHnP4qNivaqCLvzb/+TJP9+LRM1BXXpdOeqfYyHDicFjOx337rT7GQst0xT/bDoydwv4ATYONx3OKmuG8EPYHkxqxl3fSWvrBzxMKfF+LV is already present for user jrichert
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9WizTRqmbrm8VSvV2AzkTYU2gLDduGbSjChzJM9SHwgrctz8uZhJ8pC6b9b7Hj1Tp2bpAHP6YBwtiTmNa3UfqOz8CdfAuoAhthtzmZGeFLA8DeIrcEXoGmMBvq0Pz1ZWOk7g3lwWVDKVxRGwC4UXq3a6kWYeCxo3871n3QkUaYKCNG/Unug1iq/2ytwFr0v46imBYlIqD6w2h1uTOHnUeXuUazNUSDo5BWhkt6gT9MbEHnP4qNivaqCLvzb/+TJP9+LRM1BXXpdOeqfYyHDicFjOx337rT7GQst0xT/bDoydwv4ATYONx3OKmuG8EPYHkxqxl3fSWvrBzxMKfF+LV justin.richert@lifechurch.tv] at time 11:36:51.933051
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [tcloninger] at time 11:36:51.936509
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for tcloninger
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User tcloninger is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [tcloninger] at time 11:36:51.939518
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/tcloninger/.ssh] at time 11:36:51.942886
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/tcloninger/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/tcloninger/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/tcloninger/.ssh] at time 11:36:51.947031
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/tcloninger/.ssh/authorized_keys] at time 11:36:51.950592
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/tcloninger/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/tcloninger/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/tcloninger/.ssh/authorized_keys] at time 11:36:51.954097
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKC8FAS4PGqQA035jBdiojjS7stR2AoLh1hWKMrM+JEDJWTy+SYdqC8Qu8HeeVxNFzrOpBujDG9ItTokuurvo9HHc5PAs0SgWsDsS5n6ZBLOq1XmSF+3OrxX9LyLgfJLj6FAxvi4W07EutPstqYXR/OCrreexxYOwiH4FWahaKd4KZyVb+2fCD6Zyf7X/v0bm/SE1MOa7yZ5yl+j5koR+Xk7sNaffuADIpMoFV/TQ+lvgbamOusmVRdOPqIc63S5sChhy6IgUPq5dVSj52gLBjxDKqpnvRNyVUMaADKERn1FLuKnb1kgNJFllcJhfpNyGd0dxT0lvKGMhShz2M9zrP] at time 11:36:51.956139
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKC8FAS4PGqQA035jBdiojjS7stR2AoLh1hWKMrM+JEDJWTy+SYdqC8Qu8HeeVxNFzrOpBujDG9ItTokuurvo9HHc5PAs0SgWsDsS5n6ZBLOq1XmSF+3OrxX9LyLgfJLj6FAxvi4W07EutPstqYXR/OCrreexxYOwiH4FWahaKd4KZyVb+2fCD6Zyf7X/v0bm/SE1MOa7yZ5yl+j5koR+Xk7sNaffuADIpMoFV/TQ+lvgbamOusmVRdOPqIc63S5sChhy6IgUPq5dVSj52gLBjxDKqpnvRNyVUMaADKERn1FLuKnb1kgNJFllcJhfpNyGd0dxT0lvKGMhShz2M9zrP
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQDKC8FAS4PGqQA035jBdiojjS7stR2AoLh1hWKMrM+JEDJWTy+SYdqC8Qu8HeeVxNFzrOpBujDG9ItTokuurvo9HHc5PAs0SgWsDsS5n6ZBLOq1XmSF+3OrxX9LyLgfJLj6FAxvi4W07EutPstqYXR/OCrreexxYOwiH4FWahaKd4KZyVb+2fCD6Zyf7X/v0bm/SE1MOa7yZ5yl+j5koR+Xk7sNaffuADIpMoFV/TQ+lvgbamOusmVRdOPqIc63S5sChhy6IgUPq5dVSj52gLBjxDKqpnvRNyVUMaADKERn1FLuKnb1kgNJFllcJhfpNyGd0dxT0lvKGMhShz2M9zrP is already present for user tcloninger
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKC8FAS4PGqQA035jBdiojjS7stR2AoLh1hWKMrM+JEDJWTy+SYdqC8Qu8HeeVxNFzrOpBujDG9ItTokuurvo9HHc5PAs0SgWsDsS5n6ZBLOq1XmSF+3OrxX9LyLgfJLj6FAxvi4W07EutPstqYXR/OCrreexxYOwiH4FWahaKd4KZyVb+2fCD6Zyf7X/v0bm/SE1MOa7yZ5yl+j5koR+Xk7sNaffuADIpMoFV/TQ+lvgbamOusmVRdOPqIc63S5sChhy6IgUPq5dVSj52gLBjxDKqpnvRNyVUMaADKERn1FLuKnb1kgNJFllcJhfpNyGd0dxT0lvKGMhShz2M9zrP] at time 11:36:51.958717
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [mmartin] at time 11:36:51.960813
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for mmartin
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User mmartin is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [mmartin] at time 11:36:51.962619
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/mmartin/.ssh] at time 11:36:51.964530
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/mmartin/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/mmartin/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/mmartin/.ssh] at time 11:36:51.966688
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/mmartin/.ssh/authorized_keys] at time 11:36:51.968659
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/mmartin/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/mmartin/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/mmartin/.ssh/authorized_keys] at time 11:36:51.970893
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9mqLibhjzsfFYtCTOLuW/I45XKbIBjgx71mIJDM4isOxNdlvYzdiuN/H8T+NUrF4RUIxx9bzSoRIQZGKOUejt0FUk3yj+ogFN9nrg1Q4nAn77uYEfySE8+iggxTXNMB/Rfb0z2u6bSfpu/WVo8nL/Sn8WmoIudA60JFBtxeGbFX1/ZUYGL34+GV586Qe9C1BMmSw5TlsXSgi1BMBUOoAS4QIyfzZ/Wfg04porJllm8fp9pb91sRNU6/YlDwNNAQDocAXo7NVPTdM6kYoTyGN8xrzWRV2xYojAUJ9Mspd0zhwGeLxvd18ih8GHmt+TqyfsMx7nK3LVQrqP1ugNpcpD] at time 11:36:51.972829
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9mqLibhjzsfFYtCTOLuW/I45XKbIBjgx71mIJDM4isOxNdlvYzdiuN/H8T+NUrF4RUIxx9bzSoRIQZGKOUejt0FUk3yj+ogFN9nrg1Q4nAn77uYEfySE8+iggxTXNMB/Rfb0z2u6bSfpu/WVo8nL/Sn8WmoIudA60JFBtxeGbFX1/ZUYGL34+GV586Qe9C1BMmSw5TlsXSgi1BMBUOoAS4QIyfzZ/Wfg04porJllm8fp9pb91sRNU6/YlDwNNAQDocAXo7NVPTdM6kYoTyGN8xrzWRV2xYojAUJ9Mspd0zhwGeLxvd18ih8GHmt+TqyfsMx7nK3LVQrqP1ugNpcpD
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQC9mqLibhjzsfFYtCTOLuW/I45XKbIBjgx71mIJDM4isOxNdlvYzdiuN/H8T+NUrF4RUIxx9bzSoRIQZGKOUejt0FUk3yj+ogFN9nrg1Q4nAn77uYEfySE8+iggxTXNMB/Rfb0z2u6bSfpu/WVo8nL/Sn8WmoIudA60JFBtxeGbFX1/ZUYGL34+GV586Qe9C1BMmSw5TlsXSgi1BMBUOoAS4QIyfzZ/Wfg04porJllm8fp9pb91sRNU6/YlDwNNAQDocAXo7NVPTdM6kYoTyGN8xrzWRV2xYojAUJ9Mspd0zhwGeLxvd18ih8GHmt+TqyfsMx7nK3LVQrqP1ugNpcpD is already present for user mmartin
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9mqLibhjzsfFYtCTOLuW/I45XKbIBjgx71mIJDM4isOxNdlvYzdiuN/H8T+NUrF4RUIxx9bzSoRIQZGKOUejt0FUk3yj+ogFN9nrg1Q4nAn77uYEfySE8+iggxTXNMB/Rfb0z2u6bSfpu/WVo8nL/Sn8WmoIudA60JFBtxeGbFX1/ZUYGL34+GV586Qe9C1BMmSw5TlsXSgi1BMBUOoAS4QIyfzZ/Wfg04porJllm8fp9pb91sRNU6/YlDwNNAQDocAXo7NVPTdM6kYoTyGN8xrzWRV2xYojAUJ9Mspd0zhwGeLxvd18ih8GHmt+TqyfsMx7nK3LVQrqP1ugNpcpD] at time 11:36:51.975229
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [tgeorge] at time 11:36:51.977254
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for tgeorge
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User tgeorge is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [tgeorge] at time 11:36:51.979012
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/tgeorge/.ssh] at time 11:36:51.980877
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/tgeorge/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/tgeorge/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/tgeorge/.ssh] at time 11:36:51.982609
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/tgeorge/.ssh/authorized_keys] at time 11:36:51.984475
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/tgeorge/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/tgeorge/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/tgeorge/.ssh/authorized_keys] at time 11:36:51.986342
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7WJ2mDD0fM70Juhze9QaHymJH8KYa9q0prAGSjtYPZiZSHW9rS/VAsDGMx5iGBXACgdthduyxGNDORhowsvV6hCDpLdkhROVFXgc7zJ6cQskUcSz60FPWGT1BaPBxJq9EVMLuhsHS2hGKT4zDind1lLyXv21yZ+Q4+/9iUQJy+LBlEkW587T1QTHJOm0mo+qIqB6L1FO5tcMvCpIDdMHpozupVN2ohq1ODVrmqncyFRnnfarQHkmXZIu3DkyYgd5W4BYWXKh0ABLcL/RYKFsEhLZPXKIHQ3UvZgFeHx3KyxlDmPyuk8Bi8QkXxEQQ0AcSjRy8pjWD8bwRKwQv2RDRQ==] at time 11:36:51.988217
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7WJ2mDD0fM70Juhze9QaHymJH8KYa9q0prAGSjtYPZiZSHW9rS/VAsDGMx5iGBXACgdthduyxGNDORhowsvV6hCDpLdkhROVFXgc7zJ6cQskUcSz60FPWGT1BaPBxJq9EVMLuhsHS2hGKT4zDind1lLyXv21yZ+Q4+/9iUQJy+LBlEkW587T1QTHJOm0mo+qIqB6L1FO5tcMvCpIDdMHpozupVN2ohq1ODVrmqncyFRnnfarQHkmXZIu3DkyYgd5W4BYWXKh0ABLcL/RYKFsEhLZPXKIHQ3UvZgFeHx3KyxlDmPyuk8Bi8QkXxEQQ0AcSjRy8pjWD8bwRKwQv2RDRQ==
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAABIwAAAQEA7WJ2mDD0fM70Juhze9QaHymJH8KYa9q0prAGSjtYPZiZSHW9rS/VAsDGMx5iGBXACgdthduyxGNDORhowsvV6hCDpLdkhROVFXgc7zJ6cQskUcSz60FPWGT1BaPBxJq9EVMLuhsHS2hGKT4zDind1lLyXv21yZ+Q4+/9iUQJy+LBlEkW587T1QTHJOm0mo+qIqB6L1FO5tcMvCpIDdMHpozupVN2ohq1ODVrmqncyFRnnfarQHkmXZIu3DkyYgd5W4BYWXKh0ABLcL/RYKFsEhLZPXKIHQ3UvZgFeHx3KyxlDmPyuk8Bi8QkXxEQQ0AcSjRy8pjWD8bwRKwQv2RDRQ== is already present for user tgeorge
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7WJ2mDD0fM70Juhze9QaHymJH8KYa9q0prAGSjtYPZiZSHW9rS/VAsDGMx5iGBXACgdthduyxGNDORhowsvV6hCDpLdkhROVFXgc7zJ6cQskUcSz60FPWGT1BaPBxJq9EVMLuhsHS2hGKT4zDind1lLyXv21yZ+Q4+/9iUQJy+LBlEkW587T1QTHJOm0mo+qIqB6L1FO5tcMvCpIDdMHpozupVN2ohq1ODVrmqncyFRnnfarQHkmXZIu3DkyYgd5W4BYWXKh0ABLcL/RYKFsEhLZPXKIHQ3UvZgFeHx3KyxlDmPyuk8Bi8QkXxEQQ0AcSjRy8pjWD8bwRKwQv2RDRQ==] at time 11:36:51.990498
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [mhowe] at time 11:36:51.992383
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for mhowe
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User mhowe is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [mhowe] at time 11:36:51.994231
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/mhowe/.ssh] at time 11:36:51.996150
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/mhowe/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/mhowe/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/mhowe/.ssh] at time 11:36:51.998054
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/mhowe/.ssh/authorized_keys] at time 11:36:51.999958
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/mhowe/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/mhowe/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/mhowe/.ssh/authorized_keys] at time 11:36:52.002336
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsh/Ay2hiE1kKp8eLsZqvagDeicZusRrtsZ1XEW9SUJWY6StBeuSqh+4k4h8EXBDBGNuxRNBCM9XvFM1sWExDF/bAGfsRT9ioq+2MKhZzA0Dn1H9fyF4K27/gReqBjFPckxEE8TPB5cm04xdFxuVfOsNfE73bLTYe2Fwj7GPGA5rOXNW+IdrHXQWLnUxTx2m3ogR+CJNYtZylyB/IRabLPlQePs7OOPOEXTwnjlgbFnumZ8iT5bSN+bAfSzMdj2hwCmi2UA0VEBdXCnSMYtYox1XyggNW4WfEYO3Y2aZkZQD/lNQjWnng84kQ1KuhGusl06rlCPqrc/FD8iWiO2Cv9 mark@exigue] at time 11:36:52.004212
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsh/Ay2hiE1kKp8eLsZqvagDeicZusRrtsZ1XEW9SUJWY6StBeuSqh+4k4h8EXBDBGNuxRNBCM9XvFM1sWExDF/bAGfsRT9ioq+2MKhZzA0Dn1H9fyF4K27/gReqBjFPckxEE8TPB5cm04xdFxuVfOsNfE73bLTYe2Fwj7GPGA5rOXNW+IdrHXQWLnUxTx2m3ogR+CJNYtZylyB/IRabLPlQePs7OOPOEXTwnjlgbFnumZ8iT5bSN+bAfSzMdj2hwCmi2UA0VEBdXCnSMYtYox1XyggNW4WfEYO3Y2aZkZQD/lNQjWnng84kQ1KuhGusl06rlCPqrc/FD8iWiO2Cv9 mark@exigue
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQCsh/Ay2hiE1kKp8eLsZqvagDeicZusRrtsZ1XEW9SUJWY6StBeuSqh+4k4h8EXBDBGNuxRNBCM9XvFM1sWExDF/bAGfsRT9ioq+2MKhZzA0Dn1H9fyF4K27/gReqBjFPckxEE8TPB5cm04xdFxuVfOsNfE73bLTYe2Fwj7GPGA5rOXNW+IdrHXQWLnUxTx2m3ogR+CJNYtZylyB/IRabLPlQePs7OOPOEXTwnjlgbFnumZ8iT5bSN+bAfSzMdj2hwCmi2UA0VEBdXCnSMYtYox1XyggNW4WfEYO3Y2aZkZQD/lNQjWnng84kQ1KuhGusl06rlCPqrc/FD8iWiO2Cv9 is already present for user mhowe
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsh/Ay2hiE1kKp8eLsZqvagDeicZusRrtsZ1XEW9SUJWY6StBeuSqh+4k4h8EXBDBGNuxRNBCM9XvFM1sWExDF/bAGfsRT9ioq+2MKhZzA0Dn1H9fyF4K27/gReqBjFPckxEE8TPB5cm04xdFxuVfOsNfE73bLTYe2Fwj7GPGA5rOXNW+IdrHXQWLnUxTx2m3ogR+CJNYtZylyB/IRabLPlQePs7OOPOEXTwnjlgbFnumZ8iT5bSN+bAfSzMdj2hwCmi2UA0VEBdXCnSMYtYox1XyggNW4WfEYO3Y2aZkZQD/lNQjWnng84kQ1KuhGusl06rlCPqrc/FD8iWiO2Cv9 mark@exigue] at time 11:36:52.006577
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9k/wuI+jDAzBHr19ElGour16Ez7fiMU4nQtTOtzqOEjgEyScDDMfJCEpkZXvwu2tETpjzUUMo2x1lfBlUyeWrkyy83Ey9N71wDcaQwAq5v4V252ochr4Nx36I0TZJxGDh7y9WdCQz9kIzwTNLamEy6h8kjjKtD+Bh8VKk0AQDBEDerE1ZLtQEyD5HRJahJX8N2pBf3PuzJZYwO+xo8CPR4H5jUd5Y65bOhHS+SPvKHrhu5ovXaQYPDKslpx5fiRYtMjnQsfuDMmB2ndSB5b8ko3NP2Kd3ehErkJFWmNhIlEVZDiTpL/EYYtLsNVCYXLj7Yg6v5BTblQFP1Yo05Olx mark@VMLCrisis] at time 11:36:52.008572
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9k/wuI+jDAzBHr19ElGour16Ez7fiMU4nQtTOtzqOEjgEyScDDMfJCEpkZXvwu2tETpjzUUMo2x1lfBlUyeWrkyy83Ey9N71wDcaQwAq5v4V252ochr4Nx36I0TZJxGDh7y9WdCQz9kIzwTNLamEy6h8kjjKtD+Bh8VKk0AQDBEDerE1ZLtQEyD5HRJahJX8N2pBf3PuzJZYwO+xo8CPR4H5jUd5Y65bOhHS+SPvKHrhu5ovXaQYPDKslpx5fiRYtMjnQsfuDMmB2ndSB5b8ko3NP2Kd3ehErkJFWmNhIlEVZDiTpL/EYYtLsNVCYXLj7Yg6v5BTblQFP1Yo05Olx mark@VMLCrisis
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQC9k/wuI+jDAzBHr19ElGour16Ez7fiMU4nQtTOtzqOEjgEyScDDMfJCEpkZXvwu2tETpjzUUMo2x1lfBlUyeWrkyy83Ey9N71wDcaQwAq5v4V252ochr4Nx36I0TZJxGDh7y9WdCQz9kIzwTNLamEy6h8kjjKtD+Bh8VKk0AQDBEDerE1ZLtQEyD5HRJahJX8N2pBf3PuzJZYwO+xo8CPR4H5jUd5Y65bOhHS+SPvKHrhu5ovXaQYPDKslpx5fiRYtMjnQsfuDMmB2ndSB5b8ko3NP2Kd3ehErkJFWmNhIlEVZDiTpL/EYYtLsNVCYXLj7Yg6v5BTblQFP1Yo05Olx is already present for user mhowe
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9k/wuI+jDAzBHr19ElGour16Ez7fiMU4nQtTOtzqOEjgEyScDDMfJCEpkZXvwu2tETpjzUUMo2x1lfBlUyeWrkyy83Ey9N71wDcaQwAq5v4V252ochr4Nx36I0TZJxGDh7y9WdCQz9kIzwTNLamEy6h8kjjKtD+Bh8VKk0AQDBEDerE1ZLtQEyD5HRJahJX8N2pBf3PuzJZYwO+xo8CPR4H5jUd5Y65bOhHS+SPvKHrhu5ovXaQYPDKslpx5fiRYtMjnQsfuDMmB2ndSB5b8ko3NP2Kd3ehErkJFWmNhIlEVZDiTpL/EYYtLsNVCYXLj7Yg6v5BTblQFP1Yo05Olx mark@VMLCrisis] at time 11:36:52.010746
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyhADkxx5aJiJZs8wkhDotn1h0lQdX34C+OQ/VxU9yvZ6zfZvd8ShEUYJwghhfawbcJBtfWyFIDHA5gATkeTSQJ4u2FZwCLpVCjTmq4J+ubKSGfaJJxnwqkLxncOHa0f5YgQErwGqN+oohXG6/idQ0R8TBDaBo+Wr1BHB05O3uq/HFfeOBmokhgC+Qw/YJmTEVoO40XGifNoTqletv5DuzwphbSvyZ4oYlWSMBzdYAWdEmCc8OhVZQOzU0ueH6DYgEtOcss8K4bNOsfLqOU5Qxz7RQVVPJuFdfxuPMIBCgoYCWaf4DdES7vUlwKmTr6muyerVMFUs8UdyvmoZUYxnV mark@mlcrisis2] at time 11:36:52.012782
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyhADkxx5aJiJZs8wkhDotn1h0lQdX34C+OQ/VxU9yvZ6zfZvd8ShEUYJwghhfawbcJBtfWyFIDHA5gATkeTSQJ4u2FZwCLpVCjTmq4J+ubKSGfaJJxnwqkLxncOHa0f5YgQErwGqN+oohXG6/idQ0R8TBDaBo+Wr1BHB05O3uq/HFfeOBmokhgC+Qw/YJmTEVoO40XGifNoTqletv5DuzwphbSvyZ4oYlWSMBzdYAWdEmCc8OhVZQOzU0ueH6DYgEtOcss8K4bNOsfLqOU5Qxz7RQVVPJuFdfxuPMIBCgoYCWaf4DdES7vUlwKmTr6muyerVMFUs8UdyvmoZUYxnV mark@mlcrisis2
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQCyhADkxx5aJiJZs8wkhDotn1h0lQdX34C+OQ/VxU9yvZ6zfZvd8ShEUYJwghhfawbcJBtfWyFIDHA5gATkeTSQJ4u2FZwCLpVCjTmq4J+ubKSGfaJJxnwqkLxncOHa0f5YgQErwGqN+oohXG6/idQ0R8TBDaBo+Wr1BHB05O3uq/HFfeOBmokhgC+Qw/YJmTEVoO40XGifNoTqletv5DuzwphbSvyZ4oYlWSMBzdYAWdEmCc8OhVZQOzU0ueH6DYgEtOcss8K4bNOsfLqOU5Qxz7RQVVPJuFdfxuPMIBCgoYCWaf4DdES7vUlwKmTr6muyerVMFUs8UdyvmoZUYxnV is already present for user mhowe
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyhADkxx5aJiJZs8wkhDotn1h0lQdX34C+OQ/VxU9yvZ6zfZvd8ShEUYJwghhfawbcJBtfWyFIDHA5gATkeTSQJ4u2FZwCLpVCjTmq4J+ubKSGfaJJxnwqkLxncOHa0f5YgQErwGqN+oohXG6/idQ0R8TBDaBo+Wr1BHB05O3uq/HFfeOBmokhgC+Qw/YJmTEVoO40XGifNoTqletv5DuzwphbSvyZ4oYlWSMBzdYAWdEmCc8OhVZQOzU0ueH6DYgEtOcss8K4bNOsfLqOU5Qxz7RQVVPJuFdfxuPMIBCgoYCWaf4DdES7vUlwKmTr6muyerVMFUs8UdyvmoZUYxnV mark@mlcrisis2] at time 11:36:52.014816
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [bmontz] at time 11:36:52.016697
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for bmontz
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User bmontz is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [bmontz] at time 11:36:52.018553
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/bmontz/.ssh] at time 11:36:52.020465
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/bmontz/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/bmontz/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/bmontz/.ssh] at time 11:36:52.022328
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/bmontz/.ssh/authorized_keys] at time 11:36:52.024284
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/bmontz/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/bmontz/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/bmontz/.ssh/authorized_keys] at time 11:36:52.026271
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArvNxgnLxLpG9HTW8GU+ty8Tm540P2C1hd8kutjbZVSlIh6u4RDVP3itgVOBSfvhnJPN1nasywVZGLmQ7Lx+XZEN2FKF11jm2RbbONp1sGHE7io+UN6drReenUk0zRJ34JNnaxzbdMtuqEAzziy+lX6gjWW782o3ZKabVw4d/Aste1GGKO2FhhD3M73VeCyT1ISc3dKWJp/t7EDeP9NDVhVwc9gRMVqe55tNpgewfLnjunoN4sIYI2Ad6CVNtnKrsj80ps0i7+3iQvIOJXwsL8t4HpKnsjx1lmXfgHaZV0lDNuC4oW/OFL2gV4W7rGdNbnlwLdmDAAzQzvYDYMRhW0Q==] at time 11:36:52.028224
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArvNxgnLxLpG9HTW8GU+ty8Tm540P2C1hd8kutjbZVSlIh6u4RDVP3itgVOBSfvhnJPN1nasywVZGLmQ7Lx+XZEN2FKF11jm2RbbONp1sGHE7io+UN6drReenUk0zRJ34JNnaxzbdMtuqEAzziy+lX6gjWW782o3ZKabVw4d/Aste1GGKO2FhhD3M73VeCyT1ISc3dKWJp/t7EDeP9NDVhVwc9gRMVqe55tNpgewfLnjunoN4sIYI2Ad6CVNtnKrsj80ps0i7+3iQvIOJXwsL8t4HpKnsjx1lmXfgHaZV0lDNuC4oW/OFL2gV4W7rGdNbnlwLdmDAAzQzvYDYMRhW0Q==
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAABIwAAAQEArvNxgnLxLpG9HTW8GU+ty8Tm540P2C1hd8kutjbZVSlIh6u4RDVP3itgVOBSfvhnJPN1nasywVZGLmQ7Lx+XZEN2FKF11jm2RbbONp1sGHE7io+UN6drReenUk0zRJ34JNnaxzbdMtuqEAzziy+lX6gjWW782o3ZKabVw4d/Aste1GGKO2FhhD3M73VeCyT1ISc3dKWJp/t7EDeP9NDVhVwc9gRMVqe55tNpgewfLnjunoN4sIYI2Ad6CVNtnKrsj80ps0i7+3iQvIOJXwsL8t4HpKnsjx1lmXfgHaZV0lDNuC4oW/OFL2gV4W7rGdNbnlwLdmDAAzQzvYDYMRhW0Q== is already present for user bmontz
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArvNxgnLxLpG9HTW8GU+ty8Tm540P2C1hd8kutjbZVSlIh6u4RDVP3itgVOBSfvhnJPN1nasywVZGLmQ7Lx+XZEN2FKF11jm2RbbONp1sGHE7io+UN6drReenUk0zRJ34JNnaxzbdMtuqEAzziy+lX6gjWW782o3ZKabVw4d/Aste1GGKO2FhhD3M73VeCyT1ISc3dKWJp/t7EDeP9NDVhVwc9gRMVqe55tNpgewfLnjunoN4sIYI2Ad6CVNtnKrsj80ps0i7+3iQvIOJXwsL8t4HpKnsjx1lmXfgHaZV0lDNuC4oW/OFL2gV4W7rGdNbnlwLdmDAAzQzvYDYMRhW0Q==] at time 11:36:52.030581
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [rcalhoun] at time 11:36:52.032639
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state user.present for rcalhoun
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] User rcalhoun is present and up to date
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [rcalhoun] at time 11:36:52.034603
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/rcalhoun/.ssh] at time 11:36:52.036594
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/rcalhoun/.ssh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/rcalhoun/.ssh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/rcalhoun/.ssh] at time 11:36:52.038409
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/rcalhoun/.ssh/authorized_keys] at time 11:36:52.040661
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/rcalhoun/.ssh/authorized_keys
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[WARNING ] Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/rcalhoun/.ssh/authorized_keys exists with proper permissions. No changes made.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/rcalhoun/.ssh/authorized_keys] at time 11:36:52.042732
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+LJS5fgJ052zbCFZdb0AF16goftabWrb4/9hF1q7d6iEg7Cp5vdczwILTRw5EGoU7GgUwKYhWRoh+4Fwzm9j7N6P3lT3PCIBwKqXBB3bsP8Qi3g3lMsBE8rutZ4NCtdQyCgh43Tl1uI+b5/J12Q+5F1TgDpFrXjN6meDnYG/iK/CXYbcR1MTdQxVLJbdkz9IVTSao59hZwbVqueyShq9jwWm8DRmaq46rHIzNMaLUUMcg33WW1LA1nA3Jw+9R3Y9p54PT80Rxx1Uzc+w5BZEibgc6jNrX3Ojf+5+mr6p+lGe11tGHnDtZ+q3dKXlURUhv5RiPPKmkGvRFkbhHv0kR] at time 11:36:52.044728
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_auth.present for ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+LJS5fgJ052zbCFZdb0AF16goftabWrb4/9hF1q7d6iEg7Cp5vdczwILTRw5EGoU7GgUwKYhWRoh+4Fwzm9j7N6P3lT3PCIBwKqXBB3bsP8Qi3g3lMsBE8rutZ4NCtdQyCgh43Tl1uI+b5/J12Q+5F1TgDpFrXjN6meDnYG/iK/CXYbcR1MTdQxVLJbdkz9IVTSao59hZwbVqueyShq9jwWm8DRmaq46rHIzNMaLUUMcg33WW1LA1nA3Jw+9R3Y9p54PT80Rxx1Uzc+w5BZEibgc6jNrX3Ojf+5+mr6p+lGe11tGHnDtZ+q3dKXlURUhv5RiPPKmkGvRFkbhHv0kR
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The authorized host key AAAAB3NzaC1yc2EAAAADAQABAAABAQC+LJS5fgJ052zbCFZdb0AF16goftabWrb4/9hF1q7d6iEg7Cp5vdczwILTRw5EGoU7GgUwKYhWRoh+4Fwzm9j7N6P3lT3PCIBwKqXBB3bsP8Qi3g3lMsBE8rutZ4NCtdQyCgh43Tl1uI+b5/J12Q+5F1TgDpFrXjN6meDnYG/iK/CXYbcR1MTdQxVLJbdkz9IVTSao59hZwbVqueyShq9jwWm8DRmaq46rHIzNMaLUUMcg33WW1LA1nA3Jw+9R3Y9p54PT80Rxx1Uzc+w5BZEibgc6jNrX3Ojf+5+mr6p+lGe11tGHnDtZ+q3dKXlURUhv5RiPPKmkGvRFkbhHv0kR is already present for user rcalhoun
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+LJS5fgJ052zbCFZdb0AF16goftabWrb4/9hF1q7d6iEg7Cp5vdczwILTRw5EGoU7GgUwKYhWRoh+4Fwzm9j7N6P3lT3PCIBwKqXBB3bsP8Qi3g3lMsBE8rutZ4NCtdQyCgh43Tl1uI+b5/J12Q+5F1TgDpFrXjN6meDnYG/iK/CXYbcR1MTdQxVLJbdkz9IVTSao59hZwbVqueyShq9jwWm8DRmaq46rHIzNMaLUUMcg33WW1LA1nA3Jw+9R3Y9p54PT80Rxx1Uzc+w5BZEibgc6jNrX3Ojf+5+mr6p+lGe11tGHnDtZ+q3dKXlURUhv5RiPPKmkGvRFkbhHv0kR] at time 11:36:52.047064
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/sudoers] at time 11:36:52.049054
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/sudoers
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://devops/files/sudoers-development'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/sudoers is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/sudoers] at time 11:36:52.097641
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ntpdate] at time 11:36:52.098063
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for ntpdate
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package ntpdate is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ntpdate] at time 11:36:52.099556
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ntp] at time 11:36:52.099890
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for ntp
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package ntp is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ntp] at time 11:36:52.100976
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/ntp.conf] at time 11:36:52.103101
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/ntp.conf
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/ntp.conf is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/ntp.conf] at time 11:36:52.148265
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [ntp] at time 11:36:52.152233
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state service.running for ntp
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['service', 'ntp', 'status'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Service ntp is already enabled, and is in the desired state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [ntp] at time 11:36:52.180738
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/narnia/tools] at time 11:36:52.183112
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.recurse for /narnia/tools
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] The directory /narnia/tools is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/narnia/tools] at time 11:36:52.672517
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [rsync] at time 11:36:52.672987
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for rsync
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package rsync is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [rsync] at time 11:36:52.674862
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/rsyncd.conf] at time 11:36:52.676987
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/rsyncd.conf
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://rsync/files/rsyncd.conf.jinja'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/rsyncd.conf is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/rsyncd.conf] at time 11:36:52.727554
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/default/rsync] at time 11:36:52.729918
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/default/rsync
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/default/rsync is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/default/rsync] at time 11:36:52.776272
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [rsync] at time 11:36:52.778484
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state service.running for rsync
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['service', 'rsync', 'status'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Service rsync is already enabled, and is in the desired state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [rsync] at time 11:36:52.805252
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [mailutils] at time 11:36:52.805784
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for mailutils
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package mailutils is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [mailutils] at time 11:36:52.807280
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [exim4] at time 11:36:52.807604
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for exim4
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package exim4 is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [exim4] at time 11:36:52.808734
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/exim4/update-exim4.conf.conf] at time 11:36:52.811006
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/exim4/update-exim4.conf.conf
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/exim4/update-exim4.conf.conf is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/exim4/update-exim4.conf.conf] at time 11:36:52.859139
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/usr/sbin/update-exim4.conf] at time 11:36:52.861482
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.wait for /usr/sbin/update-exim4.conf
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] No changes made for /usr/sbin/update-exim4.conf
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/usr/sbin/update-exim4.conf] at time 11:36:52.862722
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/exim4/exim4.conf.localmacros] at time 11:36:52.865173
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/exim4/exim4.conf.localmacros
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/exim4/exim4.conf.localmacros is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/exim4/exim4.conf.localmacros] at time 11:36:52.910829
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/exim4/passwd.client] at time 11:36:52.913250
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/exim4/passwd.client
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://exim/files/passwd.client.jinja'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/exim4/passwd.client is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/exim4/passwd.client] at time 11:36:52.965976
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [exim4] at time 11:36:52.973685
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state service.running for exim4
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['service', 'exim4', 'status'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Service exim4 is already enabled, and is in the desired state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [exim4] at time 11:36:53.025962
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [vim] at time 11:36:53.026581
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for vim
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package vim is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [vim] at time 11:36:53.029464
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/alternatives/editor] at time 11:36:53.033338
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.symlink for /etc/alternatives/editor
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Symlink /etc/alternatives/editor is present and owned by root:root
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/alternatives/editor] at time 11:36:53.037616
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [fail2ban] at time 11:36:53.038142
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for fail2ban
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package fail2ban is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [fail2ban] at time 11:36:53.040247
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/fail2ban/jail.conf] at time 11:36:53.044069
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/fail2ban/jail.conf
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/fail2ban/jail.conf is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/fail2ban/jail.conf] at time 11:36:53.092656
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [fail2ban] at time 11:36:53.094966
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state service.running for fail2ban
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['service', 'fail2ban', 'status'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Service fail2ban is already enabled, and is in the desired state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [fail2ban] at time 11:36:53.178002
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [logrotate] at time 11:36:53.178494
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for logrotate
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package logrotate is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [logrotate] at time 11:36:53.180293
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [rsyslog] at time 11:36:53.180653
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for rsyslog
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package rsyslog is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [rsyslog] at time 11:36:53.181979
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [rsyslog] at time 11:36:53.184071
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state service.running for rsyslog
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['service', 'rsyslog', 'status'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Service rsyslog is already enabled, and is in the desired state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [rsyslog] at time 11:36:53.220777
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [etckeeper] at time 11:36:53.221189
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for etckeeper
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package etckeeper is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [etckeeper] at time 11:36:53.222823
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [wget] at time 11:36:53.223117
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for wget
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package wget is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [wget] at time 11:36:53.224139
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/yvdep/workspace] at time 11:36:53.226335
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /home/yvdep/workspace
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /home/yvdep/workspace is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/yvdep/workspace] at time 11:36:53.227974
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/yvdep/.bashrc] at time 11:36:53.230293
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.append for /home/yvdep/.bashrc
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/yvdep/.bashrc is in correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/yvdep/.bashrc] at time 11:36:53.235872
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/yvdep/.ssh/config] at time 11:36:53.239421
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/yvdep/.ssh/config
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/yvdep/.ssh/config is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/yvdep/.ssh/config] at time 11:36:53.285799
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/yvdep/.ssh/id_rsa] at time 11:36:53.288362
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/yvdep/.ssh/id_rsa
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/yvdep/.ssh/id_rsa is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/yvdep/.ssh/id_rsa] at time 11:36:53.297852
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/yvdep/.ssh/id_rsa.pub] at time 11:36:53.302211
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /home/yvdep/.ssh/id_rsa.pub
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /home/yvdep/.ssh/id_rsa.pub is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/yvdep/.ssh/id_rsa.pub] at time 11:36:53.348497
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [github.com] at time 11:36:53.351579
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_known_hosts.present for github.com
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'ssh-keygen -F "github.com" -f "/home/yvdep/.ssh/known_hosts"' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] No changes made for github.com
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [github.com] at time 11:36:53.364111
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [stash.lifechurch.tv] at time 11:36:53.366716
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state ssh_known_hosts.present for stash.lifechurch.tv
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'ssh-keygen -F "stash.lifechurch.tv" -f "/home/yvdep/.ssh/known_hosts"' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] No changes made for stash.lifechurch.tv
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [stash.lifechurch.tv] at time 11:36:53.381295
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/ssh/ssh_config] at time 11:36:53.384204
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.comment for /etc/ssh/ssh_config
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'grep "#SendEnv LANG" /etc/ssh/ssh_config' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] unless execution succeeded
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/ssh/ssh_config] at time 11:36:53.395602
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/usr/local/bin/host-manager.sh] at time 11:36:53.398807
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /usr/local/bin/host-manager.sh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /usr/local/bin/host-manager.sh is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/usr/local/bin/host-manager.sh] at time 11:36:53.444808
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/usr/local/bin/host-manager.sh -add `hostname` 127.0.0.1] at time 11:36:53.446857
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.run for /usr/local/bin/host-manager.sh -add `hostname` 127.0.0.1
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'grep `hostname` /etc/hosts' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] unless execution succeeded
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/usr/local/bin/host-manager.sh -add `hostname` 127.0.0.1] at time 11:36:53.457588
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/rc.local] at time 11:36:53.459691
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/rc.local
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://base/files/rc.local'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/rc.local is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/rc.local] at time 11:36:53.514620
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/salt/minion] at time 11:36:53.517001
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.append for /etc/salt/minion
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/salt/minion is in correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/salt/minion] at time 11:36:53.519900
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [python-apt] at time 11:36:53.520235
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for python-apt
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package python-apt is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [python-apt] at time 11:36:53.521794
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [debconf-utils] at time 11:36:53.522095
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for debconf-utils
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package debconf-utils is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [debconf-utils] at time 11:36:53.523154
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [unzip] at time 11:36:53.523447
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for unzip
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package unzip is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [unzip] at time 11:36:53.524491
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [mosh] at time 11:36:53.524772
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for mosh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package mosh is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [mosh] at time 11:36:53.525837
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [apt-transport-https] at time 11:36:53.526116
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for apt-transport-https
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package apt-transport-https is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [apt-transport-https] at time 11:36:53.527151
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [avahi-daemon] at time 11:36:53.527449
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.removed for avahi-daemon
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] All specified packages are already absent.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [avahi-daemon] at time 11:36:53.528482
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/apt/preferences.d/avahi.pref] at time 11:36:53.530547
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/apt/preferences.d/avahi.pref
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/apt/preferences.d/avahi.pref is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/apt/preferences.d/avahi.pref] at time 11:36:53.575498
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [net.ipv4.tcp_syncookies] at time 11:36:53.577793
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state sysctl.present for net.ipv4.tcp_syncookies
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'sysctl -a' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Sysctl value net.ipv4.tcp_syncookies = 0 is already set
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [net.ipv4.tcp_syncookies] at time 11:36:53.609089
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [net.ipv4.ip_local_port_range] at time 11:36:53.611510
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state sysctl.present for net.ipv4.ip_local_port_range
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'sysctl -a' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Sysctl value net.ipv4.ip_local_port_range = 1024 65535 is already set
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [net.ipv4.ip_local_port_range] at time 11:36:53.640694
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [net.ipv4.tcp_fin_timeout] at time 11:36:53.643101
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state sysctl.present for net.ipv4.tcp_fin_timeout
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'sysctl -a' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Sysctl value net.ipv4.tcp_fin_timeout = 3 is already set
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [net.ipv4.tcp_fin_timeout] at time 11:36:53.671932
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [zsh] at time 11:36:53.672397
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for zsh
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package zsh is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [zsh] at time 11:36:53.674059
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [libpq5] at time 11:36:53.674429
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for libpq5
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package libpq5 is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [libpq5] at time 11:36:53.675489
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [libpq-dev] at time 11:36:53.675785
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for libpq-dev
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package libpq-dev is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [libpq-dev] at time 11:36:53.676891
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/bin/sed -i -r -e '/[0-9]{1,2}\s(6)\s.*cron.daily/d' /etc/crontab] at time 11:36:53.679015
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.run for /bin/sed -i -r -e '/[0-9]{1,2}\s(6)\s.*cron.daily/d' /etc/crontab
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command "/bin/grep -E '[0-9]{1,2}\\s(6)\\s.*cron.daily' '/etc/crontab'" in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] onlyif execution failed
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/bin/sed -i -r -e '/[0-9]{1,2}\s(6)\s.*cron.daily/d' /etc/crontab] at time 11:36:53.688776
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/bin/echo '0 0     * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )' >> '/etc/crontab'] at time 11:36:53.691121
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.run for /bin/echo '0 0     * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )' >> '/etc/crontab'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command "/bin/grep -qFx '0 0     * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )' '/etc/crontab'" in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] unless execution succeeded
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/bin/echo '0 0     * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )' >> '/etc/crontab'] at time 11:36:53.702389
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [locales] at time 11:36:53.702912
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for locales
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package locales is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [locales] at time 11:36:53.704511
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [echo 'en_US UTF-8' >> /etc/locale.gen && /usr/sbin/locale-gen] at time 11:36:53.706656
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.run for echo 'en_US UTF-8' >> /etc/locale.gen && /usr/sbin/locale-gen
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command "cat /etc/locale.gen | grep 'en_US UTF-8'" in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] unless execution succeeded
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [echo 'en_US UTF-8' >> /etc/locale.gen && /usr/sbin/locale-gen] at time 11:36:53.717503
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [htop] at time 11:36:53.717924
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for htop
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package htop is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [htop] at time 11:36:53.719481
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [less] at time 11:36:53.719781
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for less
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package less is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [less] at time 11:36:53.720823
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [tmux] at time 11:36:53.721108
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for tmux
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package tmux is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [tmux] at time 11:36:53.722386
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [curl] at time 11:36:53.722679
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for curl
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package curl is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [curl] at time 11:36:53.723785
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [libffi-dev] at time 11:36:53.724066
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for libffi-dev
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package libffi-dev is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [libffi-dev] at time 11:36:53.725093
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [libssl-dev] at time 11:36:53.725443
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for libssl-dev
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package libssl-dev is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [libssl-dev] at time 11:36:53.726458
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [US/Central] at time 11:36:53.728531
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state timezone.system for US/Central
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'timedatectl' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Timezone US/Central already set, UTC already set to US/Central
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [US/Central] at time 11:36:53.739873
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [python-software-properties] at time 11:36:53.740299
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for python-software-properties
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package python-software-properties is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [python-software-properties] at time 11:36:53.741912
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [local.bible.com] at time 11:36:53.744196
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state host.present for local.bible.com
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Host local.bible.com (127.0.0.1) already present
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [local.bible.com] at time 11:36:53.745705
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [memcached] at time 11:36:53.745998
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for memcached
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package memcached is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [memcached] at time 11:36:53.747072
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/memcached.conf] at time 11:36:53.748960
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/memcached.conf
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Fetching file from saltenv 'base', ** skipped ** latest already in cache 'salt://yvweb/files/memcached/memcached.conf.jinja'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/memcached.conf is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/memcached.conf] at time 11:36:53.798648
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [memcached] at time 11:36:53.800791
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state service.running for memcached
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['service', 'memcached', 'status'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Service memcached is already enabled, and is in the desired state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [memcached] at time 11:36:53.839153
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [libcurl4-openssl-dev] at time 11:36:53.839650
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for libcurl4-openssl-dev
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package libcurl4-openssl-dev is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [libcurl4-openssl-dev] at time 11:36:53.841746
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [libxml2-dev] at time 11:36:53.842133
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for libxml2-dev
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package libxml2-dev is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [libxml2-dev] at time 11:36:53.843500
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [libxslt-dev] at time 11:36:53.843878
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for libxslt-dev
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package libxslt-dev is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [libxslt-dev] at time 11:36:53.845228
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [g++] at time 11:36:53.845574
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for g++
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package g++ is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [g++] at time 11:36:53.846642
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [curl -sSL https://get.rvm.io | bash] at time 11:36:53.848700
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.run for curl -sSL https://get.rvm.io | bash
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'stat /home/yvdep/.rvm' as user 'yvdep' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] unless execution succeeded
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [curl -sSL https://get.rvm.io | bash] at time 11:36:54.026351
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [rvm install 1.9.3-p551] at time 11:36:54.029247
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.run for rvm install 1.9.3-p551
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'stat /home/yvdep/.rvm/rubies/ruby-1.9.3-p551' as user 'yvdep' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] unless execution succeeded
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [rvm install 1.9.3-p551] at time 11:36:54.216530
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [rvm ruby-1.9.3-p551 gemset create youversion-web] at time 11:36:54.218946
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.run for rvm ruby-1.9.3-p551 gemset create youversion-web
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'stat /home/yvdep/.rvm/wrappers/ruby-1.9.3-p551@youversion-web' as user 'yvdep' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] unless execution succeeded
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [rvm ruby-1.9.3-p551 gemset create youversion-web] at time 11:36:54.406928
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [rvm install 2.2.2] at time 11:36:54.409604
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.run for rvm install 2.2.2
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'stat /home/yvdep/.rvm/rubies/ruby-2.2.2' as user 'yvdep' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] unless execution succeeded
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [rvm install 2.2.2] at time 11:36:54.608986
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [rvm ruby-2.2.2 gemset create youversion-web] at time 11:36:54.611176
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.run for rvm ruby-2.2.2 gemset create youversion-web
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'stat /home/yvdep/.rvm/wrappers/ruby-2.2.2@youversion-web' as user 'yvdep' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] unless execution succeeded
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [rvm ruby-2.2.2 gemset create youversion-web] at time 11:36:54.817017
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/home/yvdep/.rvm/wrappers/ruby-2.2.2@youversion-web/gem install bundler] at time 11:36:54.819175
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state cmd.run for /home/yvdep/.rvm/wrappers/ruby-2.2.2@youversion-web/gem install bundler
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command 'stat /home/yvdep/.rvm/gems/ruby-2.2.2@youversion-web/bin/bundler' as user 'yvdep' in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] unless execution succeeded
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/home/yvdep/.rvm/wrappers/ruby-2.2.2@youversion-web/gem install bundler] at time 11:36:54.990159
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [nodejs repo] at time 11:36:54.992221
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkgrepo.managed for nodejs repo
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package repo 'nodejs repo' already configured
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [nodejs repo] at time 11:36:55.052166
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [nodejs] at time 11:36:55.052529
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for nodejs
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package nodejs is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [nodejs] at time 11:36:55.054018
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [passenger repo] at time 11:36:55.055929
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkgrepo.managed for passenger repo
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package repo 'passenger repo' already configured
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [passenger repo] at time 11:36:55.103049
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [nginx-extras] at time 11:36:55.103530
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state pkg.installed for nginx-extras
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Package nginx-extras is already installed.
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [nginx-extras] at time 11:36:55.104775
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/nginx/certs/selfsigned.crt] at time 11:36:55.106804
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/nginx/certs/selfsigned.crt
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/nginx/certs/selfsigned.crt is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/nginx/certs/selfsigned.crt] at time 11:36:55.152918
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/etc/nginx/certs/selfsigned.key] at time 11:36:55.157694
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.managed for /etc/nginx/certs/selfsigned.key
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] File /etc/nginx/certs/selfsigned.key is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/etc/nginx/certs/selfsigned.key] at time 11:36:55.204233
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [nginx] at time 11:36:55.208525
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state service.running for nginx
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing command ['service', 'nginx', 'status'] in directory '/home/yvdep'
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Service nginx is already enabled, and is in the desired state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [nginx] at time 11:36:55.244031
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/var/www] at time 11:36:55.246462
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /var/www
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /var/www is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/var/www] at time 11:36:55.248601
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/var/log/passenger] at time 11:36:55.250795
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /var/log/passenger
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /var/log/passenger is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/var/log/passenger] at time 11:36:55.252228
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Running state [/var/run/passenger] at time 11:36:55.254236
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Executing state file.directory for /var/run/passenger
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Directory /var/run/passenger is in the correct state
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[INFO    ] Completed state [/var/run/passenger] at time 11:36:55.256217
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[0;32mlocal:[0m
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[0;36m
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	Summary
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	--------------[0m
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[0;32mSucceeded: 166[0m
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[0;36mFailed:      0[0m
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	[0;36m--------------
+ DEBUG [cced35d7] 	
+ DEBUG [cced35d7] 	Total states run:     166[0m
+ DEBUG [cced35d7] 	
+  INFO [cced35d7] Finished in 21.722 seconds with exit status 0 (successful).
+  INFO [2e039f89] Running /usr/bin/env mkdir -p /tmp/youversion-web/ as yvdep@webreview01-ny.youversion.com
+ DEBUG [2e039f89] Command: ( SECURE_TRAFFIC=true /usr/bin/env mkdir -p /tmp/youversion-web/ )
+  INFO [2e039f89] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/youversion-web/git-ssh.sh 0.0%
+  INFO Uploading /tmp/youversion-web/git-ssh.sh 100.0%
+  INFO [dde685f5] Running /usr/bin/env chmod +x /tmp/youversion-web/git-ssh.sh as yvdep@webreview01-ny.youversion.com
+ DEBUG [dde685f5] Command: ( SECURE_TRAFFIC=true /usr/bin/env chmod +x /tmp/youversion-web/git-ssh.sh )
+  INFO [dde685f5] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [ab4553ed] Running /usr/bin/env git ls-remote --heads git@github.com:lifechurch/youversion-web.git as yvdep@webreview01-ny.youversion.com
+ DEBUG [ab4553ed] Command: ( SECURE_TRAFFIC=true GIT_ASKPASS=/bin/echo GIT_SSH=/tmp/youversion-web/git-ssh.sh /usr/bin/env git ls-remote --heads git@github.com:lifechurch/youversion-web.git )
+ DEBUG [ab4553ed] 	a8277b37c6d74f7c59046a6b4174f919cd3d44d8
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/Bible-Redesign
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	4e78f76467005ca98af5b5da0ebb0d30fe3f8563
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/Cache-Reader-Only
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	833c730f37ff288a107166381c9c1dfe613758e6
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/Cache-Static-Pages
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	df513940f084f5e92b6f190d6ef9d045744a8d30
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/Cloudfront-Static-Assets
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	c17fd0dbc3ab9be9c19fddf5ddd5a25c353b6909
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/No-More-RP-Cache
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	61768e44c2d74227e3686802654dc99ee078dcbc
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/Reader-FS-Parallel-Unique-URL
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	0af3ee981d1dc72fc1cc14d345f9cf88b1d43f1e
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/Staging-Super-Merge
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	90a34a71cd77f5af82348f1b71019a51f38b0d74
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/YV-3471
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	4a35cbe37cb08290bb1561b60f09871a20466a2b
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/YV-4963-DevOps-Endpoints
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	8d8b2c614c6d3a837d83d220196855c8d4c0a63c
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/YV-5093
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	40abc94df540bbbebc4a82fe21c8c485a7a35510
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/YV-760-CSS-Updates
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	b9b25b082507b5514c8228901487caa6f7a3dcf2
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/add-https-google-verification
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	d803e0e2fb6d51ed6939ad25690620ff79a52f02
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/allow-GB
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	06f857e7ac11d7867cb417c17676afc549602c99
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/android-app-indexing
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	842e2219e8c166ac6201b3ed33528e37ea659f55
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/app-card
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	b9810778338f073a6f7cf50b3a0935469d7d371d
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/app-page-seo
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	e73caeb42d0cb59e764eb3f72da78554d4d34f0f
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/audio-object-markup
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	f4f7eaa3079eb5ee075d3663016741f4a69ee117
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/aug15-smartling-2
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	3b91f293519e311ca1ae6ab6d5a9175dcc13a3fe
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/better-more-menu
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	ef2080676dd6d9550c8b027c04b9258a45f0068e
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/bugfix/YV-4517
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	a6866ac51327ea94d4c9808793307eb5213f89cc
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/bugfix/yv-4051/jres
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	e157597c107e8e648ab342bb71bcd3445a1c350b
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/capistrano
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	32121d7c9c1126b655ea5d1ac10c6840d38aee30
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/cleanup-urls
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	25436c9ff23821207a213b3b5fe39f81cd372863
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/connections-mobile/YV-2241
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	ba0d4039cf284d01294381501fd2ab9a224cfbbe
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/donate-env-var
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	5a2058c7f2f53fb904f849642d65ce038e8a117b
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/english
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	102206bdeccfd7566c0caa956591fcad0154545b
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/es-kids-launch
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	70ee59a953780925d8e03b2535e3acc51f6a983b
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/feature/cache-fixes
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	a31434ac9995105e12b45912efa823b70fe7b0da
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/feature/friendship-request-deeplink
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	1c2d4405fc7d5ba56cfa0e3b5330a5b8e1e33853
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/feature/language-selector/yv-345
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	4586ab6518ed6116e4888c4efdfc9c3be66e5300
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/feature/mobile-redirect/yv-1754
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	18607c93c37b39221ff50352685f2459042af9d8
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/feature/seo-rp-about-pages
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	ad01c0773a98d3d1e35fb7418b10ab369ecc3586
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/feature/subscribe-to-vod/yv-1750
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	8b9525554f1eb95870d555a214e23db83f3e2ac9
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/feature/targeted_ads
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	25054cd02b5bb8a71c88f8602d1c3a63a2182843
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/feature/yv-3896/image-share-moments
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	5c653bce09cde651121b00b1be8eab1f7b6f4efb
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/feature/yv-4145/branch-metrics
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	8e9c20c511b4efaf48d4d102aade94443a1e0ba8
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/fix-bible-path-nav
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	0db0c88c3a1ae939eef81e2a99c9fe0a180e6663
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/fix-rp-thumbnail-browse
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	b0a0303e3ef20138d137898d9f52f56b04454031
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/fix-swahili-default
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	039de43f19c15a71ca2ff58280c961137d847d00
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/friendship-title-times
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	d74c0b87ff1ef22d495602ab0b6e2d75564744b6
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/hotfix/rp-stats-issue
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	f4572d1b89ea1ca3d48a21ef97660b249fc32975
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/href-mod
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	d448970309a0ed4727a43e3a54a265ad8e6373fc
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/href-mod-2
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	b30f160bf8adbdaff03cf7a6f2bdc7d744b10430
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/href-update
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	2837386b3264f19ee09f2b08ac2c44be1b98a08b
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/hugh-fixes
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	6f6739ccd8f3e751c044ed685b5ec363e8a44536
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/hugh-mobile-rework
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	acf029012c6f885174624989010505358d334f11
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/i18n
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	61fb7041447ecddb71ed7a7310fbb0805fa58359
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/integration
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	d4013e18c8cfd131b4567eed9043280219eacdcd
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/km-events
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	33ccd4143b6162e554d091f287b0451b310abdcd
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/landing-retina-fix
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	115372265f85d97b42c5b7482247378da9e51981
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/license-updates
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	c73f94489dcbeca16c51ee8edfd89098ac78c90f
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/loadtest
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	5f5831a2f536e35c3d6d8e9986b5d34222efd026
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/locale-strings
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	5907103d1b1b8abfc85311dfdc5594705e4b78d7
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/localize
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	94489d295345317be2bd8238375c83f3cece750b
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/master
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	3b1c69985e2fb5517a15069c6c8adc22b23cd041
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/misc-web-updates
+ DEBUG [ab4553ed] 	6cbc68ef2a748a845da1d2ead3e5f99b0791cf7c	refs/heads/moment-action-buttons
+ DEBUG [ab4553ed] 	6e00f08f711418aa3dea8b4d8099a478331f9536
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/new-strings
+ DEBUG [ab4553ed] 	87cb6de122b5a40e84f771f8f4da25c60d682cb1	refs/heads/ng-reader
+ DEBUG [ab4553ed] 	e26e7ecb092b987fd89ce14beef3dbcfc98830aa	refs/heads/nginx_redirect
+ DEBUG [ab4553ed] 	e3282fa2fd98ce83dde4467f27f3e45ebef9e17f
+ DEBUG [ab4553ed] 		refs/heads/promoted-rp-moment/YV-2730
+ DEBUG [ab4553ed] 	41253dfe78967e8246110f9fb5efa02d6232606e	refs/heads/pt-test-case
+ DEBUG [ab4553ed] 	e5d90d02f4e09573780b55e6ceb8f0b1130d96e7	refs/heads/pt-test-case-2
+ DEBUG [ab4553ed] 	9fcf240efeabec3d60f298bc4d166f9ab0262004
+ DEBUG [ab4553ed] 		refs/heads/pt-test-case-3
+ DEBUG [ab4553ed] 	0b308d69a5f677b7fa1c25a47147b81cc2f81432	refs/heads/reader-settings-icon
+ DEBUG [ab4553ed] 	e678f041e148117cca14ff5b531d73cb4ac6ef36	refs/heads/reading-plan-moments-copy
+ DEBUG [ab4553ed] 	4b667364eb176ac6a7f0cf6c904bf2571b96d84f
+ DEBUG [ab4553ed] 		refs/heads/rem_fastly
+ DEBUG [ab4553ed] 	1b62e2691c8d95b6999303c965cbf00e2ef3327c	refs/heads/revert-addthis
+ DEBUG [ab4553ed] 	595769cd335b789c636c4426ab285a6b13d3ad8c	
+ DEBUG [ab4553ed] 	refs/heads/review
+ DEBUG [ab4553ed] 	c04d8987fbbc377ef90a4ec36e486bb192eeedae	refs/heads/rp-fixed-right-col
+ DEBUG [ab4553ed] 	721660e2a3cfbcf5f06558c04bbe27e8b45dc41b	refs/heads/rp-nav-changes
+ DEBUG [ab4553ed] 	b8bb8600fd7f77c103c6792a446afc13d32e75e9	refs/heads/rp-widget/YV-2341
+ DEBUG [ab4553ed] 	f0220eeccc1612918bb1d0dcd0e8a82247093e88
+ DEBUG [ab4553ed] 		refs/heads/seo-tweaks
+ DEBUG [ab4553ed] 	447ce69ac08db082a27e3a4643071a4461947723	refs/heads/share-meta-part2
+ DEBUG [ab4553ed] 	459f97a83823cfbb5903a43257049ea1fdc35edd	refs/heads/ship-it-rp-recommend
+ DEBUG [ab4553ed] 	88efbdc7443d31959ba56c91073da1b3b6117303	refs/heads/sitemap-single-verse
+ DEBUG [ab4553ed] 	2585d8bff1cbdc4c10cf788671a6807c7d004fab	refs/heads/sl
+ DEBUG [ab4553ed] 	1a1289817e758d03377700b92856bf76a018a368	
+ DEBUG [ab4553ed] 	refs/heads/sm-en-pt
+ DEBUG [ab4553ed] 	38d2c752f0e0e52619f4a09483c6851a5e480977	refs/heads/sm-russia
+ DEBUG [ab4553ed] 	b1a175085e344c081c0d3a12344fddcc76b7bec5	refs/heads/sm-updates-2
+ DEBUG [ab4553ed] 	f2ac3b42acfe1523249aee7b2ea22d3bd261b54e
+ DEBUG [ab4553ed] 		refs/heads/sm-updates-3
+ DEBUG [ab4553ed] 	78baa0031e9499c5a1e05f1a6e9769bb90f7e3d1	refs/heads/sm-updates-dec
+ DEBUG [ab4553ed] 	a687ebf14fe457a6b63342112be4aa48b947ddf4	refs/heads/sm-updates-feb4
+ DEBUG [ab4553ed] 	4b310d7a6c193e6a39f5468be94605538dc22fd2	refs/heads/social-footer
+ DEBUG [ab4553ed] 	5f9cc0935314b98ecd90482ffd84bdf0b71f0ceb	refs/heads/social-master
+ DEBUG [ab4553ed] 	ba4984ed5f61a6bdcb73f83d3b8b18298d89f990	
+ DEBUG [ab4553ed] 	refs/heads/social-right-column-scrollable
+ DEBUG [ab4553ed] 	4d326426dd8e6f8c9d051eaa1ba416b4b6ea0a3f	refs/heads/string-ex-version
+ DEBUG [ab4553ed] 	f26ec50384060307346d805bf4c2834959336874	refs/heads/stylesheets-re-rework
+ DEBUG [ab4553ed] 	d2344774c97eb18d2855da56ccc5e0b60136fa37
+ DEBUG [ab4553ed] 		refs/heads/stylesheets-rework
+ DEBUG [ab4553ed] 	d17df25fd84b64d907f7540cc465c8da4577de3a	refs/heads/svg-icons
+ DEBUG [ab4553ed] 	6a8b1bdc2b8b8332726bfee1a0ac77568a5b04b2	refs/heads/telemetry
+ DEBUG [ab4553ed] 	2b35f5e3dae3ec2777b116990f22f7797a6dc726	refs/heads/test-notes
+ DEBUG [ab4553ed] 	ac79cf63b2f615c3a10271106fd72af6d69383de	
+ DEBUG [ab4553ed] 	refs/heads/trending
+ DEBUG [ab4553ed] 	be02e770bff88fd36dfbcfe4ae9f29cb550e2196	refs/heads/turn-on-addthis
+ DEBUG [ab4553ed] 	9e93bc80336dd858860b657f26768abe3aa26af6
+ DEBUG [ab4553ed] 		refs/heads/update_newrelic
+ DEBUG [ab4553ed] 	f82e242382a77619e0fc77e21ac5cf9e22b1de73	refs/heads/use_fastly
+ DEBUG [ab4553ed] 	47344ad9be74eaedb8e2fbd5cdd564caf73a59be	refs/heads/vcr
+ DEBUG [ab4553ed] 	050315cf6d6f83af987cdc08b0ee8b2a4441b381	
+ DEBUG [ab4553ed] 	refs/heads/vod-link
+ DEBUG [ab4553ed] 	563af88c590638fe2b2424cf942ec5a0f1e3c24c	refs/heads/vod_sub_meridian_fix
+ DEBUG [ab4553ed] 	0e142249230dbc368b5897a60a47e14e9797fd12
+ DEBUG [ab4553ed] 		refs/heads/x-default
+ DEBUG [ab4553ed] 	e05eb0e3e54c93f0faaea865097955b2af806e69	refs/heads/xmas-counter
+ DEBUG [ab4553ed] 	2d1ad64f846348e2e63bd04cdd3a5539ff77765a	refs/heads/xmas-counter-format
+ DEBUG [ab4553ed] 	3440d49454da6faef3c2334d56764868ea1cd948	
+ DEBUG [ab4553ed] 	refs/heads/xmas-counter-update
+ DEBUG [ab4553ed] 	
+ DEBUG [ab4553ed] 	00fa09ef99d9cde53c86d0d706f6886ccbee4530
+ DEBUG [ab4553ed] 		
+ DEBUG [ab4553ed] 	refs/heads/xmas-updates-4
+ DEBUG [ab4553ed] 	5cd2c64cb79300a268a5166d638292d28a714839	refs/heads/xmas-updates-5
+ DEBUG [ab4553ed] 	d1b5df8c9379a70b2fc207f0f6008a5345902f05	refs/heads/xmas-updates-6
+ DEBUG [ab4553ed] 	335fa2e607a0174901fc2dc9b55c23e7ac41fbed	refs/heads/yv-1135
+ DEBUG [ab4553ed] 	2c4f2a64877ce89d5f654d7768377733824e8e63	refs/heads/yv-1531
+ DEBUG [ab4553ed] 	552fceefc438c8b28e3101bcf7042c4f9b853d78	refs/heads/yv-1753
+ DEBUG [ab4553ed] 	258402917ee5e11f01d4045bb3cb879f689e6640	refs/heads/yv-2269-update
+  INFO [ab4553ed] Finished in 0.485 seconds with exit status 0 (successful).
+  INFO [b5af647b] Running /usr/bin/env mkdir -p /var/www/youversion-web/shared /var/www/youversion-web/releases as yvdep@webreview01-ny.youversion.com
+ DEBUG [b5af647b] Command: ( SECURE_TRAFFIC=true /usr/bin/env mkdir -p /var/www/youversion-web/shared /var/www/youversion-web/releases )
+  INFO [b5af647b] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [a2306745] Running /usr/bin/env mkdir -p /var/www/youversion-web/shared/public/assets as yvdep@webreview01-ny.youversion.com
+ DEBUG [a2306745] Command: ( SECURE_TRAFFIC=true /usr/bin/env mkdir -p /var/www/youversion-web/shared/public/assets )
+  INFO [a2306745] Finished in 0.108 seconds with exit status 0 (successful).
+ DEBUG [ff23522f] Running /usr/bin/env [ -f /var/www/youversion-web/current/REVISION ] as yvdep@webreview01-ny.youversion.com
+ DEBUG [ff23522f] Command: [ -f /var/www/youversion-web/current/REVISION ]
+ DEBUG [ff23522f] Finished in 0.107 seconds with exit status 0 (successful).
+ DEBUG [fadf740d] Running /usr/bin/env cat /var/www/youversion-web/current/REVISION 2>/dev/null as yvdep@webreview01-ny.youversion.com
+ DEBUG [fadf740d] Command: ( SECURE_TRAFFIC=true /usr/bin/env cat /var/www/youversion-web/current/REVISION 2>/dev/null )
+ DEBUG [fadf740d] 	a8277b3
+ DEBUG [fadf740d] Finished in 0.109 seconds with exit status 0 (successful).
+ DEBUG [d90fe8ea] Running /usr/bin/env [ -f /var/www/youversion-web/repo/HEAD ] as yvdep@webreview01-ny.youversion.com
+ DEBUG [d90fe8ea] Command: [ -f /var/www/youversion-web/repo/HEAD ]
+ DEBUG [d90fe8ea] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/youversion-web/repo
+ DEBUG [3921eb98] Running /usr/bin/env if test ! -d /var/www/youversion-web/repo; then echo "Directory does not exist '/var/www/youversion-web/repo'" 1>&2; false; fi as yvdep@webreview01-ny.youversion.com
+ DEBUG [3921eb98] Command: if test ! -d /var/www/youversion-web/repo; then echo "Directory does not exist '/var/www/youversion-web/repo'" 1>&2; false; fi
+ DEBUG [3921eb98] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO [39ad8600] Running /usr/bin/env git remote update as yvdep@webreview01-ny.youversion.com
+ DEBUG [39ad8600] Command: cd /var/www/youversion-web/repo && ( SECURE_TRAFFIC=true GIT_ASKPASS=/bin/echo GIT_SSH=/tmp/youversion-web/git-ssh.sh /usr/bin/env git remote update )
+ DEBUG [39ad8600] 	Fetching origin
+ DEBUG [39ad8600] 	
+  INFO [39ad8600] Finished in 0.661 seconds with exit status 0 (successful).
+ DEBUG [b4e6df92] Running /usr/bin/env if test ! -d /var/www/youversion-web/repo; then echo "Directory does not exist '/var/www/youversion-web/repo'" 1>&2; false; fi as yvdep@webreview01-ny.youversion.com
+ DEBUG [b4e6df92] Command: if test ! -d /var/www/youversion-web/repo; then echo "Directory does not exist '/var/www/youversion-web/repo'" 1>&2; false; fi
+ DEBUG [b4e6df92] Finished in 0.108 seconds with exit status 0 (successful).
+  INFO [a9e56691] Running /usr/bin/env mkdir -p /var/www/youversion-web/releases/20150824163657 as yvdep@webreview01-ny.youversion.com
+ DEBUG [a9e56691] Command: cd /var/www/youversion-web/repo && ( SECURE_TRAFFIC=true GIT_ASKPASS=/bin/echo GIT_SSH=/tmp/youversion-web/git-ssh.sh /usr/bin/env mkdir -p /var/www/youversion-web/releases/20150824163657 )
+  INFO [a9e56691] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [b3b56321] Running /usr/bin/env git archive Bible-Redesign | tar -x -f - -C /var/www/youversion-web/releases/20150824163657 as yvdep@webreview01-ny.youversion.com
+ DEBUG [b3b56321] Command: cd /var/www/youversion-web/repo && ( SECURE_TRAFFIC=true GIT_ASKPASS=/bin/echo GIT_SSH=/tmp/youversion-web/git-ssh.sh /usr/bin/env git archive Bible-Redesign | tar -x -f - -C /var/www/youversion-web/releases/20150824163657 )
+  INFO [b3b56321] Finished in 1.554 seconds with exit status 0 (successful).
+ DEBUG [02f394f4] Running /usr/bin/env if test ! -d /var/www/youversion-web/repo; then echo "Directory does not exist '/var/www/youversion-web/repo'" 1>&2; false; fi as yvdep@webreview01-ny.youversion.com
+ DEBUG [02f394f4] Command: if test ! -d /var/www/youversion-web/repo; then echo "Directory does not exist '/var/www/youversion-web/repo'" 1>&2; false; fi
+ DEBUG [02f394f4] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [29701186] Running /usr/bin/env git rev-list --max-count=1 --abbrev-commit Bible-Redesign as yvdep@webreview01-ny.youversion.com
+ DEBUG [29701186] Command: cd /var/www/youversion-web/repo && ( SECURE_TRAFFIC=true GIT_ASKPASS=/bin/echo GIT_SSH=/tmp/youversion-web/git-ssh.sh /usr/bin/env git rev-list --max-count=1 --abbrev-commit Bible-Redesign )
+ DEBUG [29701186] 	a8277b3
+ DEBUG [29701186] 	
+ DEBUG [29701186] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [034c3d5d] Running /usr/bin/env if test ! -d /var/www/youversion-web/releases/20150824163657; then echo "Directory does not exist '/var/www/youversion-web/releases/20150824163657'" 1>&2; false; fi as yvdep@webreview01-ny.youversion.com
+ DEBUG [034c3d5d] Command: if test ! -d /var/www/youversion-web/releases/20150824163657; then echo "Directory does not exist '/var/www/youversion-web/releases/20150824163657'" 1>&2; false; fi
+ DEBUG [034c3d5d] Finished in 0.107 seconds with exit status 0 (successful).
+  INFO [b1bed7eb] Running /usr/bin/env echo "a8277b3" >> REVISION as yvdep@webreview01-ny.youversion.com
+ DEBUG [b1bed7eb] Command: cd /var/www/youversion-web/releases/20150824163657 && ( SECURE_TRAFFIC=true /usr/bin/env echo "a8277b3" >> REVISION )
+  INFO [b1bed7eb] Finished in 0.170 seconds with exit status 0 (successful).
+  INFO [e9c8f0fe] Running /usr/bin/env mkdir -p /var/www/youversion-web/releases/20150824163657/public as yvdep@webreview01-ny.youversion.com
+ DEBUG [e9c8f0fe] Command: ( SECURE_TRAFFIC=true /usr/bin/env mkdir -p /var/www/youversion-web/releases/20150824163657/public )
+  INFO [e9c8f0fe] Finished in 0.109 seconds with exit status 0 (successful).
+ DEBUG [2e41c8b6] Running /usr/bin/env [ -L /var/www/youversion-web/releases/20150824163657/public/assets ] as yvdep@webreview01-ny.youversion.com
+ DEBUG [2e41c8b6] Command: [ -L /var/www/youversion-web/releases/20150824163657/public/assets ]
+ DEBUG [2e41c8b6] Finished in 0.108 seconds with exit status 1 (failed).
+ DEBUG [5c4cc312] Running /usr/bin/env [ -d /var/www/youversion-web/releases/20150824163657/public/assets ] as yvdep@webreview01-ny.youversion.com
+ DEBUG [5c4cc312] Command: [ -d /var/www/youversion-web/releases/20150824163657/public/assets ]
+ DEBUG [5c4cc312] Finished in 0.109 seconds with exit status 1 (failed).
+  INFO [7bbf62b8] Running /usr/bin/env ln -s /var/www/youversion-web/shared/public/assets /var/www/youversion-web/releases/20150824163657/public/assets as yvdep@webreview01-ny.youversion.com
+ DEBUG [7bbf62b8] Command: ( SECURE_TRAFFIC=true /usr/bin/env ln -s /var/www/youversion-web/shared/public/assets /var/www/youversion-web/releases/20150824163657/public/assets )
+  INFO [7bbf62b8] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [af85e1a9] Running /usr/bin/env if test ! -d /var/www/youversion-web/releases/20150824163657; then echo "Directory does not exist '/var/www/youversion-web/releases/20150824163657'" 1>&2; false; fi as yvdep@webreview01-ny.youversion.com
+ DEBUG [af85e1a9] Command: if test ! -d /var/www/youversion-web/releases/20150824163657; then echo "Directory does not exist '/var/www/youversion-web/releases/20150824163657'" 1>&2; false; fi
+ DEBUG [af85e1a9] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO [2d966cfe] Running ~/.rvm/bin/rvm ruby-2.2.2@youversion-web do bundle install --path /var/www/youversion-web/shared/bundle --deployment as yvdep@webreview01-ny.youversion.com
+ DEBUG [2d966cfe] Command: cd /var/www/youversion-web/releases/20150824163657 && ( SECURE_TRAFFIC=true ~/.rvm/bin/rvm ruby-2.2.2@youversion-web do bundle install --path /var/www/youversion-web/shared/bundle --deployment )
+ DEBUG [2d966cfe] 	[33mYou are using '.rvmrc', it requires trusting, it is slower and it is not compatible with other ruby managers,
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	you can switch to '.ruby-version' using 'rvm rvmrc to ruby-version'
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	or ignore this warning with 'rvm rvmrc warning ignore /var/www/youversion-web/releases/20150824163657/.rvmrc',
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	'.rvmrc' will continue to be the default project file in RVM 1 and RVM 2,
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	to ignore the warning for all files run 'rvm rvmrc warning ignore all.rvmrcs'.
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	[0m
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rake 10.4.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using i18n 0.6.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using multi_json 1.11.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using activesupport 3.2.13
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using builder 3.0.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using activemodel 3.2.13
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using erubis 2.7.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using journey 1.0.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rack 1.4.7
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rack-cache 1.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rack-test 0.6.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using hike 1.2.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using tilt 1.4.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using sprockets 2.2.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using actionpack 3.2.13
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using mime-types 1.25.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using polyglot 0.3.5
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using treetop 1.4.15
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using mail 2.5.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using actionmailer 3.2.13
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using arel 3.0.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using tzinfo 0.3.44
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using activerecord 3.2.13
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using activeresource 3.2.13
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using addressable 2.3.8
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using angular-ui-router-rails 0.2.15.0 from git@github.com:iven/angular-ui-router-rails.git (at master)
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using angularjs-rails 1.4.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using awesome_print 1.0.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using debug_inspector 0.0.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using binding_of_caller 0.7.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using colorize 0.7.7
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using net-ssh 2.9.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using net-scp 1.2.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using sshkit 1.7.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using capistrano 3.4.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using capistrano-bundler 1.1.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using capistrano-passenger 0.1.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using capistrano-rails 1.1.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using capistrano-rvm 0.1.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using nokogiri 1.5.11
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using xpath 2.0.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using capybara 2.4.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using uber 0.0.13
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using cells 4.0.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using chunky_png 1.3.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using coderay 1.1.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using coffee-script-source 1.9.1.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using execjs 2.5.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using coffee-script 2.2.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rack-ssl 1.3.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using json 1.8.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rdoc 3.12.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using thor 0.19.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using railties 3.2.13
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using coffee-rails 3.2.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using sass 3.4.16
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using compass-core 1.0.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using compass-import-once 1.0.5
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rb-fsevent 0.9.5
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using ffi 1.9.10
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rb-inotify 0.9.5
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using compass 1.0.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using sass-rails 3.2.6
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using compass-rails 2.0.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using currencies 0.4.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using countries 0.8.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using css_parser 1.2.6
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using gherkin 2.12.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using cucumber-core 1.2.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using diff-lcs 1.2.5
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using multi_test 0.1.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using cucumber 2.0.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using bundler 1.10.6
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rails 3.2.13
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using cucumber-rails 1.3.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using curb 0.8.8
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using dalli 2.6.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using descriptive_statistics 1.1.5
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using docile 1.1.5
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using dogapi 1.19.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using unf_ext 0.0.7.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using unf 0.1.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using domain_name 0.5.24
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using multipart-post 2.0.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using faraday 0.9.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using fast_gettext 0.9.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using formatador 0.2.5
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using foundation-rails 5.5.2.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using gabba 1.0.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using geokit 1.6.7
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using oauth 0.4.7
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using grackle 0.3.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using listen 3.0.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using lumberjack 1.0.9
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using nenv 0.2.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using shellany 0.0.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using notiffany 0.0.6
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using method_source 0.8.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using slop 3.6.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using pry 0.10.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using guard 2.12.8
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using guard-compat 1.2.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using guard-bundler 2.1.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using guard-cucumber 1.6.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rspec-support 3.3.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rspec-core 3.3.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rspec-expectations 3.3.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rspec-mocks 3.3.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rspec 3.3.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using guard-rspec 4.6.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using haml 4.0.6
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using haml-rails 0.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using hamlbars 2.1.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using handlebars_assets 0.14.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using hashie 1.2.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using highline 1.7.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using multi_xml 0.5.5
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using httparty 0.8.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using mimemagic 0.3.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using hipchat 1.5.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using http-cookie 1.0.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using http_accept_language 1.0.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using i18n-js 3.0.0.rc11
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using jbuilder 2.0.8
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using jquery-rails 3.1.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using jwt 1.5.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using koala 1.10.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using language_list 0.0.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using launchy 2.4.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using memcachier 0.0.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using minitest 5.7.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using netrc 0.10.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using newrelic_rpm 3.9.9.275
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using oauth2 1.0.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using oj 2.12.10
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using omniauth 1.2.2
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using omniauth-oauth2 1.3.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using omniauth-facebook 2.0.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using omniauth-google-oauth2 0.1.19
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using omniauth-oauth 1.1.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using omniauth-twitter 1.0.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using parallel 1.6.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using parallel_tests 1.6.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using powder 0.3.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using pry-rails 0.3.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using quiet_assets 1.1.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rabl 0.7.10
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rack-mobile-detect 0.3.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rack-rewrite 1.3.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rack-ssl-enforcer 0.2.8
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rack-timeout 0.0.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rails_serve_static_assets 0.0.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rails_stdout_logging 0.0.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rails_12factor 0.0.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rest-client 1.8.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using routing-filter 0.3.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rspec-rails 3.3.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using rspec-cells 0.3.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using ruby-prof 0.15.8
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using sentry-raven 0.12.3
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using simplecov-html 0.10.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using simplecov 0.10.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using smartling 1.0.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using sqlite3 1.3.10
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using stringex 1.5.1
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using tddium_client 0.2.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using tddium 1.4.9
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using terminal-notifier-guard 1.6.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using uglifier 1.3.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using viximo-rack-throttle 0.5.0
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Using zeus 0.15.4
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Bundle complete! 75 Gemfile dependencies, 171 gems now installed.
+ DEBUG [2d966cfe] 	
+ DEBUG [2d966cfe] 	Bundled gems are installed into /var/www/youversion-web/shared/bundle.
+ DEBUG [2d966cfe] 	
+  INFO [2d966cfe] Finished in 1.673 seconds with exit status 0 (successful).
+ DEBUG [0a826ecc] Running /usr/bin/env if test ! -d /var/www/youversion-web/releases/20150824163657; then echo "Directory does not exist '/var/www/youversion-web/releases/20150824163657'" 1>&2; false; fi as yvdep@webreview01-ny.youversion.com
+ DEBUG [0a826ecc] Command: if test ! -d /var/www/youversion-web/releases/20150824163657; then echo "Directory does not exist '/var/www/youversion-web/releases/20150824163657'" 1>&2; false; fi
+ DEBUG [0a826ecc] Finished in 0.107 seconds with exit status 0 (successful).
+  INFO [799e1c7e] Running ~/.rvm/bin/rvm ruby-2.2.2@youversion-web do bundle exec rake assets:precompile as yvdep@webreview01-ny.youversion.com
+ DEBUG [799e1c7e] Command: cd /var/www/youversion-web/releases/20150824163657 && ( SECURE_TRAFFIC=true RAILS_ENV=review01 ~/.rvm/bin/rvm ruby-2.2.2@youversion-web do bundle exec rake assets:precompile )
+ DEBUG [799e1c7e] 	[33mYou are using '.rvmrc', it requires trusting, it is slower and it is not compatible with other ruby managers,
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	you can switch to '.ruby-version' using 'rvm rvmrc to ruby-version'
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	or ignore this warning with 'rvm rvmrc warning ignore /var/www/youversion-web/releases/20150824163657/.rvmrc',
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	'.rvmrc' will continue to be the default project file in RVM 1 and RVM 2,
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	to ignore the warning for all files run 'rvm rvmrc warning ignore all.rvmrcs'.
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	[0m
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	/var/www/youversion-web/shared/bundle/ruby/2.2.0/gems/activesupport-3.2.13/lib/active_support/values/time_zone.rb:270: warning: circular argument reference - now
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	/home/yvdep/.rvm/rubies/ruby-2.2.2/bin/ruby /home/yvdep/.rvm/rubies/ruby-2.2.2/bin/rake assets:precompile:all RAILS_ENV=review01 RAILS_GROUPS=assets
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	/var/www/youversion-web/shared/bundle/ruby/2.2.0/gems/activesupport-3.2.13/lib/active_support/values/time_zone.rb:270: warning: circular argument reference - now
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	-----
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	Setting Handlebars templates to JST
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	** [Raven] Raven 0.12.3 ready to catch errors
+ DEBUG [799e1c7e] 	
+ DEBUG [799e1c7e] 	DEPRECATION WARNING: redirect blocks with arity of 1 are deprecated. Your block must take 2 parameters: the environment, and a request object. (called from block in <top (required)> at /var/www/youversion-web/releases/20150824163657/config/routes.rb:153)
+ DEBUG [799e1c7e] 	
+  INFO [799e1c7e] Finished in 23.279 seconds with exit status 0 (successful).
+ DEBUG [982d6dcd] Running /usr/bin/env if test ! -d /var/www/youversion-web/releases/20150824163657; then echo "Directory does not exist '/var/www/youversion-web/releases/20150824163657'" 1>&2; false; fi as yvdep@webreview01-ny.youversion.com
+ DEBUG [982d6dcd] Command: if test ! -d /var/www/youversion-web/releases/20150824163657; then echo "Directory does not exist '/var/www/youversion-web/releases/20150824163657'" 1>&2; false; fi
+ DEBUG [982d6dcd] Finished in 0.119 seconds with exit status 0 (successful).
+  INFO [1a280507] Running /usr/bin/env mkdir -p /var/www/youversion-web/releases/20150824163657/assets_manifest_backup as yvdep@webreview01-ny.youversion.com
+ DEBUG [1a280507] Command: cd /var/www/youversion-web/releases/20150824163657 && ( SECURE_TRAFFIC=true /usr/bin/env mkdir -p /var/www/youversion-web/releases/20150824163657/assets_manifest_backup )
+  INFO [1a280507] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [6ccf04fa] Running /usr/bin/env ls /var/www/youversion-web/releases/20150824163657/public/assets/.sprockets-manifest* as yvdep@webreview01-ny.youversion.com
+ DEBUG [6ccf04fa] Command: cd /var/www/youversion-web/releases/20150824163657 && ( SECURE_TRAFFIC=true /usr/bin/env ls /var/www/youversion-web/releases/20150824163657/public/assets/.sprockets-manifest* )
+ DEBUG [6ccf04fa] 	ls: 
+ DEBUG [6ccf04fa] 	cannot access /var/www/youversion-web/releases/20150824163657/public/assets/.sprockets-manifest*
+ DEBUG [6ccf04fa] 	: No such file or directory
+ DEBUG [6ccf04fa] 	
+ DEBUG [6ccf04fa] Finished in 0.113 seconds with exit status 2 (failed).
+ DEBUG [1f537a17] Running /usr/bin/env ls /var/www/youversion-web/releases/20150824163657/public/assets/manifest*.* as yvdep@webreview01-ny.youversion.com
+ DEBUG [1f537a17] Command: cd /var/www/youversion-web/releases/20150824163657 && ( SECURE_TRAFFIC=true /usr/bin/env ls /var/www/youversion-web/releases/20150824163657/public/assets/manifest*.* )
+ DEBUG [1f537a17] 	/var/www/youversion-web/releases/20150824163657/public/assets/manifest.yml
+ DEBUG [1f537a17] 	
+ DEBUG [1f537a17] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [3b43c7f7] Running /usr/bin/env ls /var/www/youversion-web/releases/20150824163657/public/assets/manifest*.* as yvdep@webreview01-ny.youversion.com
+ DEBUG [3b43c7f7] Command: cd /var/www/youversion-web/releases/20150824163657 && ( SECURE_TRAFFIC=true /usr/bin/env ls /var/www/youversion-web/releases/20150824163657/public/assets/manifest*.* )
+ DEBUG [3b43c7f7] 	/var/www/youversion-web/releases/20150824163657/public/assets/manifest.yml
+ DEBUG [3b43c7f7] 	
+ DEBUG [3b43c7f7] Finished in 0.366 seconds with exit status 0 (successful).
+  INFO [6dccb7c8] Running /usr/bin/env cp /var/www/youversion-web/releases/20150824163657/public/assets/manifest.yml /var/www/youversion-web/releases/20150824163657/assets_manifest_backup as yvdep@webreview01-ny.youversion.com
+ DEBUG [6dccb7c8] Command: cd /var/www/youversion-web/releases/20150824163657 && ( SECURE_TRAFFIC=true /usr/bin/env cp /var/www/youversion-web/releases/20150824163657/public/assets/manifest.yml /var/www/youversion-web/releases/20150824163657/assets_manifest_backup )
+  INFO [6dccb7c8] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO [e767b467] Running /usr/bin/env ln -s /var/www/youversion-web/releases/20150824163657 /var/www/youversion-web/releases/current as yvdep@webreview01-ny.youversion.com
+ DEBUG [e767b467] Command: ln -s /var/www/youversion-web/releases/20150824163657 /var/www/youversion-web/releases/current
+  INFO [e767b467] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [84e43852] Running /usr/bin/env mv /var/www/youversion-web/releases/current /var/www/youversion-web as yvdep@webreview01-ny.youversion.com
+ DEBUG [84e43852] Command: mv /var/www/youversion-web/releases/current /var/www/youversion-web
+  INFO [84e43852] Finished in 0.108 seconds with exit status 0 (successful).
+  INFO [edbdb418] Running /usr/bin/env sudo ln -nfs /var/www/youversion-web/releases/20150824163657/nginx.conf-review01 /etc/nginx/nginx.conf as yvdep@webreview01-ny.youversion.com
+ DEBUG [edbdb418] Command: sudo ln -nfs /var/www/youversion-web/releases/20150824163657/nginx.conf-review01 /etc/nginx/nginx.conf
+  INFO [edbdb418] Finished in 0.122 seconds with exit status 0 (successful).
+  INFO [1a6ace42] Running /usr/bin/env sudo service nginx reload as yvdep@webreview01-ny.youversion.com
+ DEBUG [1a6ace42] Command: sudo service nginx reload
+ DEBUG [1a6ace42] 	 * Reloading nginx configuration nginx       
+ DEBUG [1a6ace42] 	[80G
+ DEBUG [1a6ace42] 	 
+ DEBUG [1a6ace42] 	
+ DEBUG [1a6ace42] 	[74G
+ DEBUG [1a6ace42] 	[ OK ]
+ DEBUG [1a6ace42] 	
+  INFO [1a6ace42] Finished in 0.185 seconds with exit status 0 (successful).
+ DEBUG [9702f28b] Running /usr/bin/env if test ! -d /var/www/youversion-web/releases/20150824163657; then echo "Directory does not exist '/var/www/youversion-web/releases/20150824163657'" 1>&2; false; fi as yvdep@webreview01-ny.youversion.com
+ DEBUG [9702f28b] Command: if test ! -d /var/www/youversion-web/releases/20150824163657; then echo "Directory does not exist '/var/www/youversion-web/releases/20150824163657'" 1>&2; false; fi
+ DEBUG [9702f28b] Finished in 0.109 seconds with exit status 0 (successful).
+ DEBUG [2fc09d6a] Running /usr/bin/env passenger -v as yvdep@webreview01-ny.youversion.com
+ DEBUG [2fc09d6a] Command: cd /var/www/youversion-web/releases/20150824163657 && ( SECURE_TRAFFIC=true /usr/bin/env passenger -v )
+ DEBUG [2fc09d6a] 	Phusion Passenger version 5.0.15
+ DEBUG [2fc09d6a] 	
+ DEBUG [2fc09d6a] 	
+ DEBUG [2fc09d6a] 	"Phusion Passenger" is a trademark of Hongli Lai & Ninh Bui.
+ DEBUG [2fc09d6a] 	
+ DEBUG [2fc09d6a] Finished in 0.135 seconds with exit status 0 (successful).
+  INFO [9fa33f5a] Running /usr/bin/env sudo /usr/bin/env passenger-config restart-app /var/www/youversion-web --ignore-app-not-running as yvdep@webreview01-ny.youversion.com
+ DEBUG [9fa33f5a] Command: cd /var/www/youversion-web/releases/20150824163657 && ( SECURE_TRAFFIC=true /usr/bin/env sudo /usr/bin/env passenger-config restart-app /var/www/youversion-web --ignore-app-not-running )
+ DEBUG [9fa33f5a] 	There are no Phusion Passenger-served applications running whose paths begin with '/var/www/youversion-web'.
+ DEBUG [9fa33f5a] 	
+  INFO [9fa33f5a] Finished in 0.259 seconds with exit status 0 (successful).
+  INFO [c6e37294] Running /usr/bin/env curl http://local.bible.com -k || true as yvdep@webreview01-ny.youversion.com
+ DEBUG [c6e37294] Command: curl http://local.bible.com -k || true
+ DEBUG [c6e37294] 	<!DOCTYPE html>
+ DEBUG [c6e37294] 	<html lang="en">
+ DEBUG [c6e37294] 	<head>
+ DEBUG [c6e37294] 	  <meta charset="utf-8" />
+ DEBUG [c6e37294] 	  <title>Action Controller: Exception caught</title>
+ DEBUG [c6e37294] 	  <style>
+ DEBUG [c6e37294] 	    body { background-color: #fff; color: #333; }
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	    body, p, ol, ul, td {
+ DEBUG [c6e37294] 	      font-family: helvetica, verdana, arial, sans-serif;
+ DEBUG [c6e37294] 	      font-size:   13px;
+ DEBUG [c6e37294] 	      line-height: 18px;
+ DEBUG [c6e37294] 	    }
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	    pre {
+ DEBUG [c6e37294] 	      background-color: #eee;
+ DEBUG [c6e37294] 	      padding: 10px;
+ DEBUG [c6e37294] 	      font-size: 11px;
+ DEBUG [c6e37294] 	      white-space: pre-wrap;
+ DEBUG [c6e37294] 	    }
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	    a { color: #000; }
+ DEBUG [c6e37294] 	    a:visited { color: #666; }
+ DEBUG [c6e37294] 	    a:hover { color: #fff; background-color:#000; }
+ DEBUG [c6e37294] 	  </style>
+ DEBUG [c6e37294] 	</head>
+ DEBUG [c6e37294] 	<body>
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	<h1>
+ DEBUG [c6e37294] 	  I18n::ArgumentError
+ DEBUG [c6e37294] 	</h1>
+ DEBUG [c6e37294] 	<pre>Valid locales: [:en, :af, :ar, :bg, :ca, :cs, :cy, :da, :de, :el, :&quot;en-GB&quot;, :&quot;es-ES&quot;, :es, :fa, :fi, :fr, :hi, :hr, :hu, :id, :it, :ja, :km, :ko, :lv, :mk, :mn, :ms, :nl, :no, :pl, :pt, :&quot;pt-PT&quot;, :ro, :ru, :sk, :sq, :sv, :sw, :ta, :th, :tl, :tr, :uk, :vi, :&quot;zh-CN&quot;, :&quot;zh-TW&quot;] - Given Locales: [:&quot;zh-CN&quot;, :zh, :en]</pre>
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	<p><code>Rails.root: /var/www/youversion-web/releases/20150824163657</code></p>
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	<div id="traces">
+ DEBUG [c6e37294] 	    <a href="#" onclick="document.getElementById(&#x27;Framework-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Full-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Application-Trace&#x27;).style.display=&#x27;block&#x27;;; return false;">Application Trace</a> |
+ DEBUG [c6e37294] 	    <a href="#" onclick="document.getElementById(&#x27;Application-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Full-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Framework-Trace&#x27;).style.display=&#x27;block&#x27;;; return false;">Framework Trace</a> |
+ DEBUG [c6e37294] 	    <a href="#" onclick="document.getElementById(&#x27;Application-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Framework-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Full-Trace&#x27;).style.display=&#x27;block&#x27;;; return false;">Full Trace</a> 
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	    <div id="Application-Trace" style="display: block;">
+ DEBUG [c6e37294] 	      <pre><code>lib/bb.rb:20:in `_call&#x27;
+ DEBUG [c6e37294] 	lib/bb.rb:15:in `call&#x27;
+ DEBUG [c6e37294] 	lib/yv/middleware/halt.rb:15:in `call&#x27;</code></pre>
+ DEBUG [c6e37294] 	    </div>
+ DEBUG [c6e37294] 	    <div id="Framework-Trace" style="display: none;">
+ DEBUG [c6e37294] 	      <pre><code>i18n-js (3.0.0.rc11) lib/i18n/js/fallback_locales.rb:76:in `ensure_valid_locales!&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js/fallback_locales.rb:35:in `locales&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js/fallback_locales.rb:12:in `each&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:67:in `block in merge_with_fallbacks!&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:65:in `each&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:65:in `merge_with_fallbacks!&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:55:in `block in configured_segments&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:46:in `each&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:46:in `inject&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:46:in `configured_segments&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:86:in `translation_segments&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:34:in `export&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js/middleware.rb:65:in `verify_locale_files!&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js/middleware.rb:10:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/etag.rb:23:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/conditionalget.rb:25:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__2080118980571347075__call__2035010634892707332__callbacks&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/rack/logger.rb:16:in `call&#x27;
+ DEBUG [c6e37294] 	quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/methodoverride.rb:21:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/runtime.rb:17:in `call&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/lock.rb:15:in `call&#x27;
+ DEBUG [c6e37294] 	rack-rewrite (1.3.3) lib/rack/rewrite.rb:20:in `call&#x27;
+ DEBUG [c6e37294] 	rack-rewrite (1.3.3) lib/rack/rewrite.rb:20:in `call&#x27;
+ DEBUG [c6e37294] 	rack-mobile-detect (0.3.0) lib/rack/mobile-detect.rb:164:in `call&#x27;
+ DEBUG [c6e37294] 	rack-ssl-enforcer (0.2.8) lib/rack/ssl-enforcer.rb:57:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call&#x27;
+ DEBUG [c6e37294] 	sentry-raven (0.12.3) lib/raven/integrations/rack.rb:61:in `call&#x27;
+ DEBUG [c6e37294] 	rack-timeout (0.0.4) lib/rack/timeout.rb:16:in `block in call&#x27;
+ DEBUG [c6e37294] 	/home/yvdep/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/timeout.rb:89:in `block in timeout&#x27;
+ DEBUG [c6e37294] 	/home/yvdep/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/timeout.rb:99:in `call&#x27;
+ DEBUG [c6e37294] 	/home/yvdep/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/timeout.rb:99:in `timeout&#x27;
+ DEBUG [c6e37294] 	rack-timeout (0.0.4) lib/rack/timeout.rb:16:in `call&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/engine.rb:479:in `call&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/application.rb:223:in `call&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/deflater.rb:13:in `call&#x27;
+ DEBUG [c6e37294] 	/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:94:in `process_request&#x27;
+ DEBUG [c6e37294] 	/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:149:in `accept_and_process_next_request&#x27;
+ DEBUG [c6e37294] 	/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop&#x27;
+ DEBUG [c6e37294] 	/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads&#x27;
+ DEBUG [c6e37294] 	/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:111:in `block in create_thread_and_abort_on_exception&#x27;</code></pre>
+ DEBUG [c6e37294] 	    </div>
+ DEBUG [c6e37294] 	    <div id="Full-Trace" style="display: none;">
+ DEBUG [c6e37294] 	      <pre><code>i18n-js (3.0.0.rc11) lib/i18n/js/fallback_locales.rb:76:in `ensure_valid_locales!&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js/fallback_locales.rb:35:in `locales&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js/fallback_locales.rb:12:in `each&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:67:in `block in merge_with_fallbacks!&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:65:in `each&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:65:in `merge_with_fallbacks!&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:55:in `block in configured_segments&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:46:in `each&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:46:in `inject&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:46:in `configured_segments&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:86:in `translation_segments&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js.rb:34:in `export&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js/middleware.rb:65:in `verify_locale_files!&#x27;
+ DEBUG [c6e37294] 	i18n-js (3.0.0.rc11) lib/i18n/js/middleware.rb:10:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/etag.rb:23:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/conditionalget.rb:25:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__2080118980571347075__call__2035010634892707332__callbacks&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/rack/logger.rb:16:in `call&#x27;
+ DEBUG [c6e37294] 	quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/methodoverride.rb:21:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/runtime.rb:17:in `call&#x27;
+ DEBUG [c6e37294] 	activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/lock.rb:15:in `call&#x27;
+ DEBUG [c6e37294] 	rack-rewrite (1.3.3) lib/rack/rewrite.rb:20:in `call&#x27;
+ DEBUG [c6e37294] 	rack-rewrite (1.3.3) lib/rack/rewrite.rb:20:in `call&#x27;
+ DEBUG [c6e37294] 	rack-mobile-detect (0.3.0) lib/rack/mobile-detect.rb:164:in `call&#x27;
+ DEBUG [c6e37294] 	lib/bb.rb:20:in `_call&#x27;
+ DEBUG [c6e37294] 	lib/bb.rb:15:in `call&#x27;
+ DEBUG [c6e37294] 	rack-ssl-enforcer (0.2.8) lib/rack/ssl-enforcer.rb:57:in `call&#x27;
+ DEBUG [c6e37294] 	lib/yv/middleware/halt.rb:15:in `call&#x27;
+ DEBUG [c6e37294] 	actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call&#x27;
+ DEBUG [c6e37294] 	sentry-raven (0.12.3) lib/raven/integrations/rack.rb:61:in `call&#x27;
+ DEBUG [c6e37294] 	rack-timeout (0.0.4) lib/rack/timeout.rb:16:in `block in call&#x27;
+ DEBUG [c6e37294] 	/home/yvdep/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/timeout.rb:89:in `block in timeout&#x27;
+ DEBUG [c6e37294] 	/home/yvdep/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/timeout.rb:99:in `call&#x27;
+ DEBUG [c6e37294] 	/home/yvdep/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/timeout.rb:99:in `timeout&#x27;
+ DEBUG [c6e37294] 	rack-timeout (0.0.4) lib/rack/timeout.rb:16:in `call&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/engine.rb:479:in `call&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/application.rb:223:in `call&#x27;
+ DEBUG [c6e37294] 	railties (3.2.13) lib/rails/railtie/configurable.rb:30:in `method_missing&#x27;
+ DEBUG [c6e37294] 	rack (1.4.7) lib/rack/deflater.rb:13:in `call&#x27;
+ DEBUG [c6e37294] 	/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:94:in `process_request&#x27;
+ DEBUG [c6e37294] 	/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:149:in `accept_and_process_next_request&#x27;
+ DEBUG [c6e37294] 	/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop&#x27;
+ DEBUG [c6e37294] 	/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads&#x27;
+ DEBUG [c6e37294] 	/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:111:in `block in create_thread_and_abort_on_exception&#x27;</code></pre>
+ DEBUG [c6e37294] 	    </div>
+ DEBUG [c6e37294] 	</div>
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	<h2 style="margin-top: 30px">Request</h2>
+ DEBUG [c6e37294] 	<p><b>Parameters</b>: <pre>None</pre></p>
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	<p><a href="#" onclick="document.getElementById('session_dump').style.display='block'; return false;">Show session dump</a></p>
+ DEBUG [c6e37294] 	<div id="session_dump" style="display:none"><pre></pre></div>
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	<p><a href="#" onclick="document.getElementById('env_dump').style.display='block'; return false;">Show env dump</a></p>
+ DEBUG [c6e37294] 	<div id="env_dump" style="display:none"><pre>HTTP_ACCEPT: &quot;*/*&quot;
+ DEBUG [c6e37294] 	REMOTE_ADDR: &quot;127.0.0.1&quot;
+ DEBUG [c6e37294] 	SERVER_NAME: &quot;local.bible.com&quot;
+ DEBUG [c6e37294] 	SERVER_PROTOCOL: &quot;HTTP/1.1&quot;</pre></div>
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	<h2 style="margin-top: 30px">Response</h2>
+ DEBUG [c6e37294] 	<p><b>Headers</b>: <pre>None</pre></p>
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	
+ DEBUG [c6e37294] 	</body>
+ DEBUG [c6e37294] 	</html>
+  INFO [c6e37294] Finished in 11.996 seconds with exit status 0 (successful).
+ DEBUG [4636d38a] Running /usr/bin/env ls -xtr /var/www/youversion-web/releases as yvdep@webreview01-ny.youversion.com
+ DEBUG [4636d38a] Command: ( SECURE_TRAFFIC=true /usr/bin/env ls -xtr /var/www/youversion-web/releases )
+ DEBUG [4636d38a] 	20150729210029
+ DEBUG [4636d38a] 		
+ DEBUG [4636d38a] 	20150810191358
+ DEBUG [4636d38a] 		
+ DEBUG [4636d38a] 	20150810193247
+ DEBUG [4636d38a] 		
+ DEBUG [4636d38a] 	20150810193550
+ DEBUG [4636d38a] 		
+ DEBUG [4636d38a] 	20150811185235
+ DEBUG [4636d38a] 	
+ DEBUG [4636d38a] 	20150814204516
+ DEBUG [4636d38a] 		
+ DEBUG [4636d38a] 	20150814205011
+ DEBUG [4636d38a] 		
+ DEBUG [4636d38a] 	20150814205554
+ DEBUG [4636d38a] 		
+ DEBUG [4636d38a] 	20150814205921
+ DEBUG [4636d38a] 		
+ DEBUG [4636d38a] 	20150824163459
+ DEBUG [4636d38a] 	
+ DEBUG [4636d38a] 	20150824163657
+ DEBUG [4636d38a] 	
+ DEBUG [4636d38a] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 11 deployed releases on webreview01-ny.youversion.com
+  INFO [6ed57b42] Running /usr/bin/env rm -rf /var/www/youversion-web/releases/20150729210029 /var/www/youversion-web/releases/20150810191358 /var/www/youversion-web/releases/20150810193247 /var/www/youversion-web/releases/20150810193550 /var/www/youversion-web/releases/20150811185235 /var/www/youversion-web/releases/20150814204516 as yvdep@webreview01-ny.youversion.com
+ DEBUG [6ed57b42] Command: ( SECURE_TRAFFIC=true /usr/bin/env rm -rf /var/www/youversion-web/releases/20150729210029 /var/www/youversion-web/releases/20150810191358 /var/www/youversion-web/releases/20150810193247 /var/www/youversion-web/releases/20150810193550 /var/www/youversion-web/releases/20150811185235 /var/www/youversion-web/releases/20150814204516 )
+  INFO [6ed57b42] Finished in 3.631 seconds with exit status 0 (successful).
+ DEBUG [901ef530] Running /usr/bin/env if test ! -d /var/www/youversion-web/releases; then echo "Directory does not exist '/var/www/youversion-web/releases'" 1>&2; false; fi as yvdep@webreview01-ny.youversion.com
+ DEBUG [901ef530] Command: if test ! -d /var/www/youversion-web/releases; then echo "Directory does not exist '/var/www/youversion-web/releases'" 1>&2; false; fi
+ DEBUG [901ef530] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [ed8f5f39] Running /usr/bin/env echo "Branch Bible-Redesign (at a8277b3) deployed as release 20150824163657 by michael.martin" >> /var/www/youversion-web/revisions.log as yvdep@webreview01-ny.youversion.com
+ DEBUG [ed8f5f39] Command: echo "Branch Bible-Redesign (at a8277b3) deployed as release 20150824163657 by michael.martin" >> /var/www/youversion-web/revisions.log
+  INFO [ed8f5f39] Finished in 0.113 seconds with exit status 0 (successful).

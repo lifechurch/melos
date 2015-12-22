@@ -4,6 +4,6 @@
     - if defined?(heading)
       %h4=heading
 
-    %ul
+    %ul.no-bullet.error
       - errors.full_messages.each do |e|
-        %li= e
+        %li.error= e

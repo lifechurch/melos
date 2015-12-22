@@ -40,6 +40,8 @@ YouversionWeb::Application.routes.draw do
   get "/anak",       to: "redirects#anak"
   get "/cocuk",      to: "redirects#cocuk"
   get "/trending-bible-verses", to: "pages#trending"
+  get "/verse-of-the-day", to: "pages#votd"
+  get "/bible-verse-of-the-day", to: "pages#votd"
   get "/wmf",           to: "redirects#wmf"
   get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
   get "/apple-app-site-association", to: "pages#apple_app_site_association"
@@ -70,7 +72,7 @@ YouversionWeb::Application.routes.draw do
   # Bible
   match 'bible(/:version/:reference)' => 'references#show', :as => 'reference', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible/:version/:reference/notes' => 'notes#sidebar', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
-
+  match 'bible-chapters/:version/:reference' => 'references#chapters', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   
   resources "versions",   only:   [:index, :show]
   resources "audiobibles", :path => '/audio-bible-app-versions', only: [:index, :show]
@@ -88,7 +90,8 @@ YouversionWeb::Application.routes.draw do
   get "/highlights/:version/:reference", to: JsonController.action(:reference_highlights), constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
   get "/highlights/colors", to: JsonController.action(:highlight_colors)
   get "/bookmarks/labels", to: JsonController.action(:bookmarks_labels)
-
+  get "/bookmarks/:version/:reference", to: JsonController.action(:reference_bookmarks), constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
+  get "/notes/:version/:reference", to: JsonController.action(:reference_notes), constraints: {version: /[^\/\.]*/, reference: /[^\/]*/}
 
   resources :videos, only: [:index,:show] do
     get :series,    on: :member

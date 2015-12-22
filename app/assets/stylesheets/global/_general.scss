@@ -1,0 +1,51 @@
+body {
+  font-family: $font-family-sans-serif;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 2.375em;
+  line-height: 1.2em;
+  letter-spacing: rem-calc(-.5)
+}
+
+h1, h2 {
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-family: $title-font-family;
+}
+
+h5.bookLabel {
+  padding: 0.4375rem 0.875rem;
+}
+
+.small-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.blue-text {
+  color: $blue;
+}
+
+.icon_listen {
+  background: image-url("icon_listen.png");
+  background-position: center 3px !important;
+}
+
+ul.side-nav li.label {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+md-menu-content.padded {
+  padding:20px;
+}
+
+select {
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  -webkit-border-radius:  3px;
+  -moz-border-radius:     3px;
+  border-radius:          3px;
+  height: auto;
+}

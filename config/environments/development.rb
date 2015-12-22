@@ -54,7 +54,8 @@ YouversionWeb::Application.configure do
   # Debugger has issues with TDDium service
   #Debugger.settings[:autoeval] = true
 
-
+  config.assets.precompile += ['application-rtl']
+  
   # Fallback to assets pipeline to compile on-the-fly if a precompiled asset is missed
   # Default for development is true so we don't have to precompile assets
   # Set to false to debug asset compilation/inclusion issues with rake assets:precompile
@@ -63,8 +64,8 @@ YouversionWeb::Application.configure do
   # Set the log level from the environment variable.  (ex. info, debug, warn)
   config.log_level = ENV['LOG_LEVEL'].nil? ? :debug : ENV['LOG_LEVEL'].to_sym
 
-  # To enable JS export
-  config.middleware.use I18n::JS::Middleware
+  # To enable JS export [ no longer used in bible redesign branch]
+  # config.middleware.use I18n::JS::Middleware
 
   config.action_dispatch.rack_cache =  nil
 end

@@ -1,0 +1,44 @@
+:ruby
+  subscription  = presenter.subscription
+  day           = presenter.day
+  reading       = presenter.reading
+  references    = reading.references(version_id: subscription.version_id)
+  case references.size
+  when 1
+    readings_text = "1 " + t("plans.widget.reading")
+  when 2..4
+    readings_text = references.size.to_s + " " + t("plans.widget.readings")
+  else
+    readings_text = references.size.to_s + " " + t("plans.widget.readings 5 or more")
+  end
+
+-# Links to scripture
+.widget.scripture-links{}
+  .plan-day-progress
+    = t("plans.which day in plan", {day: day, total: subscription.total_days})
+  %ol.plan-day-verse-list
+    -if presenter.reading.devotional
+      %li.plan-day-verse{"ng-class" => "{ active: devotionalActive, completed: devotionalComplete }"}
+        %a{"ng-click" => "loadDevotional()", "ng-class" => "{ active: devotionalActive, completed: devotionalComplete }"}
+          = t("plans.devotional")
+    - unless references.empty?
+      - references.each_with_index do |ref,index|
+        %li.plan-day-verse{"ng-class" => "{ completed: isRefComplete('#{ref.reference.to_param.downcase}') || '#{ref.completed}' == 'true' }"}
+          -# form_tag(subscription_path(user_id: current_user.to_param, id: subscription), method: :put) do
+            - # todo: sometimes day isn't passed with params. need to investigate
+            = hidden_field_tag(:ref,            ref.reference.to_param)
+            = hidden_field_tag(:completed,      (!ref.completed))
+            = hidden_field_tag(:version,        subscription.version_id)
+            = hidden_field_tag(:day_target,     day.to_s)
+            = hidden_field_tag(:content_target, index )     if index != 0
+            = check_box_tag(:completion, nil, ref.completed, {id:"#{index}_box",onChange: "this.form.submit()"} )
+
+          -# if content_page == index
+            %span
+              -#%b.mobile= t("plans.read today").capitalize
+              = ref.reference.safe_human
+            - else
+          -# hrref: (content_page == index) ? nil : subscription_path(user_id: current_user.to_param, id: subscription , day: day.to_s, content: (index > 0 ? index.to_s : nil), version: params[:version])
+          %a{"ng-click" => "completeReferenceAndLoadChapter('reader', {version: #{ref.reference.version.to_s}, usfm: '#{ref.reference.chapter_usfm.downcase}'}, '#{ref.reference.to_param.downcase}', '#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-class" => "{active: isRefActive('#{ref.reference.to_param.downcase}') && !devotionalActive, completed: isRefComplete('#{ref.reference.to_param.downcase}') || '#{ref.completed}' == 'true' }"}
+            -#%a{"ng-click" => "loadChapter('reader', {version: #{ref.reference.version.to_s}, usfm: '#{ref.reference.chapter_usfm.downcase}'})", "ng-class" => "{active:usfm == '#{ref.reference.chapter_usfm.downcase}'}"}
+            = ref.reference.safe_human

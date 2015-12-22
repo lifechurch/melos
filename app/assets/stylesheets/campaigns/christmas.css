@@ -769,13 +769,13 @@ img[alt="YouVersion logo"] {
 }
 
 .main h1 {
-    font: 50px "skippy-sharp",sans-serif;
+    font: 30px "skippy-sharp",sans-serif;
     margin: 0;
     padding: 0;
     position: absolute;
     top: 20px;
     right: 30px;
-    line-height: .8em;
+    line-height: 1em;
     width: 500px;
 }
 .body-ko .main h1,
@@ -874,7 +874,7 @@ svg.map {
     text-align:right;
     position: absolute;
     right: 80px;
-    top: 140px;
+    top: 110px;
     width: 330px !important
 }
 .figures h3 {
@@ -888,7 +888,7 @@ svg.map {
 .figures .figure {
     color:#fff;
     font-family:"fira-mono",sans-serif;
-    font-size:50px;
+    font-size:40px;
     margin-top:0;
 }
 

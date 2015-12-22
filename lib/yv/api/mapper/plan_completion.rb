@@ -22,6 +22,7 @@ module YV
             instance.action_url       ||= "/reading-plans/#{plan_data.extras.plan_id}" if plan_data.extras.plan_id.present?
             instance.action_url       ||= ""
             instance.plan_id          = plan_data.extras.plan_id
+            instance.body_images      = plan_data.extras.images
 
             # Common moment elements
             instance                  = map_to_user_fields(instance,plan_data.extras.user)

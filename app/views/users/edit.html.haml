@@ -12,38 +12,46 @@
     %ul
       - @user.errors.full_messages.each do |e|
         %li= e
-  %p
-    = f.label :first_name, t('users.profile.first name')
-    %br
-    = f.text_field :first_name, required: true
-  %p
-    = f.label :last_name, t('users.profile.last name')
-    %br
-    = f.text_field :last_name, required: true
-  %p
-    = f.label :bio, t('users.profile.bio')
-    %br
-    = f.text_area :bio, rows: 5, style: "width: 223px", :maxlength => 160, placeholder: t("160 character limit")
-  %p
-    = f.label :location, t('users.profile.location')
-    %br
-    = f.text_field :location
-  %p
-    = f.label :postal_code, t('users.profile.postal code')
-    %br
-    = f.text_field :postal_code
-  %p
-    = f.label :website, t('users.profile.website')
-    %br
-    = f.text_field :website
-  %p
-    .country_select
-      = f.label :country, t('users.profile.country')
-      %br
-      = (f.country_select :country).gsub('Taiwan, Province Of China', 'Taiwan').html_safe #quick hack to make the Taiwanese happy
-  %p
-    = f.label :timezone, t('users.profile.timezone')
-    %br
-    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px"}
-  %p
-    = button_tag t('users.update profile') , {class: "action_button_green"}
+  .row
+    .columns.medium-12
+      = f.label :first_name do
+        = t('users.profile.first name')
+        = f.text_field :first_name, required: true
+  .row
+    .columns.medium-12
+      = f.label :last_name do 
+        = t('users.profile.last name')
+        = f.text_field :last_name, required: true
+  .row
+    .columns.medium-12
+      = f.label :bio do
+        = t('users.profile.bio')
+        = f.text_area :bio, rows: 5, style: "width: 223px", :maxlength => 160, placeholder: t("160 character limit")
+  .row
+    .columns.medium-12
+      = f.label :location do
+        = t('users.profile.location')
+        = f.text_field :location
+  .row
+    .columns.medium-12
+      = f.label :postal_code do
+        = t('users.profile.postal code')
+        = f.text_field :postal_code
+  .row
+    .columns.medium-12
+      = f.label :website do
+        = t('users.profile.website')
+        = f.text_field :website
+  .row
+    .columns.medium-12.country_select
+      = f.label :country do
+        = t('users.profile.country')
+        = (f.country_select :country).gsub('Taiwan, Province Of China', 'Taiwan').html_safe #quick hack to make the Taiwanese happy
+  .row
+    .columns.medium-12
+      = f.label :timezone do
+        = t('users.profile.timezone')
+        = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px"}
+  .row
+    .columns.medium-12
+      = button_tag t('users.update profile') , {class: "solid-button green"}

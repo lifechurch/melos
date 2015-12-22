@@ -3,53 +3,15 @@
 
 - if current_user_is? @user
   - content_for :mobile_right_nav do
-    %a.settings_btn{:href => settings_profile_path}
+    %a.settings_btn{:href => settings_profile_path, target: "_self"}
+
+- content_for :lower_js_templates do
+  = render partial: "moments/js_templates"
 
 - content_for :main do
-
-  %section.top_section
-    .profile-hdr
-      %img.avatar_huge{src: (@user.user_avatar_url["px_128x128"] if @user.user_avatar_url)}
-
-      %h1.profile-hdr-name= @user.name || @user.username
-
-      %ul.profile-hdr-info
-        - if user_name = @user.username
-          %li.profile-hdr-info-user
-            = user_name
-        - if user_location = @user.location
-          %li.profile-hdr-info-location
-            = user_location
-        - if @user.website
-          %li.profile-hdr-info-link
-            = link_to @user.website_human, @user.website_url
-
-      - if @user.bio
-        %p.profile-hdr-info-about
-          = @user.bio
-      = render partial: '/users/friend_button', locals: { user: @user }
-
-    :ruby
-      tabs = [
-        {href: user_path(id: @user.username),                            type: "activity"},
-        {href: user_friends_path(user_id: @user.username),               type: "friends"},
-        {href: notes_user_path(id: @user.username),                      type: "notes"},
-        {href: bookmarks_user_path(id: @user.username),                  type: "bookmarks"},
-        {href: highlights_user_path(id: @user.username),                 type: "highlights"},
-        {href: images_user_path(id: @user.username),                     type: "images"},
-        {href: badges_user_path(id: @user.username),                     type: "badges"}
-      ]
-
-      # find the highlight method in /app/helpers/users_helper.rb
-
-    %ul.profile-tabs
-      - tabs.each do |tab|
-        - type, href = tab[:type], tab[:href]
-        %li{class: "profile-tabs-#{type} #{highlight(href)}"}
-          = link_to(t("users.profile.tab #{type}"), href)
-
-
-  %article.profile
-    = content_for?(:user_main) ? yield(:user_main) : yield
+  = render partial: "users/header", locals: { user: @user }
+  .row.pad-row
+    .columns.medium-12
+      = content_for?(:user_main) ? yield(:user_main) : yield
 
 = render template: 'layouts/application'

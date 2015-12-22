@@ -9,12 +9,67 @@ class PagesController < ApplicationController
   def status;       end
   def api_timeout;  end
   def generic_error;end
-  def home;         end
 
   def feed;end
   def notifications;end
   def requests;end
   def intro;end
+
+  def home
+    @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
+
+    # Get Featured Plans for Locale
+    available_locales = Plan.available_locales.map {|loc| loc.to_s}
+    @locale = I18n.locale
+
+    langs = [ @locale.to_s, I18n.default_locale.to_s ].compact
+
+    langs.each do |l|
+      if available_locales.include?(l)
+        @plan_lang = l
+        break
+      end
+    end
+
+    @featured_plans = Plan.all(category: "featured_plans", language_tag: @plan_lang)
+    if @featured_plans.valid?
+      @featured_plans = @featured_plans.slice(0,9)
+      if (@featured_plans.length >= 3)
+        @block_grid_size = 'medium-block-grid-3'
+      else
+        @block_grid_size = 'medium-block-grid-'.concat(@featured_plans.length.to_s)
+      end
+    end
+
+    get_votd()
+  end
+
+  def get_votd
+    # Get VOD for Locale
+    @showVerseImage = I18n.locale == :en
+    @vodImage = VOD.image_for_day(Date.today.yday(), 640)
+
+    if (@showVerseImage)
+      version_id = @vodImage.version
+    else
+      version_id = Version.default_for(I18n.locale) || Version.default
+    end
+
+    @vodRef = Reference.new(@vodImage.usfm, version: version_id)
+
+    begin
+      @vodContent = @vodRef.content(as: :plaintext)
+    rescue NotAChapterError
+      @vodRef = Reference.new(VOD.alternate_votd(Date.today.mday), version: version_id)
+      @vodContent = @vodRef.content(as: :plaintext)
+    end
+  end
+
+  def votd
+    @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
+
+    get_votd()
+  end
 
   # /app url - redirects to an store for mobile device if found
   # tracks requests to /app to GA custom event.

@@ -24,6 +24,7 @@ module YV
             instance.segment          = plan_data.extras.segment
             instance.total_segments   = plan_data.extras.total_segments
             instance.plan_id          = plan_data.extras.plan_id
+            instance.body_images      = plan_data.extras.images
 
             # Common moment elements
             instance                  = map_to_user_fields(instance,plan_data.extras.user)

@@ -1,10 +1,10 @@
 - user = users_list_item
 
-%li.user
+%li.user.clearfix
   - if user.avatars.present? and user.avatars.md_avatar.present?
-    %p.float_left.gutter_right_half
+    %p.left
       = image_tag(user.avatars.md_avatar.url, size:"48x48", style:"margin-top:2px" )
-  %p.float_left
-    = link_to user.name || user.username, user
+  %p.left.name
+    = link_to user.name || user.username, user, { target: '_self' }
     %br
     %span.mute= user.location || user.country

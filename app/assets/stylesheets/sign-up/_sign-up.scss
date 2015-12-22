@@ -1,0 +1,37 @@
+body.c_users.a_new,
+body.c_users.a_create
+{
+  #user_password {
+    float: $default-float;
+  }
+  #pwd-message {
+    float: $default-float;
+    color: #7c7c7c;
+    margin: -20px 0 20px 0;
+  }
+
+  label {
+    padding: 0 0 5px;
+  }
+
+  @media #{$medium-up} {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 50%;
+    }
+    #pwd-message {
+      width: 40%;
+      margin: 0 10px;
+    }
+  }
+  .terms {
+    clear: both;
+    margin-bottom: 20px;
+  }
+  @media #{$small-only} {
+    .alt-path {
+      display: block;
+    }
+  }
+}

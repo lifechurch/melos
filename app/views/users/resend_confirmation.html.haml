@@ -1,16 +1,18 @@
 - @main_nav = false
 
-- content_for :sidebar do
-  = render "widgets/download_app"
+.row
+  .medium-8.columns
+    %article
+      %h1= t('users.resend confirmation title')
+      %p= t('users.resend confirmation copy')
 
-%article
-  %h1= t('users.resend confirmation title')
-  %p= t('users.resend confirmation copy')
+      = render(partial: "shared/form_errors", locals: {errors: @confirmation.errors}) if @confirmation.errors?
 
-  = render(partial: "shared/form_errors", locals: {errors: @confirmation.errors}) if @confirmation.errors?
+      = form_tag resend_confirmation_path do
+        %p
+          = text_field_tag :email, params[:email]
+        %p
+          = submit_tag(t('users.resend confirmation button'), class: 'solid-button green')
 
-  = form_tag resend_confirmation_path do
-    %p
-      = text_field_tag :email, params[:email]
-    %p
-      = submit_tag t('users.resend confirmation button')
+  .medium-4.columns.show-for-medium-up.l-border
+    = render "widgets/download_app"

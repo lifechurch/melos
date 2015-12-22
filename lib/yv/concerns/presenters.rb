@@ -3,7 +3,7 @@ module YV
     module Presenters
 
       def self.included(base)
-        base.helper_method :sidebar_presenter, :presenter, :site
+        base.helper_method :sidebar_presenter, :right_sidebar_presenter, :presenter, :site
       end
 
       protected
@@ -31,6 +31,16 @@ module YV
       # getter for controllers and views as a view helper
       def sidebar_presenter( opts = {} )
         @sb_presenter
+      end
+
+      # setter for controllers
+      def right_sidebar_presenter=( pres )
+        @r_sb_presenter = pres
+      end
+
+      # getter for controllers and views as a view helper
+      def right_sidebar_presenter( opts = {} )
+        @r_sb_presenter
       end
 
       # getter

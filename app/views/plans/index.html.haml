@@ -11,90 +11,174 @@
 - content_for :meta_description do
   = "#{t('plans.title')}: #{t('plans.browse plans', category: @category.label || t('plans.all'))}"
 
-- content_for :title do
-  = t("plans.title")
+-#- content_for :title do
+-#  = t("plans.title")
+
+.fixed.after-header
+  .row.full.b-border.white.collapse
+    .medium-12.columns.text-center.plans-nav-box
+      = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present? && @show_my_plans
+      = link_to t("plans.all plans"), plans_path, class: 'icon active', target: "_self"
 
 %article#plan-index
-  %h1.float_left
-    = t("plans.browse plans", category: @category.label || t("plans.all"))
-  %dl.combo_button.float_right#plans_nav_container{:style => "display:none"}
-    %dt
-    %dd.highlighted
-      = link_to t("plans.all plans"), plans_path
-    %dd#nav_primary_plans
-      = link_to t("plans.my plans"), "#"
-
-  .split_pane
-    .sidebar
-      .search
-
-        %form#plan-search{method: 'get', action: plans_path }
-          - if params[:category]
-            %input{type: "hidden", name: "category", value: params[:category]}
-          - if params[:translate]
-            %input{type: "hidden", name: "translate", value: params[:translate]}
-          - if @plan_lang
-            %input{type: "hidden", name: "lang", value: @plan_lang}
-          %input.field.autofocus{name: "query", type: 'search', placeholder: t("plans.search placeholder", category: @category.label || t("plans.all")), value: params[:query]}
-          %input.submit{type: 'submit', value: t("plans.search"), onClick: "$('select.language').attr('disabled','true');"}
-
-        %form{method: 'get', action: plans_path }
-          %input{type: "hidden", name: "translate", value: (params[:translate] || "true")}
-          - if params[:category]
-            %input{type: "hidden", name: "category", value: params[:category]}
-          - if params[:query]
-            %input{type: "hidden", name: "query", value: params[:query]}
-
-          %select.language{onChange: "this.form.submit();", name: "lang"}
-            - (Plan.available_locales & I18n.available_locales).each do |loc|
-              %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
-                = t("language name", locale: loc)
-
-      %dl
-        %dt
-          = t("plans.browse by category")
+  - if @category.label.nil?
+    .row.full
+      .columns.medium-12.text-center
+        %ul.medium-block-grid-4.large-block-grid-8.cat-box
           - if translate
             - orig_locale = I18n.locale
             - I18n.locale = @plan_lang
-        %dd{class: (params[:category] == "" || params[:category].nil?) ? "highlighted" : ""}
-          = link_to t("plans.all plans"), plans_path(params.merge(category: nil, locale: orig_locale))
-        - level = 0
-        - if @category
-          - if @category.breadcrumbs
-            - @category.breadcrumbs.each do |category|
-              - level += 1
-              %dd{class: params[:category] == category.slug ? "highlighted" : ""}
-                %a{href: plans_path(params.merge(locale: orig_locale, category: category.slug, page: 1)), style: "margin-left:#{level * 20}px"}
-                  = (params[:category] == category.slug) ? t("plans.all category plans", category: category.label)  : category.label
-            - level += 1
+          - level = 0
           - if @category.children
             - @category.children.each do |category|
-              %dd{class: params[:category] == category.slug ? "highlighted" : ""}
-                %a{:href => plans_path(params.merge(locale: orig_locale, category: category.slug, page: 1)), :style => "margin-left:#{level * 20}px"}
-                  = category.label
-    .content
+              - if category.slug != 'featured_plans'
+                %li{class: params[:category] == category.slug ? "highlighted" : ""}
+                  %a{:href => plans_path(params.merge(locale: orig_locale, category: category.slug, page: 1)), class: 'cat_' + category.slug, target: "_self"}
+                    %img{src: '/assets/icon-plans-' + category.slug + '.svg'}
+                    %label= category.label
 
-      - I18n.locale = orig_locale
-      - if I18n.locale.to_s != @plan_lang.to_s
+    .row.full
+      .columns.medium-12
+        %h1.text-center.featured-title= t('plans.widget.featured plans')
+        -if !@plans.nil?
+          %ul.resource_list.medium-block-grid-3.small-block-grid-1
+            - @plans.each do |plan|
+              %li.plan
+                = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
+                  .search_thumbnail
+                    - if plan.list_image.present?
+                      = image_tag plan.list_image.url, class: 'subscription_thumbnail radius'
+                    - else
+                      %img{src:'//placehold.it/640x360', class: 'radius'}
+                  .subscription-info
+                    %h3.plan-title
+                      =plan.name
+                    %span.length
+                      = plan.formatted_length
+        -else
+          .none{align: "center"}= t("plans.none found")
 
-        #filter-message
-          = t('plans.showing language filtered', lang_name: t('language name', locale: @plan_lang))
-          %span.mute{style: "font-weight: normal; font-size: 12px"}
-            = t("plans.swap list localization", swap_locale: t('language name', locale: translate ? I18n.locale : @plan_lang), swap_link: url_for(params.merge(translate: nil, lang: I18n.locale))).html_safe
+  - else
+    .row.full
+      .columns.medium-3.allplans-list-box
+        %h1= @category.label
+        %form
+          .row
+            .small-12.columns
+              %label
+                = t('plans.bible plan language')
+              %select.language{onChange: "this.form.submit();", name: "lang"}
+                - (Plan.available_locales & I18n.available_locales).each do |loc|
+                  %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
+                    = t("language name", locale: loc)
 
-      - if @plans.present?
-        %ul.resource_list
-          = render partial: "plans/list_item", collection: @plans, locals: {original_locale: orig_locale}
+              -#  for mvp we've removed the sub category drop down and reverted to breadcrumbing code
+              -#  so we don't have to introduce new UI to deal with 'X'ing from a subcat page
+              -#  whatever new UI is built we need to be sure it accounts for pagination
+              -#- if @category
+              -#  - if @category.children
+              -#    %label
+              -#      = t("plans.subcategory")
+              -#      %select.category{onChange: "this.form.submit();", name: "category"}
+              -#        %option{value: ''}
+              -#          = t("plans.subcategory")
+              -#        - @category.children.each do |category|
+              -#          %option{value: category.slug, selected: @category.label == category.label}
+              -#            = category.label
 
-        %ul.pagination
+              - level = -1
+              - if @category
+                - if @category.breadcrumbs
+                  - @category.breadcrumbs.each do |category|
+                    - level += 1
+                    .breadcrumbs-item{class: params[:category] == category.slug ? "highlighted" : ""}
+                      %a{href: plans_path(params.merge(locale: orig_locale, category: category.slug, page: 1)), :target => "_self"}
+                        = (params[:category] == category.slug) ? t("plans.all category plans", category: category.label)  : category.label
+                  - level += 1
+                - if @category.children
+                  - @category.children.each do |category|
+                    .breadcrumbs-item{class: params[:category] == category.slug ? "highlighted" : ""}
+                      %a{:href => plans_path(params.merge(locale: orig_locale, category: category.slug, page: 1)), :target => "_self"}
+                        = category.label
+
+
+      .columns.medium-9
+        .list-box
+          - @plans.each do |plan|
+            = link_to(plan_path(plan, locale: I18n.locale), class: 'list-box-card', target: "_self") do
+              %div
+                - if plan.list_image.present?
+                  = image_tag plan.small_thumbnail_image.url, class: 'subscription_thumbnail radius'
+                - else
+                  %img{src:'//placehold.it/80x80', class: 'radius'}
+              %div
+                %h3.plan-title= plan.name
+                %p.plan-length= plan.formatted_length
+
+        %ul.paginate
           - if @plans.prev_page || @page > 1
             %li.prev
-              =link_to t("ui.pagination.previous page"), url_for({query: params[:query], category: params[:category],page: @plans.prev_page || @page - 1, locale: params[:locale], lang: params[:lang]}), rel: 'prev', class: "action_button_grey action_button"
+              =link_to "&larr; #{t('ui.pagination.previous page')}".html_safe, url_for({query: params[:query], category: params[:category],page: @plans.prev_page || @page - 1, locale: params[:locale], lang: params[:lang]}), rel: 'prev', target: "_self", class: "previous"
           - if @plans.next_page
             %li.next
-              =link_to t("ui.pagination.next page"), url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]}), rel: 'next', class: "action_button_grey action_button"
+              =link_to "#{t('ui.pagination.next page')} &rarr;".html_safe, url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]}), rel: 'next', target: "_self", class: "next"
 
-      -else
-        .none{align: "center"}= t("plans.none found")
+    -#
+      / .content
+
+      /   - I18n.locale = orig_locale
+      /   - if I18n.locale.to_s != @plan_lang.to_s
+
+      /     #filter-message
+      /       = t('plans.showing language filtered', lang_name: t('language name', locale: @plan_lang))
+      /       %span.mute{style: "font-weight: normal; font-size: 12px"}
+      /         = t("plans.swap list localization", swap_locale: t('language name', locale: translate ? I18n.locale : @plan_lang), swap_link: url_for(params.merge(translate: nil, lang: I18n.locale))).html_safe
+
+      /   - if @plans.present?
+      /     %ul.resource_list
+      /       = render partial: "plans/list_item", collection: @plans, locals: {original_locale: orig_locale}
+
+      /     %ul.pagination
+      /       - if @plans.prev_page || @page > 1
+      /         %li.prev
+      /           =link_to t("ui.pagination.previous page"), url_for({query: params[:query], category: params[:category],page: @plans.prev_page || @page - 1, locale: params[:locale], lang: params[:lang]}), rel: 'prev', class: "action_button_grey action_button"
+      /       - if @plans.next_page
+      /         %li.next
+      /           =link_to t("ui.pagination.next page"), url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]}), rel: 'next', class: "action_button_grey action_button"
 
 
+
+      -#%h1.float_left
+      -#  = t("plans.browse plans", category: @category.label || t("plans.all"))
+      -# %dl.combo_button.float_right#plans_nav_container{:style => "display:none"}
+      -#  %dt
+      -#  %dd.highlighted
+      -#    = link_to t("plans.all plans"), plans_path
+      -#  %dd#nav_primary_plans
+      -#    = link_to t("plans.my plans"), "#"
+
+      / .split_pane
+      /   .sidebar
+      /     .search
+
+      /       %form#plan-search{method: 'get', action: plans_path }
+      /         - if params[:category]
+      /           %input{type: "hidden", name: "category", value: params[:category]}
+      /         - if params[:translate]
+      /           %input{type: "hidden", name: "translate", value: params[:translate]}
+      /         - if @plan_lang
+      /           %input{type: "hidden", name: "lang", value: @plan_lang}
+      /         %input.field.autofocus{name: "query", type: 'search', placeholder: t("plans.search placeholder", category: @category.label || t("plans.all")), value: params[:query]}
+      /         %input.submit{type: 'submit', value: t("plans.search"), onClick: "$('select.language').attr('disabled','true');"}
+
+      /       %form{method: 'get', action: plans_path }
+      /         %input{type: "hidden", name: "translate", value: (params[:translate] || "true")}
+      /         - if params[:category]
+      /           %input{type: "hidden", name: "category", value: params[:category]}
+      /         - if params[:query]
+      /           %input{type: "hidden", name: "query", value: params[:query]}
+
+      /         %select.language{onChange: "this.form.submit();", name: "lang"}
+      /           - (Plan.available_locales & I18n.available_locales).each do |loc|
+      /             %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
+      /               = t("language name", locale: loc)

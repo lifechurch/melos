@@ -4,7 +4,7 @@
 
   - ["facebook","twitter"].each do |network|
     %li{class: ("highlighted" if @show == network)}
-      %a{style: "text-align: center; padding-top: 16px;", href: url_for({show: (network == "facebook") ? nil : network })}
+      %a{style: "text-align: center; padding-top: 16px;", href: url_for({show: (network == "facebook") ? nil : network }), target: "_self"}
         = image_tag "#{network}_logo_50x50.jpg"
         %br
         = t("social.#{network}.name")
@@ -15,7 +15,7 @@
       %p
         = t('social.connected as', connection: connection_name, username: @user.connections[@show].nickname)
         %span.confirm
-          %a{href: delete_connection_path(@show.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", rel: "nofollow"}
+          %a{href: delete_connection_path(@show.to_sym), "data-confirm-text" => t('confirm danger'), "data-method" => "delete", rel: "nofollow", target: "_self"}
             = t('social.remove connection')
 
       - if @error.present?

@@ -1,5 +1,5 @@
 .widget-button
-  %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source: "note", redirect: "/notes/new")}
+  %a.action_button_green{href: current_auth ? new_note_path : sign_up_path(source: "note", redirect: "/notes/new"), target: "_self"}
     %span.icon_plus= t('new note')
 
 = render 'widgets/download_app'

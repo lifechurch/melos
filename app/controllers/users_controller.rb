@@ -68,6 +68,7 @@ class UsersController < ApplicationController
       if next_redirect?(authorize_licenses_path)
         return redirect_to(authorize_licenses_path(confirm: true))
       else
+        cookies[:tempemail] = @user.email
         return redirect_to confirm_email_path
         # maybe we can sign them in and redirect them. but maybe not.
         # return follow_redirect(notice: "#{t("users.thanks for registering")} #{t("users.confirm email")}")
@@ -103,7 +104,7 @@ class UsersController < ApplicationController
 
   # Template displayed after successful create
   def confirm_email
-    @selected = :email
+    @email = cookies[:tempemail]
     render layout: "application"
   end
 

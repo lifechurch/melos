@@ -2,7 +2,7 @@
 
 %li.note{id: item.id}
   %h3
-    = link_to( item.title, note_path(item.id))
+    = link_to( item.title, note_path(item.id)), { target: '_self' }
   -if item.references
     /%p.references
     /  = # TODO: bible_path doesn't generate the proper url here: item.references.map { |r| link_to "#{r.human} (#{item.version})", bible_path(r)}.join(", ").html_safe

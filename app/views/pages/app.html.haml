@@ -1,9 +1,6 @@
 :ruby
   @sidebar          = false
   @title            = "#{t('mobile page.t9')} #{t('mobile page.download now')} - #{t('mobile page.free overlay')} | #{t('audio bible')} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8"
-  if (is_whitelabel_site and I18n.locale.to_s.eql?('pt'))
-    @title = "Bíblia Sagrada - #{t('mobile page.download now')} - #{t('mobile page.free overlay')} | #{t('audio bible')} | Bíblia Sagrada Grátis"
-  end if
   @meta_title       = "#{t('mobile page.download now')} - #{t('mobile page.free overlay')}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "https://#{request.host_with_port}#{request.fullpath}"
@@ -38,139 +35,118 @@
   %meta{name: "twitter:app:id:googleplay", content: "com.sirma.mobile.bible.android"}
   %meta{name: "twitter:app:url:googleplay", content: "youversion://"}
 
-%article.mobileapps
-  - style = "position:absolute; z-index:1; margin-left: 572px; margin-top: -131px; height:80px; width:80px; background: url(#{image_path(localized_bible_icon(72))}); background-repeat: no-repeat;background-size:cover !important;" if localized_bible_icon
-  %div.icon-overlay.hide-mobile{style: style}
-  %div.app-free-overlay.hide-mobile
-    %h2= t('mobile page.free overlay')
-  %section#mobile_content
-    %h2.title= t('mobile page.h2')
-    %section.main
-      %p= t('mobile page.main').html_safe
-    %section.multilingual
-      - style = "z-index:1; margin:0 auto; height:72px; width:72px; background: url(#{image_path(localized_bible_icon(72))}) center 2px no-repeat;background-size: 72px 72px;" if localized_bible_icon
-      %div.multi
-        %div.icon-overlay{style: style}
-      -#= image_tag "mobile_multilingual.png"
-      %h3= t('mobile page.h3')
-      %p= t('mobile page.h3 sub', language_count: 700)
-  %section#mobile_downloads
-    %h1= t('mobile page.download now')
-    %ul.left_column
-      %li#dl_iphone
-        %h2= link_to t('mobile page.iphone ipad'), "http://itunes.apple.com/app/bible/id282935706"
-      - if I18n.locale.to_s.eql?('zh-CN')
-        %li#dl_android
-          %h2= link_to "#{t('mobile page.android')} - 豌豆荚", "http://www.wandoujia.com/apps/com.sirma.mobile.bible.android"
-      %li#dl_android
-        %h2= link_to t('mobile page.android'), "https://market.android.com/details?id=com.sirma.mobile.bible.android"
-      %li#dl_blackberry
-        %h2= link_to t('mobile page.blackberry'), "http://appworld.blackberry.com/webstore/content/1222/"
-      %li#dl_windows
-        %h2= link_to t('mobile page.windows phone'), "http://windowsphone.com/s?appid=57f524fa-93e3-df11-a844-00237de2db9e"
-      %li#dl_windows8
-        %h2= link_to t('mobile page.windows 8'), "http://apps.microsoft.com/webpdp/app/bible/af5f6405-7860-49a9-a6b4-a47381974e1d"
-    %ul.right_column
-      -#%li#dl_hppalm
-      -#  %h2= link_to t('mobile page.hp palm'), "https://developer.palm.com/appredirect/?packageid=com.youversion.palm"
-      %li#dl_java
-        %h2= link_to t('mobile page.java'), "http://java.apps.opera.com/en_us/bible_000261.html"
-      %li#dl_symbian
-        %h2= link_to t('mobile page.symbian'), "http://java.apps.opera.com/en_us/bible_000261.html"
-      %li#dl_mobile
-        %h2= link_to t('mobile page.mobile web'), "http://www.bible.com"
-      %li#dl_amazon
-        %h2= link_to t('mobile page.amazon'), "http://www.amazon.com/YouVersion-Bible/dp/B004MC8CA2"
-    %a.cta
-      %h4
-        = t('mobile page.button h4').html_safe
+.row
+  .columns
+    %article.mobileapps
+      .row
+        .column.medium-6
+          %section#mobile_content
+            %h2.title= t('mobile page.h2')
+            %section.main
+              %p= t('mobile page.main').html_safe
 
-    = render partial: '/shared/sms_form'
+          %section#mobile_downloads
+            %h1= t('mobile page.download now')
+            %ul.left_column.no-bullet
+              %li#dl_iphone
+                %h2= link_to t('mobile page.iphone ipad'), "http://itunes.apple.com/app/bible/id282935706", { target: '_self' }
+              - if I18n.locale.to_s.eql?('zh-CN')
+                %li#dl_android
+                  %h2= link_to "#{t('mobile page.android')} - 豌豆荚", "http://www.wandoujia.com/apps/com.sirma.mobile.bible.android", { target: '_self' }
+              %li#dl_android
+                %h2= link_to t('mobile page.android'), "https://market.android.com/details?id=com.sirma.mobile.bible.android", { target: '_self' }
+              %li#dl_blackberry
+                %h2= link_to t('mobile page.blackberry'), "http://appworld.blackberry.com/webstore/content/1222/", { target: '_self' }
+              %li#dl_windows
+                %h2= link_to t('mobile page.windows phone'), "http://windowsphone.com/s?appid=57f524fa-93e3-df11-a844-00237de2db9e", { target: '_self' }
+              %li#dl_windows8
+                %h2= link_to t('mobile page.windows 8'), "http://apps.microsoft.com/webpdp/app/bible/af5f6405-7860-49a9-a6b4-a47381974e1d", { target: '_self' }
+            %ul.right_column.no-bullet
+              %li#dl_hppalm
+                %h2= link_to t('mobile page.hp palm'), "https://developer.palm.com/appredirect/?packageid=com.youversion.palm", { target: '_self' }
+              %li#dl_java
+                %h2= link_to t('mobile page.java'), "http://java.apps.opera.com/en_us/bible_000261.html", { target: '_self' }
+              %li#dl_symbian
+                %h2= link_to t('mobile page.symbian'), "http://java.apps.opera.com/en_us/bible_000261.html", { target: '_self' }
+              %li#dl_mobile
+                %h2= link_to t('mobile page.mobile web'), "http://www.bible.com", { target: '_self' }
+              %li#dl_amazon
+                %h2= link_to t('mobile page.amazon'), "http://www.amazon.com/YouVersion-Bible/dp/B004MC8CA2", { target: '_self' }
+            %div.cta
+              %h4
+                = t('mobile page.button h4').html_safe
+              %div.app-free-overlay.hide-mobile
+                %h2= t('mobile page.free overlay')
 
-    - if I18n.locale.to_s.eql?('ko') or I18n.locale.to_s.eql?('ja')
-      %div#qrcode.hide-mobile
-      - content_for :javascripts do
-        :javascript
-          $( document ).ready(function() {
-            $('#qrcode').qrcode({width: 80,height: 80,text: "http://app.bible.com/QR-#{I18n.locale.to_s}"});
-          });
+            .row
+              .column.medium-5
+                %section.multilingual
+                  - style = "z-index:1; margin:0 auto; height:72px; width:72px; background: url(#{image_path(localized_bible_icon(72))}) center 2px no-repeat;background-size: 72px 72px;" if localized_bible_icon
+                  %div.multi
+                    %div.icon-overlay{style: style}
 
-  %div.clear
+              .column.medium-7
+                %h3= t('mobile page.h3')
+                %p= t('mobile page.h3 sub', language_count: 700)
+                %br
 
-  %div.lower-content
-    %section.testimonials
-      %h2= t('mobile page.what people')
-      %div.review-carousel
-        %div
-          %h3= t('mobile page.t1')
-          %p= t('mobile page.t1 copy')
-        %div
-          %h3= t('mobile page.t2')
-          %p= t('mobile page.t2 copy')
-        %div
-          %h3= t('mobile page.t3')
-          %p= t('mobile page.t3 copy')
-        %div
-          %h3= t('mobile page.t4')
-          %p= t('mobile page.t4 copy')
-        %div
-          %h3= t('mobile page.t5')
-          %p= t('mobile page.t5 copy')
-        %div
-          %h3= t('mobile page.t6')
-          %p= t('mobile page.t6 copy')
-        %div
-          %h3= t('mobile page.t7')
-          %p= t('mobile page.t7 copy')
-        %div
-          %h3= t('mobile page.t9')
-          %p= t('mobile page.t9 copy')
-        %div
-          %h3= t('mobile page.t8')
-          %p= t('mobile page.t8 copy')
+        .column.medium-6.app-display.show-for-medium-up
+          - style = "position:absolute; z-index:1; margin-left: 27%; margin-top: 35%; height:80px; width:80px; background: url(#{image_path(localized_bible_icon(72))}); background-repeat: no-repeat;background-size:cover !important;" if localized_bible_icon
+          %div.icon-overlay.hide-mobile{style: style}
+          = image_tag "mobile_feature.jpg", class: "app-img"
 
-    = cache "app_versions_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
-      %div.version-list
-        %h2
-          = link_to "#{t('mobile page.version list')}" , versions_path
-        %ul
-          - @text_versions_list.each do |version|
-            %li
-              = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version)
-      - if @audio_versions_list.present?
-        %div.version-list
-          %h2
-            = link_to "#{t('mobile page.audio version list')}" , audiobibles_path
-          %ul
-            - @audio_versions_list.each do |version|
-              %li
-                = link_to "#{version.title} (#{version.abbreviation.upcase})" , audiobible_path(version)
+          = render partial: '/shared/sms_form'
 
-- content_for :javascripts do
-  :javascript
+      %div.clr
+      = cache "app_versions_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
+        .row.lower-content
+          .columns.medium-4.testimonials
+            %h2= t('mobile page.what people')
+            %div{class: 'review-carousel', "carousel" => ""}
+              %div
+                %h3= t('mobile page.t1')
+                %p= t('mobile page.t1 copy')
+              %div
+                %h3= t('mobile page.t2')
+                %p= t('mobile page.t2 copy')
+              %div
+                %h3= t('mobile page.t3')
+                %p= t('mobile page.t3 copy')
+              %div
+                %h3= t('mobile page.t4')
+                %p= t('mobile page.t4 copy')
+              %div
+                %h3= t('mobile page.t5')
+                %p= t('mobile page.t5 copy')
+              %div
+                %h3= t('mobile page.t6')
+                %p= t('mobile page.t6 copy')
+              %div
+                %h3= t('mobile page.t7')
+                %p= t('mobile page.t7 copy')
+              %div
+                %h3= t('mobile page.t9')
+                %p= t('mobile page.t9 copy')
+              %div
+                %h3= t('mobile page.t8')
+                %p= t('mobile page.t8 copy')
 
-    $(document).ready(function(){
-      $('.review-carousel').slick({
-        centerMode: true,
-        centerPadding: "0px",
-        slidesToShow: 1,
-        infinite: false,
-        variableWidth: true,
-        autoplay: true,
-        autoplaySpeed: 6000,
-        arrows: false,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerPadding: "10px",
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-    });
+          .columns.medium-4.version-list
+            %h2
+              = link_to "#{t('mobile page.version list')}" , versions_path, { target: '_self' }
+            %ul.no-bullet
+              - @text_versions_list.each do |version|
+                %li
+                  = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version), { target: '_self' }
+
+          .columns.medium-4.version-list
+            - if @audio_versions_list.present?
+              %h2
+                = link_to "#{t('mobile page.audio version list')}" , audiobibles_path, { target: '_self' }
+              %ul.no-bullet
+                - @audio_versions_list.each do |version|
+                  %li
+                    = link_to "#{version.title} (#{version.abbreviation.upcase})" , audiobible_path(version), { target: '_self' }
 
 %script{type: "application/ld+json"}
   {

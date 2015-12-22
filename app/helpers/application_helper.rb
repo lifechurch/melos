@@ -8,8 +8,11 @@ module ApplicationHelper
   # @option: [String] classes: a string of classes to add to the generated link
   def reader_next_link(reference, opts={})
     classes = opts.delete(:classes)
+    uisref = opts.delete(:uisref)
+    ngif = opts.delete(:ngif)
+    id = opts.delete(:id)
     next_chapter  = reference.next_chapter_hash
-    link_to( next_chapter.human, reference_path(version: next_chapter.version_id, reference: next_chapter.usfm.first.downcase), class: classes) if next_chapter
+    link_to( next_chapter.human, reference_path(version: next_chapter.version_id, reference: next_chapter.usfm.first.downcase  + "." + reference.version_string.downcase), class: classes, "ui-sref" => uisref, "ng-show" => ngif, id: id, 'ng-disabled' => 'working' ) if next_chapter
   end
 
   # Generate a link to previous chapter
@@ -21,8 +24,11 @@ module ApplicationHelper
 
   def reader_previous_link(reference, opts={})
     classes = opts.delete(:classes)
+    uisref = opts.delete(:uisref)
+    ngif = opts.delete(:ngif)
+    id = opts.delete(:id)
     prev_chapter  = reference.previous_chapter_hash
-    link_to( prev_chapter.human, reference_path(version: prev_chapter.version_id, reference: prev_chapter.usfm.first.downcase), class: classes) if prev_chapter
+    link_to( prev_chapter.human, reference_path(version: prev_chapter.version_id, reference: prev_chapter.usfm.first.downcase + "." + reference.version_string.downcase), class: classes, "ui-sref" => uisref, "ng-show" => ngif, id: id, 'ng-disabled' => 'working' ) if prev_chapter
   end
 
   def moment_whos_liked_string(moment)
@@ -172,6 +178,11 @@ module ApplicationHelper
     "#{locale_dir}/app"
   end
 
+  def votd_path
+    locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+    "#{locale_dir}/bible-verse-of-the-day"
+  end
+
   def blog_url(locale)
     case locale.to_s
       when "zh-TW"
@@ -305,7 +316,7 @@ module ApplicationHelper
   end
 
   def is_rtl?
-    I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ar")
+    I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ar") or params.has_key?(:rtl)
   end
 
   def is_whitelabel_site

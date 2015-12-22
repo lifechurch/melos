@@ -17,10 +17,9 @@
   - url = "#{locale_dir}/bible/#{version_id}/#{book}.#{chapter}.#{version}"
   - url = "#{locale_dir}/bible/#{version_id}/#{book}.#{chapter}.#{verses.to_s}.#{version}" if verses.present?
 
-  %tr{"data-version" => version_id, "data-abbrev" => version, "data-meta" => version_meta}
-    %th
-      %a{href: url }= v.human
+  %li{"data-version" => version_id, "data-abbrev" => version, "data-meta" => version_meta, "data-title" => v.title}
+    %a{href: url }= v.human
 
-    %td{class: v.audio_version? ? "audio" : ""}
-      %a{href: url}
-        %div= v.title
+    -#%td{class: v.audio_version? ? "audio" : ""}
+    -#  %a{href: url}
+    -#    %div= v.title

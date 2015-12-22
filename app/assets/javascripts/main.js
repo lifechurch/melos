@@ -1,124 +1,79 @@
-function setCookie(name,value,days) {
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime()+(days*24*60*60*1000));
-    var expires = "; expires="+date.toGMTString();
-  }
-  else var expires = "";
-  document.cookie = name+"="+value+expires+"; path=/";
-}
+angular.module('yv', [
+	'ui.router', 
+	'ngSanitize', 
+	'angular-cache',
+	'ngMaterial',
+	'yv.reader',
+	'yv.moments',
+	'yv.header',
+    'yv.plans',
+	'api.authentication',
+	'api.railsHttp',
+	'common.fixTop',
+    'common.fixBottom',
+	'common.userSettings',
+    'common.recentVersions',
+    'common.skipHome',
+    'videos.videoPlayer',
+    'common.installCounter',
+    'common.branchMobileBanner',
+    'common.branchSms',
+    'common.hoverLink',
+    'common.carousel'
+])
 
-function getCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0;i < ca.length;i++) {
-    var c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1,c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-  }
-  return null;
-}
+.config([ '$locationProvider', '$urlRouterProvider', '$windowProvider', function($locationProvider, $urlRouterProvider, $windowProvider) {
+	$locationProvider.html5Mode(true);
+	$locationProvider.hashPrefix('!');
+}])
 
-function deleteCookie(name) {
-  setCookie(name,"",-1);
-}
+.directive('ngHtmlCompile', ['$compile', function($compile) {
+	return {
+		restrict: 'A',
+		link: function(scope, element, attrs) {
+			scope.$watch(attrs.ngHtmlCompile, function(newValue, oldValue) {
+				element.html(newValue);
+				$compile(element.contents())(scope);
+			});
+		}
+	};
+}])
 
-// Fire it off!
-jQuery(document).ready(function() {
-  window.app = new App();
-  window.app.setPage( new Page() );
+.run(['$rootScope', '$window', '$location', '$anchorScroll', '$log', '$interval', function($rootScope, $window, $location, $anchorScroll, $log, $interval) {
+    $anchorScroll.yOffset = 150;
 
-  var nm = new Menus.NavMobile("#slideToNav","#nav_mobile");
-  var mg = new Menus.MenuGroup("#header")
-      mg.addMenu(nm)
+	// Intercept the stateChangeStart event, and determine if the whole state
+	//  needs to be reloaded, or if we can just broadcast an event that lets
+	//  the view know to reload data
+	var stopListener = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        var statesToIntercept = [ 'reader', 'reader-locale', 'planSample', 'planSample-locale', 'userPlan', 'userPlan-locale'];
+        if (statesToIntercept.indexOf(toState.name) > -1 && toState.name == fromState.name) {
+            event.preventDefault();
+            $rootScope.$broadcast("YV:reloadState", [toState, toParams]);
+        }
+	});
+    $window.scrollWatchEnabled = true;
 
+    $window.onresize = function() {
+        $rootScope.$broadcast("Scroll", []);
+    }
 
-  $(".moment-verse.empty").each(function() {
-    // this is used for moments not in the feed, temp fix here until it can be refactored
-    // to work the same as the feed moments
-    new Moments.Verse({el: $(this)});
-  });
+    $interval(function() {
+        $rootScope.$broadcast("Scroll", []);
+    }, 500);
 
+    $window.onscroll = function() {
+        if (!$window.scrollWatchEnabled) {
+            return;
+        }
 
-  $(".moment").each(function(){
-    new Moments.Moment({el: $(this)})
-  })
+        $window.scrollWatchEnabled = false;
+        $rootScope.$broadcast("Scroll", []);
 
+        return setTimeout(function() {
+            $window.scrollWatchEnabled = true;
+        }, 10);
+    }
+}])
 
-  $("form[data-color-form=true]").each( function() {
-    new Forms.ColorPicker($(this));
-  });
-
-
-  // Toggle feature
-  // Add  the attribute data-toggle-trigger="true" to any link
-  // and data-toggle-target="#id-of-element"
-  // This will turn the trigger element into a clickable element
-  // to toggle the id of the target element with a SlideDown animation
-
-  $('a[data-toggle-trigger="true"]').each(function() {
-    var link = $(this);
-    var target = $(link.data("toggle-target"));
-    var toggle_class = "toggle-active"
-    link.click(function(ev) {
-      ev.preventDefault()
-      if(target.hasClass(toggle_class)) { target.slideUp().removeClass(toggle_class); }
-      else                              { target.slideDown().addClass(toggle_class); }
-    });
-  });
-
-
-  // Setup tooltips on hovering over primary nav
-
-  $("#nav_primary a.icon").each(function(){
-    var link = $(this);
-    var link_parent = link.parent();
-    var link_text = link.data("title");
-    var link_href = link.attr("href");
-
-    // Build base tooltip element
-    var tooltip_el = $('<a/>', {
-      href: link_href,
-      style: "display: none;",
-      class: "tooltip"
-    });
-
-    // Build inner span for tooltip_el
-    var tooltip_span = $('<span/>',{
-      text: link_text
-    });
-
-    tooltip_el.append(tooltip_span);
-
-    // Append the tooltip element to the hovered links parent.
-    link_parent.append(tooltip_el);
-
-    // Create a hover listener for the link to show the tooltip
-    link_parent.hover(function(){
-        $(this).find(".tooltip").fadeIn(100);
-      }, function() {
-        $(this).find(".tooltip").fadeOut(100);
-    });
-  });
-
-
-
-
-
-  $(".social-feed .moment").wookmark({
-    autoResize:   true,
-    offset:       15,
-    container:    $(".social-feed")
-  });
-
-  var timezone = jstz.determine();
-  setCookie('cs-time-zone',timezone.name());
-
-});
-
-jQuery(window).load(function() {
-    // init locale for js I18n-js
-    I18n.fallbacks = true;
-    I18n.defaultLocale = $('html').data('default-locale');
-    I18n.locale = $('html').data('locale');
-});
+;

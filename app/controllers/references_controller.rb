@@ -10,6 +10,11 @@ class ReferencesController < ApplicationController
 
   def show
     now_reading(self.presenter.reference)
+    respond_to do |format|
+      format.html 
+      format.xml  { render nothing: true }
+      format.json { render "show.json.rabl" }
+    end      
   end
 
   protected

@@ -4,8 +4,6 @@
 
 - @title = "#{t('pages.home.features.study heading')} #{t('pages.home.features.subscribe heading')} #{t("sign in to youversion")}"
 
-- content_for :sidebar do
-  =render partial: "/sidebars/sessions/new"
 
 :ruby
   licensing_flow = params[:source] && params[:source] == "licenses"
@@ -16,8 +14,11 @@
     end
   end
 
-%article
-  %h1= t("sign in to youversion")
-  - if licensing_flow
-    %p#license-notice= t("licenses.auth.login notice", signup:t("licenses.auth.signup link text")).html_safe
-  = render partial: "sessions/signin"
+.row
+  .medium-8.large-5.medium-centered.columns
+    %article
+      %h1= t("sign in to youversion")
+      - if licensing_flow
+        %p#license-notice= t("licenses.auth.login notice", signup:t("licenses.auth.signup link text")).html_safe
+      = render partial: "sessions/signin"
+

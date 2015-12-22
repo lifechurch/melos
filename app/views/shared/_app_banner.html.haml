@@ -1,9 +1,1 @@
-- content_for :lower_javascript do
-  :javascript
-    $( document ).ready(function() {
-      if ($('html').hasClass('mobile-client')) {
-        b = new Branch();
-        options = {title: "#{t('download ad.banner title')}", action: "#{t('download ad.banner action')}", open: "#{t('download ad.banner open')}"}
-        b.banner(options);
-      }
-    });
+%div{"banner-action" => "#{t('download ad.banner action')}", "banner-open" => "#{t('download ad.banner open')}", "banner-title" => "#{t('download ad.banner title')}", "branch-mobile-banner" => ""}

@@ -12,53 +12,96 @@
   - version_id = presenter.version.id
   - version_abbr = presenter.version.abbreviation.downcase
   - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
-  #menu_book_chapter.dynamic_menu
-    .mobile
-      .reader_modal_header
-        %nav
-          %a.close_btn.reference_close_btn
-      .tab_navigation.ref
-        .inner_wrapper
-          %a.book{href: '#book', class: 'selected'}
-            = t('Book')
-          %a.chapter{href:'#chapter'}
-            = t('Chapter')
-    %br.clear
-    .spinner_wrapper{style: "display: none;"}
-      #book_chapter_spinner.dynamic_menu_spinner
-    .search
-      %input{type: "text", placeholder: t('filter book')}
-    .browse
-      %span.menu_arrow
-        &nbsp;
-      #menu_book
-        %header
-          =t("book")
-        .scroll
-          %ul
-            - presenter.version.books.each do |book_usfm, book_info|
-              %li{"data-meta" => truncate(book_info.to_meta, length: 40, separator: " ")}
-                - book = book_usfm.downcase
-                - url = "#{locale_dir}/bible/#{version_id}/#{book}.#{chapter}.#{version_abbr}"
-                %a{href: url, "data-book" => book_usfm.downcase}
-                  = truncate(book_info.human, length: 40, separator: " ")
-                - current_book_chapters = book_info.chapters if presenter.reference.book.downcase.eql?(book)
-                - current_book = book_info.human if presenter.reference.book.downcase.eql?(book)
-      #menu_chapter
-        %header
-          =t("chapter")
-        .scroll
-          %ol#chapter_selector
-            -#we want these chapter links available on page load for SEO
-            -unless current_book_chapters.nil?
-              - current_book_chapters.each do |chapter_info|
-                - canonical = chapter_info.canonical
-                - chapter_name = "#{current_book} #{chapter_info.human}"
-                - chapter_usfm = chapter_info.usfm.downcase
-                - link_body = canonical ? chapter_name : "i"
-                -#js will add active class - we don't here because this is cached per book
-                - css_class = canonical ? "canonical" : "info"
-                - chapter_url = "#{locale_dir}/bible/#{version_id}/#{chapter_usfm}.#{version_abbr}"
-                %li{class: css_class}
+  %ul#reader_book_list.hidden
+    - presenter.version.books.each do |book_usfm, book_info|
+      %li{"data-meta" => truncate(book_info.to_meta, length: 40, separator: " ")}
+        - book = book_usfm.downcase
+        - url = "#{locale_dir}/bible/#{version_id}/#{book}.#{chapter}.#{version_abbr}"
+        %a{href: url, "data-book" => book_usfm.downcase, "data-canon" => book_info.canon}
+          = truncate(book_info.human, length: 40, separator: " ")
+        - is_current_book = presenter.reference.book.downcase.eql?(book)
+        %ol
+          -#we want these chapter links available on page load for SEO
+          -unless book_info.chapters.nil?
+            - book_info.chapters.each do |chapter_info|
+              - chapter_name = "#{book_info.human} Chapter #{chapter_info.human}"
+              - chapter_usfm = chapter_info.usfm.downcase
+              - chapter_url = "#{locale_dir}/bible/#{version_id}/#{chapter_usfm}.#{version_abbr}"
+              %li{"data-chapter-href" => chapter_url, "data-chapter-number" => chapter_info.human}
+                - if is_current_book
                   %a{href: chapter_url}
-                    = link_body
+                    = chapter_name
+
+  #reader-chapter-dropdown.row.ng-hide.large-7.large-centered.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderVersions" }
+    .medium-6.columns.text-left
+      %h3.version-picker-title= t('versions title')
+      %a{"ng-click" => "cancel('showReaderVersions')" }= t('cancel')
+    .medium-6.columns.text-center
+      %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter"), "ng-minlength" => "3"}
+
+    %div{"reader-version-list" => true, "versions" => "versions", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel", "load-parallel-chapter" => "loadParallelChapter", "set-parallel-version" => "setParallelVersion", "load-chapter" => "loadChapter" }
+
+  #reader-chapter-dropdown.ng-hide.medium-12.reader-panel.full{ "tabindex" => "-1", "ng-show" => "showReaderChapters" }
+    .row.full.scroll
+      .medium-12.columns
+        %div{"reader-chapter-list" => true, "selected-book" => "selectedBook", "ng-show" => "selectedBook", "toggle-chapters-panel" => "toggleChaptersPanel", "load-chapter" => "loadChapter", "version-id" => "reader_version_id" }
+
+  #reader-book-dropdown.ng-hide.medium-12.reader-panel.full.scroll{ "tabindex" => "-1", "ng-show" => "showReaderBooks" }
+    .row.full
+      .medium-4.columns.text-left
+        %h3.book-picker-title= t('book')
+        %a{"ng-click" => "cancel('showReaderBooks')" }= t('cancel')
+      .medium-4.columns.text-center
+        %input{"ng-model" => "bookFilter", "type" => "text", "placeholder" => t("filter book")}
+      .medium-4.columns.text-right
+        .switch
+          %a{"ng-click" => "sortBooks(false)"}= t('traditional')
+          |
+          %a{"ng-click" => "sortBooks(true)"}= t('alphabetic')
+          -# %input#exampleCheckboxSwitch{:type => "checkbox", "ng-model" => "sort", "value" => "alphabetic", "ng-hide" => "true"}
+            %label{:for => "exampleCheckboxSwitch"}
+    %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version_id", "selected-book"=>'selectedBook', 'on-book-selected' => 'toggleChaptersPanel', 'canon-ot' => "#{t('old testament')}", 'canon-nt' => "#{t('new testament')}"}
+
+  %script{'type' => 'text/ng-template', 'id' => '/reader-version-selector.tpl.html'}
+    .row.full
+      .small-12.columns.text-left
+        %div{"ng-if" => "recentVersionCount()"}
+          %h5= t("recent versions")
+          %div{"ng-repeat" => "version in recentVersions"}
+            %ul.side-nav{:role => "navigation"}
+              %li.menuitem
+                %a{"ng-click" => "loadVersion(version, false)"}
+                  %b {{version.abbrev | uppercase}}
+                  {{version.title}}
+        %div{"ng-repeat" => "language in versions", "ng-hide" => "allLangVersions.length == 0"}
+          %h1
+            = "{{language.name}}"
+            %span{"ng-hide" => "language.name == language.local_name"}
+              =" | {{language.local_name}}"
+          %ul.side-nav{:role => "navigation"}
+            %li.menuitem{"ng-repeat" => "version in allLangVersions = (language.versions | filter: filter)"}
+              %a{"ng-click" => "loadVersion(version, true)"}
+                %b {{version.abbrev | uppercase}}
+                {{version.title}}
+
+  %script{'type' => 'text/ng-template', 'id' => '/reader-book-selector.tpl.html'}
+    .row.full
+      %div{:class => "{{$last ? 'end' : ''}}", "ng-class" => "foundationColumnSize", "ng-repeat" => "column in columns"}
+        %ul.side-nav{:role => "navigation"}
+          %li.menuitem{"ng-if" => "filterBook(filter, book.human)", "ng-repeat" => "book in column"}
+            %a{"ng-click" => "showChapters(book)", "ng-if" => "!book.labelOnly"}
+              = "{{book.human}}"
+              -#%b{"ng-if" => "sort"} ( {{book.canon | uppercase}} )
+            %h5.bookLabel{"ng-if" => "book.labelOnly"} {{book.human}}
+
+  %script{'type' => 'text/ng-template', 'id' => '/reader-chapter-selector.tpl.html'}
+    .row
+      .medium-12.columns.text-left
+        %h3.chapter-picker-title
+          {{selectedBook.name}} &#187;
+          = t('chapter')
+        %a{"ng-click" => "cancel()"}= t('cancel')
+        %ol.tabs.pad-head.chapter-picker{"data-tab" => ""}
+          %li.tab-title{"ng-repeat" => "chapter in selectedBook.chapters"}
+            -#%a{"ng-href" => "{{chapter.href}}"} {{chapter.name}} {{chapter.usfm}}
+            %a{"ng-click" => "loadChapter(null, {usfm: chapter.usfm, version: versionId})", class: "chap-list-no"} {{chapter.human}}

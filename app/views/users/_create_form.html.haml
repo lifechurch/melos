@@ -1,30 +1,29 @@
 = form_for :user, url: sign_up_path(source: params[:source], redirect: params[:redirect]) do |f|
   = render partial: "shared/form_errors", locals: {errors: @user.errors, heading: t("users.creation form errors")}
-  %p
-    = f.label :email, t("users.email address")
-    %br
-    = f.text_field :email, {class: "autofocus", type: "email", autocorrect: "off", autocapitalize: "off"}
-  
+
+  = f.hidden_field :agree, {value: true}
+
   %p
     = f.label :first_name, t("users.first name")
-    %br
     = f.text_field :first_name, {autocorrect: "off", autocapitalize: "off"}
 
   %p
     = f.label :last_name, t("users.last name")
-    %br
     = f.text_field :last_name, {autocorrect: "off", autocapitalize: "off"}
 
   %p
+    = f.label :email, t("users.email address")
+    = f.text_field :email, {class: "autofocus", type: "email", autocorrect: "off", autocapitalize: "off"}
+
+  %p
     = f.label :username, t("users.user name")
-    %br
     = f.text_field :username, {autocorrect: "off", autocapitalize: "off"}
   %p
     = f.label :password, t("password prompt")
-    %br
     = f.password_field :password, :maxlength=>"32"
+    %span#pwd-message=t("users.password length")
+  %p.terms
+    = t("users.agree", terms_link: terms_url(), privacy_link: privacy_path).html_safe
   %p
-    = f.check_box :agree
-    = f.label :agree, t("users.agreement", terms_link: link_to(t("users.terms and conditions"), terms_url())).html_safe
-  %p
-    = f.submit t("users.register"), {class: "action_button_green"}
+    = f.button t("users.sign up"), {class: "solid-button green"}
+    %span.alt-path= t('users.sign up alternate', sign_in_path: sign_in_path).html_safe

@@ -134,6 +134,14 @@ class Plan < YV::Resource
      images.sort_by { |h| h.height }.detect { |h| h.width >= 600 } if images.present?
   end
 
+  def list_image
+    images.sort_by { |h| h.height }.detect { |h| h.width >= 600 && h.width < 800 } if images.present?
+  end
+
+  def small_thumbnail_image
+    images.sort_by { |h| h.height }.reverse!.detect { |h| h.width <= 80 } if images.present?
+  end
+
   def search_thumbnail_image
     # Sort by height descending, then return the first only if it's greater than 200px wide
      images.sort_by { |h| h.height }.reverse!.detect { |h| h.width <= 160 } if images.present?

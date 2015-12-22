@@ -3,9 +3,11 @@
   = @title
 
 - if @badges.present?
-  .profile-badges-list
-    = render partial: "badges/list_item", collection: @badges, locals: {display: :icon}
-  = render partial: 'shared/pagination', locals: {resource_list: @badges}
+  .row
+    .columns.medium-8.medium-offset-2
+      .profile-badges-list
+        = render partial: "badges/list_item", collection: @badges, locals: {display: :icon, user: @user}
+      = render partial: 'shared/pagination', locals: {resource_list: @badges}
 
 - else
   .profile-blank-slate.slate-badges
