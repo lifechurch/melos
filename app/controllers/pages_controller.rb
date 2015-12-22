@@ -41,6 +41,10 @@ class PagesController < ApplicationController
       end
     end
 
+    get_votd()
+  end
+
+  def get_votd
     # Get VOD for Locale
     @showVerseImage = I18n.locale == :en
     @vodImage = VOD.image_for_day(Date.today.yday(), 640)
@@ -59,6 +63,12 @@ class PagesController < ApplicationController
       @vodRef = Reference.new(VOD.alternate_votd(Date.today.mday), version: version_id)
       @vodContent = @vodRef.content(as: :plaintext)
     end
+  end
+
+  def votd
+    @current_user = User.find(current_auth.user_id, auth: current_auth) if current_auth.present?
+
+    get_votd()
   end
 
   # /app url - redirects to an store for mobile device if found

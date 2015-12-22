@@ -40,6 +40,8 @@ YouversionWeb::Application.routes.draw do
   get "/anak",       to: "redirects#anak"
   get "/cocuk",      to: "redirects#cocuk"
   get "/trending-bible-verses", to: "pages#trending"
+  get "/verse-of-the-day", to: "pages#votd"
+  get "/bible-verse-of-the-day", to: "pages#votd"
   get "/wmf",           to: "redirects#wmf"
   get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
   get "/apple-app-site-association", to: "pages#apple_app_site_association"

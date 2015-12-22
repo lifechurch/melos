@@ -178,6 +178,11 @@ module ApplicationHelper
     "#{locale_dir}/app"
   end
 
+  def votd_path
+    locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+    "#{locale_dir}/bible-verse-of-the-day"
+  end
+
   def blog_url(locale)
     case locale.to_s
       when "zh-TW"

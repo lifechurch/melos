@@ -94,7 +94,8 @@
             .votd-content
               %h2.heading
                 %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
-                =t('pages.home.votd.title')
+                =link_to(votd_path, { target: "_self" }) do
+                  =t('pages.home.votd.title')
               %p.votd-verse
                 =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm), { target: "_self" }) do
                   =@vodContent
@@ -138,7 +139,7 @@
                 = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
                   = image_tag plan.list_image.url, class: ''
               %p.fp-title
-                = plan.name
+                = link_to(plan.name, plan_path(plan, locale: I18n.locale), {target: "_self" })
               %div.fp-details
                 %span.fp-length
                   = plan.length

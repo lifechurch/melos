@@ -247,6 +247,9 @@ h2.heading {
   letter-spacing: 3.9px;
   line-height: 16px;
   text-transform: uppercase;
+  a {
+    color: #000000;
+  }
 }
 
 p.body-text {
@@ -392,6 +395,10 @@ a.heading {
     text-align: left;
     font-weight: bold;
     margin: 10px 0 0 0;
+    a {
+      text-decoration: none;
+      color: #353535;
+    }
 
     @media #{$medium-only} {
       font-size: 14px;
