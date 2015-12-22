@@ -94,7 +94,8 @@
             .votd-content
               %h2.heading
                 %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
-                =t('pages.home.votd.title')
+                =link_to(votd_path, { target: "_self" }) do
+                  =t('pages.home.votd.title')
               %p.votd-verse
                 =link_to(reference_path(version: @vodRef.version, reference: @vodRef.usfm), { target: "_self" }) do
                   =@vodContent
