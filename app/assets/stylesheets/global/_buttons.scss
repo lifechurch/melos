@@ -15,17 +15,7 @@ $button-radius: $radius;
   );
 
   font-size: rem-calc(13);
-  border-width: rem-calc(1);
   padding: rem-calc(4 15 6);
-
-  &:hover,
-  &:focus {
-    background-color: $primary-color !important;
-    color: #ffffff !important;
-    border-width: rem-calc(2) !important;
-    border-style: solid !important;
-    border-color:$primary-color;
-  }
 
   @media #{$large-up} {
     margin-right: rem-calc(20) !important;
@@ -33,6 +23,51 @@ $button-radius: $radius;
 
   @media #{$medium-only} {
     margin-right: rem-calc(10) !important;
+  }
+
+  &.green {
+    border: 1px solid $green;
+    color: $green;
+
+    &:hover,
+    &:focus {
+      background-color: $green;
+      color: #ffffff;
+    }
+  }
+
+  &.blue {
+    border: 1px solid $blue;
+    color: $blue;
+
+    &:hover,
+    &:focus {
+      background-color: $blue;
+      color: #ffffff;
+    }
+  }
+
+  &.gray {
+    border: 1px solid $gray;
+    background-color: $white;
+    color: $gray;
+
+    &:hover,
+    &:focus {
+      background-color: $gray;
+      color: #ffffff;
+    }
+  }
+
+  &.red {
+    border: 1px solid $red;
+    color: $red;
+
+    &:hover,
+    &:focus {
+      background-color: $red;
+      color: #ffffff;
+    }
   }
 }
 
