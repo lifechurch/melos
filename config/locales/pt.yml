@@ -274,7 +274,7 @@ pt:
     note: "Nova Anotação"
     selected: "Selecionado"
     chapter: "Capítulo"
-    home: "Página Inicial"
+    home: "Início"
     bible: "Bíblia"
     audio bible: "Áudio da Bíblia"
     audio bible app: "Áudio do App da Bíblia"
@@ -1126,15 +1126,15 @@ pt:
             our action: "Fomos notificados sobre isto e solucionaremos o mais breve possível."
         home: 
             heading: "Tenha uma Bíblia gratuita para seu telefone, tablet e computador."
-            cta: "Leia a Bíblia Agora"
+            cta: "Leia a Bíblia agora"
             experience: 
                 title: "Use em qualquer lugar"
                 body: "Escolha entre mais de 1.200 versões da Bíblia em mais de 900 idiomas em seu computador, telefone ou tablet -- com várias Bíblias em áudio disponíveis."
-                action: "Ver as Versões da Bíblia"
+                action: "Ver as versões da Bíblia"
             make_yours: 
                 title: "Faça dela a sua Bíblia"
                 body: "Destaque ou adicione Marcadores aos seus versículos favoritos, faça Imagem do Versículo que você poderá compartilhar e adicione Anotações públicas ou privadas à passagens da Bíblia."
-                action: "Crie Sua Conta Gratuita"
+                action: "Crie sua conta gratuita"
             install_now: 
                 title: "Instale o Aplicativo Agora"
                 body: "O App da Bíblia é totalmente gratuito, sem propagandas ou compras dentro do aplicativo. Já foi instalado nesta quantidade de dispositivos únicos (até agora):"
