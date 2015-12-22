@@ -805,7 +805,7 @@ ko:
         title: "묵상"
         meta title: "온라인 성경공부, 묵상, 성경읽기 계획"
         browse by category: "카테고리별 보기"
-        subcategory: "Sub-category"
+        subcategory: "하위 카테고리"
         browse plans: "%{category} 항목의 계획 보기"
         swap list localization: "(<a href='%{swap_link}' target='_self'> %{swap_locale}에서 보기</a>)"
         showing language filtered: "%{lang_name}에 속한 읽기 계획보기"
@@ -1112,29 +1112,29 @@ ko:
             explanation: "이유를 알 수 없는 오류가 발생했습니다.  로딩을 다시 해주세요.  불편을 끼쳐드려서 죄송합니다."
             our action: "알려주셔서 감사합니다.  즉시 처리되도록 최선을 다하겠습니다."
         home: 
-            heading: "Get a free Bible for your phone, tablet, and computer."
+            heading: "스마트 폰, 태블렛, 컴퓨터에 무료 성경을 얻으세요."
             cta: "Read the Bible Now"
             experience: 
                 title: "Experience it anywhere"
-                body: "Choose from more than 1,200 Bible versions in over 900 languages on your computer, phone, or tablet -- with many available as audio Bibles."
-                action: "View Bible Versions"
+                body: "컴퓨터, 전화기, 태블렛에 오디오 성경과 함께 900개 이상의 언어로 된 1,200개 이상의 성경 번역본에서 택하세요."
+                action: "성경 번역본 보기"
             make_yours: 
                 title: "Make it your Bible"
-                body: "Highlight or Bookmark your favorite verses, make Verse Images that you can share, and attach public or private Notes to Bible passages."
-                action: "Create Your Free Account"
+                body: "좋아하는 말씀들을 하이라이트 또는 책갈피 하세요. 공유하고 싶은 말씀 이미지를 만드세요. 성경 구절에 공개적 또는 비공개 노트를 만드세요. "
+                action: "무료 계정 만들기"
             install_now: 
                 title: "Install the App Now"
-                body: "The Bible App is completely free, with no advertising and no in-app purchases. It's been installed on this many unique devices (so far):"
+                body: "성경 앱은 광고가 없고 구매가 필요 없는 무료 앱입니다. 지금까지 아래 처럼 많은 기기에 설치되었습니다"
                 action: "무료 성경 앱 다운로드"
             free_plans: 
                 title: "Free Reading Plans and Devotionals"
-                body: "Bible Plans help you engage with God's Word every day, a little at a time."
-            browse_plans: "Browse All Plans"
+                body: "묵상 계획은 여러분을 매일 하나님의 말씀에 한 걸음씩 가깝게 인도합니다."
+            browse_plans: "모든 묵상 계획 검색"
             read_listen: "Read, Listen, Watch, Share"
             start_now: "지금 시작하기"
             votd: 
                 title: "오늘의 말씀"
-                highlight_bookmark: "Highlight, Bookmark, or share this verse"
+                highlight_bookmark: "하이라이트,  책갈피 혹은 공유 하기"
                 subscribe: "Subscribe to the Verse of the Day"
             hero: 
                 heading: "스마트 폰, 태블렛, 컴퓨터용 무료 성경"
