@@ -21,6 +21,7 @@ YouversionWeb::Application.routes.draw do
   get "/day-of-the-bible", to: redirect("http://blog.youversion.com/2015/11/its-international-day-of-the-bible/")
   get "/thanksgiving", to: redirect("http://blog.youversion.com/?p=18397")
   get "/200million",    to: redirect("http://installs.youversion.com/200million/index.html")
+  get "/christmas-2015", to: redirect("http://blog.youversion.com/?p=18881")
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"
