@@ -331,7 +331,9 @@ angular.module('yv.reader', [
 
         function finishFill() {
             getVersionIdFromAbbr($scope.reader_version).then(function(reader_version_id) {
-                $scope.reader_version_id = reader_version_id;
+            		if (reader_version_id) {
+                	$scope.reader_version_id = reader_version_id;
+                }
 
                 if ($scope.reader_version_id && typeof $scope.reader_version_id !== 'undefined') {
                     Highlights.get($scope.reader_version_id, $scope.usfm).success(function (data) {
