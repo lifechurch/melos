@@ -90,7 +90,10 @@
   -# Reader Text
   -#
   %script{'type' => 'text/ng-template', 'id' => '/reader.tpl.html'}
-    %div{ "ng-style" => "{ 'font-size': fontSize + 'px', 'font-family': fontFamily}", "ng-html-compile"=>"content" }
+    %div{ "ng-style" => "{ 'font-size': fontSize + 'px', 'font-family': fontFamily}"}
+      %span{"ng-html-compile"=>"content"}
+      .copyright
+        %p{ "ng-html-compile" => "copyright" }
 
 
   -#

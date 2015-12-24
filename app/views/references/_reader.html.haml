@@ -84,7 +84,7 @@
     &nbsp;
 
   .reader-center.large-6.columns{class: controller_name == 'subscriptions' ? 'ng-hide' : '', "ng-show" => "!isPlanState || (planContentReady && showContent)", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
-    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "selection-text" => "readerSelectionText", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes", "show-numbers-and-titles" => "showNumbersAndTitles"}
+    #reader.reader{"reader" => true, "content" => "reader_html", "selection" => "readerSelection", "selection-text" => "readerSelectionText", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes", "show-numbers-and-titles" => "showNumbersAndTitles", "copyright" => "reader_copyright"}
       = presenter.content.html_safe if presenter.content
       -# Read Chapter button
       - if verse_view
@@ -97,11 +97,12 @@
           %a{href:"/app", class: "solid-button mobile-full blue"}
             = t('mobile page.download now')
       .copyright
-        = (version.blurb || version.copyright).try :html_safe
+        %span.from_server{"ng-hide" => "copyright"}
+          = (version.blurb || version.copyright).try :html_safe
 
   - if (controller_name == 'references')
     .medium-10.large-6.columns{"ng-show" => "isParallelMode", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
-      #parallel_reader.reader{"ng-hide" => "isPlanState", "reader" => true, "content" => "parallel_reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes"}
+      #parallel_reader.reader{"ng-hide" => "isPlanState", "reader" => true, "content" => "parallel_reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes", "copyright" => "parallel_reader_copyright"}
 
   .reader-right.large-3.columns.verse-action-panels-container{"ng-hide" => "isParallelMode || (showContent && isMobile)"}
     - if (controller_name != 'references' && right_sidebar_presenter.present?)

@@ -250,6 +250,13 @@ angular.module('yv.reader', [
     function loadBooks(versionId) {
         Versions.getSingle(versionId).success(function(v) {
           $scope.reader_book_list = v[0].books;
+          
+          if (v && v[0].copyright_short && v[0].copyright_short.text) {
+          	$scope.reader_copyright = v[0].copyright_short.text;
+          } else {
+          	$scope.reader_copyright = "";
+          }
+
           for (var b = 0; b < $scope.reader_book_list.length; b++) {
               var book = $scope.reader_book_list[b];
               if (book.human == $scope.reader_book) {

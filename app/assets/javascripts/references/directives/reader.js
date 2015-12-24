@@ -13,7 +13,8 @@ angular.module('reader.reader',  [])
 			showCrossReferences: '=',
 			showNumbersAndTitles: '=',
 			highlights: '=',
-			bookmarks: '='
+			bookmarks: '=',
+			copyright: '='
 		},
 		controller: ["$scope",  function($scope) {
 			angular.extend($scope, UserSettings.get("ReaderTextSettings"));
