@@ -6,7 +6,9 @@
 
 :ruby
   @blurb = if params[:source] && params[:source] != "licenses"
-    t("registration.#{params[:source]} blurb")
+    if ["benefits", "plan", "bookmark", "friends", "share", "highlight", "note"].include? params[:source]
+      t("registration.#{params[:source]} blurb")
+    end
   elsif params[:redirect] && params[:redirect].match(/reading\-plans/)
     t("registration.plan blurb")
   end
