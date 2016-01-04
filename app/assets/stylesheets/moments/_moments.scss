@@ -515,3 +515,13 @@ md-progress-linear:not([md-mode="indeterminate"]) .md-container {
     margin: 0 10px 0 0;
   }
 }
+
+article.error {
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+}
