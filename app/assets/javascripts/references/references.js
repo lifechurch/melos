@@ -86,6 +86,7 @@ angular.module('yv.reader', [
 	$scope.bookmarks = [];
 	$scope.notes = [];
 	$scope.isPlanState = ['planSample', 'planSample-locale', 'userPlan', 'userPlan-locale'].indexOf($state.current.name) > -1;
+    $scope.isPlanSampleState = ['planSample', 'planSample-locale'].indexOf($state.current.name) > -1;
 	$scope.planContentReady = false;
 	$scope.devotionalActive = false;
 	$scope.devotionalComplete = false;
@@ -301,7 +302,7 @@ angular.module('yv.reader', [
         if (!$scope.usfm) {
             var nextOrPrevRef = newScope.next_chapter_hash || newScope.previous_chapter_hash;
 
-            if (nextOrPrevRef && nextOrPrevRef.usfm && nextOrPrevRef.usfm.length) {
+            if (nextOrPrevRef && nextOrPrevRef.usfm && nextOrPrevRef.usfm.length && nextOrPrevRef.usfm[0]) {
                 var usfm = nextOrPrevRef.usfm[0];
                 var usfmParts = usfm.split('.');
                 usfmParts[1] = newScope.reader_chapter.toString();
@@ -960,16 +961,18 @@ angular.module('yv.reader', [
 
     if ($scope.isPlanState) {
         $scope.day = $location.search().day;
-        Subscription.getRefs($location.path(), $scope.day, $stateParams.plan ).success(function (resp) {
-            $scope.orderedRefs = resp;
-            orderedRefToUsfm($scope.orderedRefs[0].reference).then(function(usfm) {
-               $scope.usfm = usfm;
-            }, function(err) {
+        if (!$scope.isPlanSampleState) {
+            Subscription.getRefs($location.path(), $scope.day, $stateParams.plan).success(function (resp) {
+                $scope.orderedRefs = resp;
+                orderedRefToUsfm($scope.orderedRefs[0].reference).then(function (usfm) {
+                    $scope.usfm = usfm;
+                }, function (err) {
+
+                });
+            }).error(function (err) {
 
             });
-        }).error(function (err) {
-
-        });
+        }
     } else {
         $timeout(function() {
             loadVersions().then(function(data) {
