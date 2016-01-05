@@ -6,6 +6,8 @@
     searchKey = "plans"
   elsif ['users'].include? controller_name
     searchKey = "users"
+  elsif ['search'].include? controller_name
+    searchKey = params[:category]
   else
     searchKey = "bible"
   end
