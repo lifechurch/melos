@@ -22,10 +22,11 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 		scope: {
 			data: '=',
 			single: '=',
-			socialEnabled: '='
+			socialEnabled: '=',
+            deleted: '='
 		},
 		templateUrl: '/moment.tpl.html',
-		controller: ["$scope", "Like", "Comment", "$state", "$mdMenu", "$element", "$timeout", "$stateParams", "$state", "$window", function($scope, Like, Comment, $state, $mdMenu, $element, $timeout, $stateParams, $state, $window) {
+		controller: ["$scope", "Like", "Comment", "$state", "$mdMenu", "$element", "$timeout", "$stateParams", "$state", "$window", "Moments", function($scope, Like, Comment, $state, $mdMenu, $element, $timeout, $stateParams, $state, $window, Moments) {
 			$scope.newComment = {};
 
             $scope.getVerseUrl = function(usfm, version) {
@@ -92,6 +93,7 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 							}
 						}
 						data.time_ago = "Just now";
+                        data.owned_by_me = true;
 						$scope.data.object.comments.all.push(data);
 
 					}).error(function(err) {
@@ -133,7 +135,27 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
                 if (!$scope.single && $scope.data.object.id) {
                     $state.go("moment", { momentId: $scope.data.object.id});
                 }
-            }
+            };
+
+            $scope.delete = function(moment) {
+                $scope.deleted = true;
+                if ($scope.data.object.actions.deletable) {
+                    Moments.delete($scope.data.object.path).success(function() {
+
+                    }).error(function() {
+                        $scope.deleted = false;
+                    });
+                }
+            };
+
+            $scope.deleteComment = function(comment) {
+               $scope.data.object.comments.all.splice($scope.data.object.comments.all.indexOf(comment), 1);
+               Comment.delete(comment.id).success(function() {
+
+               }).error(function() {
+
+               });
+            };
 		}]
 	};
 })

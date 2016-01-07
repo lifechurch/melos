@@ -13,6 +13,9 @@ angular.module("api.moments", [])
         getSingle: function(id) {
             var url = "/moments/" + id;
             return RailsHttp.get(url, false, {});
+        },
+        delete: function(path) {
+            return RailsHttp.delete(path);
         }
 	};
 }])

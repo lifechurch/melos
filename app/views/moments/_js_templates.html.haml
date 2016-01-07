@@ -25,7 +25,7 @@
 -# Moment
 -#
 %script{'type' => 'text/ng-template', 'id' => '/moment.tpl.html'}
-  .moment.moment-vod
+  .moment.moment-vod{"ng-hide" => "deleted"}
     .moment-top{"ng-click" => "goSingle()", "ng-class" => "{ hasLink: !single && data.object.id }"}
       .moment-top-avatar
         %img.avatar{"ng-src" => "{{data.object.avatar}}"}
@@ -59,7 +59,7 @@
             %a{"md-menu-origin" => true, title: t("moments.action.more"), "ng-click" => "openMenu($mdOpenMenu, $event)"}
               =t("moments.action.more")
             %md-menu-content{:width => "4"}
-              .more-menu{"more-menu" => true, "moment" => "data"}
+              .more-menu{"more-menu" => true, "moment" => "data", "delete" => "delete"}
       .moment-likes{"ng-if" => "data.object.likes.enabled && data.object.likes.count && socialEnabled"}
         .moment-likes-count
           %a{:href => "#", "ng-if" => "data.object.likes.count == 1"} {{data.object.likes.count}} #{t("moments.like")}
@@ -79,6 +79,9 @@
                 {{comment.content}}
               %span.moment-comment-dt{:title => "{{comment.created_dt}}"}
                 {{comment.time_ago}}
+                %a{"ng-click"=>"deleteComment(comment)", "ng-if" => "comment.owned_by_me || data.object.owned_by_me"}
+                  =t("moments.action.delete")
+
         .moment-comments-self-box
           .moment-comments-self-avatar
             %img{:alt => "", :src => current_user.user_avatar_url["px_48x48"]}
@@ -203,6 +206,9 @@
   %md-menu-item{"ng-if" => "moment.object.actions.about_plan"}
     %md-button{"ng-href" => "{{moment.object.action_url}}", target: "_self"}
       =t("moments.action.about plan")
+  %md-menu-item{"ng-if" => "moment.object.actions.deletable"}
+    %md-button{"ng-click" => "delete()"}
+      =t("moments.action.delete")
   %md-menu-item{"ng-if" => "moment.object.actions.start_plan"}
     %md-button{"ng-click" => "startPlan('#{t('ui.plans.privacy')}', '#{t('ui.yes button')}', '#{t('ui.no button')}', '#{t('ui.cancel')}', '#{t('moments.action.start plan')}', '#{subscriptions_path(user_id: current_user.to_param)}', '#{form_authenticity_token}', $event)"}
       =t("moments.action.start plan")
