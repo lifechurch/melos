@@ -149,7 +149,6 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
             };
 
             $scope.deleteComment = function(comment) {
-               console.log(comment, $scope.data);
                $scope.data.object.comments.all.splice($scope.data.object.comments.all.indexOf(comment), 1);
                Comment.delete(comment.id).success(function() {
 
