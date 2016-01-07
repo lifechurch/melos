@@ -611,6 +611,13 @@ ul.plan-results {
 
     &.today {
       font-weight: bold;
+      a {
+        color: $green;
+
+        &:hover {
+          color: $green;
+        }
+      }
     }
 
     a {
