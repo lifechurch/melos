@@ -91,6 +91,7 @@ angular.module('yv.reader', [
 	$scope.devotionalActive = false;
 	$scope.devotionalComplete = false;
 	$scope.month = 0;
+    $scope.maxMonth = -1;
     $scope.refUsfms = {};
     $scope.planDays = {};
     $scope.orderedRefs = [];
@@ -143,7 +144,6 @@ angular.module('yv.reader', [
 	 * Load bible chapter from url path
 	 */
 	function loadChapter(location_path, hideDevotional) {
-//        console.log('LoadChapter.1');
 		// Reset some scope vars
 		$scope.working = true;
 		$scope.showReaderBooks = false;
@@ -188,7 +188,6 @@ angular.module('yv.reader', [
             var promise = $state.go(toState, toParams, { notify: false});
             promise.then(function() {
                 // add g.a. virtual pageview
-                // console.log($location.path());
                 dataLayer.push({
                     'event': 'VirtualPageview',
                     'virtualPageURL': $location.path(),
@@ -560,7 +559,6 @@ angular.module('yv.reader', [
     }
 
     $scope.completeReferenceAndLoadChapter = function(toState, toParams, refUsfm, userPlanUrl, dayTarget, token) {
-//        console.log('completeReferenceAndLoadChapter');
         $scope.working = true;
         var version = $scope.reader_version_id;
         var usfm = $scope.refUsfm;
@@ -626,7 +624,6 @@ angular.module('yv.reader', [
     };
 
     $scope.loadChapter = function(toState, toParams) {
-//        console.log('LoadChapter.2');
         if (toState === null) {
             toState = $state.current.name;
         } else if (['userPlan', 'userPlan-locale'].indexOf(toState) > -1) {
@@ -925,6 +922,18 @@ angular.module('yv.reader', [
 
     $scope.inNonDefaultLocale = function() {
       return $stateParams.hasOwnProperty('locale');
+    };
+
+    $scope.advanceMonth = function(step) {
+        if ($scope.month + step <= $scope.maxMonth && $scope.month + step >= 0) {
+            $scope.month += step;
+        }
+    };
+
+    $scope.checkMaxMonth = function(i) {
+        if (i > $scope.maxMonth) {
+            $scope.maxMonth = i;
+        }
     };
 
 

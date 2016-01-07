@@ -6,16 +6,16 @@
 - month = 0
 - while !statuses.empty?
   .plan-calendar-list
-    %table.cal_month{:cellspacing => "0", :cellpadding => "0", "ng-show" => "month == #{month}" + (showAll ? ' || true' : ''), "class" => showAll ? '' : 'ng-hide'}
+    %table.cal_month{:cellspacing => "0", :cellpadding => "0", "ng-show" => "month == #{month}" + (showAll ? ' || true' : ''), "class" => showAll ? '' : 'ng-hide', "ng-init" => "checkMaxMonth(#{month})"}
       :ruby
         first_date = Date.parse(statuses.first.date)
         last_date = first_date.next_month - (first_date.next_month.day)
         full_month = false
       %caption
-        %a{"ng-click" => "month = month - 1", "ng-show" => "month > 0"}= '<<'
+        %a{"ng-click" => "advanceMonth(-1)", "ng-show" => "month > 0"}= '<<'
         %span
           =first_date.strftime('%B %Y')
-        %a{"ng-click" => "month = month + 1", "ng-show" => "month < #{statuses.length}"}= '>>'
+        %a{"ng-click" => "advanceMonth(1)", "ng-show" => "month < maxMonth"}= '>>'
       %thead
         %tr
           -days_of_week.each do |day|
@@ -32,6 +32,8 @@
               - if full_month
                 %td.disabled.hidden
               - else
+                - if cur_date == current_date
+                  %span.ng-hide{"ng-init" => "month = #{month}"}
                 - if cur_date.month != first_date.month || cur_date < first_date || statuses.empty?         # if not in current month  -OR-  not a day on the plan
                   - if cur_date.month != first_date.month
                     %td.disabled{class: cur_date == current_date ? "today" : ""}
