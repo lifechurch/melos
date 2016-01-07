@@ -5,10 +5,11 @@ angular.module('yv.moments.moreMenu', [])
             replace: false,
             restrict: 'A',
             scope: {
-              moment: '='
+              moment: '=',
+              delete: '='
             },
             templateUrl: '/moment-more-menu.tpl.html',
-            controller: [ '$scope', '$mdDialog', '$window', 'Subscription', function($scope, $mdDialog, $window, Subscription) {
+            controller: [ '$scope', '$mdDialog', '$window', 'Subscription', 'Moments', function($scope, $mdDialog, $window, Subscription, Moments) {
                 $scope.getReadLink = function(basePath) {
                     var version_id = 1;
                     var usfm;
