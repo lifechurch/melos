@@ -93,6 +93,7 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 							}
 						}
 						data.time_ago = "Just now";
+                        data.owned_by_me = true;
 						$scope.data.object.comments.all.push(data);
 
 					}).error(function(err) {

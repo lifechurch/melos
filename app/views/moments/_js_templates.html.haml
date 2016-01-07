@@ -79,7 +79,7 @@
                 {{comment.content}}
               %span.moment-comment-dt{:title => "{{comment.created_dt}}"}
                 {{comment.time_ago}}
-                %a{"ng-click"=>"deleteComment(comment)"}
+                %a{"ng-click"=>"deleteComment(comment)", "ng-if" => "comment.owned_by_me"}
                   =t("moments.action.delete")
 
         .moment-comments-self-box
