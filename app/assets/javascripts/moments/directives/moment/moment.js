@@ -141,10 +141,20 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
                 if ($scope.data.object.actions.deletable) {
                     Moments.delete($scope.data.object.path).success(function() {
 
-                    }, function() {
+                    }).error(function() {
                         $scope.deleted = false;
-                    })
+                    });
                 }
+            };
+
+            $scope.deleteComment = function(comment) {
+               console.log(comment, $scope.data);
+               $scope.data.object.comments.all.splice($scope.data.object.comments.all.indexOf(comment), 1);
+               Comment.delete(comment.id).success(function() {
+
+               }).error(function() {
+
+               });
             };
 		}]
 	};

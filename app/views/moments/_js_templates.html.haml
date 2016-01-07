@@ -79,6 +79,9 @@
                 {{comment.content}}
               %span.moment-comment-dt{:title => "{{comment.created_dt}}"}
                 {{comment.time_ago}}
+                %a{"ng-click"=>"deleteComment(comment)"}
+                  =t("moments.action.delete")
+
         .moment-comments-self-box
           .moment-comments-self-avatar
             %img{:alt => "", :src => current_user.user_avatar_url["px_48x48"]}
