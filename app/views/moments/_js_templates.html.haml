@@ -206,9 +206,6 @@
   %md-menu-item{"ng-if" => "moment.object.actions.about_plan"}
     %md-button{"ng-href" => "{{moment.object.action_url}}", target: "_self"}
       =t("moments.action.about plan")
-  %md-menu-item{"ng-if" => "moment.object.actions.editable"}
-    %md-button{"ng-href" => "{{moment.object.action_url}}", target: "_self"}
-      =t("moments.action.edit")
   %md-menu-item{"ng-if" => "moment.object.actions.deletable"}
     %md-button{"ng-click" => "delete()"}
       =t("moments.action.delete")
