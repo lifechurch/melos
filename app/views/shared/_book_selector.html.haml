@@ -92,7 +92,6 @@
             %a{"ng-click" => "showChapters(book)", "ng-if" => "!book.labelOnly"}
               = "{{book.human}}"
               -#%b{"ng-if" => "sort"} ( {{book.canon | uppercase}} )
-            %h5.bookLabel{"ng-if" => "book.labelOnly"} {{book.human}}
 
   %script{'type' => 'text/ng-template', 'id' => '/reader-chapter-selector.tpl.html'}
     .row
