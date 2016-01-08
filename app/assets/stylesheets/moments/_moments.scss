@@ -536,3 +536,12 @@ article.error {
     text-align: center;
   }
 }
+
+
+/* !Loading spinner */
+
+md-progress-circular {
+  position: absolute;
+  top: 0;
+  left: 45%;
+}
