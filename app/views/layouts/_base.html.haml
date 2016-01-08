@@ -16,7 +16,7 @@
     = render '/shared/head'
     = render '/shared/javascripts'
 
-  %body{onload: "init()"}
+  %body{onload: "init()", class: "c_#{params[:controller]} a_#{params[:action]}"}
     = render '/shared/google_analytics'
     #wrapper
       = content_for?(:header) ? yield(:header) : render("/shared/header/default")
