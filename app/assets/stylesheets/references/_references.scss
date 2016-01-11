@@ -835,3 +835,12 @@ body.c_references.a_show {
     margin-top: 20px;
   }
 }
+
+md-progress-linear[md-mode="indeterminate"] .md-container,
+md-progress-linear[md-mode="indeterminate"] .md-container .md-bar {
+  height: 2px;
+}
+
+md-progress-linear[md-mode="indeterminate"] .md-container {
+  top: -1px;
+}
