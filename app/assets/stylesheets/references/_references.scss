@@ -835,7 +835,16 @@ body.c_references.a_show {
     margin-top: 20px;
   }
   #svp_share {
-   margin: 20px 0;
+    margin: 20px 0;
   }
+}
+
+md-progress-linear[md-mode="indeterminate"] .md-container,
+md-progress-linear[md-mode="indeterminate"] .md-container .md-bar {
+  height: 2px;
+}
+
+md-progress-linear[md-mode="indeterminate"] .md-container {
+  top: -1px;
 }
 
