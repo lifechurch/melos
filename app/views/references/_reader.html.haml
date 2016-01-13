@@ -88,6 +88,8 @@
       = presenter.content.html_safe if presenter.content
       -# Read Chapter button
       - if verse_view
+        - share_url = "https://www.bible.com/bible#{get_localized_reference_link(presenter.reference, I18n.locale.to_s)}"
+        %div#svp_share.addthis_sharing_toolbox{"data-url" => "#{share_url}", "data-title" => "#{reference.human}"}
         #read_chapter
           %a{href: reference_path(reference: reference.chapter_usfm.downcase)}
             %h2
