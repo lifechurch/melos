@@ -689,6 +689,12 @@ div[audio-data="reader_audio"] {
       padding: 0.4375rem 0;
     }
   }
+
+  .side-nav {
+    li:first-child {
+      display: none;
+    }
+  }
 }
 
 #reader-chapter-dropdown {
