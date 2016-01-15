@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-polyfill": "^6.3.14",
     "babel-preset-react": "^6.3.13",
     "babel-register": "^6.3.13",
