@@ -1,0 +1,12 @@
+---
+
+- hosts:
+   - node
+  roles:
+    - { role: common, tags: ['common'] }
+    - { role: passenger, tags: ['passenger'] }
+    - { role: nodejs, tags: ['nodejs'] }
+  become: yes
+  vars:
+    iptables_rules_group:
+      - iptables -A INPUT -m tcp -p tcp -s 10.0.0.0/8 --dport 80 -j ACCEPT

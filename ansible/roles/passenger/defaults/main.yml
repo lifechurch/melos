@@ -1,0 +1,6 @@
+---
+# defaults file for passenger
+
+passenger_enterprise_stages:
+  - production
+  - staging
