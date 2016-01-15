@@ -10,6 +10,7 @@
     "babel-polyfill": "^6.3.14",
     "babel-preset-react": "^6.3.13",
     "babel-register": "^6.3.13",
+    "bluebird": "^3.1.1",
     "body-parser": "~1.13.2",
     "compression": "^1.6.0",
     "counterpart": "^0.17.1",
