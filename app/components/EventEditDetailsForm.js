@@ -7,11 +7,12 @@ import { Link } from 'react-router'
 class EventEditDetailsForm extends Component {
 	render() {
 		const { handleChange, handleSubmit, event  } = this.props
+		console.log("EVENT", event)
 		return (
 			<form className="event-edit-details-form">
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<input type="text" className='large' placeholder="Event Name" name='title' onChange={handleChange} />
+						<input type="text" className='large' placeholder="Event Name" name='title' onChange={handleChange} value={event.item.title} />
 					</div>
 				</Row>
 				
@@ -19,13 +20,13 @@ class EventEditDetailsForm extends Component {
 				
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<input type="text" className='medium' placeholder="Church Name or Organization" name="org_name" onChange={handleChange} />
+						<input type="text" className='medium' placeholder="Church Name or Organization" name="org_name" onChange={handleChange} value={event.item.org_name} />
 					</div>
 				</Row>
 
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<textarea placeholder="Event Description" name="description" onChange={handleChange}></textarea>
+						<textarea placeholder="Event Description" name="description" onChange={handleChange} value={event.item.description}></textarea>
 					</div>
 				</Row>
 				
@@ -36,6 +37,14 @@ class EventEditDetailsForm extends Component {
 				</Row>
 			</form>
 		)
+	}
+}
+
+EventEditDetailsForm.defaultProps = {
+	event: {
+		item: {
+			title: null
+		}
 	}
 }
 

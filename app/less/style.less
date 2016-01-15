@@ -1,3 +1,5 @@
+@import (inline) "../../node_modules/react-datepicker/dist/react-datepicker.css";
+
 body {
 	font-family: ArialMT;
 }
@@ -91,7 +93,7 @@ input[type=text] {
 	color: #979797;	
 	border: none;
 	border-bottom: 1px solid #CCCCCC;	
-	
+
 	&.large {
 		font-size: 24px;
 		line-height: 28px;
@@ -102,6 +104,11 @@ input[type=text] {
 		font-size: 20px;
 		line-height: 22.5px;
 		padding-bottom: 10px !important;		
+	}
+
+	&.small {
+		font-size: 15px;
+		line-height: 24px;
 	}
 }
 
@@ -114,5 +121,57 @@ textarea {
 .event-edit-details-form {
 	.row {
 		padding-bottom: 15px;
+	}
+}
+
+.location-container {
+	width: 100%;
+	height: 300px;
+	border: 1px solid #DDDDDD;
+	border-radius: 5px;	
+}
+
+.modal-title {
+	font-family: Arial-BoldMT;
+	font-size: 15px;
+	color: #353535;
+	line-height: 17px;
+}
+
+.modal-body {
+	background: #F4F4F4;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+.modal-body-block {
+	background: #FFFFFF;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.27);
+	border-radius: 2px 2px 0px 2px 2px;	
+	padding: 20px;
+	margin-top: 20px;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	form {
+		margin-bottom: 10px;
+	
+		label {
+			input {
+				margin-bottom: 5px;
+				padding-left: 0 !important;
+				color: #353535;
+			}
+
+			span {
+				font-size: 12px;
+				color: #979797;
+				font-weight: normal;			
+			}
+		}
 	}
 }

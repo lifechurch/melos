@@ -19,7 +19,8 @@ export function event(state = {}, action) {
 			return Object.assign({}, state, { hasError: true, errors: action.error.errors, isFetching: false, isSaving: false, isDirty: false, detailsValid: isEventDetailsValid(state.item) })
 
 		case EVENT_VIEW_REQUEST:
-			return Object.assign({}, state, { isFetching: true, isSaving: false, isDirty: false, detailsValid: isEventDetailsValid(state.item) })
+			let item = Object.assign({}, state.item)
+			return Object.assign({}, state, { item, isFetching: true, isSaving: false, isDirty: false, detailsValid: isEventDetailsValid(state.item) })
 
 		case EVENT_CREATE_SUCCESS:
 			return Object.assign({}, state, { item: action.data, hasError: false, errors: [], isFetching: false, isSaving: false, isDirty: false, detailsValid: isEventDetailsValid(action.data) })

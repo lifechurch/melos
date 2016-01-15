@@ -1,13 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import EventEditDetailsForm from '../components/EventEditDetailsForm'
-import { eventSetDetails } from '../actions/eventCreate'
+import { eventSetDetails, createEvent, updateEvent } from '../actions/eventCreate'
 
 class EventEditDetails extends Component {
 
 	constructor(props) {
 		super(props)
 		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
 	handleChange(event) {
@@ -16,8 +17,16 @@ class EventEditDetails extends Component {
 		dispatch(eventSetDetails(name, value))
 	}
 
-	handleSubmit(event) {
-		console.log("Submitted")
+	handleSubmit(submitEvent) {
+		const { dispatch, event } = this.props		
+		if (event.detailsValid) {
+			if (event.item.id) {
+				dispatch(updateEvent(event.item))
+			} else {
+				dispatch(createEvent(event.item))				
+			}
+		}
+
 	}
 
 	render() {

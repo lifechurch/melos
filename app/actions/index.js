@@ -35,6 +35,13 @@ import {
 	EVENT_SET_DETAILS
 } from './eventCreate'
 
+import {
+	openModal,
+	closeModal,
+	OPEN_MODAL,
+	CLOSE_MODAL
+} from './modals'
+
 export {
 	fetchEventFeedDiscover,
 	fetchEventFeedMine,
@@ -57,5 +64,9 @@ export {
 	EVENT_CREATE_SUCCESS,
 	EVENT_CREATE_REQUEST,
 	EVENT_CREATE_FAILURE,
-	EVENT_SET_DETAILS
+	EVENT_SET_DETAILS,
+	OPEN_MODAL,
+	CLOSE_MODAL,
+	openModal,
+	closeModal
 }

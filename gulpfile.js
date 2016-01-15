@@ -10,7 +10,7 @@ var concat 	= require('gulp-concat');
 
 gulp.task('javascript', function() {
 	browserify("app/main.js")
-		.transform("babelify", { presets: [ "es2015", "react" ] })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
 		.bundle()
 		.pipe(source('app.js'))
 		.pipe(buffer())

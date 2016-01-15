@@ -35,6 +35,7 @@ export function fetchEventFeedMine() {
 			.setVersion("3.2")
 			.setEnvironment("staging")
 			.params({query: 'Life.Church'})	
+			.auth('ignacio', 'password')		
 			.get()
 			.then(function(data) {
 				handleResponse(data).then((data) => {

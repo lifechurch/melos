@@ -3,6 +3,7 @@ export function isNotBlank(object, keys) {
 		return 	object && 
 						typeof(object) === "object" && 
 						object.hasOwnProperty(key) && 
+						object[key] &&
 						object[key].hasOwnProperty('length') &&
 						object[key].length > 0
 	})

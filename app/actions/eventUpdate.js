@@ -1,29 +1,28 @@
 import { getClient } from 'youversion-node-api'
 import { handleResponse } from './common'
 
-export const EVENT_CREATE_REQUEST = 'EVENT_CREATE_REQUEST'
-export const EVENT_CREATE_SUCCESS = 'EVENT_CREATE_SUCCESS'
-export const EVENT_CREATE_FAILURE = 'EVENT_CREATE_FAILURE'
-export const EVENT_SET_DETAILS = 'EVENT_SET_DETAILS'
+export const EVENT_UPDATE_REQUEST = 'EVENT_UPDATE_REQUEST'
+export const EVENT_UPDATE_SUCCESS = 'EVENT_UPDATE_SUCCESS'
+export const EVENT_UPDATE_FAILURE = 'EVENT_UPDATE_FAILURE'
 
 var EventsApi = getClient('events')
 
-function eventCreateRequest() {
+function eventUpdateRequest() {
 	return {
-		type: EVENT_CREATE_REQUEST
+		type: EVENT_UPDATE_REQUEST
 	}
 }
 
-function eventCreateSuccess(data) {
+function eventUpdateSuccess(data) {
 	return {
-		type: EVENT_CREATE_SUCCESS,
+		type: EVENT_UPDATE_SUCCESS,
 		data: data
 	}
 }
  
-function eventCreateFailure(error) {
+function eventUpdateFailure(error) {
 	return {
-		type: EVENT_CREATE_FAILURE,
+		type: EVENT_UPDATE_FAILURE,
 		error: error
 	}
 }
@@ -36,12 +35,12 @@ export function eventSetDetails(field, value) {
 	}
 }
 
-export function createEvent(event) {
+export function updateEvent(event) {
 	const { title, org_name, description } = event
 	return dispatch => {
-		dispatch(eventCreateRequest())
+		dispatch(eventUpdateRequest())
 		return EventsApi
-			.call("create")
+			.call("update")
 			.setVersion("3.2")
 			.setEnvironment("staging")
 			.auth('ignacio', 'password')
@@ -49,12 +48,12 @@ export function createEvent(event) {
 			.post()
 			.then(function(data) {
 				handleResponse(data).then((data) => {
-					dispatch(eventCreateSuccess(data))
+					dispatch(eventUpdateSuccess(data))
 				}, (error) => {
-					dispatch(eventCreateFailure(error))
+					dispatch(eventUpdateFailure(error))
 				})
 			}, function(error) {
-				dispatch(eventCreateFailure(error))
+				dispatch(eventUpdateFailure(error))
 			})
 	}
 }

@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var compression = require('compression');
 var api = require('youversion-node-api');
 
-require("babel-register")({ presets: [ "es2015", "react" ] });
+require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] });
 
 var reactServer = require('./react-server');
 

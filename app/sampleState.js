@@ -236,5 +236,8 @@ export default {
 			items: [
 			]
 		},		
+	},
+	loc: {
+		place: {}
 	}
 }
