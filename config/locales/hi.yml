@@ -161,10 +161,10 @@ hi:
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
-            twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
-            twitter hashtags: "kidsbible"
+            twitter description: "बच्चों के लिए बाइबिल App @YouVersion यहाँ उपलब्ध हैं! निःशुल्क और मज़ेदार  डाउनलोड: bible.com/kids"
+            twitter hashtags: "नन्हे मुन्नों की बाइबिल "
             email: "इमेल"
-            email subject: "The Bible App for Kids is here!"
+            email subject: "बच्चों की बाइबिल एप्प अभी उपलब्ध!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
         partner: 
             youversion: "YouVersion: The world’s most popular Bible App"
@@ -1034,7 +1034,7 @@ hi:
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        download: "कृपया डाउनलोड करें"
     about page: 
         relevancy: "प्रासंगिकता"
         relevancy copy: "हमारे अतीत की पीढ़ी को बाइबिल का एक्सेस बहुत सीमित था। आजकल यह मामला नहीं हैं। हालांकि कई लोग जो बाइबिल का उपयोग करते हैं उनका मान्यता यह हैं की यह सन्देश हमारे जीवन पर लागु नहीं होता वही दुसरे लोग हैं जिनकी मान्यता हैं की बाइबिल और उनके नित्य जीवन के अनुभव के बीच कनेक्शन हैं।"
