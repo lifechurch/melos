@@ -1,5 +1,5 @@
 # Welsh translations for Backend (YouVersion).
-# Copyright (C) 2015 LifeChurch.tv
+# Copyright (C) 2016 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-07-31 10:28-0609\n"
-"PO-Revision-Date: 2015-07-31 10:28-0609\n"
+"POT-Creation-Date: 2016-01-04 10:21-0600\n"
+"PO-Revision-Date: 2016-01-04 10:21-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cy <LL@li.org>\n"
 "Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-09-08 11:09-0609\n"
-"PO-Revision-Date: 2015-09-08 11:09-0609\n"
+"POT-Creation-Date: 2016-01-04 10:21-0600\n"
+"PO-Revision-Date: 2016-01-04 10:21-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cy <LL@li.org>\n"
 "Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
@@ -32,8 +32,8 @@ msgstr ""
 "#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-02-09 16:11-0600\n"
-"PO-Revision-Date: 2015-02-09 16:11-0600\n"
+"POT-Creation-Date: 2016-01-04 10:20-0600\n"
+"PO-Revision-Date: 2016-01-04 10:20-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cy <LL@li.org>\n"
 "Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
@@ -67,34 +67,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "Adnewydda dy ffydd gyda Chylluniau newydd."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "Cei ddoethineb yng Ngair Duw bob dydd."
+msgstr "Ceisiwch Dduw yn Ei Air bob dydd."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "Paratoa dy galon ar gyfer yr Ŵyl."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "Chwilia am dy hoff Gynllun Beibl yn Chwefror."
+msgstr "Canfyddwch gariad Duw yn Ei Air."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Mae'ch blwyddyn orau yn cychwyn nawr."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "Mae darllen Gair Duw bob dydd yn arwain i ryddid parhaol."
+msgstr "Dathlwch Ryddid yng Nghrist."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "Darganfod dy rhythm wrth droi i Air Duw bob dydd."
+msgstr "Ceisiwch Dduw yn Ei Air."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "Profa obaith ac adnewyddiad yng nghynlluniau Mawrth."
+msgstr "Canfyddwch obaith ac adnewyddiad yng Ngair Duw. "
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "Rho dy hun i geisio Duw drwy ei Air bob dydd."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "Darllen y Beibl bob dydd yn 2015. Mae cynlluniau'n helpu!"
+msgstr "Ymrowch eich hun i'w Air yn ddyddiol."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "Mae addewidion Duw yn arwain i ddiolchgarwch."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "Mae’r Gair hwn yn fyw. Gad iddo siarad gyda ti bob dydd."
+msgstr "Mae doethineb duwiol yn dechrau yng Ngair Duw."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "Mae Gair Duw yn gwneud popeth yn newydd."
