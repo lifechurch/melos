@@ -3,7 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var compression = require('compression');
-var api = require('youversion-node-api');
+var api = require('@youversion/js-api');
 
 require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] });
 

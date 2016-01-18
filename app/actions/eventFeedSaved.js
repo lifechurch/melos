@@ -1,4 +1,4 @@
-import { getClient } from 'youversion-node-api'
+import { getClient } from '@youversion/js-api'
 import { handleResponse } from './common'
 
 export const EVENT_FEED_SAVED_REQUEST = 'EVENT_FEED_SAVED_REQUEST'

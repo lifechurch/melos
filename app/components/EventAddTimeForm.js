@@ -46,14 +46,16 @@ function timeValues() {
 }
 
 function getState(start_dt, start_time, duration) {
-	console.log(start_dt.toISOString(), start_time, duration)
+	console.log(start_dt.toDate(), start_time, duration)
 	var new_start_dt = changeTime(start_dt, start_time)
-	console.log(new_start_dt.toISOString())
+	console.log(new_start_dt.toDate())
+	var new_end_dt = getEndDate(new_start_dt, start_time, duration)
+	console.log(new_end_dt.toDate())	
 	return {
 		start_dt: new_start_dt,
 		start_time: start_time,
 		duration: duration,
-		end_dt: getEndDate(new_start_dt, start_time, duration)
+		end_dt: new_end_dt
 	}
 }
 

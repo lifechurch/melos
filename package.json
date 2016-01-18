@@ -38,7 +38,7 @@
     "redux-simple-router": "^1.0.2",
     "redux-thunk": "^1.0.3",
     "serve-favicon": "~2.3.0",
-    "youversion-node-api": "../youversion-node-api"
+    "@youversion/js-api": "^0.0.1"
   },
   "devDependencies": {
     "babel-plugin-syntax-function-bind": "^6.3.13",

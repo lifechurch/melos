@@ -1,4 +1,4 @@
-import { getClient } from 'youversion-node-api'
+import { getClient } from '@youversion/js-api'
 import { handleResponse } from './common'
 import { getTimezone } from '../api/GoogleMaps'
 import keyMirror from 'keymirror'

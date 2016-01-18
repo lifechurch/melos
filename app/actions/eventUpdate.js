@@ -1,4 +1,4 @@
-import { getClient } from 'youversion-node-api'
+import { getClient } from '@youversion/js-api'
 import { handleResponse } from './common'
 
 export const EVENT_UPDATE_REQUEST = 'EVENT_UPDATE_REQUEST'
