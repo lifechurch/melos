@@ -17,24 +17,21 @@
         = hidden_field_tag(:type, type)
         = label_tag do
           = t('notes.version field')
-          = select_tag(:version_id, options_from_collection_for_select(versions, :id, :to_s, version_id || 1), :disabled => params[:token].present?)
+        = select_tag(:version_id, options_from_collection_for_select(versions, :id, :to_s, version_id || 1), :disabled => params[:token].present?)
   .row
     .columns.medium-12
       = label_tag do
         = "#{t('users.time')}:"
-        .row
-          .columns.medium-4
-            = select_tag :hour, options_for_select(allowed_hours, hour || "09"), :disabled => params[:token].present?
-          .columns.medium-4
-            = select_tag :minute, options_for_select(allowed_minutes, minute), :disabled => params[:token].present?
-          .columns.medium-4
-            = select_tag :meridian, options_for_select(['AM', 'PM'], meridian), :disabled => params[:token].present?
-        .row
-          .columns.medium-12
-            - if version_id.present? && !params[:token].present?
-              = submit_tag t('bookmarks.update'), class: 'solid-button green', :disabled => params[:token].present?
-            - elsif !params[:token].present?
-              = submit_tag t('users.subscribe'), class: 'solid-button green', :disabled => params[:token].present?
+      .votd-time
+        = select_tag :hour, options_for_select(allowed_hours, hour || "09"), :disabled => params[:token].present?
+        = select_tag :minute, options_for_select(allowed_minutes, minute), :disabled => params[:token].present?
+        = select_tag :meridian, options_for_select(['AM', 'PM'], meridian), :disabled => params[:token].present?
+      .row
+        .columns.medium-12
+          - if version_id.present? && !params[:token].present?
+            = submit_tag t('bookmarks.update'), class: 'solid-button green', :disabled => params[:token].present?
+          - elsif !params[:token].present?
+            = submit_tag t('users.subscribe'), class: 'solid-button green', :disabled => params[:token].present?
 
   - if version_id.present?
     = form_tag vod_subscription_path(type, token: params[:token]), method: :delete, class: 'vod_form_delete' do

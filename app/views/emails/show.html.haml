@@ -13,10 +13,8 @@
 = render partial: "shared/form_errors", locals: {errors: @results.errors} if @results
 
 = form_for @user, url: user_email_path(@user), method: :put do |u|
-  .row
-    .columns.medium-12
-      = u.label :email do
-        = u.text_field :email
-  .row
-    .columns.medium-12
-      = button_tag t('users.edit email'), class: "solid-button green"
+  %div
+    = u.label :email do
+      = u.text_field :email
+  %div
+    = button_tag t('users.edit email'), class: "solid-button green"
