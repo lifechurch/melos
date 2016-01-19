@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var compression = require('compression');
 var api = require('@youversion/js-api');
+var ping = require('./ping');
 
 require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] });
 
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', ping);
 app.use('/', api.expressRouter);
 
 // primary route handle for react-router

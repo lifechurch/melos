@@ -2,72 +2,108 @@ import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import Row from '../components/Row'
 import Column from '../components/Column'
-import { ActionCreators as ModalActionCreators } from '../actions/modals'
-import { ActionCreators as LocationActionCreators } from '../actions/loc'
-import AddLocationModal from '../components/AddLocationModal'
+import { ActionCreators } from '../actions/loc'
+import EditLocationForm from '../components/EditLocationForm'
+import Location from '../components/Location'
+import LocationAddButtons from '../components/LocationAddButtons'
 
 class EventEditLocation extends Component {
 	handleAddPhysicalLocationClick(clickEvent) {
 		const { dispatch } = this.props
-		dispatch(LocationActionCreators.addPhysical())
-		dispatch(ModalActionCreators.openModal('addLocation'))
+		dispatch(ActionCreators.addPhysical())
 	}
 
 	handleAddVirtualLocationClick(clickEvent) {
 		const { dispatch } = this.props
-		dispatch(LocationActionCreators.addVirtual())
-		dispatch(ModalActionCreators.openModal('addLocation'))
+		dispatch(ActionCreators.addVirtual())
 	}	
 
-	handleModalClose() {
+	handleCancel() {
 		const { dispatch } = this.props
-		dispatch(ModalActionCreators.closeModal('addLocation'))
+		dispatch(ActionCreators.cancelEdit())
 	}
 
 	handleChange(event) {
 		const { name, value } = event.target
 		const { dispatch } = this.props
-		dispatch(LocationActionCreators.setField(name, value))
+		dispatch(ActionCreators.setField(name, value))
+	}
+
+	handleChoosePlace(place) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.choosePlace(place))
+	}
+
+	handleSetTime(index, start_dt, end_dt) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.setTime(index, start_dt, end_dt))
+	}
+
+	handleAddTime() {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.addTime())
+	}
+
+	handleCreate() {
+		const { dispatch, event, loc } = this.props
+		dispatch(ActionCreators.create(event.item.id, loc))
+	}
+
+	handleRemove(locationId) {
+		const { dispatch, event } = this.props
+		dispatch(ActionCreators.remove(event.item.id, locationId))
+	}
+
+	handleEdit(loc) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.edit(loc))
 	}
 
 	render() {
-		const { dispatch, event, loc, modals } = this.props
+		const { dispatch, event, loc } = this.props
+
+		var locationEditor
+		if (loc.hasOwnProperty("type")) {
+			locationEditor = (<EditLocationForm  
+				handleCancel={::this.handleCancel} 
+				handleChange={::this.handleChange}
+				handleChoosePlace={::this.handleChoosePlace}
+				handleSetTime={::this.handleSetTime}
+				handleAddTime={::this.handleAddTime}
+				handleCreate={::this.handleCreate}
+				dispatch={dispatch} 
+				loc={loc} />
+			)
+		} 
+
+		var locations = event.item.locations.map((l) => {
+			return (<li><Location loc={l} handleRemove={::this.handleRemove} handleEdit={::this.handleEdit} /></li>)
+		})
+
+		var centerButtons
+		if (!(event.item && event.item.locations && event.item.locations.length > 0)) {
+			centerButtons = 'center-single-item'
+		}
+
+
 		return (			
 			<div>
 				<Helmet title="Event Location" />	
-				<AddLocationModal 
-					isOpen={modals.addLocation} 
-					handleClose={::this.handleModalClose} 
-					handleChange={::this.handleChange}
-					dispatch={dispatch} 
-					loc={loc} />
 				<Row>
 					<div className="medium-10 large-8 columns small-centered text-center">
-						<a className="hollow-button green" onClick={::this.handleAddPhysicalLocationClick}>Add a Physical Location</a>
-						<p>Does your event meet online? <a>Add times for virtual location</a></p>
-						<br /><br />
-						<a className="hollow-button green" onClick={::this.handleAddVirtualLocationClick}>Add Your Virtual Location</a>
-						<p>Does your event meet online? <a>Add times for virtual location</a></p>						
+						{locationEditor}
 					</div>
 				</Row>
 				<Row>
 					<div className="medium-10 large-8 columns small-centered text-center">
 						<ul className="medium-block-grid-3">
-							<li>
-								<div className='location-container'></div>
+							{locations}						
+							<li className={centerButtons}>
+								<LocationAddButtons 
+									handleAddPhysicalLocationClick={::this.handleAddPhysicalLocationClick} 
+									handleAddVirtualLocationClick={::this.handleAddVirtualLocationClick}>
+								</LocationAddButtons>
 							</li>
-							<li>
-								<div className='location-container'></div>
-							</li>
-							<li>
-								<div className='location-container'></div>
-							</li>
-							<li>
-								<div className='location-container'></div>
-							</li>
-							<li>
-								<div className='location-container'></div>
-							</li>																												
 						</ul>
 					</div>
 				</Row>

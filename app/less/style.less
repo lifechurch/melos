@@ -89,10 +89,12 @@ h1.eventPageTitle {
 	line-height: 14px;
 }
 
-input[type=text] {
+input[type=text], select {
 	color: #979797;	
 	border: none;
 	border-bottom: 1px solid #CCCCCC;	
+	border-radius: 0;
+	background-color: transparent;
 
 	&.large {
 		font-size: 24px;
@@ -112,6 +114,10 @@ input[type=text] {
 	}
 }
 
+select {
+	line-height: 22px !important;
+}
+
 textarea {
 	border: 1px solid #BBBBBB;
 	border-radius: 5px;	
@@ -124,11 +130,87 @@ textarea {
 	}
 }
 
+.location-add-buttons {
+	width: 100%;
+	height: 300px;
+	border: 1px dashed #DDDDDD;
+	border-radius: 5px;		
+	padding: 15px;
+	font-size: 15px;	
+
+	.hollow-button {
+    padding: 10px 16px;
+    margin: 0 !important;	
+	}
+
+	.button-caption {
+		font-size: 12px;
+		color: #979797;
+		line-height: 14px;	
+    margin-top: 10px;
+    margin-bottom: 50px;		
+	}
+}
+
+.center-single-item {
+	margin-left: 33.3%	
+}
+
 .location-container {
 	width: 100%;
 	height: 300px;
 	border: 1px solid #DDDDDD;
 	border-radius: 5px;	
+
+	.header {
+    padding-left: 15px;
+    height: 30px;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    color: #979797;
+    line-height: 14px;
+    padding-top: 8px;
+
+    input {
+    	height: 12px !important;    
+    }
+
+    .title {
+    	float: left;
+    }
+    .header-actions {
+      float: right;
+
+			a {
+				margin-right: 10px;
+			}
+
+			img {
+				height: 13px;
+			} 
+    }
+	}
+
+	.body {
+		padding: 15px;
+
+		p {
+			font-size: 15px;
+			color: #353535;
+			line-height: 24px;
+			text-align: left;
+		}
+
+		.times {
+			margin-top: 10px;
+			p {
+				margin-left: 10px;
+				font-size: 12px;
+				color: #979797;
+				line-height: 20px;			
+			}
+		}	
+	}
 }
 
 .modal-title {
@@ -164,7 +246,7 @@ textarea {
 			input {
 				margin-bottom: 5px;
 				padding-left: 0 !important;
-				color: #353535;
+				color: #353535;				
 			}
 
 			span {
@@ -173,5 +255,18 @@ textarea {
 				font-weight: normal;			
 			}
 		}
+	}
+}
+
+.event-edit-time-form {
+	select, input {
+		text-align:center !important;
+	}	
+}
+
+.modal-actions {
+	margin-top: 20px;
+	a {
+		margin-left: 10px;
 	}
 }
