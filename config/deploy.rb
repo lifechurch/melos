@@ -25,7 +25,7 @@ namespace :deploy do
         on roles(:web) do
           execute "ln -s #{release_path} #{deploy_to}/releases/current"
           execute "mv #{deploy_to}/releases/current #{deploy_to}"
-          execute "sudo ln -nfs #{release_path}/nginx.conf-#{fetch(:stage)} /etc/nginx/nginx.conf"
+          execute "sudo ln -nfs #{deploy_to}/config/nginx/nginx.conf-#{fetch(:stage)} /etc/nginx/nginx.conf"
           execute "sudo service nginx reload"
         end
       end
