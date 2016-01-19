@@ -28,11 +28,10 @@ http {
   server {
       server_name events.bible.com;
       listen 80;
-      root /var/www/youversion-events/public;
+      root /var/www/youversion-events/current/public;
       passenger_enabled on;
       passenger_app_type node;
       passenger_startup_file bin/www;
-      passenger_app_env development;
 
   location ~ ^/(assets|images|javascripts|stylesheets|swfs|system)/ {
       gzip_static on;

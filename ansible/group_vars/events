@@ -17,4 +17,4 @@ username_yvdep:
     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDg1xKMJlkMZPn4YbOmAmqZ1GYzbAlkpRxRFdUixs72fHnrmv1bOTmQRxA0zK6Rvtym682ZkFe6MxVfoUc3qbLlgV8D8lR1IFaBNQHwkywf5GjijtzL34nLbvIpB20FJaIrWk27tNwBXNYHa3HGxuJO+5O7/MW+MFaVL7seVvs6Vqr/zNZpQRtr1SZarOfs69n9M+UlR4Fi3OC5myCavf+G1GMwYlXesZVMIvj52+7jcmOuZZW/2cqxXQd1a93bJhAFEmS6DR19/DZIbHGsEtrQ5o+WDQ/TvRVHgaGCJpJO9PWwDTPU58ik9ySpY/4KMpqde8qAVV5ydrOvO6Z1Lzpv
 
 dnsmasq_hosts: |
-  127.0.0.1   local.bible.com
+  127.0.0.1   events.bible.com
