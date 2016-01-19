@@ -1,6 +1,9 @@
 ---
 # tasks file for nodejs
 
+# npmjs_token
+- include_vars: nodejs_secrets.yml 
+
 - name: Import the NodeSource GPG key into apt
   apt_key:
     url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
@@ -27,5 +30,24 @@
   apt:
     name: nodejs={{ nodejs_version }}*
     state: installed
+  tags:
+    - nodejs
+
+- name: Put .npmrc in place for yvdep
+  template:
+    src: npmrc.j2
+    dest: /home/yvdep/.npmrc
+    owner: yvdep
+    group: yvdep
+    mode: 0600
+  tags:
+    - nodejs
+
+- name: Install gulp globally
+  npm:
+    name: gulp
+    global: yes
+    state: present
+    version: 3.9.0
   tags:
     - nodejs
