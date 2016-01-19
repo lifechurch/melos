@@ -25,14 +25,15 @@ namespace :deploy do
       desc 'OVERRIIIIIIDE'
       task :release do
         on roles(:web), in: :sequence do
-          execute "touch /tmp/disable.txt"
+          execute "touch /tmp/disable.txt || true"
           execute "sleep 10"
           execute "ln -s #{release_path} #{deploy_to}/releases/current"
           execute "mv #{deploy_to}/releases/current #{deploy_to}"
           execute "sudo ln -nfs #{deploy_to}/current/config/nginx/nginx.conf-#{fetch(:stage)} /etc/nginx/nginx.conf"
           execute "sudo service nginx restart"
           execute "curl http://events.bible.com -k || true"
-          execute "rm /tmp/disable.txt"
+          execute "sleep 5"
+          execute "rm /tmp/disable.txt || true"
         end
       end
     end
