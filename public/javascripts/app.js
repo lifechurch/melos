@@ -828,6 +828,9 @@ var EditLocationForm = (function (_Component) {
 			return;
 		}
 	}, {
+		key: 'putPinOnMap',
+		value: function putPinOnMap() {}
+	}, {
 		key: 'render',
 		value: function render() {
 			var _props2 = this.props;
