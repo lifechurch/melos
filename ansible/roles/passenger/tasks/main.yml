@@ -1,0 +1,116 @@
+---
+
+
+- include_vars: passenger_secrets.yml
+
+- name: install passenger apt key
+  apt_key:
+    state: present
+    keyserver: hkp://keyserver.ubuntu.com:80 
+    id: 561F9B9CAC40B2F7
+  tags:
+    - passenger
+
+- name: put passenger enterprise license in place
+  template:
+    src: passenger-enterprise-license.j2
+    dest: /etc/passenger-enterprise-license
+  when: ("production" in group_names) or ("staging" in group_names)
+  tags:
+    - passenger
+
+- name: install apt repository for passenger enterprise
+  apt_repository:
+    repo: 'deb https://download:{{ passenger_download_token }}@www.phusionpassenger.com/enterprise_apt {{ ansible_distribution_release|lower }} main'
+    state: present
+    update_cache: yes
+  when: ("production" in group_names) or ("staging" in group_names)
+  tags:
+    - passenger
+
+- name: install passenger-enterprise
+  apt:
+    name: passenger-enterprise
+    state: present
+  when: ("production" in group_names) or ("staging" in group_names)
+  tags:
+    - passenger
+
+- name: install standard passenger repository
+  apt_repository:
+    repo: 'deb https://oss-binaries.phusionpassenger.com/apt/passenger {{ ansible_distribution_release|lower }} main'
+    state: present
+  when: ("review" in group_names)
+  tags:
+    - passenger
+
+- name: install nginx-extras
+  apt:
+    name: nginx-extras
+    default_release: "{{ ansible_distribution_release|lower }}"
+  tags:
+    - passenger
+
+- name: create /etc/nginx/certs directory
+  file:
+    name: /etc/nginx/certs
+    state: directory
+    owner: root
+    group: root
+    mode: 0600
+  when: ("review" in group_names) or ("staging" in group_names)
+  tags:
+    - passenger
+
+- name: install ssl certificate
+  copy:
+    src: star_bible_com.crt
+    dest: /etc/nginx/certs/star_bible_com.crt
+    mode: 0600
+  when: ("review" in group_names) or ("staging" in group_names) 
+  tags:
+    - passenger
+
+- name: install ssl certificate key
+  template:
+    src: star_bible_com.key.j2
+    dest: /etc/nginx/certs/star_bible_com.key
+    mode: 0600
+  when: ("review" in group_names) or ("staging" in group_names) 
+  tags:
+    - passenger
+
+- name: start nginx on boot
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+  tags:
+    - passenger
+
+- name: create /var/www
+  file:
+    state: directory
+    name: /var/www
+    owner: yvdep
+    group: yvdep
+  tags:
+    - passenger
+
+- name: create /var/log/passenger
+  file:
+    state: directory
+    name: /var/log/passenger
+    owner: yvdep
+    group: yvdep
+  tags:
+    - passenger
+
+- name: create /var/run/passenger
+  file:
+    state: directory
+    name: /var/run/passenger
+    owner: yvdep
+    group: yvdep
+  tags:
+    - passenger
