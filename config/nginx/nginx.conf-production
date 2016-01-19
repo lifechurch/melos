@@ -1,0 +1,59 @@
+user yvdep;
+worker_processes 4;
+pid /run/nginx.pid;
+
+events {
+	worker_connections 768;
+	# multi_accept on;
+}
+
+http {
+	sendfile on;
+	tcp_nopush on;
+	tcp_nodelay on;
+	keepalive_timeout 65;
+	types_hash_max_size 2048;
+
+	include /etc/nginx/mime.types;
+	default_type application/octet-stream;
+
+	access_log /var/log/nginx/access.log;
+	error_log /var/log/nginx/error.log;
+
+	gzip on;
+	gzip_disable "msie6";
+
+        passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
+
+  server {
+      server_name events.bible.com;
+      listen 80;
+      root /var/www/youversion-events/public;
+      passenger_enabled on;
+      passenger_app_type node;
+      passenger_startup_file bin/www;
+      passenger_app_env development;
+
+  location ~ ^/(assets|images|javascripts|stylesheets|swfs|system)/ {
+      gzip_static on;
+      expires     max;
+      add_header  Cache-Control public;
+      add_header  Last-Modified "";
+      add_header  ETag "";
+      gzip on;
+      gzip_vary on;
+      gzip_proxied any;
+      gzip_min_length 1100;
+      gzip_buffers 16 8k;
+      gzip_disable "MSIE [1-6]\.";
+      gzip_comp_level 6;
+      gzip_types application/javascript text/css text/html;
+  }
+
+  location /k2k-server-status {
+    stub_status on;
+    access_log off;
+  }
+
+ }
+}
