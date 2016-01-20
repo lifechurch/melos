@@ -22,6 +22,8 @@ YouversionWeb::Application.routes.draw do
   get "/thanksgiving", to: redirect("http://blog.youversion.com/?p=18397")
   get "/200million",    to: redirect("http://installs.youversion.com/200million/index.html")
   get "/christmas-2015", to: redirect("http://blog.youversion.com/?p=18881")
+  get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
+
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
   get "/search",        to: "search#show",                as: "search"

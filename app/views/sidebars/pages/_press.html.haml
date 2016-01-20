@@ -1,22 +1,14 @@
 .widget
-  %h3.hd
-    = t('press page.contact header')
-  %ul.menu
-    %li
-      %p
-        %strong= t('press page.phone')
-        405.216.2332
-    %li
-      %p
-        %strong= t('press page.email')
-        lori.bailey@lifechurch.tv
-    %li
-      %p
-        %strong= t('press page.support')
-        =link_to "support.youversion.com", external_url(:support)
-.widget
+  %h3= t('press page.support')
+  =link_to "support.youversion.com", external_url(:support)
+
+  %br
+  %br
+  %br
+
   %h3.hd
     = t('press page.contact header 2')
+
   %ul.menu
     %li
       %p
@@ -34,3 +26,17 @@
         %br
         =link_to "twitter.com/youversion", "http://twitter.com/youversion"
 
+  %br
+  %br
+
+  %h3.hd
+    = t('press page.contact header')
+  %ul.menu
+    -# %li
+      %p
+        %strong= t('press page.phone')
+        405.216.2332
+    %li
+      %p
+        %strong= t('press page.email')
+        lori.bailey@lifechurch.tv

@@ -20,7 +20,7 @@
           = select_tag(:version_id, options_from_collection_for_select(versions, :id, :to_s, version_id || 1), :disabled => params[:token].present?)
   .row
     .columns.medium-12
-      = label_tag do 
+      = label_tag do
         = "#{t('users.time')}:"
         .row
           .columns.medium-4
@@ -38,4 +38,4 @@
 
   - if version_id.present?
     = form_tag vod_subscription_path(type, token: params[:token]), method: :delete, class: 'vod_form_delete' do
-      = submit_tag t('users.unsubscribe'), class: 'action_button_dark_grey'
+      = submit_tag t('users.unsubscribe'), class: 'solid-button red'

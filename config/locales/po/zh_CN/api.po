@@ -1,5 +1,5 @@
 # Chinese (Simplified, China) translations for Backend (YouVersion).
-# Copyright (C) 2015 LifeChurch.tv
+# Copyright (C) 2016 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-11-16 09:55-0600\n"
-"PO-Revision-Date: 2015-11-16 09:55-0600\n"
+"POT-Creation-Date: 2016-01-04 10:21-0600\n"
+"PO-Revision-Date: 2016-01-04 10:21-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-09-08 11:10-0609\n"
-"PO-Revision-Date: 2015-09-08 11:10-0609\n"
+"POT-Creation-Date: 2016-01-04 10:21-0600\n"
+"PO-Revision-Date: 2016-01-04 10:21-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -32,8 +32,8 @@ msgstr ""
 "#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:06-0600\n"
-"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"POT-Creation-Date: 2016-01-04 10:20-0600\n"
+"PO-Revision-Date: 2016-01-04 10:20-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -112,10 +112,10 @@ msgid "moment.highlight.title"
 msgstr "{name}高亮显示了 <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
-msgstr "您制作了经句图给 <b>{reference_human} {version_abbreviation}</b>"
+msgstr "你制作了<b>{reference_human} {version_abbreviation}的经句图</b>"
 
 msgid "moment.image.title"
-msgstr "{name}制作了经句图给 <b>{reference_human} {version_abbreviation}</b>"
+msgstr "{name}制作了 <b>{reference_human} {version_abbreviation}的经句图</b>"
 
 msgid "moment.note.self.title"
 msgstr "您加了一条笔记，<b>{title}</b>"
@@ -157,7 +157,7 @@ msgid "moment.plan_subscription.v2.title"
 msgstr "{name} 开始了新计划，<b>{title}</b>"
 
 msgid "moment.system.bafk.title"
-msgstr "帮助您的孩子爱上神的话语。"
+msgstr "帮助你的孩子爱上神的话语。"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr "今晚观看<i>圣经系列</i> ！"
@@ -190,7 +190,7 @@ msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} 评论了你的高亮经文: “{comment}”"
 
 msgid "notifications.comments.moment.mine.image"
-msgstr "{name}评论了您的经句图：“{comment}”"
+msgstr "{name}评论了你的经句图：“{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} 评论了笔记: “{comment}”"
@@ -277,7 +277,7 @@ msgid "notifications.likes.moment.mine.highlight"
 msgstr "{name} 喜欢您高亮显示的经文 {reference_human}"
 
 msgid "notifications.likes.moment.mine.image"
-msgstr "{name}点赞了您为{reference_human}创作的经句图"
+msgstr "{name}点赞了你用{reference_human}制作的经句图"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
 msgstr "{name} 喜欢您的笔记"
@@ -301,7 +301,7 @@ msgid "notifications.moments.create.highlight"
 msgstr "{name} 高亮标记了 {reference_human}"
 
 msgid "notifications.moments.create.image"
-msgstr "{name}为{reference_human}创作了经句图"
+msgstr "{name}制作了{reference_human}的经句图"
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} 添加了一条笔记"

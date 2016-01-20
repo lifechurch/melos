@@ -1,3 +1,7 @@
+.moments-feed {
+  min-height: 400px;
+}
+
 #home .home {
   margin: 100px auto 0;
 }
@@ -117,6 +121,20 @@
     margin-right:10px;
   }
 }
+
+.c_moments,
+.a_highlights,
+.a_bookmarks,
+.c_users.a_show {
+  .hollow-button {
+    margin: 0;
+  }
+
+  .solid-button {
+    margin: 0 0 10px;
+  }
+}
+
 
 /*  !Moment likes */
 
@@ -524,4 +542,13 @@ article.error {
   p {
     text-align: center;
   }
+}
+
+
+/* !Loading spinner */
+
+md-progress-circular {
+  position: absolute;
+  top: 0;
+  left: 45%;
 }

@@ -1,5 +1,5 @@
 # Tamil translations for Backend (YouVersion).
-# Copyright (C) 2015 LifeChurch.tv
+# Copyright (C) 2016 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-08-31 12:42-0600\n"
-"PO-Revision-Date: 2015-08-31 12:42-0600\n"
+"POT-Creation-Date: 2016-01-04 10:21-0600\n"
+"PO-Revision-Date: 2016-01-04 10:21-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ta <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2015-09-09 16:32-0609\n"
-"PO-Revision-Date: 2015-09-09 16:32-0609\n"
+"POT-Creation-Date: 2016-01-04 10:21-0600\n"
+"PO-Revision-Date: 2016-01-04 10:21-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ta <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -32,8 +32,8 @@ msgstr ""
 "#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2014-09-25 16:06-0600\n"
-"PO-Revision-Date: 2014-09-25 16:06-0600\n"
+"POT-Creation-Date: 2016-01-04 10:20-0600\n"
+"PO-Revision-Date: 2016-01-04 10:20-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ta <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -64,34 +64,34 @@ msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "புதிய திட்டங்கள் மூலம் உங்கள் விசுவாசத்தை புதுப்பிக்கவும்."
 
 msgid "moment.client_side.reading_plan_carousel.august.title"
-msgstr "தினமும் கர்த்தருடைய வார்தையில் ஞானம் காணவும்"
+msgstr "தேவனை அவர் வார்த்தையில் தினமும் தேடுங்கள்."
 
 msgid "moment.client_side.reading_plan_carousel.december.title"
 msgstr "இந்த காலங்களில் உங்கள் இருதயத்தை ஆயத்தப்படுத்துங்கள்."
 
 msgid "moment.client_side.reading_plan_carousel.february.title"
-msgstr "பிப்ரவரிகான உங்களுக்கு விருப்பமான வேத திட்டத்தை கண்டெடுங்கள்!"
+msgstr "தேவனின் அன்பை அவர் வார்த்தையில் கண்டடையுங்கள்."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "உங்கள் தலைசிறந்த ஆண்டு இப்போது துவங்குகிறது."
 
 msgid "moment.client_side.reading_plan_carousel.july.title"
-msgstr "கடவுளுடைய வார்த்தையில் தினமும் நேரம் செலவிடுவது நீடித்த சுதந்திரத்தை விளைவிக்கிறது."
+msgstr "கிறிஸ்துவில் விடுதலை கொண்டாடுங்கள்."
 
 msgid "moment.client_side.reading_plan_carousel.june.title"
-msgstr "தினசரி தேவ வார்த்தை மூலம் உங்கள் ஒத்திசைத்தலை(rhythm) கண்டறியுங்கள்."
+msgstr "தேவனை அவர் வார்த்தையில் தேடுங்கள்."
 
 msgid "moment.client_side.reading_plan_carousel.march.title"
-msgstr "நம்பிக்கையையும் புதுப்பித்தலையும் மார்ச் திட்டங்களினூடாய் கண்டடையுங்கள்."
+msgstr "தேவ வார்த்தையில் நம்பிக்கையும் புதுமையும் கண்டடையுங்கள்."
 
 msgid "moment.client_side.reading_plan_carousel.may.title"
-msgstr "தினமும் தேவ வார்த்தையில் அவரை தேடுவதில் உங்களை அர்ப்பணியுங்கள்."
-
-msgid "moment.client_side.reading_plan_carousel.new_year.title"
-msgstr "2015இல் தினமும் வேதத்தை வாசியுங்கள். திட்டங்கள் உதவும்!"
+msgstr "தினமும் அவர் வார்த்தைக்கு அர்பணியுங்கள்."
 
 msgid "moment.client_side.reading_plan_carousel.november.title"
 msgstr "கர்த்தருடைய வாக்குத்தத்தங்களில் நன்றி நிறைவை கண்டடையுங்கள்."
 
 msgid "moment.client_side.reading_plan_carousel.october.title"
-msgstr "கர்த்தருடைய வார்த்தை ஜீவனுள்ளது. அது தினமும் உங்களோடு பேச இடங்கொடுங்கள்."
+msgstr "தேவ ஞானம் தேவ வார்த்தையில் துவங்குகிறது."
 
 msgid "moment.client_side.reading_plan_carousel.september.title"
 msgstr "கர்த்தருடைய வார்த்தை எல்லாவற்றையும் புதிதாக்குகிறது."

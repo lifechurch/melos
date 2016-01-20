@@ -1,6 +1,8 @@
 $button-radius: $radius;
 
-.hollow-button {
+.hollow-button,
+button.hollow-button,
+input[type="submit"].hollow-button {
   @include button(
     // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
     $padding: rem-calc(2),
@@ -71,7 +73,9 @@ $button-radius: $radius;
   }
 }
 
-.solid-button {
+.solid-button,
+button.solid-button,
+input[type="submit"].solid-button {
   @include button(
     // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
     $padding: rem-calc(2),

@@ -1,7 +1,7 @@
 - t = Proc.new do |key, options={}|
   - I18n.t(key, options.merge(:locale => @locale))
 - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
-- show_end_summary = false
+- show_end_summary = true
 
 .main.container_12
   %a#facebook.facebook{:href => "https://www.facebook.com/dialog/feed?app_id=105030176203924&link=https://www.bible.com#{locale_dir}/christmas&picture=https://www.bible.com/assets/campaigns/christmas/christmas-tracker.png&name=#{t("campaigns.christmas.tracker title")}&caption=bible.com%20%20%23ChristmasTracker&description=#{t('campaigns.christmas.facebook text')}&redirect_uri=https://www.bible.com#{locale_dir}/christmas", :target => "_blank"}
@@ -12,7 +12,7 @@
   - if show_end_summary
     .finished-copy
       %p
-        = t('campaigns.christmas.summary')
+        = t('campaigns.christmas.summary').gsub('2014', '2015')
 
   .grid_3
     %a#logo{:href => "https://www.bible.com/app"}
@@ -22,16 +22,15 @@
     %h1
       = t('campaigns.christmas.tracker title')
   #map-bkg{class: show_end_summary}
-    /
   #map.grid_12
     .figures.grid_4.hidden
       %h2
         = t('campaigns.christmas.read about')
       - if show_end_summary
         %h3
-          = t('campaigns.christmas.totals during')
+          = t('campaigns.christmas.totals during').gsub('2014', '2015')
         .chapter_requests.figure
-          53,951,165
+          46,110,909
       - else
         %h3
           = t('campaigns.christmas.totals since').gsub('2014', '2015')

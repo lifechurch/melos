@@ -1,5 +1,5 @@
 .reader {
-	font-size: rem-calc(19);
+	font-size: 1.188em;
 	font-color: $black;
 
   p {
@@ -45,6 +45,7 @@
   h1 {
     float: left;
     margin: 0;
+    letter-spacing: normal;
   }
 
   a {
@@ -586,6 +587,10 @@ div[audio-data="reader_audio"] {
     display: block;
     font-size: 0.875em;
   }
+
+  .st1 {
+    fill: #fff;
+  }
 }
 
 .reader-highlight-save,
@@ -829,4 +834,17 @@ body.c_references.a_show {
   #download {
     margin-top: 20px;
   }
+  #svp_share {
+    margin: 20px 0;
+  }
 }
+
+md-progress-linear[md-mode="indeterminate"] .md-container,
+md-progress-linear[md-mode="indeterminate"] .md-container .md-bar {
+  height: 2px;
+}
+
+md-progress-linear[md-mode="indeterminate"] .md-container {
+  top: -1px;
+}
+

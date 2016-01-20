@@ -25,7 +25,7 @@
     .calendar-prev
       - prev_text = t("plans.previous day") # used in 3 places below
       - if day > 1
-        = link_to(sample_plan_path(plan.to_param, day: (day - 1)), {class: "prev", title: prev_text }) do
+        = link_to(sample_plan_path(plan.to_param, day: (day - 1)), {class: "prev", target: "_self", title: prev_text}) do
           = prev_text
       - else
         = link_to("#", class: "disabled prev") do
@@ -38,7 +38,7 @@
     .calendar-next
       - next_text = t("plans.next day") # used in 3 places below
       - if day <= plan.total_days - 1
-        = link_to(sample_plan_path(plan.to_param, day: (day + 1)), {class: "next", title: next_text}) do
+        = link_to(sample_plan_path(plan.to_param, day: (day + 1)), {class: "next", target: "_self", title: next_text}) do
           = next_text
       - else
         = link_to("#", class: "disabled next") do

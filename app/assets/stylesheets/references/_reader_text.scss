@@ -5,7 +5,7 @@
 // `Reader paragraph styles
 //----------------------------------------------------------------------------------------------------
 .reader {
-  
+
   // introductory paragraph after a header paragraph
   .s + .p,
   .s1 + .p,
@@ -169,8 +169,8 @@
     font-size: 1.03em;
     font-weight: bold;
     line-height: 1.2em;
-    display: inline;
-    margin: 0 0 1em 0;
+    display: inline-block;
+    margin: 0;
     -webkit-font-smoothing: subpixel-antialiased;
   }
   .s2, .s3, .s4, .ms2, .ms3, .ms4 {
