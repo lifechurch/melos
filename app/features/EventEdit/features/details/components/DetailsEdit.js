@@ -1,13 +1,18 @@
 import React, { Component, PropTypes } from 'react'
-import EventImageDrop from './EventImageDrop'
-import Row from './Row'
-import Column from './Column'
+import ImageDrop from './ImageDrop'
+import Row from '../../../../../../app/components/Row'
+import Column from '../../../../../../app/components/Column'
 import { Link } from 'react-router'
 
-class EventEditDetailsForm extends Component {
+class DetailsEdit extends Component {
+
+	componentWillUnmount() {
+		const { handleLeave } = this.props
+		handleLeave()
+	}
+
 	render() {
-		const { handleChange, handleSubmit, event  } = this.props
-		console.log("EVENT", event)
+		const { handleChange, handleNext, event } = this.props
 		return (
 			<form className="event-edit-details-form">
 				<Row>
@@ -16,7 +21,7 @@ class EventEditDetailsForm extends Component {
 					</div>
 				</Row>
 				
-				<EventImageDrop />
+				<ImageDrop />
 				
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
@@ -32,26 +37,20 @@ class EventEditDetailsForm extends Component {
 				
 				<Row>
 					<Column s='medium-12' a='right'>
-						<a onClick={handleSubmit} disabled={!event.detailsValid}>Next: Add Location & Times</a>
+						<a onClick={handleNext} disabled={!event.detailsValid}>Next: Add Location & Times</a>
 					</Column>
 				</Row>
 			</form>
 		)
 	}
+
 }
 
-EventEditDetailsForm.defaultProps = {
-	event: {
-		item: {
-			title: null
-		}
-	}
-}
-
-EventEditDetailsForm.propTypes = {
+DetailsEdit.propTypes = {
 	handleChange: PropTypes.func.isRequired,
-	handleSubmit: PropTypes.func.isRequired,
+	handleNext: PropTypes.func.isRequired,
+	handleLeave: PropTypes.func.isRequired,
 	event: PropTypes.object.isRequired
 }
 
-export default EventEditDetailsForm
+export default DetailsEdit

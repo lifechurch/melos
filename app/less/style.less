@@ -213,14 +213,14 @@ textarea {
 	}
 }
 
-.modal-title {
+.form-title {
 	font-family: Arial-BoldMT;
 	font-size: 15px;
 	color: #353535;
 	line-height: 17px;
 }
 
-.modal-body {
+.form-body {
 	background: #F4F4F4;
 	border-radius: 5px;
 	padding: 20px;
@@ -228,12 +228,15 @@ textarea {
 	margin-bottom: 20px;
 }
 
-.modal-body-block {
-	background: #FFFFFF;
-	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.27);
-	border-radius: 2px 2px 0px 2px 2px;	
+.form-body-block {
 	padding: 20px;
 	margin-top: 20px;
+
+	&.white {
+		background: #FFFFFF;
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.27);
+		border-radius: 2px 2px 0px 2px 2px;	
+	}
 
 	&:first-child {
 		margin-top: 0;
@@ -252,7 +255,7 @@ textarea {
 			span {
 				font-size: 12px;
 				color: #979797;
-				font-weight: normal;			
+				font-weight: normal;
 			}
 		}
 	}
@@ -264,7 +267,7 @@ textarea {
 	}	
 }
 
-.modal-actions {
+.form-actions {
 	margin-top: 20px;
 	a {
 		margin-left: 10px;

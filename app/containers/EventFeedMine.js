@@ -12,12 +12,9 @@ class EventFeedMine extends Component {
 
 	render() {
 		const { hasError, errors, isFetching, items } = this.props
-
-		console.log(items)
-
 		var itemList = items.map((item) => {
 			return (
-				<li><Link to={`/event/edit/${item.id}`}>{item.title}</Link></li>
+				<li key={item.id}><Link to={`/event/edit/${item.id}`}>{item.title}</Link></li>
 			)
 		})
 

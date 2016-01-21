@@ -14,6 +14,32 @@ class EventEdit extends Component {
 		}
 	}
 
+	handleDetailsNext(nextLocation) {
+		const { dispatch, event } = this.props
+		const { isDirty, detailsValid } = event
+		console.group("Route will leave...")
+		if (isDirty) {
+			console.log("dirty")			
+			if (detailsValid) {
+				console.log("details valid")
+				if (event.item.id) {
+					console.log("update")
+					dispatch(updateEvent(event.item))
+				} else {
+					console.log("create")
+					dispatch(createEvent(event.item))
+				}
+			} else {
+				console.log("validation failed")
+				// Didn't Pass Detail Validation
+			}
+		} else {
+			console.log("not dirty")
+			// Isn't Dirty, just go next
+		}
+		console.groupEnd()
+	}	
+
 	render() {
 		const { children, event, loc, params, dispatch, modals } = this.props
 		return (
@@ -21,7 +47,7 @@ class EventEdit extends Component {
 				<Helmet title="Event" />
 				<EventHeader {...this.props} /> 
 				<div>
-        	{children && React.cloneElement(children, { modals, event, loc, dispatch })}
+        	{children && React.cloneElement(children, { modals, event, loc, dispatch, handleDetailsNext: ::this.handleDetailsNext })}
 				</div>
 			</div>
 		)
@@ -54,7 +80,6 @@ EventEdit.defaultProps = {
 }
  
 function mapStateToProps(state) {
-	console.log("mstp", state)
 	return {
 		event: state.event,
 		modals: state.modals,

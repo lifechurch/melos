@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import moment from 'moment'
-import Row from './Row'
-import Column from './Column'
+import Row from '../../../../../../app/components/Row'
+import Column from '../../../../../../app/components/Column'
 
 class Location extends Component {
 	handleRemoveClick(event) {

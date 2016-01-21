@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
-class EventEditContent extends Component {
+class EventEditContentContainer extends Component {
 	render() {
 		const { ev } = this.props
 		return (
@@ -14,4 +14,4 @@ class EventEditContent extends Component {
 	}
 }
 
-export default EventEditContent
+export default EventEditContentContainer

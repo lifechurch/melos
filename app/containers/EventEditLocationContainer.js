@@ -2,20 +2,20 @@ import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import Row from '../components/Row'
 import Column from '../components/Column'
-import { ActionCreators } from '../actions/loc'
-import EditLocationForm from '../components/EditLocationForm'
-import Location from '../components/Location'
-import LocationAddButtons from '../components/LocationAddButtons'
+import ActionCreators from '../features/EventEdit/features/location/actions/creators'
+import LocationEdit from '../features/EventEdit/features/location/components/LocationEdit'
+import Location from '../features/EventEdit/features/location/components/Location'
+import LocationAddButtons from '../features/EventEdit/features/location/components/LocationAddButtons'
 
-class EventEditLocation extends Component {
+class EventEditLocationContainer extends Component {
 	handleAddPhysicalLocationClick(clickEvent) {
 		const { dispatch } = this.props
-		dispatch(ActionCreators.addPhysical())
+		dispatch(ActionCreators.add('physical'))
 	}
 
 	handleAddVirtualLocationClick(clickEvent) {
 		const { dispatch } = this.props
-		dispatch(ActionCreators.addVirtual())
+		dispatch(ActionCreators.add('virtual'))
 	}	
 
 	handleCancel() {
@@ -63,8 +63,8 @@ class EventEditLocation extends Component {
 		const { dispatch, event, loc } = this.props
 
 		var locationEditor
-		if (loc.hasOwnProperty("type")) {
-			locationEditor = (<EditLocationForm  
+		if (loc && typeof loc.type === 'string') {
+			locationEditor = (<LocationEdit  
 				handleCancel={::this.handleCancel} 
 				handleChange={::this.handleChange}
 				handleChoosePlace={::this.handleChoosePlace}
@@ -88,7 +88,7 @@ class EventEditLocation extends Component {
 
 		return (			
 			<div>
-				<Helmet title="Event Location" />	
+				<Helmet title="Event Location" />
 				<Row>
 					<div className="medium-10 large-8 columns small-centered text-center">
 						{locationEditor}
@@ -117,4 +117,4 @@ class EventEditLocation extends Component {
 	}
 }
 
-export default EventEditLocation
+export default EventEditLocationContainer

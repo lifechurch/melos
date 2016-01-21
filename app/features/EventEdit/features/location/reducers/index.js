@@ -1,5 +1,8 @@
-import { Actions, ActionCreators } from '../actions/loc'
+import type from '../actions/constants'
 import moment from 'moment'
+
+//import { Actions, ActionCreators } from '../actions/loc'
+//import moment from 'moment'
 
 function parsePlaceFor(type, place) {
 	for (var addressComponent of place.address_components) {
@@ -9,19 +12,26 @@ function parsePlaceFor(type, place) {
 	}
 }
 
-export function loc(state = {}, action) {
+export default function loc(state = {}, action) {
 	switch(action.type) {
 
-		case Actions.ADD:
+		case type('add'):
+			var start_dt = moment().startOf('hour')
+			var end_dt = moment(start_dt.toDate().getTime()).add(1, 'h')
+			return {
+				type: action.locationType,
+				times: [
+					{ start_dt, end_dt }
+				]
+			}
+
+		case type('edit'):
 			return Object.assign({}, state, action.loc)
 
-		case Actions.EDIT:
-			return Object.assign({}, state, action.loc)
-
-		case Actions.CANCEL_EDIT:
+		case type('cancelEdit'):
 			return {}
 
-		case Actions.SET_FIELD:
+		case type('setField'):
 			if (['name'].indexOf(action.field) > -1) {
 				let item = Object.assign({}, state.item)
 				item[action.field] = action.value
@@ -30,7 +40,7 @@ export function loc(state = {}, action) {
 				return state
 			}		
 
-		case Actions.SET_PLACE:
+		case type('setPlace'):
 			var newLoc = {
 				city: parsePlaceFor('locality', action.place),
 				country: parsePlaceFor('country', action.place),
@@ -42,18 +52,16 @@ export function loc(state = {}, action) {
 				postal_code: parsePlaceFor('postal_code', action.place),
 				place: action.place
 			}
-			console.log("Place is set")
 			return Object.assign({}, state, newLoc)
-			
 
-		case Actions.TIMEZONE_SUCCESS:
-			return Object.assign({}, state, { timezone: action.timezone.timeZoneId })
+		case type('timezoneSuccess'):
+			return Object.assign({}, state, { timezone: action.response.timeZoneId })
 
-		case Actions.TIMEZONE_FAILURE:
-			var loc = Object.assign({}, state, { hasError: true, error: action.error })
+		case type('timezoneFailure'):
+			var loc = Object.assign({}, state, { hasError: true, errors: action.errors })
 			return Object.assign({}, state, loc)
 
-		case Actions.SET_TIME:
+		case type('setTime'):
 			return Object.assign({}, state, {
 				times: [
 					...state.times.slice(0, action.index),
@@ -62,7 +70,7 @@ export function loc(state = {}, action) {
 				]
 			})
 
-		case Actions.ADD_TIME:
+		case type('addTime'):
 			const maxIndex = state.times.length - 1
 			var start_dt = moment().startOf('hour')
 			var end_dt = moment(start_dt.toDate().getTime()).add(1, 'h')
@@ -75,26 +83,26 @@ export function loc(state = {}, action) {
 				]
 			})		
 
-		case Actions.SAVE:
+		case type('save'):
 			return state
 
-		case Actions.CREATE_REQUEST:
+		case type('createRequest'):
 			return Object.assign({}, state, { isSaving: true, hasError: false })
 
-		case Actions.CREATE_SUCCESS:
-			return Object.assign({}, state, action.loc, { hasError: false })
+		case type('createSuccess'):
+			return Object.assign({}, state, {})
 
-		case Actions.CREATE_FAILURE:
-			return Object.assign({}, state, { error: action.error, hasError: true })
+		case type('createFailure'):
+			return Object.assign({}, state, { errors: action.errors, hasError: true })
 
-		case Actions.REMOVE_REQUEST:
+		case type('removeRequest'):
 			return Object.assign({}, state, { isRemoving: true, hasError: false })
 
-		case Actions.REMOVE_SUCCESS:
+		case type('removeSuccess'):
 			return {}
 
-		case Actions.REMOVE_FAILURE:
-			return Object.assign({}, state, { hasError: true, error: action.error, isRemoving: false })
+		case type('removeFailure'):
+			return Object.assign({}, state, { hasError: true, errors: action.errors, isRemoving: false })
 
 		default:
 			return state

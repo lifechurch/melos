@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Row from './Row'
 import Column from './Column'
-import EventEditNav from './EventEditNav'
+import EventEditNav from '../features/EventEdit/components/EventEditNav'
 
 class EventHeader extends Component {
 	render() {

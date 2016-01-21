@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import DatePicker from 'react-datepicker'
-import Row from './Row'
-import Column from './Column'
+import Row from '../../../../../../app/components/Row'
+import Column from '../../../../../../app/components/Column'
 import moment from 'moment'
 
 function getDisplay(hour, minute) {
@@ -93,7 +93,7 @@ function getState(start_dt, start_time, duration, interval, props) {
 
 }
 
-class EventAddTimeForm extends Component {
+class LocationAddTime extends Component {
 
 	constructor(props) {
 		super(props)
@@ -166,7 +166,7 @@ class EventAddTimeForm extends Component {
 	}
 }
 
-// EventAddTimeForm.defaultProps = {
+// LocationAddTime.defaultProps = {
 // 	time: {
 // 		id: null,
 // 		start_dt: null,
@@ -175,11 +175,11 @@ class EventAddTimeForm extends Component {
 // 	}
 // }
 
-EventAddTimeForm.propTypes = {
+LocationAddTime.propTypes = {
 	handleChange: PropTypes.func.isRequired,
 	time: PropTypes.object.isRequired,
 	timeIndex: PropTypes.number.isRequired,
 	handleTimeChange: PropTypes.func.isRequired
 }
 
-export default EventAddTimeForm
+export default LocationAddTime

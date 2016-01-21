@@ -1,17 +1,18 @@
 import React, { Component, PropTypes } from 'react'
 import Modal from 'react-modal'
-import Row from './Row'
-import Column from './Column'
+import Row from '../../../../../../app/components/Row'
+import Column from '../../../../../../app/components/Column'
 import { GoogleMap, Marker, SearchBox } from 'react-google-maps'
-import EventAddTimeForm from './EventAddTimeForm'
+import LocationAddTime from './LocationAddTime'
+import ErrorMessage from '../../../../../../app/components/ErrorMessage'
 
-class EditLocationForm extends Component {
+class LocationEdit extends Component {
 
 	constructor(props) {
 		super(props)
 		this.state = {
 			bounds: null,
-			center: EditLocationForm.mapCenter,
+			center: LocationEdit.mapCenter,
 			markers: []
 		}
 	}
@@ -83,14 +84,14 @@ class EditLocationForm extends Component {
 		var times;
 		if (loc.hasOwnProperty('times')) {
 			times = loc.times.map((t, i) => {
-				return (<EventAddTimeForm time={t} timeIndex={i} handleTimeChange={handleSetTime} />)
+				return (<LocationAddTime time={t} timeIndex={i} handleTimeChange={handleSetTime} />)
 			})
 		}
 
 		return (
 			<div className='modal'>		
-				<div className='modal-body'>
-					<div className='modal-body-block'>
+				<div className='form-body'>
+					<div className='form-body-block white'>
 						<form>
 							<label>
 								<input className='small' type='text' name='name' placeholder='First Baptist East Campus' onChange={handleChange} value={loc.name} />
@@ -119,12 +120,26 @@ class EditLocationForm extends Component {
 						</GoogleMap>						
 					</div>
 
-					<div className='modal-body-block text-left'>
+					<div className='form-body-block white text-left'>
 						{times}
 						<a onClick={handleAddTime}>Add another time</a>
-					</div>					
+					</div>
 
-					<div className='modal-actions text-right'>
+					<div className='form-body-block text-left'>
+						<form>
+							<Row>
+								<Column s='small-6'>
+									<input className='small' type='text' name='country' placeholder='Country' onChange={handleChange} value={loc.country} />
+								</Column>
+								<Column s='small-6'>
+									<input className='small' type='text' name='timezone' placeholder='Timezone' onChange={handleChange} value={loc.timezone} />
+								</Column>								
+							</Row>
+						</form>
+					</div>										
+
+					<div className='form-actions text-right'>
+						<ErrorMessage hasError={loc.hasError} errors={loc.errors} />					
 						<a onClick={handleCancel}>Cancel</a>
 						<a className='solid-button green' onClick={handleCreate}>Save this Location</a>
 					</div>
@@ -135,16 +150,16 @@ class EditLocationForm extends Component {
 	}
 }
 
-EditLocationForm.mapCenter = {
+LocationEdit.mapCenter = {
 	lat: 47.6205588,
 	lng: -122.3212725
 }
 
-EditLocationForm.propTypes = {
+LocationEdit.propTypes = {
 	handleCancel: PropTypes.func.isRequired,
 	handleChange: PropTypes.func.isRequired,
 	dispatch: PropTypes.func.isRequired,
 	loc: PropTypes.object.isRequired
 }
 
-export default EditLocationForm
+export default LocationEdit

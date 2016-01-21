@@ -8,6 +8,8 @@ import {
 	EVENT_SET_DETAILS
 } from '../actions'
 
+import type from '../features/EventEdit/features/location/actions/constants'
+
 import { isEventDetailsValid } from '../validators/event'
 
 export function event(state = {}, action) {
@@ -39,6 +41,17 @@ export function event(state = {}, action) {
 			} else {
 				return state
 			}
+
+		case type('createSuccess'):
+			const { locations } = state.item
+			return Object.assign({}, state, {
+				item: {
+					locations: [
+						...locations,
+						action.loc
+					]
+				}
+			})
 
 		default:
 			return state

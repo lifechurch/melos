@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Dropzone from 'react-dropzone'
-import Row from './Row'
+import Row from '../../../../../../app/components/Row'
 
-class EventImageDrop extends Component {
+class ImageDrop extends Component {
 	constructor(props) {
 		super(props)
 		this.state = { files: null };
@@ -44,4 +44,4 @@ class EventImageDrop extends Component {
 	}
 }
 
-export default EventImageDrop
+export default ImageDrop
