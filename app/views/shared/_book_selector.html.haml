@@ -37,7 +37,7 @@
       %h3.version-picker-title= t('versions title')
       %a{"ng-click" => "cancel('showReaderVersions')" }= t('cancel')
     .medium-6.columns.text-center
-      %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter"), "ng-minlength" => "3", :autofocus => "true"}
+      %input{"ng-model" => "versionFilter", "type" => "text", "placeholder" => t("versions.filter"), "ng-minlength" => "3", "focus-me" => "focusInput"}
 
     %div{"reader-version-list" => true, "versions" => "versions", "filter" => "versionFilter", "usfm" => "usfm", "toggle-panel" => "togglePanel", "load-parallel-chapter" => "loadParallelChapter", "set-parallel-version" => "setParallelVersion", "load-chapter" => "loadChapter" }
 
@@ -52,7 +52,7 @@
         %h3.book-picker-title= t('book')
         %a{"ng-click" => "cancel('showReaderBooks')" }= t('cancel')
       .medium-4.columns.text-center
-        %input{"ng-model" => "bookFilter", "type" => "text", "placeholder" => t("filter book"), :autofocus => "true"}
+        %input{"ng-model" => "bookFilter", "type" => "text", "placeholder" => t("filter book"), "focus-me" => "focusInput"}
       .medium-4.columns.text-right
         .switch
           %a{"ng-click" => "sortBooks(false)"}= t('traditional')
