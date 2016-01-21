@@ -849,9 +849,10 @@ md-progress-linear[md-mode="indeterminate"] .md-container {
 }
 
 .c_references.a_show {
-  .mobile-full {
-    font-size: 0.875em;
+  .hollow-button.blue {
+    display: block;
+    font-size: 0.750em;
     text-align: center;
-    padding: 15px 0 0;
+    margin: 15px auto 0;
   }
 }
