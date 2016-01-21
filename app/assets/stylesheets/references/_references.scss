@@ -796,35 +796,37 @@ div[audio-data="reader_audio"] {
 /* This may just be a temporary fix                      */
 /* This makes the verse actions more like a modal dialog */
 /*  but Product/Design hasn't signed off on this yet     */
-@media #{$small-only} {
-  .reader-right {
-    position: absolute;
+.c_references.a_show {
+  @media #{$small-only} {
+    .reader-right {
+      position: absolute;
 
-    div[fix-top] {
-      .verse-action-panel {
-        background-color: $white;
-        padding: 10px;
-        border-radius: 5px;
-        border: solid 2px $lightGray;
-        box-shadow: 10px 10px 5px $lightGray;
+      div[fix-top] {
+        .verse-action-panel {
+          background-color: $white;
+          padding: 10px;
+          border-radius: 5px;
+          border: solid 2px $lightGray;
+          box-shadow: 10px 10px 5px $lightGray;
+        }
       }
     }
   }
-}
-@media #{$medium-only} {
-  .reader-right {
-    position: absolute;
+  @media #{$medium-only} {
+    .reader-right {
+      position: absolute;
 
-    div[fix-top] {
-      .verse-action-panel {
-        background-color: $white;
-        padding: 10px;
-        border-radius: 5px;
-        border: solid 2px $lightGray;
-        box-shadow: 10px 10px 5px $lightGray;
-        width:40%;
-        float:right;
-        min-width:300px;
+      div[fix-top] {
+        .verse-action-panel {
+          background-color: $white;
+          padding: 10px;
+          border-radius: 5px;
+          border: solid 2px $lightGray;
+          box-shadow: 10px 10px 5px $lightGray;
+          width:40%;
+          float:right;
+          min-width:300px;
+        }
       }
     }
   }
