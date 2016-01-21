@@ -47,7 +47,7 @@ class EventEdit extends Component {
 				<Helmet title="Event" />
 				<EventHeader {...this.props} /> 
 				<div>
-        	{children && React.cloneElement(children, { modals, event, loc, dispatch, handleDetailsNext: ::this.handleDetailsNext })}
+        	{children && React.cloneElement(children, { modals, event, loc, dispatch, params, handleDetailsNext: ::this.handleDetailsNext })}
 				</div>
 			</div>
 		)

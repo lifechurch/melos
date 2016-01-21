@@ -3,21 +3,21 @@ import ImageDrop from './ImageDrop'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import { Link } from 'react-router'
+import FormField from '../../../../../../app/components/FormField'
+import Input from '../../../../../../app/components/Input'
+import Select from '../../../../../../app/components/Select'
+import Textarea from '../../../../../../app/components/Textarea'
 
 class DetailsEdit extends Component {
 
-	componentWillUnmount() {
-		const { handleLeave } = this.props
-		handleLeave()
-	}
-
 	render() {
-		const { handleChange, handleNext, event } = this.props
+		const { handleChange, handleNext, event, params } = this.props
 		return (
 			<form className="event-edit-details-form">
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<input type="text" className='large' placeholder="Event Name" name='title' onChange={handleChange} value={event.item.title} />
+						<h1>Valid? {event.detailsValid ? 'Yes' : 'No'}</h1>
+						<FormField InputType={Input} size='large' placeholder='Event Name' name='title' onChange={handleChange} value={event.item.title} />
 					</div>
 				</Row>
 				
@@ -25,19 +25,19 @@ class DetailsEdit extends Component {
 				
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<input type="text" className='medium' placeholder="Church Name or Organization" name="org_name" onChange={handleChange} value={event.item.org_name} />
+						<FormField InputType={Input} size='medium' placeholder="Church Name or Organization" name="org_name" onChange={handleChange} value={event.item.org_name} />
 					</div>
 				</Row>
 
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<textarea placeholder="Event Description" name="description" onChange={handleChange} value={event.item.description}></textarea>
+						<FormField InputType={Textarea} placeholder="Event Description" name="description" onChange={handleChange} value={event.item.description} />
 					</div>
 				</Row>
 				
 				<Row>
 					<Column s='medium-12' a='right'>
-						<a onClick={handleNext} disabled={!event.detailsValid}>Next: Add Location & Times</a>
+						<Link disabled={!event.detailsValid} to={`/event/edit/${params.id}/locations_and_times`}>Next: Add Location & Times</Link>
 					</Column>
 				</Row>
 			</form>

@@ -12,7 +12,8 @@ class EventEditDetails extends Component {
 	}
 
 	handleNext(clickEvent) {
-		const { history } = this.context
+		const { history, router } = this.context
+		router.push('/frank')
 		history.push('/bob')
 	}
 
@@ -28,11 +29,11 @@ class EventEditDetails extends Component {
 	}
 
 	render() {
-		const { event, handleDetailsNext } = this.props
+		const { event, handleDetailsNext, params } = this.props
 		return (
 			<div>
 				<Helmet title="Event Details" />
-				<DetailsEdit event={event} handleChange={::this.handleChange} handleLeave={::this.handleLeave} handleNext={::this.handleNext} />
+				<DetailsEdit event={event} params={params} handleChange={::this.handleChange} handleLeave={::this.handleLeave} handleNext={::this.handleNext} />
 			</div>
 		)
 	}
