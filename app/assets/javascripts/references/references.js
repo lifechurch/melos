@@ -235,7 +235,7 @@ angular.module('yv.reader', [
 	 */
 	function loadVersions() {
         return $q(function(resolve, reject) {
-            Versions.get($scope.reader_version).success(function(data, status, headers, config) {
+            Versions.get($scope.reader_version_id).success(function(data, status, headers, config) {
                 fillScope({versions: data.by_language});
                 $scope.working = false;
                 resolve();
