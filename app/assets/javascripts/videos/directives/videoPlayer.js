@@ -15,10 +15,10 @@ angular.module('videos.videoPlayer', [])
                     var publisher_id = $scope.publisherId;
 
                     //only setup tracking at the moment for Jesus Film (id: 1)
-                    /*
+
                     if (publisher_id == 1) {
                         // create a custom tracker for video events
-                        var tracker = $scope.gat._createTracker($scope.publisherGaTrackingId,"videoTracker");
+                        var tracker = _gat._createTracker("#{publisher.ga_tracking_id}","videoTracker");
 
                         var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
                             var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
@@ -60,22 +60,21 @@ angular.module('videos.videoPlayer', [])
                                 videoStarted = true;
                             }
                             // set the new start time every time the video begins playing
-                            startTime = jwplayer().getPosition()
+                            startTime = player.currentTime();
                         });
 
                         player.on("seeked", function(){
-                            playTimes.push({start: startTime, end: jwplayer().getPosition()});
+                            playTimes.push({start: startTime, end: player.currentTime()});
                             startTime = event.offset;
                             // event.offset is not super accurate - more than likely due to encoding with low number of key frames.
                         });
 
                         player.on("pause", function(){
-                            playTimes.push({start: startTime, end: jwplayer().getPosition()});
+                            playTimes.push({start: startTime, end: player.currentTime()});
                         });
 
                         player.on("ended", function(){
-
-                            playTimes.push({start: startTime, end: jwplayer().getPosition()})
+                            playTimes.push({start: startTime, end: player.currentTime()})
 
                             trackVideoEvent( function() {
                                 var timestamp = Math.round((new Date()).getTime() / 1000);
@@ -97,7 +96,7 @@ angular.module('videos.videoPlayer', [])
                         $scope.$on('$destroy', function() {
                             // dont track anything if the video is not in a started/playing state
                             if(videoStarted != false) {
-                                playTimes.push({start: startTime, end: jwplayer().getPosition()})
+                                playTimes.push({start: startTime, end: player.currentTime()})
 
                                 trackVideoEvent( function() {
                                     var timestamp = Math.round((new Date()).getTime() / 1000);
@@ -111,7 +110,7 @@ angular.module('videos.videoPlayer', [])
                             }
                         });
                     }
-                    */
+
                 });
             }]
         }
