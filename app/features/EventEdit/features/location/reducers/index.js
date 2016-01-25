@@ -1,8 +1,6 @@
 import type from '../actions/constants'
 import moment from 'moment'
-
-//import { Actions, ActionCreators } from '../actions/loc'
-//import moment from 'moment'
+import { fromApiFormat } from '../transformers/location'
 
 function parsePlaceFor(type, place) {
 	for (var addressComponent of place.address_components) {
@@ -14,6 +12,19 @@ function parsePlaceFor(type, place) {
 
 export default function loc(state = {}, action) {
 	switch(action.type) {
+
+		case type('viewSuccess'):
+			if (action.initiatedByEdit) {
+				return Object.assign({}, state, { isLoading: true }) //fromApiFormat(Object.assign({}, action.loc, action.response))
+			} else {
+				return fromApiFormat(Object.assign({}, action.originalLoc, action.response))				
+			}
+
+		case type('viewFailure'):
+			return Object.assign({}, state, { errors: action.errors, hasError: true })
+
+		case type('viewRequest'):
+			return Object.assign({}, state, { isLoading: true, hasError: false })
 
 		case type('add'):
 			var start_dt = moment().startOf('hour')
@@ -32,7 +43,7 @@ export default function loc(state = {}, action) {
 			return {}
 
 		case type('setField'):
-			if (['name'].indexOf(action.field) > -1) {
+			if (['name', 'timezone'].indexOf(action.field) > -1) {
 				let item = Object.assign({}, state.item)
 				item[action.field] = action.value
 				return Object.assign({}, state, item, { isDirty: true })
@@ -90,7 +101,7 @@ export default function loc(state = {}, action) {
 			return Object.assign({}, state, { isSaving: true, hasError: false })
 
 		case type('createSuccess'):
-			return Object.assign({}, state, {})
+			return fromApiFormat(Object.assign({}, state, action.response))
 
 		case type('createFailure'):
 			return Object.assign({}, state, { errors: action.errors, hasError: true })
@@ -103,6 +114,28 @@ export default function loc(state = {}, action) {
 
 		case type('removeFailure'):
 			return Object.assign({}, state, { hasError: true, errors: action.errors, isRemoving: false })
+
+		case type('placeSuccess'):
+			if (action.initiatedByEdit) {
+				return Object.assign({}, state, { isLoading: true }) //hasPlace: true, place: action.response })
+			} else {
+				return Object.assign({}, state, { hasPlace: true, place: action.response })				
+			}
+
+		case type('placeFailure'):
+			return Object.assign({}, state, { place: { hasError: true, errors: action.errors } })		
+
+		case type('placeRequest'):
+			return Object.assign({}, state, { place: { isLoading: true } })
+
+		case type('editSuccess'):
+			return fromApiFormat(Object.assign({}, state, action.originalLoc, action.loc, { place: action.place }))
+
+		case type('editFailure'):
+			const originalLoc = action.originalLoc || {}
+			const loc = action.loc || {}
+			const place = action.place || {}
+			return Object.assign({}, state, loc, originalLoc, { place }, { hasError: action.error })
 
 		default:
 			return state

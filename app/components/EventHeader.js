@@ -2,14 +2,27 @@ import React, { Component } from 'react'
 import Row from './Row'
 import Column from './Column'
 import EventEditNav from '../features/EventEdit/components/EventEditNav'
+import ActionCreators from '../features/EventEdit/features/details/actions/creators'
 
 class EventHeader extends Component {
+	handleCancel() {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.cancel())
+	}
+
+	handleSave() {
+		const { event, dispatch } = this.props
+		dispatch(ActionCreators.saveDetails(event.item, false))		 
+	}
+
 	render() {
+		const { event } = this.props
+		const { isSaving, errors } = event
 		return (
 			<div className='event-header'>
 				<Row>
 					<Column s='medium-4'>
-						Cancel
+						<a onClick={::this.handleCancel}>Cancel</a>
 					</Column>
 
 					<Column s='medium-4' a='center'>
@@ -27,7 +40,7 @@ class EventHeader extends Component {
 					</Column>
 
 					<Column s='medium-6' a='right'>
-						<a className='solid-button gray'>Save as Draft</a>&nbsp;
+						<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving}>{ isSaving ? 'Saving...' : 'Save as Draft' }</a>&nbsp;
 						<a className='solid-button green'>Publish</a>
 					</Column>
 				</Row>

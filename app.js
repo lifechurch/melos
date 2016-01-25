@@ -46,10 +46,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/justatest', function(req, res) {
-	res.render('justatest', { justatest: process.env.JUSTATEST })
-});
-
 app.use('/', ping);
 app.use('/', api.expressRouter);
 

@@ -1,29 +1,28 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import DetailsEdit from '../features/EventEdit/features/details/components/DetailsEdit'
-import { eventSetDetails, createEvent, updateEvent } from '../actions/eventCreate'
+import ActionCreators from '../features/EventEdit/features/details/actions/creators'
 
 class EventEditDetails extends Component {
 
 	handleChange(changeEvent) {
 		const { name, value } = changeEvent.target
 		const { dispatch } = this.props
-		dispatch(eventSetDetails(name, value))
+		dispatch(ActionCreators.setDetails(name, value))
 	}
 
 	handleNext(clickEvent) {
-		const { history, router } = this.context
-		router.push('/frank')
-		history.push('/bob')
+		const { event, dispatch } = this.props
+		dispatch(ActionCreators.saveDetails(event.item, true))
 	}
 
 	handleLeave() {
 		const { dispatch, event } = this.props
 		if (event.detailsValid) {
 			if (event.item.id) {
-				dispatch(updateEvent(event.item))
+				dispatch(ActionCreators.update(event.item))
 			} else {
-				dispatch(createEvent(event.item))
+				dispatch(ActionCreators.create(event.item))
 			}
 		}
 	}

@@ -9,24 +9,39 @@ export function toApiFormat(loc) {
 		}
 	})
 
-	return {
-		id: loc.eventId,
-		name: loc.name,
-		type: loc.type,
-		timezone: loc.timezone,
-		city: loc.city,
-		country: loc.country,
-		latitude: loc.latitude,
-		longitude: loc.longitude,
-		formatted_address: loc.formatted_address,
-		google_place_id: loc.google_place_id,
-		region: loc.region,
-		postal_code: loc.postal_code,
-		times: times 
+	if (loc.type === 'physical') {
+		return {
+			id: loc.eventId,
+			location_id: loc.id || null,
+			name: loc.name,
+			type: loc.type,
+			timezone: loc.timezone,
+			city: loc.city,
+			country: loc.country,
+			latitude: loc.latitude,
+			longitude: loc.longitude,
+			formatted_address: loc.formatted_address,
+			google_place_id: loc.google_place_id,
+			region: loc.region,
+			postal_code: loc.postal_code,
+			times: times 
+		}
+	} else {
+		return {
+			id: loc.eventId,
+			location_id: loc.id || null,
+			name: loc.name,
+			type: loc.type,
+			timezone: loc.timezone,
+			region: loc.region,
+			postal_code: loc.postal_code,
+			times: times 
+		}		
 	}	
 }
 
 export function fromApiFormat(loc) {
+	console.log("this is what i got", loc)
 	let { times } = loc
 	const newTimes = times.map((t) => {
 		const { start_dt, end_dt } = t

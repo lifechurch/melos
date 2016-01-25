@@ -11,13 +11,16 @@ function getRequestAction(type, action) {
 	return finalAction
 }
 
-function getFailureAction(type, action, errors) {
-	const finalAction = Object.assign({}, action, { errors, type })
+function getFailureAction(type, action, api_errors) {
+	if (!Array.isArray(api_errors)) {
+		api_errors = [ api_errors ]
+	}
+	const finalAction = Object.assign({}, action, { api_errors, type })
 	delete finalAction.api_call
 	return finalAction
 }
 
-function getSuccessAction(type, action, response) {
+function getSuccessAction(type, action, response) {	
 	const finalAction = Object.assign({}, action, { response, type })
 	delete finalAction.api_call
 	return finalAction
@@ -86,6 +89,7 @@ export default store => next => action => {
 				next(getFailureAction(failureType, action, errors))
 			} else {
 				next(getSuccessAction(successType, action, response))
+				return response
 			}
 		}, (error) => {
 			next(getSuccessAction(failureType, action, [ error ]))

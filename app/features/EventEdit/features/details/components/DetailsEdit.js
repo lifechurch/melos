@@ -9,15 +9,13 @@ import Select from '../../../../../../app/components/Select'
 import Textarea from '../../../../../../app/components/Textarea'
 
 class DetailsEdit extends Component {
-
 	render() {
 		const { handleChange, handleNext, event, params } = this.props
 		return (
 			<form className="event-edit-details-form">
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<h1>Valid? {event.detailsValid ? 'Yes' : 'No'}</h1>
-						<FormField InputType={Input} size='large' placeholder='Event Name' name='title' onChange={handleChange} value={event.item.title} />
+						<FormField InputType={Input} size='large' placeholder='Event Name' name='title' onChange={handleChange} value={event.item.title} errors={event.errors.fields.title} />
 					</div>
 				</Row>
 				
@@ -25,19 +23,19 @@ class DetailsEdit extends Component {
 				
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<FormField InputType={Input} size='medium' placeholder="Church Name or Organization" name="org_name" onChange={handleChange} value={event.item.org_name} />
+						<FormField InputType={Input} size='medium' placeholder="Church Name or Organization" name="org_name" onChange={handleChange} value={event.item.org_name} errors={event.errors.fields.org_name} />
 					</div>
 				</Row>
 
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<FormField InputType={Textarea} placeholder="Event Description" name="description" onChange={handleChange} value={event.item.description} />
+						<FormField InputType={Textarea} placeholder="Event Description" name="description" onChange={handleChange} value={event.item.description} errors={event.errors.fields.description} />
 					</div>
 				</Row>
 				
 				<Row>
 					<Column s='medium-12' a='right'>
-						<Link disabled={!event.detailsValid} to={`/event/edit/${params.id}/locations_and_times`}>Next: Add Location & Times</Link>
+						<a disabled={event.errors.hasError} onClick={handleNext}>Next: Add Location & Times</a>
 					</Column>
 				</Row>
 			</form>

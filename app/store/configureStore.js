@@ -4,13 +4,21 @@ import rootReducer from '../reducers'
 import createLogger from 'redux-logger'
 import youversionApi from '../middleware/youversionApi'
 import googleMapsApi from '../middleware/googleMapsApi'
+import { syncHistory } from 'redux-simple-router'
+import { createHistory } from 'history'
 
+const history = createHistory()
 const logger = createLogger()
+const reduxRouterMiddleware = syncHistory(history)
 
 const finalCreateStore = compose(
-  applyMiddleware(youversionApi, googleMapsApi, thunk, logger)
+  applyMiddleware(thunk, youversionApi, googleMapsApi, reduxRouterMiddleware, logger)
 )(createStore)
 
 export default function configureStore(initialState) {
-	return finalCreateStore(rootReducer, initialState)
+	const store = finalCreateStore(rootReducer, initialState)
+	return {
+		store,
+		history
+	}
 }

@@ -5,8 +5,8 @@ import Column from '../../../../../../app/components/Column'
 
 class Location extends Component {
 	handleRemoveClick(event) {
-		const { handleRemove, loc } = this.props
-		handleRemove(loc.id)
+		const { handleRemove, loc, index } = this.props
+		handleRemove(loc.id, index)
 	}
 
 	handleEditClick(event) {
@@ -52,7 +52,8 @@ class Location extends Component {
 Location.propTypes = {
 	loc: PropTypes.object.isRequired,
 	handleRemove: PropTypes.func.isRequired,
-	handleEdit: PropTypes.func.isRequired
+	handleEdit: PropTypes.func.isRequired,
+	index: PropTypes.number.isRequired
 }
 
 export default Location

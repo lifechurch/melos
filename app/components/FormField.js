@@ -5,13 +5,13 @@ import Select from './Select'
 
 class FormField extends Component {
 	render() {
-		const { InputType, error } = this.props
+		const { InputType, errors } = this.props
 
 		var labelClass = ''
 		var fieldError = null
-		if (typeof error === 'string') {
+		if (Array.isArray(errors) && errors.length > 0) {
 			labelClass = 'error'
-			fieldError = (<small className={labelClass}>{error}</small>)
+			fieldError = (<small className={labelClass}>{errors.join(' ')}</small>)
 		}
 
 		return (
@@ -36,7 +36,7 @@ FormField.propTypes = {
 	name: PropTypes.string.isRequired,
 	onChange: PropTypes.func.isRequired,
 	value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
-	error: PropTypes.string
+	errors: PropTypes.array
 }
 
 export default FormField

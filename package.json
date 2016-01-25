@@ -24,6 +24,7 @@
     "moment": "^2.11.1",
     "morgan": "~1.6.1",
     "react": "^0.14.5",
+    "react-addons-css-transition-group": "^0.14.6",
     "react-date-picker": "^4.0.6",
     "react-datepicker": "^0.18.0",
     "react-dom": "^0.14.5",
@@ -38,7 +39,7 @@
     "redux-form": "^4.1.1",
     "redux-logger": "^2.3.1",
     "redux-router": "1.0.0-beta7",
-    "redux-simple-router": "^1.0.2",
+    "redux-simple-router": "^2.0.4",
     "redux-thunk": "^1.0.3",
     "serve-favicon": "~2.3.0"
   },

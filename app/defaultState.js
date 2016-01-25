@@ -1,11 +1,12 @@
 export default {
 	event: {
-		hasError: false,
-		errors: [],		 
+		errors: {
+			summary: '',
+			fields: []
+		},
 		isFetching: false,
 		isSaving: false,
 		isDirty: false,
-		detailsValid: false,
 		item: {
 			org_name: null,
 			status: "draft",

@@ -9,7 +9,6 @@ class ImageDrop extends Component {
 	}
 
 	onDrop(files) {
-		console.log("Dropped", files);
 	}
 
 	onOpenClick() {
