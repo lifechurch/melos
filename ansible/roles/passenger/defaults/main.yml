@@ -4,3 +4,5 @@
 passenger_enterprise_stages:
   - production
   - staging
+
+ulimit_openfile: 65535

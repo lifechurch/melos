@@ -80,6 +80,15 @@
   tags:
     - passenger
 
+- name: raise ulimit for nginx
+  lineinfile:
+    dest: /etc/default/nginx
+    regexp: "^ULIMIT"
+    line: ULIMIT="-n {{ ulimit_openfile }}"
+    insertafter: "^#ULIMIT"
+  tags:
+    - passenger
+
 - name: start nginx on boot
   service:
     name: nginx
