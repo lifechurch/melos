@@ -4,12 +4,12 @@ angular.module('common.branchSms', [])
         return {
             restrict: 'A',
             scope: {
-
+                defaultCountry: '@'
             },
             controller: [ '$scope', function($scope) {
                 angular.element(document).ready(function() {
                     if (Foundation.utils.is_medium_up()) {
-                        loadsms();
+                        loadsms($scope.defaultCountry);
                     }
                 });
             }]
