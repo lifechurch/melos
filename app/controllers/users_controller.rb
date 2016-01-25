@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     if @user.persisted?
       # save username so we can populate sign in form
       cookies.signed[:a] = @user.id
-      cookies.signed[:b] = @user.username
+      cookies.signed[:b] = @user.email
       # maybe something like this, but we have to globally rescue UnverifiedAccountError
       # set_auth(@user.id, params[:user][:password])
 

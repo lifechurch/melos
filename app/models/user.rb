@@ -55,7 +55,7 @@ class User < YV::Resource
       }.merge!(opts.symbolize_keys)
 
       opts[:agree] = true if opts[:agree]
-      opts[:token] = Digest::MD5.hexdigest "#{opts[:username]}.Yv6-#{opts[:password]}"
+      opts[:token] = Digest::MD5.hexdigest "#{opts[:email]}.Yv6-#{opts[:password]}"
       opts[:notification_settings] = { newsletter: {email: true}}
 
       data, errs = post("users/create", opts)
