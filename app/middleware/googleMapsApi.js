@@ -1,11 +1,10 @@
 import GoogleMapsApi from '../api/GoogleMaps'
 
-const methods = [ 'getTimezone' ]
+const methods = [ 'getTimezone', 'getPlace' ]
 
 function getRequestAction(type, action) {
 	const finalAction = Object.assign({}, action, { type })
 	delete finalAction.google_maps_api_call
-	console.log(finalAction)	
 	return finalAction
 }
 
@@ -46,10 +45,12 @@ export default store => next => action => {
 	const [ requestType, successType, failureType ] = types	
 
 	next(getRequestAction(requestType, action))
-	console.log("PARAMS", params);
+	
 	return api_method.apply(this, params).then((response) => {
 		next(getSuccessAction(successType, action, response))
+		return response
 	}, (error) => {
 		next(getFailureAction(failureType, action, [ error ]))
+		return error
 	})
 }

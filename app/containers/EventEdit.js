@@ -4,40 +4,35 @@ import Helmet from 'react-helmet'
 import { fetchEventFeedDiscover } from '../actions'
 import { Link } from 'react-router'
 import { fetchEventView } from '../actions'
+import ActionCreators from '../features/EventEdit/features/details/actions/creators'
 import EventHeader from '../components/EventHeader'
 
 class EventEdit extends Component {
 	componentWillMount() {
 		const { dispatch, params } = this.props
 		if (params.hasOwnProperty("id") && params.id > 0) {
-			dispatch(fetchEventView(params.id))
+			dispatch(ActionCreators.view(params.id))
+		} else {
+			dispatch(ActionCreators.new())
 		}
 	}
 
 	handleDetailsNext(nextLocation) {
 		const { dispatch, event } = this.props
 		const { isDirty, detailsValid } = event
-		console.group("Route will leave...")
 		if (isDirty) {
-			console.log("dirty")			
 			if (detailsValid) {
-				console.log("details valid")
 				if (event.item.id) {
-					console.log("update")
 					dispatch(updateEvent(event.item))
 				} else {
-					console.log("create")
 					dispatch(createEvent(event.item))
 				}
 			} else {
-				console.log("validation failed")
 				// Didn't Pass Detail Validation
 			}
 		} else {
-			console.log("not dirty")
 			// Isn't Dirty, just go next
 		}
-		console.groupEnd()
 	}	
 
 	render() {

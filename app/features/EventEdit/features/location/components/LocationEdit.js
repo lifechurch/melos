@@ -15,26 +15,47 @@ class LocationEdit extends Component {
 			center: LocationEdit.mapCenter,
 			markers: []
 		}
+
+		// const { loc } = props		
 	}
 
-	handleBoundsChanged () {
+	handleBoundsChanged () {		
+		const { loc } = this.props
+		if (typeof loc.place === 'object' && typeof loc.place.geometry === 'object') {
+			this.mapPlaces([loc.place], false)
+
+			if (typeof loc.formatted_address === 'string') {
+				console.log("SB", this.refs.searchBox)
+				this.refs.searchBox.state.inputElement.value = loc.formatted_address
+			}
+		}
+
 		this.setState({
 			bounds: this.refs.map.getBounds(),
 			center: this.refs.map.getCenter()
 		});
 	}
 
+
 	handlePlacesChanged () {
 		const places = this.refs.searchBox.getPlaces();
+		this.mapPlaces(places)
+		return;
+	}
+
+	mapPlaces(places, triggerChoose = true) {
 		const markers = [];
 		const { dispatch, handleChoosePlace } = this.props
 
 		// Add a marker for each place returned from search bar
-		places.forEach(function (place) {
-			handleChoosePlace(place)
+		places.forEach(function (place) {			
 			markers.push({
 				position: place.geometry.location
 			});
+
+			if (triggerChoose) {
+				handleChoosePlace(place)
+			}			
 		});
 
 		// Set markers; set map center to first search result
@@ -48,12 +69,8 @@ class LocationEdit extends Component {
 		return;
 	}
 
-	putPinOnMap() {
-		
-	}
-
 	render() {
-		const { handleCancel, handleChange, handleCreate, handleSetTime, handleAddTime, loc } = this.props
+		const { handleCancel, handleChange, handleSave, handleSetTime, handleAddTime, loc } = this.props
 
 		var inputStyle = {
 			"border": "1px solid transparent",
@@ -88,6 +105,62 @@ class LocationEdit extends Component {
 			})
 		}
 
+		var gMap = null;
+		if (loc.type === 'physical') {
+			gMap = (
+				<GoogleMap
+					center={this.state.center}
+					containerProps={containerProps}
+					defaultZoom={15}
+					onBoundsChanged={::this.handleBoundsChanged}
+					ref="map">
+
+					<SearchBox
+						bounds={this.state.bounds}
+						controlPosition={google.maps.ControlPosition.TOP_LEFT}
+						onPlacesChanged={::this.handlePlacesChanged}
+						ref="searchBox"
+						placeholder="Customized your placeholder"
+						style={inputStyle} />
+
+					{this.state.markers.map((marker, index) => (
+						<Marker position={marker.position} key={index} />
+					))}
+
+				</GoogleMap>			
+			)
+		}
+
+		var locationDetails = null;
+		if (loc.type === 'physical') {
+			locationDetails = (
+				<div className='form-body-block text-left'>
+					<form>
+						<Row>
+							<Column s='small-6'>
+								<input className='small' type='text' name='country' placeholder='Country' onChange={handleChange} value={loc.country} />
+							</Column>
+							<Column s='small-6'>
+								<input className='small' type='text' name='timezone' placeholder='Timezone' onChange={handleChange} value={loc.timezone} />
+							</Column>								
+						</Row>
+					</form>
+				</div>
+			)
+		} else {
+			locationDetails = (
+				<div className='form-body-block text-left'>
+					<form>
+						<Row>
+							<Column s='small-6 end'>
+								<input className='small' type='text' name='timezone' placeholder='Timezone' onChange={handleChange} value={loc.timezone} />
+							</Column>								
+						</Row>
+					</form>
+				</div>
+			)			
+		}
+
 		return (
 			<div className='modal'>		
 				<div className='form-body'>
@@ -98,26 +171,7 @@ class LocationEdit extends Component {
 								Location Name
 							</label>
 						</form>
-						<GoogleMap
-							center={this.state.center}
-							containerProps={containerProps}
-							defaultZoom={15}
-							onBoundsChanged={::this.handleBoundsChanged}
-							ref="map">
-
-							<SearchBox
-								bounds={this.state.bounds}
-								controlPosition={google.maps.ControlPosition.TOP_LEFT}
-								onPlacesChanged={::this.handlePlacesChanged}
-								ref="searchBox"
-								placeholder="Customized your placeholder"
-								style={inputStyle} />
-
-							{this.state.markers.map((marker, index) => (
-								<Marker position={marker.position} key={index} />
-							))}
-
-						</GoogleMap>						
+						{gMap}						
 					</div>
 
 					<div className='form-body-block white text-left'>
@@ -125,23 +179,12 @@ class LocationEdit extends Component {
 						<a onClick={handleAddTime}>Add another time</a>
 					</div>
 
-					<div className='form-body-block text-left'>
-						<form>
-							<Row>
-								<Column s='small-6'>
-									<input className='small' type='text' name='country' placeholder='Country' onChange={handleChange} value={loc.country} />
-								</Column>
-								<Column s='small-6'>
-									<input className='small' type='text' name='timezone' placeholder='Timezone' onChange={handleChange} value={loc.timezone} />
-								</Column>								
-							</Row>
-						</form>
-					</div>										
+					{locationDetails}										
 
 					<div className='form-actions text-right'>
 						<ErrorMessage hasError={loc.hasError} errors={loc.errors} />					
 						<a onClick={handleCancel}>Cancel</a>
-						<a className='solid-button green' onClick={handleCreate}>Save this Location</a>
+						<a className='solid-button green' onClick={handleSave}>Save this Location</a>
 					</div>
 				</div>
 

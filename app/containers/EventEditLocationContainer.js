@@ -6,6 +6,7 @@ import ActionCreators from '../features/EventEdit/features/location/actions/crea
 import LocationEdit from '../features/EventEdit/features/location/components/LocationEdit'
 import Location from '../features/EventEdit/features/location/components/Location'
 import LocationAddButtons from '../features/EventEdit/features/location/components/LocationAddButtons'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class EventEditLocationContainer extends Component {
 	handleAddPhysicalLocationClick(clickEvent) {
@@ -44,14 +45,29 @@ class EventEditLocationContainer extends Component {
 		dispatch(ActionCreators.addTime())
 	}
 
-	handleCreate() {
+	handleSave() {
 		const { dispatch, event, loc } = this.props
-		dispatch(ActionCreators.create(event.item.id, loc))
+		const { id } = loc
+		if (typeof id === 'number' && id > 0) {
+			dispatch(ActionCreators.update(event.item.id, loc)).then((result) => {
+				console.log("RES", result)
+				if (typeof result === 'object') {
+					dispatch(ActionCreators.cancelEdit())
+				}
+			})
+		} else {
+			dispatch(ActionCreators.create(event.item.id, loc)).then((result) => {
+				console.log("RES", result)				
+				if (typeof result === 'object') {
+					dispatch(ActionCreators.cancelEdit())
+				}
+			})
+		}
 	}
 
-	handleRemove(locationId) {
+	handleRemove(locationId, index) {
 		const { dispatch, event } = this.props
-		dispatch(ActionCreators.remove(event.item.id, locationId))
+		dispatch(ActionCreators.remove(event.item.id, locationId, index))
 	}
 
 	handleEdit(loc) {
@@ -62,22 +78,8 @@ class EventEditLocationContainer extends Component {
 	render() {
 		const { dispatch, event, loc } = this.props
 
-		var locationEditor
-		if (loc && typeof loc.type === 'string') {
-			locationEditor = (<LocationEdit  
-				handleCancel={::this.handleCancel} 
-				handleChange={::this.handleChange}
-				handleChoosePlace={::this.handleChoosePlace}
-				handleSetTime={::this.handleSetTime}
-				handleAddTime={::this.handleAddTime}
-				handleCreate={::this.handleCreate}
-				dispatch={dispatch} 
-				loc={loc} />
-			)
-		} 
-
-		var locations = event.item.locations.map((l) => {
-			return (<li><Location loc={l} handleRemove={::this.handleRemove} handleEdit={::this.handleEdit} /></li>)
+		var locations = event.item.locations.map((l, i) => {
+			return (<li key={i}><Location index={i} loc={l} handleRemove={::this.handleRemove} handleEdit={::this.handleEdit} /></li>)
 		})
 
 		var centerButtons
@@ -85,26 +87,49 @@ class EventEditLocationContainer extends Component {
 			centerButtons = 'center-single-item'
 		}
 
+		var locationEditor
+		var locationList = null		
+		if (loc && typeof loc.type === 'string') {
+			locationEditor = (<LocationEdit key='locationeditor'  
+				handleCancel={::this.handleCancel} 
+				handleChange={::this.handleChange}
+				handleChoosePlace={::this.handleChoosePlace}
+				handleSetTime={::this.handleSetTime}
+				handleAddTime={::this.handleAddTime}
+				handleSave={::this.handleSave}
+				dispatch={dispatch} 
+				loc={loc} />
+			)
+		} else {
+			locationList = (
+				<ul className="medium-block-grid-3" key='locationlist'>
+					<ReactCSSTransitionGroup className='medium-block-grid-3' transitionName="locationlist" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
+						{locations}						
+						<li className={centerButtons} key={-1}>
+							<LocationAddButtons 
+								handleAddPhysicalLocationClick={::this.handleAddPhysicalLocationClick} 
+								handleAddVirtualLocationClick={::this.handleAddVirtualLocationClick}>
+							</LocationAddButtons>
+						</li>
+					</ReactCSSTransitionGroup>
+				</ul>				
+			)			
+		}
 
 		return (			
 			<div>
 				<Helmet title="Event Location" />
 				<Row>
 					<div className="medium-10 large-8 columns small-centered text-center">
-						{locationEditor}
+						<ReactCSSTransitionGroup transitionName="locationeditor" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
+							{locationEditor}
+							{locationList}							
+						</ReactCSSTransitionGroup>
 					</div>
 				</Row>
 				<Row>
 					<div className="medium-10 large-8 columns small-centered text-center">
-						<ul className="medium-block-grid-3">
-							{locations}						
-							<li className={centerButtons}>
-								<LocationAddButtons 
-									handleAddPhysicalLocationClick={::this.handleAddPhysicalLocationClick} 
-									handleAddVirtualLocationClick={::this.handleAddVirtualLocationClick}>
-								</LocationAddButtons>
-							</li>
-						</ul>
+
 					</div>
 				</Row>
 				<Row>
