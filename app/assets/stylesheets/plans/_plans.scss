@@ -48,6 +48,18 @@ a.icon.active {
   }
 }
 
+.plans-nav-box {
+  a.icon.plans-nav-all {
+    @media #{$small-only} {
+      background-color: transparent;
+      color: $black;
+      width: 100%;
+      border: 0;
+      font-weight: bold;
+    }
+  }
+}
+
 html[dir="rtl"] body.c_subscriptions {
   @media #{$small-only} {
     .plans-nav-box a {
