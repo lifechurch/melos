@@ -2,6 +2,9 @@ user yvdep;
 worker_processes 8;
 pid /run/nginx.pid;
 
+env JUSTATEST;
+env NEW_RELIC_LICENSE_KEY;
+
 events {
 	worker_connections 768;
 	# multi_accept on;
@@ -25,6 +28,7 @@ http {
 
   passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
   passenger_max_pool_size 16;
+  passenger_resist_deployment_errors on;
 
   server {
       server_name events.bible.com;

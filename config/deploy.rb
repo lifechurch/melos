@@ -31,7 +31,6 @@ namespace :deploy do
           execute "mv #{deploy_to}/releases/current #{deploy_to}"
           execute "sudo ln -nfs #{deploy_to}/current/config/nginx/nginx.conf-#{fetch(:stage)} /etc/nginx/nginx.conf"
           execute "sudo service nginx restart"
-          execute "curl http://events.bible.com -k || true"
           execute "sleep 5"
           execute "rm /tmp/disable.txt || true"
         end

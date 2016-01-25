@@ -89,6 +89,16 @@
   tags:
     - passenger
 
+- name: put environment variables into place
+  lineinfile:
+    dest: /home/yvdep/.profile
+    regexp: "^export {{ item.key }}="
+    line: "export {{ item.key }}={{ item.value }}"
+    owner: yvdep
+    group: yvdep
+    mode: 0700
+  with_dict: "{{ yvdep_variables }}"
+
 - name: start nginx on boot
   service:
     name: nginx
