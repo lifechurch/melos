@@ -1,10 +1,11 @@
-- @title = "#{t('download ad.description copy', language_count: 900)} | Android, iPhone, iPad, Android tablet, Blackberry, Windows Phone 8"
+- @title = "#{t('download ad.description copy', language_count: 900)} #{t('meta.mobile.download or read')} - Android, iPhone, iPad, Android tablet, Blackberry - #{t('meta.mobile.title')}"
+- @subtitle = ''
 
 - content_for :additional_meta do
   = render '/shared/hreflang'
 
 - content_for :meta_description do
-  = "#{t('bible versions')} - #{t("versions.number of versions field")} #{@versions_by_lang.values.flatten.count}, #{t("versions.number of languages field")} #{@versions_by_lang.count}.  #{t('download ad.meta copy title')}"
+  = "#{t('meta.mobile.download or read')} #{t('download ad.description copy', language_count: 900)}"
 
 .row
   .medium-8.columns
@@ -19,7 +20,7 @@
               %li
                 - meta_language = versions.first.attributes.language.local_name
                 - meta_language = "#{meta_language} | #{versions.first.attributes.language.name}" if (versions.first.attributes.language.name.present? and not (meta_language.eql?(versions.first.attributes.language.name)))
-                = t("versions.language and count", language_name: "#{meta_language}",  language_count: versions.count)
+                = link_to(t("versions.language and count", language_name: "#{meta_language}",  language_count: versions.count), language_path(versions.first.language.id), target: '_self', class: 'lang_title')
                 %ul.no_bullet
                   - versions.each do |version|
                     %li
