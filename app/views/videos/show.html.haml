@@ -56,8 +56,8 @@
             "video-ref-id" => "#{videoRefId}",
             "video-player" => true }
 
-            %source{src: "#{@video.webm.url.gsub('http:', 'https:')}", type:'video/webm'}
-            %source{src: "#{@video.hls.url.gsub('http:', 'https:')}", type:'video/mp4'}
+            %source{src: "#{@video.webm.url}", type:'video/webm'}
+            %source{src: "#{@video.hls.url}", type:'video/mp4'}
             %p.vjs-no-js
               To view this video please enable JavaScript, and consider upgrading to a web browser that
               =link_to("supports HTML5 video", "http://videojs.com/html5-video-support/", target: "_blank")
