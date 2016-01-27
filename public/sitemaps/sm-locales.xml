@@ -756,4 +756,44 @@
     <loc>https://www.bible.com/ko/kids</loc>
     <priority>1</priority>
   </url>
+  <url>
+    <loc>https://www.bible.com/pt/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/ru/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/nl/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/de/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/fr/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/ar/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/id/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/tr/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/fa/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/ja/kids</loc>
+    <priority>1</priority>
+  </url>
 </urlset>
