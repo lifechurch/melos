@@ -35,10 +35,10 @@
 = render '/shared/app_banner'
 
 - content_for :additional_meta do
-  - share_title = "#{bible_in_lang}. #{t('meta.mobile.download or read')}"
+  - share_title = "#{bible_in_lang}"
   %meta{property: "og:title",       content: share_title }
   %meta{property: "og:url",         content: @meta_url }
-  %meta{property: "og:description", content: "#{t('download ad.description copy', language_count: 900)}" }
+  %meta{property: "og:description", content: "#{t('download ad.description copy', language_count: 900)} #{t('meta.mobile.download or read')}" }
 - content_for :facebook_meta do
   %meta{property: "og:image", content: "#{url_for(asset_path('lang_share.png'))}"}
 
