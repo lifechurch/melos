@@ -101,6 +101,7 @@ angular.module('yv.reader', [
     $scope.isMobile = Foundation.utils.is_small_only() || Foundation.utils.is_medium_only();
     $scope.showContent = !$scope.isMobile;
     $scope.topPanelOpen = false;
+    $scope.showSubscribeButtons = false;
 
 	hideAllPanels();
 	hideAllSidePanels();
@@ -115,6 +116,13 @@ angular.module('yv.reader', [
 		}
 	});
 
+    $scope.startPlan = function(basePath, planId, privacy) {
+        Subscription.create(basePath, planId, privacy, null).success(function() {
+            $window.location.href = basePath + "/" + planId;
+        }).error(function() {
+
+        });
+    };
 
 	/**
 	 * Hide all the header panels

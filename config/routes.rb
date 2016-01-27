@@ -42,6 +42,8 @@ YouversionWeb::Application.routes.draw do
   get "/enfants",       to: "redirects#enfants"
   get "/anak",       to: "redirects#anak"
   get "/cocuk",      to: "redirects#cocuk"
+  get "/kodomo",      to: "redirects#kodomo"
+  get "/%E3%81%93%E3%81%A9%E3%82%82",      to: "redirects#kodomo"
   get "/trending-bible-verses", to: "pages#trending"
   get "/verse-of-the-day", to: "pages#votd"
   get "/bible-verse-of-the-day", to: "pages#votd"
@@ -79,6 +81,7 @@ YouversionWeb::Application.routes.draw do
   
   resources "versions",   only:   [:index, :show]
   resources "audiobibles", :path => '/audio-bible-app-versions', only: [:index, :show]
+  resources "languages",   only:   [:index, :show]
   
 
   resources :licenses, except: [:index,:show,:new,:create,:edit,:update,:destroy] do

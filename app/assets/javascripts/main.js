@@ -19,6 +19,7 @@ angular.module('yv', [
     'common.branchMobileBanner',
     'common.branchSms',
     'common.hoverLink',
+    'common.focusMe',
     'common.carousel'
 ])
 

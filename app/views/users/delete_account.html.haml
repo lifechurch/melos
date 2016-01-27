@@ -10,13 +10,10 @@
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
   %p
-    %br
-    = label_tag :password do 
+    = label_tag :password do
       = t("password prompt")
-      = password_field_tag :password, params[:password], class: "autofocus"
-    %br
+    = password_field_tag :password, params[:password], class: "autofocus"
     %span.small= link_to t('users.forgot password'), forgot_password_path, { class: ""}
-    %br
-    %br    
+
   %p
     = submit_tag t("users.delete account button"), class: "confirm solid-button red", "data-confirm-text" => t('users.yes delete')

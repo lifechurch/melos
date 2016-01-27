@@ -12,46 +12,38 @@
     %ul
       - @user.errors.full_messages.each do |e|
         %li= e
-  .row
-    .columns.medium-12
-      = f.label :first_name do
-        = t('users.profile.first name')
-        = f.text_field :first_name, required: true
-  .row
-    .columns.medium-12
-      = f.label :last_name do 
-        = t('users.profile.last name')
-        = f.text_field :last_name, required: true
-  .row
-    .columns.medium-12
-      = f.label :bio do
-        = t('users.profile.bio')
-        = f.text_area :bio, rows: 5, style: "width: 223px", :maxlength => 160, placeholder: t("160 character limit")
-  .row
-    .columns.medium-12
-      = f.label :location do
-        = t('users.profile.location')
-        = f.text_field :location
-  .row
-    .columns.medium-12
-      = f.label :postal_code do
-        = t('users.profile.postal code')
-        = f.text_field :postal_code
-  .row
-    .columns.medium-12
-      = f.label :website do
-        = t('users.profile.website')
-        = f.text_field :website
-  .row
-    .columns.medium-12.country_select
-      = f.label :country do
-        = t('users.profile.country')
-        = (f.country_select :country).gsub('Taiwan, Province Of China', 'Taiwan').html_safe #quick hack to make the Taiwanese happy
-  .row
-    .columns.medium-12
-      = f.label :timezone do
-        = t('users.profile.timezone')
-        = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px"}
-  .row
-    .columns.medium-12
-      = button_tag t('users.update profile') , {class: "solid-button green"}
+  %div
+    = f.label :first_name do
+      = t('users.profile.first name')
+    = f.text_field :first_name, required: true, :tabindex => 1
+  %div
+    = f.label :last_name do
+      = t('users.profile.last name')
+    = f.text_field :last_name, required: true, :tabindex => 2
+  %div
+    = f.label :bio do
+      = t('users.profile.bio')
+    = f.text_area :bio, rows: 5, :maxlength => 160, placeholder: t("160 character limit"), :tabindex => 3
+  %div
+    = f.label :location do
+      = t('users.profile.location')
+    = f.text_field :location, :tabindex => 4
+  %div
+    = f.label :postal_code do
+      = t('users.profile.postal code')
+    = f.text_field :postal_code, :tabindex => 5
+  %div
+    = f.label :website do
+      = t('users.profile.website')
+    = f.text_field :website, :tabindex => 6
+  .country_select
+    = f.label :country do
+      = t('users.profile.country')
+    = (f.country_select(:country, t('select dropdown'))).html_safe
+  %div
+    = f.label :timezone do
+      = t('users.profile.timezone')
+    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px", tabindex: "8"}
+  %div
+    = button_tag t('users.update profile') , {class: "solid-button green"}
+

@@ -125,6 +125,7 @@ en:
     mobile:
       title:                                    "The Bible App"
       description:                              "Read God’s Word at anytime, anywhere using the YouVersion Bible App. Share Scripture with friends, highlight and bookmark passages, and create a daily habit with Bible Plans. Available for iOS, Android, Blackberry, Windows Phone and more."
+      download or read:                         "Download now or read online."
     site:
       title:                                    "Bible.com"
       description:                              "Bring the beauty and truth of the Bible into everyday life. With the YouVersion Bible App, you can read, watch, listen, and share on your smartphone or tablet, and online at Bible.com."
@@ -174,6 +175,7 @@ en:
       google:                                   "http://play.google.com/store/apps/details?id=com.bible.kids"
       amazon:                                   "http://www.amazon.com/gp/product/B00GURLC40"
   now:                                          "Now"
+  select dropdown:                              "--Select--"
   celebrating 50MM:                             "Celebrating 50 Million App Installs!"
   link:                                         "Link"
   site search:                                  "YouVersion Search"
@@ -301,6 +303,12 @@ en:
   traditional:                                  "Traditional"
   alphabetic:                                   "Alphabetic"
   versions title:                               "Versions"
+  languages:
+    title:                                      "Bible languages and translations"
+    most popular:                               "Most popular languages"
+    additional:                                 "Additional languages"
+    download language:                          "Download the Bible in %{language_name}"
+    bible in:                                   "The Bible in %{language_name}"
   or:
     lower:                                      "or"
     upper:                                      "OR"
@@ -1120,6 +1128,7 @@ en:
     sms success:                                "Great! Check your mobile device for the link."
     sms info:                                   "You will receive a one time SMS to download the app"
     sms download:                               "Click to download the Bible App:"
+    sms default country:                        "US"
   pages:
     generic_error:
       title:                                    "Oops!"
