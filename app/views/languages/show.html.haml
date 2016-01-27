@@ -5,6 +5,14 @@
 - content_for :meta_description do
   = "#{t('download ad.description copy', language_count: 900)} #{t('download ad.meta copy title')}"
 
+- content_for :additional_meta do
+  - bible_in_lang = "#{t('languages.bible in', language_name: @language_name)}"
+  %meta{property: "og:title",       content: "#{bible_in_lang}" }
+  %meta{property: "og:url",         content: @meta_url }
+  %meta{property: "og:description", content: "#{t('download ad.description copy', language_count: 900)} #{t('meta.mobile.download or read')}" }
+- content_for :facebook_meta do
+  %meta{property: "og:image", content: "#{url_for(asset_path('lang_share.png'))}"}
+
 .row
   .medium-8.columns
     = cache "single_lang_#{@language}_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
@@ -28,13 +36,6 @@
                         - show_lang_title = false
                       %li
                         = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version), {target: "_self"}
-      - content_for :additional_meta do
-        - share_title = "#{bible_in_lang}"
-        %meta{property: "og:title",       content: share_title }
-        %meta{property: "og:url",         content: @meta_url }
-        %meta{property: "og:description", content: "#{t('download ad.description copy', language_count: 900)} #{t('meta.mobile.download or read')}" }
-      - content_for :facebook_meta do
-        %meta{property: "og:image", content: "#{url_for(asset_path('lang_share.png'))}"}
 
   .medium-4.columns.show-for-medium-up.l-border
     = render partial: 'widgets/download_app', :locals => {show_sms: true}
