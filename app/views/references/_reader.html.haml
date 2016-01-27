@@ -104,7 +104,7 @@
 
   - if (controller_name == 'references')
     .medium-10.large-6.columns{"ng-show" => "isParallelMode", "ng-class" => "{ 'medium-10': !isParallelMode, 'medium-6': isParallelMode, 'large-6': !isParallelMode }"}
-      #parallel_reader.reader{"ng-hide" => "isPlanState", "reader" => true, "content" => "parallel_reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes", "copyright" => "parallel_reader_copyright"}
+      #parallel_reader.reader{"ng-hide" => "isPlanState", "reader" => true, "content" => "parallel_reader_html", "selection" => "readerSelection", "font-size" => "readerFontSize", "font-family" => "readerFontFamily", "highlights" => "highlights", "bookmarks" => "bookmarks", "show-footnotes" => "showFootnotes", "show-numbers-and-titles" => "showNumbersAndTitles", "copyright" => "parallel_reader_copyright"}
 
   .reader-right.large-3.columns.verse-action-panels-container{"ng-hide" => "isParallelMode || (showContent && isMobile)"}
     - if (controller_name != 'references' && right_sidebar_presenter.present?)
