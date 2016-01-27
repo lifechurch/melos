@@ -457,3 +457,84 @@ body.c_users.a_confirm_email {
     width: 250px;
   }
 }
+
+
+/* Profile settings */
+
+.c_users.a_edit #main {
+  input[type="text"],
+  textarea,
+  select {
+    margin: 5px 0 20px;
+
+    @media #{$large-only} {
+      width: 50%;
+    }
+  }
+
+  #user_postal_code {
+    width: 20%;
+
+    @media #{$large-only} {
+      width: 12%;
+    }
+  }
+}
+
+.c_emails.a_show #main {
+  input {
+    margin: 5px 0 20px;
+
+    @media #{$large-only} {
+      width: 50%;
+    }
+  }
+}
+
+.c_passwords.a_show #main {
+  label {
+    margin: 0 0 5px;
+  }
+
+  input {
+    @media #{$large-only} {
+      width: 40%;
+    }
+  }
+}
+
+.c_vod_subscriptions.a_index #main {
+  label {
+    margin: 0 0 5px;
+  }
+
+  select {
+    width: auto;
+  }
+
+  .votd-time select {
+    width: 60px;
+  }
+}
+
+.c_users.a_delete_account #main {
+  h2 ~ p {
+    @media #{$large-only} {
+      width: 80%;
+    }
+  }
+
+  label {
+    margin: 20px 0 5px;
+  }
+
+  #password {
+    @media #{$large-only} {
+      width: 40%;
+    }
+  }
+
+  .solid-button.red {
+    margin: 10px 0 0;
+  }
+}
