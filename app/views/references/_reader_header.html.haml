@@ -18,9 +18,9 @@
         =reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "inNonDefaultLocale() && !devotionalActive", "uisref": "reader-locale({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
 
         %h1{"ng-hide" => "devotionalActive"}
-          %a.book{:id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks')", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').first
+          %a.book{:id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks'); focusInput=true;", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').first
           %a.chapter{:id => "reader_chapter", "ng-bind" => "reader_chapter", "ng-click" => "togglePanel('showReaderChapters')", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').last
-          %a.version{:id => "reader_version", "ng-bind" => "reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions')"}= version.human
+          %a.version{:id => "reader_version", "ng-bind" => "reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions'); focusInput=true;"}= version.human
           %a.version.ng-hide{:id => "parallel_reader_version", "ng-bind" => "parallel_reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions', true)", "ng-show" => "isParallelMode"}
         %h1.ng-hide{"ng-show" => "devotionalActive"}
           %a.devotional
