@@ -1,6 +1,6 @@
 angular.module('common.focusMe', [])
 
-    .directive('focusMe', function($timeout) {
+    .directive('focusMe', ['$timeout', function($timeout) {
         return {
             link: function(scope, element, attrs) {
                 scope.$watch(attrs.focusMe, function(value) {
@@ -13,6 +13,6 @@ angular.module('common.focusMe', [])
                 });
             }
         };
-    });
+    }]);
 
 ;
