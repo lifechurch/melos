@@ -544,6 +544,15 @@ article.error {
   }
 }
 
+.moment-vod {
+  .moment-top-avatar {
+    img[src="/assets/icon-vod.svg"] {
+      width: 33px;
+      height: 33px;
+    }
+  }
+}
+
 
 /* !Loading spinner */
 
