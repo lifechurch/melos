@@ -24,6 +24,7 @@ YouversionWeb::Application.routes.draw do
   get "/christmas-2015", to: redirect("http://blog.youversion.com/?p=18881")
   get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
   get "/21-day",      to: redirect("http://blog.youversion.com/?p=19454")
+  get "/21-day-challenge", to: redirect("http://blog.youversion.com/2016/01/youversions-21-day-challenge-for-2016-you-could-win-an-amazon-fire-tablet/")
 
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
