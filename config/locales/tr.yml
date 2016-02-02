@@ -126,6 +126,7 @@ tr:
         mobile: 
             title: "Kutsal Kitap Uygulaması"
             description: "YouVersion Kutsal Kitap Uygulamasını kullanarak, Tanrı'nın sözünü her anda her yerde okuyabilirsiniz. Seçtiğiniz ayetleri renklendirerek vurgulu hale getirebilir, yer imlerinize ekleyebilir, arkadaşlarınızla paylaşabilirsiniz. Okuma Planlarını kullanarak Kutsal Kitap okumayı günlük bir alışkanlık haline getirebilirsiniz. iOS, Android, Blackberry, Windows Phone ve daha birçok sistem için kullanıma hazırdır."
+            download or read: "Şimdi indirin ya da çevrimiçi okuyun."
         site: 
             title: "Bible.com"
             description: "Kutsal Kitap'ın güzelliğini ve gerçeklerini günlük hayatınızın önemli bir parçası haline getirin. YouVersion Kutsal Kitap Uygulaması aracılığıyla akıllı cep telefonunuzdan veya tabletinizden uygulama içeriklerini okuyabilir, izleyebilir, dinleyebilir, paylaşabilir ve Bible.com'a çevrimiçi bağlanabilirsiniz."
@@ -175,6 +176,7 @@ tr:
             google: " https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=tr"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Şu Anki Durum"
+    select dropdown: "--Seçiniz--"
     celebrating 50MM: "50 Milyon Uygulama İndirildi!"
     link: "Link"
     site search: "YouVersion'da Bul"
@@ -232,7 +234,7 @@ tr:
     sign out: "Çıkış yap"
     sign back in: "Güvenliğiniz için, oturumların süresi iki hafta içinde bitiyor. Lütfen yeniden giriş yapın."
     youversion: "YouVersion"
-    username or email prompt: "Kullanıcı Adı (veya e-Posta)"
+    username or email prompt: "E-posta (ya da Kullanıcı Adı)"
     password prompt: "Parola"
     sign in: "Giriş yap"
     sign in to youversion: "YouVersion'a giriş yap"
@@ -302,6 +304,12 @@ tr:
     traditional: "Geleneksel"
     alphabetic: "Alfabetik"
     versions title: "Tercümeler"
+    languages: 
+        title: "Kutsal Kitap dil ve çevirileri"
+        most popular: "En popüler diller"
+        additional: "Ek olarak diller"
+        download language: "Kutsal Kitap'ı indirin %{language_name}"
+        bible in: "Kutsa Kitap %{language_name}"
     or: 
         lower: "veya"
         upper: "VEYA"
@@ -1119,6 +1127,7 @@ tr:
         sms success: "Harika! Bağlantı için mobil cihazınızı kontrol ediniz."
         sms info: "Uygulamayı indirmek için bir kez SMS alacaksınız."
         sms download: "Kutsal Kitap Uygulaması'nı indirmek için tıklayınız:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Eyvah!"
@@ -1203,7 +1212,7 @@ tr:
         408 explanation: "Sorun hakkında haberdar edildik. Sıkça olan sorunları olabildiğince çabuk bir şekilde çözmeye çalışıyoruz. Sizi şimdi Kutsal Kitap okumanıza geri göndermeye deneyeceğiz."
         try again: "Yeninde dene"
     versions: 
-        filter: "Çevirileri Filtrele..."
+        filter: "Versiyon ismini yazmaya başlayın (ya da Dili)..."
         see all: "Bütün Çevirileri Görüntüle..."
         courtesy of: "%{abbreviation} %{publisher} tarafından sunulmaktadır"
         learn more: "Daha Bilgi"

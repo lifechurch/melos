@@ -115,6 +115,7 @@ km:
         mobile: 
             title: "កម្មវិធីព្រះគម្ពីរ"
             description: "អាន​ព្រះ​បន្ទូល​របស់​ព្រះ​ជាម្ចាស់គ្រប់ពេល​វេលា គ្រប់​ទី​កន្លែង ជាមួយ​នឹង កម្មវិធី​ព្រះ​គម្ពីរ​ YouVersion។ ចែក​ចាយ​ខ​គម្ពីរ​ជាមួយ​នឹង​មិត្ត​ភ័ក្ត្រ គូស​ពណ៌ និង គូស​ចំណាំខ​គម្ពីរ និង ​បង្កើត​ទំលាប់​ប្រចាំ​ថ្ងៃ​ជាមួយ​នឹង​គំរោង​ផែន​ការ​អានព្រះ​គម្ពីរ។ មាន​ជាមួយនឹង​ប្រព័ន្ធប្រតិបត្តិ​ការណ៍ iOS Android Blackberry Windows Phone និង ប្រព័ន្ធប្រតិបត្តិ​ការណ៍​ផ្សេងៗ​​ទៀត។"
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "នាំយក​នូវសម្ផស្ស និង សេចក្ដី​ពិត​នៃព្រះ​គម្ពីរ​មក​ដាក់​ក្នុង​ជីវិត​ប្រចាំថ្ងៃ។   ជាមួយ​នឹងកម្ម​វិធី​ព្រះ​គម្ពីរ  YouVersion លោក​អ្នក​អាចអាន មើល ស្ដាប់ នឹង​ចែក​ចាយ​តាមរយៈ  smartphone ឬ table និង តភ្ជាប់​នៅ​ក្នុងBible.com។ "
@@ -164,6 +165,7 @@ km:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "ឥឡូវ"
+    select dropdown: "--ជ្រើស--"
     celebrating 50MM: "អប​អរសាទការ​តម្លើងកម្មវិធី 50លាន​ដង!"
     link: "តំណ​ភ្ជាប់"
     site search: "ស្វែង​រកតាមរយៈ​ YouVersion"
@@ -221,7 +223,7 @@ km:
     sign out: "ចាក​ចេញ"
     sign back in: "ដើម្បី​សុវត្ថិភាព ការ​​ចុះ​ឈ្មោះ​ចូលនឹង​ផុត​កំណត់​បន្ទាប់​ពី​ពីរ​សប្ដាហ៍។ សូម​ចុះ​ឈ្មោះ​ចូល​ម្ដង​ទៀត។"
     youversion: "YouVersion"
-    username or email prompt: "ឈ្មោះ​ប្រើ​ប្រាស់ (ឬ អ៊ី​ម៉ែល)"
+    username or email prompt: "Email (or Username)"
     password prompt: "ពាក្យ​សម្ងាត់"
     sign in: "ចុះ​ឈ្មោះ​ចូល"
     sign in to youversion: "ចុះ​ឈ្មោះ​ចូល​ YouVersion"
@@ -291,6 +293,12 @@ km:
     traditional: "ប្រពៃណី"
     alphabetic: "តាមអក្ខរក្រម"
     versions title: "ជំនាន់"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "ឬ"
         upper: "រឺ"
@@ -1106,6 +1114,7 @@ km:
         sms success: "Great! Check your mobile device for the link."
         sms info: "You will receive a one time SMS to download the app"
         sms download: "Click to download the Bible App:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Oops!"
@@ -1190,7 +1199,7 @@ km:
         408 explanation: "យើង​បាន​ទទួល​នូវ​ការ​ជូន​ដំណឹង​រួច​ហើយ យើង​នឹង​ធ្វើ​ការ​ដោះ​ស្រាយ​នូវ​រាល់​បញ្ហា​ទាំង​ឡាយ​អោយ​បាន​ឆាប់​រហ័ស​បំផុត​តាម​តែ​អាច​ធ្វើ​បាន។យើង​​នាំ​លោក​អ្នក​ត្រឡប់​ទៅ​កាន់​គំរោង​ផែន​ការ​ណ៍​អាន​ព្រះ​គម្ពីរវិញ!"
         try again: "សូម​ព្យាយាម​ម្ដង​ទៀត"
     versions: 
-        filter: "ខ​គម្ពីរ​ដែល​អ្នក​ស្វែង​រក"
+        filter: "Start typing Version name (or Language)..."
         see all: "ជ្រើស​រើស​ជំនាន់​ទាំង​អស់"
         courtesy of: "%{abbreviation} នាំ​មកជូនលោកអ្នកដោយ %{publisher}"
         learn more: "រៀន​ថែម​ទៀត"

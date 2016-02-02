@@ -148,6 +148,7 @@ uk:
         mobile: 
             title: "Програма Біблія"
             description: "Читайте Боже Слово будь-коли і будь-де за допомогою програми Біблія від YouVersion. Поширюйте Письмо серед друзів, виділяючи уривки або роблячи закладки, виробіть щоденну звичку читати біблійні плани. Додаток доступний для iOS, Android, Blackberry, Windows Phone та інших."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Принесіть красу та істину Біблії  у повсякденне життя. Разом з програмою Біблія від YouVersion ви зможете читати, дивитися, слухати та поширювати Біблію на вашому смартфоні, планшеті чи у інтернеті з сайту Bible.com."
@@ -197,6 +198,7 @@ uk:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Зараз"
+    select dropdown: "--Вибір--"
     celebrating 50MM: "Святкуємо 50 мільйонів встановлень!"
     link: "Посилання"
     site search: "Пошук YouVersion"
@@ -254,7 +256,7 @@ uk:
     sign out: "Вийти"
     sign back in: "В цілях безпеки вам необхідно увійти у профіль знову, бо ви не заходили протягом двох тижнів."
     youversion: "YouVersion"
-    username or email prompt: "Ім'я (або ел.пошта)"
+    username or email prompt: "Email (or Username)"
     password prompt: "Пароль"
     sign in: "Увійти"
     sign in to youversion: "Зареєструйтесь у YouVersion"
@@ -324,6 +326,12 @@ uk:
     traditional: "Традиційний"
     alphabetic: "Алфавітний"
     versions title: "Версії"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "або"
         upper: "АБО"
@@ -1145,6 +1153,7 @@ uk:
         sms success: "Чудово! Знайдіть посилання на вашому мобільному."
         sms info: "Ви отримаєте одноразове СМС повідомлення для завантаження додатку."
         sms download: "Натисніть для завантаження додатку Біблія:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Йой!"
@@ -1229,7 +1238,7 @@ uk:
         408 explanation: "Ми отримали повідомлення про цю помилку і спробуємо її вирішити якомога швидше. Спробуємо повернутися до читання Біблії?"
         try again: "Спробуйте ще раз"
     versions: 
-        filter: "Фільтр перекладів…"
+        filter: "Start typing Version name (or Language)..."
         see all: "Побачити усі версії…"
         courtesy of: "%{abbreviation} надано вам %{publisher}"
         learn more: "Дізнатись більше"

@@ -137,6 +137,7 @@ cs:
         mobile: 
             title: "Aplikace Bible"
             description: "Čtěte Boží slovo kdykoliv a kdekoliv prostřednictvím YouVersion aplikace Bible. Sdílejte texty s přáteli, zvýrazňujte a ukládejte si záložky. Vytvořte si každodenní návyk díky plánům čtení. Dostupné pro iOS, Android, Blackberry, Windows Phone a další."
+            download or read: "Stáhnout teď nebo číst online"
         site: 
             title: "Bible.com"
             description: "Vneste krásu a biblické pravdy do vašeho každodenního života.  S aplikací YouVersion Bible můžete písmo číst, sledovat, poslouchat a sdílet na svém chytrém telefonu nebo tabletu a také online na Bible.com"
@@ -186,6 +187,7 @@ cs:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Aktuálně"
+    select dropdown: "--Zvolte--"
     celebrating 50MM: "Oslavujeme 50 milionů instalací aplikace!"
     link: "Odkaz"
     site search: "YouVersion vyhledávání"
@@ -243,7 +245,7 @@ cs:
     sign out: "Odhlásit se"
     sign back in: "Pro vaši bezpečnost vyprší přihlášení za dva týdny. Přihlašte se, prosím, znovu."
     youversion: "YouVersion"
-    username or email prompt: "Přihlašovací jméno (nebo e-mail)"
+    username or email prompt: "Email (nebo uživatelské jméno)"
     password prompt: "Heslo"
     sign in: "Přihlásit se"
     sign in to youversion: "Přihlásit se k YouVersion"
@@ -313,6 +315,12 @@ cs:
     traditional: "Tradiční"
     alphabetic: "Abecedně"
     versions title: "Překlady"
+    languages: 
+        title: "Jazyky Bible a překlady"
+        most popular: "Nejoblíbenější jazyky"
+        additional: "Další jazyky"
+        download language: "Stáhnout Bibli v %{language_name}"
+        bible in: "Bible v %{language_name}"
     or: 
         lower: "nebo"
         upper: "NEBO"
@@ -1132,6 +1140,7 @@ cs:
         sms success: "Fajné! Zkontrolujte odkaz na vašem zařízení."
         sms info: "Obdržíte jednorázovou SMS s odkazem ke stažení aplikace Bible"
         sms download: "Klikněte ke stažení aplikace Bible:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Ups!"
@@ -1216,7 +1225,7 @@ cs:
         408 explanation: "Obdrželi jsme chybové hlášení a každý přetrvávající problém budeme co nejrychleji řešit. Pojďme se podívat jestli vás budeme schopni vrátit zpět ke čtení Bible!"
         try again: "Zkuste to znovu"
     versions: 
-        filter: "Filtrovat překlady..."
+        filter: "Začněte psát jméno překladu (nebo jazyka)..."
         see all: "Vidět všechny překlady"
         courtesy of: "%{abbreviation} Vám přináší %{publisher}"
         learn more: "Zjistit více"

@@ -126,6 +126,7 @@ el:
         mobile: 
             title: "Εφαρμογής Αγία Γραφή"
             description: "Μελετήστε τον Λόγο του Θεού οποτεδήποτε, οπουδήποτε, χρησιμοποιώντας την εφαρμογή Αγία Γραφή της YouVersion. Μοιραστείτε την Αγία Γραφή με φίλους, επισημάνετε και τοποθετήστε σελιδοδείκτες σε περικοπές, και αποκτήστε μια καθημερινή συνήθεια με τα Σχέδια Μελέτης. Διαθέσιμη για iOS, Android, Blackberry, Windows Phone κ.α."
+            download or read: "Λήψη τώρα ή ανάγνωση."
         site: 
             title: "Bible.com"
             description: "Βάλτε την ομορφιά και την αλήθεια της Αγίας Γραφής στην καθημερινή σας ζωή. Με την εφαρμογή Αγία Γραφή της YouVersion, μπορείτε να διαβάσετε, να παρακολουθήσετε, να ακούσετε και να τη μοιραστείτε στο κινητό ή το tablet σας, καθώς και διαδικτυακά στο Bible.com."
@@ -175,6 +176,7 @@ el:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Τώρα"
+    select dropdown: "--Επιλέξτε--"
     celebrating 50MM: "Γιορτάζουμε 50 εκατομμύρια εγκαταστάσεις της εφαρμογής!"
     link: "Σύνδεσμος"
     site search: "Αναζήτηση YouVersion"
@@ -232,7 +234,7 @@ el:
     sign out: "Αποσύνδεση"
     sign back in: "Για την ασφάλειά σας, οι συνδέσεις λήγουν μετά από δύο εβδομάδες. Συνδεθείτε ξανά."
     youversion: "YouVersion"
-    username or email prompt: "Όνομα χρήστη (ή email)"
+    username or email prompt: "Email (ή όνομα χρήστη)"
     password prompt: "Κωδικός πρόσβασης"
     sign in: "Σύνδεση"
     sign in to youversion: "Σύνδεση στην YouVersion"
@@ -302,6 +304,12 @@ el:
     traditional: "Παραδοσιακά"
     alphabetic: "Αλφαβητικά"
     versions title: "Εκδόσεις"
+    languages: 
+        title: "Γλώσσες και μεταφράσεις"
+        most popular: "Δημοφιλέστερες γλώσσες"
+        additional: "Πρόσθετες γλώσσες"
+        download language: "Λήψη της Αγίας Γραφής στα %{language_name}"
+        bible in: "Η Αγία Γραφή στα %{language_name}"
     or: 
         lower: "ή"
         upper: "Ή"
@@ -1119,6 +1127,7 @@ el:
         sms success: "Θαυμάσια! Ελέγξτε το κινητό σας για το σύνδεσμο."
         sms info: "Θα λάβετε ένα μήνυμα SMS για να κατεβάσετε την εφαρμογή"
         sms download: "Κλικ για να κατεβάσετε την εφαρμογή Αγία Γραφή:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Ωχ!"
@@ -1203,7 +1212,7 @@ el:
         408 explanation: "Έχουμε ειδοποιηθεί και θα αντιμετωπίσουμε τυχόν επίμονα ζητήματα το συντομότερο δυνατόν. Ας δούμε αν μπορούμε να σας βάλουμε πίσω στη μελέτη σας!"
         try again: "Δοκιμάστε πάλι"
     versions: 
-        filter: "Διαλογή εκδόσεων..."
+        filter: "Εισαγωγή ονόματος έκδοσης (ή γλώσσας)..."
         see all: "Εμφάνιση όλων των εκδόσεων..."
         courtesy of: "%{abbreviation}προσφέρεται από %{publisher}"
         learn more: "Μάθε περισσότερα"

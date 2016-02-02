@@ -126,6 +126,7 @@ it:
         mobile: 
             title: "L'App Bibbia"
             description: "Leggi la Parola di Dio in ogni momento, ovunque, usando l'App della Bibbia YouVersion. Condividi le Scritture con gli amici, evidenzia e segna i passi, fanne un'abitudine giornaliera con i Piani Bibbia. Disponibile per iOS, Android, Blackberry, Windows Phone ed altri."
+            download or read: "Scarica adesso o leggi online."
         site: 
             title: "Bible.com"
             description: "Porta la bellezza e la verità della Bibbia nella vita quotidiana. Con l'App Bibbia YouVersion puoi leggere, guardare, ascoltare e condividere sul tuo smartphone o tablet, e sul web su Bible.com."
@@ -175,6 +176,7 @@ it:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Ora"
+    select dropdown: "--Seleziona--"
     celebrating 50MM: "Celebrando 50 milioni di installazioni!"
     link: "Collegamento"
     site search: "Trova in YouVersion"
@@ -232,7 +234,7 @@ it:
     sign out: "Esci"
     sign back in: "Per la tua sicurezza il log in scade dopo due settimane. per favore  accedi di nuovo."
     youversion: "YouVersion"
-    username or email prompt: "Username (o E-mail)"
+    username or email prompt: "E-mail (o Username)"
     password prompt: "Password"
     sign in: "Accedi"
     sign in to youversion: "Accedi a YouVersion"
@@ -302,6 +304,12 @@ it:
     traditional: "Tradizionale"
     alphabetic: "Alfabetico"
     versions title: "Versioni"
+    languages: 
+        title: "Lingue e traduzioni della Bibbia"
+        most popular: "Lingue più comuni"
+        additional: "Altre lingue"
+        download language: "Scarica la Bibbia in %{language_name}"
+        bible in: "La Bibbia in %{language_name}"
     or: 
         lower: "oppure"
         upper: "O"
@@ -1119,6 +1127,7 @@ it:
         sms success: "Ottimo! Cerca il link sul tuo dispositivo mobile."
         sms info: "Riceverai un SMS una tantum per scaricare l'app"
         sms download: "Clicca per scaricare l'App Bibbia"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Ops!"
@@ -1203,7 +1212,7 @@ it:
         408 explanation: "Puoi provare ancora  nel <un href='%='% ricarica_via??????la pagina.Siamo stati avvertiti ed affronteremo i problemi persistenti il più velocemente possibile."
         try again: "Riprova"
     versions: 
-        filter: "Filtra le  Versioni..."
+        filter: "Comincia a scrivere il nome (o Lingua) della Versione..."
         see all: "Vedi Tutte le Versioni..."
         courtesy of: "%{abbreviation} reso disponibile da %{publisher}"
         learn more: "Per Saperne di Più"

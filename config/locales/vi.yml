@@ -115,6 +115,7 @@ vi:
         mobile: 
             title: "App Kinh Thánh"
             description: "Đọc Lời Chúa mọi nơi mọi lúc với App Kinh Thánh của YouVersion. Chia sẻ Kinh Thánh với bạn bè, tô màu hoặc đánh dấu các phân đoạn, và hình thành thói quen hằng ngày với các kế hoạch đọc Kinh Thánh. App đã có mặt trên iOS, Android, Blackberry, Windows Phone...!"
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com/vi"
             description: "Mang chân lý Kinh Thánh vào đời sống. Với App Kinh Thánh của YouVersion bạn có thể đọc, xem, nghe và chia sẻ trên di động hoặc máy tính bảng, hoặc chia sẻ trực tuyến tại Bible.com/vi."
@@ -164,6 +165,7 @@ vi:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Bây giờ"
+    select dropdown: "--Chọn lựa--"
     celebrating 50MM: "Chúc mừng 50 triệu lượt cài đặt ứng dụng!"
     link: "Đường dẫn"
     site search: "Tìm kiếm YouVersion"
@@ -221,7 +223,7 @@ vi:
     sign out: "Đăng xuất"
     sign back in: "Vì lý do an ninh, đăng nhập của bạn đã hết hạn sau hai tuần. Xin hãy đăng nhập  lại!"
     youversion: "YouVersion"
-    username or email prompt: "Tên sử dụng (hoặc email)"
+    username or email prompt: "Email (or Username)"
     password prompt: "Mật khẩu"
     sign in: "Đăng nhập"
     sign in to youversion: "Đăng nhập YouVersion"
@@ -291,6 +293,12 @@ vi:
     traditional: "Truyền thống"
     alphabetic: "Thứ tự ABC"
     versions title: "Bản dịch"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "hoặc"
         upper: "HOẶC"
@@ -1106,6 +1114,7 @@ vi:
         sms success: "Rất tốt! Hãy kiểm tra xem bạn đã nhận tin nhắn hay chưa."
         sms info: "Bạn sẽ nhận được SMS để tải app về."
         sms download: "Bấm vào đây để tải App Kinh Thánh:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Ối!"
@@ -1190,7 +1199,7 @@ vi:
         408 explanation: "Chúng tôi đã nghe đến và sẽ cố gắng giải quyết nhanh chóng bất cứ vấn đề dai dẳng nào. Bây giờ chúng ta hãy thử trở lại bài đọc Kinh Thánh!"
         try again: "Thử lại"
     versions: 
-        filter: "Chọn bản dịch..."
+        filter: "Start typing Version name (or Language)..."
         see all: "Xem toàn bộ bản dịch..."
         courtesy of: "%{abbreviation} được cung cấp bởi %{publisher}"
         learn more: "Tìm hiểu thêm"

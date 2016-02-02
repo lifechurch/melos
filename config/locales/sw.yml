@@ -126,6 +126,7 @@ sw:
         mobile: 
             title: "App ya Biblia"
             description: "Soma neno la Mungu wakati wowote na pahali popote kwa kutumia YouVersion Bible App.Shirikisha bibilia na rafiki, alamisha vifungu na tengeneza tabia ya kila siku ya kusoma bibilia kwa kutumia Mipango ya masomo.Inapatikana katika rununu za iOS, Android,Blackberry,Windows Phone na mengineo."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Tunaleta uzuri na ukweli wa bibilia katika maisha yako ya kila siku. Kwa kutumia YouVersion Bible App unaweza kusoma, tazama na shirikisha masomo katika rununu yako au kwenye tarakilishi kwa kupitia Bible.com"
@@ -175,6 +176,7 @@ sw:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "saa hii"
+    select dropdown: "--chagua--"
     celebrating 50MM: "Tunasherehekea ufunguaji wa App milioni 50!"
     link: "Kiungo"
     site search: "Tafuta YouVersion"
@@ -232,7 +234,7 @@ sw:
     sign out: "toka"
     sign back in: "Kwa usalama wako, logins inaisha baada ya wiki mbili. Tafadhali ingia tena."
     youversion: "YouVersion"
-    username or email prompt: "jina la mtumiaji (au barua pepe)"
+    username or email prompt: "Email (or Username)"
     password prompt: "kitambulisho cha siri"
     sign in: "Ingia"
     sign in to youversion: "Ingia YouVersion"
@@ -302,6 +304,12 @@ sw:
     traditional: "Kialisi"
     alphabetic: "Kwa herufi"
     versions title: "Matoleo"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "au"
         upper: "AU"
@@ -1119,6 +1127,7 @@ sw:
         sms success: "Shukrani sana! Chunguza chombo chako kwa kiungo."
         sms info: "Utapokea Ujupe mfupi wa mara moja kuweza kupakua programu"
         sms download: "Gonga hapa kupaukua Programu ya Bibilia:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Ala!"
@@ -1203,7 +1212,7 @@ sw:
         408 explanation: "Tumeelezwa na tutazingatia masuala yanayozidi kwa haraka iwezekanavyo. Wacha tuone kama tunaweza kukurudisha kwa Bibilia."
         try again: "Jaribu Tena"
     versions: 
-        filter: "chuja matoleo"
+        filter: "Start typing Version name (or Language)..."
         see all: "Ona toleo zote"
         courtesy of: "%{abbreviation} umeletewa na %{publisher}"
         learn more: "Jifunze zaidi"

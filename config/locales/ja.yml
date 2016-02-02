@@ -115,6 +115,7 @@ ja:
         mobile: 
             title: "聖書アプリ"
             description: "YouVersion聖書アプリを使って、いつでも、どこでも、神様のみ言葉を読みましょう。聖句を友達とシェアしたり、ハイライトやブックマークを付けたり、読書プランを利用したりして、聖書を読むことを毎日の習慣としましょう。iOS、Android、Blackberry、Windows Phoneなどで利用できます。"
+            download or read: "今すぐダウンロード、またはオンラインで読む"
         site: 
             title: "Bible.com"
             description: "聖書の美と真実を毎日の生活に取り入れましょう。YouVersion聖書アプリを使うと、スマートフォンやタブレット、コンピューターのウェブサイト「Bible.com」を通して、聖書を読んだり、映像で観たり、音声で聞いたり、シェアしたりすることができます。"
@@ -164,6 +165,7 @@ ja:
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=ja_jp"
             amazon: "http://www.amazon.co.jp/YouVersion-Bible-for-Kids/dp/B00GURLC40/ref=sr_1_2?s=mobile-apps&ie=UTF8&qid=1450364673&sr=1-2&keywords=YouVersion"
     now: "現在…"
+    select dropdown: "--選択--"
     celebrating 50MM: "アプリのインストール数が5000万に達しました!"
     link: "リンク"
     site search: "YouVersion内の検索"
@@ -221,7 +223,7 @@ ja:
     sign out: "サインアウト"
     sign back in: "セキュリティ保持のために、ログインは2週間で解除されます。改めてサインインしてください。"
     youversion: "YouVersion"
-    username or email prompt: "ユーザ名(もしくはメールアドレス):"
+    username or email prompt: "メールアドレス（ユーザーネーム）"
     password prompt: "パスワード"
     sign in: "サインイン"
     sign in to youversion: "YouVersion にサインインする"
@@ -291,6 +293,12 @@ ja:
     traditional: "伝統的配列"
     alphabetic: "アルファベット順"
     versions title: "聖書訳"
+    languages: 
+        title: "聖書の言語と種類"
+        most popular: "よく利用される言語"
+        additional: "その他の言語"
+        download language: "%{language_name}の聖書をダウンロードする"
+        bible in: "%{language_name}で聖書を読む"
     or: 
         lower: "または"
         upper: "または"
@@ -1106,6 +1114,7 @@ ja:
         sms success: "完了！ご利用のデバイスからリンクをご覧ください。"
         sms info: "ダウンロード用のリンクがSMSで携帯に届きます。"
         sms download: "クリックして聖書アプリをダウンロード:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "申し訳ありません。"
@@ -1190,7 +1199,7 @@ ja:
         408 explanation: "こちらでも事態を把握しておりますので、継続して発生する問題につきましては、できるだけ早く対処させていただきます。読書中の聖書の箇所に戻っていただけるように試みています。"
         try again: "もう一度お試しください。"
     versions: 
-        filter: "訳の名前から検索・・・"
+        filter: "聖書訳の種類（または言語）を入力"
         see all: "全ての聖書訳を見る"
         courtesy of: "%{publisher}より%{abbreviation} をお届けします"
         learn more: "詳細"

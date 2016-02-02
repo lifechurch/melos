@@ -115,6 +115,7 @@ fa:
         mobile: 
             title: "برنامهٔ کتاب‌مقدس"
             description: "به کمک اپ/برنامهٔ کتاب‌مقدس می‌توانید کلام خدا را در هر زمان و مکانی بخوانید. همچنین می‌توانید متن‌ها را علامت‌گذاری کرده با دوستان خود به اشتراک بگذارید، و خواندن کلام را به‌وسیلهٔ برنامهٔ مطالعه جزو زندگی روزانۀ کنید. برنامهٔ کتاب‌مقدس در این سیستم‌ها قابل استفاده است: iOS, Android, Blackberry, Windows Phone."
+            download or read: "دانلود کنید و یا آنلاین بخوانید"
         site: 
             title: "Bible.com"
             description: "زیبایی و حقایق کتاب‌مقدس را جزو زندگی روزانهٔ خود کنید. با کمک برنامهٔ کتاب‌مقدس می‌توانید کتاب‌مقدس را بخوانید، بشنوید، ویدئوها را ببینید٬ و مطالب مورد علاقه را به‌وسیلهٔ گوشی‌های هوشمند یا تبلت٬ و یا به‌صورت آنلاین در وبسایت Bible.com به اشتراک بگذارید.‏‏"
@@ -164,6 +165,7 @@ fa:
             google: " https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=fa"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "اکنون"
+    select dropdown: "-- انتخاب --"
     celebrating 50MM: "بزرگداشت ۵۰ میلیون نصب!‏"
     link: "پيوند"
     site search: "جستجوی یوورژن"
@@ -221,7 +223,7 @@ fa:
     sign out: "خروج"
     sign back in: "برای امنیت شما٬ ورودها بعد از دو هفته به پایان می‌رسند. لطفاٌ با استفاده از نام کاربری و کلمه رمز دوباره وارد شوید."
     youversion: "یوورژن"
-    username or email prompt: "نام كاربری (يا ايميل)"
+    username or email prompt: "ای‌میل (یا نام کاربَری)"
     password prompt: "رمز ورود"
     sign in: "ورود به سيستم"
     sign in to youversion: "ورود به یوورژن"
@@ -291,6 +293,12 @@ fa:
     traditional: "سنتی"
     alphabetic: "الفبایی"
     versions title: "ترجمه‌های کتاب‌مقدس"
+    languages: 
+        title: "ترجمه‌های کتاب‌مقدس و زبان‌های مختلف"
+        most popular: "معروف‌ترین زبان‌ها"
+        additional: "زبان‌های دیگر"
+        download language: "این کتاب‌مقدس را به زبان %{language_name} دانلود کنید"
+        bible in: "کتاب‌مقدس به زبان %{language_name}"
     or: 
         lower: "یا"
         upper: "یا"
@@ -1106,6 +1114,7 @@ fa:
         sms success: "لینک به شماره تلقن شما با موفقیت ارسال گردید!"
         sms info: "جهت دانلود این اَپ، پیامکی دریافت خواهید کرد که فقط یک بار فرستاده خواهد شد"
         sms download: "لطفاً جهت دانلود اَپ کتاب‌مقدس کلیک کنید:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "آاخخخ!"
@@ -1190,7 +1199,7 @@ fa:
         408 explanation: "ما از وجود مشکل مطلع شده‌ایم و در صددیم تا در اسرع وقت آن را برطرف کنیم. امیدواریم بتوانیم هر چه سریعتر به شما امکان استفاده مجدد از برنامۀ کتاب‌مقدس را بدهیم."
         try again: "دوباره اقدام کنید"
     versions: 
-        filter: "فیلتر کردن ترجمه‌ها..."
+        filter: "نام ترجمه (یا زبان) را بنویسید"
         see all: "دیدن تمام ترجمه‌ها..."
         courtesy of: "%{abbreviation} توسط %{publisher} ارائه شده است"
         learn more: "بیشتر بدانید"

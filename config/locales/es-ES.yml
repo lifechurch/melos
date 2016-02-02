@@ -126,6 +126,7 @@ es-ES:
         mobile: 
             title: "La Biblia App"
             description: "Lee la Palabra de Dios en cualquier momento, en cualquier lugar, usando la Biblia App. Comparte la Escritura con amigos, destaca y usa marcadores para pasajes, y crea el hábito diario de leer tu plan de lectura bíblica. Disponible para iOS, Android, Blackberry, Windows Phone y más."
+            download or read: "Descargar ahora o leer online"
         site: 
             title: "Biblia.com"
             description: "Lleva la belleza y la verdad de la Biblia a la vida cotidiana. Con la Blibia App de YouVersion puedes leer, visualizar, escuchar y compartir en tu smartphone o tableta, y online en Biblia.com"
@@ -175,6 +176,7 @@ es-ES:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Ahora"
+    select dropdown: "--Selecciona--"
     celebrating 50MM: "¡Celebrando 50 millones de instalaciones!"
     link: "Enlace"
     site search: "Búsqueda de YouVersion"
@@ -232,7 +234,7 @@ es-ES:
     sign out: "Cerrar sesión"
     sign back in: "Por tu seguridad, las conexiones caducan después de dos semanas. Por favor, inicia sesión de nuevo."
     youversion: "YouVersion"
-    username or email prompt: "Nombre de usuario (o correo electrónico)"
+    username or email prompt: "Correo electrónico (o nombre de usuario)"
     password prompt: "Contraseña"
     sign in: "Iniciar sesión"
     sign in to youversion: "Iniciar sesión en YouVersion"
@@ -302,6 +304,12 @@ es-ES:
     traditional: "Tradicional"
     alphabetic: "Alfabético"
     versions title: "Versiones"
+    languages: 
+        title: "Idiomas de la Biblia y traducciones"
+        most popular: "Idiomas más populares"
+        additional: "Idiomas adicionales"
+        download language: "Descargar la Biblia en %{language_name}"
+        bible in: "La Biblia en %{language_name}"
     or: 
         lower: "o"
         upper: "O"
@@ -1119,6 +1127,7 @@ es-ES:
         sms success: "¡Genial! Comprueba el enlace en tu dispositivo móvil."
         sms info: "Recibirás un único SMS para descargarte la aplicación"
         sms download: "Click para descargar la Biblia App:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Uy!"
@@ -1203,7 +1212,7 @@ es-ES:
         408 explanation: "Hemos sido informados y resolveremos cualquier problema persistente tan pronto como sea posible. ¡Veamos si podemos llevarte de nuevo a tu plan de lectura!"
         try again: "Intentar de nuevo"
     versions: 
-        filter: "Filtrar versiones..."
+        filter: "Escribe el nombre de la versión (o el idioma)"
         see all: "Ver todas las versiones..."
         courtesy of: "%{abbreviation} presentada por %{publisher}"
         learn more: "Conocer más"

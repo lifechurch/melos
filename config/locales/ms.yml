@@ -115,6 +115,7 @@ ms:
         mobile: 
             title: "App Alkitab"
             description: "Baca Firman Allah pada bila-bila masa, di mana sahaja dengan menggunakan App Alkitab YouVersion. Kongsikan Ayat Alkitab dengan sahabat, highlight dan bookmark petikan, dan lakukan sebagai kebiasaan sehari-hari dengan Pelan Alkitab. Tersedia untuk iOS, Android, Blackberry, Windows Phone dan banyak lagi."
+            download or read: "Muat turun sekarang atau baca online."
         site: 
             title: "Bible.com"
             description: "Bawakan keindahan dan kebenaran Alkitab ke dalam kehidupan seharian. Melalui App Alkitab YouVersion, anda boleh membaca, menonton, mendengar, dan berkongsi dalam telefon mudah alih atau tablet anda, dan secara online di Bible.com."
@@ -164,6 +165,7 @@ ms:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Sekarang"
+    select dropdown: "--Pilih--"
     celebrating 50MM: "Merayakan 50 Juta Pemasangan App!"
     link: "Link"
     site search: "Pencarian YouVersion"
@@ -221,7 +223,7 @@ ms:
     sign out: "Log keluar"
     sign back in: "Demi sekuriti anda, log masuk tamat tempoh selepas dua minggu. Sila log masuk sekali lagi."
     youversion: "YouVersion"
-    username or email prompt: "Nama Pengguna (atau E-mel)"
+    username or email prompt: "E-mel (atau Nama pengguna)"
     password prompt: "Kata Laluan"
     sign in: "Log masuk"
     sign in to youversion: "Log masuk ke YouVersion"
@@ -291,6 +293,12 @@ ms:
     traditional: "Tradisional"
     alphabetic: "Berabjad"
     versions title: "Versi"
+    languages: 
+        title: "Bahasa dan terjemahan Alkitab"
+        most popular: "Bahasa-bahasa yang paling terkenal"
+        additional: "Bahasa-bahasa tambahan"
+        download language: "Muat turun Alkitab dalam %{language_name}"
+        bible in: "Alkitab dalam %{language_name}"
     or: 
         lower: "atau"
         upper: "ATAU"
@@ -1106,6 +1114,7 @@ ms:
         sms success: "Hebat! Sila cek peranti mudah alih anda untuk link."
         sms info: "Anda akan menerima SMS untuk memuat turun app"
         sms download: "Sila klik untuk memuat turun App Alkitab:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Maaf!"
@@ -1190,7 +1199,7 @@ ms:
         408 explanation: "Kami sudah diberitahu tentang hal ini dan akan menyelesaikan masalah yang berterusan secepat mungkin. Semoga anda dapat pantas kembali kepada bacaan Alkitab!"
         try again: "Cuba lagi"
     versions: 
-        filter: "Pilih Versi..."
+        filter: "Mula menaip nama Versi (atau Bahasa)..."
         see all: "Lihat Semua Versi..."
         courtesy of: "%{abbreviation} dibawakan untuk anda daripada %{publisher}"
         learn more: "Ketahui Lebih Lanjut"

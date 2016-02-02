@@ -126,6 +126,7 @@ ta:
         mobile: 
             title: "வேதாகம செயலி"
             description: "எந்நேரத்திலும் எவ்விடத்திலும் YouVersion வேதாகம பயன்பாடு மூலம் தேவ வசனத்தை படியுங்கள். தேவ வசனத்தை நண்பர்களோடு பகிருங்கள், பத்திகளை சிறப்புக்கூறு மற்றும் புத்தகக்குறி இடுங்கள், வேதாகம திட்டங்களை தினசரி பழக்கமாக்குங்கள். iOS, ஆன்றாய்ட் , ப்ளாக்பெர்ரி, விண்டோஸ் தொலைபேசி மற்ற பலவற்றில் இது உள்ளது"
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "அன்றாட வாழ்க்கையில் வேதத்தின் சத்தியம் மற்றும் அழகை கொண்டு வாருங்கள். YouVersion வேதாகம பயன்பாடு மூலம் நீங்கள் படிக்கலாம், காணலாம், கேட்கலாம் மற்றும் நுண்ணறிபேசி அல்லது சுருள்பாசி மற்றும் நிகழ் நிலையில் bible.com-ல் பகிரலாம்."
@@ -175,6 +176,7 @@ ta:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "இப்பொழுது"
+    select dropdown: "-தேர்ந்தெடு-"
     celebrating 50MM: "50 மில்லியன் பயன்பாடு நிறுவல்களை கொண்டாடுகிறது!"
     link: "தொடர்பு"
     site search: "YouVersion தேடல்"
@@ -232,7 +234,7 @@ ta:
     sign out: "வெளியேறு"
     sign back in: "உங்கள் பாதுகாப்புக்காக, உள் அனுமதிகள் இரண்டு வாரங்களுக்கு பிறகு காலாவதியாகிவிடும். மீண்டும் உள்நுழைக."
     youversion: "YouVersion"
-    username or email prompt: "பயனாளர் பெயர் (அல்லது மின் அஞ்சல்)"
+    username or email prompt: "Email (or Username)"
     password prompt: "கடவுச்சொல்"
     sign in: "உள் நுழைய"
     sign in to youversion: "YouVersion-இல் உள் நுழைய"
@@ -302,6 +304,12 @@ ta:
     traditional: "பாரம்பரிய"
     alphabetic: "அகர வரிசை"
     versions title: "பதிப்புகள்"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "அல்லது"
         upper: "அல்லது"
@@ -1119,6 +1127,7 @@ ta:
         sms success: "சபாஷ்! இணைப்பு வந்துள்ளதா என்று உங்கள் மொபைல் சாதனத்தை பார்க்கவும்."
         sms info: "செயலியை பதிவிறக்க ஒரு ஒரு முறை குறுஞ்செய்தி ஒன்றை நீங்கள் பெறுவீர்கள்"
         sms download: "வேதாகம செயலியை பதிவிறக்க சொடுக்கவும்"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "அடடா!"
@@ -1203,7 +1212,7 @@ ta:
         408 explanation: "நாம் எச்சரிக்கை செய்யப்பட்டிருப்பதால் நிலைநிற்கிற எந்த பிரச்சினைகளையும் கூடிய சீக்கிரம் கவனிக்க படும்.வேண்டும். மீண்டும் பைபிள் வாசிப்பிற்கு உங்களை எடுத்து செல்ல முடியுமா என்று பார்க்கலாம்!"
         try again: "மீண்டும் முயற்சிக்கவும்"
     versions: 
-        filter: "பதிப்புகளை வடிகட்டு"
+        filter: "Start typing Version name (or Language)..."
         see all: "அனைத்து பதிப்புகளையும் பார்க்கவும்..."
         courtesy of: "%{abbreviation}  உங்களுக்கு கொண்டுவருவது %{publisher}"
         learn more: "மேலும் அறிய"
