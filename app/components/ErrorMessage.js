@@ -53,7 +53,7 @@ class ErrorMessage extends Component {
 
 ErrorMessage.propTypes = {
 	hasError: PropTypes.bool.isRequired,
-	errors: PropTypes.array.isRequired
+	errors: PropTypes.array
 }
 
 export default ErrorMessage

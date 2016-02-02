@@ -4,9 +4,9 @@ import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 
 class Location extends Component {
-	handleRemoveClick(event) {
-		const { handleRemove, loc, index } = this.props
-		handleRemove(loc.id, index)
+	handleDeleteClick(event) {
+		const { handleDelete, loc, index } = this.props
+		handleDelete(loc)
 	}
 
 	handleEditClick(event) {
@@ -15,24 +15,26 @@ class Location extends Component {
 	}
 
 	render() {
-		const { loc } = this.props
+		const { loc, handleSelect } = this.props
 
-		var times = loc.times.map((t) => {
+		var times = loc.times.map((t,i) => {
 			var start = moment(t.start_dt).format('ddd MMM D h:mm A')
-			return (<p>{start}</p>)
+			return (<p key={i}>{start}</p>)
 		})
 
+		const className = ['location-container', loc.isSelected ? 'selected' : 'not-selected'].join(' ')
+
 		return (
-			<div className='location-container'>
+			<div className={className}>
 				<div className='header'>
 					<div className='title'>
-						<input type='checkbox' /> USE THIS LOCATION
+						<input type='checkbox' onClick={handleSelect} name={loc.id} checked={loc.isSelected} /> USE THIS LOCATION
 					</div>
 					<div className='header-actions'>
 						<a onClick={::this.handleEditClick} title='Edit Location'>
 							<img src="/images/edit.png" />
 						</a>						
-						<a onClick={::this.handleRemoveClick} title='Remove Location'>
+						<a onClick={::this.handleDeleteClick} title='Delete Location'>
 							<img src="/images/thin-x.png" />
 						</a>
 					</div>
@@ -51,7 +53,7 @@ class Location extends Component {
 
 Location.propTypes = {
 	loc: PropTypes.object.isRequired,
-	handleRemove: PropTypes.func.isRequired,
+	handleDelete: PropTypes.func.isRequired,
 	handleEdit: PropTypes.func.isRequired,
 	index: PropTypes.number.isRequired
 }

@@ -101,7 +101,7 @@ class LocationEdit extends Component {
 		var times;
 		if (loc.hasOwnProperty('times')) {
 			times = loc.times.map((t, i) => {
-				return (<LocationAddTime time={t} timeIndex={i} handleTimeChange={handleSetTime} />)
+				return (<LocationAddTime key={i} time={t} timeIndex={i} handleTimeChange={handleSetTime} />)
 			})
 		}
 
@@ -182,7 +182,7 @@ class LocationEdit extends Component {
 					{locationDetails}										
 
 					<div className='form-actions text-right'>
-						<ErrorMessage hasError={loc.hasError} errors={loc.errors} />					
+						<ErrorMessage hasError={loc.hasError === true} errors={loc.errors} />					
 						<a onClick={handleCancel}>Cancel</a>
 						<a className='solid-button green' onClick={handleSave}>Save this Location</a>
 					</div>

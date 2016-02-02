@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Input from './Input'
 import Textarea from './Textarea'
 import Select from './Select'
+import HtmlEditor from './HtmlEditor'
 
 class FormField extends Component {
 	render() {
@@ -29,7 +30,8 @@ FormField.propTypes = {
 	InputType: PropTypes.oneOfType([
 		PropTypes.instanceOf(Input),
 		PropTypes.instanceOf(Textarea),
-		PropTypes.instanceOf(Select)
+		PropTypes.instanceOf(Select),
+		PropTypes.instanceOf(HtmlEditor)
 	]),
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
 	placeholder: PropTypes.string,

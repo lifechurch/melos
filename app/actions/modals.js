@@ -6,9 +6,10 @@ export const Actions = keyMirror({
 })
 
 export const ActionCreators = {
-	openModal(key) {
+	openModal(key, data = {}) {
 		return {
 			type: Actions.OPEN_MODAL,
+			data,
 			key
 		}
 	},

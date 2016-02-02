@@ -3,12 +3,35 @@ import Helmet from 'react-helmet'
 import Row from '../components/Row'
 import Column from '../components/Column'
 import ActionCreators from '../features/EventEdit/features/location/actions/creators'
+import { ActionCreators as ModalActionCreators } from '../actions/modals'
 import LocationEdit from '../features/EventEdit/features/location/components/LocationEdit'
+import LocationDeleteModal from '../features/EventEdit/features/location/components/LocationDeleteModal'
 import Location from '../features/EventEdit/features/location/components/Location'
 import LocationAddButtons from '../features/EventEdit/features/location/components/LocationAddButtons'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class EventEditLocationContainer extends Component {
+	componentWillMount() {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.items())
+	}
+
+	handleCloseModal() {
+		const { dispatch } = this.props
+		dispatch(ModalActionCreators.closeModal('LocationDelete'))
+	}
+
+	handleOpenModal(loc) {
+		const { dispatch } = this.props
+		dispatch(ModalActionCreators.openModal('LocationDelete', loc))
+	}
+
+	handleDelete(loc) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.delete(loc.id))
+		dispatch(ModalActionCreators.closeModal('LocationDelete'))
+	}
+
 	handleAddPhysicalLocationClick(clickEvent) {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.add('physical'))
@@ -22,6 +45,16 @@ class EventEditLocationContainer extends Component {
 	handleCancel() {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.cancelEdit())
+	}
+
+	handleSelect(selectEvent) {
+		const { event, dispatch } = this.props
+		const { name, checked } = selectEvent.target
+		if (checked === true) {
+			dispatch(ActionCreators.addLocation(event.item.id, name))
+		} else {
+			dispatch(ActionCreators.removeLocation(event.item.id, name))			
+		}
 	}
 
 	handleChange(event) {
@@ -76,12 +109,16 @@ class EventEditLocationContainer extends Component {
 	}
 
 	render() {
-		const { dispatch, event, loc } = this.props
+		const { dispatch, event, loc, modals } = this.props
 
-		var locations = event.item.locations.map((l, i) => {
-			return (<li key={i}><Location index={i} loc={l} handleRemove={::this.handleRemove} handleEdit={::this.handleEdit} /></li>)
-		})
-
+		var locations = []
+		var index = 0
+		for (var key in event.item.locations) {
+			const loc = event.item.locations[key]
+			locations.push(<li key={index}><Location index={index} loc={loc} handleSelect={::this.handleSelect} handleDelete={::this.handleOpenModal} handleEdit={::this.handleEdit} /></li>)
+			index++
+		}
+		
 		var centerButtons
 		if (!(event.item && event.item.locations && event.item.locations.length > 0)) {
 			centerButtons = 'center-single-item'
@@ -123,8 +160,9 @@ class EventEditLocationContainer extends Component {
 					<div className="medium-10 large-8 columns small-centered text-center">
 						<ReactCSSTransitionGroup transitionName="locationeditor" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
 							{locationEditor}
-							{locationList}							
+							{locationList}					
 						</ReactCSSTransitionGroup>
+						<LocationDeleteModal modalState={modals.LocationDelete} handleDelete={::this.handleDelete} handleClose={::this.handleCloseModal} />
 					</div>
 				</Row>
 				<Row>

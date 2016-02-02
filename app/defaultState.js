@@ -21,6 +21,13 @@ export default {
 			owner_id: null
 		}
 	},
+	loc: {},
+	locations: {
+		hasError: false,
+		errors: [],
+		isFetching: false,
+		items: []
+	},
 	eventFeeds: {
 		
 		/* API: events/search */

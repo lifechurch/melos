@@ -41,14 +41,16 @@ export function toApiFormat(loc) {
 }
 
 export function fromApiFormat(loc) {
-	console.log("this is what i got", loc)
-	let { times } = loc
-	const newTimes = times.map((t) => {
-		const { start_dt, end_dt } = t
-		return {
-			start_dt: moment(start_dt),
-			end_dt: moment(end_dt)
-		}
-	})
+	const { times } = loc
+	let newTimes = []
+	if (Array.isArray(times)) {
+		newTimes = times.map((t) => {
+			const { start_dt, end_dt } = t
+			return {
+				start_dt: moment(start_dt),
+				end_dt: moment(end_dt)
+			}
+		})
+	}
 	return Object.assign({}, loc, { times: newTimes })
 }

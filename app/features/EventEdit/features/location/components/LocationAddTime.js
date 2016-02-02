@@ -176,7 +176,6 @@ class LocationAddTime extends Component {
 // }
 
 LocationAddTime.propTypes = {
-	handleChange: PropTypes.func.isRequired,
 	time: PropTypes.object.isRequired,
 	timeIndex: PropTypes.number.isRequired,
 	handleTimeChange: PropTypes.func.isRequired

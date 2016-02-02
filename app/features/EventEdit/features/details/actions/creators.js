@@ -1,5 +1,5 @@
 import type from './constants'
-import { routeActions } from 'redux-simple-router'
+import { routeActions } from 'react-router-redux'
 
 function cancel() {
 	return dispatch => {	

@@ -5,12 +5,18 @@ export function modals(state = {}, action) {
 
 		case Actions.OPEN_MODAL:
 			var modals = Object.assign({}, state)
-			modals[action.key] = true
+			modals[action.key] = {
+				isOpen: true,
+				data: action.data
+			}
 			return Object.assign({}, state, modals )
 
 		case Actions.CLOSE_MODAL:
 			var modals = Object.assign({}, state)
-			modals[action.key] = false
+			modals[action.key] = {
+				isOpen: false,
+				data: {}
+			}
 			return Object.assign({}, state, modals )
 
 		default:

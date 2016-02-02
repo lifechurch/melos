@@ -3,9 +3,12 @@ const constants = {
 	viewRequest: 'LOCATION_VIEW_REQUEST',
 	viewSuccess: 'LOCATION_VIEW_SUCCESS',
 	viewFailure: 'LOCATION_VIEW_FAILURE',	
-	removeRequest: 'LOCATION_REMOVE_REQUEST',
-	removeSuccess: 'LOCATION_REMOVE_SUCCESS',
-	removeFailure: 'LOCATION_REMOVE_FAILURE',
+	removeLocationRequest: 'LOCATION_REMOVE_REQUEST',
+	removeLocationSuccess: 'LOCATION_REMOVE_SUCCESS',
+	removeLocationFailure: 'LOCATION_REMOVE_FAILURE',
+	addLocationRequest: 'LOCATION_ADD_REQUEST',
+	addLocationSuccess: 'LOCATION_ADD_SUCCESS',
+	addLocationFailure: 'LOCATION_ADD_FAILURE',	
 	editSuccess: 'LOCATION_EDIT_SUCCESS',
 	editFailure: 'LOCATION_EDIT_FAILURE',
 	edit: 'LOCATION_EDIT',
@@ -24,9 +27,15 @@ const constants = {
 	createRequest: 'LOCATION_CREATE_REQUEST',
 	createSuccess: 'LOCATION_CREATE_SUCCESS',
 	createFailure: 'LOCATION_CREATE_FAILURE',
+	deleteRequest: 'LOCATION_DELETE_REQUEST',
+	deleteSuccess: 'LOCATION_DELETE_SUCCESS',
+	deleteFailure: 'LOCATION_DELETE_FAILURE',	
 	updateRequest: 'LOCATION_UPDATE_REQUEST',
 	updateSuccess: 'LOCATION_UPDATE_SUCCESS',
-	updateFailure: 'LOCATION_UPDATE_FAILURE'	
+	updateFailure: 'LOCATION_UPDATE_FAILURE',
+	itemsRequest: 'LOCATIONS_ITEMS_REQUEST',
+	itemsSuccess: 'LOCATIONS_ITEMS_SUCCESS',
+	itemsFailure: 'LOCATIONS_ITEMS_FAILURE'
 }
 
 export default function (key) {

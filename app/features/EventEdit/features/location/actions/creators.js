@@ -65,6 +65,24 @@ const ActionCreators = {
 			}
 		}
 	},
+
+	items() {
+		return {
+			api_call: {
+				endpoint: 'events',
+				method: 'locations_items',
+				version: '3.2',
+				env: 'staging',
+				auth: {
+					user: 'ignacio',
+					pass: 'password'
+				},
+				params: {},
+				http_method: 'get',
+				types: [ type('itemsRequest'), type('itemsSuccess'), type('itemsFailure') ]
+			}
+		}
+	},	
 	
 	edit(originalLoc) {
 		return dispatch => {
@@ -130,6 +148,25 @@ const ActionCreators = {
 		}
 	},
 
+	delete(id) {
+		return {
+			locationId: id,
+			api_call: {
+				endpoint: 'events',
+				method: 'delete_location',
+				version: '3.2',
+				env: 'staging',
+				auth: {
+					user: 'ignacio',
+					pass: 'password'
+				},
+				params: { id },
+				http_method: 'post',
+				types: [ type('deleteRequest'), type('deleteSuccess'), type('deleteFailure') ]
+			}
+		}		
+	},
+
 	update(eventId, loc) {
 		const newLoc = toApiFormat(Object.assign({}, loc, { eventId }))
 		console.log("EDIT", newLoc)
@@ -150,10 +187,30 @@ const ActionCreators = {
 		}
 	},	
 
-	remove(eventId, locationId, index) {
+	addLocation(eventId, locationId) {
 		const params = { id: eventId, location_id: locationId }
 		return {
-			index,
+			locationId,
+			api_call: {
+				endpoint: 'events',
+				method: 'add_location',
+				version: '3.2',
+				env: 'staging',
+				auth: {
+					user: 'ignacio',
+					pass: 'password'
+				},
+				params,
+				http_method: 'post',
+				types: [ type('addLocationRequest'), type('addLocationSuccess'), type('addLocationFailure') ]
+			}
+		}
+	},
+
+	removeLocation(eventId, locationId) {
+		const params = { id: eventId, location_id: locationId }
+		return {
+			locationId,
 			api_call: {
 				endpoint: 'events',
 				method: 'remove_location',
@@ -165,7 +222,7 @@ const ActionCreators = {
 				},
 				params,
 				http_method: 'post',
-				types: [ type('removeRequest'), type('removeSuccess'), type('removeFailure') ]
+				types: [ type('removeLocationRequest'), type('removeLocationSuccess'), type('removeLocationFailure') ]
 			}
 		}
 	},

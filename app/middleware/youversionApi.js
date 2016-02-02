@@ -6,7 +6,7 @@ const envs = [ 'staging', 'production' ]
 const http_methods = [ 'get', 'post' ]
 
 function getRequestAction(type, action) {
-	const finalAction = Object.assign({}, action, { type })
+	const finalAction = Object.assign({}, action, { ...action, type })
 	delete finalAction.api_call
 	return finalAction
 }
