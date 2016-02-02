@@ -106,6 +106,19 @@ export default function event(state = {}, action) {
 				}
 			}))			
 
+		case locationType('updateRequest'):
+			const { params } = action
+			const newParams = Object.assign({}, params, { id: params.location_id })
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					locations: {
+						...state.item.locations,
+						[newParams.id]: Object.assign({}, state.item.locations[newParams.id], newParams)
+					}
+				}
+			})
+
 		case locationType('createSuccess'):
 			const { locations } = state.item
 			return validateEventDetails(Object.assign({}, state, {

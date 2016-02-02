@@ -53,7 +53,9 @@ function create(event) {
 
 function update(event) {
 	const { id, title, org_name, description } = event
+	const params = { id, title, org_name, description }
 	return {
+		params,
 		api_call: {
 			endpoint: 'events',
 			method: 'update',
@@ -63,7 +65,7 @@ function update(event) {
 				user: 'ignacio',
 				pass: 'password'
 			},
-			params: {id, title, org_name, description},
+			params,
 			http_method: 'post',
 			types: [ type('updateRequest'), type('updateSuccess'), type('updateFailure') ]
 		}

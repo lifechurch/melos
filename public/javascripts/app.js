@@ -3218,7 +3218,9 @@ function update(event) {
 	var org_name = event.org_name;
 	var description = event.description;
 
+	var params = { id: id, title: title, org_name: org_name, description: description };
 	return {
+		params: params,
 		api_call: {
 			endpoint: 'events',
 			method: 'update',
@@ -3228,7 +3230,7 @@ function update(event) {
 				user: 'ignacio',
 				pass: 'password'
 			},
-			params: { id: id, title: title, org_name: org_name, description: description },
+			params: params,
 			http_method: 'post',
 			types: [(0, _constants2.default)('updateRequest'), (0, _constants2.default)('updateSuccess'), (0, _constants2.default)('updateFailure')]
 		}
@@ -3665,6 +3667,16 @@ function event() {
 				})
 			}));
 
+		case (0, _constants4.default)('updateRequest'):
+			var params = action.params;
+
+			var newParams = Object.assign({}, params, { id: params.location_id });
+			return Object.assign({}, state, {
+				item: _extends({}, state.item, {
+					locations: _extends({}, state.item.locations, _defineProperty({}, newParams.id, Object.assign({}, state.item.locations[newParams.id], newParams)))
+				})
+			});
+
 		case (0, _constants4.default)('createSuccess'):
 			var locations = state.item.locations;
 
@@ -4007,9 +4019,9 @@ var ActionCreators = {
 		};
 	},
 	update: function update(eventId, loc) {
-		var newLoc = (0, _location.toApiFormat)(Object.assign({}, loc, { eventId: eventId }));
-		console.log("EDIT", newLoc);
+		var params = (0, _location.toApiFormat)(Object.assign({}, loc, { eventId: eventId }));
 		return {
+			params: params,
 			api_call: {
 				endpoint: 'events',
 				method: 'update_location',
@@ -4019,7 +4031,7 @@ var ActionCreators = {
 					user: 'ignacio',
 					pass: 'password'
 				},
-				params: newLoc,
+				params: params,
 				http_method: 'post',
 				types: [(0, _constants2.default)('updateRequest'), (0, _constants2.default)('updateSuccess'), (0, _constants2.default)('updateFailure')]
 			}

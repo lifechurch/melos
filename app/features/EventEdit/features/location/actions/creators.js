@@ -168,9 +168,9 @@ const ActionCreators = {
 	},
 
 	update(eventId, loc) {
-		const newLoc = toApiFormat(Object.assign({}, loc, { eventId }))
-		console.log("EDIT", newLoc)
+		const params = toApiFormat(Object.assign({}, loc, { eventId }))
 		return {
+			params,
 			api_call: {
 				endpoint: 'events',
 				method: 'update_location',
@@ -180,7 +180,7 @@ const ActionCreators = {
 					user: 'ignacio',
 					pass: 'password'
 				},
-				params: newLoc,
+				params,
 				http_method: 'post',
 				types: [ type('updateRequest'), type('updateSuccess'), type('updateFailure') ]
 			}
