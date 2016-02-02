@@ -126,6 +126,7 @@ sq:
         mobile: 
             title: "Programi i Biblës"
             description: "Lexo Fjalën e Perëndisë në çdo kohë, duke përdorur Programin e Biblës YouVersion. Ndaj vargje me miqtë, thekso dhe shëno pasazhe dhe krijo një zakon të përditshëm me planet e Biblës. I disponueshëm për iOS, Android, BlackBerry, Window Phone dhe më tepër."
+            download or read: "Shkarko tani ose lexo në internet."
         site: 
             title: "Bible.com"
             description: "Sill bukurinë dhe të vërtetën e Biblës në jetën e përditshme. Me Programin e Biblës YouVersion, ju mund të lexoni, të shikoni, të dëgjoni dhe të ndani nga telefoni ose tableti juaj si edhe në internet në Bible.com"
@@ -175,6 +176,7 @@ sq:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Tani"
+    select dropdown: "--Zgjidh--"
     celebrating 50MM: "Duke festuar 50 milion instalime të programit!"
     link: "Lidhje"
     site search: "Kërkim në YouVersion"
@@ -232,7 +234,7 @@ sq:
     sign out: "Dil"
     sign back in: "Për sigurinë tuaj, hyrjet skadojnë mbas dy javësh. Ju lutemi hyni sërish."
     youversion: "YouVersion"
-    username or email prompt: "Emri i përdoruesit (ose E-posta)"
+    username or email prompt: "E-postë (ose Emër përdoruesi)"
     password prompt: "Fjalëkalimi"
     sign in: "Hyr"
     sign in to youversion: "Hyr në YouVersion"
@@ -302,6 +304,12 @@ sq:
     traditional: "Tradicionale"
     alphabetic: "Alfabetike"
     versions title: "Versionet"
+    languages: 
+        title: "Përkthimet dhe gjuhët e Biblës"
+        most popular: "Gjuhët më të përdorura"
+        additional: "Gjuhë shtesë"
+        download language: "Shkarko Biblën në %{language_name}"
+        bible in: "Bibla në %{language_name}"
     or: 
         lower: "ose"
         upper: "OSE"
@@ -1119,6 +1127,7 @@ sq:
         sms success: "Shumë mirë! Kontrolloni celularin tuaj për lidhjen."
         sms info: "Ju do të merrni një SMS të vetme për të shkarkuar aplikacionin"
         sms download: "Kliko për të shkarkuar Programin e Biblës:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Ups!"
@@ -1203,7 +1212,7 @@ sq:
         408 explanation: "Ne jemi vënë në dijeni dhe do të merremi me çdo problem të vazhdueshëm sa më shpejt që të jetë e mundur. Të shohim nëse mund t'ju kthejmë te leximi i Biblës!"
         try again: "Provoni sërish"
     versions: 
-        filter: "Filtro versionet..."
+        filter: "Fillo të shkruash emrin e versionit (ose gjuhën)..."
         see all: "Shiko të gjitha versionet..."
         courtesy of: "%{abbreviation} është sjellë te ju nga %{publisher}"
         learn more: "Mëso më shumë"

@@ -148,6 +148,7 @@ hr:
         mobile: 
             title: "aplikacije Biblija"
             description: "Čitaj Božju Riječ bilo kad i bilo gdje pomoću YouVersion aplikacije Biblija. Podijeli Pismo s prijateljima, istakni i označi odlomke i stvori dnevnu naviku čitanja pomoću planova čitanja. Dostupna je za iOS, Android, BlackBerry, Windows Phone i druge sustave."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Unesi istinu i ljepotu Biblije u svakodnevni život. S YouVersion aplikacijom Biblija možeš čitati, gledati, slušati i dijeliti Bibliju preko mobitela, tableta ili online na Bible.com"
@@ -197,6 +198,7 @@ hr:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Sad"
+    select dropdown: "--Označi--"
     celebrating 50MM: "Slavimo 50 milijuna instalacija aplikacije!"
     link: "Link"
     site search: "YouVersion pretraživanje"
@@ -254,7 +256,7 @@ hr:
     sign out: "Odjavi se"
     sign back in: "Radi tvoje sigurnosti, prijave traju dva tjedna. Molimo prijavi se ponovo."
     youversion: "YouVersion"
-    username or email prompt: "Korisničko ime (ili mail adresa)"
+    username or email prompt: "Email (or Username)"
     password prompt: "Lozinka"
     sign in: "Prijavi se"
     sign in to youversion: "Prijavi se na YouVersion"
@@ -324,6 +326,12 @@ hr:
     traditional: "Tradicionalno"
     alphabetic: "Abecedno"
     versions title: "Verzije"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Najpopularniji jezici"
+        additional: "Dodatni jezici"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "ili"
         upper: "ILI"
@@ -1145,6 +1153,7 @@ hr:
         sms success: "Odlično! Provjeri link na mobitelu."
         sms info: "Primit ćeš jednokratni SMS za preuzimanje aplikacije"
         sms download: "Klikni za preuzimanje aplikacije Biblija:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Opa!"
@@ -1154,7 +1163,7 @@ hr:
             heading: "Uzmi besplatnu Bibliju na svom telefonu, tabletu, i kompjuteru. "
             cta: "Čitaj Bibliju sada."
             experience: 
-                title: "Koristi ju bilo gdje."
+                title: "Čitajte je bilo gdje."
                 body: "Izaberi više od 1.200 verzija Biblije na preko 900 jezika na svom računalu, telefonu ili tabletu -- sa mnogim dostupnim zvučnim Biblijama."
                 action: "Pogledaj verzije Biblije"
             make_yours: 
@@ -1229,7 +1238,7 @@ hr:
         408 explanation: "Upozoreni smo i riješit ćemo sve trajne probleme što je brže moguće. Da vidimo da li te možemo vratiti na čitanje Biblije."
         try again: "Pokušaj ponovo"
     versions: 
-        filter: "Filtriraj verzije..."
+        filter: "Start typing Version name (or Language)..."
         see all: "Pogledaj sve prijevode..."
         courtesy of: "%{abbreviation} ti je omogućio %{publisher}"
         learn more: "Nauči više"

@@ -126,6 +126,7 @@ mk:
         mobile: 
             title: "Апликација „Библија“"
             description: "Читајте го Божјиот Збор во секое време и насекаде користејќи ја апликацијата „Библија“. Сподели стихови со пријателите, нагласи и обележи стихови и создади си дневни навики со апликацијата „Библија“ од YouVersion. Достапен за iOS, Android, Blackberry, Windows Phone и за други."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Донеси ја убавината и вистината на Библијата во секојдневниот живот. Со апликацијата „Библија“ од YouVersion можеш да читаш, слушаш и споделуваш на твојот паметен телефон или таблет и на Bible.com."
@@ -175,6 +176,7 @@ mk:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Сега"
+    select dropdown: "--Избери--"
     celebrating 50MM: "Славиме 50 Милиони инсталирани апликации!"
     link: "Врска"
     site search: "YouVersion пребарување"
@@ -232,7 +234,7 @@ mk:
     sign out: "Одјави се"
     sign back in: "За твојата сигурност,  најавата истекува по две недели.  Најави се повторно."
     youversion: "YouVersion"
-    username or email prompt: "Корисничко име (или е-пошта)"
+    username or email prompt: "Email (or Username)"
     password prompt: "Лозинка"
     sign in: "Најава"
     sign in to youversion: "Најави се во YouVersion"
@@ -302,6 +304,12 @@ mk:
     traditional: "Традиционално"
     alphabetic: "По азбучен ред"
     versions title: "Верзија"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "или"
         upper: "ИЛИ"
@@ -1119,6 +1127,7 @@ mk:
         sms success: "Одлично! Провери на твојот мобилен уред дали го доби линкот."
         sms info: "Ќе добиеш еднократна SMS порака со врска за преземање на апликацијата"
         sms download: "Кликни за да ја преземеш апликацијата „Библија“:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Упс!"
@@ -1203,7 +1212,7 @@ mk:
         408 explanation: "Јавено ни е, и во првата можност ќе го погледнеме проблемот.  Да видиме дали можеме да го решиме проблемот!"
         try again: "Обиди се повторно"
     versions: 
-        filter: "Филтрирај верзии..."
+        filter: "Start typing Version name (or Language)..."
         see all: "Види ги сите верзии..."
         courtesy of: "%{abbreviation} обезбедено од %{publisher}"
         learn more: "Дознај повеќе"

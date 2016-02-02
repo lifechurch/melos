@@ -115,6 +115,7 @@ zh-TW:
         mobile: 
             title: "聖經軟體"
             description: "使用 YonVersion 聖經軟體可以讓您隨時隨地閱讀神的話語。與朋友分享經文、醒目標示經節、給經文做書籤，依照讀經計劃建立每日讀經的習慣。在iOS, Android、Blackberry 和 Windows Phone 等多個平台均可使用。"
+            download or read: "現在就下載或線上閱讀。"
         site: 
             title: "Bible.com"
             description: "將聖經的真理和美善帶入每天的生活!  藉著 YouVersion 聖經軟體，您可以在智慧型手機、平板電腦或者 Bible.com 網站閱讀、觀看、聆聽並分享聖經。"
@@ -164,6 +165,7 @@ zh-TW:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "現在"
+    select dropdown: "--選擇--"
     celebrating 50MM: "慶祝5000萬次的安裝！"
     link: "鏈結"
     site search: "YouVersion 搜尋"
@@ -221,7 +223,7 @@ zh-TW:
     sign out: "登出"
     sign back in: "為了安全起見，您的持續登入在兩個星期後將自動失效。請重新登入。"
     youversion: "YouVersion"
-    username or email prompt: "用戶名稱 (或電子郵件地址）"
+    username or email prompt: "電郵地址（或用戶名）"
     password prompt: "密碼"
     sign in: "登入"
     sign in to youversion: "登入 YouVersion"
@@ -291,6 +293,12 @@ zh-TW:
     traditional: "傳統次序"
     alphabetic: "按字母順序"
     versions title: "譯本"
+    languages: 
+        title: "聖經語言和譯本"
+        most popular: "最常用的語言"
+        additional: "其他語言"
+        download language: "下載 %{language_name} 聖經"
+        bible in: "%{language_name} 聖經"
     or: 
         lower: "或"
         upper: "或"
@@ -1106,6 +1114,7 @@ zh-TW:
         sms success: "太好了！請查看你的行動設備。"
         sms info: "您將收到一個附有鏈結的簡訊給您下載應用"
         sms download: "點擊下載聖經軟體："
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "抱歉！"
@@ -1190,7 +1199,7 @@ zh-TW:
         408 explanation: "我們已經接到警示並將盡快解決一切持續存在的問題。希望您能盡快返回到聖經的閱讀中！"
         try again: "再試一次"
     versions: 
-        filter: "篩選譯本..."
+        filter: "輸入譯本名（或語言）......"
         see all: "查看全部譯本"
         courtesy of: "%{abbreviation} 是由 %{publisher} 提供"
         learn more: "暸解更多"

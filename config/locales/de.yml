@@ -126,6 +126,7 @@ de:
         mobile: 
             title: "Die Bibel App"
             description: "Lies Gottes Wort jederzeit und überall mit der YouVersion Bibel App. Teile Schriftstellen mit Freunden, markiere Abschnitte und setze Lesezeichen, und mache es dir mit Leseplänen zur täglichen Gewohnheit. Verfügbar für iOS, Android, Blackberry, Windows Phone und weitere."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Hole die Schönheit und Wahrheit der Bibel in den Alltag. Mit der YouVersion Bibel App kannst du lesen, sehen, hören und teilen auf deinem Smartphone oder Tablet, und online auf Bible.com."
@@ -175,6 +176,7 @@ de:
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=de"
             amazon: "http://www.amazon.de/YouVersion-Bible-for-Kids/dp/B00GURLC40/ref=sr_1_2?s=mobile-apps&ie=UTF8&qid=1436459812"
     now: "Jetzt"
+    select dropdown: "--Wähle--"
     celebrating 50MM: "Zur Feier der 50 Mio. Downloads!"
     link: "Link"
     site search: "YouVersion-Suche"
@@ -232,7 +234,7 @@ de:
     sign out: "Abmelden"
     sign back in: "Zu deiner Sicherheit verfallen Anmeldungen nach zwei Wochen. Bitte melde dich erneut an."
     youversion: "YouVersion"
-    username or email prompt: "Benutzername (oder E-Mail):"
+    username or email prompt: "Email (or Username)"
     password prompt: "Passwort"
     sign in: "Anmelden"
     sign in to youversion: "Bei YouVersion anmelden"
@@ -302,6 +304,12 @@ de:
     traditional: "Traditionell"
     alphabetic: "Alphabetisch"
     versions title: "Übersetzungen"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "oder"
         upper: "ODER:"
@@ -1119,6 +1127,7 @@ de:
         sms success: "Super! Schau auf deinem mobilen Gerät nach dem Link."
         sms info: "Du wirst eine einmalige SMS erhalten um die App herunterzuladen"
         sms download: "Klicken um die Bibel App herunterzuladen:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Hoppla!"
@@ -1203,7 +1212,7 @@ de:
         408 explanation: "Wir wurden benachrichtigt und werden alle bestehenden Probleme so schnell wie möglich lösen. Schauen wir mal, ob wir dir die Bibel nicht wieder zugänglich machen können!"
         try again: "Versuche es noch einmal"
     versions: 
-        filter: "Übersetzungen durchsuchen..."
+        filter: "Start typing Version name (or Language)..."
         see all: "All Übersetzungen ansehen..."
         courtesy of: "%{abbreviation} von %{publisher}"
         learn more: "Weitere Infos"

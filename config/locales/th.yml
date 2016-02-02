@@ -115,6 +115,7 @@ th:
         mobile: 
             title: "แอพพระคัมภีร์"
             description: "อ่านพระวจนะคำของพระเจ้าในทุกที่เวลาทุกเวลา โดยใช้แอพพระคัมภีร์จาก YouVersion แบ่งปันข้อพระคัมภีร์กับเพื่อนๆ เน้นข้อความและคั่นหน้าข้อพระคัมภีร์ และทำให้เป็นกิจวัตรประจำวันด้วยแผนการอ่านพระคัมภีร์ มีใช้ดาวน์โหลดสำหรับ iOS แอนดรอยด์ แบล็คเบอร์รี่ วินโดวส์โฟน และแพลตฟอร์มอื่น"
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "นำความงดงาม และความจริงจากพระคัมภีร์เข้าไปสู่ชีวิตประจำวัน ด้วยแอพพระคัมภีร์จาก YouVersion คุณจะสามารถ รับชม ฟัง และแบ่งปันไปยังสมาร์ทโฟน หรือแท็บเล็ต และผ่านบริการออนไลน์ที่ Bible.com"
@@ -164,6 +165,7 @@ th:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "ตอนนี้"
+    select dropdown: "--เลือก--"
     celebrating 50MM: "ร่วมฉลองการติดตั้งแอพครบ 50 ล้านครั้ง!"
     link: "ลิงค์"
     site search: "ค้นหาใน YouVersion"
@@ -221,7 +223,7 @@ th:
     sign out: "ออกจากระบบ"
     sign back in: "สำหรับความปลอดภัยของคุณ การเข้าสู่ระบบจะหมดอายุหลังจากผ่านไปสองสัปดาห์ โปรดเข้าสู่ระบบใหม่"
     youversion: "YouVersion"
-    username or email prompt: "ชื่อบัญชี (หรือ อีเมล์)"
+    username or email prompt: "Email (or Username)"
     password prompt: "รหัสผ่าน"
     sign in: "เข้าสู่ระบบ"
     sign in to youversion: "เข้าสู่ระบบ YouVersion"
@@ -291,6 +293,12 @@ th:
     traditional: "รูปแบบดั้งเดิม"
     alphabetic: "เรียงตามตัวอักษร"
     versions title: "ฉบับ"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "หรือ"
         upper: "หรือ"
@@ -1106,6 +1114,7 @@ th:
         sms success: "ยอดเยี่ยม! กรุณาตรวจสอบ link จากโทรศัพท์มือถือของคุณ"
         sms info: "คุณจะได้รับข้อความสำหรับดาวน์โหลดแอพ"
         sms download: "กดเพื่อดาวน์โหลดแอพพระคัมภีร์"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "อุ๊ปส์!"
@@ -1190,7 +1199,7 @@ th:
         408 explanation: "เราได้รับการแจ้ง และจะแก้ไขปัญหานั้นแบบถาวร อย่างเร็วที่สุดเท่าที่จะทำได้ ลองดูว่า เราจะทำให้คุณได้กลับไปอ่านพระคัมภีร์ของคุณต่อได้ยังไง!"
         try again: "โปรดลองอีกครั้ง"
     versions: 
-        filter: "คัดกรองพระคัมภีร์ฉบับ..."
+        filter: "Start typing Version name (or Language)..."
         see all: "ดูพระคัมภีร์ทั้งหมด..."
         courtesy of: "%{abbreviation} สนับสนุนโดย %{publisher}"
         learn more: "เรียนรู้เพิ่มเติม"

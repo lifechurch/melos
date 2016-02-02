@@ -126,6 +126,7 @@ pt:
         mobile: 
             title: "O App da Bíblia"
             description: "Lei a Palavra de Deus a qualquer momento, em qualquer lugar usando o App da Biblia YouVersion. Compartilhe as Escrituras com seus amigos, destaque e marque passagens e crie um hábito diário com os Planos da Bíblia. Disponível para iOS, Android, Blackberry, Windows Phone e mais."
+            download or read: "Baixe agora ou leia on-line."
         site: 
             title: "Bible.com"
             description: "Traga a beleza e verdade da Bíblia para o seu dia a dia. Com o App da Bíblia YouVersion, você pode ler, assistir, ouvir e compartilhar no seu smartphone ou tabler, e online em Bible.com."
@@ -175,6 +176,7 @@ pt:
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=pt_br"
             amazon: "http://www.amazon.com.br/YouVersion-Bible-for-Kids/dp/B00GURLC40/ref=sr_1_2?ie=UTF8&qid=1418837056&sr=8-2&keywords=bible+for+kids"
     now: "Agora"
+    select dropdown: "--Selecionar--"
     celebrating 50MM: "Comemorando 50 milhões de instalações!"
     link: "Link"
     site search: "Busca no YouVersion"
@@ -232,7 +234,7 @@ pt:
     sign out: "Sair"
     sign back in: "Para sua segurança, os logins expiram após duas semanas. Por favor, entre novamente."
     youversion: "YouVersion"
-    username or email prompt: "Nome de Usuário (ou e-mail)"
+    username or email prompt: "E-mail (ou Usuário)"
     password prompt: "Senha"
     sign in: "Entrar"
     sign in to youversion: "Entrar no YouVersion"
@@ -302,6 +304,12 @@ pt:
     traditional: "Tradicional"
     alphabetic: "Em ordem alfabética"
     versions title: "Versões"
+    languages: 
+        title: "Idiomas e traduções da Bíblia"
+        most popular: "Idiomas mais populares"
+        additional: "Idiomas adicionais"
+        download language: "Baixe a Bíblia em %{language_name}"
+        bible in: "A Bíblia em %{language_name}"
     or: 
         lower: "ou"
         upper: "OU"
@@ -1119,6 +1127,7 @@ pt:
         sms success: "Ótimo! Confira seu dispositivo móvel para acessar o link."
         sms info: "Você receberá uma única mensagem de texto para baixar o aplicativo."
         sms download: "Clique para baixar o App da Bíblia:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Opa!"
@@ -1203,7 +1212,7 @@ pt:
         408 explanation: "Nós fomos alertados e tentaremos resolver quaisquer problemas persistentes o quanto antes. Vamos ver se conseguimos  te levar de volta para sua leitura da Bíblia!"
         try again: "Tente Novamente"
     versions: 
-        filter: "Filtrar Versões..."
+        filter: "Digite o nome da Versão (ou Idioma)..."
         see all: "Ver Todas as Versões..."
         courtesy of: "%{abbreviation} disponibilizado a você por %{publisher}"
         learn more: "Saiba Mais"

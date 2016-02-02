@@ -1,6 +1,7 @@
 - @subtitle = '' # keeps end of title clean
 - @meta_url = "https://#{request.host_with_port}#{request.fullpath}"
 - bible_in_lang = ''
+- @title    = "#{t('languages.download language', language_name: @language_name)}. #{t('meta.mobile.download or read')} #{t('mobile page.free overlay')}"
 
 - content_for :meta_description do
   = "#{t('download ad.description copy', language_count: 900)} #{t('download ad.meta copy title')}"
@@ -31,7 +32,6 @@
                       - if show_lang_title
                         - bible_in_lang = "#{t('languages.bible in', language_name: meta_language)}"
                         %h1
-                          - @title    = "#{t('languages.download language', language_name: meta_language)}. #{t('meta.mobile.download or read')} #{t('mobile page.free overlay')}"
                           = bible_in_lang
                         - show_lang_title = false
                       %li

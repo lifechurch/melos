@@ -126,6 +126,7 @@ en-GB:
         mobile: 
             title: "The Bible App"
             description: "Read God’s word at anytime, anywhere using the YouVersion Bible App. Share scripture with friends, highlight and bookmark passages, and create a daily habit with Bible plans. Available for iOS, Android, Blackberry, Windows Phone and more."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Bring the beauty and truth of the Bible into everyday life. With the YouVersion Bible App, you can read, watch, listen, and share on your smartphone or tablet, and online at Bible.com."
@@ -175,6 +176,7 @@ en-GB:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Now"
+    select dropdown: "--Select--"
     celebrating 50MM: "Celebrating 50 Million App Installations!"
     link: "Link"
     site search: "YouVersion search"
@@ -232,7 +234,7 @@ en-GB:
     sign out: "Sign out"
     sign back in: "For your security, logins expire after two weeks. Please sign in again."
     youversion: "YouVersion"
-    username or email prompt: "Username (or E-mail)"
+    username or email prompt: "E-mail (or Username)"
     password prompt: "Password"
     sign in: "Sign in"
     sign in to youversion: "Sign in to YouVersion"
@@ -302,6 +304,12 @@ en-GB:
     traditional: "Traditional"
     alphabetic: "Alphabetic"
     versions title: "Versions"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "or"
         upper: "OR"
@@ -1119,6 +1127,7 @@ en-GB:
         sms success: "Great! Check your mobile device for the link."
         sms info: "You will receive a one time SMS to download the app"
         sms download: "Click to download the Bible App:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Oops!"
@@ -1203,7 +1212,7 @@ en-GB:
         408 explanation: "We've been alerted and will address any persistent issues as quickly as possible. Let's see if we can get you back to your Bible reading!"
         try again: "Try again"
     versions: 
-        filter: "Filter versions..."
+        filter: "Start typing version name (or language)..."
         see all: "See all versions..."
         courtesy of: "%{abbreviation} brought to you by %{publisher}"
         learn more: "Learn more"

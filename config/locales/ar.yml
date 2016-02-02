@@ -170,6 +170,7 @@ ar:
         mobile: 
             title: "تطبيق الكتاب المقدس"
             description: "اقرأ كلمة الله في اي وقت و اي مكان باستخدام تطبيق الكتاب المقدس Youversion. شارك النصوص الكتابية مع اصدقائك، اضف تمييز للنص او اشارات مرجعية لبعض النصوص، و كون عادة يومية بقراءة الكتاب المقدس من خلال اتباع خطط القراءة.\nالتطبيق متاح للاندرويد، الويندوز فون، الاي او اس، البلاك بيري و اكثر من هذا."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "اجلب جمال و حق الكتاب المقدس لحياتك اليومية. مع تطبيق الكتاب المقدس Youversion، يمكنك القراءة، المشاهدة، الاستماع، و المشاركة من خلال هواتفك الذكية او التابلت، او من خلال الاتصال بالانترنت على Bible.com"
@@ -219,6 +220,7 @@ ar:
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=ar"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "الأن"
+    select dropdown: "--اختار--"
     celebrating 50MM: "نحتفل بـ 50 مليون تحميل للتطبيق!"
     link: "رابط"
     site search: "بحث YouVersion"
@@ -276,7 +278,7 @@ ar:
     sign out: "تسجيل الخروج"
     sign back in: "لأمنك الخاص، صلاحية تسجيل الدخول تنتهي كل أسبوعين. يرجى تسجيل الدخول مرة أخري."
     youversion: "YouVersion"
-    username or email prompt: "اسم المستخدم (أو البريد الاليكتروني)"
+    username or email prompt: "Email (or Username)"
     password prompt: "كلمة المرور‌"
     sign in: "سجل دخول."
     sign in to youversion: "سجل الدخول على YouVersion"
@@ -346,6 +348,12 @@ ar:
     traditional: "تقليدي"
     alphabetic: "ترتيب أبجدى"
     versions title: "نسخات"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "أو"
         upper: "أو"
@@ -659,7 +667,7 @@ ar:
             device id text: "please translate"
             cookies title: "ملفات تعريف الارتباط Life.Church"
             cookies text: "عندما تقوم بزيارة <a href='https://www.bible.com' target='_self'>www.youversion.com</a>، من الممكن أن نقوم بارسال بعض ملفات تعريف الارتباط إلى حاسبك، حتى نقوم بتحديد المتصفح الخاص بك. (ملف تعريف الارتباط هو ملف نصي صغير الحجم يحتوي على بعض العبارات). قبول ملفات تعريف الارتباط الخاصة بنا يمنحك الحفاظ على اعداداتك الشخصية من جلسة الي اخرى. بالرغم ان معظم برامج تصفح الانترنت تقبل ملفات تعريف الارتباط كافتراض مبدأي، ولكن يمكنك ضبط المتصفح الخاص بك لرفض جميع ملفات تعريف الارتباط، أو اخبارك في حالة استقبال ملفات تعريف الارتباط. بعض خواص وخدمات YouVersion  قد لا تعمل بشكل جيد في حال الغاء قبول ملفات تعريف الارتباط ."
-            log title: "please translate"
+            log title: "معلومات تسجيل الدخول"
             log text: "عندما تستخدم خدمات YouVersion، يقوم الخادم الخاص بنا تلقائيا بتسجيل البيانات التي يرسلها المتصفح الخاص بك عندما تزور أحدى مواقعنا. هذه التسجيلات التلقائية للبيانات من الممكن أن تحتوي على بيانات مثل طلبك للشبكة، عنوان بروتوكول الإنترنت، نوع المتصف، لغة المتصفح ، تاريخ ووقت طلبك و واحد او اكثر من ملفات تعريف الارتباط التي من الممكن أن تحدد متصفحك بشكل فريد."
             communications title: "اتصالات المستخدم"
             communications text: "المعلومات الشخصية أو الطلبات التي تدخلها عن طريق <a href='https://www.bible.com/live' target='_self'>www.youversion.com/live</a> سوف يتم ارسالها إلى مدير المجموعة. مدير المجموعة و/أو شخص آخر من الأعضاء سوف يكون له الحق الوصول الى هذه المعلومات. عندما ترسل رسالة اليكترونية أو أي اتصال آخر مع أي من المواقع المملوكة من Life.Church، من الممكن أن نحتفظ برسائل الاتصال للعمل على الطلبات المقدمة، للرد علي طلباتكم، وتحسين خدماتنا."
@@ -1171,6 +1179,7 @@ ar:
         sms success: "رائع! افحص هاتفك لتجد الرابط"
         sms info: "سوف تتلقى رسالة نصية قصيرة لمرة واحدة لتحميل التطبيق"
         sms download: "انقر لتحميل تطبيق الكتاب المقدس"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "عفوا!"
@@ -1255,7 +1264,7 @@ ar:
         408 explanation: "لقد تم تنبيهنا وسوف نتعامل مع القضايا المستمرة في أسرع وقت ممكن. دعنا نرى ان كان بإمكاننا العودة بك الي قراءاتك  للكتاب المقدس."
         try again: "حاول مرة اخري"
     versions: 
-        filter: "تصنيف الاصدارات"
+        filter: "Start typing Version name (or Language)..."
         see all: "شاهد كل الإصدارات ..."
         courtesy of: "%{abbreviation} قدم لكم من قبل %{publisher}"
         learn more: "تعلم المزيد"

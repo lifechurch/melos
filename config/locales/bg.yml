@@ -126,6 +126,7 @@ bg:
         mobile: 
             title: "приложение Библията"
             description: "Четете Божието Слово по всяко време и навсякъде с помощта на приложение Библията на YouVersion. Споделяйте Писанието с приятели, маркирайте и отбелязвайте пасажи, създайте си навик за ежедневно четене с Библейските планове. На разположение за IOS, Android, Blackberry, Windows Phone и други."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Внесете красотата и истината на Библията във всекидневието си. С приложение Библията на YouVersion, можете да четете, гледате, слушате и споделяте от Вашия смартфон или таблет и онлайн на Bible.com."
@@ -175,6 +176,7 @@ bg:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Сега"
+    select dropdown: "--Изберете--"
     celebrating 50MM: "Честване на 50 милиона инсталации на приложението!"
     link: "Връзка"
     site search: "Търсене в YouVersion"
@@ -232,7 +234,7 @@ bg:
     sign out: "Отписване"
     sign back in: "От съображения за сигурност, сесиите изтичат след две седмици. Моля, влезте отново."
     youversion: "YouVersion"
-    username or email prompt: "Потребителско име (или имейл)"
+    username or email prompt: "Email (or Username)"
     password prompt: "Парола"
     sign in: "Вход"
     sign in to youversion: "Вход в YouVersion"
@@ -302,6 +304,12 @@ bg:
     traditional: "Традционно"
     alphabetic: "В азбучен ред"
     versions title: "Версии"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "или"
         upper: "ИЛИ"
@@ -1119,6 +1127,7 @@ bg:
         sms success: "Страхотно! Проверете Вашето мобилно устройство за линка."
         sms info: "Ще получите еднократен SMS, за да изтеглите приложението."
         sms download: "Кликнете, за да изтеглите приложение Библията:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Грешка!"
@@ -1203,7 +1212,7 @@ bg:
         408 explanation: "Знаем за това и ще оправим проблема възможно най-бързо."
         try again: "Опитай отново"
     versions: 
-        filter: "Филтриране на версии..."
+        filter: "Започнете да пишете името на ПРЕВОДА (или ЕЗИКА)..."
         see all: "Преглед на всички версии..."
         courtesy of: "%{abbreviation} от %{publisher}"
         learn more: "Повече информация"

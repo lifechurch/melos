@@ -126,6 +126,7 @@ af:
         mobile: 
             title: "Die Bybel Toep"
             description: "Lees God se Woord enige tyd, enige plek met behulp van die YouVersion Bybel App. Deel die Skrif met vriende, belig en boekmerk die gedeeltes, en skep `n daglikse gewoonte met Bybel Planne, Beskikbaar vir iOS, Android, Blackberry, Windows Foon en meer."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Bring die skoonheid van die waarheid van die Bybel in die alledagse lewe. Met die YouVersion Bybel App, kan jy lees, kyk, en deel op jou slimfoon of tablet, en aanlyn op Bybel.com."
@@ -175,6 +176,7 @@ af:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Nou"
+    select dropdown: "--Kies--"
     celebrating 50MM: "Vier 50 Miljoen App Installasies!"
     link: "Skakel"
     site search: "YouVersion Soek"
@@ -232,7 +234,7 @@ af:
     sign out: "Teken uit"
     sign back in: "Vir jou eie veiligheid, sal inteken besonderhede verval na twee weke. Teken asseblief weer in."
     youversion: "YouVersion"
-    username or email prompt: "Gebruikersnaam (of E-pos):"
+    username or email prompt: "Email (or Username)"
     password prompt: "Wagwoord:"
     sign in: "Teken In"
     sign in to youversion: "Teken in op YouVersion"
@@ -302,6 +304,12 @@ af:
     traditional: "Tradisioneel"
     alphabetic: "Alfabeties"
     versions title: "Vertalings"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "of"
         upper: "OF"
@@ -1119,6 +1127,7 @@ af:
         sms success: "Great! Kyk na jou foon vir die skakel."
         sms info: "Jy sal ‘n SMS ontvang om die toep af te laai"
         sms download: "Kliek om die Bybel Toepassing af te laai"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Oeps!"
@@ -1203,7 +1212,7 @@ af:
         408 explanation: "Ons is in kennis gestel en sal enige voortdurende kwessies so gou as moontlik oplos.  Kom ons kyk of ons jou kan terug kry om die Bybel verder te lees."
         try again: "Probeer Weer"
     versions: 
-        filter: "Filtreer Uitgawes..."
+        filter: "Start typing Version name (or Language)..."
         see all: "Sien Alle weergawes"
         courtesy of: "%{abbreviation} na jougebring deur %{publisher}"
         learn more: "Leer Meer"

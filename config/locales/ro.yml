@@ -137,6 +137,7 @@ ro:
         mobile: 
             title: "Aplicația Biblia"
             description: "Citește din Cuvântul lui Dumnezeu oricând și oriunde folosind Aplicația Biblia de la YouVersion. Împărtășește Scriptura cu prieteni, evidențiază și marchează pasaje, și fă-ți un obicei zilnic cu Planurile biblice. Disponibilă pentru iOS, Android, Blackberry, Windows Phone și altele."
+            download or read: "Descarcă acum sau citește online."
         site: 
             title: "Bible.com"
             description: "Adu frumusețea și adevărul Bibliei în viața de zi cu zi. Alături de Aplicația Biblia de la Youversion, poți citi, viziona, asculta și distribui Biblia atât pe smartphone-ul sau tableta ta, cât și conectat pe site-ul Bible.com."
@@ -186,6 +187,7 @@ ro:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Acum"
+    select dropdown: "--Alege--"
     celebrating 50MM: "Sărbătorind 50 de milioane de instalări ale aplicației!"
     link: "Legătură"
     site search: "Căutare YouVersion"
@@ -243,7 +245,7 @@ ro:
     sign out: "Deconectare"
     sign back in: "Pentru siguranța ta, autentificările expiră după două săptămâni. Trebuie să te autentifici din nou."
     youversion: "YouVersion"
-    username or email prompt: "Nume de utilizator (sau e-mail):"
+    username or email prompt: "E-mail (sau nume de utilizator)"
     password prompt: "Parolă"
     sign in: "Autentificare"
     sign in to youversion: "Autentifică-te la YouVersion"
@@ -313,6 +315,12 @@ ro:
     traditional: "Tradițional"
     alphabetic: "Alfabetic"
     versions title: "Versiuni"
+    languages: 
+        title: "Limbi și traduceri ale Bibliei"
+        most popular: "Cele mai populare limbi"
+        additional: "Limbi suplimentare"
+        download language: "Descarcă Biblia în limba %{language_name}"
+        bible in: "Biblia în limba %{language_name}"
     or: 
         lower: "sau"
         upper: "SAU"
@@ -1132,6 +1140,7 @@ ro:
         sms success: "Super! Verifică-ți dispozitivul mobil pentru link."
         sms info: "Vei primi un SMS unic pentru a descarca aplicatia"
         sms download: "Apasă pentru a descarca Aplicația Biblia:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Oops!"
@@ -1216,7 +1225,7 @@ ro:
         408 explanation: "Am fost notificați și ne vom ocupa de toate problemele persistente în cel mai scurt timp. Acum încercăm să te ducem înapoi la planul tău de citire."
         try again: "Încearcă din nou"
     versions: 
-        filter: "Filtrare versiuni..."
+        filter: "Introdu numele versiunii (sau limba)"
         see all: "Vezi toate versiunile..."
         courtesy of: "%{abbreviation} îţi este oferit(ă) de %{publisher}"
         learn more: "Află mai mult"

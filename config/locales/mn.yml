@@ -126,6 +126,7 @@ mn:
         mobile: 
             title: "Библи Апп"
             description: "YouVersion -ы Библи Аппыг ашиглан хаана ч, хэзээ ч Бурханы Үгийг унш. Библи Уншлагын Төлөвлөгөөгөөр дамжуулан найзуудтайгаа Бичээсийг хуваалц, тодруул, хавчуурга хий,өдөр бүр Библи унших зуршилтай бол.  iOS, Android, Blackberry, Windows Утаснууд болон бусад ашиглах боломжтой."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Өдөр бүрийн амьдралдаа Библийн гайхамшиг болон үнэнийг авч ир. YouVersion -ы Библи Апптай хамт Bible.com-оор  smartphone эсвэл таблет, ба онлайнаар унших, үзэх, сонсох ба хуваалцах боломжтой."
@@ -175,6 +176,7 @@ mn:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Одоо"
+    select dropdown: "--Сонгох--"
     celebrating 50MM: "50 Сая Апп суулгагдсан баяраа тэмдэглэж байна!"
     link: "Холбоос"
     site search: "YouVersion Хайх"
@@ -232,7 +234,7 @@ mn:
     sign out: "Гарах"
     sign back in: "Таны аюулгүй байдлын үүднээс нэвтрэлт хоёр долоо хоногийн дараа хүчингүй болно. Дахин шинээр нэвтрэнэ үү."
     youversion: "YouVersion"
-    username or email prompt: "Хэрэглэгчийн нэр (эсвэл и-мэйл хаяг):"
+    username or email prompt: "Email (or Username)"
     password prompt: "Нууц Үг:"
     sign in: "Нэвтрэх"
     sign in to youversion: "YouVersion-д нэвтрэх"
@@ -302,6 +304,12 @@ mn:
     traditional: "Уламжлалт"
     alphabetic: "Үсгийн"
     versions title: "Библийн хувилбарууд"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "эсвэл"
         upper: "ЭСВЭЛ"
@@ -1119,6 +1127,7 @@ mn:
         sms success: "Амжилт! Линк нь таны зөөврийн хэрэгсэл рүү илгээсэн."
         sms info: "Апп.г татаж авахын тулд нэг л удаагийн SMS тань руу илгээнэ"
         sms download: "Библи Апп.г татаж авахаар энд дар:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Өөөх!"
@@ -1203,7 +1212,7 @@ mn:
         408 explanation: "Энэ талаар бидэнд мэдэгдсэн бөгөөд аль болох түргэн засах болно. Бид Таныг библиэ уншихад тань эргүүлээд аваачиж чадах нь уу харцгаая!"
         try again: "Дахин Оролдоно уу"
     versions: 
-        filter: "Хувилбарууд Шүүх..."
+        filter: "Start typing Version name (or Language)..."
         see all: "Бүх Орчуулгууд Харах..."
         courtesy of: "%{abbreviation} танд %{publisher} -р дамжуулан аваачна"
         learn more: "Илүү Мэдэх"

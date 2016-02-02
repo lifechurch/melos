@@ -126,6 +126,7 @@
         mobile: 
             title: "Bibel-appen"
             description: "Les Guds ord når som helst, hvor som helst med Bibel-appen fra YouVersion. Del bibelvers med venner, marker og legg til bokmerker til bibeltekster, og leseplaner til en daglig vane. Tilgjengelig for iOS, Andriod, Blackberry, Windows Phone med mer."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Ta med deg skjønnheten og sannheten fra bibelen inn i hverdagen din. Med Bibel-appen fra YouVersion kan du lese, se, lytte og dele på din smartelefon eller nettbrett, og på Internett på Bible.com/no"
@@ -175,6 +176,7 @@
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Nå"
+    select dropdown: "--Velg--"
     celebrating 50MM: "Vi feirer 50 millioner Bibel-app-installasjoner!"
     link: "Lenke"
     site search: "YouVersion-søk"
@@ -232,7 +234,7 @@
     sign out: "Logg ut"
     sign back in: "Av hensyn til din sikkerhet, blir du logget ut etter to uker. Vennligst logg deg inn igjen."
     youversion: "YouVersion"
-    username or email prompt: "Brukernavn (eller e-post):"
+    username or email prompt: "Email (or Username)"
     password prompt: "Passord:"
     sign in: "Logg inn"
     sign in to youversion: "Logg inn på YouVersion"
@@ -302,6 +304,12 @@
     traditional: "Tradisjonell"
     alphabetic: "Alfabetisk"
     versions title: "Versjoner"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "eller"
         upper: "ELLER"
@@ -1119,6 +1127,7 @@
         sms success: "Flott! Sjekk din mobile enhet for å finne linken."
         sms info: "Du vil motta en SMS en gang for å laste ned appen"
         sms download: "Klikk for å laste ned Bibel-appen:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Ojsann!"
@@ -1203,7 +1212,7 @@
         408 explanation: "Vi har blitt varslet og vil ta tak i vedvarende problemer så snart som mulig. La oss prøve å få deg tilbake til bibellesingen!"
         try again: "Prøv igjen"
     versions: 
-        filter: "Filtrer oversettelser..."
+        filter: "Start typing Version name (or Language)..."
         see all: "Se alle oversettelser..."
         courtesy of: "%{abbreviation} fra %{publisher}"
         learn more: "Lær mer"

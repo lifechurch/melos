@@ -126,6 +126,7 @@ fr:
         mobile: 
             title: "La Bible App"
             description: "Lisez la Parole de Dieu n'importe quand, n'importe où en utilisant la Bible App. Partagez les Écritures avec vos amis, surlignez et enregistrez vos passages favoris, et créez une habitude quotidienne avec les Plans de Lecture. Disponible sur iOS, Android, Blackberry, Windows Phone et autres."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Ramenez la beauté et la vérité de la Bible dans votre vie de tous les jours. Avec la Bible App de YouVersion, vous pouvez lire, regarder, écouter ou partager sur votre smartphone ou tablette, et en ligne sur Bible.com."
@@ -175,6 +176,7 @@ fr:
             google: " https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=fr"
             amazon: "http://www.amazon.fr/YouVersion-Bible-for-Kids/dp/B00GURLC40/ref=sr_1_2?s=mobile-apps&ie=UTF8&qid=1436459871"
     now: "Maintenant"
+    select dropdown: "--Sélectionner--"
     celebrating 50MM: "Célébration des 50 millions d'installations de cette app!"
     link: "Lien"
     site search: "Rechercher dans YouVersion"
@@ -232,7 +234,7 @@ fr:
     sign out: "Se déconnecter"
     sign back in: "Pour votre sécurité, la connexion expire après deux semaines. S'il vous plait, connectez-vous de nouveau."
     youversion: "YouVersion"
-    username or email prompt: "Nom d'utilisateur (ou email)"
+    username or email prompt: "Email (or Username)"
     password prompt: "Mot de passe:"
     sign in: "Se connecter"
     sign in to youversion: "Se connecter à YouVersion"
@@ -302,6 +304,12 @@ fr:
     traditional: "Traditionnel"
     alphabetic: "Alphabétique"
     versions title: "Versions"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "ou"
         upper: "OU"
@@ -1119,6 +1127,7 @@ fr:
         sms success: "Magnifique ! Consultez votre appareil mobile pour le lien."
         sms info: "Vous recevrez un seul SMS pour télécharger l'application"
         sms download: "Cliquer pour télécharger la Bible App :"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Oups!"
@@ -1203,7 +1212,7 @@ fr:
         408 explanation: "Nous avons été alertés et réglerons ces problèmes aussi rapidement que possible. Voyons voir si nous pouvons vous redonner accès à votre lecture de la Bible!"
         try again: "Essayez à nouveau"
     versions: 
-        filter: "Filtre par Version"
+        filter: "Start typing Version name (or Language)..."
         see all: "Voir toutes les versions"
         courtesy of: "%{abbreviation} mise à disposition par %{publisher}"
         learn more: "En savoir plus"

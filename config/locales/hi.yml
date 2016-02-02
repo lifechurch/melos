@@ -126,6 +126,7 @@ hi:
         mobile: 
             title: "बाइबिल App"
             description: "लाखों,करोड़ों लोगों द्वारा उपयुक्त इस बाइबिल App को अपने नित्य जीवन का अंग बनाये और प्रभु के वचन का अध्ययन करे।निशुल्क बाइबिल App डाउनलोड करें, और बुकमार्क्स, टिप्पणी, पाठक योजना दुनिया भर में कहीं से भी ऐक्सेस करे। IOS,Android,Blackberry और Window Phone के लिए उपलब्ध ।"
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "बाइबिल की सुंदरता और सच्चाई को अपने नित्य जीवन का हिस्सा बनाए। YouVersion बाइबिल App के साथ पढ़े,देखे,सुने और शेयर करे अपने स्मार्टफोन या टेबलेट पर, यह Bible.com पर ऑनलाइन उपलब्ध हैं।"
@@ -175,6 +176,7 @@ hi:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "अभी"
+    select dropdown: "कृपया चुनिए"
     celebrating 50MM: "50 मिलियन app स्थापना उत्सव!"
     link: "लिंक"
     site search: "YouVersion की खोज"
@@ -232,7 +234,7 @@ hi:
     sign out: "साइन आउट"
     sign back in: "आपकी सुरक्षा के लिए लॉग इन्स दो सप्ताह के बाद समाप्त हो जायेगा।पुन:साईंन इन कीजिये।"
     youversion: "YouVersion"
-    username or email prompt: "Username (या इमेल)"
+    username or email prompt: "Email (or Username)"
     password prompt: "पासवर्ड"
     sign in: "साइन इन"
     sign in to youversion: "YouVersion में साइन इन कीजिए"
@@ -302,6 +304,12 @@ hi:
     traditional: "परम्परागत"
     alphabetic: "वर्णानुक्रमक"
     versions title: "संस्करण"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "या"
         upper: "या"
@@ -1119,6 +1127,7 @@ hi:
         sms success: "बढ़िया, अपने मोबाइल यंत्र  पर लिंक देखे"
         sms info: "आपको एप्प डाउनलोड करने के लिए लिंक का एस एम् एस मिलेगा"
         sms download: "बाइबिल एप्प डाउनलोड करने के लिए क्लीक करें"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Oops!"
@@ -1203,7 +1212,7 @@ hi:
         408 explanation: "हमे इस सांकेतिक खराबी की जानकारी हैं,दोहराए जाने पर जल्द से जल्द सुधारने की तैयारी हैं।"
         try again: "पुन:कोशिश करे"
     versions: 
-        filter: "संस्करण फ़िल्टर करे .............."
+        filter: "Start typing Version name (or Language)..."
         see all: "सभी संस्करण देखे..."
         courtesy of: "%{abbreviation} %{publisher}के द्वारा प्रस्तुत किया गया"
         learn more: "और अधिक जानकारी"

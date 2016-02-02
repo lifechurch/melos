@@ -148,6 +148,7 @@ ru:
         mobile: 
             title: "Приложение Библия"
             description: "Читайте Слово Божье в любое время и в любом месте с помощью приложения Библия от YouVersion. Делитесь Писанием с друзьями, выделяйте цветом стихи, ставьте закладки, а также погрузитесь в ежедневное чтение плана Библии. Доступно для iOS, Android, Blackberry, телефонов с Windows и др."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Внесите красоту и правду Библии в свою ежедневную жизнь. Используя приложение Библия, вы можете читать, смотреть, слушать и делиться стихами на своем смартфоне, планшете или онлайн в Bible.com"
@@ -197,6 +198,7 @@ ru:
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=ru"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Сейчас"
+    select dropdown: "--Выберите--"
     celebrating 50MM: "Отмечаем 50 миллионов установок!"
     link: "Ссылка"
     site search: "Основанное на онлайн Библии YouVersion.com, Приложение Библия является бесплатной мобильной Библией, которая может быть установлена ​​практически на любой телефон. Приложение Библия позволяет пользователям читать Библию, делиться стихами через социальные сети, добавлять в закладки любимые места и многое другое — и все это доступно в формате, идущем в ногу с всё более мобильным образом жизни современного человека. Посетите <a href='http://www.youversion.com/download'>youversion.com/download</a> со своего мобильного устройства, чтобы загрузить приложение и подключить свой аккаунт!"
@@ -254,7 +256,7 @@ ru:
     sign out: "Выйти"
     sign back in: "В целях безопасности вам необходимо войти в аккаунт снова, так как вы не заходили в течение двух недель."
     youversion: "YouVersion"
-    username or email prompt: "Имя пользователя (или email)"
+    username or email prompt: "Email (or Username)"
     password prompt: "Пароль"
     sign in: "Вход"
     sign in to youversion: "Войти на YouVersion"
@@ -324,6 +326,12 @@ ru:
     traditional: "Традиционный"
     alphabetic: "Алфавитный"
     versions title: "Переводы"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "или"
         upper: "ИЛИ"
@@ -1145,6 +1153,7 @@ ru:
         sms success: "Отлично! Проверьте своё мобильной устройство на наличие отправленной ссылки."
         sms info: "Вы получите разовое текстовое сообщение, через которое сможете загрузить приложение."
         sms download: "Нажмите, чтобы загрузить приложение Библия:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Ой-ой-ой!"
@@ -1229,7 +1238,7 @@ ru:
         408 explanation: "Мы получили уведомление об этой ошибке и попробуем её решить как можно скорее. Попробуем вернуться к чтению Библии?"
         try again: "Попробуйте еще раз"
     versions: 
-        filter: "Фильтр по переводам..."
+        filter: "Start typing Version name (or Language)..."
         see all: "Просмотреть все переводы..."
         courtesy of: "%{abbreviation} подготовлено для Вас %{publisher}"
         learn more: "Подробнее..."

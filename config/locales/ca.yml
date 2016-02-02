@@ -126,6 +126,7 @@ ca:
         mobile: 
             title: "L'aplicació de la Bíblia"
             description: "Llegeix la paraula de Déu sempre que vulguis, i allà on siguis utilitzant la aplicació de la Bíblia de  YouVersion. Comparteix amb els amics, subtatlla i crea marcadors a les lectures, i fomenta un habit diari amb els plans de la Bíblia. Disponible per iOs, Android, Blackberry, Windows Phone i més."
+            download or read: "Download now or read online."
         site: 
             title: "Bíblia.com"
             description: "Porta la bellesa i la veritat de la Bíblia en el teu dia a dia. Amb la aplicació de la Bíblia de YouVersion, pots llegir, mirar, escoltar i compartir amb el teu smartphone, tablet i en la red amb Bible.com"
@@ -175,6 +176,7 @@ ca:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Ara"
+    select dropdown: "--Selecciona--"
     celebrating 50MM: "Estem celebrant que l'aplicació s'ha instal·lat 50 milions de vegades!"
     link: "Enllaç"
     site search: "Cerca a YouVersion"
@@ -232,7 +234,7 @@ ca:
     sign out: "Tanca la sessió"
     sign back in: "Per la teva seguretat, l'inici de sessió caducarà en dues setmanes. Si us plau, torna a iniciar la sessió."
     youversion: "YouVersion"
-    username or email prompt: "Nom d'usuari/ària (o correu electrònic)"
+    username or email prompt: "Email (or Username)"
     password prompt: "Contrasenya"
     sign in: "Inicia la sessió"
     sign in to youversion: "Inicia la sessió a YouVersion"
@@ -302,6 +304,12 @@ ca:
     traditional: "Tradicional"
     alphabetic: "Alfabètic"
     versions title: "Versions"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "o"
         upper: "O"
@@ -1119,6 +1127,7 @@ ca:
         sms success: "Genial! Comprova l'enllaç al teu mòbil."
         sms info: "Rebràs un SMS d'un sol ús per descarregar l'aplicació"
         sms download: "Clica per descarregar l'Aplicació de la Bíblia:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Alguna cosa ha sortit malament!"
@@ -1203,7 +1212,7 @@ ca:
         408 explanation: "Hem rebut l'alerta i corregirem la incidència tan aviat com ens sigui possible. Intentarem que puguis seguir llegint per on anaves!"
         try again: "Intenta-ho una altra vegada"
     versions: 
-        filter: "Filtrar per versions..."
+        filter: "Start typing Version name (or Language)..."
         see all: "Consulta totes les versions"
         courtesy of: "%{abbreviation} proporcionada per %{publisher}"
         learn more: "Llegeix-ne més"

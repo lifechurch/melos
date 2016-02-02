@@ -126,6 +126,7 @@ da:
         mobile: 
             title: "Bibel App'en"
             description: "Læs Guds ord til enhver tid, overalt med YouVersion's Bibel App. Del skriftsteder med venner, lav markeringer, og bogmærk passager. Få en daglig vane med bibellæseplaner. YouVersion findes til iOS, Android, Blackberry, Windows Phone og flere."
+            download or read: "Hent eller læs online."
         site: 
             title: "Bible.com"
             description: "Bring skønheden og sandheden fra Bibelen ind i din dagligdag. Med YouVersion´s Bibel App, kan du læse, se, høre og dele på din smartphone eller tablet, online på Bible.com"
@@ -175,6 +176,7 @@ da:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Nu"
+    select dropdown: "--Vælg--"
     celebrating 50MM: "Fejrer 50 millioner App installationer"
     link: "Link"
     site search: "YouVersion Søgning"
@@ -232,7 +234,7 @@ da:
     sign out: "Log ud"
     sign back in: "For din sikkerhed, log ind udløber efter to uger. Log venligst ind igen."
     youversion: "YouVersion"
-    username or email prompt: "Brugernavn (eller email)"
+    username or email prompt: "Email (eller Brugernavn)"
     password prompt: "Password"
     sign in: "Log ind"
     sign in to youversion: "Log ind i YouVersion"
@@ -302,6 +304,12 @@ da:
     traditional: "Traditionelt"
     alphabetic: "Alfabetisk"
     versions title: "Versioner"
+    languages: 
+        title: "Bibel sprog og oversættelser"
+        most popular: "Mest populære sprog"
+        additional: "Yderligere sprog"
+        download language: "Hent Bibelen på %{language_name}"
+        bible in: "Bibelen på %{language_name}"
     or: 
         lower: "eller"
         upper: "ELLER"
@@ -1119,6 +1127,7 @@ da:
         sms success: "Skønt, Tjek din mobile enhed for linket."
         sms info: "Du vil modtage én SMS for hente app´en."
         sms download: "Klik for at hente Bibel App´en."
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Upss!"
@@ -1203,7 +1212,7 @@ da:
         408 explanation: "Vi er blevet advaret, og vil behandle eventuelle vedvarende problemer så hurtigt som muligt. Lad os se om vi kan få dig tilbage til din Bibellæsning!"
         try again: "Prøv igen"
     versions: 
-        filter: "Filtrer versioner..."
+        filter: "Start med at taste Versions navn (eller sprog)..."
         see all: "Se alle versioner"
         courtesy of: "%{abbreviation} givet til dig af %{publisher}"
         learn more: "Lær mere"

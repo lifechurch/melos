@@ -115,6 +115,7 @@ zh-CN:
         mobile: 
             title: "圣经软件"
             description: "使用 YonVersion 圣经软件可以让你随时随地阅读神的话语。与朋友分享经文、高亮显示经节、给经文做书签，依照读经计划建立每日读经的习惯。在 iOS, 安卓、Blackberry 和 Windows Phone 等多个平台均可使用。"
+            download or read: "现在下载或在线阅读"
         site: 
             title: "Bible.com"
             description: "将圣经的真理和美善带入每天的生活! 藉着 YouVersion 圣经软件，你可以在智能手机、平板或者 Bible.com 网站阅读、观看、聆听并分享圣经。"
@@ -164,6 +165,7 @@ zh-CN:
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=zh_cn"
             amazon: "http://www.wandoujia.com/apps/com.bible.kids"
     now: "今日社区"
+    select dropdown: "--选择--"
     celebrating 50MM: "庆祝5000万的安装！"
     link: "链接"
     site search: "YouVersion 搜索"
@@ -221,7 +223,7 @@ zh-CN:
     sign out: "退出"
     sign back in: "考虑到安全方面的需要，登录状态两周之后会失效。请你再次登录。"
     youversion: "YouVersion"
-    username or email prompt: "用户名（或电子邮件地址）"
+    username or email prompt: "邮箱地址（或用户名）"
     password prompt: "密码"
     sign in: "登录"
     sign in to youversion: "登录 YouVersion 账户"
@@ -291,6 +293,12 @@ zh-CN:
     traditional: "传统次序"
     alphabetic: "按字母顺序"
     versions title: "译本"
+    languages: 
+        title: "圣经语言和译本"
+        most popular: "最常用的语言"
+        additional: "其他语言"
+        download language: "下载%{language_name}圣经"
+        bible in: "%{language_name}圣经"
     or: 
         lower: "或"
         upper: "或"
@@ -1106,6 +1114,7 @@ zh-CN:
         sms success: "太好了！请查看你的行动设备。"
         sms info: "你将收到一个附有链接的短信给你下载应用"
         sms download: "点击下载圣经软件："
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "对不起！"
@@ -1190,7 +1199,7 @@ zh-CN:
         408 explanation: "我们已经接到通知并将尽快解决一切持续存在的问题。我们会致力帮助你回到圣经阅读的乐趣中！"
         try again: "再试一次"
     versions: 
-        filter: "筛选译本..."
+        filter: "输入译本名（或语言）......"
         see all: "查看全部圣经译本"
         courtesy of: "%{abbreviation}是由 %{publisher}提供"
         learn more: "获取更多信息"

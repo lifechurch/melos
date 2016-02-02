@@ -115,6 +115,7 @@ ko:
         mobile: 
             title: "성경 앱"
             description: "하나님의 말씀을 언제 어디서나 YouVersion 성경앱을 통해서 읽으실 수있습니다.  성경말씀을 친구들과 나누거나, 하이라이트나 책갈피로 갈무리 하실 수 있으며, 묵상 계획을 통해서 말씀을 매일 접하실 수 있습니다. iOS, Android, Blackberry, Windows 폰 등 다양한 기기에서 사용하실 수 있습니다."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com/ko"
             description: "성경의 진리와 아름다움을 일상 생활속에서 접하세요.  YouVersion 성경앱으로 말씀을 읽고, 보고, 들으실 수있습니다.  스마트 폰이나 태블랫 또는 Bible.com/ko 에서 온라인으로 보실 수있습니다."
@@ -164,6 +165,7 @@ ko:
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=ko"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "실시간 현황"
+    select dropdown: "--선택--"
     celebrating 50MM: "축 5천만째 설치!"
     link: "링크"
     site search: "YouVersion 검색"
@@ -221,7 +223,7 @@ ko:
     sign out: "로그 아웃"
     sign back in: "보안을 위해서 로그인 후 2주 후면 자동 해제됩니다.  다시 로그인 해주세요."
     youversion: "YouVersion"
-    username or email prompt: "사용자명 (혹은 이메일)"
+    username or email prompt: "Email (or Username)"
     password prompt: "비밀번호"
     sign in: "로그인"
     sign in to youversion: "YouVersion 로그인"
@@ -291,6 +293,12 @@ ko:
     traditional: "성경 순서"
     alphabetic: "알파벳"
     versions title: "번역본"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "또는"
         upper: "혹은"
@@ -1106,6 +1114,7 @@ ko:
         sms success: "좋습니다! 모바일 장치에서 링크를 확인하십시오."
         sms info: "이 앱을 다운로드하려면 문자 메세지를 한 번 받게 됩니다."
         sms download: "클릭하면 성경 앱을 다운로드 받을 수 있습니다:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "죄송합니다."
@@ -1190,7 +1199,7 @@ ko:
         408 explanation: "오류에 대해서 통보를 받았습니다. 최대한 빨리 해결하도록 최선을 다하겠습니다. 성경읽기로 되돌아 갈 수있는지 재시도를 해보겠습니다."
         try again: "재시도"
     versions: 
-        filter: "번역본 필터..."
+        filter: "Start typing Version name (or Language)..."
         see all: "모든 번역본 보기"
         courtesy of: "%{abbreviation} 번역본은 %{publisher} 제공입니다."
         learn more: "더 알아보기"

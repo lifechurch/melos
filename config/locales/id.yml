@@ -115,6 +115,7 @@ id:
         mobile: 
             title: "Aplikasi Alkitab"
             description: "Baca Firman Tuhan kapanpun, di manapun menggunakan Ap Alkitab YouVersion. Bagikan Kitab Suci dengan teman, soroti dan markahi perikop, dan buat kebiasaan harian dengan Rencana Alkitab. Tersedia untuk Ponsel iOS, Android, Blackberry, Windows dan banyak lagi."
+            download or read: "Unduh sekarang dan baca daring."
         site: 
             title: "Bible.com"
             description: "Bawa keindahan dan kebenaran Alkitab ke dalam hidup keseharian. Dengan Ap Alkitab YouVersion, Anda dapat baca, tonton, dengar, dan berbagi di smartphone atau tablet Anda, dan daring di Bible.com."
@@ -164,6 +165,7 @@ id:
             google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=id"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Sekarang"
+    select dropdown: "--Pilih--"
     celebrating 50MM: "Merayakan 50 Juta Instalasi Ap!"
     link: "Tautan"
     site search: "Pencarian YouVersion"
@@ -221,7 +223,7 @@ id:
     sign out: "Keluar"
     sign back in: "Untuk keamanan Anda, login berakhir setelah dua minggu. Silakan masuk lagi."
     youversion: "YouVersion"
-    username or email prompt: "Nama Pengguna (atau Email):"
+    username or email prompt: "Email (atau Nama Pengguna)"
     password prompt: "Kata Sandi"
     sign in: "Masuk"
     sign in to youversion: "Masuk ke YouVersion"
@@ -291,6 +293,12 @@ id:
     traditional: "Tradisional"
     alphabetic: "Alfabetis"
     versions title: "Versi"
+    languages: 
+        title: "Bahasa dan Terjemahan Alkitab"
+        most popular: "Bahasa paling populer"
+        additional: "Bahasa tambahan"
+        download language: "Unduh Alkitab dalam bahasa %{language_name}"
+        bible in: "Alkitab dalam bahasa %{language_name}"
     or: 
         lower: "atau"
         upper: "ATAU"
@@ -1106,6 +1114,7 @@ id:
         sms success: "Mantap! Periksa perangkat seluler Anda untuk tautan."
         sms info: "Anda akan menerima SMS satu kali untuk mengunduh aplikasi"
         sms download: "Klik untuk mengunduh Ap Alkitab:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Duh!"
@@ -1190,7 +1199,7 @@ id:
         408 explanation: "Kami sudah diberitahu dan akan secepatnya mengatasi segala isu secepatnya. Mari lihat apakah Anda kembali ke bacaan Alkitab Anda!"
         try again: "Coba Lagi"
     versions: 
-        filter: "Versi Saring..."
+        filter: "Mulai ketikkan nama Versi (atau Bahasa)..."
         see all: "Lihat Semua Versi..."
         courtesy of: "%{abbreviation} dipersembahkan oleh %{publisher}"
         learn more: "Pelajari Lebih Lanjut"

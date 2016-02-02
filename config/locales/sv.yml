@@ -126,6 +126,7 @@ sv:
         mobile: 
             title: "Bibelappen"
             description: "Läs Guds Ord närsomhelst, varsomhelst med Bibelappen från YouVersion. Dela skriften med vänner, markera och bokmärk texter och skapa en daglig vana med bibelplaner. Tillgänglig för iOS, Android, Blackberry, Windows Phone m.m."
+            download or read: "Ladda ner nu eller läs online."
         site: 
             title: "Bible.com/sv"
             description: "Ta skönheten och sanningen från Bibeln in i ditt vardagliga liv. Med Bibelappen från YouVersion kan du läsa, titta, lyssna och dela på din telefon eller platta, och online på Bible.com."
@@ -175,6 +176,7 @@ sv:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Nu"
+    select dropdown: "--Välj--"
     celebrating 50MM: "Firar 50 miljoner installationer!"
     link: "Länk"
     site search: "YouVersion-sök"
@@ -232,7 +234,7 @@ sv:
     sign out: "Logga ut"
     sign back in: "För din säkerhet loggas du automatiskt ut efter två veckor. Du kan logga in igen."
     youversion: "YouVersion"
-    username or email prompt: "Användarnamn (eller e-post)"
+    username or email prompt: "Epost (eller Användarnamn)"
     password prompt: "Lösenord"
     sign in: "Logga in"
     sign in to youversion: "Logga in i YouVersion"
@@ -302,6 +304,12 @@ sv:
     traditional: "Traditionell"
     alphabetic: "Alfabetisk"
     versions title: "Översättningar"
+    languages: 
+        title: "Bibelspråk och översättningar"
+        most popular: "Mest populära språk"
+        additional: "Fler språk"
+        download language: "Ladda ner Bibeln på %{language_name}"
+        bible in: "Bibeln på %{language_name}"
     or: 
         lower: "eller"
         upper: "ELLER"
@@ -1119,6 +1127,7 @@ sv:
         sms success: "Perfekt! Kolla din mobil för länken."
         sms info: "Du får ett SMS för att ladda ner appen"
         sms download: "Klicka för att ladda ner Bibelappen:"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Upps!"
@@ -1203,7 +1212,7 @@ sv:
         408 explanation: "Vi har blivit informerade och kommer se till att åtgärda eventuella problem så fort som möjligt. Låt oss se om vi kan få dig tillbaka till din bibelläsning!"
         try again: "Försök igen"
     versions: 
-        filter: "Filtrera översättningar..."
+        filter: "Skriv översättningsversion (eller språk)..."
         see all: "Se alla översättningar..."
         courtesy of: "%{abbreviation} tillhandahållen av %{publisher}"
         learn more: "Läs mer"

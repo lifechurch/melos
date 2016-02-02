@@ -126,6 +126,7 @@ tl:
         mobile: 
             title: "Ang Bible App"
             description: "Basahin ang Salita ng Diyos anumang oras, kahit saan gamit ang YouVersion Bible App. Ibahagi ang Banal na Kasulatan sa mga kaibigan, i-highlight at lagyan ng pananda ang mga sipi, at gawing kaugalian ang araw-araw na pagbabasa sa tulong ng Babasahing Gabay. Ito ay maaaring makuha sa iOS, Android, Blackberry, Windows Phone at marami pang iba."
+            download or read: "Download now or read online."
         site: 
             title: "Bible.com"
             description: "Dalhin ang kagandahan at katotohanan ng Bibliya sa pang-araw-araw na buhay. Gamit ang YouVersion Bible App, maaring magbasa, manood, makinig, at magbahagi sa iyong smartphone o tablet, at online sa Bible.com."
@@ -175,6 +176,7 @@ tl:
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Ngayon"
+    select dropdown: "--Pumili--"
     celebrating 50MM: "Ipinagdiriwang 50 Million App Installs!"
     link: "Link"
     site search: "Maghanap sa YouVersion"
@@ -232,7 +234,7 @@ tl:
     sign out: "Mag-sign out"
     sign back in: "Para sa iyong seguridad, ang mga login ay nag-eexpire pagkatapos ng dalawang linggo. Maaring mag-sign-in ulit."
     youversion: "YouVersion"
-    username or email prompt: "Username (o Email)"
+    username or email prompt: "Email (or Username)"
     password prompt: "Password"
     sign in: "Mag-sign in"
     sign in to youversion: "Mag-sign in sa Youversion"
@@ -302,6 +304,12 @@ tl:
     traditional: "Traditional"
     alphabetic: "Naka-alpabetiko"
     versions title: "Mga Salin"
+    languages: 
+        title: "Bible languages and translations"
+        most popular: "Most popular languages"
+        additional: "Additional languages"
+        download language: "Download the Bible in %{language_name}"
+        bible in: "The Bible in %{language_name}"
     or: 
         lower: "o"
         upper: "O"
@@ -1119,6 +1127,7 @@ tl:
         sms success: "Mahusay! Tingnan ang iyong mobile na aparato para sa link."
         sms info: "Ikaw ay makatatanggap ng isang text kung paano i-download ang app"
         sms download: "Pindutin upang i-download ang App na Bibliya"
+        sms default country: "US"
     pages: 
         generic_error: 
             title: "Oops!"
@@ -1203,7 +1212,7 @@ tl:
         408 explanation: "Kami ay naalerto na at tutugunan ang paulit-ulit na mga problema sa lalong madaling panahon.  Tingnan natin kung maibabalik ka namin sa iyong pagbasa ng Bibliya!"
         try again: "Subukang Muli"
     versions: 
-        filter: "Salain ang mga Salin"
+        filter: "Start typing Version name (or Language)..."
         see all: "Tingnan ang Lahat ng Salin..."
         courtesy of: "%{abbreviation} mula sa %{publisher}"
         learn more: "Higit na Impormasyon"
