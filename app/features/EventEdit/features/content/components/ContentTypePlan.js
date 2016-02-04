@@ -2,26 +2,34 @@ import React, { Component, PropTypes } from 'react'
 import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
 
+var PlanList = React.createClass({
+	render: function() {
+		var createItem = function(item) {
+			return <li key={item.id}>
+				<img src={item.images[2].url} />
+				{item.name.default}
+				<i>{item.total_days} days</i>
+			</li>;
+		};
+		return <ul>{this.props.items.map(createItem)}</ul>;
+	}
+});
+
 class ContentTypePlan extends Component {
+
 	render() {
-		const { contentData, handleChange } = this.props
+		const { contentData, handleChange, plans } = this.props
 		return (
 			<div>
 				<FormField
 					InputType={Input}
-					placeholder="ID"
-					name="plan_id"
+					placeholder="Search…"
+					name="query"
 					onChange={handleChange}
-					value={contentData.plan_id}
+					value={plans.query}
 					errors={contentData.errors} />
 
-				<FormField
-					InputType={Input}
-					placeholder="Language Tag"
-					name="language_tag"
-					onChange={handleChange}
-					value={contentData.language_tag}
-					errors={contentData.errors} />
+				<PlanList items={plans.items} />
 			</div>
 		)
 	}

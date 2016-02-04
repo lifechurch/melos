@@ -48,7 +48,7 @@ class ContentTypeContainer extends Component {
 	}
 
 	render() {
-		const { content } = this.props
+		const { content, plans } = this.props
 
 		let InnerContainer = null
 		switch (content.type) {
@@ -62,7 +62,7 @@ class ContentTypeContainer extends Component {
 
 			case 'reference':
 			case 'plan':
-				InnerContainer = (<ContentTypePlan handleChange={::this.handleChange} contentData={content.data} />)
+				InnerContainer = (<ContentTypePlan handleChange={::this.handleChange} contentData={content.data} plans={plans} />)
 				break
 
 			case 'url':

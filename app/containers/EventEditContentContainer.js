@@ -104,10 +104,11 @@ class EventEditContentContainer extends Component {
 	}
 
 	render() {
-		const { event } = this.props
+		const { event, plans } = this.props
 		let contentFeed = (
 			<ContentFeed
 				event={event}
+				plans={plans}
 				handleUpdate={::this.handleUpdate}
 				handleChange={::this.handleChange}
 				handleRemove={::this.handleRemove}
