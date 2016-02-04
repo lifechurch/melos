@@ -16,8 +16,13 @@ function createBaseContentObject(eventId, type) {
 class EventEditContentContainer extends Component {
 	handleAddText() {
 		const { event, dispatch } = this.props
+<<<<<<< 89faba1697f11e3b4532ea46ca1d79deb91bc53a
 		dispatch(ActionCreators.new(
-			Object.assign({}, 
+			Object.assign({},
+=======
+		dispatch(ActionCreators.add(
+			Object.assign({},
+>>>>>>> Content.Plan initial commit. Adds naked id, language_tag fields.
 				createBaseContentObject(event.item.id, 'text'),
 				{
 					data: {
@@ -30,8 +35,13 @@ class EventEditContentContainer extends Component {
 
 	handleAddAnnouncement() {
 		const { event, dispatch } = this.props
+<<<<<<< 89faba1697f11e3b4532ea46ca1d79deb91bc53a
 		dispatch(ActionCreators.new(
-			Object.assign({}, 
+			Object.assign({},
+=======
+		dispatch(ActionCreators.add(
+			Object.assign({},
+>>>>>>> Content.Plan initial commit. Adds naked id, language_tag fields.
 				createBaseContentObject(event.item.id, 'announcement'),
 				{
 					data: {
@@ -41,7 +51,22 @@ class EventEditContentContainer extends Component {
 				}
 			)
 		))
-	}	
+	}
+
+	handleAddPlan() {
+		const { event, dispatch } = this.props
+		dispatch(ActionCreators.add(
+			Object.assign({},
+				createBaseContentObject(event.item.id, 'plan'),
+				{
+					data: {
+						plan_id: 0,
+						language_tag: ' '
+					}
+				}
+			)
+		))
+	}
 
 	handleUpdate(index, params) {
 		const { event, dispatch } = this.props
@@ -79,12 +104,12 @@ class EventEditContentContainer extends Component {
 	}
 
 	render() {
-		const { event } = this.props		
+		const { event } = this.props
 		let contentFeed = (
-			<ContentFeed 
-				event={event} 
-				handleUpdate={::this.handleUpdate} 
-				handleChange={::this.handleChange} 
+			<ContentFeed
+				event={event}
+				handleUpdate={::this.handleUpdate}
+				handleChange={::this.handleChange}
 				handleRemove={::this.handleRemove}
 			/>
 		)
@@ -95,15 +120,16 @@ class EventEditContentContainer extends Component {
 					<img src='/images/up-arrow-thin.png' />
 					<p>Choose some content to get started.</p>
 					<a>Need help?</a>
-				</div>				
+				</div>
 			)
 		}
 
 		return (
 			<div>
 				<Helmet title="Event Content" />
-				<ContentHeader 
+				<ContentHeader
 					handleAddText={::this.handleAddText}
+					handleAddPlan={::this.handleAddPlan}
 					handleAddAnnouncement={::this.handleAddAnnouncement} />
 				<div className='content-container'>
 					{contentFeed}

@@ -3,6 +3,7 @@ import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import ContentTypeText from './ContentTypeText'
 import ContentTypeAnnouncement from './ContentTypeAnnouncement'
+import ContentTypePlan from './ContentTypePlan'
 
 const AUTO_SAVE_TIMEOUT = 5000
 
@@ -61,9 +62,12 @@ class ContentTypeContainer extends Component {
 
 			case 'reference':
 			case 'plan':
+				InnerContainer = (<ContentTypePlan handleChange={::this.handleChange} contentData={content.data} />)
+				break
+
 			case 'url':
 			case 'image':
-			
+
 			default:
 				break
 		}
