@@ -43,6 +43,7 @@ class EventEditContentContainer extends Component {
 		))
 	}
 
+
 	handleAddPlan() {
 		const { event, dispatch } = this.props
 		dispatch(ActionCreators.new(
@@ -56,6 +57,23 @@ class EventEditContentContainer extends Component {
 						formatted_length: '',
 						images: [],
 						short_url: ''
+					}
+				}
+			)
+		))
+	}
+
+	handleAddLink() {
+		const { event, dispatch } = this.props
+		dispatch(ActionCreators.new(
+			Object.assign({},
+				createBaseContentObject(event.item.id, 'url'),
+				{
+					data: {
+						// This initial content is validated by validateUrlType
+						title: ' ',
+						body: '',
+						url: ''
 					}
 				}
 			)
@@ -126,7 +144,9 @@ class EventEditContentContainer extends Component {
 				<ContentHeader
 					handleAddText={::this.handleAddText}
 					handleAddPlan={::this.handleAddPlan}
-					handleAddAnnouncement={::this.handleAddAnnouncement} />
+					handleAddAnnouncement={::this.handleAddAnnouncement}
+					handleAddLink={::this.handleAddLink} />
+
 				<div className='content-container'>
 					{contentFeed}
 				</div>

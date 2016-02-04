@@ -13,7 +13,8 @@ class ContentHeader extends Component {
 	}
 
 	render() {
-		const { event, handleAddText, handleAddAnnouncement, handleAddPlan } = this.props
+		const { event, handleAddText, handleAddLink, handleAddAnnouncement, handleAddPlan } = this.props
+
 		return (
 			<div className='content-header'>
 				<Row>
@@ -22,7 +23,7 @@ class ContentHeader extends Component {
 						<a onClick={::this.handleCreate} className='hollow-button green'>Bible Reference</a>
 						<a onClick={handleAddPlan} className='hollow-button green'>Plan</a>
 						<a onClick={::this.handleCreate} className='hollow-button green'>Image</a>
-						<a onClick={::this.handleCreate} className='hollow-button green'>External Link</a>
+						<a onClick={handleAddLink} className='hollow-button green'>External Link</a>
 						<a onClick={handleAddAnnouncement} className='hollow-button green'>Announcement</a>
 						<div className='right'>
 							<a onClick={::this.handleHelp}>?</a>
