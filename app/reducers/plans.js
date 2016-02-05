@@ -16,6 +16,9 @@ export default function plans(state = {}, action) {
 		case contentType('searchPlansFailure'):
 			return Object.assign({}, state, {'items': [{'id':0, 'name': {'default': action.api_errors[0].error}}]})
 
+		case contentType('focusPlanSearch'):
+			return Object.assign({}, state, {'focus_id': action.index, 'query': '', 'items': []})
+
 		case contentType('clearPlanSearch'):
 			return Object.assign({}, state, {'query': '', 'items': []})
 

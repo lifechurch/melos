@@ -112,6 +112,14 @@ class EventEditContentContainer extends Component {
 		this.cancelSearch = setTimeout(::this.performPlanSearch, SEARCH_TIMEOUT, index, field, value)
 	}
 
+	handlePlanSearchFocus(index) {
+		console.log(index)
+		const { dispatch } = this.props
+		dispatch(ActionCreators.focusPlanSearch({
+			index
+		}))
+	}
+
 	performPlanSearch(index, field, value) {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.searchPlans({
@@ -121,7 +129,7 @@ class EventEditContentContainer extends Component {
 		}))
 	}
 
-	clearPlanSearch(id) {
+	clearPlanSearch() {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.clearPlanSearch())
 	}
@@ -136,6 +144,7 @@ class EventEditContentContainer extends Component {
 				handleChange={::this.handleChange}
 				handleRemove={::this.handleRemove}
 				handlePlanSearchChange={::this.handlePlanSearchChange}
+				handlePlanSearchFocus={::this.handlePlanSearchFocus}
 				clearPlanSearch={::this.clearPlanSearch}
 			/>
 		)

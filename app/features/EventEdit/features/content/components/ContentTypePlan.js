@@ -28,7 +28,7 @@ var PlanList = React.createClass({
 class ContentTypePlan extends Component {
 
 	render() {
-		const { contentIndex, contentData, handlePlanSearchChange, handlePlanAdd, handlePlanRemove, plans } = this.props
+		const { contentIndex, contentData, handlePlanSearchChange, handlePlanSearchFocus, handlePlanAdd, handlePlanRemove, plans } = this.props
 		var output;
 		if (contentData.id) {
 			var selectedPlan;
@@ -48,6 +48,7 @@ class ContentTypePlan extends Component {
 					placeholder="Search…"
 					name="query"
 					onChange={handlePlanSearchChange}
+					onFocus={handlePlanSearchFocus}
 					value={plans.query}
 					errors={contentData.errors} />
 
@@ -61,6 +62,7 @@ class ContentTypePlan extends Component {
 					placeholder="Search…"
 					name="query"
 					onChange={handlePlanSearchChange}
+					onFocus={handlePlanSearchFocus}
 					value=''
 					errors={contentData.errors} />
 			</div>

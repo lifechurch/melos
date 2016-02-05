@@ -72,6 +72,13 @@ const ActionCreators = {
 		}
 	},
 
+	focusPlanSearch(params) {
+		return {
+			type: contentType('focusPlanSearch'),
+			...params
+		}
+	},
+
 	update(params) {
 		validateAddContentParams(params)
 		return {

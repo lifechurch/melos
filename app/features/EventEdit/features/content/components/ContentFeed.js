@@ -7,7 +7,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 class ContentFeed extends Component {
 
 	render() {
-		const { event, plans, handleUpdate, handleChange, handleRemove, handlePlanSearchChange, handlePlanClick, clearPlanSearch } = this.props
+		const { event, plans, handleUpdate, handleChange, handleRemove, handlePlanSearchChange, handlePlanClick, clearPlanSearch, handlePlanSearchFocus } = this.props
 		const { content } = event.item
 
 		const contentList = content.map((c,i) => {
@@ -21,6 +21,7 @@ class ContentFeed extends Component {
 					handleUpdate={handleUpdate}
 					handleRemove={handleRemove}
 					handlePlanSearchChange={handlePlanSearchChange}
+					handlePlanSearchFocus={handlePlanSearchFocus}
 					clearPlanSearch={clearPlanSearch}
 					content={c}
 					contentIndex={i} />

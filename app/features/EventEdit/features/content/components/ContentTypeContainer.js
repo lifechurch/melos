@@ -37,6 +37,11 @@ class ContentTypeContainer extends Component {
 		handlePlanSearchChange(contentIndex, name, value)
 	}
 
+	handlePlanSearchFocus(focusEvent) {
+		const { contentIndex, handlePlanSearchFocus } = this.props
+		handlePlanSearchFocus(contentIndex)
+	}
+
 	handlePlanAdd(clickEvent) {
 		const { contentIndex, handleChange, clearPlanSearch } = this.props
 		handleChange(contentIndex, 'id', parseInt(clickEvent.target.dataset['id']))
@@ -85,6 +90,7 @@ class ContentTypeContainer extends Component {
 									handlePlanSearchChange={::this.handlePlanSearchChange}
 									handlePlanAdd={::this.handlePlanAdd}
 									handlePlanRemove={::this.handlePlanRemove}
+									handlePlanSearchFocus={::this.handlePlanSearchFocus}
 									contentData={content.data}
 									contentIndex={contentIndex}
 									plans={plans} />)

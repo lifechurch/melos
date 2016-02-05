@@ -17,6 +17,7 @@ const constants = {
 	searchPlansRequest: 'SEARCH_PLANS_REQUEST',
 	searchPlansSuccess: 'SEARCH_PLANS_SUCCESS',
 	searchPlansFailure: 'SEARCH_PLANS_FAILURE',
+	focusPlanSearch: 'FOCUS_PLAN_SEARCH',
 	clearPlanSearch: 'CLEAR_PLAN_SEARCH'
 }
 
