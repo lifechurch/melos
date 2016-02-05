@@ -37,6 +37,14 @@ class ContentTypeContainer extends Component {
 		handlePlanSearchChange(contentIndex, name, value)
 	}
 
+	handlePlanClick(clickEvent) {
+		// const { handlePlanClick } = this.props
+		// handlePlanClick(clickEvent.target.dataset['id'])
+		const { contentIndex, handleChange } = this.props
+		handleChange(contentIndex, 'id', parseInt(clickEvent.target.dataset['id']))
+		this.autoSave()
+	}
+
 	handleRemove(removeEvent) {
 		const { contentIndex, content, handleRemove, event } = this.props
 		handleRemove(contentIndex, event.item.id, content.content_id)
@@ -68,7 +76,11 @@ class ContentTypeContainer extends Component {
 
 			case 'reference':
 			case 'plan':
-				InnerContainer = (<ContentTypePlan handlePlanSearchChange={::this.handlePlanSearchChange} contentData={content.data} plans={plans} />)
+				InnerContainer = (<ContentTypePlan
+									handlePlanSearchChange={::this.handlePlanSearchChange}
+									handlePlanClick={::this.handlePlanClick}
+									contentData={content.data}
+									plans={plans} />)
 				break
 
 			case 'url':

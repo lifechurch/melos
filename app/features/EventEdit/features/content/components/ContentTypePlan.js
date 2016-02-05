@@ -5,6 +5,8 @@ import Input from '../../../../../../app/components/Input'
 var PlanList = React.createClass({
 
 	render: function() {
+		const { items, handlePlanClick } = this.props
+
 		var createItem = function(item) {
 			var image;
 			if (item.images) {
@@ -13,20 +15,20 @@ var PlanList = React.createClass({
 				image = <img src="http://placehold.it/80/80" />;
 			}
 
-			return <li key={item.id}>
+			return <li key={item.id} data-id={item.id} name="id" value={item.id} onClick={handlePlanClick}>
 				{image}
 				{item.name.default}
 				<i>{item.total_days + " days"}</i>
 			</li>;
 		};
-		return <ul>{this.props.items.map(createItem)}</ul>;
+		return <ul>{items.map(createItem)}</ul>;
 	}
 });
 
 class ContentTypePlan extends Component {
 
 	render() {
-		const { contentData, handlePlanSearchChange, plans } = this.props
+		const { contentData, handlePlanSearchChange, handlePlanClick, plans } = this.props
 		return (
 			<div>
 				<FormField
@@ -37,7 +39,7 @@ class ContentTypePlan extends Component {
 					value={plans.query}
 					errors={contentData.errors} />
 
-				<PlanList items={plans.items} />
+				<PlanList items={plans.items} handlePlanClick={handlePlanClick} />
 			</div>
 		)
 	}

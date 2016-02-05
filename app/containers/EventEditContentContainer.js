@@ -52,8 +52,8 @@ class EventEditContentContainer extends Component {
 				createBaseContentObject(event.item.id, 'plan'),
 				{
 					data: {
-						plan_id: 0,
-						language_tag: ' '
+						id: 0,
+						language_tag: 'en'
 					}
 				}
 			)
@@ -121,6 +121,10 @@ class EventEditContentContainer extends Component {
 		}))
 	}
 
+	handlePlanClick(id) {
+		console.log(id)
+	}
+
 	render() {
 		const { event, plans } = this.props
 		let contentFeed = (
@@ -131,6 +135,7 @@ class EventEditContentContainer extends Component {
 				handleChange={::this.handleChange}
 				handleRemove={::this.handleRemove}
 				handlePlanSearchChange={::this.handlePlanSearchChange}
+				handlePlanClick={::this.handlePlanClick}
 			/>
 		)
 
