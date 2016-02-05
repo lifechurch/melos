@@ -28,9 +28,21 @@ var PlanList = React.createClass({
 class ContentTypePlan extends Component {
 
 	render() {
-		const { contentData, handlePlanSearchChange, handlePlanClick, plans } = this.props
-		return (
-			<div>
+		const { contentIndex, contentData, handlePlanSearchChange, handlePlanAdd, handlePlanRemove, plans } = this.props
+		var output;
+		if (contentData.id) {
+			var selectedPlan;
+			selectedPlan = [{
+				'id': contentData.id,
+				'total_days': contentData.id,
+				'name': {'default': contentData.language_tag}
+			}]
+			output = <div>
+				<PlanList items={selectedPlan} handlePlanClick={handlePlanRemove} />
+			</div>
+
+		} else if (plans.focus_id == contentIndex) {
+			output = <div>
 				<FormField
 					InputType={Input}
 					placeholder="Search…"
@@ -39,7 +51,24 @@ class ContentTypePlan extends Component {
 					value={plans.query}
 					errors={contentData.errors} />
 
-				<PlanList items={plans.items} handlePlanClick={handlePlanClick} />
+				<PlanList items={plans.items} handlePlanClick={handlePlanAdd} />
+			</div>
+
+		} else {
+			output = <div>
+				<FormField
+					InputType={Input}
+					placeholder="Search…"
+					name="query"
+					onChange={handlePlanSearchChange}
+					value=''
+					errors={contentData.errors} />
+			</div>
+
+		}
+		return (
+			<div>
+				{output}
 			</div>
 		)
 	}

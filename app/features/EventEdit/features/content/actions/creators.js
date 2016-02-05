@@ -66,6 +66,12 @@ const ActionCreators = {
 		}
 	},
 
+	clearPlanSearch() {
+		return {
+			type: contentType('clearPlanSearch')
+		}
+	},
+
 	update(params) {
 		validateAddContentParams(params)
 		return {

@@ -16,7 +16,8 @@ const constants = {
 	setPlanField: 'SET_PLAN_FIELD',
 	searchPlansRequest: 'SEARCH_PLANS_REQUEST',
 	searchPlansSuccess: 'SEARCH_PLANS_SUCCESS',
-	searchPlansFailure: 'SEARCH_PLANS_FAILURE'
+	searchPlansFailure: 'SEARCH_PLANS_FAILURE',
+	clearPlanSearch: 'CLEAR_PLAN_SEARCH'
 }
 
 export default function (key) {

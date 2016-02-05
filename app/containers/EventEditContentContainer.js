@@ -121,8 +121,9 @@ class EventEditContentContainer extends Component {
 		}))
 	}
 
-	handlePlanClick(id) {
-		console.log(id)
+	clearPlanSearch(id) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.clearPlanSearch())
 	}
 
 	render() {
@@ -135,7 +136,7 @@ class EventEditContentContainer extends Component {
 				handleChange={::this.handleChange}
 				handleRemove={::this.handleRemove}
 				handlePlanSearchChange={::this.handlePlanSearchChange}
-				handlePlanClick={::this.handlePlanClick}
+				clearPlanSearch={::this.clearPlanSearch}
 			/>
 		)
 

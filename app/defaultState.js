@@ -32,6 +32,7 @@ export default {
 		query: '',
 		language_tag: 'en',
 		items: [],
+        focus_id: 0,
 		isFetching: false
 	},
 	eventFeeds: {
