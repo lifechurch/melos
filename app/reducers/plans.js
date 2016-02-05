@@ -8,7 +8,7 @@ export default function plans(state = {}, action) {
 			return Object.assign({}, {'query': action.value})
 
 		case contentType('searchPlansRequest'):
-			return Object.assign({}, state, {'items': []})
+			return Object.assign({}, state, {'items': [{'id':0, 'name': {'default': 'Fetching…'}}]})
 		case contentType('searchPlansSuccess'):
 			return Object.assign({}, state, {'items': action.response.reading_plans})
 		case contentType('searchPlansFailure'):

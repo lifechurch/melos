@@ -49,7 +49,6 @@ const ActionCreators = {
 	},
 
 	searchPlans(params) {
-		console.log('searchPlans dispatched, return api_call')
 		// validate…?
 		return {
 			params: {

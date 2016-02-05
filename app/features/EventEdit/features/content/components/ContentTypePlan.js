@@ -16,7 +16,7 @@ var PlanList = React.createClass({
 			return <li key={item.id}>
 				{image}
 				{item.name.default}
-				<i>{item.total_days} days</i>
+				<i>{item.total_days + " days"}</i>
 			</li>;
 		};
 		return <ul>{this.props.items.map(createItem)}</ul>;

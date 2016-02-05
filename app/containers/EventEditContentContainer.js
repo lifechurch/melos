@@ -4,6 +4,8 @@ import ContentHeader from '../features/EventEdit/features/content/components/Con
 import ContentFeed from '../features/EventEdit/features/content/components/ContentFeed'
 import ActionCreators from '../features/EventEdit/features/content/actions/creators'
 
+const SEARCH_TIMEOUT = 800
+
 function createBaseContentObject(eventId, type) {
 	return {
 		id: eventId,
@@ -16,13 +18,8 @@ function createBaseContentObject(eventId, type) {
 class EventEditContentContainer extends Component {
 	handleAddText() {
 		const { event, dispatch } = this.props
-<<<<<<< 89faba1697f11e3b4532ea46ca1d79deb91bc53a
 		dispatch(ActionCreators.new(
 			Object.assign({},
-=======
-		dispatch(ActionCreators.add(
-			Object.assign({},
->>>>>>> Content.Plan initial commit. Adds naked id, language_tag fields.
 				createBaseContentObject(event.item.id, 'text'),
 				{
 					data: {
@@ -35,13 +32,8 @@ class EventEditContentContainer extends Component {
 
 	handleAddAnnouncement() {
 		const { event, dispatch } = this.props
-<<<<<<< 89faba1697f11e3b4532ea46ca1d79deb91bc53a
 		dispatch(ActionCreators.new(
 			Object.assign({},
-=======
-		dispatch(ActionCreators.add(
-			Object.assign({},
->>>>>>> Content.Plan initial commit. Adds naked id, language_tag fields.
 				createBaseContentObject(event.item.id, 'announcement'),
 				{
 					data: {
@@ -111,14 +103,22 @@ class EventEditContentContainer extends Component {
 			value
 		}))
 
-		if (value.length > 2) {
-			console.log('Dispatch .searchPlans(), value.length > 2')
-			dispatch(ActionCreators.searchPlans({
-				index,
-				query: value,
-				language_tag: 'en'
-			}))
+		if (typeof this.cancelSearch === 'number') {
+			clearTimeout(this.cancelSearch)
+			this.cancelSearch = null
 		}
+
+		// Can't pass extra params in IE?
+		this.cancelSearch = setTimeout(::this.performPlanSearch, SEARCH_TIMEOUT, index, field, value)
+	}
+
+	performPlanSearch(index, field, value) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.searchPlans({
+			index,
+			query: value,
+			language_tag: 'en'
+		}))
 	}
 
 	render() {
