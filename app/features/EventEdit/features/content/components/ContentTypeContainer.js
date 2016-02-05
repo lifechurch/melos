@@ -31,6 +31,12 @@ class ContentTypeContainer extends Component {
 		this.autoSave()
 	}
 
+	handlePlanSearchChange(changeEvent) {
+		const { contentIndex, handlePlanSearchChange } = this.props
+		const { name, value } = changeEvent.target
+		handlePlanSearchChange(contentIndex, name, value)
+	}
+
 	handleRemove(removeEvent) {
 		const { contentIndex, content, handleRemove, event } = this.props
 		handleRemove(contentIndex, event.item.id, content.content_id)
@@ -62,7 +68,7 @@ class ContentTypeContainer extends Component {
 
 			case 'reference':
 			case 'plan':
-				InnerContainer = (<ContentTypePlan handleChange={::this.handleChange} contentData={content.data} plans={plans} />)
+				InnerContainer = (<ContentTypePlan handlePlanSearchChange={::this.handlePlanSearchChange} contentData={content.data} plans={plans} />)
 				break
 
 			case 'url':

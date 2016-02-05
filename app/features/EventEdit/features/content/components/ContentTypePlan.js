@@ -3,10 +3,18 @@ import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
 
 var PlanList = React.createClass({
+
 	render: function() {
 		var createItem = function(item) {
+			var image;
+			if (item.images) {
+				image = <img src={item.images[2].url} />;
+			} else {
+				image = <img src="http://placehold.it/80/80" />;
+			}
+
 			return <li key={item.id}>
-				<img src={item.images[2].url} />
+				{image}
 				{item.name.default}
 				<i>{item.total_days} days</i>
 			</li>;
@@ -18,14 +26,14 @@ var PlanList = React.createClass({
 class ContentTypePlan extends Component {
 
 	render() {
-		const { contentData, handleChange, plans } = this.props
+		const { contentData, handlePlanSearchChange, plans } = this.props
 		return (
 			<div>
 				<FormField
 					InputType={Input}
 					placeholder="Search…"
 					name="query"
-					onChange={handleChange}
+					onChange={handlePlanSearchChange}
 					value={plans.query}
 					errors={contentData.errors} />
 

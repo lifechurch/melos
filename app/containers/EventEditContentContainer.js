@@ -103,6 +103,24 @@ class EventEditContentContainer extends Component {
 		dispatch(ActionCreators.remove(params))
 	}
 
+	handlePlanSearchChange(index, field, value) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.setPlanField({
+			index,
+			field,
+			value
+		}))
+
+		if (value.length > 2) {
+			console.log('Dispatch .searchPlans(), value.length > 2')
+			dispatch(ActionCreators.searchPlans({
+				index,
+				query: value,
+				language_tag: 'en'
+			}))
+		}
+	}
+
 	render() {
 		const { event, plans } = this.props
 		let contentFeed = (
@@ -112,6 +130,7 @@ class EventEditContentContainer extends Component {
 				handleUpdate={::this.handleUpdate}
 				handleChange={::this.handleChange}
 				handleRemove={::this.handleRemove}
+				handlePlanSearchChange={::this.handlePlanSearchChange}
 			/>
 		)
 

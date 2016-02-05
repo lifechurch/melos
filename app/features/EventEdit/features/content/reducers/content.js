@@ -18,6 +18,11 @@ export default function content(state = {}, action) {
 		case type('reorderFailure'):
 			return state
 
+		case type('searchPlansSuccess'):
+		case type('searchPlansRequest'):
+		case type('searchPlansFailure'):
+			return state
+
 		default:
 			return state
 	}
