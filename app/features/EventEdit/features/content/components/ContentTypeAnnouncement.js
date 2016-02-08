@@ -8,13 +8,16 @@ class ContentTypeAnnouncement extends Component {
 		const { contentData, handleChange } = this.props
 		return (
 			<div>
-				<FormField 
-					InputType={Input}
-					placeholder="Announcement Title"
-					name="title"
-					onChange={handleChange}
-					value={contentData.title}
-					errors={contentData.errors} />			
+				<div className='form-body-block no-pad white'>
+					<FormField 
+						InputType={Input}
+						placeholder="Announcement Title"
+						name="title"
+						onChange={handleChange}
+						value={contentData.title}
+						errors={contentData.errors} />
+				</div>
+				<p className='field-caption'>Event attenders tap the title to see the body which loads on a separate screen.</p>
 				<FormField 
 					InputType={HtmlEditor}
 					placeholder="Announcement Body"

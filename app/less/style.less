@@ -18,7 +18,7 @@ h1.eventPageTitle {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	position: fixed;
-	top: 97px;
+	top: 94px;
 	width: 100%;
 	z-index: 98;
 	left: 0;
@@ -381,6 +381,10 @@ textarea {
 	padding: 20px;
 	margin-top: 20px;
 
+	&.no-pad {
+		padding: 0;
+	}
+
 	&.white {
 		background: #FFFFFF;
 		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.27);
@@ -421,6 +425,10 @@ textarea {
 	a {
 		margin-left: 10px;
 	}
+}
+
+.field-caption {
+	margin-left: 10px;
 }
 
 .locationeditor-enter {
@@ -521,21 +529,6 @@ textarea {
 			margin-right:10px;
 		}
 
-		.ql-bold {
-			font-weight: bold;
-			font-size: 12px;
-			color: #000000;
-			line-height: 14px;		
-		}
-
-		.ql-italic {
-			margin-left: 20px;
-			font-size: 12px;
-			color: #000000;
-			line-height: 14px;
-			font-style:italic;
-		}
-
 		.content-html-editor {
 			font-weight: normal !important;
 			font-size: 15px !important;
@@ -545,4 +538,24 @@ textarea {
 		}
 	}
 
+}
+
+.ql-bold {
+	font-weight: bold;
+	font-size: 12px;
+	color: #000000 !important;
+	line-height: 14px;		
+}
+
+.ql-italic {
+	margin-left: 20px;
+	font-size: 12px;
+	color: #000000 !important;
+	line-height: 14px;
+	font-style:italic;
+}
+
+.ql-container {
+	min-height: 120px;
+	font-size: 15px !important;
 }

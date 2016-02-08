@@ -20,7 +20,7 @@ class ContentTypeContainer extends Component {
 		}
 	}
 
-	handleChange(changeEvent) {		
+	handleChange(changeEvent) {
 		if (typeof changeEvent.target === 'object') {
 			const { contentIndex, handleChange } = this.props
 			const { name, value } = changeEvent.target
