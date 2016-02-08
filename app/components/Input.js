@@ -15,7 +15,6 @@ class Input extends Component {
 	}
 
 	sendChange() {
-		console.log("Sending change...")
 		const { value, onChange } = this.props
 		const { stateValue, changeEvent } = this.state
 		if (typeof changeEvent === 'object' && (stateValue !== value)) {
@@ -24,7 +23,6 @@ class Input extends Component {
 	}
 
 	handleChange(changeEvent) {
-		console.log("Change Event")
 		this.setState({changeEvent, stateValue: changeEvent.target.value })
 
 		if (typeof this.cancelChange === 'number') {
