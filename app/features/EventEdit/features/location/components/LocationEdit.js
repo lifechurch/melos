@@ -25,7 +25,6 @@ class LocationEdit extends Component {
 			this.mapPlaces([loc.place], false)
 
 			if (typeof loc.formatted_address === 'string') {
-				console.log("SB", this.refs.searchBox)
 				this.refs.searchBox.state.inputElement.value = loc.formatted_address
 			}
 		}

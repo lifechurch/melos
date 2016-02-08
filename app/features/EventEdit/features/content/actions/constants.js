@@ -1,4 +1,5 @@
 const constants = {
+	new: 'CONTENT_NEW',
 	addRequest: 'CONTENT_ADD_REQUEST',
 	addSuccess: 'CONTENT_ADD_SUCCESS',
 	addFailure: 'CONTENT_ADD_FAILURE',

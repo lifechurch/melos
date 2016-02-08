@@ -16,7 +16,7 @@ function createBaseContentObject(eventId, type) {
 class EventEditContentContainer extends Component {
 	handleAddText() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.add(
+		dispatch(ActionCreators.new(
 			Object.assign({}, 
 				createBaseContentObject(event.item.id, 'text'),
 				{
@@ -30,7 +30,7 @@ class EventEditContentContainer extends Component {
 
 	handleAddAnnouncement() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.add(
+		dispatch(ActionCreators.new(
 			Object.assign({}, 
 				createBaseContentObject(event.item.id, 'announcement'),
 				{
@@ -45,12 +45,18 @@ class EventEditContentContainer extends Component {
 
 	handleUpdate(index, params) {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.update(Object.assign({}, {
-			...params,
-			index,
-			content_id: params.id,
-			id: event.item.id
-		})))
+		const { content_id } = params
+		if (typeof content_id === 'undefined' || content_id <= 0) {
+			dispatch(ActionCreators.add(Object.assign({}, {
+				...params,
+				index
+			})))
+		} else {
+			dispatch(ActionCreators.update(Object.assign({}, {
+				...params,
+				index
+			})))
+		}
 	}
 
 	handleChange(index, field, value) {
@@ -65,9 +71,7 @@ class EventEditContentContainer extends Component {
 	handleRemove(index, contentId) {
 		const { event, dispatch } = this.props
 		const params = {
-			index, 
-			id: event.item.id, 
-			content_id: contentId
+			index
 		}
 		dispatch(ActionCreators.remove(params))
 	}

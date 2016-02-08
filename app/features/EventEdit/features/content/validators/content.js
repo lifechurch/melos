@@ -44,7 +44,6 @@ export function validateReorderContentParams(params) {
 
 
 export function validateAddContentParams(params) {
-	console.log(params)
 	const { index, type, sort, id, data } = params
 
 	if (typeof index !== 'number') {
@@ -92,7 +91,6 @@ export function validateAddContentParams(params) {
 			validateImageType(data)
 			break
 	}
-	console.log("Validation passed!")
 }
 
 function validateTextType(params) {

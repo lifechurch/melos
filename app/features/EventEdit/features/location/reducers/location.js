@@ -29,7 +29,6 @@ export default function loc(state = {}, action) {
 		case type('add'):
 			const start_dt = moment().endOf('week')
 			const end_dt = moment(start_dt.toDate().getTime()).add(1, 'h')
-			console.log(start_dt, end_dt)
 			return {
 				type: action.locationType,
 				times: [{

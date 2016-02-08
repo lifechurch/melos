@@ -1,7 +1,15 @@
 import contentType from './constants'
 import { validateSetContentFieldParams, validateRemoveContentParams, validateAddContentParams } from '../validators/content'
+import { toApiFormat } from '../transformers/content'
 
 const ActionCreators = {
+	new (params) {
+		return {
+			type: contentType('new'),
+			params
+		}
+	},
+
 	add(params) {
 		validateAddContentParams(params)
 		return {
@@ -17,7 +25,7 @@ const ActionCreators = {
 					user: 'ignacio',
 					pass: 'password'
 				},
-				params: params,
+				params: toApiFormat(params),
 				http_method: 'post',
 				types: [ contentType('addRequest'), contentType('addSuccess'), contentType('addFailure') ]
 			}
@@ -47,7 +55,7 @@ const ActionCreators = {
 					user: 'ignacio',
 					pass: 'password'
 				},
-				params: params,
+				params: toApiFormat(params),
 				http_method: 'post',
 				types: [ contentType('updateRequest'), contentType('updateSuccess'), contentType('updateFailure') ]
 			}
