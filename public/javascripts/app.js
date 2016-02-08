@@ -882,6 +882,8 @@ exports.default = HtmlEditor;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
@@ -900,28 +902,62 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var DEBOUNCE_TIMEOUT = 300;
+
 var Input = function (_Component) {
 	_inherits(Input, _Component);
 
-	function Input() {
+	function Input(props) {
 		_classCallCheck(this, Input);
 
-		return _possibleConstructorReturn(this, Object.getPrototypeOf(Input).apply(this, arguments));
+		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Input).call(this, props));
+
+		_this.state = { stateValue: props.value, changeEvent: {} };
+		return _this;
 	}
 
 	_createClass(Input, [{
+		key: 'componentWillReceiveProps',
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.value !== this.props.value) {
+				this.setState({ stateValue: nextProps.value });
+			}
+		}
+	}, {
+		key: 'sendChange',
+		value: function sendChange() {
+			console.log("Sending change...");
+			var _props = this.props;
+			var value = _props.value;
+			var onChange = _props.onChange;
+			var _state = this.state;
+			var stateValue = _state.stateValue;
+			var changeEvent = _state.changeEvent;
+
+			if ((typeof changeEvent === 'undefined' ? 'undefined' : _typeof(changeEvent)) === 'object' && stateValue !== value) {
+				onChange(changeEvent);
+			}
+		}
+	}, {
+		key: 'handleChange',
+		value: function handleChange(changeEvent) {
+			console.log("Change Event");
+			this.setState({ changeEvent: changeEvent, stateValue: changeEvent.target.value });
+
+			if (typeof this.cancelChange === 'number') {
+				clearTimeout(this.cancelChange);
+				this.cancelChange = null;
+			}
+
+			this.cancelChange = setTimeout(this.sendChange.bind(this), DEBOUNCE_TIMEOUT);
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			var size = this.props.size;
+			var stateValue = this.state.stateValue;
 
-			return _react2.default.createElement('input', _extends({ type: 'text', className: size }, this.props))
-			// type="text"
-			// className='large'
-			// placeholder="Event Name"
-			// name='title'
-			// onChange={handleChange}
-			// value={event.item.title}
-			;
+			return _react2.default.createElement('input', _extends({ type: 'text', className: size }, this.props, { onChange: this.handleChange.bind(this), value: stateValue }));
 		}
 	}]);
 
@@ -2703,13 +2739,22 @@ var ContentTypeAnnouncement = function (_Component) {
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement(_FormField2.default, {
-					InputType: _Input2.default,
-					placeholder: 'Announcement Title',
-					name: 'title',
-					onChange: handleChange,
-					value: contentData.title,
-					errors: contentData.errors }),
+				_react2.default.createElement(
+					'div',
+					{ className: 'form-body-block no-pad white' },
+					_react2.default.createElement(_FormField2.default, {
+						InputType: _Input2.default,
+						placeholder: 'Announcement Title',
+						name: 'title',
+						onChange: handleChange,
+						value: contentData.title,
+						errors: contentData.errors })
+				),
+				_react2.default.createElement(
+					'p',
+					{ className: 'field-caption' },
+					'Event attenders tap the title to see the body which loads on a separate screen.'
+				),
 				_react2.default.createElement(_FormField2.default, {
 					InputType: _HtmlEditor2.default,
 					placeholder: 'Announcement Body',
