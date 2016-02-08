@@ -126,10 +126,10 @@ function validateReferenceType(params) {
 }
 
 function validatePlanType(params) {
-	const { id, language_tag } = params
+	const { plan_id, language_tag } = params
 
-	if (typeof id !== 'number') {
-		throw new Error('Content Type Plan requires `id` to be an integer')
+	if (typeof plan_id !== 'number') {
+		throw new Error('Content Type Plan requires `plan_id` to be an integer')
 	}
 
 	if (typeof language_tag !== 'string') {

@@ -15,7 +15,7 @@ var PlanList = React.createClass({
 				image = <img src="http://placehold.it/80/80" />;
 			}
 
-			return <li key={item.id} data-id={item.id} name="id" value={item.id} onClick={handlePlanClick}>
+			return <li key={item.id} data-plan_id={item.id} name="plan_id" value={item.id} onClick={handlePlanClick}>
 				{image}
 				<div className="title">{item.name.default}</div>
 				<div className="length">{item.total_days + " days"}</div>
@@ -37,7 +37,7 @@ var SelectedPlan = React.createClass({
 			image = <img src="http://placehold.it/80/80" />;
 		}
 
-		return <div className="selected" key={item.id} data-id={item.id} name="id" value={item.id} onClick={handlePlanClick}>
+		return <div className="selected" key={item.plan_id} data-plan_id={item.plan_id} name="plan_id" value={item.plan_id} onClick={handlePlanClick}>
 			{image}
 			<div className="title">{item.name.default} <span className="remove">remove</span></div>
 			<div className="length">{item.total_days + " days"}</div>
@@ -52,11 +52,11 @@ class ContentTypePlan extends Component {
 		var output;
 
 		// Selected
-		if (contentData.id) {
+		if (contentData.plan_id) {
 			var selectedPlan;
 			selectedPlan = {
-				'id': contentData.id,
-				'total_days': contentData.id,
+				'plan_id': contentData.plan_id,
+				'total_days': contentData.plan_id,
 				'name': {'default': contentData.language_tag}
 			}
 			output = <div>

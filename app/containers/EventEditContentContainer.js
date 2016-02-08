@@ -4,7 +4,7 @@ import ContentHeader from '../features/EventEdit/features/content/components/Con
 import ContentFeed from '../features/EventEdit/features/content/components/ContentFeed'
 import ActionCreators from '../features/EventEdit/features/content/actions/creators'
 
-const SEARCH_TIMEOUT = 800
+const SEARCH_TIMEOUT = 500
 
 function createBaseContentObject(eventId, type) {
 	return {
@@ -52,7 +52,7 @@ class EventEditContentContainer extends Component {
 				createBaseContentObject(event.item.id, 'plan'),
 				{
 					data: {
-						id: 0,
+						plan_id: 0,
 						language_tag: 'en'
 					}
 				}
@@ -113,7 +113,6 @@ class EventEditContentContainer extends Component {
 	}
 
 	handlePlanSearchFocus(index) {
-		console.log(index)
 		const { dispatch } = this.props
 		dispatch(ActionCreators.focusPlanSearch({
 			index

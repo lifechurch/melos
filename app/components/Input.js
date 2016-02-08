@@ -16,14 +16,15 @@ class Input extends Component {
 
 	sendChange() {
 		const { value, onChange } = this.props
-		const { stateValue, changeEvent } = this.state
-		if (typeof changeEvent === 'object' && (stateValue !== value)) {
-			onChange(changeEvent)
+		const el = this.refs.inputElement;
+
+		if (typeof el === 'object' && (el.value !== value)) {
+			onChange({target: el, currentTarget: el})
 		}
 	}
 
 	handleChange(changeEvent) {
-		this.setState({changeEvent, stateValue: changeEvent.target.value })
+		this.setState({stateValue: changeEvent.target.value});
 
 		if (typeof this.cancelChange === 'number') {
 			clearTimeout(this.cancelChange)
@@ -38,7 +39,7 @@ class Input extends Component {
 		const { stateValue } = this.state
 
 		return (
-			<input type='text' className={size} {...this.props} onChange={::this.handleChange} value={stateValue} />
+			<input type='text' ref='inputElement' className={size} {...this.props} onChange={::this.handleChange} value={stateValue} />
 		)
 	}
 }

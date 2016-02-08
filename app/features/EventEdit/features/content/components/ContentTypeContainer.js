@@ -32,8 +32,11 @@ class ContentTypeContainer extends Component {
 	}
 
 	handlePlanSearchChange(changeEvent) {
+		console.log(changeEvent)
+		console.log(changeEvent.target)
 		const { contentIndex, handlePlanSearchChange } = this.props
 		const { name, value } = changeEvent.target
+		console.log(name, value)
 		handlePlanSearchChange(contentIndex, name, value)
 	}
 
@@ -44,14 +47,17 @@ class ContentTypeContainer extends Component {
 
 	handlePlanAdd(clickEvent) {
 		const { contentIndex, handleChange, clearPlanSearch } = this.props
-		handleChange(contentIndex, 'id', parseInt(clickEvent.currentTarget.dataset['id']))
+
+		console.log(clickEvent.currentTarget)
+
+		handleChange(contentIndex, 'plan_id', parseInt(clickEvent.currentTarget.dataset['plan_id']))
 		clearPlanSearch()
 		this.autoSave()
 	}
 
 	handlePlanRemove(clickEvent) {
 		const { contentIndex, handleChange } = this.props
-		handleChange(contentIndex, 'id', 0)
+		handleChange(contentIndex, 'plan_id', 0)
 		this.autoSave()
 	}
 
