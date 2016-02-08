@@ -13,8 +13,8 @@ h1.eventPageTitle {
 }
 
 .content-header {
-	background-color: #F4F4F4;	
-	border-bottom: 1px solid #DDDDDD;	
+	background-color: #F4F4F4;
+	border-bottom: 1px solid #DDDDDD;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	position: fixed;
@@ -26,7 +26,7 @@ h1.eventPageTitle {
 	a.hollow-button {
 		background-color: white;
 		margin: 0 !important;
-		margin-right: 10px !important; 
+		margin-right: 10px !important;
 	}
 
 	div.right {
@@ -139,11 +139,11 @@ a.active span {
 					position: absolute;
 					top: 4px;
 					transform: rotate(45deg);
-					transition: background-color 300ms ease-out;					
+					transition: background-color 300ms ease-out;
 				}
 
 				span {
-    			position: relative;				
+    			position: relative;
 				}
 
 			}
@@ -196,7 +196,7 @@ a.active span {
 				}
 			}
 		}
-	}	
+	}
 }
 
 .image-drop-zone {
@@ -208,9 +208,9 @@ a.active span {
 	.instructions {
 		font-size: 15px;
 		color: #979797;
-		line-height: 17px;	
+		line-height: 17px;
 		text-align: center;
-		padding: 20px;	
+		padding: 20px;
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
@@ -229,22 +229,22 @@ a.active span {
 }
 
 input[type=text], select {
-	color: #979797;	
+	color: #979797;
 	border: none;
-	border-bottom: 1px solid #CCCCCC;	
+	border-bottom: 1px solid #CCCCCC;
 	border-radius: 0;
 	background-color: transparent;
 
 	&.large {
 		font-size: 24px;
 		line-height: 28px;
-		padding-bottom: 15px !important;		
+		padding-bottom: 15px !important;
 	}
 
 	&.medium {
 		font-size: 20px;
 		line-height: 22.5px;
-		padding-bottom: 10px !important;		
+		padding-bottom: 10px !important;
 	}
 
 	&.small {
@@ -259,7 +259,7 @@ select {
 
 textarea {
 	border: 1px solid #BBBBBB;
-	border-radius: 5px;	
+	border-radius: 5px;
 	height: 100px;
 }
 
@@ -273,33 +273,33 @@ textarea {
 	width: 100%;
 	height: 300px;
 	border: 1px dashed #DDDDDD;
-	border-radius: 5px;		
+	border-radius: 5px;
 	padding: 15px;
-	font-size: 15px;	
+	font-size: 15px;
 
 	.hollow-button {
     padding: 10px 16px;
-    margin: 0 !important;	
+    margin: 0 !important;
 	}
 
 	.button-caption {
 		font-size: 12px;
 		color: #979797;
-		line-height: 14px;	
+		line-height: 14px;
     margin-top: 10px;
-    margin-bottom: 50px;		
+    margin-bottom: 50px;
 	}
 }
 
 .center-single-item {
-	margin-left: 33.3%	
+	margin-left: 33.3%
 }
 
 .location-container {
 	width: 100%;
 	height: 300px;
 	border: 1px solid #DDDDDD;
-	border-radius: 5px;	
+	border-radius: 5px;
 
 	&.not-selected {
 		opacity: 0.5;
@@ -321,7 +321,7 @@ textarea {
     padding-top: 8px;
 
     input {
-    	height: 12px !important;    
+    	height: 12px !important;
     }
 
     .title {
@@ -336,7 +336,7 @@ textarea {
 
 			img {
 				height: 13px;
-			} 
+			}
     }
 	}
 
@@ -356,9 +356,9 @@ textarea {
 				margin-left: 10px;
 				font-size: 12px;
 				color: #979797;
-				line-height: 20px;			
+				line-height: 20px;
 			}
-		}	
+		}
 	}
 }
 
@@ -388,7 +388,7 @@ textarea {
 	&.white {
 		background: #FFFFFF;
 		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.27);
-		border-radius: 2px 2px 0px 2px 2px;	
+		border-radius: 2px 2px 0px 2px 2px;
 	}
 
 	&:first-child {
@@ -397,12 +397,12 @@ textarea {
 
 	form {
 		margin-bottom: 10px;
-	
+
 		label {
 			input {
 				margin-bottom: 5px;
 				padding-left: 0 !important;
-				color: #353535;				
+				color: #353535;
 			}
 
 			span {
@@ -417,7 +417,7 @@ textarea {
 .event-edit-time-form {
 	select, input {
 		text-align:center !important;
-	}	
+	}
 }
 
 .form-actions {
@@ -503,7 +503,7 @@ textarea {
 			display: block;
 			margin-top: 10px;
 			font-size: 13px;
-			line-height: 15px;	
+			line-height: 15px;
 		}
 	}
 
@@ -544,7 +544,7 @@ textarea {
 	font-weight: bold;
 	font-size: 12px;
 	color: #000000 !important;
-	line-height: 14px;		
+	line-height: 14px;
 }
 
 .ql-italic {
@@ -576,4 +576,47 @@ textarea {
 .content-leave.content-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
+}
+
+.plan-content {
+	ul {
+		margin: 0;
+		cursor: pointer;
+
+		li {
+			margin: 0;
+			padding: 5px;
+			list-style: none;
+			overflow: auto;
+		}
+
+		li:hover {
+			background-color: #eee;
+		}
+	}
+
+	.selected {
+		line-height: 1.6;
+		font-size: 1.2em;
+		overflow: auto;
+
+		img {
+			width: 50px;
+		}
+	}
+
+	img {
+		float: left;
+		width: 40px;
+		margin-right: 10px;
+	}
+
+	.title {
+		color: #000;
+		font-size: 1.25em;
+	}
+
+	.length {
+		line-height: .75em;
+	}
 }

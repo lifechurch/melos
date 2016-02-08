@@ -17,11 +17,31 @@ var PlanList = React.createClass({
 
 			return <li key={item.id} data-id={item.id} name="id" value={item.id} onClick={handlePlanClick}>
 				{image}
-				{item.name.default}
-				<i>{item.total_days + " days"}</i>
+				<div className="title">{item.name.default}</div>
+				<div className="length">{item.total_days + " days"}</div>
 			</li>;
 		};
 		return <ul>{items.map(createItem)}</ul>;
+	}
+});
+
+var SelectedPlan = React.createClass({
+
+	render: function() {
+		const { item, handlePlanClick } = this.props
+
+		var image;
+		if (item.images) {
+			image = <img src={item.images[2].url} />;
+		} else {
+			image = <img src="http://placehold.it/80/80" />;
+		}
+
+		return <div className="selected" key={item.id} data-id={item.id} name="id" value={item.id} onClick={handlePlanClick}>
+			{image}
+			<div className="title">{item.name.default} <span className="remove">remove</span></div>
+			<div className="length">{item.total_days + " days"}</div>
+		</div>;
 	}
 });
 
@@ -30,19 +50,22 @@ class ContentTypePlan extends Component {
 	render() {
 		const { contentIndex, contentData, handlePlanSearchChange, handlePlanSearchFocus, handlePlanAdd, handlePlanRemove, plans } = this.props
 		var output;
+
+		// Selected
 		if (contentData.id) {
 			var selectedPlan;
-			selectedPlan = [{
+			selectedPlan = {
 				'id': contentData.id,
 				'total_days': contentData.id,
 				'name': {'default': contentData.language_tag}
-			}]
+			}
 			output = <div>
-				<PlanList items={selectedPlan} handlePlanClick={handlePlanRemove} />
+				<SelectedPlan item={selectedPlan} handlePlanClick={handlePlanRemove} />
 			</div>
 
+		// Focused plan search
 		} else if (plans.focus_id == contentIndex) {
-			output = <div>
+			output = <div className="plan-content">
 				<FormField
 					InputType={Input}
 					placeholder="Search…"
@@ -55,8 +78,9 @@ class ContentTypePlan extends Component {
 				<PlanList items={plans.items} handlePlanClick={handlePlanAdd} />
 			</div>
 
+		// Out-of-focus plan search
 		} else {
-			output = <div>
+			output = <div className="plan-content">
 				<FormField
 					InputType={Input}
 					placeholder="Search…"
@@ -69,7 +93,7 @@ class ContentTypePlan extends Component {
 
 		}
 		return (
-			<div>
+			<div className="plan-content">
 				{output}
 			</div>
 		)

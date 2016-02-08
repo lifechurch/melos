@@ -44,7 +44,7 @@ class ContentTypeContainer extends Component {
 
 	handlePlanAdd(clickEvent) {
 		const { contentIndex, handleChange, clearPlanSearch } = this.props
-		handleChange(contentIndex, 'id', parseInt(clickEvent.target.dataset['id']))
+		handleChange(contentIndex, 'id', parseInt(clickEvent.currentTarget.dataset['id']))
 		clearPlanSearch()
 		this.autoSave()
 	}
