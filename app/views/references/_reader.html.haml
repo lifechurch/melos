@@ -96,7 +96,7 @@
         %div#svp_share.addthis_sharing_toolbox{"data-url" => "#{share_url}", "data-title" => "#{reference.human}"}
 
         %div#download.mobile{class:"show-for-small-only"}
-          %a#svp_download{href:"/app", class: "solid-button blue"}
+          %a#svp_download{href:"/app", class: "solid-button blue", target: '_self' }
 
             = t('mobile page.download now')
       .copyright
