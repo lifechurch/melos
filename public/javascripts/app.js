@@ -926,7 +926,6 @@ var Input = function (_Component) {
 	}, {
 		key: 'sendChange',
 		value: function sendChange() {
-			console.log("Sending change...");
 			var _props = this.props;
 			var value = _props.value;
 			var onChange = _props.onChange;
@@ -941,7 +940,6 @@ var Input = function (_Component) {
 	}, {
 		key: 'handleChange',
 		value: function handleChange(changeEvent) {
-			console.log("Change Event");
 			this.setState({ changeEvent: changeEvent, stateValue: changeEvent.target.value });
 
 			if (typeof this.cancelChange === 'number') {
@@ -1456,13 +1454,16 @@ var EventEditContentContainer = function (_Component) {
 		}
 	}, {
 		key: 'handleRemove',
-		value: function handleRemove(index, contentId) {
+		value: function handleRemove(index, id, content_id) {
+			console.log(index, id, content_id);
 			var _props4 = this.props;
 			var event = _props4.event;
 			var dispatch = _props4.dispatch;
 
 			var params = {
-				index: index
+				id: id,
+				index: index,
+				content_id: content_id
 			};
 			dispatch(_creators2.default.remove(params));
 		}
@@ -2464,7 +2465,7 @@ var ActionCreators = {
 				},
 				params: params,
 				http_method: 'post',
-				types: [(0, _constants2.default)('updateRequest'), (0, _constants2.default)('updateSuccess'), (0, _constants2.default)('updateFailure')]
+				types: [(0, _constants2.default)('removeRequest'), (0, _constants2.default)('removeSuccess'), (0, _constants2.default)('removeFailure')]
 			}
 		};
 	},
@@ -2516,6 +2517,10 @@ var _ContentTypeContainer = require('./ContentTypeContainer');
 
 var _ContentTypeContainer2 = _interopRequireDefault(_ContentTypeContainer);
 
+var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');
+
+var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2540,13 +2545,17 @@ var ContentFeed = function (_Component) {
 			var event = _props.event;
 			var handleUpdate = _props.handleUpdate;
 			var handleChange = _props.handleChange;
+			var handleRemove = _props.handleRemove;
 			var content = event.item.content;
 
 			var contentList = content.map(function (c, i) {
+				var key = c.temp_content_id || c.content_id;
 				return _react2.default.createElement(_ContentTypeContainer2.default, {
-					key: i,
+					key: key,
+					event: event,
 					handleChange: handleChange,
 					handleUpdate: handleUpdate,
+					handleRemove: handleRemove,
 					content: c,
 					contentIndex: i });
 			});
@@ -2560,7 +2569,11 @@ var ContentFeed = function (_Component) {
 					_react2.default.createElement(
 						_Column2.default,
 						{ s: 'medium-12' },
-						contentList
+						_react2.default.createElement(
+							_reactAddonsCssTransitionGroup2.default,
+							{ transitionName: 'content' },
+							contentList
+						)
 					)
 				)
 			);
@@ -2574,7 +2587,7 @@ ContentFeed.propTypes = {};
 
 exports.default = ContentFeed;
 
-},{"../../../../../../app/components/Column":8,"../../../../../../app/components/Row":14,"./ContentTypeContainer":32,"react":664}],30:[function(require,module,exports){
+},{"../../../../../../app/components/Column":8,"../../../../../../app/components/Row":14,"./ContentTypeContainer":32,"react":664,"react-addons-css-transition-group":331}],30:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -2861,8 +2874,9 @@ var ContentTypeContainer = function (_Component) {
 			var contentIndex = _props3.contentIndex;
 			var content = _props3.content;
 			var handleRemove = _props3.handleRemove;
+			var event = _props3.event;
 
-			handleRemove(contentIndex, content.content_id);
+			handleRemove(contentIndex, event.item.id, content.content_id);
 		}
 	}, {
 		key: 'autoSave',
@@ -2886,11 +2900,11 @@ var ContentTypeContainer = function (_Component) {
 			var InnerContainer = null;
 			switch (content.type) {
 				case 'text':
-					InnerContainer = _react2.default.createElement(_ContentTypeText2.default, { handleChange: this.handleChange.bind(this), contentData: content.data });
+					InnerContainer = _react2.default.createElement(_ContentTypeText2.default, { handleRemove: this.handleRemove.bind(this), handleChange: this.handleChange.bind(this), contentData: content.data });
 					break;
 
 				case 'announcement':
-					InnerContainer = _react2.default.createElement(_ContentTypeAnnouncement2.default, { handleChange: this.handleChange.bind(this), contentData: content.data });
+					InnerContainer = _react2.default.createElement(_ContentTypeAnnouncement2.default, { handleRemove: this.handleRemove.bind(this), handleChange: this.handleChange.bind(this), contentData: content.data });
 					break;
 
 				case 'reference':
@@ -2914,8 +2928,8 @@ var ContentTypeContainer = function (_Component) {
 						content.type.toUpperCase(),
 						' ',
 						_react2.default.createElement(
-							'span',
-							{ className: 'right' },
+							'a',
+							{ className: 'right', onClick: this.handleRemove.bind(this) },
 							_react2.default.createElement('img', { src: '/images/thin-x.png' })
 						),
 						_react2.default.createElement(
@@ -3114,15 +3128,15 @@ function validateRemoveContentParams(params) {
 	var content_id = params.content_id;
 
 	if (typeof index !== 'number') {
-		throw new Error('Invalid Content Index');
+		throw new Error('Remove: Invalid Content Index');
 	}
 
 	if (typeof content_id !== 'number') {
-		throw new Error('Reorder: Invalid Content ID');
+		throw new Error('Remove: Invalid Content ID');
 	}
 
-	if (!Array.isArray(id) || id.length === 0) {
-		throw new Error('Reorder: Invalid Event ID');
+	if (typeof id !== 'number') {
+		throw new Error('Remove: Invalid Event ID');
 	}
 }
 
@@ -3876,6 +3890,7 @@ function event() {
 		case (0, _constants6.default)('new'):
 			var newContent = Object.assign({}, action.params);
 			newContent.isDirty = false;
+			newContent.temp_content_id = new Date().getTime();
 			return Object.assign({}, state, {
 				item: _extends({}, state.item, {
 					content: [].concat(_toConsumableArray(state.item.content.slice(0, action.params.index)), [newContent], _toConsumableArray(state.item.content.slice(action.params.index)))
@@ -3903,7 +3918,12 @@ function event() {
 				})
 			});
 
-		case (0, _constants6.default)('removeSuccess'):
+		case (0, _constants6.default)('removeRequest'):
+			return Object.assign({}, state, {
+				item: _extends({}, state.item, {
+					content: [].concat(_toConsumableArray(state.item.content.slice(0, action.params.index)), _toConsumableArray(state.item.content.slice(action.params.index + 1)))
+				})
+			});
 			return state;
 
 		case (0, _constants6.default)('setField'):

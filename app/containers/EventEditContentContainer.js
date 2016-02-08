@@ -68,10 +68,12 @@ class EventEditContentContainer extends Component {
 		}))
 	}
 
-	handleRemove(index, contentId) {
+	handleRemove(index, id, content_id) {
 		const { event, dispatch } = this.props
 		const params = {
-			index
+			id,
+			index,
+			content_id
 		}
 		dispatch(ActionCreators.remove(params))
 	}

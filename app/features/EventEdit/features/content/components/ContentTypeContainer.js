@@ -31,8 +31,8 @@ class ContentTypeContainer extends Component {
 	}
 
 	handleRemove(removeEvent) {
-		const { contentIndex, content, handleRemove } = this.props
-		handleRemove(contentIndex, content.content_id)
+		const { contentIndex, content, handleRemove, event } = this.props
+		handleRemove(contentIndex, event.item.id, content.content_id)
 	}
 
 	autoSave() {
@@ -52,11 +52,11 @@ class ContentTypeContainer extends Component {
 		let InnerContainer = null
 		switch (content.type) {
 			case 'text':
-				InnerContainer = (<ContentTypeText handleChange={::this.handleChange} contentData={content.data} />)
+				InnerContainer = (<ContentTypeText handleRemove={::this.handleRemove} handleChange={::this.handleChange} contentData={content.data} />)
 				break
 
 			case 'announcement':
-				InnerContainer = (<ContentTypeAnnouncement handleChange={::this.handleChange} contentData={content.data} />)
+				InnerContainer = (<ContentTypeAnnouncement handleRemove={::this.handleRemove} handleChange={::this.handleChange} contentData={content.data} />)
 				break
 
 			case 'reference':
@@ -72,7 +72,7 @@ class ContentTypeContainer extends Component {
 			<div className='content-type-text'>
 				<Row>
 					<div className='medium-10 large-8 columns small-centered'>
-						{content.type.toUpperCase()} <span className='right'><img src='/images/thin-x.png' /></span>
+						{content.type.toUpperCase()} <a className='right' onClick={::this.handleRemove}><img src='/images/thin-x.png' /></a>
 						<div className='form-body'>
 							{InnerContainer}
 							{ content.isDirty ? 'D' : '.'}

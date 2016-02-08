@@ -2,19 +2,23 @@ import React, { Component, PropTypes } from 'react'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import ContentTypeContainer from './ContentTypeContainer'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class ContentFeed extends Component {
 
 	render() {
-		const { event, handleUpdate, handleChange } = this.props
+		const { event, handleUpdate, handleChange, handleRemove } = this.props
 		const { content } = event.item
 
 		const contentList = content.map((c,i) => {
+			const key = c.temp_content_id || c.content_id
 			return (
-				<ContentTypeContainer 
-					key={i}
-					handleChange={handleChange} 
-					handleUpdate={handleUpdate} 
+				<ContentTypeContainer
+					key={key}
+					event={event}
+					handleChange={handleChange}
+					handleUpdate={handleUpdate}
+					handleRemove={handleRemove}
 					content={c}
 					contentIndex={i} />
 			)
@@ -24,7 +28,9 @@ class ContentFeed extends Component {
 			<div className='content-feed'>
 				<Row>
 					<Column s='medium-12'>
-						{contentList}
+						<ReactCSSTransitionGroup transitionName='content'>
+							{contentList}
+						</ReactCSSTransitionGroup>							
 					</Column>
 				</Row>
 			</div>

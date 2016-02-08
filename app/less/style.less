@@ -559,3 +559,21 @@ textarea {
 	min-height: 120px;
 	font-size: 15px !important;
 }
+
+.content-enter {
+  opacity: 0.01;
+}
+
+.content-enter.content-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.content-leave {
+  opacity: 1;
+}
+
+.content-leave.content-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

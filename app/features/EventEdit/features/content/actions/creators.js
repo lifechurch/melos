@@ -79,7 +79,7 @@ const ActionCreators = {
 				},
 				params: params,
 				http_method: 'post',
-				types: [ contentType('updateRequest'), contentType('updateSuccess'), contentType('updateFailure') ]
+				types: [ contentType('removeRequest'), contentType('removeSuccess'), contentType('removeFailure') ]
 			}
 		}
 	},
