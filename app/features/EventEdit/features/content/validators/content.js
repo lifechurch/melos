@@ -18,15 +18,15 @@ export function validateRemoveContentParams(params) {
 	const { index, id, content_id } = params
 
 	if (typeof index !== 'number') {
-		throw new Error('Invalid Content Index')
+		throw new Error('Remove: Invalid Content Index')
 	}
 	
 	if (typeof content_id !== 'number') {
-		throw new Error('Reorder: Invalid Content ID')
+		throw new Error('Remove: Invalid Content ID')
 	}
 
-	if (!Array.isArray(id) || id.length === 0) {
-		throw new Error('Reorder: Invalid Event ID')
+	if (typeof id !== 'number') {
+		throw new Error('Remove: Invalid Event ID')
 	}
 }
 

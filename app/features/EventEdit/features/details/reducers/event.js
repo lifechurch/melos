@@ -162,6 +162,7 @@ export default function event(state = {}, action) {
 		case contentType('new'):
 			var newContent = Object.assign({}, action.params)
 			newContent.isDirty = false
+			newContent.temp_content_id = new Date().getTime()
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -204,7 +205,16 @@ export default function event(state = {}, action) {
 				}
 			})
 
-		case contentType('removeSuccess'):
+		case contentType('removeRequest'):
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						...state.item.content.slice(action.params.index + 1)						
+					]
+				}
+			})
 			return state
 
 		case contentType('setField'):
