@@ -17,15 +17,16 @@ class ContentTypeContainer extends Component {
 		const { content, contentIndex, handleUpdate } = this.props
 		if (content.isDirty) {
 			handleUpdate(contentIndex, content)
-		} else {
-			console.log('content not dirty')
 		}
 	}
 
-	handleChange(changeEvent) {
-		const { contentIndex, handleChange } = this.props
-		const { name, value } = changeEvent.target
-		handleChange(contentIndex, name, value)
+	handleChange(changeEvent) {		
+		if (typeof changeEvent.target === 'object') {
+			const { contentIndex, handleChange } = this.props
+			const { name, value } = changeEvent.target
+			handleChange(contentIndex, name, value)
+		}
+
 		this.autoSave()
 	}
 
@@ -73,9 +74,7 @@ class ContentTypeContainer extends Component {
 					<div className='medium-10 large-8 columns small-centered'>
 						{content.type.toUpperCase()} <span className='right'><img src='/images/thin-x.png' /></span>
 						<div className='form-body'>
-							<div className='form-body-block white'>
-								{InnerContainer}
-							</div>
+							{InnerContainer}
 							{ content.isDirty ? 'D' : '.'}
 							{ content.isSaving ? 'Saving...' : '.'}
 						</div>

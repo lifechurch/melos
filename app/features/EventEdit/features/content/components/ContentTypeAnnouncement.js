@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
-import Textarea from '../../../../../../app/components/Textarea'
+import HtmlEditor from '../../../../../../app/components/HtmlEditor'
 
 class ContentTypeAnnouncement extends Component {
 	render() {
@@ -16,7 +16,7 @@ class ContentTypeAnnouncement extends Component {
 					value={contentData.title}
 					errors={contentData.errors} />			
 				<FormField 
-					InputType={Textarea}
+					InputType={HtmlEditor}
 					placeholder="Announcement Body"
 					name="body"
 					onChange={handleChange}

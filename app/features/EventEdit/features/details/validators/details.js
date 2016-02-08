@@ -2,6 +2,7 @@ import { isBlank, mergeApiErrors } from '../../../../../validators/common'
  
 export function validateEventDetails(event) {
 	let { item, originalErrors } = event
+
 	if (typeof item !== 'object') {
 		item = {}
 	}

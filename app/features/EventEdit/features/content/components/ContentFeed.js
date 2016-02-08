@@ -12,6 +12,7 @@ class ContentFeed extends Component {
 		const contentList = content.map((c,i) => {
 			return (
 				<ContentTypeContainer 
+					key={i}
 					handleChange={handleChange} 
 					handleUpdate={handleUpdate} 
 					content={c}

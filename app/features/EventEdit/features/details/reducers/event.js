@@ -2,8 +2,10 @@ import type from '../actions/constants'
 import locationType from '../../location/actions/constants'
 import contentType from '../../content/actions/constants'
 import { validateEventDetails } from '../validators/details'
+import { fromApiFormat as eventFromApiFormat } from '../transformers/event'
 import defaultState from '../../../../../defaultState'
-import { fromApiFormat } from '../../location/transformers/location'
+import { fromApiFormat as locationFromApiFormat } from '../../location/transformers/location'
+import { fromApiFormat as contentFromApiFormat } from '../../content/transformers/content'
 import arrayToObject from '../../../../../lib/arrayToObject'
 import mergeObjects from '../../../../../lib/mergeObjects'
 
@@ -25,7 +27,7 @@ export default function event(state = {}, action) {
 			return validateEventDetails(Object.assign({}, defaultState.event))
 
 		case type('viewSuccess'):
-			return validateEventDetails(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false }, {
+			return eventFromApiFormat(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false }, {
 				item: {
 					...action.response,
 					locations: arrayToObject(action.response.locations, 'id')
@@ -126,7 +128,7 @@ export default function event(state = {}, action) {
 					...state.item,
 					locations: {
 						...locations,
-						[action.response.id]: fromApiFormat(Object.assign({}, action.loc, action.response, { isSelected: true }))
+						[action.response.id]: locationFromApiFormat(Object.assign({}, action.loc, action.response, { isSelected: true }))
 					}
 				}
 			}))
@@ -157,13 +159,9 @@ export default function event(state = {}, action) {
 				item: { ...state.item, locations }
 			})
 
-		case contentType('addRequest'):
+		case contentType('new'):
 			var newContent = Object.assign({}, action.params)
-			newContent.isDirty = true
-			newContent.isSaving = true
-			newContent.event_id = newContent.id
-			delete newContent.id
-
+			newContent.isDirty = false
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -175,6 +173,7 @@ export default function event(state = {}, action) {
 				}
 			})
 
+		case contentType('addRequest'):
 		case contentType('updateRequest'):
 			var newContent = Object.assign({}, action.params)
 			newContent.isSaving = true

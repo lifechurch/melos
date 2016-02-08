@@ -4,12 +4,6 @@ class Textarea extends Component {
 	render() {
 		return (
 			<textarea {...this.props}></textarea>
-			// type="text" 
-			// className='large' 
-			// placeholder="Event Name" 
-			// name='title' 
-			// onChange={handleChange} 
-			// value={event.item.title}
 		)
 	}
 }
