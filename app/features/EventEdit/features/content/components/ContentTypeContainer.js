@@ -46,11 +46,27 @@ class ContentTypeContainer extends Component {
 	}
 
 	handlePlanAdd(clickEvent) {
-		const { contentIndex, handleChange, clearPlanSearch } = this.props
+		const { contentIndex, handleChange, clearPlanSearch, plans } = this.props
+		const plan_id = parseInt(clickEvent.currentTarget.dataset['plan_id'])
+		handleChange(contentIndex, 'plan_id', plan_id)
 
-		console.log(clickEvent.currentTarget)
+		// Find in plans[]
+		// If we knew the index, we could just pass it directly
+		var selectedPlan;
+		selectedPlan = 0
+		for( var i in plans.items ){
+			if( plans.items[i].id == plan_id ) {
+				selectedPlan = plans.items[i];
+				break;
+			}
+		}
 
-		handleChange(contentIndex, 'plan_id', parseInt(clickEvent.currentTarget.dataset['plan_id']))
+		// Would be nice to be able to pass JSON
+		handleChange(contentIndex, 'title', selectedPlan.name.default)
+		handleChange(contentIndex, 'formatted_length', selectedPlan.formatted_length.default)
+		handleChange(contentIndex, 'images', selectedPlan.images)
+		handleChange(contentIndex, 'short_url', selectedPlan.short_url)
+
 		clearPlanSearch()
 		this.autoSave()
 	}

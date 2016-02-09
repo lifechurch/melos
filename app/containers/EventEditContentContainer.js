@@ -47,13 +47,17 @@ class EventEditContentContainer extends Component {
 
 	handleAddPlan() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.add(
+		dispatch(ActionCreators.new(
 			Object.assign({},
 				createBaseContentObject(event.item.id, 'plan'),
 				{
 					data: {
 						plan_id: 0,
-						language_tag: 'en'
+						language_tag: 'en',
+						title: '',
+						formatted_length: '',
+						images: [],
+						short_url: ''
 					}
 				}
 			)

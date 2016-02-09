@@ -1433,10 +1433,14 @@ var EventEditContentContainer = function (_Component) {
 			var event = _props3.event;
 			var dispatch = _props3.dispatch;
 
-			dispatch(_creators2.default.add(Object.assign({}, createBaseContentObject(event.item.id, 'plan'), {
+			dispatch(_creators2.default.new(Object.assign({}, createBaseContentObject(event.item.id, 'plan'), {
 				data: {
 					plan_id: 0,
-					language_tag: 'en'
+					language_tag: 'en',
+					title: '',
+					formatted_length: '',
+					images: [],
+					short_url: ''
 				}
 			})));
 		}
@@ -3012,10 +3016,28 @@ var ContentTypeContainer = function (_Component) {
 			var contentIndex = _props5.contentIndex;
 			var handleChange = _props5.handleChange;
 			var clearPlanSearch = _props5.clearPlanSearch;
+			var plans = _props5.plans;
 
-			console.log(clickEvent.currentTarget);
+			var plan_id = parseInt(clickEvent.currentTarget.dataset['plan_id']);
+			handleChange(contentIndex, 'plan_id', plan_id);
 
-			handleChange(contentIndex, 'plan_id', parseInt(clickEvent.currentTarget.dataset['plan_id']));
+			// Find in plans[]
+			// If we knew the index, we could just pass it directly
+			var selectedPlan;
+			selectedPlan = 0;
+			for (var i in plans.items) {
+				if (plans.items[i].id == plan_id) {
+					selectedPlan = plans.items[i];
+					break;
+				}
+			}
+
+			// Would be nice to be able to pass JSON
+			handleChange(contentIndex, 'title', selectedPlan.name.default);
+			handleChange(contentIndex, 'formatted_length', selectedPlan.formatted_length.default);
+			handleChange(contentIndex, 'images', selectedPlan.images);
+			handleChange(contentIndex, 'short_url', selectedPlan.short_url);
+
 			clearPlanSearch();
 			this.autoSave();
 		}
@@ -3183,7 +3205,7 @@ var PlanList = _react2.default.createClass({
 				_react2.default.createElement(
 					'div',
 					{ className: 'length' },
-					item.total_days + " days"
+					item.formatted_length.default
 				)
 			);
 		};
@@ -3217,18 +3239,12 @@ var SelectedPlan = _react2.default.createClass({
 			_react2.default.createElement(
 				'div',
 				{ className: 'title' },
-				item.name.default,
-				' ',
-				_react2.default.createElement(
-					'span',
-					{ className: 'remove' },
-					'remove'
-				)
+				item.title
 			),
 			_react2.default.createElement(
 				'div',
 				{ className: 'length' },
-				item.total_days + " days"
+				item.formatted_length
 			)
 		);
 	}
@@ -3259,16 +3275,10 @@ var ContentTypePlan = function (_Component) {
 
 			// Selected
 			if (contentData.plan_id) {
-				var selectedPlan;
-				selectedPlan = {
-					'plan_id': contentData.plan_id,
-					'total_days': contentData.plan_id,
-					'name': { 'default': contentData.language_tag }
-				};
 				output = _react2.default.createElement(
 					'div',
 					null,
-					_react2.default.createElement(SelectedPlan, { item: selectedPlan, handlePlanClick: handlePlanRemove })
+					_react2.default.createElement(SelectedPlan, { item: contentData, handlePlanClick: handlePlanRemove })
 				);
 
 				// Focused plan search
@@ -3302,6 +3312,7 @@ var ContentTypePlan = function (_Component) {
 								errors: contentData.errors })
 						);
 					}
+
 			return _react2.default.createElement(
 				'div',
 				{ className: 'plan-content' },
@@ -3487,7 +3498,8 @@ function validateSetContentFieldParams(params) {
 		throw new Error('Content Field Name must be string');
 	}
 
-	if (typeof value !== 'string' && typeof value !== 'number') {
+	if (typeof value !== 'string' && typeof value !== 'number' && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) !== 'object') {
+		// added "object" ... so, pretty much everything?
 		throw new Error('Content Field Value must be string or number');
 	}
 }
@@ -6434,13 +6446,21 @@ function plans() {
 			return Object.assign({}, state, { 'query': action.value });
 
 		case (0, _constants2.default)('searchPlansRequest'):
-			return Object.assign({}, state, { 'items': [{ 'plan_id': 0, 'name': { 'default': 'Fetching…' } }] });
+			return Object.assign({}, state, { 'items': [{
+					'plan_id': 0,
+					'name': { 'default': 'Fetching…' },
+					'formatted_length': { 'default': '' },
+					'images': ['', '', ''] }] });
 
 		case (0, _constants2.default)('searchPlansSuccess'):
 			return Object.assign({}, state, { 'items': action.response.reading_plans });
 
 		case (0, _constants2.default)('searchPlansFailure'):
-			return Object.assign({}, state, { 'items': [{ 'plan_id': 0, 'name': { 'default': action.api_errors[0].error } }] });
+			return Object.assign({}, state, { 'items': [{
+					'plan_id': 0,
+					'name': { 'default': action.api_errors[0].error },
+					'formatted_length': { 'default': '' },
+					'images': ['', '', ''] }] });
 
 		case (0, _constants2.default)('focusPlanSearch'):
 			return Object.assign({}, state, { 'focus_id': action.index, 'query': '', 'items': [] });

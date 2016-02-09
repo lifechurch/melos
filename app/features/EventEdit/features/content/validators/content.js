@@ -9,7 +9,8 @@ export function validateSetContentFieldParams(params) {
 		throw new Error('Content Field Name must be string')
 	}
 
-	if (typeof value !== 'string' && typeof value !== 'number') {
+	if (typeof value !== 'string' && typeof value !== 'number' && typeof value !== 'object') {
+		// added "object" ... so, pretty much everything?
 		throw new Error('Content Field Value must be string or number')
 	}
 }

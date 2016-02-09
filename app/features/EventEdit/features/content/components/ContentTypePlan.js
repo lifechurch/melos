@@ -18,7 +18,7 @@ var PlanList = React.createClass({
 			return <li key={item.id} data-plan_id={item.id} name="plan_id" value={item.id} onClick={handlePlanClick}>
 				{image}
 				<div className="title">{item.name.default}</div>
-				<div className="length">{item.total_days + " days"}</div>
+				<div className="length">{item.formatted_length.default}</div>
 			</li>;
 		};
 		return <ul>{items.map(createItem)}</ul>;
@@ -39,8 +39,8 @@ var SelectedPlan = React.createClass({
 
 		return <div className="selected" key={item.plan_id} data-plan_id={item.plan_id} name="plan_id" value={item.plan_id} onClick={handlePlanClick}>
 			{image}
-			<div className="title">{item.name.default} <span className="remove">remove</span></div>
-			<div className="length">{item.total_days + " days"}</div>
+			<div className="title">{item.title}</div>
+			<div className="length">{item.formatted_length}</div>
 		</div>;
 	}
 });
@@ -53,14 +53,8 @@ class ContentTypePlan extends Component {
 
 		// Selected
 		if (contentData.plan_id) {
-			var selectedPlan;
-			selectedPlan = {
-				'plan_id': contentData.plan_id,
-				'total_days': contentData.plan_id,
-				'name': {'default': contentData.language_tag}
-			}
 			output = <div>
-				<SelectedPlan item={selectedPlan} handlePlanClick={handlePlanRemove} />
+				<SelectedPlan item={contentData} handlePlanClick={handlePlanRemove} />
 			</div>
 
 		// Focused plan search
@@ -92,6 +86,7 @@ class ContentTypePlan extends Component {
 			</div>
 
 		}
+
 		return (
 			<div className="plan-content">
 				{output}
