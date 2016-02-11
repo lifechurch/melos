@@ -1379,8 +1379,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var SEARCH_TIMEOUT = 500;
-
 function createBaseContentObject(eventId, type) {
 	return {
 		id: eventId,
@@ -1475,63 +1473,17 @@ var EventEditContentContainer = function (_Component) {
 		}
 	}, {
 		key: 'handleRemove',
-		value: function handleRemove(index, contentId) {
+		value: function handleRemove(index, id, content_id) {
 			var _props5 = this.props;
 			var event = _props5.event;
 			var dispatch = _props5.dispatch;
 
 			var params = {
+				id: id,
 				index: index,
-				id: event.item.id,
-				content_id: contentId
+				content_id: content_id
 			};
 			dispatch(_creators2.default.remove(params));
-		}
-	}, {
-		key: 'handlePlanSearchChange',
-		value: function handlePlanSearchChange(index, field, value) {
-			var dispatch = this.props.dispatch;
-
-			dispatch(_creators2.default.setPlanField({
-				index: index,
-				field: field,
-				value: value
-			}));
-
-			if (typeof this.cancelSearch === 'number') {
-				clearTimeout(this.cancelSearch);
-				this.cancelSearch = null;
-			}
-
-			// Can't pass extra params in IE?
-			this.cancelSearch = setTimeout(this.performPlanSearch.bind(this), SEARCH_TIMEOUT, index, field, value);
-		}
-	}, {
-		key: 'handlePlanSearchFocus',
-		value: function handlePlanSearchFocus(index) {
-			var dispatch = this.props.dispatch;
-
-			dispatch(_creators2.default.focusPlanSearch({
-				index: index
-			}));
-		}
-	}, {
-		key: 'performPlanSearch',
-		value: function performPlanSearch(index, field, value) {
-			var dispatch = this.props.dispatch;
-
-			dispatch(_creators2.default.searchPlans({
-				index: index,
-				query: value,
-				language_tag: 'en'
-			}));
-		}
-	}, {
-		key: 'clearPlanSearch',
-		value: function clearPlanSearch() {
-			var dispatch = this.props.dispatch;
-
-			dispatch(_creators2.default.clearPlanSearch());
 		}
 	}, {
 		key: 'render',
@@ -1539,16 +1491,15 @@ var EventEditContentContainer = function (_Component) {
 			var _props6 = this.props;
 			var event = _props6.event;
 			var plans = _props6.plans;
+			var dispatch = _props6.dispatch;
 
 			var contentFeed = _react2.default.createElement(_ContentFeed2.default, {
+				dispatch: dispatch,
 				event: event,
 				plans: plans,
 				handleUpdate: this.handleUpdate.bind(this),
 				handleChange: this.handleChange.bind(this),
-				handleRemove: this.handleRemove.bind(this),
-				handlePlanSearchChange: this.handlePlanSearchChange.bind(this),
-				handlePlanSearchFocus: this.handlePlanSearchFocus.bind(this),
-				clearPlanSearch: this.clearPlanSearch.bind(this)
+				handleRemove: this.handleRemove.bind(this)
 			});
 
 			if ((typeof event === 'undefined' ? 'undefined' : _typeof(event)) !== 'object' || !Array.isArray(event.item.content) || event.item.content.length === 0) {
@@ -2582,7 +2533,7 @@ var ActionCreators = {
 				},
 				params: params,
 				http_method: 'post',
-				types: [(0, _constants2.default)('updateRequest'), (0, _constants2.default)('updateSuccess'), (0, _constants2.default)('updateFailure')]
+				types: [(0, _constants2.default)('removeRequest'), (0, _constants2.default)('removeSuccess'), (0, _constants2.default)('removeFailure')]
 			}
 		};
 	},
@@ -2634,6 +2585,10 @@ var _ContentTypeContainer = require('./ContentTypeContainer');
 
 var _ContentTypeContainer2 = _interopRequireDefault(_ContentTypeContainer);
 
+var _reactAddonsCssTransitionGroup = require('react-addons-css-transition-group');
+
+var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2655,26 +2610,26 @@ var ContentFeed = function (_Component) {
 		key: 'render',
 		value: function render() {
 			var _props = this.props;
+			var dispatch = _props.dispatch;
 			var event = _props.event;
+			var plans = _props.plans;
 			var handleUpdate = _props.handleUpdate;
 			var handleChange = _props.handleChange;
-			var handlePlanSearchChange = _props.handlePlanSearchChange;
-			var clearPlanSearch = _props.clearPlanSearch;
-			var handlePlanSearchFocus = _props.handlePlanSearchFocus;
-			var plans = _props.plans;
+			var handleRemove = _props.handleRemove;
 			var content = event.item.content;
 
 			var contentList = content.map(function (c, i) {
+				var key = c.temp_content_id || c.content_id;
 				return _react2.default.createElement(_ContentTypeContainer2.default, {
-					key: i,
+					key: key,
+					dispatch: dispatch,
+					event: event,
+					plans: plans,
 					handleChange: handleChange,
 					handleUpdate: handleUpdate,
-					handlePlanSearchChange: handlePlanSearchChange,
-					handlePlanSearchFocus: handlePlanSearchFocus,
-					clearPlanSearch: clearPlanSearch,
+					handleRemove: handleRemove,
 					content: c,
-					contentIndex: i,
-					plans: plans });
+					contentIndex: i });
 			});
 
 			return _react2.default.createElement(
@@ -2686,7 +2641,11 @@ var ContentFeed = function (_Component) {
 					_react2.default.createElement(
 						_Column2.default,
 						{ s: 'medium-12' },
-						contentList
+						_react2.default.createElement(
+							_reactAddonsCssTransitionGroup2.default,
+							{ transitionName: 'content' },
+							contentList
+						)
 					)
 				)
 			);
@@ -2700,7 +2659,7 @@ ContentFeed.propTypes = {};
 
 exports.default = ContentFeed;
 
-},{"../../../../../../app/components/Column":8,"../../../../../../app/components/Row":14,"./ContentTypeContainer":32,"react":693}],30:[function(require,module,exports){
+},{"../../../../../../app/components/Column":8,"../../../../../../app/components/Row":14,"./ContentTypeContainer":32,"react":693,"react-addons-css-transition-group":302}],30:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -2986,87 +2945,22 @@ var ContentTypeContainer = function (_Component) {
 			this.autoSave();
 		}
 	}, {
-		key: 'handlePlanSearchChange',
-		value: function handlePlanSearchChange(changeEvent) {
-			console.log(changeEvent);
-			console.log(changeEvent.target);
-			var _props3 = this.props;
-			var contentIndex = _props3.contentIndex;
-			var handlePlanSearchChange = _props3.handlePlanSearchChange;
-			var _changeEvent$target2 = changeEvent.target;
-			var name = _changeEvent$target2.name;
-			var value = _changeEvent$target2.value;
-
-			console.log(name, value);
-			handlePlanSearchChange(contentIndex, name, value);
-		}
-	}, {
-		key: 'handlePlanSearchFocus',
-		value: function handlePlanSearchFocus(focusEvent) {
-			var _props4 = this.props;
-			var contentIndex = _props4.contentIndex;
-			var handlePlanSearchFocus = _props4.handlePlanSearchFocus;
-
-			handlePlanSearchFocus(contentIndex);
-		}
-	}, {
-		key: 'handlePlanAdd',
-		value: function handlePlanAdd(clickEvent) {
-			var _props5 = this.props;
-			var contentIndex = _props5.contentIndex;
-			var handleChange = _props5.handleChange;
-			var clearPlanSearch = _props5.clearPlanSearch;
-			var plans = _props5.plans;
-
-			var plan_id = parseInt(clickEvent.currentTarget.dataset['plan_id']);
-			handleChange(contentIndex, 'plan_id', plan_id);
-
-			// Find in plans[]
-			// If we knew the index, we could just pass it directly
-			var selectedPlan;
-			selectedPlan = 0;
-			for (var i in plans.items) {
-				if (plans.items[i].id == plan_id) {
-					selectedPlan = plans.items[i];
-					break;
-				}
-			}
-
-			// Would be nice to be able to pass JSON
-			handleChange(contentIndex, 'title', selectedPlan.name.default);
-			handleChange(contentIndex, 'formatted_length', selectedPlan.formatted_length.default);
-			handleChange(contentIndex, 'images', selectedPlan.images);
-			handleChange(contentIndex, 'short_url', selectedPlan.short_url);
-
-			clearPlanSearch();
-			this.autoSave();
-		}
-	}, {
-		key: 'handlePlanRemove',
-		value: function handlePlanRemove(clickEvent) {
-			var _props6 = this.props;
-			var contentIndex = _props6.contentIndex;
-			var handleChange = _props6.handleChange;
-
-			handleChange(contentIndex, 'plan_id', 0);
-			this.autoSave();
-		}
-	}, {
 		key: 'handleRemove',
 		value: function handleRemove(removeEvent) {
-			var _props7 = this.props;
-			var contentIndex = _props7.contentIndex;
-			var content = _props7.content;
-			var handleRemove = _props7.handleRemove;
+			var _props3 = this.props;
+			var contentIndex = _props3.contentIndex;
+			var content = _props3.content;
+			var handleRemove = _props3.handleRemove;
+			var event = _props3.event;
 
-			handleRemove(contentIndex, content.content_id);
+			handleRemove(contentIndex, event.item.id, content.content_id);
 		}
 	}, {
 		key: 'autoSave',
 		value: function autoSave() {
-			var _props8 = this.props;
-			var content = _props8.content;
-			var handleUpdate = _props8.handleUpdate;
+			var _props4 = this.props;
+			var content = _props4.content;
+			var handleUpdate = _props4.handleUpdate;
 
 			if (typeof this.cancelSave === 'number') {
 				clearTimeout(this.cancelSave);
@@ -3078,31 +2972,32 @@ var ContentTypeContainer = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _props9 = this.props;
-			var contentIndex = _props9.contentIndex;
-			var content = _props9.content;
-			var plans = _props9.plans;
+			var _props5 = this.props;
+			var dispatch = _props5.dispatch;
+			var handleChange = _props5.handleChange;
+			var contentIndex = _props5.contentIndex;
+			var content = _props5.content;
+			var plans = _props5.plans;
 
 			var InnerContainer = null;
 			switch (content.type) {
 				case 'text':
-					InnerContainer = _react2.default.createElement(_ContentTypeText2.default, { handleChange: this.handleChange.bind(this), contentData: content.data });
+					InnerContainer = _react2.default.createElement(_ContentTypeText2.default, { handleRemove: this.handleRemove.bind(this), handleChange: this.handleChange.bind(this), contentData: content.data });
 					break;
 
 				case 'announcement':
-					InnerContainer = _react2.default.createElement(_ContentTypeAnnouncement2.default, { handleChange: this.handleChange.bind(this), contentData: content.data });
+					InnerContainer = _react2.default.createElement(_ContentTypeAnnouncement2.default, { handleRemove: this.handleRemove.bind(this), handleChange: this.handleChange.bind(this), contentData: content.data });
 					break;
 
 				case 'reference':
 				case 'plan':
 					InnerContainer = _react2.default.createElement(_ContentTypePlan2.default, {
-						handlePlanSearchChange: this.handlePlanSearchChange.bind(this),
-						handlePlanAdd: this.handlePlanAdd.bind(this),
-						handlePlanRemove: this.handlePlanRemove.bind(this),
-						handlePlanSearchFocus: this.handlePlanSearchFocus.bind(this),
+						dispatch: dispatch,
+						handleChange: handleChange,
 						contentData: content.data,
 						contentIndex: contentIndex,
-						plans: plans });
+						plans: plans,
+						autoSave: this.autoSave.bind(this) });
 					break;
 
 				case 'url':
@@ -3124,8 +3019,8 @@ var ContentTypeContainer = function (_Component) {
 						content.type.toUpperCase(),
 						' ',
 						_react2.default.createElement(
-							'span',
-							{ className: 'right' },
+							'a',
+							{ className: 'right', onClick: this.handleRemove.bind(this) },
 							_react2.default.createElement('img', { src: '/images/thin-x.png' })
 						),
 						_react2.default.createElement(
@@ -3169,6 +3064,10 @@ var _Input = require('../../../../../../app/components/Input');
 
 var _Input2 = _interopRequireDefault(_Input);
 
+var _creators = require('../actions/creators');
+
+var _creators2 = _interopRequireDefault(_creators);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3176,6 +3075,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SEARCH_TIMEOUT = 500;
 
 var PlanList = _react2.default.createClass({
 	displayName: 'PlanList',
@@ -3260,16 +3161,111 @@ var ContentTypePlan = function (_Component) {
 	}
 
 	_createClass(ContentTypePlan, [{
-		key: 'render',
-		value: function render() {
+		key: 'performPlanSearch',
+		value: function performPlanSearch(index, field, value) {
+			var dispatch = this.props.dispatch;
+
+			dispatch(_creators2.default.searchPlans({
+				index: index,
+				query: value,
+				language_tag: 'en'
+			}));
+		}
+	}, {
+		key: 'clearPlanSearch',
+		value: function clearPlanSearch() {
+			var dispatch = this.props.dispatch;
+
+			dispatch(_creators2.default.clearPlanSearch());
+		}
+	}, {
+		key: 'handlePlanSearchChange',
+		value: function handlePlanSearchChange(changeEvent) {
 			var _props3 = this.props;
 			var contentIndex = _props3.contentIndex;
-			var contentData = _props3.contentData;
 			var handlePlanSearchChange = _props3.handlePlanSearchChange;
-			var handlePlanSearchFocus = _props3.handlePlanSearchFocus;
-			var handlePlanAdd = _props3.handlePlanAdd;
-			var handlePlanRemove = _props3.handlePlanRemove;
-			var plans = _props3.plans;
+			var dispatch = _props3.dispatch;
+			var _changeEvent$target = changeEvent.target;
+			var name = _changeEvent$target.name;
+			var field = _changeEvent$target.field;
+			var value = _changeEvent$target.value;
+
+			dispatch(_creators2.default.setPlanField({
+				index: contentIndex,
+				field: field,
+				value: value
+			}));
+
+			if (typeof this.cancelSearch === 'number') {
+				clearTimeout(this.cancelSearch);
+				this.cancelSearch = null;
+			}
+
+			// Can't pass extra params in IE?
+			this.cancelSearch = setTimeout(this.performPlanSearch.bind(this), SEARCH_TIMEOUT, contentIndex, field, value);
+		}
+	}, {
+		key: 'handlePlanSearchFocus',
+		value: function handlePlanSearchFocus(focusEvent) {
+			var _props4 = this.props;
+			var contentIndex = _props4.contentIndex;
+			var dispatch = _props4.dispatch;
+
+			dispatch(_creators2.default.focusPlanSearch({
+				index: contentIndex
+			}));
+		}
+	}, {
+		key: 'handlePlanAdd',
+		value: function handlePlanAdd(clickEvent) {
+			var _props5 = this.props;
+			var dispatch = _props5.dispatch;
+			var autoSave = _props5.autoSave;
+			var contentIndex = _props5.contentIndex;
+			var handleChange = _props5.handleChange;
+			var plans = _props5.plans;
+
+			var plan_id = parseInt(clickEvent.currentTarget.dataset['plan_id']);
+			handleChange(contentIndex, 'plan_id', plan_id);
+
+			// Find in plans[]
+			// If we knew the index, we could just pass it directly
+			var selectedPlan;
+			selectedPlan = 0;
+			for (var i in plans.items) {
+				if (plans.items[i].id == plan_id) {
+					selectedPlan = plans.items[i];
+					break;
+				}
+			}
+
+			// Would be nice to be able to pass JSON
+			handleChange(contentIndex, 'title', selectedPlan.name.default);
+			handleChange(contentIndex, 'formatted_length', selectedPlan.formatted_length.default);
+			handleChange(contentIndex, 'images', selectedPlan.images);
+			handleChange(contentIndex, 'short_url', selectedPlan.short_url);
+
+			// ::this.clearPlanSearch()
+			autoSave();
+		}
+	}, {
+		key: 'handlePlanRemove',
+		value: function handlePlanRemove(clickEvent) {
+			var _props6 = this.props;
+			var contentIndex = _props6.contentIndex;
+			var handleChange = _props6.handleChange;
+			var autoSave = _props6.autoSave;
+
+			handleChange(contentIndex, 'plan_id', 0);
+			// autoSave()
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _props7 = this.props;
+			var contentIndex = _props7.contentIndex;
+			var contentData = _props7.contentData;
+			var plans = _props7.plans;
 
 			var output;
 
@@ -3278,7 +3274,7 @@ var ContentTypePlan = function (_Component) {
 				output = _react2.default.createElement(
 					'div',
 					null,
-					_react2.default.createElement(SelectedPlan, { item: contentData, handlePlanClick: handlePlanRemove })
+					_react2.default.createElement(SelectedPlan, { item: contentData, handlePlanClick: this.handlePlanRemove.bind(this) })
 				);
 
 				// Focused plan search
@@ -3290,11 +3286,11 @@ var ContentTypePlan = function (_Component) {
 							InputType: _Input2.default,
 							placeholder: 'Search…',
 							name: 'query',
-							onChange: handlePlanSearchChange,
-							onFocus: handlePlanSearchFocus,
+							onChange: this.handlePlanSearchChange.bind(this),
+							onFocus: this.handlePlanSearchFocus.bind(this),
 							value: plans.query,
 							errors: contentData.errors }),
-						_react2.default.createElement(PlanList, { items: plans.items, handlePlanClick: handlePlanAdd })
+						_react2.default.createElement(PlanList, { items: plans.items, handlePlanClick: this.handlePlanAdd.bind(this) })
 					);
 
 					// Out-of-focus plan search
@@ -3306,8 +3302,8 @@ var ContentTypePlan = function (_Component) {
 								InputType: _Input2.default,
 								placeholder: 'Search…',
 								name: 'query',
-								onChange: handlePlanSearchChange,
-								onFocus: handlePlanSearchFocus,
+								onChange: this.handlePlanSearchChange.bind(this),
+								onFocus: this.handlePlanSearchFocus.bind(this),
 								value: '',
 								errors: contentData.errors })
 						);
@@ -3328,7 +3324,7 @@ ContentTypePlan.propTypes = {};
 
 exports.default = ContentTypePlan;
 
-},{"../../../../../../app/components/FormField":11,"../../../../../../app/components/Input":13,"react":693}],34:[function(require,module,exports){
+},{"../../../../../../app/components/FormField":11,"../../../../../../app/components/Input":13,"../actions/creators":28,"react":693}],34:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -3510,15 +3506,15 @@ function validateRemoveContentParams(params) {
 	var content_id = params.content_id;
 
 	if (typeof index !== 'number') {
-		throw new Error('Invalid Content Index');
+		throw new Error('Remove: Invalid Content Index');
 	}
 
 	if (typeof content_id !== 'number') {
-		throw new Error('Reorder: Invalid Content ID');
+		throw new Error('Remove: Invalid Content ID');
 	}
 
-	if (!Array.isArray(id) || id.length === 0) {
-		throw new Error('Reorder: Invalid Event ID');
+	if (typeof id !== 'number') {
+		throw new Error('Remove: Invalid Event ID');
 	}
 }
 
@@ -4272,6 +4268,7 @@ function event() {
 		case (0, _constants6.default)('new'):
 			var newContent = Object.assign({}, action.params);
 			newContent.isDirty = false;
+			newContent.temp_content_id = new Date().getTime();
 			return Object.assign({}, state, {
 				item: _extends({}, state.item, {
 					content: [].concat(_toConsumableArray(state.item.content.slice(0, action.params.index)), [newContent], _toConsumableArray(state.item.content.slice(action.params.index)))
@@ -4299,7 +4296,12 @@ function event() {
 				})
 			});
 
-		case (0, _constants6.default)('removeSuccess'):
+		case (0, _constants6.default)('removeRequest'):
+			return Object.assign({}, state, {
+				item: _extends({}, state.item, {
+					content: [].concat(_toConsumableArray(state.item.content.slice(0, action.params.index)), _toConsumableArray(state.item.content.slice(action.params.index + 1)))
+				})
+			});
 			return state;
 
 		case (0, _constants6.default)('setField'):

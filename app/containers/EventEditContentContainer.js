@@ -4,8 +4,6 @@ import ContentHeader from '../features/EventEdit/features/content/components/Con
 import ContentFeed from '../features/EventEdit/features/content/components/ContentFeed'
 import ActionCreators from '../features/EventEdit/features/content/actions/creators'
 
-const SEARCH_TIMEOUT = 500
-
 function createBaseContentObject(eventId, type) {
 	return {
 		id: eventId,
@@ -99,56 +97,16 @@ class EventEditContentContainer extends Component {
 		dispatch(ActionCreators.remove(params))
 	}
 
-	handlePlanSearchChange(index, field, value) {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.setPlanField({
-			index,
-			field,
-			value
-		}))
-
-		if (typeof this.cancelSearch === 'number') {
-			clearTimeout(this.cancelSearch)
-			this.cancelSearch = null
-		}
-
-		// Can't pass extra params in IE?
-		this.cancelSearch = setTimeout(::this.performPlanSearch, SEARCH_TIMEOUT, index, field, value)
-	}
-
-	handlePlanSearchFocus(index) {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.focusPlanSearch({
-			index
-		}))
-	}
-
-	performPlanSearch(index, field, value) {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.searchPlans({
-			index,
-			query: value,
-			language_tag: 'en'
-		}))
-	}
-
-	clearPlanSearch() {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.clearPlanSearch())
-	}
-
 	render() {
-		const { event, plans } = this.props
+		const { event, plans, dispatch } = this.props
 		let contentFeed = (
 			<ContentFeed
+				dispatch={dispatch}
 				event={event}
 				plans={plans}
 				handleUpdate={::this.handleUpdate}
 				handleChange={::this.handleChange}
 				handleRemove={::this.handleRemove}
-				handlePlanSearchChange={::this.handlePlanSearchChange}
-				handlePlanSearchFocus={::this.handlePlanSearchFocus}
-				clearPlanSearch={::this.clearPlanSearch}
 			/>
 		)
 

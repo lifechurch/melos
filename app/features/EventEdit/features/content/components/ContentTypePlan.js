@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
+import ActionCreators from '../actions/creators'
+
+const SEARCH_TIMEOUT = 500
 
 var PlanList = React.createClass({
 
@@ -47,14 +50,88 @@ var SelectedPlan = React.createClass({
 
 class ContentTypePlan extends Component {
 
+	performPlanSearch(index, field, value) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.searchPlans({
+			index,
+			query: value,
+			language_tag: 'en'
+		}))
+	}
+
+	clearPlanSearch() {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.clearPlanSearch())
+	}
+
+	handlePlanSearchChange(changeEvent) {
+		const { contentIndex, handlePlanSearchChange, dispatch } = this.props
+		const { name, field, value } = changeEvent.target
+
+		dispatch(ActionCreators.setPlanField({
+			index: contentIndex,
+			field,
+			value
+		}))
+
+		if (typeof this.cancelSearch === 'number') {
+			clearTimeout(this.cancelSearch)
+			this.cancelSearch = null
+		}
+
+		// Can't pass extra params in IE?
+		this.cancelSearch = setTimeout(::this.performPlanSearch, SEARCH_TIMEOUT, contentIndex, field, value)
+
+	}
+
+	handlePlanSearchFocus(focusEvent) {
+		const { contentIndex, dispatch } = this.props
+
+		dispatch(ActionCreators.focusPlanSearch({
+			index: contentIndex
+		}))
+	}
+
+	handlePlanAdd(clickEvent) {
+		const { dispatch, autoSave, contentIndex, handleChange, plans } = this.props
+		const plan_id = parseInt(clickEvent.currentTarget.dataset['plan_id'])
+		handleChange(contentIndex, 'plan_id', plan_id)
+
+		// Find in plans[]
+		// If we knew the index, we could just pass it directly
+		var selectedPlan;
+		selectedPlan = 0
+		for( var i in plans.items ){
+			if( plans.items[i].id == plan_id ) {
+				selectedPlan = plans.items[i];
+				break;
+			}
+		}
+
+		// Would be nice to be able to pass JSON
+		handleChange(contentIndex, 'title', selectedPlan.name.default)
+		handleChange(contentIndex, 'formatted_length', selectedPlan.formatted_length.default)
+		handleChange(contentIndex, 'images', selectedPlan.images)
+		handleChange(contentIndex, 'short_url', selectedPlan.short_url)
+
+		// ::this.clearPlanSearch()
+		autoSave()
+	}
+
+	handlePlanRemove(clickEvent) {
+		const { contentIndex, handleChange, autoSave } = this.props
+		handleChange(contentIndex, 'plan_id', 0)
+		// autoSave()
+	}
+
 	render() {
-		const { contentIndex, contentData, handlePlanSearchChange, handlePlanSearchFocus, handlePlanAdd, handlePlanRemove, plans } = this.props
+		const { contentIndex, contentData, plans } = this.props
 		var output;
 
 		// Selected
 		if (contentData.plan_id) {
 			output = <div>
-				<SelectedPlan item={contentData} handlePlanClick={handlePlanRemove} />
+				<SelectedPlan item={contentData} handlePlanClick={::this.handlePlanRemove} />
 			</div>
 
 		// Focused plan search
@@ -64,12 +141,12 @@ class ContentTypePlan extends Component {
 					InputType={Input}
 					placeholder="Search…"
 					name="query"
-					onChange={handlePlanSearchChange}
-					onFocus={handlePlanSearchFocus}
+					onChange={::this.handlePlanSearchChange}
+					onFocus={::this.handlePlanSearchFocus}
 					value={plans.query}
 					errors={contentData.errors} />
 
-				<PlanList items={plans.items} handlePlanClick={handlePlanAdd} />
+				<PlanList items={plans.items} handlePlanClick={::this.handlePlanAdd} />
 			</div>
 
 		// Out-of-focus plan search
@@ -79,8 +156,8 @@ class ContentTypePlan extends Component {
 					InputType={Input}
 					placeholder="Search…"
 					name="query"
-					onChange={handlePlanSearchChange}
-					onFocus={handlePlanSearchFocus}
+					onChange={::this.handlePlanSearchChange}
+					onFocus={::this.handlePlanSearchFocus}
 					value=''
 					errors={contentData.errors} />
 			</div>

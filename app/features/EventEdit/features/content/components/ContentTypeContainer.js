@@ -31,52 +31,6 @@ class ContentTypeContainer extends Component {
 		this.autoSave()
 	}
 
-	handlePlanSearchChange(changeEvent) {
-		console.log(changeEvent)
-		console.log(changeEvent.target)
-		const { contentIndex, handlePlanSearchChange } = this.props
-		const { name, value } = changeEvent.target
-		console.log(name, value)
-		handlePlanSearchChange(contentIndex, name, value)
-	}
-
-	handlePlanSearchFocus(focusEvent) {
-		const { contentIndex, handlePlanSearchFocus } = this.props
-		handlePlanSearchFocus(contentIndex)
-	}
-
-	handlePlanAdd(clickEvent) {
-		const { contentIndex, handleChange, clearPlanSearch, plans } = this.props
-		const plan_id = parseInt(clickEvent.currentTarget.dataset['plan_id'])
-		handleChange(contentIndex, 'plan_id', plan_id)
-
-		// Find in plans[]
-		// If we knew the index, we could just pass it directly
-		var selectedPlan;
-		selectedPlan = 0
-		for( var i in plans.items ){
-			if( plans.items[i].id == plan_id ) {
-				selectedPlan = plans.items[i];
-				break;
-			}
-		}
-
-		// Would be nice to be able to pass JSON
-		handleChange(contentIndex, 'title', selectedPlan.name.default)
-		handleChange(contentIndex, 'formatted_length', selectedPlan.formatted_length.default)
-		handleChange(contentIndex, 'images', selectedPlan.images)
-		handleChange(contentIndex, 'short_url', selectedPlan.short_url)
-
-		clearPlanSearch()
-		this.autoSave()
-	}
-
-	handlePlanRemove(clickEvent) {
-		const { contentIndex, handleChange } = this.props
-		handleChange(contentIndex, 'plan_id', 0)
-		this.autoSave()
-	}
-
 	handleRemove(removeEvent) {
 		const { contentIndex, content, handleRemove, event } = this.props
 		handleRemove(contentIndex, event.item.id, content.content_id)
@@ -94,7 +48,7 @@ class ContentTypeContainer extends Component {
 	}
 
 	render() {
-		const { contentIndex, content, plans } = this.props
+		const { dispatch, handleChange, contentIndex, content, plans } = this.props
 
 		let InnerContainer = null
 		switch (content.type) {
@@ -109,13 +63,12 @@ class ContentTypeContainer extends Component {
 			case 'reference':
 			case 'plan':
 				InnerContainer = (<ContentTypePlan
-									handlePlanSearchChange={::this.handlePlanSearchChange}
-									handlePlanAdd={::this.handlePlanAdd}
-									handlePlanRemove={::this.handlePlanRemove}
-									handlePlanSearchFocus={::this.handlePlanSearchFocus}
+									dispatch={dispatch}
+									handleChange={handleChange}
 									contentData={content.data}
 									contentIndex={contentIndex}
-									plans={plans} />)
+									plans={plans}
+									autoSave={::this.autoSave} />)
 				break
 
 			case 'url':
