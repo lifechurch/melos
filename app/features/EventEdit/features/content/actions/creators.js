@@ -41,7 +41,6 @@ const ActionCreators = {
 	},
 
 	setPlanField(params) {
-		// validate…?
 		return {
 			type: contentType('setPlanField'),
 			...params
@@ -49,7 +48,6 @@ const ActionCreators = {
 	},
 
 	searchPlans(params) {
-		// validate…?
 		return {
 			params: {
 				...params,
@@ -63,6 +61,13 @@ const ActionCreators = {
 				http_method: 'get',
 				types: [ contentType('searchPlansRequest'), contentType('searchPlansSuccess'), contentType('searchPlansFailure') ]
 			}
+		}
+	},
+
+	selectPlan(params) {
+		return {
+			type: contentType('selectPlan'),
+			...params
 		}
 	},
 

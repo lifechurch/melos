@@ -14,6 +14,7 @@ const constants = {
 	reorderFailure: 'CONTENT_REORDER_FAILURE',
 	setField: 'CONTENT_SET_FIELD',
 	setPlanField: 'SET_PLAN_FIELD',
+	selectPlan: 'SELECT_PLAN',
 	searchPlansRequest: 'SEARCH_PLANS_REQUEST',
 	searchPlansSuccess: 'SEARCH_PLANS_SUCCESS',
 	searchPlansFailure: 'SEARCH_PLANS_FAILURE',

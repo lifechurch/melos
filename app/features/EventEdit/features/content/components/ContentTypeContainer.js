@@ -48,7 +48,7 @@ class ContentTypeContainer extends Component {
 	}
 
 	render() {
-		const { dispatch, handleChange, contentIndex, content, plans } = this.props
+		const { dispatch, contentIndex, content, plans } = this.props
 
 		let InnerContainer = null
 		switch (content.type) {
@@ -64,7 +64,7 @@ class ContentTypeContainer extends Component {
 			case 'plan':
 				InnerContainer = (<ContentTypePlan
 									dispatch={dispatch}
-									handleChange={handleChange}
+									handleChange={::this.handleChange}
 									contentData={content.data}
 									contentIndex={contentIndex}
 									plans={plans}

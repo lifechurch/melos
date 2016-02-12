@@ -93,9 +93,8 @@ class ContentTypePlan extends Component {
 	}
 
 	handlePlanAdd(clickEvent) {
-		const { dispatch, autoSave, contentIndex, handleChange, plans } = this.props
+		const { contentIndex, dispatch, handleChange, plans } = this.props
 		const plan_id = parseInt(clickEvent.currentTarget.dataset['plan_id'])
-		handleChange(contentIndex, 'plan_id', plan_id)
 
 		// Find in plans[]
 		// If we knew the index, we could just pass it directly
@@ -108,20 +107,23 @@ class ContentTypePlan extends Component {
 			}
 		}
 
-		// Would be nice to be able to pass JSON
-		handleChange(contentIndex, 'title', selectedPlan.name.default)
-		handleChange(contentIndex, 'formatted_length', selectedPlan.formatted_length.default)
-		handleChange(contentIndex, 'images', selectedPlan.images)
-		handleChange(contentIndex, 'short_url', selectedPlan.short_url)
+		dispatch(ActionCreators.selectPlan({
+			index: contentIndex,
+			selectedPlan: {
+				plan_id: selectedPlan.id,
+				title: selectedPlan.name.default,
+				formatted_length: selectedPlan.formatted_length.default,
+				images: selectedPlan.images,
+				short_url: selectedPlan.short_url
+			}
+		}))
 
-		// ::this.clearPlanSearch()
-		autoSave()
+		handleChange({target: {name: 'plan_id', value: plan_id}})
 	}
 
 	handlePlanRemove(clickEvent) {
 		const { contentIndex, handleChange, autoSave } = this.props
-		handleChange(contentIndex, 'plan_id', 0)
-		// autoSave()
+		handleChange({target: {name: 'plan_id', value: 0}})
 	}
 
 	render() {
