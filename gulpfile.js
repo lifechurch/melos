@@ -23,11 +23,11 @@ gulp.task('css', function() {
 	gulp.src(['./app/less/**/*.less'])
 		.pipe(concat('style.min.css'))
     .pipe(less())
-		.pipe(cssnano())    
+		.pipe(cssnano())
     .pipe(gulp.dest('./public/stylesheets'));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['css', 'javascript'], function() {
 	livereload.listen();
 	gulp.watch( ["./app/**/*.js"], ['javascript'] );
 	gulp.watch( ["./app/**/*.less"], ['css'] );
