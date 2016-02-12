@@ -4,6 +4,7 @@ import Column from '../../../../../../app/components/Column'
 import ContentTypeText from './ContentTypeText'
 import ContentTypeAnnouncement from './ContentTypeAnnouncement'
 import ContentTypePlan from './ContentTypePlan'
+import ContentTypeLink from './ContentTypeLink'
 
 const AUTO_SAVE_TIMEOUT = 5000
 
@@ -72,6 +73,8 @@ class ContentTypeContainer extends Component {
 				break
 
 			case 'url':
+				InnerContainer = (<ContentTypeLink handleChange={::this.handleChange} contentData={content.data} />)
+				break
 			case 'image':
 
 			default:
