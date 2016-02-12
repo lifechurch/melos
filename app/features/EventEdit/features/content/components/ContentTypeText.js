@@ -3,11 +3,11 @@ import FormField from '../../../../../../app/components/FormField'
 import HtmlEditor from '../../../../../../app/components/HtmlEditor'
 
 class ContentTypeText extends Component {
-	
+
 	render() {
-		const { contentData, handleChange } = this.props		
+		const { contentData, handleChange } = this.props
 		return (
-			<FormField 
+			<FormField
 				InputType={HtmlEditor}
 				name="body"
 				onChange={handleChange}

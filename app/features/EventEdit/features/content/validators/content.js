@@ -1,9 +1,9 @@
 export function validateSetContentFieldParams(params) {
 	const { index, field, value } = params
-	
+
 	if (typeof index !== 'number') {
 		throw new Error('Invalid Content Index')
-	}		
+	}
 
 	if (typeof field !== 'string') {
 		throw new Error('Content Field Name must be string')
@@ -20,7 +20,7 @@ export function validateRemoveContentParams(params) {
 	if (typeof index !== 'number') {
 		throw new Error('Remove: Invalid Content Index')
 	}
-	
+
 	if (typeof content_id !== 'number') {
 		throw new Error('Remove: Invalid Content ID')
 	}
@@ -103,14 +103,14 @@ function validateTextType(params) {
 
 function validateAnnouncementType(params) {
 	const { title, body } = params
-	
+
 	if (typeof title !== 'string') {
 		throw new Error('Content Type Announcement requires `title` to be a string')
-	}	
+	}
 
 	if (typeof body !== 'string') {
 		throw new Error('Content Type Announcement requires `body` to be a string')
-	}	
+	}
 }
 
 function validateReferenceType(params) {
@@ -142,7 +142,7 @@ function validateUrlType(params) {
 
 	if (typeof title !== 'string') {
 		throw new Error('Content Type URL requires `title` to be a string')
-	}	
+	}
 
 	if (typeof body !== 'string') {
 		throw new Error('Content Type URL requires `body` to be a string')
@@ -150,7 +150,7 @@ function validateUrlType(params) {
 
 	if (typeof url !== 'string') {
 		throw new Error('Content Type URL requires `url` to be a string')
-	}		
+	}
 }
 
 function validateImageType(params) {
@@ -162,5 +162,5 @@ function validateImageType(params) {
 
 	if (typeof image_id !== 'string') {
 		throw new Error('Content Type Image requires `image_id` to be a string')
-	}			
+	}
 }

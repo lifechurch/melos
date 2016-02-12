@@ -13,14 +13,14 @@ class ContentHeader extends Component {
 	}
 
 	render() {
-		const { event, handleAddText, handleAddAnnouncement } = this.props
+		const { event, handleAddText, handleAddAnnouncement, handleAddPlan } = this.props
 		return (
 			<div className='content-header'>
 				<Row>
 					<Column s='medium-12'>
 						<a onClick={handleAddText} className='hollow-button green'>Text</a>
 						<a onClick={::this.handleCreate} className='hollow-button green'>Bible Reference</a>
-						<a onClick={::this.handleCreate} className='hollow-button green'>Plan</a>
+						<a onClick={handleAddPlan} className='hollow-button green'>Plan</a>
 						<a onClick={::this.handleCreate} className='hollow-button green'>Image</a>
 						<a onClick={::this.handleCreate} className='hollow-button green'>External Link</a>
 						<a onClick={handleAddAnnouncement} className='hollow-button green'>Announcement</a>

@@ -3,6 +3,7 @@ import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import ContentTypeText from './ContentTypeText'
 import ContentTypeAnnouncement from './ContentTypeAnnouncement'
+import ContentTypePlan from './ContentTypePlan'
 
 const AUTO_SAVE_TIMEOUT = 5000
 
@@ -47,7 +48,7 @@ class ContentTypeContainer extends Component {
 	}
 
 	render() {
-		const { content } = this.props
+		const { dispatch, contentIndex, content, plans } = this.props
 
 		let InnerContainer = null
 		switch (content.type) {
@@ -61,9 +62,18 @@ class ContentTypeContainer extends Component {
 
 			case 'reference':
 			case 'plan':
+				InnerContainer = (<ContentTypePlan
+									dispatch={dispatch}
+									handleChange={::this.handleChange}
+									contentData={content.data}
+									contentIndex={contentIndex}
+									plans={plans}
+									autoSave={::this.autoSave} />)
+				break
+
 			case 'url':
 			case 'image':
-			
+
 			default:
 				break
 		}

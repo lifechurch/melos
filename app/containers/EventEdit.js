@@ -33,16 +33,16 @@ class EventEdit extends Component {
 		} else {
 			// Isn't Dirty, just go next
 		}
-	}	
+	}
 
 	render() {
-		const { children, event, loc, params, dispatch, modals, routing } = this.props
+		const { children, event, loc, params, dispatch, modals, routing, plans } = this.props
 		return (
 			<div>
 				<Helmet title="Event" />
 				<EventHeader {...this.props} />
 				<div>
-        	{children && React.cloneElement(children, { modals, event, loc, dispatch, params, routing, handleDetailsNext: ::this.handleDetailsNext })}
+        	{children && React.cloneElement(children, { modals, event, loc, dispatch, params, routing, plans, handleDetailsNext: ::this.handleDetailsNext })}
 				</div>
 			</div>
 		)
@@ -73,13 +73,14 @@ EventEdit.defaultProps = {
 		}
 	}
 }
- 
+
 function mapStateToProps(state) {
 	return {
 		event: state.event,
 		modals: state.modals,
 		loc: state.loc,
-		routing: state.routing
+		routing: state.routing,
+		plans: state.plans
 	}
 }
 

@@ -1,7 +1,7 @@
 import { getClient } from '@youversion/js-api'
 
-const endpoints = [ 'events' ]
-const versions = [ '3.2' ]
+const endpoints = [ 'events', 'search' ]
+const versions = [ '3.2', '3.1' ]
 const envs = [ 'staging', 'production' ]
 const http_methods = [ 'get', 'post' ]
 
@@ -20,7 +20,7 @@ function getFailureAction(type, action, api_errors) {
 	return finalAction
 }
 
-function getSuccessAction(type, action, response) {	
+function getSuccessAction(type, action, response) {
 	const finalAction = Object.assign({}, action, { response, type })
 	delete finalAction.api_call
 	return finalAction
@@ -28,7 +28,7 @@ function getSuccessAction(type, action, response) {
 
 export default store => next => action => {
 	const api_call = action['api_call']
-	
+
 	if (typeof api_call === 'undefined') {
 		return next(action)
 	}
@@ -53,11 +53,6 @@ export default store => next => action => {
 		throw new Error('Invalid API Environment [' + env + ']')
 	}
 
-	const auth = api_call.auth
-	if (typeof auth !== 'object' || typeof auth.user !== 'string' || typeof auth.pass !== 'string') {
-		throw new Error('Invalid API auth')
-	}
-
 	const params = api_call.params
 	if (typeof params !== 'object') {
 		throw new Error('Invalid API params')
@@ -76,22 +71,43 @@ export default store => next => action => {
 
 	next(getRequestAction(requestType, action))
 
-	return getClient(endpoint)
-		.call(method)
-		.setVersion(version)
-		.setEnvironment(env)
-		.auth(auth.user, auth.pass)
-		.params(params)
-		[http_method]()
-		.then((response) => {
-			const errors = response.errors
-			if (Array.isArray(errors) && errors.length > 0) {
-				next(getFailureAction(failureType, action, errors))
-			} else {
-				next(getSuccessAction(successType, action, response))
-				return response
-			}
-		}, (error) => {
-			next(getSuccessAction(failureType, action, [ error ]))
-		})
+	const auth = api_call.auth
+	if (typeof auth !== 'object' || typeof auth.user !== 'string' || typeof auth.pass !== 'string') {
+		return getClient(endpoint)
+			.call(method)
+			.setVersion(version)
+			.setEnvironment(env)
+			.params(params)
+			[http_method]()
+			.then((response) => {
+				const errors = response.errors
+				if (Array.isArray(errors) && errors.length > 0) {
+					next(getFailureAction(failureType, action, errors))
+				} else {
+					next(getSuccessAction(successType, action, response))
+					return response
+				}
+			}, (error) => {
+				next(getSuccessAction(failureType, action, [ error ]))
+			})
+	} else {
+		return getClient(endpoint)
+			.call(method)
+			.setVersion(version)
+			.setEnvironment(env)
+			.auth(auth.user, auth.pass)
+			.params(params)
+			[http_method]()
+			.then((response) => {
+				const errors = response.errors
+				if (Array.isArray(errors) && errors.length > 0) {
+					next(getFailureAction(failureType, action, errors))
+				} else {
+					next(getSuccessAction(successType, action, response))
+					return response
+				}
+			}, (error) => {
+				next(getSuccessAction(failureType, action, [ error ]))
+			})
+	}
 }

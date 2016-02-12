@@ -59,7 +59,7 @@ export default function event(state = {}, action) {
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: false, isDirty: false, api_errors: action.api_errors }))
 
 		case type('createRequest'):
-			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: true, isDirty: false }))			
+			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: true, isDirty: false }))
 
 		case type('setDetails'):
 			if (['title', 'org_name', 'image', 'description'].indexOf(action.field) > -1) {
@@ -106,7 +106,7 @@ export default function event(state = {}, action) {
 					...state.item,
 					locations: selectLocation(Object.assign({}, state.item.locations), action.locationId, false)
 				}
-			}))			
+			}))
 
 		case locationType('updateRequest'):
 			const { params } = action
@@ -211,7 +211,7 @@ export default function event(state = {}, action) {
 					...state.item,
 					content: [
 						...state.item.content.slice(0, action.params.index),
-						...state.item.content.slice(action.params.index + 1)						
+						...state.item.content.slice(action.params.index + 1)
 					]
 				}
 			})
@@ -221,7 +221,21 @@ export default function event(state = {}, action) {
 			var newContent = Object.assign({}, state.item.content[action.index])
 			newContent.data[action.field] = action.value
 			newContent.isDirty = true
-			return Object.assign({}, state, { 
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.index),
+						newContent,
+						...state.item.content.slice(action.index + 1)
+					]
+				}
+			})
+
+		case contentType('selectPlan'):
+			var newContent = Object.assign({}, state.item.content[action.index])
+			newContent.data = Object.assign(newContent.data, action.selectedPlan)
+			return Object.assign({}, state, {
 				item: {
 					...state.item,
 					content: [

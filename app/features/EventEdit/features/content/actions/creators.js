@@ -14,7 +14,7 @@ const ActionCreators = {
 		validateAddContentParams(params)
 		return {
 			params: {
-				...params,				
+				...params,
 			},
 			api_call: {
 				endpoint: 'events',
@@ -37,14 +37,58 @@ const ActionCreators = {
 		return {
 			type: contentType('setField'),
 			...params
-		}	
+		}
+	},
+
+	setPlanField(params) {
+		return {
+			type: contentType('setPlanField'),
+			...params
+		}
+	},
+
+	searchPlans(params) {
+		return {
+			params: {
+				...params,
+			},
+			api_call: {
+				endpoint: 'search',
+				method: 'reading_plans',
+				version: '3.1',
+				env: 'staging',
+				params: params,
+				http_method: 'get',
+				types: [ contentType('searchPlansRequest'), contentType('searchPlansSuccess'), contentType('searchPlansFailure') ]
+			}
+		}
+	},
+
+	selectPlan(params) {
+		return {
+			type: contentType('selectPlan'),
+			...params
+		}
+	},
+
+	clearPlanSearch() {
+		return {
+			type: contentType('clearPlanSearch')
+		}
+	},
+
+	focusPlanSearch(params) {
+		return {
+			type: contentType('focusPlanSearch'),
+			...params
+		}
 	},
 
 	update(params) {
 		validateAddContentParams(params)
 		return {
 			params: {
-				...params,				
+				...params,
 			},
 			api_call: {
 				endpoint: 'events',
@@ -66,7 +110,7 @@ const ActionCreators = {
 		validateRemoveContentParams(params)
 		return {
 			params: {
-				...params,				
+				...params,
 			},
 			api_call: {
 				endpoint: 'events',

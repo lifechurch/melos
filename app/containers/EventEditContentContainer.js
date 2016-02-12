@@ -17,7 +17,7 @@ class EventEditContentContainer extends Component {
 	handleAddText() {
 		const { event, dispatch } = this.props
 		dispatch(ActionCreators.new(
-			Object.assign({}, 
+			Object.assign({},
 				createBaseContentObject(event.item.id, 'text'),
 				{
 					data: {
@@ -31,7 +31,7 @@ class EventEditContentContainer extends Component {
 	handleAddAnnouncement() {
 		const { event, dispatch } = this.props
 		dispatch(ActionCreators.new(
-			Object.assign({}, 
+			Object.assign({},
 				createBaseContentObject(event.item.id, 'announcement'),
 				{
 					data: {
@@ -41,7 +41,26 @@ class EventEditContentContainer extends Component {
 				}
 			)
 		))
-	}	
+	}
+
+	handleAddPlan() {
+		const { event, dispatch } = this.props
+		dispatch(ActionCreators.new(
+			Object.assign({},
+				createBaseContentObject(event.item.id, 'plan'),
+				{
+					data: {
+						plan_id: 0,
+						language_tag: 'en',
+						title: '',
+						formatted_length: '',
+						images: [],
+						short_url: ''
+					}
+				}
+			)
+		))
+	}
 
 	handleUpdate(index, params) {
 		const { event, dispatch } = this.props
@@ -79,12 +98,14 @@ class EventEditContentContainer extends Component {
 	}
 
 	render() {
-		const { event } = this.props		
+		const { event, plans, dispatch } = this.props
 		let contentFeed = (
-			<ContentFeed 
-				event={event} 
-				handleUpdate={::this.handleUpdate} 
-				handleChange={::this.handleChange} 
+			<ContentFeed
+				dispatch={dispatch}
+				event={event}
+				plans={plans}
+				handleUpdate={::this.handleUpdate}
+				handleChange={::this.handleChange}
 				handleRemove={::this.handleRemove}
 			/>
 		)
@@ -95,15 +116,16 @@ class EventEditContentContainer extends Component {
 					<img src='/images/up-arrow-thin.png' />
 					<p>Choose some content to get started.</p>
 					<a>Need help?</a>
-				</div>				
+				</div>
 			)
 		}
 
 		return (
 			<div>
 				<Helmet title="Event Content" />
-				<ContentHeader 
+				<ContentHeader
 					handleAddText={::this.handleAddText}
+					handleAddPlan={::this.handleAddPlan}
 					handleAddAnnouncement={::this.handleAddAnnouncement} />
 				<div className='content-container'>
 					{contentFeed}

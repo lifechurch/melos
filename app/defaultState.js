@@ -28,28 +28,35 @@ export default {
 		isFetching: false,
 		items: []
 	},
+	plans: {
+		query: '',
+		language_tag: 'en',
+		items: [],
+        focus_id: 0,
+		isFetching: false
+	},
 	eventFeeds: {
-		
+
 		/* API: events/search */
 		discover: {
 			hasError: false,
-			errors: [], 
+			errors: [],
 			isFetching: false,
 			items: []
 		},
-		
-		/* API: events/saved_items */		
+
+		/* API: events/saved_items */
 		saved: {
 			hasError: false,
-			errors: [],		 
+			errors: [],
 			isFetching: false,
 			items: []
 		},
-		
-		/* API: events/items */		
-		mine: { 
+
+		/* API: events/items */
+		mine: {
 			hasError: false,
-			errors: [],			
+			errors: [],
 			isFetching: false,
 			items: []
 		}
