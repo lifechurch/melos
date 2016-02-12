@@ -71,7 +71,7 @@ class EventEditContentContainer extends Component {
 				{
 					data: {
 						// This initial content is validated by validateUrlType
-						title: ' ',
+						title: '',
 						body: '',
 						url: ''
 					}
