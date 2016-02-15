@@ -6,6 +6,9 @@
     font-size: inherit;
   }
   .copyright {
+    .courtesy {
+      font-weight: bold;
+    }
     font-size: 0.688em;
     color: $darkGray;
     margin-top: rem-calc(20);
