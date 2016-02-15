@@ -170,7 +170,7 @@ cy:
         mobile: 
             title: "Ap Beibl"
             description: "Gelli ddarllen Gair Duw ar unrhyw adeg, yn unrhyw le drwy ddefnyddio Ap Beibl YouVersion. Rhanna'r Ysgrythur gyda ffrindiau, aroleuo a gosod nod llyfr ar adrannau, a dilyn y Cynlluniau Darllen dyddiol. Ar gael ar gyfer iOS, Android, Blackberry, Ffonau Windows a mwy."
-            download or read: "Download now or read online."
+            download or read: "Lawlwytha nawr a'i ddarllen oddiar lein."
         site: 
             title: "Bible.com"
             description: "Tyrd â harddwch a gwirionedd y Beibl i fywyd bob dydd. Gyda Ap Beibl YouVersion gelli ddarllen, gwylio, gwrando a rhannu ar dy ffôn symudol, tabled, ac ar lein yn Bible.com."
@@ -278,7 +278,7 @@ cy:
     sign out: "Allgofnodi"
     sign back in: "Er diogelwch, mae mewngofnodiad yn dod i ben ar ôl pythefnos. Arwyddwch i mewn eto"
     youversion: "YouVersion"
-    username or email prompt: "Email (or Username)"
+    username or email prompt: "Ebost (neu Enw defnyddiwr)"
     password prompt: "Cyfrinair"
     sign in: "Mewngofnodi"
     sign in to youversion: "Mewngofnodi i YouVersion"
@@ -349,11 +349,11 @@ cy:
     alphabetic: "Trefn yr Wyddor"
     versions title: "Fersiynau"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "Iaith y Beibl a chyfieithiadau"
+        most popular: "Ieithoedd mwyaf poblogaidd. "
+        additional: "Ieithoedd ychwanegol"
+        download language: "Lawrlwytha'r Beibl yn %{language_name}"
+        bible in: "Y Beibl mewn %{language_name}"
     or: 
         lower: "neu"
         upper: "NEU"
@@ -1264,7 +1264,7 @@ cy:
         408 explanation: "Rydym wedi'n rhybuddio a byddwn yn delio gydag unrhyw faterion parhaus cyn gynted ag y bo modd. Gad i ni weld os gallwn dy gael yn ôl i ddarllen y Beibl!"
         try again: "Tria eto"
     versions: 
-        filter: "Start typing Version name (or Language)..."
+        filter: "Cychwyna deipio enw'r Fersiwn (neu Iaith)..."
         see all: "Gweld pob Fersiwn"
         courtesy of: "%{publisher} yn dod â %{abbreviation} i ti."
         learn more: "Dysgu Mwy"

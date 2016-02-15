@@ -126,7 +126,7 @@ bg:
         mobile: 
             title: "приложение Библията"
             description: "Четете Божието Слово по всяко време и навсякъде с помощта на приложение Библията на YouVersion. Споделяйте Писанието с приятели, маркирайте и отбелязвайте пасажи, създайте си навик за ежедневно четене с Библейските планове. На разположение за IOS, Android, Blackberry, Windows Phone и други."
-            download or read: "Download now or read online."
+            download or read: "Изтеглете сега или четете онлайн."
         site: 
             title: "Bible.com"
             description: "Внесете красотата и истината на Библията във всекидневието си. С приложение Библията на YouVersion, можете да четете, гледате, слушате и споделяте от Вашия смартфон или таблет и онлайн на Bible.com."
@@ -234,7 +234,7 @@ bg:
     sign out: "Отписване"
     sign back in: "От съображения за сигурност, сесиите изтичат след две седмици. Моля, влезте отново."
     youversion: "YouVersion"
-    username or email prompt: "Email (or Username)"
+    username or email prompt: "Имейл (или Потребителско име)"
     password prompt: "Парола"
     sign in: "Вход"
     sign in to youversion: "Вход в YouVersion"
@@ -305,11 +305,11 @@ bg:
     alphabetic: "В азбучен ред"
     versions title: "Версии"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "Език на Библията и преводи"
+        most popular: "Най-популярните езици"
+        additional: "Допълнителни езици"
+        download language: "Изтеглете Библията на %{language_name}"
+        bible in: "Библията на %{language_name}"
     or: 
         lower: "или"
         upper: "ИЛИ"

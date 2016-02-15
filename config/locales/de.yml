@@ -126,7 +126,7 @@ de:
         mobile: 
             title: "Die Bibel App"
             description: "Lies Gottes Wort jederzeit und überall mit der YouVersion Bibel App. Teile Schriftstellen mit Freunden, markiere Abschnitte und setze Lesezeichen, und mache es dir mit Leseplänen zur täglichen Gewohnheit. Verfügbar für iOS, Android, Blackberry, Windows Phone und weitere."
-            download or read: "Download now or read online."
+            download or read: "Jetzt herunterladen oder online lesen."
         site: 
             title: "Bible.com"
             description: "Hole die Schönheit und Wahrheit der Bibel in den Alltag. Mit der YouVersion Bibel App kannst du lesen, sehen, hören und teilen auf deinem Smartphone oder Tablet, und online auf Bible.com."
@@ -234,7 +234,7 @@ de:
     sign out: "Abmelden"
     sign back in: "Zu deiner Sicherheit verfallen Anmeldungen nach zwei Wochen. Bitte melde dich erneut an."
     youversion: "YouVersion"
-    username or email prompt: "Email (or Username)"
+    username or email prompt: "E-Mail (oder Nutzername)"
     password prompt: "Passwort"
     sign in: "Anmelden"
     sign in to youversion: "Bei YouVersion anmelden"
@@ -305,11 +305,11 @@ de:
     alphabetic: "Alphabetisch"
     versions title: "Übersetzungen"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "Sprachen und Übersetzungen"
+        most popular: "Beliebte Sprachen"
+        additional: "Zusätzliche Sprachen"
+        download language: "Lade die Bibel auf %{language_name} herunter"
+        bible in: "Die Bibel auf %{language_name}"
     or: 
         lower: "oder"
         upper: "ODER:"
@@ -1212,7 +1212,7 @@ de:
         408 explanation: "Wir wurden benachrichtigt und werden alle bestehenden Probleme so schnell wie möglich lösen. Schauen wir mal, ob wir dir die Bibel nicht wieder zugänglich machen können!"
         try again: "Versuche es noch einmal"
     versions: 
-        filter: "Start typing Version name (or Language)..."
+        filter: "Hier Übersetzung eingeben (oder Sprache)..."
         see all: "All Übersetzungen ansehen..."
         courtesy of: "%{abbreviation} von %{publisher}"
         learn more: "Weitere Infos"
