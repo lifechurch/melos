@@ -126,7 +126,7 @@ ca:
         mobile: 
             title: "L'aplicació de la Bíblia"
             description: "Llegeix la paraula de Déu sempre que vulguis, i allà on siguis utilitzant la aplicació de la Bíblia de  YouVersion. Comparteix amb els amics, subtatlla i crea marcadors a les lectures, i fomenta un habit diari amb els plans de la Bíblia. Disponible per iOs, Android, Blackberry, Windows Phone i més."
-            download or read: "Download now or read online."
+            download or read: "Descarrega ara o llegeix en línia."
         site: 
             title: "Bíblia.com"
             description: "Porta la bellesa i la veritat de la Bíblia en el teu dia a dia. Amb la aplicació de la Bíblia de YouVersion, pots llegir, mirar, escoltar i compartir amb el teu smartphone, tablet i en la red amb Bible.com"
@@ -234,7 +234,7 @@ ca:
     sign out: "Tanca la sessió"
     sign back in: "Per la teva seguretat, l'inici de sessió caducarà en dues setmanes. Si us plau, torna a iniciar la sessió."
     youversion: "YouVersion"
-    username or email prompt: "Email (or Username)"
+    username or email prompt: "Correu electrònic (o usuari)"
     password prompt: "Contrasenya"
     sign in: "Inicia la sessió"
     sign in to youversion: "Inicia la sessió a YouVersion"
@@ -305,11 +305,11 @@ ca:
     alphabetic: "Alfabètic"
     versions title: "Versions"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "Llengües de la Bíblia i traduccions"
+        most popular: "Llengües més populars"
+        additional: "Llengües addicionals"
+        download language: "Descarrega la Bíblia en %{language_name}"
+        bible in: "La Bíblia en %{language_name}"
     or: 
         lower: "o"
         upper: "O"
@@ -1212,7 +1212,7 @@ ca:
         408 explanation: "Hem rebut l'alerta i corregirem la incidència tan aviat com ens sigui possible. Intentarem que puguis seguir llegint per on anaves!"
         try again: "Intenta-ho una altra vegada"
     versions: 
-        filter: "Start typing Version name (or Language)..."
+        filter: "Comença teclejant el nom de la versió (o la llengua)...."
         see all: "Consulta totes les versions"
         courtesy of: "%{abbreviation} proporcionada per %{publisher}"
         learn more: "Llegeix-ne més"

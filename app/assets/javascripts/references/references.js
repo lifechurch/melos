@@ -257,21 +257,46 @@ angular.module('yv.reader', [
 
     function loadBooks(versionId) {
         Versions.getSingle(versionId).success(function(v) {
-          $scope.reader_book_list = v[0].books;
-          
-          if (v && v[0].copyright_short && v[0].copyright_short.text) {
-          	$scope.reader_copyright = v[0].copyright_short.text;
-          } else {
-          	$scope.reader_copyright = "";
-          }
+            $scope.reader_book_list = v[0].books;
+            var copy_text = '';
+            var copy_template = "";
+            var reader_footer = "";
+            var has_blurb = true;
 
-          for (var b = 0; b < $scope.reader_book_list.length; b++) {
-              var book = $scope.reader_book_list[b];
-              if (book.human == $scope.reader_book) {
-                  $scope.selectedBook = book;
-                  break;
-              }
-          }
+            if (v && v[0].abbreviation && v[0].publisher.name) {
+                copy_text = $scope.copyright_text.replace('[abbreviation]', v[0].abbreviation).replace('[publisher]', v[0].publisher.name);
+            }
+            if (v[0].reader_footer.html) {
+                reader_footer = v[0].reader_footer.html;
+            } else {
+                reader_footer = v[0].reader_footer.text;
+            }
+            if (!reader_footer) {
+                has_blurb = false;
+                if (v[0].copyright_short.html) {
+                    reader_footer = v[0].copyright_short.html;
+                } else {
+                    reader_footer = v[0].copyright_short.text;
+                }
+            }
+            if (has_blurb) {
+                copy_template = "<div class='courtesy'>" + copy_text + "</div>";
+            }
+            copy_template += "<div class='blurb'>" + reader_footer + "</div>";
+            if (v[0].reader_footer_url) {
+                copy_template += "<a href='" + v[0].reader_footer_url + "' target='_self'>" + $scope.learn_more + "</a>";
+            } else {
+                copy_template += "<a href='/versions/" + v[0].id + "' target='_self'>" + $scope.learn_more + "</a>";
+            }
+            $scope.reader_copyright = copy_template;
+
+            for (var b = 0; b < $scope.reader_book_list.length; b++) {
+                var book = $scope.reader_book_list[b];
+                if (book.human == $scope.reader_book) {
+                    $scope.selectedBook = book;
+                    break;
+                }
+            }
         }).error(function(error) {
 
         });

@@ -115,7 +115,7 @@ ko:
         mobile: 
             title: "성경 앱"
             description: "하나님의 말씀을 언제 어디서나 YouVersion 성경앱을 통해서 읽으실 수있습니다.  성경말씀을 친구들과 나누거나, 하이라이트나 책갈피로 갈무리 하실 수 있으며, 묵상 계획을 통해서 말씀을 매일 접하실 수 있습니다. iOS, Android, Blackberry, Windows 폰 등 다양한 기기에서 사용하실 수 있습니다."
-            download or read: "Download now or read online."
+            download or read: "다운로드 하시거나 온라인에서 읽으세요"
         site: 
             title: "Bible.com/ko"
             description: "성경의 진리와 아름다움을 일상 생활속에서 접하세요.  YouVersion 성경앱으로 말씀을 읽고, 보고, 들으실 수있습니다.  스마트 폰이나 태블랫 또는 Bible.com/ko 에서 온라인으로 보실 수있습니다."
@@ -223,7 +223,7 @@ ko:
     sign out: "로그 아웃"
     sign back in: "보안을 위해서 로그인 후 2주 후면 자동 해제됩니다.  다시 로그인 해주세요."
     youversion: "YouVersion"
-    username or email prompt: "Email (or Username)"
+    username or email prompt: "이메일 혹은 사용자명"
     password prompt: "비밀번호"
     sign in: "로그인"
     sign in to youversion: "YouVersion 로그인"
@@ -294,11 +294,11 @@ ko:
     alphabetic: "알파벳"
     versions title: "번역본"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "성경 언어 및 번역본"
+        most popular: "가장 인기있는 언어"
+        additional: "추가 언어"
+        download language: "%{language_name} 성경 다운로드"
+        bible in: "%{language_name} 성경"
     or: 
         lower: "또는"
         upper: "혹은"
@@ -525,7 +525,7 @@ ko:
         confirm message: "메세지를 %{email}로 보냈습니다."
         confirm message click: "본인 확인을 위해서 이메일에 있는 링크를 클릭해주세요."
         resend verification: "이메일 확인 재전송"
-        sign in alternate: "계정이 없으시다면,  <a href='%{sign_up_path}' target='_self'>회원 가입</a> 을 해 주시기 바랍니다."
+        sign in alternate: "계정이 없으시다면,  <a href='%{sign_up_path}' target='_self'>회원 가입을</a> 해 주시기 바랍니다."
         sign up alternate: "계정이 이미 있으시다면,  <a href='%{sign_in_path}' target='_self'>로그인</a> 해 주시길 바랍니다."
         password length: "최소 6 글자 입력"
         welcome to youversion: "YouVersion 공동체에 오신 것을 환영합니다."
@@ -1199,7 +1199,7 @@ ko:
         408 explanation: "오류에 대해서 통보를 받았습니다. 최대한 빨리 해결하도록 최선을 다하겠습니다. 성경읽기로 되돌아 갈 수있는지 재시도를 해보겠습니다."
         try again: "재시도"
     versions: 
-        filter: "Start typing Version name (or Language)..."
+        filter: "번역본 이름이나 언어 이름을 입력하세요..."
         see all: "모든 번역본 보기"
         courtesy of: "%{abbreviation} 번역본은 %{publisher} 제공입니다."
         learn more: "더 알아보기"

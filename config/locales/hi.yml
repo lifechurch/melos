@@ -797,7 +797,7 @@ hi:
         none me: "आपके द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
         none user: "%{username} के द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
     plans: 
-        bible plan language: "बाइबिल प्लान की भाषा"
+        bible plan language: "Bible प्लान की भाषा"
         share plan: "@YouVersion #BiblePlan: पर देखे %{plan_title}"
         widget: 
             my plans: "मेरी योजनाएँ"

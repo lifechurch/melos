@@ -126,7 +126,7 @@ fi:
         mobile: 
             title: "Raamattusovellus"
             description: "Lue Jumalan sanaa missä ja milloin tahansa käyttämällä YouVersionin Raamattusovellusta. Jaa sanaa ystävien kanssa, tee korostuksia ja luo kirjanmerkkejä ja ota tavaksi lukea Raamattua päivittäin lukusuunnitelmian avulla. Saatavilla mm. iOS-, Android-, Blackberry-, Windows Phone -laitteilla."
-            download or read: "Download now or read online."
+            download or read: "Lataa nyt tai lue verkossa."
         site: 
             title: "Bible.com"
             description: "Tuo Raamatun kauneus ja totuus jokapäiväiseen elämääsi. YouVersionin Raamattusovelluksella voit lukea, katsoa, kuunnella ja jakaa älypuhelimella tai tabletilla ja verkossa osoitteessa Bible.com."
@@ -305,11 +305,11 @@ fi:
     alphabetic: "Aakkosellinen"
     versions title: "Käännökset"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "Raamatun kielet ja käännökset"
+        most popular: "Suosituimmat kielet"
+        additional: "Muut kielet"
+        download language: "Lataa Raamattu kielellä %{language_name}"
+        bible in: "Raamattu kielellä %{language_name}"
     or: 
         lower: "tai"
         upper: "TAI"
@@ -1212,7 +1212,7 @@ fi:
         408 explanation: "Olemme saaneet tiedon ongelmasta ja puutumme siihen mahdollisimman nopeasti. Etköhän pian ole taas Raamatun parissa!"
         try again: "Yritä uudelleen"
     versions: 
-        filter: "Start typing Version name (or Language)..."
+        filter: "Syötä käännöksen nimi (tai kieli)..."
         see all: "Kaikki käännökset..."
         courtesy of: "%{abbreviation} käännöksen tarjoaa %{publisher}"
         learn more: "Lisätietoja"

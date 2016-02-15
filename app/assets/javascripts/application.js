@@ -54,7 +54,9 @@ function parseReaderVars() {
 	TEMPLATE_FROM_RAILS[window.location.pathname] = { 
 		reader_book: angular.element(document.getElementById("reader_book")).text(),
 		reader_chapter: angular.element(document.getElementById("reader_chapter")).text(),
-		reader_version: angular.element(document.getElementById("reader_version")).text(),		
+		reader_version: angular.element(document.getElementById("reader_version")).text(),
+        copyright_text: angular.element(document.getElementById("copyright_text")).text(),
+        learn_more: angular.element(document.getElementById("learn_more")).text(),
 		reader_html: angular.element(document.getElementById("reader")).html(),
 		reader_audio: {
 			title: angular.element(document.getElementById("reader_audio_title")).text(),

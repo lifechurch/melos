@@ -22,6 +22,8 @@
           %a.chapter{:id => "reader_chapter", "ng-bind" => "reader_chapter", "ng-click" => "togglePanel('showReaderChapters')", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').last
           %a.version{:id => "reader_version", "ng-bind" => "reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions'); focusInput=true;"}= version.human
           %a.version.ng-hide{:id => "parallel_reader_version", "ng-bind" => "parallel_reader_version", 'ng-disabled' => 'working', "ng-click" => "togglePanel('showReaderVersions', true)", "ng-show" => "isParallelMode"}
+          %span.ng-hide{:id => "copyright_text"}= t("versions.courtesy of", abbreviation: "[abbreviation]", publisher: "[publisher]")
+          %span.ng-hide{:id => "learn_more"}= t("versions.learn more")
         %h1.ng-hide{"ng-show" => "devotionalActive"}
           %a.devotional
             =t('plans.devotional')

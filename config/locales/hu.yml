@@ -126,7 +126,7 @@ hu:
         mobile: 
             title: "A Biblia alkalmazás"
             description: "Olvasd Isten Igéjét bárhol és bármikor a YouVersion Biblia alkalmazással. Oszd meg a Szentírást barátaiddal, emelj ki és könyvjelzőzz bekezdéseket és alakíts ki napi szokást a Biblia Tervekkel. Elérhető iOS, Android, Blackberry, Windows Phone és egyéb rendszerekhez."
-            download or read: "Download now or read online."
+            download or read: "Töltsd le most vagy olvasd online."
         site: 
             title: "Bible.com"
             description: "Építsd bele a Biblia szépségét és igazságát a mindennapokba. A YouVersion Biblia alkalmazással olvashatod, nézheted, hallgathatod, valamint megoszthatod az okostelefonodon vagy táblagépeden és online a Bible.com-on keresztül."
@@ -234,7 +234,7 @@ hu:
     sign out: "Kijelentkezés"
     sign back in: "A biztonságod érdekében a bejelentkezések két hét után elévülnek. Kérünk, jelentkezz be újra."
     youversion: "YouVersion"
-    username or email prompt: "Email (or Username)"
+    username or email prompt: "Email (vagy Felhasználónév)"
     password prompt: "Jelszó"
     sign in: "Bejelentkezés"
     sign in to youversion: "Bejelentkezés a YouVersion rendszerébe"
@@ -305,11 +305,11 @@ hu:
     alphabetic: "Betűrend"
     versions title: "Fordítások"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "Biblia nyelvek és fordítások"
+        most popular: "Legnépszerűbb nyelvek"
+        additional: "További nyelvek"
+        download language: "Töltsd le a Bibliát %{language_name} nyelven"
+        bible in: "A Biblia %{language_name} nyelven"
     or: 
         lower: "vagy"
         upper: "VAGY"
@@ -1212,7 +1212,7 @@ hu:
         408 explanation: "Megkaptuk a figyelmeztetésedet és amilyen gyorsan lehet, foglalkozunk a tartós problémákkal. Lássuk csak, vissza tudunk-e vinni a Biblia olvasáshoz!"
         try again: "Próbálkozz újra"
     versions: 
-        filter: "Start typing Version name (or Language)..."
+        filter: "Kezdd el gépelni a kiadás nevét (vagy a nyelvet)..."
         see all: "Nézd meg az összes fordítást..."
         courtesy of: "%{abbreviation} %{publisher}-től származik."
         learn more: "Tudj meg többet"

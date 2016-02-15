@@ -170,7 +170,7 @@ ar:
         mobile: 
             title: "تطبيق الكتاب المقدس"
             description: "اقرأ كلمة الله في اي وقت و اي مكان باستخدام تطبيق الكتاب المقدس Youversion. شارك النصوص الكتابية مع اصدقائك، اضف تمييز للنص او اشارات مرجعية لبعض النصوص، و كون عادة يومية بقراءة الكتاب المقدس من خلال اتباع خطط القراءة.\nالتطبيق متاح للاندرويد، الويندوز فون، الاي او اس، البلاك بيري و اكثر من هذا."
-            download or read: "Download now or read online."
+            download or read: "حمِل الأن او أقرأة على الأنترنت."
         site: 
             title: "Bible.com"
             description: "اجلب جمال و حق الكتاب المقدس لحياتك اليومية. مع تطبيق الكتاب المقدس Youversion، يمكنك القراءة، المشاهدة، الاستماع، و المشاركة من خلال هواتفك الذكية او التابلت، او من خلال الاتصال بالانترنت على Bible.com"
@@ -278,7 +278,7 @@ ar:
     sign out: "تسجيل الخروج"
     sign back in: "لأمنك الخاص، صلاحية تسجيل الدخول تنتهي كل أسبوعين. يرجى تسجيل الدخول مرة أخري."
     youversion: "YouVersion"
-    username or email prompt: "Email (or Username)"
+    username or email prompt: "البريد الألكترونى ( او أسم المستخدم)"
     password prompt: "كلمة المرور‌"
     sign in: "سجل دخول."
     sign in to youversion: "سجل الدخول على YouVersion"
@@ -349,11 +349,11 @@ ar:
     alphabetic: "ترتيب أبجدى"
     versions title: "نسخات"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "لغات الأنجيل المقدس و الترجمات"
+        most popular: "أكثر اللغات شعبية"
+        additional: "لغات أضافية"
+        download language: "قم بتحميل الأنجيل المقدس ب%{language_name}"
+        bible in: "الأنجيل المقدس ب%{language_name}"
     or: 
         lower: "أو"
         upper: "أو"
@@ -1264,7 +1264,7 @@ ar:
         408 explanation: "لقد تم تنبيهنا وسوف نتعامل مع القضايا المستمرة في أسرع وقت ممكن. دعنا نرى ان كان بإمكاننا العودة بك الي قراءاتك  للكتاب المقدس."
         try again: "حاول مرة اخري"
     versions: 
-        filter: "Start typing Version name (or Language)..."
+        filter: "ابداء كتابة اسم الأصدار (او اللغة)..."
         see all: "شاهد كل الإصدارات ..."
         courtesy of: "%{abbreviation} قدم لكم من قبل %{publisher}"
         learn more: "تعلم المزيد"
