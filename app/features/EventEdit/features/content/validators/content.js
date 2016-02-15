@@ -31,14 +31,20 @@ export function validateRemoveContentParams(params) {
 }
 
 export function validateReorderContentParams(params) {
-	const { event_id, ids } = params
+	const { id, content_ids } = params
 
-	if (typeof event_id !== 'number') {
+	if (typeof id !== 'number') {
 		throw new Error('Reorder: Invalid Event ID')
 	}
 
-	if (!Array.isArray(ids) || ids.length === 0) {
+	if (!Array.isArray(content_ids) || content_ids.length === 0) {
 		throw new Error('Reorder: Invalid Content IDs')
+	} else {
+		for (var content_id of content_ids) {
+			if (typeof content_id !== 'number') {
+				throw new Error('Reorder: Invalid Content ID: ' +  content_id)
+			}
+		}
 	}
 }
 

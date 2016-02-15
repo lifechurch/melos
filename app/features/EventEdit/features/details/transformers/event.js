@@ -2,7 +2,7 @@ import { fromApiFormat as contentFromApiFormat } from '../../content/transformer
 
 export function fromApiFormat(event) {
 	let { item } = event
-	
+
 	if (typeof item !== 'object') {
 		item = {}
 	}
@@ -15,6 +15,12 @@ export function fromApiFormat(event) {
 		return contentFromApiFormat(Object.assign({}, c, { content_id: c.id, id: item.id }))
 	})
 
+	content = sortContent(content)
+
+	return Object.assign({}, event, { item: { ...item, content }})
+}
+
+export function sortContent(content) {
 	content.sort((a,b) => {
 		if (a.sort < b.sort) {
 			return -1
@@ -31,6 +37,8 @@ export function fromApiFormat(event) {
 		}
 	})
 
-	return Object.assign({}, event, { item: { ...item, content }})
+	return content.map((c,i) => {
+		c.sort = i * 100
+		return c
+	})
 }
-

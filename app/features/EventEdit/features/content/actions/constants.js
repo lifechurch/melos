@@ -19,7 +19,9 @@ const constants = {
 	searchPlansSuccess: 'SEARCH_PLANS_SUCCESS',
 	searchPlansFailure: 'SEARCH_PLANS_FAILURE',
 	focusPlanSearch: 'FOCUS_PLAN_SEARCH',
-	clearPlanSearch: 'CLEAR_PLAN_SEARCH'
+	clearPlanSearch: 'CLEAR_PLAN_SEARCH',
+	move: 'CONTENT_MOVE',
+	startReorder: 'CONTENT_START_REORDER'
 }
 
 export default function (key) {

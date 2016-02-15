@@ -115,6 +115,24 @@ class EventEditContentContainer extends Component {
 		dispatch(ActionCreators.remove(params))
 	}
 
+	handleMove(fromIndex, toIndex) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.move({fromIndex, toIndex}))
+	}
+
+	handleStartReorder() {
+		const { dispatch } = this.props
+	 	dispatch(ActionCreators.startReorder())
+	}
+
+	handleReorder() {
+		const { dispatch, event } = this.props
+		const content_ids = event.item.content.map((c,i) => {
+			return c.content_id
+		})
+		dispatch(ActionCreators.reorder({id: event.item.id, content_ids}))
+	}
+
 	render() {
 		const { event, plans, dispatch } = this.props
 		let contentFeed = (
@@ -125,6 +143,9 @@ class EventEditContentContainer extends Component {
 				handleUpdate={::this.handleUpdate}
 				handleChange={::this.handleChange}
 				handleRemove={::this.handleRemove}
+				handleMove={::this.handleMove}
+				handleStartReorder={::this.handleStartReorder}
+				handleReorder={::this.handleReorder}
 			/>
 		)
 

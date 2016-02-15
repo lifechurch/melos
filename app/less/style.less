@@ -59,38 +59,38 @@ h1.eventPageTitle {
 
 
 a span {
-    color: black;
+		color: black;
 
-    font-size:14px;
+		font-size:14px;
 }
 
 #one {
-  z-index: 10;
+	z-index: 10;
 }
 #two {
-  z-index: 9;
-  left: 112px;
+	z-index: 9;
+	left: 112px;
 }
 #three {
-    z-index: 8;
-  left: 280px;
+		z-index: 8;
+	left: 280px;
 }
 #four {
-    z-index: 7;
-    left: 380px;
+		z-index: 7;
+		left: 380px;
 }
 #five {
-    z-index: 6;
-    left: 480px;
+		z-index: 6;
+		left: 480px;
 }
 a.active {
-    background: #979797;
+		background: #979797;
 }
 a.active:before {
-  background: #979797
+	background: #979797
 }
 a.active span {
-  color: white;
+	color: white;
 }
 
 
@@ -143,7 +143,7 @@ a.active span {
 				}
 
 				span {
-    			position: relative;
+					position: relative;
 				}
 
 			}
@@ -278,16 +278,16 @@ textarea {
 	font-size: 15px;
 
 	.hollow-button {
-    padding: 10px 16px;
-    margin: 0 !important;
+		padding: 10px 16px;
+		margin: 0 !important;
 	}
 
 	.button-caption {
 		font-size: 12px;
 		color: #979797;
 		line-height: 14px;
-    margin-top: 10px;
-    margin-bottom: 50px;
+		margin-top: 10px;
+		margin-bottom: 50px;
 	}
 }
 
@@ -312,23 +312,23 @@ textarea {
 	}
 
 	.header {
-    padding-left: 15px;
-    height: 30px;
-    border-bottom: 1px solid #ddd;
-    font-size: 12px;
-    color: #979797;
-    line-height: 14px;
-    padding-top: 8px;
+		padding-left: 15px;
+		height: 30px;
+		border-bottom: 1px solid #ddd;
+		font-size: 12px;
+		color: #979797;
+		line-height: 14px;
+		padding-top: 8px;
 
-    input {
-    	height: 12px !important;
-    }
+		input {
+			height: 12px !important;
+		}
 
-    .title {
-    	float: left;
-    }
-    .header-actions {
-      float: right;
+		.title {
+			float: left;
+		}
+		.header-actions {
+			float: right;
 
 			a {
 				margin-right: 10px;
@@ -337,7 +337,7 @@ textarea {
 			img {
 				height: 13px;
 			}
-    }
+		}
 	}
 
 	.body {
@@ -432,39 +432,39 @@ textarea {
 }
 
 .locationeditor-enter {
-  opacity: 0.01;
+	opacity: 0.01;
 }
 
 .locationeditor-enter.locationeditor-enter-active {
-  opacity: 1;
-  transition: opacity 250ms ease-in;
+	opacity: 1;
+	transition: opacity 250ms ease-in;
 }
 
 .locationeditor-leave {
-  opacity: 1;
+	opacity: 1;
 }
 
 .locationeditor-leave.locationeditor-leave-active {
-  opacity: 0.01;
-  transition: opacity 250ms ease-in;
+	opacity: 0.01;
+	transition: opacity 250ms ease-in;
 }
 
 .locationlist-enter {
-  opacity: 0.01;
+	opacity: 0.01;
 }
 
 .locationlist-enter.locationlist-enter-active {
-  opacity: 1;
-  transition: opacity 250ms ease-in;
+	opacity: 1;
+	transition: opacity 250ms ease-in;
 }
 
 .locationlist-leave {
-  opacity: 1;
+	opacity: 1;
 }
 
 .locationlist-leave.locationlist-leave-active {
-  opacity: 0.01;
-  transition: opacity 250ms ease-in;
+	opacity: 0.01;
+	transition: opacity 250ms ease-in;
 }
 
 .ReactModal__Content {
@@ -561,21 +561,21 @@ textarea {
 }
 
 .content-enter {
-  opacity: 0.01;
+	opacity: 0.01;
 }
 
 .content-enter.content-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
+	opacity: 1;
+	transition: opacity 500ms ease-in;
 }
 
 .content-leave {
-  opacity: 1;
+	opacity: 1;
 }
 
 .content-leave.content-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+	opacity: 0.01;
+	transition: opacity 300ms ease-in;
 }
 
 .plan-content {
@@ -620,4 +620,55 @@ textarea {
 	.length {
 		line-height: .75em;
 	}
+}
+
+.content-draggable {
+	margin-bottom: 10px;
+
+	.sort {
+		background: #CCCCCC;
+		border-radius: 5px 0px 0px 5px;
+		float:left;
+		width: 60px;
+		height: 34px;
+		text-align:center;
+		font-size: 15px;
+		color: #FFFFFF;
+		line-height: 17px;
+		font-weight:bold;
+		padding-top: 8px;
+	}
+
+	.body {
+		padding-left:10px;
+		padding-top:9px;
+		border: 1px solid #CCCCCC;
+		height: 34px;
+		margin-left: 60px;
+		width: 100%;
+		font-size: 12px;
+		color: #888888;
+		line-height: 14px;
+		border-radius: 0px 5px 5px 0px;
+
+		.type {
+			float:left;
+			width: 80px;
+		}
+
+		.preview {
+			float:left;
+			margin-left: 10px;
+		}
+
+		.dragHandle {
+			float: right;
+			margin-right: 10px;
+			margin-top: 3px;
+		}
+	}
+}
+
+.reorder-icon {
+	padding-bottom: 2px;
 }
