@@ -1,5 +1,5 @@
 import contentType from './constants'
-import { validateSetContentFieldParams, validateRemoveContentParams, validateAddContentParams } from '../validators/content'
+import { validateSetContentFieldParams, validateRemoveContentParams, validateAddContentParams, validateReorderContentParams } from '../validators/content'
 import { toApiFormat } from '../transformers/content'
 
 const ActionCreators = {
@@ -125,6 +125,19 @@ const ActionCreators = {
 				http_method: 'post',
 				types: [ contentType('removeRequest'), contentType('removeSuccess'), contentType('removeFailure') ]
 			}
+		}
+	},
+
+	move(params) {
+		return {
+			type: contentType('move'),
+			...params
+		}
+	},
+
+	startReorder() {
+		return {
+			type: contentType('startReorder')
 		}
 	},
 

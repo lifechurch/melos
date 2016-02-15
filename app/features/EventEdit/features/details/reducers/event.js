@@ -2,7 +2,7 @@ import type from '../actions/constants'
 import locationType from '../../location/actions/constants'
 import contentType from '../../content/actions/constants'
 import { validateEventDetails } from '../validators/details'
-import { fromApiFormat as eventFromApiFormat } from '../transformers/event'
+import { fromApiFormat as eventFromApiFormat, sortContent } from '../transformers/event'
 import defaultState from '../../../../../defaultState'
 import { fromApiFormat as locationFromApiFormat } from '../../location/transformers/location'
 import { fromApiFormat as contentFromApiFormat } from '../../content/transformers/content'
@@ -243,6 +243,30 @@ export default function event(state = {}, action) {
 						newContent,
 						...state.item.content.slice(action.index + 1)
 					]
+				}
+			})
+
+		case contentType('startReorder'):
+			return Object.assign({}, state, { isReordering: true })
+
+		case contentType('reorderRequest'):
+			return Object.assign({}, state, { isReordering: false })
+
+		case contentType('move'):
+			const { fromIndex, toIndex } = action
+
+			var _content = [
+				...state.item.content.slice(0)
+			]
+
+			_content[fromIndex].sort = toIndex * 100
+			_content[toIndex].sort += (fromIndex - toIndex) * 50
+
+			var content = sortContent(_content)
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content
 				}
 			})
 

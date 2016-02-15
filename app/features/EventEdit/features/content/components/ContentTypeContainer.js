@@ -84,7 +84,7 @@ class ContentTypeContainer extends Component {
 		return (
 			<div className='content-type-text'>
 				<Row>
-					<div className='medium-10 large-8 columns small-centered'>
+					<div className='medium-12'>
 						{content.type.toUpperCase()} <a className='right' onClick={::this.handleRemove}><img src='/images/thin-x.png' /></a>
 						<div className='form-body'>
 							{InnerContainer}
