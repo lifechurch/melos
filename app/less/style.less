@@ -6,10 +6,103 @@ body {
 	font-family: ArialMT;
 }
 
-h1.eventPageTitle {
-	font-size: 36px;
-	color: #353535;
-	line-height: 42px;
+.events-details {
+    
+    .label {
+        margin-right: 10px;
+        border-radius: 3px;
+        font-size: 15px;
+        color: #FFFFFF;
+        line-height: 18px;
+        margin-right: 10px
+    }
+
+    .red-label {
+        .label;
+        background: #DA4438;
+        border: 2px solid #DA4438;
+    }
+
+    .gray-label {
+        .label;
+        background: #979797;
+        border: 2px solid #979797;
+    }
+
+    .small-link {
+        margin-right: 10px;
+        font-size: 11px;
+        color: #0084C8;
+    }
+
+    .small-delete-link {
+        .small-link;
+        color: #DA1000;
+    }
+
+    .details-text {
+        font-size: 11px;
+        color: #979797;
+        line-height: 16px;
+        margin-right: 10px;
+    }
+
+}
+
+ul.unindented {
+    margin-left: 0px;
+}
+
+div.event-title-section {
+    
+    h1.title {
+        font-family: ArialMT;
+        font-size: 36px;
+        color: #353535;
+        line-height: 42px;
+        float: left;
+        width: 75%;
+    }
+
+    h2.subtitle {
+        font-size: 13px;
+        color: #888888;
+        line-height: 16px;
+    }
+
+    .solid-button {
+        float: right;
+    }
+
+}
+
+img.event-thumbnail {
+    width: 122.13px;
+    height: 69px;
+    border-radius: 2px;
+    padding-right: 15px;
+}
+
+li.eventPageListItem {
+    list-style-type: none;
+    border: 1px;
+    border-style: solid;
+    border-color: #DDDDDD;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+
+    .large-link {
+        font-size: 18px;
+        color: #0084c8;
+        line-height: 21px;
+    }
+
+    .hollow-button {
+        margin-top: 20px;
+    }
+
 }
 
 .content-header {
@@ -55,6 +148,12 @@ h1.eventPageTitle {
 	a {
 		margin-bottom:0;
 	}
+    
+    .yv-title {
+        font-size: 20px;
+        color: #000000;
+    }
+
 /*************************
 
 
