@@ -73,8 +73,9 @@ class ContentTypeContainer extends Component {
 				break
 
 			case 'url':
-				InnerContainer = (<ContentTypeLink handleChange={::this.handleChange} contentData={content.data} />)
+				InnerContainer = (<ContentTypeLink handleChange={::this.handleChange} content={content}  />)
 				break
+
 			case 'image':
 
 			default:

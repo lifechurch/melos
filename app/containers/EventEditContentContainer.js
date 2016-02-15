@@ -80,6 +80,23 @@ class EventEditContentContainer extends Component {
 		))
 	}
 
+	handleAddGiving() {
+		const { event, dispatch } = this.props
+		dispatch(ActionCreators.new(
+			Object.assign({},
+				createBaseContentObject(event.item.id, 'url'),
+				{
+					iamagivinglink: true,
+					data: {
+						title: '',
+						body: '',
+						url: ''
+					}
+				}
+			)
+		))
+	}
+
 	handleUpdate(index, params) {
 		const { event, dispatch } = this.props
 		const { content_id } = params
@@ -145,7 +162,9 @@ class EventEditContentContainer extends Component {
 					handleAddText={::this.handleAddText}
 					handleAddPlan={::this.handleAddPlan}
 					handleAddAnnouncement={::this.handleAddAnnouncement}
-					handleAddLink={::this.handleAddLink} />
+					handleAddLink={::this.handleAddLink}
+					handleAddGiving={::this.handleAddGiving}
+				/>
 
 				<div className='content-container'>
 					{contentFeed}
