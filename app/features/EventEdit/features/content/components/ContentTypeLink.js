@@ -7,7 +7,7 @@ class ContentTypeLink extends Component {
 	render() {
 		const { contentData, handleChange } = this.props
 		return (
-			<div>
+			<div className="form-body-block white">
 				<FormField
 					InputType={Textarea}
 					placeholder="Description..."
