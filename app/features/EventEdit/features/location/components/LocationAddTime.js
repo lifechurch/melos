@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import moment from 'moment'
+import TimePicker from 'react-time-picker'
 
 function getDisplay(hour, minute) {
 	return [
@@ -111,8 +112,8 @@ class LocationAddTime extends Component {
 		this.setState(getState(date, this.state.start_time, this.state.duration, this.state.interval, this.props))
 	}
 
-	handleStartTimeChange(event) {
-		this.setState(getState(this.state.start_dt, event.target.value, this.state.duration, this.state.interval, this.props))
+	handleStartTimeChange(time) {
+		this.setState(getState(this.state.start_dt, time, this.state.duration, this.state.interval, this.props))
 	}
 
 	handleDurationChange(event) {
@@ -134,20 +135,18 @@ class LocationAddTime extends Component {
 		return (
 			<form className="event-edit-location-form event-edit-time-form">
 				<Row>
-					<Column s='small-4'>
+					<div className='small-4 columns textField'>
 						<DatePicker placeholderText='Start Date' onChange={::this.handleStartDateChange} selected={start_dt} popoverTargetAttachment='top center' popoverAttachment='bottom center' popoverTargetOffset='0px 0px' />
-					</Column>
+					</div>
 
 					<Column s='small-4'>
-						<select className='small' placeholder='Start Time' name='start_time' onChange={::this.handleStartTimeChange} value={start_time}>
-							{values}
-						</select>
+						<TimePicker className='timePicker' onChange={::this.handleStartTimeChange} value={start_time} format='h:mm:a' />
 					</Column>
 
-					<Column s='small-4'>
+					<div className='small-4 columns textField'>
 						<Row className="collapse">
 							<Column s='small-6'>
-								<input type="text" className='small' placeholder='1' name='duration' onChange={::this.handleDurationChange} value={duration} />							
+								<input type="text" className='small' placeholder='1' name='duration' onChange={::this.handleDurationChange} value={duration} />
 							</Column>
 							<Column s='small-6'>
 								<select className='small' name='interval' onChange={::this.handleIntervalChange} value={interval}>
@@ -158,7 +157,7 @@ class LocationAddTime extends Component {
 							</Column>
 						</Row>
 
-					</Column>
+					</div>
 				</Row>
 				{}
 			</form>
