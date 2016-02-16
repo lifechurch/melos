@@ -189,7 +189,128 @@ export default function event(state = {}, action) {
 				}
 			})
 
+        case contentType('chapterRequest'):
+			var newContent = Object.assign({}, state.item.content[action.params.index])
+            delete newContent.data['chapter']
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContent,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
+
+        case contentType('chapterSuccess'):
+			var newContent = Object.assign({}, state.item.content[action.params.index])
+            newContent.data.chapter = action.response.content
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContent,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
+
+        case contentType('chapterFailure'):
+			var newContent = Object.assign({}, state.item.content[action.params.index])
+            newContent.data.chapter = ''
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContent,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
+
+		case contentType('versionRequest'):
+			var newContent = Object.assign({}, state.item.content[action.params.index])
+            newContent.isDirty = true
+            newContent.isFetching = true
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContent,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
+
+		case contentType('versionSuccess'):
+			var newContent = Object.assign({}, state.item.content[action.params.index])
+			newContent.data.version_id = action.params.id
+            newContent.isFetching = false
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContent,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
+
+		case contentType('setReference'):
+			var newContent = Object.assign({}, state.item.content[action.index])
+			newContent.data.usfm = action.usfm
+			newContent.data.human = action.human
+			newContent.isDirty = true
+
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.index),
+						newContent,
+						...state.item.content.slice(action.index + 1)
+					]
+				}
+			})
+
+		case contentType('clearReference'):
+			var newContent = Object.assign({}, state.item.content[action.index])
+			newContent.data.usfm = ['']
+			newContent.data.human = " "
+
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.index),
+						newContent,
+						...state.item.content.slice(action.index + 1)
+					]
+				}
+			})
+
 		case contentType('updateSuccess'):
+			var newContent = Object.assign({}, state.item.content[action.params.index])
+			newContent.data.usfm = action.response.data.usfm
+			newContent.data.human = action.response.data.human
+			newContent.isDirty = false
+			newContent.isSaving = false
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContent,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
+
 		case contentType('addSuccess'):
 			var newContent = Object.assign({}, action.response, state.item.content[action.params.index])
 			newContent.isDirty = false
@@ -215,7 +336,6 @@ export default function event(state = {}, action) {
 					]
 				}
 			})
-			return state
 
 		case contentType('setField'):
 			var newContent = Object.assign({}, state.item.content[action.index])
@@ -271,6 +391,6 @@ export default function event(state = {}, action) {
 			})
 
 		default:
-			return state
+			return Object.assign({}, state)
 	}
 }
