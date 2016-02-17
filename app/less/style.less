@@ -618,6 +618,8 @@ textarea {
 	}
 
 	.content-type-text {
+		// TODO: Refactor; React generates spans all over the place.
+		// Some of these styles should only apply to specific elements.
 		margin-top:30px;
 		font-size: 12px;
 		color: #979797;
@@ -634,6 +636,14 @@ textarea {
 			color: #353535 !important;
 			line-height: 24px !important;
 			min-height: 100px;
+		}
+
+		.giving--kindred-para {
+			span {
+				margin-left: 0;
+				margin-right: 0;
+			}
+			a { color: inherit; text-decoration: underline;}
 		}
 	}
 
