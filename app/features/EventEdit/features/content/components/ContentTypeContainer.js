@@ -5,7 +5,9 @@ import ContentTypeText from './ContentTypeText'
 import ContentTypeAnnouncement from './ContentTypeAnnouncement'
 import ContentTypeReference from './ContentTypeReference'
 import ContentTypePlan from './ContentTypePlan'
+import ContentTypeImage from './ContentTypeImage'
 import ContentTypeLink from './ContentTypeLink'
+
 
 const AUTO_SAVE_TIMEOUT = 5000
 
@@ -88,7 +90,8 @@ class ContentTypeContainer extends Component {
 				break
 
 			case 'image':
-
+				InnerContainer = (<ContentTypeImage handleChange={::this.handleChange} contentData={content.data} />)
+				break
 			default:
 				break
 		}

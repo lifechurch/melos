@@ -78,6 +78,21 @@ class EventEditContentContainer extends Component {
 		))
 	}
 
+	handleAddImage() {
+		const { event, dispatch } = this.props
+		dispatch(ActionCreators.new(
+			Object.assign({},
+				createBaseContentObject(event.item.id, 'image'),
+				{
+					data: {
+						image_id: '0',
+						body: ''
+					}
+				}
+			)
+		))
+	}
+
 	handleAddLink() {
 		const { event, dispatch } = this.props
 		dispatch(ActionCreators.new(
@@ -202,8 +217,8 @@ class EventEditContentContainer extends Component {
 					handleAddAnnouncement={::this.handleAddAnnouncement}
 					handleAddLink={::this.handleAddLink}
 					handleAddGiving={::this.handleAddGiving}
+					handleAddImage={::this.handleAddImage}
 				/>
-
 				<div className='content-container'>
 					{contentFeed}
 				</div>
