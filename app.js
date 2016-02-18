@@ -11,6 +11,7 @@ var basicAuth = require('basic-auth');
 
 require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] });
 
+var auth = require('./auth');
 var reactServer = require('./react-server');
 
 var app = express();
@@ -48,6 +49,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', auth);
 app.use('/', ping);
 app.use('/', api.expressRouter);
 

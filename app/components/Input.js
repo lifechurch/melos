@@ -39,7 +39,7 @@ class Input extends Component {
 		const { stateValue } = this.state
 
 		return (
-			<input type='text' ref='inputElement' className={size} {...this.props} onChange={::this.handleChange} value={stateValue} />
+			<input ref='inputElement' className={size} {...this.props} onChange={::this.handleChange} value={stateValue} />
 		)
 	}
 }
@@ -49,7 +49,12 @@ Input.propTypes = {
 	placeholder: PropTypes.string,
 	name: PropTypes.string.isRequired,
 	onChange: PropTypes.func.isRequired,
-	value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ])
+	value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
+	type: PropTypes.oneOf(['text', 'password'])
+}
+
+Input.defaultProps = {
+	type: 'text'
 }
 
 export default Input

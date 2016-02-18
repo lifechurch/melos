@@ -12,11 +12,11 @@ class EventHeader extends Component {
 
 	handleSave() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.saveDetails(event.item, false))		 
+		dispatch(ActionCreators.saveDetails(event.item, false))
 	}
 
 	render() {
-		const { event } = this.props
+		const { event, auth } = this.props
 		const { isSaving, errors } = event
 		return (
 			<div className='event-header'>
@@ -30,13 +30,13 @@ class EventHeader extends Component {
 					</Column>
 
 					<Column s='medium-4' a='right'>
-						First Lastname
+						{auth.user.first_name} {auth.user.last_name}
 					</Column>
 				</Row>
 
 				<Row>
 					<Column s='medium-6'>
-						<EventEditNav {...this.props} />						
+						<EventEditNav {...this.props} />
 					</Column>
 
 					<Column s='medium-6' a='right'>
