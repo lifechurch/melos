@@ -4,5 +4,6 @@
 # Pin-Priority of NodeSource repository
 nodejs_nodesource_pin_priority: 700
 
-# 0.10 or 0.12 or 4.x
-nodejs_version: "4.2.4"
+debian_repo_version: 4.x
+
+gulp_version: 3.9.0

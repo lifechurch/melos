@@ -2,7 +2,7 @@
 # tasks file for nodejs
 
 # npmjs_token
-- include_vars: nodejs_secrets.yml 
+- include_vars: nodejs_secrets.yml
 
 - name: Import the NodeSource GPG key into apt
   apt_key:
@@ -28,7 +28,7 @@
 
 - name: Install Node.js
   apt:
-    name: nodejs={{ nodejs_version }}*
+    name: nodejs
     state: installed
   tags:
     - nodejs
@@ -48,6 +48,6 @@
     name: gulp
     global: yes
     state: present
-    version: 3.9.0
+    version: "{{ gulp_version }}"
   tags:
     - nodejs
