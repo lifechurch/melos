@@ -236,7 +236,28 @@ const ActionCreators = {
 				types: [ contentType('reorderRequest'), contentType('reorderSuccess'), contentType('reorderFailure') ]
 			}
 		}
-	}
+	},
+
+	initUpload(params) {
+		return {
+			params: {
+				...params,
+			},
+			api_call: {
+				endpoint: 'events',
+				method: 'image_upload',
+				version: '3.2',
+				env: 'staging',
+				auth: {
+					user: 'ignacio',
+					pass: 'password'
+				},
+				params: params,
+				http_method: 'get',
+				types: [ contentType('initUpload'), contentType('initUploadSuccess'), contentType('initUploadFailure') ]
+			}
+		}
+	},
 }
 
 export default ActionCreators

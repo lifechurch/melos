@@ -90,7 +90,11 @@ class ContentTypeContainer extends Component {
 				break
 
 			case 'image':
-				InnerContainer = (<ContentTypeImage handleChange={::this.handleChange} contentData={content.data} />)
+				InnerContainer = (<ContentTypeImage
+									dispatch={dispatch}
+									handleChange={::this.handleChange}
+									contentData={content.data}
+									contentIndex={contentIndex} />)
 				break
 			default:
 				break
