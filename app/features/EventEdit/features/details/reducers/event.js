@@ -373,6 +373,7 @@ export default function event(state = {}, action) {
 			// console.log('newContent: ', newContent)
 			newContent.data.image_id = action.response.image_id
 			newContent.data.url = action.response.url
+			newContent.data.params = action.response.params
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
