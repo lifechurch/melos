@@ -11,16 +11,16 @@ import references from './references'
 import plans from './plans'
 
 const rootReducer = combineReducers({
-	eventFeeds: eventFeeds,
+	eventFeeds,
 	content,
-	event: event,
-	modals: modals,
-	loc: loc,
+	event,
+	modals,
+	loc,
 	locations,
 	plans,
 	references,
-  form: formReducer,
-  routing: routeReducer
+	form: formReducer,
+	routing: routeReducer
 })
 
 export default rootReducer

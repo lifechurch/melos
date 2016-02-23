@@ -70,12 +70,6 @@ export default function event(state = {}, action) {
 				return state
 			}
 
-		case locationType('addLocationFailure'):
-			return state
-
-		case locationType('addLocationSuccess'):
-			return state
-
 		case locationType('addLocationRequest'):
 			return validateEventDetails(Object.assign({}, state, {
 				item: {
@@ -83,12 +77,6 @@ export default function event(state = {}, action) {
 					locations: selectLocation(Object.assign({}, state.item.locations), action.locationId, true)
 				}
 			}))
-
-		case locationType('removeLocationFailure'):
-			return state
-
-		case locationType('removeLocationSuccess'):
-			return state
 
 		case locationType('deleteRequest'):
 			const eLocs  = state.item.locations
@@ -189,9 +177,9 @@ export default function event(state = {}, action) {
 				}
 			})
 
-        case contentType('chapterRequest'):
+		case contentType('chapterRequest'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
-            delete newContent.data['chapter']
+			delete newContent.data['chapter']
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -203,9 +191,9 @@ export default function event(state = {}, action) {
 				}
 			})
 
-        case contentType('chapterSuccess'):
+		case contentType('chapterSuccess'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
-            newContent.data.chapter = action.response.content
+			newContent.data.chapter = action.response.content
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -217,9 +205,9 @@ export default function event(state = {}, action) {
 				}
 			})
 
-        case contentType('chapterFailure'):
+		case contentType('chapterFailure'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
-            newContent.data.chapter = ''
+			newContent.data.chapter = ''
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -233,8 +221,8 @@ export default function event(state = {}, action) {
 
 		case contentType('versionRequest'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
-            newContent.isDirty = true
-            newContent.isFetching = true
+			newContent.isDirty = true
+			newContent.isFetching = true
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -249,7 +237,7 @@ export default function event(state = {}, action) {
 		case contentType('versionSuccess'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
 			newContent.data.version_id = action.params.id
-            newContent.isFetching = false
+			newContent.isFetching = false
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -295,24 +283,14 @@ export default function event(state = {}, action) {
 			})
 
 		case contentType('updateSuccess'):
-			var newContent = Object.assign({}, state.item.content[action.params.index])
-			newContent.data.usfm = action.response.data.usfm
-			newContent.data.human = action.response.data.human
-			newContent.isDirty = false
-			newContent.isSaving = false
-			return Object.assign({}, state, {
-				item: {
-					...state.item,
-					content: [
-						...state.item.content.slice(0, action.params.index),
-						newContent,
-						...state.item.content.slice(action.params.index + 1)
-					]
-				}
-			})
-
 		case contentType('addSuccess'):
 			var newContent = Object.assign({}, action.response, state.item.content[action.params.index])
+
+			if (action.response.type == 'reference') {
+				newContent.data.usfm = action.response.data.usfm
+				newContent.data.human = action.response.data.human
+			}
+
 			newContent.isDirty = false
 			newContent.isSaving = false
 			return Object.assign({}, state, {
@@ -391,6 +369,6 @@ export default function event(state = {}, action) {
 			})
 
 		default:
-			return Object.assign({}, state)
+			return state
 	}
 }

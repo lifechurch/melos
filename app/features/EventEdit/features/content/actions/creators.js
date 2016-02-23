@@ -101,7 +101,16 @@ const ActionCreators = {
 		}
 	},
 
-    getVersions(params) {
+	clearChapter(params) {
+		return {
+			params: {
+				...params,
+			},
+			type: contentType('chapterFailure')
+		}
+	},
+
+	getVersions(params) {
 		return {
 			params: {
 				...params,
@@ -136,7 +145,7 @@ const ActionCreators = {
 		}
 	},
 
-    setReference(params) {
+	setReference(params) {
 		return {
 			type: contentType('setReference'),
 			...params

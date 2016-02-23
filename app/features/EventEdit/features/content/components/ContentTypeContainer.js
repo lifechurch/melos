@@ -19,10 +19,8 @@ class ContentTypeContainer extends Component {
 	handleUpdateClick() {
 		const { content, contentIndex, handleUpdate } = this.props
 		if (content.isDirty) {
-			console.log('dirty')
 			handleUpdate(contentIndex, content)
 		}
-		console.log('handle autosave')
 	}
 
 	handleChange(changeEvent) {
@@ -47,7 +45,6 @@ class ContentTypeContainer extends Component {
 			clearTimeout(this.cancelSave)
 			this.cancelSave = null
 		}
-		console.log( 'autosave')
 		this.cancelSave = setTimeout(::this.handleUpdateClick, AUTO_SAVE_TIMEOUT)
 	}
 
@@ -72,7 +69,7 @@ class ContentTypeContainer extends Component {
 									handleChange={::this.handleChange}
 									references={references}
 									contentIndex={contentIndex}
-                                    isFetching={content.isFetching}
+									isFetching={content.isFetching}
 									contentData={content.data} />)
 				break
 
