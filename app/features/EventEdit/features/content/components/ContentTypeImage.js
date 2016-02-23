@@ -21,9 +21,14 @@ class ContentTypeImage extends Component {
     }
 
     onDrop(files) {
-        const { dispatch ,contentIndex, contentData } = this.props;
+        const { dispatch, contentIndex, contentData, handleChange } = this.props;
         if (files[0].type === "image/jpeg" || files[0].type === "image/jpg") {
-            dispatch(ActionCreators.initUpload({index: contentIndex}));
+            dispatch(ActionCreators.initUpload({index: contentIndex})).then( function(response){
+                // Upload to S3
+
+                // AutoSave to YVDB (or don't on fail?)
+                // handleChange({target: {name: 'image_id', value: 'pending'}})
+            });
 
             this.setState({
                 files: files
@@ -31,7 +36,7 @@ class ContentTypeImage extends Component {
         } else {
             // invalid file type
         }
-        //console.log(this.props)
+        // console.log(this.props.contentData)
         // console.log('upload file: ', files);
     }
 
@@ -44,7 +49,9 @@ class ContentTypeImage extends Component {
         var output
 
         if (this.state.files) {
-           output = <div>{this.state.files.map((file) => <img src={file.preview} />)}</div>
+            output = <div><img src={this.state.files[0].preview} /></div>
+        } else if (contentData.urls) {
+            output = <div><img src={contentData.urls[0].url} /></div>
         } else {
             output = <div>
                         <Dropzone ref='dropzone' onDrop={::this.onDrop} multiple={false} acceptedFiles=".pdf" className='image-drop-zone' activeClassName='active' >
