@@ -166,7 +166,7 @@ function validateImageType(params) {
 		throw new Error('Content Type Image requires `image_id` to be a string')
 	}
 
-	// if (!Array.isArray(urls)) {
-	// 	throw new Error('Content Type Image requires `urls` to be an array')
-	// }
+	if (!Array.isArray(urls)) {
+		throw new Error('Content Type Image requires `urls` to be an array')
+	}
 }

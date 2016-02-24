@@ -47,12 +47,12 @@ class ContentTypeImage extends Component {
                                 value: [{url: files[0].preview}]
                             }})
                         } else {
-                            console.error(xhr.statusText);
+                            // valid, non-2XX response // console.error(xhr.statusText);
                         }
                     }
                 }
                 xhr.onerror = function (e) {
-                    console.error(xhr.statusText);
+                    // network error // console.error(xhr.statusText);
                 }
 
             })
@@ -71,7 +71,16 @@ class ContentTypeImage extends Component {
         var output
 
         if (contentData.urls) {
-            output = <div><img src={contentData.urls[0].url} /></div>
+            output = <div>
+                        <img src={contentData.urls[0].url} />
+                        <FormField
+                            InputType={Input}
+                            placeholder="Add caption"
+                            name="body"
+                            onChange={handleChange}
+                            value={contentData.body}
+                            errors={contentData.errors} />
+                    </div>
         } else {
             output = <div>
                         <Dropzone ref='dropzone' onDrop={::this.onDrop} multiple={false} acceptedFiles=".pdf" className='image-drop-zone' activeClassName='active' >
@@ -89,15 +98,6 @@ class ContentTypeImage extends Component {
         return (
             <div className="form-body-block white">
                     {output}
-                    <div>
-                        <FormField
-                            InputType={Input}
-                            placeholder="Add caption"
-                            name="body"
-                            onChange={handleChange}
-                            value={contentData.body}
-                            errors={contentData.errors} />
-                    </div>
             </div>
         )
     }
