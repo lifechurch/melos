@@ -51,7 +51,8 @@ class EventEditContentContainer extends Component {
 				{
 					data: {
 						version_id: 1,
-						human: '',
+						chapter: '',
+						human: 'Genesis ',
 						usfm: ['GEN']
 					}
 				}
