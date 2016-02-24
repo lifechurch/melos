@@ -17,7 +17,7 @@ class LocationDeleteModal extends Component {
 				right                 : 'auto',
 				bottom                : 'auto',
 				marginRight           : '-50%',
-				width                 : '500px',	
+				width                 : '500px',
 				transform             : 'translate(-50%, -50%)'
 			}
 		};
@@ -36,7 +36,7 @@ class LocationDeleteModal extends Component {
 				<h3>Are you sure?</h3>
 				<p>You have selected the following location to be deleted:</p>
 				<p><b>{loc.name}</b></p>
-				<p>This will remove the location from all past and present events. You will not be able to re-use this lcoation for future events.</p>
+				<p>This will remove the location from all past and present events. You will not be able to re-use this location for future events.</p>
 				<div className='modal-actions'>
 					<a onClick={handleClose}>Cancel</a>
 					<a className='solid-button red' onClick={::this.handleConfirm}>Delete</a>
