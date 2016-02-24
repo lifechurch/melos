@@ -39,7 +39,7 @@ export default function event(state = {}, action) {
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: false, isDirty: false, api_errors: action.api_errors }))
 
 		case type('viewRequest'):
-			return validateEventDetails(Object.assign({}, state, { isFetching: true, isSaving: false, isDirty: false }))
+			return Object.assign({}, state, { errors: { fields: {} }, isFetching: true, isSaving: false, isDirty: false })
 
 		case type('createSuccess'):
 			return validateEventDetails(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false }))
