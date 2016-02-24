@@ -3,6 +3,7 @@ import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import ContentTypeText from './ContentTypeText'
 import ContentTypeAnnouncement from './ContentTypeAnnouncement'
+import ContentTypeReference from './ContentTypeReference'
 import ContentTypePlan from './ContentTypePlan'
 import ContentTypeLink from './ContentTypeLink'
 
@@ -44,12 +45,11 @@ class ContentTypeContainer extends Component {
 			clearTimeout(this.cancelSave)
 			this.cancelSave = null
 		}
-
 		this.cancelSave = setTimeout(::this.handleUpdateClick, AUTO_SAVE_TIMEOUT)
 	}
 
 	render() {
-		const { dispatch, contentIndex, content, plans } = this.props
+		const { dispatch, contentIndex, content, references, plans } = this.props
 
 		let InnerContainer = null
 		switch (content.type) {
@@ -62,6 +62,17 @@ class ContentTypeContainer extends Component {
 				break
 
 			case 'reference':
+				InnerContainer = (<ContentTypeReference
+									dispatch={dispatch}
+									autoSave={::this.autoSave}
+									handleRemove={::this.handleRemove}
+									handleChange={::this.handleChange}
+									references={references}
+									contentIndex={contentIndex}
+									isFetching={content.isFetching}
+									contentData={content.data} />)
+				break
+
 			case 'plan':
 				InnerContainer = (<ContentTypePlan
 									dispatch={dispatch}

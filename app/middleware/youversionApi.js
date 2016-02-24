@@ -1,6 +1,6 @@
 import { getClient } from '@youversion/js-api'
 
-const endpoints = [ 'events', 'search' ]
+const endpoints = [ 'events', 'search', 'bible' ]
 const versions = [ '3.2', '3.1' ]
 const envs = [ 'staging', 'production' ]
 const http_methods = [ 'get', 'post' ]

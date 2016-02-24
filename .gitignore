@@ -32,6 +32,3 @@ node_modules
 # Debug log from npm
 npm-debug.log
 
-
-public/javascripts/app.min.js
-public/stylesheets/style.min.css

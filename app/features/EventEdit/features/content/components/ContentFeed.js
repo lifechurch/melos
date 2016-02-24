@@ -10,7 +10,7 @@ import { DragDropContext } from 'react-dnd'
 class ContentFeed extends Component {
 
 	render() {
-		const { dispatch, event, plans, handleUpdate, handleChange, handleRemove, handleMove, handleStartReorder, handleReorder } = this.props
+		const { dispatch, event, references, plans, handleUpdate, handleChange, handleRemove, handleMove, handleStartReorder, handleReorder } = this.props
 		const { content } = event.item
 
 		const contentList = content.map((c,i) => {
@@ -30,6 +30,7 @@ class ContentFeed extends Component {
 						key={key}
 						dispatch={dispatch}
 						event={event}
+						references={references}
 						plans={plans}
 						handleChange={handleChange}
 						handleUpdate={handleUpdate}
