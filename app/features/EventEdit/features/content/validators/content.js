@@ -8,10 +8,6 @@ export function validateSetContentFieldParams(params) {
 	if (typeof field !== 'string') {
 		throw new Error('Content Field Name must be string')
 	}
-
-	if (typeof value !== 'string' && typeof value !== 'number') {
-		throw new Error('Content Field Value must be string or number')
-	}
 }
 
 export function validateRemoveContentParams(params) {
@@ -160,7 +156,7 @@ function validateUrlType(params) {
 }
 
 function validateImageType(params) {
-	const { image_id, body } = params
+	const { image_id, body, urls } = params
 
 	if (typeof body !== 'string') {
 		throw new Error('Content Type Image requires `body` to be a string')
@@ -169,4 +165,8 @@ function validateImageType(params) {
 	if (typeof image_id !== 'string') {
 		throw new Error('Content Type Image requires `image_id` to be a string')
 	}
+
+	// if (!Array.isArray(urls)) {
+	// 	throw new Error('Content Type Image requires `urls` to be an array')
+	// }
 }

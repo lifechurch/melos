@@ -370,7 +370,6 @@ export default function event(state = {}, action) {
 
 		case contentType('initUploadSuccess'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
-			// console.log('newContent: ', newContent)
 			newContent.data.image_id = action.response.image_id
 			newContent.data.url = action.response.url
 			newContent.data.params = action.response.params

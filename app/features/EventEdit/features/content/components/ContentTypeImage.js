@@ -21,23 +21,45 @@ class ContentTypeImage extends Component {
     }
 
     onDrop(files) {
-        const { dispatch, contentIndex, contentData, handleChange } = this.props;
+        const { dispatch, contentIndex, contentData, handleChange } = this.props
+
         if (files[0].type === "image/jpeg" || files[0].type === "image/jpg") {
-            dispatch(ActionCreators.initUpload({index: contentIndex})).then( function(response){
+            dispatch(ActionCreators.initUpload({index: contentIndex})).then( function(response_init){
                 // Upload to S3
+                var formData = new FormData()
+                formData.append('AWSAccessKeyId', response_init.params['AWSAccessKeyId'])
+                formData.append('key', response_init.params['key'])
+                formData.append('policy', response_init.params['policy'])
+                formData.append('x-amz-storage-class', response_init.params['x-amz-storage-class'])
+                formData.append('Signature', response_init.params['signature'])
+                formData.append('file', files[0])
 
-                // AutoSave to YVDB (or don't on fail?)
-                // handleChange({target: {name: 'image_id', value: 'pending'}})
-            });
+                var xhr = new XMLHttpRequest()
+                xhr.open("POST", response_init.url)
+                xhr.send(formData)
 
-            this.setState({
-                files: files
+                xhr.onload = function (e) {
+                    if (xhr.readyState === 4) {
+                        if (200 <= xhr.status < 300) {
+                            handleChange({target: {name: 'image_id', value: response_init.image_id}})
+                            handleChange({target: {
+                                name: 'urls',
+                                value: [{url: files[0].preview}]
+                            }})
+                        } else {
+                            console.error(xhr.statusText);
+                        }
+                    }
+                }
+                xhr.onerror = function (e) {
+                    console.error(xhr.statusText);
+                }
+
             })
+
         } else {
             // invalid file type
         }
-        // console.log(this.props.contentData)
-        // console.log('upload file: ', files);
     }
 
     onOpenClick() {
@@ -48,9 +70,7 @@ class ContentTypeImage extends Component {
         const { contentData, handleChange } = this.props
         var output
 
-        if (this.state.files) {
-            output = <div><img src={this.state.files[0].preview} /></div>
-        } else if (contentData.urls) {
+        if (contentData.urls) {
             output = <div><img src={contentData.urls[0].url} /></div>
         } else {
             output = <div>
@@ -70,23 +90,12 @@ class ContentTypeImage extends Component {
             <div className="form-body-block white">
                     {output}
                     <div>
-                        <p>image_id: {contentData.image_id}</p>
-                        <p>body: {contentData.body}</p>
-                        <p>url: {contentData.url}</p>
                         <FormField
                             InputType={Input}
                             placeholder="Add caption"
                             name="body"
                             onChange={handleChange}
                             value={contentData.body}
-                            errors={contentData.errors} />
-
-                        <FormField
-                            InputType={Input}
-                            placeholder="Image id"
-                            name="image_id"
-                            onChange={handleChange}
-                            value={contentData.image_id}
                             errors={contentData.errors} />
                     </div>
             </div>
