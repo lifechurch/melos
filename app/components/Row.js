@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 class Row extends Component {
 	render() {
-		const { children, className } = this.props
+		const { children, id, className } = this.props
 		return (
-			<div className={className + ' row'}>
+			<div id={id} className={className + ' row'}>
 				{children}
 			</div>
 		)

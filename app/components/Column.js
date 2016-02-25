@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react'
 
 class Column extends Component {
 	render() {
-		const { a, s, children } = this.props		
+		const { a, s, id, children } = this.props
 		return (
-			<div className={`columns ${s} text-${a}`}>
+			<div id={id} className={`columns ${s} text-${a}`}>
 				{children}
 			</div>
 		)

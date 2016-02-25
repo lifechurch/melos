@@ -20,6 +20,17 @@ function selectLocation(locations, id, selected) {
 
 export default function event(state = {}, action) {
 	switch(action.type) {
+
+		case type('publishEventFailure'):
+		case type('publishEventRequest'):
+		case type('unpublishEventFailure'):
+		case type('unpublishEventRequest'):
+			return state
+
+		case type('publishEventSuccess'):
+		case type('unpublishEventSuccess'):
+			return Object.assign({}, state, {item: {...state.item, status: action.response.status}})
+
 		case type('cancel'):
 			return validateEventDetails(Object.assign({}, defaultState.event))
 
