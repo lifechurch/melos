@@ -207,7 +207,8 @@ class ContentTypeReference extends Component {
 		const { human, usfm } = contentData
 		var chapterVerse = ''
 		if (usfm.length) {
-			chapterVerse = usfm[0].split('.')[1] + ":"
+			var chv = usfm[0].split('.')
+			chapterVerse = chv.length > 1 ? chv[1] + ":" : ""
 			chapterVerse += human.split(',').map(function(i){ return i.split(':')[1]; }).join(', ')
 		}
 		return chapterVerse
@@ -215,12 +216,12 @@ class ContentTypeReference extends Component {
 
 	render() {
 		const { references, contentData, isFetching } = this.props
-		const { version_id } = contentData
+		const { version_id, chapter } = contentData
 		const book = contentData.usfm[0].split('.')[0]
 		var chv = ::this.getHumanChapterVerse(contentData)
 
 		var verses = []
-		if (contentData.usfm) {
+		if (contentData.usfm && chapter && chapter.length) {
 			try {
 				for (let usfm of contentData.usfm) {
 					var verse = ::this.parseVerseFromChapter(usfm)
