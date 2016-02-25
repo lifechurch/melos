@@ -24,14 +24,30 @@ class EventHeader extends Component {
 
 	render() {
 		const { event, auth } = this.props
-		const { isSaving, errors } = event
+
+		var ContentNav = null
+		if (event) {
+			const { isSaving, errors } = event
+			ContentNav = <Row>
+						<Column s='medium-7'>
+							<EventEditNav {...this.props} />
+						</Column>
+
+						<Column s='medium-5' a='right'>
+							<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving}>{ isSaving ? 'Saving...' : 'Save as Draft' }</a>&nbsp;
+							<a className='solid-button green'>Publish</a>
+						</Column>
+					</Row>
+		}
+
 		if (auth.isLoggedIn) {
 			return (
 				<div className='event-header'>
 					<Row>
-						<Column s='medium-4'>
-							<a onClick={::this.handleCancel}>Cancel</a>
-						</Column>
+						<Column s='medium-4'>{event ?
+							<a onClick={::this.handleCancel}>Cancel</a> :
+							<span className="yv-title">YouVersion</span>
+						}</Column>
 
 						<Column s='medium-4' a='center'>
 							EVENT BUILDER
@@ -41,17 +57,7 @@ class EventHeader extends Component {
 							{auth.userData.first_name} {auth.userData.last_name} <a onClick={::this.handleLogout}>Sign Out</a>
 						</Column>
 					</Row>
-
-					<Row>
-						<Column s='medium-6'>
-							<EventEditNav {...this.props} />
-						</Column>
-
-						<Column s='medium-6' a='right'>
-							<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving}>{ isSaving ? 'Saving...' : 'Save as Draft' }</a>&nbsp;
-							<a className='solid-button green'>Publish</a>
-						</Column>
-					</Row>
+					{ContentNav}
 				</div>
 			)
 		} else {

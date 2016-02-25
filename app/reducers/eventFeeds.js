@@ -1,6 +1,6 @@
-import { 
-	EVENT_FEED_DISCOVER_SUCCESS, 
-	EVENT_FEED_DISCOVER_REQUEST, 
+import {
+	EVENT_FEED_DISCOVER_SUCCESS,
+	EVENT_FEED_DISCOVER_REQUEST,
 	EVENT_FEED_DISCOVER_FAILURE,
 	EVENT_FEED_SAVED_SUCCESS,
 	EVENT_FEED_SAVED_REQUEST,
@@ -28,7 +28,7 @@ export function eventFeeds(state = {}, action) {
 			return Object.assign({}, state, { saved: { hasError: true, errors: action.error.errors, isFetching: false }})
 
 		case EVENT_FEED_SAVED_REQUEST:
-			return Object.assign({}, state, { saved: { isFetching: true }})			
+			return Object.assign({}, state, { saved: { isFetching: true }})
 
 		case EVENT_FEED_MINE_SUCCESS:
 			return Object.assign({}, state, { mine: { items: action.data.events, hasError: false, errors: [], isFetching: false}})
@@ -37,7 +37,7 @@ export function eventFeeds(state = {}, action) {
 			return Object.assign({}, state, { mine: { hasError: true, errors: action.error.errors, isFetching: false }})
 
 		case EVENT_FEED_MINE_REQUEST:
-			return Object.assign({}, state, { mine: { isFetching: true }})			
+			return Object.assign({}, state, { mine: { isFetching: true }})
 
 		default:
 			return state;
