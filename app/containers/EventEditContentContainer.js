@@ -182,7 +182,7 @@ class EventEditContentContainer extends Component {
 	}
 
 	render() {
-		const { event, references, plans, dispatch } = this.props
+		const { event, references, plans, dispatch, modals } = this.props
 		let contentFeed = (
 			<ContentFeed
 				dispatch={dispatch}
@@ -218,6 +218,8 @@ class EventEditContentContainer extends Component {
 					handleAddAnnouncement={::this.handleAddAnnouncement}
 					handleAddLink={::this.handleAddLink}
 					handleAddGiving={::this.handleAddGiving}
+					modals={modals}
+					dispatch={dispatch}
 					handleAddImage={::this.handleAddImage}
 				/>
 				<div className='content-container'>
