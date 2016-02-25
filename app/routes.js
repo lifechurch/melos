@@ -20,7 +20,7 @@ export default function(requireAuth) {
 				<Route path="locations_and_times" component={EventEditLocationContainer} />
 				<Route path="content" component={EventEditContentContainer} />
 				<Route path="preview" component={EventEditPreview} />
-				<Route path="share" component={EventEditPreview} />
+				<Route path="share" component={EventEditShare} />
 			</Route>
 		</Route>
 	)
