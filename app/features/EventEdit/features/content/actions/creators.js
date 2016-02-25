@@ -182,6 +182,12 @@ const ActionCreators = {
 	},
 
 	remove(params) {
+		if (typeof params.content_id == 'undefined') {
+			return {
+				type: contentType('removeRequest'),
+				params
+			}
+		}
 		validateRemoveContentParams(params)
 		return {
 			params: {
