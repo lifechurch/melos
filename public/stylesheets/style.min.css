@@ -1422,25 +1422,25 @@ body {
 }
 .events-details .label {
   border-radius: 3px;
-  font-size: 15px;
+  font-size: 11.05px;
   color: #FFFFFF;
-  line-height: 18px;
+  line-height: 13px;
   margin-right: 10px;
 }
 .events-details .red-label {
   border-radius: 3px;
-  font-size: 15px;
+  font-size: 11.05px;
   color: #FFFFFF;
-  line-height: 18px;
+  line-height: 13px;
   margin-right: 10px;
   background: #DA4438;
   border: 2px solid #DA4438;
 }
 .events-details .gray-label {
   border-radius: 3px;
-  font-size: 15px;
+  font-size: 11.05px;
   color: #FFFFFF;
-  line-height: 18px;
+  line-height: 13px;
   margin-right: 10px;
   background: #979797;
   border: 2px solid #979797;
@@ -1470,8 +1470,6 @@ div.event-title-section h1.title {
   font-size: 36px;
   color: #353535;
   line-height: 42px;
-  float: left;
-  width: 75%;
 }
 div.event-title-section h2.subtitle {
   font-size: 13px;
@@ -1680,8 +1678,13 @@ a.active span {
   transform: translateY(-50%);
   width: 100%;
 }
+.image-drop-zone .instructions p {
+  font-weight: bold;
+}
 .image-drop-zone.active {
   border-color: #979797;
+  color: #fff;
+  background-color: #eee;
 }
 .image-drop-manual-reqs {
   font-size: 12px;
@@ -1715,6 +1718,7 @@ select.small {
 }
 select {
   line-height: 22px !important;
+  cursor: pointer;
 }
 textarea {
   border: 1px solid #BBBBBB;
@@ -1843,6 +1847,31 @@ textarea {
   font-size: 12px;
   color: #979797;
   font-weight: normal;
+}
+.form-body-block select {
+  margin-bottom: 15px;
+}
+.form-body-block div.selectTitle {
+  padding-left: 5px;
+}
+.form-body-block div.verseText {
+  margin: 15px;
+}
+.form-body-block .verseContent {
+  margin: 0px !important;
+  padding: 0px !important;
+  line-height: 24px;
+  color: #000000;
+}
+.form-body-block .verseNumber {
+  margin: 0px !important;
+  padding: 0px !important;
+  line-height: 14px;
+  font-size: 10px;
+  color: #979797;
+}
+.form-body-block .errorText {
+  color: red;
 }
 .event-edit-time-form select,
 .event-edit-time-form input {

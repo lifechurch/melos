@@ -42,7 +42,6 @@ export function updateEvent(event) {
 		return EventsApi
 			.call("update")
 			.setVersion("3.2")
-			.setEnvironment("staging")
 			.auth()
 			.params({title, org_name, description})
 			.post()

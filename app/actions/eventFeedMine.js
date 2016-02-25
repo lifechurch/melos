@@ -33,7 +33,6 @@ export function fetchEventFeedMine() {
 		return EventsApi
 			.call("items")
 			.setVersion("3.2")
-			.setEnvironment("staging")
 			.auth()
 			.params({query: 'Life.Church'})
 			.get()

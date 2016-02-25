@@ -41,7 +41,6 @@ function authenticate(user, password) {
 	return getClient('users')
 		.call('authenticate')
 		.setVersion('3.1')
-		.setEnvironment('staging')
 		.auth(user, password)
 		.post()
 }
@@ -50,7 +49,6 @@ function viewUser(id, user, password) {
 	return getClient('users')
 		.call('view')
 		.setVersion('3.1')
-		.setEnvironment('staging')
 		.params({ id })
 		.auth(user, password)
 		.get()

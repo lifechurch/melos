@@ -52,7 +52,6 @@ const ActionCreators = {
 				endpoint: 'search',
 				method: 'reading_plans',
 				version: '3.1',
-				env: 'staging',
 				params: params,
 				http_method: 'get',
 				types: [ contentType('searchPlansRequest'), contentType('searchPlansSuccess'), contentType('searchPlansFailure') ]
@@ -89,7 +88,6 @@ const ActionCreators = {
 				endpoint: 'bible',
 				method: 'chapter',
 				version: '3.1',
-				env: 'staging',
 				params: params,
 				http_method: 'get',
 				types: [ contentType('chapterRequest'), contentType('chapterSuccess'), contentType('chapterFailure') ]
@@ -115,7 +113,6 @@ const ActionCreators = {
 				endpoint: 'bible',
 				method: 'versions',
 				version: '3.1',
-				env: 'staging',
 				params: params,
 				http_method: 'get',
 				types: [ contentType('versionsRequest'), contentType('versionsSuccess'), contentType('versionsFailure') ]
@@ -133,7 +130,6 @@ const ActionCreators = {
 				endpoint: 'bible',
 				method: 'version',
 				version: '3.1',
-				env: 'staging',
 				params: params,
 				http_method: 'get',
 				types: [ contentType('versionRequest'), contentType('versionSuccess'), contentType('versionFailure') ]
@@ -237,11 +233,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'image_upload',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: params,
 				http_method: 'get',
 				types: [ contentType('initUpload'), contentType('initUploadSuccess'), contentType('initUploadFailure') ]

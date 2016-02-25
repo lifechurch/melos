@@ -4,13 +4,6 @@ import Helmet from 'react-helmet'
 import { routeActions } from 'react-router-redux'
 
 class App extends Component {
-	// componentWillMount() {
-	// 	const { auth, dispatch } = this.props
-	// 	if (!auth.isLoggedIn) {
-	// 		dispatch(routeActions.push('/login'))
-	// 	}
-	// }
-
 	render() {
 		const { children } = this.props
 		return (
