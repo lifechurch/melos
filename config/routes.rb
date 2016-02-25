@@ -245,6 +245,9 @@ YouversionWeb::Application.routes.draw do
 
   root to: 'pages#home'
 
+  get "features/events", to: "features#events"
+  get "features/events-faq", to: "features#events-faq"
+  get "features/market-your-event", to: "features#market-your-event"
 
   get "404", to: "pages#error_404"
 
