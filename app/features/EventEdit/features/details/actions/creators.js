@@ -2,7 +2,7 @@ import type from './constants'
 import { routeActions } from 'react-router-redux'
 
 function cancel() {
-	return dispatch => {	
+	return dispatch => {
 		dispatch(routeActions.push('/'))
 		dispatch({ type: type('cancel') })
 	}
@@ -20,17 +20,13 @@ function view(id) {
 			endpoint: 'events',
 			method: 'view',
 			version: '3.2',
-			env: 'staging',
-			auth: {
-				user: 'ignacio',
-				pass: 'password'
-			},
+			auth: true,
 			params: { id },
 			http_method: 'get',
 			types: [ type('viewRequest'), type('viewSuccess'), type('viewFailure') ]
 		}
 	}
-}	
+}
 
 function create(event) {
 	const { title, org_name, description } = event
@@ -39,16 +35,12 @@ function create(event) {
 			endpoint: 'events',
 			method: 'create',
 			version: '3.2',
-			env: 'staging',
-			auth: {
-				user: 'ignacio',
-				pass: 'password'
-			},
+			auth: true,
 			params: {title, org_name, description},
 			http_method: 'post',
 			types: [ type('createRequest'), type('createSuccess'), type('createFailure') ]
 		}
-	}		
+	}
 }
 
 function update(event) {
@@ -60,11 +52,7 @@ function update(event) {
 			endpoint: 'events',
 			method: 'update',
 			version: '3.2',
-			env: 'staging',
-			auth: {
-				user: 'ignacio',
-				pass: 'password'
-			},
+			auth: true,
 			params,
 			http_method: 'post',
 			types: [ type('updateRequest'), type('updateSuccess'), type('updateFailure') ]
@@ -82,12 +70,12 @@ function setDetails(field, value) {
 
 function saveDetails(event, goNext) {
 	return dispatch => {
-		
-		function handlePromise(goNext, response) { 
+
+		function handlePromise(goNext, response) {
 			if (goNext === true && typeof response == 'object' && typeof response.id == 'number') {
 				const nextUrl = '/event/edit/' + response.id + '/locations_and_times'
 				dispatch(routeActions.push(nextUrl))
-			}	
+			}
 		}
 
 		if (typeof event.id === 'number') {

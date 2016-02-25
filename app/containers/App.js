@@ -1,21 +1,35 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
+import { routeActions } from 'react-router-redux'
 
 class App extends Component {
+	// componentWillMount() {
+	// 	const { auth, dispatch } = this.props
+	// 	if (!auth.isLoggedIn) {
+	// 		dispatch(routeActions.push('/login'))
+	// 	}
+	// }
+
 	render() {
 		const { children } = this.props
 		return (
 			<div>
-				<Helmet title="This is a title" />				
+				<Helmet title="This is a title" />
 				{children}
 			</div>
 		)
 	}
 }
- 
+
 App.propTypes = {
 	children: PropTypes.node
 }
 
-export default connect()(App)
+function mapStateToProps(state) {
+	return {
+		auth: state.auth
+	}
+}
+
+export default connect(mapStateToProps, null)(App)

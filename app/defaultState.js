@@ -3,7 +3,7 @@ export default {
 		token: null,
 		isLoggedIn: false,
 		isWorking: false,
-		user: {
+		userData: {
 			first_name: null,
 			last_name: null,
 			email: null,

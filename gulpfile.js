@@ -9,12 +9,12 @@ var cssnano = require('gulp-cssnano');
 var concat 	= require('gulp-concat');
 
 gulp.task('javascript', function() {
-	browserify("app/main.js")
+	browserify("app/main.js", { debug: process.env.NODE_ENV === 'development' })
 		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
 		.bundle()
 		.pipe(source('app.js'))
 		.pipe(buffer())
-		//.pipe(uglify())
+		.pipe(uglify())
 		.pipe(gulp.dest("./public/javascripts/"))
 		.pipe(livereload({reloadPage:""}));
 });

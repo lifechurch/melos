@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux'
 import { routeReducer } from 'react-router-redux'
 import { eventFeeds } from './eventFeeds'
-import {reducer as formReducer} from 'redux-form';
 import { modals } from './modals'
 import auth from '../features/Auth/reducers/auth'
 import loc from '../features/EventEdit/features/location/reducers/location'
@@ -19,7 +18,6 @@ const rootReducer = combineReducers({
 	loc: loc,
 	locations,
 	plans,
-  form: formReducer,
   routing: routeReducer
 })
 

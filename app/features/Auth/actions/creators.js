@@ -1,20 +1,33 @@
-import loginType from './constants'
+import type from './constants'
 import { routeActions } from 'react-router-redux'
+import { storeToken } from '@youversion/token-storage'
 
 const ActionCreators = {
+	authenticationFailed() {
+		return {
+			type: type('authenticationFailed')
+		}
+	},
+
 	setField(params) {
 		return {
-			type: loginType('setField'),
+			type: type('setField'),
 			...params
 		}
 	},
 
 	authenticate(params) {
 		return dispatch => {
-			dispatch(ActionCreators.callAuthenticate(params)).then((event) => {
-				const nextUrl = '/event/edit/' + event.id
-				dispatch(routeActions.push(nextUrl))
+			dispatch(ActionCreators.callAuthenticate(params)).then((authResponse) => {
+				storeToken(authResponse.token)
+				dispatch(routeActions.push('/'))
 			})
+		}
+	},
+
+	checkToken() {
+		return dispatch => {
+			dispatch(ActionCreators.callCheckToken())
 		}
 	},
 
@@ -27,7 +40,17 @@ const ActionCreators = {
 			api_auth: {
 				method: 'authenticate',
 				params: [user, password],
-				types: [ loginType('authenticateRequest'), loginType('authenticateSuccess'), loginType('authenticateFailure') ]
+				types: [ type('authenticateRequest'), type('authenticateSuccess'), type('authenticateFailure') ]
+			}
+		}
+	},
+
+	callCheckToken() {
+		return {
+			api_auth: {
+				method: 'checkToken',
+				params: [],
+				types: [ type('checkTokenRequest'), type('checkTokenSuccess'), type('checkTokenFailure') ]
 			}
 		}
 	}

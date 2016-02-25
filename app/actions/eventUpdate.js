@@ -19,7 +19,7 @@ function eventUpdateSuccess(data) {
 		data: data
 	}
 }
- 
+
 function eventUpdateFailure(error) {
 	return {
 		type: EVENT_UPDATE_FAILURE,
@@ -43,8 +43,8 @@ export function updateEvent(event) {
 			.call("update")
 			.setVersion("3.2")
 			.setEnvironment("staging")
-			.auth('ignacio', 'password')
-			.params({title, org_name, description})	
+			.auth()
+			.params({title, org_name, description})
 			.post()
 			.then(function(data) {
 				handleResponse(data).then((data) => {

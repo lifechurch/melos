@@ -22,11 +22,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'duplicate',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: params,
 				http_method: 'post',
 				types: [ contentType('duplicateRequest'), contentType('duplicateSuccess'), contentType('duplicateFailure') ]

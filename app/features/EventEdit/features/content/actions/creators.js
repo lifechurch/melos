@@ -20,11 +20,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'add_content',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: toApiFormat(params),
 				http_method: 'post',
 				types: [ contentType('addRequest'), contentType('addSuccess'), contentType('addFailure') ]
@@ -94,11 +90,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'update_content',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: toApiFormat(params),
 				http_method: 'post',
 				types: [ contentType('updateRequest'), contentType('updateSuccess'), contentType('updateFailure') ]
@@ -116,11 +108,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'remove_content',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: params,
 				http_method: 'post',
 				types: [ contentType('removeRequest'), contentType('removeSuccess'), contentType('removeFailure') ]
@@ -151,11 +139,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'reorder_content',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: params,
 				http_method: 'post',
 				types: [ contentType('reorderRequest'), contentType('reorderSuccess'), contentType('reorderFailure') ]

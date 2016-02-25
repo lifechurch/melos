@@ -1,6 +1,6 @@
 import YouVersionAuth from '../api/YouVersionAuth'
 
-const methods = [ 'authenticate' ]
+const methods = [ 'authenticate', 'checkToken' ]
 
 function getRequestAction(type, action) {
 	const finalAction = Object.assign({}, action, { type })

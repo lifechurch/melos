@@ -1,8 +1,11 @@
 import type from '../actions/constants'
-
+import defaultState from '../../../defaultState'
 
 export default function login(state = {}, action) {
 	switch(action.type) {
+
+		case type('authenticationFailed'):
+			return Object.assign({}, state, defaultState.auth)
 
 		case type('setField'):
 			const { field, value } = action
@@ -24,7 +27,7 @@ export default function login(state = {}, action) {
 				isLoggedIn: true,
 				isWorking: false,
 				token: token,
-				user: user
+				userData: user
 			})
 
 		case type('authenticateFailure'):
