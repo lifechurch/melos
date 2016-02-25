@@ -10,8 +10,8 @@ import ActionCreators from '../features/EventFeedMine/actions/creators'
 
 class EventFeedMine extends Component {
 	componentWillMount() {
-		const { dispatch } = this.props
-		dispatch(fetchEventFeedMine())
+		const { dispatch, page } = this.props
+		dispatch(fetchEventFeedMine({page}))
 	}
 
 	handleDuplicate(id) {
@@ -19,10 +19,23 @@ class EventFeedMine extends Component {
 		dispatch(ActionCreators.duplicate({id}))
 	}
 
+	getPage(e) {
+		const { dispatch } = this.props
+		dispatch(fetchEventFeedMine({page: parseInt(e.target.dataset.page)}))
+	}
+
 	render() {
-		const { hasError, errors, isFetching, items, auth } = this.props
+		const { hasError, errors, isFetching, items, page, next_page, auth } = this.props
 		const { userData } = auth
 		const { first_name, last_name } = userData
+		var pagination = null
+
+		if (page > 1 || next_page) {
+			pagination = <div className="pagination">
+                {page > 1 ? <a className="page left" onClick={::this.getPage} data-page={page - 1}>&larr; Previous</a> : null}
+                {next_page ? <a className="page right" onClick={::this.getPage} data-page={next_page}>Next &rarr;</a> : null}
+            </div>
+		}
 
 		var itemList = items.map((item) => {
 			return (<EventListItem key={item.id} item={item} handleDuplicate={::this.handleDuplicate} />)
@@ -60,6 +73,7 @@ class EventFeedMine extends Component {
 				<ul className="unindented">
 					{itemList}
 				</ul>
+                {pagination}
 			</div>
 		)
 	}

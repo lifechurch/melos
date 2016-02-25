@@ -27,23 +27,19 @@ function eventFeedMineFailure(error) {
 	}
 }
 
-export function fetchEventFeedMine() {
-	return dispatch => {
-		dispatch(eventFeedMineRequest())
-		return EventsApi
-			.call("items")
-			.setVersion("3.2")
-			.auth()
-			.params({query: 'Life.Church'})
-			.get()
-			.then(function(data) {
-				handleResponse(data).then((data) => {
-					dispatch(eventFeedMineSuccess(data))
-				}, (error) => {
-					dispatch(eventFeedMineFailure(error))
-				})
-			}, function(err) {
-				dispatch(eventFeedMineFailure(err))
-			})
+export function fetchEventFeedMine(params) {
+	return {
+		params: {
+			...params,
+		},
+		api_call: {
+			endpoint: 'events',
+			method: 'items',
+			version: '3.2',
+			auth: true,
+			params: params,
+			http_method: 'get',
+			types: [ EVENT_FEED_MINE_REQUEST, EVENT_FEED_MINE_SUCCESS, EVENT_FEED_MINE_FAILURE ]
+		}
 	}
 }
