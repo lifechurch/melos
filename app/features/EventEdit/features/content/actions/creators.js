@@ -20,11 +20,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'add_content',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: toApiFormat(params),
 				http_method: 'post',
 				types: [ contentType('addRequest'), contentType('addSuccess'), contentType('addFailure') ]
@@ -56,7 +52,6 @@ const ActionCreators = {
 				endpoint: 'search',
 				method: 'reading_plans',
 				version: '3.1',
-				env: 'staging',
 				params: params,
 				http_method: 'get',
 				types: [ contentType('searchPlansRequest'), contentType('searchPlansSuccess'), contentType('searchPlansFailure') ]
@@ -84,6 +79,78 @@ const ActionCreators = {
 		}
 	},
 
+	getChapter(params) {
+		return {
+			params: {
+				...params,
+			},
+			api_call: {
+				endpoint: 'bible',
+				method: 'chapter',
+				version: '3.1',
+				params: params,
+				http_method: 'get',
+				types: [ contentType('chapterRequest'), contentType('chapterSuccess'), contentType('chapterFailure') ]
+			}
+		}
+	},
+
+	clearChapter(params) {
+		return {
+			params: {
+				...params,
+			},
+			type: contentType('chapterFailure')
+		}
+	},
+
+	getVersions(params) {
+		return {
+			params: {
+				...params,
+			},
+			api_call: {
+				endpoint: 'bible',
+				method: 'versions',
+				version: '3.1',
+				params: params,
+				http_method: 'get',
+				types: [ contentType('versionsRequest'), contentType('versionsSuccess'), contentType('versionsFailure') ]
+			}
+		}
+	},
+
+	setVersion(params) {
+		// if books already exist pass 'versionSuccess'? (still want to run event.js:versionSuccess)
+		return {
+			params: {
+				...params,
+			},
+			api_call: {
+				endpoint: 'bible',
+				method: 'version',
+				version: '3.1',
+				params: params,
+				http_method: 'get',
+				types: [ contentType('versionRequest'), contentType('versionSuccess'), contentType('versionFailure') ]
+			}
+		}
+	},
+
+	setReference(params) {
+		return {
+			type: contentType('setReference'),
+			...params
+		}
+	},
+
+	clearReference(params) {
+		return {
+			type: contentType('clearReference'),
+			...params
+		}
+	},
+
 	update(params) {
 		validateAddContentParams(params)
 		return {
@@ -94,11 +161,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'update_content',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: toApiFormat(params),
 				http_method: 'post',
 				types: [ contentType('updateRequest'), contentType('updateSuccess'), contentType('updateFailure') ]
@@ -107,6 +170,12 @@ const ActionCreators = {
 	},
 
 	remove(params) {
+		if (typeof params.content_id == 'undefined') {
+			return {
+				type: contentType('removeRequest'),
+				params
+			}
+		}
 		validateRemoveContentParams(params)
 		return {
 			params: {
@@ -116,11 +185,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'remove_content',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: params,
 				http_method: 'post',
 				types: [ contentType('removeRequest'), contentType('removeSuccess'), contentType('removeFailure') ]
@@ -151,17 +216,30 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'reorder_content',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: params,
 				http_method: 'post',
 				types: [ contentType('reorderRequest'), contentType('reorderSuccess'), contentType('reorderFailure') ]
 			}
 		}
-	}
+	},
+
+	initUpload(params) {
+		return {
+			params: {
+				...params,
+			},
+			api_call: {
+				endpoint: 'events',
+				method: 'image_upload',
+				version: '3.2',
+				auth: true,
+				params: params,
+				http_method: 'get',
+				types: [ contentType('initUpload'), contentType('initUploadSuccess'), contentType('initUploadFailure') ]
+			}
+		}
+	},
 }
 
 export default ActionCreators

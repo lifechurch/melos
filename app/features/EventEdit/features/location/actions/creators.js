@@ -34,7 +34,7 @@ const ActionCreators = {
 	setTime(index, start_dt, end_dt) {
 		return {
 			type: type('setTime'),
-			index, 
+			index,
 			start_dt,
 			end_dt
 		}
@@ -54,11 +54,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'view_location',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: { location_id },
 				http_method: 'get',
 				types: [ type('viewRequest'), type('viewSuccess'), type('viewFailure') ]
@@ -72,18 +68,14 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'locations_items',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: {},
 				http_method: 'get',
 				types: [ type('itemsRequest'), type('itemsSuccess'), type('itemsFailure') ]
 			}
 		}
-	},	
-	
+	},
+
 	edit(originalLoc) {
 		return dispatch => {
 			const { id } = originalLoc
@@ -136,11 +128,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'create_location',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: newLoc,
 				http_method: 'post',
 				types: [ type('createRequest'), type('createSuccess'), type('createFailure') ]
@@ -155,16 +143,12 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'delete_location',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params: { id },
 				http_method: 'post',
 				types: [ type('deleteRequest'), type('deleteSuccess'), type('deleteFailure') ]
 			}
-		}		
+		}
 	},
 
 	update(eventId, loc) {
@@ -175,17 +159,13 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'update_location',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params,
 				http_method: 'post',
 				types: [ type('updateRequest'), type('updateSuccess'), type('updateFailure') ]
 			}
 		}
-	},	
+	},
 
 	addLocation(eventId, locationId) {
 		const params = { id: eventId, location_id: locationId }
@@ -195,11 +175,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'add_location',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params,
 				http_method: 'post',
 				types: [ type('addLocationRequest'), type('addLocationSuccess'), type('addLocationFailure') ]
@@ -215,11 +191,7 @@ const ActionCreators = {
 				endpoint: 'events',
 				method: 'remove_location',
 				version: '3.2',
-				env: 'staging',
-				auth: {
-					user: 'ignacio',
-					pass: 'password'
-				},
+				auth: true,
 				params,
 				http_method: 'post',
 				types: [ type('removeLocationRequest'), type('removeLocationSuccess'), type('removeLocationFailure') ]
@@ -255,7 +227,7 @@ const ActionCreators = {
 				types: [ type('placeRequest'), type('placeSuccess'), type('placeFailure') ]
 			}
 		}
-	}	
+	}
 
 }
 

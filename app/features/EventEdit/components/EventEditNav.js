@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 import ActionCreators from '../features/details/actions/creators'
 
 class EventEditNav extends Component {
-	
+
 	handleDetailsNext(clickEvent) {
 		const { event, dispatch } = this.props
 		dispatch(ActionCreators.saveDetails(event.item, true))
@@ -32,18 +32,18 @@ class EventEditNav extends Component {
 
 		function previewClassname() {
 			return (routing.location.pathname === '/event/edit/' + params.id + '/preview') ? 'active small button' : 'small button'
-		}		
+		}
 
 		function shareClassname() {
 			return (routing.location.pathname === '/event/edit/' + params.id + '/share') ? 'active small button' : 'small button'
-		}		
+		}
 
 		return (
 			<ul className='event-edit-nav button-group small radius'>
 				<li><Link className={detailsClassname()} to={`/event/edit/${params.id}`}>Details</Link></li>
-				<li><a className={locationsClassname()} onClick={::this.handleDetailsNext}>Location & Times</a></li>
+				<li><a className={locationsClassname()} onClick={::this.handleDetailsNext}>Locations & Times</a></li>
 				<li><Link className={contentClassname()} to={`/event/edit/${params.id}/content`}>Content</Link></li>
-				<li><Link className={previewClassname()} to={`/event/edit/${params.id}/preview`}>Preview</Link></li>
+				<li><Link className={previewClassname()} to={`/event/edit/${params.id}/preview`}>Preview & Publish</Link></li>
 				<li><Link className={shareClassname()} to={`/event/edit/${params.id}/share`}>Share</Link></li>
 			</ul>
 		)

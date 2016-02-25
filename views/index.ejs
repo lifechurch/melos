@@ -2,7 +2,10 @@
 <html>
 	<head>
 		<link href="https://www.bible.com/assets/application-0523b1103a0155d0473a21fce304cdc3.css" media="screen" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="/stylesheets/style.min.css" />		
+		<link rel="stylesheet" href="/stylesheets/style.min.css" />
+		<script type="application/javascript">
+			window.__INITIAL_STATE__ = <%- JSON.stringify(initialState) %>;
+		</script>
 	</head>
 	<body>
 		<div id="current-ui-view">
@@ -11,6 +14,6 @@
 		<script src="/javascripts/app.js"></script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMA0n8NXq9Z-84At4-cIOAseleESrfRGE&libraries=places">
-    </script>		
+    </script>
 	</body>
 </html>

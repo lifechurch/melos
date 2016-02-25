@@ -4,46 +4,46 @@ import Column from '../../../../app/components/Column'
 import { Link } from 'react-router'
 
 class EventListItem extends Component {
-	getLiveDetails(item) {
+	getLiveDetails(item, handleDuplicate) {
 		return (
 			<div className="events-details">
 				<span className="red-label">LIVE</span>
-				<Link className="small-link" to={`/event/edit/${item.id}`}>Edit</Link>
+				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
 				<Link className="small-link" to={'#'}>Share</Link>
 			</div>
 		)
 	}
 
-	getPublishedWithCountdownDetails(item) {
+	getPublishedWithCountdownDetails(item, handleDuplicate) {
 		return (
 			<div className="events-details">
 				<span className="red-label">29.95</span>
-				<Link className="small-link" to={`/event/edit/${item.id}`}>Edit</Link>
+				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
 				<Link className="small-link" to={'#'}>Share</Link>
 			</div>
 		)
 	}
 
-	getPublishedDetails(item) {
+	getPublishedDetails(item, handleDuplicate) {
 		return (
 			<div className="events-details">
 				<span className="details-text">October 17 - 18, 2015</span>
-				<Link className="small-link" to={`/event/edit/${item.id}`}>Edit</Link>
+				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
 			</div>
 		)
 	}
 
-	getDraftDetails(item) {
+	getDraftDetails(item, handleDuplicate) {
 		//<Link className="small-delete-link" to={'#'}>Delete</Link>
 		return (
 			<div className="events-details">
 				<span className="gray-label">DRAFT</span>
-				<Link className="small-link" to={`/event/edit/${item.id}`}>Edit</Link>
+				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
 			</div>
 		)
 	}
 
-	getArchivedDetails(item) {
+	getArchivedDetails(item, handleDuplicate) {
 		return (
 			<div className="events-details">
 				<div className="details-text">October 17 - 18, 2015</div>
@@ -53,17 +53,17 @@ class EventListItem extends Component {
 	}
 
 	// Todo: Need to create enum for the event statuses
-	getDetails(item) {
+	getDetails(item, handleDuplicate) {
 		switch (item.status) {
 			case 0:
-				return this.getDraftDetails(item);
+				return this.getDraftDetails(item, handleDuplicate);
 			case 1:
 				// Todo: Determine whether countdown/regular published
-				return this.getPublishedDetails(item);
+				return this.getPublishedDetails(item, handleDuplicate);
 			case 2:
-				return this.getArchivedDetails(item);
+				return this.getArchivedDetails(item, handleDuplicate);
 			case 3:
-				return this.getLiveDetails(item);
+				return this.getLiveDetails(item, handleDuplicate);
 		}
 	}
 
@@ -96,11 +96,11 @@ class EventListItem extends Component {
 							<Link className="large-link" to={`/event/edit/${item.id}`}>{item.title}</Link>
 						</Row>
 						<Row>
-							{this.getDetails(item)}
+							{this.getDetails(item, handleDuplicate)}
 						</Row>
 					</Column>
 					<Column s='medium-2' a='right'>
-						<a className="hollow-button gray" onClick={handleDuplicate.bind(this, item.id)}>Duplicate</a>
+						<a className="hollow-button gray" to={`/event/edit/${item.id}`}>Edit</a>
 					</Column>
 				</Row>
 			</li>
