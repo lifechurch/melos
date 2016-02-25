@@ -60,7 +60,8 @@ YouversionWeb::Application.configure do
   config.assets.precompile += %w( ie7.css ie8.css ie9.css donate.css status.css mobile.css mobile/donate.css bdc_home.css campaigns/kids.css retina.js campaigns/100m.css campaigns/100m/jquery.counter.js campaigns/100m/jquery.countdown.min.js slick.css  campaigns/christmas/polymaps.min.js campaigns/christmas/plugins.js campaigns/christmas.css jw/jwplayer.js jw/jwplayer.html5.js angular/angular.min.js angular/app.js)
   # Precompile JS locale files
   config.assets.precompile += ['i18n/*']
-  config.assets.precompile += ['features/events/*']
+  # events css/js
+  config.assets.precompile += %w( features/events/flexslider.css features/events/jquery.fullPage.css features/events/responsive.css features/events/style.css features/events/attrchange.js features/events/classie.js features/events/global.js features/events/jquery.flexslider.js features/events/jquery.fullPage.js features/events/jquery.lazy.min.js features/events/jquery.smooth-scroll.js features/events/retina.min.js)
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
