@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
+import EventHeader from '../components/EventHeader'
 import { fetchEventFeedMine } from '../actions'
 import { Link } from 'react-router'
 import Row from '../components/Row'
@@ -44,19 +45,7 @@ class EventFeedMine extends Component {
 		return (
 			<div className="medium-10 large-7 columns small-centered">
 				<Helmet title="My Events" />
-				<div className="event-header">
-					<Row className="collapse">
-						<Column s='medium-4'>
-							<span className="yv-title">YouVersion</span>
-						</Column>
-						<Column s='medium-4' a='center'>
-							EVENT BUILDER
-						</Column>
-						<Column s='medium-4' a='right'>
-							{first_name} {last_name}
-						</Column>
-					</Row>
-				</div>
+				<EventHeader {...this.props} />
                 <div className="event-title-section">
                     <Row className="collapse">
                         <Column s="medium-8" a="left">
