@@ -6,8 +6,8 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@youversion/js-api": "^0.0.58",
-    "@youversion/token-storage": "^0.0.34",
+    "@youversion/js-api": "^0.0.60",
+    "@youversion/token-storage": "^0.0.35",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-polyfill": "^6.3.14",
     "babel-preset-react": "^6.3.13",

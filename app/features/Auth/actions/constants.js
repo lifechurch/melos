@@ -1,4 +1,5 @@
 const constants = {
+	logout: 'LOGOUT',
 	authenticationFailed: 'AUTHENTICATION_FAILED',
 	authenticateRequest: 'AUTHENTICATE_REQUEST',
 	authenticateSuccess: 'AUTHENTICATE_SUCCESS',

@@ -33,6 +33,7 @@ router.get('/*', cookieParser(), function(req, res) {
 
 			let sessionData = {}
 			let startingState = defaultState
+			let redirecting = false
 			try {
 				const token = fetchToken()
 				const tokenData = tokenAuth.decodeToken(token)
@@ -56,17 +57,21 @@ router.get('/*', cookieParser(), function(req, res) {
 				}})
 
 			} catch(err) {
-				// Need to handle server errors in some
-				// sort of logging module
+				if (req.path !== '/login') {
+					redirecting = true
+					res.redirect('/login');
+				}
 			}
 
-			const logger = createNodeLogger()
-			const history = createMemoryHistory()
-			const store = configureStore(startingState, history, logger)
-			const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
-			const initialState = store.getState()
-			res.setHeader('Cache-Control', 'public');
-			res.render('index', {appString: html, head: Helmet.rewind(), initialState: initialState })
+			if (!redirecting) {
+				const logger = createNodeLogger()
+				const history = createMemoryHistory()
+				const store = configureStore(startingState, history, logger)
+				const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
+				const initialState = store.getState()
+				res.setHeader('Cache-Control', 'public');
+				res.render('index', {appString: html, head: Helmet.rewind(), initialState: initialState })
+			}
 
 		} else {
 

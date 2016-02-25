@@ -3,6 +3,8 @@ import Row from './Row'
 import Column from './Column'
 import EventEditNav from '../features/EventEdit/components/EventEditNav'
 import ActionCreators from '../features/EventEdit/features/details/actions/creators'
+import AuthActionCreators from '../features/Auth/actions/creators'
+import { routeActions } from 'react-router-redux'
 
 class EventHeader extends Component {
 	handleCancel() {
@@ -13,6 +15,11 @@ class EventHeader extends Component {
 	handleSave() {
 		const { event, dispatch } = this.props
 		dispatch(ActionCreators.saveDetails(event.item, false))
+	}
+
+	handleLogout() {
+		const { dispatch } = this.props
+		dispatch(AuthActionCreators.logout())
 	}
 
 	render() {
@@ -31,7 +38,7 @@ class EventHeader extends Component {
 						</Column>
 
 						<Column s='medium-4' a='right'>
-							{auth.userData.first_name} {auth.userData.last_name}
+							{auth.userData.first_name} {auth.userData.last_name} <a onClick={::this.handleLogout}>Sign Out</a>
 						</Column>
 					</Row>
 

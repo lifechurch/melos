@@ -8,23 +8,33 @@ var less = require('gulp-less');
 var cssnano = require('gulp-cssnano');
 var concat 	= require('gulp-concat');
 
+var IS_PROD = process.env.NODE_ENV === 'production';
+
 gulp.task('javascript', function() {
-	browserify("app/main.js", { debug: process.env.NODE_ENV === 'development' })
+	var p = browserify("app/main.js", { debug: !IS_PROD })
 		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
 		.bundle()
 		.pipe(source('app.js'))
-		.pipe(buffer())
-		.pipe(uglify())
-		.pipe(gulp.dest("./public/javascripts/"))
+		.pipe(buffer());
+
+	if (IS_PROD) {
+		p = p.pipe(uglify())
+	}
+
+	p.pipe(gulp.dest("./public/javascripts/"))
 		.pipe(livereload({reloadPage:""}));
 });
 
 gulp.task('css', function() {
-	gulp.src(['./app/less/**/*.less'])
+	var p = gulp.src(['./app/less/**/*.less'])
 		.pipe(concat('style.min.css'))
-    .pipe(less())
-		.pipe(cssnano())
-    .pipe(gulp.dest('./public/stylesheets'));
+    .pipe(less());
+
+  if (IS_PROD) {
+		p = p.pipe(cssnano());
+  }
+
+	p.pipe(gulp.dest('./public/stylesheets'));
 });
 
 gulp.task('watch', ['css', 'javascript'], function() {

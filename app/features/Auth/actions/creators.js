@@ -1,8 +1,16 @@
 import type from './constants'
 import { routeActions } from 'react-router-redux'
-import { storeToken } from '@youversion/token-storage'
+import { storeToken, deleteToken } from '@youversion/token-storage'
 
 const ActionCreators = {
+	logout() {
+		return dispatch => {
+			deleteToken()
+			dispatch({ type: type('logout') })
+			dispatch(routeActions.push('/login'))
+		}
+	},
+
 	authenticationFailed() {
 		return {
 			type: type('authenticationFailed')
@@ -19,8 +27,10 @@ const ActionCreators = {
 	authenticate(params) {
 		return dispatch => {
 			dispatch(ActionCreators.callAuthenticate(params)).then((authResponse) => {
-				storeToken(authResponse.token)
-				dispatch(routeActions.push('/'))
+				if (!(authResponse instanceof Error)) {
+					storeToken(authResponse.token)
+					dispatch(routeActions.push('/'))
+				}
 			})
 		}
 	},

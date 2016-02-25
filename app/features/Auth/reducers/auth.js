@@ -4,8 +4,21 @@ import defaultState from '../../../defaultState'
 export default function login(state = {}, action) {
 	switch(action.type) {
 
+		case type('logout'):
+			return Object.assign({}, state, {
+				...defaultState.auth,
+				user: state.user
+			})
+
 		case type('authenticationFailed'):
-			return Object.assign({}, state, defaultState.auth)
+			return Object.assign({}, state, {
+				...defaultState.auth,
+				errors: {
+					...state.errors,
+					api: "Your session expired. Please login again."
+				},
+				user: state.user
+			})
 
 		case type('setField'):
 			const { field, value } = action
@@ -35,7 +48,7 @@ export default function login(state = {}, action) {
 				isWorking: false,
 				errors: {
 					...state.errors,
-					api: action.response
+					api: 'Invalid email or password.'
 				}
 			})
 

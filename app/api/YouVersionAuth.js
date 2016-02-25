@@ -43,7 +43,7 @@ function handleRequest(path, method, postBody) {
 							resolve(JSON.parse(body))
 						}
 					} else {
-						reject({status: response.statusCode, message: response.statusMessage})
+						reject(new Error(response.statusMessage))
 					}
 
 				} catch(ex) {
