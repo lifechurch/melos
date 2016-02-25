@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import ImageDrop from './ImageDrop'
+import ImageDrop from '../../../../../../app/components/ImageDrop'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import { Link } from 'react-router'
@@ -18,9 +18,9 @@ class DetailsEdit extends Component {
 						<FormField InputType={Input} size='large' placeholder='Event Name' name='title' onChange={handleChange} value={event.item.title} errors={event.errors.fields.title} />
 					</div>
 				</Row>
-				
-				<ImageDrop />
-				
+
+				<ImageDrop instruction="Ideally your image dimensions should be 1200 x 600 pixels, but don’t worry if it isn’t; we’ll make it work."/>
+
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
 						<FormField InputType={Input} size='medium' placeholder="Church Name or Organization" name="org_name" onChange={handleChange} value={event.item.org_name} errors={event.errors.fields.org_name} />
@@ -32,7 +32,7 @@ class DetailsEdit extends Component {
 						<FormField InputType={Textarea} placeholder="Event Description" name="description" onChange={handleChange} value={event.item.description} errors={event.errors.fields.description} />
 					</div>
 				</Row>
-				
+
 				<Row>
 					<Column s='medium-12' a='right'>
 						<a disabled={event.errors.hasError} onClick={handleNext}>Next: Add Location & Times</a>

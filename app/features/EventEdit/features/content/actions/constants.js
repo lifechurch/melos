@@ -32,7 +32,10 @@ const constants = {
 	focusPlanSearch: 'FOCUS_PLAN_SEARCH',
 	clearPlanSearch: 'CLEAR_PLAN_SEARCH',
 	move: 'CONTENT_MOVE',
-	startReorder: 'CONTENT_START_REORDER'
+	startReorder: 'CONTENT_START_REORDER',
+	initUpload: 'INIT_UPLOAD',
+	initUploadSuccess: 'INIT_UPLOAD_SUCCESS',
+	initUploadFailure: 'INIT_UPLOAD_FAILURE'
 }
 
 export default function (key) {
