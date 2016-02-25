@@ -158,7 +158,9 @@ export default {
 			hasError: false,
 			errors: [],
 			isFetching: false,
-			items: []
+			items: [],
+			page: 1,
+			next_page: null
 		}
 	}
 }
