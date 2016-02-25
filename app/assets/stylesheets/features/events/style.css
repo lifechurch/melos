@@ -953,6 +953,9 @@ text-align: center;
 .accordion-content p {
 	margin:0 0 15px;
 }
+.accordion-content a {
+    color: #fff;
+}
 .accordion-content .find-more {
 	color:#f8e71c;
 	text-decoration:none;
