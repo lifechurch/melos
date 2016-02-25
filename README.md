@@ -13,7 +13,12 @@
  * Compile all the javascript in the project with `gulp javascript`
  * Compile all the CSS in the project with `gulp css`
 
+**Create environment variables**
 
+ * export NODE_ENV=staging
+ * export YOUVERSION_TOKEN_PHRASE='bob the builder builds some cool things'
+ * export NEW_RELIC_LICENSE_KEY=148b7b0a47e0219bd1117c19b692c94c779cdf33
+ 
 **Start Watching Files and Run Local Server**
 
  * To monitor and recompile files as you modify js/css files with `gulp watch`
