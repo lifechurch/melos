@@ -43,6 +43,22 @@ class EventEditContentContainer extends Component {
 		))
 	}
 
+	handleAddReference() {
+		const { event, dispatch } = this.props
+		dispatch(ActionCreators.new(
+			Object.assign({},
+				createBaseContentObject(event.item.id, 'reference'),
+				{
+					data: {
+						version_id: 1,
+						chapter: '',
+						human: 'Genesis ',
+						usfm: ['GEN']
+					}
+				}
+			)
+		))
+	}
 
 	handleAddPlan() {
 		const { event, dispatch } = this.props
@@ -57,6 +73,21 @@ class EventEditContentContainer extends Component {
 						formatted_length: '',
 						images: [],
 						short_url: ''
+					}
+				}
+			)
+		))
+	}
+
+	handleAddImage() {
+		const { event, dispatch } = this.props
+		dispatch(ActionCreators.new(
+			Object.assign({},
+				createBaseContentObject(event.item.id, 'image'),
+				{
+					data: {
+						image_id: '0',
+						body: ''
 					}
 				}
 			)
@@ -151,11 +182,12 @@ class EventEditContentContainer extends Component {
 	}
 
 	render() {
-		const { event, plans, dispatch } = this.props
+		const { event, references, plans, dispatch } = this.props
 		let contentFeed = (
 			<ContentFeed
 				dispatch={dispatch}
 				event={event}
+				references={references}
 				plans={plans}
 				handleUpdate={::this.handleUpdate}
 				handleChange={::this.handleChange}
@@ -181,12 +213,13 @@ class EventEditContentContainer extends Component {
 				<Helmet title="Event Content" />
 				<ContentHeader
 					handleAddText={::this.handleAddText}
+					handleAddReference={::this.handleAddReference}
 					handleAddPlan={::this.handleAddPlan}
 					handleAddAnnouncement={::this.handleAddAnnouncement}
 					handleAddLink={::this.handleAddLink}
 					handleAddGiving={::this.handleAddGiving}
+					handleAddImage={::this.handleAddImage}
 				/>
-
 				<div className='content-container'>
 					{contentFeed}
 				</div>

@@ -44,11 +44,19 @@ class EventFeedMine extends Component {
 						</Column>
 					</Row>
 				</div>
-				<div className="event-title-section">
-					<h1 className="title">My Events</h1>
-					<Link className="solid-button green" to="/event/edit">Create New Event</Link>
-					<h2 className="subtitle">EVENTS | CREATED</h2>
-				</div>
+                <div className="event-title-section">
+                    <Row className="collapse">
+                        <Column s="medium-8" a="left">
+                            <h1 className="title">My Events</h1>
+                        </Column>
+                        <Column s="medium-4" a="right">
+                            <Link className="solid-button green" to="/event/edit">Create New Event</Link>
+                        </Column>
+                    </Row>
+                    <Row>
+                        <h2 className="subtitle">EVENTS I CREATED</h2>
+                    </Row>
+                </div>
 				<ul className="unindented">
 					{itemList}
 				</ul>

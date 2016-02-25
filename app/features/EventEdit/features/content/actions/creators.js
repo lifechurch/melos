@@ -80,6 +80,81 @@ const ActionCreators = {
 		}
 	},
 
+	getChapter(params) {
+		return {
+			params: {
+				...params,
+			},
+			api_call: {
+				endpoint: 'bible',
+				method: 'chapter',
+				version: '3.1',
+				env: 'staging',
+				params: params,
+				http_method: 'get',
+				types: [ contentType('chapterRequest'), contentType('chapterSuccess'), contentType('chapterFailure') ]
+			}
+		}
+	},
+
+	clearChapter(params) {
+		return {
+			params: {
+				...params,
+			},
+			type: contentType('chapterFailure')
+		}
+	},
+
+	getVersions(params) {
+		return {
+			params: {
+				...params,
+			},
+			api_call: {
+				endpoint: 'bible',
+				method: 'versions',
+				version: '3.1',
+				env: 'staging',
+				params: params,
+				http_method: 'get',
+				types: [ contentType('versionsRequest'), contentType('versionsSuccess'), contentType('versionsFailure') ]
+			}
+		}
+	},
+
+	setVersion(params) {
+		// if books already exist pass 'versionSuccess'? (still want to run event.js:versionSuccess)
+		return {
+			params: {
+				...params,
+			},
+			api_call: {
+				endpoint: 'bible',
+				method: 'version',
+				version: '3.1',
+				env: 'staging',
+				params: params,
+				http_method: 'get',
+				types: [ contentType('versionRequest'), contentType('versionSuccess'), contentType('versionFailure') ]
+			}
+		}
+	},
+
+	setReference(params) {
+		return {
+			type: contentType('setReference'),
+			...params
+		}
+	},
+
+	clearReference(params) {
+		return {
+			type: contentType('clearReference'),
+			...params
+		}
+	},
+
 	update(params) {
 		validateAddContentParams(params)
 		return {
@@ -99,6 +174,12 @@ const ActionCreators = {
 	},
 
 	remove(params) {
+		if (typeof params.content_id == 'undefined') {
+			return {
+				type: contentType('removeRequest'),
+				params
+			}
+		}
 		validateRemoveContentParams(params)
 		return {
 			params: {
@@ -145,7 +226,28 @@ const ActionCreators = {
 				types: [ contentType('reorderRequest'), contentType('reorderSuccess'), contentType('reorderFailure') ]
 			}
 		}
-	}
+	},
+
+	initUpload(params) {
+		return {
+			params: {
+				...params,
+			},
+			api_call: {
+				endpoint: 'events',
+				method: 'image_upload',
+				version: '3.2',
+				env: 'staging',
+				auth: {
+					user: 'ignacio',
+					pass: 'password'
+				},
+				params: params,
+				http_method: 'get',
+				types: [ contentType('initUpload'), contentType('initUploadSuccess'), contentType('initUploadFailure') ]
+			}
+		}
+	},
 }
 
 export default ActionCreators
