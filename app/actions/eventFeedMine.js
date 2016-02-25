@@ -19,7 +19,7 @@ function eventFeedMineSuccess(data) {
 		data: data
 	}
 }
- 
+
 function eventFeedMineFailure(error) {
 	return {
 		type: EVENT_FEED_MINE_FAILURE,
@@ -33,9 +33,8 @@ export function fetchEventFeedMine() {
 		return EventsApi
 			.call("items")
 			.setVersion("3.2")
-			.setEnvironment("staging")
-			.params({query: 'Life.Church'})	
-			.auth('ignacio', 'password')		
+			.auth()
+			.params({query: 'Life.Church'})
 			.get()
 			.then(function(data) {
 				handleResponse(data).then((data) => {

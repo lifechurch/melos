@@ -19,7 +19,7 @@ function eventFeedDiscoverSuccess(data) {
 		data: data
 	}
 }
- 
+
 function eventFeedDiscoverFailure(error) {
 	return {
 		type: EVENT_FEED_DISCOVER_FAILURE,
@@ -33,8 +33,7 @@ export function fetchEventFeedDiscover() {
 		return EventsApi
 			.call("search")
 			.setVersion("3.2")
-			.setEnvironment("staging")
-			.params({query: 'Life.Church'})	
+			.params({query: 'Life.Church'})
 			.get()
 			.then((data) => {
 				handleResponse(data).then((data) => {

@@ -1,6 +1,8 @@
 import { getClient } from '@youversion/js-api'
+import ActionCreators from '../features/Auth/actions/creators'
+import { routeActions } from 'react-router-redux'
 
-const endpoints = [ 'events', 'search', 'bible' ]
+const endpoints = [ 'events', 'search', 'users', 'bible' ]
 const versions = [ '3.2', '3.1' ]
 const envs = [ 'staging', 'production' ]
 const http_methods = [ 'get', 'post' ]
@@ -48,9 +50,9 @@ export default store => next => action => {
 		throw new Error('Invalid API Version [' + version + ']')
 	}
 
-	const env = api_call.env
+	let env = api_call.env
 	if (typeof env !== 'string' || envs.indexOf(env) == -1) {
-		throw new Error('Invalid API Environment [' + env + ']')
+		env = envs[0]
 	}
 
 	const params = api_call.params
@@ -71,43 +73,35 @@ export default store => next => action => {
 
 	next(getRequestAction(requestType, action))
 
+	const client = getClient(endpoint)
+		.call(method)
+		.setVersion(version)
+		.setEnvironment(env)
+		.params(params)
+
 	const auth = api_call.auth
-	if (typeof auth !== 'object' || typeof auth.user !== 'string' || typeof auth.pass !== 'string') {
-		return getClient(endpoint)
-			.call(method)
-			.setVersion(version)
-			.setEnvironment(env)
-			.params(params)
-			[http_method]()
-			.then((response) => {
-				const errors = response.errors
-				if (Array.isArray(errors) && errors.length > 0) {
-					next(getFailureAction(failureType, action, errors))
-				} else {
-					next(getSuccessAction(successType, action, response))
-					return response
-				}
-			}, (error) => {
-				next(getSuccessAction(failureType, action, [ error ]))
-			})
-	} else {
-		return getClient(endpoint)
-			.call(method)
-			.setVersion(version)
-			.setEnvironment(env)
-			.auth(auth.user, auth.pass)
-			.params(params)
-			[http_method]()
-			.then((response) => {
-				const errors = response.errors
-				if (Array.isArray(errors) && errors.length > 0) {
-					next(getFailureAction(failureType, action, errors))
-				} else {
-					next(getSuccessAction(successType, action, response))
-					return response
-				}
-			}, (error) => {
-				next(getSuccessAction(failureType, action, [ error ]))
-			})
+	if (auth === true) {
+		client.auth()
 	}
+
+	const apiPromise = client[http_method]();
+	apiPromise.then((response) => {
+		const errors = response.errors
+		if (Array.isArray(errors) && errors.length > 0) {
+			next(getFailureAction(failureType, action, errors))
+		} else {
+			next(getSuccessAction(successType, action, response))
+		}
+		return response
+	}, (error) => {
+		if (error.status === 401) {
+			next(ActionCreators.authenticationFailed())
+			next(routeActions.push('/login'))
+		} else {
+			next(getFailureAction(failureType, action, [ error ]))
+		}
+		return error
+	})
+
+	return apiPromise
 }

@@ -8,6 +8,7 @@ var compression = require('compression');
 var api = require('@youversion/js-api');
 var ping = require('./ping');
 var basicAuth = require('basic-auth');
+var auth = api.tokenAuth;
 
 require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] });
 
@@ -23,31 +24,12 @@ app.use(compression({
 	threshold: 512
 }));
 
-app.use(function (req, res, next) {
-	function unauthorized(res) {
-		res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
-		return res.status(401).send();
-	};
-
-	var user = basicAuth(req);
-
-	if (!user || !user.name || !user.pass) {
-		return unauthorized(res);
-	};
-
-	if (user.name === 'youversion' && user.pass === 'yv123') {
-		return next();
-	} else {
-		return unauthorized(res);
-	};
-});
-
-// uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/authenticate', auth.expressAuthRouteHandler);
 app.use('/', ping);
 app.use('/', api.expressRouter);
 
@@ -74,6 +56,12 @@ if (app.get('env') === 'development') {
 		});
 	});
 }
+
+app.use(function(err, req, res, next) {
+	if (err.name === 'UnauthorizedError') {
+		res.status(401).send({status: 401, message: 'Invalid Token' });
+	}
+});
 
 // production error handler
 // no stacktraces leaked to user

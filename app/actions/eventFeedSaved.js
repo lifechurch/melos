@@ -19,7 +19,7 @@ function eventFeedSavedSuccess(data) {
 		data: data
 	}
 }
- 
+
 function eventFeedSavedFailure(error) {
 	return {
 		type: EVENT_FEED_SAVED_FAILURE,
@@ -33,15 +33,14 @@ export function fetchEventFeedSaved() {
 		return EventsApi
 			.call("saved_items")
 			.setVersion("3.2")
-			.setEnvironment("staging")
-			.params({})	
+			.params({})
 			.get()
 			.then(function(data) {
 				handleResponse(data).then((data) => {
 					dispatch(eventFeedSavedSuccess(data))
 				}, (error) => {
 					dispatch(eventFeedSavedFailure(error))
-				})				
+				})
 			}, function(error) {
 				dispatch(eventFeedSavedFailure(error))
 			})

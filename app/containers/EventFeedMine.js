@@ -20,7 +20,10 @@ class EventFeedMine extends Component {
 	}
 
 	render() {
-		const { hasError, errors, isFetching, items } = this.props
+		const { hasError, errors, isFetching, items, auth } = this.props
+		const { userData } = auth
+		const { first_name, last_name } = userData
+
 		var itemList = items.map((item) => {
 			return (<EventListItem key={item.id} item={item} handleDuplicate={::this.handleDuplicate} />)
 		})
@@ -37,7 +40,7 @@ class EventFeedMine extends Component {
 							EVENT BUILDER
 						</Column>
 						<Column s='medium-4' a='right'>
-							First Lastname
+							{first_name} {last_name}
 						</Column>
 					</Row>
 				</div>
@@ -70,12 +73,12 @@ EventFeedMine.defaultProps = {
 }
 
 function mapStateToProps(state) {
-	return state.eventFeeds.mine || {
+	return Object.assign({}, state.eventFeeds.mine || {
 		hasError: false,
 		errors: [],
 		isFetching: false,
 		items: []
-	}
+	}, { auth: state.auth })
 }
 
 export default connect(mapStateToProps, null)(EventFeedMine)

@@ -20,11 +20,7 @@ function view(id) {
 			endpoint: 'events',
 			method: 'view',
 			version: '3.2',
-			env: 'staging',
-			auth: {
-				user: 'ignacio',
-				pass: 'password'
-			},
+			auth: true,
 			params: { id },
 			http_method: 'get',
 			types: [ type('viewRequest'), type('viewSuccess'), type('viewFailure') ]
@@ -39,11 +35,7 @@ function create(event) {
 			endpoint: 'events',
 			method: 'create',
 			version: '3.2',
-			env: 'staging',
-			auth: {
-				user: 'ignacio',
-				pass: 'password'
-			},
+			auth: true,
 			params: {title, org_name, description},
 			http_method: 'post',
 			types: [ type('createRequest'), type('createSuccess'), type('createFailure') ]
@@ -60,11 +52,7 @@ function update(event) {
 			endpoint: 'events',
 			method: 'update',
 			version: '3.2',
-			env: 'staging',
-			auth: {
-				user: 'ignacio',
-				pass: 'password'
-			},
+			auth: true,
 			params,
 			http_method: 'post',
 			types: [ type('updateRequest'), type('updateSuccess'), type('updateFailure') ]
