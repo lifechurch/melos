@@ -1,5 +1,8 @@
-public/javascripts/app.js
-public/stylesheets/style.min.css
+public/javascripts/*.*
+public/stylesheets/*.*
+public/images/*.*
+
+rev-manifest.json
 
 # Logs
 logs
