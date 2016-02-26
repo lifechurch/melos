@@ -26,12 +26,12 @@ class EventHeader extends Component {
 	getPublishSection(pathname) {
 		const { isSaving, errors } = this.props.event
 		if (pathname.split('/').pop() == "share") {
-			return <Column s='medium-6' a='right' className="">
+			return <Column s='medium-7' a='right' className="">
 				<span className="publishedLabel"><img src={`/images/${RevManifest['check.png']}`} className="publishedButtonCheckmark"/>Published</span>&nbsp;
 				<a className='solid-button gray'>Unpublish</a>
 			</Column>
 		}
-		return <Column s='medium-6' a='right'>
+		return <Column s='medium-5' a='right'>
 			<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving}>{ isSaving ? 'Saving...' : 'Save as Draft' }</a>&nbsp;
 			<a className='solid-button green'>Publish</a>
 		</Column>

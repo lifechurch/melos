@@ -958,6 +958,158 @@ textarea {
 	float: right;
 }
 
+#preview-container {
+	margin-bottom: 40px;
+
+	.preview {
+		margin-left: 20px;
+		padding: 35px;
+		border: 2px solid;
+		border-radius: 40px;
+
+		.device {
+			padding: 0 10px;
+			border: 2px solid;
+			border-radius: 5px;
+
+			.org p{
+				line-height: 2.5em;
+				text-align: center;
+			}
+
+			.feed {
+				padding-bottom: 10px;
+				min-height: 600px;
+				max-height: 800px;
+				overflow: scroll;
+
+				.details {
+					h2 {
+						margin-top: 10px;
+						font-weight: bold;
+					}
+
+					.actions {
+						margin: 10px 0 0 10px;
+						font-size: .8em;
+					}
+				}
+
+				.type {
+					overflow: auto;
+					margin-bottom: 10px;
+					padding: 10px;
+					background-color: #eee;
+
+					.meta {
+						overflow: auto;
+						font-size: .8em;
+
+						.notes {
+							float: left;
+						}
+
+						.actions {
+							float: right;
+						}
+					}
+				}
+
+				.announcement {
+					.title { margin-bottom: 0; }
+					.caption { display: none; }
+					.caption.show { display: block; }
+
+					.toggle {
+						position: relative;
+						top: 8px;
+						display: block;
+						text-align: center;
+						border-top: 1px solid #ddd;
+					}
+				}
+
+				.plan {
+					img {
+						float: left;
+						margin-right: 10px;
+						width: 80px;
+					}
+					.title {
+						font-size: 1.25em;
+					}
+					.length {
+						color: #999;
+					}
+				}
+
+				.link {
+					.caption {
+						margin-bottom: 10px;
+						padding-bottom: 10px;
+						border-bottom: 1px solid #ddd;
+					}
+					.meta {
+
+						p {
+							font-size: 1.25em;
+						}
+
+						a {
+							color: #03b;
+						}
+
+						.actions {
+							margin-top: 1em;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.section {
+		margin-right: 80px;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #eee;
+		overflow: auto;
+
+		h3 {
+			float: left;
+			font-size: 1em;
+		    font-weight: bold;
+		}
+
+		h3.right {
+			width: 70%;
+			color: #777;
+		}
+
+		.live {
+		    padding: 0 4px;
+		    border-radius: 4px;
+		    text-transform: uppercase;
+		    font-size: .9em;
+		    background-color: red;
+		    color: white;
+		}
+
+		p {
+			clear: both;
+			font-size: .8em;
+			color: #999;
+		}
+
+	}
+	.publish {
+		padding-left: 60px;
+		padding-right: 60px;
+		text-transform: capitalize;
+	}
+}
+
+
 .timePicker {
 	border: none !important;
 	padding: 0 !important;

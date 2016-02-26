@@ -49,9 +49,9 @@ class EventEditShare extends Component {
 	}
 
 	render() {
-        	const eventItem = this.props.event.item
+    	const eventItem = this.props.event.item
 		var interval = setInterval(function() {
-			if (window.addthis) {
+			if (typeof window != 'undefined' && window.addthis) {
 				clearInterval(interval);
 				window.addthis.layers.refresh()
 			}
