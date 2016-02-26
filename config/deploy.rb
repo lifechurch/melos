@@ -13,7 +13,7 @@ set :passenger_roles, :web
 set :passenger_restart_with_sudo, true
 
 set :npm_flags, ''
-set :gulp_tasks, 'javascript css'
+set :gulp_tasks, 'build'
 set :gulp_file, -> { release_path.join('gulpfile.js') }
 
 before 'deploy:updated', 'gulp'
