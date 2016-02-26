@@ -76,7 +76,6 @@ export default store => next => action => {
 	const client = getClient(endpoint)
 		.call(method)
 		.setVersion(version)
-		.setEnvironment(env)
 		.params(params)
 
 	const auth = api_call.auth
