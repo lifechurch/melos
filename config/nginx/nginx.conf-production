@@ -4,6 +4,7 @@ pid /run/nginx.pid;
 
 env JUSTATEST;
 env NEW_RELIC_LICENSE_KEY;
+env YOUVERSION_TOKEN_PHRASE;
 
 events {
 	worker_connections 768;
