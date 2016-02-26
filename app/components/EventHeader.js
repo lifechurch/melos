@@ -5,6 +5,7 @@ import EventEditNav from '../features/EventEdit/components/EventEditNav'
 import ActionCreators from '../features/EventEdit/features/details/actions/creators'
 import AuthActionCreators from '../features/Auth/actions/creators'
 import { routeActions } from 'react-router-redux'
+import RevManifest from '../../rev-manifest.json'
 
 class EventHeader extends Component {
 	handleCancel() {
@@ -22,6 +23,20 @@ class EventHeader extends Component {
 		dispatch(AuthActionCreators.logout())
 	}
 
+	getPublishSection(pathname) {
+		const { isSaving, errors } = this.props.event
+		if (pathname.split('/').pop() == "share") {
+			return <Column s='medium-6' a='right' className="">
+				<span className="publishedLabel"><img src={`/images/${RevManifest['check.png']}`} className="publishedButtonCheckmark"/>Published</span>&nbsp;
+				<a className='solid-button gray'>Unpublish</a>
+			</Column>
+		}
+		return <Column s='medium-6' a='right'>
+			<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving}>{ isSaving ? 'Saving...' : 'Save as Draft' }</a>&nbsp;
+			<a className='solid-button green'>Publish</a>
+		</Column>
+	}
+
 	render() {
 		const { event, auth } = this.props
 
@@ -33,10 +48,7 @@ class EventHeader extends Component {
 							<EventEditNav {...this.props} />
 						</Column>
 
-						<Column s='medium-5' a='right'>
-							<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving}>{ isSaving ? 'Saving...' : 'Save as Draft' }</a>&nbsp;
-							<a className='solid-button green'>Publish</a>
-						</Column>
+						{::this.getPublishSection(this.props.location.pathname)}
 					</Row>
 		}
 
