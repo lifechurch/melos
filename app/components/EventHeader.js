@@ -5,6 +5,7 @@ import EventEditNav from '../features/EventEdit/components/EventEditNav'
 import ActionCreators from '../features/EventEdit/features/details/actions/creators'
 import AuthActionCreators from '../features/Auth/actions/creators'
 import { routeActions } from 'react-router-redux'
+import RevManifest from '../../rev-manifest.json'
 
 class EventHeader extends Component {
 	handleCancel() {
@@ -26,7 +27,7 @@ class EventHeader extends Component {
 		const { isSaving, errors } = this.props.event
 		if (pathname.split('/').pop() == "share") {
 			return <Column s='medium-6' a='right' className="">
-				<span className="publishedLabel"><img src="/images/check-gray.png" className="publishedButtonCheckmark"/>Published</span>&nbsp;
+				<span className="publishedLabel"><img src={`/images/${RevManifest['check-gray.png']}`} className="publishedButtonCheckmark"/>Published</span>&nbsp;
 				<a className='solid-button gray'>Unpublish</a>
 			</Column>
 		}
