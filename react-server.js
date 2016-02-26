@@ -13,9 +13,19 @@ import cookieParser from 'cookie-parser'
 import reactCookie from 'react-cookie'
 import { fetchToken } from '@youversion/token-storage'
 import { tokenAuth } from '@youversion/js-api'
+import revManifest from './rev-manifest.json'
 
 const router = express.Router()
 const routes = getRoutes(null)
+
+function getAssetPath(path) {
+	const IS_PROD = process.env.NODE_ENV === 'production';
+	if (IS_PROD) {
+		return revManifest[path];
+	} else {
+		return path;
+	}
+}
 
 router.get('/*', cookieParser(), function(req, res) {
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
@@ -70,7 +80,7 @@ router.get('/*', cookieParser(), function(req, res) {
 				const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
 				const initialState = store.getState()
 				res.setHeader('Cache-Control', 'public');
-				res.render('index', {appString: html, head: Helmet.rewind(), initialState: initialState })
+				res.render('index', {appString: html, head: Helmet.rewind(), initialState: initialState, getAssetPath: getAssetPath })
 			}
 
 		} else {

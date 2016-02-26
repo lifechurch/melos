@@ -6,7 +6,7 @@
 - name: install passenger apt key
   apt_key:
     state: present
-    keyserver: hkp://keyserver.ubuntu.com:80 
+    keyserver: hkp://keyserver.ubuntu.com:80
     id: 561F9B9CAC40B2F7
   tags:
     - passenger
@@ -67,7 +67,7 @@
     src: star_bible_com.crt
     dest: /etc/nginx/certs/star_bible_com.crt
     mode: 0600
-  when: ("review" in group_names) or ("staging" in group_names) 
+  when: ("review" in group_names) or ("staging" in group_names)
   tags:
     - passenger
 
@@ -76,7 +76,7 @@
     src: star_bible_com.key.j2
     dest: /etc/nginx/certs/star_bible_com.key
     mode: 0600
-  when: ("review" in group_names) or ("staging" in group_names) 
+  when: ("review" in group_names) or ("staging" in group_names)
   tags:
     - passenger
 
@@ -93,7 +93,7 @@
   lineinfile:
     dest: /home/yvdep/.profile
     regexp: "^export {{ item.key }}="
-    line: "export {{ item.key }}={{ item.value }}"
+    line: "export {{ item.key }}=\"{{ item.value }}\""
     owner: yvdep
     group: yvdep
     mode: 0700
