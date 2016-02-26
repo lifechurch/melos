@@ -34,7 +34,7 @@ export function eventFeeds(state = {}, action) {
 			return Object.assign({}, state, { mine: { items: action.response.events, page: action.params.page, next_page: action.response.next_page, hasError: false, errors: [], isFetching: false}})
 
 		case EVENT_FEED_MINE_FAILURE:
-			return Object.assign({}, state, { mine: { hasError: true, errors: action.error.errors, isFetching: false }})
+			return Object.assign({}, state, { mine: { hasError: true, errors: action.api_errors, isFetching: false }})
 
 		case EVENT_FEED_MINE_REQUEST:
 			return Object.assign({}, state, { mine: { isFetching: true }})

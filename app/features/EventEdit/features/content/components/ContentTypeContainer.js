@@ -7,7 +7,7 @@ import ContentTypeReference from './ContentTypeReference'
 import ContentTypePlan from './ContentTypePlan'
 import ContentTypeImage from './ContentTypeImage'
 import ContentTypeLink from './ContentTypeLink'
-
+import RevManifest from '../../../../../../rev-manifest.json'
 
 const AUTO_SAVE_TIMEOUT = 5000
 
@@ -104,7 +104,7 @@ class ContentTypeContainer extends Component {
 			<div className='content-type-text'>
 				<Row>
 					<div className='medium-12'>
-						{content.type.toUpperCase()} <a className='right' onClick={::this.handleRemove}><img src='/images/thin-x.png' /></a>
+						{content.type.toUpperCase()} <a className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest['thin-x.png']}`} /></a>
 						<div className='form-body'>
 							{InnerContainer}
 							{ content.isDirty ? 'D' : '.'}
