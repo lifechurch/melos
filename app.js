@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var compression = require('compression');
 var api = require('@youversion/js-api');
 var ping = require('./ping');
-var basicAuth = require('basic-auth');
 var auth = api.tokenAuth;
 
 require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] });
