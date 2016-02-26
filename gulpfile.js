@@ -104,7 +104,9 @@ gulp.task('images:dev', function() {
 
 gulp.task('build', ['images', 'css', 'javascript']);
 
-gulp.task('build:prod', ['images:clean', 'javascript:clean', 'css:clean', 'images:prod', 'css:prod', 'javascript:prod']);
+gulp.task('build:prod', function(callback) {
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:prod', 'javascript:prod'], callback);
+});
 
 gulp.task('watch', ['images', 'css', 'javascript'], function() {
 	livereload.listen();
