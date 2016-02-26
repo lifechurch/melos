@@ -4,12 +4,12 @@ import Row from '../components/Row'
 import Column from '../components/Column'
 import { Link } from 'react-router'
 import CopyToClipboard from 'react-copy-to-clipboard'
+import RevManifest from '../../rev-manifest.json'
 
 class EventEditShare extends Component {
 
 	getEventImage() {
 		const { item } = this.props.event
-		console.log(item)
 		if (item.images) {
 			for (let img of item.images) {
 				if (img.width == 320 && img.height == 180) {
@@ -49,7 +49,7 @@ class EventEditShare extends Component {
 	}
 
 	render() {
-        	const eventItem = this.props.event.item        	
+        	const eventItem = this.props.event.item
 		var interval = setInterval(function() {
 			if (window.addthis) {
 				clearInterval(interval);
@@ -80,7 +80,7 @@ class EventEditShare extends Component {
 				<table className="sharePageTable">
 					<tr>
 						<td className="leftCell">
-							<Link className="editButton" to={`/event/edit/${eventItem.id}`}><img src="/images/edit.png" />Re-edit Event</Link>
+							<Link className="editButton" to={`/event/edit/${eventItem.id}`}><img src={`/images/${RevManifest['edit.png']}`} />Re-edit Event</Link>
 						</td>
 						<td>
 					    		<Link className="myEventsButton" to={`/`}>Go to My Events</Link>
@@ -99,7 +99,7 @@ class EventEditShare extends Component {
 				    	</Column>
 				</Row>
 				<div className="shareSection">
-				    	<span className="shorturl">{"http://bible.com/events/" + (eventItem.id || "")}</span>                    
+				    	<span className="shorturl">{"http://bible.com/events/" + (eventItem.id || "")}</span>
 				    	<CopyToClipboard text={"http://bible.com/events/" + (eventItem.id || "")}>
 						<a className="copyButton">Copy</a>
 				    	</CopyToClipboard>
