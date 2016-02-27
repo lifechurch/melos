@@ -107,7 +107,7 @@ YouversionWeb::Application.routes.draw do
   end
 
   # Users
-  resources :users, shallow: true, except: [:new, :create] do
+  resources :users, shallow: true, :id => /([^\/])+?/, except: [:new, :create] do
 
     get "_cards", on: :member, as: 'cards'
 
@@ -141,7 +141,7 @@ YouversionWeb::Application.routes.draw do
 
   # Necessary as we don't want subscriptions routes to be shallow
   scope "/users/:user_id" do
-    resources :subscriptions, path: '/reading-plans' do
+    resources :subscriptions, path: '/reading-plans', :user_id => /([^\/])+?/ do
       get   :calendar,    on: :member
     end
   end
