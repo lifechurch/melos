@@ -107,7 +107,7 @@ YouversionWeb::Application.routes.draw do
   end
 
   # Users
-  resources :users, shallow: true, :id => /([^\/])+?/, except: [:new, :create] do
+  resources :users, shallow: true, :id => /.*/, except: [:new, :create] do
 
     get "_cards", on: :member, as: 'cards'
 
