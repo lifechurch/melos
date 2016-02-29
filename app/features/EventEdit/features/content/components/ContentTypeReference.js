@@ -12,7 +12,7 @@ class ContentTypeReference extends Component {
 		const { dispatch, references, contentIndex, contentData } = this.props
 
 		if (Object.keys(references.versions).length == 1) {
-			dispatch(ActionCreators.getVersions({'language_tag': 'eng'}))
+			dispatch(ActionCreators.getVersions({'language_tag': 'eng', 'type': 'all'}))
 		}
 
 		if (contentData.version_id != 1) {

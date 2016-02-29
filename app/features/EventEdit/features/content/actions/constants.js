@@ -9,6 +9,7 @@ const constants = {
 	chapterRequest: 'CHAPTER_REQUEST',
 	chapterSuccess: 'CHAPTER_SUCCESS',
 	chapterFailure: 'CHAPTER_FAILURE',
+	chapterClear: 'CHAPTER_CLEAR',
 	addRequest: 'CONTENT_ADD_REQUEST',
 	addSuccess: 'CONTENT_ADD_SUCCESS',
 	addFailure: 'CONTENT_ADD_FAILURE',

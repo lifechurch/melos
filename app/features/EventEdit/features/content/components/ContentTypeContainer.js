@@ -9,7 +9,7 @@ import ContentTypeImage from './ContentTypeImage'
 import ContentTypeLink from './ContentTypeLink'
 import RevManifest from '../../../../../../rev-manifest.json'
 
-const AUTO_SAVE_TIMEOUT = 5000
+const AUTO_SAVE_TIMEOUT = 1000
 
 class ContentTypeContainer extends Component {
 
@@ -111,9 +111,11 @@ class ContentTypeContainer extends Component {
 		}
 
 		let ApiErrors = null
-		if (content.errors) {
-			console.log( "ERRORS", content.errors)
-			ApiErrors = <div className="api-errors">Errors</div>
+		if (content.errors && Object.keys(content.errors).length) {
+			let Errs = Object.keys(content.errors).map((k) => {
+				return content.errors[k].map((err) => { return (<div>{err}</div>) })
+			})
+			ApiErrors = <div className="errors">{Errs}</div>
 		}
 
 		let classNames = 'content-type content-' + content.type
