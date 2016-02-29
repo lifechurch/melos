@@ -5,15 +5,16 @@ import Column from '../components/Column'
 import { Link } from 'react-router'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import RevManifest from '../../rev-manifest.json'
+import moment from 'moment'
 
 class EventEditShare extends Component {
 
 	getEventImage() {
 		const { item } = this.props.event
-		if (item.images) {
+		if (Array.isArray(item.images) && item.images.length) {
 			for (let img of item.images) {
 				if (img.width == 320 && img.height == 180) {
-					return <img className="sharePageEventImage" src={img.url} />
+					return <img className="thumbnail" src={img.url} />
 				}
 			}
 		}
@@ -38,11 +39,9 @@ class EventEditShare extends Component {
 				}
 			}
 			if (start && end) {
-				const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-				const startMonth = months[start.getMonth()];
-				const endMonth = months[end.getMonth()];
-				return "Scheduled for " + startMonth + " " + start.getDate() + ", " + start.getFullYear() + " - " +
-					endMonth + " " + end.getDate() + ", " + end.getFullYear();
+				var startDate = moment(start)
+				var endDate = moment(end)
+				return startDate.format("MMMM DD, YYYY") + " - " + endDate.format("MMMM DD, YYYY")
 			}
 		}
 		return "";
