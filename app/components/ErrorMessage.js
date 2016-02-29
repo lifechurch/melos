@@ -15,6 +15,7 @@ function getError(e) {
 
 function getErrorFromKey(key) {
 	const errors = {
+		'events.latitude.required': 'You must choose a location from the map.',
 		'events.google_place_id.required': 'You must choose a location from the map.',
 		'events.timezone.required': 'Timezone is required.',
 		'events.times.0.start_dt.must_be_a_future_date': 'Start Time cannot be in the past.'
