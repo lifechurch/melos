@@ -67,7 +67,7 @@ gulp.task('css:prod', function() {
 });
 
 gulp.task('css:dev', function() {
-	return gulp.src(['./app/less/**/*.less'])
+	return gulp.src(['./app/less/style.less'])
 		.pipe(concat('style.css'))
     .pipe(less())
 		.pipe(gulp.dest('./public/stylesheets'));
