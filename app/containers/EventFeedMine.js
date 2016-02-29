@@ -13,6 +13,7 @@ class EventFeedMine extends Component {
 	componentWillMount() {
 		const { dispatch, page } = this.props
 		dispatch(fetchEventFeedMine({page}))
+		dispatch(ActionCreators.configuration())
 	}
 
 	handleDuplicate(id) {
@@ -26,7 +27,7 @@ class EventFeedMine extends Component {
 	}
 
 	render() {
-		const { hasError, errors, isFetching, items, page, next_page, auth } = this.props
+		const { dispatch, hasError, errors, isFetching, configuration, items, page, next_page, auth } = this.props
 		const { userData } = auth
 		const { first_name, last_name } = userData
 		var pagination = null
@@ -38,8 +39,14 @@ class EventFeedMine extends Component {
             </div>
 		}
 
-		var itemList = items.map((item) => {
-			return (<EventListItem key={item.id} item={item} handleDuplicate={::this.handleDuplicate} />)
+		var itemList = items.map((item, index) => {
+			return (<EventListItem 
+					key={item.id} 
+					item={item} 
+					handleDuplicate={::this.handleDuplicate} 
+					index={index} 
+					dispatch={dispatch} 
+					startOffset={configuration.startOffset} />)
 		})
 
 		return (
@@ -56,7 +63,7 @@ class EventFeedMine extends Component {
                         </Column>
                     </Row>
                     <Row>
-                        <h2 className="subtitle">EVENTS I CREATED</h2>
+                        <h2 className="subtitle">EVENTS CREATED BY ME</h2>
                     </Row>
                 </div>
 				<ul className="unindented">
@@ -81,7 +88,7 @@ function mapStateToProps(state) {
 		errors: [],
 		isFetching: false,
 		items: []
-	}, { auth: state.auth })
+	}, { auth: state.auth, configuration: state.configuration })
 }
 
 export default connect(mapStateToProps, null)(EventFeedMine)

@@ -2,39 +2,83 @@ import React, { Component, PropTypes } from 'react'
 import Row from '../../../../app/components/Row'
 import Column from '../../../../app/components/Column'
 import { Link } from 'react-router'
+import moment from 'moment' 
+import ActionCreators from '../actions/creators'
+
+var Countdown = React.createClass({
+
+	getInitialState: function() {
+		const { initialCountdownSeconds } = this.props
+		return { secondsRemaining: initialCountdownSeconds }
+	},
+
+	tick: function() {
+		const { dispatch, index } = this.props
+		const { secondsRemaining } = this.state
+		this.setState({secondsRemaining: secondsRemaining - 1});
+		if (secondsRemaining <= 0) {
+			clearInterval(this.interval);
+			
+			// Simulate live
+			dispatch(ActionCreators.setStatus(index, 2))
+		}
+	},
+
+	componentDidMount: function() {
+  		this.interval = setInterval(this.tick, 1000);
+	},
+
+	render: function() {
+		const { secondsRemaining } = this.state
+		const minutes = parseInt(secondsRemaining / 60)
+		const seconds = parseInt(secondsRemaining % 60)
+		const remainingTime =  (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds)
+		return <span className="red-label">
+			{remainingTime}
+		</span>
+	}
+});
 
 class EventListItem extends Component {
-	getLiveDetails(item, handleDuplicate) {
+
+	getLiveDetails() {
+		const { item, handleDuplicate } = this.props
 		return (
 			<div className="events-details">
 				<span className="red-label">LIVE</span>
 				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
-				<Link className="small-link" to={'#'}>Share</Link>
+				<Link className="small-link" to={`/event/edit/${item.id}/share`}>Share</Link>
 			</div>
 		)
 	}
 
-	getPublishedWithCountdownDetails(item, handleDuplicate) {
-		return (
-			<div className="events-details">
-				<span className="red-label">29.95</span>
+	getPublishedDetails() {
+		const { dispatch, startOffset, item, index, handleDuplicate } = this.props
+		const START_OFFSET_SECONDS = startOffset * 60;
+		const start = moment(item.min_time);
+		const end = moment(item.max_time);
+		const secondsLeft = start.diff(moment(), "seconds");
+		if (0 <= secondsLeft && secondsLeft <= START_OFFSET_SECONDS) {
+			return <div className="events-details">
+				<Countdown 
+					initialCountdownSeconds={secondsLeft} 
+					dispatch={dispatch} 
+					item={item} 
+					index={index} />
 				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
-				<Link className="small-link" to={'#'}>Share</Link>
+				<Link className="small-link" to={`/event/edit/${item.id}/share`}>Share</Link>
 			</div>
-		)
+		}
+		return <div className="events-details">
+			<span className="details-text">
+				{start.format("MMMM DD, YYYY") + " - " + end.format("MMMM DD, YYYY")}
+			</span>
+			<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
+		</div>
 	}
 
-	getPublishedDetails(item, handleDuplicate) {
-		return (
-			<div className="events-details">
-				<span className="details-text">October 17 - 18, 2015</span>
-				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
-			</div>
-		)
-	}
-
-	getDraftDetails(item, handleDuplicate) {
-		//<Link className="small-delete-link" to={'#'}>Delete</Link>
+	getDraftDetails() {
+		const { item, handleDuplicate } = this.props
 		return (
 			<div className="events-details">
 				<span className="gray-label">DRAFT</span>
@@ -43,48 +87,52 @@ class EventListItem extends Component {
 		)
 	}
 
-	getArchivedDetails(item, handleDuplicate) {
+	getArchivedDetails() {
+		const { item } = this.props
+		var start = moment(item.min_time)
+		var end = moment(item.max_time)
 		return (
 			<div className="events-details">
-				<div className="details-text">October 17 - 18, 2015</div>
-				<div className="details-text">2,434 Views / 1,889 Joins</div>
+				<div className="details-text">
+					{start.format("MMMM DD, YYYY") + " - " + end.format("MMMM DD, YYYY")}
+				</div>
 			</div>
 		)
 	}
 
-	// Todo: Need to create enum for the event statuses
-	getDetails(item, handleDuplicate) {
+	getDetails() {
+		const { item } = this.props
 		switch (item.status) {
 			case 0:
-				return this.getDraftDetails(item, handleDuplicate);
+				return this.getDraftDetails();
 			case 1:
-				// Todo: Determine whether countdown/regular published
-				return this.getPublishedDetails(item, handleDuplicate);
+				return this.getPublishedDetails()
 			case 2:
-				return this.getArchivedDetails(item, handleDuplicate);
+				return this.getLiveDetails();
 			case 3:
-				return this.getLiveDetails(item, handleDuplicate);
+				return this.getArchivedDetails();
 		}
 	}
 
-	getEventImage(item) {
+	getEventImage() {
+		const { item } = this.props
 		let imgUrl = null
-		if (Array.isArray(item.image) && item.image.length > 0) {
-			for (const i of item.image) {
+		if (Array.isArray(item.images) && item.images.length > 0) {
+			for (const i of item.images) {
 				if (i.width == 320 && i.height == 180) {
 					imgUrl = i.url
 					break
 				}
 			}
 
-			return (<img src={imgUrl} />)
+			return <img className="thumbnail" src={imgUrl} />
 		} else {
 			return null
 		}
 	}
 
 	render() {
-		const { item, handleDuplicate } = this.props
+		const { item } = this.props
 		return (
 			<li className="eventPageListItem" key={item.id}>
 				<Row className="collapse">
@@ -96,7 +144,7 @@ class EventListItem extends Component {
 							<Link className="large-link" to={`/event/edit/${item.id}`}>{item.title}</Link>
 						</Row>
 						<Row>
-							{this.getDetails(item, handleDuplicate)}
+							{this.getDetails()}
 						</Row>
 					</Column>
 					<Column s='medium-2' a='right'>
@@ -110,7 +158,10 @@ class EventListItem extends Component {
 
 EventListItem.propTypes = {
 	item: PropTypes.object.isRequired,
-	handleDuplicate: PropTypes.func.isRequired
+	dispatch: PropTypes.func.isRequired,
+	handleDuplicate: PropTypes.func.isRequired,
+	index: PropTypes.number.isRequired,
+	startOffset: PropTypes.number
 }
 
 export default EventListItem

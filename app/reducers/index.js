@@ -9,6 +9,7 @@ import event from '../features/EventEdit/features/details/reducers/event'
 import content from '../features/EventEdit/features/content/reducers/content'
 import references from './references'
 import plans from './plans'
+import configuration from '../features/EventFeedMine/reducers/configuration'
 
 const rootReducer = combineReducers({
 	auth: auth,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
 	loc,
 	locations,
 	plans,
+	configuration,
 	references,
 	routing: routeReducer
 })

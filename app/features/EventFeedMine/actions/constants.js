@@ -1,7 +1,11 @@
 const constants = {
 	duplicateRequest: 'EVENT_DUPLICATE_REQUEST',
 	duplicateSuccess: 'EVENT_DUPLICATE_SUCCESS',
-	duplicateFailure: 'EVENT_DUPLICATE_FAILURE'
+	duplicateFailure: 'EVENT_DUPLICATE_FAILURE',
+	configurationRequest: 'EVENT_CONFIGURATION_REQUEST',
+	configurationSuccess: 'EVENT_CONFIGURATION_SUCCESS',
+	configurationFailure: 'EVENT_CONFIGURATION_FAILURE',
+	setStatus: 'EVENT_SET_STATUS'
 }
 
 export default function (key) {
