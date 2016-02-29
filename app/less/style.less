@@ -52,7 +52,7 @@ body {
 ul.unindented {
     margin-left: 0px;
 }
-   
+
 h1.sharePageTitle {
 	font-family: ArialMT;
 	font-size: 32px;
@@ -79,7 +79,7 @@ img.sharePageEventImage {
 	border-radius: 3px;
 }
 
-div.sharePageEventSection {    
+div.sharePageEventSection {
 	a.title {
 		font-family: ArialMT;
 		font-size: 18px;
@@ -347,6 +347,7 @@ a.active span {
 				text-decoration: none;
 				transition: background-color 300ms ease-out;
 
+
 				&.active {
 					background: #979797;
 					color: #FFFFFF;
@@ -374,6 +375,23 @@ a.active span {
 
 				span {
 					position: relative;
+				}
+
+				&[disabled] {
+					opacity: 1;
+					background-color: #eee;
+					&.active {
+						opacity: 1;
+						background-color: #eee;
+						&:before {
+							opacity: 1;
+							background-color: #eee;
+						}
+					}
+					&:before {
+						opacity: 1;
+						background-color: #eee;
+					}
 				}
 
 			}

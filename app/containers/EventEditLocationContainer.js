@@ -40,7 +40,7 @@ class EventEditLocationContainer extends Component {
 	handleAddVirtualLocationClick(clickEvent) {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.add('virtual'))
-	}	
+	}
 
 	handleCancel() {
 		const { dispatch } = this.props
@@ -53,7 +53,7 @@ class EventEditLocationContainer extends Component {
 		if (checked === true) {
 			dispatch(ActionCreators.addLocation(event.item.id, name))
 		} else {
-			dispatch(ActionCreators.removeLocation(event.item.id, name))			
+			dispatch(ActionCreators.removeLocation(event.item.id, name))
 		}
 	}
 
@@ -116,49 +116,50 @@ class EventEditLocationContainer extends Component {
 			locations.push(<li key={index}><Location index={index} loc={loc} handleSelect={::this.handleSelect} handleDelete={::this.handleOpenModal} handleEdit={::this.handleEdit} /></li>)
 			index++
 		}
-		
+
 		var centerButtons
 		if (!(event.item && event.item.locations && event.item.locations.length > 0)) {
 			centerButtons = 'center-single-item'
 		}
 
 		var locationEditor
-		var locationList = null		
+		var locationList = null
 		if (loc && typeof loc.type === 'string') {
-			locationEditor = (<LocationEdit key='locationeditor'  
-				handleCancel={::this.handleCancel} 
+			locationEditor = (<LocationEdit key='locationeditor'
+				handleCancel={::this.handleCancel}
 				handleChange={::this.handleChange}
 				handleChoosePlace={::this.handleChoosePlace}
 				handleSetTime={::this.handleSetTime}
 				handleAddTime={::this.handleAddTime}
 				handleSave={::this.handleSave}
-				dispatch={dispatch} 
+				dispatch={dispatch}
 				loc={loc} />
 			)
 		} else {
 			locationList = (
 				<ul className="medium-block-grid-3" key='locationlist'>
 					<ReactCSSTransitionGroup className='medium-block-grid-3' transitionName="locationlist" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
-						{locations}						
+						{locations}
 						<li className={centerButtons} key={-1}>
-							<LocationAddButtons 
-								handleAddPhysicalLocationClick={::this.handleAddPhysicalLocationClick} 
+							<LocationAddButtons
+								event={event}
+								handleAddPhysicalLocationClick={::this.handleAddPhysicalLocationClick}
 								handleAddVirtualLocationClick={::this.handleAddVirtualLocationClick}>
 							</LocationAddButtons>
 						</li>
 					</ReactCSSTransitionGroup>
-				</ul>				
-			)			
+				</ul>
+			)
 		}
 
-		return (			
+		return (
 			<div>
 				<Helmet title="Event Location" />
 				<Row>
 					<div className="medium-10 large-8 columns small-centered text-center">
 						<ReactCSSTransitionGroup transitionName="locationeditor" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
 							{locationEditor}
-							{locationList}					
+							{locationList}
 						</ReactCSSTransitionGroup>
 						<LocationDeleteModal modalState={modals.LocationDelete} handleDelete={::this.handleDelete} handleClose={::this.handleCloseModal} />
 					</div>
@@ -172,7 +173,7 @@ class EventEditLocationContainer extends Component {
 					<Column s='medium-12' a='right'>
 						<a disabled={!event.locationsValid}>Next: Add Content</a>
 					</Column>
-				</Row>				
+				</Row>
 			</div>
 		)
 	}
