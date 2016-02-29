@@ -1,9 +1,12 @@
 @import (inline) "../../node_modules/react-datepicker/dist/react-datepicker.css";
 @import (inline) "../../node_modules/quill/dist/quill.base.css";
 @import (inline) "../../node_modules/quill/dist/quill.snow.css";
+@import "colors";
+@import "typography";
+
 
 body {
-	font-family: ArialMT;
+    font-family: @base-font-family;
 }
 
 .events-details {
@@ -52,7 +55,7 @@ body {
 ul.unindented {
     margin-left: 0px;
 }
-   
+
 h1.sharePageTitle {
 	font-family: ArialMT;
 	font-size: 32px;
@@ -79,7 +82,7 @@ img.sharePageEventImage {
 	border-radius: 3px;
 }
 
-div.sharePageEventSection {    
+div.sharePageEventSection {
 	a.title {
 		font-family: ArialMT;
 		font-size: 18px;
@@ -463,7 +466,9 @@ a.active span {
 	line-height: 14px;
 }
 
-input[type=text], select {
+input[type=text],
+input[type=password],
+select {
 	color: #979797;
 	border: none;
 	border-bottom: 1px solid #CCCCCC;
@@ -1139,5 +1144,30 @@ textarea {
 .modal__contenthelpmodal {
 	h6 {
 		font-weight: bold;
+	}
+}
+
+.auth {
+
+	h1 {
+		text-align: center;
+	}
+	// Subhead / P immediately following H1:
+	h1 + p {
+		padding-top: 20px;
+		font-size: @font-size-smaller;
+	}
+
+	.form-body {
+		background-color: inherit;
+	}
+	.form-body-block {
+		padding: 0;
+		box-shadow: none;
+	}
+	.forgot-password {
+		padding-left: 1em;
+		color: @color-muted;
+		font-size: @font-size-smaller;
 	}
 }
