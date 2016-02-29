@@ -221,6 +221,7 @@ class EventEditContentContainer extends Component {
 					handleAddGiving={::this.handleAddGiving}
 					modals={modals}
 					dispatch={dispatch}
+					event={event}
 					handleAddImage={::this.handleAddImage}
 				/>
 				<div className='content-container'>

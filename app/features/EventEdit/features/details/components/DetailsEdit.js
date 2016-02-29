@@ -15,7 +15,7 @@ class DetailsEdit extends Component {
 			<form className="event-edit-details-form">
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<FormField InputType={Input} size='large' placeholder='Event Name' name='title' onChange={handleChange} value={event.item.title} errors={event.errors.fields.title} />
+						<FormField disabled={!event.rules.details.canEdit} InputType={Input} size='large' placeholder='Event Name' name='title' onChange={handleChange} value={event.item.title} errors={event.errors.fields.title} />
 					</div>
 				</Row>
 
@@ -23,19 +23,19 @@ class DetailsEdit extends Component {
 
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<FormField InputType={Input} size='medium' placeholder="Church Name or Organization" name="org_name" onChange={handleChange} value={event.item.org_name} errors={event.errors.fields.org_name} />
+						<FormField disabled={!event.rules.details.canEdit} InputType={Input} size='medium' placeholder="Church Name or Organization" name="org_name" onChange={handleChange} value={event.item.org_name} errors={event.errors.fields.org_name} />
 					</div>
 				</Row>
 
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<FormField InputType={Textarea} placeholder="Event Description" name="description" onChange={handleChange} value={event.item.description} errors={event.errors.fields.description} />
+						<FormField disabled={!event.rules.details.canEdit} InputType={Textarea} placeholder="Event Description" name="description" onChange={handleChange} value={event.item.description} errors={event.errors.fields.description} />
 					</div>
 				</Row>
 
 				<Row>
 					<Column s='medium-12' a='right'>
-						<a disabled={event.errors.hasError} onClick={handleNext}>Next: Add Location & Times</a>
+						<a disabled={event.errors.hasError || !event.rules.details.canEdit} onClick={handleNext}>Next: Add Location & Times</a>
 					</Column>
 				</Row>
 			</form>

@@ -53,7 +53,7 @@ export default function event(state = {}, action) {
 			return Object.assign({}, state, { errors: { fields: {} }, isFetching: true, isSaving: false, isDirty: false })
 
 		case type('createSuccess'):
-			return applyLifeCycleRules(validateEventDetails(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false })))
+			return applyLifeCycleRules(validateEventDetails(eventFromApiFormat(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false }))))
 
 		case type('createFailure'):
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: false, isDirty: false, api_errors: action.api_errors }))
@@ -62,7 +62,7 @@ export default function event(state = {}, action) {
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: true, isDirty: false }))
 
 		case type('updateSuccess'):
-			return applyLifeCycleRules(validateEventDetails(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false })))
+			return applyLifeCycleRules(validateEventDetails(eventFromApiFormat(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false }))))
 
 		case type('updateFailure'):
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: false, isDirty: false, api_errors: action.api_errors }))
@@ -108,7 +108,7 @@ export default function event(state = {}, action) {
 		case locationType('updateRequest'):
 			const { params } = action
 			const newParams = Object.assign({}, params, { id: params.location_id })
-			return Object.assign({}, state, {
+			return applyLifeCycleRules(Object.assign({}, state, {
 				item: {
 					...state.item,
 					locations: {
@@ -116,7 +116,7 @@ export default function event(state = {}, action) {
 						[newParams.id]: Object.assign({}, state.item.locations[newParams.id], newParams)
 					}
 				}
-			})
+			}))
 
 		case locationType('createSuccess'):
 			const { locations } = state.item
@@ -175,7 +175,7 @@ export default function event(state = {}, action) {
 		case contentType('updateRequest'):
 			var newContent = Object.assign({}, action.params)
 			newContent.isSaving = true
-			return Object.assign({}, state, {
+			return applyLifeCycleRules(Object.assign({}, state, {
 				item: {
 					...state.item,
 					content: [
@@ -184,7 +184,7 @@ export default function event(state = {}, action) {
 						...state.item.content.slice(action.params.index + 1)
 					]
 				}
-			})
+			}))
 
 		case contentType('chapterRequest'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
@@ -302,7 +302,7 @@ export default function event(state = {}, action) {
 
 			newContent.isDirty = false
 			newContent.isSaving = false
-			return Object.assign({}, state, {
+			return applyLifeCycleRules(Object.assign({}, state, {
 				item: {
 					...state.item,
 					content: [
@@ -311,10 +311,10 @@ export default function event(state = {}, action) {
 						...state.item.content.slice(action.params.index + 1)
 					]
 				}
-			})
+			}))
 
 		case contentType('removeRequest'):
-			return Object.assign({}, state, {
+			return applyLifeCycleRules(Object.assign({}, state, {
 				item: {
 					...state.item,
 					content: [
@@ -322,7 +322,7 @@ export default function event(state = {}, action) {
 						...state.item.content.slice(action.params.index + 1)
 					]
 				}
-			})
+			}))
 
 		case contentType('setField'):
 			var newContent = Object.assign({}, state.item.content[action.index])

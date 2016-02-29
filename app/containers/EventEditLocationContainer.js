@@ -113,7 +113,7 @@ class EventEditLocationContainer extends Component {
 		var index = 0
 		for (var key in event.item.locations) {
 			const loc = event.item.locations[key]
-			locations.push(<li key={index}><Location index={index} loc={loc} handleSelect={::this.handleSelect} handleDelete={::this.handleOpenModal} handleEdit={::this.handleEdit} /></li>)
+			locations.push(<li key={index}><Location event={event} index={index} loc={loc} handleSelect={::this.handleSelect} handleDelete={::this.handleOpenModal} handleEdit={::this.handleEdit} /></li>)
 			index++
 		}
 

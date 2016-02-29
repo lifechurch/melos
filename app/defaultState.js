@@ -25,6 +25,7 @@ export default {
 			summary: '',
 			fields: []
 		},
+		publishMessage: null,
 		isFetching: false,
 		isSaving: false,
 		isDirty: false,
@@ -63,7 +64,8 @@ export default {
 			},
 			preview: {
 				canView: false,
-				canPublish: false
+				canPublish: false,
+				canUnpublish: false
 			},
 			share: {
 				canView: false,

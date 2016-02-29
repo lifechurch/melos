@@ -7,22 +7,21 @@ export default function(event) {
 	let rules = Object.assign({}, defaultRules)
 	const { item } = event
 	if (typeof item === 'object') {
-			console.log("is obj")
-			rules = checkStatus(item, rules)
-			rules = checkId(item, rules)
-			rules = checkVirtualLocations(item, rules)
+		checkStatus(event, rules)
+		checkId(event, rules)
+		checkVirtualLocations(event, rules)
+		checkLocationTimes(event, rules)
+		checkContent(event, rules)
 	}
-	console.log(rules)
 	return Object.assign({}, event, { rules })
 }
 
-function checkStatus(item, rules) {
-	const { status } = item
+function checkStatus(event, rules) {
+	const { status } = event.item
 
 	if (typeof status === 'string') {
 		switch(status) {
 			case EventStatus('draft'):
-				console.log('is draft')
 				rules.details.canView 					= true
 				rules.details.canEdit 					= true
 
@@ -45,10 +44,9 @@ function checkStatus(item, rules) {
 				rules.share.canView 						= false
 				rules.share.canShare 						= false
 
-				return rules
+				break
 
 			case EventStatus('published'):
-				console.log('is pub')
 				rules.details.canView 					= true
 				rules.details.canEdit 					= false
 
@@ -70,13 +68,14 @@ function checkStatus(item, rules) {
 
 				rules.share.canView 						= true
 				rules.share.canShare 						= true
+
+				break
 		}
 	}
-	return rules
 }
 
-function checkId(item, rules) {
-	const { id } = item
+function checkId(event, rules) {
+	const { id } = event.item
 	if (typeof id !== 'number' || id <= 0) {
 		rules.locations.canView 				= false
 		rules.locations.canAddVirtual 	= false
@@ -95,22 +94,48 @@ function checkId(item, rules) {
 
 		rules.share.canView							= false
 	}
-	return rules
 }
 
-function checkVirtualLocations(item, rules) {
-	console.log("cvl")
-	const { locations } = item
+function checkVirtualLocations(event, rules) {
+	const { locations } = event.item
 	if (typeof locations === 'object') {
-		console.log('scanning')
 		for (let key of Object.keys(locations)) {
-			console.log(locations[key])
 			const location = locations[key]
-			if (location.type === 'virtual') {
+			if (location.type === 'virtual' && (location.isSelected === true || typeof location.isSelected === 'undefined')) {
 				rules.locations.canAddVirtual = false
 				break
 			}
 		}
 	}
-	return rules
+}
+
+function checkLocationTimes(event, rules) {
+	const { locations } = event.item
+	if (typeof locations === 'object') {
+		for (let key of Object.keys(locations)) {
+			const location = locations[key]
+			if (location.isSelected === true && (!Array.isArray(location.times) || location.times.length === 0)) {
+				rules.preview.canPublish = false
+				event.publishMessage = 'All locations must have at least one time.'
+				break
+			}
+		}
+
+		if (rules.preview.canPublish) {
+			event.publishMessage = null
+		}
+	} else {
+		rules.preview.canPublish = false
+		event.publishMessage = 'You cannot publish an Event with no locations.'
+	}
+}
+
+function checkContent(event, rules) {
+	const { content } = event.item
+	if (!Array.isArray(content) || content.length === 0) {
+		rules.preview.canPublish = false
+		event.publishMessage = 'You cannot publish an Event with no content.'
+	} else if (rules.preview.canPublish) {
+		event.publishMessage = null
+	}
 }
