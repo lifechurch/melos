@@ -110,12 +110,21 @@ class ContentTypeContainer extends Component {
 				break
 		}
 
+		let ApiErrors = null
+		if (content.errors) {
+			console.log( "ERRORS", content.errors)
+			ApiErrors = <div className="api-errors">Errors</div>
+		}
+
+		let classNames = 'content-type content-' + content.type
+
 		return (
-			<div className='content-type-text'>
+			<div className={classNames}>
 				<Row>
 					<div className='medium-12'>
 						{content.type.toUpperCase()} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest['thin-x.png']}`} /></a>
 						<div className='form-body'>
+							{ApiErrors}
 							{InnerContainer}
 							{ content.isDirty ? 'D' : '.'}
 							{ content.isSaving ? 'Saving...' : '.'}
