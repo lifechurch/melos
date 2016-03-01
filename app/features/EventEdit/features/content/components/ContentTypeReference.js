@@ -12,7 +12,7 @@ class ContentTypeReference extends Component {
 		const { dispatch, references, contentIndex, contentData } = this.props
 
 		if (Object.keys(references.versions).length == 1) {
-			dispatch(ActionCreators.getVersions({'language_tag': 'eng'}))
+			dispatch(ActionCreators.getVersions({'language_tag': 'eng', 'type': 'all'}))
 		}
 
 		if (contentData.version_id != 1) {
@@ -246,43 +246,45 @@ class ContentTypeReference extends Component {
 		}
 
 		return (
-			<div className='form-body-block white'>
-				<Row>
-					<Column s='small-3'>
-						<select name='version_id' disabled={isFetching} value={version_id} onChange={::this.handleVersionChange}>
-							{versions}
-						</select>
-						<div className='selectTitle'>
-							Version
+			<div>
+				<div className='form-body-block white'>
+					<Row>
+						<Column s='small-3'>
+							<select name='version_id' disabled={isFetching} value={version_id} onChange={::this.handleVersionChange}>
+								{versions}
+							</select>
+							<div className='selectTitle'>
+								Version
+							</div>
+						</Column>
+						<Column s='small-6'>
+							<select name='book' disabled={isFetching} value={book} onChange={::this.handleBookChange}>
+								<option value={"NO_BOOK"}></option>
+								{books}
+							</select>
+							<div className='selectTitle'>
+								Book
+							</div>
+						</Column>
+						<Column s='small-3'>
+							<FormField
+								InputType={Input}
+								name="chv"
+								disabled={isFetching}
+								onChange={::this.updateContent}
+								value={chv}
+								errors={contentData.errors} />
+							<div className='selectTitle'>
+								Chapter:Verse
+							</div>
+						</Column>
+					</Row>
+					<Row>
+						<div className="verseText">
+							{verses}
 						</div>
-					</Column>
-					<Column s='small-6'>
-						<select name='book' disabled={isFetching} value={book} onChange={::this.handleBookChange}>
-							<option value={"NO_BOOK"}></option>
-							{books}
-						</select>
-						<div className='selectTitle'>
-							Book
-						</div>
-					</Column>
-					<Column s='small-3'>
-						<FormField
-							InputType={Input}
-							name="chv"
-							disabled={isFetching}
-							onChange={::this.updateContent}
-							value={chv}
-							errors={contentData.errors} />
-						<div className='selectTitle'>
-							Chapter:Verse
-						</div>
-					</Column>
-				</Row>
-			<Row>
-				<div className="verseText">
-					{verses}
+					</Row>
 				</div>
-			</Row>
 			</div>
 		)
 	}

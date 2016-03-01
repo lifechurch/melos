@@ -27,7 +27,8 @@ export function fromApiFormat(content) {
 		data: {
 			...data,
 			body
-		}
+		},
+		errors: {}
 	})
 }
 

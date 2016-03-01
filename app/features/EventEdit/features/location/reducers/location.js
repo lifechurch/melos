@@ -17,7 +17,7 @@ export default function loc(state = {}, action) {
 			if (action.initiatedByEdit) {
 				return Object.assign({}, state, { isLoading: true })
 			} else {
-				return fromApiFormat(Object.assign({}, action.originalLoc, action.response))				
+				return fromApiFormat(Object.assign({}, action.originalLoc, action.response))
 			}
 
 		case type('viewFailure'):
@@ -44,11 +44,11 @@ export default function loc(state = {}, action) {
 			return {}
 
 		case type('setField'):
-			if (['name', 'timezone'].indexOf(action.field) > -1) {
+			if (['name', 'country', 'timezone'].indexOf(action.field) > -1) {
 				return Object.assign({}, state, {
 					...state.item,
 					[action.field]: action.value,
-					isDirty: true 
+					isDirty: true
 				})
 			} else {
 				throw new Error('Attempted to set invalid Location field `' + action.field.toString() + '`')
@@ -69,22 +69,22 @@ export default function loc(state = {}, action) {
 
 		case type('timezoneSuccess'):
 			return Object.assign({}, state, {
-				timezone: action.response.timeZoneId 
+				timezone: action.response.timeZoneId
 			})
 
 		case type('timezoneFailure'):
 			return Object.assign({}, state, Object.assign({}, state, {
-				hasError: true, 
-				errors: action.errors 
+				hasError: true,
+				errors: action.errors
 			}))
 
 		case type('setTime'):
 			return Object.assign({}, state, {
 				times: [
 					...state.times.slice(0, action.index),
-					Object.assign({}, state.times[action.index], { 
-						start_dt: action.start_dt, 
-						end_dt: action.end_dt 
+					Object.assign({}, state.times[action.index], {
+						start_dt: action.start_dt,
+						end_dt: action.end_dt
 					}),
 					...state.times.slice(action.index + 1)
 				]
@@ -99,51 +99,51 @@ export default function loc(state = {}, action) {
 					...state.times,
 					new_time
 				]
-			})		
+			})
 
 		case type('save'):
 			return state
 
 		case type('createRequest'):
-			return Object.assign({}, state, { 
-				isSaving: true, 
-				hasError: false 
+			return Object.assign({}, state, {
+				isSaving: true,
+				hasError: false
 			})
 
 		case type('createSuccess'):
 			return fromApiFormat(Object.assign({}, state, action.response))
 
 		case type('createFailure'):
-			return Object.assign({}, state, { 
-				errors: action.errors, 
-				hasError: true 
+			return Object.assign({}, state, {
+				errors: action.api_errors,
+				hasError: true
 			})
 
 		case type('removeLocationRequest'):
-			return Object.assign({}, state, { 
-				isRemoving: true, 
-				hasError: false 
+			return Object.assign({}, state, {
+				isRemoving: true,
+				hasError: false
 			})
 
 		case type('removeLocationSuccess'):
 			return {}
 
 		case type('removeLocationFailure'):
-			return Object.assign({}, state, { 
-				hasError: true, 
-				errors: action.errors, 
-				isRemoving: false 
+			return Object.assign({}, state, {
+				hasError: true,
+				errors: action.errors,
+				isRemoving: false
 			})
 
 		case type('placeSuccess'):
 			if (action.initiatedByEdit) {
-				return Object.assign({}, state, { 
-					isLoading: true 
+				return Object.assign({}, state, {
+					isLoading: true
 				})
 			} else {
-				return Object.assign({}, state, { 
-					hasPlace: true, 
-					place: action.response 
+				return Object.assign({}, state, {
+					hasPlace: true,
+					place: action.response
 				})
 			}
 
@@ -156,27 +156,27 @@ export default function loc(state = {}, action) {
 			})
 
 		case type('placeRequest'):
-			return Object.assign({}, state, { 
-				place: { 
-					isLoading: true 
-				} 
+			return Object.assign({}, state, {
+				place: {
+					isLoading: true
+				}
 			})
 
 		case type('editSuccess'):
-			return fromApiFormat(Object.assign({}, state, action.originalLoc, action.loc, { 
-				place: action.place 
+			return fromApiFormat(Object.assign({}, state, action.originalLoc, action.loc, {
+				place: action.place
 			}))
 
 		case type('editFailure'):
 			const originalLoc = action.originalLoc || {}
 			const loc = action.loc || {}
 			const place = action.place || {}
-			return Object.assign({}, state, loc, originalLoc, { place }, { 
-				hasError: action.error 
+			return Object.assign({}, state, loc, originalLoc, { place }, {
+				hasError: action.error
 			})
 
 		default:
 			return state
-			
+
 	}
 }

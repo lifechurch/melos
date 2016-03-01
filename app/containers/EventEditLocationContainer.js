@@ -121,13 +121,13 @@ class EventEditLocationContainer extends Component {
 		const { id } = loc
 		if (typeof id === 'number' && id > 0) {
 			dispatch(ActionCreators.update(event.item.id, loc)).then((result) => {
-				if (typeof result === 'object') {
+				if (typeof result === 'object' && !result.errors) {
 					dispatch(ActionCreators.cancelEdit())
 				}
 			})
 		} else {
 			dispatch(ActionCreators.create(event.item.id, loc)).then((result) => {
-				if (typeof result === 'object') {
+				if (typeof result === 'object' && !result.errors) {
 					dispatch(ActionCreators.cancelEdit())
 				}
 			})

@@ -16,32 +16,34 @@ class ContentTypeLink extends Component {
 		}
 
 		return (
-			<div className="form-body-block white">
-				<FormField
-					InputType={Textarea}
-					placeholder="Description..."
-					name="body"
-					onChange={handleChange}
-					value={content.data.body}
-					errors={content.data.errors} />
+			<div>
+				<div className="form-body-block white">
+					<FormField
+						InputType={Textarea}
+						placeholder="Description..."
+						name="body"
+						onChange={handleChange}
+						value={content.data.body}
+						errors={content.data.errors} />
 
-				<FormField
-					InputType={Input}
-					placeholder="Link Label"
-					name="title"
-					onChange={handleChange}
-					value={content.data.title}
-					errors={content.data.errors} />
+					<FormField
+						InputType={Input}
+						placeholder="Link Label"
+						name="title"
+						onChange={handleChange}
+						value={content.data.title}
+						errors={content.data.errors} />
 
-				<FormField
-					InputType={Input}
-					placeholder="URL"
-					name="url"
-					onChange={handleChange}
-					value={content.data.url}
-					errors={content.data.errors} />
+					<FormField
+						InputType={Input}
+						placeholder="URL"
+						name="url"
+						onChange={handleChange}
+						value={content.data.url}
+						errors={content.data.errors} />
 
-				{kindrid_paragraph}
+					{kindrid_paragraph}
+				</div>
 			</div>
 		)
 	}

@@ -100,7 +100,7 @@ const ActionCreators = {
 			params: {
 				...params,
 			},
-			type: contentType('chapterFailure')
+			type: contentType('chapterClear')
 		}
 	},
 

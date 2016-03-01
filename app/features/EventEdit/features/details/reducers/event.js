@@ -62,10 +62,26 @@ export default function event(state = {}, action) {
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: true, isDirty: false }))
 
 		case type('updateSuccess'):
-			return applyLifeCycleRules(validateEventDetails(eventFromApiFormat(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false }))))
+			return applyLifeCycleRules(validateEventDetails(Object.assign({}, state,
+				{
+					item: action.response,
+					isFetching: false,
+					isSaving: false,
+					isDirty: false,
+					api_errors: null
+				}
+			)))
 
 		case type('updateFailure'):
-			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: false, isDirty: false, api_errors: action.api_errors }))
+			//hasError: true, errors: action.error.errors,
+			return validateEventDetails(Object.assign({}, state,
+				{
+					isFetching: false,
+					isSaving: false,
+					isDirty: false,
+					api_errors: action.api_errors
+				}
+			))
 
 		case type('createRequest'):
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: true, isDirty: false }))
@@ -160,6 +176,7 @@ export default function event(state = {}, action) {
 			var newContent = Object.assign({}, action.params)
 			newContent.isDirty = false
 			newContent.temp_content_id = new Date().getTime()
+			newContent.errors = {}
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -175,6 +192,9 @@ export default function event(state = {}, action) {
 		case contentType('updateRequest'):
 			var newContent = Object.assign({}, action.params)
 			newContent.isSaving = true
+			if (newContent.errors && newContent.errors.update) {
+				delete newContent.errors['update']
+			}
 			return applyLifeCycleRules(Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -188,7 +208,9 @@ export default function event(state = {}, action) {
 
 		case contentType('chapterRequest'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
-			delete newContent.data['chapter']
+			if (newContent.errors && newContent.errors.chapter) {
+				delete newContent.errors['chapter']
+			}
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -215,6 +237,22 @@ export default function event(state = {}, action) {
 			})
 
 		case contentType('chapterFailure'):
+			var newContent = Object.assign({}, state.item.content[action.params.index])
+			newContent.data.chapter = ''
+			newContent.errors = Object.assign({}, {...newContent.errors}, {'chapter': action.api_errors})
+
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContent,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
+
+		case contentType('chapterClear'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
 			newContent.data.chapter = ''
 			return Object.assign({}, state, {
@@ -312,6 +350,21 @@ export default function event(state = {}, action) {
 					]
 				}
 			}))
+
+		case contentType('updateFailure'):
+			var newContent = Object.assign({}, action.response, state.item.content[action.params.index])
+			newContent.errors = Object.assign({}, {...newContent.errors}, {'update': action.api_errors})
+
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContent,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
 
 		case contentType('removeRequest'):
 			return applyLifeCycleRules(Object.assign({}, state, {

@@ -8,8 +8,9 @@ import ContentTypePlan from './ContentTypePlan'
 import ContentTypeImage from './ContentTypeImage'
 import ContentTypeLink from './ContentTypeLink'
 import RevManifest from '../../../../../../rev-manifest.json'
+import ErrorMessage from '../../../../../../app/components/ErrorMessage'
 
-const AUTO_SAVE_TIMEOUT = 5000
+const AUTO_SAVE_TIMEOUT = 1000
 
 class ContentTypeContainer extends Component {
 
@@ -110,12 +111,15 @@ class ContentTypeContainer extends Component {
 				break
 		}
 
+		let classNames = 'content-type content-' + content.type
+
 		return (
-			<div className='content-type-text'>
+			<div className={classNames}>
 				<Row>
 					<div className='medium-12'>
 						{content.type.toUpperCase()} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest['thin-x.png']}`} /></a>
 						<div className='form-body'>
+							<ErrorMessage hasError={content.errors && Object.keys(content.errors).length} errors={content.errors} />
 							{InnerContainer}
 							{ content.isDirty ? 'D' : '.'}
 							{ content.isSaving ? 'Saving...' : '.'}
