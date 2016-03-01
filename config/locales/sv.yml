@@ -1127,7 +1127,7 @@ sv:
         sms success: "Perfekt! Kolla din mobil för länken."
         sms info: "Du får ett SMS för att ladda ner appen"
         sms download: "Klicka för att ladda ner Bibelappen:"
-        sms default country: "US"
+        sms default country: "SE"
     pages: 
         generic_error: 
             title: "Upps!"

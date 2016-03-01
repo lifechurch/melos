@@ -1127,7 +1127,7 @@ ca:
         sms success: "Genial! Comprova l'enllaç al teu mòbil."
         sms info: "Rebràs un SMS d'un sol ús per descarregar l'aplicació"
         sms download: "Clica per descarregar l'Aplicació de la Bíblia:"
-        sms default country: "US"
+        sms default country: "ES"
     pages: 
         generic_error: 
             title: "Alguna cosa ha sortit malament!"

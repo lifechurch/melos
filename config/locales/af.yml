@@ -1127,7 +1127,7 @@ af:
         sms success: "Great! Kyk na jou foon vir die skakel."
         sms info: "Jy sal ‘n SMS ontvang om die toep af te laai"
         sms download: "Kliek om die Bybel Toepassing af te laai"
-        sms default country: "US"
+        sms default country: "ZA"
     pages: 
         generic_error: 
             title: "Oeps!"

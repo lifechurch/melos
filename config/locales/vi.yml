@@ -107,7 +107,7 @@ vi:
         best kids app: "App hay nhất dành cho thiếu nhi!"
         best educational app: "App giáo dục tốt nhất!"
         kids_app: 
-            title: "App Kinh Thánh Thiếu Nhi"
+            title: "Ứng Dụng Kinh Thánh Thiếu Nhi"
             description: "App Kinh Thánh Thiếu Nhi là một cách tuyệt vời để trẻ em học biết những câu chuyện về Đức Chúa Jêsus, món quà sự sống đời đời, cũng như nhiều bài học khác mà Chúa dạy chúng ta. Qua các cảm ứng tương tác hình ảnh, điểm thưởng nhận được và các bộ sưu tầm châu báu, các em sẽ trực tiếp tương giao và lớn lên trong Lời Chúa."
         100million: 
             title: "Khởi đầu với 100 triệu"
@@ -115,7 +115,7 @@ vi:
         mobile: 
             title: "App Kinh Thánh"
             description: "Đọc Lời Chúa mọi nơi mọi lúc với App Kinh Thánh của YouVersion. Chia sẻ Kinh Thánh với bạn bè, tô màu hoặc đánh dấu các phân đoạn, và hình thành thói quen hằng ngày với các kế hoạch đọc Kinh Thánh. App đã có mặt trên iOS, Android, Blackberry, Windows Phone...!"
-            download or read: "Download now or read online."
+            download or read: "Tải về bây giờ hoặc đọc trực tuyến."
         site: 
             title: "Bible.com/vi"
             description: "Mang chân lý Kinh Thánh vào đời sống. Với App Kinh Thánh của YouVersion bạn có thể đọc, xem, nghe và chia sẻ trên di động hoặc máy tính bảng, hoặc chia sẻ trực tuyến tại Bible.com/vi."
@@ -138,9 +138,9 @@ vi:
         story text 1: "Vườn Ê-đen"
         story text 2: "Giáng Sinh đầu tiên"
         story text 3: "Giô-sép, Ma-ri và hài nhi Jêsus trong máng cỏ"
-        story text 4: "Angels appear to the shepherds to tell them about the birth of Christ"
+        story text 4: "Các thiên sứ hiện ra với những người chăn chiên và báo cho họ về sự giáng sinh của Đấng Christ"
         story text 5: "Đức Chúa Jêsus chữa người bại"
-        feature 1: "Trải nghiệm Kinh Thánh miễn phí cho thiếu nhi"
+        feature 1: "Trải nghiệm Kinh Thánh miễn phí dành cho thiếu nhi"
         feature 2: "App kể chuyện bằng hình động trên điện thoại và máy tính bảng"
         feature 3: "Các minh họa đầy màu sắc với hình động cảm ứng"
         feature 4: "Các trò chơi và hoạt động giúp trẻ nhớ những gì đã học"
@@ -152,10 +152,10 @@ vi:
             facebook link: "http://www.bible.com/vi/kids"
             facebook redirect: "http://www.bible.com/vi/kids"
             twitter description: "App Kinh Thánh Thiếu Nhi từ @YouVersion đã sẵn sàng! Hữu ích và hoàn toàn miễn phí! Tải về từ bible.com/vi/kids."
-            twitter hashtags: "kidsbible"
+            twitter hashtags: "vikidsbible"
             email: "Email"
             email subject: "App Kinh Thánh Thiếu Nhi đã sẵn sàng!"
-            email body: "App Kinh Thánh Thiếu Nhi đã sẵn sàng, hoàn toàn miễn phí dành cho các thiếu bị iPhone, iPad, iPod touch và Android! App tập hợp các mẩu chuyện Kinh Thánh với hình động cảm ứng và các hoạt động kích thích sự học hỏi - một cách tuyệt vời để giúp con em bạn làm quen với những câu chuyện quan trọng trong Kinh Thánh. Hãy vào bible.com/vi/kids trên thiết bị di động của bạn để tải về!"
+            email body: "App Kinh Thánh Thiếu Nhi đã sẵn sàng, hoàn toàn miễn phí dành cho các thiết bị iPhone, iPad, iPod touch và Android! App tập hợp các mẩu chuyện Kinh Thánh với hình động cảm ứng và các hoạt động kích thích sự học hỏi - một cách tuyệt vời để giúp con em bạn làm quen với những câu chuyện quan trọng trong Kinh Thánh. Hãy vào bible.com/vi/kids trên thiết bị di động của bạn để tải về!"
         partner: 
             youversion: "YouVersion: App Kinh Thánh phổ biến nhất hiện nay"
             in partnership: "hợp tác với"
@@ -223,7 +223,7 @@ vi:
     sign out: "Đăng xuất"
     sign back in: "Vì lý do an ninh, đăng nhập của bạn đã hết hạn sau hai tuần. Xin hãy đăng nhập  lại!"
     youversion: "YouVersion"
-    username or email prompt: "Email (or Username)"
+    username or email prompt: "Email (hoặc tên sử dụng)"
     password prompt: "Mật khẩu"
     sign in: "Đăng nhập"
     sign in to youversion: "Đăng nhập YouVersion"
@@ -294,11 +294,11 @@ vi:
     alphabetic: "Thứ tự ABC"
     versions title: "Bản dịch"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "Ngôn ngữ và bản dịch Kinh Thánh"
+        most popular: "Các ngôn ngữ phổ biến nhất"
+        additional: "Các ngôn ngữ khác"
+        download language: "Tải Kinh Thánh %{language_name}"
+        bible in: "Kinh Thánh %{language_name}"
     or: 
         lower: "hoặc"
         upper: "HOẶC"
@@ -1027,9 +1027,9 @@ vi:
         banner action: "Tải xuống"
         banner open: "Mở"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Tải Ứng Dụng Kinh Thánh Thiếu Nhi"
+        description copy: "App Kinh Thánh Thiếu Nhi là cách tuyệt vời để dạy trẻ em các câu chuyện Kinh Thánh về Chúa Jêsus."
+        download: "Tải bây giờ"
     about page: 
         relevancy: "Tầm quan trọng"
         relevancy copy: "Trong quá khứ, con người không có nhiều cơ hội để tìm đọc Kinh Thánh, nhưng ngày nay mọi sự đã khác. Tuy vậy những người có cơ hội tiếp cận Kinh Thánh lại nghĩ thông điệp này không áp dụng cho cuộc sống của họ. Cùng một lúc đó, nhiều người khác tin rằng có sự liên hệ chặt chẽ giữa Kinh Thánh và trải nghiệm hằng ngày của họ."
@@ -1114,7 +1114,7 @@ vi:
         sms success: "Rất tốt! Hãy kiểm tra xem bạn đã nhận tin nhắn hay chưa."
         sms info: "Bạn sẽ nhận được SMS để tải app về."
         sms download: "Bấm vào đây để tải App Kinh Thánh:"
-        sms default country: "US"
+        sms default country: "VN"
     pages: 
         generic_error: 
             title: "Ối!"
@@ -1199,7 +1199,7 @@ vi:
         408 explanation: "Chúng tôi đã nghe đến và sẽ cố gắng giải quyết nhanh chóng bất cứ vấn đề dai dẳng nào. Bây giờ chúng ta hãy thử trở lại bài đọc Kinh Thánh!"
         try again: "Thử lại"
     versions: 
-        filter: "Start typing Version name (or Language)..."
+        filter: "Nhập tên bản dịch (hoặc ngôn ngữ)..."
         see all: "Xem toàn bộ bản dịch..."
         courtesy of: "%{abbreviation} được cung cấp bởi %{publisher}"
         learn more: "Tìm hiểu thêm"

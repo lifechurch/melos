@@ -1153,7 +1153,7 @@ uk:
         sms success: "Чудово! Знайдіть посилання на вашому мобільному."
         sms info: "Ви отримаєте одноразове СМС повідомлення для завантаження додатку."
         sms download: "Натисніть для завантаження додатку Біблія:"
-        sms default country: "US"
+        sms default country: "UA"
     pages: 
         generic_error: 
             title: "Йой!"

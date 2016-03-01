@@ -1127,7 +1127,7 @@ de:
         sms success: "Super! Schau auf deinem mobilen Gerät nach dem Link."
         sms info: "Du wirst eine einmalige SMS erhalten um die App herunterzuladen"
         sms download: "Klicken um die Bibel App herunterzuladen:"
-        sms default country: "US"
+        sms default country: "DE"
     pages: 
         generic_error: 
             title: "Hoppla!"

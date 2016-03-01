@@ -1114,7 +1114,7 @@ ms:
         sms success: "Hebat! Sila cek peranti mudah alih anda untuk link."
         sms info: "Anda akan menerima SMS untuk memuat turun app"
         sms download: "Sila klik untuk memuat turun App Alkitab:"
-        sms default country: "US"
+        sms default country: "MY"
     pages: 
         generic_error: 
             title: "Maaf!"

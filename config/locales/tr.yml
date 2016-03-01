@@ -1127,7 +1127,7 @@ tr:
         sms success: "Harika! Bağlantı için mobil cihazınızı kontrol ediniz."
         sms info: "Uygulamayı indirmek için bir kez SMS alacaksınız."
         sms download: "Kutsal Kitap Uygulaması'nı indirmek için tıklayınız:"
-        sms default country: "US"
+        sms default country: "TR"
     pages: 
         generic_error: 
             title: "Eyvah!"

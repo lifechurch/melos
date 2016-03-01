@@ -1127,7 +1127,7 @@ el:
         sms success: "Θαυμάσια! Ελέγξτε το κινητό σας για το σύνδεσμο."
         sms info: "Θα λάβετε ένα μήνυμα SMS για να κατεβάσετε την εφαρμογή"
         sms download: "Κλικ για να κατεβάσετε την εφαρμογή Αγία Γραφή:"
-        sms default country: "US"
+        sms default country: "GR"
     pages: 
         generic_error: 
             title: "Ωχ!"

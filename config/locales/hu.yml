@@ -234,7 +234,7 @@ hu:
     sign out: "Kijelentkezés"
     sign back in: "A biztonságod érdekében a bejelentkezések két hét után elévülnek. Kérünk, jelentkezz be újra."
     youversion: "YouVersion"
-    username or email prompt: "Email (vagy Felhasználónév)"
+    username or email prompt: "E-mail cím (vagy felhasználónév)"
     password prompt: "Jelszó"
     sign in: "Bejelentkezés"
     sign in to youversion: "Bejelentkezés a YouVersion rendszerébe"
@@ -1127,7 +1127,7 @@ hu:
         sms success: "Nagyszerű! A linket elküldtük a mobilodra."
         sms info: "Egyszeri SMS értesítést kapsz az alkalmazás letöltéséről."
         sms download: "Töltsd le a Biblia alkalmazást:"
-        sms default country: "US"
+        sms default country: "HU"
     pages: 
         generic_error: 
             title: "Hoppá!"
@@ -1212,7 +1212,7 @@ hu:
         408 explanation: "Megkaptuk a figyelmeztetésedet és amilyen gyorsan lehet, foglalkozunk a tartós problémákkal. Lássuk csak, vissza tudunk-e vinni a Biblia olvasáshoz!"
         try again: "Próbálkozz újra"
     versions: 
-        filter: "Kezdd el gépelni a kiadás nevét (vagy a nyelvet)..."
+        filter: "Kezdd el gépelni a fordítás nevét (vagy a nyelvet)..."
         see all: "Nézd meg az összes fordítást..."
         courtesy of: "%{abbreviation} %{publisher}-től származik."
         learn more: "Tudj meg többet"

@@ -1179,7 +1179,7 @@ cy:
         sms success: "Grêt! Edrych ar dy ddyfais symudol am y ddolen."
         sms info: "Byddi'n derbyn SMS un waith i lawrlwytho'r Ap"
         sms download: "Lawrlwytha'r Ap Beibl"
-        sms default country: "US"
+        sms default country: "GB"
     pages: 
         generic_error: 
             title: "Daria!"

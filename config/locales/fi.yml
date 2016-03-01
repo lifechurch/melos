@@ -1127,7 +1127,7 @@ fi:
         sms success: "Hienoa! Avaa linkki mobiililaitteellasi."
         sms info: "Saat kertakäyttöisen tekstiviestin, jonka kautta voit ladata sovelluksen"
         sms download: "Klikkaa ladataksesi Raamattusovelluksen"
-        sms default country: "US"
+        sms default country: "FI"
     pages: 
         generic_error: 
             title: "Oho!"

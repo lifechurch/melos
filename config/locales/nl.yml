@@ -1127,7 +1127,7 @@ nl:
         sms success: "Fantastisch! Controleer of je de link hebt ontvangen op je mobiel."
         sms info: "U zal eenmalig een SMS ontvangen om de app te downloaden"
         sms download: "Klik om de Bijbel app te downloaden"
-        sms default country: "US"
+        sms default country: "NL"
     pages: 
         generic_error: 
             title: "Oeps!"

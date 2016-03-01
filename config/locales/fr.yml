@@ -1127,7 +1127,7 @@ fr:
         sms success: "Magnifique ! Consultez votre appareil mobile pour le lien."
         sms info: "Vous recevrez un seul SMS pour télécharger l'application"
         sms download: "Cliquer pour télécharger la Bible App :"
-        sms default country: "US"
+        sms default country: "FR"
     pages: 
         generic_error: 
             title: "Oups!"

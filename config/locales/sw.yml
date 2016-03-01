@@ -1127,7 +1127,7 @@ sw:
         sms success: "Shukrani sana! Chunguza chombo chako kwa kiungo."
         sms info: "Utapokea Ujupe mfupi wa mara moja kuweza kupakua programu"
         sms download: "Gonga hapa kupaukua Programu ya Bibilia:"
-        sms default country: "US"
+        sms default country: "KE"
     pages: 
         generic_error: 
             title: "Ala!"
