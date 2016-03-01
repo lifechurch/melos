@@ -119,6 +119,21 @@ export default function loc(state = {}, action) {
 				hasError: true
 			})
 
+		case type('updateRequest'):
+			return Object.assign({}, state, {
+				isSaving: true,
+				hasError: false
+			})
+
+		case type('updateSuccess'):
+			return fromApiFormat(Object.assign({}, state, action.response))
+
+		case type('updateFailure'):
+			return Object.assign({}, state, {
+				errors: action.api_errors,
+				hasError: true
+			})
+
 		case type('removeLocationRequest'):
 			return Object.assign({}, state, {
 				isRemoving: true,
