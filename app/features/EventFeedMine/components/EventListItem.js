@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Row from '../../../../app/components/Row'
 import Column from '../../../../app/components/Column'
 import { Link } from 'react-router'
-import moment from 'moment' 
+import moment from 'moment'
 import ActionCreators from '../actions/creators'
 
 var Countdown = React.createClass({
@@ -18,7 +18,7 @@ var Countdown = React.createClass({
 		this.setState({secondsRemaining: secondsRemaining - 1});
 		if (secondsRemaining <= 0) {
 			clearInterval(this.interval);
-			
+
 			// Simulate live
 			dispatch(ActionCreators.setStatus(index, 2))
 		}
@@ -60,10 +60,10 @@ class EventListItem extends Component {
 		const secondsLeft = start.diff(moment(), "seconds");
 		if (0 <= secondsLeft && secondsLeft <= START_OFFSET_SECONDS) {
 			return <div className="events-details">
-				<Countdown 
-					initialCountdownSeconds={secondsLeft} 
-					dispatch={dispatch} 
-					item={item} 
+				<Countdown
+					initialCountdownSeconds={secondsLeft}
+					dispatch={dispatch}
+					item={item}
 					index={index} />
 				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
 				<Link className="small-link" to={`/event/edit/${item.id}/share`}>Share</Link>
@@ -148,7 +148,7 @@ class EventListItem extends Component {
 						</Row>
 					</Column>
 					<Column s='medium-2' a='right'>
-						<a className="hollow-button gray" to={`/event/edit/${item.id}`}>Edit</a>
+						<Link className="hollow-button gray" to={`/event/edit/${item.id}`}>Edit</Link>
 					</Column>
 				</Row>
 			</li>
