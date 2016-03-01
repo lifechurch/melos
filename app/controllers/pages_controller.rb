@@ -106,7 +106,9 @@ class PagesController < ApplicationController
     # the following localizations have the legal terms reviewed in a way that is
     # legally appropriate to show in a localized state
     [ :da, :en, :ja, :lv, :sv, :vi, :nl, :"pt", :"no", :"zh-CN",
-      :"zh-TW", :ms, :ru, :ro, :"es-ES", :uk, :ko, :af, :ca, :fr, :el, :it, :es, :tl, :th, :tr, :cy, :de, :fa ]
+      :"zh-TW", :ms, :ru, :ro, :"es-ES", :uk, :ko, :af, :ca, :fr, :el, :it, :es, :tl, :th, :tr, :cy, :de, :fa,
+      :sq, :bg, :hr, :cs, :fi, :id, :ko, :mn, :sw
+    ]
   end
 
   def donate
