@@ -7,24 +7,17 @@ import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
 import Select from '../../../../../../app/components/Select'
 import Textarea from '../../../../../../app/components/Textarea'
+import ErrorMessage from '../../../../../../app/components/ErrorMessage'
 
 class DetailsEdit extends Component {
 	render() {
 		const { handleChange, handleNext, event, params } = this.props
 
-		let ApiErrors = null
-		if (event.api_errors) {
-			let Errs = Object.keys(event.api_errors).map((k) => {
-				return (<div>{event.api_errors[k].key}</div>)
-			})
-			ApiErrors = <Row><div className="medium-10 large-8 columns small-centered errors">{Errs}</div></Row>
-		}
-
 		return (
 			<form className="event-edit-details-form">
-				{ApiErrors}
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
+						<ErrorMessage hasError={Boolean(event.api_errors)} errors={event.api_errors} />
 						<FormField disabled={!event.rules.details.canEdit} InputType={Input} size='large' placeholder='Event Name' name='title' onChange={handleChange} value={event.item.title} errors={event.errors.fields.title} />
 					</div>
 				</Row>
