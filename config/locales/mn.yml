@@ -1127,7 +1127,7 @@ mn:
         sms success: "Амжилт! Линк нь таны зөөврийн хэрэгсэл рүү илгээсэн."
         sms info: "Апп.г татаж авахын тулд нэг л удаагийн SMS тань руу илгээнэ"
         sms download: "Библи Апп.г татаж авахаар энд дар:"
-        sms default country: "US"
+        sms default country: "MN"
     pages: 
         generic_error: 
             title: "Өөөх!"

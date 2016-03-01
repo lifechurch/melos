@@ -1153,7 +1153,7 @@ pl:
         sms success: "Świetnie! Sprawdź czy dostałeś odnośnik na swój telefon."
         sms info: "Otrzymasz jednorazowego SMS-a, aby pobrać aplikację"
         sms download: "Naciśnij, aby pobrać aplikację Biblii:"
-        sms default country: "US"
+        sms default country: "PL"
     pages: 
         generic_error: 
             title: "Ups!"

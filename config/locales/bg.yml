@@ -1127,7 +1127,7 @@ bg:
         sms success: "Страхотно! Проверете Вашето мобилно устройство за линка."
         sms info: "Ще получите еднократен SMS, за да изтеглите приложението."
         sms download: "Кликнете, за да изтеглите приложение Библията:"
-        sms default country: "US"
+        sms default country: "BG"
     pages: 
         generic_error: 
             title: "Грешка!"

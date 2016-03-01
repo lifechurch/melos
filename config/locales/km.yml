@@ -1114,7 +1114,7 @@ km:
         sms success: "Great! Check your mobile device for the link."
         sms info: "You will receive a one time SMS to download the app"
         sms download: "Click to download the Bible App:"
-        sms default country: "US"
+        sms default country: "KH"
     pages: 
         generic_error: 
             title: "Oops!"

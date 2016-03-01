@@ -1140,7 +1140,7 @@ cs:
         sms success: "Fajné! Zkontrolujte odkaz na vašem zařízení."
         sms info: "Obdržíte jednorázovou SMS s odkazem ke stažení aplikace Bible"
         sms download: "Klikněte ke stažení aplikace Bible:"
-        sms default country: "US"
+        sms default country: "CZ"
     pages: 
         generic_error: 
             title: "Ups!"

@@ -1127,7 +1127,7 @@ da:
         sms success: "Skønt, Tjek din mobile enhed for linket."
         sms info: "Du vil modtage én SMS for hente app´en."
         sms download: "Klik for at hente Bibel App´en."
-        sms default country: "US"
+        sms default country: "DK"
     pages: 
         generic_error: 
             title: "Upss!"

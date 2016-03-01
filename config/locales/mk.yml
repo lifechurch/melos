@@ -1127,7 +1127,7 @@ mk:
         sms success: "Одлично! Провери на твојот мобилен уред дали го доби линкот."
         sms info: "Ќе добиеш еднократна SMS порака со врска за преземање на апликацијата"
         sms download: "Кликни за да ја преземеш апликацијата „Библија“:"
-        sms default country: "US"
+        sms default country: "MK"
     pages: 
         generic_error: 
             title: "Упс!"

@@ -1114,7 +1114,7 @@ fa:
         sms success: "لینک به شماره تلقن شما با موفقیت ارسال گردید!"
         sms info: "جهت دانلود این اَپ، پیامکی دریافت خواهید کرد که فقط یک بار فرستاده خواهد شد"
         sms download: "لطفاً جهت دانلود اَپ کتاب‌مقدس کلیک کنید:"
-        sms default country: "US"
+        sms default country: "IR"
     pages: 
         generic_error: 
             title: "آاخخخ!"

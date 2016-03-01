@@ -1127,7 +1127,7 @@
         sms success: "Flott! Sjekk din mobile enhet for å finne linken."
         sms info: "Du vil motta en SMS en gang for å laste ned appen"
         sms download: "Klikk for å laste ned Bibel-appen:"
-        sms default country: "US"
+        sms default country: "NO"
     pages: 
         generic_error: 
             title: "Ojsann!"

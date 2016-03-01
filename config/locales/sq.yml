@@ -1127,7 +1127,7 @@ sq:
         sms success: "Shumë mirë! Kontrolloni celularin tuaj për lidhjen."
         sms info: "Ju do të merrni një SMS të vetme për të shkarkuar aplikacionin"
         sms download: "Kliko për të shkarkuar Programin e Biblës:"
-        sms default country: "US"
+        sms default country: "AL"
     pages: 
         generic_error: 
             title: "Ups!"

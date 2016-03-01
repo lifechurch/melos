@@ -1114,7 +1114,7 @@ id:
         sms success: "Mantap! Periksa perangkat seluler Anda untuk tautan."
         sms info: "Anda akan menerima SMS satu kali untuk mengunduh aplikasi"
         sms download: "Klik untuk mengunduh Ap Alkitab:"
-        sms default country: "US"
+        sms default country: "ID"
     pages: 
         generic_error: 
             title: "Duh!"

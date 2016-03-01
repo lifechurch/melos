@@ -1127,7 +1127,7 @@ tl:
         sms success: "Mahusay! Tingnan ang iyong mobile na aparato para sa link."
         sms info: "Ikaw ay makatatanggap ng isang text kung paano i-download ang app"
         sms download: "Pindutin upang i-download ang App na Bibliya"
-        sms default country: "US"
+        sms default country: "PH"
     pages: 
         generic_error: 
             title: "Oops!"

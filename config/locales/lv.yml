@@ -1140,7 +1140,7 @@ lv:
         sms success: "Lieliski! Meklē savā mobilajā ierīcē saiti."
         sms info: "Tu saņemsi sms, lai lejupielādētu aplikāciju."
         sms download: "Klikšķini, lai lejupielādētu Bībeles aplikāciju."
-        sms default country: "US"
+        sms default country: "LV"
     pages: 
         generic_error: 
             title: "Ak vai!"

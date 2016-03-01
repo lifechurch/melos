@@ -1127,7 +1127,7 @@ hi:
         sms success: "बढ़िया, अपने मोबाइल यंत्र  पर लिंक देखे"
         sms info: "आपको एप्प डाउनलोड करने के लिए लिंक का एस एम् एस मिलेगा"
         sms download: "बाइबिल एप्प डाउनलोड करने के लिए क्लीक करें"
-        sms default country: "US"
+        sms default country: "IN"
     pages: 
         generic_error: 
             title: "Oops!"

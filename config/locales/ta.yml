@@ -1127,7 +1127,7 @@ ta:
         sms success: "சபாஷ்! இணைப்பு வந்துள்ளதா என்று உங்கள் மொபைல் சாதனத்தை பார்க்கவும்."
         sms info: "செயலியை பதிவிறக்க ஒரு ஒரு முறை குறுஞ்செய்தி ஒன்றை நீங்கள் பெறுவீர்கள்"
         sms download: "வேதாகம செயலியை பதிவிறக்க சொடுக்கவும்"
-        sms default country: "US"
+        sms default country: "IN"
     pages: 
         generic_error: 
             title: "அடடா!"

@@ -1114,7 +1114,7 @@ ja:
         sms success: "完了！ご利用のデバイスからリンクをご覧ください。"
         sms info: "ダウンロード用のリンクがSMSで携帯に届きます。"
         sms download: "クリックして聖書アプリをダウンロード:"
-        sms default country: "US"
+        sms default country: "JA"
     pages: 
         generic_error: 
             title: "申し訳ありません。"

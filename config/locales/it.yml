@@ -1127,7 +1127,7 @@ it:
         sms success: "Ottimo! Cerca il link sul tuo dispositivo mobile."
         sms info: "Riceverai un SMS una tantum per scaricare l'app"
         sms download: "Clicca per scaricare l'App Bibbia"
-        sms default country: "US"
+        sms default country: "IT"
     pages: 
         generic_error: 
             title: "Ops!"
