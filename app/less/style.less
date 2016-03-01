@@ -1122,6 +1122,10 @@ textarea {
 	span {
 		line-height:12px;
 		color: #979797;
+		font-size: 5px; // Make the arrow tiny.
+		transform: scale(2,1); // Make the arrow wider.
+		width: 25px; // Width, because transformed scale overlaps.
+		margin: auto; // Re-center, because width ^
 	}
 }
 
