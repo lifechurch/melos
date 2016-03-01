@@ -40,15 +40,15 @@ class PreviewSidebar extends Component {
 		var publish_button = null
 		switch (event.item.status) {
 			case 'draft':
-				publish_button = <Link className='solid-button green publish' onClick={::this.publishEvent} to={`/event/edit/${event.item.id}/share`}>Publish</Link>
+				publish_button = <Link disabled={!event.rules.preview.canPublish} className='solid-button green publish' onClick={::this.publishEvent} to={`/event/edit/${event.item.id}/share`}>Publish</Link>
 				break
 
 			case 'published':
-				publish_button = <Link className='solid-button gray publish' onClick={::this.unpublishEvent} to={`/event/edit/${event.item.id}/content`}>Unpublish</Link>
+				publish_button = <Link disabled={!event.rules.preview.canUnpublish} className='solid-button gray publish' onClick={::this.unpublishEvent} to={`/event/edit/${event.item.id}/content`}>Unpublish</Link>
 				break
 
 			default:
-				publish_button = <a className="solid-button gray publish">{event.item.status}</a>
+				publish_button = <a className="solid-button gray publish" disabled={true}>{event.item.status}</a>
 				break
 		}
 
@@ -74,6 +74,7 @@ class PreviewSidebar extends Component {
 					<p>Your event will be removed from the Bible App after your last event ends. Attenders who tap "Save Event" will continue to have access to an archived version of this Event.</p>
 				</div>
 				{publish_button}
+				<p className='publishMessage'>{event.publishMessage}</p>
 			</div>
 		)
 	}

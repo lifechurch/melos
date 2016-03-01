@@ -4,6 +4,8 @@ import ContentHeader from '../features/EventEdit/features/content/components/Con
 import ContentFeed from '../features/EventEdit/features/content/components/ContentFeed'
 import ActionCreators from '../features/EventEdit/features/content/actions/creators'
 import RevManifest from '../../rev-manifest.json'
+import { ActionCreators as ModalActionCreators } from '../actions/modals'
+import LiveWarningModal from '../features/EventEdit/features/content/components/LiveWarningModal'
 
 function createBaseContentObject(eventId, type) {
 	return {
@@ -15,6 +17,11 @@ function createBaseContentObject(eventId, type) {
 }
 
 class EventEditContentContainer extends Component {
+	handleCloseModal() {
+		const { dispatch } = this.props
+		dispatch(ModalActionCreators.closeModal('LiveWarning'))
+	}
+
 	handleAddText() {
 		const { event, dispatch } = this.props
 		dispatch(ActionCreators.new(
@@ -156,12 +163,17 @@ class EventEditContentContainer extends Component {
 
 	handleRemove(index, id, content_id) {
 		const { event, dispatch } = this.props
-		const params = {
-			id,
-			index,
-			content_id
+		if (typeof event.rules.content.canDelete === 'object') {
+			const { modal } = event.rules.content.canDelete
+			dispatch(ModalActionCreators.openModal(modal))
+		} else {
+			const params = {
+				id,
+				index,
+				content_id
+			}
+			dispatch(ActionCreators.remove(params))
 		}
-		dispatch(ActionCreators.remove(params))
 	}
 
 	handleMove(fromIndex, toIndex) {
@@ -221,11 +233,13 @@ class EventEditContentContainer extends Component {
 					handleAddGiving={::this.handleAddGiving}
 					modals={modals}
 					dispatch={dispatch}
+					event={event}
 					handleAddImage={::this.handleAddImage}
 				/>
 				<div className='content-container'>
 					{contentFeed}
 				</div>
+				<LiveWarningModal event={event} dispatch={dispatch} modalState={modals.LiveWarning} handleClose={::this.handleCloseModal} />
 			</div>
 		)
 	}

@@ -2,10 +2,12 @@ import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import Row from '../components/Row'
 import Column from '../components/Column'
+import { Link } from 'react-router'
 import ActionCreators from '../features/EventEdit/features/location/actions/creators'
 import { ActionCreators as ModalActionCreators } from '../actions/modals'
 import LocationEdit from '../features/EventEdit/features/location/components/LocationEdit'
 import LocationDeleteModal from '../features/EventEdit/features/location/components/LocationDeleteModal'
+import UnpublishModal from '../features/EventEdit/features/location/components/UnpublishModal'
 import Location from '../features/EventEdit/features/location/components/Location'
 import LocationAddButtons from '../features/EventEdit/features/location/components/LocationAddButtons'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
@@ -16,31 +18,57 @@ class EventEditLocationContainer extends Component {
 		dispatch(ActionCreators.items())
 	}
 
+	handleCloseUnpublishModal() {
+		const { dispatch } = this.props
+		dispatch(ModalActionCreators.closeModal('Unpublish'))
+	}
+
 	handleCloseModal() {
 		const { dispatch } = this.props
 		dispatch(ModalActionCreators.closeModal('LocationDelete'))
 	}
 
 	handleOpenModal(loc) {
-		const { dispatch } = this.props
-		dispatch(ModalActionCreators.openModal('LocationDelete', loc))
+		const { event, dispatch } = this.props
+		if (typeof event.rules.locations.canDelete === 'object') {
+			const { modal } = event.rules.locations.canDelete
+			dispatch(ModalActionCreators.openModal(modal))
+		} else {
+			const { dispatch } = this.props
+			dispatch(ModalActionCreators.openModal('LocationDelete', loc))
+		}
 	}
 
 	handleDelete(loc) {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.delete(loc.id))
-		dispatch(ModalActionCreators.closeModal('LocationDelete'))
+		const { event, dispatch } = this.props
+		if (typeof event.rules.locations.canDelete === 'object') {
+			const { modal } = event.rules.locations.canDelete
+			dispatch(ModalActionCreators.openModal(modal))
+		} else {
+			dispatch(ActionCreators.delete(loc.id))
+			dispatch(ModalActionCreators.closeModal('LocationDelete'))
+		}
 	}
 
 	handleAddPhysicalLocationClick(clickEvent) {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.add('physical'))
+		const { event, dispatch } = this.props
+		if (typeof event.rules.locations.canAddPhysical === 'object') {
+			const { modal } = event.rules.locations.canAddPhysical
+			dispatch(ModalActionCreators.openModal(modal))
+		} else {
+			dispatch(ActionCreators.add('physical'))
+		}
 	}
 
 	handleAddVirtualLocationClick(clickEvent) {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.add('virtual'))
-	}	
+		const { event, dispatch } = this.props
+		if (typeof event.rules.locations.canAddVirtual === 'object') {
+			const { modal } = event.rules.locations.canAddVirtual
+			dispatch(ModalActionCreators.openModal(modal))
+		} else {
+			dispatch(ActionCreators.add('virtual'))
+		}
+	}
 
 	handleCancel() {
 		const { dispatch } = this.props
@@ -50,10 +78,15 @@ class EventEditLocationContainer extends Component {
 	handleSelect(selectEvent) {
 		const { event, dispatch } = this.props
 		const { name, checked } = selectEvent.target
-		if (checked === true) {
-			dispatch(ActionCreators.addLocation(event.item.id, name))
+		if (typeof event.rules.locations.canRemove === 'object') {
+			const { modal } = event.rules.locations.canRemove
+			dispatch(ModalActionCreators.openModal(modal))
 		} else {
-			dispatch(ActionCreators.removeLocation(event.item.id, name))			
+			if (checked === true) {
+				dispatch(ActionCreators.addLocation(event.item.id, name))
+			} else {
+				dispatch(ActionCreators.removeLocation(event.item.id, name))
+			}
 		}
 	}
 
@@ -74,8 +107,13 @@ class EventEditLocationContainer extends Component {
 	}
 
 	handleAddTime() {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.addTime())
+		const { event, dispatch } = this.props
+		if (typeof event.rules.locations.canEdit === 'object') {
+			const { modal } = event.rules.locations.canEdit
+			dispatch(ModalActionCreators.openModal(modal))
+		} else {
+			dispatch(ActionCreators.addTime())
+		}
 	}
 
 	handleSave() {
@@ -98,12 +136,22 @@ class EventEditLocationContainer extends Component {
 
 	handleRemove(locationId, index) {
 		const { dispatch, event } = this.props
-		dispatch(ActionCreators.remove(event.item.id, locationId, index))
+		if (typeof event.rules.locations.canRemove === 'object') {
+			const { modal } = event.rules.locations.canRemove
+			dispatch(ModalActionCreators.openModal(modal))
+		} else {
+			dispatch(ActionCreators.remove(event.item.id, locationId, index))
+		}
 	}
 
 	handleEdit(loc) {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.edit(loc))
+		const { event, dispatch } = this.props
+		if (typeof event.rules.locations.canEdit === 'object') {
+			const { modal } = event.rules.locations.canEdit
+			dispatch(ModalActionCreators.openModal(modal))
+		} else {
+			dispatch(ActionCreators.edit(loc))
+		}
 	}
 
 	render() {
@@ -113,54 +161,57 @@ class EventEditLocationContainer extends Component {
 		var index = 0
 		for (var key in event.item.locations) {
 			const loc = event.item.locations[key]
-			locations.push(<li key={index}><Location index={index} loc={loc} handleSelect={::this.handleSelect} handleDelete={::this.handleOpenModal} handleEdit={::this.handleEdit} /></li>)
+			locations.push(<li key={index}><Location dispatch={dispatch} event={event} index={index} loc={loc} handleSelect={::this.handleSelect} handleDelete={::this.handleOpenModal} handleEdit={::this.handleEdit} /></li>)
 			index++
 		}
-		
+
 		var centerButtons
 		if (!(event.item && event.item.locations && event.item.locations.length > 0)) {
 			centerButtons = 'center-single-item'
 		}
 
 		var locationEditor
-		var locationList = null		
+		var locationList = null
 		if (loc && typeof loc.type === 'string') {
-			locationEditor = (<LocationEdit key='locationeditor'  
-				handleCancel={::this.handleCancel} 
+			locationEditor = (<LocationEdit key='locationeditor'
+				handleCancel={::this.handleCancel}
 				handleChange={::this.handleChange}
 				handleChoosePlace={::this.handleChoosePlace}
 				handleSetTime={::this.handleSetTime}
 				handleAddTime={::this.handleAddTime}
 				handleSave={::this.handleSave}
-				dispatch={dispatch} 
+				dispatch={dispatch}
 				loc={loc} />
 			)
 		} else {
 			locationList = (
 				<ul className="medium-block-grid-3" key='locationlist'>
 					<ReactCSSTransitionGroup className='medium-block-grid-3' transitionName="locationlist" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
-						{locations}						
+						{locations}
 						<li className={centerButtons} key={-1}>
-							<LocationAddButtons 
-								handleAddPhysicalLocationClick={::this.handleAddPhysicalLocationClick} 
+							<LocationAddButtons
+								dispatch={dispatch}
+								event={event}
+								handleAddPhysicalLocationClick={::this.handleAddPhysicalLocationClick}
 								handleAddVirtualLocationClick={::this.handleAddVirtualLocationClick}>
 							</LocationAddButtons>
 						</li>
 					</ReactCSSTransitionGroup>
-				</ul>				
-			)			
+				</ul>
+			)
 		}
 
-		return (			
+		return (
 			<div>
 				<Helmet title="Event Location" />
 				<Row>
 					<div className="medium-10 large-8 columns small-centered text-center">
 						<ReactCSSTransitionGroup transitionName="locationeditor" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
 							{locationEditor}
-							{locationList}					
+							{locationList}
 						</ReactCSSTransitionGroup>
 						<LocationDeleteModal modalState={modals.LocationDelete} handleDelete={::this.handleDelete} handleClose={::this.handleCloseModal} />
+						<UnpublishModal event={event} dispatch={dispatch} modalState={modals.Unpublish} handleClose={::this.handleCloseUnpublishModal} />
 					</div>
 				</Row>
 				<Row>
@@ -170,9 +221,9 @@ class EventEditLocationContainer extends Component {
 				</Row>
 				<Row>
 					<Column s='medium-12' a='right'>
-						<a disabled={!event.locationsValid}>Next: Add Content</a>
+						<Link disabled={!event.rules.content.canView} to={`/event/edit/${event.item.id}/content`}>Next: Add Content</Link>
 					</Column>
-				</Row>				
+				</Row>
 			</div>
 		)
 	}

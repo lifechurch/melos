@@ -25,6 +25,7 @@ export default {
 			summary: '',
 			fields: []
 		},
+		publishMessage: null,
 		isFetching: false,
 		isSaving: false,
 		isDirty: false,
@@ -40,6 +41,36 @@ export default {
 			created_dt: null,
 			id: null,
 			owner_id: null
+		},
+		rules: {
+			details: {
+				canView: true,
+				canEdit: true
+			},
+			locations: {
+				canView: false,
+				canAddPhysical: false,
+				canAddVirtual: false,
+				canRemove: false,
+				canDelete: false,
+				canEdit: false
+			},
+			content: {
+				canView: false,
+				canAdd: false,
+				canEdit: false,
+				canDelete: false,
+				canReorder: false
+			},
+			preview: {
+				canView: false,
+				canPublish: false,
+				canUnpublish: false
+			},
+			share: {
+				canView: false,
+				canShare: false
+			}
 		}
 	},
 	loc: {},

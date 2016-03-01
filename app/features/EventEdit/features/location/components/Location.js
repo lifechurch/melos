@@ -5,8 +5,8 @@ import Column from '../../../../../../app/components/Column'
 import RevManifest from '../../../../../../rev-manifest.json'
 
 class Location extends Component {
-	handleDeleteClick(event) {
-		const { handleDelete, loc, index } = this.props
+	handleDeleteClick(clickEvent) {
+		const { handleDelete, loc } = this.props
 		handleDelete(loc)
 	}
 
@@ -16,7 +16,7 @@ class Location extends Component {
 	}
 
 	render() {
-		const { loc, handleSelect } = this.props
+		const { loc, handleSelect, event } = this.props
 
 		var times = loc.times.map((t,i) => {
 			var start = moment(t.start_dt).format('ddd MMM D h:mm A')
@@ -29,13 +29,13 @@ class Location extends Component {
 			<div className={className}>
 				<div className='header'>
 					<div className='title'>
-						<input type='checkbox' onClick={handleSelect} name={loc.id} checked={loc.isSelected} /> USE THIS LOCATION
+						<input disabled={!event.rules.locations.canRemove} type='checkbox' onClick={handleSelect} name={loc.id} checked={loc.isSelected} /> USE THIS LOCATION
 					</div>
 					<div className='header-actions'>
-						<a onClick={::this.handleEditClick} title='Edit Location'>
+						<a disabled={!event.rules.locations.canEdit} onClick={::this.handleEditClick} title='Edit Location'>
 							<img src={`/images/${RevManifest['edit.png']}`} />
 						</a>
-						<a onClick={::this.handleDeleteClick} title='Delete Location'>
+						<a disabled={!event.rules.locations.canDelete} onClick={::this.handleDeleteClick} title='Delete Location'>
 							<img src={`/images/${RevManifest['thin-x.png']}`} />
 						</a>
 					</div>

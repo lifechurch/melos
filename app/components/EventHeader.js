@@ -3,9 +3,11 @@ import Row from './Row'
 import Column from './Column'
 import EventEditNav from '../features/EventEdit/components/EventEditNav'
 import ActionCreators from '../features/EventEdit/features/details/actions/creators'
+import PreviewActionCreators from '../features/EventEdit/features/preview/actions/creators'
 import AuthActionCreators from '../features/Auth/actions/creators'
 import { routeActions } from 'react-router-redux'
 import RevManifest from '../../rev-manifest.json'
+import EventStatus from '../features/EventEdit/eventStatus.js'
 
 class EventHeader extends Component {
 	handleCancel() {
@@ -23,18 +25,42 @@ class EventHeader extends Component {
 		dispatch(AuthActionCreators.logout())
 	}
 
-	getPublishSection(pathname) {
-		const { isSaving, errors } = this.props.event
-		if (pathname.split('/').pop() == "share") {
-			return <Column s='medium-7' a='right' className="">
-				<span className="publishedLabel"><img src={`/images/${RevManifest['check.png']}`} className="publishedButtonCheckmark"/>Published</span>&nbsp;
-				<a className='solid-button gray'>Unpublish</a>
-			</Column>
+	unpublishEvent() {
+		const { dispatch, event } = this.props
+		dispatch(PreviewActionCreators.unpublishEvent({
+			id: event.item.id
+		}))
+	}
+
+	getPublishSection() {
+		const { item, isSaving, errors } = this.props.event
+		switch (item.status) {
+			case EventStatus('published'):
+				return (
+					<Column s='medium-5' a='right' className="">
+						<span className="publishedLabel">
+							<img src={`/images/${RevManifest['check-gray.png']}`} className="publishedButtonCheckmark"/>Published
+						</span>&nbsp;
+						<a className='solid-button gray' onClick={::this.unpublishEvent}>Unpublish</a>
+					</Column>
+				)
+
+			case EventStatus('draft'):
+				return (
+					<Column s='medium-5' a='right'>
+						<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving}>{ isSaving ? 'Saving...' : 'Save as Draft' }</a>
+					</Column>
+				)
+
+			case EventStatus('live'):
+			default:
+				return (
+					<Column s='medium-5' a='right'>
+						<a className='solid-button red' disabled={true}>{item.status.toUpperCase()}</a>
+					</Column>
+				)
 		}
-		return <Column s='medium-5' a='right'>
-			<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving}>{ isSaving ? 'Saving...' : 'Save as Draft' }</a>&nbsp;
-			<a className='solid-button green'>Publish</a>
-		</Column>
+
 	}
 
 	render() {
@@ -48,7 +74,7 @@ class EventHeader extends Component {
 							<EventEditNav {...this.props} />
 						</Column>
 
-						{::this.getPublishSection(this.props.location.pathname)}
+						{::this.getPublishSection()}
 					</Row>
 		}
 

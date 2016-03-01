@@ -45,9 +45,9 @@ class ContentFeed extends Component {
 
 		let reorderButton = null
 		if (event.isReordering) {
-			reorderButton = (<a onClick={handleReorder} className='solid-button blue'><img src={`/images/${RevManifest['check.png']}`} /> &nbsp;Done Reordering</a>)
+			reorderButton = (<a disabled={!event.rules.content.canReorder} onClick={handleReorder} className='solid-button blue'><img src={`/images/${RevManifest['check.png']}`} /> &nbsp;Done Reordering</a>)
 		} else {
-			reorderButton = (<a onClick={handleStartReorder}><img className='reorder-icon' src={`/images/${RevManifest['reorder.png']}`} /> Reorder Content</a>)
+			reorderButton = (<a disabled={!event.rules.content.canReorder} onClick={handleStartReorder}><img className='reorder-icon' src={`/images/${RevManifest['reorder.png']}`} /> Reorder Content</a>)
 		}
 
 		return (
