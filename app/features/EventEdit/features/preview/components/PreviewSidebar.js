@@ -28,7 +28,12 @@ class PreviewSidebar extends Component {
 	render() {
 		const { event } = this.props
 		const { locations } = event.item
-		var location_count = event.item.locations ? Object.keys(event.item.locations).length : ''
+		var location_count = 0
+		if (event.item.locations) {
+			location_count = Object.keys(event.item.locations).filter((k) => {
+				return event.item.locations[k].isSelected
+			}).length
+		}
 
 		var times = locations ? Object.keys(locations).map((i)=>{ return locations[i].times }) : []
 		times = times.concat.apply([],times) // flatten times
