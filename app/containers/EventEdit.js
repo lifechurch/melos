@@ -8,15 +8,6 @@ import ActionCreators from '../features/EventEdit/features/details/actions/creat
 import EventHeader from '../components/EventHeader'
 
 class EventEdit extends Component {
-	componentWillMount() {
-		const { dispatch, params } = this.props
-		if (params.hasOwnProperty("id") && params.id > 0) {
-			dispatch(ActionCreators.view(params.id))
-		} else {
-			dispatch(ActionCreators.new())
-		}
-	}
-
 	handleDetailsNext(nextLocation) {
 		const { dispatch, event } = this.props
 		const { isDirty, detailsValid } = event

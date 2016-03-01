@@ -39,12 +39,7 @@ export default function event(state = {}, action) {
 			return applyLifecycleRules(validateEventDetails(Object.assign({}, defaultState.event)))
 
 		case type('viewSuccess'):
-			return applyLifecycleRules(eventFromApiFormat(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false }, {
-				item: {
-					...action.response,
-					locations: arrayToObject(action.response.locations, 'id')
-				}
-			})))
+			return applyLifecycleRules(eventFromApiFormat(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false })))
 
 		case type('viewFailure'):
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: false, isDirty: false, api_errors: action.api_errors }))
@@ -155,18 +150,7 @@ export default function event(state = {}, action) {
 				}
 			}), 'id')
 
-			var eventLocations = state.item.locations
-			if (Array.isArray(eventLocations)) {
-				eventLocations = arrayToObject(eventLocations.map((location) => {
-					return {
-						...location,
-						times: Array.isArray(location.times) ? location.times : [],
-						isSelected: true
-					}
-				}), 'id')
-			}
-
-			var locations = mergeObjects(allLocations, eventLocations)
+			var locations = mergeObjects(allLocations, state.item.locations)
 
 			return applyLifecycleRules(Object.assign({}, state, {
 				item: { ...state.item, locations }

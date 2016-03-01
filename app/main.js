@@ -8,6 +8,7 @@ import { browserHistory } from 'react-router'
 import createLogger from 'redux-logger'
 import getRoutes from './routes'
 import defaultState from './defaultState'
+import EventActionCreators from './features/EventEdit/features/details/actions/creators'
 
 let initialState = defaultState
 
@@ -28,7 +29,24 @@ function requireAuth(nextState, replace) {
 	}
 }
 
-const routes = getRoutes(requireAuth)
+function requireEvent(nextState, replace, callback) {
+	const { params } = nextState
+	if (params.hasOwnProperty("id") && params.id > 0) {
+		store.dispatch(EventActionCreators.view(nextState.params.id)).then((event) => {
+			callback()
+		}, (error) => {
+			callback()
+		})
+	} else {
+		store.dispatch(EventActionCreators.new()).then((event) => {
+			callback()
+		}, (error) => {
+			callback()
+		})
+	}
+}
+
+const routes = getRoutes(requireAuth, requireEvent)
 
 render(
 	<Provider store={store}>
