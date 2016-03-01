@@ -40,6 +40,7 @@ function checkStatus(event, rules) {
 
 				rules.preview.canView						= true
 				rules.preview.canPublish				= true
+				rules.preview.canUnpublish			= false
 
 				rules.share.canView 						= false
 				rules.share.canShare 						= false
@@ -51,6 +52,32 @@ function checkStatus(event, rules) {
 				rules.details.canEdit 					= false
 
 				rules.locations.canView 				= true
+				rules.locations.canAddVirtual 	= { modal: 'Unpublish' }
+				rules.locations.canAddPhysical 	= { modal: 'Unpublish' }
+				rules.locations.canRemove 			= { modal: 'Unpublish' }
+				rules.locations.canDelete 			= { modal: 'Unpublish' }
+				rules.locations.canEdit 				= { modal: 'Unpublish' }
+
+				rules.content.canView 					= true
+				rules.content.canAdd 						= true
+				rules.content.canEdit 					= true
+				rules.content.canDelete 				= true
+				rules.content.canReorder 				= true
+
+				rules.preview.canView						= true
+				rules.preview.canPublish				= false
+				rules.preview.canUnpublish			= true
+
+				rules.share.canView 						= true
+				rules.share.canShare 						= true
+
+				break
+
+			case EventStatus('live'):
+				rules.details.canView 					= true
+				rules.details.canEdit 					= false
+
+				rules.locations.canView 				= true
 				rules.locations.canAddVirtual 	= false
 				rules.locations.canAddPhysical 	= false
 				rules.locations.canRemove 			= false
@@ -58,13 +85,14 @@ function checkStatus(event, rules) {
 				rules.locations.canEdit 				= false
 
 				rules.content.canView 					= true
-				rules.content.canAdd 						= false
+				rules.content.canAdd 						= true
 				rules.content.canEdit 					= true
-				rules.content.canDelete 				= false
-				rules.content.canReorder 				= false
+				rules.content.canDelete 				= { modal: 'LiveWarning' }
+				rules.content.canReorder 				= true
 
 				rules.preview.canView						= true
 				rules.preview.canPublish				= false
+				rules.preview.canUnpublish			= false
 
 				rules.share.canView 						= true
 				rules.share.canShare 						= true

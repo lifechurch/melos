@@ -5,8 +5,8 @@ import Column from '../../../../../../app/components/Column'
 import RevManifest from '../../../../../../rev-manifest.json'
 
 class Location extends Component {
-	handleDeleteClick(event) {
-		const { handleDelete, loc, index } = this.props
+	handleDeleteClick(clickEvent) {
+		const { handleDelete, loc } = this.props
 		handleDelete(loc)
 	}
 

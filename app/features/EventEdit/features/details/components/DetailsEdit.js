@@ -35,7 +35,7 @@ class DetailsEdit extends Component {
 
 				<Row>
 					<Column s='medium-12' a='right'>
-						<a disabled={event.errors.hasError || !event.rules.details.canEdit} onClick={handleNext}>Next: Add Location & Times</a>
+						<a disabled={event.errors.hasError || !event.rules.locations.canView} onClick={handleNext}>Next: Add Location & Times</a>
 					</Column>
 				</Row>
 			</form>

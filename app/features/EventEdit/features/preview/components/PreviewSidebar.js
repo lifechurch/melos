@@ -48,7 +48,7 @@ class PreviewSidebar extends Component {
 				break
 
 			default:
-				publish_button = <a className="solid-button gray publish">{event.item.status}</a>
+				publish_button = <a className="solid-button gray publish" disabled={true}>{event.item.status}</a>
 				break
 		}
 

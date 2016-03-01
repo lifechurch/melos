@@ -1,6 +1,8 @@
 const constants = {
 	draft: 'draft',
-	published: 'published'
+	published: 'published',
+	live: 'live',
+	archived: 'archived'
 }
 
 export default function (key) {
