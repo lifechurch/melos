@@ -9,6 +9,7 @@ import {
 	EVENT_FEED_MINE_REQUEST,
 	EVENT_FEED_MINE_FAILURE
 } from '../actions'
+import type from '../features/EventFeedMine/actions/constants'
 
 export function eventFeeds(state = {}, action) {
 	switch(action.type) {
@@ -31,13 +32,19 @@ export function eventFeeds(state = {}, action) {
 			return Object.assign({}, state, { saved: { isFetching: true }})
 
 		case EVENT_FEED_MINE_SUCCESS:
-			return Object.assign({}, state, { mine: { items: action.response.events, page: action.params.page, next_page: action.response.next_page, hasError: false, errors: [], isFetching: false}})
+			var newMine = Object.assign({}, state.mine, { items: action.response.events, page: action.params.page, next_page: action.response.next_page, hasError: false, errors: [], isFetching: false})
+			return Object.assign({}, state, { mine: newMine })
 
 		case EVENT_FEED_MINE_FAILURE:
 			return Object.assign({}, state, { mine: { hasError: true, errors: action.api_errors, isFetching: false }})
 
 		case EVENT_FEED_MINE_REQUEST:
 			return Object.assign({}, state, { mine: { isFetching: true }})
+
+		case type('setStatus'):
+			var itemsCopy = state.mine.items.slice(0)
+			itemsCopy[action.index].status = action.status
+			return Object.assign({}, state, { mine: { items: itemsCopy } })
 
 		default:
 			return state;

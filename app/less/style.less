@@ -1,9 +1,12 @@
 @import (inline) "../../node_modules/react-datepicker/dist/react-datepicker.css";
 @import (inline) "../../node_modules/quill/dist/quill.base.css";
 @import (inline) "../../node_modules/quill/dist/quill.snow.css";
+@import "colors";
+@import "typography";
+
 
 body {
-	font-family: ArialMT;
+    font-family: @base-font-family;
 }
 
 .events-details {
@@ -54,7 +57,6 @@ ul.unindented {
 }
 
 h1.sharePageTitle {
-	font-family: ArialMT;
 	font-size: 32px;
 	color: #353535;
 	line-height: 37px;
@@ -66,7 +68,6 @@ h1.sharePageTitle {
 }
 
 h2.sharePageSubtitle {
-	font-family: ArialMT;
 	font-size: 20px;
 	color: #353535;
 	line-height: 23px;
@@ -75,20 +76,21 @@ h2.sharePageSubtitle {
 	margin-bottom: 40px;
 }
 
-img.sharePageEventImage {
-	border-radius: 3px;
+img.thumbnail {
+	width: 122px;
+	height: 70px;
+	height: auto;
+	border-radius: 5px;
 }
 
 div.sharePageEventSection {
 	a.title {
-		font-family: ArialMT;
 		font-size: 18px;
 		color: #0084C8;
 		line-height: 21px;
 	}
 
 	a.scheduledDates {
-		font-family: ArialMT;
 		font-size: 11px;
 		color: #979797;
 		line-height: 16px;
@@ -117,14 +119,12 @@ table.sharePageTable {
 	}
 
 	a.editButton {
-		font-family: HelveticaNeue;
 		font-size: 20px;
 		line-height: 24px;
 		color: #888888;
 	}
 
 	a.myEventsButton {
-		font-family: HelveticaNeue;
 		font-size: 20px;
 		line-height: 24px;
 		color: #4EAE50;
@@ -136,7 +136,6 @@ table.sharePageTable {
 	margin-bottom: 40px;
 
 	span.shorturl {
-		font-family: Arial-BoldMT;
 		font-size: 18px;
 		color: #7E7E7E;
 		line-height: 21px;
@@ -152,7 +151,6 @@ table.sharePageTable {
 	}
 
 	a.copyButton {
-		font-family: Arial-BoldMT;
 		font-size: 18px;
 		color: #7E7E7E;
 		line-height: 21px;
@@ -179,7 +177,6 @@ img.publishedButtonCheckmark {
 }
 
 .publishedLabel {
-	font-family: ArialMT;
 	font-size: 14px;
 	color: #2C2C2C;
 	line-height: 16px;
@@ -188,12 +185,11 @@ img.publishedButtonCheckmark {
 
 div.event-title-section {
 
-		h1.title {
-				font-family: ArialMT;
-				font-size: 36px;
-				color: #353535;
-				line-height: 42px;
-		}
+    h1.title {
+        font-size: 36px;
+        color: #353535;
+        line-height: 42px;
+    }
 
 		h2.subtitle {
 				font-size: 13px;
@@ -481,7 +477,9 @@ a.active span {
 	line-height: 14px;
 }
 
-input[type=text], select {
+input[type=text],
+input[type=password],
+select {
 	color: #979797;
 	border: none;
 	border-bottom: 1px solid #CCCCCC;
@@ -1148,6 +1146,10 @@ textarea {
 	span {
 		line-height:12px;
 		color: #979797;
+		font-size: 5px; // Make the arrow tiny.
+		transform: scale(2,1); // Make the arrow wider.
+		width: 25px; // Width, because transformed scale overlaps.
+		margin: auto; // Re-center, because width ^
 	}
 }
 
@@ -1169,4 +1171,29 @@ textarea {
 input[disabled], textarea[disabled] {
 	background-color: transparent !important;
 	opacity: 0.5 !important;
+}
+
+.auth {
+
+	h1 {
+		text-align: center;
+	}
+	// Subhead / P immediately following H1:
+	h1 + p {
+		padding-top: 20px;
+		font-size: @font-size-smaller;
+	}
+
+	.form-body {
+		background-color: inherit;
+	}
+	.form-body-block {
+		padding: 0;
+		box-shadow: none;
+	}
+	.forgot-password {
+		padding-left: 1em;
+		color: @color-muted;
+		font-size: @font-size-smaller;
+	}
 }

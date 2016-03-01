@@ -28,7 +28,29 @@ const ActionCreators = {
 				types: [ contentType('duplicateRequest'), contentType('duplicateSuccess'), contentType('duplicateFailure') ]
 			}
 		}
+	},
+	
+	setStatus(index, status) {
+		return {
+			type: contentType('setStatus'),
+			index: index,
+			status: status
+		}
+	},
+	
+	configuration() {
+		return {
+			api_call: {
+				endpoint: 'events',
+				method: 'configuration',
+				version: '3.2',
+				params: {},
+				http_method: 'get',
+				types: [ contentType('configurationRequest'), contentType('configurationSuccess'), contentType('configurationFailure')]
+			}
+		}
 	}
+
 }
 
 export default ActionCreators

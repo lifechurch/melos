@@ -37,6 +37,7 @@ http {
       root /var/www/youversion-events/current/public;
       passenger_enabled on;
       passenger_app_type node;
+      passenger_app_env staging;
       passenger_startup_file bin/www;
       passenger_min_instances 16;
       passenger_max_instances 16;

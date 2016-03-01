@@ -56,7 +56,7 @@ gulp.task('javascript', function(callback) {
 });
 
 gulp.task('css:prod', function() {
-	return gulp.src(['./app/less/**/*.less'])
+	return gulp.src(['./app/less/style.less'])
 		.pipe(concat('style.css'))
     .pipe(less())
 		.pipe(cssnano())
@@ -67,7 +67,7 @@ gulp.task('css:prod', function() {
 });
 
 gulp.task('css:dev', function() {
-	return gulp.src(['./app/less/**/*.less'])
+	return gulp.src(['./app/less/style.less'])
 		.pipe(concat('style.css'))
     .pipe(less())
 		.pipe(gulp.dest('./public/stylesheets'));
@@ -106,6 +106,10 @@ gulp.task('build', ['images', 'css', 'javascript']);
 
 gulp.task('build:prod', function(callback) {
 	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:prod', 'javascript:prod'], callback);
+});
+
+gulp.task('build:staging', function(callback) {
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev'], callback);
 });
 
 gulp.task('watch', ['images', 'css', 'javascript'], function() {
