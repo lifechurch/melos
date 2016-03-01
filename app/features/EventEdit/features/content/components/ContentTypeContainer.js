@@ -8,6 +8,7 @@ import ContentTypePlan from './ContentTypePlan'
 import ContentTypeImage from './ContentTypeImage'
 import ContentTypeLink from './ContentTypeLink'
 import RevManifest from '../../../../../../rev-manifest.json'
+import ErrorMessage from '../../../../../../app/components/ErrorMessage'
 
 const AUTO_SAVE_TIMEOUT = 1000
 
@@ -110,14 +111,6 @@ class ContentTypeContainer extends Component {
 				break
 		}
 
-		let ApiErrors = null
-		if (content.errors && Object.keys(content.errors).length) {
-			let Errs = Object.keys(content.errors).map((k) => {
-				return content.errors[k].map((err) => { return (<div>{err}</div>) })
-			})
-			ApiErrors = <div className="errors">{Errs}</div>
-		}
-
 		let classNames = 'content-type content-' + content.type
 
 		return (
@@ -126,7 +119,7 @@ class ContentTypeContainer extends Component {
 					<div className='medium-12'>
 						{content.type.toUpperCase()} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest['thin-x.png']}`} /></a>
 						<div className='form-body'>
-							{ApiErrors}
+							<ErrorMessage hasError={content.errors && Object.keys(content.errors).length} errors={content.errors} />
 							{InnerContainer}
 							{ content.isDirty ? 'D' : '.'}
 							{ content.isSaving ? 'Saving...' : '.'}

@@ -176,6 +176,7 @@ export default function event(state = {}, action) {
 			var newContent = Object.assign({}, action.params)
 			newContent.isDirty = false
 			newContent.temp_content_id = new Date().getTime()
+			newContent.errors = {}
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -238,9 +239,8 @@ export default function event(state = {}, action) {
 		case contentType('chapterFailure'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
 			newContent.data.chapter = ''
+			newContent.errors = Object.assign({}, {...newContent.errors}, {'chapter': action.api_errors})
 
-			var errs = Object.keys(action.api_errors).map((k) => { return action.api_errors[k].key })
-			newContent.errors = Object.assign({}, {...newContent.errors}, {'chapter': errs})
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -353,9 +353,7 @@ export default function event(state = {}, action) {
 
 		case contentType('updateFailure'):
 			var newContent = Object.assign({}, action.response, state.item.content[action.params.index])
-
-			var errs = Object.keys(action.api_errors).map((k) => { return action.api_errors[k].key })
-			newContent.errors = Object.assign({}, {...newContent.errors}, {'update': errs})
+			newContent.errors = Object.assign({}, {...newContent.errors}, {'update': action.api_errors})
 
 			return Object.assign({}, state, {
 				item: {

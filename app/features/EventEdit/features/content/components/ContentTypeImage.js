@@ -96,8 +96,8 @@ class ContentTypeImage extends Component {
                     </div>
         }
         return (
-            <div className="form-body-block white">
-                    {output}
+            <div>
+                <div className="form-body-block white">{output}</div>
             </div>
         )
     }

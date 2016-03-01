@@ -167,8 +167,10 @@ class ContentTypePlan extends Component {
 		}
 
 		return (
-			<div className="plan-content">
-				{output}
+			<div>
+				<div className="form-body-block white plan-content">
+					{output}
+				</div>
 			</div>
 		)
 	}

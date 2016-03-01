@@ -37,18 +37,26 @@ class ErrorMessage extends Component {
 				errorListItems = errors.map((e) => {
 					return (<li>{getError(e)}</li>)
 				})
+			} else if (typeof errors == 'object' && Object.keys(errors).length > 0) {
+				errorListItems = []
+				for (var k in errors) {
+					errorListItems.push.apply(errorListItems, errors[k].map((e) => { return (<li>{getError(e)}</li>) }))
+				}
 			} else {
 				errorListItems = (<li>An error occurred.</li>)
 			}
 
 			errorList = (<ul>{errorListItems}</ul>)
+
+			return (
+				<div className={className}>
+					{errorList}
+				</div>
+			)
+		} else {
+			return null
 		}
 
-		return (
-			<div className={className}>
-				{errorList}
-			</div>
-		)
 	}
 }
 
