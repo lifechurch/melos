@@ -6,10 +6,11 @@ class PreviewTypePlan extends Component {
 
 	render() {
 		const { contentData } = this.props
+		var PlanImage = contentData.images ? <img src={contentData.images[1].url} /> : null
 
 		return (
 			<div className='type plan'>
-				<img src={contentData.images[1].url} />
+				{PlanImage}
 				<p className='title'>{contentData.title}</p>
 				<p className='length'>{contentData.formatted_length}</p>
 			</div>
