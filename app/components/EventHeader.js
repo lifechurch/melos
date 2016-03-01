@@ -3,6 +3,7 @@ import Row from './Row'
 import Column from './Column'
 import EventEditNav from '../features/EventEdit/components/EventEditNav'
 import ActionCreators from '../features/EventEdit/features/details/actions/creators'
+import PreviewActionCreators from '../features/EventEdit/features/preview/actions/creators'
 import AuthActionCreators from '../features/Auth/actions/creators'
 import { routeActions } from 'react-router-redux'
 import RevManifest from '../../rev-manifest.json'
@@ -26,7 +27,7 @@ class EventHeader extends Component {
 
 	unpublishEvent() {
 		const { dispatch, event } = this.props
-		dispatch(ActionCreators.unpublishEvent({
+		dispatch(PreviewActionCreators.unpublishEvent({
 			id: event.item.id
 		}))
 	}
