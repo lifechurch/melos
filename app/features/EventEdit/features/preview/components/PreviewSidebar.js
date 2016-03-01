@@ -64,19 +64,19 @@ class PreviewSidebar extends Component {
 					<h3 className="right">{location_count}</h3>
 				</div>
 				<div className='section'>
-					<h3>Visible:</h3>
+					<h3>Discoverable:</h3>
 					<h3 className="right">{earliest ? ::this.yvFormat(moment(earliest).subtract(5, 'days')) : null}</h3>
 					<p>Your event will be visible in Bible App Event location and search results 5 days before your earliest start time.</p>
 				</div>
 				<div className='section'>
 					<h3><span className="live">live</span> Status:</h3>
 					<h3 className="right">{earliest ? ::this.yvFormat(moment(earliest).subtract(30, 'minutes')): null}</h3>
-					<p>The red LIVE badge will display 30 minutes before your earliest start time.</p>
+					<p>The red LIVE badge will display when your earliest start time begins.</p>
 				</div>
 				<div className='section'>
 					<h3>Remove:</h3>
 					<h3 className="right">{latest ? ::this.yvFormat(moment(latest)) : null}</h3>
-					<p>Your event will be removed from the Bible App after your last event ends. Attenders who tap "Save Event" will continue to have access to an archived version of this Event.</p>
+					<p>Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links.</p>
 				</div>
 				{publish_button}
 				<p className='publishMessage'>{event.publishMessage}</p>

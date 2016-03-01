@@ -35,6 +35,7 @@ class LocationAddButtons extends Component {
 				<a disabled={!event.rules.locations.canAddPhysical} className='hollow-button green' onClick={::this.handleAddPhysicalLocationClick}>Add a Physical Location</a>
 				<p className='button-caption'>You can add multiple locations.</p>
 				<a disabled={!event.rules.locations.canAddVirtual} className='hollow-button green' onClick={::this.handleAddVirtualLocationClick}>Add Virtual Location</a>
+				<p className='button-caption'>Did you know? You can launch an online ministry for free using the <a className="button-caption" href="http://churchonlineplatform.com">Church Online Platform</a>.</p>
 			</div>
 		)
 	}

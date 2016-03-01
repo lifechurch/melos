@@ -56,7 +56,7 @@ class Auth extends Component {
 
 					<h1>Sign In</h1>
 					<p className="auth__subhead">
-						If you are a Bible App user and already have a YouVersion account, you can sign in using your same credentials.
+					If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.
 					</p>
 
 					<div className="form-body-block white">

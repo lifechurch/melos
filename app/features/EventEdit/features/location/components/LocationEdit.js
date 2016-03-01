@@ -164,10 +164,10 @@ class LocationEdit extends Component {
 			<div className='modal'>		
 				<div className='form-body'>
 					<div className='form-body-block white'>
-						<form>
+						<form className="locationForm">
 							<label>
 								<input className='small' type='text' name='name' placeholder='First Baptist East Campus' onChange={handleChange} value={loc.name} />
-								Location Name
+								<span className="left">Location Name</span><span className="labelRight">Optional: Useful if adding multiple locations</span>
 							</label>
 						</form>
 						{gMap}						
