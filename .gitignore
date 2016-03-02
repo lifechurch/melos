@@ -2,8 +2,6 @@ public/javascripts/*.*
 public/stylesheets/*.*
 public/images/*.*
 
-rev-manifest.json
-
 # Logs
 logs
 *.log
