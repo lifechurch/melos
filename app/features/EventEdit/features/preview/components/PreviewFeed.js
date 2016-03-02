@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
+import Image from '../../../../../../app/components/Image'
 import PreviewTypeText from './PreviewTypeText'
 import PreviewTypeImage from './PreviewTypeImage'
 import PreviewTypeLink from './PreviewTypeLink'
@@ -12,12 +13,7 @@ class PreviewFeed extends Component {
 
 	render() {
 		const { dispatch, event, reference } = this.props
-		const { content } = event.item
-
-		var image = null
-		if (event.item.images) {
-			image = <img src={event.item.images[0].url} />
-		}
+		const { content, images } = event.item
 
 		const contentList = content.map((c,i) => {
 			const props = {
@@ -57,6 +53,14 @@ class PreviewFeed extends Component {
 			}
 		})
 
+		var eventMeta
+		if (event.item) {
+			eventMeta = <div className='actions'>
+							<p>&bull; Share Event</p>
+							<p>&bull; Locations and Times</p>
+						</div>
+		}
+
 		return (
 			<div className='preview'>
 				<div className='device'>
@@ -64,14 +68,11 @@ class PreviewFeed extends Component {
 						<p>{event.item.org_name}</p>
 					</div>
 					<div className='feed'>
-						{image}
+						<Image images={images} width={640} height={360} />
 						<div className="type details">
 							<h2>{event.item.title}</h2>
 							<p>{event.item.description}</p>
-							<div className='actions'>
-								<p>&bull; Share Event</p>
-								<p>&bull; Locations and Times</p>
-							</div>
+							{eventMeta}
 						</div>
 						{contentList}
 					</div>

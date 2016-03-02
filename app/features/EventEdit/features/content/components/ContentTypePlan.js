@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
+import Image from '../../../../../../app/components/Image'
 import ActionCreators from '../actions/creators'
 
 const SEARCH_TIMEOUT = 500
@@ -11,20 +12,13 @@ var PlanList = React.createClass({
 		const { items, handlePlanClick } = this.props
 
 		var createItem = function(item) {
-			var image;
-			if (item.images) {
-				image = <img src={item.images[2].url} />;
-			} else {
-				image = <img src="http://placehold.it/80/80" />;
-			}
-
 			return <li key={item.id} data-plan_id={item.id} name="plan_id" value={item.id} onClick={handlePlanClick}>
-				{image}
+				<Image images={item.images} height={80} width={80} />
 				<div className="title">{item.name.default}</div>
 				<div className="length">{item.formatted_length.default}</div>
 			</li>;
 		};
-		return <ul>{items.map(createItem)}</ul>;
+		return <ul className="results">{items.map(createItem)}</ul>;
 	}
 });
 
@@ -33,13 +27,8 @@ var SelectedPlan = React.createClass({
 	render: function() {
 		const { item, handlePlanClick } = this.props
 
-		var image = null;
-		if (item.images) {
-			image = <img src={item.images[6].url} />;
-		}
-
 		return <div className="selected" key={item.plan_id} data-plan_id={item.plan_id} name="plan_id" value={item.plan_id} onClick={handlePlanClick}>
-			{image}
+			<Image images={item.images} width={640} height={360} />
 			<div className="title">{item.title}</div>
 			<div className="length">{item.formatted_length}</div>
 		</div>;
@@ -127,8 +116,6 @@ class ContentTypePlan extends Component {
 	render() {
 		const { contentIndex, contentData, plans } = this.props
 		var output;
-
-		var PlanImage = contentData.images ? <img src={contentData.images[1].url} /> : null
 
 		// Selected
 		if (contentData.plan_id) {
