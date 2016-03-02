@@ -104,7 +104,7 @@ gulp.task('images:dev', function() {
 
 gulp.task('build', ['images', 'css', 'javascript']);
 
-gulp.task('build:prod', function(callback) {
+gulp.task('build:production', function(callback) {
 	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:prod', 'javascript:prod'], callback);
 });
 
