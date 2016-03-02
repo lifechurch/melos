@@ -45,7 +45,7 @@
       %div{"ng-if" => "data.kind == 'reading_plan_carousel'", "moment-plan-carousel" => ""}
     .moment-bottom
       .moment-actions
-        %a.moment-actions-like{:href => "#", "ng-click" => "like()", "ng-if" => "data.object.likes.enabled", "ng-class" => "{ active: data.object.likes.is_liked}", "ng-disabled" => "!socialEnabled"} Like
+        %a.moment-actions-like{:href => "#", "ng-click" => "like()", "ng-if" => "data.object.likes.enabled", "ng-class" => "{ active: data.object.likes.is_liked}", "ng-disabled" => "!socialEnabled"} #{t("moments.action.like")}
         .moment-actions-more
           %md-menu{"ng-if" => "data.object.actions.subscribable || data.object.actions.edit_subscription"}
             %a{"md-menu-origin" => true, title: t("users.subscribe"), "ng-click" => "openMenu($mdOpenMenu, $event)"}
