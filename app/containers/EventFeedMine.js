@@ -8,6 +8,7 @@ import Row from '../components/Row'
 import Column from '../components/Column'
 import EventListItem from '../features/EventFeedMine/components/EventListItem'
 import ActionCreators from '../features/EventFeedMine/actions/creators'
+import NoticeBanner from '../components/NoticeBanner'
 
 class EventFeedMine extends Component {
 	componentWillMount() {
@@ -40,18 +41,19 @@ class EventFeedMine extends Component {
 		}
 
 		var itemList = items.map((item, index) => {
-			return (<EventListItem 
-					key={item.id} 
-					item={item} 
-					handleDuplicate={::this.handleDuplicate} 
-					index={index} 
-					dispatch={dispatch} 
+			return (<EventListItem
+					key={item.id}
+					item={item}
+					handleDuplicate={::this.handleDuplicate}
+					index={index}
+					dispatch={dispatch}
 					startOffset={configuration.startOffset} />)
 		})
 
 		return (
 			<div className="medium-10 large-7 columns small-centered">
 				<Helmet title="My Events" />
+				<NoticeBanner />
 				<EventHeader {...this.props} />
                 <div className="event-title-section">
                     <Row className="collapse">

@@ -7,6 +7,7 @@ import Column from '../components/Column'
 import FormField from '../components/FormField'
 import Input from '../components/Input'
 import ActionCreators from '../features/Auth/actions/creators'
+import NoticeBanner from '../components/NoticeBanner'
 
 class Auth extends Component {
 
@@ -53,7 +54,7 @@ class Auth extends Component {
 			<div className="medium-6 large-5 columns small-centered auth">
 				<Helmet title="My Events" />
 				<div className='form-body'>
-
+					<NoticeBanner />
 					<h1>Sign In</h1>
 					<p className="auth__subhead">
 					If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.
