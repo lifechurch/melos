@@ -38,11 +38,8 @@ function requireEvent(nextState, replace, callback) {
 			callback()
 		})
 	} else {
-		store.dispatch(EventActionCreators.new()).then((event) => {
-			callback()
-		}, (error) => {
-			callback()
-		})
+		store.dispatch(EventActionCreators.new())
+		callback()
 	}
 }
 
