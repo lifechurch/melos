@@ -6,7 +6,7 @@ import ContentDraggable from './ContentDraggable'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import HTML5Backend from 'react-dnd-html5-backend'
 import { DragDropContext } from 'react-dnd'
-import RevManifest from '../../../../../../rev-manifest.json'
+import RevManifest from '../../../../../../app/lib/revManifest'
 
 class ContentFeed extends Component {
 
@@ -45,9 +45,9 @@ class ContentFeed extends Component {
 
 		let reorderButton = null
 		if (event.isReordering) {
-			reorderButton = (<a disabled={!event.rules.content.canReorder} onClick={handleReorder} className='solid-button blue'><img src={`/images/${RevManifest['check.png']}`} /> &nbsp;Done Reordering</a>)
+			reorderButton = (<a disabled={!event.rules.content.canReorder} onClick={handleReorder} className='solid-button blue'><img src={`/images/${RevManifest('check.png')}`} /> &nbsp;Done Reordering</a>)
 		} else {
-			reorderButton = (<a disabled={!event.rules.content.canReorder} onClick={handleStartReorder}><img className='reorder-icon' src={`/images/${RevManifest['reorder.png']}`} /> Reorder Content</a>)
+			reorderButton = (<a disabled={!event.rules.content.canReorder} onClick={handleStartReorder}><img className='reorder-icon' src={`/images/${RevManifest('reorder.png')}`} /> Reorder Content</a>)
 		}
 
 		return (

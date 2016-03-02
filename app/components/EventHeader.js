@@ -6,7 +6,7 @@ import ActionCreators from '../features/EventEdit/features/details/actions/creat
 import PreviewActionCreators from '../features/EventEdit/features/preview/actions/creators'
 import AuthActionCreators from '../features/Auth/actions/creators'
 import { routeActions } from 'react-router-redux'
-import RevManifest from '../../rev-manifest.json'
+import RevManifest from '../../app/lib/revManifest'
 import EventStatus from '../features/EventEdit/eventStatus.js'
 
 class EventHeader extends Component {
@@ -39,7 +39,7 @@ class EventHeader extends Component {
 				return (
 					<Column s='medium-5' a='right' className="">
 						<span className="publishedLabel">
-							<img src={`/images/${RevManifest['check-gray.png']}`} className="publishedButtonCheckmark"/>Published
+							<img src={`/images/${RevManifest('check-gray.png')}`} className="publishedButtonCheckmark"/>Published
 						</span>&nbsp;
 						<a className='solid-button gray' onClick={::this.unpublishEvent}>Unpublish</a>
 					</Column>

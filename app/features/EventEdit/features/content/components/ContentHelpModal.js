@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Modal from 'react-modal'
-import RevManifest from '../../../../../../rev-manifest.json'
+import RevManifest from '../../../../../../app/lib/revManifest'
 
 class ContentHelpModal extends Component {
 
@@ -36,7 +36,7 @@ class ContentHelpModal extends Component {
 
         return (
             <Modal isOpen={isOpen} style={customStyles} className='modal__contenthelpmodal'>
-                <a className='right modal__close' onClick={handleClose}><img src={`/images/${RevManifest['thin-x.png']}`} /></a>
+                <a className='right modal__close' onClick={handleClose}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
 
                 <h3>Content Types</h3>
                 <h6>Text Module</h6>

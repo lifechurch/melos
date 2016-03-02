@@ -80,7 +80,7 @@ router.get('/*', cookieParser(), function(req, res) {
 				const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
 				const initialState = store.getState()
 				res.setHeader('Cache-Control', 'public');
-				res.render('index', {appString: html, head: Helmet.rewind(), initialState: initialState, getAssetPath: getAssetPath })
+				res.render('index', {appString: html, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
 			}
 
 		} else {

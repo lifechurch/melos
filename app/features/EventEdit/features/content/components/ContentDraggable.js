@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Row from '../../../../../../app/components/Row'
 import { DragSource, DropTarget } from 'react-dnd'
 import { findDOMNode } from 'react-dom'
-import RevManifest from '../../../../../../rev-manifest.json'
+import RevManifest from '../../../../../../app/lib/revManifest'
 
 const contentSource = {
 	beginDrag(props) {
@@ -92,7 +92,7 @@ class ContentDraggable extends Component {
 								<div className='preview'>
 									{previewText}
 								</div>
-								<img className='dragHandle' src={`/images/${RevManifest['reorder-gray.png']}`} />
+								<img className='dragHandle' src={`/images/${RevManifest('reorder-gray.png')}`} />
 							</div>
 						</div>
 					</Row>

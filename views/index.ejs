@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="/stylesheets/<%= getAssetPath('style.css') %>" />
 		<script type="application/javascript">
 			window.__INITIAL_STATE__ = <%- JSON.stringify(initialState) %>;
+			window.__ENV__ = "<%- environment %>";
 		</script>
 	</head>
 	<body>
@@ -14,7 +15,7 @@
 		<script src="/javascripts/<%= getAssetPath('app.js') %>"></script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMA0n8NXq9Z-84At4-cIOAseleESrfRGE&libraries=places">
-    </script>		
+    </script>
         <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-56cdf91ec7a631b2"></script>
 	</body>
 </html>
