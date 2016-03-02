@@ -36,7 +36,9 @@ class PreviewTypeReference extends Component {
 
 	render() {
 		const { contentData, reference } = this.props
-		const { chapter } = contentData
+		var { chapter, human } = contentData
+
+		human = human.split(':')[0] + ":" + human.split(',').map((x) => { return x.split(':')[1] }).join(', ')
 
 		var verses = []
 		if (contentData.usfm && chapter && chapter.length) {
@@ -53,7 +55,7 @@ class PreviewTypeReference extends Component {
 
 		return (
 			<div className='type reference'>
-				<b>{contentData.human}</b><br/>
+				<b>{human}</b><br/>
 				<p>{verses}</p>
 				<div className='meta'>
 					<div className='notes'>Add your notes…</div>
