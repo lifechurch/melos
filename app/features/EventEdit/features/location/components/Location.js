@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import moment from 'moment'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
-import RevManifest from '../../../../../../rev-manifest.json'
+import RevManifest from '../../../../../../app/lib/revManifest'
 
 class Location extends Component {
 	handleDeleteClick(clickEvent) {
@@ -33,10 +33,10 @@ class Location extends Component {
 					</div>
 					<div className='header-actions'>
 						<a disabled={!event.rules.locations.canEdit} onClick={::this.handleEditClick} title='Edit Location'>
-							<img src={`/images/${RevManifest['edit.png']}`} />
+							<img src={`/images/${RevManifest('edit.png')}`} />
 						</a>
 						<a disabled={!event.rules.locations.canDelete} onClick={::this.handleDeleteClick} title='Delete Location'>
-							<img src={`/images/${RevManifest['thin-x.png']}`} />
+							<img src={`/images/${RevManifest('thin-x.png')}`} />
 						</a>
 					</div>
 				</div>

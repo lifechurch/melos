@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import Modal from 'react-modal'
-import RevManifest from '../../../../../../rev-manifest.json'
 import ActionCreators from '../../preview/actions/creators'
 
 class UnpublishModal extends Component {

@@ -4,7 +4,7 @@ import Row from '../components/Row'
 import Column from '../components/Column'
 import { Link } from 'react-router'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import RevManifest from '../../rev-manifest.json'
+import RevManifest from '../../app/lib/revManifest'
 import moment from 'moment'
 
 class EventEditShare extends Component {
@@ -79,7 +79,7 @@ class EventEditShare extends Component {
 				<table className="sharePageTable">
 					<tr>
 						<td className="leftCell">
-							<Link className="editButton" to={`/event/edit/${eventItem.id}`}><img src={`/images/${RevManifest['edit.png']}`} />Re-edit Event</Link>
+							<Link className="editButton" to={`/event/edit/${eventItem.id}`}><img src={`/images/${RevManifest('edit.png')}`} />Re-edit Event</Link>
 						</td>
 						<td>
 					    		<Link className="myEventsButton" to={`/`}>Go to My Events</Link>

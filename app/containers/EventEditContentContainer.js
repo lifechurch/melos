@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import ContentHeader from '../features/EventEdit/features/content/components/ContentHeader'
 import ContentFeed from '../features/EventEdit/features/content/components/ContentFeed'
 import ActionCreators from '../features/EventEdit/features/content/actions/creators'
-import RevManifest from '../../rev-manifest.json'
+import RevManifest from '../../app/lib/revManifest'
 import { ActionCreators as ModalActionCreators } from '../actions/modals'
 import LiveWarningModal from '../features/EventEdit/features/content/components/LiveWarningModal'
 
@@ -214,7 +214,7 @@ class EventEditContentContainer extends Component {
 		if (typeof event !== 'object' || !Array.isArray(event.item.content) || event.item.content.length === 0) {
 			contentFeed = (
 				<div className='no-content-prompt text-center'>
-					<img src={`/images/${RevManifest['up-arrow-thin.png']}`} />
+					<img src={`/images/${RevManifest('up-arrow-thin.png')}`} />
 					<p>Choose some content to get started.</p>
 					<a>Need help?</a>
 				</div>
