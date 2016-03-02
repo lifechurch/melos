@@ -19,19 +19,19 @@ class ContentTypeLink extends Component {
 			<div>
 				<div className="form-body-block white">
 					<FormField
-						InputType={Textarea}
-						placeholder="Description..."
-						name="body"
-						onChange={handleChange}
-						value={content.data.body}
-						errors={content.data.errors} />
-
-					<FormField
 						InputType={Input}
 						placeholder="Link Label"
 						name="title"
 						onChange={handleChange}
 						value={content.data.title}
+						errors={content.data.errors} />
+
+					<FormField
+						InputType={Textarea}
+						placeholder="Description..."
+						name="body"
+						onChange={handleChange}
+						value={content.data.body}
 						errors={content.data.errors} />
 
 					<FormField
