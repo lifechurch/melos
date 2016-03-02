@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import FormField from '../../../../../../app/components/FormField'
 import Textarea from '../../../../../../app/components/Textarea'
 import Input from '../../../../../../app/components/Input'
+import Image from '../../../../../../app/components/Image'
 import Dropzone from 'react-dropzone'
 import ActionCreators from '../actions/creators'
 
@@ -72,7 +73,7 @@ class ContentTypeImage extends Component {
 
         if (contentData.urls) {
             output = <div>
-                        <img src={contentData.urls[0].url} />
+                        <Image images={contentData.urls} width={640} height={640} />
                         <FormField
                             InputType={Input}
                             placeholder="Add caption"
