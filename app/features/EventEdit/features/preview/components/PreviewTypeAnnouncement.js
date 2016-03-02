@@ -13,7 +13,7 @@ class PreviewTypeAnnouncement extends Component {
 
 		return (
 			<div className='type announcement'>
-				<h2 className='title'>{contentData.title}</h2>
+				<div className='title'>{contentData.title}</div>
 				<div className='caption' dangerouslySetInnerHTML={{__html: contentData.body}} />
 				<a className='toggle' onClick={::this.toggle}>toggle</a>
 			</div>
