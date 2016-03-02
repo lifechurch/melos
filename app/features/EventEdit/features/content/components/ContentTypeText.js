@@ -10,6 +10,7 @@ class ContentTypeText extends Component {
 			<FormField
 				InputType={HtmlEditor}
 				name="body"
+				placeholder="Write something here..."
 				onChange={handleChange}
 				value={contentData.body}
 				errors={contentData.errors} />

@@ -11,16 +11,16 @@ class ContentTypeAnnouncement extends Component {
 				<div className='form-body-block no-pad white'>
 					<FormField 
 						InputType={Input}
-						placeholder="Announcement Title"
+						placeholder="Title"
 						name="title"
 						onChange={handleChange}
 						value={contentData.title}
 						errors={contentData.errors} />
 				</div>
-				<p className='field-caption'>Event attenders tap the title to see the body which loads on a separate screen.</p>
+				<p className='field-caption'>In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen.</p>
 				<FormField 
 					InputType={HtmlEditor}
-					placeholder="Announcement Body"
+					placeholder="Write something here..."
 					name="body"
 					onChange={handleChange}
 					value={contentData.body}

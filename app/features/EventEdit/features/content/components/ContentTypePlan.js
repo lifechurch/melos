@@ -141,7 +141,7 @@ class ContentTypePlan extends Component {
 			output = <div className="plan-content">
 				<FormField
 					InputType={Input}
-					placeholder="Search…"
+					placeholder="Search for a Reading Plan"
 					name="query"
 					onChange={::this.handlePlanSearchChange}
 					onFocus={::this.handlePlanSearchFocus}
@@ -156,7 +156,7 @@ class ContentTypePlan extends Component {
 			output = <div className="plan-content">
 				<FormField
 					InputType={Input}
-					placeholder="Search…"
+					placeholder="Search for a Reading Plan"
 					name="query"
 					onChange={::this.handlePlanSearchChange}
 					onFocus={::this.handlePlanSearchFocus}
