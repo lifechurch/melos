@@ -124,12 +124,3 @@
     group: yvdep
   tags:
     - passenger
-
-- name: create /var/run/passenger
-  file:
-    state: directory
-    name: /var/run/passenger
-    owner: yvdep
-    group: yvdep
-  tags:
-    - passenger
