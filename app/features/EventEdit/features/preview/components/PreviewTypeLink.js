@@ -14,10 +14,10 @@ class PreviewTypeLink extends Component {
 
 		return (
 			<div className='type link'>
+				<p className='title'>{contentData.title}</p>
 				{description}
 				<div className='meta'>
 					<div className='notes'>
-						<p>{contentData.title}</p>
 						<a href={contentData.url}>{contentData.url}</a>
 					</div>
 					<div className='actions'>&bull; &bull; &bull;</div>

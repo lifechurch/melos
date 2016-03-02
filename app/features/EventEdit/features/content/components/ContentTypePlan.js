@@ -33,11 +33,9 @@ var SelectedPlan = React.createClass({
 	render: function() {
 		const { item, handlePlanClick } = this.props
 
-		var image;
+		var image = null;
 		if (item.images) {
-			image = <img src={item.images[2].url} />;
-		} else {
-			image = <img src="http://placehold.it/80/80" />;
+			image = <img src={item.images[6].url} />;
 		}
 
 		return <div className="selected" key={item.plan_id} data-plan_id={item.plan_id} name="plan_id" value={item.plan_id} onClick={handlePlanClick}>
@@ -129,6 +127,8 @@ class ContentTypePlan extends Component {
 	render() {
 		const { contentIndex, contentData, plans } = this.props
 		var output;
+
+		var PlanImage = contentData.images ? <img src={contentData.images[1].url} /> : null
 
 		// Selected
 		if (contentData.plan_id) {

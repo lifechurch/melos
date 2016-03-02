@@ -892,17 +892,10 @@ textarea {
 		line-height: 1.6;
 		font-size: 1.2em;
 		overflow: auto;
-
-		img {
-			width: 50px;
-		}
 	}
 
 	img {
-		float: left;
-		width: 40px;
-		height: 40px;
-		margin-right: 10px;
+		margin-bottom: .5em;
 	}
 
 	.title {
@@ -911,7 +904,6 @@ textarea {
 	}
 
 	.length {
-		line-height: .75em;
 	}
 }
 
@@ -1020,9 +1012,11 @@ textarea {
 					.meta {
 						overflow: auto;
 						font-size: .8em;
+						margin-top: .5em;
 
 						.notes {
 							float: left;
+							margin-right: 4em;
 						}
 
 						.actions {
@@ -1033,7 +1027,12 @@ textarea {
 
 				.announcement {
 					.title { margin-bottom: 0; }
-					.caption { display: none; }
+					.caption {
+						display: none;
+					    margin-top: .5em;
+					    padding-top: .5em;
+					    border-top: 1px solid #ddd;
+					}
 					.caption.show { display: block; }
 
 					.toggle {
@@ -1047,12 +1046,11 @@ textarea {
 
 				.plan {
 					img {
-						float: left;
-						margin-right: 10px;
-						width: 80px;
+						margin-bottom: .5em;
+						width: 100%;
 					}
 					.title {
-						font-size: 1.25em;
+						font-weight: bold;
 					}
 					.length {
 						color: #999;
@@ -1060,24 +1058,20 @@ textarea {
 				}
 
 				.link {
-					.caption {
-						margin-bottom: 10px;
-						padding-bottom: 10px;
-						border-bottom: 1px solid #ddd;
+					.title {
+						font-weight: bold;
 					}
 					.meta {
-
-						p {
-							font-size: 1.25em;
-						}
-
 						a {
+							font-size: 1.25em;
 							color: #03b;
 						}
+					}
+				}
 
-						.actions {
-							margin-top: 1em;
-						}
+				.image {
+					img {
+						margin-bottom: .5em;
 					}
 				}
 			}
