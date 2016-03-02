@@ -32,7 +32,7 @@ http {
   passenger_resist_deployment_errors on;
 
   server {
-      server_name events.bible.com;
+      server_name events-staging.bible.com;
       listen 80;
       root /var/www/youversion-events/current/public;
       passenger_enabled on;
