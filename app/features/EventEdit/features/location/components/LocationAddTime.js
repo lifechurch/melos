@@ -26,6 +26,11 @@ function getTimeObject(hour, minute) {
 function changeTime(dt, t) {
 	var t = t.split(':')
 	var new_dt = moment(dt.toISOString())
+	if (t[0] != 12 && t[2] == 'pm') {
+		t[0] = parseInt(t[0]) + 12
+	} else if (t[0] == 12 && t[2] == 'am') {
+		t[0] = 0
+	}
 	new_dt.hour(t[0])
 	new_dt.minute(t[1])
 	return new_dt
