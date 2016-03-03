@@ -14,6 +14,20 @@ function newEvent() {
 	}
 }
 
+function imgUpload(params) {
+	return {
+		api_call: {
+			endpoint: 'events',
+			method: 'image_upload',
+			version: '3.2',
+			auth: true,
+			params: {},
+			http_method: 'get',
+			types: [ type('imgUpload'), type('imgUploadSuccess'), type('imgUploadFailure') ]
+		}
+	}
+}
+
 function view(id) {
 	return {
 		api_call: {
@@ -44,8 +58,8 @@ function create(event) {
 }
 
 function update(event) {
-	const { id, title, org_name, description } = event
-	const params = { id, title, org_name, description }
+	const { id, title, org_name, description, image_id } = event
+	const params = { id, title, org_name, description, image_id }
 	return {
 		params,
 		api_call: {
@@ -94,6 +108,7 @@ function saveDetails(event, goNext) {
 export default {
 	cancel,
 	new: newEvent,
+	imgUpload,
 	view,
 	create,
 	update,

@@ -47,7 +47,7 @@ class ContentTypeImage extends Component {
                             handleChange({target: {name: 'image_id', value: response_init.image_id}})
                             handleChange({target: {
                                 name: 'urls',
-                                value: [{url: files[0].preview}]
+                                value: [{url: files[0].preview, width: 640, height: 640}]
                             }})
                         } else {
                             // valid, non-2XX response // console.error(xhr.statusText);

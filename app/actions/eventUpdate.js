@@ -36,14 +36,14 @@ export function eventSetDetails(field, value) {
 }
 
 export function updateEvent(event) {
-	const { title, org_name, description } = event
+	const { title, org_name, description, image_id } = event
 	return dispatch => {
 		dispatch(eventUpdateRequest())
 		return EventsApi
 			.call("update")
 			.setVersion("3.2")
 			.auth()
-			.params({title, org_name, description})
+			.params({title, org_name, description, image_id})
 			.post()
 			.then(function(data) {
 				handleResponse(data).then((data) => {
