@@ -112,6 +112,10 @@ gulp.task('build:staging', function(callback) {
 	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev'], callback);
 });
 
+gulp.task('build:review', function(callback) {
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev'], callback);
+});
+
 gulp.task('watch', ['images', 'css', 'javascript'], function() {
 	livereload.listen();
 	gulp.watch( ["./images/**/*.js"], ['images'] );
