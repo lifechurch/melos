@@ -11,14 +11,16 @@ class ContentTypeImage extends Component {
         super(props)
         this.state = { files: null };
         // prevent drag and drop from replacing the page when image is dropped outside of dropzone
-        window.addEventListener("dragover",function(e){
-          e = e || event;
-          e.preventDefault();
-        },false);
-        window.addEventListener("drop",function(e){
-          e = e || event;
-          e.preventDefault();
-        },false);
+        if (typeof window !== 'undefined') {
+            window.addEventListener("dragover",function(e){
+              e = e || event;
+              e.preventDefault();
+            },false);
+            window.addEventListener("drop",function(e){
+              e = e || event;
+              e.preventDefault();
+            },false);
+        }
     }
 
     onDrop(files) {

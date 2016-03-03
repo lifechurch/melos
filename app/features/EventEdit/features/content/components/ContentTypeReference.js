@@ -235,13 +235,13 @@ class ContentTypeReference extends Component {
 
 		var versions = []
 		for (var i in references.versions) {
-			versions.push( <option key={references.versions[i].abbreviation} value={i}>{references.versions[i].abbreviation.toUpperCase()}</option> )
+			versions.push( <option key={references.versions[i].id} value={i}>{references.versions[i].abbreviation.toUpperCase()}</option> )
 		}
 
 		var books = []
 		if (Array.isArray(references.books[version_id])) {
 			books = references.books[version_id].map((b) => {
-				return <option key={b.name} value={b.usfm}>{b.name}</option>
+				return <option key={b.usfm} value={b.usfm}>{b.name}</option>
 			})
 		}
 
