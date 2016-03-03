@@ -157,6 +157,7 @@ class EventEditLocationContainer extends Component {
 	}
 
 	render() {
+		console.log('render locs')
 		const { dispatch, event, loc, modals } = this.props
 
 		var locations = []
@@ -208,7 +209,7 @@ class EventEditLocationContainer extends Component {
 				<Helmet title="Event Location" />
 				<Row>
 					<Column s='medium-12'>
-						<LocationTimeShifter />
+						<LocationTimeShifter dispatch={dispatch} event={event} />
 					</Column>
 				</Row>
 				<Row>

@@ -227,6 +227,21 @@ const ActionCreators = {
 				types: [ type('placeRequest'), type('placeSuccess'), type('placeFailure') ]
 			}
 		}
+	},
+
+	updateAll() {
+		return dispatch => {
+			dispatch({
+				type: type('updateAllRequest')
+			})
+		}
+	},
+
+	shiftAllDates(params) {
+		return {
+			type: type('shiftAllDatesRequest'),
+			...params
+		}
 	}
 
 }

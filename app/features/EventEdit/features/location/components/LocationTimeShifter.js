@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import RevManifest from '../../../../../../app/lib/revManifest'
+import ActionCreators from '../actions/creators'
+import moment from 'moment'
 
 class LocationTimeShifter extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { isOpen: false, direction: 1, count: 1, interval: 'week' }
+		this.state = { isOpen: false, direction: 1, duration: 1, interval: 'week' }
 	}
 
 	open() {
@@ -21,7 +23,27 @@ class LocationTimeShifter extends Component {
 	}
 
 	shift() {
-		console.log(this.state)
+		const { dispatch, event } = this.props
+		const { duration, interval, direction } = this.state
+		for(const id in event.item.locations) {
+			const l = event.item.locations[id]
+			const newLoc = Object.assign({}, l, {
+				times: l.times.map((o) => {
+					let start_dt = moment(o.start_dt)
+					start_dt.add(duration, interval * direction)
+
+					let end_dt = moment(o.end_dt)
+					end_dt.add(duration, interval * direction)
+
+					return {
+						start_dt,
+						end_dt,
+						id: o.id
+					}
+				})
+			})
+			dispatch(ActionCreators.update(event.item.id, newLoc))
+		}
 	}
 
 	render() {
@@ -35,12 +57,12 @@ class LocationTimeShifter extends Component {
 						<option value={-1}>backward</option>
 					</select>
 					by
-					<input type='number' name='count' onChange={::this.handleChange} value={this.state.count} />
+					<input type='number' name='duration' onChange={::this.handleChange} value={this.state.duration} />
 					<select name='interval' onChange={::this.handleChange} value={this.state.interval}>
-						<option value='week'>{this.state.count > 1 ? 'weeks' : 'week'}</option>
-						<option value='month'>{this.state.count > 1 ? 'months' : 'month'}</option>
-						<option value='day'>{this.state.count > 1 ? 'days' : 'day'}</option>
-						<option value='hour'>{this.state.count > 1 ? 'hours' : 'hour'}</option>
+						<option value='weeks'>{this.state.duration > 1 ? 'weeks' : 'week'}</option>
+						<option value='months'>{this.state.duration > 1 ? 'months' : 'month'}</option>
+						<option value='days'>{this.state.duration > 1 ? 'days' : 'day'}</option>
+						<option value='hours'>{this.state.duration > 1 ? 'hours' : 'hour'}</option>
 					</select>
 					<a className='solid-button gray' onClick={::this.shift}>Update</a>
 				</div>
