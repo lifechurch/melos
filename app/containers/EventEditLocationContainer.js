@@ -12,6 +12,7 @@ import UnpublishModal from '../features/EventEdit/features/location/components/U
 import Location from '../features/EventEdit/features/location/components/Location'
 import LocationAddButtons from '../features/EventEdit/features/location/components/LocationAddButtons'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import LocationTimeShifter from '../features/EventEdit/features/location/components/LocationTimeShifter'
 
 class EventEditLocationContainer extends Component {
 	componentWillMount() {
@@ -206,7 +207,13 @@ class EventEditLocationContainer extends Component {
 			<div>
 				<Helmet title="Event Location" />
 				<Row>
+					<Column s='medium-12'>
+						<LocationTimeShifter />
+					</Column>
+				</Row>
+				<Row>
 					<div className="medium-10 large-8 columns small-centered text-center">
+
 						<ReactCSSTransitionGroup transitionName="locationeditor" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
 							{locationEditor}
 							{locationList}
