@@ -56,120 +56,107 @@ ul.unindented {
 		margin-left: 0px;
 }
 
-h1.sharePageTitle {
-	font-size: 32px;
-	color: #353535;
-	line-height: 37px;
-	float: left;
-	width: 100%;
-	text-align: center;
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-
-h2.sharePageSubtitle {
-	font-size: 20px;
-	color: #353535;
-	line-height: 23px;
-	width: 100%;
-	text-align: center;
-	margin-bottom: 40px;
-}
-
-img.thumbnail {
-	width: 122px;
-	height: 70px;
-	height: auto;
-	border-radius: 5px;
-}
-
-div.sharePageEventSection {
-	a.title {
-		font-size: 18px;
-		color: #0084C8;
-		line-height: 21px;
-	}
-
-	a.scheduledDates {
-		font-size: 11px;
-		color: #979797;
-		line-height: 16px;
-	}
-}
-
-table.sharePageTable {
-	border: none;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	margin: 0 auto;
-	width: 100%;
-
-	td {
-		text-align:center;
-		width: 50%;
-	}
-
-	td.leftCell {
-		border-right: 2px solid #E6E6E6;
-	}
-
-	img {
-		margin-right: 10px;
-		margin-bottom: 3px;
-	}
-
-	a.editButton {
-		font-size: 20px;
-		line-height: 24px;
-		color: #888888;
-	}
-
-	a.myEventsButton {
-		font-size: 20px;
-		line-height: 24px;
-		color: #4EAE50;
-	}
-}
-
-.shareSection {
-	text-align: center;
-	margin-bottom: 40px;
-
-	span.shorturl {
-		font-size: 18px;
-		color: #7E7E7E;
-		line-height: 21px;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		padding-left: 30px;
-		padding-right: 30px;
-		border: 1px solid #979797;
-		border-radius: 8px;
+.share {
+	.page-title {
+		margin: 30px 0;
 		text-align: center;
-		width: 50px;
-		margin-right: 20px;
+		font-size: 2em;
+		font-weight: bold;
+		color: #333;
 	}
 
-	a.copyButton {
-		font-size: 18px;
-		color: #7E7E7E;
-		line-height: 21px;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		padding-left: 30px;
-		padding-right: 30px;
-		border: 1px solid #979797;
-		border-radius: 8px;
-		background-color: #E6E6E6;
+	.event {
+		overflow: auto;
+		margin-top: 60px;
+
+		.thumbnail {
+			float: left;
+			width: 122px;
+			margin-right: 10px;
+			border-radius: 5px;
+		}
+		a {
+			display: block;
+		}
+		.title {
+			font-size: 18px;
+			color: #0084C8;
+			line-height: 21px;
+		}
+		.dates {
+			font-size: .8em;
+			color: #979797;
+			line-height: 2em;
+		}
+		.center {
+			text-align: center;
+		}
+	}
+
+	.actions {
+		margin-top: 60px;
 		text-align: center;
-		width: 50px;
-		margin-right: 20px;
+
+		a {
+			padding: 15px 30px;
+			font-size: 1.2em;
+			color: #4EAE50;
+
+			&.edit {
+				border-right: 2px solid #E6E6E6;
+				color: #888;
+			}
+		}
+
+		img {
+			margin-right: 10px;
+			margin-bottom: 3px;
+		}
+	}
+
+	.page-subtitle {
+		margin-top: 70px;
+		margin-bottom: 30px;
+		text-align: center;
+		font-size: 1.2em;
+		color: #353535;
+		border-top: 1px solid #E6E6E6;
+
+		span {
+		    position: relative;
+		    top: -.75em;
+		    padding: 0 20px;
+		    background-color: white;
+		}
+	}
+
+	.details {
+		text-align: center;
+		margin-bottom: 40px;
+
+		a {
+			width: 50px;
+			margin-right: 20px;
+			font-size: 1.2em;
+			text-align: center;
+			color: #7E7E7E;
+			line-height: 21px;
+			padding: 15px 30px;
+			border: 1px solid #979797;
+			border-radius: 8px;
+
+			&.copy {
+			    background-color: #E6E6E6;
+			}
+		}
+	}
+
+	.addthis_sharing_toolbox {
+			text-align: center;
 	}
 }
 
-div.addthis_sharing_toolbox {
-		text-align: center;
-}
+
 
 img.publishedButtonCheckmark {
 	margin-right: 10px;

@@ -55,53 +55,26 @@ class EventEditShare extends Component {
 				window.addthis.layers.refresh()
 			}
 		}, 100);
+		var image = ::this.getEventImage()
 		return (
-			<div className="medium-10 large-4 columns small-centered">
+			<div className="medium-6 columns small-centered share">
 				<Helmet title="Event Share" />
-				<h1 className="sharePageTitle">Your Event is Now Published:</h1>
-				<Row className="sharePageEventSection">
-					<Column s="medium-4">
-						{::this.getEventImage()}
-				   	</Column>
-				    	<Column s="medium-8">
-						<Row>
-					    		<Link className="title" to={"/events/" + eventItem.id}>
-								{eventItem.title}
-					    		</Link>
-						</Row>
-						<Row>
-					    		<Link className="scheduledDates" to={"#"}>
-					    			{::this.getDates()}
-					    		</Link>
-						</Row>
-				    	</Column>
-				</Row>
-				<table className="sharePageTable">
-					<tr>
-						<td className="leftCell">
-							<Link className="editButton" to={`/event/edit/${eventItem.id}`}><img src={`/images/${RevManifest('edit.png')}`} />Re-edit Event</Link>
-						</td>
-						<td>
-					    		<Link className="myEventsButton" to={`/`}>Go to My Events</Link>
-						</td>
-				    	</tr>
-				</table>
-				<Row className="collapse">
-				    	<Column s="large-3">
-						<hr />
-				    	</Column>
-					<Column s="large-6">
-						<h2 className="sharePageSubtitle">Share your event:</h2>
-					</Column>
-				    	<Column s="large-3">
-						<hr />
-				    	</Column>
-				</Row>
-				<div className="shareSection">
-				    	<span className="shorturl">{"http://bible.com/events/" + (eventItem.id || "")}</span>
-				    	<CopyToClipboard text={"http://bible.com/events/" + (eventItem.id || "")}>
-						<a className="copyButton">Copy</a>
-				    	</CopyToClipboard>
+				<div className="page-title">Your Event is Now Published:</div>
+				<div className="event">
+					{image}
+		    		<Link className={image ? "title" : "title center"} to={"http://bible.com/events/" + eventItem.id} target="_blank">{eventItem.title}</Link>
+		    		<Link className={image ? "dates" : "dates center"}>{::this.getDates()}</Link>
+				</div>
+				<div className="actions">
+					<Link className="edit" to={`/event/edit/${eventItem.id}`}><img src={`/images/${RevManifest('edit.png')}`} />Re-edit Event</Link>
+					<Link className="my-events" to={`/`}>Go to My Events</Link>
+				</div>
+				<div className="page-subtitle"><span>Share your event:</span></div>
+				<div className="details">
+			    	<Link className="shorturl" to={"http://bible.com/events/" + eventItem.id} target="_blank">{"http://bible.com/events/" + eventItem.id}</Link>
+			    	<CopyToClipboard text={"http://bible.com/events/" + eventItem.id}>
+					<a className="copy">Copy</a>
+			    	</CopyToClipboard>
 				</div>
 				<div className="addthis_sharing_toolbox"></div>
 				<hr />
