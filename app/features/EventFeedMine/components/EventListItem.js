@@ -134,22 +134,12 @@ class EventListItem extends Component {
 	render() {
 		const { item } = this.props
 		return (
-			<li className="eventPageListItem" key={item.id}>
+			<li className="event-item" key={item.id}>
 				<Row className="collapse">
-					<Column s='medium-2'>
-						{this.getEventImage(item)}
-					</Column>
-					<Column s='medium-8'>
-						<Row>
-							<Link className="large-link" to={`/event/edit/${item.id}`}>{item.title}</Link>
-						</Row>
-						<Row>
-							{this.getDetails()}
-						</Row>
-					</Column>
-					<Column s='medium-2' a='right'>
-						<Link className="hollow-button gray" to={`/event/edit/${item.id}`}>Edit</Link>
-					</Column>
+					<Link className="hollow-button gray" to={`/event/edit/${item.id}`}>Edit</Link>
+					{this.getEventImage(item)}
+					<Link className="large-link" to={`/event/edit/${item.id}`}>{item.title}</Link>
+					{this.getDetails()}
 				</Row>
 			</li>
 		)
