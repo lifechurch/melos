@@ -1,6 +1,9 @@
 const constants = {
 	cancel: 'EVENT_CANCEL',
 	new: 'EVENT_NEW',
+	imgUpload: 'IMG_UPLOAD',
+	imgUploadSuccess: 'IMG_UPLOAD_SUCCESS',
+	imgUploadFailure: 'IMG_UPLOAD_FAILURE',
 	viewRequest: 'EVENT_VIEW_REQUEST',
 	viewSuccess: 'EVENT_VIEW_SUCCESS',
 	viewFailure: 'EVENT_VIEW_FAILURE',

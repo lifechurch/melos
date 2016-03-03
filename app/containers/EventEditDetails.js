@@ -28,11 +28,11 @@ class EventEditDetails extends Component {
 	}
 
 	render() {
-		const { event, handleDetailsNext, params } = this.props
+		const { event, dispatch, handleDetailsNext, params } = this.props
 		return (
 			<div>
 				<Helmet title="Event Details" />
-				<DetailsEdit event={event} params={params} handleChange={::this.handleChange} handleLeave={::this.handleLeave} handleNext={::this.handleNext} />
+				<DetailsEdit event={event} params={params} dispatch={dispatch} handleChange={::this.handleChange} handleLeave={::this.handleLeave} handleNext={::this.handleNext} />
 			</div>
 		)
 	}

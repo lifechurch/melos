@@ -88,7 +88,7 @@ export default function event(state = {}, action) {
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: true, isDirty: false }))
 
 		case type('setDetails'):
-			if (['title', 'org_name', 'image', 'description'].indexOf(action.field) > -1) {
+			if (['title', 'org_name', 'images', 'image_id', 'description'].indexOf(action.field) > -1) {
 				let item = Object.assign({}, state.item)
 				item[action.field] = action.value
 				return validateEventDetails(Object.assign({}, state, { item, isDirty: true }))
