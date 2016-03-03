@@ -10,7 +10,7 @@ function validateOutput(output, keys, scope) {
 	if (typeof summary !== 'string') {
 		newOutput.summary = ''
 	}
-	
+
 	let { fields } = newOutput
 	if (typeof fields !== 'object') {
 		newOutput.fields = {}
@@ -28,7 +28,7 @@ function validateOutput(output, keys, scope) {
 		newOutput.scope[scope] = false
 	}
 
-	for (var key of keys) {
+	for (var key in keys) {
 		let field = newOutput.fields[key]
 		if (!Array.isArray(field)) {
 			newOutput.fields[key] = []
@@ -44,13 +44,13 @@ export function isBlank(target, output, keys, scope) {
 	if (typeof target !== 'object') {
 		return newOutput
 	}
-	
+
 	const originalHasError = newOutput.hasError
 	const originalScopeHasError = newOutput.scope[scope]
-	for (var key of keys) {
+	for (var key in keys) {
 		const prop = target[key]
 		const isBlank = (typeof prop !== 'string' || prop.length === 0)
-		const error = isBlank ?  [key, 'cannot be blank.'].join(' ') : false
+		const error = isBlank ?  [keys[key], 'cannot be blank.'].join(' ') : false
 		if (error !== false) {
 			newOutput.fields[key].push(error)
 			newOutput.summary = [newOutput.summary, error].join(' ')
@@ -67,7 +67,7 @@ export function mergeApiErrors(target, output, keys, scope) {
 
 	const errors = target.api_errors
 	if (Array.isArray(errors) && errors.length > 0) {
-		
+
 	} else {
 		return newOutput
 	}

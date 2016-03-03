@@ -39,7 +39,8 @@ export default function event(state = {}, action) {
 			return applyLifecycleRules(validateEventDetails(Object.assign({}, defaultState.event)))
 
 		case type('viewSuccess'):
-			return applyLifecycleRules(eventFromApiFormat(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false })))
+			var response = eventFromApiFormat({ item: action.response, isFetching: false, isSaving: false, isDirty: false })
+			return applyLifecycleRules(Object.assign({}, state, response))
 
 		case type('viewFailure'):
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: false, isDirty: false, api_errors: action.api_errors }))
@@ -48,7 +49,8 @@ export default function event(state = {}, action) {
 			return Object.assign({}, state, { errors: { fields: {} }, isFetching: true, isSaving: false, isDirty: false })
 
 		case type('createSuccess'):
-			return applyLifecycleRules(validateEventDetails(eventFromApiFormat(Object.assign({}, state, { item: action.response, isFetching: false, isSaving: false, isDirty: false }))))
+			var response = eventFromApiFormat({ item: action.response, isFetching: false, isSaving: false, isDirty: false })
+			return applyLifecycleRules(validateEventDetails(Object.assign({}, state, response)))
 
 		case type('createFailure'):
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: false, isDirty: false, api_errors: action.api_errors }))
@@ -57,13 +59,17 @@ export default function event(state = {}, action) {
 			return validateEventDetails(Object.assign({}, state, { isFetching: false, isSaving: true, isDirty: false }))
 
 		case type('updateSuccess'):
+			var response = eventFromApiFormat({ item: action.response, isFetching: false, isSaving: false, isDirty: false, api_errors: null	})
 			return applyLifecycleRules(validateEventDetails(Object.assign({}, state,
 				{
-					item: action.response,
-					isFetching: false,
-					isSaving: false,
-					isDirty: false,
-					api_errors: null
+					...response,
+					item: {
+						...response.item,
+						locations: {
+							...response.item.locations,
+							...Object.assign({}, state.item.locations)
+						}
+					}
 				}
 			)))
 
