@@ -136,7 +136,7 @@ class LocationAddTime extends Component {
 			<form className="event-edit-location-form event-edit-time-form">
 				<Row>
 					<div className='small-4 columns textField'>
-						<DatePicker placeholderText='Start Date' onChange={::this.handleStartDateChange} selected={start_dt} popoverTargetAttachment='top center' popoverAttachment='bottom center' popoverTargetOffset='0px 0px' />
+						<DatePicker placeholderText='Start Date' weekStart='0' onChange={::this.handleStartDateChange} selected={start_dt} popoverTargetAttachment='top center' popoverAttachment='bottom center' popoverTargetOffset='0px 0px' />
 					</div>
 
 					<Column s='small-4'>
