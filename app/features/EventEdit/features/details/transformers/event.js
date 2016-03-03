@@ -2,7 +2,7 @@ import { fromApiFormat as contentFromApiFormat } from '../../content/transformer
 import arrayToObject from '../../../../../lib/arrayToObject'
 
 export function fromApiFormat(event) {
-	let { item } = event
+	let item = Object.assign({}, event.item)
 
 	if (typeof item !== 'object') {
 		item = {}
@@ -15,6 +15,10 @@ export function fromApiFormat(event) {
 	let content = item.content.map((c) => {
 		return contentFromApiFormat(Object.assign({}, c, { content_id: c.id, id: item.id }))
 	})
+
+	if (!Array.isArray(item.locations)) {
+		item.locations = []
+	}
 
 	let locations = arrayToObject(item.locations.map((l) => {
 		l.isSelected = true
