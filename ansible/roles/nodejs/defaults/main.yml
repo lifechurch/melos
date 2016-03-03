@@ -5,5 +5,5 @@
 nodejs_nodesource_pin_priority: 700
 
 debian_repo_version: 4.x
-
+nodejs_version: 4.3
 gulp_version: 3.9.0

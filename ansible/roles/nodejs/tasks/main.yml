@@ -28,7 +28,7 @@
 
 - name: Install Node.js
   apt:
-    name: nodejs
+    name: nodejs={{ nodejs_version }}*
     state: installed
   tags:
     - nodejs
