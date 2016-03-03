@@ -235,7 +235,7 @@ class ContentTypeReference extends Component {
 
 		var versions = []
 		for (var i in references.versions) {
-			versions.push( <option key={references.versions[i].abbreviation} value={i}>{references.versions[i].abbreviation.toUpperCase()}</option> )
+			versions.push( <option key={references.versions[i].id + references.versions[i].abbreviation} value={i}>{references.versions[i].abbreviation.toUpperCase()}</option> )
 		}
 
 		var books = []
