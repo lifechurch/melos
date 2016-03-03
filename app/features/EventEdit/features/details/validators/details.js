@@ -1,4 +1,4 @@
-import { isBlank, mergeApiErrors } from '../../../../../validators/common'
+import { isBlank } from '../../../../../validators/common'
 
 export function validateEventDetails(event) {
 	let { item, originalErrors } = event
@@ -11,7 +11,7 @@ export function validateEventDetails(event) {
 		item.content = []
 	}
 
-	const errors = Object.assign({}, originalErrors, isBlank(item, originalErrors, ['title', 'org_name'], 'details'))
+	const errors = Object.assign({}, originalErrors, isBlank(item, originalErrors, {'title': 'Event Name', 'org_name': 'Church Name or Organization'}, 'details'))
 	return Object.assign({}, event, { errors })
 }
 
