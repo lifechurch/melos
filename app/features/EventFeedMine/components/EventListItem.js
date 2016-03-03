@@ -133,12 +133,19 @@ class EventListItem extends Component {
 
 	render() {
 		const { item } = this.props
+		var action
+		if (item.status < 3) {
+			action = <Link className="hollow-button gray action" to={'/event/edit/' + item.id}>Edit</Link>
+		} else { // archived+
+			action = <Link className="hollow-button gray action" to={'http://bible.com/events/' + item.id}>View</Link>
+		}
+
 		return (
 			<li className="event-item" key={item.id}>
 				<Row className="collapse">
-					<Link className="hollow-button gray" to={`/event/edit/${item.id}`}>Edit</Link>
+					{action}
 					{this.getEventImage(item)}
-					<Link className="large-link" to={`/event/edit/${item.id}`}>{item.title}</Link>
+					<Link className="title" to={`/event/edit/${item.id}`}>{item.title}</Link>
 					{this.getDetails()}
 				</Row>
 			</li>
