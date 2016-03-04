@@ -111,7 +111,7 @@ gulp.task('build:production', function(callback) {
 });
 
 gulp.task('build:staging', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev'], callback);
 });
 
 gulp.task('build:review', function(callback) {
