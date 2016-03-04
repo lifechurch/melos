@@ -145,8 +145,10 @@ class EventListItem extends Component {
 				<Row className="collapse">
 					{action}
 					{this.getEventImage(item)}
-					<Link className="title" to={`/event/edit/${item.id}`}>{item.title}</Link>
-					{this.getDetails()}
+					<div className='details'>
+						<Link className="title" to={`/event/edit/${item.id}`}>{item.title}</Link>
+						{this.getDetails()}
+					</div>
 				</Row>
 			</li>
 		)
