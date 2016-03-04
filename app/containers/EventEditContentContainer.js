@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
+import Row from '../components/Row'
+import Column from '../components/Column'
+import { Link } from 'react-router'
 import ContentHeader from '../features/EventEdit/features/content/components/ContentHeader'
 import ContentFeed from '../features/EventEdit/features/content/components/ContentFeed'
 import ActionCreators from '../features/EventEdit/features/content/actions/creators'
@@ -239,6 +242,11 @@ class EventEditContentContainer extends Component {
 				<div className='content-container'>
 					{contentFeed}
 				</div>
+				<Row>
+					<Column s='medium-12' a='right'>
+						<Link disabled={!event.rules.preview.canView} to={`/event/edit/${event.item.id}/preview`}>Next: Preview &rarr;</Link>
+					</Column>
+				</Row>
 				<LiveWarningModal event={event} dispatch={dispatch} modalState={modals.LiveWarning} handleClose={::this.handleCloseModal} />
 			</div>
 		)
