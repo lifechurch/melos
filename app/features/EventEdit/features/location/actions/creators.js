@@ -46,6 +46,13 @@ const ActionCreators = {
 		}
 	},
 
+	removeTime(index) {
+		return {
+			type: type('removeTime'),
+			index
+		}
+	},
+
 	view(location_id, originalLoc = {}, initiatedByEdit = false) {
 		return {
 			initiatedByEdit,

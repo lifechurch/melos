@@ -90,6 +90,14 @@ export default function loc(state = {}, action) {
 				]
 			})
 
+		case type('removeTime'):
+			return Object.assign({}, state, {
+				times: [
+					...state.times.slice(0, action.index),
+					...state.times.slice(action.index + 1)
+				]
+			})
+
 		case type('addTime'):
 			var start_dt = moment().startOf('hour')
 			var end_dt = moment(start_dt.toDate().getTime()).add(1, 'h')

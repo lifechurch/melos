@@ -16,10 +16,10 @@ class LocationEdit extends Component {
 			markers: []
 		}
 
-		// const { loc } = props		
+		// const { loc } = props
 	}
 
-	handleBoundsChanged () {		
+	handleBoundsChanged () {
 		const { loc } = this.props
 		if (typeof loc.place === 'object' && typeof loc.place.geometry === 'object') {
 			this.mapPlaces([loc.place], false)
@@ -47,14 +47,14 @@ class LocationEdit extends Component {
 		const { dispatch, handleChoosePlace } = this.props
 
 		// Add a marker for each place returned from search bar
-		places.forEach(function (place) {			
+		places.forEach(function (place) {
 			markers.push({
 				position: place.geometry.location
 			});
 
 			if (triggerChoose) {
 				handleChoosePlace(place)
-			}			
+			}
 		});
 
 		// Set markers; set map center to first search result
@@ -69,7 +69,7 @@ class LocationEdit extends Component {
 	}
 
 	render() {
-		const { handleCancel, handleChange, handleSave, handleSetTime, handleAddTime, loc } = this.props
+		const { handleCancel, handleChange, handleSave, handleSetTime, handleAddTime, handleRemoveTime, loc } = this.props
 
 		var inputStyle = {
 			"border": "1px solid transparent",
@@ -87,7 +87,7 @@ class LocationEdit extends Component {
 			"top": "0px",
 			"height": "40px !important",
 			"background-color": "white"
-		}				
+		}
 
 		var containerProps = {
 			...this.props,
@@ -100,7 +100,7 @@ class LocationEdit extends Component {
 		var times;
 		if (loc.hasOwnProperty('times')) {
 			times = loc.times.map((t, i) => {
-				return (<LocationAddTime key={i} time={t} timeIndex={i} handleTimeChange={handleSetTime} />)
+				return (<LocationAddTime key={i} time={t} timeIndex={i} handleTimeChange={handleSetTime} handleRemoveTime={handleRemoveTime} />)
 			})
 		}
 
@@ -126,7 +126,7 @@ class LocationEdit extends Component {
 						<Marker position={marker.position} key={index} />
 					))}
 
-				</GoogleMap>			
+				</GoogleMap>
 			)
 		}
 
@@ -141,7 +141,7 @@ class LocationEdit extends Component {
 							</Column>
 							<Column s='small-6'>
 								<input className='small' type='text' name='timezone' placeholder='Timezone' onChange={handleChange} value={loc.timezone} />
-							</Column>								
+							</Column>
 						</Row>
 					</form>
 				</div>
@@ -153,15 +153,15 @@ class LocationEdit extends Component {
 						<Row>
 							<Column s='small-6 end'>
 								<input className='small' type='text' name='timezone' placeholder='Timezone' onChange={handleChange} value={loc.timezone} />
-							</Column>								
+							</Column>
 						</Row>
 					</form>
 				</div>
-			)			
+			)
 		}
 
 		return (
-			<div className='modal'>		
+			<div className='modal'>
 				<div className='form-body'>
 					<div className='form-body-block white'>
 						<form className="locationForm">
@@ -170,7 +170,7 @@ class LocationEdit extends Component {
 								<span className="left">Location Name</span><span className="labelRight">Optional: Useful if adding multiple locations</span>
 							</label>
 						</form>
-						{gMap}						
+						{gMap}
 					</div>
 
 					<div className='form-body-block white text-left'>
@@ -178,10 +178,10 @@ class LocationEdit extends Component {
 						<a onClick={handleAddTime}>Add another time</a>
 					</div>
 
-					{locationDetails}										
+					{locationDetails}
 
 					<div className='form-actions text-right'>
-						<ErrorMessage hasError={loc.hasError === true} errors={loc.errors} />					
+						<ErrorMessage hasError={loc.hasError === true} errors={loc.errors} />
 						<a onClick={handleCancel}>Cancel</a>
 						<a className='solid-button green' onClick={handleSave}>Save this Location</a>
 					</div>
