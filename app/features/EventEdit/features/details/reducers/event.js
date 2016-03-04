@@ -10,7 +10,6 @@ import { fromApiFormat as contentFromApiFormat } from '../../content/transformer
 import arrayToObject from '../../../../../lib/arrayToObject'
 import mergeObjects from '../../../../../lib/mergeObjects'
 import applyLifecycleRules from '../../../validators/applyLifecycleRules'
-import moment from 'moment'
 
 function selectLocation(locations, id, selected) {
 	if (['string', 'number'].indexOf(typeof id) === -1) {
@@ -449,26 +448,6 @@ export default function event(state = {}, action) {
 						newContent,
 						...state.item.content.slice(action.params.index + 1)
 					]
-				}
-			})
-
-		case locationType('shiftAllDatesRequest'):
-			const { duration, interval } = action
-			let shiftedLocations = {}
-			for(const key in state.item.locations) {
-				const l = state.item.locations[key]
-				shiftedLocations[l.id] = Object.assign({}, l, {
-					times: l.times.map((t) => {
-						let m = moment(t)
-						m.add(duration, interval)
-						return m.toDate().toISOString()
-					})
-				})
-			}
-			return Object.assign({}, state, {
-				item: {
-					...state.item,
-					locations: shiftedLocations
 				}
 			})
 
