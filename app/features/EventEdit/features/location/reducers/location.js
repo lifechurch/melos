@@ -128,13 +128,21 @@ export default function loc(state = {}, action) {
 			})
 
 		case type('updateRequest'):
-			return Object.assign({}, state, {
-				isSaving: true,
-				hasError: false
-			})
+			if (!Array.isArray(state.times)) {
+				return state
+			} else {
+				return Object.assign({}, state, {
+					isSaving: true,
+					hasError: false
+				})
+			}
 
 		case type('updateSuccess'):
-			return fromApiFormat(Object.assign({}, state, action.response))
+			if (!Array.isArray(state.times)) {
+				return state
+			} else {
+				return fromApiFormat(Object.assign({}, state, action.response))
+			}
 
 		case type('updateFailure'):
 			return Object.assign({}, state, {
