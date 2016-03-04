@@ -178,7 +178,7 @@ class EventEditLocationContainer extends Component {
 		}
 
 		var centerButtons
-		if (!(event.item && event.item.locations && event.item.locations.length > 0)) {
+		if (!(event.item && event.item.locations && Object.keys(event.item.locations).length > 0)) {
 			centerButtons = 'center-single-item'
 		}
 
