@@ -50,44 +50,27 @@ class ContentTypeReference extends Component {
 			'index': contentIndex
 		}))
 
-		var ch_ref = contentData.usfm[0].split('.')
-		dispatch(ActionCreators.getChapter({
-			'index': contentIndex,
-			'id': parseInt(event.target.value),
-			'reference': ch_ref[0] + "." + ch_ref[1]
-		}))
+		dispatch(ActionCreators.setField({index: contentIndex, field: 'human', value: ' '}))
+		dispatch(ActionCreators.setField({index: contentIndex, field: 'chapter', value: ''}))
+		dispatch(ActionCreators.setField({index: contentIndex, field: 'usfm', value: ['']}))
 	}
 
 	handleBookChange(event) {
 		const { dispatch, contentIndex, contentData, references } = this.props
 		const books = references.books[contentData.version_id]
-		const afterBookUsfm = event.target.value
-		const beforeBookUsfm = contentData.usfm[0].split('.')[0]
-		const chapterVerse = contentData.human.split(' ').pop()
+		const usfm = event.target.value
 
-		var usfm = contentData.usfm.map((usfm) => {
-			return usfm.replace(beforeBookUsfm, afterBookUsfm)
-		})
-
-		var humanBookName = ""
+		var human = ""
 		for (let book of books) {
-			if (book.usfm == afterBookUsfm) {
-				humanBookName = book.name
+			if (book.usfm == usfm) {
+				human = book.name + " "
 				break
 			}
 		}
 
-		dispatch(ActionCreators.getChapter({
-			'index': contentIndex,
-			'id': contentData.version_id,
-			'reference': afterBookUsfm + "." + chapterVerse.split(':')[0]
-		}))
-
-		dispatch(ActionCreators.setReference({
-			'usfm': usfm,
-			'human': humanBookName + " " + chapterVerse,
-			'index': contentIndex
-		}))
+		dispatch(ActionCreators.setField({index: contentIndex, field: 'human', value: human}))
+		dispatch(ActionCreators.setField({index: contentIndex, field: 'chapter', value: ''}))
+		dispatch(ActionCreators.setField({index: contentIndex, field: 'usfm', value: [usfm]}))
 	}
 
 	updateContent(event) {
@@ -270,7 +253,7 @@ class ContentTypeReference extends Component {
 							<FormField
 								InputType={Input}
 								name="chv"
-								disabled={isFetching}
+								disabled={isFetching || !book.length}
 								onChange={::this.updateContent}
 								value={chv}
 								errors={contentData.errors} />

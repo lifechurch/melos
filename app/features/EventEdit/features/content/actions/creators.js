@@ -95,6 +95,15 @@ const ActionCreators = {
 		}
 	},
 
+	clearBook(params) {
+		return {
+			params: {
+				...params,
+			},
+			type: contentType('bookClear')
+		}
+	},
+
 	clearChapter(params) {
 		return {
 			params: {
