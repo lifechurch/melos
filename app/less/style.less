@@ -173,22 +173,35 @@ img.publishedButtonCheckmark {
 
 div.event-title-section {
 
-    h1.title {
+    .title {
         font-size: 36px;
         color: #353535;
         line-height: 42px;
     }
 
-		h2.subtitle {
-				font-size: 13px;
-				color: #888888;
-				line-height: 16px;
-		}
+	h2.subtitle {
+			font-size: 13px;
+			color: #888888;
+			line-height: 16px;
+	}
 
-		.solid-button {
-				float: right;
-		}
+	.solid-button {
+			float: right;
+	}
 
+	&.no-content-prompt {
+		.create-wrapper {
+		    min-width: 50%;
+		    margin: 80px auto;
+		    padding: 40px 0;
+		    border: 3px dashed #ccc;
+		    border-radius: 10px;
+		}
+		.create {
+			float: inherit;
+		    margin: 0;
+		}
+	}
 }
 
 img.event-thumbnail {
