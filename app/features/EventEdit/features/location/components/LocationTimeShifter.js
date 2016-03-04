@@ -30,10 +30,10 @@ class LocationTimeShifter extends Component {
 			const newLoc = Object.assign({}, l, {
 				times: l.times.map((o) => {
 					let start_dt = moment(o.start_dt)
-					start_dt.add(duration, interval * direction)
+					start_dt.add(duration  * direction, interval)
 
 					let end_dt = moment(o.end_dt)
-					end_dt.add(duration, interval * direction)
+					end_dt.add(duration  * direction, interval)
 
 					return {
 						start_dt,
@@ -49,7 +49,7 @@ class LocationTimeShifter extends Component {
 	render() {
 		if (this.state.isOpen) {
 			return (
-				<div className='text-left'>
+				<div className='text-left shift-bar open'>
 					<a onClick={::this.close}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
 					Shift start dates
 					<select name='direction' onChange={::this.handleChange} value={this.state.direction}>
@@ -69,7 +69,7 @@ class LocationTimeShifter extends Component {
 			)
 		} else {
 			return (
-				<div className='text-left'>
+				<div className='text-left shift-bar'>
 					<a onClick={::this.open}>Shift all dates and times at once</a>
 				</div>
 			)
