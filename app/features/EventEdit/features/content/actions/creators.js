@@ -11,7 +11,16 @@ const ActionCreators = {
 	},
 
 	add(params) {
-		validateAddContentParams(params)
+		try {
+			validateAddContentParams(params)
+		} catch (err) {
+			return {
+				type: contentType('addFailure'),
+				params: { ...params },
+				api_errors: [{key: err.message}]
+			}
+		}
+
 		return {
 			params: {
 				...params,
@@ -161,7 +170,16 @@ const ActionCreators = {
 	},
 
 	update(params) {
-		validateAddContentParams(params)
+		try {
+			validateAddContentParams(params)
+		} catch (err) {
+			return {
+				type: contentType('updateFailure'),
+				params: { ...params },
+				api_errors: [{key: err.message}]
+			}
+		}
+
 		return {
 			params: {
 				...params,
