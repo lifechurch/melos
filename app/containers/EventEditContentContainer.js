@@ -29,7 +29,7 @@ class EventEditContentContainer extends Component {
 				createBaseContentObject(event.item.id, 'text'),
 				{
 					data: {
-						body: ' '
+						body: ''
 					}
 				}
 			)
@@ -43,8 +43,8 @@ class EventEditContentContainer extends Component {
 				createBaseContentObject(event.item.id, 'announcement'),
 				{
 					data: {
-						title: ' ',
-						body: ' '
+						title: '',
+						body: ''
 					}
 				}
 			)
