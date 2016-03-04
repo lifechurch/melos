@@ -54,11 +54,11 @@ class ContentDraggable extends Component {
 			let previewText = ''
 			switch(content.type) {
 				case 'text':
-					previewText = content.data.body.replace(/(<([^>]+)>)/ig,"").substr(0, 100)
+					previewText = content.data.body.replace(/(<([^>]+)>)/ig,"").substr(0, 80)
 					break;
 
 				case 'announcement':
-					previewText = content.data.title.substr(0, 100)
+					previewText = content.data.title.substr(0, 80)
 					break;
 
 				case 'reference':
