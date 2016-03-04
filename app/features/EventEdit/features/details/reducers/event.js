@@ -136,23 +136,6 @@ export default function event(state = {}, action) {
 				}
 			}))
 
-		case locationType('updateSuccess'):
-			var { params } = action
-			var newParams = Object.assign({}, params, action.response)
-			return applyLifecycleRules(Object.assign({}, state, {
-				item: {
-					...state.item,
-					locations: {
-						...state.item.locations,
-						[newParams.id]: Object.assign(
-							{},
-							state.item.locations[newParams.id],
-							newParams
-						)
-					}
-				}
-			}))
-
 		case locationType('updateFailure'):
 			var { params } = action
 			return applyLifecycleRules(Object.assign({}, state, {
