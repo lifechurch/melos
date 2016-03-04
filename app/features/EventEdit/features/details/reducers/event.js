@@ -1,4 +1,3 @@
-
 import type from '../actions/constants'
 import locationType from '../../location/actions/constants'
 import contentType from '../../content/actions/constants'

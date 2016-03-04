@@ -35,9 +35,7 @@ const constants = {
 	updateFailure: 'LOCATION_UPDATE_FAILURE',
 	itemsRequest: 'LOCATIONS_ITEMS_REQUEST',
 	itemsSuccess: 'LOCATIONS_ITEMS_SUCCESS',
-	itemsFailure: 'LOCATIONS_ITEMS_FAILURE',
-	shiftAllDatesRequest: 'LOCATIONS_SHIFT_DATES_REQUEST',
-	updateAllRequest: 'LOCATIONS_UPDATE_ALL_REQUEST'
+	itemsFailure: 'LOCATIONS_ITEMS_FAILURE'
 }
 
 export default function (key) {

@@ -6,7 +6,7 @@ import moment from 'moment'
 class LocationTimeShifter extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { isOpen: false, direction: 1, duration: 1, interval: 'week' }
+		this.state = { isOpen: false, direction: 1, duration: 1, interval: 'weeks' }
 	}
 
 	open() {
