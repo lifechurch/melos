@@ -59,7 +59,7 @@ function getDurationAndInterval(start_dt, end_dt) {
 			duration: d / oneHour,
 			interval: 'h'
 		}
-	} else if (d % oneMinute) {
+	} else if (d % oneMinute === 0) {
 		return {
 			duation: d / oneMinute,
 			interval: 'm'
