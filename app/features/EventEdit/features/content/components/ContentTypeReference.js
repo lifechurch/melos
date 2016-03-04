@@ -179,7 +179,7 @@ class ContentTypeReference extends Component {
 			if (verse) {
 				return verse
 			} else {
-				throw "This version does not contain that reference"
+				throw ''
 			}
 		} else {
 			throw ''
@@ -212,7 +212,7 @@ class ContentTypeReference extends Component {
 					verses.push( <span className="verseContent">{verse + " "}</span> )
 				}
 			} catch (err) {
-				verses = [<span className="errorText">{err}</span>]
+				 verses = null //[<span className="errorText">{err}</span>]
 			}
 		}
 
