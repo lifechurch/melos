@@ -12,11 +12,12 @@ var PlanList = React.createClass({
 		const { items, handlePlanClick } = this.props
 
 		var createItem = function(item) {
-			return <li key={item.id} data-plan_id={item.id} name="plan_id" value={item.id} onClick={handlePlanClick}>
+			var className = (item.name.default=='No matching Plans') ? 'plan error' : 'plan'
+			return item.name.default ? <li className={className} key={item.id} data-plan_id={item.id} name="plan_id" value={item.id} onClick={handlePlanClick}>
 				<Image images={item.images} height={80} width={80} />
 				<div className="title">{item.name.default}</div>
 				<div className="length">{item.formatted_length.default}</div>
-			</li>;
+			</li> : null;
 		};
 		return <ul className="results">{items.map(createItem)}</ul>;
 	}
@@ -27,8 +28,9 @@ var SelectedPlan = React.createClass({
 	render: function() {
 		const { item, handlePlanClick } = this.props
 
-		return <div className="selected" key={item.plan_id} data-plan_id={item.plan_id} name="plan_id" value={item.plan_id} onClick={handlePlanClick}>
+		return <div className="selected" key={item.plan_id} data-plan_id={item.plan_id} name="plan_id" value={item.plan_id}>
 			<Image images={item.images} width={640} height={360} />
+			<div className="replace" onClick={handlePlanClick}>Replace</div>
 			<div className="title">{item.title}</div>
 			<div className="length">{item.formatted_length}</div>
 		</div>;
@@ -110,7 +112,7 @@ class ContentTypePlan extends Component {
 
 	handlePlanRemove(clickEvent) {
 		const { contentIndex, handleChange, autoSave } = this.props
-		handleChange({target: {name: 'plan_id', value: 0}})
+		handleChange({target: {name: 'plan_id', value: 0}}, false)
 	}
 
 	render() {

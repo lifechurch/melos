@@ -844,6 +844,28 @@ form.locationForm {
 				padding: 0 9px;
 			}
 		}
+
+		&.content-plan {
+			.replace {
+				float: right;
+			    margin-top: 1em;
+			    color: red;
+			    cursor: pointer;
+			}
+
+			.plan.error {
+				text-align: center;
+
+				&:hover {
+				cursor: default;
+				background-color: inherit;
+				}
+
+				.title {
+					color: red;
+				}
+			}
+		}
 	}
 
 }
