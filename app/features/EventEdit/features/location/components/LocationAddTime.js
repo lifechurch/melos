@@ -4,6 +4,7 @@ import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import moment from 'moment'
 import TimePicker from 'react-time-picker'
+import RevManifest from '../../../../../../app/lib/revManifest'
 
 function getDisplay(hour, minute) {
 	return [
@@ -59,7 +60,7 @@ function getDurationAndInterval(start_dt, end_dt) {
 			duration: d / oneHour,
 			interval: 'h'
 		}
-	} else if (d % oneMinute) {
+	} else if (d % oneMinute === 0) {
 		return {
 			duation: d / oneMinute,
 			interval: 'm'
@@ -130,7 +131,7 @@ class LocationAddTime extends Component {
 	}
 
 	render() {
-		const { time } = this.props
+		const { time, timeIndex, handleRemoveTime } = this.props
 		const { start_dt, duration, start_time, interval } = this.state
 
 		const values = timeValues().map((v) => {
@@ -140,7 +141,11 @@ class LocationAddTime extends Component {
 		return (
 			<form className="event-edit-location-form event-edit-time-form">
 				<Row>
-					<div className='small-4 columns textField'>
+					<div className='small-1 columns'>
+						<a className='removeTime' onClick={handleRemoveTime.bind(this, timeIndex)}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
+					</div>
+
+					<div className='small-3 columns textField'>
 						<DatePicker placeholderText='Start Date' weekStart='0' onChange={::this.handleStartDateChange} selected={start_dt} popoverTargetAttachment='top center' popoverAttachment='bottom center' popoverTargetOffset='0px 0px' />
 					</div>
 
@@ -169,15 +174,6 @@ class LocationAddTime extends Component {
 		)
 	}
 }
-
-// LocationAddTime.defaultProps = {
-// 	time: {
-// 		id: null,
-// 		start_dt: null,
-// 		end_dt: null,
-// 		interval: null
-// 	}
-// }
 
 LocationAddTime.propTypes = {
 	time: PropTypes.object.isRequired,

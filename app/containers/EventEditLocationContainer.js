@@ -117,6 +117,16 @@ class EventEditLocationContainer extends Component {
 		}
 	}
 
+	handleRemoveTime(index) {
+		const { event, dispatch } = this.props
+		if (typeof event.rules.locations.canEdit === 'object') {
+			const { modal } = event.rules.locations.canEdit
+			dispatch(ModalActionCreators.openModal(modal))
+		} else {
+			dispatch(ActionCreators.removeTime(index))
+		}
+	}
+
 	handleSave() {
 		const { dispatch, event, loc } = this.props
 		const { id } = loc
@@ -180,6 +190,7 @@ class EventEditLocationContainer extends Component {
 				handleChoosePlace={::this.handleChoosePlace}
 				handleSetTime={::this.handleSetTime}
 				handleAddTime={::this.handleAddTime}
+				handleRemoveTime={::this.handleRemoveTime}
 				handleSave={::this.handleSave}
 				dispatch={dispatch}
 				loc={loc} />
