@@ -16,8 +16,8 @@ var IS_PROD = process.env.NODE_ENV === 'production';
 
 gulp.task('javascript:prod', function() {
 	return browserify("app/main.js", { debug: !IS_PROD })
-		.transform('envify', { NODE_ENV: 'production' })
 		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
+		.transform('envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('app.js'))
 		.pipe(buffer())
