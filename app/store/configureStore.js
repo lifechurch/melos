@@ -9,9 +9,17 @@ import { syncHistory } from 'react-router-redux'
 export default function configureStore(initialState, history, logger) {
 	const reduxRouterMiddleware = syncHistory(history)
 
-	const finalCreateStore = compose(
-	  applyMiddleware(thunk, youversionApi, googleMapsApi, youversionAuth, reduxRouterMiddleware, logger)
-	)(createStore)
+	let finalCreateStore = null
+
+	if (logger !== null) {
+		finalCreateStore = compose(
+		  applyMiddleware(thunk, youversionApi, googleMapsApi, youversionAuth, reduxRouterMiddleware, logger)
+		)(createStore)
+	} else {
+		finalCreateStore = compose(
+		  applyMiddleware(thunk, youversionApi, googleMapsApi, youversionAuth, reduxRouterMiddleware)
+		)(createStore)
+	}
 
 	return finalCreateStore(rootReducer, initialState)
 }

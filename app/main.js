@@ -16,7 +16,11 @@ if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefi
 	initialState = window.__INITIAL_STATE__
 }
 
-const logger = createLogger()
+let logger = null
+if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && window.__ENV__ !== 'production') {
+	logger = createLogger()
+}
+
 const store = configureStore(initialState, browserHistory, logger)
 
 function requireAuth(nextState, replace) {

@@ -34,13 +34,13 @@ class ErrorMessage extends Component {
 		if (hasError) {
 			className = 'error-message alert-box alert radius'
 			if (Array.isArray(errors) && errors.length > 0) {
-				errorListItems = errors.map((e) => {
-					return (<li>{getError(e)}</li>)
+				errorListItems = errors.map((e, i) => {
+					return (<li key={i}>{getError(e)}</li>)
 				})
 			} else if (typeof errors == 'object' && Object.keys(errors).length > 0) {
 				errorListItems = []
 				for (var k in errors) {
-					errorListItems.push.apply(errorListItems, errors[k].map((e) => { return (<li>{getError(e)}</li>) }))
+					errorListItems.push.apply(errorListItems, errors[k].map((e, i) => { return (<li key={i}>{getError(e)}</li>) }))
 				}
 			} else {
 				errorListItems = (<li>An error occurred.</li>)
