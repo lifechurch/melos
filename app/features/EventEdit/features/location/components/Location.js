@@ -39,7 +39,7 @@ class Location extends Component {
 			<div className={className}>
 				<div className='header'>
 					<div className='title'>
-						<input disabled={!event.rules.locations.canRemove} type='checkbox' onClick={handleSelect} name={loc.id} checked={loc.isSelected} /> USE THIS LOCATION
+						<input disabled={!event.rules.locations.canRemove} type='checkbox' onChange={handleSelect} name={loc.id} checked={loc.isSelected} /> USE THIS LOCATION
 					</div>
 					<div className='header-actions'>
 						<a disabled={!event.rules.locations.canEdit} onClick={::this.handleEditClick} title='Edit Location'>
