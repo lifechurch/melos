@@ -8,6 +8,7 @@ import FormField from '../components/FormField'
 import Input from '../components/Input'
 import ActionCreators from '../features/Auth/actions/creators'
 import NoticeBanner from '../components/NoticeBanner'
+import EventHeader from '../components/EventHeader'
 
 class Auth extends Component {
 
@@ -53,6 +54,7 @@ class Auth extends Component {
 		return (
 			<div className="medium-6 large-5 columns small-centered auth">
 				<Helmet title="My Events" />
+				<EventHeader {...this.props} />
 				<div className='form-body'>
 					<NoticeBanner />
 					<h1>Sign In</h1>

@@ -78,29 +78,26 @@ class EventHeader extends Component {
 					</Row>
 		}
 
-		if (auth.isLoggedIn) {
-			return (
-				<div className='event-header'>
-					<Row>
-						<Column s='medium-4'>{event ?
-							<a onClick={::this.handleCancel}>Cancel</a> :
-							<span className="yv-title">YouVersion</span>
-						}</Column>
+		return (
+			<div className='event-header'>
+				<Row>
+					<Column s='medium-4'>{event ?
+						<a onClick={::this.handleCancel}>Cancel</a> :
+						<span className="yv-title"><img src={`/images/${RevManifest('YouVersion.png')}`} /></span>
+					}</Column>
 
-						<Column s='medium-4' a='center'>
-							EVENT BUILDER
-						</Column>
+					<Column s='medium-4' a='center'>
+						EVENT BUILDER
+					</Column>
 
-						<Column s='medium-4' a='right'>
-							{auth.userData.first_name} {auth.userData.last_name} <a onClick={::this.handleLogout}>Sign Out</a>
-						</Column>
-					</Row>
-					{ContentNav}
-				</div>
-			)
-		} else {
-			return null
-		}
+					<Column s='medium-4' a='right'>
+						{(auth && auth.userData && auth.userData.first_name) ? auth.userData.first_name : ''} {(auth && auth.userData && auth.userData.last_name) ? auth.userData.last_name : ''}&nbsp;
+						{(auth && auth.userData && auth.userData.first_name) ? <a onClick={::this.handleLogout}>Sign Out</a> : <a target='_blank' href='https://www.bible.com/sign-up'>Create Account</a>}
+					</Column>
+				</Row>
+				{ContentNav}
+			</div>
+		)
 	}
 }
 
