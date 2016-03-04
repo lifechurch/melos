@@ -26,7 +26,7 @@ class ContentTypeContainer extends Component {
 		}
 	}
 
-	handleChange(changeEvent) {
+	handleChange(changeEvent, autoSave = true) {
 		const { event } = this.props
 
 		if (event.rules.content.canEdit || event.rules.content.canAdd) {
@@ -36,7 +36,9 @@ class ContentTypeContainer extends Component {
 				handleChange(contentIndex, name, value)
 			}
 
-			this.autoSave()
+			if (autoSave) {
+				this.autoSave()
+			}
 		}
 	}
 

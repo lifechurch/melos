@@ -18,12 +18,19 @@ export default function plans(state = {}, action) {
 			return Object.assign({}, state, {'items': action.response.reading_plans})
 
 		case contentType('searchPlansFailure'):
+			var error_msg = action.api_errors[0].error
+			if (error_msg == 'Search did not match any documents') {
+				error_msg = 'No matching Plans'
+			} else {
+				error_msg = null
+			}
 			return Object.assign({}, state, {'items': [{
 												'plan_id':0,
-												'name': {'default': action.api_errors[0].error},
+												'name': {'default': error_msg},
 												'formatted_length': {'default': ''},
 												'images': ['','','']}]})
 
+		case contentType('selectPlan'):
 		case contentType('focusPlanSearch'):
 			return Object.assign({}, state, {'focus_id': action.index, 'query': '', 'items': []})
 
