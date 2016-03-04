@@ -157,7 +157,6 @@ class EventEditLocationContainer extends Component {
 	}
 
 	render() {
-		console.log('render locs')
 		const { dispatch, event, loc, modals } = this.props
 
 		var locations = []

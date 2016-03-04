@@ -120,7 +120,7 @@ export default function event(state = {}, action) {
 
 		case locationType('updateRequest'):
 			var { params } = action
-			var newParams = Object.assign({}, params, { id: params.location_id, times: params.times })
+			var newParams = Object.assign({}, params, { id: params.location_id })
 			return applyLifecycleRules(Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -147,8 +147,7 @@ export default function event(state = {}, action) {
 						[newParams.id]: Object.assign(
 							{},
 							state.item.locations[newParams.id],
-							newParams,
-							{'original': Object.assign({}, state.item.locations[newParams.id])}
+							newParams
 						)
 					}
 				}
