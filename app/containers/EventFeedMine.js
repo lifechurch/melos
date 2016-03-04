@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import EventHeader from '../components/EventHeader'
 import { fetchEventFeedMine } from '../actions'
 import { Link } from 'react-router'
+import RevManifest from '../../app/lib/revManifest'
 import Row from '../components/Row'
 import Column from '../components/Column'
 import EventListItem from '../features/EventFeedMine/components/EventListItem'
@@ -31,14 +32,6 @@ class EventFeedMine extends Component {
 		const { dispatch, hasError, errors, isFetching, configuration, items, page, next_page, auth } = this.props
 		const { userData } = auth
 		const { first_name, last_name } = userData
-		var pagination = null
-
-		if (page > 1 || next_page) {
-			pagination = <div className="pagination">
-                {page > 1 ? <a className="page left" onClick={::this.getPage} data-page={page - 1}>&larr; Previous</a> : null}
-                {next_page ? <a className="page right" onClick={::this.getPage} data-page={next_page}>Next &rarr;</a> : null}
-            </div>
-		}
 
 		var itemList = items.map((item, index) => {
 			return (<EventListItem
@@ -50,28 +43,57 @@ class EventFeedMine extends Component {
 					startOffset={configuration.startOffset} />)
 		})
 
+		var eventFeed
+		if (itemList.length) {
+			var pagination = null
+
+			if (page > 1 || next_page) {
+				pagination = <div className="pagination">
+	                {page > 1 ? <a className="page left" onClick={::this.getPage} data-page={page - 1}>&larr; Previous</a> : null}
+	                {next_page ? <a className="page right" onClick={::this.getPage} data-page={next_page}>Next &rarr;</a> : null}
+	            </div>
+			}
+
+			eventFeed = (
+				<div>
+	                <div className="event-title-section">
+	                    <Row className="collapse">
+	                        <Column s="medium-8" a="left">
+	                            <div className="title">My Events</div>
+	                        </Column>
+	                        <Column s="medium-4" a="right">
+	                            <Link className="solid-button green create" to="/event/edit">Create New Event</Link>
+	                        </Column>
+	                    </Row>
+	                    <Row>
+	                        <h2 className="subtitle">EVENTS CREATED BY ME</h2>
+	                    </Row>
+	                </div>
+					<ul className="unindented">
+						{itemList}
+					</ul>
+	                {pagination}
+				</div>
+			)
+
+		} else {
+			eventFeed = (
+				<div className='event-title-section no-content-prompt text-center'>
+                    <div className="title">My Events</div>
+                    <div className="create-wrapper">
+	                    <Link className="solid-button green create" to="/event/edit">Create Your First Event</Link>
+	                </div>
+                    <Link className="learn" to="http://help.youversion.com">Learn how to make a great Event</Link>
+				</div>
+			)
+		}
+
 		return (
 			<div className="medium-10 large-7 columns small-centered">
 				<Helmet title="My Events" />
 				<NoticeBanner />
 				<EventHeader {...this.props} />
-                <div className="event-title-section">
-                    <Row className="collapse">
-                        <Column s="medium-8" a="left">
-                            <h1 className="title">My Events</h1>
-                        </Column>
-                        <Column s="medium-4" a="right">
-                            <Link className="solid-button green" to="/event/edit">Create New Event</Link>
-                        </Column>
-                    </Row>
-                    <Row>
-                        <h2 className="subtitle">EVENTS CREATED BY ME</h2>
-                    </Row>
-                </div>
-				<ul className="unindented">
-					{itemList}
-				</ul>
-                {pagination}
+				{eventFeed}
 			</div>
 		)
 	}

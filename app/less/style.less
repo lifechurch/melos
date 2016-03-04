@@ -173,22 +173,35 @@ img.publishedButtonCheckmark {
 
 div.event-title-section {
 
-    h1.title {
+    .title {
         font-size: 36px;
         color: #353535;
         line-height: 42px;
     }
 
-		h2.subtitle {
-				font-size: 13px;
-				color: #888888;
-				line-height: 16px;
-		}
+	h2.subtitle {
+			font-size: 13px;
+			color: #888888;
+			line-height: 16px;
+	}
 
-		.solid-button {
-				float: right;
-		}
+	.solid-button {
+			float: right;
+	}
 
+	&.no-content-prompt {
+		.create-wrapper {
+		    min-width: 50%;
+		    margin: 80px auto;
+		    padding: 40px 0;
+		    border: 3px dashed #ccc;
+		    border-radius: 10px;
+		}
+		.create {
+			float: inherit;
+		    margin: 0;
+		}
+	}
 }
 
 img.event-thumbnail {
@@ -198,7 +211,7 @@ img.event-thumbnail {
 		padding-right: 15px;
 }
 
-li.event-item {
+.event-item {
 		list-style-type: none;
 		border: 1px;
 		border-style: solid;
@@ -213,17 +226,20 @@ li.event-item {
 			margin-right: 10px;
 		}
 
-		.title {
-			font-size: 18px;
-			color: #0084c8;
-			line-height: 21px;
+		.details {
+			margin-top: 10px;
+
+			.title {
+				font-size: 18px;
+				color: #0084c8;
+				line-height: 21px;
+			}
 		}
 
 		.action {
 			float: right;
 			margin-top: 20px;
 		}
-
 }
 
 .content-header {
@@ -683,36 +699,21 @@ form.locationForm {
 		}
 	}
 
-		select {
-				margin-bottom: 15px;
-		}
+	select {
+			margin-bottom: 15px;
+	}
 
-		div.selectTitle {
-				padding-left: 5px;
-		}
+	div.selectTitle {
+			padding-left: 5px;
+	}
 
-		div.verseText {
-				margin: 15px;
-		}
+	div.verseText {
+			margin: 15px;
+	}
 
-		.verseContent {
-				margin: 0px !important;
-				padding: 0px !important;
-				line-height: 24px;
-				color: #000000;
-		}
-
-		.verseNumber {
-				margin: 0px !important;
-				padding: 0px !important;
-				line-height: 14px;
-				font-size: 10px;
-				color: #979797;
-		}
-
-		.errorText {
-				color: red;
-		}
+	.errorText {
+			color: red;
+	}
 }
 
 .event-edit-time-form {
@@ -788,6 +789,14 @@ form.locationForm {
 	}
 }
 
+.quill-contents {
+	display: table;
+	width: 100%;
+}
+.ql-editor {
+	height: 100%;
+}
+
 .content-container {
 	margin-top: 34px;
 
@@ -853,9 +862,37 @@ form.locationForm {
 			a { color: inherit; text-decoration: underline;}
 		}
 
+		&.content-announcement {
+			input {
+				color: #000;
+			}
+		}
+
 		&.content-url {
 			textarea {
 				padding: 0 9px;
+			}
+		}
+
+		&.content-reference {
+			select, input {
+				margin-bottom: 5px;
+			}
+
+			.verseContent {
+					margin: 0px;
+					padding: 0px;
+					line-height: 24px;
+					font-size: 15px;
+					color: #000000;
+			}
+
+			.verseNumber {
+					margin: 0px;
+					padding: 0px;
+					line-height: 14px;
+					font-size: 12px;
+					color: #979797;
 			}
 		}
 

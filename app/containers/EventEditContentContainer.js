@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
+import Row from '../components/Row'
+import Column from '../components/Column'
+import { Link } from 'react-router'
 import ContentHeader from '../features/EventEdit/features/content/components/ContentHeader'
 import ContentFeed from '../features/EventEdit/features/content/components/ContentFeed'
 import ActionCreators from '../features/EventEdit/features/content/actions/creators'
@@ -60,8 +63,8 @@ class EventEditContentContainer extends Component {
 					data: {
 						version_id: 1,
 						chapter: '',
-						human: 'Genesis ',
-						usfm: ['GEN']
+						human: ' ',
+						usfm: ['']
 					}
 				}
 			)
@@ -196,28 +199,30 @@ class EventEditContentContainer extends Component {
 
 	render() {
 		const { event, references, plans, dispatch, modals } = this.props
-		let contentFeed = (
-			<ContentFeed
-				dispatch={dispatch}
-				event={event}
-				references={references}
-				plans={plans}
-				handleUpdate={::this.handleUpdate}
-				handleChange={::this.handleChange}
-				handleRemove={::this.handleRemove}
-				handleMove={::this.handleMove}
-				handleStartReorder={::this.handleStartReorder}
-				handleReorder={::this.handleReorder}
-			/>
-		)
 
+		let contentFeed
 		if (typeof event !== 'object' || !Array.isArray(event.item.content) || event.item.content.length === 0) {
 			contentFeed = (
 				<div className='no-content-prompt text-center'>
 					<img src={`/images/${RevManifest('up-arrow-thin.png')}`} />
 					<p>Choose some content to get started.</p>
-					<a>Need help?</a>
+					<a target="_blank" href="http://help.youversion.com">Need help?</a>
 				</div>
+			)
+		} else {
+			contentFeed = (
+				<ContentFeed
+					dispatch={dispatch}
+					event={event}
+					references={references}
+					plans={plans}
+					handleUpdate={::this.handleUpdate}
+					handleChange={::this.handleChange}
+					handleRemove={::this.handleRemove}
+					handleMove={::this.handleMove}
+					handleStartReorder={::this.handleStartReorder}
+					handleReorder={::this.handleReorder}
+				/>
 			)
 		}
 
@@ -239,6 +244,11 @@ class EventEditContentContainer extends Component {
 				<div className='content-container'>
 					{contentFeed}
 				</div>
+				<Row>
+					<Column s='medium-12' a='right'>
+						<Link disabled={!event.rules.preview.canView} to={`/event/edit/${event.item.id}/preview`}>Next: Preview &rarr;</Link>
+					</Column>
+				</Row>
 				<LiveWarningModal event={event} dispatch={dispatch} modalState={modals.LiveWarning} handleClose={::this.handleCloseModal} />
 			</div>
 		)

@@ -178,7 +178,7 @@ class EventEditLocationContainer extends Component {
 		}
 
 		var centerButtons
-		if (!(event.item && event.item.locations && event.item.locations.length > 0)) {
+		if (!(event.item && event.item.locations && Object.keys(event.item.locations).length > 0)) {
 			centerButtons = 'center-single-item'
 		}
 
@@ -240,7 +240,7 @@ class EventEditLocationContainer extends Component {
 				</Row>
 				<Row>
 					<Column s='medium-12' a='right'>
-						<Link disabled={!event.rules.content.canView} to={`/event/edit/${event.item.id}/content`}>Next: Add Content</Link>
+						<Link disabled={!event.rules.content.canView} to={`/event/edit/${event.item.id}/content`}>Next: Add Content &rarr;</Link>
 					</Column>
 				</Row>
 			</div>
