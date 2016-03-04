@@ -1,3 +1,7 @@
+- events_link = "/sign-up?redirect=events-admin"
+- if current_auth
+  - events_link = "https://events.bible.com/"
+
 .MobileDropdown
   .close-dropdown-btn-mobile
     %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/close.svg"), :style => "width:26px;"}/
@@ -16,7 +20,6 @@
       %a.logo{:href => "/features/events"}
         %img.logo-white{:alt => "", "data-no-retina" => "", :src => image_path("features/events/yv-logo-white.svg")}/
         %img.logo-black{:alt => "", "data-no-retina" => "", :src => image_path("features/events/yv-logo-gray.svg")}/
-      .coming-soon Coming Soon
       %ul.main-nav
         %li
           %a.features-btn{:href => '/features/events'} Features
@@ -26,7 +29,8 @@
           %a{:href => '/features/market-your-event'} Market Your Event
         %li.btn2
           %a{:href => "mailto:?subject=This new feature from YouVersion could really help our church!&amp;body=Have you seen YouVersion’s new Events feature yet? I believe it would really help our church engage people more with our services. It lets people add their own notes during a service, then even save the event so they can come back later and study it with the Bible references. I think it could probably save us money on printing costs, too. Here’s YouVersion’s Events website: http://www.bible.com/features/events.", :target => "_blank"} Tell Your Church
-        -#/ <li class="btn2"><a href="#">Create an Event</a></li>
+        %li.btn2
+          %a{:href => events_link} Create an Event
       .clearfix
     / //header
   / //header-wrap

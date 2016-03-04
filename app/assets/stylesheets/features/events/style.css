@@ -227,7 +227,7 @@ p {
 	border-radius:4px;
 }
 .header ul.main-nav li:last-child {
-	padding-left: 36px!Important;
+	padding-left: 12px!Important;
 	/* Change to 12px after launch*/
 }
 /* Header Fixed for Sub Pages */

@@ -15,3 +15,8 @@
         %p.hide
           = text_field_tag :email, @email
           = submit_tag(t('users.resend verification'), :id => "resend")
+      - if (params.has_key?(:redirect) && params[:redirect].to_s.eql?("events-admin"))
+        %br
+        %br
+        %p After confirming your email, login at:
+        = link_to('https://events.bible.com', 'https://events.bible.com/', target: '_blank')
