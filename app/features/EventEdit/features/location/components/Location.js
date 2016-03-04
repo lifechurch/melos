@@ -23,6 +23,16 @@ class Location extends Component {
 			return (<p key={i}>{start}</p>)
 		})
 
+		let addTimeButton = null
+
+		if (!Array.isArray(loc.times) || loc.times.length === 0) {
+			addTimeButton = (
+				<a className='addTimes' disabled={!event.rules.locations.canEdit} onClick={::this.handleEditClick} title='Add at least one time.'>
+					Add at least one time.
+				</a>
+			)
+		}
+
 		const className = ['location-container', loc.isSelected ? 'selected' : 'not-selected'].join(' ')
 
 		return (
@@ -43,6 +53,7 @@ class Location extends Component {
 				<div className='body'>
 					<p>{loc.name}</p>
 					<p>{loc.formatted_address}</p>
+					{addTimeButton}
 					<div className='times'>
 						{times}
 					</div>
