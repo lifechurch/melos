@@ -28,10 +28,6 @@ class Auth extends Component {
 		}))
 	}
 
-	handleForgotPassword(clickEvent) {
-		// TODO
-	}
-
 	handleKeyPress(keyEvent) {
 		if (keyEvent.key === 'Enter') {
 			const login = ::this.handleLogin
@@ -59,7 +55,10 @@ class Auth extends Component {
 					<NoticeBanner />
 					<h1>Sign In</h1>
 					<p className="auth__subhead">
-					If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.
+					If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/>
+					<br/>
+					Don’t have a YouVersion account yet? <br/>
+					<a href="https://www.bible.com/sign-up?redirect=events-admin"> Sign up now at Bible.com</a> to start creating Events.
 					</p>
 
 					<div className="form-body-block white">
@@ -84,7 +83,7 @@ class Auth extends Component {
 							onKeyPress={::this.handleKeyPress} />
 
 						<a className='solid-button green' onClick={::this.handleLogin}>Sign In</a>
-						<a className='forgot-password' onClick={::this.handleForgotPassword}>Forgot Password</a>
+						<a className='forgot-password' href="https://www.bible.com/settings/forgot_password">Forgot Password</a>
 					</div>
 				</div>
 			</div>
