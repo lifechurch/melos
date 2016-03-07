@@ -138,7 +138,7 @@ class EventListItem extends Component {
 		if (item.status < 3) {
 			action = <Link className="hollow-button gray action" to={'/event/edit/' + item.id}>Edit</Link>
 		} else { // archived+
-			action = <Link className="hollow-button gray action" to={'http://bible.com/events/' + item.id}>View</Link>
+			action = <a className="hollow-button gray action" target="_blank" href={'https://www.bible.com/events/' + item.id}>View</a>
 		}
 
 		return (
