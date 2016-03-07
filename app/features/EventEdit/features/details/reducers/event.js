@@ -9,6 +9,7 @@ import { fromApiFormat as contentFromApiFormat } from '../../content/transformer
 import arrayToObject from '../../../../../lib/arrayToObject'
 import mergeObjects from '../../../../../lib/mergeObjects'
 import applyLifecycleRules from '../../../validators/applyLifecycleRules'
+import moment from 'moment'
 
 function selectLocation(locations, id, selected) {
 	if (['string', 'number'].indexOf(typeof id) === -1) {
@@ -345,15 +346,13 @@ export default function event(state = {}, action) {
 
 		case contentType('updateSuccess'):
 		case contentType('addSuccess'):
-			var newContent = Object.assign({}, action.response, state.item.content[action.params.index])
+			var newContent = Object.assign({}, action.response, state.item.content[action.params.index], { isDirty: false, isSaving: false, isSaved: true, lastSaved: moment(), hasError: false })
 
 			if (action.response.type == 'reference') {
 				newContent.data.usfm = action.response.data.usfm
 				newContent.data.human = action.response.data.human
 			}
 
-			newContent.isDirty = false
-			newContent.isSaving = false
 			return applyLifecycleRules(Object.assign({}, state, {
 				item: {
 					...state.item,
@@ -365,8 +364,9 @@ export default function event(state = {}, action) {
 				}
 			}))
 
+		case contentType('addFailure'):
 		case contentType('updateFailure'):
-			var newContent = Object.assign({}, action.response, state.item.content[action.params.index])
+			var newContent = Object.assign({}, action.response, state.item.content[action.params.index], { hasError: true, isSaving: false, isDirty: true })
 			newContent.errors = Object.assign({}, {...newContent.errors}, {'update': action.api_errors})
 
 			return Object.assign({}, state, {

@@ -48,7 +48,7 @@ class EventEditShare extends Component {
 	}
 
 	render() {
-    	const eventItem = this.props.event.item
+    const eventItem = this.props.event.item
 		var interval = setInterval(function() {
 			if (typeof window != 'undefined' && window.addthis) {
 				clearInterval(interval);
@@ -63,7 +63,7 @@ class EventEditShare extends Component {
 				<div className="event">
 					{image}
 		    		<Link className={image ? "title" : "title center"} to={"http://bible.com/events/" + eventItem.id} target="_blank">{eventItem.title}</Link>
-		    		<Link className={image ? "dates" : "dates center"}>{::this.getDates()}</Link>
+		    		<a className={image ? "dates" : "dates center"}>{::this.getDates()}</a>
 				</div>
 				<div className="actions">
 					<Link className="edit" to={`/event/edit/${eventItem.id}`}><img src={`/images/${RevManifest('edit.png')}`} />Re-edit Event</Link>
