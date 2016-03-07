@@ -47,8 +47,14 @@ class EventEditShare extends Component {
 		return "";
 	}
 
+	handleCopyLink() {
+		// alert('Link in clipboard')
+		console.log('clicked')
+	}
+
 	render() {
-    const eventItem = this.props.event.item
+		const { event } = this.props
+	    const eventItem = event.item
 		var interval = setInterval(function() {
 			if (typeof window != 'undefined' && window.addthis) {
 				clearInterval(interval);
@@ -66,18 +72,25 @@ class EventEditShare extends Component {
 		    		<a className={image ? "dates" : "dates center"}>{::this.getDates()}</a>
 				</div>
 				<div className="actions">
-					<Link className="edit" to={`/event/edit/${eventItem.id}`}><img src={`/images/${RevManifest('edit.png')}`} />Re-edit Event</Link>
+					<Link className="edit" to={`/event/edit/${eventItem.id}`}><img src={`/images/${RevManifest('edit.png')}`} />Edit Event</Link>
 					<Link className="my-events" to={`/`}>Go to My Events</Link>
 				</div>
 				<div className="page-subtitle"><span>Share your event:</span></div>
 				<div className="details">
-			    	<Link className="shorturl" to={"http://bible.com/events/" + eventItem.id} target="_blank">{"http://bible.com/events/" + eventItem.id}</Link>
+			    	<span className="shorturl">{"http://bible.com/events/" + eventItem.id}</span>
 			    	<CopyToClipboard text={"http://bible.com/events/" + eventItem.id}>
 					<a className="copy">Copy</a>
 			    	</CopyToClipboard>
 				</div>
 				<div className="addthis_sharing_toolbox"></div>
 				<hr />
+				<Row>
+					<Column s='medium-6'>
+						<Link disabled={!event.rules.preview.canView} to={`/event/edit/${event.item.id}/preview`}>&larr; Previous: Preview</Link>
+					</Column>
+					<Column s='medium-6' a='right'>
+					</Column>
+				</Row>
 			</div>
 		)
 	}

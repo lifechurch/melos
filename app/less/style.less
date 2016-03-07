@@ -4,6 +4,9 @@
 @import "colors";
 @import "typography";
 
+#react-app {
+	padding-bottom: 40px;
+}
 
 body {
     font-family: @base-font-family;
@@ -146,7 +149,7 @@ ul.unindented {
 		text-align: center;
 		margin-bottom: 40px;
 
-		a {
+		.shorturl, a {
 			width: 50px;
 			margin-right: 20px;
 			font-size: 1.2em;
@@ -293,8 +296,8 @@ img.event-thumbnail {
 	font-size: 13px;
 	color: #979797;
 	line-height: 15px;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 20px;
+	padding-bottom: 5px;
 	border-bottom: 1px solid #DDDDDD;
 
 	div.row:first-child {
@@ -509,7 +512,7 @@ a.active span {
 input[type=text],
 input[type=password],
 select {
-	color: #979797;
+	color: #555;
 	border: none;
 	border-bottom: 1px solid #CCCCCC;
 	border-radius: 0;

@@ -239,7 +239,10 @@ class EventEditLocationContainer extends Component {
 					</div>
 				</Row>
 				<Row>
-					<Column s='medium-12' a='right'>
+					<Column s='medium-6'>
+						<Link disabled={!event.rules.details.canView || event.isReordering} to={`/event/edit/${event.item.id}`}>&larr; Previous: Details</Link>
+					</Column>
+					<Column s='medium-6' a='right'>
 						<Link disabled={!event.rules.content.canView || event.isReordering} to={`/event/edit/${event.item.id}/content`}>Next: Add Content &rarr;</Link>
 					</Column>
 				</Row>
