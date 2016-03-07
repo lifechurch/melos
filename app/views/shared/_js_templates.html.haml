@@ -75,6 +75,11 @@
             = presenter.reference.audio.copyright_short.text
           %audio#reader_audio_player{src:presenter.reference.audio.url, "ng-src" => '{{audioData.trustedUrl}}', :type => 'audio/mpeg', :preload => "none", :controls => 'controls'}
             ="Your browser does not support the audio element."
+          %div.copyright_long
+            %p
+              = raw presenter.reference.audio.copyright_long.html
+            %a.action_button_blue{:href => presenter.reference.audio.publisher_link, :target => "_blank"}
+              = t("audio.publisher website")
   #reader-audio-panel.ng-hide
     .large-3.medium-6.reader-panel.right
       - if presenter.reference.audio.present?
