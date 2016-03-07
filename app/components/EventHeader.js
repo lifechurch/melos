@@ -33,7 +33,7 @@ class EventHeader extends Component {
 	}
 
 	getPublishSection() {
-		const { item, isSaving, errors } = this.props.event
+		const { item, isSaving, isReordering, errors } = this.props.event
 		switch (item.status) {
 			case EventStatus('published'):
 				return (
@@ -48,7 +48,7 @@ class EventHeader extends Component {
 			case EventStatus('draft'):
 				return (
 					<Column s='medium-5' a='right'>
-						<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving}>{ isSaving ? 'Saving...' : 'Save as Draft' }</a>
+						<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving || isReordering}>{ isSaving ? 'Saving...' : 'Save as Draft' }</a>
 					</Column>
 				)
 

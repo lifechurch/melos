@@ -40,11 +40,11 @@ class EventEditNav extends Component {
 
 		return (
 			<ul className='event-edit-nav button-group small radius'>
-				<li><Link disabled={!event.rules.details.canView} className={detailsClassname()} to={`/event/edit/${params.id}`}>Details</Link></li>
-				<li><a disabled={!event.rules.locations.canView} className={locationsClassname()} onClick={::this.handleDetailsNext}>Locations & Times</a></li>
-				<li><Link disabled={!event.rules.content.canView} className={contentClassname()} to={`/event/edit/${params.id}/content`}>Content</Link></li>
-				<li><Link disabled={!event.rules.preview.canView} className={previewClassname()} to={`/event/edit/${params.id}/preview`}>Preview & Publish</Link></li>
-				<li><Link disabled={!event.rules.share.canView} className={shareClassname()} to={`/event/edit/${params.id}/share`}>Share</Link></li>
+				<li><Link disabled={!event.rules.details.canView || event.isReordering} className={detailsClassname()} to={`/event/edit/${params.id}`}>Details</Link></li>
+				<li><a disabled={!event.rules.locations.canView || event.isReordering} className={locationsClassname()} onClick={::this.handleDetailsNext}>Locations & Times</a></li>
+				<li><Link disabled={!event.rules.content.canView || event.isReordering} className={contentClassname()} to={`/event/edit/${params.id}/content`}>Content</Link></li>
+				<li><Link disabled={!event.rules.preview.canView || event.isReordering} className={previewClassname()} to={`/event/edit/${params.id}/preview`}>Preview & Publish</Link></li>
+				<li><Link disabled={!event.rules.share.canView || event.isReordering} className={shareClassname()} to={`/event/edit/${params.id}/share`}>Share</Link></li>
 			</ul>
 		)
 	}
