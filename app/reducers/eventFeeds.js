@@ -10,6 +10,7 @@ import {
 	EVENT_FEED_MINE_FAILURE
 } from '../actions'
 import type from '../features/EventFeedMine/actions/constants'
+import detailsType from '../features/EventFeedMine/actions/constants'
 
 export function eventFeeds(state = {}, action) {
 	switch(action.type) {
@@ -45,6 +46,17 @@ export function eventFeeds(state = {}, action) {
 			var itemsCopy = state.mine.items.slice(0)
 			itemsCopy[action.index].status = action.status
 			return Object.assign({}, state, { mine: { items: itemsCopy } })
+
+		case detailsType('deleteRequest'):
+			return Object.assign({}, state, {
+				mine: {
+					...state.mine,
+					items: [
+						...state.mine.items.slice(0, action.index),
+						...state.mine.items.slice(action.index + 1)
+					]
+				}
+			})
 
 		default:
 			return state;

@@ -10,6 +10,7 @@ import Column from '../components/Column'
 import EventListItem from '../features/EventFeedMine/components/EventListItem'
 import ActionCreators from '../features/EventFeedMine/actions/creators'
 import NoticeBanner from '../components/NoticeBanner'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class EventFeedMine extends Component {
 	componentWillMount() {
@@ -21,6 +22,11 @@ class EventFeedMine extends Component {
 	handleDuplicate(id) {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.duplicate({id}))
+	}
+
+	handleDelete(id, index) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.delete(id, index))
 	}
 
 	getPage(e) {
@@ -38,6 +44,7 @@ class EventFeedMine extends Component {
 					key={item.id}
 					item={item}
 					handleDuplicate={::this.handleDuplicate}
+					handleDelete={::this.handleDelete}
 					index={index}
 					dispatch={dispatch}
 					startOffset={configuration.startOffset} />)
@@ -70,7 +77,9 @@ class EventFeedMine extends Component {
 	                    </Row>
 	                </div>
 					<ul className="unindented">
-						{itemList}
+						<ReactCSSTransitionGroup transitionName='content'>
+							{itemList}
+						</ReactCSSTransitionGroup>
 					</ul>
 	                {pagination}
 				</div>

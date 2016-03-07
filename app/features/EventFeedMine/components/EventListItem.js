@@ -78,11 +78,12 @@ class EventListItem extends Component {
 	}
 
 	getDraftDetails() {
-		const { item, handleDuplicate } = this.props
+		const { item, handleDuplicate, handleDelete, index } = this.props
 		return (
 			<div className="events-details">
 				<span className="gray-label">DRAFT</span>
 				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
+				<a className="small-link" onClick={handleDelete.bind(this, item.id, index)}>Delete</a>
 			</div>
 		)
 	}

@@ -13,6 +13,23 @@ const ActionCreators = {
 		}
 	},
 
+	delete(id, index) {
+		return {
+			index,
+			id,
+			api_call: {
+				endpoint: 'events',
+				method: 'delete',
+				version: '3.2',
+				auth: true,
+				params: { id },
+				http_method: 'post',
+				types: [ contentType('deleteRequest'), contentType('deleteSuccess'), contentType('deleteFailure') ]
+			}
+		}
+	},
+
+
 	callDuplicate(params) {
 		return {
 			params: {
@@ -29,7 +46,7 @@ const ActionCreators = {
 			}
 		}
 	},
-	
+
 	setStatus(index, status) {
 		return {
 			type: contentType('setStatus'),
@@ -37,7 +54,7 @@ const ActionCreators = {
 			status: status
 		}
 	},
-	
+
 	configuration() {
 		return {
 			api_call: {
