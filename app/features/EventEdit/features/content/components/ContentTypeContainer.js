@@ -10,7 +10,7 @@ import ContentTypeLink from './ContentTypeLink'
 import RevManifest from '../../../../../../app/lib/revManifest'
 import ErrorMessage from '../../../../../../app/components/ErrorMessage'
 
-const AUTO_SAVE_TIMEOUT = 1000
+const AUTO_SAVE_TIMEOUT = 3000
 
 class ContentTypeContainer extends Component {
 
@@ -123,8 +123,12 @@ class ContentTypeContainer extends Component {
 						<div className='form-body'>
 							<ErrorMessage hasError={content.errors && Object.keys(content.errors).length} errors={content.errors} />
 							{InnerContainer}
-							{ content.isDirty ? 'D' : '.'}
-							{ content.isSaving ? 'Saving...' : '.'}
+							<span className='content-status'>
+								{ (content.isDirty && !content.isSaving && !content.hasError) ? 'Content will automatically save a few seconds after you stop typing.' : null }
+								{ (content.hasError && !content.isSaving) ? <span className='error-text'>Unable to save. <a onClick={::this.handleUpdateClick}>Try again.</a></span> : null }
+								{ (content.isSaved && !content.isSaving && !content.hasError && !content.isDirty) ? 'Last saved ' + content.lastSaved.fromNow() : null }
+								{ content.isSaving ? 'Saving...' : null }
+							</span>
 						</div>
 					</div>
 				</Row>
