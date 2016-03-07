@@ -69,7 +69,7 @@ class UsersController < ApplicationController
         return redirect_to(authorize_licenses_path(confirm: true))
       else
         cookies[:tempemail] = @user.email
-        return redirect_to confirm_email_path
+        return redirect_to confirm_email_path(@confirm_email, redirect: params[:redirect])
         # maybe we can sign them in and redirect them. but maybe not.
         # return follow_redirect(notice: "#{t("users.thanks for registering")} #{t("users.confirm email")}")
       end
