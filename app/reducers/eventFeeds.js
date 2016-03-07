@@ -48,13 +48,48 @@ export function eventFeeds(state = {}, action) {
 			return Object.assign({}, state, { mine: { items: itemsCopy } })
 
 		case detailsType('deleteRequest'):
+			var original = Object.assign({}, state.mine.items[action.index])
 			return Object.assign({}, state, {
 				mine: {
 					...state.mine,
 					items: [
 						...state.mine.items.slice(0, action.index),
 						...state.mine.items.slice(action.index + 1)
-					]
+					],
+					deleted: {
+						[action.id]: original
+					}
+				}
+			})
+
+		case detailsType('deleteSuccess'):
+			var deleted = Object.assign({}, state.mine.deleted)
+			if (typeof deleted === 'object') {
+				delete deleted[action.id]
+			}
+			return Object.assign({}, state, {
+				mine: {
+					...state.mine,
+					deleted
+				}
+			})
+
+		case detailsType('deleteFailure'):
+			var deleted = Object.assign({}, state.mine.deleted)
+			var original = {}
+			if (typeof deleted === 'object') {
+				original = Object.assign({}, deleted[action.id], { hasError: true, error: action.api_errors })
+				delete deleted[action.id]
+			}
+			return Object.assign({}, state, {
+				mine: {
+					...state.mine,
+					items: [
+						...state.mine.items.slice(0, action.index),
+						original,
+						...state.mine.items.slice(action.index)
+					],
+					deleted
 				}
 			})
 

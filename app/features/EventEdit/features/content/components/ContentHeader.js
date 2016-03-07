@@ -27,13 +27,13 @@ class ContentHeader extends Component {
 			<div className='content-header'>
 				<Row>
 					<Column s='medium-12'>
-						<a disabled={!event.rules.content.canAdd} onClick={handleAddText} className='hollow-button green'>Text</a>
-						<a disabled={!event.rules.content.canAdd} onClick={handleAddReference} className='hollow-button green'>Bible Reference</a>
-						<a disabled={!event.rules.content.canAdd} onClick={handleAddPlan} className='hollow-button green'>Plan</a>
-						<a disabled={!event.rules.content.canAdd} onClick={handleAddImage} className='hollow-button green'>Image</a>
-						<a disabled={!event.rules.content.canAdd} onClick={handleAddLink} className='hollow-button green'>External Link</a>
-						<a disabled={!event.rules.content.canAdd} onClick={handleAddGiving} className='hollow-button green'>Giving Link</a>
-						<a disabled={!event.rules.content.canAdd} onClick={handleAddAnnouncement} className='hollow-button green'>Announcement</a>
+						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddText} className='hollow-button green'>Text</a>
+						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddReference} className='hollow-button green'>Bible Reference</a>
+						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddPlan} className='hollow-button green'>Plan</a>
+						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddImage} className='hollow-button green'>Image</a>
+						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddLink} className='hollow-button green'>External Link</a>
+						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddGiving} className='hollow-button green'>Giving Link</a>
+						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddAnnouncement} className='hollow-button green'>Announcement</a>
 						<div className='right'>
 							<a onClick={::this.handleOpenModal}>?</a>
 						</div>
