@@ -187,14 +187,18 @@ export default function event(state = {}, action) {
 			newContent.isDirty = false
 			newContent.temp_content_id = new Date().getTime()
 			newContent.errors = {}
+			var content = [
+				...state.item.content.slice(0, action.params.index),
+				newContent,
+				...state.item.content.slice(action.params.index)
+			]
+
+			content = sortContent(content)
+
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
-					content: [
-						...state.item.content.slice(0, action.params.index),
-						newContent,
-						...state.item.content.slice(action.params.index)
-					]
+					content
 				}
 			})
 

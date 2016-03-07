@@ -10,11 +10,25 @@ import RevManifest from '../../app/lib/revManifest'
 import { ActionCreators as ModalActionCreators } from '../actions/modals'
 import LiveWarningModal from '../features/EventEdit/features/content/components/LiveWarningModal'
 
-function createBaseContentObject(eventId, type) {
+let smoothScroll = {}
+if (typeof window !== 'undefined') {
+	smoothScroll = require('smooth-scroll')
+}
+
+function createBaseContentObject(event, type) {
+	let maxSort = 0
+	if (Array.isArray(event.item.content)) {
+		for (const c of event.item.content) {
+			if (c.sort > maxSort) {
+				maxSort = c.sort
+			}
+		}
+	}
+
 	return {
-		id: eventId,
+		id: event.item.id,
 		type: type,
-		sort: 0,
+		sort: maxSort + 100,
 		index: 0
 	}
 }
@@ -27,116 +41,116 @@ class EventEditContentContainer extends Component {
 
 	handleAddText() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.new(
-			Object.assign({},
-				createBaseContentObject(event.item.id, 'text'),
-				{
-					data: {
-						body: ''
-					}
+		const newContent = Object.assign({},
+			createBaseContentObject(event, 'text'),
+			{
+				data: {
+					body: ''
 				}
-			)
-		))
+			}
+		)
+		dispatch(ActionCreators.new(newContent))
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
 	}
 
 	handleAddAnnouncement() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.new(
-			Object.assign({},
-				createBaseContentObject(event.item.id, 'announcement'),
-				{
-					data: {
-						title: '',
-						body: ''
-					}
+		const newContent = Object.assign({},
+			createBaseContentObject(event, 'announcement'),
+			{
+				data: {
+					title: '',
+					body: ''
 				}
-			)
-		))
+			}
+		)
+		dispatch(ActionCreators.new(newContent))
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
 	}
 
 	handleAddReference() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.new(
-			Object.assign({},
-				createBaseContentObject(event.item.id, 'reference'),
-				{
-					data: {
-						version_id: 1,
-						chapter: '',
-						human: ' ',
-						usfm: ['']
-					}
+		const newContent =Object.assign({},
+			createBaseContentObject(event, 'reference'),
+			{
+				data: {
+					version_id: 1,
+					chapter: '',
+					human: ' ',
+					usfm: ['']
 				}
-			)
-		))
+			}
+		)
+		dispatch(ActionCreators.new(newContent))
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
 	}
 
 	handleAddPlan() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.new(
-			Object.assign({},
-				createBaseContentObject(event.item.id, 'plan'),
-				{
-					data: {
-						plan_id: 0,
-						language_tag: 'en',
-						title: '',
-						formatted_length: '',
-						images: [],
-						short_url: ''
-					}
+		const newContent = Object.assign({},
+			createBaseContentObject(event, 'plan'),
+			{
+				data: {
+					plan_id: 0,
+					language_tag: 'en',
+					title: '',
+					formatted_length: '',
+					images: [],
+					short_url: ''
 				}
-			)
-		))
+			}
+		)
+		dispatch(ActionCreators.new(newContent))
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
 	}
 
 	handleAddImage() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.new(
-			Object.assign({},
-				createBaseContentObject(event.item.id, 'image'),
-				{
-					data: {
-						image_id: '0',
-						body: ''
-					}
+		const newContent = Object.assign({},
+			createBaseContentObject(event, 'image'),
+			{
+				data: {
+					image_id: '0',
+					body: ''
 				}
-			)
-		))
+			}
+		)
+		dispatch(ActionCreators.new(newContent))
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
 	}
 
 	handleAddLink() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.new(
-			Object.assign({},
-				createBaseContentObject(event.item.id, 'url'),
-				{
-					data: {
-						// This initial content is validated by validateUrlType
-						title: '',
-						body: '',
-						url: ''
-					}
+		const newContent = Object.assign({},
+			createBaseContentObject(event, 'url'),
+			{
+				data: {
+					// This initial content is validated by validateUrlType
+					title: '',
+					body: '',
+					url: ''
 				}
-			)
-		))
+			}
+		)
+		dispatch(ActionCreators.new(newContent))
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
 	}
 
 	handleAddGiving() {
 		const { event, dispatch } = this.props
-		dispatch(ActionCreators.new(
-			Object.assign({},
-				createBaseContentObject(event.item.id, 'url'),
-				{
-					iamagivinglink: true,
-					data: {
-						title: '',
-						body: '',
-						url: ''
-					}
+		const newContent = Object.assign({},
+			createBaseContentObject(event, 'url'),
+			{
+				iamagivinglink: true,
+				data: {
+					title: '',
+					body: '',
+					url: ''
 				}
-			)
-		))
+			}
+		)
+		dispatch(ActionCreators.new(newContent))
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
 	}
 
 	handleUpdate(index, params) {
