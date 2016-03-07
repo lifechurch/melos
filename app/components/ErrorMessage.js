@@ -18,7 +18,10 @@ function getErrorFromKey(key) {
 		'events.latitude.required': 'You must choose a location from the map.',
 		'events.google_place_id.required': 'You must choose a location from the map.',
 		'events.timezone.required': 'Timezone is required.',
-		'events.times.0.start_dt.must_be_a_future_date': 'Start Time cannot be in the past.'
+		'events.times.0.start_dt.must_be_a_future_date': 'Start Time cannot be in the past.',
+		'events.usfm.invalid': 'Bible reference not valid.',
+		'events.url.required': 'URL is required.',
+		'bible.reference.not_found': 'Bible reference not valid.'
 	}
 	const message = errors[key]
 	return typeof message === 'string' ? message : [genericError, key].join(': ')
