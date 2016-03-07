@@ -121,7 +121,7 @@ class ContentTypeContainer extends Component {
 					<div className='medium-12'>
 						{content.type.toUpperCase()} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
 						<div className='form-body'>
-							<ErrorMessage hasError={content.errors && Object.keys(content.errors).length} errors={content.errors} />
+							<ErrorMessage hasError={content.errors && Object.keys(content.errors).length} errors={content.errors} scope={content.type} />
 							{InnerContainer}
 							<span className='content-status'>
 								{ (content.isDirty && !content.isSaving && !content.hasError) ? 'Content will automatically save a few seconds after you stop typing.' : null }
