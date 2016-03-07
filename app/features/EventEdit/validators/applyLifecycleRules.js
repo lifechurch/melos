@@ -49,7 +49,7 @@ function checkStatus(event, rules) {
 
 			case EventStatus('published'):
 				rules.details.canView 					= true
-				rules.details.canEdit 					= false
+				rules.details.canEdit 					= true
 
 				rules.locations.canView 				= true
 				rules.locations.canAddVirtual 	= { modal: 'Unpublish' }
