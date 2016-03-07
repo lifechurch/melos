@@ -151,6 +151,7 @@ class EventListItem extends Component {
 						{this.getDetails()}
 					</div>
 				</Row>
+				{ item.hasError ? <div className='error-text'>Unable to delete Event</div> : null }
 			</li>
 		)
 	}
