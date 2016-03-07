@@ -116,7 +116,7 @@ class ContentTypeContainer extends Component {
 		let classNames = 'content-type content-' + content.type
 
 		return (
-			<div className={classNames}>
+			<div className={classNames} id={`content-${content.sort}`}>
 				<Row>
 					<div className='medium-12'>
 						{content.type.toUpperCase()} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
