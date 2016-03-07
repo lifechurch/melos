@@ -5,7 +5,7 @@ export default function references(state = {}, action) {
 
 		case contentType('versionsSuccess'):
 			var versions = action.response.versions
-			var new_state = Object.assign({}, state)
+			var new_state = Object.assign({}, state, {'order': versions.map((v) => { return v.id })})
 			for (var i = versions.length - 1; i >= 0; i--) {
 				new_state.versions[versions[i].id] = versions[i]
 			}

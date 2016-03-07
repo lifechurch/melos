@@ -173,11 +173,19 @@ class ContentTypeReference extends Component {
 		if (contentData.hasOwnProperty('chapter')) {
 			var fullChapter = contentData['chapter']
 			var doc = new DOMParser().parseFromString(fullChapter, 'text/html')
-			var xPathExpression = "//div/div/div/span[contains(concat('+',@data-usfm,'+'),'+" + usfm +
-									"+')]/node()[not(contains(concat(' ',@class,' '),' note '))][not(contains(concat(' ',@class,' '),' label '))]"
-			var verse = doc.evaluate(xPathExpression, doc, null, XPathResult.STRING_TYPE, null).stringValue
-			if (verse) {
-				return verse
+			var xPathExpression = "//div/div/div/span[contains(concat('+',@data-usfm,'+'),'+" + usfm + "+')]" +
+								  "/node()[not(contains(concat(' ',@class,' '),' note '))][not(contains(concat(' ',@class,' '),' label '))]"
+			var verse = doc.evaluate(xPathExpression, doc, null, XPathResult.ANY_TYPE, null)
+
+			var nextSection = verse.iterateNext()
+			var output = []
+			while (nextSection) {
+				output.push(nextSection.textContent)
+				nextSection = verse.iterateNext()
+			}
+
+			if (output.length) {
+				return output.join('')
 			} else {
 				throw ''
 			}
@@ -217,8 +225,11 @@ class ContentTypeReference extends Component {
 		}
 
 		var versions = []
-		for (var i in references.versions) {
-			versions.push( <option key={references.versions[i].id} value={i}>{references.versions[i].abbreviation.toUpperCase()}</option> )
+		for (var i in references.order) {
+			var ordered_id = references.order[i]
+			var display = references.versions[ordered_id].abbreviation.toUpperCase() + ' - ' +
+						  references.versions[ordered_id].title
+			versions.push( <option key={references.versions[ordered_id].id} value={ordered_id}>{display}</option> )
 		}
 
 		var books = []
