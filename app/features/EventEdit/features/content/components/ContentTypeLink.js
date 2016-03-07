@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import FormField from '../../../../../../app/components/FormField'
-import Textarea from '../../../../../../app/components/Textarea'
+import HtmlEditor from '../../../../../../app/components/HtmlEditor'
 import Input from '../../../../../../app/components/Input'
 
 class ContentTypeLink extends Component {
@@ -17,7 +17,7 @@ class ContentTypeLink extends Component {
 
 		return (
 			<div>
-				<div className="form-body-block white">
+				<div className="form-body-block no-pad white">
 					<FormField
 						InputType={Input}
 						placeholder="Link Label"
@@ -25,15 +25,15 @@ class ContentTypeLink extends Component {
 						onChange={handleChange}
 						value={content.data.title}
 						errors={content.data.errors} />
-
-					<FormField
-						InputType={Textarea}
-						placeholder="Description..."
-						name="body"
-						onChange={handleChange}
-						value={content.data.body}
-						errors={content.data.errors} />
-
+				</div>
+				<FormField
+					InputType={HtmlEditor}
+					placeholder="Write something here..."
+					name="body"
+					onChange={handleChange}
+					value={content.data.body}
+					errors={content.data.errors} />
+				<div className="form-body-block no-pad white">
 					<FormField
 						InputType={Input}
 						placeholder="URL"
