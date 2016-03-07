@@ -1,3 +1,4 @@
+
 export function validateSetContentFieldParams(params) {
 	const { index, field, value } = params
 
@@ -146,12 +147,13 @@ function validateUrlType(params) {
 		throw new Error('Content Type URL requires `title` to be a string')
 	}
 
-	if (typeof body !== 'string') {
-		throw new Error('Content Type URL requires `body` to be a string')
-	}
-
 	if (typeof url !== 'string') {
 		throw new Error('Content Type URL requires `url` to be a string')
+	}
+
+	var re = /^[\.\-\w]{2,32}:\/\/(([\.\-\w~_@'()*+,!#&;=\$\?\[\]\:])|%[0-9a-fA-F]{2})+(\/){0,1}(([\.\-\w~_@'()*+,!#&;=\$\?\[\]\:]|%[0-9a-fA-F]{2})+(\/){0,1})*$/
+	if (!re.test(url)){
+		throw new Error('Not a valid URL.')
 	}
 }
 
