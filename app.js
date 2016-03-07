@@ -23,6 +23,16 @@ app.use(compression({
 	threshold: 512
 }));
 
+var forceSsl = function(req, res, next) {
+	if (req.headers['x-forwarded-proto'] !== 'https' && req.get('Host').indexOf('localhost') === -1) {
+		var host = req.get('Host');
+		return res.redirect(['https://', host, req.url].join(''));
+	}
+	return next();
+};
+
+app.use(forceSsl);
+
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
