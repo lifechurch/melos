@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Row from '../components/Row'
 import Column from '../components/Column'
+import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import PreviewContainer from '../features/EventEdit/features/preview/components/PreviewContainer'
 
@@ -12,6 +13,13 @@ class EventEditPreview extends Component {
 			<div>
 				<Helmet title="Event Preview" />
 				<PreviewContainer {...this.props} />
+				<Row>
+					<Column s='medium-6'>
+						<Link disabled={!event.rules.content.canView} to={`/event/edit/${event.item.id}/content`}>&larr; Previous: Content</Link>
+					</Column>
+					<Column s='medium-6' a='right'>
+					</Column>
+				</Row>
 			</div>
 		)
 	}

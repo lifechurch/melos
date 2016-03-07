@@ -82,7 +82,7 @@ class EventHeader extends Component {
 			<div className='event-header'>
 				<Row>
 					<Column s='medium-4'>{event ?
-						<a onClick={::this.handleCancel}>Cancel</a> :
+						<a onClick={::this.handleCancel}>&larr; My Events</a> :
 						<span className="yv-title"><img src={`/images/${RevManifest('YouVersion.png')}`} /></span>
 					}</Column>
 
@@ -92,7 +92,7 @@ class EventHeader extends Component {
 
 					<Column s='medium-4' a='right'>
 						{(auth && auth.userData && auth.userData.first_name) ? auth.userData.first_name : ''} {(auth && auth.userData && auth.userData.last_name) ? auth.userData.last_name : ''}&nbsp;
-						{(auth && auth.userData && auth.userData.first_name) ? <a onClick={::this.handleLogout}>Sign Out</a> : <a target='_blank' href='https://www.bible.com/sign-up'>Create Account</a>}
+						{(auth && auth.userData) ? <a onClick={::this.handleLogout}>Sign Out</a> : <a target='_blank' href='https://www.bible.com/sign-up'>Create Account</a>}
 					</Column>
 				</Row>
 				{ContentNav}
