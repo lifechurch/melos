@@ -77,7 +77,7 @@ class EventFeedMine extends Component {
 	                    </Row>
 	                </div>
 					<ul className="unindented">
-						<ReactCSSTransitionGroup transitionName='content'>
+						<ReactCSSTransitionGroup transitionName='content' transitionEnterTimeout={250} transitionLeaveTimeout={250}>
 							{itemList}
 						</ReactCSSTransitionGroup>
 					</ul>

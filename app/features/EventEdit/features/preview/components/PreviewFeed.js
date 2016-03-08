@@ -68,7 +68,7 @@ class PreviewFeed extends Component {
 						<p>{event.item.org_name}</p>
 					</div>
 					<div className='feed'>
-						<Image images={images} width={640} height={360} />
+						{ images ? <Image images={images} width={640} height={360} /> : null }
 						<div className="type details">
 							<h2>{event.item.title}</h2>
 							<p>{event.item.description}</p>
