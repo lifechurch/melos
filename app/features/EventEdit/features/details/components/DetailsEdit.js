@@ -103,7 +103,7 @@ class DetailsEdit extends Component {
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
 						<ErrorMessage hasError={Boolean(event.api_errors)} errors={event.api_errors} />
-						<FormField disabled={!event.rules.details.canEdit} InputType={Input} size='large' placeholder='Event Name' name='title' onChange={handleChange} value={event.item.title} errors={event.errors.fields.title} />
+						<FormField id="inputEventName" disabled={!event.rules.details.canEdit} InputType={Input} size='large' placeholder='Event Name' name='title' onChange={handleChange} value={event.item.title} errors={event.errors.fields.title} />
 					</div>
 				</Row>
 
