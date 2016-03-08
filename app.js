@@ -23,8 +23,13 @@ app.use(compression({
 	threshold: 512
 }));
 
+var sslExcludedPaths = [
+	'/running',
+	'/ping'
+];
+
 var forceSsl = function(req, res, next) {
-	if (req.headers['x-forwarded-proto'] !== 'https' && req.get('Host').indexOf('localhost') === -1) {
+	if (req.headers['x-forwarded-proto'] !== 'https' && req.get('Host').indexOf('localhost') === -1 && sslExcludedPaths.indexOf(req.url) === -1) {
 		var host = req.get('Host');
 		return res.redirect(['https://', host, req.url].join(''));
 	}
