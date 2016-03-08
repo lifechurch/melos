@@ -29,12 +29,14 @@ export default function loc(state = {}, action) {
 		case type('add'):
 			const start_dt = moment().endOf('week')
 			const end_dt = moment(start_dt.toDate().getTime()).add(1, 'h')
+
 			return {
 				type: action.locationType,
 				times: [{
 					start_dt,
 					end_dt
-				}]
+				}],
+				timezone: action.auth.userData.timezone
 			}
 
 		case type('edit'):
