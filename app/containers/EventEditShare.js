@@ -9,6 +9,11 @@ import moment from 'moment'
 
 class EventEditShare extends Component {
 
+	constructor(props) {
+		super(props)
+		this.state = { isCopied: false }
+	}
+
 	getEventImage() {
 		const { item } = this.props.event
 		if (Array.isArray(item.images) && item.images.length) {
@@ -48,15 +53,16 @@ class EventEditShare extends Component {
 	}
 
 	handleCopyLink() {
-		// alert('Link in clipboard')
-		console.log('clicked')
+		this.setState({isCopied: true})
+		window.setTimeout(() => {this.setState({isCopied: false})}, 4000)
 	}
 
 	render() {
 		const { event } = this.props
 	    const eventItem = event.item
 		var interval = setInterval(function() {
-			if (typeof window != 'undefined' && window.addthis) {
+			if (typeof window != 'undefined' && window.addthis
+				&& window.addthis.layers && window.addthis.layers.refresh) {
 				clearInterval(interval);
 				window.addthis.layers.refresh()
 			}
@@ -78,9 +84,10 @@ class EventEditShare extends Component {
 				<div className="page-subtitle"><span>Share your event:</span></div>
 				<div className="details">
 			    	<span className="shorturl">{"http://bible.com/events/" + eventItem.id}</span>
-			    	<CopyToClipboard text={"http://bible.com/events/" + eventItem.id}>
+			    	<CopyToClipboard onCopy={::this.handleCopyLink} text={"http://bible.com/events/" + eventItem.id}>
 					<a className="copy">Copy</a>
 			    	</CopyToClipboard>
+			    	{this.state.isCopied ? <div ref="copyInfo" className="copy-info">The shortlink was copied to your clipboard</div> : null}
 				</div>
 				<div className="addthis_sharing_toolbox"></div>
 				<hr />
