@@ -32,7 +32,7 @@ class EventEditDetails extends Component {
 		return (
 			<div>
 				<Helmet title="Event Details" />
-				<DetailsEdit event={event} params={params} dispatch={dispatch} handleChange={::this.handleChange} handleLeave={::this.handleLeave} handleNext={::this.handleNext} ref={function(e) { document.getElementById('inputEventName').focus() }} />
+				<DetailsEdit event={event} params={params} dispatch={dispatch} handleChange={::this.handleChange} handleLeave={::this.handleLeave} handleNext={::this.handleNext} />
 			</div>
 		)
 	}
