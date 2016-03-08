@@ -24,7 +24,15 @@ function imgUpload(params) {
 			params: {},
 			http_method: 'get',
 			types: [ type('imgUpload'), type('imgUploadSuccess'), type('imgUploadFailure') ]
-		}
+		},
+		params
+	}
+}
+
+function imgUploadFailure(params) {
+	return {
+		type: type('imgUploadFailure'),
+		params
 	}
 }
 
@@ -109,6 +117,7 @@ export default {
 	cancel,
 	new: newEvent,
 	imgUpload,
+	imgUploadFailure,
 	view,
 	create,
 	update,

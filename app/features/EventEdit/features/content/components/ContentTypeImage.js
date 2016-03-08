@@ -62,6 +62,7 @@ class ContentTypeImage extends Component {
 
         } else {
             // invalid file type
+            dispatch(ActionCreators.initUploadFailure({index: contentIndex, error: 'Invalid filetype. Must be JPG.'}))
         }
     }
 
