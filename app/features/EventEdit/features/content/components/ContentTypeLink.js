@@ -42,8 +42,8 @@ class ContentTypeLink extends Component {
 						value={content.data.url}
 						errors={content.data.errors} />
 
-					{kindrid_paragraph}
 				</div>
+				{kindrid_paragraph}
 			</div>
 		)
 	}
