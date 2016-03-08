@@ -49,7 +49,7 @@ class Auth extends Component {
 
 		return (
 			<div className="medium-6 large-5 columns small-centered auth">
-				<Helmet title="My Events" />
+				<Helmet title="Events Sign In" />
 				<EventHeader {...this.props} />
 				<div className='form-body'>
 					<NoticeBanner />
