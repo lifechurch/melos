@@ -54,9 +54,7 @@
     "redux-router": "1.0.0-beta7",
     "redux-thunk": "^1.0.3",
     "serve-favicon": "~2.3.0",
-    "smooth-scroll": "github:cferdinandi/smooth-scroll"
-  },
-  "devDependencies": {
+    "smooth-scroll": "github:cferdinandi/smooth-scroll",
     "babel-plugin-syntax-function-bind": "^6.3.13",
     "babel-plugin-transform-function-bind": "^6.3.13",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",

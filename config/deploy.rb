@@ -18,6 +18,10 @@ set :gulp_file, -> { release_path.join('gulpfile.js') }
 
 before 'deploy:updated', 'gulp'
 
+set :default_env, {
+  'NODE_ENV' => "#{fetch(:stage)}"
+}
+
 namespace :deploy do
 
   Rake::Task["deploy:symlink:release"].clear_actions
@@ -32,7 +36,7 @@ namespace :deploy do
           execute "sudo ln -nfs #{deploy_to}/current/config/nginx/nginx.conf-#{fetch(:stage)} /etc/nginx/nginx.conf"
           execute "sudo service nginx restart"
           execute "sleep 5"
-          execute "rm /tmp/disable.txt || true"
+          execute "sudo rm /tmp/disable.txt || true"
         end
       end
     end
