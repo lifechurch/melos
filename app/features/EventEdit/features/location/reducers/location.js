@@ -99,9 +99,14 @@ export default function loc(state = {}, action) {
 			})
 
 		case type('addTime'):
-			var start_dt = moment().startOf('hour')
-			var end_dt = moment(start_dt.toDate().getTime()).add(1, 'h')
-			var new_time = { start_dt, end_dt }
+			var new_time = {}
+			if (Array.isArray(state.times) && state.times.length > 0) {
+				new_time = Object.assign({}, state.times[state.times.length - 1])
+			} else {
+				var start_dt = moment().endOf('week').hour(17).startOf('hour')
+				var end_dt = moment(start_dt.toDate().getTime()).add(1, 'h')
+				new_time = { start_dt, end_dt }
+			}
 			return Object.assign({}, state, {
 				times: [
 					...state.times,
