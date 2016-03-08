@@ -92,7 +92,7 @@ class EventFeedMine extends Component {
                     <div className="create-wrapper">
 	                    <Link className="solid-button green create" to="/event/edit">Create Your First Event</Link>
 	                </div>
-                    <Link className="learn" to="http://help.youversion.com">Learn how to make a great Event</Link>
+                    <a className="learn" target="_blank" href="https://help.youversion.com/customer/en/portal/articles/1504122-how-to-create-an-event-on-bible-com-administrator-?b_id=203">Learn how to make a great Event</a>
 				</div>
 			)
 		}
