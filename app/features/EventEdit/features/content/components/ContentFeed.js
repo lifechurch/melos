@@ -57,7 +57,7 @@ class ContentFeed extends Component {
 						{reorderButton}
 					</div>
 					<div className='medium-8 large-6 columns end'>
-						<ReactCSSTransitionGroup transitionName='content'>
+						<ReactCSSTransitionGroup transitionName='content' transitionEnterTimeout={250} transitionLeaveTimeout={250}>
 							{contentList}
 						</ReactCSSTransitionGroup>
 					</div>

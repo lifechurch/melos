@@ -27,12 +27,7 @@ class FormField extends Component {
 }
 
 FormField.propTypes = {
-	InputType: PropTypes.oneOfType([
-		PropTypes.instanceOf(Input),
-		PropTypes.instanceOf(Textarea),
-		PropTypes.instanceOf(Select),
-		PropTypes.instanceOf(HtmlEditor)
-	]),
+	InputType: PropTypes.any.isRequired,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
 	placeholder: PropTypes.string,
 	name: PropTypes.string.isRequired,
