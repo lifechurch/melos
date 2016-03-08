@@ -260,10 +260,10 @@ class EventEditContentContainer extends Component {
 				</div>
 				<Row>
 					<Column s='medium-6'>
-						<Link disabled={!event.rules.details.canView} to={`/event/edit/${event.item.id}/locations_and_times`}>&larr; Previous: Locations & Times</Link>
+						<Link disabled={!event.rules.details.canView || event.isReordering} to={`/event/edit/${event.item.id}/locations_and_times`}>&larr; Previous: Locations & Times</Link>
 					</Column>
 					<Column s='medium-6' a='right'>
-						<Link disabled={!event.rules.preview.canView} to={`/event/edit/${event.item.id}/preview`}>Next: Preview &rarr;</Link>
+						<Link disabled={!event.rules.preview.canView || event.isReordering} to={`/event/edit/${event.item.id}/preview`}>Next: Preview &rarr;</Link>
 					</Column>
 				</Row>
 				<LiveWarningModal event={event} dispatch={dispatch} modalState={modals.LiveWarning} handleClose={::this.handleCloseModal} />
