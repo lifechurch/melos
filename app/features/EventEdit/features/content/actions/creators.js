@@ -267,6 +267,13 @@ const ActionCreators = {
 			}
 		}
 	},
+
+	initUploadFailure(params) {
+		return {
+			type: contentType('initUploadFailure'),
+			params
+		}
+	}
 }
 
 export default ActionCreators

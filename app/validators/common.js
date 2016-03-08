@@ -29,10 +29,7 @@ function validateOutput(output, keys, scope) {
 	}
 
 	for (var key in keys) {
-		let field = newOutput.fields[key]
-		if (!Array.isArray(field)) {
-			newOutput.fields[key] = []
-		}
+		newOutput.fields[key] = []
 	}
 
 	return newOutput
@@ -58,8 +55,8 @@ export function isBlank(target, output, keys, scope) {
 			newOutput.hasError = originalHasError || true
 		}
 	}
-
-	return mergeApiErrors(target, newOutput, keys, scope)
+	return newOutput
+	// return mergeApiErrors(target, newOutput, keys, scope)
 }
 
 export function mergeApiErrors(target, output, keys, scope) {

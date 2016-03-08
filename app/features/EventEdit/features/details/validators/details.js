@@ -1,7 +1,8 @@
 import { isBlank } from '../../../../../validators/common'
 
 export function validateEventDetails(event) {
-	let { item, originalErrors } = event
+	let { item } = event
+	let originalErrors = Object.assign({}, event.errors)
 
 	if (typeof item !== 'object') {
 		item = {}

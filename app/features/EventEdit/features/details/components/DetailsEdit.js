@@ -55,6 +55,7 @@ class DetailsEdit extends Component {
             })
         } else {
             // invalid file type
+            dispatch(ActionCreators.imgUploadFailure({errors: ['Invalid filetype. Must be JPG.']}))
         }
     }
 
@@ -71,6 +72,10 @@ class DetailsEdit extends Component {
 		const { handleChange, handleNext, event, params } = this.props
 
 		var image
+		var image_error = (typeof event.errors.fields.image !== 'undefined'
+			   			   && Array.isArray(event.errors.fields.image)
+			   			   && event.errors.fields.image.length > 0
+			   			   ) ? <small className="error">{event.errors.fields.image[0]}</small> : null
         if (event.item.images) {
         	image = <Row>
 		                <div className="columns medium-10 large-8 medium-offset-1 large-offset-2 event-image">
@@ -90,6 +95,7 @@ class DetailsEdit extends Component {
 		                            <div className='instructions'>Drag and Drop your JPG</div>
 		                        </Dropzone>
 		                    </div>
+			                {image_error}
 		                </div>
 		                <div className="columns medium-1 large-2">
 			                <Dropzone className='hollow-button green' onDrop={::this.onDrop} multiple={false}>Select Image</Dropzone>

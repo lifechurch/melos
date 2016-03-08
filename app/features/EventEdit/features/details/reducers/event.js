@@ -444,11 +444,30 @@ export default function event(state = {}, action) {
 				}
 			})
 
+		case contentType('initUploadFailure'):
+			var newContent = Object.assign({}, state.item.content[action.params.index])
+			newContent.errors = Object.assign({}, {...newContent.errors}, {'image': [action.params.error]})
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContent,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
+
+		case type('imgUploadFailure'):
+			var error_fields = Object.assign({}, {...state.errors.fields}, {'image': action.params.errors})
+			return Object.assign({}, state, {errors: {...state.errors, fields: {...error_fields}}})
+
 		case contentType('initUploadSuccess'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
 			newContent.data.image_id = action.response.image_id
 			newContent.data.url = action.response.url
 			newContent.data.params = action.response.params
+			newContent.errors = {}
 			return Object.assign({}, state, {
 				item: {
 					...state.item,
