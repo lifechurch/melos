@@ -44,6 +44,7 @@ export function isBlank(target, output, keys, scope) {
 
 	const originalHasError = newOutput.hasError
 	const originalScopeHasError = newOutput.scope[scope]
+	newOutput.hasError = false
 	for (var key in keys) {
 		const prop = target[key]
 		const isBlank = (typeof prop !== 'string' || prop.length === 0)
@@ -52,7 +53,7 @@ export function isBlank(target, output, keys, scope) {
 			newOutput.fields[key].push(error)
 			newOutput.summary = [newOutput.summary, error].join(' ')
 			newOutput.scope[scope] = originalScopeHasError || true
-			newOutput.hasError = originalHasError || true
+			newOutput.hasError = true
 		}
 	}
 	return newOutput
