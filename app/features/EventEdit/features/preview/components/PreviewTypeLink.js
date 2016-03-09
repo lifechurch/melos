@@ -9,7 +9,7 @@ class PreviewTypeLink extends Component {
 		var description = null
 
 		if (contentData.body) {
-			description = <p className='caption'>{contentData.body}</p>
+			description = <p className='caption' dangerouslySetInnerHTML={{__html: contentData.body}} />
 		}
 
 		return (
