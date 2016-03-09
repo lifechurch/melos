@@ -3,22 +3,25 @@ import { Link } from 'react-router'
 import Row from '../../../components/Row'
 import Column from '../../../components/Column'
 import moment from 'moment'
+import EventViewContent from './EventViewContent'
 
 class EventViewFeed extends Component {
 	render() {
+		const { dispatch, reference, event } = this.props
+		const { content } = event.item
+
+		const contentList = content.map((c,i) => {
+			switch (c.type) {
+				default: return <EventViewContent content={c} index={i} dispatch={dispatch} reference={reference} />
+			}
+		})
 
 		return (
-			<h2>EventViewFeed</h2>
+			<div className="feed">
+				{contentList}
+			</div>
 		)
 	}
-}
-
-EventViewFeed.propTypes = {
-	// item: PropTypes.object.isRequired,
-	// dispatch: PropTypes.func.isRequired,
-	// handleDuplicate: PropTypes.func.isRequired,
-	// index: PropTypes.number.isRequired,
-	// startOffset: PropTypes.number
 }
 
 export default EventViewFeed

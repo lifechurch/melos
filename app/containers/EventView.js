@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { fetchEventFeedDiscover } from '../actions'
 import { Link } from 'react-router'
+import EventViewDetails from '../features/EventView/components/EventViewDetails'
 import EventViewFeed from '../features/EventView/components/EventViewFeed'
 
 class EventView extends Component {
@@ -10,13 +11,11 @@ class EventView extends Component {
 	}
 
 	render() {
-		const { event } = this.props
 		return (
-			<div>
-				<Helmet title={event.item.title + " :: YouVersion Event"} />
-				<h1>{event.item.title}</h1>
-				<p>{event.item.description}</p>
-				<EventViewFeed />
+			<div id="ev-view">
+				<Helmet title={this.props.event.item.title + " :: YouVersion Event"} />
+				<EventViewDetails {...this.props} />
+				<EventViewFeed {...this.props} />
 			</div>
 		)
 	}

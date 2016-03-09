@@ -1097,8 +1097,6 @@ form.locationForm {
 }
 
 #preview-container {
-	margin-bottom: 40px;
-
 	.preview {
 		margin-left: 20px;
 		padding: 35px;
@@ -1109,109 +1107,109 @@ form.locationForm {
 			padding: 0 10px;
 			border: 2px solid;
 			border-radius: 5px;
+		}
 
-			.org p{
-				line-height: 2.5em;
-				text-align: center;
+		.org p{
+			line-height: 2.5em;
+			text-align: center;
+		}
+
+		.feed {
+			padding-bottom: 10px;
+			min-height: 600px;
+			max-height: 800px;
+			overflow: scroll;
+
+			.details {
+				h2 {
+					margin-top: 10px;
+					font-weight: bold;
+				}
+
+				.actions {
+					margin: 10px 0 0 10px;
+					font-size: .8em;
+				}
 			}
 
-			.feed {
-				padding-bottom: 10px;
-				min-height: 600px;
-				max-height: 800px;
-				overflow: scroll;
+			.type {
+				overflow: auto;
+				margin-bottom: 10px;
+				padding: 10px;
+				background-color: #eee;
 
-				.details {
-					h2 {
-						margin-top: 10px;
-						font-weight: bold;
+				.meta {
+					overflow: auto;
+					font-size: .8em;
+					margin-top: .5em;
+
+					.notes {
+						float: left;
+						margin-right: 4em;
 					}
 
 					.actions {
-						margin: 10px 0 0 10px;
-						font-size: .8em;
+						float: right;
 					}
 				}
+			}
 
-				.type {
-					overflow: auto;
-					margin-bottom: 10px;
-					padding: 10px;
-					background-color: #eee;
-
-					.meta {
-						overflow: auto;
-						font-size: .8em;
-						margin-top: .5em;
-
-						.notes {
-							float: left;
-							margin-right: 4em;
-						}
-
-						.actions {
-							float: right;
-						}
+			.reference {
+				.human {
+					font-weight: bold;
+					.version {
+						float: right;
 					}
 				}
+			}
 
-				.reference {
-					.human {
-						font-weight: bold;
-						.version {
-							float: right;
-						}
+			.announcement {
+				.title { margin-bottom: 0; }
+				.caption {
+					display: none;
+				    margin-top: .5em;
+				    padding-top: .5em;
+				    border-top: 1px solid #ddd;
+				}
+				.caption.show { display: block; }
+
+				.toggle {
+					position: relative;
+					top: 8px;
+					display: block;
+					text-align: center;
+					border-top: 1px solid #ddd;
+				}
+			}
+
+			.plan {
+				img {
+					margin-bottom: .5em;
+					width: 100%;
+				}
+				.title {
+					font-weight: bold;
+				}
+				.length {
+					color: #999;
+				}
+			}
+
+			.link {
+				.title {
+					font-weight: bold;
+				}
+				.meta {
+					a {
+						font-size: 1.25em;
+						color: #03b;
 					}
 				}
+			}
 
-				.announcement {
-					.title { margin-bottom: 0; }
-					.caption {
-						display: none;
-					    margin-top: .5em;
-					    padding-top: .5em;
-					    border-top: 1px solid #ddd;
-					}
-					.caption.show { display: block; }
-
-					.toggle {
-						position: relative;
-						top: 8px;
-						display: block;
-						text-align: center;
-						border-top: 1px solid #ddd;
-					}
-				}
-
-				.plan {
-					img {
-						margin-bottom: .5em;
-						width: 100%;
-					}
-					.title {
-						font-weight: bold;
-					}
-					.length {
-						color: #999;
-					}
-				}
-
-				.link {
-					.title {
-						font-weight: bold;
-					}
-					.meta {
-						a {
-							font-size: 1.25em;
-							color: #03b;
-						}
-					}
-				}
-
-				.image {
-					img {
-						margin-bottom: .5em;
-					}
+			.image {
+				img {
+					margin-bottom: .5em;
 				}
 			}
 		}
@@ -1262,6 +1260,87 @@ form.locationForm {
 		font-size: .8em;
 		color: #999;
 	}
+}
+
+
+#ev-view {
+	width: 50%;
+	margin: -80px auto 0;
+
+	.type {
+	    margin: 30px 0;
+
+		.content {
+		    padding: 20px;
+		    border: 1px solid #ddd;
+		    border-radius: 5px 5px 0 0;
+
+		    .title {
+		    	font-size: 1.2em;
+		    	font-weight: bold;
+		    }
+
+		    &.image {
+		    	img {
+		    		border-radius: 3px;
+		    	}
+
+		    	img + .caption {
+		    		margin-top: 10px;
+		    	}
+		    }
+
+		    &.plan {
+		    	img {
+			    	border-radius: 3px;
+			    }
+
+			    a + .title {
+			    	margin-top: 10px;
+			    }
+		    }
+
+		    &.url {
+		    	.caption {
+		    		margin:1em 0;
+		    	}
+		    }
+
+		    &.reference {
+		    	.verseNumber {
+		    		color: #999;
+		    		font-size: .8em;
+		    	}
+		    }
+		}
+
+	    .meta {
+	    	overflow: auto;
+	    	border: 1px solid #ddd;
+	    	border-top-width: 0;
+	    	border-radius: 0 0 5px 5px;
+
+	    	a {
+			    float: right;
+			    margin-right: 20px;
+			    padding: 5px;
+	    	}
+	    }
+
+	    .notes {
+    	    margin: 0 30px;
+		    padding: 10px;
+		    background-color: #eee;
+		    border: 1px solid #ddd;
+		    border-radius: 0 0 5px 5px;
+
+		    input {
+		    	width: 100%;
+		    	background-color: #fff;
+		    }
+	    }
+	}
+
 }
 
 
