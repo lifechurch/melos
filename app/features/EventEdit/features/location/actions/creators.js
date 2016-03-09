@@ -3,10 +3,10 @@ import { toApiFormat } from '../transformers/location'
 
 const ActionCreators = {
 
-	add(locationType) {
+	add(params) {
 		return {
 			type: type('add'),
-			locationType
+			...params
 		}
 	},
 

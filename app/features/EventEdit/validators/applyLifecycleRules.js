@@ -166,4 +166,10 @@ function checkContent(event, rules) {
 	} else if (rules.preview.canPublish) {
 		event.publishMessage = null
 	}
+
+	for (var c of content) {
+		if (typeof c.content_id == 'undefined') {
+			rules.content.canReorder = false
+		}
+	}
 }

@@ -196,12 +196,12 @@ export default function event(state = {}, action) {
 
 			content = sortContent(content)
 
-			return Object.assign({}, state, {
+			return applyLifecycleRules(Object.assign({}, state, {
 				item: {
 					...state.item,
 					content
 				}
-			})
+			}))
 
 		case contentType('addRequest'):
 		case contentType('updateRequest'):

@@ -53,22 +53,22 @@ class EventEditLocationContainer extends Component {
 	}
 
 	handleAddPhysicalLocationClick(clickEvent) {
-		const { event, dispatch } = this.props
+		const { auth, event, dispatch } = this.props
 		if (typeof event.rules.locations.canAddPhysical === 'object') {
 			const { modal } = event.rules.locations.canAddPhysical
 			dispatch(ModalActionCreators.openModal(modal))
 		} else {
-			dispatch(ActionCreators.add('physical'))
+			dispatch(ActionCreators.add({locationType: 'physical', auth}))
 		}
 	}
 
 	handleAddVirtualLocationClick(clickEvent) {
-		const { event, dispatch } = this.props
+		const { auth, event, dispatch } = this.props
 		if (typeof event.rules.locations.canAddVirtual === 'object') {
 			const { modal } = event.rules.locations.canAddVirtual
 			dispatch(ModalActionCreators.openModal(modal))
 		} else {
-			dispatch(ActionCreators.add('virtual'))
+			dispatch(ActionCreators.add({locationType: 'virtual', auth}))
 		}
 	}
 
