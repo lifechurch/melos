@@ -23,11 +23,19 @@ class PreviewTypeReference extends Component {
 			var doc = new DOMParser().parseFromString(fullChapter, 'text/html')
 			var xPathExpression = "//div/div/div/span[contains(concat('+',@data-usfm,'+'),'+" + usfm +
 									"+')]/node()[not(contains(concat(' ',@class,' '),' note '))][not(contains(concat(' ',@class,' '),' label '))]"
-			var verse = doc.evaluate(xPathExpression, doc, null, XPathResult.STRING_TYPE, null).stringValue
-			if (verse) {
-				return verse
+			var verse = doc.evaluate(xPathExpression, doc, null, XPathResult.ANY_TYPE, null)
+
+			var nextSection = verse.iterateNext()
+			var output = []
+			while (nextSection) {
+				output.push(nextSection.textContent)
+				nextSection = verse.iterateNext()
+			}
+
+			if (output.length) {
+				return output.join('')
 			} else {
-				throw "This version does not contain that reference"
+				throw ''
 			}
 		} else {
 			throw ''
