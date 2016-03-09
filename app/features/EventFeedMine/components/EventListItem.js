@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import Row from '../../../../app/components/Row'
-import Column from '../../../../app/components/Column'
+import Row from '../../../components/Row'
+import Column from '../../../components/Column'
 import { Link } from 'react-router'
 import moment from 'moment'
 import ActionCreators from '../actions/creators'
