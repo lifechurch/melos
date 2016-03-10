@@ -12,7 +12,7 @@ class EventViewContentMeta extends Component {
 		const { meta_links } = this.props
 
 		var links = meta_links.reverse().map((ml, i) => {
-			return <a key={i} target="_blank" href="{ml.url}">{ml.label}</a>
+			return <a key={i} target="_blank" href={ml.url}>{ml.label}</a>
 		})
 
 		return (

@@ -13,13 +13,13 @@ class EventViewDetails extends Component {
 		return (
 			<div className="details">
 				<div className="org-bar">
-					<div className="right"></div>
+					<div className="right"><a className="share-icon">O</a></div>
 					<div className="timer"></div>
 					<div className="org">{org_name}</div>
 				</div>
-				{ images ? <Image images={images} width={640} height={360} /> : null }
+				{ images ? <Image className="hero" images={images} width={640} height={360} /> : null }
 				<div className="title-bar">
-					<div className="right"></div>
+					<div className="right"><a href="#" className="solid-button green">Save Event</a></div>
 					<div className="title">{title}</div>
 				</div>
 				<div className="desc">{description}</div>

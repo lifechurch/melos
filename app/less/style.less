@@ -1267,8 +1267,34 @@ form.locationForm {
 	width: 50%;
 	margin: -80px auto 0;
 
+	.details {
+		.org-bar {
+			.org {
+				font-size: 2.5em;
+				line-height: 2em;
+			}
+		}
+		.hero {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		.title-bar {
+			.title {
+				font-size: 1.75em;
+				line-height: 1.25em;
+			}
+		}
+		.desc {
+			margin: 20px 0;
+		}
+	}
+
 	.type {
 	    margin: 30px 0;
+
+	    &.no-meta .content {
+	    	border-radius: 5px;
+	    }
 
 		.content {
 		    padding: 20px;
@@ -1278,6 +1304,19 @@ form.locationForm {
 		    .title {
 		    	font-size: 1.2em;
 		    	font-weight: bold;
+		    }
+
+		    &.announcement {
+		    	overflow: auto;
+
+		    	.caption {
+		    		display: none;
+		    		clear: both;
+		    		padding-top: 20px;
+		    	}
+		    	.caption.show {
+		    		display: block;
+		    	}
 		    }
 
 		    &.image {
@@ -1332,6 +1371,7 @@ form.locationForm {
 		    padding: 10px;
 		    background-color: #eee;
 		    border: 1px solid #ddd;
+		    border-top-width: 0;
 		    border-radius: 0 0 5px 5px;
 
 		    input {
