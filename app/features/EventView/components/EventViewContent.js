@@ -9,6 +9,7 @@ import EventViewContentLink from './EventViewContentLink'
 import EventViewContentImage from './EventViewContentImage'
 import EventViewContentPlan from './EventViewContentPlan'
 import EventViewContentReference from './EventViewContentReference'
+import EventViewContentAnnouncement from './EventViewContentAnnouncement'
 
 class EventViewContent extends Component {
 	render() {
@@ -27,6 +28,11 @@ class EventViewContent extends Component {
 
 				case 'url':
 					contentItem = <EventViewContentLink contentData={content.data} />
+					notes = false
+					break
+
+				case 'announcement':
+					contentItem = <EventViewContentAnnouncement contentData={content.data} />
 					notes = false
 					break
 
