@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 
 class Image extends Component {
 	render() {
-		const { images, height, width } = this.props
+		const { images, height, width, className } = this.props
 
 		var image = []
 
@@ -10,7 +10,7 @@ class Image extends Component {
 			image = images.filter((i) => { if (i.width==width && i.height==height) { return true } })
 		}
 
-		image = image.length ? <img src={image[0].url} /> : null
+		image = image.length ? <img src={image[0].url} className={className} /> : null
 
 		return image
 	}
