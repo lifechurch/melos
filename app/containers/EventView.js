@@ -3,20 +3,32 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { fetchEventFeedDiscover } from '../actions'
 import { Link } from 'react-router'
+import Row from '../components/Row'
 import EventViewDetails from '../features/EventView/components/EventViewDetails'
-import EventViewFeed from '../features/EventView/components/EventViewFeed'
+import EventViewContent from '../features/EventView/components/EventViewContent'
 
 class EventView extends Component {
 	componentWillMount() {
 	}
 
 	render() {
+		const { dispatch, reference, event } = this.props
+		const { id, content } = event.item
+
+		const contentList = content.map((c,i) => {
+			return <EventViewContent ref={i} id={id} content={c} index={i} dispatch={dispatch} reference={reference} />
+		})
+
 		return (
-			<div id="ev-view">
-				<Helmet title={this.props.event.item.title + " :: YouVersion Event"} />
-				<EventViewDetails {...this.props} />
-				<EventViewFeed {...this.props} />
-			</div>
+			<Row>
+				<div id="ev-view" className="medium-10 large-7 columns small-centered">
+					<Helmet title={this.props.event.item.title + " :: YouVersion Event"} />
+					<EventViewDetails {...this.props} />
+					<div className="feed">
+						{contentList}
+					</div>
+				</div>
+			</Row>
 		)
 	}
 }

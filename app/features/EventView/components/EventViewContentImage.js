@@ -10,7 +10,7 @@ class EventViewContentImage extends Component {
 
 		return (
 			<div className='content image'>
-				<Image images={contentData.urls} width={640} height={640} />
+				<Image images={contentData.urls} width={640} height={640} className="primary"/>
 				{contentData.body ? <p className='caption'>{contentData.body}</p> : null}
 			</div>
 		)

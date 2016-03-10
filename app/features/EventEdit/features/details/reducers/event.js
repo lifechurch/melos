@@ -1,6 +1,7 @@
 import type from '../actions/constants'
 import locationType from '../../location/actions/constants'
 import contentType from '../../content/actions/constants'
+import viewType from '../../../../EventView/actions/constants'
 import { validateEventDetails } from '../validators/details'
 import { fromApiFormat as eventFromApiFormat, sortContent } from '../transformers/event'
 import defaultState from '../../../../../defaultState'
@@ -478,6 +479,23 @@ export default function event(state = {}, action) {
 					]
 				}
 			})
+
+		case viewType('editNote'):
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.index),
+						Object.assign({}, state.item.content[action.index], {comment: action.note}),
+						...state.item.content.slice(action.index + 1)
+					]
+				}
+			})
+
+		case viewType('saveNoteRequest'):
+		case viewType('saveNoteFailure'):
+		case viewType('saveNoteSuccess'):
+			return state
 
 		default:
 			return state
