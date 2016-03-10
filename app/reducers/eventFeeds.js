@@ -42,11 +42,6 @@ export function eventFeeds(state = {}, action) {
 		case EVENT_FEED_MINE_REQUEST:
 			return Object.assign({}, state, { mine: { isFetching: true }})
 
-		case type('setStatus'):
-			var itemsCopy = state.mine.items.slice(0)
-			itemsCopy[action.index].status = action.status
-			return Object.assign({}, state, { mine: { items: itemsCopy } })
-
 		case detailsType('deleteRequest'):
 			var original = Object.assign({}, state.mine.items[action.index])
 			return Object.assign({}, state, {
