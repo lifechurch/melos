@@ -47,14 +47,6 @@ const ActionCreators = {
 		}
 	},
 
-	setStatus(index, status) {
-		return {
-			type: contentType('setStatus'),
-			index: index,
-			status: status
-		}
-	},
-
 	configuration() {
 		return {
 			api_call: {
