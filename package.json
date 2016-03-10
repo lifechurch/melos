@@ -6,8 +6,8 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@youversion/js-api": "^0.0.62",
-    "@youversion/token-storage": "^0.0.35",
+    "@youversion/js-api": "^0.0.65",
+    "@youversion/token-storage": "^0.0.36",
     "babel-plugin-syntax-function-bind": "^6.3.13",
     "babel-plugin-transform-function-bind": "^6.3.13",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
@@ -21,6 +21,7 @@
     "browserify": "^13.0.0",
     "compression": "^1.6.0",
     "cookie-parser": "^1.4.1",
+    "cors": "^2.7.1",
     "counterpart": "^0.17.1",
     "crypto": "0.0.3",
     "debug": "~2.2.0",

@@ -8,6 +8,7 @@ var compression = require('compression');
 var api = require('@youversion/js-api');
 var ping = require('./ping');
 var auth = api.tokenAuth;
+var cors = require('cors');
 
 require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] });
 
@@ -38,7 +39,7 @@ var forceSsl = function(req, res, next) {
 };
 
 app.use(forceSsl);
-
+app.use(cors({origin: true}));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

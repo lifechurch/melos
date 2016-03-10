@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="<%=assetPrefix%>/stylesheets/<%= getAssetPath('style.css') %>" />
+<script type="application/javascript">
+	window.__INITIAL_STATE__ = <%- JSON.stringify(initialState) %>;
+	window.__ENV__ = "<%- environment %>";
+</script>
+<div id="react-app"><%- appString %></div>
+<script src="<%=assetPrefix%>/javascripts/<%= getAssetPath('eventView.js') %>"></script>

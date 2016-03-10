@@ -30,49 +30,75 @@ function getAssetPath(path) {
 }
 
 router.post('/event/:id', urlencodedParser, function(req, res) {
-	reactCookie.plugToRequest(req, res)
+	let assetPrefix = null
+	if (req.get('Host').indexOf('localhost') === -1) {
+		assetPrefix = ['https://', req.get('Host')].join('')
+	} else {
+		assetPrefix = ['http://', req.get('Host')].join('')
+	}
 
-	let sessionData = {}
-	let startingState = defaultState
+	match({ routes, location: '/event/view/' + req.params.id }, (error, redirectLocation, renderProps) => {
+		if (error) {
 
-	try {
-		const token = req.body.token
-		const tokenData = tokenAuth.decodeToken(token)
-		sessionData = tokenAuth.decryptToken(tokenData.token)
-		delete sessionData.password
+			res.status(500).send(error.message);
 
-		startingState = Object.assign({}, defaultState, { auth: {
-			token: null,
-			isLoggedIn: true,
-			isWorking: false,
-			userData: sessionData,
-			user: sessionData.email,
-			password: null,
-			errors: {
-				api: null,
-				fields: {
-					user: null,
-					password: null
-				}
+		} else if (redirectLocation) {
+
+			//res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+
+		} else if (renderProps) {
+			reactCookie.plugToRequest(req, res)
+
+			let sessionData = {}
+			let startingState = defaultState
+
+			try {
+				const token = req.body.token
+				const tokenData = tokenAuth.decodeToken(token)
+				sessionData = tokenAuth.decryptToken(tokenData.token)
+				delete sessionData.password
+
+				startingState = Object.assign({}, defaultState, { auth: {
+					token: null,
+					isLoggedIn: true,
+					isWorking: false,
+					userData: sessionData,
+					user: sessionData.email,
+					password: null,
+					errors: {
+						api: null,
+						fields: {
+							user: null,
+							password: null
+						}
+					}
+				}})
+
+			} catch(err) {
+				return res.status(501).send({fail:1, err: err})
 			}
-		}})
 
-	} catch(err) {
-		return res.status(501).send({})
-	}
+			try {
+				const logger = createNodeLogger()
+				const history = createMemoryHistory()
+				const store = configureStore(startingState, history, logger)
+				const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
+				const initialState = store.getState()
+				res.setHeader('Cache-Control', 'public');
+				// res.send({appString: html, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV })
+				res.render('standalone', {appString: html, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix }, function(err, html) {
+					res.send({html: html})
+				})
+			} catch(ex) {
+				console.log(ex)
+				res.status(500).send({fail:2, ex: ex})
+			}
 
-	try {
-		const logger = createNodeLogger()
-		const history = createMemoryHistory()
-		const store = configureStore(startingState, history, logger)
-		const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
-		const initialState = store.getState()
-		res.setHeader('Cache-Control', 'public');
-		res.render('index', {appString: html, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
-	} catch(ex) {
-		res.status(500).send()
-	}
+		} else {
+			res.status(404).send('Not found');
+		}
 
+	})
 })
 
 module.exports = router;
