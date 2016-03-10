@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
-import Row from '../../../../../../app/components/Row'
-import Column from '../../../../../../app/components/Column'
-import ActionCreators from '../../content/actions/creators'
+import Row from '../../../components/Row'
+import Column from '../../../components/Column'
+import ActionCreators from '../../EventEdit/features/content/actions/creators'
 
-class PreviewTypeReference extends Component {
+class EventViewContentReference extends Component {
 
 	componentWillMount(){
 		const { dispatch, contentIndex, contentData, reference } = this.props
@@ -68,21 +68,17 @@ class PreviewTypeReference extends Component {
 		}
 
 		return (
-			<div className='type reference'>
-				<div className='human'>{human} <span className="version">{version_abbreviation}</span></div>
+			<div className='content reference'>
+				<div className='title'>{human} <span className="version">{version_abbreviation}</span></div>
 				<p>{verses}</p>
-				<div className='meta'>
-					<div className='notes'>Add your notes…</div>
-					<div className='actions'>&bull; &bull; &bull;</div>
-				</div>
 			</div>
 		)
 	}
 
 }
 
-PreviewTypeReference.propTypes = {
+EventViewContentReference.propTypes = {
 
 }
 
-export default PreviewTypeReference
+export default EventViewContentReference

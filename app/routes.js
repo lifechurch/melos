@@ -1,14 +1,15 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 import App from './containers/App'
+import Auth from './containers/Auth'
 import EventFeedMine from './containers/EventFeedMine'
 import EventEdit from './containers/EventEdit'
 import EventEditDetails from './containers/EventEditDetails'
-import Auth from './containers/Auth'
-import EventEditLocationContainer from './containers/EventEditLocationContainer'
 import EventEditContentContainer from './containers/EventEditContentContainer'
+import EventEditLocationContainer from './containers/EventEditLocationContainer'
 import EventEditPreview from './containers/EventEditPreview'
 import EventEditShare from './containers/EventEditShare'
+import EventView from './containers/EventView'
 
 export default function(requireAuth, requireEvent) {
 	return (
@@ -22,6 +23,7 @@ export default function(requireAuth, requireEvent) {
 				<Route path="preview" component={EventEditPreview} onEnter={requireEvent} onEnter={requireEvent} />
 				<Route path="share" component={EventEditShare} onEnter={requireEvent} />
 			</Route>
+			<Route path="/event/view/:id" component={EventView} onEnter={requireEvent} />
 		</Route>
 	)
 }

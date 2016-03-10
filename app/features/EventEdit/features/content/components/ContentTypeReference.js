@@ -214,10 +214,16 @@ class ContentTypeReference extends Component {
 		var verses = []
 		if (contentData.usfm && chapter && chapter.length) {
 			try {
+				var previous_number
 				for (let usfm of contentData.usfm) {
 					var verse = ::this.parseVerseFromChapter(usfm)
-					verses.push( <span className="verseNumber">{usfm.split('.').pop() + " "}</span> )
+					var verse_number = usfm.split('.').pop() + " "
+					if (previous_number && (previous_number != (verse_number-1))) {
+						verses.push( <br/> )
+					}
+					verses.push( <span className="verseNumber">{verse_number}</span> )
 					verses.push( <span className="verseContent">{verse + " "}</span> )
+					previous_number = verse_number
 				}
 			} catch (err) {
 				 verses = null //[<span className="errorText">{err}</span>]

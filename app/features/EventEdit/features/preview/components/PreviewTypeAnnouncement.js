@@ -6,6 +6,7 @@ class PreviewTypeAnnouncement extends Component {
 
 	toggle(e) {
 		e.target.previousSibling.classList.toggle('show')
+		e.target.text = e.target.text=='expand' ? 'collapse' : 'expand'
 	}
 
 	render() {
@@ -15,7 +16,7 @@ class PreviewTypeAnnouncement extends Component {
 			<div className='type announcement'>
 				<div className='title'>{contentData.title}</div>
 				<div className='caption' dangerouslySetInnerHTML={{__html: contentData.body}} />
-				<a className='toggle' onClick={::this.toggle}>toggle</a>
+				<a className='toggle' onClick={::this.toggle}>expand</a>
 			</div>
 		)
 	}
