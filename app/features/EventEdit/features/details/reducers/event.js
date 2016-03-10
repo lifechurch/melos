@@ -41,7 +41,7 @@ export default function event(state = {}, action) {
 			return applyLifecycleRules(validateEventDetails(Object.assign({}, defaultState.event)))
 
 		case type('viewSuccess'):
-			var response = eventFromApiFormat({ item: action.response, isFetching: false, isSaving: false, isDirty: false })
+			var response = eventFromApiFormat({ item: action.response, isFetching: false, isSaving: false, isDirty: false, isSaved: false })
 			return applyLifecycleRules(Object.assign({}, state, response))
 
 		case type('viewFailure'):
@@ -492,10 +492,19 @@ export default function event(state = {}, action) {
 				}
 			})
 
-		case viewType('saveNoteRequest'):
 		case viewType('saveNoteFailure'):
-		case viewType('saveNoteSuccess'):
 			return state
+		case viewType('saveNoteRequest'):
+		case viewType('saveNoteSuccess'):
+			return Object.assign({}, state, {isSaved: true})
+
+		case viewType('savedEventsRequest'):
+			return state
+
+		case viewType('savedEventsFailure'):
+		case viewType('savedEventsSuccess'):
+			var savedEvents = (typeof action.response != 'undefined') ? action.response.data : []
+			return Object.assign({}, state, {isSaved: (savedEvents.indexOf(action.id) != -1)})
 
 		default:
 			return state

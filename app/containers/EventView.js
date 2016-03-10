@@ -4,11 +4,14 @@ import { connect } from 'react-redux'
 import { fetchEventFeedDiscover } from '../actions'
 import { Link } from 'react-router'
 import Row from '../components/Row'
+import ActionCreators from '../features/EventView/actions/creators'
 import EventViewDetails from '../features/EventView/components/EventViewDetails'
 import EventViewContent from '../features/EventView/components/EventViewContent'
 
 class EventView extends Component {
 	componentWillMount() {
+		const { dispatch, event } = this.props
+		dispatch(ActionCreators.savedEvents(event.item.id))
 	}
 
 	render() {
@@ -42,6 +45,7 @@ EventView.defaultProps = {
 		detailsValid: false,
 		isDirty: true,
 		isSaving: false,
+		isSaved: false,
 		item: {
 			org_name: null,
 			status: "new",
