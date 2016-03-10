@@ -12,6 +12,7 @@ var auth = api.tokenAuth;
 require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] });
 
 var reactServer = require('./react-server');
+var featureServer = require('./feature-server');
 
 var app = express();
 
@@ -46,6 +47,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/authenticate', auth.expressAuthRouteHandler);
 app.use('/', ping);
 app.use('/', api.expressRouter);
+
+//entry point for rails apps
+app.use('/featureImport', featureServer);
 
 // primary route handle for react-router
 app.use(reactServer);
