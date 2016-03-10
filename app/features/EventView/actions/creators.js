@@ -23,6 +23,21 @@ const ActionCreators = {
 				types: [ type('saveNoteRequest'), type('saveNoteSuccess'), type('saveNoteFailure') ]
 			}
 		}
+	},
+
+	savedEvents(id) {
+		return {
+			id,
+			api_call: {
+				endpoint: 'events',
+				method: 'saved_all_items',
+				version: '3.2',
+				auth: true,
+				params: {},
+				http_method: 'get',
+				types: [ type('savedEventsRequest'), type('savedEventsSuccess'), type('savedEventsFailure') ]
+			}
+		}
 	}
 
 }
