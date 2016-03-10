@@ -3,12 +3,23 @@ import { Link } from 'react-router'
 import Row from '../../../components/Row'
 import Column from '../../../components/Column'
 import Image from '../../../components/Image'
+import ActionCreators from '../actions/creators'
 import moment from 'moment'
 
 class EventViewDetails extends Component {
+	saveEvent() {
+		const { dispatch, event } = this.props
+		dispatch(ActionCreators.saveNote({id: event.item.id}))
+	}
+
 	render() {
 		const { event } = this.props
 		const { org_name, title, images, description } = event.item
+
+		var action = <div className="right"><a onClick={::this.saveEvent} className="solid-button green">Save Event</a></div>
+		if (event.isSaved) {
+			var action = <div className="right"><a className="solid-button gray">Event Saved</a></div>
+		}
 
 		return (
 			<div className="details">
@@ -19,7 +30,7 @@ class EventViewDetails extends Component {
 				</div>
 				{ images ? <Image className="hero" images={images} width={640} height={360} /> : null }
 				<div className="title-bar">
-					<div className="right"><a href="#" className="solid-button green">Save Event</a></div>
+					{action}
 					<div className="title">{title}</div>
 				</div>
 				<div className="desc">{description}</div>

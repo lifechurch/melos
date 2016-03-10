@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import Row from '../../../components/Row'
-import Column from '../../../components/Column'
+import Textarea from '../../../components/Textarea'
 import moment from 'moment'
+import ActionCreators from '../actions/creators'
 import EventViewContentMeta from './EventViewContentMeta'
 import EventViewContentText from './EventViewContentText'
 import EventViewContentLink from './EventViewContentLink'
@@ -11,7 +12,28 @@ import EventViewContentPlan from './EventViewContentPlan'
 import EventViewContentReference from './EventViewContentReference'
 import EventViewContentAnnouncement from './EventViewContentAnnouncement'
 
+const AUTO_SAVE_TIMEOUT = 3000
+
 class EventViewContent extends Component {
+
+	handleEditNote(e) {
+		const { dispatch, index } = this.props
+		dispatch( ActionCreators.editNote(index, e.target.value) )
+
+		if (typeof this.cancelSave === 'number') {
+			clearTimeout(this.cancelSave)
+			this.cancelSave = null
+		}
+
+		this.cancelSave = setTimeout(::this.save, AUTO_SAVE_TIMEOUT)
+	}
+
+	save() {
+		const { dispatch, id, content } = this.props
+		var comments = {[content.content_id]: content.comment}
+		dispatch( ActionCreators.saveNote({id, comments}) )
+	}
+
 	render() {
 		const { dispatch, reference, content, index } = this.props
 		var contentItem, meta_links, notes
@@ -70,7 +92,7 @@ class EventViewContent extends Component {
 			<div className={"type" + (meta_links ? "" : " no-meta")}>
 				{contentItem}
 				{meta_links ? <EventViewContentMeta meta_links={meta_links} /> : null}
-				{notes ? <div className="notes"><input placeholder="Add your private notes…" /></div> : null}
+				{notes ? <div className="notes"><Textarea onChange={::this.handleEditNote} placeholder="Add your private notes…" value={content.comment} /></div> : null}
 			</div>
 		)
 	}

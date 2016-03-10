@@ -1264,8 +1264,6 @@ form.locationForm {
 
 
 #ev-view {
-	width: 50%;
-	margin: -80px auto 0;
 
 	.details {
 		.org-bar {
@@ -1320,17 +1318,19 @@ form.locationForm {
 		    }
 
 		    &.image {
-		    	img {
+		    	.primary {
+		    		width: 100%;
 		    		border-radius: 3px;
 		    	}
 
-		    	img + .caption {
+		    	.primary + .caption {
 		    		margin-top: 10px;
 		    	}
 		    }
 
 		    &.plan {
-		    	img {
+		    	.primary {
+		    		width: 100%;
 			    	border-radius: 3px;
 			    }
 
@@ -1374,8 +1374,10 @@ form.locationForm {
 		    border-top-width: 0;
 		    border-radius: 0 0 5px 5px;
 
-		    input {
-		    	width: 100%;
+		    textarea {
+		    	height: 2.5em;
+		    	min-height: 2.5em;
+		    	margin-bottom: 0;
 		    	background-color: #fff;
 		    }
 	    }

@@ -5,7 +5,6 @@ const constants = {
 	configurationRequest: 'EVENT_CONFIGURATION_REQUEST',
 	configurationSuccess: 'EVENT_CONFIGURATION_SUCCESS',
 	configurationFailure: 'EVENT_CONFIGURATION_FAILURE',
-	setStatus: 'EVENT_SET_STATUS',
 	deleteRequest: 'EVENT_DELETE_REQUEST',
 	deleteSuccess: 'EVENT_DELETE_SUCCESS',
 	deleteFailure: 'EVENT_DELETE_FAILURE'

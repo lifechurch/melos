@@ -1,52 +1,27 @@
 import React, { Component, PropTypes } from 'react'
 import Row from '../../../components/Row'
 import Column from '../../../components/Column'
+import Countdown from '../../../components/Countdown'
 import { Link } from 'react-router'
 import moment from 'moment'
 import ActionCreators from '../actions/creators'
 
-var Countdown = React.createClass({
-
-	getInitialState: function() {
-		const { initialCountdownSeconds } = this.props
-		return { secondsRemaining: initialCountdownSeconds }
-	},
-
-	tick: function() {
-		const { dispatch, index } = this.props
-		const { secondsRemaining } = this.state
-		this.setState({secondsRemaining: secondsRemaining - 1});
-		if (secondsRemaining <= 0) {
-			clearInterval(this.interval);
-
-			// Simulate live
-			dispatch(ActionCreators.setStatus(index, 2))
-		}
-	},
-
-	componentDidMount: function() {
-  		this.interval = setInterval(this.tick, 1000);
-	},
-
-	render: function() {
-		const { secondsRemaining } = this.state
-		const minutes = parseInt(secondsRemaining / 60)
-		const seconds = parseInt(secondsRemaining % 60)
-		const remainingTime =  (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds)
-		return <span className="red-label">
-			{remainingTime}
-		</span>
-	}
-});
-
 class EventListItem extends Component {
 
 	getLiveDetails() {
-		const { item, handleDuplicate } = this.props
+		const { dispatch, startOffset, item, index, handleDuplicate } = this.props
+		const START_OFFSET_SECONDS = startOffset * 60;
+		const start = moment(item.min_time);
+		const secondsLeft = start.diff(moment(), "seconds");
+
 		return (
 			<div className="events-details">
-				<span className="red-label">LIVE</span>
-				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
+				<Countdown
+					initialCountdownSeconds={secondsLeft}
+					dispatch={dispatch}
+					item={item}
+					index={index} />
+				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}>Duplicate</a>
 				<Link className="small-link" to={`/event/edit/${item.id}/share`}>Share</Link>
 			</div>
 		)
@@ -54,27 +29,14 @@ class EventListItem extends Component {
 
 	getPublishedDetails() {
 		const { dispatch, startOffset, item, index, handleDuplicate } = this.props
-		const START_OFFSET_SECONDS = startOffset * 60;
-		const start = moment(item.min_time);
-		const end = moment(item.max_time);
-		const secondsLeft = start.diff(moment(), "seconds");
-		if (0 <= secondsLeft && secondsLeft <= START_OFFSET_SECONDS) {
-			return <div className="events-details">
-				<Countdown
-					initialCountdownSeconds={secondsLeft}
-					dispatch={dispatch}
-					item={item}
-					index={index} />
-				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
-				<Link className="small-link" to={`/event/edit/${item.id}/share`}>Share</Link>
+		return (
+			<div className="events-details">
+				<span className="details-text">
+					{start.format("MMMM DD, YYYY") + " - " + end.format("MMMM DD, YYYY")}
+				</span>
+				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}>Duplicate</a>
 			</div>
-		}
-		return <div className="events-details">
-			<span className="details-text">
-				{start.format("MMMM DD, YYYY") + " - " + end.format("MMMM DD, YYYY")}
-			</span>
-			<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
-		</div>
+		)
 	}
 
 	getDraftDetails() {
@@ -82,7 +44,7 @@ class EventListItem extends Component {
 		return (
 			<div className="events-details">
 				<span className="gray-label">DRAFT</span>
-				<Link className="small-link" to={'#'} onClick={handleDuplicate.bind(this, item.id)}>Duplicate</Link>
+				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}>Duplicate</a>
 				<a className="small-link" onClick={handleDelete.bind(this, item.id, index)}>Delete</a>
 			</div>
 		)

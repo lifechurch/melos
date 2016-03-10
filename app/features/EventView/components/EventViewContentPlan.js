@@ -11,7 +11,7 @@ class EventViewContentPlan extends Component {
 		var image
 
 		if (contentData.images && contentData.images.length > 0) {
-			image = <a target="_blank" href={contentData.shorturl}><Image images={contentData.images} width={640} height={360} /></a>
+			image = <a target="_blank" href={contentData.shorturl}><Image images={contentData.images} width={640} height={360} className="primary" /></a>
 		}
 
 		return (

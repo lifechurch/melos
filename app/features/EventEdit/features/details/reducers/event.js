@@ -1,6 +1,7 @@
 import type from '../actions/constants'
 import locationType from '../../location/actions/constants'
 import contentType from '../../content/actions/constants'
+import viewType from '../../../../EventView/actions/constants'
 import { validateEventDetails } from '../validators/details'
 import { fromApiFormat as eventFromApiFormat, sortContent } from '../transformers/event'
 import defaultState from '../../../../../defaultState'
@@ -40,7 +41,7 @@ export default function event(state = {}, action) {
 			return applyLifecycleRules(validateEventDetails(Object.assign({}, defaultState.event)))
 
 		case type('viewSuccess'):
-			var response = eventFromApiFormat({ item: action.response, isFetching: false, isSaving: false, isDirty: false })
+			var response = eventFromApiFormat({ item: action.response, isFetching: false, isSaving: false, isDirty: false, isSaved: false })
 			return applyLifecycleRules(Object.assign({}, state, response))
 
 		case type('viewFailure'):
@@ -478,6 +479,32 @@ export default function event(state = {}, action) {
 					]
 				}
 			})
+
+		case viewType('editNote'):
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.index),
+						Object.assign({}, state.item.content[action.index], {comment: action.note}),
+						...state.item.content.slice(action.index + 1)
+					]
+				}
+			})
+
+		case viewType('saveNoteFailure'):
+			return state
+		case viewType('saveNoteRequest'):
+		case viewType('saveNoteSuccess'):
+			return Object.assign({}, state, {isSaved: true})
+
+		case viewType('savedEventsRequest'):
+			return state
+
+		case viewType('savedEventsFailure'):
+		case viewType('savedEventsSuccess'):
+			var savedEvents = (typeof action.response != 'undefined') ? action.response.data : []
+			return Object.assign({}, state, {isSaved: (savedEvents.indexOf(action.id) != -1)})
 
 		default:
 			return state
