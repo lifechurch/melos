@@ -5,17 +5,18 @@ import Column from '../../../components/Column'
 class EventViewContentAnnouncement extends Component {
 
 	toggle(e) {
-		e.target.nextSibling.classList.toggle('show')
-		e.target.text = e.target.text=='expand' ? 'collapse' : 'expand'
+		var content = e.currentTarget.childNodes
+		content[1].text = content[1].text=='expand' ? 'collapse' : 'expand'
+		content[2].classList.toggle('show')
 	}
 
 	render() {
 		const { contentData } = this.props
 
 		return (
-			<div className='content announcement'>
+			<div className='content announcement' onClick={::this.toggle}>
 				<div className='title left'>{contentData.title}</div>
-				<a className='toggle right' onClick={::this.toggle}>expand</a>
+				<a className='toggle right'>expand</a>
 				<div className='caption' dangerouslySetInnerHTML={{__html: contentData.body}} />
 			</div>
 		)

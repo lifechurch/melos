@@ -35,7 +35,7 @@ class EventViewContent extends Component {
 	}
 
 	render() {
-		const { dispatch, reference, content, index } = this.props
+		const { dispatch, auth, reference, content, index } = this.props
 		var contentItem, meta_links, notes
 
 		switch (content.type) {
@@ -88,11 +88,28 @@ class EventViewContent extends Component {
 					contentItem = <div className="content">{content.type}</div>
 		}
 
+		if (notes) {
+			if (auth.isLoggedIn) {
+				notes = (
+					<div className="notes">
+						<Textarea onChange={::this.handleEditNote} placeholder="Add your private notes…" value={content.comment} />
+					</div>
+				)
+			} else {
+				notes = (
+					<div className="notes unauthed">
+						<a href="https://www.bible.com/sign-in"><span className="highlight">Sign in</span> to add your private notes…</a>
+					</div>
+				)
+			}
+		}
+
+
 		return (
 			<div className={"type" + (meta_links ? "" : " no-meta")}>
 				{contentItem}
 				{meta_links ? <EventViewContentMeta meta_links={meta_links} /> : null}
-				{notes ? <div className="notes"><Textarea onChange={::this.handleEditNote} placeholder="Add your private notes…" value={content.comment} /></div> : null}
+				{notes}
 			</div>
 		)
 	}

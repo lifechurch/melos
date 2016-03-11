@@ -1285,6 +1285,38 @@ form.locationForm {
 		.desc {
 			margin: 20px 0;
 		}
+		.locations {
+			cursor: pointer;
+
+			.caption {
+				clear: both;
+				display: none;
+				padding-top: 20px;
+				&.show {
+					display: block;
+				}
+			}
+			ul {
+				margin: 0;
+			}
+			li {
+				list-style: none;
+				margin-bottom: 1em;
+				&:last-child {
+					margin: 0;
+				}
+
+				& div {
+					color: #999;
+					font-size: .8em;
+				}
+				& div:first-child {
+					color: #333;
+					font-size: 1em;
+					font-weight: bold;
+				}
+			}
+		}
 	}
 
 	.type {
@@ -1298,6 +1330,7 @@ form.locationForm {
 		    padding: 20px;
 		    border: 1px solid #ddd;
 		    border-radius: 5px 5px 0 0;
+		    overflow: auto;
 
 		    .title {
 		    	font-size: 1.2em;
@@ -1306,6 +1339,7 @@ form.locationForm {
 
 		    &.announcement {
 		    	overflow: auto;
+		    	cursor: pointer;
 
 		    	.caption {
 		    		display: none;
@@ -1373,6 +1407,21 @@ form.locationForm {
 		    border: 1px solid #ddd;
 		    border-top-width: 0;
 		    border-radius: 0 0 5px 5px;
+
+		    &.unauthed a {
+			    display: block;
+			    padding: 0 10px;
+			    line-height: 2em;
+			    opacity: .7;
+			    background: #fff;
+			    border: 1px solid #ddd;
+			    border-radius: 5px;
+			    color: #888;
+
+			    .highlight {
+			    	color: #058;
+			    }
+		    }
 
 		    textarea {
 		    	height: 2.5em;

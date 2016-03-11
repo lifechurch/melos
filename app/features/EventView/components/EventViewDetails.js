@@ -12,14 +12,32 @@ class EventViewDetails extends Component {
 		dispatch(ActionCreators.saveNote({id: event.item.id}))
 	}
 
+	toggleLocations(e) {
+		var loc = e.currentTarget.childNodes
+		loc[1].text = loc[1].text=='expand' ? 'collapse' : 'expand'
+		loc[2].classList.toggle('show')
+	}
+
 	render() {
 		const { event } = this.props
-		const { org_name, title, images, description } = event.item
+		const { org_name, title, images, description, locations } = event.item
 
 		var action = <div className="right"><a onClick={::this.saveEvent} className="solid-button green">Save Event</a></div>
 		if (event.isSaved) {
 			var action = <div className="right"><a className="solid-button gray">Event Saved</a></div>
 		}
+
+		var locationList = Object.keys(locations).map((l) => {
+			var name = locations[l].name ? <div className='location name'>{locations[l].name}</div> : null
+			var address = <div className='location address'>{locations[l].formatted_address}</div>
+			return (
+				<li key={l}>
+					{name}
+					{address}
+					<div className="times">{locations[l].times.map((t) => {return moment(t.start_dt).format('dddd h:mm A')}).join(', ')}</div>
+				</li>
+			)
+		})
 
 		return (
 			<div className="details">
@@ -34,7 +52,15 @@ class EventViewDetails extends Component {
 					<div className="title">{title}</div>
 				</div>
 				<div className="desc">{description}</div>
-				<div className="locs"><a href="#">Locations & Times</a></div>
+				<div className="type no-meta">
+					<div className="content locations" onClick={this.toggleLocations}>
+						<div className='title left'>Locations & Times</div>
+						<a ref="toggle" className='toggle right'>expand</a>
+						<div className="caption">
+							<ul>{locationList}</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		)
 	}

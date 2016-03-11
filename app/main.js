@@ -36,7 +36,7 @@ function requireAuth(nextState, replace) {
 function requireEvent(nextState, replace, callback) {
 	const { params } = nextState
 	if (params.hasOwnProperty("id") && params.id > 0) {
-		store.dispatch(EventActionCreators.view(nextState.params.id)).then((event) => {
+		store.dispatch(EventActionCreators.view(params.id, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
