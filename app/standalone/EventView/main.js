@@ -13,8 +13,8 @@ import EventActionCreators from '../../features/EventEdit/features/details/actio
 let initialState = defaultState
 
 if (typeof window !== 'undefined') {
-	window.YV_API_HOST = 'localhost'
-	window.YV_API_PORT = '3000'
+	window.YV_API_HOST = process.env.NODE_ENV === 'production' ? 'events.bible.com' : 'events-staging.bible.com'
+	window.YV_API_PORT = 80
 }
 
 if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
