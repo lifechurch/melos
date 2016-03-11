@@ -39,6 +39,7 @@ common:
   vod_image_api_url: 'https://s3.amazonaws.com/votd-images-youversionapi-com/items.json'
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
   event_import_url: "https://events-staging.bible.com/featureImport/event"
+  event_api_host: "events-staging.bible.com"
 
 development:
   api_root: youversionapistaging.com
@@ -50,6 +51,8 @@ development:
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
   event_import_url: "http://localhost:3000/featureImport/event"
+  event_api_host: "localhost"
+  event_api_port: "3000"
 
 staging:
   #api_root: youversionapi.com
@@ -66,6 +69,7 @@ staging:
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
   event_import_url: "https://events-staging.bible.com/featureImport/event"
+  event_api_host: "events-staging.bible.com"
 
 test:
   api_root: youversionapistaging.com
@@ -89,3 +93,4 @@ production:
   treadstone_base_url: 'https://donate.bible.com/'
   branch_key: "key_live_jpmoQCKshT4dmEI1OZyuGmlmjffQNTlA"
   event_import_url: "https://events.bible.com/featureImport/event"
+  event_api_host: "events.bible.com"
