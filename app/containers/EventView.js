@@ -15,11 +15,11 @@ class EventView extends Component {
 	}
 
 	render() {
-		const { dispatch, reference, event } = this.props
+		const { dispatch, auth, reference, event } = this.props
 		const { id, content } = event.item
 
 		const contentList = content.map((c,i) => {
-			return <EventViewContent ref={i} id={id} content={c} index={i} dispatch={dispatch} reference={reference} />
+			return <EventViewContent ref={i} id={id} content={c} index={i} dispatch={dispatch} auth={auth} reference={reference} />
 		})
 
 		return (

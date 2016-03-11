@@ -36,13 +36,13 @@ function imgUploadFailure(params) {
 	}
 }
 
-function view(id) {
+function view(id, auth=true) {
 	return {
 		api_call: {
 			endpoint: 'events',
 			method: 'view',
 			version: '3.2',
-			auth: true,
+			auth,
 			params: { id },
 			http_method: 'get',
 			types: [ type('viewRequest'), type('viewSuccess'), type('viewFailure') ]
