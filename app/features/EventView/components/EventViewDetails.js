@@ -13,8 +13,9 @@ class EventViewDetails extends Component {
 	}
 
 	toggleLocations(e) {
-		e.target.nextSibling.classList.toggle('show')
-		// e.target.text = e.target.text=='expand' ? 'collapse' : 'expand'
+		var loc = e.currentTarget.childNodes
+		loc[1].text = loc[1].text=='expand' ? 'collapse' : 'expand'
+		loc[2].classList.toggle('show')
 	}
 
 	render() {
@@ -27,10 +28,13 @@ class EventViewDetails extends Component {
 		}
 
 		var locationList = Object.keys(locations).map((l) => {
+			var name = locations[l].name ? <div className='location name'>{locations[l].name}</div> : null
+			var address = <div className='location address'>{locations[l].formatted_address}</div>
 			return (
 				<li key={l}>
-					<div className="location"><b>{locations[l].name}</b> {locations[l].formatted_address}</div>
-					<div className="times">Start time(s): {locations[l].times.map((t) => {return moment(t.start_dt).format('dddd h:mm A')}).join(', ')}</div>
+					{name}
+					{address}
+					<div className="times">{locations[l].times.map((t) => {return moment(t.start_dt).format('dddd h:mm A')}).join(', ')}</div>
 				</li>
 			)
 		})
@@ -48,8 +52,15 @@ class EventViewDetails extends Component {
 					<div className="title">{title}</div>
 				</div>
 				<div className="desc">{description}</div>
-				<a class="locations-toggle" onClick={this.toggleLocations}>Locations & Times</a>
-				<ul className={"locations" + ((Object.keys(locations).length < 3) ? " show" : "")}>{locationList}</ul>
+				<div className="type no-meta">
+					<div className="content locations" onClick={this.toggleLocations}>
+						<div className='title left'>Locations & Times</div>
+						<a ref="toggle" className='toggle right'>expand</a>
+						<div className="caption">
+							<ul>{locationList}</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		)
 	}
