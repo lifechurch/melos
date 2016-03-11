@@ -5,6 +5,7 @@ import Column from '../../../components/Column'
 import Image from '../../../components/Image'
 import ActionCreators from '../actions/creators'
 import moment from 'moment'
+import RevManifest from '../../../lib/revManifest'
 
 class EventViewDetails extends Component {
 	saveEvent() {
@@ -42,8 +43,7 @@ class EventViewDetails extends Component {
 		return (
 			<div className="details">
 				<div className="org-bar">
-					<div className="right"><a className="share-icon">O</a></div>
-					<div className="timer"></div>
+					<div className="right"><a className="share-icon"><img src={`/images/${RevManifest('share.png')}`} /></a></div>
 					<div className="org">{org_name}</div>
 				</div>
 				{ images ? <Image className="hero" images={images} width={640} height={360} /> : null }
