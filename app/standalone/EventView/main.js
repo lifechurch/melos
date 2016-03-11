@@ -26,7 +26,7 @@ const store = configureStore(initialState, browserHistory, logger)
 function requireEvent(nextState, replace, callback) {
 	const { params } = nextState
 	if (params.hasOwnProperty("id") && params.id > 0) {
-		store.dispatch(EventActionCreators.view(nextState.params.id)).then((event) => {
+		store.dispatch(EventActionCreators.view(nextState.params.id, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
@@ -36,7 +36,7 @@ function requireEvent(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(() => {}, requireEvent)
+const routes = getRoutes(requireEvent)
 
 render(
 	<Provider store={store}>

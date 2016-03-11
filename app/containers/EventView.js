@@ -10,8 +10,10 @@ import EventViewContent from '../features/EventView/components/EventViewContent'
 
 class EventView extends Component {
 	componentWillMount() {
-		const { dispatch, event } = this.props
-		dispatch(ActionCreators.savedEvents(event.item.id))
+		const { dispatch, auth, event } = this.props
+		if (auth.isLoggedIn) {
+			dispatch(ActionCreators.savedEvents(event.item.id))
+		}
 	}
 
 	render() {

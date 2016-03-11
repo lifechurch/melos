@@ -2,7 +2,7 @@ import express from 'express'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
-import getRoutes from './app/routes.js'
+import getRoutes from './app/standalone/EventView/routes.js'
 import Helmet from 'react-helmet'
 import configureStore from './app/store/configureStore'
 import defaultState from './app/defaultState'
@@ -37,7 +37,7 @@ router.post('/event', urlencodedParser, function(req, res) {
 		assetPrefix = ['http://', req.get('Host')].join('')
 	}
 
-	match({ routes, location: '/event/view/' + req.params.id }, (error, redirectLocation, renderProps) => {
+	match({ routes, location: '/events/' + req.params.id }, (error, redirectLocation, renderProps) => {
 		if (error) {
 			res.status(500).send({ error: 0, message: error.message });
 
