@@ -8,11 +8,11 @@ module YV
       
       class << self
         def get(key, opts={})
-          resource_url = 'http://localhost:3000/featureImport/event/1'
+          resource_url = Cfg.event_import_url
           curb_get = lambda do
             begin
 
-              post_body = { from: "rails", auth: opts[:auth] }  # "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6ImUyMWQ1NGFjMTdiZmQwZWFjOTQ4OGYyYzE4N2NiYjc3NTNmZWNmNWU3MmM5YjdhNDMxZDY2ZGRmODFlODM1Mzg2ZWQyNTA3YTliNTdmMDg5YmE2YzRlZjhlZDQ4NGEzMjAyYTcxOGRkNGVlNWNmZDhmZDE2MzcyZmY2ODA4NWI3OTYzMTY0Y2VlMzgzMGFkNTI2YzZmMDFhNDJiMzQxYWIzYzljYjQ5YTE0NmMyNGMxMGRhNWM1ZTI2MTdhOTZlNTBiMmFhYjJiMzc4MWU3MTYyYWQyYjIzMzcyNGI0YjBmZmEzZjZiYTY3NzIyMmVjM2YwNDA0Yzg5MDU0MDBjYzA2NDNhZmE3MjM0YTFjMjgxOTJhYThhZjIxZTYxMmZlYTk4MTdmZTlmYjRiZGZhNThiYzM4N2JlOWI0MmI1MzQyMGRlYmQ0ZmI0ZTcwYTliOTVkNTMwZGE0ZmQxNTQ0YTAiLCJpYXQiOjE0NTc2Mzg4NjQsImV4cCI6MTQ1NzcyNTI2NCwiaXNzIjoiaHR0cDovL2JpYmxlLmNvbSJ9.mbE4OrLrGv6o3_bhdrzmZKaVZ8kVfrUPm9qmzilxTDo" }
+              post_body = { from: "rails", auth: opts[:auth] }
 
               curl = Curl::Easy.http_post(resource_url, post_body.to_json ) do |c|
                 c.headers['Accept'] = 'application/json'
