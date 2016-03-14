@@ -52,7 +52,7 @@ class EventViewDetails extends Component {
 			<div className="details">
 				<div className="org-bar">
 					<div className="right">
-						<a className="share-icon" onClick={::this.handleShare}><img src={`/images/${RevManifest('share.png')}`} /></a>
+						<a className="share-icon" onClick={::this.handleShare}><img src='https://events-staging.bible.com/images/share.png' /></a>
 						<div className="addthis_sharing_toolbox" data-url={event.item.short_url} data-title={event.item.title}></div>
 					</div>
 					<div className="org">{org_name}</div>
