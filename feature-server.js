@@ -124,7 +124,7 @@ router.post('/event', urlencodedParser, function(req, res) {
 					.params({ id: req.body.id })
 
 				if (startingState.auth.isLoggedIn === true) {
-					client.auth({username: sessionData.email , password: sessionData.password })
+					client.auth(sessionData.email , sessionData.password)
 				}
 
 				client.get().then((response) => {
@@ -134,8 +134,9 @@ router.post('/event', urlencodedParser, function(req, res) {
 						return res.status(404).send({error:4, message: 'Could not find Event.'})
 					}
 
-					startingState.event.item = response
 					const store = configureStore(startingState, history, null)
+					store.dispatch({ type: 'EVENT_VIEW_SUCCESS', response })
+
 					const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
 					const initialState = store.getState()
 					const head = Helmet.rewind()
