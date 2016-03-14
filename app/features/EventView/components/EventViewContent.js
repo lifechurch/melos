@@ -40,10 +40,14 @@ class EventViewContent extends Component {
 
 		switch (content.type) {
 				case 'text':
+				   var output = document.createElement("DIV");
+				   output.innerHTML = content.data.body;
+				   var output = output.textContent || output.innerText || "";
+
 					contentItem = <EventViewContentText contentData={content.data} meta_links={meta_links} />
 					meta_links = [
-						{label: 'Copy', url: 'http://#'},
-						{label: 'Share', url: 'http://#'}
+						{label: 'Copy', payload: output},
+						{label: 'Share', payload: {url: '', title: output}}
 					]
 					notes = true
 					break
@@ -57,21 +61,27 @@ class EventViewContent extends Component {
 					break
 
 				case 'image':
+					var urls = []
+					if (content.data.urls) {
+						urls = content.data.urls.filter((i) => { if (i.width==640 && i.height==640) { return true } })
+					}
 					contentItem = <EventViewContentImage contentData={content.data} />
-					meta_links = [{label: 'Share', url: 'http://#'}]
+					// meta_links = [{label: 'Share', payload: {url: urls.length ? urls[0].url : null, title: ''}}]
 					notes = true
 					break
 
 				case 'reference':
-					var usfmLink = 'https://www.bible.com/bible/' + content.data.version_id + '/' +
-								   content.data.usfm[0].split('.').slice(0,2).join('.') + '.' +
-								   content.data.usfm.map((u) => { return u.split('.')[2] }).join()
+					var human = content.data.human.split(':')[0] + ":" +
+									content.data.human.split(', ').map((v)=>{return v.split(':')[1]}).join()
+					var url = 'https://bible.com/' + content.data.version_id + '/' +
+								    content.data.usfm[0].split('.').slice(0,2).join('.') + '.' +
+								    content.data.human.split(', ').map((v)=>{return v.split(':')[1]}).join()
 
 					contentItem = <EventViewContentReference contentData={content.data} contentIndex={index} dispatch={dispatch} reference={reference} />
 					meta_links = [
-						{label: 'Read', url: usfmLink},
-						{label: 'Copy', url: 'http://#'},
-						{label: 'Share', url: 'http://#'}
+						{label: 'Read', payload: url},
+						// {label: 'Copy', payload: human + " " + url},
+						{label: 'Share', payload: {url: url, title: human}}
 					]
 					notes = true
 					break
@@ -79,8 +89,8 @@ class EventViewContent extends Component {
 				case 'plan':
 					contentItem = <EventViewContentPlan contentData={content.data} />
 					meta_links = [
-						{label: 'Read Plan', url: content.data.short_url},
-						{label: 'Share', url: 'http://#'}
+						{label: 'Read Plan', payload: content.data.short_url},
+						{label: 'Share', payload: {url: content.data.short_url, title: content.data.title}}
 					]
 					break
 
@@ -108,7 +118,7 @@ class EventViewContent extends Component {
 		return (
 			<div className={"type" + (meta_links ? "" : " no-meta")}>
 				{contentItem}
-				{meta_links ? <EventViewContentMeta meta_links={meta_links} /> : null}
+				{meta_links ? <EventViewContentMeta meta_links={meta_links.reverse()} /> : null}
 				{notes}
 			</div>
 		)
