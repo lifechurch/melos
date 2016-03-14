@@ -28,11 +28,35 @@ gulp.task('javascript:prod', function() {
 		.pipe(gulp.dest('build/assets'));
 });
 
+
+gulp.task('javascript:prod:event', function() {
+	return browserify("app/standalone/EventView/main.js", { debug: !IS_PROD })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
+		.transform('loose-envify', { NODE_ENV: 'production' })
+		.bundle()
+		.pipe(source('eventView.js'))
+		.pipe(buffer())
+		.pipe(uglify())
+		.pipe(rev())
+		.pipe(gulp.dest("./public/javascripts/"))
+		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(gulp.dest('build/assets'));
+});
+
 gulp.task('javascript:dev', function() {
 	return browserify("app/main.js", { debug: !IS_PROD })
 		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
 		.bundle()
 		.pipe(source('app.js'))
+		.pipe(buffer())
+		.pipe(gulp.dest("./public/javascripts/"));
+});
+
+gulp.task('javascript:dev:event', function() {
+	return browserify("app/standalone/EventView/main.js", { debug: !IS_PROD })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
+		.bundle()
+		.pipe(source('eventView.js'))
 		.pipe(buffer())
 		.pipe(gulp.dest("./public/javascripts/"));
 });
@@ -51,9 +75,9 @@ gulp.task('images:clean', function() {
 
 gulp.task('javascript', function(callback) {
 	if (IS_PROD) {
-		runSequence('javascript:clean', 'javascript:prod', callback);
+		runSequence('javascript:clean', ['javascript:prod', 'javascript:prod:event'], callback);
 	} else {
-		runSequence('javascript:clean', 'javascript:dev', callback);
+		runSequence('javascript:clean', ['javascript:dev', 'javascript:dev:event'], callback);
 	}
 });
 
@@ -107,15 +131,15 @@ gulp.task('images:dev', function() {
 gulp.task('build', ['images', 'css', 'javascript']);
 
 gulp.task('build:production', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:prod', 'javascript:prod'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event'], callback);
 });
 
 gulp.task('build:staging', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event'], callback);
 });
 
 gulp.task('build:review', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event'], callback);
 });
 
 gulp.task('watch', ['images', 'css', 'javascript'], function() {

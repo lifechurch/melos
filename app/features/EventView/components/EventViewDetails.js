@@ -28,10 +28,10 @@ class EventViewDetails extends Component {
 	}
 
 	render() {
-		const { event } = this.props
+		const { event, auth } = this.props
 		const { org_name, title, images, description, locations } = event.item
 
-		var action = <div className="right"><a onClick={::this.saveEvent} className="solid-button green">Save Event</a></div>
+		var action = <div className="right">{ auth.isLoggedIn ? <a onClick={::this.saveEvent} className="solid-button green">Save Event</a> : <a href="/sign-in" className="solid-button green">Sign In to Save Event</a>}</div>
 		if (event.isSaved) {
 			var action = <div className="right"><a className="solid-button gray">Event Saved</a></div>
 		}
