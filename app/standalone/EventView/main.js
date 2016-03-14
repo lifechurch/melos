@@ -1,4 +1,3 @@
-import 'babel-polyfill'
 import React from 'react'
 import { Router } from 'react-router'
 import { render } from 'react-dom'
@@ -8,7 +7,6 @@ import { browserHistory } from 'react-router'
 import createLogger from 'redux-logger'
 import getRoutes from './routes'
 import defaultState from '../../defaultState'
-import EventActionCreators from '../../features/EventEdit/features/details/actions/creators'
 
 let initialState = defaultState
 
@@ -22,21 +20,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 }
 
 const store = configureStore(initialState, browserHistory, logger)
-
-function requireEvent(nextState, replace, callback) {
-	const { params } = nextState
-	if (params.hasOwnProperty("id") && params.id > 0) {
-		store.dispatch(EventActionCreators.view(nextState.params.id, store.getState().auth.isLoggedIn)).then((event) => {
-			callback()
-		}, (error) => {
-			callback()
-		})
-	} else {
-		callback()
-	}
-}
-
-const routes = getRoutes(requireEvent)
+const routes = getRoutes(() => {})
 
 render(
 	<Provider store={store}>

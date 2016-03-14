@@ -15,6 +15,7 @@ import { fetchToken } from '@youversion/token-storage'
 import { tokenAuth } from '@youversion/js-api'
 import revManifest from './rev-manifest.json'
 import bodyParser from 'body-parser'
+import { getClient } from '@youversion/js-api'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
@@ -31,13 +32,14 @@ function getAssetPath(path) {
 
 router.post('/event', urlencodedParser, function(req, res) {
 	let assetPrefix = null
+
 	if (req.get('Host').indexOf('localhost') === -1) {
 		assetPrefix = ['https://', req.get('Host')].join('')
 	} else {
 		assetPrefix = ['http://', req.get('Host')].join('')
 	}
 
-	match({ routes, location: '/events/' + req.params.id }, (error, redirectLocation, renderProps) => {
+	match({ routes, location: '/events/' + req.body.id }, (error, redirectLocation, renderProps) => {
 		if (error) {
 			res.status(500).send({ error: 0, message: error.message });
 
@@ -55,7 +57,6 @@ router.post('/event', urlencodedParser, function(req, res) {
 					token = req.body.auth.token
 					tokenData = tokenAuth.decodeToken(token)
 					sessionData = tokenAuth.decryptToken(tokenData.token)
-					delete sessionData.password
 
 					startingState = Object.assign({}, defaultState, { auth: {
 						token: null,
@@ -80,7 +81,6 @@ router.post('/event', urlencodedParser, function(req, res) {
 				// No token, but we have enough info to create one
 				sessionData = req.body.auth
 				token = tokenAuth.token(sessionData)
-				delete sessionData.password
 
 				startingState = Object.assign({}, defaultState, { auth: {
 					token: null,
@@ -117,16 +117,37 @@ router.post('/event', urlencodedParser, function(req, res) {
 			}
 
 			try {
-				const logger = createNodeLogger()
-				const history = createMemoryHistory()
-				const store = configureStore(startingState, history, logger)
-				const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
-				const initialState = store.getState()
-				const head = Helmet.rewind()
-				res.setHeader('Cache-Control', 'public')
-				res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix }, function(err, html) {
-					res.send({ html, token, head })
+				const client = getClient('events')
+					.call('view')
+					.setVersion('3.2')
+					.setEnvironment(process.env.NODE_ENV)
+					.params({ id: req.body.id })
+
+				if (startingState.auth.isLoggedIn === true) {
+					client.auth({username: sessionData.email , password: sessionData.password })
+				}
+
+				client.get().then((response) => {
+					const logger = createNodeLogger()
+					const history = createMemoryHistory()
+
+					if (typeof response.errors !== 'undefined') {
+						return res.status(404).send({error:4, message: 'Could not find Event.'})
+					}
+
+					startingState.event.item = response
+					const store = configureStore(startingState, history, logger)
+					const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
+					const initialState = store.getState()
+					const head = Helmet.rewind()
+					res.setHeader('Cache-Control', 'public')
+					res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix }, function(err, html) {
+						res.send({ html, token, head, js: assetPrefix + '/javascripts/' + getAssetPath('eventView.js') })
+					})
+				}, (error) => {
+					res.status(404).send({error:4, message: 'Could not find Event.'})
 				})
+
 			} catch(ex) {
 				res.status(500).send({error: 2, message: 'Could not render Event view'})
 			}
