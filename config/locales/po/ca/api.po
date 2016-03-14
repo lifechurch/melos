@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-11 11:09-0609\n"
+"PO-Revision-Date: 2016-03-11 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ca <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -116,6 +116,18 @@ msgstr "Has creat una imatge per a <b>{reference_human} {version_abbreviation}</
 
 msgid "moment.image.title"
 msgstr "{name} ha creat una imatge per a <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Has afegit una nota"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} ha afegit una nota"
+
+msgid "moment.note.reference.self.title"
+msgstr "Has afegit una nota a <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "{name} ha afegit a <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Has afegit una nota, <b>{title}</b>"

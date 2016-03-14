@@ -93,6 +93,18 @@ msgstr "You added a note, <b>{title}</b>"
 msgid "moment.note.title"
 msgstr "{name} added a note, <b>{title}</b>"
 
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} added a note"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "You added a note"
+
+msgid "moment.note.reference.title"
+msgstr "{name} added a note on <b>{reference_human}</b>"
+
+msgid "moment.note.reference.self.title"
+msgstr "You added a note on <b>{reference_human}</b>"
+
 msgid "moment.plan_completion.self.title"
 msgstr "You completed your Plan"
 

@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-11 11:09-0609\n"
+"PO-Revision-Date: 2016-03-11 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -116,6 +116,18 @@ msgstr "你制作了<b>{reference_human} {version_abbreviation}的经句图</b>"
 
 msgid "moment.image.title"
 msgstr "{name}制作了 <b>{reference_human} {version_abbreviation}的经句图</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "你添加了一条笔记"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} 添加了一条笔记"
+
+msgid "moment.note.reference.self.title"
+msgstr "你为<b>{reference_human}</b>添加了一条笔记"
+
+msgid "moment.note.reference.title"
+msgstr "{name}为<b>{reference_human}</b>添加了一条笔记"
 
 msgid "moment.note.self.title"
 msgstr "您加了一条笔记，<b>{title}</b>"

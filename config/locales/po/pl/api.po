@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-11 11:09-0609\n"
+"PO-Revision-Date: 2016-03-11 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pl <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -116,6 +116,18 @@ msgstr "Stworzyłeś(aś) obraz wersetu dla <b>{reference_human} {version_abbrev
 
 msgid "moment.image.title"
 msgstr "{name} stworzył(a) obraz wersetu dla <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Dodałeś/aś notatkę"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} dodał notatkę"
+
+msgid "moment.note.reference.self.title"
+msgstr "Dadałeś/aś notatkę o  <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "{name} dadał/a notatkę o <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Dodałeś notatkę, <b>{title}</b>"

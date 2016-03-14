@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-11 11:09-0609\n"
+"PO-Revision-Date: 2016-03-11 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: el <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -46,19 +46,19 @@ msgid "moment.badge.earned.self.title"
 msgstr "Κέρδισες την <b>διάκριση</b> {title}"
 
 msgid "moment.badge.earned.title"
-msgstr "Ο χρήστης {name}κέρδισε την <b>διάκριση</b> {title}"
+msgstr "Ο/Η {name} κέρδισε τη <b>διάκριση</b> {title}"
 
 msgid "moment.bible.download.self.title"
 msgstr "Κατέβασες την έκδοση, <b>{version}</b>"
 
 msgid "moment.bible.download.title"
-msgstr "Ο χρήστης {name}κατέβασε την έκδοση, <b>{version}</b>"
+msgstr "Ο/Η {name} κατέβασε την έκδοση: <b>{version}</b>"
 
 msgid "moment.bookmark.self.title"
 msgstr "Σημειώσατε <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.bookmark.title"
-msgstr "Ο χρήστης {name} σημείωσε <b>{reference_human} {version_abbreviation}</b>"
+msgstr "Ο/Η {name} σημείωσε <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "Ετοιμάσου για τα Χριστούγεννα με ένα Προ-Χριστουγεννιάτικο Πρόγραμμα Ανάγνωσης της Αγίας Γραφής"
@@ -103,31 +103,43 @@ msgid "moment.friendship.self.title"
 msgstr "Είστε πλέον φίλοι με τον χρήστη <b>{friend_name}</b>"
 
 msgid "moment.friendship.title"
-msgstr "Ο χρήστης {user_name} είναι τώρα φίλοι με τον χρήστη <b>{friend_name}</b>"
+msgstr "Ο/Η {user_name} είναι τώρα φίλοι με τον/την <b>{friend_name}</b>"
 
 msgid "moment.highlight.self.title"
 msgstr "Επισημάνατε <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.highlight.title"
-msgstr "Ο χρήστης {name} επισήμανε <b>{reference_human} {version_abbreviation}</b>"
+msgstr "Ο/Η {name} επισήμανε <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.self.title"
 msgstr "Δημιουργήσατε ένα εικονοποιημένο εδάφιο για <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "Ο χρήστης {name} δημιούργησε ένα εικονοποιημένο εδάφιο για <b>{reference_human} {version_abbreviation}</b>"
+msgstr "Ο/Η {name} δημιούργησε ένα εικονοποιημένο εδάφιο για <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Προσθέσατε σημείωση"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "Ο {name}πρόσθεσε μια σημείωση"
+
+msgid "moment.note.reference.self.title"
+msgstr "Προσθέσατε σημείωση στο <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "Ο/Η {name} πρόσθεσε σημείωση στο <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Πρόσθεσες μια σημείωση, <b>{title}</b>"
 
 msgid "moment.note.title"
-msgstr "Ο χρήστης {name} πρόσθεσε μια σημείωση, <b>{title}</b>"
+msgstr "Ο/Η {name} πρόσθεσε μια σημείωση, <b>{title}</b>"
 
 msgid "moment.plan_completion.self.title"
-msgstr "Ολοκλήρωσες το Πρόγραμμα Ανάγνωσης"
+msgstr "Ολοκληρώσατε το σχέδιο μελέτης σας"
 
 msgid "moment.plan_completion.title"
-msgstr "Ο χρήστης {name} ολοκλήρωσε ένα Πρόγραμμα Ανάγνωσης"
+msgstr "Ο/Η {name} ολοκλήρωσε ένα σχέδιο μελέτης"
 
 msgid "moment.plan_completion.v2.self.title"
 msgstr "Ολοκληρώσατε το σχέδιο: <b>{title}</b>"
@@ -139,16 +151,16 @@ msgid "moment.plan_segment_completion.body"
 msgstr "Ημέρα {segment} από {total_segments} ({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "Ολοκλήρωσες την ημέρα <b>{segment}</b> του Προγράμματος Ανάγνωσης <b>{title}</b>"
+msgstr "Ολοκληρώσατε την ημέρα <b>{segment}</b> του σχεδίου μελέτης <b>{title}</b>"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "Ο χρήστης {name} ολοκλήρωσε την ημέρα <b>{segment}</b> του σχεδίου μελέτης: <b>{title}</b>"
+msgstr "Ο/Η {name} ολοκλήρωσε την ημέρα <b>{segment}</b> του σχεδίου μελέτης: <b>{title}</b>"
 
 msgid "moment.plan_subscription.self.title"
-msgstr "Ξεκίνησες ένα καινούργιο Πρόγραμμα Ανάγνωσης"
+msgstr "Ξεκινήσατε ένα νέο σχέδιο μελέτης"
 
 msgid "moment.plan_subscription.title"
-msgstr "Ο χρήστης {name} ξεκίνησε ένα καινούργιο Πρόγραμμα Ανάγνωσης"
+msgstr "Ο/Η {name} ξεκίνησε ένα καινούργιο σχέδιο μελέτης"
 
 msgid "moment.plan_subscription.v2.self.title"
 msgstr "Ξεκινήσατε το σχέδιο: <b>{title}</b>"
@@ -169,13 +181,13 @@ msgid "moment.system.christmas.title"
 msgstr "Μοιράσου τα καλά νέα: γεννήθηκε ο Σωτήρας!"
 
 msgid "moment.system.find_friends.title"
-msgstr "Το Bible App γίνεται ακόμα καλύτερο με φίλους. Ψάξε στις επαφές σου για να βρεις φίλους"
+msgstr "Η εφαρμογή Αγία Γραφή γίνεται ακόμα καλύτερη με φίλους. Ψάξτε στις επαφές σας για να βρείτε φίλους"
 
 msgid "moment.video.watched.self.title"
 msgstr "Παρακολούθησες <b>{title}</b>"
 
 msgid "moment.video.watched.title"
-msgstr "Ο χρήστης {name} παρακολούθησε <b>{title}</b>"
+msgstr "Ο/Η {name} παρακολούθησε <b>{title}</b>"
 
 msgid "notifications.comments.moment.mine.bookmark"
 msgstr "Ο χρήστης {name} σχολίασε τον σελιδοδείκτη σου: {comment}"

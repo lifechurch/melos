@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-02-15 09:48-0600\n"
-"PO-Revision-Date: 2016-02-15 09:48-0600\n"
+"POT-Creation-Date: 2016-03-11 11:10-0609\n"
+"PO-Revision-Date: 2016-03-11 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: bg <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -113,6 +113,18 @@ msgstr "Ти създаде стих в снимка за <b>{reference_human} {
 
 msgid "moment.image.title"
 msgstr "{name} създаде стих в снимка за <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Вие добавихте бележа"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} добави бележка"
+
+msgid "moment.note.reference.self.title"
+msgstr "Вие добавихте бележка към <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "{name} добави бележка към <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Вие добавихте бележка, <b>{title}</b>"

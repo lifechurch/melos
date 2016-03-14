@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-11 11:10-0609\n"
+"PO-Revision-Date: 2016-03-11 11:10-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ar <LL@li.org>\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5)\n"
@@ -116,6 +116,18 @@ msgstr "أنشـأت صورة لآية <b>{reference_human} {version_abbreviatio
 
 msgid "moment.image.title"
 msgstr "أنشأ {name} صورة لآية <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "لقد أضفت ملحوظه "
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} أضاف ملاحظة"
+
+msgid "moment.note.reference.self.title"
+msgstr "لقد أضفت ملحوظه على <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "{name}أضاف ملحوظه علي <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "لقد أضفت ملاحظة, <b>{title}</b>"
