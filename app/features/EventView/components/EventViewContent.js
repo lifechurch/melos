@@ -105,7 +105,7 @@ class EventViewContent extends Component {
 			if (auth.isLoggedIn) {
 				notes = (
 					<div className="notes">
-						<Textarea onChange={::this.handleEditNote} placeholder="Add your private notes…" value={content.comment} />
+						<Textarea name='notes' onChange={::this.handleEditNote} placeholder="Add your private notes…" value={content.comment} />
 					</div>
 				)
 			} else {

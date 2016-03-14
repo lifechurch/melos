@@ -47,8 +47,8 @@ class EventViewContentMeta extends Component {
 
 				case 'Share':
 					return (
-						<div>
-							<a key={i} onClick={::this.handleShare}>{ml.label}</a>
+						<div key={i}>
+							<a onClick={::this.handleShare}>{ml.label}</a>
 							<div className="addthis_sharing_toolbox" data-url={ml.payload.url} data-title={ml.payload.title}></div>
 						</div>
 					)
@@ -56,8 +56,8 @@ class EventViewContentMeta extends Component {
 
 				case 'Copy':
 					return (
-				    	<CopyToClipboard onCopy={::this.handleCopy} text={ml.payload}>
-							<a key={i}>{this.state.isCopied ? 'Copied' : ml.label}</a>
+				    	<CopyToClipboard key={i} onCopy={::this.handleCopy} text={ml.payload}>
+							<a>{this.state.isCopied ? 'Copied' : ml.label}</a>
 				    	</CopyToClipboard>
 					)
 					break

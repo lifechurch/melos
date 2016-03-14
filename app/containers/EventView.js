@@ -21,7 +21,7 @@ class EventView extends Component {
 		const { id, content } = event.item
 
 		const contentList = content.map((c,i) => {
-			return <EventViewContent ref={i} id={id} content={c} index={i} dispatch={dispatch} auth={auth} reference={reference} />
+			return <EventViewContent key={i} id={id} content={c} index={i} dispatch={dispatch} auth={auth} reference={reference} />
 		})
 
 		return (
