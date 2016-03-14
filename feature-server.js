@@ -128,7 +128,6 @@ router.post('/event', urlencodedParser, function(req, res) {
 				}
 
 				client.get().then((response) => {
-					const logger = createNodeLogger()
 					const history = createMemoryHistory()
 
 					if (typeof response.errors !== 'undefined') {
@@ -136,7 +135,7 @@ router.post('/event', urlencodedParser, function(req, res) {
 					}
 
 					startingState.event.item = response
-					const store = configureStore(startingState, history, logger)
+					const store = configureStore(startingState, history, null)
 					const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
 					const initialState = store.getState()
 					const head = Helmet.rewind()
