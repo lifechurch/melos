@@ -25,7 +25,6 @@ YouversionWeb::Application.routes.draw do
   get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
   get "/21-day",      to: redirect("http://blog.youversion.com/?p=19454")
   get "/21-day-challenge", to: redirect("http://blog.youversion.com/2016/01/youversions-21-day-challenge-for-2016-you-could-win-an-amazon-fire-tablet/")
-  get "/images/share.png", to: redirect("https://events-staging.bible.com/images/share.png")
 
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
