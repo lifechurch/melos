@@ -1206,7 +1206,7 @@ bg:
     app errors: 
         404 plans explanation: "Плана <a href='%{plan_path}' target='_self'>%{title}</a> ли търсите?"
         404 contact support: "Имате проблем? Свържете се с <a href='%{support_url}' target='_self'>нашия екип по поддръжката</a>."
-        404 explanation: "Можете да опитате да започнете отново от<a href='%{reader_path}' target='_self'>началната страница</a>. Все още имате проблеми? Свържете се с нашия <a href='%{support_url}' target='_self'>екип</a>."
+        404 explanation: "Можете да опитате да започнете наново от <a href='%{reader_path}' target='_self'>началната страница</a>. Все още имате проблем? Свържете се с нашия <a href='%{support_url}' target='_self'>екип</a>."
         404 message: "За съжаление страницата, която търсите, не може да бъде намерена."
         408 message: "Не успяхме да установим връзка със сървъра."
         408 explanation: "Знаем за това и ще оправим проблема възможно най-бързо."
