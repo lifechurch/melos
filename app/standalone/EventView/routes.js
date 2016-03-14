@@ -4,6 +4,6 @@ import EventView from '../../containers/EventView'
 
 export default function(requireEvent) {
 	return (
-		<Route path="/events/:id" component={EventView}  />
+		<Route path="/(:lang/)events/:id" component={EventView}  />
 	)
 }
