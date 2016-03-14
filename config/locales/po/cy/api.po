@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-11 11:09-0609\n"
+"PO-Revision-Date: 2016-03-11 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cy <LL@li.org>\n"
 "Plural-Forms: nplurals=5; plural=(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)\n"
@@ -116,6 +116,18 @@ msgstr "Creaist ddelwedd adnod o <b>{reference_human} {version_abbreviation}</b>
 
 msgid "moment.image.title"
 msgstr "Creodd {name} ddelwedd adnod o <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Ychwanegaist nodyn"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "Ychwanegodd {name} nodyn"
+
+msgid "moment.note.reference.self.title"
+msgstr "Ychwanegaist nodyn ar {reference_human} <b></b>"
+
+msgid "moment.note.reference.title"
+msgstr "Ychwanegodd{name}nodyn ar {reference_human} <b></b>"
 
 msgid "moment.note.self.title"
 msgstr "Rwyt wedi ychwanegu nodyn, <b>{title}</b>"

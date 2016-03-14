@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-11 11:09-0609\n"
+"PO-Revision-Date: 2016-03-11 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -116,6 +116,18 @@ msgstr "Du hast ein Versbild für<b> {reference_human} </b> ({version_abbreviati
 
 msgid "moment.image.title"
 msgstr "{name} hat ein Versbild für <b> {reference_human} </b> ({version_abbreviation}) erstellt."
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Du hast eine Notiz hinzugefügt."
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} hat eine Notiz angelegt."
+
+msgid "moment.note.reference.self.title"
+msgstr "Du hast eine Notiz zu <b>{reference_human}</b>hinzugefügt."
+
+msgid "moment.note.reference.title"
+msgstr "{name} hat eine Notiz zu <b>{reference_human}</b>hinzugefügt."
 
 msgid "moment.note.self.title"
 msgstr "Du hast eine Notiz hinzugefügt mit dem Titel: <b>{title}</b>"

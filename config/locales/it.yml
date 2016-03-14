@@ -368,7 +368,7 @@ it:
             delete highlight title: "Elimina questa evidenziazione"
             delete bookmark title: "Elimina questo segnalibro"
             delete note title: "Elimina questa nota"
-            more: "Ancora"
+            more: "Altro"
             cancel: "Annulla"
             read in bible: "Leggi nella Bibbia"
             read plan: "Leggi"

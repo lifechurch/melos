@@ -1142,7 +1142,7 @@ fi:
                 action: "Näytä raamatunkäännökset"
             make_yours: 
                 title: "Tee siitä oma Raamattusi"
-                body: "Korosta tai tee kirjanmerkkejä lempijakeistasi, tee jaettavia huoneentauluja ja liitä julkisia tai yksityisiä muistiinpanoja raamatunkappaleisiin."
+                body: "Korosta tai tee kirjanmerkkejä lempijakeistasi, tee jaettavia huoneentauluja ja liitä julkisia tai yksityisiä muistiinpanoja raamatunkohtiin."
                 action: "Luo ilmainen tili"
             install_now: 
                 title: "Asenna sovellus nyt"

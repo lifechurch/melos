@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-11 11:09-0609\n"
+"PO-Revision-Date: 2016-03-11 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: tr <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -116,6 +116,12 @@ msgstr "<b>{reference_human} {version_abbreviation}</b> için bir ayet görseli 
 
 msgid "moment.image.title"
 msgstr "{name}, <b>{reference_human} {version_abbreviation}</b> için bir ayet görseli oluşturdu"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} bir not ekledi"
+
+msgid "moment.note.reference.title"
+msgstr "{name} <b>{reference_human}</b>hakkında bir not ekledi"
 
 msgid "moment.note.self.title"
 msgstr "Siz <b>{title}</b> başlıklı bir not eklediniz"

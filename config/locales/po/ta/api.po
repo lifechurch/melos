@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-11 11:09-0609\n"
+"PO-Revision-Date: 2016-03-11 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ta <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -113,6 +113,18 @@ msgstr "நீங்கள் வசன படம் இதற்கு உர�
 
 msgid "moment.image.title"
 msgstr "{name} வசன படம் இதற்கு உருவாக்கியுள்ளீர்கள் <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "நீங்கள் ஒரு குறிப்பை சேர்த்துள்ளீர்கள்"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} ஒரு குறிப்பை சேர்த்துள்ளார்"
+
+msgid "moment.note.reference.self.title"
+msgstr "<b>{reference_human} இல்</b>நீங்கள் ஒரு குறிப்பை சேர்த்துள்ளீர்கள்"
+
+msgid "moment.note.reference.title"
+msgstr "<b>{reference_human} இல்</b>{name} ஒரு குறிப்பை சேர்த்துள்ளார்"
 
 msgid "moment.note.self.title"
 msgstr "நீங்கள் ஒரு குறிப்பை சேர்த்துள்ளீர்கள், <b>{title}</b>"

@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-11 11:09-0609\n"
+"PO-Revision-Date: 2016-03-11 11:09-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ms <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -116,6 +116,18 @@ msgstr "Anda telah membuat imej ayat untuk <b> {reference_human} {version_abbrev
 
 msgid "moment.image.title"
 msgstr "{name} telah membuat imej ayat untuk<b>{reference_human}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Anda telah menambah nota"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} telah menambah nota"
+
+msgid "moment.note.reference.self.title"
+msgstr "Anda telah menambah nota pada <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "{name} telah menambah nota pada <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Anda telah menambah nota, <b>{title}</b>"
