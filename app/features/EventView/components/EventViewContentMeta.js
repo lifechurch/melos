@@ -48,7 +48,7 @@ class EventViewContentMeta extends Component {
 				case 'Share':
 					return (
 						<div>
-							<a key={i} onClick={::this.handleShare} data-url={ml.payload.url} data-title={ml.payload.title}>{ml.label}</a>
+							<a key={i} onClick={::this.handleShare}>{ml.label}</a>
 							<div className="addthis_sharing_toolbox" data-url={ml.payload.url} data-title={ml.payload.title}></div>
 						</div>
 					)

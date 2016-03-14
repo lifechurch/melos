@@ -89,7 +89,7 @@ class EventEditShare extends Component {
 			    	</CopyToClipboard>
 			    	{this.state.isCopied ? <div ref="copyInfo" className="copy-info">The shortlink was copied to your clipboard</div> : null}
 				</div>
-				<div className="addthis_sharing_toolbox"></div>
+				<div className="addthis_sharing_toolbox" data-url={event.item.short_url} data-title={event.item.title}></div>
 				<hr />
 				<Row>
 					<Column s='medium-6'>

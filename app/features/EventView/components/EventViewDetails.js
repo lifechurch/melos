@@ -19,12 +19,12 @@ class EventViewDetails extends Component {
 		loc[2].classList.toggle('show')
 	}
 
-	handleShare() {
+	handleShare(e) {
 		// http://www.addthis.com/academy/what-is-address-bar-sharing-analytics/
 		var addthis_config = addthis_config||{}
 		addthis_config.data_track_addressbar = false
 
-		e.target.nextSibling.classList.toggle('show')
+		e.currentTarget.nextSibling.classList.toggle('show')
 	}
 
 	render() {
