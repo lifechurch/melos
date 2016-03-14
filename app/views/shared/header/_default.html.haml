@@ -19,10 +19,6 @@
         %a{"href" => videos_path, "target" => "_self"}
           =t("videos.title")
           %img.right{"src" => image_path("icon-reader-arrow.svg")}
-      %li
-        %a{"href" => live_href, "target" => "_self"}
-          =t("live")
-          %img.right{"src" => image_path("icon-reader-arrow.svg")}
       - if current_auth
         %li
           %a{"href" => sign_out_path, "target" => "_self"}
