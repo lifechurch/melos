@@ -2,4 +2,10 @@ body.c_events.a_show {
   #current-ui-view {
     padding: 80px 0 0;
   }
+
+  .hdr-nav {
+    label {
+      margin: inherit !important;
+    }
+  }
 }
