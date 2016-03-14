@@ -1391,16 +1391,36 @@ form.locationForm {
 		}
 
 	    .meta {
-	    	overflow: auto;
+	    	position: relative;
+	    	padding-right: 10px;
 	    	border: 1px solid #ddd;
 	    	border-top-width: 0;
 	    	border-radius: 0 0 5px 5px;
 
 	    	a {
 			    float: right;
-			    margin-right: 20px;
+			    width: 70px;
 			    padding: 5px;
+			    text-align: center;
+			    &.plan{ width: 90px; }
 	    	}
+
+	    	.addthis_sharing_toolbox {
+	    		display: none;
+			    position: absolute;
+			    right: 10px;
+			    bottom: 45px;
+			    background: rgba(255,255,255,.9);
+			    border-radius: 5px;
+
+			    &.show {
+			    	display: block;
+			    }
+
+			    .at-share-btn {
+				    margin: 2px 4px;
+				}
+			}
 	    }
 
 	    .notes {

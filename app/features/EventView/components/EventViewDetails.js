@@ -19,6 +19,14 @@ class EventViewDetails extends Component {
 		loc[2].classList.toggle('show')
 	}
 
+	handleShare() {
+		// http://www.addthis.com/academy/what-is-address-bar-sharing-analytics/
+		var addthis_config = addthis_config||{}
+		addthis_config.data_track_addressbar = false
+
+		e.target.nextSibling.classList.toggle('show')
+	}
+
 	render() {
 		const { event } = this.props
 		const { org_name, title, images, description, locations } = event.item
@@ -43,7 +51,10 @@ class EventViewDetails extends Component {
 		return (
 			<div className="details">
 				<div className="org-bar">
-					<div className="right"><a className="share-icon"><img src={`/images/${RevManifest('share.png')}`} /></a></div>
+					<div className="right">
+						<a className="share-icon" onClick={::this.handleShare}><img src={`/images/${RevManifest('share.png')}`} /></a>
+						<div className="addthis_sharing_toolbox" data-url={event.item.short_url} data-title={event.item.title}></div>
+					</div>
 					<div className="org">{org_name}</div>
 				</div>
 				{ images ? <Image className="hero" images={images} width={640} height={360} /> : null }
