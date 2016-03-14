@@ -288,6 +288,8 @@ en:
   groups:                                       "Groups"
   mobile:                                       "Mobile Apps"
   live:                                         "Live"
+  events:
+    events:                                     "Events"
   first page:                                   "First Page"
   last page:                                    "Last Page"
   invalid username or password:                 "Invalid username or password."

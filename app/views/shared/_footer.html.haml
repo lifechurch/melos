@@ -6,6 +6,8 @@
         %ul.side-nav
           %li.footer-label= t("youversion").to_s.upcase
           %li
+            = link_to( t("events.events"), "/features/events", {target: "_self"})
+          %li
             = link_to( t("about"), about_path, {target: "_self"})
           %li
             = link_to( t("versions link"), versions_path, {target: "_self"})

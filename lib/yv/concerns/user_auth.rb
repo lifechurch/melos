@@ -53,6 +53,7 @@ module YV
         cookies.permanent.signed[:a] = user.id
         cookies.permanent.signed[:b] = user.username
         cookies.permanent.signed[:c] = password
+        cookies.delete 'YouVersionToken'
         @current_auth = Hashie::Mash.new( {'user_id' => user.id, 'username' => user.username, 'password' => password} )
       end
 
@@ -65,6 +66,7 @@ module YV
         cookies.delete :b
         cookies.delete :c
         cookies.delete :f
+        cookies.delete 'YouVersionToken'
         clear_redirect
       end
 
