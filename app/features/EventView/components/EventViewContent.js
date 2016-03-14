@@ -40,10 +40,13 @@ class EventViewContent extends Component {
 
 		switch (content.type) {
 				case 'text':
-				   var output = document.createElement("DIV");
-				   output.innerHTML = content.data.body;
-				   var output = output.textContent || output.innerText || "";
-
+					 if (typeof document !== 'undefined') {
+					   var output = document.createElement("DIV");
+					   output.innerHTML = content.data.body;
+					   var output = output.textContent || output.innerText || "";
+					} else {
+						output = ''
+					}
 					contentItem = <EventViewContentText contentData={content.data} meta_links={meta_links} />
 					meta_links = [
 						{label: 'Copy', payload: output},
