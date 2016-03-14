@@ -12,8 +12,9 @@
     %base{href: "/"}
     = csrf_meta_tags
     = render '/shared/head'
+    = render '/shared/javascripts'
 
-  %body{class: "c_#{params[:controller]} a_#{params[:action]}"}
+  %body{class: "c_#{params[:controller]} a_#{params[:action]}", onload: "init()"}
     = render '/shared/google_analytics'
 
     %a#top-of-page
@@ -24,3 +25,4 @@
       = content_for?(:main) ? yield(:main) : yield
 
     = render partial: '/shared/footer', locals: {footer_classes: container_class_str}
+    = content_for?(:lower_javascript) ? yield(:lower_javascript) : nil

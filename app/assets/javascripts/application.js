@@ -136,9 +136,15 @@ function init() {
 		parsePlanVars();
 	}
 
-	angular.bootstrap(document, ['yv']);
+    if (isEvents) {
+        angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
+    } else {
+        angular.bootstrap(document, ['yv']);
+    }
+
 }
 
+var isEvents            = isFirst("events")
 var isReadingPlanSample = isFirst("reading-plans") && inPathNotFirst("day");
 var isReader 			= isFirst("bible");
 var isHomeFeed 			= isFirst("moments");

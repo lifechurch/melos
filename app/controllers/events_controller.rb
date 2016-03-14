@@ -29,7 +29,7 @@ class EventsController < ApplicationController
 
     @title = fromNode['head']['title']
 
-    render locals: { html: fromNode['html'] }
+    render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   private

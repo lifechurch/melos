@@ -12,7 +12,7 @@ module YV
           curb_get = lambda do
             begin
 
-              post_body = { from: "rails", auth: opts[:auth] }
+              post_body = { id: key, auth: opts[:auth] }
 
               curl = Curl::Easy.http_post(resource_url, post_body.to_json ) do |c|
                 c.headers['Accept'] = 'application/json'

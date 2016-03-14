@@ -12,7 +12,7 @@
     searchKey = "bible"
   end
 
-.fixed.header-box{"ng-controller" => "HeaderCtrl as ctrl"}
+.fixed.header-box#fixed-page-header{"ng-controller" => "HeaderCtrl as ctrl"}
   .ng-hide.nav-more-menu{"ng-show" => "isMoreOpen"}
     %ul.side-nav
       %li
@@ -147,7 +147,7 @@
           -elsif params[:version]
             %input{type:'hidden', name:"version_id", value:params[:version], extra:'second'}
 
-= render partial: 'shared/header/js_templates'
+  = render partial: 'shared/header/js_templates'
 
 -#
   /     .header-user
