@@ -28,7 +28,10 @@ class EventListItem extends Component {
 	}
 
 	getPublishedDetails() {
-		const { dispatch, startOffset, item, index, handleDuplicate } = this.props
+		const { item, handleDuplicate } = this.props
+		const start = moment(item.min_time);
+		const end = moment(item.max_time);
+
 		return (
 			<div className="events-details">
 				<span className="details-text">
@@ -51,14 +54,15 @@ class EventListItem extends Component {
 	}
 
 	getArchivedDetails() {
-		const { item } = this.props
+		const { item, handleDuplicate } = this.props
 		var start = moment(item.min_time)
 		var end = moment(item.max_time)
 		return (
 			<div className="events-details">
-				<div className="details-text">
+				<span className="details-text">
 					{start.format("MMMM DD, YYYY") + " - " + end.format("MMMM DD, YYYY")}
-				</div>
+				</span>
+                <a className="small-link" onClick={handleDuplicate.bind(this, item.id)}>Duplicate</a>
 			</div>
 		)
 	}
