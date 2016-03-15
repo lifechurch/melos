@@ -250,6 +250,8 @@ YouversionWeb::Application.routes.draw do
   root to: 'pages#home'
 
   get "features/events", to: "features#events"
+  # This is to handle a bug in Android's link
+  get "features/events.", to: "features#events"
   get "features/events-faq", to: "features#events-faq"
   get "features/market-your-event", to: "features#market-your-event"
 
