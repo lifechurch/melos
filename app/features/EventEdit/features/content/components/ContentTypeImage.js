@@ -90,8 +90,8 @@ class ContentTypeImage extends Component {
                         <Dropzone ref='dropzone' onDrop={::this.onDrop} multiple={false} acceptedFiles=".pdf" className='image-drop-zone' activeClassName='active' >
                             <div className='instructions'>
                                 <p>Drag and Drop an Image</p><br/>
-                                [JPG only]<br/>
-                                We recommend an image width of 1280px or more.<br/><br/>
+                                [JPG only]<br/><br/>
+                                640px width x 640px height<br/><br/>
                                 <a className='hollow-button green'>
                                     Select Image
                                 </a>
