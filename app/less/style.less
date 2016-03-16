@@ -4,6 +4,28 @@
 @import "colors";
 @import "typography";
 
+.img-box {
+	position: relative;
+	width: 100%;
+
+	&:before {
+		content: "";
+		display: block;
+		padding-top: 100%;
+	}
+	.img-bkg {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
 #react-app {
 	padding-bottom: 40px;
 }
