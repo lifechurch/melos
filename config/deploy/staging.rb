@@ -1,4 +1,4 @@
-role :web, %w{yvdep@webstaging01-dfw.youversion.com}
+role :web, %w{yvdep@staging01.web.dal01.thewardro.be}
 
 set :hipchat_token, '7b1159a956abe4c9923b54fa3b5ef6'
 set :hipchat_room_name, 'YouVersion Web'

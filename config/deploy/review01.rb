@@ -1,4 +1,4 @@
-role :web, %w{yvdep@webreview01-ny.youversion.com}
+role :web, %w{yvdep@review01.web.nyc03.thewardro.be}
 set :bundle_flags, "--deployment"
 set :bundle_without, nil
 set :passenger_roles, :dummy
