@@ -27,9 +27,9 @@
       %span.profile-hdr-pending
         = t("friendships.status.pending")
 
-  - elsif Friend.with? user, auth: current_auth # I am friends with this user
-    %span.profile-hdr-friend
-      = t("friendships.status.friends")
+    - elsif Friend.with? user, auth: current_auth # I am friends with this user
+      %span.profile-hdr-friend
+        = t("friendships.status.friends")
 
   - elsif defined? current_user and current_user.enable_friendships?
     - # This user isn't me, they aren't in my pending lists, and I'm not friends with them,
