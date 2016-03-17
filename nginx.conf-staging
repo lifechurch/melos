@@ -47,6 +47,7 @@ http {
       passenger_env_var MEMCACHE_SERVERS 127.0.0.1:11211;
       passenger_env_var LOG_LEVEL warn;
       passenger_env_var TREADSTONE_SECRET 6Ag54rcIa7pS3DRs6jkzVRtceSUuGaqfU2Lxi57bZDozpTVcIYVZeRCXpmzmdJw;
+      rewrite ^/blog/(.*)$ https://blog.youversion.com/$1 permanent;
       rails_env staging;
 
   location ~ ^/(assets|images|javascripts|stylesheets|swfs|system)/ {

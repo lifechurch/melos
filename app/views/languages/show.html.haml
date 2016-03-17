@@ -14,6 +14,13 @@
 - content_for :facebook_meta do
   %meta{property: "og:image", content: "#{url_for(asset_path('lang_share.png'))}"}
 
+  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+  - locale_dir = '/es' if I18n.locale.to_s.eql?('es-ES')
+  - locale_dir = '/pt' if I18n.locale.to_s.eql?('pt-PT')
+  - canonicalHref = "https://www.bible.com#{locale_dir}/languages/#{@language}"
+  %link{rel: "canonical", href: canonicalHref}
+  %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/language?id=#{@language}"}
+
 .row
   .medium-8.columns
     = cache "single_lang_#{@language}_#{I18n.locale}", expires_in: YV::Caching.a_very_long_time do
