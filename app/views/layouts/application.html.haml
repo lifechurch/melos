@@ -45,8 +45,3 @@
         x-lg 1440 &lt; 1920<br>x-large
       .show-for-xxlarge-only
         xx-lg &gt; 1920<br>xx-large
-      #rtl-toggle{style: 'display:none;'}
-        - if params.has_key?(:rtl)
-          %a{onclick: "window.location.href = '#{request.protocol}#{request.host_with_port}#{request.path}'" }TOGGLE RTL
-        - else
-          %a{onclick: "window.location.href = '#{request.protocol}#{request.host_with_port}#{request.path}?rtl=1'" } TOGGLE RTL
