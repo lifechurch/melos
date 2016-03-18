@@ -24,15 +24,25 @@ function selectLocation(locations, id, selected) {
 export default function event(state = {}, action) {
 	switch(action.type) {
 
-		case type('publishEventFailure'):
 		case type('publishEventRequest'):
-		case type('unpublishEventFailure'):
 		case type('unpublishEventRequest'):
-			return state
+			return applyLifecycleRules(Object.assign({}, state, { isFetching: true, publishError: null }))
+
+		case type('publishEventFailure'):
+		case type('unpublishEventFailure'):
+			var publishError = 'There was a problem while publishing your Event.'
+			for (const e of action.api_errors) {
+				switch(e.key) {
+					case 'events.all_times.invalid':
+						publishError += ' A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again.'
+						break;
+				}
+			}
+			return applyLifecycleRules(Object.assign({}, state, { isFetching: false, api_errors: action.api_errors, publishError }))
 
 		case type('publishEventSuccess'):
 		case type('unpublishEventSuccess'):
-			return applyLifecycleRules(Object.assign({}, state, {item: {...state.item, status: action.response.status}}))
+			return applyLifecycleRules(Object.assign({}, state, { isFetching: false, item: {...state.item, status: action.response.status}}))
 
 		case type('cancel'):
 			return validateEventDetails(Object.assign({}, defaultState.event))

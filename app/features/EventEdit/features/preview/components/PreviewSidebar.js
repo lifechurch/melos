@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import ActionCreators from '../actions/creators'
+import { routeActions } from 'react-router-redux'
 
 class PreviewSidebar extends Component {
 
@@ -15,14 +16,22 @@ class PreviewSidebar extends Component {
 		const { dispatch, event } = this.props
 		dispatch(ActionCreators.publishEvent({
 			id: event.item.id
-		}))
+		})).then((response) => {
+			dispatch(routeActions.push('/event/edit/' + event.item.id + '/share'))
+		}, (error) => {
+
+		})
 	}
 
 	unpublishEvent() {
 		const { dispatch, event } = this.props
 		dispatch(ActionCreators.unpublishEvent({
 			id: event.item.id
-		}))
+		})).then((response) => {
+			dispatch(routeActions.push('/event/edit/' + event.item.id + '/content'))
+		}, (error) => {
+
+		})
 	}
 
 	render() {
@@ -45,11 +54,11 @@ class PreviewSidebar extends Component {
 		var publish_button = null
 		switch (event.item.status) {
 			case 'draft':
-				publish_button = <Link disabled={!event.rules.preview.canPublish} className='solid-button green publish' onClick={::this.publishEvent} to={`/event/edit/${event.item.id}/share`}>Publish</Link>
+				publish_button = <a disabled={!event.rules.preview.canPublish || event.isFetching} className='solid-button green publish' onClick={::this.publishEvent}>Publish</a>
 				break
 
 			case 'published':
-				publish_button = <Link disabled={!event.rules.preview.canUnpublish} className='solid-button gray publish' onClick={::this.unpublishEvent} to={`/event/edit/${event.item.id}/content`}>Unpublish</Link>
+				publish_button = <a disabled={!event.rules.preview.canUnpublish || event.isFetching} className='solid-button gray publish' onClick={::this.unpublishEvent}>Unpublish</a>
 				break
 
 			default:
@@ -80,6 +89,7 @@ class PreviewSidebar extends Component {
 				</div>
 				{publish_button}
 				<p className='publishMessage'>{event.publishMessage}</p>
+				<p className='publishError'>{event.publishError}</p>
 			</div>
 		)
 	}
