@@ -17,7 +17,10 @@ class PreviewSidebar extends Component {
 		dispatch(ActionCreators.publishEvent({
 			id: event.item.id
 		})).then((response) => {
-			dispatch(routeActions.push('/event/edit/' + event.item.id + '/share'))
+			const { errors } = response
+			if (typeof errors === 'undefined') {
+				dispatch(routeActions.push('/event/edit/' + event.item.id + '/share'))
+			}
 		}, (error) => {
 
 		})
@@ -28,7 +31,10 @@ class PreviewSidebar extends Component {
 		dispatch(ActionCreators.unpublishEvent({
 			id: event.item.id
 		})).then((response) => {
-			dispatch(routeActions.push('/event/edit/' + event.item.id + '/content'))
+			const { errors } = response
+			if (typeof errors === 'undefined') {
+				dispatch(routeActions.push('/event/edit/' + event.item.id + '/content'))
+			}
 		}, (error) => {
 
 		})
