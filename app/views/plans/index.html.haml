@@ -107,16 +107,17 @@
 
       .columns.medium-9
         .list-box
-          - @plans.each do |plan|
-            = link_to(plan_path(plan, locale: I18n.locale), class: 'list-box-card', target: "_self") do
-              %div
-                - if plan.list_image.present?
-                  = image_tag plan.small_thumbnail_image.url, class: 'subscription_thumbnail radius'
-                - else
-                  %img{src:'//placehold.it/80x80', class: 'radius'}
-              %div
-                %h3.plan-title= plan.name
-                %p.plan-length= plan.formatted_length
+          -if !@plans.nil?
+            - @plans.each do |plan|
+              = link_to(plan_path(plan, locale: I18n.locale), class: 'list-box-card', target: "_self") do
+                %div
+                  - if plan.list_image.present?
+                    = image_tag plan.small_thumbnail_image.url, class: 'subscription_thumbnail radius'
+                  - else
+                    %img{src:'//placehold.it/80x80', class: 'radius'}
+                %div
+                  %h3.plan-title= plan.name
+                  %p.plan-length= plan.formatted_length
 
         %ul.paginate
           - if @plans.prev_page || @page > 1

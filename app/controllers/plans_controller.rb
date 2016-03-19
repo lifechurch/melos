@@ -64,6 +64,7 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:id])
 
     # render 404 unless day param is a valid day for the plan
+    return handle_404 if @plan.errors.present?
     return handle_404 unless (1..@plan.total_days).include?(params[:day].to_i)
 
     if current_auth && current_user.subscribed_to?(@plan)
