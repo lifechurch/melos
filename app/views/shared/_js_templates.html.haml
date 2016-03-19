@@ -68,7 +68,7 @@
   %script{'type' => 'text/ng-template', 'id' => '/reader-audio-panel.tpl.html'}
     #reader-audio-panel
       .large-3.medium-6.reader-panel.right
-        - if presenter.reference.audio.present?
+        - if presenter.reference.present? && presenter.reference.audio.present?
           %h3#reader_audio_title{"ng-bind" => "audioData.title"}
             = presenter.reference.audio.title
           %p#reader_audio_copyright_short.blue-text{"ng-bind" => "audioData.copyright_short.text"}
@@ -82,7 +82,7 @@
               = t("audio.publisher website")
   #reader-audio-panel.ng-hide
     .large-3.medium-6.reader-panel.right
-      - if presenter.reference.audio.present?
+      - if presenter.reference.present? && presenter.reference.audio.present?
         %h3#reader_audio_title{"ng-bind" => "audioData.title"}
           = presenter.reference.audio.title
         %p#reader_audio_copyright_short.blue-text{"ng-bind" => "audioData.copyright_short.text"}
