@@ -24,7 +24,6 @@ class VideosController < ApplicationController
   def show
     opts = current_auth ? {auth: current_auth, force_auth: true} : {}
     @video = Video.find(params[:id].to_i, opts )
-    @video_url = video_url(@video)
     return render_404 if @video.errors.present?
     return redirect_to(series_video_path(@video)) if @video.series?
     respond_with(@video)
@@ -49,14 +48,5 @@ class VideosController < ApplicationController
     if exception.message == "videos.video.not_found"
       render_404
     end
-  end
-
-  def video_url(video)
-      case request.env["X_MOBILE_DEVICE"]
-        when /android|Android/
-          video.webm.url
-        else
-          video.hls.url
-      end
   end
 end
