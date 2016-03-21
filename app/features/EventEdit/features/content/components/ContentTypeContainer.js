@@ -4,6 +4,7 @@ import Column from '../../../../../../app/components/Column'
 import ContentTypeText from './ContentTypeText'
 import ContentTypeAnnouncement from './ContentTypeAnnouncement'
 import ContentTypeReference from './ContentTypeReference'
+import ContentInsertionPoint from './ContentInsertionPoint'
 import ContentTypePlan from './ContentTypePlan'
 import ContentTypeImage from './ContentTypeImage'
 import ContentTypeLink from './ContentTypeLink'
@@ -64,7 +65,7 @@ class ContentTypeContainer extends Component {
 	}
 
 	render() {
-		const { event, dispatch, contentIndex, content, references, plans } = this.props
+		const { event, dispatch, contentIndex, content, references, plans, _content } = this.props
 
 		let InnerContainer = null
 		switch (content.type) {
@@ -116,7 +117,7 @@ class ContentTypeContainer extends Component {
 		let classNames = 'content-type content-' + content.type
 
 		return (
-			<div className={classNames} id={`content-${content.sort}`}>
+			<div className={classNames} id={`content-${contentIndex}`}>
 				<Row>
 					<div className='medium-12'>
 						{content.type.toUpperCase()} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
@@ -130,6 +131,7 @@ class ContentTypeContainer extends Component {
 								{ content.isSaving ? 'Saving...' : null }
 							</span>
 						</div>
+						<ContentInsertionPoint index={contentIndex + 1} dispatch={dispatch} insertionPoint={_content.insertionPoint} />
 					</div>
 				</Row>
 			</div>

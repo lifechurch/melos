@@ -22,6 +22,7 @@ const constants = {
 	reorderRequest: 'CONTENT_REORDER_REQUEST',
 	reorderSuccess: 'CONTENT_REORDER_SUCCESS',
 	reorderFailure: 'CONTENT_REORDER_FAILURE',
+	setInsertionPoint: 'CONTENT_SET_INSERTION_POINT',
 	setField: 'CONTENT_SET_FIELD',
 	setPlanField: 'SET_PLAN_FIELD',
 	selectPlan: 'SELECT_PLAN',
