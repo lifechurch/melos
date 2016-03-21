@@ -3,6 +3,10 @@ class SessionsController < ApplicationController
   before_filter :set_redirect, except: [:destroy]
 
   def new
+    respond_to do |format|
+      format.json { return render nothing: true }
+      format.any { return render }
+    end
   end
 
   def create
