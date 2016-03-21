@@ -5,7 +5,8 @@
 
 - unless is_whitelabel_site
   - content_for :additional_meta do
-    = render '/shared/hreflang'
+    - if (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB"))
+      %link{rel: "amphtml", href: "https://www.bible.com/-amp/versions/#{@version.id}.html"}
     - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
     - locale_dir = '/es' if I18n.locale.to_s.eql?('es-ES')
     - locale_dir = '/pt' if I18n.locale.to_s.eql?('pt-PT')
@@ -28,6 +29,7 @@
           = link_to t("audio bible"), audiobible_path(@version), { class: 'mobile', target: '_self' }
 
       .copyright= @version.info.try :html_safe
+      %br
       = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), { class: 'solid-button mobile-full blue', target: '_self' }
       = link_to t("mobile page.download now"), app_page_path, { class: 'show-for-small-only version_download solid-button mobile-full green', target: '_self' }
 
