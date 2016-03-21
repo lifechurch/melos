@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def new
     respond_to do |format|
-      format.json { return }
+      format.json { return render nothing: true }
       format.any { return render }
     end
   end
