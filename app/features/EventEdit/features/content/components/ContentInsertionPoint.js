@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import ActionCreators from '../actions/creators'
+import RevManifest from '../../../../../../app/lib/revManifest'
 
 class ContentInsertionPoint extends Component {
 	constructor(props) {
@@ -37,9 +38,9 @@ class ContentInsertionPoint extends Component {
 		let insertionPoint = null
 		if (this.state.show) {
 			if (this.state.on) {
-				insertionPoint = <a className='solid-button green' onClick={::this.handleClick}>Hide Me</a>
+				insertionPoint = <div><div className='content-insertion-line'></div><a className='solid-button green' onClick={::this.handleClick}><img src={`/images/${RevManifest('check.png')}`} /> Insert next module here</a></div>
 			} else {
-				insertionPoint = <a className='solid-button blue' onClick={::this.handleClick}>Show Me</a>
+				insertionPoint = <div><div className='content-insertion-line'></div><a className='hollow-button green' onClick={::this.handleClick}><img src={`/images/${RevManifest('thin-plus.png')}`} /> Insert next module here</a></div>
 			}
 		}
 
