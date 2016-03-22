@@ -708,6 +708,7 @@ text-align: center;
 	width:360px;
 	height:287px;
 	margin:0 17px;
+    margin-bottom: 25px;
 }
 .marketyourevent-content .row-two .boxes .each-box .imagebox {
 	display:block;
@@ -717,9 +718,48 @@ text-align: center;
 	text-align: center;
 	
 }
+.marketyourevent-content .row-two .boxes .each-box iframe {
+    width: 360px;
+    height: 232px;
+}
 .marketyourevent-content .row-two .boxes .each-box .imagebox img {
 	max-width:100%;
 }
+.marketyourevent-content .row-two .boxes .each-box .imagebox-social, .marketyourevent-content .row-two .boxes .each-box .imagebox-slides {
+    overflow: hidden;
+    height: 232px;
+    border: solid #a7a7a7 1px;
+    text-align:center;
+    background-color: #333;
+    background-size: 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.marketyourevent-content .row-two .boxes .each-box .imagebox-slides {
+    background-image: url(/assets/features/events/resources/events_slide_wide.jpg);
+}
+
+.marketyourevent-content .row-two .boxes .each-box .imagebox-social {
+    background-image: url(/assets/features/events/resources/events_facebook.jpg);
+}
+
+.marketyourevent-content .row-two .boxes .each-box .imagebox2 img {
+    display: inline-block;
+    height: 232px;
+}
+
+.marketyourevent-content .row-two .boxes .each-box p {
+    margin-top: 15px;
+}
+
+.marketyourevent-content .row-two .boxes .each-box a.text2 {
+    font-size: 15px;
+    margin-right: 0;
+    text-decoration:underline;
+    color:#d1d1d1;
+}
+
 .marketyourevent-content .row-two .boxes .each-box a.text {
 	display:inline-block;
 	font-size:18px;
@@ -727,6 +767,9 @@ text-align: center;
 	text-decoration:underline;
 	margin-right:26px;
 	text-decoration: none;
+}
+.marketyourevent-content .row-two .boxes .each-box p {
+    text-align:center;
 }
 /* Admin Feature */
 .admin-feature-content {

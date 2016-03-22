@@ -11,7 +11,7 @@
     %li
       %a{:href => '/features/events-faq'} FAQ
     %li
-      %a{:href => '/features/market-your-event'} Market Your Event
+      %a{:href => '/features/resources'} Resources
 .wrap
   .header-wrap.fixed-header
     .header
@@ -26,7 +26,7 @@
         %li
           %a{:href => '/features/events-faq'} FAQ
         %li
-          %a{:href => '/features/market-your-event'} Market Your Event
+          %a{:href => '/features/resources'} Resources
         %li.btn2
           %a{:href => "mailto:?subject=This new feature from YouVersion could really help our church!&amp;body=Have you seen YouVersion’s new Events feature yet? I believe it would really help our church engage people more with our services. It lets people add their own notes during a service, then even save the event so they can come back later and study it with the Bible references. I think it could probably save us money on printing costs, too. Here’s YouVersion’s Events website: http://www.bible.com/features/events.", :target => "_blank"} Tell Your Church
         %li.btn2
@@ -52,21 +52,28 @@
       / //row-one
       .row-two
         .intro-text
-          %h1 Additional resources to market your Event are coming soon.
-          -#/ <p>Coming Soon..</p>
+          %h1 Free resources for helping you with Events
         .boxes
           .each-box
-            .imagebox Coming Soon
-            -#/ <a class="text" href="#">Coming Soon</a>
+            %iframe.imagebox2{:allowfullscreen => "", :frameborder => "0", :height => "", :src => "https://www.youtube.com/embed/yNr7QwuAECU", :width => ""}
+            %p Watch a video about transitioning to Events.
+          .each-box
+            %a{ :href => 'https://s3.amazonaws.com/web-production/assets/resources/YouVersion+Events+Social+Assets.zip'}
+              .imagebox-social
+              -#%img.lazy{:alt => "", "data-no-retina" => "", "data-src" => image_path("features/events/resources/events_facebook.jpg"), :src => ""}/
+            %p
+              %a.text2{ :href => 'https://s3.amazonaws.com/web-production/assets/resources/YouVersion+Events+Social+Assets.zip'} Download
+              %span these assets to market your Events on Facebook, Twitter, and Instagram
+
+          .each-box
+            %a{ :href => 'https://s3.amazonaws.com/web-production/assets/resources/YouVersion+Events+Slides+and+Handout+Assets.zip'}
+              .imagebox-slides
+                -#%img.lazy{:alt => "", "data-no-retina" => "", "data-src" => image_path("features/events/resources/events_slide_wide.jpg"), :src => ""}/
+            %p
+              %a.text2{ :href => 'https://s3.amazonaws.com/web-production/assets/resources/YouVersion+Events+Slides+and+Handout+Assets.zip'} Download
+              %span these slides and handouts to market your Events within your church or organization
           .each-box
             .imagebox Coming Soon
-            -#/ <a class="text" href="#">Coming Soon</a>
-          .each-box
-            .imagebox Coming Soon
-            -#/ <a class="text" href="#">Coming Soon</a>
-          .each-box
-            .imagebox Coming Soon
-            -#/ <a class="text" href="#">Coming Soon</a>
           .clearfix
         .clearfix
     / //marketyourevent-content
