@@ -84,7 +84,7 @@
 
         .moment-comments-self-box
           .moment-comments-self-avatar
-            %img{:alt => "", :src => current_user.user_avatar_url["px_48x48"]}
+            %img{:alt => "", :src => (current_user.user_avatar_url["px_48x48"] if current_user.present? && current_user.user_avatar_url.present?) }
           .moment-comments-self-input
             %form
               %textarea{:placeholder => "#{t('moments.action.comment')}", "ng-model"=>"newComment.content", "ng-keypress" => "comment($event, newComment.content);"}
