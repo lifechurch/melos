@@ -220,13 +220,11 @@ class Plan < YV::Resource
 
   def total_completions(opts={})
     response = Plan.stats({id: self.id, auth: opts[:auth]})
-    if response["total_completed"]
-      if response["total_completed"].is_a?(Numeric)
-        vals = [0, 1000, 2500, 5000, 7500, 10000, 25000, 50000, 75000, 100000, 250000, 500000, 750000]
-        vals.select{|v| v <= response["total_completed"]}.max
-      else
-        return 0
-      end
+    if response.instance_of?(Hashie::Mash) && response["total_completed"].present? && response["total_completed"].is_a?(Numeric)
+      vals = [0, 1000, 2500, 5000, 7500, 10000, 25000, 50000, 75000, 100000, 250000, 500000, 750000]
+      vals.select{|v| v <= response["total_completed"]}.max
+    else
+      return 0
     end
   end
 

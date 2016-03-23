@@ -258,7 +258,8 @@ YouversionWeb::Application.routes.draw do
   # This is to handle a bug in Android's link
   get "features/events.", to: "features#events"
   get "features/events-faq", to: "features#events-faq"
-  get "features/market-your-event", to: "features#market-your-event"
+  get "features/events-resources", to: "features#events-resources"
+  get "features/market-your-event", to: "features#events-resources"
 
   get "404", to: "pages#error_404"
 
