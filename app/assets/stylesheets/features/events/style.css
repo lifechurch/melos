@@ -708,7 +708,7 @@ text-align: center;
 	width:360px;
 	height:287px;
 	margin:0 17px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 .marketyourevent-content .row-two .boxes .each-box .imagebox {
 	display:block;
@@ -725,7 +725,9 @@ text-align: center;
 .marketyourevent-content .row-two .boxes .each-box .imagebox img {
 	max-width:100%;
 }
-.marketyourevent-content .row-two .boxes .each-box .imagebox-social, .marketyourevent-content .row-two .boxes .each-box .imagebox-slides {
+.marketyourevent-content .row-two .boxes .each-box .imagebox-social,
+.marketyourevent-content .row-two .boxes .each-box .imagebox-slides,
+.marketyourevent-content .row-two .boxes .each-box .imagebox-open {
     overflow: hidden;
     height: 232px;
     border: solid #a7a7a7 1px;
@@ -742,6 +744,10 @@ text-align: center;
 
 .marketyourevent-content .row-two .boxes .each-box .imagebox-social {
     background-image: url(/assets/features/events/resources/events_facebook.jpg);
+}
+
+.marketyourevent-content .row-two .boxes .each-box .imagebox-open {
+    background-image: url(/assets/features/events/resources/events_open.png);
 }
 
 .marketyourevent-content .row-two .boxes .each-box .imagebox2 img {
