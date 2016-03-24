@@ -28,13 +28,13 @@
         %p= reference.audio.copyright_short.html
         - if not reference.audio.copyright_long.html.eql?(reference.audio.copyright_long.html)
           %p= raw reference.audio.copyright_long.html
-
-        = link_to t("ref.listen"), bible_version_path(reference), class: 'solid-button mobile-full blue'
-        = link_to t("mobile page.download now"), app_page_path, class: 'show-for-small-only version_download solid-button mobile-full green'
+        %br
+        = link_to t("ref.listen"), bible_version_path(reference), class: 'solid-button mobile-full blue', target: '_self'
+        = link_to t("mobile page.download now"), app_page_path, class: 'show-for-small-only version_download solid-button mobile-full green', target: '_self'
 
   .medium-4.columns.show-for-medium-up.l-border
     .widget-button
-      = link_to t("ref.listen"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'solid-button blue full'
+      = link_to t("ref.listen"), bible_version_path((last_read || default_reference).merge(version: @version)), class: 'solid-button blue full', target: '_self'
 
     - if @version.publisher.name.present? || @version.publisher.id.blank?
       - pub_name = @version.publisher.name || t('versions.public domain')
@@ -54,7 +54,7 @@
     = @version
 
   - content_for :mobile_right_nav do
-    = link_to t("ref.listen"), bible_version_path(reference), class: 'save_btn'
+    = link_to t("ref.listen"), bible_version_path(reference), class: 'save_btn', target: '_self'
 
 = render '/shared/app_banner'
 
