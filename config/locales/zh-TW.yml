@@ -161,8 +161,8 @@ zh-TW:
             in partnership: "偕同合作夥伴"
             one hope: "希望之書（OneHope）：適合兒童閱讀的絕佳聖經內容"
         links: 
-            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
-            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            apple: " https://itunes.apple.com/tw/app/bible-for-kids/id668692393?mt=8"
+            google: " https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=zh_tw"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "現在"
     select dropdown: "--選擇--"
@@ -602,7 +602,7 @@ zh-TW:
         resend confirmation copy: "請在以下鍵入您用來註冊的電郵地址，我們將會發送另一份確認郵件給您。"
         resend confirmation button: "重發確認郵件"
         privacy: 
-            policy: "%{youversion}隱私條款"
+            policy: "%{youversion} 隱私政策"
             intro: "YouVersion, 作為 Life.Church 擁有和運營的網站和應用軟體，我們知道您關注自己的資訊是如何被使用和分享的。我們希望以下的聲明能幫助您理解 YouVersion 將如何收集、使用和保護您在我們的網站或軟體裡提供的資訊。"
             translation disclaimer: "隱私政策是為了方便您查閱而翻譯；然而，Life.Church 對於翻譯的準確性不作任何承諾或保證。如果譯文與英文有不一致的地方，應以英文為準。"
             what we collect: "我們收集的資訊及其用途"
