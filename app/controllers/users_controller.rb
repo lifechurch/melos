@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   prepend_before_filter :mobile_redirect, only: [:show, :notes, :bookmarks, :badges]
   before_filter :filter_spam_posts, only: [:create]
   before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture,:delete_account, :delete_account_form]
-  before_filter :find_user, except: [:is_logged_in, :_cards,:sign_up_success, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
+  before_filter :find_user, except: [:is_logged_in, :reset_password, :_cards,:sign_up_success, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
   before_filter :authorize, only: [:edit,:update,:delete_account,:destroy]
 
@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
   rescue_from APIError, with: :api_error
 
-  
   # Action meant to render moment cards partial to html for ajax delivery client side
   # Currently being used for next page calls on moments feed.
   def _cards
@@ -214,6 +213,33 @@ class UsersController < ApplicationController
     end
   end
 
+  def reset_password
+    p = {
+      "token" => params[:token],
+      "strings" => {
+        "api.users confirm password matches" => t('api.users confirm password matches'),
+        "users.my password" => t('users.my password'),
+        "users.profile.new password" => t('users.profile.new password'),
+        "users.profile.confirm password" => t('users.profile.confirm password'),
+        "mobile page.sms error" => t('mobile page.sms error'),
+        "app errors.try again" => t('app errors.try again'),
+        "api.users password length" => t('api.users password length'),
+        "api.users password change" => t('api.users password change'),
+        "api.users username or password invalid" => t('api.users username or password invalid'),
+        "users.password updated" => t('users.password.updated'),
+        "sign in" => t('sign in')
+      }
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('PasswordChange', p, cookies, current_auth, current_user)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title = 'Reset Your Password'
+    render layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'] }
+  end
 
 private
 

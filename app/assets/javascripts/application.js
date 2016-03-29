@@ -136,7 +136,7 @@ function init() {
 		parsePlanVars();
 	}
 
-    if (isEvents) {
+    if (isEvents || isResetPassword) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
@@ -144,7 +144,8 @@ function init() {
 
 }
 
-var isEvents            = isFirst("events")
+var isEvents            = isFirst("events");
+var isResetPassword     = isFirst("resetPassword");
 var isReadingPlanSample = isFirst("reading-plans") && inPathNotFirst("day");
 var isReader 			= isFirst("bible");
 var isHomeFeed 			= isFirst("moments");
