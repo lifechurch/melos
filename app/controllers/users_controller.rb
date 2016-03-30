@@ -227,7 +227,9 @@ class UsersController < ApplicationController
         "api.users password change" => t('api.users password change'),
         "api.users username or password invalid" => t('api.users username or password invalid'),
         "users.password updated" => t('users.password.updated'),
-        "sign in" => t('sign in')
+        "sign in" => t('sign in'),
+        "users.password length" => t('users.password length'),
+        "users.forgot password prompt" => t('users.forgot password prompt')
       }
     }
 

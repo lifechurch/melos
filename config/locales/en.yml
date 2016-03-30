@@ -606,6 +606,7 @@ en:
     send new password button:                   "Send New Password"
     forgot password copy:                       "Enter your email address or username, and we'll send a link to reset your password."
     forgot password check:                      "We will attempt to send a reset password email to<br><br>%{email}<br><br>Click the link in that email to continue."
+    forgot password prompt:                     "Create a new password for your YouVersion account. If you ignore this, your password won't be changed."
     yes reset:                                  "Yes, reset my password"
     yes reset and log out:                      "Yes, sign me out and reset my password"
     forgot password:                            "Forgot your password?"
