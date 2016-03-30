@@ -24,7 +24,7 @@
                     - language_title = "#{language_title} - #{version.attributes.language.name}" if (version.attributes.language.name.present? and not (language_title.eql?(version.attributes.language.name)))
                     %li= "#{language_title}"
                   %li.item
-                    = link_to "#{t('audio bible')}: #{version.title} (#{version.abbreviation.upcase})" , audiobible_path(version)
+                    = link_to "#{t('audio bible')}: #{version.title} (#{version.abbreviation.upcase})" , audiobible_path(version), target: '_self'
 
   .medium-4.columns.show-for-medium-up.l-border
     = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}

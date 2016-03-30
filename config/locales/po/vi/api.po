@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-01-04 10:21-0600\n"
-"PO-Revision-Date: 2016-01-04 10:21-0600\n"
+"POT-Creation-Date: 2016-03-22 13:30-0600\n"
+"PO-Revision-Date: 2016-03-22 13:30-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: vi <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -116,6 +116,18 @@ msgstr "Bạn tạo hình ảnh cho câu <b>{reference_human} {version_abbreviat
 
 msgid "moment.image.title"
 msgstr "{name} tạo hình ảnh cho câu <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Bạn tạo một ghi chú"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "{name} tạo một ghi chú"
+
+msgid "moment.note.reference.self.title"
+msgstr "Bạn tạo ghi chú về <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "{name} tạo ghi chú về <b>{reference_human}</b>"
 
 msgid "moment.note.self.title"
 msgstr "Bạn tạo ghi chú <b>\"{title}\"</b>"
