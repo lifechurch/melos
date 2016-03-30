@@ -9,6 +9,7 @@ import ActionCreators from '../features/EventEdit/features/content/actions/creat
 import RevManifest from '../../app/lib/revManifest'
 import { ActionCreators as ModalActionCreators } from '../actions/modals'
 import LiveWarningModal from '../features/EventEdit/features/content/components/LiveWarningModal'
+import cookie from 'react-cookie'
 
 let smoothScroll = {}
 if (typeof window !== 'undefined') {
@@ -67,14 +68,16 @@ class EventEditContentContainer extends Component {
 
 	handleAddReference() {
 		const { event, dispatch, _content } = this.props
+		const lastBibleVersion = cookie.load('last_bible_version')
+		const lastBibleBook = cookie.load('last_bible_book')
 		const newContent =Object.assign({},
 			createBaseContentObject(event, 'reference', _content.insertionPoint),
 			{
 				data: {
-					version_id: 1,
+					version_id:  (typeof lastBibleVersion === 'undefined') ? 1 : lastBibleVersion,
 					chapter: '',
 					human: ' ',
-					usfm: ['']
+					usfm: [(typeof lastBibleBook === 'undefined') ? '' : lastBibleBook]
 				}
 			}
 		)

@@ -5,6 +5,7 @@ import Column from '../../../../../../app/components/Column'
 import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
 import HtmlEditor from '../../../../../../app/components/HtmlEditor'
+import cookie from 'react-cookie'
 
 class ContentTypeReference extends Component {
 
@@ -50,6 +51,9 @@ class ContentTypeReference extends Component {
 			'index': contentIndex
 		}))
 
+		cookie.save('last_bible_version', parseInt(event.target.value))
+		cookie.remove('last_bible_book')
+
 		dispatch(ActionCreators.setField({index: contentIndex, field: 'human', value: ' '}))
 		dispatch(ActionCreators.setField({index: contentIndex, field: 'chapter', value: ''}))
 		dispatch(ActionCreators.setField({index: contentIndex, field: 'usfm', value: ['']}))
@@ -59,6 +63,8 @@ class ContentTypeReference extends Component {
 		const { dispatch, contentIndex, contentData, references } = this.props
 		const books = references.books[contentData.version_id]
 		const usfm = event.target.value
+
+		cookie.save('last_bible_book', event.target.value)
 
 		var human = ""
 		for (let book of books) {
