@@ -13,6 +13,7 @@ import LiveWarningModal from '../features/EventEdit/features/content/components/
 let smoothScroll = {}
 if (typeof window !== 'undefined') {
 	smoothScroll = require('smooth-scroll')
+	smoothScroll.init({ selectorHeader: '.content-header', offset: 20 })
 }
 
 function createBaseContentObject(event, type, insertionPoint) {
@@ -46,7 +47,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddAnnouncement() {
@@ -61,7 +62,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddReference() {
@@ -78,7 +79,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddPlan() {
@@ -97,7 +98,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddImage() {
@@ -112,7 +113,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddLink() {
@@ -129,7 +130,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddGiving() {
@@ -146,7 +147,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleUpdate(index, params) {
@@ -155,8 +156,7 @@ class EventEditContentContainer extends Component {
 		if (typeof content_id === 'undefined' || content_id <= 0) {
 			dispatch(ActionCreators.add(Object.assign({}, {
 				...params,
-				index,
-				sort: index
+				index
 			})))
 		} else {
 			dispatch(ActionCreators.update(Object.assign({}, {

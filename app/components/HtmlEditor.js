@@ -6,8 +6,8 @@ const DEBOUNCE_TIMEOUT = 300
 const formats = ['bold', 'italic']
 
 const toolbarItems = [
-	{ 
-		label:'Text', 
+	{
+		label:'Text',
 		type:'group',
 		items: [
 			{ type:'bold', label:'Bold' },
@@ -17,55 +17,70 @@ const toolbarItems = [
 ]
 
 class HtmlEditor extends Component {
-	sendUpdate() {
-		const { onChange, name, value } = this.props
-		if (value !== this.newValue) {
-			onChange({
-				target: {
-					value: this.newValue,
-					name
-				}
-			})	
+	constructor(props) {
+		super(props)
+		this.state = { value: props.value, isDirty: false }
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (!this.state.isDirty) {
+			this.setState({value: nextProps.value})
 		}
 	}
 
-	handleChange(newValue) {
-		const { onChange} = this.props
+	sendUpdate() {
+		const { onChange, name } = this.props
+		const { value, isDirty } = this.state
+		if (isDirty) {
+			this.setState({isDirty: false})
+			onChange({
+				target: {
+					value: value,
+					name
+				}
+			})
+		}
+	}
+
+	handleChange(value) {
+		const { onChange } = this.props
+
 		if (typeof this.cancelSave === 'number') {
 			clearTimeout(this.cancelSave)
 			this.cancelSave = null
 		}
 
-		this.newValue = newValue;
-		onChange({}) 
+		this.setState({ value: value, isDirty: true })
+
+		onChange({})
 		this.cancelSave = setTimeout(::this.sendUpdate, DEBOUNCE_TIMEOUT)
 	}
 
 	render() {
-		const { value } = this.props
+		const { value } = this.state
 		const html = {
 			__html: value
 		}
 
 		return (
 			<div className='content-html-editor'>
-				<ReactQuill 
+				<ReactQuill
 					formats={formats}
-					theme="snow" 
+					theme="snow"
 					value={value}
 					onChange={::this.handleChange}>
 
 					<div
-						key='toolbar' 
-						ref='toolbar' 
+						key='toolbar'
+						ref='toolbar'
 						items={toolbarItems}>
 						<a className='ql-bold'>Bold</a>
 						<a className='ql-italic'>Italic</a>
 					</div>
 
-					<div 
-						key='editor' 
-						ref='editor' 
+					<div
+						key='editor'
+						ref='editor'
 						className='quill-contents form-body-block white content-html-editor-content'
 						dangerouslySetInnerHTML={html} />
 
