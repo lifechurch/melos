@@ -78,6 +78,8 @@ class PasswordChange extends Component {
 			<div className='row'>
 				<div className='medium-7 medium-centered columns'>
 					<h1>{password.strings['users.my password']}</h1>
+					<p className='terms'>{password.strings['users.forgot password prompt']}</p>
+					<br/>
 					<div>
 						<label htmlFor='newPassword'>{password.strings['users.profile.new password']}</label>
 						<input
@@ -117,6 +119,9 @@ class PasswordChange extends Component {
 								onClick={::this.handleClick}>
 								{password.strings['users.my password']}
 							</a>
+							<div className='right'>
+								{password.strings['users.password length']}
+							</div>
 						</div>
 					}
 				</div>
