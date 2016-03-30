@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-// import Row from '../../../components/Row'
-// import Column from '../../../components/Column'
 import FormField from '../../../components/FormField'
 import Input from '../../../components/Input'
 import ActionCreators from '../actions/creators'
