@@ -20,6 +20,7 @@ export default {
 			}
 		}
 	},
+	content: {},
 	event: {
 		errors: {
 			summary: '',

@@ -273,6 +273,13 @@ const ActionCreators = {
 			type: contentType('initUploadFailure'),
 			params
 		}
+	},
+
+	setInsertionPoint(index) {
+		return {
+			type: contentType('setInsertionPoint'),
+			index
+		}
 	}
 }
 

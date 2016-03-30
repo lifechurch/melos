@@ -18,6 +18,12 @@ export default function content(state = {}, action) {
 		case type('reorderFailure'):
 			return state
 
+		case type('setInsertionPoint'):
+			return Object.assign({}, state, { insertionPoint: action.index })
+
+		case type('new'):
+			return Object.assign({}, state, { insertionPoint: 0 })
+
 		default:
 			return state
 	}

@@ -11,7 +11,7 @@ import RevManifest from '../../../../../../app/lib/revManifest'
 class ContentFeed extends Component {
 
 	render() {
-		const { dispatch, event, references, plans, handleUpdate, handleChange, handleRemove, handleMove, handleStartReorder, handleReorder } = this.props
+		const { dispatch, event, references, plans, _content, handleUpdate, handleChange, handleRemove, handleMove, handleStartReorder, handleReorder } = this.props
 		const { content } = event.item
 
 		const contentList = content.map((c,i) => {
@@ -38,6 +38,7 @@ class ContentFeed extends Component {
 						handleRemove={handleRemove}
 						handleMove={handleMove}
 						content={c}
+						_content={_content}
 						contentIndex={i} />
 				)
 			}

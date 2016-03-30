@@ -14,23 +14,20 @@ import cookie from 'react-cookie'
 let smoothScroll = {}
 if (typeof window !== 'undefined') {
 	smoothScroll = require('smooth-scroll')
+	smoothScroll.init({ selectorHeader: '.content-header', offset: 20 })
 }
 
-function createBaseContentObject(event, type) {
-	let maxSort = 0
-	if (Array.isArray(event.item.content)) {
-		for (const c of event.item.content) {
-			if (c.sort > maxSort) {
-				maxSort = c.sort
-			}
-		}
+function createBaseContentObject(event, type, insertionPoint) {
+	let newSort = insertionPoint
+	if (typeof insertionPoint === 'undefined' || insertionPoint === 0) {
+		newSort = event.item.content.length
 	}
 
 	return {
 		id: event.item.id,
 		type: type,
-		sort: maxSort + 100,
-		index: 0
+		sort: (newSort * 100) - 50,
+		index: newSort
 	}
 }
 
@@ -41,9 +38,9 @@ class EventEditContentContainer extends Component {
 	}
 
 	handleAddText() {
-		const { event, dispatch } = this.props
+		const { event, dispatch, _content } = this.props
 		const newContent = Object.assign({},
-			createBaseContentObject(event, 'text'),
+			createBaseContentObject(event, 'text', _content.insertionPoint),
 			{
 				data: {
 					body: ''
@@ -51,13 +48,13 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddAnnouncement() {
-		const { event, dispatch } = this.props
+		const { event, dispatch, _content } = this.props
 		const newContent = Object.assign({},
-			createBaseContentObject(event, 'announcement'),
+			createBaseContentObject(event, 'announcement', _content.insertionPoint),
 			{
 				data: {
 					title: '',
@@ -66,15 +63,15 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddReference() {
-		const { event, dispatch } = this.props
+		const { event, dispatch, _content } = this.props
 		const lastBibleVersion = cookie.load('last_bible_version')
 		const lastBibleBook = cookie.load('last_bible_book')
 		const newContent =Object.assign({},
-			createBaseContentObject(event, 'reference'),
+			createBaseContentObject(event, 'reference', _content.insertionPoint),
 			{
 				data: {
 					version_id:  (typeof lastBibleVersion === 'undefined') ? 1 : lastBibleVersion,
@@ -85,13 +82,13 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddPlan() {
-		const { event, dispatch } = this.props
+		const { event, dispatch, _content } = this.props
 		const newContent = Object.assign({},
-			createBaseContentObject(event, 'plan'),
+			createBaseContentObject(event, 'plan', _content.insertionPoint),
 			{
 				data: {
 					plan_id: 0,
@@ -104,13 +101,13 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddImage() {
-		const { event, dispatch } = this.props
+		const { event, dispatch, _content } = this.props
 		const newContent = Object.assign({},
-			createBaseContentObject(event, 'image'),
+			createBaseContentObject(event, 'image', _content.insertionPoint),
 			{
 				data: {
 					image_id: '0',
@@ -119,13 +116,13 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddLink() {
-		const { event, dispatch } = this.props
+		const { event, dispatch, _content } = this.props
 		const newContent = Object.assign({},
-			createBaseContentObject(event, 'url'),
+			createBaseContentObject(event, 'url', _content.insertionPoint),
 			{
 				data: {
 					// This initial content is validated by validateUrlType
@@ -136,13 +133,13 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleAddGiving() {
-		const { event, dispatch } = this.props
+		const { event, dispatch, _content } = this.props
 		const newContent = Object.assign({},
-			createBaseContentObject(event, 'url'),
+			createBaseContentObject(event, 'url', _content.insertionPoint),
 			{
 				iamagivinglink: true,
 				data: {
@@ -153,7 +150,7 @@ class EventEditContentContainer extends Component {
 			}
 		)
 		dispatch(ActionCreators.new(newContent))
-		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.sort.toString()) }, 500)
+		setTimeout(() => { smoothScroll.animateScroll('#content-' + newContent.index.toString()) }, 250)
 	}
 
 	handleUpdate(index, params) {
@@ -215,7 +212,7 @@ class EventEditContentContainer extends Component {
 	}
 
 	render() {
-		const { event, references, plans, dispatch, modals } = this.props
+		const { event, references, plans, dispatch, modals, _content } = this.props
 
 		let contentFeed
 		if (typeof event !== 'object' || !Array.isArray(event.item.content) || event.item.content.length === 0) {
@@ -239,6 +236,7 @@ class EventEditContentContainer extends Component {
 					handleMove={::this.handleMove}
 					handleStartReorder={::this.handleStartReorder}
 					handleReorder={::this.handleReorder}
+					_content={_content}
 				/>
 			)
 		}
