@@ -56,6 +56,7 @@
   - content_for :mobile_right_nav do
     = link_to t("ref.listen"), bible_version_path(reference), class: 'save_btn', target: '_self'
 
+- @branch_deeplink = "version?id=#{@version.id}"
 = render '/shared/app_banner'
 
 %script{type: "application/ld+json"}

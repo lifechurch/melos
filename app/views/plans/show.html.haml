@@ -55,6 +55,7 @@
       = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
 
 
-
+- @branch_deeplink = "reading_plan_detail?id=#{@plan.id}"
+= render '/shared/app_banner'
 
 
