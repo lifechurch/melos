@@ -18,7 +18,6 @@ import { getClient } from '@youversion/js-api'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
-const routes = getRoutes(null)
 
 function getAssetPath(path) {
 	const IS_PROD = process.env.NODE_ENV === 'production';
