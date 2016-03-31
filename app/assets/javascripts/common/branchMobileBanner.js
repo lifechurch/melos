@@ -6,13 +6,14 @@ angular.module('common.branchMobileBanner', [])
             scope: {
                 bannerTitle: '@',
                 bannerAction: '@',
-                bannerOpen: '@'
+                bannerOpen: '@',
+                bannerDeeplink: '@'
             },
             controller: [ '$scope', function($scope) {
                 angular.element(document).ready(function() {
                     if (Foundation.utils.is_small_only()) {
                         b = new Branch();
-                        options = {title: $scope.bannerTitle, action: $scope.bannerAction, open: $scope.bannerOpen};
+                        options = {title: $scope.bannerTitle, action: $scope.bannerAction, open: $scope.bannerOpen, deeplink: $scope.bannerDeeplink};
                         b.banner(options);
                     }
                 });
