@@ -98,7 +98,7 @@ gulp.task('images:clean', function() {
 
 gulp.task('javascript', function(callback) {
 	if (IS_PROD) {
-		runSequence('javascript:clean', ['javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange'], callback);
+		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', callback);
 	} else {
 		runSequence('javascript:clean', ['javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange'], callback);
 	}
@@ -154,7 +154,7 @@ gulp.task('images:dev', function() {
 gulp.task('build', ['images', 'css', 'javascript']);
 
 gulp.task('build:production', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], 'images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', callback);
 });
 
 gulp.task('build:staging', function(callback) {
