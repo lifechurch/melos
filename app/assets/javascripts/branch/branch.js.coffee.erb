@@ -12,6 +12,7 @@ class window.Branch
 
   banner: (options) ->
     options.deeplink = 'bible?reference=JHN.3&version_id=116'
+    options.deeplink = 'reading_plan_detail?id=160'
     console.log('dl:' + options.deeplink)
     branch.banner {
       icon: $('html').data('app-icon')
