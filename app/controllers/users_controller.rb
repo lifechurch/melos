@@ -239,7 +239,7 @@ class UsersController < ApplicationController
       return render_404
     end
 
-    @title = 'Reset Your Password'
+    @title = t('users.my password')
     render layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
