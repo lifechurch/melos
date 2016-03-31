@@ -30,60 +30,17 @@ function getAssetPath(path) {
 	}
 }
 
-router.post('/event', urlencodedParser, function(req, res) {
-	let assetPrefix = null
+function checkAuth(auth) {
+	return new Promise((resolve, reject) => {
+		if (typeof auth === 'object' && typeof auth.token === 'string') {
+			// We have a token
+			try {
+				const token = auth.token
+				const tokenData = tokenAuth.decodeToken(token)
+				const sessionData = tokenAuth.decryptToken(tokenData.token)
 
-	if (req.get('Host').indexOf('localhost') === -1) {
-		assetPrefix = ['https://', req.get('Host')].join('')
-	} else {
-		assetPrefix = ['http://', req.get('Host')].join('')
-	}
-
-	match({ routes, location: '/events/' + req.body.id }, (error, redirectLocation, renderProps) => {
-		if (error) {
-			res.status(500).send({ error: 0, message: error.message });
-
-		} else if (renderProps) {
-			reactCookie.plugToRequest(req, res)
-
-			let token = null
-			let tokenData = null
-			let sessionData = {}
-			let startingState = defaultState
-
-			if (typeof req.body.auth === 'object' && typeof req.body.auth.token === 'string') {
-				// We have a token
-				try {
-					token = req.body.auth.token
-					tokenData = tokenAuth.decodeToken(token)
-					sessionData = tokenAuth.decryptToken(tokenData.token)
-
-					startingState = Object.assign({}, defaultState, { auth: {
-						token: null,
-						isLoggedIn: true,
-						isWorking: false,
-						userData: sessionData,
-						user: sessionData.email,
-						password: null,
-						errors: {
-							api: null,
-							fields: {
-								user: null,
-								password: null
-							}
-						}
-					}})
-				} catch(err) {
-					return res.status(403).send({error: 1, message: 'Invalid or Expired Token'})
-				}
-
-			} else if (typeof req.body.auth === 'object' && typeof req.body.auth.password === 'string') {
-				// No token, but we have enough info to create one
-				sessionData = req.body.auth
-				token = tokenAuth.token(sessionData)
-
-				startingState = Object.assign({}, defaultState, { auth: {
-					token: null,
+				resolve({
+					token: token,
 					isLoggedIn: true,
 					isWorking: false,
 					userData: sessionData,
@@ -96,66 +53,155 @@ router.post('/event', urlencodedParser, function(req, res) {
 							password: null
 						}
 					}
-				}})
-
-			} else {
-				startingState = Object.assign({}, defaultState, { auth: {
-					token: null,
-					isLoggedIn: false,
-					isWorking: false,
-					userData: {},
-					user: null,
-					password: null,
-					errors: {
-						api: null,
-						fields: {
-							user: null,
-							password: null
-						}
-					}
-				}})
-			}
-
-			try {
-				const client = getClient('events')
-					.call('view')
-					.setVersion('3.2')
-					.setEnvironment(process.env.NODE_ENV)
-					.params({ id: req.body.id })
-
-				if (startingState.auth.isLoggedIn === true) {
-					client.auth(sessionData.email , sessionData.password)
-				}
-
-				client.get().then((response) => {
-					const history = createMemoryHistory()
-
-					if (typeof response.errors !== 'undefined') {
-						return res.status(404).send({error:4, message: 'Could not find Event.'})
-					}
-
-					const store = configureStore(startingState, history, null)
-					store.dispatch({ type: 'EVENT_VIEW_SUCCESS', response })
-
-					const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
-					const initialState = store.getState()
-					const head = Helmet.rewind()
-					res.setHeader('Cache-Control', 'public')
-					res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix }, function(err, html) {
-						res.send({ html, token, head, js: assetPrefix + '/javascripts/' + getAssetPath('eventView.js') })
-					})
-				}, (error) => {
-					res.status(404).send({error:4, message: 'Could not find Event.'})
 				})
-
-			} catch(ex) {
-				res.status(500).send({error: 2, message: 'Could not render Event view'})
+			} catch(err) {
+				reject({error: 1, message: 'Invalid or Expired Token'})
 			}
+
+		} else if (typeof auth === 'object' && typeof auth.password === 'string') {
+			// No token, but we have enough info to create one
+			const sessionData = auth
+			const token = tokenAuth.token(sessionData)
+			resolve({
+				token: token,
+				isLoggedIn: true,
+				isWorking: false,
+				userData: sessionData,
+				user: sessionData.email,
+				password: null,
+				errors: {
+					api: null,
+					fields: {
+						user: null,
+						password: null
+					}
+				}
+			})
 
 		} else {
-			res.status(404).send({ error: 3, message: 'Not found' });
+			resolve({
+				token: null,
+				isLoggedIn: false,
+				isWorking: false,
+				userData: {},
+				user: null,
+				password: null,
+				errors: {
+					api: null,
+					fields: {
+						user: null,
+						password: null
+					}
+				}
+			})
 		}
+	})
+}
 
+function getAssetPrefix(req) {
+	if (req.get('Host').indexOf('localhost') === -1) {
+		return ['https://', req.get('Host')].join('')
+	} else {
+		return ['http://', req.get('Host')].join('')
+	}
+}
+
+function getDefaultState(feature) {
+	let defaultState = {}
+	try {
+		defaultState = require('./app/standalone/' + feature + '/defaultState').default
+	} catch(ex) {
+		defaultState = require('./app/defaultState').default
+	}
+	return defaultState
+}
+
+function getStore(feature, startingState, history, logger) {
+	let configureStore = {}
+	try {
+		configureStore =  require('./app/standalone/' + feature + '/store').default
+	} catch(ex) {
+		configureStore = require('./app/store/configureStore').default
+	}
+	return configureStore(startingState, history, logger)
+}
+
+function getRootComponent(feature) {
+	let rootComponent = {}
+	try {
+		rootComponent = require('./app/standalone/' + feature + '/rootComponent').default
+	} catch(ex) {
+		throw new Error('No root component defined')
+	}
+	return rootComponent
+}
+
+function mapStateToParams(feature, state, params) {
+	try {
+		const fn = require ('./app/standalone/' + feature + '/mapParamsToState').default
+		return fn(state, params)
+	} catch(ex) {
+	 	return state
+	}
+}
+
+function getConfig(feature) {
+	const defaultConfig = { linkCss: true }
+	let config = {}
+	try {
+		config = require('./app/standalone/' + feature + '/config').default
+	} catch(ex) { }
+	return Object.assign({}, defaultConfig, config)
+}
+
+function loadData(feature, params, startingState, sessionData) {
+	return new Promise((resolve, reject) => {
+		let fn = null
+		try {
+			fn = require('./app/standalone/' + feature + '/loadData').default
+			resolve(fn(params, startingState, sessionData))
+		} catch(ex) {
+			resolve()
+		}
+	})
+}
+
+router.post('/', urlencodedParser, function(req, res) {
+	const { feature, params, auth } = req.body
+	const assetPrefix = getAssetPrefix(req)
+
+	reactCookie.plugToRequest(req, res)
+
+	let verifiedAuth = null
+	checkAuth(auth).then((authResult) => {
+		const sessionData = Object.assign({}, authResult.userData)
+		authResult.userData.password = null
+		verifiedAuth = authResult
+		const defaultState = getDefaultState(feature)
+		let startingState = Object.assign({}, defaultState, { auth: verifiedAuth })
+		startingState = mapStateToParams(feature, startingState, params)
+		try {
+			const store = getStore(feature, startingState, null, null)
+			loadData(feature, params, startingState, sessionData).then((action) => {
+				if (typeof action === 'object') {
+					store.dispatch(action)
+				}
+				const RootComponent = getRootComponent(feature)
+				const html = renderToString(<Provider store={store}><RootComponent /></Provider>)
+				const initialState = Object.assign({}, startingState, store.getState())
+				const head = Helmet.rewind()
+				res.setHeader('Cache-Control', 'public')
+				res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature) }, function(err, html) {
+					res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })
+				})
+			}, (error) => {
+				res.status(404).send(error)
+			})
+		} catch(ex) {
+			res.status(500).send({error: 2, message: 'Could not render ' + feature + ' view', ex })
+		}
+	}, (authError) => {
+		return res.status(403).send(authError)
 	})
 })
 

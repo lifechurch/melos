@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import configureStore from './store'
 import defaultState from './defaultState'
 import createLogger from 'redux-logger'
-import EventView from '../../containers/EventView'
+import PasswordChange from '../../features/PasswordChange/components/PasswordChange'
 
 let initialState = defaultState
 
@@ -21,7 +21,7 @@ const store = configureStore(initialState, null, logger)
 
 render(
 	<Provider store={store}>
-		<EventView />
+		<PasswordChange />
 	</Provider>,
   document.getElementById('react-app')
 )
