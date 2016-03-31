@@ -14,6 +14,7 @@
   focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
   a_chapter     = presenter.try(:is_chapter?)
   verse_view    = presenter.verses.present? && !presenter.respond_to?(:subscription)
+  ref_deep_link = "#{@presenter.reference.deep_link_path}"
 
 -if (controller_name == 'subscriptions')
   - subscription  = presenter.subscription
@@ -21,7 +22,6 @@
 
 - content_for :additional_meta do
   = render '/shared/hreflang'
-  - ref_deep_link = "#{@presenter.reference.deep_link_path}"
   - deep_link = "youversion://#{ref_deep_link}" if ref_deep_link.present?
 
   - if ref_deep_link.present?
@@ -134,5 +134,6 @@
       %a{:href => "#", :class => "solid-button green", "ng-hide" => "showContent", "ng-click" => "toggleContent(true)"}
         =t("Start reading")
 
+- @branch_deeplink = "#{ref_deep_link.gsub('version_id','version')}" if ref_deep_link.present?
 = render '/shared/app_banner'
 

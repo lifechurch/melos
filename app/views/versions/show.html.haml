@@ -70,6 +70,7 @@
   - content_for :mobile_right_nav do
     = link_to t("versions.read title"), bible_version_path((last_read || default_reference).merge(version: @version)), { class: 'save_btn', target: '_self' }
 
+- @branch_deeplink = "version?id=#{@version.id}"
 = render '/shared/app_banner'
 
 %script{type: "application/ld+json"}

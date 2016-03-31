@@ -11,9 +11,6 @@ class window.Branch
     'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
 
   banner: (options) ->
-    options.deeplink = 'bible?reference=JHN.3&version_id=116'
-    options.deeplink = 'reading_plan_detail?id=160'
-    console.log('dl:' + options.deeplink)
     branch.banner {
       icon: $('html').data('app-icon')
       title: options.title

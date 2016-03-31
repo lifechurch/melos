@@ -2,6 +2,7 @@
   @title            = "#{t('pages.home.features.read heading')} #{t(".hero.heading")}"
   @meta_description = t("meta.mobile.description")
   @meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  version_id = Version.default_for(I18n.locale.to_s.eql?('en-GB') ? "en" : I18n.locale)
 
 - @main_nav = false
 - @sidebar = false
@@ -19,7 +20,6 @@
   = render '/shared/hreflang'
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}"
-  - version_id = Version.default_for(I18n.locale.to_s.eql?('en-GB') ? "en" : I18n.locale)
   %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/bible?reference=JHN.1&version=#{version_id}"}
   %link{rel: "alternate", href: "ios-app://282935706/youversion/bible?reference=JHN.1&version_id=#{version_id}"}
   %link{rel: "canonical", href: canonicalHref}
@@ -158,4 +158,5 @@
       - start_link = sign_up_path
     =link_to(t("pages.home.start_now"), start_link, { class: 'solid-button green padded start-now-link', target: "_self" })
 
+- @branch_deeplink = "bible?reference=JHN.1&version=#{version_id}"
 = render '/shared/app_banner'

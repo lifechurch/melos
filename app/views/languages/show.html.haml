@@ -47,6 +47,7 @@
   .medium-4.columns.show-for-medium-up.l-border
     = render partial: 'widgets/download_app', :locals => {show_sms: true}
 
+- @branch_deeplink = "language?id=#{@language}"
 = render '/shared/app_banner'
 
 
