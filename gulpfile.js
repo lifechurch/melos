@@ -30,11 +30,11 @@ gulp.task('javascript:prod', function() {
 
 
 gulp.task('javascript:prod:event', function() {
-	return browserify("app/standalone/EventView/main.js", { debug: !IS_PROD })
+	return browserify("app/standalone/SingleEvent/main.js", { debug: !IS_PROD })
 		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
-		.pipe(source('EventView.js'))
+		.pipe(source('SingleEvent.js'))
 		.pipe(buffer())
 		.pipe(uglify())
 		.pipe(rev())
@@ -67,10 +67,10 @@ gulp.task('javascript:dev', function() {
 });
 
 gulp.task('javascript:dev:event', function() {
-	return browserify("app/standalone/EventView/main.js", { debug: !IS_PROD })
+	return browserify("app/standalone/SingleEvent/main.js", { debug: !IS_PROD })
 		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
 		.bundle()
-		.pipe(source('EventView.js'))
+		.pipe(source('SingleEvent.js'))
 		.pipe(buffer())
 		.pipe(gulp.dest("./public/javascripts/"));
 });
