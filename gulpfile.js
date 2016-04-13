@@ -16,7 +16,7 @@ var IS_PROD = process.env.NODE_ENV === 'production';
 
 gulp.task('javascript:prod', function() {
 	return browserify("app/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('app.js'))
@@ -31,7 +31,7 @@ gulp.task('javascript:prod', function() {
 
 gulp.task('javascript:prod:event', function() {
 	return browserify("app/standalone/SingleEvent/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('SingleEvent.js'))
@@ -45,7 +45,7 @@ gulp.task('javascript:prod:event', function() {
 
 gulp.task('javascript:prod:passwordChange', function() {
 	return browserify("app/standalone/PasswordChange/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('PasswordChange.js'))
@@ -59,7 +59,7 @@ gulp.task('javascript:prod:passwordChange', function() {
 
 gulp.task('javascript:dev', function() {
 	return browserify("app/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
 		.bundle()
 		.pipe(source('app.js'))
 		.pipe(buffer())
@@ -68,7 +68,7 @@ gulp.task('javascript:dev', function() {
 
 gulp.task('javascript:dev:event', function() {
 	return browserify("app/standalone/SingleEvent/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
 		.bundle()
 		.pipe(source('SingleEvent.js'))
 		.pipe(buffer())
@@ -77,7 +77,7 @@ gulp.task('javascript:dev:event', function() {
 
 gulp.task('javascript:dev:passwordChange', function() {
 	return browserify("app/standalone/PasswordChange/main.js", { debug: !IS_PROD })
-		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
 		.bundle()
 		.pipe(source('PasswordChange.js'))
 		.pipe(buffer())
