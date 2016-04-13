@@ -10,7 +10,7 @@ var ping = require('./ping');
 var auth = api.tokenAuth;
 var cors = require('cors');
 
-require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind" ] });
+require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] });
 
 var reactServer = require('./react-server');
 var featureServer = require('./feature-server');
