@@ -5,7 +5,7 @@ import Input from '../../../components/Input'
 import ActionCreators from '../actions/creators'
 
 function makeErrorMessage(key, strings) {
-	if (key.startsWith('users.password.less_than_minimum')) {
+	if (key.lastIndexOf('users.password.less_than_minimum',0) === 0) {
 		return strings['api.users password length']
 	} else if (key === 'users.same_password.change') {
 		return strings['api.users password change']
