@@ -19,18 +19,11 @@ YouversionWeb::Application.routes.draw do
   # get "/press",         to: redirect("http://youversion.com/press")
   get "/bibleappforkids", to: redirect("https://bibleappforkids.com")
 
-  # TODO: remove
   get "/marriage",      to: redirect("http://blog.youversion.com/2015/10/top-10-marriage-bible-plans-on-youversion/")
-  get "/day-of-the-bible", to: redirect("http://blog.youversion.com/2015/11/its-international-day-of-the-bible/")
-  get "/thanksgiving", to: redirect("http://blog.youversion.com/?p=18397")
   get "/200million",    to: redirect("http://installs.youversion.com/200million/index.html")
-  get "/christmas-2015", to: redirect("http://blog.youversion.com/?p=18881")
   get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
-  get "/21-day",      to: redirect("http://blog.youversion.com/?p=19454")
-  get "/21-day-challenge", to: redirect("http://blog.youversion.com/2016/01/youversions-21-day-challenge-for-2016-you-could-win-an-amazon-fire-tablet/")
   get "/blog-events",      to: redirect("http://blog.youversion.com/2016/03/introducing-events-the-newest-feature-in-the-bible-app")
-  get "/blog-vod-2016",    to: redirect("http://blog.youversion.com/vod-2016/")
-  # TODO: END remove
+  get "volunteer-form", to: redirect("https://lifechurch.formstack.com/forms/volunteer_interest_form")
 
   get "/press",         to: "pages#press"
   get "/generic_error", to: "pages#generic_error"
