@@ -313,7 +313,7 @@ ta:
         title: "வேதாகம மொழிகள் மற்றும் மொழிபெயர்ப்புகள்"
         most popular: "மிகவும் பிரபலமான மொழிகள்"
         additional: "கூடுதல் மொழிகள்"
-        download language: "வேதாகமத்தை %{language_name} மொழியில் தரவிறக்கவும்"
+        download language: "வேதாகமத்தை %{language_name} மொழியில் பதிவிறக்கவும்"
         bible in: "%{language_name}ல் வேதாகமம்"
     or: 
         lower: "அல்லது"
