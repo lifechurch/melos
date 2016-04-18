@@ -6,7 +6,7 @@ namespace :sitemap do
     locales = I18n.available_locales
     locstring = "222,28,411,52,1076,89,753,103,127,128,197,146,147,149,150,176,178,210,214,53,442,"
     locales.each do |l|
-      if l.to_s.eql?("el")
+      if l.to_s.eql?("my")
         puts "#{l} versions - building sitemaps..."
         puts " "
         locale = l.to_s.eql?("en") ? "" : "/#{l}"
