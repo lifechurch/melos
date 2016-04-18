@@ -319,7 +319,7 @@
     line-height: $reader_line_height;
     text-indent: 0;
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
     text-transform: none;
     text-decoration: none;
   }
@@ -402,5 +402,10 @@
   /* Increased word-spacing for Moose Cree version and Eastern Arctic Inuktitut Bible  */
   .vid483, .vid455 {
     word-spacing: 0.4em;
+  }
+
+  .vid1443 .k {
+    font-style: italic;
+    font-weight: bold;
   }
 }
