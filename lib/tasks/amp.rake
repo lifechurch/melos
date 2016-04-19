@@ -43,6 +43,7 @@ namespace :amp do
     data += "<script async custom-element='amp-analytics' src='https://cdn.ampproject.org/v0/amp-analytics-0.1.js'></script>\n"
     data += "<script async src='https://cdn.ampproject.org/v0.js'></script>\n"
     data += getCss
+    data += getJsonLd
     data += "</head>\n\n"
     data += "<body>\n"
     return data
@@ -91,6 +92,31 @@ namespace :amp do
     data += "         text-align: center;\n"
     data += "     }\n"
     data += "</style>\n"
+    return data
+  end
+
+  def getJsonLd
+    data = ""
+    data += "<script type=\"application/ld+json\">\n"
+    data += "{\n"
+    data += "\"@context\": \"http://schema.org/\",\n"
+    data += "\"@type\": \"MobileApplication\",\n"
+    data += "\"name\": \"#{I18n.t('bible')}\",\n"
+    # data += "'image': '#{url_for(image_path(localized_bible_icon(120)))}',\n"
+    data += "\"description\": \"#{I18n.t("meta.mobile.description")}\",\n"
+    data += "\"operatingSystem\": \"Android, iOS, BlackBerry, Windows Phone 8\",\n"
+    data += "\"applicationCategory\": \"Reference\",\n"
+    data += "\"aggregateRating\":{\n"
+    data += "\"@type\": \"AggregateRating\",\n"
+    data += "\"ratingValue\": \"4.7\",\n"
+    data += "\"ratingCount\": \"1,786,398\"\n"
+    data += " },\n"
+    data += "\"offers\":{\n"
+    data += "\"@type\": \"Offer\",\n"
+    data += "\"price\": \"0\"\n"
+    data += "}\n"
+    data += "}\n"
+    data += "</script>\n"
     return data
   end
 
