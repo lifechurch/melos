@@ -59,7 +59,7 @@ class ErrorMessage extends Component {
 					errorListItems.push.apply(errorListItems, errors[k].map((e, i) => { return (<li key={i}>{getError(e, scope)}</li>) }))
 				}
 			} else {
-				errorListItems = (<li>An error occurred.</li>)
+				errorListItems = (<li>{genericError}</li>)
 			}
 
 			errorList = (<ul>{errorListItems}</ul>)

@@ -8,7 +8,7 @@ class App extends Component {
 		const { children } = this.props
 		return (
 			<div>
-				<Helmet title="This is a title" />
+				<Helmet title="" />
 				{children}
 			</div>
 		)

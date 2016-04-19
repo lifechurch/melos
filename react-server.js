@@ -14,6 +14,8 @@ import reactCookie from 'react-cookie'
 import { fetchToken } from '@youversion/token-storage'
 import { tokenAuth } from '@youversion/js-api'
 import revManifest from './rev-manifest.json'
+import { IntlProvider } from 'react-intl'
+import enUs from './locales/en-US.json'
 
 const router = express.Router()
 const routes = getRoutes(null)
@@ -30,7 +32,7 @@ function getAssetPath(path) {
 router.get('/*', cookieParser(), function(req, res) {
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
 		if (error) {
-
+			console.log("ERROR", error);
 			res.status(500).send(error.message);
 
 		} else if (redirectLocation) {
@@ -78,11 +80,12 @@ router.get('/*', cookieParser(), function(req, res) {
 					const logger = createNodeLogger()
 					const history = createMemoryHistory()
 					const store = configureStore(startingState, history, logger)
-					const html = renderToString(<Provider store={store}><RouterContext {...renderProps} /></Provider>)
+					const html = renderToString(<IntlProvider locale="en" messages={enUs}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
 					const initialState = store.getState()
 					res.setHeader('Cache-Control', 'public');
 					res.render('index', {appString: html, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
 				} catch(ex) {
+					console.log('ex', ex);
 					res.status(500).send()
 				}
 			}

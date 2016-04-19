@@ -9,6 +9,7 @@ import Input from '../components/Input'
 import ActionCreators from '../features/Auth/actions/creators'
 import NoticeBanner from '../components/NoticeBanner'
 import EventHeader from '../components/EventHeader'
+import { IntlProvider, FormattedMessage } from 'react-intl';
 
 class Auth extends Component {
 
@@ -53,7 +54,7 @@ class Auth extends Component {
 				<EventHeader {...this.props} />
 				<div className='form-body'>
 					<NoticeBanner />
-					<h1>Sign In</h1>
+					<h1><FormattedMessage id="containers.Auth.signIn" /></h1>
 					<p className="auth__subhead">
 					If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/>
 					<br/>

@@ -9,6 +9,9 @@ import createLogger from 'redux-logger'
 import getRoutes from './routes'
 import defaultState from './defaultState'
 import EventActionCreators from './features/EventEdit/features/details/actions/creators'
+import { addLocaleData, IntlProvider } from 'react-intl'
+import enLocaleData from 'react-intl/locale-data/en'
+import enUs from '../locales/en-US.json'
 
 let initialState = defaultState
 
@@ -49,9 +52,19 @@ function requireEvent(nextState, replace, callback) {
 
 const routes = getRoutes(requireAuth, requireEvent)
 
+addLocaleData(enLocaleData)
+addLocaleData({
+    locale: 'en-UPPER',
+    parentLocale: 'en',
+})
+
+console.log("here?")
+
 render(
-	<Provider store={store}>
-		<Router routes={routes} history={browserHistory} />
-	</Provider>,
+	<IntlProvider locale="en" messages={enUS}>
+		<Provider store={store}>
+			<Router routes={routes} history={browserHistory} />
+		</Provider>
+	</IntlProvider>,
   document.getElementById('react-app')
 )
