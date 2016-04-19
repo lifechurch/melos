@@ -1345,7 +1345,7 @@ en:
       Auth:
         title:                                  "Events Sign In"
         signIn:                                 "Sign In"
-        subHead1:                               "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href="%{url}"> Sign up now at Bible.com</a> to start creating Events."
+        subHead1:                               "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'> Sign up now at Bible.com</a> to start creating Events."
         email:                                  "Email"
         password:                               "Password"
         forgotPassword:                         "Forgot Password"
@@ -1471,7 +1471,7 @@ en:
                 sizePrompt:                   "%{requiredWidth}px width x %{requiredHeight}px height"
                 select:                       "Select Image"
               ContentTypeLink:
-                kindrid:                      "If you are looking for a smart, simple giving platform, <a href="%{url}">try Kindrid</a>."
+                kindrid:                      "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
                 label:                        "Link Label"
                 prompt:                       "Write something here..."
                 url:                          "URL"
@@ -1520,7 +1520,7 @@ en:
                 addPhysical:                  "Add a Physical Location"
                 promptPhysical:               "You can add multiple locations."
                 addVirtual:                   "Add Virtual Location"
-                churchOnline:                 "Did you know? You can launch an online ministry for free using the <a className="button-caption" href="%{url}">Church Online Platform</a>."
+                churchOnline:                 "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
               LocationAddTime:
                 minutes:                      "minutes"
                 hours:                        "hours"
@@ -1565,7 +1565,7 @@ en:
           preview:
             notes:
               prompt:                         "Add your private notes..."
-              noAuthPrompt:                   "<a href="%{url}"><span className="highlight">Sign in</span> to add your private notes…</a>"
+              noAuthPrompt:                   "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
             components:
               PreviewFeed:
                 share:                        "Share Event"
