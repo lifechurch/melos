@@ -1292,3 +1292,315 @@ tr:
         datetime: 
             just now: "biraz önce"
         verses selected: "ayetler seçildi"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Bir hata meydana geldi"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Duyuru başlığı gerekli."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Geçersiz Kutsal Kitap referansı"
+                    events: 
+                        google_place_id: 
+                            required: "Haritadan bir konum seçmelisiniz."
+                        latitude: 
+                            required: "Haritadan bir konum seçmelisiniz."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Başlangıç Zamanı geçmiş zaman olamaz."
+                        timezone: 
+                            required: "Zaman dilimi gerekli."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Kutsal Kitap referansı geçerli değil."
+                url: 
+                    events: 
+                        url: 
+                            required: "URL gerekli."
+                        title: 
+                            required: "URL Etiketi gerekli."
+            EventHeader: 
+                status: 
+                    published: "Yayımlandı"
+                    draft: "Taslak"
+                    live: "Canlı"
+                unpublish: "Yayınlanmayan"
+                saving: "Kaydediliyor..."
+                saveAsDraft: "Taslak olarak Kaydet"
+                myEvents: "Etkinliklerim"
+                eventBuilder: "ETKİNLİK KURUCU"
+                signOut: "Çıkış Yap"
+                createAccount: "Hesap Oluştur."
+            HtmlEditor: 
+                text: "Metin"
+                bold: "kalın"
+                italic: "itali"
+        containers: 
+            Auth: 
+                title: "Etkinlik Girişi"
+                signIn: "Giriş Yap"
+                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                email: "e-Posta"
+                password: "Parola"
+                forgotPassword: "Parolamı Unuttum"
+            EventEdit: 
+                event: "Etkinlik"
+            EventEditContentContainer: 
+                choose: "Başlamak için birkaç içerik seç."
+                needHelp: "Yardıma ihtiyacınız varmı?"
+                title: "Etkinlik İçeriği"
+                previous: "← Önceki: Yer & Zaman"
+                next: "Sonraki: Önizleme →"
+            EventEditDetails: 
+                title: "Etkinlik Detayları"
+            EventEditLocationContainer: 
+                title: "Etkinlik Konumu"
+                previous: "← Önceki: Detaylar"
+                next: "Sonraki: İçerik Ekleyin →"
+            EventEditPreview: 
+                title: "Etkinlik Önizleme"
+                previous: "← Önceki: İçerik"
+            EventEditShare: 
+                title: "Etkinlik Paylaşma"
+                subTitle: "Etkinliğiniz artık yayınlandı:"
+                edit: "Etkinliği Düzenle"
+                go: "Etkinliklerime Git"
+                share: "Etkinliğini Paylaş"
+                copy: "Kopyala"
+                copied: "Sosyal Ağınızda paylaşabilmeniz için Kısa link"
+                previous: "← Önceki: Önizleme"
+            EventFeedDiscover: 
+                title: "Etkinlikleri Keşfedin"
+                discover: "Keşfedin"
+            EventFeedMine: 
+                title: "Etkinliklerim"
+                previous: "← Önceki"
+                next: "Sonraki →"
+                my: "Etkinliklerim"
+                new: "Yeni Etkinlik Yarat"
+                subTitle: "BENİM TARAFIMDAN OLUŞTURULAN OLAYLAR"
+                newFirst: "İlk Etkinliğini Oluştur"
+                learn: "Nasıl harika bir Etkinlik yaratacağını öğren"
+            EventFeedSaved: 
+                title: "Kayıtlı Etkinlikler"
+            EventView: 
+                title: "YouVersion Etkinliği"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Oturumunuz zaman aşımına uğradı. Lütfen Tekrar giriş yapın."
+                    invalidEmail: "Geçersiz E-posta ya da Şifre "
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "All locations must have at least one time."
+                    locationRequired: "Konumlandırılmamış etkinlikleri paylaşamazsınız."
+                    contentRequired: "İçeriği olmayan bir Etkinliği yayınlayamazsınız."
+                    planSearchFailed: "Arama sonucu hiç bir dökümanla eşleşmedi"
+                    noMatchingPlans: "Eşleşen bir Plan yok"
+                components: 
+                    EventEditNav: 
+                        details: "Ayrıntılar"
+                        locations: "Yer & Zaman"
+                        content: "İçerik"
+                        preview: "Önizle & Yayınla"
+                        share: "Paylaş"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "İçeriği Yeniden Düzenle"
+                                doneReordering: "Yeniden Düzenleme Tamamlandı"
+                            ContentHeader: 
+                                text: "Metin"
+                                reference: "Kutsal Kitap Referansı"
+                                plan: "Okuma Planı"
+                                image: "Görüntü"
+                                link: "Harici Bağlantı"
+                                giving: "Bağış Linki"
+                                announcement: "Duyuru"
+                            ContentHelpModal: 
+                                types: "İçerik Türleri"
+                                learn: "<br>Muhteşem bir etkinilğin nasıl oluşturulacağını öğrenin"
+                                text: 
+                                    title: "Metin Modülü"
+                                    desc: "Anahatlar, can alıcı noktalar, tartışma soruları… Sizi takip eden takipçilerinizle genel içerik ile ilgili metinleri paylaşın. Metin Modülleriniz istediğiniz formatta ve istediğiniz uzunlukta olabilir. "
+                                reference: 
+                                    title: "Kutsal Kitap Referans Modülü"
+                                    desc: "YouVersion'un 900 dilde, 1200'den fazla versiyonu sayesinde Kutsa Kitap'tan bir bölümü ya da bir ayeti seçin. Etkinliğinizi görüntüleyen insanlar, kendi Kutsal Kitap okuyucularında bunu işaretleyebilir, altını çizebilir veya paylaşabilirler."
+                                plan: 
+                                    title: "Plan Modülü"
+                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                image: 
+                                    title: "Resim Modülü"
+                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                link: 
+                                    title: "Harici Link Modülü"
+                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                announcement: 
+                                    title: "Duyuru Modülü"
+                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                            ContentInsertionPoint: 
+                                title: "Sonraki modülü buraya ekle"
+                            ContentTypeAnnouncement: 
+                                title: "Başlık"
+                                prompt: "Buraya bir şeyler yazın..."
+                                caption: "Etkinliğinizde, sadece Başlık (yukarıda) görülebilir olacak. Bir kullanıcı Başlığınıza tıkladığında, Ana Metin (aşağıda) farklı bir ekranda belirecek."
+                            ContentTypeContainer: 
+                                dirty: "Yazmayı bıraktıktan birkaç saniye sonra içerik otomatik olarak kaydedilecek."
+                                failed: "Kaydedilemiyor."
+                                tryAgain: "Tekrar deneyin."
+                                lastSaved: "En son %{when} kaydedildi"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Rasim boyutları %{requiredWidth}x%{requiredHeight} olmalıdır. Sizin resminiz %{yourWidth}x%{yourHeight}"
+                                    wrongType: "Geçersiz dosya türü JPG olmalıdır."
+                                caption: "Add caption"
+                                prompt: "Bir resim yükleyin "
+                                onlyJpg: "[Sadece JPG]"
+                                sizePrompt: "%{requiredWidth}px genişlik x %{requiredHeight}px yükselik"
+                                select: "Resim Seç"
+                            ContentTypeLink: 
+                                kindrid: "Eğer zeki, basit bir bağış platformu arıyorsanız, <a href='%{url}'>Kindrid'i deneyin</a>."
+                                label: "Bağlantı Etiketi"
+                                prompt: "Buraya bir şeyler yazın..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Yerleştir"
+                                search: "Bir Okuma Planı Arayın"
+                            ContentTypeReference: 
+                                version: "Çeviri"
+                                book: "Kitap"
+                                chapterVerse: "Bölüm:Ayet"
+                            ContentTypeText: 
+                                prompt: "Buraya bir şeyler yazın..."
+                            LiveWarningModal: 
+                                title: "Etkinlik Yayındayken Silemezsiniz"
+                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                ok: "Tamam"
+                    details: 
+                        errors: 
+                            generic: "Etkinliğinizi yayınlarken bir sorun oluştu."
+                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Resim boyutu %{requiredWidth}x%{requiredHeight} olmalı. Sizin resminiz %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Geçersiz dosya türü. JPG olmalı."
+                                changeImage: "Resmi Değiştir"
+                                removeImage: "Resmi Kaldır"
+                                prompt: "Bir Resim Sürükle ve Bırak"
+                                onlyJpg: "[JPG only]"
+                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
+                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                eventName: "Etkinlik Adı"
+                                org: "Kilise Adı ya da Organizasyon"
+                                desc: "Etkinlik Tanımı"
+                                next: "Sonraki: Yer & Zaman Ekle →"
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "En azından bir zaman ekleyin."
+                                use: "BU KONUMU KULLAN"
+                                edit: "Konumu Düzenle"
+                                delete: "Konumu Sil"
+                            LocationAddButtons: 
+                                addPhysical: "Bir Fiziki Konum Ekleyin"
+                                promptPhysical: "Çoklu konum ekleyebilirsiniz."
+                                addVirtual: "Sanal Konum Ekleyin"
+                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                            LocationAddTime: 
+                                minutes: "DAKİKA"
+                                hours: "SAAT"
+                                days: "günler"
+                            LocationDeleteModal: 
+                                sure: "Emin misiniz?"
+                                selected: "Silinmesi için takip eden konumu seçtiniz:"
+                                warn: "Bu konumu önceki ve şimdiki bütün tüm etkinliklerden silecek. Gelecek etkinlikler için bu konumu tekrar kullanamayacaksınız."
+                                cancel: "İptal"
+                                delete: "Sil"
+                            LocationEdit: 
+                                prompt: "Konum adresini girin..."
+                                country: "Ülke"
+                                timezone: "Saat Dilimi"
+                                namePrompt: "İlk Baptist Doğu Kampüsü"
+                                name: "Konum Adı"
+                                nameOptional: "Opsiyonel: Çoklu konum eklenecekse yararlı"
+                                addAnother: "Başka zaman ekle"
+                                cancel: "İptal"
+                                save: "Bu Konumu Kaydedin"
+                            LocationTimeShifter: 
+                                shift: "Başlangıç tarihlerini değiştir"
+                                forward: "İleri"
+                                backward: "geriye"
+                                by: "tarafından"
+                                week: "hafta"
+                                weeks: "hafta"
+                                month: "Ay"
+                                months: "aylar"
+                                day: "Gün"
+                                days: "günler"
+                                hour: "saat"
+                                hours: "SAAT"
+                                update: "Güncelle"
+                                shiftButton: "Önce tüm tarihleri ve zamanları değiştir"
+                            UnpublishModal: 
+                                cancel: "İptal"
+                                title: "Değişiklik Yapmak için Yayından Kaldırın"
+                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
+                                unpublish: "Unpublish"
+                    preview: 
+                        notes: 
+                            prompt: "Kişisel notlar ekleyin..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                        components: 
+                            PreviewFeed: 
+                                share: "Eylemi Paylaş"
+                                locations: "Konumlar ve Saat Dilimleri"
+                                publish: "Yayınla"
+                                unpublish: "Unpublish"
+                                locations: "Konumlar:"
+                                discoverable: 
+                                    title: "Keşfedilebilir:"
+                                    desc: "Etkinliğiniz başlangıç zamanından en erken 5 gün önce Kutsal Kitap Uygulaması Etkinlik içindeki konum ve arama sonuçlarında görünür olacak."
+                                status: 
+                                    title: "Notun Durumu:"
+                                    desc: "En erken başlangıç saatinde kırmızı CANLI işareti görüntülenecek. "
+                                remove: 
+                                    title: "Kaldır:"
+                                    desc: "Etkinliğiniz en son bitiş zamanından sonra artık bulunabilir olmayacak. Etkinliğiniz bulunabilir olduğu zamanda “Etkinlik Kaydet” seçeneğini tıklayan katılımcılar etkinliğin arşivlenmiş versiyonuna hala erişim sağlayabilecekler, Bu Etkinlik direk gelen linkler aracılığıyla erişebilir olmaya devam edecek."
+                            PreviewTypeAnnouncement: 
+                                expand: "Genişlet"
+                            PreviewTypePlan: 
+                                read: "Oku"
+                                info: "Okuma Planı Hakkında"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Çoğalt"
+                        share: "Paylaş"
+                        delete: "Sil"
+                        draft: "Taslak"
+                        edit: "Düzenle"
+                        view: "Görüntüle"
+                        fail: "Etkinlik Silinemiyor"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopyala"
+                        share: "Paylaş"
+                        read: "Oku"
+                        readPlan: "Planı Oku"
+                    EventViewContentAnnouncement: 
+                        expand: "Genişlet"
+                        collapse: "Daralt"
+                    EventViewDetails: 
+                        expand: "Genişlet"
+                        collapse: "Daralt"
+                        save: "Kaydet"
+                        signIn: "Etkinliği Kaydetmek İçin Giriş Yapın"
+                        saved: "Etkinlik Kaydedildi"
