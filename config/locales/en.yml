@@ -1437,7 +1437,7 @@ en:
                   desc:                       "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
                 reference:
                   title:                      "Bible Reference Module"
-                  desc:                       "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                  desc:                       "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                 plan:
                   title:                      "Plan Module"
                   desc:                       "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
@@ -1504,7 +1504,7 @@ en:
                 prompt:                       "Drag and Drop an Image"
                 onlyJpg:                      "[JPG only]"
                 sizePrompt:                   "%{requiredWidth}px width x %{requiredHeight}px height"
-                sizePrompt2:                  "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                sizePrompt2:                  "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
                 eventName:                    "Event Name"
                 org:                          "Church Name or Organization"
                 desc:                         "Event Description"
