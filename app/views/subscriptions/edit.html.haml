@@ -68,7 +68,7 @@
 
     .row.pad-row.plan-settings-stop-box
       .columns.small-12
-        = button_to(t('plans.stop reading'),subscription_path(user_id: current_user.to_param,id: subscription), method: :delete, id: "subscription-destroy", class: 'solid-button blue', "data-confirm-text" => t("confirm danger"))
+        = button_to(t('plans.stop reading'),subscription_path(user_id: current_user.to_param,id: subscription, stop: "true"), method: :put, id: "subscription-destroy", class: 'solid-button blue', "data-confirm-text" => t("confirm danger"))
 
   -#
     .columns.medium-4
