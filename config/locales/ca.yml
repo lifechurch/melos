@@ -1292,3 +1292,315 @@ ca:
         datetime: 
             just now: "ara mateix"
         verses selected: "versets seleccionats"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "An error occurred"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Announcement title is required."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Bible reference not valid."
+                    events: 
+                        google_place_id: 
+                            required: "You must choose a location from the map."
+                        latitude: 
+                            required: "You must choose a location from the map."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Start Time cannot be in the past."
+                        timezone: 
+                            required: "Timezone is required."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Bible reference not valid."
+                url: 
+                    events: 
+                        url: 
+                            required: "URL is required."
+                        title: 
+                            required: "URL Label is required."
+            EventHeader: 
+                status: 
+                    published: "Published"
+                    draft: "Esborrany"
+                    live: "En directe"
+                unpublish: "Unpublish"
+                saving: "Saving..."
+                saveAsDraft: "Desa com a esborrany"
+                myEvents: "Els meus esdeveniments"
+                eventBuilder: "CONSTRUCTOR D'ESDEVENIMENTS"
+                signOut: "Tanca la sessió"
+                createAccount: "Create Account"
+            HtmlEditor: 
+                text: "Text"
+                bold: "Bold"
+                italic: "Italic"
+        containers: 
+            Auth: 
+                title: "Events Sign In"
+                signIn: "Inicia la sessió"
+                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                email: "Correu electrònic"
+                password: "Contrasenya"
+                forgotPassword: "He oblidat la contrasenya"
+            EventEdit: 
+                event: "Event"
+            EventEditContentContainer: 
+                choose: "Escull algun contingut per a començar."
+                needHelp: "Necessites ajuda?"
+                title: "Contingut de l'esdeveniment"
+                previous: "← Anterior: Localització i horaris"
+                next: "Següent: Vista prèvia →"
+            EventEditDetails: 
+                title: "Detalls de l'esdeveniment"
+            EventEditLocationContainer: 
+                title: "Localització de l'esdeveniment"
+                previous: "← Anterior: Detalls"
+                next: "Següent: Afegeix contingut →"
+            EventEditPreview: 
+                title: "Vista prèvia de l'esdeveniment"
+                previous: "← Anterior: Contingut"
+            EventEditShare: 
+                title: "Event Share"
+                subTitle: "Your Event is Now Published:"
+                edit: "Edit Event"
+                go: "Go to My Events"
+                share: "Share your event:"
+                copy: "Copia"
+                copied: "The shortlink was copied to your clipboard"
+                previous: "← Previous: Preview"
+            EventFeedDiscover: 
+                title: "Discover Events"
+                discover: "Descobreix"
+            EventFeedMine: 
+                title: "My Events"
+                previous: "← Previous"
+                next: "Next →"
+                my: "My Events"
+                new: "Create New Event"
+                subTitle: "EVENTS CREATED BY ME"
+                newFirst: "Crea el teu primer esdeveniment"
+                learn: "Aprèn com crear un gran esdeveniment"
+            EventFeedSaved: 
+                title: "Esdeveniments desats"
+            EventView: 
+                title: "YouVersion Event"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Your session expired. Please login again."
+                    invalidEmail: "Invalid email or password."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "All locations must have at least one time."
+                    locationRequired: "You cannot publish an Event with no locations."
+                    contentRequired: "No pots publicar un esdeveniment sense contingut."
+                    planSearchFailed: "Search did not match any documents"
+                    noMatchingPlans: "No matching Plans"
+                components: 
+                    EventEditNav: 
+                        details: "Detalls"
+                        locations: "Localització i horaris"
+                        content: "Contingut"
+                        preview: "Vista prèvia i publicació"
+                        share: "Comparteix"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Reorder Content"
+                                doneReordering: "Done Reordering"
+                            ContentHeader: 
+                                text: "Text"
+                                reference: "Referència bíblica"
+                                plan: "Pla"
+                                image: "Imatge"
+                                link: "Enllaç extern"
+                                giving: "Enllaç per donatius"
+                                announcement: "Anunci"
+                            ContentHelpModal: 
+                                types: "Tipus de contingut"
+                                learn: "Learn how to make <br>a great Event"
+                                text: 
+                                    title: "Mòdul de text"
+                                    desc: "Subratllats, punts clau, qüestions de debat… Comparteix qualsevol contingut general basat en el text que ajudi els teus assistents a seguir el teu missatge en el moment en què passa. Els teus mòduls de text poden tenir qualsevol extensió i poden incloure text en format enriquit."
+                                reference: 
+                                    title: "Mòdul de referència de la Bíblia"
+                                    desc: "Selecciona qualsevol verset o passatge bíblic, amb un vincle directe a qualsevol de les més de 1.200 versions, en més de 900 idiomes, que hi ha a YouVersion. La gent que vegi el teu esdeveniment podrà clicar en la teva referència per a veure-la en el seu lector de l'Aplicació de la Bíblia; allí hi podran posar un Marcador, subratllar-la i més encara."
+                                plan: 
+                                    title: "Mòdul de pla"
+                                    desc: "Enllaços als plans de la Bíblia i devocionals relacionats amb els teus punts d'ensenyament, i ajuda al teu públic a seguir compromesos amb la Paraula de Déu al llarg de la setmana."
+                                image: 
+                                    title: "Mòdul d'imatge"
+                                    desc: "Dóna vida al teu esdeveniment amb qualsevol mena de suport gràfic: obres d'art, fotografies, imatges per als versets, etc. Els assistents podran compartir fàcilment les teves imatges de l'esdeveniment en les seves xarxes socials i fer que el teu missatge esdevingui viral."
+                                link: 
+                                    title: "Mòdul d'enllaç extern"
+                                    desc: "Crea un botó en el teu esdeveniment que vincula a qualsevol lloc web extern. Fes que la teva audiència estigui a un clic de fer donacions en línia, de donar-se d'alta com a voluntari, o de pàgines corresponents a esglésies, "
+                                announcement: 
+                                    title: "Mòdul d'avisos"
+                                    desc: "Notícies d'església, calendari d'esdeveniments, programes, classes, oportunitats de voluntariat i missionals… Distribueix fàcilment i a temps informació important sense distreure't del missatge principal del teu esdeveniment. Els teus mòduls d'avisos poden: Aquest tipus de contingut et permet enviar contingut en text enriquit que apareix en la mateixa pàgina web de l'esdeveniment. És perfecte perquè el contingut és important, però no vols distreure't del missatge principal del teu esdeveniment."
+                            ContentInsertionPoint: 
+                                title: "Insert next module here"
+                            ContentTypeAnnouncement: 
+                                title: "Títol"
+                                prompt: "Write something here..."
+                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                            ContentTypeContainer: 
+                                dirty: "Content will automatically save a few seconds after you stop typing."
+                                failed: "Unable to save."
+                                tryAgain: "Try again."
+                                lastSaved: "Last saved %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Invalid filetype. Must be JPG."
+                                caption: "Add caption"
+                                prompt: "Drag and Drop an Image"
+                                onlyJpg: "[JPG only]"
+                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
+                                select: "Selecciona imatge"
+                            ContentTypeLink: 
+                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
+                                label: "Link Label"
+                                prompt: "Write something here..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Replace"
+                                search: "Search for a Reading Plan"
+                            ContentTypeReference: 
+                                version: "Versió"
+                                book: "Llibre"
+                                chapterVerse: "Chapter:Verse"
+                            ContentTypeText: 
+                                prompt: "Write something here..."
+                            LiveWarningModal: 
+                                title: "Cannot Delete While Event is Live"
+                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                ok: "D'acord"
+                    details: 
+                        errors: 
+                            generic: "There was a problem while publishing your Event."
+                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Tipus de fitxer no vàlid. Ha de ser un JPG."
+                                changeImage: "Canvia la imatge"
+                                removeImage: "Esborra la imatge"
+                                prompt: "Drag and Drop an Image"
+                                onlyJpg: "[JPG only]"
+                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
+                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                eventName: "Nom de l'esdeveniment"
+                                org: "Nom de l'església o de l'organització"
+                                desc: "Descripció de l'esdeveniment"
+                                next: "Següent: Afegeix localització i horaris →"
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Add at least one time."
+                                use: "USE THIS LOCATION"
+                                edit: "Edit Location"
+                                delete: "Delete Location"
+                            LocationAddButtons: 
+                                addPhysical: "Afegeix una localització física"
+                                promptPhysical: "Pots afegir-hi més d'una localització."
+                                addVirtual: "Afegeix una localització virtual"
+                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                            LocationAddTime: 
+                                minutes: "MINUTS"
+                                hours: "HORES"
+                                days: "DIES"
+                            LocationDeleteModal: 
+                                sure: "N'estàs segur?"
+                                selected: "You have selected the following location to be deleted:"
+                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                cancel: "Cancel·la"
+                                delete: "Elimina"
+                            LocationEdit: 
+                                prompt: "Enter the Location address..."
+                                country: "País"
+                                timezone: "Zona horària"
+                                namePrompt: "Primer Campus Oriental Baptista"
+                                name: "Nom de la localització"
+                                nameOptional: "Opcional: És útil que hi afegeixis més d'una localització"
+                                addAnother: "Afegeix un altre horari"
+                                cancel: "Cancel·la"
+                                save: "Guarda aquesta localització"
+                            LocationTimeShifter: 
+                                shift: "Shift start dates"
+                                forward: "Endavant"
+                                backward: "backward"
+                                by: "by"
+                                week: "week"
+                                weeks: "weeks"
+                                month: "Mes"
+                                months: "months"
+                                day: "Dia"
+                                days: "DIES"
+                                hour: "hour"
+                                hours: "HORES"
+                                update: "Actualitza"
+                                shiftButton: "Desplaça totes les dates i els horaris al mateix temps"
+                            UnpublishModal: 
+                                cancel: "Cancel·la"
+                                title: "Unpublish to Make Changes"
+                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
+                                unpublish: "Unpublish"
+                    preview: 
+                        notes: 
+                            prompt: "Afegeix les teves notes privades..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                        components: 
+                            PreviewFeed: 
+                                share: "Comparteix Esdeveniment"
+                                locations: "Llocs i horaris"
+                                publish: "Publica"
+                                unpublish: "Unpublish"
+                                locations: "Localitzacions:"
+                                discoverable: 
+                                    title: "A descobrir:"
+                                    desc: "El teu esdeveniment serà visible al Localitzador d'esdeveniments i cercador de resultats de l'Aplicació de la Bíblia 5 dies abans del teu primer horari d'inici."
+                                status: 
+                                    title: "Estat:"
+                                    desc: "L'etiqueta vermella EN DIRECTE apareixerà quan comenci el teu primer horari d'inici."
+                                remove: 
+                                    title: "Esborra:"
+                                    desc: "El teu esdeveniment ja no es podrà trobar un cop s'hagi finalitzat. Els assistents que hagin seleccionat «Guardar esdeveniment» quan el teu esdeveniment es podia trobar encara podran accedir a una seva versió guardada. Aquest esdeveniment també seguirà sent accessible a través de enllaços directes entrants."
+                            PreviewTypeAnnouncement: 
+                                expand: "Expand"
+                            PreviewTypePlan: 
+                                read: "Llegeix"
+                                info: "Informació del pla"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Duplicate"
+                        share: "Comparteix"
+                        delete: "Elimina"
+                        draft: "Esborrany"
+                        edit: "Edita"
+                        view: "Veure"
+                        fail: "Unable to delete Event"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Copia"
+                        share: "Comparteix"
+                        read: "Llegeix"
+                        readPlan: "Read Plan"
+                    EventViewContentAnnouncement: 
+                        expand: "Expand"
+                        collapse: "Collapse"
+                    EventViewDetails: 
+                        expand: "Expand"
+                        collapse: "Collapse"
+                        save: "Guarda l'esdeveniment"
+                        signIn: "Sign In to Save Event"
+                        saved: "Event Saved"
