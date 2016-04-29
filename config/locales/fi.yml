@@ -249,7 +249,7 @@ fi:
     about: "Tietoa"
     blog: "Blogi"
     versions link: "Käännökset"
-    languages link: "KIELET"
+    languages link: "Kielet"
     jobs: "Töihin"
     volunteer: "Vapaaehtoiseksi"
     privacy policy: "Yksityisyyskäytännöt"
@@ -1292,3 +1292,315 @@ fi:
         datetime: 
             just now: "juuri nyt"
         verses selected: "jaetta valittu"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Tapahtui virhe"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Ilmoituksen otsikko on pakollinen."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Virheellinen raamatunviittaus."
+                    events: 
+                        google_place_id: 
+                            required: "Sinun täytyy valita sijainti kartalta."
+                        latitude: 
+                            required: "Sinun täytyy valita sijainti kartalta."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Aloitusaika ei voi olla menneisyydessä."
+                        timezone: 
+                            required: "Aikavyöhyke vaaditaan."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Virheellinen raamatunviittaus."
+                url: 
+                    events: 
+                        url: 
+                            required: "URL vaaditaan."
+                        title: 
+                            required: "URLin otsake on pakollinen."
+            EventHeader: 
+                status: 
+                    published: "Julkaistu"
+                    draft: "Luonnos"
+                    live: "Live"
+                unpublish: "Poista julkaisu"
+                saving: "Tallennetaan..."
+                saveAsDraft: "Tallenna luonnoksena"
+                myEvents: "Omat tapahtumani"
+                eventBuilder: "TAPAHTUMAN LUONTI"
+                signOut: "Kirjaudu ulos"
+                createAccount: "Luo tili"
+            HtmlEditor: 
+                text: "Teksti"
+                bold: "Lihavointi"
+                italic: "Kursiivi"
+        containers: 
+            Auth: 
+                title: "Tapahtumiin sisäänkirjautuminen"
+                signIn: "Kirjaudu sisään"
+                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                email: "Sähköposti"
+                password: "Salasana"
+                forgotPassword: "Unohdin salasanani"
+            EventEdit: 
+                event: "Tapahtuma"
+            EventEditContentContainer: 
+                choose: "Valitse sisältöä päästäksesi alkuun."
+                needHelp: "Tarvitsetko apua?"
+                title: "Tapahtuman sisältö"
+                previous: "← Edellinen: Aika & paikka"
+                next: "Seuraava: Esikatselu →"
+            EventEditDetails: 
+                title: "Tapahtuman yksityiskohdat"
+            EventEditLocationContainer: 
+                title: "Tapahtuman paikka"
+                previous: "← Edellinen: Yksityiskohdat"
+                next: "Seuraava: Lisää sisältö →"
+            EventEditPreview: 
+                title: "Tapahtuman esikatselu"
+                previous: "← Edellinen: Sisältö"
+            EventEditShare: 
+                title: "Tapahtuman jako"
+                subTitle: "Tapahtumasi on nyt julkaistu:"
+                edit: "Muokkaa tapahtumaa"
+                go: "Siirry omiin tapahtumiin"
+                share: "Jaa tapahtumasi:"
+                copy: "Kopio"
+                copied: "Pikalinkki kopioitiin leikepöydälle"
+                previous: "← Edellinen: Esikatselu"
+            EventFeedDiscover: 
+                title: "Löydä tapahtumia"
+                discover: "Löydä"
+            EventFeedMine: 
+                title: "Omat tapahtumani"
+                previous: "← Edellinen"
+                next: "Seuraava →"
+                my: "Omat tapahtumani"
+                new: "Luo uusi tapahtuma"
+                subTitle: "LUOMANI TAPAHTUMAT"
+                newFirst: "Luo ensimmäinen tapahtumasi"
+                learn: "Opi, kuinka luot mahtavan tapahtuman"
+            EventFeedSaved: 
+                title: "Tallennetut tapahtumat"
+            EventView: 
+                title: "YouVersion-tapahtuma"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Istuntosi on vanhentunut. Kirjaudu uudelleen sisään."
+                    invalidEmail: "Virheellinen sähköpostiosoite tai salasana."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Kaikilla sijainneilla täytyy olla vähintään yksi ajankohta."
+                    locationRequired: "Et voi julkaista tapahtumaa ilman sijainteja."
+                    contentRequired: "Et voi julkaista tapahtumaa ilman sisältöä."
+                    planSearchFailed: "Haku ei vastannut yhtäkään dokumenttia"
+                    noMatchingPlans: "Ei hakua vastaavia suunnitelmia"
+                components: 
+                    EventEditNav: 
+                        details: "Kuvaus"
+                        locations: "Paikka & aika"
+                        content: "Sisältö"
+                        preview: "Esikatselu & julkaisu"
+                        share: "Jaa"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Sisällön järjestely"
+                                doneReordering: "Järjestely valmis"
+                            ContentHeader: 
+                                text: "Teksti"
+                                reference: "Raamatunviittaukset"
+                                plan: "Suunnitelma"
+                                image: "Kuva"
+                                link: "Ulkoinen linkki"
+                                giving: "Lahjoituslinkki"
+                                announcement: "Ilmoitus"
+                            ContentHelpModal: 
+                                types: "Sisältötyypit"
+                                learn: "Opi, kuinka luot <br>mahtavan tapahtuman"
+                                text: 
+                                    title: "Tekstikappale"
+                                    desc: "Rakenteet, avainkohdat, keskustelun avaukset... Jaa mitä tahansa tekstipohjaista yleistä sisältöä, joka auttaa osallistujia seuraamaan mukana. Tekstikappaleesi voivat olla kuinka pitkiä tahansa ja ne voivat sisältää myös rikastettua tekstiä."
+                                reference: 
+                                    title: "Raamatunviittaus"
+                                    desc: "Valitse mikä tahansa jae tai kappale Raamatusta, linkitettynä suoraan mihin tahansa YouVersionin yli 1200 käännöksestä, yli 900 kielellä. Ihmiset, jotka katselevat tapahtumaasi, voivat napauttaa viittaustasi nähdäkseen sen Raamattusovelluksen lukutilassa, jossa he voivat luoda siitä kirjanmerkin, korostuksen ja paljon muuta."
+                                plan: 
+                                    title: "Suunnitelma"
+                                    desc: "Linkitä opetuksesi siihen liittyviin lukusuunnitelmiin ja hartauksiin, se auttaa yleisöäsi jatkamaan sitoutumista Jumalan Sanaan koko viikon ajan."
+                                image: 
+                                    title: "Kuva"
+                                    desc: "Herätä tapahtumasi eloon sitä tukevien kuvien avulla: taidetta, valokuvia, huoneentauluja jne. Osanottajat voivat helposti jakaa tapahtumaasi liittyviä kuvia sosiaalisessa mediassa, ja näin laittaa sanomasi leviämään."
+                                link: 
+                                    title: "Ulkoinen linkki"
+                                    desc: "Luo painikkeen tapahtumaasi, joka toimii linkkinä mihin tahansa ulkoiseen www-sivuun. Tuo yleisösi vain yhden napautuksen päähän online-lahjoittamisesta, ryhtymisestä vapaaehtoiseksi tai seurakuntien kotisivuista."
+                                announcement: 
+                                    title: "Ilmoitukset"
+                                    desc: "Seurakunnan uutiset, tapahtumat, ohjelmat, luennot, vapaaehtoistoiminta ja lähetysmahdollisuudet... Jaa helposti ajankohtaisia, tärkeitä tietoja ilman, että tapahtumasi varsinainen sanoma häiriintyy. Tämä sisältötyyppi mahdollistaa sinun käyttää rikastettua tekstiä, joka näkyy omalla sivullaan tapahtumassasi. Se sopii täydellisesti sisällölle, joka on tärkeää, mutta jonka et halua vievän huomiota tapahtumasi pääviestiltä."
+                            ContentInsertionPoint: 
+                                title: "Lisää seuraava osio tähän"
+                            ContentTypeAnnouncement: 
+                                title: "Otsikko"
+                                prompt: "Kirjoita tähän jotain..."
+                                caption: "Vain tapahtumasi otsikko (yllä) on näkyvillä. Kun käyttäjä napauttaa otsikkoa, tapahtuman runko (alla) näkyy omassa ikkunassaan."
+                            ContentTypeContainer: 
+                                dirty: "Sisältö tallennetaan automaattisesti muutaman sekunnin kuluttua sen jälkeen kun olet lopettanut kirjoittamisen."
+                                failed: "Tallennus ei onnistu."
+                                tryAgain: "Yritä uudelleen."
+                                lastSaved: "Viimeisin tallennus %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Kuvakoon tulee olla %{requiredWidth}x%{requiredHeight}. Kuvasi koko on %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Virheellinen tiedostomuoto. Täytyy olla JPG."
+                                caption: "Lisää otsake"
+                                prompt: "Vedä ja pudota kuva"
+                                onlyJpg: "[vain JPG]"
+                                sizePrompt: "leveys %{requiredWidth}px korkeus %{requiredHeight}px"
+                                select: "Valitse kuva"
+                            ContentTypeLink: 
+                                kindrid: "Jos olet etsimässä fiksua, yksinkertaista lahjoitusalustaa, <a href='%{url}'>kokeile Kindrid-alustaa</a>."
+                                label: "Linkin otsake"
+                                prompt: "Kirjoita tähän jotain..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Korvaa"
+                                search: "Hae lukusuunnitelmaa"
+                            ContentTypeReference: 
+                                version: "Käännös"
+                                book: "Kirja"
+                                chapterVerse: "Kappale:Jae"
+                            ContentTypeText: 
+                                prompt: "Kirjoita tähän jotain..."
+                            LiveWarningModal: 
+                                title: "Poisto ei ole mahdollista, kun tapahtuma on käynnissä"
+                                desc: "Kun tapahtuma on käynnissä, et voi poistaa tekstiä, raamatunviittauksia tai kuvia siitä, koska käyttäjät ovat saattaneet jo lisätä yksityisiä muistiinpanoja niihin. Voit kuitenkin muokata näitä osioita."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Tapahtumasi julkaisussa oli ongelmia."
+                            invalidTimes: "Yksittäinen tapahtuma ei voi olla pidempi kuin 12 tuntia ja tapahtuman aikaisimman aloitusajan ja myöhäisimmän päätösajan ero ei voi olla enempää kuin 8 päivää. Muokkaa tapahtumasi ajankohtia ja yritä uudelleen."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Kuvakoon tulee olla %{requiredWidth}x%{requiredHeight}. Kuvasi koko on %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Virheellinen tiedostomuoto. Täytyy olla JPG."
+                                changeImage: "Vaihda kuva"
+                                removeImage: "Poista kuva"
+                                prompt: "Vedä ja pudota kuva"
+                                onlyJpg: "[vain JPG]"
+                                sizePrompt: "leveys %{requiredWidth}px korkeus %{requiredHeight}px"
+                                sizePrompt2: "Kuvasi mittojen tulee olla %{requiredWidth} x {requiredHeight} pikseliä."
+                                eventName: "Tapahtuman nimi"
+                                org: "Seurakunta tai organisaatio"
+                                desc: "Tapahtuman kuvaus"
+                                next: "Seuraava: Lisää paikka & aika →"
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Lisää vähintään yksi ajankohta."
+                                use: "KÄYTÄ TÄTÄ SIJAINTIA"
+                                edit: "Muokkaa sijaintia"
+                                delete: "Poista sijainti"
+                            LocationAddButtons: 
+                                addPhysical: "Lisää fyysinen sijainti"
+                                promptPhysical: "Voit lisätä useita sijainteja."
+                                addVirtual: "Lisää virtuaalinen sijainti"
+                                churchOnline: "Tiesitkö? Voit käynnistää online-palveluksen käyttämällä <a className='button-caption' href='%{url}'>Seurakunnan Online-alustaa</a>."
+                            LocationAddTime: 
+                                minutes: "MINUUTTIA"
+                                hours: "TUNTIA"
+                                days: "PÄIVÄÄ"
+                            LocationDeleteModal: 
+                                sure: "Oletko varma?"
+                                selected: "Olet valinnut seuraavan sijainnin poistettavaksi:"
+                                warn: "Tämä poistaa sijainnin kaikista menneistä ja tämän hetkisistä tapahtumista. Et voi käyttää tätä sijaintia uudestaan tulevissa tapahtumissa."
+                                cancel: "Peruuta"
+                                delete: "Poista"
+                            LocationEdit: 
+                                prompt: "Syötä sijainnin osoite..."
+                                country: "Maa"
+                                timezone: "Aikavyöhyke"
+                                namePrompt: "First Baptist East Campus"
+                                name: "Paikan nimi"
+                                nameOptional: "Valinnainen: Hyödyllinen, jos lisätään useita paikkoja"
+                                addAnother: "Lisää toinen ajankohta"
+                                cancel: "Peruuta"
+                                save: "Tallenna tämä paikka"
+                            LocationTimeShifter: 
+                                shift: "Siirrä alkamisajankohtia"
+                                forward: "Lähetä edelleen"
+                                backward: "taaksepäin"
+                                by: "by"
+                                week: "viikko"
+                                weeks: "viikkoa"
+                                month: "Kuukausi"
+                                months: "kuukautta"
+                                day: "päivä"
+                                days: "PÄIVÄÄ"
+                                hour: "tunti"
+                                hours: "TUNTIA"
+                                update: "Päivitä"
+                                shiftButton: "Siirrä kaikki ajankohdat kerralla"
+                            UnpublishModal: 
+                                cancel: "Peruuta"
+                                title: "Poista julkaisu tehdäksesi muutoksia"
+                                desc: "Muokataksesi sijainteja ja ajankohtia, poista tapahtumasi julkaisu väliaikaisesti. Tänä aikana tapahtumasi ei näy hakutuloksissa. Älä unohda julkaista tapahtumaasi uudelleen."
+                                unpublish: "Poista julkaisu"
+                    preview: 
+                        notes: 
+                            prompt: "Lisää yksityiset muistiinpanosi…"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Kirjaudu sisään</span> lisätäksesi yksityisiä muistiinpanoja...</a>"
+                        components: 
+                            PreviewFeed: 
+                                share: "Jaa tapahtuma"
+                                locations: "Sijainnit ja ajankohdat"
+                                publish: "Julkaise"
+                                unpublish: "Poista julkaisu"
+                                locations: "Paikat:"
+                                discoverable: 
+                                    title: "Löydettävissä:"
+                                    desc: "Tapahtumasi on näkyvissä Raamattusovelluksen Tapahtuma-osion sijainneissa ja hakutuloksissa 5 päivää ennen ensimmäistä alkamisajankohtaa."
+                                status: 
+                                    title: "Tila:"
+                                    desc: "Punainen LIVE-merkki on näkyvillä, kun ensimmäinen tapahtuma alkaa."
+                                remove: 
+                                    title: "Poista:"
+                                    desc: "Tapahtumasi ei ole enää löydettävissä viimeisen tapahtuman päättymisen jälkeen. Osanottajat, jotka napauttivat \"Tallenna tapahtuma\", kun tapahtumasi oli vielä löydettävissä, pääsevät edelleen tapahtuman arkistoituun versioon. Tähän tapahtumaan on myös edelleen pääsy suorien linkkien kautta."
+                            PreviewTypeAnnouncement: 
+                                expand: "Laajenna"
+                            PreviewTypePlan: 
+                                read: "Lue"
+                                info: "Suunnitelman tiedot"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Monista"
+                        share: "Jaa"
+                        delete: "Poista"
+                        draft: "Luonnos"
+                        edit: "Muokkaa"
+                        view: "Näytä"
+                        fail: "Tapahtuman poisto ei onnistu"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopio"
+                        share: "Jaa"
+                        read: "Lue"
+                        readPlan: "Lue suunnitelma"
+                    EventViewContentAnnouncement: 
+                        expand: "Laajenna"
+                        collapse: "Supista"
+                    EventViewDetails: 
+                        expand: "Laajenna"
+                        collapse: "Supista"
+                        save: "Tallenna tapahtuma"
+                        signIn: "Kirjaudu sisään tallentaaksesi tapahtuma"
+                        saved: "Tapahtuma tallennettu"

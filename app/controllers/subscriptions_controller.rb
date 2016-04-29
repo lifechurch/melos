@@ -63,6 +63,10 @@ class SubscriptionsController < ApplicationController
       action = 'restart'
     end
 
+    if params[:stop] == "true"
+      return destroy
+    end
+
     if (params[:make_public] == "true" || params[:make_private] == "true")
       params[:make_public] == "true" ? (@subscription.make_public and action = 'make public') : (@subscription.make_private and action = 'make private')
     end

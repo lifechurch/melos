@@ -29,6 +29,10 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 		controller: ["$scope", "Like", "Comment", "$state", "$mdMenu", "$element", "$timeout", "$stateParams", "$state", "$window", "Moments", function($scope, Like, Comment, $state, $mdMenu, $element, $timeout, $stateParams, $state, $window, Moments) {
 			$scope.newComment = {};
 
+            if (['plan_subscription','plan_completion'].indexOf($scope.data.kind) !== -1) {
+                $scope.data.object.moment_title += (', <b>' + $scope.data.object.plan_title + '</b>');
+            }
+
             $scope.getVerseUrl = function(usfm, version) {
                 var locale = $stateParams.locale;
                 if (locale) {
@@ -106,7 +110,7 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 				if ($scope.data) { 
 					switch ($scope.data.kind_id) {
 						case 'plan_subscription.v1':
-							return 'plan-start-mobile';
+                            return 'plan-start-mobile';
 						case 'plan_completion.v1':
 							return 'plan-complete-mobile';
 						case 'plan_segment_completion.v1':
