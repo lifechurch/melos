@@ -1375,10 +1375,6 @@ en:
         copy:                                   "Copy"
         copied:                                 "The shortlink was copied to your clipboard"
         previous:                               "&larr; Previous: Preview"
-
-
-
-
       EventFeedDiscover:
         title:                                "Discover Events"
         discover:                             "Discover"
@@ -1391,11 +1387,12 @@ en:
         subTitle:                             "EVENTS CREATED BY ME"
         newFirst:                             "Create Your First Event"
         learn:                                "Learn how to make a great Event"
-
       EventFeedSaved:
         title:                                "Saved Events"
       EventView:
         title:                                "YouVersion Event"
+      SelectLanguage:
+        choose:                               "Choose Your Language"
     features:
       Auth:
         errors:
@@ -1479,6 +1476,7 @@ en:
                 replace:                      "Replace"
                 search:                       "Search for a Reading Plan"
               ContentTypeReference:
+                language:                     "Language"
                 version:                      "Version"
                 book:                         "Book"
                 chapterVerse:                 "Chapter:Verse"
@@ -1488,8 +1486,6 @@ en:
                 title:                        "Cannot Delete While Event is Live"
                 desc:                         "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
                 ok:                           "OK"
-
-
           details:
             errors:
               generic:                        "There was a problem while publishing your Event."
@@ -1561,7 +1557,6 @@ en:
                 title:                        "Unpublish to Make Changes"
                 desc:                         "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
                 unpublish:                    "Unpublish"
-
           preview:
             notes:
               prompt:                         "Add your private notes..."
