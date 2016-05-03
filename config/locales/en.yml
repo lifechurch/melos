@@ -1564,7 +1564,7 @@ en:
             components:
               PreviewFeed:
                 share:                        "Share Event"
-                locations:                    "Locations and Times"
+                locationsAndTimes:            "Locations and Times"
                 publish:                      "Publish"
                 unpublish:                    "Unpublish"
                 locations:                    "Locations:"
