@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { ActionCreators } from '../../../../../actions/modals'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 class LocationAddButtons extends Component {
 
@@ -32,10 +33,10 @@ class LocationAddButtons extends Component {
 		const { event } = this.props
 		return (
 			<div className='location-add-buttons'>
-				<a disabled={!event.rules.locations.canAddPhysical} className='hollow-button green' onClick={::this.handleAddPhysicalLocationClick}>Add a Physical Location</a>
-				<p className='button-caption'>You can add multiple locations.</p>
-				<a disabled={!event.rules.locations.canAddVirtual} className='hollow-button green' onClick={::this.handleAddVirtualLocationClick}>Add Virtual Location</a>
-				<p className='button-caption'>Did you know? You can launch an online ministry for free using the <a className="button-caption" href="http://churchonlineplatform.com">Church Online Platform</a>.</p>
+				<a disabled={!event.rules.locations.canAddPhysical} className='hollow-button green' onClick={::this.handleAddPhysicalLocationClick}><FormattedMessage id="features.EventEdit.features.location.components.LocationAddButtons.addPhysical" /></a>
+				<p className='button-caption'><FormattedMessage id="features.EventEdit.features.location.components.LocationAddButtons.promptPhysical" /></p>
+				<a disabled={!event.rules.locations.canAddVirtual} className='hollow-button green' onClick={::this.handleAddVirtualLocationClick}><FormattedMessage id="features.EventEdit.features.location.components.LocationAddButtons.addVirtual" /></a>
+				<p className='button-caption'><FormattedHTMLMessage id="features.EventEdit.features.location.components.LocationAddButtons.churchOnline" values={{url:"http://churchonlineplatform.com"}} /></p>
 			</div>
 		)
 	}

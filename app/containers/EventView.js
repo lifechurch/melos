@@ -7,6 +7,7 @@ import Row from '../components/Row'
 import ActionCreators from '../features/EventView/actions/creators'
 import EventViewDetails from '../features/EventView/components/EventViewDetails'
 import EventViewContent from '../features/EventView/components/EventViewContent'
+import { injectIntl } from 'react-intl'
 
 class EventView extends Component {
 	componentWillMount() {
@@ -17,7 +18,7 @@ class EventView extends Component {
 	}
 
 	render() {
-		const { dispatch, auth, reference, event } = this.props
+		const { dispatch, auth, reference, event, intl } = this.props
 		const { id, content } = event.item
 
 		const contentList = content.map((c,i) => {
@@ -27,7 +28,7 @@ class EventView extends Component {
 		return (
 			<Row>
 				<div id="ev-view" className="medium-10 large-7 columns small-centered">
-					<Helmet title={this.props.event.item.title + " :: YouVersion Event"} />
+					<Helmet title={this.props.event.item.title + " :: " + intl.formatMessage({id:"containers.EventView.title"})} />
 					<EventViewDetails {...this.props} />
 					<div className="feed">
 						{contentList}
@@ -77,4 +78,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(EventView)
+export default connect(mapStateToProps, null)(injectIntl(EventView))

@@ -16,6 +16,11 @@ const AUTO_SAVE_TIMEOUT = 3000
 
 class EventViewContent extends Component {
 
+	constructor(props) {
+		super(props)
+		//moment.locale('x-psuedo')
+	}
+
 	handleEditNote(e) {
 		const { dispatch, index } = this.props
 		dispatch( ActionCreators.editNote(index, e.target.value) )
@@ -35,7 +40,7 @@ class EventViewContent extends Component {
 	}
 
 	render() {
-		const { dispatch, auth, reference, content, index } = this.props
+		const { dispatch, auth, reference, content, index, intl } = this.props
 		var contentItem, meta_links, notes
 
 		switch (content.type) {
@@ -49,8 +54,8 @@ class EventViewContent extends Component {
 					}
 					contentItem = <EventViewContentText contentData={content.data} meta_links={meta_links} />
 					meta_links = [
-						{label: 'Copy', payload: output},
-						{label: 'Share', payload: {url: '', title: output}}
+						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.copy"}), payload: output},
+						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.share"}), payload: {url: '', title: output}}
 					]
 					notes = true
 					break
@@ -82,9 +87,9 @@ class EventViewContent extends Component {
 
 					contentItem = <EventViewContentReference contentData={content.data} contentIndex={index} dispatch={dispatch} reference={reference} />
 					meta_links = [
-						{label: 'Read', payload: url},
+						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.read"}), payload: url},
 						// {label: 'Copy', payload: human + " " + url},
-						{label: 'Share', payload: {url: url, title: human}}
+						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.share"}), payload: {url: url, title: human}}
 					]
 					notes = true
 					break
@@ -92,8 +97,8 @@ class EventViewContent extends Component {
 				case 'plan':
 					contentItem = <EventViewContentPlan contentData={content.data} />
 					meta_links = [
-						{label: 'Read Plan', payload: content.data.short_url},
-						{label: 'Share', payload: {url: content.data.short_url, title: content.data.title}}
+						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.readPlan"}), payload: content.data.short_url},
+						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.share"}), payload: {url: content.data.short_url, title: content.data.title}}
 					]
 					break
 
@@ -105,13 +110,13 @@ class EventViewContent extends Component {
 			if (auth.isLoggedIn) {
 				notes = (
 					<div className="notes">
-						<Textarea name='notes' onChange={::this.handleEditNote} placeholder="Add your private notes…" value={content.comment} />
+						<Textarea name='notes' onChange={::this.handleEditNote} placeholder={intl.formatMessage({id:"features.EventEdit.features.preview.notes.prompt"})} value={content.comment} />
 					</div>
 				)
 			} else {
 				notes = (
 					<div className="notes unauthed">
-						<a href="https://www.bible.com/sign-in"><span className="highlight">Sign in</span> to add your private notes…</a>
+						<FormattedHTMLMessage id="features.EventEdit.features.preview.notes.noAuthPrompt" values={{url:"https://www.bible.com/sign-in"}} />
 					</div>
 				)
 			}

@@ -16,6 +16,8 @@ var querystring = require('querystring');
 var yaml = require('js-yaml');
 var fs = require('fs');
 var async = require('async');
+var langmap = require('langmap');
+var langs = require('langs');
 
 var smartlingCredentials = {
 	userIdentifier:"bpmknlysfearpoukuoydwwhduxoidv",
@@ -188,7 +190,7 @@ gulp.task('smartling', function(callback) {
 	return smartlingAuth().then(function(response) {
 		var token = response.response.data.accessToken;
 		return smartlingFetchAvailableLocales(token).then(function(response) {
-			console.log("RP", response);
+
 			var locales = response.response.data.items;
 
 			var queue = async.queue(function(task, callback) {
@@ -199,16 +201,59 @@ gulp.task('smartling', function(callback) {
 					})
 			}, 10);
 
-			var tasks = locales.map(function(item) {
-				return { locale: item.localeId }
+			var localeList = locales.map(function(item) {
+				var lang_country = item.localeId.split('-');
+				var country = lang_country[1] || "";
+				var lang = langs.where("1", lang_country[0]);
+				var locale3 = lang ? lang["3"] : null;
+				var locale2 = lang ? lang["1"] : null;
+				var final = Object.assign(
+					{},
+					langmap[item.localeId],
+					{
+						locale: item.localeId,
+						locale2: locale2,
+						locale3: locale3
+					}
+				);
+
+				final.displayName = final.nativeName || final.englishName || final.locale.toUpperCase();
+				return final;
 			});
 
-			console.log('tasks', tasks);
+			localeList.push({
+				"nativeName": "English (US)",
+				"englishName": "English (US)",
+				"locale": "en-US",
+				"locale2": "en",
+				"locale3": "eng",
+				"displayName": "English (US)"
+			});
+
+			localeList.sort((a, b) => {
+				return a.displayName.localeCompare(b.displayName);
+			});
+
+
+			fs.writeFileSync('./localeList.json', JSON.stringify(localeList, null, "\t"));
+
+			var tasks = locales.map(function(item) {
+				return { locale: item.localeId, prefix: item.localeId.split('-')[0] }
+			});
+
+			tasks.push({ locale: 'en-US', prefix: 'en' });
+
+			var availableLocales = {};
+			tasks.forEach(function(t) {
+				availableLocales[t.locale] = t.locale;
+				availableLocales[t.prefix] = t.locale;
+			});
+
+			fs.writeFileSync('./availableLocales.json', JSON.stringify(availableLocales, null, "\t"));
 
 			queue.push(tasks, function(task, data, err) {
-				var locale2L = task.locale.split('-')[0];
-				console.log('s2', task, locale2L);
-				fs.writeFileSync('./locales/' + task.locale + '.json', JSON.stringify(data[locale2L].EventsAdmin, null, '\t'));
+				console.log('Task:', task);
+				fs.writeFileSync('./locales/' + task.locale + '.json', JSON.stringify(flattenObject(data[task.prefix].EventsAdmin), null, '\t').replace(/\%\{/g, '{'));
 			});
 
 			//queue.drain = callback;
@@ -311,7 +356,6 @@ function smartlingFetchAvailableLocales(token) {
 }
 
 function smartlingFetchLocaleFile(locale, token) {
-	console.log('sflf', locale);
 	return new Promise(function(resolve, reject) {
 		var query = querystring.stringify({
 			fileUri: '/files/en.yml'
@@ -358,5 +402,25 @@ function smartlingFetchLocaleFile(locale, token) {
 		req.end();
 	})
 }
+
+function flattenObject(ob) {
+	var toReturn = {};
+
+	for (var i in ob) {
+		if (!ob.hasOwnProperty(i)) continue;
+
+		if ((typeof ob[i]) == 'object') {
+			var flatObject = flattenObject(ob[i]);
+			for (var x in flatObject) {
+				if (!flatObject.hasOwnProperty(x)) continue;
+
+				toReturn[i + '.' + x] = flatObject[x];
+			}
+		} else {
+			toReturn[i] = ob[i];
+		}
+	}
+	return toReturn;
+};
 
 

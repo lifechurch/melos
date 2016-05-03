@@ -104,6 +104,7 @@ class LocationAddTime extends Component {
 
 	constructor(props) {
 		super(props)
+		//moment.locale('x-psuedo')
 		const durationObj = getDurationAndInterval(props.time.start_dt, props.time.end_dt)
 		this.state = {
 			start_dt: props.time.start_dt,
@@ -131,7 +132,7 @@ class LocationAddTime extends Component {
 	}
 
 	render() {
-		const { time, timeIndex, handleRemoveTime } = this.props
+		const { time, timeIndex, handleRemoveTime, intl } = this.props
 		const { start_dt, duration, start_time, interval } = this.state
 
 		const values = timeValues().map((v) => {
@@ -160,9 +161,9 @@ class LocationAddTime extends Component {
 							</Column>
 							<Column s='small-6'>
 								<select className='small' name='interval' onChange={::this.handleIntervalChange} value={interval}>
-									<option value='m'>minutes</option>
-									<option value='h'>hours</option>
-									<option value='d'>days</option>
+									<option value='m'>{intl.formatMessage({id:"features.EventEdit.features.location.components.LocationAddTime.minutes"})}</option>
+									<option value='h'>{intl.formatMessage({id:"features.EventEdit.features.location.components.LocationAddTime.hours"})}</option>
+									<option value='d'>{intl.formatMessage({id:"features.EventEdit.features.location.components.LocationAddTime.days"})}</option>
 								</select>
 							</Column>
 						</Row>

@@ -1,408 +1,219 @@
 {
-	"components": {
-		"ErrorMessage": {
-			"genericError": "An error occurred",
-			"announcement": {
-				"events": {
-					"title": {
-						"required": "Announcement title is required."
-					}
-				}
-			},
-			"default": {
-				"bible": {
-					"reference": {
-						"not_found": "Bible reference not valid."
-					}
-				},
-				"events": {
-					"google_place_id": {
-						"required": "You must choose a location from the map."
-					},
-					"latitude": {
-						"required": "You must choose a location from the map."
-					},
-					"times": {
-						"start_dt": {
-							"must_be_a_future_date": "Start Time cannot be in the past."
-						}
-					},
-					"timezone": {
-						"required": "Timezone is required."
-					}
-				}
-			},
-			"reference": {
-				"events": {
-					"usfm": {
-						"invalid": "Bible reference not valid."
-					}
-				}
-			},
-			"url": {
-				"events": {
-					"url": {
-						"required": "URL is required."
-					},
-					"title": {
-						"required": "URL Label is required."
-					}
-				}
-			}
-		},
-		"EventHeader": {
-			"status": {
-				"published": "Published",
-				"draft": "Draft",
-				"live": "Live"
-			},
-			"unpublish": "Unpublish",
-			"saving": "Saving...",
-			"saveAsDraft": "Save as Draft",
-			"myEvents": "My Events",
-			"eventBuilder": "EVENT BUILDER",
-			"signOut": "Sign Out",
-			"createAccount": "Create Account"
-		},
-		"HtmlEditor": {
-			"text": "Text",
-			"bold": "Bold",
-			"italic": "Italic"
-		}
-	},
-	"containers": {
-		"Auth": {
-			"title": "Events Sign In",
-			"signIn": "Sign In",
-			"subHead1": "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'> Sign up now at Bible.com</a> to start creating Events.",
-			"email": "Email",
-			"password": "Password",
-			"forgotPassword": "Forgot Password"
-		},
-		"EventEdit": {
-			"event": "Event"
-		},
-		"EventEditContentContainer": {
-			"choose": "Choose some content to get started.",
-			"needHelp": "Need help?",
-			"title": "Event Content",
-			"previous": "← Previous: Locations & Times",
-			"next": "Next: Preview →"
-		},
-		"EventEditDetails": {
-			"title": "Event Details"
-		},
-		"EventEditLocationContainer": {
-			"title": "Event Location",
-			"previous": "← Previous: Details",
-			"next": "Next: Add Content →"
-		},
-		"EventEditPreview": {
-			"title": "Event Preview",
-			"previous": "← Previous: Content"
-		},
-		"EventEditShare": {
-			"title": "Event Share",
-			"subTitle": "Your Event is Now Published:",
-			"edit": "Edit Event",
-			"go": "Go to My Events",
-			"share": "Share your event:",
-			"copy": "Copy",
-			"copied": "The shortlink was copied to your clipboard",
-			"previous": "← Previous: Preview"
-		},
-		"EventFeedDiscover": {
-			"title": "Discover Events",
-			"discover": "Discover"
-		},
-		"EventFeedMine": {
-			"title": "My Events",
-			"previous": "← Previous",
-			"next": "Next →",
-			"my": "My Events",
-			"new": "Create New Event",
-			"subTitle": "EVENTS CREATED BY ME",
-			"newFirst": "Create Your First Event",
-			"learn": "Learn how to make a great Event"
-		},
-		"EventFeedSaved": {
-			"title": "Saved Events"
-		},
-		"EventView": {
-			"title": "YouVersion Event"
-		}
-	},
-	"features": {
-		"Auth": {
-			"errors": {
-				"sessionExpired": "Your session expired. Please login again.",
-				"invalidEmail": "Invalid email or password."
-			}
-		},
-		"EventEdit": {
-			"errors": {
-				"locationMustHaveTime": "All locations must have at least one time.",
-				"locationRequired": "You cannot publish an Event with no locations.",
-				"contentRequired": "You cannot publish an Event with no content.",
-				"planSearchFailed": "Search did not match any documents",
-				"noMatchingPlans": "No matching Plans"
-			},
-			"components": {
-				"EventEditNav": {
-					"details": "Details",
-					"locations": "Locations & Times",
-					"content": "Content",
-					"preview": "Preview & Publish",
-					"share": "Share"
-				}
-			},
-			"features": {
-				"content": {
-					"components": {
-						"ContentFeed": {
-							"reorder": "Reorder Content",
-							"doneReordering": "Done Reordering"
-						},
-						"ContentHeader": {
-							"text": "Text",
-							"reference": "Bible Reference",
-							"plan": "Plan",
-							"image": "Image",
-							"link": "External Link",
-							"giving": "Giving Link",
-							"announcement": "Announcement"
-						},
-						"ContentHelpModal": {
-							"types": "Content Types",
-							"learn": "Learn how to make <br>a great Event",
-							"text": {
-								"title": "Text Module",
-								"desc": "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
-							},
-							"reference": {
-								"title": "Bible Reference Module",
-								"desc": "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
-							},
-							"plan": {
-								"title": "Plan Module",
-								"desc": "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
-							},
-							"image": {
-								"title": "Image Module",
-								"desc": "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
-							},
-							"link": {
-								"title": "External Link Module",
-								"desc": "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
-							},
-							"announcement": {
-								"title": "Announcement Module",
-								"desc": "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
-							}
-						},
-						"ContentInsertionPoint": {
-							"title": "Insert next module here"
-						},
-						"ContentTypeAnnouncement": {
-							"title": "Title",
-							"prompt": "Write something here...",
-							"caption": "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
-						},
-						"ContentTypeContainer": {
-							"dirty": "Content will automatically save a few seconds after you stop typing.",
-							"failed": "Unable to save.",
-							"tryAgain": "Try again.",
-							"lastSaved": "Last saved %{when}"
-						},
-						"ContentTypeImage": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"caption": "Add caption",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"select": "Select Image"
-						},
-						"ContentTypeLink": {
-							"kindrid": "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>.",
-							"label": "Link Label",
-							"prompt": "Write something here...",
-							"url": "URL"
-						},
-						"ContentTypePlan": {
-							"replace": "Replace",
-							"search": "Search for a Reading Plan"
-						},
-						"ContentTypeReference": {
-							"version": "Version",
-							"book": "Book",
-							"chapterVerse": "Chapter:Verse"
-						},
-						"ContentTypeText": {
-							"prompt": "Write something here..."
-						},
-						"LiveWarningModal": {
-							"title": "Cannot Delete While Event is Live",
-							"desc": "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules.",
-							"ok": "OK"
-						}
-					}
-				},
-				"details": {
-					"errors": {
-						"generic": "There was a problem while publishing your Event.",
-						"invalidTimes": "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
-					},
-					"components": {
-						"DetailsEdit": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"changeImage": "Change Image",
-							"removeImage": "Remove Image",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"sizePrompt2": "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels.",
-							"eventName": "Event Name",
-							"org": "Church Name or Organization",
-							"desc": "Event Description",
-							"next": "Next: Add Location & Times →"
-						}
-					}
-				},
-				"location": {
-					"components": {
-						"Location": {
-							"oneRequired": "Add at least one time.",
-							"use": "USE THIS LOCATION",
-							"edit": "Edit Location",
-							"delete": "Delete Location"
-						},
-						"LocationAddButtons": {
-							"addPhysical": "Add a Physical Location",
-							"promptPhysical": "You can add multiple locations.",
-							"addVirtual": "Add Virtual Location",
-							"churchOnline": "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
-						},
-						"LocationAddTime": {
-							"minutes": "minutes",
-							"hours": "hours",
-							"days": "days"
-						},
-						"LocationDeleteModal": {
-							"sure": "Are you sure?",
-							"selected": "You have selected the following location to be deleted:",
-							"warn": "This will remove the location from all past and present events. You will not be able to re-use this location for future events.",
-							"cancel": "Cancel",
-							"delete": "Delete"
-						},
-						"LocationEdit": {
-							"prompt": "Enter the Location address...",
-							"country": "Country",
-							"timezone": "Timezone",
-							"namePrompt": "First Baptist East Campus",
-							"name": "Location Name",
-							"nameOptional": "Optional: Useful if adding multiple locations",
-							"addAnother": "Add another time",
-							"cancel": "Cancel",
-							"save": "Save this Location"
-						},
-						"LocationTimeShifter": {
-							"shift": "Shift start dates",
-							"forward": "forward",
-							"backward": "backward",
-							"by": "by",
-							"week": "week",
-							"weeks": "weeks",
-							"month": "month",
-							"months": "months",
-							"day": "day",
-							"days": "days",
-							"hour": "hour",
-							"hours": "hours",
-							"update": "Update",
-							"shiftButton": "Shift all dates and times at once"
-						},
-						"UnpublishModal": {
-							"cancel": "Cancel",
-							"title": "Unpublish to Make Changes",
-							"desc": "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again.",
-							"unpublish": "Unpublish"
-						}
-					}
-				},
-				"preview": {
-					"notes": {
-						"prompt": "Add your private notes...",
-						"noAuthPrompt": "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
-					},
-					"components": {
-						"PreviewFeed": {
-							"share": "Share Event",
-							"locations": "Locations:",
-							"publish": "Publish",
-							"unpublish": "Unpublish",
-							"discoverable": {
-								"title": "Discoverable:",
-								"desc": "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
-							},
-							"status": {
-								"title": "Status:",
-								"desc": "The red LIVE badge will display when your earliest start time begins."
-							},
-							"remove": {
-								"title": "Remove:",
-								"desc": "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
-							}
-						},
-						"PreviewTypeAnnouncement": {
-							"expand": "Expand"
-						},
-						"PreviewTypePlan": {
-							"read": "Read",
-							"info": "Plan Info"
-						}
-					}
-				}
-			}
-		},
-		"EventFeedMine": {
-			"components": {
-				"EventListItem": {
-					"duplicate": "Duplicate",
-					"share": "Share",
-					"delete": "Delete",
-					"draft": "DRAFT",
-					"edit": "Edit",
-					"view": "View",
-					"fail": "Unable to delete Event"
-				}
-			}
-		},
-		"EventView": {
-			"components": {
-				"EventViewContent": {
-					"copy": "Copy",
-					"share": "Share",
-					"read": "Read",
-					"readPlan": "Read Plan"
-				},
-				"EventViewContentAnnouncement": {
-					"expand": "Expand",
-					"collapse": "Collapse"
-				},
-				"EventViewDetails": {
-					"expand": "Expand",
-					"collapse": "Collapse",
-					"save": "Save Event",
-					"signIn": "Sign In to Save Event",
-					"saved": "Event Saved"
-				}
-			}
-		}
-	}
+	"components.ErrorMessage.genericError": "An error occurred",
+	"components.ErrorMessage.announcement.events.title.required": "Announcement title is required.",
+	"components.ErrorMessage.default.bible.reference.not_found": "Bible reference not valid.",
+	"components.ErrorMessage.default.events.google_place_id.required": "You must choose a location from the map.",
+	"components.ErrorMessage.default.events.latitude.required": "You must choose a location from the map.",
+	"components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date": "Start Time cannot be in the past.",
+	"components.ErrorMessage.default.events.timezone.required": "Timezone is required.",
+	"components.ErrorMessage.reference.events.usfm.invalid": "Bible reference not valid.",
+	"components.ErrorMessage.url.events.url.required": "URL is required.",
+	"components.ErrorMessage.url.events.title.required": "URL Label is required.",
+	"components.EventHeader.status.published": "Published",
+	"components.EventHeader.status.draft": "Rascunho",
+	"components.EventHeader.status.live": "Ao Vivo",
+	"components.EventHeader.unpublish": "Unpublish",
+	"components.EventHeader.saving": "Saving...",
+	"components.EventHeader.saveAsDraft": "Guardar como rascunho",
+	"components.EventHeader.myEvents": "Eventos",
+	"components.EventHeader.eventBuilder": "CONFIGURAR EVENTO",
+	"components.EventHeader.signOut": "Sair",
+	"components.EventHeader.createAccount": "Create Account",
+	"components.HtmlEditor.text": "Texto",
+	"components.HtmlEditor.bold": "Bold",
+	"components.HtmlEditor.italic": "Italic",
+	"containers.Auth.title": "Events Sign In",
+	"containers.Auth.signIn": "Iniciar sessão",
+	"containers.Auth.subHead1": "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='{url}'>Sign up now at Bible.com</a> to start creating Events.",
+	"containers.Auth.email": "Email",
+	"containers.Auth.password": "Palavra-Passe:",
+	"containers.Auth.forgotPassword": "Palavra passe esquecida",
+	"containers.EventEdit.event": "Event",
+	"containers.EventEditContentContainer.choose": "Escolha algum conteúdo para começar.",
+	"containers.EventEditContentContainer.needHelp": "Precisa de ajuda?",
+	"containers.EventEditContentContainer.title": "Conteúdo do Evento",
+	"containers.EventEditContentContainer.previous": "Voltar: Localização e Horários →",
+	"containers.EventEditContentContainer.next": "Seguinte: Pré-visualização →",
+	"containers.EventEditDetails.title": "Detalhes do Evento",
+	"containers.EventEditLocationContainer.title": "Local do Evento",
+	"containers.EventEditLocationContainer.previous": "← Voltar: Detalhes",
+	"containers.EventEditLocationContainer.next": "Seguinte: Adicionar conteúdo →",
+	"containers.EventEditPreview.title": "Pré-visualização do Evento",
+	"containers.EventEditPreview.previous": "← Voltar: Conteúdo",
+	"containers.EventEditShare.title": "Event Share",
+	"containers.EventEditShare.subTitle": "Your Event is Now Published:",
+	"containers.EventEditShare.edit": "Edit Event",
+	"containers.EventEditShare.go": "Go to My Events",
+	"containers.EventEditShare.share": "Share your event:",
+	"containers.EventEditShare.copy": "Copiar",
+	"containers.EventEditShare.copied": "The shortlink was copied to your clipboard",
+	"containers.EventEditShare.previous": "← Previous: Preview",
+	"containers.EventFeedDiscover.title": "Discover Events",
+	"containers.EventFeedDiscover.discover": "Descubra",
+	"containers.EventFeedMine.title": "My Events",
+	"containers.EventFeedMine.previous": "← Previous",
+	"containers.EventFeedMine.next": "Next →",
+	"containers.EventFeedMine.my": "My Events",
+	"containers.EventFeedMine.new": "Create New Event",
+	"containers.EventFeedMine.subTitle": "EVENTS CREATED BY ME",
+	"containers.EventFeedMine.newFirst": "Crie o seu primeiro evento",
+	"containers.EventFeedMine.learn": "Aprenda a organizar um evento",
+	"containers.EventFeedSaved.title": "Eventos Guardados",
+	"containers.EventView.title": "YouVersion Event",
+	"containers.SelectLanguage.choose": "Choose Your Language",
+	"features.Auth.errors.sessionExpired": "Your session expired. Please login again.",
+	"features.Auth.errors.invalidEmail": "Invalid email or password.",
+	"features.EventEdit.errors.locationMustHaveTime": "All locations must have at least one time.",
+	"features.EventEdit.errors.locationRequired": "You cannot publish an Event with no locations.",
+	"features.EventEdit.errors.contentRequired": "Não pode publicar um evento sem nenhum conteúdo.",
+	"features.EventEdit.errors.planSearchFailed": "Search did not match any documents",
+	"features.EventEdit.errors.noMatchingPlans": "No matching Plans",
+	"features.EventEdit.components.EventEditNav.details": "Detalhes",
+	"features.EventEdit.components.EventEditNav.locations": "Localizações e Horários",
+	"features.EventEdit.components.EventEditNav.content": "Conteúdo",
+	"features.EventEdit.components.EventEditNav.preview": "Visualizar & Publicar",
+	"features.EventEdit.components.EventEditNav.share": "Partilhar",
+	"features.EventEdit.features.content.components.ContentFeed.reorder": "Reorder Content",
+	"features.EventEdit.features.content.components.ContentFeed.doneReordering": "Done Reordering",
+	"features.EventEdit.features.content.components.ContentHeader.text": "Text",
+	"features.EventEdit.features.content.components.ContentHeader.reference": "Referência Bíblica",
+	"features.EventEdit.features.content.components.ContentHeader.plan": "Plano",
+	"features.EventEdit.features.content.components.ContentHeader.image": "Imagem",
+	"features.EventEdit.features.content.components.ContentHeader.link": "Ligação Externa",
+	"features.EventEdit.features.content.components.ContentHeader.giving": "Ligação para Contribuições",
+	"features.EventEdit.features.content.components.ContentHeader.announcement": "Comunicados",
+	"features.EventEdit.features.content.components.ContentHelpModal.types": "Content Types",
+	"features.EventEdit.features.content.components.ContentHelpModal.learn": "Learn how to make <br>a great Event",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.title": "Text Module",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting.",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "Bible Reference Module",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more.",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "Plan Module",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.desc": "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week.",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.title": "Image Module",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.desc": "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral.",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "External Link Module",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages.",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.title": "Announcement Module",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics).",
+	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "Insert next module here",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "Título",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "Write something here...",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.dirty": "Content will automatically save a few seconds after you stop typing.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.failed": "Unable to save.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.tryAgain": "Try again.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.lastSaved": "Last saved {when}",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongSize": "Image size must be {requiredWidth}x{requiredHeight}. Your image is {yourWidth}x{yourHeight}.",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongType": "Invalid filetype. Must be JPG.",
+	"features.EventEdit.features.content.components.ContentTypeImage.caption": "Add caption",
+	"features.EventEdit.features.content.components.ContentTypeImage.prompt": "Drag and Drop an Image",
+	"features.EventEdit.features.content.components.ContentTypeImage.onlyJpg": "[JPG only]",
+	"features.EventEdit.features.content.components.ContentTypeImage.sizePrompt": "{requiredWidth}px width x {requiredHeight}px height",
+	"features.EventEdit.features.content.components.ContentTypeImage.select": "Selecionar imagem",
+	"features.EventEdit.features.content.components.ContentTypeLink.kindrid": "If you are looking for a smart, simple giving platform, <a href='{url}'>try Kindrid</a>.",
+	"features.EventEdit.features.content.components.ContentTypeLink.label": "Link Label",
+	"features.EventEdit.features.content.components.ContentTypeLink.prompt": "Write something here...",
+	"features.EventEdit.features.content.components.ContentTypeLink.url": "URL",
+	"features.EventEdit.features.content.components.ContentTypePlan.replace": "Replace",
+	"features.EventEdit.features.content.components.ContentTypePlan.search": "Search for a Reading Plan",
+	"features.EventEdit.features.content.components.ContentTypeReference.language": "Idioma",
+	"features.EventEdit.features.content.components.ContentTypeReference.version": "Versão",
+	"features.EventEdit.features.content.components.ContentTypeReference.book": "Livro",
+	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "Chapter:Verse",
+	"features.EventEdit.features.content.components.ContentTypeText.prompt": "Write something here...",
+	"features.EventEdit.features.content.components.LiveWarningModal.title": "Cannot Delete While Event is Live",
+	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules.",
+	"features.EventEdit.features.content.components.LiveWarningModal.ok": "OK",
+	"features.EventEdit.features.details.errors.generic": "There was a problem while publishing your Event.",
+	"features.EventEdit.features.details.errors.invalidTimes": "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again.",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize": "Image size must be {requiredWidth}x{requiredHeight}. Your image is {yourWidth}x{yourHeight}.",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType": "Tipo de ficheiro inválido. Tem de ser um JPG.",
+	"features.EventEdit.features.details.components.DetailsEdit.changeImage": "Alterar Imagem",
+	"features.EventEdit.features.details.components.DetailsEdit.removeImage": "Remover imagem",
+	"features.EventEdit.features.details.components.DetailsEdit.prompt": "Drag and Drop an Image",
+	"features.EventEdit.features.details.components.DetailsEdit.onlyJpg": "[JPG only]",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt": "{requiredWidth}px width x {requiredHeight}px height",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "Your image dimensions should be {requiredWidth} x {requiredHeight} pixels.",
+	"features.EventEdit.features.details.components.DetailsEdit.eventName": "Nome do Evento",
+	"features.EventEdit.features.details.components.DetailsEdit.org": "Nome da Igreja ou Organização",
+	"features.EventEdit.features.details.components.DetailsEdit.desc": "Descrição do Evento",
+	"features.EventEdit.features.details.components.DetailsEdit.next": "Seguinte: Adicionar Localização e Horários →",
+	"features.EventEdit.features.location.components.Location.oneRequired": "Add at least one time.",
+	"features.EventEdit.features.location.components.Location.use": "USE THIS LOCATION",
+	"features.EventEdit.features.location.components.Location.edit": "Edit Location",
+	"features.EventEdit.features.location.components.Location.delete": "Delete Location",
+	"features.EventEdit.features.location.components.LocationAddButtons.addPhysical": "Adicione uma localização física",
+	"features.EventEdit.features.location.components.LocationAddButtons.promptPhysical": "Pode adicionar várias localizações",
+	"features.EventEdit.features.location.components.LocationAddButtons.addVirtual": "Adicione uma localização virtual",
+	"features.EventEdit.features.location.components.LocationAddButtons.churchOnline": "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='{url}'>Church Online Platform</a>.",
+	"features.EventEdit.features.location.components.LocationAddTime.minutes": "MINUTOS",
+	"features.EventEdit.features.location.components.LocationAddTime.hours": "HORAS",
+	"features.EventEdit.features.location.components.LocationAddTime.days": "DIAS",
+	"features.EventEdit.features.location.components.LocationDeleteModal.sure": "Tem a certeza?",
+	"features.EventEdit.features.location.components.LocationDeleteModal.selected": "You have selected the following location to be deleted:",
+	"features.EventEdit.features.location.components.LocationDeleteModal.warn": "This will remove the location from all past and present events. You will not be able to re-use this location for future events.",
+	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Cancelar",
+	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Apagar",
+	"features.EventEdit.features.location.components.LocationEdit.prompt": "Enter the Location address...",
+	"features.EventEdit.features.location.components.LocationEdit.country": "País",
+	"features.EventEdit.features.location.components.LocationEdit.timezone": "Fuso Horário",
+	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Primeira Igreja Baptista",
+	"features.EventEdit.features.location.components.LocationEdit.name": "Local",
+	"features.EventEdit.features.location.components.LocationEdit.nameOptional": "Opcional: Pode adicionar várias localizações",
+	"features.EventEdit.features.location.components.LocationEdit.addAnother": "Adicionar um novo horário",
+	"features.EventEdit.features.location.components.LocationEdit.cancel": "Cancelar",
+	"features.EventEdit.features.location.components.LocationEdit.save": "Guardar esta localização",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shift": "Shift start dates",
+	"features.EventEdit.features.location.components.LocationTimeShifter.forward": "Avançar",
+	"features.EventEdit.features.location.components.LocationTimeShifter.backward": "backward",
+	"features.EventEdit.features.location.components.LocationTimeShifter.by": "by",
+	"features.EventEdit.features.location.components.LocationTimeShifter.week": "week",
+	"features.EventEdit.features.location.components.LocationTimeShifter.weeks": "weeks",
+	"features.EventEdit.features.location.components.LocationTimeShifter.month": "Mês",
+	"features.EventEdit.features.location.components.LocationTimeShifter.months": "months",
+	"features.EventEdit.features.location.components.LocationTimeShifter.day": "Dia",
+	"features.EventEdit.features.location.components.LocationTimeShifter.days": "DIAS",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hour": "hour",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hours": "HORAS",
+	"features.EventEdit.features.location.components.LocationTimeShifter.update": "Atualizar",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shiftButton": "Mudar todas as datas e os horários de uma só vez",
+	"features.EventEdit.features.location.components.UnpublishModal.cancel": "Cancelar",
+	"features.EventEdit.features.location.components.UnpublishModal.title": "Unpublish to Make Changes",
+	"features.EventEdit.features.location.components.UnpublishModal.desc": "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again.",
+	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Unpublish",
+	"features.EventEdit.features.preview.notes.prompt": "Adicione as suas notas privadas...",
+	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.share": "Compartilhar Evento",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Publicar",
+	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Unpublish",
+	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Locais:",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.title": "Visibilidade:",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.desc": "O seu evento estará visível na seção de Eventos da App da Bíblia e nos resultados da busca, 5 dias antes da data de início.",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.title": "Estado:",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.desc": "O emblema vermelho AO VIVO será exibido quando começar o seu evento.",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "Eliminar:",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "O seu evento deixará de estar visível após o horário de término. Os participantes que clicaram em \"Gravar Evento\" quando este estava visível, continuarão a ter acesso a uma versão de arquivo do mesmo. Este evento continuará a ser acessível através de link directo.",
+	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "Expand",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "Ler",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "Informação do Plano",
+	"features.EventFeedMine.components.EventListItem.duplicate": "Duplicate",
+	"features.EventFeedMine.components.EventListItem.share": "Partilhar",
+	"features.EventFeedMine.components.EventListItem.delete": "Apagar",
+	"features.EventFeedMine.components.EventListItem.draft": "Rascunho",
+	"features.EventFeedMine.components.EventListItem.edit": "Editar",
+	"features.EventFeedMine.components.EventListItem.view": "Visualizar",
+	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
+	"features.EventView.components.EventViewContent.copy": "Copiar",
+	"features.EventView.components.EventViewContent.share": "Partilhar",
+	"features.EventView.components.EventViewContent.read": "Ler",
+	"features.EventView.components.EventViewContent.readPlan": "Read Plan",
+	"features.EventView.components.EventViewContentAnnouncement.expand": "Expand",
+	"features.EventView.components.EventViewContentAnnouncement.collapse": "Collapse",
+	"features.EventView.components.EventViewDetails.expand": "Expand",
+	"features.EventView.components.EventViewDetails.collapse": "Collapse",
+	"features.EventView.components.EventViewDetails.save": "Guardar Evento",
+	"features.EventView.components.EventViewDetails.signIn": "Sign In to Save Event",
+	"features.EventView.components.EventViewDetails.saved": "Event Saved"
 }

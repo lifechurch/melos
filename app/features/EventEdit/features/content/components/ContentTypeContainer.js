@@ -10,6 +10,7 @@ import ContentTypeImage from './ContentTypeImage'
 import ContentTypeLink from './ContentTypeLink'
 import RevManifest from '../../../../../../app/lib/revManifest'
 import ErrorMessage from '../../../../../../app/components/ErrorMessage'
+import { FormattedMessage } from 'react-intl'
 
 const AUTO_SAVE_TIMEOUT = 3000
 
@@ -65,16 +66,16 @@ class ContentTypeContainer extends Component {
 	}
 
 	render() {
-		const { event, dispatch, contentIndex, content, references, plans, _content } = this.props
+		const { event, dispatch, contentIndex, content, references, plans, _content, intl } = this.props
 
 		let InnerContainer = null
 		switch (content.type) {
 			case 'text':
-				InnerContainer = (<ContentTypeText handleRemove={::this.handleRemove} handleChange={::this.handleChange} contentData={content.data} />)
+				InnerContainer = (<ContentTypeText intl={intl} handleRemove={::this.handleRemove} handleChange={::this.handleChange} contentData={content.data} />)
 				break
 
 			case 'announcement':
-				InnerContainer = (<ContentTypeAnnouncement handleRemove={::this.handleRemove} handleChange={::this.handleChange} contentData={content.data} />)
+				InnerContainer = (<ContentTypeAnnouncement intl={intl} handleRemove={::this.handleRemove} handleChange={::this.handleChange} contentData={content.data} />)
 				break
 
 			case 'reference':
@@ -86,7 +87,8 @@ class ContentTypeContainer extends Component {
 									references={references}
 									contentIndex={contentIndex}
 									isFetching={content.isFetching}
-									contentData={content.data} />)
+									contentData={content.data}
+									intl={intl} />)
 				break
 
 			case 'plan':
@@ -96,11 +98,12 @@ class ContentTypeContainer extends Component {
 									contentData={content.data}
 									contentIndex={contentIndex}
 									plans={plans}
-									autoSave={::this.autoSave} />)
+									autoSave={::this.autoSave}
+									intl={intl} />)
 				break
 
 			case 'url':
-				InnerContainer = (<ContentTypeLink handleChange={::this.handleChange} content={content}  />)
+				InnerContainer = (<ContentTypeLink handleChange={::this.handleChange} content={content} intl={intl} />)
 				break
 
 			case 'image':
@@ -108,7 +111,8 @@ class ContentTypeContainer extends Component {
 									dispatch={dispatch}
 									handleChange={::this.handleChange}
 									contentData={content.data}
-									contentIndex={contentIndex} />)
+									contentIndex={contentIndex}
+									intl={intl} />)
 				break
 			default:
 				break
@@ -116,19 +120,31 @@ class ContentTypeContainer extends Component {
 
 		let classNames = 'content-type content-' + content.type
 
+		let contentTypeLabel = null
+		if (content.type === 'url') {
+			if (content.hasOwnProperty('iamagivinglink') && content.iamagivinglink) {
+				contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.giving" })
+			} else {
+				contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.link" })
+			}
+			contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.link" })
+		} else {
+			contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader." + content.type.toLowerCase() })
+		}
+
 		return (
 			<div className={classNames} id={`content-${contentIndex}`}>
 				<Row>
 					<div className='medium-12'>
-						{content.type.toUpperCase()} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
+						{contentTypeLabel} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
 						<div className='form-body'>
 							<ErrorMessage hasError={content.errors && Object.keys(content.errors).length} errors={content.errors} scope={content.type} />
 							{InnerContainer}
 							<span className='content-status'>
-								{ (content.isDirty && !content.isSaving && !content.hasError) ? 'Content will automatically save a few seconds after you stop typing.' : null }
-								{ (content.hasError && !content.isSaving) ? <span className='error-text'>Unable to save. <a onClick={::this.handleUpdateClick}>Try again.</a></span> : null }
-								{ (content.isSaved && !content.isSaving && !content.hasError && !content.isDirty) ? 'Last saved ' + content.lastSaved.fromNow() : null }
-								{ content.isSaving ? 'Saving...' : null }
+								{ (content.isDirty && !content.isSaving && !content.hasError) ? (<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeContainer.dirty" />) : null }
+								{ (content.hasError && !content.isSaving) ? (<span className='error-text'><FormattedMessage id="features.EventEdit.features.content.components.ContentTypeContainer.failed" /> <a onClick={::this.handleUpdateClick}><FormattedMessage id="features.EventEdit.features.content.components.ContentTypeContainer.tryAgain" /></a></span>) : null }
+								{ (content.isSaved && !content.isSaving && !content.hasError && !content.isDirty) ? (<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeContainer.lastSaved" values={{when: content.lastSaved.fromNow()}} />) : null }
+								{ content.isSaving ? (<FormattedMessage id="components.EventHeader.saving" />) : null }
 							</span>
 						</div>
 						<ContentInsertionPoint index={contentIndex + 1} dispatch={dispatch} insertionPoint={_content.insertionPoint} />

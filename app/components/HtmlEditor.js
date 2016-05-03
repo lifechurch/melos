@@ -1,20 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import ReactQuill from 'react-quill'
+import { injectIntl, FormattedMessage } from 'react-intl'
 
 const DEBOUNCE_TIMEOUT = 300
 
 const formats = ['bold', 'italic']
-
-const toolbarItems = [
-	{
-		label:'Text',
-		type:'group',
-		items: [
-			{ type:'bold', label:'Bold' },
-			{ type:'italic', label:'Italic' }
-		]
-	}
-]
 
 class HtmlEditor extends Component {
 	constructor(props) {
@@ -58,9 +48,22 @@ class HtmlEditor extends Component {
 
 	render() {
 		const { value } = this.state
+		const { intl } = this.props
 		const html = {
 			__html: value
 		}
+
+		const toolbarItems = [
+			{
+				label:intl.formatMessage({ id: "components.HtmlEditor.text" }),
+				type:'group',
+				items: [
+					{ type:'bold', label: intl.formatMessage({ id: "components.HtmlEditor.bold" }) },
+					{ type:'italic', label: intl.formatMessage({ id: "components.HtmlEditor.italic" }) }
+				]
+			}
+		]
+
 
 		return (
 			<div className='content-html-editor'>
@@ -74,8 +77,8 @@ class HtmlEditor extends Component {
 						key='toolbar'
 						ref='toolbar'
 						items={toolbarItems}>
-						<a className='ql-bold'>Bold</a>
-						<a className='ql-italic'>Italic</a>
+						<a className='ql-bold'><FormattedMessage id="components.HtmlEditor.bold" /></a>
+						<a className='ql-italic'><FormattedMessage id="components.HtmlEditor.italic" /></a>
 					</div>
 
 					<div
@@ -96,4 +99,4 @@ HtmlEditor.propTypes = {
 	value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ])
 }
 
-export default HtmlEditor
+export default injectIntl(HtmlEditor)

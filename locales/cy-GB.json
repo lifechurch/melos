@@ -1,408 +1,219 @@
 {
-	"components": {
-		"ErrorMessage": {
-			"genericError": "An error occurred",
-			"announcement": {
-				"events": {
-					"title": {
-						"required": "Announcement title is required."
-					}
-				}
-			},
-			"default": {
-				"bible": {
-					"reference": {
-						"not_found": "Bible reference not valid."
-					}
-				},
-				"events": {
-					"google_place_id": {
-						"required": "You must choose a location from the map."
-					},
-					"latitude": {
-						"required": "You must choose a location from the map."
-					},
-					"times": {
-						"start_dt": {
-							"must_be_a_future_date": "Start Time cannot be in the past."
-						}
-					},
-					"timezone": {
-						"required": "Timezone is required."
-					}
-				}
-			},
-			"reference": {
-				"events": {
-					"usfm": {
-						"invalid": "Bible reference not valid."
-					}
-				}
-			},
-			"url": {
-				"events": {
-					"url": {
-						"required": "URL is required."
-					},
-					"title": {
-						"required": "URL Label is required."
-					}
-				}
-			}
-		},
-		"EventHeader": {
-			"status": {
-				"published": "Published",
-				"draft": "Draft",
-				"live": "Live"
-			},
-			"unpublish": "Unpublish",
-			"saving": "Saving...",
-			"saveAsDraft": "Save as Draft",
-			"myEvents": "My Events",
-			"eventBuilder": "EVENT BUILDER",
-			"signOut": "Sign Out",
-			"createAccount": "Create Account"
-		},
-		"HtmlEditor": {
-			"text": "Text",
-			"bold": "Bold",
-			"italic": "Italic"
-		}
-	},
-	"containers": {
-		"Auth": {
-			"title": "Events Sign In",
-			"signIn": "Sign In",
-			"subHead1": "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'> Sign up now at Bible.com</a> to start creating Events.",
-			"email": "Email",
-			"password": "Password",
-			"forgotPassword": "Forgot Password"
-		},
-		"EventEdit": {
-			"event": "Event"
-		},
-		"EventEditContentContainer": {
-			"choose": "Choose some content to get started.",
-			"needHelp": "Need help?",
-			"title": "Event Content",
-			"previous": "← Previous: Locations & Times",
-			"next": "Next: Preview →"
-		},
-		"EventEditDetails": {
-			"title": "Event Details"
-		},
-		"EventEditLocationContainer": {
-			"title": "Event Location",
-			"previous": "← Previous: Details",
-			"next": "Next: Add Content →"
-		},
-		"EventEditPreview": {
-			"title": "Event Preview",
-			"previous": "← Previous: Content"
-		},
-		"EventEditShare": {
-			"title": "Event Share",
-			"subTitle": "Your Event is Now Published:",
-			"edit": "Edit Event",
-			"go": "Go to My Events",
-			"share": "Share your event:",
-			"copy": "Copy",
-			"copied": "The shortlink was copied to your clipboard",
-			"previous": "← Previous: Preview"
-		},
-		"EventFeedDiscover": {
-			"title": "Discover Events",
-			"discover": "Discover"
-		},
-		"EventFeedMine": {
-			"title": "My Events",
-			"previous": "← Previous",
-			"next": "Next →",
-			"my": "My Events",
-			"new": "Create New Event",
-			"subTitle": "EVENTS CREATED BY ME",
-			"newFirst": "Create Your First Event",
-			"learn": "Learn how to make a great Event"
-		},
-		"EventFeedSaved": {
-			"title": "Saved Events"
-		},
-		"EventView": {
-			"title": "YouVersion Event"
-		}
-	},
-	"features": {
-		"Auth": {
-			"errors": {
-				"sessionExpired": "Your session expired. Please login again.",
-				"invalidEmail": "Invalid email or password."
-			}
-		},
-		"EventEdit": {
-			"errors": {
-				"locationMustHaveTime": "All locations must have at least one time.",
-				"locationRequired": "You cannot publish an Event with no locations.",
-				"contentRequired": "You cannot publish an Event with no content.",
-				"planSearchFailed": "Search did not match any documents",
-				"noMatchingPlans": "No matching Plans"
-			},
-			"components": {
-				"EventEditNav": {
-					"details": "Details",
-					"locations": "Locations & Times",
-					"content": "Content",
-					"preview": "Preview & Publish",
-					"share": "Share"
-				}
-			},
-			"features": {
-				"content": {
-					"components": {
-						"ContentFeed": {
-							"reorder": "Reorder Content",
-							"doneReordering": "Done Reordering"
-						},
-						"ContentHeader": {
-							"text": "Text",
-							"reference": "Bible Reference",
-							"plan": "Plan",
-							"image": "Image",
-							"link": "External Link",
-							"giving": "Giving Link",
-							"announcement": "Announcement"
-						},
-						"ContentHelpModal": {
-							"types": "Content Types",
-							"learn": "Learn how to make <br>a great Event",
-							"text": {
-								"title": "Text Module",
-								"desc": "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
-							},
-							"reference": {
-								"title": "Bible Reference Module",
-								"desc": "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
-							},
-							"plan": {
-								"title": "Plan Module",
-								"desc": "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
-							},
-							"image": {
-								"title": "Image Module",
-								"desc": "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
-							},
-							"link": {
-								"title": "External Link Module",
-								"desc": "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
-							},
-							"announcement": {
-								"title": "Announcement Module",
-								"desc": "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
-							}
-						},
-						"ContentInsertionPoint": {
-							"title": "Insert next module here"
-						},
-						"ContentTypeAnnouncement": {
-							"title": "Title",
-							"prompt": "Write something here...",
-							"caption": "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
-						},
-						"ContentTypeContainer": {
-							"dirty": "Content will automatically save a few seconds after you stop typing.",
-							"failed": "Unable to save.",
-							"tryAgain": "Try again.",
-							"lastSaved": "Last saved %{when}"
-						},
-						"ContentTypeImage": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"caption": "Add caption",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"select": "Select Image"
-						},
-						"ContentTypeLink": {
-							"kindrid": "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>.",
-							"label": "Link Label",
-							"prompt": "Write something here...",
-							"url": "URL"
-						},
-						"ContentTypePlan": {
-							"replace": "Replace",
-							"search": "Search for a Reading Plan"
-						},
-						"ContentTypeReference": {
-							"version": "Version",
-							"book": "Book",
-							"chapterVerse": "Chapter:Verse"
-						},
-						"ContentTypeText": {
-							"prompt": "Write something here..."
-						},
-						"LiveWarningModal": {
-							"title": "Cannot Delete While Event is Live",
-							"desc": "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules.",
-							"ok": "OK"
-						}
-					}
-				},
-				"details": {
-					"errors": {
-						"generic": "There was a problem while publishing your Event.",
-						"invalidTimes": "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
-					},
-					"components": {
-						"DetailsEdit": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"changeImage": "Change Image",
-							"removeImage": "Remove Image",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"sizePrompt2": "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels.",
-							"eventName": "Event Name",
-							"org": "Church Name or Organization",
-							"desc": "Event Description",
-							"next": "Next: Add Location & Times →"
-						}
-					}
-				},
-				"location": {
-					"components": {
-						"Location": {
-							"oneRequired": "Add at least one time.",
-							"use": "USE THIS LOCATION",
-							"edit": "Edit Location",
-							"delete": "Delete Location"
-						},
-						"LocationAddButtons": {
-							"addPhysical": "Add a Physical Location",
-							"promptPhysical": "You can add multiple locations.",
-							"addVirtual": "Add Virtual Location",
-							"churchOnline": "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
-						},
-						"LocationAddTime": {
-							"minutes": "minutes",
-							"hours": "hours",
-							"days": "days"
-						},
-						"LocationDeleteModal": {
-							"sure": "Are you sure?",
-							"selected": "You have selected the following location to be deleted:",
-							"warn": "This will remove the location from all past and present events. You will not be able to re-use this location for future events.",
-							"cancel": "Cancel",
-							"delete": "Delete"
-						},
-						"LocationEdit": {
-							"prompt": "Enter the Location address...",
-							"country": "Country",
-							"timezone": "Timezone",
-							"namePrompt": "First Baptist East Campus",
-							"name": "Location Name",
-							"nameOptional": "Optional: Useful if adding multiple locations",
-							"addAnother": "Add another time",
-							"cancel": "Cancel",
-							"save": "Save this Location"
-						},
-						"LocationTimeShifter": {
-							"shift": "Shift start dates",
-							"forward": "forward",
-							"backward": "backward",
-							"by": "by",
-							"week": "week",
-							"weeks": "weeks",
-							"month": "month",
-							"months": "months",
-							"day": "day",
-							"days": "days",
-							"hour": "hour",
-							"hours": "hours",
-							"update": "Update",
-							"shiftButton": "Shift all dates and times at once"
-						},
-						"UnpublishModal": {
-							"cancel": "Cancel",
-							"title": "Unpublish to Make Changes",
-							"desc": "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again.",
-							"unpublish": "Unpublish"
-						}
-					}
-				},
-				"preview": {
-					"notes": {
-						"prompt": "Add your private notes...",
-						"noAuthPrompt": "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
-					},
-					"components": {
-						"PreviewFeed": {
-							"share": "Share Event",
-							"locations": "Locations:",
-							"publish": "Publish",
-							"unpublish": "Unpublish",
-							"discoverable": {
-								"title": "Discoverable:",
-								"desc": "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
-							},
-							"status": {
-								"title": "Status:",
-								"desc": "The red LIVE badge will display when your earliest start time begins."
-							},
-							"remove": {
-								"title": "Remove:",
-								"desc": "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
-							}
-						},
-						"PreviewTypeAnnouncement": {
-							"expand": "Expand"
-						},
-						"PreviewTypePlan": {
-							"read": "Read",
-							"info": "Plan Info"
-						}
-					}
-				}
-			}
-		},
-		"EventFeedMine": {
-			"components": {
-				"EventListItem": {
-					"duplicate": "Duplicate",
-					"share": "Share",
-					"delete": "Delete",
-					"draft": "DRAFT",
-					"edit": "Edit",
-					"view": "View",
-					"fail": "Unable to delete Event"
-				}
-			}
-		},
-		"EventView": {
-			"components": {
-				"EventViewContent": {
-					"copy": "Copy",
-					"share": "Share",
-					"read": "Read",
-					"readPlan": "Read Plan"
-				},
-				"EventViewContentAnnouncement": {
-					"expand": "Expand",
-					"collapse": "Collapse"
-				},
-				"EventViewDetails": {
-					"expand": "Expand",
-					"collapse": "Collapse",
-					"save": "Save Event",
-					"signIn": "Sign In to Save Event",
-					"saved": "Event Saved"
-				}
-			}
-		}
-	}
+	"components.ErrorMessage.genericError": "Digwyddodd gwall",
+	"components.ErrorMessage.announcement.events.title.required": "Mae angen teitl i'r Cyhoeddiad",
+	"components.ErrorMessage.default.bible.reference.not_found": "Cyfeirnod Beibl yn annilys",
+	"components.ErrorMessage.default.events.google_place_id.required": "Rhaid i ti ddewis lleoliad o'r map",
+	"components.ErrorMessage.default.events.latitude.required": "Rhaid i ti ddewis lleoliad o'r map",
+	"components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date": "All amser dechrau ddim bod yn y gorffennol.",
+	"components.ErrorMessage.default.events.timezone.required": "Angen Cylchfa Amser",
+	"components.ErrorMessage.reference.events.usfm.invalid": "Cyfeirnod Beibl yn annilys",
+	"components.ErrorMessage.url.events.url.required": "Mae angen URL.",
+	"components.ErrorMessage.url.events.title.required": "Angen label URL",
+	"components.EventHeader.status.published": "Cyhoeddwyd",
+	"components.EventHeader.status.draft": "Drafft",
+	"components.EventHeader.status.live": "Yn Fyw",
+	"components.EventHeader.unpublish": "Dadgyhoeddi",
+	"components.EventHeader.saving": "Cadw",
+	"components.EventHeader.saveAsDraft": "Cadw fel Drafft",
+	"components.EventHeader.myEvents": "Fy Nigwyddiadau",
+	"components.EventHeader.eventBuilder": "ADEILADYDD DIGWYDDIAD",
+	"components.EventHeader.signOut": "Arwyddo allan",
+	"components.EventHeader.createAccount": "Creu Cyfrif",
+	"components.HtmlEditor.text": "Testun",
+	"components.HtmlEditor.bold": "Trwm",
+	"components.HtmlEditor.italic": "Italig",
+	"containers.Auth.title": "Mewngofnodi i Ddigwyddiadau",
+	"containers.Auth.signIn": "Mewngofnodi",
+	"containers.Auth.subHead1": "Os wyt yn ddefnyddiwr yr ApBeibl ac mae gennyt gyfrif YoiuVersion eisoes, gelli fewngofnodi gan ddefnyddio'r un manylion.<br/><br/>Heb gyfrif YouVersion eto?<br/><a href='{url}'> Cofrestra nawr ar Bible.com </a> i ddechrau creu Digwyddiadau.",
+	"containers.Auth.email": "Ebost",
+	"containers.Auth.password": "Cyfrinair",
+	"containers.Auth.forgotPassword": "Anghofio Cyfrinair",
+	"containers.EventEdit.event": "Digwyddiad",
+	"containers.EventEditContentContainer.choose": "Dewiswch gynnwys i ddechrau arni.",
+	"containers.EventEditContentContainer.needHelp": "Angen help?",
+	"containers.EventEditContentContainer.title": "Cynnwys Digwyddiadau",
+	"containers.EventEditContentContainer.previous": "← Lleoliadau ac Amserau Blaenorol ",
+	"containers.EventEditContentContainer.next": "Nesaf: Rhagolwg →",
+	"containers.EventEditDetails.title": "Manylion Digwyddiad",
+	"containers.EventEditLocationContainer.title": "Lleoliad Digwyddiad",
+	"containers.EventEditLocationContainer.previous": "← Blaenorol: Manylion",
+	"containers.EventEditLocationContainer.next": "Next: Add Content →",
+	"containers.EventEditPreview.title": "Rhagolwg Digwyddiad ",
+	"containers.EventEditPreview.previous": "← Blaenorol: Cynnwys",
+	"containers.EventEditShare.title": "Rhannu Digwyddiad",
+	"containers.EventEditShare.subTitle": "Mae dy Ddigwyddiad wedi'i gyhoeddi nawr.",
+	"containers.EventEditShare.edit": "Golygu Digwyddiad",
+	"containers.EventEditShare.go": "Mynd i Fy Nigwyddiadau",
+	"containers.EventEditShare.share": "Rhannu dy ddigwyddiad",
+	"containers.EventEditShare.copy": "Copi",
+	"containers.EventEditShare.copied": "Cafodd y ddolen fer ei chopïo i dy glipfwrdd",
+	"containers.EventEditShare.previous": "← Blaenorol: Rhagolwg",
+	"containers.EventFeedDiscover.title": "Darganfod Digwyddiadau",
+	"containers.EventFeedDiscover.discover": "Darganfod",
+	"containers.EventFeedMine.title": "Fy Nigwyddiadau",
+	"containers.EventFeedMine.previous": "←Blaenorol",
+	"containers.EventFeedMine.next": "Nesaf→",
+	"containers.EventFeedMine.my": "Fy Nigwyddiadau",
+	"containers.EventFeedMine.new": "Creu Digwyddiad newydd",
+	"containers.EventFeedMine.subTitle": "DIGWYDDIADAU GREWYD GEN I",
+	"containers.EventFeedMine.newFirst": "Crea dy Ddigwyddiad Cyntaf",
+	"containers.EventFeedMine.learn": "Dysga sut i greu Digwyddiad da",
+	"containers.EventFeedSaved.title": "Cadw Digwyddiad",
+	"containers.EventView.title": "Digwyddiad YouVersion",
+	"containers.SelectLanguage.choose": "Choose Your Language",
+	"features.Auth.errors.sessionExpired": "Daeth dy sesiwn i ben, Mewngofnoda eto",
+	"features.Auth.errors.invalidEmail": "Ebost neu gyfrinair annilys.",
+	"features.EventEdit.errors.locationMustHaveTime": "Rhaid i bob lleoliad gael o leiaf un amser.",
+	"features.EventEdit.errors.locationRequired": "Fedri di ddim cyhoeddi Digwyddiad heb leoliadau.",
+	"features.EventEdit.errors.contentRequired": "Fedri di ddim cyhoeddi Digwyddiad heb gynnwys.",
+	"features.EventEdit.errors.planSearchFailed": "Wnaeth y chwilio ddim cyfateb i unrhyw ddogfennau",
+	"features.EventEdit.errors.noMatchingPlans": "Dim cynlluniau yn tebygu",
+	"features.EventEdit.components.EventEditNav.details": "Manylion",
+	"features.EventEdit.components.EventEditNav.locations": "Lleoliadau ac Amserau",
+	"features.EventEdit.components.EventEditNav.content": "Cynnwys",
+	"features.EventEdit.components.EventEditNav.preview": "Rhagolwg a Chyhoeddi",
+	"features.EventEdit.components.EventEditNav.share": "Rhannwch",
+	"features.EventEdit.features.content.components.ContentFeed.reorder": "Ad-drefnu cynnwys",
+	"features.EventEdit.features.content.components.ContentFeed.doneReordering": "Cwblhawyd Ad-drefnu",
+	"features.EventEdit.features.content.components.ContentHeader.text": "Testun",
+	"features.EventEdit.features.content.components.ContentHeader.reference": "Cyfeirnod Beibl",
+	"features.EventEdit.features.content.components.ContentHeader.plan": "Cynllun",
+	"features.EventEdit.features.content.components.ContentHeader.image": "Delwedd",
+	"features.EventEdit.features.content.components.ContentHeader.link": "Dolen Allanol",
+	"features.EventEdit.features.content.components.ContentHeader.giving": "Dolen Rhoi",
+	"features.EventEdit.features.content.components.ContentHeader.announcement": "Cyhoeddiad",
+	"features.EventEdit.features.content.components.ContentHelpModal.types": "Mathau o Gynnwys",
+	"features.EventEdit.features.content.components.ContentHelpModal.learn": "Dysga sut i wneud<br> yn Ddigwyddiad da",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.title": "Modiwl Testun",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "Amlinellau, prif bwyntiau, cwestiynau trafod...Rhanna unrhyw gynnwys testunol cyffredinol fydd yn helpu dy fynychwyr i ddilyn dy neges fel mae'n digwydd. Gall dy destunau modiwl fod yn unrhyw hyd a chynnwys fformat 'rich text'.",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "Modiwl Cyfeirnod Beibl",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "Dewisa unrhyw adnod neu ran o'r Beibl sydd wedi lincio i unrhyw un o'r 1,200 o fersiynau. mewn 900+ o ieithoedd. Gall pobl sy'n edrych ar dy Ddigwyddiad ddewis dy gyfeirnod a'i weld yn eu darllenydd ApBeibl eu hunain, ble mae modd iddynt osod nod Llyfr, ei aroleuo, a mwy.",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "Cynllun Modiwl ",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.desc": "Dos at Gynlluniau Beibl a Defosiynau sy'n ymwneud â dy bwyntiau dysgu, gan helpu'r rhai hynny sy'n dy ddilyn i gysylltu â Gair Duw drwy'r wythnos.",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.title": "Modiwl Llun",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.desc": "Gwna dy Ddigwyddiad yn fyw drwy ddefnyddio unrhyw fath o graffeg, gelfyddyd, lluniau gydag adnodau a.y.b. Bydd Mynychwyr yn gallu rhannu lluniau dy Ddigwyddiad yn eu cyfrwng cyndeithasol a'i wneud yn feiral.",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "Modiwl Dolen allanol",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "Creu botwm yn dy Ddigwyddiad fydd yn ddolen ag unrhyw wefan allanol. Rho dy gynulleidfa gam i ffwrdd o roi ar-lein, cofrestru fel gwirfoddolwr, neu dudalennau cartref eglwysi.",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.title": "Modiwl Cyhoeddiad",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Newyddion yr Eglwys, digwyddiadau calendr, rhaglenni, dosbarthiadau, cyfleodd gwirfoddoli a chenhadu,..Modiwlau cyhoeddi ydy'r storfa orau ar gyfer rhannu gwybodaeth amserol a phwysig, ond heb dynnu sylw oddi wrth brif neges dy ddigwyddiad. Mae pob modiwl cyhoeddiad yn ymddangos ar ei dudalen ei hun yn dy Ddigwyddiad, ac hyd yn oed yn gallu cynnwys ffurf testun arbennig (fel testun trwm neu italig).",
+	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "Mewnosod y modiwl nesaf yma",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "Teitl",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "Sgwenna rhywbeth yma",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "Yn dy Ddigwyddiad, dim ond dy Deitl (uchod) fydd i'w weld ",
+	"features.EventEdit.features.content.components.ContentTypeContainer.dirty": "Bydd cynnwys yn cael ei arbed eiliadau ar ôl i ti stopio teipio.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.failed": "Methu arbed",
+	"features.EventEdit.features.content.components.ContentTypeContainer.tryAgain": "Tria eto",
+	"features.EventEdit.features.content.components.ContentTypeContainer.lastSaved": "Arbedwyd ddiwethaf {when}",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongSize": "Rhaid i faint y llun fod {requiredWidth}{requiredHeight} Mae dy lun di yn {yourWidth}x{yourHeight}",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongType": "Math o Ffeil Annilys Rhaid bod yn JPEG",
+	"features.EventEdit.features.content.components.ContentTypeImage.caption": "Ychwanega bennawd",
+	"features.EventEdit.features.content.components.ContentTypeImage.prompt": "Llusga a Gollwng llun",
+	"features.EventEdit.features.content.components.ContentTypeImage.onlyJpg": "[JPG yn unig]",
+	"features.EventEdit.features.content.components.ContentTypeImage.sizePrompt": "{requiredWidth}lled px x{requiredHeight}hyd px",
+	"features.EventEdit.features.content.components.ContentTypeImage.select": "Dewis Llun",
+	"features.EventEdit.features.content.components.ContentTypeLink.kindrid": "Os wyt yn chwilio am blatfform rhoi syml, cyfleus, rho dro ar Kindrid. <a href='{url}'></a>",
+	"features.EventEdit.features.content.components.ContentTypeLink.label": "Dolennu Label",
+	"features.EventEdit.features.content.components.ContentTypeLink.prompt": "Sgwenna rhywbeth yma",
+	"features.EventEdit.features.content.components.ContentTypeLink.url": "URL",
+	"features.EventEdit.features.content.components.ContentTypePlan.replace": "Ailosod",
+	"features.EventEdit.features.content.components.ContentTypePlan.search": "Chwilia am Gynllun Darllen",
+	"features.EventEdit.features.content.components.ContentTypeReference.language": "Iaith",
+	"features.EventEdit.features.content.components.ContentTypeReference.version": "Fersiwn",
+	"features.EventEdit.features.content.components.ContentTypeReference.book": "Llyfr",
+	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "Pennod: Adnod",
+	"features.EventEdit.features.content.components.ContentTypeText.prompt": "Sgwenna rhywbeth yma...",
+	"features.EventEdit.features.content.components.LiveWarningModal.title": "Ni ellir dileu tra bo'r Digwyddiad yn Fyw",
+	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Unwaith mae Digwyddiad yn fyw, ni ellir dileu testun, cyfeirnodau Beiblaidd, na modiwlau llun ohono gan y gall defnyddwyr fod eisioes wedi ychwanegu nodiadau preifat. Fodd bynnag, mae modd golygu'r modiwlau hyn.",
+	"features.EventEdit.features.content.components.LiveWarningModal.ok": "OK",
+	"features.EventEdit.features.details.errors.generic": "Cododd problem pan yn cyhoeddi dy Ddigwyddiad.",
+	"features.EventEdit.features.details.errors.invalidTimes": "Ni all un gwasanaeth fod yn hwy na 12 awr ac ni all y gwahaniaeth rhwng amser cychwyn ac amser gorffen Digwyddiad fod yn fwy nac 8 diwrnod. Os gweli'n dda, newidia amseroedd dy ddigwyddiad a cheisio eto.",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize": "Rhaid i faint y llun fod {requiredWidth}{requiredHeight} Mae dy lun di yn {yourWidth}x{yourHeight}",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType": "Ffeil Annilys Rhaid bod yn JPEG",
+	"features.EventEdit.features.details.components.DetailsEdit.changeImage": "Newid Llun",
+	"features.EventEdit.features.details.components.DetailsEdit.removeImage": "Dileu Llun",
+	"features.EventEdit.features.details.components.DetailsEdit.prompt": "Llusga a Gollwng lun",
+	"features.EventEdit.features.details.components.DetailsEdit.onlyJpg": "[JPG yn unig]",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt": "{requiredWidth} lled px x {requiredHeight} uchder px",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "Dylai maint dy lun fod yn {requiredWidth} x {requiredHeight}o bicselau.",
+	"features.EventEdit.features.details.components.DetailsEdit.eventName": "Enw Digwyddiad",
+	"features.EventEdit.features.details.components.DetailsEdit.org": "Enw Eglwys neu Fudiad",
+	"features.EventEdit.features.details.components.DetailsEdit.desc": "Disgrifiad o'r Digwyddiad",
+	"features.EventEdit.features.details.components.DetailsEdit.next": "Nesaf: Ychwanegu Lleoliad ac Amserau",
+	"features.EventEdit.features.location.components.Location.oneRequired": "Ychwanega o leiaf un tro.",
+	"features.EventEdit.features.location.components.Location.use": "DENYDDIA'R LLEOLIAD HWN",
+	"features.EventEdit.features.location.components.Location.edit": "Golygu Lleoliad",
+	"features.EventEdit.features.location.components.Location.delete": "Dileu Lleoliad",
+	"features.EventEdit.features.location.components.LocationAddButtons.addPhysical": "Ychwanegu Lleoliad Penodol",
+	"features.EventEdit.features.location.components.LocationAddButtons.promptPhysical": "Gelli ychwanegu nifer o leoliadau",
+	"features.EventEdit.features.location.components.LocationAddButtons.addVirtual": "Ychwanegu Rhith Leoliad",
+	"features.EventEdit.features.location.components.LocationAddButtons.churchOnline": "Oeddet ti'n gwybod? Gelli lawnsio cenhadaeth ar-lein am ddim drwy ddefnyddio'r  <a className='button-caption' href='{url}'>Platfform Eglwys Ar-lein</a>",
+	"features.EventEdit.features.location.components.LocationAddTime.minutes": "MUNUD",
+	"features.EventEdit.features.location.components.LocationAddTime.hours": "AWR",
+	"features.EventEdit.features.location.components.LocationAddTime.days": "DIWRNOD",
+	"features.EventEdit.features.location.components.LocationDeleteModal.sure": "Wyt ti'n siŵr?",
+	"features.EventEdit.features.location.components.LocationDeleteModal.selected": "Rwyt wedi dewis dileu y lleoliad canlynol :",
+	"features.EventEdit.features.location.components.LocationDeleteModal.warn": "Bydd hyn yn dileu y lleolaid o bob digwyddiad blaenorol a phresennol. Fyddi di'n methu defnyddio'r lleoliad hwn ar gyfer digwyddiadau yn y dyfodol.",
+	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Canslo",
+	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Dileu",
+	"features.EventEdit.features.location.components.LocationEdit.prompt": "Mewnosod cyfeiriad y Lleoliad ...",
+	"features.EventEdit.features.location.components.LocationEdit.country": "Gwlad",
+	"features.EventEdit.features.location.components.LocationEdit.timezone": "Parth Amser",
+	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Campws Dwyreiniol First Baptist",
+	"features.EventEdit.features.location.components.LocationEdit.name": "Enw Lleoliad",
+	"features.EventEdit.features.location.components.LocationEdit.nameOptional": "Dewisol: Defnyddiol os yn ychwanegu nifer o leoliadau",
+	"features.EventEdit.features.location.components.LocationEdit.addAnother": "Ychwanegu amser arall",
+	"features.EventEdit.features.location.components.LocationEdit.cancel": "Canslo",
+	"features.EventEdit.features.location.components.LocationEdit.save": "Arbed y Lleoliad",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shift": "Symud dyddiadau dechrau.",
+	"features.EventEdit.features.location.components.LocationTimeShifter.forward": "Ymlaen",
+	"features.EventEdit.features.location.components.LocationTimeShifter.backward": "Nôl",
+	"features.EventEdit.features.location.components.LocationTimeShifter.by": "erbyn",
+	"features.EventEdit.features.location.components.LocationTimeShifter.week": "wythnos",
+	"features.EventEdit.features.location.components.LocationTimeShifter.weeks": "wythnosau",
+	"features.EventEdit.features.location.components.LocationTimeShifter.month": "Mis",
+	"features.EventEdit.features.location.components.LocationTimeShifter.months": "misoedd",
+	"features.EventEdit.features.location.components.LocationTimeShifter.day": "Diwrnod",
+	"features.EventEdit.features.location.components.LocationTimeShifter.days": "DIWRNOD",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hour": "awr",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hours": "AWR",
+	"features.EventEdit.features.location.components.LocationTimeShifter.update": "Diweddaru",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shiftButton": "Symud dyddiadau a digwyddiadau ar unwaith",
+	"features.EventEdit.features.location.components.UnpublishModal.cancel": "Canslo",
+	"features.EventEdit.features.location.components.UnpublishModal.title": "Dadgyhoedda i wneud newidiadau",
+	"features.EventEdit.features.location.components.UnpublishModal.desc": "I adio, golygu neu ddileu Lleoliadau ac Amserau dadgyhoedda'r digwyddiad dros dro. Yn ystod yr amser hwn ni fydd dy ddigwyddiad yn ymddangos ar ganlyniadau chwilio. Paid anghofio ail gyhoeddi dy ddigwyddiad.. ",
+	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Dadgyhoeddi",
+	"features.EventEdit.features.preview.notes.prompt": "Ychwanega dy nodiadau preifat...",
+	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Mewngofnoda i ychwanegu dy nodiadau preifat</span></a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.share": "Rhannu Digwyddiad",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Cyhoeddi",
+	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Dadgyhoeddi",
+	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Lleoliadau:",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.title": "Darganfyddadwy",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.desc": "Bydd modd gweld y digwyddiad yng nghanlyniadau chwiliad lleoliad Digwyddiadau Ap Beibl am bum diwrnod cyn dy ddyddiad dechrau cynharaf.",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.title": "Statws:",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.desc": "Bydd y bathodyn BYW coch i'w weld pan fydd dy amer cychwyn cynharaf yn dechrau. ",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "Dileu:",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Fydd dim modd gweld dy Ddigwyddiad ar ôl yr amser terfynol. Bydd rheini gliciodd 'Arbed Digwyddiad' yn parhau i allu gweld fersiwn archif ohono. Bydd modd gweld y Digwyddiad hwn hefyd drwy linciau uniongyrchol mewnol. ",
+	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "Estyn",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "Darllen",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "Gwybodaeth Cynllun",
+	"features.EventFeedMine.components.EventListItem.duplicate": "Dyblygu",
+	"features.EventFeedMine.components.EventListItem.share": "Rhannwch",
+	"features.EventFeedMine.components.EventListItem.delete": "Dileu",
+	"features.EventFeedMine.components.EventListItem.draft": "Drafft",
+	"features.EventFeedMine.components.EventListItem.edit": "Golygu",
+	"features.EventFeedMine.components.EventListItem.view": "Edrych",
+	"features.EventFeedMine.components.EventListItem.fail": "Methu dileu Digwyddiad",
+	"features.EventView.components.EventViewContent.copy": "Copi",
+	"features.EventView.components.EventViewContent.share": "Rhannwch",
+	"features.EventView.components.EventViewContent.read": "Darllen",
+	"features.EventView.components.EventViewContent.readPlan": "Darllen y Cynllun",
+	"features.EventView.components.EventViewContentAnnouncement.expand": "Estyn",
+	"features.EventView.components.EventViewContentAnnouncement.collapse": "Crynhoi",
+	"features.EventView.components.EventViewDetails.expand": "Estyn",
+	"features.EventView.components.EventViewDetails.collapse": "Crynhoi",
+	"features.EventView.components.EventViewDetails.save": "Cadw Digwyddiad",
+	"features.EventView.components.EventViewDetails.signIn": "Mewngofnoda i Arbed y Digwyddiad",
+	"features.EventView.components.EventViewDetails.saved": "Arbedwyd y Digwyddiad"
 }

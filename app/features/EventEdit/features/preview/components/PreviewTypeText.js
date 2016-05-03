@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
+import { FormattedMessage } from 'react-intl'
 
 class PreviewTypeText extends Component {
 
@@ -11,7 +12,7 @@ class PreviewTypeText extends Component {
 			<div className='type text'>
 				<div className='caption' dangerouslySetInnerHTML={{__html: contentData.body}} />
 				<div className='meta'>
-					<div className='notes'>Add your notes…</div>
+					<div className='notes'><FormattedMessage id="features.EventEdit.features.preview.notes.prompt" /></div>
 					<div className='actions'>&bull; &bull; &bull;</div>
 				</div>
 			</div>

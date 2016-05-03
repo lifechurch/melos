@@ -12,6 +12,8 @@ import mergeObjects from '../../../../../lib/mergeObjects'
 import applyLifecycleRules from '../../../validators/applyLifecycleRules'
 import moment from 'moment'
 
+//moment.locale('x-psuedo')
+
 function selectLocation(locations, id, selected) {
 	if (['string', 'number'].indexOf(typeof id) === -1) {
 		throw new Error('Invalid location id, cannot remove:' + id.toString())
@@ -30,11 +32,11 @@ export default function event(state = {}, action) {
 
 		case type('publishEventFailure'):
 		case type('unpublishEventFailure'):
-			var publishError = 'There was a problem while publishing your Event.'
+			var publishError = "features.EventEdit.features.details.errors.generic"
 			for (const e of action.api_errors) {
 				switch(e.key) {
 					case 'events.all_times.invalid':
-						publishError += ' A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again.'
+						publishError = "features.EventEdit.features.details.errors.invalidTimes"
 						break;
 				}
 			}
@@ -292,9 +294,38 @@ export default function event(state = {}, action) {
 				}
 			})
 
+		case contentType('versionsRequest'):
+			var newContentItem = Object.assign({}, state.item.content[action.params.index])
+			newContentItem.isFetching = true
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContentItem,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
+
+		case contentType('versionsSuccess'):
+		case contentType('versionsFailure'):
+			var newContentItem = Object.assign({}, state.item.content[action.params.index])
+			newContentItem.isFetching = false
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContentItem,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
+
 		case contentType('versionRequest'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
-			newContent.isDirty = true
+			//newContent.isDirty = true
 			newContent.isFetching = true
 			return Object.assign({}, state, {
 				item: {
@@ -310,6 +341,8 @@ export default function event(state = {}, action) {
 		case contentType('versionSuccess'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
 			newContent.data.version_id = action.params.id
+			newContent.data.language_tag = action.response.language.iso_639_3
+
 			newContent.isFetching = false
 			return Object.assign({}, state, {
 				item: {
@@ -515,6 +548,20 @@ export default function event(state = {}, action) {
 		case viewType('savedEventsSuccess'):
 			var savedEvents = (typeof action.response != 'undefined') ? action.response.data : []
 			return Object.assign({}, state, {isSaved: (savedEvents.indexOf(action.id) != -1)})
+
+		case contentType('setLang'):
+			var newContent = Object.assign({}, state.item.content[action.params.index])
+			newContent.data = Object.assign({}, {...newContent.data}, { language_tag: action.params.language_tag })
+			return Object.assign({}, state, {
+				item: {
+					...state.item,
+					content: [
+						...state.item.content.slice(0, action.params.index),
+						newContent,
+						...state.item.content.slice(action.params.index + 1)
+					]
+				}
+			})
 
 		default:
 			return state

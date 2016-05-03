@@ -15,7 +15,7 @@ export default function login(state = {}, action) {
 				...defaultState.auth,
 				errors: {
 					...state.errors,
-					api: "Your session expired. Please login again."
+					api: "features.Auth.errors.sessionExpired"
 				},
 				user: state.user
 			})
@@ -48,7 +48,7 @@ export default function login(state = {}, action) {
 				isWorking: false,
 				errors: {
 					...state.errors,
-					api: 'Invalid email or password.'
+					api: "features.Auth.errors.invalidEmail"
 				}
 			})
 

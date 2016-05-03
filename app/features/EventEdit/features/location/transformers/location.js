@@ -1,9 +1,9 @@
 import moment from 'moment'
-
+//moment.locale('x-psuedo')
 export function toApiFormat(loc) {
-	
+
 	var times = loc.times.map((t) => {
-		return { 
+		return {
 			start_dt: t.start_dt.format('YYYY-MM-DDTHH:mm:ssZ'),
 			end_dt: t.end_dt.format('YYYY-MM-DDTHH:mm:ssZ')
 		}
@@ -24,7 +24,7 @@ export function toApiFormat(loc) {
 			google_place_id: loc.google_place_id,
 			region: loc.region,
 			postal_code: loc.postal_code,
-			times: times 
+			times: times
 		}
 	} else {
 		return {
@@ -35,9 +35,9 @@ export function toApiFormat(loc) {
 			timezone: loc.timezone,
 			region: loc.region,
 			postal_code: loc.postal_code,
-			times: times 
-		}		
-	}	
+			times: times
+		}
+	}
 }
 
 export function fromApiFormat(loc) {

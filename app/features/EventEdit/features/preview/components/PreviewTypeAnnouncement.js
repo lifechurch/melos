@@ -5,8 +5,9 @@ import Column from '../../../../../../app/components/Column'
 class PreviewTypeAnnouncement extends Component {
 
 	toggle(e) {
+		const { intl } = this.props
 		e.target.previousSibling.classList.toggle('show')
-		e.target.text = e.target.text=='expand' ? 'collapse' : 'expand'
+		e.target.text = e.target.text== intl.formatMessage({id:"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand"}) ? intl.formatMessage({id:"features.EventView.components.EventViewContentAnnouncement.collapse"}) : intl.formatMessage({id:"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand"})
 	}
 
 	render() {

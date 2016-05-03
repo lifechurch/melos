@@ -144,7 +144,7 @@ function checkLocationTimes(event, rules) {
 			const location = locations[key]
 			if (location.isSelected === true && (!Array.isArray(location.times) || location.times.length === 0)) {
 				rules.preview.canPublish = false
-				event.publishMessage = 'All locations must have at least one time.'
+				event.publishMessage = "features.EventEdit.errors.locationMustHaveTime"
 				break
 			}
 		}
@@ -154,7 +154,7 @@ function checkLocationTimes(event, rules) {
 		}
 	} else {
 		rules.preview.canPublish = false
-		event.publishMessage = 'You cannot publish an Event with no locations.'
+		event.publishMessage = "features.EventEdit.errors.locationRequired"
 	}
 }
 
@@ -162,7 +162,7 @@ function checkContent(event, rules) {
 	const { content } = event.item
 	if (!Array.isArray(content) || content.length === 0) {
 		rules.preview.canPublish = false
-		event.publishMessage = 'You cannot publish an Event with no content.'
+		event.publishMessage = "features.EventEdit.errors.contentRequired"
 	} else if (rules.preview.canPublish) {
 		event.publishMessage = null
 	}

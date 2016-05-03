@@ -1,408 +1,219 @@
 {
-	"components": {
-		"ErrorMessage": {
-			"genericError": "An error occurred",
-			"announcement": {
-				"events": {
-					"title": {
-						"required": "Announcement title is required."
-					}
-				}
-			},
-			"default": {
-				"bible": {
-					"reference": {
-						"not_found": "Bible reference not valid."
-					}
-				},
-				"events": {
-					"google_place_id": {
-						"required": "You must choose a location from the map."
-					},
-					"latitude": {
-						"required": "You must choose a location from the map."
-					},
-					"times": {
-						"start_dt": {
-							"must_be_a_future_date": "Start Time cannot be in the past."
-						}
-					},
-					"timezone": {
-						"required": "Timezone is required."
-					}
-				}
-			},
-			"reference": {
-				"events": {
-					"usfm": {
-						"invalid": "Bible reference not valid."
-					}
-				}
-			},
-			"url": {
-				"events": {
-					"url": {
-						"required": "URL is required."
-					},
-					"title": {
-						"required": "URL Label is required."
-					}
-				}
-			}
-		},
-		"EventHeader": {
-			"status": {
-				"published": "Published",
-				"draft": "Draft",
-				"live": "Live"
-			},
-			"unpublish": "Unpublish",
-			"saving": "Saving...",
-			"saveAsDraft": "Save as Draft",
-			"myEvents": "My Events",
-			"eventBuilder": "EVENT BUILDER",
-			"signOut": "Sign Out",
-			"createAccount": "Create Account"
-		},
-		"HtmlEditor": {
-			"text": "Text",
-			"bold": "Bold",
-			"italic": "Italic"
-		}
-	},
-	"containers": {
-		"Auth": {
-			"title": "Events Sign In",
-			"signIn": "Sign In",
-			"subHead1": "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'> Sign up now at Bible.com</a> to start creating Events.",
-			"email": "Email",
-			"password": "Password",
-			"forgotPassword": "Forgot Password"
-		},
-		"EventEdit": {
-			"event": "Event"
-		},
-		"EventEditContentContainer": {
-			"choose": "Choose some content to get started.",
-			"needHelp": "Need help?",
-			"title": "Event Content",
-			"previous": "← Previous: Locations & Times",
-			"next": "Next: Preview →"
-		},
-		"EventEditDetails": {
-			"title": "Event Details"
-		},
-		"EventEditLocationContainer": {
-			"title": "Event Location",
-			"previous": "← Previous: Details",
-			"next": "Next: Add Content →"
-		},
-		"EventEditPreview": {
-			"title": "Event Preview",
-			"previous": "← Previous: Content"
-		},
-		"EventEditShare": {
-			"title": "Event Share",
-			"subTitle": "Your Event is Now Published:",
-			"edit": "Edit Event",
-			"go": "Go to My Events",
-			"share": "Share your event:",
-			"copy": "Copy",
-			"copied": "The shortlink was copied to your clipboard",
-			"previous": "← Previous: Preview"
-		},
-		"EventFeedDiscover": {
-			"title": "Discover Events",
-			"discover": "Discover"
-		},
-		"EventFeedMine": {
-			"title": "My Events",
-			"previous": "← Previous",
-			"next": "Next →",
-			"my": "My Events",
-			"new": "Create New Event",
-			"subTitle": "EVENTS CREATED BY ME",
-			"newFirst": "Create Your First Event",
-			"learn": "Learn how to make a great Event"
-		},
-		"EventFeedSaved": {
-			"title": "Saved Events"
-		},
-		"EventView": {
-			"title": "YouVersion Event"
-		}
-	},
-	"features": {
-		"Auth": {
-			"errors": {
-				"sessionExpired": "Your session expired. Please login again.",
-				"invalidEmail": "Invalid email or password."
-			}
-		},
-		"EventEdit": {
-			"errors": {
-				"locationMustHaveTime": "All locations must have at least one time.",
-				"locationRequired": "You cannot publish an Event with no locations.",
-				"contentRequired": "You cannot publish an Event with no content.",
-				"planSearchFailed": "Search did not match any documents",
-				"noMatchingPlans": "No matching Plans"
-			},
-			"components": {
-				"EventEditNav": {
-					"details": "Details",
-					"locations": "Locations & Times",
-					"content": "Content",
-					"preview": "Preview & Publish",
-					"share": "Share"
-				}
-			},
-			"features": {
-				"content": {
-					"components": {
-						"ContentFeed": {
-							"reorder": "Reorder Content",
-							"doneReordering": "Done Reordering"
-						},
-						"ContentHeader": {
-							"text": "Text",
-							"reference": "Bible Reference",
-							"plan": "Plan",
-							"image": "Image",
-							"link": "External Link",
-							"giving": "Giving Link",
-							"announcement": "Announcement"
-						},
-						"ContentHelpModal": {
-							"types": "Content Types",
-							"learn": "Learn how to make <br>a great Event",
-							"text": {
-								"title": "Text Module",
-								"desc": "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
-							},
-							"reference": {
-								"title": "Bible Reference Module",
-								"desc": "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
-							},
-							"plan": {
-								"title": "Plan Module",
-								"desc": "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
-							},
-							"image": {
-								"title": "Image Module",
-								"desc": "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
-							},
-							"link": {
-								"title": "External Link Module",
-								"desc": "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
-							},
-							"announcement": {
-								"title": "Announcement Module",
-								"desc": "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
-							}
-						},
-						"ContentInsertionPoint": {
-							"title": "Insert next module here"
-						},
-						"ContentTypeAnnouncement": {
-							"title": "Title",
-							"prompt": "Write something here...",
-							"caption": "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
-						},
-						"ContentTypeContainer": {
-							"dirty": "Content will automatically save a few seconds after you stop typing.",
-							"failed": "Unable to save.",
-							"tryAgain": "Try again.",
-							"lastSaved": "Last saved %{when}"
-						},
-						"ContentTypeImage": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"caption": "Add caption",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"select": "Select Image"
-						},
-						"ContentTypeLink": {
-							"kindrid": "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>.",
-							"label": "Link Label",
-							"prompt": "Write something here...",
-							"url": "URL"
-						},
-						"ContentTypePlan": {
-							"replace": "Replace",
-							"search": "Search for a Reading Plan"
-						},
-						"ContentTypeReference": {
-							"version": "Version",
-							"book": "Book",
-							"chapterVerse": "Chapter:Verse"
-						},
-						"ContentTypeText": {
-							"prompt": "Write something here..."
-						},
-						"LiveWarningModal": {
-							"title": "Cannot Delete While Event is Live",
-							"desc": "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules.",
-							"ok": "OK"
-						}
-					}
-				},
-				"details": {
-					"errors": {
-						"generic": "There was a problem while publishing your Event.",
-						"invalidTimes": "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
-					},
-					"components": {
-						"DetailsEdit": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"changeImage": "Change Image",
-							"removeImage": "Remove Image",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"sizePrompt2": "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels.",
-							"eventName": "Event Name",
-							"org": "Church Name or Organization",
-							"desc": "Event Description",
-							"next": "Next: Add Location & Times →"
-						}
-					}
-				},
-				"location": {
-					"components": {
-						"Location": {
-							"oneRequired": "Add at least one time.",
-							"use": "USE THIS LOCATION",
-							"edit": "Edit Location",
-							"delete": "Delete Location"
-						},
-						"LocationAddButtons": {
-							"addPhysical": "Add a Physical Location",
-							"promptPhysical": "You can add multiple locations.",
-							"addVirtual": "Add Virtual Location",
-							"churchOnline": "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
-						},
-						"LocationAddTime": {
-							"minutes": "minutes",
-							"hours": "hours",
-							"days": "days"
-						},
-						"LocationDeleteModal": {
-							"sure": "Are you sure?",
-							"selected": "You have selected the following location to be deleted:",
-							"warn": "This will remove the location from all past and present events. You will not be able to re-use this location for future events.",
-							"cancel": "Cancel",
-							"delete": "Delete"
-						},
-						"LocationEdit": {
-							"prompt": "Enter the Location address...",
-							"country": "Country",
-							"timezone": "Timezone",
-							"namePrompt": "First Baptist East Campus",
-							"name": "Location Name",
-							"nameOptional": "Optional: Useful if adding multiple locations",
-							"addAnother": "Add another time",
-							"cancel": "Cancel",
-							"save": "Save this Location"
-						},
-						"LocationTimeShifter": {
-							"shift": "Shift start dates",
-							"forward": "forward",
-							"backward": "backward",
-							"by": "by",
-							"week": "week",
-							"weeks": "weeks",
-							"month": "month",
-							"months": "months",
-							"day": "day",
-							"days": "days",
-							"hour": "hour",
-							"hours": "hours",
-							"update": "Update",
-							"shiftButton": "Shift all dates and times at once"
-						},
-						"UnpublishModal": {
-							"cancel": "Cancel",
-							"title": "Unpublish to Make Changes",
-							"desc": "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again.",
-							"unpublish": "Unpublish"
-						}
-					}
-				},
-				"preview": {
-					"notes": {
-						"prompt": "Add your private notes...",
-						"noAuthPrompt": "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
-					},
-					"components": {
-						"PreviewFeed": {
-							"share": "Share Event",
-							"locations": "Locations:",
-							"publish": "Publish",
-							"unpublish": "Unpublish",
-							"discoverable": {
-								"title": "Discoverable:",
-								"desc": "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
-							},
-							"status": {
-								"title": "Status:",
-								"desc": "The red LIVE badge will display when your earliest start time begins."
-							},
-							"remove": {
-								"title": "Remove:",
-								"desc": "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
-							}
-						},
-						"PreviewTypeAnnouncement": {
-							"expand": "Expand"
-						},
-						"PreviewTypePlan": {
-							"read": "Read",
-							"info": "Plan Info"
-						}
-					}
-				}
-			}
-		},
-		"EventFeedMine": {
-			"components": {
-				"EventListItem": {
-					"duplicate": "Duplicate",
-					"share": "Share",
-					"delete": "Delete",
-					"draft": "DRAFT",
-					"edit": "Edit",
-					"view": "View",
-					"fail": "Unable to delete Event"
-				}
-			}
-		},
-		"EventView": {
-			"components": {
-				"EventViewContent": {
-					"copy": "Copy",
-					"share": "Share",
-					"read": "Read",
-					"readPlan": "Read Plan"
-				},
-				"EventViewContentAnnouncement": {
-					"expand": "Expand",
-					"collapse": "Collapse"
-				},
-				"EventViewDetails": {
-					"expand": "Expand",
-					"collapse": "Collapse",
-					"save": "Save Event",
-					"signIn": "Sign In to Save Event",
-					"saved": "Event Saved"
-				}
-			}
-		}
-	}
+	"components.ErrorMessage.genericError": "發生錯誤",
+	"components.ErrorMessage.announcement.events.title.required": "Announcement title is required.",
+	"components.ErrorMessage.default.bible.reference.not_found": "參考經文不存在。",
+	"components.ErrorMessage.default.events.google_place_id.required": "你必須在地圖中選擇一個地點。",
+	"components.ErrorMessage.default.events.latitude.required": "你必需在地圖上選擇一個地點。",
+	"components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date": "Start Time cannot be in the past.",
+	"components.ErrorMessage.default.events.timezone.required": "請填入時區。",
+	"components.ErrorMessage.reference.events.usfm.invalid": "Bible reference not valid.",
+	"components.ErrorMessage.url.events.url.required": "必需填寫網頁地址（URL）",
+	"components.ErrorMessage.url.events.title.required": "URL Label is required.",
+	"components.EventHeader.status.published": "發佈",
+	"components.EventHeader.status.draft": "草稿",
+	"components.EventHeader.status.live": "現場",
+	"components.EventHeader.unpublish": "取消發佈",
+	"components.EventHeader.saving": "正在儲存...",
+	"components.EventHeader.saveAsDraft": "作為草稿儲存",
+	"components.EventHeader.myEvents": "我的互動",
+	"components.EventHeader.eventBuilder": "互動活動編輯器",
+	"components.EventHeader.signOut": "登出",
+	"components.EventHeader.createAccount": "建立帳戶",
+	"components.HtmlEditor.text": "文本",
+	"components.HtmlEditor.bold": "粗體",
+	"components.HtmlEditor.italic": "斜體",
+	"containers.Auth.title": "互動活動登入",
+	"containers.Auth.signIn": "登入",
+	"containers.Auth.subHead1": "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='{url}'>Sign up now at Bible.com</a> to start creating Events.",
+	"containers.Auth.email": "電子郵件",
+	"containers.Auth.password": "密碼",
+	"containers.Auth.forgotPassword": "忘記密碼",
+	"containers.EventEdit.event": "互動",
+	"containers.EventEditContentContainer.choose": "選擇內容，開始創建。",
+	"containers.EventEditContentContainer.needHelp": "需要協助嗎？",
+	"containers.EventEditContentContainer.title": "互動活動內容",
+	"containers.EventEditContentContainer.previous": "← 上一頁：地點與時間",
+	"containers.EventEditContentContainer.next": "下一頁：預覽 →",
+	"containers.EventEditDetails.title": "互動活動細節",
+	"containers.EventEditLocationContainer.title": "互動地點 ",
+	"containers.EventEditLocationContainer.previous": "← 上一頁：細節",
+	"containers.EventEditLocationContainer.next": "下一頁：加入內容 →",
+	"containers.EventEditPreview.title": "互動預覽",
+	"containers.EventEditPreview.previous": "← 上一頁：內容",
+	"containers.EventEditShare.title": "分享互動",
+	"containers.EventEditShare.subTitle": "你的互動活動現在已經發佈：",
+	"containers.EventEditShare.edit": "修改互動",
+	"containers.EventEditShare.go": "Go to My Events",
+	"containers.EventEditShare.share": "分享你的互動:",
+	"containers.EventEditShare.copy": "複製",
+	"containers.EventEditShare.copied": "此短連接已複製到你的剪貼簿",
+	"containers.EventEditShare.previous": "←上一頁﹕預覽",
+	"containers.EventFeedDiscover.title": "發掘互動",
+	"containers.EventFeedDiscover.discover": "發掘",
+	"containers.EventFeedMine.title": "我的互動",
+	"containers.EventFeedMine.previous": "← 上一頁",
+	"containers.EventFeedMine.next": "下一頁 →",
+	"containers.EventFeedMine.my": "我的互動",
+	"containers.EventFeedMine.new": "建立新的互動",
+	"containers.EventFeedMine.subTitle": "由我創建的互動",
+	"containers.EventFeedMine.newFirst": "創造你的第一個互動活動",
+	"containers.EventFeedMine.learn": "學習如何建立一個絕佳的互動活動",
+	"containers.EventFeedSaved.title": "已儲存的互動",
+	"containers.EventView.title": "YouVersion Event",
+	"containers.SelectLanguage.choose": "選擇你的語言",
+	"features.Auth.errors.sessionExpired": "你的登入連線已中斷。請重新登入。",
+	"features.Auth.errors.invalidEmail": "不正確的電郵地址或密碼。",
+	"features.EventEdit.errors.locationMustHaveTime": "所有地點必須至少設定一個時間。",
+	"features.EventEdit.errors.locationRequired": "你不能發佈不含地點的互動。",
+	"features.EventEdit.errors.contentRequired": "你不能���佈一個沒有內容的互動活動。",
+	"features.EventEdit.errors.planSearchFailed": "搜尋不到任何相關文檔",
+	"features.EventEdit.errors.noMatchingPlans": "沒有相關的計劃",
+	"features.EventEdit.components.EventEditNav.details": "詳情",
+	"features.EventEdit.components.EventEditNav.locations": "地點與時間",
+	"features.EventEdit.components.EventEditNav.content": "內容",
+	"features.EventEdit.components.EventEditNav.preview": "預覽與發佈",
+	"features.EventEdit.components.EventEditNav.share": "分享",
+	"features.EventEdit.features.content.components.ContentFeed.reorder": "重整內容",
+	"features.EventEdit.features.content.components.ContentFeed.doneReordering": "Done Reordering",
+	"features.EventEdit.features.content.components.ContentHeader.text": "文本",
+	"features.EventEdit.features.content.components.ContentHeader.reference": "參考經文",
+	"features.EventEdit.features.content.components.ContentHeader.plan": "計劃",
+	"features.EventEdit.features.content.components.ContentHeader.image": "圖像",
+	"features.EventEdit.features.content.components.ContentHeader.link": "外部連結",
+	"features.EventEdit.features.content.components.ContentHeader.giving": "捐獻連結",
+	"features.EventEdit.features.content.components.ContentHeader.announcement": "公告",
+	"features.EventEdit.features.content.components.ContentHelpModal.types": "內容類型",
+	"features.EventEdit.features.content.components.ContentHelpModal.learn": "學習如何建立一個<br>絕佳的互動活動",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.title": "文本模組",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "大綱、重點、問題討論...分享任何以文本為主的一般內容來幫助參與者即時跟得上你的訊息。你的文本模組沒有長度的限制，可以包含多文字格式 (RTF)。",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "參考經文模組",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more.",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "計劃模組",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.desc": "連結到與你的教學重點相關的讀經計劃與靈修，幫助你的觀眾整週繼續投入神的話語。",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.title": "圖像模組",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.desc": "用整系列的藝術、相片、經句圖等輔助圖片來讓你的活動更生動。參加者可以輕鬆分享你互動活動的圖像至他們的社交媒體，讓你的信息廣傳。",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "外部連結模組",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "在你的互動活動中設立一個選項按鈕，以連結到任何外部的網站。你的觀眾只要點擊一下，即可上網捐獻，加入義工行列，或連結到教會網頁。",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.title": "公告模組",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics).",
+	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "在此加入下一個模組",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "標題",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "Write something here...",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.dirty": "內容將在你停止輸入後數秒內自動儲存。",
+	"features.EventEdit.features.content.components.ContentTypeContainer.failed": "Unable to save.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.tryAgain": "Try again.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.lastSaved": "上次儲存時間 {when}",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongSize": "Image size must be {requiredWidth}x{requiredHeight}. Your image is {yourWidth}x{yourHeight}.",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongType": "Invalid filetype. Must be JPG.",
+	"features.EventEdit.features.content.components.ContentTypeImage.caption": "Add caption",
+	"features.EventEdit.features.content.components.ContentTypeImage.prompt": "拖放一張圖像",
+	"features.EventEdit.features.content.components.ContentTypeImage.onlyJpg": "[限JPG檔]",
+	"features.EventEdit.features.content.components.ContentTypeImage.sizePrompt": "{requiredWidth}px width x {requiredHeight}px height",
+	"features.EventEdit.features.content.components.ContentTypeImage.select": "選擇圖像",
+	"features.EventEdit.features.content.components.ContentTypeLink.kindrid": "If you are looking for a smart, simple giving platform, <a href='{url}'>try Kindrid</a>.",
+	"features.EventEdit.features.content.components.ContentTypeLink.label": "Link Label",
+	"features.EventEdit.features.content.components.ContentTypeLink.prompt": "Write something here...",
+	"features.EventEdit.features.content.components.ContentTypeLink.url": "URL",
+	"features.EventEdit.features.content.components.ContentTypePlan.replace": "取代",
+	"features.EventEdit.features.content.components.ContentTypePlan.search": "搜尋讀經計劃",
+	"features.EventEdit.features.content.components.ContentTypeReference.language": "語言",
+	"features.EventEdit.features.content.components.ContentTypeReference.version": "聖經譯本",
+	"features.EventEdit.features.content.components.ContentTypeReference.book": "書卷",
+	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "章數：經節",
+	"features.EventEdit.features.content.components.ContentTypeText.prompt": "Write something here...",
+	"features.EventEdit.features.content.components.LiveWarningModal.title": "Cannot Delete While Event is Live",
+	"features.EventEdit.features.content.components.LiveWarningModal.desc": "互動的活動一旦開始在現場進行，你就無法刪除文本、聖經參考資料和圖像模組，因為用户可能已經新增他們的個人筆記了。不過，你可以選擇修改這些模組。",
+	"features.EventEdit.features.content.components.LiveWarningModal.ok": "好",
+	"features.EventEdit.features.details.errors.generic": "發佈你的互動活動時出現了問題。",
+	"features.EventEdit.features.details.errors.invalidTimes": "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again.",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize": "圖像大小必須是 {requiredWidth}x{requiredHeight}。你的圖像大小是 {yourWidth}x{yourHeight}。",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType": "無效的檔案類別。必須是JPG檔。",
+	"features.EventEdit.features.details.components.DetailsEdit.changeImage": "更換圖像",
+	"features.EventEdit.features.details.components.DetailsEdit.removeImage": "移除圖像",
+	"features.EventEdit.features.details.components.DetailsEdit.prompt": "拖放一張圖像",
+	"features.EventEdit.features.details.components.DetailsEdit.onlyJpg": "[JPG only]",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt": "{requiredWidth}px width x {requiredHeight}px height",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "Your image dimensions should be {requiredWidth} x {requiredHeight} pixels.",
+	"features.EventEdit.features.details.components.DetailsEdit.eventName": "互動活動名稱",
+	"features.EventEdit.features.details.components.DetailsEdit.org": "教會名稱或組織",
+	"features.EventEdit.features.details.components.DetailsEdit.desc": "互動活動描述",
+	"features.EventEdit.features.details.components.DetailsEdit.next": "下一頁：加入地點與時間 →",
+	"features.EventEdit.features.location.components.Location.oneRequired": "新增至少一個時間。",
+	"features.EventEdit.features.location.components.Location.use": "USE THIS LOCATION",
+	"features.EventEdit.features.location.components.Location.edit": "修改地點",
+	"features.EventEdit.features.location.components.Location.delete": "删除地點",
+	"features.EventEdit.features.location.components.LocationAddButtons.addPhysical": "新增實際地點",
+	"features.EventEdit.features.location.components.LocationAddButtons.promptPhysical": "你可以增添多處地點。",
+	"features.EventEdit.features.location.components.LocationAddButtons.addVirtual": "新增虛擬地點",
+	"features.EventEdit.features.location.components.LocationAddButtons.churchOnline": "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='{url}'>Church Online Platform</a>.",
+	"features.EventEdit.features.location.components.LocationAddTime.minutes": "分",
+	"features.EventEdit.features.location.components.LocationAddTime.hours": "小時",
+	"features.EventEdit.features.location.components.LocationAddTime.days": "日",
+	"features.EventEdit.features.location.components.LocationDeleteModal.sure": "你確定嗎？",
+	"features.EventEdit.features.location.components.LocationDeleteModal.selected": "你已選擇要刪除以下地點：",
+	"features.EventEdit.features.location.components.LocationDeleteModal.warn": "這將會刪除所有以往和現在互動活動的地點。你將不能再度使用此地點作未來的互動活動。",
+	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "取消",
+	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "刪除",
+	"features.EventEdit.features.location.components.LocationEdit.prompt": "填入地點的地址...",
+	"features.EventEdit.features.location.components.LocationEdit.country": "國家",
+	"features.EventEdit.features.location.components.LocationEdit.timezone": "時區",
+	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Campus",
+	"features.EventEdit.features.location.components.LocationEdit.name": "地點的名稱",
+	"features.EventEdit.features.location.components.LocationEdit.nameOptional": "非必填: 供新增多處地點時使用",
+	"features.EventEdit.features.location.components.LocationEdit.addAnother": "新增���一時間",
+	"features.EventEdit.features.location.components.LocationEdit.cancel": "取消",
+	"features.EventEdit.features.location.components.LocationEdit.save": "儲存這個地點",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shift": "移動開始日期",
+	"features.EventEdit.features.location.components.LocationTimeShifter.forward": "推遲",
+	"features.EventEdit.features.location.components.LocationTimeShifter.backward": "提前",
+	"features.EventEdit.features.location.components.LocationTimeShifter.by": "作者：",
+	"features.EventEdit.features.location.components.LocationTimeShifter.week": "週",
+	"features.EventEdit.features.location.components.LocationTimeShifter.weeks": "週",
+	"features.EventEdit.features.location.components.LocationTimeShifter.month": "月",
+	"features.EventEdit.features.location.components.LocationTimeShifter.months": "月",
+	"features.EventEdit.features.location.components.LocationTimeShifter.day": "日",
+	"features.EventEdit.features.location.components.LocationTimeShifter.days": "日",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hour": "小時",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hours": "小時",
+	"features.EventEdit.features.location.components.LocationTimeShifter.update": "更新",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shiftButton": "同時移動所有日期與時間",
+	"features.EventEdit.features.location.components.UnpublishModal.cancel": "取消",
+	"features.EventEdit.features.location.components.UnpublishModal.title": "取消發佈以進行更改",
+	"features.EventEdit.features.location.components.UnpublishModal.desc": "若要新增、編輯或刪除地點及時間，你可以暫時取消發佈該活動。在此期間，你的活動將不會出現在【互動】的搜索結果中。請務必記得再次發佈你的活動。",
+	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "取消發佈",
+	"features.EventEdit.features.preview.notes.prompt": "新增你的私人筆記......",
+	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.share": "分享互動活動",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.publish": "發佈",
+	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "取消發佈",
+	"features.EventEdit.features.preview.components.PreviewFeed.locations": "地點：",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.title": "可搜尋:",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.desc": "你的活動會呈現在聖經軟體【互動】的地點上，也會出現在活動最早開始時間前5天的搜尋結果中。",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.title": "狀態:",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.desc": "你的活動一旦開始進行，就會出現紅色的【現場】標示。",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "移除",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "在活動最後結束時間之後，你的互動活動將不再出現在可搜尋的互動裡。只要參加者在此互動活動還可被搜尋的時段中點選【儲存互動】，他們就仍然可以讀取該互動活動的檔案室版本。他們也可以透過直接的內部連結，持續參與這個互動活動。",
+	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "展開",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "閱讀",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "計劃信息",
+	"features.EventFeedMine.components.EventListItem.duplicate": "Duplicate",
+	"features.EventFeedMine.components.EventListItem.share": "分享",
+	"features.EventFeedMine.components.EventListItem.delete": "刪除",
+	"features.EventFeedMine.components.EventListItem.draft": "草稿",
+	"features.EventFeedMine.components.EventListItem.edit": "編輯",
+	"features.EventFeedMine.components.EventListItem.view": "檢視",
+	"features.EventFeedMine.components.EventListItem.fail": "互動活動無法刪除",
+	"features.EventView.components.EventViewContent.copy": "複製",
+	"features.EventView.components.EventViewContent.share": "分享",
+	"features.EventView.components.EventViewContent.read": "閱讀",
+	"features.EventView.components.EventViewContent.readPlan": "閱讀計劃",
+	"features.EventView.components.EventViewContentAnnouncement.expand": "展開",
+	"features.EventView.components.EventViewContentAnnouncement.collapse": "收合",
+	"features.EventView.components.EventViewDetails.expand": "展開",
+	"features.EventView.components.EventViewDetails.collapse": "收合",
+	"features.EventView.components.EventViewDetails.save": "儲存互動",
+	"features.EventView.components.EventViewDetails.signIn": "登入以儲存互動",
+	"features.EventView.components.EventViewDetails.saved": "互動已儲存"
 }

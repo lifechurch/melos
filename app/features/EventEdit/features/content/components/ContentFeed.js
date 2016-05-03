@@ -7,11 +7,12 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import HTML5Backend from 'react-dnd-html5-backend'
 import { DragDropContext } from 'react-dnd'
 import RevManifest from '../../../../../../app/lib/revManifest'
+import { FormattedMessage } from 'react-intl'
 
 class ContentFeed extends Component {
 
 	render() {
-		const { dispatch, event, references, plans, _content, handleUpdate, handleChange, handleRemove, handleMove, handleStartReorder, handleReorder } = this.props
+		const { dispatch, event, references, plans, _content, handleUpdate, handleChange, handleRemove, handleMove, handleStartReorder, handleReorder, intl } = this.props
 		const { content } = event.item
 
 		const contentList = content.map((c,i) => {
@@ -39,16 +40,17 @@ class ContentFeed extends Component {
 						handleMove={handleMove}
 						content={c}
 						_content={_content}
-						contentIndex={i} />
+						contentIndex={i}
+						intl={intl} />
 				)
 			}
 		})
 
 		let reorderButton = null
 		if (event.isReordering) {
-			reorderButton = (<a disabled={!event.rules.content.canReorder} onClick={handleReorder} className='solid-button blue'><img src={`/images/${RevManifest('check.png')}`} /> &nbsp;Done Reordering</a>)
+			reorderButton = (<a disabled={!event.rules.content.canReorder} onClick={handleReorder} className='solid-button blue'><img src={`/images/${RevManifest('check.png')}`} /> &nbsp;<FormattedMessage id="features.EventEdit.features.content.components.ContentFeed.doneReordering" /></a>)
 		} else {
-			reorderButton = (<a disabled={!event.rules.content.canReorder} onClick={handleStartReorder}><img className='reorder-icon' src={`/images/${RevManifest('reorder.png')}`} /> Reorder Content</a>)
+			reorderButton = (<a disabled={!event.rules.content.canReorder} onClick={handleStartReorder}><img className='reorder-icon' src={`/images/${RevManifest('reorder.png')}`} /> <FormattedMessage id="features.EventEdit.features.content.components.ContentFeed.reorder" /></a>)
 		}
 
 		return (

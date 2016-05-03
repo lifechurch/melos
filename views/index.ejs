@@ -4,6 +4,12 @@
 		<link href="https://www.bible.com/assets/application-0523b1103a0155d0473a21fce304cdc3.css" media="screen" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="/stylesheets/<%= getAssetPath('style.css') %>" />
 		<script type="application/javascript">
+			window.__LOCALE__ = <%- JSON.stringify(locale, function(key, val) {
+				if (typeof val === 'function') {
+					return val + '';
+				}
+				return val;
+			}, 4) %>;
 			window.__INITIAL_STATE__ = <%- JSON.stringify(initialState) %>;
 			window.__ENV__ = "<%- environment %>";
 		</script>
@@ -12,10 +18,11 @@
 		<div id="current-ui-view">
 			<div id="react-app"><%- appString %></div>
 		</div>
+		<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.fr,Intl.~locale.pt"></script>
 		<script src="/javascripts/<%= getAssetPath('app.js') %>"></script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMA0n8NXq9Z-84At4-cIOAseleESrfRGE&libraries=places">
     </script>
-        <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-56cdf91ec7a631b2"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-56cdf91ec7a631b2"></script>
 	</body>
 </html>

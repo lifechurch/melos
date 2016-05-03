@@ -30,7 +30,6 @@ class EventEdit extends Component {
 		const { children, event, loc, params, dispatch, modals, routing, references, plans, auth, _content } = this.props
 		return (
 			<div>
-				<Helmet title="Event" />
 				<EventHeader {...this.props} />
 				<div>
         	{children && React.cloneElement(children, { modals, event, loc, dispatch, params, routing, references, plans, auth, _content, handleDetailsNext: ::this.handleDetailsNext })}

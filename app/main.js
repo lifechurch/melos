@@ -10,8 +10,9 @@ import getRoutes from './routes'
 import defaultState from './defaultState'
 import EventActionCreators from './features/EventEdit/features/details/actions/creators'
 import { addLocaleData, IntlProvider } from 'react-intl'
-import enLocaleData from 'react-intl/locale-data/en'
-import enUs from '../locales/en-US.json'
+import moment from 'moment'
+
+require('moment/min/locales')
 
 let initialState = defaultState
 
@@ -28,9 +29,9 @@ const store = configureStore(initialState, browserHistory, logger)
 
 function requireAuth(nextState, replace) {
 	const state = store.getState()
-	if (!state.auth.isLoggedIn && nextState.location.pathname !== '/login') {
+	if (!state.auth.isLoggedIn && nextState.location.pathname !== '/' + window.__LOCALE__.locale + '/login') {
 		replace({
-			pathname: '/login',
+			pathname: '/' + window.__LOCALE__.locale + '/login',
 			state: { nextPathname: nextState.location.pathname }
 		})
 	}
@@ -51,17 +52,11 @@ function requireEvent(nextState, replace, callback) {
 }
 
 const routes = getRoutes(requireAuth, requireEvent)
-
-addLocaleData(enLocaleData)
-addLocaleData({
-    locale: 'en-UPPER',
-    parentLocale: 'en',
-})
-
-console.log("here?")
+addLocaleData(window.__LOCALE__.data)
+moment.locale(window.__LOCALE__.locale)
 
 render(
-	<IntlProvider locale="en" messages={enUS}>
+	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
 			<Router routes={routes} history={browserHistory} />
 		</Provider>

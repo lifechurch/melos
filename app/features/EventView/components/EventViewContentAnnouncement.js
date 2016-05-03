@@ -6,7 +6,7 @@ class EventViewContentAnnouncement extends Component {
 
 	toggle(e) {
 		var content = e.currentTarget.childNodes
-		content[1].text = content[1].text=='expand' ? 'collapse' : 'expand'
+		content[1].text = content[1].text== intl.formatMessage({id:"features.EventEdit.features.preview.components.EventViewContentAnnouncement.expand"}) ? intl.formatMessage({id:"features.EventView.components.EventViewContentAnnouncement.collapse"}) : intl.formatMessage({id:"features.EventEdit.features.preview.components.EventViewContentAnnouncement.expand"})
 		content[2].classList.toggle('show')
 	}
 
@@ -16,7 +16,7 @@ class EventViewContentAnnouncement extends Component {
 		return (
 			<div className='content announcement' onClick={::this.toggle}>
 				<div className='title left'>{contentData.title}</div>
-				<a className='toggle right'>expand</a>
+				<a className='toggle right'><FormattedMessage id="features.EventView.components.EventViewDetails.expand" /></a>
 				<div className='caption' dangerouslySetInnerHTML={{__html: contentData.body}} />
 			</div>
 		)

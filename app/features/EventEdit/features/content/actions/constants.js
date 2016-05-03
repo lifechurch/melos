@@ -23,6 +23,7 @@ const constants = {
 	reorderSuccess: 'CONTENT_REORDER_SUCCESS',
 	reorderFailure: 'CONTENT_REORDER_FAILURE',
 	setInsertionPoint: 'CONTENT_SET_INSERTION_POINT',
+	setLang: 'CONTENT_SET_LANG',
 	setField: 'CONTENT_SET_FIELD',
 	setPlanField: 'SET_PLAN_FIELD',
 	selectPlan: 'SELECT_PLAN',

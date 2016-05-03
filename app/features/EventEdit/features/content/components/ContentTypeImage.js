@@ -4,6 +4,7 @@ import Textarea from '../../../../../../app/components/Textarea'
 import Input from '../../../../../../app/components/Input'
 import Dropzone from 'react-dropzone'
 import ActionCreators from '../actions/creators'
+import { FormattedMessage } from 'react-intl'
 
 const PREFERRED_IMAGE_WIDTH = 640
 const PREFERRED_IMAGE_HEIGHT = 640
@@ -28,7 +29,7 @@ class ContentTypeImage extends Component {
 	}
 
 	onDrop(files) {
-		const { dispatch, contentIndex, contentData, handleChange } = this.props
+		const { dispatch, contentIndex, contentData, handleChange, intl } = this.props
 
 		if (files[0].type === "image/jpeg" || files[0].type === "image/jpg") {
 			dispatch(ActionCreators.initUpload({index: contentIndex})).then( function(response_init){
@@ -47,7 +48,8 @@ class ContentTypeImage extends Component {
 					image.src = loadEvent.target.result
 
 					if ((PREFERRED_IMAGE_RATIO !== (image.height / image.width)) || (image.width < MIN_IMAGE_WIDTH)) {
-						dispatch(ActionCreators.initUploadFailure({index: contentIndex, error: 'Image size must be ' + PREFERRED_IMAGE_WIDTH.toString() + 'x' + PREFERRED_IMAGE_HEIGHT.toString() + '. Your image is ' + image.width.toString() + 'x' + image.height.toString() + '.' }))
+						const errorMessage = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeImage.errors.wrongSize" }, { requiredWidth: PREFERRED_IMAGE_WIDTH.toString(), requiredHeight: PREFERRED_IMAGE_HEIGHT.toString(), yourWidth: image.width.toString(), yourHeight: image.height.toString() })
+						dispatch(ActionCreators.initUploadFailure({index: contentIndex, error: errorMessage}))
 						return
 
 					} else {
@@ -78,7 +80,7 @@ class ContentTypeImage extends Component {
 
 		} else {
 			// invalid file type
-			dispatch(ActionCreators.initUploadFailure({index: contentIndex, error: 'Invalid filetype. Must be JPG.'}))
+			dispatch(ActionCreators.initUploadFailure({index: contentIndex, error: intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeImage.errors.wrongType" }) }) )
 		}
 	}
 
@@ -87,7 +89,7 @@ class ContentTypeImage extends Component {
 	}
 
 	render() {
-		const { contentData, handleChange } = this.props
+		const { contentData, handleChange, intl } = this.props
 		var output
 
 		var images = []
@@ -103,7 +105,7 @@ class ContentTypeImage extends Component {
 						</div>
 						<FormField
 							InputType={Input}
-							placeholder="Add caption"
+							placeholder={intl.formatMessage({id:"features.EventEdit.features.content.components.ContentTypeImage.caption"})}
 							name="body"
 							onChange={handleChange}
 							value={contentData.body}
@@ -113,11 +115,11 @@ class ContentTypeImage extends Component {
 			output = <div>
 						<Dropzone ref='dropzone' onDrop={::this.onDrop} multiple={false} acceptedFiles=".pdf" className='image-drop-zone' activeClassName='active' >
 							<div className='instructions'>
-								<p>Drag and Drop an Image</p><br/>
-								[JPG only]<br/><br/>
-								{PREFERRED_IMAGE_WIDTH.toString() + 'px width x ' + PREFERRED_IMAGE_HEIGHT.toString() + 'px height'}<br/><br/>
+								<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeImage.prompt" tagName="p" /><br/>
+								<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeImage.onlyJpg" /><br/><br/>
+								<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeImage.sizePrompt" values={{requiredHeight: PREFERRED_IMAGE_HEIGHT.toString(), requiredWidth: PREFERRED_IMAGE_WIDTH.toString() }} /><br/><br/>
 								<a className='hollow-button green'>
-									Select Image
+									<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeImage.select" />
 								</a>
 							</div>
 						</Dropzone>

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Modal from 'react-modal'
 import ActionCreators from '../../preview/actions/creators'
+import { FormattedMessage } from 'react-intl'
 
 class LiveWarningModal extends Component {
 	render() {
@@ -27,14 +28,10 @@ class LiveWarningModal extends Component {
 
 		return (
 			<Modal isOpen={isOpen} style={customStyles} className='modal__livewarningmodal'>
-				<h3>Cannot Delete While Event is Live</h3>
-				<p>
-					Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules
-					from it because users may have already added their private notes to them. You can, however,
-					edit these modules.
-				</p>
+				<FormattedMessage tagName="h3" id="features.EventEdit.features.content.components.LiveWarningModal.title" />
+				<FormattedMessage tagName="p" id="features.EventEdit.features.content.components.LiveWarningModal.desc" />
 				<div className='modal-actions text-center'>
-					<a className='solid-button gray' onClick={handleClose}>OK</a>
+					<a className='solid-button gray' onClick={handleClose}><FormattedMessage id="features.EventEdit.features.content.components.LiveWarningModal.ok" /></a>
 				</div>
 			</Modal>
 			)

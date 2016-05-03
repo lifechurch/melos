@@ -9,8 +9,8 @@ import Row from '../components/Row'
 import Column from '../components/Column'
 import EventListItem from '../features/EventFeedMine/components/EventListItem'
 import ActionCreators from '../features/EventFeedMine/actions/creators'
-import NoticeBanner from '../components/NoticeBanner'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 class EventFeedMine extends Component {
 	componentWillMount() {
@@ -20,8 +20,8 @@ class EventFeedMine extends Component {
 	}
 
 	handleDuplicate(id) {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.duplicate({id}))
+		const { dispatch, params } = this.props
+		dispatch(ActionCreators.duplicate({id}, params.locale))
 	}
 
 	handleDelete(id, index) {
@@ -35,7 +35,7 @@ class EventFeedMine extends Component {
 	}
 
 	render() {
-		const { dispatch, hasError, errors, isFetching, configuration, items, page, next_page, auth } = this.props
+		const { dispatch, hasError, errors, isFetching, configuration, items, page, next_page, auth, intl, params } = this.props
 		const { userData } = auth
 		const { first_name, last_name } = userData
 
@@ -47,6 +47,7 @@ class EventFeedMine extends Component {
 					handleDelete={::this.handleDelete}
 					index={index}
 					dispatch={dispatch}
+					params={params}
 					startOffset={configuration.startOffset} />)
 		})
 
@@ -56,8 +57,8 @@ class EventFeedMine extends Component {
 
 			if (page > 1 || next_page) {
 				pagination = <div className="pagination">
-	                {page > 1 ? <a className="page left" onClick={::this.getPage} data-page={page - 1}>&larr; Previous</a> : null}
-	                {next_page ? <a className="page right" onClick={::this.getPage} data-page={next_page}>Next &rarr;</a> : null}
+	                {page > 1 ? <a className="page left" onClick={::this.getPage} data-page={page - 1}><FormattedHTMLMessage id="containers.EventFeedMine.previous" /></a> : null}
+	                {next_page ? <a className="page right" onClick={::this.getPage} data-page={next_page}><FormattedHTMLMessage id="containers.EventFeedMine.next" /></a> : null}
 	            </div>
 			}
 
@@ -66,14 +67,14 @@ class EventFeedMine extends Component {
 	                <div className="event-title-section">
 	                    <Row className="collapse">
 	                        <Column s="medium-8" a="left">
-	                            <div className="title">My Events</div>
+	                            <div className="title"><FormattedMessage id="containers.EventFeedMine.title" /></div>
 	                        </Column>
 	                        <Column s="medium-4" a="right">
-	                            <Link className="solid-button green create" to="/event/edit">Create New Event</Link>
+	                            <Link className="solid-button green create" to={`/${params.locale}/event/edit`}><FormattedMessage id="containers.EventFeedMine.new" /></Link>
 	                        </Column>
 	                    </Row>
 	                    <Row>
-	                        <h2 className="subtitle">EVENTS CREATED BY ME</h2>
+	                        <h2 className="subtitle"><FormattedMessage id="containers.EventFeedMine.subTitle" /></h2>
 	                    </Row>
 	                </div>
 					<ul className="unindented">
@@ -88,19 +89,18 @@ class EventFeedMine extends Component {
 		} else {
 			eventFeed = (
 				<div className='event-title-section no-content-prompt text-center'>
-                    <div className="title">My Events</div>
+                    <div className="title"><FormattedMessage id="containers.EventFeedMine.title" /></div>
                     <div className="create-wrapper">
-	                    <Link className="solid-button green create" to="/event/edit">Create Your First Event</Link>
+	                    <Link className="solid-button green create" to={`/${params.locale}/event/edit`}><FormattedMessage id="containers.EventFeedMine.newFirst" /></Link>
 	                </div>
-                    <a className="learn" target="_blank" href="https://help.youversion.com/customer/en/portal/articles/1504122-how-to-create-an-event-on-bible-com-administrator-?b_id=203">Learn how to make a great Event</a>
+                    <a className="learn" target="_blank" href="https://help.youversion.com/customer/en/portal/articles/1504122-how-to-create-an-event-on-bible-com-administrator-?b_id=203"><FormattedMessage id="containers.EventFeedMine.learn" /></a>
 				</div>
 			)
 		}
 
 		return (
 			<div className="medium-10 large-7 columns small-centered">
-				<Helmet title="My Events" />
-				<NoticeBanner />
+				<Helmet title={intl.formatMessage({ id: "containers.EventFeedMine.title" })} />
 				<EventHeader {...this.props} />
 				{eventFeed}
 			</div>
@@ -124,4 +124,4 @@ function mapStateToProps(state) {
 	}, { auth: state.auth, configuration: state.configuration })
 }
 
-export default connect(mapStateToProps, null)(EventFeedMine)
+export default connect(mapStateToProps, null)(injectIntl(EventFeedMine))

@@ -95,7 +95,7 @@ export default store => next => action => {
 	}, (error) => {
 		if (error.status === 401) {
 			next(ActionCreators.authenticationFailed())
-			next(routeActions.push('/login'))
+			next(routeActions.push('/' + window.__LOCALE__.locale + '/login'))
 		} else {
 			next(getFailureAction(failureType, action, [ error ]))
 		}

@@ -15,7 +15,7 @@ class EventViewDetails extends Component {
 
 	toggleLocations(e) {
 		var loc = e.currentTarget.childNodes
-		loc[1].text = loc[1].text=='expand' ? 'collapse' : 'expand'
+		loc[1].text = loc[1].text==intl.formatMessage({id:"features.EventEdit.features.preview.components.EventViewDetails.expand"}) ? intl.formatMessage({id:"features.EventView.components.EventViewDetails.collapse"}) : intl.formatMessage({id:"features.EventEdit.features.preview.components.EventViewDetails.expand"})
 		loc[2].classList.toggle('show')
 	}
 
@@ -31,9 +31,9 @@ class EventViewDetails extends Component {
 		const { event, auth } = this.props
 		const { org_name, title, images, description, locations } = event.item
 
-		var action = <div className="right">{ auth.isLoggedIn ? <a onClick={::this.saveEvent} className="solid-button green">Save Event</a> : <a href="/sign-in" className="solid-button green">Sign In to Save Event</a>}</div>
+		var action = <div className="right">{ auth.isLoggedIn ? <a onClick={::this.saveEvent} className="solid-button green"><FormattedMessage id="features.EventView.components.EventViewDetails.save" /></a> : <a href="/sign-in" className="solid-button green"><FormattedMessage id="features.EventView.components.EventViewDetails.signIn" /></a>}</div>
 		if (event.isSaved) {
-			var action = <div className="right"><a className="solid-button gray">Event Saved</a></div>
+			var action = <div className="right"><a className="solid-button gray"><FormattedMessage id="features.EventView.components.EventViewDetails.saved" /></a></div>
 		}
 
 		var locationList = Object.keys(locations).map((l) => {

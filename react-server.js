@@ -15,7 +15,7 @@ import { fetchToken } from '@youversion/token-storage'
 import { tokenAuth } from '@youversion/js-api'
 import revManifest from './rev-manifest.json'
 import { IntlProvider } from 'react-intl'
-import enUs from './locales/en-US.json'
+import moment from 'moment'
 
 const router = express.Router()
 const routes = getRoutes(null)
@@ -29,7 +29,70 @@ function getAssetPath(path) {
 	}
 }
 
+function getLocalesFromHeader(req) {
+	return req.headers['accept-language'].split(',').map(function(l) {
+		var locale = l.split(';');
+		var weight = (locale.length > 1) ? parseFloat(locale[1].split('=')[1]) : 1;
+		var prefix = locale[0].split('-')[0];
+		return { locale: locale[0], prefix: prefix, weight: weight };
+	});
+}
+
+function getLocale(req) {
+	var availableLocales = require('./availableLocales.json');
+	var defaultLocale = availableLocales['en'];
+	var localeFromCookie;
+	var final = { locale: defaultLocale, source: 'default' }
+	var urlLocale = req.params[0].split('/')[0];
+	var localesFromHeader = getLocalesFromHeader(req);
+
+	// 1: Try URL First
+	if (typeof availableLocales[urlLocale] !== 'undefined') {
+		final = { locale: availableLocales[urlLocale], source: 'url' };
+
+	// 2: Try Cookie Second
+	} else if (typeof req.cookies.locale !== 'undefined' && typeof availableLocales[req.cookies.locale] !== 'undefined') {
+		final = { locale: availableLocales[req.cookies.locale], source: 'cookie' };
+
+	// 3: Try accept-language Header Third
+	} else {
+		var lastWeight = 0;
+		var bestLocale;
+
+		localesFromHeader.forEach(function(l) {
+			if (l.weight > lastWeight) {
+				if (typeof availableLocales[l.locale] !== 'undefined') {
+					bestLocale = availableLocales[l.locale];
+					lastWeight = l.weight;
+				} else if (typeof availableLocales[l.prefix] !== 'undefined') {
+					bestLocale = availableLocales[l.prefix];
+					lastWeight = l.weight;
+				}
+			}
+		});
+
+		if (typeof bestLocale !== 'undefined' && bestLocale !== null) {
+			final = { locale: bestLocale, source: 'accept-language' }
+		}
+	}
+
+	final.messages = require('./locales/' + final.locale + '.json');
+	var localeData = require('react-intl/locale-data/' + final.locale.split('-')[0]);
+	console.log('test111', moment().locale('fr'));
+	final.data = localeData;
+	final.preferredLocales = localesFromHeader;
+	final.momentLocaleData = moment().locale('fr').localeData();
+	return final;
+}
+
 router.get('/*', cookieParser(), function(req, res) {
+	req.Locale = getLocale(req);
+
+	// This was a route with no language tag
+	if (req.Locale.source !== 'url') {
+		return res.redirect(302, '/' + req.Locale.locale + '/' + req.params[0]);
+	}
+
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
 		if (error) {
 			console.log("ERROR", error);
@@ -69,9 +132,9 @@ router.get('/*', cookieParser(), function(req, res) {
 				}})
 
 			} catch(err) {
-				if (req.path !== '/login') {
+				if (req.path !== '/' + req.Locale.locale + '/login') {
 					redirecting = true
-					res.redirect('/login');
+					res.redirect('/' + req.Locale.locale + '/login');
 				}
 			}
 
@@ -80,10 +143,10 @@ router.get('/*', cookieParser(), function(req, res) {
 					const logger = createNodeLogger()
 					const history = createMemoryHistory()
 					const store = configureStore(startingState, history, logger)
-					const html = renderToString(<IntlProvider locale="en" messages={enUs}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
+					const html = renderToString(<IntlProvider locale={req.Locale.locale} messages={req.Locale.messages}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
 					const initialState = store.getState()
 					res.setHeader('Cache-Control', 'public');
-					res.render('index', {appString: html, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
+					res.render('index', {appString: html, locale: req.Locale, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
 				} catch(ex) {
 					console.log('ex', ex);
 					res.status(500).send()

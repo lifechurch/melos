@@ -1,408 +1,219 @@
 {
-	"components": {
-		"ErrorMessage": {
-			"genericError": "An error occurred",
-			"announcement": {
-				"events": {
-					"title": {
-						"required": "Announcement title is required."
-					}
-				}
-			},
-			"default": {
-				"bible": {
-					"reference": {
-						"not_found": "Bible reference not valid."
-					}
-				},
-				"events": {
-					"google_place_id": {
-						"required": "You must choose a location from the map."
-					},
-					"latitude": {
-						"required": "You must choose a location from the map."
-					},
-					"times": {
-						"start_dt": {
-							"must_be_a_future_date": "Start Time cannot be in the past."
-						}
-					},
-					"timezone": {
-						"required": "Timezone is required."
-					}
-				}
-			},
-			"reference": {
-				"events": {
-					"usfm": {
-						"invalid": "Bible reference not valid."
-					}
-				}
-			},
-			"url": {
-				"events": {
-					"url": {
-						"required": "URL is required."
-					},
-					"title": {
-						"required": "URL Label is required."
-					}
-				}
-			}
-		},
-		"EventHeader": {
-			"status": {
-				"published": "Published",
-				"draft": "Draft",
-				"live": "Live"
-			},
-			"unpublish": "Unpublish",
-			"saving": "Saving...",
-			"saveAsDraft": "Save as Draft",
-			"myEvents": "My Events",
-			"eventBuilder": "EVENT BUILDER",
-			"signOut": "Sign Out",
-			"createAccount": "Create Account"
-		},
-		"HtmlEditor": {
-			"text": "Text",
-			"bold": "Bold",
-			"italic": "Italic"
-		}
-	},
-	"containers": {
-		"Auth": {
-			"title": "Events Sign In",
-			"signIn": "Sign In",
-			"subHead1": "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'> Sign up now at Bible.com</a> to start creating Events.",
-			"email": "Email",
-			"password": "Password",
-			"forgotPassword": "Forgot Password"
-		},
-		"EventEdit": {
-			"event": "Event"
-		},
-		"EventEditContentContainer": {
-			"choose": "Choose some content to get started.",
-			"needHelp": "Need help?",
-			"title": "Event Content",
-			"previous": "← Previous: Locations & Times",
-			"next": "Next: Preview →"
-		},
-		"EventEditDetails": {
-			"title": "Event Details"
-		},
-		"EventEditLocationContainer": {
-			"title": "Event Location",
-			"previous": "← Previous: Details",
-			"next": "Next: Add Content →"
-		},
-		"EventEditPreview": {
-			"title": "Event Preview",
-			"previous": "← Previous: Content"
-		},
-		"EventEditShare": {
-			"title": "Event Share",
-			"subTitle": "Your Event is Now Published:",
-			"edit": "Edit Event",
-			"go": "Go to My Events",
-			"share": "Share your event:",
-			"copy": "Copy",
-			"copied": "The shortlink was copied to your clipboard",
-			"previous": "← Previous: Preview"
-		},
-		"EventFeedDiscover": {
-			"title": "Discover Events",
-			"discover": "Discover"
-		},
-		"EventFeedMine": {
-			"title": "My Events",
-			"previous": "← Previous",
-			"next": "Next →",
-			"my": "My Events",
-			"new": "Create New Event",
-			"subTitle": "EVENTS CREATED BY ME",
-			"newFirst": "Create Your First Event",
-			"learn": "Learn how to make a great Event"
-		},
-		"EventFeedSaved": {
-			"title": "Saved Events"
-		},
-		"EventView": {
-			"title": "YouVersion Event"
-		}
-	},
-	"features": {
-		"Auth": {
-			"errors": {
-				"sessionExpired": "Your session expired. Please login again.",
-				"invalidEmail": "Invalid email or password."
-			}
-		},
-		"EventEdit": {
-			"errors": {
-				"locationMustHaveTime": "All locations must have at least one time.",
-				"locationRequired": "You cannot publish an Event with no locations.",
-				"contentRequired": "You cannot publish an Event with no content.",
-				"planSearchFailed": "Search did not match any documents",
-				"noMatchingPlans": "No matching Plans"
-			},
-			"components": {
-				"EventEditNav": {
-					"details": "Details",
-					"locations": "Locations & Times",
-					"content": "Content",
-					"preview": "Preview & Publish",
-					"share": "Share"
-				}
-			},
-			"features": {
-				"content": {
-					"components": {
-						"ContentFeed": {
-							"reorder": "Reorder Content",
-							"doneReordering": "Done Reordering"
-						},
-						"ContentHeader": {
-							"text": "Text",
-							"reference": "Bible Reference",
-							"plan": "Plan",
-							"image": "Image",
-							"link": "External Link",
-							"giving": "Giving Link",
-							"announcement": "Announcement"
-						},
-						"ContentHelpModal": {
-							"types": "Content Types",
-							"learn": "Learn how to make <br>a great Event",
-							"text": {
-								"title": "Text Module",
-								"desc": "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
-							},
-							"reference": {
-								"title": "Bible Reference Module",
-								"desc": "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
-							},
-							"plan": {
-								"title": "Plan Module",
-								"desc": "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
-							},
-							"image": {
-								"title": "Image Module",
-								"desc": "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
-							},
-							"link": {
-								"title": "External Link Module",
-								"desc": "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
-							},
-							"announcement": {
-								"title": "Announcement Module",
-								"desc": "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
-							}
-						},
-						"ContentInsertionPoint": {
-							"title": "Insert next module here"
-						},
-						"ContentTypeAnnouncement": {
-							"title": "Title",
-							"prompt": "Write something here...",
-							"caption": "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
-						},
-						"ContentTypeContainer": {
-							"dirty": "Content will automatically save a few seconds after you stop typing.",
-							"failed": "Unable to save.",
-							"tryAgain": "Try again.",
-							"lastSaved": "Last saved %{when}"
-						},
-						"ContentTypeImage": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"caption": "Add caption",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"select": "Select Image"
-						},
-						"ContentTypeLink": {
-							"kindrid": "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>.",
-							"label": "Link Label",
-							"prompt": "Write something here...",
-							"url": "URL"
-						},
-						"ContentTypePlan": {
-							"replace": "Replace",
-							"search": "Search for a Reading Plan"
-						},
-						"ContentTypeReference": {
-							"version": "Version",
-							"book": "Book",
-							"chapterVerse": "Chapter:Verse"
-						},
-						"ContentTypeText": {
-							"prompt": "Write something here..."
-						},
-						"LiveWarningModal": {
-							"title": "Cannot Delete While Event is Live",
-							"desc": "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules.",
-							"ok": "OK"
-						}
-					}
-				},
-				"details": {
-					"errors": {
-						"generic": "There was a problem while publishing your Event.",
-						"invalidTimes": "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
-					},
-					"components": {
-						"DetailsEdit": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"changeImage": "Change Image",
-							"removeImage": "Remove Image",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"sizePrompt2": "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels.",
-							"eventName": "Event Name",
-							"org": "Church Name or Organization",
-							"desc": "Event Description",
-							"next": "Next: Add Location & Times →"
-						}
-					}
-				},
-				"location": {
-					"components": {
-						"Location": {
-							"oneRequired": "Add at least one time.",
-							"use": "USE THIS LOCATION",
-							"edit": "Edit Location",
-							"delete": "Delete Location"
-						},
-						"LocationAddButtons": {
-							"addPhysical": "Add a Physical Location",
-							"promptPhysical": "You can add multiple locations.",
-							"addVirtual": "Add Virtual Location",
-							"churchOnline": "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
-						},
-						"LocationAddTime": {
-							"minutes": "minutes",
-							"hours": "hours",
-							"days": "days"
-						},
-						"LocationDeleteModal": {
-							"sure": "Are you sure?",
-							"selected": "You have selected the following location to be deleted:",
-							"warn": "This will remove the location from all past and present events. You will not be able to re-use this location for future events.",
-							"cancel": "Cancel",
-							"delete": "Delete"
-						},
-						"LocationEdit": {
-							"prompt": "Enter the Location address...",
-							"country": "Country",
-							"timezone": "Timezone",
-							"namePrompt": "First Baptist East Campus",
-							"name": "Location Name",
-							"nameOptional": "Optional: Useful if adding multiple locations",
-							"addAnother": "Add another time",
-							"cancel": "Cancel",
-							"save": "Save this Location"
-						},
-						"LocationTimeShifter": {
-							"shift": "Shift start dates",
-							"forward": "forward",
-							"backward": "backward",
-							"by": "by",
-							"week": "week",
-							"weeks": "weeks",
-							"month": "month",
-							"months": "months",
-							"day": "day",
-							"days": "days",
-							"hour": "hour",
-							"hours": "hours",
-							"update": "Update",
-							"shiftButton": "Shift all dates and times at once"
-						},
-						"UnpublishModal": {
-							"cancel": "Cancel",
-							"title": "Unpublish to Make Changes",
-							"desc": "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again.",
-							"unpublish": "Unpublish"
-						}
-					}
-				},
-				"preview": {
-					"notes": {
-						"prompt": "Add your private notes...",
-						"noAuthPrompt": "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
-					},
-					"components": {
-						"PreviewFeed": {
-							"share": "Share Event",
-							"locations": "Locations:",
-							"publish": "Publish",
-							"unpublish": "Unpublish",
-							"discoverable": {
-								"title": "Discoverable:",
-								"desc": "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
-							},
-							"status": {
-								"title": "Status:",
-								"desc": "The red LIVE badge will display when your earliest start time begins."
-							},
-							"remove": {
-								"title": "Remove:",
-								"desc": "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
-							}
-						},
-						"PreviewTypeAnnouncement": {
-							"expand": "Expand"
-						},
-						"PreviewTypePlan": {
-							"read": "Read",
-							"info": "Plan Info"
-						}
-					}
-				}
-			}
-		},
-		"EventFeedMine": {
-			"components": {
-				"EventListItem": {
-					"duplicate": "Duplicate",
-					"share": "Share",
-					"delete": "Delete",
-					"draft": "DRAFT",
-					"edit": "Edit",
-					"view": "View",
-					"fail": "Unable to delete Event"
-				}
-			}
-		},
-		"EventView": {
-			"components": {
-				"EventViewContent": {
-					"copy": "Copy",
-					"share": "Share",
-					"read": "Read",
-					"readPlan": "Read Plan"
-				},
-				"EventViewContentAnnouncement": {
-					"expand": "Expand",
-					"collapse": "Collapse"
-				},
-				"EventViewDetails": {
-					"expand": "Expand",
-					"collapse": "Collapse",
-					"save": "Save Event",
-					"signIn": "Sign In to Save Event",
-					"saved": "Event Saved"
-				}
-			}
-		}
-	}
+	"components.ErrorMessage.genericError": "เกิด���้อผิดพลาด",
+	"components.ErrorMessage.announcement.events.title.required": "ต้องใส่หัวข้อการประกาศ",
+	"components.ErrorMessage.default.bible.reference.not_found": "ข้อพระคัมภีร์อ้างอิงไม่ถูกต้อง",
+	"components.ErrorMessage.default.events.google_place_id.required": "คุณควรเลือกสถานที่จัดงานจากแผนที่",
+	"components.ErrorMessage.default.events.latitude.required": "คุณต้องเลือกตำแหน่งสถานที่จากแผนที่",
+	"components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date": "เวลาเริ่มไม่สามารถใส่เวลาในอดีตได้",
+	"components.ErrorMessage.default.events.timezone.required": "ต้องใส่เขตแบ่งเวลา",
+	"components.ErrorMessage.reference.events.usfm.invalid": "การอ้างอิงพระคัมภีร์ไม่ถูกต้อง",
+	"components.ErrorMessage.url.events.url.required": "ต้องใส่ URL",
+	"components.ErrorMessage.url.events.title.required": "ต้องใส่ป้าย URL ",
+	"components.EventHeader.status.published": "เผยแพร่แล้ว",
+	"components.EventHeader.status.draft": "แบบร่าง",
+	"components.EventHeader.status.live": "ถ่ายทอดสด",
+	"components.EventHeader.unpublish": "ยังไม่ได้เผยแพร่",
+	"components.EventHeader.saving": "กำลังบันทึก...",
+	"components.EventHeader.saveAsDraft": "บันทึกเป็นแบบร่าง",
+	"components.EventHeader.myEvents": "กิจกรรมของฉัน",
+	"components.EventHeader.eventBuilder": "ผู้จัดกิจกรรม",
+	"components.EventHeader.signOut": "ออกจากระบบ",
+	"components.EventHeader.createAccount": "สร้างบัญชีผู้ใช้",
+	"components.HtmlEditor.text": "ข้อความ",
+	"components.HtmlEditor.bold": "ตัวหนา",
+	"components.HtmlEditor.italic": "ตัวเ���ียง",
+	"containers.Auth.title": "ลงชื่อกิจกรรม",
+	"containers.Auth.signIn": "เข้าสู่ระบบ",
+	"containers.Auth.subHead1": "หากคุณเป็นผู้ใช้แอพพระคัมภีร์ และคุณสมัครYouVersion account แล้ว คุณสามารถเข้าสู่ระบบโดยใช้ account เดิมได้<br><br>หากคุณยังไม่มี YouVersion account?<br><a href='{url}'>สมัครได้เลยที่ Bible.com เพื่อเริ่มกิจกรรม</a>",
+	"containers.Auth.email": "อีเมล์",
+	"containers.Auth.password": "รหัสผ่าน",
+	"containers.Auth.forgotPassword": "ลืมรหัสผ่าน",
+	"containers.EventEdit.event": "กิจกรรม",
+	"containers.EventEditContentContainer.choose": "เลือกข้อความบางอันเพื่อเริ่มต้น",
+	"containers.EventEditContentContainer.needHelp": "ต้องการความช่วยเหลือ?",
+	"containers.EventEditContentContainer.title": "รายละเอียดของกิจกรรม",
+	"containers.EventEditContentContainer.previous": "← ก่อนหน้านี้: สถานที่จัด และเวลา ",
+	"containers.EventEditContentContainer.next": "ต่อไป: ดูตัวอย่าง →",
+	"containers.EventEditDetails.title": "รายละเอียดของกิจกรรม",
+	"containers.EventEditLocationContainer.title": "สถานที่จัดกิจกรรม",
+	"containers.EventEditLocationContainer.previous": "← ก่อนหน้านี้: รายละเอียด",
+	"containers.EventEditLocationContainer.next": "ต่อไป: เพิ่มเนื้อหา →",
+	"containers.EventEditPreview.title": "ดูตัวอย่างกิจกรรม",
+	"containers.EventEditPreview.previous": "← ก่อนหน้า: เนื้อหา",
+	"containers.EventEditShare.title": "แบ่งปันกิจกรรม",
+	"containers.EventEditShare.subTitle": "กิจกรรมของคุณถูกเผยแพร่แล้ว:",
+	"containers.EventEditShare.edit": "แก้ไขกิจกรรม",
+	"containers.EventEditShare.go": "ไปยังกิจกรรมของฉัน",
+	"containers.EventEditShare.share": "แบ่งปันกิจกรรมของคุณ",
+	"containers.EventEditShare.copy": "คัดลอก",
+	"containers.EventEditShare.copied": "ลิงค์สั้นสำหรับคัดลอกไปยังคลิปบอร์ด",
+	"containers.EventEditShare.previous": "ก่อนหน้า: ดูตัวอย่าง",
+	"containers.EventFeedDiscover.title": "เปิดกิจกรรม",
+	"containers.EventFeedDiscover.discover": "ค้นหา",
+	"containers.EventFeedMine.title": "กิจกรรมของฉัน",
+	"containers.EventFeedMine.previous": "← ก่อนหน้า",
+	"containers.EventFeedMine.next": "ถัดไป →",
+	"containers.EventFeedMine.my": "กิจกรรมของฉัน",
+	"containers.EventFeedMine.new": "สร้างกิจกรรมใหม่",
+	"containers.EventFeedMine.subTitle": "กิจกรรมที่ฉันตั้งขึ้น",
+	"containers.EventFeedMine.newFirst": "ตั้งกิจกรรมแรกของคุณ",
+	"containers.EventFeedMine.learn": "เรียนรู้วิธีตั้งกิจกรรมให้ยอดเยี่ยม",
+	"containers.EventFeedSaved.title": "กิจกรรมที่บันทึกไว้",
+	"containers.EventView.title": "กิจกรรม YouVersion",
+	"containers.SelectLanguage.choose": "Choose Your Language",
+	"features.Auth.errors.sessionExpired": "ส่วนของคุณหมดเวลาแล้ว โปรดเข้าระบบใหม่อีกครั้ง",
+	"features.Auth.errors.invalidEmail": "อีเมล หรือรหัสผ่านไม่ถูกต้อง",
+	"features.EventEdit.errors.locationMustHaveTime": "ทุกสถานที่ต้องใส่เวลาอย่างน้อย 1 อัน",
+	"features.EventEdit.errors.locationRequired": "คุณไม่สามารถเผยแพร่กิจกรรมโดยไม่ใส่สถานที่จัดได้",
+	"features.EventEdit.errors.contentRequired": "คุณไม่สามารถเผยแพร่กิจกรรมนี้โดยไม่ใส่เนื้อหา",
+	"features.EventEdit.errors.planSearchFailed": "การค้นหาไม่พบเอกสารใดๆ ที่ตรงกัน",
+	"features.EventEdit.errors.noMatchingPlans": "ไม่พบแผนฯ ที่เหมาะสม",
+	"features.EventEdit.components.EventEditNav.details": "รายละเอียด",
+	"features.EventEdit.components.EventEditNav.locations": "สถานที่จัด และเวลา",
+	"features.EventEdit.components.EventEditNav.content": "เนื้อหา",
+	"features.EventEdit.components.EventEditNav.preview": "ดูตัวอย่าง และเผยแพร่",
+	"features.EventEdit.components.EventEditNav.share": "แบ่งปัน",
+	"features.EventEdit.features.content.components.ContentFeed.reorder": "เนื้อหาที่ใส่ลงไปใหม่",
+	"features.EventEdit.features.content.components.ContentFeed.doneReordering": "การใส่ใหม่เสร็จเรียบร้อย",
+	"features.EventEdit.features.content.components.ContentHeader.text": "ข้อความ",
+	"features.EventEdit.features.content.components.ContentHeader.reference": "ข้อพระคัมภีร์อ้างอิง",
+	"features.EventEdit.features.content.components.ContentHeader.plan": "แผนการอ่าน",
+	"features.EventEdit.features.content.components.ContentHeader.image": "รูปภาพ",
+	"features.EventEdit.features.content.components.ContentHeader.link": "ลิ้งค์ภายนอก",
+	"features.EventEdit.features.content.components.ContentHeader.giving": "ลิงค์สำหรับถวาย",
+	"features.EventEdit.features.content.components.ContentHeader.announcement": "คำแถลง",
+	"features.EventEdit.features.content.components.ContentHelpModal.types": "ประเภทของเนื้อหา",
+	"features.EventEdit.features.content.components.ContentHelpModal.learn": "เรียนรู้วิธีที่จะ<br>จัดกิจกรรมให้ยอดเยี่ยม",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.title": "เกณฑ์ของเนื้อหา",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "โครงร่าง ประเด็นหลัก คำถามเพื่ออภิปราย...แบ่งปันข้อความใดๆ โดยมีพื้นฐานจากเนื้อหาโดยทั่วไป ซึ่งช่วยให้ผู้เข้าร่วมกิจกรรมของคุณได้ติดตามข่าวสารของคุณ ในเวลาที่กำลังจัด เกณฑ์เนื้อหาของคุณมีความยาวไม่จำกัด และรวมถึงไฟล์แบบ rtf ",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "เกณฑ์ของข้อพระคัมภีร์อ้างอิง",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more.",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "เกณฑ์ของแผนการอ่าน",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.desc": "ลิงค์ไปยังแผนการอ่านพระคัมภีร์ และการใคร่ครวญประจำวันที่เชื่อมโยงกับจุดที่คุณสอน ช่วยให้ผู้เข้าร่วมกิจกรรม ได้รับการหนุนใจด้วยพระวจนะพระเจ้า���ย่างต่อเนื่องระหว่างสัปดาห์",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.title": "เกณฑ์ของรูปภาพ",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.desc": "ทำให้กิจกรรมของคุณมีชีวิตด้วยภาพสนับสนุนทุกรูปแบบ: ชุดภาพเขียน ภาพถ่าย ภาพข้อพระคัมภีร์ และอื่นๆ ผู้เข้าร่วมจะสามารถแบ่งปันกิจกรรมของคุณได้อย่างง่ายดาย ไปยังโซเชียลมีเดียของเขา ทำให้ข่าวสารของคุณแพร่กระจาย",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "เกณฑ์ของลิ้งค์ภายนอก",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "สร้างปุ่มในกิจกรรมของคุณเพื่อลิ้งค์ไปยังเว็บไซต์ใดๆ ก็ได้ ทำให้ผู้เข้าร่วมกิจกรรมแค่กดปุ่มเพื่อถวายออนไลน์ ลงชื่อเป็นอาสาสมัคร หรือเข้าไปยังหน้าเพจของคริสตจักร",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.title": "เกณฑ์ในการประกาศ",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics).",
+	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "ใส่���ูปแบบถัดไปได้ที่นี่",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "หัวเรื่อง",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "เขียนบางอย่างที่นี่...",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "ในกิจกรรมของคุณ มีแค่ชื่องาน (ด้านบน) ที่จะมองเห็นได้ เมื่อผู้ใช้กดที่ชื่องาน เนื้อหา (ด้านล่าง) จะแสดงบนจอภาพอีกอัน",
+	"features.EventEdit.features.content.components.ContentTypeContainer.dirty": "เนื้อหาจะถูกบันทึกโดยอัตโนมัติในไม่กี่วินาทีหลังจากที่คุณหยุดพิมพ์",
+	"features.EventEdit.features.content.components.ContentTypeContainer.failed": "ไม่สามารถบันทึกได้",
+	"features.EventEdit.features.content.components.ContentTypeContainer.tryAgain": "ลองอีกครั้ง",
+	"features.EventEdit.features.content.components.ContentTypeContainer.lastSaved": "บันทึกครั้งสุดท้ายเมื่อ {when}",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongSize": "ขนาดรูปภาพควรเป็น {requiredWidth} คูณ {requiredHeight} รูปภาพของคุณคือ {yourWidth} คูณ {yourHeight}",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongType": "ประเภทของไฟล์ไม่ถูกต้อง ควรเป็น JPG",
+	"features.EventEdit.features.content.components.ContentTypeImage.caption": "เพิ่มคำบรรยายภาพ",
+	"features.EventEdit.features.content.components.ContentTypeImage.prompt": "ลากภาพมาเพื่อใส่",
+	"features.EventEdit.features.content.components.ContentTypeImage.onlyJpg": "[JPG เท่านั้น]",
+	"features.EventEdit.features.content.components.ContentTypeImage.sizePrompt": "กว้าง{requiredWidth} พิกเซล คูณ สูง{requiredHeight} พิกเซล",
+	"features.EventEdit.features.content.components.ContentTypeImage.select": "เลือกรูป",
+	"features.EventEdit.features.content.components.ContentTypeLink.kindrid": "ถ้าคุณมองหาแพลทฟอร์มที่ง่าย และฉลาด <a href='{url}'>ลอง Kindrid</a> ",
+	"features.EventEdit.features.content.components.ContentTypeLink.label": "ป้ายลิงค์",
+	"features.EventEdit.features.content.components.ContentTypeLink.prompt": "เขียนบางสิ่งที่นี่...",
+	"features.EventEdit.features.content.components.ContentTypeLink.url": "URL",
+	"features.EventEdit.features.content.components.ContentTypePlan.replace": "นำไปแทนที่",
+	"features.EventEdit.features.content.components.ContentTypePlan.search": "ค้นหาแผนการอ่าน",
+	"features.EventEdit.features.content.components.ContentTypeReference.language": "ภาษา",
+	"features.EventEdit.features.content.components.ContentTypeReference.version": "เวอร์ชั่น",
+	"features.EventEdit.features.content.components.ContentTypeReference.book": "พระคัมภีร์",
+	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "บทที่:ข้อ",
+	"features.EventEdit.features.content.components.ContentTypeText.prompt": "เขียนบางสิ่งที่นี่...",
+	"features.EventEdit.features.content.components.LiveWarningModal.title": "ไม่สามารถลบออกเมื่อกิจกรรมกำลังดำเนินอยู่",
+	"features.EventEdit.features.content.components.LiveWarningModal.desc": "เมื่อกิจกรรมกำลังดำเนินอยู่ คุณไม่สามารถลบเกณฑ์ของข้อความ ข้อพระคัมภีร์อ้างอิง และรูปภาพออกได้ เพราะผู้ใช้อาจเพิ่มบันทึกส่วนตัวลงไปในนั้น อย่างไรก็ตาม คุณสามารถปรับเกณฑ์เหล่านี้ได้",
+	"features.EventEdit.features.content.components.LiveWarningModal.ok": "ตกลง",
+	"features.EventEdit.features.details.errors.generic": "มีปัญหาเมื่อเผยแพร่กิจกรรมของคุณ",
+	"features.EventEdit.features.details.errors.invalidTimes": "การประชุมครั้งหนึ่ง ไม่สามารถตั้งเวลาเกิน 12 ชั่วโมงได้ และความแตกต่างระหว่างเวลาเริ่ม กับเวลาสิ้นสุดในกิจกรรม ไม่สามารถห่างกันเกิน 8 วัน โปรดปรับเวลากิจกรรมของคุณใหม่ และลองอีกครั้ง",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize": "ขนาดของรูปภาพควรเป็น{requiredWidth}คูณ{requiredHeight} รูปภาพของคุณคือ {yourWidth}คูณ{yourHeight}",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType": "ไฟล์รูปภาพผิดประเภท ต้องใช้เป็น JPG",
+	"features.EventEdit.features.details.components.DetailsEdit.changeImage": "เปลี่ยนรูป",
+	"features.EventEdit.features.details.components.DetailsEdit.removeImage": "ลบรูป",
+	"features.EventEdit.features.details.components.DetailsEdit.prompt": "ลากไฟล์ภาพมาเพื่อใส่ลงไป",
+	"features.EventEdit.features.details.components.DetailsEdit.onlyJpg": "[JPG เท่านั้น]",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt": "กว้าง {requiredWidth}พิกเซล คูณ สูง {requiredHeight}พิกเซล",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "Your image dimensions should be {requiredWidth} x {requiredHeight} pixels.",
+	"features.EventEdit.features.details.components.DetailsEdit.eventName": "ชื่อกิจกรรม",
+	"features.EventEdit.features.details.components.DetailsEdit.org": "ชื่อคริสตจักร หรือองค์การ",
+	"features.EventEdit.features.details.components.DetailsEdit.desc": "ลักษณะของกิจกรรม",
+	"features.EventEdit.features.details.components.DetailsEdit.next": "ต่อไป: เพิ่มสถานที่จัดงาน และเวลา",
+	"features.EventEdit.features.location.components.Location.oneRequired": "เพิ่มเวลาอย่างน้อย 1 ช่วง",
+	"features.EventEdit.features.location.components.Location.use": "ใช้ตำแหน่งสถานที่นี้",
+	"features.EventEdit.features.location.components.Location.edit": "แก้ไขตำแหน่งสถานที่",
+	"features.EventEdit.features.location.components.Location.delete": "ลบตำแหน่งสถานที่",
+	"features.EventEdit.features.location.components.LocationAddButtons.addPhysical": "เพิ่มสถานที่จัดทางกายภาพ",
+	"features.EventEdit.features.location.components.LocationAddButtons.promptPhysical": "คุณสามารถเพิ่มสถานที่จัดได้หลายแห่ง",
+	"features.EventEdit.features.location.components.LocationAddButtons.addVirtual": "เพิ่มสถานที่จัดในแบบเสมือนจริง",
+	"features.EventEdit.features.location.components.LocationAddButtons.churchOnline": "คุณทราบไหม? คุณสามารถประกาศพันธกิจทางออนไลน์ได้ฟรีโดยใช้ <a className='button-caption' href='{url}'>แพลทฟอร์มคริสตจักรออนไลน์</a>.",
+	"features.EventEdit.features.location.components.LocationAddTime.minutes": "นาที",
+	"features.EventEdit.features.location.components.LocationAddTime.hours": "ชั่วโมง",
+	"features.EventEdit.features.location.components.LocationAddTime.days": "จำนวนวัน",
+	"features.EventEdit.features.location.components.LocationDeleteModal.sure": "คุณแน่ใจแล้วใช่ไหม?",
+	"features.EventEdit.features.location.components.LocationDeleteModal.selected": "คุณได้เลือกที่ตั้งด้านล่างนี้เพื่อลบออกไป:",
+	"features.EventEdit.features.location.components.LocationDeleteModal.warn": "นี่จะลบตำแหน่งสถานที่ออกไปจากกิจกรรมทั้งในอดีต และปัจจุบัน คุณจะไม่สามารถใช้ตำแหน่งสถานที่นี้ได้อีกสำหรับกิจกรรมในอนาคต",
+	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "ยกเลิก",
+	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "ลบ",
+	"features.EventEdit.features.location.components.LocationEdit.prompt": "กรอกที่อยู่ของสถานที่...",
+	"features.EventEdit.features.location.components.LocationEdit.country": "ประเทศ",
+	"features.EventEdit.features.location.components.LocationEdit.timezone": "เขตเวลา",
+	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "ค่ายบัพติศมาแรกฝั่งตะวันออก",
+	"features.EventEdit.features.location.components.LocationEdit.name": "ชื่อสถานที่จัด",
+	"features.EventEdit.features.location.components.LocationEdit.nameOptional": "ทางเลือก: จะมีประโยชน์ ถ้าเพิ่มสถานที่จัดหลากหลาย",
+	"features.EventEdit.features.location.components.LocationEdit.addAnother": "เพิ่มเวลาจัดอื่นๆ",
+	"features.EventEdit.features.location.components.LocationEdit.cancel": "ยกเลิก",
+	"features.EventEdit.features.location.components.LocationEdit.save": "บันทึกสถานที่นี้",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shift": "เลื่อนวันที่เริ่มจัดงาน",
+	"features.EventEdit.features.location.components.LocationTimeShifter.forward": "ต่อไป",
+	"features.EventEdit.features.location.components.LocationTimeShifter.backward": "ถอยไป",
+	"features.EventEdit.features.location.components.LocationTimeShifter.by": "โดย",
+	"features.EventEdit.features.location.components.LocationTimeShifter.week": "สัปดาห์",
+	"features.EventEdit.features.location.components.LocationTimeShifter.weeks": "สัปดาห์",
+	"features.EventEdit.features.location.components.LocationTimeShifter.month": "เดือน",
+	"features.EventEdit.features.location.components.LocationTimeShifter.months": "เดือน",
+	"features.EventEdit.features.location.components.LocationTimeShifter.day": "วันที่",
+	"features.EventEdit.features.location.components.LocationTimeShifter.days": "จำนวนวัน",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hour": "ชั่วโมง",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hours": "ชั่วโมง",
+	"features.EventEdit.features.location.components.LocationTimeShifter.update": "อัพเดท",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shiftButton": "เลื่อนวัน และเวลาจัดงาน ทุกอันในครั้งเดียว",
+	"features.EventEdit.features.location.components.UnpublishModal.cancel": "ยกเลิก",
+	"features.EventEdit.features.location.components.UnpublishModal.title": "ยังไม่เผยแพร่เพื่อยังแก้ไขได้",
+	"features.EventEdit.features.location.components.UnpublishModal.desc": "เพื่อเพิ่ม แก้ไข หรือลบสถานที่จัด และเวลา ยังไม่เผยแพร่กิจกรรมเป็นการชั่วคราว ระหว่างช่วงเวลานี้ กิจกรรของคุณอาจยังมองไม่เห็นในผลการค้นหา อย่าลืมเผยแพร่กิจกรรมของคุณอีกครั้ง",
+	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "ยังไม่ได้เผยแพร่",
+	"features.EventEdit.features.preview.notes.prompt": "เพิ่มบันทึกส่วนตัวของคุณ",
+	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>ลงชื่อ</span> เพื่อเพิ่มบันทึกส่วนตัวของคุณ</a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.share": "แบ่งปันกิจกรรม",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.publish": "เผยแพร่",
+	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "ยังไม่ได้เผยแพร่",
+	"features.EventEdit.features.preview.components.PreviewFeed.locations": "สถานที่",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.title": "ค้นหากิจกรรมได้ตั้งแต่วันที่:",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.desc": "กิจกรรมของคุณจะมองเห็นได้ในสถานที่จัดกิจกรรม ของแอพพระคัมภีร์ และสามารถค้นหาได้ 5 วันล่วงหน้าก่อนวันที่เริ่มจัดงาน",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.title": "สถานะของโน้ต:",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.desc": "ตรากิจกรรมสดสีแดง จะปรากฎขึ้นเมื่อเวลาจัดงานเริ่มขึ้น",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "ลบออก:",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "กิจกรรมของคุณไม่สามารถค้นหาได้อีกต่อไปหลังจากที่จบกิจกรรม ผู้เข้าร่วมที่กด \"บันทึกกิจกรรม\" เมื่อกิจกรรมของคุณพร้อมให้ค้นพบ จะสามารถเข้าถึงเวอร์ชั่นที่เก็บไว้ได้ กิจกรรมนี้ยังคงเข้าถึงได้ผ่นทางลิ้งค์ที่สร้างขึ้น",
+	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "ขยายออก",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "อ่าน",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "ข้อมูลแผนการอ่าน",
+	"features.EventFeedMine.components.EventListItem.duplicate": "ทำซ้ำ",
+	"features.EventFeedMine.components.EventListItem.share": "แบ่งปัน",
+	"features.EventFeedMine.components.EventListItem.delete": "ลบ",
+	"features.EventFeedMine.components.EventListItem.draft": "แบบร่าง",
+	"features.EventFeedMine.components.EventListItem.edit": "แก้ไข",
+	"features.EventFeedMine.components.EventListItem.view": "ดู",
+	"features.EventFeedMine.components.EventListItem.fail": "ไม่สามารถลบกิจกรรมได้",
+	"features.EventView.components.EventViewContent.copy": "คัดลอก",
+	"features.EventView.components.EventViewContent.share": "แบ่งปัน",
+	"features.EventView.components.EventViewContent.read": "อ่าน",
+	"features.EventView.components.EventViewContent.readPlan": "อ่านแผนการอ่าน",
+	"features.EventView.components.EventViewContentAnnouncement.expand": "ขยายออก",
+	"features.EventView.components.EventViewContentAnnouncement.collapse": "ล้มเหลว",
+	"features.EventView.components.EventViewDetails.expand": "ขยายออก",
+	"features.EventView.components.EventViewDetails.collapse": "ล้มเหลว",
+	"features.EventView.components.EventViewDetails.save": "เก็บกิจกรรมไว้",
+	"features.EventView.components.EventViewDetails.signIn": "ลงชื่อเข้าใจเพื่อบันทึกกิจกรรม",
+	"features.EventView.components.EventViewDetails.saved": "กิจกรรมถูกบันทึก"
 }

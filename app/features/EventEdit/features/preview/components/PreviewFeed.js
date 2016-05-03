@@ -8,6 +8,7 @@ import PreviewTypeLink from './PreviewTypeLink'
 import PreviewTypePlan from './PreviewTypePlan'
 import PreviewTypeAnnouncement from './PreviewTypeAnnouncement'
 import PreviewTypeReference from './PreviewTypeReference'
+import { FormattedMessage } from 'react-intl'
 
 class PreviewFeed extends Component {
 
@@ -56,8 +57,8 @@ class PreviewFeed extends Component {
 		var eventMeta
 		if (event.item) {
 			eventMeta = <div className='actions'>
-							<p>&bull; Share Event</p>
-							<p>&bull; Locations and Times</p>
+							<p>&bull; <FormattedMessage id="features.EventEdit.features.preview.components.PreviewFeed.share" /></p>
+							<p>&bull; <FormattedMessage id="features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes" /></p>
 						</div>
 		}
 

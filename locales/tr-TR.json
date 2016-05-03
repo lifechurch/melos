@@ -1,408 +1,219 @@
 {
-	"components": {
-		"ErrorMessage": {
-			"genericError": "An error occurred",
-			"announcement": {
-				"events": {
-					"title": {
-						"required": "Announcement title is required."
-					}
-				}
-			},
-			"default": {
-				"bible": {
-					"reference": {
-						"not_found": "Bible reference not valid."
-					}
-				},
-				"events": {
-					"google_place_id": {
-						"required": "You must choose a location from the map."
-					},
-					"latitude": {
-						"required": "You must choose a location from the map."
-					},
-					"times": {
-						"start_dt": {
-							"must_be_a_future_date": "Start Time cannot be in the past."
-						}
-					},
-					"timezone": {
-						"required": "Timezone is required."
-					}
-				}
-			},
-			"reference": {
-				"events": {
-					"usfm": {
-						"invalid": "Bible reference not valid."
-					}
-				}
-			},
-			"url": {
-				"events": {
-					"url": {
-						"required": "URL is required."
-					},
-					"title": {
-						"required": "URL Label is required."
-					}
-				}
-			}
-		},
-		"EventHeader": {
-			"status": {
-				"published": "Published",
-				"draft": "Draft",
-				"live": "Live"
-			},
-			"unpublish": "Unpublish",
-			"saving": "Saving...",
-			"saveAsDraft": "Save as Draft",
-			"myEvents": "My Events",
-			"eventBuilder": "EVENT BUILDER",
-			"signOut": "Sign Out",
-			"createAccount": "Create Account"
-		},
-		"HtmlEditor": {
-			"text": "Text",
-			"bold": "Bold",
-			"italic": "Italic"
-		}
-	},
-	"containers": {
-		"Auth": {
-			"title": "Events Sign In",
-			"signIn": "Sign In",
-			"subHead1": "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'> Sign up now at Bible.com</a> to start creating Events.",
-			"email": "Email",
-			"password": "Password",
-			"forgotPassword": "Forgot Password"
-		},
-		"EventEdit": {
-			"event": "Event"
-		},
-		"EventEditContentContainer": {
-			"choose": "Choose some content to get started.",
-			"needHelp": "Need help?",
-			"title": "Event Content",
-			"previous": "← Previous: Locations & Times",
-			"next": "Next: Preview →"
-		},
-		"EventEditDetails": {
-			"title": "Event Details"
-		},
-		"EventEditLocationContainer": {
-			"title": "Event Location",
-			"previous": "← Previous: Details",
-			"next": "Next: Add Content →"
-		},
-		"EventEditPreview": {
-			"title": "Event Preview",
-			"previous": "← Previous: Content"
-		},
-		"EventEditShare": {
-			"title": "Event Share",
-			"subTitle": "Your Event is Now Published:",
-			"edit": "Edit Event",
-			"go": "Go to My Events",
-			"share": "Share your event:",
-			"copy": "Copy",
-			"copied": "The shortlink was copied to your clipboard",
-			"previous": "← Previous: Preview"
-		},
-		"EventFeedDiscover": {
-			"title": "Discover Events",
-			"discover": "Discover"
-		},
-		"EventFeedMine": {
-			"title": "My Events",
-			"previous": "← Previous",
-			"next": "Next →",
-			"my": "My Events",
-			"new": "Create New Event",
-			"subTitle": "EVENTS CREATED BY ME",
-			"newFirst": "Create Your First Event",
-			"learn": "Learn how to make a great Event"
-		},
-		"EventFeedSaved": {
-			"title": "Saved Events"
-		},
-		"EventView": {
-			"title": "YouVersion Event"
-		}
-	},
-	"features": {
-		"Auth": {
-			"errors": {
-				"sessionExpired": "Your session expired. Please login again.",
-				"invalidEmail": "Invalid email or password."
-			}
-		},
-		"EventEdit": {
-			"errors": {
-				"locationMustHaveTime": "All locations must have at least one time.",
-				"locationRequired": "You cannot publish an Event with no locations.",
-				"contentRequired": "You cannot publish an Event with no content.",
-				"planSearchFailed": "Search did not match any documents",
-				"noMatchingPlans": "No matching Plans"
-			},
-			"components": {
-				"EventEditNav": {
-					"details": "Details",
-					"locations": "Locations & Times",
-					"content": "Content",
-					"preview": "Preview & Publish",
-					"share": "Share"
-				}
-			},
-			"features": {
-				"content": {
-					"components": {
-						"ContentFeed": {
-							"reorder": "Reorder Content",
-							"doneReordering": "Done Reordering"
-						},
-						"ContentHeader": {
-							"text": "Text",
-							"reference": "Bible Reference",
-							"plan": "Plan",
-							"image": "Image",
-							"link": "External Link",
-							"giving": "Giving Link",
-							"announcement": "Announcement"
-						},
-						"ContentHelpModal": {
-							"types": "Content Types",
-							"learn": "Learn how to make <br>a great Event",
-							"text": {
-								"title": "Text Module",
-								"desc": "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
-							},
-							"reference": {
-								"title": "Bible Reference Module",
-								"desc": "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
-							},
-							"plan": {
-								"title": "Plan Module",
-								"desc": "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
-							},
-							"image": {
-								"title": "Image Module",
-								"desc": "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
-							},
-							"link": {
-								"title": "External Link Module",
-								"desc": "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
-							},
-							"announcement": {
-								"title": "Announcement Module",
-								"desc": "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
-							}
-						},
-						"ContentInsertionPoint": {
-							"title": "Insert next module here"
-						},
-						"ContentTypeAnnouncement": {
-							"title": "Title",
-							"prompt": "Write something here...",
-							"caption": "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
-						},
-						"ContentTypeContainer": {
-							"dirty": "Content will automatically save a few seconds after you stop typing.",
-							"failed": "Unable to save.",
-							"tryAgain": "Try again.",
-							"lastSaved": "Last saved %{when}"
-						},
-						"ContentTypeImage": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"caption": "Add caption",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"select": "Select Image"
-						},
-						"ContentTypeLink": {
-							"kindrid": "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>.",
-							"label": "Link Label",
-							"prompt": "Write something here...",
-							"url": "URL"
-						},
-						"ContentTypePlan": {
-							"replace": "Replace",
-							"search": "Search for a Reading Plan"
-						},
-						"ContentTypeReference": {
-							"version": "Version",
-							"book": "Book",
-							"chapterVerse": "Chapter:Verse"
-						},
-						"ContentTypeText": {
-							"prompt": "Write something here..."
-						},
-						"LiveWarningModal": {
-							"title": "Cannot Delete While Event is Live",
-							"desc": "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules.",
-							"ok": "OK"
-						}
-					}
-				},
-				"details": {
-					"errors": {
-						"generic": "There was a problem while publishing your Event.",
-						"invalidTimes": "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
-					},
-					"components": {
-						"DetailsEdit": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"changeImage": "Change Image",
-							"removeImage": "Remove Image",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"sizePrompt2": "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels.",
-							"eventName": "Event Name",
-							"org": "Church Name or Organization",
-							"desc": "Event Description",
-							"next": "Next: Add Location & Times →"
-						}
-					}
-				},
-				"location": {
-					"components": {
-						"Location": {
-							"oneRequired": "Add at least one time.",
-							"use": "USE THIS LOCATION",
-							"edit": "Edit Location",
-							"delete": "Delete Location"
-						},
-						"LocationAddButtons": {
-							"addPhysical": "Add a Physical Location",
-							"promptPhysical": "You can add multiple locations.",
-							"addVirtual": "Add Virtual Location",
-							"churchOnline": "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
-						},
-						"LocationAddTime": {
-							"minutes": "minutes",
-							"hours": "hours",
-							"days": "days"
-						},
-						"LocationDeleteModal": {
-							"sure": "Are you sure?",
-							"selected": "You have selected the following location to be deleted:",
-							"warn": "This will remove the location from all past and present events. You will not be able to re-use this location for future events.",
-							"cancel": "Cancel",
-							"delete": "Delete"
-						},
-						"LocationEdit": {
-							"prompt": "Enter the Location address...",
-							"country": "Country",
-							"timezone": "Timezone",
-							"namePrompt": "First Baptist East Campus",
-							"name": "Location Name",
-							"nameOptional": "Optional: Useful if adding multiple locations",
-							"addAnother": "Add another time",
-							"cancel": "Cancel",
-							"save": "Save this Location"
-						},
-						"LocationTimeShifter": {
-							"shift": "Shift start dates",
-							"forward": "forward",
-							"backward": "backward",
-							"by": "by",
-							"week": "week",
-							"weeks": "weeks",
-							"month": "month",
-							"months": "months",
-							"day": "day",
-							"days": "days",
-							"hour": "hour",
-							"hours": "hours",
-							"update": "Update",
-							"shiftButton": "Shift all dates and times at once"
-						},
-						"UnpublishModal": {
-							"cancel": "Cancel",
-							"title": "Unpublish to Make Changes",
-							"desc": "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again.",
-							"unpublish": "Unpublish"
-						}
-					}
-				},
-				"preview": {
-					"notes": {
-						"prompt": "Add your private notes...",
-						"noAuthPrompt": "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
-					},
-					"components": {
-						"PreviewFeed": {
-							"share": "Share Event",
-							"locations": "Locations:",
-							"publish": "Publish",
-							"unpublish": "Unpublish",
-							"discoverable": {
-								"title": "Discoverable:",
-								"desc": "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
-							},
-							"status": {
-								"title": "Status:",
-								"desc": "The red LIVE badge will display when your earliest start time begins."
-							},
-							"remove": {
-								"title": "Remove:",
-								"desc": "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
-							}
-						},
-						"PreviewTypeAnnouncement": {
-							"expand": "Expand"
-						},
-						"PreviewTypePlan": {
-							"read": "Read",
-							"info": "Plan Info"
-						}
-					}
-				}
-			}
-		},
-		"EventFeedMine": {
-			"components": {
-				"EventListItem": {
-					"duplicate": "Duplicate",
-					"share": "Share",
-					"delete": "Delete",
-					"draft": "DRAFT",
-					"edit": "Edit",
-					"view": "View",
-					"fail": "Unable to delete Event"
-				}
-			}
-		},
-		"EventView": {
-			"components": {
-				"EventViewContent": {
-					"copy": "Copy",
-					"share": "Share",
-					"read": "Read",
-					"readPlan": "Read Plan"
-				},
-				"EventViewContentAnnouncement": {
-					"expand": "Expand",
-					"collapse": "Collapse"
-				},
-				"EventViewDetails": {
-					"expand": "Expand",
-					"collapse": "Collapse",
-					"save": "Save Event",
-					"signIn": "Sign In to Save Event",
-					"saved": "Event Saved"
-				}
-			}
-		}
-	}
+	"components.ErrorMessage.genericError": "Bir hata meydana geldi",
+	"components.ErrorMessage.announcement.events.title.required": "Duyuru başlığı gerekli.",
+	"components.ErrorMessage.default.bible.reference.not_found": "Geçersiz Kutsal Kitap referansı",
+	"components.ErrorMessage.default.events.google_place_id.required": "Haritadan bir konum seçmelisiniz.",
+	"components.ErrorMessage.default.events.latitude.required": "Haritadan bir konum seçmelisiniz.",
+	"components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date": "Başlangıç Zamanı geçmiş zaman olamaz.",
+	"components.ErrorMessage.default.events.timezone.required": "Zaman dilimi gerekli.",
+	"components.ErrorMessage.reference.events.usfm.invalid": "Kutsal Kitap referansı geçerli değil.",
+	"components.ErrorMessage.url.events.url.required": "URL gerekli.",
+	"components.ErrorMessage.url.events.title.required": "URL Etiketi gerekli.",
+	"components.EventHeader.status.published": "Yayımlandı",
+	"components.EventHeader.status.draft": "Taslak",
+	"components.EventHeader.status.live": "Canlı",
+	"components.EventHeader.unpublish": "Yayınlanmayan",
+	"components.EventHeader.saving": "Kaydediliyor...",
+	"components.EventHeader.saveAsDraft": "Taslak olarak Kaydet",
+	"components.EventHeader.myEvents": "Etkinliklerim",
+	"components.EventHeader.eventBuilder": "ETKİNLİK KURUCU",
+	"components.EventHeader.signOut": "Çıkış Yap",
+	"components.EventHeader.createAccount": "Hesap Oluştur.",
+	"components.HtmlEditor.text": "Metin",
+	"components.HtmlEditor.bold": "kalın",
+	"components.HtmlEditor.italic": "itali",
+	"containers.Auth.title": "Etkinlik Girişi",
+	"containers.Auth.signIn": "Giriş Yap",
+	"containers.Auth.subHead1": "Eğer Kutsal Kitap Uygulaması kullanıcısıysanız ve daha önceden YouVersion hesabınız varsa, aynı kimlik bilgilerini kullanarak giriş yapabilirsiniz.<br/><br/>Henüz YouVersion hesabınız yok mu? <br/><a href='{url}'>Bible.com adresinde kayıt olun</a> Etkinlikler yaratmaya başlayın.",
+	"containers.Auth.email": "e-Posta",
+	"containers.Auth.password": "Parola",
+	"containers.Auth.forgotPassword": "Parolamı Unuttum",
+	"containers.EventEdit.event": "Etkinlik",
+	"containers.EventEditContentContainer.choose": "Başlamak için birkaç içerik seç.",
+	"containers.EventEditContentContainer.needHelp": "Yardıma ihtiyacınız varmı?",
+	"containers.EventEditContentContainer.title": "Etkinlik İçeriği",
+	"containers.EventEditContentContainer.previous": "← Önceki: Yer & Zaman",
+	"containers.EventEditContentContainer.next": "Sonraki: Önizleme →",
+	"containers.EventEditDetails.title": "Etkinlik Detayları",
+	"containers.EventEditLocationContainer.title": "Etkinlik Konumu",
+	"containers.EventEditLocationContainer.previous": "← Önceki: Detaylar",
+	"containers.EventEditLocationContainer.next": "Sonraki: İçerik Ekleyin →",
+	"containers.EventEditPreview.title": "Etkinlik Önizleme",
+	"containers.EventEditPreview.previous": "← Önceki: İçerik",
+	"containers.EventEditShare.title": "Etkinlik Paylaşma",
+	"containers.EventEditShare.subTitle": "Etkinliğiniz artık yayınlandı:",
+	"containers.EventEditShare.edit": "Etkinliği Düzenle",
+	"containers.EventEditShare.go": "Etkinliklerime Git",
+	"containers.EventEditShare.share": "Etkinliğini Paylaş",
+	"containers.EventEditShare.copy": "Kopyala",
+	"containers.EventEditShare.copied": "Sosyal Ağınızda paylaşabilmeniz için Kısa link",
+	"containers.EventEditShare.previous": "← Önceki: Önizleme",
+	"containers.EventFeedDiscover.title": "Etkinlikleri Keşfedin",
+	"containers.EventFeedDiscover.discover": "Keşfedin",
+	"containers.EventFeedMine.title": "Etkinliklerim",
+	"containers.EventFeedMine.previous": "← Önceki",
+	"containers.EventFeedMine.next": "Sonraki →",
+	"containers.EventFeedMine.my": "Etkinliklerim",
+	"containers.EventFeedMine.new": "Yeni Etkinlik Yarat",
+	"containers.EventFeedMine.subTitle": "BENİM TARAFIMDAN OLUŞTURULAN OLAYLAR",
+	"containers.EventFeedMine.newFirst": "İlk Etkinliğini Oluştur",
+	"containers.EventFeedMine.learn": "Nasıl harika bir Etkinlik yaratacağını öğren",
+	"containers.EventFeedSaved.title": "Kayıtlı Etkinlikler",
+	"containers.EventView.title": "YouVersion Etkinliği",
+	"containers.SelectLanguage.choose": "Choose Your Language",
+	"features.Auth.errors.sessionExpired": "Oturumunuz zaman aşımına uğradı. Lütfen Tekrar giriş yapın.",
+	"features.Auth.errors.invalidEmail": "Geçersiz E-posta ya da Şifre ",
+	"features.EventEdit.errors.locationMustHaveTime": "Bütün konumlar en azından bir zaman içermeli.",
+	"features.EventEdit.errors.locationRequired": "Konumlandırılmamış etkinlikleri paylaşamazsınız.",
+	"features.EventEdit.errors.contentRequired": "İçeriği olmayan bir Etkinliği yayınlayamazsınız.",
+	"features.EventEdit.errors.planSearchFailed": "Arama sonucu hiç bir dökümanla eşleşmedi",
+	"features.EventEdit.errors.noMatchingPlans": "Eşleşen bir Plan yok",
+	"features.EventEdit.components.EventEditNav.details": "Ayrıntılar",
+	"features.EventEdit.components.EventEditNav.locations": "Yer & Zaman",
+	"features.EventEdit.components.EventEditNav.content": "İçerik",
+	"features.EventEdit.components.EventEditNav.preview": "Önizle & Yayınla",
+	"features.EventEdit.components.EventEditNav.share": "Paylaş",
+	"features.EventEdit.features.content.components.ContentFeed.reorder": "İçeriği Yeniden Düzenle",
+	"features.EventEdit.features.content.components.ContentFeed.doneReordering": "Yeniden Düzenleme Tamamlandı",
+	"features.EventEdit.features.content.components.ContentHeader.text": "Metin",
+	"features.EventEdit.features.content.components.ContentHeader.reference": "Kutsal Kitap Referansı",
+	"features.EventEdit.features.content.components.ContentHeader.plan": "Okuma Planı",
+	"features.EventEdit.features.content.components.ContentHeader.image": "Görüntü",
+	"features.EventEdit.features.content.components.ContentHeader.link": "Harici Bağlantı",
+	"features.EventEdit.features.content.components.ContentHeader.giving": "Bağış Linki",
+	"features.EventEdit.features.content.components.ContentHeader.announcement": "Duyuru",
+	"features.EventEdit.features.content.components.ContentHelpModal.types": "İçerik Türleri",
+	"features.EventEdit.features.content.components.ContentHelpModal.learn": "<br>Muhteşem bir etkinilğin nasıl oluşturulacağını öğrenin",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.title": "Metin Modülü",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "Anahatlar, can alıcı noktalar, tartışma soruları… Sizi takip eden takipçilerinizle genel içerik ile ilgili metinleri paylaşın. Metin Modülleriniz istediğiniz formatta ve istediğiniz uzunlukta olabilir. ",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "Kutsal Kitap Referans Modülü",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "YouVersion'ın 900 dil ve 1.200'den fazla versiyona direk bağlı olan herhangi bir Kutsal Kitap ayeti veya bölümü seçin. Etkinliğinizi görüntüleyen kişiler referansınıza tıklayarak onu kendi Kutsal Kitap Uygulaması okuyucusundan işaretleyebilir, vurgulayabilir, ve daha birçok şey yapabilir.",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "Plan Modülü",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.desc": "Öğreti noktalarınıza bağlı Kutsal Kitap Planları ve Günlük Okumalar, sizi izleyenlere hafta içerisine Tanrı'nın Sözü'ne bağlı kalmalarına yardımcı olur.",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.title": "Resim Modülü",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.desc": "Etkinliğinizi her türlü destekleyeci grafiklerle hayata geçirin: seri resim, fotoğraflar, Ayet Görüntüleri vs. Katılımcılar Etkinlik görüntülerinizi, mesajınızı ağızdan ağıza yayarak kolayca kendi sosyal medyalarından paylaşabilecekler.",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "Harici Link Modülü",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "Etkinliğinizin içinde herhangi bir harici websitesine bağlanmaya yarayan bir düğme yaratır. İzleyicilerinizi online bağış, gönüllü kaydolma, veya kilise ana sayfalarına bir tık daha yakınlaştırır.",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.title": "Duyuru Modülü",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Kilise haberleri, takvim etkinlikleri, programlar, dersler, misyon ve gönüllülük fırsatları... Anons modülü Etkinliğinizin ana mesajından uzaklaştırmadan, tam vaktinde ve önemli bilgileri paylaşabileceğiniz harika bir kutudur. Her anons modülü Etkinliğinizin içindeki kendi sayfasında belirir ve ayrıca zengin metin içeriğini bile barındırır (örneğin koyu ve italik yazımlar).",
+	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "Sonraki modülü buraya ekle",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "Başlık",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "Buraya bir şeyler yazın...",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "Etkinliğinizde, sadece Başlık (yukarıda) görülebilir olacak. Bir kullanıcı Başlığınıza tıkladığında, Ana Metin (aşağıda) farklı bir ekranda belirecek.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.dirty": "Yazmayı bıraktıktan birkaç saniye sonra içerik otomatik olarak kaydedilecek.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.failed": "Kaydedilemiyor.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.tryAgain": "Tekrar deneyin.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.lastSaved": "En son {when} kaydedildi",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongSize": "Rasim boyutları {requiredWidth}x{requiredHeight} olmalıdır. Sizin resminiz {yourWidth}x{yourHeight}",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongType": "Geçersiz dosya türü JPG olmalıdır.",
+	"features.EventEdit.features.content.components.ContentTypeImage.caption": "Başlık yazısı ekleyin",
+	"features.EventEdit.features.content.components.ContentTypeImage.prompt": "Bir resim yükleyin ",
+	"features.EventEdit.features.content.components.ContentTypeImage.onlyJpg": "[Sadece JPG]",
+	"features.EventEdit.features.content.components.ContentTypeImage.sizePrompt": "{requiredWidth}px genişlik x {requiredHeight}px yükselik",
+	"features.EventEdit.features.content.components.ContentTypeImage.select": "Resim Seç",
+	"features.EventEdit.features.content.components.ContentTypeLink.kindrid": "Eğer zeki, basit bir bağış platformu arıyorsanız, <a href='{url}'>Kindrid'i deneyin</a>.",
+	"features.EventEdit.features.content.components.ContentTypeLink.label": "Bağlantı Etiketi",
+	"features.EventEdit.features.content.components.ContentTypeLink.prompt": "Buraya bir şeyler yazın...",
+	"features.EventEdit.features.content.components.ContentTypeLink.url": "URL",
+	"features.EventEdit.features.content.components.ContentTypePlan.replace": "Yerleştir",
+	"features.EventEdit.features.content.components.ContentTypePlan.search": "Bir Okuma Planı Arayın",
+	"features.EventEdit.features.content.components.ContentTypeReference.language": "Dil",
+	"features.EventEdit.features.content.components.ContentTypeReference.version": "Çeviri",
+	"features.EventEdit.features.content.components.ContentTypeReference.book": "Kitap",
+	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "Bölüm:Ayet",
+	"features.EventEdit.features.content.components.ContentTypeText.prompt": "Buraya bir şeyler yazın...",
+	"features.EventEdit.features.content.components.LiveWarningModal.title": "Etkinlik Yayındayken Silemezsiniz",
+	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Bir kere Etkinliğiniz yayına geçtiğinde, Yazı, Kutsal Kitap Referansı, ve Resim modüllerini silemezsiniz çünkü kullanıcılar kendi özel notlarını onlara eklemiş olabilirler. Yine de, bu modülleri düzenleyebilirsiniz.",
+	"features.EventEdit.features.content.components.LiveWarningModal.ok": "Tamam",
+	"features.EventEdit.features.details.errors.generic": "Etkinliğinizi yayınlarken bir sorun oluştu.",
+	"features.EventEdit.features.details.errors.invalidTimes": "Tekli bir toplantı 12 saatten fazla olamaz, ve bir Etkinlik içindeki en erken başlangıç zamanı ile en geç bitiş zamanı arasındaki fark 8 günden fazla olamaz. Lütfen Etkinlik zamanını ayarlayın ve tekrar deneyin.",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize": "Resim boyutu {requiredWidth}x{requiredHeight} olmalı. Sizin resminiz {yourWidth}x{yourHeight}.",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType": "Geçersiz dosya türü. JPG olmalı.",
+	"features.EventEdit.features.details.components.DetailsEdit.changeImage": "Resmi Değiştir",
+	"features.EventEdit.features.details.components.DetailsEdit.removeImage": "Resmi Kaldır",
+	"features.EventEdit.features.details.components.DetailsEdit.prompt": "Bir Resim Sürükle ve Bırak",
+	"features.EventEdit.features.details.components.DetailsEdit.onlyJpg": "[Sadece JPG]",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt": "{requiredWidth}px genişlik x {requiredHeight}px yükseklik",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "Resim boyutlarınız {requiredWidth} x {requiredHeight} pixel olmalıdır.",
+	"features.EventEdit.features.details.components.DetailsEdit.eventName": "Etkinlik Adı",
+	"features.EventEdit.features.details.components.DetailsEdit.org": "Kilise Adı ya da Organizasyon",
+	"features.EventEdit.features.details.components.DetailsEdit.desc": "Etkinlik Tanımı",
+	"features.EventEdit.features.details.components.DetailsEdit.next": "Sonraki: Yer & Zaman Ekle →",
+	"features.EventEdit.features.location.components.Location.oneRequired": "En azından bir zaman ekleyin.",
+	"features.EventEdit.features.location.components.Location.use": "BU KONUMU KULLAN",
+	"features.EventEdit.features.location.components.Location.edit": "Konumu Düzenle",
+	"features.EventEdit.features.location.components.Location.delete": "Konumu Sil",
+	"features.EventEdit.features.location.components.LocationAddButtons.addPhysical": "Bir Fiziki Konum Ekleyin",
+	"features.EventEdit.features.location.components.LocationAddButtons.promptPhysical": "Çoklu konum ekleyebilirsiniz.",
+	"features.EventEdit.features.location.components.LocationAddButtons.addVirtual": "Sanal Konum Ekleyin",
+	"features.EventEdit.features.location.components.LocationAddButtons.churchOnline": "Biliyor muydunuz? Kilise Online Platformunu kullanarak <a className='button-caption' href='{url}'>ücretsiz çevrim içi hizmet başlatabilirsiniz</a>.",
+	"features.EventEdit.features.location.components.LocationAddTime.minutes": "DAKİKA",
+	"features.EventEdit.features.location.components.LocationAddTime.hours": "SAAT",
+	"features.EventEdit.features.location.components.LocationAddTime.days": "günler",
+	"features.EventEdit.features.location.components.LocationDeleteModal.sure": "Emin misiniz?",
+	"features.EventEdit.features.location.components.LocationDeleteModal.selected": "Silinmesi için takip eden konumu seçtiniz:",
+	"features.EventEdit.features.location.components.LocationDeleteModal.warn": "Bu konumu önceki ve şimdiki bütün tüm etkinliklerden silecek. Gelecek etkinlikler için bu konumu tekrar kullanamayacaksınız.",
+	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "İptal",
+	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Sil",
+	"features.EventEdit.features.location.components.LocationEdit.prompt": "Konum adresini girin...",
+	"features.EventEdit.features.location.components.LocationEdit.country": "Ülke",
+	"features.EventEdit.features.location.components.LocationEdit.timezone": "Saat Dilimi",
+	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "İlk Baptist Doğu Kampüsü",
+	"features.EventEdit.features.location.components.LocationEdit.name": "Konum Adı",
+	"features.EventEdit.features.location.components.LocationEdit.nameOptional": "Opsiyonel: Çoklu konum eklenecekse yararlı",
+	"features.EventEdit.features.location.components.LocationEdit.addAnother": "Başka zaman ekle",
+	"features.EventEdit.features.location.components.LocationEdit.cancel": "İptal",
+	"features.EventEdit.features.location.components.LocationEdit.save": "Bu Konumu Kaydedin",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shift": "Başlangıç tarihlerini değiştir",
+	"features.EventEdit.features.location.components.LocationTimeShifter.forward": "İleri",
+	"features.EventEdit.features.location.components.LocationTimeShifter.backward": "geriye",
+	"features.EventEdit.features.location.components.LocationTimeShifter.by": "tarafından",
+	"features.EventEdit.features.location.components.LocationTimeShifter.week": "hafta",
+	"features.EventEdit.features.location.components.LocationTimeShifter.weeks": "hafta",
+	"features.EventEdit.features.location.components.LocationTimeShifter.month": "Ay",
+	"features.EventEdit.features.location.components.LocationTimeShifter.months": "aylar",
+	"features.EventEdit.features.location.components.LocationTimeShifter.day": "Gün",
+	"features.EventEdit.features.location.components.LocationTimeShifter.days": "günler",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hour": "saat",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hours": "SAAT",
+	"features.EventEdit.features.location.components.LocationTimeShifter.update": "Güncelle",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shiftButton": "Önce tüm tarihleri ve zamanları değiştir",
+	"features.EventEdit.features.location.components.UnpublishModal.cancel": "İptal",
+	"features.EventEdit.features.location.components.UnpublishModal.title": "Değişiklik Yapmak için Yayından Kaldırın",
+	"features.EventEdit.features.location.components.UnpublishModal.desc": "Konumları ve Zamanları eklemek, düzenlemek, veya silmek için, geçici olarak etkinliğinizi yayından kaldırın. Bu zaman süresince, etkinliğiniz arama sonuçlarında gözükmeyecektir. Etkinliğinizi tekrar yayınlamayı unutmayın.",
+	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Yayımdan kaldır",
+	"features.EventEdit.features.preview.notes.prompt": "Kişisel notlar ekleyin...",
+	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Özel notlarınızı ekleyebilmek için</span> giriş yapın…</a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.share": "Eylemi Paylaş",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Yayınla",
+	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Yayımdan kaldır",
+	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Konumlar:",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.title": "Keşfedilebilir:",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.desc": "Etkinliğiniz başlangıç zamanından en erken 5 gün önce Kutsal Kitap Uygulaması Etkinlik içindeki konum ve arama sonuçlarında görünür olacak.",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.title": "Notun Durumu:",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.desc": "En erken başlangıç saatinde kırmızı CANLI işareti görüntülenecek. ",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "Kaldır:",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Etkinliğiniz en son bitiş zamanından sonra artık bulunabilir olmayacak. Etkinliğiniz bulunabilir olduğu zamanda “Etkinlik Kaydet” seçeneğini tıklayan katılımcılar etkinliğin arşivlenmiş versiyonuna hala erişim sağlayabilecekler, Bu Etkinlik direk gelen linkler aracılığıyla erişebilir olmaya devam edecek.",
+	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "Genişlet",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "Oku",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "Okuma Planı Hakkında",
+	"features.EventFeedMine.components.EventListItem.duplicate": "Çoğalt",
+	"features.EventFeedMine.components.EventListItem.share": "Paylaş",
+	"features.EventFeedMine.components.EventListItem.delete": "Sil",
+	"features.EventFeedMine.components.EventListItem.draft": "Taslak",
+	"features.EventFeedMine.components.EventListItem.edit": "Düzenle",
+	"features.EventFeedMine.components.EventListItem.view": "Görüntüle",
+	"features.EventFeedMine.components.EventListItem.fail": "Etkinlik Silinemiyor",
+	"features.EventView.components.EventViewContent.copy": "Kopyala",
+	"features.EventView.components.EventViewContent.share": "Paylaş",
+	"features.EventView.components.EventViewContent.read": "Oku",
+	"features.EventView.components.EventViewContent.readPlan": "Planı Oku",
+	"features.EventView.components.EventViewContentAnnouncement.expand": "Genişlet",
+	"features.EventView.components.EventViewContentAnnouncement.collapse": "Daralt",
+	"features.EventView.components.EventViewDetails.expand": "Genişlet",
+	"features.EventView.components.EventViewDetails.collapse": "Daralt",
+	"features.EventView.components.EventViewDetails.save": "Kaydet",
+	"features.EventView.components.EventViewDetails.signIn": "Etkinliği Kaydetmek İçin Giriş Yapın",
+	"features.EventView.components.EventViewDetails.saved": "Etkinlik Kaydedildi"
 }

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Modal from 'react-modal'
 import ActionCreators from '../../../../../actions/modals'
+import { FormattedMessage } from 'react-intl'
 
 class LocationDeleteModal extends Component {
 
@@ -33,13 +34,13 @@ class LocationDeleteModal extends Component {
 
 		return (
 			<Modal isOpen={isOpen} style={customStyles}>
-				<h3>Are you sure?</h3>
-				<p>You have selected the following location to be deleted:</p>
+				<FormattedMessage tagName="h3" id="features.EventEdit.features.location.components.LocationDeleteModal.sure" />
+				<FormattedMessage tagName="p"  id="features.EventEdit.features.location.components.LocationDeleteModal.selected" />
 				<p><b>{loc.name}</b></p>
-				<p>This will remove the location from all past and present events. You will not be able to re-use this location for future events.</p>
+				<FormattedMessage tagName="p"  id="features.EventEdit.features.location.components.LocationDeleteModal.warn" />
 				<div className='modal-actions'>
-					<a onClick={handleClose}>Cancel</a>
-					<a className='solid-button red' onClick={::this.handleConfirm}>Delete</a>
+					<a onClick={handleClose}><FormattedMessage id="features.EventEdit.features.location.components.LocationDeleteModal.cancel" /></a>
+					<a className='solid-button red' onClick={::this.handleConfirm}><FormattedMessage id="features.EventEdit.features.location.components.LocationDeleteModal.delete" /></a>
 				</div>
 			</Modal>
 		)

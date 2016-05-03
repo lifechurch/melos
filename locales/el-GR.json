@@ -1,408 +1,219 @@
 {
-	"components": {
-		"ErrorMessage": {
-			"genericError": "An error occurred",
-			"announcement": {
-				"events": {
-					"title": {
-						"required": "Announcement title is required."
-					}
-				}
-			},
-			"default": {
-				"bible": {
-					"reference": {
-						"not_found": "Bible reference not valid."
-					}
-				},
-				"events": {
-					"google_place_id": {
-						"required": "You must choose a location from the map."
-					},
-					"latitude": {
-						"required": "You must choose a location from the map."
-					},
-					"times": {
-						"start_dt": {
-							"must_be_a_future_date": "Start Time cannot be in the past."
-						}
-					},
-					"timezone": {
-						"required": "Timezone is required."
-					}
-				}
-			},
-			"reference": {
-				"events": {
-					"usfm": {
-						"invalid": "Bible reference not valid."
-					}
-				}
-			},
-			"url": {
-				"events": {
-					"url": {
-						"required": "URL is required."
-					},
-					"title": {
-						"required": "URL Label is required."
-					}
-				}
-			}
-		},
-		"EventHeader": {
-			"status": {
-				"published": "Published",
-				"draft": "Draft",
-				"live": "Live"
-			},
-			"unpublish": "Unpublish",
-			"saving": "Saving...",
-			"saveAsDraft": "Save as Draft",
-			"myEvents": "My Events",
-			"eventBuilder": "EVENT BUILDER",
-			"signOut": "Sign Out",
-			"createAccount": "Create Account"
-		},
-		"HtmlEditor": {
-			"text": "Text",
-			"bold": "Bold",
-			"italic": "Italic"
-		}
-	},
-	"containers": {
-		"Auth": {
-			"title": "Events Sign In",
-			"signIn": "Sign In",
-			"subHead1": "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'> Sign up now at Bible.com</a> to start creating Events.",
-			"email": "Email",
-			"password": "Password",
-			"forgotPassword": "Forgot Password"
-		},
-		"EventEdit": {
-			"event": "Event"
-		},
-		"EventEditContentContainer": {
-			"choose": "Choose some content to get started.",
-			"needHelp": "Need help?",
-			"title": "Event Content",
-			"previous": "← Previous: Locations & Times",
-			"next": "Next: Preview →"
-		},
-		"EventEditDetails": {
-			"title": "Event Details"
-		},
-		"EventEditLocationContainer": {
-			"title": "Event Location",
-			"previous": "← Previous: Details",
-			"next": "Next: Add Content →"
-		},
-		"EventEditPreview": {
-			"title": "Event Preview",
-			"previous": "← Previous: Content"
-		},
-		"EventEditShare": {
-			"title": "Event Share",
-			"subTitle": "Your Event is Now Published:",
-			"edit": "Edit Event",
-			"go": "Go to My Events",
-			"share": "Share your event:",
-			"copy": "Copy",
-			"copied": "The shortlink was copied to your clipboard",
-			"previous": "← Previous: Preview"
-		},
-		"EventFeedDiscover": {
-			"title": "Discover Events",
-			"discover": "Discover"
-		},
-		"EventFeedMine": {
-			"title": "My Events",
-			"previous": "← Previous",
-			"next": "Next →",
-			"my": "My Events",
-			"new": "Create New Event",
-			"subTitle": "EVENTS CREATED BY ME",
-			"newFirst": "Create Your First Event",
-			"learn": "Learn how to make a great Event"
-		},
-		"EventFeedSaved": {
-			"title": "Saved Events"
-		},
-		"EventView": {
-			"title": "YouVersion Event"
-		}
-	},
-	"features": {
-		"Auth": {
-			"errors": {
-				"sessionExpired": "Your session expired. Please login again.",
-				"invalidEmail": "Invalid email or password."
-			}
-		},
-		"EventEdit": {
-			"errors": {
-				"locationMustHaveTime": "All locations must have at least one time.",
-				"locationRequired": "You cannot publish an Event with no locations.",
-				"contentRequired": "You cannot publish an Event with no content.",
-				"planSearchFailed": "Search did not match any documents",
-				"noMatchingPlans": "No matching Plans"
-			},
-			"components": {
-				"EventEditNav": {
-					"details": "Details",
-					"locations": "Locations & Times",
-					"content": "Content",
-					"preview": "Preview & Publish",
-					"share": "Share"
-				}
-			},
-			"features": {
-				"content": {
-					"components": {
-						"ContentFeed": {
-							"reorder": "Reorder Content",
-							"doneReordering": "Done Reordering"
-						},
-						"ContentHeader": {
-							"text": "Text",
-							"reference": "Bible Reference",
-							"plan": "Plan",
-							"image": "Image",
-							"link": "External Link",
-							"giving": "Giving Link",
-							"announcement": "Announcement"
-						},
-						"ContentHelpModal": {
-							"types": "Content Types",
-							"learn": "Learn how to make <br>a great Event",
-							"text": {
-								"title": "Text Module",
-								"desc": "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
-							},
-							"reference": {
-								"title": "Bible Reference Module",
-								"desc": "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
-							},
-							"plan": {
-								"title": "Plan Module",
-								"desc": "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
-							},
-							"image": {
-								"title": "Image Module",
-								"desc": "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
-							},
-							"link": {
-								"title": "External Link Module",
-								"desc": "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
-							},
-							"announcement": {
-								"title": "Announcement Module",
-								"desc": "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
-							}
-						},
-						"ContentInsertionPoint": {
-							"title": "Insert next module here"
-						},
-						"ContentTypeAnnouncement": {
-							"title": "Title",
-							"prompt": "Write something here...",
-							"caption": "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
-						},
-						"ContentTypeContainer": {
-							"dirty": "Content will automatically save a few seconds after you stop typing.",
-							"failed": "Unable to save.",
-							"tryAgain": "Try again.",
-							"lastSaved": "Last saved %{when}"
-						},
-						"ContentTypeImage": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"caption": "Add caption",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"select": "Select Image"
-						},
-						"ContentTypeLink": {
-							"kindrid": "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>.",
-							"label": "Link Label",
-							"prompt": "Write something here...",
-							"url": "URL"
-						},
-						"ContentTypePlan": {
-							"replace": "Replace",
-							"search": "Search for a Reading Plan"
-						},
-						"ContentTypeReference": {
-							"version": "Version",
-							"book": "Book",
-							"chapterVerse": "Chapter:Verse"
-						},
-						"ContentTypeText": {
-							"prompt": "Write something here..."
-						},
-						"LiveWarningModal": {
-							"title": "Cannot Delete While Event is Live",
-							"desc": "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules.",
-							"ok": "OK"
-						}
-					}
-				},
-				"details": {
-					"errors": {
-						"generic": "There was a problem while publishing your Event.",
-						"invalidTimes": "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
-					},
-					"components": {
-						"DetailsEdit": {
-							"errors": {
-								"wrongSize": "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}.",
-								"wrongType": "Invalid filetype. Must be JPG."
-							},
-							"changeImage": "Change Image",
-							"removeImage": "Remove Image",
-							"prompt": "Drag and Drop an Image",
-							"onlyJpg": "[JPG only]",
-							"sizePrompt": "%{requiredWidth}px width x %{requiredHeight}px height",
-							"sizePrompt2": "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels.",
-							"eventName": "Event Name",
-							"org": "Church Name or Organization",
-							"desc": "Event Description",
-							"next": "Next: Add Location & Times →"
-						}
-					}
-				},
-				"location": {
-					"components": {
-						"Location": {
-							"oneRequired": "Add at least one time.",
-							"use": "USE THIS LOCATION",
-							"edit": "Edit Location",
-							"delete": "Delete Location"
-						},
-						"LocationAddButtons": {
-							"addPhysical": "Add a Physical Location",
-							"promptPhysical": "You can add multiple locations.",
-							"addVirtual": "Add Virtual Location",
-							"churchOnline": "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
-						},
-						"LocationAddTime": {
-							"minutes": "minutes",
-							"hours": "hours",
-							"days": "days"
-						},
-						"LocationDeleteModal": {
-							"sure": "Are you sure?",
-							"selected": "You have selected the following location to be deleted:",
-							"warn": "This will remove the location from all past and present events. You will not be able to re-use this location for future events.",
-							"cancel": "Cancel",
-							"delete": "Delete"
-						},
-						"LocationEdit": {
-							"prompt": "Enter the Location address...",
-							"country": "Country",
-							"timezone": "Timezone",
-							"namePrompt": "First Baptist East Campus",
-							"name": "Location Name",
-							"nameOptional": "Optional: Useful if adding multiple locations",
-							"addAnother": "Add another time",
-							"cancel": "Cancel",
-							"save": "Save this Location"
-						},
-						"LocationTimeShifter": {
-							"shift": "Shift start dates",
-							"forward": "forward",
-							"backward": "backward",
-							"by": "by",
-							"week": "week",
-							"weeks": "weeks",
-							"month": "month",
-							"months": "months",
-							"day": "day",
-							"days": "days",
-							"hour": "hour",
-							"hours": "hours",
-							"update": "Update",
-							"shiftButton": "Shift all dates and times at once"
-						},
-						"UnpublishModal": {
-							"cancel": "Cancel",
-							"title": "Unpublish to Make Changes",
-							"desc": "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again.",
-							"unpublish": "Unpublish"
-						}
-					}
-				},
-				"preview": {
-					"notes": {
-						"prompt": "Add your private notes...",
-						"noAuthPrompt": "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
-					},
-					"components": {
-						"PreviewFeed": {
-							"share": "Share Event",
-							"locations": "Locations:",
-							"publish": "Publish",
-							"unpublish": "Unpublish",
-							"discoverable": {
-								"title": "Discoverable:",
-								"desc": "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
-							},
-							"status": {
-								"title": "Status:",
-								"desc": "The red LIVE badge will display when your earliest start time begins."
-							},
-							"remove": {
-								"title": "Remove:",
-								"desc": "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
-							}
-						},
-						"PreviewTypeAnnouncement": {
-							"expand": "Expand"
-						},
-						"PreviewTypePlan": {
-							"read": "Read",
-							"info": "Plan Info"
-						}
-					}
-				}
-			}
-		},
-		"EventFeedMine": {
-			"components": {
-				"EventListItem": {
-					"duplicate": "Duplicate",
-					"share": "Share",
-					"delete": "Delete",
-					"draft": "DRAFT",
-					"edit": "Edit",
-					"view": "View",
-					"fail": "Unable to delete Event"
-				}
-			}
-		},
-		"EventView": {
-			"components": {
-				"EventViewContent": {
-					"copy": "Copy",
-					"share": "Share",
-					"read": "Read",
-					"readPlan": "Read Plan"
-				},
-				"EventViewContentAnnouncement": {
-					"expand": "Expand",
-					"collapse": "Collapse"
-				},
-				"EventViewDetails": {
-					"expand": "Expand",
-					"collapse": "Collapse",
-					"save": "Save Event",
-					"signIn": "Sign In to Save Event",
-					"saved": "Event Saved"
-				}
-			}
-		}
-	}
+	"components.ErrorMessage.genericError": "Προέκυψε λάθος",
+	"components.ErrorMessage.announcement.events.title.required": "Απαιτείται τίτλος της εκδήλωσης.",
+	"components.ErrorMessage.default.bible.reference.not_found": "Μη έγκυρη παραπομπή.",
+	"components.ErrorMessage.default.events.google_place_id.required": "Πρέπει να επιλέξετε μία τοποθεσία από το χάρτη.",
+	"components.ErrorMessage.default.events.latitude.required": "Πρέπει να επιλέξετε μια τοποθεσία από τον χάρτη.",
+	"components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date": "Η ώρα έναρξης δεν μπορεί να είναι στο παρελθόν.",
+	"components.ErrorMessage.default.events.timezone.required": "Απαιτείται ζώνη ώρας.",
+	"components.ErrorMessage.reference.events.usfm.invalid": "Η βιβλική παραπομπή δεν είναι σωστή.",
+	"components.ErrorMessage.url.events.url.required": "Απαιτείται σύνδεσμος.",
+	"components.ErrorMessage.url.events.title.required": "URL: Απαιτείται ετικέτα.",
+	"components.EventHeader.status.published": "Δημοσιεύτηκε",
+	"components.EventHeader.status.draft": "Πρόχειρο",
+	"components.EventHeader.status.live": "Ζωντανά",
+	"components.EventHeader.unpublish": "Απόσυρση δημοσίευσης",
+	"components.EventHeader.saving": "Αποθήκευση…",
+	"components.EventHeader.saveAsDraft": "Αποθήκευση πρόχειρου",
+	"components.EventHeader.myEvents": "Οι εκδηλώσεις μου",
+	"components.EventHeader.eventBuilder": "ΔΗΜΙΟΥΡΓΙΑ ΕΚΔΗΛΩΣΗΣ",
+	"components.EventHeader.signOut": "Αποσύνδεση",
+	"components.EventHeader.createAccount": "Δημιουργία λογαριασμού",
+	"components.HtmlEditor.text": "Κείμενο",
+	"components.HtmlEditor.bold": "Έντονο",
+	"components.HtmlEditor.italic": "Πλάγιο",
+	"containers.Auth.title": "Σύνδεση στις εκδηλώσεις",
+	"containers.Auth.signIn": "Σύνδεση",
+	"containers.Auth.subHead1": "Αν χρησιμοποιείτε την εφαρμογή Αγία Γραφή και έχετε ήδη ένα λογαριασμό YouVersion, μπορεί να συνδεθείτε χρησιμοποιώντας το ίδιο όνομα και κωδικό.<br/><br/>Δεν έχετε ακόμη λογαριασμό YouVersion; <br/><a href='{url}'>Εγγραφείτε τώρα στο Bible.com για να δημιουργείτε εκδηλώσεις.</a>",
+	"containers.Auth.email": "Email",
+	"containers.Auth.password": "Κωδικός πρόσβασης",
+	"containers.Auth.forgotPassword": "Ξέχασα τον κωδικό",
+	"containers.EventEdit.event": "Εκδήλωση",
+	"containers.EventEditContentContainer.choose": "Επιλογή μέρους περιεχομένου για εκκίνηση",
+	"containers.EventEditContentContainer.needHelp": "Χρειάζεστε βοήθεια;",
+	"containers.EventEditContentContainer.title": "Περιεχόμενο εκδήλωσης",
+	"containers.EventEditContentContainer.previous": "← Προηγούμενο: Τοποθεσίες & Ώρες",
+	"containers.EventEditContentContainer.next": "Επόμενο: Προεπισκόπηση →",
+	"containers.EventEditDetails.title": "Λεπτομέρειες εκδήλωσης",
+	"containers.EventEditLocationContainer.title": "Τοποθεσία εκδήλωσης",
+	"containers.EventEditLocationContainer.previous": "← Προηγούμενο: Λεπτομέρειες",
+	"containers.EventEditLocationContainer.next": "Επόμενο: Προσθήκη περιεχομένου →",
+	"containers.EventEditPreview.title": "Προεπισκόπηση εκδήλωσης",
+	"containers.EventEditPreview.previous": "← Προηγούμενο: Περιεχόμενο",
+	"containers.EventEditShare.title": "Κοινοποίηση εκδήλωσης",
+	"containers.EventEditShare.subTitle": "Δημοσιεύτηκε η εκδήλωσή σας.",
+	"containers.EventEditShare.edit": "Επεξεργασία εκδήλωσης",
+	"containers.EventEditShare.go": "Μετακίνηση στις εκδηλώσεις μου",
+	"containers.EventEditShare.share": "Κοινοποίηση της εκδήλωσής σας",
+	"containers.EventEditShare.copy": "Αντιγραφή",
+	"containers.EventEditShare.copied": "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο",
+	"containers.EventEditShare.previous": "← Προηγούμενο: Προεπισκόπηση",
+	"containers.EventFeedDiscover.title": "Αναζήτηση εκδηλώσεων",
+	"containers.EventFeedDiscover.discover": "Ανακαλύψτε",
+	"containers.EventFeedMine.title": "Οι εκδηλώσεις μου",
+	"containers.EventFeedMine.previous": "← Προηγούμενο",
+	"containers.EventFeedMine.next": "Επόμενο →",
+	"containers.EventFeedMine.my": "Οι εκδηλώσεις μου",
+	"containers.EventFeedMine.new": "Δημιουργία νέας εκδήλωσης",
+	"containers.EventFeedMine.subTitle": "ΔΙΚΕΣ ΣΑΣ ΕΚΔΗΛΩΣΕΙΣ",
+	"containers.EventFeedMine.newFirst": "Δημιουργία της πρώτης εκδήλωσης",
+	"containers.EventFeedMine.learn": "Οδηγίες δημιουργίας μιας καταπληκτικής εκδήλωσης",
+	"containers.EventFeedSaved.title": "Αποθηκευμένες εκδηλώσεις",
+	"containers.EventView.title": "Εκδήλωση YouVersion",
+	"containers.SelectLanguage.choose": "Επιλογή γλώσσας",
+	"features.Auth.errors.sessionExpired": "Η σύνδεση έληξε. Παρακαλούμε συνδεθείτε ξανά.",
+	"features.Auth.errors.invalidEmail": "Λάθος ηλεκτρονική διεύθυνση ή κωδικός.",
+	"features.EventEdit.errors.locationMustHaveTime": "Όλες οι τοποθεσίες ΄πρέπει να έχουν τουλάχιστον μία ώρα.",
+	"features.EventEdit.errors.locationRequired": "Δεν μπορείτε να δημοσιεύσετε μία εκδήλωση χωρίς τοποθεσίες.",
+	"features.EventEdit.errors.contentRequired": "Δεν μπορεί να δημοσιευθεί μια εκδήλωση χωρίς περιεχόμενο.",
+	"features.EventEdit.errors.planSearchFailed": "Η αναζήτηση δε βρήκε σχετικά κείμενα",
+	"features.EventEdit.errors.noMatchingPlans": "Δεν υπάρχουν σχέδια που ταιριάζουν",
+	"features.EventEdit.components.EventEditNav.details": "Λεπτομέρειες",
+	"features.EventEdit.components.EventEditNav.locations": "Τοποθεσίες & Ώρες",
+	"features.EventEdit.components.EventEditNav.content": "Περιεχόμενο",
+	"features.EventEdit.components.EventEditNav.preview": "Προεπισκόπηση & Δημοσίευση",
+	"features.EventEdit.components.EventEditNav.share": "Κοινοποίηση",
+	"features.EventEdit.features.content.components.ContentFeed.reorder": "Αναδιάταξη περιεχομένου",
+	"features.EventEdit.features.content.components.ContentFeed.doneReordering": "Πραγματοποιήθηκε αναδιάταξη",
+	"features.EventEdit.features.content.components.ContentHeader.text": "Κείμενο",
+	"features.EventEdit.features.content.components.ContentHeader.reference": "Βιβλική παραπομπή",
+	"features.EventEdit.features.content.components.ContentHeader.plan": "Σχέδια μελέτης",
+	"features.EventEdit.features.content.components.ContentHeader.image": "Εικόνα",
+	"features.EventEdit.features.content.components.ContentHeader.link": "Σύνδεσμος",
+	"features.EventEdit.features.content.components.ContentHeader.giving": "Σύνδεσμος προσφορών",
+	"features.EventEdit.features.content.components.ContentHeader.announcement": "Ανακοίνωση",
+	"features.EventEdit.features.content.components.ContentHelpModal.types": "Μορφές περιεχομένου",
+	"features.EventEdit.features.content.components.ContentHelpModal.learn": "Μάθετε πως να φτιάξετε <br>μια εκπληκτική εκδήλωση",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.title": "Ενότητα κειμένου",
+	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "Περιλήψεις, βασικά σημεία, ερωτήσεις …Κοινοποιήστε οποιοδήποτε περιεχόμενο σε μορφή κειμένου θα βοηθήσει τους συμμετέχοντες στην παρακολούθηση της εκδήλωσης. Οι ενότητες κειμένου μπορεί να έχουν οποιοδήποτε μήκος και μπορεί να είναι σε μορφή εμπλουτισμένου κειμένου.",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "Ενότητα βιβλικής παραπομπής",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "Επιλέξετε οποιοδήποτε Βιβλικό εδάφιο ή παραπομπή, με απευθείας σύνδεση με μία από τις 1.200+ εκδόσεις της YouVersion, σε 900+ γλώσσες. Όσοι παρακολουθούν την εκδήλωσή σας μπορούν να πατήσουν στην παραπομπή σας για να τη δουν μέσα από την εφαρμογή Αγία Γραφή, να την επισημάνουν, να βάλουν σελιδοδείκτη, και πολλά άλλα.",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "Ενότητα σχεδίων μελέτης",
+	"features.EventEdit.features.content.components.ContentHelpModal.plan.desc": "Συνδέστε με σχέδια μελέτης ή πνευματικά αναγνώσματα που σχετίζονται με τα βασικά σημεία και βοηθούν το κοινό σας να συνεχίσει να έχει σχέση με τον Λόγο του Θεού όλη την εβδ��μάδα.",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.title": "Ενότητα εικόνας",
+	"features.EventEdit.features.content.components.ContentHelpModal.image.desc": "Ζωντανέψτε την εκδήλωσή σας με γραφικά, καλλιτεχνικά σχέδια, φωτογραφίες, εδάφια με εικόνες, κλπ. Οι συμμετέχοντες θα μπορούν εύκολα να κοινοποιούν τις εικόνες της εκδήλωσης στα κοινωνικά δίκτυα.",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "Ενότητα εξωτερικού συνδέσμου",
+	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "Δημιουργία πλήκτρου μέσω στην εκδήλωσή σας για σύνεση με οποιαδήποτε εξωτερική ιστοσελίδα. Συνδέστε εύκολα τους συμμετέχοντες με την ιστοσελίδα της εκκλησίας σας.",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.title": "Ενότητα ανακοινώσεων",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Νέα της εκκλησίας, άλλες εκδηλώσεις, προγράμματα συναθροίσεων, προσκλήσεις συμμετοχής σε διακονίες… Δημοσιοποιήστε εύκολα σημαντικές πληροφορίες χωρίς απόσπαση από το κύριο μήνυμα της εκδήλωσής σας. Κάθε ενότητα ανακοίνωσης εμφανίζεται στη δική της σελίδα στην εκδήλωσή σας, και μπορεί να περιλαμβάνει ακόμη και εμπλουτισμένο κείμενο (όπως έντονους και πλάγιους χαρακτήρες).",
+	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "Εισαγωγή επόμενης ενότητας εδώ",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "Τίτλος",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "Γράψτε κάτι εδώ...",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "Μόνο ο (παραπάνω) τίτλος θα είναι ορατός στην εκδήλωσή σας. Όταν πατηθεί ο τίτλος το (παρακάτω) σώμα εμφανίζεται σε ξεχωρ��στή οθόνη.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.dirty": "Το περιεχόμενο θα αποθηκευτεί αυτόματα λίγα δευτερόλεπτα αφού σταματήσετε την πληκτρολόγηση.",
+	"features.EventEdit.features.content.components.ContentTypeContainer.failed": "Αποθήκευση αδύνατη",
+	"features.EventEdit.features.content.components.ContentTypeContainer.tryAgain": "Δοκιμάστε ξανά",
+	"features.EventEdit.features.content.components.ContentTypeContainer.lastSaved": "Τελευταία αποθήκευση: {when}",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongSize": "Το μέγεθος της εικόνας πρέπει να είναι {requiredWidth}x{requiredHeight}. Της εικόνας σας είναι: {yourWidth}x{yourHeight}.",
+	"features.EventEdit.features.content.components.ContentTypeImage.errors.wrongType": "Μη αποδεκτή μορφή αρχείου. Πρέπει να είναι: JPG",
+	"features.EventEdit.features.content.components.ContentTypeImage.caption": "Προσθήκη λεζάντας",
+	"features.EventEdit.features.content.components.ContentTypeImage.prompt": "Μεταφορά και απόθεση εικόνας",
+	"features.EventEdit.features.content.components.ContentTypeImage.onlyJpg": "[μόνο JPG]",
+	"features.EventEdit.features.content.components.ContentTypeImage.sizePrompt": "{requiredWidth}pixel πλάτος x {requiredHeight}pixel ύψος",
+	"features.EventEdit.features.content.components.ContentTypeImage.select": "Επιλογή εικόνας",
+	"features.EventEdit.features.content.components.ContentTypeLink.kindrid": "Αν ψάχνετε για μια έξυπνη και απλή πλατφόρμα προσφορών <a href='{url}'>δοκιμάστε το Kindrid</a>.",
+	"features.EventEdit.features.content.components.ContentTypeLink.label": "Ετικέτα συνδέσμου",
+	"features.EventEdit.features.content.components.ContentTypeLink.prompt": "Γράψτε κάτι εδώ...",
+	"features.EventEdit.features.content.components.ContentTypeLink.url": "URL",
+	"features.EventEdit.features.content.components.ContentTypePlan.replace": "Αντικατάσταση",
+	"features.EventEdit.features.content.components.ContentTypePlan.search": "Αναζήτηση σχεδίου μελάτης",
+	"features.EventEdit.features.content.components.ContentTypeReference.language": "Γλώσσα",
+	"features.EventEdit.features.content.components.ContentTypeReference.version": "Έκδοση",
+	"features.EventEdit.features.content.components.ContentTypeReference.book": "Βιβλίο",
+	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "Κεφάλαιο: Εδάφιο",
+	"features.EventEdit.features.content.components.ContentTypeText.prompt": "Γράψτε κάτι εδώ...",
+	"features.EventEdit.features.content.components.LiveWarningModal.title": "Δεν μπορεί να διαγραφή η εκδήλωση όταν είναι ζωντανή",
+	"features.EventEdit.features.content.components.LiveWarningModal.desc": "Όταν η εκδήλωση μεταδίδεται ζωντανά, δεν μπορείτε να διαγράψετε ενότητες με κείμενο, παραπομπή ή εικόνα γιατί οι επισκέπτες μπορεί να τις έχουν ήδη προσθέσει στις προσωπικές τους σημειώσεις. Μπορείτε, ωστόσο, να επεξεργαστείτε αυτές τις ενότητες.",
+	"features.EventEdit.features.content.components.LiveWarningModal.ok": "ΟΚ",
+	"features.EventEdit.features.details.errors.generic": "Υπήρξε κάποιο πρόβλημα κατά τη δημοσίευση της εκδήλωσή σας.",
+	"features.EventEdit.features.details.errors.invalidTimes": "Μια εκδήλωση δεν μπορεί να διαρκεί πάνω από 12 ώρες, και η διαφορά μεταξύ της ενωρίτερής ώρας έναρξης και την αργότερη ώρας λήξης που δεν μπορεί να είναι πάνω από 8 ημέρες. Παρακαλούμε ρυθμίστε τις ώρες της εκδήλωσης και προσπαθήστε πάλι.",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize": "Το μέγεθος της εικόνας πρέπει να είναι {requiredWidth}x{requiredHeight}. Της εικόνας σας είναι: {yourWidth}x{yourHeight}.",
+	"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType": "Μη αποδεκτή μορφή αρχείου. Πρέπει να είναι: JPG",
+	"features.EventEdit.features.details.components.DetailsEdit.changeImage": "Αλλαγή εικόνας",
+	"features.EventEdit.features.details.components.DetailsEdit.removeImage": "Διαγραφή εικόνας",
+	"features.EventEdit.features.details.components.DetailsEdit.prompt": "Μεταφορά και απόθεση εικόνας",
+	"features.EventEdit.features.details.components.DetailsEdit.onlyJpg": "[μόνο JPG]",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt": "{requiredWidth}pixel πλάτος x {requiredHeight}pixel ύψος",
+	"features.EventEdit.features.details.components.DetailsEdit.sizePrompt2": "Οι διαστάσεις της εικόνας σας θα πρέπει να είναι {requiredWidth} x {requiredHeight} pixels.",
+	"features.EventEdit.features.details.components.DetailsEdit.eventName": "Όνομα εκδήλωσης",
+	"features.EventEdit.features.details.components.DetailsEdit.org": "Όνομα εκκλησίας ή Διακονίας",
+	"features.EventEdit.features.details.components.DetailsEdit.desc": "Περιγραφή εκδήλωσης",
+	"features.EventEdit.features.details.components.DetailsEdit.next": "Επόμενο: Προσθήκη τοποθεσίας & ωρών →",
+	"features.EventEdit.features.location.components.Location.oneRequired": "Προσθέστε τουλάχιστον μία ώρα",
+	"features.EventEdit.features.location.components.Location.use": "ΧΡΗΣΗ ΑΥΤΗΣ ΤΗΣ ΤΟΠΟΘΕΣΙΑΣ",
+	"features.EventEdit.features.location.components.Location.edit": "Επεξεργασία τοποθεσίας",
+	"features.EventEdit.features.location.components.Location.delete": "Διαγραφή τοποθεσίας",
+	"features.EventEdit.features.location.components.LocationAddButtons.addPhysical": "Προσθήκη φυσικής τοποθεσίας",
+	"features.EventEdit.features.location.components.LocationAddButtons.promptPhysical": "Προσθήκη πολλαπλών τοποθεσιών.",
+	"features.EventEdit.features.location.components.LocationAddButtons.addVirtual": "Προσθήκη εικονικής τοποθεσίας",
+	"features.EventEdit.features.location.components.LocationAddButtons.churchOnline": "Γνωρίζετε ότι; Μπορείτε να δημοσιεύσετε δωρεάν στο διαδίκτυο μια διακονία χρησιμοποιώντας την <a className='button-caption' href='{url}'>Church Online Platform</a>.",
+	"features.EventEdit.features.location.components.LocationAddTime.minutes": "ΛΕΠΤΑ",
+	"features.EventEdit.features.location.components.LocationAddTime.hours": "ΩΡΕΣ",
+	"features.EventEdit.features.location.components.LocationAddTime.days": "ΗΜΕΡΕΣ",
+	"features.EventEdit.features.location.components.LocationDeleteModal.sure": "Είστε σίγουρος/σίγουρη;",
+	"features.EventEdit.features.location.components.LocationDeleteModal.selected": "Έχετε επιλέξει τη διαγραφή της ακόλουθης τοποθεσίας.",
+	"features.EventEdit.features.location.components.LocationDeleteModal.warn": "Θα διαγραφεί η τοποθεσία από όλες τις τρέχουσες και μελλοντικές εκδηλώσεις. Δε θα μπορείτε να χρησιμοποιήσετε ξανά αυτή την τοποθεσία σε μελλοντικές εκδηλώσεις.",
+	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Ακύρωση",
+	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Διαγραφή",
+	"features.EventEdit.features.location.components.LocationEdit.prompt": "Εισαγωγή διεύθυνσης της τοποθεσίας...",
+	"features.EventEdit.features.location.components.LocationEdit.country": "Χώρα",
+	"features.EventEdit.features.location.components.LocationEdit.timezone": "Ζώνη ώρας",
+	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Κατασκήνωση πρώτης Βαπτιστικής εκκλησίας",
+	"features.EventEdit.features.location.components.LocationEdit.name": "Όνομα τοποθεσίας",
+	"features.EventEdit.features.location.components.LocationEdit.nameOptional": "Προαιρετικό: Χρήσιμο σε προσθήκη πολλαπλών τοποθεσιών",
+	"features.EventEdit.features.location.components.LocationEdit.addAnother": "Προσθήκη άλλης ώρας",
+	"features.EventEdit.features.location.components.LocationEdit.cancel": "Ακύρωση",
+	"features.EventEdit.features.location.components.LocationEdit.save": "Αποθήκευση τοποθεσίας",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shift": "Ολισθηση ημερομηνιών έναρξης",
+	"features.EventEdit.features.location.components.LocationTimeShifter.forward": "Μπροστά",
+	"features.EventEdit.features.location.components.LocationTimeShifter.backward": "πίσω",
+	"features.EventEdit.features.location.components.LocationTimeShifter.by": "από",
+	"features.EventEdit.features.location.components.LocationTimeShifter.week": "εβδομάδα",
+	"features.EventEdit.features.location.components.LocationTimeShifter.weeks": "εβδομάδες",
+	"features.EventEdit.features.location.components.LocationTimeShifter.month": "Μήνας",
+	"features.EventEdit.features.location.components.LocationTimeShifter.months": "μήνες",
+	"features.EventEdit.features.location.components.LocationTimeShifter.day": "Ημέρα",
+	"features.EventEdit.features.location.components.LocationTimeShifter.days": "ΗΜΕΡΕΣ",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hour": "ώρα",
+	"features.EventEdit.features.location.components.LocationTimeShifter.hours": "ΩΡΕΣ",
+	"features.EventEdit.features.location.components.LocationTimeShifter.update": "Ενημέρωση",
+	"features.EventEdit.features.location.components.LocationTimeShifter.shiftButton": "Μετακίνηση όλων των ημερομηνιών και ωρών μαζί",
+	"features.EventEdit.features.location.components.UnpublishModal.cancel": "Ακύρωση",
+	"features.EventEdit.features.location.components.UnpublishModal.title": "Απόσυρση δημοσίευσης για αλλαγές",
+	"features.EventEdit.features.location.components.UnpublishModal.desc": "Προσωρινή απόσυρση της δημοσίευσης για προσθήκη, επεξεργασία ή διαγραφή τοποθεσιών και ωρών. Κατά τη διάρκεια της απόσυρσης, η εκδήλωσή σας δε θα είναι ορατή στα αποτελέσματα αναζήτησης. Μην ξεχάσετε να δημοσιεύσετε πάλι την εκδήλωσή σας.",
+	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Απόσυρση δημοσίευσης",
+	"features.EventEdit.features.preview.notes.prompt": "Προσθήκη προσωπικών σημειώσεων…",
+	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Συνδεθείτε</span> για να προσθέσετε τις προσωπικές σας σημειώσεις…</a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.share": "Κοινοποίηση εκδήλωσης",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Δημοσίευση",
+	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Απόσυρση δημοσίευσης",
+	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Τοποθεσίες",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.title": "Ορατή",
+	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.desc": "Η εκδήλωσή σας θα είναι ορατή στην τοποθεσία της εφαρμογής Αγία Γραφής και στα αποτελέσματα αναζήτησης 5 ημέρες πριν από την ενωρίτερη ώρα έναρξης.",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.title": "Κατάσταση:",
+	"features.EventEdit.features.preview.components.PreviewFeed.status.desc": "Η κόκκινη ένδειξη ΖΩΝΤΑΝΑ θα εμφανίζεται με την ενωρίτερη ώρα έναρξης",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "Διαγραφή:",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Η εκδήλωσή σας δεν θα είναι πλέον ορατή μετά τη λήξη της. Όσοι πάτησαν \"Αποθήκευση εκδήλωσης\" όταν ήταν ορατή θα μπορούν να έχουν πρόσβαση στην αρχειοθετημένη έκδοσή της. Η εκδήλωση θα συνεχίσει να είναι προσβάσιμη μέσω απευθείας συνδέσμων.",
+	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "Περισσότερα",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "Ανάγνωση",
+	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "Πληροφορίες σχεδίου μελέτης",
+	"features.EventFeedMine.components.EventListItem.duplicate": "Αντιγραφή",
+	"features.EventFeedMine.components.EventListItem.share": "Κοινοποίηση",
+	"features.EventFeedMine.components.EventListItem.delete": "Διαγραφή",
+	"features.EventFeedMine.components.EventListItem.draft": "Πρόχειρο",
+	"features.EventFeedMine.components.EventListItem.edit": "Επεξεργασία",
+	"features.EventFeedMine.components.EventListItem.view": "Προβολή",
+	"features.EventFeedMine.components.EventListItem.fail": "Αδύνατη η διαγραφή της εκδήλωσης",
+	"features.EventView.components.EventViewContent.copy": "Αντιγραφή",
+	"features.EventView.components.EventViewContent.share": "Κοινοποίηση",
+	"features.EventView.components.EventViewContent.read": "Ανάγνωση",
+	"features.EventView.components.EventViewContent.readPlan": "Ανάγνωση σχεδίου μελέτης",
+	"features.EventView.components.EventViewContentAnnouncement.expand": "Περισσότερα",
+	"features.EventView.components.EventViewContentAnnouncement.collapse": "Λιγότερα",
+	"features.EventView.components.EventViewDetails.expand": "Περισσότερα",
+	"features.EventView.components.EventViewDetails.collapse": "Λιγότερα",
+	"features.EventView.components.EventViewDetails.save": "Αποθήκευση εκδήλωσης",
+	"features.EventView.components.EventViewDetails.signIn": "Σύνδεση για αποθήκευση εκδήλωσης",
+	"features.EventView.components.EventViewDetails.saved": "Αποθηκεύτηκε η εκδήλωση"
 }

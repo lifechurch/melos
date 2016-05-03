@@ -5,11 +5,17 @@ import Countdown from '../../../components/Countdown'
 import { Link } from 'react-router'
 import moment from 'moment'
 import ActionCreators from '../actions/creators'
+import { FormattedMessage } from 'react-intl'
 
 class EventListItem extends Component {
 
+	constructor(props) {
+		super(props)
+		//moment.locale('x-psuedo')
+	}
+
 	getLiveDetails() {
-		const { dispatch, startOffset, item, index, handleDuplicate } = this.props
+		const { dispatch, startOffset, item, index, handleDuplicate, params } = this.props
 		const START_OFFSET_SECONDS = startOffset * 60;
 		const start = moment(item.min_time);
 		const secondsLeft = start.diff(moment(), "seconds");
@@ -21,8 +27,8 @@ class EventListItem extends Component {
 					dispatch={dispatch}
 					item={item}
 					index={index} />
-				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}>Duplicate</a>
-				<Link className="small-link" to={`/event/edit/${item.id}/share`}>Share</Link>
+				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}><FormattedMessage id="features.EventFeedMine.components.EventListItem.duplicate" /></a>
+ƒ				<Link className="small-link" to={`/${params.locale}/event/edit/${item.id}/share`}><FormattedMessage id="features.EventFeedMine.components.EventListItem.share" /></Link>
 			</div>
 		)
 	}
@@ -37,7 +43,7 @@ class EventListItem extends Component {
 				<span className="details-text">
 					{start.format("MMMM DD, YYYY") + " - " + end.format("MMMM DD, YYYY")}
 				</span>
-				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}>Duplicate</a>
+				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}><FormattedMessage id="features.EventFeedMine.components.EventListItem.duplicate" /></a>
 			</div>
 		)
 	}
@@ -46,9 +52,9 @@ class EventListItem extends Component {
 		const { item, handleDuplicate, handleDelete, index } = this.props
 		return (
 			<div className="events-details">
-				<span className="gray-label">DRAFT</span>
-				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}>Duplicate</a>
-				<a className="small-link" onClick={handleDelete.bind(this, item.id, index)}>Delete</a>
+				<span className="gray-label"><FormattedMessage id="features.EventFeedMine.components.EventListItem.draft" /></span>
+				<a className="small-link" onClick={handleDuplicate.bind(this, item.id)}><FormattedMessage id="features.EventFeedMine.components.EventListItem.duplicate" /></a>
+				<a className="small-link" onClick={handleDelete.bind(this, item.id, index)}><FormattedMessage id="features.EventFeedMine.components.EventListItem.delete" /></a>
 			</div>
 		)
 	}
@@ -62,7 +68,7 @@ class EventListItem extends Component {
 				<span className="details-text">
 					{start.format("MMMM DD, YYYY") + " - " + end.format("MMMM DD, YYYY")}
 				</span>
-                <a className="small-link" onClick={handleDuplicate.bind(this, item.id)}>Duplicate</a>
+                <a className="small-link" onClick={handleDuplicate.bind(this, item.id)}><FormattedMessage id="features.EventFeedMine.components.EventListItem.duplicate" /></a>
 			</div>
 		)
 	}
@@ -99,12 +105,12 @@ class EventListItem extends Component {
 	}
 
 	render() {
-		const { item } = this.props
+		const { item, params } = this.props
 		var action
 		if (item.status < 3) {
-			action = <Link className="hollow-button gray action" to={'/event/edit/' + item.id}>Edit</Link>
+			action = <Link className="hollow-button gray action" to={`/${params.locale}/event/edit/${item.id}`}><FormattedMessage id="features.EventFeedMine.components.EventListItem.edit" /></Link>
 		} else { // archived+
-			action = <a className="hollow-button gray action" target="_blank" href={'https://www.bible.com/events/' + item.id}>View</a>
+			action = <a className="hollow-button gray action" target="_blank" href={`https://www.bible.com/events/${item.id}`}><FormattedMessage id="features.EventFeedMine.components.EventListItem.view" /></a>
 		}
 
 		return (
@@ -113,11 +119,11 @@ class EventListItem extends Component {
 					{action}
 					{this.getEventImage(item)}
 					<div className='details'>
-						<Link className="title" to={`/event/edit/${item.id}`}>{item.title}</Link>
+						<Link className="title" to={`/${params.locale}/event/edit/${item.id}`}>{item.title}</Link>
 						{this.getDetails()}
 					</div>
 				</Row>
-				{ item.hasError ? <div className='error-text'>Unable to delete Event</div> : null }
+				{ item.hasError ? <div className='error-text'><FormattedMessage id="features.EventFeedMine.components.EventListItem.fail" /></div> : null }
 			</li>
 		)
 	}

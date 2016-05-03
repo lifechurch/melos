@@ -3,11 +3,11 @@ import { routeActions } from 'react-router-redux'
 import { storeToken, deleteToken } from '@youversion/token-storage'
 
 const ActionCreators = {
-	logout() {
+	logout(locale) {
 		return dispatch => {
 			deleteToken()
 			dispatch({ type: type('logout') })
-			dispatch(routeActions.push('/login'))
+			dispatch(routeActions.push('/' + locale + '/login'))
 		}
 	},
 
@@ -24,12 +24,12 @@ const ActionCreators = {
 		}
 	},
 
-	authenticate(params) {
+	authenticate(params, locale) {
 		return dispatch => {
 			dispatch(ActionCreators.callAuthenticate(params)).then((authResponse) => {
 				if (!(authResponse instanceof Error)) {
 					storeToken(authResponse.token)
-					dispatch(routeActions.push('/'))
+					dispatch(routeActions.push('/' + locale + '/'))
 				}
 			})
 		}

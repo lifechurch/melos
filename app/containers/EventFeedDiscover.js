@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
 import { fetchEventFeedDiscover } from '../actions'
 import { Link } from 'react-router'
+import { injectIntl, FormattedMessage } from 'react-intl'
 
 class EventFeedDiscover extends Component {
 	componentWillMount() {
@@ -11,18 +12,18 @@ class EventFeedDiscover extends Component {
 	}
 
 	render() {
-		const { hasError, errors, isFetching, items } = this.props
-		
+		const { hasError, errors, isFetching, items, intl, params } = this.props
+
 		var itemList = items.map((item) => {
 			return (
-				<li><Link to={`/event/edit/${item.id}`}>{item.title}</Link></li>
+				<li><Link to={`/${params.locale}/event/edit/${item.id}`}>{item.title}</Link></li>
 			)
 		})
 
 		return (
 			<div className="medium-10 large-7 columns small-centered">
-				<Helmet title="Discover Events" />
-				<h1 className="eventPageTitle">Discover</h1>
+				<Helmet title={intl.formatMessage({id:"containers.EventFeedDiscover.title"})} />
+				<h1 className="eventPageTitle"><FormattedMessage id="containers.EventFeedDiscover.discover" /></h1>
 				<ul>
 					{itemList}
 				</ul>
@@ -33,18 +34,18 @@ class EventFeedDiscover extends Component {
 
 EventFeedDiscover.defaultProps = {
 	hasError: false,
-	errors: [], 
+	errors: [],
 	isFetching: false,
 	items: []
 }
- 
+
 function mapStateToProps(state) {
 	return state.eventFeeds.discover || {
 		hasError: false,
-		errors: [], 
+		errors: [],
 		isFetching: false,
 		items: []
 	}
 }
 
-export default connect(mapStateToProps, null)(EventFeedDiscover)
+export default connect(mapStateToProps, null)(injectIntl(EventFeedDiscover))

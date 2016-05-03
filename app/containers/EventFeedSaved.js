@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Helmet from 'react-helmet'
 import { fetchEventFeedSaved } from '../actions'
+import { injectIntl, FormattedMessage } from 'react-intl'
 
 class EventFeedSaved extends Component {
 	componentWillMount() {
@@ -10,15 +11,17 @@ class EventFeedSaved extends Component {
 	}
 
 	render() {
-		
+
+		const { intl } = this.props
+
 		var errors = this.props.errors.map((error) => {
 			return (<li>{error.key}</li>)
 		})
 
 		return (
 			<div className="medium-10 large-7 columns small-centered">
-				<Helmet title="Saved Events" />
-				<h1 className="eventPageTitle">Saved Events</h1>
+				<Helmet title={intl.formatMessage({id: "containers.EventFeedSaved.title"})} />
+				<h1 className="eventPageTitle"><FormattedMessage id="containers.EventFeedSaved.title" /></h1>
 			</div>
 		)
 	}
@@ -26,18 +29,18 @@ class EventFeedSaved extends Component {
 
 EventFeedSaved.defaultProps = {
 	hasError: false,
-	errors: [], 
+	errors: [],
 	isFetching: false,
 	items: []
 }
- 
+
 function mapStateToProps(state) {
 	return state.eventFeeds.saved || {
 		hasError: false,
-		errors: [], 
+		errors: [],
 		isFetching: false,
 		items: []
 	}
 }
 
-export default connect(mapStateToProps, null)(EventFeedSaved)
+export default connect(mapStateToProps, null)(intjectIntl(EventFeedSaved))

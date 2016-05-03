@@ -1,9 +1,9 @@
 import type from './constants'
 import { routeActions } from 'react-router-redux'
 
-function cancel() {
+function cancel(locale) {
 	return dispatch => {
-		dispatch(routeActions.push('/'))
+		dispatch(routeActions.push('/' + locale + '/'))
 		dispatch({ type: type('cancel') })
 	}
 }
@@ -90,12 +90,12 @@ function setDetails(field, value) {
 	}
 }
 
-function saveDetails(event, goNext) {
+function saveDetails(event, goNext, locale) {
 	return dispatch => {
 
 		function handlePromise(goNext, response) {
 			if (goNext === true && typeof response == 'object' && typeof response.id == 'number') {
-				const nextUrl = '/event/edit/' + response.id + '/locations_and_times'
+				const nextUrl = '/' + locale + '/event/edit/' + response.id + '/locations_and_times'
 				dispatch(routeActions.push(nextUrl))
 			}
 		}
