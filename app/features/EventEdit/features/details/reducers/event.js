@@ -12,7 +12,7 @@ import mergeObjects from '../../../../../lib/mergeObjects'
 import applyLifecycleRules from '../../../validators/applyLifecycleRules'
 import moment from 'moment'
 
-//moment.locale('x-psuedo')
+
 
 function selectLocation(locations, id, selected) {
 	if (['string', 'number'].indexOf(typeof id) === -1) {

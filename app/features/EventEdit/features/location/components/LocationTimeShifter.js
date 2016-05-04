@@ -7,7 +7,7 @@ import { FormattedMessage } from 'react-intl'
 class LocationTimeShifter extends Component {
 	constructor(props) {
 		super(props)
-		//moment.locale('x-psuedo')
+
 		this.state = { isOpen: false, direction: 1, duration: 1, interval: 'weeks' }
 	}
 

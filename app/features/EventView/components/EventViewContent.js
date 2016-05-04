@@ -18,7 +18,7 @@ class EventViewContent extends Component {
 
 	constructor(props) {
 		super(props)
-		//moment.locale('x-psuedo')
+
 	}
 
 	handleEditNote(e) {

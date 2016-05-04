@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "Dodaj privatne bilješke…",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Prijavi se </span> kako bi dodao svoje osobne zabilješke …</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Podijeli Događaj",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Lokacije i vremena",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Objavi",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Unpublish",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Lokacije:",

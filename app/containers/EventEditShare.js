@@ -13,7 +13,6 @@ class EventEditShare extends Component {
 	constructor(props) {
 		super(props)
 		this.state = { isCopied: false }
-		////moment.locale('x-psuedo')
 	}
 
 	getEventImage() {

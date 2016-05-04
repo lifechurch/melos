@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "अपनी निजी टिप्पणियाँ जोड़ें...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "कार्यक्रम साझा करें",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "स्थान और समय ",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "प्रकाशित",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Unpublish",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Locations:",

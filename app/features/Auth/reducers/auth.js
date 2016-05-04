@@ -36,6 +36,11 @@ export default function login(state = {}, action) {
 			const { token } = action.response
 			let user = Object.assign({}, action.response)
 			delete user.token
+
+			if (user.language_tag !== window.__LOCALE__.locale) {
+				window.location = '/' + user.language_tag + '/'
+			}
+
 			return Object.assign({}, state, {
 				isLoggedIn: true,
 				isWorking: false,

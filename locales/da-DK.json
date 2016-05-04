@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "Tilføj dine private noter...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Log ind</span> for at tilføje dine private noter…</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Del Event",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Lokationer og Tider",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Udgiv",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Vis ikke",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Lokationer:",

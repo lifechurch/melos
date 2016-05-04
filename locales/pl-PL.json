@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "Dodaj swoje prywatne notatki...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Udostępnij wydarzenie",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Lokalizacje i godziny",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Publikuj",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Unpublish",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Locations:",

@@ -1,5 +1,5 @@
 import moment from 'moment'
-//moment.locale('x-psuedo')
+
 export function toApiFormat(loc) {
 
 	var times = loc.times.map((t) => {

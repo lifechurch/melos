@@ -2,7 +2,7 @@ import type from '../actions/constants'
 import moment from 'moment'
 import { fromApiFormat } from '../transformers/location'
 
-//moment.locale('x-psuedo')
+
 
 function parsePlaceFor(type, place) {
 	for (var addressComponent of place.address_components) {

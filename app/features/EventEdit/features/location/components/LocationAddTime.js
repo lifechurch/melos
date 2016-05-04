@@ -104,7 +104,7 @@ class LocationAddTime extends Component {
 
 	constructor(props) {
 		super(props)
-		//moment.locale('x-psuedo')
+
 		const durationObj = getDurationAndInterval(props.time.start_dt, props.time.end_dt)
 		this.state = {
 			start_dt: props.time.start_dt,

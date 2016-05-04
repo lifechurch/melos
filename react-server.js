@@ -16,9 +16,11 @@ import { tokenAuth } from '@youversion/js-api'
 import revManifest from './rev-manifest.json'
 import { IntlProvider } from 'react-intl'
 import moment from 'moment'
+import rtlDetect from 'rtl-detect'
 
 const router = express.Router()
 const routes = getRoutes(null)
+const availableLocales = require('./availableLocales.json');
 
 function getAssetPath(path) {
 	const IS_PROD = process.env.NODE_ENV === 'production';
@@ -39,7 +41,6 @@ function getLocalesFromHeader(req) {
 }
 
 function getLocale(req) {
-	var availableLocales = require('./availableLocales.json');
 	var defaultLocale = availableLocales['en'];
 	var localeFromCookie;
 	var final = { locale: defaultLocale, source: 'default' }
@@ -78,10 +79,8 @@ function getLocale(req) {
 
 	final.messages = require('./locales/' + final.locale + '.json');
 	var localeData = require('react-intl/locale-data/' + final.locale.split('-')[0]);
-	console.log('test111', moment().locale('fr'));
 	final.data = localeData;
 	final.preferredLocales = localesFromHeader;
-	final.momentLocaleData = moment().locale('fr').localeData();
 	return final;
 }
 
@@ -131,6 +130,21 @@ router.get('/*', cookieParser(), function(req, res) {
 					}
 				}})
 
+				// Cookie should override language from token,
+				//  because token is generated at login and could
+				//  outdated
+				const cookieLocale = reactCookie.load('locale')
+				if (typeof cookieLocale !== 'undefined') {
+					startingState.auth.userData.language_tag = cookieLocale
+				}
+
+				// Make sure User Profile Locale Takes Precedence over Everything
+				const userProfileLocale = availableLocales[startingState.auth.userData.language_tag]
+				console.log("LOCALE CHECK", req.Locale.locale, startingState.auth.userData.language_tag, userProfileLocale)
+				if (req.Locale.locale !== userProfileLocale) {
+					return res.redirect(302, '/' + userProfileLocale + '/');
+				}
+
 			} catch(err) {
 				if (req.path !== '/' + req.Locale.locale + '/login') {
 					redirecting = true
@@ -145,8 +159,11 @@ router.get('/*', cookieParser(), function(req, res) {
 					const store = configureStore(startingState, history, logger)
 					const html = renderToString(<IntlProvider locale={req.Locale.locale} messages={req.Locale.messages}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
 					const initialState = store.getState()
+					console.log('hello')
+					const rtl = rtlDetect.isRtlLang(req.Locale.locale)
+					console.log('rtl', rtl)
 					res.setHeader('Cache-Control', 'public');
-					res.render('index', {appString: html, locale: req.Locale, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
+					res.render('index', {appString: html, rtl: rtl, locale: req.Locale, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
 				} catch(ex) {
 					console.log('ex', ex);
 					res.status(500).send()

@@ -6,11 +6,13 @@ import ActionCreators from '../features/SelectLanguage/actions/creators'
 import EventHeader from '../components/EventHeader'
 import LocaleList from '../../localeList.json'
 import { FormattedMessage } from 'react-intl'
+import cookie from 'react-cookie'
 
 class SelectLanguage extends Component {
 
-	handleLanguageChange() {
-
+	handleLanguageChange(locale) {
+		const { dispatch, auth } = this.props
+		dispatch(ActionCreators.changeLanguage({ user_id: auth.userData.userid, language_tag: locale.locale2, locale: locale.locale }))
 	}
 
 	render() {
@@ -22,6 +24,13 @@ class SelectLanguage extends Component {
 
 			var _preferredLocales = window.__LOCALE__.preferredLocales.slice()
 
+			// Check locale cookie
+			const cookieLocale = cookie.load('locale')
+			if (typeof cookieLocale !== 'undefined') {
+				_preferredLocales.unshift({ locale: cookieLocale })
+			}
+
+			// Check language_tag in User Profile
 			if (typeof auth !== 'undefined' && typeof auth.userData !== 'undefined' && typeof auth.userData.language_tag !== 'undefined') {
 				_preferredLocales.unshift({ locale: auth.userData.language_tag })
 			}
@@ -48,7 +57,7 @@ class SelectLanguage extends Component {
 		const availableLocales = LocaleList.map((l) => {
 			if (localeIndex.indexOf(l.locale) === -1) {
 				const fullDisplayName = l.nativeName && l.englishName && l.nativeName !== l.englishName ? (<span>{l.displayName} <small>{l.englishName}</small></span>) : l.displayName
-				return (<li key={l.locale}><a href={`/${l.locale}/`}>{fullDisplayName}</a></li>)
+				return (<li key={l.locale}><a onClick={::this.handleLanguageChange.bind(this, l)}>{fullDisplayName}</a></li>)
 			}
 		})
 

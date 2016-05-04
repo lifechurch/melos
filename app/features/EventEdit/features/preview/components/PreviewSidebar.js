@@ -11,7 +11,7 @@ class PreviewSidebar extends Component {
 
 	constructor(props) {
 		super(props)
-		//moment.locale('x-psuedo')
+
 	}
 
 	yvFormat(date) {

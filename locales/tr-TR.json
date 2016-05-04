@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "Kişisel notlar ekleyin...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Özel notlarınızı ekleyebilmek için</span> giriş yapın…</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Eylemi Paylaş",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Konumlar ve Saat Dilimleri",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Yayınla",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Yayımdan kaldır",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Konumlar:",

@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "Idagdag ang iyong mga pribadong tala...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Magsign in</span> para maidagdag ang iyong pribadong mga tala…</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Ibahagi ang Kaganapan",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Mga Lugar at Oras",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Ilathala",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Huwag ilathala",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Mga Lokasyon:",

@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "Προσθήκη προσωπικών σημειώσεων…",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Συνδεθείτε</span> για να προσθέσετε τις προσωπικές σας σημειώσεις…</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Κοινοποίηση εκδήλωσης",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Τοποθεσίες και ώρες",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Δημοσίευση",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Απόσυρση δημοσίευσης",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Τοποθεσίες",

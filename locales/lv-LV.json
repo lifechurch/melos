@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "Pievieno savas privātās piezīmes…",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Pieraksties,</span> lai pievienotu savas privātās piezīmes…</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Dalīties ar notikumu",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Vietas un laiki",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Publicēt",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Atcelt publicēšanu",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Atrašanās vietas:",

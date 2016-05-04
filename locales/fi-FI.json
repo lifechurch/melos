@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "Lisää yksityiset muistiinpanosi…",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Kirjaudu sisään</span> lisätäksesi yksityisiä muistiinpanoja...</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Jaa tapahtuma",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Sijainnit ja ajankohdat",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Julkaise",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Poista julkaisu",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Paikat:",

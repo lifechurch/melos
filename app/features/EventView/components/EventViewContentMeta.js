@@ -12,7 +12,7 @@ class EventViewContentMeta extends Component {
 
 	constructor(props) {
 		super(props)
-		//moment.locale('x-psuedo')
+
 		this.state = { isCopied: false }
 	}
 

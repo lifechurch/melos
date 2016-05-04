@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl'
 class Location extends Component {
 	constructor(props) {
 		super(props)
-		//moment.locale('x-psuedo')
+
 	}
 
 	handleDeleteClick(clickEvent) {

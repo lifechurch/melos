@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "Хувийн тэмдэглэлүүдээ нэмэх",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Үйл Явдлыг Хуваалцах",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Байршил болон Цаг хугацаа",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Нийтлэх",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Нийтийнх бус болгох",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Хаягууд:",

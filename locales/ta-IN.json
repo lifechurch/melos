@@ -185,7 +185,7 @@
 	"features.EventEdit.features.preview.notes.prompt": "உங்கள் தனிப்பட்ட குறிப்புகளை சேர்க்கவும்...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "நிகழ்வை பகிரவும்",
-	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Locations and Times",
+	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "இடங்களும் நேரங்களும்",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "வெளியிடவும்",
 	"features.EventEdit.features.preview.components.PreviewFeed.unpublish": "Unpublish",
 	"features.EventEdit.features.preview.components.PreviewFeed.locations": "Locations:",
