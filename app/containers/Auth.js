@@ -51,7 +51,7 @@ class Auth extends Component {
 				<Helmet title={intl.formatMessage({id: "containers.Auth.title" })} />
 				<EventHeader {...this.props} />
 				<div className='form-body'>
-					<h1><FormattedMessage id="containers.Auth.signIn" /></h1>
+					<FormattedMessage tagName="h1" id="containers.Auth.signIn" />
 					<FormattedHTMLMessage tagName="p" className="auth__subhead" id="containers.Auth.subHead1" values={{ url: "https://www.bible.com/sign-up?redirect=events-admin" }} />
 					<div className="form-body-block white">
 						{error}

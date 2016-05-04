@@ -140,7 +140,6 @@ router.get('/*', cookieParser(), function(req, res) {
 
 				// Make sure User Profile Locale Takes Precedence over Everything
 				const userProfileLocale = availableLocales[startingState.auth.userData.language_tag]
-				console.log("LOCALE CHECK", req.Locale.locale, startingState.auth.userData.language_tag, userProfileLocale)
 				if (req.Locale.locale !== userProfileLocale) {
 					return res.redirect(302, '/' + userProfileLocale + '/');
 				}
@@ -159,9 +158,7 @@ router.get('/*', cookieParser(), function(req, res) {
 					const store = configureStore(startingState, history, logger)
 					const html = renderToString(<IntlProvider locale={req.Locale.locale} messages={req.Locale.messages}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
 					const initialState = store.getState()
-					console.log('hello')
 					const rtl = rtlDetect.isRtlLang(req.Locale.locale)
-					console.log('rtl', rtl)
 					res.setHeader('Cache-Control', 'public');
 					res.render('index', {appString: html, rtl: rtl, locale: req.Locale, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
 				} catch(ex) {
@@ -171,7 +168,6 @@ router.get('/*', cookieParser(), function(req, res) {
 			}
 
 		} else {
-
 			res.status(404).send('Not found');
 
 		}

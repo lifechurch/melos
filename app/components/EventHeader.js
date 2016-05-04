@@ -35,7 +35,7 @@ class EventHeader extends Component {
 	}
 
 	getPublishSection() {
-		const { item, isSaving, isReordering, errors } = this.props.event
+		const { item, isSaving, isReordering, errors, intl } = this.props.event
 		switch (item.status) {
 			case EventStatus('published'):
 				return (
@@ -61,7 +61,7 @@ class EventHeader extends Component {
 			default:
 				return (
 					<Column s='medium-5' a='right'>
-						<a className='solid-button red' disabled={true}><FormattedMessage id='components.EventHeader.status.live' /></a>
+						<a className='solid-button red' disabled={true}>{intl.formatMessage({id:'components.EventHeader.status.' + item.status.toLowerCase() })}</a>
 					</Column>
 				)
 		}
@@ -98,7 +98,7 @@ class EventHeader extends Component {
 					<Column s='medium-4' a='right'>
 						{(auth && auth.userData && auth.userData.first_name) ? auth.userData.first_name : ''} {(auth && auth.userData && auth.userData.last_name) ? auth.userData.last_name : ''}&nbsp;
 						{(auth && auth.userData) ? <a onClick={::this.handleLogout}><FormattedMessage id="components.EventHeader.signOut" /></a> : <a target='_blank' href='https://www.bible.com/sign-up'><FormattedMessage id="components.EventHeader.createAccount" /></a>}
-						&nbsp;<Link to={`/${params.locale}/select_language`}>Change Language</Link>
+						&nbsp;<Link to={`/${params.locale}/select_language`}><FormattedMessage id="containers.SelectLanguage.choose" /></Link>
 					</Column>
 				</Row>
 				{ContentNav}
