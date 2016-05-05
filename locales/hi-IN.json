@@ -150,7 +150,7 @@
 	"features.EventEdit.features.location.components.LocationAddTime.minutes": "मिनट",
 	"features.EventEdit.features.location.components.LocationAddTime.hours": "घंटे",
 	"features.EventEdit.features.location.components.LocationAddTime.days": "दिवस",
-	"features.EventEdit.features.location.components.LocationDeleteModal.sure": "क्या आप सुनिश्चित हैं?",
+	"features.EventEdit.features.location.components.LocationDeleteModal.sure": "क्या आप सुनिश्���ित हैं?",
 	"features.EventEdit.features.location.components.LocationDeleteModal.selected": "You have selected the following location to be deleted:",
 	"features.EventEdit.features.location.components.LocationDeleteModal.warn": "This will remove the location from all past and present events. You will not be able to re-use this location for future events.",
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "रद्द करें",

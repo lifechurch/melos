@@ -181,7 +181,7 @@
 	"features.EventEdit.features.location.components.UnpublishModal.cancel": "取消",
 	"features.EventEdit.features.location.components.UnpublishModal.title": "取消發佈以進行更改",
 	"features.EventEdit.features.location.components.UnpublishModal.desc": "若要新增、編輯或刪除地點及時間，你可以暫時取消發佈該活動。在此期間，你的活動將不會出現在【互動】的搜索結果中。請務必記得再次發佈你的活動。",
-	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "取消發佈",
+	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "取消發���",
 	"features.EventEdit.features.preview.notes.prompt": "新增你的私人筆記......",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>請登入，</span>以增添你的私人筆記……</a>",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "分享互動活動",
