@@ -98,7 +98,7 @@ class EventHeader extends Component {
 					<Column s='medium-4' a='right'>
 						{(auth && auth.userData && auth.userData.first_name) ? auth.userData.first_name : ''} {(auth && auth.userData && auth.userData.last_name) ? auth.userData.last_name : ''}&nbsp;
 						{(auth && auth.userData) ? <a onClick={::this.handleLogout}><FormattedMessage id="components.EventHeader.signOut" /></a> : <a target='_blank' href='https://www.bible.com/sign-up'><FormattedMessage id="components.EventHeader.createAccount" /></a>}
-						&nbsp;<Link to={`/${params.locale}/select_language`}><FormattedMessage id="containers.SelectLanguage.choose" /></Link>
+						&nbsp;&bull;&nbsp;<Link to={`/${params.locale}/select_language`}><FormattedMessage id="features.EventEdit.features.content.components.ContentTypeReference.language" /></Link>
 					</Column>
 				</Row>
 				{ContentNav}
