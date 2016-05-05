@@ -70,7 +70,7 @@ class ContentTypeReference extends Component {
 			'index': contentIndex
 		}))
 
-		cookie.save('last_bible_lang', event.target.value)
+		cookie.save('last_bible_lang', event.target.value, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 		cookie.remove('last_bible_version')
 		cookie.remove('last_bible_book')
 
@@ -87,7 +87,7 @@ class ContentTypeReference extends Component {
 			'index': contentIndex
 		}))
 
-		cookie.save('last_bible_version', parseInt(event.target.value))
+		cookie.save('last_bible_version', parseInt(event.target.value), { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 		cookie.remove('last_bible_book')
 
 		dispatch(ActionCreators.setField({index: contentIndex, field: 'human', value: ' '}))
@@ -100,7 +100,7 @@ class ContentTypeReference extends Component {
 		const books = references.books[contentData.version_id]
 		const usfm = event.target.value
 
-		cookie.save('last_bible_book', event.target.value)
+		cookie.save('last_bible_book', event.target.value, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 
 		var human = ""
 		for (let book of books) {
