@@ -1330,6 +1330,7 @@ en:
           published:                            "Published"
           draft:                                "Draft"
           live:                                 "Live"
+          archived:                             "Archived"
         unpublish:                              "Unpublish"
         saving:                                 "Saving..."
         saveAsDraft:                            "Save as Draft"
