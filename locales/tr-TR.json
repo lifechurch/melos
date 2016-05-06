@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Görüntüle",
 	"features.EventFeedMine.components.EventListItem.fail": "Etkinlik Silinemiyor",
 	"features.EventView.components.EventViewContent.copy": "Kopyala",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Paylaş",
 	"features.EventView.components.EventViewContent.read": "Oku",
 	"features.EventView.components.EventViewContent.readPlan": "Planı Oku",

@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Lihat..",
 	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
 	"features.EventView.components.EventViewContent.copy": "Salin",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Bagikan",
 	"features.EventView.components.EventViewContent.read": "Baca",
 	"features.EventView.components.EventViewContent.readPlan": "Read Plan",

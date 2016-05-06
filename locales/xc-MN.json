@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Үзэх",
 	"features.EventFeedMine.components.EventListItem.fail": "Үйл ажиллагааг устгах боломжгүй",
 	"features.EventView.components.EventViewContent.copy": "Хувилах",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Хуваалцах",
 	"features.EventView.components.EventViewContent.read": "Унших",
 	"features.EventView.components.EventViewContent.readPlan": "Төлөвлөгөө Унших",

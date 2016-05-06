@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Row from '../../../components/Row'
 import Column from '../../../components/Column'
+import { FormattedMessage } from 'react-intl'
 
 class EventViewContentAnnouncement extends Component {
 

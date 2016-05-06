@@ -6,6 +6,7 @@ import Image from '../../../components/Image'
 import ActionCreators from '../actions/creators'
 import moment from 'moment'
 import RevManifest from '../../../lib/revManifest'
+import { FormattedMessage } from 'react-intl'
 
 class EventViewDetails extends Component {
 	saveEvent() {
@@ -14,8 +15,9 @@ class EventViewDetails extends Component {
 	}
 
 	toggleLocations(e) {
+		const { intl } = this.props
 		var loc = e.currentTarget.childNodes
-		loc[1].text = loc[1].text==intl.formatMessage({id:"features.EventEdit.features.preview.components.EventViewDetails.expand"}) ? intl.formatMessage({id:"features.EventView.components.EventViewDetails.collapse"}) : intl.formatMessage({id:"features.EventEdit.features.preview.components.EventViewDetails.expand"})
+		loc[1].text = loc[1].text==intl.formatMessage({id:"features.EventView.components.EventViewDetails.expand"}) ? intl.formatMessage({id:"features.EventView.components.EventViewDetails.collapse"}) : intl.formatMessage({id:"features.EventView.components.EventViewDetails.expand"})
 		loc[2].classList.toggle('show')
 	}
 
@@ -28,7 +30,7 @@ class EventViewDetails extends Component {
 	}
 
 	render() {
-		const { event, auth } = this.props
+		const { event, auth, intl } = this.props
 		const { org_name, title, images, description, locations } = event.item
 
 		var action = <div className="right">{ auth.isLoggedIn ? <a onClick={::this.saveEvent} className="solid-button green"><FormattedMessage id="features.EventView.components.EventViewDetails.save" /></a> : <a href="/sign-in" className="solid-button green"><FormattedMessage id="features.EventView.components.EventViewDetails.signIn" /></a>}</div>
@@ -64,9 +66,9 @@ class EventViewDetails extends Component {
 				</div>
 				<div className="desc">{description}</div>
 				<div className="type no-meta">
-					<div className="content locations" onClick={this.toggleLocations}>
-						<div className='title left'>Locations & Times</div>
-						<a ref="toggle" className='toggle right'>expand</a>
+					<div className="content locations" onClick={::this.toggleLocations}>
+						<div className='title left'>{intl.formatMessage({id:"features.EventEdit.components.EventEditNav.locations"})}</div>
+						<a ref="toggle" className='toggle right'>{intl.formatMessage({id:"features.EventView.components.EventViewDetails.expand"})}</a>
 						<div className="caption">
 							<ul>{locationList}</ul>
 						</div>

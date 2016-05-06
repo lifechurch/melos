@@ -16,9 +16,11 @@ import { tokenAuth } from '@youversion/js-api'
 import revManifest from './rev-manifest.json'
 import bodyParser from 'body-parser'
 import { getClient } from '@youversion/js-api'
+import { addLocaleData, IntlProvider } from 'react-intl'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
+const availableLocales = require('./availableLocales.json');
 
 function getAssetPath(path) {
 	const IS_PROD = process.env.NODE_ENV === 'production';
@@ -165,9 +167,29 @@ function loadData(feature, params, startingState, sessionData) {
 	})
 }
 
+function getLocale(languageTag) {
+	let final = {}
+
+	if (typeof languageTag === 'undefined' || languageTag === null || languageTag === '' || availableLocales[languageTag] === 'undefined') {
+		final = { locale: availableLocales['en-US'], source: 'default' }
+	} else {
+		final = { locale: availableLocales[languageTag], source: 'param' }
+	}
+
+	// Get the appropriate react-intl locale data for this locale
+	var localeData = require('react-intl/locale-data/' + final.locale.split('-')[0]);
+	final.data = localeData;
+
+	// Get the appropriate set of localized strings for this locale
+	final.messages = require('./locales/' + final.locale + '.json');
+
+	return final;
+}
+
 router.post('/', urlencodedParser, function(req, res) {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
+	const Locale = getLocale(params.languageTag)
 
 	reactCookie.plugToRequest(req, res)
 
@@ -186,11 +208,19 @@ router.post('/', urlencodedParser, function(req, res) {
 					store.dispatch(action)
 				}
 				const RootComponent = getRootComponent(feature)
-				const html = renderToString(<Provider store={store}><RootComponent /></Provider>)
+
+				let html = null
+				try {
+					 html = renderToString(<IntlProvider locale={Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent /></Provider></IntlProvider>)
+				} catch(ex) {
+					console.log(ex, ex.stack)
+					return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex })
+				}
+
 				const initialState = Object.assign({}, startingState, store.getState())
 				const head = Helmet.rewind()
 				res.setHeader('Cache-Control', 'public')
-				res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature) }, function(err, html) {
+				res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale }, function(err, html) {
 					res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })
 				})
 			}, (error) => {

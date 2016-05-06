@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Visa",
 	"features.EventFeedMine.components.EventListItem.fail": "Kunde inte ta bort händelse",
 	"features.EventView.components.EventViewContent.copy": "Kopiera",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Dela",
 	"features.EventView.components.EventViewContent.read": "Läs",
 	"features.EventView.components.EventViewContent.readPlan": "Läsplan",

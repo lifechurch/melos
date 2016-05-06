@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Tazama",
 	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
 	"features.EventView.components.EventViewContent.copy": "Nakili",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "husisha wengine",
 	"features.EventView.components.EventViewContent.read": "Soma",
 	"features.EventView.components.EventViewContent.readPlan": "Read Plan",

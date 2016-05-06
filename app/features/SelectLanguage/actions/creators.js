@@ -12,7 +12,7 @@ const ActionCreators = {
 			const { language_tag, user_id, locale } = params
 
 			function finish(response) {
-				cookie.save('locale', language_tag, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+				cookie.save('locale', locale, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 				dispatch({type: type('changeLanguageSuccess'), params, response })
 				window.location = '/' + locale + '/'
 			}
@@ -25,7 +25,7 @@ const ActionCreators = {
 
 			} else {
 				dispatch(ActionCreators.getUser({ id: user_id })).then((user) => {
-					user.language_tag = language_tag
+					user.language_tag = locale
 					dispatch(ActionCreators.updateUser(user)).then((response) => {
 						finish(response)
 					}, (error) => {

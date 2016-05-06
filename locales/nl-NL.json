@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Bekijken",
 	"features.EventFeedMine.components.EventListItem.fail": "Bijeenkomst verwijderen niet mogelijk",
 	"features.EventView.components.EventViewContent.copy": "Kopiëren",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Delen",
 	"features.EventView.components.EventViewContent.read": "Lezen",
 	"features.EventView.components.EventViewContent.readPlan": "Leesplan",

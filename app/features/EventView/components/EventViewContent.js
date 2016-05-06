@@ -11,6 +11,7 @@ import EventViewContentImage from './EventViewContentImage'
 import EventViewContentPlan from './EventViewContentPlan'
 import EventViewContentReference from './EventViewContentReference'
 import EventViewContentAnnouncement from './EventViewContentAnnouncement'
+import { FormattedHTMLMessage } from 'react-intl'
 
 const AUTO_SAVE_TIMEOUT = 3000
 
@@ -52,7 +53,7 @@ class EventViewContent extends Component {
 					} else {
 						output = ''
 					}
-					contentItem = <EventViewContentText contentData={content.data} meta_links={meta_links} />
+					contentItem = <EventViewContentText intl={intl} contentData={content.data} meta_links={meta_links} />
 					meta_links = [
 						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.copy"}), payload: output},
 						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.share"}), payload: {url: '', title: output}}
@@ -61,11 +62,11 @@ class EventViewContent extends Component {
 					break
 
 				case 'url':
-					contentItem = <EventViewContentLink contentData={content.data} />
+					contentItem = <EventViewContentLink intl={intl} contentData={content.data} />
 					break
 
 				case 'announcement':
-					contentItem = <EventViewContentAnnouncement contentData={content.data} />
+					contentItem = <EventViewContentAnnouncement intl={intl} contentData={content.data} />
 					break
 
 				case 'image':
@@ -73,7 +74,7 @@ class EventViewContent extends Component {
 					if (content.data.urls) {
 						urls = content.data.urls.filter((i) => { if (i.width==640 && i.height==640) { return true } })
 					}
-					contentItem = <EventViewContentImage contentData={content.data} />
+					contentItem = <EventViewContentImage intl={intl} contentData={content.data} />
 					// meta_links = [{label: 'Share', payload: {url: urls.length ? urls[0].url : null, title: ''}}]
 					notes = true
 					break
@@ -85,7 +86,7 @@ class EventViewContent extends Component {
 								    content.data.usfm[0].split('.').slice(0,2).join('.') + '.' +
 								    content.data.human.split(', ').map((v)=>{return v.split(':')[1]}).join()
 
-					contentItem = <EventViewContentReference contentData={content.data} contentIndex={index} dispatch={dispatch} reference={reference} />
+					contentItem = <EventViewContentReference intl={intl} contentData={content.data} contentIndex={index} dispatch={dispatch} reference={reference} />
 					meta_links = [
 						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.read"}), payload: url},
 						// {label: 'Copy', payload: human + " " + url},
@@ -95,7 +96,7 @@ class EventViewContent extends Component {
 					break
 
 				case 'plan':
-					contentItem = <EventViewContentPlan contentData={content.data} />
+					contentItem = <EventViewContentPlan intl={intl} contentData={content.data} />
 					meta_links = [
 						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.readPlan"}), payload: content.data.short_url},
 						{label: intl.formatMessage({id:"features.EventView.components.EventViewContent.share"}), payload: {url: content.data.short_url, title: content.data.title}}
@@ -126,7 +127,7 @@ class EventViewContent extends Component {
 		return (
 			<div className={"type" + (meta_links ? "" : " no-meta")}>
 				{contentItem}
-				{meta_links ? <EventViewContentMeta meta_links={meta_links.reverse()} /> : null}
+				{meta_links ? <EventViewContentMeta intl={intl} meta_links={meta_links.reverse()} /> : null}
 				{notes}
 			</div>
 		)

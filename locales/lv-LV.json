@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Skatījums",
 	"features.EventFeedMine.components.EventListItem.fail": "Nevar izdzēst pasākumu",
 	"features.EventView.components.EventViewContent.copy": "Kopēt",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Dalīties",
 	"features.EventView.components.EventViewContent.read": "Lasīt",
 	"features.EventView.components.EventViewContent.readPlan": "Lasīt plānu",

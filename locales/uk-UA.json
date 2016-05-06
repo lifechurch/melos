@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Перегляд",
 	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
 	"features.EventView.components.EventViewContent.copy": "Копіювати",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Поділитись",
 	"features.EventView.components.EventViewContent.read": "Читати",
 	"features.EventView.components.EventViewContent.readPlan": "Read Plan",

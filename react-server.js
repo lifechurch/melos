@@ -31,6 +31,15 @@ function getAssetPath(path) {
 	}
 }
 
+/**
+ * Parses the accept-language HTTP header and
+ * returns an array of Objects with the following
+ * keys:
+ *  - locale: this is the full locale, ISO 639-1
+ *  - prefix: this is the language portion of a locale, ISO 639-2
+ *  - weight: some browsers associate a weight value to a locale between 0 and 1
+ * @param {Object} req - the Express request object
+ */
 function getLocalesFromHeader(req) {
 	return req.headers['accept-language'].split(',').map(function(l) {
 		var locale = l.split(';');
@@ -40,9 +49,20 @@ function getLocalesFromHeader(req) {
 	});
 }
 
-function getLocale(req) {
-	var defaultLocale = availableLocales['en'];
-	var localeFromCookie;
+/**
+ * Gets the Locale of the User by checking the
+ * following places in order:
+ *
+ *  1) URL: assuming an explicit URL should take first priority
+ *  2) Cookie: a cookie is only written when a user explicitly switches to a language/locale
+ *  3) Profile: the user's profile is only update when a user explicitly switches to a language/locale
+ *  4) Browser: also known as the accept-language header, this is the final fallback to a configuration setting in the browser
+ *
+ * @param {Object} req - the Express request object
+ * @param {string} profileLanguageTag - the ISO 639-1 language code from the User's profile
+ */
+function getLocale(req, profileLanguageTag) {
+	var defaultLocale = availableLocales['en-US'];
 	var final = { locale: defaultLocale, source: 'default' }
 	var urlLocale = req.params[0].split('/')[0];
 	var localesFromHeader = getLocalesFromHeader(req);
@@ -54,6 +74,10 @@ function getLocale(req) {
 	// 2: Try Cookie Second
 	} else if (typeof req.cookies.locale !== 'undefined' && typeof availableLocales[req.cookies.locale] !== 'undefined') {
 		final = { locale: availableLocales[req.cookies.locale], source: 'cookie' };
+
+	// 3: Try User Profile Info (from token of last login)
+	} else if (typeof profileLanguageTag !== 'undefined' && profileLanguageTag !== null) {
+		final = { locale: availableLocales[profileLanguageTag], source: 'profile' };
 
 	// 3: Try accept-language Header Third
 	} else {
@@ -77,19 +101,76 @@ function getLocale(req) {
 		}
 	}
 
-	final.messages = require('./locales/' + final.locale + '.json');
+	// Get the appropriate react-intl locale data for this locale
 	var localeData = require('react-intl/locale-data/' + final.locale.split('-')[0]);
 	final.data = localeData;
+
+	// Get the appropriate set of localized strings for this locale
+	final.messages = require('./locales/' + final.locale + '.json');
+
+	// Add the list of preferred locales based on browser configuration to this response
 	final.preferredLocales = localesFromHeader;
+
 	return final;
 }
 
+/**
+ * Gets the User State from the JSON Web Token
+ * that's plugged into react-cookie
+ */
+function getStateFromToken() {
+	let sessionData = {}
+	const token = fetchToken()
+	const tokenData = tokenAuth.decodeToken(token)
+	sessionData = tokenAuth.decryptToken(tokenData.token)
+	delete sessionData.password
+	return Object.assign({}, defaultState, { auth: {
+		token: null,
+		isLoggedIn: true,
+		isWorking: false,
+		userData: sessionData,
+		user: sessionData.email,
+		password: null,
+		errors: {
+			api: null,
+			fields: {
+				user: null,
+				password: null
+			}
+		}
+	}})
+}
+
+/**
+ * Entry point for handling React app URLs
+ */
 router.get('/*', cookieParser(), function(req, res) {
-	req.Locale = getLocale(req);
+	reactCookie.plugToRequest(req, res)
+
+	let startingState = defaultState
+
+	try {
+		startingState = getStateFromToken()
+	} catch(err) {
+
+	}
+
+	const profileLanguageTag = startingState !== null &&
+		typeof startingState !== 'undefined' &&
+		typeof startingState.auth !== 'undefined' &&
+		typeof startingState.auth.userData !== 'undefined' &&
+		typeof startingState.auth.userData.language_tag ? startingState.auth.userData.language_tag : null
+
+	req.Locale = getLocale(req, profileLanguageTag);
+
+	// We are not authenticated
+	if (!startingState.auth.isLoggedIn && req.path !== '/' + req.Locale.locale + '/login') {
+		return res.redirect('/' + req.Locale.locale + '/login');
 
 	// This was a route with no language tag
-	if (req.Locale.source !== 'url') {
+	} else if (req.Locale.source !== 'url') {
 		return res.redirect(302, '/' + req.Locale.locale + '/' + req.params[0]);
+
 	}
 
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
@@ -103,71 +184,22 @@ router.get('/*', cookieParser(), function(req, res) {
 
 		} else if (renderProps) {
 
-			reactCookie.plugToRequest(req, res)
-
-			let sessionData = {}
-			let startingState = defaultState
-			let redirecting = false
 			try {
-				const token = fetchToken()
-				const tokenData = tokenAuth.decodeToken(token)
-				sessionData = tokenAuth.decryptToken(tokenData.token)
-				delete sessionData.password
-
-				startingState = Object.assign({}, defaultState, { auth: {
-					token: null,
-					isLoggedIn: true,
-					isWorking: false,
-					userData: sessionData,
-					user: sessionData.email,
-					password: null,
-					errors: {
-						api: null,
-						fields: {
-							user: null,
-							password: null
-						}
-					}
-				}})
-
-				// Cookie should override language from token,
-				//  because token is generated at login and could
-				//  outdated
-				const cookieLocale = reactCookie.load('locale')
-				if (typeof cookieLocale !== 'undefined') {
-					startingState.auth.userData.language_tag = cookieLocale
-				}
-
-				// Make sure User Profile Locale Takes Precedence over Everything
-				const userProfileLocale = availableLocales[startingState.auth.userData.language_tag]
-				if (req.Locale.locale !== userProfileLocale) {
-					return res.redirect(302, '/' + userProfileLocale + '/');
-				}
-
-			} catch(err) {
-				if (req.path !== '/' + req.Locale.locale + '/login') {
-					redirecting = true
-					res.redirect('/' + req.Locale.locale + '/login');
-				}
-			}
-
-			if (!redirecting) {
-				try {
-					const logger = createNodeLogger()
-					const history = createMemoryHistory()
-					const store = configureStore(startingState, history, logger)
-					const html = renderToString(<IntlProvider locale={req.Locale.locale} messages={req.Locale.messages}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
-					const initialState = store.getState()
-					const rtl = rtlDetect.isRtlLang(req.Locale.locale)
-					res.setHeader('Cache-Control', 'public');
-					res.render('index', {appString: html, rtl: rtl, locale: req.Locale, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
-				} catch(ex) {
-					console.log('ex', ex);
-					res.status(500).send()
-				}
+				const logger = createNodeLogger()
+				const history = createMemoryHistory()
+				const store = configureStore(startingState, history, logger)
+				const html = renderToString(<IntlProvider locale={req.Locale.locale} messages={req.Locale.messages}><Provider store={store}><RouterContext {...renderProps} /></Provider></IntlProvider>)
+				const initialState = store.getState()
+				const rtl = rtlDetect.isRtlLang(req.Locale.locale)
+				res.setHeader('Cache-Control', 'public');
+				res.render('index', {appString: html, rtl: rtl, locale: req.Locale, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
+			} catch(ex) {
+				console.log('ex', ex);
+				res.status(500).send()
 			}
 
 		} else {
+
 			res.status(404).send('Not found');
 
 		}

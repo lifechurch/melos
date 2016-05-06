@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Tingnan",
 	"features.EventFeedMine.components.EventListItem.fail": "Hindi puwedeng burahin ang Kaganapan",
 	"features.EventView.components.EventViewContent.copy": "Kopyahin",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Ibahagi",
 	"features.EventView.components.EventViewContent.read": "Basahin",
 	"features.EventView.components.EventViewContent.readPlan": "Basahin ang Plano",

@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Shiko",
 	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
 	"features.EventView.components.EventViewContent.copy": "Kopjo",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Ndaje",
 	"features.EventView.components.EventViewContent.read": "Lexo",
 	"features.EventView.components.EventViewContent.readPlan": "Read Plan",

@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "見る",
 	"features.EventFeedMine.components.EventListItem.fail": "イベントを削除できないようにする",
 	"features.EventView.components.EventViewContent.copy": "コピー",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "シェアする",
 	"features.EventView.components.EventViewContent.read": "読む",
 	"features.EventView.components.EventViewContent.readPlan": "読書プラン",

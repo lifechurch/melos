@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Visualizza",
 	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
 	"features.EventView.components.EventViewContent.copy": "Copia",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Condividi",
 	"features.EventView.components.EventViewContent.read": "Leggi",
 	"features.EventView.components.EventViewContent.readPlan": "Read Plan",

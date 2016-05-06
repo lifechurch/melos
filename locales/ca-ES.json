@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Veure",
 	"features.EventFeedMine.components.EventListItem.fail": "No es pot esborrar l'esdeveniment",
 	"features.EventView.components.EventViewContent.copy": "Copia",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Comparteix",
 	"features.EventView.components.EventViewContent.read": "Llegeix",
 	"features.EventView.components.EventViewContent.readPlan": "Llegeix el pla",

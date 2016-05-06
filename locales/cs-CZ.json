@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Zobrazit",
 	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
 	"features.EventView.components.EventViewContent.copy": "Kopírovat",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Sdílet",
 	"features.EventView.components.EventViewContent.read": "Číst",
 	"features.EventView.components.EventViewContent.readPlan": "Číst plán",

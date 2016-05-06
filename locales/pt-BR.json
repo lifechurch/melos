@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Visualização",
 	"features.EventFeedMine.components.EventListItem.fail": "Não é possível excluir o evento",
 	"features.EventView.components.EventViewContent.copy": "Copiar",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Compartilhar",
 	"features.EventView.components.EventViewContent.read": "Ler",
 	"features.EventView.components.EventViewContent.readPlan": "Read Plan",

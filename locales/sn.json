@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "View",
 	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
 	"features.EventView.components.EventViewContent.copy": "Sarudza zvinyorwa izvi",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Pakurirana nevamwe",
 	"features.EventView.components.EventViewContent.read": "Verenga",
 	"features.EventView.components.EventViewContent.readPlan": "Read Plan",

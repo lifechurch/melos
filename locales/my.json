@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "ကြည့်ရန်",
 	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
 	"features.EventView.components.EventViewContent.copy": "ကူးယူ",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "မျှဝေရန်",
 	"features.EventView.components.EventViewContent.read": "ဖတ်ရှုရန်",
 	"features.EventView.components.EventViewContent.readPlan": "Read Plan",

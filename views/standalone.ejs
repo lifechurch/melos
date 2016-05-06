@@ -2,6 +2,12 @@
 	<link rel="stylesheet" href="<%=assetPrefix%>/stylesheets/<%= getAssetPath('style.css') %>" />
 <% } %>
 <script type="application/javascript">
+	window.__LOCALE__ = <%- JSON.stringify(locale, function(key, val) {
+		if (typeof val === 'function') {
+			return val + '';
+		}
+		return val;
+	}, 4) %>;
 	window.__INITIAL_STATE__ = <%- JSON.stringify(initialState) %>;
 	window.__ENV__ = "<%- environment %>";
 </script>

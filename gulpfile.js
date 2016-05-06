@@ -247,6 +247,7 @@ gulp.task('smartling', function(callback) {
 			tasks.forEach(function(t) {
 				availableLocales[t.locale] = t.locale;
 				availableLocales[t.prefix] = t.locale;
+				availableLocales[t.locale.replace('-', '_')] = t.locale
 			});
 
 			fs.writeFileSync('./availableLocales.json', JSON.stringify(availableLocales, null, "\t"));

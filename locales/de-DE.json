@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Ansicht",
 	"features.EventFeedMine.components.EventListItem.fail": "Klicke hier, um dein Ereignis zu löschen",
 	"features.EventView.components.EventViewContent.copy": "Kopieren",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Teilen",
 	"features.EventView.components.EventViewContent.read": "Lesen",
 	"features.EventView.components.EventViewContent.readPlan": "Leseplan lesen",

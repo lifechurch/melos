@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Xem",
 	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
 	"features.EventView.components.EventViewContent.copy": "Sao chép",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Chia sẻ",
 	"features.EventView.components.EventViewContent.read": "Kinh Thánh",
 	"features.EventView.components.EventViewContent.readPlan": "Read Plan",

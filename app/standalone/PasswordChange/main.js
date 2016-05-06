@@ -5,6 +5,8 @@ import configureStore from './store'
 import defaultState from './defaultState'
 import createLogger from 'redux-logger'
 import PasswordChange from '../../features/PasswordChange/components/PasswordChange'
+import { addLocaleData, IntlProvider } from 'react-intl'
+
 
 let initialState = defaultState
 
@@ -20,8 +22,10 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 const store = configureStore(initialState, null, logger)
 
 render(
-	<Provider store={store}>
-		<PasswordChange />
-	</Provider>,
+	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
+		<Provider store={store}>
+			<PasswordChange />
+		</Provider>
+	</IntlProvider>,
   document.getElementById('react-app')
 )

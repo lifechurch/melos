@@ -206,6 +206,7 @@
 	"features.EventFeedMine.components.EventListItem.view": "Arată",
 	"features.EventFeedMine.components.EventListItem.fail": "Unable to delete Event",
 	"features.EventView.components.EventViewContent.copy": "Copiază",
+	"features.EventView.components.EventViewContent.copied": "Copied",
 	"features.EventView.components.EventViewContent.share": "Distribuie",
 	"features.EventView.components.EventViewContent.read": "Citește",
 	"features.EventView.components.EventViewContent.readPlan": "Read Plan",
