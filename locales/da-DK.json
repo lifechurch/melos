@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Vist",
 	"components.EventHeader.status.draft": "Udkast",
 	"components.EventHeader.status.live": "Live",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Ikke Vist",
 	"components.EventHeader.saving": "Gemmer...",
 	"components.EventHeader.saveAsDraft": "Gem som kladde",

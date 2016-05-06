@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Published",
 	"components.EventHeader.status.draft": "မူကြမ်း",
 	"components.EventHeader.status.live": "ထုတ်လွှင့်မှု",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Unpublish",
 	"components.EventHeader.saving": "Saving...",
 	"components.EventHeader.saveAsDraft": "မူကြမ်းအဖြစ် သိမ်းရန်",

@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Publikováno",
 	"components.EventHeader.status.draft": "Koncept/y",
 	"components.EventHeader.status.live": "Live",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Unpublish",
 	"components.EventHeader.saving": "Saving...",
 	"components.EventHeader.saveAsDraft": "Uložit jako koncept",

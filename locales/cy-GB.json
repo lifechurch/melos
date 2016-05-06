@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Cyhoeddwyd",
 	"components.EventHeader.status.draft": "Drafft",
 	"components.EventHeader.status.live": "Yn Fyw",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Dadgyhoeddi",
 	"components.EventHeader.saving": "Cadw",
 	"components.EventHeader.saveAsDraft": "Cadw fel Drafft",

@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Yayımlandı",
 	"components.EventHeader.status.draft": "Taslak",
 	"components.EventHeader.status.live": "Canlı",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Yayınlanmayan",
 	"components.EventHeader.saving": "Kaydediliyor...",
 	"components.EventHeader.saveAsDraft": "Taslak olarak Kaydet",

@@ -35,7 +35,8 @@ class EventHeader extends Component {
 	}
 
 	getPublishSection() {
-		const { item, isSaving, isReordering, errors, intl } = this.props.event
+		const { item, isSaving, isReordering, errors } = this.props.event
+		const { intl } = this.props
 		switch (item.status) {
 			case EventStatus('published'):
 				return (

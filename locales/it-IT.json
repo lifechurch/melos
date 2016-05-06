@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Published",
 	"components.EventHeader.status.draft": "Bozza",
 	"components.EventHeader.status.live": "Live",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Unpublish",
 	"components.EventHeader.saving": "Saving...",
 	"components.EventHeader.saveAsDraft": "Salva come Bozza",

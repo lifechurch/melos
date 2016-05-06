@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Veröffentlicht",
 	"components.EventHeader.status.draft": "Entwurf",
 	"components.EventHeader.status.live": "Live",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Zurückgezogen",
 	"components.EventHeader.saving": "Speichern...",
 	"components.EventHeader.saveAsDraft": "Als Entwurf speichern",

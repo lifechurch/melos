@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Published",
 	"components.EventHeader.status.draft": "Rasimu",
 	"components.EventHeader.status.live": "mojakwamoja",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Unpublish",
 	"components.EventHeader.saving": "Saving...",
 	"components.EventHeader.saveAsDraft": "Weka kama mfano",

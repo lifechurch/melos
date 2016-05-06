@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Publicado",
 	"components.EventHeader.status.draft": "Borrador",
 	"components.EventHeader.status.live": "En vivo",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Anular publicación",
 	"components.EventHeader.saving": "Guardando...",
 	"components.EventHeader.saveAsDraft": "Guardar como borrador",

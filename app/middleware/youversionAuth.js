@@ -47,6 +47,12 @@ export default store => next => action => {
 	next(getRequestAction(requestType, action))
 
 	return api_method.apply(this, params).then((response) => {
+		if (typeof window !== 'undefined' && typeof window.__GA__ !== 'undefined') {
+			window.__GA__.event({
+				category: 'Auth',
+				action: 'Auth/' + method
+			})
+		}
 		next(getSuccessAction(successType, action, response))
 		return response
 	}, (error) => {

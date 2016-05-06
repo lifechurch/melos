@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Published",
 	"components.EventHeader.status.draft": "Draf",
 	"components.EventHeader.status.live": "Langsung",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Unpublish",
 	"components.EventHeader.saving": "Menyimpan...",
 	"components.EventHeader.saveAsDraft": "Simpan sebagai Draf",

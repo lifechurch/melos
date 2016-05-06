@@ -22,7 +22,7 @@ function getSuccessAction(type, action, response) {
 
 export default store => next => action => {
 	const api_call = action['google_maps_api_call']
-	
+
 	if (typeof api_call === 'undefined') {
 		return next(action)
 	}
@@ -42,11 +42,17 @@ export default store => next => action => {
 	if (!Array.isArray(types) || types.length !== 3) {
 		throw new Error('Invalid API types')
 	}
-	const [ requestType, successType, failureType ] = types	
+	const [ requestType, successType, failureType ] = types
 
 	next(getRequestAction(requestType, action))
-	
+
 	return api_method.apply(this, params).then((response) => {
+		if (typeof window !== 'undefined' && typeof window.__GA__ !== 'undefined') {
+			window.__GA__.event({
+				category: 'Google Maps',
+				action: 'Google Maps/' + method
+			})
+		}
 		next(getSuccessAction(successType, action, response))
 		return response
 	}, (error) => {

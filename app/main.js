@@ -11,6 +11,13 @@ import defaultState from './defaultState'
 import EventActionCreators from './features/EventEdit/features/details/actions/creators'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
+import ga from 'react-ga'
+
+ga.initialize('UA-3571547-125', {'language': window.__LOCALE__.locale});
+
+if (typeof window !== 'undefined') {
+	window.__GA__ = ga;
+}
 
 require('moment/min/locales')
 
@@ -51,6 +58,12 @@ function requireEvent(nextState, replace, callback) {
 	}
 }
 
+function logPageView() {
+	if (typeof window !== 'undefined') {
+  	window.__GA__.pageview(window.location.pathname);
+  }
+}
+
 const routes = getRoutes(requireAuth, requireEvent)
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
@@ -58,7 +71,7 @@ moment.locale(window.__LOCALE__.locale)
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory} />
+			<Router routes={routes} history={browserHistory}  onUpdate={logPageView} />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app')

@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Published",
 	"components.EventHeader.status.draft": "Piszkozat",
 	"components.EventHeader.status.live": "Élő",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Unpublish",
 	"components.EventHeader.saving": "Saving...",
 	"components.EventHeader.saveAsDraft": "Mentés vázlatként",

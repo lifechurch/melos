@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Publicat",
 	"components.EventHeader.status.draft": "Esborrany",
 	"components.EventHeader.status.live": "En directe",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Desfés la publicació",
 	"components.EventHeader.saving": "Guardant…",
 	"components.EventHeader.saveAsDraft": "Desa com a esborrany",

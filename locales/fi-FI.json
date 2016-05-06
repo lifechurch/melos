@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Julkaistu",
 	"components.EventHeader.status.draft": "Luonnos",
 	"components.EventHeader.status.live": "Live",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Poista julkaisu",
 	"components.EventHeader.saving": "Tallennetaan...",
 	"components.EventHeader.saveAsDraft": "Tallenna luonnoksena",

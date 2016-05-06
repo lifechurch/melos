@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Nakalathala",
 	"components.EventHeader.status.draft": "Draft",
 	"components.EventHeader.status.live": "Live",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Tanggalin sa pagkalathala",
 	"components.EventHeader.saving": "Sine-save...",
 	"components.EventHeader.saveAsDraft": "I-save bilang Draft",

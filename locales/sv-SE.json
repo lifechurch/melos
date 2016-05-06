@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Publicerad",
 	"components.EventHeader.status.draft": "Utkast",
 	"components.EventHeader.status.live": "Live",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Avpublicera",
 	"components.EventHeader.saving": "Sparar...",
 	"components.EventHeader.saveAsDraft": "Spara som utkast",

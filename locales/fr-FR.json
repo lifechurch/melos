@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Publié",
 	"components.EventHeader.status.draft": "Brouillon",
 	"components.EventHeader.status.live": "Live",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Non publié",
 	"components.EventHeader.saving": "Enregistrement en cours...",
 	"components.EventHeader.saveAsDraft": "Enregistrer en tant que brouillon",

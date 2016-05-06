@@ -6,6 +6,7 @@ import { Link } from 'react-router'
 import { fetchEventView } from '../actions'
 import ActionCreators from '../features/EventEdit/features/details/actions/creators'
 import EventHeader from '../components/EventHeader'
+import { injectIntl } from 'react-intl'
 
 class EventEdit extends Component {
 	handleDetailsNext(nextLocation) {
@@ -78,4 +79,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(EventEdit)
+export default connect(mapStateToProps, null)(injectIntl(EventEdit))

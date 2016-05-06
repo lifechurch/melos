@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Zverejnené",
 	"components.EventHeader.status.draft": "Návrh",
 	"components.EventHeader.status.live": "Live",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Zrušte zverejnenie",
 	"components.EventHeader.saving": "Ukladanie...",
 	"components.EventHeader.saveAsDraft": "Uložiť ako Návrh",

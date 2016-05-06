@@ -12,6 +12,7 @@
 	"components.EventHeader.status.published": "Plaas",
 	"components.EventHeader.status.draft": "Konsep",
 	"components.EventHeader.status.live": "Lewendig",
+	"components.EventHeader.status.archived": "Archived",
 	"components.EventHeader.unpublish": "Onttrek",
 	"components.EventHeader.saving": "Saving...",
 	"components.EventHeader.saveAsDraft": "Stoor as Rofwerk",
