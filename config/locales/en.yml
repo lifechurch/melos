@@ -1596,6 +1596,7 @@ en:
         components:
           EventViewContent:
             copy:                               "Copy"
+            copied:                             "Copied"
             share:                              "Share"
             read:                               "Read"
             readPlan:                           "Read Plan"
