@@ -8,6 +8,7 @@ import HtmlEditor from '../../../../../../app/components/HtmlEditor'
 import LocaleList from '../../../../../../localeList.json'
 import cookie from 'react-cookie'
 import { FormattedMessage } from 'react-intl'
+import moment from 'moment'
 
 class ContentTypeReference extends Component {
 	constructor(props) {
