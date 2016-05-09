@@ -72,14 +72,6 @@
 		"displayName": "Eesti (Estonia)"
 	},
 	{
-		"nativeName": "English (Canada)",
-		"englishName": "English (Canada)",
-		"locale": "en-CA",
-		"locale2": "en",
-		"locale3": "eng",
-		"displayName": "English (Canada)"
-	},
-	{
 		"nativeName": "English (UK)",
 		"englishName": "English (UK)",
 		"locale": "en-GB",
@@ -97,7 +89,7 @@
 	},
 	{
 		"nativeName": "Español",
-		"englishName": "Spanish (Latin)",
+		"englishName": "Spanish (Latin America)",
 		"locale": "es-LA",
 		"locale2": "es",
 		"locale3": "spa",

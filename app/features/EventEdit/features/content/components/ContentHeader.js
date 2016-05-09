@@ -3,7 +3,10 @@ import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import { ActionCreators as ModalActionCreators } from '../../../../../../app/actions/modals'
 import ContentHelpModal from '../../../../../../app/features/EventEdit/features/content/components/ContentHelpModal'
+import localeFeatures from '../../../../../../locales/config/localeFeatures.json'
 import { FormattedMessage } from 'react-intl'
+
+const KINDRID_ENABLED = typeof window !== 'undefined' ? localeFeatures['kindrid'].indexOf(window.__LOCALE__.locale) !== -1 : true
 
 class ContentHeader extends Component {
 
@@ -32,7 +35,7 @@ class ContentHeader extends Component {
 						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddPlan} className='hollow-button green'><FormattedMessage id="features.EventEdit.features.content.components.ContentHeader.plan" /></a>
 						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddImage} className='hollow-button green'><FormattedMessage id="features.EventEdit.features.content.components.ContentHeader.image" /></a>
 						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddLink} className='hollow-button green'><FormattedMessage id="features.EventEdit.features.content.components.ContentHeader.link" /></a>
-						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddGiving} className='hollow-button green'><FormattedMessage id="features.EventEdit.features.content.components.ContentHeader.giving" /></a>
+						{ KINDRID_ENABLED ? <a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddGiving} className='hollow-button green'><FormattedMessage id="features.EventEdit.features.content.components.ContentHeader.giving" /></a> : null }
 						<a disabled={!event.rules.content.canAdd || event.isReordering} onClick={handleAddAnnouncement} className='hollow-button green'><FormattedMessage id="features.EventEdit.features.content.components.ContentHeader.announcement" /></a>
 						<div className='right'>
 							<a onClick={::this.handleOpenModal}>?</a>

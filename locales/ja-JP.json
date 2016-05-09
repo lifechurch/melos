@@ -168,7 +168,7 @@
 	"features.EventEdit.features.location.components.LocationTimeShifter.shift": "開始日時を変更する",
 	"features.EventEdit.features.location.components.LocationTimeShifter.forward": "先へ",
 	"features.EventEdit.features.location.components.LocationTimeShifter.backward": "前へ",
-	"features.EventEdit.features.location.components.LocationTimeShifter.by": "by",
+	"features.EventEdit.features.location.components.LocationTimeShifter.by": " ",
 	"features.EventEdit.features.location.components.LocationTimeShifter.week": "週",
 	"features.EventEdit.features.location.components.LocationTimeShifter.weeks": "週",
 	"features.EventEdit.features.location.components.LocationTimeShifter.month": "月",

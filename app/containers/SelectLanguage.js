@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { Link } from 'react-router'
 import ActionCreators from '../features/SelectLanguage/actions/creators'
 import EventHeader from '../components/EventHeader'
-import LocaleList from '../../localeList.json'
+import LocaleList from '../../locales/config/localeList.json'
 import { FormattedMessage } from 'react-intl'
 import cookie from 'react-cookie'
 

@@ -184,12 +184,10 @@
 		"displayName": "Nederlands (Nederland)"
 	},
 	{
-		"englishName": "Norweigan",
-		"nativeName": "Nynorsk",
 		"locale": "no-NO",
 		"locale2": "no",
 		"locale3": "nor",
-		"displayName": "Nynorsk"
+		"displayName": "NO-NO"
 	},
 	{
 		"nativeName": "Polski",
@@ -240,6 +238,12 @@
 		"displayName": "Slovenčina (Slovakia)"
 	},
 	{
+		"locale": "sn",
+		"locale2": "sn",
+		"locale3": "sna",
+		"displayName": "SN"
+	},
+	{
 		"nativeName": "Suomi",
 		"englishName": "Finnish",
 		"locale": "fi-FI",
@@ -272,12 +276,10 @@
 		"displayName": "Türkçe"
 	},
 	{
-		"nativeName": "Монгол хэл",
-		"englishName": "Mongolian",
 		"locale": "xc-MN",
-		"locale2": "mn",
-		"locale3": "mon",
-		"displayName": "Монгол хэл"
+		"locale2": null,
+		"locale3": null,
+		"displayName": "XC-MN"
 	},
 	{
 		"nativeName": "Ελληνικά",

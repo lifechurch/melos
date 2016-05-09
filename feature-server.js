@@ -20,7 +20,7 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
-const availableLocales = require('./availableLocales.json');
+const availableLocales = require('./locales/config/availableLocales.json');
 
 function getAssetPath(path) {
 	const IS_PROD = process.env.NODE_ENV === 'production';

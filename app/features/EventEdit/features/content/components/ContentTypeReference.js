@@ -5,7 +5,7 @@ import Column from '../../../../../../app/components/Column'
 import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
 import HtmlEditor from '../../../../../../app/components/HtmlEditor'
-import LocaleList from '../../../../../../localeList.json'
+import LocaleList from '../../../../../../locales/config/localeList.json'
 import cookie from 'react-cookie'
 import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
@@ -26,6 +26,11 @@ class ContentTypeReference extends Component {
 				'reference': usfm_sections[0] + "." + usfm_sections[1]
 			}))
 		}
+
+		if (typeof contentData.language_tag !== 'undefined' && !this.state.loadingVersions && typeof references.versions[contentData.language_tag] === 'undefined') {
+			this.setState({loadingVersions: true})
+			dispatch(ActionCreators.getVersions({'language_tag': contentData.language_tag , 'type': 'all', index: contentIndex}))
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -40,7 +45,7 @@ class ContentTypeReference extends Component {
 		}
 
 		// Need to Fetch Books for this Version
-		if (typeof references.books[contentData.version_id] === 'undefined') {
+		if (contentData.version_id !== null && typeof references.books[contentData.version_id] === 'undefined') {
 			dispatch(ActionCreators.setVersion({
 				'id': contentData.version_id,
 				'index': contentIndex

@@ -69,18 +69,19 @@ class EventEditContentContainer extends Component {
 
 	handleAddReference() {
 		const { event, dispatch, _content } = this.props
-		const lastBibleVersion = cookie.load('last_bible_version')
-		const lastBibleBook = cookie.load('last_bible_book')
 		const lastBibleLang = cookie.load('last_bible_lang')
+		const lastBibleBook = typeof lastBibleLang !== 'undefined' ? cookie.load('last_bible_book') : lastBibleLang
+		const lastBibleVersion = typeof lastBibleBook !== 'undefined' ? cookie.load('last_bible_version') : lastBibleBook
+
 		const newContent =Object.assign({},
 			createBaseContentObject(event, 'reference', _content.insertionPoint),
 			{
 				data: {
-					version_id:  (typeof lastBibleVersion === 'undefined') ? 1 : lastBibleVersion,
+					version_id:  (typeof lastBibleVersion === 'undefined') ? null : lastBibleVersion,
 					chapter: '',
 					human: ' ',
 					usfm: [(typeof lastBibleBook === 'undefined') ? '' : lastBibleBook],
-					lang: (typeof lastBibleLang === 'undefined') ? 'eng' : lastBibleLang
+					language_tag: (typeof lastBibleLang === 'undefined') ? window.__LOCALE__.locale3 : lastBibleLang
 				}
 			}
 		)
@@ -95,7 +96,7 @@ class EventEditContentContainer extends Component {
 			{
 				data: {
 					plan_id: 0,
-					language_tag: 'en',
+					language_tag: window.__LOCALE__.locale2,
 					title: '',
 					formatted_length: '',
 					images: [],

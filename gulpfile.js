@@ -18,6 +18,7 @@ var fs = require('fs');
 var async = require('async');
 var langmap = require('langmap');
 var langs = require('langs');
+var GetClient = require('@youversion/js-api').getClient;
 
 var smartlingCredentials = {
 	userIdentifier:"bpmknlysfearpoukuoydwwhduxoidv",
@@ -234,8 +235,7 @@ gulp.task('smartling', function(callback) {
 				return a.displayName.localeCompare(b.displayName);
 			});
 
-
-			fs.writeFileSync('./localeList.json', JSON.stringify(localeList, null, "\t"));
+			fs.writeFileSync('./locales/config/_localeList.json', JSON.stringify(localeList, null, "\t"));
 
 			var tasks = locales.map(function(item) {
 				return { locale: item.localeId, prefix: item.localeId.split('-')[0] }
@@ -250,21 +250,43 @@ gulp.task('smartling', function(callback) {
 				availableLocales[t.locale.replace('-', '_')] = t.locale
 			});
 
-			fs.writeFileSync('./availableLocales.json', JSON.stringify(availableLocales, null, "\t"));
+			fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, "\t"));
 
 			queue.push(tasks, function(task, data, err) {
 				console.log('Task:', task);
 				fs.writeFileSync('./locales/' + task.locale + '.json', JSON.stringify(flattenObject(data[task.prefix].EventsAdmin), null, '\t').replace(/\%\{/g, '{'));
 			});
 
+			const client = GetClient('reading-plans')
+				.call('configuration')
+				.setVersion('3.1')
+				.get().then(function(data) {
+					var planLocales = {}
+					data.available_language_tags.forEach(function(l) {
+
+						var plan_prefix = l.split('_')[0];
+
+						Object.keys(availableLocales).forEach(function(a) {
+							var av_prefix = a.split('-')[0].split('_')[0];
+
+							if (l === a || plan_prefix === av_prefix) {
+								planLocales[a]  = l;
+							}
+
+						});
+
+					});
+					fs.writeFileSync('./locales/config/planLocales.json', JSON.stringify(planLocales, null, "\t") );
+				}, function(error) {
+					console.log(error);
+				});
+
 			//queue.drain = callback;
 
 		}, function(error) {
-			console.log('e2');
 			console.log(error);
 		});
 	}, function(error) {
-		console.log('e1');
 		console.log(error);
 	});
 });

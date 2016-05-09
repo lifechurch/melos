@@ -40,7 +40,7 @@ class EventHeader extends Component {
 		switch (item.status) {
 			case EventStatus('published'):
 				return (
-					<Column s='medium-5' a='right' className="">
+					<div className='text-right right'>
 						<span className="publishedLabel">
 							<img src={`/images/${RevManifest('check-gray.png')}`} className="publishedButtonCheckmark"/>
 							<FormattedMessage id="components.EventHeader.status.published" />
@@ -48,22 +48,22 @@ class EventHeader extends Component {
 						<a className='solid-button gray' onClick={::this.unpublishEvent}>
 							<FormattedMessage id="components.EventHeader.unpublish" />
 						</a>
-					</Column>
+					</div>
 				)
 
 			case EventStatus('draft'):
 				return (
-					<Column s='medium-5' a='right'>
+					<div className='text-right right'>
 						<a className='solid-button gray' onClick={::this.handleSave} disabled={errors.hasError || isSaving || isReordering}>{ isSaving ? <FormattedMessage id="components.EventHeader.saving" /> : <FormattedMessage id="components.EventHeader.saveAsDraft" /> }</a>
-					</Column>
+					</div>
 				)
 
 			case EventStatus('live'):
 			default:
 				return (
-					<Column s='medium-5' a='right'>
+					<div className='text-right right'>
 						<a className='solid-button red' disabled={true}>{intl.formatMessage({id:'components.EventHeader.status.' + item.status.toLowerCase() })}</a>
-					</Column>
+					</div>
 				)
 		}
 
@@ -76,9 +76,9 @@ class EventHeader extends Component {
 		if (event) {
 			const { isSaving, errors } = event
 			ContentNav = <Row>
-						<Column s='medium-7'>
+						<div className='text-left left'>
 							<EventEditNav {...this.props} />
-						</Column>
+						</div>
 
 						{::this.getPublishSection()}
 					</Row>

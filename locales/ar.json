@@ -31,7 +31,7 @@
 	"containers.Auth.forgotPassword": "نسيت كلمة المرور",
 	"containers.EventEdit.event": "Event",
 	"containers.EventEditContentContainer.choose": "Choose some content to get started.",
-	"containers.EventEditContentContainer.needHelp": "أتحتاج مساعدة؟",
+	"containers.EventEditContentContainer.needHelp": "أ��حتاج مساعدة؟",
 	"containers.EventEditContentContainer.title": "Event Content",
 	"containers.EventEditContentContainer.previous": "← Previous: Locations & Times",
 	"containers.EventEditContentContainer.next": "Next: Preview →",

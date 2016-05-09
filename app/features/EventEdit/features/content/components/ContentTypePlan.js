@@ -4,6 +4,7 @@ import Input from '../../../../../../app/components/Input'
 import Image from '../../../../../../app/components/Image'
 import ActionCreators from '../actions/creators'
 import { FormattedMessage } from 'react-intl'
+import planLocales from '../../../../../../locales/config/planLocales.json'
 
 const SEARCH_TIMEOUT = 500
 
@@ -42,10 +43,16 @@ class ContentTypePlan extends Component {
 
 	performPlanSearch(index, field, value) {
 		const { dispatch } = this.props
+		let planLocale = 'en'
+
+		if (typeof planLocales[window.__LOCALE__.locale] !== 'undefined') {
+			planLocale = planLocales[window.__LOCALE__.locale]
+		}
+
 		dispatch(ActionCreators.searchPlans({
 			index,
 			query: value,
-			language_tag: 'en'
+			language_tag: planLocale
 		}))
 	}
 

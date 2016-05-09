@@ -341,7 +341,7 @@ export default function event(state = {}, action) {
 		case contentType('versionSuccess'):
 			var newContent = Object.assign({}, state.item.content[action.params.index])
 			newContent.data.version_id = action.params.id
-			newContent.data.language_tag = action.response.language.iso_639_3
+			//newContent.data.language_tag = action.response.language.iso_639_3
 
 			newContent.isFetching = false
 			return Object.assign({}, state, {

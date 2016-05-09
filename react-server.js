@@ -20,7 +20,8 @@ import rtlDetect from 'rtl-detect'
 
 const router = express.Router()
 const routes = getRoutes(null)
-const availableLocales = require('./availableLocales.json');
+const availableLocales = require('./locales/config/availableLocales.json');
+const localeList = require('./locales/config/localeList.json');
 
 function getAssetPath(path) {
 	const IS_PROD = process.env.NODE_ENV === 'production';
@@ -76,7 +77,7 @@ function getLocale(req, profileLanguageTag) {
 		final = { locale: availableLocales[req.cookies.locale], source: 'cookie' };
 
 	// 3: Try User Profile Info (from token of last login)
-	} else if (typeof profileLanguageTag !== 'undefined' && profileLanguageTag !== null) {
+	} else if (typeof profileLanguageTag !== 'undefined' && profileLanguageTag !== null && typeof availableLocales[profileLanguageTag] !== 'undefined') {
 		final = { locale: availableLocales[profileLanguageTag], source: 'profile' };
 
 	// 3: Try accept-language Header Third
@@ -110,6 +111,14 @@ function getLocale(req, profileLanguageTag) {
 
 	// Add the list of preferred locales based on browser configuration to this response
 	final.preferredLocales = localesFromHeader;
+
+	// Loop Through Locale List and Get More Info
+	for (const lc of localeList) {
+		if (lc.locale === final.locale) {
+			final.locale2 = lc.locale2
+			final.locale3 = lc.locale3
+		}
+	}
 
 	return final;
 }
@@ -169,8 +178,19 @@ router.get('/*', cookieParser(), function(req, res) {
 
 	// This was a route with no language tag
 	} else if (req.Locale.source !== 'url') {
-		return res.redirect(302, '/' + req.Locale.locale + '/' + req.params[0]);
 
+		//Try to be smart... did the user intend this to include a language in URL?
+		const firstPathSegment = req.params[0].split('/')[0]
+		const pathWithoutFirstSegment = req.params[0].split('/').slice(1)
+		let newUrl = null
+
+		if (/^[a-zA-Z]{2}(?:[-_][a-zA-Z]{2})?$/.test(firstPathSegment)) {
+			newUrl = '/' + req.Locale.locale + '/' + pathWithoutFirstSegment
+		} else {
+			newUrl = '/' + req.Locale.locale + '/' + req.params[0]
+		}
+
+		return res.redirect(302, newUrl);
 	}
 
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
