@@ -1342,6 +1342,7 @@ ro:
                     published: "Published"
                     draft: "Ciornă"
                     live: "În direct"
+                    archived: "Archived"
                 unpublish: "Unpublish"
                 saving: "Saving..."
                 saveAsDraft: "Salvează ca ciornă"
@@ -1367,14 +1368,14 @@ ro:
                 choose: "Choose some content to get started."
                 needHelp: "Ai nevoie de ajutor"
                 title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                previous: "←Pasul anterior: locul & ora"
+                next: "Pasul următor: Previzualizare→"
             EventEditDetails: 
                 title: "Event Details"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "Locul evenimentului"
+                previous: "← Pasul anterior: detalii"
+                next: "Pasul următor: adaugă un conținut→"
             EventEditPreview: 
                 title: "Event Preview"
                 previous: "← Previous: Content"
@@ -1403,6 +1404,8 @@ ro:
                 title: "Evenimente salvate"
             EventView: 
                 title: "YouVersion Event"
+            SelectLanguage: 
+                choose: "Alege limba"
         features: 
             Auth: 
                 errors: 
@@ -1418,9 +1421,9 @@ ro:
                 components: 
                     EventEditNav: 
                         details: "Detalii"
-                        locations: "Locations & Times"
+                        locations: "Locuri & Ore"
                         content: "Content"
-                        preview: "Preview & Publish"
+                        preview: "Vizualizare & Publicare"
                         share: "Distribuie"
                 features: 
                     content: 
@@ -1434,7 +1437,7 @@ ro:
                                 plan: "Plan de citire"
                                 image: "Imagine"
                                 link: "External Link"
-                                giving: "Giving Link"
+                                giving: "Adăugare link"
                                 announcement: "Announcement"
                             ContentHelpModal: 
                                 types: "Content Types"
@@ -1444,7 +1447,7 @@ ro:
                                     desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
                                 reference: 
                                     title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                                 plan: 
                                     title: "Plan Module"
                                     desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
@@ -1456,7 +1459,7 @@ ro:
                                     desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                                 announcement: 
                                     title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
                             ContentInsertionPoint: 
                                 title: "Insert next module here"
                             ContentTypeAnnouncement: 
@@ -1486,6 +1489,7 @@ ro:
                                 replace: "Replace"
                                 search: "Search for a Reading Plan"
                             ContentTypeReference: 
+                                language: "Limbă"
                                 version: "Versiune"
                                 book: "Cartea"
                                 chapterVerse: "Chapter:Verse"
@@ -1504,16 +1508,16 @@ ro:
                                 errors: 
                                     wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
                                     wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
+                                changeImage: "Schimbă imaginea"
+                                removeImage: "Șterge imaginea"
                                 prompt: "Drag and Drop an Image"
                                 onlyJpg: "[JPG only]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
                                 eventName: "Event Name"
                                 org: "Church Name or Organization"
                                 desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                next: "Următorul pas: adaugă locul și ora"
                     location: 
                         components: 
                             Location: 
@@ -1522,9 +1526,9 @@ ro:
                                 edit: "Edit Location"
                                 delete: "Delete Location"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
+                                addPhysical: "Adaugă un loc fizic"
+                                promptPhysical: "Poți adăuga mai multe locuri."
+                                addVirtual: "Adaugă un loc virtual"
                                 churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
                             LocationAddTime: 
                                 minutes: "MINUTE"
@@ -1541,11 +1545,11 @@ ro:
                                 country: "Țara"
                                 timezone: "Fus orar"
                                 namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
+                                name: "Nume loc"
+                                nameOptional: "Opțional: util la adăugarea mai multor locuri."
                                 addAnother: "Add another time"
                                 cancel: "Anulează"
-                                save: "Save this Location"
+                                save: "Salvează acest loc"
                             LocationTimeShifter: 
                                 shift: "Shift start dates"
                                 forward: "Redirecționează"
@@ -1573,18 +1577,18 @@ ro:
                         components: 
                             PreviewFeed: 
                                 share: "Partajează evenimentul"
-                                locations: "Locații și program"
+                                locationsAndTimes: "Locații și program"
                                 publish: "Publică"
                                 unpublish: "Unpublish"
-                                locations: "Locations:"
+                                locations: "Locuri:"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "Disponibil"
+                                    desc: "Evenimentul va fi vizibil în Aplicația Biblia, la Locul evenimentului, iar rezultatele căutării cu 5 zile înainte de cel mai apropiat început."
                                 status: 
                                     title: "Status:"
                                     desc: "The red LIVE badge will display when your earliest start time begins."
                                 remove: 
-                                    title: "Remove:"
+                                    title: "Șterge:"
                                     desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
                             PreviewTypeAnnouncement: 
                                 expand: "Expand"
@@ -1605,6 +1609,7 @@ ro:
                 components: 
                     EventViewContent: 
                         copy: "Copiază"
+                        copied: "Copied"
                         share: "Distribuie"
                         read: "Citește"
                         readPlan: "Read Plan"

@@ -1313,7 +1313,7 @@ hi:
                             start_dt: 
                                 must_be_a_future_date: "Start Time cannot be in the past."
                         timezone: 
-                            required: "Timezone is required."
+                            required: "समय क्षेत्र की आवश्यकता है"
                 reference: 
                     events: 
                         usfm: 
@@ -1326,14 +1326,15 @@ hi:
                             required: "URL Label is required."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "प्रकाशित"
                     draft: "ड्राफ्ट"
                     live: "लाइव"
-                unpublish: "Unpublish"
+                    archived: "Archived"
+                unpublish: "अप्रकाशित"
                 saving: "Saving..."
                 saveAsDraft: "प्रारूप के तौर में save कीजिये"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "मेरे कार्यक्रम "
+                eventBuilder: "कार्यक्रम बनाएं"
                 signOut: "साइन आउट"
                 createAccount: "Create Account"
             HtmlEditor: 
@@ -1349,7 +1350,7 @@ hi:
                 password: "पासवर्ड"
                 forgotPassword: "पासवर्ड भूल गए"
             EventEdit: 
-                event: "Event"
+                event: "कार्यक्रम "
             EventEditContentContainer: 
                 choose: "Choose some content to get started."
                 needHelp: "मदद चाहिए?"
@@ -1363,17 +1364,17 @@ hi:
                 previous: "← Previous: Details"
                 next: "Next: Add Content →"
             EventEditPreview: 
-                title: "Event Preview"
+                title: "कार्यक्रम का पूर्वदर्शन"
                 previous: "← Previous: Content"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                title: "कार्यक्रम बांटे "
+                subTitle: "आपका कार्यक्रम अब प्रकाशित कर दिया गया है"
+                edit: "कार्यक्रम बदले "
+                go: "मेरे कार्यक्रमों पर जाएँ"
+                share: "अपना कार्यक्रम बांटे "
                 copy: "कॉपी"
                 copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                previous: "←पिछला: पूर्वदर्शन"
             EventFeedDiscover: 
                 title: "Discover Events"
                 discover: "खोजें"
@@ -1384,12 +1385,14 @@ hi:
                 my: "My Events"
                 new: "Create New Event"
                 subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                newFirst: "अपना पहला कार्यक्रम बनाएं"
+                learn: "जानें कैसे एक बहुत बढ़िया कार्यक्रम बनाया जाएँ"
             EventFeedSaved: 
                 title: " सुरक्षित वृत्तांत"
             EventView: 
-                title: "YouVersion Event"
+                title: "YouVersion कार्यक्रम "
+            SelectLanguage: 
+                choose: "Choose Your Language"
         features: 
             Auth: 
                 errors: 
@@ -1431,7 +1434,7 @@ hi:
                                     desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
                                 reference: 
                                     title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                                 plan: 
                                     title: "Plan Module"
                                     desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
@@ -1443,7 +1446,7 @@ hi:
                                     desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                                 announcement: 
                                     title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
                             ContentInsertionPoint: 
                                 title: "Insert next module here"
                             ContentTypeAnnouncement: 
@@ -1452,8 +1455,8 @@ hi:
                                 caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
                             ContentTypeContainer: 
                                 dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
+                                failed: "सुरक्षित रखने में असमर्थ"
+                                tryAgain: "पुनः प्रयास करें"
                                 lastSaved: "Last saved %{when}"
                             ContentTypeImage: 
                                 errors: 
@@ -1470,9 +1473,10 @@ hi:
                                 prompt: "Write something here..."
                                 url: "URL"
                             ContentTypePlan: 
-                                replace: "Replace"
+                                replace: "बदलें"
                                 search: "Search for a Reading Plan"
                             ContentTypeReference: 
+                                language: "भाषा"
                                 version: "संस्करण"
                                 book: "ग्रन्थ"
                                 chapterVerse: "Chapter:Verse"
@@ -1491,12 +1495,12 @@ hi:
                                 errors: 
                                     wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
                                     wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
+                                changeImage: "चित्र बदलें"
+                                removeImage: "चित्र हटाये"
                                 prompt: "Drag and Drop an Image"
                                 onlyJpg: "[JPG only]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
                                 eventName: "Event Name"
                                 org: "Church Name or Organization"
                                 desc: "Event Description"
@@ -1528,23 +1532,23 @@ hi:
                                 country: "देश"
                                 timezone: "समय क्षेत्र"
                                 namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
+                                name: "स्थान का नाम"
                                 nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                addAnother: "दूसरा कोई समय जोड़ें"
                                 cancel: "रद्द करें"
-                                save: "Save this Location"
+                                save: "इस स्थान को सुरक्षित करे "
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "शुरू की तिथियाँ बदले "
                                 forward: "अगला "
-                                backward: "backward"
+                                backward: " पिछला"
                                 by: "by"
-                                week: "week"
-                                weeks: "weeks"
+                                week: "हफ्ता"
+                                weeks: "हफ्ते "
                                 month: "महिना"
-                                months: "months"
+                                months: "महीने"
                                 day: "दिन"
                                 days: "दिवस"
-                                hour: "hour"
+                                hour: "घंटा"
                                 hours: "घंटे"
                                 update: "अपडेट"
                                 shiftButton: "Shift all dates and times at once"
@@ -1560,18 +1564,18 @@ hi:
                         components: 
                             PreviewFeed: 
                                 share: "कार्यक्रम साझा करें"
-                                locations: "स्थान और समय "
+                                locationsAndTimes: "स्थान और समय "
                                 publish: "प्रकाशित"
                                 unpublish: "Unpublish"
-                                locations: "Locations:"
+                                locations: "स्थान:"
                                 discoverable: 
-                                    title: "Discoverable:"
+                                    title: "खोजने योग्‍य"
                                     desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
                                 status: 
                                     title: "स्टेटस:"
                                     desc: "The red LIVE badge will display when your earliest start time begins."
                                 remove: 
-                                    title: "Remove:"
+                                    title: "हटाए:"
                                     desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
                             PreviewTypeAnnouncement: 
                                 expand: "Expand"
@@ -1592,6 +1596,7 @@ hi:
                 components: 
                     EventViewContent: 
                         copy: "कॉपी"
+                        copied: "Copied"
                         share: "शेयर"
                         read: "पढ़िए"
                         readPlan: "Read Plan"

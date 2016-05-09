@@ -1282,15 +1282,15 @@ zh-TW:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "發生錯誤"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "公告標題必填"
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "參考經文不存在。"
                     events: 
                         google_place_id: 
                             required: "你必須在地圖中選擇一個地點。"
@@ -1298,223 +1298,227 @@ zh-TW:
                             required: "你必需在地圖上選擇一個地點。"
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "不可用過去時間作為開始時間。"
                         timezone: 
                             required: "請填入時區。"
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "參考經文不存在。"
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "必需填寫網頁地址（URL）"
                         title: 
-                            required: "URL Label is required."
+                            required: "網址標籤必填。"
             EventHeader: 
                 status: 
                     published: "發佈"
                     draft: "草稿"
                     live: "現場"
+                    archived: "已封存"
                 unpublish: "取消發佈"
-                saving: "Saving..."
+                saving: "正在儲存..."
                 saveAsDraft: "作為草稿儲存"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "我的互動"
+                eventBuilder: "互動活動編輯器"
                 signOut: "登出"
-                createAccount: "Create Account"
+                createAccount: "建立帳戶"
             HtmlEditor: 
                 text: "文本"
                 bold: "粗體"
                 italic: "斜體"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "互動活動登入"
                 signIn: "登入"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "如果你是聖經軟體用戶，而且已擁有一個 YouVersion 帳戶，你可以用同樣的用戶名與密碼登入。<br/><br/> 還沒有 YouVersion 帳戶？<br/> <a href='%{url}'>現在就在 Bible.com 註冊一個帳戶，</a>開始創建互動活動。"
                 email: "電子郵件"
                 password: "密碼"
                 forgotPassword: "忘記密碼"
             EventEdit: 
                 event: "互動"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "選擇內容，開始創建。"
                 needHelp: "需要協助嗎？"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "互動活動內容"
+                previous: "← 上一頁：地點與時間"
+                next: "下一頁：預覽 →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "互動活動細節"
             EventEditLocationContainer: 
                 title: "互動地點 "
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                previous: "← 上一頁：細節"
+                next: "下一頁：加入內容 →"
             EventEditPreview: 
                 title: "互動預覽"
-                previous: "← Previous: Content"
+                previous: "← 上一頁：內容"
             EventEditShare: 
                 title: "分享互動"
                 subTitle: "你的互動活動現在已經發佈："
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                edit: "修改互動"
+                go: "進入我的互動"
+                share: "分享你的互動:"
                 copy: "複製"
-                copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                copied: "此短連接已複製到你的剪貼簿"
+                previous: "←上一頁﹕預覽"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "發掘互動"
                 discover: "發掘"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                title: "我的互動"
+                previous: "← 上一頁"
+                next: "下一頁 →"
+                my: "我的互動"
+                new: "建立新的互動"
+                subTitle: "由我創建的互動"
+                newFirst: "創造你的第一個互動活動"
+                learn: "學習如何建立一個絕佳的互動活動"
             EventFeedSaved: 
                 title: "已儲存的互動"
             EventView: 
-                title: "YouVersion Event"
+                title: "YouVersion 的互動活動"
+            SelectLanguage: 
+                choose: "選擇你的語言"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    sessionExpired: "你的登入連線已中斷。請重新登入。"
+                    invalidEmail: "不正確的電郵地址或密碼。"
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
+                    locationMustHaveTime: "所有地點必須至少設定一個時間。"
+                    locationRequired: "你不能發佈不含地點的互動。"
                     contentRequired: "你不能公佈一個沒有內容的互動活動。"
-                    planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    planSearchFailed: "搜尋不到任何相關文檔"
+                    noMatchingPlans: "沒有相關的計劃"
                 components: 
                     EventEditNav: 
                         details: "詳情"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        locations: "地點與時間"
+                        content: "內容"
+                        preview: "預覽與發佈"
                         share: "分享"
                 features: 
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "重整內容"
+                                doneReordering: "完成重整"
                             ContentHeader: 
-                                text: "Text"
-                                reference: "聖經參考資料"
+                                text: "文本"
+                                reference: "參考經文"
                                 plan: "計劃"
                                 image: "圖像"
-                                link: "External Link"
+                                link: "外部連結"
                                 giving: "捐獻連結"
                                 announcement: "公告"
                             ContentHelpModal: 
                                 types: "內容類型"
-                                learn: "Learn how to make <br>a great Event"
+                                learn: "學習如何建立一個<br>絕佳的互動活動"
                                 text: 
-                                    title: "文本模式"
-                                    desc: "大綱、重點、問題討論...分享任何以文本為主的一般內容來幫助參與者即時跟得上你的訊息。你的文本模式沒有長度的限制，可以包含多文字格式 (RTF)。"
+                                    title: "文本模組"
+                                    desc: "大綱、重點、問題討論...分享任何以文本為主的一般內容來幫助參與者即時跟得上你的訊息。你的文本模組沒有長度的限制，可以包含多文字格式 (RTF)。"
                                 reference: 
-                                    title: "聖經參考資料模式"
-                                    desc: "直接連接到 YouVersion 以 900多種語言所提供的逾 1,200個譯本，挑選任何聖經經節或段落。觀看你【互動】的人可以在他們的聖經軟體閱讀器上點選你的參考資料，並直接在該處作書籤標記、醒目標示、以及更多。"
+                                    title: "參考經文模組"
+                                    desc: "直接連接到 YouVersion，從以 900多種語言所提供的逾 1,200個譯本中挑選任何聖經經節或段落。觀看你互動活動的人可以在他們的聖經軟體閱讀器上點選你的參考資料，並直接在該處作書籤標記、醒目標示、以及更多。"
                                 plan: 
-                                    title: "計畫模式"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "計劃模組"
+                                    desc: "連結到與你的教學重點相關的讀經計劃與靈修，幫助你的觀眾整週繼續投入神的話語。"
                                 image: 
-                                    title: "圖像模式"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    title: "圖像模組"
+                                    desc: "用整系列的藝術、相片、經句圖等輔助圖片來讓你的活動更生動。參加者可以輕鬆分享你互動活動的圖像至他們的社交媒體，讓你的信息廣傳。"
                                 link: 
-                                    title: "External Link Module"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    title: "外部連結模組"
+                                    desc: "在你的互動活動中設立一個選項按鈕，以連結到任何外部的網站。你的觀眾只要點擊一下，即可上網捐獻，加入義工行列，或連結到教會網頁。"
                                 announcement: 
-                                    title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    title: "公告模組"
+                                    desc: "教會消息、日程安排、項目計劃、各種課程、義工與宣教機會等……公告模組最適合用來分享及時又重要的信息，而且並不會影響到你互動活動的主要內容。在你的互動活動裡，每個公告模式都會顯示在其專屬頁面上，甚至還可以包含富文本格式的內容（如粗體與斜體字）。"
                             ContentInsertionPoint: 
-                                title: "Insert next module here"
+                                title: "在此加入下一個模組"
                             ContentTypeAnnouncement: 
                                 title: "標題"
-                                prompt: "Write something here..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                prompt: "在這裡寫幾句話⋯⋯"
+                                caption: "只有你的標題（見上方）會呈現在你的互動活動中。用戶點擊你的標題時，內文（見下方）會呈現在另一螢幕上。"
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
-                                lastSaved: "Last saved %{when}"
+                                dirty: "內容將在你停止輸入後數秒內自動儲存。"
+                                failed: "無法儲存。"
+                                tryAgain: "再試一次。"
+                                lastSaved: "上次儲存時間 %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                    wrongSize: "圖像大小必須是%{requiredWidth}x%{requiredHeight}。你的圖像是%{yourWidth}x%{yourHeight}。"
+                                    wrongType: "無效的檔案類別。必須是JPG檔。"
+                                caption: "添加標題說明"
+                                prompt: "拖放一張圖像"
+                                onlyJpg: "[限JPG檔]"
+                                sizePrompt: "%{requiredWidth}px 寬 x %{requiredHeight}px 高"
+                                select: "選擇圖像"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
-                                prompt: "Write something here..."
-                                url: "URL"
+                                kindrid: "如果你正在尋找一個簡便的智慧化捐獻平台，<a href='%{url}'>請試試 Kindrid</a>。"
+                                label: "連結標籤"
+                                prompt: "在這裡寫幾句話......"
+                                url: "網址"
                             ContentTypePlan: 
                                 replace: "取代"
                                 search: "搜尋讀經計劃"
                             ContentTypeReference: 
+                                language: "語言"
                                 version: "聖經譯本"
                                 book: "書卷"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "章數：經節"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "在這裡寫幾句話......"
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "互動的活動一旦開始在現場進行，你就無法刪除文本、聖經參考資料和圖像模式，因為用户可能已經新增他們的個人筆記了。不過，你可以選擇修改這些模式。"
+                                title: "不能刪除正在進行中的互動"
+                                desc: "互動的活動一旦開始在現場進行，你就無法刪除文本、聖經參考資料和圖像模組，因為用户可能已經新增他們的個人筆記了。不過，你可以選擇修改這些模組。"
                                 ok: "好"
                     details: 
                         errors: 
                             generic: "發佈你的互動活動時出現了問題。"
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            invalidTimes: "單一服務不能超過12小時，而且最早開始時間以及最晚結束時間的差異不可超過8天。請調整你互動活動的時間，再試一次。"
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                    wrongSize: "圖像大小必須是 %{requiredWidth}x%{requiredHeight}。你的圖像大小是 %{yourWidth}x%{yourHeight}。"
+                                    wrongType: "無效的檔案類別。必須是JPG檔。"
+                                changeImage: "更換圖像"
+                                removeImage: "移除圖像"
+                                prompt: "拖放一張圖像"
+                                onlyJpg: "[限JPG檔]"
+                                sizePrompt: "%{requiredWidth}px寬 x %{requiredHeight}px 高"
+                                sizePrompt2: "你的圖像大小必須是 %{requiredWidth} px 寬 x %{requiredHeight} px 高。"
+                                eventName: "互動活動名稱"
+                                org: "教會名稱或組織"
+                                desc: "互動活動描述"
+                                next: "下一頁：加入地點與時間 →"
                     location: 
                         components: 
                             Location: 
                                 oneRequired: "新增至少一個時間。"
-                                use: "USE THIS LOCATION"
+                                use: "使用這個地點"
                                 edit: "修改地點"
                                 delete: "删除地點"
                             LocationAddButtons: 
                                 addPhysical: "新增實際地點"
                                 promptPhysical: "你可以增添多處地點。"
                                 addVirtual: "新增虛擬地點"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                churchOnline: "你知道嗎？你可以<a className='button-caption' href='%{url}'>使用教會線上平台</a>來開始一個線上免費的事工。"
                             LocationAddTime: 
                                 minutes: "分"
                                 hours: "小時"
                                 days: "日"
                             LocationDeleteModal: 
-                                sure: "您確定嗎？"
+                                sure: "你確定嗎？"
                                 selected: "你已選擇要刪除以下地點："
                                 warn: "這將會刪除所有以往和現在互動活動的地點。你將不能再度使用此地點作未來的互動活動。"
                                 cancel: "取消"
                                 delete: "刪除"
                             LocationEdit: 
                                 prompt: "填入地點的地址..."
-                                country: "國家或地區"
+                                country: "國家"
                                 timezone: "時區"
-                                namePrompt: "First Baptist East Campus"
+                                namePrompt: "東區第一浸信會"
                                 name: "地點的名稱"
                                 nameOptional: "非必填: 供新增多處地點時使用"
                                 addAnother: "新增另一時間"
@@ -1522,9 +1526,9 @@ zh-TW:
                                 save: "儲存這個地點"
                             LocationTimeShifter: 
                                 shift: "移動開始日期"
-                                forward: "轉發"
-                                backward: "往後"
-                                by: "作者："
+                                forward: "推遲"
+                                backward: "提前"
+                                by: " "
                                 week: "週"
                                 weeks: "週"
                                 month: "月"
@@ -1543,11 +1547,11 @@ zh-TW:
                     preview: 
                         notes: 
                             prompt: "新增你的私人筆記......"
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>請登入，</span>以增添你的私人筆記……</a>"
                         components: 
                             PreviewFeed: 
-                                share: "分享【互動】"
-                                locations: "時間和地點"
+                                share: "分享互動活動"
+                                locationsAndTimes: "時間和地點"
                                 publish: "發佈"
                                 unpublish: "取消發佈"
                                 locations: "地點："
@@ -1559,35 +1563,36 @@ zh-TW:
                                     desc: "你的活動一旦開始進行，就會出現紅色的【現場】標示。"
                                 remove: 
                                     title: "移除"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    desc: "在活動最後結束時間之後，你的互動活動將不再出現在可搜尋的互動裡。只要參加者在此互動活動還可被搜尋的時段中點選【儲存互動】，他們就仍然可以讀取該互動活動的封存版本。他們也可以透過直接的內部連結，持續參與這個互動活動。"
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "展開"
                             PreviewTypePlan: 
                                 read: "閱讀"
                                 info: "計劃信息"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "複製"
                         share: "分享"
                         delete: "刪除"
                         draft: "草稿"
                         edit: "編輯"
                         view: "檢視"
-                        fail: "Unable to delete Event"
+                        fail: "互動活動無法刪除"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "複製"
+                        copied: "複製"
                         share: "分享"
                         read: "閱讀"
                         readPlan: "閱讀計劃"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "展開"
+                        collapse: "收合"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
-                        save: "儲存【互動】"
+                        expand: "展開"
+                        collapse: "收合"
+                        save: "儲存互動"
                         signIn: "登入以儲存互動"
                         saved: "互動已儲存"

@@ -1329,6 +1329,7 @@ af:
                     published: "Plaas"
                     draft: "Konsep"
                     live: "Lewendig"
+                    archived: "Archived"
                 unpublish: "Onttrek"
                 saving: "Saving..."
                 saveAsDraft: "Stoor as Rofwerk"
@@ -1390,6 +1391,8 @@ af:
                 title: "Gestoorde Gebeure"
             EventView: 
                 title: "YouVersion Gebeurtenis"
+            SelectLanguage: 
+                choose: "Choose Your Language"
         features: 
             Auth: 
                 errors: 
@@ -1420,7 +1423,7 @@ af:
                                 reference: "Bybelverwysing"
                                 plan: "Plan"
                                 image: "Foto"
-                                link: "External Link"
+                                link: "Eksterne Skakel"
                                 giving: "Donasie Skakel"
                                 announcement: "Aankondiging"
                             ContentHelpModal: 
@@ -1431,7 +1434,7 @@ af:
                                     desc: "Raamwerke, sleutelpunte, gespreksvrae... Deel enige algemene inhoud (slegs teks) wat jou deelnemers sal help om jou boodskap te volg soos wat dit gebeur. Jou teks gedeeltes kan enige lengte wees en mag ryk teks formate insluit."
                                 reference: 
                                     title: "Bybelverwysingsmodule"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                                 plan: 
                                     title: "Plan Module"
                                     desc: "Koppel jou hoofgedagtes aan Bybelplanne en Oordenkings. Sodoende help jy jou gehoor om voortdurend deur die week met God se Woord besig te wees."
@@ -1443,7 +1446,7 @@ af:
                                     desc: "Skep 'n skakel binne-in jou Gebeurtenis wat dit koppel aan enige eksterne webwerf. Jou gehoor is slegs een klik verwyder van aanlyn skenkings, aanteken as vrywilliger of kerke se tuisblaaie."
                                 announcement: 
                                     title: "Aankondigingsmodule"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
                             ContentInsertionPoint: 
                                 title: "Voeg volgende module hier in"
                             ContentTypeAnnouncement: 
@@ -1473,6 +1476,7 @@ af:
                                 replace: "Vervang"
                                 search: "Soek 'n Leesplan"
                             ContentTypeReference: 
+                                language: "Taal"
                                 version: "Weergawe"
                                 book: "Boek"
                                 chapterVerse: "Hoofstuk:Vers"
@@ -1490,13 +1494,13 @@ af:
                             DetailsEdit: 
                                 errors: 
                                     wrongSize: "Prent grootte verlang is %{requiredWidth}x%{requiredHeight}. Jou prent is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
+                                    wrongType: "Verkeerde lêertipe. Moet JPG wees."
                                 changeImage: "Verander Prent"
                                 removeImage: "Verwyder Prent"
                                 prompt: "Trek en Plaas 'n Prent"
                                 onlyJpg: "[JPG only]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
                                 eventName: "Gebeurtenis Naam"
                                 org: "Kerknaam of Organisasie"
                                 desc: "Beskrywing van Gebeurtenis"
@@ -1512,7 +1516,7 @@ af:
                                 addPhysical: "Voeg 'n Fisiese Adres by"
                                 promptPhysical: "Jy kan verskeie adresse byvoeg."
                                 addVirtual: "Voeg Virtuele Adres By"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                churchOnline: "Het jy geweet? Jy kan gratis 'n aanlyn bediening begin deur gebruik te maak van die <a className='button-caption' href='%{url}'>Church Online Geleentheid</a>."
                             LocationAddTime: 
                                 minutes: "MINUTE"
                                 hours: "URE"
@@ -1560,7 +1564,7 @@ af:
                         components: 
                             PreviewFeed: 
                                 share: "Deel Gebeurtenis"
-                                locations: "Plekke en Tye"
+                                locationsAndTimes: "Plekke en Tye"
                                 publish: "Publiseer"
                                 unpublish: "Unpublish"
                                 locations: "Plekke:"
@@ -1569,7 +1573,7 @@ af:
                                     desc: "Jou gebeurtenis sal sigbaar wees in die Bybel Toep se Gebeurtenis afdeling en soekresultate 5 dae voor jou vroegste begintyd."
                                 status: 
                                     title: "Status:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "Die rooi LEWENDIG knopie sal vertoon word wanneer jou vroegste begintyd is."
                                 remove: 
                                     title: "Verwyder:"
                                     desc: "Jou Gebeurtenis sal nie meer opspoorbaar wees na die laaste eindtyd nie. Besoekers wat op “Stoor Gebeurtenis” kliek terwyl jou Gebeurtenis nog opspoorbaar is, kan dit nog na die tyd in die argief opspoor. Hierdie Gebeurtenis sal ook d.m.v. direkte inkomende skakels bereik kan word."
@@ -1592,6 +1596,7 @@ af:
                 components: 
                     EventViewContent: 
                         copy: "Kopieër"
+                        copied: "Copied"
                         share: "Deel"
                         read: "Lees"
                         readPlan: "Lees die Plan"
