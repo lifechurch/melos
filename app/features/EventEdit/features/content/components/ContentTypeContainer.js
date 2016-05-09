@@ -138,7 +138,7 @@ class ContentTypeContainer extends Component {
 					<div className='medium-12'>
 						{contentTypeLabel} <a disabled={!event.rules.content.canDelete} className='right' onClick={::this.handleRemove}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
 						<div className='form-body'>
-							<ErrorMessage hasError={content.errors && Object.keys(content.errors).length} errors={content.errors} scope={content.type} />
+							<ErrorMessage hasError={Boolean(content.errors && Object.keys(content.errors).length)} errors={content.errors} scope={content.type} />
 							{InnerContainer}
 							<span className='content-status'>
 								{ (content.isDirty && !content.isSaving && !content.hasError) ? (<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeContainer.dirty" />) : null }
