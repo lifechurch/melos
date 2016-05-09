@@ -18,6 +18,10 @@ var fs = require('fs');
 var async = require('async');
 var langmap = require('langmap');
 var langs = require('langs');
+
+// Just set this to something because @youversion/js-api expects a value and will crash without it
+process.env['YOUVERSION_TOKEN_PHRASE'] = 'just-a-test';
+
 var GetClient = require('@youversion/js-api').getClient;
 
 var smartlingCredentials = {
