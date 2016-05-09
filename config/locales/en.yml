@@ -1564,6 +1564,8 @@ en:
               noAuthPrompt:                   "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
             components:
               PreviewFeed:
+                review:                       "Review Your Event Before Publishing"
+                previewUrl:                   "Preview URL:"
                 share:                        "Share Event"
                 locationsAndTimes:            "Locations and Times"
                 publish:                      "Publish"
