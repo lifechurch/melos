@@ -1295,223 +1295,227 @@ ta:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: " ஓர் பிழை ஏற்பட்டுள்ளது"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "அறிவிப்பு தலைப்பு அவசியம்."
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "வேதாகம மேற்கோள் சரியல்ல"
                     events: 
                         google_place_id: 
-                            required: "You must choose a location from the map."
+                            required: "நீங்கள் வரைப்படத்திலிருந்து ஒரு இடத்தை தேர்ந்தெடுக்க வேண்டும்."
                         latitude: 
-                            required: "You must choose a location from the map."
+                            required: "நீங்கள் வரைப்படத்திலிருந்து ஒரு இடத்தை தேர்ந்தெடுக்க வேண்டும்."
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "துவக்க நேரம் கடந்ததாக இருக்க முடியாது."
                         timezone: 
-                            required: "Timezone is required."
+                            required: "நேர மண்டலம் தேவைப்படுகிறது."
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "வேதாகம குறிப்பு சரியாக இல்லை."
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "URL அவசியம்"
                         title: 
-                            required: "URL Label is required."
+                            required: "URL சிட்டை அவசியம் தேவை."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "வெளியிடப்பட்டது"
                     draft: "ஆரம்ப வரைபு"
                     live: "நேரலை"
-                unpublish: "Unpublish"
-                saving: "Saving..."
+                    archived: "காப்பகபடுத்தபட்டது"
+                unpublish: "வெளியீடு நீக்கம்"
+                saving: "சேமிக்கப்படுகிறது..."
                 saveAsDraft: "வரைவாக சேமி"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "என் நிகழ்வுகள்"
+                eventBuilder: "நிகழ்வு உருவாக்கி"
                 signOut: "வெளியேறு"
-                createAccount: "Create Account"
+                createAccount: "கணக்கை உண்டாக்கவும்"
             HtmlEditor: 
-                text: "Text"
-                bold: "Bold"
-                italic: "Italic"
+                text: "உரை"
+                bold: "தடிமன்"
+                italic: "சாய்வான"
         containers: 
             Auth: 
                 title: "Events Sign In"
                 signIn: "உள்நுழையவும்"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "தாங்கள் பைபிள் ஆப் பயனாளி ஆக இருந்து, ஏற்கனவே youversion கணக்கை உடையவராய் இருப்பின், அதே சான்றுகளை கொண்டு உள் நுழையலாம்<br><br>தாங்கள் இன்னும் YouVersion கணக்கை பெறவில்லையா?<br><a href='%{url}'>நிகழ்ச்சிகளை உருவாக்க இப்பொழுதே bible.com இல் பதிவு செய்யுங்கள் </a>"
                 email: "மின்னஞ்சல்"
                 password: "கடவுச்சொல்"
                 forgotPassword: "கடவுச்சொல் மறந்துவிட்டது"
             EventEdit: 
-                event: "Event"
+                event: "நிகழ்ச்சி"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "துவங்க, எதாவது பொருளடக்கத்தை தேர்ந்தெடுக்கவும்."
                 needHelp: "உதவி தேவையா?"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "நிகழ்வு பொருளடக்கம்"
+                previous: "← முந்தையது: இடங்களும் நேரங்களும்"
+                next: "அடுத்து: முன்னோட்டம் →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "நிகழ்வு விவரங்கள்"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "நிகழ்வின் இடம்"
+                previous: "← முந்தையது: விவரங்கள்"
+                next: "அடுத்து: உள்ளடக்கத்தை சேர்க்கவும் →"
             EventEditPreview: 
-                title: "Event Preview"
-                previous: "← Previous: Content"
+                title: "நிகழ்வின் முன்னோட்டம்"
+                previous: "← முந்தையது: உள்ளடக்கம்"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
+                title: "நிகழ்வைப் பகிரவும்"
+                subTitle: "தங்கள் நிகழ்வு தற்போது வெளியிட பட்டுவிட்டது "
+                edit: "நிகழ்வை மாற்று"
                 go: "Go to My Events"
                 share: "Share your event:"
                 copy: "நகல்"
                 copied: "The shortlink was copied to your clipboard"
                 previous: "← Previous: Preview"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "நிகழ்ச்சிகளை கண்டறியுங்கள்"
                 discover: "கண்டறிக"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                title: "என் நிகழ்ச்சிகள்"
+                previous: "←முந்தையது"
+                next: "அடுத்தது →"
+                my: "என் நிகழ்ச்சிகள்"
+                new: "புதிய நிகழ்ச்சியை உண்டாக்குங்கள்"
+                subTitle: "நான் உருவாக்கிய நிகழ்ச்சிகள்"
+                newFirst: "தங்கள் முதல் நிகழ்வை உருவாக்குக"
+                learn: "ஒரு மகத்தான நிகழ்வை ஏற்படுத்துவது எப்படி என்று அறிந்து கொள்ளுங்கள்"
             EventFeedSaved: 
                 title: "சேமிக்கப்பட்ட நிகழ்வுகள்"
             EventView: 
-                title: "YouVersion Event"
+                title: "YouVersion நிகழ்ச்சி"
+            SelectLanguage: 
+                choose: "Choose Your Language"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
+                    sessionExpired: "தங்கள் அமர்வு முடிவுற்றது தயை கூர்ந்து மீண்டும் உள்நுழையவும்"
                     invalidEmail: "Invalid email or password."
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
-                    planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    locationMustHaveTime: "அனைத்து இடங்களும் குறைந்த பட்சம் ஓர் நேரத்தையாவது கொண்டிருக்கவேண்டும் "
+                    locationRequired: "இடம் குறிப்பிடப்படாத நிகச்சியை தாங்கள் வெளியிட இயலாது"
+                    contentRequired: "உள்ளடக்கம் எதுவும் இல்லாமல் நீங்கள் ஒரு நிகழ்வை வெளியிட முடியாது."
+                    planSearchFailed: "தேடல் எந்த ஆவணங்களுடனும் பொருந்தவில்லை"
+                    noMatchingPlans: "பொருத்தமான திட்டங்கள் எதுவும் இல்லை"
                 components: 
                     EventEditNav: 
                         details: "விவரம்"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        locations: "இடங்களும் நேரங்களும்"
+                        content: "பொருளடக்கம்"
+                        preview: "முன்னோட்டமிட்டு வெளியிடுக"
                         share: "பகிர்"
                 features: 
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "உள்ளடக்கத்தை மறுவரிசைப்படுத்துக"
+                                doneReordering: "மாற்றியமைத்தல் முடிந்தது"
                             ContentHeader: 
-                                text: "Text"
-                                reference: "Bible Reference"
+                                text: "உரை"
+                                reference: "வேதாகம குறிப்பு"
                                 plan: "திட்டம்"
                                 image: "படம்"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "வெளி இணைப்பு"
+                                giving: "நன்கொடை இணைப்பு"
+                                announcement: "அறிவிப்பு"
                             ContentHelpModal: 
-                                types: "Content Types"
-                                learn: "Learn how to make <br>a great Event"
+                                types: "உள்ளடக்க வகைகள்"
+                                learn: "ஓர் சிறப்பான நிகழ்ச்சியை உருவாக்க கற்றுக்கொள்ளுங்கள் "
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "உரை தொகுதி"
+                                    desc: "திட்டவரைவு, முக்கிய புள்ளிகள், விவாத கேள்விகள் ...  உங்கள் பங்கேற்பாளர்கள், உங்கள் செய்தியை பின்பற்றுவதற்கேதுவான எந்த ஒரு உரை சார்ந்த பொது உள்ளடக்கத்தையும் நீங்கள் பகிரலாம். உங்கள் உரை தொகுதிகள் எவ்வளவு நீளமாகவும் இருக்கலாம், மற்றும் உயர் உரை வடிவுடனும் இருக்கலாம்."
                                 reference: 
-                                    title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    title: "வேதாகம மேற்கோள் தொகுதி"
+                                    desc: "தாங்கள் யாதொரு வேதாகம வசனத்தையோ அல்லது பத்தியையோ, YouVersion வுடன் நேரடியாக இணைக்கபட்டுள்ள 900 மொழிகளில், 1200 க்கும் மேற்பட்ட யாதொரு பதிப்புக்களிலிருந்தும்  தேர்ந்துதெடுக்கலாம். தங்கள் நிகழ்ச்சியை காண்போர், அதிலுள்ள குறிப்பை தங்களின் பைபிள் ஆப் ல் திறந்து வாசிக்கவும், குறியிடவும், முன்னிலை படுத்தவும் மற்றும் இன்னும் பல செய்யவும் இயலும்"
                                 plan: 
-                                    title: "Plan Module"
+                                    title: "தொகுதி திட்டமிடல்"
                                     desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
                                 image: 
-                                    title: "Image Module"
+                                    title: "படத்தொகுதி"
                                     desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
                                 link: 
-                                    title: "External Link Module"
+                                    title: "வெளி இணைப்பு தொகுதி"
                                     desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                                 announcement: 
-                                    title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    title: "அறிவிப்பு தொகுதி"
+                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
                             ContentInsertionPoint: 
-                                title: "Insert next module here"
+                                title: "அடுத்த தொகுதியை இங்கே இடவும்"
                             ContentTypeAnnouncement: 
                                 title: "தலைப்பு"
                                 prompt: "Write something here..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                caption: "உங்கள் நிகழ்வில், உங்கள் தலைப்பு (மேல்) மட்டுமே காணக்கூடியதாக இருக்கும். ஒரு பயனர் உங்கள் தலைப்பை தட்டும் போது, பொருள் (கீழ்) ஒரு தனி திரையில் தோன்றும்."
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
-                                lastSaved: "Last saved %{when}"
+                                dirty: "நீங்கள் டைப் செய்வதை நிறுத்திய பின் சில நொடிகளில் உள்ளடக்கம் தானாக சேமிக்கும்."
+                                failed: "சேமிக்க இயலவில்லை."
+                                tryAgain: "மீண்டும் முயற்சிக்கவும்."
+                                lastSaved: "கடைசியாக சேமிக்கப்பட்டது %{when}"
                             ContentTypeImage: 
                                 errors: 
                                     wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
                                     wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
+                                caption: "தலைப்பு சேர்க்க"
                                 prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                onlyJpg: "[JPG மட்டும்]"
+                                sizePrompt: "%{requiredWidth}px அகலம் x %{requiredHeight}px உயரம்"
+                                select: "படத்தை தேர்ந்தெடுக்கவும்"
                             ContentTypeLink: 
                                 kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
+                                label: "இணைப்பு சிட்டை"
                                 prompt: "Write something here..."
                                 url: "URL"
                             ContentTypePlan: 
-                                replace: "Replace"
-                                search: "Search for a Reading Plan"
+                                replace: "மாற்றவும்"
+                                search: "ஒரு வாசிப்பு திட்டத்திற்காக தேடவும்"
                             ContentTypeReference: 
+                                language: "மொழி"
                                 version: "பதிப்பு"
                                 book: "புத்தகம்"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "அதிகாரம்:வசனம்"
                             ContentTypeText: 
                                 prompt: "Write something here..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "நிகழ்வு நேரலையாக இருக்கும்போது நீக்க முடியாது"
+                                desc: "நிகழ்வு நேரலை ஆன பின் அதன் உரை, வேதாகம குறிப்பு மற்றும் பட தொகுப்பை அதினின்று நீக்க இயலாது, ஏனெனில், பயனாளிகள் ஏற்கனவே அவற்றுடன் தங்கள் தனிப்பட்ட குறிப்புக்களை இணைத்திருக்க கூடும்.  ஆனால் நீங்கள் இவற்றை தொகுக்கலாம்."
                                 ok: "சரி"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
+                            generic: "தங்கள் நிகழ்வின் வெளியீட்டில் ஓர் சிக்கல் நேர்ந்தது"
                             invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
-                                prompt: "Drag and Drop an Image"
+                                    wrongSize: "படத்தின் அளவு %{requiredWidth}x%{requiredHeight} ஆக இருக்க வேண்டும். உங்கள் படத்தின் அளவு %{yourWidth}x%{yourHeight}."
+                                    wrongType: "தவறான கோப்பு வகை. JPG யாக இருக்க வேண்டும்."
+                                changeImage: "படத்தை மாற்றவும்"
+                                removeImage: "படத்தை நீக்கவும்"
+                                prompt: "படத்தை இழுத்து விடவும் "
                                 onlyJpg: "[JPG only]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
+                                eventName: "நிகழ்வின் பெயர்"
+                                org: "சபை பெயர் அல்லது நிறுவனம்"
+                                desc: "நிகழ்வு விளக்கம்"
+                                next: "அடுத்து: இடம் மற்றும் நேரங்களை சேர்க்க →"
                     location: 
                         components: 
                             Location: 
-                                oneRequired: "Add at least one time."
-                                use: "USE THIS LOCATION"
-                                edit: "Edit Location"
-                                delete: "Delete Location"
+                                oneRequired: "குறைந்தது ஒரு நேரத்தை சேர்க்கவும்."
+                                use: "இந்த இடத்தை உபயோகிக்கவும்"
+                                edit: "இடத்தை மாற்றம் செய்க"
+                                delete: "இடத்தை நீக்குக"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
+                                addPhysical: "ஒரு இயல்பான இடத்தை சேர்க்கவும்"
+                                promptPhysical: "பல இடங்களை உங்களால் சேர்க்க முடியும்."
+                                addVirtual: "மெய்நிகர் இடத்தை சேர்க்கவும்"
                                 churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
                             LocationAddTime: 
                                 minutes: "நிமிடங்கள்"
@@ -1519,39 +1523,39 @@ ta:
                                 days: "நாட்கள்"
                             LocationDeleteModal: 
                                 sure: "நீங்கள் உறுதியாக இருக்கிறீர்களா?"
-                                selected: "You have selected the following location to be deleted:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                selected: "நீங்கள் நீக்குவதற்கு கீழ்க்கண்ட இடத்தை தேர்ந்தெடுத்துள்ளீர்கள்."
+                                warn: "இது கடந்த மற்றும் இப்போதைய நிகழ்வுகளிலிருந்து இடத்தை நீக்கி விடும். இந்த இடத்தை எதிர்க்கால நிகழ்வுகளுக்கு உங்களால் பயன்படுத்த முடியாது."
                                 cancel: "ரத்துசெய்"
                                 delete: "நீக்கு"
                             LocationEdit: 
-                                prompt: "Enter the Location address..."
+                                prompt: "இடத்தின் முகவரியை உள்ளிடவும்..."
                                 country: "நாடு"
                                 timezone: "நேரமண்டலம்"
-                                namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                namePrompt: "முதல் பாப்டிஸ்ட் கிழக்கு வளாகம் "
+                                name: "இடத்தின் பெயர்"
+                                nameOptional: "விருப்பத்திற்குரியது: பல இடங்களை சேர்க்கும் போது பயனுள்ளது"
+                                addAnother: "மற்றொரு நேரத்தை சேர்க்கவும்"
                                 cancel: "ரத்துசெய்"
-                                save: "Save this Location"
+                                save: "இந்த இடத்தை சேமிக்கவும்"
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "துவக்க தேதியை மாற்றவும்"
                                 forward: "முன்னோக்கி"
-                                backward: "backward"
-                                by: "by"
-                                week: "week"
-                                weeks: "weeks"
+                                backward: "பின் நோக்கி"
+                                by: "ஆல்"
+                                week: "வாரம்"
+                                weeks: "வாரங்கள்"
                                 month: "மாதம்"
-                                months: "months"
+                                months: "மாதங்கள்"
                                 day: "நாள்"
                                 days: "நாட்கள்"
-                                hour: "hour"
+                                hour: "மணி நேரம்"
                                 hours: "மணிகள்"
                                 update: "புதுப்பிப்பு"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "அணைத்து நாட்களையும் நேரங்களையும் மொத்தமாக மாற்றம் செய்யவும்"
                             UnpublishModal: 
                                 cancel: "ரத்துசெய்"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
+                                title: "மாற்றங்களை செய்ததை வெளியிடுவதை ரத்து செய்யவும்"
+                                desc: "இடங்களை கூட்டவோ, தொகுக்கவோ அல்லது அகற்றவோ, தற்காலிகமாக நிகழ்ச்சி வெளியீட்டை நிறுத்தவும் அச்சமயம் தங்கள் நிகழ்வு தேடல் முடிவுகளில் காணப்படாது தங்கள் நிகழ்ச்சியை மீண்டும் வெளியிட மறவாதிருங்கள்"
                                 unpublish: "Unpublish"
                     preview: 
                         notes: 
@@ -1560,19 +1564,19 @@ ta:
                         components: 
                             PreviewFeed: 
                                 share: "நிகழ்வை பகிரவும்"
-                                locations: "இடங்களும் நேரங்களும்"
+                                locationsAndTimes: "இடங்களும் நேரங்களும்"
                                 publish: "வெளியிடவும்"
                                 unpublish: "Unpublish"
-                                locations: "Locations:"
+                                locations: "இடங்கள்:"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "கண்டறியக்கூடிய:"
+                                    desc: "உங்கள் நிகழ்வு, பைபிள் பயன்பாட்டின் 'நிகழ்வு இடம் மற்றும் தேடல்' முடிவுகளில், உங்கள் நிகழ்வின் ஆரம்பத்தின் குறித்த காலத்திற்கு 5 தினங்கள் முன் இருந்து காணப்படும்"
                                 status: 
                                     title: "நிலை:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "சிகப்பு நேரடி சின்னம் உங்கள் நிகழ்வின் சமீப ஆரம்ப வேளையின் போது காணப்படும்"
                                 remove: 
-                                    title: "Remove:"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    title: "நீக்கவும்:"
+                                    desc: "உங்கள் நிகழ்வின் இறுதி முடிவு நேரத்திற்கு பின் அதனை கண்டறிய முடியாது. உங்கள் நிகழ்வு கண்டறியக்கூடியதாக இருக்கும் போது \"நிகழ்வை சேமிக்கவும்\" என்று தட்டிய பங்கேற்பாளர்களுக்கு அதன் சேமிக்கப்பட்ட பதிப்பிற்கு அணுகல் இருக்கும். இந்த நிகழ்வு நேரடி உள்நோக்கம் உடைய இணைப்புகள் மூலமும் அனுகக்கூடியதாக இருக்கும்."
                             PreviewTypeAnnouncement: 
                                 expand: "Expand"
                             PreviewTypePlan: 
@@ -1592,9 +1596,10 @@ ta:
                 components: 
                     EventViewContent: 
                         copy: "நகல்"
+                        copied: "Copied"
                         share: "பகிர்"
                         read: "வாசிக்க"
-                        readPlan: "Read Plan"
+                        readPlan: "திட்டத்தை வாசியுங்கள்"
                     EventViewContentAnnouncement: 
                         expand: "Expand"
                         collapse: "Collapse"
@@ -1602,5 +1607,5 @@ ta:
                         expand: "Expand"
                         collapse: "Collapse"
                         save: "நிகழ்வை சேமிக்கவும்"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "நிகழ்ச்சியை சேமிக்க உள்நுழையவும்"
+                        saved: "நிகழ்ச்சி சேமிக்கப்பட்டது"

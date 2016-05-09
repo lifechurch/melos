@@ -1339,9 +1339,10 @@ cs:
                             required: "URL Label is required."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "Publikováno"
                     draft: "Koncept/y"
                     live: "Live"
+                    archived: "Archived"
                 unpublish: "Unpublish"
                 saving: "Saving..."
                 saveAsDraft: "Uložit jako koncept"
@@ -1362,7 +1363,7 @@ cs:
                 password: "Heslo"
                 forgotPassword: "Zapomenuté heslo"
             EventEdit: 
-                event: "Event"
+                event: "Událost"
             EventEditContentContainer: 
                 choose: "Choose some content to get started."
                 needHelp: "Potřebuje pomoc?"
@@ -1402,7 +1403,9 @@ cs:
             EventFeedSaved: 
                 title: "Uložené události"
             EventView: 
-                title: "YouVersion Event"
+                title: "YouVersion Událost"
+            SelectLanguage: 
+                choose: "Choose Your Language"
         features: 
             Auth: 
                 errors: 
@@ -1444,7 +1447,7 @@ cs:
                                     desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
                                 reference: 
                                     title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                                 plan: 
                                     title: "Plan Module"
                                     desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
@@ -1456,7 +1459,7 @@ cs:
                                     desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                                 announcement: 
                                     title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
                             ContentInsertionPoint: 
                                 title: "Insert next module here"
                             ContentTypeAnnouncement: 
@@ -1465,8 +1468,8 @@ cs:
                                 caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
                             ContentTypeContainer: 
                                 dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
+                                failed: "Nelze uložit."
+                                tryAgain: "Zkusit znovu."
                                 lastSaved: "Last saved %{when}"
                             ContentTypeImage: 
                                 errors: 
@@ -1486,6 +1489,7 @@ cs:
                                 replace: "Replace"
                                 search: "Search for a Reading Plan"
                             ContentTypeReference: 
+                                language: "Jazyk"
                                 version: "Překlad"
                                 book: "Kniha"
                                 chapterVerse: "Chapter:Verse"
@@ -1509,7 +1513,7 @@ cs:
                                 prompt: "Drag and Drop an Image"
                                 onlyJpg: "[JPG only]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
                                 eventName: "Event Name"
                                 org: "Church Name or Organization"
                                 desc: "Event Description"
@@ -1573,7 +1577,7 @@ cs:
                         components: 
                             PreviewFeed: 
                                 share: "Sdílet událost"
-                                locations: "Místo a čas konání"
+                                locationsAndTimes: "Místo a čas konání"
                                 publish: "Zveřejnit"
                                 unpublish: "Unpublish"
                                 locations: "Locations:"
@@ -1605,9 +1609,10 @@ cs:
                 components: 
                     EventViewContent: 
                         copy: "Kopírovat"
+                        copied: "Copied"
                         share: "Sdílet"
                         read: "Číst"
-                        readPlan: "Read Plan"
+                        readPlan: "Číst plán"
                     EventViewContentAnnouncement: 
                         expand: "Expand"
                         collapse: "Collapse"
@@ -1615,5 +1620,5 @@ cs:
                         expand: "Expand"
                         collapse: "Collapse"
                         save: "Uložit událost"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "Přihlásit se k uložení události"
+                        saved: "Událost byla uložena"

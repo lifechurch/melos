@@ -1316,6 +1316,7 @@ km:
                     published: "Published"
                     draft: "សេចក្ដី​ព្រាង"
                     live: "បន្ត​ផ្ទាល់"
+                    archived: "Archived"
                 unpublish: "Unpublish"
                 saving: "Saving..."
                 saveAsDraft: "រក្សា​ទុក​ជា​សេចក្ដី​ព្រាង"
@@ -1377,6 +1378,8 @@ km:
                 title: "ព្រឹត្តិការណ៍ដែលបានរក្សាទុក"
             EventView: 
                 title: "YouVersion Event"
+            SelectLanguage: 
+                choose: "Choose Your Language"
         features: 
             Auth: 
                 errors: 
@@ -1418,7 +1421,7 @@ km:
                                     desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
                                 reference: 
                                     title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                                 plan: 
                                     title: "Plan Module"
                                     desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
@@ -1430,7 +1433,7 @@ km:
                                     desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                                 announcement: 
                                     title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
                             ContentInsertionPoint: 
                                 title: "Insert next module here"
                             ContentTypeAnnouncement: 
@@ -1460,6 +1463,7 @@ km:
                                 replace: "Replace"
                                 search: "Search for a Reading Plan"
                             ContentTypeReference: 
+                                language: "ភាសា"
                                 version: "ជំនាន់"
                                 book: "សៀវភៅ"
                                 chapterVerse: "Chapter:Verse"
@@ -1483,7 +1487,7 @@ km:
                                 prompt: "Drag and Drop an Image"
                                 onlyJpg: "[JPG only]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
                                 eventName: "Event Name"
                                 org: "Church Name or Organization"
                                 desc: "Event Description"
@@ -1547,7 +1551,7 @@ km:
                         components: 
                             PreviewFeed: 
                                 share: "ចែក​រំលែក​ព្រឹត្តិការណ៍"
-                                locations: "ទីតាំង និងពេលវេលា"
+                                locationsAndTimes: "ទីតាំង និងពេលវេលា"
                                 publish: "បោះ​ផ្សាយ"
                                 unpublish: "Unpublish"
                                 locations: "Locations:"
@@ -1579,6 +1583,7 @@ km:
                 components: 
                     EventViewContent: 
                         copy: "ចម្លង"
+                        copied: "ចម្លងទុក"
                         share: "ចែក​រំលែក"
                         read: "អាន"
                         readPlan: "Read Plan"

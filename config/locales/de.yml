@@ -1295,312 +1295,317 @@ de:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "Ein Fehler ist aufgetreten"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "Ankündigungstitel ist erforderlich."
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "Bibelstelle ist ungültig."
                     events: 
                         google_place_id: 
-                            required: "You must choose a location from the map."
+                            required: "Du musst einen Ort auf der Karte wählen."
                         latitude: 
-                            required: "You must choose a location from the map."
+                            required: "Du musst einen Ort auf der Karte auswählen."
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "Startzeitpunkt kann nicht in der Vergangenheit liegen."
                         timezone: 
-                            required: "Timezone is required."
+                            required: "Zeitzone ist erforderlich."
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "Die Bibelstelle ist nicht korrekt."
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "URL ist erforderlich."
                         title: 
-                            required: "URL Label is required."
+                            required: "Ein URL-Etikett ist nötig."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "Veröffentlicht"
                     draft: "Entwurf"
                     live: "Live"
-                unpublish: "Unpublish"
-                saving: "Saving..."
+                    archived: "Archived"
+                unpublish: "Zurückgezogen"
+                saving: "Speichern..."
                 saveAsDraft: "Als Entwurf speichern"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "Meine Ereignisse"
+                eventBuilder: "Event erstellen"
                 signOut: "Abmelden"
-                createAccount: "Create Account"
+                createAccount: "Benutzerkonto anlegen"
             HtmlEditor: 
                 text: "Text"
                 bold: "fett"
                 italic: "kursiv"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "Anmeldung zur Veranstaltung"
                 signIn: "Anmelden"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Wenn du ein Bibel App Nutzer bist und bereits ein YouVersion Konto hast, kannst du dich mit diesen Daten anmelden.<br/><br/>Du hast noch kein YouVersion Konto? <br/><a href='%{url}'>Registriere dich jetzt bei Bible.com</a> und erstelle Ereignisse."
                 email: "E-Mail"
                 password: "Passwort"
                 forgotPassword: "Passwort vergessen"
             EventEdit: 
-                event: "Event"
+                event: "Ereignis"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "Wähle zunächst ein paar Inhalte."
                 needHelp: "Brauchst du Hilfe?"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "Veranstaltungsinhalt"
+                previous: "← Zurück: Ort & Zeit"
+                next: "Nächster Schritt: Vorschau →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "Veranstaltungsdetails"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "Veranstaltungsort"
+                previous: "← Zurück: Details"
+                next: "Weiter: Füge Inhalt hinzu →"
             EventEditPreview: 
-                title: "Event Preview"
-                previous: "← Previous: Content"
+                title: "Vorschau für die Veranstaltung"
+                previous: "← Zurück: Inhalt"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                title: "Ereignis teilen"
+                subTitle: "Dein Ereignis ist jetzt veröffentlicht:"
+                edit: "Ereignis bearbeiten"
+                go: "Zu meinen Ereignissen wechseln"
+                share: "Teile dein Ereignis: "
                 copy: "Kopieren"
-                copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                copied: "Der Link wurde in deine Zwischenablage kopiert."
+                previous: "← Zurück: Vorschau"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "Ereignisse entdecken"
                 discover: "Entdecken"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                title: "Meine Ereignisse"
+                previous: "← Zurück"
+                next: "Weiter →"
+                my: "Meine Ereignisse"
+                new: "Neues Ereigniss erstellen"
+                subTitle: "Von mir erstellte Veranstaltungen."
+                newFirst: "Erstelle deine erste Veranstaltung"
+                learn: "Wie erstellt man ein großartiges Ereignis?"
             EventFeedSaved: 
                 title: "Gespeicherte Veranstaltungen"
             EventView: 
-                title: "YouVersion Event"
+                title: "YouVersion-Ereignis"
+            SelectLanguage: 
+                choose: "Wähle deine Sprache"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    sessionExpired: "Deine Sitzung ist abgelaufen. Melde dich erneut an."
+                    invalidEmail: "E-Mail oder Passwort ungültig."
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
-                    planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    locationMustHaveTime: "Alle Orte müssen mindestens eine Zeit besitzen."
+                    locationRequired: "Du kannst ein Ereignis nicht ohne Ort veröffentlichen."
+                    contentRequired: "Ein Ereignis ohne Inhalt kannst du nicht veröffentlichen."
+                    planSearchFailed: "Entsprechenden Dokumente nicht gefunden"
+                    noMatchingPlans: "Keine passenden Pläne gefunden"
                 components: 
                     EventEditNav: 
                         details: "Einzelheiten"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        locations: "Ort & Zeit"
+                        content: "Inhalt"
+                        preview: "Vorschau & Veröffentlichung"
                         share: "Teilen"
                 features: 
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "Inhalt erneut bestellen"
+                                doneReordering: "Aufnahme beendet."
                             ContentHeader: 
                                 text: "Text"
-                                reference: "Bible Reference"
+                                reference: "Bibelabschnitt"
                                 plan: "Leseplan"
                                 image: "Bild"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "Externer Link"
+                                giving: "Link für Spenden"
+                                announcement: "Ankündigung"
                             ContentHelpModal: 
-                                types: "Content Types"
-                                learn: "Learn how to make <br>a great Event"
+                                types: "Inhaltsarten"
+                                learn: "Erfahre, wie man<br>ein großes Ereignis erstellt."
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "Textmodul"
+                                    desc: "Übersichten, wichtige Punkte, Diskussionsfragen… Teile Inhalte in Textform, der den Teilnehmern hilft, deine Botschaft live zu verfolgen. Deine Textmodule können beliebig lang sein und formatiert sein, z.B. im Fettdruck oder kursiv."
                                 reference: 
-                                    title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    title: "Modul für Bibelverse (Buch und Kapitel)"
+                                    desc: "Wähle jeden Bibelvers oder Abschnitt, direkt aus einer von mehr als 1.200 YouVersion’s Bibelübersetzungen, in mehr als 900 Sprachen Personen, die dein Ereignis betrachten, können deine Verweise Antippen, um sie in ihrer Bibel App zu sehen, wo sie Lesezeichen anlegen, farblich hervorheben können und vieles andere mehr."
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "Modul für Lesepläne"
+                                    desc: "Verknüpfe Lesepläne und Andachten, die sich auf deine Lehrinhalte stehen, um den Teilnehmern zu helfen, sich im Verlauf der Woche mit dem Wort Gottes zu beschäftigen."
                                 image: 
-                                    title: "Image Module"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    title: "Modul für Bilder"
+                                    desc: "Hauche deinem Ereignis mit Grafiken Leben ein, z. B. mit Titelgrafiken für deine Serie oder aber mit Fotos oder Versbildern. So können die Teilnehmer die Bilder für dein Ereignis leicht in sozialen Netzwerken teilen und deine Botschaft verbreiten."
                                 link: 
-                                    title: "External Link Module"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    title: "Modul für externe Link"
+                                    desc: "Erstellt einen Button in deinem Ereignis, der zu einer beliebigen externen Webseite verknüpft. Ermögliche es deinen Teilnehmern, mit nur einem Klick online zu spenden, sich als freiwillige Helfer zu melden oder zur Webseite deiner Gemeinde zu kommen."
                                 announcement: 
-                                    title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    title: "Modul für Ankündigungen"
+                                    desc: "Gemeindenachrichten, Termine, Programme, Seminare, Infos für freiwillige Helfer und Möglichkeiten in die Mission zu gehen... Module für derartige Ankündigungen sind perfekt, um die wichtigen Infos pünktlich mitzuteilen, ohne dass sie von der eigentlichen Meldung über die Veranstaltung ablenken. Jedes Ankündigungsmodul erscheint auf einer eigenen Seite in deiner Veranstaltung und kann sogar Formatierungen (zum Beispiel Fett- oder Kursivdruck) enthalten."
                             ContentInsertionPoint: 
-                                title: "Insert next module here"
+                                title: "Füge das nächste Modul hier ein."
                             ContentTypeAnnouncement: 
                                 title: "Titel"
-                                prompt: "Write something here..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                prompt: "Schreibe hier etwas..."
+                                caption: "Bei deinem Ereignis wird nur der Titel (oben) sichtbar sein. Wenn jemand auf deinen Titel tippt, wird der Inhalt (unten) in einem eigenen Fenster angezeigt."
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
-                                lastSaved: "Last saved %{when}"
+                                dirty: "Der Inhalt wird automatisch gespeichert, wenige Sekunden nachdem du aufhörst zu tippen."
+                                failed: "Konnte nicht gespeichert werden."
+                                tryAgain: "Versuche es noch einmal."
+                                lastSaved: "Zuletzt gespeichert: %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                    wrongSize: "Bildgröße muss %{requiredWidth}x%{requiredHeight} Pixel sein. Dein bild hat %{yourWidth}x%{yourHeight} Pixel."
+                                    wrongType: "Ungültiger Dateityp. JPG erforderlich."
+                                caption: "Überschrift hinzufügen"
+                                prompt: "Bild herziehen und loslassen."
+                                onlyJpg: "[nur JPG-Format]"
+                                sizePrompt: "%{requiredWidth}px breit x %{requiredHeight}px hoch"
+                                select: "Bild auswählen"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
-                                prompt: "Write something here..."
-                                url: "URL"
+                                kindrid: "Wenn du einen Plattform suchst, mit der du ganz einfach spenden kannst, <a href='%{url}'>probiere Kindrid</a>aus."
+                                label: "Etikett für Link"
+                                prompt: "Schreibe hier etwas..."
+                                url: "Internetadresse"
                             ContentTypePlan: 
-                                replace: "Replace"
-                                search: "Search for a Reading Plan"
+                                replace: "Ersetzen"
+                                search: "Suche nach einem Leseplan"
                             ContentTypeReference: 
+                                language: "Sprache"
                                 version: "Übersetzung"
                                 book: "Buch"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "Kapitel:Vers"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "Schreibe hier etwas..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "Ereignis kann nicht gelöscht werden, während es live ist."
+                                desc: "Sobald ein Ereignis live ist, kannst du weder Text noch Bibelstellen oder Bildmodule löschen, weil Nutzer bereits möglicherweise eigene Notizen hinzugefügt haben. Du kannst diese Module allerdings bearbeiten."
                                 ok: "OK"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            generic: "Es gab ein Problem beim Veröffentlichen deines Ereignisses."
+                            invalidTimes: "Ein Gottesdienst darf nicht länger als 12 Stunden dauern und der Abstand zwischen der frühesten Startzeit und dem letztmöglichen Ende einer Veranstaltung kann nicht länger als 8 Tage sein. Bitte korrigiere deine Zeiten und versuche es noch einmal."
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                    wrongSize: "Bildgröße muss %{requiredWidth}x%{requiredHeight} Pixel sein. Dein Bild hat %{yourWidth}x%{yourHeight} Pixel."
+                                    wrongType: "Ungültiger Dateityp. Es muss eine JPG-Datei sein."
+                                changeImage: "Bild ändern"
+                                removeImage: "Bild entfernen"
+                                prompt: "Ziehe ein Bild hierher und füge es ein."
+                                onlyJpg: "[nur JPG]"
+                                sizePrompt: "%{requiredWidth}px breit x %{requiredHeight}px hoch"
+                                sizePrompt2: "Deine Bildgröße sollte %{requiredWidth} x %{requiredHeight} Pixel sein."
+                                eventName: "Name der Veranstaltung"
+                                org: "Name der Gemeinde oder Organisation"
+                                desc: "Beschreibung der Veranstaltung"
+                                next: "Nächster Schritt: Ort & Zeit hinzufügen →"
                     location: 
                         components: 
                             Location: 
-                                oneRequired: "Add at least one time."
-                                use: "USE THIS LOCATION"
-                                edit: "Edit Location"
-                                delete: "Delete Location"
+                                oneRequired: "Füge mindestens einen Zeitpunkt ein."
+                                use: "Benutze diesen Ort."
+                                edit: "Ort bearbeiten"
+                                delete: "Ort löschen"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                addPhysical: "Füge einen echten Ort hinzu."
+                                promptPhysical: "Du kannst mehrere Orte hinzufügen."
+                                addVirtual: "Füge einen virtuellen Ort hinzu."
+                                churchOnline: "Wusstest du schon...? Du kannst einen Onlinedienst mit der <a className='button-caption' href='%{url}'>Church Online-Plattform</a>kostenlos benutzen."
                             LocationAddTime: 
                                 minutes: "Minuten"
                                 hours: "Stunden"
                                 days: "Tage"
                             LocationDeleteModal: 
                                 sure: "Bist du sicher?"
-                                selected: "You have selected the following location to be deleted:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                selected: "Du hast folgenden Ort zum Löschen ausgewählt:"
+                                warn: "Damit wird der Ort für alle vergangenen und aktuellen Ereignisse gelöscht. Du kannst diesen Ort auch NICHT mehr für zukünftige Ereignisse nutzen."
                                 cancel: "Abbrechen"
                                 delete: "Löschen"
                             LocationEdit: 
-                                prompt: "Enter the Location address..."
+                                prompt: "Veranstaltungsort eingeben..."
                                 country: "Land"
                                 timezone: "Zeitzone"
                                 namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                name: "Ort"
+                                nameOptional: "Optional: bietet sich bei mehreren Orten an."
+                                addAnother: "Füge eine andere Zeit hinzu."
                                 cancel: "Abbrechen"
-                                save: "Save this Location"
+                                save: "Speichere diesen Ort."
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "Anfangszeiten verschieben"
                                 forward: "Vorwärts"
-                                backward: "backward"
+                                backward: "rückwärts"
                                 by: "von"
-                                week: "week"
-                                weeks: "weeks"
+                                week: "Woche"
+                                weeks: "Wochen"
                                 month: "Monat"
-                                months: "months"
+                                months: "Monate"
                                 day: "Tag"
                                 days: "Tage"
-                                hour: "hour"
+                                hour: "Stunde"
                                 hours: "Stunden"
                                 update: "Aktualisieren"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "Verschiebe alle Daten und Zeiten auf einmal"
                             UnpublishModal: 
                                 cancel: "Abbrechen"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                title: "Veröffentlichung rückgängig machen, um Änderungen vorzunehmen."
+                                desc: "Zum Hinzufügen, Ändern oder Löschen der Veranstaltungsorte und -zeiten dieses Ereignis vorübergehend zurückziehen. Während dieser Zeit ist dein Ereignis in den Suchergebnissen nicht sichtbar. Vergiss nicht, dein Ereignis dann erneut zu veröffentlichen."
+                                unpublish: "Zurückziehen"
                     preview: 
                         notes: 
                             prompt: "Füge deine privaten Notizen hinzu..."
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Melde dich an,</span> um deine privaten Notizen hinzuzufügen…</a>"
                         components: 
                             PreviewFeed: 
                                 share: "Ereignis teilen"
-                                locations: "Ort und Zeit"
+                                locationsAndTimes: "Ort und Zeit"
                                 publish: "Veröffentlichen"
-                                unpublish: "Unpublish"
-                                locations: "Locations:"
+                                unpublish: "Zurückziehen"
+                                locations: "Orte:"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "Auffindbar:"
+                                    desc: "Dein Ereignis erscheint 5 Tage vor Beginn in den Bibel App-Ereignissen unter dem angegebenen Ort sowie in den Suchergebnissen."
                                 status: 
                                     title: "Notizen-Status:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "Das rote LIVE-Zeichen wird angezeigt, sobald dein Ereignis beginnt."
                                 remove: 
-                                    title: "Remove:"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    title: "Entfernen:"
+                                    desc: "Wenn dein Ereignis vorbei ist, lässt sich danach nicht mehr suchen. Teilnehmer, die auf \"Ereignis speichern\" geklickt haben, als dein Ereignis noch auffindbar war, haben weiterhin zur archivierten Version Zugriff. Auch ist das Ereignis weiterhin über direkt verknüpfte Links aufrufbar."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "Aufklappen"
                             PreviewTypePlan: 
                                 read: "Lesen"
                                 info: "Info zu Leseplan"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "Duplizieren"
                         share: "Teilen"
                         delete: "Löschen"
                         draft: "Entwurf"
                         edit: "Bearbeiten"
                         view: "Ansicht"
-                        fail: "Unable to delete Event"
+                        fail: "Klicke hier, um dein Ereignis zu löschen"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "Kopieren"
+                        copied: "Copied"
                         share: "Teilen"
                         read: "Lesen"
-                        readPlan: "Read Plan"
+                        readPlan: "Leseplan lesen"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Aufklappen"
+                        collapse: "Zusammenklappen"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Aufklappen"
+                        collapse: "Zusammenklappen"
                         save: "Veranstaltung speichern"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "Anmelden, um Ereignis zu speichern"
+                        saved: "Ereignis gespeichert"

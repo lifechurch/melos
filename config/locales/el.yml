@@ -1295,61 +1295,62 @@ el:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "Προέκυψε λάθος"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "Απαιτείται τίτλος της εκδήλωσης."
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "Μη έγκυρη παραπομπή."
                     events: 
                         google_place_id: 
-                            required: "You must choose a location from the map."
+                            required: "Πρέπει να επιλέξετε μία τοποθεσία από το χάρτη."
                         latitude: 
-                            required: "You must choose a location from the map."
+                            required: "Πρέπει να επιλέξετε μια τοποθεσία από τον χάρτη."
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "Η ώρα έναρξης δεν μπορεί να είναι στο παρελθόν."
                         timezone: 
-                            required: "Timezone is required."
+                            required: "Απαιτείται ζώνη ώρας."
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "Η βιβλική παραπομπή δεν είναι σωστή."
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "Απαιτείται σύνδεσμος."
                         title: 
-                            required: "URL Label is required."
+                            required: "URL: Απαιτείται ετικέτα."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "Δημοσιεύτηκε"
                     draft: "Πρόχειρο"
                     live: "Ζωντανά"
-                unpublish: "Unpublish"
-                saving: "Saving..."
+                    archived: "Archived"
+                unpublish: "Απόσυρση δημοσίευσης"
+                saving: "Αποθήκευση…"
                 saveAsDraft: "Αποθήκευση πρόχειρου"
                 myEvents: "Οι εκδηλώσεις μου"
                 eventBuilder: "ΔΗΜΙΟΥΡΓΙΑ ΕΚΔΗΛΩΣΗΣ"
                 signOut: "Αποσύνδεση"
-                createAccount: "Create Account"
+                createAccount: "Δημιουργία λογαριασμού"
             HtmlEditor: 
                 text: "Κείμενο"
                 bold: "Έντονο"
                 italic: "Πλάγιο"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "Σύνδεση στις εκδηλώσεις"
                 signIn: "Σύνδεση"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Αν χρησιμοποιείτε την εφαρμογή Αγία Γραφή και έχετε ήδη ένα λογαριασμό YouVersion, μπορεί να συνδεθείτε χρησιμοποιώντας το ίδιο όνομα και κωδικό.<br/><br/>Δεν έχετε ακόμη λογαριασμό YouVersion; <br/><a href='%{url}'>Εγγραφείτε τώρα στο Bible.com για να δημιουργείτε εκδηλώσεις.</a>"
                 email: "Email"
                 password: "Κωδικός πρόσβασης"
                 forgotPassword: "Ξέχασα τον κωδικό"
             EventEdit: 
-                event: "Event"
+                event: "Εκδήλωση"
             EventEditContentContainer: 
                 choose: "Επιλογή μέρους περιεχομένου για εκκίνηση"
                 needHelp: "Χρειάζεστε βοήθεια;"
@@ -1366,41 +1367,43 @@ el:
                 title: "Προεπισκόπηση εκδήλωσης"
                 previous: "← Προηγούμενο: Περιεχόμενο"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                title: "Κοινοποίηση εκδήλωσης"
+                subTitle: "Δημοσιεύτηκε η εκδήλωσή σας."
+                edit: "Επεξεργασία εκδήλωσης"
+                go: "Μετακίνηση στις εκδηλώσεις μου"
+                share: "Κοινοποίηση της εκδήλωσής σας"
                 copy: "Αντιγραφή"
-                copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                copied: "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+                previous: "← Προηγούμενο: Προεπισκόπηση"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "Αναζήτηση εκδηλώσεων"
                 discover: "Ανακαλύψτε"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
+                title: "Οι εκδηλώσεις μου"
+                previous: "← Προηγούμενο"
+                next: "Επόμενο →"
+                my: "Οι εκδηλώσεις μου"
+                new: "Δημιουργία νέας εκδήλωσης"
+                subTitle: "ΔΙΚΕΣ ΣΑΣ ΕΚΔΗΛΩΣΕΙΣ"
                 newFirst: "Δημιουργία της πρώτης εκδήλωσης"
                 learn: "Οδηγίες δημιουργίας μιας καταπληκτικής εκδήλωσης"
             EventFeedSaved: 
                 title: "Αποθηκευμένες εκδηλώσεις"
             EventView: 
-                title: "YouVersion Event"
+                title: "Εκδήλωση YouVersion"
+            SelectLanguage: 
+                choose: "Επιλογή γλώσσας"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    sessionExpired: "Η σύνδεση έληξε. Παρακαλούμε συνδεθείτε ξανά."
+                    invalidEmail: "Λάθος ηλεκτρονική διεύθυνση ή κωδικός."
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
+                    locationMustHaveTime: "Όλες οι τοποθεσίες ΄πρέπει να έχουν τουλάχιστον μία ώρα."
+                    locationRequired: "Δεν μπορείτε να δημοσιεύσετε μία εκδήλωση χωρίς τοποθεσίες."
                     contentRequired: "Δεν μπορεί να δημοσιευθεί μια εκδήλωση χωρίς περιεχόμενο."
-                    planSearchFailed: "Search did not match any documents"
+                    planSearchFailed: "Η αναζήτηση δε βρήκε σχετικά κείμενα"
                     noMatchingPlans: "Δεν υπάρχουν σχέδια που ταιριάζουν"
                 components: 
                     EventEditNav: 
@@ -1414,9 +1417,9 @@ el:
                         components: 
                             ContentFeed: 
                                 reorder: "Αναδιάταξη περιεχομένου"
-                                doneReordering: "Done Reordering"
+                                doneReordering: "Πραγματοποιήθηκε αναδιάταξη"
                             ContentHeader: 
-                                text: "Text"
+                                text: "Κείμενο"
                                 reference: "Βιβλική παραπομπή"
                                 plan: "Σχέδια μελέτης"
                                 image: "Εικόνα"
@@ -1425,7 +1428,7 @@ el:
                                 announcement: "Ανακοίνωση"
                             ContentHelpModal: 
                                 types: "Μορφές περιεχομένου"
-                                learn: "Learn how to make <br>a great Event"
+                                learn: "Μάθετε πως να φτιάξετε <br>μια εκπληκτική εκδήλωση"
                                 text: 
                                     title: "Ενότητα κειμένου"
                                     desc: "Περιλήψεις, βασικά σημεία, ερωτήσεις …Κοινοποιήστε οποιοδήποτε περιεχόμενο σε μορφή κειμένου θα βοηθήσει τους συμμετέχοντες στην παρακολούθηση της εκδήλωσης. Οι ενότητες κειμένου μπορεί να έχουν οποιοδήποτε μήκος και μπορεί να είναι σε μορφή εμπλουτισμένου κειμένου."
@@ -1443,13 +1446,13 @@ el:
                                     desc: "Δημιουργία πλήκτρου μέσω στην εκδήλωσή σας για σύνεση με οποιαδήποτε εξωτερική ιστοσελίδα. Συνδέστε εύκολα τους συμμετέχοντες με την ιστοσελίδα της εκκλησίας σας."
                                 announcement: 
                                     title: "Ενότητα ανακοινώσεων"
-                                    desc: "Νέα της εκκλησίας, άλλες εκδηλώσεις, πρόγραμμα συναθροίσεων, προσκλήσεις συμμετοχής σε διακονίες… Δημοσιοποιήστε εύκολα σημαντικές πληροφορίες χωρίς απόσπαση από το κύριο μήνυμα της εκδήλωσής σας. Δυνατότητες ενότητας ανακοινώσεων: Μπορεί να περιέχει εμπλουτισμένη μορφή κειμένου που θα εμφανίζεται με τη δική του σελίδα στην εκδήλωση. Είναι ιδανικό για σημαντικές ανακοινώσεις που δε θέλετε να αποσπούν από το κύριο μήνυμα της εκδήλωσης. "
+                                    desc: "Νέα της εκκλησίας, άλλες εκδηλώσεις, προγράμματα συναθροίσεων, προσκλήσεις συμμετοχής σε διακονίες… Δημοσιοποιήστε εύκολα σημαντικές πληροφορίες χωρίς απόσπαση από το κύριο μήνυμα της εκδήλωσής σας. Κάθε ενότητα ανακοίνωσης εμφανίζεται στη δική της σελίδα στην εκδήλωσή σας, και μπορεί να περιλαμβάνει ακόμη και εμπλουτισμένο κείμενο (όπως έντονους και πλάγιους χαρακτήρες)."
                             ContentInsertionPoint: 
                                 title: "Εισαγωγή επόμενης ενότητας εδώ"
                             ContentTypeAnnouncement: 
                                 title: "Τίτλος"
-                                prompt: "Write something here..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                prompt: "Γράψτε κάτι εδώ..."
+                                caption: "Μόνο ο (παραπάνω) τίτλος θα είναι ορατός στην εκδήλωσή σας. Όταν πατηθεί ο τίτλος το (παρακάτω) σώμα εμφανίζεται σε ξεχωριστή οθόνη."
                             ContentTypeContainer: 
                                 dirty: "Το περιεχόμενο θα αποθηκευτεί αυτόματα λίγα δευτερόλεπτα αφού σταματήσετε την πληκτρολόγηση."
                                 failed: "Αποθήκευση αδύνατη"
@@ -1457,35 +1460,36 @@ el:
                                 lastSaved: "Τελευταία αποθήκευση: %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
+                                    wrongSize: "Το μέγεθος της εικόνας πρέπει να είναι %{requiredWidth}x%{requiredHeight}. Της εικόνας σας είναι: %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Μη αποδεκτή μορφή αρχείου. Πρέπει να είναι: JPG"
+                                caption: "Προσθήκη λεζάντας"
+                                prompt: "Μεταφορά και απόθεση εικόνας"
                                 onlyJpg: "[μόνο JPG]"
                                 sizePrompt: "%{requiredWidth}pixel πλάτος x %{requiredHeight}pixel ύψος"
                                 select: "Επιλογή εικόνας"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
+                                kindrid: "Αν ψάχνετε για μια έξυπνη και απλή πλατφόρμα προσφορών <a href='%{url}'>δοκιμάστε το Kindrid</a>."
                                 label: "Ετικέτα συνδέσμου"
-                                prompt: "Write something here..."
+                                prompt: "Γράψτε κάτι εδώ..."
                                 url: "URL"
                             ContentTypePlan: 
                                 replace: "Αντικατάσταση"
                                 search: "Αναζήτηση σχεδίου μελάτης"
                             ContentTypeReference: 
+                                language: "Γλώσσα"
                                 version: "Έκδοση"
                                 book: "Βιβλίο"
                                 chapterVerse: "Κεφάλαιο: Εδάφιο"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "Γράψτε κάτι εδώ..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "Δεν μπορεί να διαγραφή η εκδήλωση όταν είναι ζωντανή"
+                                desc: "Όταν η εκδήλωση μεταδίδεται ζωντανά, δεν μπορείτε να διαγράψετε ενότητες με κείμενο, παραπομπή ή εικόνα γιατί οι επισκέπτες μπορεί να τις έχουν ήδη προσθέσει στις προσωπικές τους σημειώσεις. Μπορείτε, ωστόσο, να επεξεργαστείτε αυτές τις ενότητες."
                                 ok: "ΟΚ"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            generic: "Υπήρξε κάποιο πρόβλημα κατά τη δημοσίευση της εκδήλωσή σας."
+                            invalidTimes: "Μια εκδήλωση δεν μπορεί να διαρκεί πάνω από 12 ώρες, και η διαφορά μεταξύ της ενωρίτερής ώρας έναρξης και την αργότερη ώρας λήξης που δεν μπορεί να είναι πάνω από 8 ημέρες. Παρακαλούμε ρυθμίστε τις ώρες της εκδήλωσης και προσπαθήστε πάλι."
                         components: 
                             DetailsEdit: 
                                 errors: 
@@ -1494,9 +1498,9 @@ el:
                                 changeImage: "Αλλαγή εικόνας"
                                 removeImage: "Διαγραφή εικόνας"
                                 prompt: "Μεταφορά και απόθεση εικόνας"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                onlyJpg: "[μόνο JPG]"
+                                sizePrompt: "%{requiredWidth}pixel πλάτος x %{requiredHeight}pixel ύψος"
+                                sizePrompt2: "Οι διαστάσεις της εικόνας σας θα πρέπει να είναι %{requiredWidth} x %{requiredHeight} pixels."
                                 eventName: "Όνομα εκδήλωσης"
                                 org: "Όνομα εκκλησίας ή Διακονίας"
                                 desc: "Περιγραφή εκδήλωσης"
@@ -1504,65 +1508,65 @@ el:
                     location: 
                         components: 
                             Location: 
-                                oneRequired: "Add at least one time."
-                                use: "USE THIS LOCATION"
-                                edit: "Edit Location"
-                                delete: "Delete Location"
+                                oneRequired: "Προσθέστε τουλάχιστον μία ώρα"
+                                use: "ΧΡΗΣΗ ΑΥΤΗΣ ΤΗΣ ΤΟΠΟΘΕΣΙΑΣ"
+                                edit: "Επεξεργασία τοποθεσίας"
+                                delete: "Διαγραφή τοποθεσίας"
                             LocationAddButtons: 
                                 addPhysical: "Προσθήκη φυσικής τοποθεσίας"
                                 promptPhysical: "Προσθήκη πολλαπλών τοποθεσιών."
                                 addVirtual: "Προσθήκη εικονικής τοποθεσίας"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                churchOnline: "Γνωρίζετε ότι; Μπορείτε να δημοσιεύσετε δωρεάν στο διαδίκτυο μια διακονία χρησιμοποιώντας την <a className='button-caption' href='%{url}'>Church Online Platform</a>."
                             LocationAddTime: 
                                 minutes: "ΛΕΠΤΑ"
                                 hours: "ΩΡΕΣ"
                                 days: "ΗΜΕΡΕΣ"
                             LocationDeleteModal: 
                                 sure: "Είστε σίγουρος/σίγουρη;"
-                                selected: "You have selected the following location to be deleted:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                selected: "Έχετε επιλέξει τη διαγραφή της ακόλουθης τοποθεσίας."
+                                warn: "Θα διαγραφεί η τοποθεσία από όλες τις τρέχουσες και μελλοντικές εκδηλώσεις. Δε θα μπορείτε να χρησιμοποιήσετε ξανά αυτή την τοποθεσία σε μελλοντικές εκδηλώσεις."
                                 cancel: "Ακύρωση"
                                 delete: "Διαγραφή"
                             LocationEdit: 
-                                prompt: "Enter the Location address..."
+                                prompt: "Εισαγωγή διεύθυνσης της τοποθεσίας..."
                                 country: "Χώρα"
                                 timezone: "Ζώνη ώρας"
-                                namePrompt: "First Baptist East Campus"
+                                namePrompt: "Κατασκήνωση πρώτης Βαπτιστικής εκκλησίας"
                                 name: "Όνομα τοποθεσίας"
                                 nameOptional: "Προαιρετικό: Χρήσιμο σε προσθήκη πολλαπλών τοποθεσιών"
                                 addAnother: "Προσθήκη άλλης ώρας"
                                 cancel: "Ακύρωση"
                                 save: "Αποθήκευση τοποθεσίας"
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "Ολισθηση ημερομηνιών έναρξης"
                                 forward: "Μπροστά"
-                                backward: "backward"
-                                by: "by"
-                                week: "week"
-                                weeks: "weeks"
+                                backward: "πίσω"
+                                by: "από"
+                                week: "εβδομάδα"
+                                weeks: "εβδομάδες"
                                 month: "Μήνας"
-                                months: "months"
+                                months: "μήνες"
                                 day: "Ημέρα"
                                 days: "ΗΜΕΡΕΣ"
-                                hour: "hour"
+                                hour: "ώρα"
                                 hours: "ΩΡΕΣ"
                                 update: "Ενημέρωση"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "Μετακίνηση όλων των ημερομηνιών και ωρών μαζί"
                             UnpublishModal: 
                                 cancel: "Ακύρωση"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                title: "Απόσυρση δημοσίευσης για αλλαγές"
+                                desc: "Προσωρινή απόσυρση της δημοσίευσης για προσθήκη, επεξεργασία ή διαγραφή τοποθεσιών και ωρών. Κατά τη διάρκεια της απόσυρσης, η εκδήλωσή σας δε θα είναι ορατή στα αποτελέσματα αναζήτησης. Μην ξεχάσετε να δημοσιεύσετε πάλι την εκδήλωσή σας."
+                                unpublish: "Απόσυρση δημοσίευσης"
                     preview: 
                         notes: 
                             prompt: "Προσθήκη προσωπικών σημειώσεων…"
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Συνδεθείτε</span> για να προσθέσετε τις προσωπικές σας σημειώσεις…</a>"
                         components: 
                             PreviewFeed: 
                                 share: "Κοινοποίηση εκδήλωσης"
-                                locations: "Τοποθεσίες και ώρες"
+                                locationsAndTimes: "Τοποθεσίες και ώρες"
                                 publish: "Δημοσίευση"
-                                unpublish: "Unpublish"
+                                unpublish: "Απόσυρση δημοσίευσης"
                                 locations: "Τοποθεσίες"
                                 discoverable: 
                                     title: "Ορατή"
@@ -1574,33 +1578,34 @@ el:
                                     title: "Διαγραφή:"
                                     desc: "Η εκδήλωσή σας δεν θα είναι πλέον ορατή μετά τη λήξη της. Όσοι πάτησαν \"Αποθήκευση εκδήλωσης\" όταν ήταν ορατή θα μπορούν να έχουν πρόσβαση στην αρχειοθετημένη έκδοσή της. Η εκδήλωση θα συνεχίσει να είναι προσβάσιμη μέσω απευθείας συνδέσμων."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "Περισσότερα"
                             PreviewTypePlan: 
                                 read: "Ανάγνωση"
                                 info: "Πληροφορίες σχεδίου μελέτης"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "Αντιγραφή"
                         share: "Κοινοποίηση"
                         delete: "Διαγραφή"
                         draft: "Πρόχειρο"
                         edit: "Επεξεργασία"
                         view: "Προβολή"
-                        fail: "Unable to delete Event"
+                        fail: "Αδύνατη η διαγραφή της εκδήλωσης"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "Αντιγραφή"
+                        copied: "Copied"
                         share: "Κοινοποίηση"
                         read: "Ανάγνωση"
-                        readPlan: "Read Plan"
+                        readPlan: "Ανάγνωση σχεδίου μελέτης"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Περισσότερα"
+                        collapse: "Λιγότερα"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Περισσότερα"
+                        collapse: "Λιγότερα"
                         save: "Αποθήκευση εκδήλωσης"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "Σύνδεση για αποθήκευση εκδήλωσης"
+                        saved: "Αποθηκεύτηκε η εκδήλωση"

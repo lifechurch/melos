@@ -1329,6 +1329,7 @@ fi:
                     published: "Julkaistu"
                     draft: "Luonnos"
                     live: "Live"
+                    archived: "Arkistoitu"
                 unpublish: "Poista julkaisu"
                 saving: "Tallennetaan..."
                 saveAsDraft: "Tallenna luonnoksena"
@@ -1344,7 +1345,7 @@ fi:
             Auth: 
                 title: "Tapahtumiin sisäänkirjautuminen"
                 signIn: "Kirjaudu sisään"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Jos olet Raamattu-sovelluksen käyttäjä ja sinulla on jo YouVersion-tili, voit kirjautua samoilla tunnuksilla.<br/><br/>Eikö sinulla ole vielä YouVersion-tiliä?<br/><a href='%{url}'>Rekisteröidy Bible.com-sivustolle</a> alkaaksesi luoda tapahtumia."
                 email: "Sähköposti"
                 password: "Salasana"
                 forgotPassword: "Unohdin salasanani"
@@ -1390,6 +1391,8 @@ fi:
                 title: "Tallennetut tapahtumat"
             EventView: 
                 title: "YouVersion-tapahtuma"
+            SelectLanguage: 
+                choose: "Valitse kieli"
         features: 
             Auth: 
                 errors: 
@@ -1431,7 +1434,7 @@ fi:
                                     desc: "Rakenteet, avainkohdat, keskustelun avaukset... Jaa mitä tahansa tekstipohjaista yleistä sisältöä, joka auttaa osallistujia seuraamaan mukana. Tekstikappaleesi voivat olla kuinka pitkiä tahansa ja ne voivat sisältää myös rikastettua tekstiä."
                                 reference: 
                                     title: "Raamatunviittaus"
-                                    desc: "Valitse mikä tahansa jae tai kappale Raamatusta, linkitettynä suoraan mihin tahansa YouVersionin yli 1200 käännöksestä, yli 900 kielellä. Ihmiset, jotka katselevat tapahtumaasi, voivat napauttaa viittaustasi nähdäkseen sen Raamattusovelluksen lukutilassa, jossa he voivat luoda siitä kirjanmerkin, korostuksen ja paljon muuta."
+                                    desc: "Valitse mikä tahansa raamatun jae tai teksti, joka on sidoksissa suoraan mihin tahansa YouVersionin 1200+ versioon, yli 900 kielellä. Ihmiset jotka näkevät Tapahtumasi voivat näpäyttää viitettäsi nähdäkseen sen Raamattusovelluksessa, missä he voivat mm. kirjanmerkitä sen tai korostaa sitä. "
                                 plan: 
                                     title: "Suunnitelma"
                                     desc: "Linkitä opetuksesi siihen liittyviin lukusuunnitelmiin ja hartauksiin, se auttaa yleisöäsi jatkamaan sitoutumista Jumalan Sanaan koko viikon ajan."
@@ -1443,7 +1446,7 @@ fi:
                                     desc: "Luo painikkeen tapahtumaasi, joka toimii linkkinä mihin tahansa ulkoiseen www-sivuun. Tuo yleisösi vain yhden napautuksen päähän online-lahjoittamisesta, ryhtymisestä vapaaehtoiseksi tai seurakuntien kotisivuista."
                                 announcement: 
                                     title: "Ilmoitukset"
-                                    desc: "Seurakunnan uutiset, tapahtumat, ohjelmat, luennot, vapaaehtoistoiminta ja lähetysmahdollisuudet... Jaa helposti ajankohtaisia, tärkeitä tietoja ilman, että tapahtumasi varsinainen sanoma häiriintyy. Tämä sisältötyyppi mahdollistaa sinun käyttää rikastettua tekstiä, joka näkyy omalla sivullaan tapahtumassasi. Se sopii täydellisesti sisällölle, joka on tärkeää, mutta jonka et halua vievän huomiota tapahtumasi pääviestiltä."
+                                    desc: "Kirkon uutiset, kalenteritapahtumat, ohjelmat, oppitunnit, vapaaehtois- ja lähetystyömahdollisuudet... Ilmoitusmoduulit ovat täydellinen tapa jakaa oikea-aikaisesti tärkeää tietoa, jonka et kuitenkaan halua häiritsevän tapahtumiesi ensisijaista viestiä. Jokainen ilmoitusmoduuli ilmestyy omalle sivulleen tapahtumiisi, ja voit myös sisällyttää siihen rikastuttavaa tekstisisältöä (kuten lihavointia ja kursivointia)."
                             ContentInsertionPoint: 
                                 title: "Lisää seuraava osio tähän"
                             ContentTypeAnnouncement: 
@@ -1473,6 +1476,7 @@ fi:
                                 replace: "Korvaa"
                                 search: "Hae lukusuunnitelmaa"
                             ContentTypeReference: 
+                                language: "Kieli"
                                 version: "Käännös"
                                 book: "Kirja"
                                 chapterVerse: "Kappale:Jae"
@@ -1496,7 +1500,7 @@ fi:
                                 prompt: "Vedä ja pudota kuva"
                                 onlyJpg: "[vain JPG]"
                                 sizePrompt: "leveys %{requiredWidth}px korkeus %{requiredHeight}px"
-                                sizePrompt2: "Kuvasi mittojen tulee olla %{requiredWidth} x {requiredHeight} pikseliä."
+                                sizePrompt2: "Kuvan mittojen tulisi olla %{requiredWidth} x %{requiredHeight} pixeliä."
                                 eventName: "Tapahtuman nimi"
                                 org: "Seurakunta tai organisaatio"
                                 desc: "Tapahtuman kuvaus"
@@ -1560,7 +1564,7 @@ fi:
                         components: 
                             PreviewFeed: 
                                 share: "Jaa tapahtuma"
-                                locations: "Sijainnit ja ajankohdat"
+                                locationsAndTimes: "Sijainnit ja ajankohdat"
                                 publish: "Julkaise"
                                 unpublish: "Poista julkaisu"
                                 locations: "Paikat:"
@@ -1592,6 +1596,7 @@ fi:
                 components: 
                     EventViewContent: 
                         copy: "Kopio"
+                        copied: "Kopioitu"
                         share: "Jaa"
                         read: "Lue"
                         readPlan: "Lue suunnitelma"

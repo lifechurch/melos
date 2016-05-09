@@ -1282,312 +1282,317 @@ vi:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "Báo lỗi!"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "Cần có tiêu đề cho thông báo."
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "Trưng dẫn Kinh Thánh không hợp lệ."
                     events: 
                         google_place_id: 
-                            required: "You must choose a location from the map."
+                            required: "Bạn cần chọn một vị trí từ bản đồ."
                         latitude: 
-                            required: "You must choose a location from the map."
+                            required: "Bạn cần chọn một vị trí từ bản đồ."
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "Thời điểm bắt đầu không thể là quá khứ được."
                         timezone: 
-                            required: "Timezone is required."
+                            required: "Cần có múi giờ."
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "Trưng dẫn Kinh Thánh không hợp lệ."
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "Cần có URL."
                         title: 
-                            required: "URL Label is required."
+                            required: "Cần có nhãn URL."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "Đã phát hành"
                     draft: "Nháp"
                     live: "Trực tiếp"
-                unpublish: "Unpublish"
-                saving: "Saving..."
+                    archived: "Đã lưu trữ"
+                unpublish: "Ngừng phát hành"
+                saving: "Đang lưu..."
                 saveAsDraft: "Lưu vào nháp"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "Sự kiện của tôi"
+                eventBuilder: "TẠO SỰ KIỆN"
                 signOut: "Đăng xuất"
-                createAccount: "Create Account"
+                createAccount: "Tạo tài khoản"
             HtmlEditor: 
-                text: "Text"
+                text: "Văn bản"
                 bold: "In đậm"
                 italic: "In nghiêng"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "Đăng nhập sự kiện"
                 signIn: "Đăng nhập"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Bạn chỉ cần đăng nhập nếu bạn đã là người sử dụng App Kinh Thánh và có tài khoản YouVersion.<br/><br/>Bạn chưa có tài khoản YouVersion? <br/><a href='%{url}'>Hãy đăng ký tại Bible.com</a> để bắt đầu tạo sự kiện."
                 email: "Email"
                 password: "Mật khẩu"
                 forgotPassword: "Quên mật khẩu"
             EventEdit: 
-                event: "Event"
+                event: "Sự kiện"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "Chọn nội dung để bắt đầu."
                 needHelp: "Cần trợ giúp?"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "Nội dung sự kiện"
+                previous: "← Trước: Địa điểm & thời gian"
+                next: "Tiếp: Duyệt trước →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "Chi tiết sự kiện"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "Địa điểm sự kiện"
+                previous: "← Trước: Chi tiết"
+                next: "Tiếp: Thêm nội dung →"
             EventEditPreview: 
-                title: "Event Preview"
-                previous: "← Previous: Content"
+                title: "Duyệt trước sự kiện"
+                previous: "← Trước: Nội dung"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                title: "Chia sẻ sự kiện"
+                subTitle: "Sự kiện của bạn đã được phát hành:"
+                edit: "Sửa sự kiện"
+                go: "Xem sự kiện của bạn"
+                share: "Chia sẻ sự kiện của bạn:"
                 copy: "Sao chép"
-                copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                copied: "Đã chép liên kết vào clipboard của bạn"
+                previous: "← Trước: Duyệt trước"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "Khám phá sự kiện"
                 discover: "Khám phá"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                title: "Sự kiện của tôi"
+                previous: "← Trước"
+                next: "Tiếp →"
+                my: "Sự kiện của tôi"
+                new: "Tạo sự kiện mới"
+                subTitle: "SỰ KIỆN DO TÔI TẠO"
+                newFirst: "Tạo sự kiện đầu tiên của bạn"
+                learn: "Làm thế nào để tạo một sự kiện"
             EventFeedSaved: 
                 title: "Các sự kiện lưu trữ"
             EventView: 
-                title: "YouVersion Event"
+                title: "Sự kiện YouVersion"
+            SelectLanguage: 
+                choose: "Chọn ngôn ngữ của bạn"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    sessionExpired: "Đã hết phiên làm việc. Xin đăng nhập trở lại."
+                    invalidEmail: "Email hoặc mật khẩu không hợp lệ."
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
-                    planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    locationMustHaveTime: "Mỗi địa điểm phải có ít nhất một thời điểm."
+                    locationRequired: "Bạn không thể phát hành một sự kiện không có địa điểm."
+                    contentRequired: "Bạn không thể phát hành một sự kiện không có nội dung."
+                    planSearchFailed: "Không có kết quả tìm kiếm"
+                    noMatchingPlans: "Không có kết quả nào"
                 components: 
                     EventEditNav: 
                         details: "Chi tiết"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        locations: "Địa điểm & thời gian"
+                        content: "Nội dung"
+                        preview: "Duyệt trước & phát hành"
                         share: "Chia sẻ"
                 features: 
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "Sắp xếp lại nội dung"
+                                doneReordering: "Đã sắp xếp xong"
                             ContentHeader: 
-                                text: "Text"
-                                reference: "Bible Reference"
+                                text: "Văn bản"
+                                reference: "Trưng dẫn Kinh Thánh"
                                 plan: "Kế hoạch"
                                 image: "Hình ảnh"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "Liên kết ngoài"
+                                giving: "Dâng hiến"
+                                announcement: "Thông báo"
                             ContentHelpModal: 
-                                types: "Content Types"
-                                learn: "Learn how to make <br>a great Event"
+                                types: "Thể loại nội dung"
+                                learn: "Làm thế nào để tạo <br>một sự kiện hay"
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "Module văn bản"
+                                    desc: "Dàn ý, các điểm chính, câu hỏi thảo luận... Với định dạng văn bản, hãy chia sẻ bất kỳ nội dung tổng quát nào giúp người tham gia theo dõi các diễn biến của sự kiện. Các module văn bản của bạn có thể dài bất kỳ và bao gồm định dạng văn bản giàu."
                                 reference: 
-                                    title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    title: "Module Kinh Thánh trưng dẫn"
+                                    desc: "Chọn bất kỳ câu hay phân đoạn Kinh Thánh nào trên YouVersion, với hơn 1.200 bản dịch thuộc hơn 900 ngôn ngữ . Người xem sự kiện có thể nhấp vào trưng dẫn này để đọc trên App Kinh Thánh, cũng như đánh dấu, tô màu hay ghi chú tùy ý."
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "Module kế hoạch"
+                                    desc: "Liên kết đến các Kế hoạch Kinh Thánh và Tĩnh nguyện có liên quan đến nội dung sự kiện của bạn, giúp người xem tiếp tục tương giao với Lời Chúa trong tuần."
                                 image: 
-                                    title: "Image Module"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    title: "Module hình ảnh"
+                                    desc: "Làm cho sự kiện của bạn sống động với các hình ảnh hỗ trợ: hình nghệ thuật, ảnh chụp, hình ảnh câu Kinh Thánh, v.v.. Người xem có thể dễ dàng chia sẻ các hình ảnh này trên trang mạng xã hội và giúp phổ biến các thông điệp của bạn."
                                 link: 
-                                    title: "External Link Module"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    title: "Module liên kết ngoài"
+                                    desc: "Tạo liên kết với bất kỳ trang mạng nào bên ngoài sự kiện. Giúp người xem nhanh chóng truy cập dâng hiến trực tuyến, đăng ký tình nguyện, hoặc các trang nhà hội thánh."
                                 announcement: 
-                                    title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    title: "Module thông báo"
+                                    desc: "Tin tức hội thánh, các chương trình, sự kiện đặc biệt, các khóa học và cơ hội tình nguyện... Module thông báo hoàn toàn phù hợp để chia sẻ các thông tin quan trọng này, nhưng đừng để chúng làm loãng nội dung chính trong sự kiện của bạn. Mỗi module thông báo sẽ hiển thị trên một trang riêng trong sự kiện của bạn, và có thể định dạng văn bản giàu (như chữ in đậm hoặc in nghiêng)."
                             ContentInsertionPoint: 
-                                title: "Insert next module here"
+                                title: "Chèn module kế tiếp ở đây"
                             ContentTypeAnnouncement: 
                                 title: "Tựa đề"
-                                prompt: "Write something here..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                prompt: "Viết thử ở đây..."
+                                caption: "Trong sự kiện của bạn, chỉ có tiêu đề như trên mới hiển thị. Khi người xem nhấp vào tiêu đề, nội dung dưới đây sẽ hiển thị trên một màn hình khác."
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
-                                lastSaved: "Last saved %{when}"
+                                dirty: "Mỗi khi bạn ngừng đánh máy, nội dung sẽ tự động lưu sau vài giây."
+                                failed: "Không lưu được"
+                                tryAgain: "Thử lại"
+                                lastSaved: "Lưu lần cuối vào %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                    wrongSize: "Kích thước hình phải là %{requiredWidth}x%{requiredHeight}. Hình của bạn là %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Tập tin không hợp lệ. Phải là JPG."
+                                caption: "Thêm phụ đề"
+                                prompt: "Kéo và thả hình vào"
+                                onlyJpg: "[Chỉ dùng JPG]"
+                                sizePrompt: "Rộng %{requiredWidth}px x cao %{requiredHeight}px"
+                                select: "Chọn hình ảnh"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
-                                prompt: "Write something here..."
+                                kindrid: "Nếu bạn đang tìm kiếm một hệ thống dâng hiến đơn giản và thông minh, <a href='%{url}'>hãy thử Kindrid</a>."
+                                label: "Nhãn liên kết"
+                                prompt: "Viết thử ở đây..."
                                 url: "URL"
                             ContentTypePlan: 
-                                replace: "Replace"
-                                search: "Search for a Reading Plan"
+                                replace: "Thay thế"
+                                search: "Tìm kiếm kế hoạch đọc Kinh Thánh"
                             ContentTypeReference: 
+                                language: "Ngôn ngữ"
                                 version: "Bản dịch"
                                 book: "Sách"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "Đoạn: Câu"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "Viết thử ở đây..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "Không thể xóa khi sự kiện đang trực tiếp."
+                                desc: "Một khi sự kiện đã trực tiếp, bạn không thể xóa văn bản, Kinh Thánh trưng dẫn cũng như các module hình ảnh, bởi người xem có thể đã lưu chúng vào ghi chú cá nhân của họ. Dù vậy bạn vẫn có thể chỉnh sửa các module ấy."
                                 ok: "OK"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            generic: "Có vấn đề khi phát hành sự kiện của bạn!"
+                            invalidTimes: "Mỗi buổi nhóm không thể dài hơn 12 tiếng, và khoảng cách giữa thời điểm bắt đầu sớm nhất và thời điểm kết thúc trễ nhất của sự kiện không thể dài hơn 8 ngày. Xin điều chỉnh thời gian của sự kiện và thử lại."
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                    wrongSize: "Kích thước hình phải là %{requiredWidth}x%{requiredHeight}. Hình của bạn là %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Tập tin không hợp lệ. Phải là JPG."
+                                changeImage: "Đổi hình ảnh"
+                                removeImage: "Tháo bỏ hình ảnh"
+                                prompt: "Kéo và thả hình vào"
+                                onlyJpg: "[Chỉ dùng JPG]"
+                                sizePrompt: "Rộng %{requiredWidth}px x cao %{requiredHeight}px"
+                                sizePrompt2: "Hình của bạn nên là %{requiredWidth} x %{requiredHeight} pixel."
+                                eventName: "Tên sự kiện"
+                                org: "Tên hội thánh hoặc tổ chức"
+                                desc: "Mô tả sự kiện"
+                                next: "Tiếp: Thêm địa điểm & thời gian →"
                     location: 
                         components: 
                             Location: 
-                                oneRequired: "Add at least one time."
-                                use: "USE THIS LOCATION"
-                                edit: "Edit Location"
-                                delete: "Delete Location"
+                                oneRequired: "Thêm ít nhất một thời điểm."
+                                use: "SỬ DỤNG ĐỊA ĐIỂM NÀY"
+                                edit: "Sửa địa điểm"
+                                delete: "Xóa địa điểm"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                addPhysical: "Thêm địa chỉ cụ thể"
+                                promptPhysical: "Bạn có thể thêm nhiều địa điểm."
+                                addVirtual: "Thêm địa điểm trực tuyến"
+                                churchOnline: "Bạn có biết... bạn có thể khởi phát một mục vụ trực tuyến với <a className='button-caption' href='%{url}'>Hệ thống Hội thánh Trực tuyến</a>không?"
                             LocationAddTime: 
                                 minutes: "PHÚT"
                                 hours: "GIỜ"
                                 days: "ngày"
                             LocationDeleteModal: 
                                 sure: "Bạn có chắc không?"
-                                selected: "You have selected the following location to be deleted:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                selected: "Bạn vừa chọn xóa địa điểm này:"
+                                warn: "Địa điểm này sẽ được tháo bỏ trong tất cả các sự kiện từ trước giờ. Bạn sẽ không thể tái sử dụng địa điểm này cho các sự kiện trong tương lai."
                                 cancel: "Hủy"
                                 delete: "Xóa"
                             LocationEdit: 
-                                prompt: "Enter the Location address..."
+                                prompt: "Nhập địa chỉ..."
                                 country: "Quốc gia"
                                 timezone: "Múi giờ"
                                 namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                name: "Tên địa điểm"
+                                nameOptional: "Tùy chọn: Thêm nhiều địa điểm sẽ tốt hơn"
+                                addAnother: "Thêm thời gian khác"
                                 cancel: "Hủy"
-                                save: "Save this Location"
+                                save: "Lưu địa điểm này"
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "Chuyển thời gian bắt đầu"
                                 forward: "Chuyển tiếp"
-                                backward: "backward"
+                                backward: "quay lại"
                                 by: "bởi"
-                                week: "week"
-                                weeks: "weeks"
+                                week: "tuần"
+                                weeks: "tuần"
                                 month: "Tháng"
-                                months: "months"
+                                months: "tháng"
                                 day: "Ngày"
                                 days: "ngày"
-                                hour: "hour"
+                                hour: "giờ"
                                 hours: "GIỜ"
                                 update: "Cập nhật"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "Chuyển ngày tháng & thời gian cùng lúc"
                             UnpublishModal: 
                                 cancel: "Hủy"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                title: "Tạm ngừng phát hành để chỉnh sửa"
+                                desc: "Hãy tạm ngừng phát hành sự kiện khi cần bổ sung, chỉnh sửa, hay xóa địa điểm và thời gian. Trong lúc này sự kiện của bạn sẽ không hiển thị trong các kết quả tìm kiếm. Đừng quên phát hành lại sự kiện của bạn!"
+                                unpublish: "Ngừng phát hành"
                     preview: 
                         notes: 
                             prompt: "Thêm ghi chú cá nhân..."
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Đăng nhập</span> để thêm ghi chú cá nhân...</a>"
                         components: 
                             PreviewFeed: 
                                 share: "Chia sẻ sự kiện"
-                                locations: "Địa điểm và thời gian"
+                                locationsAndTimes: "Địa điểm và thời gian"
                                 publish: "Phát hành"
-                                unpublish: "Unpublish"
-                                locations: "Locations:"
+                                unpublish: "Ngừng phát hành"
+                                locations: "Địa điểm:"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "Phát hành từ:"
+                                    desc: "Sự kiện của bạn sẽ hiển thị trong mục Sự kiện của App Kinh Thánh cũng như các kết quả tìm kiếm 5 ngày trước khi sự kiện này bắt đầu."
                                 status: 
                                     title: "Tình trạng ghi chú:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "Tín hiệu TRỰC TIẾP sẽ hiển thị khi sự kiện của bạn bắt đầu."
                                 remove: 
-                                    title: "Remove:"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    title: "Tháo bỏ:"
+                                    desc: "Sự kiện của bạn sẽ không còn hiển thị sau thời điểm kết thúc này. Những ai chọn \"Lưu sự kiện\" khi sự kiện của bạn còn trực tiếp thì sẽ vẫn truy cập được bản lưu trữ của nó thông qua liên kết trả về (inbound link)."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "Mở rộng"
                             PreviewTypePlan: 
                                 read: "Kinh Thánh"
                                 info: "Thông tin kế hoạch"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "Sao lại"
                         share: "Chia sẻ"
                         delete: "Xóa"
                         draft: "Nháp"
                         edit: "Chỉnh sửa"
                         view: "Xem"
-                        fail: "Unable to delete Event"
+                        fail: "Không thể xóa sự kiện"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "Sao chép"
+                        copied: "Đã chép"
                         share: "Chia sẻ"
                         read: "Kinh Thánh"
-                        readPlan: "Read Plan"
+                        readPlan: "Đọc kế hoạch"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Mở rộng"
+                        collapse: "Rút gọn"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Mở rộng"
+                        collapse: "Rút gọn"
                         save: "Lưu lại sự kiện"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "Đăng nhập để lưu sự kiện"
+                        saved: "Đã lưu sự kiện"
