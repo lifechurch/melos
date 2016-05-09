@@ -185,6 +185,8 @@
 	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Dadgyhoeddi",
 	"features.EventEdit.features.preview.notes.prompt": "Ychwanega dy nodiadau preifat...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Mewngofnoda i ychwanegu dy nodiadau preifat</span></a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.review": "Review Your Event Before Publishing",
+	"features.EventEdit.features.preview.components.PreviewFeed.previewUrl": "Preview URL:",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Rhannu Digwyddiad",
 	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Lleoliadau ac Amserau",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Cyhoeddi",

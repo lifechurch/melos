@@ -185,6 +185,8 @@
 	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Belum Dipublikasi",
 	"features.EventEdit.features.preview.notes.prompt": "Tambahkan catatan pribadi Anda...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Masuk</span> untuk menambahkan catatan pribadi Anda…</a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.review": "Review Your Event Before Publishing",
+	"features.EventEdit.features.preview.components.PreviewFeed.previewUrl": "Preview URL:",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Bagikan Acara",
 	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Lokasi dan Waktu",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Publikasi",

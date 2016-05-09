@@ -185,6 +185,8 @@
 	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Unpublish",
 	"features.EventEdit.features.preview.notes.prompt": "أضف ملاحظانك الخاصة...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.review": "Review Your Event Before Publishing",
+	"features.EventEdit.features.preview.components.PreviewFeed.previewUrl": "Preview URL:",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "شارك الحدث",
 	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "مواقع وأوقات",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "انشر",

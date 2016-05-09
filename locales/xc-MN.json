@@ -185,6 +185,8 @@
 	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Нийтийнх бус болгох",
 	"features.EventEdit.features.preview.notes.prompt": "Хувийн тэмдэглэлүүдээ нэмэх",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Хувийн тэмдэглэлүүдээ нэмж оруулахын тулд</span> нэвтэрнэ үү…</a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.review": "Review Your Event Before Publishing",
+	"features.EventEdit.features.preview.components.PreviewFeed.previewUrl": "Preview URL:",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Үйл Явдлыг Хуваалцах",
 	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Байршил болон Цаг хугацаа",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Нийтлэх",

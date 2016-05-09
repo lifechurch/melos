@@ -185,6 +185,8 @@
 	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Hiqe nga publikimi",
 	"features.EventEdit.features.preview.notes.prompt": "Shto shënimet e tua private...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Hyni</span> për të shtuar shënime private…</a>",
+	"features.EventEdit.features.preview.components.PreviewFeed.review": "Review Your Event Before Publishing",
+	"features.EventEdit.features.preview.components.PreviewFeed.previewUrl": "Preview URL:",
 	"features.EventEdit.features.preview.components.PreviewFeed.share": "Shpërndaje Ngjarjen",
 	"features.EventEdit.features.preview.components.PreviewFeed.locationsAndTimes": "Vendndodhjet dhe Oraret",
 	"features.EventEdit.features.preview.components.PreviewFeed.publish": "Publikoje",

@@ -78,8 +78,17 @@ class PreviewSidebar extends Component {
 				break
 		}
 
+		const eventUrlDomain = typeof window !== 'undefined' ? ( window.__ENV__ === 'staging' ? 'staging.bible.com' : 'bible.com' ) : 'bible.com'
+
 		return (
 			<div className='sidebar'>
+				<div className='section section-title'>
+					<FormattedMessage tagName="h3" id="features.EventEdit.features.preview.components.PreviewFeed.review" />
+				</div>
+				<div className='section'>
+					<FormattedMessage tagName="h3" id="features.EventEdit.features.preview.components.PreviewFeed.previewUrl" />
+					<h3 className="right"><a target="_blank" href={`https://${eventUrlDomain}/events/${event.item.id}`}>https://{eventUrlDomain}/events/{event.item.id}</a></h3>
+				</div>
 				<div className='section'>
 					<FormattedMessage tagName="h3" id="features.EventEdit.features.preview.components.PreviewFeed.locations" />
 					<h3 className="right">{location_count}</h3>
