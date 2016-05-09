@@ -168,7 +168,7 @@
 	"features.EventEdit.features.location.components.LocationTimeShifter.shift": "Siirrä alkamisajankohtia",
 	"features.EventEdit.features.location.components.LocationTimeShifter.forward": "Lähetä edelleen",
 	"features.EventEdit.features.location.components.LocationTimeShifter.backward": "taaksepäin",
-	"features.EventEdit.features.location.components.LocationTimeShifter.by": "by",
+	"features.EventEdit.features.location.components.LocationTimeShifter.by": " ",
 	"features.EventEdit.features.location.components.LocationTimeShifter.week": "viikko",
 	"features.EventEdit.features.location.components.LocationTimeShifter.weeks": "viikkoa",
 	"features.EventEdit.features.location.components.LocationTimeShifter.month": "Kuukausi",

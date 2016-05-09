@@ -123,7 +123,7 @@
 	"features.EventEdit.features.content.components.ContentTypeReference.book": "书卷",
 	"features.EventEdit.features.content.components.ContentTypeReference.chapterVerse": "章节",
 	"features.EventEdit.features.content.components.ContentTypeText.prompt": "在这里写几句话……",
-	"features.EventEdit.features.content.components.LiveWarningModal.title": "活动上线时不能���除",
+	"features.EventEdit.features.content.components.LiveWarningModal.title": "活动上线时不能删除",
 	"features.EventEdit.features.content.components.LiveWarningModal.desc": "一旦互动活动上线，你就不能从中删除文字、参考经文和图片等模块，因为用户可能已经给这些模块添加了个人笔记。不过，你能够对这些模块进行编辑。",
 	"features.EventEdit.features.content.components.LiveWarningModal.ok": "OK",
 	"features.EventEdit.features.details.errors.generic": "发布互动活动时出现问题。",

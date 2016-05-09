@@ -96,7 +96,7 @@
 	"features.EventEdit.features.content.components.ContentHelpModal.link.title": "Ενότητα εξωτερικού συνδέσμου",
 	"features.EventEdit.features.content.components.ContentHelpModal.link.desc": "Δημιουργία πλήκτρου μέσω στην εκδήλωσή σας για σύνεση με οποιαδήποτε εξωτερική ιστοσελίδα. Συνδέστε εύκολα τους συμμετέχοντες με την ιστοσελίδα της εκκλησίας σας.",
 	"features.EventEdit.features.content.components.ContentHelpModal.announcement.title": "Ενότητα ανακοινώσεων",
-	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Νέα της εκκλησίας, άλλες εκδηλώσεις, προγράμματα συναθροίσεων, προσκλήσεις συμμετοχής σε διακονίες… Δημοσιοποιήστε εύκολα σημαντικές πληροφορίες χωρίς απόσπαση από το κύριο μήνυμα της εκδήλωσής σας. Κάθε ενότητα ανακοίνωσης εμφανίζεται στη δική της σελίδα στην εκδήλωσή σας, και μπορεί να περιλαμβάνει ακόμη και εμπλουτισμένο κείμενο (όπως έντονους και πλάγιους χαρακτήρες).",
+	"features.EventEdit.features.content.components.ContentHelpModal.announcement.desc": "Νέα της εκκλησίας, άλλες εκδηλώσεις, προγράμματα συναθροίσεων, προσκλήσεις συμμετοχής σε διακονίες… Δημοσιοποιήστε εύκολα σημαντικές πληροφορίες χωρίς απόσπαση από το κύριο μήνυμα της εκδήλωσής σας. Κάθε ενότητα ανακοίνωσης εμφανίζεται στη δική της σελίδα στην εκδήλωσή σας, και μπορεί να περιλαμβάνει ακόμη και εμπλουτισμένο κείμενο (όπως έντονους και πλάγιους χαρακτή��ες).",
 	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "Εισαγωγή επόμενης ενότητας εδώ",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "Τίτλος",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "Γράψτε κάτι εδώ...",
