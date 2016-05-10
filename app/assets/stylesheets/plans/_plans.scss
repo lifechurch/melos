@@ -403,10 +403,6 @@ ul.plan-results {
       float: $default-float;
       width: 49%;
 
-      &.full {
-        width: 100%;
-      }
-
       @media #{$medium-only} {
         float: none;
         width: auto;

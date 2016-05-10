@@ -26,77 +26,69 @@
 - content_for :facebook_meta do
   %meta{property: "og:image", content: fb_image_url}
 
-- if current_auth
-  - if @presenter.reference
-    = render partial: "/references/reader", locals: {presenter: @presenter}
-  - else
-    %article
-      %h1= t('plans.no verses')
-      %p= t('plans.no content')
-- else
-  .sample_devotional
-    .row
-      .medium-8.columns
-        - day           = (params[:day] || 1).to_i
-        - content_page  = (params[:content] || 0).to_i
-        - reading       = @plan.day(day)
-        - references    = reading.references(version_id: @presenter.version)
-        = image_tag @plan.hero_image.url, class: 'rp-hero-img' if @plan.hero_image.present?
-        .rp-plan-box
-          %h1.keep= @plan.name
-          %p.rp-plan-info
-            = "#{t('plans.current progress html', day: @presenter.day, total_days: @plan.total_days)}".html_safe
-            -#= "#{t('plans.day number', day: @presenter.day)}"
-          .rp-plan-about
-            .rp-plan-about-buttons.rp-subscription-info
-              - prev_text = t("plans.previous day") # used in 3 places below
-              - if day > 1
-                = link_to(sample_plan_path(@plan.to_param, day: (day - 1)), {class: "solid-button green", target: "_self", title: prev_text}) do
-                  = prev_text
-              - else
-                = link_to("#", class: "solid-button gray disabled", disabled: true) do
-                  = prev_text
-
-              - next_text = t("plans.next day") # used in 3 places below
-              - if day <= @plan.total_days - 1
-                = link_to(sample_plan_path(@plan.to_param, day: (day + 1)), {class: "solid-button green", target: "_self", title: next_text}) do
-                  = next_text
-              - else
-                = link_to("#", class: "solid-button gray disabled", disabled: true) do
-                  = next_text
-
-            - if @presenter.devotional.nil?
-              %div.bd
-                %p
-                  %b=t("plans.about this plan")
-                %p= @plan.about.html_safe
+.sample_devotional
+  .row
+    .medium-8.columns
+      - day           = (params[:day] || 1).to_i
+      - content_page  = (params[:content] || 0).to_i
+      - reading       = @plan.day(day)
+      - references    = reading.references(version_id: @presenter.version)
+      = image_tag @plan.hero_image.url, class: 'rp-hero-img' if @plan.hero_image.present?
+      .rp-plan-box
+        %h1.keep= @plan.name
+        %p.rp-plan-info
+          = "#{t('plans.current progress html', day: @presenter.day, total_days: @plan.total_days)}".html_safe
+          -#= "#{t('plans.day number', day: @presenter.day)}"
+        .rp-plan-about
+          .rp-plan-about-buttons.rp-subscription-info
+            - prev_text = t("plans.previous day") # used in 3 places below
+            - if day > 1
+              = link_to(sample_plan_path(@plan.to_param, day: (day - 1)), {class: "solid-button green", target: "_self", title: prev_text}) do
+                = prev_text
             - else
-              %div.bd= @presenter.subscription.day(@presenter.day).devotional.html_safe
+              = link_to("#", class: "solid-button gray disabled", disabled: true) do
+                = prev_text
 
-      .medium-4.columns
-        = render partial: "/plans/button", locals: {plan: @plan}
-        %h3.hd
-          = t("plans.read today")
-        .widget.scripture-links
-          %ul.menu.basic
-            - unless references.empty?
-              - references.each_with_index do |ref|
-                %li.content_target
-                  - ref_text = ref.reference.safe_human
-                  = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param), { target: "_self" }
-        - if !@presenter.devotional.nil?
-          %h3.hd
-            =t("plans.about this plan")
-          .bd
-            %p= @plan.about.html_safe
+            - next_text = t("plans.next day") # used in 3 places below
+            - if day <= @plan.total_days - 1
+              = link_to(sample_plan_path(@plan.to_param, day: (day + 1)), {class: "solid-button green", target: "_self", title: next_text}) do
+                = next_text
+            - else
+              = link_to("#", class: "solid-button gray disabled", disabled: true) do
+                = next_text
 
+          - if @presenter.devotional.nil?
+            %div.bd
+              %p
+                %b=t("plans.about this plan")
+              %p= @plan.about.html_safe
+          - else
+            %div.bd= @presenter.subscription.day(@presenter.day).devotional.html_safe
+
+    .medium-4.columns
+      = render partial: "/plans/button", locals: {plan: @plan}
+      %h3.hd
+        = t("plans.read today")
+      .widget.scripture-links
+        %ul.menu.basic
+          - unless references.empty?
+            - references.each_with_index do |ref|
+              %li.content_target
+                - ref_text = ref.reference.safe_human
+                = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param), { target: "_self" }
+      - if !@presenter.devotional.nil?
         %h3.hd
-          =t("plans.publisher")
-        %div.bd
-          %p= @plan.copyright.html_safe
-        - unless @plan.publisher_url.nil?
-          %div.ft.link
-            = link_to(t("plans.about publisher"), @plan.publisher_url, { target: "_self" })
+          =t("plans.about this plan")
+        .bd
+          %p= @plan.about.html_safe
+
+      %h3.hd
+        =t("plans.publisher")
+      %div.bd
+        %p= @plan.copyright.html_safe
+      - unless @plan.publisher_url.nil?
+        %div.ft.link
+          = link_to(t("plans.about publisher"), @plan.publisher_url, { target: "_self" })
 
 
 - # has to be here so that title_link content in ^^ references/reader partial will get overwritten
