@@ -359,7 +359,6 @@ ul.plan-results {
 
 .rp-plan-box {
   border: 1px solid $lightGray;
-  border-top: 0;
   padding: 0 30px 30px;
   -webkit-border-radius:  0 0 5px 5px;
   -moz-border-radius:     0 0 5px 5px;
@@ -389,7 +388,7 @@ ul.plan-results {
   padding: 0 0 15px;
 }
 
-.c_plans.a_show {
+.c_plans.a_show, .c_plans.a_sample {
   .widget {
     @media #{$small-only} {
       margin: 20px 0 0;
@@ -829,6 +828,23 @@ ul.plan-results {
 }
 
 .c_plans.a_sample {
+  h3.hd {
+    margin-top: 25px;
+    border-bottom: solid 1px $lightGray;
+  }
+
+  .bd {
+    p {
+      margin-top: 10px;
+    }
+
+    .video-container {
+      iframe {
+        height: 300px;
+      }
+    }
+  }
+
   .scripture-links {
     font-size: 0.938em;
 
