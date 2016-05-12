@@ -140,6 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Цуглааны эсвэл Байгууллагын Нэр ",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Үйл явдлын Тодорхойлолт",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Дараагийнх: Хаяг & Цагийг Нэмж оруулах →",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Доод тал нь нэг удаа нэмж оруул.",
 	"features.EventEdit.features.location.components.Location.use": "ЭНЭ ХАЯГИЙГ АШИГЛАХ",
 	"features.EventEdit.features.location.components.Location.edit": "Хаягийг Засварлах",

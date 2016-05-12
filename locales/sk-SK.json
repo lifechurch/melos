@@ -140,6 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Názov kostola alebo organizácie",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Opis udalosti",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Nasledujúci: Pridajte miesto a časy →",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Pridajte aspoň jeden čas.",
 	"features.EventEdit.features.location.components.Location.use": "POUŽITE TOTO UMIESTNENIE",
 	"features.EventEdit.features.location.components.Location.edit": "Upravte miesto",

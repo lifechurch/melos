@@ -140,6 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Nazwa kościoła lub organizacji",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Opis wydarzenia",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Dalej: Dodaj lokalizację i czas →",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Dodaj przynajmniej jedną godzinę.",
 	"features.EventEdit.features.location.components.Location.use": "UŻYJ TEJ LOKALIZACJI",
 	"features.EventEdit.features.location.components.Location.edit": "Edytuj lokalizację",

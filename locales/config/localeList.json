@@ -64,14 +64,6 @@
 		"displayName": "Deutsch (Deutschland)"
 	},
 	{
-		"nativeName": "Eesti (Estonia)",
-		"englishName": "Estonian (Estonia)",
-		"locale": "et-EE",
-		"locale2": "et",
-		"locale3": "est",
-		"displayName": "Eesti (Estonia)"
-	},
-	{
 		"nativeName": "English (UK)",
 		"englishName": "English (UK)",
 		"locale": "en-GB",
@@ -152,14 +144,6 @@
 		"displayName": "Latviešu"
 	},
 	{
-		"nativeName": "Lietuvių",
-		"englishName": "Lithuanian",
-		"locale": "lt-LT",
-		"locale2": "lt",
-		"locale3": "lit",
-		"displayName": "Lietuvių"
-	},
-	{
 		"nativeName": "Magyar",
 		"englishName": "Hungarian",
 		"locale": "hu-HU",
@@ -177,11 +161,11 @@
 	},
 	{
 		"englishName": "Norweigan",
-		"nativeName": "Nynorsk",
+		"nativeName": "Norsk",
 		"locale": "no-NO",
 		"locale2": "no",
 		"locale3": "nor",
-		"displayName": "Nynorsk"
+		"displayName": "Norsk"
 	},
 	{
 		"nativeName": "Polski",
@@ -288,12 +272,12 @@
 		"displayName": "Български"
 	},
 	{
-		"nativeName": "Македонски (Македонски)",
-		"englishName": "Macedonian (Macedonian)",
+		"nativeName": "Македонски",
+		"englishName": "Macedonian",
 		"locale": "mk-MK",
 		"locale2": "mk",
 		"locale3": "mkd",
-		"displayName": "Македонски (Македонски)"
+		"displayName": "Македонски"
 	},
 	{
 		"nativeName": "Русский",
@@ -312,14 +296,6 @@
 		"displayName": "Українська"
 	},
 	{
-		"nativeName": "اردو",
-		"englishName": "Urdu",
-		"locale": "ur",
-		"locale2": "ur",
-		"locale3": "urd",
-		"displayName": "اردو"
-	},
-	{
 		"nativeName": "العربية",
 		"englishName": "Arabic",
 		"locale": "ar",
@@ -329,7 +305,7 @@
 	},
 	{
 		"nativeName": "فارسی",
-		"englishName": "Persian",
+		"englishName": "Farsi",
 		"locale": "fa-IR",
 		"locale2": "fa",
 		"locale3": "fas",
@@ -361,7 +337,7 @@
 	},
 	{
 		"nativeName": "ဗမာစကာ",
-		"englishName": "Burmese",
+		"englishName": "Myanmar (Burmese)",
 		"locale": "my",
 		"locale2": "my",
 		"locale3": "mya",
@@ -376,16 +352,16 @@
 		"displayName": "ភាសាខ្មែរ"
 	},
 	{
-		"nativeName": "한국어 (韩国)",
-		"englishName": "Korean (Korea)",
+		"nativeName": "한국어",
+		"englishName": "Korean",
 		"locale": "ko-KR",
 		"locale2": "ko",
 		"locale3": "kor",
-		"displayName": "한국어 (韩国)"
+		"displayName": "한국어"
 	},
 	{
 		"nativeName": "中文（中国）",
-		"englishName": "Chinese Simplified (China)",
+		"englishName": "Chinese Simplified",
 		"locale": "zh-CN",
 		"locale2": "zh",
 		"locale3": "zho",
@@ -393,7 +369,7 @@
 	},
 	{
 		"nativeName": "中文（台灣）",
-		"englishName": "Chinese Traditional (Taiwan)",
+		"englishName": "Chinese Traditional",
 		"locale": "zh-TW",
 		"locale2": "zh",
 		"locale3": "zho",

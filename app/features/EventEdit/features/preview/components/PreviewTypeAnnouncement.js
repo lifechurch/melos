@@ -11,13 +11,13 @@ class PreviewTypeAnnouncement extends Component {
 	}
 
 	render() {
-		const { contentData } = this.props
+		const { contentData, intl } = this.props
 
 		return (
 			<div className='type announcement'>
 				<div className='title'>{contentData.title}</div>
 				<div className='caption' dangerouslySetInnerHTML={{__html: contentData.body}} />
-				<a className='toggle' onClick={::this.toggle}>expand</a>
+				<a className='toggle' onClick={::this.toggle}>{intl.formatMessage({id:"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand"})}</a>
 			</div>
 		)
 	}

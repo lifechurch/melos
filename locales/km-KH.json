@@ -140,6 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Church Name or Organization",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Event Description",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Next: Add Location & Times →",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Add at least one time.",
 	"features.EventEdit.features.location.components.Location.use": "USE THIS LOCATION",
 	"features.EventEdit.features.location.components.Location.edit": "Edit Location",

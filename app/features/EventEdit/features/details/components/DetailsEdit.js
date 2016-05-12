@@ -10,7 +10,7 @@ import Img from '../../../../../../app/components/Image'
 import ErrorMessage from '../../../../../../app/components/ErrorMessage'
 import Dropzone from 'react-dropzone'
 import ActionCreators from '../actions/creators'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 const PREFERRED_IMAGE_WIDTH = 1440
 const PREFERRED_IMAGE_HEIGHT = 810
@@ -156,7 +156,7 @@ class DetailsEdit extends Component {
 
 				<Row>
 					<Column s='medium-12' a='right'>
-						<a disabled={event.errors.hasError} onClick={handleNext}><FormattedMessage id="features.EventEdit.features.details.components.DetailsEdit.next" /></a>
+						<a disabled={event.errors.hasError} onClick={handleNext}><FormattedHTMLMessage id="features.EventEdit.features.details.components.DetailsEdit.next" /></a>
 					</Column>
 				</Row>
 			</form>
