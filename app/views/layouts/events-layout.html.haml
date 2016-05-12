@@ -13,7 +13,7 @@
     %meta{:content => "website", :property => "og:type"}/
     %meta{:content => "Get YouVersion Events", :property => "og:title"}/
     %meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :property => "og:description"}/
-    %meta{:content => "http://www.bible.com/assets/icons/bible/200/en-f0ac504a6807117e869c7c659380c772.png", :property => "og:image"}/
+    %meta{:content => url_for(image_path(localized_bible_icon(200))), :property => "og:image"}/
     %meta{:content => "200", :property => "og:image:width"}/
     %meta{:content => "200", :property => "og:image:height"}/
 
@@ -23,7 +23,7 @@
     %meta{:content => "@youversion", :name => "twitter:site"}/
     %meta{:content => "Get YouVersion Events", :name => "twitter:title"}/
     %meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :name => "twitter:description"}/
-    %meta{:content => "http://www.bible.com/assets/icons/bible/200/en-f0ac504a6807117e869c7c659380c772.png", :name => "twitter:image"}/
+    %meta{:content => url_for(image_path(localized_bible_icon(200))), :name => "twitter:image"}/
 
     %title YouVersion Events
     %link{:href => "/assets/features/events/flexslider.css", :rel => "stylesheet", :type => "text/css"}/
