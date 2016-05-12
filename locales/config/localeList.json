@@ -80,12 +80,12 @@
 		"displayName": "English (US)"
 	},
 	{
-		"nativeName": "Español",
+		"nativeName": "Español (Latinoamérica)",
 		"englishName": "Spanish (Latin America)",
 		"locale": "es-LA",
 		"locale2": "es",
 		"locale3": "spa",
-		"displayName": "Español"
+		"displayName": "Español (Latinoamérica)"
 	},
 	{
 		"nativeName": "Español (España)",
@@ -248,12 +248,12 @@
 		"displayName": "Türkçe"
 	},
 	{
-		"nativeName": "Монгол хэл",
+		"nativeName": "Монгол",
 		"englishName": "Mongolian",
 		"locale": "xc-MN",
 		"locale2": "mn",
 		"locale3": "mon",
-		"displayName": "Монгол хэл"
+		"displayName": "Монгол"
 	},
 	{
 		"nativeName": "Ελληνικά",
@@ -336,12 +336,12 @@
 		"displayName": "ภาษาไทย (ประเทศไทย)"
 	},
 	{
-		"nativeName": "ဗမာစကာ",
+		"nativeName": "မြန်မာ",
 		"englishName": "Myanmar (Burmese)",
 		"locale": "my",
 		"locale2": "my",
 		"locale3": "mya",
-		"displayName": "ဗမာစကာ"
+		"displayName": "မြန်မာ"
 	},
 	{
 		"nativeName": "ភាសាខ្មែរ",
@@ -360,20 +360,20 @@
 		"displayName": "한국어"
 	},
 	{
-		"nativeName": "中文（中国）",
+		"nativeName": "简体中文",
 		"englishName": "Chinese Simplified",
 		"locale": "zh-CN",
 		"locale2": "zh",
 		"locale3": "zho",
-		"displayName": "中文（中国）"
+		"displayName": "简体中文"
 	},
 	{
-		"nativeName": "中文（台灣）",
+		"nativeName": "繁體中文",
 		"englishName": "Chinese Traditional",
 		"locale": "zh-TW",
 		"locale2": "zh",
 		"locale3": "zho",
-		"displayName": "中文（台灣）"
+		"displayName": "繁體中文"
 	},
 	{
 		"nativeName": "日本語",
