@@ -4,6 +4,27 @@
   %head{lang: I18n.locale}
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+
+    / Open Graph Markup for Facebook
+    / (Refer to https://developers.facebook.com/docs/sharing/webmasters)
+    %meta{:content => "105030176203924", :property => "fb:app_id"}/
+    %meta{:content => "https://www.bible.com/events", :property => "og:url"}/
+    %meta{:content => "Bible.com", :property => "og:site_name"}/
+    %meta{:content => "website", :property => "og:type"}/
+    %meta{:content => "Get YouVersion Events", :property => "og:title"}/
+    %meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :property => "og:description"}/
+    %meta{:content => url_for(image_path(localized_bible_icon(200))), :property => "og:image"}/
+    %meta{:content => "200", :property => "og:image:width"}/
+    %meta{:content => "200", :property => "og:image:height"}/
+
+    / Summary Card Markup for Twitter
+    / (Refer to https://dev.twitter.com/cards/types/summary)
+    %meta{:content => "summary", :name => "twitter:card"}/
+    %meta{:content => "@youversion", :name => "twitter:site"}/
+    %meta{:content => "Get YouVersion Events", :name => "twitter:title"}/
+    %meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :name => "twitter:description"}/
+    %meta{:content => url_for(image_path(localized_bible_icon(200))), :name => "twitter:image"}/
+
     %title YouVersion Events
     %link{:href => "/assets/features/events/flexslider.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/assets/features/events/jquery.fullPage.css", :rel => "stylesheet", :type => "text/css"}/
