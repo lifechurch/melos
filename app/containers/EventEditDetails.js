@@ -5,7 +5,6 @@ import ActionCreators from '../features/EventEdit/features/details/actions/creat
 import { injectIntl } from 'react-intl'
 
 class EventEditDetails extends Component {
-
 	handleChange(changeEvent) {
 		const { name, value } = changeEvent.target
 		const { dispatch } = this.props

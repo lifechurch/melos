@@ -12,8 +12,8 @@ export function validateEventDetails(event) {
 		item.content = []
 	}
 
-	const title = intl.formatMessage({id:"features.EventEdit.features.details.components.DetailsEdit.eventName"})
-	const org_name = intl.formatMessage({id:"features.EventEdit.features.details.components.DetailsEdit.org"})
+	const title = "features.EventEdit.features.details.components.DetailsEdit.eventName"
+	const org_name = "features.EventEdit.features.details.components.DetailsEdit.org"
 	const errors = Object.assign({}, originalErrors, isBlank(item, originalErrors, {'title': title , 'org_name': org_name }, 'details'))
 	return Object.assign({}, event, { errors })
 }
