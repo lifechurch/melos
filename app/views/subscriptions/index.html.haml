@@ -26,7 +26,7 @@
                   - if sub.list_image.present?
                     = image_tag sub.list_image.url, class: 'subscription_thumbnail radius'
                   - else
-                    %img{src:'//placehold.it/640x360', class: 'radius'}
+                    %img{src:image_path('plans-hero-640x360.jpg'), class: 'radius'}
               .subscription-info
                 = link_to(subscription_path(user_id: @user.to_param, id: sub, initial: 'true'), class: "subscription-title", target: "_self") do
                   %h3.plan-title
