@@ -238,7 +238,7 @@ ms:
     about: "Darihal"
     blog: "Blog"
     versions link: "Versi"
-    languages link: "Languages"
+    languages link: "Bahasa"
     jobs: "Pekerjaan"
     volunteer: "Jadi Sukarelawan"
     privacy policy: "Polisi Privasi"
@@ -259,7 +259,7 @@ ms:
     filter book: "Pilih Kitab..."
     old testament: "Perjanjian Lama"
     new testament: "Perjanjian Baru"
-    save: "Selamatkan"
+    save: "Simpan"
     cancel: "Batalkan"
     try the beta: "Cubailah versi Beta"
     welcome to the beta: "Selamat datang ke Bible.com!"
@@ -446,7 +446,7 @@ ms:
             highlight field: "Highlight: (pilihan)"
             reference field: "Rujukan:"
             status field: "Status:"
-            save button: "Selamatkan"
+            save button: "Simpan"
         status: 
             private: "Private"
             public: "Awam"
@@ -466,7 +466,7 @@ ms:
         version field: "Versi:"
         title field: "Tajuk:"
         content field: "Kandungan:"
-        save: "Selamatkan"
+        save: "Simpan"
         select from list: "--Pilih--"
         edit note: "Mengedit Nota"
         all notes: "Segala Nota"
@@ -482,7 +482,7 @@ ms:
         pop out: "Pop out"
         none found: "Tiada nota yang tercari..."
         create success: "Berjaya! Nota anda telah disimpan."
-        create failure: "Terjadi kesilapan semasa menyelamatkan nota"
+        create failure: "Terdapat kesilapan semasa menyimpan nota"
         destroy success: "Nota dihapuskan"
         destroy failure: "Terjadi kesilapan semasa menghapuskan nota"
         update success: "Nota telah dikemas kini"
@@ -757,14 +757,14 @@ ms:
         remove label: "Menghapuskan Label"
         all labels: "Tunjuk semua"
         not found: "Bookmark membenarkan anda merujuk pantas ke petikan kegemaran ataupun bab terakhir yang dibaca dalam kitab. Untuk menambah bookmark, pilihilah suatu ayat dalam pembaca Alkitab dan klik butang Terpilih di bahagian atas pembaca."
-        other user not found: "%{username} belum menyelamatkan sebarang bookmark."
+        other user not found: "%{username} belum menyimpan sebarang bookmark."
         creation form errors: "Kesilapan berikut menghalang penciptaan bookmark:"
         create success: "Berjaya! Bookmark anda telah disimpan."
         destroy success: "Bookmark dibatalkan"
         destroy failure: "Terjadi kesilapan semasa membatalkan bookmark"
         update success: "Bookmark sudah diupdate"
         labels placeholder: "Gunakan koma untuk mengasingkan pelbagai label."
-        save: "Selamatkan Bookmark"
+        save: "Simpan Bookmark"
         confirm delete: "Ya, saya pasti"
         loading: "Kini load bookmark anda..."
         edit bookmark: "Mengedit bookmark"
@@ -784,7 +784,7 @@ ms:
             highlight field: "Highlight: (pilihan)"
             colors field: "Warna:"
             update button: "Update Bookmark"
-            save button: "Selamatkan Bookmark"
+            save button: "Simpan Bookmark"
     badges: 
         earned a badge: "Terperolehi Lencana"
         user badges: "Lencana %{user}"
@@ -917,7 +917,7 @@ ms:
         subscribe successful: "Bagus! Anda kini mengikuti pelan ini."
         day number: "Hari %{day}"
         which day in plan: "Hari %{day} dari %{total}"
-        must start to complete: "Mulailah pelan ini dan selamatkan bacaan yang dilengkapi!"
+        must start to complete: "Mulakan pelan ini untuk simpan bacaan yang telah dilengkapkan!"
         invalid reference: "Maaf, satu daripada rujukan Alkitab untuk bacaan ini mungkin tidak terjumpa dalam versi tersebut. Cuba pilih versi yang berbeza di atas. Sekiranya anda terus menerima mesej ini, sila hubungi <a href='%{support_url}' target='_self'>pihak sokongan</a> kami tentang masalah ini."
         sidebar notice: "Anda sedang melihat pelan bacaan."
         completed notice: "Tahniah! Anda sudah melengkapi pelan bacaan anda."
@@ -975,7 +975,7 @@ ms:
         none user: "%{username} tiada highlight"
         choose color: "Pilih Warna"
         create success: "Berjaya! Highlight anda telah disimpan"
-        create failure: "Terjadi kesilapan semasa menyelamatkan highlight"
+        create failure: "Terdapat kesilapan semasa menyimpan highlight"
         destroy success: "Highlight dibatalkan"
         destroy failure: "Terjadi kesilapan semasa membatalkan highlight"
         creation error: "Maaf, tidak dapat highlight."
@@ -1279,3 +1279,323 @@ ms:
         datetime: 
             just now: "baru sahaja"
         verses selected: "ayat-ayat yang dipilih"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Kesilapan telah berlaku"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Tajuk pengumuman diperlukan."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Rujukan Alkitab tidak sah."
+                    events: 
+                        google_place_id: 
+                            required: "Anda mesti memilih lokasi daripada peta."
+                        latitude: 
+                            required: "Anda mesti memilih lokasi daripada peta."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Masa Bermula tidak boleh pada masa lalu."
+                        timezone: 
+                            required: "Zon masa diperlukan."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Rujukan Alkitab tidak sah."
+                url: 
+                    events: 
+                        url: 
+                            required: "URL diperlukan."
+                        title: 
+                            required: "Label URL diperlukan."
+            EventHeader: 
+                status: 
+                    published: "Diberitakan"
+                    draft: "Draf"
+                    live: "Siaran Langsung"
+                    archived: "Diarkibkan"
+                unpublish: "Batal pemberitaan"
+                saving: "Simpan..."
+                saveAsDraft: "Selamatkan sebagai Draf"
+                myEvents: "Acara Saya"
+                eventBuilder: "PEMBINA ACARA"
+                signOut: "Log Keluar"
+                createAccount: "Buat Akaun"
+            HtmlEditor: 
+                text: "Teks"
+                bold: "Bold"
+                italic: "Italic"
+        containers: 
+            Auth: 
+                title: "Log Masuk Acara"
+                signIn: "Log Masuk"
+                subHead1: "Jika anda merupakan pengguna App Alkitab dan telah mempunyai akaun YouVersion, anda boleh log masuk dengan menggunakan nama pengguna dan kata laluan yang sama.<br/><br/>Belum mempunyai akaun YouVersion? <br/><a href='%{url}'>Daftar masuk sekarang di Bible.com</a> untuk mula membuat Acara."
+                email: "E-mel"
+                password: "Kata Laluan"
+                forgotPassword: "Terlupa Kata Laluan"
+            EventEdit: 
+                event: "Acara"
+            EventEditContentContainer: 
+                choose: "Pilih beberapa kandungan untuk bermula."
+                needHelp: "Perlukan Bantuan?"
+                title: "Kandungan Acara"
+                previous: "← Sebelumnya: Lokasi & Masa"
+                next: "Seterusnya: Preview→"
+            EventEditDetails: 
+                title: "Butiran Acara"
+            EventEditLocationContainer: 
+                title: "Lokasi Acara"
+                previous: "← Sebelumnya: Butiran"
+                next: "Seterusnya: Tambah Kandungan →"
+            EventEditPreview: 
+                title: "Preview Acara"
+                previous: "← Sebelumnya: Kandungan"
+            EventEditShare: 
+                title: "Perkongsian Acara"
+                subTitle: "Acara Anda Kini Telah Diberitakan:"
+                edit: "Edit Acara"
+                go: "Acara-Acara Saya"
+                share: "Kongsi acara anda:"
+                copy: "Salin"
+                copied: "Link pendek ini telah disalin ke clipboard anda"
+                previous: "← Sebelumnya: Preview"
+            EventFeedDiscover: 
+                title: "Lihat Acara-Acara"
+                discover: "Menerokai"
+            EventFeedMine: 
+                title: "Acara-Acara Saya"
+                previous: "← Sebelumnya"
+                next: "Seterusnya →"
+                my: "Acara-Acara Saya"
+                new: "Buat Acara Baru"
+                subTitle: "ACARA-ACARA YANG DIBUAT OLEH SAYA"
+                newFirst: "Cipta Acara(Event) Pertama Anda"
+                learn: "Pelajari bagaimana membuat Acara yang hebat"
+            EventFeedSaved: 
+                title: "Acara disimpan"
+            EventView: 
+                title: "Acara YouVersion"
+            SelectLanguage: 
+                choose: "Pilih Bahasa Anda"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Sesi anda telah tamat tempoh. Sila log masuk kembali."
+                    invalidEmail: "E-mel atau kata laluan tidak sah."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Semua lokasi perlu ada sekurang-kurangnya sekali."
+                    locationRequired: "Anda tidak boleh beritakan Acara tanpa lokasi."
+                    contentRequired: "Anda tidak boleh beritakan Acara tanpa kandungan."
+                    planSearchFailed: "Carian tidak padan dengan mana-mana dokumen"
+                    noMatchingPlans: "Tiada Pelan yang sepadan"
+                components: 
+                    EventEditNav: 
+                        details: "Butiran"
+                        locations: "Lokasi & Masa"
+                        content: "Kandungan"
+                        preview: "Preview & Beritakan"
+                        share: "Beritakan"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Kandungan Menyusun Semula"
+                                doneReordering: "Penyusunan Semula telah siap"
+                            ContentHeader: 
+                                text: "Teks"
+                                reference: "Rujukan Alkitab"
+                                plan: "Pelan"
+                                image: "Imej"
+                                link: "Pautan Luar"
+                                giving: "Pautan yang Diberikan"
+                                announcement: "Pengumuman"
+                            ContentHelpModal: 
+                                types: "Jenis Kandungan"
+                                learn: "Pelajari bagaimana membuat <br>Acara yang hebat"
+                                text: 
+                                    title: "Modul Teks"
+                                    desc: "Rangka, kata kunci, soalan perbincangan… Kongsi apa-apa kandungan am berasaskan teks yang akan membantu peserta anda ikut bersama-sama sejajar dengan mesej anda semasa ia berlangsung. Modul teks anda boleh sepanjang mungkin dan boleh termasuk rich text format (rtf)."
+                                reference: 
+                                    title: "Modul Rujukan Alkitab"
+                                    desc: "Pilih mana-mana ayat atau petikan Alkitab, dari antara 1,200+ versi, dalam 900+ bahasa dalam YouVersion. Orang yang lihat Acara anda boleh tap rujukan anda untuk melihatnya dalam App Alkitab mereka, dan mereka boleh Bookmark, Highlight, dan lain-lain lagi."
+                                plan: 
+                                    title: "Modul Pelan"
+                                    desc: "Pautkan ke Pelan Alkitab dan Devosi yang berkaitan dengan arah pengajaran anda, yang membantu pendengar anda untuk terus berhubung dengan Firman Allah sepanjang minggu tersebut."
+                                image: 
+                                    title: "Modul Imej"
+                                    desc: "Hidupkan Acara anda dengan apa sahaja jenis sokongan grafik: seni bersiri, gambar, Imej Ayat etc. Peserta akan dengan mudah dapat berkongsi imej Acara anda ke laman sosial mereka, yang menjadikan mesej anda viral."
+                                link: 
+                                    title: "Modul Pautan Luaran"
+                                    desc: "Ciptakan butang dalam Acara anda yang menghubungkan ke mana-mana laman web luar. Mudahkan peserta anda dengan hanya satu tap untuk memberi sumbangan online, daftar masuk sebagai sukarelawan, atau ke halaman utama gereja."
+                                announcement: 
+                                    title: "Modul Pengumuman"
+                                    desc: "Berita gereja, acara dalam kalendar, program, kelas, sukarelawan dan peluang misi... Modul pengumuman merupakan tempat yang tepat untuk berkongsi info yang penting dan tepat pada waktunya,tanpa mengalihkan perhatian dari mesej utama Acara anda. Setiap modul pengumuman terpapar di halaman sendiri dalam acara anda, malah boleh juga termasuk teks berformat (seperti bold dan italic)."
+                            ContentInsertionPoint: 
+                                title: "Masukkan modul seterusnya di sini"
+                            ContentTypeAnnouncement: 
+                                title: "Tajuk"
+                                prompt: "Tulis sesuatu di sini..."
+                                caption: "Dalam Acara anda, hanya Tajuk anda (di atas) yang akan kelihatan. Apabila pengguna tap Tajuk anda, Isi (di bawah) dipaparkan dalam skrin yang berasingan."
+                            ContentTypeContainer: 
+                                dirty: "Kandungan akan disimpan secara automatik selepas beberapa saat anda berhenti menaip."
+                                failed: "Tidak dapat disimpan."
+                                tryAgain: "Cuba lagi."
+                                lastSaved: "Kali terakhir simpan %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Saiz imej mestilah %{requiredWidth}x%{requiredHeight}. Imej anda ialah %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Jenisfail tidak sah. Jenisfail mestilah JPG."
+                                caption: "Tambah kapsyen"
+                                prompt: "Tarik dan Lepas Imej"
+                                onlyJpg: "[JPG sahaja]"
+                                sizePrompt: "%{requiredWidth}px lebar x %{requiredHeight}px tinggi"
+                                select: "Pilih Imej"
+                            ContentTypeLink: 
+                                kindrid: "Jika anda sedang mencari platform pemberian sumbangan yang cepat dan mudah, <a href='%{url}'> cuba Kindrid</a>."
+                                label: "Label Pautan"
+                                prompt: "Tulis sesuatu di sini..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Ganti"
+                                search: "Cari Pelan Bacaan"
+                            ContentTypeReference: 
+                                language: "Bahasa"
+                                version: "Versi"
+                                book: "Kitab"
+                                chapterVerse: "Bab: Ayat"
+                            ContentTypeText: 
+                                prompt: "Tulis sesuatu di sini..."
+                            LiveWarningModal: 
+                                title: "Tidak Dapat Dipadam Semasa Acara sedang Berlangsung "
+                                desc: "Ketika Acara sedang berlangsung, anda tidak boleh padam modul Teks, Rujukan Alkitab, dan Imej daripadanya kerana pengguna mungkin telah menambah nota peribadi mereka di sana. Walaubagaimanapun, anda boleh edit modul-modul ini."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Terdapat masalah ketika memberitakan Acara anda."
+                            invalidTimes: "Satu pelayanan tidak boleh lebih dari 12 jam, dan perbezaan antara masa bermula terawal dengan masa berhenti terakhir dalam Acara tidak boleh lebih dari 8 hari. Sila aturkan masa Acara anda dan cuba kembali."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Saiz imej mestilah%{requiredWidth}x%{requiredHeight}. Imej anda ialah %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Jenis fail tidak sah. Fail harus dalam bentuk JPG."
+                                changeImage: "Tukar Imej"
+                                removeImage: "Hapus Imej"
+                                prompt: "Tarik dan Lepas Imej"
+                                onlyJpg: "[JPG sahaja]"
+                                sizePrompt: "%{requiredWidth}px lebar x %{requiredHeight}px tinggi"
+                                sizePrompt2: "Dimensi imej anda mestilah %{requiredWidth} x %{requiredHeight} pixel."
+                                eventName: "Nama Acara"
+                                org: "Nama Gereja atau Organisasi"
+                                desc: "Penerangan Acara"
+                                next: "Seterusnya: Tambah Lokasi & Masa →"
+                                blank: "%{field} cannot be blank."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Tambah sekurang-kurangnya sekali."
+                                use: "GUNA LOKASI INI"
+                                edit: "Edit Lokasi"
+                                delete: "Padam Lokasi"
+                            LocationAddButtons: 
+                                addPhysical: "Tambah Lokasi Fizikal"
+                                promptPhysical: "Anda boleh menambah pelbagai lokasi."
+                                addVirtual: "Tambah Lokasi Alam Maya (Virtual)"
+                                churchOnline: "Adakah anda tahu? Anda boleh mengadakan pelayanan online dengan percuma menggunakan <a className='button-caption' href='%{url}'>Platform Online Gereja</a>."
+                            LocationAddTime: 
+                                minutes: "MINIT"
+                                hours: "JAM"
+                                days: "HARI"
+                            LocationDeleteModal: 
+                                sure: "Adakah anda pasti?"
+                                selected: "Anda telah memilih lokasi berikut untuk dipadam:"
+                                warn: "Ini akan menghapus lokasi dari semua acara yang lalu dan terkini. Anda tidak lagi dapat mengguna semula lokasi ini untuk acara akan datang."
+                                cancel: "Batalkan"
+                                delete: "Hapuskan"
+                            LocationEdit: 
+                                prompt: "Masukkan alamat Lokasi..."
+                                country: "Negara"
+                                timezone: "Zon Masa"
+                                namePrompt: "First Baptist Kampus Timur"
+                                name: "Nama Lokasi"
+                                nameOptional: "Pilihan tidak wajib: Berguna jika menambah beberapa lokasi"
+                                addAnother: "Tambah masa lain"
+                                cancel: "Batalkan"
+                                save: "Simpan Lokasi ini"
+                            LocationTimeShifter: 
+                                shift: "Ubah tarikh bermula"
+                                forward: "Forward"
+                                backward: "ke belakang"
+                                by: "oleh"
+                                week: "minggu"
+                                weeks: "minggu"
+                                month: "Bulan"
+                                months: "bulan"
+                                day: "Hari"
+                                days: "HARI"
+                                hour: "jam"
+                                hours: "JAM"
+                                update: "Update"
+                                shiftButton: "Alihkan semua tarikh dan masa sekaligus"
+                            UnpublishModal: 
+                                cancel: "Batalkan"
+                                title: "Batalkan pemberitaan acara untuk Membuat Perubahan"
+                                desc: "Untuk tambah, edit, atau padam Lokasi dan Masa, batalkan pemberitaan acara buat sementara. Pada masa ini, acara anda tidak akan kelihatan dalam hasil carian. Jangan lupa untuk beritakan acara anda kembali."
+                                unpublish: "Batal pemberitaan"
+                    preview: 
+                        notes: 
+                            prompt: "Tambah nota peribadi anda..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Log masuk</span> untuk tambah nota peribadi…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Semak Semula Acara Anda Sebelum Beritakan"
+                                previewUrl: "Preview URL:"
+                                share: "Kongsi Acara"
+                                locationsAndTimes: "Lokasi dan Masa"
+                                publish: "Terbitkan"
+                                unpublish: "Batal pemberitaan"
+                                locations: "Lokasi-lokasi:"
+                                discoverable: 
+                                    title: "Boleh ditemui:"
+                                    desc: "Acara anda akan dapat dilihat dalam lokasi dan hasil carian di Acara App Alkitab 5 hari sebelum masa bermula."
+                                status: 
+                                    title: "Status:"
+                                    desc: "Tanda SECARA LANGSUNG berwarna merah akan dipaparkan ketika masa bermula anda yang paling awal berlangsung."
+                                remove: 
+                                    title: "Hapus:"
+                                    desc: "Acara anda tidak akan dapat dilihat lagi selepas masa tamat terakhir. Peserta yang tap \"Simpan Acara\" ketika Acara anda telah ditemui masih akan mempunyai akses untuk versi yang telah disimpan, Acara ini juga akan terus boleh diakses melalui pautan inbound."
+                            PreviewTypeAnnouncement: 
+                                expand: "Luaskan"
+                            PreviewTypePlan: 
+                                read: "Baca"
+                                info: "Darihal Pelan"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Duplicate"
+                        share: "Beritakan"
+                        delete: "Hapuskan"
+                        draft: "Draf"
+                        edit: "Mengedit"
+                        view: "Kunjungi"
+                        fail: "Tidak dapat padam Acara"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Salin"
+                        copied: "Disalin"
+                        share: "Beritakan"
+                        read: "Baca"
+                        readPlan: "Baca Pelan"
+                    EventViewContentAnnouncement: 
+                        expand: "Luaskan"
+                        collapse: "Hapus"
+                    EventViewDetails: 
+                        expand: "Luaskan"
+                        collapse: "Hapus"
+                        save: "Simpan Acara"
+                        signIn: "Log Masuk untuk Simpan Event"
+                        saved: "Event telah Disimpan"

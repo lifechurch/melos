@@ -23,6 +23,7 @@ module YV
             instance.action_url       ||= ""
             instance.plan_id          = plan_data.extras.plan_id
             instance.body_images      = plan_data.extras.images
+            instance.plan_title       = plan_data.extras.title
 
             # Common moment elements
             instance                  = map_to_user_fields(instance,plan_data.extras.user)

@@ -676,10 +676,13 @@ angular.module('yv.reader', [
 	};
 
     $scope.deselectAll = function() {
-        $scope.readerSelection = [];
-        $scope.readerSelectionText = [];
         $rootScope.$broadcast("ClearVerseSelection");
     };
+
+    $rootScope.$on('ClearVerseSelection', function() {
+        $scope.readerSelection = [];
+        $scope.readerSelectionText = [];
+    });
 
     $scope.nextPlanRef = function(userPlanUrl, dayTarget, token, isFinish) {
         if (!$scope.working) {

@@ -1292,3 +1292,323 @@ tl:
         datetime: 
             just now: "ngayon lamang"
         verses selected: "mga napiling taludtod"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "May pagkakamaling naganap"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Kailangang may pamagat ang patalastas."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Ang sanggunian sa Bibliya ay mali."
+                    events: 
+                        google_place_id: 
+                            required: "Kailangang pumili ng lokasyon mula sa mapa."
+                        latitude: 
+                            required: "Kailangang pumili ng lokasyon mula sa mapa."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Oras ng Simula ay hindi maaaring lumipas na."
+                        timezone: 
+                            required: "Oras na sumasaklaw sa iyong bahagi ng mundo ay kailangang ilagay."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Ang pinagtukuyan sa Biblia ay hindi tama."
+                url: 
+                    events: 
+                        url: 
+                            required: "URL ay kailangan."
+                        title: 
+                            required: "URL Label ay kinakailangan."
+            EventHeader: 
+                status: 
+                    published: "Nakalathala"
+                    draft: "Draft"
+                    live: "Live"
+                    archived: "Archived"
+                unpublish: "Tanggalin sa pagkalathala"
+                saving: "Sine-save..."
+                saveAsDraft: "I-save bilang Draft"
+                myEvents: "Aking Mahahalagang Kaganapan"
+                eventBuilder: "GAWAAN NG KAGANAPAN"
+                signOut: "Mag-sign Out"
+                createAccount: "Gumawa ng Account"
+            HtmlEditor: 
+                text: "Teksto"
+                bold: "Bold"
+                italic: "Italic"
+        containers: 
+            Auth: 
+                title: "Mag-sign in sa Mga Kaganapan"
+                signIn: "Mag-sign In"
+                subHead1: "Kung ikaw ay isang Bible App user at mayroon ka ng YouVersion account, maaari kang mag-sign in gamit ang pareho mong kredensyal.<br/><br/>Wala ka pa bang YouVersion account?<br/><a href='%{url}'>Mag-sign up ngayon sa Bible.com para</a> makapasimulang gumawa ng Mga Kaganapan."
+                email: "Email"
+                password: "Password"
+                forgotPassword: "Nakalimot ng Password"
+            EventEdit: 
+                event: "Kaganapan"
+            EventEditContentContainer: 
+                choose: "Pumili ng ilang nilalaman upang magsimula."
+                needHelp: "Kailangan ng Tulong?"
+                title: "Mga Nilalaman ng Kaganapan"
+                previous: "←Bumalik sa: Lokasyon at mga Oras"
+                next: "Sunod: Preview"
+            EventEditDetails: 
+                title: "Mga Detalye ng Kaganapan"
+            EventEditLocationContainer: 
+                title: "Lokasyon ng Kaganapan"
+                previous: "Bumalik sa: Mga Detalye"
+                next: "Sunod: Dagdagan ang Mga Nilalaman"
+            EventEditPreview: 
+                title: "Preview ng Kaganapan"
+                previous: "Bumalik sa: Mga Nilalaman"
+            EventEditShare: 
+                title: "Ibahagi ang Kaganapan"
+                subTitle: "Nakalathala na ang iyong Kaganapan:"
+                edit: "Baguhin ang Kaganapan"
+                go: "Pumunta sa Aking Mga Kaganapan"
+                share: "Ibahagi sa iba ang iyong kaganapan:"
+                copy: "Kopyahin"
+                copied: "Nakopya mo na ang address na ito"
+                previous: "←Bumalik: sa Preview"
+            EventFeedDiscover: 
+                title: "Tuklasin ang Mga Kaganapan"
+                discover: "Tuklasin"
+            EventFeedMine: 
+                title: "Aking mga Kaganapan"
+                previous: "←Nakaraan"
+                next: "Susunod→"
+                my: "Aking mga Kaganapan"
+                new: "Gumawa ng Bagong Kaganapan"
+                subTitle: "MGA KAGANAPANG GINAWA KO"
+                newFirst: "Gawin Ang Iyong Unang Kaganapan"
+                learn: "Alamin kung paano ang paggawa ng mainam na Kaganapan"
+            EventFeedSaved: 
+                title: "Mga Na-save na Kaganapan"
+            EventView: 
+                title: "Kaganapan ng YouVersion"
+            SelectLanguage: 
+                choose: "Piliin ang Iyong Wika"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Ang iyong sesyon ay lumipas na. Maaring mag-login muli."
+                    invalidEmail: "Maling email o password."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Ang lahat ng lugar ay dapat may isa man lang na oras."
+                    locationRequired: "Hindi maaaring ilathala ang Kaganapan na walang lugar."
+                    contentRequired: "Hindi maaari ilathala ang isang Kaganapan ng walang nilalaman."
+                    planSearchFailed: "Ang paghahanap ay walang katulad sa mga dokumento."
+                    noMatchingPlans: "Walang tugmang Mga Plano"
+                components: 
+                    EventEditNav: 
+                        details: "Mga detalye"
+                        locations: "Lokasyon at Oras"
+                        content: "Mga Nilalaman"
+                        preview: "Siyasatin at Ilathala"
+                        share: "Ibahagi"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Ayusin ang Pagkasunod-sunod ng mga Nilalaman"
+                                doneReordering: "Tapos nang muling Pagsunod-sunorin"
+                            ContentHeader: 
+                                text: "Teksto"
+                                reference: "Sanggunian sa Biblia"
+                                plan: "Babasahin"
+                                image: "Larawan"
+                                link: "Eksternal na Link o Address sa Web"
+                                giving: "Magbigay"
+                                announcement: "Patalastas"
+                            ContentHelpModal: 
+                                types: "Mga Klase ng Nilalaman"
+                                learn: "Pagaralan kung paano gumawa<br>ng pambihirang Kaganapan"
+                                text: 
+                                    title: "Text Module"
+                                    desc: "Mga balangkas, pangunahing kaisipan, mga tanong para sa pagtatalakay...Ibahagi ang kahit na anong nilalaman na teksto para mas masundan ang iyong mensahe ng mga nakikilahok. Ang patlang para sa teksto ay walang limitasyon sa haba, at maaring gamitan ng iba't-ibang estilo, kulay at sukat ng teksto."
+                                reference: 
+                                    title: "Module para sa Sanggunian sa Biblia"
+                                    desc: "Pumili ng kahit anong Bible verse o taludtod, na nakadugtong sa anuman sa 1,200+ YouVersion na mga bersyon, sa 900+ na mga wika. Ang mga taong tumitingin sa iyong Kaganapan ay puwedeng pindutin ang iyong sanggunian para makita nila ito sa kanilang Bible App reader, at mula doon, maari nilang lagyan ito ng Palatandaan, Highlight, at iba pa."
+                                plan: 
+                                    title: "Plan Module"
+                                    desc: "Tukuyin ang mga Plano at Devotional na nauugnay sa iyong itinuturo. Sa gayong paraan matutulungan mo ang iyong mga manlalahok na kumonekta sa Salita ng Diyos sa buong linggo."
+                                image: 
+                                    title: "Image Module"
+                                    desc: "Bigyan ng buhay ang iyong Kaganapan gamit ang kahit na anong imaheng magbibigay linaw dito: mga serye ng larawan, mga larawang may bersikulo, at iba pa. Madaling maipapamahagi ng iyong mga manlalahok ang mga larawang ito sa mga social media, at sa gayon ito ay maikalat sa maraming iba pa."
+                                link: 
+                                    title: "External Link Module"
+                                    desc: "Maglagay ng pindutan na magkokonekta sa kahit na anong Eksternal na website. Sa isang klik lang ang iyong mga manlalahok ay may pagkakataon na magbigay, mag-boluntaryo o puntahan ang website ng inyong iglesya."
+                                announcement: 
+                                    title: "Module para sa Patalastas"
+                                    desc: "Balitang pangsimbahan, kalendaryo ng kaganapan, programa, mga klase, pagkakataong magboluntaryo at magmisyon... Ang mga modules ng patalastas ay ang perpektong paglalagyan para ibahagi ang mga napapanahon at importanteng impormasyon, ngunit hindi makakaharang sa mga pangunahing mensahe ng iyong kaganapan. Ang bawat module ng patalastas ay lumalabas sa sarili nitong pahina sa iyong Kaganapan, at maaaring magsama ng rich text content (tulad ng madiin at pahilig na titik)."
+                            ContentInsertionPoint: 
+                                title: "Ipasok ang sunod na module dito"
+                            ContentTypeAnnouncement: 
+                                title: "Pamagat"
+                                prompt: "Magsulat ng anumang bagay dito..."
+                                caption: "Sa iyong Kaganapan, Pamagat lang (nasa itaas) ang makikita. Kapag ini-klik ang iyong Pamagat, ang Kalahatan (sa ibaba) ay makikita sa hiwalay na screen."
+                            ContentTypeContainer: 
+                                dirty: "Kusang mananatili ang nilalaman ilang segundo pagkahinto mong mag-type."
+                                failed: "Hindi mai-save."
+                                tryAgain: "Subukan ulit."
+                                lastSaved: "Huling ini-save noong %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Ang sukat ng imahe ay dapat %{requiredWidth}x%{requiredHeight}. Ang iyong imahe ay %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Maling uri ng file. Dapat ay JPG."
+                                caption: "Dagdagan ng paliwanag"
+                                prompt: "Hilahin at Ilagay ang Imahe"
+                                onlyJpg: "[JPG lang]"
+                                sizePrompt: "%{requiredWidth}px ang lapad x %{requiredHeight}px ang taas"
+                                select: "Pumili ng Imahe"
+                            ContentTypeLink: 
+                                kindrid: "Kung naghahanap ka ng matalino, simpleng plataporma para magbigay, <a href='%{url}'> subukan ang Kindrid</a>."
+                                label: "Pangalan ng Eksternal na Link o Address sa www"
+                                prompt: "Magsulat ng anumang bagay dito..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Palitan"
+                                search: "Maghanap ng Plano ng Pagbabasa ng Biblia"
+                            ContentTypeReference: 
+                                language: "Wika"
+                                version: "Salin"
+                                book: "Aklat"
+                                chapterVerse: "Kabanata: Bersikulo"
+                            ContentTypeText: 
+                                prompt: "Magsulat ng anumang bagay dito..."
+                            LiveWarningModal: 
+                                title: "Hindi Maaaring Alisin habang Nagaganap ang Kaganapan"
+                                desc: "Kapag umusad na ang isang Kaganapan, hindi na maaaring alisin ang Teksto, Pinagtukuyan sa Biblia, at mga Imahe na inilapat dahil posibleng nalagyan na ng iba ang mga ito ng mga pribadong tala nila. Gayon pa man, maaari mong baguhin ang mga ito."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Nagkaproblema habang nilalathala ang iyong Kaganapan."
+                            invalidTimes: "Ang isang serbisyo ay di maaaring maging mahigit sa 12 oras, at and diperensya sa pagitan ng pinakamaagang oras ng simula at ang pinakabagong oras ng tapos ng Kaganapan ay hindi maaaring humigit sa 8 araw. Maaring isaayos ang iyong oras ng Kaganapan at subukang muli."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Sukat ng imahe ay kinakailangang %{requiredWidth}x%{requiredHeight}. Ang iyong imahe ay may sukat na %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Maling klase ng file. Tatanggapin lang ang JPG."
+                                changeImage: "Palitan ang Imahe"
+                                removeImage: "Tanggalin ang Imahe"
+                                prompt: "Hilahin at Bitawan dito ang iyong Imahe"
+                                onlyJpg: "[JPG lamang]"
+                                sizePrompt: "%{requiredWidth}px lapad x %{requiredHeight}px taas"
+                                sizePrompt2: "Ang sukat ng iyong imahe dapat ay %{requiredWidth} x %{requiredHeight} pixels."
+                                eventName: "Pangalan ng Kaganapan"
+                                org: "Pangalan ng Simbahan o Organisasyon"
+                                desc: "Deskripsyon ng Kaganapan"
+                                next: "Sunod: Idagdag ang mga Lokasyon at Oras"
+                                blank: "%{field} hindi maaaring blangko."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Magdagdag kahit isang beses."
+                                use: "GAMITIN ANG LOKASYON NA ITO"
+                                edit: "Baguhin ang Lokasyon"
+                                delete: "Alisin ang Lokasyon"
+                            LocationAddButtons: 
+                                addPhysical: "Magdagdag ng Pisikal na Lokasyon"
+                                promptPhysical: "Maaaring magdagdag ng maraming lokasyon."
+                                addVirtual: "Idagdag ang Virtual na Lokasyon"
+                                churchOnline: "Alam mo bang? Maaari kang magsimula ng isang ministeryong online nang libre gamit ang <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                            LocationAddTime: 
+                                minutes: "MINUTO"
+                                hours: "ORAS"
+                                days: "ARAW"
+                            LocationDeleteModal: 
+                                sure: "Sigurado ka ba sa gusto mong gawin?"
+                                selected: "Pinili mong alisin ang sumusunod na lokasyon:"
+                                warn: "Maaalis ang lokasyon na ito sa mga nakalipas at kasalukuyang kaganapan. Hindi mo na magagamit ang lokasyon na ito sa mga hinaharap na kaganapan."
+                                cancel: "Itigil"
+                                delete: "Burahin"
+                            LocationEdit: 
+                                prompt: "Ilagay ang address ng lokasyon..."
+                                country: "Bansa"
+                                timezone: "Timezone"
+                                namePrompt: "First Baptist East Campus"
+                                name: "Pangalan ng Lokasyon"
+                                nameOptional: "Opsyonal: Makakatulong sa pagdadagdag ng higit sa isang lokasyon"
+                                addAnother: "Dagdagan ng iba pang oras"
+                                cancel: "Itigil"
+                                save: "I-save ang Lokasyon na ito"
+                            LocationTimeShifter: 
+                                shift: "Palitan ang panimulang petsa"
+                                forward: "Ipasa"
+                                backward: "paatras"
+                                by: "ni"
+                                week: "linggo"
+                                weeks: "mga linggo"
+                                month: "Buwan"
+                                months: "mga buwan"
+                                day: "Araw"
+                                days: "ARAW"
+                                hour: "oras"
+                                hours: "ORAS"
+                                update: "Pagbabago"
+                                shiftButton: "Palitan nang sabay-sabay ang lahat ng petsa at oras"
+                            UnpublishModal: 
+                                cancel: "Itigil"
+                                title: "Itigil ang Paglathala para Mabago"
+                                desc: "Para magdagdag, mag-edit, o magtanggal ng mga Lokasyon at Oras, pansamantalang tanggalin ang pagkalathala ng iyong kaganapan. Sa panahong ito, ang iyong kaganapan ay hindi makikita sa search results. Huwag kalimutang muling ilathala ang iyong kaganapan."
+                                unpublish: "Huwag ilathala"
+                    preview: 
+                        notes: 
+                            prompt: "Idagdag ang iyong mga pribadong tala..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Magsign in</span> para maidagdag ang iyong pribadong mga tala…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Siyasatin muli ang Kaganapan Bago Ilathala"
+                                previewUrl: "Tingnan ang URL:"
+                                share: "Ibahagi ang Kaganapan"
+                                locationsAndTimes: "Mga Lugar at Oras"
+                                publish: "Ilathala"
+                                unpublish: "Huwag ilathala"
+                                locations: "Mga Lokasyon:"
+                                discoverable: 
+                                    title: "Mahahanap: "
+                                    desc: "Ang iyong Kaganapan ay makikita sa Bible App Mga Kaganapan at search results ng Bible App limang araw bago ang pinakamaaga mong pagsisimula."
+                                status: 
+                                    title: "Status ng Tala:"
+                                    desc: "Ang pulang sagisag na LIVE ay makikita na sa pinakamaagang oras na itinalang mag-uumpisa ang iyong kaganapan."
+                                remove: 
+                                    title: "Tanggalin: "
+                                    desc: "Ang iyong Kaganapan ay hindi na makikita pagkatapos ng pinal nitong wakas na oras. Ang mga kalahok na piniling i-save ang iyong Kaganapan nung ito ay nakikita pa, ay patuloy na magkakaroon ng pagkakataon na makita ang naka-rekord na bersyon nito. Ang Kaganapan na ito ay maaring mapuntahan sa pamamagitan ng mga ibibigay na direktang lokasyon sa www."
+                            PreviewTypeAnnouncement: 
+                                expand: "Palawakin"
+                            PreviewTypePlan: 
+                                read: "Basahin"
+                                info: "Tungkol sa Plano"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Kopyahin"
+                        share: "Ibahagi"
+                        delete: "Burahin"
+                        draft: "Draft"
+                        edit: "I-edit"
+                        view: "Tingnan"
+                        fail: "Hindi puwedeng burahin ang Kaganapan"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopyahin"
+                        copied: "Nakopya na"
+                        share: "Ibahagi"
+                        read: "Basahin"
+                        readPlan: "Basahin ang Plano"
+                    EventViewContentAnnouncement: 
+                        expand: "Palawakin"
+                        collapse: "Ibahin"
+                    EventViewDetails: 
+                        expand: "Palawakin"
+                        collapse: "Ibahin"
+                        save: "I-save ang Event"
+                        signIn: "Mag-sign In para Ma-save ang Kaganapan"
+                        saved: "Na-save mo na ang Kaganapan"

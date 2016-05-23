@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-03-11 11:10-0609\n"
-"PO-Revision-Date: 2016-03-11 11:10-0609\n"
+"POT-Creation-Date: 2016-04-11 13:34-0600\n"
+"PO-Revision-Date: 2016-04-11 13:34-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nl <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,8 +20,8 @@ msgstr ""
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-03-22 13:30-0600\n"
-"PO-Revision-Date: 2016-03-22 13:30-0600\n"
+"POT-Creation-Date: 2016-05-02 09:49-0609\n"
+"PO-Revision-Date: 2016-05-02 09:49-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: nl <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -115,7 +115,7 @@ msgid "moment.image.self.title"
 msgstr "Je hebt een Versafbeelding gemaakt voor <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.image.title"
-msgstr "{name} heeft een vers afbeelding gemaakt voor <b>{reference_human} {version_abbreviation}</b>"
+msgstr "{name} heeft een Versafbeelding gemaakt voor <b>{reference_human} {version_abbreviation}</b>"
 
 msgid "moment.note.no_title_no_reference.self.title"
 msgstr "Je maakte een notitie"
@@ -199,7 +199,7 @@ msgid "notifications.comments.moment.mine.highlight"
 msgstr "{name} heeft gereageerd op jouw markering: “{comment}”"
 
 msgid "notifications.comments.moment.mine.image"
-msgstr "{name} heeft gereageerd op jouw vers afbeelding: “{comment}”"
+msgstr "{name} heeft gereageerd op jouw Versafbeelding: “{comment}”"
 
 msgid "notifications.comments.moment.mine.note"
 msgstr "{name} heeft gereageerd op jouw notitie: “{comment}”"
@@ -226,7 +226,7 @@ msgid "notifications.comments.moments.friend.highlight"
 msgstr "{commenter_name} heeft ook gereageerd op de markering van {moment_owner_name}: “{comment}”"
 
 msgid "notifications.comments.moments.friend.image"
-msgstr "{commenter_name} heeft ook gereageerd op {moment_owner_name}'s vers afbeelding: “{comment}”"
+msgstr "{commenter_name} heeft ook gereageerd op {moment_owner_name}'s Versafbeelding: “{comment}”"
 
 msgid "notifications.comments.moments.friend.note"
 msgstr "{commenter_name} heeft ook gereageerd op de notitie van {moment_owner_name}: “{comment}”"
@@ -244,7 +244,7 @@ msgid "notifications.comments.moments.friend.owner.highlight"
 msgstr "{moment_owner_name} heeft ook gereageerd op hun markering: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.image"
-msgstr "{moment_owner_name} heeft ook gereageerd op hun vers afbeelding: “{comment}”"
+msgstr "{moment_owner_name} heeft ook gereageerd op hun Versafbeelding: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.note"
 msgstr "{moment_owner_name} heeft ook gereageerd op hun notitie: “{comment}”"
@@ -253,7 +253,7 @@ msgid "notifications.comments.moments.friend.owner.plan_activity"
 msgstr "{moment_owner_name} heeft ook gereageerd op zijn/haar leesplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.owner.plan_activity.push"
-msgstr "{moment_owner_name} heeft ook gereageerd op zijn/haar Bijbel-leesplan: “{comment}”"
+msgstr "{moment_owner_name} heeft ook gereageerd op zijn/haar leesplan: “{comment}”"
 
 msgid "notifications.comments.moments.friend.plan_activity"
 msgstr "{commenter_name} heeft ook gereageerd op het leesplan van {moment_owner_name}: “{comment}”"
@@ -277,31 +277,31 @@ msgid "notifications.friendships.suggestion"
 msgstr "Wil je vrienden zijn met {name} op YouVersion?"
 
 msgid "notifications.likes.moment.mine.bookmark"
-msgstr "{name} vindt jouw bladwijzer leuk, {reference_human}"
+msgstr "{name} vindt jouw Bladwijzer leuk, {reference_human}"
 
 msgid "notifications.likes.moment.mine.friendship"
 msgstr "{name} vindt jouw nieuwe vriendschap met {friend_name} leuk"
 
 msgid "notifications.likes.moment.mine.highlight"
-msgstr "{name} vindt jouw markering leuk, {reference_human}"
+msgstr "{name} vindt jouw Markering leuk, {reference_human}"
 
 msgid "notifications.likes.moment.mine.image"
 msgstr "{name} vindt je Versafbeelding leuk voor {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.no_title_no_reference"
-msgstr "{name} vindt jouw notitie leuk"
+msgstr "{name} vindt jouw Notitie leuk"
 
 msgid "notifications.likes.moment.mine.note.reference"
-msgstr "{name} vindt jouw notitie leuk op, {reference_human}"
+msgstr "{name} vindt jouw Notitie leuk bij {reference_human}"
 
 msgid "notifications.likes.moment.mine.note.title"
-msgstr "{name} vindt jouw  “{title}” notitie leuk"
+msgstr "{name} vindt jouw “{title}” Notitie leuk"
 
 msgid "notifications.likes.moment.mine.plan_activity"
-msgstr "{name} vindt jouw leesplan voortgang leuk"
+msgstr "{name} vindt jouw Leesplanvoortgang leuk"
 
 msgid "notifications.likes.moment.mine.plan_activity.push"
-msgstr "{name} vindt jouw Bijbel-leesplan voortgang leuk"
+msgstr "{name} vindt jouw Leesplanvoortgang leuk"
 
 msgid "notifications.moments.create.bookmark"
 msgstr "{name} heeft een bladwijzer aangemaakt {reference_human}"
@@ -310,7 +310,7 @@ msgid "notifications.moments.create.highlight"
 msgstr "{name} heeft een markering aangemaakt {reference_human}"
 
 msgid "notifications.moments.create.image"
-msgstr "{name} heeft een vers afbeelding gecreëerd voor {reference_human} "
+msgstr "{name} heeft een Versafbeelding gecreëerd voor {reference_human} "
 
 msgid "notifications.moments.create.note.no_title_no_reference"
 msgstr "{name} heeft een notitie toegevoegd"
@@ -322,10 +322,10 @@ msgid "notifications.moments.create.note.title"
 msgstr "{name} heeft een notitie toegevoegd, “{title}”"
 
 msgid "notifications.moments.create.plan_completion"
-msgstr "{name} heeft zijn/haar leesplan afgerond, {title}"
+msgstr "{name} heeft een leesplan afgerond, {title}"
 
 msgid "notifications.moments.create.plan_completion.push"
-msgstr "{name} heeft zijn/haar Bijbel-leesplan afgerond, {title}"
+msgstr "{name} heeft een leesplan afgerond, {title}"
 
 msgid "notifications.moments.create.plan_subscription"
 msgstr "{name} is een nieuw leesplan begonnen, {title}"

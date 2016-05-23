@@ -1292,3 +1292,323 @@ es:
         datetime: 
             just now: "Justo ahora"
         verses selected: "versículos seleccionados"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Ocurrió un error"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Se requiere título del anuncio."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Referencia bíblica inválida."
+                    events: 
+                        google_place_id: 
+                            required: "Debe elegir una ubicación en el mapa."
+                        latitude: 
+                            required: "Debes de elegir una ubicación en el mapa."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Inicio de hora no puede ser en el pasado."
+                        timezone: 
+                            required: "Se requiere hora de zona."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Referencia bíblica inválida."
+                url: 
+                    events: 
+                        url: 
+                            required: "Se requiere un URL."
+                        title: 
+                            required: "Se requiere el URL"
+            EventHeader: 
+                status: 
+                    published: "Publicado"
+                    draft: "Borrador"
+                    live: "En vivo"
+                    archived: "Archivado"
+                unpublish: "Anular publicación"
+                saving: "Guardando..."
+                saveAsDraft: "Guardar como borrador"
+                myEvents: "Mis Eventos"
+                eventBuilder: "CONSTRUCTOR DE EVENTOS"
+                signOut: "Cerrar sesión"
+                createAccount: "Crear cuenta"
+            HtmlEditor: 
+                text: "Texto"
+                bold: "Negrillas"
+                italic: "Cursiva"
+        containers: 
+            Auth: 
+                title: "Ingresar para eventos"
+                signIn: "Iniciar sesión"
+                subHead1: "Si eres un usuario de la Biblia App y ya tienes una cuenta YouVersion, puedes ingresar usando tus mismas credenciales.No tienes una cuenta YouVersion aún?<a href='%{url}'>Suscribete ahora en Biblia.com para empezar a crear eventos.</a>"
+                email: "Correo electrónico"
+                password: "Contraseña"
+                forgotPassword: "Olvidé contraseña."
+            EventEdit: 
+                event: "Evento"
+            EventEditContentContainer: 
+                choose: "Escoja algún contenido para iniciar."
+                needHelp: "¿Necesita ayuda?"
+                title: "Contenido del evento"
+                previous: "← Anterior: Ubicaciones y horarios"
+                next: "Siguiente: Vista preliminar →"
+            EventEditDetails: 
+                title: "Detalles del evento"
+            EventEditLocationContainer: 
+                title: "Ubicación del evento"
+                previous: "← Anterior: Detalles"
+                next: "Siguiente: Agregar contenido →"
+            EventEditPreview: 
+                title: "Vista preliminar del evento"
+                previous: "← Atrás: Contenido"
+            EventEditShare: 
+                title: "Compartir evento"
+                subTitle: "Su evento ya es publicado:"
+                edit: "Editar Evento"
+                go: "Ir a mis eventos"
+                share: "Compartir su evento"
+                copy: "Copiar"
+                copied: "El enlace corto fue copiado en su porta papeles"
+                previous: "Anterior: Vista Previa"
+            EventFeedDiscover: 
+                title: "Descubrir eventos"
+                discover: "Descubrir"
+            EventFeedMine: 
+                title: "Mis eventos"
+                previous: "← Anterior"
+                next: "Siguiente →"
+                my: "Mis eventos"
+                new: "Crear un nuevo evento"
+                subTitle: "EVENTOS CREADOS POR MÍ"
+                newFirst: "Crear tu primer evento"
+                learn: "Aprender como crear un gran evento"
+            EventFeedSaved: 
+                title: "Eventos guardados"
+            EventView: 
+                title: "Evento de YouVersion "
+            SelectLanguage: 
+                choose: "Seleccionar su Idioma"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Su sesión expiró. Por favor ingrese de nuevo."
+                    invalidEmail: "correo electrónico o contraseña inválidos."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Todas las ubicaciones deben tener al menos una hora."
+                    locationRequired: "No se puede publicar un evento sin una ubicación."
+                    contentRequired: "No se puede publicar un evento sin contenido."
+                    planSearchFailed: "La búsqueda no encontró ningún documento parecido"
+                    noMatchingPlans: "No hay resultados"
+                components: 
+                    EventEditNav: 
+                        details: "Detalles"
+                        locations: "Ubicaciones y horarios"
+                        content: "Contenido"
+                        preview: "Ver forma preliminar y publicar"
+                        share: "Compartir"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Reordenar contenido"
+                                doneReordering: "Reordenación terminada"
+                            ContentHeader: 
+                                text: "Texto"
+                                reference: "Referencia bíblica"
+                                plan: "Plan"
+                                image: "Imagen"
+                                link: "Enlace externo"
+                                giving: "Enlace para donar"
+                                announcement: "Invitación"
+                            ContentHelpModal: 
+                                types: "Tipos de contenido"
+                                learn: "Aprender como hacer <br>un grandioso evento"
+                                text: 
+                                    title: "Módulo de texto"
+                                    desc: "Esquemas de temas, puntos clave, preguntas de discusión … Comparte contenido basado en texto que ayudará a los asistentes a seguir su mensaje en el momento que sucede. Sus módulos de texto pueden ser de cualquier largo e incluir formato. "
+                                reference: 
+                                    title: "Módulo de referencia de Biblia"
+                                    desc: "Selecciona cualquier versículo o pasaje de la Biblia, vinculado directamente a cualquiera de las 1.200+ versiones de YouVersion, en 900+ idiomas. Personas que observen tu evento pueden teclear tu referencia para verla en su lector de la Biblia App, donde pueden marcarlo, sobresaltarlo, y más."
+                                plan: 
+                                    title: "Módulo de plan"
+                                    desc: "Enlace Planes de lectura bíblicos y devocionales que se relacionan con la enseñanza de su evento para ayudar a su audiencia a continuar leyendo la Palabra de Dios esa semana."
+                                image: 
+                                    title: "Módulo de imagen"
+                                    desc: "Déle vida a su evento con cualquier tipo de gráficos: arte, fotos, imágenes de versículos, etc. Los asistentes podrán compartir fácilmente las imágenes de su evento en sus redes sociales, haciendo viral su mensaje. "
+                                link: 
+                                    title: "Módulo de enlace externo"
+                                    desc: "Crea un botón en su evento que se enlaza a cualquier sitio web externo. Permita a su audiencia inscribirse a un voluntariado, donar en línea, o ver sitios web. "
+                                announcement: 
+                                    title: "Módulo de anuncio"
+                                    desc: "Noticias de la Iglesia, calendario de eventos, programas, clases, voluntariado y oportunidades misionales...Módulos de anuncio son el contenedor perfecto para compartir información que es oportuna e importante, pero las cuales no quieres distraer del mensaje principal de tu evento. Cada módulo de anuncio aparece en su propia página en tu evento, y puede incluso tener contenido de texto enriquecido (como negritas e italica)."
+                            ContentInsertionPoint: 
+                                title: "Insertar siguiente módulo de texto aquí"
+                            ContentTypeAnnouncement: 
+                                title: "Título"
+                                prompt: "Escribir algo aquí ..."
+                                caption: "En su evento, sólo su título (arriba) será visible. Cuando un usuario pulsa en el título, el cuerpo (abajo) se muestra en una pantalla separada."
+                            ContentTypeContainer: 
+                                dirty: "El contenido se guardará automáticamente segundos después de dejar de teclear. "
+                                failed: "Incapaz de guardar."
+                                tryAgain: "Trate de nuevo"
+                                lastSaved: "Guardado %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "El tamaño de la imagen debe ser%{requiredWidth}x%{requiredHeight} Tu imagen es %{yourWidth}x%{yourHeight}"
+                                    wrongType: "Tipo de archivo inválido. Debe ser JPG."
+                                caption: "Añadir subtítulo"
+                                prompt: "Arrastrar y soltar una imagen"
+                                onlyJpg: "[JPG solamente]"
+                                sizePrompt: "%{requiredWidth}px ancho x %{requiredHeight}px altura"
+                                select: "Seleccionar una imagen"
+                            ContentTypeLink: 
+                                kindrid: "Si busca una sencilla, inteligente plataforma de entrega, prueba Kindrid. <a href='%{url}'></a>"
+                                label: "Etuiqueta de enlace"
+                                prompt: "Escribe algo aquí..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Reemplazar"
+                                search: "Buscar un plan de lectura"
+                            ContentTypeReference: 
+                                language: "Idioma"
+                                version: "Versión"
+                                book: "Libro"
+                                chapterVerse: "Capítulo:Versículo"
+                            ContentTypeText: 
+                                prompt: "Escribe algo aquí ..."
+                            LiveWarningModal: 
+                                title: "No se puede eliminar mientras este evento esté en vivo"
+                                desc: "Una vez que un evento haya sido en directo, no se pueden eliminar módulos del texto, referencia de la Biblia, ni imagen, porque los usuarios ya pueden haber añadido sus notas privadas a ellos. Sin embargo, puede editar estos módulos."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Hubo un problema al publicar su evento."
+                            invalidTimes: "Un único servicio no puede ser más de 12 horas y la diferencia entre la hora de inicio más temprana y la última hora de finalización de un evento no puede ser más de 8 días. Por favor, ajuste tu horario de los eventos y vuelve a intentarlo."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "El tamaño debe ser %{requiredWidth}x%{requiredHeight}. Su imagen es %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Formato de archivo inválido. Debe ser JPG."
+                                changeImage: "Cambiar imagen"
+                                removeImage: "Remover imagen"
+                                prompt: "Arrastrar y soltar una imagen"
+                                onlyJpg: "[JPG solamente]"
+                                sizePrompt: "%{requiredWidth}px ancho x %{requiredHeight}px alto"
+                                sizePrompt2: "Las dimensiones de tu imagen deben ser %{requiredWidth} x %{requiredHeight} pixels."
+                                eventName: "Nombre del evento"
+                                org: "Nombre de la Iglesia u organización"
+                                desc: "Descripción del evento"
+                                next: "Siguiente: Agregar ubicación y horarios →"
+                                blank: "%{field} no puede quedar vacio."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Agregue por lo menos una hora."
+                                use: "USE ESTA UBICACIÓN"
+                                edit: "Editar ubicación"
+                                delete: "Eliminar ubicación"
+                            LocationAddButtons: 
+                                addPhysical: "Agregar una ubicación física"
+                                promptPhysical: "Puede agregar múltiples ubicaciones."
+                                addVirtual: "Agregar ubicación virtual"
+                                churchOnline: "¿Sabias que? Puedes iniciar un ministerio en línea gratis usando la <a className='button-caption' href='%{url}'>Plataforma en Línea de la Iglesia</a>."
+                            LocationAddTime: 
+                                minutes: "minutos"
+                                hours: "horas"
+                                days: "Días"
+                            LocationDeleteModal: 
+                                sure: "¿Está seguro?"
+                                selected: "Ha seleccionado la siguiente ubicación, desea eliminarla?"
+                                warn: "Esto eliminará la ubicación y todos los eventos pasados y presentes. Usted no podra volver a utilizar esta ubicación para eventos futuros."
+                                cancel: "Cancelar"
+                                delete: "Eliminar"
+                            LocationEdit: 
+                                prompt: "Introducir la dirección de su ubicación ..."
+                                country: "País"
+                                timezone: "Zona horaria"
+                                namePrompt: "Primer Bautista Campus del Este"
+                                name: "Nombre de la ubicación"
+                                nameOptional: "Opcional: Útil si se agregan múltiples ubicaciones"
+                                addAnother: "Agregar otro horario"
+                                cancel: "Cancelar"
+                                save: "Guardar esta ubicación"
+                            LocationTimeShifter: 
+                                shift: "Cambiar la fecha de inicio"
+                                forward: "Adelante"
+                                backward: "hacia atrás"
+                                by: "por"
+                                week: "Semana"
+                                weeks: "Semanas"
+                                month: "Mes"
+                                months: "Meses"
+                                day: "Día"
+                                days: "días"
+                                hour: "hora"
+                                hours: "horas"
+                                update: "Actualizar"
+                                shiftButton: "Cambiar todas las fechas y horarios de una vez"
+                            UnpublishModal: 
+                                cancel: "Cancelar"
+                                title: "Anular publicación para hacer cambios"
+                                desc: "Para añadir, editar o eliminar los lugares y horarios, anular temporalmente la publicación del evento. Durante este tiempo, tu evento no será visible en los resultados de búsqueda. No te olvides de publicar tu nuevo evento."
+                                unpublish: "Anular publicación"
+                    preview: 
+                        notes: 
+                            prompt: "Agregar tus notas privadas…"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Inicia sesión para añadir tus notas privadas ...</span></a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Revisa tu evento antes de publicarlo"
+                                previewUrl: "URL vista previa:"
+                                share: "Compartir evento"
+                                locationsAndTimes: "Lugares y horarios"
+                                publish: "Publicar"
+                                unpublish: "Anular publicación"
+                                locations: "Ubicaciones:"
+                                discoverable: 
+                                    title: "Visible:"
+                                    desc: "Su evento será visible en Localización de Evento en la Biblia App, y en resultados de búsqueda 5 días antes del comienzo de su evento. "
+                                status: 
+                                    title: "Estado:"
+                                    desc: "La insignia roja EN VIVO indicará su hora de comienzo. "
+                                remove: 
+                                    title: "Eliminar:"
+                                    desc: "Al finalizar, el evento ya no será visible. Los asistentes que seleccionaron \"Guardar Evento\" cuando aún era visible podrán ver una versión archivada de él. Este evento continuará siendo accesible a través de enlaces directos. "
+                            PreviewTypeAnnouncement: 
+                                expand: "Expandir"
+                            PreviewTypePlan: 
+                                read: "Leer"
+                                info: "Información del plan"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Duplicar"
+                        share: "Compartir"
+                        delete: "Eliminar"
+                        draft: "Borrador"
+                        edit: "Editar"
+                        view: "Ver"
+                        fail: "No se puede eliminar el evento"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Copiar"
+                        copied: "Copiado"
+                        share: "Compartir"
+                        read: "Leer"
+                        readPlan: "Leer plan"
+                    EventViewContentAnnouncement: 
+                        expand: "Expandir"
+                        collapse: "Plegar"
+                    EventViewDetails: 
+                        expand: "Expandir"
+                        collapse: "Plegar"
+                        save: "Guardar evento"
+                        signIn: "Iniciar sesión para guardar el evento"
+                        saved: "Evento guardado"

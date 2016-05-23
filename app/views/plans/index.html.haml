@@ -52,7 +52,7 @@
                     - if plan.list_image.present?
                       = image_tag plan.list_image.url, class: 'subscription_thumbnail radius'
                     - else
-                      %img{src:'//placehold.it/640x360', class: 'radius'}
+                      %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
                   .subscription-info
                     %h3.plan-title
                       =plan.name
@@ -114,7 +114,7 @@
                   - if plan.list_image.present?
                     = image_tag plan.small_thumbnail_image.url, class: 'subscription_thumbnail radius'
                   - else
-                    %img{src:'//placehold.it/80x80', class: 'radius'}
+                    %img{src:image_path('plans-hero-80.png'), class: 'radius'}
                 %div
                   %h3.plan-title= plan.name
                   %p.plan-length= plan.formatted_length

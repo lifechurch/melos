@@ -353,7 +353,7 @@ hr:
         likes count 3 or more: "%{likes_count} više"
         users like this: "Korisnicima %{last_liker_link} i %{more_link} se ovo sviđa"
         like: "Sviđa mi se"
-        likes: "Lajkovi"
+        likes: "Sviđa mi se"
         more than one like: 
         vod: 
             title: "Stih dana"
@@ -389,7 +389,7 @@ hr:
             edit highlight title: "Izmjeni istaknuto"
             edit bookmark title: "Izmjeni oznaku"
             edit note title: "Izmjeni bilješku"
-            edit subscription: "Izmjeni pretplatu"
+            edit subscription: "Izmijeni pretplatu"
             delete: "Obriši"
             delete confirm: "Sigurno?"
             delete highlight title: "Obriši istaknuto"
@@ -510,10 +510,10 @@ hr:
         delete: "Obriši ovu bilješku"
         confirm delete: "Da, sigurno"
         write new: "Kreiraj novu bilješku"
-        not found: "YouVersion ti dopušta da pridružiš video, zvuk, slike, tekst i linkove na druge web stranice sa bilo kojim retkom ili slijedom redaka Biblije. To je način da sudjeluješ u YouVersion zajednici dijeleći ono što naučiš i ono o čemu razmišljaš tijekom svog angažmana u Svetom Pismu. Počni sada odabirom redaka u čitaču Biblije i dodavanjem svojih bilješki. Tako jednostavno."
+        not found: "YouVersion ti dopušta pridružiti video, zvuk, slike, tekst i linkove na druge web stranice s bilo kojim retkom ili slijedom redaka Biblije. To je način da sudjeluješ u YouVersion zajednici dijeleći ono što naučiš i ono o čemu razmišljaš tijekom svog angažmana u Svetom Pismu. Počni sada odabirom redaka u čitaču Biblije i dodavanjem svojih bilješki. Tako jednostavno."
         cancel: "Otkaži"
         pop out: "Pop out"
-        none found: "Nema bilješki..."
+        none found: "Bilješke nisu pronađene..."
         create success: "Bravo! Bilješka je spremljena."
         create failure: "Greška kod spremanja bilješke"
         destroy success: "Bilješka je obrisana"
@@ -751,11 +751,11 @@ hr:
             picture_too_large: "Slika treba zauzimati manje od 1 megabajta"
             transfer_too_slow: "Odaberi manju sliku ili nađi bržu vezu"
             picture_invalid_type: "Slika treba biti u JPG, PNG ili GIF formatu"
-            picture_creation form errors: "Slijedeća greška(e) sprječavaju ažuriraju slike:"
+            picture_creation form errors: "Sljedeća greška(e) sprječavaju ažuriraju slike:"
             updated picture: "Bravo! Ažurirana je slika profila. Ažuriranje avatara može potrajati nekoliko minuta."
             updated notifications: "Bravo! Postavke obavijesti su uspješno ažurirane."
             notifications token error: "Simbol nije ispravan, molimo prijavi se i izmjeni postavke obavijesti."
-            notification errors: "Slijedeće greške su onemogućile ažuriranje tvojih obavijesti:"
+            notification errors: "Sljedeće greške su onemogućile ažuriranje tvojih obavijesti:"
             edit: "Izmjeni"
             bio: "Životopis"
             complete_first_last: "Dovrši profil tako da popuniš ime i prezime"
@@ -778,7 +778,7 @@ hr:
             likes: "Obavijesti me o sviđanjima moje aktivnosti"
     bookmarks: 
         new: "Nova oznaka"
-        edit: "Izmjeni"
+        edit: "Izmijeni"
         delete: "Obriši oznaku"
         title field: "Naslov"
         title field field: "Naslov:"
@@ -791,7 +791,7 @@ hr:
         all labels: "Prikaži sve"
         not found: "Oznake mogu poslužiti kao vodič do omiljenih stihova ili do zadnjeg pročitanog poglavlja u određenoj knjizi. Za dodavanje oznake, označi stih u čitaču Biblije pa klikni na gumbić na vrhu čitača."
         other user not found: "%{username} još nije spremio nijednu oznaku."
-        creation form errors: "Slijedeća pogreška(e) su spriječile kreiranje oznake:"
+        creation form errors: "Sljedeća pogreška(e) su spriječile kreiranje oznake:"
         create success: "Bravo! Oznaka je spremljena."
         destroy success: "Oznaka je maknuta"
         destroy failure: "Došlo je do pogreške prilikom brisanja oznake"
@@ -937,7 +937,7 @@ hr:
         delivery version: "Verzija isporuke:"
         add members placeholder: "Ime YouVersion člana"
         add member: "Dodaj"
-        email edit: "Izmjeni"
+        email edit: "Izmijeni"
         unsubscribe successful: "Otkazana je pretplata na ovaj plan."
         already subscribed: "Već je izabran ovaj plan čitanja!"
         partner added successful: "Odlično! Korisnik %{username} je dodan u odgovornost plana."
@@ -1058,7 +1058,7 @@ hr:
         city: "Grad"
         state: "Država"
         zip: "Poštanski broj"
-        creation form errors: "Slijedeća pogreška(e) su onemogućile donaciju:"
+        creation form errors: "Sljedeća pogreška(e) su onemogućile donaciju:"
     download ad: 
         title: "Preuzmi besplatnu aplikaciju Biblija"
         description copy: "Stotine prijevoda Biblije na %{language_count} i više različitih jezika - Biblja koja s tobom ide bilo kuda."
@@ -1318,3 +1318,323 @@ hr:
         datetime: 
             just now: "Upravo sad"
         verses selected: "označeni stihovi"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Došlo je do greške"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Potrebno je upisati naslov najave."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Poveznica na Bibliju nije valjana."
+                    events: 
+                        google_place_id: 
+                            required: "Moraš odabrati lokaciju s karte."
+                        latitude: 
+                            required: "Moraš odabrati lokaciju s karte."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Vrijeme početka ne može biti vrijeme u prošlosti."
+                        timezone: 
+                            required: "Potrebna je vremenska zona."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Poveznica na Bibliju nije važeća."
+                url: 
+                    events: 
+                        url: 
+                            required: "Potreban je URL."
+                        title: 
+                            required: "Potrebna je URL oznaka."
+            EventHeader: 
+                status: 
+                    published: "Objavljeno"
+                    draft: "Skica"
+                    live: "Uživo"
+                    archived: "Arhivirano"
+                unpublish: "Poništi objavu"
+                saving: "Spremanje..."
+                saveAsDraft: "Spremi kao skicu"
+                myEvents: "Moji Događaji"
+                eventBuilder: "IZRADA DOGAĐAJA"
+                signOut: "Odjavi se"
+                createAccount: "Stvori račun"
+            HtmlEditor: 
+                text: "Tekst"
+                bold: "Podebljano"
+                italic: "Kurziv"
+        containers: 
+            Auth: 
+                title: "Događaji prijava"
+                signIn: "Prijavi se"
+                subHead1: "Ako si korisnik aplikacije Biblija i već imaš YouVersion račun, možeš se prijaviti s istim podacima.<br/><br/>Još nemaš YouVersion račun?<br/><a href='%{url}'>Registriraj se na Bible.com</a> za kreiranje Događaja."
+                email: "Email"
+                password: "Lozinka"
+                forgotPassword: "Zaboravljena zaporka"
+            EventEdit: 
+                event: "Događaj"
+            EventEditContentContainer: 
+                choose: "Za početak odaberi neki sadržaj."
+                needHelp: "Trebaš pomoć?"
+                title: "Sadržaj Događaja"
+                previous: "Prethodno: Lokacije i termini"
+                next: "Sljedeće: Pregledaj"
+            EventEditDetails: 
+                title: "Detalji Događaja"
+            EventEditLocationContainer: 
+                title: "Lokacija događaja"
+                previous: "Prethodno: Pojedinosti"
+                next: "Sljedeće: Sadržaj"
+            EventEditPreview: 
+                title: "Pregled Događaja"
+                previous: "Prethodno: Sadržaj"
+            EventEditShare: 
+                title: "Dijeljenje događaja"
+                subTitle: "Tvoj Događaj je sada objavljen:"
+                edit: "Uredi Događaj"
+                go: "Idi na moje Događaje"
+                share: "Podijeli svoj događaj:"
+                copy: "Kopiraj"
+                copied: "Kratka je poveznica kopirana u međuspremnik"
+                previous: "Prethodno: Pregled"
+            EventFeedDiscover: 
+                title: "Otkrij Događaje"
+                discover: "Otkrij"
+            EventFeedMine: 
+                title: "Moji Događaji"
+                previous: "Prethodno"
+                next: "Sljedeće"
+                my: "Moji Događaji"
+                new: "Stvori novi Događaj"
+                subTitle: "DOGAĐAJI KOJE SAM JA STVORIO/LA"
+                newFirst: "Kreiraj svoj prvi Događaj"
+                learn: "Nauči kako izraditi odličan Događaj"
+            EventFeedSaved: 
+                title: "Spremljeni Događaji"
+            EventView: 
+                title: "YouVersion Događaj"
+            SelectLanguage: 
+                choose: "Odaberi jezik"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Tvoja je sesija istekla. Molimo te da se prijaviš ponovno."
+                    invalidEmail: "Nevažeća e-adresa ili lozinka."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Sve lokacije moraju imati barem jedan termin."
+                    locationRequired: "Ne možeš objaviti događaj bez lokacija."
+                    contentRequired: "Nije moguće objaviti događaj bez sadržaja."
+                    planSearchFailed: "Potraga nije pronašla željene dokumente"
+                    noMatchingPlans: "Nema planova koji se podudaraju."
+                components: 
+                    EventEditNav: 
+                        details: "Pojedinosti"
+                        locations: "Lokacije i termini"
+                        content: "Sadržaj"
+                        preview: "Pregledaj i objavi"
+                        share: "Podijeli"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Promijeni redoslijed sadržaja"
+                                doneReordering: "Promjena redoslijeda je gotova."
+                            ContentHeader: 
+                                text: "Tekst"
+                                reference: "Poveznica na Bibliju"
+                                plan: "Plan"
+                                image: "Slika"
+                                link: "Vanjski link"
+                                giving: "Link za donacije"
+                                announcement: "Objava"
+                            ContentHelpModal: 
+                                types: "Vrste sadržaja"
+                                learn: "Nauči kako izraditi <br>odličan događaj"
+                                text: 
+                                    title: "Modul teksta"
+                                    desc: "Osnove, ključne točke, pitanja za raspravljanje… Podijeli bilo koji opći sadržaj koji se temelji na tekstu koji će pomoći tvojim sudionicima da slijede poruku dok se ona događa. Tvoji moduli teksta mogu biti dugi koliko želiš i mogu uključivati bogato oblikovanje teksta."
+                                reference: 
+                                    title: "Modul poveznica na Bibliju"
+                                    desc: "Odaberi bilo koji stih ili redak iz Biblije koji je izravno povezan s nekom od više od 1,200 inačica na više od 900 jezika. Ljudi koji gledaju tvoj događaj mogu dodirnuti referencu da bi je vidjeli u njihovom čitaču u aplikaciji Biblija. Tamo je mogu označiti, istaknuti i dr."
+                                plan: 
+                                    title: "Modul plana"
+                                    desc: "Poveži planove čitanja i nadahnute tekstove koji se odnose na tvoje teme poučavanja, pomažući tako tvojoj publici da čitav tjedan nastavi biti u doticaju s Božjom riječi."
+                                image: 
+                                    title: "Modul slike"
+                                    desc: "Dodaj živosti svojim Događajima upotpunjujući ih odgovarajućom grafikom, serijom umjetnina, fotografija, slikama sa stihovima, itd. Polaznici Događaja će tako lakše moći podijeliti tvoje slike iz Događaja na njihovim društvenim mrežama, šaljući tvoju poruku u svijet."
+                                link: 
+                                    title: "Modul vanjske poveznice"
+                                    desc: "Stvara gumb unutar tvojeg događaja koji vodi na odabranu web stranicu. Neka publika bude samo jedan dodir udaljena od online doniranja, registracije volontera ili stranica crkava."
+                                announcement: 
+                                    title: "Modul najave"
+                                    desc: "Vijesti iz Crkve, kalendari događaja, programi, tečajevi, volonteri i misijske mogućnosti... Moduli najavljivanja su odličan spremnik pomoću kojeg možeš dijeliti informacije koje su bitne i periodične, kada se ne želiš odvojiti od svoje izvorne poruke Događaja. Svaki modul najavljivanja se pojavljuje na svojoj vlastitoj stranici u tvojim Događajima, i može čak uključivati bogate značajke teksta (kao što su podebljana ili kosa slova)."
+                            ContentInsertionPoint: 
+                                title: "Ovdje unesi sljedeći modul"
+                            ContentTypeAnnouncement: 
+                                title: "Naslov"
+                                prompt: "Ovdje nešto napiši."
+                                caption: "U tvojem će događaju samo naslov biti vidljiv. Kada korisnik dodirne tvoj naslov opis se prikazuje na odvojenom zaslonu."
+                            ContentTypeContainer: 
+                                dirty: "Sadržaj će se automatski spremiti nekoliko sekundi nakon što prestaneš pisati."
+                                failed: "Spremanje nije moguće."
+                                tryAgain: "Pokušaj ponovno."
+                                lastSaved: "Posljednji put spremljeno %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Veličina slike mora biti %{requiredWidth}x%{requiredHeight} Tvoja slika je %{yourWidth}x%{yourHeight}"
+                                    wrongType: "Nevažeća vrsta datoteke. Vrsta datoteke mora biti JPG."
+                                caption: "Dodaj naslov"
+                                prompt: "Povuci i ispusti sliku."
+                                onlyJpg: "[Samo JPG]"
+                                sizePrompt: "%{requiredWidth}px širina x %{requiredHeight}px visina"
+                                select: "Odaberi sliku"
+                            ContentTypeLink: 
+                                kindrid: "Tražiš li pametne, jednostavne platforme za doniranje, <a href='%{url}'>probaj Kindrid.</a>."
+                                label: "Oznaka poveznice"
+                                prompt: "Ovdje nešto napiši..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Zamijeni"
+                                search: "Pretraži planove čitanja"
+                            ContentTypeReference: 
+                                language: "Jezik"
+                                version: "Verzija"
+                                book: "Knjiga"
+                                chapterVerse: "Poglavlje: stih"
+                            ContentTypeText: 
+                                prompt: "Ovdje nešto napiši..."
+                            LiveWarningModal: 
+                                title: "Brisanje nije moguće dok se događaj odvija uživo."
+                                desc: "Kada se događaj krene emitirati uživo ne možeš obrisati tekst, biblijsku referencu i module slike toga događaja jer korisnici na njih već mogu dodati svoje privatne bilješke. Međutim možeš uređivati te module."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Došlo je do problema prilikom objavljivanja tvojeg Događaja."
+                            invalidTimes: "Pojedina služba ne može trajati dulje od 12 sati, a razlika između vremena najranijeg početka i najkasnijeg završetka u Događajima ne može trajati dulje od 8 dana. Molimo, prilagodi vrijeme u Događajima i pokušaj ponovno."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Veličina slike mora biti %{requiredWidth}x%{requiredHeight}. Veličina tvoje slike je %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Pogrešna vrsta datoteke. Treba biti JPG."
+                                changeImage: "Promijeni sliku"
+                                removeImage: "Ukloni sliku"
+                                prompt: "Povuci i ispusti sliku"
+                                onlyJpg: "[samo JPG format]"
+                                sizePrompt: "%{requiredWidth}px širina x %{requiredHeight}px visina"
+                                sizePrompt2: "Dimenzije tvoje slike moraju biti %{requiredWidth} x %{requiredHeight} piksela."
+                                eventName: "Ime Događaja"
+                                org: "Ime crkve ili organizacije"
+                                desc: "Opis Događaja"
+                                next: "Sljedeće: Dodaj lokaciju i termine"
+                                blank: "Polje \"%{field}\" ne može biti prazno."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Dodaj barem jedan termin."
+                                use: "UPOTRIJEBI OVU LOKACIJU"
+                                edit: "Uredi lokaciju"
+                                delete: "Obriši lokaciju"
+                            LocationAddButtons: 
+                                addPhysical: "Dodaj fizičku lokaciju"
+                                promptPhysical: "Možeš dodati više lokacija."
+                                addVirtual: "Dodaj virtualnu lokaciju"
+                                churchOnline: "Znaš li? Možeš besplatno pokrenuti online službu koristeći <a className='button-caption' href='%{url}'>Church Online platformu</a>."
+                            LocationAddTime: 
+                                minutes: "minuta"
+                                hours: "sati"
+                                days: "DANA"
+                            LocationDeleteModal: 
+                                sure: "Sigurno?"
+                                selected: "Za brisanje si odabrao sljedeću lokaciju:"
+                                warn: "Ovime ćeš ukloniti sve lokacije svih prošlih i sadašnjih događaja. Ovu lokaciju nećeš moći više koristiti za buduće događaje."
+                                cancel: "Otkaži"
+                                delete: "Obriši"
+                            LocationEdit: 
+                                prompt: "Unesi adresu lokacije..."
+                                country: "Država"
+                                timezone: "Vremenska zona"
+                                namePrompt: "Prvi kršćanski kampus"
+                                name: "Naziv lokacije"
+                                nameOptional: "Neobvezno: korisno ako dodaješ više lokacija."
+                                addAnother: "Dodaj drugi termin"
+                                cancel: "Otkaži"
+                                save: "Spremi ovu lokaciju"
+                            LocationTimeShifter: 
+                                shift: "Pomakni datum početka"
+                                forward: "Proslijedi"
+                                backward: "natrag"
+                                by: "za"
+                                week: "tjedan"
+                                weeks: "tjedni"
+                                month: "Mjesec"
+                                months: "mjeseci"
+                                day: "Dan"
+                                days: "dana"
+                                hour: "sat"
+                                hours: "SATI"
+                                update: "Ažuriraj"
+                                shiftButton: "Pomakni sve datume i termine odjednom"
+                            UnpublishModal: 
+                                cancel: "Otkaži"
+                                title: "Da bi izmjene bile moguće, treba prvo poništiti objavu."
+                                desc: "Za dodavanje, uređivanje i brisanje lokacija i termina, privremeno poništi objavu događaja. Tijekom toga tvoj događaj neće biti vidljiv u rezultatima pretraživanja. Nemoj zaboraviti ponovno objaviti događaj."
+                                unpublish: "Poništi objavu"
+                    preview: 
+                        notes: 
+                            prompt: "Dodaj privatne bilješke…"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Prijavi se </span> kako bi dodao svoje osobne zabilješke …</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Pregledaj svoj Događaj prije objavljivanja"
+                                previewUrl: "URL pregleda:"
+                                share: "Podijeli Događaj"
+                                locationsAndTimes: "Lokacije i vremena"
+                                publish: "Objavi"
+                                unpublish: "Poništi objavu"
+                                locations: "Lokacije:"
+                                discoverable: 
+                                    title: "Vidljivo:"
+                                    desc: "Tvoj događaj će biti vidljiv u aplikaciji Biblija pod izbornikom Više / Događaji 5 dana prije početka istog."
+                                status: 
+                                    title: "Status:"
+                                    desc: "Crvena oznaka UŽIVO prikazat će se kada započne najranije vrijeme početka."
+                                remove: 
+                                    title: "Uklanjanje:"
+                                    desc: "Ljudi neće moći otkriti tvoj događaj nakon njegova posljednjeg vremena završetka. Korisnici koji su dodirnuli \"Spremi događaj\" kad se tvoj događaj mogao otkriti još uvijek će imati pristup njegovoj arhiviranoj inačici. Ovom će se događaju također moći pristupiti kroz izravne dolazne poveznice."
+                            PreviewTypeAnnouncement: 
+                                expand: "Proširi"
+                            PreviewTypePlan: 
+                                read: "Čitaj"
+                                info: "Informacije o planu"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Dupliciraj"
+                        share: "Podijeli"
+                        delete: "Obriši"
+                        draft: "Skica"
+                        edit: "Izmjeni"
+                        view: "Pregled"
+                        fail: "Nije moguće obrisati Događaj"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopiraj"
+                        copied: "Kopirano"
+                        share: "Podijeli"
+                        read: "Čitaj"
+                        readPlan: "Čitaj plan"
+                    EventViewContentAnnouncement: 
+                        expand: "Proširi"
+                        collapse: "Sažmi"
+                    EventViewDetails: 
+                        expand: "Proširi"
+                        collapse: "Sažmi"
+                        save: "Spremi Događaj"
+                        signIn: "Prijavi se za spremanje Događaja."
+                        saved: "Događaj je spremljen."

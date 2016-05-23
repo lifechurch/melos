@@ -1344,3 +1344,323 @@ cy:
         datetime: 
             just now: "nawr"
         verses selected: "adnodau ddewiswyd"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Digwyddodd gwall"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Mae angen teitl i'r Cyhoeddiad"
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Cyfeirnod Beibl yn annilys"
+                    events: 
+                        google_place_id: 
+                            required: "Rhaid i ti ddewis lleoliad o'r map"
+                        latitude: 
+                            required: "Rhaid i ti ddewis lleoliad o'r map"
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "All amser dechrau ddim bod yn y gorffennol."
+                        timezone: 
+                            required: "Angen Cylchfa Amser"
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Cyfeirnod Beibl yn annilys"
+                url: 
+                    events: 
+                        url: 
+                            required: "Mae angen URL."
+                        title: 
+                            required: "Angen label URL"
+            EventHeader: 
+                status: 
+                    published: "Cyhoeddwyd"
+                    draft: "Drafft"
+                    live: "Yn Fyw"
+                    archived: "Archifwyd"
+                unpublish: "Dadgyhoeddi"
+                saving: "Cadw"
+                saveAsDraft: "Cadw fel Drafft"
+                myEvents: "Fy Nigwyddiadau"
+                eventBuilder: "ADEILADYDD DIGWYDDIAD"
+                signOut: "Arwyddo allan"
+                createAccount: "Creu Cyfrif"
+            HtmlEditor: 
+                text: "Testun"
+                bold: "Trwm"
+                italic: "Italig"
+        containers: 
+            Auth: 
+                title: "Mewngofnodi i Ddigwyddiadau"
+                signIn: "Mewngofnodi"
+                subHead1: "Os wyt yn ddefnyddiwr yr ApBeibl ac mae gennyt gyfrif YoiuVersion eisoes, gelli fewngofnodi gan ddefnyddio'r un manylion.<br/><br/>Heb gyfrif YouVersion eto?<br/><a href='%{url}'> Cofrestra nawr ar Bible.com </a> i ddechrau creu Digwyddiadau."
+                email: "Ebost"
+                password: "Cyfrinair"
+                forgotPassword: "Anghofio Cyfrinair"
+            EventEdit: 
+                event: "Digwyddiad"
+            EventEditContentContainer: 
+                choose: "Dewiswch gynnwys i ddechrau arni."
+                needHelp: "Angen help?"
+                title: "Cynnwys Digwyddiadau"
+                previous: "← Lleoliadau ac Amserau Blaenorol "
+                next: "Nesaf: Rhagolwg →"
+            EventEditDetails: 
+                title: "Manylion Digwyddiad"
+            EventEditLocationContainer: 
+                title: "Lleoliad Digwyddiad"
+                previous: "← Blaenorol: Manylion"
+                next: "Next: Add Content →"
+            EventEditPreview: 
+                title: "Rhagolwg Digwyddiad "
+                previous: "← Blaenorol: Cynnwys"
+            EventEditShare: 
+                title: "Rhannu Digwyddiad"
+                subTitle: "Mae dy Ddigwyddiad wedi'i gyhoeddi nawr."
+                edit: "Golygu Digwyddiad"
+                go: "Mynd i Fy Nigwyddiadau"
+                share: "Rhannu dy ddigwyddiad"
+                copy: "Copi"
+                copied: "Cafodd y ddolen fer ei chopïo i dy glipfwrdd"
+                previous: "← Blaenorol: Rhagolwg"
+            EventFeedDiscover: 
+                title: "Darganfod Digwyddiadau"
+                discover: "Darganfod"
+            EventFeedMine: 
+                title: "Fy Nigwyddiadau"
+                previous: "←Blaenorol"
+                next: "Nesaf→"
+                my: "Fy Nigwyddiadau"
+                new: "Creu Digwyddiad newydd"
+                subTitle: "DIGWYDDIADAU GREWYD GEN I"
+                newFirst: "Crea dy Ddigwyddiad Cyntaf"
+                learn: "Dysga sut i greu Digwyddiad da"
+            EventFeedSaved: 
+                title: "Cadw Digwyddiad"
+            EventView: 
+                title: "Digwyddiad YouVersion"
+            SelectLanguage: 
+                choose: "Dewisa dy iaith"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Daeth dy sesiwn i ben, Mewngofnoda eto"
+                    invalidEmail: "Ebost neu gyfrinair annilys."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Rhaid i bob lleoliad gael o leiaf un amser."
+                    locationRequired: "Fedri di ddim cyhoeddi Digwyddiad heb leoliadau."
+                    contentRequired: "Fedri di ddim cyhoeddi Digwyddiad heb gynnwys."
+                    planSearchFailed: "Wnaeth y chwilio ddim cyfateb i unrhyw ddogfennau"
+                    noMatchingPlans: "Dim cynlluniau yn tebygu"
+                components: 
+                    EventEditNav: 
+                        details: "Manylion"
+                        locations: "Lleoliadau ac Amserau"
+                        content: "Cynnwys"
+                        preview: "Rhagolwg a Chyhoeddi"
+                        share: "Rhannwch"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Ad-drefnu cynnwys"
+                                doneReordering: "Cwblhawyd Ad-drefnu"
+                            ContentHeader: 
+                                text: "Testun"
+                                reference: "Cyfeirnod Beibl"
+                                plan: "Cynllun"
+                                image: "Delwedd"
+                                link: "Dolen Allanol"
+                                giving: "Dolen Rhoi"
+                                announcement: "Cyhoeddiad"
+                            ContentHelpModal: 
+                                types: "Mathau o Gynnwys"
+                                learn: "Dysga sut i wneud<br> yn Ddigwyddiad da"
+                                text: 
+                                    title: "Modiwl Testun"
+                                    desc: "Amlinellau, prif bwyntiau, cwestiynau trafod...Rhanna unrhyw gynnwys testunol cyffredinol fydd yn helpu dy fynychwyr i ddilyn dy neges fel mae'n digwydd. Gall dy destunau modiwl fod yn unrhyw hyd a chynnwys fformat 'rich text'."
+                                reference: 
+                                    title: "Modiwl Cyfeirnod Beibl"
+                                    desc: "Dewisa unrhyw adnod neu ran o'r Beibl sydd wedi lincio i unrhyw un o'r 1,200 o fersiynau. mewn 900+ o ieithoedd. Gall pobl sy'n edrych ar dy Ddigwyddiad ddewis dy gyfeirnod a'i weld yn eu darllenydd ApBeibl eu hunain, ble mae modd iddynt osod nod Llyfr, ei aroleuo, a mwy."
+                                plan: 
+                                    title: "Cynllun Modiwl "
+                                    desc: "Dos at Gynlluniau Beibl a Defosiynau sy'n ymwneud â dy bwyntiau dysgu, gan helpu'r rhai hynny sy'n dy ddilyn i gysylltu â Gair Duw drwy'r wythnos."
+                                image: 
+                                    title: "Modiwl Llun"
+                                    desc: "Gwna dy Ddigwyddiad yn fyw drwy ddefnyddio unrhyw fath o graffeg, gelfyddyd, lluniau gydag adnodau a.y.b. Bydd Mynychwyr yn gallu rhannu lluniau dy Ddigwyddiad yn eu cyfrwng cyndeithasol a'i wneud yn feiral."
+                                link: 
+                                    title: "Modiwl Dolen allanol"
+                                    desc: "Creu botwm yn dy Ddigwyddiad fydd yn ddolen ag unrhyw wefan allanol. Rho dy gynulleidfa gam i ffwrdd o roi ar-lein, cofrestru fel gwirfoddolwr, neu dudalennau cartref eglwysi."
+                                announcement: 
+                                    title: "Modiwl Cyhoeddiad"
+                                    desc: "Newyddion yr Eglwys, digwyddiadau calendr, rhaglenni, dosbarthiadau, cyfleodd gwirfoddoli a chenhadu,..Modiwlau cyhoeddi ydy'r storfa orau ar gyfer rhannu gwybodaeth amserol a phwysig, ond heb dynnu sylw oddi wrth brif neges dy ddigwyddiad. Mae pob modiwl cyhoeddiad yn ymddangos ar ei dudalen ei hun yn dy Ddigwyddiad, ac hyd yn oed yn gallu cynnwys ffurf testun arbennig (fel testun trwm neu italig)."
+                            ContentInsertionPoint: 
+                                title: "Mewnosod y modiwl nesaf yma"
+                            ContentTypeAnnouncement: 
+                                title: "Teitl"
+                                prompt: "Sgwenna rhywbeth yma"
+                                caption: "Yn dy Ddigwyddiad, dim ond dy Deitl (uchod) fydd i'w weld "
+                            ContentTypeContainer: 
+                                dirty: "Bydd cynnwys yn cael ei arbed eiliadau ar ôl i ti stopio teipio."
+                                failed: "Methu arbed"
+                                tryAgain: "Tria eto"
+                                lastSaved: "Arbedwyd ddiwethaf %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Rhaid i faint y llun fod %{requiredWidth}%{requiredHeight} Mae dy lun di yn %{yourWidth}x%{yourHeight}"
+                                    wrongType: "Math o Ffeil Annilys Rhaid bod yn JPEG"
+                                caption: "Ychwanega bennawd"
+                                prompt: "Llusga a Gollwng llun"
+                                onlyJpg: "[JPG yn unig]"
+                                sizePrompt: "%{requiredWidth}lled px x%{requiredHeight}hyd px"
+                                select: "Dewis Llun"
+                            ContentTypeLink: 
+                                kindrid: "Os wyt yn chwilio am blatfform rhoi syml, cyfleus, rho dro ar Kindrid. <a href='%{url}'></a>"
+                                label: "Dolennu Label"
+                                prompt: "Sgwenna rhywbeth yma"
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Ailosod"
+                                search: "Chwilia am Gynllun Darllen"
+                            ContentTypeReference: 
+                                language: "Iaith"
+                                version: "Fersiwn"
+                                book: "Llyfr"
+                                chapterVerse: "Pennod: Adnod"
+                            ContentTypeText: 
+                                prompt: "Sgwenna rhywbeth yma..."
+                            LiveWarningModal: 
+                                title: "Ni ellir dileu tra bo'r Digwyddiad yn Fyw"
+                                desc: "Unwaith mae Digwyddiad yn fyw, ni ellir dileu testun, cyfeirnodau Beiblaidd, na modiwlau llun ohono gan y gall defnyddwyr fod eisioes wedi ychwanegu nodiadau preifat. Fodd bynnag, mae modd golygu'r modiwlau hyn."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Cododd problem pan yn cyhoeddi dy Ddigwyddiad."
+                            invalidTimes: "Ni all un gwasanaeth fod yn hwy na 12 awr ac ni all y gwahaniaeth rhwng amser cychwyn ac amser gorffen Digwyddiad fod yn fwy nac 8 diwrnod. Os gweli'n dda, newidia amseroedd dy ddigwyddiad a cheisio eto."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Rhaid i faint y llun fod %{requiredWidth}%{requiredHeight} Mae dy lun di yn %{yourWidth}x%{yourHeight}"
+                                    wrongType: "Ffeil Annilys Rhaid bod yn JPEG"
+                                changeImage: "Newid Llun"
+                                removeImage: "Dileu Llun"
+                                prompt: "Llusga a Gollwng lun"
+                                onlyJpg: "[JPG yn unig]"
+                                sizePrompt: "%{requiredWidth} lled px x %{requiredHeight} uchder px"
+                                sizePrompt2: "Dylai maint dy lun fod yn %{requiredWidth} x %{requiredHeight}o bicselau."
+                                eventName: "Enw Digwyddiad"
+                                org: "Enw Eglwys neu Fudiad"
+                                desc: "Disgrifiad o'r Digwyddiad"
+                                next: "Nesaf: Ychwanegu Lleoliad ac Amserau"
+                                blank: "Ni all %{field} fod yn wag."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Ychwanega o leiaf un tro."
+                                use: "DENYDDIA'R LLEOLIAD HWN"
+                                edit: "Golygu Lleoliad"
+                                delete: "Dileu Lleoliad"
+                            LocationAddButtons: 
+                                addPhysical: "Ychwanegu Lleoliad Penodol"
+                                promptPhysical: "Gelli ychwanegu nifer o leoliadau"
+                                addVirtual: "Ychwanegu Rhith Leoliad"
+                                churchOnline: "Oeddet ti'n gwybod? Gelli lawnsio cenhadaeth ar-lein am ddim drwy ddefnyddio'r  <a className='button-caption' href='%{url}'>Platfform Eglwys Ar-lein</a>"
+                            LocationAddTime: 
+                                minutes: "MUNUD"
+                                hours: "AWR"
+                                days: "DIWRNOD"
+                            LocationDeleteModal: 
+                                sure: "Wyt ti'n siŵr?"
+                                selected: "Rwyt wedi dewis dileu y lleoliad canlynol :"
+                                warn: "Bydd hyn yn dileu y lleolaid o bob digwyddiad blaenorol a phresennol. Fyddi di'n methu defnyddio'r lleoliad hwn ar gyfer digwyddiadau yn y dyfodol."
+                                cancel: "Canslo"
+                                delete: "Dileu"
+                            LocationEdit: 
+                                prompt: "Mewnosod cyfeiriad y Lleoliad ..."
+                                country: "Gwlad"
+                                timezone: "Parth Amser"
+                                namePrompt: "Campws Dwyreiniol First Baptist"
+                                name: "Enw Lleoliad"
+                                nameOptional: "Dewisol: Defnyddiol os yn ychwanegu nifer o leoliadau"
+                                addAnother: "Ychwanegu amser arall"
+                                cancel: "Canslo"
+                                save: "Arbed y Lleoliad"
+                            LocationTimeShifter: 
+                                shift: "Symud dyddiadau dechrau."
+                                forward: "Ymlaen"
+                                backward: "Nôl"
+                                by: "erbyn"
+                                week: "wythnos"
+                                weeks: "wythnosau"
+                                month: "Mis"
+                                months: "misoedd"
+                                day: "Diwrnod"
+                                days: "DIWRNOD"
+                                hour: "awr"
+                                hours: "AWR"
+                                update: "Diweddaru"
+                                shiftButton: "Symud dyddiadau a digwyddiadau ar unwaith"
+                            UnpublishModal: 
+                                cancel: "Canslo"
+                                title: "Dadgyhoedda i wneud newidiadau"
+                                desc: "I adio, golygu neu ddileu Lleoliadau ac Amserau dadgyhoedda'r digwyddiad dros dro. Yn ystod yr amser hwn ni fydd dy ddigwyddiad yn ymddangos ar ganlyniadau chwilio. Paid anghofio ail gyhoeddi dy ddigwyddiad.. "
+                                unpublish: "Dadgyhoeddi"
+                    preview: 
+                        notes: 
+                            prompt: "Ychwanega dy nodiadau preifat..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Mewngofnoda i ychwanegu dy nodiadau preifat</span></a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Adolyga dy Ddigwyddiad cyn ei Gyhoeddi"
+                                previewUrl: "Rhagolwg o'r URL:"
+                                share: "Rhannu Digwyddiad"
+                                locationsAndTimes: "Lleoliadau ac Amserau"
+                                publish: "Cyhoeddi"
+                                unpublish: "Dadgyhoeddi"
+                                locations: "Lleoliadau:"
+                                discoverable: 
+                                    title: "Darganfyddadwy"
+                                    desc: "Bydd modd gweld y digwyddiad yng nghanlyniadau chwiliad lleoliad Digwyddiadau Ap Beibl am bum diwrnod cyn dy ddyddiad dechrau cynharaf."
+                                status: 
+                                    title: "Statws:"
+                                    desc: "Bydd y bathodyn BYW coch i'w weld pan fydd dy amer cychwyn cynharaf yn dechrau. "
+                                remove: 
+                                    title: "Dileu:"
+                                    desc: "Fydd dim modd gweld dy Ddigwyddiad ar ôl yr amser terfynol. Bydd rheini gliciodd 'Arbed Digwyddiad' yn parhau i allu gweld fersiwn archif ohono. Bydd modd gweld y Digwyddiad hwn hefyd drwy linciau uniongyrchol mewnol. "
+                            PreviewTypeAnnouncement: 
+                                expand: "Estyn"
+                            PreviewTypePlan: 
+                                read: "Darllen"
+                                info: "Gwybodaeth Cynllun"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Dyblygu"
+                        share: "Rhannwch"
+                        delete: "Dileu"
+                        draft: "Drafft"
+                        edit: "Golygu"
+                        view: "Edrych"
+                        fail: "Methu dileu Digwyddiad"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Copi"
+                        copied: "Copïwyd"
+                        share: "Rhannwch"
+                        read: "Darllen"
+                        readPlan: "Darllen y Cynllun"
+                    EventViewContentAnnouncement: 
+                        expand: "Estyn"
+                        collapse: "Crynhoi"
+                    EventViewDetails: 
+                        expand: "Estyn"
+                        collapse: "Crynhoi"
+                        save: "Cadw Digwyddiad"
+                        signIn: "Mewngofnoda i Arbed y Digwyddiad"
+                        saved: "Arbedwyd y Digwyddiad"

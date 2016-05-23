@@ -1305,3 +1305,323 @@ ro:
         datetime: 
             just now: "chiar acum"
         verses selected: "versete selectate"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "A apărut o eroare"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Anunțul trebuie să aibă titlu."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Referință biblică nevalidă."
+                    events: 
+                        google_place_id: 
+                            required: "Trebuie să alegi o locație de pe hartă."
+                        latitude: 
+                            required: "Trebuie să alegi o locație de pe hartă."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Ora începerii nu poate fi în trecut."
+                        timezone: 
+                            required: "Este nevoie de fusul orar."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Referința biblică nu este valabilă."
+                url: 
+                    events: 
+                        url: 
+                            required: "Este necesar URL."
+                        title: 
+                            required: "Este necesară eticheta URL."
+            EventHeader: 
+                status: 
+                    published: "Publicat"
+                    draft: "Ciornă"
+                    live: "În direct"
+                    archived: "Arhivat"
+                unpublish: "Revocă de la publicare"
+                saving: "Se salvează..."
+                saveAsDraft: "Salvează ca ciornă"
+                myEvents: "Evenimentele mele"
+                eventBuilder: "Creare Eveniment"
+                signOut: "Deconectare"
+                createAccount: "Creează cont"
+            HtmlEditor: 
+                text: "Text"
+                bold: "îngroșat"
+                italic: "italic"
+        containers: 
+            Auth: 
+                title: "Autentificare evenimente"
+                signIn: "Autentificare"
+                subHead1: "Dacă ești utilizator al Aplicației Biblia și deja ai cont YouVersion, te poți autentifica folosind aceleași autorizări.<br/><br/>Nu ai încă un cont YouVersion? <br/><a href='%{url}'>Înregistrează-te acum pe Bible.com pentru a începe să creezi evenimente.</a>"
+                email: "e-mail"
+                password: "Parolă"
+                forgotPassword: "Am uitat parola"
+            EventEdit: 
+                event: "Eveniment"
+            EventEditContentContainer: 
+                choose: "Alege un conținut pentru a începe."
+                needHelp: "Ai nevoie de ajutor"
+                title: "Conținut eveniment"
+                previous: "←Pasul anterior: locul & ora"
+                next: "Pasul următor: Previzualizare→"
+            EventEditDetails: 
+                title: "Detaliile evenimentului"
+            EventEditLocationContainer: 
+                title: "Locul evenimentului"
+                previous: "← Pasul anterior: detalii"
+                next: "Pasul următor: adaugă un conținut→"
+            EventEditPreview: 
+                title: "Previzualizarea evenimentului"
+                previous: "← Pasul anterior: Conținut"
+            EventEditShare: 
+                title: "Partajare eveniment"
+                subTitle: "Evenimentul tău este acum publicat:"
+                edit: "Editează eveniment"
+                go: "Mergi la Evenimentele mele"
+                share: "Partajează evenimentul tău:"
+                copy: "Copiază"
+                copied: "Legătura scurtă a fost copiată în clipboard"
+                previous: "← Anterior: Previzualizare"
+            EventFeedDiscover: 
+                title: "Descoperă evenimente"
+                discover: "Descoperă"
+            EventFeedMine: 
+                title: "Evenimentele mele"
+                previous: "← Anterior"
+                next: "Următor →"
+                my: "Evenimentele mele"
+                new: "Creează eveniment nou"
+                subTitle: "EVENIMENTE CREATE DE MINE"
+                newFirst: "Creează primul eveniment"
+                learn: "Află cum să pregătești un eveniment reușit"
+            EventFeedSaved: 
+                title: "Evenimente salvate"
+            EventView: 
+                title: "Eveniment YouVersion"
+            SelectLanguage: 
+                choose: "Alege limba"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Sesiunea ta a expirat Te rugăm să te autentifici din nou."
+                    invalidEmail: "Email sau parolă nevalide."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Toate locațiile trebuie să conțină cel puțin o oră."
+                    locationRequired: "Nu poți publica un eveniment fără locații."
+                    contentRequired: "Nu poți publica un Eveniment fără conținut."
+                    planSearchFailed: "Căutarea nu s-a potrivit cu niciun document"
+                    noMatchingPlans: "Nu se potrivește niciunui plan"
+                components: 
+                    EventEditNav: 
+                        details: "Detalii"
+                        locations: "Locuri & Ore"
+                        content: "Conținut"
+                        preview: "Vizualizare & Publicare"
+                        share: "Distribuie"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Reorganizare conținut"
+                                doneReordering: "Reordonare efectuată"
+                            ContentHeader: 
+                                text: "Text"
+                                reference: "Referința biblică"
+                                plan: "Plan de citire"
+                                image: "Imagine"
+                                link: "Link extern"
+                                giving: "Adăugare link"
+                                announcement: "Anunț"
+                            ContentHelpModal: 
+                                types: "Tip conținut"
+                                learn: "Află cum să faci <br>un eveniment grozav"
+                                text: 
+                                    title: "Modul text"
+                                    desc: "Schițe, idei principale, întrebări pentru discuții… orice conținut general legat de text care ajută participanții să îți urmărească mesajele în timp real. Modulele textului nu au limită de lungime și pot include rich text formatting."
+                                reference: 
+                                    title: "Modul referințe biblice"
+                                    desc: "Selectează orice verset biblic sau pasaj cu legătură (link) directă la oricare din cele peste 1200 de versiuni din cele peste 900 de limbi, oferite de YouVersion. Persoanele care vizualizează evenimentul tău pot atinge referința ta pentru a o vedea în cadrul Aplicației Biblia, unde o pot marca, pot face evidențieri și multe altele"
+                                plan: 
+                                    title: "Modul Plan"
+                                    desc: "Link către Planuri de citire și Devoționale care au legătură cu învățătura oferită și care ajută pe cei care te urmăresc să continue să citească din Cuvântul lui Dumnezeu întreaga săptămână. "
+                                image: 
+                                    title: "Modul imagine"
+                                    desc: "Evenimentul tău prinde viață cu diferite elemente grafice: imaginea seriei, fotografii, versete ilustrate, etc. Participanții vor putea să distribuie ușor grafica Evenimentului pe rețelele sociale, transformând mesajul tău într-unul viral."
+                                link: 
+                                    title: "Modul link extern"
+                                    desc: "Creează un buton în Eveniment care face legătura cu orice website extern. Plasează audiența la doar un clic distanță de donare online, înregistrare voluntari sau pagina bisericii."
+                                announcement: 
+                                    title: "Modul anunțuri"
+                                    desc: "Știri din biserici, evenimente din calendar, programe, clase de studiu, oportunități de voluntariat și misiune... Modulele de anunțuri conțin exact ce trebuie pentru partajarea informațiilor importante din punct de vedere al timpului, dar în același timp nu trebuie să-ți distragă atenția de la esența evenimentului. Fiecare modul de anunțuri apare pe propria pagină la evenimentele tale și poate să includă chiar și conținut cu text îmbogățit (cum ar fi îngroșat sau cursiv)."
+                            ContentInsertionPoint: 
+                                title: "Inserează modulul următor aici"
+                            ContentTypeAnnouncement: 
+                                title: "Titlu"
+                                prompt: "Scrie ceva aici..."
+                                caption: "Doar titlul (vezi mai sus) va fi vizibil în evenimentul tău. Când atingi titlul, conținutul (vezi mai jos) este afișat în ecran separat."
+                            ContentTypeContainer: 
+                                dirty: "Conținutul se va salva automat la câteva secunde după ce ai încetat să mai tastezi."
+                                failed: "Nu se poate salva"
+                                tryAgain: "Încearcă din nou."
+                                lastSaved: "Ultima salvare %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Dimensiunea imaginii trebuie să fie de%{requiredWidth}x%{requiredHeight}. Imaginea ta este de %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Tip de fișier nevalid. Trebuie să fie JPG."
+                                caption: "Adaugă legendă"
+                                prompt: "Trage și plasează o imagine"
+                                onlyJpg: "[numai JPG]"
+                                sizePrompt: "%{requiredWidth}px adâncime x %{requiredHeight}px înălțime"
+                                select: "Selectare imagine"
+                            ContentTypeLink: 
+                                kindrid: "Dacă dorești o platformă inteligentă și simplă pentru a dărui, încearcă Kindrid. <a href='%{url}'>Dacă dorești o platformă inteligentă și simplă pentru a dărui, încearcă Kindrid.</a>Dacă dorești o platformă inteligentă și simplă pentru a dărui, încearcă Kindrid."
+                                label: "Eticheta link"
+                                prompt: "Scrie ceva aici..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Înlocuiește"
+                                search: "Caută un plan de citire"
+                            ContentTypeReference: 
+                                language: "Limbă"
+                                version: "Versiune"
+                                book: "Cartea"
+                                chapterVerse: "Capitol: verset"
+                            ContentTypeText: 
+                                prompt: "Scrie ceva aici..."
+                            LiveWarningModal: 
+                                title: "Nu se poate șterge în timpul derulării evenimentului"
+                                desc: "Odată ce evenimentul a început să se deruleze, nu poți șterge text, referințe biblice și module de imagine din cadrul acestuia pentru că utilizatorii e posibil să fi adăugat notițe private. Totuși, poți edita aceste module."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "A apărut o problemă în timpul publicării evenimentului tău."
+                            invalidTimes: "Un singur serviciu nu poate dura mai mult de 12 ore și diferența dintre timpul de început cel mai devreme respectiv cel mai târziu dintr-un eveniment nu poate fi mai mare de 8 zile. Te rugăm corectează orele evenimentului și încearcă din nou."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Mărimea imaginii trebuie să fie %{requiredWidth}x%{requiredHeight}. Imaginea ta este %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Tipul de fișier este invalid. Trebuie să fie JPG."
+                                changeImage: "Schimbă imaginea"
+                                removeImage: "Șterge imaginea"
+                                prompt: "Trage și plasează imaginea"
+                                onlyJpg: "[doar JPG]"
+                                sizePrompt: "%{requiredWidth}px lățime x %{requiredHeight}px înălțime"
+                                sizePrompt2: "Dimensiunile imaginii tale trebuie să fie de %{requiredWidth} x %{requiredHeight} pixeli."
+                                eventName: "Numele evenimentului"
+                                org: "Numele bisericii sau al organizației"
+                                desc: "Descrierea evenimentului "
+                                next: "Următorul pas: adaugă locul și ora"
+                                blank: "%{field} nu poate fi gol."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Adaugă cel puțin o dată."
+                                use: "FOLOSEȘTE ACEST LOC"
+                                edit: "Editare loc"
+                                delete: "Ștergere loc"
+                            LocationAddButtons: 
+                                addPhysical: "Adaugă un loc fizic"
+                                promptPhysical: "Poți adăuga mai multe locuri."
+                                addVirtual: "Adaugă un loc virtual"
+                                churchOnline: "Știai? Poți lansa gratuit o misiune online folosind platforma Church Online. <a className='button-caption' href='%{url}'>Poți lansa gratuit o misiune online folosind platforma Church Online.</a>Poți lansa gratuit o misiune online folosind platforma Church Online."
+                            LocationAddTime: 
+                                minutes: "MINUTE"
+                                hours: "ORE"
+                                days: "zile"
+                            LocationDeleteModal: 
+                                sure: "Sigur?"
+                                selected: "Acest loc a fost selectat pentru ștergere:"
+                                warn: "Locul va fi șters din lista evenimentelor trecute și a celor prezente. Nu vei mai putea folosi acest loc pentru evenimente viitoare."
+                                cancel: "Anulează"
+                                delete: "Șterge"
+                            LocationEdit: 
+                                prompt: "Adaugă adresa locului..."
+                                country: "Țara"
+                                timezone: "Fus orar"
+                                namePrompt: "First Baptist East Campus"
+                                name: "Nume loc"
+                                nameOptional: "Opțional: util la adăugarea mai multor locuri."
+                                addAnother: "Adaugă altă oră"
+                                cancel: "Anulează"
+                                save: "Salvează acest loc"
+                            LocationTimeShifter: 
+                                shift: "Mută datele de început"
+                                forward: "Redirecționează"
+                                backward: "înapoi"
+                                by: "de"
+                                week: "săptămână"
+                                weeks: "săptămâni"
+                                month: "Lună"
+                                months: "luni"
+                                day: "Zi"
+                                days: "zile"
+                                hour: "oră"
+                                hours: "ORE"
+                                update: "Actualizare"
+                                shiftButton: "Schimbă toate datele și orele în același timp."
+                            UnpublishModal: 
+                                cancel: "Anulează"
+                                title: "Pentru a efectua modificări trebuie să-l revoci de la publicare."
+                                desc: "Pentru a adăuga, pentru a edita sau pentru a șterge locațiile și orele, evenimentul trebuie revocat temporar de la publicare. În acest timp, evenimentul tău nu va fi vizibil în rezultatele căutării. Nu uita să publici din nou evenimentul tău."
+                                unpublish: "Revocă de la publicare"
+                    preview: 
+                        notes: 
+                            prompt: "Adaugă notițele tale private..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Autentifică-te pentru a adăuga notițe private…</span> Autentifică-te pentru a adăuga notițe private…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Revizuiește-ți evenimentul înainte de publicare"
+                                previewUrl: "URL de previzualizare:"
+                                share: "Partajează evenimentul"
+                                locationsAndTimes: "Locații și program"
+                                publish: "Publică"
+                                unpublish: "Revocă de la publicare"
+                                locations: "Locuri:"
+                                discoverable: 
+                                    title: "Disponibil"
+                                    desc: "Evenimentul va fi vizibil în Aplicația Biblia, la Locul evenimentului, iar rezultatele căutării cu 5 zile înainte de cel mai apropiat început."
+                                status: 
+                                    title: "Status:"
+                                    desc: "Semnul roșu LIVE va afișa cel mai apropiat început."
+                                remove: 
+                                    title: "Șterge:"
+                                    desc: "Evenimentul nu mai poate fi găsit după ultimul termen dat. Participanții care au apăsat „Salvează Evenimentul” când Evenimentul era disponibil vor avea în continuare acces la versiunea arhivată. Acest eveniment va continua să fie accesibil prin link-uri directe."
+                            PreviewTypeAnnouncement: 
+                                expand: "Extinde"
+                            PreviewTypePlan: 
+                                read: "Citește"
+                                info: "Informații despre Plan"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Duplică"
+                        share: "Distribuie"
+                        delete: "Șterge"
+                        draft: "Ciornă"
+                        edit: "Modifică"
+                        view: "Arată"
+                        fail: "Evenimentul nu poate fi șters"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Copiază"
+                        copied: "Copiat"
+                        share: "Distribuie"
+                        read: "Citește"
+                        readPlan: "Citește plan"
+                    EventViewContentAnnouncement: 
+                        expand: "Extinde"
+                        collapse: "Restrânge"
+                    EventViewDetails: 
+                        expand: "Extinde"
+                        collapse: "Restrânge"
+                        save: "Salvează evenimentul"
+                        signIn: "Autentifică-te pentru a salva evenimentul"
+                        saved: "Eveniment salvat"

@@ -293,7 +293,7 @@ ar:
     about: "حول‌"
     blog: "المفكّرة"
     versions link: "نسخات"
-    languages link: "Languages"
+    languages link: "لغات"
     jobs: "فرص عمل"
     volunteer: "التطوع"
     privacy policy: "سياسة الخصوصية"
@@ -1344,3 +1344,323 @@ ar:
         datetime: 
             just now: "الآن"
         verses selected: "الآيات المختارة"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "خطأ"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "مطلوب اعلان عن اللقب"
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "الشاهد الكتابي غير موجود"
+                    events: 
+                        google_place_id: 
+                            required: "يجب اختيار موقع من الخريطه."
+                        latitude: 
+                            required: "يجب اختيار موقع من الخريطه."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "وقت البدايه لايمكن ان يكون فى الماضي."
+                        timezone: 
+                            required: "وقت المنطقه مطلوب."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "الشاهد الكتابي غير صحيح."
+                url: 
+                    events: 
+                        url: 
+                            required: "مطلوب الرابط."
+                        title: 
+                            required: "علامه الرابط مطلوبه."
+            EventHeader: 
+                status: 
+                    published: "تم النشر"
+                    draft: "مسودات"
+                    live: "حي و مباشر"
+                    archived: "تم الحفظ في الأرشيف "
+                unpublish: "لم ينشر"
+                saving: "جاري الحفظ..."
+                saveAsDraft: "احفظ كمسودة"
+                myEvents: "أحداثي"
+                eventBuilder: "باني الأحداث"
+                signOut: "تسجيل الخروج"
+                createAccount: "أنشئ حساب"
+            HtmlEditor: 
+                text: "النص"
+                bold: "سميك"
+                italic: "مائل"
+        containers: 
+            Auth: 
+                title: "تسجيل الدخول للفعاليات"
+                signIn: "تسجيل دخول"
+                subHead1: "إذا كنت مستخدم لتطبيق الكتاب المقدس فأنت لديك حساب YouVersion بالفعل، يمكنك تسجيل الدخول بنفس بيانات المستخدم. <br/><br/>ليس لديك حساب YouVersion بعد ؟ <br/><a href='%{url}'>سجل الدخول الآن علي Bible.com</a> لتبدأ إنشاء حدث."
+                email: "البريد الإلكتروني"
+                password: "كلمة المرور‌"
+                forgotPassword: "نسيت كلمة المرور"
+            EventEdit: 
+                event: "فاعلية"
+            EventEditContentContainer: 
+                choose: "اختر بعض من المحتوى لكي تبدأ"
+                needHelp: "أتحتاج مساعدة؟"
+                title: "محتوى الحدث"
+                previous: "← السابق: المواقع و المواعيد"
+                next: "التالي: معاينة →"
+            EventEditDetails: 
+                title: "تفاصيل الحدث"
+            EventEditLocationContainer: 
+                title: "موقع الحدث"
+                previous: "←السابق: التفاصيل"
+                next: "التالي: أضف محتوى →"
+            EventEditPreview: 
+                title: "معاينة الحدث"
+                previous: "← السابق: المحتوى"
+            EventEditShare: 
+                title: "شارك الحدث"
+                subTitle: "تم نشر فاعليتك الان :"
+                edit: "تعديل الفاعلية"
+                go: "إذهب الي فاعلياتى"
+                share: "شارك فاعليتك:"
+                copy: "نسخ"
+                copied: "تم نسخ الرابط الي الحافظه"
+                previous: "←السابق : معاينه"
+            EventFeedDiscover: 
+                title: "اكتشف الفاعليات"
+                discover: "اكتشف"
+            EventFeedMine: 
+                title: "احداثي"
+                previous: "←السابق"
+                next: "التالي →"
+                my: "فاعلياتى"
+                new: "أنشئ فاعلية جديدة"
+                subTitle: "الفاعليات المنشئه بواسطتي"
+                newFirst: "أنشئ حدثك الأول"
+                learn: "تعلم كيف أن تصنع حدثًا عظيمًا"
+            EventFeedSaved: 
+                title: "الاحداث المحفوظه"
+            EventView: 
+                title: "فاعلية YouVersion"
+            SelectLanguage: 
+                choose: "أختر لغتك."
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "تم انتهاء جلستك.يرجى الدخول مرة أخرى."
+                    invalidEmail: "بريد إلكتروني او كلمة المرور غير صحيحة."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "كل المواقع يجب ان تكون وقت واحد على الأقل"
+                    locationRequired: "لايمكنك نشر الفاعلية بدون موقع."
+                    contentRequired: "لا يمكنك نشر حدث دون محتوى."
+                    planSearchFailed: "البحث لا يطابق اى من الوثائق"
+                    noMatchingPlans: "لايوجد خطط مطابقه"
+                components: 
+                    EventEditNav: 
+                        details: "التفاصيل"
+                        locations: "المواقع و المواعيد"
+                        content: "المحتوى"
+                        preview: "المعاينة و النشر"
+                        share: "مشاركة"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "أعد ترتيب المحتوي"
+                                doneReordering: "تم اعاده الترتيب"
+                            ContentHeader: 
+                                text: "نَص"
+                                reference: "مرجع الكتاب المقدس"
+                                plan: "خطة"
+                                image: "صورة"
+                                link: "رابط خارجي"
+                                giving: "رابط الإعطاء"
+                                announcement: "إعلان"
+                            ContentHelpModal: 
+                                types: "أنواع المحتوى"
+                                learn: "تعلم كيف تصنع <br>فاعلية عظيمة"
+                                text: 
+                                    title: "وحدة النص"
+                                    desc: "الخلاصة، النقاط الرئيسية، أسئلة المناقشة … شارك بأي محتوى نصَي بإمكانه مساعدة الحاضرين على متابعة رسالتك أثناء حدوثها. وحدات النص الخاصة بك من الممكن أن تكون بأي طول و أن تتضمن تنسيق النص الغني."
+                                reference: 
+                                    title: "وحدة مرجع الكتاب المقدس"
+                                    desc: "اختار اي أية او فقره من الكتاب المقدس، اربطها مباشرة ﻷي من 1200+ نسخة YouVersion المتوفرة في 900+ لغه. الناس التي تشاهد فاعليتك يمكنها الضغط علي الشواهد لتقرأها في تطبيق الكتاب المقدس، حيث يمكنهم حفظها كعلامه مرجعية، تسليط الضوء و اكثر."
+                                plan: 
+                                    title: "وحدة الخطة"
+                                    desc: "الروابط لخطط الكتاب المقدس و التعبديَات المتصلة بنقاط تعليمك، سوف تساعد جمهورك على الاستمرار في التعامل مع كلمة الله خلال الاسبوع"
+                                image: 
+                                    title: "وحدة الصورة"
+                                    desc: "قم بإخراج احداثك الي الحياه بأي نوع من الرسومات المدعومه : سلاسل ملونه، صور، اعداد كتابيه علي صور. الخ. الحضور سيمكنهم بسهولة مشاركه صور حدثك علي وسائل التواصل الاجتماعي، وبهذا ستنتشر رسالتك بشكل سريع"
+                                link: 
+                                    title: "وحده رابط خارجي"
+                                    desc: "صمم زر داخل حدثك كرابط لأي موقع خارجي. ضع سامعيك فقط علي بعد ضغطه من التبرع اونلاين، تسجيل التطوع او الصفحة الرئيسية للكنيسه"
+                                announcement: 
+                                    title: "وحده الإعلان"
+                                    desc: "اخبار الكنيسة، تقويم الفاعليات، البرامج، الدروس، المتطوعين وفرص المشاركة فى المهام...وحدات الإعلان هي الحاوية المثالية لمشاركة المعلومات المهمه والمحدده بوقت، بدون التشتت عن رساله الحدث الأساسية. كل وحدة إعلان تظهر علي صفحتها الخاصة في فاعليتك، ويمكنها ان تشمل علي محتوي نصي غني ( مثل خط سميك او مائل )."
+                            ContentInsertionPoint: 
+                                title: "ادخل الوحده التاليه هنا"
+                            ContentTypeAnnouncement: 
+                                title: "العنوان‌"
+                                prompt: "اكتب شىء هنا..."
+                                caption: "فى حدثك , فقط لقبك (بالاعلي) سيكون مرئيا. عندما يضغط مستخدم علي لقبك, الجزء (بالاسفل) سيتم عرضه فى شاشه منفصله"
+                            ContentTypeContainer: 
+                                dirty: "سيتم حفظ المحتوي تلقائيا خلال ثواني بعد توقف الكتابه"
+                                failed: "غير قادر علي الحفظ."
+                                tryAgain: "حاول مجددا."
+                                lastSaved: "اخر حفظ %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "حجم الصورة يجب ان تكون %{requiredWidth}×%{requiredHeight}. أبعاد صورتك %{yourWidth}×%{yourHeight}."
+                                    wrongType: "ملف خطاء. يجب ان يكون JPG."
+                                caption: "اضف شرح"
+                                prompt: "أسحب واسقط صوره"
+                                onlyJpg: "[JPG فقط]"
+                                sizePrompt: "%{requiredWidth} عرض x %{requiredHeight} ارتفاع"
+                                select: "اختر صورة"
+                            ContentTypeLink: 
+                                kindrid: "اذا كنت تبحث عن منصه ذكية و بسيطة <a href='%{url}'>جرب Kindrid</a>."
+                                label: "علامه الرابط"
+                                prompt: "اكتب شئ هنا..."
+                                url: "رابط"
+                            ContentTypePlan: 
+                                replace: "استبدل"
+                                search: "ابحث عن خطه قراءه"
+                            ContentTypeReference: 
+                                language: "اللغة"
+                                version: "إصدار"
+                                book: "سفر"
+                                chapterVerse: "أصحاح : عدد"
+                            ContentTypeText: 
+                                prompt: "اكتب شىء هنا..."
+                            LiveWarningModal: 
+                                title: "لايمكن الالغاء بينما الحدث مباشر"
+                                desc: "بمجرد ان يبدا بث الحدث , لايمكنك مسح النص, الشاهد الكتابي ووحدات الصور لان المستخدمين ربما قاموا باضافه ملحوظاتهم الخاصه للحدث على اي حال يمكنك تعديل هذه الوحدات."
+                                ok: "موافق"
+                    details: 
+                        errors: 
+                            generic: "هناك مشكلة اثناء نشر الفاعلية الخاصة بك."
+                            invalidTimes: "العظه الواحدة لايجب ان تزيد عن 12 ساعه، والفرق بين أول وقت بدايه وآخر وقت نهاية في الحدث لايجب ان يكون أكثر من 8 أيام. رجاء اعد ضبط توقيتات الحدث وحاول مرة اخرى."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "حجم الصوره يجب ان يكون %{requiredWidth}x%{requiredHeight}. ابعاد صورتك %{yourWidth}x%{yourHeight}."
+                                    wrongType: "نوع ملف غير صالح. يجب أن يكون JPG"
+                                changeImage: "تغيير الصورة"
+                                removeImage: "ازالة الصورة"
+                                prompt: "اسحب صوره"
+                                onlyJpg: "[فقط JPG]"
+                                sizePrompt: "%{requiredWidth} عرض × %{requiredHeight} ارتفاع"
+                                sizePrompt2: "أبعاد صورتك يجب ان تكون %{requiredWidth} × %{requiredHeight} بكسل."
+                                eventName: "اسم الحدث"
+                                org: "اسم الكنيسة أو المنظمة"
+                                desc: "وصف الحدث"
+                                next: "التالي: أضف مواقع و مواعيد →"
+                                blank: "%{field} لايمكن ان يكون فارغ."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "اضف على الاقل مره واحده."
+                                use: "استخدم هذا الموقع"
+                                edit: "عدل الموقع"
+                                delete: "الغي الموقع"
+                            LocationAddButtons: 
+                                addPhysical: "أضف موقع جغرافي"
+                                promptPhysical: "بإمكانك إضافة مواقع متعددة"
+                                addVirtual: "ضع موقع افتراضي"
+                                churchOnline: "هل تعرف؟ يمكنك إطلاق خدمه اونلاين مجانية بإستخدام <a className='button-caption' href='%{url}'>منصه Church Online</a>."
+                            LocationAddTime: 
+                                minutes: "دقائق"
+                                hours: "ساعات"
+                                days: "أيام"
+                            LocationDeleteModal: 
+                                sure: "هل أنت متأكد؟"
+                                selected: "لقد اخترت الموقع التالي ليتم الغائه :"
+                                warn: "هذا سيقوم بحذف الموقع من كل الاحداث السايقه والحاليه . لن يكون بامكانك اعاده استخدام هذا الموقع فى الاحداث المستقبليه."
+                                cancel: "إلغاء"
+                                delete: "مسح"
+                            LocationEdit: 
+                                prompt: "ادخل عنوان الموقع..."
+                                country: "البلد"
+                                timezone: "المنطقة الزمنية"
+                                namePrompt: "الكنيسة المعمدانية الأولى في الحرم الشرقي"
+                                name: "اسم الموقع"
+                                nameOptional: "اختياري: سوف يفيد في حالة إضافة مواقع متعددة"
+                                addAnother: "ضع موعدًا آخر"
+                                cancel: "إلغاء"
+                                save: "احفظ هذا الموقع"
+                            LocationTimeShifter: 
+                                shift: "عدل تاريخ البدايه"
+                                forward: "إلى الأمام"
+                                backward: "للخلف"
+                                by: "من"
+                                week: "اسبوع"
+                                weeks: "اسابيع"
+                                month: "شهر"
+                                months: "اشهر"
+                                day: "يوم"
+                                days: "أيام"
+                                hour: "ساعه"
+                                hours: "ساعات"
+                                update: "تحديث"
+                                shiftButton: "انقل جميع التواريخ و الأوقات فورا"
+                            UnpublishModal: 
+                                cancel: "إلغاء"
+                                title: "الغاء النشر لعمل تغييرات."
+                                desc: "لأضافه , تعديل او الغاء المواقع والتوقيتات قم بالغاء نشر الحدث مؤقتا. خلال هذا الوقت ,حدثك لن يكون مرئي فى نتائج البحث. لاتنسي نشر حدثك مره اخري."
+                                unpublish: "لم ينشر"
+                    preview: 
+                        notes: 
+                            prompt: "أضف ملاحظانك الخاصة..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>سجل الدخول</span> لإضافة ملحوظاتك الخاصه…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "عاين فعاليتك قبل النشر"
+                                previewUrl: "معاينه URL:"
+                                share: "شارك الحدث"
+                                locationsAndTimes: "مواقع وأوقات"
+                                publish: "انشر"
+                                unpublish: "لم ينشر"
+                                locations: "المواقع:"
+                                discoverable: 
+                                    title: "قابل للاكتشاف:"
+                                    desc: "الحدث الخاص بك سيكون مرئيًا في موقع الحدث و نتائج البحث في تطبيق الكتاب المقدس قبل أقرب ميعاد لبدئك بخمسة أيام."
+                                status: 
+                                    title: "الحالة:"
+                                    desc: "الشارة الحمراء LIVE سوف تظهر عند بداية أقرب موعد لبدئك."
+                                remove: 
+                                    title: "إزالة:"
+                                    desc: "الحدث الخاص بك لن يكون قابلًا للاكتشاف بعد وقت نهايته الأخير. الحاضرون الذين ضغطوا ”حفظ الحدث“ عندما كان الحدث الخاص بك قابلًا للاكتشاف، سيمكنهم الوصول لنسخة مخزَنة منه، كذلك هذا الحدث سوف يكون سهل الوصول اليه عن طريق روابط مباشرة واردة."
+                            PreviewTypeAnnouncement: 
+                                expand: "وسع"
+                            PreviewTypePlan: 
+                                read: "قراءة"
+                                info: "معلومات عن خطة القراءة‌"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "ضاعف"
+                        share: "مشاركة"
+                        delete: "مسح"
+                        draft: "مسودات"
+                        edit: "تعديل"
+                        view: "شاهد"
+                        fail: "لايمكن إلغاء الفعاليه"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "نسخ"
+                        copied: "تم النسخ"
+                        share: "مشاركة"
+                        read: "قراءة"
+                        readPlan: "اقرأ الخطه"
+                    EventViewContentAnnouncement: 
+                        expand: "وسع"
+                        collapse: "إخفاء"
+                    EventViewDetails: 
+                        expand: "وسع"
+                        collapse: "إخفاء"
+                        save: "حفظ الحدث"
+                        signIn: "سجل الدخول لحفظ الفاعلية"
+                        saved: "تم حفظ الفاعلية"

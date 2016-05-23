@@ -1292,3 +1292,323 @@ da:
         datetime: 
             just now: "lige nu"
         verses selected: "vers valgt"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Der skete en fejl"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Annoncerings titel er krævet."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Bibel reference ikke gyldig."
+                    events: 
+                        google_place_id: 
+                            required: "Du skal vælge en lokation fra kortet."
+                        latitude: 
+                            required: "Du skal vælge en lokation fra kortet."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Start Tidspunkt kan ikke være i fortiden."
+                        timezone: 
+                            required: "Tidszone er krævet."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Bibel referencer er ikke gyldige."
+                url: 
+                    events: 
+                        url: 
+                            required: "URL er nødvendig."
+                        title: 
+                            required: "URL Etiket er krævet."
+            EventHeader: 
+                status: 
+                    published: "Vist"
+                    draft: "Udkast"
+                    live: "Live"
+                    archived: "Arkiveret"
+                unpublish: "Ikke Vist"
+                saving: "Gemmer..."
+                saveAsDraft: "Gem som kladde"
+                myEvents: "Mine Events"
+                eventBuilder: "EVENT BYGGER"
+                signOut: "Log ud"
+                createAccount: "Opret Konto"
+            HtmlEditor: 
+                text: "Tekst"
+                bold: "fed"
+                italic: "kursiv"
+        containers: 
+            Auth: 
+                title: "Events Log ind"
+                signIn: "Log ind"
+                subHead1: "Hvis du er en Bibel App bruger og allerede har en YouVersion konto kan du logge ind med de samme rettigheder.<br><br>Har du ikke en YouVersion konto endnu? <br><a href='%{url}'>Log ind for på Bible.com</a> for at starte med at skabe Events."
+                email: "Email"
+                password: "Password"
+                forgotPassword: "Glemt kodeord"
+            EventEdit: 
+                event: "Event"
+            EventEditContentContainer: 
+                choose: "Vælg noget for at komme i gang"
+                needHelp: "Har du brug for hjælp?"
+                title: "Event Indhold"
+                previous: "← Tidligere: Lokationer og Tidspunkter"
+                next: "Næste: Preview →"
+            EventEditDetails: 
+                title: "Event detaljer"
+            EventEditLocationContainer: 
+                title: "Event Lokation"
+                previous: "← Tidligere: Detaljer"
+                next: "Næste: Tilføj indhold →"
+            EventEditPreview: 
+                title: "Event Preview"
+                previous: "← Tidligere: Indhold"
+            EventEditShare: 
+                title: "Del Event"
+                subTitle: "Din Event er nu Vist:"
+                edit: "Rediger Event"
+                go: "Gå til Mine Events"
+                share: "Del din event:"
+                copy: "Kopi"
+                copied: "Linket blev kopieret til dit clipboard"
+                previous: "← Tidligere: Forhåndsvisning"
+            EventFeedDiscover: 
+                title: "Opdag Events"
+                discover: "Opdag"
+            EventFeedMine: 
+                title: "Mine Events"
+                previous: "← Tidligere"
+                next: "Næste →"
+                my: "Mine Events"
+                new: "Opret ny Event"
+                subTitle: "EVENTS OPRETTET AF MIG"
+                newFirst: "Skab Din Første Event"
+                learn: "Lær hvordan du skaber en stor Event"
+            EventFeedSaved: 
+                title: "Gemte begivenheder"
+            EventView: 
+                title: "YouVersion Event"
+            SelectLanguage: 
+                choose: "Vælg dit sprog"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Din session udløb. Log venligst ind igen."
+                    invalidEmail: "Ugyldig email eller password. "
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Alle lokationer skal have mindst et tidspunkt."
+                    locationRequired: "Du ikke Vise en Event uden lokationer."
+                    contentRequired: "Du kan ikke publicere et Event uden indhold."
+                    planSearchFailed: "Søgning matchede ikke nogen af dine dokumenter."
+                    noMatchingPlans: "Ingen match på Planer"
+                components: 
+                    EventEditNav: 
+                        details: "Detaljer"
+                        locations: "Lokationer & Tidspunkter"
+                        content: "Indhold"
+                        preview: "Preview & Publicer"
+                        share: "Del"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Genbestil Indhold"
+                                doneReordering: "Lavet sortering"
+                            ContentHeader: 
+                                text: "Tekst"
+                                reference: "Bibel reference"
+                                plan: "Plan"
+                                image: "Billede"
+                                link: "Eksternt link"
+                                giving: "Giv link"
+                                announcement: "Annoncering"
+                            ContentHelpModal: 
+                                types: "Indholdstyper"
+                                learn: "Lær hvordan du laver<br>en stor Event"
+                                text: 
+                                    title: "Tekst moduler"
+                                    desc: "Forklaringer, nøgle punkter, diskussions spørgsmål… Del alt tekst baseret generelt indhold som vil hjælpe dine deltagere med at forstå dine beskeder når det sker. Dine tekst moduler kan være af enhver længde og inkludere rich tekst formatering."
+                                reference: 
+                                    title: "Bibel Reference Modul"
+                                    desc: "Vælg et Bibel vers eller passage, linket direkte til enhver af YouVerion´s 1.200+ versioner på mere end 900+ sprog. Folk som ser din Event, kan klikke på din reference, for at se den i deres Bibel App læser, hvor de kan Bogmærke, Markere den eller mere."
+                                plan: 
+                                    title: "Plan Modul"
+                                    desc: "Link til Bibel Plan og Formaninger der er forbundet til dine læringspunkter, hjælp dit publikum med at fortsætte engagementet med Gud´s Ord gennem hele ugen."
+                                image: 
+                                    title: "Billed Modul"
+                                    desc: "Sæt liv i din Event med enhver slags støtte grafik: kunst serie, billeder, Bibel Versbilleder osv. Deltagere vil nemt være i stand til at dele dine Event billeder til deres sociale medier, gøre dit budskab viralt. "
+                                link: 
+                                    title: "Eksternt Link Modul"
+                                    desc: "Opret en knap i din Event der linker til alle eksterne websites. Sæt dit publikum kun en knap væk fra donation, frivillig tilmelding eller kirke hjemmesider."
+                                announcement: 
+                                    title: "Annoncerings Modul"
+                                    desc: "Kirke nyheder, kalender begivenheder, programmer, klasser, frivillige og missions muligheder... Annonceringsmoduler er den perfekte beholder til at dele information der er relevant og vigtig, men at du ikke distraherer fra din Events primære budskab. Alle annonceringsmoduler vises på deres egen side i din event og kan endda indeholde rich text indhold (såsom fed og kursiv)."
+                            ContentInsertionPoint: 
+                                title: "Indsæt næste modul her"
+                            ContentTypeAnnouncement: 
+                                title: "Titel"
+                                prompt: "Skriv noget her..."
+                                caption: "I din Event vil kun din Titel (her over) være synlig. Når du bruger tabs på din Titel vil Indholdet (under) vises på en separat skærm."
+                            ContentTypeContainer: 
+                                dirty: "Indhold vil automatisk blive gemt et par sekunder efter at du stopper med at skrive."
+                                failed: "Kan ikke gemme."
+                                tryAgain: "Prøv igen."
+                                lastSaved: "Sidst gemt %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Billed størrelsen skal være %{requiredWidth}x%{requiredHeight}. Dit billede er %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Ugyldig filtype. Skal være JPG."
+                                caption: "Tilføj overskrift"
+                                prompt: "Træk og Slip et Billede"
+                                onlyJpg: "[kun JPG]"
+                                sizePrompt: "%{requiredWidth}px bredde x %{requiredHeight}px højde"
+                                select: "Vælg billede"
+                            ContentTypeLink: 
+                                kindrid: "Hvis du leder efter en smart, simpel donations platform, <a href='%{url}'>prøv Kindrid</a>."
+                                label: "Link Etiket"
+                                prompt: "Skriv noget her..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Erstat"
+                                search: "Søg efter en Læse Plan"
+                            ContentTypeReference: 
+                                language: "Sprog"
+                                version: "Version"
+                                book: "Bog"
+                                chapterVerse: "Kapitel: Vers"
+                            ContentTypeText: 
+                                prompt: "Skriv noget her..."
+                            LiveWarningModal: 
+                                title: "Kan ikke slette mens Eventen er live"
+                                desc: "Når en Event er live så kan du ikke slette Tekst, Bibel Referencer og Billed moduler fra den. Fordi brugere kan have tilføjet deres private noter til dem. Du kan stadig redigere disse moduler."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Der var et problem mens du ville Vise din Event. "
+                            invalidTimes: "En enkelt gudstjeneste kan ikke vare længere end 12 timer og forskellen mellem tidligste start tidspunkt og det sidste slut tid på en Event kan ikke være mere end 8 dage Juster venligst dine Events tidspunkter og prøv igen."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Billed størrelsen skal være %{requiredWidth}x%{requiredHeight}. Dit billede er %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Ugyldig filtype Skal være JPG."
+                                changeImage: "Skift billede"
+                                removeImage: "Fjern billede"
+                                prompt: "Træk og Slip et Billede"
+                                onlyJpg: "[kun JPG]"
+                                sizePrompt: "%{requiredWidth}px bredde x %{requiredHeight}px højde"
+                                sizePrompt2: "Dit billeds dimensioner skal være %{requiredWidth} x %{requiredHeight} pixels."
+                                eventName: "Event Navn"
+                                org: "Navn på Kirke eller Organisation"
+                                desc: "Event Beskrivelse"
+                                next: "Næste: Tilføj Lokation & Tidspunkt →"
+                                blank: "%{field} må ikke være blank."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Tilføj mindst et tidspunkt."
+                                use: "BRUG DENNE LOKATION"
+                                edit: "Rediger Lokation"
+                                delete: "Slet Lokation"
+                            LocationAddButtons: 
+                                addPhysical: "Tilføj en fysisk Lokation"
+                                promptPhysical: "Do kan tilføje flere lokationer"
+                                addVirtual: "Tilføj virtuel Lokation"
+                                churchOnline: "Vidste du? Du kan starte en online kirke gratis ved at bruge <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                            LocationAddTime: 
+                                minutes: "MINUTTER"
+                                hours: "TIMER"
+                                days: "dage"
+                            LocationDeleteModal: 
+                                sure: "Er du sikker?"
+                                selected: "Du har valgt at den følgende Lokation skal slettes:"
+                                warn: "Dette vil fjerne lokationen fra alle tidligere og nuværende events. Du vil ikke være i stand til at genbruge lokationen til fremtidige events."
+                                cancel: "Afbryd"
+                                delete: "Slet"
+                            LocationEdit: 
+                                prompt: "Indtast Lokations adressen..."
+                                country: "Land"
+                                timezone: "Tidszone"
+                                namePrompt: "First Baptist East Campus"
+                                name: "Lokations Navn"
+                                nameOptional: "Mulighed: Nyttig hvis du tilføjer flere lokationer"
+                                addAnother: "Tilføj andre tider"
+                                cancel: "Afbryd"
+                                save: "Gem denne lokation"
+                            LocationTimeShifter: 
+                                shift: "Ret start datoer"
+                                forward: "Fremad"
+                                backward: "baglæns"
+                                by: "af"
+                                week: "uge"
+                                weeks: "uger"
+                                month: "Måned"
+                                months: "måneder"
+                                day: "Dag"
+                                days: "dage"
+                                hour: "time"
+                                hours: "TIMER"
+                                update: "Opdater"
+                                shiftButton: "Skift alle datoer og tidspunkter nu"
+                            UnpublishModal: 
+                                cancel: "Afbryd"
+                                title: "Slå Vist fra for at lave ændringer"
+                                desc: "For at tilføje, redigere eller slette Lokationen og Tidspunkter skal du midlertidigt slå Vist fra på Eventen. Mens du redigerer vil din event ikke være synlige i søgeresultater. Glem ikke at få vist din event igen."
+                                unpublish: "Vis ikke"
+                    preview: 
+                        notes: 
+                            prompt: "Tilføj dine private noter..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Log ind</span> for at tilføje dine private noter…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Gennemse din Event før publicering"
+                                previewUrl: "Eksempel URL:"
+                                share: "Del Event"
+                                locationsAndTimes: "Lokationer og Tider"
+                                publish: "Udgiv"
+                                unpublish: "Vis ikke"
+                                locations: "Lokationer:"
+                                discoverable: 
+                                    title: "Opdag:"
+                                    desc: "Din event vil være synlig i Bibel App´en Event Loaktion og i søge resultater 5 dage før tidligste start tidspunkt."
+                                status: 
+                                    title: "Note status:"
+                                    desc: "Det røde LIVE badge vil vises når det tidligste start tidspunkt starter."
+                                remove: 
+                                    title: "Fjern:"
+                                    desc: "Din Event vil ikke længere kunne findes efter det sidste slut tidspunkt. Deltager som klikkede på \"Gem Event\" da din Event var søgbar vil stadig have adgang til en arkiv version af den, dette Event vil også fortsætte med at være tilgængeligt via direkte links."
+                            PreviewTypeAnnouncement: 
+                                expand: "Udvid"
+                            PreviewTypePlan: 
+                                read: "Læs"
+                                info: "Plan Info"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Dupliker"
+                        share: "Del"
+                        delete: "Slet"
+                        draft: "Udkast"
+                        edit: "Rediger"
+                        view: "Se"
+                        fail: "Kan ikke slette Eventen"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopi"
+                        copied: "Kopieret"
+                        share: "Del"
+                        read: "Læs"
+                        readPlan: "Læse Plan"
+                    EventViewContentAnnouncement: 
+                        expand: "Udvid"
+                        collapse: "Slå sammen"
+                    EventViewDetails: 
+                        expand: "Udvid"
+                        collapse: "Slå sammen"
+                        save: "Gem begivenhed"
+                        signIn: "Log ind for at gemme Event"
+                        saved: "Event gemt"

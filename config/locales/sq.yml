@@ -1292,3 +1292,323 @@ sq:
         datetime: 
             just now: "pikërisht tani"
         verses selected: "vargje të përzgjedhura"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Ndodhi një gabim"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Nevojitet titulli i Lajmërimit."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Referencë biblike jo e vlefshme."
+                    events: 
+                        google_place_id: 
+                            required: "Duhet të zgjidhni një vendndodhje në hartë."
+                        latitude: 
+                            required: "Duhet të zgjidhni një vendndodhje në hartë."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Orari i fillimit nuk mund të jetë në të kaluarën."
+                        timezone: 
+                            required: "Nevojitet brezi kohor."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Referenca e Biblës nuk është e vlefshme."
+                url: 
+                    events: 
+                        url: 
+                            required: "URL-ja është e detyrueshme."
+                        title: 
+                            required: "Etiketa URL është e detyrueshme."
+            EventHeader: 
+                status: 
+                    published: "E publikuar"
+                    draft: "Skicë"
+                    live: "Live"
+                    archived: "E arkivuar"
+                unpublish: "Hiqe nga publikimi"
+                saving: "Duke e ruajtur..."
+                saveAsDraft: "Ruaje si skicë"
+                myEvents: "Ngjarjet e mia"
+                eventBuilder: "NDËRTUESI I NGJARJEVE"
+                signOut: "Çkyçu"
+                createAccount: "Krijo llogari"
+            HtmlEditor: 
+                text: "Teksti"
+                bold: "i theksuar"
+                italic: "kursiv"
+        containers: 
+            Auth: 
+                title: "Hyrje te Ngjarjet"
+                signIn: "Hyr"
+                subHead1: "Nëse jeni një përdorues i Programit të Biblës dhe tashmë keni një llogari YouVersion, ju mund të hyni duke përdorur po këto të dhëna.<br/><br/>S'keni akoma një llogari YouVersion?<br/><a href='%{url}'>Regjistrohu tani në Bible.com</a> për të filluar krijimin e Ngjarjeve."
+                email: "E-postë"
+                password: "Fjalëkalimi"
+                forgotPassword: "Harruat fjalëkalimin"
+            EventEdit: 
+                event: "Ngjarje"
+            EventEditContentContainer: 
+                choose: "Zgjidh një përmbajtje për të filluar."
+                needHelp: "Ke nevojë për ndihmë?"
+                title: "Përmbajtja e Ngjarjes"
+                previous: "Mbrapa: Vendndodhjet dhe oraret"
+                next: "Përpara: Parashiko"
+            EventEditDetails: 
+                title: "Hollësitë e Ngjarjes"
+            EventEditLocationContainer: 
+                title: "Vendndodhja e Ngjarjes"
+                previous: "Mbrapa: Hollësi"
+                next: "Përpara: Shto përmbajtje"
+            EventEditPreview: 
+                title: "Parashikimi i Ngjarjes"
+                previous: "Mbrapa: Përmbajtja"
+            EventEditShare: 
+                title: "Ndarja e Ngjarjes"
+                subTitle: "Ngjarja juaj tani është e publikuar"
+                edit: "Edito Ngjarjen"
+                go: "Shko te Ngjarjet e mia"
+                share: "Ndaj ngjarjen tënde:"
+                copy: "Kopjo"
+                copied: "Linku i shkurtuar u kopjua në memorje"
+                previous: "← Meparshem: Inspektim"
+            EventFeedDiscover: 
+                title: "Zbulo Ngjarje"
+                discover: "Zbulo"
+            EventFeedMine: 
+                title: "Ngjarjet e mia"
+                previous: "← Mbrapa"
+                next: "Përpara →"
+                my: "Ngjarjet e mia"
+                new: "Krijo Ngjarje të re"
+                subTitle: "NGJARJE TË KRIJUARA NGA MUA"
+                newFirst: "Krijo ngjarjen tënde të parë"
+                learn: "Mëso si të krijosh Ngjarje të shkëlqyera"
+            EventFeedSaved: 
+                title: "Ngjarje të ruajtura"
+            EventView: 
+                title: "Ngjarje e YouVersion"
+            SelectLanguage: 
+                choose: "Zgjidhni gjuhën tuaj"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Sesioni yt skadoi. Ju lutem kyçyni përsëri."
+                    invalidEmail: "E-postë ose fjalëkalim i pavlefshëm."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Të gjitha vendndodhjet duhet të kenë të paktën një kohë."
+                    locationRequired: "Mund të publikoni një Ngjarje pa vendndodhje."
+                    contentRequired: "Ju nuk mund të publikoni një Ngjarje pa përmbajtje."
+                    planSearchFailed: "Kërkimi nuk gjeti përputhje dokumentesh "
+                    noMatchingPlans: "Nuk u gjetën plane që përputhen"
+                components: 
+                    EventEditNav: 
+                        details: "Hollësi"
+                        locations: "Vendndodhjet & Oraret"
+                        content: "Përmbajtja"
+                        preview: "Parashiko & Publiko"
+                        share: "Ndaje"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Riorganizo përmbajtjen"
+                                doneReordering: "Përfundo riorganizimin"
+                            ContentHeader: 
+                                text: "Tekst"
+                                reference: "Referenca biblike"
+                                plan: "Plani"
+                                image: "Figurë"
+                                link: "Lidhje të jashtme"
+                                giving: "Lidhje për dhënien"
+                                announcement: "Njoftime"
+                            ContentHelpModal: 
+                                types: "Llojet e përmbajtjes"
+                                learn: "Mëso si të bësh <br>një Ngjarje të madhe"
+                                text: 
+                                    title: "Moduli i tekstit"
+                                    desc: "Skicat, pikat kyç, pyetjet për diskutim … Ndaj çdo përmbajtje të përgjithshme teksti që do t'i ndihmojë pjesëmarrësit tuaj t'ju ndjekin bashkë me mesazhin ndërsa ajo po ndodh. Modulet e tekstit mund të kenë çfarëdo gjatësie dhe mund të përfshijnë formatim të pasur të tekstit."
+                                reference: 
+                                    title: "Moduli i referencave biblike"
+                                    desc: "Zgjdhni cfarëdo varg ose pjesë të Biblës, të lidhur direkt te secili prej 1200 e ca versioneve në 900 e ca gjuhë të YouVersion. Njerëzit që po shohin ngjarjen tënde mund të klikojnë referencën tuaj për ta parë në lexuesin e tyre të aplikacionit të Biblës, ku ata mund ta shenjojnë, ta nënvizojnë etj."
+                                plan: 
+                                    title: "Moduli i planit"
+                                    desc: "Krijoni lidhje me Planet e Biblës dhe Devocionet që lidhen me pikat e mësimit tuaj, duke e ndihmuar audiencën të përfshihet me Fjalën e Perëndisë gjatë javës."
+                                image: 
+                                    title: "Moduli i figurës"
+                                    desc: "Gjallërojeni Ngjarjen tuaj me çdo lloj grafiku të mbështetur: seri artesh, fotografi, figura me varg etj. Pjesëmarrësit do të jenë në gjendje të shpërndajnë me lehtësi figurat e Ngjarjes suaj në mediat e tyre sociale, duke e bërë viral mesazhin tuaj."
+                                link: 
+                                    title: "Moduli i lidhjes së jashtme"
+                                    desc: "Krijon një buton brenda Ngjarjes suaj që lidhet me çdo uebfaqe të jashtme. Vendoseni audiencën tuaj vetëm një prekje larg dhënies në internet, regjistrimit për vullnetar ose uebfaqes së kishës."
+                                announcement: 
+                                    title: "Moduli i njoftimeve"
+                                    desc: "Lajmet e Kishës, ngjarjet kalendarike, programet, klasat, mundësitë për misione dhe vullnetarizëm... Modulet e Lajmërimeve janë përmbajtësi i përkryer për të ndarë informacion që është në kohë dhe i rëndësishëm, por që nuk doni t'ju heqë vëmendjen nga mesazhi parësor i Ngjarjes. Çdo modul lajmërimi shfaqet në faqen e vet në Ngjarjen tuaj, dhe mund të përfshijë përmbajtje teksti të pasur (si shkronja të theksuara dhe të pjerrëta)."
+                            ContentInsertionPoint: 
+                                title: "Fut këtu modulin tjetër"
+                            ContentTypeAnnouncement: 
+                                title: "Titulli"
+                                prompt: "Shkruaj diçka këtu..."
+                                caption: "Në Ngjarjen tuaj, vetëm Titulli (më lart) do të jetë i dukshëm. Kur një përdorues prek te Titulli, Trupi (më poshtë) shfaqet në një ekran më vete."
+                            ContentTypeContainer: 
+                                dirty: "Përmbajtja do të ruhet automatikisht disa sekonda mbasi ke ndaluar së shtypuri."
+                                failed: "Nuk mund të ruhet."
+                                tryAgain: "Provo sërish."
+                                lastSaved: "Ruajtja e fundit %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "madhësia e imazhit duhet të jetë %{requiredWidth}x%{requiredHeight} Imazhi juaj është %{yourWidth}x%{yourHeight}"
+                                    wrongType: "Lloj skedari i pavlefshëm. Duhet të jetë JPG."
+                                caption: "Shto titull"
+                                prompt: "Zhvendos dhe lësho një figurë"
+                                onlyJpg: "[Vetëm JPG]"
+                                sizePrompt: "%{requiredWidth}px gjerësi x %{requiredHeight}px lartësi"
+                                select: "Përzgjedh figurën"
+                            ContentTypeLink: 
+                                kindrid: "Nëse po kërkoni një platofrmë dhënieje të thjeshtë e të shpejtë, <a href='%{url}'>provoni Kindrid</a>."
+                                label: "Etiketa e lidhjes"
+                                prompt: "Shkruaj diçka këtu..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Zëvëndëso"
+                                search: "Kërko një plan leximi"
+                            ContentTypeReference: 
+                                language: "Gjuha"
+                                version: "Versioni"
+                                book: "Libri"
+                                chapterVerse: "Kapitulli:Vargu"
+                            ContentTypeText: 
+                                prompt: "Shkruaj diçka këtu..."
+                            LiveWarningModal: 
+                                title: "Nuk mund të fshihet ndërsa Ngjarja është Direkt"
+                                desc: "Sapo një Ngjarje të jetë direkt, nuk mund të fshish Tekstin, Referencen Biblike, dhe module e Imazhit pasi përdoruesit mund të jenë duke hedhur shënime private në to. Gjithsesi, mund të korrigjoni këto module."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Pati një problem gjatë publikimit të Ngjarjes suaj."
+                            invalidTimes: "Një shërbesë e vetme nuk mund të jetë më shumë se 12 orë dhe ndryshimi midis orarit më të hershëm të fillimit dhe orarit më të fundit të përfundimit për një Ngjarje nuk mund të jetë më tepër se 8 ditë. Ju lutemi rregulloni oraret e Ngjarjes suaj dhe provoni sërish."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Madhësia e figurës duhet të jetë %{requiredWidth}x%{requiredHeight}. Figura juaj është %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Lloj skedari i pavlefshëm. Duhet të jetë JPG."
+                                changeImage: "Ndrysho figurën"
+                                removeImage: "Hiqe figurën"
+                                prompt: "Zhvendos dhe lësho një figurë"
+                                onlyJpg: "[Vetëm JPG]"
+                                sizePrompt: "%{requiredWidth}px gjerësi x %{requiredHeight}px lartësi"
+                                sizePrompt2: "Përmasat e figurës suaj duhet të jenë %{requiredWidth} x %{requiredHeight} piksel."
+                                eventName: "Emri i Ngjarjes"
+                                org: "Emri i Kishës ose Organizatës"
+                                desc: "Përshkrimi i Ngjarjes"
+                                next: "Përpara: Shto vendndodhje dhe orare"
+                                blank: "%{field} nuk mund të jetë bosh."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Shto të paktën një orar."
+                                use: "PËRDOR KËTË VENDNDODHJE"
+                                edit: "Ndrysho vendndodhjen"
+                                delete: "Fshij vendndodhjen"
+                            LocationAddButtons: 
+                                addPhysical: "Shto në vendndodhje fizike"
+                                promptPhysical: "Ju mund të shtoni disa vendndodhje."
+                                addVirtual: "Shto vendndodhje virtuale"
+                                churchOnline: "A e dinit? Mund të filloni një shërbesë online falas duke përdorur <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                            LocationAddTime: 
+                                minutes: "MINUTA"
+                                hours: "ORË"
+                                days: "ditë"
+                            LocationDeleteModal: 
+                                sure: "A jeni të sigurt?"
+                                selected: "Ju keni zgjedhur të fshini vendndodhjen e mëposhtme:"
+                                warn: "Kjo do e fshij vendndodhjen nga çdo ngjarje e kaluar dhe e tashme. Ju s'do të mund ta përdorni këtë vendndodhje për ngjarje të ardhshme."
+                                cancel: "Anulo"
+                                delete: "Fshij"
+                            LocationEdit: 
+                                prompt: "Shkruaj adresën e vendndodhjes..."
+                                country: "Vendi"
+                                timezone: "Zona kohore"
+                                namePrompt: "Kampusi Lindor i Baptistëve të Parë"
+                                name: "Emri i vendndodhjes"
+                                nameOptional: "Opsionale: E dobishme nëse shton disa vendndodhje"
+                                addAnother: "Shto një orar tjetër"
+                                cancel: "Anulo"
+                                save: "Ruaje këtë vendndodhje"
+                            LocationTimeShifter: 
+                                shift: "Zhvendos datat e fillimit"
+                                forward: "Përpara"
+                                backward: "Mbrapa"
+                                by: "nga"
+                                week: "javë"
+                                weeks: "javë"
+                                month: "Muaji"
+                                months: "muaj"
+                                day: "Dita"
+                                days: "ditë"
+                                hour: "orë"
+                                hours: "ORË"
+                                update: "Përditësim"
+                                shiftButton: "Zhvendos të gjitha datat dhe oraret njëherësh"
+                            UnpublishModal: 
+                                cancel: "Anulo"
+                                title: "Hiq publikimin për të bërë ndryshime"
+                                desc: "Për të shtuar, ndryshuar ose fshirë Vendndodhjet dhe Oraret, hiq përkohësisht publikimin e kësaj ngjarje. Gjatë kësaj kohe, ngjarja juaj nuk do të jetë e dukshme në rezultatet e kërkimit. Mos harroni ta publikoni sërish ngjarjen tuaj."
+                                unpublish: "Hiqe nga publikimi"
+                    preview: 
+                        notes: 
+                            prompt: "Shto shënimet e tua private..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Hyni</span> për të shtuar shënime private…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Rishiko Ngjarjen përpara se ta publikoni"
+                                previewUrl: "URL-ja e parashikimit:"
+                                share: "Shpërndaje Ngjarjen"
+                                locationsAndTimes: "Vendndodhjet dhe Oraret"
+                                publish: "Publikoje"
+                                unpublish: "Hiqe nga publikimi"
+                                locations: "Vendndodhjet:"
+                                discoverable: 
+                                    title: "E zbulueshme:"
+                                    desc: "Ngjarja juaj do të jetë e dukshme në vendndodhjen e Ngjarjeve në Programin e Biblës dhe në rezultatet e kërkimit 5 ditë përpara orarit tuaj më të hershëm të fillimit."
+                                status: 
+                                    title: "Statusi i shënimit:"
+                                    desc: "Shenja e kuqe DIREKT do të shfaqet kur fillon orari juaj më i hershëm."
+                                remove: 
+                                    title: "Hiqe:"
+                                    desc: "Ngjarja juaj nuk do të jetë më e zbulueshme mbas orarit të saj të fundit të përfundimit. Pjesëmarrësit që zgjodhën \"Ruaje Ngjarjen\" kur Ngjarja juaj ishte e zbulueshme do të vazhdojnë të kenë hyrje te një version i arkivuar i saj. Kjo Ngjarje do të vazhdojë të jetë e arritshme edhe përmes lidhjeve direkte të brendshme."
+                            PreviewTypeAnnouncement: 
+                                expand: "Shpalos"
+                            PreviewTypePlan: 
+                                read: "Lexo"
+                                info: "Informacion rreth planit"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Dyfisho"
+                        share: "Ndaje"
+                        delete: "Fshij"
+                        draft: "Skicë"
+                        edit: "Redakto"
+                        view: "Shiko"
+                        fail: "E pamundur për të fshirë Ngjarjen"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopjo"
+                        copied: "U kopjua"
+                        share: "Ndaje"
+                        read: "Lexo"
+                        readPlan: "Lexo Planin"
+                    EventViewContentAnnouncement: 
+                        expand: "Shpalos"
+                        collapse: "Mbyll"
+                    EventViewDetails: 
+                        expand: "Shpalos"
+                        collapse: "Mbyll"
+                        save: "Ruaje ngjarjen"
+                        signIn: "Kyçy për të ruajtur Ngjarjen"
+                        saved: "Ngjarja u ruajt"

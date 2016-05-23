@@ -1279,3 +1279,323 @@ ja:
         datetime: 
             just now: "たった今"
         verses selected: "選択した聖句"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "エラー発生"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "アナウンスメントのタイトルが必要です。"
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "聖書の参照箇所が無効です。"
+                    events: 
+                        google_place_id: 
+                            required: "地図からロケーションを選ぶ必要があります。"
+                        latitude: 
+                            required: "地図からロケーションを選ぶ必要があります。"
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "過去の時間を開始時刻にすることはできません。"
+                        timezone: 
+                            required: "タイムゾーン設定が必要です。"
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "参照する聖書箇所が無効です。"
+                url: 
+                    events: 
+                        url: 
+                            required: "URLが必要です。"
+                        title: 
+                            required: "URLのタイトルが必要です。"
+            EventHeader: 
+                status: 
+                    published: "公開済み"
+                    draft: "草稿"
+                    live: "ライブ"
+                    archived: "アーカイブ済"
+                unpublish: "非公開"
+                saving: "保存中…"
+                saveAsDraft: "下書きとして保存する"
+                myEvents: "イベント"
+                eventBuilder: "イベント作成"
+                signOut: "サインアウト"
+                createAccount: "アカウント作成"
+            HtmlEditor: 
+                text: "テキスト"
+                bold: "太字"
+                italic: "斜体"
+        containers: 
+            Auth: 
+                title: "イベントにサインイン"
+                signIn: "サインイン"
+                subHead1: "聖書アプリをすでにお使いで、YouVersionアカウントをお持ちでしたら、同じアカウントからサインインできます。<br><br>YouVersionアカウントをお持ちでない場合<br><a href='%{url}'>Bible.comにサインアップ</a>してイベントを作成しましょう。"
+                email: "メール"
+                password: "パスワード"
+                forgotPassword: "パスワードを忘れた"
+            EventEdit: 
+                event: "イベント"
+            EventEditContentContainer: 
+                choose: "まずは内容を選択"
+                needHelp: "ヘルプ"
+                title: "イベントの内容"
+                previous: "前：場所・時間"
+                next: "次：プレビュー"
+            EventEditDetails: 
+                title: "詳細"
+            EventEditLocationContainer: 
+                title: "イベントのロケーション"
+                previous: "前：詳細"
+                next: "次：内容を入力"
+            EventEditPreview: 
+                title: "イベントのプレビュー"
+                previous: "前：内容"
+            EventEditShare: 
+                title: "イベントシェア"
+                subTitle: "あなたのイベントは公開されました"
+                edit: "イベントを編集する"
+                go: "マイイベントへ"
+                share: "イベントをシェアする"
+                copy: "コピー"
+                copied: "ショートリンクがクリップボードにコピーされました。"
+                previous: "前：プレビュー"
+            EventFeedDiscover: 
+                title: "イベントを探す"
+                discover: "発見"
+            EventFeedMine: 
+                title: "マイイベント"
+                previous: "←前"
+                next: "次→"
+                my: "マイイベント"
+                new: "イベントの新規作成"
+                subTitle: "作成したイベント"
+                newFirst: "最初のイベントを作る"
+                learn: "イベントの作り方について"
+            EventFeedSaved: 
+                title: "保存したイベント"
+            EventView: 
+                title: "YouVersionイベント"
+            SelectLanguage: 
+                choose: "言語を選択"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "セッションが無効となりました。ログインし直してください"
+                    invalidEmail: "メールアドレスまたはパスワードが間違っています。"
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "ロケーションごとに最低１つは日時を設定してください。"
+                    locationRequired: "ロケーションなしでイベントを公開することはできません。"
+                    contentRequired: "内容が未入力のイベントを公開することはできません。"
+                    planSearchFailed: "どの文章も検索されませんでした。"
+                    noMatchingPlans: "該当するプランはありません"
+                components: 
+                    EventEditNav: 
+                        details: "詳細"
+                        locations: "場所・日時"
+                        content: "内容"
+                        preview: "プレビュー・公開"
+                        share: "シェアする"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "内容の並び替え"
+                                doneReordering: "並べ替えを終了する"
+                            ContentHeader: 
+                                text: "テキスト"
+                                reference: "参照聖句"
+                                plan: "プラン"
+                                image: "画像"
+                                link: "外部リンク"
+                                giving: "献金リンク"
+                                announcement: "アナウンス"
+                            ContentHelpModal: 
+                                types: "内容のタイプ"
+                                learn: "よいイベントの<br>作り方"
+                                text: 
+                                    title: "テキストモジュール"
+                                    desc: "概要、要点、論題など、来場者がメッセージを理解するのに役立つ内容をシェアしましょう。長さに制限がなく、リッチテキスト形式にも対応しています。"
+                                reference: 
+                                    title: "参照聖句モジュール"
+                                    desc: "YouVersionにリンクした、900の言語による1200の聖書訳から、お好きな聖句や節を選んでください。あなたのイベントをみている人は、聖書アプリ内であなたからの参照をタップしてお気に入り登録、ハイライトなどが可能となります。"
+                                plan: 
+                                    title: "読書プランモジュール"
+                                    desc: "参加者が毎日、神様の御言葉とつながっていられるように、関連する読書プランやデボーショナルのリンクを掲載しましょう。"
+                                image: 
+                                    title: "画像モジュール"
+                                    desc: "絵、写真、聖句画像などを用いて、イベントを盛り上げましょう。参加者がイベントの画像をソーシャルメディア上に簡単にシェアすることができ、あなたのメッセージが多くの人へと広がります。"
+                                link: 
+                                    title: "外部リンクモジュール"
+                                    desc: "外部のウェブサイトへリンクするボタンをイベント内に作ることができます。オンラインでの献金、ボランティアの応募、教会のホームページなど、１度のタップでリンクします。"
+                                announcement: 
+                                    title: "アナウンスモジュール"
+                                    desc: "アナウンスメントモジュールは、教会のニュース、予定、クラス、ボランティア、宣教の機会をシェアするのに最適です。タイムリーかつ大切な情報を、イベントの重要なメッセージを邪魔することなくシェアできます。各アナウンスメントモジュールは、イベントページ上に表示され、太字やイタリック体などの色々なスタイルで作成できます。"
+                            ContentInsertionPoint: 
+                                title: "次のモジュールをここへ挿入する"
+                            ContentTypeAnnouncement: 
+                                title: "タイトル"
+                                prompt: "内容を記入…"
+                                caption: "イベントには（上の）タイトルのみが表示されます。ユーザーがタイトルをタップすると（下の）内容が別スクリーンに表示されます。"
+                            ContentTypeContainer: 
+                                dirty: "入力を止めると、数秒後にコンテンツが自動的に保存されます。"
+                                failed: "保存できませんでした。"
+                                tryAgain: "再び保存する。"
+                                lastSaved: "%{when}に保存されました。"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "画像サイズは%{requiredWidth}×%{requiredHeight}までです。選択した画像のサイズは%{yourWidth}×%{yourHeight}です。"
+                                    wrongType: "無効な画像です。JPGファイルのみ使用できます。"
+                                caption: "キャプションの追加"
+                                prompt: "画像をドラッグ＆ドロップする。"
+                                onlyJpg: "[JPGのみ使用可]"
+                                sizePrompt: "幅%{requiredWidth}ピクセル x 高さ%{requiredHeight}ピクセル"
+                                select: "画像を選択"
+                            ContentTypeLink: 
+                                kindrid: "シンプルで便利な献金プラットフォームを探しているなら、<a href='%{url}'>&lt;a href='%{url}'&gt;Kindrid&lt;/a&gt;</a>を試してみましょう。"
+                                label: "リンクのタイトル"
+                                prompt: "内容を記入…"
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "変更する"
+                                search: "読書プランを探す"
+                            ContentTypeReference: 
+                                language: "言語"
+                                version: "聖書訳"
+                                book: "書物"
+                                chapterVerse: "章：節"
+                            ContentTypeText: 
+                                prompt: "内容を記入…"
+                            LiveWarningModal: 
+                                title: "イベント開催中は削除できません。"
+                                desc: "イベントが開始されると、ユーザーが非公開のノートを追加している可能性があるので、テキスト、参照聖句、画像のモジュールを削除することはできません。これらのモジュールの編集は可能です。"
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "イベントの公開中に問題が発生しました。"
+                            invalidTimes: "ひとつの礼拝を12時間以上に設定することはできません。また、イベント全体の最初の開始時間と最後の終了時間を8日間以上空けることはできません。イベントの時間を調整して、再度登録してください。"
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "画像のサイズは%{requiredWidth}×%{requiredHeight}までとなっています。選択された画像のサイズは%{yourWidth}×%{yourHeight}です。"
+                                    wrongType: "無効なファイルです。JPGファイルのみ使用可能です。"
+                                changeImage: "画像を変更"
+                                removeImage: "画像を削除"
+                                prompt: "画像をドラッグ＆ドロップする。"
+                                onlyJpg: "[JPGのみ使用可]"
+                                sizePrompt: "幅%{requiredWidth}ピクセル x 高さ%{requiredHeight}ピクセル"
+                                sizePrompt2: "画像のサイズは%{requiredWidth}×%{requiredHeight}ピクセルまでとなっています。"
+                                eventName: "イベントの名前"
+                                org: "教会名または団体名"
+                                desc: "イベントについて"
+                                next: "次：場所と時間について"
+                                blank: "%{field} が空欄のままです"
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "１度は追加する必要があります。"
+                                use: "このロケーションを使う"
+                                edit: "ロケーションを編集する"
+                                delete: "ロケーションを削除する"
+                            LocationAddButtons: 
+                                addPhysical: "ロケーションを入力"
+                                promptPhysical: "ロケーションは複数入力できます"
+                                addVirtual: "仮のロケーションを入力"
+                                churchOnline: "ご存知でしたか?<a className='button-caption' href='%{url}'>Church Online Platform</a>を使うと、無料でオンラインのミニストリーを開始することができます。"
+                            LocationAddTime: 
+                                minutes: "分"
+                                hours: "時間"
+                                days: "日"
+                            LocationDeleteModal: 
+                                sure: "本当にいいですか？"
+                                selected: "次のロケーションを削除すると選択しました。"
+                                warn: "以前のイベントと現在のイベント全てから、このロケーションが削除されます。今後のイベントに、このロケーションを再使用することはできません。"
+                                cancel: "キャンセル"
+                                delete: "削除"
+                            LocationEdit: 
+                                prompt: "ロケーションの住所を入力…"
+                                country: "国"
+                                timezone: "タイムゾーン"
+                                namePrompt: "ファーストバプテスト教会"
+                                name: "ロケーション名"
+                                nameOptional: "オプション：複数のロケーションを追加する際に便利です"
+                                addAnother: "別の日時を追加する"
+                                cancel: "キャンセル"
+                                save: "このロケーションを保存する"
+                            LocationTimeShifter: 
+                                shift: "開始日時を変更する"
+                                forward: "先へ"
+                                backward: "前へ"
+                                by: " "
+                                week: "週"
+                                weeks: "週"
+                                month: "月"
+                                months: "月"
+                                day: "各日"
+                                days: "日"
+                                hour: "時間"
+                                hours: "時間"
+                                update: "アップデート"
+                                shiftButton: "日時を同時に変更する"
+                            UnpublishModal: 
+                                cancel: "キャンセル"
+                                title: "変更するため非公開にする"
+                                desc: "ロケーションと時間を追加、編集、削除するため、一時的にイベントを非公開にします。非公開になっている間は、あなたのイベントは検索結果には表示されません。再び公開するのをお忘れなく。"
+                                unpublish: "非公開"
+                    preview: 
+                        notes: 
+                            prompt: "非公開のノートを追加..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>サインイン</span>して非公開のノートを追加…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "公開前にイベントをレビュー"
+                                previewUrl: "URLプレビュー"
+                                share: "イベントをシェア"
+                                locationsAndTimes: "場所と時間"
+                                publish: "公開する"
+                                unpublish: "非公開"
+                                locations: "場所"
+                                discoverable: 
+                                    title: "検索可能"
+                                    desc: "あなたのイベントは聖書アプリのイベントロケーションで、開始5日前から検索できるようになります。"
+                                status: 
+                                    title: "ステータス:"
+                                    desc: "イベント開始時に赤のLIVEバッジが表示されます。"
+                                remove: 
+                                    title: "削除"
+                                    desc: "イベント終了後、あなたのイベントは見えなくなります。「イベントを保存」した参加者は、イベントの終了後もアクセスでき、外部からのリンクで直接アクセスすることもできます。"
+                            PreviewTypeAnnouncement: 
+                                expand: "拡張する"
+                            PreviewTypePlan: 
+                                read: "読む"
+                                info: "プラン情報"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "複製する"
+                        share: "シェアする"
+                        delete: "削除"
+                        draft: "草稿"
+                        edit: "編集"
+                        view: "見る"
+                        fail: "イベントを削除できないようにする"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "コピー"
+                        copied: "コピー済"
+                        share: "シェアする"
+                        read: "読む"
+                        readPlan: "読書プラン"
+                    EventViewContentAnnouncement: 
+                        expand: "拡張する"
+                        collapse: "折りたたむ"
+                    EventViewDetails: 
+                        expand: "拡張する"
+                        collapse: "折りたたむ"
+                        save: "イベントを保存"
+                        signIn: "サインインしてイベントを保存"
+                        saved: "イベントが保存されました"

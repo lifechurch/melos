@@ -249,7 +249,7 @@ nl:
     about: "Over"
     blog: "Blog"
     versions link: "Versies"
-    languages link: "TALEN"
+    languages link: "Talen"
     jobs: "Vacatures"
     volunteer: "Vrijwilliger"
     privacy policy: "Privacybeleid"
@@ -1292,3 +1292,323 @@ nl:
         datetime: 
             just now: "Zojuist"
         verses selected: "geselecteerde verzen"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Er is een fout opgetreden"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Titel van de Mededeling is verplicht."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Bijbelverwijzing is niet geldig."
+                    events: 
+                        google_place_id: 
+                            required: "Je moet een locatie kiezen op de kaart."
+                        latitude: 
+                            required: "Je moet een locatie kiezen op de kaart."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Aanvangstijd kan niet in het verleden liggen."
+                        timezone: 
+                            required: "Tijdzone is verplicht."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Bijbelverwijzing is niet juist."
+                url: 
+                    events: 
+                        url: 
+                            required: "URL is vereist."
+                        title: 
+                            required: "URL Label is verplicht."
+            EventHeader: 
+                status: 
+                    published: "Gepubliceerd"
+                    draft: "Concept"
+                    live: "Live"
+                    archived: "Gearchiveerd"
+                unpublish: "Verborgen"
+                saving: "Bezig op te slaan..."
+                saveAsDraft: "Opslaan als concept"
+                myEvents: "Mijn Bijeenkomsten"
+                eventBuilder: "BEHEER BIJEENKOMSTEN"
+                signOut: "Afmelden"
+                createAccount: "Maak account aan"
+            HtmlEditor: 
+                text: "Tekst"
+                bold: "Vet"
+                italic: "Schuingedrukt"
+        containers: 
+            Auth: 
+                title: "Log in Bijeenkomsten"
+                signIn: "Inloggen"
+                subHead1: "Als je Bijbel App gebruiker bent en je hebt al een YouVersion account, dan kun je inloggen met dezelfde inloggegevens.<br/><br/>Heb je nog geen YouVersion account? <br/><a href='%{url}'>Registreer dan nu op Bible.com</a> om te beginnen met het aanmaken van Bijeenkomsten."
+                email: "E-mail"
+                password: "Wachtwoord"
+                forgotPassword: "Wachtwoord vergeten"
+            EventEdit: 
+                event: "Bijeenkomst"
+            EventEditContentContainer: 
+                choose: "Kies inhoud om mee te starten."
+                needHelp: "Hulp nodig?"
+                title: "Content Bijeenkomst"
+                previous: "← Vorige: Locatie & Tijd"
+                next: "Volgende: Preview →"
+            EventEditDetails: 
+                title: "Details Bijeenkomst"
+            EventEditLocationContainer: 
+                title: "Locatie Bijeenkomst"
+                previous: "← Vorige: Details"
+                next: "Volgende: Voeg inhoud toe →"
+            EventEditPreview: 
+                title: "Preview Bijeenkomst"
+                previous: "← Vorige: inhoud"
+            EventEditShare: 
+                title: "Bijeenkomsten delen"
+                subTitle: "Je Bijeenkomst is nu gepubliceerd:"
+                edit: "Bewerk Bijeenkomst"
+                go: "Ga naar Mijn Bijeenkomsten"
+                share: "Deel je Bijeenkomst:"
+                copy: "Kopiëren"
+                copied: "De shortlink is gekopieerd naar je klembord"
+                previous: "← Vorige: Preview"
+            EventFeedDiscover: 
+                title: "Ontdek Bijeenkomsten"
+                discover: "Ontdek"
+            EventFeedMine: 
+                title: "Mijn Bijeenkomsten"
+                previous: "← Vorige"
+                next: "Volgende →"
+                my: "Mijn Bijeenkomsten"
+                new: "Maak een nieuwe Bijeenkomst aan"
+                subTitle: "DOOR MIJ AANGEMAAKTE BIJEENKOMSTEN"
+                newFirst: "Maak je eerste Bijeenkomst aan"
+                learn: "Ontdek hoe je een geweldige Bijeenkomst aanmaakt"
+            EventFeedSaved: 
+                title: "Bewaarde bijeenkomsten"
+            EventView: 
+                title: "YouVersion Bijeenkomst"
+            SelectLanguage: 
+                choose: "Kies je taal"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Je sessie is verlopen. Log opnieuw in."
+                    invalidEmail: "Ongeldig e-mailadres of wachtwoord"
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Alle locaties moeten tenminste één tijdstip bevatten."
+                    locationRequired: "Je kunt een Bijeenkomst niet publiceren zonder locatie."
+                    contentRequired: "Je kunt een Bijeenkomst zonder inhoud niet publiceren."
+                    planSearchFailed: "Zoekopdracht heeft geen resultaten opgeleverd"
+                    noMatchingPlans: "Geen gerelateerde Leesplannen gevonden"
+                components: 
+                    EventEditNav: 
+                        details: "Details"
+                        locations: "Locatie en Tijd"
+                        content: "Inhoud"
+                        preview: "Preview & Publicatie"
+                        share: "Delen"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Content herschikken"
+                                doneReordering: "Herschikking voltooid"
+                            ContentHeader: 
+                                text: "Tekst"
+                                reference: "Bijbelgedeelte"
+                                plan: "Leesplan"
+                                image: "Afbeelding"
+                                link: "Externe Link"
+                                giving: "Donatie Link"
+                                announcement: "Aankondiging"
+                            ContentHelpModal: 
+                                types: "Soorten inhoud"
+                                learn: "Hoe maak je <br>een geweldige Bijeenkomst"
+                                text: 
+                                    title: "Tekst module"
+                                    desc: "Hoofdpunten, sleutelwoorden, discussievragen… Deel alle algemene tekst die je bezoekers zal helpen om de rode draad te volgen tijdens de preek. Je tekstmodule kent geen beperkingen m.b.t. de lengte en je kunt gebruikmaken van eenvoudige opmaak."
+                                reference: 
+                                    title: "module bijbelverwijzing "
+                                    desc: "Kies een Bijbelvers of -gedeelte uit een van de ruim 1200 YouVersion vertalingen in ruim 900 talen. Mensen die je Bijeenkomst bekijken kunnen je verwijzing aantikken om deze in hun Bijbel App venster te bekijken, waar ze 'm kunnen voorzien van een Bladwijzer, Markering en meer."
+                                plan: 
+                                    title: "Leesplan Module"
+                                    desc: "Verwijs naar Leesplannen en overdenkingen die gerelateerd zijn aan jouw aandachtspunten, zodat je publiek wordt aangemoedigd om gedurende de week ook bezig te zijn met Gods Woord."
+                                image: 
+                                    title: "Afbeelding Module"
+                                    desc: "Maak je Bijeenkomst levendiger door ondersteunende afbeeldingen: serie huisstijl, foto's, Versafbeeldingen, etc. Bezoekers kunnen eenvoudig je Bijeenkomstafbeeldingen delen via social media, waardoor je boodschap viraal gaat."
+                                link: 
+                                    title: "Externe Link Module"
+                                    desc: "Maakt een knop aan binnen je Bijeenkomst die verwijst naar elke willekeurige website. Zorg dat je publiek slechts één stap verwijderd is van online doneren, aanmelden als vrijwilliger, of het bezoeken van de website van je kerk."
+                                announcement: 
+                                    title: "Mededelingen Module"
+                                    desc: "Kerkelijk nieuws, geplande bijeenkomsten, programma's, scholing, vrijwilligerswerk en missionaire kansen… de Mededelingen module is de perfecte manier om belangrijke tijdgebonden informatie te delen, waarvan je niet wilt dat de aandacht wordt afgeleid van de kernboodschap van je Bijeenkomst. Elke mededelingen module wordt op een eigen pagina binnen je Bijeenkomst getoond en kan RTF-tekst bevatten (zoals bijvoorbeeld vet- en schuingedrukte tekst)."
+                            ContentInsertionPoint: 
+                                title: "Voeg de volgende module hier in"
+                            ContentTypeAnnouncement: 
+                                title: "Titel"
+                                prompt: "Schrijf hier iets op..."
+                                caption: "Alleen je (bovengenoemde) Titel zal zichtbaar zijn in je Bijeenkomst. Wanneer een gebruiker op je Titel klikt wordt de (onderstaande) body-tekst getoond in een apart venster."
+                            ContentTypeContainer: 
+                                dirty: "Content zal automatisch opgeslagen worden, een paar seconden nadat je bent gestopt met typen."
+                                failed: "Opslaan niet mogelijk."
+                                tryAgain: "Probeer opnieuw."
+                                lastSaved: "Laatste keer opgeslagen %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "De afmetingen van een afbeelding moeten zijn %{requiredWidth}x%{requiredHeight}. Je afbeelding is %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Ongeldig bestandstype. Moet JPG zijn."
+                                caption: "Bijschrift toevoegen"
+                                prompt: "Sleep Afbeelding hierheen"
+                                onlyJpg: "[alleen JPG]"
+                                sizePrompt: "%{requiredWidth}px breedte x %{requiredHeight}px hoogte"
+                                select: "Selecteer Afbeelding"
+                            ContentTypeLink: 
+                                kindrid: "Als je op zoek bent naar een slim en eenvoudig doneerplatform, <a href='%{url}'>probeer dan Kindrid</a>."
+                                label: "Link Label"
+                                prompt: "Schrijf hier iets op..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Vervang"
+                                search: "Zoeken naar een Leesplan"
+                            ContentTypeReference: 
+                                language: "Taal"
+                                version: "Versies"
+                                book: "Boek"
+                                chapterVerse: "Hoofdstuk:Vers"
+                            ContentTypeText: 
+                                prompt: "Schrijf hier iets op..."
+                            LiveWarningModal: 
+                                title: "Tijdens Bijeenkomst is verwijderen niet mogelijk"
+                                desc: "Als een Bijeenkomst eenmaal begonnen is kun je de Tekst-, Bijbelverwijzing- en Afbeeldingen Modules niet verwijderen, omdat gebruikers wellicht hun persoonlijke notities al hebben toegevoegd. Maar, je kunt deze modules wel bewerken."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Er trad een probleem op bij het publiceren van je Bijeenkomst."
+                            invalidTimes: "Eén dienst kan niet langer zijn dan 12 uur en het verschil tussen de vroegste aanvangstijd en de laatste eindtijd van een Bijeenkomst kan niet meer bedragen dan 8 dagen. Pas alsjeblieft de tijden van je Bijeenkomst aan en probeer opnieuw."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Afmetingen van de afbeelding moeten zijn %{requiredWidth}x%{requiredHeight}. Jouw afbeelding is %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Ongeldig bestandstype. Moet JPG zijn."
+                                changeImage: "Wijzig Afbeelding"
+                                removeImage: "Verwijder Afbeelding"
+                                prompt: "Sleep afbeelding hierheen"
+                                onlyJpg: "[alleen JPG]"
+                                sizePrompt: "%{requiredWidth}px breedte x %{requiredHeight}px hoogte"
+                                sizePrompt2: "De afmetingen van je afbeelding moeten zijn: %{requiredWidth} x %{requiredHeight} pixels."
+                                eventName: "Naam Bijeenkomst"
+                                org: "Naam Kerk of Organisatie"
+                                desc: "Beschrijving Bijeenkomst"
+                                next: "Volgende: Voeg Locatie & Tijd toe →"
+                                blank: "%{field} mag niet open gelaten worden."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Voeg tenminste één tijdstip toe."
+                                use: "GEBRUIK DEZE LOCATIE"
+                                edit: "Wijzig Locatie"
+                                delete: "Verwijder Locatie"
+                            LocationAddButtons: 
+                                addPhysical: "Voeg fysieke locatie toe"
+                                promptPhysical: "Je kunt meerdere locaties toevoegen."
+                                addVirtual: "Voeg virtuele locatie toe"
+                                churchOnline: "Wist je dat? Je kunt gratis een online bediening beginnen door gebruik te maken van het <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                            LocationAddTime: 
+                                minutes: "MINUTEN"
+                                hours: "UREN"
+                                days: "dagen"
+                            LocationDeleteModal: 
+                                sure: "Weet je het zeker?"
+                                selected: "Je hebt de volgende locatie geselecteerd om te verwijderen:"
+                                warn: "Deze actie zal ertoe leiden dat de locatie verwijderd wordt uit alle voorbije en toekomstige bijeenkomsten. Je zult niet langer in staat zijn om deze locatie te (her)gebruiken voor toekomstige bijeenkomsten"
+                                cancel: "Annuleren"
+                                delete: "Verwijderen"
+                            LocationEdit: 
+                                prompt: "Voer het adres van de Locatie in..."
+                                country: "Land"
+                                timezone: "Tijdzone"
+                                namePrompt: "First Baptist East Campus"
+                                name: "Naam van de Locatie"
+                                nameOptional: "Optioneel: handig bij het toevoegen van meerdere locaties"
+                                addAnother: "Voeg een ander tijdstip toe"
+                                cancel: "Annuleren"
+                                save: "Sla deze Locatie op"
+                            LocationTimeShifter: 
+                                shift: "Verschuif de startdata"
+                                forward: "Doorsturen"
+                                backward: "terug"
+                                by: "door"
+                                week: "week"
+                                weeks: "weken"
+                                month: "Maand"
+                                months: "maanden"
+                                day: "dag"
+                                days: "dagen"
+                                hour: "uur"
+                                hours: "UREN"
+                                update: "Bijwerken"
+                                shiftButton: "Verschuif alle datums en tijden tegelijk"
+                            UnpublishModal: 
+                                cancel: "Annuleren"
+                                title: "Maak publicatie ongedaan om te kunnen wijzigen"
+                                desc: "Om Locaties en Tijden te kunnen toevoegen, wijzigen, of verwijderen moet je de bijeenkomst tijdelijk onzichtbaar maken. Gedurende deze periode zal je bijeenkomst niet zichtbaar zijn bij de zoekresultaten. Vergeet niet je bijeenkomst opnieuw te publiceren."
+                                unpublish: "Verberg"
+                    preview: 
+                        notes: 
+                            prompt: "Voeg je persoonlijke notities toe..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Log in </span> om je persoonlijke notities toe te voegen...</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Bekijk je bijeenkomst voor de publicatie"
+                                previewUrl: "Preview URL:"
+                                share: "Bijeenkomst Delen"
+                                locationsAndTimes: "Locaties en Tijden"
+                                publish: "Publiceren"
+                                unpublish: "Verbergen"
+                                locations: "Locaties:"
+                                discoverable: 
+                                    title: "Zichtbaar:"
+                                    desc: "Je bijeenkomst zal vanaf vijf dagen voor je eerste aanvangstijd zichtbaar zijn in de Bijbel App Bijeenkomst locatie en zoekresultaten."
+                                status: 
+                                    title: "Status:"
+                                    desc: "De rode LIVE badge zal zichtbaar zijn vanaf je eerste aanvangstijd."
+                                remove: 
+                                    title: "Verwijder:"
+                                    desc: "Je Bijeenkomst zal niet meer zichtbaar zijn vanaf je laatste eindtijd. Bezoekers die voor “Bijeenkomst opslaan” hebben gekozen toen je Bijeenkomst zichtbaar was, zullen nog steeds toegang hebben tot de gearchiveerde versie. Deze Bijeenkomst zal ook toegankelijk blijven via verzonden directe links."
+                            PreviewTypeAnnouncement: 
+                                expand: "Uitklappen"
+                            PreviewTypePlan: 
+                                read: "Lezen"
+                                info: "Leesplaninformatie"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Dupliceren"
+                        share: "Delen"
+                        delete: "Verwijderen"
+                        draft: "Concept"
+                        edit: "Bewerken"
+                        view: "Bekijken"
+                        fail: "Bijeenkomst verwijderen niet mogelijk"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopiëren"
+                        copied: "Gekopieerd "
+                        share: "Delen"
+                        read: "Lezen"
+                        readPlan: "Leesplan"
+                    EventViewContentAnnouncement: 
+                        expand: "Uitklappen"
+                        collapse: "Inklappen"
+                    EventViewDetails: 
+                        expand: "Uitklappen"
+                        collapse: "Inklappen"
+                        save: "Bijeenkomst Opslaan"
+                        signIn: "Log in om de Bijeenkomst op te slaan"
+                        saved: "Bijeenkomst opgeslagen"

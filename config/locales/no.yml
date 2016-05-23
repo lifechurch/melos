@@ -249,7 +249,7 @@
     about: "Om"
     blog: " Blogg"
     versions link: "Versjoner"
-    languages link: "SPRÅK"
+    languages link: "Språk"
     jobs: "Jobber"
     volunteer: "Frivillig"
     privacy policy: "Personvernserklæring"
@@ -1292,3 +1292,323 @@
         datetime: 
             just now: "akkurat nå"
         verses selected: "vers valgt"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Det oppstod en feil"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Kunngjøringstittel er påkrevd."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Bibelreferansen er ugyldig."
+                    events: 
+                        google_place_id: 
+                            required: "Du må velge en lokasjon på kartet."
+                        latitude: 
+                            required: "Du må velge et sted på kartet."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Starttidspunkt kan ikke være i fortida."
+                        timezone: 
+                            required: "Tidssone er påkrevd."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Bibelreferansen er ugyldig."
+                url: 
+                    events: 
+                        url: 
+                            required: "URL er påkrevd."
+                        title: 
+                            required: "URL-tekst er påkrevd."
+            EventHeader: 
+                status: 
+                    published: "Publisert"
+                    draft: "Utkast"
+                    live: "Live"
+                    archived: "Arkivert"
+                unpublish: "Opphev publisering"
+                saving: "Lagrer..."
+                saveAsDraft: "Lagre som kladd"
+                myEvents: "Mine Eventer"
+                eventBuilder: "Opprett Event"
+                signOut: "Logg ut"
+                createAccount: "Opprett konto"
+            HtmlEditor: 
+                text: "Tekst"
+                bold: "uthevet"
+                italic: "kursiv"
+        containers: 
+            Auth: 
+                title: "Logg inn på Eventer"
+                signIn: "Logg inn"
+                subHead1: "Dersom du er en Bibel-app bruker og du allerede har en YouVersion bruker, kan du logge inn med det samme brukernavnet.<br/><br/>Har du ikke en YouVersion bruker ennå? <br/><a href='%{url}'>Registrer deg nå på Bible.com</a> for å komme igang med å lage Eventer."
+                email: "E-post"
+                password: "Passord:"
+                forgotPassword: "Glemt passord"
+            EventEdit: 
+                event: "Event"
+            EventEditContentContainer: 
+                choose: "Velg innhold for å komme i gang."
+                needHelp: "Trenger du hjelp?"
+                title: "Innhold for Event"
+                previous: "← Tidligere: Sted og tid"
+                next: "Neste: Forhåndsvis →"
+            EventEditDetails: 
+                title: "Detaljer for Event"
+            EventEditLocationContainer: 
+                title: "Sted for Event"
+                previous: "← Tidligere: Detaljer"
+                next: "Neste: Legg til innhold →"
+            EventEditPreview: 
+                title: "Forhåndsvis Event"
+                previous: "← Tidligere: Innhold"
+            EventEditShare: 
+                title: "Del Event"
+                subTitle: "Eventen din er nå publisert:"
+                edit: "Rediger Event"
+                go: "Gå til Mine Eventer"
+                share: "Del din Event"
+                copy: "Kopier"
+                copied: "Denne lenken ble kopiert til utklippstavlen din"
+                previous: "←Forrige: Forhåndsvis"
+            EventFeedDiscover: 
+                title: "Oppdag Eventer"
+                discover: "Oppdag"
+            EventFeedMine: 
+                title: "Mine Eventer"
+                previous: "← Forrige"
+                next: "Neste →"
+                my: "Mine Eventer"
+                new: "Lag Ny Event"
+                subTitle: "EVENTER LAGET AV MEG"
+                newFirst: "Lag din første Event"
+                learn: "Lær hvordan du kan lage en flott Event"
+            EventFeedSaved: 
+                title: "Lagrede Eventer"
+            EventView: 
+                title: "YouVersion Event"
+            SelectLanguage: 
+                choose: "Velg ditt språk"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Din påloggingstid utløp. Vennligst logg inn igjen."
+                    invalidEmail: "Ugyldig e-post eller passord."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Alle lokasjoner må ha minst ett tidspunkt."
+                    locationRequired: "Du kan ikke publisere en Event uten en lokasjon."
+                    contentRequired: "Du kan ikke publisere en Event uten innhold."
+                    planSearchFailed: "Søket fant ingen dokumenter"
+                    noMatchingPlans: "Ingen passende planer"
+                components: 
+                    EventEditNav: 
+                        details: "Detaljer"
+                        locations: "Sted og tid"
+                        content: "Innhold"
+                        preview: "Forhåndsvis og publiser"
+                        share: "Del"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Omorganiser innhold"
+                                doneReordering: "Omorganiseringen er ferdig."
+                            ContentHeader: 
+                                text: "Tekst"
+                                reference: "Bibelhenvisning"
+                                plan: "Leseplan"
+                                image: "Bilde"
+                                link: "Ekstern lenke"
+                                giving: "Lenke for gaver"
+                                announcement: "Annonseringer"
+                            ContentHelpModal: 
+                                types: "Innholdstyper"
+                                learn: "Lær hvordan du kan lage <br>en flott Event"
+                                text: 
+                                    title: "Tekstdel"
+                                    desc: "Hovedtrekk, nøkkelpunkter, diskusjonsspørsmål...Del all form for tekstbasert innhold som vil hjelpe dine deltakere, slik at de kan få med seg budskapet ditt, mens det skjer. Det er ingen begrensninger på hvor lange tekstmodulene dine kan være, og du kan bruke ulike tekstformat."
+                                reference: 
+                                    title: "Bibelreferansemodul"
+                                    desc: "Velg et bibelvers eller avsnitt, med lenke til en av YouVersions over 1 200 versjoner på over 900 språk. Folk som ser din Event kan trykke på lenken for å se bibelverset i sin Bibel-app, og de kan legge til et bokmerke, utheve det osv."
+                                plan: 
+                                    title: "Planmodul"
+                                    desc: "Lenke til leseplaner som kan være relevante for undervisningen din, og hjelpe deltakerne til å fortsette med å studere Guds ord i den kommende uken."
+                                image: 
+                                    title: "Bildemodul"
+                                    desc: "Gjør Eventen mer levende ved hjelp av grafer, bilder, illustrasjoner, bibelbilder osv. Deltakerne vil lett kunne dele Event-bildene dine på sosiale medier, og dermed spre budskapet ditt på Internett."
+                                link: 
+                                    title: "Modul for eksterne lenker"
+                                    desc: "Lager en knapp i Eventen din som er koblet til et eksternt nettsted. Du kan ta deltakerne dine kun et tastetrykk fra givertjeneste på nett, registrering som frivillig eller hjemmesidene til kirken."
+                                announcement: 
+                                    title: "Kunngjøringsmodul"
+                                    desc: "Kunngjøringsmodulen er perfekt for å dele oppdatert og viktig informasjon, men som du ikke vil skal ta bort oppmerksomheten fra hovedbudskapet i Eventen din. Du kan legge ut Nyheter fra menigheten, andre arrangement, oppgaver til frivillige mm. Hver kunngjøringsmodul vil vises på en egen side i din Event, og kan inneholde formattert tekst (som uthevet og kursiv)."
+                            ContentInsertionPoint: 
+                                title: "Sett inn neste modul her"
+                            ContentTypeAnnouncement: 
+                                title: "Tittel"
+                                prompt: "Skriv noe her..."
+                                caption: "I din Event vil bare tittelen (over) vare synlig. Når en bruker trykker på tittelen din, vil hovedteksten (under) vises på en seperat skjerm"
+                            ContentTypeContainer: 
+                                dirty: "Innholdet vil bli lagret automatisk når du er ferdig med å skrive."
+                                failed: "Kan ikke lagre."
+                                tryAgain: "Prøv igjen."
+                                lastSaved: "Sist lagret %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Bilderstørrelse må være %{requiredWidth}x%{requiredHeight}. Bildet ditt er %{yourWidth}%{yourHeight}"
+                                    wrongType: "Ugyldig filtype. Må være JPG."
+                                caption: "Legg til bildetekst"
+                                prompt: "Dra og dropp et bilde"
+                                onlyJpg: "[Kun JPG]"
+                                sizePrompt: "%{requiredWidth}px bredde x%{requiredHeight}px høyde"
+                                select: "Velg bilde"
+                            ContentTypeLink: 
+                                kindrid: "Dersom du ser etter en smart, enkel plattform for givertjeneste, <a href='%{url}'>prøv Kindrid</a>."
+                                label: "Lenke-tekst"
+                                prompt: "Skriv noe her..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Erstatt"
+                                search: "Søk etter bibelleseplan"
+                            ContentTypeReference: 
+                                language: "Språk"
+                                version: "Bibelutgave"
+                                book: "Bok"
+                                chapterVerse: "Kapittel:Vers"
+                            ContentTypeText: 
+                                prompt: "Skriv noe her..."
+                            LiveWarningModal: 
+                                title: "Kan ikke slette mens Eventen er live."
+                                desc: "Når en Event har gått live kan du ikke slette tekst, bibelreferanser og bildemoduler fordi mange brukere allerede har lagt til egne notater der. Du kan fortsatt redigere disse modulene."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Det oppstod et problem med å publisere Eventen din."
+                            invalidTimes: "Ett enkelt arrangement kan ikke vare mer enn 12 timer, og forskjellen mellom tidligste starttidspunkt og seneste slutttid for en Event kan ikke være mer enn 8 dager. Vennligst juster Eventtidspunktene dine på ny."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Bildestørrelsen må være %{requiredWidth}%{requiredHeight} Bildet ditt er %{yourWidth}%{yourHeight}"
+                                    wrongType: "Ugyldig filnavn. Må være JPG."
+                                changeImage: "Endre bilde"
+                                removeImage: "Fjern bilde"
+                                prompt: "Dra og dropp et bilde"
+                                onlyJpg: "[Kun JPG]"
+                                sizePrompt: "%{requiredWidth}px bredde x%{requiredHeight}px høyde"
+                                sizePrompt2: "Størrelsen på bildet ditt bør være %{requiredWidth} x %{requiredHeight} pixler."
+                                eventName: "Navn på Event"
+                                org: "Navn på kirke eller organisasjon"
+                                desc: "Beskrivelse av Event"
+                                next: "Neste: Legg til sted og tid →"
+                                blank: "%{field} kan ikke være tomt."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Legg til minst ett tidspunkt."
+                                use: "BRUK DENNE LOKASJONEN"
+                                edit: "Endre lokasjon"
+                                delete: "Slett lokasjon"
+                            LocationAddButtons: 
+                                addPhysical: "Legg til fysisk lokasjon"
+                                promptPhysical: "Du kan legge til mange lokasjoner."
+                                addVirtual: "Legg til virtuell lokasjon"
+                                churchOnline: "Visste du dette? Du kan opprette et menighetstilbud på Internett helt gratis ved å bruke <a className='button-caption' href='%{url}'>Church Online plattformen</a>."
+                            LocationAddTime: 
+                                minutes: "MINUTTER"
+                                hours: "TIMER"
+                                days: "dager"
+                            LocationDeleteModal: 
+                                sure: "Er du sikker?"
+                                selected: "Du har valgt at følgende lokasjon skal bli slettet:"
+                                warn: "Dette vil fjerne lokasjonen fra alle tidligere og framtidige Eventer. Du vil ikke kunne bruke denne lokasjonen på nytt for framtidige Eventer. "
+                                cancel: "Avbryt"
+                                delete: "Slett"
+                            LocationEdit: 
+                                prompt: "Legg til adresse til lokasjonen..."
+                                country: "Land"
+                                timezone: "Tidssone"
+                                namePrompt: "First Baptist East Campus"
+                                name: "Navn på lokasjon"
+                                nameOptional: "Valgfritt: Nyttig om det er flere lokasjoner"
+                                addAnother: "Legg til et annet tidspunkt"
+                                cancel: "Avbryt"
+                                save: "Lagre denne lokasjonen"
+                            LocationTimeShifter: 
+                                shift: "Endre startdatoer"
+                                forward: "Videresend"
+                                backward: "bakover"
+                                by: "av"
+                                week: "uke"
+                                weeks: "uker"
+                                month: "Måned"
+                                months: "måneder"
+                                day: "dag"
+                                days: "dager"
+                                hour: "time"
+                                hours: "TIMER"
+                                update: "Oppdater"
+                                shiftButton: "Flytt alle datoer og tider på en gang"
+                            UnpublishModal: 
+                                cancel: "Avbryt"
+                                title: "Opphev publiseringen for å gjøre endringer."
+                                desc: "For å legge til, redigere eller slette lokasjon og tider må du midlertidig oppheve publiseringen av eventen. Mens du gjør dette vil eventen ikke være synlig i søkeresultater. Ikke glem å publisere eventen din igjen."
+                                unpublish: "Opphev publisering"
+                    preview: 
+                        notes: 
+                            prompt: "Legg til dine private kommentarer..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Logg inn</span> for å legge til dine private notater…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Se gjennom din Event før den publiseres "
+                                previewUrl: "Forhåndsvis URL: "
+                                share: "Del eventer"
+                                locationsAndTimes: "Steder og tidspunkt"
+                                publish: "Publiser"
+                                unpublish: "Opphev publisering"
+                                locations: "Lokasjoner:"
+                                discoverable: 
+                                    title: "Synlig:"
+                                    desc: "Din event vil være synlig i Bibelappen og søkbar fem dager før tidligste starttidspunkt."
+                                status: 
+                                    title: "Status:"
+                                    desc: "Den røde LIVE-markøren vil vises når første starttispunkt inntreffer."
+                                remove: 
+                                    title: "Fjern:"
+                                    desc: "Din Event vil ikke være synlig etter siste slutttidspunkt. Deltakere som trykket “Lagre Event” da Eventen var synlig vil fortsatt ha tilgang til en lagret versjon av den. Denne eventen vil fortsatt vært tilgjengelig gjennom direktelenke."
+                            PreviewTypeAnnouncement: 
+                                expand: "Utvid"
+                            PreviewTypePlan: 
+                                read: "Les"
+                                info: "Leseplan-informasjon"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Dupliser"
+                        share: "Del"
+                        delete: "Slett"
+                        draft: "Utkast"
+                        edit: "Rediger"
+                        view: "Se"
+                        fail: "Kan ikke slette Event"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopier"
+                        copied: "Kopierte"
+                        share: "Del"
+                        read: "Les"
+                        readPlan: "Les Planen"
+                    EventViewContentAnnouncement: 
+                        expand: "Utvid"
+                        collapse: "Lukk"
+                    EventViewDetails: 
+                        expand: "Utvid"
+                        collapse: "Lukk"
+                        save: "Lagre event"
+                        signIn: "Logg inn for å lagre Event"
+                        saved: "Event Lagret"

@@ -1292,3 +1292,323 @@ sw:
         datetime: 
             just now: "sasa hivi"
         verses selected: "Mistari imechaguliwa"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Ni kosa ilitokea"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Kichwa cha Tangazo kinahitajika."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Kumbukumbu za biblia hazipotei"
+                    events: 
+                        google_place_id: 
+                            required: "Lazima kuchagua eneo kutoka ramani."
+                        latitude: 
+                            required: "Lazima kuchagua eneo kutoka ramani."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: " Muda wa kuanza hauwezi kuwa katika siku za nyuma."
+                        timezone: 
+                            required: "Ujumbe inahitajika"
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Kumbukumbu za biblia hazipotei"
+                url: 
+                    events: 
+                        url: 
+                            required: "URL Label inahitajika."
+                        title: 
+                            required: "URL Label inahitajika."
+            EventHeader: 
+                status: 
+                    published: "Imechapishwa"
+                    draft: "Rasimu"
+                    live: "mojakwamoja"
+                    archived: "Imepatikana"
+                unpublish: "Haikuchapishwa"
+                saving: "Inahifadhiwa"
+                saveAsDraft: "Weka kama mfano"
+                myEvents: "Matukio yangu"
+                eventBuilder: "Mjenzi wa tukio"
+                signOut: "toka/ondoka"
+                createAccount: "Fungua Akaunti Mpya"
+            HtmlEditor: 
+                text: "Nakala"
+                bold: "Koleza"
+                italic: "Italic"
+        containers: 
+            Auth: 
+                title: "Yaliyomo"
+                signIn: "Ingia"
+                subHead1: "Kama wewe ni mtumiaji wa Biblia App na tayari una akaunti YouVersion, unaweza kuingia kwa kutumia yako sifa sawa. Futa akaunti yangu ya YouVersion<a href='%{url}'> Ishara hadi sasa katika Bible.com </a> kuanza kujenga Matukio."
+                email: "Barua pepe"
+                password: "kitambulisho cha siri"
+                forgotPassword: "Umekisahau kitambulisho cha siri"
+            EventEdit: 
+                event: "Matukio"
+            EventEditContentContainer: 
+                choose: "Chagua baadhi ya maudhui ya kupata kuanza."
+                needHelp: "Unahitaji msaada?"
+                title: "Yaliyomo"
+                previous: "Maeneo na muda"
+                next: "Inayofuata angalia"
+            EventEditDetails: 
+                title: "Maelezo ya tukio"
+            EventEditLocationContainer: 
+                title: "Maelezo ya tukio"
+                previous: "← Kabla: Maelezo"
+                next: "Maandishi ya elezo"
+            EventEditPreview: 
+                title: "Uhakiki wa tukio"
+                previous: "Kurasa iliyopita"
+            EventEditShare: 
+                title: "Yaliyomo"
+                subTitle: "Tukio lako Sasa limechapishwa:"
+                edit: "Hariri Tukio"
+                go: "Kwenda kwenye Matukio yangu"
+                share: "Shirikisha kuhusu tukio"
+                copy: "Nakili"
+                copied: "shortlink ilipelekwa kwenye clipboard yako"
+                previous: "Kurasa iliyopita"
+            EventFeedDiscover: 
+                title: "Gundua mipango"
+                discover: "Gundua"
+            EventFeedMine: 
+                title: "Matukio yangu"
+                previous: "Iliopita"
+                next: "Inayofuata"
+                my: "Matukio yangu"
+                new: "Fungua Akaunti Mpya"
+                subTitle: "MATUKIO iliyoundwa na mimi"
+                newFirst: "Tengeneza tukio lako la kwanza"
+                learn: "Jifunze jinsi ya kufanya Tukio kubwa"
+            EventFeedSaved: 
+                title: "Matukio yaliyotunzwa"
+            EventView: 
+                title: "Tukio la YouVersion"
+            SelectLanguage: 
+                choose: "chagua lugha yako:"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "kikao chako muda umeisha. Tafadhali ingia tena."
+                    invalidEmail: "jina la mtumiaji au kitambulisho cha siri ni batili"
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "maeneo yote lazima uwe na angalau mara moja."
+                    locationRequired: "Huwezi kuchapisha Tukio bila maudhui."
+                    contentRequired: "Huwezi kuchapisha Tukio na hakuna maudhui."
+                    planSearchFailed: "Tafuta hakuwa na hati yoyote ya kufanana"
+                    noMatchingPlans: "Hakuna Mipango vinavyolingana"
+                components: 
+                    EventEditNav: 
+                        details: "Maelezo"
+                        locations: "Maeneo na muda"
+                        content: "Yaliyomo"
+                        preview: "Angalia & Chapisha"
+                        share: "husisha wengine"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Maudhui ya ibada"
+                                doneReordering: "amefanya kuagiza tena"
+                            ContentHeader: 
+                                text: "Nakala"
+                                reference: "Kumbukumbu za biblia"
+                                plan: "Mpango"
+                                image: "Picha"
+                                link: "Kiunganishi cha nje"
+                                giving: "Kiunganishi cha utoaji"
+                                announcement: "Tangazo"
+                            ContentHelpModal: 
+                                types: "Aina maudhui"
+                                learn: "Jifunze jinsi ya kufanya<br> Tukio kubwa"
+                                text: 
+                                    title: "Unene wa usomi"
+                                    desc: "Unaonyesha, pointi muhimu, maswali ya majadiliano ... Kushiriki yoyote yaliyomo ya jumla Nakala makao ambayo itasaidia attenders yako kufuata pamoja na ujumbe wako kama kinatokea. modules wako wa maandishi inaweza kuwa yeyote urefu na inaweza ni pamoja na tajiri Nakala formatting."
+                                reference: 
+                                    title: "Kumbukumbu za biblia"
+                                    desc: "Kuchagua aya yoyote Biblia au kifungu, wanaohusishwa moja kwa moja na yoyote ya YouVersion ya 1,200+ matoleo, katika lugha 900 +. Watu kuangalia Tukio yako unaweza bomba kumbukumbu yako kuona hivyo katika Biblia yao App msomaji, ambapo wanaweza Kwanza hilo, Highlight, na zaidi."
+                                plan: 
+                                    title: "mpango Module"
+                                    desc: "Unganisha kwa Mipango ya Biblia na maungamo ambayo yanahusiana na pointi za mafundisho yako, kusaidia watazamaji wako kuendelea kushiriki na Neno la Mungu kwa wiki nzima."
+                                image: 
+                                    title: "mpango Module"
+                                    desc: "Kuleta Tukio lako la maisha na aina yoyote ya kusaidia michoro: mfululizo sanaa, picha, Fungu la picha nk wahudhuriaji wataweza kushiriki kwa urahisi Tukio picha yako kwa vyombo vya habari yao ya kijamii, kuchukua ujumbe wako virusi."
+                                link: 
+                                    title: "Kiunganishi cha nje"
+                                    desc: "Inajenga kifungo ndani Tukio yako kwamba viungo na tovuti yoyote ya nje. Kuweka watazamaji wako bomba moja tu mbali na online kutoa, kujitolea kujisajili, au kurasa kanisa nyumbani."
+                                announcement: 
+                                    title: "Tangazo"
+                                    desc: "Church habari, matukio ya kalenda, mipango, madarasa, kujitolea na ujumbe fursa ... Tangazo modules ni chombo kamili kwa ajili ya kubadilishana habari hiyo ni wakati na muhimu, lakini kwamba wewe hawataki kuvuruga ujumbe msingi Tukio chako. Kila moduli tangazo inaonekana kwenye ukurasa wake mwenyewe katika Tukio yako, na wanaweza hata ni pamoja tajiri Nakala maudhui (kama vile ujasiri na italics)."
+                            ContentInsertionPoint: 
+                                title: "Kuingiza moduli ijayo hapa"
+                            ContentTypeAnnouncement: 
+                                title: "Kichwa cha habari"
+                                prompt: "Samahani,Kitu fulani kimeenda vibaya. "
+                                caption: "Katika Tukio lako, cheo chako tu (hapo juu) kitaonekana. Wakati mtumiaji mabomba kwenye cheo chako, Mwili (chini) maonyesho kwenye kioo tofauti."
+                            ContentTypeContainer: 
+                                dirty: "Maudhui moja kwa moja kuokoa sekunde chache baada ya kuacha kuandika."
+                                failed: "Imeshindikana kuhifadhi aina ya malipo."
+                                tryAgain: "Jaribu Tena"
+                                lastSaved: "Ilirekebishwa mwisho %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Image ukubwa lazima %{requiredWidth} x %{requiredHeight} . picha yako ni %{yourWidth} x %{yourHeight} ."
+                                    wrongType: "Aina ya file batili Lazima kuwa JPG."
+                                caption: "kuongeza maelezo"
+                                prompt: "zungusha na kuacha picha"
+                                onlyJpg: "[JPG tu]"
+                                sizePrompt: "%{requiredWidth} px upana x %{requiredHeight} px urefu"
+                                select: "Chagua Picha"
+                            ContentTypeLink: 
+                                kindrid: "Kama wewe ni kuangalia kwa smart, rahisi kutoa jukwaa, <a href='%{url}'> kujaribu Kindrid </a> ."
+                                label: "Onyesha kwa Lebo"
+                                prompt: "Samahani,Kitu fulani kimeenda vibaya. "
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "nafasi"
+                                search: "Tafuta kwa ajili ya Mpango wa kusoma"
+                            ContentTypeReference: 
+                                language: "lugha"
+                                version: "Tolea"
+                                book: "kitabu"
+                                chapterVerse: "Sura"
+                            ContentTypeText: 
+                                prompt: "Samahani,Kitu fulani kimeenda vibaya. "
+                            LiveWarningModal: 
+                                title: "Hawezi Futa Wakati Tukio ni kuishi"
+                                desc: "Mara baada ya Tukio amekwenda kuishi, huwezi kufuta Nakala, Kumbukumbu Biblia, na modules Image kutoka humo kwa sababu watumiaji wanaweza kuwa tayari aliongeza maelezo yao binafsi kwao. Unaweza, hata hivyo, hariri modules hizi."
+                                ok: "Sawa"
+                    details: 
+                        errors: 
+                            generic: "Kulikuwa na tatizo wakati wa kuchapisha Tukio yako."
+                            invalidTimes: "huduma moja hawezi kuwa zaidi ya saa 12, na tofauti kati ya mwanzo muda wa kuanza na karibuni wakati wa mwisho juu ya Tukio hawezi kuwa zaidi ya siku 8. Tafadhali kurekebisha mara yako Tukio na jaribu tena."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Image ukubwa lazima %{requiredWidth} x %{requiredHeight} . picha yako ni %{yourWidth} x %{yourHeight} ."
+                                    wrongType: "Aina ya file batili Lazima kuwa JPG."
+                                changeImage: "Badilisha picha"
+                                removeImage: "ondoa picha"
+                                prompt: "zungusha na kuacha picha"
+                                onlyJpg: "[JPG tu]"
+                                sizePrompt: "%{requiredWidth} px upana x %{requiredHeight} px urefu"
+                                sizePrompt2: "picha vipimo yako lazima %{requiredWidth} x %{requiredHeight} saizi."
+                                eventName: "Jina la tukio"
+                                org: "Jina la kanisa au shirika"
+                                desc: "Maelezo ya tukio"
+                                next: "Inayofuatat: ongeza Mahali & Muda →"
+                                blank: "%{field} Haiwezi kuwa wazi"
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Kuongeza angalau mara moja."
+                                use: "TUMIA SEHEMU HII"
+                                edit: "Badili mahali"
+                                delete: "Futa mahali"
+                            LocationAddButtons: 
+                                addPhysical: "Kuongeza Mahali halisi"
+                                promptPhysical: "Unaweza kuongeza maeneo mbalimbali."
+                                addVirtual: "Kuongeza Mahali halisi"
+                                churchOnline: "Ulimaanisha %{url}? Unaweza kuzindua huduma online kwa ajili ya bure kwa kutumia <a className='button-caption' href='%{url}'> Church Online Baraza </a> ."
+                            LocationAddTime: 
+                                minutes: "DAKIKA"
+                                hours: "MASAA"
+                                days: "SIKU"
+                            LocationDeleteModal: 
+                                sure: "Unahuakika?"
+                                selected: "Una kuchaguliwa eneo zifuatazo ifutwe:"
+                                warn: "Hii kuondoa eneo kutokana na matukio yote ya zamani na sasa. Huwezi kuwa na uwezo wa kutumia tena eneo hili kwa matukio ya baadaye."
+                                cancel: "Ondoa"
+                                delete: "Ondoa"
+                            LocationEdit: 
+                                prompt: "Andika barua pepe yako"
+                                country: "Nchi"
+                                timezone: "wakati wa eneo"
+                                namePrompt: "Kwanza campus ya Baptist Mashariki"
+                                name: "Jina la mahali"
+                                nameOptional: "Unaweza kuongeza maeneo mbalimbali."
+                                addAnother: "Kuongeza muda mwingine"
+                                cancel: "Ondoa"
+                                save: "Hifadhi hii Mahali"
+                            LocationTimeShifter: 
+                                shift: "Peleka siku ya kuanza na kumaliza mbele. "
+                                forward: "Mbele"
+                                backward: "nyuma"
+                                by: "na"
+                                week: "wiki"
+                                weeks: "wiki"
+                                month: "mwezi"
+                                months: "mwezi"
+                                day: "siku"
+                                days: "SIKU"
+                                hour: "Saa 1"
+                                hours: "MASAA"
+                                update: "Wezesha"
+                                shiftButton: "Kuhama tarehe yote na nyakati kwa mara moja"
+                            UnpublishModal: 
+                                cancel: "Ondoa"
+                                title: "Batilisha uchapishaji na kufanya Mabadiliko"
+                                desc: "Kuongeza, hariri, au kufuta mahali na nyakati, kwa muda kubatilisha uchapishaji tukio hilo. Wakati huo, tukio yako hawataonekana katika matokeo ya utafutaji. Usisahau kuchapisha tukio yako tena."
+                                unpublish: "Haikuchapishwa"
+                    preview: 
+                        notes: 
+                            prompt: "Ongeza maelezo yako binafisi"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Ongeza maelezo yako binafisi</span></a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Pitia Tukio lako Kabla ya kuchapisha"
+                                previewUrl: "Hakiki URL"
+                                share: "Shirikisha tukio"
+                                locationsAndTimes: "Maeneo na muda"
+                                publish: "Kuweka hadharani"
+                                unpublish: "Haikuchapishwa"
+                                locations: "Mahali:"
+                                discoverable: 
+                                    title: "Inagundulika"
+                                    desc: "tukio lako litaonekana katika Biblia App Tukio eneo na tafuta matokeo siku 5 kabla ya kuanza kwenu wa wakati wa mwanzo."
+                                status: 
+                                    title: "Hadhi ya dondoo:"
+                                    desc: "nyekundu LIVE beji itakuwa inaonyesha wakati wa kuanza kwenu wakati kuanza."
+                                remove: 
+                                    title: "ondoa"
+                                    desc: "Tukio yako tena kuwa ndogo iweze baada ya muda wake wa mwisho mwisho. Attenders ambaye tapped \"Save Tukio\" wakati Tukio wako ulikuwa iweze bado wanapata toleo lililohifadhiwa la hayo, Tukio Hii pia kuendelea kuwa kupatikana kwa njia ya viungo moja kwa moja inbound."
+                            PreviewTypeAnnouncement: 
+                                expand: "Kupanua"
+                            PreviewTypePlan: 
+                                read: "Soma"
+                                info: "Maelezo ya mpango"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Chapisha"
+                        share: "husisha wengine"
+                        delete: "Ondoa"
+                        draft: "Rasimu"
+                        edit: "Hariri"
+                        view: "Tazama"
+                        fail: "Haiwezi kufuta Tukio"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Nakili"
+                        copied: "Imenakiliwa"
+                        share: "husisha wengine"
+                        read: "Soma"
+                        readPlan: "Soma Mipango"
+                    EventViewContentAnnouncement: 
+                        expand: "Kupanua"
+                        collapse: "kuanguka kwa"
+                    EventViewDetails: 
+                        expand: "Kupanua"
+                        collapse: "kuanguka kwa"
+                        save: "TunzaTukio"
+                        signIn: "Ingia ili kutunza Tukio"
+                        saved: "tukio limetunzwa"

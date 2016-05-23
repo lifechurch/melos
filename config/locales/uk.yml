@@ -1318,3 +1318,323 @@ uk:
         datetime: 
             just now: "щойно"
         verses selected: "Обрані вірші"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Виникла помилка"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Необхідна назва оголошення"
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Біблійне посилання помилкове"
+                    events: 
+                        google_place_id: 
+                            required: "Ви повинні обрати місце на мапі."
+                        latitude: 
+                            required: "Виберіть місце на мапі."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Початок не може бути у минулому."
+                        timezone: 
+                            required: "Додайте часовий пояс."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Необхідне Білійне посилання"
+                url: 
+                    events: 
+                        url: 
+                            required: "необхідний URL"
+                        title: 
+                            required: "Мітка з URL — обов'язкова."
+            EventHeader: 
+                status: 
+                    published: "Опубліковано"
+                    draft: "Чернетка"
+                    live: "Наживо"
+                    archived: "Архівовано"
+                unpublish: "Вилучити"
+                saving: "Збереження..."
+                saveAsDraft: "Зберегти як чернетку"
+                myEvents: "Мої події"
+                eventBuilder: "Редактор подій"
+                signOut: "Вийти"
+                createAccount: "Створити обліковий запис"
+            HtmlEditor: 
+                text: "Текст"
+                bold: "Жирний"
+                italic: "Курсив"
+        containers: 
+            Auth: 
+                title: "Увійти в Події"
+                signIn: "Увійти"
+                subHead1: "Якщо ви користувач програми Біблія та вже маєте обліковий запис YouVersion, ви вже можете увійти в події<br/><br/>Не маєте акаунту YouVersion? <br/><a href='%{url}'>Зареєструйтесь на Bible.com щоб створювати події</a>"
+                email: "Ел.пошта"
+                password: "Пароль"
+                forgotPassword: "Відновлення паролю"
+            EventEdit: 
+                event: "Подія"
+            EventEditContentContainer: 
+                choose: "Виберіть матеріал для початку."
+                needHelp: "Потрібна допомога?"
+                title: "Вміст події"
+                previous: "← Назад: Місця і час"
+                next: "Вперед: Попередній перегляд →"
+            EventEditDetails: 
+                title: "Деталі події"
+            EventEditLocationContainer: 
+                title: "Місце події"
+                previous: "← Назад: Деталі"
+                next: "Далі: Додати вміст →"
+            EventEditPreview: 
+                title: "Попередній перегляд події"
+                previous: "← Назад: Вміст"
+            EventEditShare: 
+                title: "Поширити подію."
+                subTitle: "Ваша подія опублікована"
+                edit: "Редагувати подію"
+                go: "Повернутися до моїх подій"
+                share: "Поширити мою подію"
+                copy: "Копіювати"
+                copied: "Коротке посилання було скопійовано"
+                previous: "← Назад: Попередній перегляд"
+            EventFeedDiscover: 
+                title: "Шукати події"
+                discover: "Пізнавайте"
+            EventFeedMine: 
+                title: "Мої події"
+                previous: "← Назад"
+                next: "Вперед →"
+                my: "Мої події"
+                new: "Створити нову подію"
+                subTitle: "Події створені мною"
+                newFirst: "Створіть вашу першу подію"
+                learn: "Дізнайтесь як створити чудову подію"
+            EventFeedSaved: 
+                title: "Збереженні Події"
+            EventView: 
+                title: "YouVersion подія"
+            SelectLanguage: 
+                choose: "Оберіть мову"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Час вийшов через неактивність. Увійдіть знову."
+                    invalidEmail: "Недійсна адреса ел. пошти або пароль."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Всі місця мають мати час"
+                    locationRequired: "Ви не можете публікувати подію без місця."
+                    contentRequired: "Ви не можете публікувати подію без вмісту."
+                    planSearchFailed: "Пошук не дав результатів."
+                    noMatchingPlans: "Немає відповідних планів"
+                components: 
+                    EventEditNav: 
+                        details: "Докладніше"
+                        locations: "Місця і час"
+                        content: "Вміст"
+                        preview: "Перегляд і публікація"
+                        share: "Поділитись"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Впорядкувати вміст"
+                                doneReordering: "Впорядкування завершено"
+                            ContentHeader: 
+                                text: "Текст."
+                                reference: "Посилання в Біблії"
+                                plan: "План"
+                                image: "Зображення"
+                                link: "Зовнішнє посилання"
+                                giving: "Посилання пожертв"
+                                announcement: "Оголошення"
+                            ContentHelpModal: 
+                                types: "Типи вмісту"
+                                learn: "Навчіться як створювати <br> чудові події"
+                                text: 
+                                    title: "Текст"
+                                    desc: "Нариси, ключові моменти, обговорення, питання… Поширюйте будь-який текстовий матеріал, що допомагатиме вашим відвідувачам слідкувати за вашими повідомленнями, під час події. Ваші текстові модулі можуть мати довільну довжину та включати елементи форматування."
+                                reference: 
+                                    title: "Посилання"
+                                    desc: "Оберіть будь-який вірш чи частину із будь-якого перекладу YouVersion на більше ніж 900 мовах. Люди, переглядаючи посилання у вашій події, можуть відкрити їх у Біблії та зберегти їх у закладках."
+                                plan: 
+                                    title: "Плани читання"
+                                    desc: "Посилання на плани читання і роздуми, що пов'язані з вашим вченням і які допоможуть вашій аудиторії сприймати і розуміти Боже Слове протягом усього тижня."
+                                image: 
+                                    title: "Зображення"
+                                    desc: "Прикрасьте вашу подію графічними об'єктами: витворами мистецтва, фотографіями, малюнками із віршами та іншим. Відвідувачі зможуть поширювати ваші зображення із події у свіїх соц. мережах."
+                                link: 
+                                    title: "Зовнішнє посилання"
+                                    desc: "Створюється кнопка вашої події для веб-сайту. Дозвольте вашим відвідувачам жертвувати онлайн чи ставати волонтерами для церкви."
+                                announcement: 
+                                    title: "Оголошення"
+                                    desc: "Новини церкви, календарні події, програми, класи, можливості волонтерства та доручення... Оголошення є чудовим зібранням для того, щоб поділитись цією інформацією, що є вчасною та важливою, але не такою, щоб відволікала від вашого початкового повідомлення Події. Кожне модульне оголошення з'являється на своїй власній сторінці у вашій Події, і може, навіть, включати в себе багатий зміст тексту (такий як жирний шрифт і курсив). "
+                            ContentInsertionPoint: 
+                                title: "Вставте наступний модуль"
+                            ContentTypeAnnouncement: 
+                                title: "Назва"
+                                prompt: "Напишіть тут що-небудь..."
+                                caption: "Лише назва події відображатиметься. Коли користувач натисне на назву, текст внизу відкриється у окремому вікні."
+                            ContentTypeContainer: 
+                                dirty: "Вміст автоматично зергатиметься за кілька секунд."
+                                failed: "Не вдалося зберегти."
+                                tryAgain: "Спробуйте знову"
+                                lastSaved: "Збережено %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Розмір зображення повинен бути %{requiredWidth}х%{requiredHeight}. Ваше зображення %{yourWidth}х%{yourHeight}."
+                                    wrongType: "Невірний тип файлу. Повинен бути JPG. "
+                                caption: "Додати підпис"
+                                prompt: "Потягніть та відпустіть зображення"
+                                onlyJpg: "[лише JPG]"
+                                sizePrompt: "%{requiredWidth}px ширина x %{requiredHeight}px висота"
+                                select: "Обрати зображення"
+                            ContentTypeLink: 
+                                kindrid: "Якщо ви шукайте розумну та просту платформу пожертв, <a href='%{url}'>спробуйте Kindrid</a>."
+                                label: "Назва посилання"
+                                prompt: "Напишіть тут що-небуть..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Замінити"
+                                search: "Пошук планів читання"
+                            ContentTypeReference: 
+                                language: "Мова"
+                                version: "Версія"
+                                book: "Книга"
+                                chapterVerse: "Розділ:Вірш"
+                            ContentTypeText: 
+                                prompt: "Напишіть тут що-небудь..."
+                            LiveWarningModal: 
+                                title: "Неможливо видалити поки подія у LIVE"
+                                desc: "Якщо подія вже у стадії наживо, ви не можете видаляти текст, посилання, та зображення через те, що інші користувачі могли вже додати свої приватні нотатки до неї. Ви можете редагувати модулі."
+                                ok: "Добре"
+                    details: 
+                        errors: 
+                            generic: "Виникла проблема із публікацією вашої події."
+                            invalidTimes: "Одинична подія не може тривати більше, ніж 12 годин, і різниця між початком і кінцем у Події не може тривати більше 8 днів. Будь ласка, налаштуйте ваш час Події і спробуйте знову."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Зобраєення має бути %{requiredWidth}x%{requiredHeight}. Ваше зображення %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Неправильний тип файлу. Має бути JPG."
+                                changeImage: "Змінити зображення"
+                                removeImage: "Видалити зображення"
+                                prompt: "Потягніть і відпустіть сюди зображення"
+                                onlyJpg: "[лише JPG]"
+                                sizePrompt: "%{requiredWidth}px ширина x %{requiredHeight}px висота"
+                                sizePrompt2: "Ваше зображення має бути %{requiredWidth} x %{requiredHeight} пікселів."
+                                eventName: "Назва події"
+                                org: "Назва церкви чи організації"
+                                desc: "Опис події"
+                                next: "Далі: Додайте місце і час →"
+                                blank: "%{field} не може бути пустим."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Додайте хоча б один час."
+                                use: "Використовувати це місце знаходження"
+                                edit: "Редагувати місце"
+                                delete: "Видалити місце"
+                            LocationAddButtons: 
+                                addPhysical: "Додати місце"
+                                promptPhysical: "Ви можете додати декілька місць."
+                                addVirtual: "Додати віртуальне місце"
+                                churchOnline: "Ви знали? Ви можете запустити онлайн служіння для безкоштовного користування <a className='button-caption' href='%{url}'> Платформою Онлайн Церкви</a>."
+                            LocationAddTime: 
+                                minutes: "ХВИЛИНИ"
+                                hours: "ГОДИНИ"
+                                days: "ДНІВ"
+                            LocationDeleteModal: 
+                                sure: "Справді?"
+                                selected: "Ви обрали наступну подію для видалення:"
+                                warn: "Це видалить місце з минулих та теперішніх подій. Ви не зможете знову використати це місце для майбутніх подій."
+                                cancel: "Скасувати"
+                                delete: "Видалити"
+                            LocationEdit: 
+                                prompt: "Введіть адресу місця"
+                                country: "Країна"
+                                timezone: "Часовий пояс"
+                                namePrompt: "First Baptist East Campus"
+                                name: "Назва місця"
+                                nameOptional: "Необов'язково: бажано, якщо додаєте декілька місць"
+                                addAnother: "Додати інший час"
+                                cancel: "Скасувати"
+                                save: "Зберегти це місце"
+                            LocationTimeShifter: 
+                                shift: "Зсунути дати"
+                                forward: "Перенаправити"
+                                backward: "назад"
+                                by: "від"
+                                week: "тиждень"
+                                weeks: "тижні"
+                                month: "Місяць"
+                                months: "місяці"
+                                day: "День"
+                                days: "ДНІВ"
+                                hour: "година"
+                                hours: "ГОДИНИ"
+                                update: "Оновити"
+                                shiftButton: "Змінити всі дати і час"
+                            UnpublishModal: 
+                                cancel: "Скасувати"
+                                title: "Вилучити або редагувати"
+                                desc: "Щоб додати подію або видалити місця і час, тимчасово вилучіть подію. Протягом цього часу, ваша подія буде недоступна у пошуку. Не забудьте потім знову запублікувати вашу подію."
+                                unpublish: "Вилучити"
+                    preview: 
+                        notes: 
+                            prompt: "Додайте ваші особисті нотатки..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Увійдіть, щоб додати ваші приватні нотатки ...</span></a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Переглянути подію перед публікацією"
+                                previewUrl: "URL для перегляду: "
+                                share: "Поділитись Подією"
+                                locationsAndTimes: "Розташування і час"
+                                publish: "Публікувати"
+                                unpublish: "Вилучити"
+                                locations: "Місця:"
+                                discoverable: 
+                                    title: "Видимість:"
+                                    desc: "Ваша подія буде видима у програмі Біблія в розділі подій та у результатах пошуку за 5 днів до часу початку події."
+                                status: 
+                                    title: "Без статусу:"
+                                    desc: "Червоний значок LIVE буде відображатися, коли настане час початку події."
+                                remove: 
+                                    title: "Видалення: "
+                                    desc: "Ваша подія більше не буде відображатися після її закінчення. Відвідувачі, які натиснули “Зберегти подію” коли вона була доступна матимуть доступ до її архівованої версії після її кінця. Ця подія також буде доступна через прямі посилання."
+                            PreviewTypeAnnouncement: 
+                                expand: "Розширити"
+                            PreviewTypePlan: 
+                                read: "Читати"
+                                info: "Інформація про план"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Подвоїти"
+                        share: "Поділитись"
+                        delete: "Видалити"
+                        draft: "Чернетка"
+                        edit: "Редагувати"
+                        view: "Перегляд"
+                        fail: "Неможливо видалити Подію"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Копіювати"
+                        copied: "Скопійовано"
+                        share: "Поділитись"
+                        read: "Читати"
+                        readPlan: "Читати план"
+                    EventViewContentAnnouncement: 
+                        expand: "Розширити"
+                        collapse: "Закрити"
+                    EventViewDetails: 
+                        expand: "Розширити"
+                        collapse: "Закрити"
+                        save: "Зберегти подію"
+                        signIn: "Увійдіть, щоб зберегти подію"
+                        saved: "Подію збережено"

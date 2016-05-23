@@ -159,14 +159,14 @@ af:
         share: 
             tell friends: "Vertel jou vriende van die Bybel Toep vir Kinders."
             facebook name: "Die Bybel Toep vir Kinders"
-            facebook description: "Die Bybel Toep vir Kinders is hier! Laai die gratis toep vir iOS en Android nog vandag af: interaktiewe Bybel stories om jou kind te help leer, speel en groei in God se woord. www.bible.com/kids"
-            facebook link: "http://www.bible.com/kids"
-            facebook redirect: "http://www.bible.com/kids"
-            twitter description: "Die Bybel Toep vir Kinders van @YouVersion is hier! Dis pret en heeltemal gratis. Laai af: bible.com/kids"
+            facebook description: "Die Bybel Toep vir Kinders is hier! Laai die gratis toep vir iOS en Android nog vandag af: interaktiewe Bybel stories om jou kind te help leer, speel en groei in God se woord. www.bible.com/kinders"
+            facebook link: "http://www.bible.com/kinders"
+            facebook redirect: "http://www.bible.com/kinders"
+            twitter description: "Die Bybel Toep vir Kinders van @YouVersion is hier! Dis pret en heeltemal gratis. Laai af: bible.com/kinders"
             twitter hashtags: "kinderbybel"
             email: "E-pos"
             email subject: "Die Bybel Toep vir Kinders is hier!"
-            email body: "Goeie nuus - die Bybel Toep vir Kinders is hier! Dis heeltemal gratis en is nou beskikbaar vir iPhone, iPad, iPod touch, en Android toestelle. Die toep is a groeiende versameling van Bybel stories met druk-geaktiveerde animasies en leer aktiwiteite, perfek om kinders te help om die groot stories van die Bybel te leer. Gaan na bible.com/kids op jou moebiele toestel om dit nog vandag af te laai."
+            email body: "Goeie nuus - die Bybel Toep vir Kinders is hier! Dis heeltemal gratis en is nou beskikbaar vir iPhone, iPad, iPod touch, en Android toestelle. Die toep is a groeiende versameling van Bybel stories met druk-geaktiveerde animasies en leer aktiwiteite, perfek om kinders te help om die groot stories van die Bybel te leer. Gaan na bible.com/kinders op jou moebiele toestel om dit nog vandag af te laai."
         partner: 
             youversion: "YouVersion: Die wêreld se mees populêre Bybel Toep"
             in partnership: "in samewerking met"
@@ -1292,3 +1292,323 @@ af:
         datetime: 
             just now: "nou net"
         verses selected: "verse gekies"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "'n Fout het ingetree"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Aankondiging titel word benodig."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Bybelverwysing is nie geldig nie."
+                    events: 
+                        google_place_id: 
+                            required: "Jy moet 'n plek op die kaart kies."
+                        latitude: 
+                            required: "Jy moet 'n plek op die kaart kies."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Begintyd kan nie in die verlede wees nie."
+                        timezone: 
+                            required: "Tydsone word benodig."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Ongeldige Bybelverwysing."
+                url: 
+                    events: 
+                        url: 
+                            required: "URL word benodig."
+                        title: 
+                            required: "URL Opskrif is nodig."
+            EventHeader: 
+                status: 
+                    published: "Plaas"
+                    draft: "Konsep"
+                    live: "Lewendig"
+                    archived: "In Argief Geplaas"
+                unpublish: "Onttrek"
+                saving: "Besig om te Stoor..."
+                saveAsDraft: "Stoor as Rofwerk"
+                myEvents: "My Gebeurtenisse"
+                eventBuilder: "GEBEURTENIS BOUER"
+                signOut: "Teken Uit"
+                createAccount: "Skep Rekening"
+            HtmlEditor: 
+                text: "Teks"
+                bold: "vet druk"
+                italic: "kursief"
+        containers: 
+            Auth: 
+                title: "Teken in vir Gebeurtenisse"
+                signIn: "Teken In"
+                subHead1: " As jy 'n Bybel Toep gebruiker is en alreeds 'n YouVersion rekening het, kan jy met dieselfde besonderhede inteken.<br/><br/>Het jy nog nie 'n YouVersion rekening nie? <br/><a href='%{url}'>Teken nou aan op Bible.com en begin om Gebeure te skep.</a>"
+                email: "E-pos"
+                password: "Wagwoord:"
+                forgotPassword: "Het wagwoord vergeet"
+            EventEdit: 
+                event: "Gebeurtenis"
+            EventEditContentContainer: 
+                choose: "Kies van die inhoud om mee te begin."
+                needHelp: "Hulp nodig?"
+                title: "Gebeurtenis Inhoud"
+                previous: "← Vorige: Plekke & Tye"
+                next: "Volgende: Voorskou →"
+            EventEditDetails: 
+                title: "Besonderhede van Gebeurtenis"
+            EventEditLocationContainer: 
+                title: "Plek van Gebeurtenis"
+                previous: "← Vorige: Besonderhede"
+                next: "Volgende: Voeg Inhoud By →"
+            EventEditPreview: 
+                title: "Gebeurtenis Voorskou"
+                previous: "← Vorige: Inhoud"
+            EventEditShare: 
+                title: "Deel die Gebeurtenis"
+                subTitle: "Jou Gebeurtenis is nou Geplaas:"
+                edit: "Redigeer Gebeurtenis"
+                go: "Gaan na My Gebeurtenisse"
+                share: "Deel jou gebeurtenis:"
+                copy: "Kopieër"
+                copied: "Die skakel is na jou knipbord gekopieër "
+                previous: "← Vorige: Voorskou"
+            EventFeedDiscover: 
+                title: "Ontdek Gebeurtenisse"
+                discover: "Ontdek"
+            EventFeedMine: 
+                title: "My Gebeurtenisse"
+                previous: "← Vorige"
+                next: "Volgende →"
+                my: "My Gebeurtenisse"
+                new: "Skep Nuwe Gebeurtenis"
+                subTitle: "GEBEURTENISSE DEUR MY GESKEP"
+                newFirst: "Skep Jou Eerste Gebeurtenis"
+                learn: "Leer hoe om 'n goeie Gebeurtenis te skep"
+            EventFeedSaved: 
+                title: "Gestoorde Gebeure"
+            EventView: 
+                title: "YouVersion Gebeurtenis"
+            SelectLanguage: 
+                choose: "Kies Jou Taal"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Jou sessie is vertreke. Teken asseblief weer in."
+                    invalidEmail: "Ongeldige epos of wagwoord."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Alle plekke behoort ten minste een tyd te hê."
+                    locationRequired: "Jy kan nie 'n Gebeurtenis plaas sonder plekke nie."
+                    contentRequired: "Jy kan nie 'n Gebeurtenis sonder inhoud plaas nie."
+                    planSearchFailed: "Jou soektog het niks opgelewer nie"
+                    noMatchingPlans: "Geen verwante Planne"
+                components: 
+                    EventEditNav: 
+                        details: "Besonderhede"
+                        locations: "Plekke & Tye"
+                        content: "Inhoud"
+                        preview: "Voorskou & Plasing"
+                        share: "Deel"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Rangskik Inhoud"
+                                doneReordering: "Klaar met Herrangskik"
+                            ContentHeader: 
+                                text: "Teks"
+                                reference: "Bybelverwysing"
+                                plan: "Plan"
+                                image: "Foto"
+                                link: "Eksterne Skakel"
+                                giving: "Donasie Skakel"
+                                announcement: "Aankondiging"
+                            ContentHelpModal: 
+                                types: "Inhoud Soorte"
+                                learn: "Leer hoe om 'n <br>goeie Gebeurtenis te maak"
+                                text: 
+                                    title: "Teks Module"
+                                    desc: "Raamwerke, sleutelpunte, gespreksvrae... Deel enige algemene inhoud (slegs teks) wat jou deelnemers sal help om jou boodskap te volg soos wat dit gebeur. Jou teks gedeeltes kan enige lengte wees en mag ryk teks formate insluit."
+                                reference: 
+                                    title: "Bybelverwysingsmodule"
+                                    desc: "Enige Bybelvers of -gedeelte wat jy kies is direk gekoppel aan YouVersion se 1 200+ Bybelweergawes, in 900+ tale. Mense wat jou Gebeurtenis sien kan op enige verwysing tik om dit in hulle Bybel Toep Leser te sien. Daar kan hulle dit Merk, Beklemtoon en nog baie meer daarmee doen."
+                                plan: 
+                                    title: "Plan Module"
+                                    desc: "Koppel jou hoofgedagtes aan Bybelplanne en Oordenkings. Sodoende help jy jou gehoor om voortdurend deur die week met God se Woord besig te wees."
+                                image: 
+                                    title: "Beeld Module"
+                                    desc: "Kikker jou Gebeurtenis op met enige ondersteunende grafika: kunswerke, foto's, Versbeelde, ens. Deelnemers sal jou Gebeurtenisbeelde maklik kan deel op hulle sosiale media en jou boodskap sodoende versprei."
+                                link: 
+                                    title: "Eksterne Skakelmodule"
+                                    desc: "Skep 'n skakel binne-in jou Gebeurtenis wat dit koppel aan enige eksterne webwerf. Jou gehoor is slegs een klik verwyder van aanlyn skenkings, aanteken as vrywilliger of kerke se tuisblaaie."
+                                announcement: 
+                                    title: "Aankondigingsmodule"
+                                    desc: "Kerknuus, kalenderitems, klasse, vrywilliger-en-sendeling-geleenthede...Aankondigingmodules is die ideale stoorplek om belangrike inligting te deel sonder om jou Gebeurtenis se primêre boodskap af te verwater. Elke aankondigingsmodule verskyn op sy eie bladsy in jou Gebeurtenis en jy kan selfs verrykte inhoud (soos kursiewe en benadrukte skrif) insluit. "
+                            ContentInsertionPoint: 
+                                title: "Voeg volgende module hier in"
+                            ContentTypeAnnouncement: 
+                                title: "Titel"
+                                prompt: "Skryf iets hier..."
+                                caption: "Slegs jou Titel (hierbo) sal in jou Gebeurtenis sigbaar wees. Wanneer 'n gebruiker op jou Titel kliek sal die Inhoud (hieronder) op 'n aparte skerm vertoon."
+                            ContentTypeContainer: 
+                                dirty: "Inhoud stoor outomaties 'n paar sekondes nadat jy ophou tik het."
+                                failed: "Kan nie stoor nie."
+                                tryAgain: "Probeer weer."
+                                lastSaved: "Laaste gestoor %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Prentgrootte verlang is %{requiredWidth}x%{requiredHeight}. Jou prent is %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Ongeldige lêertipe. Dit moet JPG wees."
+                                caption: "Voeg opskrif by"
+                                prompt: "Trek en Plaas 'n Prent"
+                                onlyJpg: "[slegs JPG]"
+                                sizePrompt: "%{requiredWidth}px wydte x %{requiredHeight}px hoogte"
+                                select: "Kies Prent"
+                            ContentTypeLink: 
+                                kindrid: "Indien jy 'n slim, eenvoudige donasie platform soek, <a href='%{url}'>probeer Kindrid</a>."
+                                label: "Skakel Opskrif"
+                                prompt: "Skryf iets hier..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Vervang"
+                                search: "Soek 'n Leesplan"
+                            ContentTypeReference: 
+                                language: "Taal"
+                                version: "Weergawe"
+                                book: "Boek"
+                                chapterVerse: "Hoofstuk:Vers"
+                            ContentTypeText: 
+                                prompt: "Skryf iets hier..."
+                            LiveWarningModal: 
+                                title: "Kan nie verwyder word terwyl die Gebeurtenis nog aan die gang is nie"
+                                desc: "As die Gebeurtenis lewendig is, kan Teks, Bybelverwysing en Prentmodules nie verwyder word nie, want gebruikers kon alreeds hul privaatnotas bygevoeg het. Jy kan die modules nog redigeer."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "'n Probleem het ontstaan met die plasing van jou Gebeurtenis."
+                            invalidTimes: "'n Diens kan nie meer as 12 ure wees nie en die verskil tussen die vroegste begintyd en die laatste eindtyd van 'n Gebeurtenis kan nie meer as 8 dae wees nie. Pas asb. jou Gebeurtenis se tye aan en probeer weer."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Prent grootte verlang is %{requiredWidth}x%{requiredHeight}. Jou prent is %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Verkeerde lêertipe. Moet JPG wees."
+                                changeImage: "Verander Prent"
+                                removeImage: "Verwyder Prent"
+                                prompt: "Trek en Plaas 'n Prent"
+                                onlyJpg: "[slegs JPG]"
+                                sizePrompt: "%{requiredWidth}px wydte x %{requiredHeight}px hoogte"
+                                sizePrompt2: "Jou prent se afmetings moet %{requiredWidth} x %{requiredHeight} beeldpunte wees."
+                                eventName: "Gebeurtenis Naam"
+                                org: "Kerknaam of Organisasie"
+                                desc: "Beskrywing van Gebeurtenis"
+                                next: "Volgende: Voeg Plek & Tye by →"
+                                blank: "%{field} kan nie leeg wees nie."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Voeg ten minste een tyd by."
+                                use: "GEBRUIK HIERDIE PLEK"
+                                edit: "Redigeer Plek"
+                                delete: "Verwyder Area"
+                            LocationAddButtons: 
+                                addPhysical: "Voeg 'n Fisiese Adres by"
+                                promptPhysical: "Jy kan verskeie adresse byvoeg."
+                                addVirtual: "Voeg Virtuele Adres By"
+                                churchOnline: "Het jy geweet? Jy kan gratis 'n aanlyn bediening begin deur gebruik te maak van die <a className='button-caption' href='%{url}'>Church Online Geleentheid</a>."
+                            LocationAddTime: 
+                                minutes: "MINUTE"
+                                hours: "URE"
+                                days: "dae"
+                            LocationDeleteModal: 
+                                sure: "Is jy seker?"
+                                selected: "Jy het die volgende plek gekies om te verwyder:"
+                                warn: "Die plek sal van alle vorige en huidige gebeurtenisse verwyder word. Jy sal nie weer hierdie plek vir toekomstige gebeurtenisse kan gebruik nie."
+                                cancel: "Kanselleer"
+                                delete: "Vee uit"
+                            LocationEdit: 
+                                prompt: "Voeg die Plek se adres in..."
+                                country: "Land"
+                                timezone: "Tydsone"
+                                namePrompt: "First Baptist East Kampus"
+                                name: "Plek se Naam"
+                                nameOptional: "Opsioneel: Nuttig vir wanneer meer as een plek bygevoeg word"
+                                addAnother: "Voeg nog 'n tyd by"
+                                cancel: "Kanselleer"
+                                save: "Stoor hierdie Plek"
+                            LocationTimeShifter: 
+                                shift: "Skuif begin datums"
+                                forward: "Vorentoe"
+                                backward: "gaan terug"
+                                by: "by"
+                                week: "week"
+                                weeks: "weke"
+                                month: "Maand"
+                                months: "maande"
+                                day: "Dag"
+                                days: "dae"
+                                hour: "uur"
+                                hours: "URE"
+                                update: "Verander"
+                                shiftButton: "Skuif alle datums en tye gelyktydig"
+                            UnpublishModal: 
+                                cancel: "Kanselleer"
+                                title: "Onttrek sodat jy Veranderinge kan aanbring"
+                                desc: "Om Plekke en Tye by te voeg, te redigeer of te verwyder moet jy die gebeurtenis tydelik onttrek. Gedurende hierdie tyd sal jou gebeurtenis nie in soekresultate verskyn nie. Moenie vergeet om jou gebeurtenis weer te plaas nie."
+                                unpublish: "Onttrek"
+                    preview: 
+                        notes: 
+                            prompt: "Voeg jou private notas by..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Teken in</span> om jou persoonlike notas by te voeg…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Kontroleer Jou Gebeurtenis Voor Jy Dit Plaas"
+                                previewUrl: "Kyk Eers Weer Na URL:"
+                                share: "Deel Gebeurtenis"
+                                locationsAndTimes: "Plekke en Tye"
+                                publish: "Publiseer"
+                                unpublish: "Onttrek"
+                                locations: "Plekke:"
+                                discoverable: 
+                                    title: "Opspoorbaar:"
+                                    desc: "Jou gebeurtenis sal sigbaar wees in die Bybel Toep se Gebeurtenis afdeling en soekresultate 5 dae voor jou vroegste begintyd."
+                                status: 
+                                    title: "Status:"
+                                    desc: "Die rooi LEWENDIG knopie sal vertoon word wanneer jou vroegste begintyd is."
+                                remove: 
+                                    title: "Verwyder:"
+                                    desc: "Jou Gebeurtenis sal nie meer opspoorbaar wees na die laaste eindtyd nie. Besoekers wat op “Stoor Gebeurtenis” kliek terwyl jou Gebeurtenis nog opspoorbaar is, kan dit nog na die tyd in die argief opspoor. Hierdie Gebeurtenis sal ook d.m.v. direkte inkomende skakels bereik kan word."
+                            PreviewTypeAnnouncement: 
+                                expand: "Vergroot"
+                            PreviewTypePlan: 
+                                read: "Lees"
+                                info: "Leesplan inligting"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Dupliseer"
+                        share: "Deel"
+                        delete: "Vee uit"
+                        draft: "Konsep"
+                        edit: "Wysig"
+                        view: "Besigtig"
+                        fail: "Kan nie Gebeurtenis verwyder nie"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopieër"
+                        copied: "Gekopieër"
+                        share: "Deel"
+                        read: "Lees"
+                        readPlan: "Lees die Plan"
+                    EventViewContentAnnouncement: 
+                        expand: "Vergroot"
+                        collapse: "Laat val"
+                    EventViewDetails: 
+                        expand: "Vergroot"
+                        collapse: "Laat val"
+                        save: "Stoor Geleentheid"
+                        signIn: "Teken in om Gebeurtenis te stoor"
+                        saved: "Gebeurtenis is Gestoor"

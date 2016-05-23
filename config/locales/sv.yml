@@ -249,7 +249,7 @@ sv:
     about: "Om"
     blog: "Blogg"
     versions link: "Översättningar"
-    languages link: "SPRÅK"
+    languages link: "Språk"
     jobs: "Jobb"
     volunteer: "Volontär"
     privacy policy: "Integritetspolicy"
@@ -1292,3 +1292,323 @@ sv:
         datetime: 
             just now: "Precis nu"
         verses selected: "verser valda"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Ett fel uppstod"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Meddelandetitel krävs."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Bibelreferens felaktig."
+                    events: 
+                        google_place_id: 
+                            required: "Du måste välja en plats på kartan."
+                        latitude: 
+                            required: "Du måste välja en plats på kartan."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Starttid måste vara i framtiden."
+                        timezone: 
+                            required: "Tidszon krävs."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Bibelreferens felaktig."
+                url: 
+                    events: 
+                        url: 
+                            required: "Webb-adress krävs."
+                        title: 
+                            required: "Länktitel krävs."
+            EventHeader: 
+                status: 
+                    published: "Publicerad"
+                    draft: "Utkast"
+                    live: "Live"
+                    archived: "Arkiverad"
+                unpublish: "Avpublicera"
+                saving: "Sparar..."
+                saveAsDraft: "Spara som utkast"
+                myEvents: "Mina händelser"
+                eventBuilder: "Skapa händelse"
+                signOut: "Logga ut"
+                createAccount: "Skapa konto"
+            HtmlEditor: 
+                text: "Text"
+                bold: "fet"
+                italic: "kursiv"
+        containers: 
+            Auth: 
+                title: "Händelse - Logga in"
+                signIn: "Logga in"
+                subHead1: "Om du är en Bibelapp-användare och redan har ett YouVersion-konto kan du logga in med samma inloggningsuppgifter.<br/><br/>Har du inte redan ett YouVersion-konto?<br/><a href='%{url}'>Registrera dig nu på Bibel.com</a> för att börja skapa händelser."
+                email: "E-post"
+                password: "Lösenord"
+                forgotPassword: "Glömt lösenordet"
+            EventEdit: 
+                event: "Händelse"
+            EventEditContentContainer: 
+                choose: "Välj innehåll för att komma igång."
+                needHelp: "Vill du ha hjälp?"
+                title: "Händelseinnehåll"
+                previous: "← Föregående: Tid & plats"
+                next: "Nästa: Förhandsgranska →"
+            EventEditDetails: 
+                title: "Händelsedetaljer"
+            EventEditLocationContainer: 
+                title: "Plats för händelse"
+                previous: "← Föregående: Detaljer"
+                next: "Nästa: Lägg till innehåll →"
+            EventEditPreview: 
+                title: "Förhandsgranska händelse"
+                previous: "← Föregående: Innehåll"
+            EventEditShare: 
+                title: "Dela händelse"
+                subTitle: "Din händelse är nu publicerad:"
+                edit: "Redigera händelse"
+                go: "Gå till mina händelser"
+                share: "Dela din händelse:"
+                copy: "Kopiera"
+                copied: "Kortlänken kopierades till urklipp"
+                previous: "← Föregående: Förhandsgranska"
+            EventFeedDiscover: 
+                title: "Upptäck händelser"
+                discover: "Upptäck"
+            EventFeedMine: 
+                title: "Mina händelser"
+                previous: "← Föregående"
+                next: "Nästa →"
+                my: "Mina händelser"
+                new: "Skapa ny händelse"
+                subTitle: "HÄNDELSER SKAPADE AV MIG"
+                newFirst: "Skapa din första händelse"
+                learn: "Lär hur du gör en stor händelse"
+            EventFeedSaved: 
+                title: "Sparade Evenemang"
+            EventView: 
+                title: "YouVersion-händelse"
+            SelectLanguage: 
+                choose: "Välj ditt språk"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Din session har löpt ut. Logga in igen."
+                    invalidEmail: "Felaktig e-post eller lösenord"
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Alla platser måste ha åtminstone en tid."
+                    locationRequired: "Du kan inte publicera en händelse utan plats."
+                    contentRequired: "Du kan inte publicera en händelse utan innehåll."
+                    planSearchFailed: "Sökningen matchade inte några dokument"
+                    noMatchingPlans: "Inga hittade planer"
+                components: 
+                    EventEditNav: 
+                        details: "Detaljer"
+                        locations: "Tider & platser"
+                        content: "Innehåll"
+                        preview: "Förhandsgranska & publicera"
+                        share: "Dela"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Flytta innehåll"
+                                doneReordering: "Färdig med att flytta innehåll"
+                            ContentHeader: 
+                                text: "Text"
+                                reference: "Bibelreferens"
+                                plan: "Plan"
+                                image: "Bild"
+                                link: "Extern länk"
+                                giving: "Länk till donation"
+                                announcement: "Meddelande"
+                            ContentHelpModal: 
+                                types: "Typ av innehåll"
+                                learn: "Lär dig hur du skapa<br>en fantastisk händelse"
+                                text: 
+                                    title: "Textmodul"
+                                    desc: "Översikt, huvudpunkter, diskussionsfrågor… Dela med dig av allmänt textbaserat innehåll för att hjälpa dina åhörare att följa med i ditt budskap, medan du säger det. Din textmodul kan vara hur lång som helst och kan innehålla formaterad text."
+                                reference: 
+                                    title: "Bibelreferensmodul"
+                                    desc: "Välja valfri bibelvers eller -passage länkad direkt till någon av YouVersions över 1 200 bibelöversättningar på mer än 900 språk. Människor som tittar på din händelse kan trycka på dina referenser för att se dem i Bibelappen och därifrån bl.a. skapa bokmärken och göra markerar."
+                                plan: 
+                                    title: "Planmodul"
+                                    desc: "Länka till bibelplaner och andakter som relaterar till vad du vill ha sagt för att hjälpa din publik att fortsätta engagera sig i Guds Ord hela veckan."
+                                image: 
+                                    title: "Bildmodul"
+                                    desc: "Gör din händelse levande med valfri typ av grafik: serier, foton, bibelkort m.m. Deltagare kan enkelt dela dina bilder på social media och göra ditt budskap viralt. "
+                                link: 
+                                    title: "Extern länk-modul"
+                                    desc: "Skapa en knapp i din händelse för att länka till externa hemsidor. Gör att din publik bara har en knapptryckning till hemsidor för välgörenhet, volontärsarbete och kyrkor."
+                                announcement: 
+                                    title: "Meddelandemodul"
+                                    desc: "Kyrkonyheter, schema, program, studiegrupper, volontärsarbete och missionsmöjligheter...Meddelandemodulen är den perfekta platsen att dela med dig av viktig information som är aktuellt vid en viss tid, men som du inte vill dra uppmärksamhet från det primära budskapet. Varje meddelandemodul visas på varsin sida i händelsen och kan även innehålla formaterad text (så som fet och kursivt text)"
+                            ContentInsertionPoint: 
+                                title: "Lägg till nästa modul här"
+                            ContentTypeAnnouncement: 
+                                title: "Titel"
+                                prompt: "Skriv något här..."
+                                caption: "I din händelse kommer enbart din titel (ovan) visas. När en användare trycker på titeln kommer innehållet (nedan) visas i en separat vy."
+                            ContentTypeContainer: 
+                                dirty: "Innehållet kommer automatiskt sparas några sekunder efter att du sluta skriva."
+                                failed: "Kan inte spara."
+                                tryAgain: "Försök igen."
+                                lastSaved: "Senast sparad %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Bildstorlek måste vara %{requiredWidth}x%{requiredHeight}. Din bild är %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Felaktig filtyp. Måste vara JPG."
+                                caption: "Lägg till bildtext"
+                                prompt: "Drag och släpp en bild"
+                                onlyJpg: "[Enbart JPG]"
+                                sizePrompt: "%{requiredWidth}px bred x %{requiredHeight}px hög"
+                                select: "Välj bild"
+                            ContentTypeLink: 
+                                kindrid: "Om du söker efter en smart och enkelt gåvoplattform, <a href='%{url}'>prova Kindrid</a>."
+                                label: "Länkbeskrivning"
+                                prompt: "Skriv något här..."
+                                url: "Webb-adress"
+                            ContentTypePlan: 
+                                replace: "Ersätt"
+                                search: "Sök efter läsplan"
+                            ContentTypeReference: 
+                                language: "Språk"
+                                version: "Översättning"
+                                book: "Bok"
+                                chapterVerse: "Kapitel:Vers:"
+                            ContentTypeText: 
+                                prompt: "Skriv något här..."
+                            LiveWarningModal: 
+                                title: "Kan inte ta bort medan händelse pågår"
+                                desc: "När väl en händelse har startat kan du inte ta bort text-, bibelreferens- eller bildmoduler då användare kanske redan har lagt till egna privata anteckningar på dem. Å andra sidan kan du redigera modulerna."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Ett problem uppstod när händelsen skulle publiceras."
+                            invalidTimes: "En enskild session kan inte vara mer än 12 timmar, och det får inte vara mer än 8 dagar mellan första starttiden och sista sluttiden på en händelse. Justera tiderna för händelsen och försök igen."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Bildstorleken måste vara %{requiredWidth}x%{requiredHeight}. Din bild är %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Ogiltig fil Måste vara jpg"
+                                changeImage: "Ändra bild"
+                                removeImage: "Ta bort bild"
+                                prompt: "Drag och släpp en bild"
+                                onlyJpg: "[Enbart JPG]"
+                                sizePrompt: "%{requiredWidth}px bred x %{requiredHeight}px hög"
+                                sizePrompt2: "Dina bilder bör har storleken %{requiredWidth} x %{requiredHeight} pixlar."
+                                eventName: "Händelsens namn"
+                                org: "Kyrkans namn eller organisation"
+                                desc: "Händelsedetaljer"
+                                next: "Nästa: Lägg till tid och plats"
+                                blank: "%{field} kan inte vara tom."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Lägg till åtminstone en gång."
+                                use: "ANVÄND DENNA PLATS"
+                                edit: "Redigera plats"
+                                delete: "Ta bort plats"
+                            LocationAddButtons: 
+                                addPhysical: "Lägg till en fysisk plats"
+                                promptPhysical: "Du kan lägga till flera platser."
+                                addVirtual: "Lägg till virtuell plats"
+                                churchOnline: "Visste du? Du kan gratis utöva ditt prästerskap online med <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                            LocationAddTime: 
+                                minutes: "MINUTER"
+                                hours: "TIMMAR"
+                                days: "dagar"
+                            LocationDeleteModal: 
+                                sure: "Är du säker?"
+                                selected: "Du har valt följande plats att ta bort:"
+                                warn: "Detta kommer att ta bort platsen från alla tidigare och framtida händelser. Du kommer inte kunna återanvända denna plats i framtida händelser."
+                                cancel: "Avbryt"
+                                delete: "Ta bort"
+                            LocationEdit: 
+                                prompt: "Ange platsens adress..."
+                                country: "Land"
+                                timezone: "Tidszon"
+                                namePrompt: "First Baptist East Campus"
+                                name: "Platsens namn"
+                                nameOptional: "Valfritt: Lägg till flera platser"
+                                addAnother: "Lägg till ytterligare tidpunkt"
+                                cancel: "Avbryt"
+                                save: "Spara denna plats"
+                            LocationTimeShifter: 
+                                shift: "Flytta startdatum"
+                                forward: "Framåt"
+                                backward: "bakåt"
+                                by: "av"
+                                week: "vecka"
+                                weeks: "veckor"
+                                month: "Månad"
+                                months: "månader"
+                                day: "dag"
+                                days: "dagar"
+                                hour: "timme"
+                                hours: "TIMMAR"
+                                update: "Uppdatera"
+                                shiftButton: "Ändra alla datum och tider samtigt"
+                            UnpublishModal: 
+                                cancel: "Avbryt"
+                                title: "Avpublicera för att göra förändringar"
+                                desc: "För att lägga till, ändra eller ta bort tid och plats, avpublicera händelsen tillfälligt. Under tiden kommer det inte vara möjligt att söka upp händelsen. Glöm inte att publicera din händelse igen."
+                                unpublish: "Avpublicera"
+                    preview: 
+                        notes: 
+                            prompt: "Lägg till dina privata Anteckningar..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Logga in</span> för att skriva dina privata anteckningar…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Granska din händelse före publicering"
+                                previewUrl: "Förhandsvisningsadress:"
+                                share: "Dela Evenemang"
+                                locationsAndTimes: "Adresser och tider"
+                                publish: "Publicera"
+                                unpublish: "Avpublicera"
+                                locations: "Platser:"
+                                discoverable: 
+                                    title: "Synligt:"
+                                    desc: "Din händelse kommer att vara synlig i Bibelappen vid sökning efter händelser eller på kartan 5 dagar före startdatum."
+                                status: 
+                                    title: "Status för anteckning:"
+                                    desc: "LIVE kommer att visas när händelsen har startat."
+                                remove: 
+                                    title: "Ta bort:"
+                                    desc: "Din händelse kommer inte längre vara sökbara efter slutdatumet. Deltagare som har tryckt \"Spara händelse\" när händelsen fortfarande var sökbar kommer att ha tillgång till en arkiverad version av den. Händelsen kommer också vara tillgänglig om en direktlänk används. "
+                            PreviewTypeAnnouncement: 
+                                expand: "Expandera"
+                            PreviewTypePlan: 
+                                read: "Läs"
+                                info: "Om läsplanen"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Duplicera"
+                        share: "Dela"
+                        delete: "Ta bort"
+                        draft: "Utkast"
+                        edit: "Ändra"
+                        view: "Visa"
+                        fail: "Kunde inte ta bort händelse"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopiera"
+                        copied: "Kopierad"
+                        share: "Dela"
+                        read: "Läs"
+                        readPlan: "Läsplan"
+                    EventViewContentAnnouncement: 
+                        expand: "Expandera"
+                        collapse: "Komprimera "
+                    EventViewDetails: 
+                        expand: "Expandera"
+                        collapse: "Komprimera"
+                        save: "Spara evenemang"
+                        signIn: "Logga in för att spara händelse"
+                        saved: "Händelse sparad"

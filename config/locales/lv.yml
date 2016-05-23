@@ -1305,3 +1305,323 @@ lv:
         datetime: 
             just now: "tikai tagad"
         verses selected: "izvēlēti panti"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Radusies kļūda"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Nepieciešams norādīt paziņojuma nosaukumu."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Bībeles atsauce nav derīga."
+                    events: 
+                        google_place_id: 
+                            required: "Tev jāizvēlas atrašanās vieta kartē."
+                        latitude: 
+                            required: "Tev jāizvēlas atrašanās vieta kartē."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Sākuma laiks nevar būt pagātnē."
+                        timezone: 
+                            required: "Nepieciešams norādīt laika zonu."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Bībeles atsauce nav derīga."
+                url: 
+                    events: 
+                        url: 
+                            required: "Nepieciešams URL."
+                        title: 
+                            required: "Ir nepieciešama tīmekļa adreses iezīme."
+            EventHeader: 
+                status: 
+                    published: "Publicēts"
+                    draft: "Melnraksts"
+                    live: "Tiešraide"
+                    archived: "Arhivēts"
+                unpublish: "Atcelt publicēšanu"
+                saving: "Saglabā..."
+                saveAsDraft: "Saglabāt kā paraugu"
+                myEvents: "Mani pasākumi"
+                eventBuilder: "PASĀKUMU VEIDOŠANAS PALĪGS"
+                signOut: "Izrakstīties"
+                createAccount: "Izveidot kontu"
+            HtmlEditor: 
+                text: "Teksts"
+                bold: "bold"
+                italic: "italic"
+        containers: 
+            Auth: 
+                title: "Pierakstīšanās Pasākumiem"
+                signIn: "Ielogoties"
+                subHead1: "Ja esi Bībeles aplikācijas lietotājs un tev jau ir YouVersion konts, vari pierakstīties, izmantojot tos pašus akreditācijas datus.<br/><br/>Vēl nav YouVersion lietotāja konta? <br/><a href='%{url}'>Piereģistrējies Bible.com, </a> lai uzsāktu veidot pasākumus."
+                email: "e-pasts"
+                password: "Parole"
+                forgotPassword: "Aizmirsi paroli"
+            EventEdit: 
+                event: "Pasākums"
+            EventEditContentContainer: 
+                choose: "Izvēlies saturu, lai sāktu."
+                needHelp: "Vajadzīga palīdzība?"
+                title: "Pasākuma saturs"
+                previous: "← Iepriekš: Atrašanās vietas un laiki"
+                next: "Tālāk: Priekšskatījums →"
+            EventEditDetails: 
+                title: "Informācija par pasākumu"
+            EventEditLocationContainer: 
+                title: "Pasākuma atrašanās vieta"
+                previous: "← Iepriekš: Detalizēta informācija"
+                next: "Tālāk: Pievienot saturu →"
+            EventEditPreview: 
+                title: "Pasākuma priekšskatījums"
+                previous: "← Iepriekš: Saturs"
+            EventEditShare: 
+                title: "Pasākuma koplietošana"
+                subTitle: "Tagad Tavs pasākums ir publicēts:"
+                edit: "Rediģēt pasākumu"
+                go: "Pāriet pie maniem pasākumiem"
+                share: "Dalīties ar Tavu pasākumu:"
+                copy: "Kopēt"
+                copied: "Starpliktuvē tika nokopēta īsinājumsaite"
+                previous: "← Iepriekš: Priekšskatījums"
+            EventFeedDiscover: 
+                title: "Atklāj pasākumus"
+                discover: "Atklāj"
+            EventFeedMine: 
+                title: "Mani pasākumi"
+                previous: "← Iepriekšējais"
+                next: "Nākamais →"
+                my: "Mani pasākumi"
+                new: "Izveidot jaunu pasākumu"
+                subTitle: "MANI IZVEIDOTIE PASĀKUMI"
+                newFirst: "Izveido savu pirmo pasākumu"
+                learn: "Uzzini, kā izveidot lielisku pasākumu"
+            EventFeedSaved: 
+                title: "Saglabātie notikumi"
+            EventView: 
+                title: "YouVersion pasākums"
+            SelectLanguage: 
+                choose: "Valodas izvēle"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Tavas sesijas laiks ir beidzies. Lūdzu, piesakies vēlreiz."
+                    invalidEmail: "Nederīga e-pasta adrese vai parole."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Visām atrašanās vietām ir jābūt vismaz vienam norādītam laikam."
+                    locationRequired: "Nav iespējams publicēt Pasākumu, ja tam nav atrašanās vietu."
+                    contentRequired: "Tu nevari publicēt pasākumu, ja tam nav satura informācijas."
+                    planSearchFailed: "Netika atrasti atbilstoši dokumenti"
+                    noMatchingPlans: "Nav atbilstošu plānu"
+                components: 
+                    EventEditNav: 
+                        details: "Detaļas"
+                        locations: "Atrašanās vietas un laiki"
+                        content: "Saturs"
+                        preview: "Priekšskatīt un publicēt"
+                        share: "Dalīties"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Pārkārtot saturu"
+                                doneReordering: "Pārkārtošana ir pabeigta"
+                            ContentHeader: 
+                                text: "Teksts"
+                                reference: "Atsauce no Bībeles"
+                                plan: "Plāns"
+                                image: "Attēls"
+                                link: "Ārēja saite"
+                                giving: "Saite ziedojumiem"
+                                announcement: "Paziņojums"
+                            ContentHelpModal: 
+                                types: "Satura veidi"
+                                learn: "Uzzini, kā izveidot <br>lielisku pasākumu"
+                                text: 
+                                    title: "Teksta modulis"
+                                    desc: "Struktūra, svarīgākās tēmas, pārrunu jautājumi…Dalies ar vispārēju tekstuālu saturu, kas var palīdzēt dalībniekiem norises laikā sekot Tavai vēstij. Tava teksta moduļa garums ir neierobežots, un tajā var būt teksts RTF standartā."
+                                reference: 
+                                    title: "Bībeles atsauces modulis"
+                                    desc: "Izvēlies jebkuru Bībeles pantu vai rakstvietu, kas tieši piesaistīta kādai no vairāk nekā 1200 YouVersion versijām vairāk nekā 900 valodās. Cilvēki, kas aplūko Tavu pasākumu, var uzklikšķināt uz atsauces, lai apskatītu to savā Bībeles aplikācijas lasītājā, pievienotu to grāmatzīmēm, izceltu un veiktu citas darbības."
+                                plan: 
+                                    title: "Plānu modulis"
+                                    desc: "Izveido saiti uz Bībeles lasīšanas plāniem un pārdomām, kas ir saistītas ar Tava vēstījuma saturu, lai dalībnieki arī turpmāk visas nedēļas garumā varētu pētīt Dieva Vārdu."
+                                image: 
+                                    title: "Attēla modulis"
+                                    desc: "Atdzīvini savu pasākumu, izmantojot jebkura veida grafisko saturu: attēlu sērijas, fotoattēlus, pantu attēlus utt. Dalībnieki varēs vienkārši dalīties ar Tava pasākuma attēliem savos sociālajos tīklos, izplatot informāciju par Tavu vēstījumu."
+                                link: 
+                                    title: "Ārējas saites modulis"
+                                    desc: "Tas Tavā pasākumā izveido pogu, piesaistot to jebkurai ārējai tīmekļa vietnei. Tavi dalībnieki būs tikai viena klikšķa attālumā no ziedošanas tiešsaistē, brīvprātīgo palīgu pieteikšanās iespējas vai draudzes mājas lapām."
+                                announcement: 
+                                    title: "Paziņojuma modulis"
+                                    desc: "Draudžu ziņas, pasākumi kalendārā, mācības, brīvprātīgo daba un misijas iespējas... Ziņojumu moduļi ir ideāli piemēroti tam, lai savlaicīgi līdzdalītu nozīmīgu  informāciju, vienlaicīgi nenovēršot uzmanību no Tava pasākuma galvenā vēstījuma. Katrs ziņojuma modulis Tavā pasākumā tiek attēlots atsevišķā lapā, un tajā ir iespējams iekļaut pat RTF standarta saturu (piemēram, izmantot slīprakstu un treknrakstu)."
+                            ContentInsertionPoint: 
+                                title: "Ievietot šeit nākamo moduli"
+                            ContentTypeAnnouncement: 
+                                title: "Virsraksts"
+                                prompt: "Ieraksti kaut ko šeit..."
+                                caption: "Tavam notikumam būs redzams tikai ievadītais nosaukums (augstāk). Lietotājam spiežot uz nosaukuma, atsevišķā ekrānā parādīsies pamatteksts (zemāk)."
+                            ContentTypeContainer: 
+                                dirty: "Saturs automātiski saglabāsies pāris sekundes pēc tam, kad pārtrauksi rakstīt."
+                                failed: "Neizdevās saglabāt."
+                                tryAgain: "Mēģini vēlreiz."
+                                lastSaved: "Pēdējoreiz saglabāts %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Attēla izmēram jābūt %{requiredWidth}x%{requiredHeight}. Tava attēla izmērs ir %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Nederīgs faila veids. Tam jābūt JPG failam."
+                                caption: "Pievienot uzrakstu"
+                                prompt: "Vilkt un nomest attēlu"
+                                onlyJpg: "[Tikai JPG]"
+                                sizePrompt: "%{requiredWidth}piks. platums x %{requiredHeight}piks. augstums"
+                                select: "Atlasīt attēlu"
+                            ContentTypeLink: 
+                                kindrid: "Ja meklē pārdomātu un vienkāršu platformu ziedošanai, <a href='%{url}'>izmēģini Kindrid</a>."
+                                label: "Saistīt birku"
+                                prompt: "Ieraksti kaut ko šeit..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Aizstāt"
+                                search: "Meklēt lasīšanas plānu"
+                            ContentTypeReference: 
+                                language: "Valoda"
+                                version: "Versija"
+                                book: "Grāmata"
+                                chapterVerse: "Nodaļa:Pants"
+                            ContentTypeText: 
+                                prompt: "Ieraksti kaut ko šeit..."
+                            LiveWarningModal: 
+                                title: "Nav iespējams dzēst, kamēr pasākums notiek"
+                                desc: "Kad pasākums notiek, tajā nav iespējams dzēst teksta, Bībeles atsauces un attēlu moduļus, jo iespējams, ka lietotāji tiem jau pievienojuši savas personiskās piezīmes. Tomēr Tu šos moduļus vari rediģēt."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Radās problēmas, publicējot tavu pasākumu."
+                            invalidTimes: "Atsevišķa dievkalpojuma garums nevar pārsniegt 12 stundas; ilgums starp pasākuma agrāko sākuma laiku un vēlāko nobeiguma laiku nevar pārsniegt 8 dienas. Lūdzu, pielāgo sava Pasākuma laikus un mēģini vēlreiz."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Attēla izmēram jābūt %{requiredWidth}x%{requiredHeight}. Tava attēla izmērs ir %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Nederīgs faila veids. Tam jābūt JPG failam."
+                                changeImage: "Nomainīt attēlu"
+                                removeImage: "Noņemt attēlu"
+                                prompt: "Vilkt un nomest attēlu"
+                                onlyJpg: "[Tikai JPG]"
+                                sizePrompt: "%{requiredWidth}piks. platums x %{requiredHeight}piks. augstums"
+                                sizePrompt2: "Tava attēla izmēram pikseļos jābūt %{requiredWidth} x %{requiredHeight}."
+                                eventName: "Pasākuma nosaukums"
+                                org: "Draudzes nosaukums vai organizācija"
+                                desc: "Pasākuma apraksts"
+                                next: "Tālāk: Pievieno atrašanās vietu un laikus →"
+                                blank: "%{field} nevar būt tukšs."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Pievieno vismaz vienu laiku."
+                                use: "LIETOT ŠO VIETU"
+                                edit: "Mainīt vietu"
+                                delete: "Dzēst vietu"
+                            LocationAddButtons: 
+                                addPhysical: "Pievienot fizisku atrašanās vietu"
+                                promptPhysical: "Tu vari pievienot vairākas atrašanās vietas"
+                                addVirtual: "Pievienot virtuālu atrašanās vietu"
+                                churchOnline: "Vai zināji? Tu vari izveidot tiešsaistes kalpošanu bez maksas, izmantojot <a className='button-caption' href='%{url}'>Draudzes tiešsaistes platformu</a>."
+                            LocationAddTime: 
+                                minutes: "minūtes"
+                                hours: "stundas"
+                                days: "days"
+                            LocationDeleteModal: 
+                                sure: "Vai esi pārliecināts?"
+                                selected: "Tu esi izvēlējies izdzēst šo atrašanās vietu:"
+                                warn: "Tādējādi šī vieta tiks izdzēsta no visiem pagātnes un nākotnes notikumiem. Tu vairs nevarēsi izmantot šo atrašanās vietu nākotnes notikumiem."
+                                cancel: "Atcelt"
+                                delete: "Dzēst"
+                            LocationEdit: 
+                                prompt: "Ievadīt atrašanās vietas adresi..."
+                                country: "Valsts"
+                                timezone: "Laika josla"
+                                namePrompt: "First Baptist Austrumu daļa"
+                                name: "Atrašanās vietas nosaukums"
+                                nameOptional: "Izvēles iespēja: noderīgi, ja vēlies pievienot vairākas atrašanās vietas"
+                                addAnother: "Pievienot citu norises laiku"
+                                cancel: "Atcelt"
+                                save: "Saglabāt šo atrašanās vietu"
+                            LocationTimeShifter: 
+                                shift: "Pārcelt sākuma datumus"
+                                forward: "Pārsūtīt"
+                                backward: "atpakaļ"
+                                by: "par"
+                                week: "nedēļa"
+                                weeks: "nedēļas"
+                                month: "Mēnesis"
+                                months: "mēneši"
+                                day: "Diena"
+                                days: "dienas"
+                                hour: "stunda"
+                                hours: "stundas"
+                                update: "Atjauninājums"
+                                shiftButton: "Vienlaicīgi pārcelt visus datumus un laikus"
+                            UnpublishModal: 
+                                cancel: "Atcelt"
+                                title: "Atcelt publicēšanu, lai veiktu izmaiņas"
+                                desc: "Lai pievienotu, rediģētu vai dzēstu atrašanās vietas un laikus, īslaicīgi atcel pasākuma publicēšanu. Šajā laikā Tavs pasākums nebūs redzams meklēšanas rezultātos. Neaizmirsti pēc tam atkal publicēt pasākumu."
+                                unpublish: "Atcelt publicēšanu"
+                    preview: 
+                        notes: 
+                            prompt: "Pievieno savas privātās piezīmes…"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Pieraksties,</span> lai pievienotu savas privātās piezīmes…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Pārskati savu pasākumu pirms publicēšanas"
+                                previewUrl: "Priekšskatījuma URL:"
+                                share: "Dalīties ar notikumu"
+                                locationsAndTimes: "Vietas un laiki"
+                                publish: "Publicēt"
+                                unpublish: "Atcelt publicēšanu"
+                                locations: "Atrašanās vietas:"
+                                discoverable: 
+                                    title: "Atrodams:"
+                                    desc: "Tavs pasākums būs redzams Bībeles aplikācijas pasākumu atrašanās vietu un meklēšanas rezultātos 5 dienas pirms agrākā sākuma laika."
+                                status: 
+                                    title: "Statuss:"
+                                    desc: "Sarkanā nozīmīte LIVE (NOTIEK) tiks attēlota, sākot ar agrāko sākuma laiku."
+                                remove: 
+                                    title: "Noņemt:"
+                                    desc: "Kad Tava pasākuma noslēdzošais beigu laiks būs pagājis, pasākums vairs nebūs atrodams. Dalībnieki, kas izvēlējās “Saglabāt pasākumu” laikā, kad Tavs pasākums vēl bija atklājams, joprojām varēs piekļūt tā arhivētajai versijai; pasākumam arī būs iespējams piekļūt, izmantojot tiešās ienākošās saites."
+                            PreviewTypeAnnouncement: 
+                                expand: "Izvērst"
+                            PreviewTypePlan: 
+                                read: "Lasīt"
+                                info: "Lasīšanas plāna apraksts"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Dublicēt"
+                        share: "Dalīties"
+                        delete: "Dzēst"
+                        draft: "Melnraksts"
+                        edit: "Rediģēt"
+                        view: "Skatījums"
+                        fail: "Nevar izdzēst pasākumu"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopēt"
+                        copied: "Nokopēts"
+                        share: "Dalīties"
+                        read: "Lasīt"
+                        readPlan: "Lasīt plānu"
+                    EventViewContentAnnouncement: 
+                        expand: "Izvērst"
+                        collapse: "Sakļaut"
+                    EventViewDetails: 
+                        expand: "Izvērst"
+                        collapse: "Sakļaut"
+                        save: "Saglabāt pasākumu"
+                        signIn: "Pierakstīties, lai saglabātu pasākumu"
+                        saved: "Pasākums saglabāts"

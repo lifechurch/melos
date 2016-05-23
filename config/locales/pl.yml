@@ -271,7 +271,7 @@ pl:
     about: "O YouVersion"
     blog: "Blog"
     versions link: "Wersje"
-    languages link: "JĘZYKI"
+    languages link: "Języki"
     jobs: "Praca"
     volunteer: "Wolontariusz"
     privacy policy: "Polityka prywatności"
@@ -1318,3 +1318,323 @@ pl:
         datetime: 
             just now: "właśnie teraz"
         verses selected: "fragmenty wybrane"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Wystąpił błąd"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Tytuł ogłoszenia jest wymagany."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Nieprawidłowy odnośnik Biblii."
+                    events: 
+                        google_place_id: 
+                            required: "Musisz wybrać lokalizację z mapy."
+                        latitude: 
+                            required: "Musisz wybrać lokalizację z mapy."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Czas rozpoczęcia nie może być przeszły."
+                        timezone: 
+                            required: "Strefa czasowa jest wymagana."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Nieprawidłowy odnośnik Biblii."
+                url: 
+                    events: 
+                        url: 
+                            required: "Adres URL jest wymagany."
+                        title: 
+                            required: "Etykieta adresu URL jest wymagana."
+            EventHeader: 
+                status: 
+                    published: "Opublikowane"
+                    draft: "Szkic"
+                    live: "Na żywo"
+                    archived: "Zarchiwizowane"
+                unpublish: "Anuluj publikacje"
+                saving: "Zapisywanie..."
+                saveAsDraft: "Zapisz jako szkic"
+                myEvents: "Moje wydarzenia"
+                eventBuilder: "TWORZENIE WYDARZENIA"
+                signOut: "Wyloguj się"
+                createAccount: "Utwόrz konto"
+            HtmlEditor: 
+                text: "Tekst"
+                bold: "Pogrubienie"
+                italic: "Kursywa"
+        containers: 
+            Auth: 
+                title: "Logowanie do wydarzeń"
+                signIn: "Zaloguj się"
+                subHead1: "Jeżeli jesteś użytkownikiem Aplikacji Biblii i masz już konto YouVersion, możesz się zalogować używając tych samych danych.<br/><br/>Nie masz jeszcze konta YouVersion? <br/><a href='%{url}'>Zarejestruj się teraz na Bible.com, </a> aby rozpocząć tworzenie wydarzeń."
+                email: "E-mail"
+                password: "Hasło:"
+                forgotPassword: "Nie pamiętam hasła"
+            EventEdit: 
+                event: "Wydarzenie"
+            EventEditContentContainer: 
+                choose: "Wybierz jakąś treść, aby rozpocząć."
+                needHelp: "Potrzebujesz pomocy?"
+                title: "Treść wydarzenia"
+                previous: "← Poprzednie: Lokalizacja i czas"
+                next: "Dalej: Podgląd →"
+            EventEditDetails: 
+                title: "Szczegóły wydarzenia"
+            EventEditLocationContainer: 
+                title: "Lokalizacja wydarzenia"
+                previous: "← Poprzednie: Szczegóły"
+                next: "Dalej: Dodaj treść →"
+            EventEditPreview: 
+                title: "Podgląd wydarzenia"
+                previous: "← Poprzednie: Treść"
+            EventEditShare: 
+                title: "Udostępnianie wydarzenia"
+                subTitle: "Twoje wydarzenie jest teraz opublikowane:"
+                edit: "Edytuj wydarzenie"
+                go: "Przejdź do moich wydarzeń"
+                share: "Udostępnij swoje wydarzenie:"
+                copy: "Kopiuj"
+                copied: "Skrócony link został skopiowany do twojego schowka"
+                previous: "← Poprzednie: Podgląd"
+            EventFeedDiscover: 
+                title: "Odkryj wydarzenia"
+                discover: "Odkryj"
+            EventFeedMine: 
+                title: "Moje wydarzenia"
+                previous: "← Poprzednie"
+                next: "Następne →"
+                my: "Moje wydarzenia"
+                new: "Utwórz nowe wydarzenie"
+                subTitle: "WYDARZENIA UTWORZONE PRZEZE MNIE"
+                newFirst: "Utwórz swoje pierwsze wydarzenie"
+                learn: "Dowiedz się jak stworzyć świetne wydarzenie"
+            EventFeedSaved: 
+                title: "Zapisane wydarzenia"
+            EventView: 
+                title: "Wydarzenie YouVersion"
+            SelectLanguage: 
+                choose: "Wybierz swój język"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Twoja sesja wygasła. Prosimy zaloguj się ponownie."
+                    invalidEmail: "Nieprawidłowy e-mail lub hasło."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Wszystkie lokalizacje muszę mieć przynajmniej jedną godzinę."
+                    locationRequired: "Nie możesz opublikować wydarzenia bez lokalizacji."
+                    contentRequired: "Nie możesz opublikować wydarzenia bez treści."
+                    planSearchFailed: "Wyszukanie nie pasuje do żadnego dokumentu"
+                    noMatchingPlans: "Brak pasujących planów"
+                components: 
+                    EventEditNav: 
+                        details: "Szczegóły"
+                        locations: "Lokalizacja i czas"
+                        content: "Treść"
+                        preview: "Podgląd i publikacja"
+                        share: "Udostępnij"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Zmień kolejność treści"
+                                doneReordering: "Reorganizacja wykonana"
+                            ContentHeader: 
+                                text: "Tekst"
+                                reference: "Odnośniki Biblii"
+                                plan: "Plan"
+                                image: "Obraz"
+                                link: "Zewnętrzne odnośniki"
+                                giving: "Odnośnik darowizny"
+                                announcement: "Ogłoszenie"
+                            ContentHelpModal: 
+                                types: "Typy treści"
+                                learn: "Dowiedz się jak zrobić <br>świetne wydarzenie"
+                                text: 
+                                    title: "Moduł tekstu"
+                                    desc: "Schematy, głόwne punkty, pytania do dyskusji… Udostępnij ogόlną treści, ktόra pomoże twoim uczestnikom podążać za przesłaniem w trakcie. Twoje moduły tekstu mogą mieć dowolną długość i zawierać formatowanie tekstu."
+                                reference: 
+                                    title: "Moduł odnośników Biblii"
+                                    desc: "Wybierz dowolny werset lub fragment Biblii, połączony bezpośrednio z dowolną z 1200 wersji YouVersion w ponad 900 językach. Ludzie oglądający twoje wydarzenie mogą wybrać odnośnik i zobaczyć go w czytniku Aplikacji Biblii, gdzie mogą dodać zakładkę, zakreślenie i inne."
+                                plan: 
+                                    title: "Moduł planu"
+                                    desc: "Połącz plany Biblii i rozważania, ktόre odnoszą się do punktόw twojego nauczania, pomagając słuchaczom w zaangażowaniu w Słowo Boże w ciągu tygodnia."
+                                image: 
+                                    title: "Moduł obrazka"
+                                    desc: "Ożyw twoje wydarzenie dowolnymi grafikami: sztuką, zdjęciami, obrazkami z wersetem itd. Uczestnicy mogą łatwo udostępniać obrazki wydarzenia w mediach społecznościowych i upowszechniać twoje przesłanie."
+                                link: 
+                                    title: "Moduł zewnętrznego odnośnika"
+                                    desc: "Tworzy guzik w twoim wydarzeniu, ktόry jest podłączony do dowolnej strony zewnętrznej. Daj słuchaczom w zasięgu palca możliwość darowizny on-line, rejestracji woluntariuszy lub zobaczenia stron kościoła."
+                                announcement: 
+                                    title: "Moduł ogłoszenia"
+                                    desc: "Aktualności kościoła, kalendarz wydarzeń, programy, zajęcia, propozycja wolontariatu i służb... Moduły powiadomień są doskonałymi przestrzeniami udostępniania pilnych i ważnych informacji, jeżeli nie chcesz odwracać uwagi od głównego przekazu wydarzenia. Każdy moduł powiadomienia pojawia się na oddzielnej stronie w twoim wydarzeniu i może zawierać formatowaną treść (np. z pogrubieniem lub kursywą)."
+                            ContentInsertionPoint: 
+                                title: "Dodaj kolejny moduł tutaj"
+                            ContentTypeAnnouncement: 
+                                title: "Tytuł"
+                                prompt: "Napisz coś tutaj..."
+                                caption: "W twoim wydarzeniu, tylko (powyższy) tytuł będzie widoczny. Kiedy użytkownik naciśnie na twój tytuł, treść (poniżej) wyświetli się na oddzielnym ekranie."
+                            ContentTypeContainer: 
+                                dirty: "Treść zostanie zapisana automatycznie kilka sekund po zakończeniu pisania."
+                                failed: "Nie zapisano."
+                                tryAgain: "Spróbuj ponownie."
+                                lastSaved: "Ostatnio zapisane %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Wielkość obrazka musi wynosić %{requiredWidth}na%{requiredHeight}. Twój obrazek ma %{yourWidth}na%{yourHeight}."
+                                    wrongType: "Nieprawidłowy typ pliku. Musi być JPG."
+                                caption: "Dodaj podpis"
+                                prompt: "Przeciągnij i upuść obrazek"
+                                onlyJpg: "[tylko JPG]"
+                                sizePrompt: "%{requiredWidth}pikseli szerokości x %{requiredHeight}pikseli wysokości"
+                                select: "Wybierz obrazek"
+                            ContentTypeLink: 
+                                kindrid: "Jeżeli szukasz mądrej, prostej platformy dla darowizn, <a href='%{url}'>spróbuj Kindrid</a>."
+                                label: "Etykieta odnośnika"
+                                prompt: "Napisz coś tutaj..."
+                                url: "Adres URL"
+                            ContentTypePlan: 
+                                replace: "Zastąp"
+                                search: "Wyszukaj plan czytania"
+                            ContentTypeReference: 
+                                language: "Język"
+                                version: "Przekład"
+                                book: "Księga"
+                                chapterVerse: "Rozdział:Werset"
+                            ContentTypeText: 
+                                prompt: "Napisz coś tutaj..."
+                            LiveWarningModal: 
+                                title: "Nie można usuwać, gdy wydarzenie jest na żywo."
+                                desc: "Po rozpoczęciu wydarzenia, nie możesz usuwać Tekstu, Odniesień do Biblii i modułów graficznych, ponieważ użytkownicy mogli już dodać do nich swoje prywatne notatki. Możesz, jednak, edytować te moduły."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Wystąpił problem w trakcie publikowania twojego wydarzenia."
+                            invalidTimes: "Pojedyncze nabożeństwo nie może trwać dłużej niż 12 godzin, różnica pomiędzy najwcześniejszą godziną wydarzenia a ostatnią godziną zakończenia wydarzenia nie może być dłuższa niż 8 dni. Prosimy dostosuj godziny twojego wydarzenia i spróbuj ponownie."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Wielkość obrazka musi wynosić %{requiredWidth}x%{requiredHeight}. Twój obrazek ma %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Niewłaściwy typ pliku. Wymagany JPG."
+                                changeImage: "Zmień obrazek"
+                                removeImage: "Usuń obrazek"
+                                prompt: "Przesuń i upuść obrazek"
+                                onlyJpg: "[tylko JPG]"
+                                sizePrompt: "%{requiredWidth}pikseli szerokości na %{requiredHeight}pikseli wysokości"
+                                sizePrompt2: "Wymiary twojego obrazka powinny wynosić %{requiredWidth} x %{requiredHeight} pikseli."
+                                eventName: "Nazwa wydarzenia"
+                                org: "Nazwa kościoła lub organizacji"
+                                desc: "Opis wydarzenia"
+                                next: "Dalej: Dodaj lokalizację i czas →"
+                                blank: "%{field} nie może być puste."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Dodaj przynajmniej jedną godzinę."
+                                use: "UŻYJ TEJ LOKALIZACJI"
+                                edit: "Edytuj lokalizację"
+                                delete: "Usuń lokalizację"
+                            LocationAddButtons: 
+                                addPhysical: "Dodaj fizyczną lokalizację"
+                                promptPhysical: "Możesz dodawać wiele lokalizacji."
+                                addVirtual: "Dodaj wirtualną lokalizację"
+                                churchOnline: "Czy wiedziałeś? Możesz rozpocząć służbę on-line za darmo używając <a className='button-caption' href='%{url}'>Platformy Church Online</a>."
+                            LocationAddTime: 
+                                minutes: "MINUT"
+                                hours: "GODZIN"
+                                days: "DNI"
+                            LocationDeleteModal: 
+                                sure: "Czy jesteś pewien?"
+                                selected: "Wybrałeś do usunięcia poniższe lokalizacje:"
+                                warn: "To działanie usunie lokalizację ze wszystkich przeszłych i obecnych wydarzeń. Nie będziesz mógł użyć tej lokalizacji ponownie dla przyszłych wydarzeń."
+                                cancel: "Anuluj"
+                                delete: "Usuń"
+                            LocationEdit: 
+                                prompt: "Wpisz adres lokalizacji..."
+                                country: "Kraj"
+                                timezone: "Strefa czasowa"
+                                namePrompt: "Pierwszy Baptystyczny Kampus Wschodni "
+                                name: "Nazwa lokalizacji"
+                                nameOptional: "Opcjonalnie: Pomocne przy dodawaniu wielu lokalizacji"
+                                addAnother: "Dodaj kolejną godzinę"
+                                cancel: "Anuluj"
+                                save: "Zapisz tę lokalizację"
+                            LocationTimeShifter: 
+                                shift: "Przesuń daty rozpoczęcia"
+                                forward: "Przekaż"
+                                backward: "do tyłu"
+                                by: "przez"
+                                week: "tydzień"
+                                weeks: "tygodnie"
+                                month: "Miesiąc"
+                                months: "miesiące"
+                                day: "dzień"
+                                days: "DNI"
+                                hour: "godzina"
+                                hours: "GODZIN"
+                                update: "Uaktualnij"
+                                shiftButton: "Przesuń wszystkie daty i czas naraz"
+                            UnpublishModal: 
+                                cancel: "Anuluj"
+                                title: "Anuluj publikację, aby dokonać zmian"
+                                desc: "Aby dodać, edytować lub usunąć lokalizacje i godziny, tymczasowo anulować publikację wydarzenia. W tym czasie, twoje wydarzenie nie będzie widoczne w wyszukiwarce. Nie zapomnij ponownie opublikować twoje wydarzenie."
+                                unpublish: "Anuluj publikacje"
+                    preview: 
+                        notes: 
+                            prompt: "Dodaj swoje prywatne notatki..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Zaloguj się,</span> aby dodać prywatne notatki…</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Przeglądnij Swoje Wydarzenie Przed Opublikowaniem"
+                                previewUrl: "Adres URL podglądu:"
+                                share: "Udostępnij wydarzenie"
+                                locationsAndTimes: "Lokalizacje i godziny"
+                                publish: "Publikuj"
+                                unpublish: "Anuluj publikacje"
+                                locations: "Lokalizacje:"
+                                discoverable: 
+                                    title: "Dostępność:"
+                                    desc: "Twoje wydarzenie będzie widoczne w wynikach wyszukiwania i lokalizacjach wydarzeń w Aplikacji Biblii na 5 dni przed godziną rozpoczęcia."
+                                status: 
+                                    title: "Stan:"
+                                    desc: "Czerwone oznaczenie NA ŻYWO będzie wyświetlone zgodnie z pierwszą godziną rozpoczęcia wydarzenia."
+                                remove: 
+                                    title: "Usunięcie:"
+                                    desc: "Twoje wydarzenie nie będzie dostępne po ostatniej godzinie wydarzenia. Uczestnicy, którzy nacisnęli \"Zapisz wydarzenie\" w trakcie dostępności wydarzenia będą nadal posiadali dostęp do jego archiwalnej wersji; Wydarzenie będzie również dostępne przez bezpośredni odnośnik."
+                            PreviewTypeAnnouncement: 
+                                expand: "Rozwiń"
+                            PreviewTypePlan: 
+                                read: "Czytaj"
+                                info: "Informacje o planie"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Powiel"
+                        share: "Udostępnij"
+                        delete: "Usuń"
+                        draft: "Szkic"
+                        edit: "Edytuj"
+                        view: "Zobacz"
+                        fail: "Nie można usunąć wydarzenia"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopiuj"
+                        copied: "Skopiowane"
+                        share: "Udostępnij"
+                        read: "Czytaj"
+                        readPlan: "Czytaj plan"
+                    EventViewContentAnnouncement: 
+                        expand: "Rozwiń"
+                        collapse: "Zwiń"
+                    EventViewDetails: 
+                        expand: "Rozwiń"
+                        collapse: "Zwiń"
+                        save: "Zapisz wydarzenie"
+                        signIn: "Zaloguj się, aby zapisać wydarzenie"
+                        saved: "Wydarzenie zapisane"

@@ -260,7 +260,7 @@ cs:
     about: "O aplikaci"
     blog: "Blog"
     versions link: "Překlady"
-    languages link: "JAZYKY"
+    languages link: "Jazyky"
     jobs: "Zaměstnání"
     volunteer: "Dobrovolníci"
     privacy policy: "Ochrana soukromí"
@@ -1305,3 +1305,323 @@ cs:
         datetime: 
             just now: "právě teď"
         verses selected: "verše vybrány"
+    EventsAdmin: 
+        components: 
+            ErrorMessage: 
+                genericError: "Nastala chyba"
+                announcement: 
+                    events: 
+                        title: 
+                            required: "Je požadován název oznámení."
+                default: 
+                    bible: 
+                        reference: 
+                            not_found: "Odkaz Bible není platný."
+                    events: 
+                        google_place_id: 
+                            required: "Z mapy musíte vybrat polohu."
+                        latitude: 
+                            required: "Na mapě musí být vybrána lokalita."
+                        times: 
+                            start_dt: 
+                                must_be_a_future_date: "Čas zahájení nemůže být v minulosti."
+                        timezone: 
+                            required: "Je požadováno časové pásmo."
+                reference: 
+                    events: 
+                        usfm: 
+                            invalid: "Biblický odkaz není platný."
+                url: 
+                    events: 
+                        url: 
+                            required: "Je nutné zadat URL."
+                        title: 
+                            required: "Je požadována URL."
+            EventHeader: 
+                status: 
+                    published: "Publikováno"
+                    draft: "Koncept/y"
+                    live: "Live"
+                    archived: "Archivováno"
+                unpublish: "Nezveřejňovat"
+                saving: "Ukládám..."
+                saveAsDraft: "Uložit jako koncept"
+                myEvents: "Moje události"
+                eventBuilder: "VYTVÁŘENÍ UDÁLOSTÍ"
+                signOut: "Odhlásit se"
+                createAccount: "Vytvoření účtu"
+            HtmlEditor: 
+                text: "Text"
+                bold: "tučné"
+                italic: "kurzíva"
+        containers: 
+            Auth: 
+                title: "Přihlásit se do události"
+                signIn: "Přihlásit se"
+                subHead1: "Pokud jste uživatel aplikace BibleApp a máte již založený účet na YouVersion, můžete se přihlásit pomocí svých přihlašovacích údajů.<br/><br/>Ještě nemáte účet na YouVersion?<br/><a href='%{url}'>Přihlašte se nyní na Bible.com</a> a začněte vytvářet události."
+                email: "E-mail"
+                password: "Heslo"
+                forgotPassword: "Zapomenuté heslo"
+            EventEdit: 
+                event: "Událost"
+            EventEditContentContainer: 
+                choose: "Pro zahájení zvolte jednu z možností."
+                needHelp: "Potřebuje pomoc?"
+                title: "Obsah události"
+                previous: "← Předchozí: Místo a čas"
+                next: "Další: Náhled →"
+            EventEditDetails: 
+                title: "Detaily Události"
+            EventEditLocationContainer: 
+                title: "Místo události"
+                previous: "← Předchozí: Detaily"
+                next: "Další: Přidat obsah →"
+            EventEditPreview: 
+                title: "Náhled události"
+                previous: "← Předchozí: Obsah"
+            EventEditShare: 
+                title: "Sdílet událost"
+                subTitle: "Tvoje událost byla zveřejněna:"
+                edit: "Edituj Událost"
+                go: "Přejít na Moje události"
+                share: "Sdílet svou událost:"
+                copy: "Kopírovat"
+                copied: "Odkaz byl zkopírován do schránky"
+                previous: "← Předchozí: Náhled"
+            EventFeedDiscover: 
+                title: "Objevte události"
+                discover: "Objevujte"
+            EventFeedMine: 
+                title: "Moje události"
+                previous: "← Předchozí"
+                next: "Další →"
+                my: "Moje události"
+                new: "Vytvořit novou událost"
+                subTitle: "UDÁLOST VYTVOŘENA"
+                newFirst: "Vytvořte svojí první událost"
+                learn: "Návod jak vytvořit skvělou událost"
+            EventFeedSaved: 
+                title: "Uložené události"
+            EventView: 
+                title: "YouVersion Událost"
+            SelectLanguage: 
+                choose: "Zvolit jazyk"
+        features: 
+            Auth: 
+                errors: 
+                    sessionExpired: "Relace vypršela. Prosím, znovu se přihlašte."
+                    invalidEmail: "Neplatná emailová adresa nebo heslo."
+            EventEdit: 
+                errors: 
+                    locationMustHaveTime: "Všechna místa musí mít alespoň jeden čas."
+                    locationRequired: "Není možné publikovat událost bez zadaného místa."
+                    contentRequired: "Bez obsahu není možné publikovat událost."
+                    planSearchFailed: "Nebyl nalezen žádný dokument"
+                    noMatchingPlans: "Nebyly nalezeny odpovídající plány"
+                components: 
+                    EventEditNav: 
+                        details: "Detail"
+                        locations: "Místo a čas"
+                        content: "Obsah"
+                        preview: "Náhled a zveřejnit"
+                        share: "Sdílet"
+                features: 
+                    content: 
+                        components: 
+                            ContentFeed: 
+                                reorder: "Změnit pořadí"
+                                doneReordering: "Změna pořadí dokončena"
+                            ContentHeader: 
+                                text: "Text"
+                                reference: "Biblické odkazy"
+                                plan: "Plán"
+                                image: "Obrázek"
+                                link: "Externí odkaz"
+                                giving: "Dary"
+                                announcement: "Oznámení"
+                            ContentHelpModal: 
+                                types: "Typy obsahu"
+                                learn: "Naučte se vytvářet <br>skvělé události"
+                                text: 
+                                    title: "Textový modul"
+                                    desc: "Přehled, klíčové body, otázky diskuze… Sdílejte jakýkoliv obecný obsah, který návštěvníkům napomůže vysledovat vaši novou zprávu. Textové moduly mohou být jakkoliv dlouhé a mohou zahrnovat různé textové formáty."
+                                reference: 
+                                    title: "Modul biblického odkazu"
+                                    desc: "Vyberte biblický verš nebo pasáž, jež jsou přímo propojeny s více než 1200 YouVersion verši, ve více než 900 jazycích. Lidé, kteří si prohlížejí vaše události, mohou vidět vaše odkazy ve aplikaci Bible, kde si je mohou založit, zvýraznit, atd. "
+                                plan: 
+                                    title: "Plánovací modul"
+                                    desc: "Propojení s Plány čtení a výklady, které se vztahují k vašim vyučujícím článkům. Napomáhají posluchačům vytrvat ve spojení s Božím Slovem po celý týden."
+                                image: 
+                                    title: "Obrázkový modul"
+                                    desc: "Ozdobte vaši událost různými podporujícími formáty: uměním, fotografiemi, obrázkovými verši atd. Návštěvníci tak budou moci snadněji sdílet vaši událost na sociálních sítích."
+                                link: 
+                                    title: "Modul externího odkazu"
+                                    desc: "Vytvořte si uvnitř vaší události tlačítko, které bude propojeno s externí webovou stránkou. Vaši posluchači tak budou pouhý jeden klik od možnosti dobrovolných darů, dobrovolnické akce nebo stránek církve."
+                                announcement: 
+                                    title: "Modul oznamů"
+                                    desc: "Zprávy o církvi, kalendář událostí, programy, vyučovací hodiny, dobrovolnické a misijní příležitosti... Oznamovací moduly jsou skvělé úložiště pro sdílení informací, které jsou aktuální a důležité, a přitom je nechcete oddělit od svých hlavních událostí. Každý oznamovací modul se objeví na svém listu v události. Může dokonce zahrnovat i formátovaný obsah (jako fonty tučně nebo italic)."
+                            ContentInsertionPoint: 
+                                title: "Zde vložte další modul"
+                            ContentTypeAnnouncement: 
+                                title: "Název"
+                                prompt: "Zde pište..."
+                                caption: "Ze tvé události bude viditelný pouze název. Když uživatel klikne na tvůj titulek, obsah se zobrazí na zvláštní obrazovce."
+                            ContentTypeContainer: 
+                                dirty: "Obsah bude automaticky uložen pár vteřin po skončení psaní."
+                                failed: "Nelze uložit."
+                                tryAgain: "Zkusit znovu."
+                                lastSaved: "Naposledy uloženo %{when}"
+                            ContentTypeImage: 
+                                errors: 
+                                    wrongSize: "Velikost obrázku musí být %{requiredWidth}x%{requiredHeight}. Váš obrázek je %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Neplatný typ souboru. Soubor musí být JPG."
+                                caption: "Přidat titulek"
+                                prompt: "Přetáhněte obrázek"
+                                onlyJpg: "[pouze JPG]"
+                                sizePrompt: "%{requiredWidth}px šířka x %{requiredHeight}px výška"
+                                select: "Vyberte obrázek"
+                            ContentTypeLink: 
+                                kindrid: "Pokud hledáte chytrou a jednoduchou platformu, <a href='%{url}'>zkuste Kindrid</a>."
+                                label: "Text odkazu"
+                                prompt: "Pište zde..."
+                                url: "URL"
+                            ContentTypePlan: 
+                                replace: "Nahradit"
+                                search: "Hledat plán čtení"
+                            ContentTypeReference: 
+                                language: "Jazyk"
+                                version: "Překlad"
+                                book: "Kniha"
+                                chapterVerse: "Kapitola: Verš"
+                            ContentTypeText: 
+                                prompt: "Pište zde..."
+                            LiveWarningModal: 
+                                title: "Nelze smazat, pokud je událost ve stavu ŽIVĚ"
+                                desc: "Pokud je událost ve statusu ŽIVĚ, nelze mazat moduly Text, Biblické odkazy a Obrázky z důvodu přidaných soukromých poznámek ostatních uživatelů. Nicméně je možné tyto moduly editovat."
+                                ok: "OK"
+                    details: 
+                        errors: 
+                            generic: "Došlo k potížím při nahrávání události."
+                            invalidTimes: "Samotný bohoslužba nemůže být delší než 12 hodin. Maximální časové rozpětí v události nemůže být více než 8 dnů. Prosím upravte časy a zkuste znovu."
+                        components: 
+                            DetailsEdit: 
+                                errors: 
+                                    wrongSize: "Velikost obrázku musí být %{requiredWidth}x%{requiredHeight}. Váš obrázek je %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Neplatný typ souboru. Musí být pouze v JPG."
+                                changeImage: "Změnit obrázek"
+                                removeImage: "Odstranit obrázek"
+                                prompt: "Přetáhněte obrázek"
+                                onlyJpg: "[pouze JPG]"
+                                sizePrompt: "%{requiredWidth}px šířka x %{requiredHeight}px výška "
+                                sizePrompt2: "Rozměry obrázku musí být %{requiredWidth} x %{requiredHeight} pixelů."
+                                eventName: "Název události"
+                                org: "Název církve nebo společenství"
+                                desc: "Popis události"
+                                next: "Další: Přidat místo a čas →"
+                                blank: "%{field} nemůže být prázdné."
+                    location: 
+                        components: 
+                            Location: 
+                                oneRequired: "Přidat alespoň jednou."
+                                use: "POUŽÍT TUTO POLOHU"
+                                edit: "Editace polohy"
+                                delete: "Vymazat polohu"
+                            LocationAddButtons: 
+                                addPhysical: "Přidat skutečnou polohu"
+                                promptPhysical: "Můžete přidat více míst."
+                                addVirtual: "Přidat smyšlenou polohu"
+                                churchOnline: "Víte že? Můžete mít k dispozici online shromáždění prostřednictvím <a className='button-caption' href='%{url}'>Online platformy pro církve a společenství</a>."
+                            LocationAddTime: 
+                                minutes: "MINUT"
+                                hours: "HODIN"
+                                days: "dnů"
+                            LocationDeleteModal: 
+                                sure: "Jste si jistí?"
+                                selected: "Pro smazání jste vybrali následující polohu:"
+                                warn: "Tímto bude poloha odstraněna ze všech minulých i stávajících událostí. Tuto polohu nebudete moci opětovně použít."
+                                cancel: "Zrušit"
+                                delete: "Odstranit"
+                            LocationEdit: 
+                                prompt: "Zadejte adresu..."
+                                country: "Země"
+                                timezone: "Časové pásmo"
+                                namePrompt: "První baptistická východní universita"
+                                name: "Název polohy"
+                                nameOptional: "Volitelné: Užitečné v případě zadání více lokalit"
+                                addAnother: "Přidat jiný čas"
+                                cancel: "Zrušit"
+                                save: "Uložit toto místo"
+                            LocationTimeShifter: 
+                                shift: "Posun data zahájení"
+                                forward: "Dále"
+                                backward: "dozadu"
+                                by: "o"
+                                week: "týden"
+                                weeks: "týdny"
+                                month: "Měsíc"
+                                months: "měsíce"
+                                day: "den"
+                                days: "dnů"
+                                hour: "hodina"
+                                hours: "HODIN"
+                                update: "Aktualizovat"
+                                shiftButton: "Posunout všechny datumy a časy najednou"
+                            UnpublishModal: 
+                                cancel: "Zrušit"
+                                title: "Nepublikovat, provádíme změny"
+                                desc: "Přidat, editovat nebo smazat místo a čas, událost dočasně nepublikovat. Během této doby nebude událost ve výsledcích hledání viditelná. Nezapomeňte událost opět publikovat."
+                                unpublish: "Nezveřejňovat"
+                    preview: 
+                        notes: 
+                            prompt: "Přidat osobní poznámky..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Přihlašte se</span> pro přidání osobních poznámek...</a>"
+                        components: 
+                            PreviewFeed: 
+                                review: "Zobrazit náhled události před publikováním"
+                                previewUrl: "Náhled odkazu:"
+                                share: "Sdílet událost"
+                                locationsAndTimes: "Místo a čas konání"
+                                publish: "Zveřejnit"
+                                unpublish: "Nezveřejňovat"
+                                locations: "Místo:"
+                                discoverable: 
+                                    title: "Dostupné:"
+                                    desc: "Vaše událost bude viditelná a aplikaci Bible pod heslem Místo události. Vyhledávání informací o události bude zpřístupněné pět dní před zahájením."
+                                status: 
+                                    title: "Stav poznámky:"
+                                    desc: "Červená značka ŽIVĚ se zobrazí v přednastavený čas."
+                                remove: 
+                                    title: "Odstranění:"
+                                    desc: "Vaše Událost nebude po datu ukončení dále dostupná Návštěvníci, kteří kliknou na \"Uložit Událost\" ve chvíli, kdy je vaše událost dostupná, budou mít stále přístup k její archivní verzi. Tato událost bude také dále zjistitelná prostřednictvím přímého odkazu."
+                            PreviewTypeAnnouncement: 
+                                expand: "Rozbalit"
+                            PreviewTypePlan: 
+                                read: "Číst"
+                                info: "Info o plánu"
+            EventFeedMine: 
+                components: 
+                    EventListItem: 
+                        duplicate: "Duplikovat"
+                        share: "Sdílet"
+                        delete: "Odstranit"
+                        draft: "Koncept/y"
+                        edit: "Upravit"
+                        view: "Zobrazit"
+                        fail: "Událost není možné smazat"
+            EventView: 
+                components: 
+                    EventViewContent: 
+                        copy: "Kopírovat"
+                        copied: "Zkopírováno"
+                        share: "Sdílet"
+                        read: "Číst"
+                        readPlan: "Číst plán"
+                    EventViewContentAnnouncement: 
+                        expand: "Rozbalit"
+                        collapse: "Sbalit"
+                    EventViewDetails: 
+                        expand: "Rozbalit"
+                        collapse: "Sbalit"
+                        save: "Uložit událost"
+                        signIn: "Přihlásit se k uložení události"
+                        saved: "Událost byla uložena"

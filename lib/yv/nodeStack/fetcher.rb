@@ -21,6 +21,8 @@ module YV
             auth = {}
           end
 
+          params['languageTag'] = I18n.locale
+
           resource_url = Cfg.event_import_url
           curb_get = lambda do
             begin
