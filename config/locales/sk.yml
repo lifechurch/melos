@@ -1518,6 +1518,7 @@ sk:
                                 org: "Názov kostola alebo organizácie"
                                 desc: "Opis udalosti"
                                 next: "Nasledujúci: Pridajte miesto a časy →"
+                                blank: "%{field} nemôže byť prázdne."
                     location: 
                         components: 
                             Location: 
@@ -1576,6 +1577,8 @@ sk:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Prihláste sa</span> pre pridanie súkromných poznámok...</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Skontrolovať udalosť pred zverejnením"
+                                previewUrl: "Preview URL:"
                                 share: "Zdieľať udalosť"
                                 locationsAndTimes: "Miesta a časy"
                                 publish: "Zverejniť"

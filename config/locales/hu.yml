@@ -1505,6 +1505,7 @@ hu:
                                 org: "Templom vagy szervezet neve"
                                 desc: "Esemény leírása"
                                 next: "Következő: helyszín és időpont hozzáadása →"
+                                blank: "%{field} kitöltése kötelező."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ hu:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Jelentkezz be</span> személyes jegyzetek létrehozásához…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Nézd át az eseményedet mielőtt közzéteszed"
+                                previewUrl: "URL előnézet:"
                                 share: "Esemény megosztása"
                                 locationsAndTimes: "Helyszínek és időpontok"
                                 publish: "Közzétesz"

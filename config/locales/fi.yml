@@ -1505,6 +1505,7 @@ fi:
                                 org: "Seurakunta tai organisaatio"
                                 desc: "Tapahtuman kuvaus"
                                 next: "Seuraava: Lisää paikka & aika →"
+                                blank: "%{field} ei voi olla tyhjä."
                     location: 
                         components: 
                             Location: 
@@ -1541,7 +1542,7 @@ fi:
                                 shift: "Siirrä alkamisajankohtia"
                                 forward: "Lähetä edelleen"
                                 backward: "taaksepäin"
-                                by: "by"
+                                by: " "
                                 week: "viikko"
                                 weeks: "viikkoa"
                                 month: "Kuukausi"
@@ -1563,6 +1564,8 @@ fi:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Kirjaudu sisään</span> lisätäksesi yksityisiä muistiinpanoja...</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Tarkista tapahtumasi ennen julkaisua"
+                                previewUrl: "Esikatselun URL:"
                                 share: "Jaa tapahtuma"
                                 locationsAndTimes: "Sijainnit ja ajankohdat"
                                 publish: "Julkaise"

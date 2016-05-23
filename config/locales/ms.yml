@@ -1492,6 +1492,7 @@ ms:
                                 org: "Nama Gereja atau Organisasi"
                                 desc: "Penerangan Acara"
                                 next: "Seterusnya: Tambah Lokasi & Masa →"
+                                blank: "%{field} cannot be blank."
                     location: 
                         components: 
                             Location: 
@@ -1550,6 +1551,8 @@ ms:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Log masuk</span> untuk tambah nota peribadi…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Semak Semula Acara Anda Sebelum Beritakan"
+                                previewUrl: "Preview URL:"
                                 share: "Kongsi Acara"
                                 locationsAndTimes: "Lokasi dan Masa"
                                 publish: "Terbitkan"

@@ -1505,6 +1505,7 @@ sq:
                                 org: "Emri i Kishës ose Organizatës"
                                 desc: "Përshkrimi i Ngjarjes"
                                 next: "Përpara: Shto vendndodhje dhe orare"
+                                blank: "%{field} nuk mund të jetë bosh."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ sq:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Hyni</span> për të shtuar shënime private…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Rishiko Ngjarjen përpara se ta publikoni"
+                                previewUrl: "URL-ja e parashikimit:"
                                 share: "Shpërndaje Ngjarjen"
                                 locationsAndTimes: "Vendndodhjet dhe Oraret"
                                 publish: "Publikoje"

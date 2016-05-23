@@ -1531,6 +1531,7 @@ ru:
                                 org: "Название церкви или организации"
                                 desc: "Описание события"
                                 next: "Далее: добавить местонахождение и время →"
+                                blank: "%{field} не может быть пустым."
                     location: 
                         components: 
                             Location: 
@@ -1589,6 +1590,8 @@ ru:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Войдите в систему,</span> чтобы добавить личные заметки…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Проверьте ваше событие перед публикацией"
+                                previewUrl: "Проверьте URL:"
                                 share: "Поделиться событием"
                                 locationsAndTimes: "Местонахождение и время"
                                 publish: "Опубликовать"

@@ -1489,9 +1489,10 @@ zh-TW:
                                 sizePrompt: "%{requiredWidth}px寬 x %{requiredHeight}px 高"
                                 sizePrompt2: "你的圖像大小必須是 %{requiredWidth} px 寬 x %{requiredHeight} px 高。"
                                 eventName: "互動活動名稱"
-                                org: "教會名稱或組織"
+                                org: "教會或組織名稱"
                                 desc: "互動活動描述"
                                 next: "下一頁：加入地點與時間 →"
+                                blank: "%{field} 不能留空。"
                     location: 
                         components: 
                             Location: 
@@ -1505,7 +1506,7 @@ zh-TW:
                                 addVirtual: "新增虛擬地點"
                                 churchOnline: "你知道嗎？你可以<a className='button-caption' href='%{url}'>使用教會線上平台</a>來開始一個線上免費的事工。"
                             LocationAddTime: 
-                                minutes: "分"
+                                minutes: "分鐘"
                                 hours: "小時"
                                 days: "日"
                             LocationDeleteModal: 
@@ -1538,7 +1539,7 @@ zh-TW:
                                 hour: "小時"
                                 hours: "小時"
                                 update: "更新"
-                                shiftButton: "同時移動所有日期與時間"
+                                shiftButton: "移動所有日期與時間"
                             UnpublishModal: 
                                 cancel: "取消"
                                 title: "取消發佈以進行更改"
@@ -1550,6 +1551,8 @@ zh-TW:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>請登入，</span>以增添你的私人筆記……</a>"
                         components: 
                             PreviewFeed: 
+                                review: "發佈之前審閱你的互動活動"
+                                previewUrl: "預覽 URL 連結："
                                 share: "分享互動活動"
                                 locationsAndTimes: "時間和地點"
                                 publish: "發佈"

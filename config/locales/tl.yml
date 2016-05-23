@@ -1505,6 +1505,7 @@ tl:
                                 org: "Pangalan ng Simbahan o Organisasyon"
                                 desc: "Deskripsyon ng Kaganapan"
                                 next: "Sunod: Idagdag ang mga Lokasyon at Oras"
+                                blank: "%{field} hindi maaaring blangko."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ tl:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Magsign in</span> para maidagdag ang iyong pribadong mga tala…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Siyasatin muli ang Kaganapan Bago Ilathala"
+                                previewUrl: "Tingnan ang URL:"
                                 share: "Ibahagi ang Kaganapan"
                                 locationsAndTimes: "Mga Lugar at Oras"
                                 publish: "Ilathala"
@@ -1596,7 +1599,7 @@ tl:
                 components: 
                     EventViewContent: 
                         copy: "Kopyahin"
-                        copied: "Copied"
+                        copied: "Nakopya na"
                         share: "Ibahagi"
                         read: "Basahin"
                         readPlan: "Basahin ang Plano"

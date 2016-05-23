@@ -1427,19 +1427,19 @@ pt-PT:
                                 giving: "Ligação para Contribuições"
                                 announcement: "Comunicados"
                             ContentHelpModal: 
-                                types: "Content Types"
+                                types: "Tipos de Conteúdo"
                                 learn: "Learn how to make <br>a great Event"
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "Módulo de Texto"
+                                    desc: "Esboços, pontos-chave, questões para debate ... Compartilhe qualquer conteúdo geral baseado em texto para ajudar os seus participantes a acompanharem a sua mensagem à medida que acontece. Os seus módulos de texto podem ser de qualquer tamanho e pode incluir formatação do texto."
                                 reference: 
-                                    title: "Bible Reference Module"
+                                    title: "Módulo de Referência Bíblia"
                                     desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "Módulo de planos de Leitura da Bíblia"
+                                    desc: "Adicione ligações para os Planos da Bíblia e devocionais que se relacionam com os seus ensinamentos, de modo ajudar a sua audiência a continuar a interagir com a Palavra de Deus ao longo da semana."
                                 image: 
-                                    title: "Image Module"
+                                    title: "Módulo de imagem"
                                     desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
                                 link: 
                                     title: "External Link Module"
@@ -1505,6 +1505,7 @@ pt-PT:
                                 org: "Nome da Igreja ou Organização"
                                 desc: "Descrição do Evento"
                                 next: "Seguinte: Adicionar Localização e Horários →"
+                                blank: "%{field} cannot be blank."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ pt-PT:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Review Your Event Before Publishing"
+                                previewUrl: "Preview URL:"
                                 share: "Compartilhar Evento"
                                 locationsAndTimes: "Localizações e Horários"
                                 publish: "Publicar"

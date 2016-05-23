@@ -1489,9 +1489,10 @@ zh-CN:
                                 sizePrompt: "宽%{requiredWidth}相素 x 高%{requiredHeight}相素"
                                 sizePrompt2: "你的图片尺寸应为%{requiredWidth}x%{requiredHeight}相素。"
                                 eventName: "互动活动名称"
-                                org: "教会名称或组织"
+                                org: "教会或组织名称"
                                 desc: "互动活动说明"
                                 next: "下一步：添加地点 & 时间 →"
+                                blank: "%{field}不能为空白。"
                     location: 
                         components: 
                             Location: 
@@ -1505,7 +1506,7 @@ zh-CN:
                                 addVirtual: "添加虚拟地点"
                                 churchOnline: "你知道吗？你可以使用 <a className='button-caption' href='%{url}'> Church Online Platform </a>来免费开展网络事工。"
                             LocationAddTime: 
-                                minutes: "分"
+                                minutes: "分钟"
                                 hours: "小时"
                                 days: "天"
                             LocationDeleteModal: 
@@ -1538,7 +1539,7 @@ zh-CN:
                                 hour: "个小时"
                                 hours: "小时"
                                 update: "更新"
-                                shiftButton: "立即修改所有日期与时间"
+                                shiftButton: "修改所有日期与时间"
                             UnpublishModal: 
                                 cancel: "取消"
                                 title: "解除发布，以做修改"
@@ -1550,6 +1551,8 @@ zh-CN:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>请先登录</span>，以添加你的个人笔记……</a>"
                         components: 
                             PreviewFeed: 
+                                review: "发布之前审阅你的互动活动"
+                                previewUrl: "预览 URL 链接："
                                 share: "分享互动活动"
                                 locationsAndTimes: "地点与时间"
                                 publish: "发布"

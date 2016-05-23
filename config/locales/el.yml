@@ -1059,7 +1059,7 @@ el:
         partners title: "Συνεργάτες εκδόσεων της Αγίας Γραφής"
         partners text: "Χωρίς τη γενναιοδωρία των συνεργατών μας, εκδοτών της Αγίας Γραφής, η YouVersion απλά δε θα μπορούσε να παρέχει στην παγκόσμια κοινότητά μας τόσο πολλές εκδόσεις. Πολλοί από εσάς έχουν ρωτήσει πώς μπορούν να ευχαριστήσουν αυτούς τους ζωτικής σημασίας υποστηρικτές της αποστολής της YouVersion. Μπορείτε να μάθετε περισσότερα σχετικά με αυτούς, τις διακονίες τους και τους τρόπους που μπορείτε να τους υποστηρίξετε, μέσω των παρακάτω συνδέσμων."
         translation title: "Οι μεταφραστικές ομάδες μας"
-        learn more: "Μάθε περισσότερα"
+        learn more: "Περισσότερα"
         bible dot com title: "Τι έγινε το παλιό Bible.com;"
         bible dot com copy: "Αν ψάχνετε το περιεχόμενο των Christ Unlimited Ministries από τους Bud και Betty Miller ή τον παλιό Bible.com ιστοτόπο μπορείτε να επισκεφθείτε το νέο ιστοτόπο τους <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
@@ -1221,7 +1221,7 @@ el:
         filter: "Εισαγωγή ονόματος έκδοσης (ή γλώσσας)..."
         see all: "Εμφάνιση όλων των εκδόσεων..."
         courtesy of: "%{abbreviation}προσφέρεται από %{publisher}"
-        learn more: "Μάθε περισσότερα"
+        learn more: "Περισσότερα"
         index title: "Διαθέσιμες εκδόσεις"
         publisher widget title: "Εκδότης"
         visit publisher: "Επίσκεψη της ιστοσελίδας του εκδότη"
@@ -1329,7 +1329,7 @@ el:
                     published: "Δημοσιεύτηκε"
                     draft: "Πρόχειρο"
                     live: "Ζωντανά"
-                    archived: "Archived"
+                    archived: "Αρχειοθετήθηκε"
                 unpublish: "Απόσυρση δημοσίευσης"
                 saving: "Αποθήκευση…"
                 saveAsDraft: "Αποθήκευση πρόχειρου"
@@ -1505,6 +1505,7 @@ el:
                                 org: "Όνομα εκκλησίας ή Διακονίας"
                                 desc: "Περιγραφή εκδήλωσης"
                                 next: "Επόμενο: Προσθήκη τοποθεσίας & ωρών →"
+                                blank: "Το πεδίο %{field} δεν μπορεί να είναι κενό."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ el:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Συνδεθείτε</span> για να προσθέσετε τις προσωπικές σας σημειώσεις…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Επισκόπηση της εκδήλωσής σας πριν τη δημοσίευση"
+                                previewUrl: "Προεπισκόπηση συνδέσμου (URL): "
                                 share: "Κοινοποίηση εκδήλωσης"
                                 locationsAndTimes: "Τοποθεσίες και ώρες"
                                 publish: "Δημοσίευση"
@@ -1596,7 +1599,7 @@ el:
                 components: 
                     EventViewContent: 
                         copy: "Αντιγραφή"
-                        copied: "Copied"
+                        copied: "Αντιγράφηκε"
                         share: "Κοινοποίηση"
                         read: "Ανάγνωση"
                         readPlan: "Ανάγνωση σχεδίου μελέτης"

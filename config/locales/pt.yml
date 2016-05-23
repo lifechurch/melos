@@ -1505,6 +1505,7 @@ pt:
                                 org: "Nome da igreja ou organização"
                                 desc: "Descrição do evento"
                                 next: "Próximo: Adicionar localização e horários →"
+                                blank: "%{field} não pode estar em branco."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ pt:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Entre</span> para adicionar suas anotações particulares…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Revise Seu Evento antes de Publicar"
+                                previewUrl: "Prévia da URL:"
                                 share: "Compartilhar Evento"
                                 locationsAndTimes: "Locais e Horários"
                                 publish: "Publicar"
@@ -1570,13 +1573,13 @@ pt:
                                 locations: "Locais:"
                                 discoverable: 
                                     title: "Detectável:"
-                                    desc: "Seu evento estará visível no App da Bíblia, em localização do evento e resultados de pesquisa, 5 dias antes da menor data de início."
+                                    desc: "Seu evento estará visível no App da Bíblia, em localização do evento e resultados de pesquisa, 5 dias antes da data de início."
                                 status: 
                                     title: "Status da Anotação:"
                                     desc: "A palavra AO VIVO destacada em vermelho será exibida quando chegar a data mais recente."
                                 remove: 
                                     title: "Remover:"
-                                    desc: "Seu evento não poderá mais ser detectável após a data final. Participantes que tocarem em \"Salvar Evento\" quando seu evento estiver detectável, ainda terão acesso a uma versão arquivada. Este evento também continuará acessível através de links de entrada."
+                                    desc: "Seu evento não estará mais disponível após a data final. Participantes que tocarem em \"Salvar Evento\" quando seu evento estiver disponível, ainda terão acesso a uma versão arquivada. Este evento também continuará acessível através de links de entrada."
                             PreviewTypeAnnouncement: 
                                 expand: "Expandir"
                             PreviewTypePlan: 

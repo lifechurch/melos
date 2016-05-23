@@ -1557,6 +1557,7 @@ cy:
                                 org: "Enw Eglwys neu Fudiad"
                                 desc: "Disgrifiad o'r Digwyddiad"
                                 next: "Nesaf: Ychwanegu Lleoliad ac Amserau"
+                                blank: "Ni all %{field} fod yn wag."
                     location: 
                         components: 
                             Location: 
@@ -1615,6 +1616,8 @@ cy:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Mewngofnoda i ychwanegu dy nodiadau preifat</span></a>"
                         components: 
                             PreviewFeed: 
+                                review: "Adolyga dy Ddigwyddiad cyn ei Gyhoeddi"
+                                previewUrl: "Rhagolwg o'r URL:"
                                 share: "Rhannu Digwyddiad"
                                 locationsAndTimes: "Lleoliadau ac Amserau"
                                 publish: "Cyhoeddi"
