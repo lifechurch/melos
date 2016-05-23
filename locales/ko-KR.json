@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "교회나 단체 이름",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "이벤트 설명",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "다음: 장소와 시간 입력하기 →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field}: 필수 입력 사항입니다.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "최소한 한 번은 입력하세요",
 	"features.EventEdit.features.location.components.Location.use": "이 장소를 사용합니다",
 	"features.EventEdit.features.location.components.Location.edit": "장소 바꾸기",

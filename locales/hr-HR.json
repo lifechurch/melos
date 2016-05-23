@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Ime crkve ili organizacije",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Opis Događaja",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Sljedeće: Dodaj lokaciju i termine",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "Polje \"{field}\" ne može biti prazno.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Dodaj barem jedan termin.",
 	"features.EventEdit.features.location.components.Location.use": "UPOTRIJEBI OVU LOKACIJU",
 	"features.EventEdit.features.location.components.Location.edit": "Uredi lokaciju",

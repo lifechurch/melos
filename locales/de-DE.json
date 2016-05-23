@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Name der Gemeinde oder Organisation",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Beschreibung der Veranstaltung",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Nächster Schritt: Ort & Zeit hinzufügen →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "Diese Feld darf nicht leer sein: {field}",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Füge mindestens einen Zeitpunkt ein.",
 	"features.EventEdit.features.location.components.Location.use": "Benutze diesen Ort.",
 	"features.EventEdit.features.location.components.Location.edit": "Ort bearbeiten",

@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Название церкви или организации",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Описание события",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Далее: добавить местонахождение и время →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} не может быть пустым.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Добавьте хотя бы одно время",
 	"features.EventEdit.features.location.components.Location.use": "ИСПОЛЬЗОВАТЬ ЭТО МЕСТОНАХОЖДЕНИЕ",
 	"features.EventEdit.features.location.components.Location.edit": "Изменить местонахождение",

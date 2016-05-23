@@ -24,7 +24,8 @@ class ContentFeed extends Component {
 						event={event}
 						handleMove={handleMove}
 						content={c}
-						contentIndex={i} />
+						contentIndex={i}
+						intl={intl} />
 					)
 			} else {
 				return (

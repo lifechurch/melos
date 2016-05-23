@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Enw Eglwys neu Fudiad",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Disgrifiad o'r Digwyddiad",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Nesaf: Ychwanegu Lleoliad ac Amserau",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "Ni all {field} fod yn wag.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Ychwanega o leiaf un tro.",
 	"features.EventEdit.features.location.components.Location.use": "DENYDDIA'R LLEOLIAD HWN",
 	"features.EventEdit.features.location.components.Location.edit": "Golygu Lleoliad",

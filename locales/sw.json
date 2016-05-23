@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Jina la kanisa au shirika",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Maelezo ya tukio",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Inayofuatat: ongeza Mahali & Muda →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} Haiwezi kuwa wazi",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Kuongeza angalau mara moja.",
 	"features.EventEdit.features.location.components.Location.use": "TUMIA SEHEMU HII",
 	"features.EventEdit.features.location.components.Location.edit": "Badili mahali",

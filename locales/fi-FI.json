@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Seurakunta tai organisaatio",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Tapahtuman kuvaus",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Seuraava: Lisää paikka & aika →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} ei voi olla tyhjä.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Lisää vähintään yksi ajankohta.",
 	"features.EventEdit.features.location.components.Location.use": "KÄYTÄ TÄTÄ SIJAINTIA",
 	"features.EventEdit.features.location.components.Location.edit": "Muokkaa sijaintia",

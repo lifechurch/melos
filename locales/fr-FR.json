@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Nom de l'église ou organisation",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Description de l'Événement",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Suivant : Ajouter un lieu et une date →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} ne peut pas être vide.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Ajoutez au moins un horaire.",
 	"features.EventEdit.features.location.components.Location.use": "UTILISER CET EMPLACEMENT",
 	"features.EventEdit.features.location.components.Location.edit": "Éditer l'emplacement",

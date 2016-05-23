@@ -117,6 +117,7 @@ function getLocale(req, profileLanguageTag) {
 		if (lc.locale === final.locale) {
 			final.locale2 = lc.locale2
 			final.locale3 = lc.locale3
+			final.momentLocale = lc.momentLocale
 		}
 	}
 

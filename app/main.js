@@ -66,7 +66,8 @@ function logPageView() {
 
 const routes = getRoutes(requireAuth, requireEvent)
 addLocaleData(window.__LOCALE__.data)
-moment.locale(window.__LOCALE__.locale)
+moment.locale(window.__LOCALE__.momentLocale)
+window.__LOCALE__.momentLocaleData = moment.localeData()
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>

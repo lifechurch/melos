@@ -25,7 +25,7 @@ class Location extends Component {
 		const { loc, handleSelect, event, intl } = this.props
 
 		var times = loc.times.map((t,i) => {
-			var start = moment(t.start_dt).format('ddd MMM D h:mm A')
+			var start = moment.tz(t.start_dt, loc.timezone).format('llll')
 			return (<p key={i}>{start}</p>)
 		})
 

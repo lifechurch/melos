@@ -2,36 +2,28 @@ import React, { Component, PropTypes } from 'react'
 import DatePicker from 'react-datepicker'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
-import moment from 'moment'
+//import moment from 'moment'
 import TimePicker from 'react-time-picker'
 import RevManifest from '../../../../../../app/lib/revManifest'
+import moment from 'moment-timezone'
 
-function getDisplay(hour, minute) {
-	return [
-		(hour > 12 ? hour - 12 : (hour == 0 ? '12' : hour)),
-		':',
-		(minute < 10 ? '0' + minute.toString() : minute),
-		(hour > 11 ? ' PM' : ' AM')
-	].join('');
-}
-
-function getTimeObject(hour, minute) {
-	return {
-		hour,
-		display: getDisplay(hour, minute),
-		minute,
-		value: [hour,minute].join(':')
-	}
-}
+//Polyfill for isInteger
+Number.isInteger = Number.isInteger || function(value) {
+  return typeof value === "number" &&
+    isFinite(value) &&
+    Math.floor(value) === value;
+};
 
 function changeTime(dt, t) {
-	var t = t.split(':')
-	var new_dt = moment(dt.toISOString())
-	if (t[0] != 12 && t[2] == 'pm') {
+	var t = t.replace(/ /, ':').split(':')
+	let new_dt = moment(dt)
+
+	if (t.length > 2 && t[0] != 12 && t[2] == 'pm') {
 		t[0] = parseInt(t[0]) + 12
-	} else if (t[0] == 12 && t[2] == 'am') {
+	} else if (t.length > 2 && t[0] == 12 && t[2] == 'am') {
 		t[0] = 0
 	}
+
 	new_dt.hour(t[0])
 	new_dt.minute(t[1])
 	return new_dt
@@ -42,31 +34,23 @@ function getTime(dt) {
 }
 
 function getDurationAndInterval(start_dt, end_dt) {
-	const s = start_dt.toDate().getTime()
-	const e = end_dt.toDate().getTime()
-	const d = e - s
-
-	const oneMinute = 1000 * 60;
-	const oneHour = oneMinute * 60;
-	const oneDay = oneHour * 24;
-
-	if (d % oneDay === 0) {
+	if (Number.isInteger(end_dt.diff(start_dt, 'days', true))) {
 		return {
-			duration: d / oneDay,
+			duration: end_dt.diff(start_dt, 'days'),
 			interval: 'd'
 		}
-	} else if (d % oneHour === 0) {
+	} else if (Number.isInteger(end_dt.diff(start_dt, 'hours', true))) {
 		return {
-			duration: d / oneHour,
+			duration: end_dt.diff(start_dt, 'hours'),
 			interval: 'h'
 		}
-	} else if (d % oneMinute === 0) {
+	} else if (Number.isInteger(end_dt.diff(start_dt, 'minutes', true))) {
 		return {
-			duation: d / oneMinute,
+			duration: end_dt.diff(start_dt, 'minutes'),
 			interval: 'm'
 		}
 	} else {
-		return null;
+		return null
 	}
 }
 
@@ -74,15 +58,6 @@ function getEndDate(start_dt, start_time, duration, interval) {
 	var end_dt = changeTime(start_dt, start_time)
 	end_dt.add(duration, interval)
 	return end_dt
-}
-
-function timeValues() {
-	var values = [];
-	for (var hour = 0; hour < 24; hour++) {
-		values.push(getTimeObject(hour, 0))
-		values.push(getTimeObject(hour, 30))
-	}
-	return values
 }
 
 function getState(start_dt, start_time, duration, interval, props) {
@@ -97,7 +72,6 @@ function getState(start_dt, start_time, duration, interval, props) {
 		end_dt: new_end_dt,
 		interval: interval
 	}
-
 }
 
 class LocationAddTime extends Component {
@@ -135,10 +109,6 @@ class LocationAddTime extends Component {
 		const { time, timeIndex, handleRemoveTime, intl } = this.props
 		const { start_dt, duration, start_time, interval } = this.state
 
-		const values = timeValues().map((v) => {
-			return <option key={v.display} value={v.value}>{v.display}</option>
-		})
-
 		return (
 			<form className="event-edit-location-form event-edit-time-form">
 				<Row>
@@ -151,7 +121,7 @@ class LocationAddTime extends Component {
 					</div>
 
 					<Column s='small-4'>
-						<TimePicker className='timePicker' onChange={::this.handleStartTimeChange} value={start_time} format='h:mm:a' />
+						<TimePicker className='timePicker' onChange={::this.handleStartTimeChange} value={start_time} format={window.__LOCALE__.momentLocaleData.longDateFormat('LT')} />
 					</Column>
 
 					<div className='small-4 columns textField'>

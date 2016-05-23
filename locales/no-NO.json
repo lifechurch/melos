@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Navn på kirke eller organisasjon",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Beskrivelse av Event",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Neste: Legg til sted og tid →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} kan ikke være tomt.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Legg til minst ett tidspunkt.",
 	"features.EventEdit.features.location.components.Location.use": "BRUK DENNE LOKASJONEN",
 	"features.EventEdit.features.location.components.Location.edit": "Endre lokasjon",

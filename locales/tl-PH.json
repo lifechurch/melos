@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Pangalan ng Simbahan o Organisasyon",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Deskripsyon ng Kaganapan",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Sunod: Idagdag ang mga Lokasyon at Oras",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} hindi maaaring blangko.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Magdagdag kahit isang beses.",
 	"features.EventEdit.features.location.components.Location.use": "GAMITIN ANG LOKASYON NA ITO",
 	"features.EventEdit.features.location.components.Location.edit": "Baguhin ang Lokasyon",

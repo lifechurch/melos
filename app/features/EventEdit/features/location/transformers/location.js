@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'moment-timezone'
 
 export function toApiFormat(loc) {
 
@@ -47,8 +47,8 @@ export function fromApiFormat(loc) {
 		newTimes = times.map((t) => {
 			const { start_dt, end_dt } = t
 			return {
-				start_dt: moment(start_dt),
-				end_dt: moment(end_dt)
+				start_dt: moment.tz(start_dt, loc.timezone),
+				end_dt: moment.tz(end_dt, loc.timezone)
 			}
 		})
 	}

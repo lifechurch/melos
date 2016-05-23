@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Nama Gereja atau Organisasi",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Deskripsi Acara",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Berikutnya: Tambahkan Lokasi & Waktu →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} harus diisi.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Tambahkan setidaknya satu waktu.",
 	"features.EventEdit.features.location.components.Location.use": "GUNAKAN LOKASI INI",
 	"features.EventEdit.features.location.components.Location.edit": "Sunting Lokasi",

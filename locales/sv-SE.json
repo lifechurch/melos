@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Kyrkans namn eller organisation",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Händelsedetaljer",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Nästa: Lägg till tid och plats",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} kan inte vara tom.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Lägg till åtminstone en gång.",
 	"features.EventEdit.features.location.components.Location.use": "ANVÄND DENNA PLATS",
 	"features.EventEdit.features.location.components.Location.edit": "Redigera plats",

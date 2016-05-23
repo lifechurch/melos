@@ -42,7 +42,7 @@ const contentTarget = {
 
 class ContentDraggable extends Component {
 		render() {
-			const { contentIndex, content, connectDragSource, connectDropTarget, isDragging } = this.props
+			const { contentIndex, content, connectDragSource, connectDropTarget, isDragging, intl } = this.props
 
 			let style = {}
 			if (isDragging) {
@@ -78,6 +78,18 @@ class ContentDraggable extends Component {
 					break;
 			}
 
+			let contentTypeLabel = null
+			if (content.type === 'url') {
+				if (content.hasOwnProperty('iamagivinglink') && content.iamagivinglink) {
+					contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.giving" })
+				} else {
+					contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.link" })
+				}
+				contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader.link" })
+			} else {
+				contentTypeLabel = intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentHeader." + content.type.toLowerCase() })
+			}
+
 			return connectDragSource(connectDropTarget(
 				<div className='content-draggable' style={style}>
 					<Row>
@@ -87,7 +99,7 @@ class ContentDraggable extends Component {
 							</div>
 							<div className='body'>
 								<div className='type'>
-									{content.type.toUpperCase()}
+									{contentTypeLabel}
 								</div>
 								<div className='preview'>
 									{previewText}

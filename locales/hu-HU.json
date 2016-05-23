@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Templom vagy szervezet neve",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Esemény leírása",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Következő: helyszín és időpont hozzáadása →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} kitöltése kötelező.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Adj meg legalább egy időpontot.",
 	"features.EventEdit.features.location.components.Location.use": "HASZNÁLD EZT A HELYSZÍNT",
 	"features.EventEdit.features.location.components.Location.edit": "Helyszín szerkesztése",

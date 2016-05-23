@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Numele bisericii sau al organizației",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Descrierea evenimentului ",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Următorul pas: adaugă locul și ora",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} nu poate fi gol.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Adaugă cel puțin o dată.",
 	"features.EventEdit.features.location.components.Location.use": "FOLOSEȘTE ACEST LOC",
 	"features.EventEdit.features.location.components.Location.edit": "Editare loc",

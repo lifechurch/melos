@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Kerknaam of Organisasie",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Beskrywing van Gebeurtenis",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Volgende: Voeg Plek & Tye by →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} kan nie leeg wees nie.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Voeg ten minste een tyd by.",
 	"features.EventEdit.features.location.components.Location.use": "GEBRUIK HIERDIE PLEK",
 	"features.EventEdit.features.location.components.Location.edit": "Redigeer Plek",

@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Nom de l'església o de l'organització",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Descripció de l'esdeveniment",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Següent: Afegeix localització i horaris →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} no pot quedar buit.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Afegeix-hi, com a mínim, un horari.",
 	"features.EventEdit.features.location.components.Location.use": "FES SERVIR AQUESTA UBICACIÓ",
 	"features.EventEdit.features.location.components.Location.edit": "Edita la ubicació",

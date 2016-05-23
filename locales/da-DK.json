@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Navn på Kirke eller Organisation",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Event Beskrivelse",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Næste: Tilføj Lokation & Tidspunkt →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} må ikke være blank.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Tilføj mindst et tidspunkt.",
 	"features.EventEdit.features.location.components.Location.use": "BRUG DENNE LOKATION",
 	"features.EventEdit.features.location.components.Location.edit": "Rediger Lokation",

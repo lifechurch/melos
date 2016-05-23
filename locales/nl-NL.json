@@ -140,7 +140,7 @@
 	"features.EventEdit.features.details.components.DetailsEdit.org": "Naam Kerk of Organisatie",
 	"features.EventEdit.features.details.components.DetailsEdit.desc": "Beschrijving Bijeenkomst",
 	"features.EventEdit.features.details.components.DetailsEdit.next": "Volgende: Voeg Locatie & Tijd toe →",
-	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} cannot be blank.",
+	"features.EventEdit.features.details.components.DetailsEdit.blank": "{field} mag niet open gelaten worden.",
 	"features.EventEdit.features.location.components.Location.oneRequired": "Voeg tenminste één tijdstip toe.",
 	"features.EventEdit.features.location.components.Location.use": "GEBRUIK DEZE LOCATIE",
 	"features.EventEdit.features.location.components.Location.edit": "Wijzig Locatie",
