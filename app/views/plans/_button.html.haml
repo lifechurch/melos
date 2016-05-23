@@ -19,5 +19,6 @@
         -#= link_to(t('ui.no button'), subscribe_private_url.call(true), class:"solid-button full gray", method: :post)
       = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}
   - else
-    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: 'solid-button green', target: "_self")
-    = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}
+    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: "solid-button green", target: "_self")
+    - if (action_name != 'sample')
+      = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}
