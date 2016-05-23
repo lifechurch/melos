@@ -1492,6 +1492,7 @@ id:
                                 org: "Nama Gereja atau Organisasi"
                                 desc: "Deskripsi Acara"
                                 next: "Berikutnya: Tambahkan Lokasi & Waktu →"
+                                blank: "%{field} harus diisi."
                     location: 
                         components: 
                             Location: 
@@ -1550,6 +1551,8 @@ id:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Masuk</span> untuk menambahkan catatan pribadi Anda…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Periksa Kembali Acara Anda Sebelum Memublikasikan"
+                                previewUrl: "Pratinjau URL:"
                                 share: "Bagikan Acara"
                                 locationsAndTimes: "Lokasi dan Waktu"
                                 publish: "Publikasi"

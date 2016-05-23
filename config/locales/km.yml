@@ -1320,17 +1320,17 @@ km:
                 unpublish: "Unpublish"
                 saving: "Saving..."
                 saveAsDraft: "រក្សា​ទុក​ជា​សេចក្ដី​ព្រាង"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "ព្រឹត្តិការណ៍របស់​ខ្ញុំ"
+                eventBuilder: "ឧបករណ៍បង្កើត​ព្រឹត្តិការណ៍"
                 signOut: "ចាក​ចេញ"
                 createAccount: "Create Account"
             HtmlEditor: 
-                text: "Text"
+                text: "អត្ថបទ"
                 bold: "Bold"
                 italic: "Italic"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "ចុះ​ឈ្មោះ​ចូល​ក្នុង​ព្រឹត្តិការណ៍"
                 signIn: "ចុះ​ឈ្មោះ​ចូល"
                 subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
                 email: "អ៊ីម៉ែល"
@@ -1339,20 +1339,20 @@ km:
             EventEdit: 
                 event: "Event"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "ជ្រើសរើស​ខ្លឹម​សារ​ខ្លះ​ដើម្បី​ចាប់​ផ្ដើម។"
                 needHelp: "តើ​លោក​អ្នក​ត្រូវ​ការ​ជំនួយ​ឬ?"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "ខ្លឹម​សារ​ព្រឹត្តិការណ៍"
+                previous: "← មុន៖ ទី​កន្លែង និង ពេល​វេលា"
+                next: "បន្ទាប់៖ មើល​សេចក្ដី​ព្រៀង →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "ព្រឹត្តិការណ៍ពិស្ដារ"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "ទី​កន្លែង​ព្រឹត្តិការណ៍"
+                previous: "← មុន៖ ពិស្ដារ"
+                next: "បន្ទាប់៖ បន្ថែម​ខ្លឹម​សារ →"
             EventEditPreview: 
-                title: "Event Preview"
-                previous: "← Previous: Content"
+                title: "មើល​សេចក្ដីព្រៀង​ព្រឹត្តិការណ៍"
+                previous: "←មុន៖ ខ្លឹម​សារ"
             EventEditShare: 
                 title: "Event Share"
                 subTitle: "Your Event is Now Published:"
@@ -1372,8 +1372,8 @@ km:
                 my: "My Events"
                 new: "Create New Event"
                 subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                newFirst: "បង្កើត​ព្រឹត្តិការណ៍ដំបូង​របស់​លោក​អ្នក"
+                learn: "រៀន​បង្កើត​ព្រឹត្តិការណ៍អស្ចារ្យ"
             EventFeedSaved: 
                 title: "ព្រឹត្តិការណ៍ដែលបានរក្សាទុក"
             EventView: 
@@ -1384,20 +1384,20 @@ km:
             Auth: 
                 errors: 
                     sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    invalidEmail: "អ៊ី​ម៉េល​ ឬ ពាក្យ​សំងាត់​មិន​ត្រឹម​ត្រូវ"
             EventEdit: 
                 errors: 
                     locationMustHaveTime: "All locations must have at least one time."
                     locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
+                    contentRequired: "លោក​អ្នក​មិន​អាច​ផ្សព្វ​ផ្សាយ​ព្រឹត្តិ​ការណ៍​ដែល​មិន​មាន​ខ្លឹមសារ​ជាប់​ជាមួយ​បាន​ឡើយ។"
                     planSearchFailed: "Search did not match any documents"
                     noMatchingPlans: "No matching Plans"
                 components: 
                     EventEditNav: 
-                        details: "Details"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        details: "សេចក្ដី​ពិស្ដារ"
+                        locations: "ទី​កន្លែង និង ពេល​វេលា"
+                        content: "ខ្លឹម​សារ"
+                        preview: "មើល​សេចក្ដី​ព្រៀង និង ផ្សព្វ​ផ្សាយ"
                         share: "ចែក​រំលែក"
                 features: 
                     content: 
@@ -1407,38 +1407,38 @@ km:
                                 doneReordering: "Done Reordering"
                             ContentHeader: 
                                 text: "Text"
-                                reference: "Bible Reference"
+                                reference: "អត្ថបទ​យោង​ព្រះ​គម្ពីរ"
                                 plan: "គំរោង​ផែនការ"
                                 image: "រូប​ភាព"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "តំណរ​ខាង​ក្រៅ"
+                                giving: "តំណរ​ទៅ​កាន់​ទំព័រ​បរិច្ចាគ"
+                                announcement: "សេចក្ដី​ជូនដំណឹង"
                             ContentHelpModal: 
-                                types: "Content Types"
+                                types: "ប្រភេទខ្លឹមសារ"
                                 learn: "Learn how to make <br>a great Event"
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "អត្ថបទ"
+                                    desc: "បង្ហាញ ចំនុច​គន្លឺះ ការ​ពីភាក្សារ សំនួរផ្សេងៗ… ចែក​រំលែក​នូវ​ខ្លឺម​សារ​ជា​អត្ថបទទូទៅ ដែល​ជួយ​អ្នក​ចូល​រួម​ក្នុង​ព្រឹត្តិការណ៍​របស់​លោក​អ្នក​តាម​រយៈសារ និង អ្វី​ដែល​កំពុង​កើត​មាន​ឡើង។ អត្ថបទ​របស់​លោក​អ្នក​អាច​មាន​ប៉ុន្មាន​តួ​អក្សរ​ក៏​បាន ហើយ​ថែម​ទាំង​អាចតុប​តែង​លំអរ​បានទៀត​ផង។"
                                 reference: 
-                                    title: "Bible Reference Module"
+                                    title: "ខគម្ពីរ​យោង"
                                     desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "ផែន​ការ"
+                                    desc: "តំណរ​​ទៅ​កាន់​គំរោង​អាន​ព្រះ​គម្ពីរ​និង ការ​ចំណាយ​ពេល​ជា​មួយ​នឹង​ព្រះ​ជា​ម្ចាស់ ទាក់​ទងនឹង​ចំនុច​បង្រៀន​របស់​លោក​អ្នក ថែម​ទាំង​ជួយ​អោយ​អ្នក​ចូល​រួម​បន្ត​មាន​ទំនាក់​ទំនង​ដោយ​ផ្ទាល់​ជាមួយ​នឹង​ព្រះ​បន្ទូល​របស់​ព្រះ​ជា​ម្ចាស់ក្នុង​កំឡុង​ពេល​នៃ​សប្ដាហ៍។"
                                 image: 
-                                    title: "Image Module"
+                                    title: "រូប​ភាព"
                                     desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
                                 link: 
                                     title: "External Link Module"
                                     desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                                 announcement: 
                                     title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
+                                    desc: "ព៌តមាន​ក្រុម​ជំនុំ ប្រក្រតិទិន ព្រឹត្តិការណ៍ កម្មវិធី​ផ្សេងៗ ថ្នាក់​រៀន អ្នក​ស្ម័គ្រចិត្ត និង ឱកាស​បេសកកម្ម​ផ្សេងៗ​... សេចក្ដី​ជូន​ដំណឹងជាវេទិការ​ដ៏​ប្រពៃ​បំផុត​សំរាប់​ចែក​ចាយ​ព៌តមានទាន់​ហេតុការណ៍សំខាន់ៗ ប៉ុន្តែ​មិន​ត្រូវ​អោយ​ព៌តមាន​ទាំង​នេះ​រំខាន​សារចម្បង​ឡើយ។ សេចក្ដី​ជូន​ដំណឹងនឹង​លេច​ឡើង​នៅលើទំព័រ​របស់​វាដែល​ស្ថិត​​នៅ​ក្នុង​ព្រឹត្តិការណ៍​របស់​លោក​អ្នក ហើយថែម​ទាំង​មាន​ទំរង់​ដែល​អាច​តុប​តែង​បាន (ដូច​ជាការ​ធ្វើ​ជា​អក្សរ​ដិត និង ទ្រេត​ជាដើម)។"
                             ContentInsertionPoint: 
                                 title: "Insert next module here"
                             ContentTypeAnnouncement: 
                                 title: "ចំណង​ជើង"
-                                prompt: "Write something here..."
+                                prompt: "សូម​សរសេរ​អ្វី​មួយ​នៅ​ទី​នេះ..."
                                 caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
                             ContentTypeContainer: 
                                 dirty: "Content will automatically save a few seconds after you stop typing."
@@ -1447,17 +1447,17 @@ km:
                                 lastSaved: "Last saved %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
+                                    wrongSize: "រូបភាព​ត្រូវ​តែ​មាន​ទំ​ហំ %{requiredWidth} x %{requiredHeight}។ រូបភាព​របស់​លោក​អ្នក​មាន​ទំហំ %{yourWidth} x %{yourHeight}។"
+                                    wrongType: "ប្រភេទ​ឯកសារ​មិន​ត្រឹម​ត្រូវ ឯកសារ​ត្រូវ​តែ​ជា​ប្រភេទ JPG។"
                                 caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
+                                prompt: "សូមទាញនិង​ព្រលែងរូប​ភាព​ ១"
                                 onlyJpg: "[JPG only]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                select: "ជ្រើស​រើស​រូប​ភាព"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
+                                kindrid: "ប្រសិន​លោក​អ្នក​កំពុង​ស្វែង​រកវេទិការ​ដែល​វ័យឆ្លាត និង ងាយ​ស្រួល​ សូម​លោក​អ្នក​សាក​ល្បង Kindrid។ <a href='%{url}'></a>"
                                 label: "Link Label"
-                                prompt: "Write something here..."
+                                prompt: "សូម​សរសេរ​អ្វី​មួយ​នៅ​ទី​នេះ..."
                                 url: "URL"
                             ContentTypePlan: 
                                 replace: "Replace"
@@ -1468,7 +1468,7 @@ km:
                                 book: "សៀវភៅ"
                                 chapterVerse: "Chapter:Verse"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "សូម​សរសេរ​អ្វី​មួយ​នៅ​ទី​នេះ..."
                             LiveWarningModal: 
                                 title: "Cannot Delete While Event is Live"
                                 desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
@@ -1476,22 +1476,23 @@ km:
                     details: 
                         errors: 
                             generic: "There was a problem while publishing your Event."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            invalidTimes: "សេវាកម្ម​មួយ​មិន​អាច​មាន​រយៈពេល​លើ​សពី​ ១២ ម៉ោងឡើយ ចំណែករយៈពេល​ចាប់​ផ្ដើម​ដំបូង​បំផុត​រហូត​ដល់​ចុង​បញ្ចប់​នៃ​ព្រឹត្តិការណ៍មួយ មិនត្រូវ​អោយ​លើស​ពី ៨ថ្ងៃ​ឡើយ។ សូម​កែ​តម្រូវ​ពេល​វេលា​ព្រឹត្តិការណ៍​របស់​លោក​អ្នក ហើយ​សាក​ល្បង​ម្ដង​ទៀត។"
                         components: 
                             DetailsEdit: 
                                 errors: 
                                     wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
+                                    wrongType: "ប្រភេទ​ឯកសារ​មិនត្រឹម​ត្រូវ ត្រូវ​តែជា​ប្រភេទ JPG"
+                                changeImage: "ប្ដូរ​រូប​ភាព"
+                                removeImage: "លុប​រូបភាពចេញ"
                                 prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                onlyJpg: "[មាន​តែរូបភាព​ប្រភេទ JPG មួយគត់]"
+                                sizePrompt: "ទទឹង​ទំហំ%{requiredWidth} ភិកសែល x កំពស់ %{requiredHeight} ភិកសែល"
+                                sizePrompt2: "រូប​ភាព​របស់​លោក​អ្នក​ត្រូវ​មាន​ទំហំ %{requiredWidth} x %{requiredHeight} ភិកសែល។"
+                                eventName: "ឈ្មោះ​ព្រឹត្តិការណ៍"
+                                org: "ឈ្មោះ​ក្រុម​ជំនុំ ឬ ស្ថាប័ន"
+                                desc: "ពិពណ៌នា​ព្រឹត្តិការណ៍"
+                                next: "បន្ទាប់៖ បន្ថែមទី​កន្លែង និង ពេល​វេលា →"
+                                blank: "%{field} មិន​អាច​ទុក​ចោល​អោយ​ទំនេរបានឡើយ"
                     location: 
                         components: 
                             Location: 
@@ -1500,10 +1501,10 @@ km:
                                 edit: "Edit Location"
                                 delete: "Delete Location"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                addPhysical: "បន្ថែម​ទី​កន្លែង​ជាក់​ស្ដែង​"
+                                promptPhysical: "លោក​អ្នក​អាច​បន្ថែម​ពហុ​ទី​កន្លែង​។"
+                                addVirtual: "បន្ថែម​ទីកន្លែង​និម្មិត"
+                                churchOnline: "តើ​លោក​អ្នក​ដឹង​ទេ? លោក​អ្នក​អាច​ចាប់​ផ្ដើម​ពន្ធ័កិច្ច​លើ​បណ្ដាញ​អ៊ីន​ធើណេត​​បាន​ដោយ​ប្រើ​ប្រាស់​វេទិកា Church Online។ <a className='button-caption' href='%{url}'></a>"
                             LocationAddTime: 
                                 minutes: "នាទី"
                                 hours: "ម៉ោង"
@@ -1518,17 +1519,17 @@ km:
                                 prompt: "Enter the Location address..."
                                 country: "ប្រទេស"
                                 timezone: "ហ្សូន​ម៉ោង"
-                                namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                namePrompt: "ក្រុម​ជំនុំ​បាបទីស្ទខាង​ជើង"
+                                name: "ឈ្មោះទី​កន្លែង"
+                                nameOptional: "ជំរើស៖ មាន​ប្រយោជន៍​ប្រសិន​បើ​បន្ថែម​ពហុ​ទីកន្លែង"
+                                addAnother: "បន្ថែម​ពេល​វេលា​មួយទៀត"
                                 cancel: "បោះ​បង់"
-                                save: "Save this Location"
+                                save: "រក្សា​ទុក​ទីកន្លែង​នេះ"
                             LocationTimeShifter: 
                                 shift: "Shift start dates"
                                 forward: "forward"
                                 backward: "backward"
-                                by: "by"
+                                by: "ក្នុង​រយៈពេល"
                                 week: "week"
                                 weeks: "weeks"
                                 month: "ប្រក្រតិទិន"
@@ -1538,47 +1539,49 @@ km:
                                 hour: "hour"
                                 hours: "ម៉ោង"
                                 update: "អាប់ឌែត"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "ប្ដូរ​កាល​បរិច្ឆេទ​និង ពេលវេលាក្នុងពេល​តែមួយ"
                             UnpublishModal: 
                                 cancel: "បោះ​បង់"
                                 title: "Unpublish to Make Changes"
                                 desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                unpublish: "មិន​បាន​ផ្សព្វផ្សាយ"
                     preview: 
                         notes: 
-                            prompt: "Add your private notes..."
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            prompt: "ធ្វើ​កំណត់​ត្រា​ជា​ឯកជន​របស់​លោក​អ្នក..."
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>ចុះ​ឈ្មោះ​ចូល​ដើម្បី​ធ្វើ​កំណត់​ត្រា​ជា​ឯកជន...</span></a>"
                         components: 
                             PreviewFeed: 
+                                review: "មើល​ព្រឹត្តិ​ការណ៍​របស់​លោក​អ្នក​មុន​ពេល​ផ្សព្វ​ផ្សាយ"
+                                previewUrl: "មើល​អាស័យ​ដ្ឋាន​តំណរ៖"
                                 share: "ចែក​រំលែក​ព្រឹត្តិការណ៍"
                                 locationsAndTimes: "ទីតាំង និងពេលវេលា"
                                 publish: "បោះ​ផ្សាយ"
-                                unpublish: "Unpublish"
-                                locations: "Locations:"
+                                unpublish: "មិន​បាន​ផ្សព្វផ្សាយ"
+                                locations: "ទីកន្លែង"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "អាច​រក​ឃើញ"
+                                    desc: "ព្រឹត្តិការណ៍របស់​លោក​អ្នក​អាច​មើល​ឃើញ​បានតាម​រយៈទី​តាំង​ព្រឹត្តិការណ៍​ក្នុង​កម្ម​វិធី​ព្រះ​គម្ពីរ​ និង អាច​ធ្វើ​ការ​ស្វែងរកឃើញ​បាន​ ៥ថ្ងៃ​មុន​ព្រឹត្តិ​ការណ៍​ចាប់​ផ្ដើម។"
                                 status: 
                                     title: "ស្ថាន​ភាព​កំណត់​ត្រា"
                                     desc: "The red LIVE badge will display when your earliest start time begins."
                                 remove: 
-                                    title: "Remove:"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    title: "លុប​ចេញ៖"
+                                    desc: "ព្រឹត្តិ​ការណ៍​របស់​លោក​អ្នក​នឹង​ត្រូវ​លុប​បាត់​បន្ទាប់​ពី​ពេល​វេ​លាចុង​ក្រោយ​របស់​វា​ត្រូវ​បាន​បញ្ចប់។ អ្នក​ចូល​រួម​ដែល​បាន​ចុច​លើ​ \"រក្សា​ទុក​ព្រឹត្តិ​ការណ៍\" នៅ​ពេល​ដែល​ព្រឹត្តិការ​ណ៍​របស់​លោក​អ្នក​នៅ​មាន​វត្្តមាន​នៅ​ឡើយ អាច​ចូល​ទៅ​កាន់​ឃ្លាំង​ទុក​ឯកសារ​ចាស់ដើម្បី​ស្វែង​រក​វា។ ព្រឹត្តិការណ៍នេះ​ក៏​នឹង​នៅ​តែអាច​ត្រូវ​បាន​គេ​រក​បាន​តាម​រយៈតំណរ​ដែល​ត្រូវ​បាន​បញ្ជូន​មក។"
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "ពង្រីក"
                             PreviewTypePlan: 
                                 read: "អាន"
                                 info: "ព័ត៌មានគម្រោង"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "ស្ទួន"
                         share: "ចែក​រំលែក"
                         delete: "លុប"
                         draft: "សេចក្ដី​ព្រាង"
                         edit: "កែសម្រួល"
                         view: "មើល"
-                        fail: "Unable to delete Event"
+                        fail: "មិន​អាច​លុប​ព្រឹត្តិការណ៍បានឡើយ"
             EventView: 
                 components: 
                     EventViewContent: 
@@ -1588,11 +1591,11 @@ km:
                         read: "អាន"
                         readPlan: "Read Plan"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "ពង្រីក"
+                        collapse: "បិទ"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "ពង្រីក"
+                        collapse: "បិទ"
                         save: "រក្សាទុក​ព្រឹត្តិការណ៍"
                         signIn: "Sign In to Save Event"
                         saved: "Event Saved"

@@ -1505,6 +1505,7 @@ nl:
                                 org: "Naam Kerk of Organisatie"
                                 desc: "Beschrijving Bijeenkomst"
                                 next: "Volgende: Voeg Locatie & Tijd toe →"
+                                blank: "%{field} mag niet open gelaten worden."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ nl:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Log in </span> om je persoonlijke notities toe te voegen...</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Bekijk je bijeenkomst voor de publicatie"
+                                previewUrl: "Preview URL:"
                                 share: "Bijeenkomst Delen"
                                 locationsAndTimes: "Locaties en Tijden"
                                 publish: "Publiceren"

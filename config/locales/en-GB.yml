@@ -1505,6 +1505,7 @@ en-GB:
                                 org: "Church Name or Organisation"
                                 desc: "Event Description"
                                 next: "Next: Add Location & Times →"
+                                blank: "%{field} cannot be blank."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ en-GB:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Review your Event before publishing"
+                                previewUrl: "Preview URL:"
                                 share: "Share Event"
                                 locationsAndTimes: "Locations and times"
                                 publish: "Publish"

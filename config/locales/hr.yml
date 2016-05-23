@@ -1531,6 +1531,7 @@ hr:
                                 org: "Ime crkve ili organizacije"
                                 desc: "Opis Događaja"
                                 next: "Sljedeće: Dodaj lokaciju i termine"
+                                blank: "Polje \"%{field}\" ne može biti prazno."
                     location: 
                         components: 
                             Location: 
@@ -1589,6 +1590,8 @@ hr:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Prijavi se </span> kako bi dodao svoje osobne zabilješke …</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Pregledaj svoj Događaj prije objavljivanja"
+                                previewUrl: "URL pregleda:"
                                 share: "Podijeli Događaj"
                                 locationsAndTimes: "Lokacije i vremena"
                                 publish: "Objavi"

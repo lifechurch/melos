@@ -1329,7 +1329,7 @@ sv:
                     published: "Publicerad"
                     draft: "Utkast"
                     live: "Live"
-                    archived: "Archived"
+                    archived: "Arkiverad"
                 unpublish: "Avpublicera"
                 saving: "Sparar..."
                 saveAsDraft: "Spara som utkast"
@@ -1505,6 +1505,7 @@ sv:
                                 org: "Kyrkans namn eller organisation"
                                 desc: "Händelsedetaljer"
                                 next: "Nästa: Lägg till tid och plats"
+                                blank: "%{field} kan inte vara tom."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ sv:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Logga in</span> för att skriva dina privata anteckningar…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Granska din händelse före publicering"
+                                previewUrl: "Förhandsvisningsadress:"
                                 share: "Dela Evenemang"
                                 locationsAndTimes: "Adresser och tider"
                                 publish: "Publicera"
@@ -1596,7 +1599,7 @@ sv:
                 components: 
                     EventViewContent: 
                         copy: "Kopiera"
-                        copied: "Copied"
+                        copied: "Kopierad"
                         share: "Dela"
                         read: "Läs"
                         readPlan: "Läsplan"

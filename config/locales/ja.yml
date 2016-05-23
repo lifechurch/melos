@@ -1316,7 +1316,7 @@ ja:
                     published: "公開済み"
                     draft: "草稿"
                     live: "ライブ"
-                    archived: "Archived"
+                    archived: "アーカイブ済"
                 unpublish: "非公開"
                 saving: "保存中…"
                 saveAsDraft: "下書きとして保存する"
@@ -1492,6 +1492,7 @@ ja:
                                 org: "教会名または団体名"
                                 desc: "イベントについて"
                                 next: "次：場所と時間について"
+                                blank: "%{field} が空欄のままです"
                     location: 
                         components: 
                             Location: 
@@ -1550,6 +1551,8 @@ ja:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>サインイン</span>して非公開のノートを追加…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "公開前にイベントをレビュー"
+                                previewUrl: "URLプレビュー"
                                 share: "イベントをシェア"
                                 locationsAndTimes: "場所と時間"
                                 publish: "公開する"
@@ -1583,7 +1586,7 @@ ja:
                 components: 
                     EventViewContent: 
                         copy: "コピー"
-                        copied: "Copied"
+                        copied: "コピー済"
                         share: "シェアする"
                         read: "読む"
                         readPlan: "読書プラン"

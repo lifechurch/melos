@@ -1332,7 +1332,7 @@ ko:
             Auth: 
                 title: "이벤트 로그인"
                 signIn: "로그인"
-                subHead1: "이미 성경 앱 사용자 계정을 이미 갖고 계시다면, YouVersion 계정을 사용하여 로그인 하실 수 있습니다.<br/><br/>YouVersion 계정이 아직 없으신가요?<br/> 이벤트를 만드시려면<a href='%{url}'>Bible.com에서 계정을 만드세요</a>"
+                subHead1: "이미 성경 앱 사용자 계정을 갖고 계시다면, YouVersion 계정을 사용하여 로그인 하실 수 있습니다.<br/><br/>YouVersion 계정이 아직 없으신가요?<br/>이벤트를 만드시려면 <a href='%{url}'>Bible.com에서 계정을 만드세요</a>"
                 email: "이메일"
                 password: "비밀번호"
                 forgotPassword: "비밀번호 찾기"
@@ -1464,7 +1464,7 @@ ko:
                                 search: "묵상 계획 찾기"
                             ContentTypeReference: 
                                 language: "언어"
-                                version: "버전"
+                                version: "번역본"
                                 book: "성경"
                                 chapterVerse: "장:절"
                             ContentTypeText: 
@@ -1492,6 +1492,7 @@ ko:
                                 org: "교회나 단체 이름"
                                 desc: "이벤트 설명"
                                 next: "다음: 장소와 시간 입력하기 →"
+                                blank: "%{field}: 필수 입력 사항입니다."
                     location: 
                         components: 
                             Location: 
@@ -1542,7 +1543,7 @@ ko:
                             UnpublishModal: 
                                 cancel: "취소"
                                 title: "비공개 상태에서 수정하기"
-                                desc: "비공개 이벤트에서 장소와 시간을 첨가하거나 고치거나 삭제하기. 비공개 동안은 이벤트가 찾아보기에 나타나지 않습니다. 이벤트를 다시 공개 게시하시는 것을 잊지 마세요."
+                                desc: "비공개 이벤트에서 장소와 시간을 첨가하거나 고치거나 삭제하기. 비공개 동안은 이벤트가 찾아보기에 나타나지 않습니다. 이벤트를 다시 공개하는 것을 잊지 마세요."
                                 unpublish: "비공개"
                     preview: 
                         notes: 
@@ -1550,9 +1551,11 @@ ko:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>로그인 하시고</span> 개인 노트를 첨부하세요...</a>"
                         components: 
                             PreviewFeed: 
+                                review: "이벤트 공개 전 살펴 보기"
+                                previewUrl: "미리보기 URL"
                                 share: "이벤트 공유"
                                 locationsAndTimes: "위치 및 시간"
-                                publish: "게시"
+                                publish: "공개"
                                 unpublish: "비공개"
                                 locations: "장소:"
                                 discoverable: 
@@ -1563,7 +1566,7 @@ ko:
                                     desc: "빨간색 LIVE 표시가 최초 이벤트가 시작되면 표시 됩니다."
                                 remove: 
                                     title: "삭제:"
-                                    desc: "이벤트 마감 시간 이후엔 검색 조회 되지 않습니다. 이벤트가 검색 가능할 때 \"이벤트 저장\"을 선택한 참석자들은 저장된 이벤트로 접근 가능합니다. "
+                                    desc: "이벤트 마감 시간 이후엔 검색 조회 되지 않습니다. 이벤트가 검색 가능했을 때 \"이벤트 저장\"을 선택했던 참석자들은 저장된 이벤트로 접근 가능합니다. 내부 링크를 통해서도 접근이 가능합니다. "
                             PreviewTypeAnnouncement: 
                                 expand: "열기"
                             PreviewTypePlan: 

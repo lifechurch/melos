@@ -1347,317 +1347,320 @@ ar:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "خطأ"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "مطلوب اعلان عن اللقب"
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "الشاهد الكتابي غير موجود"
                     events: 
                         google_place_id: 
-                            required: "You must choose a location from the map."
+                            required: "يجب اختيار موقع من الخريطه."
                         latitude: 
-                            required: "You must choose a location from the map."
+                            required: "يجب اختيار موقع من الخريطه."
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "وقت البدايه لايمكن ان يكون فى الماضي."
                         timezone: 
-                            required: "Timezone is required."
+                            required: "وقت المنطقه مطلوب."
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "الشاهد الكتابي غير صحيح."
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "مطلوب الرابط."
                         title: 
-                            required: "URL Label is required."
+                            required: "علامه الرابط مطلوبه."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "تم النشر"
                     draft: "مسودات"
                     live: "حي و مباشر"
-                    archived: "Archived"
-                unpublish: "Unpublish"
-                saving: "Saving..."
+                    archived: "تم الحفظ في الأرشيف "
+                unpublish: "لم ينشر"
+                saving: "جاري الحفظ..."
                 saveAsDraft: "احفظ كمسودة"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "أحداثي"
+                eventBuilder: "باني الأحداث"
                 signOut: "تسجيل الخروج"
-                createAccount: "Create Account"
+                createAccount: "أنشئ حساب"
             HtmlEditor: 
-                text: "Text"
-                bold: "Bold"
-                italic: "Italic"
+                text: "النص"
+                bold: "سميك"
+                italic: "مائل"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "تسجيل الدخول للفعاليات"
                 signIn: "تسجيل دخول"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "إذا كنت مستخدم لتطبيق الكتاب المقدس فأنت لديك حساب YouVersion بالفعل، يمكنك تسجيل الدخول بنفس بيانات المستخدم. <br/><br/>ليس لديك حساب YouVersion بعد ؟ <br/><a href='%{url}'>سجل الدخول الآن علي Bible.com</a> لتبدأ إنشاء حدث."
                 email: "البريد الإلكتروني"
                 password: "كلمة المرور‌"
                 forgotPassword: "نسيت كلمة المرور"
             EventEdit: 
-                event: "Event"
+                event: "فاعلية"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "اختر بعض من المحتوى لكي تبدأ"
                 needHelp: "أتحتاج مساعدة؟"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "محتوى الحدث"
+                previous: "← السابق: المواقع و المواعيد"
+                next: "التالي: معاينة →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "تفاصيل الحدث"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "موقع الحدث"
+                previous: "←السابق: التفاصيل"
+                next: "التالي: أضف محتوى →"
             EventEditPreview: 
-                title: "Event Preview"
-                previous: "← Previous: Content"
+                title: "معاينة الحدث"
+                previous: "← السابق: المحتوى"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                title: "شارك الحدث"
+                subTitle: "تم نشر فاعليتك الان :"
+                edit: "تعديل الفاعلية"
+                go: "إذهب الي فاعلياتى"
+                share: "شارك فاعليتك:"
                 copy: "نسخ"
-                copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                copied: "تم نسخ الرابط الي الحافظه"
+                previous: "←السابق : معاينه"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "اكتشف الفاعليات"
                 discover: "اكتشف"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                title: "احداثي"
+                previous: "←السابق"
+                next: "التالي →"
+                my: "فاعلياتى"
+                new: "أنشئ فاعلية جديدة"
+                subTitle: "الفاعليات المنشئه بواسطتي"
+                newFirst: "أنشئ حدثك الأول"
+                learn: "تعلم كيف أن تصنع حدثًا عظيمًا"
             EventFeedSaved: 
                 title: "الاحداث المحفوظه"
             EventView: 
-                title: "YouVersion Event"
+                title: "فاعلية YouVersion"
             SelectLanguage: 
-                choose: "Choose Your Language"
+                choose: "أختر لغتك."
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    sessionExpired: "تم انتهاء جلستك.يرجى الدخول مرة أخرى."
+                    invalidEmail: "بريد إلكتروني او كلمة المرور غير صحيحة."
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
-                    planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    locationMustHaveTime: "كل المواقع يجب ان تكون وقت واحد على الأقل"
+                    locationRequired: "لايمكنك نشر الفاعلية بدون موقع."
+                    contentRequired: "لا يمكنك نشر حدث دون محتوى."
+                    planSearchFailed: "البحث لا يطابق اى من الوثائق"
+                    noMatchingPlans: "لايوجد خطط مطابقه"
                 components: 
                     EventEditNav: 
                         details: "التفاصيل"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        locations: "المواقع و المواعيد"
+                        content: "المحتوى"
+                        preview: "المعاينة و النشر"
                         share: "مشاركة"
                 features: 
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "أعد ترتيب المحتوي"
+                                doneReordering: "تم اعاده الترتيب"
                             ContentHeader: 
-                                text: "Text"
-                                reference: "Bible Reference"
+                                text: "نَص"
+                                reference: "مرجع الكتاب المقدس"
                                 plan: "خطة"
                                 image: "صورة"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "رابط خارجي"
+                                giving: "رابط الإعطاء"
+                                announcement: "إعلان"
                             ContentHelpModal: 
-                                types: "Content Types"
-                                learn: "Learn how to make <br>a great Event"
+                                types: "أنواع المحتوى"
+                                learn: "تعلم كيف تصنع <br>فاعلية عظيمة"
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "وحدة النص"
+                                    desc: "الخلاصة، النقاط الرئيسية، أسئلة المناقشة … شارك بأي محتوى نصَي بإمكانه مساعدة الحاضرين على متابعة رسالتك أثناء حدوثها. وحدات النص الخاصة بك من الممكن أن تكون بأي طول و أن تتضمن تنسيق النص الغني."
                                 reference: 
-                                    title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    title: "وحدة مرجع الكتاب المقدس"
+                                    desc: "اختار اي أية او فقره من الكتاب المقدس، اربطها مباشرة ﻷي من 1200+ نسخة YouVersion المتوفرة في 900+ لغه. الناس التي تشاهد فاعليتك يمكنها الضغط علي الشواهد لتقرأها في تطبيق الكتاب المقدس، حيث يمكنهم حفظها كعلامه مرجعية، تسليط الضوء و اكثر."
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "وحدة الخطة"
+                                    desc: "الروابط لخطط الكتاب المقدس و التعبديَات المتصلة بنقاط تعليمك، سوف تساعد جمهورك على الاستمرار في التعامل مع كلمة الله خلال الاسبوع"
                                 image: 
-                                    title: "Image Module"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    title: "وحدة الصورة"
+                                    desc: "قم بإخراج احداثك الي الحياه بأي نوع من الرسومات المدعومه : سلاسل ملونه، صور، اعداد كتابيه علي صور. الخ. الحضور سيمكنهم بسهولة مشاركه صور حدثك علي وسائل التواصل الاجتماعي، وبهذا ستنتشر رسالتك بشكل سريع"
                                 link: 
-                                    title: "External Link Module"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    title: "وحده رابط خارجي"
+                                    desc: "صمم زر داخل حدثك كرابط لأي موقع خارجي. ضع سامعيك فقط علي بعد ضغطه من التبرع اونلاين، تسجيل التطوع او الصفحة الرئيسية للكنيسه"
                                 announcement: 
-                                    title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
+                                    title: "وحده الإعلان"
+                                    desc: "اخبار الكنيسة، تقويم الفاعليات، البرامج، الدروس، المتطوعين وفرص المشاركة فى المهام...وحدات الإعلان هي الحاوية المثالية لمشاركة المعلومات المهمه والمحدده بوقت، بدون التشتت عن رساله الحدث الأساسية. كل وحدة إعلان تظهر علي صفحتها الخاصة في فاعليتك، ويمكنها ان تشمل علي محتوي نصي غني ( مثل خط سميك او مائل )."
                             ContentInsertionPoint: 
-                                title: "Insert next module here"
+                                title: "ادخل الوحده التاليه هنا"
                             ContentTypeAnnouncement: 
                                 title: "العنوان‌"
-                                prompt: "Write something here..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                prompt: "اكتب شىء هنا..."
+                                caption: "فى حدثك , فقط لقبك (بالاعلي) سيكون مرئيا. عندما يضغط مستخدم علي لقبك, الجزء (بالاسفل) سيتم عرضه فى شاشه منفصله"
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
-                                lastSaved: "Last saved %{when}"
+                                dirty: "سيتم حفظ المحتوي تلقائيا خلال ثواني بعد توقف الكتابه"
+                                failed: "غير قادر علي الحفظ."
+                                tryAgain: "حاول مجددا."
+                                lastSaved: "اخر حفظ %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                    wrongSize: "حجم الصورة يجب ان تكون %{requiredWidth}×%{requiredHeight}. أبعاد صورتك %{yourWidth}×%{yourHeight}."
+                                    wrongType: "ملف خطاء. يجب ان يكون JPG."
+                                caption: "اضف شرح"
+                                prompt: "أسحب واسقط صوره"
+                                onlyJpg: "[JPG فقط]"
+                                sizePrompt: "%{requiredWidth} عرض x %{requiredHeight} ارتفاع"
+                                select: "اختر صورة"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
-                                prompt: "Write something here..."
-                                url: "URL"
+                                kindrid: "اذا كنت تبحث عن منصه ذكية و بسيطة <a href='%{url}'>جرب Kindrid</a>."
+                                label: "علامه الرابط"
+                                prompt: "اكتب شئ هنا..."
+                                url: "رابط"
                             ContentTypePlan: 
-                                replace: "Replace"
-                                search: "Search for a Reading Plan"
+                                replace: "استبدل"
+                                search: "ابحث عن خطه قراءه"
                             ContentTypeReference: 
                                 language: "اللغة"
                                 version: "إصدار"
                                 book: "سفر"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "أصحاح : عدد"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "اكتب شىء هنا..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "لايمكن الالغاء بينما الحدث مباشر"
+                                desc: "بمجرد ان يبدا بث الحدث , لايمكنك مسح النص, الشاهد الكتابي ووحدات الصور لان المستخدمين ربما قاموا باضافه ملحوظاتهم الخاصه للحدث على اي حال يمكنك تعديل هذه الوحدات."
                                 ok: "موافق"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            generic: "هناك مشكلة اثناء نشر الفاعلية الخاصة بك."
+                            invalidTimes: "العظه الواحدة لايجب ان تزيد عن 12 ساعه، والفرق بين أول وقت بدايه وآخر وقت نهاية في الحدث لايجب ان يكون أكثر من 8 أيام. رجاء اعد ضبط توقيتات الحدث وحاول مرة اخرى."
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                    wrongSize: "حجم الصوره يجب ان يكون %{requiredWidth}x%{requiredHeight}. ابعاد صورتك %{yourWidth}x%{yourHeight}."
+                                    wrongType: "نوع ملف غير صالح. يجب أن يكون JPG"
+                                changeImage: "تغيير الصورة"
+                                removeImage: "ازالة الصورة"
+                                prompt: "اسحب صوره"
+                                onlyJpg: "[فقط JPG]"
+                                sizePrompt: "%{requiredWidth} عرض × %{requiredHeight} ارتفاع"
+                                sizePrompt2: "أبعاد صورتك يجب ان تكون %{requiredWidth} × %{requiredHeight} بكسل."
+                                eventName: "اسم الحدث"
+                                org: "اسم الكنيسة أو المنظمة"
+                                desc: "وصف الحدث"
+                                next: "التالي: أضف مواقع و مواعيد →"
+                                blank: "%{field} لايمكن ان يكون فارغ."
                     location: 
                         components: 
                             Location: 
-                                oneRequired: "Add at least one time."
-                                use: "USE THIS LOCATION"
-                                edit: "Edit Location"
-                                delete: "Delete Location"
+                                oneRequired: "اضف على الاقل مره واحده."
+                                use: "استخدم هذا الموقع"
+                                edit: "عدل الموقع"
+                                delete: "الغي الموقع"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                addPhysical: "أضف موقع جغرافي"
+                                promptPhysical: "بإمكانك إضافة مواقع متعددة"
+                                addVirtual: "ضع موقع افتراضي"
+                                churchOnline: "هل تعرف؟ يمكنك إطلاق خدمه اونلاين مجانية بإستخدام <a className='button-caption' href='%{url}'>منصه Church Online</a>."
                             LocationAddTime: 
                                 minutes: "دقائق"
                                 hours: "ساعات"
                                 days: "أيام"
                             LocationDeleteModal: 
                                 sure: "هل أنت متأكد؟"
-                                selected: "You have selected the following location to be deleted:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                selected: "لقد اخترت الموقع التالي ليتم الغائه :"
+                                warn: "هذا سيقوم بحذف الموقع من كل الاحداث السايقه والحاليه . لن يكون بامكانك اعاده استخدام هذا الموقع فى الاحداث المستقبليه."
                                 cancel: "إلغاء"
                                 delete: "مسح"
                             LocationEdit: 
-                                prompt: "Enter the Location address..."
+                                prompt: "ادخل عنوان الموقع..."
                                 country: "البلد"
                                 timezone: "المنطقة الزمنية"
-                                namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                namePrompt: "الكنيسة المعمدانية الأولى في الحرم الشرقي"
+                                name: "اسم الموقع"
+                                nameOptional: "اختياري: سوف يفيد في حالة إضافة مواقع متعددة"
+                                addAnother: "ضع موعدًا آخر"
                                 cancel: "إلغاء"
-                                save: "Save this Location"
+                                save: "احفظ هذا الموقع"
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "عدل تاريخ البدايه"
                                 forward: "إلى الأمام"
-                                backward: "backward"
+                                backward: "للخلف"
                                 by: "من"
-                                week: "week"
-                                weeks: "weeks"
+                                week: "اسبوع"
+                                weeks: "اسابيع"
                                 month: "شهر"
-                                months: "months"
+                                months: "اشهر"
                                 day: "يوم"
                                 days: "أيام"
-                                hour: "hour"
+                                hour: "ساعه"
                                 hours: "ساعات"
                                 update: "تحديث"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "انقل جميع التواريخ و الأوقات فورا"
                             UnpublishModal: 
                                 cancel: "إلغاء"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                title: "الغاء النشر لعمل تغييرات."
+                                desc: "لأضافه , تعديل او الغاء المواقع والتوقيتات قم بالغاء نشر الحدث مؤقتا. خلال هذا الوقت ,حدثك لن يكون مرئي فى نتائج البحث. لاتنسي نشر حدثك مره اخري."
+                                unpublish: "لم ينشر"
                     preview: 
                         notes: 
                             prompt: "أضف ملاحظانك الخاصة..."
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>سجل الدخول</span> لإضافة ملحوظاتك الخاصه…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "عاين فعاليتك قبل النشر"
+                                previewUrl: "معاينه URL:"
                                 share: "شارك الحدث"
                                 locationsAndTimes: "مواقع وأوقات"
                                 publish: "انشر"
-                                unpublish: "Unpublish"
-                                locations: "Locations:"
+                                unpublish: "لم ينشر"
+                                locations: "المواقع:"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "قابل للاكتشاف:"
+                                    desc: "الحدث الخاص بك سيكون مرئيًا في موقع الحدث و نتائج البحث في تطبيق الكتاب المقدس قبل أقرب ميعاد لبدئك بخمسة أيام."
                                 status: 
                                     title: "الحالة:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "الشارة الحمراء LIVE سوف تظهر عند بداية أقرب موعد لبدئك."
                                 remove: 
-                                    title: "Remove:"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    title: "إزالة:"
+                                    desc: "الحدث الخاص بك لن يكون قابلًا للاكتشاف بعد وقت نهايته الأخير. الحاضرون الذين ضغطوا ”حفظ الحدث“ عندما كان الحدث الخاص بك قابلًا للاكتشاف، سيمكنهم الوصول لنسخة مخزَنة منه، كذلك هذا الحدث سوف يكون سهل الوصول اليه عن طريق روابط مباشرة واردة."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "وسع"
                             PreviewTypePlan: 
                                 read: "قراءة"
                                 info: "معلومات عن خطة القراءة‌"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "ضاعف"
                         share: "مشاركة"
                         delete: "مسح"
                         draft: "مسودات"
                         edit: "تعديل"
                         view: "شاهد"
-                        fail: "Unable to delete Event"
+                        fail: "لايمكن إلغاء الفعاليه"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "نسخ"
-                        copied: "Copied"
+                        copied: "تم النسخ"
                         share: "مشاركة"
                         read: "قراءة"
-                        readPlan: "Read Plan"
+                        readPlan: "اقرأ الخطه"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "وسع"
+                        collapse: "إخفاء"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "وسع"
+                        collapse: "إخفاء"
                         save: "حفظ الحدث"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "سجل الدخول لحفظ الفاعلية"
+                        saved: "تم حفظ الفاعلية"

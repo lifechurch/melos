@@ -1492,6 +1492,7 @@ vi:
                                 org: "Tên hội thánh hoặc tổ chức"
                                 desc: "Mô tả sự kiện"
                                 next: "Tiếp: Thêm địa điểm & thời gian →"
+                                blank: "Không thể bỏ trống %{field}."
                     location: 
                         components: 
                             Location: 
@@ -1505,8 +1506,8 @@ vi:
                                 addVirtual: "Thêm địa điểm trực tuyến"
                                 churchOnline: "Bạn có biết... bạn có thể khởi phát một mục vụ trực tuyến với <a className='button-caption' href='%{url}'>Hệ thống Hội thánh Trực tuyến</a>không?"
                             LocationAddTime: 
-                                minutes: "PHÚT"
-                                hours: "GIỜ"
+                                minutes: "phút"
+                                hours: "giờ"
                                 days: "ngày"
                             LocationDeleteModal: 
                                 sure: "Bạn có chắc không?"
@@ -1518,22 +1519,22 @@ vi:
                                 prompt: "Nhập địa chỉ..."
                                 country: "Quốc gia"
                                 timezone: "Múi giờ"
-                                namePrompt: "First Baptist East Campus"
+                                namePrompt: "Tên hội thánh"
                                 name: "Tên địa điểm"
                                 nameOptional: "Tùy chọn: Thêm nhiều địa điểm sẽ tốt hơn"
                                 addAnother: "Thêm thời gian khác"
                                 cancel: "Hủy"
                                 save: "Lưu địa điểm này"
                             LocationTimeShifter: 
-                                shift: "Chuyển thời gian bắt đầu"
-                                forward: "Chuyển tiếp"
+                                shift: "Thay đổi thời gian bắt đầu"
+                                forward: "chuyển tới"
                                 backward: "quay lại"
-                                by: "bởi"
+                                by: "đúng"
                                 week: "tuần"
                                 weeks: "tuần"
-                                month: "Tháng"
+                                month: "tháng"
                                 months: "tháng"
-                                day: "Ngày"
+                                day: "ngày"
                                 days: "ngày"
                                 hour: "giờ"
                                 hours: "GIỜ"
@@ -1550,6 +1551,8 @@ vi:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Đăng nhập</span> để thêm ghi chú cá nhân...</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Duyệt sự kiện của bạn trước khi phát hành"
+                                previewUrl: "Duyệt trước URL:"
                                 share: "Chia sẻ sự kiện"
                                 locationsAndTimes: "Địa điểm và thời gian"
                                 publish: "Phát hành"

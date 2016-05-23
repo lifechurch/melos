@@ -1492,6 +1492,7 @@ fa:
                                 org: "نام کلیسا یا سازمان"
                                 desc: "مشخصات رویداد"
                                 next: "مرحلۀ بعد: اضافه کردن زمان و مکان"
+                                blank: "گزینه %{field} نمی‌تواند خالی باشد"
                     location: 
                         components: 
                             Location: 
@@ -1550,6 +1551,8 @@ fa:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>برای اضافه کردن</span> یادداشت‌های خصوصی خود، وارد سیستم شوید …</a>"
                         components: 
                             PreviewFeed: 
+                                review: "قبل از انتشار رویداد، پیش‌نمایش آن را ببینید."
+                                previewUrl: "پیش‌نمایش راهنمای مرورگر وب"
                                 share: "به اشتراک گذاشتن رویداد"
                                 locationsAndTimes: "مکان‌ها و زمان‌ها"
                                 publish: "انتشار"

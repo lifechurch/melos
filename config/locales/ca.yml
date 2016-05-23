@@ -1329,7 +1329,7 @@ ca:
                     published: "Publicat"
                     draft: "Esborrany"
                     live: "En directe"
-                    archived: "Archived"
+                    archived: "Arxivat"
                 unpublish: "Desfés la publicació"
                 saving: "Guardant…"
                 saveAsDraft: "Desa com a esborrany"
@@ -1505,6 +1505,7 @@ ca:
                                 org: "Nom de l'església o de l'organització"
                                 desc: "Descripció de l'esdeveniment"
                                 next: "Següent: Afegeix localització i horaris →"
+                                blank: "%{field} no pot quedar buit."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ ca:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Registra't</span> per a afegir-hi notes privades…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Revisa el teu esdeveniment abans de publicar-lo"
+                                previewUrl: "Vista prèvia de l'URL:"
                                 share: "Comparteix Esdeveniment"
                                 locationsAndTimes: "Llocs i horaris"
                                 publish: "Publica"
@@ -1596,7 +1599,7 @@ ca:
                 components: 
                     EventViewContent: 
                         copy: "Copia"
-                        copied: "Copied"
+                        copied: "Copiat"
                         share: "Comparteix"
                         read: "Llegeix"
                         readPlan: "Llegeix el pla"

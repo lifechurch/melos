@@ -1518,6 +1518,7 @@ lv:
                                 org: "Draudzes nosaukums vai organizācija"
                                 desc: "Pasākuma apraksts"
                                 next: "Tālāk: Pievieno atrašanās vietu un laikus →"
+                                blank: "%{field} nevar būt tukšs."
                     location: 
                         components: 
                             Location: 
@@ -1576,6 +1577,8 @@ lv:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Pieraksties,</span> lai pievienotu savas privātās piezīmes…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Pārskati savu pasākumu pirms publicēšanas"
+                                previewUrl: "Priekšskatījuma URL:"
                                 share: "Dalīties ar notikumu"
                                 locationsAndTimes: "Vietas un laiki"
                                 publish: "Publicēt"

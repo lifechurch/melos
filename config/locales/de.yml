@@ -1329,7 +1329,7 @@ de:
                     published: "Veröffentlicht"
                     draft: "Entwurf"
                     live: "Live"
-                    archived: "Archived"
+                    archived: "Archiviert"
                 unpublish: "Zurückgezogen"
                 saving: "Speichern..."
                 saveAsDraft: "Als Entwurf speichern"
@@ -1505,6 +1505,7 @@ de:
                                 org: "Name der Gemeinde oder Organisation"
                                 desc: "Beschreibung der Veranstaltung"
                                 next: "Nächster Schritt: Ort & Zeit hinzufügen →"
+                                blank: "Diese Feld darf nicht leer sein: %{field}"
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ de:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Melde dich an,</span> um deine privaten Notizen hinzuzufügen…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Überprüfe deine Veranstaltung vor der Veröffentlichung"
+                                previewUrl: "URL Vorschau:"
                                 share: "Ereignis teilen"
                                 locationsAndTimes: "Ort und Zeit"
                                 publish: "Veröffentlichen"
@@ -1596,7 +1599,7 @@ de:
                 components: 
                     EventViewContent: 
                         copy: "Kopieren"
-                        copied: "Copied"
+                        copied: "Kopiert"
                         share: "Teilen"
                         read: "Lesen"
                         readPlan: "Leseplan lesen"

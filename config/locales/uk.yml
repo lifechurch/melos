@@ -1531,6 +1531,7 @@ uk:
                                 org: "Назва церкви чи організації"
                                 desc: "Опис події"
                                 next: "Далі: Додайте місце і час →"
+                                blank: "%{field} не може бути пустим."
                     location: 
                         components: 
                             Location: 
@@ -1589,6 +1590,8 @@ uk:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Увійдіть, щоб додати ваші приватні нотатки ...</span></a>"
                         components: 
                             PreviewFeed: 
+                                review: "Переглянути подію перед публікацією"
+                                previewUrl: "URL для перегляду: "
                                 share: "Поділитись Подією"
                                 locationsAndTimes: "Розташування і час"
                                 publish: "Публікувати"

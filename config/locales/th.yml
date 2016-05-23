@@ -1316,7 +1316,7 @@ th:
                     published: "เผยแพร่แล้ว"
                     draft: "แบบร่าง"
                     live: "ถ่ายทอดสด"
-                    archived: "Archived"
+                    archived: "ที่เก็บเอกสาร"
                 unpublish: "ยังไม่ได้เผยแพร่"
                 saving: "กำลังบันทึก..."
                 saveAsDraft: "บันทึกเป็นแบบร่าง"
@@ -1492,6 +1492,7 @@ th:
                                 org: "ชื่อคริสตจักร หรือองค์การ"
                                 desc: "ลักษณะของกิจกรรม"
                                 next: "ต่อไป: เพิ่มสถานที่จัดงาน และเวลา"
+                                blank: "กรุณาระบุ %{field} "
                     location: 
                         components: 
                             Location: 
@@ -1550,6 +1551,8 @@ th:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>ลงชื่อ</span> เพื่อเพิ่มบันทึกส่วนตัวของคุณ</a>"
                         components: 
                             PreviewFeed: 
+                                review: "ทบทวนกิจกรรมของคุณก่อนเผยแพร่"
+                                previewUrl: "ตัวอย่าง URL:"
                                 share: "แบ่งปันกิจกรรม"
                                 locationsAndTimes: "สถานที่และเวลา"
                                 publish: "เผยแพร่"
@@ -1583,7 +1586,7 @@ th:
                 components: 
                     EventViewContent: 
                         copy: "คัดลอก"
-                        copied: "Copied"
+                        copied: "สำเนา"
                         share: "แบ่งปัน"
                         read: "อ่าน"
                         readPlan: "อ่านแผนการอ่าน"

@@ -538,7 +538,7 @@ fr:
         register: "S'inscrire"
         sign up: "S'inscrire"
         thanks for registering: "Merci pour votre inscription!"
-        confirm message: "Nous venons de vous envoyer un message à%{email}"
+        confirm message: "Nous venons de vous envoyer un message à %{email}"
         confirm message click: "Cliquez sur le lien dans cet email pour confirmer votre identité."
         resend verification: "Renvoyer l'email de vérification"
         sign in alternate: "ou, <a href='%{sign_up_path}' target='_self'>créez un compte</a> si vous en n'avez pas encore."
@@ -1329,7 +1329,7 @@ fr:
                     published: "Publié"
                     draft: "Brouillon"
                     live: "Live"
-                    archived: "Archived"
+                    archived: "Archivé"
                 unpublish: "Non publié"
                 saving: "Enregistrement en cours..."
                 saveAsDraft: "Enregistrer en tant que brouillon"
@@ -1505,6 +1505,7 @@ fr:
                                 org: "Nom de l'église ou organisation"
                                 desc: "Description de l'Événement"
                                 next: "Suivant : Ajouter un lieu et une date →"
+                                blank: "%{field} ne peut pas être vide."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ fr:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Connectez-vous</span> pour ajouter des notes privées…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Vérifier votre événement avant de le publier"
+                                previewUrl: "URL d'aperçu :"
                                 share: "Partagez un Événement"
                                 locationsAndTimes: "Emplacements et horaires"
                                 publish: "Publier"
@@ -1596,7 +1599,7 @@ fr:
                 components: 
                     EventViewContent: 
                         copy: "Copier"
-                        copied: "Copied"
+                        copied: "Copié"
                         share: "Partager"
                         read: "Lire"
                         readPlan: "Lire le plan"

@@ -1329,7 +1329,7 @@ tr:
                     published: "Yayımlandı"
                     draft: "Taslak"
                     live: "Canlı"
-                    archived: "Archived"
+                    archived: "Arşivlendi"
                 unpublish: "Yayınlanmayan"
                 saving: "Kaydediliyor..."
                 saveAsDraft: "Taslak olarak Kaydet"
@@ -1392,7 +1392,7 @@ tr:
             EventView: 
                 title: "YouVersion Etkinliği"
             SelectLanguage: 
-                choose: "Choose Your Language"
+                choose: "Dilinizi Seçin"
         features: 
             Auth: 
                 errors: 
@@ -1505,6 +1505,7 @@ tr:
                                 org: "Kilise Adı ya da Organizasyon"
                                 desc: "Etkinlik Tanımı"
                                 next: "Sonraki: Yer & Zaman Ekle →"
+                                blank: "%{field} boş bırakılamaz."
                     location: 
                         components: 
                             Location: 
@@ -1563,6 +1564,8 @@ tr:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Özel notlarınızı ekleyebilmek için</span> giriş yapın…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Yayınlamadan Önce Etkinliğinizi Gözden Geçirin "
+                                previewUrl: "URL Önizleme:"
                                 share: "Eylemi Paylaş"
                                 locationsAndTimes: "Konumlar ve Saat Dilimleri"
                                 publish: "Yayınla"
@@ -1596,7 +1599,7 @@ tr:
                 components: 
                     EventViewContent: 
                         copy: "Kopyala"
-                        copied: "Copied"
+                        copied: "Kopyalandı"
                         share: "Paylaş"
                         read: "Oku"
                         readPlan: "Planı Oku"
