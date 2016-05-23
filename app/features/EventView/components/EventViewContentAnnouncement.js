@@ -8,7 +8,7 @@ class EventViewContentAnnouncement extends Component {
 	toggle(e) {
 		const { intl } = this.props
 		var content = e.currentTarget.childNodes
-		content[1].text = content[1].text== intl.formatMessage({id:"features.EventEdit.features.preview.components.EventViewContentAnnouncement.expand"}) ? intl.formatMessage({id:"features.EventView.components.EventViewContentAnnouncement.collapse"}) : intl.formatMessage({id:"features.EventEdit.features.preview.components.EventViewContentAnnouncement.expand"})
+		content[1].text = content[1].text== intl.formatMessage({id:"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand"}) ? intl.formatMessage({id:"features.EventView.components.EventViewContentAnnouncement.collapse"}) : intl.formatMessage({id:"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand"})
 		content[2].classList.toggle('show')
 	}
 
