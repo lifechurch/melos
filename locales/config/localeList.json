@@ -207,15 +207,6 @@
 		"displayName": "Português (Brasil)"
 	},
 	{
-		"nativeName": "Português (Portugal)",
-		"englishName": "Portuguese (Portugal)",
-		"locale": "pt-PT",
-		"momentLocale": "pt-PT",
-		"locale2": "pt",
-		"locale3": "por",
-		"displayName": "Português (Portugal)"
-	},
-	{
 		"nativeName": "Română",
 		"englishName": "Romanian",
 		"locale": "ro-RO",
@@ -351,15 +342,6 @@
 		"displayName": "فارسی"
 	},
 	{
-		"nativeName": "हिन्दी",
-		"englishName": "Hindi",
-		"locale": "hi-IN",
-		"momentLocale": "hi-IN",
-		"locale2": "hi",
-		"locale3": "hin",
-		"displayName": "हिन्दी"
-	},
-	{
 		"nativeName": "தமிழ்",
 		"englishName": "Tamil",
 		"locale": "ta-IN",
@@ -385,15 +367,6 @@
 		"locale2": "my",
 		"locale3": "mya",
 		"displayName": "မြန်မာ"
-	},
-	{
-		"nativeName": "ភាសាខ្មែរ",
-		"englishName": "Khmer",
-		"locale": "km-KH",
-		"momentLocale": "km-KH",
-		"locale2": "km",
-		"locale3": "khm",
-		"displayName": "ភាសាខ្មែរ"
 	},
 	{
 		"nativeName": "한국어",
