@@ -3,13 +3,15 @@ import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
 import Image from '../../../../../../app/components/Image'
 import ActionCreators from '../actions/creators'
+import { FormattedMessage } from 'react-intl'
+import planLocales from '../../../../../../locales/config/planLocales.json'
 
 const SEARCH_TIMEOUT = 500
 
 var PlanList = React.createClass({
 
 	render: function() {
-		const { items, handlePlanClick } = this.props
+		const { items, handlePlanClick, intl } = this.props
 
 		var createItem = function(item) {
 			var className = (item.name.default=='No matching Plans') ? 'plan error' : 'plan'
@@ -30,7 +32,7 @@ var SelectedPlan = React.createClass({
 
 		return <div className="selected" key={item.plan_id} data-plan_id={item.plan_id} name="plan_id" value={item.plan_id}>
 			<Image images={item.images} width={640} height={360} />
-			<div className="replace" onClick={handlePlanClick}>Replace</div>
+			<div className="replace" onClick={handlePlanClick}><FormattedMessage id="features.EventEdit.features.content.components.ContentTypePlan.replace" /></div>
 			<div className="title">{item.title}</div>
 			<div className="length">{item.formatted_length}</div>
 		</div>;
@@ -41,10 +43,16 @@ class ContentTypePlan extends Component {
 
 	performPlanSearch(index, field, value) {
 		const { dispatch } = this.props
+		let planLocale = 'en'
+
+		if (typeof planLocales[window.__LOCALE__.locale] !== 'undefined') {
+			planLocale = planLocales[window.__LOCALE__.locale]
+		}
+
 		dispatch(ActionCreators.searchPlans({
 			index,
 			query: value,
-			language_tag: 'en'
+			language_tag: planLocale
 		}))
 	}
 
@@ -116,7 +124,7 @@ class ContentTypePlan extends Component {
 	}
 
 	render() {
-		const { contentIndex, contentData, plans } = this.props
+		const { contentIndex, contentData, plans, intl } = this.props
 		var output;
 
 		// Selected
@@ -130,7 +138,7 @@ class ContentTypePlan extends Component {
 			output = <div className="plan-content">
 				<FormField
 					InputType={Input}
-					placeholder="Search for a Reading Plan"
+					placeholder={intl.formatMessage({id:"features.EventEdit.features.content.components.ContentTypePlan.search"})}
 					name="query"
 					onChange={::this.handlePlanSearchChange}
 					onFocus={::this.handlePlanSearchFocus}
@@ -145,7 +153,7 @@ class ContentTypePlan extends Component {
 			output = <div className="plan-content">
 				<FormField
 					InputType={Input}
-					placeholder="Search for a Reading Plan"
+					placeholder={intl.formatMessage({id:"features.EventEdit.features.content.components.ContentTypePlan.search"})}
 					name="query"
 					onChange={::this.handlePlanSearchChange}
 					onFocus={::this.handlePlanSearchFocus}

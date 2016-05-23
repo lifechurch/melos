@@ -138,6 +138,13 @@ const ActionCreators = {
 		}
 	},
 
+	setLang(params) {
+		return {
+			type: contentType('setLang'),
+			params
+		}
+	},
+
 	setVersion(params) {
 		// if books already exist pass 'versionSuccess'? (still want to run event.js:versionSuccess)
 		return {

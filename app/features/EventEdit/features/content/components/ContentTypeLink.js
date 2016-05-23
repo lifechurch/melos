@@ -2,17 +2,20 @@ import React, { Component, PropTypes } from 'react'
 import FormField from '../../../../../../app/components/FormField'
 import HtmlEditor from '../../../../../../app/components/HtmlEditor'
 import Input from '../../../../../../app/components/Input'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 class ContentTypeLink extends Component {
 	render() {
-		const { content, handleChange } = this.props
+		const { content, handleChange, intl } = this.props
 
 		// For the "giving" type links.
 		var kindrid_paragraph;
 		if ( content.hasOwnProperty('iamagivinglink') && content.iamagivinglink )
 		{
 			// JSX voodoo:
-			kindrid_paragraph = <p className="giving--kindred-para">If you are looking for a smart, simple giving platform, <a href="https://kindrid.com/">try Kindrid</a>.</p>
+			kindrid_paragraph = (<p className="giving--kindred-para">
+					<FormattedHTMLMessage id="features.EventEdit.features.content.components.ContentTypeLink.kindrid" values={{url: "https://kindrid.com/"}} />
+				</p>)
 		}
 
 		return (
@@ -20,7 +23,7 @@ class ContentTypeLink extends Component {
 				<div className="form-body-block no-pad white">
 					<FormField
 						InputType={Input}
-						placeholder="Link Label"
+						placeholder={intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeLink.label" })}
 						name="title"
 						onChange={handleChange}
 						value={content.data.title}
@@ -28,7 +31,7 @@ class ContentTypeLink extends Component {
 				</div>
 				<FormField
 					InputType={HtmlEditor}
-					placeholder="Write something here..."
+					placeholder={intl.formatMessage({id: "features.EventEdit.features.content.components.ContentTypeLink.prompt" })}
 					name="body"
 					onChange={handleChange}
 					value={content.data.body}
@@ -36,7 +39,7 @@ class ContentTypeLink extends Component {
 				<div className="form-body-block no-pad white">
 					<FormField
 						InputType={Input}
-						placeholder="URL"
+						placeholder={intl.formatMessage({id:"features.EventEdit.features.content.components.ContentTypeLink.url"})}
 						name="url"
 						onChange={handleChange}
 						value={content.data.url}

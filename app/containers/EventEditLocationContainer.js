@@ -13,6 +13,7 @@ import Location from '../features/EventEdit/features/location/components/Locatio
 import LocationAddButtons from '../features/EventEdit/features/location/components/LocationAddButtons'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import LocationTimeShifter from '../features/EventEdit/features/location/components/LocationTimeShifter'
+import { injectIntl, FormattedHTMLMessage } from 'react-intl'
 
 class EventEditLocationContainer extends Component {
 	componentWillMount() {
@@ -167,13 +168,13 @@ class EventEditLocationContainer extends Component {
 	}
 
 	render() {
-		const { dispatch, event, loc, modals } = this.props
+		const { dispatch, event, loc, modals, intl, params } = this.props
 
 		var locations = []
 		var index = 0
 		for (var key in event.item.locations) {
 			const loc = event.item.locations[key]
-			locations.push(<li key={index}><Location dispatch={dispatch} event={event} index={index} loc={loc} handleSelect={::this.handleSelect} handleDelete={::this.handleOpenModal} handleEdit={::this.handleEdit} /></li>)
+			locations.push(<li key={index}><Location intl={intl} dispatch={dispatch} event={event} index={index} loc={loc} handleSelect={::this.handleSelect} handleDelete={::this.handleOpenModal} handleEdit={::this.handleEdit} /></li>)
 			index++
 		}
 
@@ -194,7 +195,8 @@ class EventEditLocationContainer extends Component {
 				handleRemoveTime={::this.handleRemoveTime}
 				handleSave={::this.handleSave}
 				dispatch={dispatch}
-				loc={loc} />
+				loc={loc}
+				intl={intl} />
 			)
 		} else {
 			locationList = (
@@ -206,7 +208,8 @@ class EventEditLocationContainer extends Component {
 								dispatch={dispatch}
 								event={event}
 								handleAddPhysicalLocationClick={::this.handleAddPhysicalLocationClick}
-								handleAddVirtualLocationClick={::this.handleAddVirtualLocationClick}>
+								handleAddVirtualLocationClick={::this.handleAddVirtualLocationClick}
+								intl={intl}>
 							</LocationAddButtons>
 						</li>
 					</ReactCSSTransitionGroup>
@@ -216,10 +219,10 @@ class EventEditLocationContainer extends Component {
 
 		return (
 			<div>
-				<Helmet title="Event Location" />
+				<Helmet title={intl.formatMessage({ id: "containers.EventEditLocationContainer.title" })} />
 				<Row>
 					<Column s='medium-12'>
-						<LocationTimeShifter dispatch={dispatch} event={event} />
+						<LocationTimeShifter intl={intl} dispatch={dispatch} event={event} />
 					</Column>
 				</Row>
 				<Row>
@@ -229,8 +232,8 @@ class EventEditLocationContainer extends Component {
 							{locationEditor}
 							{locationList}
 						</ReactCSSTransitionGroup>
-						<LocationDeleteModal modalState={modals.LocationDelete} handleDelete={::this.handleDelete} handleClose={::this.handleCloseModal} />
-						<UnpublishModal event={event} dispatch={dispatch} modalState={modals.Unpublish} handleClose={::this.handleCloseUnpublishModal} />
+						<LocationDeleteModal intl={intl} modalState={modals.LocationDelete} handleDelete={::this.handleDelete} handleClose={::this.handleCloseModal} />
+						<UnpublishModal intl={intl} event={event} dispatch={dispatch} modalState={modals.Unpublish} handleClose={::this.handleCloseUnpublishModal} />
 					</div>
 				</Row>
 				<Row>
@@ -240,10 +243,10 @@ class EventEditLocationContainer extends Component {
 				</Row>
 				<Row>
 					<Column s='medium-6'>
-						<Link disabled={!event.rules.details.canView || event.isReordering} to={`/event/edit/${event.item.id}`}>&larr; Previous: Details</Link>
+						<Link disabled={!event.rules.details.canView || event.isReordering} to={`/${params.locale}/event/edit/${event.item.id}`}><FormattedHTMLMessage id="containers.EventEditLocationContainer.previous" /></Link>
 					</Column>
 					<Column s='medium-6' a='right'>
-						<Link disabled={!event.rules.content.canView || event.isReordering} to={`/event/edit/${event.item.id}/content`}>Next: Add Content &rarr;</Link>
+						<Link disabled={!event.rules.content.canView || event.isReordering} to={`/${params.locale}/event/edit/${event.item.id}/content`}><FormattedHTMLMessage id="containers.EventEditLocationContainer.next" /></Link>
 					</Column>
 				</Row>
 			</div>
@@ -251,4 +254,4 @@ class EventEditLocationContainer extends Component {
 	}
 }
 
-export default EventEditLocationContainer
+export default injectIntl(EventEditLocationContainer)

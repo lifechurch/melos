@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import ActionCreators from '../actions/creators'
 import RevManifest from '../../../../../../app/lib/revManifest'
+import { FormattedMessage } from 'react-intl'
 
 class ContentInsertionPoint extends Component {
 	constructor(props) {
@@ -38,9 +39,22 @@ class ContentInsertionPoint extends Component {
 		let insertionPoint = null
 		if (this.state.show) {
 			if (this.state.on) {
-				insertionPoint = <div><div className='content-insertion-line'></div><a className='solid-button green' onClick={::this.handleClick}><img src={`/images/${RevManifest('check.png')}`} /> Insert next module here</a></div>
+				insertionPoint = (<div>
+					<div className='content-insertion-line'></div>
+					<a className='solid-button green' onClick={::this.handleClick}>
+						<img src={`/images/${RevManifest('check.png')}`} />
+						<FormattedMessage id="features.EventEdit.features.content.components.ContentInsertionPoint.title" />
+			 		</a>
+		 		</div>)
+
 			} else {
-				insertionPoint = <div><div className='content-insertion-line'></div><a className='hollow-button green' onClick={::this.handleClick}><img src={`/images/${RevManifest('thin-plus.png')}`} /> Insert next module here</a></div>
+				insertionPoint = (<div>
+					<div className='content-insertion-line'></div>
+					<a className='hollow-button green' onClick={::this.handleClick}>
+						<img src={`/images/${RevManifest('thin-plus.png')}`} />
+						<FormattedMessage id="features.EventEdit.features.content.components.ContentInsertionPoint.title" />
+					</a>
+				</div>)
 			}
 		}
 

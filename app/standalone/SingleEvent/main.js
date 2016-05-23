@@ -5,6 +5,10 @@ import configureStore from './store'
 import defaultState from './defaultState'
 import createLogger from 'redux-logger'
 import EventView from '../../containers/EventView'
+import { addLocaleData, IntlProvider } from 'react-intl'
+import moment from 'moment'
+
+require('moment/min/locales')
 
 let initialState = defaultState
 
@@ -18,10 +22,14 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 }
 
 const store = configureStore(initialState, null, logger)
+addLocaleData(window.__LOCALE__.data)
+moment.locale(window.__LOCALE__.locale)
 
 render(
-	<Provider store={store}>
-		<EventView />
-	</Provider>,
+	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
+		<Provider store={store}>
+			<EventView />
+		</Provider>
+	</IntlProvider>,
   document.getElementById('react-app')
 )

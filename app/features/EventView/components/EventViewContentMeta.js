@@ -12,6 +12,7 @@ class EventViewContentMeta extends Component {
 
 	constructor(props) {
 		super(props)
+
 		this.state = { isCopied: false }
 	}
 
@@ -29,23 +30,23 @@ class EventViewContentMeta extends Component {
 	}
 
 	render() {
-		const { meta_links } = this.props
+		const { meta_links, intl } = this.props
 
 		var links = meta_links.map((ml, i) => {
 			switch (ml.label) {
-				case 'Read':
+				case intl.formatMessage({id:"features.EventView.components.EventViewContent.read"}):
 					return (
 						<a key={i} href={ml.payload}>{ml.label}</a>
 					)
 					break
 
-				case 'Read Plan':
+				case intl.formatMessage({id:"features.EventView.components.EventViewContent.readPlan"}):
 					return (
 						<a key={i} href={ml.payload} className="plan">{ml.label}</a>
 					)
 					break
 
-				case 'Share':
+				case intl.formatMessage({id:"features.EventView.components.EventViewContent.share"}):
 					return (
 						<div key={i}>
 							<a onClick={::this.handleShare}>{ml.label}</a>
@@ -54,10 +55,10 @@ class EventViewContentMeta extends Component {
 					)
 					break
 
-				case 'Copy':
+				case intl.formatMessage({id:"features.EventView.components.EventViewContent.copy"}):
 					return (
 				    	<CopyToClipboard key={i} onCopy={::this.handleCopy} text={ml.payload}>
-							<a>{this.state.isCopied ? 'Copied' : ml.label}</a>
+								<a>{this.state.isCopied ? intl.formatMessage({id:"features.EventView.components.EventViewContent.copied"}) : ml.label}</a>
 				    	</CopyToClipboard>
 					)
 					break

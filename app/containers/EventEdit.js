@@ -6,6 +6,7 @@ import { Link } from 'react-router'
 import { fetchEventView } from '../actions'
 import ActionCreators from '../features/EventEdit/features/details/actions/creators'
 import EventHeader from '../components/EventHeader'
+import { injectIntl } from 'react-intl'
 
 class EventEdit extends Component {
 	handleDetailsNext(nextLocation) {
@@ -30,7 +31,6 @@ class EventEdit extends Component {
 		const { children, event, loc, params, dispatch, modals, routing, references, plans, auth, _content } = this.props
 		return (
 			<div>
-				<Helmet title="Event" />
 				<EventHeader {...this.props} />
 				<div>
         	{children && React.cloneElement(children, { modals, event, loc, dispatch, params, routing, references, plans, auth, _content, handleDetailsNext: ::this.handleDetailsNext })}
@@ -79,4 +79,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(EventEdit)
+export default connect(mapStateToProps, null)(injectIntl(EventEdit))

@@ -5,6 +5,7 @@ import Column from '../../../../../../app/components/Column'
 import { GoogleMap, Marker, SearchBox } from 'react-google-maps'
 import LocationAddTime from './LocationAddTime'
 import ErrorMessage from '../../../../../../app/components/ErrorMessage'
+import { FormattedMessage } from 'react-intl'
 
 class LocationEdit extends Component {
 
@@ -69,7 +70,7 @@ class LocationEdit extends Component {
 	}
 
 	render() {
-		const { handleCancel, handleChange, handleSave, handleSetTime, handleAddTime, handleRemoveTime, loc } = this.props
+		const { handleCancel, handleChange, handleSave, handleSetTime, handleAddTime, handleRemoveTime, loc, intl } = this.props
 
 		var inputStyle = {
 			"border": "1px solid transparent",
@@ -100,7 +101,7 @@ class LocationEdit extends Component {
 		var times;
 		if (loc.hasOwnProperty('times')) {
 			times = loc.times.map((t, i) => {
-				return (<LocationAddTime key={i} time={t} timeIndex={i} handleTimeChange={handleSetTime} handleRemoveTime={handleRemoveTime} />)
+				return (<LocationAddTime tz={loc.timezone} intl={intl} key={i} time={t} timeIndex={i} handleTimeChange={handleSetTime} handleRemoveTime={handleRemoveTime} />)
 			})
 		}
 
@@ -119,7 +120,7 @@ class LocationEdit extends Component {
 						controlPosition={google.maps.ControlPosition.TOP_LEFT}
 						onPlacesChanged={::this.handlePlacesChanged}
 						ref="searchBox"
-						placeholder="Enter the Location address..."
+						placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.prompt"})}
 						style={inputStyle} />
 
 					{this.state.markers.map((marker, index) => (
@@ -137,10 +138,10 @@ class LocationEdit extends Component {
 					<form>
 						<Row>
 							<Column s='small-6'>
-								<input className='small' type='text' name='country' placeholder='Country' onChange={handleChange} value={loc.country} />
+								<input className='small' type='text' name='country' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.country"})} onChange={handleChange} value={loc.country} />
 							</Column>
 							<Column s='small-6'>
-								<input className='small' type='text' name='timezone' placeholder='Timezone' onChange={handleChange} value={loc.timezone} />
+								<input className='small' type='text' name='timezone' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.timezone"})} onChange={handleChange} value={loc.timezone} />
 							</Column>
 						</Row>
 					</form>
@@ -152,7 +153,7 @@ class LocationEdit extends Component {
 					<form>
 						<Row>
 							<Column s='small-6 end'>
-								<input className='small' type='text' name='timezone' placeholder='Timezone' onChange={handleChange} value={loc.timezone} />
+								<input className='small' type='text' name='timezone' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.timezone"})} onChange={handleChange} value={loc.timezone} />
 							</Column>
 						</Row>
 					</form>
@@ -166,8 +167,8 @@ class LocationEdit extends Component {
 					<div className='form-body-block white'>
 						<form className="locationForm">
 							<label>
-								<input className='small' type='text' name='name' placeholder='First Baptist East Campus' onChange={handleChange} value={loc.name} />
-								<span className="left">Location Name</span><span className="labelRight">Optional: Useful if adding multiple locations</span>
+								<input className='small' type='text' name='name' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.namePrompt"})} onChange={handleChange} value={loc.name} />
+								<span className="left"><FormattedMessage id="features.EventEdit.features.location.components.LocationEdit.name" /></span><span className="labelRight"><FormattedMessage id="features.EventEdit.features.location.components.LocationEdit.nameOptional" /></span>
 							</label>
 						</form>
 						{gMap}
@@ -175,15 +176,15 @@ class LocationEdit extends Component {
 
 					<div className='form-body-block white text-left'>
 						{times}
-						<a onClick={handleAddTime}>Add another time</a>
+						<a onClick={handleAddTime}><FormattedMessage id="features.EventEdit.features.location.components.LocationEdit.addAnother" /></a>
 					</div>
 
 					{locationDetails}
 
 					<div className='form-actions text-right'>
 						<ErrorMessage hasError={loc.hasError === true} errors={loc.errors} />
-						<a onClick={handleCancel}>Cancel</a>
-						<a className='solid-button green' onClick={handleSave}>Save this Location</a>
+						<a onClick={handleCancel}><FormattedMessage id="features.EventEdit.features.location.components.LocationEdit.cancel" /></a>
+						<a className='solid-button green' onClick={handleSave}><FormattedMessage id="features.EventEdit.features.location.components.LocationEdit.save" /></a>
 					</div>
 				</div>
 

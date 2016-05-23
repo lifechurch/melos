@@ -2,25 +2,28 @@ import React, { Component, PropTypes } from 'react'
 import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
 import HtmlEditor from '../../../../../../app/components/HtmlEditor'
+import { FormattedMessage } from 'react-intl'
 
 class ContentTypeAnnouncement extends Component {
 	render() {
-		const { contentData, handleChange } = this.props
+		const { contentData, handleChange, intl } = this.props
 		return (
 			<div>
 				<div className='form-body-block no-pad white'>
-					<FormField 
+					<FormField
 						InputType={Input}
-						placeholder="Title"
+						placeholder={intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeAnnouncement.title" })}
 						name="title"
 						onChange={handleChange}
 						value={contentData.title}
 						errors={contentData.errors} />
 				</div>
-				<p className='field-caption'>In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen.</p>
-				<FormField 
+				<p className='field-caption'>
+					<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeAnnouncement.caption" />
+				</p>
+				<FormField
 					InputType={HtmlEditor}
-					placeholder="Write something here..."
+					placeholder={intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt" })}
 					name="body"
 					onChange={handleChange}
 					value={contentData.body}

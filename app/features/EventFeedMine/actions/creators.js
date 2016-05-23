@@ -3,11 +3,11 @@ import { validateDuplicateParams } from '../validators/eventFeedMine.js'
 import { routeActions } from 'react-router-redux'
 
 const ActionCreators = {
-	duplicate(params) {
+	duplicate(params, locale) {
 		validateDuplicateParams(params)
 		return dispatch => {
 			dispatch(ActionCreators.callDuplicate(params)).then((event) => {
-				const nextUrl = '/event/edit/' + event.id
+				const nextUrl = '/' + locale + '/event/edit/' + event.id
 				dispatch(routeActions.push(nextUrl))
 			})
 		}

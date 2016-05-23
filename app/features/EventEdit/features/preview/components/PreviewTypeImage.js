@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import Image from '../../../../../../app/components/Image'
+import { FormattedMessage } from 'react-intl'
 
 class PreviewTypeImage extends Component {
 
@@ -21,7 +22,7 @@ class PreviewTypeImage extends Component {
                 </div>
 				<p className='caption'>{contentData.body}</p>
 				<div className='meta'>
-					<div className='notes'>Add your notes…</div>
+					<div className='notes'><FormattedMessage id="features.EventEdit.features.preview.notes.prompt" /></div>
 					<div className='actions'>&bull; &bull; &bull;</div>
 				</div>
 			</div>

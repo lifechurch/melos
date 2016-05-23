@@ -1248,11 +1248,11 @@ form.locationForm {
 		h3 {
 			float: left;
 			font-size: 1em;
-				font-weight: bold;
+			font-weight: normal;
 		}
 
 		h3.right {
-			width: 70%;
+			width: 60%;
 			color: #777;
 		}
 
@@ -1272,6 +1272,13 @@ form.locationForm {
 		}
 
 	}
+
+	.section-title {
+		h3 {
+			font-weight: bold;
+		}
+	}
+
 	.publish {
 		padding-left: 60px;
 		padding-right: 60px;
@@ -1451,10 +1458,8 @@ form.locationForm {
 
 	    	a {
 			    float: right;
-			    width: 70px;
 			    padding: 5px;
 			    text-align: center;
-			    &.plan{ width: 90px; }
 	    	}
 	    }
 
@@ -1651,4 +1656,22 @@ span.error, small.error {
     width: 100%;
     margin-top: 15px;
   }
+}
+
+h1.title {
+	font-family: ArialMT, Arial;
+	font-size: 36px;
+	color: #353535;
+	line-height: 42px;
+}
+
+ul.language-selector li {
+	&.preferred {
+		font-weight: bold;
+	}
+
+	small {
+		font-size: 80%;
+		opacity: 0.6;
+	}
 }

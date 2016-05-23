@@ -48,7 +48,7 @@ export function isBlank(target, output, keys, scope) {
 	for (var key in keys) {
 		const prop = target[key]
 		const isBlank = (typeof prop !== 'string' || prop.length === 0)
-		const error = isBlank ?  [keys[key], 'cannot be blank.'].join(' ') : false
+		const error = isBlank ? { string: "features.EventEdit.features.details.components.DetailsEdit.blank", field: keys[key] } : false
 		if (error !== false) {
 			newOutput.fields[key].push(error)
 			newOutput.summary = [newOutput.summary, error].join(' ')

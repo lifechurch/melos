@@ -5,25 +5,19 @@ import Column from '../../../../../../app/components/Column'
 import FormField from '../../../../../../app/components/FormField'
 import Input from '../../../../../../app/components/Input'
 import HtmlEditor from '../../../../../../app/components/HtmlEditor'
+import LocaleList from '../../../../../../locales/config/localeList.json'
 import cookie from 'react-cookie'
+import { FormattedMessage } from 'react-intl'
+import moment from 'moment'
 
 class ContentTypeReference extends Component {
+	constructor(props) {
+		super(props)
+		this.state = { loadingVersions: false }
+	}
 
 	componentWillMount() {
 		const { dispatch, references, contentIndex, contentData } = this.props
-
-		if (Object.keys(references.versions).length == 1) {
-			dispatch(ActionCreators.getVersions({'language_tag': 'eng', 'type': 'all'}))
-		}
-
-		if (contentData.version_id != 1) {
-			dispatch(ActionCreators.setVersion({
-				'language_tag': 'eng',
-				'id': contentData.version_id,
-				'index': contentIndex
-			}))
-		}
-
 		var usfm_sections = contentData.usfm[0].split('.')
 		if (usfm_sections.length > 1) {
 			dispatch(ActionCreators.getChapter({
@@ -31,6 +25,37 @@ class ContentTypeReference extends Component {
 				'id': contentData.version_id,
 				'reference': usfm_sections[0] + "." + usfm_sections[1]
 			}))
+		}
+
+		if (typeof contentData.language_tag !== 'undefined' && !this.state.loadingVersions && typeof references.versions[contentData.language_tag] === 'undefined') {
+			this.setState({loadingVersions: true})
+			dispatch(ActionCreators.getVersions({'language_tag': contentData.language_tag , 'type': 'all', index: contentIndex}))
+		}
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { dispatch, references, contentData, contentIndex } = nextProps
+
+		// Need to Set Language Based on Version in State
+		if (typeof contentData.language_tag === 'undefined' && typeof references.langs[contentData.version_id] !== 'undefined') {
+			dispatch(ActionCreators.setLang({
+				'language_tag': references.langs[contentData.version_id],
+				'index': contentIndex
+			}))
+		}
+
+		// Need to Fetch Books for this Version
+		if (contentData.version_id !== null && typeof references.books[contentData.version_id] === 'undefined') {
+			dispatch(ActionCreators.setVersion({
+				'id': contentData.version_id,
+				'index': contentIndex
+			}))
+		}
+
+		// Need to Fetch Versions for this Language
+		if (typeof contentData.language_tag !== 'undefined' && !this.state.loadingVersions && typeof references.versions[contentData.language_tag] === 'undefined') {
+			this.setState({loadingVersions: true})
+			dispatch(ActionCreators.getVersions({'language_tag': contentData.language_tag , 'type': 'all', index: contentIndex}))
 		}
 	}
 
@@ -43,15 +68,32 @@ class ContentTypeReference extends Component {
 		}
 	}
 
+	handleLangChange(event) {
+		const { dispatch, contentIndex, contentData } = this.props
+
+		dispatch(ActionCreators.setLang({
+			'language_tag': event.target.value,
+			'index': contentIndex
+		}))
+
+		cookie.save('last_bible_lang', event.target.value, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+		cookie.remove('last_bible_version')
+		cookie.remove('last_bible_book')
+
+		dispatch(ActionCreators.getVersions({'language_tag': event.target.value, 'type': 'all', index: contentIndex}))
+		dispatch(ActionCreators.setField({index: contentIndex, field: 'human', value: ' '}))
+		dispatch(ActionCreators.setField({index: contentIndex, field: 'chapter', value: ''}))
+		dispatch(ActionCreators.setField({index: contentIndex, field: 'usfm', value: ['']}))
+	}
+
 	handleVersionChange(event) {
 		const { dispatch, contentIndex, contentData } = this.props
 		dispatch(ActionCreators.setVersion({
-			'language_tag': 'eng',
 			'id': parseInt(event.target.value),
 			'index': contentIndex
 		}))
 
-		cookie.save('last_bible_version', parseInt(event.target.value))
+		cookie.save('last_bible_version', parseInt(event.target.value), { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 		cookie.remove('last_bible_book')
 
 		dispatch(ActionCreators.setField({index: contentIndex, field: 'human', value: ' '}))
@@ -64,7 +106,7 @@ class ContentTypeReference extends Component {
 		const books = references.books[contentData.version_id]
 		const usfm = event.target.value
 
-		cookie.save('last_bible_book', event.target.value)
+		cookie.save('last_bible_book', event.target.value, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 
 		var human = ""
 		for (let book of books) {
@@ -212,8 +254,8 @@ class ContentTypeReference extends Component {
 	}
 
 	render() {
-		const { references, contentData, isFetching } = this.props
-		const { version_id, chapter } = contentData
+		const { references, contentData, isFetching, intl } = this.props
+		const { version_id, chapter, language_tag } = contentData
 		const book = contentData.usfm[0].split('.')[0]
 		var chv = ::this.getHumanChapterVerse(contentData)
 
@@ -225,10 +267,10 @@ class ContentTypeReference extends Component {
 					var verse = ::this.parseVerseFromChapter(usfm)
 					var verse_number = usfm.split('.').pop() + " "
 					if (previous_number && (previous_number != (verse_number-1))) {
-						verses.push( <br/> )
+						verses.push( <br key={verse_number + "_br"} /> )
 					}
-					verses.push( <span className="verseNumber">{verse_number}</span> )
-					verses.push( <span className="verseContent">{verse + " "}</span> )
+					verses.push( <span key={verse_number + "_number"} className="verseNumber">{verse_number}</span> )
+					verses.push( <span key={verse_number + "_verse"} className="verseContent">{verse + " "}</span> )
 					previous_number = verse_number
 				}
 			} catch (err) {
@@ -237,12 +279,22 @@ class ContentTypeReference extends Component {
 		}
 
 		var versions = []
-		for (var i in references.order) {
-			var ordered_id = references.order[i]
-			var display = references.versions[ordered_id].abbreviation.toUpperCase() + ' - ' +
-						  references.versions[ordered_id].title
-			versions.push( <option key={references.versions[ordered_id].id} value={ordered_id}>{display}</option> )
+		if (typeof references.versions[language_tag] !== 'undefined' && typeof references.order[language_tag] !== 'undefined') {
+			for (var i in references.order[language_tag]) {
+				const ordered_id = references.order[language_tag][i]
+				const versionList = references.versions[language_tag]
+				if (typeof versionList[ordered_id] !== 'undefined') {
+					const title = versionList[ordered_id].local_title ||  versionList[ordered_id].title
+					const abbr = versionList[ordered_id].abbreviation || ""
+					var display =  title + ' - ' + abbr.toUpperCase()
+					versions.push( <option key={versionList[ordered_id].id} value={ordered_id}>{display}</option> )
+				}
+			}
 		}
+
+		var langs = LocaleList.map((l) => {
+			return (<option key={l.locale} value={l.locale3}>{l.displayName}</option>)
+		})
 
 		var books = []
 		if (Array.isArray(references.books[version_id])) {
@@ -256,20 +308,30 @@ class ContentTypeReference extends Component {
 				<div className='form-body-block white'>
 					<Row>
 						<Column s='small-3'>
+							<select name='language_tag' disabled={isFetching} value={language_tag} onChange={::this.handleLangChange}>
+								<option value={"NO_LANG"}></option>
+								{langs}
+							</select>
+							<div className='selectTitle'>
+								<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeReference.language" />
+							</div>
+						</Column>
+						<Column s='small-3'>
 							<select name='version_id' disabled={isFetching} value={version_id} onChange={::this.handleVersionChange}>
+								<option value={"NO_VERSION"}></option>
 								{versions}
 							</select>
 							<div className='selectTitle'>
-								Version
+								<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeReference.version" />
 							</div>
 						</Column>
-						<Column s='small-6'>
+						<Column s='small-3'>
 							<select name='book' disabled={isFetching} value={book} onChange={::this.handleBookChange}>
 								<option value={"NO_BOOK"}></option>
 								{books}
 							</select>
 							<div className='selectTitle'>
-								Book
+								<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeReference.book" />
 							</div>
 						</Column>
 						<Column s='small-3'>
@@ -281,7 +343,7 @@ class ContentTypeReference extends Component {
 								value={chv}
 								errors={contentData.errors} />
 							<div className='selectTitle'>
-								Chapter:Verse
+								<FormattedMessage id="features.EventEdit.features.content.components.ContentTypeReference.chapterVerse" />
 							</div>
 						</Column>
 					</Row>

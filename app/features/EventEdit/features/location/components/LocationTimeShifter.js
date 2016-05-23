@@ -2,10 +2,12 @@ import React, { Component, PropTypes } from 'react'
 import RevManifest from '../../../../../../app/lib/revManifest'
 import ActionCreators from '../actions/creators'
 import moment from 'moment'
+import { FormattedMessage } from 'react-intl'
 
 class LocationTimeShifter extends Component {
 	constructor(props) {
 		super(props)
+
 		this.state = { isOpen: false, direction: 1, duration: 1, interval: 'weeks' }
 	}
 
@@ -47,30 +49,32 @@ class LocationTimeShifter extends Component {
 	}
 
 	render() {
+		const { intl } = this.props
+
 		if (this.state.isOpen) {
 			return (
 				<div className='text-left shift-bar open'>
 					<a onClick={::this.close}><img src={`/images/${RevManifest('thin-x.png')}`} /></a>
-					Shift start dates
+					<FormattedMessage id="features.EventEdit.features.location.components.LocationTimeShifter.shift" />
 					<select name='direction' onChange={::this.handleChange} value={this.state.direction}>
-						<option value={1}>forward</option>
-						<option value={-1}>backward</option>
+						<option value={1}>{intl.formatMessage({id:"features.EventEdit.features.location.components.LocationTimeShifter.forward"})}</option>
+						<option value={-1}>{intl.formatMessage({id:"features.EventEdit.features.location.components.LocationTimeShifter.backward"})}</option>
 					</select>
-					by
+					<FormattedMessage id="features.EventEdit.features.location.components.LocationTimeShifter.by" />
 					<input type='number' name='duration' onChange={::this.handleChange} value={this.state.duration} />
 					<select name='interval' onChange={::this.handleChange} value={this.state.interval}>
-						<option value='weeks'>{this.state.duration > 1 ? 'weeks' : 'week'}</option>
-						<option value='months'>{this.state.duration > 1 ? 'months' : 'month'}</option>
-						<option value='days'>{this.state.duration > 1 ? 'days' : 'day'}</option>
-						<option value='hours'>{this.state.duration > 1 ? 'hours' : 'hour'}</option>
+						<option value='weeks'>{this.state.duration > 1 ? intl.formatMessage({id:"features.EventEdit.features.location.components.LocationTimeShifter.weeks"}) : intl.formatMessage({id:"features.EventEdit.features.location.components.LocationTimeShifter.week"})}</option>
+						<option value='months'>{this.state.duration > 1 ? intl.formatMessage({id:"features.EventEdit.features.location.components.LocationTimeShifter.months"}) : intl.formatMessage({id:"features.EventEdit.features.location.components.LocationTimeShifter.month"})}</option>
+						<option value='days'>{this.state.duration > 1 ? intl.formatMessage({id:"features.EventEdit.features.location.components.LocationTimeShifter.days"}) : intl.formatMessage({id:"features.EventEdit.features.location.components.LocationTimeShifter.day"})}</option>
+						<option value='hours'>{this.state.duration > 1 ? intl.formatMessage({id:"features.EventEdit.features.location.components.LocationTimeShifter.hours"}) : intl.formatMessage({id:"features.EventEdit.features.location.components.LocationTimeShifter.hours"})}</option>
 					</select>
-					<a className='solid-button gray' onClick={::this.shift}>Update</a>
+					<a className='solid-button gray' onClick={::this.shift}><FormattedMessage id="features.EventEdit.features.location.components.LocationTimeShifter.update" /></a>
 				</div>
 			)
 		} else {
 			return (
 				<div className='text-left shift-bar'>
-					<a onClick={::this.open}>Shift all dates and times at once</a>
+					<a onClick={::this.open}><FormattedMessage id="features.EventEdit.features.location.components.LocationTimeShifter.shiftButton" /></a>
 				</div>
 			)
 		}

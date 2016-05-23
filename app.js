@@ -9,6 +9,7 @@ var api = require('@youversion/js-api');
 var ping = require('./ping');
 var auth = api.tokenAuth;
 var cors = require('cors');
+var cookieParser = require('cookie-parser');
 
 require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] });
 
@@ -24,6 +25,8 @@ app.set('view engine', 'ejs');
 app.use(compression({
 	threshold: 512
 }));
+
+app.use(cookieParser());
 
 var sslExcludedPaths = [
 	'/running',

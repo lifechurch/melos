@@ -11,6 +11,25 @@ var rev = require('gulp-rev');
 var del = require('del');
 var runSequence = require('run-sequence');
 var envify = require('loose-envify');
+var https = require('https');
+var querystring = require('querystring');
+var yaml = require('js-yaml');
+var fs = require('fs');
+var async = require('async');
+var langmap = require('langmap');
+var langs = require('langs');
+
+// Just set this to something because @youversion/js-api expects a value and will crash without it
+process.env['YOUVERSION_TOKEN_PHRASE'] = 'just-a-test';
+
+var GetClient = require('@youversion/js-api').getClient;
+
+var smartlingCredentials = {
+	userIdentifier:"bpmknlysfearpoukuoydwwhduxoidv",
+	userSecret:"7vmbf0a699o0jlrpsbiaq3cbq8He-uv57mks52dpsl3lirnasso7usp"
+};
+
+var smartlingProjectId = 'b13fafcf3';
 
 var IS_PROD = process.env.NODE_ENV === 'production';
 
@@ -171,3 +190,264 @@ gulp.task('watch', ['images', 'css', 'javascript'], function() {
 	gulp.watch( ["./app/**/*.js"], ['javascript'] );
 	gulp.watch( ["./app/**/*.less"], ['css'] );
 });
+
+gulp.task('smartling', function(callback) {
+	return smartlingAuth().then(function(response) {
+		var token = response.response.data.accessToken;
+		return smartlingFetchAvailableLocales(token).then(function(response) {
+
+			var locales = response.response.data.items;
+
+			var queue = async.queue(function(task, callback) {
+					smartlingFetchLocaleFile(task.locale, token).then(function(data) {
+						callback(task, data, null);
+					}, function(error) {
+						callback(null, null, error);
+					})
+			}, 10);
+
+			var localeList = locales.map(function(item) {
+				var lang_country = item.localeId.split('-');
+				var country = lang_country[1] || "";
+				var lang = langs.where("1", lang_country[0]);
+				var locale3 = lang ? lang["3"] : null;
+				var locale2 = lang ? lang["1"] : null;
+				var final = Object.assign(
+					{},
+					langmap[item.localeId],
+					{
+						locale: item.localeId,
+						locale2: locale2,
+						locale3: locale3
+					}
+				);
+
+				final.displayName = final.nativeName || final.englishName || final.locale.toUpperCase();
+				return final;
+			});
+
+			localeList.push({
+				"nativeName": "English (US)",
+				"englishName": "English (US)",
+				"locale": "en-US",
+				"locale2": "en",
+				"locale3": "eng",
+				"displayName": "English (US)"
+			});
+
+			localeList.sort((a, b) => {
+				return a.displayName.localeCompare(b.displayName);
+			});
+
+			fs.writeFileSync('./locales/config/_localeList.json', JSON.stringify(localeList, null, "\t"));
+
+			var tasks = locales.map(function(item) {
+				return { locale: item.localeId, prefix: item.localeId.split('-')[0] }
+			});
+
+			tasks.push({ locale: 'en-US', prefix: 'en' });
+
+			var availableLocales = {};
+			tasks.forEach(function(t) {
+				availableLocales[t.locale] = t.locale;
+				availableLocales[t.prefix] = t.locale;
+				availableLocales[t.locale.replace('-', '_')] = t.locale
+			});
+
+			fs.writeFileSync('./locales/config/_availableLocales.json', JSON.stringify(availableLocales, null, "\t"));
+
+			queue.push(tasks, function(task, data, err) {
+				console.log('Task:', task);
+				fs.writeFileSync('./locales/' + task.locale + '.json', JSON.stringify(flattenObject(data[task.prefix].EventsAdmin), null, '\t').replace(/\%\{/g, '{'));
+			});
+
+			const client = GetClient('reading-plans')
+				.call('configuration')
+				.setVersion('3.1')
+				.get().then(function(data) {
+					var planLocales = {}
+					data.available_language_tags.forEach(function(l) {
+
+						var plan_prefix = l.split('_')[0];
+
+						Object.keys(availableLocales).forEach(function(a) {
+							var av_prefix = a.split('-')[0].split('_')[0];
+
+							if (l === a || plan_prefix === av_prefix) {
+								planLocales[a]  = l;
+							}
+
+						});
+
+					});
+					fs.writeFileSync('./locales/config/planLocales.json', JSON.stringify(planLocales, null, "\t") );
+				}, function(error) {
+					console.log(error);
+				});
+
+			//queue.drain = callback;
+
+		}, function(error) {
+			console.log(error);
+		});
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+function smartlingAuth() {
+	return new Promise(function(resolve, reject) {
+		var options = {
+			hostname: 'api.smartling.com',
+			port: 443,
+			path: '/auth-api/v2/authenticate',
+			method: 'POST',
+			headers: {
+				"Content-Type": "application/json"
+			}
+		}
+
+		var req = https.request(options)
+
+		req.on("response", function(response) {
+			var body = "";
+
+			response.on('data', function(chunk) {
+				body += chunk;
+			});
+
+			response.on("end", function() {
+				try {
+					resolve(JSON.parse(body));
+				} catch(ex) {
+					reject(ex);
+				}
+			});
+		});
+
+		req.on('error', function(e) {
+			reject(e);
+		});
+
+		req.write(JSON.stringify(smartlingCredentials));
+
+		req.end();
+	})
+}
+
+function smartlingFetchAvailableLocales(token) {
+	return new Promise(function(resolve, reject) {
+		var query = querystring.stringify({
+			fileUri: '/files/en.yml'
+		})
+
+		var options = {
+			hostname: 'api.smartling.com',
+			port: 443,
+			path: '/files-api/v2/projects/' + smartlingProjectId + '/file/status?' + query,
+			method: 'GET',
+			headers: {
+				Authorization: 'Bearer ' + token,
+				"Content-Type": "application/json"
+			}
+		}
+
+		//console.log("OP", options);
+
+		var req = https.request(options)
+
+		req.on("response", function(response) {
+			var body = "";
+
+			response.on('data', function(chunk) {
+				body += chunk;
+			});
+
+			response.on("end", function() {
+				try {
+					resolve(JSON.parse(body));
+				} catch(ex) {
+					reject(ex);
+				}
+			});
+		});
+
+		req.on('error', function(e) {
+			reject(e);
+		});
+
+		req.write(JSON.stringify(smartlingCredentials));
+
+		req.end();
+	})
+}
+
+function smartlingFetchLocaleFile(locale, token) {
+	return new Promise(function(resolve, reject) {
+		var query = querystring.stringify({
+			fileUri: '/files/en.yml'
+		})
+
+		var options = {
+			hostname: 'api.smartling.com',
+			port: 443,
+			path: '/files-api/v2/projects/' + smartlingProjectId + '/locales/' + locale + '/file?' + query,
+			method: 'GET',
+			headers: {
+				Authorization: 'Bearer ' + token,
+				"Content-Type": "application/json"
+			}
+		}
+
+		//console.log("OP", options);
+
+		var req = https.request(options)
+
+		req.on("response", function(response) {
+			var body = "";
+
+			response.on('data', function(chunk) {
+				body += chunk;
+			});
+
+			response.on("end", function() {
+				try {
+					//console.log("BD", body);
+					resolve(yaml.safeLoad(body, {json:true}));
+				} catch(ex) {
+					reject(ex);
+				}
+			});
+		});
+
+		req.on('error', function(e) {
+			reject(e);
+		});
+
+		req.write(JSON.stringify(smartlingCredentials));
+
+		req.end();
+	})
+}
+
+function flattenObject(ob) {
+	var toReturn = {};
+
+	for (var i in ob) {
+		if (!ob.hasOwnProperty(i)) continue;
+
+		if ((typeof ob[i]) == 'object') {
+			var flatObject = flattenObject(ob[i]);
+			for (var x in flatObject) {
+				if (!flatObject.hasOwnProperty(x)) continue;
+
+				toReturn[i + '.' + x] = flatObject[x];
+			}
+		} else {
+			toReturn[i] = ob[i];
+		}
+	}
+	return toReturn;
+};
+
+

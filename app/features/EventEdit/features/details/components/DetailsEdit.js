@@ -10,6 +10,7 @@ import Img from '../../../../../../app/components/Image'
 import ErrorMessage from '../../../../../../app/components/ErrorMessage'
 import Dropzone from 'react-dropzone'
 import ActionCreators from '../actions/creators'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 const PREFERRED_IMAGE_WIDTH = 1440
 const PREFERRED_IMAGE_HEIGHT = 810
@@ -19,7 +20,7 @@ const MIN_IMAGE_WIDTH = 960
 class DetailsEdit extends Component {
 
 		onDrop(files) {
-				const { dispatch, event, handleChange } = this.props
+				const { dispatch, event, handleChange, intl } = this.props
 
 				if (files[0].type === "image/jpeg" || files[0].type === "image/jpg") {
 						dispatch(ActionCreators.imgUpload({})).then( function(response_init){
@@ -38,7 +39,8 @@ class DetailsEdit extends Component {
 								image.src = loadEvent.target.result
 
 								if ((PREFERRED_IMAGE_RATIO !== (image.height / image.width)) || (image.width < MIN_IMAGE_WIDTH)) {
-									dispatch(ActionCreators.imgUploadFailure({errors: ['Invalid image size. Must be ' + PREFERRED_IMAGE_WIDTH.toString() + ' x ' + PREFERRED_IMAGE_HEIGHT.toString() + '. The image you supplied is ' + image.width.toString() + ' x ' + image.height.toString() ]}))
+									const errorMessage = intl.formatMessage({ id: "features.EventEdit.features.details.components.DetailsEdit.errors.wrongSize" }, { requiredWidth: PREFERRED_IMAGE_WIDTH.toString(), requiredHeight: PREFERRED_IMAGE_HEIGHT.toString(), yourWidth: image.width.toString(), yourHeight: image.height.toString() } )
+									dispatch(ActionCreators.imgUploadFailure({ errors: [ errorMessage ] }))
 									return
 
 								} else {
@@ -71,7 +73,8 @@ class DetailsEdit extends Component {
 						})
 				} else {
 						// invalid file type
-						dispatch(ActionCreators.imgUploadFailure({errors: ['Invalid filetype. Must be JPG.']}))
+						const fileTypeError = intl.formatMessage({id:"features.EventEdit.features.details.components.DetailsEdit.errors.wrongType"})
+						dispatch(ActionCreators.imgUploadFailure({errors: [fileTypeError]}))
 				}
 		}
 
@@ -85,7 +88,7 @@ class DetailsEdit extends Component {
 		}
 
 	render() {
-		const { handleChange, handleNext, event, params } = this.props
+		const { handleChange, handleNext, event, params, intl } = this.props
 
 		var image
 		var image_error = (typeof event.errors.fields.image !== 'undefined'
@@ -98,9 +101,11 @@ class DetailsEdit extends Component {
 											<Img images={event.item.images} width={PREFERRED_IMAGE_WIDTH} height={PREFERRED_IMAGE_HEIGHT} />
 									</div>
 										<div className="columns medium-1 large-2">
-											<Dropzone className='hollow-button green' onDrop={::this.onDrop} multiple={false}>Change Image</Dropzone>
+											<Dropzone className='hollow-button green' onDrop={::this.onDrop} multiple={false}><FormattedMessage id="features.EventEdit.features.details.components.DetailsEdit.changeImage" /></Dropzone>
 												<p className='image-drop-manual-reqs'></p>
-												<a className='remove' onClick={::this.removeImage}>Remove Image</a>
+												<a className='remove' onClick={::this.removeImage}>
+													<FormattedMessage id="features.EventEdit.features.details.components.DetailsEdit.removeImage" />
+												</a>
 										</div>
 								</Row>
 				} else {
@@ -109,17 +114,19 @@ class DetailsEdit extends Component {
 												<div>
 														<Dropzone ref='dropzone' onDrop={::this.onDrop} multiple={false} className='image-drop-zone' activeClassName='active' >
 																<div className='instructions'>
-																	Drag and Drop your JPG<br />
-																	<b>{PREFERRED_IMAGE_WIDTH} x {PREFERRED_IMAGE_HEIGHT}</b>
+																	<FormattedMessage id="features.EventEdit.features.details.components.DetailsEdit.prompt" /><br />
+																	<FormattedMessage id="features.EventEdit.features.details.components.DetailsEdit.onlyJpg" /><br />
+																	<FormattedMessage tagName="b" id="features.EventEdit.features.details.components.DetailsEdit.sizePrompt" values={{requiredWidth:PREFERRED_IMAGE_WIDTH, requiredHeight:PREFERRED_IMAGE_HEIGHT}} /><br /><br />
 																</div>
-
 														</Dropzone>
 												</div>
 											{image_error}
 										</div>
 										<div className="columns medium-1 large-2">
-											<Dropzone className='hollow-button green' onDrop={::this.onDrop} multiple={false}>Select Image</Dropzone>
-												<p className='image-drop-manual-reqs'>Your image dimensions should be {PREFERRED_IMAGE_WIDTH} x {PREFERRED_IMAGE_HEIGHT} pixels.</p>
+											<Dropzone className='hollow-button green' onDrop={::this.onDrop} multiple={false}><FormattedMessage id="features.EventEdit.features.content.components.ContentTypeImage.select" /></Dropzone>
+												<p className='image-drop-manual-reqs'>
+													<FormattedMessage id="features.EventEdit.features.details.components.DetailsEdit.sizePrompt2" values={{requiredWidth:PREFERRED_IMAGE_WIDTH, requiredHeight:PREFERRED_IMAGE_HEIGHT}} />
+												</p>
 										</div>
 								</Row>
 				}
@@ -129,7 +136,7 @@ class DetailsEdit extends Component {
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
 						<ErrorMessage hasError={Boolean(event.api_errors)} errors={event.api_errors} />
-						<FormField id="inputEventName" disabled={!event.rules.details.canEdit} InputType={Input} size='large' placeholder='Event Name' name='title' onChange={handleChange} value={event.item.title} errors={event.errors.fields.title} />
+						<FormField id="inputEventName" disabled={!event.rules.details.canEdit} InputType={Input} size='large' placeholder={intl.formatMessage({id:"features.EventEdit.features.details.components.DetailsEdit.eventName"})} name='title' onChange={handleChange} value={event.item.title} errors={event.errors.fields.title} />
 					</div>
 				</Row>
 
@@ -137,19 +144,19 @@ class DetailsEdit extends Component {
 
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<FormField disabled={!event.rules.details.canEdit} InputType={Input} size='medium' placeholder="Church Name or Organization" name="org_name" onChange={handleChange} value={event.item.org_name} errors={event.errors.fields.org_name} />
+						<FormField disabled={!event.rules.details.canEdit} InputType={Input} size='medium' placeholder={intl.formatMessage({id:"features.EventEdit.features.details.components.DetailsEdit.org"})} name="org_name" onChange={handleChange} value={event.item.org_name} errors={event.errors.fields.org_name} />
 					</div>
 				</Row>
 
 				<Row>
 					<div className="medium-10 large-8 columns small-centered">
-						<FormField disabled={!event.rules.details.canEdit} InputType={Textarea} placeholder="Event Description" name="description" onChange={handleChange} value={event.item.description} errors={event.errors.fields.description} />
+						<FormField disabled={!event.rules.details.canEdit} InputType={Textarea} placeholder={intl.formatMessage({id:"features.EventEdit.features.details.components.DetailsEdit.desc"})} name="description" onChange={handleChange} value={event.item.description} errors={event.errors.fields.description} />
 					</div>
 				</Row>
 
 				<Row>
 					<Column s='medium-12' a='right'>
-						<a disabled={event.errors.hasError} onClick={handleNext}>Next: Add Location & Times &rarr;</a>
+						<a disabled={event.errors.hasError} onClick={handleNext}><FormattedHTMLMessage id="features.EventEdit.features.details.components.DetailsEdit.next" /></a>
 					</Column>
 				</Row>
 			</form>

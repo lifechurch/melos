@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import DetailsEdit from '../features/EventEdit/features/details/components/DetailsEdit'
 import ActionCreators from '../features/EventEdit/features/details/actions/creators'
+import { injectIntl } from 'react-intl'
 
 class EventEditDetails extends Component {
-
 	handleChange(changeEvent) {
 		const { name, value } = changeEvent.target
 		const { dispatch } = this.props
@@ -12,8 +12,8 @@ class EventEditDetails extends Component {
 	}
 
 	handleNext(clickEvent) {
-		const { event, dispatch } = this.props
-		dispatch(ActionCreators.saveDetails(event.item, true))
+		const { event, dispatch, params } = this.props
+		dispatch(ActionCreators.saveDetails(event.item, true, params.locale))
 	}
 
 	handleLeave() {
@@ -28,14 +28,14 @@ class EventEditDetails extends Component {
 	}
 
 	render() {
-		const { event, dispatch, handleDetailsNext, params } = this.props
+		const { event, dispatch, handleDetailsNext, params, intl } = this.props
 		return (
 			<div>
-				<Helmet title="Event Details" />
-				<DetailsEdit event={event} params={params} dispatch={dispatch} handleChange={::this.handleChange} handleLeave={::this.handleLeave} handleNext={::this.handleNext} />
+				<Helmet title={intl.formatMessage({ id: "containers.EventEditDetails.title" })} />
+				<DetailsEdit intl={intl} event={event} params={params} dispatch={dispatch} handleChange={::this.handleChange} handleLeave={::this.handleLeave} handleNext={::this.handleNext} />
 			</div>
 		)
 	}
 }
 
-export default EventEditDetails
+export default injectIntl(EventEditDetails)

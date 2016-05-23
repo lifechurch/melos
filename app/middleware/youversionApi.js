@@ -89,13 +89,20 @@ export default store => next => action => {
 		if (Array.isArray(errors) && errors.length > 0) {
 			next(getFailureAction(failureType, action, errors))
 		} else {
+			if (typeof window !== 'undefined' && typeof window.__GA__ !== 'undefined') {
+				window.__GA__.event({
+					category: endpoint,
+					action: endpoint + '/' + method,
+					label: typeof params.type !== 'undefined' ? params.type : null
+				})
+			}
 			next(getSuccessAction(successType, action, response))
 		}
 		return response
 	}, (error) => {
 		if (error.status === 401) {
 			next(ActionCreators.authenticationFailed())
-			next(routeActions.push('/login'))
+			next(routeActions.push('/' + window.__LOCALE__.locale + '/login'))
 		} else {
 			next(getFailureAction(failureType, action, [ error ]))
 		}

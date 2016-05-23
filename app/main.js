@@ -9,6 +9,17 @@ import createLogger from 'redux-logger'
 import getRoutes from './routes'
 import defaultState from './defaultState'
 import EventActionCreators from './features/EventEdit/features/details/actions/creators'
+import { addLocaleData, IntlProvider } from 'react-intl'
+import moment from 'moment'
+import ga from 'react-ga'
+
+ga.initialize('UA-3571547-125', {'language': window.__LOCALE__.locale});
+
+if (typeof window !== 'undefined') {
+	window.__GA__ = ga;
+}
+
+require('moment/min/locales')
 
 let initialState = defaultState
 
@@ -25,9 +36,9 @@ const store = configureStore(initialState, browserHistory, logger)
 
 function requireAuth(nextState, replace) {
 	const state = store.getState()
-	if (!state.auth.isLoggedIn && nextState.location.pathname !== '/login') {
+	if (!state.auth.isLoggedIn && nextState.location.pathname !== '/' + window.__LOCALE__.locale + '/login') {
 		replace({
-			pathname: '/login',
+			pathname: '/' + window.__LOCALE__.locale + '/login',
 			state: { nextPathname: nextState.location.pathname }
 		})
 	}
@@ -47,11 +58,22 @@ function requireEvent(nextState, replace, callback) {
 	}
 }
 
+function logPageView() {
+	if (typeof window !== 'undefined') {
+  	window.__GA__.pageview(window.location.pathname);
+  }
+}
+
 const routes = getRoutes(requireAuth, requireEvent)
+addLocaleData(window.__LOCALE__.data)
+moment.locale(window.__LOCALE__.momentLocale)
+window.__LOCALE__.momentLocaleData = moment.localeData()
 
 render(
-	<Provider store={store}>
-		<Router routes={routes} history={browserHistory} />
-	</Provider>,
+	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
+		<Provider store={store}>
+			<Router routes={routes} history={browserHistory}  onUpdate={logPageView} />
+		</Provider>
+	</IntlProvider>,
   document.getElementById('react-app')
 )

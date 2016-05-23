@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import ActionCreators from '../../content/actions/creators'
+import { FormattedMessage } from 'react-intl'
 
 class PreviewTypeReference extends Component {
 
@@ -72,7 +73,7 @@ class PreviewTypeReference extends Component {
 				<div className='human'>{human} <span className="version">{version_abbreviation}</span></div>
 				<p>{verses}</p>
 				<div className='meta'>
-					<div className='notes'>Add your notes…</div>
+					<div className='notes'><FormattedMessage id="features.EventEdit.features.preview.notes.prompt" /></div>
 					<div className='actions'>&bull; &bull; &bull;</div>
 				</div>
 			</div>

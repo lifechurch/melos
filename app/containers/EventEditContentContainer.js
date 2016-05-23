@@ -10,6 +10,7 @@ import RevManifest from '../../app/lib/revManifest'
 import { ActionCreators as ModalActionCreators } from '../actions/modals'
 import LiveWarningModal from '../features/EventEdit/features/content/components/LiveWarningModal'
 import cookie from 'react-cookie'
+import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 let smoothScroll = {}
 if (typeof window !== 'undefined') {
@@ -68,16 +69,19 @@ class EventEditContentContainer extends Component {
 
 	handleAddReference() {
 		const { event, dispatch, _content } = this.props
-		const lastBibleVersion = cookie.load('last_bible_version')
-		const lastBibleBook = cookie.load('last_bible_book')
+		const lastBibleLang = cookie.load('last_bible_lang')
+		const lastBibleBook = typeof lastBibleLang !== 'undefined' ? cookie.load('last_bible_book') : lastBibleLang
+		const lastBibleVersion = typeof lastBibleBook !== 'undefined' ? cookie.load('last_bible_version') : lastBibleBook
+
 		const newContent =Object.assign({},
 			createBaseContentObject(event, 'reference', _content.insertionPoint),
 			{
 				data: {
-					version_id:  (typeof lastBibleVersion === 'undefined') ? 1 : lastBibleVersion,
+					version_id:  (typeof lastBibleVersion === 'undefined') ? null : lastBibleVersion,
 					chapter: '',
 					human: ' ',
-					usfm: [(typeof lastBibleBook === 'undefined') ? '' : lastBibleBook]
+					usfm: [(typeof lastBibleBook === 'undefined') ? '' : lastBibleBook],
+					language_tag: (typeof lastBibleLang === 'undefined') ? window.__LOCALE__.locale3 : lastBibleLang
 				}
 			}
 		)
@@ -92,7 +96,7 @@ class EventEditContentContainer extends Component {
 			{
 				data: {
 					plan_id: 0,
-					language_tag: 'en',
+					language_tag: window.__LOCALE__.locale2,
 					title: '',
 					formatted_length: '',
 					images: [],
@@ -212,15 +216,15 @@ class EventEditContentContainer extends Component {
 	}
 
 	render() {
-		const { event, references, plans, dispatch, modals, _content } = this.props
+		const { event, references, plans, dispatch, modals, _content, intl, params } = this.props
 
 		let contentFeed
 		if (typeof event !== 'object' || !Array.isArray(event.item.content) || event.item.content.length === 0) {
 			contentFeed = (
 				<div className='no-content-prompt text-center'>
 					<img src={`/images/${RevManifest('up-arrow-thin.png')}`} />
-					<p>Choose some content to get started.</p>
-					<a target="_blank" href="http://help.youversion.com">Need help?</a>
+					<FormattedMessage tagName="p" id="containers.EventEditContentContainer.choose" />
+					<a target="_blank" href="http://help.youversion.com"><FormattedMessage id="containers.EventEditContentContainer.needHelp" /></a>
 				</div>
 			)
 		} else {
@@ -237,13 +241,14 @@ class EventEditContentContainer extends Component {
 					handleStartReorder={::this.handleStartReorder}
 					handleReorder={::this.handleReorder}
 					_content={_content}
+					intl={intl}
 				/>
 			)
 		}
 
 		return (
 			<div>
-				<Helmet title="Event Content" />
+				<Helmet title={intl.formatMessage({ id: "containers.EventEditContentContainer.title" })} />
 				<ContentHeader
 					handleAddText={::this.handleAddText}
 					handleAddReference={::this.handleAddReference}
@@ -261,10 +266,10 @@ class EventEditContentContainer extends Component {
 				</div>
 				<Row>
 					<Column s='medium-6'>
-						<Link disabled={!event.rules.details.canView || event.isReordering} to={`/event/edit/${event.item.id}/locations_and_times`}>&larr; Previous: Locations & Times</Link>
+						<Link disabled={!event.rules.details.canView || event.isReordering} to={`/${params.locale}/event/edit/${event.item.id}/locations_and_times`}><FormattedHTMLMessage id="containers.EventEditContentContainer.previous" /></Link>
 					</Column>
 					<Column s='medium-6' a='right'>
-						<Link disabled={!event.rules.preview.canView || event.isReordering} to={`/event/edit/${event.item.id}/preview`}>Next: Preview &rarr;</Link>
+						<Link disabled={!event.rules.preview.canView || event.isReordering} to={`/${params.locale}/event/edit/${event.item.id}/preview`}><FormattedHTMLMessage id="containers.EventEditContentContainer.next" /></Link>
 					</Column>
 				</Row>
 				<LiveWarningModal event={event} dispatch={dispatch} modalState={modals.LiveWarning} handleClose={::this.handleCloseModal} />
@@ -273,4 +278,4 @@ class EventEditContentContainer extends Component {
 	}
 }
 
-export default EventEditContentContainer
+export default injectIntl(EventEditContentContainer)

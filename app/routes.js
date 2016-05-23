@@ -10,20 +10,22 @@ import EventEditLocationContainer from './containers/EventEditLocationContainer'
 import EventEditPreview from './containers/EventEditPreview'
 import EventEditShare from './containers/EventEditShare'
 import EventView from './containers/EventView'
+import SelectLanguage from './containers/SelectLanguage'
 
 export default function(requireAuth, requireEvent) {
 	return (
-		<Route path="/" component={App} onEnter={requireAuth}>
+		<Route path="/:locale/" component={App} onEnter={requireAuth}>
 			<IndexRoute component={EventFeedMine} />
-			<Route path="/login" component={Auth} />
-			<Route path="/event/edit(/:id)" component={EventEdit} >
+			<Route path="select_language" component={SelectLanguage} />
+			<Route path="login" component={Auth} />
+			<Route path="event/edit(/:id)" component={EventEdit} >
 				<IndexRoute component={EventEditDetails} onEnter={requireEvent} />
 				<Route path="locations_and_times" component={EventEditLocationContainer} onEnter={requireEvent} />
 				<Route path="content" component={EventEditContentContainer} onEnter={requireEvent} />
 				<Route path="preview" component={EventEditPreview} onEnter={requireEvent} onEnter={requireEvent} />
 				<Route path="share" component={EventEditShare} onEnter={requireEvent} />
 			</Route>
-			<Route path="/event/view/:id" component={EventView} onEnter={requireEvent} />
+			<Route path="event/view/:id" component={EventView} onEnter={requireEvent} />
 		</Route>
 	)
 }

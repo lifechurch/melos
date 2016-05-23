@@ -7,8 +7,8 @@ import Column from '../components/Column'
 import FormField from '../components/FormField'
 import Input from '../components/Input'
 import ActionCreators from '../features/Auth/actions/creators'
-import NoticeBanner from '../components/NoticeBanner'
 import EventHeader from '../components/EventHeader'
+import { IntlProvider, injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 class Auth extends Component {
 
@@ -21,11 +21,11 @@ class Auth extends Component {
 	}
 
 	handleLogin(clickEvent) {
-		const { dispatch, auth } = this.props
+		const { dispatch, auth, params } = this.props
 		dispatch(ActionCreators.authenticate({
 			user: auth.user,
 			password: auth.password
-		}))
+		}, params.locale))
 	}
 
 	handleKeyPress(keyEvent) {
@@ -36,36 +36,28 @@ class Auth extends Component {
 	}
 
 	render() {
-		const { hasError, errors, isFetching, auth } = this.props
-
+		const { hasError, errors, isFetching, auth, intl } = this.props
 		let error = null
 		if (typeof auth.errors.api === 'string') {
 			error = (
 				<div className='alert-box secondary'>
-					{auth.errors.api}
+					{intl.formatMessage({id:auth.errors.api})}
 				</div>
 			)
 		}
 
 		return (
 			<div className="medium-6 large-5 columns small-centered auth">
-				<Helmet title="Events Sign In" />
+				<Helmet title={intl.formatMessage({id: "containers.Auth.title" })} />
 				<EventHeader {...this.props} />
 				<div className='form-body'>
-					<NoticeBanner />
-					<h1>Sign In</h1>
-					<p className="auth__subhead">
-					If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/>
-					<br/>
-					Don’t have a YouVersion account yet? <br/>
-					<a href="https://www.bible.com/sign-up?redirect=events-admin"> Sign up now at Bible.com</a> to start creating Events.
-					</p>
-
+					<FormattedMessage tagName="h1" id="containers.Auth.signIn" />
+					<FormattedHTMLMessage tagName="p" className="auth__subhead" id="containers.Auth.subHead1" values={{ url: "https://www.bible.com/sign-up?redirect=events-admin" }} />
 					<div className="form-body-block white">
 						{error}
 						<FormField
 							InputType={Input}
-							placeholder="Email"
+							placeholder={intl.formatMessage({id: "containers.Auth.email"})}
 							name="user"
 							onChange={::this.handleChange}
 							value={auth.user}
@@ -74,7 +66,7 @@ class Auth extends Component {
 
 						<FormField
 							InputType={Input}
-							placeholder="Password"
+							placeholder={intl.formatMessage({id: "containers.Auth.password"})}
 							name="password"
 							type="password"
 							onChange={::this.handleChange}
@@ -82,8 +74,8 @@ class Auth extends Component {
 							errors={auth.errors.fields.password}
 							onKeyPress={::this.handleKeyPress} />
 
-						<a className='solid-button green' onClick={::this.handleLogin}>Sign In</a>
-						<a className='forgot-password' href="https://www.bible.com/settings/forgot_password">Forgot Password</a>
+						<a className='solid-button green' onClick={::this.handleLogin}><FormattedMessage id="containers.Auth.signIn" /></a>
+						<a className='forgot-password' href="https://www.bible.com/settings/forgot_password"><FormattedMessage id="containers.Auth.forgotPassword" /></a>
 					</div>
 				</div>
 			</div>
@@ -97,4 +89,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(Auth)
+export default connect(mapStateToProps, null)(injectIntl(Auth))

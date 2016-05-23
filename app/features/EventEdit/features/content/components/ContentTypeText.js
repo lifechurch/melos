@@ -5,12 +5,12 @@ import HtmlEditor from '../../../../../../app/components/HtmlEditor'
 class ContentTypeText extends Component {
 
 	render() {
-		const { contentData, handleChange } = this.props
+		const { contentData, handleChange, intl } = this.props
 		return (
 			<FormField
 				InputType={HtmlEditor}
 				name="body"
-				placeholder="Write something here..."
+				placeholder={intl.formatMessage({id:"features.EventEdit.features.content.components.ContentTypeText.prompt"})}
 				onChange={handleChange}
 				value={contentData.body}
 				errors={contentData.errors} />

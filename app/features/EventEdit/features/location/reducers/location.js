@@ -2,6 +2,8 @@ import type from '../actions/constants'
 import moment from 'moment'
 import { fromApiFormat } from '../transformers/location'
 
+
+
 function parsePlaceFor(type, place) {
 	for (var addressComponent of place.address_components) {
 		if (addressComponent.types.indexOf(type) > -1) {

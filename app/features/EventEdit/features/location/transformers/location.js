@@ -1,9 +1,9 @@
-import moment from 'moment'
+import moment from 'moment-timezone'
 
 export function toApiFormat(loc) {
-	
+
 	var times = loc.times.map((t) => {
-		return { 
+		return {
 			start_dt: t.start_dt.format('YYYY-MM-DDTHH:mm:ssZ'),
 			end_dt: t.end_dt.format('YYYY-MM-DDTHH:mm:ssZ')
 		}
@@ -24,7 +24,7 @@ export function toApiFormat(loc) {
 			google_place_id: loc.google_place_id,
 			region: loc.region,
 			postal_code: loc.postal_code,
-			times: times 
+			times: times
 		}
 	} else {
 		return {
@@ -35,9 +35,9 @@ export function toApiFormat(loc) {
 			timezone: loc.timezone,
 			region: loc.region,
 			postal_code: loc.postal_code,
-			times: times 
-		}		
-	}	
+			times: times
+		}
+	}
 }
 
 export function fromApiFormat(loc) {
@@ -47,8 +47,8 @@ export function fromApiFormat(loc) {
 		newTimes = times.map((t) => {
 			const { start_dt, end_dt } = t
 			return {
-				start_dt: moment(start_dt),
-				end_dt: moment(end_dt)
+				start_dt: moment.tz(start_dt, loc.timezone),
+				end_dt: moment.tz(end_dt, loc.timezone)
 			}
 		})
 	}

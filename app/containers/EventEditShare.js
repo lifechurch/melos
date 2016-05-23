@@ -6,6 +6,7 @@ import { Link } from 'react-router'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import RevManifest from '../../app/lib/revManifest'
 import moment from 'moment'
+import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 class EventEditShare extends Component {
 
@@ -58,8 +59,8 @@ class EventEditShare extends Component {
 	}
 
 	render() {
-		const { event } = this.props
-	    const eventItem = event.item
+		const { event, intl, params } = this.props
+	  const eventItem = event.item
 		var interval = setInterval(function() {
 			if (typeof window != 'undefined' && window.addthis
 				&& window.addthis.layers && window.addthis.layers.refresh) {
@@ -70,30 +71,30 @@ class EventEditShare extends Component {
 		var image = ::this.getEventImage()
 		return (
 			<div className="medium-6 columns small-centered share">
-				<Helmet title="Event Share" />
-				<div className="page-title">Your Event is Now Published:</div>
+				<Helmet title={intl.formatMessage({ id: "containers.EventEditShare.title"})} />
+				<div className="page-title"><FormattedMessage id="containers.EventEditShare.subTitle" /></div>
 				<div className="event">
 					{image}
 		    		<Link className={image ? "title" : "title center"} to={"http://bible.com/events/" + eventItem.id} target="_blank">{eventItem.title}</Link>
 		    		<a className={image ? "dates" : "dates center"}>{::this.getDates()}</a>
 				</div>
 				<div className="actions">
-					<Link className="edit" to={`/event/edit/${eventItem.id}`}><img src={`/images/${RevManifest('edit.png')}`} />Edit Event</Link>
-					<Link className="my-events" to={`/`}>Go to My Events</Link>
+					<Link className="edit" to={`/${params.locale}/event/edit/${eventItem.id}`}><img src={`/images/${RevManifest('edit.png')}`} /><FormattedMessage id="containers.EventEditShare.edit" /></Link>
+					<Link className="my-events" to={`/${params.locale}/`}><FormattedMessage id="containers.EventEditShare.go" /></Link>
 				</div>
-				<div className="page-subtitle"><span>Share your event:</span></div>
+				<div className="page-subtitle"><FormattedMessage id="containers.EventEditShare.share" /></div>
 				<div className="details">
 			    	<span className="shorturl">{"http://bible.com/events/" + eventItem.id}</span>
 			    	<CopyToClipboard onCopy={::this.handleCopyLink} text={"http://bible.com/events/" + eventItem.id}>
-					<a className="copy">Copy</a>
+					<a className="copy"><FormattedMessage id="containers.EventEditShare.copy" /></a>
 			    	</CopyToClipboard>
-			    	{this.state.isCopied ? <div ref="copyInfo" className="copy-info">The shortlink was copied to your clipboard</div> : null}
+			    	{this.state.isCopied ? <div ref="copyInfo" className="copy-info"><FormattedMessage id="containers.EventEditShare.copied" /></div> : null}
 				</div>
 				<div className="addthis_sharing_toolbox" data-url={event.item.short_url} data-title={event.item.title}></div>
 				<hr />
 				<Row>
 					<Column s='medium-6'>
-						<Link disabled={!event.rules.preview.canView} to={`/event/edit/${event.item.id}/preview`}>&larr; Previous: Preview</Link>
+						<Link disabled={!event.rules.preview.canView} to={`/${params.locale}/event/edit/${event.item.id}/preview`}><FormattedHTMLMessage id="containers.EventEditShare.previous" /></Link>
 					</Column>
 					<Column s='medium-6' a='right'>
 					</Column>
@@ -103,4 +104,4 @@ class EventEditShare extends Component {
 	}
 }
 
-export default EventEditShare
+export default injectIntl(EventEditShare)

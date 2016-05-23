@@ -3,8 +3,14 @@ import moment from 'moment'
 import Row from '../../../../../../app/components/Row'
 import Column from '../../../../../../app/components/Column'
 import RevManifest from '../../../../../../app/lib/revManifest'
+import { FormattedMessage } from 'react-intl'
 
 class Location extends Component {
+	constructor(props) {
+		super(props)
+
+	}
+
 	handleDeleteClick(clickEvent) {
 		const { handleDelete, loc } = this.props
 		handleDelete(loc)
@@ -16,10 +22,10 @@ class Location extends Component {
 	}
 
 	render() {
-		const { loc, handleSelect, event } = this.props
+		const { loc, handleSelect, event, intl } = this.props
 
 		var times = loc.times.map((t,i) => {
-			var start = moment(t.start_dt).format('ddd MMM D h:mm A')
+			var start = moment.tz(t.start_dt, loc.timezone).format('llll')
 			return (<p key={i}>{start}</p>)
 		})
 
@@ -27,8 +33,8 @@ class Location extends Component {
 
 		if (!Array.isArray(loc.times) || loc.times.length === 0) {
 			addTimeButton = (
-				<a className='addTimes' disabled={!event.rules.locations.canEdit} onClick={::this.handleEditClick} title='Add at least one time.'>
-					Add at least one time.
+				<a className='addTimes' disabled={!event.rules.locations.canEdit} onClick={::this.handleEditClick} title={intl.formatMessage({id:"features.EventEdit.features.location.components.Location.oneRequired"})}>
+					<FormattedMessage id="features.EventEdit.features.location.components.Location.oneRequired" />
 				</a>
 			)
 		}
@@ -39,13 +45,13 @@ class Location extends Component {
 			<div className={className}>
 				<div className='header'>
 					<div className='title'>
-						<input disabled={!event.rules.locations.canRemove} type='checkbox' onChange={handleSelect} name={loc.id} checked={loc.isSelected} /> USE THIS LOCATION
+						<input disabled={!event.rules.locations.canRemove} type='checkbox' onChange={handleSelect} name={loc.id} checked={loc.isSelected} /> <FormattedMessage id="features.EventEdit.features.location.components.Location.use" />
 					</div>
 					<div className='header-actions'>
-						<a disabled={!event.rules.locations.canEdit} onClick={::this.handleEditClick} title='Edit Location'>
+						<a disabled={!event.rules.locations.canEdit} onClick={::this.handleEditClick} title={intl.formatMessage({id:"features.EventEdit.features.location.components.Location.edit"})}>
 							<img src={`/images/${RevManifest('edit.png')}`} />
 						</a>
-						<a disabled={!event.rules.locations.canDelete} onClick={::this.handleDeleteClick} title='Delete Location'>
+						<a disabled={!event.rules.locations.canDelete} onClick={::this.handleDeleteClick} title={intl.formatMessage({id:"features.EventEdit.features.location.components.Location.delete"})}>
 							<img src={`/images/${RevManifest('thin-x.png')}`} />
 						</a>
 					</div>

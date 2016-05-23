@@ -3,16 +3,27 @@ import Input from './Input'
 import Textarea from './Textarea'
 import Select from './Select'
 import HtmlEditor from './HtmlEditor'
+import { injectIntl } from 'react-intl'
 
 class FormField extends Component {
 	render() {
-		const { InputType, errors } = this.props
+		const { InputType, errors, intl } = this.props
 
 		var labelClass = ''
 		var fieldError = null
 		if (Array.isArray(errors) && errors.length > 0) {
 			labelClass = 'error'
-			fieldError = (<small className={labelClass}>{errors.join(' ')}</small>)
+			let label = ""
+			for (const e of errors) {
+				if (typeof e === 'string') {
+					label += e
+				} else if (typeof e === 'object') {
+					if (typeof e.string === 'string' && typeof e.field === 'string') {
+						label += intl.formatMessage({ id: e.string }, { field: intl.formatMessage({ id: e.field }) })
+					}
+				}
+			}
+			fieldError = (<small className={labelClass}>{label}</small>)
 		}
 
 		return (
@@ -36,4 +47,4 @@ FormField.propTypes = {
 	errors: PropTypes.array
 }
 
-export default FormField
+export default injectIntl(FormField)

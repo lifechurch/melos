@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Modal from 'react-modal'
 import ActionCreators from '../../preview/actions/creators'
+import { FormattedMessage } from 'react-intl'
 
 class UnpublishModal extends Component {
 
@@ -34,15 +35,11 @@ class UnpublishModal extends Component {
 
 		return (
 			<Modal isOpen={isOpen} style={customStyles} className='modal__unpublishmodal'>
-				<a className='right modal__close' onClick={handleClose}>Cancel</a>
-				<h3>Unpublish to Make Changes</h3>
-				<p>
-					To add, edit, or delete the Locations and Times, temporarily unpublish the event.
-					During this time, your event will not be visible in search results. Don’t forget to
-					publish your event again.
-				</p>
+				<a className='right modal__close' onClick={handleClose}><FormattedMessage id="features.EventEdit.features.location.components.UnpublishModal.cancel" /></a>
+				<FormattedMessage tagName="h3" id="features.EventEdit.features.location.components.UnpublishModal.title" />
+				<FormattedMessage tagName="p" id="features.EventEdit.features.location.components.UnpublishModal.desc" />
 				<div className='modal-actions text-center'>
-					<a className='solid-button gray' onClick={::this.unpublishEvent}>Unpublish</a>
+					<a className='solid-button gray' onClick={::this.unpublishEvent}><FormattedMessage id="features.EventEdit.features.location.components.UnpublishModal.unpublish" /></a>
 				</div>
 			</Modal>
 			)

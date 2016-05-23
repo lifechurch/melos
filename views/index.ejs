@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html dir="<%= rtl ? 'rtl' : 'ltr' %>">
 	<head>
 		<link href="https://www.bible.com/assets/application-0523b1103a0155d0473a21fce304cdc3.css" media="screen" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="/stylesheets/<%= getAssetPath('style.css') %>" />
 		<script type="application/javascript">
+			window.__LOCALE__ = <%- JSON.stringify(locale, function(key, val) {
+				if (typeof val === 'function') {
+					return val + '';
+				}
+				return val;
+			}, 4) %>;
 			window.__INITIAL_STATE__ = <%- JSON.stringify(initialState) %>;
 			window.__ENV__ = "<%- environment %>";
 		</script>
@@ -12,10 +18,12 @@
 		<div id="current-ui-view">
 			<div id="react-app"><%- appString %></div>
 		</div>
+		<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.fr,Intl.~locale.pt"></script>
 		<script src="/javascripts/<%= getAssetPath('app.js') %>"></script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMA0n8NXq9Z-84At4-cIOAseleESrfRGE&libraries=places">
     </script>
-        <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-56cdf91ec7a631b2"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-56cdf91ec7a631b2"></script>
+		<script type="text/javascript" src="https://jira.lifechurch.tv/s/dd280b5fc0c33f4fa28cb346ac9922c6-T/en_US18p3d0/71006/01b32b66f1a9832636b5f267a1988181/2.0.11/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=7e368522"></script>
 	</body>
 </html>
