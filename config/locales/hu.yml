@@ -1295,312 +1295,320 @@ hu:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "Hiba történt"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "A közlemény címe kötelező."
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "Érvénytelen bibliai hivatkozás."
                     events: 
                         google_place_id: 
-                            required: "You must choose a location from the map."
+                            required: "A térképről kell kiválasztanod egy helyszínt."
                         latitude: 
-                            required: "You must choose a location from the map."
+                            required: "A térképről kell kiválasztanod egy helyszínt."
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "A kezdési idő nem lehet múltbeli."
                         timezone: 
-                            required: "Timezone is required."
+                            required: "Időzóna megadása kötelező."
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "Érvénytelen bibliai hivatkozás."
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "URL megadása kötelező."
                         title: 
-                            required: "URL Label is required."
+                            required: "Hivatkozás címke megadása kötelező."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "Közzétéve"
                     draft: "Piszkozat"
                     live: "Élő"
-                unpublish: "Unpublish"
-                saving: "Saving..."
+                    archived: "Archiválva"
+                unpublish: "Közzététel visszavonása"
+                saving: "Mentés..."
                 saveAsDraft: "Mentés vázlatként"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "Saját eseményeim"
+                eventBuilder: "ESEMÉNY KÉSZÍTŐ"
                 signOut: "Kijelentkezés"
-                createAccount: "Create Account"
+                createAccount: "Fiók létrehozása"
             HtmlEditor: 
-                text: "Text"
-                bold: "Bold"
-                italic: "Italic"
+                text: "Szöveg"
+                bold: "Félkövér"
+                italic: "Dőlt"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "Események - Bejelentkezés"
                 signIn: "Bejelentkezés"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Ha a Biblia alkalmazás felhasználója vagy és van már YouVersion-fiókod, akkor bejelentkezhetsz a saját adataiddal.<br/><br/>Nincs még YouVersion-fiókod? <br/><a href='%{url}'>Regisztrálj most a Bible.com oldalon,</a> hogy elkezdhess eseményeket létrehozni."
                 email: "E-mail"
                 password: "Jelszó"
                 forgotPassword: "Elfelejtetted a jelszavad?"
             EventEdit: 
-                event: "Event"
+                event: "Esemény"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "Először válassz tartalmat."
                 needHelp: "Segítségre van szükséged?"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "Esemény tartalma"
+                previous: "← Vissza: helyszínek és időpontok"
+                next: "Következő: esemény előnézete →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "Esemény részletei"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "Esemény helyszíne"
+                previous: "← Vissza: esemény részletei"
+                next: "Következő: tartalom hozzáadása →"
             EventEditPreview: 
-                title: "Event Preview"
-                previous: "← Previous: Content"
+                title: "Esemény előnézete"
+                previous: "← Vissza: esemény tartalma"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                title: "Esemény megosztása"
+                subTitle: "Az eseményed mostantól elérhető:"
+                edit: "Esemény szerkesztése"
+                go: "Saját eseményeim"
+                share: "Eseményed megosztása:"
                 copy: "Másolás"
-                copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                copied: "A rövidített link vágólapra másolva."
+                previous: "← Vissza: esemény előnézete"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "Események keresése"
                 discover: "Felfedezés"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                title: "Saját eseményeim"
+                previous: "← Vissza"
+                next: "Következő →"
+                my: "Saját eseményeim"
+                new: "Új esemény létrehozása"
+                subTitle: "ÁLTALAM LÉTREHOZOTT ESEMÉNYEK"
+                newFirst: "Hozd létre első eseményedet"
+                learn: "Tanuld meg, hogyan szervezhetsz egy nagyszerű eseményt"
             EventFeedSaved: 
                 title: "Mentett események"
             EventView: 
-                title: "YouVersion Event"
+                title: "YouVersion esemény"
+            SelectLanguage: 
+                choose: "Choose Your Language"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    sessionExpired: "Munkameneted lejárt. Kérünk, jelentkezz be újra."
+                    invalidEmail: "Hibás e-mail cím vagy jelszó."
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
-                    planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    locationMustHaveTime: "Helyszínenként legalább egy időpont megadása kötelező."
+                    locationRequired: "Nem tehetsz közzé eseményt helyszín nélkül."
+                    contentRequired: "Nem tehetsz közzé eseményt tartalom nélkül."
+                    planSearchFailed: "A keresés nem talált egyetlen dokumentumot sem"
+                    noMatchingPlans: "Nem találtunk tervet"
                 components: 
                     EventEditNav: 
                         details: "Részletek"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        locations: "Helyszínek és időpontok"
+                        content: "Tartalom"
+                        preview: "Előnézet és közzététel"
                         share: "Megosztás"
                 features: 
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "Tartalom átrendezése"
+                                doneReordering: "Átrendezve"
                             ContentHeader: 
-                                text: "Text"
-                                reference: "Bible Reference"
+                                text: "Szöveg"
+                                reference: "Bibliai hivatkozás"
                                 plan: "Terv"
                                 image: "Kép"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "Külső hivatkozás"
+                                giving: "Adományozási hivatkozás"
+                                announcement: "Közlemény"
                             ContentHelpModal: 
-                                types: "Content Types"
-                                learn: "Learn how to make <br>a great Event"
+                                types: "Tartalom típusok"
+                                learn: "Tanuld meg, hogyan tudsz létrehozni <br>egy nagyszerű eseményt"
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "Szöveg modul"
+                                    desc: "Vázlatok, főbb pontok, kérdések… Ossz meg bármilyen szöveg alapú tartalmat, ami segít a résztvevőknek az előadás követésében. A szöveges modulok akármilyen hosszúak lehetnek és különböző formázásokat is tartalmazhatnak."
                                 reference: 
-                                    title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    title: "Bibliai hivatkozások modul"
+                                    desc: "Válaszd ki bármelyik bibliai verset vagy szakaszt, mely közvetlenül kapcsolódik a YouVersion több mint 1200 féle fordításához, több mint 900 nyelven. Az eseményedet látogató emberek a Biblia alkalmazásukon keresztül tudják elolvasni a hivatkozott idézetet, illetve ugyanitt tudnak könyvjelzőt, kiemelést és egyebeket létrehozni."
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "Terv modul"
+                                    desc: "Kapcsolj különböző olvasási terveket és elmélkedéseket az eseményedhez, melyek összefüggnek az üzeneted mondanivalójával, ezzel segítve a közönséged részvételét Isten Igéjének vizsgálatában a hét során."
                                 image: 
-                                    title: "Image Module"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    title: "Kép modul"
+                                    desc: "Keltsd életre az eseményedet bármilyen típusú grafikával: művészi sorozatokkal, fényképekkel, igeversekkel stb. A résztvevők könnyedén meg fogják tudni osztani az esemény képeit a közösségi médiában, ezzel segítve az üzeneted elterjedését."
                                 link: 
-                                    title: "External Link Module"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    title: "Külső hivatkozások modul"
+                                    desc: "Ez a modul létrehoz egy gombot az eseményen belül, mellyel külső weboldalakra tudsz hivatkozni. Tedd közönségedet egy érintésnyire az online adományozástól, önkéntességtől vagy templomod, gyülekezeted weboldalától."
                                 announcement: 
-                                    title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    title: "Közlemény modul"
+                                    desc: "Templomi hírek, naptári események, programok, csoportok, önkéntesek és missziós lehetőségek… A közlemény modul tökéletes az időérzékeny, fontos információk megosztására, anélkül, hogy ezzel elveszne a fókusz az eseményed valódi üzenetéről. Minden közlemény modul külön jelenik meg az eseményednél, és akár formázott szöveget is tartalmazhat (mint például félkövér vagy dőlt formázás)."
                             ContentInsertionPoint: 
-                                title: "Insert next module here"
+                                title: "Következő modul beszúrása ide"
                             ContentTypeAnnouncement: 
                                 title: "Cím"
-                                prompt: "Write something here..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                prompt: "Írj ide valamit..."
+                                caption: "Az eseményedben csak a cím (fent) lesz látható. Mikor egy felhasználó rákattint a címre, a tartalom (lejjebb) egy külön képernyőn jelenik meg."
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
-                                lastSaved: "Last saved %{when}"
+                                dirty: "A tartalom automatikusan mentésre kerül pár másodperccel azután, hogy abbahagyod a gépelést."
+                                failed: "Sikertelen mentés."
+                                tryAgain: "Próbáld újra."
+                                lastSaved: "Utoljára mentve: %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                    wrongSize: "A kép mérete %{requiredWidth}x%{requiredHeight} kell legyen. A te képed %{yourWidth}x%{yourHeight} méretű."
+                                    wrongType: "Érvénytelen fájl. Csak JPG kép lehet."
+                                caption: "Felirat hozzáadása"
+                                prompt: "Húzz ide egy képet"
+                                onlyJpg: "[Csak JPG]"
+                                sizePrompt: "%{requiredWidth} pixel széles és %{requiredHeight} pixel magas"
+                                select: "Kép kiválasztása"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
-                                prompt: "Write something here..."
+                                kindrid: "Ha egy egyszerű és okos adományozó oldalt keresel, akkor <a href='%{url}'>próbáld ki a Kindrid-et</a>."
+                                label: "Hivatkozás címke"
+                                prompt: "Írj ide valamit..."
                                 url: "URL"
                             ContentTypePlan: 
-                                replace: "Replace"
-                                search: "Search for a Reading Plan"
+                                replace: "Csere"
+                                search: "Keresés az olvasási tervek között"
                             ContentTypeReference: 
+                                language: "Nyelv"
                                 version: "Fordítás"
                                 book: "Könyv"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "Fejezet:Vers"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "Írj ide valamit..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "Élő esemény nem törölhető"
+                                desc: "Miután az esemény elkezdődött, nem törölhetsz szöveg, bibliai hivatkozás és kép modult belőle, mivel lehet, hogy a felhasználók már készítettek hozzájuk privát jegyzeteket. Ezek a modulok viszont továbbra is szerkeszthetőek maradnak."
                                 ok: "Rendben"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            generic: "Hiba történt az esemény közzététele közben."
+                            invalidTimes: "Egy egyszeri alkalom nem lehet több, mint 12 óra, és a különbség a legkorábbi kezdő dátum és a legkésőbbi befejező dátum között nem lehet több, mint 8 nap. Kérünk, módosítsd az esemény időpontjait, és próbáld újra."
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                    wrongSize: "A kép mérete %{requiredWidth}x%{requiredHeight} kell legyen. A te képed %{yourWidth}x%{yourHeight} méretű."
+                                    wrongType: "Érvénytelen fájl. Csak JPG kép lehet."
+                                changeImage: "Kép megváltoztatása"
+                                removeImage: "Kép eltávolítása"
+                                prompt: "Húzz ide egy képet"
+                                onlyJpg: "[Csak JPG]"
+                                sizePrompt: "%{requiredWidth} pixel széles és %{requiredHeight} pixel magas"
+                                sizePrompt2: "A kép mérete %{requiredWidth} x %{requiredHeight} pixel kell legyen."
+                                eventName: "Esemény neve"
+                                org: "Templom vagy szervezet neve"
+                                desc: "Esemény leírása"
+                                next: "Következő: helyszín és időpont hozzáadása →"
+                                blank: "%{field} kitöltése kötelező."
                     location: 
                         components: 
                             Location: 
-                                oneRequired: "Add at least one time."
-                                use: "USE THIS LOCATION"
-                                edit: "Edit Location"
-                                delete: "Delete Location"
+                                oneRequired: "Adj meg legalább egy időpontot."
+                                use: "HASZNÁLD EZT A HELYSZÍNT"
+                                edit: "Helyszín szerkesztése"
+                                delete: "Helyszín törlése"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                addPhysical: "Fizikai helyszín hozzáadása"
+                                promptPhysical: "Több helyszínt is megadhatsz."
+                                addVirtual: "Virtuális helyszín hozzáadása"
+                                churchOnline: "Tudtad? Indíthatsz ingyen egy online lelkészséget a <a className='button-caption' href='%{url}'>Church Online Platform</a> felhasználásával."
                             LocationAddTime: 
                                 minutes: "PERC"
                                 hours: "ÓRA"
                                 days: "NAP"
                             LocationDeleteModal: 
                                 sure: "Biztosan?"
-                                selected: "You have selected the following location to be deleted:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                selected: "A következő helyszínt kiválasztottad törlésre:"
+                                warn: "Ez a lépés eltávolítja a helyszínt az összes múltbeli és jelenlegi eseményből. Ezután nem fogod tudni felhasználni ezt a helyszínt későbbi események létrehozásához."
                                 cancel: "Mégsem"
                                 delete: "Törlés"
                             LocationEdit: 
-                                prompt: "Enter the Location address..."
+                                prompt: "Írd be a helyszín címét..."
                                 country: "Ország"
                                 timezone: "Időzóna"
-                                namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                namePrompt: "Első Baptista Keleti Campus"
+                                name: "Helyszín neve"
+                                nameOptional: "Opcionális: hasznos lehet, ha több helyszínt is megadsz"
+                                addAnother: "További időpont hozzáadása"
                                 cancel: "Mégsem"
-                                save: "Save this Location"
+                                save: "Helyszín mentése"
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "Kezdési időpontok eltolása"
                                 forward: "Tovább"
-                                backward: "backward"
-                                by: "by"
-                                week: "week"
-                                weeks: "weeks"
+                                backward: "vissza"
+                                by: " "
+                                week: "héttel"
+                                weeks: "héttel"
                                 month: "Hónap"
-                                months: "months"
+                                months: "hónappal"
                                 day: "Nap"
                                 days: "NAP"
-                                hour: "hour"
+                                hour: "órával"
                                 hours: "ÓRA"
                                 update: "Frissítés"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "Összes dátum és időpont mozgatása egyszerre"
                             UnpublishModal: 
                                 cancel: "Mégsem"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                title: "Közzététel visszavonása szerkesztéshez"
+                                desc: "Ahhoz, hogy hozzáadj, szerkessz vagy törölj helyszínt és időpontot, ideiglenesen vissza kell vonni az esemény közzétételét. Eközben az eseményed nem lesz látható a keresési eredmények között. Ne felejtsd el újra közzétenni az eseményedet."
+                                unpublish: "Közzététel visszavonása"
                     preview: 
                         notes: 
                             prompt: "Személyes jegyzetek készítése"
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Jelentkezz be</span> személyes jegyzetek létrehozásához…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Nézd át az eseményedet mielőtt közzéteszed"
+                                previewUrl: "URL előnézet:"
                                 share: "Esemény megosztása"
-                                locations: "Helyszínek és időpontok"
+                                locationsAndTimes: "Helyszínek és időpontok"
                                 publish: "Közzétesz"
-                                unpublish: "Unpublish"
-                                locations: "Locations:"
+                                unpublish: "Közzététel visszavonása"
+                                locations: "Helyszínek:"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "Időpont:"
+                                    desc: "Az eseményed látható lesz a Biblia alkalmazás Esemény helyszínek keresési eredményei között 5 nappal a legkorábbi kezdési időpont előtt."
                                 status: 
                                     title: "Jegyzet állapota:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "A piros LIVE felirat akkor jelenik meg, amikor a legkorábbi kezdési időpont elmúlik."
                                 remove: 
-                                    title: "Remove:"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    title: "Eltávolítás:"
+                                    desc: "Eseményed nem lesz többé elérhető a befejező időpont után. A résztvevőknek, akik elmentették az eseményedet amíg aktív volt, megmarad a hozzáférésük egy archivált verzióhoz, illetve az esemény szintén elérhető lesz direkt belső linkeken keresztül."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "Kinyit"
                             PreviewTypePlan: 
                                 read: "Olvasás"
                                 info: "Terv információk"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "Duplikál"
                         share: "Megosztás"
                         delete: "Törlés"
                         draft: "Piszkozat"
                         edit: "Javítás"
                         view: "Megnéz"
-                        fail: "Unable to delete Event"
+                        fail: "Esemény törlése sikertelen"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "Másolás"
+                        copied: "Másolva"
                         share: "Megosztás"
                         read: "Olvasás"
-                        readPlan: "Read Plan"
+                        readPlan: "Terv elolvasása"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Kinyit"
+                        collapse: "Összecsuk"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Kinyit"
+                        collapse: "Összecsuk"
                         save: "Esemény mentése"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "Jelentkezz be az esemény mentéséhez"
+                        saved: "Esemény mentve"

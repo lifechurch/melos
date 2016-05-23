@@ -1329,6 +1329,7 @@ nl:
                     published: "Gepubliceerd"
                     draft: "Concept"
                     live: "Live"
+                    archived: "Gearchiveerd"
                 unpublish: "Verborgen"
                 saving: "Bezig op te slaan..."
                 saveAsDraft: "Opslaan als concept"
@@ -1344,7 +1345,7 @@ nl:
             Auth: 
                 title: "Log in Bijeenkomsten"
                 signIn: "Inloggen"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Als je Bijbel App gebruiker bent en je hebt al een YouVersion account, dan kun je inloggen met dezelfde inloggegevens.<br/><br/>Heb je nog geen YouVersion account? <br/><a href='%{url}'>Registreer dan nu op Bible.com</a> om te beginnen met het aanmaken van Bijeenkomsten."
                 email: "E-mail"
                 password: "Wachtwoord"
                 forgotPassword: "Wachtwoord vergeten"
@@ -1390,6 +1391,8 @@ nl:
                 title: "Bewaarde bijeenkomsten"
             EventView: 
                 title: "YouVersion Bijeenkomst"
+            SelectLanguage: 
+                choose: "Kies je taal"
         features: 
             Auth: 
                 errors: 
@@ -1431,7 +1434,7 @@ nl:
                                     desc: "Hoofdpunten, sleutelwoorden, discussievragen… Deel alle algemene tekst die je bezoekers zal helpen om de rode draad te volgen tijdens de preek. Je tekstmodule kent geen beperkingen m.b.t. de lengte en je kunt gebruikmaken van eenvoudige opmaak."
                                 reference: 
                                     title: "module bijbelverwijzing "
-                                    desc: "Kies een Bijbelvers of -gedeelte uit één van de ruim 1200 YouVersion vertalingen in ruim 900 talen. Mensen die je Bijeenkomst bekijken kunnen klikken op je verwijzing in hun Bijbel App venster, waar ze deze ook kunnen voorzien van een bladwijzer, markering, en meer."
+                                    desc: "Kies een Bijbelvers of -gedeelte uit een van de ruim 1200 YouVersion vertalingen in ruim 900 talen. Mensen die je Bijeenkomst bekijken kunnen je verwijzing aantikken om deze in hun Bijbel App venster te bekijken, waar ze 'm kunnen voorzien van een Bladwijzer, Markering en meer."
                                 plan: 
                                     title: "Leesplan Module"
                                     desc: "Verwijs naar Leesplannen en overdenkingen die gerelateerd zijn aan jouw aandachtspunten, zodat je publiek wordt aangemoedigd om gedurende de week ook bezig te zijn met Gods Woord."
@@ -1443,7 +1446,7 @@ nl:
                                     desc: "Maakt een knop aan binnen je Bijeenkomst die verwijst naar elke willekeurige website. Zorg dat je publiek slechts één stap verwijderd is van online doneren, aanmelden als vrijwilliger, of het bezoeken van de website van je kerk."
                                 announcement: 
                                     title: "Mededelingen Module"
-                                    desc: "Kerknieuws, geplande bijeenkomsten, programma's, scholing, vrijwilligerswerk en missionaire kansen… Verspreid eenvoudig belangrijke tijdgebonden informatie, zonder de aandacht af te leiden van de kernboodschap van je Bijeenkomst. Je Mededelingen Module stelt je in staat om eenvoudige opmaak te gebruiken, die op een eigen pagina verschijnt binnen je Bijeenkomst. Zeer geschikt voor belangrijke mededelingen, waarvan je niet wilt dat ze afleiden van de kernboodschap van je Bijeenkomst."
+                                    desc: "Kerkelijk nieuws, geplande bijeenkomsten, programma's, scholing, vrijwilligerswerk en missionaire kansen… de Mededelingen module is de perfecte manier om belangrijke tijdgebonden informatie te delen, waarvan je niet wilt dat de aandacht wordt afgeleid van de kernboodschap van je Bijeenkomst. Elke mededelingen module wordt op een eigen pagina binnen je Bijeenkomst getoond en kan RTF-tekst bevatten (zoals bijvoorbeeld vet- en schuingedrukte tekst)."
                             ContentInsertionPoint: 
                                 title: "Voeg de volgende module hier in"
                             ContentTypeAnnouncement: 
@@ -1473,6 +1476,7 @@ nl:
                                 replace: "Vervang"
                                 search: "Zoeken naar een Leesplan"
                             ContentTypeReference: 
+                                language: "Taal"
                                 version: "Versies"
                                 book: "Boek"
                                 chapterVerse: "Hoofdstuk:Vers"
@@ -1496,11 +1500,12 @@ nl:
                                 prompt: "Sleep afbeelding hierheen"
                                 onlyJpg: "[alleen JPG]"
                                 sizePrompt: "%{requiredWidth}px breedte x %{requiredHeight}px hoogte"
-                                sizePrompt2: "De afmetingen van je afbeelding moeten %{requiredWidth} x %{requiredhoogte} pixels zijn."
+                                sizePrompt2: "De afmetingen van je afbeelding moeten zijn: %{requiredWidth} x %{requiredHeight} pixels."
                                 eventName: "Naam Bijeenkomst"
                                 org: "Naam Kerk of Organisatie"
                                 desc: "Beschrijving Bijeenkomst"
                                 next: "Volgende: Voeg Locatie & Tijd toe →"
+                                blank: "%{field} mag niet open gelaten worden."
                     location: 
                         components: 
                             Location: 
@@ -1559,8 +1564,10 @@ nl:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Log in </span> om je persoonlijke notities toe te voegen...</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Bekijk je bijeenkomst voor de publicatie"
+                                previewUrl: "Preview URL:"
                                 share: "Bijeenkomst Delen"
-                                locations: "Locaties en Tijden"
+                                locationsAndTimes: "Locaties en Tijden"
                                 publish: "Publiceren"
                                 unpublish: "Verbergen"
                                 locations: "Locaties:"
@@ -1592,6 +1599,7 @@ nl:
                 components: 
                     EventViewContent: 
                         copy: "Kopiëren"
+                        copied: "Gekopieerd "
                         share: "Delen"
                         read: "Lezen"
                         readPlan: "Leesplan"

@@ -1308,312 +1308,320 @@ cs:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "Nastala chyba"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "Je požadován název oznámení."
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "Odkaz Bible není platný."
                     events: 
                         google_place_id: 
-                            required: "You must choose a location from the map."
+                            required: "Z mapy musíte vybrat polohu."
                         latitude: 
-                            required: "You must choose a location from the map."
+                            required: "Na mapě musí být vybrána lokalita."
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "Čas zahájení nemůže být v minulosti."
                         timezone: 
-                            required: "Timezone is required."
+                            required: "Je požadováno časové pásmo."
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "Biblický odkaz není platný."
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "Je nutné zadat URL."
                         title: 
-                            required: "URL Label is required."
+                            required: "Je požadována URL."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "Publikováno"
                     draft: "Koncept/y"
                     live: "Live"
-                unpublish: "Unpublish"
-                saving: "Saving..."
+                    archived: "Archivováno"
+                unpublish: "Nezveřejňovat"
+                saving: "Ukládám..."
                 saveAsDraft: "Uložit jako koncept"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "Moje události"
+                eventBuilder: "VYTVÁŘENÍ UDÁLOSTÍ"
                 signOut: "Odhlásit se"
-                createAccount: "Create Account"
+                createAccount: "Vytvoření účtu"
             HtmlEditor: 
                 text: "Text"
                 bold: "tučné"
                 italic: "kurzíva"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "Přihlásit se do události"
                 signIn: "Přihlásit se"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Pokud jste uživatel aplikace BibleApp a máte již založený účet na YouVersion, můžete se přihlásit pomocí svých přihlašovacích údajů.<br/><br/>Ještě nemáte účet na YouVersion?<br/><a href='%{url}'>Přihlašte se nyní na Bible.com</a> a začněte vytvářet události."
                 email: "E-mail"
                 password: "Heslo"
                 forgotPassword: "Zapomenuté heslo"
             EventEdit: 
-                event: "Event"
+                event: "Událost"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "Pro zahájení zvolte jednu z možností."
                 needHelp: "Potřebuje pomoc?"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "Obsah události"
+                previous: "← Předchozí: Místo a čas"
+                next: "Další: Náhled →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "Detaily Události"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "Místo události"
+                previous: "← Předchozí: Detaily"
+                next: "Další: Přidat obsah →"
             EventEditPreview: 
-                title: "Event Preview"
-                previous: "← Previous: Content"
+                title: "Náhled události"
+                previous: "← Předchozí: Obsah"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                title: "Sdílet událost"
+                subTitle: "Tvoje událost byla zveřejněna:"
+                edit: "Edituj Událost"
+                go: "Přejít na Moje události"
+                share: "Sdílet svou událost:"
                 copy: "Kopírovat"
-                copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                copied: "Odkaz byl zkopírován do schránky"
+                previous: "← Předchozí: Náhled"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "Objevte události"
                 discover: "Objevujte"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                title: "Moje události"
+                previous: "← Předchozí"
+                next: "Další →"
+                my: "Moje události"
+                new: "Vytvořit novou událost"
+                subTitle: "UDÁLOST VYTVOŘENA"
+                newFirst: "Vytvořte svojí první událost"
+                learn: "Návod jak vytvořit skvělou událost"
             EventFeedSaved: 
                 title: "Uložené události"
             EventView: 
-                title: "YouVersion Event"
+                title: "YouVersion Událost"
+            SelectLanguage: 
+                choose: "Zvolit jazyk"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    sessionExpired: "Relace vypršela. Prosím, znovu se přihlašte."
+                    invalidEmail: "Neplatná emailová adresa nebo heslo."
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
-                    planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    locationMustHaveTime: "Všechna místa musí mít alespoň jeden čas."
+                    locationRequired: "Není možné publikovat událost bez zadaného místa."
+                    contentRequired: "Bez obsahu není možné publikovat událost."
+                    planSearchFailed: "Nebyl nalezen žádný dokument"
+                    noMatchingPlans: "Nebyly nalezeny odpovídající plány"
                 components: 
                     EventEditNav: 
                         details: "Detail"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        locations: "Místo a čas"
+                        content: "Obsah"
+                        preview: "Náhled a zveřejnit"
                         share: "Sdílet"
                 features: 
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "Změnit pořadí"
+                                doneReordering: "Změna pořadí dokončena"
                             ContentHeader: 
                                 text: "Text"
-                                reference: "Bible Reference"
+                                reference: "Biblické odkazy"
                                 plan: "Plán"
                                 image: "Obrázek"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "Externí odkaz"
+                                giving: "Dary"
+                                announcement: "Oznámení"
                             ContentHelpModal: 
-                                types: "Content Types"
-                                learn: "Learn how to make <br>a great Event"
+                                types: "Typy obsahu"
+                                learn: "Naučte se vytvářet <br>skvělé události"
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "Textový modul"
+                                    desc: "Přehled, klíčové body, otázky diskuze… Sdílejte jakýkoliv obecný obsah, který návštěvníkům napomůže vysledovat vaši novou zprávu. Textové moduly mohou být jakkoliv dlouhé a mohou zahrnovat různé textové formáty."
                                 reference: 
-                                    title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    title: "Modul biblického odkazu"
+                                    desc: "Vyberte biblický verš nebo pasáž, jež jsou přímo propojeny s více než 1200 YouVersion verši, ve více než 900 jazycích. Lidé, kteří si prohlížejí vaše události, mohou vidět vaše odkazy ve aplikaci Bible, kde si je mohou založit, zvýraznit, atd. "
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "Plánovací modul"
+                                    desc: "Propojení s Plány čtení a výklady, které se vztahují k vašim vyučujícím článkům. Napomáhají posluchačům vytrvat ve spojení s Božím Slovem po celý týden."
                                 image: 
-                                    title: "Image Module"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    title: "Obrázkový modul"
+                                    desc: "Ozdobte vaši událost různými podporujícími formáty: uměním, fotografiemi, obrázkovými verši atd. Návštěvníci tak budou moci snadněji sdílet vaši událost na sociálních sítích."
                                 link: 
-                                    title: "External Link Module"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    title: "Modul externího odkazu"
+                                    desc: "Vytvořte si uvnitř vaší události tlačítko, které bude propojeno s externí webovou stránkou. Vaši posluchači tak budou pouhý jeden klik od možnosti dobrovolných darů, dobrovolnické akce nebo stránek církve."
                                 announcement: 
-                                    title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    title: "Modul oznamů"
+                                    desc: "Zprávy o církvi, kalendář událostí, programy, vyučovací hodiny, dobrovolnické a misijní příležitosti... Oznamovací moduly jsou skvělé úložiště pro sdílení informací, které jsou aktuální a důležité, a přitom je nechcete oddělit od svých hlavních událostí. Každý oznamovací modul se objeví na svém listu v události. Může dokonce zahrnovat i formátovaný obsah (jako fonty tučně nebo italic)."
                             ContentInsertionPoint: 
-                                title: "Insert next module here"
+                                title: "Zde vložte další modul"
                             ContentTypeAnnouncement: 
                                 title: "Název"
-                                prompt: "Write something here..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                prompt: "Zde pište..."
+                                caption: "Ze tvé události bude viditelný pouze název. Když uživatel klikne na tvůj titulek, obsah se zobrazí na zvláštní obrazovce."
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
-                                lastSaved: "Last saved %{when}"
+                                dirty: "Obsah bude automaticky uložen pár vteřin po skončení psaní."
+                                failed: "Nelze uložit."
+                                tryAgain: "Zkusit znovu."
+                                lastSaved: "Naposledy uloženo %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                    wrongSize: "Velikost obrázku musí být %{requiredWidth}x%{requiredHeight}. Váš obrázek je %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Neplatný typ souboru. Soubor musí být JPG."
+                                caption: "Přidat titulek"
+                                prompt: "Přetáhněte obrázek"
+                                onlyJpg: "[pouze JPG]"
+                                sizePrompt: "%{requiredWidth}px šířka x %{requiredHeight}px výška"
+                                select: "Vyberte obrázek"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
-                                prompt: "Write something here..."
+                                kindrid: "Pokud hledáte chytrou a jednoduchou platformu, <a href='%{url}'>zkuste Kindrid</a>."
+                                label: "Text odkazu"
+                                prompt: "Pište zde..."
                                 url: "URL"
                             ContentTypePlan: 
-                                replace: "Replace"
-                                search: "Search for a Reading Plan"
+                                replace: "Nahradit"
+                                search: "Hledat plán čtení"
                             ContentTypeReference: 
+                                language: "Jazyk"
                                 version: "Překlad"
                                 book: "Kniha"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "Kapitola: Verš"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "Pište zde..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "Nelze smazat, pokud je událost ve stavu ŽIVĚ"
+                                desc: "Pokud je událost ve statusu ŽIVĚ, nelze mazat moduly Text, Biblické odkazy a Obrázky z důvodu přidaných soukromých poznámek ostatních uživatelů. Nicméně je možné tyto moduly editovat."
                                 ok: "OK"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            generic: "Došlo k potížím při nahrávání události."
+                            invalidTimes: "Samotný bohoslužba nemůže být delší než 12 hodin. Maximální časové rozpětí v události nemůže být více než 8 dnů. Prosím upravte časy a zkuste znovu."
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                    wrongSize: "Velikost obrázku musí být %{requiredWidth}x%{requiredHeight}. Váš obrázek je %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Neplatný typ souboru. Musí být pouze v JPG."
+                                changeImage: "Změnit obrázek"
+                                removeImage: "Odstranit obrázek"
+                                prompt: "Přetáhněte obrázek"
+                                onlyJpg: "[pouze JPG]"
+                                sizePrompt: "%{requiredWidth}px šířka x %{requiredHeight}px výška "
+                                sizePrompt2: "Rozměry obrázku musí být %{requiredWidth} x %{requiredHeight} pixelů."
+                                eventName: "Název události"
+                                org: "Název církve nebo společenství"
+                                desc: "Popis události"
+                                next: "Další: Přidat místo a čas →"
+                                blank: "%{field} nemůže být prázdné."
                     location: 
                         components: 
                             Location: 
-                                oneRequired: "Add at least one time."
-                                use: "USE THIS LOCATION"
-                                edit: "Edit Location"
-                                delete: "Delete Location"
+                                oneRequired: "Přidat alespoň jednou."
+                                use: "POUŽÍT TUTO POLOHU"
+                                edit: "Editace polohy"
+                                delete: "Vymazat polohu"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                addPhysical: "Přidat skutečnou polohu"
+                                promptPhysical: "Můžete přidat více míst."
+                                addVirtual: "Přidat smyšlenou polohu"
+                                churchOnline: "Víte že? Můžete mít k dispozici online shromáždění prostřednictvím <a className='button-caption' href='%{url}'>Online platformy pro církve a společenství</a>."
                             LocationAddTime: 
                                 minutes: "MINUT"
                                 hours: "HODIN"
                                 days: "dnů"
                             LocationDeleteModal: 
                                 sure: "Jste si jistí?"
-                                selected: "You have selected the following location to be deleted:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                selected: "Pro smazání jste vybrali následující polohu:"
+                                warn: "Tímto bude poloha odstraněna ze všech minulých i stávajících událostí. Tuto polohu nebudete moci opětovně použít."
                                 cancel: "Zrušit"
                                 delete: "Odstranit"
                             LocationEdit: 
-                                prompt: "Enter the Location address..."
+                                prompt: "Zadejte adresu..."
                                 country: "Země"
                                 timezone: "Časové pásmo"
-                                namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                namePrompt: "První baptistická východní universita"
+                                name: "Název polohy"
+                                nameOptional: "Volitelné: Užitečné v případě zadání více lokalit"
+                                addAnother: "Přidat jiný čas"
                                 cancel: "Zrušit"
-                                save: "Save this Location"
+                                save: "Uložit toto místo"
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "Posun data zahájení"
                                 forward: "Dále"
-                                backward: "backward"
-                                by: "by"
-                                week: "week"
-                                weeks: "weeks"
+                                backward: "dozadu"
+                                by: "o"
+                                week: "týden"
+                                weeks: "týdny"
                                 month: "Měsíc"
-                                months: "months"
+                                months: "měsíce"
                                 day: "den"
                                 days: "dnů"
-                                hour: "hour"
+                                hour: "hodina"
                                 hours: "HODIN"
                                 update: "Aktualizovat"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "Posunout všechny datumy a časy najednou"
                             UnpublishModal: 
                                 cancel: "Zrušit"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                title: "Nepublikovat, provádíme změny"
+                                desc: "Přidat, editovat nebo smazat místo a čas, událost dočasně nepublikovat. Během této doby nebude událost ve výsledcích hledání viditelná. Nezapomeňte událost opět publikovat."
+                                unpublish: "Nezveřejňovat"
                     preview: 
                         notes: 
                             prompt: "Přidat osobní poznámky..."
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Přihlašte se</span> pro přidání osobních poznámek...</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Zobrazit náhled události před publikováním"
+                                previewUrl: "Náhled odkazu:"
                                 share: "Sdílet událost"
-                                locations: "Místo a čas konání"
+                                locationsAndTimes: "Místo a čas konání"
                                 publish: "Zveřejnit"
-                                unpublish: "Unpublish"
-                                locations: "Locations:"
+                                unpublish: "Nezveřejňovat"
+                                locations: "Místo:"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "Dostupné:"
+                                    desc: "Vaše událost bude viditelná a aplikaci Bible pod heslem Místo události. Vyhledávání informací o události bude zpřístupněné pět dní před zahájením."
                                 status: 
                                     title: "Stav poznámky:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "Červená značka ŽIVĚ se zobrazí v přednastavený čas."
                                 remove: 
-                                    title: "Remove:"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    title: "Odstranění:"
+                                    desc: "Vaše Událost nebude po datu ukončení dále dostupná Návštěvníci, kteří kliknou na \"Uložit Událost\" ve chvíli, kdy je vaše událost dostupná, budou mít stále přístup k její archivní verzi. Tato událost bude také dále zjistitelná prostřednictvím přímého odkazu."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "Rozbalit"
                             PreviewTypePlan: 
                                 read: "Číst"
                                 info: "Info o plánu"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "Duplikovat"
                         share: "Sdílet"
                         delete: "Odstranit"
                         draft: "Koncept/y"
                         edit: "Upravit"
                         view: "Zobrazit"
-                        fail: "Unable to delete Event"
+                        fail: "Událost není možné smazat"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "Kopírovat"
+                        copied: "Zkopírováno"
                         share: "Sdílet"
                         read: "Číst"
-                        readPlan: "Read Plan"
+                        readPlan: "Číst plán"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Rozbalit"
+                        collapse: "Sbalit"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Rozbalit"
+                        collapse: "Sbalit"
                         save: "Uložit událost"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "Přihlásit se k uložení události"
+                        saved: "Událost byla uložena"

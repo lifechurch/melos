@@ -1381,6 +1381,7 @@ cy:
                     published: "Cyhoeddwyd"
                     draft: "Drafft"
                     live: "Yn Fyw"
+                    archived: "Archifwyd"
                 unpublish: "Dadgyhoeddi"
                 saving: "Cadw"
                 saveAsDraft: "Cadw fel Drafft"
@@ -1396,7 +1397,7 @@ cy:
             Auth: 
                 title: "Mewngofnodi i Ddigwyddiadau"
                 signIn: "Mewngofnodi"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Os wyt yn ddefnyddiwr yr ApBeibl ac mae gennyt gyfrif YoiuVersion eisoes, gelli fewngofnodi gan ddefnyddio'r un manylion.<br/><br/>Heb gyfrif YouVersion eto?<br/><a href='%{url}'> Cofrestra nawr ar Bible.com </a> i ddechrau creu Digwyddiadau."
                 email: "Ebost"
                 password: "Cyfrinair"
                 forgotPassword: "Anghofio Cyfrinair"
@@ -1442,6 +1443,8 @@ cy:
                 title: "Cadw Digwyddiad"
             EventView: 
                 title: "Digwyddiad YouVersion"
+            SelectLanguage: 
+                choose: "Dewisa dy iaith"
         features: 
             Auth: 
                 errors: 
@@ -1495,7 +1498,7 @@ cy:
                                     desc: "Creu botwm yn dy Ddigwyddiad fydd yn ddolen ag unrhyw wefan allanol. Rho dy gynulleidfa gam i ffwrdd o roi ar-lein, cofrestru fel gwirfoddolwr, neu dudalennau cartref eglwysi."
                                 announcement: 
                                     title: "Modiwl Cyhoeddiad"
-                                    desc: "Newyddion yr Eglwys, digwyddiadau calendr, rhaglenni, dosbarthiadau, cyfleodd gwirfoddoli a chenhadu,.. Dosbartha wybodaeth bwysig ac amserol yn rhwydd heb dynnu sylw oddi wrth prif neges dy ddigwyddiad. Mae'n berffaith ar gyfer cynnwys sy'n bwysig ond dwyt ti ddim am iddo dynnu sylw oddi wrth prif neges dy ddigwyddiad."
+                                    desc: "Newyddion yr Eglwys, digwyddiadau calendr, rhaglenni, dosbarthiadau, cyfleodd gwirfoddoli a chenhadu,..Modiwlau cyhoeddi ydy'r storfa orau ar gyfer rhannu gwybodaeth amserol a phwysig, ond heb dynnu sylw oddi wrth brif neges dy ddigwyddiad. Mae pob modiwl cyhoeddiad yn ymddangos ar ei dudalen ei hun yn dy Ddigwyddiad, ac hyd yn oed yn gallu cynnwys ffurf testun arbennig (fel testun trwm neu italig)."
                             ContentInsertionPoint: 
                                 title: "Mewnosod y modiwl nesaf yma"
                             ContentTypeAnnouncement: 
@@ -1525,11 +1528,12 @@ cy:
                                 replace: "Ailosod"
                                 search: "Chwilia am Gynllun Darllen"
                             ContentTypeReference: 
+                                language: "Iaith"
                                 version: "Fersiwn"
                                 book: "Llyfr"
                                 chapterVerse: "Pennod: Adnod"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "Sgwenna rhywbeth yma..."
                             LiveWarningModal: 
                                 title: "Ni ellir dileu tra bo'r Digwyddiad yn Fyw"
                                 desc: "Unwaith mae Digwyddiad yn fyw, ni ellir dileu testun, cyfeirnodau Beiblaidd, na modiwlau llun ohono gan y gall defnyddwyr fod eisioes wedi ychwanegu nodiadau preifat. Fodd bynnag, mae modd golygu'r modiwlau hyn."
@@ -1537,7 +1541,7 @@ cy:
                     details: 
                         errors: 
                             generic: "Cododd problem pan yn cyhoeddi dy Ddigwyddiad."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            invalidTimes: "Ni all un gwasanaeth fod yn hwy na 12 awr ac ni all y gwahaniaeth rhwng amser cychwyn ac amser gorffen Digwyddiad fod yn fwy nac 8 diwrnod. Os gweli'n dda, newidia amseroedd dy ddigwyddiad a cheisio eto."
                         components: 
                             DetailsEdit: 
                                 errors: 
@@ -1548,11 +1552,12 @@ cy:
                                 prompt: "Llusga a Gollwng lun"
                                 onlyJpg: "[JPG yn unig]"
                                 sizePrompt: "%{requiredWidth} lled px x %{requiredHeight} uchder px"
-                                sizePrompt2: "Dylai maint dy lun fod yn %{requiredWidth} x {requiredHeight} pixels."
+                                sizePrompt2: "Dylai maint dy lun fod yn %{requiredWidth} x %{requiredHeight}o bicselau."
                                 eventName: "Enw Digwyddiad"
                                 org: "Enw Eglwys neu Fudiad"
                                 desc: "Disgrifiad o'r Digwyddiad"
                                 next: "Nesaf: Ychwanegu Lleoliad ac Amserau"
+                                blank: "Ni all %{field} fod yn wag."
                     location: 
                         components: 
                             Location: 
@@ -1611,8 +1616,10 @@ cy:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Mewngofnoda i ychwanegu dy nodiadau preifat</span></a>"
                         components: 
                             PreviewFeed: 
+                                review: "Adolyga dy Ddigwyddiad cyn ei Gyhoeddi"
+                                previewUrl: "Rhagolwg o'r URL:"
                                 share: "Rhannu Digwyddiad"
-                                locations: "Lleoliadau ac Amserau"
+                                locationsAndTimes: "Lleoliadau ac Amserau"
                                 publish: "Cyhoeddi"
                                 unpublish: "Dadgyhoeddi"
                                 locations: "Lleoliadau:"
@@ -1644,6 +1651,7 @@ cy:
                 components: 
                     EventViewContent: 
                         copy: "Copi"
+                        copied: "Copïwyd"
                         share: "Rhannwch"
                         read: "Darllen"
                         readPlan: "Darllen y Cynllun"

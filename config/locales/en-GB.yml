@@ -1329,6 +1329,7 @@ en-GB:
                     published: "Published"
                     draft: "Draft"
                     live: "Live"
+                    archived: "Archived"
                 unpublish: "Unpublish"
                 saving: "Saving..."
                 saveAsDraft: "Save as draft"
@@ -1357,7 +1358,7 @@ en-GB:
                 previous: "← Previous: Locations & Times"
                 next: "Next: Preview →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "Event details"
             EventEditLocationContainer: 
                 title: "Event Location"
                 previous: "← Previous: Details"
@@ -1384,17 +1385,19 @@ en-GB:
                 my: "My Events"
                 new: "Create New Event"
                 subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
+                newFirst: "Create your first Event"
                 learn: "Learn how to make a great Event"
             EventFeedSaved: 
                 title: "Saved Events"
             EventView: 
                 title: "YouVersion Event"
+            SelectLanguage: 
+                choose: "Choose your language"
         features: 
             Auth: 
                 errors: 
                     sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    invalidEmail: "Invalid e-mail or password."
             EventEdit: 
                 errors: 
                     locationMustHaveTime: "All locations must have at least one time."
@@ -1431,7 +1434,7 @@ en-GB:
                                     desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
                                 reference: 
                                     title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                                 plan: 
                                     title: "Plan Module"
                                     desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
@@ -1443,7 +1446,7 @@ en-GB:
                                     desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                                 announcement: 
                                     title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
                             ContentInsertionPoint: 
                                 title: "Insert next module here"
                             ContentTypeAnnouncement: 
@@ -1473,6 +1476,7 @@ en-GB:
                                 replace: "Replace"
                                 search: "Search for a Reading Plan"
                             ContentTypeReference: 
+                                language: "Language"
                                 version: "Version"
                                 book: "Book"
                                 chapterVerse: "Chapter:Verse"
@@ -1496,11 +1500,12 @@ en-GB:
                                 prompt: "Drag and Drop an Image"
                                 onlyJpg: "[JPG only]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
                                 eventName: "Event Name"
-                                org: "Church Name or Organization"
+                                org: "Church Name or Organisation"
                                 desc: "Event Description"
                                 next: "Next: Add Location & Times →"
+                                blank: "%{field} cannot be blank."
                     location: 
                         components: 
                             Location: 
@@ -1559,8 +1564,10 @@ en-GB:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Review your Event before publishing"
+                                previewUrl: "Preview URL:"
                                 share: "Share Event"
-                                locations: "Locations and times"
+                                locationsAndTimes: "Locations and times"
                                 publish: "Publish"
                                 unpublish: "Unpublish"
                                 locations: "Locations:"
@@ -1592,6 +1599,7 @@ en-GB:
                 components: 
                     EventViewContent: 
                         copy: "Copy"
+                        copied: "Copied"
                         share: "Share"
                         read: "Read"
                         readPlan: "Read Plan"

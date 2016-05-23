@@ -1329,15 +1329,16 @@ pt-PT:
                     published: "Published"
                     draft: "Rascunho"
                     live: "Ao Vivo"
+                    archived: "Archived"
                 unpublish: "Unpublish"
                 saving: "Saving..."
                 saveAsDraft: "Guardar como rascunho"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "Eventos"
+                eventBuilder: "CONFIGURAR EVENTO"
                 signOut: "Sair"
                 createAccount: "Create Account"
             HtmlEditor: 
-                text: "Text"
+                text: "Texto"
                 bold: "Bold"
                 italic: "Italic"
         containers: 
@@ -1351,20 +1352,20 @@ pt-PT:
             EventEdit: 
                 event: "Event"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "Escolha algum conteúdo para começar."
                 needHelp: "Precisa de ajuda?"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "Conteúdo do Evento"
+                previous: "Voltar: Localização e Horários →"
+                next: "Seguinte: Pré-visualização →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "Detalhes do Evento"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "Local do Evento"
+                previous: "← Voltar: Detalhes"
+                next: "Seguinte: Adicionar conteúdo →"
             EventEditPreview: 
-                title: "Event Preview"
-                previous: "← Previous: Content"
+                title: "Pré-visualização do Evento"
+                previous: "← Voltar: Conteúdo"
             EventEditShare: 
                 title: "Event Share"
                 subTitle: "Your Event is Now Published:"
@@ -1384,12 +1385,14 @@ pt-PT:
                 my: "My Events"
                 new: "Create New Event"
                 subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                newFirst: "Crie o seu primeiro evento"
+                learn: "Aprenda a organizar um evento"
             EventFeedSaved: 
                 title: "Eventos Guardados"
             EventView: 
                 title: "YouVersion Event"
+            SelectLanguage: 
+                choose: "Choose Your Language"
         features: 
             Auth: 
                 errors: 
@@ -1399,15 +1402,15 @@ pt-PT:
                 errors: 
                     locationMustHaveTime: "All locations must have at least one time."
                     locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
+                    contentRequired: "Não pode publicar um evento sem nenhum conteúdo."
                     planSearchFailed: "Search did not match any documents"
                     noMatchingPlans: "No matching Plans"
                 components: 
                     EventEditNav: 
                         details: "Detalhes"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        locations: "Localizações e Horários"
+                        content: "Conteúdo"
+                        preview: "Visualizar & Publicar"
                         share: "Partilhar"
                 features: 
                     content: 
@@ -1417,33 +1420,33 @@ pt-PT:
                                 doneReordering: "Done Reordering"
                             ContentHeader: 
                                 text: "Text"
-                                reference: "Bible Reference"
+                                reference: "Referência Bíblica"
                                 plan: "Plano"
                                 image: "Imagem"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "Ligação Externa"
+                                giving: "Ligação para Contribuições"
+                                announcement: "Comunicados"
                             ContentHelpModal: 
-                                types: "Content Types"
+                                types: "Tipos de Conteúdo"
                                 learn: "Learn how to make <br>a great Event"
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "Módulo de Texto"
+                                    desc: "Esboços, pontos-chave, questões para debate ... Compartilhe qualquer conteúdo geral baseado em texto para ajudar os seus participantes a acompanharem a sua mensagem à medida que acontece. Os seus módulos de texto podem ser de qualquer tamanho e pode incluir formatação do texto."
                                 reference: 
-                                    title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    title: "Módulo de Referência Bíblia"
+                                    desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "Módulo de planos de Leitura da Bíblia"
+                                    desc: "Adicione ligações para os Planos da Bíblia e devocionais que se relacionam com os seus ensinamentos, de modo ajudar a sua audiência a continuar a interagir com a Palavra de Deus ao longo da semana."
                                 image: 
-                                    title: "Image Module"
+                                    title: "Módulo de imagem"
                                     desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
                                 link: 
                                     title: "External Link Module"
                                     desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                                 announcement: 
                                     title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
                             ContentInsertionPoint: 
                                 title: "Insert next module here"
                             ContentTypeAnnouncement: 
@@ -1463,7 +1466,7 @@ pt-PT:
                                 prompt: "Drag and Drop an Image"
                                 onlyJpg: "[JPG only]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                select: "Selecionar imagem"
                             ContentTypeLink: 
                                 kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
                                 label: "Link Label"
@@ -1473,6 +1476,7 @@ pt-PT:
                                 replace: "Replace"
                                 search: "Search for a Reading Plan"
                             ContentTypeReference: 
+                                language: "Idioma"
                                 version: "Versão"
                                 book: "Livro"
                                 chapterVerse: "Chapter:Verse"
@@ -1490,17 +1494,18 @@ pt-PT:
                             DetailsEdit: 
                                 errors: 
                                     wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
+                                    wrongType: "Tipo de ficheiro inválido. Tem de ser um JPG."
+                                changeImage: "Alterar Imagem"
+                                removeImage: "Remover imagem"
                                 prompt: "Drag and Drop an Image"
                                 onlyJpg: "[JPG only]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
+                                eventName: "Nome do Evento"
+                                org: "Nome da Igreja ou Organização"
+                                desc: "Descrição do Evento"
+                                next: "Seguinte: Adicionar Localização e Horários →"
+                                blank: "%{field} cannot be blank."
                     location: 
                         components: 
                             Location: 
@@ -1509,9 +1514,9 @@ pt-PT:
                                 edit: "Edit Location"
                                 delete: "Delete Location"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
+                                addPhysical: "Adicione uma localização física"
+                                promptPhysical: "Pode adicionar várias localizações"
+                                addVirtual: "Adicione uma localização virtual"
                                 churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
                             LocationAddTime: 
                                 minutes: "MINUTOS"
@@ -1527,12 +1532,12 @@ pt-PT:
                                 prompt: "Enter the Location address..."
                                 country: "País"
                                 timezone: "Fuso Horário"
-                                namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                namePrompt: "Primeira Igreja Baptista"
+                                name: "Local"
+                                nameOptional: "Opcional: Pode adicionar várias localizações"
+                                addAnother: "Adicionar um novo horário"
                                 cancel: "Cancelar"
-                                save: "Save this Location"
+                                save: "Guardar esta localização"
                             LocationTimeShifter: 
                                 shift: "Shift start dates"
                                 forward: "Avançar"
@@ -1547,7 +1552,7 @@ pt-PT:
                                 hour: "hour"
                                 hours: "HORAS"
                                 update: "Atualizar"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "Mudar todas as datas e os horários de uma só vez"
                             UnpublishModal: 
                                 cancel: "Cancelar"
                                 title: "Unpublish to Make Changes"
@@ -1559,20 +1564,22 @@ pt-PT:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Review Your Event Before Publishing"
+                                previewUrl: "Preview URL:"
                                 share: "Compartilhar Evento"
-                                locations: "Localizações e Horários"
+                                locationsAndTimes: "Localizações e Horários"
                                 publish: "Publicar"
                                 unpublish: "Unpublish"
-                                locations: "Locations:"
+                                locations: "Locais:"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "Visibilidade:"
+                                    desc: "O seu evento estará visível na seção de Eventos da App da Bíblia e nos resultados da busca, 5 dias antes da data de início."
                                 status: 
                                     title: "Estado:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "O emblema vermelho AO VIVO será exibido quando começar o seu evento."
                                 remove: 
-                                    title: "Remove:"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    title: "Eliminar:"
+                                    desc: "O seu evento deixará de estar visível após o horário de término. Os participantes que clicaram em \"Gravar Evento\" quando este estava visível, continuarão a ter acesso a uma versão de arquivo do mesmo. Este evento continuará a ser acessível através de link directo."
                             PreviewTypeAnnouncement: 
                                 expand: "Expand"
                             PreviewTypePlan: 
@@ -1592,6 +1599,7 @@ pt-PT:
                 components: 
                     EventViewContent: 
                         copy: "Copiar"
+                        copied: "Copied"
                         share: "Partilhar"
                         read: "Ler"
                         readPlan: "Read Plan"

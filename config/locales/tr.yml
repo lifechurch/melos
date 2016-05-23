@@ -1329,6 +1329,7 @@ tr:
                     published: "Yayımlandı"
                     draft: "Taslak"
                     live: "Canlı"
+                    archived: "Arşivlendi"
                 unpublish: "Yayınlanmayan"
                 saving: "Kaydediliyor..."
                 saveAsDraft: "Taslak olarak Kaydet"
@@ -1344,7 +1345,7 @@ tr:
             Auth: 
                 title: "Etkinlik Girişi"
                 signIn: "Giriş Yap"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Eğer Kutsal Kitap Uygulaması kullanıcısıysanız ve daha önceden YouVersion hesabınız varsa, aynı kimlik bilgilerini kullanarak giriş yapabilirsiniz.<br/><br/>Henüz YouVersion hesabınız yok mu? <br/><a href='%{url}'>Bible.com adresinde kayıt olun</a> Etkinlikler yaratmaya başlayın."
                 email: "e-Posta"
                 password: "Parola"
                 forgotPassword: "Parolamı Unuttum"
@@ -1390,6 +1391,8 @@ tr:
                 title: "Kayıtlı Etkinlikler"
             EventView: 
                 title: "YouVersion Etkinliği"
+            SelectLanguage: 
+                choose: "Dilinizi Seçin"
         features: 
             Auth: 
                 errors: 
@@ -1397,7 +1400,7 @@ tr:
                     invalidEmail: "Geçersiz E-posta ya da Şifre "
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
+                    locationMustHaveTime: "Bütün konumlar en azından bir zaman içermeli."
                     locationRequired: "Konumlandırılmamış etkinlikleri paylaşamazsınız."
                     contentRequired: "İçeriği olmayan bir Etkinliği yayınlayamazsınız."
                     planSearchFailed: "Arama sonucu hiç bir dökümanla eşleşmedi"
@@ -1431,19 +1434,19 @@ tr:
                                     desc: "Anahatlar, can alıcı noktalar, tartışma soruları… Sizi takip eden takipçilerinizle genel içerik ile ilgili metinleri paylaşın. Metin Modülleriniz istediğiniz formatta ve istediğiniz uzunlukta olabilir. "
                                 reference: 
                                     title: "Kutsal Kitap Referans Modülü"
-                                    desc: "YouVersion'un 900 dilde, 1200'den fazla versiyonu sayesinde Kutsa Kitap'tan bir bölümü ya da bir ayeti seçin. Etkinliğinizi görüntüleyen insanlar, kendi Kutsal Kitap okuyucularında bunu işaretleyebilir, altını çizebilir veya paylaşabilirler."
+                                    desc: "YouVersion'ın 900 dil ve 1.200'den fazla versiyona direk bağlı olan herhangi bir Kutsal Kitap ayeti veya bölümü seçin. Etkinliğinizi görüntüleyen kişiler referansınıza tıklayarak onu kendi Kutsal Kitap Uygulaması okuyucusundan işaretleyebilir, vurgulayabilir, ve daha birçok şey yapabilir."
                                 plan: 
                                     title: "Plan Modülü"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    desc: "Öğreti noktalarınıza bağlı Kutsal Kitap Planları ve Günlük Okumalar, sizi izleyenlere hafta içerisine Tanrı'nın Sözü'ne bağlı kalmalarına yardımcı olur."
                                 image: 
                                     title: "Resim Modülü"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    desc: "Etkinliğinizi her türlü destekleyeci grafiklerle hayata geçirin: seri resim, fotoğraflar, Ayet Görüntüleri vs. Katılımcılar Etkinlik görüntülerinizi, mesajınızı ağızdan ağıza yayarak kolayca kendi sosyal medyalarından paylaşabilecekler."
                                 link: 
                                     title: "Harici Link Modülü"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    desc: "Etkinliğinizin içinde herhangi bir harici websitesine bağlanmaya yarayan bir düğme yaratır. İzleyicilerinizi online bağış, gönüllü kaydolma, veya kilise ana sayfalarına bir tık daha yakınlaştırır."
                                 announcement: 
                                     title: "Duyuru Modülü"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    desc: "Kilise haberleri, takvim etkinlikleri, programlar, dersler, misyon ve gönüllülük fırsatları... Anons modülü Etkinliğinizin ana mesajından uzaklaştırmadan, tam vaktinde ve önemli bilgileri paylaşabileceğiniz harika bir kutudur. Her anons modülü Etkinliğinizin içindeki kendi sayfasında belirir ve ayrıca zengin metin içeriğini bile barındırır (örneğin koyu ve italik yazımlar)."
                             ContentInsertionPoint: 
                                 title: "Sonraki modülü buraya ekle"
                             ContentTypeAnnouncement: 
@@ -1459,7 +1462,7 @@ tr:
                                 errors: 
                                     wrongSize: "Rasim boyutları %{requiredWidth}x%{requiredHeight} olmalıdır. Sizin resminiz %{yourWidth}x%{yourHeight}"
                                     wrongType: "Geçersiz dosya türü JPG olmalıdır."
-                                caption: "Add caption"
+                                caption: "Başlık yazısı ekleyin"
                                 prompt: "Bir resim yükleyin "
                                 onlyJpg: "[Sadece JPG]"
                                 sizePrompt: "%{requiredWidth}px genişlik x %{requiredHeight}px yükselik"
@@ -1473,6 +1476,7 @@ tr:
                                 replace: "Yerleştir"
                                 search: "Bir Okuma Planı Arayın"
                             ContentTypeReference: 
+                                language: "Dil"
                                 version: "Çeviri"
                                 book: "Kitap"
                                 chapterVerse: "Bölüm:Ayet"
@@ -1480,12 +1484,12 @@ tr:
                                 prompt: "Buraya bir şeyler yazın..."
                             LiveWarningModal: 
                                 title: "Etkinlik Yayındayken Silemezsiniz"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                desc: "Bir kere Etkinliğiniz yayına geçtiğinde, Yazı, Kutsal Kitap Referansı, ve Resim modüllerini silemezsiniz çünkü kullanıcılar kendi özel notlarını onlara eklemiş olabilirler. Yine de, bu modülleri düzenleyebilirsiniz."
                                 ok: "Tamam"
                     details: 
                         errors: 
                             generic: "Etkinliğinizi yayınlarken bir sorun oluştu."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            invalidTimes: "Tekli bir toplantı 12 saatten fazla olamaz, ve bir Etkinlik içindeki en erken başlangıç zamanı ile en geç bitiş zamanı arasındaki fark 8 günden fazla olamaz. Lütfen Etkinlik zamanını ayarlayın ve tekrar deneyin."
                         components: 
                             DetailsEdit: 
                                 errors: 
@@ -1494,13 +1498,14 @@ tr:
                                 changeImage: "Resmi Değiştir"
                                 removeImage: "Resmi Kaldır"
                                 prompt: "Bir Resim Sürükle ve Bırak"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                onlyJpg: "[Sadece JPG]"
+                                sizePrompt: "%{requiredWidth}px genişlik x %{requiredHeight}px yükseklik"
+                                sizePrompt2: "Resim boyutlarınız %{requiredWidth} x %{requiredHeight} pixel olmalıdır."
                                 eventName: "Etkinlik Adı"
                                 org: "Kilise Adı ya da Organizasyon"
                                 desc: "Etkinlik Tanımı"
                                 next: "Sonraki: Yer & Zaman Ekle →"
+                                blank: "%{field} boş bırakılamaz."
                     location: 
                         components: 
                             Location: 
@@ -1512,7 +1517,7 @@ tr:
                                 addPhysical: "Bir Fiziki Konum Ekleyin"
                                 promptPhysical: "Çoklu konum ekleyebilirsiniz."
                                 addVirtual: "Sanal Konum Ekleyin"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                churchOnline: "Biliyor muydunuz? Kilise Online Platformunu kullanarak <a className='button-caption' href='%{url}'>ücretsiz çevrim içi hizmet başlatabilirsiniz</a>."
                             LocationAddTime: 
                                 minutes: "DAKİKA"
                                 hours: "SAAT"
@@ -1551,18 +1556,20 @@ tr:
                             UnpublishModal: 
                                 cancel: "İptal"
                                 title: "Değişiklik Yapmak için Yayından Kaldırın"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                desc: "Konumları ve Zamanları eklemek, düzenlemek, veya silmek için, geçici olarak etkinliğinizi yayından kaldırın. Bu zaman süresince, etkinliğiniz arama sonuçlarında gözükmeyecektir. Etkinliğinizi tekrar yayınlamayı unutmayın."
+                                unpublish: "Yayımdan kaldır"
                     preview: 
                         notes: 
                             prompt: "Kişisel notlar ekleyin..."
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Özel notlarınızı ekleyebilmek için</span> giriş yapın…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Yayınlamadan Önce Etkinliğinizi Gözden Geçirin "
+                                previewUrl: "URL Önizleme:"
                                 share: "Eylemi Paylaş"
-                                locations: "Konumlar ve Saat Dilimleri"
+                                locationsAndTimes: "Konumlar ve Saat Dilimleri"
                                 publish: "Yayınla"
-                                unpublish: "Unpublish"
+                                unpublish: "Yayımdan kaldır"
                                 locations: "Konumlar:"
                                 discoverable: 
                                     title: "Keşfedilebilir:"
@@ -1592,6 +1599,7 @@ tr:
                 components: 
                     EventViewContent: 
                         copy: "Kopyala"
+                        copied: "Kopyalandı"
                         share: "Paylaş"
                         read: "Oku"
                         readPlan: "Planı Oku"
