@@ -17,7 +17,7 @@ Number.isInteger = Number.isInteger || function(value) {
 function changeTime(dt, t) {
 	var t = t.replace(/ /, ':').split(':')
 	let new_dt = moment(dt)
-	console.log('changeTime', t)
+
 	if (t.length > 2 && t[0] != 12 && t[2].toLowerCase() == 'pm') {
 		t[0] = parseInt(t[0]) + 12
 	} else if (t.length > 2 && t[0] == 12 && t[2].toLowerCase() == 'am') {
