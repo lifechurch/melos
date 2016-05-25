@@ -18,9 +18,9 @@ function changeTime(dt, t) {
 	var t = t.replace(/ /, ':').split(':')
 	let new_dt = moment(dt)
 
-	if (t.length > 2 && t[0] != 12 && t[2] == 'pm') {
+	if (t.length > 2 && t[0] != 12 && t[2].toLowerCase() == 'pm') {
 		t[0] = parseInt(t[0]) + 12
-	} else if (t.length > 2 && t[0] == 12 && t[2] == 'am') {
+	} else if (t.length > 2 && t[0] == 12 && t[2].toLowerCase() == 'am') {
 		t[0] = 0
 	}
 
@@ -67,7 +67,7 @@ function getState(start_dt, start_time, duration, interval, props) {
 	handleTimeChange(timeIndex, new_start_dt, new_end_dt)
 	return {
 		start_dt: new_start_dt,
-		start_time: start_time,
+		start_time: new_start_dt.format(window.__LOCALE__.momentLocaleData.longDateFormat('LT')),
 		duration: duration,
 		end_dt: new_end_dt,
 		interval: interval
@@ -82,7 +82,7 @@ class LocationAddTime extends Component {
 		const durationObj = getDurationAndInterval(props.time.start_dt, props.time.end_dt)
 		this.state = {
 			start_dt: props.time.start_dt,
-			start_time: getTime(props.time.start_dt),
+			start_time: props.time.start_dt.format(window.__LOCALE__.momentLocaleData.longDateFormat('LT')),
 			duration: durationObj.duration,
 			interval: durationObj.interval,
 			end_dt: props.time.end_dt
