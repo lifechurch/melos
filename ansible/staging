@@ -1,8 +1,0 @@
-[node]
-nodestaging01.web.dal01.thewardro.be
-
-[staging:children]
-node
-
-[events:children]
-staging
