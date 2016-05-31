@@ -1,8 +1,0 @@
-[node]
-node[01:02].web.dal01.thewardro.be
-
-[production:children]
-node
-
-[events:children]
-production
