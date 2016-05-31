@@ -118,55 +118,54 @@ html[dir="rtl"] body.c_subscriptions {
 //  }
 //}
 
-.subscription {
-  @media #{$small-only} {
-    overflow: hidden;
-    clear: both;
-  }
-}
+.subscription-list {
+  border-top: solid 1px $lightGray;
+  border-bottom: solid 1px $lightGray;
+  padding-bottom: 20px;
+  margin-bottom: 7px;
 
-.search_thumbnail {
-  @media #{$small-only} {
-    width: 25%;
-    overflow: hidden;
-    float: $default-float;
+  .subscription {
+    margin-top: 20px !important;
 
-    img {
-      width: auto;
+    .subscription-info {
+      margin-top: 7px;
+    }
+
+    .progress_wrap {
+      border: solid 1px $gray;
+      border-radius: 10px;
+      height: 10px;
+      width: 30px;
+      overflow: hidden;
+      float: left;
+      margin-top:5px;
+
+      .progress_counter {
+        background-color: $gray;
+      }
+    }
+
+    .search_thumbnail {
+      float: left;
+      width: 95px;
+    }
+
+    .subscription-privacy {
+      margin: -8px 0px 0px 10px;
     }
   }
 }
 
-.subscription-info {
-  @media #{$small-only} {
-    width: 75%;
-    padding: 0 0 0 10px;
-    float: $default-float;
-
-    a {
-      display: block;
-    }
+.subscription-actions {
+  margin-bottom: 50px;
+  a {
+    font-size: 13px;
   }
-}
-
-.subscription-privacy {
-  font-size: 0.813em;
-
-  @media #{$small-only} {
-    a {
-      display: inline-block;
-    }
-  }
-}
-
-.progress_wrap {
-  font-size: 0.813em;
-  color: $gray;
 }
 
 .plan-title {
   font-size: 18px;
-  color: $anchor-font-color;
+  color: $black;
   padding-top: 10px;
   margin: 0;
 
@@ -785,6 +784,30 @@ ul.plan-results {
   }
 }
 
+.button-group.primary-toggle {
+  li {
+    margin: 0 -3px;
+    a {
+      padding: 10px 25px;
+      border: solid 1px $green;
+    }
+  }
+
+  li:first-child {
+    a.solid-button.green {
+      border-radius: 5px 0 0 5px;
+      background-color: white !important;
+      color: $green !important;
+    }
+  }
+
+  li:last-child {
+    a.solid-button.green {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}
+
 .c_subscriptions .none {
   padding: 50px 0 0;
   font: 1.5em arial, sans-serif;
@@ -1033,6 +1056,11 @@ html[dir="rtl"] .plan-settings {
 /* !My plans */
 
 .c_subscriptions.a_index {
+
+  #current-ui-view {
+    padding: 95px 0 0;
+  }
+
   .resource_list {
     @media #{$small-only} {
       margin: 5px 0 0;

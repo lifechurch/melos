@@ -55,6 +55,20 @@ class Subscription < Plan
       super(opts)
     end
 
+    def completed(user, opts={})
+      raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
+      opts[:user_id]  = user.id
+      opts[:auth]     = user.auth
+      super(opts)
+    end
+
+    def saved(user, opts={})
+      raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
+      opts[:user_id]  = user.id
+      opts[:auth]     = user.auth
+      super(opts)
+    end
+
     def subscribe(plan, opts={})
       raise YV::AuthRequired unless opts[:auth]
       opts.merge!(

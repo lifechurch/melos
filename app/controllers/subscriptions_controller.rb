@@ -20,6 +20,30 @@ class SubscriptionsController < ApplicationController
     respond_with(@subscriptions)
   end
 
+  def completed
+    return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
+
+    @user = current_user
+    @subscriptions = Subscription.completed(@user, auth: @user.auth)
+
+    return redirect_to plans_path if @subscriptions.empty?
+
+    self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
+    render 'index'
+  end
+
+  def saved
+    return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
+
+    @user = current_user
+    @subscriptions = Subscription.saved(@user, auth: @user.auth)
+
+    return redirect_to plans_path if @subscriptions.empty?
+
+    self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
+    render 'index'
+  end
+
   # TODO - ensure user subscribed.
   def show
     self.presenter = Presenter::Subscription.new( @subscription , params, self)

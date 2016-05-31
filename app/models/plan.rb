@@ -52,6 +52,14 @@ class Plan < YV::Resource
       "reading-plans/stats"
     end
 
+    def completed_path
+      "reading-plans/completed"
+    end
+
+    def saved_path
+      "reading-plans/queue_items"
+    end
+
     # TODO pagination + facets
 
     def all(opts = {})
@@ -59,6 +67,22 @@ class Plan < YV::Resource
       cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
       opts[:query] = '*' if opts[:query].blank?
       super(opts)
+    end
+
+    def completed(opts = {})
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
+      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
+      data, errs = get(completed_path, opts)
+      data = [] if not_found?(errs)
+      map_all(YV::API::Results.new(data,errs))
+    end
+
+    def saved(opts = {})
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
+      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
+      data, errs = get(saved_path, opts)
+      data = [] if not_found?(errs)
+      map_all(YV::API::Results.new(data,errs))
     end
 
     def featured(opts={})

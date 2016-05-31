@@ -840,6 +840,8 @@ en:
     all plans:                                  "All Plans"
     all category plans:                         "All %{category} Plans"
     my plans:                                   "My Plans"
+    completed plans:                            "Completed Plans"
+    saved plans:                                "Saved Plans"
     none found:                                 "We couldn't find a plan to match your criteria. Try widening your search."
     about publisher:                            "About The Publisher"
     overview:                                   "Plan Overview"
