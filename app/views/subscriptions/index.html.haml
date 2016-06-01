@@ -6,30 +6,37 @@
 
   = t("plans.title")
 
--#.fixed.after-header
--#  .row.full.b-border.white.collapse
--#    .medium-12.columns.plans-nav-box
-
--#        = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon active', target: "_self"
--#        = link_to t("plans.all plans"), plans_path, class: 'icon', target: "_self"
--#      - else
--#        = link_to t("plans.all plans"), plans_path, class: 'icon', target: "_self"
-
 - if current_auth
-  .row
-    .medium-12.text-center
-      %ul.button-group.primary-toggle
-        %li
-          = link_to t("EventsAdmin.containers.EventFeedDiscover.discover"), plans_path, class: 'solid-button green ', target: "_self"
-        %li
-          = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'solid-button green', target: "_self"
-
+  .row.collapse
+    .columns.large-8.medium-8.medium-centered
+      - if @completedList || @savedList
+        .row.collapse.plan-title-row
+          .columns.small-2
+            = link_to(subscriptions_path(user_id: current_user.to_param), class: 'plan-back-button', target: "_self") do
+              != "&larr; Back"
+          .column.small-8.end.text-center
+            - if @completedList
+              .plan-completed-title
+                =t("plans.completed plans")
+            - else
+              .plan-saved-title
+                =t("plans.saved plans")
+      - else
+        .row
+          .columns.small-12.text-center
+            %ul.button-group.primary-toggle
+              %li.inactive
+                = link_to t("EventsAdmin.containers.EventFeedDiscover.discover"), plans_path, class: 'solid-button green ', target: "_self"
+              %li
+                = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'solid-button green', target: "_self"
 
 %article
-  - unless @subscriptions.empty?
-    .row.collapse
-      .columns.large-6.medium-10.medium-centered.subscription-list
-        - @subscriptions.each do |sub|
+  .row.collapse
+    .columns.large-8.medium-8.medium-centered.subscription-list
+      - if @subscriptions == false
+        %div{class: "none"}= (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
+      - else
+        - @subscriptions.reading_plans.each do |sub|
           .row.subscription.collapse
             .small-12.columns
               .search_thumbnail
@@ -45,17 +52,34 @@
                 .progress_wrap
                   .progress_counter{style: "width:#{sub.completion_percentage}%", title:"#{sub.completion_percentage}%"}
                     !="&nbsp;"
-
                 = image_tag(image_path('lock@2.png'), class: "subscription-privacy", title:  t("plans.privacy.private")) if sub.private
-                -#= link_to( t("plans.settings"), edit_subscription_path(user_id: @user, id: sub), target: "_self")
-    .row.collapse
-      .columns.large-6.medium-10.medium-centered.subscription-actions
+        - unless @curpage == 1 && @subscriptions.next_page.nil?
+          .row.collapse.plan-paging
+            .small-4.columns.small-centered.text-center
+
+              %ul.pagination{"aria-label" => "Pagination", :role => "menubar"}
+
+                %li.arrow{"aria-disabled" => (@curpage <= 1 ? 'true' : nil), "class" => (@curpage <= 1 ? 'unavailable' : nil)}
+                  %a{:href => "#{request.path}?page=#{@curpage - 1}", :target => "_self", :disabled => (@curpage <= 1 ? 'true' : nil)} &laquo; Previous
+
+                %li.arrow.right{"aria-disabled" => (@subscriptions.next_page.nil? ? 'true' : nil), "class" => (@subscriptions.next_page.nil? ? 'unavailable' : nil)}
+                  %a{:href => "#{request.path}?page=#{@subscriptions.next_page}", :target => "_self", :disabled => (@subscriptions.next_page.nil? ? 'true' : nil)} Next &raquo;
+
+  .row.collapse
+    .columns.large-8.medium-8.medium-centered.subscription-actions
+      - if @savedList
+        %span
+          =t("plans.saved plans")
+      - else
         = link_to("#{user_path(@user.to_param)}/saved-reading-plans", target: "_self") do
           =t("plans.saved plans")
-        .right
+      .right
+        -if @completedList
+          %span
+            =t("plans.completed plans")
+        -else
           = link_to("#{user_path(@user.to_param)}/completed-reading-plans", target: "_self") do
             =t("plans.completed plans")
 
-    = render "shared/pagination", resource_list: @subscriptions
-  - else
-    %div{class: "none"}= (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
+
+  = render "shared/pagination", resource_list: @subscriptions

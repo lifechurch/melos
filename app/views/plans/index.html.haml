@@ -14,14 +14,28 @@
 -#- content_for :title do
 -#  = t("plans.title")
 
-.fixed.after-header
-  .row.full.b-border.white.collapse
-    .medium-12.columns.text-center.plans-nav-box
-      - if current_auth
-        = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present? && @show_my_plans
-        = link_to t("plans.all plans"), plans_path, class: 'icon active', target: "_self"
-      - else
-        = link_to t("plans.all plans"), plans_path, class: 'icon active plans-nav-all', target: "_self"
+-#.fixed.after-header
+-#  .row.full.b-border.white.collapse
+-#    .medium-12.columns.text-center.plans-nav-box
+-#      - if current_auth
+-#        = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present? && @show_my_plans
+-#        = link_to t("plans.all plans"), plans_path, class: 'icon active', target: "_self"
+-#      - else
+-#        = link_to t("plans.all plans"), plans_path, class: 'icon active plans-nav-all', target: "_self"
+
+
+.row.collapse
+  .columns.large-8.medium-8.medium-centered
+    .row
+      .columns.small-12.text-center
+        %ul.button-group.primary-toggle
+          %li
+            = link_to t("EventsAdmin.containers.EventFeedDiscover.discover"), plans_path, class: 'solid-button green ', target: "_self"
+          %li.inactive
+            - if current_auth
+              = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'solid-button green', target: "_self"
+            - else
+              = link_to t("plans.my plans"), sign_in_path, class: 'solid-button green', target: "_self"
 
 %article#plan-index
   - if @category.label.nil?
@@ -33,7 +47,7 @@
             - I18n.locale = @plan_lang
           - level = 0
           - if @category.children
-            - @category.children.each do |category|
+            - @category.children.slice(-8, 8).each do |category|
               - if category.slug != 'featured_plans'
                 %li{class: params[:category] == category.slug ? "highlighted" : ""}
                   %a{:href => plans_path(params.merge(locale: orig_locale, category: category.slug, page: 1)), class: 'cat_' + category.slug, target: "_self"}

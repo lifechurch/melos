@@ -69,22 +69,6 @@ class Plan < YV::Resource
       super(opts)
     end
 
-    def completed(opts = {})
-      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
-      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
-      data, errs = get(completed_path, opts)
-      data = [] if not_found?(errs)
-      map_all(YV::API::Results.new(data,errs))
-    end
-
-    def saved(opts = {})
-      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
-      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
-      data, errs = get(saved_path, opts)
-      data = [] if not_found?(errs)
-      map_all(YV::API::Results.new(data,errs))
-    end
-
     def featured(opts={})
       all opts.merge(category: "featured_plans")
     end

@@ -124,6 +124,13 @@ html[dir="rtl"] body.c_subscriptions {
   padding-bottom: 20px;
   margin-bottom: 7px;
 
+  h1 {
+    font-size: 24px;
+    color: $black;
+    font-weight: normal !important;
+    margin-top: 20px;
+  }
+
   .subscription {
     margin-top: 20px !important;
 
@@ -161,6 +168,26 @@ html[dir="rtl"] body.c_subscriptions {
   a {
     font-size: 13px;
   }
+
+  span {
+    font-size: 13px;
+    color: $black;
+  }
+}
+
+.plan-title-row {
+  padding-bottom: 30px;
+}
+
+.plan-back-button {
+  font-size: 13px;
+}
+
+.plan-saved-title, .plan-completed-title {
+  font-size: 18px;
+  color: $black;
+  margin: 0;
+  padding: 0;
 }
 
 .plan-title {
@@ -399,30 +426,6 @@ ul.plan-results {
 
     .solid-button {
       display: block;
-      float: $default-float;
-      width: 49%;
-
-      @media #{$medium-only} {
-        float: none;
-        width: auto;
-      }
-
-      @media #{$small-only} {
-        float: none;
-        width: auto;
-      }
-
-      &:first-child {
-        margin: 0 2% 0 0;
-
-        @media #{$medium-only} {
-          margin: 0 0 10px;
-        }
-
-        @media #{$small-only} {
-          margin: 0 0 10px;
-        }
-      }
     }
 
     .plan-privacy-buttons {
@@ -442,6 +445,10 @@ ul.plan-results {
       }
     }
   }
+}
+
+.plan-paging {
+  padding-top: 20px;
 }
 
 
@@ -788,7 +795,7 @@ ul.plan-results {
   li {
     margin: 0 -3px;
     a {
-      padding: 10px 25px;
+      padding: 8px 40px;
       border: solid 1px $green;
     }
   }
@@ -796,8 +803,6 @@ ul.plan-results {
   li:first-child {
     a.solid-button.green {
       border-radius: 5px 0 0 5px;
-      background-color: white !important;
-      color: $green !important;
     }
   }
 
@@ -806,12 +811,21 @@ ul.plan-results {
       border-radius: 0 5px 5px 0;
     }
   }
+
+  li.inactive {
+    a.solid-button.green {
+      background-color: white !important;
+      color: $green !important;
+    }
+  }
 }
 
 .c_subscriptions .none {
-  padding: 50px 0 0;
   font: 1.5em arial, sans-serif;
   text-align: center;
+  width: 60%;
+  margin: auto;
+  padding: 50px 0 30px;
 }
 
 
@@ -989,6 +1003,10 @@ html[dir="rtl"] .plan-settings {
   border-radius:          5px;
 }
 
+#plan-index {
+  margin-top: 30px;
+}
+
 #plan-index ul.paginate {
   margin: 30px 0 0;
   overflow: hidden;
@@ -1052,10 +1070,15 @@ html[dir="rtl"] .plan-settings {
   }
 }
 
+.c_plans.a_index, .c_plans.a_show {
+  #current-ui-view {
+    padding: 95px 0 0;
+  }
+}
 
 /* !My plans */
 
-.c_subscriptions.a_index {
+.c_subscriptions.a_index, .c_subscriptions.a_completed, .c_subscriptions.a_saved {
 
   #current-ui-view {
     padding: 95px 0 0;
@@ -1069,6 +1092,97 @@ html[dir="rtl"] .plan-settings {
         border-bottom: 1px solid $lightGray;
         padding: 10px;
       }
+    }
+  }
+}
+
+.reading_plan_index_header {
+  padding-bottom: 15px;
+
+  a {
+    font-size: 13px;
+  }
+}
+
+article.reading_plan_index {
+  h1 {
+    font-size: 18px;
+    font-family: $font-family-sans-serif;
+    font-weight: normal;
+    margin-top: 36px;
+  }
+
+  p.plan_length {
+    font-size: 12px;
+    color: $gray;
+  }
+
+  p.plan_about {
+    font-size: 13px;
+    margin-top: 15px;
+  }
+
+  h3.publisher {
+    color: $gray;
+    text-transform: uppercase;
+    margin-top: 40px;
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  a.publisher {
+    font-size: 13px;
+  }
+
+  .side-col {
+    padding-left: 25px;
+    padding-top: 39px;
+
+    a {
+      font-size: 13px;
+    }
+
+    .yes-no-buttons {
+      margin-bottom: 30px;
+      a {
+        font-size: 18px;
+
+        &.yes {
+          color: $green;
+        }
+
+        &.no {
+          color: $gray;
+        }
+      }
+    }
+
+    hr {
+      margin: 0;
+      margin-top: 10px;
+    }
+
+    p.detail-text {
+      color: $gray;
+      font-size: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    p.friends_completed {
+      color: $gray;
+      font-size: 12px;
+      text-align: center;
+      margin-top:30px;
+      margin-bottom: 10px;
+    }
+
+    img.avatar {
+      height: 30px;
+      width: 30px;
     }
   }
 }

@@ -8,16 +8,20 @@
     - else
       = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button green', "ng-click" => "showSubscribeButtons = true")
       .plan-privacy-buttons.ng-hide{"ng-show" => "showSubscribeButtons"}
-        %p.detail-text
-          = t("plans.privacy.visible to friends?")
-        - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: plan.to_param, privacy: private_bool) }
-        %a{"class" => "solid-button blue", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', false)"}
-          =t('ui.yes button')
-        -#= link_to(t('ui.yes button'), subscribe_private_url.call(false), class:"solid-button full blue", method: :post)
-        %a{"class" => "solid-button gray", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', true)"}
-          =t('ui.no button')
-        -#= link_to(t('ui.no button'), subscribe_private_url.call(true), class:"solid-button full gray", method: :post)
-      = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}
+        .text-center
+          %p.detail-text
+            = t("plans.privacy.visible to friends?")
+          .yes-no-buttons
+            - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: plan.to_param, privacy: private_bool) }
+            %a{"class" => "yes", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', false)"}
+              =t('ui.yes button')
+            != "&bull;"
+            %a{"class" => "no", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', true)"}
+              =t('ui.no button')
+      .text-center
+        = link_to "Save for Later", {day: "1"}, {class: '', target: "_self"}
+        != "&bull;"
+        = link_to t("plans.view sample"), {day: "1"}, {class: '', target: "_self"}
   - else
     = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: "solid-button green", target: "_self")
     - if (action_name != 'sample')

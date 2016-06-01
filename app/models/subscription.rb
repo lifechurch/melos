@@ -52,21 +52,45 @@ class Subscription < Plan
       raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
       opts[:user_id]  = user.id
       opts[:auth]     = user.auth
-      super(opts)
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
+      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
+      data, errs = get(list_path, opts)
+      results = YV::API::Results.new(data,errs)
+      if not_found?(errs)
+        false
+      else
+        map_all(results)
+      end
     end
 
-    def completed(user, opts={})
+    def completed(user, opts = {})
       raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
       opts[:user_id]  = user.id
       opts[:auth]     = user.auth
-      super(opts)
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
+      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
+      data, errs = get(completed_path, opts)
+      results = YV::API::Results.new(data,errs)
+      if not_found?(errs)
+        false
+      else
+        map_all(results)
+      end
     end
 
-    def saved(user, opts={})
+    def saved(user, opts = {})
       raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
       opts[:user_id]  = user.id
       opts[:auth]     = user.auth
-      super(opts)
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
+      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
+      data, errs = get(saved_path, opts)
+      results = YV::API::Results.new(data,errs)
+      if not_found?(errs)
+        false
+      else
+        map_all(results)
+      end
     end
 
     def subscribe(plan, opts={})

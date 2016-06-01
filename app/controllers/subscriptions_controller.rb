@@ -11,10 +11,11 @@ class SubscriptionsController < ApplicationController
   def index
     return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
 
+    @curpage = params[:page].present? ? params[:page].to_i : 1
     @user = current_user
-    @subscriptions = Subscription.all(@user, auth: @user.auth)
+    @subscriptions = Subscription.all(@user, auth: @user.auth, page: @curpage)
 
-    return redirect_to plans_path if @subscriptions.empty?
+    return redirect_to plans_path if @subscriptions == false
 
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
@@ -23,10 +24,10 @@ class SubscriptionsController < ApplicationController
   def completed
     return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
 
+    @curpage = params[:page].present? ? params[:page].to_i : 1
     @user = current_user
-    @subscriptions = Subscription.completed(@user, auth: @user.auth)
-
-    return redirect_to plans_path if @subscriptions.empty?
+    @subscriptions = Subscription.completed(@user, auth: @user.auth, page: @curpage)
+    @completedList = true
 
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     render 'index'
@@ -35,10 +36,10 @@ class SubscriptionsController < ApplicationController
   def saved
     return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
 
+    @curpage = params[:page].present? ? params[:page].to_i : 1
     @user = current_user
-    @subscriptions = Subscription.saved(@user, auth: @user.auth)
-
-    return redirect_to plans_path if @subscriptions.empty?
+    @subscriptions = Subscription.saved(@user, auth: @user.auth, page: @curpage)
+    @savedList = true
 
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     render 'index'
