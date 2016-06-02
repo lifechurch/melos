@@ -580,7 +580,7 @@ en-GB:
         no devices: "No devices connected to your YouVersion account"
         no devices download copy: "Based on the online Bible, YouVersion, the Bible App is a free mobile Bible that can be installed on almost any mobile device. The Bible App allows users to read the Bible, share verses with their social networks, bookmark their favourite passages, and more—all in a format that keeps up with their increasingly mobile lifestyle. Visit <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> from your mobile device to download the Bible App and connect your account!"
         yes delete: "Yes, delete my account"
-        account delete success: "Your YouVersion account has been successfully deleted. We hope you continue to find meaningful ways to interact with the Bible. Some of these apps might be helpful as you move forward: <a href='https://www.bible.com/free-bible-apps' target='_self'>http://www.bible.com/free-bible-apps</a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "If you delete your account, you will permanently eliminate all of your information, history, and personalisation (such as notes, bookmarks, highlights, etc.) within Bible.com and the Bible App. This action cannot be reversed by you or by our team. If you're certain you'd like to move forward, proceed below."
         user recent activity: "%{user}'s recent activity"
         my notes: "Notes"

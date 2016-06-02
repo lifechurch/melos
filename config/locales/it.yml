@@ -580,7 +580,7 @@ it:
         no devices: "Non ci sono dispositivi associati al tuo Account YouVersion"
         no devices download copy: "Basato sulla Bibbia online, YouVersion, l'App Bibbia è una Bibbia mobile gratuita che si può installare su quasi tutti i dispositivi mobili. L'App Bibbia permette agli utenti di leggere la Bibbia, condividere dei versetti sui social network, creare dei segnalibri per i loro passi preferiti, e more—all in un formato che si adatta al loro stile di vita sempre più mobile. Visita <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> con il tuo dispositivo mobile per scaricare l'App Bibbia e associare il tuo account!"
         yes delete: "Sì, Elimina il Mio Account"
-        account delete success: "Il tuo account YouVersion è stato eliminato con successo. Speriamo che continuerai a trovare dei modi significativi per interagire con la Bibbia. Alcune di questi app potrebbero esserti d'aiuto in futuro: <a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "Abbiamo cancellato il tuo account YouVersion come hai richiesto. Ci dispiace vederti lasciarci. Speriamo sinceramente che tu possa continuare a cercare di impegnarti in modo significativo con la Parola di Dio."
         delete account description: "Se cancelli il tuo account, eliminerai in modo permanente tutte le tue informazioni, cronologia e personalizzazione (come note, segnalibri, evidenziazioni, ecc.) nell'ambito di Bible.com e l'App Bibbia. Quest'azione non può essere annullata né da te né dal nostro team. Se sei certo di voler procedere, continua sotto."
         user recent activity: "Attività recente di %{user}"
         my notes: "Note"

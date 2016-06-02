@@ -580,7 +580,7 @@ hu:
         no devices: "Nincs eszköz csatlakoztatva a YouVersion-fiókodhoz"
         no devices download copy: "Az online Bibliára alapozva a YouVersion Biblia alkalmazás egy ingyenes mobil Biblia, amit csaknem bármilyen mobil készülékre le lehet tölteni, A Biblia alkalmazás lehetővé teszi a felhasználók számára, hogy olvassák a Bibliát, megosszanak igeverseket a közösségi hálózataikon, könyvjelzőt tegyenek a kedvenc részeikhez és még sok mást; mindezt olyan módon, ami alkalmazkodik az egyre inkább mozgásban lévő életstílusukhoz. Látogass el a <a href='https://www.bible.com/app' target='_self'>bible.com/app</a>weboldalra a mobilkészülékedről, hogy letöltsd a Biblia alkalmazást és csatlakozz a fiókodhoz!"
         yes delete: "Igen, töröld a fiókom"
-        account delete success: "A YouVersion fiókod meg lett szüntetve. Reméljük, meg fogod találni a megfelelő módot, hogy kapcsolatban maradj a Bibliával. A következő alkalmazások segíthetnek a jövőben:  <a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "Ha törlöd a fiókodat, végleg el fog veszni a Bible.com és a Biblia alkalmazás által tárolt minden adatod, naplód és az általad készített megjegyzések, könyvjelzők, kiemelések, stb. Ezt a műveletet nem tudod visszavonni, és a mi csapatunk sem tud ebben segíteni. Ha biztos vagy benne, folytasd alul."
         user recent activity: "%{user} legutóbbi tevékenysége"
         my notes: "Jegyzetek"

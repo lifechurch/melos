@@ -591,7 +591,7 @@ cs:
         no devices: "K vašemu YouVersion účtu nejsou připojená žádná zařízení"
         no devices download copy: "Založeno na online Bibli YouVersion, aplikace Bible je zdarma pro mobily a může být instalována na téměř všechny mobilní telefony. Aplikace Bible umožňuje uživatelům číst Bibli, sdílet verše na sociálních sítích, zvýrazňovat oblíbené pasáže a více—vše ve formátu, který jde ruku v ruce s životním stylem uživatelů mobilních zařízení. Navštivte <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> z vašeho mobilního zařízení, stáhněte si aplikaci a připojte se k vašemu účtu!"
         yes delete: "Ano, smazat můj účet"
-        account delete success: "Váš YouVersion účet byl úspěšně vymazán. Doufáme, že budete mít stále další způsoby, jak přijít do kontaktu s Biblí. Některé z těchto aplikacích vám mohou pomoci, až budete pokračovat: <a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "Pokud smažete vás účet, dojede k trvalém odstranění všech vašich informací, historie, a personalizace (jako jsou poznámky, záložky, zvýraznění atd.) na Bible.com a v aplikaci Bible. Tuto akci již nelze vrátit zpět ani vámi, ani naším týmem. Pokud jste si opravdu jistí tím co děláte, pokračujte níže."
         user recent activity: "Nedávná aktivita uživatele %{user}"
         my notes: "Moje poznámky"
