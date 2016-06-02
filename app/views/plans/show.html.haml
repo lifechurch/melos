@@ -42,7 +42,7 @@
         %a{ "ng-click" => "showShare = !showShare", "href" => "#" }
           != t("moments.action.share")
         %div.share-panel.ng-hide{"ng-show" => "showShare"}
-          %div.video.addthis_sharing_toolbox{:data => {:url => "#{request.original_url}", :title => "#{truncate(@title, length: 160, separator: " ", omission: '')}"}}
+          %div.video.addthis_sharing_toolbox{:data => {:url => "#{request.original_url}", :title => "#{@plan.title}"}}
 
 
 %article.reading_plan_index
