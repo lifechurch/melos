@@ -39,8 +39,11 @@
       = link_to(plans_path, class: '', target: "_self") do
         != "&larr; #{t('plans.back')}"
       .right
-        = link_to(plans_path, class: '', target: "_self") do
+        %a{ "ng-click" => "showShare = !showShare", "href" => "#" }
           != t("moments.action.share")
+        %div.share-panel.ng-hide{"ng-show" => "showShare"}
+          %div.video.addthis_sharing_toolbox{:data => {:url => "#{request.original_url}", :title => "#{truncate(@title, length: 160, separator: " ", omission: '')}"}}
+
 
 %article.reading_plan_index
   - if @plan.hero_image.present?

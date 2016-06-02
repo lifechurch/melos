@@ -1102,6 +1102,16 @@ html[dir="rtl"] .plan-settings {
   a {
     font-size: 13px;
   }
+
+  .share-panel {
+    position: absolute;
+    width: 185px;
+    height: 38px;
+    z-index: 98;
+    right: -5px;
+    padding-left: 2px;
+    background-color: rgba(255,255,255,0.75);
+  }
 }
 
 article.reading_plan_index {
