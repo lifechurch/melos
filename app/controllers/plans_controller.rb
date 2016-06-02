@@ -54,7 +54,11 @@ class PlansController < ApplicationController
         @subscriptions = Subscription.all(current_user, auth: current_user.auth)
         @show_my_plans = @subscriptions.present? && @subscriptions.length > 0
         @my_saved_items = Subscription.allSavedIds(current_user)
-        @is_saved = @my_saved_items.reading_plans.include? @plan.id
+        if @my_saved_items.reading_plans.is_a? Array
+          @is_saved = @my_saved_items.reading_plans.include? @plan.id
+        else
+          @is_saved = false
+        end
       end
       
     else
