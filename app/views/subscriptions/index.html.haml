@@ -55,7 +55,7 @@
                 = image_tag(image_path('lock@2.png'), class: "subscription-privacy", title:  t("plans.privacy.private")) if sub.private
         - unless @curpage == 1 && @subscriptions.next_page.nil?
           .row.collapse.plan-paging
-            .small-4.columns.small-centered.text-center
+            .small-12.medium-4.columns.small-centered.text-center
 
               %ul.pagination{"aria-label" => "Pagination", :role => "menubar"}
 
