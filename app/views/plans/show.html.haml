@@ -37,10 +37,10 @@
     .reading_plan_index_header
       -#= link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present? && @show_my_plans
       = link_to(plans_path, class: '', target: "_self") do
-        != "&larr; Back"
+        != "&larr; #{t('plans.back')}"
       .right
         = link_to(plans_path, class: '', target: "_self") do
-          != "Share"
+          != t("moments.action.share")
 
 %article.reading_plan_index
   - if @plan.hero_image.present?

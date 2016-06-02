@@ -13,7 +13,7 @@
         .row.collapse.plan-title-row
           .columns.small-2
             = link_to(subscriptions_path(user_id: current_user.to_param), class: 'plan-back-button', target: "_self") do
-              != "&larr; Back"
+              != "&larr; #{t('plans.back')}"
           .column.small-8.end.text-center
             - if @completedList
               .plan-completed-title

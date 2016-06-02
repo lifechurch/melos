@@ -69,6 +69,22 @@ class SubscriptionsController < ApplicationController
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
+  def saveForLater
+    @subscription = Subscription.saveForLater(params[:plan_id], auth: current_auth)
+    respond_to do |format|
+      format.json { render json: { success: @subscription.valid? } }
+      format.any { render nothing: true }
+    end
+  end
+
+  def removeSaved
+    @subscription = Subscription.removeSaved(params[:plan_id], auth: current_auth)
+    respond_to do |format|
+      format.json { render json: { success: @subscription.valid? } }
+      format.any { render nothing: true }
+    end
+  end
+
   def destroy
     @subscription.destroy
     flash[:notice] = t("plans.unsubscribe successful")

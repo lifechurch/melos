@@ -187,6 +187,8 @@ YouversionWeb::Application.routes.draw do
 
   get "/users/:user_id/completed-reading-plans",  to: "subscriptions#completed"
   get "/users/:user_id/saved-reading-plans",      to: "subscriptions#saved"
+  post "/users/:user_id/reading-plans/save-for-later", to: "subscriptions#saveForLater"
+  post "/users/:user_id/reading-plans/remove-saved", to: "subscriptions#removeSaved"
 
   # featuredplans.youversion.com use this link.
   # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
