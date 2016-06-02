@@ -11,4 +11,43 @@
             %option{value: 'en', selected: 'en'.eql?(current_locale.to_s)} English
             - sorted_locales.each do |k, v|
               - next if k.eql?('en')
-              %option{value: k, selected: k.eql?(current_locale.to_s)}= v
+              - case k
+              - when 'ar'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Arabic)'
+              - when 'bg'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Bulgarian)'
+              - when 'cs'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Czech)'
+              - when 'el'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Greek)'
+              - when 'fa'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Farsi)'
+              - when 'hi'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Hindi)'
+              - when 'ja'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Japanese)'
+              - when 'km'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Khymer)'
+              - when 'ko'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Korean)'
+              - when 'mk'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Macedonian)'
+              - when 'mn'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Mongolian)'
+              - when 'my'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Burmese)'
+              - when 'ru'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Russian)'
+              - when 'ta'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Tamil)'
+              - when 'th'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Thai)'
+              - when 'uk'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Ukrainian)'
+              - when 'zh-CN'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Simplified Chinese)'
+              - when 'zh-TW'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Traditional Chinese)'
+              - else
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v
+
