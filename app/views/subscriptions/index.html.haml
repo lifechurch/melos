@@ -60,10 +60,10 @@
               %ul.pagination{"aria-label" => "Pagination", :role => "menubar"}
 
                 %li.arrow{"aria-disabled" => (@curpage <= 1 ? 'true' : nil), "class" => (@curpage <= 1 ? 'unavailable' : nil)}
-                  %a{:href => "#{request.path}?page=#{@curpage - 1}", :target => "_self", :disabled => (@curpage <= 1 ? 'true' : nil)} &laquo; Previous
+                  %a{:href => "#{request.path}?page=#{@curpage - 1}", :target => "_self", :disabled => (@curpage <= 1 ? 'true' : nil)}!= "&laquo; #{t('plans.previous')}"
 
                 %li.arrow.right{"aria-disabled" => (@subscriptions.next_page.nil? ? 'true' : nil), "class" => (@subscriptions.next_page.nil? ? 'unavailable' : nil)}
-                  %a{:href => "#{request.path}?page=#{@subscriptions.next_page}", :target => "_self", :disabled => (@subscriptions.next_page.nil? ? 'true' : nil)} Next &raquo;
+                  %a{:href => "#{request.path}?page=#{@subscriptions.next_page}", :target => "_self", :disabled => (@subscriptions.next_page.nil? ? 'true' : nil)}!= "#{t('plans.next')} &raquo;"
 
   .row.collapse
     .columns.large-8.medium-8.medium-centered.subscription-actions
