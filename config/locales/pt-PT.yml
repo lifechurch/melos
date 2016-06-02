@@ -1,77 +1,77 @@
 ---
-pt-PT: 
-    time: 
-        formats: 
+pt-PT:
+    time:
+        formats:
             votd: "%-d %B %Y"
-    datetime: 
-        time_ago_in_words: 
-            about_x_hours: 
+    datetime:
+        time_ago_in_words:
+            about_x_hours:
                 one: "há uma hora atrás"
                 other: "há %{count} horas atrás"
-            about_x_months: 
+            about_x_months:
                 one: "há um mês atrás"
                 other: "há %{count} meses atrás"
-            about_x_years: 
+            about_x_years:
                 one: "há um ano atrás"
                 other: "há %{count} anos atrás"
-            almost_x_years: 
+            almost_x_years:
                 one: "há quase um ano atrás"
                 other: "há quase %{count} anos atrás"
             half_a_minute: "há meio minuto atrás"
-            less_than_x_minutes: 
+            less_than_x_minutes:
                 one: "há menos de um minuto atrás"
                 other: "há menos de %{count} minutos atrás"
-            less_than_x_seconds: 
+            less_than_x_seconds:
                 one: "a menos de um segundo atrás"
                 other: "há menos de %{count} segundos atrás"
-            over_x_years: 
+            over_x_years:
                 one: "há mais de um ano atrás"
                 other: "há mais de %{count} anos atrás"
-            x_days: 
+            x_days:
                 one: "há um dia atrás"
                 other: "há %{count} dias atrás"
-            x_minutes: 
+            x_minutes:
                 one: "há um minuto atrás"
                 other: "há %{count} minutos atrás"
-            x_months: 
+            x_months:
                 one: "há um mês atrás"
                 other: "há %{count} meses atrás"
-            x_seconds: 
+            x_seconds:
                 one: "há um segundo atrás"
                 other: "%{count}há segundos atrás"
-    counter: 
+    counter:
         format: "999 999 999"
-    social: 
-        intro page: 
+    social:
+        intro page:
             main heading: "Conversa & Descoberta"
             main description: "Uma nova forma de explorar a Bíblia com amigos de confiança"
-            moment: 
+            moment:
                 user aaron: "Álvaro Ferro"
                 user andy: "André Guerreiro"
                 timestamp: "5 dias atrás"
                 title: "marcou Salmos 31:7"
                 verse: "Eu me alegrarei e regozijarei na tua benignidade, pois consideraste a minha aflição; conheceste a minha alma nas angústias."
                 reference: "Salmos 31:7"
-                discover: 
+                discover:
                     copy: "Descubra e aprenda como os seus amigos à medida que eles destacam, marcam e adicionam notas."
                     button: "Por onde posso começar?"
-                share: 
+                share:
                     copy: "Partilhe conversas honestas a respeito das Escrituras."
                     button: "Comece por procurar alguns amigos."
-                likes: 
+                likes:
                     info: "e mais 4 gostam disto"
-                comments: 
-                    first: 
+                comments:
+                    first:
                         text: "Precisava mesmo de ouvir isso hoje, obrigado. Devíamos pôr a conversa em dia!"
                         time: "cerca de 3 horas atrás"
-                    second: 
+                    second:
                         text: "Amém, eu também. Estou a enviar-te um email agora mesmo."
                         time: "cerca de 27 minutos atrás"
                     field placeholder: "Escreva um comentário..."
-        widget: 
+        widget:
             timeline: "Cronologia"
             no activity yet: "Ainda não houve qualquer atividade."
-        moment: 
+        moment:
             read all: "Ler tudo"
             read less: "Ler menos"
         share: "Partilhar"
@@ -80,18 +80,18 @@ pt-PT:
         connected as: "Está associado ao %{connection} como %{username}."
         remove connection: "Remova esta conexão"
         connection friends: "Aqui estão alguns utilizadores do YouVersion aos quais está ligado no %{connection}:"
-        errors: 
+        errors:
             no friends: "Ainda nenhum dos seus amigos %{connection} aparenta estar a usar o YouVersion."
             reset connection: "Desculpe, ocorreu um erro. Por favor remova e volte a efetuar esta associação."
-        email: 
+        email:
             name: "Email"
-        twitter: 
+        twitter:
             name: "Twitter"
-        facebook: 
+        facebook:
             name: "Facebook"
-            errors: 
+            errors:
                 expired access: "O seu acesso através do Facebook caducou. Por favor remova a ligação e reconecte ao Facebook."
-    api: 
+    api:
         users agree bool: "Para se registar e criar uma conta, deve concordar com os Termos e Condições."
         users confirm password matches: "As novas palavras-passe não coincidem."
         users email email: "O endereço de email não é válido."
@@ -114,26 +114,26 @@ pt-PT:
         users last name required: "Deverá inserir o seu sobrenome."
         moments content required: "O conteúdo não pode estar em branco"
         users auth password required: "Deverá inserir uma palavra-passe."
-    meta: 
+    meta:
         best kids app: "Melhor app para crianças!"
         best educational app: "Melhor app educativa"
-        kids_app: 
+        kids_app:
             title: "The Bible App for Kids"
             description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
-        100million: 
+        100million:
             title: "Tem Início nos 100 Milhões"
             description: "A App da Bíblia já foi instalada quase 100 milhões de vezes - um marco incrível! Mas estamos apenas a começar. Descarregue a App da Bíblia grátis - e depois partilhe-a com os seus amigos. Vamos fazer história juntos."
-        mobile: 
+        mobile:
             title: "A App da Bíblia"
             description: "Leia a Palavra de Deus em qualquer altura e lugar usando a App da Bíblia do YouVersion. Partilhe a Escritura com amigos, destaque e coloque marcadores em passagens, e crie um hábito diário com os planos da Bíblia. Disponível para iOS, Android, Blackberry, Windows Phone e mais."
             download or read: "Faça download ou leia online."
-        site: 
+        site:
             title: "Bible.com"
             description: "Traga a beleza e verdade da Bíblia para a sua vida quotidiana. Com a App da Bíblia do YouVersion, pode ler, ver, ouvir e partilhar no seu smartphone ou tablet e também online no Bible.com."
-        connections: 
-            index: 
+        connections:
+            index:
                 title: "Contas Associadas"
-    kids: 
+    kids:
         bible app: "A App da Bíblia"
         for: "for"
         kids: "kids"
@@ -156,7 +156,7 @@ pt-PT:
         feature 3: "Colorful illustrations with touch-activated animations"
         feature 4: "Games and activities help kids remember what they learn"
         feature 5: "Kid-friendly navigation"
-        share: 
+        share:
             tell friends: "Tell your friends about the Bible App for Kids."
             facebook name: "The Bible App for Kids"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
@@ -167,11 +167,11 @@ pt-PT:
             email: "Email"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
-        partner: 
+        partner:
             youversion: "YouVersion: The world’s most popular Bible App"
             in partnership: "in partnership with"
             one hope: "One Hope: Extraordinary Bible content for Kids"
-        links: 
+        links:
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
             google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
@@ -196,8 +196,8 @@ pt-PT:
     new note: "Criar Nota"
     share success: "A sua mensagem foi partilhada."
     share error: "Desculpe, aconteceu um erro a partilhar a sua mensagem. Por favor tente novamente."
-    share: 
-        request: 
+    share:
+        request:
             no_twitter_connection: "Ainda não tem nenhuma conta de Twitter associada. Por favor, conecte a sua conta na página de configurações."
             no_facebook_connection: "Ainda não tem nenhuma conta de Facebook associada. Por favor, conecte a sua conta na página de configurações."
     google plus: "Google+"
@@ -292,7 +292,7 @@ pt-PT:
     groups: "Grupos"
     mobile: "Aplicações móveis"
     live: "Ao Vivo"
-    events: 
+    events:
         events: "Eventos"
     first page: "Primeira Página"
     last page: "Última Página"
@@ -309,16 +309,16 @@ pt-PT:
     traditional: "Tradicional"
     alphabetic: "Alfabético"
     versions title: "Versões"
-    languages: 
+    languages:
         title: "Traduções e Idiomas da Bíblia"
         most popular: "Idiomas mais utilizados"
         additional: "Idiomas adicionais"
         download language: "Faça download da Bíblia em %{language_name}"
         bible in: "A Bíblia em %{language_name}"
-    or: 
+    or:
         lower: "ou"
         upper: "OU"
-    moments: 
+    moments:
         scripture unavailable: "Escritura indisponível"
         could not load: "Não foi possível carregar"
         could not load verse: "Não foi possível carregar o versículo"
@@ -332,8 +332,8 @@ pt-PT:
         users like this: "%{last_liker_link} e %{more_link} gostam disto"
         like: "Gosto"
         likes: "Gostos"
-        more than one like: 
-        vod: 
+        more than one like:
+        vod:
             title: "Versículo do dia"
             get daily email: "Receber e-mail diário"
             subscribe: "Subscrever"
@@ -342,16 +342,16 @@ pt-PT:
             version: "Versão"
             view more: "Ver mais"
             time: "Tempo"
-        friendship: 
+        friendship:
             now friends: "Você é agora amigo/a de"
-        cta: 
+        cta:
             profile update text: "Ajude os seus amigos a encontrá-lo/a."
             profile update button: "Atualize o seu perfil"
             sharing text: "Partilhe versículos nas redes sociais"
             sharing button: "Permitir partilha"
             friends text: "Veja os momentos dos seus amigos na Bíblia."
             friends button: "Encontre amigos"
-        action: 
+        action:
             go to scripture: "Ir para as Escrituras"
             add friend button: "Adicionar amigo"
             load more: "Carregar mais"
@@ -379,40 +379,40 @@ pt-PT:
             read plan: "Ler"
             about plan: "Sobre o plano"
             start plan: "Iniciar plano"
-    notifications: 
+    notifications:
         title: "Notificações"
         none: "Ainda não tem nenhuma notificação"
         no new: "Sem novas notificações"
         view all: "Ver todas as notificações"
-    likes: 
+    likes:
         create success: "O seu \"Gosto\" foi gravado com sucesso!"
         create failure: "Não foi possível gravar o seu \"gosto\""
         destroy success: "\"Gosto\" eliminado"
         destroy failure: "Não foi possível eliminar o seu \"gosto\""
-    comments: 
+    comments:
         view all N: "Ver todos os %{count} comentários"
         post comment: "Adicionar comentário"
         create success: "O seu comentário foi publicado com sucesso."
         create failure: "O comentário não pôde ser publicado"
         destroy success: "Comentário eliminado"
         destroy failure: "Não foi possível eliminar o comentário"
-        form: 
+        form:
             save button: "Enviar"
-    friends: 
+    friends:
         you have N friends: "Você tem %{count} amigos(as)"
         none me: "Partilhe os seus momentos na Bíblia tais como os marcadores, os destaques e notas com os seus amigos mais próximos e a sua família."
         find friends: "Encontre amigos"
-        blank slate: 
+        blank slate:
             heading: "Atualmente não são amigos"
             description: "Tem que ser amigo desta pessoa para poder ver os seus amigos."
         limit notice: "Pode ter no máximo 150 amizades"
         limit description: "Limitar as suas amizades na App da Bíblia às pessoas que conhece bem cria um ambiente para conversas honestas e partilha de descobertas com amigos de confiança."
-    friendships: 
+    friendships:
         name required: "Para experimentar a Bíblia com os seus amigos, atualize o seu Perfil com o seu primeiro e último nome."
         find friends title: "Encontre amigos"
         search by name: "Procurar por nome"
         search button: "Ir"
-        widget: 
+        widget:
             find friends title: "Encontre amigos"
             search by name: "Procurar por nome"
             search button: "Ir"
@@ -426,12 +426,12 @@ pt-PT:
         requests view all: "Ver todos os pedidos de amizade"
         requests none: "Não tem nenhum pedido de amizade"
         requests no new: "Sem novos pedidos"
-        status: 
+        status:
             pending: "Solicitação pendente"
             friends: "Amigos"
         user wants friendship: "%{user} deseja ser seu amigo(a)"
         user wants friendship partial: "deseja ser seu amigo(a)"
-        form: 
+        form:
             remove friend button: "Eliminar amizade"
             remove friend button title: "Eliminar esta pessoa da sua lista de amizades"
             add friend button: "Adicionar amigo"
@@ -441,24 +441,24 @@ pt-PT:
             accept request button: "Aceitar o pedido"
             ignore button: "Recusar"
             ignore request button: "Rejeitar pedido"
-    images: 
+    images:
         none user: "%{username} ainda não criou nenhuma imagem."
-        blank slate: 
+        blank slate:
             heading: "Ainda não tem imagens."
             description: "Use a app do YouVersion para criar imagens de versículo."
-    notes: 
+    notes:
         none user: "%{username} ainda não tem notas criadas."
-        blank slate: 
+        blank slate:
             heading: "Ainda não tem nenhuma nota"
             description: "À medida que lê a Bíblia, quando sentir a voz meiga e gentil de Deus a falar consigo pode anotar rapidamente esses pensamentos aqui. As suas notas, por predefinição ficarão marcadas como <em>privadas</em> . Se quiser partilhar uma nota com os seus amigos, simplesmente abra-a e altere-a para <em>pública</em>."
-        form: 
+        form:
             title field: "Título:"
             content field: "Conteúdo:"
             highlight field: "Destaque: (opcional)"
             reference field: "Referência(s):"
             status field: "Estado:"
             save button: "Guardar"
-        status: 
+        status:
             private: "Privado"
             public: "Público"
             friends: "Apenas amigos"
@@ -497,7 +497,7 @@ pt-PT:
         destroy success: "Nota eliminada"
         destroy failure: "Erro ao remover a nota"
         update success: "Nota atualizada"
-    ref: 
+    ref:
         loading secondary: "A Carregar a Referência na Versão Secundária..."
         clear verses: "Limpar Versículos Selecionados"
         choose book and chapter: "Escolha o Livro + Capítulo"
@@ -519,7 +519,7 @@ pt-PT:
         no secondary version text: "%{language_name} apenas disponibiliza uma versão, por isso não conseguimos escolher uma versão secundária para si. Por favor escolha uma versão secundária para comparação paralela."
         select another chapter: "Escolha um capítulo diferente"
         view in reader: "Ver a %{reference} no Leitor"
-    users: 
+    users:
         unverified heading: "Quase Terminado!"
         unverified message: "Parece que está a tentar autenticar-se com uma conta cujo processo de configuração não foi terminado. Precisa de cumprir mais um passo: clique simplesmente no link de verificação presente no email de confirmação enviado pelo YouVersion. Não o consegue localizar? Verifique a sua pasta de spam ou <a href='%{resend_path}' target='_self'>reenvie o email de confirmação</a>."
         settings: "Definições"
@@ -618,7 +618,7 @@ pt-PT:
         resend confirmation title: "Não recebeu o seu email de confirmação?"
         resend confirmation copy: "Digite em baixo o endereço de email que usou para se registar e iremos enviar um novo email de confirmação."
         resend confirmation button: "Reenviar Confirmação"
-        privacy: 
+        privacy:
             policy: "%{youversion} Política de Privacidade"
             intro: "O YouVersion – website e App, possuído e operado pela Life.Church, reconhece a sua preocupação relativamente aos seus dados pessoais e como são usados e partilhados. Pretendemos que as declarações que se seguem o ajudem a compreender a maneira como o YouVersion recolhe, usa e protege a informação pessoal que você nos fornece na nossa página da internet ou na app.   "
             translation disclaimer: "As políticas de privacidade foram traduzidas para a sua comodidade, contudo, a Life.Church não garante a precisão e exactidão da tradução.  Caso sejam encontradas diferenças entre a tradução e a versão original em Inglês, será considerada sempre a versão inglesa."
@@ -647,7 +647,7 @@ pt-PT:
             enforcement text: "A Life.Church revê periodicamente a sua conformidade com esta Política de Privacidade. Quando recebemos reclamações formais por escrito sobre questões de privacidade, é nossa política contactar o utilizador que reclamou sobre as suas preocupações. Iremos cooperar com as autoridades reguladoras, inclusivamente autoridades locais de proteção de dados, para solucionar qualquer queixa referente à transferência de dados pessoais que não possa ser resolvida entre a Life.Church e o indivíduo."
             questions title: "Esclarecimentos"
             questions text: "Quaisquer questões relacionadas com o regulamento de privacidade podem ser direccionadas para: legal@youversion.com"
-        terms: 
+        terms:
             title: " Termos de Uso"
             translation disclaimer: "Os termos de uso foram traduzidos para sua conveniência; no entanto, a Life.Church não dá nenhuma garantia ou representação em relação à precisão da tradução. Se forem encontrados quaisquer discrepâncias entre o Inglês e a versão traduzida, a versão em Inglês prevalecerá."
             acceptance title: " Aceitação dos Termos"
@@ -696,8 +696,8 @@ pt-PT:
             copyright text: "A Life.Church respeita a propriedade intelectual dos outros. Pedimos aos nossos utilizadores que façam o mesmo, especialmente no que se refere ao uso do YouVersion. A Life.Church pode, em circunstâncias adequadas e a seu exclusivo critério, desativar e/ou cancelar as contas de utilizadores que sejam considerados infratores reincidentes.  Caso suspeite que o seu trabalho foi copiado de uma forma que constitua violação de direitos de autor ou que os seus direitos de propriedade intelectual foram violados, por favor envie a seguinte informação para legal@youversion.com:<ul type='none'><li>Uma assinatura física ou digital da pessoa autorizada a agir em nome do proprietário do direito de autor ou outro interesse de propriedade intelectual em questão;</li><br><li>Uma descrição do trabalho com direitos de autor ou outra propriedade intelectual que alega ter sido violado; </li><br><li>Uma descrição da localização no Youversion onde alegadamente se encontra o material infrator;</li><br><li>A sua morada, número de telefone e endereço de e-mail (todas que se aplicam);</li><br><li>Uma declaração escrita por si afirmando que acredita de boa fé que o uso contestado não está autorizado pelo proprietário dos direitos de autor, o seu agente ou pela lei;</li><br><li>Uma declaração escrita por si, feita sob pena de perjúrio, que as informações descritas acima são correctas e que você é o autor ou proprietário da propriedade intelectual, ou que está autorizado a agir em nome do dono dos direitos de autor ou propriedade intelectual. O funcionário da Life.Church para Notificação de Reclamações de Direitos de Autor ou outra violação de propriedade intelectual pode ser contatado da seguinte forma:%{newline}Pelo Correio: Life.Church c/o - Contracts Coordinator%{newline}4600 E. 2nd Street Edmond, OK 73034 USA%{newline}Telefone:  +1 (405) 680-5433%{newline}Fax: +1 (405) 844-3002%{newline}Email: %{mailto_link}</li></ul>"
             general title: "Informação Geral"
             general text: "Entire Agreement. This TERMS OF USE constitutes the entire agreement between you and Life.Church and governs your use of YouVersion, superseding any prior agreements between you and Life.Church with respect to YouVersion. You also may be subject to additional terms and conditions.<br><br>Choice of Law and Forum. The TERMS OF USE and the relationship between you and Life.Church shall be governed by the laws of the State of Oklahoma without regard to conflict of law provisions. You and Life.Church agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Oklahoma County, Oklahoma.<br><br>Waiver and Severability of Terms. The failure of Life.Church to exercise or enforce any right or provision of these TERMS OF USE shall not constitute a waiver of such right or provision. If any provision of these TERMS OF USE is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of these TERMS OF USE remain in full force and effect.<br><br>No Right of Survivorship and Non-Transferability. You agree that your Life.Church account is non-transferable, and any rights to your Life.Church ID or contents within your account terminate upon your death. Upon receipt of a copy of a death certificate, Life.Church may terminate your account and permanently delete all contents therein.<br><br>Statute of Limitations. You understand and agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of YouVersion or these TERMS OF USE must be filed within one (1) year after such claim or cause of action arose or be forever barred.<br><br>The section titles within these TERMS OF USE are for convenience only and have no legal or contractual effect."
-        profile: 
-            blank slate: 
+        profile:
+            blank slate:
                 heading: "Siga em frente, não há nada para ver aqui (por agora)"
                 description: "Comece a envolver-se com a Bíblia e a interagir com os seus amigos e esta página mostrará esse histórico."
             visit friend: "Visite o perfil de %{friend}"
@@ -737,11 +737,11 @@ pt-PT:
             edit: "Editar"
             bio: "Biografia"
             complete_first_last: "Complete o seu perfil preenchendo o seu nome e sobrenome"
-        password: 
+        password:
             updated: "Atualizou a sua palavra-passe com sucesso!"
             error: "Desculpe, houve um erro na alteração da sua palavra-passe."
             old was invalid: "Desculpe, tem de introduzir a sua antiga palavra-passe corretamente para poder alterar a palavra-passe."
-        notifications: 
+        notifications:
             badges: "Notificar-me sobre medalhas que tenha ganho."
             follower: "Notificar-me quando alguém me segue."
             newsletter: "Manter-me atualizado sobre anúncios YouVersion."
@@ -754,7 +754,7 @@ pt-PT:
             moments: "Notifiquem-me sobre atividades de amigos"
             comments: "Notifiquem-me sobre comentários à minha atividade"
             likes: "Notifiquem-me sobre gostos à minha atividade"
-    bookmarks: 
+    bookmarks:
         new: "Novo Marcador"
         edit: "Editar"
         delete: "Apagar este Marcador"
@@ -785,10 +785,10 @@ pt-PT:
         color: "Cor:"
         version field: "Versão:"
         none user: "%{username} não tem marcadores"
-        blank slate: 
+        blank slate:
             heading: "Marque versículos com significado para si"
             description: "Enquanto lê a Bíblia, selecione um versículo e crie um marcador. Volte aqui para ver, editar, ou apagar o seu marcador."
-        form: 
+        form:
             title field: "Título:"
             reference field: "Referência:"
             labels field: "Etiquetas (separadas por vírgula):"
@@ -796,16 +796,16 @@ pt-PT:
             colors field: "Cor:"
             update button: "Atualizar marcador"
             save button: "Guardar marcador"
-    badges: 
+    badges:
         earned a badge: "Ganhou uma Medalha"
         user badges: "Medalhas de %{user}"
         earned date: "Ganha por %{username} há %{ago} atrás"
         none me: "Ainda não ganhou nenhuma medalha."
         none user: "%{username} ainda não ganhou qualquer medalha."
-    plans: 
+    plans:
         bible plan language: "Idioma do Plano de Leitura da Bíblia"
         share plan: "Veja este #planodeleitura do @YouVersion: %{plan_title}"
-        widget: 
+        widget:
             my plans: "Os meus planos"
             start reading: "Começar a ler"
             view my plans: "Ver os meus planos"
@@ -814,18 +814,18 @@ pt-PT:
             reading: "pessoa a ler"
             readings: "pessoas a ler"
             readings 5 or more: "pessoas a ler"
-        stats: 
-            friends reading: 
+        stats:
+            friends reading:
                 one: "%{count} amigo aderiu a este plano"
                 other: "%{count} amigos aderiram a este plano"
-            friends completed: 
+            friends completed:
                 one: "%{count} amigo concluiu este plano"
                 other: "%{count} amigos concluíram este plano"
             total completions: "Mais de %{count} planos concluídos"
             view all: "Ver todos os planos"
             close: "Fechar"
         settings: "Definições"
-        privacy: 
+        privacy:
             visible to friends?: "Deseja que os seus amigos vejam a sua atividade dos Planos?"
             private: "Privado"
             public: "Público"
@@ -893,7 +893,7 @@ pt-PT:
         catch me up: "Ficar em Dia"
         restart description: "Pode recomeçar o seu plano. O historial de leitura e progresso será apagado e voltará ao inicio."
         restart: "Recomeçar Plano"
-        privacy description: 
+        privacy description:
             private: "O seu plano é privado. Mude a sua definição para \"Apenas amigos\" para partilhar a atividade do seu plano com amigos."
             public: "O seu plano é visível pelos amigos. Mude para privado para tornar a atividade do seu plano privada."
         make private: "Marcar como Privado"
@@ -942,32 +942,32 @@ pt-PT:
         completed notice: "Parabéns! Completou o seu plano de leitura."
         exit: "Sair"
         loading sidebar content: "A carregar os conteúdos da barra lateral..."
-    videos: 
+    videos:
         title: "Vídeos"
         watch videos: "Veja videos Bíblicos"
         all: "Todos os vídeos"
         related scripture: "Escrituras Relacionadas"
         share video: "Eu estou a assistir %{video_title} no @YouVersion."
-    licenses: 
-        authorized: 
+    licenses:
+        authorized:
             heading: "O seu conteúdo foi autorizado"
             description: "Poderá  <a href='%{content_link}' target='_self'>visualizar o conteúdo</a> de %{vendor} adquirido no Youversion!"
         has errors: "Foram encontrados erros no seu pedido:"
-        confirm: 
+        confirm:
             email: "Para autorizar o conteúdo adquirido, por favor procure na sua caixa de email por um email de confirmação enviado pelo YouVersion e clique no link para confirmar o seu registo."
-        request: 
+        request:
             invalid_vendor_signature: "A validação da licença falhou: assinatura do fornecedor inválida"
             invalid_vendor_id: "A validação da licença falhou: ID do fornecedor inválido"
             invalid_item_ids: "A validação da licença falhou: itens inválidos"
-        vendor_transaction_id: 
+        vendor_transaction_id:
             duplicate: "ID da transação: Esta transação já foi registada"
-        auth: 
+        auth:
             login notice: "Para validar o conteúdo adquirido, por favor efectue login na sua conta YouVersion ou em <a href='/sign-up?source=licenses' target='_self'>%{signup}</a>."
             signup notice: "Para validar o conteúdo adquirido, por favor registe-se gratuitamente no YouVersion ou<a href='/sign-in?source=licenses' target='_self'>%{login}</a> caso já possua uma conta."
             signup link text: "registe-se gratuitamente"
             login link text: "Iniciar sessão"
-    registration: 
-        placeholder: 
+    registration:
+        placeholder:
             email: "Insira o seu endereço de email"
             username: "Insira o seu nome de utilizador"
             password: "Insira a sua palavra-passe"
@@ -981,14 +981,14 @@ pt-PT:
         share blurb: "Parece que quer partilhar as Escrituras. Ótimo! Poderá partilhar as Escrituras através do Facebook ou Twitter. Entre ou crie uma conta em baixo para começar!"
         highlight blurb: "Parece que pretende destacar texto das escrituras. Ótimo! Destaques ajudam a organizar e manter ordenados os seus versículos favoritos. Autentique-se ou crie uma conta em baixo e comece já!"
         note blurb: "Parece que pretende criar uma nota sobre um texto das escrituras. Boa ideia! Notas ajudam a lembrar e organizar a verdade que descobre na Palavra de Deus. Autentique-se ou crie uma conta em baixo e comece já!"
-    audio: 
+    audio:
         none: "Desculpe, mas o áudio não está disponível nesta versão."
         chapter only: "Desculpe, não está disponível áudio para os versículos. Verifique no leitor a opção áudio do capítulo."
         close player menu: "Fechar"
         publisher website: "Website do editor"
-    highlights: 
+    highlights:
         title: "Destaques"
-        blank slate: 
+        blank slate:
             heading: "Destaque versículos com significado para si"
             description: "Enquanto lê a Bíblia, selecione um versículo e crie um destaque. Volte aqui para ver, editar, ou apagar o seu destaque."
         none user: "%{username} não tem destaques"
@@ -999,9 +999,9 @@ pt-PT:
         destroy failure: "Erro ao apagar destaque"
         creation error: "Desculpe, não foi possível destacar."
         delete error: "Desculpe, não foi possível remover o destaque."
-        form: 
+        form:
             save button: "Guardar Destaque"
-    searching: 
+    searching:
         bible: "Bíblia"
         plans: "Planos"
         users: "Utilizadores"
@@ -1010,7 +1010,7 @@ pt-PT:
         suggestion html: "Pretendeu dizer %{suggestion_link}?"
         all versions: "Todas as Versões em %{language_name}"
         results for: "Resultados da pesquisa para: "
-    donate: 
+    donate:
         donate now: "Contribua Agora."
         donate now intl: "ou doe internacionalmente"
         enter amount: "Introduza um montante"
@@ -1039,7 +1039,7 @@ pt-PT:
         state: "Estado"
         zip: "Código Postal"
         creation form errors: "O(s) seguinte(s) erro(s) não permite(m) efetuar a doação:"
-    download ad: 
+    download ad:
         title: "Transfira Gratuitamente a App da Bíblia"
         description copy: "Centenas de versões em mais de %{language_count} línguas diferentes - a Bíblia que vai consigo para todo o lado."
         meta copy title: "Transfira Gratuitamente a App da Bíblia"
@@ -1051,11 +1051,11 @@ pt-PT:
         banner title: "A App da Bíblia"
         banner action: "Transferir"
         banner open: "Abrir"
-    download bafk ad: 
+    download bafk ad:
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
         download: "Download Now"
-    about page: 
+    about page:
         relevancy: "Relevância"
         relevancy copy: "Nas gerações anteriores, o acesso que as pessoas tinham à Bíblia era muito limitado. Hoje isso já não acontece. Todavia, muitas pessoas que têm acesso à Bíblia acham que a sua mensagem não diz respeito às suas vidas. Ao mesmo tempo, existem outras pessoas que acreditam que existe uma ligação entre a Bíblia e as suas experiências diárias."
         information revolution: "Revolução da Informação"
@@ -1068,7 +1068,7 @@ pt-PT:
         learn more: "Saiba mais"
         bible dot com title: "O que aconteceu ao antigo website Bible.com?"
         bible dot com copy: "Se procura por conteúdo do Ministério Christ Unlimited de Bud e Betty Miller, ou o antigo website Bible.com, por favor visite o seu novo website em <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
-    press page: 
+    press page:
         title: "Área de Imprensa"
         contact header: "Informação de Contacto para Imprensa"
         contact header 2: "Pela Internet"
@@ -1081,13 +1081,13 @@ pt-PT:
         lead copy: "Baseada na Bíblia on-line Bible.com, a App da Bíblia é uma Bíblia online gratuita que pode ser instalada em praticamente qualquer smartphone. A App da Bíblia permite aos utilizadores lerem a Bíblia, partilhar versículos nas suas redes sociais, marcar as suas passagens favoritas e mais — tudo num formato que acompanha um estilo de vida cada vez mais móvel."
         resources title: "Recursos para Imprensa"
         now title: "Hoje na Comunidade YouVersion"
-        resources: 
+        resources:
             now: "Uma vista em tempo real do empenho e os últimos dados"
             about: "Sobre YouVersion e a App da Bíblia"
             history: "História e Estatísticas YouVersion"
             manual: "Manual da Marca YouVersion"
         images title: "Logótipos e Imagens YouVersion"
-        images: 
+        images:
             logos: "Pacote de Logótipos YouVersion"
             icons: "Ícones da App da Bíblia"
             infographic: "Infografia: Uso e Estatísticas YouVersion"
@@ -1095,7 +1095,7 @@ pt-PT:
             lifestyle: "Coleção de Imagens: Lifestyle"
             screencast: "Gravações YouVersion"
         links title: "Cobertura nos Meios de Comunicação"
-    mobile page: 
+    mobile page:
         h2: "A Palavra de Deus está consigo."
         h3: "YouVersion é Global"
         h3 sub: "Disponível em mais de %{language_count} línguas em todo o mundo."
@@ -1140,44 +1140,44 @@ pt-PT:
         sms info: "Você receberá um SMS para fazer download da app"
         sms download: "Faça clique para fazer o download da App da Bíblia:"
         sms default country: "PT"
-    pages: 
-        generic_error: 
+    pages:
+        generic_error:
             title: "Oops!"
             explanation: "Algo correu mal nos bastidores! Pode tentar novamente actualizando a página, pedimos desculpa pelo inconveniente!"
             our action: "Fomos notificados desta ocorrência e iremos tratar dela assim que for possível."
-        home: 
+        home:
             heading: "Obtenha uma  Bíblia gratuita para o seu telefone, tablet ou computador."
             cta: "Leia a Bíblia  Agora"
-            experience: 
+            experience:
                 title: "Experimente em qualquer lugar"
                 body: "Escolha entre mais de 1200 versões da Bíblia em mais de 900 idiomas para ler no seu computador, telefone ou tablet -- com muitas versões disponíveis como Bíblias em audio."
                 action: "Ver Versões da Bíblia"
-            make_yours: 
+            make_yours:
                 title: "Faça dela a sua Bíblia"
                 body: "Destaque ou crie marcadores dos seus versículos preferidos, crie Images de Versículos que pode partilhar, e adicione Notas públicas ou privadas às passagens Bíblicas."
                 action: "Criar a sua Conta Gratuita"
-            install_now: 
+            install_now:
                 title: "Instale agora a App"
                 body: "A App da Bíblia é completamente gratuita, sem publicidade e sem a necessidade de efectuar qualquer compra. Já foi instalada nesta quantidade de dispositivos (até agora):"
                 action: "Transfira Gratuitamente a App da Bíblia"
-            free_plans: 
+            free_plans:
                 title: "Planos e Devocionais Gratuitos de Leitura da Bíblia"
                 body: "Planos de Leitura ajudam-no a envolver-se com a Palavra de Deus todos os dias, um pouco de cada vez."
             browse_plans: "Procurar Planos"
             read_listen: "Ler, Ouvir, Ver, Partilhar"
             start_now: "Comece agora"
-            votd: 
+            votd:
                 title: "Versículo do dia"
                 highlight_bookmark: "Destaque, crie um Marcador, ou partilhe este versículo"
                 subscribe: "Subscrever o Versículo do Dia"
-            hero: 
+            hero:
                 heading: "Uma Bíblia gratuita no seu telefone, tablet e pc."
                 description: "A YouVersion é uma Bíblia simples, sem publicidade, que traz a Palavra de Deus à sua vida diária."
                 learn more: "saber mais"
                 start reading: "Começar a ler"
                 skip in future: "No futuro saltar esta página"
                 now skipped: "Não acederá mais a esta página"
-            features: 
+            features:
                 read heading: "Leia a Bíblia."
                 read description: "Faça a sua escolha a partir de <a href='%{versions_path}' target='_self'>centenas de versões da Bíblia em múltiplos idiomas</a>. Compare duas versões em paralelo. Pode até escolher o tamanho e o tipo de fonte. Desfrute da leitura online da Bíblia da maneira mais conveniente para si."
                 study heading: "Estude a Bíblia."
@@ -1191,11 +1191,11 @@ pt-PT:
             download action: "Transfira a App da Bíblia"
             download description: "Transfira gratuitamente a App da Bíblia no seu dispositivo móvel e terá a Palavra de Deus consigo em qualquer lugar."
             world installs: "Instalações ao redor do mundo"
-        trending verses: 
+        trending verses:
             title: "Versículos da Bíblia populares"
             headline: "Versículos da Bíblia atualmente populares na App da Bíblia do YouVersion e em Bible.com"
-    shared: 
-        menu_settings: 
+    shared:
+        menu_settings:
             title: "Definições do Leitor"
             close: "Fechar"
             font: "Tipo de Letra:"
@@ -1215,7 +1215,7 @@ pt-PT:
             translation notes: "Notas de Rodapé"
             cross references: "Referências Cruzadas"
             numbers and titles: "Números e Títulos"
-    app errors: 
+    app errors:
         404 plans explanation: "Procura o plano <a href='%{plan_path}' target='_self'>%{title}</a>?"
         404 contact support: "Tem dificuldades? Contacte a nossa <a href='%{support_url}' target='_self'>equipa de suporte</a>."
         404 explanation: "Experimente iniciar novamente a partir da <a href='%{reader_path}' target='_self'>página de início</a>. Ainda com problemas? Contate a nossa <a href='%{support_url}' target='_self'>equipe de suporte</a>."
@@ -1223,7 +1223,7 @@ pt-PT:
         408 message: "Pedimos desculpa mas os nossos servidores não deram uma resposta atempada."
         408 explanation: "Fomos alertados e iremos verificar qualquer questão persistente o mais rápido possível. Tudo faremos para permitir o retorno à sua leitura da Bíblia!"
         try again: "Tente Novamente"
-    versions: 
+    versions:
         filter: "Comece a digitar o nome da versão (ou língua) ..."
         see all: "Ver Todas as Versões..."
         courtesy of: "%{abbreviation} trazido até si por %{publisher}"
@@ -1239,8 +1239,8 @@ pt-PT:
         public domain: "Domínio Público"
         loading: "Descarregando mais versões ..."
         load error: "Desculpe, houve um problema ao descarregar mais versões. Feche este menu e tente novamente."
-    campaigns: 
-        christmas: 
+    campaigns:
+        christmas:
             tracker title: "A História do Natal"
             twitter text: "Veja o mundo a ler sobre o nascimento de Jesus. Partilhe o contador da História do Natal @YouVersion: https://www.bible.com/pt-PT/christmas"
             facebook text: "Partilhe o contador da História do Natal à medida que pessoas ao redor do mundo lêem sobre o nascimento de Jesus.  Na igreja ou em casa, perto de pessoas que ama ou durante momentos de silêncio sozinho, façamos uma pausa para reflectir na maravilha do amor de Deus por nós."
@@ -1255,83 +1255,83 @@ pt-PT:
             versions: "Mais de %{version_count} versões em %{language_count} idiomas"
             tagline: "a Bíblia que vai consigo para todo lado"
             chapter counter format: "9 999 999"
-        100m: 
+        100m:
             logo: "YouVersion: A app da Bíblia"
             tagline: "Tem início nos <em>100 milhões</em>"
             intro: "Poderá a App da Bíblia atingir os 100 milhões de instalações antes do nosso 5º aniversário a 10 de Julho? Só com a sua ajuda!"
             after: "Por sua causa, a App da Bíblia atingiu 100 milhões de instalações em 10 de Julho, dia do seu 5º aniversário. Obrigado!"
-            share: 
+            share:
                 with friends: "Partilhe com os seus amigos"
-                fb: 
+                fb:
                     dialog name: "Já tem a App da Bíblia?"
                     dialog desc: "Gosto bastante da App da Bíblia! Ajudou-me realmente a fazer da Bíblia uma parte integrante da minha vida diária. Permite-me destacar versículos, ouvir a Bíblia em áudio, criar notas, subscrever planos devocionais... até ver vídeos! Descarregue-a agora (é grátis): http://www.bible.com/app"
-                tw: 
+                tw:
                     tweet: "App da Bíblia do @YouVersion com lugar fixo no meu ecrã inicial. Leia, veja, oiça e partilhe... tudo numa app grátis: bible.com/app"
-                em: 
+                em:
                     subject: "Já tem a App da Bíblia?"
                     body: "Tenho desfrutado da App da Bíblia do YouVersion e acho que também irá gostar. Consulto a Bíblia muito mais agora e isso deve-se à facilidade de a ler, ver, escutar e partilhar. Dispõe inclusivamente de Planos de Leitura, com uma seleção de trechos bíblicos preparados para as minhas leituras diárias. \n\nPode descarregá-la (grátis!) para quase todos os dispositivos móveis aqui: \nhttp://www.bible.com/app"
-            body: 
+            body:
                 p1: "10 de Julho vai ser um grande dia. Não só é o dia em que a App da Bíblia cumpre o seu 5º aniversário, mas também o dia em que a loja iTunes da Apple celebra 5 anos desde o seu lançamento."
                 p2: "Quer um dia ainda melhor? Com a sua ajuda, é o dia em que a App da Bíblia irá atingir os 100 milhões de downloads."
                 p3: "Sabemos que Deus usa este tipo de acontecimentos para causar um crescimento ainda maior."
                 p4: "Vamos fazer história juntos."
                 after p1: "O YouVersion representa uma coligação global de pessoas apaixonadas por ajudar os outros a ligarem-se à Palavra de Deus. A todas as sociedades e editoras bíblicas, igrejas, pastores e voluntários: obrigado pela vossa generosidade!"
                 after p2: "O que é mais entusiasmante relativamente a este marco é o que ele representa: hoje as pessoas estão a interagir com a Bíblia a uma escala que nunca testemunhámos antes. É admirável ver o que Deus está a fazer. E acreditamos que isto é apenas o ínicio. <em>Tem início nos 100 milhões</em>."
-            ad: 
+            ad:
                 title: "A App da Bíblia é completamente gratuita e é uma ótima maneira de explorar a Bíblia."
                 copy: "Leia, Escute, Veja, Partilhe. Descarregue a App da Bíblia para o seu smartphone ou tablet: <a href='http://bible.com/app' target='_self'>Descarregue Agora</a>"
-            sidebar: 
+            sidebar:
                 tagline: "Vamos fazer história juntos."
                 button: "Partilhe a App da Bíblia"
-    ui: 
+    ui:
         characters remaining: "caracteres restantes"
         yes button: "Sim"
         no button: "Não"
         cancel: "Cancelar"
-        plans: 
+        plans:
             privacy: "Gostaria que a sua atividade neste plano fosse visível para os seus amigos?"
         loading indicator text: "A carregar..."
         loading: "A carregar"
-        pagination: 
+        pagination:
             next page: "Próxima página"
             previous page: "Página anterior"
-        datetime: 
+        datetime:
             just now: "agora"
         verses selected: "versículos selecionados"
-    EventsAdmin: 
-        components: 
-            ErrorMessage: 
+    EventsAdmin:
+        components:
+            ErrorMessage:
                 genericError: "An error occurred"
-                announcement: 
-                    events: 
-                        title: 
+                announcement:
+                    events:
+                        title:
                             required: "Announcement title is required."
-                default: 
-                    bible: 
-                        reference: 
+                default:
+                    bible:
+                        reference:
                             not_found: "Bible reference not valid."
-                    events: 
-                        google_place_id: 
+                    events:
+                        google_place_id:
                             required: "You must choose a location from the map."
-                        latitude: 
+                        latitude:
                             required: "You must choose a location from the map."
-                        times: 
-                            start_dt: 
+                        times:
+                            start_dt:
                                 must_be_a_future_date: "Start Time cannot be in the past."
-                        timezone: 
+                        timezone:
                             required: "Timezone is required."
-                reference: 
-                    events: 
-                        usfm: 
+                reference:
+                    events:
+                        usfm:
                             invalid: "Bible reference not valid."
-                url: 
-                    events: 
-                        url: 
+                url:
+                    events:
+                        url:
                             required: "URL is required."
-                        title: 
+                        title:
                             required: "URL Label is required."
-            EventHeader: 
-                status: 
+            EventHeader:
+                status:
                     published: "Published"
                     draft: "Rascunho"
                     live: "Ao Vivo"
@@ -1343,36 +1343,36 @@ pt-PT:
                 eventBuilder: "CONFIGURAR EVENTO"
                 signOut: "Sair"
                 createAccount: "Create Account"
-            HtmlEditor: 
+            HtmlEditor:
                 text: "Texto"
                 bold: "Negrito"
                 italic: "Itálico"
-        containers: 
-            Auth: 
+        containers:
+            Auth:
                 title: "Events Sign In"
                 signIn: "Iniciar sessão"
                 subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
                 email: "Email"
                 password: "Palavra-Passe:"
                 forgotPassword: "Palavra passe esquecida"
-            EventEdit: 
+            EventEdit:
                 event: "Event"
-            EventEditContentContainer: 
+            EventEditContentContainer:
                 choose: "Escolha algum conteúdo para começar."
                 needHelp: "Precisa de ajuda?"
                 title: "Conteúdo do Evento"
                 previous: "Voltar: Localização e Horários →"
                 next: "Seguinte: Pré-visualização →"
-            EventEditDetails: 
+            EventEditDetails:
                 title: "Detalhes do Evento"
-            EventEditLocationContainer: 
+            EventEditLocationContainer:
                 title: "Local do Evento"
                 previous: "← Voltar: Detalhes"
                 next: "Seguinte: Adicionar conteúdo →"
-            EventEditPreview: 
+            EventEditPreview:
                 title: "Pré-visualização do Evento"
                 previous: "← Voltar: Conteúdo"
-            EventEditShare: 
+            EventEditShare:
                 title: "Event Share"
                 subTitle: "Your Event is Now Published:"
                 edit: "Edit Event"
@@ -1381,10 +1381,10 @@ pt-PT:
                 copy: "Copiar"
                 copied: "The shortlink was copied to your clipboard"
                 previous: "← Previous: Preview"
-            EventFeedDiscover: 
+            EventFeedDiscover:
                 title: "Discover Events"
                 discover: "Descubra"
-            EventFeedMine: 
+            EventFeedMine:
                 title: "Eventos"
                 previous: "← Previous"
                 next: "Next →"
@@ -1393,38 +1393,38 @@ pt-PT:
                 subTitle: "EVENTS CREATED BY ME"
                 newFirst: "Crie o seu primeiro evento"
                 learn: "Aprenda a organizar um evento"
-            EventFeedSaved: 
+            EventFeedSaved:
                 title: "Eventos Guardados"
-            EventView: 
+            EventView:
                 title: "YouVersion Event"
-            SelectLanguage: 
+            SelectLanguage:
                 choose: "Choose Your Language"
-        features: 
-            Auth: 
-                errors: 
+        features:
+            Auth:
+                errors:
                     sessionExpired: "Your session expired. Please login again."
                     invalidEmail: "Invalid email or password."
-            EventEdit: 
-                errors: 
+            EventEdit:
+                errors:
                     locationMustHaveTime: "All locations must have at least one time."
                     locationRequired: "You cannot publish an Event with no locations."
                     contentRequired: "Não pode publicar um evento sem nenhum conteúdo."
                     planSearchFailed: "Search did not match any documents"
                     noMatchingPlans: "Não foram encontrados Planos"
-                components: 
-                    EventEditNav: 
+                components:
+                    EventEditNav:
                         details: "Detalhes"
                         locations: "Localizações e Horários"
                         content: "Conteúdo"
                         preview: "Visualizar & Publicar"
                         share: "Partilhar"
-                features: 
-                    content: 
-                        components: 
-                            ContentFeed: 
+                features:
+                    content:
+                        components:
+                            ContentFeed:
                                 reorder: "Ordenar conteúdo"
                                 doneReordering: "Done Reordering"
-                            ContentHeader: 
+                            ContentHeader:
                                 text: "Texto"
                                 reference: "Referência Bíblica"
                                 plan: "Plano"
@@ -1432,73 +1432,74 @@ pt-PT:
                                 link: "Ligação Externa"
                                 giving: "Ligação para Contribuições"
                                 announcement: "Comunicados"
-                            ContentHelpModal: 
+                            ContentHelpModal:
                                 types: "Tipos de Conteúdo"
                                 learn: "Learn how to make <br>a great Event"
-                                text: 
+                                text:
                                     title: "Módulo de Texto"
                                     desc: "Esboços, pontos-chave, questões para debate ... Compartilhe qualquer conteúdo geral baseado em texto para ajudar os seus participantes a acompanharem a sua mensagem à medida que acontece. Os seus módulos de texto podem ser de qualquer tamanho e pode incluir formatação do texto."
-                                reference: 
+                                reference:
                                     title: "Módulo de Referência Bíblia"
                                     desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
-                                plan: 
+                                plan:
                                     title: "Módulo de planos de Leitura da Bíblia"
                                     desc: "Adicione ligações para os Planos da Bíblia e devocionais que se relacionam com os seus ensinamentos, de modo ajudar a sua audiência a continuar a interagir com a Palavra de Deus ao longo da semana."
-                                image: 
+                                image:
                                     title: "Módulo de imagem"
                                     desc: "Dê vida ao seu Evento com qualquer tipo de suporte gráfico: arte em série, fotografias, imagens de Versículos, etc. Os participantes poderão facilmente partilhar as suas imagens de Evento nas suas redes sociais, tornando a sua mensagem viral"
-                                link: 
+                                link:
                                     title: "Módulo de ligações externas"
                                     desc: "Cria um botão no seu Evento que liga a qualquer site externo. Coloque a sua audência apenas a um toque de donativos online, inscrição de voluntários ou página da igreja"
-                                announcement: 
+                                announcement:
                                     title: "Módulo de anúncios"
                                     desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities... Announcement modules are the perfect container for sharing information that’s timely and important, but that you don’t want to distract from your Event’s primary message. Each announcement module appears on its own page in your Event, and can even include rich text content (such as bold and italics)."
-                            ContentInsertionPoint: 
+                            ContentInsertionPoint:
                                 title: "Inserir o próximo módulo aqui"
-                            ContentTypeAnnouncement: 
+                            ContentTypeAnnouncement:
                                 title: "Título"
                                 prompt: "Write something here..."
                                 caption: "No seu Evento, apenas o seu Título (em cima) será visível. Quando um utilizador tocar no seu Título, o corpo (em baixo) irá ser mostrado num ecrã à parte."
-                            ContentTypeContainer: 
+                            ContentTypeContainer:
                                 dirty: "O conteúdo irá automaticamente gravar alguns segundos após parar de escrever."
                                 failed: "Impossível gravar."
                                 tryAgain: "Tentar novamente."
                                 lastSaved: "Última gravação %{when}"
-                            ContentTypeImage: 
-                                errors: 
+                            ContentTypeImage:
+                                errors:
                                     wrongSize: "O tamanho da imagem tem de ser %{requiredWidth}x%{requiredHeight}. A sua imagem é %{yourWidth}x%{yourHeight}."
                                     wrongType: "Tipo de ficheiro inválido. Tem de ser um JPG."
                                 caption: "Add caption"
                                 prompt: "Arraste e largue uma imagem"
+                                prompt: "Drag and Drop an Image"
                                 onlyJpg: "[apenas JPG]"
                                 sizePrompt: "%{requiredWidth}px largura x %{requiredHeight}px altura"
                                 select: "Selecionar imagem"
-                            ContentTypeLink: 
+                            ContentTypeLink:
                                 kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
                                 label: "Etiqueta da hiperligação"
                                 prompt: "Write something here..."
                                 url: "URL"
-                            ContentTypePlan: 
+                            ContentTypePlan:
                                 replace: "Substituir"
                                 search: "Procurar um Plano de Leitura"
-                            ContentTypeReference: 
+                            ContentTypeReference:
                                 language: "Idioma"
                                 version: "Versão"
                                 book: "Livro"
                                 chapterVerse: "Capítulo:versículo"
-                            ContentTypeText: 
+                            ContentTypeText:
                                 prompt: "Write something here..."
-                            LiveWarningModal: 
+                            LiveWarningModal:
                                 title: "Cannot Delete While Event is Live"
                                 desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
                                 ok: "OK"
-                    details: 
-                        errors: 
+                    details:
+                        errors:
                             generic: "There was a problem while publishing your Event."
                             invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
-                        components: 
-                            DetailsEdit: 
-                                errors: 
+                        components:
+                            DetailsEdit:
+                                errors:
                                     wrongSize: "O tamanho da imagem tem de ser %{requiredWidth}x%{requiredHeight}. A sua imagem é %{yourWidth}x%{yourHeight}."
                                     wrongType: "Tipo de ficheiro inválido. Tem de ser um JPG."
                                 changeImage: "Alterar Imagem"
@@ -1512,29 +1513,29 @@ pt-PT:
                                 desc: "Descrição do Evento"
                                 next: "Seguinte: Adicionar Localização e Horários →"
                                 blank: "%{field} cannot be blank."
-                    location: 
-                        components: 
-                            Location: 
+                    location:
+                        components:
+                            Location:
                                 oneRequired: "Adicionar pelo menos uma ocorrência."
                                 use: "UTILIZAR ESTA LOCALIZAÇÃO"
                                 edit: "Editar Localização"
                                 delete: "Eliminar Localização"
-                            LocationAddButtons: 
+                            LocationAddButtons:
                                 addPhysical: "Adicione uma localização física"
                                 promptPhysical: "Pode adicionar várias localizações"
                                 addVirtual: "Adicione uma localização virtual"
                                 churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
-                            LocationAddTime: 
+                            LocationAddTime:
                                 minutes: "MINUTOS"
                                 hours: "HORAS"
                                 days: "DIAS"
-                            LocationDeleteModal: 
+                            LocationDeleteModal:
                                 sure: "Tem a certeza?"
                                 selected: "Selecionou as seguintes localizações para eliminar:"
                                 warn: "Isto irá remover esta localização de todos os eventos passados e presentes. Não poderá reutilizar esta localização em eventos futuros."
                                 cancel: "Cancelar"
                                 delete: "Apagar"
-                            LocationEdit: 
+                            LocationEdit:
                                 prompt: "Introduza a morada da localização..."
                                 country: "País"
                                 timezone: "Fuso Horário"
@@ -1544,7 +1545,7 @@ pt-PT:
                                 addAnother: "Adicionar um novo horário"
                                 cancel: "Cancelar"
                                 save: "Guardar esta localização"
-                            LocationTimeShifter: 
+                            LocationTimeShifter:
                                 shift: "Shift start dates"
                                 forward: "Avançar"
                                 backward: "backward"
@@ -1559,17 +1560,17 @@ pt-PT:
                                 hours: "HORAS"
                                 update: "Atualizar"
                                 shiftButton: "Mudar todas as datas e os horários de uma só vez"
-                            UnpublishModal: 
+                            UnpublishModal:
                                 cancel: "Cancelar"
                                 title: "Unpublish to Make Changes"
                                 desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
                                 unpublish: "Unpublish"
-                    preview: 
-                        notes: 
+                    preview:
+                        notes:
                             prompt: "Adicione as suas notas privadas..."
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
-                        components: 
-                            PreviewFeed: 
+                        components:
+                            PreviewFeed:
                                 review: "Review Your Event Before Publishing"
                                 previewUrl: "Preview URL:"
                                 share: "Compartilhar Evento"
@@ -1577,23 +1578,23 @@ pt-PT:
                                 publish: "Publicar"
                                 unpublish: "Unpublish"
                                 locations: "Locais:"
-                                discoverable: 
+                                discoverable:
                                     title: "Visibilidade:"
                                     desc: "O seu evento estará visível na seção de Eventos da App da Bíblia e nos resultados da busca, 5 dias antes da data de início."
-                                status: 
+                                status:
                                     title: "Estado:"
                                     desc: "O emblema vermelho AO VIVO será exibido quando começar o seu evento."
-                                remove: 
+                                remove:
                                     title: "Eliminar:"
                                     desc: "O seu evento deixará de estar visível após o horário de término. Os participantes que clicaram em \"Gravar Evento\" quando este estava visível, continuarão a ter acesso a uma versão de arquivo do mesmo. Este evento continuará a ser acessível através de link directo."
-                            PreviewTypeAnnouncement: 
+                            PreviewTypeAnnouncement:
                                 expand: "Expand"
-                            PreviewTypePlan: 
+                            PreviewTypePlan:
                                 read: "Ler"
                                 info: "Informação do Plano"
-            EventFeedMine: 
-                components: 
-                    EventListItem: 
+            EventFeedMine:
+                components:
+                    EventListItem:
                         duplicate: "Duplicate"
                         share: "Partilhar"
                         delete: "Apagar"
@@ -1601,18 +1602,18 @@ pt-PT:
                         edit: "Editar"
                         view: "Visualizar"
                         fail: "Unable to delete Event"
-            EventView: 
-                components: 
-                    EventViewContent: 
+            EventView:
+                components:
+                    EventViewContent:
                         copy: "Copiar"
                         copied: "Copied"
                         share: "Partilhar"
                         read: "Ler"
                         readPlan: "Read Plan"
-                    EventViewContentAnnouncement: 
+                    EventViewContentAnnouncement:
                         expand: "Expand"
                         collapse: "Collapse"
-                    EventViewDetails: 
+                    EventViewDetails:
                         expand: "Expand"
                         collapse: "Collapse"
                         save: "Guardar Evento"
