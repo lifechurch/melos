@@ -580,7 +580,7 @@ de:
         no devices: "Dein YouVersion-Konto ist noch nicht mit einem mobilen Gerät verbunden."
         no devices download copy: "Die Bibel App basiert auf der Online-Bibel von YouVersion.com und ist eine kostenlose, mobile Bibel, die auf fast allen Smartphones installiert werden kann. Die Bibel App gestattet es ihren Lesern, die Bibel zu lesen, Verse in sozialen Netzwerken zu teilen, Lieblingsschriftstellen mit Lesezeichen zu versehen u.v.m. All das in einem Format, das zu ihrem ständig mobiler werdenden Lebensstil passt. Geh mit deinem Smartphone zu <a href='https://www.bible.com/app' target='_self'>bible.com/app</a>, um die Bibel App herunterzuladen und melde dich einfach mit deinem Konto an!"
         yes delete: "Ja, mein Konto löschen"
-        account delete success: "Dein YouVersion-Konto wurde erfolgreich gelöscht. Wir hoffen, dass du andere Möglichkeiten nutzen wirst, um dich mit der Bibel zu beschäftigen. Die folgenden Apps beispielsweise könnten dazu hilfreich sein: <a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "Wie gewünscht haben wir dein YouVersion Konto gelöscht. Das tut uns sehr leid. Wir hoffen von Herzen, dass du weiterhin Wege suchst, dich mit Gottes Wort zu beschäftigen."
         delete account description: "Wenn du dein Konto löschst, werden alle deine Daten, die Historie und alles Persönliche (wie deine Notizen, Lesezeichen, Markierungen usw.) auf Bible.com und in der Bibel App gelöscht. Dieser Schritt kann weder von dir noch von unserem Team rückgängig gemacht werden. Wenn du sicher bist, dass du dies tun willst, fahre unten fort."
         user recent activity: "%{user}s jüngste Aktivität(en)"
         my notes: "Notizen"

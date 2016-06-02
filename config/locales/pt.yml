@@ -580,7 +580,7 @@ pt:
         no devices: "Não há dispositivos conectados à sua Conta YouVersion"
         no devices download copy: "Baseado na Bíblia online, o aplicativo do YouVersion é uma Bíblia móvel gratuita que pode ser instalada em quase todos os aparelhos móveis. O App da Bíblia permite os usuários lerem a Bíblia, compartilhar versículos nas suas redes sociais, marcar suas passagens favoritas e mais—tudo no formato que acompanha o estilo de vida móvel. Visite <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> do seu aparelho móvel para baixar o App da Bíblia e conecte sua conta!"
         yes delete: "Sim, Delete Minha Conta"
-        account delete success: "Sua conta YouVersion foi deletada com sucesso. Nós esperamos que você continue encontrando outras maneiras de interagir com a Bíblia. Alguns destes apps podem ser úteis nos seus passos daqui pra frente: <a href='https://www.bible.com/free-bible-apps' target='_self'> http://pt.a.youversion.com/free-bible-apps</a>"
+        account delete success: "Nós deletamos sua conta da YouVersion como solicitado. Lamentamos ver você saindo . Sinceramente, desejamos que você continue a procurar maneiras significativas de se engajar com a palavra de Deus."
         delete account description: "Se você apagar sua conta, serão eliminadas em definitivo todas as suas informações, histórico e ajustes pessoais (tais como anotações, marcadores, destaques e etc) feitos no Bible.com e no App da Bíblia. Esta ação não poderá ser desfeita por você ou por nossa equipe. Se você tem certeza que deseja prosseguir com isso, siga as instruções a seguir."
         user recent activity: "Atividade Recente de %{user}"
         my notes: "Anotações"
@@ -1345,7 +1345,7 @@ pt:
             Auth: 
                 title: "Entrar nos eventos"
                 signIn: "Entrar"
-                subHead1: "Se você é um usuário do App da Bíblia e já te uma conta YouVersion, você pode entrar usando as mesmas credenciais.<br><br>Você ainda não possui uma conta YouVersion?<br><a href='%{url}'>Registre-se agora em Bible.com</a>para começar a criar Eventos."
+                subHead1: "Caso seja um usuário do App da Bíblia e já te uma conta YouVersion, você pode entrar usando as mesmas credenciais.<br><br>Você ainda não possui uma conta YouVersion?<br><a href='%{url}'>Registre-se agora em Bible.com</a> para começar a criar Eventos."
                 email: "E-mail"
                 password: "Senha"
                 forgotPassword: "Esqueci a Senha"
