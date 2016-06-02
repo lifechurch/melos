@@ -770,6 +770,10 @@ ul.plan-results {
     a {
       padding: 8px 40px;
       border: solid 1px $green;
+
+      @media #{$small-only} {
+        padding: 8px 30px;
+      }
     }
   }
 
