@@ -85,38 +85,11 @@ html[dir="rtl"] body.c_subscriptions {
 
 /* !Plans content */
 
-.c_subscriptions article .columns:first-child {
-  @media #{$small-only} {
-    padding: 0;
-  }
-}
-
 .c_subscriptions .resource_list {
   @media #{$small-only} {
     margin: 0;
   }
 }
-
-//.a_index .columns {
-//  @media #{$small-only} {
-//    padding: 0;
-//  }
-//
-//  [class*="block-grid-"] {
-//    margin: 0;
-//  }
-//}
-//
-//.a_index [class*="block-grid-"] > li {
-//  @media #{$small-only} {
-//    padding: 15px;
-//    border-top: 1px solid $lightGray;
-//
-//    &:first-child {
-//      border-top: 0;
-//    }
-//  }
-//}
 
 .subscription-list {
   border-top: solid 1px $lightGray;
@@ -1073,6 +1046,10 @@ html[dir="rtl"] .plan-settings {
 .c_plans.a_index, .c_plans.a_show {
   #current-ui-view {
     padding: 95px 0 0;
+
+    @media #{$small-only} {
+      padding: 25px 15px 0;
+    }
   }
 }
 
@@ -1082,6 +1059,10 @@ html[dir="rtl"] .plan-settings {
 
   #current-ui-view {
     padding: 95px 0 0;
+
+    @media #{$small-only} {
+      padding: 25px 15px 0;
+    }
   }
 
   .resource_list {
@@ -1150,6 +1131,10 @@ article.reading_plan_index {
   .side-col {
     padding-left: 25px;
     padding-top: 39px;
+
+    @media #{$small-only} {
+      padding-left: inherit;
+    }
 
     a {
       font-size: 13px;
