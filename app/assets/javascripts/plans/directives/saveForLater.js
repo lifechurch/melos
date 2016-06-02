@@ -23,7 +23,6 @@ angular.module('yv.plans.saveForLater', [])
                 };
 
                 $scope.toggle = function() {
-                    console.log("Clicked...");
                     if ($scope.saved) {
                         remove();
                     } else {

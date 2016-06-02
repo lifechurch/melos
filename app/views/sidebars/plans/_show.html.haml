@@ -20,15 +20,6 @@
           %a{href: user_path(friend["username"]), title: friend["name"], target: "_self"}
             = image_tag friend["avatar"]["renditions"].select {|a| a["width"] >= 128 }.max{|a| a[:width] }["url"], { class: "avatar" }
 
-      -#- if @friends_reading.length > 6
-      -#  .rp-view-all
-      -#    %hr
-      -#    %a.open{href: "#"}
-      -#      =t("plans.stats.view all")
-      -#    %a.close.hidden{href: "#"}
-      -#      =t("plans.stats.close")
-
-
 - if @friends_completed.present? and @friends_completed.length > 0
   %p.friends_completed= t("plans.stats.friends completed", count: @friends_completed.length)
   .text-center.avatar-container
@@ -36,14 +27,6 @@
       - if friend["avatar"].present?
         %a{href: user_path(friend["username"]), title: friend["name"], target: "_self"}
           = image_tag friend["avatar"]["renditions"].select {|a| a["width"] >= 128 }.max{|a| a[:width] }["url"], { class: "avatar" }
-    -#- if @friends_completed.length > 6
-    -#  .rp-view-all
-    -#    %hr
-    -#    %a.open{href: "#"}
-    -#      =t("plans.stats.view all")
-    -#    %a.close.hidden{href: "#"}
-    -#      =t("plans.stats.close")
-
 
 - if plan.total_completions >= 1000
   %p.friends_completed= t("plans.stats.total completions", count: plan.total_completions)
