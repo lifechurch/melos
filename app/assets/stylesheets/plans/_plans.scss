@@ -113,6 +113,7 @@ html[dir="rtl"] body.c_subscriptions {
 
     .subscription-info {
       margin-top: 7px;
+      margin-left: 95px;
     }
 
     .progress_wrap {
@@ -127,6 +128,27 @@ html[dir="rtl"] body.c_subscriptions {
       .progress_counter {
         background-color: $gray;
       }
+    }
+
+    .plan-title {
+      margin:0;
+      padding:0;
+    }
+
+    .plan-length, .plan-completed {
+      font-size: 11px;
+      color: $gray;
+      padding: 0;
+      margin: 0;
+      line-height: 20px;
+      background: none;
+    }
+
+    .plan-start {
+      font-size: 11px;
+      padding: 0;
+      margin: 0;
+      line-height: 20px;
     }
 
     .search_thumbnail {
@@ -1191,6 +1213,58 @@ article.reading_plan_index {
     img.avatar {
       height: 30px;
       width: 30px;
+    }
+  }
+}
+
+html[dir="rtl"] {
+
+  li.arrow.right {
+    float: left !important;
+  }
+
+  .subscription-list {
+    .subscription {
+      .search_thumbnail {
+        float: right;
+      }
+
+      .progress_wrap {
+        float: right;
+      }
+    }
+  }
+
+  .button-group.primary-toggle {
+    li {
+      margin: 0 -3px;
+      a {
+        padding: 8px 40px;
+        border: solid 1px $green;
+
+        @media #{$small-only} {
+          padding: 8px 30px;
+        }
+      }
+    }
+
+    li:first-child {
+      a.solid-button.green {
+        border-radius: 0 5px 5px 0;
+      }
+    }
+
+    li:last-child {
+      a.solid-button.green {
+        border-radius: 5px 0 0 5px;
+      }
+    }
+
+    li.inactive {
+      a.solid-button.green {
+        background-color: white !important;
+        color: $green !important;
+      }
     }
   }
 }

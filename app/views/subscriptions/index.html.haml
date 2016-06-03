@@ -13,7 +13,10 @@
         .row.collapse.plan-title-row
           .columns.small-2
             = link_to(subscriptions_path(user_id: current_user.to_param), class: 'plan-back-button', target: "_self") do
-              != "&larr; #{t('plans.back')}"
+              - if is_rtl?
+                != "&rarr; #{t('plans.back')}"
+              - else
+                != "&larr; #{t('plans.back')}"
           .column.small-8.end.text-center
             - if @completedList
               .plan-completed-title
@@ -48,11 +51,21 @@
               .subscription-info
                 = link_to(subscription_path(user_id: @user.to_param, id: sub, initial: 'true'), class: "subscription-title", target: "_self") do
                   %h3.plan-title
-                    =t(sub.name)
-                .progress_wrap
-                  .progress_counter{style: "width:#{sub.completion_percentage}%", title:"#{sub.completion_percentage}%"}
-                    !="&nbsp;"
-                = image_tag(image_path('lock@2.png'), class: "subscription-privacy", title:  t("plans.privacy.private")) if sub.private
+                    =sub.name
+                - if @completedList
+                  .plan-length= sub.formatted_length
+                  .plan-completed= I18n.l(Date.parse(sub.end_dt), format: :long)
+
+                - elsif @savedList
+                  .plan-length= sub.formatted_length
+
+                - else
+                  .progress_wrap
+                    .progress_counter{style: "width:#{sub.completion_percentage}%", title:"#{sub.completion_percentage}%"}
+                      !="&nbsp;"
+                  = image_tag(image_path('lock@2.png'), class: "subscription-privacy", title:  t("plans.privacy.private")) if sub.private
+                  %br
+                  .plan-length= t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
         - unless @curpage == 1 && @subscriptions.next_page.nil?
           .row.collapse.plan-paging
             .small-12.medium-4.columns.small-centered.text-center
@@ -67,12 +80,13 @@
 
   .row.collapse
     .columns.large-8.medium-8.medium-centered.subscription-actions
-      - if @savedList
-        %span
-          =t("plans.saved plans")
-      - else
-        = link_to("#{user_path(@user.to_param)}/saved-reading-plans", target: "_self") do
-          =t("plans.saved plans")
+      .left
+        - if @savedList
+          %span
+            =t("plans.saved plans")
+        - else
+          = link_to("#{user_path(@user.to_param)}/saved-reading-plans", target: "_self") do
+            =t("plans.saved plans")
       .right
         -if @completedList
           %span
