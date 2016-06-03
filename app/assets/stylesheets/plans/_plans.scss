@@ -1267,4 +1267,27 @@ html[dir="rtl"] {
       }
     }
   }
+
+  article.reading_plan_index {
+    .side-col {
+      padding-right: 25px;
+      padding-left: 0;
+
+      @media #{$small-only} {
+        padding-left: inherit;
+        padding-right: inherit;
+      }
+    }
+  }
+
+  .reading_plan_index_header {
+    .share-panel {
+      right: inherit;
+      left: -5px;
+    }
+
+    .right {
+      float: left !important;
+    }
+  }
 }
