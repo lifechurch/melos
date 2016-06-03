@@ -580,7 +580,7 @@ bg:
         no devices: "Никакви устройства не са свързани към YouVersion профила Ви"
         no devices download copy: "Базирано на онлайн Библията, приложение Библията на YouVersion е безплатна мобилна Библия, която може да се инсталира на почти всеки вид мобилно устройство. Приложение Библията дава възможност на потребителите да четат Библията, да споделят стихове в техните социални мрежи, да маркират любими пасажи и още - всичко това във формат, който отговаря на техния все по-мобилен начин на живот. Посетете<a href='https://www.bible.com/app' target='_self'>bible.com/app</a>от Вашето мобилно устройство, за да изтеглите приложение Библията и да свържете Ваш профил!"
         yes delete: "Да, изтрий профила ми"
-        account delete success: "Вашият YouVersion профил е изтрит успешно. Надяваме се да продължите да прекарвате време в четене на Библията. Някои от следните приложения могат да Ви бъдат полезни: <a href='https://www.bible.com/free-bible-apps' target='_self'>http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "Ако изтриете Вашият акаунт, Вие завинаги ще премахнете цялата Ви информация, история и персонализации (такива като бележки, отбелязвания, маркировки и др.) от Bible.com и приложение Библията. Това действие не може да бъде отменено от Вас или от нашият екип. Ако сте сигурни, че искате да продължите напред, попълнете формуляра по-долу."
         user recent activity: "Последна дейност на %{user}"
         my notes: "Моите бележки"

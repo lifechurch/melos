@@ -624,7 +624,7 @@ cy:
         no devices: "Does dim dyfais wedi'i gysylltu i dy Gyfrif YouVersion"
         no devices download copy: "Mae'r Ap YouVersion yn Feibl symudol ar gael am ddim, a gellir ei lawrlwytho ar bron unrhyw ddyfais symudol. Mae'r Ap yn gadael i ddefnyddwyr ddarllen y Beibl, rhannu adnodau ar eu rhwydweithiau cymdeithasol, rhoi nod tudalen ar eu hoff adrannau, a mwy —a'r cwbl mewn fformat sy'n gydnaws â'u ffordd o fyw sy'n fwyfwy symudol. Dos i <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> Lawrlwytha'r Ap ar dy ddyfais symudol a'i gysylltu â'th gyfrif!"
         yes delete: "Iawn, Dilewch Fy Nghyfrif"
-        account delete success: "Mae’ch cyfrif YouVersion wedi'i ddileu. Gobeithiwn y byddwch yn canfod ffyrdd ystyrlon i drafod neges y Beibl. Mae rhai o'r apps yma yn ddefnyddiol i chi wneud hynny: <a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "Os byddwch yn dileu'ch cyfrif, byddwch yn dileu'ch holl fanylion yn barhaol - hanes, pethau personol (fel nodiadau, nod llyfrau, aroleuo ayyb.) ar YouVersion.com a'r Bible App.  Ni fyddwch chi na’n tîm yn gallu newid hyn.  Os yn bendant am wneud hynny, ewch yn eich blaen isod."
         user recent activity: "Gweithgaredd Diweddar %{user}"
         my notes: "Fy Nodiadau"

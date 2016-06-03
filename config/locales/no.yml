@@ -580,7 +580,7 @@
         no devices: "Ingen enheter er knyttet til din YouVersion konto"
         no devices download copy: "Bibel-appen er basert på nettbibelen YouVersion, og er en gratis Bibel som kan installeres på nesten alle mobile enheter. Bibel-appen lar brukerne lese Bibelen, dele vers med deres sosiale nettverk, lage bokmerker for favorittversene sine og mer - alt i et format tilpasset vår stadig mer mobile livsstil. Besøk <a href='https://www.bible.com/app' target='_self'>bible.com/app</a>fra din mobile enhet for å laste ned Bibel-appen og koble til kontoen din!"
         yes delete: "Ja, slett min brukerkonto"
-        account delete success: "Din YouVersion-konto har blitt slettet. Vi håper du fortsatt vil finne meningsfulle måter å benytte Bibelen på. Noen av disse appene kan være nyttige for deg videre: <a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "Hvis du sletter kontoen din vil du permanent slette all informasjon, historikk og tilpasninger som notater, bokmerker, uthevinger hos Bible.com og i bibelappen. Denne handlingen kan ikke reverseres av vårt team. Hvis du er sikker på at du vil gå videre, fortsett under."
         user recent activity: "%{user}s nylige aktivitet"
         my notes: "Notater"

@@ -591,7 +591,7 @@ sk:
         no devices: "K vášmu YouVersion účtu nie sú pripojené žiadne zariadenia"
         no devices download copy: "Aplikácia Biblia je bezplatná mobilná Biblia, založená na online Biblii YouVersion, ktorá môže byť nainštalovaná na takmer všetky mobilné zariadenia. Aplikácia Biblia používateľom umožňuje čítať Bibliu, zdieľať verše na sociálne siete, označiť si obľúbené pasáže a oveľa viac—to všetko spôsobom, ktorý drží krok so vzrastajúcim mobilným životným štýlom. Navštívte <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> z vášho mobilného zariadenia, stiahnite si aplikáciu Biblia a pripojte sa so svojim účtom!"
         yes delete: "Áno, zmazať môj účet"
-        account delete success: "Váš YouVersion účet bol úspešne zmazaný. Dúfame, že si aj naďalej nájdete spôsob, ako čerpať z Biblie. Môžu vám k tomu napomôcť niektoré z týchto aplikácií: <a href='https://www.bible.com/free-bible-apps' target='_self'>http://www.bible.com/free-bible-apps</a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "Ak svoj účet zmažete, natrvalo tým stratíte všetky svoje informácie, históriu a údaje (poznámky, záložky, zvýraznenia, atď.) na Bible.com i v aplikácii Biblia. Tento krok nemôžete vrátiť späť ani vy, ani náš tím. Ak ste si istý, že chcete pokračovať, pokračujte nižšie."
         user recent activity: "Nedávna aktivita používateľa %{user}"
         my notes: "Poznámky"
@@ -1578,7 +1578,7 @@ sk:
                         components: 
                             PreviewFeed: 
                                 review: "Skontrolovať udalosť pred zverejnením"
-                                previewUrl: "Preview URL:"
+                                previewUrl: "Náhľad URL:"
                                 share: "Zdieľať udalosť"
                                 locationsAndTimes: "Miesta a časy"
                                 publish: "Zverejniť"
