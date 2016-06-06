@@ -11,13 +11,38 @@ class SubscriptionsController < ApplicationController
   def index
     return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
 
+    @curpage = params[:page].present? ? params[:page].to_i : 1
     @user = current_user
-    @subscriptions = Subscription.all(@user, auth: @user.auth)
+    @subscriptions = Subscription.all(@user, auth: @user.auth, page: @curpage)
 
-    return redirect_to plans_path if @subscriptions.empty?
+    return redirect_to plans_path if @subscriptions == false
 
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
+  end
+
+  def completed
+    return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
+
+    @curpage = params[:page].present? ? params[:page].to_i : 1
+    @user = current_user
+    @subscriptions = Subscription.completed(@user, auth: @user.auth, page: @curpage)
+    @completedList = true
+
+    self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
+    render 'index'
+  end
+
+  def saved
+    return render_404 if params[:user_id].to_s.downcase != current_auth.username.downcase
+
+    @curpage = params[:page].present? ? params[:page].to_i : 1
+    @user = current_user
+    @subscriptions = Subscription.saved(@user, auth: @user.auth, page: @curpage)
+    @savedList = true
+
+    self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
+    render 'index'
   end
 
   # TODO - ensure user subscribed.
@@ -42,6 +67,22 @@ class SubscriptionsController < ApplicationController
     end
 
     # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
+  end
+
+  def saveForLater
+    @subscription = Subscription.saveForLater(params[:plan_id], auth: current_auth)
+    respond_to do |format|
+      format.json { render json: { success: @subscription.valid? } }
+      format.any { render nothing: true }
+    end
+  end
+
+  def removeSaved
+    @subscription = Subscription.removeSaved(params[:plan_id], auth: current_auth)
+    respond_to do |format|
+      format.json { render json: { success: @subscription.valid? } }
+      format.any { render nothing: true }
+    end
   end
 
   def destroy

@@ -52,6 +52,14 @@ class Plan < YV::Resource
       "reading-plans/stats"
     end
 
+    def completed_path
+      "reading-plans/completed"
+    end
+
+    def saved_path
+      "reading-plans/queue_items"
+    end
+
     # TODO pagination + facets
 
     def all(opts = {})
