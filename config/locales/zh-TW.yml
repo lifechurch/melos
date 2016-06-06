@@ -569,7 +569,7 @@ zh-TW:
         no devices: "沒有設備連接到您的 YouVersion 帳戶。"
         no devices download copy: "以 YouVersion.com 的線上聖經為資源，聖經軟體是一個幾乎任何手機都可以安裝的免費行動聖經。聖經軟體讓用戶閱讀聖經、在社交網路上分享經節、在他們喜愛的經文裡添加書籤，還有更多功能 —— 全都與他們越來越行動化的生活方式配合無間。請在您的行動設備上訪問 <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> 以下載聖經軟體並連接您的帳戶！"
         yes delete: "是的，刪除我的帳戶"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "我們已經依照你的請求，刪除了你的 YouVersion 帳戶。為你的決定我們深感遺憾。我們衷心期盼你會持續不斷地運用有效的方式投入上帝的話。"
         delete account description: "當您刪除您的賬戶，您將在Bible.com 與聖經軟體永久性的消除您的所有資料、歷史和個人化的筆記 （如書籤、醒目標示等。）這個動作無法被還原。如果您確定這是您所要的，請繼續。"
         user recent activity: "%{user} 的近期活動"
         my notes: "筆記"
