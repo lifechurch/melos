@@ -13,41 +13,41 @@
               - next if k.eql?('en')
               - case k
               - when 'ar'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Arabic)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.arabic')})"
               - when 'bg'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Bulgarian)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.bulgarian')})"
               - when 'cs'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Czech)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.czech')})"
               - when 'el'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Greek)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.greek')})"
               - when 'fa'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Farsi)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.farsi')})"
               - when 'hi'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Hindi)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.hindi')})"
               - when 'ja'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Japanese)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.japanese')})"
               - when 'km'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Khymer)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.khmer')})"
               - when 'ko'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Korean)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.korean')})"
               - when 'mk'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Macedonian)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.macedonian')})"
               - when 'mn'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Mongolian)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.mongolian')})"
               - when 'my'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Burmese)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.burmese')})"
               - when 'ru'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Russian)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.russian')})"
               - when 'ta'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Tamil)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.tamil')})"
               - when 'th'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Thai)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.thai')})"
               - when 'uk'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Ukrainian)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.ukrainian')})"
               - when 'zh-CN'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Simplified Chinese)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.simplified chinese')})"
               - when 'zh-TW'
-                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + ' (Traditional Chinese)'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.traditional chinese')})"
               - else
                 %option{value: k, selected: k.eql?(current_locale.to_s)}= v
 
