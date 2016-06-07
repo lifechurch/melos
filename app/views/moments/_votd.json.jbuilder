@@ -24,7 +24,7 @@ json.object do
   json.actions do
     json.read true
     if current_user
-      if subscription.has_key?(:email)
+      if subscription != false && !subscription.empty? && subscription.has_key?(:email)
         json.subscribable true if subscription.email.time.blank?
         json.edit_subscription true if subscription.email.time.present?
       else
@@ -37,8 +37,8 @@ json.object do
   if current_user
     json.subscription do 
       json.path            vod_subscriptions_path
-      json.time            subscription.email.time if subscription.has_key?(:email)
-      json.version_id      subscription.email.version_id if subscription.has_key?(:email)
+      json.time            subscription.email.time if subscription && !subscription.empty? && subscription.has_key?(:email)
+      json.version_id      subscription.email.version_id if subscription && !subscription.empty? && subscription.has_key?(:email)
     end
   end
 end
