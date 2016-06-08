@@ -131,8 +131,12 @@
             = link_to t("sign up"), sign_up_path(redirect: params[:redirect]), class: "sign-up", target: "_self"
 
         .hdr-search
-          %input{type: 'search', name:"q", placeholder: t("search placeholder")}
-          %input.search.postfix.button{type: 'submit', value: ''}
+          -if is_rtl?
+            %input.search.postfix.button{type: 'submit', value: ''}
+            %input{type: 'search', name:"q", placeholder: t("search placeholder")}
+          -else
+            %input{type: 'search', name:"q", placeholder: t("search placeholder")}
+            %input.search.postfix.button{type: 'submit', value: ''}
           -if params[:version_id]
             %input{type: 'hidden', name: "version_id", value: params[:version_id], extra:'first'}
           -elsif params[:version]

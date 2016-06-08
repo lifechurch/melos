@@ -31,7 +31,14 @@ class MomentsController < BaseMomentsController
       recent_versions: recent_versions.present? ? recent_versions.split("/") : [client_settings.version || Version.default_for(I18n.locale) || Version.default]
     )
     @moments = @feed.moments
-    @subscriptions = Subscription.all(@user, auth: current_auth).map! { |s| s.id }
+    @subscriptions = Subscription.all(@user, auth: current_auth)
+    if @subscriptions
+      if @subscriptions.reading_plans
+        @subscriptions = @subscriptions.reading_plans.map! { |s| s.id }
+      else
+        @subscriptions = @subscriptions.map! { |s| s.id }
+      end
+    end
     respond_to do |format|
       format.json # renders _cards.json.jbuilder
     end
@@ -55,7 +62,14 @@ class MomentsController < BaseMomentsController
   # TODO - skip any before filters that arent necessary
   def show
     @user           = current_user
-    @subscriptions  = Subscription.all(@user, auth: current_auth).map! { |s| s.id }
+    @subscriptions  = Subscription.all(@user, auth: current_auth)
+    if @subscriptions
+      if @subscriptions.reading_plans
+        @subscriptions = @subscriptions.reading_plans.map! { |s| s.id }
+      else
+        @subscriptions = @subscriptions.map! { |s| s.id }
+      end
+    end
     respond_to do |format|
       format.html
       format.json # renders show.json.jbuilder

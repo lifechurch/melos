@@ -7,6 +7,7 @@ angular.module('yv', [
 	'yv.moments',
 	'yv.header',
     'yv.plans',
+    'yv.plans.saveForLater',
 	'api.authentication',
 	'api.railsHttp',
 	'common.fixTop',

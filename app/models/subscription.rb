@@ -52,7 +52,75 @@ class Subscription < Plan
       raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
       opts[:user_id]  = user.id
       opts[:auth]     = user.auth
-      super(opts)
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
+      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
+      data, errs = get(list_path, opts)
+      results = YV::API::Results.new(data,errs)
+      if not_found?(errs)
+        false
+      else
+        map_all(results)
+      end
+    end
+
+    def completed(user, opts = {})
+      raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
+      opts[:user_id]  = user.id
+      opts[:auth]     = user.auth
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
+      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
+      data, errs = get(completed_path, opts)
+      results = YV::API::Results.new(data,errs)
+      if not_found?(errs)
+        false
+      else
+        map_all(results)
+      end
+    end
+
+    def saved(user, opts = {})
+      raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
+      opts[:user_id]  = user.id
+      opts[:auth]     = user.auth
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
+      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
+      data, errs = get(saved_path, opts)
+      results = YV::API::Results.new(data,errs)
+      if not_found?(errs)
+        false
+      else
+        map_all(results)
+      end
+    end
+
+    def allSavedIds(user, opts = {})
+      raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
+      opts[:user_id]  = user.id
+      opts[:auth]     = user.auth
+      cache_time = request_for_user?(opts) ? 0 : YV::Caching.a_longer_time
+      cache_for(opts[:cache_for] || cache_time, opts) # give precedence to manually set cache_for
+      data, errs = get(allSavedIds_path, opts)
+      YV::API::Results.new(data,errs)
+    end
+
+    def saveForLater(plan, opts={})
+      raise YV::AuthRequired unless opts[:auth]
+      opts.merge!(
+          user_id:  opts[:auth].user_id,
+          id:       id_from_param(plan)
+      )
+      data, errs = post( saveForLater_path, opts)
+      return YV::API::Results.new(data,errs)
+    end
+
+    def removeSaved(plan, opts={})
+      raise YV::AuthRequired unless opts[:auth]
+      opts.merge!(
+          user_id:  opts[:auth].user_id,
+          id:       id_from_param(plan)
+      )
+      data, errs = post( removedSaved_path, opts)
+      return YV::API::Results.new(data,errs)
     end
 
     def subscribe(plan, opts={})
@@ -68,6 +136,18 @@ class Subscription < Plan
 
     def subscribe_path
       "reading-plans/subscribe_user"
+    end
+
+    def saveForLater_path
+      "reading-plans/add_to_queue"
+    end
+
+    def removedSaved_path
+      "reading-plans/remove_from_queue"
+    end
+
+    def allSavedIds_path
+      "reading-plans/all_queue_items"
     end
 
     def map_subscribe(results)
