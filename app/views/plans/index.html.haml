@@ -11,17 +11,18 @@
 - content_for :meta_description do
   = "#{t('plans.title')}: #{t('plans.browse plans', category: @category.label || t('plans.all'))}"
 
--#- content_for :title do
--#  = t("plans.title")
-
-.fixed.after-header
-  .row.full.b-border.white.collapse
-    .medium-12.columns.text-center.plans-nav-box
-      - if current_auth
-        = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present? && @show_my_plans
-        = link_to t("plans.all plans"), plans_path, class: 'icon active', target: "_self"
-      - else
-        = link_to t("plans.all plans"), plans_path, class: 'icon active plans-nav-all', target: "_self"
+.row.collapse
+  .columns.large-8.medium-8.medium-centered
+    .row
+      .columns.small-12.text-center
+        %ul.button-group.primary-toggle
+          %li
+            = link_to t("EventsAdmin.containers.EventFeedDiscover.discover"), plans_path, class: 'solid-button green ', target: "_self"
+          %li.inactive
+            - if current_auth
+              = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'solid-button green', target: "_self"
+            - else
+              = link_to t("plans.my plans"), sign_in_path, class: 'solid-button green', target: "_self"
 
 %article#plan-index
   - if @category.label.nil?
@@ -52,7 +53,7 @@
                     - if plan.list_image.present?
                       = image_tag plan.list_image.url, class: 'subscription_thumbnail radius'
                     - else
-                      %img{src:'//placehold.it/640x360', class: 'radius'}
+                      %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
                   .subscription-info
                     %h3.plan-title
                       =plan.name
@@ -114,7 +115,7 @@
                   - if plan.list_image.present?
                     = image_tag plan.small_thumbnail_image.url, class: 'subscription_thumbnail radius'
                   - else
-                    %img{src:'//placehold.it/80x80', class: 'radius'}
+                    %img{src:image_path('plans-hero-80.png'), class: 'radius'}
                 %div
                   %h3.plan-title= plan.name
                   %p.plan-length= plan.formatted_length
@@ -126,63 +127,3 @@
           - if @plans.next_page
             %li.next
               =link_to "#{t('ui.pagination.next page')} &rarr;".html_safe, url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]}), rel: 'next', target: "_self", class: "next"
-
-    -#
-      / .content
-
-      /   - I18n.locale = orig_locale
-      /   - if I18n.locale.to_s != @plan_lang.to_s
-
-      /     #filter-message
-      /       = t('plans.showing language filtered', lang_name: t('language name', locale: @plan_lang))
-      /       %span.mute{style: "font-weight: normal; font-size: 12px"}
-      /         = t("plans.swap list localization", swap_locale: t('language name', locale: translate ? I18n.locale : @plan_lang), swap_link: url_for(params.merge(translate: nil, lang: I18n.locale))).html_safe
-
-      /   - if @plans.present?
-      /     %ul.resource_list
-      /       = render partial: "plans/list_item", collection: @plans, locals: {original_locale: orig_locale}
-
-      /     %ul.pagination
-      /       - if @plans.prev_page || @page > 1
-      /         %li.prev
-      /           =link_to t("ui.pagination.previous page"), url_for({query: params[:query], category: params[:category],page: @plans.prev_page || @page - 1, locale: params[:locale], lang: params[:lang]}), rel: 'prev', class: "action_button_grey action_button"
-      /       - if @plans.next_page
-      /         %li.next
-      /           =link_to t("ui.pagination.next page"), url_for({query: params[:query], category: params[:category], page: @plans.next_page, locale: params[:locale], lang: params[:lang]}), rel: 'next', class: "action_button_grey action_button"
-
-
-
-      -#%h1.float_left
-      -#  = t("plans.browse plans", category: @category.label || t("plans.all"))
-      -# %dl.combo_button.float_right#plans_nav_container{:style => "display:none"}
-      -#  %dt
-      -#  %dd.highlighted
-      -#    = link_to t("plans.all plans"), plans_path
-      -#  %dd#nav_primary_plans
-      -#    = link_to t("plans.my plans"), "#"
-
-      / .split_pane
-      /   .sidebar
-      /     .search
-
-      /       %form#plan-search{method: 'get', action: plans_path }
-      /         - if params[:category]
-      /           %input{type: "hidden", name: "category", value: params[:category]}
-      /         - if params[:translate]
-      /           %input{type: "hidden", name: "translate", value: params[:translate]}
-      /         - if @plan_lang
-      /           %input{type: "hidden", name: "lang", value: @plan_lang}
-      /         %input.field.autofocus{name: "query", type: 'search', placeholder: t("plans.search placeholder", category: @category.label || t("plans.all")), value: params[:query]}
-      /         %input.submit{type: 'submit', value: t("plans.search"), onClick: "$('select.language').attr('disabled','true');"}
-
-      /       %form{method: 'get', action: plans_path }
-      /         %input{type: "hidden", name: "translate", value: (params[:translate] || "true")}
-      /         - if params[:category]
-      /           %input{type: "hidden", name: "category", value: params[:category]}
-      /         - if params[:query]
-      /           %input{type: "hidden", name: "query", value: params[:query]}
-
-      /         %select.language{onChange: "this.form.submit();", name: "lang"}
-      /           - (Plan.available_locales & I18n.available_locales).each do |loc|
-      /             %option{value: loc.to_s, selected: loc.to_s == @plan_lang.to_s}
-      /               = t("language name", locale: loc)

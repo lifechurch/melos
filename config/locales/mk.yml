@@ -580,7 +580,7 @@ mk:
         no devices: "Ниту еден уред не е поврзан со твојот YouVersion профил"
         no devices download copy: "Напојувана од Библијата, достапна на Интернет преку YouVersion.com, апликацијата „Библија“ е бесплатна мобилна Библија која може да се инсталира речиси на секој телефон. Апликацијата „Библија“ овозможува корисниците да ја читаат Библијата, да споделуваат стихови на нивните социјални мрежи, да ги обележуваат омилените стихови, и повеќе — сето тоа во формат кој е во тек со нивниот мобилен животен стил. Посети ја <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> на твојот телефон за да ја симнеш апликацијата „Библија“ и да се поврзеш со твојот профил!"
         yes delete: "Да, избриши го мојот YouVersion профил"
-        account delete success: "Твојот YouVersion профил беше успешно избришан. Се надеваме дека ќе продолжиш да ја користиш Библијата на значаен начин. Некои од следниве апликации можат да ти помогнат понатаму: <a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "Ако ја избришеш твојата сметка, трајно ќе избришеш лични податоци, историја и поставки (како на пр. белешки, обележувачи, нагласувања и сл.) во Bible.com и апликацијата „Библија”. Овој процес неможе да биде вратен наназад ниту од нас, ниту пак од нашиот тим. Ако си сигурен дека сакаш да продолжиш со процесот, тогаш повели според упатствата подолу."
         user recent activity: "Скорешните активности на %{user}"
         my notes: "Белешки"
@@ -840,10 +840,16 @@ mk:
         all plans: "Сите планови"
         all category plans: "Сите планови од %{category}"
         my plans: "Мои планови"
+        completed plans: "Завршени планови"
+        saved plans: "Зачувани планови"
         none found: "Не можеме да најдеме план според критериумот. Направи го критериумот за пребарување поопшт."
         about publisher: "За издавачот"
         overview: "Преглед на планот"
         start: "Почни со овој план"
+        save for later: "Зачувај за подоцна"
+        saved for later: "Зачувано за подоцна"
+        sample: "Примерок"
+        back: "Назад"
         length field: "Должина на планот:"
         view sample: "Прочитај дел од содржината"
         users subscribed: "%{user_count} Корисници го читаат овој план"
@@ -1295,312 +1301,320 @@ mk:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "Се случи грешка"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "Потребен е наслов на известувањето."
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "Библиската референца не е валидна."
                     events: 
                         google_place_id: 
-                            required: "You must choose a location from the map."
+                            required: "Мора да одбереш локација од мапата."
                         latitude: 
-                            required: "You must choose a location from the map."
+                            required: "Мора да одбереш локација од мапата."
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "Времето на почеток не може да биде во минатото."
                         timezone: 
-                            required: "Timezone is required."
+                            required: "Потребна е временска зона."
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "Библиската референца не е валидна."
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "URL е потребно."
                         title: 
-                            required: "URL Label is required."
+                            required: "Потребен е URL натпис."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "Објавено"
                     draft: "Проба"
                     live: "Во живо"
-                unpublish: "Unpublish"
-                saving: "Saving..."
+                    archived: "Архивирано"
+                unpublish: "Откажи објавување"
+                saving: "Зачувува..."
                 saveAsDraft: "Зачувај како нацрт"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "Мои настани"
+                eventBuilder: "КРЕИРАЊЕ НАСТАН"
                 signOut: "Одјави се"
-                createAccount: "Create Account"
+                createAccount: "Отвори сметка"
             HtmlEditor: 
-                text: "Text"
-                bold: "Bold"
-                italic: "Italic"
+                text: "Текст"
+                bold: "Задебелено"
+                italic: "Закосено"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "Најава за настани"
                 signIn: "Најави се"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Ако си корисник на Апликацијата „Библија“ и веќе имаш сметка на YouVersion, може да се најавиш со истото корисничко име и лозинка.<br/><br/>Сѐ уште немаш YouVersion сметка? <br/><a href='%{url}'>Регистрирај се на Bible.com</a> за да започнеш да креираш Настани."
                 email: "Е-пошта"
                 password: "Лозинка"
                 forgotPassword: "Ја заборавив лозинката"
             EventEdit: 
-                event: "Event"
+                event: "Настан"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "Одбери содржина за да започнеш."
                 needHelp: "Треба помош?"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "Содржина на настанот"
+                previous: "← Назад: Локации и термини"
+                next: "Следно: Преглед →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "Детали за настанот"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "Локација на настанот"
+                previous: "← Назад: Детали"
+                next: "Следно: Додади содржина →"
             EventEditPreview: 
-                title: "Event Preview"
-                previous: "← Previous: Content"
+                title: "Преглед на настанот"
+                previous: "← Назад: Содржина"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                title: "Споделување настан"
+                subTitle: "Твојот настан сега е објавен:"
+                edit: "Промени го настанот"
+                go: "Мои настани"
+                share: "Сподели го твојот настан:"
                 copy: "Копирај"
-                copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                copied: "Краткиот линк е копиран во твојот склад (clipboard)"
+                previous: "← Назад: Преглед"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "Пронајди настани"
                 discover: "Откриј"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                title: "Мои настани"
+                previous: "← Назад"
+                next: "Следно →"
+                my: "Мои настани"
+                new: "Направи нов настан"
+                subTitle: "НАСТАНИ КРЕИРАНИ ОД МЕНЕ"
+                newFirst: "Направи го твојот прв настан"
+                learn: "Научи како да направиш одличен настан"
             EventFeedSaved: 
                 title: "Зачувани настани"
             EventView: 
-                title: "YouVersion Event"
+                title: "YouVersion Настан"
+            SelectLanguage: 
+                choose: "Избери го твојот јазик"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    sessionExpired: "Твојата сесија истече. Најави се повторно."
+                    invalidEmail: "Невалидна адреса на е-пошта или лозинка."
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
-                    planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    locationMustHaveTime: "Сите локации мора да имаат најмалку еден термин."
+                    locationRequired: "Не може да објавиш настан без локација."
+                    contentRequired: "Не може да објавиш настан без содржина."
+                    planSearchFailed: "Барањето не пронајде ниту еден документ"
+                    noMatchingPlans: "Нема таков план"
                 components: 
                     EventEditNav: 
                         details: "Детали"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        locations: "Локации и термини"
+                        content: "Содржина"
+                        preview: "Прегледај и објави"
                         share: "Сподели"
                 features: 
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "Преуреди содржина"
+                                doneReordering: "Преуредувањето е завршено"
                             ContentHeader: 
-                                text: "Text"
-                                reference: "Bible Reference"
+                                text: "Текст"
+                                reference: "Библиска референца"
                                 plan: "План"
                                 image: "Слика"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "Надворешен линк"
+                                giving: "Линк за донирање"
+                                announcement: "Известување"
                             ContentHelpModal: 
-                                types: "Content Types"
-                                learn: "Learn how to make <br>a great Event"
+                                types: "Тип на содржина"
+                                learn: "Дознај како да направиш <br>одличен настан"
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "Текстуален модул"
+                                    desc: "Кратка содржина, важни точки, прашања за дискусија… Сподели каков било текст со општа содржина која ќе им помогне на присутните да ја следат твојата порака во моментот кога се случува. Текстуалните модули поддржуваат форматирање на текстот и не се ограничени по должина."
                                 reference: 
-                                    title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    title: "Модул за Библиска референца"
+                                    desc: "Одбери кој било Библиски стих или извадок, поврзан директно со која било од 1200+ верзии, на 900+ јазици во YouVersion. Луѓето кои го гледаат твојот настан можат да ја допрат твојата референца за да ја видат на нивниот читач од Апликацијата „Библија“, каде ќе можат да го обележат, нагласат, итн."
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "Модул за план"
+                                    desc: "Поврзи Библиски планови кои се однесуваат на твоите точки за поучување, и помогни ѝ на твојата публика да се поврзе со Божјиот Збор низ целата седмица."
                                 image: 
-                                    title: "Image Module"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    title: "Модул за слика"
+                                    desc: "Внеси живост во твоите настани со многу видови на поддржана графика: уметност во серија, фотографии, слики со стихови итн. Присутните ќе можат лесно да ги споделуваат твоите слики од настанот преку нивните социјални мрежи, правејќи ја твојата порака вирална."
                                 link: 
-                                    title: "External Link Module"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    title: "Модул за надворешен линк"
+                                    desc: "Внатре во твојот настан се креира копче кое се поврзува со која било надворешена веб страница. Овозможи ѝ на твојата публика со еден допир да може да донира онлајн, да се регистрира за волонтирање или да прелиста црковни страници."
                                 announcement: 
-                                    title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    title: "Модул за известувања"
+                                    desc: "Црковни вести, календарски настани, програми, часови, можности за волонтирање и мисија... Модулите за објава се совршениот сад за споделување на информации кои се навремени и важни, но кои не сакаш да одвлекуваат внимание од главните пораки на твоите настани. Секоја модул за објава се појавува на својата страна во твојот Настан, и може да вклучува \"rich text\" содржина (како здебелен и закривен текст)."
                             ContentInsertionPoint: 
-                                title: "Insert next module here"
+                                title: "Тука внеси го следниот модул"
                             ContentTypeAnnouncement: 
                                 title: "Наслов"
-                                prompt: "Write something here..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                prompt: "Напиши нешто тука..."
+                                caption: "Во твојот настан, само насловот (горе) ќе биде видлив. Кога корисник ќе допре на твојот наслов, телото на текстот (долу) ќе се покаже на посебен екран."
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
-                                lastSaved: "Last saved %{when}"
+                                dirty: "Содржината автоматски ќе се зачува за неколку секунди откако ќе престанеш да пишуваш."
+                                failed: "Не може да се зачува."
+                                tryAgain: "Обиди се повторно."
+                                lastSaved: "Последно зачувано %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                    wrongSize: "Големината на сликата мора да биде %{requiredWidth}x%{requiredHeight}. Твојата слика е %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Невалиден тип на датотека. Мора да биде JPG."
+                                caption: "Додај текст за сликата"
+                                prompt: "Повлечи и пушти слика"
+                                onlyJpg: "[само JPG]"
+                                sizePrompt: "%{requiredWidth}px ширина x %{requiredHeight}px висина"
+                                select: "Одбери слика"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
-                                prompt: "Write something here..."
+                                kindrid: "Ако бараш паметна, едноставна платформа за дарување, <a href='%{url}'>пробај го Kindrid</a>."
+                                label: "Натпис на врската"
+                                prompt: "Напиши нешто тука..."
                                 url: "URL"
                             ContentTypePlan: 
-                                replace: "Replace"
-                                search: "Search for a Reading Plan"
+                                replace: "Замени"
+                                search: "Пребарај план за читање"
                             ContentTypeReference: 
+                                language: "Јазик"
                                 version: "Верзија"
                                 book: "Книга"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "Поглавје:Стих"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "Напиши нешто тука..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "Не може да се избрише додека настанот е активен"
+                                desc: "Кога настанот ќе стане активен, не може да се избрише текст, Библиска референца и модул за слика бидејќи корисниците можеби веќе имаат додадено свои лични белешки на нив. Сепак, можеш да ги ажурираш овие модули."
                                 ok: "ОК"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            generic: "Има проблем со објавувањето на твојот настан."
+                            invalidTimes: "Една активност не може да трае повеќе од 12 часа, а разликата помеѓу првото почетно време и последното завршно време од настанот не може да биде повеќе од 8 дена. Промени ги термините на твојот настан и обиди се повторно."
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                    wrongSize: "Сликата мора да биде %{requiredWidth}x%{requiredHeight}. Твојата слика е %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Невалиден тип на датотека. Мора да биде JPG."
+                                changeImage: "Промени ја сликата"
+                                removeImage: "Отстрани ја сликата"
+                                prompt: "Повлечи и пушти слика"
+                                onlyJpg: "[само JPG]"
+                                sizePrompt: "%{requiredWidth}px ширина x %{requiredHeight}px висина"
+                                sizePrompt2: "Димензиите на твојата слика мора да бидат %{requiredWidth} x %{requiredHeight} пиксели."
+                                eventName: "Име на настанот"
+                                org: "Име на црква или организација"
+                                desc: "Опис на настанот"
+                                next: "Следно: Додади локација и термини →"
+                                blank: "%{field} не може да е празно."
                     location: 
                         components: 
                             Location: 
-                                oneRequired: "Add at least one time."
-                                use: "USE THIS LOCATION"
-                                edit: "Edit Location"
-                                delete: "Delete Location"
+                                oneRequired: "Додај најмалку еднаш."
+                                use: "КОРИСТИ ЈА ОВАА ЛОКАЦИЈА"
+                                edit: "Ажурирај ја локацијата"
+                                delete: "Избриши ја локацијата"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                addPhysical: "Додади географска локација"
+                                promptPhysical: "Можеш да додадеш повеќе локации."
+                                addVirtual: "Додади виртуелна локација"
+                                churchOnline: "Дали знаеше? Можеш бесплатно да започнеш онлајн служба користејќи ја <a className='button-caption' href='%{url}'>црковната онлајн платформа</a>."
                             LocationAddTime: 
                                 minutes: "МИНУТИ"
                                 hours: "ЧАСОВИ"
                                 days: "ДЕНОВИ"
                             LocationDeleteModal: 
                                 sure: "Дали си сигурен?"
-                                selected: "You have selected the following location to be deleted:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                selected: "Ти одбра да се избрише следната локација:"
+                                warn: "Со ова ќе се избрише локацијата од минатите и сегашните настани. Нема да можеш одново да ја користш оваа локација за идни настани."
                                 cancel: "Откажи"
                                 delete: "Избриши"
                             LocationEdit: 
-                                prompt: "Enter the Location address..."
+                                prompt: "Внеси ја адресата на локацијата..."
                                 country: "Земја"
                                 timezone: "Временска зона"
                                 namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                name: "Име на локација"
+                                nameOptional: "Незадолжително: Корисно доколку се додаваат повеќе локации"
+                                addAnother: "Внеси друг термин"
                                 cancel: "Откажи"
-                                save: "Save this Location"
+                                save: "Зачувај ја оваа локација"
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "Помести ги почетните датуми"
                                 forward: "Препрати"
-                                backward: "backward"
-                                by: "by"
-                                week: "week"
-                                weeks: "weeks"
+                                backward: "назад"
+                                by: "за"
+                                week: "недела"
+                                weeks: "недели"
                                 month: "Месец"
-                                months: "months"
+                                months: "месеци"
                                 day: "Ден"
                                 days: "ДЕНОВИ"
-                                hour: "hour"
+                                hour: "час"
                                 hours: "ЧАСОВИ"
                                 update: "Ажурирај"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "Промени ги сите датуми и термини одеднаш"
                             UnpublishModal: 
                                 cancel: "Откажи"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                title: "Откажи го објавувањето за да правиш промени"
+                                desc: "Да додадеш, промениш или избришеш локации и термини, привремено откажи го објавувањето на настанот. За тоа време, твојот настан нема да биде видлив во резултатите на пребарување. Не заборавај да го објавиш твојот настан повторно."
+                                unpublish: "Откажи објавување"
                     preview: 
                         notes: 
                             prompt: "Додај твои лични белешки..."
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Најави се</span> да додадеш твои приватни белешки…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Прегледај го твојот настан пред објавување"
+                                previewUrl: "Прегледај URL:"
                                 share: "Сподели Настан"
-                                locations: "Место и време"
+                                locationsAndTimes: "Место и време"
                                 publish: "Објави"
-                                unpublish: "Unpublish"
-                                locations: "Locations:"
+                                unpublish: "Откажи објавување"
+                                locations: "Локации:"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "Видлив:"
+                                    desc: "Твојот настан ќе биде видлив 5 дена пред првиот термин, во делот на локација за настанот и резултати од пребарување при Апликацијата „Библија“."
                                 status: 
                                     title: "Статус:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "Црвен беџ LIVE ќе се појави кога ќе започне првиот термин."
                                 remove: 
-                                    title: "Remove:"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    title: "Отстранување:"
+                                    desc: "Твојот настан нема да може да се пронајде по завршување на последниот термин. Присутните кои допреле на „Зачувај го настанот“ додека твојот настан бил видлив, сѐ уште ќе имаат пристап на истата архивирана верзија. Оваа верзија исто така ќе продолжи да биде достапна преку директни внатрешни линкови."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "Прошири"
                             PreviewTypePlan: 
                                 read: "Читај"
                                 info: "Информација за планот"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "Копирај"
                         share: "Сподели"
                         delete: "Избриши"
                         draft: "Проба"
                         edit: "Уреди"
                         view: "Приказ"
-                        fail: "Unable to delete Event"
+                        fail: "Не може да се избрише настан"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "Копирај"
+                        copied: "Копирано"
                         share: "Сподели"
                         read: "Читај"
-                        readPlan: "Read Plan"
+                        readPlan: "Читај план"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Прошири"
+                        collapse: "Собери"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Прошири"
+                        collapse: "Собери"
                         save: "Зачувај го настанот"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "Најави се за да сочуваш настан"
+                        saved: "Настанот е сочуван"

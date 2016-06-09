@@ -19,7 +19,14 @@ class UsersController < ApplicationController
     @kind ||= params[:kind]
     @moments = Moment.all(moment_all_params)
     if @moments.valid?
-      @subscriptions = Subscription.all(@user, auth: current_auth).map! { |s| s.id }
+      @subscriptions = Subscription.all(@user, auth: current_auth)
+      if @subscriptions
+        if @subscriptions.reading_plans
+          @subscriptions = @subscriptions.reading_plans.map! { |s| s.id }
+        else
+          @subscriptions = @subscriptions.map! { |s| s.id }
+        end
+      end      
       render partial: "moments/cards", locals: {moments: @moments, comments_displayed: false}, layout: false
     else
       render 'pages/generic_error'

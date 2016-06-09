@@ -580,7 +580,7 @@ fi:
         no devices: "Ei laitteita kytkettynä YouVersion-tiliisi"
         no devices download copy: "YouVersionin verkkoraamattuun perustuva Raamattusovellus on ilmainen Raamattu, jonka voi asentaa lähes kaikkiin mobiililaitteisiin. Raamattusovelluksessa voit lukea Raamattua, jakaa jakeita yhteisöpalveluihin, lisätä kirjanmerkkejä lempikohtiin ja paljon muuta—kaikki tämä on saatavilla paikasta riippumatta. Lataa Raamattusovellus mobiililaitteellesi osoitteesta <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> ja yhdistä laite tiliisi!"
         yes delete: "Kyllä, poista tilini"
-        account delete success: "YouVersion-tilisi poistettiin onnistuneesti. Toivomme, että löydät jatkossakin merkityksellisiä tapoja olla tekemisissä Raamatun kanssa. Joku näistä sovelluksista voi olla avuksi siirtyessäsi eteenpäin: <a href='https://www.bible.com/free-bible-apps' target='_self'> www.youversion.com/free-bible-apps </a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "Jos poistat tilisi, kaikki tietosi, toimintahistoria ja personointi (kuten muistiinpanot, kirjanmerkit, korostukset jne.) tuhoutuvat välittömästi Bible.com-sivustolta ja Raamattusovelluksesta. Tätä toimintoa ei voi perua. Jos varmasti haluat edetä, jatka alta."
         user recent activity: "Käyttäjän %{user} viimeaikainen toiminta"
         my notes: "Muistiinpanot"
@@ -840,10 +840,16 @@ fi:
         all plans: "Kaikki suunnitelmat"
         all category plans: "Kaikki kategorian %{category} suunnitelmat"
         my plans: "Omat suunnitelmani"
+        completed plans: "Valmiit suunnitelmat"
+        saved plans: "Tallennetut suunnitelmat"
         none found: "Emme löytäneet hakuehtoihisi sopivaa suunnitelmaa. Kokeile hakuehtojen laajentamista."
         about publisher: "Tietoa julkaisijasta"
         overview: "Suunnitelman yleiskatsaus"
         start: "Aloita tämä suunnitelma"
+        save for later: "Laita muistiin"
+        saved for later: "Tallennetut"
+        sample: "Esimerkki"
+        back: "Palaa"
         length field: "Suunnitelman pituus:"
         view sample: "Näytä esimerkki lukusuunnitelmasta"
         users subscribed: "%{user_count} käyttäjää lukee tätä suunnitelmaa"
@@ -1329,6 +1335,7 @@ fi:
                     published: "Julkaistu"
                     draft: "Luonnos"
                     live: "Live"
+                    archived: "Arkistoitu"
                 unpublish: "Poista julkaisu"
                 saving: "Tallennetaan..."
                 saveAsDraft: "Tallenna luonnoksena"
@@ -1344,7 +1351,7 @@ fi:
             Auth: 
                 title: "Tapahtumiin sisäänkirjautuminen"
                 signIn: "Kirjaudu sisään"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Jos olet Raamattu-sovelluksen käyttäjä ja sinulla on jo YouVersion-tili, voit kirjautua samoilla tunnuksilla.<br/><br/>Eikö sinulla ole vielä YouVersion-tiliä?<br/><a href='%{url}'>Rekisteröidy Bible.com-sivustolle</a> alkaaksesi luoda tapahtumia."
                 email: "Sähköposti"
                 password: "Salasana"
                 forgotPassword: "Unohdin salasanani"
@@ -1390,6 +1397,8 @@ fi:
                 title: "Tallennetut tapahtumat"
             EventView: 
                 title: "YouVersion-tapahtuma"
+            SelectLanguage: 
+                choose: "Valitse kieli"
         features: 
             Auth: 
                 errors: 
@@ -1431,7 +1440,7 @@ fi:
                                     desc: "Rakenteet, avainkohdat, keskustelun avaukset... Jaa mitä tahansa tekstipohjaista yleistä sisältöä, joka auttaa osallistujia seuraamaan mukana. Tekstikappaleesi voivat olla kuinka pitkiä tahansa ja ne voivat sisältää myös rikastettua tekstiä."
                                 reference: 
                                     title: "Raamatunviittaus"
-                                    desc: "Valitse mikä tahansa jae tai kappale Raamatusta, linkitettynä suoraan mihin tahansa YouVersionin yli 1200 käännöksestä, yli 900 kielellä. Ihmiset, jotka katselevat tapahtumaasi, voivat napauttaa viittaustasi nähdäkseen sen Raamattusovelluksen lukutilassa, jossa he voivat luoda siitä kirjanmerkin, korostuksen ja paljon muuta."
+                                    desc: "Valitse mikä tahansa raamatun jae tai teksti, joka on sidoksissa suoraan mihin tahansa YouVersionin 1200+ versioon, yli 900 kielellä. Ihmiset jotka näkevät Tapahtumasi voivat näpäyttää viitettäsi nähdäkseen sen Raamattusovelluksessa, missä he voivat mm. kirjanmerkitä sen tai korostaa sitä. "
                                 plan: 
                                     title: "Suunnitelma"
                                     desc: "Linkitä opetuksesi siihen liittyviin lukusuunnitelmiin ja hartauksiin, se auttaa yleisöäsi jatkamaan sitoutumista Jumalan Sanaan koko viikon ajan."
@@ -1443,7 +1452,7 @@ fi:
                                     desc: "Luo painikkeen tapahtumaasi, joka toimii linkkinä mihin tahansa ulkoiseen www-sivuun. Tuo yleisösi vain yhden napautuksen päähän online-lahjoittamisesta, ryhtymisestä vapaaehtoiseksi tai seurakuntien kotisivuista."
                                 announcement: 
                                     title: "Ilmoitukset"
-                                    desc: "Seurakunnan uutiset, tapahtumat, ohjelmat, luennot, vapaaehtoistoiminta ja lähetysmahdollisuudet... Jaa helposti ajankohtaisia, tärkeitä tietoja ilman, että tapahtumasi varsinainen sanoma häiriintyy. Tämä sisältötyyppi mahdollistaa sinun käyttää rikastettua tekstiä, joka näkyy omalla sivullaan tapahtumassasi. Se sopii täydellisesti sisällölle, joka on tärkeää, mutta jonka et halua vievän huomiota tapahtumasi pääviestiltä."
+                                    desc: "Kirkon uutiset, kalenteritapahtumat, ohjelmat, oppitunnit, vapaaehtois- ja lähetystyömahdollisuudet... Ilmoitusmoduulit ovat täydellinen tapa jakaa oikea-aikaisesti tärkeää tietoa, jonka et kuitenkaan halua häiritsevän tapahtumiesi ensisijaista viestiä. Jokainen ilmoitusmoduuli ilmestyy omalle sivulleen tapahtumiisi, ja voit myös sisällyttää siihen rikastuttavaa tekstisisältöä (kuten lihavointia ja kursivointia)."
                             ContentInsertionPoint: 
                                 title: "Lisää seuraava osio tähän"
                             ContentTypeAnnouncement: 
@@ -1473,6 +1482,7 @@ fi:
                                 replace: "Korvaa"
                                 search: "Hae lukusuunnitelmaa"
                             ContentTypeReference: 
+                                language: "Kieli"
                                 version: "Käännös"
                                 book: "Kirja"
                                 chapterVerse: "Kappale:Jae"
@@ -1496,11 +1506,12 @@ fi:
                                 prompt: "Vedä ja pudota kuva"
                                 onlyJpg: "[vain JPG]"
                                 sizePrompt: "leveys %{requiredWidth}px korkeus %{requiredHeight}px"
-                                sizePrompt2: "Kuvasi mittojen tulee olla %{requiredWidth} x {requiredHeight} pikseliä."
+                                sizePrompt2: "Kuvan mittojen tulisi olla %{requiredWidth} x %{requiredHeight} pixeliä."
                                 eventName: "Tapahtuman nimi"
                                 org: "Seurakunta tai organisaatio"
                                 desc: "Tapahtuman kuvaus"
                                 next: "Seuraava: Lisää paikka & aika →"
+                                blank: "%{field} ei voi olla tyhjä."
                     location: 
                         components: 
                             Location: 
@@ -1537,7 +1548,7 @@ fi:
                                 shift: "Siirrä alkamisajankohtia"
                                 forward: "Lähetä edelleen"
                                 backward: "taaksepäin"
-                                by: "by"
+                                by: " "
                                 week: "viikko"
                                 weeks: "viikkoa"
                                 month: "Kuukausi"
@@ -1559,8 +1570,10 @@ fi:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Kirjaudu sisään</span> lisätäksesi yksityisiä muistiinpanoja...</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Tarkista tapahtumasi ennen julkaisua"
+                                previewUrl: "Esikatselun URL:"
                                 share: "Jaa tapahtuma"
-                                locations: "Sijainnit ja ajankohdat"
+                                locationsAndTimes: "Sijainnit ja ajankohdat"
                                 publish: "Julkaise"
                                 unpublish: "Poista julkaisu"
                                 locations: "Paikat:"
@@ -1592,6 +1605,7 @@ fi:
                 components: 
                     EventViewContent: 
                         copy: "Kopio"
+                        copied: "Kopioitu"
                         share: "Jaa"
                         read: "Lue"
                         readPlan: "Lue suunnitelma"

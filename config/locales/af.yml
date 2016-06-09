@@ -159,21 +159,21 @@ af:
         share: 
             tell friends: "Vertel jou vriende van die Bybel Toep vir Kinders."
             facebook name: "Die Bybel Toep vir Kinders"
-            facebook description: "Die Bybel Toep vir Kinders is hier! Laai die gratis toep vir iOS en Android nog vandag af: interaktiewe Bybel stories om jou kind te help leer, speel en groei in God se woord. www.bible.com/kids"
-            facebook link: "http://www.bible.com/kids"
-            facebook redirect: "http://www.bible.com/kids"
-            twitter description: "Die Bybel Toep vir Kinders van @YouVersion is hier! Dis pret en heeltemal gratis. Laai af: bible.com/kids"
+            facebook description: "Die Bybel Toep vir Kinders is hier! Laai die gratis toep vir iOS en Android nog vandag af: interaktiewe Bybel stories om jou kind te help leer, speel en groei in God se woord. www.bible.com/kinders"
+            facebook link: "http://www.bible.com/kinders"
+            facebook redirect: "http://www.bible.com/kinders"
+            twitter description: "Die Bybel Toep vir Kinders van @YouVersion is hier! Dis pret en heeltemal gratis. Laai af: bible.com/kinders"
             twitter hashtags: "kinderbybel"
             email: "E-pos"
             email subject: "Die Bybel Toep vir Kinders is hier!"
-            email body: "Goeie nuus - die Bybel Toep vir Kinders is hier! Dis heeltemal gratis en is nou beskikbaar vir iPhone, iPad, iPod touch, en Android toestelle. Die toep is a groeiende versameling van Bybel stories met druk-geaktiveerde animasies en leer aktiwiteite, perfek om kinders te help om die groot stories van die Bybel te leer. Gaan na bible.com/kids op jou moebiele toestel om dit nog vandag af te laai."
+            email body: "Goeie nuus - die Bybel Toep vir Kinders is hier! Dis heeltemal gratis en is nou beskikbaar vir iPhone, iPad, iPod touch, en Android toestelle. Die toep is a groeiende versameling van Bybel stories met druk-geaktiveerde animasies en leer aktiwiteite, perfek om kinders te help om die groot stories van die Bybel te leer. Gaan na bible.com/kinders op jou moebiele toestel om dit nog vandag af te laai."
         partner: 
             youversion: "YouVersion: Die wêreld se mees populêre Bybel Toep"
             in partnership: "in samewerking met"
             one hope: "One Hope: Uitstekende Bybel inhoud vir Kinders"
         links: 
-            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
-            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            apple: "https://itunes.apple.com/af/app/bible-for-kids/id668692393?mt=8"
+            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=af"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Nou"
     select dropdown: "--Kies--"
@@ -580,7 +580,7 @@ af:
         no devices: "Geen toestelle gekoppel aan jou YouVersion Rekening nie"
         no devices download copy: "Gebaseer op die aanlyn Bybel, YouVersion, die Bybel Toep is 'n gratis mobiele Bybel wat op bykans enige toestel geïnstalleer kan word. Die Bybel Toep laat gebruikers toe om die Bybel te lees, verse te deel met sosiale netwerke, gunsteling gedeeltes te boekmerk en vele meer&amp;mdash:all in 'n formaat wat tred hou met die snelgroeiende mobiele leefstyl. Besoek <a href='https://www.bible.com/app' target='_self'>bible.com/app</a>  van jou mobiele toestel om die Bybel Toep af te laai en te koppel jou rekening!"
         yes delete: "Ja, Sluit My Rekening"
-        account delete success: "Jou YouVersion rekening is suksesvol gesluit. Ons hoop dat jy sal voortgaan om betekenisvolle maniere te vind om interaktief met die Bybel te verkeer. Van hierdie apps mag dalk handig te pas kom soos jy aanbeweeg:  <a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "Ons het jou YouVersion rekening geskrap, soos versoek. Dit spyt ons dat jy ons verlaat. Dit is ons hartswens dat jy sal aanhou om sinvolle maniere te soek om met God se Woord om te gaan."
         delete account description: "Wanneer jy jou rekening uitvee, verwyder jy al jou informasie, geskiedenis en verpersoonliking (soos notas, boekmerke, kleurkodering, ens.) binne die Bible.com en BibleApp sfeer vir altyd. Hierdie aksie kan nie deur uself of deur ons span ongedaan gemaak word nie. As u seker is u wil voortgaan, doen so hieronder."
         user recent activity: "%{user} se Onlangse Aktiwiteite"
         my notes: "Notas"
@@ -840,10 +840,16 @@ af:
         all plans: "Alle Planne"
         all category plans: "Alle %{category} Planne"
         my plans: "My Planne"
+        completed plans: "Voltooide Planne"
+        saved plans: "Gestoorde Planne"
         none found: "Ons kon nie 'n plan kry wat aan jou kriteria voldoen nie. Probeer jou soekveld verbreed."
         about publisher: "Oor Die Uitgewer"
         overview: "Plan Oorsig"
         start: "Begin hierdie Plan"
+        save for later: "Stoor vir later."
+        saved for later: "Gestoor vir later."
+        sample: "Voorbeeld"
+        back: "Terug"
         length field: "Plan Lengte:"
         view sample: "Wys 'n Voorbeeld van 'n Leesgedeelte"
         users subscribed: "%{user_count} Gebruiker Lees Hierdie Plan"
@@ -1295,7 +1301,7 @@ af:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "'n Fout het ingetree"
                 announcement: 
                     events: 
                         title: 
@@ -1303,7 +1309,7 @@ af:
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "Bybelverwysing is nie geldig nie."
                     events: 
                         google_place_id: 
                             required: "Jy moet 'n plek op die kaart kies."
@@ -1321,7 +1327,7 @@ af:
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "URL word benodig."
                         title: 
                             required: "URL Opskrif is nodig."
             EventHeader: 
@@ -1329,13 +1335,14 @@ af:
                     published: "Plaas"
                     draft: "Konsep"
                     live: "Lewendig"
+                    archived: "In Argief Geplaas"
                 unpublish: "Onttrek"
-                saving: "Saving..."
+                saving: "Besig om te Stoor..."
                 saveAsDraft: "Stoor as Rofwerk"
                 myEvents: "My Gebeurtenisse"
                 eventBuilder: "GEBEURTENIS BOUER"
                 signOut: "Teken Uit"
-                createAccount: "Create Account"
+                createAccount: "Skep Rekening"
             HtmlEditor: 
                 text: "Teks"
                 bold: "vet druk"
@@ -1344,7 +1351,7 @@ af:
             Auth: 
                 title: "Teken in vir Gebeurtenisse"
                 signIn: "Teken In"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: " As jy 'n Bybel Toep gebruiker is en alreeds 'n YouVersion rekening het, kan jy met dieselfde besonderhede inteken.<br/><br/>Het jy nog nie 'n YouVersion rekening nie? <br/><a href='%{url}'>Teken nou aan op Bible.com en begin om Gebeure te skep.</a>"
                 email: "E-pos"
                 password: "Wagwoord:"
                 forgotPassword: "Het wagwoord vergeet"
@@ -1375,32 +1382,34 @@ af:
                 copied: "Die skakel is na jou knipbord gekopieër "
                 previous: "← Vorige: Voorskou"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "Ontdek Gebeurtenisse"
                 discover: "Ontdek"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
+                title: "My Gebeurtenisse"
+                previous: "← Vorige"
+                next: "Volgende →"
+                my: "My Gebeurtenisse"
+                new: "Skep Nuwe Gebeurtenis"
+                subTitle: "GEBEURTENISSE DEUR MY GESKEP"
                 newFirst: "Skep Jou Eerste Gebeurtenis"
                 learn: "Leer hoe om 'n goeie Gebeurtenis te skep"
             EventFeedSaved: 
                 title: "Gestoorde Gebeure"
             EventView: 
                 title: "YouVersion Gebeurtenis"
+            SelectLanguage: 
+                choose: "Kies Jou Taal"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
+                    sessionExpired: "Jou sessie is vertreke. Teken asseblief weer in."
                     invalidEmail: "Ongeldige epos of wagwoord."
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
+                    locationMustHaveTime: "Alle plekke behoort ten minste een tyd te hê."
+                    locationRequired: "Jy kan nie 'n Gebeurtenis plaas sonder plekke nie."
                     contentRequired: "Jy kan nie 'n Gebeurtenis sonder inhoud plaas nie."
-                    planSearchFailed: "Search did not match any documents"
+                    planSearchFailed: "Jou soektog het niks opgelewer nie"
                     noMatchingPlans: "Geen verwante Planne"
                 components: 
                     EventEditNav: 
@@ -1416,22 +1425,22 @@ af:
                                 reorder: "Rangskik Inhoud"
                                 doneReordering: "Klaar met Herrangskik"
                             ContentHeader: 
-                                text: "Text"
+                                text: "Teks"
                                 reference: "Bybelverwysing"
                                 plan: "Plan"
                                 image: "Foto"
-                                link: "External Link"
+                                link: "Eksterne Skakel"
                                 giving: "Donasie Skakel"
                                 announcement: "Aankondiging"
                             ContentHelpModal: 
                                 types: "Inhoud Soorte"
-                                learn: "Learn how to make <br>a great Event"
+                                learn: "Leer hoe om 'n <br>goeie Gebeurtenis te maak"
                                 text: 
                                     title: "Teks Module"
                                     desc: "Raamwerke, sleutelpunte, gespreksvrae... Deel enige algemene inhoud (slegs teks) wat jou deelnemers sal help om jou boodskap te volg soos wat dit gebeur. Jou teks gedeeltes kan enige lengte wees en mag ryk teks formate insluit."
                                 reference: 
                                     title: "Bybelverwysingsmodule"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    desc: "Enige Bybelvers of -gedeelte wat jy kies is direk gekoppel aan YouVersion se 1 200+ Bybelweergawes, in 900+ tale. Mense wat jou Gebeurtenis sien kan op enige verwysing tik om dit in hulle Bybel Toep Leser te sien. Daar kan hulle dit Merk, Beklemtoon en nog baie meer daarmee doen."
                                 plan: 
                                     title: "Plan Module"
                                     desc: "Koppel jou hoofgedagtes aan Bybelplanne en Oordenkings. Sodoende help jy jou gehoor om voortdurend deur die week met God se Woord besig te wees."
@@ -1443,12 +1452,12 @@ af:
                                     desc: "Skep 'n skakel binne-in jou Gebeurtenis wat dit koppel aan enige eksterne webwerf. Jou gehoor is slegs een klik verwyder van aanlyn skenkings, aanteken as vrywilliger of kerke se tuisblaaie."
                                 announcement: 
                                     title: "Aankondigingsmodule"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    desc: "Kerknuus, kalenderitems, klasse, vrywilliger-en-sendeling-geleenthede...Aankondigingmodules is die ideale stoorplek om belangrike inligting te deel sonder om jou Gebeurtenis se primêre boodskap af te verwater. Elke aankondigingsmodule verskyn op sy eie bladsy in jou Gebeurtenis en jy kan selfs verrykte inhoud (soos kursiewe en benadrukte skrif) insluit. "
                             ContentInsertionPoint: 
                                 title: "Voeg volgende module hier in"
                             ContentTypeAnnouncement: 
                                 title: "Titel"
-                                prompt: "Write something here..."
+                                prompt: "Skryf iets hier..."
                                 caption: "Slegs jou Titel (hierbo) sal in jou Gebeurtenis sigbaar wees. Wanneer 'n gebruiker op jou Titel kliek sal die Inhoud (hieronder) op 'n aparte skerm vertoon."
                             ContentTypeContainer: 
                                 dirty: "Inhoud stoor outomaties 'n paar sekondes nadat jy ophou tik het."
@@ -1457,27 +1466,28 @@ af:
                                 lastSaved: "Laaste gestoor %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
+                                    wrongSize: "Prentgrootte verlang is %{requiredWidth}x%{requiredHeight}. Jou prent is %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Ongeldige lêertipe. Dit moet JPG wees."
                                 caption: "Voeg opskrif by"
-                                prompt: "Drag and Drop an Image"
+                                prompt: "Trek en Plaas 'n Prent"
                                 onlyJpg: "[slegs JPG]"
                                 sizePrompt: "%{requiredWidth}px wydte x %{requiredHeight}px hoogte"
                                 select: "Kies Prent"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
+                                kindrid: "Indien jy 'n slim, eenvoudige donasie platform soek, <a href='%{url}'>probeer Kindrid</a>."
                                 label: "Skakel Opskrif"
-                                prompt: "Write something here..."
+                                prompt: "Skryf iets hier..."
                                 url: "URL"
                             ContentTypePlan: 
                                 replace: "Vervang"
                                 search: "Soek 'n Leesplan"
                             ContentTypeReference: 
+                                language: "Taal"
                                 version: "Weergawe"
                                 book: "Boek"
                                 chapterVerse: "Hoofstuk:Vers"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "Skryf iets hier..."
                             LiveWarningModal: 
                                 title: "Kan nie verwyder word terwyl die Gebeurtenis nog aan die gang is nie"
                                 desc: "As die Gebeurtenis lewendig is, kan Teks, Bybelverwysing en Prentmodules nie verwyder word nie, want gebruikers kon alreeds hul privaatnotas bygevoeg het. Jy kan die modules nog redigeer."
@@ -1485,22 +1495,23 @@ af:
                     details: 
                         errors: 
                             generic: "'n Probleem het ontstaan met die plasing van jou Gebeurtenis."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            invalidTimes: "'n Diens kan nie meer as 12 ure wees nie en die verskil tussen die vroegste begintyd en die laatste eindtyd van 'n Gebeurtenis kan nie meer as 8 dae wees nie. Pas asb. jou Gebeurtenis se tye aan en probeer weer."
                         components: 
                             DetailsEdit: 
                                 errors: 
                                     wrongSize: "Prent grootte verlang is %{requiredWidth}x%{requiredHeight}. Jou prent is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
+                                    wrongType: "Verkeerde lêertipe. Moet JPG wees."
                                 changeImage: "Verander Prent"
                                 removeImage: "Verwyder Prent"
                                 prompt: "Trek en Plaas 'n Prent"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                onlyJpg: "[slegs JPG]"
+                                sizePrompt: "%{requiredWidth}px wydte x %{requiredHeight}px hoogte"
+                                sizePrompt2: "Jou prent se afmetings moet %{requiredWidth} x %{requiredHeight} beeldpunte wees."
                                 eventName: "Gebeurtenis Naam"
                                 org: "Kerknaam of Organisasie"
                                 desc: "Beskrywing van Gebeurtenis"
                                 next: "Volgende: Voeg Plek & Tye by →"
+                                blank: "%{field} kan nie leeg wees nie."
                     location: 
                         components: 
                             Location: 
@@ -1512,7 +1523,7 @@ af:
                                 addPhysical: "Voeg 'n Fisiese Adres by"
                                 promptPhysical: "Jy kan verskeie adresse byvoeg."
                                 addVirtual: "Voeg Virtuele Adres By"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                churchOnline: "Het jy geweet? Jy kan gratis 'n aanlyn bediening begin deur gebruik te maak van die <a className='button-caption' href='%{url}'>Church Online Geleentheid</a>."
                             LocationAddTime: 
                                 minutes: "MINUTE"
                                 hours: "URE"
@@ -1552,55 +1563,58 @@ af:
                                 cancel: "Kanselleer"
                                 title: "Onttrek sodat jy Veranderinge kan aanbring"
                                 desc: "Om Plekke en Tye by te voeg, te redigeer of te verwyder moet jy die gebeurtenis tydelik onttrek. Gedurende hierdie tyd sal jou gebeurtenis nie in soekresultate verskyn nie. Moenie vergeet om jou gebeurtenis weer te plaas nie."
-                                unpublish: "Unpublish"
+                                unpublish: "Onttrek"
                     preview: 
                         notes: 
                             prompt: "Voeg jou private notas by..."
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Teken in</span> om jou persoonlike notas by te voeg…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Kontroleer Jou Gebeurtenis Voor Jy Dit Plaas"
+                                previewUrl: "Kyk Eers Weer Na URL:"
                                 share: "Deel Gebeurtenis"
-                                locations: "Plekke en Tye"
+                                locationsAndTimes: "Plekke en Tye"
                                 publish: "Publiseer"
-                                unpublish: "Unpublish"
+                                unpublish: "Onttrek"
                                 locations: "Plekke:"
                                 discoverable: 
                                     title: "Opspoorbaar:"
                                     desc: "Jou gebeurtenis sal sigbaar wees in die Bybel Toep se Gebeurtenis afdeling en soekresultate 5 dae voor jou vroegste begintyd."
                                 status: 
                                     title: "Status:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "Die rooi LEWENDIG knopie sal vertoon word wanneer jou vroegste begintyd is."
                                 remove: 
                                     title: "Verwyder:"
                                     desc: "Jou Gebeurtenis sal nie meer opspoorbaar wees na die laaste eindtyd nie. Besoekers wat op “Stoor Gebeurtenis” kliek terwyl jou Gebeurtenis nog opspoorbaar is, kan dit nog na die tyd in die argief opspoor. Hierdie Gebeurtenis sal ook d.m.v. direkte inkomende skakels bereik kan word."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "Vergroot"
                             PreviewTypePlan: 
                                 read: "Lees"
                                 info: "Leesplan inligting"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "Dupliseer"
                         share: "Deel"
                         delete: "Vee uit"
                         draft: "Konsep"
                         edit: "Wysig"
                         view: "Besigtig"
-                        fail: "Unable to delete Event"
+                        fail: "Kan nie Gebeurtenis verwyder nie"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "Kopieër"
+                        copied: "Gekopieër"
                         share: "Deel"
                         read: "Lees"
                         readPlan: "Lees die Plan"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Vergroot"
+                        collapse: "Laat val"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Vergroot"
+                        collapse: "Laat val"
                         save: "Stoor Geleentheid"
                         signIn: "Teken in om Gebeurtenis te stoor"
                         saved: "Gebeurtenis is Gestoor"

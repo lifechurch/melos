@@ -29,6 +29,7 @@
     :mk => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda { |n| n % 10 == 1 ? :one : :other } } } },
     :mn => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda { |n| n == 1 ? :one : :other } } } },
     :ms => { :i18n => { :plural => { :keys => [:other], :rule => lambda { |n| :other } } } },
+    :my => { :i18n => { :plural => { :keys => [:other], :rule => lambda { |n| :other } } } },
     :nl => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda { |n| n == 1 ? :one : :other } } } },
     :no => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda { |n| n == 1 ? :one : :other } } } },
     :pl => { :i18n => { :plural => { :keys => [:one, :few, :other], :rule => lambda { |n| n == 1 ? :one : [2, 3, 4].include?(n % 10) && ![12, 13, 14].include?(n % 100) ? :few : :other } } } },

@@ -52,7 +52,7 @@ fa:
                 comments: 
                     first: 
                         text: "سپاسگزارم، من امروز واقعاً نیاز داشتم آن را بشنوم"
-                        time: "تقریبأ ۳ ساعت قبل"
+                        time: "تقریبأ ۳ ساعت پیش"
                     second: 
                         text: "امین، من هم همینطور. الآن به شما ایمیل می‌فرستم"
                         time: "تقریبأ ۲۷ دقیقه پیش"
@@ -313,7 +313,7 @@ fa:
         could not load verse: "آیه بارگذاری نشد!"
         showing related: "نمایش لحظات مشترک"
         return to: "بازگشت به"
-        time past: "%{ago} قبل"
+        time past: "%{ago} پیش"
         user likes this: "%{last_liker_link} این را دوست دارد"
         likes count more: "%{likes_count} بیشتر"
         likes count 2 more: "%{likes_count} بیشتر"
@@ -530,8 +530,8 @@ fa:
         confirm message: "ما به آدرس %{email} ایمیلی فرستادیم. "
         confirm message click: "برای تأیید، لطفاً روی لینک ارسالی کلیک کنید."
         resend verification: "ارسال مجدد ایمیل تأیید حساب کاربری"
-        sign in alternate: "یا اگر حساب کاربری ندارید<a href='%{sign_up_path}' target='_self'>اینجا کلیک کنید.</a>"
-        sign up alternate: "یا اگر حساب کاربری دارید<a href='%{sign_in_path}' target='_self'>وارد برنامه شوید.</a>"
+        sign in alternate: "یا اگر حساب کاربری ندارید <a href='%{sign_up_path}' target='_self'>اینجا کلیک کنید.</a>"
+        sign up alternate: "یا اگر حساب کاربری دارید <a href='%{sign_in_path}' target='_self'>وارد برنامه شوید.</a>"
         password length: "حداقل ۶ حرف/عدد"
         welcome to youversion: "به گروه یوورژن خوش آمديد!‏"
         confirm email: "لطفاً ا‌ی‌میل خود را بررسی کنید و روی لینک دریافتی کلیک کرده ثبت نام خود را تأیید تمایید."
@@ -569,7 +569,7 @@ fa:
         no devices: "هیچ دستگاهی به حساب یوورٓن شما وصل نشده است"
         no devices download copy: "براساس «کتاب‌مقدس» آنلاین و یوورژن، اَپ/برنامۀ کتاب‌مقدس رایگان است، و تقریباً در تمام دستگاه‌های موبایل قابل نصب می‌باشد. برنامۀ کتاب‌مقدس شامل امکانات فراوانی از جمله خواندن کلام، به اشتراک گذاشتن آیات در شبکه‌های اجتماعی، نشانه‌گذاری آیات مورد علاقه است. از طریق تلفن یا دیگر وسایل همراه خود به سایت زیر بروید: <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> و آپ «کتاب‌مقدس» را دانلود کنید و با حساب کاربری خود به آن وارد شوید!"
         yes delete: "بله، حساب کاربری من را حذف کن"
-        account delete success: "حساب کاربری یوورژن شما با موفقیت حذف شد. امیدواریم راه‌های مفید دیگری برای مطالعهٔ کتاب‌مقدس پیدا کنید. شاید برخی از این برنامه‌ها برای‌تان مفید باشد: <a href='https://www.bible.com/free-bible-apps' target='_self'>http://www.bible.com/free-bible-apps</a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "با حذف حساب کاربری، تمامی اطلاعات، تاریخچه و تنظیمات شخصی از جمله یادداشت‌ها، نشان‌گذاری‌ها و هایلایت‌های شما از سیستم «بایبل‌دات‌کام» و «برنامۀ کتاب‌مقدس» حذف می‌شود.‏ این اطلاعات توسط شما یا تیم ما قابل بازگرداندن نیست. اگر مطمئن هستید با انتخاب گزینۀ زیر به مرحلۀ بعد بروید.‏"
         user recent activity: "فعاليت‌هاى اخير %{user}"
         my notes: "يادداشت‌های من"
@@ -827,10 +827,16 @@ fa:
         all plans: "همۀ برنامه‌ها"
         all category plans: "همهٔ برنامه‌های %{category}"
         my plans: "برنامه‌های مطالعه‌ من"
+        completed plans: "برنامه‌های تکمیل شده"
+        saved plans: "برنامه‌های ذخیره شده"
         none found: "برنامه‌ای متناسب با معیار شما يافت نشد. لطفاً جستجوى خود را گسترده‌تر كنيد."
         about publisher: "دربارۀ ناشر"
         overview: "نماى كلى برنامه"
         start: "شروع این برنامه مطالعه"
+        save for later: "دخیره برای استفاده درآینده"
+        saved for later: "برای استفاده در آینده، ذخیره شد"
+        sample: "نمونه"
+        back: "بازگشت"
         length field: "مدت برنامه"
         view sample: "مشاهده نمونۀ مطالعه"
         users subscribed: "%{user_count} کاربر در حال مطالعه این برنامه هستند"
@@ -1316,6 +1322,7 @@ fa:
                     published: "منتشر شده"
                     draft: "چرک‌نویس"
                     live: "به‌طور زنده"
+                    archived: "بایگانی شد"
                 unpublish: "توقف انتشار"
                 saving: "در حال ذخیره…‌"
                 saveAsDraft: "ضبط به‌عنوان نسخهٔ پیش‌نویس"
@@ -1329,9 +1336,9 @@ fa:
                 italic: "ایتالیک"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "ورود به سامانه رویدادها"
                 signIn: "ورود"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "اگر کاربر «برنامۀ کتاب‌مقدس» هستید و حساب کاربری یوورژن دارید، می‌توانید با استفاده از همان نام کاربری و رمز عبور حساب وارد شوید.<br/><br/>هنوز حساب کاربری یوورژن ندارید؟ <br/><a href='%{url}'><br/>به‌ منظور ایجاد رویداد،</a> همین حالا در Bible.com ثبت‌نام کنید."
                 email: "ای‌میل"
                 password: "رمز ورود"
                 forgotPassword: "رمز عبور خود را فراموش کرده‌اید؟"
@@ -1377,17 +1384,19 @@ fa:
                 title: "رویدادهای ضبط شده"
             EventView: 
                 title: "رویداد یوورژن"
+            SelectLanguage: 
+                choose: "انتخاب زبان"
         features: 
             Auth: 
                 errors: 
                     sessionExpired: "مدت ورود شما به پایان رسید. لطفاً دوباره به سیستم وارد شوید."
-                    invalidEmail: "Invalid email or password."
+                    invalidEmail: "آدرس الکترونیکی يا رمزعبور نامعتبر است!"
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
+                    locationMustHaveTime: "همۀ مکان‌ها باید لااقل یک زمان داشته باشند."
+                    locationRequired: "شما نمی‌توانید یک رویداد بدون مکان را منتشر کنید."
                     contentRequired: "شما نمی‌توانید یک رویداد فاقد محتوا را منتشر کنید."
-                    planSearchFailed: "Search did not match any documents"
+                    planSearchFailed: "جستجو با هیچ نسخه‌ای مطابقت نداشت"
                     noMatchingPlans: "هیچ برنامۀ مطالعه‌ای هم‌جوری یافت نشد."
                 components: 
                     EventEditNav: 
@@ -1403,7 +1412,7 @@ fa:
                                 reorder: "تنظیم مجدد محتوا"
                                 doneReordering: "تنظیم انجام شد."
                             ContentHeader: 
-                                text: "Text"
+                                text: "متن"
                                 reference: "مرجع کتاب‌مقدسی"
                                 plan: "برنامه/طرح"
                                 image: "تصویر"
@@ -1412,13 +1421,13 @@ fa:
                                 announcement: "اعلان"
                             ContentHelpModal: 
                                 types: "انواع محتوا"
-                                learn: "Learn how to make <br>a great Event"
+                                learn: "نحوۀ ساخت یک رویداد بزرگ <br> را بیاموزید."
                                 text: 
                                     title: "ماژول متن"
                                     desc: "رئوس مطالب، نکات کلیدی، سؤالاتی برای بحث و غیره. مطالبی را که به حاضرین در رویداد کمک می‌کند تا همزمان با پیغام شما همگام شوند، به اشتراک بگذارید. ماژولهای متنی شما محدویت حجم ندارند."
                                 reference: 
                                     title: "ماژول مرجع کتاب‌مقدسی"
-                                    desc: "انتخاب آیه یا قسمتی از کتاب‌مقدس به بیش از ۱۲۰۰ ترجمۀ کتاب‌مقدس و ۹۰۰ زبان با لینک مستقیم. بینندگان رویداد شما، می‌تواند با لمس مرجع [کتاب‌مقدسی] آن را در صفحۀ «برنامۀ کتاب‌مقدس» خود مشاهده کنند و همزمان آن را علامت‌گذاری یا هایلایت نمایند."
+                                    desc: "انتخاب آیه یا قسمتی از کتاب‌مقدس با بیش از ۱۲۰۰ ترجمه و ۹۰۰ زبان با لینک مستقیم. بینندگان رویداد شما، می‌توانند با لمس مرجع [کتاب‌مقدسی] آن را در صفحۀ «برنامۀ کتاب‌مقدس» خود مشاهده کنند و همزمان آن را علامت‌گذاری یا هایلایت نمایند."
                                 plan: 
                                     title: "ماژول برنامۀ مطالعه"
                                     desc: "ارتباط مستقیم با برنامه‌های مطالعه و نیایشهای مرتبط با نکات تعلیمی شما به حاضرین در رویداد کمک می‌کند تا در طول هفته مشغول مطالعه و تفکر در کلام خدا باشند."
@@ -1430,12 +1439,12 @@ fa:
                                     desc: "این ماژول دگمه‌ای در داخل رویداد شما ایجاد می‌کند که به هر وب‌سایت خارجی متصل می‌شود. به این ترتیب، حاضرین در رویداد فقط با لمس این دگمه می‌توانند به‌صورت آنلاین، برای خدمت داوطلبانه ثبت‌نام کنند، هدایای مالی اهدا کنند، و یا به صفحات اصلی کلیساها دسترسی بیابند."
                                 announcement: 
                                     title: "ماژول اعلان"
-                                    desc: "اخبار کلیسایی، رویدادهای تقویمی، برنامه‌ها، کلاس‌ها، فرصتهای [خدمت] داوطلبانه و فعالیتهای تبشیری و غیره. اطلاعات مهم را به‌آسانی و به‌موقع بدون دور شدن از پیام اصلی رویداد خود پخش کنید. ماژولهای اعلان. از طریق این گزینه می‌توانید متنی را پست کنید که بر روی صفحۀ خاص آن در رویداد ظاهر می‌شود. این ماژول برای متنونی مناسب است که مهم‌اند، اما نمی‌خواهید از مسیر پیام اصلی رویداد شما دور شوند."
+                                    desc: "اخبار کلیسایی، رویدادهای تقویمی، برنامه‌ها، کلاس‌ها، فرصتهای [خدمت] داوطلبانه و فعالیتهای تبشیری و غیره. … ماژولهای اعلان جای بسیار خوبی برای به اشتراک گذاشتن اطلاعاتی هستند که با وجود به‌موقع و مهم بودن، نمی‌خواهید از پیام اصلی رویدادتان دور شوند. هر ماژول اعلان بر روی صفحۀ خاص خود در رویدادتان ظاهر می‌شود، و حتی می‌تواند شامل متنی با فونت درشت یا ایتالیک باشد."
                             ContentInsertionPoint: 
                                 title: "ماژول بعدی را در اینجا وارد کن."
                             ContentTypeAnnouncement: 
                                 title: "عنوان"
-                                prompt: "Write something here..."
+                                prompt: "در اینجا چیزی بنویسید …"
                                 caption: "در رویداد شما، فقط عنوان [در بالا] قابل رؤیت خواهد بود. وقتی کاربر عنوان را لمس می‌کند، متن (قسمت زیر) در صفحه‌ای مجزا به نمایش درخواهد آمد."
                             ContentTypeContainer: 
                                 dirty: "محتوا چند ثانیه پس از تایپ کردن، به‌طور خودکار ذخیره خواهد شد."
@@ -1444,27 +1453,28 @@ fa:
                                 lastSaved: "آخرین ذخیره‌سازی در %{when} "
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
+                                    wrongSize: "اندازۀ تصویر باید %{requiredWidth}در%{requiredHeight}باشد. اندازۀ تصویر شما %{yourWidth}در%{yourHeight}است."
+                                    wrongType: "نوع فایل غیرمعتبر است. فرمت عکس باید JPG باشد."
                                 caption: "افزودن توضیح"
-                                prompt: "Drag and Drop an Image"
+                                prompt: "یک تصویر را بکِشید و اینجا بیندازید."
                                 onlyJpg: "[فقط فرمت JPG]"
                                 sizePrompt: "%{requiredWidth}پیکسل عرض در %{requiredHeight}پیکسل طول"
                                 select: "انتخاب تصویر"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
+                                kindrid: "اگر به‌دنبال طریقی هوشمند و ساده برای اهدای مالی هستید، <a href='%{url}'>لطفاً از kindrid استفاده کنید.</a>."
                                 label: "برچسب لینک"
-                                prompt: "Write something here..."
+                                prompt: "در اینجا چیزی بنویسید …"
                                 url: "URL"
                             ContentTypePlan: 
                                 replace: "جایگزین کن"
                                 search: "جستجوی یک برنامۀ مطالعۀ کتاب‌مقدس"
                             ContentTypeReference: 
+                                language: "زبان"
                                 version: "ترجمه"
                                 book: "كتاب"
                                 chapterVerse: "باب‌:‌آیه"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "در اینجا چیزی بنویسید …"
                             LiveWarningModal: 
                                 title: "سیستم در زمان اجرای رویداد، قادر به حذف آن نمی‌باشد."
                                 desc: "زمانی که رویداد در حال اجرا است، شما نمی‌توانید متن، مرجع کتاب‌مقدسی، و ماژولهای تصویری را از آن حذف کنید، چون ممکن است کاربران از قبل یادداشت‌های خصوصی خود را به آنها افزوده باشند. اما می‌توانید این ماژولها را ویرایش کنید."
@@ -1472,7 +1482,7 @@ fa:
                     details: 
                         errors: 
                             generic: "انتشار رویداد شما با مشکل مواجه شد."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            invalidTimes: "هر برنامه نمی‌تواند بیشتر از ۱۲ ساعت باشد، و فاصلۀ بین زمان شروع رویداد تا پایان آن نمی‌تواند بیشتر از ۸ روز باشد. لطفاً زمانهای رویداد خود را تنظیم کرده، دوباره اقدام کنید."
                         components: 
                             DetailsEdit: 
                                 errors: 
@@ -1481,13 +1491,14 @@ fa:
                                 changeImage: "عوض کردن عکس"
                                 removeImage: "حذف کردن تصویر"
                                 prompt: "یک تصویر را بکِشید و اینجا رها کنید."
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                onlyJpg: "[فقط فرمت JPG]"
+                                sizePrompt: "%{requiredWidth}پیکسل عرض در %{requiredHeight}پیکسل طول"
+                                sizePrompt2: "ابعاد تصویر شما باید %{requiredWidth} در %{requiredHeight} پیکسل باشد."
                                 eventName: "نام رویداد"
                                 org: "نام کلیسا یا سازمان"
                                 desc: "مشخصات رویداد"
                                 next: "مرحلۀ بعد: اضافه کردن زمان و مکان"
+                                blank: "گزینه %{field} نمی‌تواند خالی باشد"
                     location: 
                         components: 
                             Location: 
@@ -1499,7 +1510,7 @@ fa:
                                 addPhysical: "افزودن مکان"
                                 promptPhysical: "شما می‌توانید چندین مکان اضافه کنید."
                                 addVirtual: "افزودن مکان مجازی"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                churchOnline: "آیا می‌دانستید که می‌توانید با استفاده از Church Online Platform <a className='button-caption' href='%{url}'>به‌طور رایگان و آنلاین خدمتی را شروع کنید؟</a>."
                             LocationAddTime: 
                                 minutes: "دقیقه"
                                 hours: "ساعت"
@@ -1524,7 +1535,7 @@ fa:
                                 shift: "تغییر تاریخ‌های شروع"
                                 forward: "جلو رفتن"
                                 backward: "عقب بردن"
-                                by: "by"
+                                by: "به اندازه"
                                 week: "هفته"
                                 weeks: "هفته‌ها"
                                 month: "ماه"
@@ -1539,17 +1550,19 @@ fa:
                                 cancel: "انصراف"
                                 title: "توقف انتشار به منظور انجام تغییرات"
                                 desc: "به منظور اضافه کردن، ویرایش، یا حذف کردن مکان‌ها و زمانها، موقتاً انتشار رویداد را متوقف کنید. در این فاصله، رویداد شما در نتایج جستجو قابل رؤیت نخواهد بود. به‌یاد داشته باشید که رویداد خود را دوباره منتشر کنید."
-                                unpublish: "Unpublish"
+                                unpublish: "توقف انتشار"
                     preview: 
                         notes: 
                             prompt: "یاداشت خصوصی خود را بنویسید..."
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>برای اضافه کردن</span> یادداشت‌های خصوصی خود، وارد سیستم شوید …</a>"
                         components: 
                             PreviewFeed: 
+                                review: "قبل از انتشار رویداد، پیش‌نمایش آن را ببینید."
+                                previewUrl: "پیش‌نمایش راهنمای مرورگر وب"
                                 share: "به اشتراک گذاشتن رویداد"
-                                locations: "مکان‌ها و زمان‌ها"
+                                locationsAndTimes: "مکان‌ها و زمان‌ها"
                                 publish: "انتشار"
-                                unpublish: "Unpublish"
+                                unpublish: "توقف انتشار"
                                 locations: "مکان‌ها"
                                 discoverable: 
                                     title: "قابلیت جستجو شدن:"
@@ -1561,33 +1574,34 @@ fa:
                                     title: "حذف"
                                     desc: " رویداد شما پس از زمان پایان، دیگر قابل جستجو نخواهد بود. کاربرانی که در حین جستجوی رویداد شما گزینۀ «ذخیرۀ رویداد» را انتخاب کرده‌اند، همچنان به نسخۀ آرشیو آن دسترسی خواهند داشت. این رویداد از طریق لینک‌های مستقیم خارجی نیز قابل دسترسی خواهند بود."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "باز شدن"
                             PreviewTypePlan: 
                                 read: "بخوانید"
                                 info: "اطلاعات مربوط به برنامۀ مطالعه"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "کپی کردن"
                         share: "به اشتراک گذاشتن"
                         delete: "حذف کردن"
                         draft: "چرک‌نویس"
                         edit: "ويرايش"
                         view: "مشاهده"
-                        fail: "Unable to delete Event"
+                        fail: "[سیستم] قادر به حذف رویداد نمی‌باشد."
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "کپی"
+                        copied: "نسخه برداری شد"
                         share: "به اشتراک گذاشتن"
                         read: "بخوانید"
                         readPlan: "برنامۀ مطالعه"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "باز شدن"
+                        collapse: "بسته شدن"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "باز شدن"
+                        collapse: "بسته شدن"
                         save: "ضبط این رویداد"
                         signIn: "به منظور ذخیرۀ رویداد، نام کاربری و رمز عبور وارد کنید."
                         saved: "رویداد ذخیره شد"

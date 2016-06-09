@@ -6,38 +6,94 @@
 
   = t("plans.title")
 
-.fixed.after-header
-  .row.full.b-border.white.collapse
-    .medium-12.columns.plans-nav-box
-      - if current_auth
-        = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon active', target: "_self"
-        = link_to t("plans.all plans"), plans_path, class: 'icon', target: "_self"
+- if current_auth
+  .row.collapse
+    .columns.large-8.medium-8.medium-centered
+      - if @completedList || @savedList
+        .row.collapse.plan-title-row
+          .columns.small-2
+            = link_to(subscriptions_path(user_id: current_user.to_param), class: 'plan-back-button', target: "_self") do
+              - if is_rtl?
+                != "&rarr; #{t('plans.back')}"
+              - else
+                != "&larr; #{t('plans.back')}"
+          .column.small-8.end.text-center
+            - if @completedList
+              .plan-completed-title
+                =t("plans.completed plans")
+            - else
+              .plan-saved-title
+                =t("plans.saved plans")
       - else
-        = link_to t("plans.all plans"), plans_path, class: 'icon', target: "_self"
+        .row
+          .columns.small-12.text-center
+            %ul.button-group.primary-toggle
+              %li.inactive
+                = link_to t("EventsAdmin.containers.EventFeedDiscover.discover"), plans_path, class: 'solid-button green', target: "_self"
+              %li
+                = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'solid-button green', target: "_self"
+
 %article
-  - unless @subscriptions.empty?
-    .row.full
-      .columns.medium-12
-        %ul.resource_list.medium-block-grid-3
-          - @subscriptions.each do |sub|
-            %li.subscription
+  .row.collapse
+    .columns.large-8.medium-8.medium-centered.subscription-list
+      - if @subscriptions == false
+        %div{class: "none"}= (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
+      - else
+        - @subscriptions.reading_plans.each do |sub|
+          .row.subscription.collapse
+            .small-12.columns
               .search_thumbnail
                 = link_to(subscription_path(user_id: @user.to_param, id: sub, initial: 'true'), class: "subscription-title", target: "_self") do
-                  - if sub.list_image.present?
-                    = image_tag sub.list_image.url, class: 'subscription_thumbnail radius'
+                  - if sub.small_thumbnail_image.present?
+                    = image_tag sub.small_thumbnail_image.url, class: 'subscription_thumbnail radius'
                   - else
-                    %img{src:'//placehold.it/640x360', class: 'radius'}
+                    %img{src:image_path('plans-hero-80.png'), class: 'radius'}
               .subscription-info
                 = link_to(subscription_path(user_id: @user.to_param, id: sub, initial: 'true'), class: "subscription-title", target: "_self") do
                   %h3.plan-title
-                    =t(sub.name)
-                %span.subscription-privacy
-                  = sub.private ? t("plans.privacy.private") : t("plans.privacy.public")
-                  •
-                  = link_to( t("plans.settings"), edit_subscription_path(user_id: @user, id: sub), target: "_self")
-                .progress_wrap
-                  .progress_counter
-                    =t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
-    = render "shared/pagination", resource_list: @subscriptions
-  - else
-    %div{class: "none"}= (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
+                    =sub.name
+                - if @completedList
+                  .plan-length= sub.formatted_length
+                  .plan-completed= I18n.l(Date.parse(sub.end_dt), format: :long)
+
+                - elsif @savedList
+                  .plan-length= sub.formatted_length
+
+                - else
+                  .progress_wrap
+                    .progress_counter{style: "width:#{sub.completion_percentage}%", title:"#{sub.completion_percentage}%"}
+                      !="&nbsp;"
+                  = image_tag(image_path('lock@2.png'), class: "subscription-privacy", title:  t("plans.privacy.private")) if sub.private
+                  %br
+                  .plan-length= t("plans.current progress html", day: sub.current_day, total_days: sub.total_days).html_safe
+        - unless @curpage == 1 && @subscriptions.next_page.nil?
+          .row.collapse.plan-paging
+            .small-12.medium-4.columns.small-centered.text-center
+
+              %ul.pagination{"aria-label" => "Pagination", :role => "menubar"}
+
+                %li.arrow{"aria-disabled" => (@curpage <= 1 ? 'true' : nil), "class" => (@curpage <= 1 ? 'unavailable' : nil)}
+                  %a{:href => "#{request.path}?page=#{@curpage - 1}", :target => "_self", :disabled => (@curpage <= 1 ? 'true' : nil)}!= "&laquo; #{t('plans.previous')}"
+
+                %li.arrow.right{"aria-disabled" => (@subscriptions.next_page.nil? ? 'true' : nil), "class" => (@subscriptions.next_page.nil? ? 'unavailable' : nil)}
+                  %a{:href => "#{request.path}?page=#{@subscriptions.next_page}", :target => "_self", :disabled => (@subscriptions.next_page.nil? ? 'true' : nil)}!= "#{t('plans.next')} &raquo;"
+
+  .row.collapse
+    .columns.large-8.medium-8.medium-centered.subscription-actions
+      .left
+        - if @savedList
+          %span
+            =t("plans.saved plans")
+        - else
+          = link_to("#{user_path(@user.to_param)}/saved-reading-plans", target: "_self") do
+            =t("plans.saved plans")
+      .right
+        -if @completedList
+          %span
+            =t("plans.completed plans")
+        -else
+          = link_to("#{user_path(@user.to_param)}/completed-reading-plans", target: "_self") do
+            =t("plans.completed plans")
+
+
+  = render "shared/pagination", resource_list: @subscriptions

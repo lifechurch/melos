@@ -11,4 +11,43 @@
             %option{value: 'en', selected: 'en'.eql?(current_locale.to_s)} English
             - sorted_locales.each do |k, v|
               - next if k.eql?('en')
-              %option{value: k, selected: k.eql?(current_locale.to_s)}= v
+              - case k
+              - when 'ar'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.arabic')})"
+              - when 'bg'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.bulgarian')})"
+              - when 'cs'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.czech')})"
+              - when 'el'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.greek')})"
+              - when 'fa'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.farsi')})"
+              - when 'hi'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.hindi')})"
+              - when 'ja'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.japanese')})"
+              - when 'km'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.khmer')})"
+              - when 'ko'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.korean')})"
+              - when 'mk'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.macedonian')})"
+              - when 'mn'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.mongolian')})"
+              - when 'my'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.burmese')})"
+              - when 'ru'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.russian')})"
+              - when 'ta'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.tamil')})"
+              - when 'th'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.thai')})"
+              - when 'uk'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.ukrainian')})"
+              - when 'zh-CN'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.simplified chinese')})"
+              - when 'zh-TW'
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v + " (#{t('language names.traditional chinese')})"
+              - else
+                %option{value: k, selected: k.eql?(current_locale.to_s)}= v
+

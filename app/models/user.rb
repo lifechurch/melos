@@ -142,7 +142,8 @@ class User < YV::Resource
     # Destroy user
     # Returns YV::API::Results with custom data or errors
     def destroy(auth)
-      data, errs = post(delete_path, auth: auth)
+      token = Digest::MD5.hexdigest "#{auth[:username]}.Yv6-#{auth[:password]}"
+      data, errs = post(delete_path, auth: auth, token: token)
       return YV::API::Results.new(data,errs)
     end
 

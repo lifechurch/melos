@@ -580,7 +580,7 @@ sv:
         no devices: "Inga enheter är anslutna till ditt YouVersion-konto"
         no devices download copy: "Bibelappen är en gratis mobil Bibel baserad på online-biblen YouVersion.com som kan installeras på nästan vilken mobil enhet som helst. Bibelappen låter användare att läsa Bibeln, dela verser på deras sociala nätverk, skapa bokmärken för deras favorittexter m.m.—allt på ett format som hänger med i det allt mer mobila livet. Besök <a href='https://www.bible.com/app' target='_self'>bible.com/sv/app</a> från din mobila enhet för att ladda ner Bibelappen och ansluta ditt konto!"
         yes delete: "Ja, ta bort mitt konto"
-        account delete success: "Ditt YouVersion-konto har tagits bort. Vi hoppas att du fortsätter att hitta meningsfulla sätt att komma i kontakt med Bibeln. Några av dessa appar kanske kan hjälpa dig att komma framåt: <a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
         delete account description: "Om du tar bort ditt konto kommer du permanent radera all din information, historik och dina personliga inställningar (så som anteckningar, bokmärken och markeringar) på Bible.com och i Bibelappen Denna åtgärd kan inte återställas av dig eller av någon i vårt team. Om du är säker på att du vill gå vidare, fortsätt nedan."
         user recent activity: "%{user}s senaste aktivitet"
         my notes: "Anteckningar"
@@ -840,10 +840,16 @@ sv:
         all plans: "Alla planer"
         all category plans: "Alla planer i %{category}"
         my plans: "Mina planer"
+        completed plans: "Slutförda planer"
+        saved plans: "Sparade läsplaner"
         none found: "Vi kunde inte hitta en plan som matchar dina kriterier. Försök bredda din sökning."
         about publisher: "Om utgivaren"
         overview: "Planöversikt"
         start: "Starta planen"
+        save for later: "Spara till Senare"
+        saved for later: "Sparad till Senare"
+        sample: "Smakprov"
+        back: "Tillbaka"
         length field: "Planlängd:"
         view sample: "Visa en provläsning"
         users subscribed: "%{user_count} användare följer den här planen"
@@ -1295,312 +1301,320 @@ sv:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "Ett fel uppstod"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "Meddelandetitel krävs."
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "Bibelreferens felaktig."
                     events: 
                         google_place_id: 
-                            required: "You must choose a location from the map."
+                            required: "Du måste välja en plats på kartan."
                         latitude: 
-                            required: "You must choose a location from the map."
+                            required: "Du måste välja en plats på kartan."
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "Starttid måste vara i framtiden."
                         timezone: 
-                            required: "Timezone is required."
+                            required: "Tidszon krävs."
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "Bibelreferens felaktig."
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "Webb-adress krävs."
                         title: 
-                            required: "URL Label is required."
+                            required: "Länktitel krävs."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "Publicerad"
                     draft: "Utkast"
                     live: "Live"
-                unpublish: "Unpublish"
-                saving: "Saving..."
+                    archived: "Arkiverad"
+                unpublish: "Avpublicera"
+                saving: "Sparar..."
                 saveAsDraft: "Spara som utkast"
-                myEvents: "My Events"
-                eventBuilder: "EVENT BUILDER"
+                myEvents: "Mina händelser"
+                eventBuilder: "Skapa händelse"
                 signOut: "Logga ut"
-                createAccount: "Create Account"
+                createAccount: "Skapa konto"
             HtmlEditor: 
                 text: "Text"
                 bold: "fet"
                 italic: "kursiv"
         containers: 
             Auth: 
-                title: "Events Sign In"
+                title: "Händelse - Logga in"
                 signIn: "Logga in"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Om du är en Bibelapp-användare och redan har ett YouVersion-konto kan du logga in med samma inloggningsuppgifter.<br/><br/>Har du inte redan ett YouVersion-konto?<br/><a href='%{url}'>Registrera dig nu på Bibel.com</a> för att börja skapa händelser."
                 email: "E-post"
                 password: "Lösenord"
                 forgotPassword: "Glömt lösenordet"
             EventEdit: 
-                event: "Event"
+                event: "Händelse"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "Välj innehåll för att komma igång."
                 needHelp: "Vill du ha hjälp?"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "Händelseinnehåll"
+                previous: "← Föregående: Tid & plats"
+                next: "Nästa: Förhandsgranska →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "Händelsedetaljer"
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "Plats för händelse"
+                previous: "← Föregående: Detaljer"
+                next: "Nästa: Lägg till innehåll →"
             EventEditPreview: 
-                title: "Event Preview"
-                previous: "← Previous: Content"
+                title: "Förhandsgranska händelse"
+                previous: "← Föregående: Innehåll"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                title: "Dela händelse"
+                subTitle: "Din händelse är nu publicerad:"
+                edit: "Redigera händelse"
+                go: "Gå till mina händelser"
+                share: "Dela din händelse:"
                 copy: "Kopiera"
-                copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                copied: "Kortlänken kopierades till urklipp"
+                previous: "← Föregående: Förhandsgranska"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "Upptäck händelser"
                 discover: "Upptäck"
             EventFeedMine: 
-                title: "My Events"
-                previous: "← Previous"
-                next: "Next →"
-                my: "My Events"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
-                newFirst: "Create Your First Event"
-                learn: "Learn how to make a great Event"
+                title: "Mina händelser"
+                previous: "← Föregående"
+                next: "Nästa →"
+                my: "Mina händelser"
+                new: "Skapa ny händelse"
+                subTitle: "HÄNDELSER SKAPADE AV MIG"
+                newFirst: "Skapa din första händelse"
+                learn: "Lär hur du gör en stor händelse"
             EventFeedSaved: 
                 title: "Sparade Evenemang"
             EventView: 
-                title: "YouVersion Event"
+                title: "YouVersion-händelse"
+            SelectLanguage: 
+                choose: "Välj ditt språk"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    sessionExpired: "Din session har löpt ut. Logga in igen."
+                    invalidEmail: "Felaktig e-post eller lösenord"
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
-                    planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    locationMustHaveTime: "Alla platser måste ha åtminstone en tid."
+                    locationRequired: "Du kan inte publicera en händelse utan plats."
+                    contentRequired: "Du kan inte publicera en händelse utan innehåll."
+                    planSearchFailed: "Sökningen matchade inte några dokument"
+                    noMatchingPlans: "Inga hittade planer"
                 components: 
                     EventEditNav: 
                         details: "Detaljer"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        locations: "Tider & platser"
+                        content: "Innehåll"
+                        preview: "Förhandsgranska & publicera"
                         share: "Dela"
                 features: 
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "Flytta innehåll"
+                                doneReordering: "Färdig med att flytta innehåll"
                             ContentHeader: 
                                 text: "Text"
-                                reference: "Bible Reference"
+                                reference: "Bibelreferens"
                                 plan: "Plan"
                                 image: "Bild"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "Extern länk"
+                                giving: "Länk till donation"
+                                announcement: "Meddelande"
                             ContentHelpModal: 
-                                types: "Content Types"
-                                learn: "Learn how to make <br>a great Event"
+                                types: "Typ av innehåll"
+                                learn: "Lär dig hur du skapa<br>en fantastisk händelse"
                                 text: 
-                                    title: "Text Module"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    title: "Textmodul"
+                                    desc: "Översikt, huvudpunkter, diskussionsfrågor… Dela med dig av allmänt textbaserat innehåll för att hjälpa dina åhörare att följa med i ditt budskap, medan du säger det. Din textmodul kan vara hur lång som helst och kan innehålla formaterad text."
                                 reference: 
-                                    title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    title: "Bibelreferensmodul"
+                                    desc: "Välja valfri bibelvers eller -passage länkad direkt till någon av YouVersions över 1 200 bibelöversättningar på mer än 900 språk. Människor som tittar på din händelse kan trycka på dina referenser för att se dem i Bibelappen och därifrån bl.a. skapa bokmärken och göra markerar."
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "Planmodul"
+                                    desc: "Länka till bibelplaner och andakter som relaterar till vad du vill ha sagt för att hjälpa din publik att fortsätta engagera sig i Guds Ord hela veckan."
                                 image: 
-                                    title: "Image Module"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    title: "Bildmodul"
+                                    desc: "Gör din händelse levande med valfri typ av grafik: serier, foton, bibelkort m.m. Deltagare kan enkelt dela dina bilder på social media och göra ditt budskap viralt. "
                                 link: 
-                                    title: "External Link Module"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    title: "Extern länk-modul"
+                                    desc: "Skapa en knapp i din händelse för att länka till externa hemsidor. Gör att din publik bara har en knapptryckning till hemsidor för välgörenhet, volontärsarbete och kyrkor."
                                 announcement: 
-                                    title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    title: "Meddelandemodul"
+                                    desc: "Kyrkonyheter, schema, program, studiegrupper, volontärsarbete och missionsmöjligheter...Meddelandemodulen är den perfekta platsen att dela med dig av viktig information som är aktuellt vid en viss tid, men som du inte vill dra uppmärksamhet från det primära budskapet. Varje meddelandemodul visas på varsin sida i händelsen och kan även innehålla formaterad text (så som fet och kursivt text)"
                             ContentInsertionPoint: 
-                                title: "Insert next module here"
+                                title: "Lägg till nästa modul här"
                             ContentTypeAnnouncement: 
                                 title: "Titel"
-                                prompt: "Write something here..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                prompt: "Skriv något här..."
+                                caption: "I din händelse kommer enbart din titel (ovan) visas. När en användare trycker på titeln kommer innehållet (nedan) visas i en separat vy."
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
-                                lastSaved: "Last saved %{when}"
+                                dirty: "Innehållet kommer automatiskt sparas några sekunder efter att du sluta skriva."
+                                failed: "Kan inte spara."
+                                tryAgain: "Försök igen."
+                                lastSaved: "Senast sparad %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                select: "Select Image"
+                                    wrongSize: "Bildstorlek måste vara %{requiredWidth}x%{requiredHeight}. Din bild är %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Felaktig filtyp. Måste vara JPG."
+                                caption: "Lägg till bildtext"
+                                prompt: "Drag och släpp en bild"
+                                onlyJpg: "[Enbart JPG]"
+                                sizePrompt: "%{requiredWidth}px bred x %{requiredHeight}px hög"
+                                select: "Välj bild"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
-                                prompt: "Write something here..."
-                                url: "URL"
+                                kindrid: "Om du söker efter en smart och enkelt gåvoplattform, <a href='%{url}'>prova Kindrid</a>."
+                                label: "Länkbeskrivning"
+                                prompt: "Skriv något här..."
+                                url: "Webb-adress"
                             ContentTypePlan: 
-                                replace: "Replace"
-                                search: "Search for a Reading Plan"
+                                replace: "Ersätt"
+                                search: "Sök efter läsplan"
                             ContentTypeReference: 
+                                language: "Språk"
                                 version: "Översättning"
                                 book: "Bok"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "Kapitel:Vers:"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "Skriv något här..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "Kan inte ta bort medan händelse pågår"
+                                desc: "När väl en händelse har startat kan du inte ta bort text-, bibelreferens- eller bildmoduler då användare kanske redan har lagt till egna privata anteckningar på dem. Å andra sidan kan du redigera modulerna."
                                 ok: "OK"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            generic: "Ett problem uppstod när händelsen skulle publiceras."
+                            invalidTimes: "En enskild session kan inte vara mer än 12 timmar, och det får inte vara mer än 8 dagar mellan första starttiden och sista sluttiden på en händelse. Justera tiderna för händelsen och försök igen."
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                changeImage: "Change Image"
-                                removeImage: "Remove Image"
-                                prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
-                                sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
-                                eventName: "Event Name"
-                                org: "Church Name or Organization"
-                                desc: "Event Description"
-                                next: "Next: Add Location & Times →"
+                                    wrongSize: "Bildstorleken måste vara %{requiredWidth}x%{requiredHeight}. Din bild är %{yourWidth}x%{yourHeight}."
+                                    wrongType: "Ogiltig fil Måste vara jpg"
+                                changeImage: "Ändra bild"
+                                removeImage: "Ta bort bild"
+                                prompt: "Drag och släpp en bild"
+                                onlyJpg: "[Enbart JPG]"
+                                sizePrompt: "%{requiredWidth}px bred x %{requiredHeight}px hög"
+                                sizePrompt2: "Dina bilder bör har storleken %{requiredWidth} x %{requiredHeight} pixlar."
+                                eventName: "Händelsens namn"
+                                org: "Kyrkans namn eller organisation"
+                                desc: "Händelsedetaljer"
+                                next: "Nästa: Lägg till tid och plats"
+                                blank: "%{field} kan inte vara tom."
                     location: 
                         components: 
                             Location: 
-                                oneRequired: "Add at least one time."
-                                use: "USE THIS LOCATION"
-                                edit: "Edit Location"
-                                delete: "Delete Location"
+                                oneRequired: "Lägg till åtminstone en gång."
+                                use: "ANVÄND DENNA PLATS"
+                                edit: "Redigera plats"
+                                delete: "Ta bort plats"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                addPhysical: "Lägg till en fysisk plats"
+                                promptPhysical: "Du kan lägga till flera platser."
+                                addVirtual: "Lägg till virtuell plats"
+                                churchOnline: "Visste du? Du kan gratis utöva ditt prästerskap online med <a className='button-caption' href='%{url}'>Church Online Platform</a>."
                             LocationAddTime: 
                                 minutes: "MINUTER"
                                 hours: "TIMMAR"
                                 days: "dagar"
                             LocationDeleteModal: 
                                 sure: "Är du säker?"
-                                selected: "You have selected the following location to be deleted:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                selected: "Du har valt följande plats att ta bort:"
+                                warn: "Detta kommer att ta bort platsen från alla tidigare och framtida händelser. Du kommer inte kunna återanvända denna plats i framtida händelser."
                                 cancel: "Avbryt"
                                 delete: "Ta bort"
                             LocationEdit: 
-                                prompt: "Enter the Location address..."
+                                prompt: "Ange platsens adress..."
                                 country: "Land"
                                 timezone: "Tidszon"
                                 namePrompt: "First Baptist East Campus"
-                                name: "Location Name"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                name: "Platsens namn"
+                                nameOptional: "Valfritt: Lägg till flera platser"
+                                addAnother: "Lägg till ytterligare tidpunkt"
                                 cancel: "Avbryt"
-                                save: "Save this Location"
+                                save: "Spara denna plats"
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "Flytta startdatum"
                                 forward: "Framåt"
-                                backward: "backward"
+                                backward: "bakåt"
                                 by: "av"
-                                week: "week"
-                                weeks: "weeks"
+                                week: "vecka"
+                                weeks: "veckor"
                                 month: "Månad"
-                                months: "months"
+                                months: "månader"
                                 day: "dag"
                                 days: "dagar"
-                                hour: "hour"
+                                hour: "timme"
                                 hours: "TIMMAR"
                                 update: "Uppdatera"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "Ändra alla datum och tider samtigt"
                             UnpublishModal: 
                                 cancel: "Avbryt"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                title: "Avpublicera för att göra förändringar"
+                                desc: "För att lägga till, ändra eller ta bort tid och plats, avpublicera händelsen tillfälligt. Under tiden kommer det inte vara möjligt att söka upp händelsen. Glöm inte att publicera din händelse igen."
+                                unpublish: "Avpublicera"
                     preview: 
                         notes: 
                             prompt: "Lägg till dina privata Anteckningar..."
-                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Sign in</span> to add your private notes…</a>"
+                            noAuthPrompt: "<a href='%{url}'><span className='highlight'>Logga in</span> för att skriva dina privata anteckningar…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Granska din händelse före publicering"
+                                previewUrl: "Förhandsvisningsadress:"
                                 share: "Dela Evenemang"
-                                locations: "Adresser och tider"
+                                locationsAndTimes: "Adresser och tider"
                                 publish: "Publicera"
-                                unpublish: "Unpublish"
-                                locations: "Locations:"
+                                unpublish: "Avpublicera"
+                                locations: "Platser:"
                                 discoverable: 
-                                    title: "Discoverable:"
-                                    desc: "Your event will be visible in Bible App Event location and search results 5 days before your earliest start time."
+                                    title: "Synligt:"
+                                    desc: "Din händelse kommer att vara synlig i Bibelappen vid sökning efter händelser eller på kartan 5 dagar före startdatum."
                                 status: 
                                     title: "Status för anteckning:"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "LIVE kommer att visas när händelsen har startat."
                                 remove: 
-                                    title: "Remove:"
-                                    desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
+                                    title: "Ta bort:"
+                                    desc: "Din händelse kommer inte längre vara sökbara efter slutdatumet. Deltagare som har tryckt \"Spara händelse\" när händelsen fortfarande var sökbar kommer att ha tillgång till en arkiverad version av den. Händelsen kommer också vara tillgänglig om en direktlänk används. "
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "Expandera"
                             PreviewTypePlan: 
                                 read: "Läs"
                                 info: "Om läsplanen"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "Duplicera"
                         share: "Dela"
                         delete: "Ta bort"
                         draft: "Utkast"
                         edit: "Ändra"
                         view: "Visa"
-                        fail: "Unable to delete Event"
+                        fail: "Kunde inte ta bort händelse"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "Kopiera"
+                        copied: "Kopierad"
                         share: "Dela"
                         read: "Läs"
-                        readPlan: "Read Plan"
+                        readPlan: "Läsplan"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Expandera"
+                        collapse: "Komprimera "
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Expandera"
+                        collapse: "Komprimera"
                         save: "Spara evenemang"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "Logga in för att spara händelse"
+                        saved: "Händelse sparad"

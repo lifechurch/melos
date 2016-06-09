@@ -569,7 +569,7 @@ id:
         no devices: "Tak ada piranti yang terhubung ke akun YouVersion Anda"
         no devices download copy: "Menurut Alkitab online YouVersion, Ap Alkitab ini gratis dan bisa diinstal hampir di semua jenis piranti seluler. Ap Alkitab ini memampukan pengguna membaca Alkitab, berbagi ayat dengan jaringan sosial mereka, memarkahi perikop favorit, dan banyak lagi—semua dalam format yang mengikuti perkembangan gaya hidup dinamis mereka. Kunjungi <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> dari piranti seluler Anda untuk mengunduh Ap Alkitab ini dan hubungkan akun Anda!"
         yes delete: "Ya, Hapus Akun Saya"
-        account delete success: "Akun YouVersion Anda telah terhapus dengan sukses. Kami harap Anda terus menemukan cara bermakna untuk berinteraksi dengan Alkitab. Beberapa ap ini mungkin berguna seraya Anda melangkah maju:<a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "Kami telah menghapus akun YouVersion Anda, sesuai dengan permintaan Anda. Kami sedih dengan kepergian Anda. Kami berharap Anda akan terus mencari jalan untuk dapat terlibat dengan Firman Tuhan."
         delete account description: "Jika Anda menghapus akun Anda, Anda akan mengeliminasi secara permanen semua informasi, sejarah, dan personalisasi (seperti catatan, markah, sorotan, dsb.) dalam Bible.com dan Ap Alkitab. Aksi ini tidak dapat dikembalikan oleh Anda atau tim kami. Jika Anda yakin ingin teruskan, lanjutkan di bawah."
         user recent activity: "Aktivitas Terkini %{user}"
         my notes: "Catatan Saya"
@@ -827,10 +827,16 @@ id:
         all plans: "Semua Rencana"
         all category plans: "Semua Rencana %{category}"
         my plans: "Rencana Saya"
+        completed plans: "Rencana Terselesaikan"
+        saved plans: "Rencana yang Disimpan"
         none found: "Kami tidak menemukan rencana sesuai kriteria Anda. Cobalah perluas pencarian Anda."
         about publisher: "Perihal Penerbit"
         overview: "Ikhtisar Rencana"
         start: "Mulai Rencana ini"
+        save for later: "Simpan untuk Nanti"
+        saved for later: "Tersimpan untuk Nanti"
+        sample: "Contoh"
+        back: "Kembali"
         length field: "Lama Rencana:"
         view sample: "Lihat Contoh Bacaan"
         users subscribed: "%{user_count} Pengguna membaca Rencana ini"
@@ -1282,7 +1288,7 @@ id:
     EventsAdmin: 
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "Terjadi Kesalahan"
                 announcement: 
                     events: 
                         title: 
@@ -1298,7 +1304,7 @@ id:
                             required: "Anda harus memilih lokasi dari peta."
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "Waktu Mulai tidak bisa di masa lampau."
                         timezone: 
                             required: "Zona waktu wajib diisi."
                 reference: 
@@ -1308,15 +1314,16 @@ id:
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "URL wajib diisi."
                         title: 
                             required: "Label URL wajib diisi."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "Terpublikasi"
                     draft: "Draf"
                     live: "Langsung"
-                unpublish: "Unpublish"
+                    archived: "Terarsip"
+                unpublish: "Batalkan Publikasi"
                 saving: "Menyimpan..."
                 saveAsDraft: "Simpan sebagai Draf"
                 myEvents: "Acara Saya"
@@ -1331,16 +1338,16 @@ id:
             Auth: 
                 title: "Masuk Acara"
                 signIn: "Masuk"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Bila Anda pengguna Aplikasi Alkitab dan telah memiliki akun YouVersion, Anda dapat masuk menggunakan identitas yang sama.<br/><br/>Belum memiliki akun YouVersion? <br/><a href='%{url}'>Daftar sekarang di Bible.com</a> untuk mulai membuat Acara."
                 email: "Email"
                 password: "Kata Sandi"
                 forgotPassword: "Lupa Kata Sandi"
             EventEdit: 
                 event: "Acara"
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "Pilih beberapa isi Acara untuk memulai."
                 needHelp: "Butuh Bantuan?"
-                title: "Event Content"
+                title: "Isi Acara"
                 previous: "← Sebelumnya: Lokasi & Waktu"
                 next: "Berikutnya: Pratinjau →"
             EventEditDetails: 
@@ -1348,18 +1355,18 @@ id:
             EventEditLocationContainer: 
                 title: "Lokasi Acara"
                 previous: "← Sebelumnya: Detail"
-                next: "Next: Add Content →"
+                next: "Berikutnya: Tambahkan Isi →"
             EventEditPreview: 
                 title: "Pratinjau Acara"
-                previous: "← Previous: Content"
+                previous: "← Sebelumnya: Isi"
             EventEditShare: 
                 title: "Berbagi Acara"
-                subTitle: "Your Event is Now Published:"
+                subTitle: "Acara Anda sekarang Terpublikasi:"
                 edit: "Sunting Acara"
                 go: "Ke Acara Saya"
                 share: "Bagikan acara Anda:"
                 copy: "Salin"
-                copied: "The shortlink was copied to your clipboard"
+                copied: "Tautan Pendek telah disalin ke clipboard"
                 previous: "← Sebelumnya: Pratinjau"
             EventFeedDiscover: 
                 title: "Temukan Acara"
@@ -1377,31 +1384,33 @@ id:
                 title: "Acara Tersimpan"
             EventView: 
                 title: "Acara YouVersion"
+            SelectLanguage: 
+                choose: "Pilih Bahasa Anda"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
+                    sessionExpired: "Sesi Anda telah berakhir. Silakan masuk lagi."
                     invalidEmail: "Email atau kata sandi tidak valid."
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
-                    contentRequired: "You cannot publish an Event with no content."
+                    locationMustHaveTime: "Semua lokasi harus memiliki setidaknya satu waktu."
+                    locationRequired: "Anda tidak dapat memublikasikan Acara tanpa lokasi."
+                    contentRequired: "Anda tidak bisa memublikasikan Acara tanpa isi."
                     planSearchFailed: "Pencarian tidak menemukan dokumen yang cocok."
-                    noMatchingPlans: "No matching Plans"
+                    noMatchingPlans: "Tidak ada Rencana yang sesuai"
                 components: 
                     EventEditNav: 
                         details: "Rincian"
                         locations: "Lokasi & Waktu"
-                        content: "Content"
+                        content: "Isi"
                         preview: "Pratinjau & Publikasi"
                         share: "Bagikan"
                 features: 
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "Isi Susun Ulang"
+                                doneReordering: "Selesai Susun Ulang"
                             ContentHeader: 
                                 text: "Teks"
                                 reference: "Referensi Alkitab"
@@ -1411,32 +1420,32 @@ id:
                                 giving: "Berikan Tautan"
                                 announcement: "Pengumuman"
                             ContentHelpModal: 
-                                types: "Content Types"
-                                learn: "Learn how to make <br>a great Event"
+                                types: "Tipe Isi"
+                                learn: "Pelajari cara membuat <br>Acara yang hebat"
                                 text: 
                                     title: "Modul Teks"
-                                    desc: "Outlines, key points, discussion questions… Share any text-based general content that will help your attenders follow along with your message as it’s happening. Your text modules can be any length and can include rich text formatting."
+                                    desc: "Garis besar, inti, pertanyaan diskusi… Bagikan garis besar isi acara dalam bentuk teks yang dapat membantu para peserta mengikuti pesan Anda selama acara berlangsung. Modul teks Anda bisa sepanjang apapun dan dapat berupa format 'rich text'."
                                 reference: 
-                                    title: "Bible Reference Module"
-                                    desc: "Select any Bible verse or passage, linked directy to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    title: "Modul Referensi Alkitab"
+                                    desc: "Pilih Ayat Alkitab atau pasal manapun, tautkan langsung pada 1,200+ versi YouVersion apapun, dalam 900+ bahasa. Orang yang melihat Acara Anda dapat mengklik referensi Anda untuk melihatnya di Ap Alkitab mereka, di mana mereka bisa memarkahi, menyorotinya, dsb."
                                 plan: 
-                                    title: "Plan Module"
-                                    desc: "Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week."
+                                    title: "Modul Rencana"
+                                    desc: "Tautkan ke Rencana Alkitab dan Renungan yang berkaitan dengan poin pengajaran Anda, membantu peserta acara Anda untuk terus berhubungan dengan Firman Tuhan sepanjang minggu."
                                 image: 
-                                    title: "Image Module"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    title: "Modul Gambar"
+                                    desc: "Hadirkan Acara Anda secara nyata dengan bantuan grafik apapun: seni rangkaian, foto, Gambar Ayat, dsb. Para peserta dengan mudah dapat membagikan gambar Acara Anda pada media sosial mereka, menyebarkan pesan Anda secara cepat. "
                                 link: 
-                                    title: "External Link Module"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    title: "Modul Tautan Luar"
+                                    desc: "Buat tombol dalam Acara Anda yang menautkan ke situs web luar. Bantu peserta Anda agar mudah, cukup satu klik saja, masuk ke pemberian online, pendaftaran sukarelawan, atau halaman beranda gereja. "
                                 announcement: 
-                                    title: "Announcement Module"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    title: "Modul Pengumuman"
+                                    desc: "Berita gereja, kalender acara, program, kelas, sukarelawan, dan kesempatan misi... Modul Pengumuman adalah wadah yang tepat untuk membagikan informasi yang penting dan cepat, tapi tentunya Anda tidak ingin mengalihkan perhatian dari pesan utama Acara Anda. Setiap modul pengumuman muncul di laman tersendiri pada Acara Anda, dan bahkan dapat berupa 'rich text' (seperti huruf tebal dan miring)."
                             ContentInsertionPoint: 
                                 title: "Sisipkan modul berikutnya di sini"
                             ContentTypeAnnouncement: 
                                 title: "Judul"
                                 prompt: "Tulis sesuatu di sini..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                caption: "Dalam Acara Anda, hanya Judul Anda (di atas) yang akan terlihat. Ketika pengguna mengklik di Judul Anda, Isi (di bawah) akan muncul di layar terpisah."
                             ContentTypeContainer: 
                                 dirty: "Isi akan tersimpan secara otomatis beberapa detik setelah Anda berhenti mengetik."
                                 failed: "Tidak dapat disimpan."
@@ -1445,34 +1454,35 @@ id:
                             ContentTypeImage: 
                                 errors: 
                                     wrongSize: "Ukuran gambar harus: %{requiredWidth}x%{requiredHeight}. Ukuran gambar Anda: %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
-                                caption: "Add caption"
-                                prompt: "Drag and Drop an Image"
+                                    wrongType: "Tipe file tidak valid. Harus JPG."
+                                caption: "Tambah deskripsi"
+                                prompt: "Geser dan Letak sebuah Gambar"
                                 onlyJpg: "[Hanya JPG]"
                                 sizePrompt: "lebar %{requiredWidth}px x tinggi %{requiredHeight}px"
                                 select: "Pilih Gambar"
                             ContentTypeLink: 
-                                kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
+                                kindrid: "Bila Anda mencari platform pemberian yang praktis dan sederhana, <a href='%{url}'>cobalah Kindrid</a>."
                                 label: "Label Tautan"
                                 prompt: "Tulis sesuatu di sini..."
                                 url: "URL"
                             ContentTypePlan: 
-                                replace: "Replace"
-                                search: "Search for a Reading Plan"
+                                replace: "Ganti"
+                                search: "Cari Rencana Bacaan"
                             ContentTypeReference: 
+                                language: "Bahasa"
                                 version: "Versi"
                                 book: "Kitab"
                                 chapterVerse: "Pasal:Ayat"
                             ContentTypeText: 
-                                prompt: "Write something here..."
+                                prompt: "Tulis sesuatu di sini..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "Tidak Dapat Menghapus Ketika Acara Berlangsung"
+                                desc: "Saat sebuah Acara berlangsung, Anda tidak dapat menghapus Teks, Referensi Alkitab, dan modul Gambar karena pengguna mungkin telah menambahkan catatan pribadi mereka. Namun, Anda dapat menyunting modul berikut ini."
                                 ok: "OK"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
-                            invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
+                            generic: "Ada masalah ketika memublikasikan Acara Anda."
+                            invalidTimes: "Setiap ibadah tidak boleh lebih dari 12 jam, dan perbedaan antara waktu mulai yang paling awal dan waktu selesai yang paling akhir dari sebuah Acara tidak boleh melebihi 8 hari. Mohon sesuaikan waktu Acara Anda dan coba lagi."
                         components: 
                             DetailsEdit: 
                                 errors: 
@@ -1480,14 +1490,15 @@ id:
                                     wrongType: "Format file tidak valid. Harus JPG."
                                 changeImage: "Ubah Gambar"
                                 removeImage: "Hapus Gambar"
-                                prompt: "Drag and Drop an Image"
+                                prompt: "Geser dan Letak sebuah Gambar"
                                 onlyJpg: "[Hanya JPG]"
                                 sizePrompt: "lebar %{requiredWidth}px x tinggi %{requiredHeight}px"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                sizePrompt2: "Dimensi Gambar Anda harus %{requiredWidth} x %{requiredHeight} pixel."
                                 eventName: "Nama Acara"
                                 org: "Nama Gereja atau Organisasi"
                                 desc: "Deskripsi Acara"
                                 next: "Berikutnya: Tambahkan Lokasi & Waktu →"
+                                blank: "%{field} harus diisi."
                     location: 
                         components: 
                             Location: 
@@ -1499,7 +1510,7 @@ id:
                                 addPhysical: "Tambahkan Lokasi Fisik"
                                 promptPhysical: "Anda bisa menambahkan beberapa lokasi."
                                 addVirtual: "Tambahkan Lokasi Virtual"
-                                churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
+                                churchOnline: "Tahukah Anda? Anda dapat meluncurkan pelayanan daring secara gratis dengan menggunakan <a className='button-caption' href='%{url}'>Platform Daring Gereja</a>."
                             LocationAddTime: 
                                 minutes: "MENIT"
                                 hours: "JAM"
@@ -1507,7 +1518,7 @@ id:
                             LocationDeleteModal: 
                                 sure: "Anda yakin?"
                                 selected: "Anda telah memilih lokasi berikut untuk dihapus:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                warn: "Ini akan menghapus lokasi semua acara yang lalu dan sekarang. Anda tidak akan dapat memakai ulang lokasi ini untuk Acara yang akan datang."
                                 cancel: "Batalkan"
                                 delete: "Hapus"
                             LocationEdit: 
@@ -1516,14 +1527,14 @@ id:
                                 timezone: "Zona waktu"
                                 namePrompt: "First Baptist East Campus"
                                 name: "Nama Lokasi"
-                                nameOptional: "Optional: Useful if adding multiple locations"
-                                addAnother: "Add another time"
+                                nameOptional: "Pilihan: Berguna bila menambahkan beberapa lokasi"
+                                addAnother: "Tambah waktu lainnya"
                                 cancel: "Batalkan"
                                 save: "Simpan Lokasi ini"
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "Geser tanggal mulai"
                                 forward: "Teruskan"
-                                backward: "backward"
+                                backward: "mundur"
                                 by: "oleh"
                                 week: "minggu"
                                 weeks: "minggu"
@@ -1534,25 +1545,27 @@ id:
                                 hour: "jam"
                                 hours: "JAM"
                                 update: "Perbarui"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "Geser semua tanggal dan waktu sekaligus"
                             UnpublishModal: 
                                 cancel: "Batalkan"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
-                                unpublish: "Unpublish"
+                                title: "Batalkan Publikasi untuk Membuat Perubahan"
+                                desc: "Untuk menambah, menyunting, atau menghapus Lokasi dan Waktu, batalkan publikasi Acara sementara waktu. Selama waktu tersebut, Acara Anda tidak akan terlihat pada hasil pencarian. Jangan lupa untuk memublikasikan Acara Anda lagi."
+                                unpublish: "Belum Dipublikasi"
                     preview: 
                         notes: 
                             prompt: "Tambahkan catatan pribadi Anda..."
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Masuk</span> untuk menambahkan catatan pribadi Anda…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Periksa Kembali Acara Anda Sebelum Memublikasikan"
+                                previewUrl: "Pratinjau URL:"
                                 share: "Bagikan Acara"
-                                locations: "Lokasi dan Waktu"
+                                locationsAndTimes: "Lokasi dan Waktu"
                                 publish: "Publikasi"
-                                unpublish: "Unpublish"
+                                unpublish: "Belum Dipublikasi"
                                 locations: "Lokasi:"
                                 discoverable: 
-                                    title: "Discoverable:"
+                                    title: "Ditemukan:"
                                     desc: "Acara Anda dapat dilihat di lokasi Acara dalam Aplikasi Alkitab dan hasil pencarian 5 hari sebelumnya dari acara yang paling awal."
                                 status: 
                                     title: "Status:"
@@ -1561,33 +1574,34 @@ id:
                                     title: "Hapus:"
                                     desc: "Acara Anda tidak akan bisa lagi ditemukan setelah waktu acara selesai. Peserta yang menekan \"Simpan Acara\" ketika Acara Anda masih dapat ditemukan, masih memiliki akses ke versi arsip dari acara tersebut. Acara ini juga tetap bisa diakses melalui tautan langsung."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "Perluas"
                             PreviewTypePlan: 
                                 read: "Baca"
                                 info: "Info Rencana"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "Duplikat"
                         share: "Bagikan"
                         delete: "Hapus"
                         draft: "Draf"
                         edit: "Sunting"
                         view: "Lihat.."
-                        fail: "Unable to delete Event"
+                        fail: "Tidak dapat menghapus Acara"
             EventView: 
                 components: 
                     EventViewContent: 
                         copy: "Salin"
+                        copied: "Tersalin"
                         share: "Bagikan"
                         read: "Baca"
-                        readPlan: "Read Plan"
+                        readPlan: "Baca Rencana"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Perluas"
+                        collapse: "Perkecil"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "Perluas"
+                        collapse: "Perkecil"
                         save: "Simpan Acara"
                         signIn: "Masuk untuk Simpan Acara"
                         saved: "Acara Tersimpan"

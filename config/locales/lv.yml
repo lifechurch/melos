@@ -591,7 +591,7 @@ lv:
         no devices: "Neviena ierīce nav pievienota YouVersion kontam"
         no devices download copy: "Balstoties uz tiešsaistes Bībeli YouVersion, Bībeles aplikācija ir bezmaksas mobilā Bībele, kas var tikt uzinstalēta uz gandrīz jebkura telefona. Bībeles aplikācija ļauj lietotājiem lasīt Bībeli, dalīties ar rakstu vietām caur sociāliem tīkliem, izveidot grāmatzīmes un vairāk—viss, formātā, kas spēj turēt līdzi viņu pieaugošajam mobilajam dzīvesveidam. Apmeklē <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> no savas ierīces lai lejupielādētu Bībeles Aplikāciju un pievienotu savu kontu!"
         yes delete: "Jā, izdzēst manu kontu"
-        account delete success: "Jūsu YouVersion konts ir veiksmīgi dzēsts. Mēs ceram jūs turpināsiet meklēt jēgpilnus veidus kā mijiedarboties ar Bībeli. Dažas no šīm aplikācijām varētu jums palīdzēt doties tālāk: <a href='https://www.bible.com/free-bible-apps' target='_self'> http://www.youversion.com/free-bible-apps </a>"
+        account delete success: "Mēs izdzēsām Tavu Youversion kontu kā lūdzi. Mums žēl, ka aizej. Mēs patiesi ceram, ka Tu turpināsi meklēt jēgpilnus ceļus, kā nonākt saskarē ar Dieva Vārdu."
         delete account description: "Ja dzēsīsi savu kontu, Tu neatgriezeniski zaudēsi visu informāciju, vēsturi un personiskos pierakstus (grāmatzīmes, iekrāsojumus uc.) Bible.com un Bībeles aplikācijā. Šī darbību ne mēs, ne Tu, nevarēsim atjaunot. Ja esi pārliecināts, ka vēlies turpināt, spied tālāk."
         user recent activity: "%{user} pēdējās aktivitātes"
         my notes: "Piezīmes"
@@ -853,10 +853,16 @@ lv:
         all plans: "Visi plāni"
         all category plans: "Visi %{category} plāni"
         my plans: "Mani plāni"
+        completed plans: "Izpildītie plāni"
+        saved plans: "Saglabātie plāni"
         none found: "Nevaram atrast atbilstošu plānu taviem kritērijiem. Mēģini vispārināt savu meklējamo."
         about publisher: "Par izdevēju"
         overview: "Plāna pārskats"
         start: "Sākt plānu"
+        save for later: "Saglabāt vēlākam"
+        saved for later: "Saglabāts vēlākam"
+        sample: "Paraugs"
+        back: "Atpakaļ"
         length field: "Plāna ilgums"
         view sample: "Apskatīt paraugu"
         users subscribed: "%{user_count} Lietotāji, kuri lasa šo plānu."
@@ -1342,6 +1348,7 @@ lv:
                     published: "Publicēts"
                     draft: "Melnraksts"
                     live: "Tiešraide"
+                    archived: "Arhivēts"
                 unpublish: "Atcelt publicēšanu"
                 saving: "Saglabā..."
                 saveAsDraft: "Saglabāt kā paraugu"
@@ -1357,7 +1364,7 @@ lv:
             Auth: 
                 title: "Pierakstīšanās Pasākumiem"
                 signIn: "Ielogoties"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "Ja esi Bībeles aplikācijas lietotājs un tev jau ir YouVersion konts, vari pierakstīties, izmantojot tos pašus akreditācijas datus.<br/><br/>Vēl nav YouVersion lietotāja konta? <br/><a href='%{url}'>Piereģistrējies Bible.com, </a> lai uzsāktu veidot pasākumus."
                 email: "e-pasts"
                 password: "Parole"
                 forgotPassword: "Aizmirsi paroli"
@@ -1403,6 +1410,8 @@ lv:
                 title: "Saglabātie notikumi"
             EventView: 
                 title: "YouVersion pasākums"
+            SelectLanguage: 
+                choose: "Valodas izvēle"
         features: 
             Auth: 
                 errors: 
@@ -1444,7 +1453,7 @@ lv:
                                     desc: "Struktūra, svarīgākās tēmas, pārrunu jautājumi…Dalies ar vispārēju tekstuālu saturu, kas var palīdzēt dalībniekiem norises laikā sekot Tavai vēstij. Tava teksta moduļa garums ir neierobežots, un tajā var būt teksts RTF standartā."
                                 reference: 
                                     title: "Bībeles atsauces modulis"
-                                    desc: "Izvēlies jebkuru Bībeles pantu vai rakstvietu, kas ir tieši saistīta ar kādu no vairāk nekā 1200 YouVersion versijām vairāk nekā 900 valodās. Cilvēki, kas aplūko Tavu pasākumu, var uzklikšķināt uz atsauces, lai apskatītu to savā Bībeles aplikācijas lasītājā, pievienotu to grāmatzīmēm, izceltu un veiktu citas darbības."
+                                    desc: "Izvēlies jebkuru Bībeles pantu vai rakstvietu, kas tieši piesaistīta kādai no vairāk nekā 1200 YouVersion versijām vairāk nekā 900 valodās. Cilvēki, kas aplūko Tavu pasākumu, var uzklikšķināt uz atsauces, lai apskatītu to savā Bībeles aplikācijas lasītājā, pievienotu to grāmatzīmēm, izceltu un veiktu citas darbības."
                                 plan: 
                                     title: "Plānu modulis"
                                     desc: "Izveido saiti uz Bībeles lasīšanas plāniem un pārdomām, kas ir saistītas ar Tava vēstījuma saturu, lai dalībnieki arī turpmāk visas nedēļas garumā varētu pētīt Dieva Vārdu."
@@ -1456,7 +1465,7 @@ lv:
                                     desc: "Tas Tavā pasākumā izveido pogu, piesaistot to jebkurai ārējai tīmekļa vietnei. Tavi dalībnieki būs tikai viena klikšķa attālumā no ziedošanas tiešsaistē, brīvprātīgo palīgu pieteikšanās iespējas vai draudzes mājas lapām."
                                 announcement: 
                                     title: "Paziņojuma modulis"
-                                    desc: "Church news, calendar events, programs, classes, volunteer and missions opportunities… Easily distribute timely, important information without distracting from the primary message of your Event. Your announcement modules can This content type allows you to post rich text content which appears on it’s own page in the event. It’s perfect for content that’s important but you don’t want it to distract from primary message of your event."
+                                    desc: "Draudžu ziņas, pasākumi kalendārā, mācības, brīvprātīgo daba un misijas iespējas... Ziņojumu moduļi ir ideāli piemēroti tam, lai savlaicīgi līdzdalītu nozīmīgu  informāciju, vienlaicīgi nenovēršot uzmanību no Tava pasākuma galvenā vēstījuma. Katrs ziņojuma modulis Tavā pasākumā tiek attēlots atsevišķā lapā, un tajā ir iespējams iekļaut pat RTF standarta saturu (piemēram, izmantot slīprakstu un treknrakstu)."
                             ContentInsertionPoint: 
                                 title: "Ievietot šeit nākamo moduli"
                             ContentTypeAnnouncement: 
@@ -1486,6 +1495,7 @@ lv:
                                 replace: "Aizstāt"
                                 search: "Meklēt lasīšanas plānu"
                             ContentTypeReference: 
+                                language: "Valoda"
                                 version: "Versija"
                                 book: "Grāmata"
                                 chapterVerse: "Nodaļa:Pants"
@@ -1509,11 +1519,12 @@ lv:
                                 prompt: "Vilkt un nomest attēlu"
                                 onlyJpg: "[Tikai JPG]"
                                 sizePrompt: "%{requiredWidth}piks. platums x %{requiredHeight}piks. augstums"
-                                sizePrompt2: "Your image dimensions should be %{requiredWidth} x {requiredHeight} pixels."
+                                sizePrompt2: "Tava attēla izmēram pikseļos jābūt %{requiredWidth} x %{requiredHeight}."
                                 eventName: "Pasākuma nosaukums"
                                 org: "Draudzes nosaukums vai organizācija"
                                 desc: "Pasākuma apraksts"
                                 next: "Tālāk: Pievieno atrašanās vietu un laikus →"
+                                blank: "%{field} nevar būt tukšs."
                     location: 
                         components: 
                             Location: 
@@ -1540,7 +1551,7 @@ lv:
                                 prompt: "Ievadīt atrašanās vietas adresi..."
                                 country: "Valsts"
                                 timezone: "Laika josla"
-                                namePrompt: "First Baptist East Campus"
+                                namePrompt: "First Baptist Austrumu daļa"
                                 name: "Atrašanās vietas nosaukums"
                                 nameOptional: "Izvēles iespēja: noderīgi, ja vēlies pievienot vairākas atrašanās vietas"
                                 addAnother: "Pievienot citu norises laiku"
@@ -1550,7 +1561,7 @@ lv:
                                 shift: "Pārcelt sākuma datumus"
                                 forward: "Pārsūtīt"
                                 backward: "atpakaļ"
-                                by: "by"
+                                by: "par"
                                 week: "nedēļa"
                                 weeks: "nedēļas"
                                 month: "Mēnesis"
@@ -1572,8 +1583,10 @@ lv:
                             noAuthPrompt: "<a href='%{url}'><span className='highlight'>Pieraksties,</span> lai pievienotu savas privātās piezīmes…</a>"
                         components: 
                             PreviewFeed: 
+                                review: "Pārskati savu pasākumu pirms publicēšanas"
+                                previewUrl: "Priekšskatījuma URL:"
                                 share: "Dalīties ar notikumu"
-                                locations: "Vietas un laiki"
+                                locationsAndTimes: "Vietas un laiki"
                                 publish: "Publicēt"
                                 unpublish: "Atcelt publicēšanu"
                                 locations: "Atrašanās vietas:"
@@ -1605,6 +1618,7 @@ lv:
                 components: 
                     EventViewContent: 
                         copy: "Kopēt"
+                        copied: "Nokopēts"
                         share: "Dalīties"
                         read: "Lasīt"
                         readPlan: "Lasīt plānu"
