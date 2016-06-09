@@ -22,7 +22,8 @@ angular.module('yv', [
     'common.hoverLink',
     'common.focusMe',
     'common.carousel',
-    'yv.friendships.addFriend'
+    'yv.friendships.addFriend',
+    'yv.search'
 ])
 
 .config([ '$locationProvider', '$urlRouterProvider', '$windowProvider', function($locationProvider, $urlRouterProvider, $windowProvider) {

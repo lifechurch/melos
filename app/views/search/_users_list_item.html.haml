@@ -16,6 +16,6 @@
         - friendship_pending_type_name = "incoming"
       - elsif friendship_pending_type == :outgoing
         - friendship_pending_type_name = "outgoing"
-      - elsif Friend.with? user, auth: current_auth
-        - friendship_pending_type_name = "friends"
-    .add-friend{"add-friend" => true, "user-id" => "#{user.id}", "friendship-status" => "#{friendship_pending_type_name}"}
+    - elsif Friend.with? user, auth: current_auth
+      - friendship_pending_type_name = "friends"
+    .add-friend{"add-friend" => true, "user-id" => "#{user.id}", "friendship-status" => "#{friendship_pending_type_name}", "s-add-friend" => "#{t('moments.action.add friend button')}", "s-request-sent" => "#{t('friendships.offer success')}", "s-accept" => "#{t('friendships.form.accept button')}", "s-ignore" => "#{t('friendships.form.ignore button')}", "s-working" => "", "s-error" => "#{t('EventsAdmin.components.ErrorMessage.genericError')}", "s-friends" => "#{t('friendships.status.friends')}"}

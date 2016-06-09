@@ -5,10 +5,17 @@ angular.module('yv.friendships.addFriend', [])
         return {
             replace: true,
             restrict: 'A',
-            template: '<div>{{friendshipStatus}}<a ng-show="!working && notFriends" ng-click="offerFriendship()">Add Friend</a><span ng-show="outgoing">Request Sent</span><span ng-show="incoming && !working"><a ng-click="acceptFriendship()">Accept</a> / Ignore</span><span ng-show="working">Working...</span><span ng-show="offerError">An error occurred.</span></div>',
+            template: '<div><a ng-show="!working && notFriends" ng-click="offerFriendship()">{{sAddFriend}}</a><span ng-show="outgoing">{{sRequestSent}}</span><span ng-show="incoming && !working"><a ng-click="acceptFriendship()">{{sAccept}}</a> / <a ng-click="denyFriendship()">{{sIgnore}}</a></span><span ng-show="working">{{sWorking}}</span><span ng-show="friends">{{sFriends}}</span><span ng-show="offerError">{{sError}}</span></div>',
             scope: {
               userId: '=',
-              friendshipStatus: '@'
+              friendshipStatus: '@',
+              sAddFriend: '@',
+              sRequestSent: '@',
+              sAccept: '@',
+              sIgnore: '@',
+              sWorking: '@',
+              sError: '@',
+              sFriends: '@'
             },
             controller: ['$scope', 'Friendships', function($scope, Friendships) {
                 $scope.friends  = $scope.friendshipStatus == 'friends';
@@ -34,8 +41,24 @@ angular.module('yv.friendships.addFriend', [])
                 $scope.acceptFriendship = function() {
                     $scope.working = true;
                     $scope.offerError = false;
-                    Friendships.accept(path, null).success(function(data) {
+                    Friendships.accept($scope.userId, null).success(function(data) {
                         $scope.friends = true;
+                        $scope.incoming = false;
+                        $scope.notFriends = false;
+                        $scope.working = false;
+                    }).error(function(err) {
+                        $scope.offerError = true;
+                        $scope.working = false;
+                    });
+                };
+
+                $scope.denyFriendship = function() {
+                    $scope.working = true;
+                    $scope.offerError = false;
+                    Friendships.deny($scope.userId, null).success(function(data) {
+                        $scope.friends = false;
+                        $scope.incoming = false;
+                        $scope.notFriends = true;
                         $scope.working = false;
                     }).error(function(err) {
                         $scope.offerError = true;
