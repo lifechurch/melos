@@ -26,7 +26,11 @@ class FriendshipsController < ApplicationController
 
   def offer
     @friendship = Friendships.offer(request_opts(params[:user_id]))
-    redirect_to(:back, notice: select_notice(@friendship,:offer))
+    respond_to do |format|
+      format.json { render json: { notice: select_notice(@friendship,:offer) } }
+      format.any { redirect_to(:back, notice: select_notice(@friendship,:offer)) }
+    end
+
   end
 
   # Decline
