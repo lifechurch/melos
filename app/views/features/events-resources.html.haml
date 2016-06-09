@@ -7,11 +7,11 @@
     %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/close.svg"), :style => "width:26px;"}/
   %ul.mobile-menu
     %li
-      %a{:href => '/features/events'} Features
+      %a.features-btn{:href => '/features/events'}=t('events.menu.features')
     %li
-      %a{:href => '/features/events-faq'} FAQ
+      %a{:href => '/features/events-faq'}=t('events.menu.faq')
     %li
-      %a{:href => '/features/events-resources'} Resources
+      %a{:href => '/features/events-resources'}=t('events.menu.resources')
 .wrap
   .header-wrap.fixed-header
     .header
@@ -22,22 +22,22 @@
         %img.logo-black{:alt => "", "data-no-retina" => "", :src => image_path("features/events/yv-logo-gray.svg")}/
       %ul.main-nav
         %li
-          %a{:href => '/features/events'} Features
+          %a.features-btn{:href => '/features/events'}=t('events.menu.features')
         %li
-          %a{:href => '/features/events-faq'} FAQ
+          %a{:href => '/features/events-faq'}=t('events.menu.faq')
         %li
-          %a{:href => '/features/events-resources'} Resources
+          %a{:href => '/features/events-resources'}=t('events.menu.resources')
         %li.btn2
-          %a{:href => "mailto:?subject=This new feature from YouVersion could really help our church!&amp;body=Have you seen YouVersion’s new Events feature yet? I believe it would really help our church engage people more with our services. It lets people add their own notes during a service, then even save the event so they can come back later and study it with the Bible references. I think it could probably save us money on printing costs, too. Here’s YouVersion’s Events website: http://www.bible.com/features/events.", :target => "_blank"} Tell Your Church
+          %a{:href => "mailto:?subject=#{t('events.mail subject')}&body=#{t('events.mail body')}", :target => "_blank"}=t('events.menu.tell your church')
         %li.btn2
-          %a{:href => events_link} Create an Event
+          %a{:href => events_link}=t('events.menu.create an event')
       .clearfix
     / //header
   / //header-wrap
   .sub-content
     .marketyourevent-content
       .row-one
-        %h1 Spread the word about your Event, easily.
+        %h1=t('events.spread the word')
         .laptop-image
           .imagebox
             %img.lazy{:alt => "", "data-no-retina" => "", "data-src" => image_path("features/events/shadows-case-screen.png"), :src => ""}/
@@ -48,34 +48,28 @@
           .clearfix
         / //laptop-image
         .btm-text
-          %p Once you have your Event scheduled and ready to share, Events gives you a link you can use on all your social networks, in your email communications, and even on screen during your service or event. When someone with the Bible App visits your link, your Event opens directly inside the app. If they don’t have the Bible App, they’ll see your Event at Bible.com, with options to get the app if they want it.
+          %p=t('events.resources intro')
       / //row-one
       .row-two
         .intro-text
-          %h1 Free resources for helping you with Events
+          %h1=t('events.free resources title')
         .boxes
           .each-box
             %iframe.imagebox2{:allowfullscreen => "", :frameborder => "0", :height => "", :src => "https://www.youtube.com/embed/yNr7QwuAECU", :width => ""}
-            %p Watch a video about transitioning to Events
+            %p=t('events.resources video')
           .each-box
             %a{ :href => 'https://open.church/resources/2567-youversion-events/'}
               .imagebox-social
-            %p
-              %a.text2{ :href => 'https://open.church/resources/2567-youversion-events/'} Download
-              %span these assets to market your Events on Facebook, Twitter, and Instagram
+            %p=t('events.resources social').html_safe
 
           .each-box
             %a{ :href => 'https://open.church/resources/2567-youversion-events/'}
               .imagebox-slides
-            %p
-              %a.text2{ :href => 'https://open.church/resources/2567-youversion-events/'} Download
-              %span these slides and handouts to market your Events within your church or organization
+            %p=t('events.resources slides').html_safe
           .each-box
             %a{ :href => 'https://open.church' }
               .imagebox-open
-            %p
-              %span Looking for more free resources? Explore more than 30,000 sermons, children’s materials, creative resources and more at
-              %a.text2{ :href => 'https://open.church'} open.church
+            %p=t('events.resources more').html_safe
           .clearfix
         .clearfix
     / //marketyourevent-content
@@ -84,15 +78,15 @@
     %li
       %a{:href => "https://www.facebook.com/sharer/sharer.php?u=http://www.bible.com/features/events", :target => "_blank"}
         %span.icon.facebook
-        Share
+        =t('events.share')
     %li
-      %a{:href => "https://twitter.com/intent/tweet?text= Have+you+seen+Events+in+%40YouVersion%E2%80%99s+Bible+App%3F+Message+outlines%2C+announcements%2C+links+to+online+giving%2C+%26+more%21+http%3A%2F%2Fbible.com%2Ffeatures%2Fevents", :target => "_blank"}
+      %a{:href => "https://twitter.com/intent/tweet?text=#{t('events.tweet text')}", :target => "_blank"}
         %span.icon.twitter
         Tweet
     %li
-      %a{:href => "mailto:?subject=This new feature from YouVersion could really help our church!&amp;body=Have you seen YouVersion’s new Events feature yet? I believe it would really help our church engage people more with our services. It lets people add their own notes during a service, then even save the event so they can come back later and study it with the Bible references. I think it could probably save us money on printing costs, too. Here’s YouVersion’s Events website: http://www.bible.com/features/events.", :target => "_blank"}
+      %a{:href => "mailto:?subject=#{t('events.mail subject')}&body=#{t('events.mail body')}", :target => "_blank"}
         %span.icon.email
-        Email
+        =t('events.email')
 / //wrap
 %script{:defer => "", :src => "/assets/features/events/classie.js", :type => "text/javascript"}
 :javascript
