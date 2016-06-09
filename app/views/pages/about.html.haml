@@ -16,10 +16,6 @@
 
       %p= t('about page.youversion copy 2')
 
-    - if bdc_user?
-      %h2= t('about page.bible dot com title')
-      %p= t('about page.bible dot com copy').html_safe
-
     - if partners = @site.partners.try(:[], I18n.locale)
 
       .partners_content
