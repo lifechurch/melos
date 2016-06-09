@@ -5,7 +5,7 @@ angular.module('yv.friendships.addFriend', [])
         return {
             replace: true,
             restrict: 'A',
-            template: '<div><a ng-show="!working && notFriends" ng-click="offerFriendship()">{{sAddFriend}}</a><span ng-show="outgoing">{{sRequestSent}}</span><span ng-show="incoming && !working"><a ng-click="acceptFriendship()">{{sAccept}}</a> / <a ng-click="denyFriendship()">{{sIgnore}}</a></span><span ng-show="working">{{sWorking}}</span><span ng-show="friends">{{sFriends}}</span><span ng-show="offerError">{{sError}}</span></div>',
+            template: '<div><a ng-show="!working && notFriends" ng-click="offerFriendship()">{{sAddFriend}}</a><span ng-show="outgoing">{{sRequestSent}}</span><span ng-show="incoming && !working"><a ng-click="acceptFriendship()">{{sAccept}}</a> / <a class="red" ng-click="denyFriendship()">{{sIgnore}}</a></span><span ng-show="working">{{sWorking}}</span><span ng-show="friends">{{sFriends}}</span><span ng-show="offerError">{{sError}}</span></div>',
             scope: {
               userId: '=',
               friendshipStatus: '@',

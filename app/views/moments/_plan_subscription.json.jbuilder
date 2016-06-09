@@ -6,7 +6,7 @@ json.object do
   json.set!       :body_images, moment.body_images
   json.action_url moment.action_url
   json.set!       :plan_id, moment.plan_id
-  json.set!       :subscribed, (moment.user_id == current_user.id || @subscriptions.include?(moment.plan_id)) if current_user.present? || @subscriptions.present?
+  json.set!       :subscribed, (moment.user_id == current_user.id || @subscriptions.include?(moment.plan_id)) if @subscriptions != false && (current_user.present? || @subscriptions.present?)
   json.partial!   "/moments/moment_common", moment: moment
   json.actions do
     json.set! :show, moment.comments_count > 0 || moment.likes_count > 0
