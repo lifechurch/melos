@@ -21,9 +21,8 @@
 
   %p
     = f.label :password, t("password prompt")
-    %span#pwd-message=t("users.password length")
     = f.password_field :password, :maxlength=>"32"
-    -#%span#pwd-message=t("users.password length")
+    %span#pwd-message=t("users.password length")
   %p.terms
     = t("users.agree", terms_link: terms_url(), privacy_link: privacy_path).html_safe
   %p
