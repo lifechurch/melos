@@ -22,9 +22,9 @@
   end
 
 .row
-  .medium-7.large-8.columns
+  .medium-7.large-7.columns
     %article
-      %h1= t("users.sign up for an account")
+      %h1.hd= t("users.sign up for an account")
 
       -if licensing_flow
         %p#license-notice= t("licenses.auth.signup notice", login:t("licenses.auth.login link text")).html_safe
@@ -38,7 +38,7 @@
 
       = render 'create_form'
 
-  .medium-5.large-4.columns.show-for-medium-up.l-border
+  .medium-7.large-5.columns.show-for-medium-up.l-border
     =render partial: "/sidebars/users/new"
-    %br
-    =render partial: "/widgets/download_app"
+    -#%br
+    -#=render partial: "/widgets/download_app"

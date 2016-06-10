@@ -4,6 +4,10 @@
   = f.hidden_field :agree, {value: true}
 
   %p
+    %span.alt-path= t('users.sign up alternate', sign_in_path: sign_in_path).html_safe
+  %br
+
+  %p
     = f.label :first_name, t("users.first name")
     = f.text_field :first_name, {autocorrect: "off", autocapitalize: "off"}
 
@@ -17,10 +21,11 @@
 
   %p
     = f.label :password, t("password prompt")
-    = f.password_field :password, :maxlength=>"32"
     %span#pwd-message=t("users.password length")
+    = f.password_field :password, :maxlength=>"32"
+    -#%span#pwd-message=t("users.password length")
   %p.terms
     = t("users.agree", terms_link: terms_url(), privacy_link: privacy_path).html_safe
   %p
-    = f.button t("users.sign up"), {class: "solid-button green"}
-    %span.alt-path= t('users.sign up alternate', sign_in_path: sign_in_path).html_safe
+    = f.button t("users.sign up"), {class: "solid-button green padded"}
+

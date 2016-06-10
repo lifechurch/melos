@@ -7,9 +7,60 @@
 -#      = t("have an account")
 -#    = link_to t("sign in"), sign_in_path(redirect: params[:redirect], source: params[:source]), class: "action_button_grey"
 
+%br
 
-.widget.simple
-  %h3.hd
-    =t("registration.benefits title")
-  %div.bd
-    %p= t("registration.benefits blurb")
+-#.widget.simple
+%h2.hd
+  =t("registration.benefits title")
+
+%br
+
+.row.padded
+  .columns.medium-2.text-center
+    %h6.heading
+      %img{src: "#{image_path('plans-stroked-grey.png')}"}
+
+  .columns.medium-10
+    %h6.heading
+      =t("pages.home.free_plans.title")
+    %p
+      =t("pages.home.free_plans.body")
+
+%br
+
+.row.padded
+  .columns.medium-2.text-center
+    %h6.heading
+      %img{src: "#{image_path('highlight-stroked-grey.png')}"}
+
+  .columns.medium-10
+    %h6.heading
+      =t("pages.home.make_yours.title")
+    %p
+      =t("pages.home.make_yours.body")
+
+%br
+
+.row.padded
+  .columns.medium-2.text-center
+    %h6.heading
+      %img{src: "#{image_path('friends-stroked-grey.png')}"}
+
+  .columns.medium-10
+    %h6.heading
+      =t("friendships.status.friends")
+    %p
+      =t("friendships.blurb")
+
+%br
+
+.row.padded
+  .columns.medium-2.text-center
+    %h6.heading
+      %img{src: "#{image_path('votd-stroked-grey.png')}"}
+
+  .columns.medium-10
+    %h6.heading
+      =t("moments.vod.title")
+    %p
+      =t("friendships.blurb")
