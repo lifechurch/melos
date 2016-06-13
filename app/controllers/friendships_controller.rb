@@ -19,14 +19,22 @@ class FriendshipsController < ApplicationController
       return redirect_to(edit_user_path(id: current_user.username), notice: t('users.profile.complete_first_last')) 
     end
 
-    redirect_to(:back, notice: select_notice(@friendship, :create))
+    respond_to do |format|
+      format.json { render json: { notice: select_notice(@friendship,:create) } }
+      format.any { redirect_to(:back, notice: select_notice(@friendship, :create)) }
+    end
+
+
     # eventually support json/ajax submission for javascript menus, etc.
     #respond_with(@friendship)
   end
 
   def offer
     @friendship = Friendships.offer(request_opts(params[:user_id]))
-    redirect_to(:back, notice: select_notice(@friendship,:offer))
+    respond_to do |format|
+      format.json { render json: { notice: select_notice(@friendship,:offer) } }
+      format.any { redirect_to(:back, notice: select_notice(@friendship,:offer)) }
+    end
   end
 
   # Decline
@@ -36,7 +44,10 @@ class FriendshipsController < ApplicationController
   # params[:id] is being used as a user_id in this particular scenario
   def destroy
     @friendship = Friendships.decline(request_opts(params[:id]))
-    redirect_to(:back, notice: select_notice(@friendship,:destroy))
+    respond_to do |format|
+      format.json { render json: { notice: select_notice(@friendship,:destroy) } }
+      format.any { redirect_to(:back, notice: select_notice(@friendship,:destroy)) }
+    end
   end
 
   private

@@ -21,7 +21,9 @@ angular.module('yv', [
     'common.branchSms',
     'common.hoverLink',
     'common.focusMe',
-    'common.carousel'
+    'common.carousel',
+    'yv.friendships.addFriend',
+    'yv.search'
 ])
 
 .config([ '$locationProvider', '$urlRouterProvider', '$windowProvider', function($locationProvider, $urlRouterProvider, $windowProvider) {
