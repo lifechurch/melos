@@ -7,3 +7,20 @@
     %ul.no-bullet.error
       - errors.full_messages.each do |e|
         %li.error= e
+
+
+-#- if errors.present?
+-#
+-#  - if defined?(heading)
+-#    %h4=heading
+-#
+-#    %ul.no-bullet.error
+-#      - errors.full_messages.each do |e|
+-#        - case e
+-#        - when t("api.users first name required")
+-#          %li.error#first_name_error= e
+-#        - else
+-#          %li.error= e
+
+
+

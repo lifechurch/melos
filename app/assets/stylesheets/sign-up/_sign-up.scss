@@ -7,27 +7,46 @@ body.c_users.a_create
   #pwd-message {
     float: $default-float;
     color: #7c7c7c;
-    margin: -20px 0 20px 0;
+    width: 100%;
+    font-size: rem-calc(11);
+    margin-top: -20px;
+    padding-bottom: 10px;
   }
 
-  label {
-    padding: 0 0 5px;
+  form
+  {
+    label{
+      padding: 0 0 5px;
+      font-size: rem-calc(17);
+      font-weight: bold;
+    }
+  }
+
+  .widget
+  {
+    h6 {
+      font-size: rem-calc(15);
+      font-weight: bold;
+    }
+
+    img {
+      min-height: 22px;
+      min-width: 22px;
+    }
   }
 
   @media #{$medium-up} {
     input[type="text"],
     input[type="email"],
-    input[type="password"] {
-      width: 50%;
-    }
-    #pwd-message {
-      width: 40%;
-      margin: 0 10px;
+    input[type="password"],
+    button {
+      width: 65%;
     }
   }
   .terms {
     clear: both;
     margin-bottom: 20px;
+    font-size: rem-calc(11);
   }
   @media #{$small-only} {
     .alt-path {

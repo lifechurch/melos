@@ -360,6 +360,7 @@ en:
       version:                                  "Version"
       view more:                                "View More"
       time:                                     "Time"
+      blurb:                                    "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
     friendship:
       now friends:                              "You are now friends with"
     cta:
@@ -560,7 +561,7 @@ en:
     confirm message:                            "We just sent a message to %{email}"
     confirm message click:                      "Click the link in that email to confirm that's you."
     resend verification:                        "Resend email verification"
-    sign in alternate:                          "or, <a href='%{sign_up_path}' target='_self'>sign up</a> if you don't have an account."
+    sign in alternate:                          "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
     sign up alternate:                          "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
     password length:                            "6 characters minimum"
     welcome to youversion:                      "Welcome to the YouVersion community!"

@@ -1,14 +1,25 @@
 body.c_sessions.a_new,
 body.c_sessions.a_create {
-  label {
-    padding: 0 0 5px;
-  }
 
+  form
+  {
+    label{
+      padding: 0 0 5px;
+      font-size: rem-calc(16);
+      font-weight: bold;
+    }
+  }
+  .terms {
+    clear: both;
+    margin-bottom: 20px;
+    font-size: rem-calc(11);
+  }
   @media #{$medium-up} {
     input[type="text"],
     input[type="email"],
-    input[type="password"] {
-      width: 50%;
+    input[type="password"],
+    button {
+      width: 75%;
     }
   }
   @media #{$small-only} {
