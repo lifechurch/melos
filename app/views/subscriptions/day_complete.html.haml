@@ -1,1 +1,9 @@
-%h1= "Day Complete"
+
+.row.text-center
+  %h6.small= "Day Complete"
+  %p
+    #{t('plans.which day in plan', day: @presenter.day, total: @presenter.subscription.total_days)}
+
+.row.text-center
+  -#%img{src: @presenter.subscription.images[4]}
+  = image_tag @presenter.subscription.hero_image.url

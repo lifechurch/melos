@@ -79,7 +79,15 @@ class SubscriptionsController < ApplicationController
 
   # Plan Day: Day Complete
   def day_complete
-
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+    # self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
+    # self.right_sidebar_presenter = Presenter::Sidebar::SubscriptionRight.new( @subscription , params, self)
+    now_reading(presenter.reference)
+    refs = presenter.reading.references(version_id: @subscription.version_id)
+    respond_to do |format|
+      format.json { return render json: refs }
+      format.any { return respond_with(presenter.subscription) }
+    end
   end
 
   # Plan Day: Plan Complete
