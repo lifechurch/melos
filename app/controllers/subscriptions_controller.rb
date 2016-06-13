@@ -4,7 +4,7 @@ class SubscriptionsController < ApplicationController
   prepend_before_filter :mobile_redirect, only: [:show]
   before_filter :check_existing_subscription, only: [:create]
   before_filter :force_login
-  before_filter :find_subscription,     only: [:show,:destroy,:edit,:update,:calendar]
+  before_filter :find_subscription,     only: [:show,:ref,:devo,:day_complete,:plan_complete,:destroy,:edit,:update,:calendar]
   
   rescue_from NotAChapterError, with: :ref_not_found
 
@@ -46,6 +46,7 @@ class SubscriptionsController < ApplicationController
   end
 
   # TODO - ensure user subscribed.
+  # Plan Day: Overview
   def show
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
@@ -56,6 +57,34 @@ class SubscriptionsController < ApplicationController
       format.json { return render json: refs }
       format.any { return respond_with(presenter.subscription) }
     end
+  end
+
+  # Plan Day: Devo
+  def devo
+
+  end
+
+  # Plan Day: Ref
+  def ref
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+    self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
+    self.right_sidebar_presenter = Presenter::Sidebar::SubscriptionRight.new( @subscription , params, self)
+    now_reading(presenter.reference)
+    refs = presenter.reading.references(version_id: @subscription.version_id)
+    respond_to do |format|
+      format.json { return render json: refs }
+      format.any { return respond_with(presenter.subscription) }
+    end
+  end
+
+  # Plan Day: Day Complete
+  def day_complete
+
+  end
+
+  # Plan Day: Plan Complete
+  def plan_complete
+
   end
 
   def create
