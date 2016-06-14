@@ -450,6 +450,52 @@ ul.plan-results {
   padding-top: 20px;
 }
 
+/* !Day Complete view */
+
+.c_subscriptions.a_day_complete {
+
+  .back-img {
+    height: 360px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .plan-img {
+    height: 160px;
+    width: 310px
+  }
+
+  .plan-length-head {
+    color: $gray;
+    font-size: 0.813em;
+    display: block;
+  }
+
+  .check-logo {
+    margin-top: 20px;
+    height: 90px;
+    padding: 18px;
+  }
+
+  .progress_wrap {
+    border: solid 1px $white;
+    border-radius: 10px;
+    height: 7px;
+    width: 210px;
+    margin-top:35px;
+
+    .progress_counter {
+      background-color: $white;
+    }
+  }
+
+  .small-font {
+    font-size: rem-calc(5);
+  }
+
+}
 
 /* !Plan day view */
 
