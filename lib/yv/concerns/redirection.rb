@@ -50,6 +50,8 @@ module YV
         # todo: model
         # for now use a dictionary here
 
+        #add versionid and lang page
+
         dict = Hashie::Mash.new(
           {
             moments: 
@@ -101,10 +103,10 @@ module YV
               {
                 # show:     "bible?reference=#{params[:reference]}&version=#{params[:version]}"
               },
-            friendships:
-              {
-                requests:   "friends"
-              },
+            # friendships:
+            #   {
+            #     # requests:   "friends"
+            #   },
             connections:
               {
                 index:      "connections"
@@ -134,7 +136,24 @@ module YV
           session[:native_url] = @native_url
           session[:user_agent] = @user_agent
         end
-        
+
+        # specific intent handling for Android Chrome
+        unless params.has_key?(:ret)
+          browser = Browser.new(request.env["HTTP_USER_AGENT"])
+          if browser.platform.android? and browser.chrome? and not @native_path.nil?
+            android_scheme = "youversion"
+            android_package = "com.sirma.mobile.bible.android"
+            encoded_browser_fallback = ERB::Util.url_encode("#{request.base_url}#{request.path}?ret=1")
+            intent_url = "intent://#{@native_path}#Intent;scheme=#{android_scheme};package=#{android_package};S.browser_fallback_url=#{encoded_browser_fallback};end;"
+            redirect_to intent_url, :status => 307 and return
+          end
+        end
+
+        # 1. X get fallback url
+        # 2. X add qstring to fallback url and test for it to ignore redirect
+        # 3. 0 test fallback url on staging with mobile device.
+        # 4. 0 friendship/requests.json trying to redirect all the time in bkg
+        # 5. 0 fix references show to work for both android and ios
       end
 
     end
