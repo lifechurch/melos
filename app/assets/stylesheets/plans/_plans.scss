@@ -455,6 +455,7 @@ ul.plan-results {
 .c_subscriptions.a_day_complete {
 
   .stacked-container {
+    margin-top: 15px;
     position: relative;
     height: 360px;
     overflow: hidden;
@@ -525,6 +526,7 @@ ul.plan-results {
   }
 
   .share-button {
+    margin-top: 40px;
     width: rem-calc(150);
   }
 
