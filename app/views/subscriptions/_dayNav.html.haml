@@ -1,0 +1,51 @@
+:ruby
+  ref_index = params['content'].present? ? params['content'].to_i : nil
+  back_path = nil
+  if !ref_index.nil?
+    if ref_index == 0
+      back_path = devo_subscription_path(user_id: current_user.to_param, id: subscription, day: day)
+    else
+      back_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: day, content: ref_index - 1)
+    end
+  else
+    back_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day)
+  end
+
+  if !ref_index.nil?
+    ref = presenter.reading.references(version_id: subscription.version_id)[ref_index].reference.to_param.downcase
+  else
+    ref = nil
+  end
+
+  forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref , content: ref_index)
+  show_complete = false
+  references = presenter.reading.references(version_id: subscription.version_id)
+  #if next_ref_index >= references.length
+    #This is last ref. Use Checkmark instead of arrow for 'Next'
+  #  show_complete = true
+    # forward_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: day, content: 999)
+    # else
+    # forward_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: day, content: next_ref_index)
+  #end
+
+
+.row
+  .columns.large-8.medium-8.medium-centered
+    .left
+      = link_to(back_path, "target" => "_self" ) do
+        = "Back Arrow" #replace with image
+
+    .right
+      -if day_status && !day_status.references.empty?
+        -#= link_to(forward_path, "target" => "_self" ) do
+        = form_tag(forward_path, method: :put, id: 'plan_next_form') do
+          - if show_complete
+            %a{'onClick' => 'document.getElementById("plan_next_form").submit()'}
+              = "Check Icon" #replace with Image
+          - else
+            %a{'onClick' => 'document.getElementById("plan_next_form").submit()'}
+              = "Forward Arrow" #replace with image
+
+    - if subscription.small_thumbnail_image.present?
+      = image_tag subscription.small_thumbnail_image.url
+    %h3= subscription.name

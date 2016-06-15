@@ -1,5 +1,10 @@
+:ruby
+  subscription  = presenter.subscription
+  day           = presenter.day
+  day_status    = subscription.day_statuses[day - 1] unless subscription.day_statuses.empty? || subscription.day_statuses.length < (day -1)
+
 - if @presenter.reference
-  = render partial: "/references/reader", locals: {presenter: @presenter}
+  = render partial: "/references/reader", locals: { presenter: @presenter, subscription: subscription, day: day, day_status: day_status }
 
 - else
   %article
