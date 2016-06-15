@@ -454,18 +454,52 @@ ul.plan-results {
 
 .c_subscriptions.a_day_complete {
 
-  .back-img {
+  .stacked-container {
+    position: relative;
     height: 360px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-    background-attachment: fixed;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-box-shadow: inset 0 0 300px #000000;
+    -moz-box-shadow: inset 0 0 300px #000000;
+    -o-box-shadow: inset 0 0 300px #000000;
+    box-shadow: inset 0 0 300px #000000;
+
+    .back-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      height: 360px;
+      width: 100%;
+
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+      background-attachment: fixed;
+      -webkit-filter: blur(12px);
+      -moz-filter: blur(12px);
+      -o-filter: blur(12px);
+      -ms-filter: blur(12px);
+      filter: blur(12px);
+
+    }
+
+    .back-content {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left:0;
+      top: 0;
+      z-index: 10;
+    }
+
+    .plan-img {
+      height: 160px;
+      width: 310px
+    }
+
   }
 
-  .plan-img {
-    height: 160px;
-    width: 310px
-  }
 
   .plan-length-head {
     color: $gray;
@@ -474,25 +508,28 @@ ul.plan-results {
   }
 
   .check-logo {
-    margin-top: 20px;
-    height: 90px;
-    padding: 18px;
+    height: 50px;
+    margin: 35px 0px 20px 0px;
   }
 
   .progress_wrap {
     border: solid 1px $white;
     border-radius: 10px;
-    height: 7px;
-    width: 210px;
-    margin-top:35px;
+    height: 9px;
+    width: 220px;
+    margin-top:38px;
 
     .progress_counter {
       background-color: $white;
     }
   }
 
+  .share-button {
+    width: rem-calc(150);
+  }
+
   .small-font {
-    font-size: rem-calc(5);
+    font-size: rem-calc(12);
   }
 
 }
