@@ -50,8 +50,6 @@ module YV
         # todo: model
         # for now use a dictionary here
 
-        #add versionid and lang page
-
         dict = Hashie::Mash.new(
           {
             moments: 
@@ -87,6 +85,14 @@ module YV
                 show:     "reading_plan_detail?id=#{params[:id].match /(\d+)/ if params[:id].present?}",
                 sample:   "reading_plan_day?id=#{params[:id].match /(\d+)/ if params[:id].present?}&day=#{params[:day] if params[:day].present?}"
               },
+            languages:
+              {
+                show:     "language?id=#{params[:id]}"
+              },
+            versions:
+              {
+                show:     "version?id=#{params[:id].to_s.split("-").first}"
+              },
             subscriptions:
               {
                 # index:    "my_reading_plans",
@@ -103,10 +109,10 @@ module YV
               {
                 # show:     "bible?reference=#{params[:reference]}&version=#{params[:version]}"
               },
-            # friendships:
-            #   {
-            #     # requests:   "friends"
-            #   },
+            friendships:
+              {
+                requests:   "friends"
+              },
             connections:
               {
                 index:      "connections"
@@ -148,12 +154,6 @@ module YV
             redirect_to intent_url, :status => 307 and return
           end
         end
-
-        # 1. X get fallback url
-        # 2. X add qstring to fallback url and test for it to ignore redirect
-        # 3. 0 test fallback url on staging with mobile device.
-        # 4. 0 friendship/requests.json trying to redirect all the time in bkg
-        # 5. 0 fix references show to work for both android and ios
       end
 
     end
