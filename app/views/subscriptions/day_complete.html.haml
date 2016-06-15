@@ -27,3 +27,5 @@
 .row.medium-centered.text-center
   %a
     = link_to t("plans.view my plans"), subscriptions_path(user_id: current_user.to_param), target: "_self", class: "small-font"
+    != "&bull;"
+    = link_to t("EventsAdmin.containers.EventFeedMine.next"), subscription_path(user_id: current_user.to_param, id: @presenter.subscription, day: (@presenter.day.to_i + 1)), {class: 'small-font', target: "_self"}
