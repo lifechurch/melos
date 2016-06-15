@@ -61,20 +61,16 @@ class SubscriptionsController < ApplicationController
 
   # Plan Day: Devo
   def devo
-
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+    respond_with(presenter.subscription)
   end
 
   # Plan Day: Ref
   def ref
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
-    self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
-    self.right_sidebar_presenter = Presenter::Sidebar::SubscriptionRight.new( @subscription , params, self)
     now_reading(presenter.reference)
     refs = presenter.reading.references(version_id: @subscription.version_id)
-    respond_to do |format|
-      format.json { return render json: refs }
-      format.any { return respond_with(presenter.subscription) }
-    end
+    return respond_with(presenter.subscription)
   end
 
   # Plan Day: Day Complete
@@ -165,17 +161,36 @@ class SubscriptionsController < ApplicationController
 
     # Completing a day of reading
     if(params[:completed])
-      @subscription.set_ref_completion(params[:day_target], params[:ref], params[:completed] == "true")
+      @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
 
       if !@subscription.completed?
-        dayComplete = @subscription.day_statuses[params[:day_target].to_i - 1].completed unless @subscription.day_statuses[params[:day_target].to_i - 1].blank?
-        redirectUrl = subscription_path(user_id: current_user.to_param, id: @subscription, content: params[:content_target], day: params[:day_target], version: params[:version])
+        dayComplete = @subscription.day_statuses[params[:day].to_i - 1].completed unless @subscription.day_statuses[params[:day].to_i - 1].blank?
+        # redirectUrl = subscription_path(user_id: current_user.to_param, id: @subscription, content: params[:content_target], day: params[:day], version: params[:version])
+        # redirectUrl = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref , content: ref_index)
+
+
+        if !params[:ref].present?
+          #Just completed Devo
+          redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: 0)
+        elsif params[:content].present?
+          #Just completed Ref
+          next_ref_index = params[:content].to_i + 1
+          references = @subscription.reading.references(version_id: subscription.version_id)
+          if next_ref_index < references.length
+            redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: next_ref_index)
+          else
+            #Dang. This shouldn't happen
+            redirectUrl = "/404"
+          end
+        end
+
       else
-        dayComplete = @subscription.completed?
-        redirectUrl = subscriptions_path(user_id: current_auth.username) #, notice: t("plans.completed notice")
+        dayComplete = true
+        redirectUrl = day_complete_subscriptions_path(user_id: current_auth.username, id: subscription, day: day)
       end
+
       respond_to do |format|
-        format.json { render json: { success: true, ref: params[:ref], dayComplete: dayComplete, planComplete: @subscription.completed?, day: params[:day_target].to_i, redirectUrl: redirectUrl } and return }
+        format.json { render json: { success: true, ref: params[:ref], dayComplete: dayComplete, planComplete: @subscription.completed?, day: params[:day].to_i, redirectUrl: redirectUrl } and return }
         format.any { redirect_to(redirectUrl) and return }
       end
     end

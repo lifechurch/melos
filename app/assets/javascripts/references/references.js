@@ -54,12 +54,12 @@ angular.module('yv.reader', [
 
 	//Bible Plan for User
 	.state('userPlan', {
-		url: 				'/users/:username/reading-plans/:plan',
+		url: 				'/users/:username/reading-plans/:plan/ref',
 		controller: 			'ReaderCtrl',
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
 	.state('userPlan-locale', {
-		url: 				'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:username/reading-plans/:plan',
+		url: 				'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:username/reading-plans/:plan/ref',
 		controller: 			'ReaderCtrl',
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})

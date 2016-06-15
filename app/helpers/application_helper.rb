@@ -77,7 +77,7 @@ module ApplicationHelper
 
   def is_reader_page?
     controller_name == "references" && action_name == "show" ||
-    controller_name == "subscriptions" && action_name == "show" ||
+    controller_name == "subscriptions" && action_name == "ref" ||
     controller_name == "plans" && action_name == "sample"
   end
 

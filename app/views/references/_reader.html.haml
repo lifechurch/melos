@@ -13,7 +13,7 @@
   verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
   focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
   a_chapter     = presenter.try(:is_chapter?)
-  verse_view    = presenter.verses.present? && !presenter.respond_to?(:subscription)
+  verse_view    = presenter.verses.present? # && !presenter.respond_to?(:subscription)
   ref_deep_link = "#{@presenter.reference.deep_link_path}"
 
 -if (controller_name == 'subscriptions')
@@ -76,6 +76,9 @@
   = link_to(reference.human, 'javascript:void(0);', id:"m_book_chap_btn")
 
 = render partial: "references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
+
+-if (controller_name == 'subscriptions')
+  = render partial: "subscriptions/dayNav", locals: { subscription: subscription, day: day, day_status: day_status }
 
 .row.full.reader-content{"ng-hide" => "topPanelOpen"}
   .reader-left.large-3.columns{"ng-hide" => "isParallelMode || (showContent && isMobile)"}
