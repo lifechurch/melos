@@ -157,7 +157,7 @@ module YV
                 android_scheme = "youversion"
                 android_package = "com.sirma.mobile.bible.android"
                 encoded_browser_fallback = ERB::Util.url_encode("#{request.base_url}#{request.path}?ret=1")
-                intent_url = "intent://#{@native_path}#{request.domain}#Intent;scheme=#{android_scheme};package=#{android_package};S.browser_fallback_url=#{encoded_browser_fallback};end;"
+                intent_url = "intent://#{@native_path}#Intent;scheme=#{android_scheme};package=#{android_package};S.browser_fallback_url=#{encoded_browser_fallback};end;"
                 redirect_to intent_url, :status => 307 and return
               end
             end
