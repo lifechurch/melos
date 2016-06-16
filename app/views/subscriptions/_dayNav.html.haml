@@ -1,5 +1,6 @@
 :ruby
   ref_index = params['content'].present? ? params['content'].to_i : nil
+
   back_path = nil
   if !ref_index.nil?
     if ref_index == 0
@@ -18,15 +19,13 @@
   end
 
   forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref , content: ref_index)
+
+  #This is last ref. Use Checkmark instead of arrow for 'Next'
   show_complete = false
   references = presenter.reading.references(version_id: subscription.version_id)
-  #if next_ref_index >= references.length
-    #This is last ref. Use Checkmark instead of arrow for 'Next'
-  #  show_complete = true
-    # forward_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: day, content: 999)
-    # else
-    # forward_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: day, content: next_ref_index)
-  #end
+  if next_ref_index >= references.length
+    show_complete = true
+  end
 
 
 .row
