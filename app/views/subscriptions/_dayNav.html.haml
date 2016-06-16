@@ -3,12 +3,14 @@
 
   back_path = nil
   if !ref_index.nil?
+    display_ref_number = ref_index + 2
     if ref_index == 0
       back_path = devo_subscription_path(user_id: current_user.to_param, id: subscription, day: day)
     else
       back_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: day, content: ref_index - 1)
     end
   else
+    display_ref_number = 1
     back_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day)
   end
 
@@ -27,6 +29,8 @@
   if next_ref_index >= references.length
     show_complete = true
   end
+
+  display_total_refs = presenter.reading.devotional ? references.length + 1 : references.length
 
 
 .row
@@ -49,3 +53,4 @@
     - if subscription.small_thumbnail_image.present?
       = image_tag subscription.small_thumbnail_image.url
     %h3= subscription.name
+    %p!= "#{t('plans.day number', { day: day })} &bull; #{t('plans.which reading', { current: display_ref_number, total: display_total_refs })}"
