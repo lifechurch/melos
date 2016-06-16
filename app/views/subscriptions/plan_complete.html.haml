@@ -27,15 +27,15 @@
   %a
     = link_to t("plans.view my plans"), subscriptions_path(user_id: current_user.to_param), target: "_self", class: "small-font"
 
-.plans-container.columns.large-8.medium-8.medium-centered.text-center.radius
-  .row.medium-centered.text-center
-    .plans-carousel
-      %h2= t('plans.widget.featured plans')
+.plans-container.columns.large-6.medium-6.medium-centered.text-center
+  .row
+    .plans-carousel.radius
+      %h2.carousel-header= t('plans.widget.featured plans')
       %div{class: 'review-carousel', "carousel" => ""}
       -if !@featured_plans.nil?
-        %ul.resource_list.medium-block-grid-3.small-block-grid-1
+        %ul.resource_list
           - @featured_plans.each do |plan|
-            %li.plan
+            %li.plan-content
               = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
                 .search_thumbnail
                   - if plan.list_image.present?
@@ -43,9 +43,9 @@
                   - else
                     %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
                 .subscription-info
-                  %h3.plan-title
+                  .plan-title
                     =plan.name
-                  %span.length
+                  %span.plan-length-carousel
                     = plan.formatted_length
       -else
         .none{align: "center"}= t("plans.none found")
