@@ -162,10 +162,7 @@ class SubscriptionsController < ApplicationController
 
       end
 
-      respond_to do |format|
-        format.json { render json: { success: true, ref: params[:ref], dayComplete: dayComplete, planComplete: @subscription.completed?, day: params[:day].to_i, redirectUrl: redirectUrl } and return }
-        format.any { redirect_to(redirectUrl) and return }
-      end
+      return redirect_to(redirectUrl)
     end
 
     flash[:notice] = t("plans.#{action} successful")
