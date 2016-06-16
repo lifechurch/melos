@@ -156,18 +156,24 @@ class SubscriptionsController < ApplicationController
       @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
 
       if !@subscription.completed?
-        dayComplete = @subscription.day_statuses[params[:day].to_i - 1].completed unless @subscription.day_statuses[params[:day].to_i - 1].blank?
+        #dayComplete = @subscription.day_statuses[params[:day].to_i - 1].completed unless @subscription.day_statuses[params[:day].to_i - 1].blank?
+        return render "subscriptions/day_complete"
         # redirectUrl = subscription_path(user_id: current_user.to_param, id: @subscription, content: params[:content_target], day: params[:day], version: params[:version])
         # redirectUrl = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref , content: ref_index)
 
 
-        if !params[:ref].present?
+        if dayComplete
+          #Just Completed Day
+          redirectUrl = day_complete_subscriptions_path(user_id: current_auth.username, id: @subscription, day: params[:day])
+
+        elsif !params[:ref].present?
           #Just completed Devo
           redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: 0)
         elsif params[:content].present?
           #Just completed Ref
           next_ref_index = params[:content].to_i + 1
-          references = @subscription.reading.references(version_id: subscription.version_id)
+          self.presenter = Presenter::Subscription.new( @subscription , params, self)
+          references = presenter.reading.references(version_id: @subscription.version_id)
           if next_ref_index < references.length
             redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: next_ref_index)
           else
@@ -178,7 +184,7 @@ class SubscriptionsController < ApplicationController
 
       else
         dayComplete = true
-        redirectUrl = day_complete_subscriptions_path(user_id: current_auth.username, id: subscription, day: day)
+        redirectUrl = plan_complete_subscriptions_path(user_id: current_auth.username, id: @subscription)
       end
 
       respond_to do |format|
