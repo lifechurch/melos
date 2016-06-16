@@ -546,22 +546,25 @@ ul.plan-results {
 
   .plans-carousel {
     width: 100%;
-    height: 280px;
+    height: 270px;
     border: 1px solid $gray;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
 
     .carousel-header {
+      height: 20px;
       margin-left: 15px;
       text-align: left;
+      //position: fixed;
     }
     
     .plan-content {
       display: inline-block;
       vertical-align: top;
       width: 300px;
-      //margin-top: 10px;
+      margin-left: -42px;
+      margin-right: 8px;
 
       .subscription_thumbnail {
         width: 250px;
