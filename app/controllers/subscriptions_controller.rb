@@ -162,6 +162,8 @@ class SubscriptionsController < ApplicationController
 
       #Just Completed Plan
       else
+        @featured_plans = Plan.featured(language_tag: current_locale)
+        @saved_plans = Subscription.saved(current_user, id: current_user.id, auth: current_auth)
         return render "subscriptions/plan_complete"
 
       end

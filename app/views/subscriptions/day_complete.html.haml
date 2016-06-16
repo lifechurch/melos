@@ -6,16 +6,26 @@
 
 
 %div.stacked-container
-  .back-img{:style => %(background-image: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url("#{@presenter.subscription.hero_image.url}"))}
+  -if !@presenter.subscription.hero_image.nil?
+    .back-img{:style => %(background-image: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url("#{@presenter.subscription.hero_image.url}"))}
+  -else
+    .back-img{:style => %(background-image: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url("#{image_path('plans-hero-640x360.jpg')}"))}
+
   .back-content.columns.large-8.medium-8.medium-centered.text-center
     .row
       %img.check-logo{src: "#{image_path('checkmark-plans.svg')}"}
 
     .row
-      %img.plan-img{src: @presenter.subscription.hero_image.url}
+      -if !@presenter.subscription.hero_image.nil?
+        %img.plan-img{src: @presenter.subscription.hero_image.url}
+      -else
+        %img.plan-img{src: image_path('plans-hero-640x360.jpg')}
 
     .row.progress_wrap
       .progress_counter{style: "width:#{@presenter.subscription.completion_percentage}%", title:"#{@presenter.subscription.completion_percentage}%"}
+
+
+
 
 
 .row.medium-centered.text-center

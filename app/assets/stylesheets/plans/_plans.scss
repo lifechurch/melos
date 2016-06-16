@@ -452,8 +452,7 @@ ul.plan-results {
 
 /* !Day/Plan Complete view */
 
-.c_subscriptions.a_day_complete,
-.c_subscriptions.a_plan_complete {
+.c_subscriptions.a_update {
 
   .stacked-container {
     margin-top: 15px;
@@ -547,34 +546,31 @@ ul.plan-results {
   .plans-carousel {
     width: 100%;
     height: 270px;
-    border: 1px solid $gray;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
+    border: 1px solid $lightGray;
 
     .carousel-header {
       height: 20px;
-      margin-left: 15px;
+      margin-top: 10px;
+      margin-left: 25px;
+      margin-bottom: 15px;
       text-align: left;
-      //position: fixed;
+      font-size: rem-calc(16);
     }
     
     .plan-content {
       display: inline-block;
       vertical-align: top;
-      width: 300px;
-      margin-left: -42px;
-      margin-right: 8px;
+      width: 270px;
 
       .subscription_thumbnail {
         width: 250px;
-        height: 150px;
+        height: 140px;
       }
 
       .subscription-info {
-
-        padding-left: 40px;
-        padding-right: 40px;
+        width: 250px;
+        padding-left: 20px;
+        padding-right: 20px;
         text-align: left;
 
         .plan-title {
@@ -588,7 +584,6 @@ ul.plan-results {
         .plan-length-carousel {
           color: $gray;
           font-size: 0.713em;
-          //display: block;
         }
 
       }
@@ -596,6 +591,94 @@ ul.plan-results {
     }
 
   }
+  //
+  //.featured-rp-box {
+  //  overflow: hidden;
+  //  position: relative;
+  //  clear: both;
+  //  margin-bottom: 0px;
+  //  .slick-list {
+  //    padding: 0 !important;
+  //    &:focus {
+  //      outline: none;
+  //    }
+  //  }
+  //  .slick-next,
+  //  .slick-prev {
+  //    position: absolute;
+  //    width: 44px;
+  //    height: 44px;
+  //    top: 95px;
+  //    background: image-url("svg/arrow-circle-grey.svg") no-repeat center center;
+  //    text-indent: 100%;
+  //    overflow: hidden;
+  //    white-space: nowrap;
+  //    opacity: 0.85;
+  //    padding: 0;
+  //    z-index:100;
+  //    &.slick-disabled {
+  //      background: none;
+  //      cursor: default;
+  //    }
+  //  }
+  //  .slick-next {
+  //    right: 25px;
+  //    -ms-transform: rotate(90deg);
+  //    transform: rotate(180deg);
+  //    background-position: left center;
+  //    width: 45px;
+  //  }
+  //  .slick-prev {
+  //    left: 25px;
+  //  }
+  //  .slick-next:hover,
+  //  .slick-prev:hover {
+  //    opacity: 1;
+  //  }
+  //  .slick-track {
+  //    overflow: hidden;
+  //    margin: 0 0 0 -10px;
+  //  }
+  //}
+  //
+  //
+  //.featured-rp-box {
+  //  .featured-rp-box-plan {
+  //    padding: 0 10px;
+  //    text-align: left;
+  //    float: left;
+  //    a {
+  //      display: block;
+  //      width: 225px;
+  //      img {
+  //        display: block;
+  //        width: 240px;
+  //      }
+  //      p {
+  //        line-height: 1.3em;
+  //        font-weight: normal;
+  //        display: block;
+  //        color: #444444;
+  //        padding: 10px 0 0 10px;
+  //        margin-bottom: 0px;
+  //      }
+  //      .length {
+  //        font-size: 0.75em;
+  //        color: #444444;
+  //        font-weight: normal;
+  //        padding: 0 0 0 10px;
+  //      }
+  //    }
+  //  }
+  //  .slick-slide {
+  //    opacity: 0.3 !important;
+  //    transition: all 300ms ease;
+  //  }
+  //  .slick-center {
+  //    opacity: 1 !important;
+  //    transition: all 300ms ease;
+  //  }
+  //}
 
 }
 
