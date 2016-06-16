@@ -153,8 +153,8 @@ class SubscriptionsController < ApplicationController
           if next_ref_index < references.length
             redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: next_ref_index)
           else
-            #We made it to the end, but skipped some content,
-            # so send them back to overview
+            # Made it to the end, but skipped some content
+            # Send them back to overview
             redirectUrl = subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day])
           end
 
@@ -162,6 +162,8 @@ class SubscriptionsController < ApplicationController
 
       #Just Completed Plan
       else
+        @featured_plans = Plan.featured()
+        @saved_plans = Subscription.saved(current_user, id: current_user.id, auth: current_auth)
         return render "subscriptions/plan_complete"
 
       end
