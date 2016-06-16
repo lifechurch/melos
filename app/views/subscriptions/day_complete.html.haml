@@ -1,1 +1,32 @@
-%h1= "Day Complete"
+
+.row.medium-centered.text-center
+  %h6.small= "Day Complete"
+  %p.plan-length-head
+    #{t('plans.which day in plan', day: @presenter.day, total: @presenter.subscription.total_days)}
+
+
+%div.stacked-container
+  .back-img{:style => %(background-image: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url("#{@presenter.subscription.hero_image.url}"))}
+  .back-content.columns.large-8.medium-8.medium-centered.text-center
+    .row
+      %img.check-logo{src: "#{image_path('checkmark-plans.svg')}"}
+
+    .row
+      %img.plan-img{src: @presenter.subscription.hero_image.url}
+
+    .row.progress_wrap
+      .progress_counter{style: "width:#{@presenter.subscription.completion_percentage}%", title:"#{@presenter.subscription.completion_percentage}%"}
+
+
+.row.medium-centered.text-center
+  %button.solid-button.share-button{ "ng-click" => "showShare = !showShare", "href" => "#" }
+    != t("moments.action.share")
+  %div.share-panel.ng-hide{"ng-show" => "showShare"}
+    %div.video.addthis_sharing_toolbox{:data => {:url => "#{request.original_url}", :title => "#{@presenter.subscription.title}"}}
+
+.row.medium-centered.text-center
+  %a
+    = link_to t("plans.view my plans"), subscriptions_path(user_id: current_user.to_param), target: "_self", class: "small-font"
+    != "&bull;"
+    = link_to subscription_path(user_id: current_user.to_param, id: @presenter.subscription, day: (@presenter.day.to_i + 1)), {class: 'small-font', target: "_self"} do
+      != t("EventsAdmin.containers.EventFeedMine.next")

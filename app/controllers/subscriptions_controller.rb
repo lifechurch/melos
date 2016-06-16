@@ -75,12 +75,31 @@ class SubscriptionsController < ApplicationController
 
   # Plan Day: Day Complete
   def day_complete
-
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+    # self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
+    # self.right_sidebar_presenter = Presenter::Sidebar::SubscriptionRight.new( @subscription , params, self)
+    now_reading(presenter.reference)
+    refs = presenter.reading.references(version_id: @subscription.version_id)
+    respond_to do |format|
+      format.json { return render json: refs }
+      format.any { return respond_with(presenter.subscription) }
+    end
   end
 
   # Plan Day: Plan Complete
   def plan_complete
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+    @featured_plans = Plan.featured()
+    @saved_plans = Subscription.saved(current_user, id: current_user.id, auth: current_auth)
 
+    # self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
+    # self.right_sidebar_presenter = Presenter::Sidebar::SubscriptionRight.new( @subscription , params, self)
+    now_reading(presenter.reference)
+    refs = presenter.reading.references(version_id: @subscription.version_id)
+    respond_to do |format|
+      format.json { return render json: refs }
+      format.any { return respond_with(presenter.subscription) }
+    end
   end
 
   def create
@@ -91,7 +110,7 @@ class SubscriptionsController < ApplicationController
       format.any { respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id], initial: 'true')) }
     end
 
-    # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
+    # TODO look into having to do [@subscription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
   def saveForLater
