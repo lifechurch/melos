@@ -152,6 +152,10 @@ class SubscriptionsController < ApplicationController
           references = presenter.reading.references(version_id: @subscription.version_id)
           if next_ref_index < references.length
             redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: next_ref_index)
+          else
+            #We made it to the end, but skipped some content,
+            # so send them back to overview
+            redirectUrl = subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day])
           end
 
         end

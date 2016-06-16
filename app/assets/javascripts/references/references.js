@@ -85,7 +85,7 @@ angular.module('yv.reader', [
 	$scope.highlights = [];
 	$scope.bookmarks = [];
 	$scope.notes = [];
-	$scope.isPlanState = ['planSample', 'planSample-locale', 'userPlan', 'userPlan-locale'].indexOf($state.current.name) > -1;
+//	$scope.isPlanState = ['planSample', 'planSample-locale', 'userPlan', 'userPlan-locale'].indexOf($state.current.name) > -1;
     $scope.isPlanSampleState = ['planSample', 'planSample-locale'].indexOf($state.current.name) > -1;
 	$scope.planContentReady = false;
 	$scope.devotionalActive = false;
@@ -311,25 +311,27 @@ angular.module('yv.reader', [
 	function fillScope(newScope, hideDevotional) {
 		angular.extend($scope, newScope);
 
-        if ($scope.devotional_content && $scope.devotional_content.length > 1) {
-            $scope.hasDevotionalContent = true;
-        } else {
-            $scope.hasDevotionalContent = false;
-        }
+        $scope.hasDevotionalContent = false;
+//        if ($scope.devotional_content && $scope.devotional_content.length > 1) {
+//            $scope.hasDevotionalContent = true;
+//        } else {
+//
+//        }
 
-        if ($scope.isPlanState && !hideDevotional) {
-            $scope.devotional_first_chapter = $scope.reader_html;
-            if ($scope.hasDevotionalContent) {
-                $scope.reader_html = $scope.devotional_content;
-                $scope.planContentReady = true;
-                $scope.devotionalActive = true;
-            } else {
-                $scope.planContentReady = true;
-                $scope.devotionalActive = false;
-            }
-        } else {
-            $scope.devotionalActive = false;
-        }
+        $scope.devotionalActive = false;
+//        if ($scope.isPlanState && !hideDevotional) {
+//            $scope.devotional_first_chapter = $scope.reader_html;
+//            if ($scope.hasDevotionalContent) {
+//                $scope.reader_html = $scope.devotional_content;
+//                $scope.planContentReady = true;
+//                $scope.devotionalActive = true;
+//            } else {
+//                $scope.planContentReady = true;
+//                $scope.devotionalActive = false;
+//            }
+//        } else {
+//            $scope.devotionalActive = false;
+//        }
 
         if (!$scope.usfm) {
             var nextOrPrevRef = newScope.next_chapter_hash || newScope.previous_chapter_hash;
@@ -1004,21 +1006,21 @@ angular.module('yv.reader', [
 		//TO-DO: Handle Error
 	});
 
-    if ($scope.isPlanState) {
-        $scope.day = $location.search().day;
-        if (!$scope.isPlanSampleState) {
-            Subscription.getRefs($location.path(), $scope.day, $stateParams.plan).success(function (resp) {
-                $scope.orderedRefs = resp;
-                orderedRefToUsfm($scope.orderedRefs[0].reference).then(function (usfm) {
-                    $scope.usfm = usfm;
-                }, function (err) {
-
-                });
-            }).error(function (err) {
-
-            });
-        }
-    } else {
+//    if ($scope.isPlanState) {
+//        $scope.day = $location.search().day;
+//        if (!$scope.isPlanSampleState) {
+//            Subscription.getRefs($location.path(), $scope.day, $stateParams.plan).success(function (resp) {
+//                $scope.orderedRefs = resp;
+//                orderedRefToUsfm($scope.orderedRefs[0].reference).then(function (usfm) {
+//                    $scope.usfm = usfm;
+//                }, function (err) {
+//
+//                });
+//            }).error(function (err) {
+//
+//            });
+//        }
+//    } else {
         $timeout(function() {
             loadVersions().then(function(data) {
                 if ($scope.reader_book_list.length == 0) {
@@ -1029,7 +1031,7 @@ angular.module('yv.reader', [
                 loadBooks($scope.reader_version_id);
             }
         });
-    }
+//    }
 }])
 
 ;

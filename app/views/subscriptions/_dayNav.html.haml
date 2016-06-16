@@ -23,6 +23,7 @@
   #This is last ref. Use Checkmark instead of arrow for 'Next'
   show_complete = false
   references = presenter.reading.references(version_id: subscription.version_id)
+  next_ref_index = ref_index.nil? ? 0 : ref_index + 1
   if next_ref_index >= references.length
     show_complete = true
   end
