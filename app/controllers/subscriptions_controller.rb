@@ -4,7 +4,8 @@ class SubscriptionsController < ApplicationController
   prepend_before_filter :mobile_redirect, only: [:show]
   before_filter :check_existing_subscription, only: [:create]
   before_filter :force_login
-  before_filter :find_subscription,     only: [:show,:ref,:devo,:day_complete,:plan_complete,:destroy,:edit,:update,:calendar]
+  before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar]
+  before_filter :setup_presenter, only: [:show,:devo,:ref]
   
   rescue_from NotAChapterError, with: :ref_not_found
 
@@ -48,25 +49,25 @@ class SubscriptionsController < ApplicationController
   # TODO - ensure user subscribed.
   # Plan Day: Overview
   def show
-    self.presenter = Presenter::Subscription.new( @subscription , params, self)
-    refs = presenter.reading.references(version_id: @subscription.version_id)
-    respond_to do |format|
-      format.json { return render json: refs }
-      format.any { return respond_with(presenter.subscription) }
-    end
+    #self.presenter = Presenter::Subscription.new( @subscription , params, self)
+    #respond_to do |format|
+    #  format.json { return render json: refs }
+    #end
+    #refs = presenter.reading.references(version_id: @subscription.version_id)
+    return respond_with(presenter.subscription)
   end
 
   # Plan Day: Devo
   def devo
-    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+    #self.presenter = Presenter::Subscription.new( @subscription , params, self)
     respond_with(presenter.subscription)
   end
 
   # Plan Day: Ref
   def ref
-    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+    #self.presenter = Presenter::Subscription.new( @subscription , params, self)
     now_reading(presenter.reference)
-    refs = presenter.reading.references(version_id: @subscription.version_id)
+    #refs = presenter.reading.references(version_id: @subscription.version_id)
     return respond_with(presenter.subscription)
   end
 
@@ -218,6 +219,11 @@ class SubscriptionsController < ApplicationController
     # Set appropriate auth/user on subscription - TODO handle this in a cleaner way
     @subscription.auth = current_auth
     @subscription.user = current_user
+  end
+
+  def setup_presenter
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+    #refs = presenter.reading.references(version_id: @subscription.version_id)
   end
 
   def subscription_for( plan_id )
