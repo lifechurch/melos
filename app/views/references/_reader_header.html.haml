@@ -14,9 +14,9 @@
   .row.full.b-border.white.collapse.reader-header
     .medium-12.columns.text-center
       .bcv-button-box
-        -if (controller_name != 'subscriptions')
-          =reader_previous_link(reference, {classes: "prev #{direction}","ngif": "!inNonDefaultLocale() && !devotionalActive", "uisref": "reader({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
-          =reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "inNonDefaultLocale() && !devotionalActive", "uisref": "reader-locale({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
+
+        =reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "(!inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
+        =reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "(inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader-locale({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
 
         %h1{"ng-hide" => "devotionalActive"}
           %a.book{:id => "reader_book", "ng-bind" => "reader_book", "ng-click" => "togglePanel('showReaderBooks'); focusInput=true;", 'ng-disabled' => 'working'}= reference_without_version.rpartition(' ').first
@@ -29,9 +29,8 @@
           %a.devotional
             =t('plans.devotional')
 
-        -if (controller_name != 'subscriptions')
-          =reader_next_link(reference, {classes: "next #{direction}","ngif": "!inNonDefaultLocale() && !devotionalActive", "uisref": "reader({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
-          =reader_next_link(reference, {classes: "next #{direction} ng-hide","ngif": "inNonDefaultLocale() && !devotionalActive", "uisref": "reader-locale({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
+        =reader_next_link(reference, {classes: "next #{direction} ng-hide","ngif": "(!inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
+        =reader_next_link(reference, {classes: "next #{direction} ng-hide","ngif": "(inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader-locale({version: next_chapter_hash.version_id, usfm: next_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_next"})
 
       - if (controller_name == 'references')
         %a.icon.parallel-link{"ng-click" => "toggleParallelMode()"}

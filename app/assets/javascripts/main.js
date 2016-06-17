@@ -23,6 +23,7 @@ angular.module('yv', [
     'common.focusMe',
     'common.carousel',
     'yv.friendships.addFriend',
+    'yv.moments.planDayCarousel',
     'yv.search'
 ])
 

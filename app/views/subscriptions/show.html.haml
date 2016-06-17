@@ -33,9 +33,10 @@
         = image_tag subscription.list_image.url
       %h3= subscription.name
 
+
   .row
     .columns.large-8.medium-8.medium-centered
-      .day-slider
+      .day-slider{ "plan-day-carousel" => ""}
         - statuses.each do |cur_status|
           - cur_date = Date.parse(cur_status.date)
           - is_active = cur_status.day.equal? @presenter.day
