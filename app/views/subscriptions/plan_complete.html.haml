@@ -40,35 +40,11 @@
 
 
 .plans-container.columns.large-5.medium-5.medium-centered.text-center
-  .row
-    .plans-carousel.radius
-      %h2.carousel-header= t('plans.widget.featured plans')
-      %div.moment-content{"moment-plan-carousel" => ""}
-        -if !@featured_plans.nil?
-          -#%ul.resource_list
-          - @featured_plans.each do |plan|
-            %div.plan-content
-              = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
-                .search_thumbnail
-                  - if plan.list_image.present?
-                    = image_tag plan.list_image.url, class: 'subscription_thumbnail'
-                  - else
-                    %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
-                .subscription-info
-                  .plan-title
-                    =plan.name
-                  %span.plan-length-carousel
-                    = plan.formatted_length
-        -else
-          .none{align: "center"}= t("plans.none found")
-
-  %br
-  %br
 
   .row
     .plans-carousel.radius
       %h2.carousel-header= t('plans.widget.saved plans')
-      %div.moment-content{"moment-plan-carousel" => ""}
+      %div.moment-content{"carousel" => ""}
         -if @saved_plans.reading_plans
           -#%ul.resource_list
           - @saved_plans.reading_plans.each do |plan|
@@ -87,6 +63,37 @@
         -else
           .none{align: "center"}= t("plans.none found")
 
+  %br
+  %br
+
+  .row
+    .plans-carousel.radius
+      %h2.carousel-header= t('plans.widget.featured plans')
+      %div.moment-content{"carousel" => "", "data-slick" => '{"arrows": true}'}
+        -if !@featured_plans.nil?
+          -#%ul.resource_list
+          - @featured_plans.each do |plan|
+            %div.plan-content
+              = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
+                .search_thumbnail
+                  - if plan.list_image.present?
+                    = image_tag plan.list_image.url, class: 'subscription_thumbnail'
+                  - else
+                    %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+                .subscription-info
+                  .plan-title
+                    =plan.name
+                  %span.plan-length-carousel
+                    = plan.formatted_length
+        -else
+          .none{align: "center"}= t("plans.none found")
+
 %br
 %br
-  
+
+  -#:javascript
+  -#  $(document).ready(function(){
+  -#    $('.plan-content').slick({
+  -#      arrows: true
+  -#    });
+  -#  });
