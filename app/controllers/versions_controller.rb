@@ -2,6 +2,7 @@ class VersionsController < ApplicationController
 
   before_filter -> { set_cache_headers 'short' }, only: [:index]
   before_filter -> { set_cache_headers 'long' }, only: [:show]
+  prepend_before_filter :mobile_redirect, only: [:show]
 
   def index
     @versions_by_lang = Version.all_by_language({:only => @site.versions})
