@@ -107,7 +107,7 @@ module YV
               },
             references:
               {
-                show:     "bible?reference=#{params[:reference]}&version=#{params[:version]}"
+                show:     "bible?reference=#{params[:reference]}&version_id=#{params[:version]}"
               },
             friendships:
               {
@@ -140,7 +140,7 @@ module YV
 
         # fix the path for android where it requires version_id instead of version
         if @user_agent.eql?("android") and controller_name.eql?("references") and action_name.eql?("show")
-          @native_path = @native_path.gsub("version=", "version_id=")
+          @native_path = @native_path.gsub("version_id=", "version=")
         end
 
         @native_url = "youversion://#{@native_path}" if @native_path.present?
