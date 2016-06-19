@@ -864,6 +864,8 @@ en:
     none found:                                 "We couldn't find a plan to match your criteria. Try widening your search."
     about publisher:                            "About The Publisher"
     overview:                                   "Plan Overview"
+    complete:                                   "Plan Complete"
+    day complete:                               "Day Complete"
     start:                                      "Start this Plan"
     save for later:                             "Save for Later"
     saved for later:                            "Saved for Later"
