@@ -372,6 +372,63 @@ ul.plan-results {
   z-index: 100;
 }
 
+/* !Plan Overview */
+
+.a_show {
+
+  .plan-overview {
+    height: 170px;
+
+    img {
+      margin-bottom: 15px;
+    }
+
+    .header {
+      height: 20px;
+    }
+
+
+  }
+
+  ul.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+
+    li {
+      margin-bottom: 10px;
+      padding-left: 35px;
+      //padding-top: 1px;
+      height: 20px;
+    }
+
+    .check {
+      background: image_url("checkmark_plans_overview.svg") no-repeat top;
+      //background: image_url("icon-checkmark.svg") no-repeat left top;
+    }
+    .no-check {
+      background: image_url("devo-list-bubble.svg") no-repeat left top;
+    }
+  }
+
+  .check-background {
+    background: image_url("checkmark_plans_overview.svg") no-repeat;
+    background-position: 95%;
+    //height: 20px;
+    width: 20px;
+  }
+
+  .day-top {
+    height: 25%;
+    width: 100%;
+  }
+  .day-bottom {
+    height: 75%;
+    width: 100%;
+  }
+
+}
 
 /* !Plan detail view */
 
@@ -1456,8 +1513,8 @@ html[dir="rtl"] {
     .day {
       border: solid 1px $lightGray;
       display: inline-block;
-      width: 75px;
-      height: 75px;
+      width: 80px;
+      height: 80px;
       margin: 0px;
       padding: 0px;
       margin-right: 0px;

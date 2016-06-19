@@ -17,20 +17,25 @@
   end
 
 .subscription-show
-  .row
+  .plan-overview
     .columns.large-8.medium-8.medium-centered.text-center
-      .left
-        = link_to subscriptions_path(user_id: current_user.to_param), target: "_self" do
-          - if is_rtl?
-            != "&rarr; #{t('searching.plans')}"
-          - else
-            != "&larr; #{t('searching.plans')}"
+      .row.header.columns.large-8.medium-8.medium-centered
+        .left
+          = link_to subscriptions_path(user_id: current_user.to_param), target: "_self" do
+            - if is_rtl?
+              != "&rarr; #{t('searching.plans')}"
+            - else
+              != "&larr; #{t('searching.plans')}"
 
-      .right
-        %a!= "&bull;&bull;&bull;"
+        .right
+          %a!= "&bull;&bull;&bull;"
 
-      - if subscription.list_image.present?
-        = image_tag subscription.list_image.url
+      .row.columns.large-8.medium-8.medium-centered.text-center
+        - if subscription.list_image.present?
+          = image_tag subscription.list_image.url
+
+
+    .row.medium-centered.text-center
       %h3= subscription.name
 
 
@@ -42,12 +47,11 @@
           - is_active = cur_status.day.equal? @presenter.day
           = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day), "target" => "_self" ) do
             .day{class:"#{cur_status.completed ? 'completed' : ''} #{is_active ? 'active' : ''}"}
-              .right
-                - if cur_status.completed
-                  = "X"
+              .day-top{class: "#{cur_status.completed ? 'check-background' : ''}"}
 
-              %h1.text-center= cur_status.day
-              %h4.text-center= I18n.l(cur_date, format: :short)
+              .day-bottom
+                %h1.text-center= cur_status.day
+                %h4.text-center= I18n.l(cur_date, format: :short)
 
   .row
     .columns.large-8.medium-8.medium-centered
@@ -57,22 +61,18 @@
 
       %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: subscription.total_days).html_safe} &bull; On Track"
 
-      %ul
-        -if presenter.reading.devotional
-          %li
-            = link_to devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day), target: "_self" do
-              -if statuses[day - 1].additional_content.completed
-                ="X"
-              -else
-                ="O"
-              = t("plans.devotional")
+
+
+      -if presenter.reading.devotional
+        %ul.no-bullets
+
+          - unless statuses[day - 1].additional_content.empty?
+            %li{class: "#{statuses[day - 1].additional_content.completed ? 'check' : 'no-check'}"}
+              = link_to devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day), target: "_self" do
+                = t("plans.devotional")
 
           - unless references.empty?
             - references.each_with_index do |ref,index|
-              %li{class: "#{ref.completed ? 'completed' : ''}"}
-                -if ref.completed
-                  = "X" #replace with image
-                -else
-                  = "O" #replace with image
+              %li{class: "#{ref.completed ? 'check' : 'no-check'}"}
                 = link_to ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: index), target: "_self" do
                   = ref.reference.safe_human
