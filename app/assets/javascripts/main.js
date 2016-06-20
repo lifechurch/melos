@@ -7,6 +7,7 @@ angular.module('yv', [
 	'yv.moments',
 	'yv.header',
     'yv.plans',
+    'yv.plans.saveForLater',
 	'api.authentication',
 	'api.railsHttp',
 	'common.fixTop',
@@ -20,7 +21,9 @@ angular.module('yv', [
     'common.branchSms',
     'common.hoverLink',
     'common.focusMe',
-    'common.carousel'
+    'common.carousel',
+    'yv.friendships.addFriend',
+    'yv.search'
 ])
 
 .config([ '$locationProvider', '$urlRouterProvider', '$windowProvider', function($locationProvider, $urlRouterProvider, $windowProvider) {

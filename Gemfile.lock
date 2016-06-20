@@ -1,9 +1,3 @@
-GIT
-  remote: git@github.com:iven/angular-ui-router-rails.git
-  revision: 8661b227af13254e1b3f63a73d32d4fb033ab3df
-  specs:
-    angular-ui-router-rails (0.2.15.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -35,11 +29,13 @@ GEM
       i18n (= 0.6.1)
       multi_json (~> 1.0)
     addressable (2.3.8)
+    angular-ui-router-rails (0.2.15)
     angularjs-rails (1.4.3)
     arel (3.0.3)
     awesome_print (1.0.2)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    browser (2.1.0)
     builder (3.0.4)
     capistrano (3.4.0)
       i18n
@@ -403,10 +399,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  angular-ui-router-rails!
+  angular-ui-router-rails
   angularjs-rails
   awesome_print (~> 1.0.2)
   binding_of_caller
+  browser (~> 2.1.0)
   capistrano (~> 3.4.0)
   capistrano-bundler
   capistrano-passenger
@@ -480,4 +477,4 @@ DEPENDENCIES
   zeus (~> 0.15)
 
 BUNDLED WITH
-   1.10.6
+   1.12.5

@@ -157,6 +157,9 @@ YouversionWeb::Application.routes.draw do
     end
   end
 
+  # match '/users/:user_id/reading-plans/completed' => 'subscriptions#completed', via: :get
+
+
   resources :moments, only: [:index,:show] do
     get "_cards", on: :collection
     get "related", on: :collection
@@ -187,6 +190,11 @@ YouversionWeb::Application.routes.draw do
   # Reading Plans
   # Legacy links that need to be supported
   # ------------------------------------------------------------------------------------------
+
+  get "/users/:user_id/completed-reading-plans",  to: "subscriptions#completed"
+  get "/users/:user_id/saved-reading-plans",      to: "subscriptions#saved"
+  post "/users/:user_id/reading-plans/save-for-later", to: "subscriptions#saveForLater"
+  post "/users/:user_id/reading-plans/remove-saved", to: "subscriptions#removeSaved"
 
   # featuredplans.youversion.com use this link.
   # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"

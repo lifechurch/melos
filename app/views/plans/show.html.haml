@@ -32,28 +32,49 @@
 - content_for :facebook_meta do
   %meta{property: "og:image", content: fb_image_url}
 
-.fixed.after-header
-  .row.full.b-border.white.collapse
-    .medium-12.columns.text-center
-      = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present? && @show_my_plans
-      = link_to t("plans.all plans"), plans_path, class: 'icon', target: "_self"
+.row.collapse
+  .columns.large-8.medium-8.medium-centered
+    .reading_plan_index_header
+      -#= link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present? && @show_my_plans
+      = link_to(plans_path, class: '', target: "_self") do
+        - if is_rtl?
+          != "&rarr; #{t('plans.back')}"
+        - else
+          != "&larr; #{t('plans.back')}"
+      .right
+        %a{ "ng-click" => "showShare = !showShare", "href" => "#" }
+          != t("moments.action.share")
+        %div.share-panel.ng-hide{"ng-show" => "showShare"}
+          %div.video.addthis_sharing_toolbox{:data => {:url => "#{request.original_url}", :title => "#{@plan.title}"}}
+
 
 %article.reading_plan_index
-  .row
-    .medium-8.columns
-      = image_tag @plan.hero_image.url, class: 'rp-hero-img' if @plan.hero_image.present?
-      .rp-plan-box
-        %h1.keep= @plan.name
-        %p.rp-plan-info
-          = @plan.length
-        .rp-plan-about
-          .rp-plan-about-buttons
-            = render partial: "/plans/button", locals: {plan: @plan}
-          %p!= @plan.about
+  - if @plan.hero_image.present?
+    .row.collapse
+      .columns.large-8.medium-8.medium-centered
+        = image_tag @plan.hero_image.url, class: 'rp-hero-img'
+  .row.collapse
+    .columns.large-2.medium-2
+      !="&nbsp;"
+    .columns.large-5.medium-5
+      %h1= @plan.name
+      %p.plan_length= @plan.length
+      %p.plan_about!= @plan.about
 
-    .medium-4.columns
-      = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
+      %h3.publisher
+        =t("plans.publisher")
+      %p.publisher!= @plan.copyright
+      - unless @plan.publisher_url.nil?
+        = link_to(t("plans.about publisher"), @plan.publisher_url, { target: "_self", class:"publisher" })
 
+    .columns.large-3.medium-3
+      .side-col
+        = render partial: "/plans/button", locals: {plan: @plan}
+        %hr
+        = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
+
+    .columns.large-2.medium-2
+      !="&nbsp;"
 
 - @branch_deeplink = "reading_plan_detail?id=#{@plan.id}"
 = render '/shared/app_banner'

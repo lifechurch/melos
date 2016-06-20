@@ -23,6 +23,8 @@
 //= require_tree ./plans
 //= require_tree ./videos
 //= require_tree ./catchAll
+//= require_tree ./friendships
+//= require_tree ./search
 //= require vendor/angular-cache/angular-cache
 //= require vendor/angular-tooltips/angular-tooltips.min.js
 //= require vendor/md-color-picker/tinycolor-min.js
