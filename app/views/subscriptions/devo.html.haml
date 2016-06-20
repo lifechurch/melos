@@ -19,8 +19,8 @@
 
 = render partial: "subscriptions/dayNav", locals: { subscription: subscription, day: day, day_status: day_status }
 
-.row
+.row.devo-content
   .columns.large-8.medium-8.medium-centered
-    %div= t("plans.devotional")
+    %div.devo-header= t("plans.devotional")
     .devotional
       = reading.devotional.html_safe

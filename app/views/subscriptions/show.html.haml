@@ -30,16 +30,15 @@
         .right
           %a!= "&bull;&bull;&bull;"
 
-      .row.columns.large-8.medium-8.medium-centered.text-center
+      .row.columns.large-8.medium-8.medium-centered.img
         - if subscription.list_image.present?
           = image_tag subscription.list_image.url
-
 
     .row.medium-centered.text-center
       %h3= subscription.name
 
 
-  .row
+  .row.days-container
     .columns.large-8.medium-8.medium-centered
       .day-slider{ "plan-day-carousel" => ""}
         - statuses.each do |cur_status|
@@ -52,6 +51,7 @@
               .day-bottom
                 %h1.text-center= cur_status.day
                 %h4.text-center= I18n.l(cur_date, format: :short)
+
 
   .row
     .columns.large-8.medium-8.medium-centered

@@ -379,16 +379,77 @@ ul.plan-results {
   .plan-overview {
     height: 170px;
 
+    .img {
+      display: block;
+      margin: auto;
+      width: 40%;
+    }
     img {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
     }
 
     .header {
       height: 20px;
     }
-
-
   }
+
+
+  .days-container {
+    margin-bottom: 20px;
+  }
+
+  .box {
+    //overflow: hidden;
+    position: relative;
+    clear: both;
+    margin-bottom: 0px;
+    .slick-list {
+      padding: 0 !important;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .slick-next,
+    .slick-prev {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 25px;
+      background: image-url("day-plan-arrow.svg") no-repeat center center;
+      text-indent: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      opacity: 0.85;
+      padding: 0;
+      z-index:100;
+      &.slick-disabled {
+        background: none;
+        cursor: default;
+      }
+    }
+    .slick-next {
+      margin-right: 40px;
+      right: -90px;
+      -ms-transform: rotate(90deg);
+      transform: rotate(180deg);
+      background-position: left center;
+      width: 45px;
+    }
+    .slick-prev {
+      margin-left: 40px;
+      left: -90px;
+    }
+    .slick-next:hover,
+    .slick-prev:hover {
+      opacity: 1;
+    }
+    //.slick-track {
+    //  overflow: hidden;
+    //  margin: 0 0 0 -10px;
+    //}
+  }
+
 
   ul.no-bullets {
     list-style-type: none;
@@ -405,7 +466,7 @@ ul.plan-results {
 
     .check {
       background: image_url("checkmark_plans_overview.svg") no-repeat top;
-      //background: image_url("icon-checkmark.svg") no-repeat left top;
+      //background: image_url("icon-checkmark.svg") no-repeat top;
     }
     .no-check {
       background: image_url("devo-list-bubble.svg") no-repeat left top;
@@ -414,6 +475,7 @@ ul.plan-results {
 
   .check-background {
     background: image_url("checkmark_plans_overview.svg") no-repeat;
+    //background: image_url("icon-checkmark.svg") no-repeat;
     background-position: 95%;
     //height: 20px;
     width: 20px;
@@ -428,6 +490,104 @@ ul.plan-results {
     width: 100%;
   }
 
+}
+
+/* Devo Nav Bar */
+
+.c_subscriptions {
+  
+  .nav-bar {
+    //position: fixed;
+    //width: 100%;
+    //margin-top: -70px;
+    //z-index: 2;
+    //background-color: white;
+    height: 70px;
+
+
+
+    .nav-elements {
+      padding: 15px;
+      width: 350px;
+    }
+
+    .nav-icon {
+      //z-index: 3;
+    }
+
+    .nav-content {
+      width: 70%;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: block;
+      margin: 0 auto;
+
+      .nav-img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        float: left;
+      }
+
+      .nav-title {
+        font-size: rem-calc(11);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+      }
+      
+      .nav-length {
+        font-size: rem-calc(10);
+        color: $gray_medium;
+        text-align: left;
+      }
+
+    }
+    
+  }
+  
+}
+
+
+
+/* Plan Devo View */
+.c_subscriptions.a_devo {
+
+  .devo-header {
+    margin-bottom: 15px;
+  }
+
+  .devo-content {
+    margin-top: 65px;
+  }
+
+}
+
+/* Plan Ref View */
+
+.c_subscriptions.a_ref {
+
+  .nav-bar {
+    @media #{$large-up} {
+      margin-top: 37px;
+    }
+
+    @media #{$medium-only} {
+      margin-top: 45px;
+    }
+
+    @media #{$small-only} {
+      margin-top: 45px;
+    }
+
+    bottom: auto !important;
+    top: 0 !important;
+  }
+
+  .ref-content {
+    margin-top: 100px;
+  }
 }
 
 /* !Plan detail view */
@@ -509,6 +669,7 @@ ul.plan-results {
 
 /* !Day/Plan Complete view */
 
+.c_subscriptions.a_update,
 .c_subscriptions.a_day_complete,
 .c_subscriptions.a_plan_complete {
 
@@ -658,6 +819,8 @@ ul.plan-results {
 
 /* !Plan day view */
 
+.c_subscriptions.a_devo,
+.c_subscriptions.a_ref,
 .c_subscriptions.a_show {
   .reader-left {
     @media #{$medium-only} {

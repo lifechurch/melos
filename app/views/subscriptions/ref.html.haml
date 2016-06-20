@@ -3,16 +3,19 @@
   day           = presenter.day
   day_status    = subscription.day_statuses[day - 1] unless subscription.day_statuses.empty? || subscription.day_statuses.length < (day -1)
 
-- if @presenter.reference
-  = render partial: "/references/reader", locals: { presenter: @presenter, subscription: subscription, day: day, day_status: day_status }
 
-- else
-  %article
-    %h1= t('plans.no verses')
-    %p= t('plans.no content')
 
-- # has to be here so that title_link content in ^^ references/reader partial will get overwritten
-- overwrite_content_for(:title_link) do
-  %span#m_plan_btn
-    %span.plan_day= t('plans.day number', day: @presenter.day)
-    %a.plan_btn{:href => 'javascript:void(0);'}
+.row.ref-content
+  - if @presenter.reference
+    = render partial: "/references/reader", locals: { presenter: @presenter, subscription: subscription, day: day, day_status: day_status }
+
+  - else
+    %article
+      %h1= t('plans.no verses')
+      %p= t('plans.no content')
+
+  - # has to be here so that title_link content in ^^ references/reader partial will get overwritten
+  - overwrite_content_for(:title_link) do
+    %span#m_plan_btn
+      %span.plan_day= t('plans.day number', day: @presenter.day)
+      %a.plan_btn{:href => 'javascript:void(0);'}
