@@ -56,7 +56,7 @@ class Version < YV::Resource
         if _result[v.attributes.language.language_tag].nil?
           _result[v.attributes.language.language_tag] = []
         end
-        _result[v.attributes.language.language_tag].push(v)
+        _result[v.attributes.language.language_tag].unshift(v)
 
         if !v.attributes.language.secondary_language_tags.nil?
           v.attributes.language.secondary_language_tags.each do |sl|
