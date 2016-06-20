@@ -49,9 +49,25 @@ class Version < YV::Resource
 
     def all_by_language(opts={})
       # to allow a restricted subset of versions (e.g. for white-list sites)
+      _result = {}
       _all = Version.all.find_all{|v| opts[:only].include? v.id} if opts[:only]
       _all ||= all
-      _all.group_by {|v| v.language.tag}
+      _all.each do |v|
+        if _result[v.attributes.language.language_tag].nil?
+          _result[v.attributes.language.language_tag] = []
+        end
+        _result[v.attributes.language.language_tag].push(v)
+
+        if !v.attributes.language.secondary_language_tags.nil?
+          v.attributes.language.secondary_language_tags.each do |sl|
+            if _result[sl].nil?
+              _result[sl] = []
+            end
+            _result[sl].push(v)
+          end
+        end
+      end
+      _result
     end
 
     def by_language(opts={})
