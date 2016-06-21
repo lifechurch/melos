@@ -40,7 +40,7 @@
 
   .row.days-container
     .columns.large-8.medium-8.medium-centered
-      .day-slider{ "carousel" => "", "center-mode" => "false", "slides-to-show" => "7", "slides-to-scroll" => "7", "autoplay" => "false"}
+      .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false"}
         - statuses.each do |cur_status|
           - cur_date = Date.parse(cur_status.date)
           - is_active = cur_status.day.equal? @presenter.day

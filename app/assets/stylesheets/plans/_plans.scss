@@ -376,6 +376,40 @@ ul.plan-results {
 
 .a_show {
 
+  .day-slider {
+
+    button.slick-prev.slick-arrow,
+    button.slick-next.slick-arrow {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 27px;
+      background: image_url('icon-reader-arrow.svg') no-repeat center center;
+      text-indent: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      opacity: 0.85;
+      padding: 0;
+      z-index: 100;
+    }
+
+    .slick-prev {
+      left: 0;
+      transform: rotate(-180deg);
+    }
+
+    .slick-next {
+      right: 0;
+
+    }
+
+    .slick-list {
+      margin-left: 30px;
+      margin-right: 30px;
+      border: solid 1px $lightGray;
+    }
+  }
+
   .plan-overview {
     height: 170px;
 

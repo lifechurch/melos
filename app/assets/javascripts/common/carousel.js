@@ -19,7 +19,6 @@ angular.module('common.carousel', [])
                 var config = {
                     centerMode: true,
                     centerPadding: "0px",
-                    slidesToShow: 1,
                     infinite: false,
                     variableWidth: true,
                     autoplay: true,
