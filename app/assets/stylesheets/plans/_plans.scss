@@ -817,34 +817,31 @@ ul.plan-results {
   .plans-carousel {
     width: 100%;
     height: 270px;
-    border: 1px solid $gray;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
+    border: 1px solid $lightGray;
 
     .carousel-header {
       height: 20px;
-      margin-left: 15px;
+      margin-top: 10px;
+      margin-left: 25px;
+      margin-bottom: 15px;
       text-align: left;
-      //position: fixed;
+      font-size: rem-calc(16);
     }
     
     .plan-content {
       display: inline-block;
       vertical-align: top;
-      width: 300px;
-      margin-left: -42px;
-      margin-right: 8px;
+      width: 270px;
 
       .subscription_thumbnail {
         width: 250px;
-        height: 150px;
+        height: 140px;
       }
 
       .subscription-info {
-
-        padding-left: 40px;
-        padding-right: 40px;
+        width: 250px;
+        padding-left: 20px;
+        padding-right: 20px;
         text-align: left;
 
         .plan-title {

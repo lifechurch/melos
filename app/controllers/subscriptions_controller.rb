@@ -162,7 +162,11 @@ class SubscriptionsController < ApplicationController
 
       #Just Completed Plan
       else
+<<<<<<< HEAD
         @featured_plans = Plan.featured()
+=======
+        @featured_plans = Plan.featured(language_tag: current_locale)
+>>>>>>> YV-9181
         @saved_plans = Subscription.saved(current_user, id: current_user.id, auth: current_auth)
         return render "subscriptions/plan_complete"
 
