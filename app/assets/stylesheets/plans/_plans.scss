@@ -385,11 +385,13 @@ ul.plan-results {
       width: 40%;
     }
     img {
+      min-width: 140px;
       margin-bottom: 25px;
     }
 
     .header {
       height: 17px;
+      width: 100%;
 
       a {
         font-size: rem-calc(12);
@@ -527,6 +529,10 @@ ul.plan-results {
     .nav-elements {
       padding: 15px;
       width: 350px;
+
+      @media #{$small-only} {
+        width: 100%;
+      }
     }
 
     .nav-icon {
@@ -588,10 +594,12 @@ ul.plan-results {
 
   .nav-bar {
     @media #{$large-up} {
+      width: 100%;
       margin-top: 37px;
     }
 
     @media #{$medium-only} {
+      width: 100%;
       margin-top: 45px;
     }
 
