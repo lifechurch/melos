@@ -391,6 +391,13 @@ ul.plan-results {
     .header {
       height: 20px;
     }
+
+    .plan-title {
+      /* These are technically the same, but use both */
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      white-space: normal;
+    }
   }
 
 
