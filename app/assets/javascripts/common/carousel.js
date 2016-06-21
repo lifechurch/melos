@@ -3,18 +3,26 @@ angular.module('common.carousel', [])
     .directive('carousel', function() {
         return {
             restrict: 'AC',
+            scope: {
+                centerMode: '=',
+                centerPadding: '=',
+                slidesToShow: '=',
+                slidesToScroll: '=',
+                infinite: '=',
+                variableWidth: '=',
+                autoplay: '=',
+                autoplaySpeed: '=',
+                arrows: '=',
+                responsive: '='
+            },
             controller: ["$element", "$scope", "$timeout", function($element, $scope, $timeout) {
-                // this can be refactored to be generic/reuseable and pass in carousel setup vals
-                // at the moment it is only used on the app page review carousel
-                $element.slick({
+                var config = {
                     centerMode: true,
                     centerPadding: "0px",
-                    slidesToShow: 1,
                     infinite: false,
                     variableWidth: true,
                     autoplay: true,
                     autoplaySpeed: 6000,
-                    arrows: false,
                     responsive: [
                         {
                             breakpoint: 768,
@@ -25,8 +33,15 @@ angular.module('common.carousel', [])
                             }
                         }
                     ]
+                };
+
+                $.each($scope, function(key, val) {
+                    if (typeof val !== 'undefined' && val !== null) {
+                       config[key] = val;
+                    }
                 });
 
+                $element.slick(config);
             }]
         };
     })
