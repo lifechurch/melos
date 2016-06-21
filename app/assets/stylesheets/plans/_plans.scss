@@ -372,6 +372,64 @@ ul.plan-results {
   z-index: 100;
 }
 
+
+/* freakin slick carousel arrows */
+
+.arrows {
+    //overflow: hidden;
+    position: relative;
+    clear: both;
+    margin-bottom: 0px;
+    .slick-list {
+      padding: 0 !important;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .slick-next,
+    .slick-prev {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 25px;
+      background: image-url("Triangle-Left-Arrow.svg") no-repeat center center;
+      text-indent: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      opacity: 0.85;
+      padding: 0;
+      z-index:100;
+      &.slick-disabled {
+        background: none;
+        cursor: default;
+      }
+    }
+    .slick-next {
+      margin-right: 55px;
+      right: -90px;
+      -ms-transform: rotate(90deg);
+      transform: rotate(180deg);
+      background-position: left center;
+      width: 45px;
+    }
+    .slick-prev {
+      margin-left: 55px;
+      left: -90px;
+    }
+    .slick-next:hover,
+    .slick-prev:hover {
+      opacity: 1;
+    }
+    //.slick-track {
+    //  overflow: hidden;
+    //  margin: 0 0 0 -10px;
+    //}
+}
+
+
+
+
 /* !Plan Overview */
 
 .a_show {
