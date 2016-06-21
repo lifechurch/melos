@@ -50,10 +50,16 @@
           = form_tag(forward_path, method: :put, id: 'plan_next_form') do
             - if show_complete
               %a{'onClick' => 'document.getElementById("plan_next_form").submit()'}
-                = image_tag image_path("plan-nav-right-arrow.svg")
+                - if is_rtl?
+                  = image_tag image_path("Circle-Right-Arrow.svg")
+                - else
+                  = image_tag image_path("Circle-Green-Check.svg")
             - else
               %a{'onClick' => 'document.getElementById("plan_next_form").submit()'}
-                = image_tag image_path("plan-nav-checkmark.svg")
+                - if is_rtl?
+                  = image_tag image_path("Circle-Right-Arrow.svg")
+                - else
+                  = image_tag image_path("Circle-Green-Arrow-Right.svg")
 
       .nav-content
         - if subscription.small_thumbnail_image.present?

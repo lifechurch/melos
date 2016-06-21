@@ -19,7 +19,7 @@
 .subscription-show
   .plan-overview
     .columns.large-8.medium-8.medium-centered.text-center
-      .row.header.columns.large-8.medium-8.medium-centered
+      .header
         .left
           = link_to subscriptions_path(user_id: current_user.to_param), target: "_self" do
             - if is_rtl?
