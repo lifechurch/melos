@@ -39,11 +39,10 @@
     .columns.large-3.medium-3.medium-centered.text-center.nav-elements
       .left
         = link_to(back_path, "target" => "_self" ) do
-          = image_tag image_path("plan-nav-left-arrow.svg")
-          -#- if is_rtl?
-          -#  != "&rarr; #{t('searching.plans')}"
-          -#- else
-          -#  != "&larr; #{t('searching.plans')}"
+          - if is_rtl?
+            = image_tag image_path("Circle-Green-Arrow-Left.svg")
+          - else
+            = image_tag image_path("Circle-Left-Arrow.svg")
 
       .right
         -if day_status && !day_status.references.empty?
