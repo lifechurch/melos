@@ -389,7 +389,11 @@ ul.plan-results {
     }
 
     .header {
-      height: 20px;
+      height: 17px;
+
+      a {
+        font-size: rem-calc(12);
+      }
     }
 
     .plan-title {
@@ -402,6 +406,7 @@ ul.plan-results {
 
 
   .days-container {
+    margin-top: 25px;
     margin-bottom: 20px;
   }
 
@@ -423,7 +428,7 @@ ul.plan-results {
       width: 25px;
       height: 25px;
       top: 25px;
-      background: image-url("day-plan-arrow.svg") no-repeat center center;
+      background: image-url("Triangle-Left-Arrow.svg") no-repeat center center;
       text-indent: 100%;
       overflow: hidden;
       white-space: nowrap;
@@ -436,7 +441,7 @@ ul.plan-results {
       }
     }
     .slick-next {
-      margin-right: 40px;
+      margin-right: 55px;
       right: -90px;
       -ms-transform: rotate(90deg);
       transform: rotate(180deg);
@@ -444,7 +449,7 @@ ul.plan-results {
       width: 45px;
     }
     .slick-prev {
-      margin-left: 40px;
+      margin-left: 55px;
       left: -90px;
     }
     .slick-next:hover,
@@ -464,25 +469,31 @@ ul.plan-results {
     margin: 0;
     margin-top: 5px;
 
+    a {
+      color: black;
+    }
+    a:hover {
+      color: #3399ff;
+    }
+
     li {
       margin-bottom: 10px;
-      padding-left: 35px;
+      padding-left: 30px;
+      //padding-top: -3px;
       //padding-top: 1px;
       height: 20px;
     }
 
     .check {
-      background: image_url("checkmark_plans_overview.svg") no-repeat top;
-      //background: image_url("icon-checkmark.svg") no-repeat top;
+      background: image_url("Check-Small.svg") no-repeat left bottom;
     }
     .no-check {
-      background: image_url("devo-list-bubble.svg") no-repeat left top;
+      background: image_url("Check-Unchecked.svg") no-repeat left bottom;
     }
   }
 
   .check-background {
-    background: image_url("checkmark_plans_overview.svg") no-repeat;
-    //background: image_url("icon-checkmark.svg") no-repeat;
+    background: image_url("Check-Small.svg") no-repeat;
     background-position: 95%;
     //height: 20px;
     width: 20px;
