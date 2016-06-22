@@ -399,7 +399,7 @@ ul.plan-results {
       white-space: nowrap;
       opacity: 0.85;
       padding: 0;
-      z-index:100;
+      z-index:1;
       &.slick-disabled {
         background: none;
         cursor: default;
@@ -442,7 +442,7 @@ ul.plan-results {
       width: 24px;
       height: 24px;
       top: 27px;
-      background: image_url('icon-reader-arrow.svg') no-repeat center center;
+      background: image_url("Triangle-Right-Arrow.svg") no-repeat center center;
       text-indent: 100%;
       overflow: hidden;
       white-space: nowrap;
@@ -483,7 +483,6 @@ ul.plan-results {
 
     .header {
       height: 17px;
-      width: 100%;
 
       a {
         font-size: rem-calc(12);
@@ -505,7 +504,6 @@ ul.plan-results {
   }
 
   .box {
-    //overflow: hidden;
     position: relative;
     clear: both;
     margin-bottom: 0px;
@@ -550,10 +548,6 @@ ul.plan-results {
     .slick-prev:hover {
       opacity: 1;
     }
-    //.slick-track {
-    //  overflow: hidden;
-    //  margin: 0 0 0 -10px;
-    //}
   }
 
 
@@ -573,8 +567,6 @@ ul.plan-results {
     li {
       margin-bottom: 10px;
       padding-left: 30px;
-      //padding-top: -3px;
-      //padding-top: 1px;
       height: 20px;
     }
 
@@ -609,14 +601,7 @@ ul.plan-results {
 .c_subscriptions {
   
   .nav-bar {
-    //position: fixed;
-    //width: 100%;
-    //margin-top: -70px;
-    //z-index: 2;
-    //background-color: white;
     height: 70px;
-
-
 
     .nav-elements {
       padding: 15px;
@@ -684,7 +669,18 @@ ul.plan-results {
 
 .c_subscriptions.a_ref {
 
+  .nav-header {
+    z-index: 3;
+  }
+
   .nav-bar {
+
+    .nav-elements {
+      left: 1.5%;
+      transform: translateX(-1.5%);
+    }
+
+
     @media #{$large-up} {
       width: 100%;
       margin-top: 37px;

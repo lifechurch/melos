@@ -19,7 +19,7 @@
 .subscription-show
   .plan-overview
     .row.columns.large-8.medium-8.medium-centered.text-center
-      .header
+      .header.columns.large-8.medium-8.medium-centered
         .left
           = link_to subscriptions_path(user_id: current_user.to_param), target: "_self" do
             - if is_rtl?
@@ -33,6 +33,8 @@
       .row.columns.large-8.medium-8.medium-centered.img
         - if subscription.list_image.present?
           = image_tag subscription.list_image.url
+        - else
+          %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
 
     .row.medium-centered.text-center
       %h3.plan-title= subscription.name

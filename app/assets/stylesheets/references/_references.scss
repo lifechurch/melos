@@ -32,6 +32,19 @@
 	display: none !important;
 }
 
+.stack-content {
+  width: 50%;
+  height: 36px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media #{$small-only} {
+    width: 100%;
+  }
+
+}
+
 .bcv-button-box {
   margin: 5px auto -2px;
   overflow: hidden;
