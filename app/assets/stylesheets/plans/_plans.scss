@@ -392,7 +392,7 @@ ul.plan-results {
       position: absolute;
       width: 25px;
       height: 25px;
-      top: 25px;
+      top: 55px;
       background: image-url("Triangle-Left-Arrow.svg") no-repeat center center;
       text-indent: 100%;
       overflow: hidden;
@@ -406,7 +406,7 @@ ul.plan-results {
       }
     }
     .slick-next {
-      margin-right: 55px;
+      margin-right: 65px;
       right: -90px;
       -ms-transform: rotate(90deg);
       transform: rotate(180deg);
@@ -414,7 +414,7 @@ ul.plan-results {
       width: 45px;
     }
     .slick-prev {
-      margin-left: 55px;
+      margin-left: 65px;
       left: -90px;
     }
     .slick-next:hover,
