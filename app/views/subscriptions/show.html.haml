@@ -19,7 +19,19 @@
               != "&larr; #{t('searching.plans')}"
 
         .right
-          %a!= "&bull;&bull;&bull;"
+          %div{ "plan-more-menu" => true }
+            %a{"ng-click"=>"showMenu = !showMenu"}
+              .trigger
+                %span{"ng-hide"=>"showMenu"}!= "&bull;&bull;&bull;"
+                %span.close-trigger.ng-hide{"ng-show"=>"showMenu"}
+
+
+
+            %ul.ng-hide{"ng-show"=>"showMenu"}
+              %li
+                %a= "Test 1"
+              %li
+                %a= "Test 2"
 
       .row.columns.large-8.medium-8.medium-centered.img
         - if subscription.list_image.present?

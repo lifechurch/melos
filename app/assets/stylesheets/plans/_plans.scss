@@ -434,6 +434,44 @@ ul.plan-results {
 
 .a_show {
 
+  div[plan-more-menu] {
+    .close-trigger {
+      background-image: image_url("icon-close.svg");
+      height: 10px;
+      width: 13px;
+      display: inline-block;
+      background-repeat: no-repeat;
+    }
+
+    ul {
+      display: inherit;
+      position: absolute;
+      right: 16px;
+      top: 24px;
+      border: 1px solid rgb(221, 221, 221);
+      list-style: none;
+      padding:0;
+      width: 150px;
+      box-shadow: rgb(204, 204, 204) 5px 5px;
+      text-align: left;
+
+      li {
+        padding: 5px 10px;
+
+        &:hover {
+          background-color: $lightGray;
+        }
+
+        a {
+          color: $darkGray;
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+
   .day-slider {
 
     button.slick-prev.slick-arrow,
