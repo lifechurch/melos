@@ -1,20 +1,29 @@
 
 .row.medium-centered.text-center
-  %h6.small= "Plan Complete"
+  %h6.small
+    = t("plans.complete")
   %p.plan-length-head
     = t("plans.congratulations")
 
 %div.stacked-container
-  .back-img{:style => %(background-image: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url("#{@presenter.subscription.hero_image.url}"))}
+  -if !@presenter.subscription.hero_image.nil?
+    .back-img{:style => %(background-image: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url("#{@presenter.subscription.hero_image.url}"))}
+  -else
+    .back-img{:style => %(background-image: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url("#{image_path('plans-hero-640x360.jpg')}"))}
+
   .back-content.columns.large-8.medium-8.medium-centered.text-center
     .row
       %img.check-logo{src: "#{image_path('checkmark-plans.svg')}"}
 
     .row
-      %img.plan-img{src: @presenter.subscription.hero_image.url}
+      -if !@presenter.subscription.hero_image.nil?
+        %img.plan-img{src: @presenter.subscription.hero_image.url}
+      -else
+        %img.plan-img{src: image_path('plans-hero-640x360.jpg')}
 
     .row.progress_wrap
       .progress_counter{style: "width:#{@presenter.subscription.completion_percentage}%", title:"#{@presenter.subscription.completion_percentage}%"}
+
 
 
 .row.medium-centered.text-center
@@ -27,15 +36,19 @@
   %a
     = link_to t("plans.view my plans"), subscriptions_path(user_id: current_user.to_param), target: "_self", class: "small-font"
 
+%br
+%br
+
+
 .plans-container.columns.large-6.medium-6.medium-centered.text-center
   .row
-    .plans-carousel.radius
-      %h2.carousel-header= t('plans.widget.featured plans')
-      %div{class: 'review-carousel', "carousel" => ""}
-      -if !@featured_plans.nil?
-        %ul.resource_list
-          - @featured_plans.each do |plan|
-            %li.plan-content
+    .plans-carousel.radius.arrows
+      %h2.carousel-header= t('plans.widget.saved plans')
+      %div.moment-content{"carousel" => "", "arrows" => "true", "center-mode" => "false"}
+        -if @saved_plans.reading_plans
+          -#%ul.resource_list
+          - @saved_plans.reading_plans.each do |plan|
+            %div.plan-content
               = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
                 .search_thumbnail
                   - if plan.list_image.present?
@@ -47,5 +60,33 @@
                     =plan.name
                   %span.plan-length-carousel
                     = plan.formatted_length
-      -else
-        .none{align: "center"}= t("plans.none found")
+        -else
+          .none{align: "center"}= t("plans.none found")
+
+  %br
+  %br
+
+  .row
+    .plans-carousel.radius.arrows
+      %h2.carousel-header= t('plans.widget.featured plans')
+      %div.moment-content{"carousel" => "", "arrows" => "true", "center-mode" => "false"}
+        -if !@featured_plans.nil?
+          -#%ul.resource_list
+          - @featured_plans.each do |plan|
+            %div.plan-content
+              = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
+                .search_thumbnail
+                  - if plan.list_image.present?
+                    = image_tag plan.list_image.url, class: 'subscription_thumbnail'
+                  - else
+                    %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+                .subscription-info
+                  .plan-title
+                    =plan.name
+                  %span.plan-length-carousel
+                    = plan.formatted_length
+        -else
+          .none{align: "center"}= t("plans.none found")
+
+%br
+%br
