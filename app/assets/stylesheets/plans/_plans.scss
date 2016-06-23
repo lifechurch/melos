@@ -478,15 +478,19 @@ ul.plan-results {
     .settings {
       float: $opposite-direction;
     }
-    
+
     .img {
-      display: block;
-      margin: auto;
-      width: 40%;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
     }
     img {
-      min-width: 140px;
+      min-width: 160px;
       margin-bottom: 25px;
+
+      @media #{$small-only} {
+        margin-top: 10px;
+      }
     }
 
     .header {
@@ -502,6 +506,7 @@ ul.plan-results {
       overflow-wrap: break-word;
       word-wrap: break-word;
       white-space: normal;
+      text-align: center;
     }
   }
 

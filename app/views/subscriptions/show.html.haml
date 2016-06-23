@@ -18,7 +18,7 @@
 
 .subscription-show
   .plan-overview
-    .row.columns.large-8.medium-8.medium-centered.text-center
+    .row
       .header.columns.large-8.medium-8.medium-centered
         .back
           = link_to subscriptions_path(user_id: current_user.to_param), target: "_self" do
@@ -30,11 +30,11 @@
         .settings
           %a!= "&bull;&bull;&bull;"
 
-      .row.columns.large-8.medium-8.medium-centered.img
-        - if subscription.list_image.present?
-          = image_tag subscription.list_image.url
-        - else
-          %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+    .row.columns.medium-centered.text-center.img
+      - if subscription.list_image.present?
+        = image_tag subscription.list_image.url
+      - else
+        %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
 
     .row.medium-centered.text-center
       %h3.plan-title= subscription.name
