@@ -102,6 +102,25 @@ ro:
             name: "Facebook"
             errors: 
                 expired access: "Jetonul (codul) de acces a expirat. Deconectează-te și apoi reconectează-te la Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Pentru a-ți crea cont trebuie să fii de acord cu termenii și condițiile de utilizare."
         users confirm password matches: "Parola nouă și confirmarea acesteia nu coincid."
@@ -591,7 +610,7 @@ ro:
         no devices: "Nu există nici un dispozitiv conectat cu contul tău YouVersion"
         no devices download copy: "Având la bază Biblia online, aplicația Biblia de la YouVersion este o Biblie mobilă gratuită care poate fi instalată pe majoritatea  dispozitivelor mobile. Aplicația Biblia permite utilizatorilor să citească Biblia, să împărtășească versete prin intermediul rețelelor sociale, să pună marcaje la pasajele preferate, și multe altele —totul într-un format care ține pasul cu stilul de viață din ce în ce mai dinamic al acestora. Vizitează <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> de pe dispozitivul tău mobil ca să descarci aplicația Biblia și să accesezi contul tău!"
         yes delete: "Da, șterge contul meu"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "La cererea ta, ți-am șters contul YouVersion. Ne pare rău că ne părăsești. Sperăm sincer că vei continua să cauți moduri semnificative prin care să te conectezi la Cuvântul lui Dumnezeu. "
         delete account description: "Dacă îți ștergi contul, îți vei elimina permanent toate informațiile, istoricul și personalizările (cum ar fi notițe, semne de carte, evidențieri, etc.) din Bible.com și Aplicația Biblia. Această acțiune nu poate fi restaurată nici de către tine și nici de către echipa noastră. Dacă ești sigur că dorești să faci acest lucru, continuă mai jos."
         user recent activity: "Activitatea recentă a lui %{user}"
         my notes: "Notițele mele"
@@ -814,6 +833,16 @@ ro:
         none me: "Încă nu ai primit nici o insignă."
         none user: "%{username} nu a primit nici o insignă încă."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                few: "%{count} Days Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                few: "%{count} Missed Days"
+                other: "%{count} Missed Days"
         bible plan language: "Limba planului de citire"
         share plan: "Încearcă acest plan de citire a Bibliei de la @YouVersion: %{plan_title}"
         widget: 
@@ -858,6 +887,8 @@ ro:
         none found: "Nu a fost găsit niciun plan care să corespundă criteriilor tale."
         about publisher: "Despre editor"
         overview: "Prezentare generală a planului"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Începe acest plan"
         save for later: "Salvează pentru mai târziu"
         saved for later: "Salvat pentru mai târziu"
@@ -952,6 +983,7 @@ ro:
         must start to complete: "Începe acest plan pentru a salva părțile citite."
         invalid reference: "Ne pare rău, este posibil ca unul din pasajele pentru azi să nu fie în versiunea selectată. Încearcă să selectezi o altă versiune de mai sus. Dacă vei vedea din nou acest mesaj, te rugăm să anunți <a href='%{support_url}' target='_self'>echipa de asistență</a> în legătură cu această problemă."
         sidebar notice: "Vizualizezi un plan de citire"
+        congratulations: "Congratulations!"
         completed notice: "Felicitări! Ai finalizat planul de citire."
         exit: "Ieșire"
         loading sidebar content: "Se încarcă conținutul barei laterale..."
@@ -1079,8 +1111,6 @@ ro:
         partners text: "Fără partenerii noștri generoși care publică Biblia, YouVersion pur și simplu nu ar fi în măsură să ofere comunității noastre din întreaga lume așa multe Biblii. Mulți ne-au întrebat cum pot mulțumi acestor susținători vitali ai misiunii YouVersion. Poți afla mai multe despre ei prin intermediul legăturilor de mai jos."
         translation title: "Echipele noastre de traducere"
         learn more: "Află mai mult"
-        bible dot com title: "Ce s-a întâmplat cu vechiul website Bible.com?"
-        bible dot com copy: "Pentru conținutul de pe vechiul website Bible.com, navighează la noul lor website <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Secțiunea pentru presă"
         contact header: "Informații de contact pentru presă"
@@ -1288,7 +1318,7 @@ ro:
                 p2: "Chiar mai mult de atât? Cu ajutorul tău, este ziua când Aplicația Biblia va ajunge la 100 milioane de instalări."
                 p3: "Am învățat că Dumnezeu folosește asemenea momente importante pentru a încuraja o creștere și mai mare."
                 p4: "Să facem istorie împreună."
-                after p1: "YouVersion reprezintă o alianţă globală de oameni pasionaţi pentru a-i ajuta pe toţi să înteracţioneze cu Cuvântul lui Dumnezeu. Pentru toate organizaţiile şi editurile Biblice, bisericile, pastorii şi voluntarii: vă mulţumim pentru generozitatea voastră!"
+                after p1: "YouVersion reprezintă o alianţă globală de oameni pasionaţi pentru a-i ajuta pe toţi să interacţioneze cu Cuvântul lui Dumnezeu. Pentru toate organizaţiile şi editurile Biblice, bisericile, pastorii şi voluntarii: vă mulţumim pentru generozitatea voastră!"
                 after p2: "Lucrul cel mai captivant despre acest eveniment este semnificația acestuia: oamenii de astăzi interacţionează cu Biblia la un nivel nemaivăzut de noi până acum. Este copleşitor de inspiraţional să vezi ceea ce Dumnezeu face. Şi noi credem că acesta este doar începutul. <em>Începe cu 100 de milioane</em>."
             ad: 
                 title: "Aplicația Biblia este complet gratuită și un mod minunat de a explora Biblia."

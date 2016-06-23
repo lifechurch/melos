@@ -91,6 +91,25 @@ tr:
             name: "Facebook"
             errors: 
                 expired access: "Bağlantı göstergenizin kullanım süresine Facebook tarafından son verildi. Lütfen bağlantınızı iptal edip Facebook'a tekrar bağlanın."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Hesabı oluşturmak için şartlar ve koşulları kabul etmeliysiniz."
         users confirm password matches: "Yeni parolalar eşlemıyorlar."
@@ -803,6 +822,14 @@ tr:
         none me: "Daha hiç rozet kazanmadınız."
         none user: "%{username} adlı kullanıcın rozeti yok."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Kutsal Kitap Okuma Planı Dili"
         share plan: "@YouVersion'ın şu #KutsalKitapPlanı'na bir göz atın: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ tr:
         none found: "Girdiğiniz kriterlere uygun bir Okuma Planını bulamadık. Arama kriterlerinizi genişletmeye deneyin."
         about publisher: "Yayımcı Hakkında"
         overview: "Okuma Planına Genel Bakış"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Okuma Planına Başla"
         save for later: "Sonrası için Kaydet "
         saved for later: "Sonrası için kaydedildi."
@@ -939,6 +968,7 @@ tr:
         must start to complete: "Okuma ilerlemenizi kaydedebilmek için bu okuma planına başlayın."
         invalid reference: "Özür dileriz. Bu okumada bulunan ayetlerin bazıları seçtiğiniz çeviride bulunmamaktadır. İlk olarak yukarıdan başka bir çeviriyi seçmeyi deneyiniz. Bu mesajı görmeye devam ederseniz, <a href='%{support_url}' target='_self'>destek takımı</a> ile irtibata geçip, onlara sorunu bildiriniz."
         sidebar notice: "Bır okuma planına göz atıyorsunuz."
+        congratulations: "Congratulations!"
         completed notice: "Tebrikler! Okuma planınızı bitirdiniz."
         exit: "Çıkış"
         loading sidebar content: "Kenar çubuğunun içeriği yükleniyor..."
@@ -1066,8 +1096,6 @@ tr:
         partners text: "Cömert Kutsal Kitap yayımcı dostlarımız olmasaydı, YouVersion'ın dünya toplumuna bu kadar Kutsal Kitap çevirisini sunması mümkün olmazdı. Birçoğunuz, bu önemli destekçilerimize nasıl müteşekkir olabileceğinizi sordunuz. Yayımcı dostlarımız, hizmetleri ve sizin onları nasıl destekleyebileceğinize dair daha bilgi edinmek için aşağıdaki linklere göz atabilirsiniz."
         translation title: "Tercüme Takımları"
         learn more: "Daha Bilgi"
-        bible dot com title: "Eski Bible.com sitesine ne oldu?"
-        bible dot com copy: "Bud ve Betty Miller'den Christ Unlimited Ministries içeriğini arıyor veya eski Bible.com web sitesini arıyorsanız lütfen şu siteyi ziyaret ediniz: <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Basın Alanı"
         contact header: "Basın için İrtibat Bilgileri"

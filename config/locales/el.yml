@@ -91,6 +91,25 @@ el:
             name: "Facebook"
             errors: 
                 expired access: "Το διακριτικό πρόσβασης έχει λήξει απ' το Facebook.  Παρακαλούμε αφαιρέστε τη σύνδεση και ξανασυνδεθείτε."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Θα πρέπει να συμφωνήσετε με τους Όρους Χρήσης για να εγγραφείτε."
         users confirm password matches: "Οι νέοι κωδικοί πρόσβασης δεν ταιριάζουν."
@@ -803,6 +822,14 @@ el:
         none me: "Δεν έχετε ακόμα κερδίσει διακρίσεις."
         none user: "Ο/Η %{username} δεν έχει κερδίσει κάποιο διακριτικό ακόμη."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Γλώσσα σχεδίου μελέτης"
         share plan: "Δοκιμάστε αυτό το @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ el:
         none found: "Δε βρήκαμε κάτι που να ταιριάζει στην αναζήτησή σας. Πρέπει την κάνετε πιο ευρεία."
         about publisher: "Σχετικά με τον εκδότη"
         overview: "Επισκόπηση σχεδίων"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Ξεκινήστε αυτό το σχέδιο"
         save for later: "Αποθήκευση για αργότερα"
         saved for later: "Αποθηκεύτηκευθεί για αργότερα"
@@ -939,6 +968,7 @@ el:
         must start to complete: "Εκκινήστε αυτό το σχέδιο ώστε να σημειωθούν περικοπές που μελετήσατε!"
         invalid reference: "Λυπούμαστε, μια από τις παραπομπές περικοπής γι' αυτή τη μελέτη δε φαίνεται να υπάρχει στην επιλεγμένη έκδοση. Δοκιμάστε να επιλέξετε μια άλλη έκδοση. Αν συνεχίζετε να βλέπετε αυτό το μήνυμα, παρακαλούμε ενημερώστε την <a href='%{support_url}' target='_self'>ομάδα υποστήριξης</a> σχετικά με αυτό το θέμα."
         sidebar notice: "Βλέπετε ένα Σχέδιο Μελέτης."
+        congratulations: "Congratulations!"
         completed notice: "Συγχαρητήρια! Έχετε ολοκληρώσει το Σχέδιο Μελέτης σας."
         exit: "Έξοδος"
         loading sidebar content: "Φόρτωση περιεχομένου πλάγιας γραμμής..."
@@ -1066,8 +1096,6 @@ el:
         partners text: "Χωρίς τη γενναιοδωρία των συνεργατών μας, εκδοτών της Αγίας Γραφής, η YouVersion απλά δε θα μπορούσε να παρέχει στην παγκόσμια κοινότητά μας τόσο πολλές εκδόσεις. Πολλοί από εσάς έχουν ρωτήσει πώς μπορούν να ευχαριστήσουν αυτούς τους ζωτικής σημασίας υποστηρικτές της αποστολής της YouVersion. Μπορείτε να μάθετε περισσότερα σχετικά με αυτούς, τις διακονίες τους και τους τρόπους που μπορείτε να τους υποστηρίξετε, μέσω των παρακάτω συνδέσμων."
         translation title: "Οι μεταφραστικές ομάδες μας"
         learn more: "Περισσότερα"
-        bible dot com title: "Τι έγινε το παλιό Bible.com;"
-        bible dot com copy: "Αν ψάχνετε το περιεχόμενο των Christ Unlimited Ministries από τους Bud και Betty Miller ή τον παλιό Bible.com ιστοτόπο μπορείτε να επισκεφθείτε το νέο ιστοτόπο τους <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Περιοχή ενημέρωσης τύπου"
         contact header: "Στοιχεία επικοινωνίας γραφείου τύπου"

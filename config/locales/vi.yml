@@ -80,6 +80,25 @@ vi:
             name: "Facebook"
             errors: 
                 expired access: "Thời gian kết nối Facebook của bạn đã kết thúc. Xin kết nối lại với Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Bạn cần đồng ý với điều khoản sử dụng để tạo tài khoản."
         users confirm password matches: "Mật khẩu mới không khớp."
@@ -792,6 +811,12 @@ vi:
         none me: "Bạn chưa có huy hiệu nào."
         none user: "%{username} chưa có huy hiệu nào."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                other: "%{count} Days Ahead!"
+            missed days: 
+                other: "%{count} Missed Days"
         bible plan language: "Ngôn ngữ cho kế hoạch"
         share plan: "Hãy thử xem kế hoạch \"%{plan_title}\" của @YouVersion #BiblePlan!"
         widget: 
@@ -832,6 +857,8 @@ vi:
         none found: "Chúng tôi không tìm được kế hoạch nào phù hợp với tiêu chí của bạn. Hãy thử mở rộng tìm kiếm!"
         about publisher: "Thông tin phát hành"
         overview: "Sơ lược kế hoạch"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Bắt đầu kế hoạch"
         save for later: "Lưu lại để lúc khác"
         saved for later: "Kế hoạch lưu trữ"
@@ -926,6 +953,7 @@ vi:
         must start to complete: "Bắt đầu kế hoạch này để lưu lại các phần đã đọc xong!"
         invalid reference: "Xin lỗi bạn, một trong các tham khảo Kinh Thánh này không có trong bản dịch được chọn. Hãy thử chọn một bản dịch khác ở trên. Nếu bạn vẫn nhận được thông báo này, hãy cho <a href='%{support_url}' target='_self'>nhóm hỗ trợ</a> của chúng tôi biết."
         sidebar notice: "Bạn đang xem một kế hoạch đọc."
+        congratulations: "Congratulations!"
         completed notice: "Chúc mừng bạn đã hoàn tất kế hoạch!"
         exit: "Thoát"
         loading sidebar content: "Đang tải nội dung của thanh bên..."
@@ -1053,8 +1081,6 @@ vi:
         partners text: "Nếu không có các đối tác phát hành Kinh Thánh, YouVersion sẽ không thể cung ứng nhiều bản Kinh Thánh đến thế cho cộng đồng toàn cầu. Nhiều người đã hỏi làm thế nào để cám ơn sự giúp đỡ nhiệt thành này đối với YouVersion. Bạn có thể tìm hiểu thêm về họ, các mục vụ và những cách bạn ủng hộ họ qua các đường dẫn dưới đây."
         translation title: "Các nhóm chuyển ngữ"
         learn more: "Tìm hiểu thêm"
-        bible dot com title: "Chuyện gì xảy ra với trang Bible.com trước đây?"
-        bible dot com copy: "Nếu bạn đang tìm thông tin về Bible.com hoặc Mục Vụ Đấng Christ Không Biên Giới (Christ Unlimited Ministries) của Bud và Betty Miller, hãy vào trang mạng mới của họ tại <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Khu vực thông tấn"
         contact header: "Thông tin liên lạc"

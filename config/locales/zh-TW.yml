@@ -80,6 +80,25 @@ zh-TW:
             name: "Facebook"
             errors: 
                 expired access: "您接入 Facebook 的授權已經失效。請先移除關聯，然後重新連接去 Facebook。"
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "您必須同意使用條款與條件才能建立帳戶。"
         users confirm password matches: "新密碼不匹配。"
@@ -792,6 +811,12 @@ zh-TW:
         none me: "您還未獲得任何徽章。"
         none user: "%{username}還未獲得任何徽章。"
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                other: "%{count} Days Ahead!"
+            missed days: 
+                other: "%{count} Missed Days"
         bible plan language: "讀經計劃的語言"
         share plan: "查看此計劃 @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -832,6 +857,8 @@ zh-TW:
         none found: "我們無法找到符合您條件的計劃。請嘗試擴大您的搜索。"
         about publisher: "關於出版商"
         overview: "計劃概述"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "開始此計劃"
         save for later: "先存後讀"
         saved for later: "先存後讀"
@@ -926,6 +953,7 @@ zh-TW:
         must start to complete: "請開始此計劃來儲存已經完成的閱讀進度！"
         invalid reference: "抱歉！此讀經內容的參考經文可能不在您選定的譯本裡。請在上方選擇一個不同的譯本。如果您持續看到此信息，請通知我們的  <a href='%{support_url}' target='_self'>支援團隊</a>！"
         sidebar notice: "您在查看讀經計劃"
+        congratulations: "Congratulations!"
         completed notice: "恭喜！您已完成了讀經計劃。"
         exit: "退出"
         loading sidebar content: "載入提要欄位內容..."
@@ -1053,8 +1081,6 @@ zh-TW:
         partners text: "如果沒有我們慷慨的聖經出版社夥伴， YouVersion 根本沒有能力給全世界的社群提供這麼多的聖經譯本。許多用戶曾問過該如何感謝這些重要的 YouVersion 使命支持者。您可以透過以下的鏈結來暸解他們與他們的事工，還有您可以幫助他們的方法。"
         translation title: "我們的翻譯團隊"
         learn more: "暸解更多"
-        bible dot com title: "以前的 Bible.com 現在怎麼樣了？"
-        bible dot com copy: "若您想查詢 Bud 和 Betty Miller 的事工 Christ Unlimited Ministries 所提供的內容或舊的 Bible.com 網站，請前往他們的新網址：<a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "新聞區"
         contact header: "新聞聯絡資訊"
@@ -1065,7 +1091,7 @@ zh-TW:
         facebook: "Facebook 上的 YouVersion"
         twitter: "Twitter 上的 YouVersion"
         support: "需要幫助使用 YouVersion ?"
-        lead copy: "以線上聖經Bible.com為基，聖經軟體是幾乎在任何款式的手機都可以安裝的免費行動聖經程式。聖經軟體讓用戶閱讀聖經、在社交網路上分享經節、書籤標記他們喜歡的經文等等 --- 一切操作都配合了用戶越來越移動化的生活方式。"
+        lead copy: "以線上聖經Bible.com為基，聖經軟體是幾乎在任何款式的手機都可以安裝的免費行動聖經程式。聖經軟體讓用戶閱讀聖經、在社交網路上分享經節、書籤標記他們喜歡的經文等等——一切操作都配合了用戶越來越移動化的生活方式。"
         resources title: "新聞資源"
         now title: "今日的 YouVersion 社群"
         resources: 

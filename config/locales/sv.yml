@@ -91,6 +91,25 @@ sv:
             name: "Facebook"
             errors: 
                 expired access: "Din åtkomsttoken har löpt ut för Facebook. Ta bort din anslutning och anslut till Facebook igen."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Du måste acceptera bestämmelser och villkor för att skapa ett konto."
         users confirm password matches: "Det nya lösenordet matchar inte."
@@ -580,7 +599,7 @@ sv:
         no devices: "Inga enheter är anslutna till ditt YouVersion-konto"
         no devices download copy: "Bibelappen är en gratis mobil Bibel baserad på online-biblen YouVersion.com som kan installeras på nästan vilken mobil enhet som helst. Bibelappen låter användare att läsa Bibeln, dela verser på deras sociala nätverk, skapa bokmärken för deras favorittexter m.m.—allt på ett format som hänger med i det allt mer mobila livet. Besök <a href='https://www.bible.com/app' target='_self'>bible.com/sv/app</a> från din mobila enhet för att ladda ner Bibelappen och ansluta ditt konto!"
         yes delete: "Ja, ta bort mitt konto"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "På din begäran har vi har tagit bort ditt YouVersion-konto. Det är tråkigt att se dig lämna oss. Vi hoppas verkligen att du kommer fortsätta att söka efter meningsfulla sätt att engagera dig i Guds Ord."
         delete account description: "Om du tar bort ditt konto kommer du permanent radera all din information, historik och dina personliga inställningar (så som anteckningar, bokmärken och markeringar) på Bible.com och i Bibelappen Denna åtgärd kan inte återställas av dig eller av någon i vårt team. Om du är säker på att du vill gå vidare, fortsätt nedan."
         user recent activity: "%{user}s senaste aktivitet"
         my notes: "Anteckningar"
@@ -803,6 +822,14 @@ sv:
         none me: "Du har inte fått några medaljer än."
         none user: "%{username} har inte fått några medaljer än."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Bibelplanens språk"
         share plan: "Kolla in denna  #BiblePlan från @YouVersion: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ sv:
         none found: "Vi kunde inte hitta en plan som matchar dina kriterier. Försök bredda din sökning."
         about publisher: "Om utgivaren"
         overview: "Planöversikt"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Starta planen"
         save for later: "Spara till Senare"
         saved for later: "Sparad till Senare"
@@ -939,6 +968,7 @@ sv:
         must start to complete: "Starta denna läsplan för att spara utförd läsning!"
         invalid reference: "En av skrifterna refererade för denna läsning verka inte existera i den valda översättningen. Försök att välja en annan översättning ovan. Om du fortsätter se detta meddelande, var snäll och meddela vår <a href='%{support_url}' target='_self'>supportgrupp</a> om problemet."
         sidebar notice: "Du visar en läsplan."
+        congratulations: "Congratulations!"
         completed notice: "Grattis! Du har fullföljt din läsplan."
         exit: "Avsluta"
         loading sidebar content: "Laddar innehåll i sidofällt..."
@@ -1066,8 +1096,6 @@ sv:
         partners text: "Utan våra generösa bibelpubliceringspartners skulle YouVersion inte ha möjlighet att tillhandahålla vår världsomspännande gemenskap med så många Biblar. Många av er har undrat hur ni kan tacka dem för deras viktiga stöd till YouVersion. Du kan läsa mer om dem, om deras arbete och om hur du kan stödja dem, via länken nedan."
         translation title: "Vårt översättningsteam"
         learn more: "Läs mer"
-        bible dot com title: "Vad hände med gamla Bible.com?"
-        bible dot com copy: "Om du söker efter innehåll från Bud och Betty Miller eller gamla Bible.com så besök deras nya hemsida på <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Pressområde"
         contact header: "Kontaktinformation för press"
@@ -1345,8 +1373,8 @@ sv:
                 createAccount: "Skapa konto"
             HtmlEditor: 
                 text: "Text"
-                bold: "fet"
-                italic: "kursiv"
+                bold: "Fet"
+                italic: "Kursiv"
         containers: 
             Auth: 
                 title: "Händelse - Logga in"
@@ -1500,7 +1528,7 @@ sv:
                             DetailsEdit: 
                                 errors: 
                                     wrongSize: "Bildstorleken måste vara %{requiredWidth}x%{requiredHeight}. Din bild är %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Ogiltig fil Måste vara jpg"
+                                    wrongType: "Ogiltig filtyp. Måste vara JPG."
                                 changeImage: "Ändra bild"
                                 removeImage: "Ta bort bild"
                                 prompt: "Drag och släpp en bild"
@@ -1525,8 +1553,8 @@ sv:
                                 addVirtual: "Lägg till virtuell plats"
                                 churchOnline: "Visste du? Du kan gratis utöva ditt prästerskap online med <a className='button-caption' href='%{url}'>Church Online Platform</a>."
                             LocationAddTime: 
-                                minutes: "MINUTER"
-                                hours: "TIMMAR"
+                                minutes: "minuter"
+                                hours: "timmar"
                                 days: "dagar"
                             LocationDeleteModal: 
                                 sure: "Är du säker?"
@@ -1572,7 +1600,7 @@ sv:
                             PreviewFeed: 
                                 review: "Granska din händelse före publicering"
                                 previewUrl: "Förhandsvisningsadress:"
-                                share: "Dela Evenemang"
+                                share: "Dela händelse"
                                 locationsAndTimes: "Adresser och tider"
                                 publish: "Publicera"
                                 unpublish: "Avpublicera"
@@ -1581,7 +1609,7 @@ sv:
                                     title: "Synligt:"
                                     desc: "Din händelse kommer att vara synlig i Bibelappen vid sökning efter händelser eller på kartan 5 dagar före startdatum."
                                 status: 
-                                    title: "Status för anteckning:"
+                                    title: "Status:"
                                     desc: "LIVE kommer att visas när händelsen har startat."
                                 remove: 
                                     title: "Ta bort:"

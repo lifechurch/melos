@@ -4,17 +4,8 @@
   subscription  = presenter.subscription
   day           = presenter.day
   reading       = presenter.reading
-  content_page  = presenter.content_page
   statuses      = subscription.day_statuses
   references    = reading.references(version_id: subscription.version_id)
-  case references.size
-  when 1
-    readings_text = "1 " + t("plans.widget.reading")
-  when 2..4
-    readings_text = references.size.to_s + " " + t("plans.widget.readings")
-  else
-    readings_text = references.size.to_s + " " + t("plans.widget.readings 5 or more")
-  end
 
 .subscription-show
   .plan-overview
@@ -28,7 +19,25 @@
               != "&larr; #{t('searching.plans')}"
 
         .settings
-          %a!= "&bull;&bull;&bull;"
+          %a{ "ng-click" => "showShare = !showShare", "href" => "#" }
+            != t("moments.action.share")
+          %div.share-panel.ng-hide{"ng-show" => "showShare"}
+            %div.video.addthis_sharing_toolbox{:data => {:url => "#{plan_url(id: subscription)}", :title => "#{subscription.name}"}}
+          %div{ "plan-more-menu" => true }
+            %a{"ng-click"=>"showMenu = !showMenu"}
+              .trigger
+                %span{"ng-hide"=>"showMenu"}!= "&bull;&bull;&bull;"
+                %span.close-trigger.ng-hide{"ng-show"=>"showMenu"}
+
+            %ul.ng-hide{"ng-show"=>"showMenu"}
+              %li
+                =link_to t("plans.settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), target: "_self"
+              %li
+                =link_to t("EventsAdmin.features.EventEdit.features.preview.components.PreviewTypePlan.info"), plan_path(id: subscription), target: "_self"
+              %li
+                =link_to t("plans.calendar"), calendar_subscription_path(user_id: current_user.to_param, id: subscription), target: "_self"
+              %li
+                =button_to t('plans.catch me up'), subscription_path(user_id: current_user.to_param, id: subscription,catch_up: "true"), method: :put, class: 'link'
 
     .row.columns.medium-centered.text-center.img
       - if subscription.list_image.present?
@@ -42,7 +51,7 @@
 
   .row.days-container
     .columns.large-8.medium-8.medium-centered
-      .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false"}
+      .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}"}
         - statuses.each do |cur_status|
           - cur_date = Date.parse(cur_status.date)
           - is_active = cur_status.day.equal? @presenter.day
@@ -58,21 +67,25 @@
   .row
     .columns.large-8.medium-8.medium-centered
       .start-reading
-        = link_to devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day), target: "_self", class: 'solid-button green' do
+        - if presenter.reading.devotional
+          - start_reading_path = devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day)
+        - else
+          - start_reading_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: 0)
+
+        = link_to start_reading_path, target: "_self", class: 'solid-button green' do
           = t("plans.widget.start reading")
 
-      %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: subscription.total_days).html_safe} &bull; On Track"
+      %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: subscription.total_days).html_safe} &bull; #{presenter.on_track_status}"
 
-      -if presenter.reading.devotional
-        %ul.no-bullets
+      %ul.no-bullets
 
-          - unless statuses[day - 1].additional_content.empty?
-            %li{class: "#{statuses[day - 1].additional_content.completed ? 'check' : 'no-check'} #{is_rtl? ? 'li-left' : 'li-right'}"}
-              = link_to devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day), target: "_self" do
-                = t("plans.devotional")
+        -if presenter.reading.devotional
+          %li{class: "#{statuses[day - 1].additional_content.completed ? 'check' : 'no-check'} #{is_rtl? ? 'li-left' : 'li-right'}"}
+            = link_to devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day), target: "_self" do
+              = t("plans.devotional")
 
-          - unless references.empty?
-            - references.each_with_index do |ref,index|
-              %li{class: "#{ref.completed ? 'check' : 'no-check'} #{is_rtl? ? 'li-left' : 'li-right'}"}
-                = link_to ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: index), target: "_self" do
-                  = ref.reference.safe_human
+        - unless references.empty?
+          - references.each_with_index do |ref,index|
+            %li{class: "#{ref.completed ? 'check' : 'no-check'} #{is_rtl? ? 'li-left' : 'li-right'}"}
+              = link_to ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: index), target: "_self" do
+                = ref.reference.safe_human

@@ -3,9 +3,19 @@
 
   back_path = nil
   if !ref_index.nil?
-    display_ref_number = ref_index + 2
+
+    if presenter.reading.devotional
+      display_ref_number = ref_index + 2
+    else
+      display_ref_number = ref_index + 1
+    end
+
     if ref_index == 0
-      back_path = devo_subscription_path(user_id: current_user.to_param, id: subscription, day: day)
+      if presenter.reading.devotional
+        back_path = devo_subscription_path(user_id: current_user.to_param, id: subscription, day: day)
+      else
+        back_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day)
+      end
     else
       back_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: day, content: ref_index - 1)
     end

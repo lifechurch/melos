@@ -13,7 +13,9 @@ angular.module('common.carousel', [])
                 autoplay: '=',
                 autoplaySpeed: '=',
                 arrows: '=',
-                responsive: '='
+                responsive: '=',
+                initialSlide: '=',
+                rtl: '='
             },
             controller: ["$element", "$scope", "$timeout", function($element, $scope, $timeout) {
                 var config = {
@@ -36,12 +38,17 @@ angular.module('common.carousel', [])
                 };
 
                 $.each($scope, function(key, val) {
-                    if (typeof val !== 'undefined' && val !== null) {
+                    if (key[0] !== '$' && typeof val !== 'undefined' && val !== null) {
                        config[key] = val;
                     }
                 });
 
                 $element.slick(config);
+
+                if (typeof $scope.initialSlide !== 'undefined' && $scope.initialSlide !== null) {
+                    $element.slick('slickGoTo', $scope.initialSlide);
+                }
+
             }]
         };
     })

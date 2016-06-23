@@ -80,6 +80,25 @@ ja:
             name: "Facebook"
             errors: 
                 expired access: "Facebookによるアクセス・トークンの期限が切れました。一旦接続を解除して、Facebookに改めて接続してください。"
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "アカウント作成には、利用規約に同意いただく必要があります。"
         users confirm password matches: "新しいパスワードが一致しません。"
@@ -569,7 +588,7 @@ ja:
         no devices: "YouVersionアカウントに連携されているデバイスはありません。"
         no devices download copy: "オンライン聖書（YouVersion.com）に基づいた聖書アプリは無料の携帯用聖書で、ほぼ全ての携帯デバイスにインストールできます。聖書アプリでは、聖書を読んだり、シーシャル･ネットワーク上で聖句をシェアしたり、お気に入りの聖句にブックマークをつけたりと色々なことができ、携帯を活用したライフスタイルにピッタリです。お使いになっている携帯デバイスから<a href='https://www.bible.com/app' target='_self'>bible.com/app</a>にいって、聖書アプリをダウンロードし、あなたのアカウントに連携させましょう！"
         yes delete: "はい、私のアカウントを削除します"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "ご要望によりアカウントを消去いたしました。YouVersionの使用を止められるのを残念に思っています。これからも御言葉と共に素晴らしい道を歩まれることを心よりお祈り申し上げます。"
         delete account description: "アカウントを削除した場合、Bible.comと聖書アプリ内のあなたの情報、履歴、パーソナライズした内容（ノート、ブックマーク、ハイライトなど）は、全て永久削除されます。この操作は、あなたにも、我々のチームにも、取り消すことはできません。それでもアカウントを削除されたい場合は、以下にお進みください。"
         user recent activity: "%{user} さんの最近の利用履歴"
         my notes: "ノート"
@@ -792,6 +811,12 @@ ja:
         none me: "まだバッジを獲得していません"
         none user: "%{username} さんはまだバッジを獲得していません"
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                other: "%{count} Days Ahead!"
+            missed days: 
+                other: "%{count} Missed Days"
         bible plan language: "読書プランの言語"
         share plan: "#読書プラン %{plan_title}をチェック@YouVersion #BiblePlan "
         widget: 
@@ -832,6 +857,8 @@ ja:
         none found: "条件に合うプランが見つかりませんでした。検索の範囲を広げてみてください"
         about publisher: "出版元について"
         overview: "読書プランの概要"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "この読書プランを開始する"
         save for later: "今後のために保存"
         saved for later: "保存済みリスト"
@@ -926,6 +953,7 @@ ja:
         must start to complete: "このプランに参加すれば、完了箇所を保存できますよ！"
         invalid reference: "申し訳ありませんが、参照聖句の一部が選択された聖書訳ではご覧になれないようです。上記にある別の聖書訳を選んでお試しください。このメッセージが継続して表示される場合は、 <a href='%{support_url}' target='_self'>support team</a> までお知らせください。"
         sidebar notice: "読書プランをご覧になっています。"
+        congratulations: "Congratulations!"
         completed notice: "おめでとうございます！読書プランを完了しました。"
         exit: "終了"
         loading sidebar content: "サイドバーの内容を読み込み中…"
@@ -1053,8 +1081,6 @@ ja:
         partners text: "聖書の出版元とのパートナーシップなくして、YouVersionが世界中の皆様に様々な訳の聖書をご提供することは不可能です。YouVersionの活動に欠かすことのできない、これらのパートナーにお礼の気持ちを伝えたいけど、どうしたらいいでしょうかというご質問を多数の方から承りました。以下のリンクからパートナーについての情報、活動の詳細、貢献方法などをご覧いただけます。"
         translation title: "翻訳チーム"
         learn more: "詳細"
-        bible dot com title: "以前あったBible.comはどうなったのですか？"
-        bible dot com copy: "Bud&amp;Betty MillerによるChrist Unlimited MinistriesのコンテンツやBible.comの旧サイトをお探しの場合は<a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>へ行ってください。"
     press page: 
         title: "プレスエリア"
         contact header: "プレス用の連絡先"
