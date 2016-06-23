@@ -399,7 +399,7 @@ ul.plan-results {
       white-space: nowrap;
       opacity: 0.85;
       padding: 0;
-      z-index:100;
+      z-index:1;
       &.slick-disabled {
         background: none;
         cursor: default;
@@ -493,7 +493,7 @@ ul.plan-results {
       width: 24px;
       height: 24px;
       top: 27px;
-      background: image_url('icon-reader-arrow.svg') no-repeat center center;
+      background: image_url("Triangle-Right-Arrow.svg") no-repeat center center;
       text-indent: 100%;
       overflow: hidden;
       white-space: nowrap;
@@ -522,19 +522,30 @@ ul.plan-results {
   .plan-overview {
     height: 170px;
 
+    .back {
+      float: $default-float;
+    }
+    
+    .settings {
+      float: $opposite-direction;
+    }
+
     .img {
-      display: block;
-      margin: auto;
-      width: 40%;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
     }
     img {
-      min-width: 140px;
+      min-width: 160px;
       margin-bottom: 25px;
+
+      @media #{$small-only} {
+        margin-top: 10px;
+      }
     }
 
     .header {
       height: 17px;
-      width: 100%;
 
       a {
         font-size: rem-calc(12);
@@ -546,6 +557,7 @@ ul.plan-results {
       overflow-wrap: break-word;
       word-wrap: break-word;
       white-space: normal;
+      text-align: center;
     }
   }
 
@@ -556,7 +568,6 @@ ul.plan-results {
   }
 
   .box {
-    //overflow: hidden;
     position: relative;
     clear: both;
     margin-bottom: 0px;
@@ -601,10 +612,6 @@ ul.plan-results {
     .slick-prev:hover {
       opacity: 1;
     }
-    //.slick-track {
-    //  overflow: hidden;
-    //  margin: 0 0 0 -10px;
-    //}
   }
 
 
@@ -623,24 +630,26 @@ ul.plan-results {
 
     li {
       margin-bottom: 10px;
-      padding-left: 30px;
-      //padding-top: -3px;
-      //padding-top: 1px;
       height: 20px;
+    }
+    li.li-left {
+      padding-right: 30px;
+    }
+    li.li-right {
+      padding-left: 30px;
     }
 
     .check {
-      background: image_url("Check-Small.svg") no-repeat left bottom;
+      background: image_url("Check-Small.svg") no-repeat $default-float bottom;
     }
     .no-check {
-      background: image_url("Check-Unchecked.svg") no-repeat left bottom;
+      background: image_url("Check-Unchecked.svg") no-repeat $default-float bottom;
     }
   }
 
   .check-background {
     background: image_url("Check-Small.svg") no-repeat;
     background-position: 95%;
-    //height: 20px;
     width: 20px;
   }
 
@@ -653,6 +662,10 @@ ul.plan-results {
     width: 100%;
   }
 
+  .start-reading {
+    float: $opposite-direction;
+  }
+  
 }
 
 /* Devo Nav Bar */
@@ -660,14 +673,7 @@ ul.plan-results {
 .c_subscriptions {
   
   .nav-bar {
-    //position: fixed;
-    //width: 100%;
-    //margin-top: -70px;
-    //z-index: 2;
-    //background-color: white;
     height: 70px;
-
-
 
     .nav-elements {
       padding: 15px;
@@ -692,8 +698,13 @@ ul.plan-results {
       .nav-img {
         width: 40px;
         height: 40px;
+        float: $default-float;
+      }
+      .nav-img.img-right {
+        margin-left: 10px;
+      }
+      .nav-img.img-left {
         margin-right: 10px;
-        float: left;
       }
 
       .nav-title {
@@ -701,13 +712,13 @@ ul.plan-results {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        text-align: left;
+        text-align: $default-float;
       }
       
       .nav-length {
         font-size: rem-calc(10);
         color: $gray_medium;
-        text-align: left;
+        text-align: $default-float;
       }
 
     }
@@ -735,7 +746,18 @@ ul.plan-results {
 
 .c_subscriptions.a_ref {
 
+  .nav-header {
+    z-index: 3;
+  }
+
   .nav-bar {
+
+    .nav-elements {
+      left: 1.5%;
+      transform: translateX(-1.5%);
+    }
+
+
     @media #{$large-up} {
       width: 100%;
       margin-top: 37px;
@@ -1665,6 +1687,30 @@ html[dir="rtl"] .plan-settings {
 .plan-overview {
   .share-panel {
     right: 38px;
+  }
+}
+
+html[dir='rtl'] {
+  .plan-overview {
+    .share-panel {
+      right: inherit;
+      left: 38px;
+    }
+  }
+
+  div[plan-more-menu] {
+    margin-right: 10px;
+    margin-left: 0;
+
+    .close-trigger {
+    }
+
+    ul {
+      left: 16px;
+      right: inherit;
+      box-shadow: rgb(204, 204, 204) -5px 5px;
+      text-align: right;
+    }
   }
 }
 

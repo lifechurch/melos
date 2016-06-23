@@ -14,7 +14,8 @@ angular.module('common.carousel', [])
                 autoplaySpeed: '=',
                 arrows: '=',
                 responsive: '=',
-                initialSlide: '='
+                initialSlide: '=',
+                rtl: '='
             },
             controller: ["$element", "$scope", "$timeout", function($element, $scope, $timeout) {
                 var config = {

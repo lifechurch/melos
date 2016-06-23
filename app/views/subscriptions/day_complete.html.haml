@@ -38,5 +38,17 @@
   %a
     = link_to t("plans.view my plans"), subscriptions_path(user_id: current_user.to_param), target: "_self", class: "small-font"
     != "&bull;"
-    = link_to subscription_path(user_id: current_user.to_param, id: @presenter.subscription, day: (@presenter.day.to_i + 1)), {class: 'small-font', target: "_self"} do
-      != t("EventsAdmin.containers.EventFeedMine.next")
+
+    -# if on last day and not completed plan, don't try to go to the next day (it doesn't exist)
+    - if (@presenter.day.to_i == @presenter.subscription.total_days.to_i)
+      = link_to subscription_path(user_id: current_user.to_param, id: @presenter.subscription, day: 1), {class: 'small-font', target: "_self"} do
+        != t("EventsAdmin.containers.EventFeedMine.next")
+
+    - else
+      = link_to subscription_path(user_id: current_user.to_param, id: @presenter.subscription, day: (@presenter.day.to_i + 1)), {class: 'small-font', target: "_self"} do
+        - if is_rtl?
+          != t("plans.next")
+          != "&larr;"
+        - else
+          != t("EventsAdmin.containers.EventFeedMine.next")
+
