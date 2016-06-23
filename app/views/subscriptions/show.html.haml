@@ -19,19 +19,25 @@
               != "&larr; #{t('searching.plans')}"
 
         .right
+          %a{ "ng-click" => "showShare = !showShare", "href" => "#" }
+            != t("moments.action.share")
+          %div.share-panel.ng-hide{"ng-show" => "showShare"}
+            %div.video.addthis_sharing_toolbox{:data => {:url => "#{plan_url(id: subscription)}", :title => "#{subscription.name}"}}
           %div{ "plan-more-menu" => true }
             %a{"ng-click"=>"showMenu = !showMenu"}
               .trigger
                 %span{"ng-hide"=>"showMenu"}!= "&bull;&bull;&bull;"
                 %span.close-trigger.ng-hide{"ng-show"=>"showMenu"}
 
-
-
             %ul.ng-hide{"ng-show"=>"showMenu"}
               %li
-                %a= "Test 1"
+                =link_to t("plans.settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), target: "_self"
               %li
-                %a= "Test 2"
+                =link_to t("EventsAdmin.features.EventEdit.features.preview.components.PreviewTypePlan.info"), plan_path(id: subscription), target: "_self"
+              %li
+                =link_to t("plans.calendar"), calendar_subscription_path(user_id: current_user.to_param, id: subscription), target: "_self"
+              %li
+                =button_to t('plans.catch me up'), subscription_path(user_id: current_user.to_param, id: subscription,catch_up: "true"), method: :put, class: 'link'
 
       .row.columns.large-8.medium-8.medium-centered.img
         - if subscription.list_image.present?
@@ -43,7 +49,7 @@
 
   .row.days-container
     .columns.large-8.medium-8.medium-centered
-      .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false"}
+      .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1}
         - statuses.each do |cur_status|
           - cur_date = Date.parse(cur_status.date)
           - is_active = cur_status.day.equal? @presenter.day
@@ -67,7 +73,7 @@
         = link_to start_reading_path, target: "_self", class: 'solid-button green' do
           = t("plans.widget.start reading")
 
-      %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: subscription.total_days).html_safe} &bull; On Track #{presenter.on_track_status}"
+      %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: subscription.total_days).html_safe} &bull; #{presenter.on_track_status}"
 
       %ul.no-bullets
 

@@ -101,6 +101,7 @@ class SubscriptionsController < ApplicationController
     if params[:catch_up] == "true"
       @subscription.catch_up
       action = 'catch up'
+      return redirect_to subscription_path(user_id: current_user.to_param, id: @subscription)
     end
 
     if params[:restart] == "true"

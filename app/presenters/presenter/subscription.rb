@@ -139,9 +139,9 @@ module Presenter
         ahead_days = ahead_days + 1 if cur_status.completed && cur_date > today
       end
 
-      return "behind #{missed_days}" if missed_days > 0
-      return "ahead #{ahead_days}" if ahead_days > 0
-      return "on track"
+      return I18n.t("plans.status.missed days", count: missed_days) if missed_days > 0
+      return I18n.t("plans.status.days ahead", count: ahead_days) if ahead_days > 0
+      return I18n.t("plans.status.on track")
     end
 
   end

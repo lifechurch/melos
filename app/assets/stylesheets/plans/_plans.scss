@@ -435,6 +435,9 @@ ul.plan-results {
 .a_show {
 
   div[plan-more-menu] {
+    display: inline-block;
+    margin-left: 10px;
+
     .close-trigger {
       background-image: image_url("icon-close.svg");
       height: 10px;
@@ -467,6 +470,16 @@ ul.plan-results {
           &:hover {
             color: $blue;
           }
+        }
+
+        input.link {
+          background: none;
+          border: none;
+          padding: 0 !important;
+          font-size: rem-calc(12);
+          color: $gray;
+          margin: 0;
+          margin-top: -4px;
         }
       }
     }
@@ -1635,7 +1648,9 @@ html[dir="rtl"] .plan-settings {
   a {
     font-size: 13px;
   }
-
+}
+.plan-overview,
+.reading_plan_index_header {
   .share-panel {
     position: absolute;
     width: 185px;
@@ -1644,6 +1659,12 @@ html[dir="rtl"] .plan-settings {
     right: -5px;
     padding-left: 2px;
     background-color: rgba(255,255,255,0.75);
+  }
+}
+
+.plan-overview {
+  .share-panel {
+    right: 38px;
   }
 }
 
