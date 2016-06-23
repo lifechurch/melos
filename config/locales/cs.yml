@@ -102,6 +102,25 @@ cs:
             name: "Facebook"
             errors: 
                 expired access: "Vaše přihlášení přes Facebook vypršelo. Prosím odstraňte připojení a připojte se znovu na Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Pro vytvoření účtu musíte souhlasit se všeobecnými podmínkami."
         users confirm password matches: "Zadaná nová hesla nesouhlasí."
@@ -591,7 +610,7 @@ cs:
         no devices: "K vašemu YouVersion účtu nejsou připojená žádná zařízení"
         no devices download copy: "Založeno na online Bibli YouVersion, aplikace Bible je zdarma pro mobily a může být instalována na téměř všechny mobilní telefony. Aplikace Bible umožňuje uživatelům číst Bibli, sdílet verše na sociálních sítích, zvýrazňovat oblíbené pasáže a více—vše ve formátu, který jde ruku v ruce s životním stylem uživatelů mobilních zařízení. Navštivte <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> z vašeho mobilního zařízení, stáhněte si aplikaci a připojte se k vašemu účtu!"
         yes delete: "Ano, smazat můj účet"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "Na základě vaší žádosti jsme smazali váš YouVersion účet. Je nám líto, že odcházíte. S nadějí jsme přesvědčeni, že nadále budete setrvávat ve smysluplném způsobu, jak být stále ve spojení s Božím slovem."
         delete account description: "Pokud smažete vás účet, dojede k trvalém odstranění všech vašich informací, historie, a personalizace (jako jsou poznámky, záložky, zvýraznění atd.) na Bible.com a v aplikaci Bible. Tuto akci již nelze vrátit zpět ani vámi, ani naším týmem. Pokud jste si opravdu jistí tím co děláte, pokračujte níže."
         user recent activity: "Nedávná aktivita uživatele %{user}"
         my notes: "Moje poznámky"
@@ -814,6 +833,16 @@ cs:
         none me: "Zatím jste nezískali žádné odznaky."
         none user: "%{username} zatím nezískal žádné odznaky."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                few: "%{count} Days Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                few: "%{count} Missed Days"
+                other: "%{count} Missed Days"
         bible plan language: "Jazyk plánu čtení Bible"
         share plan: "Prohlédněte si tento @YouVersion #Plán čtení: %{plan_title}"
         widget: 
@@ -858,6 +887,8 @@ cs:
         none found: "Nebyl nalezen plán odpovídající vašim kritériím. Zkuste rozšířit svůj výběr."
         about publisher: "O vydavateli"
         overview: "Rozpis plánu čtení"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Začít tento plán"
         save for later: "Uložit offline"
         saved for later: "Uložené k offline čtení"
@@ -952,6 +983,7 @@ cs:
         must start to complete: "Aby jste mohli uložit přečtený úsek, je zapotřebí spustit tento plán čtení!"
         invalid reference: "Promiňte, ale v tomto vybraném překladu se zřejmě nenachází odkaz na tento verš. Vyzkoušejte vybrat jiný překlad, viz nahoře. Pokud se vám tato zpráva opět zobrazí , prosím informujte náš <a href='%{support_url}' target='_self'>tým podpory</a> o tomto problému."
         sidebar notice: "Prohlížíte si plán čtení."
+        congratulations: "Congratulations!"
         completed notice: "Gratulujeme! Dokončili jste váš plán čtení."
         exit: "Konec"
         loading sidebar content: "Načítání obsahu postranní lišty..."
@@ -1079,8 +1111,6 @@ cs:
         partners text: "Bez štedrých partnerů, kteří vydávají Bible, by zkrátka YouVersion nedokázalo poskytovat naší celosvětové komunitě takto velké množství překladů Bible. Mnoho z vás se nás ptalo, jakým způsobem je možné poděkovat těmto podporovatelům YouVersion? Více se o nich samotných, jejich projektech a způsobech jak je můžete podporovat dozvíte níže na uvedených odkazech."
         translation title: "Naše překladatelské týmy"
         learn more: "Zjistit více"
-        bible dot com title: "Co se stalo se starou stránkou Bible.com?"
-        bible dot com copy: "Pokud hledáte stránku Christ Unlimited Ministries od Buda and Betty Millerových nebo starý web Bible.com, navštivte prosím novou stránku na odkazu <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Informace pro tisk"
         contact header: "Kontaktní informace pro tisk"

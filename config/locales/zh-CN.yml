@@ -80,6 +80,25 @@ zh-CN:
             name: "Facebook"
             errors: 
                 expired access: "你接入 Facebook 的授权已到期，请先解除关联，然后重新关联到 Facebook。"
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "您必须同意使用协议和条款才能注册账户。"
         users confirm password matches: "新密码不匹配。"
@@ -792,6 +811,12 @@ zh-CN:
         none me: "您还没有获得任何徽章。"
         none user: "%{username} 还没有获得任何徽章。"
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                other: "%{count} Days Ahead!"
+            missed days: 
+                other: "%{count} Missed Days"
         bible plan language: "读经计划的语言"
         share plan: "查看此计划 @YouVerison #BiblePlan：%{plan_title}"
         widget: 
@@ -832,6 +857,8 @@ zh-CN:
         none found: "无法找到合乎你要求的计划。请扩大搜索范围再试。"
         about publisher: "关于出版者"
         overview: "计划概览"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "开始该计划"
         save for later: "先存后读"
         saved for later: "先存后读"
@@ -926,6 +953,7 @@ zh-CN:
         must start to complete: "请开始这个读经计划来保存已完成的读经！"
         invalid reference: "很抱歉！此读经计划中的参考经文可能不在你选定的圣经译本中。试着选择一个不同的圣经译本。如果你还是看到这条信息，请通知我们的 <a href='%{support_url}' target='_self'>服务支持团队</a>！"
         sidebar notice: "你正在查看一个读经计划。"
+        congratulations: "Congratulations!"
         completed notice: "恭喜你完成了读经计划。"
         exit: "退出"
         loading sidebar content: "载入侧栏内容..."
@@ -1053,8 +1081,6 @@ zh-CN:
         partners text: "如果没有慷慨的圣经出版商，YouVersion 根本不可能向全世界的用户提供如此多的圣经。很多用户问我们该如何感谢这些 YouVersion 的重要支持者。你可以通过下面的链接来认识他们更多、了解他们的使命和你可以帮助他们的方法。"
         translation title: "我们的翻译团队"
         learn more: "获取更多信息"
-        bible dot com title: "以前的 Bible.com 现在怎样了？"
-        bible dot com copy: "如果你要找的是 Bud and Betty Miller 提供的 Christ Unlimited Ministries 的内容，或是旧的 Bible.com 网站，请访问他们的新网站： <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "新闻区"
         contact header: "新闻联系信息"

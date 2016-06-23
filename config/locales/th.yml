@@ -80,6 +80,25 @@ th:
             name: "Facebook"
             errors: 
                 expired access: "การเข้าถึงของคุณถูกระงับโดยเฟสบุ๊ค. โปรดนำการเชื่อมต่อของคุณออกและลองเชื่อมต่อไปยังเฟสบุ๊คใหม่"
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "คุณต้องยอมรับข้อตกลงและเงื่อนไขต่างๆ ในการสร้างบัญชีสมาชิก"
         users confirm password matches: "รหัสผ่านใหม่ไม่ตรงกัน"
@@ -149,8 +168,8 @@ th:
             tell friends: "บอกกับเพื่อนของคุณเกี่ยวกับแอพพระคัมภีร์สำหรับเด็ก"
             facebook name: "แอพพระคัมภีร์สำหรับเด็ก"
             facebook description: "แอพพระคัมภีร์สำหรับเด็กอยู่ที่นี่! ดาวน์โหลดได้ฟรีสำหรับ iOS และ แอนดรอยด์: และการใช้เวลากับเรื่องราวในพระคัมภีร์จะช่วยให้ลูกของคุณเรียนรู้ เข้าใจ และเติบโตขึ้นตามพระคำพระเจ้า www.bible.com/kids"
-            facebook link: "http://www.bible.com/kids"
-            facebook redirect: "http://www.bible.com/kids"
+            facebook link: "http://www.bible.com/th/kids"
+            facebook redirect: "http://www.bible.com/th/kids"
             twitter description: "พระคัมภีร์สำหรับเด็กโดย @YouVersion อยู่ที่นี่! ดาวน์โหลดได้ฟรี และสนุกไปด้วยกันที่: bible.com/kids"
             twitter hashtags: "พระคัมภีร์สำหรับเด็ก"
             email: "อีเมล"
@@ -792,6 +811,12 @@ th:
         none me: "คุณยังไม่ได้เหรียญตราใดๆ"
         none user: "%{username} ยังไม่ได้รางวัลเหรียญตราใดๆ"
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                other: "%{count} Days Ahead!"
+            missed days: 
+                other: "%{count} Missed Days"
         bible plan language: "แผนการอ่านภาษาต่างๆ"
         share plan: "ลองดู @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -832,6 +857,8 @@ th:
         none found: "เราไม่พบแผนการอ่านที่ตรงกับความต้องการของคุณ โปรดขยายการค้นหาของคุณ"
         about publisher: "เกี่ยวกับผู้เผยแพร่"
         overview: "ภาพรวมของแผน"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "เริ่มแผนนี้"
         save for later: "บันทึกสำหรับดูภายหลัง"
         saved for later: "ที่บันทึกไว้สำหรับดูภายหลัง"
@@ -926,6 +953,7 @@ th:
         must start to complete: "เริ่มแผนนี้เพื่อบันทึกการอ่าน!"
         invalid reference: "ขออภัย หนึ่งในข้อพระคัมภีร์อ้างอิงสำหรับการอ่านนี้อาจจะไม่มีในพระคัมภีร์ฉบับที่คุณเลือก โปรดลองเลือกพระคัมภีร์ฉบับอื่นๆ ด้านบน และถ้าคุณยังเห็นข้อความนี้อีก กรุณาแจ้งให้ <a href='%{support_url}' target='_self'>ทีมงานช่วยเหลือ</a> ของเรารับทราบถึงปัญหา"
         sidebar notice: "คุณกำลังดูแผนการอ่าน"
+        congratulations: "Congratulations!"
         completed notice: "ขอแสดงความยินดี! คุณอ่านแผนนี้จบแล้ว"
         exit: "ออก"
         loading sidebar content: "กำลังโหลดข้อมูลแถบด้านข้าง..."
@@ -1053,8 +1081,6 @@ th:
         partners text: "หากปราศจากผู้เผยแพร่พระคัมภีร์ที่เอื้อเฝื้อ YouVersion ก็ไม่สามารถทำให้ผู้คนบนโลกนี้ได้มีพระคัมภีร์ติดตัว และมีหลายๆคนได้สอบถามถึงการขอบพระคุณต่อผู้สนับสนุนในพันธกิจของ YouVersion คุณสามารถเรียนรู้เพิ่มเติมได้เกี่ยวกับเขา พันธกิจของเขา และทางที่คุณจะสามารถสนับสนุนเขาได้ผ่านทางลิงค์ด้านล่าง"
         translation title: "ทีมแปลภาษาของเรา"
         learn more: "เรียนรู้เพิ่มเติม"
-        bible dot com title: "เกิดอะไรขึ้นเกี่ยวกับเว็บ Bible.com แบบเดิม?"
-        bible dot com copy: "ถ้าคุณกำลังมองหาเนื้อหาจาก  Christ Unlimited Ministries โดย Bud and Betty Miller หรือ เว็บไซต์ Bible.com แบบเก่า โปรดเข้าเยี่ยมชมที่เว็บไซต์ใหม่ที่ <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "พื้นที่ข่าวสาร"
         contact header: "ช่องทางการติดต่อสื่อสาร"

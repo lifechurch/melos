@@ -91,6 +91,25 @@ bg:
             name: "Facebook"
             errors: 
                 expired access: "Вашият достъп чрез Facebook е изтекъл. Моля, премахнете връзката и се свържете наново към Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Трябва да се съгласите с условията за създаване на акаунт."
         users confirm password matches: "Новите пароли не съвпадат."
@@ -334,7 +353,7 @@ bg:
         likes: "Харесвания"
         more than one like: 
         vod: 
-            title: "Стих на деня"
+            title: "Стих за деня"
             get daily email: "Получавайте имейл всеки ден"
             subscribe: "Абонирайте се"
             update: "Актуализация"
@@ -570,7 +589,7 @@ bg:
         vod_subscription success: "Успешно актуализирахте Вашия абонамент за стих за деня!"
         vod_subscription failure: "За съжаление възникна проблем при актуализиране на Вашия абонамент за стих за деня."
         daily email delivery: "Всекидневна доставка на електронна поща"
-        vod_not_subscribed: "Вие не сте абонирани да получавате имейли със стих на деня. Ако желаете да се абонирате, впишете се, моля."
+        vod_not_subscribed: "Вие не сте абонирани да получавате имейли със стих за деня. Ако желаете да се абонирате, впишете се, моля."
         time: "Време"
         daily push notifications: "Всекидневни известия за мобилни приложения"
         subscribe: "Абониране"
@@ -580,7 +599,7 @@ bg:
         no devices: "Никакви устройства не са свързани към YouVersion профила Ви"
         no devices download copy: "Базирано на онлайн Библията, приложение Библията на YouVersion е безплатна мобилна Библия, която може да се инсталира на почти всеки вид мобилно устройство. Приложение Библията дава възможност на потребителите да четат Библията, да споделят стихове в техните социални мрежи, да маркират любими пасажи и още - всичко това във формат, който отговаря на техния все по-мобилен начин на живот. Посетете<a href='https://www.bible.com/app' target='_self'>bible.com/app</a>от Вашето мобилно устройство, за да изтеглите приложение Библията и да свържете Ваш профил!"
         yes delete: "Да, изтрий профила ми"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "Профилът Ви в YouVersion беше изтрит, съгласно Вашето искане. Съжаляваме да видим, че си тръгвате. Искрено се надяваме, че ще продължите да търсите полезни начини, чрез които да бъдете ангажирани с Божието Слово."
         delete account description: "Ако изтриете Вашият акаунт, Вие завинаги ще премахнете цялата Ви информация, история и персонализации (такива като бележки, отбелязвания, маркировки и др.) от Bible.com и приложение Библията. Това действие не може да бъде отменено от Вас или от нашият екип. Ако сте сигурни, че искате да продължите напред, попълнете формуляра по-долу."
         user recent activity: "Последна дейност на %{user}"
         my notes: "Моите бележки"
@@ -803,6 +822,14 @@ bg:
         none me: "Нямате спечелени значки все още."
         none user: "%{username} все още няма спечелени значки."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Език на плановете за прочит на Библията"
         share plan: "Разгледайте този @YouVersion план за четене на Библията: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ bg:
         none found: "Не откриваме план, съответстващ на тези изисквания. Опитайте да разширите Вашето търсене."
         about publisher: "За издателя"
         overview: "Преглед на плана"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Започване на този план"
         save for later: "Запази за по-късно."
         saved for later: "Запазено за по-късно"
@@ -939,6 +968,7 @@ bg:
         must start to complete: "Започнете този план, за да запазите завършени дни за четене!"
         invalid reference: "Няма такава препратка в посочената версия. Опитай друга версия или се свържи с нашия <a href='%{support_url}' target='_self'>екип</a>."
         sidebar notice: "Разглеждате план за четене."
+        congratulations: "Congratulations!"
         completed notice: "Поздравления! Вие завършихте Вашия план за прочит."
         exit: "Изход"
         loading sidebar content: "Зареждане на съдържанието..."
@@ -1066,8 +1096,6 @@ bg:
         partners text: "Без нашите щедри партньори - издатели на Библията, YouVersion просто нямаше да има възможността да осигури на нашата общност по света толкова много Библии. Много от Вас ни питат как могат да благодарят на тези жизненоважни поддръжници на мисията на YouVersion. Можете да научите повече за тях, техните служения и за начини, по които можете да ги подкрепите, през линковете по-долу."
         translation title: "Нашите преводачески екипи"
         learn more: "Научете повече"
-        bible dot com title: "Какво се случи със старата версия на Bible.com?"
-        bible dot com copy: "Ако търсите съдържанието на Christ Unlimited Ministries от Бъд и Бети Милър или стария уебсайт Bible.com, моля посетете техния нов сайт на <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Информация за пресата"
         contact header: "За контакти"
@@ -1169,7 +1197,7 @@ bg:
             votd: 
                 title: "Стих за деня"
                 highlight_bookmark: "Маркирайте, отбележете или споделете този стих"
-                subscribe: "Абонирайте се за стих на деня"
+                subscribe: "Абонирайте се за стих за деня"
             hero: 
                 heading: "Безплатна БИБЛИЯ на Вашия телефон, таблет или компютър."
                 description: "YouVersion е лесна за използване Библия без реклами, която носи Божието Слово във Вашето ежедневие."

@@ -91,6 +91,25 @@ sw:
             name: "Facebook"
             errors: 
                 expired access: "Muda wa ishara yako na Facebook umekwisha. Tafadhali funga uhusiano wako na kisha unganisha tena kwa Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Lazima ukubali sheria na masharti ili utengeneze akaunti"
         users confirm password matches: "Neno la siri mpya haijalingana"
@@ -803,6 +822,14 @@ sw:
         none me: "Haujapata beji zozote."
         none user: "%{username} hajapata beji zozote."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Chagua mipango kulingana na lugha"
         share plan: "Tazama hii kwenye @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ sw:
         none found: "Hatukuweza kupata mpango unaoendana na vigezo vyako. Jaribu kupanua utafutaji wako."
         about publisher: "Kuhusu Mchapishaji"
         overview: "Mpango kwa ujumla"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Anza mpango huu"
         save for later: "Weka kwa baadaye"
         saved for later: "Imewekwa kwa baadaye"
@@ -939,6 +968,7 @@ sw:
         must start to complete: "Anza mpango huu ili uhifadhi masomo uliyomaliza"
         invalid reference: "Samahani,moja ya kumbukumbu za maandiko kwa ajili ya kusoma inaweza isiwepo katika toleo lilichaguliwa. Jaribu kuchagua toleo mbalimbali,hapo juu. Kama utaendelea kuona ujumbe huu,tafadhali wafahamishe <a href='%{support_url}' target='_self'> timu ya msaada  ili</a> kujua suala hilo."
         sidebar notice: "Unatazama mpango wa kusoma."
+        congratulations: "Congratulations!"
         completed notice: "Hongera! Umekamilisha mpango wako wa kusoma"
         exit: "Kutoka"
         loading sidebar content: "Inapakia maudhui ya upau wa kando.."
@@ -1066,8 +1096,6 @@ sw:
         partners text: "Bila ya ukarimu wa washirika wa kuchapisha Biblia, YouVersion tu haingekuwa na uwezo wa kupea jamii ya dunia Biblia nyingi . Wengi wenu mmeuliza jinsi unaweza kuwashukuru wafuasi hawa muhimu wa YouVersion. Unaweza kujifunza zaidi juu yao, ziara zao, na njia unaweza kuwasaidia kwa njia ya viungo hapa chini."
         translation title: "Timu zetu za utafsiri"
         learn more: "Jifunze zaidi"
-        bible dot com title: "Nini ilifanyikia bible.com ya kitambo"
-        bible dot com copy: "Kama wewe ni kuangalia kwa Kristo ukomo Ministries bidhaa na Bud na Betty Miller au mzee Bible.com tovuti tafadhali tembelea tovuti yao mpya katika <a href='http://www.bibleresources.org' target='_self'> BibleResources.org </a>"
     press page: 
         title: "Eneo la vyombo vya habari"
         contact header: "Njia ya kuwasiliana ya vyombo vya habari"

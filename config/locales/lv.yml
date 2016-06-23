@@ -102,6 +102,25 @@ lv:
             name: "Facebook"
             errors: 
                 expired access: "Tavai pieejai Facebook ir beidzies termiņš. Lūdzu pievienojies Facebook no jauna."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Jums jāpiekrīt noteikumiem, lai varētu izveidot kontu."
         users confirm password matches: "Jaunās paroles nesakrīt."
@@ -814,6 +833,16 @@ lv:
         none me: "Jūs vēl neesat nopelnījis nevienu nozīmīti."
         none user: "%{username} nav nopelnījis nevienu nozīmīti vēl."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                zero: "%{count} Days Ahead!"
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                zero: "%{count} Missed Days"
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Bībeles plāna valoda"
         share plan: "Apskati šo @YouVersion Bībeles plānu:  %{plan_title}"
         widget: 
@@ -858,6 +887,8 @@ lv:
         none found: "Nevaram atrast atbilstošu plānu taviem kritērijiem. Mēģini vispārināt savu meklējamo."
         about publisher: "Par izdevēju"
         overview: "Plāna pārskats"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Sākt plānu"
         save for later: "Saglabāt vēlākam"
         saved for later: "Saglabāts vēlākam"
@@ -952,6 +983,7 @@ lv:
         must start to complete: "Uzsākt šo plānu lai saglabātu izlasīto!"
         invalid reference: "Piedodiet, viena no rakstu atsaucēm šai lasīšanai var neeksistēt izvēlētajā tulkojumā. Pamēģiniet izvēlēties citu tulkojumu augstāk. Ja jūs turpināt redzēt šo ziņojumu, lūdzu dodiet ziņu mūsu <a href='%{support_url}' target='_self'>atbalsta komandai</a>."
         sidebar notice: "Tu skaties lasīšanas plānu."
+        congratulations: "Congratulations!"
         completed notice: "Apsveicam! Jūs esat pabeidzis savu lasīšanas plānu."
         exit: "Iziet"
         loading sidebar content: "Ielādē sānu joslas saturu..."
@@ -1079,8 +1111,6 @@ lv:
         partners text: "Bez mūsu Bībeles dāsnajiem izdevēj-partneriem, YouVersion vienkārši nespētu nodrošināt sabiedrību visā pasaulē ar tik daudzām Bībelēm. Daudzi no jums ir jautājuši, kā var palīdzēt šiem vitāli svarīgajiem YouVersion misijas atbalstītājiem. Jūs varat vairāk uzzināt par viņiem, viņu kalpošanām un veidiem, kā viņus var atbalstīt zemāk esošajās saitēs."
         translation title: "Mūsu tulkošanas komandas"
         learn more: "Uzzini vairāk"
-        bible dot com title: "Kas notika ar veco Bible.com?"
-        bible dot com copy: "Ja jūs meklējat Christ Unlimited Ministries saturu pēc Bud un Betty Miller vai veco Bible.com tīmekļa lapu, lūdzu apmeklējiet viņu jauno tīmekļa lapu <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Preses zona"
         contact header: "kontaktinformācija presei"

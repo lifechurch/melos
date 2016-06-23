@@ -80,6 +80,25 @@ ko:
             name: "페이스북"
             errors: 
                 expired access: "회원님의 페이스북 접근 토큰 사용기간이 만료되었습니다.  페이스북 연결을 제거하신 후 다시 연결해 보십시오."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "등록하려면 사용 규정과 개인정보약관에 동의하셔야 합니다."
         users confirm password matches: "새 비밀번호가 일치하지 않습니다."
@@ -792,6 +811,12 @@ ko:
         none me: "아직 받으신 배지가 없습니다."
         none user: "%{username}님은 아직 받은 배지가 없습니다."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                other: "%{count} Days Ahead!"
+            missed days: 
+                other: "%{count} Missed Days"
         bible plan language: "묵상 계획 언어"
         share plan: "이 묵상 계획을 나눕니다 @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -832,6 +857,8 @@ ko:
         none found: "검색 기준에 일치되는 계획이 없습니다. 검색 범위를 넓혀보세요."
         about publisher: "출판자 소개"
         overview: "계획 개요"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "계획 시작"
         save for later: "나중을 위해 저장"
         saved for later: "나중을 위해 저장된 묵상"
@@ -926,6 +953,7 @@ ko:
         must start to complete: "읽기를 저장하려면 먼저 이 읽기계획을 시작해야 합니다."
         invalid reference: "죄송합니다.  이 성경읽기에서 언급된 참고 구절중 일부가 이 번역본에는 없습니다.  다른 번역본을 선택해주세요.  이 메시지가 반복적으로 나타나면 <a href='%{support_url}' target='_self'>지원팀</a> 으로 연락주십시요."
         sidebar notice: "성경 읽기계획을 보고 계십니다."
+        congratulations: "Congratulations!"
         completed notice: "성경 읽기계획을 완료하신 것을 축하드립니다."
         exit: "나가기"
         loading sidebar content: "사이드 바 내용을 로딩중입니다..."
@@ -1053,8 +1081,6 @@ ko:
         partners text: "성경 출판 협력체의 도움 없었다면, 이렇게 많은 번역본을 전 세계적으로  제공할 수가 없습니다.  많은 분들께서 YouVersion 사역을 적극적으로 후원하는 협력체에 감사를 표시할 방법을 물어오셨습니다.  아래의 링크를 통해서 이들 협력체, 사역및  나아가 동참할 방법들을 더 자세히  알 수있습니다"
         translation title: "YouVersion 번역팀"
         learn more: "더 알아보기"
-        bible dot com title: "옛 Bible.com은 어떻게 되는 것이지요?"
-        bible dot com copy: "Bud and Betty의 Miller Christ Unlimited Ministries 콘텐츠를 찾으시거나 이전 Bible.com를 찾고 계신다면 새로운 웹사이트 <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>를 방문해 주십시오."
     press page: 
         title: "관련 기사"
         contact header: "기사 자료 문의"

@@ -80,6 +80,25 @@ ms:
             name: "Facebook"
             errors: 
                 expired access: "Token akses anda telah tamat dari Facebook. Sila hapuskan sambungan anda dan sambungkan kembali ke Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Anda mesti bersetuju dengan terma dan syarat untuk membuat akaun."
         users confirm password matches: "Kata laluan baru tidak sama."
@@ -569,7 +588,7 @@ ms:
         no devices: "Tiada peranti yang terhubung ke Akaun YouVersion anda"
         no devices download copy: "Berdasarkan Alkitab online, YouVersion.com, App Alkitab merupakan Alkitab mobil percuma yang boleh dimuat turun dalam hampir semua peranti.<a href='https://www.bible.com/app' target='_self'>App Alkitab membolehkan pengguna membaca Alkitab, memberitakan ayat kepada jaringan sosial mereka, bookmark ayat kegemaran mereka, dan banyak lagi- melalui format yang seiring dengan gaya hidup mudah alih yang semakin berkembang. </a> Layari bible.com/app dari peranti mudah alih anda untuk memuat turun App Alkitab dan hubungkan akaun anda!"
         yes delete: "Ya, Hapuskan Akaun Saya"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "Seperti yang anda minta, kami telah memadam akaun YouVersion anda. Kami sedih melihat anda pergi. Kami dengan ikhlasnya berharap agar anda akan terus mendapatkan cara yang bermakna yang membolehkan anda dekat dengan Firman Allah."
         delete account description: "Jika anda menghapuskan akaun, informasi, sejarah, dan input peribadi (seperti nota, bookmark, highlight dan selainnya) dalam Bible.com dan App Injil akan kekal dihapuskan. Tindakan ini tidak boleh diterbalikkan oleh anda ataupun kami. Jika anda pasti, sila berterusan di bawah. "
         user recent activity: "Aktiviti Terkini %{user}"
         my notes: "Nota"
@@ -792,6 +811,12 @@ ms:
         none me: "Anda belum memperolehi sebarang lencana."
         none user: "%{username} belum memperolehi sebarang lencana."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                other: "%{count} Days Ahead!"
+            missed days: 
+                other: "%{count} Missed Days"
         bible plan language: "Bahasa Pelan Alkitab"
         share plan: "Lihat #PelanAlkitab @YouVersion: %{plan_title}"
         widget: 
@@ -832,6 +857,8 @@ ms:
         none found: "Tidak tercari pelan yang sepadan kriteria anda. Cuba meluaskan pencarian anda."
         about publisher: "Tentang Penerbit"
         overview: "Ringkasan Pelan"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Mulakan Pelan ini"
         save for later: "Simpan Dahulu"
         saved for later: "Disimpan untuk Kemudian"
@@ -926,6 +953,7 @@ ms:
         must start to complete: "Mulakan pelan ini untuk simpan bacaan yang telah dilengkapkan!"
         invalid reference: "Maaf, satu daripada rujukan Alkitab untuk bacaan ini mungkin tidak terjumpa dalam versi tersebut. Cuba pilih versi yang berbeza di atas. Sekiranya anda terus menerima mesej ini, sila hubungi <a href='%{support_url}' target='_self'>pihak sokongan</a> kami tentang masalah ini."
         sidebar notice: "Anda sedang melihat pelan bacaan."
+        congratulations: "Congratulations!"
         completed notice: "Tahniah! Anda sudah melengkapi pelan bacaan anda."
         exit: "Keluar"
         loading sidebar content: "Memuat isi kandungan sidebar..."
@@ -1053,8 +1081,6 @@ ms:
         partners text: "Tanpa kemurahan hati rakan penerbit Alkitab kita, YouVersion tidak mungkin membekalkan begitu banyak Alkitab ke seluruh dunia. Ramai orang ingin mengucapkan terima kasih kepada penyokong kami yang penting ini. Anda boleh berbuat demikian melalui link di bawah, secara memahami lebih lanjut tentang mereka, perkhidmatan mereka, serta bagaimana anda boleh menyokong mereka."
         translation title: "Pasukan Penterjemah Kami"
         learn more: "Ketahui Lebih Lanjut"
-        bible dot com title: "Apakah terjadi kepada Bible.com yang lama?"
-        bible dot com copy: "Sekiranya anda mencari kandungan Christ Unlimited Ministries oleh Bud dan Betty Miller atau laman web Bible.com yang lama, sila kunjungi laman web baru di <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Kawasan Media"
         contact header: "Informasi Perhubungan Media"
@@ -1498,7 +1524,7 @@ ms:
                                 org: "Nama Gereja atau Organisasi"
                                 desc: "Penerangan Acara"
                                 next: "Seterusnya: Tambah Lokasi & Masa →"
-                                blank: "%{field} cannot be blank."
+                                blank: "%{field} tidak boleh dikosongkan."
                     location: 
                         components: 
                             Location: 

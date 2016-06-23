@@ -91,6 +91,25 @@ hu:
             name: "Facebook"
             errors: 
                 expired access: "A Facebook bejelentkezésed időkorlátja lejárt. Kérünk, jelentkezz ki a Facebook fiókodból, majd lépj be újra."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "El kell fogadnod a feltételeket, hogy létrehozhass egy fiókot,"
         users confirm password matches: "Az új jelszavak nem egyeznek."
@@ -580,7 +599,7 @@ hu:
         no devices: "Nincs eszköz csatlakoztatva a YouVersion-fiókodhoz"
         no devices download copy: "Az online Bibliára alapozva a YouVersion Biblia alkalmazás egy ingyenes mobil Biblia, amit csaknem bármilyen mobil készülékre le lehet tölteni, A Biblia alkalmazás lehetővé teszi a felhasználók számára, hogy olvassák a Bibliát, megosszanak igeverseket a közösségi hálózataikon, könyvjelzőt tegyenek a kedvenc részeikhez és még sok mást; mindezt olyan módon, ami alkalmazkodik az egyre inkább mozgásban lévő életstílusukhoz. Látogass el a <a href='https://www.bible.com/app' target='_self'>bible.com/app</a>weboldalra a mobilkészülékedről, hogy letöltsd a Biblia alkalmazást és csatlakozz a fiókodhoz!"
         yes delete: "Igen, töröld a fiókom"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "Töröltük a YouVersion fiókodat, ahogy kérted. Sajnálattal látjuk, hogy itt hagyod az oldalt. Őszintén reméljük, hogy folytatod a tartalmas utak keresését Isten Igéje felé."
         delete account description: "Ha törlöd a fiókodat, végleg el fog veszni a Bible.com és a Biblia alkalmazás által tárolt minden adatod, naplód és az általad készített megjegyzések, könyvjelzők, kiemelések, stb. Ezt a műveletet nem tudod visszavonni, és a mi csapatunk sem tud ebben segíteni. Ha biztos vagy benne, folytasd alul."
         user recent activity: "%{user} legutóbbi tevékenysége"
         my notes: "Jegyzetek"
@@ -803,6 +822,14 @@ hu:
         none me: "Még nem szereztél jelvényt."
         none user: "%{username} még nem szerzett jelvényt."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Bibliaolvasási terv nyelve"
         share plan: "Nézd meg ezt a @YouVersion-ön #BibliaTerv: \"%{plan_title}\""
         widget: 
@@ -845,6 +872,8 @@ hu:
         none found: "Nem találtunk a feltételeidnek megfelelő tervet. Próbáld bővíteni a keresést."
         about publisher: "A kiadóról"
         overview: "Terv áttekintése"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Terv elkezdése"
         save for later: "Mentés későbbre"
         saved for later: "Későbbre elmentett"
@@ -939,6 +968,7 @@ hu:
         must start to complete: "Kezdd el ezt a tervet, hogy a befejezett olvasmányokat elmenthesd!"
         invalid reference: "Bocsánat, ehhez az olvasnivalóhoz lehet, hogy nincs meg az egyik igei utalás a kiválasztott fordításban. Válassz egy másik frodítást a fentiek közül. Ha továbbra is ezt az üzenetet látod, kérlek jelezd a <a href='%{support_url}' target='_self'>munkatársainknak</a>a támogató csoportban ."
         sidebar notice: "Egy olvasási tervet nézel."
+        congratulations: "Congratulations!"
         completed notice: "Gratulálunk! Befejezted az olvasási terved!"
         exit: "Kilépés"
         loading sidebar content: "Oldalsáv tartalmának betöltése..."
@@ -1066,8 +1096,6 @@ hu:
         partners text: "Nagyvonalú Biblia kiadót támogató partnereink nélkül a YouVersion egyszerűen képtelen lenne olyan sok Bibliát biztosítani világszerte a közösségeinknek. Sokan kérdeztétek, hogyan tudnátok kifejezni hálátokat a YouVersion misszió életfontosságú támogatóinak. Több mindent megtudhatsz róluk, a szolgálatukról, és arról, hogy miként támogathatod őket, az alábbi linkeken keresztül."
         translation title: "Fordító csapataink"
         learn more: "Tudj meg többet"
-        bible dot com title: "Mi történt a régi Bible.com-mal?"
-        bible dot com copy: "Amennyiben a Bud és Berry-féle Christ Unlimited Ministries tartalmait, vagy a régi Bible.com honlapot keresed, kérlek látogasd meg új honlapukat a következő címen:<a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Sajtó felület"
         contact header: "Sajtó elérhetőségi információ"

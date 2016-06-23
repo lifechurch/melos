@@ -80,6 +80,25 @@ my:
             name: "ဖေ့စ်ဘွတ်"
             errors: 
                 expired access: "ဖေ့စ်ဘွတ်သို့ချိတ်ဆက်ထားသည့်သင်၏တိုကင်သက်တမ်းကုန်ပါပြီ။  သင်၏ကွန်ရက်ကိုဖယ်ရှားပြီးမှ ဖေ့စ်ဘွတ်ထဲသို့ပြန်ဝင်ပါ။"
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "အကောင့်ကိုဖန်တီးရန် စည်းကမ်းချက်နှင့်သတ်မှတ်ချက်တို့ကို သင်သဘောတူလက်ခံရမည်။"
         users confirm password matches: "စကားဝှက်အသစ်တစ်ချောင်နှင့်တစ်ချောင်းမကိုက်ညီပါ။"
@@ -792,6 +811,12 @@ my:
         none me: "သင်သည် မည်သည့်ဆုတံဆိပ်မျှမရသေးပါ။"
         none user: "%{username}သည် မည်သည့်ဆုတံဆိပ်မျှမရသေးပါ။"
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                other: "%{count} Days Ahead!"
+            missed days: 
+                other: "%{count} Missed Days"
         bible plan language: "ကျမ်းစာအစီအစဉ်အတွက်ဘာသာစကား"
         share plan: "@YouVersion #BiblePlan မှ %{plan_title}ကို စူးစမ်းကြည့်ပါ။"
         widget: 
@@ -832,6 +857,8 @@ my:
         none found: "သင်၏သတ်မှတ်ချက်နှင့်ကိုက်ညီသောအစီအစဉ်ကို ရှာမတွေ့ပါ။ ပို၍ကျယ်ပြန့်သောသတ်မှတ်ချက်ပေး၍ ရှာဖွေပါ။"
         about publisher: "ထုတ်ဝေသူအကြောင်း"
         overview: "အစီအစဉ်အကျဉ်း"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "ဤအစီအစဉ်ကိုစတင်ရန်"
         save for later: "နောင်အတွက်သိမ်းရန်"
         saved for later: "နောင်အတွက်သိမ်းပြီ"
@@ -926,6 +953,7 @@ my:
         must start to complete: "ဖတ်စရာပြီးမြောက်မှုကိုသိမ်းနိုင်ရန် ဤအစီအစဉ်ကိုစတင်ပါ။"
         invalid reference: "ဝမ်းနည်းပါသည်။ သင်ဖတ်နေသည့်ကျမ်းပိုဒ်နှင့်ဆက်စပ်သောကျမ်းပိုဒ်အချို့သည် သင်ရွေးထားသောဗားရှင်းထဲတွင်မရှိပါ။ အထက်ပါ အခြားဗားရှင်းကိုရွေးကြည့်ပါ။ ဤမက်ဆေ့ကိုဆက်၍တွေ့နေသည်ဆိုလျှင် ကျွန်ုပ်တို့၏ <a href='%{support_url}' target='_self'>အထောက်အကူအဖွဲ့ကို</a> အကြောင်းကြားပါ။"
         sidebar notice: "သင်သည် ဖတ်ရှုခြင်းအစီအစဉ်ကိုကြည့်ရှုနေသည်။"
+        congratulations: "Congratulations!"
         completed notice: "ဂုဏ်ယူပါသည်။ သင်သည် သင်၏ဖတ်ရှုခြင်းအစီအစဉ်ကိုပြီးမြောက်ခဲ့ပြီ။"
         exit: "ထွက်ရန်"
         loading sidebar content: "ဆောင်းပါးတို၏စာတမ်းတင်ရန်ဆောင်ရွက်နေပါသည်..."
@@ -1053,8 +1081,6 @@ my:
         partners text: "ကျမ်းစာထုတ်ဝေကြသည့် စေတနာပြည့်ဝသောမိတ်ဖက်များမပါဘဲ YouVersion သည် ကမ္ဘာအနှံ့ရှိလူစုအတွက် ဤမျှလောက်များသောကျမ်းစာကိုအလွယ်တကူစီစဉ်ပေး၍မရနိုင်ပါ။ YouVersion လုပ်ငန်းကိုပံ့ပိုးပေးသည့် အလွန်အရေးပါသောသူများအား မည်သို့ကျေးဇူးတင်နိုင်သနည်းဟုမေးမြန်းသောသူများစွာရှိသည်။ သူတို့အကြောင်း၊ သူတို့၏လုပ်ငန်းများအကြောင်းနှင့် သူတို့ကိုပံ့ပိုးပေးနိုင်သောနည်းလမ်းတို့ကို အောက်ပါလင့်ဖြင့် လေ့လာနိုင်ပါသည်။"
         translation title: "ကျွန်ုပ်တို့၏ဘာသာပြန်အဖွဲ့"
         learn more: "ပို၍လေ့လောရန်"
-        bible dot com title: "Bible.com အဟောင်း ဘာဖြစ်သွားသလဲ"
-        bible dot com copy: "Bud နှင့် Bettyတို့ စီစဉ်သော Miller Christ Unlimited Ministeries ဆောင်းပါး (သို့) Bible.com ဝက်ဆိုက်ဒ်အဟောင်းကို ရှာဖွေနေပါက <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a> ရှိ ဝက်ဘ်ဆိုက်အသစ်တွင် ဝင်ရောက်ကြည့်ရှုပါ။"
     press page: 
         title: "သတင်းကဏ္ဍ"
         contact header: "ဆက်သွယ်ရန်အချက်အလက်ကိုနှိပ်ပါ။"

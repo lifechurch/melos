@@ -91,6 +91,25 @@ mn:
             name: "Facebook"
             errors: 
                 expired access: "Facebook-ээр нэвтрэх эрх дууссан. Холболтоо шилжүүлэх эсвэл Facebook-ээр дахин холбогд."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Данс нээхдээ журамыг зѳвшѳѳрѳх шаардлагатай."
         users confirm password matches: "Шинэ нууц үгүүд таахгүй байна."
@@ -580,7 +599,7 @@ mn:
         no devices: "Таны YouVersion Бүртгэлд одоогоор ямар нэгэн хэрэгсэл холбогдоогүй байна."
         no devices download copy: "Энэхүү Библийн Апп нь YouVersion.com онлайн Библи дээр суурилагдсан бөгөөд бараг бүх төрлийн зөөврийн хэрэгсэлд үнэгүй суулгах боломжтой. Мөн энэ Апп нь хэрэглэгчдэд Библи унших, уншсан ишлэлүүдээ олон нийтийн сүлжээнд хуваалцах, дуртай ишлэлүүддээ хавчуурга үүсгэх зэрэг олон зүйл бий; хөдөлгөөнт амьдралын хэв маягт шаардлагатай бүхий л шинж чанарыг агуулсан. Гар утаснаасаа <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> орж Библийн Апп татаж авч өөрийн бүртгэлтэйгээ холбоно уу!"
         yes delete: "Тиймээ, Миний Бүртгэлийг устга"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "Таны хүссэнчлэн, бид таны YouVersion дансыг устгасан. Харамсалтай байна. Бурханы Үгтэй нөхөрлөхөд туслахуйц арга замыг та үргэлжлүүлэн эрж хайгаасай хэмээн бид чин сэтгэлээсээ найдаж байна."
         delete account description: "Хэрвээ та өөрийн мэдээллээ устгавал Bible.com ба Bible App дээрх таны бүх мэдээлэл, түүх ба хувийн болгосон бүхэн чинь (тэмдэглэлүүд, хавчуургууд, тодруулгууд) бүр мөсөн устах болно. Энэ үйлдлийг та эсвэл манай багынхан буцааж чадахгүй. Энэ үйлдлийг хийхдээ итгэлтэй байгаа бол дараагийн шатанд шилжээрэй."
         user recent activity: "%{user}-н Сүүлийн Үйл ажиллагаа"
         my notes: "Тэмдэглэлүүд"
@@ -803,6 +822,14 @@ mn:
         none me: "Та одоогоор ямар ч тэмдэгт цуглуулаагүй байна."
         none user: "%{username}  одоогоор ямар ч тэмдэгт аваагүй байна."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Библи Уншлагын Төлөвлөгөөний Хэл"
         share plan: "Энэ @YouVersion #БиблийнТѳлѳвлѳѳгѳѳг сонирхуулах уу: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ mn:
         none found: "Таны шаардлагад нийцсэн төлөвлөгөө олдсонгүй. Хайлтаа өргөжүүлж үзнэ үү."
         about publisher: "Нийтлэгчийн талаар"
         overview: "Төлөвлөгөөний Ерөнхий Байдал"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Энэ төлөвлөгөөг эхлэх"
         save for later: "Дараа харахаар Хадгалах"
         saved for later: "Дараа харахаар Хадгалсан"
@@ -939,6 +968,7 @@ mn:
         must start to complete: "Дууссан уншлагаа хадгалахаар энэ тѳлѳвлѳгѳѳг эхлэх уу!"
         invalid reference: "Уучлаарай, Энэхүү уншлагт Библийн нэг ишлэлийн дугаар нь таны сонгосон Библийн орчуулгат байхгүй байж болзошгүй. Дээрх жагсаалтаас та өөр нэг Библийн орчлуулгыг сонгож үзээрэй. Хэрэт та хэвээрээ энэхүү үгсийг хүлээн авсаар байвал, манай <a href='%{support_url}' target='_self'>дэмжлэгийн багт</a>  мэдэгдэнэ үү."
         sidebar notice: "Та унших тѳлѳвлѳгѳѳг харагдаж байна."
+        congratulations: "Congratulations!"
         completed notice: "Баяр Хүргье! Уншлагын Тѳлѳвлѳгѳѳгѳѳ дууссан."
         exit: "Гарах"
         loading sidebar content: "Мэдээлэл ачаалаж байна..."
@@ -1066,8 +1096,6 @@ mn:
         partners text: "YouVersion нь энэ олон Библийн орчуулгыг дэлхий даяар буй гишүүддээ сайхан сэтгэлт Библийн Нийгэмлэгүүдийн түншлэлгүйгээр хүргэх ямар ч боломжгүй билээ. Та нарын олонхи нь бидний зорилгод амин чухал дэмжлэг үзүүлэгч эдгээр дэмжигч нарт хэрхэн талархал илэрхийлэх талаар асууж байсан. Тэгвэл  тэдний тухай, үйлчлэл болон хэрхэн дэмжих талаар илүү дэлгэрэнгүйг доорхи холбоосуудаар үзнэ үү."
         translation title: "Манай Орчуулгын Багууд"
         learn more: "Илүү Мэдэх"
-        bible dot com title: "Хуучин Bible.com хайчсан бэ?"
-        bible dot com copy: "Хэрвээ та Буд болон Бэтти Миллер эсвэл Bible.com-с ямар нэгэн зүйл хайж байгаа бол тэдний шинэ вэб сайтаар зочлоорой.  <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Хэвлэл Мэдээлэлийн Хэсэг"
         contact header: "Хэвлэл Мэдээлэлийн Холбоо Барих Мэдээлэл"

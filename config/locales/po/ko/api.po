@@ -8,8 +8,8 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-04-25 09:52-0600\n"
-"PO-Revision-Date: 2016-04-25 09:52-0600\n"
+"POT-Creation-Date: 2016-06-13 09:26-0609\n"
+"PO-Revision-Date: 2016-06-13 09:26-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ko <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
@@ -61,7 +61,7 @@ msgid "moment.bookmark.title"
 msgstr "{name}님이 <b>{reference_human}{version_abbreviation} </b>에 책갈피를 표시했습니다."
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
-msgstr "대강절 묵상계획을 시작으로 성탄절을 준비해보세요,"
+msgstr "대강절 묵상 계획을 시작으로 성탄절을 준비해보세요,"
 
 msgid "moment.client_side.reading_plan_carousel.april.title"
 msgstr "새로운 묵상 계획을 통해서 믿음을 새롭게 해보세요."
@@ -127,7 +127,7 @@ msgid "moment.note.reference.self.title"
 msgstr "{reference_human}에 노트를 추가 하셨습니다. <b>{reference_human}에 노트를 추가 하셨습니다.</b>"
 
 msgid "moment.note.reference.title"
-msgstr "{name}님이 <b>{reference_human}에</b>노트를 추가 하셨습니다."
+msgstr "{name}님이 <b>{reference_human}에</b>노트를 추가했습니다."
 
 msgid "moment.note.self.title"
 msgstr "<b>{title}</b> 노트를 추가 하셨습니다."
@@ -142,19 +142,19 @@ msgid "moment.plan_completion.title"
 msgstr "{name}님이 묵상 계획을 완료하였습니다."
 
 msgid "moment.plan_completion.v2.self.title"
-msgstr "<b>{title}</b>묵상계획을 마쳤습니다."
+msgstr "<b>{title}</b> 묵상 계획을 마치셨습니다."
 
 msgid "moment.plan_completion.v2.title"
-msgstr "{name}님이 <b>{title}</b> 묵상계획을 마쳤습니다."
+msgstr "{name}님이 <b>{title}</b> 묵상 계획을 마치셨습니다."
 
 msgid "moment.plan_segment_completion.body"
 msgstr "{total_segments}  중  {segment}일 분량 ({percent_complete}%)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "<b>{title}</b> 묵상계획 중 <b>{segment}</b>일째 읽기를 마치셨습니다."
+msgstr "<b>{title}</b> 묵상 계획 중 <b>{segment}</b>일째 읽기를 마치셨습니다."
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name}님이 <b>{title}</b> 묵상계획 <b>{segment}</b>일째 읽기를 마쳤습니다."
+msgstr "{name}님이 <b>{title}</b> 묵상 계획 <b>{segment}</b>일째 읽기를 마치셨습니다."
 
 msgid "moment.plan_subscription.self.title"
 msgstr "묵상을 시작하셨습니다."
@@ -163,10 +163,10 @@ msgid "moment.plan_subscription.title"
 msgstr "{name}님이 묵상 계획을 시작하셨습니다."
 
 msgid "moment.plan_subscription.v2.self.title"
-msgstr "새로 <b>{title}</b>묵상계획을 시작했습니다."
+msgstr "새로 <b>{title}</b> 묵상 계획을 시작하셨습니다."
 
 msgid "moment.plan_subscription.v2.title"
-msgstr "{name}님이 <b>{title}</b> 묵상계획을 시작했습니다."
+msgstr "{name}님이 <b>{title}</b> 묵상 계획을 시작했습니다."
 
 msgid "moment.system.bafk.title"
 msgstr "댁의 자녀들이 하나님의 말씀을 사랑할 수있도록 도와주세요."

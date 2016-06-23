@@ -80,6 +80,25 @@ fa:
             name: "فیس‌بوک"
             errors: 
                 expired access: "زمان دسترسی شما توسط فیس‌بوک پایان یافته است٬ لطفاٌ دوباره به فیس‌بوک وصل شوید!‏"
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "برای ایجاد حساب کاربری، موافقت با شرایط و ضوابط الزامی است.‏"
         users confirm password matches: "کلمه‌های رمز جدید با هم مطابقت ندارند!‏"
@@ -569,7 +588,7 @@ fa:
         no devices: "هیچ دستگاهی به حساب یوورٓن شما وصل نشده است"
         no devices download copy: "براساس «کتاب‌مقدس» آنلاین و یوورژن، اَپ/برنامۀ کتاب‌مقدس رایگان است، و تقریباً در تمام دستگاه‌های موبایل قابل نصب می‌باشد. برنامۀ کتاب‌مقدس شامل امکانات فراوانی از جمله خواندن کلام، به اشتراک گذاشتن آیات در شبکه‌های اجتماعی، نشانه‌گذاری آیات مورد علاقه است. از طریق تلفن یا دیگر وسایل همراه خود به سایت زیر بروید: <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> و آپ «کتاب‌مقدس» را دانلود کنید و با حساب کاربری خود به آن وارد شوید!"
         yes delete: "بله، حساب کاربری من را حذف کن"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "حساب کاربری YouVersion شما طبق درخواستتان حذف گردید. ناراحت از جداشدن شما هستیم. امیدواریم که شما راههای سازنده ای برای خواندن کلام خداوند بیابید. "
         delete account description: "با حذف حساب کاربری، تمامی اطلاعات، تاریخچه و تنظیمات شخصی از جمله یادداشت‌ها، نشان‌گذاری‌ها و هایلایت‌های شما از سیستم «بایبل‌دات‌کام» و «برنامۀ کتاب‌مقدس» حذف می‌شود.‏ این اطلاعات توسط شما یا تیم ما قابل بازگرداندن نیست. اگر مطمئن هستید با انتخاب گزینۀ زیر به مرحلۀ بعد بروید.‏"
         user recent activity: "فعاليت‌هاى اخير %{user}"
         my notes: "يادداشت‌های من"
@@ -792,6 +811,12 @@ fa:
         none me: "شما هنوز نشانی دریافت نکرده‌اید"
         none user: "%{username} هنوز نشانی دریافت نکرده است."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                other: "%{count} Days Ahead!"
+            missed days: 
+                other: "%{count} Missed Days"
         bible plan language: "زبان برنامۀ مطالعه"
         share plan: "این برنامۀ مطالعه را در یوورژن امتحان کنید: %{plan_title}"
         widget: 
@@ -832,6 +857,8 @@ fa:
         none found: "برنامه‌ای متناسب با معیار شما يافت نشد. لطفاً جستجوى خود را گسترده‌تر كنيد."
         about publisher: "دربارۀ ناشر"
         overview: "نماى كلى برنامه"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "شروع این برنامه مطالعه"
         save for later: "دخیره برای استفاده درآینده"
         saved for later: "برای استفاده در آینده، ذخیره شد"
@@ -926,6 +953,7 @@ fa:
         must start to complete: "این برنامه را آغاز کنید تا مطالعات انجام شده را ذخیره نمایید!"
         invalid reference: "متأسفانه یکی از آیات مورد اشاره برای این مطالعه در ترجمهٔ انتخاب شده موجود نیست.لطفاً ترجمهٔ دیگری را از فهرست بالا انتخاب کنید.اگر باز این پیغام ظاهر شد، لطفاً این مشکل را به <a href='%{support_url}' target='_self'>تیم پشتیبانی فنی اطلاع دهید.</a>"
         sidebar notice: "شما در حال مشاهدهٔ برنامه‌ای برای مطالعه هستید."
+        congratulations: "Congratulations!"
         completed notice: "تبریک می‌گوییم! شما برنامهٔ مطالعه را تمام کردید"
         exit: "خروج"
         loading sidebar content: "محتوای نوار کناری در حال بارگذاری است..."
@@ -1053,8 +1081,6 @@ fa:
         partners text: "بدون مشارکت سخاوتمندانهٔ ناشران همکار، یوورژن قادر نبود کتاب‌مقدس را در دسترس خوانندگان در سراسر جهان قرار دهد. بسیاری از دوستان پرسیده‌اند که چگونه می‌توان از حامیان یوورژن قدردانی کرد. از طریق لینک‌های زیر می‌توانید بیشتر با آنها و فعالیت‌های‌شان و راه‌های حمایت از آنها اطلاع حاصل کنید.‏‏"
         translation title: "تیم‌های ترجمهٔ ما"
         learn more: "بیشتر بخوانید"
-        bible dot com title: " Bible.com ‏ دربارهٔ وب‌سایت قدیمی"
-        bible dot com copy: "اگر به دنبال مطالب سازمان کرایست آنلیمیتد مینیستری و یا باد و بتی میلر و یا سایت قدیمی bible.com هستید لطفاً به صفحه جدید آنها بروید: <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "محل مطبوعات"
         contact header: "اطلاعات تماس مطبوعات"
