@@ -80,7 +80,7 @@
 -if (controller_name == 'subscriptions')
   = render partial: "subscriptions/dayNav", locals: { subscription: subscription, day: day, day_status: day_status }
 
-.row.full.reader-content{"ng-hide" => "topPanelOpen"}
+.row.full.reader-content{"ng-hide" => "topPanelOpen", style: "margin: 0;"}
   .reader-left.large-3.columns{"ng-hide" => "isParallelMode || (showContent && isMobile)"}
     - unless (controller_name == 'references' || @sidebar == false || sidebar_presenter.blank?)
       = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}

@@ -471,6 +471,14 @@ ul.plan-results {
   .plan-overview {
     height: 170px;
 
+    .back {
+      float: $default-float;
+    }
+    
+    .settings {
+      float: $opposite-direction;
+    }
+    
     .img {
       display: block;
       margin: auto;
@@ -566,22 +574,26 @@ ul.plan-results {
 
     li {
       margin-bottom: 10px;
-      padding-left: 30px;
       height: 20px;
+    }
+    li.li-left {
+      padding-right: 30px;
+    }
+    li.li-right {
+      padding-left: 30px;
     }
 
     .check {
-      background: image_url("Check-Small.svg") no-repeat left bottom;
+      background: image_url("Check-Small.svg") no-repeat $default-float bottom;
     }
     .no-check {
-      background: image_url("Check-Unchecked.svg") no-repeat left bottom;
+      background: image_url("Check-Unchecked.svg") no-repeat $default-float bottom;
     }
   }
 
   .check-background {
     background: image_url("Check-Small.svg") no-repeat;
     background-position: 95%;
-    //height: 20px;
     width: 20px;
   }
 
@@ -594,6 +606,10 @@ ul.plan-results {
     width: 100%;
   }
 
+  .start-reading {
+    float: $opposite-direction;
+  }
+  
 }
 
 /* Devo Nav Bar */
@@ -626,8 +642,13 @@ ul.plan-results {
       .nav-img {
         width: 40px;
         height: 40px;
+        float: $default-float;
+      }
+      .nav-img.img-right {
+        margin-left: 10px;
+      }
+      .nav-img.img-left {
         margin-right: 10px;
-        float: left;
       }
 
       .nav-title {
@@ -635,13 +656,13 @@ ul.plan-results {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        text-align: left;
+        text-align: $default-float;
       }
       
       .nav-length {
         font-size: rem-calc(10);
         color: $gray_medium;
-        text-align: left;
+        text-align: $default-float;
       }
 
     }

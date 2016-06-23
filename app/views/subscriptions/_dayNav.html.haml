@@ -38,32 +38,38 @@
   .row.full.b-border.nav-bar.white.columns
     .columns.large-3.medium-3.medium-centered.text-center.nav-elements
       .left
-        = link_to(back_path, "target" => "_self" ) do
-          - if is_rtl?
-            = image_tag image_path("Circle-Green-Arrow-Left.svg")
-          - else
+        - if is_rtl?
+          = form_tag(forward_path, method: :put, id: 'plan_next_form') do
+            - if show_complete
+              %a{'onClick' => 'document.getElementById("plan_next_form").submit()'}
+                = image_tag image_path("Circle-Green-Check.svg")
+            - else
+              %a{'onClick' => 'document.getElementById("plan_next_form").submit()'}
+                = image_tag image_path("Circle-Green-Arrow-Left.svg")
+
+        - else
+          = link_to(back_path, "target" => "_self" ) do
             = image_tag image_path("Circle-Left-Arrow.svg")
 
       .right
         -if day_status && !day_status.references.empty?
           -#= link_to(forward_path, "target" => "_self" ) do
-          = form_tag(forward_path, method: :put, id: 'plan_next_form') do
-            - if show_complete
-              %a{'onClick' => 'document.getElementById("plan_next_form").submit()'}
-                - if is_rtl?
-                  = image_tag image_path("Circle-Right-Arrow.svg")
-                - else
+          - if is_rtl?
+            = link_to(back_path, "target" => "_self" ) do
+              = image_tag image_path("Circle-Right-Arrow.svg")
+
+          -else
+            = form_tag(forward_path, method: :put, id: 'plan_next_form') do
+              - if show_complete
+                %a{'onClick' => 'document.getElementById("plan_next_form").submit()'}
                   = image_tag image_path("Circle-Green-Check.svg")
-            - else
-              %a{'onClick' => 'document.getElementById("plan_next_form").submit()'}
-                - if is_rtl?
-                  = image_tag image_path("Circle-Right-Arrow.svg")
-                - else
+              - else
+                %a{'onClick' => 'document.getElementById("plan_next_form").submit()'}
                   = image_tag image_path("Circle-Green-Arrow-Right.svg")
 
       .nav-content
         - if subscription.small_thumbnail_image.present?
-          .nav-img= image_tag subscription.small_thumbnail_image.url
+          %img.nav-img{src: subscription.small_thumbnail_image.url, class: "#{is_rtl? ? 'img-right' : 'img-left'}"}
         .nav-title= subscription.name
         %p.nav-length!= "#{t('plans.day number', { day: day })} &bull; #{t('plans.which reading', { current: display_ref_number, total: display_total_refs })}"
 
