@@ -125,7 +125,24 @@ module Presenter
       nil
     end
 
+    def on_track_status
+      today = Date.today()
 
+      missed_days = 0
+      ahead_days = 0
+
+      subscription.day_statuses.each do |cur_status|
+        cur_date = Date.parse(cur_status.date)
+        is_active = cur_status.day.equal? day
+
+        missed_days = missed_days + 1 if !cur_status.completed && cur_date < today
+        ahead_days = ahead_days + 1 if cur_status.completed && cur_date > today
+      end
+
+      return "behind #{missed_days}" if missed_days > 0
+      return "ahead #{ahead_days}" if ahead_days > 0
+      return "on track"
+    end
 
   end
 end

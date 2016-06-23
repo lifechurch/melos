@@ -67,7 +67,7 @@
         = link_to start_reading_path, target: "_self", class: 'solid-button green' do
           = t("plans.widget.start reading")
 
-      %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: subscription.total_days).html_safe} &bull; On Track"
+      %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: subscription.total_days).html_safe} &bull; On Track #{presenter.on_track_status}"
 
       %ul.no-bullets
 
