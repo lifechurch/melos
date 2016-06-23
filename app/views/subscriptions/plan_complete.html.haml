@@ -30,7 +30,7 @@
   %button.solid-button.share-button{ "ng-click" => "showShare = !showShare", "href" => "#" }
     != t("moments.action.share")
   %div.share-panel.ng-hide{"ng-show" => "showShare"}
-    %div.video.addthis_sharing_toolbox{:data => {:url => "#{request.original_url}", :title => "#{@presenter.subscription.title}"}}
+    %div.video.addthis_sharing_toolbox{:data => {:url => "#{plan_url(id: @presenter.subscription)}", :title => "#{@presenter.subscription.title}"}}
 
 .row.medium-centered.text-center
   %a

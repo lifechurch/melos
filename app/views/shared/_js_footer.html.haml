@@ -1,7 +1,7 @@
 -#= javascript_include_tag "/assets/angular/angular.min.js"
 -#= javascript_include_tag "/assets/angular/app"
 
--if (controller_name != 'subscriptions' || action_name == 'show')
+-if (controller_name != 'subscriptions' || action_name == 'show' || action_name == 'update')
   :javascript
     if($('#choose_language').length) {
       var language_menu   = new LanguageMenu("#choose_language");
