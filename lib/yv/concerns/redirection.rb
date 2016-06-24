@@ -85,6 +85,14 @@ module YV
                 show:     "reading_plan_detail?id=#{params[:id].match /(\d+)/ if params[:id].present?}",
                 sample:   "reading_plan_day?id=#{params[:id].match /(\d+)/ if params[:id].present?}&day=#{params[:day] if params[:day].present?}"
               },
+            languages:
+              {
+                show:     "language?id=#{params[:id]}"
+              },
+            versions:
+              {
+                show:     "version?id=#{params[:id].to_s.split("-").first}"
+              },
             subscriptions:
               {
                 # index:    "my_reading_plans",
@@ -99,7 +107,7 @@ module YV
               },
             references:
               {
-                # show:     "bible?reference=#{params[:reference]}&version=#{params[:version]}"
+                show:     "bible?reference=#{params[:reference]}&version_id=#{params[:version]}"
               },
             friendships:
               {
@@ -129,12 +137,39 @@ module YV
           @user_agent = "android"
         end
         @native_path = dict[controller_name][action_name] rescue nil
+
+        # fix the path for android where it requires version_id instead of version
+        if @user_agent.eql?("android") and controller_name.eql?("references") and action_name.eql?("show")
+          @native_path = @native_path.gsub("version_id=", "version=")
+        end
+
         @native_url = "youversion://#{@native_path}" if @native_path.present?
+
         if current_auth.nil?
           session[:native_url] = @native_url
           session[:user_agent] = @user_agent
         end
-        
+
+        # chrome intent deep link specifically for Android Chrome:
+        ##########################################################
+
+        # if its a bot don't do anything with chrome intents that might confuse site indexing
+        unless googleBot?(request)
+          # if ret=1 in querystring don't do chrome intents (browser_fallback url has ?ret=1) so the fallback should not use the chrome intent
+          unless params.has_key?(:ret)
+            # only use chrome intent if the referrer is empty or not from the bible.com (i.e. allow browsing of the site itself)
+            if request.referrer.nil? or not request.referrer.include?(request.domain)
+              browser = Browser.new(request.env["HTTP_USER_AGENT"])
+              if browser.platform.android? and browser.chrome? and not @native_path.nil?
+                android_scheme = "youversion"
+                android_package = "com.sirma.mobile.bible.android"
+                encoded_browser_fallback = ERB::Util.url_encode("#{request.base_url}#{request.path}?ret=1")
+                intent_url = "intent://#{@native_path}#Intent;scheme=#{android_scheme};package=#{android_package};S.browser_fallback_url=#{encoded_browser_fallback};end;"
+                redirect_to intent_url, :status => 307 and return
+              end
+            end
+          end
+        end
       end
 
     end

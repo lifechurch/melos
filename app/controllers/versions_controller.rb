@@ -2,13 +2,14 @@ class VersionsController < ApplicationController
 
   before_filter -> { set_cache_headers 'short' }, only: [:index]
   before_filter -> { set_cache_headers 'long' }, only: [:show]
+  prepend_before_filter :mobile_redirect, only: [:show]
 
   def index
     @versions_by_lang = Version.all_by_language({:only => @site.versions})
-    primary_locale = Version.find(params[:context_version]).language.tag rescue nil if params[:context_version].present?
-    primary_locale ||= I18n.locale.to_s
-    primary_locale = "en" if primary_locale == "en-GB" #TODO fix.this.hack
-    primary_locale = "pt-BR" if primary_locale == "pt"
+    primary_locale = Version.find(params[:context_version]).language.id rescue nil if params[:context_version].present?
+    primary_locale ||= YV::Conversions.to_bible_api_lang_code(I18n.locale.to_s)
+    primary_locale = "eng" if YV::Conversions.bible_to_app_lang_code(primary_locale) == "en-GB" #TODO fix.this.hack
+    primary_locale = YV::Conversions.to_bible_api_lang_code("pt-BR") if YV::Conversions.bible_to_app_lang_code(primary_locale) == "pt"
     cur_lang = Hash[primary_locale, @versions_by_lang.delete(primary_locale)]
 
     if params[:single_locale].present?

@@ -203,12 +203,18 @@
   %md-menu-item{"ng-if" => "moment.object.references.length"}
     %md-button{"ng-href" => "{{getReadLink('#{reference_path}')}}", target: "_self"}
       =t("moments.action.read in bible")
+  %md-menu-item{"ng-if" => "moment.object.actions.read_plan || (moment.object.actions.start_plan && moment.object.subscribed)"}
+    %md-button{"ng-href" => "#{subscriptions_path(user_id: current_user.to_param)}/{{moment.object.plan_id}}{{moment.object.segment ? '?day=' + moment.object.segment : ''}}", target: "_self"}
+      =t("moments.action.read plan")
   %md-menu-item{"ng-if" => "moment.object.actions.about_plan"}
     %md-button{"ng-href" => "{{moment.object.action_url}}", target: "_self"}
-      =t("moments.action.about plan")
+      =t("EventsAdmin.features.EventEdit.features.preview.components.PreviewTypePlan.info")
   %md-menu-item{"ng-if" => "moment.object.actions.deletable"}
     %md-button{"ng-click" => "delete()"}
       =t("moments.action.delete")
   %md-menu-item{"ng-if" => "moment.object.actions.start_plan && !moment.object.subscribed"}
     %md-button{"ng-click" => "startPlan('#{t('ui.plans.privacy')}', '#{t('ui.yes button')}', '#{t('ui.no button')}', '#{t('ui.cancel')}', '#{t('moments.action.start plan')}', '#{subscriptions_path(user_id: current_user.to_param)}', '#{form_authenticity_token}', $event)"}
       =t("moments.action.start plan")
+  %md-menu-item{"ng-if" => "moment.object.actions.start_plan && !moment.object.subscribed"}
+    %md-button
+      %a{"save-for-later" => true, "save-label" => "#{t('plans.save for later')}", "remove-label" => "#{t('plans.saved for later')}", "saved" => "moment.object.saved", "base-path" => "#{subscriptions_path(user_id: current_user.to_param)}", "plan-id" => "moment.object.plan_id",  "check-icon-path" => "#{image_path('icon-plans-checkmark.svg')}" }= t('plans.save for later')

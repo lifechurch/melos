@@ -33,6 +33,7 @@ gem 'stringex', '~> 1.5.1'
 
 # Locked to 0.8.2 due to Marshall.dump bug in 0.8.3 (affecting memcache)
 gem 'httparty',               '0.8.2'
+gem 'browser',                '~> 2.1.0'
 gem 'curb'
 gem 'http_accept_language',   '~> 1.0.2'
 gem 'koala',                  '~> 1.10.0'
@@ -53,7 +54,7 @@ gem 'handlebars_assets',      '~> 0.14.0'
 gem 'foundation-rails',       '~> 5.5.2.1'
 gem 'angularjs-rails'
 gem 'angular-ui-router-rails'
-# , :git => 'git@github.com:iven/angular-ui-router-rails.git'
+#:git => 'git@github.com:iven/angular-ui-router-rails.git'
 
 # Using locale files directly in /config/locales/rails-i18n until gem supports
 # aliasing (or we come up with a way to resolve differences between gem lang

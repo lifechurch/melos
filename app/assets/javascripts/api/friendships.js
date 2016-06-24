@@ -16,7 +16,7 @@ angular.module('api.friendships', [])
             },
 
             deny: function(id, token) {
-                return RailsHttp.delete('/friendships?user_id=' + id, token);
+                return RailsHttp.delete('/friendships/' + id, token);
             }
         };
     }])
