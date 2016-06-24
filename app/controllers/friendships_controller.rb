@@ -3,7 +3,7 @@ class FriendshipsController < ApplicationController
   respond_to :html, :json
 
   before_filter :force_login
-  prepend_before_filter :mobile_redirect, only: [:requests]
+  prepend_before_filter :mobile_redirect, only: [:requests], :unless => lambda{ |controller| controller.request.format.json? }
 
   def requests
     @friendships = Friendships.incoming(page: @page, auth: current_auth)

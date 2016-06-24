@@ -1,5 +1,7 @@
 class LanguagesController < ApplicationController
 
+  prepend_before_filter :mobile_redirect, only: [:show]
+
   def index
     @versions_by_lang = Version.all_by_language({:only => @site.versions})
   end
