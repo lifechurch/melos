@@ -50,7 +50,7 @@ YouversionWeb::Application.routes.draw do
   get "/kinders",         to: "redirects#kinderbybel"
   get "/kinderbybel",     to: "redirects#kinderbybel"
   get "/bybelvirkinders", to: "redirects#kinderbybel"
-  get "/pambatang",       to: "redirects#pambatang"
+  get "/pambata",       to: "redirects#pambatang"
   get "/pambatangbibleapp", to: "redirects#pambatang"
 
   get "/trending-bible-verses", to: "pages#trending"
