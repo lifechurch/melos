@@ -17,4 +17,9 @@ class EventsController < ApplicationController
 
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
+
+
+  @locale = I18n.locale
+
+
 end
