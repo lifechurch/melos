@@ -134,6 +134,7 @@ class SubscriptionsController < ApplicationController
     # Completing a day of reading
     if(params[:completed])
       @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
+      @subscription = subscription_for(params[:id])
       self.presenter = Presenter::Subscription.new( @subscription , params, self)
 
       if !@subscription.completed?

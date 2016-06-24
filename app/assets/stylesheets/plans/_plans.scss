@@ -401,6 +401,7 @@ ul.plan-results {
       padding: 0;
       z-index:1;
       &.slick-disabled {
+        opacity: 0.25 !important;
         background: none;
         cursor: default;
       }
@@ -421,10 +422,6 @@ ul.plan-results {
     .slick-prev:hover {
       opacity: 1;
     }
-    //.slick-track {
-    //  overflow: hidden;
-    //  margin: 0 0 0 -10px;
-    //}
 }
 
 
@@ -520,6 +517,10 @@ ul.plan-results {
         margin-right: 30px;
       }
       border: solid 1px $lightGray;
+    }
+
+    .slick-disabled {
+      opacity: 0.25 !important;
     }
   }
 
