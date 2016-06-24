@@ -91,6 +91,25 @@
             name: "Facebook"
             errors: 
                 expired access: "Tilgangsbeviset ditt hos Facebook er utgått. Vennligst fjern koblingen din og koble til Facebook på nytt."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Du må godta brukervilkårene før du registrerer deg."
         users confirm password matches: "Passordene samsvarer ikke"
@@ -580,7 +599,7 @@
         no devices: "Ingen enheter er knyttet til din YouVersion konto"
         no devices download copy: "Bibel-appen er basert på nettbibelen YouVersion, og er en gratis Bibel som kan installeres på nesten alle mobile enheter. Bibel-appen lar brukerne lese Bibelen, dele vers med deres sosiale nettverk, lage bokmerker for favorittversene sine og mer - alt i et format tilpasset vår stadig mer mobile livsstil. Besøk <a href='https://www.bible.com/app' target='_self'>bible.com/app</a>fra din mobile enhet for å laste ned Bibel-appen og koble til kontoen din!"
         yes delete: "Ja, slett min brukerkonto"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "Vi har slettet YouVersion-kontoen din, slik som du ba om.  Vi er lei oss for at du tar farvel. Vi håper inderlig at du fortsatt lar deg engasjere av Guds ord, og at du finner meningsfulle måter å gjøre dette på. "
         delete account description: "Hvis du sletter kontoen din vil du permanent slette all informasjon, historikk og tilpasninger som notater, bokmerker, uthevinger hos Bible.com og i bibelappen. Denne handlingen kan ikke reverseres av vårt team. Hvis du er sikker på at du vil gå videre, fortsett under."
         user recent activity: "%{user}s nylige aktivitet"
         my notes: "Notater"
@@ -803,6 +822,14 @@
         none me: "Du har ikke fått noen merker ennå"
         none user: "%{username} har ikke fått noen merker ennå."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Bibel-plan språk"
         share plan: "Sjekk ut denne @YouVersion #Bibelleseplan: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@
         none found: "Vi fant ingen planer i tråd med dine kriterier. Prøv å utvide søket."
         about publisher: "Om utgiver"
         overview: "Oversikt over plan"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Start plan"
         save for later: "Spar for senere"
         saved for later: "Lagret for senere"
@@ -939,6 +968,7 @@
         must start to complete: "Abonner på denne planen for å lagre det du har lest."
         invalid reference: "Beklager, men en av skrifthenvisningene i denne andakten finnes ikke i den valgte bibelutgaven. Forsøk å velge en av de andre bibelutgavene ovenfor. Om du fremdeles får denne meldingen, meld fra om problemet til vårt <a href='%{support_url}' target='_self'>support team</a>."
         sidebar notice: "Du viser en leseplan"
+        congratulations: "Congratulations!"
         completed notice: "Gratulerer! Du har fullført din leseplan."
         exit: "Avslutt"
         loading sidebar content: "Laster innhold fra sidemenyen..."
@@ -1066,8 +1096,6 @@
         partners text: "Uten våre generøse partnere - bibelselskapene, ville ikke YouVersion være i stand til å tilby vårt globale nettsamfunn tilgang på så mange bibeloversettelser. Mange av dere har spurt hvordan man kan takke disse uvurderlige støttespillerne. Gjennom lenkene nedenfor kan du lære mer om dem, deres arbeid og om hvordan du kan støtte dem."
         translation title: "Våre team med oversettere"
         learn more: "Lær mer"
-        bible dot com title: "Hva skjedde med den gamle Bible.com?"
-        bible dot com copy: "Hvis du leter etter 'Christ Unlimited Ministries' med Bud og Betty Miller, eller det gamle nettstedet: Bible.com, gå til deres nye nettsted på <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Presseområde"
         contact header: "Informasjon om pressekontakter"

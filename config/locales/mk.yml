@@ -91,6 +91,25 @@ mk:
             name: "Facebook"
             errors: 
                 expired access: "Вашиот токен за пристап преку Facebook истече. Ве молиме одјавете се од Facebook и повторно најавете се."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Мора да се согласите со Условите за користење за да се претплатите."
         users confirm password matches: "Лозинките не се совпаѓаат."
@@ -580,7 +599,7 @@ mk:
         no devices: "Ниту еден уред не е поврзан со твојот YouVersion профил"
         no devices download copy: "Напојувана од Библијата, достапна на Интернет преку YouVersion.com, апликацијата „Библија“ е бесплатна мобилна Библија која може да се инсталира речиси на секој телефон. Апликацијата „Библија“ овозможува корисниците да ја читаат Библијата, да споделуваат стихови на нивните социјални мрежи, да ги обележуваат омилените стихови, и повеќе — сето тоа во формат кој е во тек со нивниот мобилен животен стил. Посети ја <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> на твојот телефон за да ја симнеш апликацијата „Библија“ и да се поврзеш со твојот профил!"
         yes delete: "Да, избриши го мојот YouVersion профил"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "Твојата YouVersion сметка е избришана, како што е побарано. Жал ни е што си заминуваш. Искрено се надеваме дека ќе продолжиш да бараш значајни начини преку кои ќе се поврзеш со Божјиот Збор."
         delete account description: "Ако ја избришеш твојата сметка, трајно ќе избришеш лични податоци, историја и поставки (како на пр. белешки, обележувачи, нагласувања и сл.) во Bible.com и апликацијата „Библија”. Овој процес неможе да биде вратен наназад ниту од нас, ниту пак од нашиот тим. Ако си сигурен дека сакаш да продолжиш со процесот, тогаш повели според упатствата подолу."
         user recent activity: "Скорешните активности на %{user}"
         my notes: "Белешки"
@@ -803,6 +822,14 @@ mk:
         none me: "Немаш добиено ниту еден беџ."
         none user: "Корисникот %{username} нема добиено ниту еден беџ."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Јазик на Планот за читање"
         share plan: "Види го овој @YouVersion #БиблискиПлан: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ mk:
         none found: "Не можеме да најдеме план според критериумот. Направи го критериумот за пребарување поопшт."
         about publisher: "За издавачот"
         overview: "Преглед на планот"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Почни со овој план"
         save for later: "Зачувај за подоцна"
         saved for later: "Зачувано за подоцна"
@@ -939,6 +968,7 @@ mk:
         must start to complete: "Започни со овој план за да го зачуваш целото читање!"
         invalid reference: "Библиските референци за ова читање не  постојат во избраната верзија. Избери различна верзија. Ако продолжиш да ја добиваш оваа порака, ве молиме сподели ја со нашиот\n<a href='%{support_url}' target='_self'>тим за подршка</a>."
         sidebar notice: "Го гледате планот за читање"
+        congratulations: "Congratulations!"
         completed notice: "Честитки! Вие го завршивте вашиот План за читање."
         exit: "Излез"
         loading sidebar content: "Ја вчитувам страничната лента..."
@@ -1066,8 +1096,6 @@ mk:
         partners text: "Без нашите дарежливи партнери за издавање на Библијата, YouVersion немаше да може да понуди толку многу Библии на нашата заедница ширум светот. Многумина прашувате како да им се заблагодарите на овие важни поддржувачи на мисијата на YouVersion. Можете да дознаете за нив, нивните служби, и начините на кои не поддржуваат на следните линкови."
         translation title: "Нашиот тим на преведувачи"
         learn more: "Дознај повеќе"
-        bible dot com title: "Што се случи со стариот сајт Bible.com?"
-        bible dot com copy: "Ако ги барате Christ Unlimited Ministries од Бад и Бети Милер или стариот Bible.com сајт, посетете го нивниот нов сајт на <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Дел за медиуми"
         contact header: "Контакт информации за медиуми"

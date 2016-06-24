@@ -1002,6 +1002,10 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://www.bible.com/ur/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>https://www.bible.com/ja/kids</loc>
     <priority>1</priority>
   </url>

@@ -91,6 +91,25 @@ fi:
             name: "Facebook"
             errors: 
                 expired access: "Pääsytunnuksesi Facebookiin on vanhentunut. Poista yhteys Facebookiin ja luo yhteys uudelleen."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Sinun täytyy hyväksyä käyttöehdot rekisteröityäksesi."
         users confirm password matches: "Salasanat eivät täsmää."
@@ -580,7 +599,7 @@ fi:
         no devices: "Ei laitteita kytkettynä YouVersion-tiliisi"
         no devices download copy: "YouVersionin verkkoraamattuun perustuva Raamattusovellus on ilmainen Raamattu, jonka voi asentaa lähes kaikkiin mobiililaitteisiin. Raamattusovelluksessa voit lukea Raamattua, jakaa jakeita yhteisöpalveluihin, lisätä kirjanmerkkejä lempikohtiin ja paljon muuta—kaikki tämä on saatavilla paikasta riippumatta. Lataa Raamattusovellus mobiililaitteellesi osoitteesta <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> ja yhdistä laite tiliisi!"
         yes delete: "Kyllä, poista tilini"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "YouVersion-tilisi on nyt poistettu pyyntösi mukaisesti. Harmi, että olet lähdössä. Toivomme, että etsit jatkossakin mielekkäitä tapoja tutustua Jumalan sanaan."
         delete account description: "Jos poistat tilisi, kaikki tietosi, toimintahistoria ja personointi (kuten muistiinpanot, kirjanmerkit, korostukset jne.) tuhoutuvat välittömästi Bible.com-sivustolta ja Raamattusovelluksesta. Tätä toimintoa ei voi perua. Jos varmasti haluat edetä, jatka alta."
         user recent activity: "Käyttäjän %{user} viimeaikainen toiminta"
         my notes: "Muistiinpanot"
@@ -803,6 +822,14 @@ fi:
         none me: "Et ole vielä ansainnut yhtään ansiomerkkiä."
         none user: "%{username} ei ole ansainnut yhtään ansiomerkkiä."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Lukusuunnitelman kieli"
         share plan: "Vilkaise tätä @YouVersion -lukusuunnitelmaa #BiblePlan: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ fi:
         none found: "Emme löytäneet hakuehtoihisi sopivaa suunnitelmaa. Kokeile hakuehtojen laajentamista."
         about publisher: "Tietoa julkaisijasta"
         overview: "Suunnitelman yleiskatsaus"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Aloita tämä suunnitelma"
         save for later: "Laita muistiin"
         saved for later: "Tallennetut"
@@ -939,6 +968,7 @@ fi:
         must start to complete: "Aloita tämä suunnitelma tallentaaksesi jo luetut kohdat!"
         invalid reference: "Pahoittelemme, yhtä tämän luvun tekstiviittausta ei löydy valitusta käännöksestä. Valitse toinen käännös yläpuolelta. Jos edelleen näet tämän viestin, ilmoita asiasta <a href='%{support_url}' target='_self'>tukeemme</a>."
         sidebar notice: "Katselet lukusuunnitelmaa."
+        congratulations: "Congratulations!"
         completed notice: "Onneksi olkoon, olet suorittanut lukusuunnitelman!"
         exit: "Poistu"
         loading sidebar content: "Ladataan sisältöä..."
@@ -1066,8 +1096,6 @@ fi:
         partners text: "Ilman avokätisiä Raamatunjulkaisijakumppaneita YouVersion ei pystyisi tarjoamaan maailmanlaajuiselle yhteisöllemme niin monia Raamattuja. Monet ovat kysyneet, miten voisivat kiittää näitä elintärkeitä YouVerisionin työn tukijoita. Saat lisätietoa heistä, heidän palvelumuodoistaan ja tavoista tukea heitä alla olevien linkkien kautta."
         translation title: "Käännöstiimimme"
         learn more: "Lisätietoja"
-        bible dot com title: "Mitä tapahtui vanhalle Bible.com -sivustolle?"
-        bible dot com copy: "Jos etsit Bud ja Betty Millerin Christ Unlimited Ministriesin sisältöä tai vanhaa Bible.com- sivustoa, pistäydy heidän uudella sivustollaan osoitteessa <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Medialle"
         contact header: "Viestinnän yhteystiedot"

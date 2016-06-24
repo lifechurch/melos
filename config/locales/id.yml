@@ -80,6 +80,25 @@ id:
             name: "Facebook"
             errors: 
                 expired access: "Token akses Anda telah habis masa berlakunya oleh Facebook. Mohon putuskan koneksi dan sambungkan kembali ke Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Anda harus menyetujui syarat dan ketentuan untuk membuat akun."
         users confirm password matches: "Kata sandi yang baru tak sesuai."
@@ -792,6 +811,12 @@ id:
         none me: "Anda belum memperoleh lencana apapun."
         none user: "%{username} belum memperoleh lencana apapun."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                other: "%{count} Days Ahead!"
+            missed days: 
+                other: "%{count} Missed Days"
         bible plan language: "Bahasa Rencana Alkitab"
         share plan: "Cek ini @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -832,6 +857,8 @@ id:
         none found: "Kami tidak menemukan rencana sesuai kriteria Anda. Cobalah perluas pencarian Anda."
         about publisher: "Perihal Penerbit"
         overview: "Ikhtisar Rencana"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Mulai Rencana ini"
         save for later: "Simpan untuk Nanti"
         saved for later: "Tersimpan untuk Nanti"
@@ -926,6 +953,7 @@ id:
         must start to complete: "Mulai rencana ini untuk menyimpan bacaan yang telah selesai!"
         invalid reference: "Maaf, ayat rujukan untuk bacaan ini belum tersedia pada versi yang dipilih. Cobalah pilih versi berbeda di atas. Jika Anda tetap melihat pesan ini, silakan beritahu <a href='%{support_url}' target='_self'>tim dukungan</a> kami tentang isu ini."
         sidebar notice: "Anda sedang melihat rencana bacaan."
+        congratulations: "Congratulations!"
         completed notice: "Selamat! Anda telah menyelesaikan rencana bacaan Anda"
         exit: "Keluar"
         loading sidebar content: "Memuat konten  bilah samping..."
@@ -1053,8 +1081,6 @@ id:
         partners text: "Tanpa mitra-mitra penerbit Alkitab kami yang dermawan, YouVersion takkan mampu menyediakan begitu banyak Alkitab bagi komunitas dunia. Banyak dari Anda bertanya bagaimana Anda dapat berterima kasih kepada para pendukung penting misi YouVersion ini. Anda dapat belajar lebih banyak tentang mereka, pelayanan mereka, dan berbagai cara mendukung mereka melalui tautan di bawah ini."
         translation title: "Tim Penerjemah Kami"
         learn more: "Pelajari Lebih Lanjut"
-        bible dot com title: "Apa yang terjadi dengan Bible.com yang lama?"
-        bible dot com copy: "Jika Anda mencari pesan Christ Unlimited Ministries oleh Bud dan Betty Miller atau situs lama Bible.com, silakan kunjungi situs baru mereka di <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Area Pers / Media"
         contact header: "Informasi Kontak Pers/Media"

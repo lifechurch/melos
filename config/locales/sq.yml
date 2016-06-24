@@ -91,6 +91,25 @@ sq:
             name: "Facebook"
             errors: 
                 expired access: "Vula e hyrjes tënde ka skaduar nga Facebook. Ju lutemi hiqeni lidhjen dhe lidhuni sërish me rrjetin social Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Ju duhet të pajtoheni me rregullat dhe kushtet për të krijuar një llogari."
         users confirm password matches: "Fjalëkalimet e reja nuk përputhen."
@@ -580,7 +599,7 @@ sq:
         no devices: "Asnjë pajisje nuk është e lidhur me llogarinë tuaj YouVersion"
         no devices download copy: "I bazuar në Biblën online, YouVersion, Programi i Biblës është një Bibël falas e lëvizshme që mund të instalohet pothuaj në çdo pajisje të lëvizshme. Programi i Biblës u mundëson përdoruese të lexojnë Biblën, të ndajnë vargje në rrjetet e tyre sociale, të shënojnë pjesët e tyre të preferuara dhe jo vetëm kaq—të gjitha në një format që ruan mënyrën e tyre të jetesës gjithnjë e më shumë në lëvizje. Vizitoni <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> nga pajisja juaj e lëvizshme për të shkarkuar Programin e Biblës dhe për të lidhur llogarinë tuaj!"
         yes delete: "Po, fshije llogarinë time"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "Ne e kemi fshirë llogarinë tuaj YouVersion, sikurse kërkuat. Na vjen keq që ju shohim të largoheni. Ne shpresojmë sinqerisht që ju do të vazhdoni të ndiqni mënyra domethënëse që të angazhoheni me Fjalën e Perëndisë."
         delete account description: "Nëse e fshin llogarinë, do të heqësh përherë të gjitha informatat e tua, historinë dhe personalizimet (si shënimet, shenjuesit, theksimet etj.) brenda Bible.com dhe Programit të Biblës. Ky veprim nuk mund kthehet mbrapsht nga ju apo nga ekipi ynë. Nëse je i sigurt që dëshiron ta bësh këtë veprim, vazhdo më poshtë."
         user recent activity: "Aktiviteti i fundit për përdoruesin %{user}"
         my notes: "Shënime"
@@ -803,6 +822,14 @@ sq:
         none me: "Ju nuk keni fituar akoma ndonjë emblemë."
         none user: "Përdoruesi %{username} nuk ka fituar akoma ndonjë emblemë."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Gjuha e Planit të Biblës"
         share plan: "Hidhi një sy këtij #PlaniBiblik @YouVersion: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ sq:
         none found: "Ne nuk mundëm të gjenim një plan që i përshtatet kriterit tuaj. Provoni të zgjeroni kërkimin tuaj."
         about publisher: "Rreth publikuesit"
         overview: "Përmbledhje e planit"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Fillo këtë plan"
         save for later: "Ruaje për më vonë"
         saved for later: "U ruajt për më vonë"
@@ -939,6 +968,7 @@ sq:
         must start to complete: "Filloje këtë plan për të ruajtur leximet e përfunduara!"
         invalid reference: "Na vjen keq, një nga referimet biblike për këtë lexim mund të mos ekzistojë në versionin e zgjedhur. Provoni të zgjidhni një version tjetër, lart. Nëse vazhdoni ta shihni këtë mesazh, bëjani të ditur <a href='%{support_url}' target='_self'>grupit të ndihmës</a> këtë problem."
         sidebar notice: "Jeni duke parë një plan leximi."
+        congratulations: "Congratulations!"
         completed notice: "Përgëzime! Ju e përfunduat planin tuaj të leximit."
         exit: "Dil"
         loading sidebar content: "Duke vendosur përmbajtjen e kolonës anësore..."
@@ -1066,8 +1096,6 @@ sq:
         partners text: "Pa partnerët tanë publikues bujarë të Biblës, YouVersion thjesht nuk do të kishte mundësi t'i siguronte komunitetin tonë botëror kaq shumë Bibla. Shumë nga ju kanë pyetur se si mund të falënderoni këta mbështetës thelbësorë të misionit të YouVersion. Ju mund të mësoni më tepër rreth tyre, shërbesave të tyre dhe mënyrave se si mund t'i mbështesni nëpërmjet hallkave lidhëse më poshtë."
         translation title: "Skuadrat tona të përkthimit"
         learn more: "Mëso më shumë"
-        bible dot com title: "Çfarë ndodhi me uebfaqen e vjetër Bible.com?"
-        bible dot com copy: "Nëse jeni duke kërkuar përmbajtje nga Bud dhe Betty Miller apo uebfaqen e vjetër Bible.com ju lutemi vizitoni uebfaqen e tyre të re në <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Zona e shtypit"
         contact header: "Informacion kontakti për shtypin"

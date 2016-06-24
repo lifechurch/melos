@@ -91,6 +91,25 @@ af:
             name: "Facebook"
             errors: 
                 expired access: "Jou toegang op Facebook het verval.  Ontkoppel asseblief jou konneksie en probeer weer om konneksie te bewerkstellig."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Jy moet instem tot die terme en voorwaardes, sodat  jou rekening oopgemaak kan word."
         users confirm password matches: "Die nuwe wagwoord pas nie."
@@ -572,7 +591,7 @@ af:
         daily email delivery: "Daaglikse epos aflewering"
         vod_not_subscribed: "Jy is nie ingeskryf op enige vers van die dag eposse nie. Teken asseblief in as jy wil inskryf."
         time: "Tyd"
-        daily push notifications: "Daaglikse kennisgewings vir mobiele apps"
+        daily push notifications: "Daaglikse kennisgewings vir mobiele toeps."
         subscribe: "Teken In"
         unsubscribe: "Kanselleer Intekening"
         edit account_existence: "Sluit Rekening"
@@ -803,6 +822,14 @@ af:
         none me: "Jy het nog geen kentekens verwerf nie."
         none user: "%{username} het nog geen kentekens verwerf nie."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Bybelplan taal"
         share plan: "Kyk bietjie na hierdie @YouVersion #Bybel Leesplan:%{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ af:
         none found: "Ons kon nie 'n plan kry wat aan jou kriteria voldoen nie. Probeer jou soekveld verbreed."
         about publisher: "Oor Die Uitgewer"
         overview: "Plan Oorsig"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Begin hierdie Plan"
         save for later: "Stoor vir later."
         saved for later: "Gestoor vir later."
@@ -939,6 +968,7 @@ af:
         must start to complete: "Begin hierdie plan sodat jy kan afmerk wat jy gelees het!"
         invalid reference: "Jammer, maar een van die skrif-verwysings bestaan nie in die gekiesde weergawe nie. Probeer om hierbo 'n ander weergawe te kies. Indien jy weer hierdie boodskap kry, lig asseblief ons <a href='%{support_url}' target='_self'>support team</a> in dat die probleem ontstaan."
         sidebar notice: "Jy sien 'n leesplan"
+        congratulations: "Congratulations!"
         completed notice: "Veels geluk! Jy het jou leesplan voltooi."
         exit: "Verlaat"
         loading sidebar content: "Laai die kant  paal inligting..."
@@ -1066,8 +1096,6 @@ af:
         partners text: "Sonder ons vrygewige Bybel publiseerders vennote, sal YouVersion eenvoudig nie in staat wees om ons wêreldwye gemeenskap te verskaf met so baie Bybels nie. Baie van julle het gevra hoe julle hierdie ondersteuners van die YouVersion missie kan bedank vir hul noodsaaklike ondersteuning. Jy kan meer leer oor hulle, hul bedieninge, en maniere wat julle hulle kan ondersteun deur die skakels hier onder."
         translation title: "Ons Vertalings Spanne"
         learn more: "Leer Meer"
-        bible dot com title: "Wat het met die ou Bible.com gebeur?"
-        bible dot com copy: "As u die inhoud soek van Christ Unlimited Ministries deur Bud en Betty Miller of die ou Bible.com webtuiste, besoek asseblief hul nuwe webtuiste by <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Media Area"
         contact header: "Media Kontak Inligting"

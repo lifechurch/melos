@@ -91,6 +91,25 @@ da:
             name: "Facebook"
             errors: 
                 expired access: "Din adgangskode er udløbet fra Facebook. Fjern venligst din forbindelse og gendan forbindelsen til Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Du må være i vilkår for anvendelse for at oprette en konto."
         users confirm password matches: "Det nye password passer ikke."
@@ -803,6 +822,14 @@ da:
         none me: "Du har ikke optjent nogen mærker endnu."
         none user: "%{username} har ikke optjent nogen mærker endnu."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Bibel Plan Sprog"
         share plan: "Tjek denne @YouVersion #BibelPlan: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ da:
         none found: "Vi kunne ikke finde en plan der matchede dine kriterier. Prøv at udvid din søgning."
         about publisher: "Om udgiveren"
         overview: "Planoversigt"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Start denne plan"
         save for later: "Gem til senere"
         saved for later: "Gemt til senere"
@@ -939,6 +968,7 @@ da:
         must start to complete: "Start denne plan for at gemme færdige læsninger!"
         invalid reference: "Beklager, et af de ​​skriftsteder referencer til denne læsning ikke findes i den valgte version. Prøv at vælge en anden version, ovenfor. Hvis du fortsat ser denne besked, så lad vores <a href='%{support_url}' target='_self'>supportteam</a> ved om problemet."
         sidebar notice: "Du ser en Bibellæseplan"
+        congratulations: "Congratulations!"
         completed notice: "Tillykke! Du har fuldført en Bibellæseplan."
         exit: "Ud"
         loading sidebar content: "Indlæser sidemenu indhold..."
@@ -1066,8 +1096,6 @@ da:
         partners text: "Uden vores generøse Bibel forlagspartnere, ville YouVersion simpelthen ikke være i stand til at forsyne vores verdensomspændende fællesskab med så mange bibler. Mange af jer har spurgt, hvordan du kan takke disse vitale tilhængere af YouVersion mission. Du kan lære mere om dem, deres kirker, og måder, du kan støtte dem gennem nedenstående links."
         translation title: "Vores oversættelses teams"
         learn more: "se mere"
-        bible dot com title: "Hvad skete der med den gamle BIble.com?"
-        bible dot com copy: "Hvis du er på udkig efter Christ Unlimited Ministries indhold af Bud og Betty Miller eller den gamle Bible.com hjemmeside kan du besøge deres nye hjemmeside på <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Presse område"
         contact header: "Presse kontakt oplysninger"

@@ -91,6 +91,25 @@ it:
             name: "Facebook"
             errors: 
                 expired access: "Il tuo accesso a Facebook è scaduto. Per favore, togli il collegamento e ricollegati a Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Devi accettare le condizioni d'uso per iscriverti."
         users confirm password matches: "I nuovi password non sono identici."
@@ -803,6 +822,14 @@ it:
         none me: "Non hai ancora guadagnato nessun distintivo."
         none user: "%{username} non ha ancora guadagnato nessun distintivo."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Linguaggio Piano di Lettura"
         share plan: "Dai un'occhiata a questo #PianoDiLettura @YouVersion: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ it:
         none found: "Non siamo riusciti a trovare un piano corrispondente ai criteri specificati. Prova ad estendere la tua ricerca."
         about publisher: "Informazioni Editore"
         overview: "Panoramica del Piano"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Comincia questo Piano"
         save for later: "Salva per Dopo"
         saved for later: "Salvato per Dopo"
@@ -939,6 +968,7 @@ it:
         must start to complete: "Inizia questo piano per salvare le letture fatte!"
         invalid reference: "Ci dispiace - uno dei riferimenti biblici per questa lettura potrebbe non esistere nella versione selezionata. Prova a selezionare un'altra versione, sopra. Se continui a vedere questo messaggio, presenta il problema al nostro <a href='%{support_url}' target='_self'>servizio assistenza</a>."
         sidebar notice: "Stai visionando un piano di lettura."
+        congratulations: "Congratulations!"
         completed notice: "Congratulazioni! Hai completato il tuo piano di lettura."
         exit: "Esci"
         loading sidebar content: "Caricando il contenuto della barra laterale..."
@@ -1066,8 +1096,6 @@ it:
         partners text: "Senza la generosità degli editori della Bibbia che collaborano con noi, YouVersion semplicemente non potrebbe fornire tante Bibbie alla nostra comunità mondiale. Molti di voi avete chiesto come ringraziare questi sostenitori vitali della missione di YouVersion. Puoi imparare di più su loro, i loro ministeri e i modi per sostenerli attraverso i link seguenti."
         translation title: "I nostri Equipe di Traduzione"
         learn more: "Per Saperne di Più"
-        bible dot com title: "Che cosa è successo al vecchio sito Bible.com?"
-        bible dot com copy: "Se stai cercando materiale da Bud e Betty Miller o il vecchio sito Bible.com, visita il loro nuovo sito web a  <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Area Stampa"
         contact header: "Informazioni di Contatto per la Stampa"

@@ -91,6 +91,25 @@ pt-PT:
             name: "Facebook"
             errors: 
                 expired access: "O seu acesso através do Facebook caducou. Por favor remova a ligação e reconecte ao Facebook."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Para se registar e criar uma conta, deve concordar com os Termos e Condições."
         users confirm password matches: "As novas palavras-passe não coincidem."
@@ -580,7 +599,7 @@ pt-PT:
         no devices: "Não tem dispositivos associados à sua Conta YouVersion"
         no devices download copy: "Baseada na Bíblia online, YouVersion.com, a App da Bíblia é uma Bíblia online gratuita que pode ser instalada em praticamente todos os smartphones. A App da Bíblia permite aos utilizadores lerem a Bíblia, partilhar versículos nas suas redes sociais, marcar as suas passagens favoritas e mais—tudo num formato que acompanha um estilo de vida cada vez mais móvel. Visite <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> a partir do seu dispositivo móvel para descarregar a App da Bíblia e associar à sua conta!"
         yes delete: "Sim, Apagar a Minha Conta"
-        account delete success: "We have deleted your YouVersion account, as you requested. We're sorry to see you go. We sincerely hope that you will continue to pursue meaningful ways that you can engage with God's Word."
+        account delete success: "Eliminámos a sua conta no YouVersion, conforme solicitado. Lamentamos vê-lo partir. Esperamos sinceramente que continue à procura de formas significativas de se relacionar com a Palavra de Deus."
         delete account description: "Se apagar a sua conta, eliminará permanentemente toda a sua informação, histórico e personalização (como as notas, marcadores, destaques, etc) em Bible.com e na App da Bíblia. Isto não poderá ser revertido por si ou por nós. Caso tenha a certeza de que deseja continuar, por favor prossiga abaixo."
         user recent activity: "Atividade Recente de %{user}"
         my notes: "Notas"
@@ -803,6 +822,14 @@ pt-PT:
         none me: "Ainda não ganhou nenhuma medalha."
         none user: "%{username} ainda não ganhou qualquer medalha."
     plans: 
+        status: 
+            on track: "On Track!"
+            days ahead: 
+                one: "%{count} Day Ahead!"
+                other: "%{count} Days Ahead!"
+            missed days: 
+                one: "%{count} Missed Day"
+                other: "%{count} Missed Days"
         bible plan language: "Idioma do Plano de Leitura da Bíblia"
         share plan: "Veja este #planodeleitura do @YouVersion: %{plan_title}"
         widget: 
@@ -845,6 +872,8 @@ pt-PT:
         none found: "Não conseguimos encontrar um plano que corresponda aos seus critérios. Tente ampliar os limites da sua pesquisa."
         about publisher: "Sobre o Editor"
         overview: "Resumo do Plano"
+        complete: "Plan Complete"
+        day complete: "Day Complete"
         start: "Iniciar este Plano"
         save for later: "Guardar para mais tarde"
         saved for later: "Guardado para mais tarde"
@@ -939,6 +968,7 @@ pt-PT:
         must start to complete: "Comece este plano para guardar as leituras já completas!"
         invalid reference: "Desculpe, uma das referências às escrituras desta leitura pode não existir na versão selecionada. Tente selecionar em cima uma versão diferente. Se ainda assim continuar a ver esta mensagem, por favor informe a nossa <a href='%{support_url}' target='_self'>equipe de suporte</a> sobre esta ocorrência."
         sidebar notice: "Está a ver um plano de leitura."
+        congratulations: "Congratulations!"
         completed notice: "Parabéns! Completou o seu plano de leitura."
         exit: "Sair"
         loading sidebar content: "A carregar os conteúdos da barra lateral..."
@@ -1066,8 +1096,6 @@ pt-PT:
         partners text: "Sem os generosos parceiros editores da Bíblia, o YouVersion simplesmente não poderia disponibilizar à nossa comunidade tantas Bíblias. Muitos de vós questionaram como poderiam agradecer a estes vitais apoiantes da missão YouVersion. Pode saber mais sobre eles, os seus ministérios e formas como os poderão apoiar através dos links presentes em baixo."
         translation title: "Nossas Equipes de Tradução"
         learn more: "Saiba mais"
-        bible dot com title: "O que aconteceu ao antigo website Bible.com?"
-        bible dot com copy: "Se procura por conteúdo do Ministério Christ Unlimited de Bud e Betty Miller, ou o antigo website Bible.com, por favor visite o seu novo website em <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Área de Imprensa"
         contact header: "Informação de Contacto para Imprensa"
