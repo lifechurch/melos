@@ -360,6 +360,7 @@ en:
       version:                                  "Version"
       view more:                                "View More"
       time:                                     "Time"
+      blurb:                                    "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
     friendship:
       now friends:                              "You are now friends with"
     cta:
@@ -426,6 +427,7 @@ en:
     limit notice:                               "You can have as many as 150 friends"
     limit description:                          "Limiting your Bible App friendships to people you know well creates an environment for honest conversations and shared discoveries with trusted friends."
   friendships:
+    blurb:                                      "Focus your friendships around the Bible. Share what you want, when you want, within the safety of trusted relationships."
     name required:                              "To experience the Bible with friends, update your Profile with your first and last name."
     find friends title:                         "Find friends"
     search by name:                             "Search by name"
@@ -559,8 +561,8 @@ en:
     confirm message:                            "We just sent a message to %{email}"
     confirm message click:                      "Click the link in that email to confirm that's you."
     resend verification:                        "Resend email verification"
-    sign in alternate:                          "or, <a href='%{sign_up_path}' target='_self'>sign up</a> if you don't have an account."
-    sign up alternate:                          "or, <a href='%{sign_in_path}' target='_self'>sign in</a> if you already have an account."
+    sign in alternate:                          "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
+    sign up alternate:                          "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
     password length:                            "6 characters minimum"
     welcome to youversion:                      "Welcome to the YouVersion community!"
     confirm email:                              "Please check your email and click the link to confirm your registration."
