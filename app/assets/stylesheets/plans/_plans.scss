@@ -459,18 +459,14 @@ ul.plan-results {
 
       li {
         padding: 5px 10px;
-
+        color: $darkGray;
         &:hover {
           background-color: $lightGray;
+          color: $blue;
         }
+      }
 
-        a {
-          color: $darkGray;
-          &:hover {
-            color: $blue;
-          }
-        }
-
+      form {
         input.link {
           background: none;
           border: none;
@@ -479,6 +475,11 @@ ul.plan-results {
           color: $gray;
           margin: 0;
           margin-top: -4px;
+
+          &:hover {
+            background-color: $lightGray;
+            color: $blue;
+          }
         }
       }
     }
@@ -525,7 +526,7 @@ ul.plan-results {
   }
 
   .plan-overview {
-    height: 170px;
+    height: 300px;
 
     .back {
       float: $default-float;
@@ -541,8 +542,9 @@ ul.plan-results {
       margin-right:auto;
     }
     img {
-      min-width: 160px;
+      min-width: 360px;
       margin-bottom: 25px;
+      min-height: 203px;
 
       @media #{$small-only} {
         margin-top: 10px;
@@ -637,12 +639,22 @@ ul.plan-results {
       margin-bottom: 10px;
       height: 20px;
     }
-    li.li-left {
-      padding-right: 30px;
+
+    img {
+      height: 15px;
+      width: inherit;
+      margin-top: -3px;
     }
-    li.li-right {
-      padding-left: 30px;
+
+    form {
+      display: inline-block;
     }
+//    li.li-left {
+//      padding-right: 30px;
+//    }
+//    li.li-right {
+//      padding-left: 30px;
+//    }
 
     .check {
       background: image_url("Check-Small.svg") no-repeat $default-float bottom;
@@ -1888,7 +1900,7 @@ html[dir="rtl"] {
 
 .subscription-show {
   img {
-    width: 140px;
+    width: 360px;
   }
 
   p {
@@ -1898,6 +1910,7 @@ html[dir="rtl"] {
 
   .day-slider {
     text-align: center;
+    height: 82px;
 
     .day {
       border: solid 1px $lightGray;

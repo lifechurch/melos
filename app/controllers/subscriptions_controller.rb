@@ -132,7 +132,7 @@ class SubscriptionsController < ApplicationController
     end
 
     # Completing a day of reading
-    if(params[:completed])
+    if(params[:completed].present?)
       @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
       @subscription = subscription_for(params[:id])
       self.presenter = Presenter::Subscription.new( @subscription , params, self)
@@ -146,13 +146,17 @@ class SubscriptionsController < ApplicationController
 
         #Just completed Devo
         elsif !params[:ref].present?
-          redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: 0)
+          if !params[:stay].present?
+            redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: 0)
+          else
+            redirectUrl = subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day])
+          end
 
         #Just completed Ref
         elsif params[:content].present?
           next_ref_index = params[:content].to_i + 1
           references = presenter.reading.references(version_id: @subscription.version_id)
-          if next_ref_index < references.length
+          if !params[:stay].present? && next_ref_index < references.length
             redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: next_ref_index)
           else
             # Made it to the end, but skipped some content

@@ -35,8 +35,8 @@
 .row.collapse
   .columns.large-8.medium-8.medium-centered
     .reading_plan_index_header
-      -#= link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), class: 'icon', target: "_self" if current_user.present? && @show_my_plans
-      = link_to(plans_path, class: '', target: "_self") do
+      - back_path = @referrer.present? ? @referrer : plans_path
+      = link_to(back_path, class: '', target: "_self") do
         - if is_rtl?
           != "&rarr; #{t('plans.back')}"
         - else

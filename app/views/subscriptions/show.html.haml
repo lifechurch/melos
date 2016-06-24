@@ -30,12 +30,16 @@
                 %span.close-trigger.ng-hide{"ng-show"=>"showMenu"}
 
             %ul.ng-hide{"ng-show"=>"showMenu"}
-              %li
-                =link_to t("plans.settings"), edit_subscription_path(user_id: current_user.to_param, id: subscription), target: "_self"
-              %li
-                =link_to t("EventsAdmin.features.EventEdit.features.preview.components.PreviewTypePlan.info"), plan_path(id: subscription), target: "_self"
-              %li
-                =link_to t("plans.calendar"), calendar_subscription_path(user_id: current_user.to_param, id: subscription), target: "_self"
+
+              =link_to(edit_subscription_path(user_id: current_user.to_param, id: subscription), target: "_self") do
+                %li= t("plans.settings")
+
+              =link_to(plan_path(id: subscription), target: "_self") do
+                %li= t("EventsAdmin.features.EventEdit.features.preview.components.PreviewTypePlan.info")
+
+              =link_to(calendar_subscription_path(user_id: current_user.to_param, id: subscription), target: "_self") do
+                %li= t("plans.calendar")
+
               %li
                 =button_to t('plans.catch me up'), subscription_path(user_id: current_user.to_param, id: subscription,catch_up: "true"), method: :put, class: 'link'
 
@@ -77,15 +81,32 @@
 
       %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: subscription.total_days).html_safe} &bull; #{presenter.on_track_status}"
 
-      %ul.no-bullets
+      %ul.no-bullets.plan-pieces
 
         -if presenter.reading.devotional
-          %li{class: "#{statuses[day - 1].additional_content.completed ? 'check' : 'no-check'} #{is_rtl? ? 'li-left' : 'li-right'}"}
-            = link_to devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day), target: "_self" do
+          -forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, completed: "#{!statuses[day - 1].additional_content.completed}", ref: nil , content: nil)
+          %li{class: "#{is_rtl? ? 'li-left' : 'li-right'}"}
+            = form_tag(forward_path, method: :put, id: 'plan_devo_complete_form') do
+              - if statuses[day - 1].additional_content.completed
+                %a{'onClick' => 'document.getElementById("plan_devo_complete_form").submit()'}
+                  = image_tag image_path("Check-Small.svg")
+              - else
+                %a{'onClick' => 'document.getElementById("plan_devo_complete_form").submit()'}
+                  = image_tag image_path("Check-Unchecked.svg")
+
+            = link_to devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day), target: "_self", title: t("plans.devotional") do
               = t("plans.devotional")
 
         - unless references.empty?
           - references.each_with_index do |ref,index|
-            %li{class: "#{ref.completed ? 'check' : 'no-check'} #{is_rtl? ? 'li-left' : 'li-right'}"}
-              = link_to ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: index), target: "_self" do
+            -forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, completed: "#{!ref.completed}", ref: ref.reference.to_param.downcase , content: index, stay: 'true')
+            %li{class: "#{is_rtl? ? 'li-left' : 'li-right'}"}
+              = form_tag(forward_path, method: :put, id: "plan_ref_#{index}_complete_form") do
+                - if ref.completed
+                  %a{'onClick' => "document.getElementById('plan_ref_#{index}_complete_form').submit()"}
+                    = image_tag image_path("Check-Small.svg")
+                - else
+                  %a{'onClick' => "document.getElementById('plan_ref_#{index}_complete_form').submit()"}
+                    = image_tag image_path("Check-Unchecked.svg")
+              = link_to ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: index), target: "_self", title: t("read reference", { reference: ref.reference.safe_human }) do
                 = ref.reference.safe_human
