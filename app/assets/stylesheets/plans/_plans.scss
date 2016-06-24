@@ -458,6 +458,7 @@ ul.plan-results {
       box-shadow: rgb(204, 204, 204) 5px 5px;
       text-align: left;
       z-index: 100;
+      background-color: rgba(255,255,255,0.95);
 
       li {
         padding: 5px 10px;
@@ -514,8 +515,10 @@ ul.plan-results {
     }
 
     .slick-list {
-      margin-left: 30px;
-      margin-right: 30px;
+      @media #{$medium-up} {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
       border: solid 1px $lightGray;
     }
   }
