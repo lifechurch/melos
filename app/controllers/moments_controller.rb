@@ -39,6 +39,16 @@ class MomentsController < BaseMomentsController
         @subscriptions = @subscriptions.map! { |s| s.id }
       end
     end
+
+    @saved = Subscription.allSavedIds(current_user) if current_user.present?
+    if @saved
+      if @saved.reading_plans
+        @saved = @saved.reading_plans.map! { |s| s }
+      else
+        @saved = @saved.map! { |s| s }
+      end
+    end
+
     respond_to do |format|
       format.json # renders _cards.json.jbuilder
     end

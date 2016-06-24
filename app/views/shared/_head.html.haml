@@ -74,11 +74,11 @@
 
         nativeTimeout = setTimeout(function() {
           var now = +new Date
-            , oneMinute = 60000
+            , tenMinutes = 600000
           if (now - launchTime < 1500) {
             document.cookie = [
               'noNative=true',
-              'expires=' + new Date(now + oneMinute).toUTCString()
+              'expires=' + new Date(now + tenMinutes).toUTCString()
             ].join('; ');
           }
         }, 1000);

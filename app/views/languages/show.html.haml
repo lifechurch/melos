@@ -27,22 +27,16 @@
       %article
         %div#svp_share.addthis_sharing_toolbox{"data-url" => "#{@meta_url}", "style" => "float: right;"}
         %ul.no-bullet
-          - @versions_by_lang.each do |lang, versions|
-            - if versions.present?
+          %li
+            - versions = @versions_by_lang[@language.to_s]
+            - meta_language = versions.first.attributes.language.local_name
+            - meta_language = "#{meta_language} - #{versions.first.attributes.language.name}" if (versions.first.attributes.language.name.present? and not (meta_language.eql?(versions.first.attributes.language.name)))
+            %h1
+              = bible_in_lang
+            %ul.no_bullet
+            - versions.each do |version|
               %li
-                - meta_language = versions.first.attributes.language.local_name
-                - meta_language = "#{meta_language} - #{versions.first.attributes.language.name}" if (versions.first.attributes.language.name.present? and not (meta_language.eql?(versions.first.attributes.language.name)))
-                %ul.no_bullet
-                  - show_lang_title = true
-                  - versions.each do |version|
-                    - if version.language.id.eql?(@language.to_s)
-                      - if show_lang_title
-                        - bible_in_lang = "#{t('languages.bible in', language_name: meta_language)}"
-                        %h1
-                          = bible_in_lang
-                        - show_lang_title = false
-                      %li
-                        = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version), {target: "_self"}
+                = link_to "#{version.title} (#{version.abbreviation.upcase})" , version_path(version), {target: "_self"}
 
   .medium-4.columns.show-for-medium-up.l-border
     = render partial: 'widgets/download_app', :locals => {show_sms: true}
