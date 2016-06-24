@@ -958,6 +958,14 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://www.bible.com/af/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.bible.com/tl/kids</loc>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>https://www.bible.com/pt/kids</loc>
     <priority>1</priority>
   </url>
