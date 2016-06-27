@@ -429,7 +429,8 @@ ul.plan-results {
 
 /* !Plan Overview */
 
-.a_show {
+.a_show,
+.c_plans.a_sample {
 
   div[plan-more-menu] {
     display: inline-block;
@@ -548,6 +549,8 @@ ul.plan-results {
 
       @media #{$small-only} {
         margin-top: 10px;
+        min-width: 280px;
+        min-height: 175px;
       }
     }
 
@@ -597,7 +600,7 @@ ul.plan-results {
       white-space: nowrap;
       opacity: 0.85;
       padding: 0;
-      z-index:100;
+      z-index: 1;
       &.slick-disabled {
         background: none;
         cursor: default;
@@ -1409,85 +1412,112 @@ ul.plan-results {
 /* !Plan sample view */
 
 .c_plans.a_sample {
-  .bcv-button-box {
-    .prev,
-    .next {
-      display: none;
-    }
+
+  .buttons-text {
+    margin-top: 30px;
+    font-size: rem-calc(11);
   }
 
-  #widget-plan-controls {
-    .small-title {
-      margin: 0 0 15px;
-
-      a {
-        color: $black;
-      }
-    }
+  .sample-text {
+    margin: 0 auto;
+    width: 50px;
+    font-size: rem-calc(10);
   }
 
-  .calendar-prev,
-  .calendar-next {
-    a {
-      display: block;
-      font-size: 0.813em;
-    }
+  .devo-content{
+    margin-top: 40px;
   }
 
-  .calendar-day {
-    h4 {
-      font-size: 0.813em;
-    }
-  }
-}
-
-.c_plans.a_sample {
-  h3.hd {
-    margin-top: 25px;
-    border-bottom: solid 1px $lightGray;
+  img {
+    margin-top: 15px;
   }
 
-  .bd {
-    p {
-      margin-top: 10px;
-    }
-
-    .video-container {
-      iframe {
-        height: 300px;
-      }
-    }
+  .days-container {
+    margin-bottom: 25px;
   }
 
-  .scripture-links {
-    font-size: 0.938em;
-
-    h3 {
-      font-size: 0.938em;
-      font-weight: bold;
-      border-top: 1px solid $lightGray;
-      padding: 15px 0 10px;
-      margin: 5px 0 0;
-    }
-
-    li {
-      list-style: decimal;
-
-      a {
-        color: $black;
-      }
-    }
+  .devo-header {
+    font-size: rem-calc(11);
   }
-
-  .rp-subscription-info {
-    .solid-button {
-      display: block;
-    }
-  }
-
-  .plan-privacy-buttons + .solid-button {
-    display: none;
-  }
+//  .bcv-button-box {
+//    .prev,
+//    .next {
+//      display: none;
+//    }
+//  }
+//
+//  #widget-plan-controls {
+//    .small-title {
+//      margin: 0 0 15px;
+//
+//      a {
+//        color: $black;
+//      }
+//    }
+//  }
+//
+//  .calendar-prev,
+//  .calendar-next {
+//    a {
+//      display: block;
+//      font-size: 0.813em;
+//    }
+//  }
+//
+//  .calendar-day {
+//    h4 {
+//      font-size: 0.813em;
+//    }
+//  }
+//}
+//
+//.c_plans.a_sample {
+//  h3.hd {
+//    margin-top: 25px;
+//    border-bottom: solid 1px $lightGray;
+//  }
+//
+//  .bd {
+//    p {
+//      margin-top: 10px;
+//    }
+//
+//    .video-container {
+//      iframe {
+//        height: 300px;
+//      }
+//    }
+//  }
+//
+//  .scripture-links {
+//    font-size: 0.938em;
+//
+//    h3 {
+//      font-size: 0.938em;
+//      font-weight: bold;
+//      border-top: 1px solid $lightGray;
+//      padding: 15px 0 10px;
+//      margin: 5px 0 0;
+//    }
+//
+//    li {
+//      list-style: decimal;
+//
+//      a {
+//        color: $black;
+//      }
+//    }
+//  }
+//
+//  .rp-subscription-info {
+//    .solid-button {
+//      display: block;
+//    }
+//  }
+//
+//  .plan-privacy-buttons + .solid-button {
+//    display: none;
+//  }
 }
 
 

@@ -26,6 +26,8 @@
 - content_for :facebook_meta do
   %meta{property: "og:image", content: fb_image_url}
 
+
+
 -#.sample_devotional
 -#  .row
 -#    .medium-8.columns
@@ -104,18 +106,25 @@
 
 
 .subscription-show
+  - day           = (params[:day] || 1).to_i
+  - content_page  = (params[:content] || 0).to_i
+  - reading       = @plan.day(day)
+  - references    = reading.references(version_id: @presenter.version)
   .plan-overview
     .row
       .header.columns.large-8.medium-8.medium-centered
         .back
-          = link_to subscriptions_path(user_id: current_user.to_param), target: "_self" do
+          - back_path = @referrer.present? ? @referrer : subscriptions_path(user_id: current_user.to_param)
+          = link_to(back_path, target: "_self") do
             - if is_rtl?
-              != "&rarr; #{t('searching.plans')}"
+              != "&rarr; #{t('plans.back')}"
             - else
-              != "&larr; #{t('searching.plans')}"
+              != "&larr; #{t('plans.back')}"
+
+        .sample-text= t("plans.sample")
 
     .row.columns.medium-centered.text-center.img
-      - if subscription.list_image.present?
+      - if @plan.hero_image.url.present?
         = image_tag @plan.hero_image.url, class: 'rp-hero-img'
       - else
         %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
@@ -124,60 +133,72 @@
       %h3.plan-title= @plan.name
 
 
+  -# _button code tailored to this page. may want to explore just editing the _button partial if it won't ruin other instances of use
+  .row
+    .columns.medium-3.medium-centered
+      - unique_id = rand(100)
+      .rp-subscription-info.buttons-text
+        - if logged_in?
+          -if current_user.subscribed_to?(@plan)
+            = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param, id: @plan.to_param), id: "subscription-read", class: 'solid-button small green', target: "_self")
+          - else
+            = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button green small', "ng-click" => "showSubscribeButtons = true")
+            .plan-privacy-buttons.ng-hide{"ng-show" => "showSubscribeButtons"}
+              .text-center
+                %p.detail-text
+                  = t("plans.privacy.visible to friends?")
+                .yes-no-buttons
+                  - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: @plan.to_param, privacy: private_bool) }
+                  %a{"class" => "yes", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{@plan.to_param}', false)"}
+                    =t('ui.yes button')
+                  != "&bull;"
+                  %a{"class" => "no", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{@plan.to_param}', true)"}
+                    =t('ui.no button')
+            .text-center
+              %a{"save-for-later" => true, "save-label" => "#{t('plans.save for later')}", "remove-label" => "#{t('plans.saved for later')}", "saved" => "#{@is_saved}", "base-path" => "#{subscriptions_path(user_id: current_user.to_param)}", "plan-id" => "#{@plan.to_param}",  "check-icon-path" => "#{image_path('icon-plans-checkmark.svg')}" }= t('plans.save for later')
+              != "&bull;"
+              =link_to(t("plans.about this plan"), plan_path(@plan.to_param, locale: I18n.locale), target: "_self")
+
+
+        - else
+          = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(@plan)), class: "solid-button green", target: "_self")
+          - if (action_name != 'sample')
+            = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}
+
+
+
   .row.days-container
     .columns.large-8.medium-8.medium-centered
       .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}"}
-        - statuses.each do |cur_status|
-          - cur_date = Date.parse(cur_status.date)
-          - is_active = cur_status.day.equal? @presenter.day
-          = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day), "target" => "_self" ) do
-            .day{class:"#{cur_status.completed ? 'completed' : ''} #{is_active ? 'active' : ''}"}
-              .day-top{class: "#{cur_status.completed ? 'check-background' : ''}"}
+        - (1..@plan.total_days).each do |i|
+          = link_to(sample_plan_path(@plan.to_param, day: i), {target: "_self"}) do
+            .day
+              .day-top
 
               .day-bottom
-                %h1.text-center= cur_status.day
-                %h4.text-center= I18n.l(cur_date, format: :short)
+                %h1.text-center= i
+                -#%h4.text-center= I18n.l(cur_date, format: :short)
 
 
   .row
     .columns.large-8.medium-8.medium-centered
-      .start-reading
-        - if presenter.reading.devotional
-          - start_reading_path = devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day)
-        - else
-          - start_reading_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: 0)
-
-        = link_to start_reading_path, target: "_self", class: 'solid-button green' do
-          = t("plans.widget.start reading")
-
-      %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: subscription.total_days).html_safe} &bull; #{presenter.on_track_status}"
+      %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: @plan.total_days).html_safe} &bull; #{t("plans.read today")}"
 
       %ul.no-bullets.plan-pieces
-
         -if presenter.reading.devotional
-          -forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, completed: "#{!statuses[day - 1].additional_content.completed}", ref: nil , content: nil)
           %li{class: "#{is_rtl? ? 'li-left' : 'li-right'}"}
-            = form_tag(forward_path, method: :put, id: 'plan_devo_complete_form') do
-              - if statuses[day - 1].additional_content.completed
-                %a{'onClick' => 'document.getElementById("plan_devo_complete_form").submit()'}
-                  = image_tag image_path("Check-Small.svg")
-              - else
-                %a{'onClick' => 'document.getElementById("plan_devo_complete_form").submit()'}
-                  = image_tag image_path("Check-Unchecked.svg")
-
-            = link_to devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day), target: "_self", title: t("plans.devotional") do
-              = t("plans.devotional")
-
+            = t("plans.devotional")
         - unless references.empty?
-          - references.each_with_index do |ref,index|
-            -forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, completed: "#{!ref.completed}", ref: ref.reference.to_param.downcase , content: index, stay: 'true')
+          - references.each_with_index do |ref|
             %li{class: "#{is_rtl? ? 'li-left' : 'li-right'}"}
-              = form_tag(forward_path, method: :put, id: "plan_ref_#{index}_complete_form") do
-                - if ref.completed
-                  %a{'onClick' => "document.getElementById('plan_ref_#{index}_complete_form').submit()"}
-                    = image_tag image_path("Check-Small.svg")
-                - else
-                  %a{'onClick' => "document.getElementById('plan_ref_#{index}_complete_form').submit()"}
-                    = image_tag image_path("Check-Unchecked.svg")
-              = link_to ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: index), target: "_self", title: t("read reference", { reference: ref.reference.safe_human }) do
-                = ref.reference.safe_human
+              - ref_text = ref.reference.safe_human
+              = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param), { target: "_self" }
+
+
+
+.row.devo-content
+  .columns.large-8.medium-8.medium-centered
+    - if !@presenter.subscription.day(@presenter.day).devotional.nil?
+      %div.devo-header= t("plans.devotional")
+      .devotional
+        = @presenter.subscription.day(@presenter.day).devotional.html_safe
