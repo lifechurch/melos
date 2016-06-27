@@ -169,7 +169,7 @@
 
   .row.days-container
     .columns.large-8.medium-8.medium-centered
-      .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}"}
+      .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}", "arrows" => "false"}
         - (1..@plan.total_days).each do |i|
           = link_to(sample_plan_path(@plan.to_param, day: i), {target: "_self"}) do
             .day
