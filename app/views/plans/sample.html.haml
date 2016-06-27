@@ -26,73 +26,158 @@
 - content_for :facebook_meta do
   %meta{property: "og:image", content: fb_image_url}
 
-.sample_devotional
+-#.sample_devotional
+-#  .row
+-#    .medium-8.columns
+-#      - day           = (params[:day] || 1).to_i
+-#      - content_page  = (params[:content] || 0).to_i
+-#      - reading       = @plan.day(day)
+-#      - references    = reading.references(version_id: @presenter.version)
+-#      = image_tag @plan.hero_image.url, class: 'rp-hero-img' if @plan.hero_image.present?
+-#      .rp-plan-box
+-#        %h1.keep= @plan.name
+-#        %p.rp-plan-info
+-#          = "#{t('plans.current progress html', day: @presenter.day, total_days: @plan.total_days)}".html_safe
+-#          -#= "#{t('plans.day number', day: @presenter.day)}"
+-#        .rp-plan-about
+-#          .rp-plan-about-buttons.rp-subscription-info
+-#            - prev_text = t("plans.previous day") # used in 3 places below
+-#            - if day > 1
+-#              = link_to(sample_plan_path(@plan.to_param, day: (day - 1)), {class: "solid-button green", target: "_self", title: prev_text}) do
+-#                = prev_text
+-#            - else
+-#              = link_to("#", class: "solid-button gray disabled", disabled: true) do
+-#                = prev_text
+-#
+-#            - next_text = t("plans.next day") # used in 3 places below
+-#            - if day <= @plan.total_days - 1
+-#              = link_to(sample_plan_path(@plan.to_param, day: (day + 1)), {class: "solid-button green", target: "_self", title: next_text}) do
+-#                = next_text
+-#            - else
+-#              = link_to("#", class: "solid-button gray disabled", disabled: true) do
+-#                = next_text
+-#
+-#          - if @presenter.devotional.nil?
+-#            %div.bd
+-#              %p
+-#                %b=t("plans.about this plan")
+-#              %p= @plan.about.html_safe
+-#          - else
+-#            %div.bd= @presenter.subscription.day(@presenter.day).devotional.html_safe
+-#
+-#    .medium-4.columns
+-#      = render partial: "/plans/button", locals: {plan: @plan}
+-#      %h3.hd
+-#        = t("plans.read today")
+-#      .widget.scripture-links
+-#        %ul.menu.basic
+-#          - unless references.empty?
+-#            - references.each_with_index do |ref|
+-#              %li.content_target
+-#                - ref_text = ref.reference.safe_human
+-#                = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param), { target: "_self" }
+-#      - if !@presenter.devotional.nil?
+-#        %h3.hd
+-#          =t("plans.about this plan")
+-#        .bd
+-#          %p= @plan.about.html_safe
+-#
+-#      %h3.hd
+-#        =t("plans.publisher")
+-#      %div.bd
+-#        %p= @plan.copyright.html_safe
+-#      - unless @plan.publisher_url.nil?
+-#        %div.ft.link
+-#          = link_to(t("plans.about publisher"), @plan.publisher_url, { target: "_self" })
+-#
+-#
+-#- # has to be here so that title_link content in ^^ references/reader partial will get overwritten
+-#- overwrite_content_for(:title_link) do
+-#  %span#m_plan_btn
+-#    %span.plan_day= t('plans.day number', day: @presenter.day)
+-#    %a.plan_btn{:href => 'javascript:void(0);'}
+-#
+-#
+-#
+
+
+
+
+.subscription-show
+  .plan-overview
+    .row
+      .header.columns.large-8.medium-8.medium-centered
+        .back
+          = link_to subscriptions_path(user_id: current_user.to_param), target: "_self" do
+            - if is_rtl?
+              != "&rarr; #{t('searching.plans')}"
+            - else
+              != "&larr; #{t('searching.plans')}"
+
+    .row.columns.medium-centered.text-center.img
+      - if subscription.list_image.present?
+        = image_tag @plan.hero_image.url, class: 'rp-hero-img'
+      - else
+        %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+
+    .row.medium-centered.text-center
+      %h3.plan-title= @plan.name
+
+
+  .row.days-container
+    .columns.large-8.medium-8.medium-centered
+      .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}"}
+        - statuses.each do |cur_status|
+          - cur_date = Date.parse(cur_status.date)
+          - is_active = cur_status.day.equal? @presenter.day
+          = link_to(subscription_path(user_id: current_user.to_param, id: subscription, day: cur_status.day), "target" => "_self" ) do
+            .day{class:"#{cur_status.completed ? 'completed' : ''} #{is_active ? 'active' : ''}"}
+              .day-top{class: "#{cur_status.completed ? 'check-background' : ''}"}
+
+              .day-bottom
+                %h1.text-center= cur_status.day
+                %h4.text-center= I18n.l(cur_date, format: :short)
+
+
   .row
-    .medium-8.columns
-      - day           = (params[:day] || 1).to_i
-      - content_page  = (params[:content] || 0).to_i
-      - reading       = @plan.day(day)
-      - references    = reading.references(version_id: @presenter.version)
-      = image_tag @plan.hero_image.url, class: 'rp-hero-img' if @plan.hero_image.present?
-      .rp-plan-box
-        %h1.keep= @plan.name
-        %p.rp-plan-info
-          = "#{t('plans.current progress html', day: @presenter.day, total_days: @plan.total_days)}".html_safe
-          -#= "#{t('plans.day number', day: @presenter.day)}"
-        .rp-plan-about
-          .rp-plan-about-buttons.rp-subscription-info
-            - prev_text = t("plans.previous day") # used in 3 places below
-            - if day > 1
-              = link_to(sample_plan_path(@plan.to_param, day: (day - 1)), {class: "solid-button green", target: "_self", title: prev_text}) do
-                = prev_text
-            - else
-              = link_to("#", class: "solid-button gray disabled", disabled: true) do
-                = prev_text
+    .columns.large-8.medium-8.medium-centered
+      .start-reading
+        - if presenter.reading.devotional
+          - start_reading_path = devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day)
+        - else
+          - start_reading_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: 0)
 
-            - next_text = t("plans.next day") # used in 3 places below
-            - if day <= @plan.total_days - 1
-              = link_to(sample_plan_path(@plan.to_param, day: (day + 1)), {class: "solid-button green", target: "_self", title: next_text}) do
-                = next_text
-            - else
-              = link_to("#", class: "solid-button gray disabled", disabled: true) do
-                = next_text
+        = link_to start_reading_path, target: "_self", class: 'solid-button green' do
+          = t("plans.widget.start reading")
 
-          - if @presenter.devotional.nil?
-            %div.bd
-              %p
-                %b=t("plans.about this plan")
-              %p= @plan.about.html_safe
-          - else
-            %div.bd= @presenter.subscription.day(@presenter.day).devotional.html_safe
+      %p!= "#{t("plans.current progress html", day: @presenter.day, total_days: subscription.total_days).html_safe} &bull; #{presenter.on_track_status}"
 
-    .medium-4.columns
-      = render partial: "/plans/button", locals: {plan: @plan}
-      %h3.hd
-        = t("plans.read today")
-      .widget.scripture-links
-        %ul.menu.basic
-          - unless references.empty?
-            - references.each_with_index do |ref|
-              %li.content_target
-                - ref_text = ref.reference.safe_human
-                = link_to ref_text, reference_path(version: ref.reference.version, reference: ref.reference.to_param), { target: "_self" }
-      - if !@presenter.devotional.nil?
-        %h3.hd
-          =t("plans.about this plan")
-        .bd
-          %p= @plan.about.html_safe
+      %ul.no-bullets.plan-pieces
 
-      %h3.hd
-        =t("plans.publisher")
-      %div.bd
-        %p= @plan.copyright.html_safe
-      - unless @plan.publisher_url.nil?
-        %div.ft.link
-          = link_to(t("plans.about publisher"), @plan.publisher_url, { target: "_self" })
+        -if presenter.reading.devotional
+          -forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, completed: "#{!statuses[day - 1].additional_content.completed}", ref: nil , content: nil)
+          %li{class: "#{is_rtl? ? 'li-left' : 'li-right'}"}
+            = form_tag(forward_path, method: :put, id: 'plan_devo_complete_form') do
+              - if statuses[day - 1].additional_content.completed
+                %a{'onClick' => 'document.getElementById("plan_devo_complete_form").submit()'}
+                  = image_tag image_path("Check-Small.svg")
+              - else
+                %a{'onClick' => 'document.getElementById("plan_devo_complete_form").submit()'}
+                  = image_tag image_path("Check-Unchecked.svg")
 
+            = link_to devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day), target: "_self", title: t("plans.devotional") do
+              = t("plans.devotional")
 
-- # has to be here so that title_link content in ^^ references/reader partial will get overwritten
-- overwrite_content_for(:title_link) do
-  %span#m_plan_btn
-    %span.plan_day= t('plans.day number', day: @presenter.day)
-    %a.plan_btn{:href => 'javascript:void(0);'}
+        - unless references.empty?
+          - references.each_with_index do |ref,index|
+            -forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, completed: "#{!ref.completed}", ref: ref.reference.to_param.downcase , content: index, stay: 'true')
+            %li{class: "#{is_rtl? ? 'li-left' : 'li-right'}"}
+              = form_tag(forward_path, method: :put, id: "plan_ref_#{index}_complete_form") do
+                - if ref.completed
+                  %a{'onClick' => "document.getElementById('plan_ref_#{index}_complete_form').submit()"}
+                    = image_tag image_path("Check-Small.svg")
+                - else
+                  %a{'onClick' => "document.getElementById('plan_ref_#{index}_complete_form').submit()"}
+                    = image_tag image_path("Check-Unchecked.svg")
+              = link_to ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: index), target: "_self", title: t("read reference", { reference: ref.reference.safe_human }) do
+                = ref.reference.safe_human
