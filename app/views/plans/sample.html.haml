@@ -124,7 +124,7 @@
         .sample-text= t("plans.sample")
 
     .row.columns.medium-centered.text-center.img
-      - if @plan.hero_image.url.present?
+      - if @plan.hero_image.present?
         = image_tag @plan.hero_image.url, class: 'rp-hero-img'
       - else
         %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
