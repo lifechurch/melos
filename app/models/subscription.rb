@@ -78,6 +78,14 @@ class Subscription < Plan
       end
     end
 
+    def completed_all_items(user, opts = {})
+      raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
+      opts[:auth]      = user.auth
+      opts[:cache_for] = 0
+      data, errs = get(completed_all_items_path, opts)
+      YV::API::Results.new(data,errs)
+    end
+
     def saved(user, opts = {})
       raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
       opts[:user_id]  = user.id

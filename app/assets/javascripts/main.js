@@ -24,6 +24,7 @@ angular.module('yv', [
     'common.carousel',
     'yv.friendships.addFriend',
     'yv.plans.moreMenu',
+    'common.progressAnimator',
     'yv.search'
 ])
 

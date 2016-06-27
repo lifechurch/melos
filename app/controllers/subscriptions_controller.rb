@@ -6,6 +6,7 @@ class SubscriptionsController < ApplicationController
   before_filter :force_login
   before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar]
   before_filter :setup_presenter, only: [:show,:devo,:ref]
+  before_filter :get_plan_counts, only: [:index,:completed,:saved]
   
   rescue_from NotAChapterError, with: :ref_not_found
 
@@ -16,7 +17,7 @@ class SubscriptionsController < ApplicationController
     @user = current_user
     @subscriptions = Subscription.all(@user, auth: @user.auth, page: @curpage)
 
-    return redirect_to plans_path if @subscriptions == false
+    # return redirect_to plans_path if @subscriptions == false
 
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
@@ -134,7 +135,7 @@ class SubscriptionsController < ApplicationController
     # Completing a day of reading
     if(params[:completed].present?)
       @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
-      @subscription = subscription_for(params[:id])
+      @subscription = subscription_for(params[:id]) || @subscription
       self.presenter = Presenter::Subscription.new( @subscription , params, self)
 
       if !@subscription.completed?
@@ -234,6 +235,23 @@ class SubscriptionsController < ApplicationController
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
     render 'plans/invalid_ref'
-   end
+  end
+
+  def get_plan_counts
+    @user = current_user
+
+    @allSaved = Subscription.allSavedIds(@user)
+    @allCompleted = Subscription.completed_all_items(@user)
+
+    @savedCount = 0
+    if @allSaved.reading_plans.present? && @allSaved.reading_plans.respond_to?('length')
+      @savedCount = @allSaved.reading_plans.length
+    end
+
+    @completedCount = 0
+    if @allCompleted.reading_plans.present? && @allCompleted.reading_plans.respond_to?('length')
+      @completedCount = @allCompleted.reading_plans.length
+    end
+  end
 
 end

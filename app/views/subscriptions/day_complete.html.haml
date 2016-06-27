@@ -21,7 +21,7 @@
         %img.plan-img{src: image_path('plans-hero-640x360.jpg')}
 
     .row.progress_wrap
-      .progress_counter{style: "width:#{@presenter.subscription.completion_percentage}%", title:"#{@presenter.subscription.completion_percentage}%"}
+      .progress_counter{"progress-animator" => "true", "percent-complete" => "#{@presenter.subscription.completion_percentage}", "title" => "#{@presenter.subscription.completion_percentage}%"}
 
 .row.medium-centered.text-center
   %button.solid-button.share-button{ "ng-click" => "showShare = !showShare", "href" => "#" }

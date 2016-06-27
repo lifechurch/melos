@@ -22,7 +22,7 @@
         %img.plan-img{src: image_path('plans-hero-640x360.jpg')}
 
     .row.progress_wrap
-      .progress_counter{style: "width:#{@presenter.subscription.completion_percentage}%", title:"#{@presenter.subscription.completion_percentage}%"}
+      .progress_counter{"progress-animator" => "true", "percent-complete" => "100", "title" => "100%"}
 
 
 

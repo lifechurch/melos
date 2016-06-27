@@ -949,6 +949,7 @@ ul.plan-results {
     .progress_counter {
       background-color: $white;
       height: 100%;
+      width: 0%;
     }
   }
 
@@ -1526,6 +1527,16 @@ ul.plan-results {
   }
 }
 
+input.text-red {
+  padding: 0 !important;
+  margin: 0;
+  color: $red;
+  border: none;
+  background: none;
+  font-size: 12px;
+}
+
+
 .plan-settings {
   .plan-settings-privacy-box,
   .plan-settings-email-box,
@@ -1570,6 +1581,19 @@ html[dir="rtl"] .plan-settings {
       @media #{$small-only} {
         text-align: right;
       }
+    }
+  }
+}
+
+.a_edit {
+  .plan-settings-header {
+    img {
+      width: 360px;
+    }
+
+    h3 {
+      padding-top: 35px;
+      padding-bottom: 40px;
     }
   }
 }
