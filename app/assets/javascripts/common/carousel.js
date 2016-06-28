@@ -43,11 +43,14 @@ angular.module('common.carousel', [])
                     }
                 });
 
-                $element.slick(config);
+                $timeout(function() {
+                    $element.slick(config);
 
-                if (typeof $scope.initialSlide !== 'undefined' && $scope.initialSlide !== null) {
-                    $element.slick('slickGoTo', $scope.initialSlide);
-                }
+                    if (typeof $scope.initialSlide !== 'undefined' && $scope.initialSlide !== null) {
+                        $element.slick('slickGoTo', $scope.initialSlide);
+                    }
+                });
+
 
             }]
         };

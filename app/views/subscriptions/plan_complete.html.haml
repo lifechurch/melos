@@ -33,8 +33,7 @@
     %div.video.addthis_sharing_toolbox{:data => {:url => "#{plan_url(id: @presenter.subscription)}", :title => "#{@presenter.subscription.title}"}}
 
 .row.medium-centered.text-center
-  %a
-    = link_to t("plans.view my plans"), subscriptions_path(user_id: current_user.to_param), target: "_self", class: "small-font"
+  = link_to t("plans.my plans"), subscriptions_path(user_id: current_user.to_param), target: "_self", class: "small-font"
 
 %br
 %br
@@ -44,7 +43,7 @@
   .row
     .plans-carousel.radius.arrows
       %h2.carousel-header= t('plans.widget.saved plans')
-      %div{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
+      %div#saved-plans-carousel{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
         -if @saved_plans.reading_plans
           -#%ul.resource_list
           - @saved_plans.reading_plans.each do |plan|
@@ -54,7 +53,7 @@
                   - if plan.list_image.present?
                     = image_tag plan.list_image.url, class: 'subscription_thumbnail'
                   - else
-                    %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+                    %img.subscription_thumbnail{src: image_path('plans-hero-640x360.jpg')}
                 .subscription-info
                   .plan-title
                     =plan.name
@@ -69,7 +68,7 @@
   .row
     .plans-carousel.radius.arrows
       %h2.carousel-header= t('plans.widget.featured plans')
-      %div{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
+      %div#recommended-plans-carousel{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
         -if !@featured_plans.nil?
           -#%ul.resource_list
           - @featured_plans.each do |plan|
@@ -79,7 +78,7 @@
                   - if plan.list_image.present?
                     = image_tag plan.list_image.url, class: 'subscription_thumbnail'
                   - else
-                    %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+                    %img.subscription_thumbnail{src: image_path('plans-hero-640x360.jpg')}
                 .subscription-info
                   .plan-title
                     =plan.name
