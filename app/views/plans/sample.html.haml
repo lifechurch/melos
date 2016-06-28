@@ -103,7 +103,7 @@
 
               .day-bottom
                 %h1.text-center= i
-                -#%h4.text-center= I18n.l(cur_date, format: :short)
+                %h4.text-center= t("plans.day number", {day: i})
 
 
   .row
