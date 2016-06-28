@@ -46,7 +46,6 @@ angular.module('common.carousel', [])
                 $element.slick(config);
 
                 if (typeof $scope.initialSlide !== 'undefined' && $scope.initialSlide !== null) {
-                    // $element.unslick();
                     $element.slick('slickGoTo', $scope.initialSlide);
                 }
 
