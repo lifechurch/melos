@@ -43,7 +43,7 @@
   .row
     .plans-carousel.radius.arrows
       %h2.carousel-header= t('plans.widget.saved plans')
-      %div#saved-plans-carousel{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
+      %div#saved-plans-carousel.ng-hide{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
         -if @saved_plans.reading_plans
           -#%ul.resource_list
           - @saved_plans.reading_plans.each do |plan|
@@ -68,7 +68,7 @@
   .row
     .plans-carousel.radius.arrows
       %h2.carousel-header= t('plans.widget.featured plans')
-      %div#recommended-plans-carousel{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
+      %div#recommended-plans-carousel.ng-hide{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
         -if !@featured_plans.nil?
           -#%ul.resource_list
           - @featured_plans.each do |plan|

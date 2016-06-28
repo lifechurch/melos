@@ -439,7 +439,7 @@ sv:
             version: "Översättning"
             view more: "Visa mer"
             time: "Tid"
-            blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
+            blurb: "Prenumerera på dagens vers. Få ett dagligt e-brev eller push-meddelanden på din mobila enhet."
         friendship: 
             now friends: "Du är nu vän med"
         cta: 
@@ -506,7 +506,7 @@ sv:
         limit notice: "Du kan ha så många som 150 vänner"
         limit description: "Begränsa vilka du bli vänner med i Bibelappen till folk du känner väl för att skapa en miljö av ärliga samtal och gemensam utforskning med nära vänner,"
     friendships: 
-        blurb: "Focus your friendships around the Bible. Share what you want, when you want, within the safety of trusted relationships."
+        blurb: "Fokusera vänskapsrelationer kring Bibeln. Dela vad du vill, när du vill inom din trygga vänskapskrets."
         name required: "För att uppleva Bibeln tillsammans med vänner, uppdatera din profil med ditt för- och efternamn."
         find friends title: "Hitta vänner"
         search by name: "Sök med namn"
@@ -640,8 +640,8 @@ sv:
         confirm message: "Vi har skickat ett meddelande till %{email}"
         confirm message click: "Klicka på länken i mejlet för att bekräfta att det är du."
         resend verification: "Skicka verifieringsmejlet igen"
-        sign in alternate: "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
-        sign up alternate: "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
+        sign in alternate: "Har inget konto? <a href='%{sign_up_path}' target='_self'>Registrera dig</a>"
+        sign up alternate: "Har redan ett konto? <a href='%{sign_in_path}' target='_self'>Logga in</a>"
         password length: "Minst 6 tecken"
         welcome to youversion: "Välkommen till YouVersion-gemenskapen!"
         confirm email: "Kontrollera din e-post och klicka på länken för att bekräfta din registrering."

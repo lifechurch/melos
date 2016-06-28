@@ -679,7 +679,7 @@ pt-PT:
         no devices: "Não tem dispositivos associados à sua Conta YouVersion"
         no devices download copy: "Baseada na Bíblia online, YouVersion.com, a App da Bíblia é uma Bíblia online gratuita que pode ser instalada em praticamente todos os smartphones. A App da Bíblia permite aos utilizadores lerem a Bíblia, partilhar versículos nas suas redes sociais, marcar as suas passagens favoritas e mais—tudo num formato que acompanha um estilo de vida cada vez mais móvel. Visite <a href='https://www.bible.com/app' target='_self'>bible.com/app</a> a partir do seu dispositivo móvel para descarregar a App da Bíblia e associar à sua conta!"
         yes delete: "Sim, Apagar a Minha Conta"
-        account delete success: "Eliminámos a sua conta no YouVersion, conforme solicitado. Lamentamos vê-lo partir. Esperamos sinceramente que continue à procura de formas significativas de se relacionar com a Palavra de Deus."
+        account delete success: "Conforme solicitado, eliminámos a sua conta no YouVersion. Lamentamos vê-lo partir. Esperamos sinceramente que continue na sua busca por maneiras de se relacionar com a Palavra de Deus."
         delete account description: "Se apagar a sua conta, eliminará permanentemente toda a sua informação, histórico e personalização (como as notas, marcadores, destaques, etc) em Bible.com e na App da Bíblia. Isto não poderá ser revertido por si ou por nós. Caso tenha a certeza de que deseja continuar, por favor prossiga abaixo."
         user recent activity: "Atividade Recente de %{user}"
         my notes: "Notas"

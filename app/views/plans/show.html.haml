@@ -35,12 +35,11 @@
 .row.collapse
   .columns.large-8.medium-8.medium-centered
     .reading_plan_index_header
-      - back_path = @referrer.present? ? @referrer : plans_path
-      = link_to(back_path, class: '', target: "_self") do
+      = link_to(plans_path, class: '', target: "_self") do
         - if is_rtl?
-          != "&rarr; #{t('plans.back')}"
+          != "&rarr; #{t('pages.home.browse_plans')}"
         - else
-          != "&larr; #{t('plans.back')}"
+          != "&larr; #{t('pages.home.browse_plans')}"
       .right
         %a{ "ng-click" => "showShare = !showShare", "href" => "#" }
           != t("moments.action.share")

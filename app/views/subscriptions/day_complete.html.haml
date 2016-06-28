@@ -31,7 +31,7 @@
 
 .row.medium-centered.text-center
   %a
-    = link_to t("plans.view my plans"), subscriptions_path(user_id: current_user.to_param), target: "_self", class: "small-font"
+    = link_to t("plans.widget.view my plans"), subscriptions_path(user_id: current_user.to_param), target: "_self", class: "small-font"
     != "&bull;"
 
     -# if on last day and not completed plan, don't try to go to the next day (it doesn't exist)

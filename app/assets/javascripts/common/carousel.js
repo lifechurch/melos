@@ -49,6 +49,8 @@ angular.module('common.carousel', [])
                     if (typeof $scope.initialSlide !== 'undefined' && $scope.initialSlide !== null) {
                         $element.slick('slickGoTo', $scope.initialSlide);
                     }
+
+                    $element.removeClass('ng-hide');
                 });
 
 

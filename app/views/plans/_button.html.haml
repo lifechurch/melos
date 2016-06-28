@@ -1,12 +1,12 @@
 - # Local Parameters
 - # plan - instance of Plan
 - unique_id = rand(100)
-.rp-subscription-info
+.rp-subscription-info.text-center
   - if logged_in?
     -if current_user.subscribed_to?(plan)
-      = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'solid-button green', target: "_self")
+      = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'solid-button green padded', target: "_self")
     - else
-      = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button green', "ng-click" => "showSubscribeButtons = true")
+      = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button green padded', "ng-click" => "showSubscribeButtons = true")
       .plan-privacy-buttons.ng-hide{"ng-show" => "showSubscribeButtons"}
         .text-center
           %p.detail-text
@@ -23,6 +23,6 @@
         != "&bull;"
         = link_to t("plans.sample"), {day: "1"}, {class: '', target: "_self"}
   - else
-    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: "solid-button green", target: "_self")
+    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: "solid-button green padded", target: "_self")
     - if (action_name != 'sample')
-      = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}
+      = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray padded', target: "_self"}

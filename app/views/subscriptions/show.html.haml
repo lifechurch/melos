@@ -45,9 +45,9 @@
 
     .row.columns.medium-centered.text-center.img
       - if subscription.list_image.present?
-        = image_tag subscription.list_image.url
+        = image_tag subscription.list_image.url, class: 'rp-hero-img'
       - else
-        %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+        %img{src: image_path('plans-hero-640x360.jpg'), class: 'rp-hero-img'}
 
     .row.medium-centered.text-center
       %h3.plan-title= subscription.name
@@ -55,7 +55,7 @@
 
   .row.days-container
     .columns.large-8.medium-8.medium-centered
-      .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => is_rtl? ? 'true' : false, "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}"}
+      .day-slider.ng-hide{"carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => is_rtl? ? 'true' : false, "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}"}
         - statuses.each do |cur_status|
           - cur_date = Date.parse(cur_status.date)
           - is_active = cur_status.day.equal? @presenter.day

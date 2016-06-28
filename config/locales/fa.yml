@@ -428,7 +428,7 @@ fa:
             version: "ترجمه"
             view more: "بیشتر"
             time: "زمان"
-            blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
+            blurb: "برای دریافت آیۀ منتخب روز مشترک شوید. دریافت خودکار پست الکترونیک بصورت روزانه و اعلانات در دستگاه‌های موبایل."
         friendship: 
             now friends: "شما الآن با این عضو دوست شده‌اید"
         cta: 
@@ -495,7 +495,7 @@ fa:
         limit notice: "شما می‌توانید ۱۵۰ دوست داشته باشید"
         limit description: "در اپلیکیشن کتاب‌مقدس، محدود کردن دوستان به کسانی که می‌شناسید، فضایی مناسب برای گفتگوهای صادقانه فراهم می‌أورد و می‌توانید آموخته‌های خود را با دوستان مورد اعتماد در میان بگذارید.‏‏"
     friendships: 
-        blurb: "Focus your friendships around the Bible. Share what you want, when you want, within the safety of trusted relationships."
+        blurb: "روابط دوستانه خود را بر کتاب‌مقدس متمرکز کنید. آنچه می‌خواهید در زمان دلخواه در کانون امن دوستانتان به اشتراک بگذارید. "
         name required: "برای مشارکت با دوستان در برنامهٔ «کتاب‌مقدس» نام و نام خانوادگی‌تان را در پروفایل خود وارد کنید."
         find friends title: "جستجوى دوستان"
         search by name: "جستجوی نام"
@@ -629,8 +629,8 @@ fa:
         confirm message: "ما به آدرس %{email} ایمیلی فرستادیم. "
         confirm message click: "برای تأیید، لطفاً روی لینک ارسالی کلیک کنید."
         resend verification: "ارسال مجدد ایمیل تأیید حساب کاربری"
-        sign in alternate: "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
-        sign up alternate: "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
+        sign in alternate: "آیا حساب کاربری ندارید؟ <a href='%{sign_up_path}' target='_self'>ثبت‌نام کنید</a>"
+        sign up alternate: "آیا حساب کاربری دارید؟ <a href='%{sign_in_path}' target='_self'>ورود</a>"
         password length: "حداقل ۶ حرف/عدد"
         welcome to youversion: "به گروه یوورژن خوش آمديد!‏"
         confirm email: "لطفاً ا‌ی‌میل خود را بررسی کنید و روی لینک دریافتی کلیک کرده ثبت نام خود را تأیید تمایید."

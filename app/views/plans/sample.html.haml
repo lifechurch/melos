@@ -40,12 +40,11 @@
     .row
       .header.columns.large-8.medium-8.medium-centered
         .back
-          - back_path = @referrer.present? ? @referrer : subscriptions_path(user_id: current_user.to_param)
-          = link_to(back_path, target: "_self") do
+          = link_to(plans_path, target: "_self") do
             - if is_rtl?
-              != "&rarr; #{t('plans.back')}"
+              != "&rarr; #{t('pages.home.browse_plans')}"
             - else
-              != "&larr; #{t('plans.back')}"
+              != "&larr; #{t('pages.home.browse_plans')}"
 
         .sample-text= t("plans.sample")
 
@@ -61,14 +60,14 @@
 
   -# _button code tailored to this page. may want to explore just editing the _button partial if it won't ruin other instances of use
   .row
-    .columns.medium-3.medium-centered
+    .columns.medium-8.large-8.medium-centered.text-center
       - unique_id = rand(100)
       .rp-subscription-info.buttons-text
         - if logged_in?
           -if current_user.subscribed_to?(@plan)
-            = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param, id: @plan.to_param), id: "subscription-read", class: 'solid-button green', target: "_self")
+            = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param, id: @plan.to_param), id: "subscription-read", class: 'solid-button green padded', target: "_self")
           - else
-            = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button green', "ng-click" => "showSubscribeButtons = true")
+            = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button green padded', "ng-click" => "showSubscribeButtons = true")
             .plan-privacy-buttons.ng-hide{"ng-show" => "showSubscribeButtons"}
               .text-center
                 %p.detail-text
@@ -87,7 +86,7 @@
 
 
         - else
-          = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(@plan)), class: "solid-button green", target: "_self")
+          = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(@plan)), class: "solid-button green padded", target: "_self")
           - if (action_name != 'sample')
             = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}
 
@@ -95,10 +94,11 @@
 
   .row.days-container
     .columns.large-8.medium-8.medium-centered
-      .day-slider.ng-hide{"ng-show"=> "true", "carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}"}
+      .day-slider.ng-hide{"carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}"}
         - (1..@plan.total_days).each do |i|
+          - is_active = i.equal? @presenter.day
           = link_to(sample_plan_path(@plan.to_param, day: i), {target: "_self"}) do
-            .day
+            .day{class: "#{is_active ? 'active' : ''}"}
               .day-top
 
               .day-bottom

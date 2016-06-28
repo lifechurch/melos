@@ -95,11 +95,9 @@
           -if @completedList
             %span
               =t("plans.completed plans")
-              ="(#{@completedCount})"
           -else
             = link_to("#{user_path(@user.to_param)}/completed-reading-plans", target: "_self") do
               =t("plans.completed plans")
-              ="(#{@completedCount})"
 
 
   = render "shared/pagination", resource_list: @subscriptions

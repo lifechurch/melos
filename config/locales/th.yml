@@ -428,7 +428,7 @@ th:
             version: "เวอร์ชั่น"
             view more: "ดูเพิ่ม"
             time: "ตั้งเวลา"
-            blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
+            blurb: "บอกรับข้อพระคัมภีร์ประจำวัน รับอีเมลประจำวันหรือการแจ้งเตือนบนอุปกรณ์เคลื่อนที่ของคุณ"
         friendship: 
             now friends: "คุณได้เป็นเพื่อนกับ"
         cta: 
@@ -495,7 +495,7 @@ th:
         limit notice: "คุณสามารถมีเพื่อนได้มากถึง 150 คน"
         limit description: "การตั้งขอบเขตของการใช้แอพพระคัมภีร์กับผู้คนที่คุณรู้จักดี จะสร้างสภาพแวดล้อมที่ดีในการสนทนากันอย่างซื่อตรง และแบ่งปันสิ่งที่ได้ค้นพบกับเพื่อนที่คุณไว้ใจ"
     friendships: 
-        blurb: "Focus your friendships around the Bible. Share what you want, when you want, within the safety of trusted relationships."
+        blurb: "เน้นความสนใจในมิตรภาพรอบตัวของคุณกับพระคัมภีร์ แบ่งปันสิ่งที่คุณต้องการ ในเวลาที่คุณต้องการ ในกรอบความปลอดภัยของมิตรภาพที่วางใจได้"
         name required: "เพื่อที่จะมีประสบการณ์ในการใช้แอพพระคัมภีร์กับเพื่อน โปรดอัพเดทโปรไฟล์ของคุณด้วยชื่อและนามสกุลของคุณ"
         find friends title: "ค้นหาเพื่อน"
         search by name: "ค้นหาโดยชื่อ"
@@ -629,8 +629,8 @@ th:
         confirm message: "เราได้จัดส่งข้อความไปยัง %{email}"
         confirm message click: "คลิ๊กลิงค์ในอีเมลล์เพื่อยืนยันว่านี่คือคุณ"
         resend verification: "ส่งอีเมล์การยืนยันใหม่"
-        sign in alternate: "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
-        sign up alternate: "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
+        sign in alternate: "ยังไม่มีบัญชีผู้ใช้งาน? <a href='%{sign_up_path}' target='_self'>ลงทะเบียนใหม่</a>"
+        sign up alternate: "มีบัญชีแล้วใช่ไหม? <a href='%{sign_in_path}' target='_self'>ลงชื่อเข้าใช้</a>"
         password length: "ใช้ตัวอักษรขั้นต่ำ 6 ตัว"
         welcome to youversion: "ยินดีต้อนรับสู่ชุมชน YouVersion!"
         confirm email: "โปรดตรวจสอบอีเมล์ และ กดที่ลิงค์เพื่อยืนยันการสมัครสมาชิก"

@@ -849,7 +849,7 @@ ul.plan-results {
     overflow: hidden;
 
     .solid-button {
-      display: block;
+      display: inline-block;
     }
 
     .plan-privacy-buttons {
@@ -1426,7 +1426,7 @@ ul.plan-results {
     margin-top: 40px;
   }
 
-  img {
+  img.rp-hero-img {
     margin-top: 15px;
   }
 
@@ -1441,7 +1441,11 @@ ul.plan-results {
   
 }
 
-
+.devotional {
+  p, blockquote,h1,h2,.video-container {
+    margin-bottom: 20px;
+  }
+}
 /* !Plan settings */
 
 .rp-settings-nav {
@@ -1873,7 +1877,7 @@ html[dir="rtl"] {
 }
 
 .subscription-show {
-  img {
+  img.rp-hero-img {
     width: 360px;
   }
 

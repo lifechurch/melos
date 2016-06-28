@@ -640,7 +640,7 @@ it:
         confirm message: "Abbiamo appena mandato un messaggio a %{email}"
         confirm message click: "Clicca sul link in quel e-mail per confermare che sei tu."
         resend verification: "Invia nuovamente verifica e-mail"
-        sign in alternate: "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
+        sign in alternate: "Non hai un account? <a href='%{sign_up_path}' target='_self'>Iscriviti</a>"
         sign up alternate: "Hai già un account? <a href='%{sign_in_path}' target='_self'>accedi</a>"
         password length: "Minimo di 6 caratteri"
         welcome to youversion: "Benvenuto alla comunità YouVersion!"
