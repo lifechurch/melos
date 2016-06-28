@@ -2,8 +2,8 @@
 - if @user and @user.invalid?
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
-.row.medium-centered
-  .columns.medium-8.medium-centered
+.medium-centered
+  .columns.medium-centered.large-10
     = form_tag sign_in_path(source: params[:source], redirect: params[:redirect]) do
       %p
         .alt-path.terms= t('users.sign in alternate', sign_up_path: sign_up_path).html_safe

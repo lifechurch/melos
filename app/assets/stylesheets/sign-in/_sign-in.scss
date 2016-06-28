@@ -2,11 +2,13 @@ body.c_sessions.a_new,
 body.c_sessions.a_create {
 
   h1 {
-    text-align: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: left;
     @media #{$small-only} {
-      text-align: left;
+      padding-right: 1.07143rem;
+      padding-left: 1.07143rem;
     }
-
   }
 
   form
@@ -19,7 +21,7 @@ body.c_sessions.a_create {
   }
   .terms {
     clear: both;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: rem-calc(11);
   }
   @media #{$medium-up} {
@@ -28,7 +30,6 @@ body.c_sessions.a_create {
     input[type="password"],
     button {
       width: 100%;
-      //margin: 0 auto;
     }
   }
   @media #{$small-only} {
@@ -36,4 +37,5 @@ body.c_sessions.a_create {
       display: block;
     }
   }
+
 }
