@@ -73,6 +73,7 @@ class PlansController < ApplicationController
       format.json { return render nothing: true }
       format.any {
         @plan = Plan.find(params[:id])
+        @referrer = request.referrer
 
         # render 404 unless day param is a valid day for the plan
         return handle_404 if @plan.errors.present?
