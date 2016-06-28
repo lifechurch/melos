@@ -903,13 +903,13 @@ es-ES:
         none user: "%{username} aún no ha ganado ninguna insignia."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "¡En marcha!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "¡Queda %{count} día!"
+                other: "¡Quedan %{count} días!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} día atrasado"
+                other: "%{count} días atrasados"
         bible plan language: "Idioma del Plan de la Biblia"
         share plan: "Echa un vistazo a este @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ es-ES:
         none found: "No hemos podido encontrar un plan que cumpla tus criterios. Trata de ampliar tu búsqueda."
         about publisher: "Acerca del Editor"
         overview: "Descripción del Plan"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plan completado"
+        day complete: "Día Completo"
         start: "Iniciar Plan"
         save for later: "Guardar para después"
         saved for later: "Guardado para después"
@@ -1048,7 +1048,7 @@ es-ES:
         must start to complete: "¡Comienza este plan para guardar las lecturas terminadas!"
         invalid reference: "Lo sentimos, una de las referencias de esta lectura no existe en la versión seleccionada. Inténtalo seleccionando una version diferente. Si continuas viendo este mensaje, por favor, haznos saber <a href='%{support_url}' target='_self'>support team</a> sobre este problema."
         sidebar notice: "Usted está viendo un plan de lectura."
-        congratulations: "Congratulations!"
+        congratulations: "¡Enhorabuena!"
         completed notice: "¡Enhorabuena! Has completado el Plan de Lectura."
         exit: "Salir"
         loading sidebar content: "Cargando el contenido de la barra lateral..."

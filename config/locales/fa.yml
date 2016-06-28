@@ -892,11 +892,11 @@ fa:
         none user: "%{username} هنوز نشانی دریافت نکرده است."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "مطالعه طبق برنامه است!"
             days ahead: 
-                other: "%{count} Days Ahead!"
+                other: " %{count} از مطالعه جلو افتاده‌اید!"
             missed days: 
-                other: "%{count} Missed Days"
+                other: "%{count} روز از مطالعه عقب افتاده‌اید"
         bible plan language: "زبان برنامۀ مطالعه"
         share plan: "این برنامۀ مطالعه را در یوورژن امتحان کنید: %{plan_title}"
         widget: 
@@ -937,8 +937,8 @@ fa:
         none found: "برنامه‌ای متناسب با معیار شما يافت نشد. لطفاً جستجوى خود را گسترده‌تر كنيد."
         about publisher: "دربارۀ ناشر"
         overview: "نماى كلى برنامه"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "برنامۀ مطالعه تکمیل شد!"
+        day complete: "تکمیل (مطالعۀ) روز"
         start: "شروع این برنامه مطالعه"
         save for later: "دخیره برای استفاده درآینده"
         saved for later: "برای استفاده در آینده، ذخیره شد"
@@ -1033,7 +1033,7 @@ fa:
         must start to complete: "این برنامه را آغاز کنید تا مطالعات انجام شده را ذخیره نمایید!"
         invalid reference: "متأسفانه یکی از آیات مورد اشاره برای این مطالعه در ترجمهٔ انتخاب شده موجود نیست.لطفاً ترجمهٔ دیگری را از فهرست بالا انتخاب کنید.اگر باز این پیغام ظاهر شد، لطفاً این مشکل را به <a href='%{support_url}' target='_self'>تیم پشتیبانی فنی اطلاع دهید.</a>"
         sidebar notice: "شما در حال مشاهدهٔ برنامه‌ای برای مطالعه هستید."
-        congratulations: "Congratulations!"
+        congratulations: "تبریک می‌گوییم!"
         completed notice: "تبریک می‌گوییم! شما برنامهٔ مطالعه را تمام کردید"
         exit: "خروج"
         loading sidebar content: "محتوای نوار کناری در حال بارگذاری است..."

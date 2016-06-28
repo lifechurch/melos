@@ -892,11 +892,11 @@ id:
         none user: "%{username} belum memperoleh lencana apapun."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Sesuai Jadwal!"
             days ahead: 
-                other: "%{count} Days Ahead!"
+                other: "%{count} Hari di Depan!"
             missed days: 
-                other: "%{count} Missed Days"
+                other: "%{count} Hari Terlewatkan"
         bible plan language: "Bahasa Rencana Alkitab"
         share plan: "Cek ini @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -937,8 +937,8 @@ id:
         none found: "Kami tidak menemukan rencana sesuai kriteria Anda. Cobalah perluas pencarian Anda."
         about publisher: "Perihal Penerbit"
         overview: "Ikhtisar Rencana"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Rencana Selesai"
+        day complete: "Hari Selesai"
         start: "Mulai Rencana ini"
         save for later: "Simpan untuk Nanti"
         saved for later: "Tersimpan untuk Nanti"
@@ -1033,7 +1033,7 @@ id:
         must start to complete: "Mulai rencana ini untuk menyimpan bacaan yang telah selesai!"
         invalid reference: "Maaf, ayat rujukan untuk bacaan ini belum tersedia pada versi yang dipilih. Cobalah pilih versi berbeda di atas. Jika Anda tetap melihat pesan ini, silakan beritahu <a href='%{support_url}' target='_self'>tim dukungan</a> kami tentang isu ini."
         sidebar notice: "Anda sedang melihat rencana bacaan."
-        congratulations: "Congratulations!"
+        congratulations: "Selamat!"
         completed notice: "Selamat! Anda telah menyelesaikan rencana bacaan Anda"
         exit: "Keluar"
         loading sidebar content: "Memuat konten  bilah samping..."

@@ -903,13 +903,13 @@ hu:
         none user: "%{username} még nem szerzett jelvényt."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Terv szerint!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} napppal előrébb!"
+                other: "%{count} nappal előrébb!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} kihagyott nap"
+                other: "%{count} kihagyott nap"
         bible plan language: "Bibliaolvasási terv nyelve"
         share plan: "Nézd meg ezt a @YouVersion-ön #BibliaTerv: \"%{plan_title}\""
         widget: 
@@ -952,8 +952,8 @@ hu:
         none found: "Nem találtunk a feltételeidnek megfelelő tervet. Próbáld bővíteni a keresést."
         about publisher: "A kiadóról"
         overview: "Terv áttekintése"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Terv befejezve"
+        day complete: "Nap teljesítve"
         start: "Terv elkezdése"
         save for later: "Mentés későbbre"
         saved for later: "Későbbre elmentett"
@@ -1048,7 +1048,7 @@ hu:
         must start to complete: "Kezdd el ezt a tervet, hogy a befejezett olvasmányokat elmenthesd!"
         invalid reference: "Bocsánat, ehhez az olvasnivalóhoz lehet, hogy nincs meg az egyik igei utalás a kiválasztott fordításban. Válassz egy másik frodítást a fentiek közül. Ha továbbra is ezt az üzenetet látod, kérlek jelezd a <a href='%{support_url}' target='_self'>munkatársainknak</a>a támogató csoportban ."
         sidebar notice: "Egy olvasási tervet nézel."
-        congratulations: "Congratulations!"
+        congratulations: "Gratulálunk!"
         completed notice: "Gratulálunk! Befejezted az olvasási terved!"
         exit: "Kilépés"
         loading sidebar content: "Oldalsáv tartalmának betöltése..."

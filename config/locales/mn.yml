@@ -903,13 +903,13 @@ mn:
         none user: "%{username}  одоогоор ямар ч тэмдэгт аваагүй байна."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Хоцроогүй!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} Өдөр Үлдсэн!"
+                other: "%{count} Өдөр Үлдсэн!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "Хоцорсон Өдөр %{count}"
+                other: "Хоцорсон Өдрүүд %{count}"
         bible plan language: "Библи Уншлагын Төлөвлөгөөний Хэл"
         share plan: "Энэ @YouVersion #БиблийнТѳлѳвлѳѳгѳѳг сонирхуулах уу: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ mn:
         none found: "Таны шаардлагад нийцсэн төлөвлөгөө олдсонгүй. Хайлтаа өргөжүүлж үзнэ үү."
         about publisher: "Нийтлэгчийн талаар"
         overview: "Төлөвлөгөөний Ерөнхий Байдал"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Тѳлѳвлѳгѳѳг Дуусгасан"
+        day complete: "Дууссан"
         start: "Энэ төлөвлөгөөг эхлэх"
         save for later: "Дараа харахаар Хадгалах"
         saved for later: "Дараа харахаар Хадгалсан"
@@ -1048,7 +1048,7 @@ mn:
         must start to complete: "Дууссан уншлагаа хадгалахаар энэ тѳлѳвлѳгѳѳг эхлэх уу!"
         invalid reference: "Уучлаарай, Энэхүү уншлагт Библийн нэг ишлэлийн дугаар нь таны сонгосон Библийн орчуулгат байхгүй байж болзошгүй. Дээрх жагсаалтаас та өөр нэг Библийн орчлуулгыг сонгож үзээрэй. Хэрэт та хэвээрээ энэхүү үгсийг хүлээн авсаар байвал, манай <a href='%{support_url}' target='_self'>дэмжлэгийн багт</a>  мэдэгдэнэ үү."
         sidebar notice: "Та унших тѳлѳвлѳгѳѳг харагдаж байна."
-        congratulations: "Congratulations!"
+        congratulations: "Танд баяр хүргэе!"
         completed notice: "Баяр Хүргье! Уншлагын Тѳлѳвлѳгѳѳгѳѳ дууссан."
         exit: "Гарах"
         loading sidebar content: "Мэдээлэл ачаалаж байна..."

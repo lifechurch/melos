@@ -892,11 +892,11 @@ km:
         none user: "%{username} មិន​ទាន់​ទទួល​បាន ផ្លាក​សញ្ញា អី​នៅ​ឡើយ​ទេ"
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "កំពុងដំណើរការ!"
             days ahead: 
-                other: "%{count} Days Ahead!"
+                other: "%{count} ថ្ងៃ​ទៅមុខទៀត!"
             missed days: 
-                other: "%{count} Missed Days"
+                other: "%{count} ថ្ងៃដែលខកខាន"
         bible plan language: "ភាសារបស់គម្រោងព្រះគម្ពីរ"
         share plan: "ឆែក​មើល​មក @YouVersion #គំរោង​អាន​គម្ពីរ: %{plan_title}"
         widget: 
@@ -937,7 +937,7 @@ km:
         none found: "យើង​មិន​មាន​គំរោង​ដែល​លោក​អ្នក​កំពុង​រក​នោះ​ទេ។ សូម​ព្យាយាម​ស្វែង​រក​បន្ត​ទៀត"
         about publisher: "អំពី​អ្នក​បោះ​ផ្សាយ"
         overview: "ទិដ្ឋ​ភាព​ទូ​ទៅ​នៃ​គំរោង"
-        complete: "Plan Complete"
+        complete: "គម្រោងបញ្ចប់"
         day complete: "Day Complete"
         start: "ចាប់​ផ្ដើម​គំរោង"
         save for later: "រក្សា​ទុក​នៅ​ពេល​ក្រោយ"
@@ -1033,7 +1033,7 @@ km:
         must start to complete: "ចាប់​ផ្ដើម​គំរោង​នេះ​ក្នុង​ការរក្សាទុកនូវ​ការ​អាន​ដែល​បាន​បញ្ចប់។"
         invalid reference: "សូម​ទោស អំណះអំណាង​អត្ថបទ​ព្ះ​គម្ពីរ​សំរាប់​កម្ម​វិធី​អាន​នេះ​មិន​មាន​ទេ​នៅ​ក្នុង​ជំនាន់​ដែល​អ្នក​បាន​ជ្រើស​រើស​នេះ។ សូម​ជ្រើស​រើស​ជំនាន់​មួយ​ផ្សេង​ទៀត ពីខាង​លើ។ ប្រសិន​បើអ្នក​នៅ​តែ​បន្ត​ឃើញ​សារ​នេះ សូម​អោយ​យើងជា <a href='%{support_url}' target='_self'>ក្រុម​ជំនួយ</a> ដឹង​ពី​បញ្ហានេះ។"
         sidebar notice: "អ្នក​បាន​មើល​ទៅ​លើ​គំរោង​អាន"
-        congratulations: "Congratulations!"
+        congratulations: "សូម​អប​អរ​សាទរ!"
         completed notice: "សូមអបអរ! លោកអ្នកបានបញ្ចប់ គម្រោងអានព្រះគម្ពីររបស់អ្នកហើយ!"
         exit: "ចាក​ចេញ"
         loading sidebar content: "កំពុងផ្ទុកមាតិការបារចំហៀង..."

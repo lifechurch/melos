@@ -914,15 +914,15 @@ lv:
         none user: "%{username} nav nopelnījis nevienu nozīmīti vēl."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Tieši laikā!"
             days ahead: 
-                zero: "%{count} Days Ahead!"
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                zero: "%{count} dienas priekšā!"
+                one: "%{count} dienu priekšā!"
+                other: "%{count} dienas priekšā!"
             missed days: 
-                zero: "%{count} Missed Days"
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                zero: " %{count} izlaistu dienu"
+                one: "%{count} izlaista diena"
+                other: "%{count} izlaistu dienu"
         bible plan language: "Bībeles plāna valoda"
         share plan: "Apskati šo @YouVersion Bībeles plānu:  %{plan_title}"
         widget: 
@@ -967,8 +967,8 @@ lv:
         none found: "Nevaram atrast atbilstošu plānu taviem kritērijiem. Mēģini vispārināt savu meklējamo."
         about publisher: "Par izdevēju"
         overview: "Plāna pārskats"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plāns pabeigts"
+        day complete: "Diena pabeigta"
         start: "Sākt plānu"
         save for later: "Saglabāt vēlākam"
         saved for later: "Saglabāts vēlākam"
@@ -1063,7 +1063,7 @@ lv:
         must start to complete: "Uzsākt šo plānu lai saglabātu izlasīto!"
         invalid reference: "Piedodiet, viena no rakstu atsaucēm šai lasīšanai var neeksistēt izvēlētajā tulkojumā. Pamēģiniet izvēlēties citu tulkojumu augstāk. Ja jūs turpināt redzēt šo ziņojumu, lūdzu dodiet ziņu mūsu <a href='%{support_url}' target='_self'>atbalsta komandai</a>."
         sidebar notice: "Tu skaties lasīšanas plānu."
-        congratulations: "Congratulations!"
+        congratulations: "Apsveicam!"
         completed notice: "Apsveicam! Jūs esat pabeidzis savu lasīšanas plānu."
         exit: "Iziet"
         loading sidebar content: "Ielādē sānu joslas saturu..."

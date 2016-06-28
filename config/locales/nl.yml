@@ -903,13 +903,13 @@ nl:
         none user: "%{username} heeft nog geen medaille verdiend."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Op schema!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} dag voor de boeg!"
+                other: "%{count} dagen voor de boeg!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} gemiste dag"
+                other: "%{count} gemiste dagen"
         bible plan language: "Leesplan Taal"
         share plan: "Bekijk deze @YouVersion #Bijbelplan: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ nl:
         none found: "We konden geen leesplan vinden dat voldoet aan je criteria. Verbreed je zoekopdracht."
         about publisher: "Over deze uitgever"
         overview: "Leesplanoverzicht"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plan Voltooid"
+        day complete: "Dag Voltooid!"
         start: "Aan dit leesplan beginnen"
         save for later: "Sla het op voor Later"
         saved for later: "Opgeslagen voor Later"
@@ -1048,7 +1048,7 @@ nl:
         must start to complete: "Aan dit leesplan beginnen om afgeronde lezingen op te slaan!"
         invalid reference: "Sorry, een van de tekstreferenties van deze lezing bestaat wellicht niet in de geselecteerde versie. Probeer hierboven een andere versie te selecteren. Als je deze melding blijft zien informeer dan a.u.b. ons supportteam. <a href='%{support_url}' target='_self'>Als je deze melding blijft zien informeer dan a.u.b. ons supportteam.</a> Als je deze melding blijft zien informeer dan a.u.b. ons supportteam."
         sidebar notice: "Je bekijkt een leesplan."
-        congratulations: "Congratulations!"
+        congratulations: "Gefeliciteerd!"
         completed notice: "Gefeliciteerd! Met het voltooien van je leesplan."
         exit: "Afsluiten"
         loading sidebar content: "Zijbalk inhoud aan het laden..."

@@ -905,11 +905,11 @@ sw:
         status: 
             on track: "On Track!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "siku %{count} iliyopita"
+                other: "siku %{count} zilizopita"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} Angalia siku zilizokosa"
+                other: "%{count} Angalia siku zilizokosa"
         bible plan language: "Chagua mipango kulingana na lugha"
         share plan: "Tazama hii kwenye @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ sw:
         none found: "Hatukuweza kupata mpango unaoendana na vigezo vyako. Jaribu kupanua utafutaji wako."
         about publisher: "Kuhusu Mchapishaji"
         overview: "Mpango kwa ujumla"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Mpango imekamilishwa"
+        day complete: "Siku kamili"
         start: "Anza mpango huu"
         save for later: "Weka kwa baadaye"
         saved for later: "Imewekwa kwa baadaye"
@@ -1048,7 +1048,7 @@ sw:
         must start to complete: "Anza mpango huu ili uhifadhi masomo uliyomaliza"
         invalid reference: "Samahani,moja ya kumbukumbu za maandiko kwa ajili ya kusoma inaweza isiwepo katika toleo lilichaguliwa. Jaribu kuchagua toleo mbalimbali,hapo juu. Kama utaendelea kuona ujumbe huu,tafadhali wafahamishe <a href='%{support_url}' target='_self'> timu ya msaada  ili</a> kujua suala hilo."
         sidebar notice: "Unatazama mpango wa kusoma."
-        congratulations: "Congratulations!"
+        congratulations: "Hongera!"
         completed notice: "Hongera! Umekamilisha mpango wako wa kusoma"
         exit: "Kutoka"
         loading sidebar content: "Inapakia maudhui ya upau wa kando.."

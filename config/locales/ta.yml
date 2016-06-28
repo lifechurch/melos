@@ -903,13 +903,13 @@ ta:
         none user: "%{username} இன்னும் எந்த badges-யும் பெற வில்லை."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "சரியான தடத்தில்!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "இன்னும் %{count} நாள்!"
+                other: "இன்னும் %{count} நாட்கள்!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: " %{count} தவறவிட்ட நாள்"
+                other: " %{count} தவறவிட்ட நாட்கள்"
         bible plan language: "வேதாகமத் திட்ட மொழி"
         share plan: "இந்த @YouVersion #BiblePlan ஐ காண்க: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ ta:
         none found: "நீங்கள் தேடும் அளவினடிப்படையில் ஒரு திட்டத்தை எங்களால் கண்டுபிடிக்க முடியவில்லை.  உங்கள் தேடலை விரிவாக்கி முயற்சியுங்கள்."
         about publisher: "பதிப்பாளர் பற்றி"
         overview: "திட்ட மேலோட்டம்"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "திட்டம் முடிக்கப்பட்டது"
+        day complete: "நாள் முற்றுப் பெற்றது "
         start: "இந்த திட்டத்தை ஆரம்பியுங்கள்"
         save for later: "பின்னர் பயன்படுத்த சேமிக்கவும்"
         saved for later: "பின்னர் பயன்படுத்த சேமிக்கப்பட்டுள்ளது"
@@ -1048,7 +1048,7 @@ ta:
         must start to complete: "முடிக்கப்பட்ட வாசிப்புகளை சேமிக்க இந்த திட்டத்தை தொடங்கவும்!"
         invalid reference: "மன்னிக்கவும், வசன குறிப்புகளில் ஒன்று இந்த வாசிப்புக்கு   தேர்ந்தெடுக்கப்பட்ட பதிப்பில் இல்லை. மேலே, ஒரு வேறுபட்ட பதிப்பை தேர்ந்தெடுத்து முயற்சிக்கவும்  . இந்த செய்தியை நீங்கள் தொடர்ந்து பார்த்தால், தயவு செய்து எங்கள் <a href='%{support_url}' target='_self'>உதவி குழு</a> இந்த பிரச்சினை பற்றி எங்கள்  தெரிவிக்கவும்."
         sidebar notice: "நீங்கள் ஒரு வாசிப்பு திட்டத்தை பார்த்து கொண்டிருக்கிறீர்கள்."
-        congratulations: "Congratulations!"
+        congratulations: "வாழ்த்துக்கள்!"
         completed notice: "வாழ்த்துகள்! உங்கள் வாசிப்பு திட்டத்தை முடித்து விட்டீர்கள்."
         exit: "வெளியேற"
         loading sidebar content: "பக்கப்பட்டியின் உள்ளடக்கத்தை ஏற்றிகொண்டிருக்ககிறது ..."

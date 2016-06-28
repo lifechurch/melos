@@ -903,13 +903,13 @@ de:
         none user: "%{username} hat bisher keine Abzeichen bekommen."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Prima!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "Du bist deinem Plan %{count} Tag voraus!"
+                other: "Du bist deinem Plan%{count} Tage voraus!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} Tag verpasst"
+                other: "%{count} Tage verpasst"
         bible plan language: "Leseplan Sprache"
         share plan: "Schau dir diesen @YouVersion #BiblePlan an: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ de:
         none found: "Wir haben keine Lesepläne für dein Suchkriterium gefunden. Versuche, deine Suche zu erweitern."
         about publisher: "Über den Autor"
         overview: "Leseplan-Übersicht"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Leseplan abgeschlossen"
+        day complete: "Tag abgeschlossen"
         start: "Diesen Leseplan beginnen"
         save for later: "Für später speichern"
         saved for later: "Für später gespeichert"
@@ -1048,7 +1048,7 @@ de:
         must start to complete: "Abonniere diesen Leseplan. Dann kannst deine Lesungen als erledigt abhaken!"
         invalid reference: "Sorry, eine der Schriftstellen für diesen Leseplan ist nicht in der ausgewählten Übersetzung vorhanden. Wähle oben eine andere aus. Wird diese Meldung weiterhin angezeigt, meldendieses Problem bitte unserem <a href='%{support_url}' target='_self'> Support-Team</a>."
         sidebar notice: "Du schaust dir einen Leseplan an."
-        congratulations: "Congratulations!"
+        congratulations: "Herzlichen Glückwunsch!"
         completed notice: "Herzlichen Glückwunsch! Du hast einen Leseplan abgeschlossen."
         exit: "Abschließen"
         loading sidebar content: "Seitenleiste wird geladen..."

@@ -903,13 +903,13 @@ pt:
         none user: "%{username} ainda não ganhou nenhuma medalha."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Em dia!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} Dia Adiantado!"
+                other: "%{count} Dias Adiantado!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} Dia Perdido"
+                other: "%{count} Dias Perdidos"
         bible plan language: "Idioma do Plano de Leitura"
         share plan: "Confira esse @YouVersion #PlanoBiblico: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ pt:
         none found: "Não encontramos um plano a partir de seus critérios de pesquisa. Tente ampliar sua pesquisa."
         about publisher: "Sobre o Editor"
         overview: "Visão Geral do Plano"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plano Concluído"
+        day complete: "Dia Concluído"
         start: "Começar esse Plano"
         save for later: "Salvar para Depois"
         saved for later: "Salvo para mais tarde"
@@ -1048,7 +1048,7 @@ pt:
         must start to complete: "Comece este plano para salvar as leituras completadas!"
         invalid reference: "Desculpe, uma das referências de escritura para esta leitura pode não existir na versão selecionada. Tente selecionar uma versão diferente acima. Se continuar a receber esta mensagem, por favor avise nosso <a href='%{support_url}' target='_self'>support team</a> sobre este problema."
         sidebar notice: "Você está visualizando um plano de leitura."
-        congratulations: "Congratulations!"
+        congratulations: "Parabéns!"
         completed notice: "Parabéns! Você completou seu plano de leitura."
         exit: "Sair"
         loading sidebar content: "Carregando barra lateral..."

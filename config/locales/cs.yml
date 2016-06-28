@@ -914,15 +914,15 @@ cs:
         none user: "%{username} zatím nezískal žádné odznaky."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Podle plánu!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                few: "%{count} Days Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} den napřed"
+                few: "%{count} dny napřed"
+                other: "%{count} dnů napřed"
             missed days: 
-                one: "%{count} Missed Day"
-                few: "%{count} Missed Days"
-                other: "%{count} Missed Days"
+                one: "%{count} zmeškaný den"
+                few: "%{count} zmeškané dny"
+                other: "%{count} zmeškaných dnů"
         bible plan language: "Jazyk plánu čtení Bible"
         share plan: "Prohlédněte si tento @YouVersion #Plán čtení: %{plan_title}"
         widget: 
@@ -967,8 +967,8 @@ cs:
         none found: "Nebyl nalezen plán odpovídající vašim kritériím. Zkuste rozšířit svůj výběr."
         about publisher: "O vydavateli"
         overview: "Rozpis plánu čtení"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plán dokončen"
+        day complete: "Den dokončen"
         start: "Začít tento plán"
         save for later: "Uložit offline"
         saved for later: "Uložené k offline čtení"
@@ -1063,7 +1063,7 @@ cs:
         must start to complete: "Aby jste mohli uložit přečtený úsek, je zapotřebí spustit tento plán čtení!"
         invalid reference: "Promiňte, ale v tomto vybraném překladu se zřejmě nenachází odkaz na tento verš. Vyzkoušejte vybrat jiný překlad, viz nahoře. Pokud se vám tato zpráva opět zobrazí , prosím informujte náš <a href='%{support_url}' target='_self'>tým podpory</a> o tomto problému."
         sidebar notice: "Prohlížíte si plán čtení."
-        congratulations: "Congratulations!"
+        congratulations: "Gratulujeme!"
         completed notice: "Gratulujeme! Dokončili jste váš plán čtení."
         exit: "Konec"
         loading sidebar content: "Načítání obsahu postranní lišty..."

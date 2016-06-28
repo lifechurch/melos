@@ -892,11 +892,11 @@ ja:
         none user: "%{username} さんはまだバッジを獲得していません"
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "予定通り!"
             days ahead: 
-                other: "%{count} Days Ahead!"
+                other: "%{count}日先行!"
             missed days: 
-                other: "%{count} Missed Days"
+                other: "%{count}日未読"
         bible plan language: "読書プランの言語"
         share plan: "#読書プラン %{plan_title}をチェック@YouVersion #BiblePlan "
         widget: 
@@ -937,8 +937,8 @@ ja:
         none found: "条件に合うプランが見つかりませんでした。検索の範囲を広げてみてください"
         about publisher: "出版元について"
         overview: "読書プランの概要"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "プラン完了"
+        day complete: "今日の箇所を読み終えました"
         start: "この読書プランを開始する"
         save for later: "今後のために保存"
         saved for later: "保存済みリスト"
@@ -1033,7 +1033,7 @@ ja:
         must start to complete: "このプランに参加すれば、完了箇所を保存できますよ！"
         invalid reference: "申し訳ありませんが、参照聖句の一部が選択された聖書訳ではご覧になれないようです。上記にある別の聖書訳を選んでお試しください。このメッセージが継続して表示される場合は、 <a href='%{support_url}' target='_self'>support team</a> までお知らせください。"
         sidebar notice: "読書プランをご覧になっています。"
-        congratulations: "Congratulations!"
+        congratulations: "おめでとうございます！"
         completed notice: "おめでとうございます！読書プランを完了しました。"
         exit: "終了"
         loading sidebar content: "サイドバーの内容を読み込み中…"

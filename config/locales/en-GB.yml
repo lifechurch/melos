@@ -903,13 +903,13 @@ en-GB:
         none user: "%{username} hasn't earnt any badges yet."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "On track!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} day ahead!"
+                other: "%{count} days ahead!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} missed day"
+                other: "%{count} missed days"
         bible plan language: "Bible plan language"
         share plan: "Check out this @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ en-GB:
         none found: "We couldn't find a plan to match your criteria. Try widening your search."
         about publisher: "About the publisher"
         overview: "Plan overview"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plan complete"
+        day complete: "Day complete"
         start: "Start this plan"
         save for later: "Save for later"
         saved for later: "Saved for later"

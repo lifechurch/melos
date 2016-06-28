@@ -903,13 +903,13 @@ it:
         none user: "%{username} non ha ancora guadagnato nessun distintivo."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Secondo la Tabella di Marcia!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} Giorno in Avanti!"
+                other: "%{count} Giorni in Avanti!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} Giorno Perso"
+                other: "%{count} Giorni Persi"
         bible plan language: "Linguaggio Piano di Lettura"
         share plan: "Dai un'occhiata a questo #PianoDiLettura @YouVersion: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ it:
         none found: "Non siamo riusciti a trovare un piano corrispondente ai criteri specificati. Prova ad estendere la tua ricerca."
         about publisher: "Informazioni Editore"
         overview: "Panoramica del Piano"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Piano Completato"
+        day complete: "Giorno Completato"
         start: "Comincia questo Piano"
         save for later: "Salva per Dopo"
         saved for later: "Salvato per Dopo"
@@ -1048,7 +1048,7 @@ it:
         must start to complete: "Inizia questo piano per salvare le letture fatte!"
         invalid reference: "Ci dispiace - uno dei riferimenti biblici per questa lettura potrebbe non esistere nella versione selezionata. Prova a selezionare un'altra versione, sopra. Se continui a vedere questo messaggio, presenta il problema al nostro <a href='%{support_url}' target='_self'>servizio assistenza</a>."
         sidebar notice: "Stai visionando un piano di lettura."
-        congratulations: "Congratulations!"
+        congratulations: "Congratulazioni!"
         completed notice: "Congratulazioni! Hai completato il tuo piano di lettura."
         exit: "Esci"
         loading sidebar content: "Caricando il contenuto della barra laterale..."

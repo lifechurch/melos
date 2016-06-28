@@ -903,13 +903,13 @@ da:
         none user: "%{username} har ikke optjent nogen mærker endnu."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "På sporet!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} Dag forud!"
+                other: "%{count} Dage forud!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} Manglende dag"
+                other: "%{count} Manglende dage"
         bible plan language: "Bibel Plan Sprog"
         share plan: "Tjek denne @YouVersion #BibelPlan: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ da:
         none found: "Vi kunne ikke finde en plan der matchede dine kriterier. Prøv at udvid din søgning."
         about publisher: "Om udgiveren"
         overview: "Planoversigt"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plan færdig"
+        day complete: "Dag færdig"
         start: "Start denne plan"
         save for later: "Gem til senere"
         saved for later: "Gemt til senere"
@@ -1048,7 +1048,7 @@ da:
         must start to complete: "Start denne plan for at gemme færdige læsninger!"
         invalid reference: "Beklager, et af de ​​skriftsteder referencer til denne læsning ikke findes i den valgte version. Prøv at vælge en anden version, ovenfor. Hvis du fortsat ser denne besked, så lad vores <a href='%{support_url}' target='_self'>supportteam</a> ved om problemet."
         sidebar notice: "Du ser en Bibellæseplan"
-        congratulations: "Congratulations!"
+        congratulations: "Godt klaret!"
         completed notice: "Tillykke! Du har fuldført en Bibellæseplan."
         exit: "Ud"
         loading sidebar content: "Indlæser sidemenu indhold..."

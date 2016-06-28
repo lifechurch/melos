@@ -903,13 +903,13 @@ sq:
         none user: "Përdoruesi %{username} nuk ka fituar akoma ndonjë emblemë."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Në harmoni!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} ditë përpara!"
+                other: "%{count} ditë përpara!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} ditë e humbur"
+                other: "%{count} ditë të humbura"
         bible plan language: "Gjuha e Planit të Biblës"
         share plan: "Hidhi një sy këtij #PlaniBiblik @YouVersion: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ sq:
         none found: "Ne nuk mundëm të gjenim një plan që i përshtatet kriterit tuaj. Provoni të zgjeroni kërkimin tuaj."
         about publisher: "Rreth publikuesit"
         overview: "Përmbledhje e planit"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plani i përfunduar"
+        day complete: "Ditë e përfunduar!"
         start: "Fillo këtë plan"
         save for later: "Ruaje për më vonë"
         saved for later: "U ruajt për më vonë"
@@ -1048,7 +1048,7 @@ sq:
         must start to complete: "Filloje këtë plan për të ruajtur leximet e përfunduara!"
         invalid reference: "Na vjen keq, një nga referimet biblike për këtë lexim mund të mos ekzistojë në versionin e zgjedhur. Provoni të zgjidhni një version tjetër, lart. Nëse vazhdoni ta shihni këtë mesazh, bëjani të ditur <a href='%{support_url}' target='_self'>grupit të ndihmës</a> këtë problem."
         sidebar notice: "Jeni duke parë një plan leximi."
-        congratulations: "Congratulations!"
+        congratulations: "Përgëzime!"
         completed notice: "Përgëzime! Ju e përfunduat planin tuaj të leximit."
         exit: "Dil"
         loading sidebar content: "Duke vendosur përmbajtjen e kolonës anësore..."

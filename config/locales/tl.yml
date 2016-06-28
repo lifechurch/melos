@@ -903,13 +903,13 @@ tl:
         none user: "Si %{username} ay hindi pa nakakakuha ng anumang sagisag."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Nakakasunod!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} Araw na Susunod!"
+                other: "%{count} Mga Araw na Susunod!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} Araw na Nakaligtaan"
+                other: "%{count} Mga Araw na Nakaligtaan"
         bible plan language: "Wikang Gamit sa Babasahin"
         share plan: "Tingnan mo itong %{plan_title} ng @YouVersion #BiblePlan"
         widget: 
@@ -952,8 +952,8 @@ tl:
         none found: "Hindi kami makahanap ng plano na angkop sa iyong piniling criteria. Subukang palawakin pa ang paghahanap."
         about publisher: "Tungkol sa Naglathala"
         overview: "Overview ng Plan"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Nakumpletong Babasahin"
+        day complete: "Natapos na Araw"
         start: "Umpisahan ang Plan na Ito"
         save for later: "I-save para sa ibang Pagkakataon"
         saved for later: "Na-save para sa Ibang Pagkakataon"
@@ -1048,7 +1048,7 @@ tl:
         must start to complete: "Simulan itong plano para ma-save ang mga natapos na babasahin!"
         invalid reference: "Paumanhin, isa sa mga sangguniang talata ng Biblia para sa babasahing ito ay maaaring hindi kasama sa napiling salin. Maaaring pumili ng ibang salin ng Biblia sa itaas. Kung patuloy na nakikita ang mensahe tungkol sa pagkakamaling ito, paki bigay alam sa aming <a href='%{support_url}' target='_self'>support team</a>."
         sidebar notice: "Tinitingnan mo ngayon ang isang babasahing gabay."
-        congratulations: "Congratulations!"
+        congratulations: "Binabati Kita!"
         completed notice: "Pagbati sa iyo! Natapos mo na ang iyong babasahing gabay."
         exit: "Exit"
         loading sidebar content: "Naglo-load ng konteksto ng sidebar.."

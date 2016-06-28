@@ -892,11 +892,11 @@ zh-TW:
         none user: "%{username}還未獲得任何徽章。"
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "如期進行！"
             days ahead: 
-                other: "%{count} Days Ahead!"
+                other: "進度超前 %{count} 天"
             missed days: 
-                other: "%{count} Missed Days"
+                other: "錯過 %{count} 天"
         bible plan language: "讀經計劃的語言"
         share plan: "查看此計劃 @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -937,8 +937,8 @@ zh-TW:
         none found: "我們無法找到符合您條件的計劃。請嘗試擴大您的搜索。"
         about publisher: "關於出版商"
         overview: "計劃概述"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "完成計劃"
+        day complete: "今日完成"
         start: "開始此計劃"
         save for later: "先存後讀"
         saved for later: "先存後讀"
@@ -1033,7 +1033,7 @@ zh-TW:
         must start to complete: "請開始此計劃來儲存已經完成的閱讀進度！"
         invalid reference: "抱歉！此讀經內容的參考經文可能不在您選定的譯本裡。請在上方選擇一個不同的譯本。如果您持續看到此信息，請通知我們的  <a href='%{support_url}' target='_self'>支援團隊</a>！"
         sidebar notice: "您在查看讀經計劃"
-        congratulations: "Congratulations!"
+        congratulations: "恭喜！"
         completed notice: "恭喜！您已完成了讀經計劃。"
         exit: "退出"
         loading sidebar content: "載入提要欄位內容..."

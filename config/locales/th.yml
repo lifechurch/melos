@@ -892,11 +892,11 @@ th:
         none user: "%{username} ยังไม่ได้รางวัลเหรียญตราใดๆ"
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "เป็นไปตามแผน!"
             days ahead: 
-                other: "%{count} Days Ahead!"
+                other: "อ่านล่วงหน้าไป %{count} วัน!"
             missed days: 
-                other: "%{count} Missed Days"
+                other: "อ่านไม่ทัน %{count} วัน"
         bible plan language: "แผนการอ่านภาษาต่างๆ"
         share plan: "ลองดู @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -937,8 +937,8 @@ th:
         none found: "เราไม่พบแผนการอ่านที่ตรงกับความต้องการของคุณ โปรดขยายการค้นหาของคุณ"
         about publisher: "เกี่ยวกับผู้เผยแพร่"
         overview: "ภาพรวมของแผน"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "แผนการอ่านที่สำเร็จ"
+        day complete: "วันที่สำเร็จ"
         start: "เริ่มแผนนี้"
         save for later: "บันทึกสำหรับดูภายหลัง"
         saved for later: "ที่บันทึกไว้สำหรับดูภายหลัง"
@@ -1033,7 +1033,7 @@ th:
         must start to complete: "เริ่มแผนนี้เพื่อบันทึกการอ่าน!"
         invalid reference: "ขออภัย หนึ่งในข้อพระคัมภีร์อ้างอิงสำหรับการอ่านนี้อาจจะไม่มีในพระคัมภีร์ฉบับที่คุณเลือก โปรดลองเลือกพระคัมภีร์ฉบับอื่นๆ ด้านบน และถ้าคุณยังเห็นข้อความนี้อีก กรุณาแจ้งให้ <a href='%{support_url}' target='_self'>ทีมงานช่วยเหลือ</a> ของเรารับทราบถึงปัญหา"
         sidebar notice: "คุณกำลังดูแผนการอ่าน"
-        congratulations: "Congratulations!"
+        congratulations: "ขอแสดงความยินดี!"
         completed notice: "ขอแสดงความยินดี! คุณอ่านแผนนี้จบแล้ว"
         exit: "ออก"
         loading sidebar content: "กำลังโหลดข้อมูลแถบด้านข้าง..."

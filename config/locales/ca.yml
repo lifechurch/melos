@@ -903,13 +903,13 @@ ca:
         none user: "El/la %{username} encara no té cap insígnia."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Al dia!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "Et queda %{count}dia!"
+                other: "Et queden %{count} dies!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "T'has deixat %{count}dia."
+                other: "T'has deixat %{count} dies."
         bible plan language: "Idioma del Pla de lectura"
         share plan: "Mira això @YouVersion #PladelaBíblia: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ ca:
         none found: "No hem trobat cap pla amb les teves opcions de cerca. Prova d'ampliar la teva cerca."
         about publisher: "Sobre l'editor"
         overview: "Descripció del pla"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Pla completat"
+        day complete: "Dia completat"
         start: "Comença aquest pla"
         save for later: "Desar per més tard"
         saved for later: "Desat per més tard"
@@ -1048,7 +1048,7 @@ ca:
         must start to complete: "Comença aquest pla per desar les lectures finalitzades!"
         invalid reference: "Ho sentim, una de les referències d'aquesta lectura pot ser que no existeixi en la versió seleccionada. Prova seleccionant una altra versió, a dalt. Si continues rebent aquest missatge, notifica al nostre <a href='%{support_url}' target='_self'>suport tècnic</a> sobre aquesta qüestió."
         sidebar notice: "Estàs veient un pla de lectura"
-        congratulations: "Congratulations!"
+        congratulations: "Enhorabona!"
         completed notice: "Enhorabona! Has completat el teu pla de lectura."
         exit: "Sortida"
         loading sidebar content: "Carregant el contingut de la barra lateral..."

@@ -903,13 +903,13 @@ fi:
         none user: "%{username} ei ole ansainnut yhtään ansiomerkkiä."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Aikataulussa!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} päivän edellä!"
+                other: "%{count} päivää edellä!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} väliin jäänyt päivä"
+                other: "%{count} väliin jäänyttä päivää"
         bible plan language: "Lukusuunnitelman kieli"
         share plan: "Vilkaise tätä @YouVersion -lukusuunnitelmaa #BiblePlan: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ fi:
         none found: "Emme löytäneet hakuehtoihisi sopivaa suunnitelmaa. Kokeile hakuehtojen laajentamista."
         about publisher: "Tietoa julkaisijasta"
         overview: "Suunnitelman yleiskatsaus"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Suunnitelma suoritettu"
+        day complete: "Päivä suoritettu"
         start: "Aloita tämä suunnitelma"
         save for later: "Laita muistiin"
         saved for later: "Tallennetut"
@@ -1048,7 +1048,7 @@ fi:
         must start to complete: "Aloita tämä suunnitelma tallentaaksesi jo luetut kohdat!"
         invalid reference: "Pahoittelemme, yhtä tämän luvun tekstiviittausta ei löydy valitusta käännöksestä. Valitse toinen käännös yläpuolelta. Jos edelleen näet tämän viestin, ilmoita asiasta <a href='%{support_url}' target='_self'>tukeemme</a>."
         sidebar notice: "Katselet lukusuunnitelmaa."
-        congratulations: "Congratulations!"
+        congratulations: "Onnittelut!"
         completed notice: "Onneksi olkoon, olet suorittanut lukusuunnitelman!"
         exit: "Poistu"
         loading sidebar content: "Ladataan sisältöä..."

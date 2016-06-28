@@ -903,13 +903,13 @@ af:
         none user: "%{username} het nog geen kentekens verwerf nie."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Op koers!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} Dag Oor!"
+                other: "%{count} Dae Oor!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} Dag Gemis"
+                other: "%{count} Dae Gemis"
         bible plan language: "Bybelplan taal"
         share plan: "Kyk bietjie na hierdie @YouVersion #Bybel Leesplan:%{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ af:
         none found: "Ons kon nie 'n plan kry wat aan jou kriteria voldoen nie. Probeer jou soekveld verbreed."
         about publisher: "Oor Die Uitgewer"
         overview: "Plan Oorsig"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Leesplan voltooid"
+        day complete: "Dag voltooid"
         start: "Begin hierdie Plan"
         save for later: "Stoor vir later."
         saved for later: "Gestoor vir later."
@@ -1048,7 +1048,7 @@ af:
         must start to complete: "Begin hierdie plan sodat jy kan afmerk wat jy gelees het!"
         invalid reference: "Jammer, maar een van die skrif-verwysings bestaan nie in die gekiesde weergawe nie. Probeer om hierbo 'n ander weergawe te kies. Indien jy weer hierdie boodskap kry, lig asseblief ons <a href='%{support_url}' target='_self'>support team</a> in dat die probleem ontstaan."
         sidebar notice: "Jy sien 'n leesplan"
-        congratulations: "Congratulations!"
+        congratulations: "Geluk!"
         completed notice: "Veels geluk! Jy het jou leesplan voltooi."
         exit: "Verlaat"
         loading sidebar content: "Laai die kant  paal inligting..."

@@ -903,13 +903,13 @@
         none user: "%{username} har ikke fått noen merker ennå."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "I rute!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} Dag foran!"
+                other: "%{count} Dager foran!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} dag mangler"
+                other: "%{count} Manglende dager"
         bible plan language: "Bibel-plan språk"
         share plan: "Sjekk ut denne @YouVersion #Bibelleseplan: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@
         none found: "Vi fant ingen planer i tråd med dine kriterier. Prøv å utvide søket."
         about publisher: "Om utgiver"
         overview: "Oversikt over plan"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Leseplanen er fullført"
+        day complete: "Dag fullført"
         start: "Start plan"
         save for later: "Spar for senere"
         saved for later: "Lagret for senere"
@@ -1048,7 +1048,7 @@
         must start to complete: "Abonner på denne planen for å lagre det du har lest."
         invalid reference: "Beklager, men en av skrifthenvisningene i denne andakten finnes ikke i den valgte bibelutgaven. Forsøk å velge en av de andre bibelutgavene ovenfor. Om du fremdeles får denne meldingen, meld fra om problemet til vårt <a href='%{support_url}' target='_self'>support team</a>."
         sidebar notice: "Du viser en leseplan"
-        congratulations: "Congratulations!"
+        congratulations: "Gratulerer!"
         completed notice: "Gratulerer! Du har fullført din leseplan."
         exit: "Avslutt"
         loading sidebar content: "Laster innhold fra sidemenyen..."

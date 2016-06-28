@@ -892,11 +892,11 @@ vi:
         none user: "%{username} chưa có huy hiệu nào."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Đọc đủ ngày!"
             days ahead: 
-                other: "%{count} Days Ahead!"
+                other: "Nhanh %{count} ngày!"
             missed days: 
-                other: "%{count} Missed Days"
+                other: "Trễ %{count} ngày"
         bible plan language: "Ngôn ngữ cho kế hoạch"
         share plan: "Hãy thử xem kế hoạch \"%{plan_title}\" của @YouVersion #BiblePlan!"
         widget: 
@@ -937,8 +937,8 @@ vi:
         none found: "Chúng tôi không tìm được kế hoạch nào phù hợp với tiêu chí của bạn. Hãy thử mở rộng tìm kiếm!"
         about publisher: "Thông tin phát hành"
         overview: "Sơ lược kế hoạch"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Hoàn tất kế hoạch"
+        day complete: "Hoàn tất hôm nay"
         start: "Bắt đầu kế hoạch"
         save for later: "Lưu lại để lúc khác"
         saved for later: "Kế hoạch lưu trữ"
@@ -1033,7 +1033,7 @@ vi:
         must start to complete: "Bắt đầu kế hoạch này để lưu lại các phần đã đọc xong!"
         invalid reference: "Xin lỗi bạn, một trong các tham khảo Kinh Thánh này không có trong bản dịch được chọn. Hãy thử chọn một bản dịch khác ở trên. Nếu bạn vẫn nhận được thông báo này, hãy cho <a href='%{support_url}' target='_self'>nhóm hỗ trợ</a> của chúng tôi biết."
         sidebar notice: "Bạn đang xem một kế hoạch đọc."
-        congratulations: "Congratulations!"
+        congratulations: "Chúc mừng bạn!"
         completed notice: "Chúc mừng bạn đã hoàn tất kế hoạch!"
         exit: "Thoát"
         loading sidebar content: "Đang tải nội dung của thanh bên..."

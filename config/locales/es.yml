@@ -903,13 +903,13 @@ es:
         none user: "%{username} no ha obtenido ninguna insignia aún."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "¡En Curso!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: " ¡%{count} Día Adelante!"
+                other: "¡%{count} Días Adelante!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} Día Perdido"
+                other: "%{count} Días Perdidos"
         bible plan language: "Idioma del Plan Bíblico"
         share plan: "Dale un vistazo a @YouVersion#BiblePlan:%{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ es:
         none found: "No hemos podido encontrar un plan que coincida con tus criterios. Por favor, intenta ampliar la búsqueda."
         about publisher: "Acerca del Editor"
         overview: "Descripción del Plan"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plan completado"
+        day complete: "Día completado"
         start: "Comenzar este Plan"
         save for later: "Guardar para más tarde"
         saved for later: "Guardado para después"
@@ -1048,7 +1048,7 @@ es:
         must start to complete: "¡Iniciar este plan para guardar lecturas completadas!"
         invalid reference: "Lo siento. Una de las refencias de la Escritura para esta lectura puede ser que no existe en la versión elegida. Intenta seleccionar una versión diferente, arriba. Si continúas viendo este mensaje, por favor permite que nuestro <a href='%{support_url}' target='_self'>support team</a>conozca sobre el problema."
         sidebar notice: "Estás viendo un plan de lectura"
-        congratulations: "Congratulations!"
+        congratulations: "¡Felicitaciones!"
         completed notice: "¡Felicidades! Ha completado su plan de lectura."
         exit: "Salir"
         loading sidebar content: "Cargando contenido de barra lateral..."

@@ -914,15 +914,15 @@ sk:
         none user: "Používateľ %{username} zatiaľ nezískal žiadne odznaky."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Na dobrej ceste!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                few: "%{count} Days Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count}Deň popredu!"
+                few: "%{count}Dni popredu!"
+                other: "%{count}Dní popredu!"
             missed days: 
-                one: "%{count} Missed Day"
-                few: "%{count} Missed Days"
-                other: "%{count} Missed Days"
+                one: "%{count}Zmeškaný deň"
+                few: "%{count}Zmeškané dni"
+                other: "%{count}Zmeškaných dní"
         bible plan language: "Jazyk plánu Biblie"
         share plan: "Pozrite si tento #PlánČítania @YouVersion: %{plan_title}"
         widget: 
@@ -967,8 +967,8 @@ sk:
         none found: "Nenašli sme žiadny plán, ktorý by vyhovoval zadaným kritériám. Skúste zovšeobecniť hľadaný pojem."
         about publisher: "O vydavateľovi"
         overview: "Prehľad plánu"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plán dokončený"
+        day complete: "Deň dokončený"
         start: "Začať tento plán"
         save for later: "Uložiť na neskôr"
         saved for later: "Uložené na neskôr"
@@ -1063,7 +1063,7 @@ sk:
         must start to complete: "Aby ste si mohli zaznačiť prečítaný úsek, je potrebné začať tento plán čítania!"
         invalid reference: "Prepáčte, v tomto preklade nie sú dostupné jedny, alebo viacero súradníc zo zvoleného čítania. Skúste si z ponuky vyššie zvoliť iný preklad. Ak sa aj napriek tomu táto hláška opakuje, dajte o tom prosím vedieť nášmu <a href='%{support_url}' target='_self'>tímu podpory</a>."
         sidebar notice: "Máte zobrazený plán čítania."
-        congratulations: "Congratulations!"
+        congratulations: "Gratulujeme!"
         completed notice: "Gratulujeme! Dokončili ste váš plán čítania."
         exit: "Koniec"
         loading sidebar content: "Načítava sa obsah bočného panela..."

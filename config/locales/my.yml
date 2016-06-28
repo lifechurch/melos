@@ -892,11 +892,11 @@ my:
         none user: "%{username}သည် မည်သည့်ဆုတံဆိပ်မျှမရသေးပါ။"
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "အမီလိုက်နေသည်။"
             days ahead: 
-                other: "%{count} Days Ahead!"
+                other: "%{count} ရက် စောသည်"
             missed days: 
-                other: "%{count} Missed Days"
+                other: "%{count} ရက် ပျက်ကွက်သည်။"
         bible plan language: "ကျမ်းစာအစီအစဉ်အတွက်ဘာသာစကား"
         share plan: "@YouVersion #BiblePlan မှ %{plan_title}ကို စူးစမ်းကြည့်ပါ။"
         widget: 
@@ -937,8 +937,8 @@ my:
         none found: "သင်၏သတ်မှတ်ချက်နှင့်ကိုက်ညီသောအစီအစဉ်ကို ရှာမတွေ့ပါ။ ပို၍ကျယ်ပြန့်သောသတ်မှတ်ချက်ပေး၍ ရှာဖွေပါ။"
         about publisher: "ထုတ်ဝေသူအကြောင်း"
         overview: "အစီအစဉ်အကျဉ်း"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "အစီအစဉ်ကို ဖတ်ပြီးပြီ။"
+        day complete: "ဖတ်ပြီးသောရက်"
         start: "ဤအစီအစဉ်ကိုစတင်ရန်"
         save for later: "နောင်အတွက်သိမ်းရန်"
         saved for later: "နောင်အတွက်သိမ်းပြီ"
@@ -1033,7 +1033,7 @@ my:
         must start to complete: "ဖတ်စရာပြီးမြောက်မှုကိုသိမ်းနိုင်ရန် ဤအစီအစဉ်ကိုစတင်ပါ။"
         invalid reference: "ဝမ်းနည်းပါသည်။ သင်ဖတ်နေသည့်ကျမ်းပိုဒ်နှင့်ဆက်စပ်သောကျမ်းပိုဒ်အချို့သည် သင်ရွေးထားသောဗားရှင်းထဲတွင်မရှိပါ။ အထက်ပါ အခြားဗားရှင်းကိုရွေးကြည့်ပါ။ ဤမက်ဆေ့ကိုဆက်၍တွေ့နေသည်ဆိုလျှင် ကျွန်ုပ်တို့၏ <a href='%{support_url}' target='_self'>အထောက်အကူအဖွဲ့ကို</a> အကြောင်းကြားပါ။"
         sidebar notice: "သင်သည် ဖတ်ရှုခြင်းအစီအစဉ်ကိုကြည့်ရှုနေသည်။"
-        congratulations: "Congratulations!"
+        congratulations: "ဂုဏ်ယူပါသည်။"
         completed notice: "ဂုဏ်ယူပါသည်။ သင်သည် သင်၏ဖတ်ရှုခြင်းအစီအစဉ်ကိုပြီးမြောက်ခဲ့ပြီ။"
         exit: "ထွက်ရန်"
         loading sidebar content: "ဆောင်းပါးတို၏စာတမ်းတင်ရန်ဆောင်ရွက်နေပါသည်..."

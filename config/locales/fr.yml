@@ -903,13 +903,13 @@ fr:
         none user: "%{username} n'a gagné aucun badge pour l'instant."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "À jour !"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} jour à venir"
+                other: "%{count} jour à venir !"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} jour manqué"
+                other: "%{count} jours manqués"
         bible plan language: "Langue du Plan de Lecture"
         share plan: "Jetez un oeil à ce nouveau #PlanDeLecture de @YouVersion : %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ fr:
         none found: "Nous n'avons pas trouvé de plan correspondant à vos critères. Élargissez votre recherche."
         about publisher: "À propos de l'éditeur"
         overview: "Aperçu du plan"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plan Terminé"
+        day complete: "Jour Complété"
         start: "Commencer ce plan"
         save for later: "Traiter plus tard"
         saved for later: "Sauvegardé pour plus tard"
@@ -1048,7 +1048,7 @@ fr:
         must start to complete: "Commencez ce plan pour sauvegarder les lectures achevées!"
         invalid reference: "Désolé, une des références Biblique pour cette lecture semble ne plus exister pour cette traduction. Veuillez sélectionner une autre traduction. Si vous rencontrez à nouveau ce message, veuillez prévenir notre <a href='%{support_url}' target='_self'>équipe de support</a> à propos de ce problème."
         sidebar notice: "Vous visualisez un plan de lecture"
-        congratulations: "Congratulations!"
+        congratulations: "Félicitations !"
         completed notice: "Félicitations ! Vous avez terminé votre plan de lecture."
         exit: "Quitter"
         loading sidebar content: "Chargement de la barre de menu..."

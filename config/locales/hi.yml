@@ -903,13 +903,13 @@ hi:
         none user: "%{username} के द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "ट्रैक पर!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count}1 दिन आगे!"
+                other: "%{count}आगे के दिन!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} 1 छूटा हुआ दिन "
+                other: "%{count} छूटे दिन देखे "
         bible plan language: "Bible प्लान की भाषा"
         share plan: "@YouVersion #BiblePlan: पर देखे %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ hi:
         none found: "आपके द्वारा अनुरोध किया गया योजना उपलब्ध नहीं हैं।कृपया आपकी खोज के दायरे को सीमित न करें।"
         about publisher: "प्रकाशक के बारे में विवरण"
         overview: "योजना का अवलोकन"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "योजना संपूर्ण "
+        day complete: "दिन पूरा हुआ"
         start: "यह योजना प्रारंभ कीजिए"
         save for later: "बाद के लिए सेव करें "
         saved for later: "बाद के लिए सेव "
@@ -1048,7 +1048,7 @@ hi:
         must start to complete: "पूर्ण रीडिंग को save करने के लिए यह योजना शुरू करे!"
         invalid reference: "कृपया क्षमा कीजिए,आपके द्वारा चयनित संस्करण में इस पाठक योजना से सम्बंधित पद्य टिपण्णीयाँ नहीं हैं।दूसरा संस्करण चुनिए,यदि आप दोबारा यह सन्देश पाते हैं, संपर्क करे <a href='%{support_url}' target='_self'>support team</a> और इसकी जानकारी दे।"
         sidebar notice: "आप एक पाठक योजना का दर्शन कर रहे हैं"
-        congratulations: "Congratulations!"
+        congratulations: "बधाई हो !"
         completed notice: "मुबारकबाद! अपनी पाठक योजना सफलता पूर्वक सम्पूर्ण करने हेतु।"
         exit: "एक्सिट"
         loading sidebar content: "साइड बार विषय सूची लोड किया जा रहा हैं............."

@@ -903,13 +903,13 @@ tr:
         none user: "%{username} adlı kullanıcın rozeti yok."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Zamanında!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} Gün İleride!"
+                other: "%{count} Gün İleride!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} Gün Geride"
+                other: "%{count} Gün Geride"
         bible plan language: "Kutsal Kitap Okuma Planı Dili"
         share plan: "@YouVersion'ın şu #KutsalKitapPlanı'na bir göz atın: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ tr:
         none found: "Girdiğiniz kriterlere uygun bir Okuma Planını bulamadık. Arama kriterlerinizi genişletmeye deneyin."
         about publisher: "Yayımcı Hakkında"
         overview: "Okuma Planına Genel Bakış"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Okuma Planı Tamamlandı"
+        day complete: "Gün Tamamlandı"
         start: "Okuma Planına Başla"
         save for later: "Sonrası için Kaydet "
         saved for later: "Sonrası için kaydedildi."
@@ -1048,7 +1048,7 @@ tr:
         must start to complete: "Okuma ilerlemenizi kaydedebilmek için bu okuma planına başlayın."
         invalid reference: "Özür dileriz. Bu okumada bulunan ayetlerin bazıları seçtiğiniz çeviride bulunmamaktadır. İlk olarak yukarıdan başka bir çeviriyi seçmeyi deneyiniz. Bu mesajı görmeye devam ederseniz, <a href='%{support_url}' target='_self'>destek takımı</a> ile irtibata geçip, onlara sorunu bildiriniz."
         sidebar notice: "Bır okuma planına göz atıyorsunuz."
-        congratulations: "Congratulations!"
+        congratulations: "Tebrikler!"
         completed notice: "Tebrikler! Okuma planınızı bitirdiniz."
         exit: "Çıkış"
         loading sidebar content: "Kenar çubuğunun içeriği yükleniyor..."

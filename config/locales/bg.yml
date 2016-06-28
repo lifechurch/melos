@@ -903,13 +903,13 @@ bg:
         none user: "%{username} все още няма спечелени значки."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Точно по график!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} ден напред!"
+                other: "%{count} дни напред!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} пропуснат ден"
+                other: "%{count} пропуснати дни"
         bible plan language: "Език на плановете за прочит на Библията"
         share plan: "Разгледайте този @YouVersion план за четене на Библията: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ bg:
         none found: "Не откриваме план, съответстващ на тези изисквания. Опитайте да разширите Вашето търсене."
         about publisher: "За издателя"
         overview: "Преглед на плана"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Планът е завършен."
+        day complete: "Денят е иззпълнен"
         start: "Започване на този план"
         save for later: "Запази за по-късно."
         saved for later: "Запазено за по-късно"
@@ -1048,7 +1048,7 @@ bg:
         must start to complete: "Започнете този план, за да запазите завършени дни за четене!"
         invalid reference: "Няма такава препратка в посочената версия. Опитай друга версия или се свържи с нашия <a href='%{support_url}' target='_self'>екип</a>."
         sidebar notice: "Разглеждате план за четене."
-        congratulations: "Congratulations!"
+        congratulations: "Поздравления!"
         completed notice: "Поздравления! Вие завършихте Вашия план за прочит."
         exit: "Изход"
         loading sidebar content: "Зареждане на съдържанието..."

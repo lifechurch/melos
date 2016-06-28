@@ -903,13 +903,13 @@ sv:
         none user: "%{username} har inte fått några medaljer än."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "Enligt plan!"
             days ahead: 
-                one: "%{count} Day Ahead!"
-                other: "%{count} Days Ahead!"
+                one: "%{count} dag före!"
+                other: "%{count} dagar före!"
             missed days: 
-                one: "%{count} Missed Day"
-                other: "%{count} Missed Days"
+                one: "%{count} missad dag"
+                other: "%{count} missade dagar"
         bible plan language: "Bibelplanens språk"
         share plan: "Kolla in denna  #BiblePlan från @YouVersion: %{plan_title}"
         widget: 
@@ -952,8 +952,8 @@ sv:
         none found: "Vi kunde inte hitta en plan som matchar dina kriterier. Försök bredda din sökning."
         about publisher: "Om utgivaren"
         overview: "Planöversikt"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "Plan fullföljd"
+        day complete: "Dag avklarad"
         start: "Starta planen"
         save for later: "Spara till Senare"
         saved for later: "Sparad till Senare"
@@ -1048,7 +1048,7 @@ sv:
         must start to complete: "Starta denna läsplan för att spara utförd läsning!"
         invalid reference: "En av skrifterna refererade för denna läsning verka inte existera i den valda översättningen. Försök att välja en annan översättning ovan. Om du fortsätter se detta meddelande, var snäll och meddela vår <a href='%{support_url}' target='_self'>supportgrupp</a> om problemet."
         sidebar notice: "Du visar en läsplan."
-        congratulations: "Congratulations!"
+        congratulations: "Gratulerar!"
         completed notice: "Grattis! Du har fullföljt din läsplan."
         exit: "Avsluta"
         loading sidebar content: "Laddar innehåll i sidofällt..."

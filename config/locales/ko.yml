@@ -892,11 +892,11 @@ ko:
         none user: "%{username}님은 아직 받은 배지가 없습니다."
     plans: 
         status: 
-            on track: "On Track!"
+            on track: "순조롭게 진행 중!"
             days ahead: 
-                other: "%{count} Days Ahead!"
+                other: "%{count}일 앞서 진행 중!"
             missed days: 
-                other: "%{count} Missed Days"
+                other: "%{count}일 놓침"
         bible plan language: "묵상 계획 언어"
         share plan: "이 묵상 계획을 나눕니다 @YouVersion #BiblePlan: %{plan_title}"
         widget: 
@@ -937,8 +937,8 @@ ko:
         none found: "검색 기준에 일치되는 계획이 없습니다. 검색 범위를 넓혀보세요."
         about publisher: "출판자 소개"
         overview: "계획 개요"
-        complete: "Plan Complete"
-        day complete: "Day Complete"
+        complete: "묵상 계획 완료"
+        day complete: "완료 하셨습니다!"
         start: "계획 시작"
         save for later: "나중을 위해 저장"
         saved for later: "나중을 위해 저장된 묵상"
@@ -1033,7 +1033,7 @@ ko:
         must start to complete: "읽기를 저장하려면 먼저 이 읽기계획을 시작해야 합니다."
         invalid reference: "죄송합니다.  이 성경읽기에서 언급된 참고 구절중 일부가 이 번역본에는 없습니다.  다른 번역본을 선택해주세요.  이 메시지가 반복적으로 나타나면 <a href='%{support_url}' target='_self'>지원팀</a> 으로 연락주십시요."
         sidebar notice: "성경 읽기계획을 보고 계십니다."
-        congratulations: "Congratulations!"
+        congratulations: "축하합니다!"
         completed notice: "성경 읽기계획을 완료하신 것을 축하드립니다."
         exit: "나가기"
         loading sidebar content: "사이드 바 내용을 로딩중입니다..."
