@@ -1,6 +1,14 @@
 body.c_sessions.a_new,
 body.c_sessions.a_create {
 
+  h1 {
+    text-align: center;
+    @media #{$small-only} {
+      text-align: left;
+    }
+
+  }
+
   form
   {
     label{
@@ -19,7 +27,8 @@ body.c_sessions.a_create {
     input[type="email"],
     input[type="password"],
     button {
-      width: 75%;
+      width: 100%;
+      //margin: 0 auto;
     }
   }
   @media #{$small-only} {

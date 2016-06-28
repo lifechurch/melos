@@ -2,16 +2,18 @@
 - if @user and @user.invalid?
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
-= form_tag sign_in_path(source: params[:source], redirect: params[:redirect]) do
-  %p
-    .alt-path.terms= t('users.sign in alternate', sign_up_path: sign_up_path).html_safe
-  %p
-    = label_tag :username, t("users.email address")
-    = text_field_tag :username, params[:username] || cookies.signed[:b], {class: "autofocus"}
-  %p
-    = label_tag :password, t("password prompt")
-    = password_field_tag :password, params[:password], :maxlength=>"32"
-    %span.terms= link_to t('users.forgot password'), forgot_password_path, { target: "_self" }
-  %br
-  %p
-    = button_tag t("sign in"), class: "solid-button green expand"
+.row.medium-centered
+  .columns.medium-8.medium-centered
+    = form_tag sign_in_path(source: params[:source], redirect: params[:redirect]) do
+      %p
+        .alt-path.terms= t('users.sign in alternate', sign_up_path: sign_up_path).html_safe
+      %p
+        = label_tag :username, t("users.email address")
+        = text_field_tag :username, params[:username] || cookies.signed[:b], {class: "autofocus"}
+      %p
+        = label_tag :password, t("password prompt")
+        = password_field_tag :password, params[:password], :maxlength=>"32"
+        %span.terms= link_to t('users.forgot password'), forgot_password_path, { target: "_self" }
+      %br
+      %p
+        = button_tag t("sign in"), class: "solid-button green expand"
