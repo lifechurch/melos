@@ -25,11 +25,19 @@ angular.module('yv.moments.votd', [])
                     $scope.verseHumanRef = verse.human;
 					$scope.data.object.title += "<br/><b>" + $scope.verseHumanRef + "</b>";
 
-				}).error(function(err) {
+				}).error(function(verse) {
+                    // if first votd reference wasn't valid for the selected version, then use the alternate votd ref stored as the second element in the refs array
+                    $scope.usfm = Bible.fixVerseRange($scope.data.object.references[1]);
 
-				});
+                    Bible.getVerse($scope.usfm, version.id).success(function(verse) {
+                        $scope.verseContent = verse.reader_html;
+                        $scope.verseHumanRef = verse.human;
+                        $scope.data.object.title += "<br/><b>" + $scope.verseHumanRef + "</b>";
+
+                    });
+                });
 			}, 100);
-		}]		
+		}]
 	};
 })
 
