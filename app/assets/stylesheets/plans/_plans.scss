@@ -527,7 +527,6 @@ ul.plan-results {
   }
 
   .plan-overview {
-    height: 300px;
 
     .back {
       float: $default-float;
@@ -545,7 +544,6 @@ ul.plan-results {
     img {
       min-width: 360px;
       margin-bottom: 25px;
-      min-height: 203px;
 
       @media #{$small-only} {
         margin-top: 10px;
@@ -1439,86 +1437,9 @@ ul.plan-results {
 
   .devo-header {
     font-size: rem-calc(11);
+    margin-bottom: 15px;
   }
-//  .bcv-button-box {
-//    .prev,
-//    .next {
-//      display: none;
-//    }
-//  }
-//
-//  #widget-plan-controls {
-//    .small-title {
-//      margin: 0 0 15px;
-//
-//      a {
-//        color: $black;
-//      }
-//    }
-//  }
-//
-//  .calendar-prev,
-//  .calendar-next {
-//    a {
-//      display: block;
-//      font-size: 0.813em;
-//    }
-//  }
-//
-//  .calendar-day {
-//    h4 {
-//      font-size: 0.813em;
-//    }
-//  }
-//}
-//
-//.c_plans.a_sample {
-//  h3.hd {
-//    margin-top: 25px;
-//    border-bottom: solid 1px $lightGray;
-//  }
-//
-//  .bd {
-//    p {
-//      margin-top: 10px;
-//    }
-//
-//    .video-container {
-//      iframe {
-//        height: 300px;
-//      }
-//    }
-//  }
-//
-//  .scripture-links {
-//    font-size: 0.938em;
-//
-//    h3 {
-//      font-size: 0.938em;
-//      font-weight: bold;
-//      border-top: 1px solid $lightGray;
-//      padding: 15px 0 10px;
-//      margin: 5px 0 0;
-//    }
-//
-//    li {
-//      list-style: decimal;
-//
-//      a {
-//        color: $black;
-//      }
-//    }
-//  }
-//
-//  .rp-subscription-info {
-//    .solid-button {
-//      display: block;
-//    }
-//  }
-//
-//  .plan-privacy-buttons + .solid-button {
-//    display: none;
-//  }
+  
 }
 
 
