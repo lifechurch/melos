@@ -3,7 +3,7 @@
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
 .medium-centered
-  .columns.medium-centered.large-10
+  .columns.medium-centered.large-11
     = form_tag sign_in_path(source: params[:source], redirect: params[:redirect]) do
       %p
         .alt-path.terms= t('users.sign in alternate', sign_up_path: sign_up_path).html_safe

@@ -1,8 +1,11 @@
 body.c_users.a_new,
 body.c_users.a_create
 {
-  .content {
+  .left-content {
     margin-left: 60px;
+  }
+  .right-content {
+    margin-right: 60px;
   }
 
   #user_password {
@@ -13,7 +16,7 @@ body.c_users.a_create
     color: #7c7c7c;
     width: 100%;
     font-size: rem-calc(11);
-    margin-top: -20px;
+    margin-top: -15px;
     padding-bottom: 10px;
   }
 
@@ -38,7 +41,7 @@ body.c_users.a_create
       padding-left: 1.07143rem;
       min-height: 22px;
       min-width: 22px;
-      float: left;
+      float: $default-float;
     }
   }
 
