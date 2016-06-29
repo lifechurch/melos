@@ -38,20 +38,6 @@ angular.module('yv.reader', [
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
 
-
-	//Bible Plan Sample Reader with Devo Content
-	.state('planSample', {
-		url: 				'/reading-plans/:plan/day/:day',
-		controller: 			'ReaderCtrl',
-		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
-	})
-	.state('planSample-locale', {
-		url: 				'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/reading-plans/:plan/day/:day',
-		controller: 			'ReaderCtrl',
-		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
-	})
-
-
 	//Bible Plan for User
 	.state('userPlan', {
 		url: 				'/users/:username/reading-plans/:plan/ref',

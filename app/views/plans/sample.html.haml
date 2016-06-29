@@ -48,14 +48,16 @@
 
         .sample-text= t("plans.sample")
 
-    .row.columns.medium-centered.text-center.img
-      - if @plan.hero_image.present?
-        = image_tag @plan.hero_image.url, class: 'rp-hero-img'
-      - else
-        %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+    .row.small-collapse
+      .columns.medium-centered.text-center.img
+        - if @plan.hero_image.present?
+          = image_tag @plan.hero_image.url, class: 'rp-hero-img'
+        - else
+          %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
 
-    .row.medium-centered.text-center
-      %h3.plan-title= @plan.name
+    .row
+      .medium-centered.text-center
+        %h3.plan-title= @plan.name
 
 
   -# _button code tailored to this page. may want to explore just editing the _button partial if it won't ruin other instances of use
@@ -74,10 +76,9 @@
                   = t("plans.privacy.visible to friends?")
                 .yes-no-buttons
                   - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: @plan.to_param, privacy: private_bool) }
-                  %a{"class" => "yes", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{@plan.to_param}', false)"}
+                  %a{"class" => "yes solid-button green", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{@plan.to_param}', false)"}
                     =t('ui.yes button')
-                  != "&bull;"
-                  %a{"class" => "no", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{@plan.to_param}', true)"}
+                  %a{"class" => "no solid-button gray", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{@plan.to_param}', true)"}
                     =t('ui.no button')
             .text-center
               %a{"save-for-later" => true, "save-label" => "#{t('plans.save for later')}", "remove-label" => "#{t('plans.saved for later')}", "saved" => "#{@is_saved}", "base-path" => "#{subscriptions_path(user_id: current_user.to_param)}", "plan-id" => "#{@plan.to_param}",  "check-icon-path" => "#{image_path('icon-plans-checkmark.svg')}" }= t('plans.save for later')
@@ -92,9 +93,9 @@
 
 
 
-  .row.days-container
+  .row.days-container.small-collapse
     .columns.large-8.medium-8.medium-centered
-      .day-slider.ng-hide{"carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}"}
+      .day-slider.ng-hide{"carousel" => "", "center-mode" => "false", "slides-to-scroll" => "8", "slides-to-show" => "8", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}", "responsive" => "[{ breakpoint: 436, settings: { arrows: false, slidesToShow: 5, slidesToScroll: 5 } },{ breakpoint: 376, settings: { arrows: false, slidesToShow: 4, slidesToScroll: 4 } },{ breakpoint: 321, settings: { arrows: false, slidesToShow: 3, slidesToScroll: 3 } }]"}
         - (1..@plan.total_days).each do |i|
           - is_active = i.equal? @presenter.day
           = link_to(sample_plan_path(@plan.to_param, day: i), {target: "_self"}) do

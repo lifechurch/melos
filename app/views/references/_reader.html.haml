@@ -93,7 +93,8 @@
       - if verse_view
         - share_url = "https://www.bible.com/bible#{get_localized_reference_link(presenter.reference, I18n.locale.to_s)}"
         #read_chapter
-          %a{href: reference_path(reference: reference.chapter_usfm.downcase)}
+          - link_path = reference_path(reference: reference.chapter_usfm.downcase, version: version.id)
+          %a{href: link_path}
             %h2
               = t("read reference", reference: reference.to_chapter.human)
         -if (controller_name != 'subscriptions')

@@ -13,10 +13,9 @@
             = t("plans.privacy.visible to friends?")
           .yes-no-buttons
             - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: plan.to_param, privacy: private_bool) }
-            %a{"class" => "yes", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', false)"}
+            %a{"class" => "yes solid-button green", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', false)"}
               =t('ui.yes button')
-            != "&bull;"
-            %a{"class" => "no", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', true)"}
+            %a{"class" => "no solid-button gray", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', true)"}
               =t('ui.no button')
       .text-center
         %a{"save-for-later" => true, "save-label" => "#{t('plans.save for later')}", "remove-label" => "#{t('plans.saved for later')}", "saved" => "#{@is_saved}", "base-path" => "#{subscriptions_path(user_id: current_user.to_param)}", "plan-id" => "#{plan.to_param}",  "check-icon-path" => "#{image_path('icon-plans-checkmark.svg')}" }= t('plans.save for later')

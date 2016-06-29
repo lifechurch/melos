@@ -37,7 +37,12 @@
   .row.collapse
     .columns.large-8.medium-8.medium-centered.subscription-list
       - if @subscriptions == false
-        %div{class: "none"}= (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
+        %div.none.no-subscriptions
+          = (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
+          %br
+          %br
+          = link_to t("pages.home.browse_plans"), plans_path
+
       - else
         - @subscriptions.reading_plans.each do |sub|
           .row.subscription.collapse

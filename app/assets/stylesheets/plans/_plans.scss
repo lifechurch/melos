@@ -801,9 +801,9 @@ ul.plan-results {
 /* !Plan detail view */
 
 .rp-hero-img {
-  -webkit-border-radius:  5px 5px 0 0;
-  -moz-border-radius:     5px 5px 0 0;
-  border-radius:          5px 5px 0 0;
+  -webkit-border-radius:  5px;
+  -moz-border-radius:     5px;
+  border-radius:          5px;
   width: 100%;
 }
 
@@ -851,22 +851,40 @@ ul.plan-results {
     .solid-button {
       display: inline-block;
     }
+  }
+}
 
-    .plan-privacy-buttons {
-      clear: both;
-      padding: 15px 0 0;
+.plan-privacy-buttons {
+  clear: both;
+  padding: 15px 0 0;
+  border: solid 1px $gray;
+  border-radius: 5px;
+  padding: 25px 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 300px;
 
-      .detail-text + a {
-        margin: 0 2% 0 0;
+  .yes-no-buttons {
+    margin-bottom: 0;
+  }
 
-        @media #{$medium-only} {
-          margin: 0 0 10px;
-        }
+  a.yes, a.no {
+    margin-bottom: 0;
+  }
 
-        @media #{$small-only} {
-          margin: 0 0 10px;
-        }
-      }
+  a.no {
+    margin-left:5px;
+  }
+
+  .detail-text + a {
+    margin: 0 2% 0 0;
+
+    @media #{$medium-only} {
+      margin: 0 0 10px;
+    }
+
+    @media #{$small-only} {
+      margin: 0 0 10px;
     }
   }
 }
@@ -1411,6 +1429,14 @@ ul.plan-results {
 // most styling for the sample page is inherited from .a_show (Overview page)
 .c_plans.a_sample {
 
+  #current-ui-view {
+    @media #{$small-only} {
+      padding-top: 10px;
+    }
+  }
+}
+.c_plans.a_sample {
+
   .buttons-text {
     margin-top: 30px;
     font-size: rem-calc(11);
@@ -1428,6 +1454,11 @@ ul.plan-results {
 
   img.rp-hero-img {
     margin-top: 15px;
+
+    @media #{$small-only} {
+      width: 100%;
+      border-radius: 0;
+    }
   }
 
   .days-container {
@@ -1639,6 +1670,10 @@ html[dir="rtl"] .plan-settings {
 
 .c_subscriptions.a_index, .c_subscriptions.a_completed, .c_subscriptions.a_saved {
 
+  .no-subscriptions {
+    font-size: 14px;
+  }
+
   #current-ui-view {
     padding: 95px 0 0;
 
@@ -1755,7 +1790,7 @@ article.reading_plan_index {
     }
 
     .yes-no-buttons {
-      margin-bottom: 30px;
+
       a {
         font-size: 18px;
 
