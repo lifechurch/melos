@@ -100,8 +100,8 @@
         -if (controller_name != 'subscriptions')
           %div#svp_share.addthis_sharing_toolbox{"data-url" => "#{share_url}", "data-title" => "#{reference.human}"}
 
-        %div#download.mobile{class:"show-for-small-only"}
-          %a#svp_download{href:"/app?svp", class: "solid-button blue", target: '_self' }
+        %div#download.mobile.text-center{class:"show-for-small-only"}
+          %a#svp_download{href:"/app?svp", class: "solid-button blue full", target: '_self' }
 
             = t('mobile page.download now')
       - if version.has_publisher?

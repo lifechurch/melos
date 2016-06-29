@@ -12,7 +12,7 @@
 
 .fixed.after-header
   .row.full.b-border.white.collapse.reader-header
-    .medium-12.columns.text-center
+    .medium-12.columns.medium-text-center
       .bcv-button-box
 
         -#=reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "(!inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
@@ -48,8 +48,8 @@
       %div{"reader-audio-panel" => true, "ng-show" => "showReaderAudio", "audio-data" => "reader_audio" }
 
 
-    .after-header.stack-content.text-center.medium-center
-      .bcv-button-box.text-center.medium-center
+    .after-header.stack-content.medium-text-center.medium-center
+      .bcv-button-box.medium-text-center.medium-center
 
         =reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "(!inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})
         =reader_previous_link(reference, {classes: "prev #{direction} ng-hide","ngif": "(inNonDefaultLocale() && !devotionalActive) && #{controller_name != 'subscriptions'}", "uisref": "reader-locale({version: previous_chapter_hash.version_id, usfm: previous_chapter_hash.usfm[0].toLowerCase()})", "id": "reader_previous"})

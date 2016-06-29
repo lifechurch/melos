@@ -69,7 +69,12 @@
           -if current_user.subscribed_to?(@plan)
             = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param, id: @plan.to_param), id: "subscription-read", class: 'solid-button green padded', target: "_self")
           - else
-            = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button green padded', "ng-click" => "showSubscribeButtons = true")
+            = link_to("#", id: "subscription-start", class: 'solid-button green padded', "ng-click" => "showSubscribeButtons = true", "ng-disabled" => "subscribing") do
+              %span{"ng-hide" => "subscribing"}
+                = t('plans.subscribe to plan')
+              %span.ng-hide{"ng-show" => "subscribing"}
+                = t('ui.loading indicator text')
+
             .plan-privacy-buttons.ng-hide{"ng-show" => "showSubscribeButtons"}
               .text-center
                 %p.detail-text

@@ -43,19 +43,21 @@
               %li
                 =button_to t('plans.catch me up'), subscription_path(user_id: current_user.to_param, id: subscription,catch_up: "true"), method: :put, class: 'link'
 
-    .row.columns.medium-centered.text-center.img
-      - if subscription.list_image.present?
-        = image_tag subscription.list_image.url, class: 'rp-hero-img'
-      - else
-        %img{src: image_path('plans-hero-640x360.jpg'), class: 'rp-hero-img'}
+    .row.collapse
+      .columns.medium-centered.text-center.img
+        - if subscription.list_image.present?
+          = image_tag subscription.list_image.url, class: 'rp-hero-img'
+        - else
+          %img{src: image_path('plans-hero-640x360.jpg'), class: 'rp-hero-img'}
 
-    .row.medium-centered.text-center
-      %h3.plan-title= subscription.name
+    .row
+      .medium-centered.text-center
+        %h3.plan-title= subscription.name
 
 
-  .row.days-container
+  .row.days-container.collapse
     .columns.large-8.medium-8.medium-centered
-      .day-slider.ng-hide{"carousel" => "", "center-mode" => "false", "slides-to-scroll" => "3", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => is_rtl? ? 'true' : false, "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}"}
+      .day-slider.ng-hide{"carousel" => "", "center-mode" => "false", "slides-to-scroll" => "8", "slides-to-show" => "8", "autoplay" => "false", "initial-slide" => @presenter.day - 1, "rtl" => "#{is_rtl? ? 'true' : 'false'}", "dir" => "#{is_rtl? ? 'rtl' : 'ltr'}", "responsive" => "[{ breakpoint: 436, settings: { arrows: false, slidesToShow: 5, slidesToScroll: 5 } },{ breakpoint: 376, settings: { arrows: false, slidesToShow: 4, slidesToScroll: 4 } },{ breakpoint: 321, settings: { arrows: false, slidesToShow: 3, slidesToScroll: 3 } }]"}
         - statuses.each do |cur_status|
           - cur_date = Date.parse(cur_status.date)
           - is_active = cur_status.day.equal? @presenter.day

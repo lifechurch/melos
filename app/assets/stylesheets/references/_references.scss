@@ -60,6 +60,7 @@
 
   @media #{$small-only} {
     margin: 10px auto 0;
+    margin-left: 10px;
   }
 
   h1 {
@@ -886,4 +887,8 @@ md-progress-linear[md-mode="indeterminate"] .md-container {
     text-align: center;
     margin: 15px auto 0;
   }
+}
+
+#svp_download {
+  margin-top:30px;
 }

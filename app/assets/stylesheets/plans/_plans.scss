@@ -488,6 +488,11 @@ ul.plan-results {
 
   .day-slider {
 
+    @media #{medium-up} {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+
     button.slick-prev.slick-arrow,
     button.slick-next.slick-arrow {
       position: absolute;
@@ -530,6 +535,10 @@ ul.plan-results {
 
     .back {
       float: $default-float;
+
+      @media #{$small-only} {
+        margin-left: 5px;
+      }
     }
     
     .settings {
@@ -553,6 +562,10 @@ ul.plan-results {
 
     .header {
       height: 17px;
+
+      @media #{$small-only} {
+        height: 35px;
+      }
 
       a {
         font-size: rem-calc(12);
@@ -794,7 +807,8 @@ ul.plan-results {
   }
 
   .ref-content {
-    margin-top: 100px;
+    margin-top: 70px;
+
   }
 }
 
@@ -898,6 +912,19 @@ ul.plan-results {
 .c_subscriptions.a_update,
 .c_subscriptions.a_day_complete,
 .c_subscriptions.a_plan_complete {
+
+  @media #{$small-only} {
+    .plans-container {
+      padding: 0;
+
+      .plans-carousel {
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        border-radius: 0;
+      }
+    }
+  }
 
   .stacked-container {
     margin-top: 15px;
@@ -1427,14 +1454,19 @@ ul.plan-results {
 
 /* !Plan sample view */
 // most styling for the sample page is inherited from .a_show (Overview page)
+.c_subscriptions.a_update,
+.c_subscriptions.a_show,
 .c_plans.a_sample {
 
   #current-ui-view {
+    padding-top: 90px;
+
     @media #{$small-only} {
       padding-top: 10px;
     }
   }
 }
+
 .c_plans.a_sample {
 
   .buttons-text {
@@ -1446,6 +1478,10 @@ ul.plan-results {
     margin: 0 auto;
     width: 50px;
     font-size: rem-calc(10);
+
+    @media #{$small-only} {
+      margin-top:21px;
+    }
   }
 
   .devo-content{
@@ -1914,6 +1950,11 @@ html[dir="rtl"] {
 .subscription-show {
   img.rp-hero-img {
     width: 360px;
+
+    @media #{$small-only} {
+      width: 100%;
+      border-radius: 0;
+    }
   }
 
   p {
@@ -1924,6 +1965,11 @@ html[dir="rtl"] {
   .day-slider {
     text-align: center;
     height: 82px;
+
+    @media #{$medium-up} {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
 
     .day {
       border: solid 1px $lightGray;
