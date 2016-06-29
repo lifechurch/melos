@@ -6,7 +6,7 @@
 .row
   .columns.large-8.large-centered.plan-settings
     =render partial: "editHeader"
-    .row.pad-row.plan-settings-privacy-box
+    .row.pad-row.plan-settings-privacy-box.b-border
       .columns.medium-8
         %h3
           = t("plans.privacy title")
@@ -22,7 +22,7 @@
           = button_to(t('plans.make public'), subscription_path(user_id: current_user.to_param, id: subscription,make_public: "true"), method: :put, class: 'solid-button green')
 
 
-    .row.pad-row.plan-settings-email-box
+    .row.pad-row.plan-settings-email-box.b-border
       .columns.medium-8
         %h3
           = t("plans.email delivery")
@@ -47,7 +47,7 @@
                 %optgroup{label: Version.languages[k]}
                 - v.each do |v|
                   %option{value: v.id, selected: v.id == subscription.email_delivery_version_id}= v
-    .row.pad-row.plan-settings-catchup-box
+    .row.pad-row.plan-settings-catchup-box.b-border
       .columns.medium-8
         %h3
           = t("plans.are you behind")
@@ -57,7 +57,7 @@
       .columns.medium-4
         = button_to(t('plans.catch me up'), subscription_path(user_id: current_user.to_param, id: subscription,catch_up: "true"), method: :put, class: 'solid-button green')
 
-    .row.pad-row.plan-settings-doover-box
+    .row.pad-row.plan-settings-doover-box.b-border
       .columns.medium-8
         %h3
           = t("plans.do you want to reset")
@@ -68,7 +68,7 @@
 
     .row.pad-row.plan-settings-stop-box
       .columns.small-12
-        = button_to(t('plans.stop reading'),subscription_path(user_id: current_user.to_param,id: subscription, stop: "true"), method: :put, id: "subscription-destroy", class: 'solid-button blue', "data-confirm-text" => t("confirm danger"))
+        = button_to(t('plans.stop reading'),subscription_path(user_id: current_user.to_param,id: subscription, stop: "true"), method: :put, id: "subscription-destroy", class: 'text-red', "data-confirm-text" => t("confirm danger"))
 
   -#
     .columns.medium-4

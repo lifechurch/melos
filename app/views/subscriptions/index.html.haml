@@ -37,7 +37,12 @@
   .row.collapse
     .columns.large-8.medium-8.medium-centered.subscription-list
       - if @subscriptions == false
-        %div{class: "none"}= (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
+        %div.none.no-subscriptions
+          = (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
+          %br
+          %br
+          = link_to t("pages.home.browse_plans"), plans_path, target: "_self"
+
       - else
         - @subscriptions.reading_plans.each do |sub|
           .row.subscription.collapse
@@ -80,20 +85,24 @@
 
   .row.collapse
     .columns.large-8.medium-8.medium-centered.subscription-actions
-      .left
-        - if @savedList
-          %span
-            =t("plans.saved plans")
-        - else
-          = link_to("#{user_path(@user.to_param)}/saved-reading-plans", target: "_self") do
-            =t("plans.saved plans")
-      .right
-        -if @completedList
-          %span
-            =t("plans.completed plans")
-        -else
-          = link_to("#{user_path(@user.to_param)}/completed-reading-plans", target: "_self") do
-            =t("plans.completed plans")
+      -if @savedCount > 0
+        .left
+          - if @savedList
+            %span
+              =t("plans.saved plans")
+              ="(#{@savedCount})"
+          - else
+            = link_to("#{user_path(@user.to_param)}/saved-reading-plans", target: "_self") do
+              =t("plans.saved plans")
+              ="(#{@savedCount})"
+      -if @completedCount > 0
+        .right
+          -if @completedList
+            %span
+              =t("plans.completed plans")
+          -else
+            = link_to("#{user_path(@user.to_param)}/completed-reading-plans", target: "_self") do
+              =t("plans.completed plans")
 
 
   = render "shared/pagination", resource_list: @subscriptions

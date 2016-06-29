@@ -38,28 +38,14 @@ angular.module('yv.reader', [
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
 
-
-	//Bible Plan Sample Reader with Devo Content
-	.state('planSample', {
-		url: 				'/reading-plans/:plan/day/:day',
-		controller: 			'ReaderCtrl',
-		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
-	})
-	.state('planSample-locale', {
-		url: 				'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/reading-plans/:plan/day/:day',
-		controller: 			'ReaderCtrl',
-		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
-	})
-
-
 	//Bible Plan for User
 	.state('userPlan', {
-		url: 				'/users/:username/reading-plans/:plan',
+		url: 				'/users/:username/reading-plans/:plan/ref',
 		controller: 			'ReaderCtrl',
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
 	.state('userPlan-locale', {
-		url: 				'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:username/reading-plans/:plan',
+		url: 				'/{locale:[a-zA-Z]{2}(?:\-{1}[a-zA-Z]{2})*}/users/:username/reading-plans/:plan/ref',
 		controller: 			'ReaderCtrl',
 		templateProvider: 	function() { return angular.element(document.getElementById("current-ui-view")).html(); }
 	})
@@ -85,7 +71,6 @@ angular.module('yv.reader', [
 	$scope.highlights = [];
 	$scope.bookmarks = [];
 	$scope.notes = [];
-	$scope.isPlanState = ['planSample', 'planSample-locale', 'userPlan', 'userPlan-locale'].indexOf($state.current.name) > -1;
     $scope.isPlanSampleState = ['planSample', 'planSample-locale'].indexOf($state.current.name) > -1;
 	$scope.planContentReady = false;
 	$scope.devotionalActive = false;
@@ -263,7 +248,7 @@ angular.module('yv.reader', [
             var reader_footer = "";
             var has_blurb = true;
 
-            if (v && v[0].abbreviation && v[0].publisher.name) {
+            if ($scope.copyright_text && v && v[0].abbreviation && v[0].publisher.name) {
                 copy_text = $scope.copyright_text.replace('[abbreviation]', v[0].abbreviation).replace('[publisher]', v[0].publisher.name);
             }
             if (v[0].reader_footer.html) {
@@ -311,25 +296,8 @@ angular.module('yv.reader', [
 	function fillScope(newScope, hideDevotional) {
 		angular.extend($scope, newScope);
 
-        if ($scope.devotional_content && $scope.devotional_content.length > 1) {
-            $scope.hasDevotionalContent = true;
-        } else {
-            $scope.hasDevotionalContent = false;
-        }
-
-        if ($scope.isPlanState && !hideDevotional) {
-            $scope.devotional_first_chapter = $scope.reader_html;
-            if ($scope.hasDevotionalContent) {
-                $scope.reader_html = $scope.devotional_content;
-                $scope.planContentReady = true;
-                $scope.devotionalActive = true;
-            } else {
-                $scope.planContentReady = true;
-                $scope.devotionalActive = false;
-            }
-        } else {
-            $scope.devotionalActive = false;
-        }
+        $scope.hasDevotionalContent = false;
+        $scope.devotionalActive = false;
 
         if (!$scope.usfm) {
             var nextOrPrevRef = newScope.next_chapter_hash || newScope.previous_chapter_hash;
@@ -339,7 +307,11 @@ angular.module('yv.reader', [
                 var usfmParts = usfm.split('.');
                 usfmParts[1] = newScope.reader_chapter.toString();
                 $scope.usfm = usfmParts.join('.');
-            }
+
+                if (!$scope.reader_version_id && nextOrPrevRef.version_id) {
+                    $scope.reader_version_id = nextOrPrevRef.version_id;
+                }
+             }
         }
 
         //TO-DO: Make Audio Directive
@@ -363,31 +335,28 @@ angular.module('yv.reader', [
         }
 
         function finishFill() {
-            getVersionIdFromAbbr($scope.reader_version).then(function(reader_version_id) {
-            		if (reader_version_id) {
-                	$scope.reader_version_id = reader_version_id;
-                }
-
-                if ($scope.reader_version_id && typeof $scope.reader_version_id !== 'undefined') {
-                    Highlights.get($scope.reader_version_id, $scope.usfm).success(function (data) {
+            if ($scope.isLoggedIn && $scope.reader_version_id && typeof $scope.reader_version_id !== 'undefined') {
+                var chapterUsfm = $scope.usfm.split(':')[0];
+                Highlights.get($scope.reader_version_id, chapterUsfm).success(function (data) {
+                    if (Array.isArray && Array.isArray(data)) {
                         $scope.highlights = data;
-                    }).error(function (err) {
-                        //TO-DO: Handle Error
-                    });
+                    }
+                }).error(function (err) {
+                    //TO-DO: Handle Error
+                });
 
-                    Bookmarks.get($scope.reader_version_id, $scope.usfm).success(function (data) {
-                        $scope.bookmarks = data;
-                    }).error(function (err) {
-                        //TO-DO: Handle Error
-                    });
+                Bookmarks.get($scope.reader_version_id, chapterUsfm).success(function (data) {
+                    $scope.bookmarks = data;
+                }).error(function (err) {
+                    //TO-DO: Handle Error
+                });
 
-                    // Notes.get($scope.reader_version_id, $scope.usfm).success(function(data) {
-                    // 	$scope.notes = data;
-                    // }).error(function(err) {
-                    // 	//TO-DO: Handle Error
-                    // });
-                }
-            });
+                // Notes.get($scope.reader_version_id, $scope.usfm).success(function(data) {
+                // 	$scope.notes = data;
+                // }).error(function(err) {
+                // 	//TO-DO: Handle Error
+                // });
+            }
         }
 	}
 
@@ -421,21 +390,6 @@ angular.module('yv.reader', [
 			}
 		}
 	}
-
-//	function parseVersionLinks() {
-//		if (!$scope.reader_version_list || $scope.reader_version_list.length == 0) {
-//			var reader_version_children = angular.element(document.getElementById("reader_version_list")).children();
-//			$scope.reader_version_list = [];
-//			for (var i = 0; i < reader_version_children.length; i++) {
-//				$scope.reader_version_list.push({
-//					abbrev: 	reader_version_children[i].dataset.abbrev,
-//					meta: 		reader_version_children[i].dataset.meta,
-//					title: 		reader_version_children[i].dataset.title,
-//					version: 	reader_version_children[i].dataset.version
-//				});
-//			}
-//		}
-//	}
 
 
 	/**
@@ -527,14 +481,6 @@ angular.module('yv.reader', [
         }
         $scope.togglePanel("showReaderChapters");
 	};
-
-
-	// Load data from page variable or ajax
-	if (TEMPLATE_FROM_RAILS.hasOwnProperty($location.path())) {
-		fillScope(TEMPLATE_FROM_RAILS[$location.path()]);
-	} else {
-		loadChapter($location.path());
-	}
 
     $scope.isRefActive = function(ref) {
         ref = removeVersionFromUsfm(ref);
@@ -868,33 +814,6 @@ angular.module('yv.reader', [
         return false;
     }
 
-    function getVersionIdFromAbbr(abbr) {
-        return $q(function(resolve, reject) {
-            if (!$scope.versions || !$scope.versions.length) {
-                loadVersions().then(function(data) {
-                    getAbbr();
-                }, function(error) {
-
-                });
-            } else {
-                getAbbr();
-            }
-
-            function getAbbr() {
-                for (var x = 0; x < $scope.versions.length; x++) {
-                    var lang = $scope.versions[x];
-                    for (var y = 0; y < lang.versions.length; y++) {
-                        var v = lang.versions[y];
-                        if (v.abbr.toLowerCase() == abbr.toLowerCase()) {
-                            resolve(v.id);
-                            break;
-                        }
-                    }
-                }
-                resolve(null);
-            }
-        });
-    }
 
     function getVersionAbbrFromId(id) {
         function getId() {
@@ -981,10 +900,6 @@ angular.module('yv.reader', [
         var toState 	= stateInfo[0].name == 'userPlan' ? 'reader' : stateInfo[0];
         var toParams 	= stateInfo[1];
 
-//        if (toState.name == 'userPlan') {
-//            toState = 'reader';
-//            toParams = ;
-//        }
         // Fetch new data
         loadChapter($state.href(toState, toParams));
 
@@ -996,29 +911,27 @@ angular.module('yv.reader', [
         $scope.usfm = toParams.usfm;
 	});
 
+    if (TEMPLATE_FROM_RAILS.hasOwnProperty($location.path())) {
+        fillScope(TEMPLATE_FROM_RAILS[$location.path()]);
+    }
+
 	Authentication.isLoggedIn('/isLoggedIn').success(function(data) {
 		if (data === true) {
 			$scope.isLoggedIn = true;
 		}
+        init();
 	}).error(function(data) {
 		//TO-DO: Handle Error
+        init();
 	});
 
-    if ($scope.isPlanState) {
-        $scope.day = $location.search().day;
-        if (!$scope.isPlanSampleState) {
-            Subscription.getRefs($location.path(), $scope.day, $stateParams.plan).success(function (resp) {
-                $scope.orderedRefs = resp;
-                orderedRefToUsfm($scope.orderedRefs[0].reference).then(function (usfm) {
-                    $scope.usfm = usfm;
-                }, function (err) {
 
-                });
-            }).error(function (err) {
-
-            });
+    function init() {
+        // Load data from page variable or ajax
+        if (!TEMPLATE_FROM_RAILS.hasOwnProperty($location.path())) {
+            loadChapter($location.path());
         }
-    } else {
+
         $timeout(function() {
             loadVersions().then(function(data) {
                 if ($scope.reader_book_list.length == 0) {

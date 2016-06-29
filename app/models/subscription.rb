@@ -78,6 +78,14 @@ class Subscription < Plan
       end
     end
 
+    def completed_all_items(user, opts = {})
+      raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
+      opts[:auth]      = user.auth
+      opts[:cache_for] = 0
+      data, errs = get(completed_all_items_path, opts)
+      YV::API::Results.new(data,errs)
+    end
+
     def saved(user, opts = {})
       raise "Incorrect user argument" unless user.respond_to?(:id) and user.respond_to?(:auth)
       opts[:user_id]  = user.id
@@ -287,25 +295,30 @@ class Subscription < Plan
 
   # Auth required
 
-  def set_ref_completion(day, ref, completed)
+  def set_ref_completion(day, ref, devo, completed)
     raise "Auth required" unless auth
 
     opts = {auth: auth, id: id, day: day}
-    #using no version ref to use native #delete and #uniq methods below
-    no_version_ref = Reference.new(ref, version: nil)
 
-    # Get the list of completed references to send back to the API
-    # (all others will be marked as not-complete)
-    completed_refs = ReferenceList.new
-    reading(day).api_references.each do |r_mash| 
-      completed_refs << Reference.new(r_mash.reference, version: nil) if r_mash.completed?
+    if !ref.nil?
+      #using no version ref to use native #delete and #uniq methods below
+      no_version_ref = Reference.new(ref, version: nil)
+
+      # Get the list of completed references to send back to the API
+      # (all others will be marked as not-complete)
+      completed_refs = ReferenceList.new
+      reading(day).api_references.each do |r_mash|
+        completed_refs << Reference.new(r_mash.reference, version: nil) if r_mash.completed?
+      end
+
+      #adjust the ref_list based on the new completion state for the ref
+      completed ? completed_refs << no_version_ref : completed_refs.delete(no_version_ref)
+      completed_refs.uniq!
+
+      opts[:references] = completed_refs.to_usfm
     end
 
-    #adjust the ref_list based on the new completion state for the ref
-    completed ? completed_refs << no_version_ref : completed_refs.delete(no_version_ref)
-    completed_refs.uniq!
-
-    opts[:references] = completed_refs.to_usfm
+    opts[:devotional] = completed if devo
     
     data, errs = self.class.post("#{api_path_prefix}/update_completion", opts)
     results = YV::API::Results.new(data,errs)

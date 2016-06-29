@@ -154,6 +154,10 @@ YouversionWeb::Application.routes.draw do
   scope "/users/:user_id" do
     resources :subscriptions, path: '/reading-plans', :user_id => /([^\/])+?/ do
       get   :calendar,    on: :member
+      get   :devo,   on: :member
+      get   :ref,    on: :member
+      get   :plan_complete, on: :member
+      get   :day_complete, on: :member
     end
   end
 

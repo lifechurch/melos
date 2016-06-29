@@ -39,6 +39,12 @@ class PlansController < ApplicationController
     # Redirect for url format that is shared from mobile devices.
     if params[:day] then redirect_to( sample_plan_url(id: params[:id], day: params[:day])) and return end
 
+    if current_user.present? && params[:back].present?
+      if params[:back] = 'subscription'
+        @referrer = subscription_path(user_id: current_user.to_param, id: params[:id])
+      end
+    end
+
     @plan = Plan.find(params[:id])
 
     if @plan.valid?
@@ -71,6 +77,7 @@ class PlansController < ApplicationController
       format.json { return render nothing: true }
       format.any {
         @plan = Plan.find(params[:id])
+        @referrer = request.referrer
 
         # render 404 unless day param is a valid day for the plan
         return handle_404 if @plan.errors.present?

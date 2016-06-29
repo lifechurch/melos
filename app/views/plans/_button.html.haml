@@ -1,28 +1,31 @@
 - # Local Parameters
 - # plan - instance of Plan
 - unique_id = rand(100)
-.rp-subscription-info
+.rp-subscription-info.text-center
   - if logged_in?
     -if current_user.subscribed_to?(plan)
-      = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'solid-button green', target: "_self")
+      = link_to(t('plans.read today'), subscription_path(user_id: current_user.to_param,id: plan.to_param), id: "subscription-read", class: 'solid-button green padded', target: "_self")
     - else
-      = link_to(t('plans.subscribe to plan'),"#", id: "subscription-start", class: 'solid-button green', "ng-click" => "showSubscribeButtons = true")
+      = link_to("#", id: "subscription-start", class: 'solid-button green padded', "ng-click" => "showSubscribeButtons = true", "ng-disabled" => "subscribing") do
+        %span{"ng-hide" => "subscribing"}
+          = t('plans.subscribe to plan')
+        %span.ng-hide{"ng-show" => "subscribing"}
+          = t('ui.loading indicator text')
       .plan-privacy-buttons.ng-hide{"ng-show" => "showSubscribeButtons"}
         .text-center
           %p.detail-text
             = t("plans.privacy.visible to friends?")
           .yes-no-buttons
             - subscribe_private_url = Proc.new {|private_bool| subscriptions_path(user_id: current_user.to_param, plan_id: plan.to_param, privacy: private_bool) }
-            %a{"class" => "yes", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', false)"}
+            %a{"class" => "yes solid-button green", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', false)"}
               =t('ui.yes button')
-            != "&bull;"
-            %a{"class" => "no", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', true)"}
+            %a{"class" => "no solid-button gray", "ng-click" => "startPlan('#{subscriptions_path(user_id: current_user.to_param)}', '#{plan.to_param}', true)"}
               =t('ui.no button')
       .text-center
         %a{"save-for-later" => true, "save-label" => "#{t('plans.save for later')}", "remove-label" => "#{t('plans.saved for later')}", "saved" => "#{@is_saved}", "base-path" => "#{subscriptions_path(user_id: current_user.to_param)}", "plan-id" => "#{plan.to_param}",  "check-icon-path" => "#{image_path('icon-plans-checkmark.svg')}" }= t('plans.save for later')
         != "&bull;"
         = link_to t("plans.sample"), {day: "1"}, {class: '', target: "_self"}
   - else
-    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: "solid-button green", target: "_self")
+    = link_to(t('plans.subscribe to plan'), sign_up_path(source: "plan", redirect: plan_path(plan)), class: "solid-button green padded", target: "_self")
     - if (action_name != 'sample')
-      = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray', target: "_self"}
+      = link_to t("plans.view sample"), {day: "1"}, {class: 'solid-button gray padded', target: "_self"}

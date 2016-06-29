@@ -130,12 +130,8 @@ function inPathNotFirst(segment, path) {
 
 function init() {
 
-	if (isReader) {
+	if (isReader || isReadingPlanSample || isReaderPlanUser) {
 		parseReaderVars();
-	}
-
-	if (isReadingPlanSample || isReaderPlanUser) {
-		parsePlanVars();
 	}
 
     if (isEvents || isResetPassword) {
@@ -158,5 +154,5 @@ var isBookmarksFeed		= isFirst("users") && inPathNotFirst("bookmarks");
 var isHighlightsFeed	= isFirst("users") && inPathNotFirst("highlights");
 var isImagesFeed		= isFirst("users") && inPathNotFirst("images");
 var isBadgesFeed		= isFirst("users") && inPathNotFirst("badges");
-var isReaderPlanUser	= isFirst("users") && inPathNotFirst("reading-plans");
+var isReaderPlanUser	= isFirst("users") && inPathNotFirst("reading-plans") && inPathNotFirst("ref");
 var isUserProfile 		= isFirst("users") && !isNotesFeed && !isHighlightsFeed && !isBookmarksFeed && !isImagesFeed && !isBadgesFeed && !isFriendsFeed;
