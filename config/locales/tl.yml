@@ -902,6 +902,14 @@ tl:
         none me: "Wala ka pang nakukuhang sagisag."
         none user: "Si %{username} ay hindi pa nakakakuha ng anumang sagisag."
     plans: 
+        status: 
+            on track: "Nakakasunod!"
+            days ahead: 
+                one: "%{count} Araw na Susunod!"
+                other: "%{count} Mga Araw na Susunod!"
+            missed days: 
+                one: "%{count} Araw na Nakaligtaan"
+                other: "%{count} Mga Araw na Nakaligtaan"
         bible plan language: "Wikang Gamit sa Babasahin"
         share plan: "Tingnan mo itong %{plan_title} ng @YouVersion #BiblePlan"
         widget: 
@@ -944,6 +952,8 @@ tl:
         none found: "Hindi kami makahanap ng plano na angkop sa iyong piniling criteria. Subukang palawakin pa ang paghahanap."
         about publisher: "Tungkol sa Naglathala"
         overview: "Overview ng Plan"
+        complete: "Nakumpletong Babasahin"
+        day complete: "Natapos na Araw"
         start: "Umpisahan ang Plan na Ito"
         save for later: "I-save para sa ibang Pagkakataon"
         saved for later: "Na-save para sa Ibang Pagkakataon"
@@ -1038,6 +1048,7 @@ tl:
         must start to complete: "Simulan itong plano para ma-save ang mga natapos na babasahin!"
         invalid reference: "Paumanhin, isa sa mga sangguniang talata ng Biblia para sa babasahing ito ay maaaring hindi kasama sa napiling salin. Maaaring pumili ng ibang salin ng Biblia sa itaas. Kung patuloy na nakikita ang mensahe tungkol sa pagkakamaling ito, paki bigay alam sa aming <a href='%{support_url}' target='_self'>support team</a>."
         sidebar notice: "Tinitingnan mo ngayon ang isang babasahing gabay."
+        congratulations: "Binabati Kita!"
         completed notice: "Pagbati sa iyo! Natapos mo na ang iyong babasahing gabay."
         exit: "Exit"
         loading sidebar content: "Naglo-load ng konteksto ng sidebar.."
@@ -1165,8 +1176,6 @@ tl:
         partners text: "Kung di sa aming mapagbigay na mga kasama sa paglalathala ng Biblia, ang YouVersion ay di makapagbibigay ng napakaraming Biblia sa ating pandaigdigang komunidad. Marami sa inyo ang nagtatanong kung paano ninyo pasasalamatan itong mga importanteng taga-suporta ng tungkulin ng YouVersion. Ang mga link sa ibaba ay may karagdagang impormasyon tungkol sa kanila, kanilang mga ministry, at paraan ng pagsuporta sa kanila."
         translation title: "Ang Aming Pangkat sa Pagsasalin"
         learn more: "Higit na Impormasyon"
-        bible dot com title: "Anong nangyari sa lumang Bible.com?"
-        bible dot com copy: "Kung ika'y naghahanap ng nilalaman ng Christ Unlimited Ministries nina Bud at Betty Miller o di kaya'y ang lumang Bible.com webiste, bumisita sa <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Lugar para sa Pagpapahayag"
         contact header: "Impormasyon Tungkol sa Press Contact"

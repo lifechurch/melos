@@ -1,33 +1,61 @@
 body.c_users.a_new,
 body.c_users.a_create
 {
+  .content {
+    margin-left: 60px;
+  }
+
   #user_password {
     float: $default-float;
   }
   #pwd-message {
     float: $default-float;
     color: #7c7c7c;
-    margin: -20px 0 20px 0;
+    width: 100%;
+    font-size: rem-calc(11);
+    margin-top: -20px;
+    padding-bottom: 10px;
   }
 
-  label {
-    padding: 0 0 5px;
+  form
+  {
+    label{
+      padding: 0 0 5px;
+      font-size: rem-calc(17);
+      font-weight: bold;
+    }
+  }
+
+  .widget
+  {
+    h6 {
+      font-size: rem-calc(15);
+      font-weight: bold;
+    }
+
+    img {
+      padding-top: 5px;
+      padding-left: 1.07143rem;
+      min-height: 22px;
+      min-width: 22px;
+      float: left;
+    }
   }
 
   @media #{$medium-up} {
     input[type="text"],
     input[type="email"],
-    input[type="password"] {
-      width: 50%;
-    }
-    #pwd-message {
-      width: 40%;
-      margin: 0 10px;
+    input[type="password"],
+    button,
+    h1,
+    .terms {
+      width: 75%;
     }
   }
   .terms {
     clear: both;
     margin-bottom: 20px;
+    font-size: rem-calc(11);
   }
   @media #{$small-only} {
     .alt-path {

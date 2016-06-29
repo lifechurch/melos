@@ -1,14 +1,35 @@
 body.c_sessions.a_new,
 body.c_sessions.a_create {
-  label {
-    padding: 0 0 5px;
+
+  h1 {
+    padding-right: 50px;
+    padding-left: 50px;
+    text-align: left;
+    @media #{$small-only} {
+      padding-right: 1.07143rem;
+      padding-left: 1.07143rem;
+    }
   }
 
+  form
+  {
+    label{
+      padding: 0 0 5px;
+      font-size: rem-calc(16);
+      font-weight: bold;
+    }
+  }
+  .terms {
+    clear: both;
+    margin-bottom: 15px;
+    font-size: rem-calc(11);
+  }
   @media #{$medium-up} {
     input[type="text"],
     input[type="email"],
-    input[type="password"] {
-      width: 50%;
+    input[type="password"],
+    button {
+      width: 100%;
     }
   }
   @media #{$small-only} {
@@ -16,4 +37,5 @@ body.c_sessions.a_create {
       display: block;
     }
   }
+
 }
