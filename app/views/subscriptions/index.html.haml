@@ -41,7 +41,7 @@
           = (@user == current_user) ? t("plans.you have no plans") : t("plans.no public plans", username: @user.username)
           %br
           %br
-          = link_to t("pages.home.browse_plans"), plans_path
+          = link_to t("pages.home.browse_plans"), plans_path, target: "_self"
 
       - else
         - @subscriptions.reading_plans.each do |sub|
