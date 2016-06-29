@@ -1,6 +1,10 @@
 body.c_users.a_new,
 body.c_users.a_create
 {
+  .content {
+    margin-left: 60px;
+  }
+
   #user_password {
     float: $default-float;
   }
@@ -30,8 +34,11 @@ body.c_users.a_create
     }
 
     img {
+      padding-top: 5px;
+      padding-left: 1.07143rem;
       min-height: 22px;
       min-width: 22px;
+      float: left;
     }
   }
 
@@ -40,6 +47,7 @@ body.c_users.a_create
     input[type="email"],
     input[type="password"],
     button,
+    h1,
     .terms {
       width: 65%;
     }
