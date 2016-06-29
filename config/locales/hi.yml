@@ -1472,7 +1472,7 @@ hi:
                 previous: "← Previous: Locations & Times"
                 next: "Next: Preview →"
             EventEditDetails: 
-                title: "Event Details"
+                title: "कार्यक्रम विवरण "
             EventEditLocationContainer: 
                 title: "Event Location"
                 previous: "← Previous: Details"
@@ -1521,10 +1521,10 @@ hi:
                     noMatchingPlans: "No matching Plans"
                 components: 
                     EventEditNav: 
-                        details: "Details"
-                        locations: "Locations & Times"
-                        content: "Content"
-                        preview: "Preview & Publish"
+                        details: "विवरण "
+                        locations: "समय एवं स्थान "
+                        content: "विषय "
+                        preview: "समीक्षा और प्रकाशित करें "
                         share: "शेयर"
                 features: 
                     content: 
