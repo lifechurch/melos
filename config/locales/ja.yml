@@ -428,7 +428,7 @@ ja:
             version: "聖書訳"
             view more: "もっと見る"
             time: "期間"
-            blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
+            blurb: "「今日の聖句」の配信を受けましょう。毎日、メールか携帯のプッシュ通知で受け取れます。"
         friendship: 
             now friends: "お友達になりました"
         cta: 
@@ -495,7 +495,7 @@ ja:
         limit notice: "友達を最大150人まで登録できます"
         limit description: "聖書アプリでの友達をよく知っている相手に限定することで、本音で会話でき、新しく発見したことをシェアできる環境を作ることができます。"
     friendships: 
-        blurb: "Focus your friendships around the Bible. Share what you want, when you want, within the safety of trusted relationships."
+        blurb: "聖書中心の友情を築きましょう。信用できる仲間に、好きなことを好きな時にシェアできます。"
         name required: "友だちと一緒に聖書アプリを楽しむには、プロフィールに姓名を登録してください。"
         find friends title: "友だちを探す"
         search by name: "名前で検索"
@@ -629,8 +629,8 @@ ja:
         confirm message: "%{email}宛にメッセージを送信しました。"
         confirm message click: "メール内のリンク先で本人確認をしてください。"
         resend verification: "認証メールを再送信する"
-        sign in alternate: "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
-        sign up alternate: "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
+        sign in alternate: "アカウントを持っていない場合<a href='%{sign_up_path}' target='_self'>登録する</a>"
+        sign up alternate: "アカウントを持っている場合<a href='%{sign_in_path}' target='_self'>サインイン</a>"
         password length: "６文字以上"
         welcome to youversion: "YouVersion のコミュニティーへようこそ！"
         confirm email: "メールが送信されていますので、登録の確認のためメールに記載されたリンクをクリックして下さい。"
