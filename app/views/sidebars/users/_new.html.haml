@@ -17,7 +17,7 @@
 
   .row.padded
     %img{src: "#{image_path('plans-stroked-grey.png')}"}
-    .content
+    %div{class: is_rtl? ? "right-content" : "left-content"}
       %h6.heading
         =t("pages.home.free_plans.title")
       %p
@@ -27,7 +27,7 @@
 
   .row.padded
     %img{src: "#{image_path('highlight-stroked-grey.png')}"}
-    .content
+    %div{class: is_rtl? ? "right-content" : "left-content"}
       %h6.heading
         =t("pages.home.make_yours.title")
       %p
@@ -37,7 +37,7 @@
 
   .row.padded
     %img{src: "#{image_path('friends-stroked-grey.png')}"}
-    .content
+    %div{class: is_rtl? ? "right-content" : "left-content"}
       %h6.heading
         =t("friendships.status.friends")
       %p
@@ -47,7 +47,7 @@
 
   .row.padded
     %img{src: "#{image_path('votd-stroked-grey.png')}"}
-    .content
+    %div{class: is_rtl? ? "right-content" : "left-content"}
       %h6.heading
         =t("moments.vod.title")
       %p

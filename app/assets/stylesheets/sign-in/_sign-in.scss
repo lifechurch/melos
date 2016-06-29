@@ -2,12 +2,11 @@ body.c_sessions.a_new,
 body.c_sessions.a_create {
 
   h1 {
-    padding-right: 50px;
-    padding-left: 50px;
-    text-align: left;
-    @media #{$small-only} {
-      padding-right: 1.07143rem;
-      padding-left: 1.07143rem;
+    padding-left: 1.07rem;
+    padding-right: 1.07rem;
+    @media #{$large-only} {
+      padding-left: 2.14rem;
+      padding-right: 2.14rem;
     }
   }
 
