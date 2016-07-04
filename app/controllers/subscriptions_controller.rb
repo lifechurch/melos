@@ -7,6 +7,8 @@ class SubscriptionsController < ApplicationController
   before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar]
   before_filter :setup_presenter, only: [:show,:devo,:ref]
   before_filter :get_plan_counts, only: [:index,:completed,:saved]
+  before_filter :mark_complete
+
   
   rescue_from NotAChapterError, with: :ref_not_found
 
@@ -97,7 +99,7 @@ class SubscriptionsController < ApplicationController
     # TODO look into having to do [@subscription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
-  def update
+  def update(opts={})
 
     if params[:catch_up] == "true"
       @subscription.catch_up
@@ -133,8 +135,15 @@ class SubscriptionsController < ApplicationController
     end
 
     # Completing a day of reading
-    if(params[:completed].present?)
-      @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
+    if(params[:completed].present? || opts[:mark_complete])
+      # if we want to mark the entire day complete (from email)
+      if(opts[:mark_complete])
+        Presenter::Subscription.reading
+
+      else
+        @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
+      end
+
       @subscription = subscription_for(params[:id]) || @subscription
       self.presenter = Presenter::Subscription.new( @subscription , params, self)
 
@@ -191,6 +200,13 @@ class SubscriptionsController < ApplicationController
   end
 
   private
+
+  def mark_complete
+    # if(params[:complete])
+      update({mark_complete:true})
+    # end
+  end
+
 
   def check_existing_subscription
     plan_id = params[:plan_id]
