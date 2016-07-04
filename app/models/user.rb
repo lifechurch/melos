@@ -57,6 +57,7 @@ class User < YV::Resource
       opts[:agree] = true if opts[:agree]
       opts[:token] = Digest::MD5.hexdigest "#{opts[:email]}.Yv6-#{opts[:password]}"
       opts[:notification_settings] = { newsletter: {email: true}}
+      opts[:timezone] = TZInfo::Timezone.get
 
       data, errs = post("users/create", opts)
       results = if errs.blank?
