@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
   before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar]
   before_filter :setup_presenter, only: [:show,:devo,:ref]
   before_filter :get_plan_counts, only: [:index,:completed,:saved]
-  before_filter :mark_complete
+  # before_filter :mark_complete, only: [:show]
 
   
   rescue_from NotAChapterError, with: :ref_not_found
@@ -51,7 +51,11 @@ class SubscriptionsController < ApplicationController
 
   # Plan Day: Overview
   def show
-    return respond_with(presenter.subscription)
+    if(params[:complete] == "true")
+      update
+    else
+      return respond_with(presenter.subscription)
+    end
   end
 
   # Plan Day: Devo
@@ -99,7 +103,7 @@ class SubscriptionsController < ApplicationController
     # TODO look into having to do [@subscription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
-  def update(opts={})
+  def update
 
     if params[:catch_up] == "true"
       @subscription.catch_up
@@ -135,10 +139,10 @@ class SubscriptionsController < ApplicationController
     end
 
     # Completing a day of reading
-    if(params[:completed].present? || opts[:mark_complete])
+    if(params[:completed].present? || params[:complete] == "true")
       # if we want to mark the entire day complete (from email)
-      if(opts[:mark_complete])
-        Presenter::Subscription.reading
+      if(params[:complete] == "true")
+        refs = Plans::Reading.find({day:params[:day]})
 
       else
         @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
@@ -199,13 +203,13 @@ class SubscriptionsController < ApplicationController
     default_presenters
   end
 
-  private
+  # def mark_complete
+  #   # if(params[:complete] == true)
+  #   update
+  #   # end
+  # end
 
-  def mark_complete
-    # if(params[:complete])
-      update({mark_complete:true})
-    # end
-  end
+  private
 
 
   def check_existing_subscription
