@@ -880,6 +880,15 @@ md-progress-linear[md-mode="indeterminate"] .md-container {
   top: -1px;
 }
 
+md-progress-linear.reader-progress {
+  margin-top: -33px;
+  position: fixed;
+
+  @media #{$small-only} {
+    margin-top: -19px;
+  }
+}
+
 .c_references.a_show {
   .solid-button.blue {
     display: block;
