@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
   before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar]
   before_filter :setup_presenter, only: [:show,:devo,:ref]
   before_filter :get_plan_counts, only: [:index,:completed,:saved]
-  # before_filter :mark_complete, only: [:show]
+  before_filter :mark_complete, only: [:mark_complete]
 
   
   rescue_from NotAChapterError, with: :ref_not_found
@@ -51,12 +51,7 @@ class SubscriptionsController < ApplicationController
 
   # Plan Day: Overview
   def show
-    if(params[:complete] == "true")
-      setup_presenter
-      update
-    else
-      return respond_with(presenter.subscription)
-    end
+    return respond_with(presenter.subscription)
   end
 
   # Plan Day: Devo
@@ -140,18 +135,8 @@ class SubscriptionsController < ApplicationController
     end
 
     # Completing a day of reading
-    if(params[:completed].present? || params[:complete] == "true")
-      # if we want to mark the entire day complete (from email)
-      if(params[:complete].present? && params[:complete] == "true")
-        refs = presenter.reading.references(version_id: presenter.subscription.version_id)
-        refs.each_with_index { |ref,index|
-          ref.completed = true
-          @subscription.set_ref_completion(params[:day], ref.reference.to_param.downcase , ref.reference.to_param.downcase.present?, true)
-        }
-      else
-        @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
-      end
-
+    if(params[:completed].present?)
+      @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
       @subscription = subscription_for(params[:id]) || @subscription
       self.presenter = Presenter::Subscription.new( @subscription , params, self)
 
@@ -207,14 +192,32 @@ class SubscriptionsController < ApplicationController
     default_presenters
   end
 
-  # def mark_complete
-  #   # if(params[:complete] == true)
-  #   update
-  #   # end
-  # end
+  # for marking day complete from subscription email
+  def mark_complete
+    # find @subscription for presenter call
+    find_subscription
+    setup_presenter
+    refs = presenter.reading.references(version_id: presenter.subscription.version_id)
+    refs.each_with_index { |ref,index|
+      if(ref.completed == false)
+        ref.completed = true
+        @subscription.set_ref_completion(params[:day], ref.reference.to_param.downcase , ref.reference.to_param.downcase.present?, true)
+      end
+    }
+
+    @subscription = subscription_for(params[:id]) || @subscription
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+
+    if @subscription.completed?
+      @featured_plans = Plan.featured(language_tag: current_locale)
+      @saved_plans = Subscription.saved(current_user, id: current_user.id, auth: current_auth)
+      return render "subscriptions/plan_complete"
+    else
+      return render "subscriptions/day_complete"
+    end
+  end
 
   private
-
 
   def check_existing_subscription
     plan_id = params[:plan_id]
