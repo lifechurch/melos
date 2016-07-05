@@ -74,7 +74,7 @@
   %button.solid-button.share-button{ "ng-click" => "showShare = !showShare", "href" => "#" }
     != t("moments.action.share")
   %div.share-panel.ng-hide{"ng-show" => "showShare"}
-    %div.video.addthis_sharing_toolbox{:data => {:url => "#{plan_url(id: plan_id)}", :title => "#{title}"}}
+    %div.video.addthis_sharing_toolbox{:data => {:url => "#{day_complete_plan_url(id: plan_id, day: day, user_id: user.id)}", :title => "#{title}"}}
 
 - if @presenter.present?
   .row.medium-centered.text-center
