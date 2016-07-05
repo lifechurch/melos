@@ -190,6 +190,7 @@ YouversionWeb::Application.routes.draw do
   # /reading-plans/:id/day/:day
   resources :plans, :only => [:index, :show], :path => 'reading-plans'
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
+  match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', via: :get
 
   # Reading Plans
   # Legacy links that need to be supported
