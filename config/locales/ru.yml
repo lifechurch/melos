@@ -924,6 +924,7 @@ ru:
         none me: "Вы ещё не заработали значков."
         none user: "%{username} ещё не заработал значков."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Всё по плану!"
             days ahead: 

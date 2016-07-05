@@ -891,6 +891,7 @@ ja:
         none me: "まだバッジを獲得していません"
         none user: "%{username} さんはまだバッジを獲得していません"
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "予定通り!"
             days ahead: 
@@ -1433,7 +1434,7 @@ ja:
                 saving: "保存中…"
                 saveAsDraft: "下書きとして保存する"
                 myEvents: "イベント"
-                eventBuilder: "イベント作成"
+                eventBuilder: "イベントビルダー"
                 signOut: "サインアウト"
                 createAccount: "アカウント作成"
             HtmlEditor: 

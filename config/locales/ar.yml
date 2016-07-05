@@ -946,6 +946,7 @@ ar:
         none me: "لم تحصل على أي شارات بعد."
         none user: "%{username} لم يحصل على أي شارات بعد."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "ملتزم بالخطه!"
             days ahead: 

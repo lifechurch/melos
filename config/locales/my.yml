@@ -891,6 +891,7 @@ my:
         none me: "သင်သည် မည်သည့်ဆုတံဆိပ်မျှမရသေးပါ။"
         none user: "%{username}သည် မည်သည့်ဆုတံဆိပ်မျှမရသေးပါ။"
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "အမီလိုက်နေသည်။"
             days ahead: 
