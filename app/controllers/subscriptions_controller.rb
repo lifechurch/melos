@@ -156,7 +156,6 @@ class SubscriptionsController < ApplicationController
       self.presenter = Presenter::Subscription.new( @subscription , params, self)
 
       if !@subscription.completed?
-        stats = @subscription.day_statuses[params[:day].to_i - 1]
         dayComplete = @subscription.day_statuses[params[:day].to_i - 1].completed unless @subscription.day_statuses[params[:day].to_i - 1].blank?
 
         #Just Completed Day
