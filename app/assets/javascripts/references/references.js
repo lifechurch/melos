@@ -189,8 +189,7 @@ angular.module('yv.reader', [
             });
 
 		}).error(function(data, status, headers, config) {
-			//TO-DO: Handle Error!
-			$scope.working = false;
+            $window.location.href = location_path;
 		});
 
         if ($scope.isParallelMode) {
