@@ -52,6 +52,7 @@ class SubscriptionsController < ApplicationController
   # Plan Day: Overview
   def show
     if(params[:complete] == "true")
+      setup_presenter
       update
     else
       return respond_with(presenter.subscription)
@@ -141,9 +142,12 @@ class SubscriptionsController < ApplicationController
     # Completing a day of reading
     if(params[:completed].present? || params[:complete] == "true")
       # if we want to mark the entire day complete (from email)
-      if(params[:complete] == "true")
-        refs = Plans::Reading.find({day:params[:day]})
-
+      if(params[:complete].present? && params[:complete] == "true")
+        refs = presenter.reading.references(version_id: presenter.subscription.version_id)
+        refs.each_with_index { |ref,index|
+          ref.completed = true
+          @subscription.set_ref_completion(params[:day], ref.reference.to_param.downcase , ref.reference.to_param.downcase.present?, true)
+        }
       else
         @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
       end
@@ -152,6 +156,7 @@ class SubscriptionsController < ApplicationController
       self.presenter = Presenter::Subscription.new( @subscription , params, self)
 
       if !@subscription.completed?
+        stats = @subscription.day_statuses[params[:day].to_i - 1]
         dayComplete = @subscription.day_statuses[params[:day].to_i - 1].completed unless @subscription.day_statuses[params[:day].to_i - 1].blank?
 
         #Just Completed Day
