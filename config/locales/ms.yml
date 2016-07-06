@@ -428,7 +428,7 @@ ms:
             version: "Versi"
             view more: "Lihat Lebih Banyak"
             time: "Masa"
-            blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
+            blurb: "Langgani Ayat Harian. Terima e-mel harian atau notifikasi tolak pada peranti mudah alih anda."
         friendship: 
             now friends: "Anda sekarang bersahabat dengan"
         cta: 
@@ -495,7 +495,7 @@ ms:
         limit notice: "Anda boleh mempunyai sebanyak 150 sahabat"
         limit description: "Menghadkan sahabat App Alkitab anda kepada orang yang anda sangat kenal mewujudkan persekitaran untuk perbualan yang jujur dan penemuan yang dikongsi dengan sahabat yang dipercayai."
     friendships: 
-        blurb: "Focus your friendships around the Bible. Share what you want, when you want, within the safety of trusted relationships."
+        blurb: "Tumpukan persahabatan anda sekitar Alkitab. Kongsikan apa yang anda ingini, bila sahaja anda ingin berkongsi, dalam keselamatan hubungan yang dipercayai."
         name required: "Update nama pertama serta nama keluarga anda dalam Profil demi menikmati Alkitab bersama sahabat anda."
         find friends title: "Cari sahabat"
         search by name: "Cari menggunakan nama"
@@ -629,8 +629,8 @@ ms:
         confirm message: "Kami baru menghantar mesej ke %{email}"
         confirm message click: "Klik pautan dalam emel untuk mengesahkan identiti anda."
         resend verification: "Hantar Semula Pengesahan E-mel"
-        sign in alternate: "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
-        sign up alternate: "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
+        sign in alternate: "Tidak memiliki akaun? <a href='%{sign_up_path}' target='_self'>Daftar</a>"
+        sign up alternate: "Sudah memiliki akaun? <a href='%{sign_in_path}' target='_self'>Log Masuk</a>"
         password length: "Sekurang-kurangnya 6 aksara"
         welcome to youversion: "Selamat datang ke komuniti YouVersion!"
         confirm email: "Sila klik link dalam e-mel anda untuk mengesahkan pendaftaran anda."
@@ -891,6 +891,7 @@ ms:
         none me: "Anda belum memperolehi sebarang lencana."
         none user: "%{username} belum memperolehi sebarang lencana."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Dalam Landasan!"
             days ahead: 

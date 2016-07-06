@@ -4,10 +4,11 @@ class SubscriptionsController < ApplicationController
   prepend_before_filter :mobile_redirect, only: [:show]
   before_filter :check_existing_subscription, only: [:create]
   before_filter :force_login
-  before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar]
-  before_filter :setup_presenter, only: [:show,:devo,:ref]
+  before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar,:mark_complete]
+  before_filter :setup_presenter, only: [:show,:devo,:ref,:mark_complete]
   before_filter :get_plan_counts, only: [:index,:completed,:saved]
-  
+
+
   rescue_from NotAChapterError, with: :ref_not_found
 
   def index
@@ -188,6 +189,28 @@ class SubscriptionsController < ApplicationController
 
   def calendar
     default_presenters
+  end
+
+  # for marking day complete from subscription email
+  def mark_complete
+    refs = presenter.reading.references(version_id: presenter.subscription.version_id)
+    refs.each_with_index { |ref,index|
+      if(ref.completed == false)
+        ref.completed = true
+        @subscription.set_ref_completion(params[:day], ref.reference.to_param.downcase , ref.reference.to_param.downcase.present?, true)
+      end
+    }
+
+    @subscription = subscription_for(params[:id]) || @subscription
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+
+    if @subscription.completed?
+      @featured_plans = Plan.featured(language_tag: current_locale)
+      @saved_plans = Subscription.saved(current_user, id: current_user.id, auth: current_auth)
+      return render "subscriptions/plan_complete"
+    else
+      return render "subscriptions/day_complete"
+    end
   end
 
   private

@@ -902,6 +902,7 @@ tr:
         none me: "Daha hiç rozet kazanmadınız."
         none user: "%{username} adlı kullanıcın rozeti yok."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Zamanında!"
             days ahead: 

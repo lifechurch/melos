@@ -902,6 +902,7 @@ ca:
         none me: "Encara no tens cap insígnia."
         none user: "El/la %{username} encara no té cap insígnia."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Al dia!"
             days ahead: 

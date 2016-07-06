@@ -902,6 +902,7 @@ de:
         none me: "Du hast bisher keine Abzeichen bekommen."
         none user: "%{username} hat bisher keine Abzeichen bekommen."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Prima!"
             days ahead: 

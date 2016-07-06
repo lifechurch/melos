@@ -902,6 +902,7 @@ sw:
         none me: "Haujapata beji zozote."
         none user: "%{username} hajapata beji zozote."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "On Track!"
             days ahead: 

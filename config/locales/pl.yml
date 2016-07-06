@@ -924,6 +924,7 @@ pl:
         none me: "Nie zdobyłeś jeszcze żadnych odznaczeń."
         none user: "%{username} nie zdobył jeszcze żadnych odznaczeń."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Jesteś na bieżąco!"
             days ahead: 

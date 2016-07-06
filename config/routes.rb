@@ -158,6 +158,7 @@ YouversionWeb::Application.routes.draw do
       get   :ref,    on: :member
       get   :plan_complete, on: :member
       get   :day_complete, on: :member
+      get   :mark_complete, on: :member
     end
   end
 
@@ -190,6 +191,7 @@ YouversionWeb::Application.routes.draw do
   # /reading-plans/:id/day/:day
   resources :plans, :only => [:index, :show], :path => 'reading-plans'
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
+  match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
 
   # Reading Plans
   # Legacy links that need to be supported

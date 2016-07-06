@@ -924,6 +924,7 @@ hr:
         none me: "Nemaš zarađenu nijednu značku."
         none user: "%{username} još nije zaradio nijednu značku."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "U toku!"
             days ahead: 

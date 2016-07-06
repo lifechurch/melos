@@ -784,7 +784,7 @@ ta:
             rights title: "உடைமையுரிமைகள்"
             rights text: "பதிப்புரிமை, வணிக முத்திரைகள், சேவை முத்திரைகள், காப்புரிமை, அறிவுசார் உரிமையாளர் சட்டங்கள், அல்லது மற்ற சொத்து உரிமைகள் அல்லது சட்டங்களால் பாதுகாக்கப்பட்ட உரிமையாளர் மற்றும் ரகசிய தகவல்கள் YouVersion இல் உள்ளன என்று நீங்கள் ஒப்புக்கொண்டு ஏற்கிறீர்கள். தெளிவாக சம்பந்தப்பட்ட சட்டத்தால் அனுமதிக்கப்பட்டு அல்லது Life.Church ஆல் அங்கீகரிக்கப்பட்டாலேயல்லாமல், முழுமையாகவோ பகுதியாகவோ YouVersion ஐ நகல் செய்ய, மாற்றம் செய்ய, வாடகைக்கு கொடுக்க, குத்தகைக்கு கொடுக்க, இரவல் கொடுக்க, விற்க, பகிர்த்து கொடுக்க, பொதுவாக காட்சி செய்ய, பொது செயலாக்கம் செய்ய அல்லது YouVersion இன் அடிப்படையில் தருவிக்கப்பட்ட பணிகளை இயற்றவோ மாடேன் என்று நீங்கள் ஏற்றுக்கொள்கிறீர்கள்."
             limitation title: "பொறுப்பின் வரம்பு"
-            limitation text: "You expressly understand and agree that Life.Church and its subsidiaries, affiliates, officers, employees, agents, partners and licensors shall not be liable to you for any direct, indirect, incidental, special, consequential or exemplary damages, including, but not limited to, damages for loss of profits, goodwill, use, data or other intangible losses (even if Life.Church has been advised of the possibility of such damages), resulting from:<ul><li>the use or the inability to use YouVersion;</li><li>unauthorized access to or alteration of your transmissions or data;</li><li>statements or conduct of any third party on YouVersion; or</li><li>any other matter relating to YouVersion.</li></ul>"
+            limitation text: "கீழ்கண்டவற்றால் ஏற்பட்ட லாபதின் இழப்பு, அல்லது நற்பெயர், பயன், தகவல் அல்லது மற்ற புலனாகா இழப்புகள் உட்பட்ட, ஆனால் இவை மட்டும் அல்லாத, எந்த விதமான நேரடி, மறைமுகமான, தற்செயலான, விசேஷமான, விளைவின் காரணமாக அல்லது முன்மாதிரியான பாதிப்புகளுக்கும் Life.Church, அதன் துணை நிறுவனங்கள், இணைப்புகள், அதிகாரிகள், ஊழியர்கள், முகவர்கள், பங்குதாரர்கள் மற்றும் உரிமதாரர்கள் பொறுப்பு ஏற்க மாட்டார்கள் என்று நீங்கள் தெளிவாக புரிந்து ஏற்றுக்கொள்கிறீர்கள். <ul><li>YouVersion இன் பயன் அல்லது பயன்படுத்த இயலாமை;</li><li>உங்கள் பரிமாற்றங்கள் அல்லது தகவலின் அங்கீகரிக்கப்படாத அணுகல் அல்லது மாற்றம்;</li><li>YouVersion இல் மூன்றாம் தரப்பினரின் அறிக்கைகள் அல்லது நடத்தை; அல்லது</li><li>YouVersion தொடர்பான வேறு எந்த விஷயமும்.</li></ul>"
             beneficiaries title: "மூன்றாம் தரப்பு பயனாளிகள் இல்லை"
             beneficiaries text: "இந்த பயன்பாட்டு விதிகளில் குறிப்பிடப்பட்டாலே அல்லாமல், இந்த ஒப்பந்தத்திற்கு எந்த மூன்றாம் தரப்பு பயனர்களும் இல்லை என்று ஒப்புக் கொள்கிறீர்கள்."
             notice title: "அறிவிப்பு"
@@ -902,6 +902,7 @@ ta:
         none me: "நீங்கள் இன்னும் எந்த badges-யும் பெற வில்லை."
         none user: "%{username} இன்னும் எந்த badges-யும் பெற வில்லை."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "சரியான தடத்தில்!"
             days ahead: 

@@ -891,6 +891,7 @@ vi:
         none me: "Bạn chưa có huy hiệu nào."
         none user: "%{username} chưa có huy hiệu nào."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Đọc đủ ngày!"
             days ahead: 

@@ -891,6 +891,7 @@ km:
         none me: "លោក​អ្នក​មិន​ទទួល​បាន ផ្លាក់​សញ្ញា​ អី​នៅ​ឡើយ​ទេ"
         none user: "%{username} មិន​ទាន់​ទទួល​បាន ផ្លាក​សញ្ញា អី​នៅ​ឡើយ​ទេ"
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "កំពុងដំណើរការ!"
             days ahead: 

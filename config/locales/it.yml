@@ -402,7 +402,7 @@ it:
     none found: "Non abbiamo trovato una corrispondenza ai tuoi criteri. Prova a estendere la tua ricerca."
     paginated items shown: "%{first_shown}–%{last_shown} di %{total_available}"
     160 character limit: "160 caratteri o meno"
-    recent versions: "Usato Recentemente"
+    recent versions: "Usate Recentemente"
     traditional: "Tradizionale"
     alphabetic: "Alfabetico"
     versions title: "Versioni"
@@ -902,6 +902,7 @@ it:
         none me: "Non hai ancora guadagnato nessun distintivo."
         none user: "%{username} non ha ancora guadagnato nessun distintivo."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Secondo la Tabella di Marcia!"
             days ahead: 

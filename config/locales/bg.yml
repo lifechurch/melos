@@ -902,6 +902,7 @@ bg:
         none me: "Нямате спечелени значки все още."
         none user: "%{username} все още няма спечелени значки."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Точно по график!"
             days ahead: 

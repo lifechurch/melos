@@ -946,6 +946,7 @@ cy:
         none me: "Dwyt ti ddim wedi ennill yr un bathodyn eto."
         none user: "Dydy %{username}heb ennill yr un bathodyn eto."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Ar y trywydd iawn!"
             days ahead: 
