@@ -662,12 +662,6 @@ ul.plan-results {
     form {
       display: inline-block;
     }
-//    li.li-left {
-//      padding-right: 30px;
-//    }
-//    li.li-right {
-//      padding-left: 30px;
-//    }
 
     .check {
       background: image_url("Check-Small.svg") no-repeat $default-float bottom;
@@ -912,7 +906,8 @@ ul.plan-results {
 .c_subscriptions.a_update,
 .c_plans.a_day_complete,
 .c_subscriptions.a_day_complete,
-.c_subscriptions.a_plan_complete {
+.c_subscriptions.a_plan_complete,
+.c_subscriptions.a_mark_complete {
 
   @media #{$small-only} {
     .plans-container {

@@ -158,6 +158,7 @@ YouversionWeb::Application.routes.draw do
       get   :ref,    on: :member
       get   :plan_complete, on: :member
       get   :day_complete, on: :member
+      get   :mark_complete, on: :member
     end
   end
 
