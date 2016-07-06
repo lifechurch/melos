@@ -47,3 +47,9 @@
   %div
     = button_tag t('users.update profile') , {class: "solid-button green"}
 
+
+
+  :javascript
+    var offset = jstz.determine();
+    var name = offset.name()
+    $("#user_timezone").val(name).change();

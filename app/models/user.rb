@@ -57,14 +57,15 @@ class User < YV::Resource
       opts[:agree] = true if opts[:agree]
       opts[:token] = Digest::MD5.hexdigest "#{opts[:email]}.Yv6-#{opts[:password]}"
       opts[:notification_settings] = { newsletter: {email: true}}
-      opts[:timezone] = TZInfo::Timezone.get
 
+      # timezone is passed in through form in opts
       data, errs = post("users/create", opts)
       results = if errs.blank?
          YV::API::Results.new(new(data),errs) # data = User
       else
          YV::API::Results.new(data,errs)      # data = Hash API response
       end
+
       return results
     end
 

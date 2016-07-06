@@ -44,3 +44,9 @@
     =render partial: "/sidebars/users/new"
   .medium-1.large-1.columns
     !="&nbsp;"
+
+
+  -# detect user timezone and set it in the form's hidden field
+  :javascript
+    var tz = jstz.determine();
+    $("#user_timezone").val(tz.name());
