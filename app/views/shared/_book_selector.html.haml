@@ -60,7 +60,7 @@
           %a{"ng-click" => "sortBooks(true)"}= t('alphabetic')
           -# %input#exampleCheckboxSwitch{:type => "checkbox", "ng-model" => "sort", "value" => "alphabetic", "ng-hide" => "true"}
             %label{:for => "exampleCheckboxSwitch"}
-    %div{"books" => "reader_book_list", "reader-book-list" => true, "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version_id", "selected-book"=>'selectedBook', 'on-book-selected' => 'toggleChaptersPanel', 'canon-ot' => "#{t('old testament')}", 'canon-nt' => "#{t('new testament')}"}
+    %div{"books" => "reader_book_list", "reader-book-list" => true, "books-per-column" => "16", "max-columns" => "4", "display-mode" => "alphabetic", "filter" => "bookFilter", "sort" => "sort", "version" => "reader_version_id", "selected-book"=>'selectedBook', 'on-book-selected' => 'toggleChaptersPanel', 'canon-ot' => "#{t('old testament')}", 'canon-nt' => "#{t('new testament')}"}
 
   %script{'type' => 'text/ng-template', 'id' => '/reader-version-selector.tpl.html'}
     .row.full

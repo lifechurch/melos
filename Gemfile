@@ -52,7 +52,7 @@ gem 'rack-ssl-enforcer'
 gem 'viximo-rack-throttle',   '~> 0.5.0'
 gem 'handlebars_assets',      '~> 0.14.0'
 gem 'foundation-rails',       '~> 5.5.2.1'
-gem 'angularjs-rails'
+gem 'angularjs-rails',        '~> 1.5.6'
 gem 'angular-ui-router-rails'
     #:git => 'git@github.com:iven/angular-ui-router-rails.git'
 
