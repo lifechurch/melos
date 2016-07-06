@@ -95,6 +95,13 @@ class PlansController < ApplicationController
     end
   end
 
+  def day_complete
+    @plan = Plan.find(params[:id])
+    @user = User.find(params[:user_id])
+    @day = params[:day]
+    render 'subscriptions/day_complete'
+  end
+
   def ref_not_found
     @title = @plan.name
     @presenter = Presenter::Subscription.new( @plan , params, self)
