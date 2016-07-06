@@ -50,6 +50,5 @@
 
 
   :javascript
-    var offset = jstz.determine();
-    var name = offset.name()
-    $("#user_timezone").val(name).change();
+    var tz = jstz.determine();
+    $("#user_timezone").val(tz.name()).change();
