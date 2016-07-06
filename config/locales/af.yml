@@ -902,6 +902,7 @@ af:
         none me: "Jy het nog geen kentekens verwerf nie."
         none user: "%{username} het nog geen kentekens verwerf nie."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Op koers!"
             days ahead: 

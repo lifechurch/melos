@@ -891,6 +891,7 @@ ko:
         none me: "아직 받으신 배지가 없습니다."
         none user: "%{username}님은 아직 받은 배지가 없습니다."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "순조롭게 진행 중!"
             days ahead: 

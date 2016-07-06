@@ -902,6 +902,7 @@ el:
         none me: "Δεν έχετε ακόμα κερδίσει διακρίσεις."
         none user: "Ο/Η %{username} δεν έχει κερδίσει κάποιο διακριτικό ακόμη."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Σε καλό δρόμο!"
             days ahead: 

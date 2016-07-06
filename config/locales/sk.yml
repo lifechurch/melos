@@ -913,6 +913,7 @@ sk:
         none me: "Zatiaľ ste nezískali žiadne odznaky."
         none user: "Používateľ %{username} zatiaľ nezískal žiadne odznaky."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Na dobrej ceste!"
             days ahead: 

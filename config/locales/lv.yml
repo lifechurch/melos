@@ -913,6 +913,7 @@ lv:
         none me: "Jūs vēl neesat nopelnījis nevienu nozīmīti."
         none user: "%{username} nav nopelnījis nevienu nozīmīti vēl."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Tieši laikā!"
             days ahead: 

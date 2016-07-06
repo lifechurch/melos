@@ -891,6 +891,7 @@ zh-CN:
         none me: "您还没有获得任何徽章。"
         none user: "%{username} 还没有获得任何徽章。"
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "如期进展！"
             days ahead: 
