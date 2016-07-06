@@ -4,12 +4,11 @@ class SubscriptionsController < ApplicationController
   prepend_before_filter :mobile_redirect, only: [:show]
   before_filter :check_existing_subscription, only: [:create]
   before_filter :force_login
-  before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar]
-  before_filter :setup_presenter, only: [:show,:devo,:ref]
+  before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar,:mark_complete]
+  before_filter :setup_presenter, only: [:show,:devo,:ref,:mark_complete]
   before_filter :get_plan_counts, only: [:index,:completed,:saved]
-  before_filter :mark_complete, only: [:mark_complete]
 
-  
+
   rescue_from NotAChapterError, with: :ref_not_found
 
   def index
@@ -194,9 +193,6 @@ class SubscriptionsController < ApplicationController
 
   # for marking day complete from subscription email
   def mark_complete
-    # find @subscription for presenter call
-    find_subscription
-    setup_presenter
     refs = presenter.reading.references(version_id: presenter.subscription.version_id)
     refs.each_with_index { |ref,index|
       if(ref.completed == false)
