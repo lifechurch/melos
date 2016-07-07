@@ -1,10 +1,25 @@
 :ruby
   subscription = @presenter.subscription
+  @referrer = request.referrer
 
-%h1.rp-title-settings.clearfix
-  = image_tag subscription.search_thumbnail_image.url, class: 'rp-image-settings' if subscription.search_thumbnail_image.present?
-  = subscription.title
-.row.rp-settings-nav
+.row.plan-settings-header
+  - if @referrer.present?
+    %div
+      = link_to(@referrer, class: '', target: "_self") do
+        - if is_rtl?
+          != "&rarr; #{t('plans.back')}"
+        - else
+          != "&larr; #{t('plans.back')}"
+  %div.text-center
+    - if subscription.list_image.present?
+      = image_tag subscription.list_image.url
+    - else
+      %img{src: image_path('plans-hero-640x360.jpg'), class: 'radius'}
+
+  %div.text-center
+    %h3.plan-title= subscription.name
+
+.row.rp-settings-nav.b-border
   .columns
     - settings_href = edit_subscription_path(user_id: current_user.to_param, id: subscription)
     - cal_href = calendar_subscription_path(user_id: current_user.to_param, id: subscription)

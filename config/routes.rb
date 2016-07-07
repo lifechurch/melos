@@ -50,6 +50,8 @@ YouversionWeb::Application.routes.draw do
   get "/kinders",         to: "redirects#kinderbybel"
   get "/kinderbybel",     to: "redirects#kinderbybel"
   get "/bybelvirkinders", to: "redirects#kinderbybel"
+  get "/pambata",       to: "redirects#pambatang"
+  get "/pambatangbibleapp", to: "redirects#pambatang"
 
   get "/trending-bible-verses", to: "pages#trending"
   get "/verse-of-the-day", to: "pages#votd"
@@ -152,6 +154,11 @@ YouversionWeb::Application.routes.draw do
   scope "/users/:user_id" do
     resources :subscriptions, path: '/reading-plans', :user_id => /([^\/])+?/ do
       get   :calendar,    on: :member
+      get   :devo,   on: :member
+      get   :ref,    on: :member
+      get   :plan_complete, on: :member
+      get   :day_complete, on: :member
+      get   :mark_complete, on: :member
     end
   end
 
@@ -184,6 +191,7 @@ YouversionWeb::Application.routes.draw do
   # /reading-plans/:id/day/:day
   resources :plans, :only => [:index, :show], :path => 'reading-plans'
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
+  match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
 
   # Reading Plans
   # Legacy links that need to be supported

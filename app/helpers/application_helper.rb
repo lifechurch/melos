@@ -77,7 +77,7 @@ module ApplicationHelper
 
   def is_reader_page?
     controller_name == "references" && action_name == "show" ||
-    controller_name == "subscriptions" && action_name == "show" ||
+    controller_name == "subscriptions" && action_name == "ref" ||
     controller_name == "plans" && action_name == "sample"
   end
 
@@ -170,7 +170,7 @@ module ApplicationHelper
   def i18n_kids_whitelist
     # the following localizations will allow translation for the kids page
     # the others will default to en
-    [ :en, :"en-GB", :es, :"zh-CN", :"zh-TW", :ko, :pt, :ru, :nl, :de, :fr, :ar, :id, :tr, :fa, :ja, :af ]
+    [ :en, :"en-GB", :es, :"zh-CN", :"zh-TW", :ko, :pt, :ru, :nl, :de, :fr, :ar, :id, :tr, :fa, :ja, :af, :tl ]
   end
 
   def i18n_events_whitelist

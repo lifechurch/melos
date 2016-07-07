@@ -13,7 +13,7 @@
   verses        = presenter.respond_to?(:verses)        ? presenter.verses : nil # some of our presenters may not expose the verses (yet)
   focus_verses  = presenter.focus? # for verses focus styling instead of select styling.
   a_chapter     = presenter.try(:is_chapter?)
-  verse_view    = presenter.verses.present? && !presenter.respond_to?(:subscription)
+  verse_view    = presenter.verses.present?
   ref_deep_link = "#{@presenter.reference.deep_link_path}"
 
 -if (controller_name == 'subscriptions')
@@ -77,7 +77,10 @@
 
 = render partial: "references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: presenter}
 
-.row.full.reader-content{"ng-hide" => "topPanelOpen"}
+-if (controller_name == 'subscriptions')
+  = render partial: "subscriptions/dayNav", locals: { subscription: subscription, day: day, day_status: day_status }
+
+.row.full.reader-content{"ng-hide" => "topPanelOpen", style: "margin: 0;"}
   .reader-left.large-3.columns{"ng-hide" => "isParallelMode || (showContent && isMobile)"}
     - unless (controller_name == 'references' || @sidebar == false || sidebar_presenter.blank?)
       = render partial: sidebar_presenter.sidebar_partial, locals: {presenter: sidebar_presenter}
@@ -90,13 +93,15 @@
       - if verse_view
         - share_url = "https://www.bible.com/bible#{get_localized_reference_link(presenter.reference, I18n.locale.to_s)}"
         #read_chapter
-          %a{href: reference_path(reference: reference.chapter_usfm.downcase)}
+          - link_path = reference_path(reference: reference.chapter_usfm.downcase, version: version.id)
+          %a{href: link_path}
             %h2
               = t("read reference", reference: reference.to_chapter.human)
-        %div#svp_share.addthis_sharing_toolbox{"data-url" => "#{share_url}", "data-title" => "#{reference.human}"}
+        -if (controller_name != 'subscriptions')
+          %div#svp_share.addthis_sharing_toolbox{"data-url" => "#{share_url}", "data-title" => "#{reference.human}"}
 
-        %div#download.mobile{class:"show-for-small-only"}
-          %a#svp_download{href:"/app?svp", class: "solid-button blue", target: '_self' }
+        %div#download.mobile.text-center{class:"show-for-small-only"}
+          %a#svp_download{href:"/app?svp", class: "solid-button blue full", target: '_self' }
 
             = t('mobile page.download now')
       - if version.has_publisher?
@@ -121,19 +126,21 @@
         %div.verse-action-panel.ng-hide{'reader-note-panel' => true, "selection" => "readerSelection", "ng-show" => "showReaderNote", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "notes" => "notes", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
         %div.verse-action-panel.ng-hide{'reader-share-panel' => true, "selection" => "readerSelection", "selection-text" => "readerSelectionText", "ng-show" => "showReaderShare", "version" => "reader_version_id", "token" => "'#{form_authenticity_token}'", "toggle-side-panel"=>"toggleSidePanel", "is-logged-in" => "isLoggedIn"}
     %div{"verse-action" => true, "selection" => "readerSelection", "is-open" => "verseActionOpen", "toggle-side-panel"=>"toggleSidePanel", "fix-bottom" => "", "panel-is-open" => "panelIsOpen"}
-- if (controller_name == 'subscriptions')
-  .row.full.pad-row-top
-    .day-controls-box.small-centered.columns.text-center
-      %ul.ng-hide.button-group{"ng-show" => "showContent"}
-        %li
-          %a.solid-button.green{"ng-click" => "prevPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-disabled" => "devotionalActive || working"}= t('plans.previous')
-        %li
-          %a.solid-button.green{"ng-click" => "nextPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}', isLastPlanRef)", "ng-disabled" => "working"}
-            %span{'ng-hide' => 'isLastPlanRef'}= t('plans.next')
-            %span.ng-hide{'ng-show' => 'isLastPlanRef'}= t('plans.finish')
-      %a{:href => "#", :class => "solid-button green", "ng-hide" => "showContent", "ng-click" => "toggleContent(true)"}
-        =t("Start reading")
+-#- if (controller_name == 'subscriptions')
+-#  .row.full.pad-row-top
+-#    .day-controls-box.small-centered.columns.text-center
+-#      %ul.ng-hide.button-group{"ng-show" => "showContent"}
+-#        %li
+-#          %a.solid-button.green{"ng-click" => "prevPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}')", "ng-disabled" => "devotionalActive || working"}= t('plans.previous')
+-#        %li
+-#          %a.solid-button.green{"ng-click" => "nextPlanRef('#{subscription_path(user_id: current_user.to_param, id: subscription)}', '#{day.to_s}', '#{form_authenticity_token}', isLastPlanRef)", "ng-disabled" => "working"}
+-#            %span{'ng-hide' => 'isLastPlanRef'}= t('plans.next')
+-#            %span.ng-hide{'ng-show' => 'isLastPlanRef'}= t('plans.finish')
+-#      %a{:href => "#", :class => "solid-button green", "ng-hide" => "showContent", "ng-click" => "toggleContent(true)"}
+-#        =t("Start reading")
 
 - @branch_deeplink = "#{ref_deep_link.gsub('version_id','version')}" if ref_deep_link.present?
-= render '/shared/app_banner'
+
+-if (controller_name != 'subscriptions')
+  = render '/shared/app_banner'
 

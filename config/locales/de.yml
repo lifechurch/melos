@@ -91,6 +91,25 @@ de:
             name: "Facebook"
             errors: 
                 expired access: "Dein Zugang zu Facebook ist abgelaufen; bitte entferne die Verbindung und stelle sie anschließend wieder her."
+    language names: 
+        arabic: "Arabic"
+        bulgarian: "Bulgarian"
+        czech: "Czech"
+        greek: "Greek"
+        farsi: "Farsi"
+        hindi: "Hindi"
+        japanese: "Japanese"
+        khmer: "Khmer"
+        korean: "Korean"
+        macedonian: "Macedonian"
+        mongolian: "Mongolian"
+        burmese: "Myanmar Burmese"
+        russian: "Russian"
+        tamil: "Tamil"
+        thai: "Thai"
+        ukrainian: "Ukrainian"
+        simplified chinese: "Simplified Chinese"
+        traditional chinese: "Traditional Chinese"
     api: 
         users agree bool: "Du musst den Allgemeinen Geschäftsbedingungen zustimmen, um ein Konto anzulegen."
         users confirm password matches: "Die neuen Passwörter stimmen nicht überein."
@@ -294,6 +313,84 @@ de:
     live: "Live"
     events: 
         events: "Veranstaltungen"
+        menu: 
+            features: "Besonderheiten"
+            faq: "FAQ"
+            resources: "Ressourcen"
+            tell your church: "Informiere deine Gemeinde"
+            create an event: "Erstelle eine Veranstaltung"
+        mail subject: "Dieses neue Feature von YouVersion könnte deiner Gemeinde wirklich helfen! "
+        mail body: "Hast du die neue YouVersion-Option für Veranstaltungen schon gesehen? Ich glaube, dass könnte unserer Gemeinde wirklich helfen, um mehr Menschen dafür zu begeistern, sich in unsere Gottesdienste einzuklinken. Über dieses neue Menü können Leute während eines Gottesdienstes ihre eigenen Notizen hinzufügen und die Veranstaltung sogar speichern, um ihre Aufzeichnungen später noch einmal aufzuschlagen und die Bibelstellen durchzuarbeiten. Ich denke, dass wir dadurch auch Druckkosten sparen könnten. Hier ist die YouVersion-Webseite für Veranstaltungen: http://www.bible.com/features/events."
+        section 1 title: "Hole dir die Kraft der Bibel App in deine Gemeinde."
+        section 1 text: "Alles, was deine Gemeinde braucht, um sich auf die Botschaft einzulassen - und sie mit anderen zu teilen. Kostenlos, papierlos und bereits auf Millionen von Geräten installiert."
+        section 2 title: "Hilf deiner Gemeinde, noch mehr Nutzen aus der Predigt zu ziehen."
+        section 2 text: "Besucher können mitlesen, sich mit den Schriftstellen befassen, Notizen machen und dies alles speichern, um später noch einmal nachlesen zu können."
+        section 3 title: "Dein Inhalt auf ihrem Smartphone."
+        section 3 text: "Predigt-Übersichten, Ankündigungen, Links zum Thema Online-Spenden... egal, was du deiner Gemeinde mitteilen willst, hier kannst du es teilen - 100% kostenlos."
+        section 4 title: "Hilf deiner Gemeinde, noch mehr aus der Bibel heraus zu leben."
+        section 4 text: "Empfiehl Lesepläne mit oder auch ohne Andacht; auf diese Weise hilfst du deiner Gemeinde, nicht nur am Sonntag, sondern auch unter der Woche in der Heiligen Schrift zu leben."
+        slide demo title: "Leistungsstark bedeuted nicht kompliziert."
+        slide demo text: "Erstelle ganz einfach Veranstaltungen von einem Mac oder PC mit Internetzugang. Benutze Drag and Drop, um alle Details zu deiner Veranstaltung hinzuzufügen, sie umzustellen, zu bearbeiten oder anzupassen."
+        building blocks title: "Alle Bausteine, die du brauchst... um eine Veranstaltung genau so anzulegen, wie du es dir vorstellst."
+        building blocks text: "Flexible Module sparen Zeit und Aufwand. Kombiniere Elemente, um neue Veranstaltungen von Grund auf neu zu erstellen. Oder verwende bestehende Veranstaltungen erneut und ändere sie bei Bedarf ab. Kopiere bestehende Veranstaltungen und modifiziere sie, damit sie völlig verschiedenen Arten von Versammlungen entsprechen. Auf dem ganzen Weg zeigt die Vorschau deine Veranstaltungsinhalte genau so, wie sie die Teilnehmer sehen."
+        module 1 title: "Textmodul"
+        module 1 text: "Gliederungen, die wichtigsten Punkte, Diskussionsthemen... Teile Textinhalte, die deinen Besuchern helfen, der Botschaft live zu folgen."
+        module 2 title: "Bibelstellenverweise"
+        module 2 text: "Zeige Bibelabschnitte da an, wo sie in deiner Botschaft vorkommen - direkt mit den über %{version_count} Übersetzungen in der Bibel App in über %{language_count} Sprachen. Du brauchst nichts zu kopieren oder einzufügen."
+        module 3 title: "Leseplanmodule"
+        module 3 text: "Verknüpfe Lesepläne und Andachten, die sich auf deine Lehrinhalte stehen, um den Teilnehmern zu helfen, sich im Verlauf der Woche mit dem Wort Gottes zu beschäftigen."
+        module 4 title: "Web Links Modul"
+        module 4 text: "Über \"Veranstaltungen\" sind deine Gäste ganz nah an dir dran - egal, ob es um Spenden, Freiwilligenarbeit oder die Gemeindehomepage geht. Füge deiner Veranstaltung einen Link zu jeder beliebigen externen Seite hinzu."
+        module 5 title: "Modul für Bilder"
+        module 5 text: "Hauche deiner Veranstaltung mit Grafiken, Fotos, Versbildern etc. Leben ein. Besucher können die Bilder der Veranstaltung ganz leicht in sozialen Netzwerken teilen - damit sich die frohe Botschaft wie ein Lauffeuer ausbreitet."
+        module 6 title: "Modul für Ankündigungen"
+        module 6 text: "Leite all deine wichtigen Informationen genau zur richtigen Zeit weiter: Gemeindenachrichten, Termine, Kurse, Veranstaltungen für freiwillige Helfer, Missionsreisen und vieles mehr."
+        module 7 title: "Ort & Zeit"
+        module 7 text: "Lass andere Menschen wissen, wann und wo deine Veranstaltung stattfindet - selbst wenn sie sich an verschiedenen Orten zugleich ereignet."
+        module 8 title: " Veranstaltungen kopieren"
+        module 8 text: "Spare Zeit und Mühe. Erstelle super-schnell neue Veranstaltungen, indem du alte Veranstaltungen einfach kopierst und lediglich die entsprechenden Angaben aktualisierst."
+        module 9 title: "Kostenersparnis"
+        module 9 text: "Spare Papier und Druckkosten ein... und erreiche trotzdem unzählige Menschen mit Hilfe einer App, die über 200 Millionen Mal installiert worden ist. "
+        cost savings: "Die durchschnittliche Gemeinde gibt <b>$10.000 pro Jahr</b><br>aus, um Rundbriefe zu drucken. Mit Hilfe von &quot;Veranstaltungen&quot; kannst du <br>diese Kosten reduzieren oder sie dir komplett ersparen."
+        testimonials: "Referenzen"
+        testimonial 1 text: "\"Wir waren begeistert, als wir YouVersion in unseren Dienst mit einbezogen haben, besonders die 'Veranstaltungsseite', auf der wir die Notizen und Kommentare der jeweiligen Woche einfügen. Unsere Leute wissen es zu schätzen, dass sie die Notizen immer bei sich haben - sei es, um sie zu speichern, sei es, um sie mit anderen zu teilen. Jetzt können wir Tausende von Dollars für andere Belange in unserer Gemeinde nutzen, weil wir unser Programm nicht mehr drucken müssen!\""
+        testimonial 2 text: "\"Das neue You-Version Feature 'Veranstaltungen' ist ein wertvolles Werkzeug für unsere Gemeindefamilie. Dass unsere Besucher die Predigt anhand der Notizen samt Schriftstellen mitverfolgen können, hat tiefgreifende Wirkungen.\""
+        testimonial 3 text: "\"Wir benutzen 'Veranstaltungen' für alle unsere Versammlungen. Auf diese Weise haben unsere Besucher auf Wunsch alle Notizen und Schriftstellen des Redners direkt vor sich. Durch \"Veranstaltungen\" haben wir Tausende von Seiten an Papier eingespart! Eine Veranstaltung zu erstellen ist unglaublich einfach - und sie wird genau dann veröffentlicht, wenn wir dies wollen.\" "
+        all new title: "Die Option, innerhalb der Bibel App kostenlos zu Veranstaltungen einzuladen, ist ganz neu. "
+        all new text: "Die Art und Weise in der sich Menschen mit der Bibel befassen, wurde im Laufe unseres Lebens revolutioniert. Inzwischen ist die Bibel App auf über %{install_count} Millionen Geräten installiert worden (und die Zahl steigt ständig). Sie hilft Menschen in allen Ländern auf der Erde sich intensiver mit dem Wort Gottes zu befassen. Und jetzt freuen wir uns, dass wir euch mit dem Veranstaltungsmenü die Reichweite der App zur Verfügung stellen können."
+        get started title: "Los geht's!"
+        get started text: "Bereite deine allererste Veranstaltung vor und teile sie in der App in weniger als zehn Minuten. Alles, was du brauchst ist einen Mac oder PC und einen kostenlosen YouVersion Account."
+        create an event: "Erstelle ein Event"
+        resources: "Ressourcen"
+        resources text: "Finde heraus, wie du das Veranstaltungsmenü am besten mit kostenlosen Ressourcen verwenden kannst."
+        frequently asked questions: "Häufig gestellte<br>Fragen"
+        frequently asked questions text: "Finde die Antworten auf alles, was du brauchst, um das Veranstaltungsmenü von YouVersion zu benutzen. "
+        share: "Teilen"
+        tweet text: "Hast du schon \"Veranstaltungen\" in der Bibel App von @YouVersion gesehen? Gliederungen von Predigten, Ankündigungen, Links zum Online-Spenden und vieles mehr! http://bible.com/features/events"
+        email: "E-Mail"
+        faq question 1: "Was sind Events?"
+        faq answer 1: "Veranstaltungen ist ein vollkommen kostenloses, neues Menü der YouVersion Bibel App, durch das sich Benutzer einfach mit besuchten Gemeindeveranstaltungen verbinden können. Gemeinden können sich bei events.bible.com gerne anmelden - mit einem kostenlosen YouVersion Account. Dort können sie ihre eigenen Veranstaltungen anlegen und diese erscheinen dann in der Bibel App. Die kostenlosen verwaltungstechnischen Werkzeuge für Veranstaltungen erleichtern es deiner Gemeinde, die wichtigsten Punkte der Predigt zu teilen - inklusive Bibelstellen, Bildern, externen Links, aktuellen Gemeindenachrichten u.v.m. Wenn du deine Veranstaltung im System gespeichert hast, können Bibel App-Benutzer, die nach Veranstaltungen in ihrer Nähe suchen, deine finden. "
+        faq question 2: "Welche Vorteile bringt das neue Feature \"Veranstaltungen\" für unsere Gemeinde?"
+        faq answer 2: "Mit \"Veranstaltungen\" kannst du deinen Besuchern Dienste anbieten, die unmittelbar eure geistlichen Zielen unterstützen. Duch Notizen, Schriftstellen und sonstige Informationen, die du deiner Veranstaltung hinzufügst, können sich deine Besucher noch intensiver mit der Botschaft auseinandersetzen. Durch \"Veranstaltungen\" erreichst du zwei Ziele zugleich. Deine Besucher bekommen die Botschaft mit nach Hause, so dass sie später noch einmal darüber nachdenken können. Zugleich können besondere Momente in eurer Gemeinde mit anderen geteilt werden. Über \"Veranstaltungen\" können Menschen euch finden. Außerdem spart ihr auf diese Weise Geld, da keine Druckkosten anfallen. Und \"Veranstaltungen\" kostet nichts. Wirklich gar nichts."
+        faq question 3: "Warum würden Bibel App-Benutzer das Veranstaltungsmenü überhaupt benutzen wollen?"
+        faq answer 3: "Das neue Feature \"Veranstaltungen\" hilft Bibel App-Benutzern, Gemeindeveranstaltungen in ihrer Nähe zu entdecken, indem sie das Ortungstool auf ihrem Gerät benutzen. Benutzer, die eine deiner Veranstaltungen besuchen, können sich einfach in den Gottesdienst einklinken, indem sie die von dir gespeicherten Informationen durchlesen. Bibel App-Benutzer können ihre eigenen Notizen zu einer Veranstaltung auf ihrem Gerät hinzufügen und auch speichern, damit sie später darauf zurückgreifen können. Eine weitere Ermutigung, sich mehr mit der Bibel zu befassen. "
+        faq question 4: "Wie kann ich eine Umfrage erstellen?"
+        faq answer 4: "Benutze die Tools von Dritten, wie zum Beispiel <a href='https://www.surveymonkey.com/'>SurveyMonkey®</a>, <a href='http://www.pollsnack.com/'>PollSnack</a>oder <a href='http://www.poll-maker.com/'>Poll Maker</a>um deine eigene Umfrage zu erstellen. Wenn du deine Umfrage speicherst, bekommst du einen Link, den du dann teilen kannst. Mit Hilfe von Drag und Drop kannst du im Verwaltungstool des Menüs für die Veranstaltungen ein Web Links-Modul zu deiner Veranstaltung hinzufügen - dort, wo deine Umfrage erscheinen soll; den Link dazu kannst du auch einfügen. "
+        faq question 5: "Werden Veranstaltungen, die auf YouVersion Live erstellt wurden, automatisch auf die neue Veranstaltungsseite übertragen?"
+        faq answer 5: "Nein, leider nicht. Um das Erstellen von Veranstaltungsanzeigen sowohl für euch als auch für eure Besucher so angenehm wie möglich zu gestalten, haben wir das Menü für Veranstaltungen noch einmal ganz neu erfunden. Daher lassen sich die Daten von der Live-Seite nicht einfach auf die Veranstaltungsseite kopieren."
+        faq question 6: "Was ist, wenn die Besucher ihre Bibel App nicht aktualisieren? Werden sie die neuen Veranstaltungen trotzdem sehen können?"
+        faq answer 6: "Weil das Veranstaltungsmenü ganz neu ist, müssen Bibel App-Benutzer ihre App aktualisieren, um \"Veranstaltungen\" zu sehen. (Glücklicherweise haben viele Bibel App-Benutzer ihre Geräte so eingestellt, dass sie das neueste Update automatisch bekommen.) Wenn ein Benutzer auf Live tippt, wird eine einzelne Veranstaltung angezeigt; die Seite empfiehlt dann, ein Update zu erstellen, damit die Vorteile von \"Veranstaltungen\" genutzt werden können. Bis eure regelmäßigen Gäste sich an das neue Menü für \"Veranstaltungen\" gewöhnt haben, schlagen wir vor, dass ihr der Gemeinde einfach mitteilt, dass ihr jetzt \"Veranstaltungen\" nutzt. Helft euren Besucher zu verstehen, wie sie das neue Menü \"Veranstaltungen\" am besten für sich nutzen; erklärt ihnen auch, wie sie es bekommen können."
+        faq question 7: "Live war immer kostenlos. Wird \"Veranstaltungen\" etwas kosten?"
+        faq answer 7: "Nein. Die Bibel App war immer kostenlos, und das wird auch immer so bleiben! Obwohl das Menü \"Veranstaltungen\" völlig neue Funktionen beinhaltet, gehört es definitiv zur Bibel App. Wir von YouVersion betrachten es als eine Ehre und als ein Privileg, euch bei euren geistlichen Aufgaben zu unterstützen."
+        faq question 8: "Braucht man für \"Veranstaltungen\" ein besonderes Konto als Administrator?"
+        faq answer 8: "Eigentlich könntest du dein eigenes YouVersion-Konto benutzen, wenn du mit \"Veranstaltungen\" arbeitest. Trotzdem empfehlen wir, ein Extra-Konto für deine Organisation anzulegen, das speziell für administrative Zwecke genutzt wird. Damit erreichst du zwei Ziele: (1) Zum einen wird auf diese Weise dein persönliches Bibel App-Konto von deinen offiziell übernommenen Aufgaben im Dienst getrennt. (2) Zum anderen können sich hierdurch auch Mitarbeiter oder Freiwillige um \"Veranstaltungen\" kümmern. (Wenn eure Gemeinde schon ein YouVersion-Konto hat, das für administrative Zwecke gedacht ist, wie zum Beispiel für unser altes \"YouVersion Live\", könnt ihr auch dieses Konto zum Einloggen auf der Veranstaltungsseite benutzen.)"
+        spread the word: "Lass alle von deiner Veranstaltung wissen - über einen ganz einfachen Weg."
+        resources intro: "Wenn du den Termin für deine Veranstaltung eingetragen hast und sie veröffentlichen willst, erhältst du von \"Veranstaltungen\" einen Link. Diesen Link kannst du dann anderen mitteilen, etwa über E-Mails oder über einen Bildschirm, etwa im Gottesdienst. Wenn ein Nutzer der Bibel App diesen Link aufruft, sieht er direkt in der App die Informationen, die du zu deiner Veranstaltung eingetragen hast. Wenn jemand kein Bibel App-Konto hat, sieht er die Informationen zu deiner Veranstaltung auf Bible.com. Von dort kann er sich dann - wenn dies gewünscht ist - die App herunterladen. "
+        free resources title: "Kostenlose Hilfsmittel, die dir mit \"Veranstaltungen\" helfen werden."
+        resources video: "Sieh dir ein Video zur Umstellung auf Veranstaltungen an"
+        resources social: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Lade</a> diese neuen Werkzeuge herunter und nutze Facebook, Twitter und Instagram für &quot;Veranstaltungen&quot;."
+        resources slides: "<a class='text2' href='https://open.church/resources/2567-youversion-events/'>Lade</a> diese Präsentationen und Handouts herunter, um innerhalb deiner Gemeinde oder Organisation für deine Veranstaltungen zu werben."
+        resources more: "Suchst du weitere kostenlose Hilfsmittel? Erkunde mehr als 30.000 Predigten, Material für Kinder, kreative Ideen und vieles mehr unter <a class='text2' href='https://open.church'>open.church</a>"
     first page: "erste Seite"
     last page: "letzte Seite"
     invalid username or password: "Benutzername oder Passwort ungültig"
@@ -342,6 +439,7 @@ de:
             version: "Übersetzung"
             view more: "Mehr anzeigen"
             time: "Uhrzeit"
+            blurb: "Abonniere den Vers des Tages. Erhalte eine tägliche Push-Benachrichtigung oder E-Mail auf deinem mobilen Gerät."
         friendship: 
             now friends: "Du bist jetzt befreundet mit"
         cta: 
@@ -408,6 +506,7 @@ de:
         limit notice: "Du kannst bis zu 150 Freunde haben"
         limit description: "Wenn du deine Freundschaften in der Bibel App auf Menschen begrenzt, die du kennst, schafft das eine Umgebung für ehrliche Gespräche und zum Teilen von Erfahrungen mit guten Freunden."
     friendships: 
+        blurb: "Richte deine Freundschaften rund um die Bibel aus. Teile, was du willst und wann du willst mit Menschen, denen du vertraust."
         name required: "Um die Bibel mit Freunden zu erleben, aktualisiere dein Profil mit deinem Vor- und Nachnamen."
         find friends title: "Finde Freunde"
         search by name: "Suche nach Namen"
@@ -541,8 +640,8 @@ de:
         confirm message: "Wir haben soeben eine Nachricht gesendet an %{email}"
         confirm message click: "Klicke auf den Link in der E-Mail, um zu bestätigen, dass es wirklich du bist."
         resend verification: "E-Mail-Bestätigung erneut senden"
-        sign in alternate: "oder <a href='%{sign_up_path}' target='_self'>melde dich an</a> , wenn du noch kein Benutzerkonto hast."
-        sign up alternate: "oder <a href='%{sign_in_path}' target='_self'>logge dich ein</a> , wenn du bereits ein Benutzerkonto hast."
+        sign in alternate: "Du hast noch kein Konto? <a href='%{sign_up_path}' target='_self'>Registrieren</a>"
+        sign up alternate: "Du hast schon ein Konto? <a href='%{sign_in_path}' target='_self'>Anmelden</a>"
         password length: "mind. 6 Zeichen"
         welcome to youversion: "Willkommen in der YouVersion-Gemeinschaft!"
         confirm email: "Bitte rufe deine E-Mails ab und schließe die Registrierung mit einem Klick auf den Link ab. Danke."
@@ -803,6 +902,15 @@ de:
         none me: "Du hast bisher keine Abzeichen bekommen."
         none user: "%{username} hat bisher keine Abzeichen bekommen."
     plans: 
+        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        status: 
+            on track: "Prima!"
+            days ahead: 
+                one: "Du bist deinem Plan %{count} Tag voraus!"
+                other: "Du bist deinem Plan%{count} Tage voraus!"
+            missed days: 
+                one: "%{count} Tag verpasst"
+                other: "%{count} Tage verpasst"
         bible plan language: "Leseplan Sprache"
         share plan: "Schau dir diesen @YouVersion #BiblePlan an: %{plan_title}"
         widget: 
@@ -845,6 +953,8 @@ de:
         none found: "Wir haben keine Lesepläne für dein Suchkriterium gefunden. Versuche, deine Suche zu erweitern."
         about publisher: "Über den Autor"
         overview: "Leseplan-Übersicht"
+        complete: "Leseplan abgeschlossen"
+        day complete: "Tag abgeschlossen"
         start: "Diesen Leseplan beginnen"
         save for later: "Für später speichern"
         saved for later: "Für später gespeichert"
@@ -939,6 +1049,7 @@ de:
         must start to complete: "Abonniere diesen Leseplan. Dann kannst deine Lesungen als erledigt abhaken!"
         invalid reference: "Sorry, eine der Schriftstellen für diesen Leseplan ist nicht in der ausgewählten Übersetzung vorhanden. Wähle oben eine andere aus. Wird diese Meldung weiterhin angezeigt, meldendieses Problem bitte unserem <a href='%{support_url}' target='_self'> Support-Team</a>."
         sidebar notice: "Du schaust dir einen Leseplan an."
+        congratulations: "Herzlichen Glückwunsch!"
         completed notice: "Herzlichen Glückwunsch! Du hast einen Leseplan abgeschlossen."
         exit: "Abschließen"
         loading sidebar content: "Seitenleiste wird geladen..."
@@ -1066,8 +1177,6 @@ de:
         partners text: "Ohne unsere großzügigen Partner bei den Herausgebern der Bibeln könnte YouVersion der weltweiten Gemeinschaft nicht so viele Bibeln zur Verfügung stellen. Viele von euch haben gefragt, wie ihr denen, die die Mission von YouVersion derart unterstützen, helfen könnt. Ihr könnt über die unten genannten Links leicht mehr über sie und ihren Dienst erfahren und sie dort jederzeit unterstützen."
         translation title: "Unsere Übersetzerteams"
         learn more: "Mehr erfahren"
-        bible dot com title: "Was ist mit der alten Bible.com passiert?"
-        bible dot com copy: "Wenn du Inhalte von Bud und Betty Miller oder der alten Bible.com-Website suchst, besuche bitte ihre neue Website unter <a href='http://www.bibleresources.org' target='_self'>BibleResources.org</a>"
     press page: 
         title: "Pressebereich"
         contact header: "Kontaktinformation Presse"
@@ -1339,8 +1448,8 @@ de:
                 unpublish: "Zurückgezogen"
                 saving: "Speichern..."
                 saveAsDraft: "Als Entwurf speichern"
-                myEvents: "Meine Ereignisse"
-                eventBuilder: "Event erstellen"
+                myEvents: "Meine Veranstaltungen"
+                eventBuilder: "Veranstaltung erstellen"
                 signOut: "Abmelden"
                 createAccount: "Benutzerkonto anlegen"
             HtmlEditor: 
@@ -1351,12 +1460,12 @@ de:
             Auth: 
                 title: "Anmeldung zur Veranstaltung"
                 signIn: "Anmelden"
-                subHead1: "Wenn du ein Bibel App Nutzer bist und bereits ein YouVersion Konto hast, kannst du dich mit diesen Daten anmelden.<br/><br/>Du hast noch kein YouVersion Konto? <br/><a href='%{url}'>Registriere dich jetzt bei Bible.com</a> und erstelle Ereignisse."
+                subHead1: "Wenn du ein Bibel App Nutzer bist und bereits ein YouVersion-Konto hast, kannst du dich mit diesen Daten anmelden.<br/><br/>Du hast noch kein YouVersion-Konto? <br/><a href='%{url}'>Registriere dich jetzt bei Bible.com</a> und erstelle Einladungen zu Veranstaltungen."
                 email: "E-Mail"
                 password: "Passwort"
                 forgotPassword: "Passwort vergessen"
             EventEdit: 
-                event: "Ereignis"
+                event: "Veranstaltung"
             EventEditContentContainer: 
                 choose: "Wähle zunächst ein paar Inhalte."
                 needHelp: "Brauchst du Hilfe?"
@@ -1373,30 +1482,30 @@ de:
                 title: "Vorschau für die Veranstaltung"
                 previous: "← Zurück: Inhalt"
             EventEditShare: 
-                title: "Ereignis teilen"
-                subTitle: "Dein Ereignis ist jetzt veröffentlicht:"
-                edit: "Ereignis bearbeiten"
-                go: "Zu meinen Ereignissen wechseln"
-                share: "Teile dein Ereignis: "
+                title: "Veranstaltung teilen"
+                subTitle: "Deine Veranstaltung ist jetzt veröffentlicht:"
+                edit: "Veranstaltung bearbeiten"
+                go: "Zu meinen Veranstaltungen wechseln"
+                share: "Teile deine Veranstaltung: "
                 copy: "Kopieren"
                 copied: "Der Link wurde in deine Zwischenablage kopiert."
                 previous: "← Zurück: Vorschau"
             EventFeedDiscover: 
-                title: "Ereignisse entdecken"
+                title: "Veranstaltungen entdecken"
                 discover: "Entdecken"
             EventFeedMine: 
-                title: "Meine Ereignisse"
+                title: "Meine Veranstaltungen"
                 previous: "← Zurück"
                 next: "Weiter →"
-                my: "Meine Ereignisse"
-                new: "Neues Ereigniss erstellen"
+                my: "Meine Veranstaltungen"
+                new: "Neue Veranstaltung erstellen"
                 subTitle: "Von mir erstellte Veranstaltungen."
                 newFirst: "Erstelle deine erste Veranstaltung"
-                learn: "Wie erstellt man ein großartiges Ereignis?"
+                learn: "Wie erstellt man ein großartiges Veranstaltungen?"
             EventFeedSaved: 
                 title: "Gespeicherte Veranstaltungen"
             EventView: 
-                title: "YouVersion-Ereignis"
+                title: "YouVersion-Veranstaltung"
             SelectLanguage: 
                 choose: "Wähle deine Sprache"
         features: 
@@ -1407,8 +1516,8 @@ de:
             EventEdit: 
                 errors: 
                     locationMustHaveTime: "Alle Orte müssen mindestens eine Zeit besitzen."
-                    locationRequired: "Du kannst ein Ereignis nicht ohne Ort veröffentlichen."
-                    contentRequired: "Ein Ereignis ohne Inhalt kannst du nicht veröffentlichen."
+                    locationRequired: "Du kannst eine Veranstaltung nicht ohne Ort veröffentlichen."
+                    contentRequired: "Eine Veranstaltung ohne Inhalt kannst du nicht veröffentlichen."
                     planSearchFailed: "Entsprechenden Dokumente nicht gefunden"
                     noMatchingPlans: "Keine passenden Pläne gefunden"
                 components: 
@@ -1434,22 +1543,22 @@ de:
                                 announcement: "Ankündigung"
                             ContentHelpModal: 
                                 types: "Inhaltsarten"
-                                learn: "Erfahre, wie man<br>ein großes Ereignis erstellt."
+                                learn: "Erfahre, wie man<br>eine großartige Veranstaltung erstellt."
                                 text: 
                                     title: "Textmodul"
                                     desc: "Übersichten, wichtige Punkte, Diskussionsfragen… Teile Inhalte in Textform, der den Teilnehmern hilft, deine Botschaft live zu verfolgen. Deine Textmodule können beliebig lang sein und formatiert sein, z.B. im Fettdruck oder kursiv."
                                 reference: 
                                     title: "Modul für Bibelverse (Buch und Kapitel)"
-                                    desc: "Wähle jeden Bibelvers oder Abschnitt, direkt aus einer von mehr als 1.200 YouVersion’s Bibelübersetzungen, in mehr als 900 Sprachen Personen, die dein Ereignis betrachten, können deine Verweise Antippen, um sie in ihrer Bibel App zu sehen, wo sie Lesezeichen anlegen, farblich hervorheben können und vieles andere mehr."
+                                    desc: "Wähle einen Bibelvers oder -abschnitt direkt aus einer der über 1.200 Bibelübersetzungen in mehr als 900 Sprachen aus, die YouVersion anbietet.  Personen, die die Einladung zu deiner Veranstaltung sehen, können deine Verweise antippen, um sie in ihrer Bibel App zu sehen, wo sie Lesezeichen anlegen, Verse markieren und v.a.m. machen können."
                                 plan: 
                                     title: "Modul für Lesepläne"
                                     desc: "Verknüpfe Lesepläne und Andachten, die sich auf deine Lehrinhalte stehen, um den Teilnehmern zu helfen, sich im Verlauf der Woche mit dem Wort Gottes zu beschäftigen."
                                 image: 
                                     title: "Modul für Bilder"
-                                    desc: "Hauche deinem Ereignis mit Grafiken Leben ein, z. B. mit Titelgrafiken für deine Serie oder aber mit Fotos oder Versbildern. So können die Teilnehmer die Bilder für dein Ereignis leicht in sozialen Netzwerken teilen und deine Botschaft verbreiten."
+                                    desc: "Hauche deiner Veranstaltung mit Grafiken Leben ein, z. B. mit Titelgrafiken für deine Serie oder aber mit Fotos oder Versbildern. So können die Teilnehmer die Bilder für deine Veranstaltung leicht in sozialen Netzwerken teilen und deine Botschaft verbreiten."
                                 link: 
                                     title: "Modul für externe Link"
-                                    desc: "Erstellt einen Button in deinem Ereignis, der zu einer beliebigen externen Webseite verknüpft. Ermögliche es deinen Teilnehmern, mit nur einem Klick online zu spenden, sich als freiwillige Helfer zu melden oder zur Webseite deiner Gemeinde zu kommen."
+                                    desc: "Erstellt einen Button in deiner Veranstaltung, der zu einer beliebigen externen Webseite verknüpft. Ermögliche es deinen Teilnehmern, mit nur einem Klick online zu spenden, sich als freiwillige Helfer zu melden oder zur Webseite deiner Gemeinde zu kommen."
                                 announcement: 
                                     title: "Modul für Ankündigungen"
                                     desc: "Gemeindenachrichten, Termine, Programme, Seminare, Infos für freiwillige Helfer und Möglichkeiten in die Mission zu gehen... Module für derartige Ankündigungen sind perfekt, um die wichtigen Infos pünktlich mitzuteilen, ohne dass sie von der eigentlichen Meldung über die Veranstaltung ablenken. Jedes Ankündigungsmodul erscheint auf einer eigenen Seite in deiner Veranstaltung und kann sogar Formatierungen (zum Beispiel Fett- oder Kursivdruck) enthalten."
@@ -1458,7 +1567,7 @@ de:
                             ContentTypeAnnouncement: 
                                 title: "Titel"
                                 prompt: "Schreibe hier etwas..."
-                                caption: "Bei deinem Ereignis wird nur der Titel (oben) sichtbar sein. Wenn jemand auf deinen Titel tippt, wird der Inhalt (unten) in einem eigenen Fenster angezeigt."
+                                caption: "Bei deiner Veranstaltung wird nur der Titel (oben) sichtbar sein. Wenn jemand auf deinen Titel tippt, wird der Inhalt (unten) in einem eigenen Fenster angezeigt."
                             ContentTypeContainer: 
                                 dirty: "Der Inhalt wird automatisch gespeichert, wenige Sekunden nachdem du aufhörst zu tippen."
                                 failed: "Konnte nicht gespeichert werden."
@@ -1489,12 +1598,12 @@ de:
                             ContentTypeText: 
                                 prompt: "Schreibe hier etwas..."
                             LiveWarningModal: 
-                                title: "Ereignis kann nicht gelöscht werden, während es live ist."
-                                desc: "Sobald ein Ereignis live ist, kannst du weder Text noch Bibelstellen oder Bildmodule löschen, weil Nutzer bereits möglicherweise eigene Notizen hinzugefügt haben. Du kannst diese Module allerdings bearbeiten."
+                                title: "Eine Veranstaltung kann nicht gelöscht werden, während sie live ist."
+                                desc: "Sobald eine Veranstaltung live ist, kannst du weder Text noch Bibelstellen oder Bildmodule löschen, weil Nutzer bereits möglicherweise eigene Notizen hinzugefügt haben. Du kannst diese Module allerdings bearbeiten."
                                 ok: "OK"
                     details: 
                         errors: 
-                            generic: "Es gab ein Problem beim Veröffentlichen deines Ereignisses."
+                            generic: "Es gab ein Problem beim Veröffentlichen deiner Veranstaltung."
                             invalidTimes: "Ein Gottesdienst darf nicht länger als 12 Stunden dauern und der Abstand zwischen der frühesten Startzeit und dem letztmöglichen Ende einer Veranstaltung kann nicht länger als 8 Tage sein. Bitte korrigiere deine Zeiten und versuche es noch einmal."
                         components: 
                             DetailsEdit: 
@@ -1531,7 +1640,7 @@ de:
                             LocationDeleteModal: 
                                 sure: "Bist du sicher?"
                                 selected: "Du hast folgenden Ort zum Löschen ausgewählt:"
-                                warn: "Damit wird der Ort für alle vergangenen und aktuellen Ereignisse gelöscht. Du kannst diesen Ort auch NICHT mehr für zukünftige Ereignisse nutzen."
+                                warn: "Damit wird der Ort für alle vergangenen und aktuellen Veranstaltungen gelöscht. Du kannst diesen Ort auch NICHT mehr für zukünftige Ereignisse nutzen."
                                 cancel: "Abbrechen"
                                 delete: "Löschen"
                             LocationEdit: 
@@ -1562,7 +1671,7 @@ de:
                             UnpublishModal: 
                                 cancel: "Abbrechen"
                                 title: "Veröffentlichung rückgängig machen, um Änderungen vorzunehmen."
-                                desc: "Zum Hinzufügen, Ändern oder Löschen der Veranstaltungsorte und -zeiten dieses Ereignis vorübergehend zurückziehen. Während dieser Zeit ist dein Ereignis in den Suchergebnissen nicht sichtbar. Vergiss nicht, dein Ereignis dann erneut zu veröffentlichen."
+                                desc: "Zum Hinzufügen, Ändern oder Löschen der Veranstaltungsorte und -zeiten dieser Veranstaltung vorübergehend zurückziehen. Während dieser Zeit ist deine Veranstaltung in den Suchergebnissen nicht sichtbar. Vergiss nicht, deine Veranstaltung dann erneut zu veröffentlichen."
                                 unpublish: "Zurückziehen"
                     preview: 
                         notes: 
@@ -1572,20 +1681,20 @@ de:
                             PreviewFeed: 
                                 review: "Überprüfe deine Veranstaltung vor der Veröffentlichung"
                                 previewUrl: "URL Vorschau:"
-                                share: "Ereignis teilen"
+                                share: "Veranstaltung teilen"
                                 locationsAndTimes: "Ort und Zeit"
                                 publish: "Veröffentlichen"
                                 unpublish: "Zurückziehen"
                                 locations: "Orte:"
                                 discoverable: 
                                     title: "Auffindbar:"
-                                    desc: "Dein Ereignis erscheint 5 Tage vor Beginn in den Bibel App-Ereignissen unter dem angegebenen Ort sowie in den Suchergebnissen."
+                                    desc: "Deine Veranstaltung erscheint 5 Tage vor Beginn im Menü \"Veranstaltung\" in der Bibel App unter dem angegebenen Ort sowie in den Suchergebnissen."
                                 status: 
                                     title: "Notizen-Status:"
-                                    desc: "Das rote LIVE-Zeichen wird angezeigt, sobald dein Ereignis beginnt."
+                                    desc: "Das rote LIVE-Zeichen wird angezeigt, sobald deine Veranstaltung beginnt."
                                 remove: 
                                     title: "Entfernen:"
-                                    desc: "Wenn dein Ereignis vorbei ist, lässt sich danach nicht mehr suchen. Teilnehmer, die auf \"Ereignis speichern\" geklickt haben, als dein Ereignis noch auffindbar war, haben weiterhin zur archivierten Version Zugriff. Auch ist das Ereignis weiterhin über direkt verknüpfte Links aufrufbar."
+                                    desc: "Wenn deine Veranstaltung vorbei ist, lässt sich danach nicht mehr suchen. Teilnehmer, die auf \"Veranstaltung speichern\" geklickt haben, als deine Veranstaltung noch auffindbar war, haben weiterhin zur archivierten Version Zugriff. Auch ist die Veranstaltung weiterhin über direkt verknüpfte Links aufrufbar."
                             PreviewTypeAnnouncement: 
                                 expand: "Aufklappen"
                             PreviewTypePlan: 
@@ -1600,7 +1709,7 @@ de:
                         draft: "Entwurf"
                         edit: "Bearbeiten"
                         view: "Ansicht"
-                        fail: "Klicke hier, um dein Ereignis zu löschen"
+                        fail: "Klicke hier, um deine Veranstaltung zu löschen"
             EventView: 
                 components: 
                     EventViewContent: 
@@ -1616,5 +1725,5 @@ de:
                         expand: "Aufklappen"
                         collapse: "Zusammenklappen"
                         save: "Veranstaltung speichern"
-                        signIn: "Anmelden, um Ereignis zu speichern"
-                        saved: "Ereignis gespeichert"
+                        signIn: "Melde dich an, um eine Veranstaltung zu speichern"
+                        saved: "Veranstaltung gespeichert"

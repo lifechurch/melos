@@ -48,7 +48,7 @@ module Presenter
 
       # For any page other than subscriptions#show or #shelf we want to return nil as the content_page
       # as to not default to 0 (code below) and thus inadvertently highlighting first reading as active
-      return nil unless (c_name == "subscriptions" && c_action == "show") ||
+      return nil unless (c_name == "subscriptions" && c_action == "ref") ||
                         (c_name == "plans" && c_action == "sample")
 
       @content_page ||= Range.new(0, reading.api_references.count - 1).include?(@params[:content].to_i) ? @params[:content].to_i : 0 #coerce content page to 1st page if outside range
@@ -76,11 +76,11 @@ module Presenter
       return @reference if @reference.present?
 
       @reference = if reading.api_references.present?
-        ref = ::Reference.new(reference_usfm,{version: subscription.version_id}).to_chapter
+        ref = ::Reference.new(reference_usfm,{version: subscription.version_id})
         begin
           testRef = ref.content
         rescue NotAChapterError
-          ref = ::Reference.new(reference_usfm,{version: 110}).to_chapter
+          ref = ::Reference.new(reference_usfm,{version: 110})
         end
         ref
       end
@@ -125,7 +125,24 @@ module Presenter
       nil
     end
 
+    def on_track_status
+      today = Date.today()
 
+      missed_days = 0
+      ahead_days = 0
+
+      subscription.day_statuses.each do |cur_status|
+        cur_date = Date.parse(cur_status.date)
+        is_active = cur_status.day.equal? day
+
+        missed_days = missed_days + 1 if !cur_status.completed && cur_date < today
+        ahead_days = ahead_days + 1 if cur_status.completed && cur_date > today
+      end
+
+      return I18n.t("plans.status.missed days", count: missed_days) if missed_days > 0
+      return I18n.t("plans.status.days ahead", count: ahead_days) if ahead_days > 0
+      return I18n.t("plans.status.on track")
+    end
 
   end
 end

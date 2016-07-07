@@ -1,43 +1,44 @@
 -#= javascript_include_tag "/assets/angular/angular.min.js"
 -#= javascript_include_tag "/assets/angular/app"
 
-:javascript
-  if($('#choose_language').length) {
-    var language_menu   = new LanguageMenu("#choose_language");
-  }
+-if (controller_name != 'subscriptions' || action_name == 'show' || action_name == 'update' || action_name == 'mark_complete')
+  :javascript
+    if($('#choose_language').length) {
+      var language_menu   = new LanguageMenu("#choose_language");
+    }
 
-  (function() {
-    var at = document.createElement('script'); at.type = 'text/javascript'; at.async = true;
-    at.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54d2b9d73051838d&async=1';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(at, s);
-  })();
+    (function() {
+      var at = document.createElement('script'); at.type = 'text/javascript'; at.async = true;
+      at.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54d2b9d73051838d&async=1';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(at, s);
+    })();
 
-  var addthis_config = {
-    ui_language: "#{I18n.locale[0..1]}",
-    services_exclude : 'print,email,google,favorites',
-    services_expanded : '2tag,a97abi,adifni,amenme,aim,aolmail,azadegi,baidu,blogger,buffer,delicious,digg,evernote,fabulously40,facebook,gg,gmail,govn,googleplus,hootsuite,hotmail,iwiw,ketnooi,linkedin,mymailru,live,myspace,nujij,oyyla,pinterest_share,qzone,reddit,sinaweibo,stumbleupon,tumblr,twitter,viadeo,vk,werkenntwen,whatsapp,wordpress,yahoomail'
-  }
-  addthis_config.data_track_clickback = false;
-  /*
-  (function() {
-      var _fbq = window._fbq || (window._fbq = []);
-      if (!_fbq.loaded) {
-          var fbds = document.createElement('script');
-          fbds.async = true;
-          fbds.src = '//connect.facebook.net/en_US/fbds.js';
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(fbds, s);
-          _fbq.loaded = true;
-      }
-      _fbq.push(['addPixelId', '653608201382494']);
-  })();
-  window._fbq = window._fbq || [];
-  window._fbq.push(['track', 'PixelInitialized', {}]);
-  */
--#twitter remarketing
--# %script{:type => "text/javascript", :src  => "//platform.twitter.com/oct.js"}
--# %script{:type => "text/javascript"}
-  -# twttr.conversion.trackPid('l4p73');
+    var addthis_config = {
+      ui_language: "#{I18n.locale[0..1]}",
+      services_exclude : 'print,email,google,favorites',
+      services_expanded : '2tag,a97abi,adifni,amenme,aim,aolmail,azadegi,baidu,blogger,buffer,delicious,digg,evernote,fabulously40,facebook,gg,gmail,govn,googleplus,hootsuite,hotmail,iwiw,ketnooi,linkedin,mymailru,live,myspace,nujij,oyyla,pinterest_share,qzone,reddit,sinaweibo,stumbleupon,tumblr,twitter,viadeo,vk,werkenntwen,whatsapp,wordpress,yahoomail'
+    }
+    addthis_config.data_track_clickback = false;
+    /*
+    (function() {
+        var _fbq = window._fbq || (window._fbq = []);
+        if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = '//connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+        }
+        _fbq.push(['addPixelId', '653608201382494']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    */
+  -#twitter remarketing
+  -# %script{:type => "text/javascript", :src  => "//platform.twitter.com/oct.js"}
+  -# %script{:type => "text/javascript"}
+    -# twttr.conversion.trackPid('l4p73');
 
 %noscript
   %img{src: "https://www.facebook.com/tr?id=653608201382494&amp;ev=NoScript", height: "1", width: "1", style: "display:none;"}

@@ -19,7 +19,7 @@ angular.module('reader.footnote', [])
 		restrict: 'C',
 		compile: function(tElement, tAttrs, transclude) {
             if (tElement[0] && tElement[0].children[1]) {
-				tElement[0].innerHTML = "<a href='#' tooltips tooltip-speed='fast' tooltip-html='" + tElement[0].children[1].innerHTML + "'><img class='footnote-icon' src='/assets/footnote.png'></a>";
+				tElement[0].innerHTML = "<a href='#' tooltips tooltip-speed='fast' tooltip-html='" + tElement[0].children[1].innerHTML.replace(/\'/g, '&apos;') + "'><img class='footnote-icon' src='/assets/footnote.png'></a>";
 			}
 		},
 		controller: ['$scope', '$element',  function($scope, $element) {

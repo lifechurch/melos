@@ -5,8 +5,6 @@
 - reference = presenter.reference
 - alt_version = presenter.alt_version
 
-= render partial: "/references/reader_header", locals: {reference: reference, version:version, alt_version: alt_version, presenter: @presenter, invalid: true}
-
 - content_for :additional_meta do
   %meta{name: "robots", content: "noindex"}
 
@@ -26,7 +24,3 @@
     %p= t("ref.invalid chapter text")
     %a.dynamic_menu_trigger.no_style{:href=> bible_path, :target=> '_self'}
       = t("ref.select another chapter")
-
-
-
-= render partial: "/references/js", locals: {presenter: @presenter}

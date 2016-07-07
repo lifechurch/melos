@@ -373,12 +373,445 @@ ul.plan-results {
 }
 
 
+/* freakin slick carousel arrows */
+
+.arrows {
+    //overflow: hidden;
+    position: relative;
+    clear: both;
+    margin-bottom: 0px;
+    .slick-list {
+      padding: 0 !important;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .slick-next,
+    .slick-prev {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 55px;
+      background: image-url("Triangle-Left-Arrow.svg") no-repeat center center;
+      text-indent: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      opacity: 0.85;
+      padding: 0;
+      z-index:1;
+      &.slick-disabled {
+        opacity: 0.25 !important;
+        background: none;
+        cursor: default;
+      }
+    }
+    .slick-next {
+      margin-right: 65px;
+      right: -90px;
+      -ms-transform: rotate(90deg);
+      transform: rotate(180deg);
+      background-position: left center;
+      width: 45px;
+    }
+    .slick-prev {
+      margin-left: 65px;
+      left: -90px;
+    }
+    .slick-next:hover,
+    .slick-prev:hover {
+      opacity: 1;
+    }
+}
+
+
+
+
+/* !Plan Overview */
+
+.a_show,
+.c_plans.a_sample {
+
+  div[plan-more-menu] {
+    display: inline-block;
+    margin-left: 10px;
+
+    .close-trigger {
+      background-image: image_url("icon-close.svg");
+      height: 10px;
+      width: 13px;
+      display: inline-block;
+      background-repeat: no-repeat;
+    }
+
+    ul {
+      display: inherit;
+      position: absolute;
+      right: 16px;
+      top: 24px;
+      border: 1px solid rgb(221, 221, 221);
+      list-style: none;
+      padding:0;
+      width: 150px;
+      box-shadow: rgb(204, 204, 204) 5px 5px;
+      text-align: left;
+      z-index: 100;
+      background-color: rgba(255,255,255,0.95);
+
+      li {
+        padding: 5px 10px;
+        color: $darkGray;
+        &:hover {
+          background-color: $lightGray;
+          color: $blue;
+        }
+      }
+
+      form {
+        input.link {
+          background: none;
+          border: none;
+          padding: 0 !important;
+          font-size: rem-calc(12);
+          color: $gray;
+          margin: 0;
+          margin-top: -4px;
+
+          &:hover {
+            background-color: $lightGray;
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+
+  .day-slider {
+
+    @media #{medium-up} {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+
+    button.slick-prev.slick-arrow,
+    button.slick-next.slick-arrow {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 27px;
+      background: image_url("Triangle-Right-Arrow.svg") no-repeat center center;
+      text-indent: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      opacity: 0.85;
+      padding: 0;
+      z-index: 100;
+    }
+
+    .slick-prev {
+      left: 0;
+      transform: rotate(-180deg);
+    }
+
+    .slick-next {
+      right: 0;
+
+    }
+
+    .slick-list {
+      @media #{$medium-up} {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+      border: solid 1px $lightGray;
+    }
+
+    .slick-disabled {
+      opacity: 0.25 !important;
+    }
+  }
+
+  .plan-overview {
+
+    .back {
+      float: $default-float;
+
+      @media #{$small-only} {
+        margin-left: 5px;
+      }
+    }
+    
+    .settings {
+      float: $opposite-direction;
+    }
+
+    .img {
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    img {
+      min-width: 360px;
+      margin-bottom: 25px;
+
+      @media #{$small-only} {
+        margin-top: 10px;
+        min-width: 280px;
+      }
+    }
+
+    .header {
+      height: 17px;
+
+      @media #{$small-only} {
+        height: 35px;
+      }
+
+      a {
+        font-size: rem-calc(12);
+      }
+    }
+
+    .plan-title {
+      /* These are technically the same, but use both */
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      white-space: normal;
+      text-align: center;
+    }
+  }
+
+
+  .days-container {
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+
+  .box {
+    position: relative;
+    clear: both;
+    margin-bottom: 0px;
+    .slick-list {
+      padding: 0 !important;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .slick-next,
+    .slick-prev {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 25px;
+      background: image-url("Triangle-Left-Arrow.svg") no-repeat center center;
+      text-indent: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      opacity: 0.85;
+      padding: 0;
+      z-index: 1;
+      &.slick-disabled {
+        background: none;
+        cursor: default;
+      }
+    }
+    .slick-next {
+      margin-right: 55px;
+      right: -90px;
+      -ms-transform: rotate(90deg);
+      transform: rotate(180deg);
+      background-position: left center;
+      width: 45px;
+    }
+    .slick-prev {
+      margin-left: 55px;
+      left: -90px;
+    }
+    .slick-next:hover,
+    .slick-prev:hover {
+      opacity: 1;
+    }
+  }
+
+
+  ul.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+
+    a {
+      color: black;
+    }
+    a:hover {
+      color: #3399ff;
+    }
+
+    li {
+      margin-bottom: 10px;
+      height: 20px;
+    }
+
+    img {
+      height: 15px;
+      width: inherit;
+      margin-top: -3px;
+    }
+
+    form {
+      display: inline-block;
+    }
+
+    .check {
+      background: image_url("Check-Small.svg") no-repeat $default-float bottom;
+    }
+    .no-check {
+      background: image_url("Check-Unchecked.svg") no-repeat $default-float bottom;
+    }
+  }
+
+  .check-background {
+    background: image_url("Check-Small.svg") no-repeat;
+    background-position: 95%;
+    width: 20px;
+  }
+
+  .day-top {
+    height: 25%;
+    width: 100%;
+  }
+  .day-bottom {
+    height: 75%;
+    width: 100%;
+  }
+
+  .start-reading {
+    float: $opposite-direction;
+  }
+  
+}
+
+/* Devo Nav Bar */
+
+.c_subscriptions {
+  
+  .nav-bar {
+    height: 70px;
+
+    .nav-elements {
+      padding: 15px;
+      width: 350px;
+
+      @media #{$small-only} {
+        width: 100%;
+      }
+    }
+
+    .nav-icon {
+      //z-index: 3;
+    }
+
+    .nav-content {
+      width: 70%;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: block;
+      margin: 0 auto;
+
+      .nav-img {
+        width: 40px;
+        height: 40px;
+        float: $default-float;
+      }
+      .nav-img.img-right {
+        margin-left: 10px;
+      }
+      .nav-img.img-left {
+        margin-right: 10px;
+      }
+
+      .nav-title {
+        font-size: rem-calc(11);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: $default-float;
+      }
+      
+      .nav-length {
+        font-size: rem-calc(10);
+        color: $gray_medium;
+        text-align: $default-float;
+      }
+
+    }
+    
+  }
+  
+}
+
+
+
+/* Plan Devo View */
+.c_subscriptions.a_devo {
+
+  .devo-header {
+    margin-bottom: 15px;
+  }
+
+  .devo-content {
+    margin-top: 65px;
+  }
+
+}
+
+/* Plan Ref View */
+
+.c_subscriptions.a_ref {
+
+  .nav-header {
+    z-index: 3;
+  }
+
+  .nav-bar {
+
+    .nav-elements {
+      left: 1.5%;
+      transform: translateX(-1.5%);
+    }
+
+
+    @media #{$large-up} {
+      width: 100%;
+      margin-top: 37px;
+    }
+
+    @media #{$medium-only} {
+      width: 100%;
+      margin-top: 45px;
+    }
+
+    @media #{$small-only} {
+      margin-top: 45px;
+    }
+
+    bottom: auto !important;
+    top: 0 !important;
+  }
+
+  .ref-content {
+    margin-top: 70px;
+
+  }
+}
+
 /* !Plan detail view */
 
 .rp-hero-img {
-  -webkit-border-radius:  5px 5px 0 0;
-  -moz-border-radius:     5px 5px 0 0;
-  border-radius:          5px 5px 0 0;
+  -webkit-border-radius:  5px;
+  -moz-border-radius:     5px;
+  border-radius:          5px;
   width: 100%;
 }
 
@@ -424,24 +857,42 @@ ul.plan-results {
     overflow: hidden;
 
     .solid-button {
-      display: block;
+      display: inline-block;
+    }
+  }
+}
+
+.plan-privacy-buttons {
+  clear: both;
+  padding: 15px 0 0;
+  border: solid 1px $gray;
+  border-radius: 5px;
+  padding: 25px 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 300px;
+
+  .yes-no-buttons {
+    margin-bottom: 0;
+  }
+
+  a.yes, a.no {
+    margin-bottom: 0;
+  }
+
+  a.no {
+    margin-left:5px;
+  }
+
+  .detail-text + a {
+    margin: 0 2% 0 0;
+
+    @media #{$medium-only} {
+      margin: 0 0 10px;
     }
 
-    .plan-privacy-buttons {
-      clear: both;
-      padding: 15px 0 0;
-
-      .detail-text + a {
-        margin: 0 2% 0 0;
-
-        @media #{$medium-only} {
-          margin: 0 0 10px;
-        }
-
-        @media #{$small-only} {
-          margin: 0 0 10px;
-        }
-      }
+    @media #{$small-only} {
+      margin: 0 0 10px;
     }
   }
 }
@@ -450,9 +901,174 @@ ul.plan-results {
   padding-top: 20px;
 }
 
+/* !Day/Plan Complete view */
+
+.c_subscriptions.a_update,
+.c_plans.a_day_complete,
+.c_subscriptions.a_day_complete,
+.c_subscriptions.a_plan_complete,
+.c_subscriptions.a_mark_complete {
+
+  @media #{$small-only} {
+    .plans-container {
+      padding: 0;
+
+      .plans-carousel {
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .stacked-container {
+    margin-top: 15px;
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-box-shadow: inset 0 0 300px #000000;
+    -moz-box-shadow: inset 0 0 300px #000000;
+    -o-box-shadow: inset 0 0 300px #000000;
+    box-shadow: inset 0 0 300px #000000;
+
+    .back-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      height: 360px;
+      width: 100%;
+
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+      background-attachment: fixed;
+      -webkit-filter: blur(12px);
+      -moz-filter: blur(12px);
+      -o-filter: blur(12px);
+      -ms-filter: blur(12px);
+      filter: blur(12px);
+
+    }
+
+    .back-content {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left:0;
+      top: 0;
+      z-index: 10;
+    }
+
+    .plan-img {
+      height: 160px;
+      width: 310px
+    }
+
+  }
+
+  .plan-length-head {
+    color: $gray;
+    font-size: 0.813em;
+    display: block;
+  }
+
+  .check-logo {
+    height: 50px;
+    margin: 35px 0px 20px 0px;
+  }
+
+  .progress_wrap {
+    border: solid 1px $white;
+    border-radius: 10px;
+    height: 9px;
+    width: 220px;
+    margin-top:38px;
+
+    .progress_counter {
+      background-color: $white;
+      height: 100%;
+      width: 0%;
+    }
+  }
+
+  .share-button {
+    margin-top: 40px;
+    width: rem-calc(150);
+  }
+
+  .small-font {
+    font-size: rem-calc(12);
+  }
+
+  // rounded edges
+  .radius {
+    border-radius: 12px;
+    /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -webkit-border-radius: 12px;
+    /* Firefox 1-3.6 */
+    -moz-border-radius: 12px;
+    /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  }
+
+  .plans-carousel {
+    width: 100%;
+    height: 280px;
+    border: 1px solid $lightGray;
+
+    .carousel-header {
+      height: 20px;
+      margin-top: 10px;
+      margin-left: 25px;
+      margin-bottom: 15px;
+      text-align: left;
+      font-size: rem-calc(16);
+    }
+    
+    .plan-content {
+      display: inline-block;
+      vertical-align: top;
+      width: 270px;
+
+      .subscription_thumbnail {
+        width: 250px;
+        height: 140px;
+      }
+
+      .subscription-info {
+        width: 250px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: left;
+
+        .plan-title {
+          font-size: rem-calc(12);
+          /* These are technically the same, but use both */
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          white-space: normal;
+        }
+
+        .plan-length-carousel {
+          color: $gray;
+          font-size: 0.713em;
+          //display: block;
+        }
+
+      }
+
+    }
+
+  }
+
+}
 
 /* !Plan day view */
 
+.c_subscriptions.a_devo,
+.c_subscriptions.a_ref,
 .c_subscriptions.a_show {
   .reader-left {
     @media #{$medium-only} {
@@ -833,90 +1449,66 @@ ul.plan-results {
 
 
 /* !Plan sample view */
-
+// most styling for the sample page is inherited from .a_show (Overview page)
+.c_subscriptions.a_update,
+.c_subscriptions.a_show,
 .c_plans.a_sample {
-  .bcv-button-box {
-    .prev,
-    .next {
-      display: none;
-    }
-  }
 
-  #widget-plan-controls {
-    .small-title {
-      margin: 0 0 15px;
+  #current-ui-view {
+    padding-top: 90px;
 
-      a {
-        color: $black;
-      }
-    }
-  }
-
-  .calendar-prev,
-  .calendar-next {
-    a {
-      display: block;
-      font-size: 0.813em;
-    }
-  }
-
-  .calendar-day {
-    h4 {
-      font-size: 0.813em;
+    @media #{$small-only} {
+      padding-top: 10px;
     }
   }
 }
 
 .c_plans.a_sample {
-  h3.hd {
-    margin-top: 25px;
-    border-bottom: solid 1px $lightGray;
+
+  .buttons-text {
+    margin-top: 30px;
+    font-size: rem-calc(11);
   }
 
-  .bd {
-    p {
-      margin-top: 10px;
-    }
+  .sample-text {
+    margin: 0 auto;
+    width: 50px;
+    font-size: rem-calc(10);
 
-    .video-container {
-      iframe {
-        height: 300px;
-      }
-    }
-  }
-
-  .scripture-links {
-    font-size: 0.938em;
-
-    h3 {
-      font-size: 0.938em;
-      font-weight: bold;
-      border-top: 1px solid $lightGray;
-      padding: 15px 0 10px;
-      margin: 5px 0 0;
-    }
-
-    li {
-      list-style: decimal;
-
-      a {
-        color: $black;
-      }
+    @media #{$small-only} {
+      margin-top:21px;
     }
   }
 
-  .rp-subscription-info {
-    .solid-button {
-      display: block;
+  .devo-content{
+    margin-top: 40px;
+  }
+
+  img.rp-hero-img {
+    margin-top: 15px;
+
+    @media #{$small-only} {
+      width: 100%;
+      border-radius: 0;
     }
   }
 
-  .plan-privacy-buttons + .solid-button {
-    display: none;
+  .days-container {
+    margin-bottom: 25px;
   }
+
+  .devo-header {
+    font-size: rem-calc(11);
+    margin-bottom: 15px;
+  }
+  
 }
 
-
+.devotional {
+  p, blockquote,h1,h2,.video-container {
+    margin-bottom: 20px;
+  }
+}
 /* !Plan settings */
 
 .rp-settings-nav {
@@ -951,6 +1543,16 @@ ul.plan-results {
     border-bottom: 0;
   }
 }
+
+input.text-red {
+  padding: 0 !important;
+  margin: 0;
+  color: $red;
+  border: none;
+  background: none;
+  font-size: 12px;
+}
+
 
 .plan-settings {
   .plan-settings-privacy-box,
@@ -996,6 +1598,19 @@ html[dir="rtl"] .plan-settings {
       @media #{$small-only} {
         text-align: right;
       }
+    }
+  }
+}
+
+.a_edit {
+  .plan-settings-header {
+    img {
+      width: 360px;
+    }
+
+    h3 {
+      padding-top: 35px;
+      padding-bottom: 40px;
     }
   }
 }
@@ -1087,6 +1702,10 @@ html[dir="rtl"] .plan-settings {
 
 .c_subscriptions.a_index, .c_subscriptions.a_completed, .c_subscriptions.a_saved {
 
+  .no-subscriptions {
+    font-size: 14px;
+  }
+
   #current-ui-view {
     padding: 95px 0 0;
 
@@ -1113,7 +1732,9 @@ html[dir="rtl"] .plan-settings {
   a {
     font-size: 13px;
   }
-
+}
+.plan-overview,
+.reading_plan_index_header {
   .share-panel {
     position: absolute;
     width: 185px;
@@ -1122,6 +1743,36 @@ html[dir="rtl"] .plan-settings {
     right: -5px;
     padding-left: 2px;
     background-color: rgba(255,255,255,0.75);
+  }
+}
+
+.plan-overview {
+  .share-panel {
+    right: 38px;
+  }
+}
+
+html[dir='rtl'] {
+  .plan-overview {
+    .share-panel {
+      right: inherit;
+      left: 38px;
+    }
+  }
+
+  div[plan-more-menu] {
+    margin-right: 10px;
+    margin-left: 0;
+
+    .close-trigger {
+    }
+
+    ul {
+      left: 16px;
+      right: inherit;
+      box-shadow: rgb(204, 204, 204) -5px 5px;
+      text-align: right;
+    }
   }
 }
 
@@ -1171,7 +1822,7 @@ article.reading_plan_index {
     }
 
     .yes-no-buttons {
-      margin-bottom: 30px;
+
       a {
         font-size: 18px;
 
@@ -1288,6 +1939,61 @@ html[dir="rtl"] {
 
     .right {
       float: left !important;
+    }
+  }
+}
+
+.subscription-show {
+  img.rp-hero-img {
+    width: 360px;
+
+    @media #{$small-only} {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+
+  p {
+    font-size: 13px;
+    color: $gray;
+  }
+
+  .day-slider {
+    text-align: center;
+    height: 82px;
+
+    @media #{$medium-up} {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+
+    .day {
+      border: solid 1px $lightGray;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      margin: 0px;
+      padding: 0px;
+      margin-right: 0px;
+
+      &.active {
+        border: solid 2px $green;
+        border-radius: 0px;
+      }
+
+      h1, h4 {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 18px;
+        font-family: Arial;
+      }
+
+      h4 {
+        font-size: 11px;
+        color: $gray;
+      }
     }
   }
 }

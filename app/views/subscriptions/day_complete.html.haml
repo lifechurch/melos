@@ -1,0 +1,96 @@
+:ruby
+  if @presenter.present?
+    day = @presenter.day
+    total_days = @presenter.subscription.total_days
+    hero_image = @presenter.subscription.hero_image
+    completion_percentage = @presenter.subscription.completion_percentage
+    plan_id = @presenter.subscription
+    title = @presenter.subscription.title
+    user = current_user
+  elsif @plan.present?
+    day = @day
+    total_days = @plan.total_days
+    hero_image = @plan.hero_image
+    completion_percentage = (day.to_f / total_days.to_f) * 100
+    plan_id = @plan
+    title = @plan.title
+    user = @user
+
+    @meta_title = "#{strip_tags(t('plans.day_completed', { username: user.name, day: day, plan_title: title }))}"
+    @title = @meta_title
+    @meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+    tw_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 120, version_id: @plan.version_id)))
+    fb_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 200, version_id: @plan.version_id)))
+  end
+
+- if @plan.present?
+  - content_for :meta_description do
+    = "#{t('plans.title')}: #{truncate(strip_tags(@plan.about).html_safe, length: 138, separator: " ", omission: '')}"
+
+  - content_for :additional_meta do
+    %meta{ property: "og:title",       content: @meta_title }
+    %meta{ property: "og:url",         content: @meta_url }
+    %meta{ property: "og:description", content: @plan.about }
+    %meta{ name: "twitter:card",             content: "summary" }
+    %meta{ name: "twitter:url",              content: @meta_url }
+    %meta{ name: "twitter:title" ,           content: @meta_title }
+    %meta{ name: "twitter:description",      content: @plan.about }
+    %meta{ name: "twitter:site",             content: "@YouVersion" }
+
+  - content_for :twitter_meta do
+    %meta{name: "twitter:image", content: tw_image_url}
+
+  - content_for :facebook_meta do
+    %meta{property: "og:image", content: fb_image_url}
+
+.row.medium-centered.text-center
+  - if @presenter.present?
+    %h6.small= t("plans.day complete")
+  - elsif @plan.present?
+    %h6!= t("plans.day_completed", { username: user.name, day: day, plan_title: title })
+  %p.plan-length-head
+    #{t('plans.which day in plan', day: day, total: total_days)}
+
+%div.stacked-container
+  -if !hero_image.nil?
+    .back-img{:style => %(background-image: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url("#{hero_image.url}"))}
+  -else
+    .back-img{:style => %(background-image: linear-gradient(rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039)), url("#{image_path('plans-hero-640x360.jpg')}"))}
+
+  .back-content.columns.large-8.medium-8.medium-centered.text-center
+    .row
+      %img.check-logo{src: "#{image_path('checkmark-plans.svg')}"}
+
+    .row
+      -if !hero_image.nil?
+        %img.plan-img{src: hero_image.url}
+      -else
+        %img.plan-img{src: image_path('plans-hero-640x360.jpg')}
+
+    .row.progress_wrap
+      .progress_counter{"progress-animator" => "true", "percent-complete" => "#{completion_percentage}", "title" => "#{completion_percentage}%"}
+
+.row.medium-centered.text-center
+  %button.solid-button.share-button{ "ng-click" => "showShare = !showShare", "href" => "#" }
+    != t("moments.action.share")
+  %div.share-panel.ng-hide{"ng-show" => "showShare"}
+    %div.video.addthis_sharing_toolbox{:data => {:url => "#{day_complete_plan_url(id: plan_id, day: day, user_id: user.id)}", :title => "#{title}"}}
+
+- if @presenter.present?
+  .row.medium-centered.text-center
+    %a
+      = link_to t("plans.widget.view my plans"), subscriptions_path(user_id: user.to_param), target: "_self", class: "small-font"
+      != "&bull;"
+
+      -# if on last day and not completed plan, don't try to go to the next day (it doesn't exist)
+      - if (day.to_i == total_days.to_i)
+        = link_to subscription_path(user_id: user.to_param, id: plan_id, day: 1), {class: 'small-font', target: "_self"} do
+          != t("EventsAdmin.containers.EventFeedMine.next")
+
+      - else
+        = link_to subscription_path(user_id: user.to_param, id: plan_id, day: (day.to_i + 1)), {class: 'small-font', target: "_self"} do
+          - if is_rtl?
+            != t("plans.next")
+            != "&larr;"
+          - else
+            != t("EventsAdmin.containers.EventFeedMine.next")

@@ -4,8 +4,11 @@ class SubscriptionsController < ApplicationController
   prepend_before_filter :mobile_redirect, only: [:show]
   before_filter :check_existing_subscription, only: [:create]
   before_filter :force_login
-  before_filter :find_subscription,     only: [:show,:destroy,:edit,:update,:calendar]
-  
+  before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar,:mark_complete]
+  before_filter :setup_presenter, only: [:show,:devo,:ref,:mark_complete]
+  before_filter :get_plan_counts, only: [:index,:completed,:saved]
+
+
   rescue_from NotAChapterError, with: :ref_not_found
 
   def index
@@ -15,7 +18,7 @@ class SubscriptionsController < ApplicationController
     @user = current_user
     @subscriptions = Subscription.all(@user, auth: @user.auth, page: @curpage)
 
-    return redirect_to plans_path if @subscriptions == false
+    # return redirect_to plans_path if @subscriptions == false
 
     self.sidebar_presenter = Presenter::Sidebar::Subscriptions.new(@subscriptions,params,self)
     respond_with(@subscriptions)
@@ -45,17 +48,20 @@ class SubscriptionsController < ApplicationController
     render 'index'
   end
 
-  # TODO - ensure user subscribed.
+  # Plan Day: Overview
   def show
-    self.presenter = Presenter::Subscription.new( @subscription , params, self)
-    self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
-    self.right_sidebar_presenter = Presenter::Sidebar::SubscriptionRight.new( @subscription , params, self)
+    return respond_with(presenter.subscription)
+  end
+
+  # Plan Day: Devo
+  def devo
+    return respond_with(presenter.subscription)
+  end
+
+  # Plan Day: Ref
+  def ref
     now_reading(presenter.reference)
-    refs = presenter.reading.references(version_id: @subscription.version_id)
-    respond_to do |format|
-      format.json { return render json: refs }
-      format.any { return respond_with(presenter.subscription) }
-    end
+    return respond_with(presenter.subscription)
   end
 
   def create
@@ -66,7 +72,7 @@ class SubscriptionsController < ApplicationController
       format.any { respond_with([@subscription], location: subscription_path(user_id: current_user.to_param, id: params[:plan_id], initial: 'true')) }
     end
 
-    # TODO look into having to do [@subcription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
+    # TODO look into having to do [@subscription] for first arg.  Getting error for .empty? here. Probably expecting something from ActiveRecord/Model
   end
 
   def saveForLater
@@ -97,6 +103,7 @@ class SubscriptionsController < ApplicationController
     if params[:catch_up] == "true"
       @subscription.catch_up
       action = 'catch up'
+      return redirect_to subscription_path(user_id: current_user.to_param, id: @subscription)
     end
 
     if params[:restart] == "true"
@@ -127,20 +134,49 @@ class SubscriptionsController < ApplicationController
     end
 
     # Completing a day of reading
-    if(params[:completed])
-      @subscription.set_ref_completion(params[:day_target], params[:ref], params[:completed] == "true")
+    if(params[:completed].present?)
+      @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
+      @subscription = subscription_for(params[:id]) || @subscription
+      self.presenter = Presenter::Subscription.new( @subscription , params, self)
 
       if !@subscription.completed?
-        dayComplete = @subscription.day_statuses[params[:day_target].to_i - 1].completed unless @subscription.day_statuses[params[:day_target].to_i - 1].blank?
-        redirectUrl = subscription_path(user_id: current_user.to_param, id: @subscription, content: params[:content_target], day: params[:day_target], version: params[:version])
+        dayComplete = @subscription.day_statuses[params[:day].to_i - 1].completed unless @subscription.day_statuses[params[:day].to_i - 1].blank?
+
+        #Just Completed Day
+        if dayComplete
+          return render "subscriptions/day_complete"
+
+        #Just completed Devo
+        elsif !params[:ref].present?
+          if !params[:stay].present?
+            redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: 0)
+          else
+            redirectUrl = subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day])
+          end
+
+        #Just completed Ref
+        elsif params[:content].present?
+          next_ref_index = params[:content].to_i + 1
+          references = presenter.reading.references(version_id: @subscription.version_id)
+          if !params[:stay].present? && next_ref_index < references.length
+            redirectUrl = ref_subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day], content: next_ref_index)
+          else
+            # Made it to the end, but skipped some content
+            # Send them back to overview
+            redirectUrl = subscription_path(user_id: current_user.to_param, id: @subscription, day: params[:day])
+          end
+
+        end
+
+      #Just Completed Plan
       else
-        dayComplete = @subscription.completed?
-        redirectUrl = subscriptions_path(user_id: current_auth.username) #, notice: t("plans.completed notice")
+        @featured_plans = Plan.featured(language_tag: current_locale)
+        @saved_plans = Subscription.saved(current_user, id: current_user.id, auth: current_auth)
+        return render "subscriptions/plan_complete"
+
       end
-      respond_to do |format|
-        format.json { render json: { success: true, ref: params[:ref], dayComplete: dayComplete, planComplete: @subscription.completed?, day: params[:day_target].to_i, redirectUrl: redirectUrl } and return }
-        format.any { redirect_to(redirectUrl) and return }
-      end
+
+      return redirect_to(redirectUrl)
     end
 
     flash[:notice] = t("plans.#{action} successful")
@@ -153,6 +189,28 @@ class SubscriptionsController < ApplicationController
 
   def calendar
     default_presenters
+  end
+
+  # for marking day complete from subscription email
+  def mark_complete
+    refs = presenter.reading.references(version_id: presenter.subscription.version_id)
+    refs.each_with_index { |ref,index|
+      if(ref.completed == false)
+        ref.completed = true
+        @subscription.set_ref_completion(params[:day], ref.reference.to_param.downcase , ref.reference.to_param.downcase.present?, true)
+      end
+    }
+
+    @subscription = subscription_for(params[:id]) || @subscription
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+
+    if @subscription.completed?
+      @featured_plans = Plan.featured(language_tag: current_locale)
+      @saved_plans = Subscription.saved(current_user, id: current_user.id, auth: current_auth)
+      return render "subscriptions/plan_complete"
+    else
+      return render "subscriptions/day_complete"
+    end
   end
 
   private
@@ -187,6 +245,10 @@ class SubscriptionsController < ApplicationController
     @subscription.user = current_user
   end
 
+  def setup_presenter
+    self.presenter = Presenter::Subscription.new( @subscription , params, self)
+  end
+
   def subscription_for( plan_id )
     Subscription.find(plan_id, auth: current_auth)
   end
@@ -196,6 +258,23 @@ class SubscriptionsController < ApplicationController
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
     render 'plans/invalid_ref'
-   end
+  end
+
+  def get_plan_counts
+    @user = current_user
+
+    @allSaved = Subscription.allSavedIds(@user)
+    @allCompleted = Subscription.completed_all_items(@user)
+
+    @savedCount = 0
+    if @allSaved.reading_plans.present? && @allSaved.reading_plans.respond_to?('length')
+      @savedCount = @allSaved.reading_plans.length
+    end
+
+    @completedCount = 0
+    if @allCompleted.reading_plans.present? && @allCompleted.reading_plans.respond_to?('length')
+      @completedCount = @allCompleted.reading_plans.length
+    end
+  end
 
 end

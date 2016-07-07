@@ -108,7 +108,7 @@ angular.module('reader.sharePanel', [])
                     }
                 };
 
-                if (!$window.shareInitialized) {
+                if (!$window.shareInitialized && $window.addthis) {
                     $window.addthis.init();
                     $window.shareInitialized = true;
                 }
