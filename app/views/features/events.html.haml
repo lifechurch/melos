@@ -1,6 +1,24 @@
 - events_link = "/sign-up?redirect=events-admin"
+
+:ruby
+  puts case I18n.locale.to_s
+  when "fr", "ru", "zh-TW", "ko", "de", "da"
+    image_dir = I18n.locale
+  when "pt", "pt-BR"
+    image_dir = "pt-BR"
+  when "es", "es-ES"
+    image_dir = "es"
+  when "zh", "zh-CN"
+    image_dir = "zh-CN"
+  else image_dir = "en"
+  end
+
+  @locale = :en unless i18n_events_whitelist.include? I18n.locale
+
+
 - if current_auth
   - events_link = "https://events.bible.com/"
+
 
 .MobileDropdown
   .close-dropdown-btn-mobile
@@ -13,6 +31,9 @@
     %li
       %a{:href => '/features/events-resources'}=t('events.menu.resources')
 .homepage-wrap
+  xxxxx
+  %h2=@locale.to_s
+
   .header-wrap.fixed-header
     .header
       .mobile-menu-btn.show-mobile
@@ -57,7 +78,7 @@
       .home-section-inner-wrap
         .home-text-wrap1
           .icon-row
-            = image_tag_with_at2x "features/events/bible-app-icon-1024-e-n.png", :alt => "bible icon"
+            = image_tag_with_at2x "features/events/#{image_dir}/bible-app-icon-1024.png", :alt => "bible icon"
           %h1=t('events.section 1 title')
           %p=t('events.section 1 text')
           %a.movedown-btn
@@ -218,7 +239,7 @@
                     %br Director of Equip
             .content-app
               .icon-row
-                = image_tag_with_at2x "features/events/bible-app-icon-1024-e-n.png", :alt => "bible icon"
+                = image_tag_with_at2x "features/events/#{image_dir}/bible-app-icon-1024.png", :alt => "bible icon"
               .inner-wrap
                 %h1=t('events.all new title')
                 %p=t('events.all new text', install_count: '220').html_safe

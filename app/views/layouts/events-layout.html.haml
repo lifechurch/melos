@@ -1,3 +1,34 @@
+- t = Proc.new do |key, options={}|
+  - I18n.t(key, options.merge(:locale => @locale))
+:ruby
+  meta_title        = t.call("events.events")
+  meta_description  = t.call("events.all new text")
+  meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  prelaunch = false
+  youtube_url = "//www.youtube.com/embed/97YQAoCjpcs?rel=0"
+  dir = "ltr"
+
+  puts case loc = I18n.locale.to_s
+  when "fr", "ru", "zh-TW", "ko", "de", "da", "pt", "pt-BR", "es", "es-ES", "zh", "zh-CN"
+    meta_url = "#{request.protocol}#{request.host_with_port}/#{loc}/events"
+    facebook_locale = loc
+    i18n_css_class = loc
+  when "es", "es-ES"
+    facebook_locale = "es_ES"
+  when "zh", "zh-CN"
+    facebook_locale = "zh_CN"
+  when "ko"
+    facebook_locale = "ko_KR"
+  when "pt", "pt-BR"
+    facebook_locale = "pt-BR"
+  else
+    meta_url = "#{request.protocol}#{request.host_with_port}/en/events"
+    facebook_locale = "en_US"
+    i18n_css_class = "en"
+  end
+
+
+
 !!! Strict
 %html{:xmlns => "http://www.w3.org/1999/xhtml", class: (@html_classes.join(' ') if @html_classes), "data-locale" => I18n.locale, "data-default-locale" => I18n.default_locale, id: @html_id, "data-logged-in" => logged_in?.to_s, "data-user-id" => logged_in? ? current_auth.user_id : nil, "data-user-name" => logged_in? ? current_auth.username : nil, "data-user-avatar" => logged_in? ? current_user.user_avatar_url["px_48x48"] : nil, "data-app-icon" => asset_path(localized_bible_icon(200)), "dir" => is_rtl? ? 'rtl' : 'ltr', "lang" => I18n.locale }
 
@@ -8,7 +39,6 @@
     / Open Graph Markup for Facebook
     / (Refer to https://developers.facebook.com/docs/sharing/webmasters)
     %meta{:content => "105030176203924", :property => "fb:app_id"}/
-    %meta{:content => "https://www.bible.com/events", :property => "og:url"}/
     %meta{:content => "Bible.com", :property => "og:site_name"}/
     %meta{:content => "website", :property => "og:type"}/
     %meta{:content => "Get YouVersion Events", :property => "og:title"}/
@@ -24,6 +54,37 @@
     %meta{:content => "Get YouVersion Events", :name => "twitter:title"}/
     %meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :name => "twitter:description"}/
     %meta{:content => url_for(image_path(localized_bible_icon(200))), :name => "twitter:image"}/
+
+
+    %meta{name: "description",    content: meta_description}
+    %meta{name: "url",            content: meta_url}
+    %meta{property: "og:title",       content: meta_title }
+    %meta{property: "og:url",         content: meta_url }
+    %meta{property: "og:description", content: meta_description }
+    %meta{property: "og:locale", content: facebook_locale}
+    %meta{property: "og:locale:alternate", content: "en_GB"}
+    %meta{property: "og:locale:alternate", content: "es_ES"}
+    %meta{property: "og:locale:alternate", content: "ko_KR"}
+    %meta{property: "og:locale:alternate", content: "zh_CN"}
+    %meta{property: "og:locale:alternate", content: "zh_TW"}
+    %meta{property: "og:locale:alternate", content: "pt_BR"}
+    %meta{property: "og:locale:alternate", content: "ru_RU"}
+    %meta{property: "og:locale:alternate", content: "de_DE"}
+    %meta{property: "og:locale:alternate", content: "fr_FR"}
+
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/events",:rel=>"alternate",:hreflang=>"en"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/events",:rel=>"alternate",:hreflang=>"en-gb"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/es/events",:rel=>"alternate",:hreflang=>"es"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ko/events",:rel=>"alternate",:hreflang=>"ko"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-CN/events",:rel=>"alternate",:hreflang=>"zh-cn"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/zh-TW/events",:rel=>"alternate",:hreflang=>"zh-tw"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/pt-BR/events",:rel=>"alternate",:hreflang=>"pt-br"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ru/events",:rel=>"alternate",:hreflang=>"ru"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/de/events",:rel=>"alternate",:hreflang=>"de"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/fr/events",:rel=>"alternate",:hreflang=>"fr"}
+
+    - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
+    %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}#{locale_dir}/events"}
 
     %title YouVersion Events
     %link{:href => "/assets/features/events/flexslider.css", :rel => "stylesheet", :type => "text/css"}/
@@ -170,6 +231,6 @@
 
 
 
-  %body{class: "c_#{params[:controller]} a_#{params[:action]}"}
+  %body{class: "c_#{params[:controller]} a_#{params[:action]} body-#{i18n_css_class}"}
     = render '/shared/google_analytics'
     = content_for?(:main) ? yield(:main) : yield
