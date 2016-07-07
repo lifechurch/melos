@@ -1,8 +1,6 @@
-- t = Proc.new do |key, options={}|
-  - I18n.t(key, options.merge(:locale => @locale))
 :ruby
-  meta_title        = t.call("events.events")
-  meta_description  = t.call("events.all new text")
+  meta_title        = t('events.all new title')
+  meta_description  = t('events.section 1 title')
   meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
   prelaunch = false
   youtube_url = "//www.youtube.com/embed/97YQAoCjpcs?rel=0"
@@ -41,8 +39,8 @@
     %meta{:content => "105030176203924", :property => "fb:app_id"}/
     %meta{:content => "Bible.com", :property => "og:site_name"}/
     %meta{:content => "website", :property => "og:type"}/
-    %meta{:content => "Get YouVersion Events", :property => "og:title"}/
-    %meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :property => "og:description"}/
+    -#%meta{:content => "Get YouVersion Events", :property => "og:title"}/
+    -#%meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :property => "og:description"}/
     %meta{:content => url_for(image_path(localized_bible_icon(200))), :property => "og:image"}/
     %meta{:content => "200", :property => "og:image:width"}/
     %meta{:content => "200", :property => "og:image:height"}/
@@ -51,8 +49,10 @@
     / (Refer to https://dev.twitter.com/cards/types/summary)
     %meta{:content => "summary", :name => "twitter:card"}/
     %meta{:content => "@youversion", :name => "twitter:site"}/
-    %meta{:content => "Get YouVersion Events", :name => "twitter:title"}/
-    %meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :name => "twitter:description"}/
+    -#%meta{:content => "Get YouVersion Events", :name => "twitter:title"}/
+    -#%meta{:content => "Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.", :name => "twitter:description"}/
+    %meta{property: "twitter:title",       content: meta_title }
+    %meta{property: "twitter:description", content: meta_description }
     %meta{:content => url_for(image_path(localized_bible_icon(200))), :name => "twitter:image"}/
 
 

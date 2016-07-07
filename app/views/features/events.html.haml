@@ -13,8 +13,6 @@
   else image_dir = "en"
   end
 
-  @locale = :en unless i18n_events_whitelist.include? I18n.locale
-
 
 - if current_auth
   - events_link = "https://events.bible.com/"
@@ -31,9 +29,6 @@
     %li
       %a{:href => '/features/events-resources'}=t('events.menu.resources')
 .homepage-wrap
-  xxxxx
-  %h2=@locale.to_s
-
   .header-wrap.fixed-header
     .header
       .mobile-menu-btn.show-mobile
@@ -68,10 +63,10 @@
       %li{"data-menuanchor" => "section5"}
         %a.features-btn{:href => "#features"} section5
   .BgBox
-    #section1-bg.sectionBg
-    #section2-bg.sectionBg
-    #section3-bg.sectionBg
-    #section4-bg.sectionBg
+    #section1-bg.sectionBg{style: "background-image: url('/assets/features/events/#{image_dir}/home-bg1-big.jpg')"}
+    #section2-bg.sectionBg{style: "background-image: url('/assets/features/events/#{image_dir}/home-bg2-big.jpg')"}
+    #section3-bg.sectionBg{style: "background-image: url('/assets/features/events/#{image_dir}/home-bg3-big.jpg')"}
+    #section4-bg.sectionBg{style: "background-image: url('/assets/features/events/home-bg4-big.jpg')"}
   #fullpage-wrap
     #section11.section
       #section1-bg
@@ -113,11 +108,11 @@
         .iphone-hand
           .iphone-screen-wrap
             .screen-head
-              = image_tag_with_at2x "features/events/home-images/iphone-screen-header.jpg", :alt => ""
+              = image_tag_with_at2x "features/events/#{image_dir}/screen-header.jpg", :alt => ""
             .iphone-screen
-              = image_tag_with_at2x "features/events/home-images/large-feed.jpg", :alt => ""
+              = image_tag_with_at2x "features/events/#{image_dir}/iphone-screen.jpg", :alt => ""
             .screen-footer
-              = image_tag_with_at2x "features/events/home-images/iphone-screen-footer.jpg", :alt => ""
+              = image_tag_with_at2x "features/events/#{image_dir}/screen-footer.jpg", :alt => ""
     / //iphone-hand-wrap
     #features.section.fp-auto-height
       .admin-bg
@@ -131,13 +126,13 @@
                 .admin-banner-flexslider.flexslider
                   %ul.slides
                     %li
-                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/slide1.png")}/
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-1.jpg")}/
                     %li
-                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/slide2.png")}/
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-2.jpg")}/
                     %li
-                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/slide3.png")}/
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-3.jpg")}/
                     %li
-                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/slide4.png")}/
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-4.jpg")}/
             / //slider-wrap
             .content-two
               %h1=t('events.building blocks title')
@@ -276,13 +271,13 @@
         .clearfix
       %ul.footer-social-icons
         %li
-          %a{:href => "https://www.facebook.com/sharer/sharer.php?u=http://www.bible.com/features/events", :target => "_blank"}
+          %a{:href => "https://www.facebook.com/sharer/sharer.php?u=http://www.bible.com/#{image_dir}/events", :target => "_blank"}
             %span.icon.facebook
             =t('events.share')
         %li
           %a{:href => "https://twitter.com/intent/tweet?text=#{t('events.tweet text')}", :target => "_blank"}
             %span.icon.twitter
-            Tweet
+            =t('events.share')
         %li
           %a{:href => "mailto:?subject=#{t('events.mail subject')}&body=#{t('events.mail body')}", :target => "_blank"}
             %span.icon.email

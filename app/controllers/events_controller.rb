@@ -3,18 +3,6 @@ class EventsController < ApplicationController
 
   layout 'node_app'
 
-  before_filter :set_locale
-
-
-  def index
-    # /kids
-    # tracks requests to /app to GA custom event.
-    # then redirects to an store for mobile device if found
-
-    # only allow kids page to localize for the kids whitelist locales
-    @locale = :en unless i18n_events_whitelist.include? I18n.locale
-  end
-
   def show
     p = {
         "id" => params[:id],
@@ -31,8 +19,6 @@ class EventsController < ApplicationController
 
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
-
-
 
 
 end
