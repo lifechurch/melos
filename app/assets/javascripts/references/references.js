@@ -247,7 +247,7 @@ angular.module('yv.reader', [
             var reader_footer = "";
             var has_blurb = true;
 
-            if ($scope.copyright_text && v && v[0].abbreviation && v[0].publisher.name) {
+            if ($scope.copyright_text && v && v[0] && v[0].abbreviation && v[0].publisher && v[0].publisher.name) {
                 copy_text = $scope.copyright_text.replace('[abbreviation]', v[0].abbreviation).replace('[publisher]', v[0].publisher.name);
             }
             if (v[0].reader_footer.html) {

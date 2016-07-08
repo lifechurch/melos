@@ -162,6 +162,11 @@ class User < YV::Resource
       return YV::API::Results.new(data,errs)
     end
 
+    def view_settings(auth)
+      data, errs = get("users/view_settings", auth: auth)
+      return YV::API::Results.new(data,errs)
+    end
+
   end
   # END Class methods ------------------------------------------------------
 
