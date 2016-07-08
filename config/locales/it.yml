@@ -902,7 +902,7 @@ it:
         none me: "Non hai ancora guadagnato nessun distintivo."
         none user: "%{username} non ha ancora guadagnato nessun distintivo."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> ha completato <b>Giorno %{day}</b> del Piano di Lettura: <b>%{plan_title}</b>"
         status: 
             on track: "Secondo la Tabella di Marcia!"
             days ahead: 

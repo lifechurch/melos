@@ -902,7 +902,7 @@ sq:
         none me: "Ju nuk keni fituar akoma ndonjë emblemë."
         none user: "Përdoruesi %{username} nuk ka fituar akoma ndonjë emblemë."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> e përfundoi <b>Ditën %{day}</b> të planit të Biblës: <b>%{plan_title}</b>"
         status: 
             on track: "Në harmoni!"
             days ahead: 

@@ -902,7 +902,7 @@ ta:
         none me: "நீங்கள் இன்னும் எந்த badges-யும் பெற வில்லை."
         none user: "%{username} இன்னும் எந்த badges-யும் பெற வில்லை."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b><b>%{plan_title}</b> வேதாகம திட்டத்தின் <b>%{day} ஆம் நாளை</b> நிறைவு செய்துள்ளார்"
         status: 
             on track: "சரியான தடத்தில்!"
             days ahead: 

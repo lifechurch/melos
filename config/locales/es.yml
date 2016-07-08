@@ -902,7 +902,7 @@ es:
         none me: "Usted no ha obtenido ninguna insignia aún."
         none user: "%{username} no ha obtenido ninguna insignia aún."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username} terminó Día %{day} del Plan Bíblico: %{plan_title}</b><b></b><b></b>"
         status: 
             on track: "¡En Curso!"
             days ahead: 

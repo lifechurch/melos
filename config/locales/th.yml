@@ -891,7 +891,7 @@ th:
         none me: "คุณยังไม่ได้เหรียญตราใดๆ"
         none user: "%{username} ยังไม่ได้รางวัลเหรียญตราใดๆ"
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> ได้อ่านจบวันที่ <b>%{day}</b> ของแผนการอ่าน <b>%{plan_title}</b>"
         status: 
             on track: "เป็นไปตามแผน!"
             days ahead: 
