@@ -54,18 +54,18 @@
 
 
 
-  :javascript
-    $(function() {
-      function get_timezone() {
-        var db_tz= $("#tz").attr('name');
-        // if user has default tz then automatically set new tz to determined tz, otherwise, the user must have an updated tz in the db we don't want to mess with
-        if(db_tz == 'Etc/UTC' || !db_tz) {
-          var tz = jstz.determine();
-          $("#user_timezone").val(tz.name()).change();
-        } else {
-          $("#user_timezone").val(db_tz).change();
-        }
-      }
-      // delay to make the select change work correctly
-      setTimeout(get_timezone, 500)
-    });
+  -#:javascript
+  -#  $(function() {
+  -#    function get_timezone() {
+  -#      var db_tz= $("#tz").attr('name');
+  -#      // if user has default tz then automatically set new tz to determined tz, otherwise, the user must have an updated tz in the db we don't want to mess with
+  -#      if(db_tz == 'Etc/UTC' || !db_tz) {
+  -#        var tz = jstz.determine();
+  -#        $("#user_timezone").val(tz.name()).change();
+  -#      } else {
+  -#        $("#user_timezone").val(db_tz).change();
+  -#      }
+  -#    }
+  -#    // delay to make the select change work correctly
+  -#    setTimeout(get_timezone, 500)
+  -#  });
