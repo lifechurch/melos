@@ -29,7 +29,7 @@
 //= require vendor/angular-tooltips/angular-tooltips.min.js
 //= require vendor/md-color-picker/tinycolor-min.js
 //= require vendor/md-color-picker/mdColorPicker.js
-// //= require vendor/jstimezone/dist/jstz.min.js
+//= require vendor/jstimezone/dist/jstz.min.js
 
 var TEMPLATE_FROM_RAILS = {};
 
