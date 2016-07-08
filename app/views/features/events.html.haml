@@ -1,4 +1,3 @@
-- events_link = "/sign-up?redirect=events-admin"
 
 :ruby
   puts case I18n.locale.to_s
@@ -13,9 +12,9 @@
   else image_dir = "en"
   end
 
-
+- events_link = "/sign-up?redirect=events-admin/#{image_dir}"
 - if current_auth
-  - events_link = "https://events.bible.com/"
+  - events_link = "https://events.bible.com/#{image_dir}"
 
 
 .MobileDropdown
@@ -34,8 +33,8 @@
       .mobile-menu-btn.show-mobile
         %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/menu-icon.svg"), :style => "width:19px;"}/
       %a.logo{:href => "/features/events"}
-        %img.logo-white{:alt => "", "data-no-retina" => "", :src => image_path("features/events/yv-logo-white.svg")}/
-        %img.logo-black{:alt => "", "data-no-retina" => "", :src => image_path("features/events/yv-logo-gray.svg")}/
+        %img.logo-white{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/yv-logo-white.svg")}/
+        %img.logo-black{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/yv-logo-gray.svg")}/
       %ul.main-nav
         %li
           %a.features-btn{:href => '/features/events'}=t('events.menu.features')
