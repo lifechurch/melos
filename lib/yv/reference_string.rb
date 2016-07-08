@@ -139,6 +139,7 @@ module YV
     # - "1-5"       => [1,2,3,4,5]
 
     def self.parse_verses( verses )
+      max_verse_count = 200
       vs = []
       pieces = verses.split(",")
       pieces.each do |piece|
@@ -151,7 +152,7 @@ module YV
           when /^\d+$/
             [piece]
           when /^(\d+)\-(\d+)/
-            Range.new($1, $2).to_a
+            Range.new($1, $2.to_i < max_verse_count ? $2 : max_verse_count.to_s).to_a
           when Array
             piece
           when String
