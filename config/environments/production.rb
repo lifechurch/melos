@@ -57,6 +57,7 @@ YouversionWeb::Application.configure do
   config.assets.precompile += ['i18n/*']
   # events css/js
   config.assets.precompile += %w( features/events/flexslider.css features/events/jquery.fullPage.css features/events/responsive.css features/events/style.css features/events/attrchange.js features/events/classie.js features/events/global.js features/events/jquery.flexslider.js features/events/jquery.fullPage.js features/events/jquery.lazy.min.js features/events/jquery.smooth-scroll.js features/events/retina.min.js)
+  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif]
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
