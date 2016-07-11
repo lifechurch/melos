@@ -439,7 +439,7 @@ sw:
             version: "Tolea"
             view more: "Angalia zaidi"
             time: "Saa"
-            blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
+            blurb: "Jiunge kwenye Fungu la Leo Pata taarifa kila siku aina ya kusukumwa kwenye simu yako"
         friendship: 
             now friends: "Wewe sasa ni marafiki na"
         cta: 
@@ -506,7 +506,7 @@ sw:
         limit notice: "Unaweza kawa na marafiki wengi kama 150"
         limit description: "Kuwa na kiwango cha marafiki kwenye Apu ya Biblia kwa watu unaowajua vizuri inajenga mazingira yenye mazungumzo waaminifu na uvumbuzi pamoja na marafiki unaowaamini."
     friendships: 
-        blurb: "Focus your friendships around the Bible. Share what you want, when you want, within the safety of trusted relationships."
+        blurb: " Elekeza urafiki wako katika Bibilia Kushirikisha unachotaka,wakati unaotaka,ndani ya mahusiano salama yanayo aminiwa."
         name required: "Ili upate kuzoea biblia na marafiki zako, wezesha profaili yako kwa kuandika jina lako la kwanza na la mwisho."
         find friends title: "Tafuta marafiki"
         search by name: "Tafuta kwa jina"
@@ -640,8 +640,8 @@ sw:
         confirm message: "Tumetuma ujumbe kwa %{email}"
         confirm message click: "Gonga kiungo ndani ya barua pepe hiyo kwa kukamilisha kama ni wewe."
         resend verification: "Tuma tena barua pepe ya uchunguzi"
-        sign in alternate: "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
-        sign up alternate: "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
+        sign in alternate: "Je una akaunti? <a href='%{sign_up_path}' target='_self'>Jiandikishe</a>"
+        sign up alternate: "Tayari ninayo akaunti <a href='%{sign_in_path}' target='_self'>Ingia</a>"
         password length: "Kima cha chini cha herufi ni 6"
         welcome to youversion: "Karibu kwenye jamii ya YouVersion!"
         confirm email: "Tafadhali angalia barua pepe yako na ubonyeze kiungo ili kuthibitisha usajili wako."
@@ -902,7 +902,7 @@ sw:
         none me: "Haujapata beji zozote."
         none user: "%{username} hajapata beji zozote."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>Amekamilisha siku%{username} ya mpango,%{day}</b> %{day}%{plan_title}%{username} Amekamilisha mpango wa biblia siku ya kwanza <b>%{day}%{username}amekamilisha siku ya kwanza%{day}ya mpango wa biblia</b> %{username}amekamilisha siuk ya kwanza ya mpango wa biblia%{day}%{plan_title} <b>%{plan_title}%{username}amekamilisha siku ya kwanza ya mpango wa biblia%{day}</b>"
         status: 
             on track: "On Track!"
             days ahead: 

@@ -891,7 +891,7 @@ zh-TW:
         none me: "您還未獲得任何徽章。"
         none user: "%{username}還未獲得任何徽章。"
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b>完成了讀經計劃：<b>%{plan_title} 中的</b><b>第 %{day} 天</b>"
         status: 
             on track: "如期進行！"
             days ahead: 

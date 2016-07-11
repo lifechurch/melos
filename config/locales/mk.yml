@@ -902,7 +902,7 @@ mk:
         none me: "Немаш добиено ниту еден беџ."
         none user: "Корисникот %{username} нема добиено ниту еден беџ."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> го заврши <b>%{day} ден</b> од Библискиот план: <b>%{plan_title}</b>"
         status: 
             on track: "На добар пат си!"
             days ahead: 

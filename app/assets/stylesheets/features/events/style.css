@@ -843,9 +843,10 @@ text-align: center;
 }
 .admin-feature-content .content-two .each-box {
 	width:210px;
-	height:238px;
+	/*height:238px;*/
 	display:inline-block;
 	margin:0 32px;
+    margin-bottom: 40px;
 	vertical-align:top;
 }
 .admin-feature-content .content-two .each-box .title {
@@ -1006,7 +1007,7 @@ text-align: center;
 	text-decoration:none;
 }
 .get-started-today {
-	height:620px;
+	/*height:660px;*/
 	overflow:hidden;
 	position:relative;
 	z-index:5

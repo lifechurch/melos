@@ -902,7 +902,7 @@
         none me: "Du har ikke fått noen merker ennå"
         none user: "%{username} har ikke fått noen merker ennå."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}fullførte dag %{day}av bibelleseplanen: %{plan_title}</b><b></b><b></b>"
         status: 
             on track: "I rute!"
             days ahead: 

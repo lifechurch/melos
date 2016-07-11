@@ -891,7 +891,7 @@ id:
         none me: "Anda belum memperoleh lencana apapun."
         none user: "%{username} belum memperoleh lencana apapun."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> menyelesaikan <b>Hari ke-%{day}</b> dari Rencana Alkitab: <b>%{plan_title}</b>"
         status: 
             on track: "Sesuai Jadwal!"
             days ahead: 
