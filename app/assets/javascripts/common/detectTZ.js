@@ -14,7 +14,7 @@ angular.module('common.detectTZ', [])
                     if(!$scope.userTz || $scope.userTz == 'Etc/UTC') {
                         $element.val(tz.name());
                     } else { // user already has updated tz and we want to set the element to that
-                        $element.val($scope.userTz).change();
+                        $element.val($scope.userTz);
                     }
                 });
 
