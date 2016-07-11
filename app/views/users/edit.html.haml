@@ -48,6 +48,6 @@
   %div
     = f.label :timezone do
       = t('users.profile.timezone')
-    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px", tabindex: "8", "detect-tz" => "", "userTZ" => "#{@user.timezone}"}
+    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px", tabindex: "8", "detect-tz" => "", "user-tz" => "#{@user.timezone}"}
   %div
     = button_tag t('users.update profile') , {class: "solid-button green"}
