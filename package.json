@@ -89,5 +89,10 @@
     "smooth-scroll": "github:cferdinandi/smooth-scroll",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.0.1",
+    "eslint-config-google": "^0.6.0",
+    "eslint-plugin-react": "^5.2.2"
   }
 }

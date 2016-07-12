@@ -106,7 +106,6 @@ class LocationEdit extends Component {
 		}
 
 		var gMap = null;
-		if (loc.type === 'physical') {
 			gMap = (
 				<GoogleMap
 					center={this.state.center}
@@ -120,7 +119,7 @@ class LocationEdit extends Component {
 						controlPosition={google.maps.ControlPosition.TOP_LEFT}
 						onPlacesChanged={::this.handlePlacesChanged}
 						ref="searchBox"
-						placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.prompt"})}
+						placeholder={ loc.type === 'physical' ? intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.prompt"}) : intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.virtualPrompt"}) }
 						style={inputStyle} />
 
 					{this.state.markers.map((marker, index) => (
@@ -129,7 +128,6 @@ class LocationEdit extends Component {
 
 				</GoogleMap>
 			)
-		}
 
 		var locationDetails = null;
 		if (loc.type === 'physical') {
@@ -138,10 +136,10 @@ class LocationEdit extends Component {
 					<form>
 						<Row>
 							<Column s='small-6'>
-								<input className='small' type='text' name='country' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.country"})} onChange={handleChange} value={loc.country} />
+								<input className='small' type='text' name='country' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.country"})} onChange={handleChange} value={loc.country} disabled/>
 							</Column>
 							<Column s='small-6'>
-								<input className='small' type='text' name='timezone' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.timezone"})} onChange={handleChange} value={loc.timezone} />
+								<input className='small' type='text' name='timezone' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.timezone"})} onChange={handleChange} value={loc.timezone} disabled/>
 							</Column>
 						</Row>
 					</form>
@@ -153,7 +151,7 @@ class LocationEdit extends Component {
 					<form>
 						<Row>
 							<Column s='small-6 end'>
-								<input className='small' type='text' name='timezone' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.timezone"})} onChange={handleChange} value={loc.timezone} />
+								<input className='small' type='text' name='timezone' placeholder={intl.formatMessage({id:"features.EventEdit.features.location.components.LocationEdit.timezone"})} onChange={handleChange} value={loc.timezone} disabled/>
 							</Column>
 						</Row>
 					</form>
