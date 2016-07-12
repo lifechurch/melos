@@ -2,6 +2,10 @@
   @title = t('users.edit profile')
   @setting_selected = :edit #for settings layout
 
+
+
+-#%div{name: @user.timezone, id: "tz"}
+
 %h2
   = @title
 
@@ -12,6 +16,7 @@
     %ul
       - @user.errors.full_messages.each do |e|
         %li= e
+
   %div
     = f.label :first_name do
       = t('users.profile.first name')
@@ -43,7 +48,6 @@
   %div
     = f.label :timezone do
       = t('users.profile.timezone')
-    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px", tabindex: "8"}
+    = f.select :timezone, ActiveSupport::TimeZone::MAPPING.map { |k,v| ["#{k} (GMT #{ActiveSupport::TimeZone[v].utc_offset/3600})", v]}, {}, {style: "min-width: 395px", tabindex: "8", "detect-tz" => "", "user-tz" => "#{@user.timezone}"}
   %div
     = button_tag t('users.update profile') , {class: "solid-button green"}
-

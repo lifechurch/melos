@@ -1,6 +1,7 @@
 = form_for :user, url: sign_up_path(source: params[:source], redirect: params[:redirect]) do |f|
   = render partial: "shared/form_errors", locals: {errors: @user.errors, heading: t("users.creation form errors")}
   = f.hidden_field :agree, {value: true}
+  = f.hidden_field :timezone, {"detect-tz" => ""}
 
   %p
     .alt-path.terms= t('users.sign up alternate', sign_in_path: sign_in_path).html_safe

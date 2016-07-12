@@ -25,7 +25,8 @@ angular.module('yv', [
     'yv.friendships.addFriend',
     'yv.plans.moreMenu',
     'common.progressAnimator',
-    'yv.search'
+    'yv.search',
+    'common.detectTZ'
 ])
 
 .config([ '$locationProvider', '$urlRouterProvider', '$windowProvider', function($locationProvider, $urlRouterProvider, $windowProvider) {
