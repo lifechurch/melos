@@ -136,6 +136,14 @@
 		"displayName": "Hrvatski"
 	},
 	{
+		"nativeName": "isiZulu",
+		"englishName": "Zulu",
+		"locale": "zu-ZA",
+		"locale2": "zu",
+		"locale3": "zul",
+		"displayName": "isiZulu"
+	},
+	{
 		"nativeName": "Italiano",
 		"englishName": "Italian",
 		"locale": "it-IT",
@@ -352,6 +360,14 @@
 		"locale2": "hi",
 		"locale3": "hin",
 		"displayName": "हिन्दी"
+	},
+	{
+		"nativeName": "বাংলা (ভারত)",
+		"englishName": "Bengali (India)",
+		"locale": "bn-IN",
+		"locale2": "bn",
+		"locale3": "ben",
+		"displayName": "বাংলা (ভারত)"
 	},
 	{
 		"nativeName": "தமிழ்",

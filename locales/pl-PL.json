@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Anuluj",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Usuń",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Wpisz adres lokalizacji...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Kraj",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Strefa czasowa",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Pierwszy Baptystyczny Kampus Wschodni ",

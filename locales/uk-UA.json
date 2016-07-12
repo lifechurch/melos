@@ -1,5 +1,5 @@
 {
-	"components.ErrorMessage.genericError": "Ви��икла помилка",
+	"components.ErrorMessage.genericError": "Виникла помилка",
 	"components.ErrorMessage.announcement.events.title.required": "Необхідна назва оголошення",
 	"components.ErrorMessage.default.bible.reference.not_found": "Біблійне посилання помилкове",
 	"components.ErrorMessage.default.events.google_place_id.required": "Ви повинні обрати місце на мапі.",
@@ -146,7 +146,7 @@
 	"features.EventEdit.features.location.components.Location.edit": "Редагувати місце",
 	"features.EventEdit.features.location.components.Location.delete": "Видалити місце",
 	"features.EventEdit.features.location.components.LocationAddButtons.addPhysical": "Додати місце",
-	"features.EventEdit.features.location.components.LocationAddButtons.promptPhysical": "��и можете додати декілька місць.",
+	"features.EventEdit.features.location.components.LocationAddButtons.promptPhysical": "Ви можете додати декілька місць.",
 	"features.EventEdit.features.location.components.LocationAddButtons.addVirtual": "Додати віртуальне місце",
 	"features.EventEdit.features.location.components.LocationAddButtons.churchOnline": "Ви знали? Ви можете запустити онлайн служіння для безкоштовного користування <a className='button-caption' href='{url}'> Платформою Онлайн Церкви</a>.",
 	"features.EventEdit.features.location.components.LocationAddTime.minutes": "ХВИЛИНИ",
@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Скасувати",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Видалити",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Введіть адресу місця",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Країна",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Часовий пояс",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Campus",

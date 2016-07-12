@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Atcelt",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Dzēst",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Ievadīt atrašanās vietas adresi...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Valsts",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Laika josla",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist Austrumu daļa",

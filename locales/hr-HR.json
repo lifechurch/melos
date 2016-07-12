@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Otkaži",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Obriši",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Unesi adresu lokacije...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Država",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Vremenska zona",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Prvi kršćanski kampus",

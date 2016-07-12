@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "İptal",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Sil",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Konum adresini girin...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Ülke",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Saat Dilimi",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "İlk Baptist Doğu Kampüsü",
