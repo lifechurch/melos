@@ -1645,6 +1645,7 @@ tl:
                                 delete: "Burahin"
                             LocationEdit: 
                                 prompt: "Ilagay ang address ng lokasyon..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Bansa"
                                 timezone: "Timezone"
                                 namePrompt: "First Baptist East Campus"

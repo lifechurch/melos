@@ -1630,6 +1630,7 @@ km:
                                 delete: "លុប"
                             LocationEdit: 
                                 prompt: "Enter the Location address..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "ប្រទេស"
                                 timezone: "ហ្សូន​ម៉ោង"
                                 namePrompt: "ក្រុម​ជំនុំ​បាបទីស្ទខាង​ជើង"

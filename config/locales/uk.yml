@@ -1675,6 +1675,7 @@ uk:
                                 delete: "Видалити"
                             LocationEdit: 
                                 prompt: "Введіть адресу місця"
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Країна"
                                 timezone: "Часовий пояс"
                                 namePrompt: "First Baptist East Campus"

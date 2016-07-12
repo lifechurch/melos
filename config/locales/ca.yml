@@ -1645,6 +1645,7 @@ ca:
                                 delete: "Elimina"
                             LocationEdit: 
                                 prompt: "Escriu l'adreça de la ubicació…"
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "País"
                                 timezone: "Zona horària"
                                 namePrompt: "Primer Campus Oriental Baptista"

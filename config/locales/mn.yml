@@ -1645,6 +1645,7 @@ mn:
                                 delete: "Устгах"
                             LocationEdit: 
                                 prompt: "Хаягаа Оруул..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Улс"
                                 timezone: "Цагийн бүс"
                                 namePrompt: "Нэгдүгээр Баптист Зүүн Кампус"

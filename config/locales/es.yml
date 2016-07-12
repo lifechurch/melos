@@ -1645,6 +1645,7 @@ es:
                                 delete: "Eliminar"
                             LocationEdit: 
                                 prompt: "Introducir la dirección de su ubicación ..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "País"
                                 timezone: "Zona horaria"
                                 namePrompt: "Primer Bautista Campus del Este"

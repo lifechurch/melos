@@ -1630,6 +1630,7 @@ ko:
                                 delete: "삭제"
                             LocationEdit: 
                                 prompt: "주소를 입력하세요..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "국가"
                                 timezone: "시간대"
                                 namePrompt: "제일 침례 교회 동부 캠퍼스"

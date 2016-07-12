@@ -1645,6 +1645,7 @@ ta:
                                 delete: "நீக்கு"
                             LocationEdit: 
                                 prompt: "இடத்தின் முகவரியை உள்ளிடவும்..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "நாடு"
                                 timezone: "நேரமண்டலம்"
                                 namePrompt: "முதல் பாப்டிஸ்ட் கிழக்கு வளாகம் "

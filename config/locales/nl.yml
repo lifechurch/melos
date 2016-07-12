@@ -1645,6 +1645,7 @@ nl:
                                 delete: "Verwijderen"
                             LocationEdit: 
                                 prompt: "Voer het adres van de Locatie in..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Land"
                                 timezone: "Tijdzone"
                                 namePrompt: "First Baptist East Campus"

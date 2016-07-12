@@ -1645,6 +1645,7 @@ sw:
                                 delete: "Ondoa"
                             LocationEdit: 
                                 prompt: "Andika barua pepe yako"
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Nchi"
                                 timezone: "wakati wa eneo"
                                 namePrompt: "Kwanza campus ya Baptist Mashariki"

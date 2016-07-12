@@ -902,7 +902,7 @@ da:
         none me: "Du har ikke optjent nogen mærker endnu."
         none user: "%{username} har ikke optjent nogen mærker endnu."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> færdiggjorde <b>%{day}</b> af Bibel Planen <b>%{plan_title}</b>"
         status: 
             on track: "På sporet!"
             days ahead: 
@@ -1645,6 +1645,7 @@ da:
                                 delete: "Slet"
                             LocationEdit: 
                                 prompt: "Indtast Lokations adressen..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Land"
                                 timezone: "Tidszone"
                                 namePrompt: "First Baptist East Campus"

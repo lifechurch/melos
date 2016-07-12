@@ -1645,6 +1645,7 @@ tr:
                                 delete: "Sil"
                             LocationEdit: 
                                 prompt: "Konum adresini girin..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Ülke"
                                 timezone: "Saat Dilimi"
                                 namePrompt: "İlk Baptist Doğu Kampüsü"

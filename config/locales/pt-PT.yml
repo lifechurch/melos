@@ -1645,6 +1645,7 @@ pt-PT:
                                 delete: "Apagar"
                             LocationEdit: 
                                 prompt: "Introduza a morada da localização..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "País"
                                 timezone: "Fuso Horário"
                                 namePrompt: "Primeira Igreja Baptista"

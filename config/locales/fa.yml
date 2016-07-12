@@ -1630,6 +1630,7 @@ fa:
                                 delete: "حذف کردن"
                             LocationEdit: 
                                 prompt: "آدرس مکان مورد نظر را وارد کنید …"
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "کشور"
                                 timezone: "وقت محلى"
                                 namePrompt: "مثال: محوطۀ شرقی کلیسای فِرسْب بَپْتیست"

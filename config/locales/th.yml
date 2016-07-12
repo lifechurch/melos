@@ -1630,6 +1630,7 @@ th:
                                 delete: "ลบ"
                             LocationEdit: 
                                 prompt: "กรอกที่อยู่ของสถานที่..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "ประเทศ"
                                 timezone: "เขตเวลา"
                                 namePrompt: "ค่ายบัพติศมาแรกฝั่งตะวันออก"

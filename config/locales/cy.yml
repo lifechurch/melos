@@ -1705,6 +1705,7 @@ cy:
                                 delete: "Dileu"
                             LocationEdit: 
                                 prompt: "Mewnosod cyfeiriad y Lleoliad ..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Gwlad"
                                 timezone: "Parth Amser"
                                 namePrompt: "Campws Dwyreiniol First Baptist"

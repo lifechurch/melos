@@ -1630,6 +1630,7 @@ ms:
                                 delete: "Hapuskan"
                             LocationEdit: 
                                 prompt: "Masukkan alamat Lokasi..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Negara"
                                 timezone: "Zon Masa"
                                 namePrompt: "First Baptist Kampus Timur"

@@ -1645,6 +1645,7 @@ af:
                                 delete: "Vee uit"
                             LocationEdit: 
                                 prompt: "Voeg die Plek se adres in..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Land"
                                 timezone: "Tydsone"
                                 namePrompt: "First Baptist East Kampus"

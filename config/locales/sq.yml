@@ -1645,6 +1645,7 @@ sq:
                                 delete: "Fshij"
                             LocationEdit: 
                                 prompt: "Shkruaj adresën e vendndodhjes..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Vendi"
                                 timezone: "Zona kohore"
                                 namePrompt: "Kampusi Lindor i Baptistëve të Parë"

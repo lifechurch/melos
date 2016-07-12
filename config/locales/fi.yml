@@ -1645,6 +1645,7 @@ fi:
                                 delete: "Poista"
                             LocationEdit: 
                                 prompt: "Syötä sijainnin osoite..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Maa"
                                 timezone: "Aikavyöhyke"
                                 namePrompt: "First Baptist East Campus"

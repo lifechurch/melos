@@ -1630,6 +1630,7 @@ vi:
                                 delete: "Xóa"
                             LocationEdit: 
                                 prompt: "Nhập địa chỉ..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Quốc gia"
                                 timezone: "Múi giờ"
                                 namePrompt: "Tên hội thánh"

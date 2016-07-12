@@ -1660,6 +1660,7 @@ cs:
                                 delete: "Odstranit"
                             LocationEdit: 
                                 prompt: "Zadejte adresu..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Země"
                                 timezone: "Časové pásmo"
                                 namePrompt: "První baptistická východní universita"

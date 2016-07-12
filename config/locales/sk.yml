@@ -1660,6 +1660,7 @@ sk:
                                 delete: "Odstrániť"
                             LocationEdit: 
                                 prompt: "Vložte adresu miesta..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Krajina"
                                 timezone: "Časová zóna"
                                 namePrompt: "Prvá Východná Baptistická Fakulta"

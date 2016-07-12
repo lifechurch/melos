@@ -1630,6 +1630,7 @@ ja:
                                 delete: "削除"
                             LocationEdit: 
                                 prompt: "ロケーションの住所を入力…"
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "国"
                                 timezone: "タイムゾーン"
                                 namePrompt: "ファーストバプテスト教会"

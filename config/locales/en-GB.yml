@@ -1645,6 +1645,7 @@ en-GB:
                                 delete: "Delete"
                             LocationEdit: 
                                 prompt: "Enter the Location address..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Country"
                                 timezone: "Time zone"
                                 namePrompt: "First Baptist East Campus"

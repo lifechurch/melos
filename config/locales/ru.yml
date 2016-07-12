@@ -1675,6 +1675,7 @@ ru:
                                 delete: "Удалить"
                             LocationEdit: 
                                 prompt: "Введите название местонахождения"
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Страна"
                                 timezone: "Временная зона"
                                 namePrompt: "Первая баптистская церковь"
