@@ -11,6 +11,8 @@ import EventListItem from '../features/EventFeedMine/components/EventListItem'
 import ActionCreators from '../features/EventFeedMine/actions/creators'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import Carousel from '../components/Carousel/Carousel'
+
 
 class EventFeedMine extends Component {
 	componentWillMount() {
@@ -38,6 +40,154 @@ class EventFeedMine extends Component {
 		const { dispatch, hasError, errors, isFetching, configuration, items, page, next_page, auth, intl, params } = this.props
 		const { userData } = auth
 		const { first_name, last_name } = userData
+
+
+
+		var data = {
+    "response": {
+        "buildtime": "2016-07-12T20:37:08.676083+00:00",
+        "code": 200,
+        "data": {
+            "collections": [
+                {
+                    "items": [
+                        {
+                            "title": "Anxiety",
+                            "gradient": {
+                                "colors": [
+                                    [
+                                        "166828",
+                                        0
+                                    ],
+                                    [
+                                        "1a792e",
+                                        0.5
+                                    ],
+                                    [
+                                        "1e8b35",
+                                        1
+                                    ]
+                                ],
+                                "angle": 45
+                            },
+                            "slug": "anxiety-en",
+                            "image_id": null,
+                            "id": 4,
+                            "type": "collection",
+                            "display": "standard"
+                        },
+                        {
+                            "title": "Love",
+                            "gradient": {
+                                "colors": [
+                                    [
+                                        "903a3a",
+                                        0
+                                    ],
+                                    [
+                                        "a44242",
+                                        0.5
+                                    ],
+                                    [
+                                        "b94a4a",
+                                        1
+                                    ]
+                                ],
+                                "angle": 45
+                            },
+                            "slug": "love-en",
+                            "image_id": null,
+                            "id": 3,
+                            "type": "collection",
+                            "display": "standard"
+                        },
+                        {
+                            "title": "Healing",
+                            "gradient": {
+                                "colors": [
+                                    [
+                                        "693972",
+                                        0
+                                    ],
+                                    [
+                                        "7b4385",
+                                        0.5
+                                    ],
+                                    [
+                                        "8c4c98",
+                                        1
+                                    ]
+                                ],
+                                "angle": 45
+                            },
+                            "slug": "healing-en",
+                            "image_id": null,
+                            "id": 7,
+                            "type": "collection",
+                            "display": "standard"
+                        },
+                        {
+                            "title": "Anger",
+                            "gradient": {
+                                "colors": [
+                                    [
+                                        "c38321",
+                                        0
+                                    ],
+                                    [
+                                        "ee9438",
+                                        0.5
+                                    ],
+                                    [
+                                        "e2f000",
+                                        1
+                                    ]
+                                ],
+                                "angle": 45
+                            },
+                            "slug": "anger-en",
+                            "image_id": null,
+                            "id": 5,
+                            "type": "collection",
+                            "display": "standard"
+                        },
+                        {
+                            "title": "Depression",
+                            "gradient": {
+                                "colors": [
+                                    [
+                                        "31517b",
+                                        0
+                                    ],
+                                    [
+                                        "3a5e90",
+                                        0.5
+                                    ],
+                                    [
+                                        "426ca4",
+                                        1
+                                    ]
+                                ],
+                                "angle": 45
+                            },
+                            "slug": "depression-en",
+                            "image_id": null,
+                            "id": 6,
+                            "type": "collection",
+                            "display": "standard"
+                        }
+                    ],
+                    "next_page": null,
+                    "total": 5,
+                    "id": 8,
+                    "has_collections": true
+                }
+            ]
+        }
+    }
+}
+
+
 
 		var itemList = items.map((item, index) => {
 			return (<EventListItem
@@ -103,7 +253,10 @@ class EventFeedMine extends Component {
 				<Helmet title={intl.formatMessage({ id: "containers.EventFeedMine.title" })} />
 				<EventHeader {...this.props} />
 				{eventFeed}
+			<Carousel carouselContent={data.response.data.collections} carouselType='gradient'/>
 			</div>
+
+
 		)
 	}
 }
