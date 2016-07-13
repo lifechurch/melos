@@ -9,6 +9,7 @@ import createLogger from 'redux-logger'
 import getRoutes from './routes'
 import defaultState from './defaultState'
 import EventActionCreators from './features/EventEdit/features/details/actions/creators'
+import PlanDiscoveryActionCreators from './features/PlanDiscovery/actions/creators'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
 import ga from 'react-ga'
@@ -58,13 +59,21 @@ function requireEvent(nextState, replace, callback) {
 	}
 }
 
+function requirePlanDiscoveryData(nextState, replace, callback) {
+	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, false)).then((event) => {
+		callback()
+	}, (error) => {
+		callback()
+	})
+}
+
 function logPageView() {
 	if (typeof window !== 'undefined') {
   	window.__GA__.pageview(window.location.pathname);
   }
 }
 
-const routes = getRoutes(requireAuth, requireEvent)
+const routes = getRoutes(requireAuth, requireEvent, requirePlanDiscoveryData)
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.momentLocale)
 window.__LOCALE__.momentLocaleData = moment.localeData()
