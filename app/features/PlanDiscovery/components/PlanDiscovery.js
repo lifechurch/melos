@@ -24,7 +24,7 @@ class PlanDiscovery extends Component {
 
 			return (
 				<div key={i} className={c.slug}>
-					<h1>{c.title}</h1>
+					<h3>{c.title}</h3>
 					{items}
 					{nextPageLink}
 				</div>

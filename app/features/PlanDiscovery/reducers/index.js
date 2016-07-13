@@ -28,7 +28,14 @@ export default function plansDiscovery(state = {}, action) {
 			collections.forEach((collection) => {
 				const discoveryIndex = state.map[collection.id]
 				if (typeof discoveryIndex !== 'undefined') {
-					items[discoveryIndex] = Object.assign({}, items[discoveryIndex], collection)
+					let newItems = collection.items
+					if (Array.isArray(items[discoveryIndex].items)) {
+						newItems = [
+							...items[discoveryIndex].items,
+							...collection.items
+						]
+					}
+					items[discoveryIndex] = Object.assign({}, items[discoveryIndex], collection, { items: newItems })
 				}
 			})
 			return Object.assign({}, state, { hasErrors: false, errors: [], items })
