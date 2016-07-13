@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Cancelar",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Eliminar",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Introducir la dirección del lugar...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "País",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Zona horaria",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Campus de la Primera Iglesia Bautista del Este",

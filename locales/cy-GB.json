@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Canslo",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Dileu",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Mewnosod cyfeiriad y Lleoliad ...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Gwlad",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Parth Amser",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Campws Dwyreiniol First Baptist",

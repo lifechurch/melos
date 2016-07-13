@@ -6,6 +6,9 @@
 	"bg-BG": "bg-BG",
 	"bg": "bg-BG",
 	"bg_BG": "bg-BG",
+	"bn-IN": "bn-IN",
+	"bn": "bn-IN",
+	"bn_IN": "bn-IN",
 	"ca-ES": "ca-ES",
 	"ca": "ca-ES",
 	"ca_ES": "ca-ES",
@@ -141,6 +144,9 @@
 	"zh_CN": "zh-CN",
 	"zh-TW": "zh-TW",
 	"zh_TW": "zh-TW",
+	"zu-ZA": "zu-ZA",
+	"zu": "zu-ZA",
+	"zu_ZA": "zu-ZA",
 	"en-US": "en-US",
 	"en_US": "en-US"
 }

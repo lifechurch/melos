@@ -1,7 +1,7 @@
 {
 	"components.ErrorMessage.genericError": "May pagkakamaling naganap",
 	"components.ErrorMessage.announcement.events.title.required": "Kailangang may pamagat ang patalastas.",
-	"components.ErrorMessage.default.bible.reference.not_found": "Ang sanggunian sa Bibliya ay mali.",
+	"components.ErrorMessage.default.bible.reference.not_found": "Ang sanggunian sa Biblia ay mali.",
 	"components.ErrorMessage.default.events.google_place_id.required": "Kailangang pumili ng lokasyon mula sa mapa.",
 	"components.ErrorMessage.default.events.latitude.required": "Kailangang pumili ng lokasyon mula sa mapa.",
 	"components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date": "Oras ng Simula ay hindi maaaring lumipas na.",
@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Itigil",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Burahin",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Ilagay ang address ng lokasyon...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Bansa",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Timezone",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Campus",
