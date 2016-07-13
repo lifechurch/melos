@@ -11,8 +11,9 @@ import EventEditPreview from './containers/EventEditPreview'
 import EventEditShare from './containers/EventEditShare'
 import EventView from './containers/EventView'
 import SelectLanguage from './containers/SelectLanguage'
+import PlanDiscoveryView from './containers/PlanDiscoveryView'
 
-export default function(requireAuth, requireEvent) {
+export default function(requireAuth, requireEvent, requirePlanDiscoveryData) {
 	return (
 		<Route path="/:locale/" component={App} onEnter={requireAuth}>
 			<IndexRoute component={EventFeedMine} />
@@ -26,6 +27,7 @@ export default function(requireAuth, requireEvent) {
 				<Route path="share" component={EventEditShare} onEnter={requireEvent} />
 			</Route>
 			<Route path="event/view/:id" component={EventView} onEnter={requireEvent} />
+			<Route path="planDiscovery" component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
 		</Route>
 	)
 }

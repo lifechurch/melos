@@ -101,7 +101,13 @@ export default {
 		language_tag: 'en',
 		items: [],
         focus_id: 0,
-		isFetching: false
+		isFetching: false,
+	},
+	plansDiscovery: {
+		hasError: false,
+		errors: [],
+		isFetching: false,
+		items: []
 	},
 	eventFeeds: {
 
