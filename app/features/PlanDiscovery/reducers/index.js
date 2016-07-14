@@ -40,6 +40,13 @@ export default function plansDiscovery(state = {}, action) {
 			})
 			return Object.assign({}, state, { hasErrors: false, errors: [], items })
 
+		case type('configurationRequest'):
+		case type('configurationFailure'):
+			return state
+
+		case type('configurationSuccess'):
+			return Object.assign({}, state, { configuration: action.response })
+
 		default:
 			return state
 	}
