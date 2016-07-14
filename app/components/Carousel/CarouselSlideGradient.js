@@ -38,25 +38,32 @@ class CarouselSlideGradient extends Component {
         var style = {}
         var slideContent = null
 
-        // configure gradient styling if the carousel has a gradient associated with it
-        var colors = []
-        for(var i = 0; i < gradient.colors.length; i++) {
-            // build color format for linear gradient i.e. #ffff 20%, #efee 50%, ...
-            colors.push(`#${gradient.colors[i][0]} ${gradient.colors[i][1] * 100}%`)
-        }
-        colors.join(' ,')
+        if (gradient) {
+            // configure gradient styling if the carousel has a gradient associated with it
+            var colors = []
+            for(var i = 0; i < gradient.colors.length; i++) {
+                // build color format for linear gradient i.e. #ffff 20%, #efee 50%, ...
+                colors.push(`#${gradient.colors[i][0]} ${gradient.colors[i][1] * 100}%`)
+            }
+            colors.join(' ,')
 
-        style = {
-            "backgroundImage": `linear-gradient(${gradient.angle}deg, ${colors})`
+            style = {
+                "backgroundImage": `linear-gradient(${gradient.angle}deg, ${colors})`
+            }
+        } else {
+            style = {
+                "backgroundImage": `linear-gradient(45deg, #ffff 0%, #eeee 50%, #aaaa 100%)`
+            }
         }
+
 
         var classes = `slide-content gradient-slide`
 
         return (
-          <div id={`${id}`} className={classes} style={style}>
-            <div className='gradient-title'>
-                <h3>{title}</h3>
-            </div>
+          <div id={`${id}`} className='slide' style={style}>
+              <div>
+                <h3 className='gradient-title'>{title}</h3>
+              </div>
           </div>
         );
     }

@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import ActionCreators from '../actions/creators'
+import Carousel from '../../../components/Carousel/Carousel'
+
 
 class PlanDiscovery extends Component {
 	getCollectionsPage(ids, page) {
@@ -10,25 +12,27 @@ class PlanDiscovery extends Component {
 
 	render() {
 		const { discover } = this.props
-
+		console.log(discover)
 		const carousels = discover.items.map((c,i) => {
-			let items = null
+			// let items = null
 
-			if (Array.isArray(c.items)) {
-				items = c.items.map((item, index) => {
-					return (<p key={item.id}>{item.title}</p>)
-				})
-			}
+			// if (Array.isArray(c.items)) {
+			// 	items = c.items.map((item, index) => {
+			// 		return (<p key={item.id}>{item.title}</p>)
+			// 	})
+			// }
 
 			let nextPageLink = (c.next_page === null) ? null : (<a onClick={this.getCollectionsPage.bind(this, [ c.id ], c.next_page)}>Next Page</a>)
-
+				if(c.display == 'gradient') {
 			return (
-				<div key={i} className={c.slug}>
-					<h3>{c.title}</h3>
-					{items}
-					{nextPageLink}
-				</div>
+					<Carousel carouselContent={c} carouselType={c.display} key={i}/>
+				// <div key={i} className={c.slug}>
+					// <h3>{c.title}</h3>
+					// {items}
+					// {nextPageLink}
+				// </div>
 			)
+				}
 		})
 
 		return (

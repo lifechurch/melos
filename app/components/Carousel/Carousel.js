@@ -38,12 +38,9 @@ class Carousel extends Component {
 				case 'gradient':
 				default:
 			    settings = {
-			      className: 'center',
 			      centerMode: false,
-			      infinite: false,
-			      centerPadding: '60px',
-			      slidesToShow: 3,
-			      initialSlide: 3,
+			      infinite: true,
+			      slidesToShow: 4,
 			      speed: 500
 			    };
 
@@ -51,11 +48,11 @@ class Carousel extends Component {
 
 
 
-	    var slides = carouselContent[0].items.map( function(slide, index) {
-	    	return <CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title} key={slide.id} />
+	    var slides = carouselContent.items.map( function(slide, index) {
+	    	return <div><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title} key={`${carouselContent.id}-${index}`}/></div>
 	    })
 
-	    var classes = `carousel-${carouselType} content`
+	    var classes = `carousel-${carouselType}`
 
 	    return (
 	      <div className={classes} >
