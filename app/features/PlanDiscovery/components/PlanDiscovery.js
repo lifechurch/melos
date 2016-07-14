@@ -12,7 +12,6 @@ class PlanDiscovery extends Component {
 
 	render() {
 		const { discover } = this.props
-		console.log(discover)
 		const carousels = discover.items.map((c,i) => {
 			// let items = null
 
@@ -23,18 +22,19 @@ class PlanDiscovery extends Component {
 			// }
 
 			let nextPageLink = (c.next_page === null) ? null : (<a onClick={this.getCollectionsPage.bind(this, [ c.id ], c.next_page)}>Next Page</a>)
-				if(c.display == 'gradient') {
+
+			console.log(`returning carousel${i}`)
 			return (
-					<Carousel carouselContent={c} carouselType={c.display} key={i}/>
+				<Carousel carouselContent={c} carouselType={c.display} key={i}/>
 				// <div key={i} className={c.slug}>
 					// <h3>{c.title}</h3>
 					// {items}
 					// {nextPageLink}
 				// </div>
 			)
-				}
 		})
 
+		console.log(carousels)
 		return (
 			<div>
 				<h1>Discovery</h1>
