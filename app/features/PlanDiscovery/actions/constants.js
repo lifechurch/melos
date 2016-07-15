@@ -5,6 +5,9 @@ const constants = {
 	collectionsItemsRequest: 'READING_PLANS_COLLECTIONS_ITEMS_REQUEST',
 	collectionsItemsSuccess: 'READING_PLANS_COLLECTIONS_ITEMS_SUCCESS',
 	collectionsItemsFailure: 'READING_PLANS_COLLECTIONS_ITEMS_FAILURE',
+	configurationRequest: 'READING_PLANS_CONFIGURATION_REQUEST',
+	configurationSuccess: 'READING_PLANS_CONFIGURATION_SUCCESS',
+	configurationFailure: 'READING_PLANS_CONFIGURATION_FAILURE'
 }
 
 export default function (key) {
