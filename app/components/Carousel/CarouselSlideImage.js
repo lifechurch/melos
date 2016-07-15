@@ -3,16 +3,17 @@ import React, { Component } from 'react'
 
 class CarouselSlideImage extends Component {
     render() {
-        const { imageComponent, title, id } = this.props
-        var titleDiv = {}
+        const { children, title, id } = this.props
+        var titleDiv = null
 
         if (title) {
-            titleDiv = <h6 className='image-title'>{title}</h6>
+            titleDiv = <div className='plan-title'>{title}</div>
         }
 
+        var classes = ''
         return (
-          <div>
-            {imageComponent}
+          <div className={classes}>
+            <div className='slide-image'>{children}</div>
             {titleDiv}
           </div>
         );

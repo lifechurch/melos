@@ -25,7 +25,7 @@ class PlanDiscovery extends Component {
 
 			console.log(`returning carousel${i}`)
 			return (
-				<Carousel carouselContent={c} carouselType={c.display} key={i}/>
+				<Carousel carouselContent={c} carouselType={c.display} key={i} imageConfig={discover.configuration.images}/>
 				// <div key={i} className={c.slug}>
 					// <h3>{c.title}</h3>
 					// {items}
@@ -37,7 +37,6 @@ class PlanDiscovery extends Component {
 		console.log(carousels)
 		return (
 			<div>
-				<h1>Discovery</h1>
 				{carousels}
 			</div>
 		)

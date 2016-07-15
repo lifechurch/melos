@@ -5,10 +5,11 @@ class CarouselSlideTitle extends Component {
     render() {
         const { title, id } = this.props
 
-
+        var classes = 'slide'
+        var titleClasses = 'title-padding title-container radius-5'
         return (
-          <div className='title-slide'>
-            <h5 className='title-title'>{title}</h5>
+          <div className={classes}>
+            <div className={titleClasses}>{title}</div>
           </div>
         );
     }

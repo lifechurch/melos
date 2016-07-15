@@ -1678,25 +1678,132 @@ ul.language-selector li {
 
 
 
+/* PLANS DISCOVERY/CAROUSELS */
+
+.radius-3 {
+	border-radius: 3px;
+}
+.radius-5 {
+	border-radius: 5px;
+}
+
+.vertical-center {
+	display: flex;
+	align-items: center;
+}
+.horizontal-center {
+	display: flex;
+	justify-content: center;
+}
+
 .slide {
-	margin-right: 10px;
+
+}
+
+.title-padding {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+
+
+.carousel-banner {
+	width: 100%;
+
+	.slide, img {
+		/*transition: height 0.3s ease;*/
+		width: 600px;
+		height: 360px;
+		margin-left: 20px;
+		margin-right: 20px;
+		border-radius: 8px;
+	}
+	.slick-active {
+		/*transform: scale(1.10);*/
+		.slide, img {
+			width: 680px;
+			height: 400px;
+			padding: 0px;
+		}
+	}
+
+	/* rules for gradient title in a banner carousel is a little different */
+	.gradient-title-container {
+		border: 2px solid white;
+		color: white;
+		text-align: center;
+		font-size: 18px;
+		padding-left: 40px;
+		padding-right: 40px;
+		padding-top: 18px;
+		padding-bottom: 18px;
+	}
 }
 
 .carousel-gradient {
 	width: 100%;
 
 	.slide {
-		width: 190px;
-		height: 80px;
+		width: 320px;
+		height: 160px;
+		margin-right: 20px;
+		border-radius: 5px;
 	}
 
 	.gradient-title-container {
-		border: white 1px;
-		height: 33%
-	}
-	.gradient-title {
+		border: 2px solid white;
 		color: white;
 		text-align: center;
+		font-size: 14px;
+	}
+
+}
+
+.carousel-title {
+	width: 100%;
+
+	.slide {
+		margin-right: 3px;
+	}
+
+	.title-container {
+		border: 2px solid whitesmoke;
+		color: black;
+		text-align: center;
+		font-size: 16px;
+	}
+
+}
+
+.carousel-standard {
+	width: 100%;
+
+	.header {
+		height: 20px;
+		margin-bottom: 15px;
+		padding-left: 1.07143rem;
+		text-align: left;
+		color: whitesmoke;
+	}
+
+	.plan-title {
+		/* These are technically the same, but use both */
+		width: 200px;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		white-space: normal;
+		text-align: left;
+		font-size: 13px;
+	}
+
+
+  .slide, img {
+  	border-radius: 3px;
+		width: 210px;
+		height: 120px;
+		margin-right: 10px;
 	}
 }
 

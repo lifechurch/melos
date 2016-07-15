@@ -8,6 +8,7 @@ class CarouselTitle extends Component {
 		const { carouselContent } = this.props
 
     var settings = {
+    	centerMode: false,
       infinite: true,
       variableWidth: true,
     };

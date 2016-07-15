@@ -24,9 +24,12 @@ class CarouselSlideGradient extends Component {
             }
         }
 
+
+        var classes = 'slide vertical-center horizontal-center'
+        var titleClasses = 'gradient-title-container title-padding'
         return (
-          <div style={style}>
-            <h3 className='gradient-title'>{title}</h3>
+          <div className={classes} style={style}>
+            <div className={titleClasses}>{title}</div>
           </div>
         );
     }

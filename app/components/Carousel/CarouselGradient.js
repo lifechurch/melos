@@ -10,16 +10,13 @@ class CarouselGradient extends Component {
 
     console.log(carouselContent)
     var settings = {
-      className: 'center',
-      centerMode: true,
+      centerMode: false,
       infinite: true,
-      centerPadding: '60px',
       variableWidth: true,
-      slidesToShow: 3,
     };
 
     var slides = carouselContent.items.map( function(slide, index) {
-			return <div className='slide'><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title} key={`${carouselContent.id}-${index}`}/></div>
+			return <div className='radius-3'><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title} key={`${carouselContent.id}-${index}`}/></div>
     })
 
 
