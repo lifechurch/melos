@@ -56,6 +56,23 @@ angular.module("reader.versionList", [])
 }])
 
 .directive("readerVersionList", function() {
+
+    function fillRecentVersions(recentVersionIds, allVersions) {
+        var recentVersions = [];
+        var addedVersions = [];
+        allVersions.forEach(function(l) {
+            if (Array.isArray(l.versions)) {
+                l.versions.forEach(function(v) {
+                    if (recentVersionIds.indexOf(v.id) > -1 && addedVersions.indexOf(v.id) == -1) {
+                        recentVersions.push(v);
+                        addedVersions.push(v.id);
+                    }
+                });
+            }
+        });
+        return recentVersions;
+    }
+
 	return {
 		restrict: 'A',
 		scope: {
@@ -69,7 +86,7 @@ angular.module("reader.versionList", [])
 		},
 		controller: ["$scope", "$state", "RecentVersions", "VersionFilterService", "$element", "$compile", function($scope, $state, RecentVersions, VersionFilterService, $element, $compile) {
 
-            $scope.recentVersions = RecentVersions.all();
+            $scope.recentVersions = []; RecentVersions.all();
             var filteredVersions = [];
 
             VersionFilterService.registerListener(function(versions) {
@@ -103,6 +120,7 @@ angular.module("reader.versionList", [])
             var cancelWatcher = $scope.$watch("versions", function(newVal, oldVal) {
                 if (typeof newVal !== 'undefined' && newVal && newVal.length > 0) {
                     cancelWatcher();
+                    $scope.recentVersions = fillRecentVersions(RecentVersions.all(), newVal);
                     VersionFilterService.setMasterList(newVal);
                     VersionFilterService.filterList("");
                 }
@@ -114,15 +132,8 @@ angular.module("reader.versionList", [])
 
 			$scope.loadVersion = function(versionId, saveToRecent) {
                 if (saveToRecent) {
-                    var version = {};
-                    for (var x = 0; x < filteredVersions.length; x++) {
-                        if (filteredVersions[x].id == versionId) {
-                            version = filteredVersions[x];
-                            break;
-                        }
-                    }
-                    RecentVersions.add(version);
-                    $scope.recentVersions = RecentVersions.all();
+                    RecentVersions.add(versionId);
+                    $scope.recentVersions = fillRecentVersions(RecentVersions.all(), $scope.versions);
                 }
 
                 $scope.togglePanel('showReaderVersions');

@@ -169,6 +169,11 @@ class User < YV::Resource
       return YV::API::Results.new(data,errs)
     end
 
+    def update_settings(auth, settings)
+      data, errs = post("users/update_settings", auth: auth, settings: settings)
+      return YV::API::Results.new(data,errs)
+    end
+
   end
   # END Class methods ------------------------------------------------------
 
