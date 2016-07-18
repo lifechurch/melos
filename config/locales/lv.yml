@@ -1660,6 +1660,7 @@ lv:
                                 delete: "Dzēst"
                             LocationEdit: 
                                 prompt: "Ievadīt atrašanās vietas adresi..."
+                                virtualPrompt: "Ievadi pilsētu, lai uzstādītu laika joslu..."
                                 country: "Valsts"
                                 timezone: "Laika josla"
                                 namePrompt: "First Baptist Austrumu daļa"

@@ -1645,6 +1645,7 @@ it:
                                 delete: "Elimina"
                             LocationEdit: 
                                 prompt: "Digitare l'indirizzo della Location..."
+                                virtualPrompt: "Inserisci una città per impostare il fuso orario..."
                                 country: "Paese"
                                 timezone: "Fuso orario"
                                 namePrompt: "Campus First Baptist East"

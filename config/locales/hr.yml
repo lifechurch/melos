@@ -1675,6 +1675,7 @@ hr:
                                 delete: "Obriši"
                             LocationEdit: 
                                 prompt: "Unesi adresu lokacije..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Država"
                                 timezone: "Vremenska zona"
                                 namePrompt: "Prvi kršćanski kampus"

@@ -902,7 +902,7 @@ es-ES:
         none me: "Aún no has ganado insignias."
         none user: "%{username} aún no ha ganado ninguna insignia."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> completó <b>el día %{day}</b> del plan de lectura: <b>%{plan_title}</b>"
         status: 
             on track: "¡En marcha!"
             days ahead: 
@@ -1645,6 +1645,7 @@ es-ES:
                                 delete: "Eliminar"
                             LocationEdit: 
                                 prompt: "Introducir la dirección del lugar..."
+                                virtualPrompt: "Introduce una ciudad para ajustar la zona horaria..."
                                 country: "País"
                                 timezone: "Zona horaria"
                                 namePrompt: "Campus de la Primera Iglesia Bautista del Este"

@@ -924,7 +924,7 @@ ru:
         none me: "Вы ещё не заработали значков."
         none user: "%{username} ещё не заработал значков."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> завершил <b>день %{day}</b> из плана чтения Библии: <b>%{plan_title}</b>"
         status: 
             on track: "Всё по плану!"
             days ahead: 
@@ -1675,6 +1675,7 @@ ru:
                                 delete: "Удалить"
                             LocationEdit: 
                                 prompt: "Введите название местонахождения"
+                                virtualPrompt: "Выберите ваш город, чтобы установить часовой пояс..."
                                 country: "Страна"
                                 timezone: "Временная зона"
                                 namePrompt: "Первая баптистская церковь"

@@ -1660,6 +1660,7 @@ ro:
                                 delete: "Șterge"
                             LocationEdit: 
                                 prompt: "Adaugă adresa locului..."
+                                virtualPrompt: "Introdu un oraș pentru a stabili un fus orar..."
                                 country: "Țara"
                                 timezone: "Fus orar"
                                 namePrompt: "First Baptist East Campus"

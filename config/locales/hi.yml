@@ -1645,6 +1645,7 @@ hi:
                                 delete: "डिलीट"
                             LocationEdit: 
                                 prompt: "Enter the Location address..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "देश"
                                 timezone: "समय क्षेत्र"
                                 namePrompt: "First Baptist East Campus"

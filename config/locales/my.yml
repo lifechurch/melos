@@ -1630,6 +1630,7 @@ my:
                                 delete: "ပယ်ဖျက်မည်။"
                             LocationEdit: 
                                 prompt: "တည်ရှိရာလိပ်စာကိုထည့်သွင်းပါ"
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "နိုင်ငံ"
                                 timezone: "ဒေသစံတော်ချိန်"
                                 namePrompt: "ပထမနှစ်ခြင်း အရှေ့ပိုင်းနယ်မြေဝင်း"

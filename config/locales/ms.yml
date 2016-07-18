@@ -126,8 +126,8 @@ ms:
         best kids app: "Aplikasi Kanak-kanak yang Terbaik!"
         best educational app: "Aplikasi Pendidikan yang Terbaik"
         kids_app: 
-            title: "The Bible App for Kids"
-            description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+            title: "App Alkitab untuk Kanak-Kanak"
+            description: "App Alkitab untuk Kanak-kanak merupakan cara yang amat baik untuk anak-anak anda mempelajari cerita Biblikal tentang Yesus, karunia kehidupan kekal untuk kita, dan banyak lagi pengajaran yang diajarkan Allah kepada kita. Dalam pengalaman interaktif ini, kanak-kanak secara langsung dapat turut serta di dalam Firman Allah dengan visual yang menarik sementara memperoleh mata untuk pembacaan dan pengumpulan harta karun."
         100million: 
             title: "Ia Bermula dengan 100 Juta"
             description: "App Alkitab telah di instalasi hampir 100 juta kali - pencapaian yang menakjubkan! Tetapi kita baru sahaja bermula. Muat turun App Alkitab percuma hari ini - dan kongsikan app ini dengan sahabat anda. Ayuh mencipta sejarah bersama."
@@ -166,13 +166,13 @@ ms:
         feature 5: "Kid-friendly navigation"
         share: 
             tell friends: "Tell your friends about the Bible App for Kids."
-            facebook name: "The Bible App for Kids"
+            facebook name: "App Alkitab untuk Kanak-Kanak"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
             twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
             twitter hashtags: "kidsbible"
-            email: "Email"
+            email: "E-mel"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
         partner: 
@@ -1150,7 +1150,7 @@ ms:
     download bafk ad: 
         title: "Download the Bible App for Kids"
         description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        download: "Download Sekarang"
     about page: 
         relevancy: "Relevan"
         relevancy copy: "Pada zaman yang lalu, akses kepada Alkitab memang terbatas. Kini tidak sedemikian lagi. Namun, ramai orang merasa bahawa mesej Alkitab tidak terguna dalam kehidupan mereka, walaupun orang lain percaya bahawa Alkitab memang terhubung dengan pengalaman seharian mereka."
@@ -1630,6 +1630,7 @@ ms:
                                 delete: "Hapuskan"
                             LocationEdit: 
                                 prompt: "Masukkan alamat Lokasi..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Negara"
                                 timezone: "Zon Masa"
                                 namePrompt: "First Baptist Kampus Timur"
