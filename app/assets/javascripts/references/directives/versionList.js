@@ -145,6 +145,7 @@ angular.module("reader.versionList", [])
                 }
 			};
 
+            RecentVersions.sync();
 		}],
 		templateUrl: '/reader-version-selector.tpl.html'
 	};
