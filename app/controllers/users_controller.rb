@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   prepend_before_filter :mobile_redirect, only: [:show, :notes, :bookmarks, :badges]
   before_filter :filter_spam_posts, only: [:create]
   before_filter :force_login, only: [:show, :notes, :highlights, :bookmarks, :badges, :share, :edit, :update, :picture, :update_picture,:delete_account, :delete_account_form]
-  before_filter :find_user, except: [:is_logged_in, :reset_password, :_cards,:sign_up_success, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
+  before_filter :find_user, except: [:user_update_settings, :user_settings, :is_logged_in, :reset_password, :_cards,:sign_up_success, :new, :create, :confirm_email, :new_facebook, :create_facebook, :resend_confirmation, :share]
   before_filter :set_redirect, only: [:new, :create]
   before_filter :authorize, only: [:edit,:update,:delete_account,:destroy]
 
@@ -222,6 +222,31 @@ class UsersController < ApplicationController
       return render :text => true
     else
       return render :text => false
+    end
+  end
+
+  def user_settings
+    if current_auth
+      settings = User.view_settings(current_auth)
+      settings.updated_dt = Date.parse(settings.updated_dt).strftime('%Q').to_i
+      return render :json => settings
+    else
+      return render :json => {}
+    end
+  end
+
+  def user_update_settings
+    if current_auth && params['recent_versions'].present?
+      new_settings = User.update_settings(current_auth, { bible: { recent_versions: params['recent_versions'] } })
+
+      if !new_settings.nil?
+        new_settings.updated_dt = Date.parse(new_settings.updated_dt).strftime('%Q').to_i
+        return render :json => new_settings
+      else
+        return render :json => {}
+      end
+    else
+      return render :json => {}
     end
   end
 
