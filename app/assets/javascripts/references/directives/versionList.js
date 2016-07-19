@@ -144,8 +144,6 @@ angular.module("reader.versionList", [])
                     $scope.loadChapter($state.current.name, { usfm: $scope.usfm, version: versionId })
                 }
 			};
-
-            RecentVersions.sync();
 		}],
 		templateUrl: '/reader-version-selector.tpl.html'
 	};

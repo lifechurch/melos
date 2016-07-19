@@ -53,7 +53,7 @@ angular.module('yv.reader', [
 	;
 }])
 
-.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", "Subscription", "$anchorScroll", "$q", "$cookies", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window, Subscription, $anchorScroll, $q, $cookies) {
+.controller("ReaderCtrl", ["$scope", "$stateParams", "$location", "$rootScope", "$state", "$sce", "$timeout", "Highlights", "Bookmarks", "Notes", "Authentication", "Versions", "Bible", "UserSettings", "$window", "Subscription", "$anchorScroll", "$q", "$cookies", "RecentVersions", function($scope, $stateParams, $location, $rootScope, $state, $sce, $timeout, Highlights, Bookmarks, Notes, Authentication, Versions, Bible, UserSettings, $window, Subscription, $anchorScroll, $q, $cookies, RecentVersions) {
 	$scope.reader_version_id = $stateParams.version;
     $scope.parallel_version = $stateParams.version;
 	$scope.usfm = $stateParams.usfm;
@@ -917,6 +917,7 @@ angular.module('yv.reader', [
 	Authentication.isLoggedIn('/isLoggedIn').success(function(data) {
 		if (data === true) {
 			$scope.isLoggedIn = true;
+            RecentVersions.setLoggedInState(true);
 		}
         init();
 	}).error(function(data) {
