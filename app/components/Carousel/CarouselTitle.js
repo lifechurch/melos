@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 import CarouselSlideTitle from './CarouselSlideTitle'
+import CarouselArrow from './CarouselArrow'
 
 
 class CarouselTitle extends Component {
@@ -11,6 +12,8 @@ class CarouselTitle extends Component {
     	centerMode: false,
       infinite: true,
       variableWidth: true,
+      prevArrow: <CarouselArrow dir='left' width={20} height={20} fill='gray'/>,
+      nextArrow: <CarouselArrow dir='right' width={20} height={20} fill='gray'/>
     };
 
     var slides = carouselContent.items.map( function(slide, index) {

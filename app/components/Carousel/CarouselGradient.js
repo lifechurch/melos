@@ -2,17 +2,19 @@ import React, { Component } from 'react'
 import Slider from 'react-slick'
 import CarouselSlideGradient from './CarouselSlideGradient'
 import CarouselSlideImage from './CarouselSlideImage'
+import CarouselArrow from './CarouselArrow'
 
 
 class CarouselGradient extends Component {
   render() {
 		const { carouselContent } = this.props
 
-    console.log(carouselContent)
     var settings = {
       centerMode: false,
       infinite: true,
       variableWidth: true,
+      prevArrow: <CarouselArrow dir='left' width={25} height={25}/>,
+      nextArrow: <CarouselArrow dir='right' width={25} height={25}/>
     };
 
     var slides = carouselContent.items.map( function(slide, index) {
