@@ -1675,6 +1675,7 @@ pl:
                                 delete: "Usuń"
                             LocationEdit: 
                                 prompt: "Wpisz adres lokalizacji..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Kraj"
                                 timezone: "Strefa czasowa"
                                 namePrompt: "Pierwszy Baptystyczny Kampus Wschodni "

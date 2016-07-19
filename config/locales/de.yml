@@ -902,7 +902,7 @@ de:
         none me: "Du hast bisher keine Abzeichen bekommen."
         none user: "%{username} hat bisher keine Abzeichen bekommen."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username} hat Tag</b><b> %{day} </b><b>des Leseplanes: %{plan_title}abgeschlossen</b>"
         status: 
             on track: "Prima!"
             days ahead: 
@@ -1645,6 +1645,7 @@ de:
                                 delete: "Löschen"
                             LocationEdit: 
                                 prompt: "Veranstaltungsort eingeben..."
+                                virtualPrompt: "Gib eine Stadt ein, um eine Zeitzone festzulegen..."
                                 country: "Land"
                                 timezone: "Zeitzone"
                                 namePrompt: "First Baptist East Campus"

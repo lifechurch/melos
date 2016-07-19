@@ -902,7 +902,7 @@ af:
         none me: "Jy het nog geen kentekens verwerf nie."
         none user: "%{username} het nog geen kentekens verwerf nie."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> voltooi <b>Dag %{day}</b> van die Bybelleesplan: <b>%{plan_title} </b>"
         status: 
             on track: "Op koers!"
             days ahead: 
@@ -1645,6 +1645,7 @@ af:
                                 delete: "Vee uit"
                             LocationEdit: 
                                 prompt: "Voeg die Plek se adres in..."
+                                virtualPrompt: "Sleutel 'n stad in om 'n tydsone op te stel..."
                                 country: "Land"
                                 timezone: "Tydsone"
                                 namePrompt: "First Baptist East Kampus"

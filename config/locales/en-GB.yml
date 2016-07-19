@@ -902,7 +902,7 @@ en-GB:
         none me: "You haven't earnt any badges yet."
         none user: "%{username} hasn't earnt any badges yet."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> completed <b>day %{day}</b> of the Bible plan: <b>%{plan_title}</b>"
         status: 
             on track: "On track!"
             days ahead: 
@@ -1645,6 +1645,7 @@ en-GB:
                                 delete: "Delete"
                             LocationEdit: 
                                 prompt: "Enter the Location address..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Country"
                                 timezone: "Time zone"
                                 namePrompt: "First Baptist East Campus"

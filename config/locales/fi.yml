@@ -137,8 +137,8 @@ fi:
         best kids app: "Paras lasten sovellus!"
         best educational app: "Paras opetusohjelma"
         kids_app: 
-            title: "The Bible App for Kids"
-            description: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus, our gift of eternal life, and the many lessons God teaches us. In this interactive experience, children directly engage with God’s Word with delightful visuals while earning points for reading and collecting treasures."
+            title: "Raamattusovellus lapsille"
+            description: "Raamattusovellus lapsille - The Bible App for Kids - on erinomainen työkalu opettamaan lapsille raamatun kertomuksia Jeesuksesta, ikuisen elämän mahdollistavasta lahjastamme, ja monista muista Jumalan opetuksista. Interaktiivisen ja visuaalisesti hienon kokemuksen kautta lapset ovat suoraan tekemisissä Jumalan sanan kanssa, samalla he ansaitsevat pisteitä lukemisesta ja aarteiden keräämisestä."
         100million: 
             title: "Se alkaa 100 miljoonalla"
             description: "Raamattusovellus on asennettu lähes 100 miljoonaa kertaa - hieno merkkipaalu! Mutta me olemme vasta pääsemässä alkuun. Lataa ilmainen Raamattusovellus tänään - ja jaa se kavereidesi kanssa. Tehdään historiaa yhdessä."
@@ -177,13 +177,13 @@ fi:
         feature 5: "Kid-friendly navigation"
         share: 
             tell friends: "Tell your friends about the Bible App for Kids."
-            facebook name: "The Bible App for Kids"
+            facebook name: "Raamattusovellus lapsille"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
             twitter description: "The Bible App for Kids from @YouVersion is here! It’s fun and completely free. Download: bible.com/kids"
             twitter hashtags: "kidsbible"
-            email: "Email"
+            email: "Sähköposti"
             email subject: "The Bible App for Kids is here!"
             email body: "Great news - the Bible App for Kids is here! It’s completely free and it’s available now for iPhone, iPad, iPod touch, and Android devices. The app is a growing collection of Bible stories with touch-activated animations and learning activities, perfect for helping kids learn the big stories of the Bible. Go to bible.com/kids on your mobile device to download it today."
         partner: 
@@ -902,7 +902,7 @@ fi:
         none me: "Et ole vielä ansainnut yhtään ansiomerkkiä."
         none user: "%{username} ei ole ansainnut yhtään ansiomerkkiä."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> suoritti päivän <b>%{day}</b> Raamatun lukusuunnitelmasta: <b>%{plan_title}</b>"
         status: 
             on track: "Aikataulussa!"
             days ahead: 
@@ -1163,9 +1163,9 @@ fi:
         banner action: "Lataa"
         banner open: "Avaa"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Lataa lasten raamattusovellus"
+        description copy: "Lasten raamattusovellus on loistava tapa lastesi oppia raamatullisia tarinoita Jeesuksesta."
+        download: "Lataa nyt"
     about page: 
         relevancy: "Ajankohtaisuus"
         relevancy copy: "Aiempien sukupolvien aikana Raamatun saatavuus oli hyvin rajallista. Tänä päivänä on toisin. Silti monet ihmiset, joille raamattu on saatavilla, ajattelevat ettei sen sanoma enää koske heidän elämäänsä. Samaan aikaan on myös ihmisiä, jotka uskovat, että Raamatun ja heidän jokapäiväisten kokemustensa välillä on yhteys."
@@ -1645,6 +1645,7 @@ fi:
                                 delete: "Poista"
                             LocationEdit: 
                                 prompt: "Syötä sijainnin osoite..."
+                                virtualPrompt: "Syötä kaupunki määritelläksesi aikavyöhykkeen..."
                                 country: "Maa"
                                 timezone: "Aikavyöhyke"
                                 namePrompt: "First Baptist East Campus"

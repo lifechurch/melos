@@ -439,7 +439,7 @@ pt-PT:
             version: "Versão"
             view more: "Ver mais"
             time: "Tempo"
-            blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
+            blurb: "Subscrever o Versículo do dia Receba um email diário ou notificação push no seu dispositivo móvel."
         friendship: 
             now friends: "Você é agora amigo/a de"
         cta: 
@@ -506,7 +506,7 @@ pt-PT:
         limit notice: "Pode ter no máximo 150 amizades"
         limit description: "Limitar as suas amizades na App da Bíblia às pessoas que conhece bem cria um ambiente para conversas honestas e partilha de descobertas com amigos de confiança."
     friendships: 
-        blurb: "Focus your friendships around the Bible. Share what you want, when you want, within the safety of trusted relationships."
+        blurb: "Concentre as suas amizades em torno da Bíblia. Partilhe o que quer, quando quer, na segurança de relações de confiança."
         name required: "Para experimentar a Bíblia com os seus amigos, atualize o seu Perfil com o seu primeiro e último nome."
         find friends title: "Encontre amigos"
         search by name: "Procurar por nome"
@@ -640,8 +640,8 @@ pt-PT:
         confirm message: "Enviamos uma mensagem para %{email}."
         confirm message click: "Clique no link no email para confirmar que realmente é você."
         resend verification: "Reenviar Verificação da Conta"
-        sign in alternate: "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
-        sign up alternate: "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
+        sign in alternate: "Não tem uma conta? <a href='%{sign_up_path}' target='_self'>Registe-se</a>"
+        sign up alternate: "Já tem uma conta? <a href='%{sign_in_path}' target='_self'>Entrar</a>"
         password length: "Mínimo 6 caracteres"
         welcome to youversion: "Bem-vindo à comunidade YouVersion!"
         confirm email: "Por favor, verifique o seu email e clique no link para confirmar o seu registo."
@@ -1441,11 +1441,11 @@ pt-PT:
                             required: "URL Label is required."
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "Publicado"
                     draft: "Rascunho"
                     live: "Ao Vivo"
                     archived: "Archived"
-                unpublish: "Unpublish"
+                unpublish: "Cancelar publicação"
                 saving: "Saving..."
                 saveAsDraft: "Guardar como rascunho"
                 myEvents: "Eventos"
@@ -1465,7 +1465,7 @@ pt-PT:
                 password: "Palavra-Passe:"
                 forgotPassword: "Palavra passe esquecida"
             EventEdit: 
-                event: "Event"
+                event: "Evento"
             EventEditContentContainer: 
                 choose: "Escolha algum conteúdo para começar."
                 needHelp: "Precisa de ajuda?"
@@ -1482,10 +1482,10 @@ pt-PT:
                 title: "Pré-visualização do Evento"
                 previous: "← Voltar: Conteúdo"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
+                title: "Partilha de Evento"
+                subTitle: "O seu Evento está agora publicado:"
+                edit: "Editar Evento"
+                go: "Ir para os Meus Eventos"
                 share: "Share your event:"
                 copy: "Copiar"
                 copied: "The shortlink was copied to your clipboard"
@@ -1505,7 +1505,7 @@ pt-PT:
             EventFeedSaved: 
                 title: "Eventos Guardados"
             EventView: 
-                title: "YouVersion Event"
+                title: "Evento YouVersion"
             SelectLanguage: 
                 choose: "Choose Your Language"
         features: 
@@ -1532,7 +1532,7 @@ pt-PT:
                         components: 
                             ContentFeed: 
                                 reorder: "Ordenar conteúdo"
-                                doneReordering: "Done Reordering"
+                                doneReordering: "Reordenação concluída."
                             ContentHeader: 
                                 text: "Texto"
                                 reference: "Referência Bíblica"
@@ -1555,7 +1555,7 @@ pt-PT:
                                     desc: "Adicione ligações para os Planos da Bíblia e devocionais que se relacionam com os seus ensinamentos, de modo ajudar a sua audiência a continuar a interagir com a Palavra de Deus ao longo da semana."
                                 image: 
                                     title: "Módulo de imagem"
-                                    desc: "Dê vida ao seu Evento com qualquer tipo de suporte gráfico: arte em série, fotografias, imagens de Versículos, etc. Os participantes poderão facilmente partilhar as suas imagens de Evento nas suas redes sociais, tornando a sua mensagem viral"
+                                    desc: "Dê vida ao seu Evento com qualquer tipo de suporte gráfico: arte em série, fotografias, Imagens de Versículos, etc. Os participantes terão a possibilidade de, facilmente, partilhar as suas imagens de Evento nas suas redes sociais, tornando a sua mensagem viral."
                                 link: 
                                     title: "Módulo de ligações externas"
                                     desc: "Cria um botão no seu Evento que liga a qualquer site externo. Coloque a sua audência apenas a um toque de donativos online, inscrição de voluntários ou página da igreja"
@@ -1577,7 +1577,7 @@ pt-PT:
                                 errors: 
                                     wrongSize: "O tamanho da imagem tem de ser %{requiredWidth}x%{requiredHeight}. A sua imagem é %{yourWidth}x%{yourHeight}."
                                     wrongType: "Tipo de ficheiro inválido. Tem de ser um JPG."
-                                caption: "Add caption"
+                                caption: "Adicionar legenda"
                                 prompt: "Arraste e largue uma imagem"
                                 onlyJpg: "[apenas JPG]"
                                 sizePrompt: "%{requiredWidth}px largura x %{requiredHeight}px altura"
@@ -1594,7 +1594,7 @@ pt-PT:
                                 language: "Idioma"
                                 version: "Versão"
                                 book: "Livro"
-                                chapterVerse: "Capítulo:versículo"
+                                chapterVerse: "Capítulo:Versículo"
                             ContentTypeText: 
                                 prompt: "Write something here..."
                             LiveWarningModal: 
@@ -1603,7 +1603,7 @@ pt-PT:
                                 ok: "OK"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
+                            generic: "Ocorreu um problema na publicação do seu Evento."
                             invalidTimes: "A single service cannot be more than 12 hours, and the difference between the earliest start time and the latest end time on an Event cannot be more than 8 days. Please adjust your Event times and try again."
                         components: 
                             DetailsEdit: 
@@ -1612,7 +1612,7 @@ pt-PT:
                                     wrongType: "Tipo de ficheiro inválido. Tem de ser um JPG."
                                 changeImage: "Alterar Imagem"
                                 removeImage: "Remover imagem"
-                                prompt: "Arraste e largue uma imagem"
+                                prompt: "Arrastar e largar uma Imagem"
                                 onlyJpg: "[apenas JPG]"
                                 sizePrompt: "%{requiredWidth}px largura x %{requiredHeight}px altura"
                                 sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
@@ -1639,12 +1639,13 @@ pt-PT:
                                 days: "DIAS"
                             LocationDeleteModal: 
                                 sure: "Tem a certeza?"
-                                selected: "Selecionou as seguintes localizações para eliminar:"
+                                selected: "Selecionou a seguinte localização para eliminar:"
                                 warn: "Isto irá remover esta localização de todos os eventos passados e presentes. Não poderá reutilizar esta localização em eventos futuros."
                                 cancel: "Cancelar"
                                 delete: "Apagar"
                             LocationEdit: 
                                 prompt: "Introduza a morada da localização..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "País"
                                 timezone: "Fuso Horário"
                                 namePrompt: "Primeira Igreja Baptista"
@@ -1654,17 +1655,17 @@ pt-PT:
                                 cancel: "Cancelar"
                                 save: "Guardar esta localização"
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
+                                shift: "Alterar datas de início"
                                 forward: "Avançar"
                                 backward: "backward"
                                 by: "by"
-                                week: "week"
-                                weeks: "weeks"
+                                week: "semana"
+                                weeks: "semanas"
                                 month: "Mês"
-                                months: "months"
+                                months: "meses"
                                 day: "Dia"
                                 days: "DIAS"
-                                hour: "hour"
+                                hour: "hora"
                                 hours: "HORAS"
                                 update: "Atualizar"
                                 shiftButton: "Mudar todas as datas e os horários de uma só vez"
@@ -1717,7 +1718,7 @@ pt-PT:
                         copied: "Copied"
                         share: "Partilhar"
                         read: "Ler"
-                        readPlan: "Read Plan"
+                        readPlan: "Ler Plano"
                     EventViewContentAnnouncement: 
                         expand: "Expand"
                         collapse: "Collapse"
@@ -1726,4 +1727,4 @@ pt-PT:
                         collapse: "Collapse"
                         save: "Guardar Evento"
                         signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        saved: "Evento Guardado"

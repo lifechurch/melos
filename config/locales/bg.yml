@@ -902,7 +902,7 @@ bg:
         none me: "Нямате спечелени значки все още."
         none user: "%{username} все още няма спечелени значки."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> завърши <b>ден %{day}</b> от плана за прочит на Библията: <b>%{plan_title}</b>"
         status: 
             on track: "Точно по график!"
             days ahead: 
@@ -1645,6 +1645,7 @@ bg:
                                 delete: "Изтриване"
                             LocationEdit: 
                                 prompt: "Въведете адрес на местоположението..."
+                                virtualPrompt: "Въведете град, за да настроите времевата зона..."
                                 country: "Държава"
                                 timezone: "Часова зона"
                                 namePrompt: "Първа Баптистка..."

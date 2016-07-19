@@ -946,7 +946,7 @@ cy:
         none me: "Dwyt ti ddim wedi ennill yr un bathodyn eto."
         none user: "Dydy %{username}heb ennill yr un bathodyn eto."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: " Cwblhaodd <b>%{username}</b><b>Ddydd</b> %{day} <b>o'r Cynllun Beibl:</b>%{plan_title}"
         status: 
             on track: "Ar y trywydd iawn!"
             days ahead: 
@@ -1705,6 +1705,7 @@ cy:
                                 delete: "Dileu"
                             LocationEdit: 
                                 prompt: "Mewnosod cyfeiriad y Lleoliad ..."
+                                virtualPrompt: "Ychwanega ddinas i osod Cylchfa Amser..."
                                 country: "Gwlad"
                                 timezone: "Parth Amser"
                                 namePrompt: "Campws Dwyreiniol First Baptist"

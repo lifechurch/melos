@@ -891,7 +891,7 @@ fa:
         none me: "شما هنوز نشانی دریافت نکرده‌اید"
         none user: "%{username} هنوز نشانی دریافت نکرده است."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b><b>%{day} روز</b> برنامهٔ مطالعه <b>%{plan_title}</b> را تکمیل کرده است "
         status: 
             on track: "مطالعه طبق برنامه است!"
             days ahead: 
@@ -1630,6 +1630,7 @@ fa:
                                 delete: "حذف کردن"
                             LocationEdit: 
                                 prompt: "آدرس مکان مورد نظر را وارد کنید …"
+                                virtualPrompt: "انتخاب شهر برای تعیین منطقۀ زمانی..."
                                 country: "کشور"
                                 timezone: "وقت محلى"
                                 namePrompt: "مثال: محوطۀ شرقی کلیسای فِرسْب بَپْتیست"

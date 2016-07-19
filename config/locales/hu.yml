@@ -902,7 +902,7 @@ hu:
         none me: "Még nem szereztél jelvényt."
         none user: "%{username} még nem szerzett jelvényt."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username} befejezte a %{plan_title} Terv %{day}. napját.</b><b></b><b></b>"
         status: 
             on track: "Terv szerint!"
             days ahead: 
@@ -1645,6 +1645,7 @@ hu:
                                 delete: "Törlés"
                             LocationEdit: 
                                 prompt: "Írd be a helyszín címét..."
+                                virtualPrompt: "Enter a city to set a timezone..."
                                 country: "Ország"
                                 timezone: "Időzóna"
                                 namePrompt: "Első Baptista Keleti Campus"

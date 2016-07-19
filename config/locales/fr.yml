@@ -902,7 +902,7 @@ fr:
         none me: "Vous n'avez gagné aucun badge pour l'instant."
         none user: "%{username} n'a gagné aucun badge pour l'instant."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> a terminé <b>le jour %{day}</b> du plan de lecture : <b>%{plan_title}</b>"
         status: 
             on track: "À jour !"
             days ahead: 
@@ -1645,6 +1645,7 @@ fr:
                                 delete: "Supprimer"
                             LocationEdit: 
                                 prompt: "Entrer l'adresse de l'emplacement..."
+                                virtualPrompt: "Saisissez une ville pour définir le fuseau horaire..."
                                 country: "Pays"
                                 timezone: "Fuseau horaire"
                                 namePrompt: "Centre Évangélique Baptiste"
