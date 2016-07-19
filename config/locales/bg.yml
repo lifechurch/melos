@@ -1645,7 +1645,7 @@ bg:
                                 delete: "Изтриване"
                             LocationEdit: 
                                 prompt: "Въведете адрес на местоположението..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Въведете град, за да настроите времевата зона..."
                                 country: "Държава"
                                 timezone: "Часова зона"
                                 namePrompt: "Първа Баптистка..."

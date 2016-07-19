@@ -1645,7 +1645,7 @@
                                 delete: "Slett"
                             LocationEdit: 
                                 prompt: "Legg til adresse til lokasjonen..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Skriv inn en by for å velge en tidssone..."
                                 country: "Land"
                                 timezone: "Tidssone"
                                 namePrompt: "First Baptist East Campus"

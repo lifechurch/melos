@@ -902,7 +902,7 @@ sv:
         none me: "Du har inte fått några medaljer än."
         none user: "%{username} har inte fått några medaljer än."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> fullföljde <b>dag %{day}</b> av bibelplanen <b>%{plan_title}</b>"
         status: 
             on track: "Enligt plan!"
             days ahead: 

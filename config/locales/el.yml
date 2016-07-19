@@ -1645,7 +1645,7 @@ el:
                                 delete: "Διαγραφή"
                             LocationEdit: 
                                 prompt: "Εισαγωγή διεύθυνσης της τοποθεσίας..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Καταχώριση πόλης για ορισμό ζώνης ώρας...."
                                 country: "Χώρα"
                                 timezone: "Ζώνη ώρας"
                                 namePrompt: "Κατασκήνωση πρώτης Βαπτιστικής εκκλησίας"

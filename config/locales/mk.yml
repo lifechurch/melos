@@ -1645,7 +1645,7 @@ mk:
                                 delete: "Избриши"
                             LocationEdit: 
                                 prompt: "Внеси ја адресата на локацијата..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Внеси град за да поставиш временска зона..."
                                 country: "Земја"
                                 timezone: "Временска зона"
                                 namePrompt: "First Baptist East Campus"

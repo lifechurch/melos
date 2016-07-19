@@ -439,7 +439,7 @@ pt-PT:
             version: "Versão"
             view more: "Ver mais"
             time: "Tempo"
-            blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
+            blurb: "Subscrever o Versículo do dia Receba um email diário ou notificação push no seu dispositivo móvel."
         friendship: 
             now friends: "Você é agora amigo/a de"
         cta: 
@@ -506,7 +506,7 @@ pt-PT:
         limit notice: "Pode ter no máximo 150 amizades"
         limit description: "Limitar as suas amizades na App da Bíblia às pessoas que conhece bem cria um ambiente para conversas honestas e partilha de descobertas com amigos de confiança."
     friendships: 
-        blurb: "Focus your friendships around the Bible. Share what you want, when you want, within the safety of trusted relationships."
+        blurb: "Concentre as suas amizades em torno da Bíblia. Partilhe o que quer, quando quer, na segurança de relações de confiança."
         name required: "Para experimentar a Bíblia com os seus amigos, atualize o seu Perfil com o seu primeiro e último nome."
         find friends title: "Encontre amigos"
         search by name: "Procurar por nome"

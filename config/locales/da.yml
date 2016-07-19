@@ -1645,7 +1645,7 @@ da:
                                 delete: "Slet"
                             LocationEdit: 
                                 prompt: "Indtast Lokations adressen..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Indtast en by for at indstille tidszone..."
                                 country: "Land"
                                 timezone: "Tidszone"
                                 namePrompt: "First Baptist East Campus"

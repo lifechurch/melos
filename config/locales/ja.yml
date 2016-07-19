@@ -891,7 +891,7 @@ ja:
         none me: "まだバッジを獲得していません"
         none user: "%{username} さんはまだバッジを獲得していません"
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}さんが</b>読書プラン<b>「%{plan_title}」</b><b>の%{day}日目を</b>読み終えました。"
         status: 
             on track: "予定通り!"
             days ahead: 
@@ -1630,7 +1630,7 @@ ja:
                                 delete: "削除"
                             LocationEdit: 
                                 prompt: "ロケーションの住所を入力…"
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "都市名を入力してタイムゾーンを設定…"
                                 country: "国"
                                 timezone: "タイムゾーン"
                                 namePrompt: "ファーストバプテスト教会"

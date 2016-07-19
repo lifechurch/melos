@@ -902,7 +902,7 @@ ca:
         none me: "Encara no tens cap insígnia."
         none user: "El/la %{username} encara no té cap insígnia."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> ha complertat <b>el dia %{day}</b> del Pla de lectura: <b>%{plan_title}</b>"
         status: 
             on track: "Al dia!"
             days ahead: 
@@ -1645,7 +1645,7 @@ ca:
                                 delete: "Elimina"
                             LocationEdit: 
                                 prompt: "Escriu l'adreça de la ubicació…"
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Entra una ciutat per a establir una zona horària…"
                                 country: "País"
                                 timezone: "Zona horària"
                                 namePrompt: "Primer Campus Oriental Baptista"

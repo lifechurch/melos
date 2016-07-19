@@ -1705,7 +1705,7 @@ ar:
                                 delete: "مسح"
                             LocationEdit: 
                                 prompt: "ادخل عنوان الموقع..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "ادخل مدينه لضبط الوقت..."
                                 country: "البلد"
                                 timezone: "المنطقة الزمنية"
                                 namePrompt: "الكنيسة المعمدانية الأولى في الحرم الشرقي"

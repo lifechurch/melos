@@ -1645,7 +1645,7 @@ fr:
                                 delete: "Supprimer"
                             LocationEdit: 
                                 prompt: "Entrer l'adresse de l'emplacement..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Saisissez une ville pour définir le fuseau horaire..."
                                 country: "Pays"
                                 timezone: "Fuseau horaire"
                                 namePrompt: "Centre Évangélique Baptiste"
