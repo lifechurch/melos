@@ -15,8 +15,8 @@ class CarouselStandard extends Component {
       infinite: true,
       variableWidth: true,
       arrows: true,
-      prevArrow: <CarouselArrow dir='left' fill='gray' width={20} height={20}/>,
-      nextArrow: <CarouselArrow dir='right' fill='gray' width={20} height={20}/>
+      prevArrow: <CarouselArrow dir='left' fill='gray' width={25} height={25}/>,
+      nextArrow: <CarouselArrow dir='right' fill='gray' width={25} height={25}/>
     };
 
     // for banner carousels, we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image

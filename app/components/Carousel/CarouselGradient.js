@@ -13,8 +13,8 @@ class CarouselGradient extends Component {
       centerMode: false,
       infinite: true,
       variableWidth: true,
-      prevArrow: <CarouselArrow dir='left' width={25} height={25}/>,
-      nextArrow: <CarouselArrow dir='right' width={25} height={25}/>
+      prevArrow: <CarouselArrow dir='left' width={25} height={25} backColor='black'/>,
+      nextArrow: <CarouselArrow dir='right' width={25} height={25} backColor='black'/>
     };
 
     var slides = carouselContent.items.map( function(slide, index) {

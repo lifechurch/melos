@@ -12,8 +12,8 @@ class CarouselTitle extends Component {
     	centerMode: false,
       infinite: true,
       variableWidth: true,
-      prevArrow: <CarouselArrow dir='left' width={20} height={20} fill='gray'/>,
-      nextArrow: <CarouselArrow dir='right' width={20} height={20} fill='gray'/>
+      prevArrow: <CarouselArrow dir='left' width={20} height={20} fill='gray' backColor='whitesmoke'/>,
+      nextArrow: <CarouselArrow dir='right' width={20} height={20} fill='gray' backColor='whitesmoke'/>
     };
 
     var slides = carouselContent.items.map( function(slide, index) {
