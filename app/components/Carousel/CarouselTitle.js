@@ -13,7 +13,10 @@ class CarouselTitle extends Component {
       infinite: true,
       variableWidth: true,
       prevArrow: <CarouselArrow dir='left' width={20} height={20} fill='gray' backColor='whitesmoke'/>,
-      nextArrow: <CarouselArrow dir='right' width={20} height={20} fill='gray' backColor='whitesmoke'/>
+      nextArrow: <CarouselArrow dir='right' width={20} height={20} fill='gray' backColor='whitesmoke'/>,
+      responsive: [ {
+      	breakpoint: 524, settings: { arrows: false }
+      } ]
     };
 
     var slides = carouselContent.items.map( function(slide, index) {

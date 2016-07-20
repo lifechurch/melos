@@ -4,6 +4,19 @@
 @import "colors";
 @import "typography";
 
+
+
+/*@small: only screen and (max-width: 479px);
+@medium: only screen and (min-width: 768px) and (max-width: 959px);
+@large: only screen and (min-width: 960px);*/
+
+/*@small-range: (0em, 37.438em);
+@medium-range: (37.5em, 63.938em);
+@large-range: (64em, 90em);
+@xlarge-range: (90.063em, 120em);
+@xxlarge-range: (120.063em, 99999999em);*/
+
+
 .img-box {
 	position: relative;
 	width: 100%;
@@ -1727,17 +1740,60 @@ ul.language-selector li {
 }
 
 
+/*.responsive(@maxWidth; @rules) {
+    @media only screen and (max-width: @maxWidth) {
+        @rules();
+    }
+}*/
+
 .carousel-banner {
 	width: 100%;
+	margin-bottom: 20px;
 
-	.slick-arrow-right-container {
-		height: 320px;
-		width: 85px;
-	}
-	.slick-arrow-left-container {
-		height: 320px;
-		width: 85px;
-	}
+		@media only screen and (max-width: 699px) {
+
+			.slide, img {
+				width: 250px;
+				height: 160px;
+				margin-left: 5px;
+				margin-right: 5px;
+				border-radius: 8px;
+			}
+
+		}
+
+		@media only screen and (min-width: 700px) {
+
+			height: 360px;
+
+			.slide, img {
+				width: 600px;
+				height: 350px;
+				border-radius: 8px;
+				transform: scale(0.85);
+				transition: transform 0.5s ease-in-out;
+			}
+			.slick-active {
+				.slide, img {
+					transform: scale(1);
+				}
+			}
+
+			.slick-arrow-right-container {
+				height: 350px;
+				width: 85px;
+				transform: scale(0.85);
+				right: 0px;
+			}
+			.slick-arrow-left-container {
+				height: 350px;
+				width: 85px;
+				transform: scale(0.85);
+				left: 0px;
+			}
+		}
+
+
 
 	&:hover {
 		.slick-arrow-right-container, .slick-arrow-left-container {
@@ -1745,21 +1801,13 @@ ul.language-selector li {
 		}
 	};
 
-	.slide, img {
-		width: 560px;
-		height: 320px;
-		margin-left: 20px;
-		margin-right: 20px;
-		border-radius: 8px;
+	.slick-track {
+		display: inline-flex;
+		align-items: center;
 	}
-	.slick-active {
-		.slide, img {
-			/*transition: height 0.1s ease;*/
-			/*transform: scale(1.10);*/
-			width: 600px;
-			height: 340px;
-		}
-	}
+
+
+
 
 	/* rules for gradient title in a banner carousel is a little different */
 	.gradient-title-container {
@@ -1779,7 +1827,33 @@ ul.language-selector li {
 
 .carousel-gradient {
 	width: 100%;
+	/*height: 160px;*/
 
+
+		@media only screen and (max-width: 699px) {
+
+			.slide {
+				width: 240px;
+				height: 160px;
+				margin-right: 5px;
+				border-radius: 8px;
+			}
+
+		}
+		@media only screen and (min-width: 700px) {
+
+			.slide {
+				width: 300px;
+				height: 160px;
+				margin-right: 20px;
+				border-radius: 5px;
+			}
+
+		}
+
+/*		.slick-track {
+			display: inline-flex;
+		}*/
 
 		.slick-arrow-right-container {
 			height: 160px;
@@ -1797,13 +1871,6 @@ ul.language-selector li {
 	};
 
 
-	.slide {
-		width: 300px;
-		height: 160px;
-		margin-right: 20px;
-		border-radius: 5px;
-	}
-
 	.gradient-title-container {
 		border: 2px solid white;
 		color: white;
@@ -1812,6 +1879,9 @@ ul.language-selector li {
 	}
 
 }
+
+
+
 
 .carousel-title {
 	width: 100%;
@@ -1846,8 +1916,17 @@ ul.language-selector li {
 }
 
 .carousel-standard {
-	width: 100%;
+	width: 90%;
 
+
+	@media only screen and (max-width: 519px) {
+		margin-left: 15px;
+		width: 100%;
+	}
+	@media only screen and (min-width: 520px) {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
 
 	.slick-arrow-right-container {
 		height: 120px;
@@ -1881,7 +1960,7 @@ ul.language-selector li {
 
 
   .slide, img {
-  	border-radius: 3px;
+  	border-radius: 5px;
 		width: 210px;
 		height: 120px;
 		margin-right: 10px;

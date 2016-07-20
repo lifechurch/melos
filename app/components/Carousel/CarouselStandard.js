@@ -16,7 +16,10 @@ class CarouselStandard extends Component {
       variableWidth: true,
       arrows: true,
       prevArrow: <CarouselArrow dir='left' fill='gray' width={25} height={25}/>,
-      nextArrow: <CarouselArrow dir='right' fill='gray' width={25} height={25}/>
+      nextArrow: <CarouselArrow dir='right' fill='gray' width={25} height={25}/>,
+      responsive: [ {
+      	breakpoint: 524, settings: { arrows: false }
+      } ]
     };
 
     // for banner carousels, we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
@@ -39,12 +42,12 @@ class CarouselStandard extends Component {
     })
 
 
-    var classes = `carousel-standard row`
+    var classes = `carousel-standard`
 
 	  return (
 	    <div className={classes} >
 	    	<div className='header'><a href='#'>{`${carouselContent.title} >`}</a></div>
-	    	<div className='columns medium-12'>
+	    	<div className=''>
 		      <Slider {...settings}>
 		      	{slides}
 		      </Slider>

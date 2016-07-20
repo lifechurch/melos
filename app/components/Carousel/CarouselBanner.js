@@ -15,13 +15,11 @@ class CarouselBanner extends Component {
       infinite: true,
       variableWidth: true,
       initialSlide: 3,
-      arrows: true,
-      prevArrow: <CarouselArrow dir='left' width='30' height='30' backColor='black'/>,
-      nextArrow: <CarouselArrow dir='right' width='30' height='30' backColor='black'/>,
+			arrows: true,
+			prevArrow: <CarouselArrow dir='left' width='30' height='30' backColor='black'/>,
+			nextArrow: <CarouselArrow dir='right' width='30' height='30' backColor='black'/>,
       responsive: [ {
-      	breakpoint: 768, settings: { slidesToShow: 1 }
-      }, {
-      	breakpoint: 1024, settings: { slidesToShow: 3 }
+      	breakpoint: 524, settings: { arrows: false }
       } ]
     };
 

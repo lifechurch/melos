@@ -14,8 +14,11 @@ class CarouselGradient extends Component {
       infinite: true,
       variableWidth: true,
       prevArrow: <CarouselArrow dir='left' width={25} height={25} backColor='black'/>,
-      nextArrow: <CarouselArrow dir='right' width={25} height={25} backColor='black'/>
-    };
+      nextArrow: <CarouselArrow dir='right' width={25} height={25} backColor='black'/>,
+      responsive: [ {
+        breakpoint: 524, settings: { arrows: false }
+      } ]
+    }
 
     var slides = carouselContent.items.map( function(slide, index) {
 			return <div className='radius-3'><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title} key={`${carouselContent.id}-${index}`}/></div>
