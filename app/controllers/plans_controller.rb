@@ -83,6 +83,9 @@ class PlansController < ApplicationController
         return handle_404 if @plan.errors.present?
         return handle_404 unless (1..@plan.total_days).include?(params[:day].to_i)
 
+        # always defer to version_id of plan, if specified, when rendering sample view
+        params[:initial] = true
+
         if current_auth && current_user.subscribed_to?(@plan)
           redirect_to subscription_path(user_id: current_user.to_param,id: @plan.to_param) and return
         end
