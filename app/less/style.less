@@ -1748,10 +1748,12 @@ ul.language-selector li {
 
 .carousel-banner {
 	width: 100%;
-	margin-bottom: 20px;
 
 		@media only screen and (max-width: 699px) {
 
+			.slick-slider {
+				margin-bottom: 10px;
+			}
 			.slide, img {
 				width: 250px;
 				height: 160px;
@@ -1764,6 +1766,7 @@ ul.language-selector li {
 
 		@media only screen and (min-width: 700px) {
 
+			margin-bottom: 20px;
 			height: 360px;
 
 			.slide, img {
@@ -1780,16 +1783,20 @@ ul.language-selector li {
 			}
 
 			.slick-arrow-right-container {
-				height: 350px;
+				/* 85% of the slide height */
+				height: 297px;
 				width: 85px;
-				transform: scale(0.85);
 				right: 0px;
+				/* half of the difference between the full slide height and the scaled slide height */
+				top: 27px;
 			}
 			.slick-arrow-left-container {
-				height: 350px;
+				/* 85% of the slide height */
+				height: 297px;
 				width: 85px;
-				transform: scale(0.85);
 				left: 0px;
+				/* half of the difference between the full slide height and the scaled slide height */
+				top: 27px;
 			}
 		}
 
@@ -1835,7 +1842,7 @@ ul.language-selector li {
 			.slide {
 				width: 240px;
 				height: 160px;
-				margin-right: 5px;
+				margin-right: 8px;
 				border-radius: 8px;
 			}
 
@@ -1922,10 +1929,16 @@ ul.language-selector li {
 	@media only screen and (max-width: 519px) {
 		margin-left: 15px;
 		width: 100%;
+		.header {
+			padding-left: 0;
+		}
 	}
 	@media only screen and (min-width: 520px) {
 		margin-left: 5%;
 		margin-right: 5%;
+		.header {
+			padding-left: 1.07143rem;
+		}
 	}
 
 	.slick-arrow-right-container {
@@ -1943,7 +1956,6 @@ ul.language-selector li {
 	.header {
 		height: 20px;
 		margin-bottom: 15px;
-		padding-left: 1.07143rem;
 		text-align: left;
 		color: whitesmoke;
 	}
