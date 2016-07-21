@@ -137,6 +137,10 @@ class SubscriptionsController < ApplicationController
     if(params[:completed].present?)
       @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
       @subscription = subscription_for(params[:id]) || @subscription
+
+      # after changing refs, fall back to version_id of plan if specified
+      params[:initial] = true
+
       self.presenter = Presenter::Subscription.new( @subscription , params, self)
 
       if !@subscription.completed?
@@ -201,6 +205,9 @@ class SubscriptionsController < ApplicationController
       end
     }
 
+    # after changing refs, fall back to version_id of plan if specified
+    params[:initial] = true
+
     @subscription = subscription_for(params[:id]) || @subscription
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
 
@@ -246,6 +253,9 @@ class SubscriptionsController < ApplicationController
   end
 
   def setup_presenter
+    # after changing refs, fall back to version_id of plan if specified
+    params[:initial] = true
+
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
   end
 
@@ -255,6 +265,10 @@ class SubscriptionsController < ApplicationController
 
   def ref_not_found
     @title = @subscription.name
+
+    # after changing refs, fall back to version_id of plan if specified
+    params[:initial] = true
+
     self.presenter = Presenter::Subscription.new( @subscription , params, self)
     self.sidebar_presenter = Presenter::Sidebar::Subscription.new( @subscription , params, self)
     render 'plans/invalid_ref'
