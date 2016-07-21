@@ -34,7 +34,9 @@ class PlanDiscovery extends Component {
 			)
 		})
 
-
+		// document.ontouchmove = function(event){
+		//     event.preventDefault();
+		// }
 
 		return (
 			<div>
