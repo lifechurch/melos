@@ -1453,7 +1453,7 @@ hi:
                 signOut: "साइन आउट"
                 createAccount: "Create Account"
             HtmlEditor: 
-                text: "Text"
+                text: "पाठ "
                 bold: "Bold"
                 italic: "Italic"
         containers: 
@@ -1467,17 +1467,17 @@ hi:
             EventEdit: 
                 event: "कार्यक्रम "
             EventEditContentContainer: 
-                choose: "Choose some content to get started."
+                choose: "आरम्भ करने के लिए कुछ विषय चुनें !"
                 needHelp: "मदद चाहिए?"
-                title: "Event Content"
-                previous: "← Previous: Locations & Times"
-                next: "Next: Preview →"
+                title: "कार्यक्रम की विषय सूची "
+                previous: "पिछला - स्थान और समय !"
+                next: "अगला - पूर्वदर्शन !"
             EventEditDetails: 
                 title: "कार्यक्रम विवरण "
             EventEditLocationContainer: 
-                title: "Event Location"
-                previous: "← Previous: Details"
-                next: "Next: Add Content →"
+                title: "कार्यक्रम स्थान !"
+                previous: "पिछला - सूचना "
+                next: "अगला - विषय जोडें "
             EventEditPreview: 
                 title: "कार्यक्रम का पूर्वदर्शन"
                 previous: "← Previous: Content"
@@ -1535,12 +1535,12 @@ hi:
                                 doneReordering: "Done Reordering"
                             ContentHeader: 
                                 text: "Text"
-                                reference: "Bible Reference"
+                                reference: "बाइबिल सन्दर्भ"
                                 plan: "योजनाऍ"
                                 image: "छवि"
-                                link: "External Link"
-                                giving: "Giving Link"
-                                announcement: "Announcement"
+                                link: "बाह्य कड़ी "
+                                giving: "कड़ी दी जा रही है "
+                                announcement: "घोषणा"
                             ContentHelpModal: 
                                 types: "Content Types"
                                 learn: "Learn how to make <br>a great Event"
@@ -1609,7 +1609,7 @@ hi:
                             DetailsEdit: 
                                 errors: 
                                     wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
-                                    wrongType: "Invalid filetype. Must be JPG."
+                                    wrongType: "अमान्य फाइल प्रकार   - JPG होना अनिवार्य "
                                 changeImage: "चित्र बदलें"
                                 removeImage: "चित्र हटाये"
                                 prompt: "Drag and Drop an Image"
@@ -1619,7 +1619,7 @@ hi:
                                 eventName: "कार्यक्रम का नाम "
                                 org: "चर्च या संस्था का नाम "
                                 desc: "कार्यक्रम का विवरण "
-                                next: "Next: Add Location & Times →"
+                                next: "आगे - स्थान और समय जोडें !"
                                 blank: "%{field} cannot be blank."
                     location: 
                         components: 
@@ -1629,9 +1629,9 @@ hi:
                                 edit: "स्थान बदले"
                                 delete: "स्थान को मिटायें"
                             LocationAddButtons: 
-                                addPhysical: "Add a Physical Location"
-                                promptPhysical: "You can add multiple locations."
-                                addVirtual: "Add Virtual Location"
+                                addPhysical: "एक प्राकृतिक स्थान जोडें !"
+                                promptPhysical: "आप एक से अधिक स्थान जोड़ सकते हैं ! "
+                                addVirtual: "आभासी स्थान जोडें !"
                                 churchOnline: "Did you know? You can launch an online ministry for free using the <a className='button-caption' href='%{url}'>Church Online Platform</a>."
                             LocationAddTime: 
                                 minutes: "मिनट"
@@ -1648,9 +1648,9 @@ hi:
                                 virtualPrompt: "Enter a city to set a timezone..."
                                 country: "देश"
                                 timezone: "समय क्षेत्र"
-                                namePrompt: "First Baptist East Campus"
+                                namePrompt: "पहला बैप्टिस्ट पूर्वी परिसर "
                                 name: "स्थान का नाम"
-                                nameOptional: "Optional: Useful if adding multiple locations"
+                                nameOptional: "वैकल्पिक - एक से अधिक स्थान जोड़ने में उपयोगी "
                                 addAnother: "दूसरा कोई समय जोड़ें"
                                 cancel: "रद्द करें"
                                 save: "इस स्थान को सुरक्षित करे "
@@ -1668,7 +1668,7 @@ hi:
                                 hour: "घंटा"
                                 hours: "घंटे"
                                 update: "अपडेट"
-                                shiftButton: "Shift all dates and times at once"
+                                shiftButton: "सारी तिथियाँ और समय एक साथ स्थानांतरित करें !"
                             UnpublishModal: 
                                 cancel: "रद्द करें"
                                 title: "Unpublish to Make Changes"

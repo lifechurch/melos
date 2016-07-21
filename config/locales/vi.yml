@@ -891,7 +891,7 @@ vi:
         none me: "Bạn chưa có huy hiệu nào."
         none user: "%{username} chưa có huy hiệu nào."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username}</b> đã hoàn tất <b>ngày %{day}</b> của kế hoạch Kinh Thánh <b>&quot;%{plan_title}&quot;</b>"
         status: 
             on track: "Đọc đủ ngày!"
             days ahead: 
@@ -1630,7 +1630,7 @@ vi:
                                 delete: "Xóa"
                             LocationEdit: 
                                 prompt: "Nhập địa chỉ..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Nhập tên thành phố để cài múi giờ..."
                                 country: "Quốc gia"
                                 timezone: "Múi giờ"
                                 namePrompt: "Tên hội thánh"
