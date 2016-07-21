@@ -17,6 +17,8 @@
   %meta{property: "og:url",         content: @meta_url }
   %meta{property: "og:description", content: @vodContent }
   %meta{property: "og:image",       content: @vod_img_url }
+  %meta{property: "og:image:width",       content: '640' }
+  %meta{property: "og:image:height",       content: '640' }
 
 - content_for :twitter_meta do
   %meta{name: "twitter:card",         content: "summary_large_image"}
