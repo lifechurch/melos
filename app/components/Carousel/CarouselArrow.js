@@ -12,7 +12,7 @@ class CarouselArrow extends Component {
 
     		var style = null
     		// if background color was passed, set it, else no background (standard carousel)
-    		backColor != null ? style = {"display": 'flex', "backgroundImage": `linear-gradient(${rotation + 90}deg, rgba(0,0,0,0.00) 0%, ${backColor} 100%)`} : style = {"display": 'flex'}
+    		backColor != null ? style = {"display": 'flex', "backgroundImage": `linear-gradient(${rotation + 90}deg, rgba(0,0,0,0.00) 0%, ${backColor} 100%)`, "onmouseover": ''} : style = {"display": 'flex', "onmouseover": ''}
 
     		var classes = `vertical-center slick-arrow-${dir}-container`
 

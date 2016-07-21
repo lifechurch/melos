@@ -1696,6 +1696,15 @@ ul.language-selector li {
 
 /* PLANS DISCOVERY/CAROUSELS */
 
+
+@media only screen and (max-width: 699px) {
+	body,
+	html {
+	  position: fixed;
+	}
+}
+
+
 .discover-buttons {
 	margin-bottom: 50px;
 }
@@ -1771,6 +1780,7 @@ ul.language-selector li {
 	opacity: 0;
 	right: 0px;
 	justify-content: flex-end;
+
 }
 .slick-arrow-left-container {
 	display: flex;
@@ -1779,6 +1789,10 @@ ul.language-selector li {
 	opacity: 0;
 	left: 0px;
 	justify-content: flex-start;
+	cursor: pointer; cursor: hand;
+}
+.slick-arrow-right-container:hover, .slick-arrow-left-container:hover {
+	cursor: pointer;
 }
 
 
@@ -2025,6 +2039,7 @@ ul.language-selector li {
 	}
 
 	.header:hover	{
+		cursor: pointer;
 		.title {
 			color: #1e89a1;
 		}

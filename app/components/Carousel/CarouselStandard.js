@@ -47,7 +47,7 @@ class CarouselStandard extends Component {
 
 	  return (
 	    <div className={classes} >
-	    	<a className='header' href='#'>
+	    	<a className='header' href='#' onmouseover=''>
 	    		<div className='title'>{`${carouselContent.title}`}</div>
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>

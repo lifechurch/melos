@@ -15,6 +15,7 @@ class CarouselGradient extends Component {
       variableWidth: true,
       swipe: true,
       swipeToSlide: true,
+      touchMove: true,
       prevArrow: <CarouselArrow dir='left' width={25} height={25} backColor='black'/>,
       nextArrow: <CarouselArrow dir='right' width={25} height={25} backColor='black'/>,
       responsive: [ {
