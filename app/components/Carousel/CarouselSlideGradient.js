@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 class CarouselSlideGradient extends Component {
     render() {
         const { gradient, title, id } = this.props
-        var style = {}
+        var style = null
 
         if (gradient) {
             // configure gradient styling if the carousel has a gradient associated with it

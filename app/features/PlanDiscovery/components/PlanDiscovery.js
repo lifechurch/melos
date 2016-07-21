@@ -34,10 +34,19 @@ class PlanDiscovery extends Component {
 			)
 		})
 
-		console.log(carousels)
+
+
 		return (
 			<div>
-				{carousels}
+				<div className='row horizontal-center discover-buttons'>
+					<ul className='button-group primary-toggle'>
+						<li><a className='solid-button green' href='#'>Discover</a></li>
+						<li className='inactive'><a className='solid-button green' href='#'>My Plans</a></li>
+					</ul>
+				</div>
+				<div>
+					{carousels}
+				</div>
 			</div>
 		)
 	}

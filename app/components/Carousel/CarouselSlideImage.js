@@ -7,7 +7,7 @@ class CarouselSlideImage extends Component {
         var titleDiv = null
 
         if (title) {
-            titleDiv = <div className='plan-title'>{title}</div>
+            titleDiv = <div className='slide-title'>{title}</div>
         }
 
         var classes = ''

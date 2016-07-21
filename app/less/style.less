@@ -1691,7 +1691,49 @@ ul.language-selector li {
 
 
 
+
+
+
 /* PLANS DISCOVERY/CAROUSELS */
+
+.discover-buttons {
+	margin-bottom: 50px;
+}
+
+.button-group.primary-toggle {
+  li {
+    margin: 0 -3px;
+    a {
+      padding: 8px 40px;
+      border: solid 1px #4EAE50;
+
+/*      @media #{$small-only} {
+        padding: 8px 30px;
+      }*/
+    }
+  }
+
+  li:first-child {
+    a.solid-button.green {
+      border-radius: 5px 0 0 5px;
+    }
+  }
+
+  li:last-child {
+    a.solid-button.green {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  li.inactive {
+    a.solid-button.green {
+      background-color: white !important;
+      color: #4EAE50 !important;
+    }
+  }
+}
+
+
 
 .radius-3 {
 	border-radius: 3px;
@@ -1740,11 +1782,6 @@ ul.language-selector li {
 }
 
 
-/*.responsive(@maxWidth; @rules) {
-    @media only screen and (max-width: @maxWidth) {
-        @rules();
-    }
-}*/
 
 .carousel-banner {
 	width: 100%;
@@ -1858,9 +1895,6 @@ ul.language-selector li {
 
 		}
 
-/*		.slick-track {
-			display: inline-flex;
-		}*/
 
 		.slick-arrow-right-container {
 			height: 160px;
@@ -1925,57 +1959,97 @@ ul.language-selector li {
 .carousel-standard {
 	width: 90%;
 
-
 	@media only screen and (max-width: 519px) {
 		margin-left: 15px;
 		width: 100%;
+		.see-all {
+			justify-content: flex-end;
+			align-items: center;
+			text-align: right;
+			font-size: 11px;
+			flex-grow: 1;
+			color: #4EAE50;
+		}
 		.header {
-			padding-left: 0;
+			.slick-arrow-right-container {
+				justify-content: flex-end;
+				margin-left: 10px;
+			}
 		}
 	}
 	@media only screen and (min-width: 520px) {
+		margin-top: 100px;
 		margin-left: 5%;
 		margin-right: 5%;
-		.header {
-			padding-left: 1.07143rem;
+		.see-all {
+			display: none;
 		}
-	}
+		.header {
+			.slick-arrow-right-container {
+				height: 100%;
+				justify-content: flex-start;
+			}
+		}
 
-	.slick-arrow-right-container {
-		height: 120px;
-		right: -40px;
-		opacity: 0.8;
-	}
-	.slick-arrow-left-container {
-		height: 120px;
-		left: -40px;
-		opacity: 0.8;
+		.slick-arrow-right-container {
+			height: 120px;
+			right: -40px;
+			opacity: 0.8;
+		}
+		.slick-arrow-left-container {
+			height: 120px;
+			left: -40px;
+			opacity: 0.8;
+		}
 	}
 
 
 	.header {
+		width: 100%;
+		display: flex;
 		height: 20px;
-		margin-bottom: 15px;
-		text-align: left;
-		color: whitesmoke;
+		margin-bottom: 18px;
+		padding-right: 20px;
+		padding-left: 2px;
+
+		.slick-arrow-right-container {
+			opacity: 1;
+			position: relative;
+		}
+
 	}
 
-	.plan-title {
+	.title {
+		color: rgba(0,0,0,0.33);
+		font-size: 20px;
+	}
+
+	.header:hover	{
+		.title {
+			color: #1e89a1;
+		}
+	}
+
+	.slide-title {
 		/* These are technically the same, but use both */
-		width: 200px;
+		width: 225px;
 		overflow-wrap: break-word;
 		word-wrap: break-word;
 		white-space: normal;
 		text-align: left;
-		font-size: 13px;
+		font-size: 14px;
+		line-height: 16px;
+		margin-top: 15px;
+		padding-left: 2px;
+		color: #515151;
 	}
 
 
   .slide, img {
-  	border-radius: 5px;
-		width: 210px;
-		height: 120px;
-		margin-right: 10px;
+  	border-radius: 4px;
+		width: 225px;
+		height: 125px;
+		margin-right: 13px;
 	}
 }
 

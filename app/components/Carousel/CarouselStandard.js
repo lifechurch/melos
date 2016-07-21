@@ -4,6 +4,7 @@ import CarouselSlideGradient from './CarouselSlideGradient'
 import CarouselSlideImage from './CarouselSlideImage'
 import Image from './Image'
 import CarouselArrow from './CarouselArrow'
+import { FormattedMessage } from 'react-intl'
 
 
 class CarouselStandard extends Component {
@@ -15,8 +16,8 @@ class CarouselStandard extends Component {
       infinite: true,
       variableWidth: true,
       arrows: true,
-      prevArrow: <CarouselArrow dir='left' fill='gray' width={25} height={25}/>,
-      nextArrow: <CarouselArrow dir='right' fill='gray' width={25} height={25}/>,
+      prevArrow: <CarouselArrow dir='left' fill='gray' width={19} height={19}/>,
+      nextArrow: <CarouselArrow dir='right' fill='gray' width={19} height={19}/>,
       responsive: [ {
       	breakpoint: 524, settings: { arrows: false }
       } ]
@@ -46,12 +47,14 @@ class CarouselStandard extends Component {
 
 	  return (
 	    <div className={classes} >
-	    	<div className='header'><a href='#'>{`${carouselContent.title} >`}</a></div>
-	    	<div className=''>
-		      <Slider {...settings}>
-		      	{slides}
-		      </Slider>
-	      </div>
+	    	<a className='header' href='#'>
+	    		<div className='title'>{`${carouselContent.title}`}</div>
+	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
+	    		<CarouselArrow width={19} height={19} fill='gray'/>
+	    	</a>
+	      <Slider {...settings}>
+	      	{slides}
+	      </Slider>
 	    </div>
 	  );
 	}
