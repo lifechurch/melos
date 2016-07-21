@@ -181,7 +181,7 @@ th:
             one hope: "One Hope: ผู้ออกแบบเนื้อหาพระคัมภีร์สำหรับเด็ก"
         links: 
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
-            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=th"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "ตอนนี้"
     select dropdown: "--เลือก--"
@@ -1630,7 +1630,7 @@ th:
                                 delete: "ลบ"
                             LocationEdit: 
                                 prompt: "กรอกที่อยู่ของสถานที่..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "ใส่ชื่อเมืองเพื่อกำหนดเขตเวลา ..."
                                 country: "ประเทศ"
                                 timezone: "เขตเวลา"
                                 namePrompt: "ค่ายบัพติศมาแรกฝั่งตะวันออก"

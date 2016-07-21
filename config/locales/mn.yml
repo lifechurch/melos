@@ -902,7 +902,7 @@ mn:
         none me: "Та одоогоор ямар ч тэмдэгт цуглуулаагүй байна."
         none user: "%{username}  одоогоор ямар ч тэмдэгт аваагүй байна."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username} дараах Библи Уншлагын төлөвлөгөөний %{day} өдрийг уншиж дуусгасан: %{plan_title}</b> дуусгасан <b>Өдөр</b> Библи уншлагын төлөвлөгөөний <b>%{plan_title}</b>"
         status: 
             on track: "Хоцроогүй!"
             days ahead: 
@@ -1645,7 +1645,7 @@ mn:
                                 delete: "Устгах"
                             LocationEdit: 
                                 prompt: "Хаягаа Оруул..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Цагийн бүсийг тохируулахын тулд хотын нэрийг оруул..."
                                 country: "Улс"
                                 timezone: "Цагийн бүс"
                                 namePrompt: "Нэгдүгээр Баптист Зүүн Кампус"

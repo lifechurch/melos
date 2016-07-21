@@ -1645,7 +1645,7 @@ hu:
                                 delete: "Törlés"
                             LocationEdit: 
                                 prompt: "Írd be a helyszín címét..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Adj meg egy várost az időzóna beállításához..."
                                 country: "Ország"
                                 timezone: "Időzóna"
                                 namePrompt: "Első Baptista Keleti Campus"
