@@ -13,30 +13,12 @@ class PlanDiscovery extends Component {
 	render() {
 		const { discover } = this.props
 		const carousels = discover.items.map((c,i) => {
-			// let items = null
-
-			// if (Array.isArray(c.items)) {
-			// 	items = c.items.map((item, index) => {
-			// 		return (<p key={item.id}>{item.title}</p>)
-			// 	})
-			// }
-
 			let nextPageLink = (c.next_page === null) ? null : (<a onClick={this.getCollectionsPage.bind(this, [ c.id ], c.next_page)}>Next Page</a>)
 
-			console.log(`returning carousel${i}`)
 			return (
 				<Carousel carouselContent={c} carouselType={c.display} key={i} imageConfig={discover.configuration.images}/>
-				// <div key={i} className={c.slug}>
-					// <h3>{c.title}</h3>
-					// {items}
-					// {nextPageLink}
-				// </div>
 			)
 		})
-
-		// document.ontouchmove = function(event){
-		//     event.preventDefault();
-		// }
 
 		return (
 			<div>
