@@ -12,6 +12,7 @@ class CarouselTitle extends Component {
     	centerMode: false,
       infinite: true,
       variableWidth: true,
+      slidesToScroll: 3,
       prevArrow: <CarouselArrow dir='left' width={20} height={20} fill='gray' backColor='whitesmoke'/>,
       nextArrow: <CarouselArrow dir='right' width={20} height={20} fill='gray' backColor='whitesmoke'/>,
       responsive: [ {

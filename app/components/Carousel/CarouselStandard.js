@@ -16,6 +16,7 @@ class CarouselStandard extends Component {
       infinite: true,
       variableWidth: true,
       arrows: true,
+      slidesToScroll: 2,
       prevArrow: <CarouselArrow dir='left' fill='gray' width={19} height={19}/>,
       nextArrow: <CarouselArrow dir='right' fill='gray' width={19} height={19}/>,
       responsive: [ {
@@ -47,7 +48,7 @@ class CarouselStandard extends Component {
 
 	  return (
 	    <div className={classes} >
-	    	<a className='header' href='#' onmouseover=''>
+	    	<a className='header' href='#' onmouseover="">
 	    		<div className='title'>{`${carouselContent.title}`}</div>
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>

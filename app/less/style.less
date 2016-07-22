@@ -1781,7 +1781,6 @@ ul.language-selector li {
 	opacity: 0;
 	right: 0px;
 	justify-content: flex-end;
-
 }
 .slick-arrow-left-container {
 	display: flex;
@@ -1790,7 +1789,6 @@ ul.language-selector li {
 	opacity: 0;
 	left: 0px;
 	justify-content: flex-start;
-	cursor: pointer; cursor: hand;
 }
 .slick-arrow-right-container:hover, .slick-arrow-left-container:hover {
 	cursor: pointer;
@@ -1807,8 +1805,8 @@ ul.language-selector li {
 				margin-bottom: 10px;
 			}
 			.slide, img {
-				width: 250px;
-				height: 160px;
+				width: 280px;
+				height: 165px;
 				margin-left: 5px;
 				margin-right: 5px;
 				border-radius: 8px;
@@ -1890,21 +1888,21 @@ ul.language-selector li {
 
 
 		@media only screen and (max-width: 699px) {
-
 			.slide {
-				width: 240px;
-				height: 160px;
-				margin-right: 8px;
-				border-radius: 8px;
+				width: 225px;
+				height: 125px;
+				margin-left: 15px;
+				border-radius: 4px;
 			}
 
 		}
 		@media only screen and (min-width: 700px) {
 
 			.slide {
-				width: 300px;
+				width: 270px;
 				height: 160px;
-				margin-right: 20px;
+				margin-left: 60px;
+				margin-right: -40px;
 				border-radius: 5px;
 			}
 
@@ -1957,10 +1955,19 @@ ul.language-selector li {
 		}
 	};
 
-
-	.slide {
-		margin-right: 3px;
+	@media only screen and (max-width: 699px) {
+		.slide {
+			margin-left: 15px;
+			margin-right: -5px;
+		}
 	}
+	@media only screen and (min-width: 700px) {
+		.slide {
+			margin-left: 20px;
+			margin-right: -15px;
+		}
+	}
+
 
 	.title-container {
 		border: 2px solid whitesmoke;
@@ -1993,7 +2000,7 @@ ul.language-selector li {
 		}
 	}
 	@media only screen and (min-width: 520px) {
-		margin-top: 100px;
+		margin-top: 80px;
 		margin-left: 5%;
 		margin-right: 5%;
 		.see-all {
@@ -2047,7 +2054,6 @@ ul.language-selector li {
 	}
 
 	.slide-title {
-		/* These are technically the same, but use both */
 		width: 225px;
 		overflow-wrap: break-word;
 		word-wrap: break-word;
