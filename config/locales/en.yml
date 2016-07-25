@@ -1411,6 +1411,10 @@ en:
       just now:                                 "just now"
     verses selected:                            "verses selected"
   EventsAdmin:
+    plans:
+      see all:                                  "See All"
+      discover:                                 "Discover"
+      my_plans:                                 "My Plans"
     components:
       ErrorMessage:
         genericError:                           "An error occurred"

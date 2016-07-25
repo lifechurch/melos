@@ -891,6 +891,7 @@ zh-CN:
         none me: "您还没有获得任何徽章。"
         none user: "%{username} 还没有获得任何徽章。"
     plans: 
+        see all: "查看全部"
         day_completed: "<b>%{username}</b>已经完成读经计划：<b>%{plan_title} </b>中的<b>第%{day}天</b>。"
         status: 
             on track: "如期进展！"
@@ -1393,6 +1394,10 @@ zh-CN:
             just now: "刚才"
         verses selected: "选中的经文"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "发生了错误"

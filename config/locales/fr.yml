@@ -902,6 +902,7 @@ fr:
         none me: "Vous n'avez gagné aucun badge pour l'instant."
         none user: "%{username} n'a gagné aucun badge pour l'instant."
     plans: 
+        see all: "Tout Voir"
         day_completed: "<b>%{username}</b> a terminé <b>le jour %{day}</b> du plan de lecture : <b>%{plan_title}</b>"
         status: 
             on track: "À jour !"
@@ -1408,6 +1409,10 @@ fr:
             just now: "à l'instant"
         verses selected: "versets sélectionnés"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Une erreur s'est produite"

@@ -891,6 +891,7 @@ ms:
         none me: "Anda belum memperolehi sebarang lencana."
         none user: "%{username} belum memperolehi sebarang lencana."
     plans: 
+        see all: "Lihat semua"
         day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Dalam Landasan!"
@@ -1393,6 +1394,10 @@ ms:
             just now: "baru sahaja"
         verses selected: "ayat-ayat yang dipilih"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Kesilapan telah berlaku"

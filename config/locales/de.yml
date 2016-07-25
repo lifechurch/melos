@@ -902,6 +902,7 @@ de:
         none me: "Du hast bisher keine Abzeichen bekommen."
         none user: "%{username} hat bisher keine Abzeichen bekommen."
     plans: 
+        see all: "Alle anzeigen"
         day_completed: "<b>%{username} hat Tag</b><b> %{day} </b><b>des Leseplanes: %{plan_title}abgeschlossen</b>"
         status: 
             on track: "Prima!"
@@ -1408,6 +1409,10 @@ de:
             just now: "gerade eben"
         verses selected: " Bibelverse ausgewählt"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Ein Fehler ist aufgetreten"

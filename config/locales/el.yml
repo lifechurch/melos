@@ -902,6 +902,7 @@ el:
         none me: "Δεν έχετε ακόμα κερδίσει διακρίσεις."
         none user: "Ο/Η %{username} δεν έχει κερδίσει κάποιο διακριτικό ακόμη."
     plans: 
+        see all: "Εμφάνιση όλων"
         day_completed: "<b>Ο/Η %{username} </b> ολοκλήρωσε <b>την ημέρα %{day}</b> του σχεδίου μελέτης: <b>%{plan_title}</b>"
         status: 
             on track: "Σε καλό δρόμο!"
@@ -1408,6 +1409,10 @@ el:
             just now: "μόλις τώρα"
         verses selected: "επιλεγμένα εδάφια"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Προέκυψε λάθος"

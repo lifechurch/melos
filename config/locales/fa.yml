@@ -891,6 +891,7 @@ fa:
         none me: "شما هنوز نشانی دریافت نکرده‌اید"
         none user: "%{username} هنوز نشانی دریافت نکرده است."
     plans: 
+        see all: "همه را ببینید"
         day_completed: "<b>%{username}</b><b>%{day} روز</b> برنامهٔ مطالعه <b>%{plan_title}</b> را تکمیل کرده است "
         status: 
             on track: "مطالعه طبق برنامه است!"
@@ -1393,6 +1394,10 @@ fa:
             just now: "فقط الآن"
         verses selected: "آیات انتخاب شده"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "خطایی رخ داد "

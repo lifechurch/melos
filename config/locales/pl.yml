@@ -924,6 +924,7 @@ pl:
         none me: "Nie zdobyłeś jeszcze żadnych odznaczeń."
         none user: "%{username} nie zdobył jeszcze żadnych odznaczeń."
     plans: 
+        see all: "Zobacz wszystko"
         day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
         status: 
             on track: "Jesteś na bieżąco!"
@@ -1438,6 +1439,10 @@ pl:
             just now: "właśnie teraz"
         verses selected: "fragmenty wybrane"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Wystąpił błąd"

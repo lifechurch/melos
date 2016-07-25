@@ -891,6 +891,7 @@ vi:
         none me: "Bạn chưa có huy hiệu nào."
         none user: "%{username} chưa có huy hiệu nào."
     plans: 
+        see all: "Xem tất cả"
         day_completed: "<b>%{username}</b> đã hoàn tất <b>ngày %{day}</b> của kế hoạch Kinh Thánh <b>&quot;%{plan_title}&quot;</b>"
         status: 
             on track: "Đọc đủ ngày!"
@@ -1393,6 +1394,10 @@ vi:
             just now: "mới đây"
         verses selected: "Đã chọn câu"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Báo lỗi!"
