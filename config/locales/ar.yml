@@ -946,6 +946,7 @@ ar:
         none me: "لم تحصل على أي شارات بعد."
         none user: "%{username} لم يحصل على أي شارات بعد."
     plans: 
+        see all: "عرض كل المحتوي"
         day_completed: "<b>%{username}</b> اكمل <b>%{day} يوم</b> من خطه القراءه: <b>%{plan_title}</b>"
         status: 
             on track: "ملتزم بالخطه!"
@@ -1468,6 +1469,10 @@ ar:
             just now: "الآن"
         verses selected: "الآيات المختارة"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "خطأ"

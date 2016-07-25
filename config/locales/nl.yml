@@ -902,6 +902,7 @@ nl:
         none me: "Je hebt nog geen medaille verdiend."
         none user: "%{username} heeft nog geen medaille verdiend."
     plans: 
+        see all: "Bekijk alles"
         day_completed: "<b>%{username}</b> voltooide <b>dag %{day}</b> van het Leesplan: <b>%{plan_title}</b>"
         status: 
             on track: "Op schema!"
@@ -1408,6 +1409,10 @@ nl:
             just now: "Zojuist"
         verses selected: "geselecteerde verzen"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Er is een fout opgetreden"

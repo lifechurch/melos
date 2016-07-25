@@ -902,6 +902,7 @@ it:
         none me: "Non hai ancora guadagnato nessun distintivo."
         none user: "%{username} non ha ancora guadagnato nessun distintivo."
     plans: 
+        see all: "Vedi Tutti"
         day_completed: "<b>%{username}</b> ha completato <b>Giorno %{day}</b> del Piano di Lettura: <b>%{plan_title}</b>"
         status: 
             on track: "Secondo la Tabella di Marcia!"
@@ -1408,6 +1409,10 @@ it:
             just now: "proprio adesso"
         verses selected: "versetti selezionati"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "C'è stato un errore"

@@ -913,6 +913,7 @@ ro:
         none me: "Încă nu ai primit nici o insignă."
         none user: "%{username} nu a primit nici o insignă încă."
     plans: 
+        see all: "Vezi toate"
         day_completed: "<b>%{username}</b> a completat <b> ziua %{day}</b> a planului: <b>%{plan_title}</b>"
         status: 
             on track: "La zi!"
@@ -1423,6 +1424,10 @@ ro:
             just now: "chiar acum"
         verses selected: "versete selectate"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "A apărut o eroare"

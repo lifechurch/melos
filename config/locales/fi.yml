@@ -902,6 +902,7 @@ fi:
         none me: "Et ole vielä ansainnut yhtään ansiomerkkiä."
         none user: "%{username} ei ole ansainnut yhtään ansiomerkkiä."
     plans: 
+        see all: "Näytä kaikki"
         day_completed: "<b>%{username}</b> suoritti päivän <b>%{day}</b> Raamatun lukusuunnitelmasta: <b>%{plan_title}</b>"
         status: 
             on track: "Aikataulussa!"
@@ -1408,6 +1409,10 @@ fi:
             just now: "juuri nyt"
         verses selected: "jaetta valittu"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Tapahtui virhe"

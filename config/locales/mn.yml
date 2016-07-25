@@ -902,6 +902,7 @@ mn:
         none me: "Та одоогоор ямар ч тэмдэгт цуглуулаагүй байна."
         none user: "%{username}  одоогоор ямар ч тэмдэгт аваагүй байна."
     plans: 
+        see all: "Бүгдийг Харах"
         day_completed: "<b>%{username} дараах Библи Уншлагын төлөвлөгөөний %{day} өдрийг уншиж дуусгасан: %{plan_title}</b> дуусгасан <b>Өдөр</b> Библи уншлагын төлөвлөгөөний <b>%{plan_title}</b>"
         status: 
             on track: "Хоцроогүй!"
@@ -1408,6 +1409,10 @@ mn:
             just now: "дѳнгѳж сая"
         verses selected: "ишлэлүүдийг сонгосон"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Алдаа гарсан"
