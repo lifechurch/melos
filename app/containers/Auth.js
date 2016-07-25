@@ -76,6 +76,7 @@ class Auth extends Component {
 
 						<a className='solid-button green' onClick={::this.handleLogin}><FormattedMessage id="containers.Auth.signIn" /></a>
 						<a className='forgot-password' href="https://www.bible.com/settings/forgot_password"><FormattedMessage id="containers.Auth.forgotPassword" /></a>
+
 					</div>
 				</div>
 			</div>

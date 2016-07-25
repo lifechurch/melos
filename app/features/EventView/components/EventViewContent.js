@@ -13,6 +13,7 @@ import EventViewContentReference from './EventViewContentReference'
 import EventViewContentAnnouncement from './EventViewContentAnnouncement'
 import { FormattedHTMLMessage } from 'react-intl'
 
+
 const AUTO_SAVE_TIMEOUT = 3000
 
 class EventViewContent extends Component {
@@ -43,6 +44,9 @@ class EventViewContent extends Component {
 	render() {
 		const { dispatch, auth, reference, content, index, intl } = this.props
 		var contentItem, meta_links, notes
+
+
+
 
 		switch (content.type) {
 				case 'text':

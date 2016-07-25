@@ -4,6 +4,19 @@
 @import "colors";
 @import "typography";
 
+
+
+/*@small: only screen and (max-width: 479px);
+@medium: only screen and (min-width: 768px) and (max-width: 959px);
+@large: only screen and (min-width: 960px);*/
+
+/*@small-range: (0em, 37.438em);
+@medium-range: (37.5em, 63.938em);
+@large-range: (64em, 90em);
+@xlarge-range: (90.063em, 120em);
+@xxlarge-range: (120.063em, 99999999em);*/
+
+
 .img-box {
 	position: relative;
 	width: 100%;
@@ -1675,3 +1688,380 @@ ul.language-selector li {
 		opacity: 0.6;
 	}
 }
+
+
+
+
+
+
+/*************************************************** PLANS DISCOVERY/CAROUSELS ***************************************************/
+
+/* for dumb elastic scrolling on mobile */
+@media only screen and (max-width: 699px) {
+	html,
+	body {
+	  height: 100%;
+	  width: 100%;
+	  overflow: auto;
+	}
+}
+
+.discover-buttons {
+	margin-bottom: 40px;
+}
+
+.button-group.primary-toggle {
+  li {
+    margin: 0 -3px;
+    a {
+      padding: 8px 40px;
+      border: solid 1px #4EAE50;
+
+/*      @media #{$small-only} {
+        padding: 8px 30px;
+      }*/
+    }
+  }
+
+  li:first-child {
+    a.solid-button.green {
+      border-radius: 5px 0 0 5px;
+    }
+  }
+
+  li:last-child {
+    a.solid-button.green {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  li.inactive {
+    a.solid-button.green {
+      background-color: white !important;
+      color: #4EAE50 !important;
+    }
+  }
+}
+
+
+
+.radius-3 {
+	border-radius: 3px;
+}
+.radius-5 {
+	border-radius: 5px;
+}
+.vertical-center {
+	display: flex;
+	align-items: center;
+}
+.horizontal-center {
+	display: flex;
+	justify-content: center;
+}
+
+.title-padding {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+	/* we want shadowed containers on all carousels except for standard */
+.slick-arrow-right-container {
+	display: flex;
+	position: absolute;
+	top: 0px;
+	opacity: 0;
+	right: 0px;
+	justify-content: flex-end;
+}
+.slick-arrow-left-container {
+	display: flex;
+	position: absolute;
+	top: 0px;
+	opacity: 0;
+	left: 0px;
+	justify-content: flex-start;
+}
+.slick-arrow-right-container:hover, .slick-arrow-left-container:hover {
+	cursor: pointer;
+}
+
+
+
+.carousel-banner {
+	width: 100%;
+
+		@media only screen and (max-width: 699px) {
+
+			.slick-slider {
+				margin-bottom: 15px;
+			}
+			.slide, img {
+				width: 280px;
+				height: 165px;
+				margin-right: 15px;
+				border-radius: 8px;
+			}
+
+		}
+
+		@media only screen and (min-width: 700px) {
+
+			margin-bottom: 20px;
+			height: 360px;
+
+			.slide, img {
+				width: 600px;
+				height: 350px;
+				border-radius: 8px;
+				transform: scale(0.85);
+				transition: transform 0.5s ease-in-out;
+			}
+			.slick-active {
+				.slide, img {
+					transform: scale(1);
+				}
+			}
+
+			.slick-arrow-right-container {
+				/* 85% of the slide height */
+				height: 297px;
+				width: 85px;
+				right: 0px;
+				/* half of the difference between the full slide height and the scaled slide height */
+				top: 27px;
+			}
+			.slick-arrow-left-container {
+				/* 85% of the slide height */
+				height: 297px;
+				width: 85px;
+				left: 0px;
+				/* half of the difference between the full slide height and the scaled slide height */
+				top: 27px;
+			}
+		}
+
+
+
+	&:hover {
+		.slick-arrow-right-container, .slick-arrow-left-container {
+			opacity: 0.5;
+		}
+	};
+
+	.slick-track {
+		display: inline-flex;
+		align-items: center;
+	}
+
+
+
+
+	/* rules for gradient title in a banner carousel is a little different */
+	.gradient-title-container {
+		border: 2px solid white;
+		color: white;
+		text-align: center;
+		font-size: 18px;
+		padding-left: 40px;
+		padding-right: 40px;
+		padding-top: 18px;
+		padding-bottom: 18px;
+	}
+
+}
+
+
+
+.carousel-gradient {
+	width: 100%;
+	/*height: 160px;*/
+
+
+		@media only screen and (max-width: 699px) {
+			.slide {
+				width: 225px;
+				height: 125px;
+				margin-left: 15px;
+				border-radius: 4px;
+			}
+
+		}
+		@media only screen and (min-width: 700px) {
+
+			.slide {
+				width: 270px;
+				height: 150px;
+				margin-left: 60px;
+				margin-right: -45px;
+				border-radius: 5px;
+			}
+
+		}
+
+
+		.slick-arrow-right-container, .slick-arrow-left-container {
+			height: 150px;
+			width: 85px;
+		}
+
+
+	&:hover {
+		.slick-arrow-right-container, .slick-arrow-left-container {
+			opacity: 0.5;
+		}
+	};
+
+
+	.gradient-title-container {
+		border: 2px solid white;
+		color: white;
+		text-align: center;
+		font-size: 14px;
+	}
+
+}
+
+
+
+
+.carousel-title {
+	width: 100%;
+
+	.slick-arrow-right-container {
+		height: 44px;
+		width: 85px;
+	}
+	.slick-arrow-left-container {
+		height: 44px;
+		width: 85px;
+	}
+
+	&:hover {
+		.slick-arrow-right-container, .slick-arrow-left-container {
+			opacity: 0.5;
+		}
+	};
+
+	@media only screen and (max-width: 699px) {
+		.slide {
+			margin-left: 15px;
+			margin-right: -5px;
+		}
+	}
+	@media only screen and (min-width: 700px) {
+		.slide {
+			margin-left: 20px;
+			margin-right: -15px;
+		}
+	}
+
+
+	.title-container {
+		border: 2px solid whitesmoke;
+		color: black;
+		text-align: center;
+		font-size: 16px;
+	}
+
+}
+
+.carousel-standard {
+	width: 90%;
+
+	@media only screen and (max-width: 519px) {
+		padding-left: 15px;
+		width: 100%;
+		.see-all {
+			justify-content: flex-end;
+			align-items: center;
+			text-align: right;
+			font-size: 12px;
+			flex-grow: 1;
+			color: #4EAE50;
+		}
+		.header {
+			.slick-arrow-right-container {
+				justify-content: flex-end;
+				margin-left: 10px;
+			}
+		}
+	}
+	@media only screen and (min-width: 520px) {
+		margin-top: 80px;
+		margin-left: 5%;
+		margin-right: 5%;
+		.see-all {
+			display: none;
+		}
+		.header {
+			.slick-arrow-right-container {
+				height: 100%;
+				justify-content: flex-start;
+			}
+		}
+
+		.slick-arrow-right-container {
+			height: 120px;
+			right: -40px;
+			opacity: 0.8;
+		}
+		.slick-arrow-left-container {
+			height: 120px;
+			left: -40px;
+			opacity: 0.8;
+		}
+	}
+
+
+	.header {
+		width: 100%;
+		display: flex;
+		height: 20px;
+		margin-bottom: 18px;
+		padding-right: 5px;
+		padding-left: 2px;
+
+		.slick-arrow-right-container {
+			opacity: 1;
+			position: relative;
+		}
+
+	}
+
+	.title {
+		color: rgba(0,0,0,0.33);
+		font-size: 20px;
+	}
+
+	.header:hover	{
+		cursor: pointer;
+		.title {
+			color: #1e89a1;
+		}
+	}
+
+	.slide-title {
+		width: 225px;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		white-space: normal;
+		text-align: left;
+		font-size: 14px;
+		line-height: 16px;
+		margin-top: 15px;
+		padding-left: 2px;
+		color: #515151;
+	}
+
+
+  .slide, img {
+  	border-radius: 4px;
+		width: 225px;
+		height: 125px;
+		margin-right: 15px;
+	}
+}
+
