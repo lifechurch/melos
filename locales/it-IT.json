@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Annulla",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Elimina",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Digitare l'indirizzo della Location...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Paese",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Fuso orario",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Campus First Baptist East",

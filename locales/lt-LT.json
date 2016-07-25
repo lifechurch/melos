@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Atšaukti",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Ištrinti",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Enter the Location address...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Country",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Laiko zona",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Campus",

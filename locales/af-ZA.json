@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Kanselleer",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Vee uit",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Voeg die Plek se adres in...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Land",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Tydsone",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Kampus",

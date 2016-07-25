@@ -158,6 +158,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Annuleren",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Verwijderen",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Voer het adres van de Locatie in...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Land",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Tijdzone",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Campus",
