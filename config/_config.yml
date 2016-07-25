@@ -53,8 +53,8 @@ development:
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
-  #event_import_url: "http://localhost:3000/featureImport/"
-  event_import_url: "https://events-staging.bible.com/featureImport/"
+  event_import_url: "http://localhost:3000/featureImport/"
+  #event_import_url: "https://events-staging.bible.com/featureImport/"
   event_api_host: "localhost"
   event_api_port: "3000"
 
