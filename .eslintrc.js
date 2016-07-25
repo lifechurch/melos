@@ -31,6 +31,7 @@ module.exports = {
 			"semi": 0,
 			"object-curly-spacing": ["error", "always"],
 			"indent": ["error", "tab"],
-			"no-unused-vars": 1
+			"no-unused-vars": 1,
+			"no-multiple-empty-lines": ["error", "never"]
 		}
 };

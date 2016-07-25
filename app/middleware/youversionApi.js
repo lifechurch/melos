@@ -2,7 +2,7 @@ import { getClient } from '@youversion/js-api'
 import ActionCreators from '../features/Auth/actions/creators'
 import { routeActions } from 'react-router-redux'
 
-const endpoints = [ 'events', 'search', 'users', 'bible' ]
+const endpoints = [ 'events', 'search', 'users', 'bible', 'reading-plans' ]
 const versions = [ '3.2', '3.1' ]
 const envs = [ 'staging', 'production' ]
 const http_methods = [ 'get', 'post' ]
