@@ -902,6 +902,7 @@ sv:
         none me: "Du har inte fått några medaljer än."
         none user: "%{username} har inte fått några medaljer än."
     plans: 
+        see all: "Se alla"
         day_completed: "<b>%{username}</b> fullföljde <b>dag %{day}</b> av bibelplanen <b>%{plan_title}</b>"
         status: 
             on track: "Enligt plan!"
@@ -1163,9 +1164,9 @@ sv:
         banner action: "Ladda ner"
         banner open: "Öppna"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Ladda ned Bibelappen för barn"
+        description copy: "Bibelappen för barn är ett fantastiskt verktyg för dina barn att lära sig Bibelns historier om Jesus."
+        download: "Ladda ned nu"
     about page: 
         relevancy: "Relevans"
         relevancy copy: "I tidigare generationer var folks tillgång till Bibeln mycket begränsad. Idag är detta inte längre fallet. Men många människor som har tillgång till Bibeln tycker att budskapet inte gäller för deras liv. Samtidigt finns det andra som tror det finns ett samband mellan Bibeln och deras upplevelse varje dag."
@@ -1408,6 +1409,10 @@ sv:
             just now: "Precis nu"
         verses selected: "verser valda"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Ett fel uppstod"
@@ -1645,7 +1650,7 @@ sv:
                                 delete: "Ta bort"
                             LocationEdit: 
                                 prompt: "Ange platsens adress..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Ange en stad för att välja en tidszon..."
                                 country: "Land"
                                 timezone: "Tidszon"
                                 namePrompt: "First Baptist East Campus"

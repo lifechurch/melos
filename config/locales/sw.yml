@@ -902,6 +902,7 @@ sw:
         none me: "Haujapata beji zozote."
         none user: "%{username} hajapata beji zozote."
     plans: 
+        see all: "Ona zote"
         day_completed: "<b>Amekamilisha siku%{username} ya mpango,%{day}</b> %{day}%{plan_title}%{username} Amekamilisha mpango wa biblia siku ya kwanza <b>%{day}%{username}amekamilisha siku ya kwanza%{day}ya mpango wa biblia</b> %{username}amekamilisha siuk ya kwanza ya mpango wa biblia%{day}%{plan_title} <b>%{plan_title}%{username}amekamilisha siku ya kwanza ya mpango wa biblia%{day}</b>"
         status: 
             on track: "On Track!"
@@ -1408,6 +1409,10 @@ sw:
             just now: "sasa hivi"
         verses selected: "Mistari imechaguliwa"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Ni kosa ilitokea"
@@ -1645,7 +1650,7 @@ sw:
                                 delete: "Ondoa"
                             LocationEdit: 
                                 prompt: "Andika barua pepe yako"
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Ingiza mji ili kutega majira ya saa"
                                 country: "Nchi"
                                 timezone: "wakati wa eneo"
                                 namePrompt: "Kwanza campus ya Baptist Mashariki"

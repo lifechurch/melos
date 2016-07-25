@@ -913,6 +913,7 @@ lv:
         none me: "Jūs vēl neesat nopelnījis nevienu nozīmīti."
         none user: "%{username} nav nopelnījis nevienu nozīmīti vēl."
     plans: 
+        see all: "Apskatīt visu"
         day_completed: "<b>%{username}</b> pabeidza <b>%{day}. dienu</b> no Bībeles lasīšanas plāna: <b>%{plan_title}</b>"
         status: 
             on track: "Tieši laikā!"
@@ -1423,6 +1424,10 @@ lv:
             just now: "tikai tagad"
         verses selected: "izvēlēti panti"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Radusies kļūda"

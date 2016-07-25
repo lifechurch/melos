@@ -891,6 +891,7 @@ ko:
         none me: "아직 받으신 배지가 없습니다."
         none user: "%{username}님은 아직 받은 배지가 없습니다."
     plans: 
+        see all: "모두 보기"
         day_completed: "<b>%{username}님이 </b><b>%{plan_title}</b>묵상 계획의<b>%{day}일치 분량을</b>완료하였습니다."
         status: 
             on track: "순조롭게 진행 중!"
@@ -1393,6 +1394,10 @@ ko:
             just now: "지금"
         verses selected: "선택된 구절"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "오류가 발생하였습니다"

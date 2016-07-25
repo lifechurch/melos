@@ -913,6 +913,7 @@ sk:
         none me: "Zatiaľ ste nezískali žiadne odznaky."
         none user: "Používateľ %{username} zatiaľ nezískal žiadne odznaky."
     plans: 
+        see all: "Zobraziť všetky"
         day_completed: "<b>%{username}</b> ukončený <b>Deň%{day}</b> Plánu Biblie: <b>%{plan_title}</b>"
         status: 
             on track: "Na dobrej ceste!"
@@ -1423,6 +1424,10 @@ sk:
             just now: "práve teraz"
         verses selected: "vybraté verše"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Nastala chyba"

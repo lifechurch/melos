@@ -924,6 +924,7 @@ uk:
         none me: "Ви поки що не заробили жодного значка."
         none user: "%{username} ще не заробив жодного значка."
     plans: 
+        see all: "Всі"
         day_completed: "<b>%{username}</b> завершив(ла) <b>день %{day}</b> плану: <b>%{plan_title}</b>"
         status: 
             on track: "так тримати!"
@@ -1438,6 +1439,10 @@ uk:
             just now: "щойно"
         verses selected: "Обрані вірші"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Виникла помилка"

@@ -902,6 +902,7 @@ bg:
         none me: "Нямате спечелени значки все още."
         none user: "%{username} все още няма спечелени значки."
     plans: 
+        see all: "Виж всички"
         day_completed: "<b>%{username}</b> завърши <b>ден %{day}</b> от плана за прочит на Библията: <b>%{plan_title}</b>"
         status: 
             on track: "Точно по график!"
@@ -1408,6 +1409,10 @@ bg:
             just now: "току-що"
         verses selected: "избрани стихове"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "Възникна грешка"

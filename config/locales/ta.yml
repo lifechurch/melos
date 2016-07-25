@@ -902,6 +902,7 @@ ta:
         none me: "நீங்கள் இன்னும் எந்த badges-யும் பெற வில்லை."
         none user: "%{username} இன்னும் எந்த badges-யும் பெற வில்லை."
     plans: 
+        see all: "அனைத்தும் பார்"
         day_completed: "<b>%{username}</b><b>%{plan_title}</b> வேதாகம திட்டத்தின் <b>%{day} ஆம் நாளை</b> நிறைவு செய்துள்ளார்"
         status: 
             on track: "சரியான தடத்தில்!"
@@ -1408,6 +1409,10 @@ ta:
             just now: "இப்பொழுதுதான்"
         verses selected: "தேர்ந்தெடுக்கப்பட்ட வசனங்கள்"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: " ஓர் பிழை ஏற்பட்டுள்ளது"

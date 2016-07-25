@@ -891,6 +891,7 @@ th:
         none me: "คุณยังไม่ได้เหรียญตราใดๆ"
         none user: "%{username} ยังไม่ได้รางวัลเหรียญตราใดๆ"
     plans: 
+        see all: "ดูทั้งหมด"
         day_completed: "<b>%{username}</b> ได้อ่านจบวันที่ <b>%{day}</b> ของแผนการอ่าน <b>%{plan_title}</b>"
         status: 
             on track: "เป็นไปตามแผน!"
@@ -1393,6 +1394,10 @@ th:
             just now: "เมื่อครู่นี้"
         verses selected: "ฃ้อพระคัมภีร์ที่เลือกไว้"
     EventsAdmin: 
+        plans: 
+            see all: "See All"
+            discover: "Discover"
+            my_plans: "My Plans"
         components: 
             ErrorMessage: 
                 genericError: "เกิดข้อผิดพลาด"
