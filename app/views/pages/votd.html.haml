@@ -50,12 +50,12 @@
           .columns.medium-7{class: @showVerseImage ? '' : 'inner-row medium-centered'}
             .votd-content
               .right.text-right.votd-share-button
-                %a{ "ng-click" => "showShare = !showShare", "href" => "#" }
-                  %span{"ng-hide" => "showShare"}
-                    != t("moments.action.share")
-                  %span.ng-hide{"ng-show" => "showShare"}
-                    != t("ui.cancel")
-                %div.share-panel.ng-hide{"ng-show" => "showShare"}
+                -#%a{ "ng-click" => "showShare = !showShare", "href" => "#" }
+                -#  %span{"ng-hide" => "showShare"}
+                -#    != t("moments.action.share")
+                -#  %span.ng-hide{"ng-show" => "showShare"}
+                -#    != t("ui.cancel")
+                %div.share-panel
                   %div.video.addthis_sharing_toolbox{:data => {:url => "#{@meta_url}", :title => "#{@title}", :description => "#{@vodContent}"}}
               %h1.heading
                 %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
