@@ -1425,9 +1425,9 @@ sk:
         verses selected: "vybraté verše"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Zobraziť všetky"
+            discover: "Objaviť"
+            my_plans: "Moje plány"
         components: 
             ErrorMessage: 
                 genericError: "Nastala chyba"

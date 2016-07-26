@@ -1410,9 +1410,9 @@ de:
         verses selected: " Bibelverse ausgewählt"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Alle anzeigen"
+            discover: "Entdecken"
+            my_plans: "Meine Lesepläne"
         components: 
             ErrorMessage: 
                 genericError: "Ein Fehler ist aufgetreten"

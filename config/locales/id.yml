@@ -1395,9 +1395,9 @@ id:
         verses selected: "ayat terpilih"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Lihat Semua"
+            discover: "Temukan"
+            my_plans: "Rencana Saya"
         components: 
             ErrorMessage: 
                 genericError: "Terjadi Kesalahan"

@@ -1395,9 +1395,9 @@ th:
         verses selected: "ฃ้อพระคัมภีร์ที่เลือกไว้"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "ดูทั้งหมด"
+            discover: "ค้นหา"
+            my_plans: "แผนฯของฉัน"
         components: 
             ErrorMessage: 
                 genericError: "เกิดข้อผิดพลาด"

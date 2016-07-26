@@ -1410,9 +1410,9 @@ ca:
         verses selected: "versets seleccionats"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Veure-ho tot"
+            discover: "Descobreix"
+            my_plans: "Els meus plans"
         components: 
             ErrorMessage: 
                 genericError: "Hi ha hagut un error"

@@ -1395,9 +1395,9 @@ zh-CN:
         verses selected: "选中的经文"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "查看全部"
+            discover: "发掘"
+            my_plans: "我的读经计划"
         components: 
             ErrorMessage: 
                 genericError: "发生了错误"

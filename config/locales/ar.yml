@@ -1470,9 +1470,9 @@ ar:
         verses selected: "الآيات المختارة"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "عرض كل المحتوي"
+            discover: "اكتشف"
+            my_plans: "خططي"
         components: 
             ErrorMessage: 
                 genericError: "خطأ"

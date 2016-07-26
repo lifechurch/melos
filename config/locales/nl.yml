@@ -1410,9 +1410,9 @@ nl:
         verses selected: "geselecteerde verzen"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Bekijk alles"
+            discover: "Ontdek"
+            my_plans: "Mijn Leesplannen"
         components: 
             ErrorMessage: 
                 genericError: "Er is een fout opgetreden"

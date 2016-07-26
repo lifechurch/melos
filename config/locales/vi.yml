@@ -180,8 +180,8 @@ vi:
             in partnership: "hợp tác với"
             one hope: "One Hope: Kinh Thánh Đặc Biệt Dành Cho Thiếu Nhi"
         links: 
-            apple: "https://itunes.apple.com/th/app/bible-for-kids/id668692393?mt=8"
-            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=th"
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Bây giờ"
     select dropdown: "--Chọn lựa--"
@@ -1395,9 +1395,9 @@ vi:
         verses selected: "Đã chọn câu"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Xem tất cả"
+            discover: "Khám phá"
+            my_plans: "Kế hoạch của tôi"
         components: 
             ErrorMessage: 
                 genericError: "Báo lỗi!"

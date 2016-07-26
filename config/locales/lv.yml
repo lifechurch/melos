@@ -1425,9 +1425,9 @@ lv:
         verses selected: "izvēlēti panti"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Apskatīt visu"
+            discover: "Atklāj"
+            my_plans: "Mans plāns"
         components: 
             ErrorMessage: 
                 genericError: "Radusies kļūda"

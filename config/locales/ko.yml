@@ -1395,9 +1395,9 @@ ko:
         verses selected: "선택된 구절"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "모두 보기"
+            discover: "찾기"
+            my_plans: "내 묵상 계획"
         components: 
             ErrorMessage: 
                 genericError: "오류가 발생하였습니다"

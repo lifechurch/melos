@@ -1410,9 +1410,9 @@ sv:
         verses selected: "verser valda"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Se alla"
+            discover: "Upptäck"
+            my_plans: "Mina planer"
         components: 
             ErrorMessage: 
                 genericError: "Ett fel uppstod"

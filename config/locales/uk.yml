@@ -1440,9 +1440,9 @@ uk:
         verses selected: "Обрані вірші"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Всі"
+            discover: "Пізнавайте"
+            my_plans: "Мої плани"
         components: 
             ErrorMessage: 
                 genericError: "Виникла помилка"

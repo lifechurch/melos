@@ -1410,9 +1410,9 @@ ta:
         verses selected: "தேர்ந்தெடுக்கப்பட்ட வசனங்கள்"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "அனைத்தும் பார்"
+            discover: "கண்டறிக"
+            my_plans: "என்னுடைய திட்டங்கள்"
         components: 
             ErrorMessage: 
                 genericError: " ஓர் பிழை ஏற்பட்டுள்ளது"

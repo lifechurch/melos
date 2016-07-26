@@ -1425,9 +1425,9 @@ ro:
         verses selected: "versete selectate"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Vezi toate"
+            discover: "Descoperă"
+            my_plans: "Planurile mele"
         components: 
             ErrorMessage: 
                 genericError: "A apărut o eroare"

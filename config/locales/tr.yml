@@ -1410,9 +1410,9 @@ tr:
         verses selected: "ayetler seçildi"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Hepsini Gör"
+            discover: "Keşfedin"
+            my_plans: "Planlarım"
         components: 
             ErrorMessage: 
                 genericError: "Bir hata meydana geldi"

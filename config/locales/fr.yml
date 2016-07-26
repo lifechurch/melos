@@ -1410,9 +1410,9 @@ fr:
         verses selected: "versets sélectionnés"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Tout Voir"
+            discover: "Découvrir"
+            my_plans: "Mes plans"
         components: 
             ErrorMessage: 
                 genericError: "Une erreur s'est produite"

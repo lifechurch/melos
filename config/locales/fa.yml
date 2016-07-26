@@ -1395,9 +1395,9 @@ fa:
         verses selected: "آیات انتخاب شده"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "همه را ببینید"
+            discover: "مطالب تازه را کشف کنید"
+            my_plans: "برنامه‌های مطالعۀ من"
         components: 
             ErrorMessage: 
                 genericError: "خطایی رخ داد "

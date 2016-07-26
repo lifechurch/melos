@@ -903,7 +903,7 @@ hi:
         none user: "%{username} के द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
     plans: 
         see all: "सब कुछ देखे"
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        day_completed: "<b>%{username} ने </b> बाइबल योजना का  <b>%{day} दिन पूरा किया:</b><b>%{plan_title}</b>"
         status: 
             on track: "ट्रैक पर!"
             days ahead: 
@@ -1410,9 +1410,9 @@ hi:
         verses selected: "चयनित पद"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "सब कुछ देखे"
+            discover: "खोजें"
+            my_plans: "मेरी योजनाएँ"
         components: 
             ErrorMessage: 
                 genericError: "An error occurred"
@@ -1459,8 +1459,8 @@ hi:
                 createAccount: "Create Account"
             HtmlEditor: 
                 text: "पाठ "
-                bold: "Bold"
-                italic: "Italic"
+                bold: "स्पष्ट "
+                italic: "तिरछे अच्छरों में "
         containers: 
             Auth: 
                 title: "Events Sign In"
@@ -1574,7 +1574,7 @@ hi:
                                 prompt: "Write something here..."
                                 caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
+                                dirty: "आपके लिखना बंद करते ही आपकी लिखी हुयी सामग्री स्वतः सुरक्षित कर ली जाएगी !"
                                 failed: "सुरक्षित रखने में असमर्थ"
                                 tryAgain: "पुनः प्रयास करें"
                                 lastSaved: "Last saved %{when}"
@@ -1594,12 +1594,12 @@ hi:
                                 url: "URL"
                             ContentTypePlan: 
                                 replace: "बदलें"
-                                search: "Search for a Reading Plan"
+                                search: "पाठ योजना खोजें "
                             ContentTypeReference: 
                                 language: "भाषा"
                                 version: "संस्करण"
                                 book: "ग्रन्थ"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "अध्याय : पद "
                             ContentTypeText: 
                                 prompt: "Write something here..."
                             LiveWarningModal: 

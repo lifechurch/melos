@@ -1410,9 +1410,9 @@ sw:
         verses selected: "Mistari imechaguliwa"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Ona zote"
+            discover: "Gundua"
+            my_plans: "mipango yangu"
         components: 
             ErrorMessage: 
                 genericError: "Ni kosa ilitokea"

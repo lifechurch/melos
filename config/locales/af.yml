@@ -1410,9 +1410,9 @@ af:
         verses selected: "verse gekies"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Sien Alles"
+            discover: "Ontdek"
+            my_plans: "My Planne"
         components: 
             ErrorMessage: 
                 genericError: "'n Fout het ingetree"

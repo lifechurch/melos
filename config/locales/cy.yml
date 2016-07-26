@@ -1470,9 +1470,9 @@ cy:
         verses selected: "adnodau ddewiswyd"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Y cwbl"
+            discover: "Darganfod"
+            my_plans: "Fy Nghynlluniau"
         components: 
             ErrorMessage: 
                 genericError: "Digwyddodd gwall"

@@ -1395,9 +1395,9 @@ my:
         verses selected: "ရွေးထားသောကျမ်းပိုဒ်"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "အားလုံးကြည့်ရန်"
+            discover: "ရှာဖွေရန်"
+            my_plans: "ကျွန်တော်၏အစီအစဉ်"
         components: 
             ErrorMessage: 
                 genericError: "ချို့ယွင်းမှုဖြစ်ပေါ်ခဲ့သည်"

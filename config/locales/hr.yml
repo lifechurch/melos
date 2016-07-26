@@ -1440,9 +1440,9 @@ hr:
         verses selected: "označeni stihovi"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Pogledaj sve"
+            discover: "Otkrij"
+            my_plans: "Moji planovi"
         components: 
             ErrorMessage: 
                 genericError: "Došlo je do greške"

@@ -1395,9 +1395,9 @@ km:
         verses selected: "ឃ្លាត្រូវបានជ្រើស"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "មើល​ទាំង​អស់"
+            discover: "រុក​រក"
+            my_plans: "គំរោង​របស់​ខ្ញុំ"
         components: 
             ErrorMessage: 
                 genericError: "An error occurred"

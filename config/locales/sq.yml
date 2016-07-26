@@ -1410,9 +1410,9 @@ sq:
         verses selected: "vargje të përzgjedhura"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Shiko të gjitha"
+            discover: "Zbulo"
+            my_plans: "Planet e mia"
         components: 
             ErrorMessage: 
                 genericError: "Ndodhi një gabim"

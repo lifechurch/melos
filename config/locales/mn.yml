@@ -1410,9 +1410,9 @@ mn:
         verses selected: "ишлэлүүдийг сонгосон"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Бүгдийг Харах"
+            discover: "Мэдэж авах"
+            my_plans: "Миний Тѳлѳвлѳгѳѳнүүд"
         components: 
             ErrorMessage: 
                 genericError: "Алдаа гарсан"

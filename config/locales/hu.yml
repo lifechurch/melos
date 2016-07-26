@@ -1410,9 +1410,9 @@ hu:
         verses selected: "kijelölt versek"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Összes megtekintése"
+            discover: "Felfedezés"
+            my_plans: "Terveim"
         components: 
             ErrorMessage: 
                 genericError: "Hiba történt"

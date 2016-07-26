@@ -1410,9 +1410,9 @@
         verses selected: "vers valgt"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Se alle"
+            discover: "Oppdag"
+            my_plans: "Mine leseplaner"
         components: 
             ErrorMessage: 
                 genericError: "Det oppstod en feil"

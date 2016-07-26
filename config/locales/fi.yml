@@ -1410,9 +1410,9 @@ fi:
         verses selected: "jaetta valittu"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Näytä kaikki"
+            discover: "Löydä"
+            my_plans: "Omat suunnitelmat"
         components: 
             ErrorMessage: 
                 genericError: "Tapahtui virhe"

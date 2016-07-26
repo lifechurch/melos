@@ -1440,9 +1440,9 @@ ru:
         verses selected: "стихи выбраны"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Увидеть все"
+            discover: "Узнавайте"
+            my_plans: "Мои планы чтения"
         components: 
             ErrorMessage: 
                 genericError: "Произошла ошибка"

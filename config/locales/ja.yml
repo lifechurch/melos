@@ -1395,9 +1395,9 @@ ja:
         verses selected: "選択した聖句"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "一覧表示"
+            discover: "発見"
+            my_plans: "自分のプラン"
         components: 
             ErrorMessage: 
                 genericError: "エラー発生"

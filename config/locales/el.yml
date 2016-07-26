@@ -1410,9 +1410,9 @@ el:
         verses selected: "επιλεγμένα εδάφια"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Εμφάνιση όλων"
+            discover: "Ανακαλύψτε"
+            my_plans: "Τα Σχέδιά μου"
         components: 
             ErrorMessage: 
                 genericError: "Προέκυψε λάθος"

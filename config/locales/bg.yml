@@ -1410,9 +1410,9 @@ bg:
         verses selected: "избрани стихове"
     EventsAdmin: 
         plans: 
-            see all: "See All"
-            discover: "Discover"
-            my_plans: "My Plans"
+            see all: "Виж всички"
+            discover: "Открий"
+            my_plans: "Моите планове"
         components: 
             ErrorMessage: 
                 genericError: "Възникна грешка"
