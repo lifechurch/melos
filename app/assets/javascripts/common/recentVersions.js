@@ -21,7 +21,7 @@ angular.module('common.recentVersions', [])
 
         function syncToServer() {
             if (isLoggedIn) {
-                RailsHttp.get('/settings', false).then(function (res) {
+                RailsHttp.get('/getSettings', false).then(function (res) {
                     serverSyncDate = null;
 
                     if (res && res.data && res.data.settings && res.data.settings.bible && res.data.settings.bible.recent_versions && res.data.settings.bible.recent_versions.length >= 0) {
