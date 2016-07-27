@@ -890,7 +890,7 @@ th:
         earned date: "ได้รับโดย %{username} เมื่อ %{ago}"
         none me: "คุณยังไม่ได้เหรียญตราใดๆ"
         none user: "%{username} ยังไม่ได้รางวัลเหรียญตราใดๆ"
-    plans: 
+    plans:
         see all: "ดูทั้งหมด"
         day_completed: "<b>%{username}</b> ได้อ่านจบวันที่ <b>%{day}</b> ของแผนการอ่าน <b>%{plan_title}</b>"
         status: 

@@ -901,7 +901,7 @@ fi:
         earned date: "Ansainnut %{username} %{ago} sitten"
         none me: "Et ole vielä ansainnut yhtään ansiomerkkiä."
         none user: "%{username} ei ole ansainnut yhtään ansiomerkkiä."
-    plans: 
+    plans:
         see all: "Näytä kaikki"
         day_completed: "<b>%{username}</b> suoritti päivän <b>%{day}</b> Raamatun lukusuunnitelmasta: <b>%{plan_title}</b>"
         status: 

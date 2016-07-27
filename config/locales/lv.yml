@@ -912,7 +912,7 @@ lv:
         earned date: "%{username} nopelnīja %{ago} atpakaļ"
         none me: "Jūs vēl neesat nopelnījis nevienu nozīmīti."
         none user: "%{username} nav nopelnījis nevienu nozīmīti vēl."
-    plans: 
+    plans:
         see all: "Apskatīt visu"
         day_completed: "<b>%{username}</b> pabeidza <b>%{day}. dienu</b> no Bībeles lasīšanas plāna: <b>%{plan_title}</b>"
         status: 

@@ -945,7 +945,7 @@ cy:
         earned date: "Enillwyd gan %{username} %{ago} yn ôl"
         none me: "Dwyt ti ddim wedi ennill yr un bathodyn eto."
         none user: "Dydy %{username}heb ennill yr un bathodyn eto."
-    plans: 
+    plans:
         see all: "Y cwbl"
         day_completed: " Cwblhaodd <b>%{username}</b><b>Ddydd</b> %{day} <b>o'r Cynllun Beibl:</b>%{plan_title}"
         status: 

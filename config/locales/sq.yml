@@ -901,7 +901,7 @@ sq:
         earned date: "Fituar nga përdoruesi %{username} %{ago} më parë"
         none me: "Ju nuk keni fituar akoma ndonjë emblemë."
         none user: "Përdoruesi %{username} nuk ka fituar akoma ndonjë emblemë."
-    plans: 
+    plans:
         see all: "See All"
         day_completed: "<b>%{username}</b> e përfundoi <b>Ditën %{day}</b> të planit të Biblës: <b>%{plan_title}</b>"
         status: 

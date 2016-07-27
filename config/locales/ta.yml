@@ -901,7 +901,7 @@ ta:
         earned date: "%{username} %{ago} முன்பு பெறப்பட்டது."
         none me: "நீங்கள் இன்னும் எந்த badges-யும் பெற வில்லை."
         none user: "%{username} இன்னும் எந்த badges-யும் பெற வில்லை."
-    plans: 
+    plans:
         see all: "அனைத்தும் பார்"
         day_completed: "<b>%{username}</b><b>%{plan_title}</b> வேதாகம திட்டத்தின் <b>%{day} ஆம் நாளை</b> நிறைவு செய்துள்ளார்"
         status: 

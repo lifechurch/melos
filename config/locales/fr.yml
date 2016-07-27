@@ -901,7 +901,7 @@ fr:
         earned date: "Gagné par %{username} il y a %{ago}"
         none me: "Vous n'avez gagné aucun badge pour l'instant."
         none user: "%{username} n'a gagné aucun badge pour l'instant."
-    plans: 
+    plans:
         see all: "Tout Voir"
         day_completed: "<b>%{username}</b> a terminé <b>le jour %{day}</b> du plan de lecture : <b>%{plan_title}</b>"
         status: 

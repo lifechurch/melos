@@ -901,7 +901,7 @@ el:
         earned date: "Το κέρδισε ο/η %{username} %{ago} πριν"
         none me: "Δεν έχετε ακόμα κερδίσει διακρίσεις."
         none user: "Ο/Η %{username} δεν έχει κερδίσει κάποιο διακριτικό ακόμη."
-    plans: 
+    plans:
         see all: "Εμφάνιση όλων"
         day_completed: "<b>Ο/Η %{username} </b> ολοκλήρωσε <b>την ημέρα %{day}</b> του σχεδίου μελέτης: <b>%{plan_title}</b>"
         status: 

@@ -890,7 +890,7 @@ ko:
         earned date: "%{username}님이 %{ago} 전에 받음"
         none me: "아직 받으신 배지가 없습니다."
         none user: "%{username}님은 아직 받은 배지가 없습니다."
-    plans: 
+    plans:
         see all: "모두 보기"
         day_completed: "<b>%{username}님이 </b><b>%{plan_title}</b>묵상 계획의<b>%{day}일치 분량을</b>완료하였습니다."
         status: 

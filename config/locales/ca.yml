@@ -901,7 +901,7 @@ ca:
         earned date: "Obtinguda per %{username} fa %{ago}"
         none me: "Encara no tens cap insígnia."
         none user: "El/la %{username} encara no té cap insígnia."
-    plans: 
+    plans:
         see all: "Veure-ho tot"
         day_completed: "<b>%{username}</b> ha complertat <b>el dia %{day}</b> del Pla de lectura: <b>%{plan_title}</b>"
         status: 

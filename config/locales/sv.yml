@@ -901,7 +901,7 @@ sv:
         earned date: "Förtjänad av %{username} för %{ago} sedan"
         none me: "Du har inte fått några medaljer än."
         none user: "%{username} har inte fått några medaljer än."
-    plans: 
+    plans:
         see all: "Se alla"
         day_completed: "<b>%{username}</b> fullföljde <b>dag %{day}</b> av bibelplanen <b>%{plan_title}</b>"
         status: 

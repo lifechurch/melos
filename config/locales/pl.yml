@@ -923,7 +923,7 @@ pl:
         earned date: "Zdobyte przez %{username} %{ago} temu"
         none me: "Nie zdobyłeś jeszcze żadnych odznaczeń."
         none user: "%{username} nie zdobył jeszcze żadnych odznaczeń."
-    plans: 
+    plans:
         see all: "Zobacz wszystko"
         day_completed: "<b>%{username}</b> zakończony <b>Dzień %{day}</b> Planu Biblii <b>%{plan_title}</b>"
         status: 

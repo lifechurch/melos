@@ -890,7 +890,7 @@ my:
         earned date: "%{username}သည် %{ago}တုန်းက အမှတ်တံဆိပ်ရရှိခဲ့ပါသည်။"
         none me: "သင်သည် မည်သည့်ဆုတံဆိပ်မျှမရသေးပါ။"
         none user: "%{username}သည် မည်သည့်ဆုတံဆိပ်မျှမရသေးပါ။"
-    plans: 
+    plans:
         see all: "အားလုံးကြည့်ရန်"
         day_completed: "<b>%{username} သည်</b><b>%{plan_title}</b>ဟူသည့် ကျမ်းစာဖတ်ခြင်းအစီအစဉ်ထဲမှ <b>%{day} ရက်စာကို</b>ဖတ်ပြီပါပြီ။"
         status: 

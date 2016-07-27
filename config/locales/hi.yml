@@ -901,7 +901,7 @@ hi:
         earned date: "%{username}%{ago}समय पहले अर्जित"
         none me: "आपके द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
         none user: "%{username} के द्वारा अभी तक कोई badge अर्जित नहीं किया गया हैं।"
-    plans: 
+    plans:
         see all: "सब कुछ देखे"
         day_completed: "<b>%{username} ने </b> बाइबल योजना का  <b>%{day} दिन पूरा किया:</b><b>%{plan_title}</b>"
         status: 

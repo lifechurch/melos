@@ -901,7 +901,7 @@ nl:
         earned date: "Door %{username} verdiend %{ago} geleden"
         none me: "Je hebt nog geen medaille verdiend."
         none user: "%{username} heeft nog geen medaille verdiend."
-    plans: 
+    plans:
         see all: "Bekijk alles"
         day_completed: "<b>%{username}</b> voltooide <b>dag %{day}</b> van het Leesplan: <b>%{plan_title}</b>"
         status: 

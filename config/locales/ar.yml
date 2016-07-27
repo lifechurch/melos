@@ -945,7 +945,7 @@ ar:
         earned date: "تم الحصول عليها بواسطة %{username} منذ %{ago}"
         none me: "لم تحصل على أي شارات بعد."
         none user: "%{username} لم يحصل على أي شارات بعد."
-    plans: 
+    plans:
         see all: "عرض كل المحتوي"
         day_completed: "<b>%{username}</b> اكمل <b>%{day} يوم</b> من خطه القراءه: <b>%{plan_title}</b>"
         status: 

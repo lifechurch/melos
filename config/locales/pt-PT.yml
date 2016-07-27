@@ -901,7 +901,7 @@ pt-PT:
         earned date: "Ganha por %{username} há %{ago} atrás"
         none me: "Ainda não ganhou nenhuma medalha."
         none user: "%{username} ainda não ganhou qualquer medalha."
-    plans: 
+    plans:
         see all: "Ver Todos"
         day_completed: "<b>%{username}</b> completou <b>o dia %{day}</b> do plano da Bíblia: <b>%{plan_title}</b>"
         status: 

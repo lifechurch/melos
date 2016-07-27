@@ -923,7 +923,7 @@ ru:
         earned date: "Заработан %{username} %{ago} назад"
         none me: "Вы ещё не заработали значков."
         none user: "%{username} ещё не заработал значков."
-    plans: 
+    plans:
         see all: "Увидеть все"
         day_completed: "<b>%{username}</b> завершил <b>день %{day}</b> из плана чтения Библии: <b>%{plan_title}</b>"
         status: 

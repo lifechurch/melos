@@ -901,7 +901,7 @@ hu:
         earned date: "%{username}\térdemelte ki %{ago} ezelőtt"
         none me: "Még nem szereztél jelvényt."
         none user: "%{username} még nem szerzett jelvényt."
-    plans: 
+    plans:
         see all: "Összes megtekintése"
         day_completed: "<b>%{username}</b> befejezte a(z) <b>%{plan_title}</b> című olvasási terv <b>%{day}. napját.</b>"
         status: 
