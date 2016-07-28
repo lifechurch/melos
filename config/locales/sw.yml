@@ -901,7 +901,7 @@ sw:
         earned date: "Zimepatwa na %{username} %{ago} mda uliyopita"
         none me: "Haujapata beji zozote."
         none user: "%{username} hajapata beji zozote."
-    plans:
+    plans: 
         see all: "Ona zote"
         day_completed: "<b>Amekamilisha siku%{username} ya mpango,%{day}</b> %{day}%{plan_title}%{username} Amekamilisha mpango wa biblia siku ya kwanza <b>%{day}%{username}amekamilisha siku ya kwanza%{day}ya mpango wa biblia</b> %{username}amekamilisha siuk ya kwanza ya mpango wa biblia%{day}%{plan_title} <b>%{plan_title}%{username}amekamilisha siku ya kwanza ya mpango wa biblia%{day}</b>"
         status: 

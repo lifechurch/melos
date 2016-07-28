@@ -901,7 +901,7 @@ es:
         earned date: "Obtenida por %{username} hace %{ago}."
         none me: "Usted no ha obtenido ninguna insignia aún."
         none user: "%{username} no ha obtenido ninguna insignia aún."
-    plans:
+    plans: 
         see all: "Ver Todos"
         day_completed: "<b>%{username}</b> completó el <b>%{day}día</b> del Plan bíblico: <b>%{plan_title}</b>"
         status: 

@@ -901,7 +901,7 @@ bg:
         earned date: "Спечелени от %{username} преди %{ago}"
         none me: "Нямате спечелени значки все още."
         none user: "%{username} все още няма спечелени значки."
-    plans:
+    plans: 
         see all: "Виж всички"
         day_completed: "<b>%{username}</b> завърши <b>ден %{day}</b> от плана за прочит на Библията: <b>%{plan_title}</b>"
         status: 

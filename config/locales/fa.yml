@@ -890,7 +890,7 @@ fa:
         earned date: "دریافت شده توسط %{username} %{ago} دقیقه قبل"
         none me: "شما هنوز نشانی دریافت نکرده‌اید"
         none user: "%{username} هنوز نشانی دریافت نکرده است."
-    plans:
+    plans: 
         see all: "همه را ببینید"
         day_completed: "<b>%{username}</b><b>%{day} روز</b> برنامهٔ مطالعه <b>%{plan_title}</b> را تکمیل کرده است "
         status: 

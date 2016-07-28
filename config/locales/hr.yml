@@ -923,7 +923,7 @@ hr:
         earned date: "Zaradio %{username} prije %{ago}"
         none me: "Nemaš zarađenu nijednu značku."
         none user: "%{username} još nije zaradio nijednu značku."
-    plans:
+    plans: 
         see all: "Pogledaj sve"
         day_completed: "<b>Korisnik %{username} završio je %{day}. dan biblijskoga plana %{plan_title}.</b><b></b><b></b>"
         status: 

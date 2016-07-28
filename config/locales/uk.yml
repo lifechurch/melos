@@ -923,7 +923,7 @@ uk:
         earned date: "Зароблені %{username} %{ago} тому"
         none me: "Ви поки що не заробили жодного значка."
         none user: "%{username} ще не заробив жодного значка."
-    plans:
+    plans: 
         see all: "Всі"
         day_completed: "<b>%{username}</b> завершив(ла) <b>день %{day}</b> плану: <b>%{plan_title}</b>"
         status: 

@@ -901,7 +901,7 @@ de:
         earned date: "Verliehen an %{username} vor %{ago}"
         none me: "Du hast bisher keine Abzeichen bekommen."
         none user: "%{username} hat bisher keine Abzeichen bekommen."
-    plans:
+    plans: 
         see all: "Alle anzeigen"
         day_completed: "<b>%{username} hat Tag</b><b> %{day} </b><b>des Leseplanes: %{plan_title}abgeschlossen</b>"
         status: 

@@ -901,7 +901,7 @@ en-GB:
         earned date: "Earnt by %{username} %{ago} ago"
         none me: "You haven't earnt any badges yet."
         none user: "%{username} hasn't earnt any badges yet."
-    plans:
+    plans: 
         see all: "See all"
         day_completed: "<b>%{username}</b> completed <b>day %{day}</b> of the Bible plan: <b>%{plan_title}</b>"
         status: 

@@ -890,7 +890,7 @@ id:
         earned date: "Diperoleh %{username} %{ago} yang lalu"
         none me: "Anda belum memperoleh lencana apapun."
         none user: "%{username} belum memperoleh lencana apapun."
-    plans:
+    plans: 
         see all: "Lihat Semua"
         day_completed: "<b>%{username}</b> menyelesaikan <b>Hari ke-%{day}</b> dari Rencana Alkitab: <b>%{plan_title}</b>"
         status: 

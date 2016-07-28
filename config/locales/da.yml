@@ -901,7 +901,7 @@ da:
         earned date: "Optjent  af %{username} %{ago} siden"
         none me: "Du har ikke optjent nogen mærker endnu."
         none user: "%{username} har ikke optjent nogen mærker endnu."
-    plans:
+    plans: 
         see all: "Se alle"
         day_completed: "<b>%{username}</b> færdiggjorde <b>%{day}</b> af Bibel Planen <b>%{plan_title}</b>"
         status: 

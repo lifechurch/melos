@@ -901,7 +901,7 @@ tl:
         earned date: "Nakuha ni %{username} %{ago} ang nakakaraan"
         none me: "Wala ka pang nakukuhang sagisag."
         none user: "Si %{username} ay hindi pa nakakakuha ng anumang sagisag."
-    plans:
+    plans: 
         see all: "Tingnan Lahat"
         day_completed: "<b>Natapos ni %{username} ang ika-%{day} araw ng Bible Plan: %{plan_title}</b><b></b><b></b>"
         status: 

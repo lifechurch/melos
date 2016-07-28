@@ -901,7 +901,7 @@ it:
         earned date: "Guadagnato da %{username} %{ago} fa"
         none me: "Non hai ancora guadagnato nessun distintivo."
         none user: "%{username} non ha ancora guadagnato nessun distintivo."
-    plans:
+    plans: 
         see all: "Vedi Tutti"
         day_completed: "<b>%{username}</b> ha completato <b>Giorno %{day}</b> del Piano di Lettura: <b>%{plan_title}</b>"
         status: 

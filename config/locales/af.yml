@@ -901,7 +901,7 @@ af:
         earned date: "Verwerf deur %{username} %{ago} gelede"
         none me: "Jy het nog geen kentekens verwerf nie."
         none user: "%{username} het nog geen kentekens verwerf nie."
-    plans:
+    plans: 
         see all: "Sien Alles"
         day_completed: "<b>%{username}</b> voltooi <b>Dag %{day}</b> van die Bybelleesplan: <b>%{plan_title} </b>"
         status: 

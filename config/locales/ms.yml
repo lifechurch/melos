@@ -890,7 +890,7 @@ ms:
         earned date: "Diperolehi oleh %{username} %{ago} dahulu."
         none me: "Anda belum memperolehi sebarang lencana."
         none user: "%{username} belum memperolehi sebarang lencana."
-    plans:
+    plans: 
         see all: "Lihat semua"
         day_completed: "<b>%{username}</b> menyelesaikan <b>Hari %{day}</b> daripada Pelan Bible: <b>%{plan_title}</b>"
         status: 

@@ -890,7 +890,7 @@ ja:
         earned date: "%{username} さんが%{ago}前に獲得"
         none me: "まだバッジを獲得していません"
         none user: "%{username} さんはまだバッジを獲得していません"
-    plans:
+    plans: 
         see all: "一覧表示"
         day_completed: "<b>%{username}さんが</b>読書プラン<b>「%{plan_title}」</b><b>の%{day}日目を</b>読み終えました。"
         status: 

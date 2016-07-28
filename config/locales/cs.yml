@@ -912,7 +912,7 @@ cs:
         earned date: "Získáno uživatelem %{username} před %{ago}"
         none me: "Zatím jste nezískali žádné odznaky."
         none user: "%{username} zatím nezískal žádné odznaky."
-    plans:
+    plans: 
         see all: "Zobrazit vše"
         day_completed: "<b>%{username} </b> ukončil <b>Den %{day}</b> v Plánu studia Bible: <b>%{plan_title}</b>"
         status: 
