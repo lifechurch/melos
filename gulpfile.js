@@ -76,6 +76,20 @@ gulp.task('javascript:prod:passwordChange', function() {
 		.pipe(gulp.dest('build/assets'));
 });
 
+gulp.task('javascript:prod:planDiscovery', function() {
+	return browserify("app/standalone/PlanDiscovery/main.js", { debug: !IS_PROD })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+		.transform('loose-envify', { NODE_ENV: 'production' })
+		.bundle()
+		.pipe(source('PlanDiscovery.js'))
+		.pipe(buffer())
+		.pipe(uglify())
+		.pipe(rev())
+		.pipe(gulp.dest("./public/javascripts/"))
+		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(gulp.dest('build/assets'));
+});
+
 gulp.task('javascript:dev', function() {
 	return browserify("app/main.js", { debug: !IS_PROD })
 		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
@@ -103,6 +117,15 @@ gulp.task('javascript:dev:passwordChange', function() {
 		.pipe(gulp.dest("./public/javascripts/"));
 });
 
+gulp.task('javascript:dev:planDiscovery', function() {
+	return browserify("app/standalone/PlanDiscovery/main.js", { debug: !IS_PROD })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+		.bundle()
+		.pipe(source('PlanDiscovery.js'))
+		.pipe(buffer())
+		.pipe(gulp.dest("./public/javascripts/"));
+});
+
 gulp.task('javascript:clean', function() {
 	return del([ 'public/javascripts/*.js' ]);
 });
@@ -117,9 +140,9 @@ gulp.task('images:clean', function() {
 
 gulp.task('javascript', function(callback) {
 	if (IS_PROD) {
-		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', callback);
+		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', callback);
 	} else {
-		runSequence('javascript:clean', ['javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange'], callback);
+		runSequence('javascript:clean', ['javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery'], callback);
 	}
 });
 
@@ -173,15 +196,15 @@ gulp.task('images:dev', function() {
 gulp.task('build', ['images', 'css', 'javascript']);
 
 gulp.task('build:production', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], 'images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], 'images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', callback);
 });
 
 gulp.task('build:staging', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery'], callback);
 });
 
 gulp.task('build:review', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery'], callback);
 });
 
 gulp.task('watch', ['images', 'css', 'javascript'], function() {

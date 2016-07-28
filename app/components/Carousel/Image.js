@@ -25,7 +25,7 @@ class Image extends Component {
 Image.propTypes = {
 	height: PropTypes.number.isRequired,
 	width: PropTypes.number.isRequired,
-	imageId: PropTypes.string.isRequired,
+	imageId: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]).isRequired,
 	type: PropTypes.string.isRequired,
 	config: PropTypes.object.isRequired,
 	thumbnail: PropTypes.bool.isRequired

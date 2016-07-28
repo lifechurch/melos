@@ -9,11 +9,15 @@ export default function plansDiscovery(state = {}, action) {
 			return Object.assign({}, state, { isFetching: false, hasErrors: true, errors: action.errors })
 
 		case type('discoverSuccess'):
-			const { items } = action.response
+			const items  = action.response.items.map((item) => {
+				return Object.assign({}, item, { items: [] })
+			})
+
 			let map = {}
 			items.forEach((item, index) => {
 				map[item.id] = index
 			})
+
 			return Object.assign({}, state, { hasErrors: false, errors: [], items, map })
 
 		case type("collectionsItemsRequest"):

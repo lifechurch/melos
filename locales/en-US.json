@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "An error occurred",
 	"components.ErrorMessage.announcement.events.title.required": "Announcement title is required.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Bible reference not valid.",

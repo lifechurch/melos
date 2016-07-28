@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "Ett fel uppstod",
 	"components.ErrorMessage.announcement.events.title.required": "Meddelandetitel krävs.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Bibelreferens felaktig.",
@@ -158,7 +161,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Avbryt",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Ta bort",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Ange platsens adress...",
-	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Ange en stad för att välja en tidszon...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Land",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Tidszon",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Campus",

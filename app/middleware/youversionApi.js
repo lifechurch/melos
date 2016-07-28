@@ -78,6 +78,10 @@ export default store => next => action => {
 		.setVersion(version)
 		.params(params)
 
+	if (process && process.env && process.env.NODE_ENV) {
+		client.setEnvironment(process.env.NODE_ENV);
+	}
+
 	const auth = api_call.auth
 	if (auth === true) {
 		client.auth()
