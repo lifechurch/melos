@@ -29,19 +29,20 @@ class CarouselStandard extends Component {
     	if (slide.image_id) {
 				return (
 					<div className='radius-5'>
-						<CarouselSlideImage title={slide.title} key={`${index}`}>
+						<CarouselSlideImage title={slide.title} key={index}>
     					<Image width={320} height={180} thumbnail={false} imageId={slide.image_id} type={slide.type} config={imageConfig} />
     				</CarouselSlideImage>
 					</div>
 				)
 			} else if (slide.gradient) {
-				return <div className='radius-5' key={`${carouselContent.id}-${index}`}><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/></div>
 				return <div className='radius-5'><CarouselSlideGradient gradient={slide.gradient} title={slide.title} key={`${index}`}/></div>
 			} else {
 				return (
-					<CarouselSlideImage title={slide.title} key={`${index}`}>
-						<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
-					</CarouselSlideImage>
+					<div className='radius-5'>
+						<CarouselSlideImage title={slide.title} key={index}>
+							<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
+						</CarouselSlideImage>
+					</div>
 				)
 			}
     })
@@ -51,7 +52,7 @@ class CarouselStandard extends Component {
 	  return (
 	    <div className={classes} >
 	    	<Link className='header' to={`/en/reading-plans/collection/${carouselContent.id}`}>
-	    		<div className='title'>{`${carouselContent.type == 'saved' ? 'Saved Plans' : carouselContent.title}`}</div>
+	    		<div className='title'>{`${carouselContent.title}`}</div>
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>
 	    	</Link>

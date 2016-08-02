@@ -43,7 +43,7 @@ export default function plansDiscovery(state = {}, action) {
 				const { collections } = action.response
 				var items = state.items.slice(0)
 				collections.forEach((collection) => {
-					const discoveryIndex = state.map[collection.id]
+					var discoveryIndex = state.map[collection.id]
 					if (typeof discoveryIndex !== 'undefined') {
 						let newItems = collection.items
 						if (Array.isArray(items[discoveryIndex].items)) {
@@ -63,39 +63,37 @@ export default function plansDiscovery(state = {}, action) {
 		case type("recommendationsItemsSuccess"):
 			const { reading_plans } = action.response
 			var items = state.items.slice(0)
-			const discoveryIndex = state.map[action.params.id]
-			items[discoveryIndex] = [ reading_plans ]
-			// reading_plans.forEach((plan) => {
-			// 	if (typeof discoveryIndex !== 'undefined') {
-			// 		let newItems = plan.items
-			// 		if (Array.isArray(items[discoveryIndex].items)) {
-			// 			newItems = [
-			// 				...items[discoveryIndex].items,
-			// 				...plan.items
-			// 			]
-			// 		}
-			// 		items[discoveryIndex] = Object.assign({}, items[discoveryIndex], plan, { items: newItems })
-			// 	}
-			// })
+			var discoveryIndex = state.map[action.params.id]
+			items[discoveryIndex].items = reading_plans
+			reading_plans.forEach((plan) => {
+				if (typeof discoveryIndex !== 'undefined') {
+					// map some stuff for the standard carousel
+					plan.title = plan.name["default"]
+					// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
+					if (plan.images != null) plan.image_id = plan.id // else plan.image_id doesn't exist
+					plan.type = "reading_plan"
+					// items[discoveryIndex] = Object.assign({}, items[discoveryIndex], plan, { items: newItems })
+				}
+			})
 			return Object.assign({}, state, { hasErrors: false, errors: [], items })
 
 
 		case type("savedItemsSuccess"):
 			const { queued_items } = action.response
 			var items = state.items.slice(0)
-			reading_plans.forEach((plan) => {
-				const discoveryIndex = state.map[plan.id]
-				if (typeof discoveryIndex !== 'undefined') {
-					let newItems = plan
-					if (Array.isArray(items[discoveryIndex].items)) {
-						newItems = [
-							...items[discoveryIndex].items,
-							...plan
-						]
-					}
-					items[discoveryIndex] = Object.assign({}, items[discoveryIndex], plan, { items: newItems })
-				}
-			})
+			var discoveryIndex = state.map[action.params.id]
+			// reading_plans.forEach((plan) => {
+			// 	if (typeof discoveryIndex !== 'undefined') {
+			// 		let newItems = plan
+			// 		if (Array.isArray(items[discoveryIndex].items)) {
+			// 			newItems = [
+			// 				...items[discoveryIndex].items,
+			// 				...plan
+			// 			]
+			// 		}
+			// 		items[discoveryIndex] = Object.assign({}, items[discoveryIndex], plan, { items: newItems })
+			// 	}
+			// })
 			return Object.assign({}, state, { hasErrors: false, errors: [], items })
 
 		case type('configurationRequest'):

@@ -113,12 +113,6 @@ export default {
 		},
 		configuration: {
 			images: {}
-		},
-		recommended: {
-			items: []
-		},
-		saved: {
-			items: []
 		}
 	},
 	eventFeeds: {
