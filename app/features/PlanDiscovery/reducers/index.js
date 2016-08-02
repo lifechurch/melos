@@ -63,19 +63,20 @@ export default function plansDiscovery(state = {}, action) {
 		case type("recommendationsItemsSuccess"):
 			const { reading_plans } = action.response
 			var items = state.items.slice(0)
-			reading_plans.forEach((plan) => {
-				const discoveryIndex = state.map[action.params.id]
-				if (typeof discoveryIndex !== 'undefined') {
-					let newItems = plan.items
-					if (Array.isArray(items[discoveryIndex].items)) {
-						newItems = [
-							...items[discoveryIndex].items,
-							...plan.items
-						]
-					}
-					items[discoveryIndex] = Object.assign({}, items[discoveryIndex], plan, { items: newItems })
-				}
-			})
+			const discoveryIndex = state.map[action.params.id]
+			items[discoveryIndex] = [ reading_plans ]
+			// reading_plans.forEach((plan) => {
+			// 	if (typeof discoveryIndex !== 'undefined') {
+			// 		let newItems = plan.items
+			// 		if (Array.isArray(items[discoveryIndex].items)) {
+			// 			newItems = [
+			// 				...items[discoveryIndex].items,
+			// 				...plan.items
+			// 			]
+			// 		}
+			// 		items[discoveryIndex] = Object.assign({}, items[discoveryIndex], plan, { items: newItems })
+			// 	}
+			// })
 			return Object.assign({}, state, { hasErrors: false, errors: [], items })
 
 

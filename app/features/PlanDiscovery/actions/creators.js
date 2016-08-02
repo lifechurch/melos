@@ -120,7 +120,7 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'queue_items',
 				version: '3.1',
-				auth: {"user": "jacob.allenwood@life.church", "password": "Ninjasrus"},
+				auth: auth,
 				params: {},
 				http_method: 'get',
 				types: [ type('savedItemsRequest'), type('savedItemsSuccess'), type('savedItemsFailure') ]
