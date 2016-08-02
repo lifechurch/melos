@@ -28,21 +28,20 @@ class CarouselStandard extends Component {
     var slides = carouselContent.items.map( function(slide, index) {
     	if (slide.image_id) {
 				return (
-					<div className='radius-5'>
-						<CarouselSlideImage title={slide.title} key={`${carouselContent.id}-${index}`}>
+					<div className='radius-5' key={`${carouselContent.id}-${index}`}>
+						<CarouselSlideImage title={slide.title}>
     					<Image width={320} height={180} thumbnail={false} imageId={slide.image_id} type={slide.type} config={imageConfig} />
     				</CarouselSlideImage>
 					</div>
 				)
 			} else if (slide.gradient) {
-				return <div className='radius-5'><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title} key={`${carouselContent.id}-${index}`}/></div>
+				return <div className='radius-5' key={`${carouselContent.id}-${index}`}><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/></div>
 			} else {
 				<CarouselSlideImage title={slide.title} key={`${carouselContent.id}-${index}`}>
 					<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
 				</CarouselSlideImage>
 			}
     })
-
 
     var classes = `carousel-standard`
 
@@ -53,9 +52,7 @@ class CarouselStandard extends Component {
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>
 	    	</a>
-	      <Slider {...settings}>
-	      	{slides}
-	      </Slider>
+				<Slider {...settings}>{slides}</Slider>
 	    </div>
 	  );
 	}

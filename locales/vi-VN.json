@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "Báo lỗi!",
 	"components.ErrorMessage.announcement.events.title.required": "Cần có tiêu đề cho thông báo.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Trưng dẫn Kinh Thánh không hợp lệ.",
@@ -158,7 +161,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Hủy",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Xóa",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Nhập địa chỉ...",
-	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Nhập tên thành phố để cài múi giờ...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Quốc gia",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Múi giờ",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Tên hội thánh",

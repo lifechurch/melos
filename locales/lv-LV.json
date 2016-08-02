@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "Radusies kļūda",
 	"components.ErrorMessage.announcement.events.title.required": "Nepieciešams norādīt paziņojuma nosaukumu.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Bībeles atsauce nav derīga.",
@@ -158,7 +161,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Atcelt",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Dzēst",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Ievadīt atrašanās vietas adresi...",
-	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Ievadi pilsētu, lai uzstādītu laika joslu...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Valsts",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Laika josla",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist Austrumu daļa",

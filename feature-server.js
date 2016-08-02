@@ -204,25 +204,37 @@ router.post('/', urlencodedParser, function(req, res) {
 		try {
 			const store = getStore(feature, startingState, null, null)
 			loadData(feature, params, startingState, sessionData).then((action) => {
-				if (typeof action === 'object') {
-					store.dispatch(action)
+				if (typeof action === 'function') {
+					store.dispatch(action).then(() => {
+						finish()
+					}, (err) => {
+						finish()
+					})
+				} else if (typeof action === 'object') {
+					store.dispatch(action);
+					finish();
+				} else {
+					finish()
 				}
-				const RootComponent = getRootComponent(feature)
 
-				let html = null
-				try {
-					 html = renderToString(<IntlProvider locale={Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent /></Provider></IntlProvider>)
-				} catch(ex) {
-					console.log(ex, ex.stack)
-					return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex })
+				function finish() {
+					const RootComponent = getRootComponent(feature)
+
+					let html = null
+					try {
+						 html = renderToString(<IntlProvider locale={Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent /></Provider></IntlProvider>)
+					} catch(ex) {
+						return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex })
+					}
+
+					const initialState = Object.assign({}, startingState, store.getState())
+					const head = Helmet.rewind()
+					res.setHeader('Cache-Control', 'public')
+					res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale }, function(err, html) {
+						res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })
+					})
 				}
 
-				const initialState = Object.assign({}, startingState, store.getState())
-				const head = Helmet.rewind()
-				res.setHeader('Cache-Control', 'public')
-				res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale }, function(err, html) {
-					res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })
-				})
 			}, (error) => {
 				res.status(404).send(error)
 			})

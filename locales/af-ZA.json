@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "'n Fout het ingetree",
 	"components.ErrorMessage.announcement.events.title.required": "Aankondiging titel word benodig.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Bybelverwysing is nie geldig nie.",
@@ -158,7 +161,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Kanselleer",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Vee uit",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Voeg die Plek se adres in...",
-	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Sleutel 'n stad in om 'n tydsone op te stel...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Land",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Tydsone",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Kampus",

@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "Det oppstod en feil",
 	"components.ErrorMessage.announcement.events.title.required": "Kunngjøringstittel er påkrevd.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Bibelreferansen er ugyldig.",
@@ -158,7 +161,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Avbryt",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Slett",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Legg til adresse til lokasjonen...",
-	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Skriv inn en by for å velge en tidssone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Land",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Tidssone",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Campus",

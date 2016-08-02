@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "Ni kosa ilitokea",
 	"components.ErrorMessage.announcement.events.title.required": "Kichwa cha Tangazo kinahitajika.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Kumbukumbu za biblia hazipotei",
@@ -158,7 +161,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Ondoa",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Ondoa",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Andika barua pepe yako",
-	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Ingiza mji ili kutega majira ya saa",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Nchi",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "wakati wa eneo",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Kwanza campus ya Baptist Mashariki",

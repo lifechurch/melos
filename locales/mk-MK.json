@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "Се случи грешка",
 	"components.ErrorMessage.announcement.events.title.required": "Потребен е наслов на известувањето.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Библиската референца не е валидна.",
@@ -18,7 +21,7 @@
 	"components.EventHeader.saveAsDraft": "Зачувај како нацрт",
 	"components.EventHeader.myEvents": "Мои настани",
 	"components.EventHeader.eventBuilder": "КРЕИРАЊЕ НАСТАН",
-	"components.EventHeader.signOut": "Одјави се",
+	"components.EventHeader.signOut": "Одјав�� се",
 	"components.EventHeader.createAccount": "Отвори сметка",
 	"components.HtmlEditor.text": "Текст",
 	"components.HtmlEditor.bold": "Задебелено",
@@ -158,7 +161,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Откажи",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Избриши",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Внеси ја адресата на локацијата...",
-	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Внеси град за да постав��ш временска зона...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Земја",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Временска зона",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Campus",
@@ -220,6 +223,6 @@
 	"features.EventView.components.EventViewDetails.expand": "Прошири",
 	"features.EventView.components.EventViewDetails.collapse": "Собери",
 	"features.EventView.components.EventViewDetails.save": "Зачувај го настанот",
-	"features.EventView.components.EventViewDetails.signIn": "Најави се за да сочуваш настан",
+	"features.EventView.components.EventViewDetails.signIn": "Најави се за да со��уваш настан",
 	"features.EventView.components.EventViewDetails.saved": "Настанот е сочуван"
 }

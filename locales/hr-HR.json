@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "Došlo je do greške",
 	"components.ErrorMessage.announcement.events.title.required": "Potrebno je upisati naslov najave.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Poveznica na Bibliju nije valjana.",
@@ -158,7 +161,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Otkaži",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Obriši",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Unesi adresu lokacije...",
-	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Unesi grad za postavljanje vremenske zone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Država",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Vremenska zona",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Prvi kršćanski kampus",

@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "Er is een fout opgetreden",
 	"components.ErrorMessage.announcement.events.title.required": "Titel van de Mededeling is verplicht.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Bijbelverwijzing is niet geldig.",
@@ -158,7 +161,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Annuleren",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Verwijderen",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Voer het adres van de Locatie in...",
-	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Geef een plaatsnaam in voor het bepalen van de tijdzone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Land",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Tijdzone",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "First Baptist East Campus",

@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "Ndodhi një gabim",
 	"components.ErrorMessage.announcement.events.title.required": "Nevojitet titulli i Lajmërimit.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Referencë biblike jo e vlefshme.",
@@ -157,7 +160,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.warn": "Kjo do e fshij vendndodhjen nga çdo ngjarje e kaluar dhe e tashme. Ju s'do të mund ta përdorni këtë vendndodhje për ngjarje të ardhshme.",
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Anulo",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Fshij",
-	"features.EventEdit.features.location.components.LocationEdit.prompt": "Shkruaj adres��n e vendndodhjes...",
+	"features.EventEdit.features.location.components.LocationEdit.prompt": "Shkruaj adresën e vendndodhjes...",
 	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "Vendi",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Zona kohore",

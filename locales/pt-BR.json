@@ -1,4 +1,7 @@
 {
+	"plans.see all": "See All",
+	"plans.discover": "Discover",
+	"plans.my_plans": "My Plans",
 	"components.ErrorMessage.genericError": "Um erro ocorreu",
 	"components.ErrorMessage.announcement.events.title.required": "O título do anúncio é necessário.",
 	"components.ErrorMessage.default.bible.reference.not_found": "Referência Bíblica inválida.",
@@ -158,7 +161,7 @@
 	"features.EventEdit.features.location.components.LocationDeleteModal.cancel": "Cancelar",
 	"features.EventEdit.features.location.components.LocationDeleteModal.delete": "Apagar",
 	"features.EventEdit.features.location.components.LocationEdit.prompt": "Digite o endereço do local...",
-	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Enter a city to set a timezone...",
+	"features.EventEdit.features.location.components.LocationEdit.virtualPrompt": "Digite uma cidade para configurar um fuso horário...",
 	"features.EventEdit.features.location.components.LocationEdit.country": "País",
 	"features.EventEdit.features.location.components.LocationEdit.timezone": "Fuso Horário",
 	"features.EventEdit.features.location.components.LocationEdit.namePrompt": "Primeira Igreja Batista",

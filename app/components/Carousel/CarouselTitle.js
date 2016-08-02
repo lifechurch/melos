@@ -3,7 +3,6 @@ import Slider from 'react-slick'
 import CarouselSlideTitle from './CarouselSlideTitle'
 import CarouselArrow from './CarouselArrow'
 
-
 class CarouselTitle extends Component {
   render() {
 		const { carouselContent } = this.props
@@ -21,17 +20,16 @@ class CarouselTitle extends Component {
     };
 
     var slides = carouselContent.items.map( function(slide, index) {
-			return <div className='slide'><CarouselSlideTitle id={slide.id} title={slide.title} key={`${carouselContent.id}-${index}`}/></div>
+			return <div className='slide' key={`${carouselContent.id}-${index}`}><CarouselSlideTitle id={slide.id} title={slide.title}/></div>
     })
-
 
     var classes = `carousel-title`
 
 	  return (
 	    <div className={classes} >
-	      <Slider {...settings}>
-	      	{slides}
-	      </Slider>
+       <Slider {...settings}>
+         {slides}
+       </Slider>
 	    </div>
 	  );
 	}

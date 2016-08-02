@@ -22,17 +22,14 @@ class CarouselGradient extends Component {
     }
 
     var slides = carouselContent.items.map( function(slide, index) {
-			return <div className='radius-3'><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title} key={`${carouselContent.id}-${index}`}/></div>
+			return <div className='radius-3' key={`${carouselContent.id}-${index}`}><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/></div>
     })
-
 
     var classes = `carousel-gradient`
 
 	  return (
 	    <div className={classes} >
-	      <Slider {...settings}>
-	      	{slides}
-	      </Slider>
+       <Slider {...settings}>{slides}</Slider>
 	    </div>
 	  );
 	}
