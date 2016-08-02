@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
 import ActionCreators from '../actions/creators'
 import Carousel from '../../../components/Carousel/Carousel'
-
+import { Link } from 'react-router'
 
 class PlanDiscovery extends Component {
 	getCollectionsPage(ids, page) {
@@ -22,24 +21,10 @@ class PlanDiscovery extends Component {
 
 		return (
 			<div>
-				<div className='row horizontal-center discover-buttons'>
-					<ul className='button-group primary-toggle'>
-						<li><a className='solid-button green' href='#'>Discover</a></li>
-						<li className='inactive'><a className='solid-button green' href='#'>My Plans</a></li>
-					</ul>
-				</div>
-				<div>
-					{carousels}
-				</div>
+				{carousels}
 			</div>
 		)
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		discover: state.plansDiscovery
-	}
-}
-
-export default connect(mapStateToProps, null)(PlanDiscovery)
+export default PlanDiscovery

@@ -27,22 +27,28 @@ export default function plansDiscovery(state = {}, action) {
 			return Object.assign({}, state, { isFetching: false, hasErrors: true, errors: action.errors })
 
 		case type("collectionsItemsSuccess"):
-			const { collections } = action.response
-			var items = state.items.slice(0)
-			collections.forEach((collection) => {
-				const discoveryIndex = state.map[collection.id]
-				if (typeof discoveryIndex !== 'undefined') {
-					let newItems = collection.items
-					if (Array.isArray(items[discoveryIndex].items)) {
-						newItems = [
-							...items[discoveryIndex].items,
-							...collection.items
-						]
+			if (action.params.uiFocus) {
+				const collection = Object.assign({}, action.response.collections[0], state.collection)
+				return Object.assign({}, state, { collection })
+			} else {
+				const { collections } = action.response
+				var items = state.items.slice(0)
+				collections.forEach((collection) => {
+					const discoveryIndex = state.map[collection.id]
+					if (typeof discoveryIndex !== 'undefined') {
+						let newItems = collection.items
+						if (Array.isArray(items[discoveryIndex].items)) {
+							newItems = [
+								...items[discoveryIndex].items,
+								...collection.items
+							]
+						}
+						items[discoveryIndex] = Object.assign({}, items[discoveryIndex], collection, { items: newItems })
 					}
-					items[discoveryIndex] = Object.assign({}, items[discoveryIndex], collection, { items: newItems })
-				}
-			})
-			return Object.assign({}, state, { hasErrors: false, errors: [], items })
+				})
+				return Object.assign({}, state, { hasErrors: false, errors: [], items })
+			}
+
 
 		case type('configurationRequest'):
 		case type('configurationFailure'):
@@ -50,6 +56,13 @@ export default function plansDiscovery(state = {}, action) {
 
 		case type('configurationSuccess'):
 			return Object.assign({}, state, { configuration: action.response })
+
+		case type('collectionRequest'):
+		case type('collectionFailure'):
+			return state
+
+		case type('collectionSuccess'):
+			return Object.assign({}, state, { collection: action.response })
 
 		default:
 			return state
