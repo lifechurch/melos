@@ -67,13 +67,26 @@ function requirePlanDiscoveryData(nextState, replace, callback) {
 	})
 }
 
+function requirePlanCollectionData(nextState, replace, callback) {
+	const { params } = nextState
+	if (params.hasOwnProperty("id") && params.id > 0) {
+		store.dispatch(PlanDiscoveryActionCreators.collectionAll({ id: params.id }, false)).then((event) => {
+			callback()
+		}, (error) => {
+			callback()
+		})
+	} else {
+		callback()
+	}
+}
+
 function logPageView() {
 	if (typeof window !== 'undefined') {
   	window.__GA__.pageview(window.location.pathname);
   }
 }
 
-const routes = getRoutes(requireAuth, requireEvent, requirePlanDiscoveryData)
+const routes = getRoutes(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData)
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.momentLocale)
 window.__LOCALE__.momentLocaleData = moment.localeData()

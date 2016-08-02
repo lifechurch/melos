@@ -107,7 +107,13 @@ export default {
 		hasError: false,
 		errors: [],
 		isFetching: false,
-		items: []
+		items: [],
+		collection: {
+			items: []
+		},
+		configuration: {
+			images: {}
+		}
 	},
 	eventFeeds: {
 

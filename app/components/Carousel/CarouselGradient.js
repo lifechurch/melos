@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import CarouselSlideGradient from './CarouselSlideGradient'
 import CarouselSlideImage from './CarouselSlideImage'
 import CarouselArrow from './CarouselArrow'
-
+import { Link } from 'react-router'
 
 class CarouselGradient extends Component {
   render() {
@@ -22,7 +22,13 @@ class CarouselGradient extends Component {
     }
 
     var slides = carouselContent.items.map( function(slide, index) {
-			return <div className='radius-3' key={`${carouselContent.id}-${index}`}><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/></div>
+			return (
+        <div className='radius-3' key={`${carouselContent.id}-${index}`}>
+          <Link to={`/en/reading-plans/collection/${slide.id}`}>
+            <CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/>
+          </Link>
+        </div>
+      )
     })
 
     var classes = `carousel-gradient`

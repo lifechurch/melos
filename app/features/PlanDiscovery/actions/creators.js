@@ -21,6 +21,18 @@ const ActionCreators = {
 		}
 	},
 
+	collectionAll(params, auth) {
+		return dispatch => {
+			return dispatch(ActionCreators.configuration()).then((configuration) => {
+				return dispatch(ActionCreators.collection(params, auth)).then((data) => {
+					// When uiFocus = true, the reducer will populate root collection with items in state
+					const itemsParams = Object.assign({}, params, { ids: [params.id], page: 1, uiFocus: true })
+					return dispatch(ActionCreators.collectionsItems(itemsParams))
+				})
+			})
+		}
+	},
+
 	discover(params, auth) {
 		return {
 			params,
@@ -32,6 +44,21 @@ const ActionCreators = {
 				params: params,
 				http_method: 'get',
 				types: [ type('discoverRequest'), type('discoverSuccess'), type('discoverFailure') ]
+			}
+		}
+	},
+
+	collection(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'collections_view',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('collectionRequest'), type('collectionSuccess'), type('collectionFailure') ]
 			}
 		}
 	},
