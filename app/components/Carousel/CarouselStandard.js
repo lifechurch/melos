@@ -51,7 +51,7 @@ class CarouselStandard extends Component {
 
 	  return (
 	    <div className={classes} >
-	    	<Link className='header' to={`/en/reading-plans/collection/${carouselContent.id}`}>
+	    	<Link className='carousel-header' to={`/en/reading-plans/collection/${carouselContent.id}`}>
 	    		<div className='title'>{`${carouselContent.title}`}</div>
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>
