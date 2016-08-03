@@ -40,12 +40,11 @@
 
 
 .plans-container.columns.large-6.medium-6.medium-centered.text-center
-  .row
-    .plans-carousel.radius.arrows
-      %h2.carousel-header= t('plans.saved plans')
-      %div#saved-plans-carousel.ng-hide{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
-        -if @saved_plans.reading_plans
-          -#%ul.resource_list
+  -if @saved_plans
+    .row
+      .plans-carousel.radius.arrows
+        %h2.carousel-header= t('plans.saved plans')
+        %div#saved-plans-carousel.ng-hide{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
           - @saved_plans.reading_plans.each do |plan|
             %div.plan-content
               = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
@@ -59,16 +58,12 @@
                     =plan.name
                   %span.plan-length-carousel
                     = plan.formatted_length
-        -else
-          .none{align: "center"}= t("plans.none found")
 
-
-  .row
-    .plans-carousel.radius.arrows
-      %h2.carousel-header= t('plans.widget.featured plans')
-      %div#recommended-plans-carousel.ng-hide{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
-        -if !@featured_plans.nil?
-          -#%ul.resource_list
+  -if !@featured_plans.nil?
+    .row
+      .plans-carousel.radius.arrows
+        %h2.carousel-header= t('plans.widget.featured plans')
+        %div#recommended-plans-carousel.ng-hide{"carousel" => "", "arrows" => "true", "center-mode" => "false", "autoplay" => "false"}
           - @featured_plans.each do |plan|
             %div.plan-content
               = link_to(plan_path(plan, locale: I18n.locale), target: "_self") do
@@ -82,5 +77,3 @@
                     =plan.name
                   %span.plan-length-carousel
                     = plan.formatted_length
-        -else
-          .none{align: "center"}= t("plans.none found")
