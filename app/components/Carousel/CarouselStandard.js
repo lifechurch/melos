@@ -24,7 +24,6 @@ class CarouselStandard extends Component {
       } ]
     };
 
-		console.log(carouselContent.items)
     // for banner carousels, we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
     var slides = carouselContent.items.map( function(slide, index) {
     	if (slide.image_id) {
@@ -36,11 +35,17 @@ class CarouselStandard extends Component {
 					</div>
 				)
 			} else if (slide.gradient) {
-				return <div className='radius-5' key={`${carouselContent.id}-${index}`}><CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/></div>
+				return (
+					<div className='radius-5' key={`${carouselContent.id}-${index}`}>
+						<CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/>
+					</div>
+				)
 			} else {
-				<CarouselSlideImage title={slide.title} key={`${carouselContent.id}-${index}`}>
-					<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
-				</CarouselSlideImage>
+				return (
+					<CarouselSlideImage title={slide.title} key={`${carouselContent.id}-${index}`}>
+						<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
+					</CarouselSlideImage>
+				)
 			}
     })
 

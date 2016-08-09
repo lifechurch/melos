@@ -27,7 +27,17 @@ const ActionCreators = {
 				return dispatch(ActionCreators.collection(params, auth)).then((data) => {
 					// When uiFocus = true, the reducer will populate root collection with items in state
 					const itemsParams = Object.assign({}, params, { ids: [params.id], page: 1, uiFocus: true })
-					return dispatch(ActionCreators.collectionsItems(itemsParams))
+					return dispatch(ActionCreators.collectionsItems(itemsParams)).then((collectionItems) => {
+						// if we have a collection inside a collection, the reducer is going to populate the collection with it's items based on the flag
+						var ids = collectionItems.collections[0].items.map((item) => {
+							if (item.type === 'collection') {
+								return item.id
+							}
+						})
+						return dispatch(ActionCreators.collectionsItems({ ids: ids, collectInception: true })).then(() => {
+
+						})
+					})
 				})
 			})
 		}
