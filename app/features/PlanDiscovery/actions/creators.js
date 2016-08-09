@@ -34,9 +34,7 @@ const ActionCreators = {
 								return item.id
 							}
 						})
-						return dispatch(ActionCreators.collectionsItems({ ids: ids, collectInception: true })).then(() => {
-
-						})
+						if (ids.length > 0) return dispatch(ActionCreators.collectionsItems({ ids: ids, collectInception: true })).then(() => {})
 					})
 				})
 			})

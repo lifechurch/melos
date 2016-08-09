@@ -17,7 +17,7 @@ class PlanCollection extends Component {
 			let slide = null
 
 			if (item.type == 'collection') {
-				carousels.push( <Carousel carouselContent={item} carouselType={item.display} imageConfig={imageConfig}/> )
+				carousels.push( <div><Carousel carouselContent={item} carouselType={item.display} imageConfig={imageConfig}/></div> )
 			} else if (item.type == 'reading_plan') {
 				if (item.image_id) {
 					slide = (
@@ -46,10 +46,8 @@ class PlanCollection extends Component {
 				<div className='columns medium-12'>
 					<Link className='plans' to={`/en/reading-plans`}>&larr; Plans</Link>
 					<div className='collection-title'>{collection.title}</div>
+					{carousels}
 					<div className='horizontal-center'>
-						<div>
-							{carousels}
-						</div>
 						<ul className="medium-block-grid-3 small-block-grid-2">
 							{items}
 						</ul>
