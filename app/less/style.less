@@ -2065,3 +2065,61 @@ ul.language-selector li {
 	}
 }
 
+.collections-view {
+
+	@media only screen and (max-width: 519px) {
+		width: 100%;
+		.collection-item {
+			width: 50%;
+		}
+		.slide, img {
+			height: 100%;
+		}
+		.collection-title {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-size: 22px;
+			color: rgba(0,0,0,0.33);
+		}
+		.slide-title {
+			padding-left: 1px;
+			margin-top: 10px;
+			font-size: 14px;
+		}
+	}
+	@media only screen and (min-width: 520px) {
+		width: 75%;
+		.collection-item {
+			width: 33%;
+		}
+		.slide, img {
+			height: 100%;
+		}
+		.collection-title {
+			margin-top: 40px;
+			margin-bottom: 40px;
+			font-size: 27px;
+			color: rgba(0,0,0,0.33);
+		}
+		.slide-title {
+			padding-left: 1px;
+			margin-top: 15px;
+			font-size: 17px;
+		}
+
+	}
+	.plans {
+		font-size: 12px;
+		color: #4EAE50;
+	}
+
+  .slide, img {
+  	border-radius: 7px;
+		align-items: center;
+	}
+	.collection-item {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+}

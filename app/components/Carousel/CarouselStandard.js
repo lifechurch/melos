@@ -24,6 +24,7 @@ class CarouselStandard extends Component {
       } ]
     };
 
+		console.log(carouselContent.items)
     // for banner carousels, we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
     var slides = carouselContent.items.map( function(slide, index) {
     	if (slide.image_id) {

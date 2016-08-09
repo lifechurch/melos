@@ -28,7 +28,17 @@ export default function plansDiscovery(state = {}, action) {
 
 		case type("collectionsItemsSuccess"):
 			if (action.params.uiFocus) {
-				const collection = Object.assign({}, action.response.collections[0], state.collection)
+				var collection = Object.assign({}, action.response.collections[0], state.collection)
+				return Object.assign({}, state, { collection })
+			//  if a collection is inside a collection, then we need to get those items
+			} else if (action.params.collectInception) {
+				var collection = Object.assign({}, action.response.collections[0], state.collection)
+				collection.items.forEach((item) => {
+					// populate the items for the collection that made the items call
+					if (item.id == action.response.collections[0].id) {
+						item.items = action.response.collections[0].items
+					}
+				})
 				return Object.assign({}, state, { collection })
 			} else {
 				const { collections } = action.response
