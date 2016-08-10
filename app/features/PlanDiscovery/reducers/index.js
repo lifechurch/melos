@@ -55,21 +55,20 @@ export default function plansDiscovery(state = {}, action) {
 
 		case type("savedItemsSuccess"):
 		case type("recommendationsItemsSuccess"):
-			// var { reading_plans } = action.response
-			// var items = state.items.slice(0)
-			// // saved items and recommended are the same except saved doesn't come back with an id, so we set it to "saved" in discoverSuccess
-			// var discoveryIndex = (action.type != type("savedItemsSuccess")) ? state.map[action.params.id] : state.map["saved"]
-			// items[discoveryIndex].items = reading_plans
-			// reading_plans.forEach((plan) => {
-			// 	if (typeof discoveryIndex !== 'undefined') {
-			// 		// map some stuff for the standard carousel
-			// 		plan.title = plan.name["default"]
-			// 		// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
-			// 		if (plan.images != null) plan.image_id = plan.id // else plan.image_id doesn't exist
-			// 		plan.type = "reading_plan"
-			// 	}
-			// })
-			// return Object.assign({}, state, { hasErrors: false, errors: [], items })
+			var { reading_plans } = action.response
+			var items = state.items.slice(0)
+			// saved items and recommended are the same except saved doesn't come back with an id, so we set it to "saved" in discoverSuccess
+			var discoveryIndex = (action.type != type("savedItemsSuccess")) ? state.map[action.params.id] : state.map["saved"]
+			reading_plans.forEach((plan) => {
+				if (typeof discoveryIndex !== 'undefined') {
+					plan.title = plan.name["default"]
+					// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
+					if (plan.images != null) plan.image_id = plan.id // else plan.image_id doesn't exist
+					plan.type = "reading_plan"
+				}
+			})
+			var updatedItems = Object.assign({}, items[discoveryIndex], { items: reading_plans })
+			return Object.assign({}, state, { hasErrors: false, errors: [], items: updatedItems })
 
 		case type('configurationRequest'):
 		case type('configurationFailure'):
