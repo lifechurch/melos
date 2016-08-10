@@ -60,7 +60,7 @@ function requireEvent(nextState, replace, callback) {
 }
 
 function requirePlanDiscoveryData(nextState, replace, callback) {
-	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, false)).then((event) => {
+	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, true)).then((event) => {
 		callback()
 	}, (error) => {
 		callback()
