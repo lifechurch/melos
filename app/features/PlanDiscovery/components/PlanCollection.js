@@ -13,44 +13,63 @@ class PlanCollection extends Component {
 		var items = []
 		var carousels = []
 
-		collection.items.map((item) => {
-			let slide = null
+		if (collection.items) {
+			collection.items.forEach((item) => {
+					let slide = null
 
-			if (item.type == 'collection') {
-				carousels.push( <div><Carousel carouselContent={item} carouselType={item.display} imageConfig={imageConfig}/></div> )
-			} else if (item.type == 'reading_plan') {
-				if (item.image_id) {
-					slide = (
-						<CarouselSlideImage title={item.title}>
-							<Image width={720} height={405} thumbnail={false} imageId={item.image_id} type={item.type} config={imageConfig} />
-						</CarouselSlideImage>
-					)
-				} else if (item.gradient) {
-					slide = (
-						<CarouselSlideGradient gradient={item.gradient} id={item.id} title={item.title}/>
-					)
-				} else {
-					slide = (
-						<CarouselSlideImage title={item.title}>
-							<Image width={720} height={405} thumbnail={false} imageId='default' type={item.type} config={imageConfig} />
-						</CarouselSlideImage>
-					)
-				}
-				items.push( (<li className="collection-item" key={item.id}>{slide}</li>) )
-			}
+					if (item.type == 'collection') {
+						carousels.push( <div><Carousel carouselContent={item} carouselType={item.display} imageConfig={imageConfig}/></div> )
+					} else if (item.type == 'reading_plan') {
+						var slideLink = `/en/reading-plans/${item.id}`
+						if (item.image_id) {
+							slide = (
+								<div className='radius-5' >
+									<CarouselSlideImage title={item.title}>
+										<Image width={720} height={405} thumbnail={false} imageId={item.image_id} type={item.type} config={imageConfig} />
+									</CarouselSlideImage>
+								</div>
+							)
+						} else if (item.gradient) {
+							slide = (
+								<div className='radius-5' >
+									<CarouselSlideGradient gradient={item.gradient} id={item.id} title={item.title}/>
+								</div>
+							)
+						} else {
+							slide = (
+								<div className='radius-5' >
+									<CarouselSlideImage title={item.title}>
+										<Image width={720} height={405} thumbnail={false} imageId='default' type={item.type} config={imageConfig} />
+									</CarouselSlideImage>
+								</div>
+							)
+						}
+						items.push(
+							(
+								<li className="collection-item" key={item.id}>
+									<Link to={slideLink}>
+										{slide}
+									</Link>
+								</li>
+							)
+						)
+					}
+				})
+		}
 
-		})
 
 		return (
 			<div className='row collections-view'>
 				<div className='columns medium-12'>
 					<Link className='plans' to={`/en/reading-plans`}>&larr; Plans</Link>
 					<div className='collection-title'>{collection.title}</div>
-					{carousels}
-					<div className='horizontal-center'>
-						<ul className="medium-block-grid-3 small-block-grid-2">
-							{items}
-						</ul>
+					<div className='collection-items'>
+						{carousels}
+						<div className='horizontal-center'>
+							<ul className="medium-block-grid-3 small-block-grid-2">
+								{items}
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
