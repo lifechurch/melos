@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Slider from 'react-slick'
 import CarouselSlideTitle from './CarouselSlideTitle'
 import CarouselArrow from './CarouselArrow'
+import { Link } from 'react-router'
 
 class CarouselTitle extends Component {
   render() {
@@ -20,7 +21,13 @@ class CarouselTitle extends Component {
     };
 
     var slides = carouselContent.items.map( function(slide, index) {
-			return <div className='slide' key={`${carouselContent.id}-${index}`}><CarouselSlideTitle id={slide.id} title={slide.title}/></div>
+			return (
+          <div className='slide' key={index}>
+            <Link to={`/en/reading-plans/collection/${slide.id}`}>
+              <CarouselSlideTitle id={slide.id} title={slide.title}/>
+            </Link>
+          </div>
+        )
     })
 
     var classes = `carousel-title`

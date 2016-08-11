@@ -16,7 +16,11 @@ class Image extends Component {
 			return (currentDiff < lastMatch.diff) ? { diff: currentDiff, width: currentSize[0], height: currentSize[1] } : lastMatch
 		}, { diff: width, width: width, height: height })
 
-		const src = map.url.replace(/\{image_id\}/, imageId).replace(/\{0\}/, actualSize.width).replace(/\{1\}/, actualSize.height)
+		if (imageId == 'default') {
+			var src = config['reading_plans'].url.replace(/\{image_id\}/, imageId).replace(/\{0\}/, actualSize.width).replace(/\{1\}/, actualSize.height)
+		} else {
+			var src = map.url.replace(/\{image_id\}/, imageId).replace(/\{0\}/, actualSize.width).replace(/\{1\}/, actualSize.height)
+		}
 
 		return (<img src={src} width={actualSize.width} height={actualSize.height} />)
 	}
