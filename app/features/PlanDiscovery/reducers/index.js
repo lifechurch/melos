@@ -67,8 +67,8 @@ export default function plansDiscovery(state = {}, action) {
 					plan.type = "reading_plan"
 				}
 			})
-			var updatedItems = Object.assign({}, items[discoveryIndex], { items: reading_plans })
-			return Object.assign({}, state, { hasErrors: false, errors: [], items: updatedItems })
+			items[discoveryIndex] = Object.assign({}, items[discoveryIndex], { items: reading_plans })
+			return Object.assign({}, state, { hasErrors: false, errors: [], items })
 
 		case type('configurationRequest'):
 		case type('configurationFailure'):

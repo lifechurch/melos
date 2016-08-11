@@ -56,9 +56,10 @@ const ActionCreators = {
 					const itemsParams = Object.assign({}, params, { ids: [params.id], page: 1, uiFocus: true })
 					return dispatch(ActionCreators.collectionsItems(itemsParams)).then((collectionItems) => {
 						// if we have a collection inside a collection, the reducer is going to populate the collection with it's items based on the flag
-						var ids = collectionItems.collections[0].items.map((item) => {
+						var ids = []
+						collectionItems.collections[0].items.map((item) => {
 							if (item.type === 'collection') {
-								return item.id
+								ids.push(item.id)
 							}
 						})
 						if (ids.length > 0) return dispatch(ActionCreators.collectionsItems({ ids: ids, collectInception: true })).then(() => {})
