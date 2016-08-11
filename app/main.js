@@ -60,7 +60,7 @@ function requireEvent(nextState, replace, callback) {
 }
 
 function requirePlanDiscoveryData(nextState, replace, callback) {
-	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, true)).then((event) => {
+	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, store.getState().auth.isLoggedIn)).then((event) => {
 		callback()
 	}, (error) => {
 		callback()
@@ -80,13 +80,26 @@ function requirePlanCollectionData(nextState, replace, callback) {
 	}
 }
 
+function requirePlanData(nextState, replace, callback) {
+	const { params } = nextState
+	if (params.hasOwnProperty("id") && params.id > 0) {
+		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: params.id }, store.getState().auth.isLoggedIn)).then((event) => {
+			callback()
+		}, (error) => {
+			callback()
+		})
+	} else {
+		callback()
+	}
+}
+
 function logPageView() {
 	if (typeof window !== 'undefined') {
   	window.__GA__.pageview(window.location.pathname);
   }
 }
 
-const routes = getRoutes(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData)
+const routes = getRoutes(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData)
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.momentLocale)
 window.__LOCALE__.momentLocaleData = moment.localeData()

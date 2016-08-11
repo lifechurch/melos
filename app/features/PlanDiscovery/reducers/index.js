@@ -16,11 +16,13 @@ export default function plansDiscovery(state = {}, action) {
 
 			return Object.assign({}, state, { hasErrors: false, errors: [], items, map })
 
+		case type("planInfoRequest"):
 		case type("savedItemsRequest"):
 		case type("recommendationsItemsRequest"):
 		case type("collectionsItemsRequest"):
 			return Object.assign({}, state, { isFetching: true, hasErrors: false, errors: [] })
 
+		case type("planInfoFailure"):
 		case type("savedItemsFailure"):
 		case type("recommendationsItemsFailure"):
 		case type("collectionsItemsFailure"):
@@ -69,6 +71,11 @@ export default function plansDiscovery(state = {}, action) {
 			})
 			items[discoveryIndex] = Object.assign({}, items[discoveryIndex], { items: reading_plans })
 			return Object.assign({}, state, { hasErrors: false, errors: [], items })
+
+		case type("planInfoSuccess"):
+			const reading_plan = action.response
+			var statePlans = Object.assign({}, state, { plans: [] })
+			return Object.assign({}, statePlans, { hasErrors: false, errors: [], plans: reading_plan })
 
 		case type('configurationRequest'):
 		case type('configurationFailure'):

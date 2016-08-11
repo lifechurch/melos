@@ -32,7 +32,7 @@ const ActionCreators = {
 						}
 						// if we have saved plans, let's get 'em
 						if (savedId != null) {
-							// insert saved plans into the carousels list in the correct order recieved from the api
+							// insert saved plans into the carousels list in the correct order received from the api
 							dispatch(ActionCreators.savedItems(auth)).then((savedCarousel) => {
 								carousels.splice(savedId["index"], 0, savedCarousel);
 							})
@@ -65,6 +65,14 @@ const ActionCreators = {
 						if (ids.length > 0) return dispatch(ActionCreators.collectionsItems({ ids: ids, collectInception: true })).then(() => {})
 					})
 				})
+			})
+		}
+	},
+
+	readingplanInfo(params, auth) {
+		return dispatch => {
+			return dispatch(ActionCreators.configuration()).then((configuration) => {
+				return dispatch(ActionCreators.readingplanView(params, auth)).then((response) => {})
 			})
 		}
 	},
@@ -139,6 +147,20 @@ const ActionCreators = {
 				params: {},
 				http_method: 'get',
 				types: [ type('savedItemsRequest'), type('savedItemsSuccess'), type('savedItemsFailure') ]
+			}
+		}
+	},
+
+	readingplanView(params, auth) {
+		return {
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'view',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('planInfoRequest'), type('planInfoSuccess'), type('planInfoFailure') ]
 			}
 		}
 	},
