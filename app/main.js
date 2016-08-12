@@ -82,8 +82,9 @@ function requirePlanCollectionData(nextState, replace, callback) {
 
 function requirePlanData(nextState, replace, callback) {
 	const { params } = nextState
-	if (params.hasOwnProperty("id") && params.id > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: params.id }, store.getState().auth.isLoggedIn)).then((event) => {
+	var idNum = params.id.split("-")
+	if (params.hasOwnProperty("id") && idNum[0] > 0) {
+		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum[0] }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
