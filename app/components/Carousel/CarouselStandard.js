@@ -26,31 +26,43 @@ class CarouselStandard extends Component {
 
     // we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
     var slides = carouselContent.items.map( function(slide, index) {
+
+    	var slideLink = (slide.type == 'collection') ? `/en/reading-plans/collection/${slide.id}` : `/en/reading-plans/${slide.id}`
+
     	if (slide.image_id) {
 				return (
 					<div className='radius-5' key={index}>
-						<CarouselSlideImage title={slide.title} >
-    					<Image width={320} height={180} thumbnail={false} imageId={slide.image_id} type={slide.type} config={imageConfig} />
-    				</CarouselSlideImage>
+						<Link to={slideLink}>
+							<CarouselSlideImage title={slide.title}>
+	    					<Image width={320} height={180} thumbnail={false} imageId={slide.image_id} type={slide.type} config={imageConfig} />
+	    				</CarouselSlideImage>
+    				</Link>
 					</div>
 				)
 			} else if (slide.gradient) {
-				return <div className='radius-5'><CarouselSlideGradient gradient={slide.gradient} title={slide.title} key={`${index}`}/></div>
+				return (
+					<div className='radius-5' >
+						<Link to={slideLink}>
+							<CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/>
+						</Link>
+					</div>
+				)
 			} else {
 				return (
 					<div className='radius-5' key={index}>
-						<CarouselSlideImage title={slide.title} >
-							<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
-						</CarouselSlideImage>
+						<Link to={slideLink}>
+							<CarouselSlideImage title={slide.title} >
+								<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
+							</CarouselSlideImage>
+						</Link>
 					</div>
 				)
 			}
     })
 
-    var classes = `carousel-standard`
 
 	  return (
-	    <div className={classes} >
+	    <div className='carousel-standard' >
 	    	<Link className='carousel-header' to={`/en/reading-plans/collection/${carouselContent.id}`}>
 	    		<div className='title'>{`${carouselContent.title}`}</div>
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
