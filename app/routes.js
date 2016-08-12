@@ -17,7 +17,7 @@ import PlanCollectionView from './containers/PlanCollectionView'
 
 export default function(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData) {
 	return (
-		<Route path="/:locale/" component={App} onEnter={requireAuth}>
+		<Route path="/(:locale/)" component={App} onEnter={requireAuth}>
 			<IndexRoute component={EventFeedMine} />
 			<Route path="select_language" component={SelectLanguage} />
 			<Route path="login" component={Auth} />

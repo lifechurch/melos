@@ -17,6 +17,7 @@ import revManifest from './rev-manifest.json'
 import bodyParser from 'body-parser'
 import { getClient } from '@youversion/js-api'
 import { addLocaleData, IntlProvider } from 'react-intl'
+import getRoutes from './app/routes.js'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
@@ -186,6 +187,23 @@ function getLocale(languageTag) {
 	return final;
 }
 
+function getRenderProps(url) {
+	return new Promise((resolve, reject) => {
+		try {
+			const routes = getRoutes(null)
+			match({ routes, location: url }, (error, redirectLocation, renderProps) => {
+				if (!error && !redirectLocation && renderProps) {
+					resolve(renderProps)
+				} else {
+					resolve({})
+				}
+			})
+		} catch(ex) {
+			resolve({})
+		}
+	})
+}
+
 router.post('/', urlencodedParser, function(req, res) {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
@@ -220,18 +238,20 @@ router.post('/', urlencodedParser, function(req, res) {
 				function finish() {
 					const RootComponent = getRootComponent(feature)
 
-					let html = null
-					try {
-						 html = renderToString(<IntlProvider locale={Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent /></Provider></IntlProvider>)
-					} catch(ex) {
-						return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex })
-					}
+					getRenderProps(params.url).then((renderProps) => {
+						let html = null
+						try {
+							 html = renderToString(<IntlProvider locale={Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
+						} catch(ex) {
+							return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex })
+						}
 
-					const initialState = Object.assign({}, startingState, store.getState())
-					const head = Helmet.rewind()
-					res.setHeader('Cache-Control', 'public')
-					res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale }, function(err, html) {
-						res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })
+						const initialState = Object.assign({}, startingState, store.getState())
+						const head = Helmet.rewind()
+						res.setHeader('Cache-Control', 'public')
+						res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale }, function(err, html) {
+							res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })
+						})
 					})
 				}
 

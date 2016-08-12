@@ -60,7 +60,7 @@ function requireEvent(nextState, replace, callback) {
 }
 
 function requirePlanDiscoveryData(nextState, replace, callback) {
-	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, true)).then((event) => {
+	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, store.getState().auth.isLoggedIn)).then((event) => {
 		callback()
 	}, (error) => {
 		callback()
@@ -70,7 +70,7 @@ function requirePlanDiscoveryData(nextState, replace, callback) {
 function requirePlanCollectionData(nextState, replace, callback) {
 	const { params } = nextState
 	if (params.hasOwnProperty("id") && params.id > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.collectionAll({ id: params.id }, false)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.collectionAll({ id: params.id }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()

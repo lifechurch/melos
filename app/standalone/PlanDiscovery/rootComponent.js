@@ -1,2 +1,2 @@
-import PlanDiscoveryView from '../../containers/PlanDiscoveryView'
-export default PlanDiscoveryView
+import { RouterContext } from 'react-router'
+export default RouterContext
