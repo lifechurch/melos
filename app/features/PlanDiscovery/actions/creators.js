@@ -72,7 +72,15 @@ const ActionCreators = {
 	readingplanInfo(params, auth) {
 		return dispatch => {
 			return dispatch(ActionCreators.configuration()).then((configuration) => {
-				return dispatch(ActionCreators.readingplanView(params, auth)).then((response) => {})
+				return dispatch(ActionCreators.readingplanView(params, auth)).then((readingplan) => {
+					return dispatch(ActionCreators.readingplanStats(params, auth)).then((stats) => {
+						// tell the reducer to populate the recommendations in state.collection.plans.related
+						params.readingplanInfo = true
+						return dispatch(ActionCreators.recommendations(params)).then((recd) => {
+
+						})
+					})
+				})
 			})
 		}
 	},
@@ -161,6 +169,20 @@ const ActionCreators = {
 				params: params,
 				http_method: 'get',
 				types: [ type('planInfoRequest'), type('planInfoSuccess'), type('planInfoFailure') ]
+			}
+		}
+	},
+
+	readingplanStats(params, auth) {
+		return {
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'stats',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('planStatsRequest'), type('planStatsSuccess'), type('planStatsFailure') ]
 			}
 		}
 	},

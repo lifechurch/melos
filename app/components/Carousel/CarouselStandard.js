@@ -11,6 +11,8 @@ class CarouselStandard extends Component {
   render() {
 		const { carouselContent, imageConfig } = this.props
 
+		var carouselTitle = (carouselContent.title) ? carouselContent.title : <FormattedMessage id='plans.related plans' />
+
     var settings = {
     	centerMode: false,
       infinite: true,
@@ -64,7 +66,7 @@ class CarouselStandard extends Component {
 	  return (
 	    <div className='carousel-standard' >
 	    	<Link className='carousel-header' to={`/en/reading-plans/collection/${carouselContent.id}`}>
-	    		<div className='title'>{`${carouselContent.title}`}</div>
+	    		<div className='title'>{carouselTitle}</div>
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>
 	    	</Link>

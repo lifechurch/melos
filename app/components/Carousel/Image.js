@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
 class Image extends Component {
+
 	render() {
 		const { height, width, imageId, type, config, thumbnail } = this.props
 		let actualWidth = width
@@ -9,6 +10,15 @@ class Image extends Component {
 		// if we're getting the image from reading plan view call, then the formatting is different
 		if (type === 'about_plan') {
 			const selectedImage = config.images.reduce((lastMatch, currentSize) => {
+				const currentDiff = Math.abs(currentSize.width - width)
+				return (currentDiff < lastMatch.diff) ? { diff: currentDiff, width: currentSize.width, height: currentSize.height, url: currentSize.url } : lastMatch
+			}, { diff: width, width: width, height: height })
+
+			return (<img src={selectedImage.url} width={selectedImage.width} height={selectedImage.height} />)
+
+		// format is different for creating an avatar image as well
+		} else if (type === 'avatar') {
+			const selectedImage = config.reduce((lastMatch, currentSize) => {
 				const currentDiff = Math.abs(currentSize.width - width)
 				return (currentDiff < lastMatch.diff) ? { diff: currentDiff, width: currentSize.width, height: currentSize.height, url: currentSize.url } : lastMatch
 			}, { diff: width, width: width, height: height })
@@ -35,7 +45,6 @@ class Image extends Component {
 			return (<img src={src} width={actualSize.width} height={actualSize.height} />)
 
 		}
-
 	}
 }
 

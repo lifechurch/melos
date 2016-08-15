@@ -60,7 +60,7 @@ function requireEvent(nextState, replace, callback) {
 }
 
 function requirePlanDiscoveryData(nextState, replace, callback) {
-	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, store.getState().auth.isLoggedIn)).then((event) => {
+	store.dispatch(PlanDiscoveryActionCreators.discoverAll({language_tag: window.__LOCALE__.locale2}, store.getState().auth.isLoggedIn)).then((event) => {
 		callback()
 	}, (error) => {
 		callback()
@@ -84,7 +84,7 @@ function requirePlanData(nextState, replace, callback) {
 	const { params } = nextState
 	var idNum = params.id.split("-")
 	if (params.hasOwnProperty("id") && idNum[0] > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum[0] }, store.getState().auth.isLoggedIn)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum[0], language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()

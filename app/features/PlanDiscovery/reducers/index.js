@@ -17,12 +17,14 @@ export default function plansDiscovery(state = {}, action) {
 			return Object.assign({}, state, { hasErrors: false, errors: [], items, map })
 
 		case type("planInfoRequest"):
+		case type("planStatsRequest"):
 		case type("savedItemsRequest"):
 		case type("recommendationsItemsRequest"):
 		case type("collectionsItemsRequest"):
 			return Object.assign({}, state, { isFetching: true, hasErrors: false, errors: [] })
 
 		case type("planInfoFailure"):
+		case type("planStatsFailure"):
 		case type("savedItemsFailure"):
 		case type("recommendationsItemsFailure"):
 		case type("collectionsItemsFailure"):
@@ -57,25 +59,45 @@ export default function plansDiscovery(state = {}, action) {
 
 		case type("savedItemsSuccess"):
 		case type("recommendationsItemsSuccess"):
-			var { reading_plans } = action.response
-			var items = state.items.slice(0)
-			// saved items and recommended are the same except saved doesn't come back with an id, so we set it to "saved" in discoverSuccess
-			var discoveryIndex = (action.type != type("savedItemsSuccess")) ? state.map[action.params.id] : state.map["saved"]
-			reading_plans.forEach((plan) => {
-				if (typeof discoveryIndex !== 'undefined') {
-					plan.title = plan.name["default"]
-					// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
-					if (plan.images != null) plan.image_id = plan.id // else plan.image_id doesn't exist
-					plan.type = "reading_plan"
-				}
-			})
-			items[discoveryIndex] = Object.assign({}, items[discoveryIndex], { items: reading_plans })
-			return Object.assign({}, state, { hasErrors: false, errors: [], items })
+
+			if (action.params.readingplanInfo) {
+				var { reading_plans } = action.response
+
+				reading_plans.forEach((plan) => {
+						plan.title = plan.name["default"]
+						// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
+						if (plan.images != null) plan.image_id = plan.id // else plan.image_id doesn't exist
+						plan.type = "reading_plan"
+				})
+				var statePlans = Object.assign({}, state.plans, { related: { items: reading_plans, id: action.params.id } })
+
+				return Object.assign({}, state, { hasErrors: false, errors: [], plans: statePlans })
+			} else {
+				var { reading_plans } = action.response
+				var items = state.items.slice(0)
+				// saved items and recommended are the same except saved doesn't come back with an id, so we set it to "saved" in discoverSuccess
+				var discoveryIndex = (action.type != type("savedItemsSuccess")) ? state.map[action.params.id] : state.map["saved"]
+				reading_plans.forEach((plan) => {
+					if (typeof discoveryIndex !== 'undefined') {
+						plan.title = plan.name["default"]
+						// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
+						if (plan.images != null) plan.image_id = plan.id // else plan.image_id doesn't exist
+						plan.type = "reading_plan"
+					}
+				})
+				items[discoveryIndex] = Object.assign({}, items[discoveryIndex], { items: reading_plans })
+				return Object.assign({}, state, { hasErrors: false, errors: [], items })
+			}
 
 		case type("planInfoSuccess"):
 			const reading_plan = action.response
 			var statePlans = Object.assign({}, state, { plans: [] })
 			return Object.assign({}, statePlans, { hasErrors: false, errors: [], plans: reading_plan })
+
+		case type("planStatsSuccess"):
+			const reading_plan_stats = action.response
+			var statePlans = Object.assign({}, state.plans, { stats: reading_plan_stats })
+			return Object.assign({}, state, { hasErrors: false, errors: [], plans: statePlans })
 
 		case type('configurationRequest'):
 		case type('configurationFailure'):
