@@ -1,93 +1,103 @@
-- @title = "#{@plan.title.dup}" if @plan.present? && @plan.title.present?
-- @meta_title = "#{@plan.title.dup}" if @plan.present? && @plan.title.present?
-- @title << " - #{strip_tags(@plan.about).html_safe}" if @title.present? and @plan.about.present?
-- @title = truncate(@title, length: 160, separator: " ", omission: '')
-- @subtitle = '' # we don't want subtitle appended to single verse title so the verse gets more text space
+-#- @title = "#{@plan.title.dup}" if @plan.present? && @plan.title.present?
+-#- @meta_title = "#{@plan.title.dup}" if @plan.present? && @plan.title.present?
+-#- @title << " - #{strip_tags(@plan.about).html_safe}" if @title.present? and @plan.about.present?
+-#- @title = truncate(@title, length: 160, separator: " ", omission: '')
+-#- @subtitle = '' # we don't want subtitle appended to single verse title so the verse gets more text space
+-#
+-#- @meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+-#- tw_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 120, version_id: @plan.version_id)))
+-#- fb_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 200, version_id: @plan.version_id)))
+-#
+-#- content_for :sidebar_class, 'rp-about-sidebar'
+-#
+-#- content_for :meta_description do
+-#  = "#{t('plans.title')}: #{truncate(strip_tags(@plan.about).html_safe, length: 138, separator: " ", omission: '')}"
+-#
+-#- content_for :additional_meta do
+-#  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
+-#  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
+-#  %link{rel: "canonical", href: canonicalHref}
+-#  %meta{property: "og:title",       content: @meta_title }
+-#  %meta{property: "og:url",         content: @meta_url}
+-#  %meta{property: "og:description", content: @plan.about }
+-#  %meta{name: "twitter:card",             content: "summary"}
+-#  %meta{name: "twitter:url",              content: @meta_url}
+-#  %meta{name: "twitter:title" ,           content: @meta_title}
+-#  %meta{name: "twitter:description",      content: @plan.about}
+-#  %meta{name: "twitter:site",             content: "@YouVersion"}
+-#
+-#- content_for :twitter_meta do
+-#  %meta{name: "twitter:image", content: tw_image_url}
+-#
+-#- content_for :facebook_meta do
+-#  %meta{property: "og:image", content: fb_image_url}
+-#
+-#.row.collapse
+-#  .columns.large-8.medium-8.medium-centered
+-#    .reading_plan_index_header
+-#      - if @referrer.present?
+-#        - link_pth = @referrer
+-#        - if is_rtl?
+-#          - link_lbl = "&rarr; #{t("plans.back")}"
+-#        - else
+-#          - link_lbl = "&larr; #{t("plans.back")}"
+-#
+-#      - else
+-#        - link_pth = plans_path
+-#        - if is_rtl?
+-#          - link_lbl = "&rarr; #{t('pages.home.browse_plans')}"
+-#        - else
+-#          - link_lbl = "&larr; #{t('pages.home.browse_plans')}"
+-#
+-#      = link_to(link_pth, class: '', target: "_self") do
+-#        != link_lbl
+-#
+-#      .right
+-#        %a{ "ng-click" => "showShare = !showShare", "href" => "#" }
+-#          != t("moments.action.share")
+-#        %div.share-panel.ng-hide{"ng-show" => "showShare"}
+-#          %div.video.addthis_sharing_toolbox{:data => {:url => "#{request.original_url}", :title => "#{@plan.title}"}}
+-#
+-#
+-#%article.reading_plan_index
+-#  - if @plan.hero_image.present?
+-#    .row.collapse
+-#      .columns.large-8.medium-8.medium-centered
+-#        = image_tag @plan.hero_image.url, class: 'rp-hero-img'
+-#  .row.collapse
+-#    .columns.large-2.medium-2
+-#      !="&nbsp;"
+-#    .columns.large-5.medium-5
+-#      %h1= @plan.name
+-#      %p.plan_length= @plan.length
+-#      %p.plan_about!= @plan.about
+-#
+-#      %h3.publisher
+-#        =t("plans.publisher")
+-#      %p.publisher!= @plan.copyright
+-#      - unless @plan.publisher_url.nil?
+-#        = link_to(t("plans.about publisher"), @plan.publisher_url, { target: "_self", class:"publisher" })
+-#
+-#    .columns.large-3.medium-3
+-#      .side-col
+-#        = render partial: "/plans/button", locals: {plan: @plan}
+-#        %hr
+-#        = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
+-#
+-#    .columns.large-2.medium-2
+-#      !="&nbsp;"
+-#
+-#- @branch_deeplink = "reading_plan_detail?id=#{@plan.id}"
+-#= render '/shared/app_banner'
+-#
+-#
 
-- @meta_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
-- tw_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 120, version_id: @plan.version_id)))
-- fb_image_url = @plan.hero_image.present? ? "https:#{@plan.hero_image.url}" : url_for(image_path(bible_icon_for_version(size: 200, version_id: @plan.version_id)))
+!= html
 
-- content_for :sidebar_class, 'rp-about-sidebar'
+- content_for :lower_javascript do
+  %script{type:'text/javascript'}
+    !='window.YV_API_HOST = "' + Cfg.event_api_host + '"'
+    = if Cfg.event_api_port.present?
+      != 'window.YV_API_PORT = "' + Cfg.event_api_port + '"'
 
-- content_for :meta_description do
-  = "#{t('plans.title')}: #{truncate(strip_tags(@plan.about).html_safe, length: 138, separator: " ", omission: '')}"
-
-- content_for :additional_meta do
-  - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
-  - canonicalHref = "https://#{request.host_with_port}#{locale_dir}#{request.fullpath}"
-  %link{rel: "canonical", href: canonicalHref}
-  %meta{property: "og:title",       content: @meta_title }
-  %meta{property: "og:url",         content: @meta_url}
-  %meta{property: "og:description", content: @plan.about }
-  %meta{name: "twitter:card",             content: "summary"}
-  %meta{name: "twitter:url",              content: @meta_url}
-  %meta{name: "twitter:title" ,           content: @meta_title}
-  %meta{name: "twitter:description",      content: @plan.about}
-  %meta{name: "twitter:site",             content: "@YouVersion"}
-
-- content_for :twitter_meta do
-  %meta{name: "twitter:image", content: tw_image_url}
-
-- content_for :facebook_meta do
-  %meta{property: "og:image", content: fb_image_url}
-
-.row.collapse
-  .columns.large-8.medium-8.medium-centered
-    .reading_plan_index_header
-      - if @referrer.present?
-        - link_pth = @referrer
-        - if is_rtl?
-          - link_lbl = "&rarr; #{t("plans.back")}"
-        - else
-          - link_lbl = "&larr; #{t("plans.back")}"
-
-      - else
-        - link_pth = plans_path
-        - if is_rtl?
-          - link_lbl = "&rarr; #{t('pages.home.browse_plans')}"
-        - else
-          - link_lbl = "&larr; #{t('pages.home.browse_plans')}"
-
-      = link_to(link_pth, class: '', target: "_self") do
-        != link_lbl
-
-      .right
-        %a{ "ng-click" => "showShare = !showShare", "href" => "#" }
-          != t("moments.action.share")
-        %div.share-panel.ng-hide{"ng-show" => "showShare"}
-          %div.video.addthis_sharing_toolbox{:data => {:url => "#{request.original_url}", :title => "#{@plan.title}"}}
-
-
-%article.reading_plan_index
-  - if @plan.hero_image.present?
-    .row.collapse
-      .columns.large-8.medium-8.medium-centered
-        = image_tag @plan.hero_image.url, class: 'rp-hero-img'
-  .row.collapse
-    .columns.large-2.medium-2
-      !="&nbsp;"
-    .columns.large-5.medium-5
-      %h1= @plan.name
-      %p.plan_length= @plan.length
-      %p.plan_about!= @plan.about
-
-      %h3.publisher
-        =t("plans.publisher")
-      %p.publisher!= @plan.copyright
-      - unless @plan.publisher_url.nil?
-        = link_to(t("plans.about publisher"), @plan.publisher_url, { target: "_self", class:"publisher" })
-
-    .columns.large-3.medium-3
-      .side-col
-        = render partial: "/plans/button", locals: {plan: @plan}
-        %hr
-        = render partial: "/sidebars/plans/show", locals: {presenter: self.sidebar_presenter}
-
-    .columns.large-2.medium-2
-      !="&nbsp;"
-
-- @branch_deeplink = "reading_plan_detail?id=#{@plan.id}"
-= render '/shared/app_banner'
-
-
+  = javascript_include_tag js

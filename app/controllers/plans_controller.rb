@@ -70,40 +70,54 @@ class PlansController < ApplicationController
   end
 
   def show
-    # Redirect for url format that is shared from mobile devices.
-    if params[:day] then redirect_to( sample_plan_url(id: params[:id], day: params[:day])) and return end
+    # # Redirect for url format that is shared from mobile devices.
+    # if params[:day] then redirect_to( sample_plan_url(id: params[:id], day: params[:day])) and return end
+    #
+    # if current_user.present? && params[:back].present?
+    #   if params[:back] = 'subscription'
+    #     @referrer = subscription_path(user_id: current_user.to_param, id: params[:id])
+    #   end
+    # end
+    #
+    # @plan = Plan.find(params[:id])
+    #
+    # if @plan.valid?
+    #   begin
+    #   @friends_reading = @plan.friends_reading(auth: current_auth)
+    #   @friends_completed = @plan.friends_completed(auth: current_auth)
+    #   rescue => e
+    #   end
+    #   self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
+    #
+    #   # Need to query here to see if user has subscribe to any plans
+    #   if current_user.present?
+    #     @subscriptions = Subscription.all(current_user, auth: current_user.auth)
+    #     @show_my_plans = @subscriptions.present? && @subscriptions.length > 0
+    #     @my_saved_items = Subscription.allSavedIds(current_user)
+    #     if @my_saved_items.reading_plans.is_a? Array
+    #       @is_saved = @my_saved_items.reading_plans.include? @plan.id
+    #     else
+    #       @is_saved = false
+    #     end
+    #   end
+    #
+    # else
+    #   render_404
+    # end
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s
+    }
 
-    if current_user.present? && params[:back].present?
-      if params[:back] = 'subscription'
-        @referrer = subscription_path(user_id: current_user.to_param, id: params[:id])
-      end
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
+
+    if (fromNode['error'].present?)
+      return render_404
     end
 
-    @plan = Plan.find(params[:id])
+    @title = fromNode['head']['title']
 
-    if @plan.valid?
-      begin
-      @friends_reading = @plan.friends_reading(auth: current_auth)
-      @friends_completed = @plan.friends_completed(auth: current_auth)
-      rescue => e
-      end
-      self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
-
-      # Need to query here to see if user has subscribe to any plans
-      if current_user.present?
-        @subscriptions = Subscription.all(current_user, auth: current_user.auth)
-        @show_my_plans = @subscriptions.present? && @subscriptions.length > 0
-        @my_saved_items = Subscription.allSavedIds(current_user)
-        if @my_saved_items.reading_plans.is_a? Array
-          @is_saved = @my_saved_items.reading_plans.include? @plan.id
-        else
-          @is_saved = false
-        end
-      end
-      
-    else
-      render_404
-    end
+    render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   def sample
