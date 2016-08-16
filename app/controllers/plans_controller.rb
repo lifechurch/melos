@@ -36,7 +36,26 @@ class PlansController < ApplicationController
 
     p = {
         "strings" => {},
-        "languageTag" => I18n.locale.to_s
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title = fromNode['head']['title']
+
+    render locals: { html: fromNode['html'], js: fromNode['js'] }
+  end
+
+  def plan_collection
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)

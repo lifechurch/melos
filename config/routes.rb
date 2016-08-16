@@ -191,9 +191,16 @@ YouversionWeb::Application.routes.draw do
   # /reading-plans
   # /reading-plans/:id
   # /reading-plans/:id/day/:day
-  resources :plans, :only => [:index, :show], :path => 'reading-plans'
-  match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
-  match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
+
+  # get '/reading-plans/col/:id', to: 'plans#plan_collection'
+
+  resources :plans, :only => [:index, :show], :path => 'reading-plans' do
+    get "col/:id", on: :plan_collection
+  end
+
+  get '/reading-plans/:id/day/:day', to: 'plans#sample', as: "sample_plan"
+  get '/reading-plans/:id/day/:day/completed', to: 'plans#day_complete', as: "day_complete_plan"
+
 
   # Reading Plans
   # Legacy links that need to be supported
@@ -206,7 +213,7 @@ YouversionWeb::Application.routes.draw do
 
   # featuredplans.youversion.com use this link.
   # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
-  match "/reading-plans/:id/start" => redirect {|params| "/reading-plans/#{params[:id]}" }
+  # match "/reading-plans/:id/start" => redirect {|params| "/reading-plans/#{params[:id]}" }
 
   # Community emails send this link
   # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
