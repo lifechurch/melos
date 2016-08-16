@@ -33,7 +33,7 @@ const ActionCreators = {
 						// if we have saved plans, let's get 'em
 						if (savedId != null) {
 							// insert saved plans into the carousels list in the correct order received from the api
-							dispatch(ActionCreators.savedItems(auth)).then((savedCarousel) => {
+							dispatch(ActionCreators.savedItems(params, auth)).then((savedCarousel) => {
 								carousels.splice(savedId["index"], 0, savedCarousel);
 							})
 						}
@@ -75,9 +75,12 @@ const ActionCreators = {
 				return dispatch(ActionCreators.readingplanView(params, auth)).then((readingplan) => {
 					return dispatch(ActionCreators.readingplanStats(params, auth)).then((stats) => {
 						// tell the reducer to populate the recommendations in state.collection.plans.related
-						params.readingplanInfo = true
-						return dispatch(ActionCreators.recommendations(params)).then((recd) => {
-
+						const planParams = Object.assign({}, params, { readingplanInfo: true })
+						return dispatch(ActionCreators.recommendations(planParams)).then((recd) => {
+							// now check if requested reading plan view is a saved plan for the user
+							const savedplanParams = Object.assign({}, params, { readingplanInfo: false, savedplanCheck: true, planId: readingplan.id })
+							console.log(savedplanParams)
+							return dispatch(ActionCreators.savedItems(savedplanParams, auth)).then((saved) => {})
 						})
 					})
 				})
@@ -145,14 +148,15 @@ const ActionCreators = {
 		}
 	},
 
-	savedItems(auth) {
+	savedItems(params, auth) {
 		return {
+			params,
 			api_call: {
 				endpoint: 'reading-plans',
 				method: 'queue_items',
 				version: '3.1',
 				auth: auth,
-				params: {},
+				params: params,
 				http_method: 'get',
 				types: [ type('savedItemsRequest'), type('savedItemsSuccess'), type('savedItemsFailure') ]
 			}
@@ -183,6 +187,48 @@ const ActionCreators = {
 				params: params,
 				http_method: 'get',
 				types: [ type('planStatsRequest'), type('planStatsSuccess'), type('planStatsFailure') ]
+			}
+		}
+	},
+
+	readingplanSubscribeUser(params, auth) {
+		return {
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'subscribe_user',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'post',
+				types: [ type('planSubscribeRequest'), type('planSubscribeSuccess'), type('planSubscribeFailure') ]
+			}
+		}
+	},
+
+	readingplanSaveforlater(params, auth) {
+		return {
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'add_to_queue',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'post',
+				types: [ type('planSaveforlaterRequest'), type('planSaveforlaterSuccess'), type('planSaveforlaterFailure') ]
+			}
+		}
+	},
+
+	readingplanRemoveSave(params, auth) {
+		return {
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'remove_from_queue',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'post',
+				types: [ type('planRemoveSaveRequest'), type('planRemoveSaveSuccess'), type('planRemoveSaveFailure') ]
 			}
 		}
 	},

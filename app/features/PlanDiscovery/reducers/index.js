@@ -16,6 +16,8 @@ export default function plansDiscovery(state = {}, action) {
 
 			return Object.assign({}, state, { hasErrors: false, errors: [], items, map })
 
+		case type("planSaveforlaterRequest"):
+		case type("planRemoveSaveRequest"):
 		case type("planInfoRequest"):
 		case type("planStatsRequest"):
 		case type("savedItemsRequest"):
@@ -23,6 +25,8 @@ export default function plansDiscovery(state = {}, action) {
 		case type("collectionsItemsRequest"):
 			return Object.assign({}, state, { isFetching: true, hasErrors: false, errors: [] })
 
+		case type("planSaveforlaterFailure"):
+		case type("planRemoveSaveFailure"):
 		case type("planInfoFailure"):
 		case type("planStatsFailure"):
 		case type("savedItemsFailure"):
@@ -72,6 +76,18 @@ export default function plansDiscovery(state = {}, action) {
 				var statePlans = Object.assign({}, state.plans, { related: { items: reading_plans, id: action.params.id } })
 
 				return Object.assign({}, state, { hasErrors: false, errors: [], plans: statePlans })
+
+			} else if (action.params.savedplanCheck) {
+				var { reading_plans } = action.response
+				var saved = false
+				console.log('AJHSFUHASRHRJGRWG')
+				reading_plans.forEach((plan) => {
+					if (plan.id == action.params.planId) saved = true
+				})
+				var statePlans = Object.assign({}, state.plans, { saved: saved })
+
+				return Object.assign({}, state, { hasErrors: false, errors: [], plans: statePlans })
+
 			} else {
 				var { reading_plans } = action.response
 				var items = state.items.slice(0)
@@ -88,6 +104,12 @@ export default function plansDiscovery(state = {}, action) {
 				items[discoveryIndex] = Object.assign({}, items[discoveryIndex], { items: reading_plans })
 				return Object.assign({}, state, { hasErrors: false, errors: [], items })
 			}
+
+		case type("planSaveforlaterSuccess"):
+		case type("planRemoveSaveSuccess"):
+			var statePlans = Object.assign({}, state.plans, { saved: !state.plans.saved })
+
+			return Object.assign({}, state, { hasErrors: false, errors: [], plans: statePlans })
 
 		case type("planInfoSuccess"):
 			const reading_plan = action.response

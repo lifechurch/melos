@@ -73,7 +73,7 @@ class AboutPlan extends Component {
 						</div>
 						<div className='columns large-4 medium-4'>
 							<div className='side-col'>
-								<PlanActionButtons readingPlan={readingPlan} />
+								<PlanActionButtons dispatch={this.props.dispatch} readingPlan={readingPlan} />
 							</div>
 							<hr></hr>
 							<div className='stats'>

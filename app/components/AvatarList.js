@@ -9,7 +9,6 @@ class AvatarList extends Component {
 
 		if (!avatarList) return <div></div>
 
-
 		var friends = avatarList.map((friend) => {
 			return (
 				<a className='avatar'>

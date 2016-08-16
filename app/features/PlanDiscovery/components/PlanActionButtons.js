@@ -14,8 +14,24 @@ class PlanActionButtons extends Component {
 		this.setState({ dialogOpen: !this.state.dialogOpen })
 	}
 
-	saveForLater() {
+	saveForLater(id) {
+		if (this.props.readingPlan.saved) {
+			this.props.dispatch(ActionCreators.readingplanRemoveSave({ id: id }, true))
+		} else {
+			this.props.dispatch(ActionCreators.readingplanSaveforlater({ id: id }, true))
+		}
+	}
 
+	samplePlan(plan) {
+		// redirect to sample plan
+		window.location.replace(`/reading-plans/${plan.id}-${plan.slug}/day/1`)
+	}
+
+	subscribeUser(id, privacy) {
+		this.props.dispatch(ActionCreators.readingplanSubscribeUser({ id: id , private: privacy })).then((plan) => {
+			// redirect to start plan
+			window.location.replace(`/users/${plan.username}/reading-plans/${plan.id}-${plan.slug}`)
+		})
 	}
 
 	render() {
@@ -32,8 +48,8 @@ class PlanActionButtons extends Component {
 				<div className='plan-privacy-buttons text-center'>
 					<p className='detail-text'><FormattedMessage id="plans.privacy.visible to friends?" /></p>
 					<div className='yes-no-buttons'>
-						<a className='yes solid-button green'><FormattedMessage id="ui.yes button" /></a>
-						<a className='no solid-button gray'><FormattedMessage id="ui.no button" /></a>
+						<a className='yes solid-button green' onClick={this.subscribeUser.bind(this, readingPlan.id, false)}><FormattedMessage id="ui.yes button"/></a>
+						<a className='no solid-button gray' onClick={this.subscribeUser.bind(this, readingPlan.id, true)}><FormattedMessage id="ui.no button" /></a>
 					</div>
 				</div>
 			)
@@ -41,14 +57,20 @@ class PlanActionButtons extends Component {
 			var dialogBox = null
 		}
 
+		if (this.props.readingPlan.saved) {
+			var saveforlater = <a className='save-for-later' onClick={this.saveForLater.bind(this, readingPlan.id)}><FormattedMessage id="plans.save for later" />checkmark </a>
+		} else {
+			var saveforlater = <a className='save-for-later' onClick={this.saveForLater.bind(this, readingPlan.id)}><FormattedMessage id="plans.save for later" /> </a>
+		}
+
 		return (
 			<div className='rp-subscription-info'>
 				<div className='solid-button green padded' onClick={::this.handleClick}><FormattedMessage id="plans.read today" /></div>
 				{ dialogBox }
 				<div className='text-center'>
-					<a className='save-for-later' onClick={::this.saveForLater}><FormattedMessage id="plans.save for later" /> </a>
+					{saveforlater}
 					&bull;
-					<a> <FormattedMessage id="plans.sample" /></a>
+					<a onClick={this.samplePlan.bind(self, readingPlan)}> <FormattedMessage id="plans.sample" /></a>
 				</div>
 			</div>
 		)
