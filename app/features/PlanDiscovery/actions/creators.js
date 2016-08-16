@@ -48,10 +48,10 @@ const ActionCreators = {
 		}
 	},
 
-	collectionAll(params, auth) {
+	collectionAll(params) {
 		return dispatch => {
 			return dispatch(ActionCreators.configuration()).then((configuration) => {
-				return dispatch(ActionCreators.collection(params, auth)).then((data) => {
+				return dispatch(ActionCreators.collection(params)).then((data) => {
 					// When uiFocus = true, the reducer will populate root collection with items in state
 					const itemsParams = Object.assign({}, params, { ids: [params.id], page: 1, uiFocus: true })
 					return dispatch(ActionCreators.collectionsItems(itemsParams)).then((collectionItems) => {

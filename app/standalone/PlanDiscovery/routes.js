@@ -4,11 +4,11 @@ import PlanDiscoveryView from '../../containers/PlanDiscoveryView'
 import PlanCollectionView from '../../containers/PlanCollectionView'
 import PlansView from '../../containers/PlansView'
 
-export default function(requireEvent) {
+export default function(requirePlanDiscoveryData, requirePlanCollectionData) {
 	return (
 		<Route path="/(:lang/)reading-plans" component={PlansView}>
-			<IndexRoute component={PlanDiscoveryView} />
-			<Route path="collection/:id" component={PlanCollectionView} />
+			<IndexRoute component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
+			<Route path="collection/:id" component={PlanCollectionView} onEnter={requirePlanCollectionData} />
 		</Route>
 	)
 }
