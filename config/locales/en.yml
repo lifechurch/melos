@@ -903,6 +903,7 @@ en:
     none me:                                    "You haven't earned any badges yet."
     none user:                                  "%{username} hasn't earned any badges yet."
   plans:
+    see all:                                    "See All"
     day_completed:                              "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
     status:
       on track:                                 "On Track!"
@@ -1410,6 +1411,10 @@ en:
       just now:                                 "just now"
     verses selected:                            "verses selected"
   EventsAdmin:
+    plans:
+      see all:                                  "See All"
+      discover:                                 "Discover"
+      my_plans:                                 "My Plans"
     components:
       ErrorMessage:
         genericError:                           "An error occurred"
@@ -1655,6 +1660,8 @@ en:
                 addAnother:                     "Add another time"
                 cancel:                         "Cancel"
                 save:                           "Save this Location"
+                virtualPrompt:                  "Enter a city to set a timezone..."
+
               LocationTimeShifter:
                 shift:                          "Shift start dates"
                 forward:                        "forward"

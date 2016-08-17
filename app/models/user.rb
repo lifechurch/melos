@@ -58,12 +58,14 @@ class User < YV::Resource
       opts[:token] = Digest::MD5.hexdigest "#{opts[:email]}.Yv6-#{opts[:password]}"
       opts[:notification_settings] = { newsletter: {email: true}}
 
+      # timezone is passed in through form in opts
       data, errs = post("users/create", opts)
       results = if errs.blank?
          YV::API::Results.new(new(data),errs) # data = User
       else
          YV::API::Results.new(data,errs)      # data = Hash API response
       end
+
       return results
     end
 
@@ -159,6 +161,16 @@ class User < YV::Resource
     # returns YV::API::Results instance for api data or errors
     def forgot_password(email)
       data, errs = post("users/forgot_password", email: email)
+      return YV::API::Results.new(data,errs)
+    end
+
+    def view_settings(auth)
+      data, errs = get("users/view_settings", auth: auth)
+      return YV::API::Results.new(data,errs)
+    end
+
+    def update_settings(auth, settings)
+      data, errs = post("users/update_settings", auth: auth, settings: settings)
       return YV::API::Results.new(data,errs)
     end
 

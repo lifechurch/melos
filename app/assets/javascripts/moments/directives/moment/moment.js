@@ -29,7 +29,7 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 		controller: ["$scope", "Like", "Comment", "$state", "$mdMenu", "$element", "$timeout", "$stateParams", "$state", "$window", "Moments", function($scope, Like, Comment, $state, $mdMenu, $element, $timeout, $stateParams, $state, $window, Moments) {
 			$scope.newComment = {};
 
-            if (['plan_subscription','plan_completion'].indexOf($scope.data.kind) !== -1) {
+            if (typeof $scope.data === 'object' && ['plan_subscription','plan_completion'].indexOf($scope.data.kind) !== -1) {
                 $scope.data.object.moment_title += (', <b>' + $scope.data.object.plan_title + '</b>');
             }
 
@@ -44,7 +44,9 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
 
             $scope.needsMoreMenu = function() {
                 if (
-                    (
+                    (typeof $scope.data === 'object') &&
+
+                    ((
                         $scope.data.object.references &&
                         $scope.data.object.references.length
                     ) ||
@@ -55,7 +57,7 @@ angular.module('yv.moments.moment', [ /*'yv.api.like', 'yv.api.comment' */])
                             $scope.data.object.actions.start_plan
                         )
                     )
-                   ){
+                   )){
                     return true;
                 } else {
                     return false;

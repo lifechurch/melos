@@ -76,7 +76,7 @@
         - if presenter.reading.devotional
           - start_reading_path = devo_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day)
         - else
-          - start_reading_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: 0)
+          - start_reading_path = ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: 0, initial: true)
 
         = link_to start_reading_path, target: "_self", class: 'solid-button green' do
           = t("plans.widget.start reading")
@@ -110,5 +110,5 @@
                 - else
                   %a{'onClick' => "document.getElementById('plan_ref_#{index}_complete_form').submit()"}
                     = image_tag image_path("Check-Unchecked.svg")
-              = link_to ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: index), target: "_self", title: t("read reference", { reference: ref.reference.safe_human }) do
+              = link_to ref_subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, content: index, initial: true), target: "_self", title: t("read reference", { reference: ref.reference.safe_human }) do
                 = ref.reference.safe_human

@@ -15,7 +15,8 @@ angular.module('api.railsHttp', [])
 				if (name === null) {
 					f += "&" + encodeURIComponent(key) + "=" + encodeURIComponent(o[key]);
 				} else {
-					f += "&" + encodeURIComponent(name + "[" + key + "]") + "=" + encodeURIComponent(o[key]);					
+                    displayKey = isNaN(key) ? key : ''
+					f += "&" + encodeURIComponent(name + "[" + displayKey + "]") + "=" + encodeURIComponent(o[key]);
 				}
 
 			}

@@ -163,7 +163,7 @@
       %form{"ng-hide"=>"success"}
         %input.selected-color{"ng-model" => "highlight.color", :type => "hidden"}
         .reader-highlight-swatches
-          .colorButton.vertical-middle.text-center{"ng-class" => "{active: highlight.color == color}", "ng-click" => "highlight.color = color", "ng-repeat" => "color in colors", "ng-style" => "{'background-color': '#' + color}"}
+          .colorButton.vertical-middle.text-center{"ng-class" => "{active: highlight.color == color}", "ng-click" => "highlight.color = color", "ng-repeat" => "color in ::colors", "ng-style" => "{'background-color': '#' + color}"}
             -#%span{"ng-if" => "highlight.color == color"} X
           %div.colorButton.vertical-middle.text-center{"md-color-picker" => true, "value" => "highlight.color"}
         .reader-highlight-save
@@ -193,7 +193,7 @@
       %form{"ng-hide"=>"success"}
         %input.selected-color{"ng-model" => "bookmark.color", :type => "hidden"}
         .reader-bookmark-swatches
-          .colorButton.vertical-middle.text-center{"ng-class" => "{active: bookmark.color == color}", "ng-click" => "bookmark.color = color", "ng-repeat" => "color in colors", "ng-style" => "{'background-color': '#' + color}"}
+          .colorButton.vertical-middle.text-center{"ng-class" => "{active: bookmark.color == color}", "ng-click" => "bookmark.color = color", "ng-repeat" => "color in ::colors", "ng-style" => "{'background-color': '#' + color}"}
             -# %span{"ng-if" => "bookmark.color == color"} X
           %div.colorButton.vertical-middle.text-center{"md-color-picker" => true, "value" => "bookmark.color"}
             ="+"
@@ -230,7 +230,7 @@
       %form{"ng-hide"=>"success"}
         %input.selected-color{"ng-model" => "note.color", :type => "hidden"}
         .reader-note-swatches
-          .colorButton.vertical-middle.text-center{"ng-class" => "{active: note.color == color}", "ng-click" => "note.color = color", "ng-repeat" => "color in colors", "ng-style" => "{'background-color': '#' + color}"}
+          .colorButton.vertical-middle.text-center{"ng-class" => "{active: note.color == color}", "ng-click" => "note.color = color", "ng-repeat" => "color in ::colors", "ng-style" => "{'background-color': '#' + color}"}
             -#%span{"ng-if" => "note.color == color"} X
           %div.colorButton.vertical-middle.text-center{"md-color-picker" => true, "value" => "note.color"}
         .reader-note-inputs

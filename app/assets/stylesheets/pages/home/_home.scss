@@ -320,6 +320,29 @@ a.heading {
   .votd-content {
     padding:20px;
 
+    .votd-share-button {
+      a {
+        font-size: 13px;
+      }
+
+      .share-panel {
+        position: absolute;
+        width: 190px;
+        right: 10px;
+        top: 10px;
+
+        @media #{$small-only} {
+          right: -5px;
+        }
+      }
+
+      @media #{$small-only} {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+    }
+
     @media #{$medium-only} {
       padding: 0 20px 20px;
     }

@@ -15,6 +15,8 @@ YouversionWeb::Application.routes.draw do
   get "/header",        to: "pages#header"
   get "/myPlansLink",   to: "plans#my_plans_link"
   get "/isLoggedIn",    to: "users#is_logged_in"
+  get "/getSettings",   to: "users#user_settings"
+  post "/updateSettings",     to: "users#user_update_settings"
   get "/resetPassword", to: "users#reset_password"
   # get "/press",         to: redirect("http://youversion.com/press")
   get "/bibleappforkids", to: redirect("https://bibleappforkids.com")
@@ -52,10 +54,11 @@ YouversionWeb::Application.routes.draw do
   get "/bybelvirkinders", to: "redirects#kinderbybel"
   get "/pambata",       to: "redirects#pambatang"
   get "/pambatangbibleapp", to: "redirects#pambatang"
+  get "/%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81", to: "redirects#thaibafk"
 
   get "/trending-bible-verses", to: "pages#trending"
   get "/verse-of-the-day", to: "pages#votd"
-  get "/bible-verse-of-the-day", to: "pages#votd"
+  get "/bible-verse-of-the-day", to: "pages#votd", as: "votd"
   get "/wmf",           to: "redirects#wmf"
   get "/world-meeting-of-families-app",           to: "pages#world-meeting-of-families-app"
   get "/apple-app-site-association", to: "pages#apple_app_site_association"

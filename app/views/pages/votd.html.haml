@@ -1,7 +1,8 @@
 :ruby
   @title            = "#{t('pages.home.votd.title')} - #{@vodRef.to_s}"
   @meta_description = t("meta.mobile.description")
-  @meta_url          = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  @meta_url         = "#{request.protocol}#{request.host_with_port}#{request.fullpath.split("?")[0]}?ref=#{@vodRef.usfm.to_param}"
+  @vod_img_url       = @showVerseImage ? "https:#{@vodImage.image_url}" : url_for(image_path(localized_bible_icon(200)))
 
 - @main_nav = false
 - @sidebar = false
@@ -11,23 +12,31 @@
   :javascript
     try{Typekit.load();}catch(e){}
 
+- content_for :facebook_meta do
+  %meta{property: "og:title",       content: @title }
+  %meta{property: "og:url",         content: @meta_url }
+  %meta{property: "og:description", content: @vodContent }
+  %meta{property: "og:image",       content: @vod_img_url }
+  %meta{property: "og:image:width",       content: '640' }
+  %meta{property: "og:image:height",       content: '640' }
+
+- content_for :twitter_meta do
+  %meta{name: "twitter:card",         content: "summary_large_image"}
+  %meta{name: "twitter:url",          content: @meta_url}
+  %meta{name: "twitter:title" ,       content: @title}
+  %meta{name: "twitter:description",  content: @vodContent}
+  %meta{name: "twitter:image",        content: @vod_img_url}
+  %meta{name: "twitter:site",         content: "@YouVersion"}
+
 - content_for :additional_meta do
   = render '/shared/hreflang'
   - locale_dir = (I18n.locale.to_s.eql?("en") or I18n.locale.to_s.eql?("en-GB")) ? '' : '/' + I18n.locale.to_s
   - canonicalHref = "https://#{request.host_with_port}#{locale_dir}"
   %link{rel: "canonical", href: canonicalHref}
-  %meta{name: "url",            content: @meta_url}
-  %meta{property: "og:title",       content: @title }
-  %meta{property: "og:url",         content: @meta_url }
-  %meta{property: "og:description", content: @meta_description }
-  %meta{name: "twitter:card",             content: "summary"}
-  %meta{name: "twitter:url",              content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
-  %meta{name: "twitter:title" ,           content: @title}
-  %meta{name: "twitter:description",      content: @meta_description}
-  %meta{name: "twitter:image",            content: url_for(image_path(localized_bible_icon(121)))}
-  %meta{name: "twitter:site",             content: "@YouVersion"}
+  %meta{name: "url",      content: @meta_url}
+
 - content_for :meta_description do
-  = "#{@title}"
+  = "#{@vodContent}"
 
 = cache "votd_#{I18n.locale}_#{Date.today.yday()}", expires_in: YV::Caching.a_short_time do
 
@@ -40,6 +49,14 @@
               %img.votd-image{src: "#{@vodImage.image_url}"}
           .columns.medium-7{class: @showVerseImage ? '' : 'inner-row medium-centered'}
             .votd-content
+              .right.text-right.votd-share-button
+                -#%a{ "ng-click" => "showShare = !showShare", "href" => "#" }
+                -#  %span{"ng-hide" => "showShare"}
+                -#    != t("moments.action.share")
+                -#  %span.ng-hide{"ng-show" => "showShare"}
+                -#    != t("ui.cancel")
+                %div.share-panel
+                  %div.video.addthis_sharing_toolbox{:data => {:url => "#{@meta_url}", :title => "#{@title}", :description => "#{@vodContent}"}}
               %h1.heading
                 %img.votd-icon{src: "#{image_path('votd-stroked.png')}"}
                 =t('pages.home.votd.title')
