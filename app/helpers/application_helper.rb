@@ -173,6 +173,12 @@ module ApplicationHelper
     [ :en, :"en-GB", :es, :"zh-CN", :"zh-TW", :ko, :pt, :ru, :nl, :de, :fr, :ar, :id, :tr, :fa, :ja, :af, :tl, :ur, :th ]
   end
 
+  def i18n_events_whitelist
+    # the following localizations will allow translation for the events page
+    # the others will default to en
+    [ :en, :"en-GB", :es, :"zh-CN", :"zh-TW", :nl, :fr, :de, :ko, :pt, :ru ]
+  end
+
   def app_page_path
     locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
     "#{locale_dir}/app"

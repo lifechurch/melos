@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  include ApplicationHelper
+
   layout 'node_app'
 
   def show
@@ -17,4 +19,6 @@ class EventsController < ApplicationController
 
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
+
+
 end

@@ -1,36 +1,51 @@
-- events_link = "/sign-up?redirect=events-admin"
+
+:ruby
+  puts case I18n.locale.to_s
+  when "fr", "ru", "zh-TW", "ko", "de", "nl"
+    image_dir = I18n.locale
+  when "pt", "pt-BR"
+    image_dir = "pt-BR"
+  when "es", "es-ES"
+    image_dir = "es"
+  when "zh", "zh-CN"
+    image_dir = "zh-CN"
+  else image_dir = "en"
+  end
+
+- events_link = "/sign-up?redirect=events-admin/#{image_dir}"
 - if current_auth
-  - events_link = "https://events.bible.com/"
+  - events_link = "https://events.bible.com/#{image_dir}"
+
 
 .MobileDropdown
   .close-dropdown-btn-mobile
     %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/close.svg"), :style => "width:26px;"}/
   %ul.mobile-menu
     %li
-      %a.features-btn{:href => '/features/events'} Features
+      %a.features-btn{:href => '/features/events'}=t('events.menu.features')
     %li
-      %a{:href => '/features/events-faq'} FAQ
+      %a{:href => '/features/events-faq'}=t('events.menu.faq')
     %li
-      %a{:href => '/features/events-resources'} Resources
+      %a{:href => '/features/events-resources'}=t('events.menu.resources')
 .homepage-wrap
   .header-wrap.fixed-header
     .header
       .mobile-menu-btn.show-mobile
         %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/menu-icon.svg"), :style => "width:19px;"}/
       %a.logo{:href => "/features/events"}
-        %img.logo-white{:alt => "", "data-no-retina" => "", :src => image_path("features/events/yv-logo-white.svg")}/
-        %img.logo-black{:alt => "", "data-no-retina" => "", :src => image_path("features/events/yv-logo-gray.svg")}/
+        %img.logo-white{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/yv-logo-white.svg")}/
+        %img.logo-black{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/yv-logo-gray.svg")}/
       %ul.main-nav
         %li
-          %a.features-btn{:href => '/features/events'} Features
+          %a.features-btn{:href => '/features/events'}=t('events.menu.features')
         %li
-          %a{:href => '/features/events-faq'} FAQ
+          %a{:href => '/features/events-faq'}=t('events.menu.faq')
         %li
-          %a{:href => '/features/events-resources'} Resources
+          %a{:href => '/features/events-resources'}=t('events.menu.resources')
         %li.btn2
-          %a{:href => "mailto:?subject=This new feature from YouVersion could really help our church!&body=Have you seen YouVersion’s new Events feature yet? I believe it would really help our church engage people more with our services. It lets people add their own notes during a service, then even save the event so they can come back later and study it with the Bible references. I think it could probably save us money on printing costs, too. Here’s YouVersion’s Events website: http://www.bible.com/features/events.", :target => "_blank"} Tell Your Church
+          %a{:href => "mailto:?subject=#{t('events.mail subject')}&body=#{t('events.mail body')}", :target => "_blank"}=t('events.menu.tell your church')
         %li.btn2
-          %a{:href => events_link} Create an Event
+          %a{:href => events_link}=t('events.menu.create an event')
       .clearfix
     / //header
   / //header-wrap
@@ -47,35 +62,35 @@
       %li{"data-menuanchor" => "section5"}
         %a.features-btn{:href => "#features"} section5
   .BgBox
-    #section1-bg.sectionBg
-    #section2-bg.sectionBg
-    #section3-bg.sectionBg
-    #section4-bg.sectionBg
+    #section1-bg.sectionBg{style: "background-image: url('/assets/features/events/#{image_dir}/home-bg1-big.jpg')"}
+    #section2-bg.sectionBg{style: "background-image: url('/assets/features/events/#{image_dir}/home-bg2-big.jpg')"}
+    #section3-bg.sectionBg{style: "background-image: url('/assets/features/events/#{image_dir}/home-bg3-big.jpg')"}
+    #section4-bg.sectionBg{style: "background-image: url('/assets/features/events/home-bg4-big.jpg')"}
   #fullpage-wrap
     #section11.section
       #section1-bg
       .home-section-inner-wrap
         .home-text-wrap1
           .icon-row
-            = image_tag_with_at2x "features/events/bible-app-icon-1024-e-n.png", :alt => "bible icon"
-          %h1 Bring the power of the Bible App into your church services.
-          %p Everything your church needs to engage with your message, and to share it with others. Free, paperless, and already installed on millions of devices.
+            = image_tag_with_at2x "features/events/#{image_dir}/bible-app-icon-1024.png", :alt => "bible icon"
+          %h1=t('events.section 1 title')
+          %p=t('events.section 1 text')
           %a.movedown-btn
             = image_tag_with_at2x "features/events/chevron-down.png", :alt => "move down"
     #section21.section
       #section2-bg
       .home-section-inner-wrap
         .home-text-wrap2
-          %h1 Help your community get more out of your messages.
-          %p Attenders can follow along, engage with Scripture, take notes, and even save their own personalized copy for future reference.
+          %h1=t('events.section 2 title')
+          %p=t('events.section 2 text')
           %a.movedown-btn
             = image_tag_with_at2x "features/events/chevron-down.png", :alt => "move down"
     #section31.section
       #section3-bg
       .home-section-inner-wrap
         .home-text-wrap3
-          %h1 Your content on their smartphone.
-          %p Message outlines, announcements, links to online giving… whatever you need to communicate to your church, share it all — 100% free.
+          %h1=t('events.section 3 title')
+          %p=t('events.section 3 text')
           %a.movedown-btn
             = image_tag_with_at2x "features/events/chevron-down.png", :alt => "move down"
     #section41.section
@@ -83,8 +98,8 @@
       #section-iphone
       .home-section-inner-wrap
         .home-text-wrap4
-          %h1 Lead your people further into the Bible.
-          %p Recommend Reading Plans and Devotionals that will keep your community connecting with Scripture all week long.
+          %h1=t('events.section 4 title')
+          %p=t('events.section 4 text')
           %a.movedown-btn2{:href => "#features"}
             = image_tag_with_at2x "features/events/chevron-down.png", :alt => "move down"
     .iphone-hand-wrap
@@ -92,11 +107,11 @@
         .iphone-hand
           .iphone-screen-wrap
             .screen-head
-              = image_tag_with_at2x "features/events/home-images/iphone-screen-header.jpg", :alt => ""
+              = image_tag_with_at2x "features/events/#{image_dir}/screen-header.jpg", :alt => ""
             .iphone-screen
-              = image_tag_with_at2x "features/events/home-images/large-feed.jpg", :alt => ""
+              = image_tag "features/events/#{image_dir}/iphone-screen.jpg", :alt => ""
             .screen-footer
-              = image_tag_with_at2x "features/events/home-images/iphone-screen-footer.jpg", :alt => ""
+              = image_tag_with_at2x "features/events/#{image_dir}/screen-footer.jpg", :alt => ""
     / //iphone-hand-wrap
     #features.section.fp-auto-height
       .admin-bg
@@ -104,102 +119,97 @@
           .admin-feature-content
             .slider-wrap
               -#%span.arrow-up.moveup-btn
-              %h1 Powerful doesn’t have to mean complicated.
-              %p Easily create Events from any web-connected Mac or PC. Simply drag-and-drop each of your Event pieces into place, rearranging, editing, and tweaking as you go.
+              %h1=t('events.slide demo title')
+              %p=t('events.slide demo text')
               .laptop-bg
                 .admin-banner-flexslider.flexslider
                   %ul.slides
                     %li
-                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/slide1.png")}/
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-1.jpg")}/
                     %li
-                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/slide2.png")}/
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-2.jpg")}/
                     %li
-                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/slide3.png")}/
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-3.jpg")}/
                     %li
-                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/slide4.png")}/
+                      %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/admin-4.jpg")}/
             / //slider-wrap
             .content-two
-              %h1 All the building blocks you need…to make exactly the Events you want.
-              %p.intro Flexible modules save you time and effort. Combine elements to create new Events from scratch. Or reuse your existing Events and modify them as necessary. Even copy existing Events and modify them to suit completely different types of gatherings. All along the way, Preview lets you see your Event content exactly as your attenders will.
+              %h1=t('events.building blocks title')
+              %p.intro=t('events.building blocks text')
               .each-box
                 .title
                   %span.icon
                     = image_tag_with_at2x "features/events/text-module-icon.png", :alt => "Text Module"
-                  %span.text Text Module
-                %p Outlines, key points, discussion questions… Share any text content that will help your attenders follow along with your message as it’s happening.
+                  %span.text=t('events.module 1 title')
+                %p=t('events.module 1 text')
               / //each-box
               .each-box
                 .title
                   %span.icon
                     = image_tag_with_at2x "features/events/bible-references-icon.png", :alt => "Bible References"
-                  %span.text Bible References
-                %p Display passages right where your message refers to them, linked to any of the Bible App’s 1,200+ versions, in 900+ languages — no copying or pasting required.
+                  %span.text=t('events.module 2 title')
+                %p=t('events.module 2 text', version_count: '1200', language_count: '900')
               / //each-box
               .each-box
                 .title
                   %span.icon
                     = image_tag_with_at2x "features/events/reading-plans-icon.png", :alt => "Reading Plans Module"
-                  %span.text Reading Plans Module
-                %p Link to Bible Plans and Devotionals that relate to your teaching points, helping your audience continue to engage with God’s Word throughout the week.
+                  %span.text=t('events.module 3 title')
+                %p=t('events.module 3 text')
               / //each-box
               .each-box
                 .title
                   %span.icon
                     = image_tag_with_at2x "features/events/external-links-icon.png", :alt => "External Links"
-                  %span.text Web Links Module
-                %p Put your audience just one tap away from online giving, volunteer signup, or church home pages. Drop a link to any external site directly inside your Event.
+                  %span.text=t('events.module 4 title')
+                %p=t('events.module 4 text')
               / //each-box
               .each-box
                 .title
                   %span.icon
                     = image_tag_with_at2x "features/events/image-module-icon.png", :alt => "Image Module"
-                  %span.text Image Module
-                %p Bring your Event to life with series art, photos, Verse Images, and more. Attenders can easily share Event images to their social media, taking your message viral.
+                  %span.text=t('events.module 5 title')
+                %p=t('events.module 5 text')
               / //each-box
               .each-box
                 .title
                   %span.icon
                     = image_tag_with_at2x "features/events/announcement-module-icon.png", :alt => "Announcement Module"
-                  %span.text Announcement Module
-                %p Easily distribute all your timely, important information: church news, calendar events, programs, classes, volunteer and missions opportunities, and more.
+                  %span.text=t('events.module 6 title')
+                %p=t('events.module 6 text')
               / //each-box
               .each-box
                 .title
                   %span.icon
                     = image_tag_with_at2x "features/events/multiple-locations-icon.png", :alt => "Multiple Locations"
-                  %span.text Locations & Times
-                %p Let people know where and when your Event is taking place — even for Events happening at multiple times and locations.
+                  %span.text=t('events.module 7 title')
+                %p=t('events.module 7 text')
               / //each-box
               .each-box
                 .title
                   %span.icon
                     = image_tag_with_at2x "features/events/duplicate-events-icon.png", :alt => "Duplicate Events"
-                  %span.text Duplicate Events
-                %p Save time and effort. Rapidly create new Events by copying existing ones and modifying them with updated information.
+                  %span.text=t('events.module 8 title')
+                %p=t('events.module 8 text')
               / //each-box
               .each-box
                 .title
                   %span.icon
                     = image_tag_with_at2x "features/events/cost-savings-icon.png", :alt => "Cost Savings"
-                  %span.text Cost Savings
-                %p Save money on printing and use less paper… even as you’re reaching out to people on a platform with more than 200 million installs.
+                  %span.text=t('events.module 9 title')
+                %p=t('events.module 9 text')
             / //content-two
             .content-three
               .imagebox
                 = image_tag_with_at2x "features/events/piggy-bank-image.png", :alt => "piggy-bank-image"
-              .text
-                The average church spends
-                %b $10,000 a year
-                %br
-                  on printing bulletins. Events helps you cut or
-                  %br even eliminate those costs.
+              .text=t('events.cost savings').html_safe
             / //content-three
             .content-testimonial
-              %h1 Testimonials
+              %h1=t('events.testimonials')
               .each-testi
                 .thumbnail
                   = image_tag_with_at2x "features/events/bill_white.png", :alt => "Bill White"
-                %p “We were excited to implement YouVersion in our ministry, especially the Events section, where we insert each week’s teaching notes and comments. Our people appreciate having the notes at their fingertips, sharing them, and saving them. We’ve redirected thousands of dollars to other ministry needs by replacing printed programs!”
+                %p=t('events.testimonial 1 text')
                 %p.name
                   %b Pastor Bill White
                   %br Christ Journey Church
@@ -207,7 +217,7 @@
               .each-testi
                 .thumbnail
                   = image_tag_with_at2x "features/events/herbert.png", :alt => "Herbert"
-                %p “YouVersion Events is a valuable resource for our church family. The ability for our people to follow along with sermon notes and Scriptures during our messages creates powerful engagement and impact.”
+                %p=t('events.testimonial 2 text')
                 %p.name
                   %b Pastor Herbert Cooper
                   %br People’s Church
@@ -215,7 +225,7 @@
               .each-testi
                 .thumbnail
                   = image_tag_with_at2x "features/events/cindy_beall.png", :alt => "Cindy Beall"
-                %p “We use Events for all of our sessions, allowing our attendees to have the notes and Scriptures from the speakers right in front of them. Events has saved us printing thousands of pages! Setting up an Event is incredibly easy, and it’s always published at the exact time we need it.”
+                %p=t('events.testimonial 3 text')
                 %p.name
                   %b Cindy Beall
                   %br
@@ -223,55 +233,54 @@
                     %br Director of Equip
             .content-app
               .icon-row
-                = image_tag_with_at2x "features/events/bible-app-icon-1024-e-n.png", :alt => "bible icon"
+                = image_tag_with_at2x "features/events/#{image_dir}/bible-app-icon-1024.png", :alt => "bible icon"
               .inner-wrap
-                %h1 Events is all-new, entirely free, and only in the Bible App.
-                %p A revolution in Bible engagement is taking place within our lifetimes. Installed on more than 200 million unique devices so far (and counting), the Bible App is helping people in every country on earth connect more with God’s Word. And now, through Events, we’re happy to offer the reach of that platform to&nbsp;you.
+                %h1=t('events.all new title')
+                %p=t('events.all new text', install_count: '220').html_safe
                 %ul.app-icons
                   %li
                     %a{:href => "https://appsto.re/ph/Agu3q.i", :target => "_blank"}
-                      = image_tag_with_at2x "features/events/app-store-icon.png", :alt => "app store"
+                      = image_tag_with_at2x "features/events/#{image_dir}/app-store-icon.png", :alt => "app store"
                   %li
                     %a{:href => "https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android&hl=en", :target => "_blank"}
-                      = image_tag_with_at2x "features/events/google-play-icon.png", :alt => "google playstore"
+                      = image_tag_with_at2x "features/events/#{image_dir}/google-play-icon.png", :alt => "google playstore"
   #last-section-bg.get-started-today
     .inner-wrap
       .intro-text
-        %h1 Let’s get you started.
-        %p Get your first Event ready to share in the Bible App in less than ten minutes. All you need is a Mac or PC and a free YouVersion account.
-      %a.create-btn{:href => events_link, :target => "blank"} Create an Event
+        %h1=t('events.get started title')
+        %p=t('events.get started text')
+      %a.create-btn{:href => events_link, :target => "blank"}=t('events.create an event')
       .two-cols
         .each-col
           %a.title{:href => "/features/events-resources"}
             %span.icon
               = image_tag_with_at2x "features/events/market-your-event-icon.png", :alt => "market your event"
-            %span.text Resources
+            %span.text=t('events.resources')
           %p
-            %a{:href => "/features/events-resources"} Learn how to best use Events with free resources.
+            %a{:href => "/features/events-resources"}=t('events.resources text')
         .separator
         .each-col
           %a.title{:href => "/features/events-faq"}
             %span.icon
               = image_tag_with_at2x "features/events/have-questions-icon.png", :alt => "market your event"
             %span.text.text2
-              Frequently Asked
-              %br Questions
+              =t('events.frequently asked questions').html_safe
           %p
-            %a{:href => "/features/events-faq"} Find answers to everything you need to know about getting started with YouVersion Events.
+            %a{:href => "/features/events-faq"}=t('events.frequently asked questions text')
         .clearfix
       %ul.footer-social-icons
         %li
-          %a{:href => "https://www.facebook.com/sharer/sharer.php?u=http://www.bible.com/features/events", :target => "_blank"}
+          %a{:href => "https://www.facebook.com/sharer/sharer.php?u=http://www.bible.com/#{image_dir}/events", :target => "_blank"}
             %span.icon.facebook
-            Share
+            =t('events.share')
         %li
-          %a{:href => "https://twitter.com/intent/tweet?text= Have+you+seen+Events+in+%40YouVersion%E2%80%99s+Bible+App%3F+Message+outlines%2C+announcements%2C+links+to+online+giving%2C+%26+more%21+http%3A%2F%2Fbible.com%2Ffeatures%2Fevents", :target => "_blank"}
+          %a{:href => "https://twitter.com/intent/tweet?text=#{t('events.tweet text')}", :target => "_blank"}
             %span.icon.twitter
-            Tweet
+            =t('events.share')
         %li
-          %a{:href => "mailto:?subject=This new feature from YouVersion could really help our church!&body=Have you seen YouVersion’s new Events feature yet? I believe it would really help our church engage people more with our services. It lets people add their own notes during a service, then even save the event so they can come back later and study it with the Bible references. I think it could probably save us money on printing costs, too. Here’s YouVersion’s Events website: http://www.bible.com/features/events.", :target => "_blank"}
+          %a{:href => "mailto:?subject=#{t('events.mail subject')}&body=#{t('events.mail body')}", :target => "_blank"}
             %span.icon.email
-            Email
+            =t('events.email')
   %script{:defer => "", :src => "/assets/features/events/jquery.flexslider.js", :type => "text/javascript"}
   :javascript
     $(document).ready(function() {
