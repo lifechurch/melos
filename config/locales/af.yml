@@ -902,6 +902,7 @@ af:
         none me: "Jy het nog geen kentekens verwerf nie."
         none user: "%{username} het nog geen kentekens verwerf nie."
     plans: 
+        see all: "Sien Alles"
         day_completed: "<b>%{username}</b> voltooi <b>Dag %{day}</b> van die Bybelleesplan: <b>%{plan_title} </b>"
         status: 
             on track: "Op koers!"
@@ -1408,6 +1409,10 @@ af:
             just now: "nou net"
         verses selected: "verse gekies"
     EventsAdmin: 
+        plans: 
+            see all: "Sien Alles"
+            discover: "Ontdek"
+            my_plans: "My Planne"
         components: 
             ErrorMessage: 
                 genericError: "'n Fout het ingetree"

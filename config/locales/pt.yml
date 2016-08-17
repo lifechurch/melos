@@ -902,6 +902,7 @@ pt:
         none me: "Você ainda não ganhou nenhuma medalha."
         none user: "%{username} ainda não ganhou nenhuma medalha."
     plans: 
+        see all: "Ver Todos"
         day_completed: "<b>%{username}</b> completou <b>o Dia %{day}</b> do Plano Bíblico: <b>%{plan_title}</b>"
         status: 
             on track: "Em dia!"
@@ -1408,6 +1409,10 @@ pt:
             just now: "agora mesmo"
         verses selected: "versículos selecionados"
     EventsAdmin: 
+        plans: 
+            see all: "Ver Todos"
+            discover: "Descubra"
+            my_plans: "Meus planos"
         components: 
             ErrorMessage: 
                 genericError: "Um erro ocorreu"

@@ -902,7 +902,8 @@ hu:
         none me: "Még nem szereztél jelvényt."
         none user: "%{username} még nem szerzett jelvényt."
     plans: 
-        day_completed: "<b>%{username} befejezte a %{plan_title} Terv %{day}. napját.</b><b></b><b></b>"
+        see all: "Összes megtekintése"
+        day_completed: "<b>%{username}</b> befejezte a(z) <b>%{plan_title}</b> című olvasási terv <b>%{day}. napját.</b>"
         status: 
             on track: "Terv szerint!"
             days ahead: 
@@ -1408,6 +1409,10 @@ hu:
             just now: "épp most"
         verses selected: "kijelölt versek"
     EventsAdmin: 
+        plans: 
+            see all: "Összes megtekintése"
+            discover: "Felfedezés"
+            my_plans: "Terveim"
         components: 
             ErrorMessage: 
                 genericError: "Hiba történt"
@@ -1645,7 +1650,7 @@ hu:
                                 delete: "Törlés"
                             LocationEdit: 
                                 prompt: "Írd be a helyszín címét..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Adj meg egy várost az időzóna beállításához..."
                                 country: "Ország"
                                 timezone: "Időzóna"
                                 namePrompt: "Első Baptista Keleti Campus"

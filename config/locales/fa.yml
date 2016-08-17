@@ -891,6 +891,7 @@ fa:
         none me: "شما هنوز نشانی دریافت نکرده‌اید"
         none user: "%{username} هنوز نشانی دریافت نکرده است."
     plans: 
+        see all: "همه را ببینید"
         day_completed: "<b>%{username}</b><b>%{day} روز</b> برنامهٔ مطالعه <b>%{plan_title}</b> را تکمیل کرده است "
         status: 
             on track: "مطالعه طبق برنامه است!"
@@ -1018,7 +1019,7 @@ fa:
         partner added successful: "انجام شد! %{username} به پاسخگویی در خصوص این برنامهٔ مطالعه افزوده شد."
         partner removed successful: "%{username} از پاسخگویی در خصوص این برنامهٔ مطالعه حذف شد."
         make public successful: "با موفقیت انجام شد! برنامهٔ شما عمومی است."
-        make private successful: "طرح شما در حال حاضر خصوصی است"
+        make private successful: "برنامه مطالعه شما در حال حاضر خصوصی است"
         reminder on successful: "با موفقیت انجام شد! ای‌میل یادآوری روزانه ارسال خواهد شد."
         reminder off successful: "یادآوری روزانه دیگر ارسال نخواهد شد."
         email delivery on successful: "با موفقیت انجام شد! مطالعهٔ روزانه از طریق ای‌میل ارسال خواهد شد."
@@ -1393,6 +1394,10 @@ fa:
             just now: "فقط الآن"
         verses selected: "آیات انتخاب شده"
     EventsAdmin: 
+        plans: 
+            see all: "همه را ببینید"
+            discover: "مطالب تازه را کشف کنید"
+            my_plans: "برنامه‌های مطالعۀ من"
         components: 
             ErrorMessage: 
                 genericError: "خطایی رخ داد "
@@ -1521,7 +1526,7 @@ fa:
                             ContentHeader: 
                                 text: "متن"
                                 reference: "مرجع کتاب‌مقدسی"
-                                plan: "برنامه/طرح"
+                                plan: "برنامه مطالعه"
                                 image: "تصویر"
                                 link: "لینک خارجی"
                                 giving: "لینک اهدای مالی"

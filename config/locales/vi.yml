@@ -180,8 +180,8 @@ vi:
             in partnership: "hợp tác với"
             one hope: "One Hope: Kinh Thánh Đặc Biệt Dành Cho Thiếu Nhi"
         links: 
-            apple: "https://itunes.apple.com/th/app/bible-for-kids/id668692393?mt=8"
-            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=th"
+            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Bây giờ"
     select dropdown: "--Chọn lựa--"
@@ -891,7 +891,8 @@ vi:
         none me: "Bạn chưa có huy hiệu nào."
         none user: "%{username} chưa có huy hiệu nào."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        see all: "Xem tất cả"
+        day_completed: "<b>%{username}</b> đã hoàn tất <b>ngày %{day}</b> của kế hoạch Kinh Thánh <b>&quot;%{plan_title}&quot;</b>"
         status: 
             on track: "Đọc đủ ngày!"
             days ahead: 
@@ -1393,6 +1394,10 @@ vi:
             just now: "mới đây"
         verses selected: "Đã chọn câu"
     EventsAdmin: 
+        plans: 
+            see all: "Xem tất cả"
+            discover: "Khám phá"
+            my_plans: "Kế hoạch của tôi"
         components: 
             ErrorMessage: 
                 genericError: "Báo lỗi!"
@@ -1630,7 +1635,7 @@ vi:
                                 delete: "Xóa"
                             LocationEdit: 
                                 prompt: "Nhập địa chỉ..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Nhập tên thành phố để cài múi giờ..."
                                 country: "Quốc gia"
                                 timezone: "Múi giờ"
                                 namePrompt: "Tên hội thánh"

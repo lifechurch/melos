@@ -902,6 +902,7 @@ es-ES:
         none me: "Aún no has ganado insignias."
         none user: "%{username} aún no ha ganado ninguna insignia."
     plans: 
+        see all: "Ver Todo"
         day_completed: "<b>%{username}</b> completó <b>el día %{day}</b> del plan de lectura: <b>%{plan_title}</b>"
         status: 
             on track: "¡En marcha!"
@@ -1408,6 +1409,10 @@ es-ES:
             just now: "ahora mismo"
         verses selected: "versículos seleccionados"
     EventsAdmin: 
+        plans: 
+            see all: "Ver Todo"
+            discover: "Descubre"
+            my_plans: "Mis planes"
         components: 
             ErrorMessage: 
                 genericError: "Ha habido un error"

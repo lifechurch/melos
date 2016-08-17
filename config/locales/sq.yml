@@ -902,6 +902,7 @@ sq:
         none me: "Ju nuk keni fituar akoma ndonjë emblemë."
         none user: "Përdoruesi %{username} nuk ka fituar akoma ndonjë emblemë."
     plans: 
+        see all: "See All"
         day_completed: "<b>%{username}</b> e përfundoi <b>Ditën %{day}</b> të planit të Biblës: <b>%{plan_title}</b>"
         status: 
             on track: "Në harmoni!"
@@ -1408,6 +1409,10 @@ sq:
             just now: "pikërisht tani"
         verses selected: "vargje të përzgjedhura"
     EventsAdmin: 
+        plans: 
+            see all: "Shiko të gjitha"
+            discover: "Zbulo"
+            my_plans: "Planet e mia"
         components: 
             ErrorMessage: 
                 genericError: "Ndodhi një gabim"
@@ -1645,7 +1650,7 @@ sq:
                                 delete: "Fshij"
                             LocationEdit: 
                                 prompt: "Shkruaj adresën e vendndodhjes..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Shto një qytet për të caktuar një zonë kohore..."
                                 country: "Vendi"
                                 timezone: "Zona kohore"
                                 namePrompt: "Kampusi Lindor i Baptistëve të Parë"

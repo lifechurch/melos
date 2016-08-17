@@ -946,6 +946,7 @@ cy:
         none me: "Dwyt ti ddim wedi ennill yr un bathodyn eto."
         none user: "Dydy %{username}heb ennill yr un bathodyn eto."
     plans: 
+        see all: "Y cwbl"
         day_completed: " Cwblhaodd <b>%{username}</b><b>Ddydd</b> %{day} <b>o'r Cynllun Beibl:</b>%{plan_title}"
         status: 
             on track: "Ar y trywydd iawn!"
@@ -1468,6 +1469,10 @@ cy:
             just now: "nawr"
         verses selected: "adnodau ddewiswyd"
     EventsAdmin: 
+        plans: 
+            see all: "Y cwbl"
+            discover: "Darganfod"
+            my_plans: "Fy Nghynlluniau"
         components: 
             ErrorMessage: 
                 genericError: "Digwyddodd gwall"

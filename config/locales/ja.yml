@@ -891,6 +891,7 @@ ja:
         none me: "まだバッジを獲得していません"
         none user: "%{username} さんはまだバッジを獲得していません"
     plans: 
+        see all: "一覧表示"
         day_completed: "<b>%{username}さんが</b>読書プラン<b>「%{plan_title}」</b><b>の%{day}日目を</b>読み終えました。"
         status: 
             on track: "予定通り!"
@@ -1393,6 +1394,10 @@ ja:
             just now: "たった今"
         verses selected: "選択した聖句"
     EventsAdmin: 
+        plans: 
+            see all: "一覧表示"
+            discover: "発見"
+            my_plans: "自分のプラン"
         components: 
             ErrorMessage: 
                 genericError: "エラー発生"

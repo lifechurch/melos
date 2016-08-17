@@ -913,6 +913,7 @@ cs:
         none me: "Zatím jste nezískali žádné odznaky."
         none user: "%{username} zatím nezískal žádné odznaky."
     plans: 
+        see all: "Zobrazit vše"
         day_completed: "<b>%{username} </b> ukončil <b>Den %{day}</b> v Plánu studia Bible: <b>%{plan_title}</b>"
         status: 
             on track: "Podle plánu!"
@@ -1423,6 +1424,10 @@ cs:
             just now: "právě teď"
         verses selected: "verše vybrány"
     EventsAdmin: 
+        plans: 
+            see all: "Zobrazit vše"
+            discover: "Objevujte"
+            my_plans: "Moje plány"
         components: 
             ErrorMessage: 
                 genericError: "Nastala chyba"
@@ -1660,7 +1665,7 @@ cs:
                                 delete: "Odstranit"
                             LocationEdit: 
                                 prompt: "Zadejte adresu..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Zadejte město pro časové pásmo"
                                 country: "Země"
                                 timezone: "Časové pásmo"
                                 namePrompt: "První baptistická východní universita"

@@ -902,6 +902,7 @@ tl:
         none me: "Wala ka pang nakukuhang sagisag."
         none user: "Si %{username} ay hindi pa nakakakuha ng anumang sagisag."
     plans: 
+        see all: "Tingnan Lahat"
         day_completed: "<b>Natapos ni %{username} ang ika-%{day} araw ng Bible Plan: %{plan_title}</b><b></b><b></b>"
         status: 
             on track: "Nakakasunod!"
@@ -1408,6 +1409,10 @@ tl:
             just now: "ngayon lamang"
         verses selected: "mga napiling taludtod"
     EventsAdmin: 
+        plans: 
+            see all: "Tingnan Lahat"
+            discover: "Tuklasin"
+            my_plans: "Mga Plano Ko"
         components: 
             ErrorMessage: 
                 genericError: "May pagkakamaling naganap"

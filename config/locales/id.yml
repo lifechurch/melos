@@ -891,6 +891,7 @@ id:
         none me: "Anda belum memperoleh lencana apapun."
         none user: "%{username} belum memperoleh lencana apapun."
     plans: 
+        see all: "Lihat Semua"
         day_completed: "<b>%{username}</b> menyelesaikan <b>Hari ke-%{day}</b> dari Rencana Alkitab: <b>%{plan_title}</b>"
         status: 
             on track: "Sesuai Jadwal!"
@@ -1393,6 +1394,10 @@ id:
             just now: "baru saja"
         verses selected: "ayat terpilih"
     EventsAdmin: 
+        plans: 
+            see all: "Lihat Semua"
+            discover: "Temukan"
+            my_plans: "Rencana Saya"
         components: 
             ErrorMessage: 
                 genericError: "Terjadi Kesalahan"

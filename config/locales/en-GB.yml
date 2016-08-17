@@ -902,6 +902,7 @@ en-GB:
         none me: "You haven't earnt any badges yet."
         none user: "%{username} hasn't earnt any badges yet."
     plans: 
+        see all: "See all"
         day_completed: "<b>%{username}</b> completed <b>day %{day}</b> of the Bible plan: <b>%{plan_title}</b>"
         status: 
             on track: "On track!"
@@ -1408,6 +1409,10 @@ en-GB:
             just now: "just now"
         verses selected: "verses selected"
     EventsAdmin: 
+        plans: 
+            see all: "See all"
+            discover: "Discover"
+            my_plans: "My plans"
         components: 
             ErrorMessage: 
                 genericError: "An error occurred"

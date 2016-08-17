@@ -924,7 +924,8 @@ hr:
         none me: "Nemaš zarađenu nijednu značku."
         none user: "%{username} još nije zaradio nijednu značku."
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        see all: "Pogledaj sve"
+        day_completed: "<b>Korisnik %{username} završio je %{day}. dan biblijskoga plana %{plan_title}.</b><b></b><b></b>"
         status: 
             on track: "U toku!"
             days ahead: 
@@ -1438,6 +1439,10 @@ hr:
             just now: "Upravo sad"
         verses selected: "označeni stihovi"
     EventsAdmin: 
+        plans: 
+            see all: "Pogledaj sve"
+            discover: "Otkrij"
+            my_plans: "Moji planovi"
         components: 
             ErrorMessage: 
                 genericError: "Došlo je do greške"
@@ -1675,7 +1680,7 @@ hr:
                                 delete: "Obriši"
                             LocationEdit: 
                                 prompt: "Unesi adresu lokacije..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Unesi grad za postavljanje vremenske zone..."
                                 country: "Država"
                                 timezone: "Vremenska zona"
                                 namePrompt: "Prvi kršćanski kampus"

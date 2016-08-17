@@ -924,6 +924,7 @@ ru:
         none me: "Вы ещё не заработали значков."
         none user: "%{username} ещё не заработал значков."
     plans: 
+        see all: "Увидеть все"
         day_completed: "<b>%{username}</b> завершил <b>день %{day}</b> из плана чтения Библии: <b>%{plan_title}</b>"
         status: 
             on track: "Всё по плану!"
@@ -1438,6 +1439,10 @@ ru:
             just now: "только что"
         verses selected: "стихи выбраны"
     EventsAdmin: 
+        plans: 
+            see all: "Увидеть все"
+            discover: "Узнавайте"
+            my_plans: "Мои планы чтения"
         components: 
             ErrorMessage: 
                 genericError: "Произошла ошибка"

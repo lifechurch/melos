@@ -149,7 +149,7 @@ ro:
         best educational app: "Cea mai bună aplicație educațională"
         kids_app: 
             title: "Aplicația Biblia pentru copii"
-            description: "Aplicația Biblia pentru Copii este o modalitate foarte bună pentru copiii tăi ca să învețe povestiri biblice despre Iisus, darul vieții veșnice, și multele lecții pe care ni le dă Dumnezeu. În această experiență interactivă, copiii se implică direct în Cuvântul lui Dumnezeu cu imagini încântătoare, în timp ce câștigă puncte pentru citit și colecționează comori."
+            description: "Aplicația Biblia pentru copii este o modalitate foarte bună pentru copiii tăi ca să învețe povestiri biblice despre Iisus, darul vieții veșnice, și multele lecții pe care ni le dă Dumnezeu. În această experiență interactivă, copiii se implică direct în Cuvântul lui Dumnezeu cu imagini încântătoare, în timp ce câștigă puncte pentru citit și colecționează comori."
         100million: 
             title: "Începe cu 100 de milioane"
             description: "Aplicația Biblia a fost instalată de aproape 100 milioane de ori - un adevărat moment de referință! Dar acesta e doar începutul. Descarcă azi Aplicația Biblia gratuită și apoi împărtășește-o cu prietenii. Să facem istorie împreună."
@@ -187,16 +187,16 @@ ro:
         feature 4: "Jocurile și activitățile îi ajută pe copii să-și aminească ce învață"
         feature 5: "Navigare ușoară pentru copii"
         share: 
-            tell friends: "Spune-le prietenilor tăi despre Aplicația Biblia pentru Copii."
+            tell friends: "Spune-le prietenilor tăi despre Aplicația Biblia pentru copii."
             facebook name: "Aplicația Biblia pentru copii"
-            facebook description: "Aplicația Biblia pentru copii este aici! Descarcă aplicația gratuită pentru iOS și Android azi: povestiri biblice interactive pentru a-ți ajuta copilul să învețe, să se joace și să crească în Cuvântul Lui Dumnezeu. www.bible.com/kids"
-            facebook link: "http://www.bible.com/​kids"
-            facebook redirect: "http://www.bible.com/​kids"
-            twitter description: "Aplicația Biblia pentru copii de la @YouVersion  este aici! Este amuzantă și complet gratuită. Descarcă: bible.com/kids"
-            twitter hashtags: "kidsbible bibliacopii"
+            facebook description: "Aplicația Biblia pentru copii este aici! Descarcă aplicația gratuită pentru iOS și Android azi: povestiri biblice interactive pentru a-ți ajuta copilul să învețe, să se joace și să crească în Cuvântul Lui Dumnezeu. www.bible.com/ro/kids"
+            facebook link: "http://www.bible.com/ro/kids"
+            facebook redirect: "http://www.bible.com/ro/kids"
+            twitter description: "Aplicația Biblia pentru copii de la @YouVersion  este aici! Este amuzantă și complet gratuită. Descarcă: bible.com/​ro/​kids"
+            twitter hashtags: "bibliacopii"
             email: "E-mail"
             email subject: "Aplicația Biblia pentru copii este aici!"
-            email body: "Vești minunate - Aplicația Biblia pentru Copii este aici! Este complet gratuită și este disponibilă acum pentru iphone, ipad, ipod touch și dispozitivele cu Android. Aplicația este o colecție în creștere de povestiri biblice cu animații activate de atingere și activități pentru învățare, perfectă pentru a-i ajuta pe copii să învețe marile istorii din Biblie. Du-te la bible.com/kids pe dispozitivul tău mobil pentru a-l descărca azi."
+            email body: "Vești minunate - Aplicația Biblia pentru copii este aici! Este complet gratuită și este disponibilă acum pentru iphone, ipad, ipod touch și dispozitivele cu Android. Aplicația este o colecție în creștere de povestiri biblice cu animații activate de atingere și activități pentru învățare, perfectă pentru a-i ajuta pe copii să învețe marile istorii din Biblie. Du-te la bible.com/kids pe dispozitivul tău mobil pentru a-l descărca azi."
         partner: 
             youversion: "YouVersion: cea mai populară aplicație biblică"
             in partnership: "în parteneriat cu"
@@ -913,6 +913,7 @@ ro:
         none me: "Încă nu ai primit nici o insignă."
         none user: "%{username} nu a primit nici o insignă încă."
     plans: 
+        see all: "Vezi toate"
         day_completed: "<b>%{username}</b> a completat <b> ziua %{day}</b> a planului: <b>%{plan_title}</b>"
         status: 
             on track: "La zi!"
@@ -1178,7 +1179,7 @@ ro:
         banner action: "Descarcă"
         banner open: "Deschide"
     download bafk ad: 
-        title: "Descarcă aplicația Biblia pentru Copii"
+        title: "Descarcă Aplicația Biblia pentru copii"
         description copy: "Aplicația Biblia pentru copii este o cale minunată pentru copiii tăi de a învăța povestiri biblice despre Iisus."
         download: "Descarcă acum"
     about page: 
@@ -1423,6 +1424,10 @@ ro:
             just now: "chiar acum"
         verses selected: "versete selectate"
     EventsAdmin: 
+        plans: 
+            see all: "Vezi toate"
+            discover: "Descoperă"
+            my_plans: "Planurile mele"
         components: 
             ErrorMessage: 
                 genericError: "A apărut o eroare"

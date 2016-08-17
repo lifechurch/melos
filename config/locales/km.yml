@@ -428,7 +428,7 @@ km:
             version: "ជំនាន់"
             view more: "បង្ហាញ​បន្ថែម"
             time: "ពេល​វេលា"
-            blurb: "Subscribe to the Verse of the Day. Get a daily email or push notification on your mobile device."
+            blurb: "ចុះ​ឈ្មោះ​អាន​ខព្រះ​គម្ពីរ​ប្រចាំ​ថ្ងៃ។ ទទួល​បាន​អ៊ី​ម៉េល​ប្រចាំ​ថ្ងៃ ឬ ការ​ជូន​ដំណឹង​នៅ​លើ​ឧបករណ៍ចល័ត​របស់​លោក​អ្នក។"
         friendship: 
             now friends: "ឥឡូវ​អ្នក​ជា​មិត្ត​ជាមួយ​នឹង"
         cta: 
@@ -495,7 +495,7 @@ km:
         limit notice: "អ្នក​អាច​មាន​មិត្ត​ច្រើន​ដូច​ជា​150"
         limit description: "ការ​កំណត់​មិត្ត​លើ​កម្ម​វិធី​ព្រះ​គម្ពីរ​គឺ​ដើម្បី​អោយ​មនុស្ស​ស្គាល់​និងបង្កើត​នូវ​បរិយាកាស​នៃ​ភាព​ស្មោះត្រង់​ក្នុង​ការ​សន្ទនា​និង​ចែក​រំលែក​នូវ​អ្វី​ដែល​បាន​រក​ឃើញ​ជាមួយ​មិត្ត​ជិតស្និទ្ធ​របស់​គេ។"
     friendships: 
-        blurb: "Focus your friendships around the Bible. Share what you want, when you want, within the safety of trusted relationships."
+        blurb: "ផ្ដោតអារម្មណ៍​​មិត្ត​ភាព​របស់​លោក​អ្នក​ជុំវិញ​ព្រះ​គម្ពីរ។ ចែក​រំលែក​នូវ​អ្វី​ដែល​លោក​អ្នក​ចង់​បាន នៅ​ពេល​ដែល​លោក​អ្នក​ចង់​បាន នៅ​ក្នុង​រង្វង់​ទំនាក់​ទំនង​ដែលលោក​អ្នកទុក​ចិត្ត។"
         name required: "ដើម្បី​ទទួល​យក​បទ​ពិសោធន៍​ដ៏​ល្អ​ក្នុង​ព្រះ​គម្ពីរ​ជាមួយ​មិត្ត​ភក្តិ សូម​អាប់​ឌែត​នូវ​ទម្រង់​របស់​អ្នក​ជាមួយ​នាម​ និង​កោត្ត​នាម"
         find friends title: "រក​មិត្ត​ភក្តិ"
         search by name: "ស្វែង​រក​តាម​រយៈឈ្មោះ"
@@ -629,8 +629,8 @@ km:
         confirm message: "យើងទើបតែបានយើងសារទៅកាន់ %{email}"
         confirm message click: "ចុចលើតំណភ្ជាប់នៅក្នុងអ៊ីម៉ែលដើម្បីបញ្ជាក់​ថាគឺជាអ្នក។"
         resend verification: "ផ្ញើ​ការបញ្ជាក់​តាមអ៊ីម៉ែលឡើងវិញ"
-        sign in alternate: "Don't have an account? <a href='%{sign_up_path}' target='_self'>Sign Up</a>"
-        sign up alternate: "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
+        sign in alternate: "តើ​លោក​អ្នក​មិន​ទាន់​មាន​គណនី​ទេមែន​ទេ? <a href='%{sign_up_path}' target='_self'>សូម​ចុះ​ឈ្មោះ​បង្កើត​គណនី</a>"
+        sign up alternate: "តើលោក​អ្នក​​មាន​គណនី​រួច​ហើយ​មែន​ទេ? <a href='%{sign_in_path}' target='_self'>សូម​ចុះឈ្មោះ​ចូល</a>"
         password length: "តិច​បំផុត​6តួរ​អក្សរ"
         welcome to youversion: "សូម​ស្វាគមន៍​មក​កាន់​សហគមន៍ YouVersion!"
         confirm email: "សូម​ឆែក​អ៊ី​ម៉ែល ហើយ​ចុច​តំណរ​ភ្ជាប់​ដើម្បី​បញ្ជាក់​ពី​ការ​ចុះ​ឈ្មោះ​របស់​អ្នក។"
@@ -891,7 +891,8 @@ km:
         none me: "លោក​អ្នក​មិន​ទទួល​បាន ផ្លាក់​សញ្ញា​ អី​នៅ​ឡើយ​ទេ"
         none user: "%{username} មិន​ទាន់​ទទួល​បាន ផ្លាក​សញ្ញា អី​នៅ​ឡើយ​ទេ"
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        see all: "មើល​ទាំង​អស់"
+        day_completed: "<b>%{username}​បាន​បញ្ចប់​ការ​អាន​នៅ​ថ្ងៃទី​%{day}នៃ​គំរោង​អាន​ព្រះ​គម្ពីរ​៖ %{plan_title}</b><b></b><b></b>"
         status: 
             on track: "កំពុងដំណើរការ!"
             days ahead: 
@@ -939,7 +940,7 @@ km:
         about publisher: "អំពី​អ្នក​បោះ​ផ្សាយ"
         overview: "ទិដ្ឋ​ភាព​ទូ​ទៅ​នៃ​គំរោង"
         complete: "គម្រោងបញ្ចប់"
-        day complete: "Day Complete"
+        day complete: "ថ្ងៃ​បញ្ចប់"
         start: "ចាប់​ផ្ដើម​គំរោង"
         save for later: "រក្សា​ទុក​នៅ​ពេល​ក្រោយ"
         saved for later: "ត្រូវ​បាន​រក្សា​ទុក​នៅ​ពេល​ក្រោយ"
@@ -1393,6 +1394,10 @@ km:
             just now: "ទើប​តែ​ឥឡូវ​នេះ"
         verses selected: "ឃ្លាត្រូវបានជ្រើស"
     EventsAdmin: 
+        plans: 
+            see all: "មើល​ទាំង​អស់"
+            discover: "រុក​រក"
+            my_plans: "គំរោង​របស់​ខ្ញុំ"
         components: 
             ErrorMessage: 
                 genericError: "An error occurred"

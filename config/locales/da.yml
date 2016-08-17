@@ -902,6 +902,7 @@ da:
         none me: "Du har ikke optjent nogen mærker endnu."
         none user: "%{username} har ikke optjent nogen mærker endnu."
     plans: 
+        see all: "Se alle"
         day_completed: "<b>%{username}</b> færdiggjorde <b>%{day}</b> af Bibel Planen <b>%{plan_title}</b>"
         status: 
             on track: "På sporet!"
@@ -1408,6 +1409,10 @@ da:
             just now: "lige nu"
         verses selected: "vers valgt"
     EventsAdmin: 
+        plans: 
+            see all: "Se alle"
+            discover: "Opdag"
+            my_plans: "Mine planer"
         components: 
             ErrorMessage: 
                 genericError: "Der skete en fejl"

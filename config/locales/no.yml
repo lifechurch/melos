@@ -902,6 +902,7 @@
         none me: "Du har ikke fått noen merker ennå"
         none user: "%{username} har ikke fått noen merker ennå."
     plans: 
+        see all: "Se alle"
         day_completed: "<b>%{username}fullførte dag %{day}av bibelleseplanen: %{plan_title}</b><b></b><b></b>"
         status: 
             on track: "I rute!"
@@ -1408,6 +1409,10 @@
             just now: "akkurat nå"
         verses selected: "vers valgt"
     EventsAdmin: 
+        plans: 
+            see all: "Se alle"
+            discover: "Oppdag"
+            my_plans: "Mine leseplaner"
         components: 
             ErrorMessage: 
                 genericError: "Det oppstod en feil"

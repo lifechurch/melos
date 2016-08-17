@@ -902,6 +902,7 @@ mk:
         none me: "Немаш добиено ниту еден беџ."
         none user: "Корисникот %{username} нема добиено ниту еден беџ."
     plans: 
+        see all: "Види ги сите"
         day_completed: "<b>%{username}</b> го заврши <b>%{day} ден</b> од Библискиот план: <b>%{plan_title}</b>"
         status: 
             on track: "На добар пат си!"
@@ -1408,6 +1409,10 @@ mk:
             just now: "Токму сега"
         verses selected: "одбрани стихови"
     EventsAdmin: 
+        plans: 
+            see all: "Види ги сите"
+            discover: "Откриј"
+            my_plans: "Мои планови"
         components: 
             ErrorMessage: 
                 genericError: "Се случи грешка"

@@ -902,6 +902,7 @@ ca:
         none me: "Encara no tens cap insígnia."
         none user: "El/la %{username} encara no té cap insígnia."
     plans: 
+        see all: "Veure-ho tot"
         day_completed: "<b>%{username}</b> ha complertat <b>el dia %{day}</b> del Pla de lectura: <b>%{plan_title}</b>"
         status: 
             on track: "Al dia!"
@@ -1408,6 +1409,10 @@ ca:
             just now: "ara mateix"
         verses selected: "versets seleccionats"
     EventsAdmin: 
+        plans: 
+            see all: "Veure-ho tot"
+            discover: "Descobreix"
+            my_plans: "Els meus plans"
         components: 
             ErrorMessage: 
                 genericError: "Hi ha hagut un error"

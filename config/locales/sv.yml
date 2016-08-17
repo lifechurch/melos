@@ -138,7 +138,7 @@ sv:
         best educational app: "Bästa utbildningsappen"
         kids_app: 
             title: "Bibelappen för barn"
-            description: "Bibelappen för barn är ett bra sätt för yngre barn att lära sig Bibliska historier om Jesus, vårt eviga liv, och de många lärdomar Gud ger oss. I denna mysiga interaktiva upplevelsen engagerar sig barn direkt med Guds Ord samtidigt som de tjänar poäng när de läser och samlar skatter."
+            description: "Bibelappen för barn är ett bra sätt för dina barn att lära sig bibliska historier om Jesus, om gåvan evigt liv och om Guds många lärdomar för oss.I denna härligt illustrerade interaktiva upplevelse ägnar sig barn åt Guds Ord samtidigt som de tjänar poäng för att läsa och samla skatter."
         100million: 
             title: "Det närmar sig 100 miljoner"
             description: "Bibelappen har installerats nästan 100 miljoner gånger - en otrolig milstolpe! Men vi har precis kommit igång. Ladda ner den fria Bibelappen idag - och dela sedan appen med dina vänner. Låt oss skapa historia tillsammans."
@@ -159,33 +159,33 @@ sv:
         by youversion: "by YouVersion"
         help your kids: "Hjälp dina barn att förälska sig i Guds Ord."
         free download: "Ladda ner gratis!"
-        app store: "Tillgängligt på App store"
-        google play: "Hämta det på Google Play"
-        amazon: "Tillgängligt på Amazon Appstore för Android"
+        app store: "Tillgänglig i App store"
+        google play: "Hämta den i Google Play"
+        amazon: "Tillgängligt i Amazon Appstore för Android"
         app icon: "App icon for The Bible App for Kids"
         jesus and friends: "Jesus och vänner"
-        interact text: "Interagera med Bibeln och se det komma till liv."
+        interact text: "Interagera med Bibeln och se den bli levande."
         story text 1: "Edens lustgård"
         story text 2: "Första julen"
         story text 3: "Josef, Maria och Jesusbarnet i krubban"
-        story text 4: "Änglar visade sig för hedarna för att berätta för dem om Kristus födelse"
+        story text 4: "Änglar visade sig för hedarna och berättade för dem om Kristus födelse"
         story text 5: "Jesus helar den lame"
-        feature 1: "Den fria bibelupplevelsen för dina barn"
-        feature 2: "Animerad sagoboksapp för smartphones och surfplattor"
+        feature 1: "Gratis bibelupplevelse för dina barn"
+        feature 2: "App med animerade berättelser för smartphone och surfplattor"
         feature 3: "Färgglada illustrationer med beröringsaktiverade animationer"
-        feature 4: "Spel och pyssel hjälper barn att komma ihåg vad de har lärt sig"
+        feature 4: "Spel m m hjälper barn att komma ihåg vad de har lärt sig"
         feature 5: "Barnvänlig navigering"
         share: 
             tell friends: "Berätta för dina vänner om Bibelappen för barn"
             facebook name: "Bibelappen för barn"
-            facebook description: "Bibelappen för barn är här! Ladda ner den fria appen för iOS och Android idag: Interaktiva bibelhistorier för att hjälpa dina barn att lära sig, spela och växa i Guds Ord.\nhttps://www.bible.com/sv/kids"
+            facebook description: "Bibelappen för barn är här! Ladda ned gratisappen för iOS och Android idag: Interaktiva bibelhistorier för att hjälpa ditt barn att lära, spela och växa i Guds Ord. www.bible.com/sv/kids"
             facebook link: "https://www.bible.com/sv/kids"
             facebook redirect: "https://www.bible.com/sv/kids"
-            twitter description: "Bibelappen för barn från @YouVersion är här! Den är rolig och gratis. Ladda ner: bible.com/sv/kids"
-            twitter hashtags: "kidsbible"
+            twitter description: "Bibelappen för barn från @YouVersion är här! Den är rolig och helt gratis. Ladda ned: bible.com/sv/kids"
+            twitter hashtags: "barnbibeln"
             email: "E-post"
             email subject: "Bibelappen för barn är här!"
-            email body: "Goda nyheter - Bibelappen för barn är här! Det är helt gratis och den är tillgänglig nu för iPhone, iPad, iPod touch och Android-enheter. Appen är en växande samling av Bibelns berättelser med beröringsaktiverade animationer och lärande, perfekt för att hjälpa barnen lära sig de stora berättelserna i Bibeln. Gå till bible.com/sv/kids på den mobila enheten för att ladda ner den i dag."
+            email body: "Goda nyheter - Bibelappen för barn är här! Den är helt gratis och nu är tillgänglig för iPhone, iPad, iPod touch och Android-enheter. Appen är en växande samling Bibelberättelser med beröringsaktiverade animationer och lärande, perfekt för att hjälpa barnen att lära sig de stora berättelserna i Bibeln. Gå till bible.com/sv/kids på din mobila enheten för att ladda ned den i dag."
         partner: 
             youversion: "YouVersion: Världens populäraste Bibelapp"
             in partnership: "i samarbete med"
@@ -902,6 +902,7 @@ sv:
         none me: "Du har inte fått några medaljer än."
         none user: "%{username} har inte fått några medaljer än."
     plans: 
+        see all: "Se alla"
         day_completed: "<b>%{username}</b> fullföljde <b>dag %{day}</b> av bibelplanen <b>%{plan_title}</b>"
         status: 
             on track: "Enligt plan!"
@@ -1163,9 +1164,9 @@ sv:
         banner action: "Ladda ner"
         banner open: "Öppna"
     download bafk ad: 
-        title: "Download the Bible App for Kids"
-        description copy: "The Bible App for Kids is a great way for your children to learn Biblical stories about Jesus."
-        download: "Download Now"
+        title: "Ladda ned Bibelappen för barn"
+        description copy: "Bibelappen för barn är ett fantastiskt verktyg för dina barn att lära sig Bibelns historier om Jesus."
+        download: "Ladda ned nu"
     about page: 
         relevancy: "Relevans"
         relevancy copy: "I tidigare generationer var folks tillgång till Bibeln mycket begränsad. Idag är detta inte längre fallet. Men många människor som har tillgång till Bibeln tycker att budskapet inte gäller för deras liv. Samtidigt finns det andra som tror det finns ett samband mellan Bibeln och deras upplevelse varje dag."
@@ -1408,6 +1409,10 @@ sv:
             just now: "Precis nu"
         verses selected: "verser valda"
     EventsAdmin: 
+        plans: 
+            see all: "Se alla"
+            discover: "Upptäck"
+            my_plans: "Mina planer"
         components: 
             ErrorMessage: 
                 genericError: "Ett fel uppstod"
@@ -1645,7 +1650,7 @@ sv:
                                 delete: "Ta bort"
                             LocationEdit: 
                                 prompt: "Ange platsens adress..."
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Ange en stad för att välja en tidszon..."
                                 country: "Land"
                                 timezone: "Tidszon"
                                 namePrompt: "First Baptist East Campus"

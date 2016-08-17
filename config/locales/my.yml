@@ -891,7 +891,8 @@ my:
         none me: "သင်သည် မည်သည့်ဆုတံဆိပ်မျှမရသေးပါ။"
         none user: "%{username}သည် မည်သည့်ဆုတံဆိပ်မျှမရသေးပါ။"
     plans: 
-        day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+        see all: "အားလုံးကြည့်ရန်"
+        day_completed: "<b>%{username} သည်</b><b>%{plan_title}</b>ဟူသည့် ကျမ်းစာဖတ်ခြင်းအစီအစဉ်ထဲမှ <b>%{day} ရက်စာကို</b>ဖတ်ပြီပါပြီ။"
         status: 
             on track: "အမီလိုက်နေသည်။"
             days ahead: 
@@ -1393,6 +1394,10 @@ my:
             just now: "ယခု"
         verses selected: "ရွေးထားသောကျမ်းပိုဒ်"
     EventsAdmin: 
+        plans: 
+            see all: "အားလုံးကြည့်ရန်"
+            discover: "ရှာဖွေရန်"
+            my_plans: "ကျွန်တော်၏အစီအစဉ်"
         components: 
             ErrorMessage: 
                 genericError: "ချို့ယွင်းမှုဖြစ်ပေါ်ခဲ့သည်"
@@ -1630,7 +1635,7 @@ my:
                                 delete: "ပယ်ဖျက်မည်။"
                             LocationEdit: 
                                 prompt: "တည်ရှိရာလိပ်စာကိုထည့်သွင်းပါ"
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "စံတော်ချိန်ကိုချိန်ညှိနိုင်ရန် နေထိုင်သောမြို့ကို ထည့်သွင်းပါ။"
                                 country: "နိုင်ငံ"
                                 timezone: "ဒေသစံတော်ချိန်"
                                 namePrompt: "ပထမနှစ်ခြင်း အရှေ့ပိုင်းနယ်မြေဝင်း"
