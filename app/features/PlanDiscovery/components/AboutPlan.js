@@ -20,7 +20,7 @@ class AboutPlan extends Component {
 
 
 	render() {
-		const { readingPlan, imageConfig } = this.props
+		const { readingPlan, imageConfig, auth } = this.props
 
 		if (!(readingPlan && readingPlan.stats && readingPlan.related)) {
 			return (
@@ -73,7 +73,7 @@ class AboutPlan extends Component {
 						</div>
 						<div className='columns large-4 medium-4'>
 							<div className='side-col'>
-								<PlanActionButtons dispatch={this.props.dispatch} readingPlan={readingPlan} />
+								<PlanActionButtons {...this.props} />
 							</div>
 							<hr></hr>
 							<div className='stats'>

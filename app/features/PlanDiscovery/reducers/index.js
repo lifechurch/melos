@@ -80,7 +80,7 @@ export default function plansDiscovery(state = {}, action) {
 			} else if (action.params.savedplanCheck) {
 				var { reading_plans } = action.response
 				var saved = false
-				console.log('AJHSFUHASRHRJGRWG')
+
 				reading_plans.forEach((plan) => {
 					if (plan.id == action.params.planId) saved = true
 				})

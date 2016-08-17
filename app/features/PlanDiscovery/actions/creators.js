@@ -79,7 +79,6 @@ const ActionCreators = {
 						return dispatch(ActionCreators.recommendations(planParams)).then((recd) => {
 							// now check if requested reading plan view is a saved plan for the user
 							const savedplanParams = Object.assign({}, params, { readingplanInfo: false, savedplanCheck: true, planId: readingplan.id })
-							console.log(savedplanParams)
 							return dispatch(ActionCreators.savedItems(savedplanParams, auth)).then((saved) => {})
 						})
 					})
@@ -165,6 +164,7 @@ const ActionCreators = {
 
 	readingplanView(params, auth) {
 		return {
+			params,
 			api_call: {
 				endpoint: 'reading-plans',
 				method: 'view',
@@ -179,6 +179,7 @@ const ActionCreators = {
 
 	readingplanStats(params, auth) {
 		return {
+			params,
 			api_call: {
 				endpoint: 'reading-plans',
 				method: 'stats',
@@ -193,6 +194,7 @@ const ActionCreators = {
 
 	readingplanSubscribeUser(params, auth) {
 		return {
+			params,
 			api_call: {
 				endpoint: 'reading-plans',
 				method: 'subscribe_user',
@@ -207,6 +209,7 @@ const ActionCreators = {
 
 	readingplanSaveforlater(params, auth) {
 		return {
+			params,
 			api_call: {
 				endpoint: 'reading-plans',
 				method: 'add_to_queue',
@@ -221,6 +224,7 @@ const ActionCreators = {
 
 	readingplanRemoveSave(params, auth) {
 		return {
+			params,
 			api_call: {
 				endpoint: 'reading-plans',
 				method: 'remove_from_queue',

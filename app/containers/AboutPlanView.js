@@ -13,7 +13,8 @@ class AboutPlanView extends Component {
 function mapStateToProps(state) {
 	return {
 		imageConfig: (state.plansDiscovery && state.plansDiscovery.configuration && state.plansDiscovery.configuration.images) ? state.plansDiscovery.configuration.images : {},
-		readingPlan: (state.plansDiscovery && state.plansDiscovery.plans) ? state.plansDiscovery.plans : {}
+		readingPlan: (state.plansDiscovery && state.plansDiscovery.plans) ? state.plansDiscovery.plans : {},
+		auth: (state.auth)
 	}
 }
 
