@@ -318,7 +318,7 @@ class Subscription < Plan
       opts[:references] = completed_refs.to_usfm
     end
 
-    opts[:devotional] = completed if devo
+    opts[:devotional] = true if devo
     
     data, errs = self.class.post("#{api_path_prefix}/update_completion", opts)
     results = YV::API::Results.new(data,errs)
