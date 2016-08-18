@@ -14,6 +14,8 @@ class NotificationsController < ApplicationController
       respond_with @notifications do |format|
         format.html { render :layout => 'users' }
       end
+    else
+      render_404
     end
   end
 
