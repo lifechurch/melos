@@ -101,7 +101,7 @@ class LocationEdit extends Component {
 		var times;
 		if (loc.hasOwnProperty('times')) {
 			times = loc.times.map((t, i) => {
-				return (<LocationAddTime tz={loc.timezone} intl={intl} key={i} time={t} timeIndex={i} handleTimeChange={handleSetTime} handleRemoveTime={handleRemoveTime} />)
+				return (<LocationAddTime tz={loc.timezone} intl={intl} key={Math.random()} time={t} timeIndex={i} handleTimeChange={handleSetTime} handleRemoveTime={handleRemoveTime} />)
 			})
 		}
 
