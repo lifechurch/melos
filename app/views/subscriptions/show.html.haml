@@ -86,7 +86,7 @@
       %ul.no-bullets.plan-pieces
 
         -if presenter.reading.devotional
-          -forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, completed: "#{!statuses[day - 1].additional_content.completed}", ref: nil , devo: true, content: nil, stay: 'true')
+          -forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, completed: "#{!statuses[day - 1].additional_content.completed}", ref: nil, devo: "#{!statuses[day - 1].additional_content.completed}", content: nil, stay: 'true')
           %li{class: "#{is_rtl? ? 'li-left' : 'li-right'}"}
             = form_tag(forward_path, method: :put, id: 'plan_devo_complete_form') do
               - if statuses[day - 1].additional_content.completed
@@ -101,7 +101,7 @@
 
         - unless references.empty?
           - references.each_with_index do |ref,index|
-            -forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, completed: "#{!ref.completed}", ref: ref.reference.to_param.downcase , content: index, stay: 'true')
+            -forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: @presenter.day, completed: "#{!ref.completed}", ref: ref.reference.to_param.downcase , devo: "#{statuses[day - 1].additional_content.completed}", content: index, stay: 'true')
             %li{class: "#{is_rtl? ? 'li-left' : 'li-right'}"}
               = form_tag(forward_path, method: :put, id: "plan_ref_#{index}_complete_form") do
                 - if ref.completed

@@ -30,14 +30,29 @@
     ref = nil
   end
 
-  forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref , content: ref_index)
+
 
   #This is last ref. Use Checkmark instead of arrow for 'Next'
   show_complete = false
   references = presenter.reading.references(version_id: subscription.version_id)
-  next_ref_index = ref_index.nil? ? 0 : ref_index + 1
-  if next_ref_index >= references.length
+  completed_refs = 0
+  references.each_with_index do |r, i|
+    if (r.completed)
+      completed_refs = completed_refs + 1
+    end
+  end
+
+  if day_status.references.empty? && presenter.reading.devotional
+    forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: nil, devo: 'true')
     show_complete = true
+  else
+    # if this is the last ref to be completed (including devotionals), let's complete the plan
+    if ( ((completed_refs == references.length) && ref_index == nil) || ( (ref_index != nil) ? (completed_refs == references.length - 1) && !references[ref_index].completed && day_status.additional_content.completed : false ) )
+      forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref, devo: 'true')
+      show_complete = true
+    elsif
+      forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref, devo: ref_index == nil ? true : day_status.additional_content.completed, content: ref_index)
+    end
   end
 
   display_total_refs = presenter.reading.devotional ? references.length + 1 : references.length
@@ -62,7 +77,7 @@
             = image_tag image_path("Circle-Left-Arrow.svg")
 
       .right
-        -if day_status && !day_status.references.empty?
+        -if (day_status && (!day_status.references.empty? || !day_status.additional_content.empty?))
           -#= link_to(forward_path, "target" => "_self" ) do
           - if is_rtl?
             = link_to(back_path, "target" => "_self" ) do
