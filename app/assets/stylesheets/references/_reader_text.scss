@@ -380,9 +380,29 @@
   .iso6393zho .pn {
     text-decoration: underline;
   }
-  // BOOKS version should not display verse numbers
-  .vid31 .verse span.label {
+  /*Hide verse labels on BOOKS version*/
+  .vid31 .verse .label {
     display: none;
+  }
+  /* Hide section titles */
+  .vid31 .s1 {
+    display: none;
+  }
+  /* add spacing where a section heading would be and don’t indent the para*/
+  .vid31 .s1 + .p {
+    text-indent: 0;
+    margin-top: 1.5em;
+  }
+  /* add a little spacing between q2 & q1 */
+  .vid31 .q2 + .q1  {
+    margin-top: 0.25em;
+  }
+  /* hide all notes in BOOKS */
+  .vid31 .note {
+    display: none;
+  }
+  .vid31 .wj .content {
+    color: inherit;
   }
   // For Psalms headings in NIV
   .vid111 .bkPSA .it {
