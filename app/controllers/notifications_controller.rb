@@ -10,8 +10,12 @@ class NotificationsController < ApplicationController
   def show
     @user = get_user
     @notifications = get_notifications
-    respond_with @notifications do |format|
-      format.html { render :layout => 'users' }
+    if (@user and @notifications)
+      respond_with @notifications do |format|
+        format.html { render :layout => 'users' }
+      end
+    else
+      render_404
     end
   end
 

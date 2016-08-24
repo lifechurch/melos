@@ -10,7 +10,7 @@
   = render partial: "widgets/settings", locals: {current_user: current_user} if current_user.present?
 
 -content_for :secondary_header do
-  = render partial: "users/header", locals: { user: @current_user }
+  = render partial: "users/header", locals: { user: @current_user } if @current_user.present?
 
 = render layout: "layouts/base" do
   -#
