@@ -32,13 +32,13 @@ class SubscribeUserAction extends Component {
 		if (readingPlan.subscription_id) {
 			var button = (
 				<div className='solid-button green padded' onClick={this.subscribeUser.bind(this, auth.userData.username, readingPlan, false, true)}>
-					<FormattedMessage id="plans.read today" />
+					<FormattedMessage id="EventsAdmin.plans.read today" />
 				</div>
 			)
 		} else {
 			var button = (
 				<div className='solid-button green padded' onClick={::this.handleClick}>
-					<FormattedMessage id="plans.subscribe"/>
+					<FormattedMessage id="EventsAdmin.plans.start"/>
 				</div>
 			)
 		}
@@ -47,10 +47,10 @@ class SubscribeUserAction extends Component {
 		if (this.state.dialogOpen) {
 			var dialogBox = (
 				<div className='plan-privacy-buttons text-center'>
-					<p className='detail-text'><FormattedMessage id="plans.privacy.visible to friends?" /></p>
+					<p className='detail-text'><FormattedMessage id="EventsAdmin.plans.privacy.visible to friends?" /></p>
 					<div className='yes-no-buttons'>
-						<a className='yes solid-button green' onClick={this.subscribeUser.bind(this, auth.userData.username, readingPlan, false, false)}><FormattedMessage id="ui.yes button"/></a>
-						<a className='no solid-button gray' onClick={this.subscribeUser.bind(this, auth.userData.username, readingPlan, true, false)}><FormattedMessage id="ui.no button" /></a>
+						<a className='yes solid-button green' onClick={this.subscribeUser.bind(this, auth.userData.username, readingPlan, false, false)}><FormattedMessage id="EventsAdmin.ui.yes button"/></a>
+						<a className='no solid-button gray' onClick={this.subscribeUser.bind(this, auth.userData.username, readingPlan, true, false)}><FormattedMessage id="EventsAdmin.ui.no button" /></a>
 					</div>
 				</div>
 			)
