@@ -135,7 +135,7 @@ class SubscriptionsController < ApplicationController
 
     # Completing a day of reading
     if(params[:completed].present?)
-      @subscription.set_ref_completion(params[:day], params[:ref], params[:ref].present?, params[:completed] == "true")
+      @subscription.set_ref_completion(params[:day], params[:ref], params[:devo], params[:completed] == "true")
       @subscription = subscription_for(params[:id]) || @subscription
 
       # after changing refs, fall back to version_id of plan if specified
