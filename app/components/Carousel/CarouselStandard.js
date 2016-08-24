@@ -11,6 +11,8 @@ class CarouselStandard extends Component {
   render() {
 		const { carouselContent, imageConfig } = this.props
 
+		var carouselTitle = (carouselContent.title) ? carouselContent.title : <FormattedMessage id='plans.related plans' />
+
     var settings = {
     	centerMode: false,
       infinite: true,
@@ -27,7 +29,7 @@ class CarouselStandard extends Component {
     // we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
     var slides = carouselContent.items.map( function(slide, index) {
 
-    	var slideLink = (slide.type == 'collection') ? `/en/reading-plans/collection/${slide.id}` : `/en/reading-plans/${slide.id}`
+    	var slideLink = (slide.type == 'collection') ? `/en/reading-plans-collection/${slide.id}` : `/en/reading-plans/${slide.id}`
 
     	if (slide.image_id) {
 				return (
@@ -63,8 +65,8 @@ class CarouselStandard extends Component {
 
 	  return (
 	    <div className='carousel-standard' >
-	    	<Link className='carousel-header' to={`/en/reading-plans/collection/${carouselContent.id}`}>
-	    		<div className='title'>{`${carouselContent.title}`}</div>
+	    	<Link className='carousel-header' to={`/en/reading-plans-collection/${carouselContent.id}`}>
+	    		<div className='title'>{carouselTitle}</div>
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>
 	    	</Link>

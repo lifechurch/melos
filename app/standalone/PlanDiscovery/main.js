@@ -29,17 +29,29 @@ addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 
 function requirePlanDiscoveryData(nextState, replace, callback) {
-	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, store.getState().auth.isLoggedIn)).then((event) => {
+	const currentState = store.getState()
+
+	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.items && currentState.plansDiscovery.items.length) {
 		callback()
-	}, (error) => {
-		callback()
-	})
+	} else {
+		store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, store.getState().auth.isLoggedIn)).then((event) => {
+			callback()
+		}, (error) => {
+			callback()
+		})
+	}
 }
 
 function requirePlanCollectionData(nextState, replace, callback) {
 	const { params } = nextState
-	if (params.hasOwnProperty("id") && params.id > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.collectionAll({ id: params.id })).then((event) => {
+	var idNum = parseInt(params.id.split("-")[0])
+	const currentState = store.getState()
+
+	// Do we already have data from server?
+	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.collection && currentState.plansDiscovery.collection.id === idNum && currentState.plansDiscovery.collection.items && currentState.plansDiscovery.collection.items.length) {
+		callback()
+	} else if (params.hasOwnProperty("id") && idNum > 0) {
+		store.dispatch(PlanDiscoveryActionCreators.collectionAll({ id: idNum })).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
@@ -49,7 +61,31 @@ function requirePlanCollectionData(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData)
+function requirePlanData(nextState, replace, callback) {
+	const { params } = nextState
+	console.log('++rpd', 0)
+	var idNum = parseInt(params.id.split("-")[0])
+	const currentState = store.getState()
+	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.plans && currentState.plansDiscovery.plans.id === idNum) {
+		console.log('++rpd', 1)
+		callback()
+	} else if (idNum > 0) {
+		console.log('++rpd', 2)
+		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
+			console.log('++rpd', 3)
+			callback()
+		}, (error) => {
+			console.log('++rpd', 5)
+			console.log("++rpd", "error", error)
+			callback()
+		})
+	} else {
+		console.log('++rpd', 4)
+		callback()
+	}
+}
+
+const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
