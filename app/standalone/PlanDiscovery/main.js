@@ -7,13 +7,18 @@ import defaultState from './defaultState'
 import createLogger from 'redux-logger'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
-import { browserHistory } from 'react-router'
+import { useRouterHistory } from 'react-router'
+import { createHistory } from 'history'
 import getRoutes from './routes'
 import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/creators'
 
 require('moment/min/locales')
 
 let initialState = defaultState
+
+let browserHistory = useRouterHistory(createHistory)({
+	basename: '/'
+})
 
 if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
 	initialState = window.__INITIAL_STATE__

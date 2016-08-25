@@ -31,7 +31,7 @@ class AboutPlan extends Component {
 
 		var friendsReading, friendsCompleted, completions, readingList, completedList = null
 		var readingPlansStats = ((completions = readingPlan.stats.total_completed) >= 1000) ? <p className='friends_completed'><FormattedMessage id='EventsAdmin.plans.stats.total completions' values={{count: completions}} /></p> : null
-		var publisherUrl = (readingPlan.publisher_url) ? <a className='publisher'>{readingPlan.publisher_url}</a> : null
+		var publisherLink = (readingPlan.publisher_url) ? <a className='publisher' href={readingPlan.publisher_url}><FormattedMessage id='EventsAdmin.plans.about publisher'/></a> : null
 
 		if ( (readingPlan.stats.friends != null) && (readingList = readingPlan.stats.friends.subscribed) ) {
 			friendsReading = (
@@ -50,7 +50,6 @@ class AboutPlan extends Component {
 			)
 		}
 
-
 		return (
 			<div className='row about-plan horizontal-center'>
 				<div className='columns large-8 medium-8'>
@@ -68,7 +67,7 @@ class AboutPlan extends Component {
 							<p className='plan_about'>{ readingPlan.about.text.default }</p>
 							<h3 className='publisher'><FormattedMessage id='EventsAdmin.plans.publisher'/></h3>
 							<p className='publisher'>{ readingPlan.copyright.text.default }</p>
-							<Link className='plans' to={publisherUrl}><FormattedMessage id='EventsAdmin.plans.about publisher'/></Link>
+							{ publisherLink }
 						</div>
 						<div className='columns large-4 medium-4'>
 							<div className='side-col'>
