@@ -60,7 +60,7 @@ function requireEvent(nextState, replace, callback) {
 }
 
 function requirePlanDiscoveryData(nextState, replace, callback) {
-	store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, true)).then((event) => {
+	store.dispatch(PlanDiscoveryActionCreators.discoverAll({language_tag: window.__LOCALE__.locale2}, store.getState().auth.isLoggedIn)).then((event) => {
 		callback()
 	}, (error) => {
 		callback()
@@ -70,7 +70,21 @@ function requirePlanDiscoveryData(nextState, replace, callback) {
 function requirePlanCollectionData(nextState, replace, callback) {
 	const { params } = nextState
 	if (params.hasOwnProperty("id") && params.id > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.collectionAll({ id: params.id }, false)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.collectionAll({ id: params.id }, store.getState().auth.isLoggedIn)).then((event) => {
+			callback()
+		}, (error) => {
+			callback()
+		})
+	} else {
+		callback()
+	}
+}
+
+function requirePlanData(nextState, replace, callback) {
+	const { params } = nextState
+	var idNum = params.id.split("-")
+	if (params.hasOwnProperty("id") && idNum[0] > 0) {
+		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum[0], language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
@@ -86,7 +100,7 @@ function logPageView() {
   }
 }
 
-const routes = getRoutes(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData)
+const routes = getRoutes(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData)
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.momentLocale)
 window.__LOCALE__.momentLocaleData = moment.localeData()

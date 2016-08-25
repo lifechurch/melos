@@ -87,6 +87,11 @@ export default store => next => action => {
 		client.auth()
 	}
 
+	if (typeof auth === 'object') {
+		const { username, password } = auth
+		client.auth(username, password)
+	}
+
 	const apiPromise = client[http_method]();
 	apiPromise.then((response) => {
 		const errors = response.errors

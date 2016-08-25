@@ -14,10 +14,11 @@ import SelectLanguage from './containers/SelectLanguage'
 import PlansView from './containers/PlansView'
 import PlanDiscoveryView from './containers/PlanDiscoveryView'
 import PlanCollectionView from './containers/PlanCollectionView'
+import AboutPlanView from './containers/AboutPlanView'
 
-export default function(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData) {
+export default function(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData) {
 	return (
-		<Route path="/:locale/" component={App} onEnter={requireAuth}>
+		<Route path="/(:locale/)" component={App} onEnter={requireAuth}>
 			<IndexRoute component={EventFeedMine} />
 			<Route path="select_language" component={SelectLanguage} />
 			<Route path="login" component={Auth} />
@@ -31,7 +32,10 @@ export default function(requireAuth, requireEvent, requirePlanDiscoveryData, req
 			<Route path="event/view/:id" component={EventView} onEnter={requireEvent} />
 			<Route path="reading-plans" component={PlansView}>
 				<IndexRoute component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
-				<Route path="collection/:id" component={PlanCollectionView} onEnter={requirePlanCollectionData} />
+				<Route path=":id(-:slug)" component={AboutPlanView} onEnter={requirePlanData} />
+			</Route>
+			<Route path="reading-plans-collection" component={PlansView}>
+				<Route path=":id" component={PlanCollectionView} onEnter={requirePlanCollectionData} />
 			</Route>
 		</Route>
 	)

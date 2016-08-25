@@ -1,88 +1,126 @@
 import type from '../actions/constants'
+import Immutable from 'immutable'
 
 export default function plansDiscovery(state = {}, action) {
 	switch (action.type) {
 		case type("discoverRequest"):
-			return Object.assign({}, state, { isFetching: true, hasErrors: false, errors: [] })
+			return Immutable.fromJS(state).mergeDeep({ isFetching: true, hasErrors: false, errors: [] }).toJS()
 
 		case type("discoverFailure"):
-			return Object.assign({}, state, { isFetching: false, hasErrors: true, errors: action.errors })
+			return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors }).toJS()
 
 		case type('discoverSuccess'):
 			var items = action.response.items.map((item) => {
-				return Object.assign({}, item, { items: [] })
+				return Immutable.fromJS(item).set('items', []).toJS()
 			})
-			var map = buildMap(items)
+			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], items, map: buildMap(items) }).toJS()
 
-			return Object.assign({}, state, { hasErrors: false, errors: [], items, map })
-
+		case type("planSaveforlaterRequest"):
+		case type("planRemoveSaveRequest"):
+		case type("planInfoRequest"):
+		case type("planStatsRequest"):
 		case type("savedItemsRequest"):
 		case type("recommendationsItemsRequest"):
 		case type("collectionsItemsRequest"):
-			return Object.assign({}, state, { isFetching: true, hasErrors: false, errors: [] })
+			return Immutable.fromJS(state).mergeDeep({ isFetching: true, hasErrors: false, errors: [] }).toJS()
 
+		case type("planSaveforlaterFailure"):
+		case type("planRemoveSaveFailure"):
+		case type("planInfoFailure"):
+		case type("planStatsFailure"):
 		case type("savedItemsFailure"):
 		case type("recommendationsItemsFailure"):
 		case type("collectionsItemsFailure"):
-			return Object.assign({}, state, { isFetching: false, hasErrors: true, errors: action.errors })
+			return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors }).toJS()
 
 		case type("collectionsItemsSuccess"):
 			if (action.params.uiFocus) {
-				var collection = Object.assign({}, action.response.collections[0], state.collection)
+				var collection = Immutable.fromJS(action.response.collections[0]).mergeDeep(state.collection).toJS()
 				var responseItems = collection.items.map((item) => {
-					return Object.assign({}, item, { items: [] })
+					return Immutable.fromJS(item).set('items', []).toJS()
 				})
-				// let's build a mapping for placing collections items inside any of these collections
-				var map = buildMap(responseItems)
-				var updatedCollection = Object.assign({}, collection, { map: map })
+				var map = buildMap(responseItems) // let's build a mapping for placing collections items inside any of these collections
+				var updatedCollection = Immutable.fromJS(collection).mergeDeep({ map }).toJS()
+				return Immutable.fromJS(state).mergeDeep({ collection: updatedCollection }).toJS()
 
-				return Object.assign({}, state, { collection: updatedCollection })
 			//  if a collection is inside a collection, then we need to get those items
 			} else if (action.params.collectInception) {
 				var { collections } = action.response
 				var items = state.collection.items.slice(0)
 				var updatedstateItems = populateItems(collections, items, state.collection.map)
-				var updatedCollection = Object.assign({}, state.collection, {items: updatedstateItems })
+				var updatedCollection = Immutable.fromJS(state.collection).set('items', updatedstateItems).toJS()
+				return Immutable.fromJS(state).mergeDeep({ collection: updatedCollection }).toJS()
 
-				return Object.assign({}, state, { collection: updatedCollection })
 			} else {
 				const { collections } = action.response
 				var items = state.items.slice(0)
 				var updatedStateItems = populateItems(collections, items, state.map)
-
-				return Object.assign({}, state, { hasErrors: false, errors: [], items: updatedStateItems })
+				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], items: updatedStateItems }).toJS()
 			}
 
 		case type("savedItemsSuccess"):
 		case type("recommendationsItemsSuccess"):
-			var { reading_plans } = action.response
-			var items = state.items.slice(0)
-			// saved items and recommended are the same except saved doesn't come back with an id, so we set it to "saved" in discoverSuccess
-			var discoveryIndex = (action.type != type("savedItemsSuccess")) ? state.map[action.params.id] : state.map["saved"]
-			reading_plans.forEach((plan) => {
-				if (typeof discoveryIndex !== 'undefined') {
-					plan.title = plan.name["default"]
+
+			if (action.params.readingplanInfo) {
+				var reading_plans = action.response.reading_plans.map((plan) => {
+					var p = Immutable.fromJS(plan).mergeDeep({ title: plan.name["default"], type: 'reading_plan' })
+
 					// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
-					if (plan.images != null) plan.image_id = plan.id // else plan.image_id doesn't exist
-					plan.type = "reading_plan"
-				}
-			})
-			items[discoveryIndex] = Object.assign({}, items[discoveryIndex], { items: reading_plans })
-			return Object.assign({}, state, { hasErrors: false, errors: [], items })
+					if (plan.images != null) p = p.set('image_id', plan.id) // else plan.image_id doesn't exist
+
+					return p.toJS()
+				})
+				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { related: { items: reading_plans, id: action.params.id } } }).toJS()
+
+			} else if (action.params.savedplanCheck) {
+				var { reading_plans } = action.response
+				var saved = typeof (reading_plans.find((plan) => { return plan.id === action.params.planId })) === 'undefined' ? false : true
+				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { saved: saved } }).toJS()
+
+			} else {
+				var { reading_plans } = action.response
+				var items = state.items.slice(0)
+				// saved items and recommended are the same except saved doesn't come back with an id, so we set it to "saved" in discoverSuccess
+				var discoveryIndex = state.map[action.params.id]
+
+				var reading_plans = action.response.reading_plans.map((plan) => {
+					var p = Immutable.fromJS(plan)
+
+					if (typeof discoveryIndex !== 'undefined') {
+						p = p.mergeDeep({ title: plan.name["default"], type: 'reading_plan' })
+						// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
+						if (plan.images != null)  p = p.set('image_id', plan.id) // else plan.image_id doesn't exist
+					}
+
+					return p.toJS()
+				})
+				items[discoveryIndex] = Immutable.fromJS(items[discoveryIndex]).set('items', reading_plans).toJS()
+				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], items }).toJS()
+			}
+
+		case type("planSaveforlaterSuccess"):
+		case type("planRemoveSaveSuccess"):
+			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { saved: !state.plans.saved } }).toJS()
+
+		case type("planInfoSuccess"):
+			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: action.response }).toJS()
+
+		case type("planStatsSuccess"):
+			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { stats: action.response } }).toJS()
 
 		case type('configurationRequest'):
 		case type('configurationFailure'):
 			return state
 
 		case type('configurationSuccess'):
-			return Object.assign({}, state, { configuration: action.response })
+			return Immutable.fromJS(state).mergeDeep({ configuration: action.response }).toJS()
 
 		case type('collectionRequest'):
 		case type('collectionFailure'):
 			return state
 
 		case type('collectionSuccess'):
-			return Object.assign({}, state, { collection: action.response })
+			return Immutable.fromJS(state).mergeDeep({ collection: action.response }).toJS()
 
 		default:
 			return state
@@ -126,7 +164,7 @@ function populateItems(collections, stateItems, map) {
 function buildMap(responseItems) {
 		let map = {}
 		responseItems.forEach((item, index) => {
-			if (item.id == null) {
+			if (item.type === 'saved') {
 				map["saved"] = index
 			} else {
 				map[item.id] = index

@@ -69,7 +69,7 @@ class CarouselBanner extends Component {
 		// for banner carousels, we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
 		var slides = carouselContent.items.map( function(slide, index) {
 
-			var slideLink = (slide.type == 'collection') ? `/en/reading-plans/collection/${slide.id}` : `/en/reading-plans/${slide.id}`
+			var slideLink = (slide.type == 'collection') ? `/en/reading-plans-collection/${slide.id}` : `/en/reading-plans/${slide.id}`
 
 			if (slide.image_id) {
 				return (
