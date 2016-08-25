@@ -195,6 +195,8 @@ YouversionWeb::Application.routes.draw do
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
   match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
 
+  get '/reading-plans-collection/:id' => 'plans#plan_collection'
+
   # Reading Plans
   # Legacy links that need to be supported
   # ------------------------------------------------------------------------------------------
