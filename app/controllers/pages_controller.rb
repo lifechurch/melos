@@ -48,10 +48,12 @@ class PagesController < ApplicationController
     # Get VOD for Locale
     @showVerseImage = I18n.locale == :en
 
-    if (!params[:day])
+    day = params[:day].to_i
+
+    if (!day || (day > 366 || day < 1) )
       @vodImage = VOD.image_for_day(Date.today.yday(), 640)
     else
-      @vodImage = VOD.image_for_day(params[:day].to_i, 640)
+      @vodImage = VOD.image_for_day(day, 640)
     end
 
     if (@showVerseImage)
