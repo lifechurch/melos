@@ -208,7 +208,7 @@ YouversionWeb::Application.routes.draw do
 
   # featuredplans.youversion.com use this link.
   # /reading-plans/id-slug/start -> "plans#start" -> "subscriptions#new"
-  # match "/reading-plans/:id/start" => redirect {|params| "/reading-plans/#{params[:id]}" }
+  match "/reading-plans/:id/start" => redirect {|params| "/reading-plans/#{params[:id]}" }
 
   # Community emails send this link
   # /reading-plans/id-slug/settings/email -> "plans#settings" -> "subscriptions#edit"
