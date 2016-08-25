@@ -160,15 +160,12 @@ function getConfig(feature) {
 }
 
 function loadData(feature, params, startingState, sessionData, store) {
-	console.log("++FS-LoadData")
 	return new Promise((resolve, reject) => {
-		console.log("++FS-InsidePromise")
 		let fn = null
 		try {
 			fn = require('./app/standalone/' + feature + '/loadData').default
 			resolve(fn(params, startingState, sessionData, store))
 		} catch(ex) {
-			console.log("++FS", ex)
 			resolve()
 		}
 	})
@@ -225,8 +222,6 @@ router.post('/', urlencodedParser, function(req, res) {
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
 
-	console.log("++feature", feature, params)
-
 	reactCookie.plugToRequest(req, res)
 
 	let verifiedAuth = null
@@ -240,7 +235,6 @@ router.post('/', urlencodedParser, function(req, res) {
 		try {
 			const store = getStore(feature, startingState, null, null)
 			loadData(feature, params, startingState, sessionData, store).then((action) => {
-				console.log("++LOADED DATA", typeof action);
 				if (typeof action === 'function') {
 					store.dispatch(action).then(() => {
 						finish()
@@ -262,7 +256,6 @@ router.post('/', urlencodedParser, function(req, res) {
 						try {
 							 html = renderToString(<IntlProvider locale={Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch(ex) {
-							console.log(ex.stack)
 							return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex })
 						}
 

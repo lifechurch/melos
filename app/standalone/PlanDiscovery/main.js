@@ -63,24 +63,17 @@ function requirePlanCollectionData(nextState, replace, callback) {
 
 function requirePlanData(nextState, replace, callback) {
 	const { params } = nextState
-	console.log('++rpd', 0)
 	var idNum = parseInt(params.id.split("-")[0])
 	const currentState = store.getState()
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.plans && currentState.plansDiscovery.plans.id === idNum) {
-		console.log('++rpd', 1)
 		callback()
 	} else if (idNum > 0) {
-		console.log('++rpd', 2)
 		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
-			console.log('++rpd', 3)
 			callback()
 		}, (error) => {
-			console.log('++rpd', 5)
-			console.log("++rpd", "error", error)
 			callback()
 		})
 	} else {
-		console.log('++rpd', 4)
 		callback()
 	}
 }

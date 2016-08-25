@@ -17,7 +17,6 @@ import PlanCollectionView from './containers/PlanCollectionView'
 import AboutPlanView from './containers/AboutPlanView'
 
 export default function(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData) {
-	console.log("Main Routes Files!!")
 	return (
 		<Route path="/(:locale/)" component={App} onEnter={requireAuth}>
 			<IndexRoute component={EventFeedMine} />

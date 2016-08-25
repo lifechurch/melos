@@ -13,8 +13,6 @@ class PlanCollection extends Component {
 		var items = []
 		var carousels = []
 
-		console.log("PlanCollection Render")
-
 		if (collection.items) {
 			collection.items.forEach((item) => {
 					let slide = null

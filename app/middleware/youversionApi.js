@@ -71,7 +71,6 @@ export default store => next => action => {
 	}
 	const [ requestType, successType, failureType ] = types
 
-	console.log("MW", endpoint, method)
 	next(getRequestAction(requestType, action))
 
 	const client = getClient(endpoint)
