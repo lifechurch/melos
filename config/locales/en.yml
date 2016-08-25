@@ -1415,7 +1415,8 @@ en:
       yes button:                                 "Yes"
       no button:                                  "No"
     plans:
-      plans back:                               "&larr; Plans"
+      plans:                                     "Plans"
+      related plans:                             "Related Plans"
       see all:                                  "See All"
       discover:                                 "Discover"
       my_plans:                                 "My Plans"
