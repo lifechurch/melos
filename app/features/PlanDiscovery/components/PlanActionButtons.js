@@ -22,7 +22,7 @@ class PlanActionButtons extends Component {
 				<div className='text-center'>
 					<SaveForLaterAction readingPlan={readingPlan} auth={auth} dispatch={dispatch}/>
 					&bull;
-					<a onClick={this.samplePlan.bind(this, readingPlan)}> <FormattedMessage id="EventsAdmin.plans.sample" /></a>
+					<a onClick={this.samplePlan.bind(this, readingPlan)}> <FormattedMessage id="plans.sample" /></a>
 				</div>
 			</div>
 		)

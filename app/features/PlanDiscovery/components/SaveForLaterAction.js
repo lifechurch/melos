@@ -22,15 +22,15 @@ class SaveForLaterAction extends Component {
 
 		if (readingPlan.saved) {
 			if (button) {
-				var saveforlater = <a className='save-for-later button' onClick={this.saveForLater.bind(this, readingPlan.id)}><CheckMark /><FormattedMessage id="EventsAdmin.plans.saved for later" /> </a>
+				var saveforlater = <a className='save-for-later button' onClick={this.saveForLater.bind(this, readingPlan.id)}><CheckMark /><FormattedMessage id="plans.saved for later" /> </a>
 			} else {
-				var saveforlater = <a className='save-for-later' onClick={this.saveForLater.bind(this, readingPlan.id)}><CheckMark /><FormattedMessage id="EventsAdmin.plans.saved for later" /> </a>
+				var saveforlater = <a className='save-for-later' onClick={this.saveForLater.bind(this, readingPlan.id)}><CheckMark /><FormattedMessage id="plans.saved for later" /> </a>
 			}
 		} else {
 			if (button) {
-				var saveforlater = <a className='save-for-later button' onClick={this.saveForLater.bind(this, readingPlan.id)}><FormattedMessage id="EventsAdmin.plans.save for later" /> </a>
+				var saveforlater = <a className='save-for-later button' onClick={this.saveForLater.bind(this, readingPlan.id)}><FormattedMessage id="plans.save for later" /> </a>
 			} else {
-				var saveforlater = <a className='save-for-later' onClick={this.saveForLater.bind(this, readingPlan.id)}><FormattedMessage id="EventsAdmin.plans.save for later" /> </a>
+				var saveforlater = <a className='save-for-later' onClick={this.saveForLater.bind(this, readingPlan.id)}><FormattedMessage id="plans.save for later" /> </a>
 			}
 		}
 
