@@ -1,7 +1,6 @@
 import ActionCreator from '../../features/PlanDiscovery/actions/creators'
 
 export default function loadData(params, startingState, sessionData, store) {
-	console.log("++SA-LoadData", 0)
 
 	return new Promise((resolve, reject) => {
 		if (typeof store !== 'undefined' && params.hasOwnProperty('url') && params.hasOwnProperty('languageTag')) {
