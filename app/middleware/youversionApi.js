@@ -71,6 +71,7 @@ export default store => next => action => {
 	}
 	const [ requestType, successType, failureType ] = types
 
+	console.log("MW", endpoint, method)
 	next(getRequestAction(requestType, action))
 
 	const client = getClient(endpoint)
@@ -85,6 +86,11 @@ export default store => next => action => {
 	const auth = api_call.auth
 	if (auth === true) {
 		client.auth()
+	}
+
+	if (typeof auth === 'object') {
+		const { username, password } = auth
+		client.auth(username, password)
 	}
 
 	const apiPromise = client[http_method]();

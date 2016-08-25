@@ -17,10 +17,14 @@ import revManifest from './rev-manifest.json'
 import bodyParser from 'body-parser'
 import { getClient } from '@youversion/js-api'
 import { addLocaleData, IntlProvider } from 'react-intl'
+import getRoutes from './app/routes.js'
+import createLogger from 'redux-node-logger'
+
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
 const availableLocales = require('./locales/config/availableLocales.json');
+const localeList = require('./locales/config/localeList.json');
 
 function getAssetPath(path) {
 	const IS_PROD = process.env.NODE_ENV === 'production';
@@ -155,13 +159,16 @@ function getConfig(feature) {
 	return Object.assign({}, defaultConfig, config)
 }
 
-function loadData(feature, params, startingState, sessionData) {
+function loadData(feature, params, startingState, sessionData, store) {
+	console.log("++FS-LoadData")
 	return new Promise((resolve, reject) => {
+		console.log("++FS-InsidePromise")
 		let fn = null
 		try {
 			fn = require('./app/standalone/' + feature + '/loadData').default
-			resolve(fn(params, startingState, sessionData))
+			resolve(fn(params, startingState, sessionData, store))
 		} catch(ex) {
+			console.log("++FS", ex)
 			resolve()
 		}
 	})
@@ -183,13 +190,42 @@ function getLocale(languageTag) {
 	// Get the appropriate set of localized strings for this locale
 	final.messages = require('./locales/' + final.locale + '.json');
 
+	for (const lc of localeList) {
+		if (lc.locale === final.locale) {
+			final.locale2 = lc.locale2
+			final.locale3 = lc.locale3
+			final.momentLocale = lc.momentLocale
+		}
+	}
+
 	return final;
+}
+
+function getRenderProps(feature, url) {
+	return new Promise((resolve, reject) => {
+		let getRoutes = null
+		try {
+			getRoutes = require('./app/standalone/' + feature + '/routes.js').default
+			const routes = getRoutes(null)
+			match({ routes, location: url }, (error, redirectLocation, renderProps) => {
+				if (!error && !redirectLocation && renderProps) {
+					resolve(renderProps)
+				} else {
+					resolve({})
+				}
+			})
+		} catch(ex) {
+			resolve({})
+		}
+	})
 }
 
 router.post('/', urlencodedParser, function(req, res) {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
+
+	console.log("++feature", feature, params)
 
 	reactCookie.plugToRequest(req, res)
 
@@ -203,7 +239,8 @@ router.post('/', urlencodedParser, function(req, res) {
 		startingState = mapStateToParams(feature, startingState, params)
 		try {
 			const store = getStore(feature, startingState, null, null)
-			loadData(feature, params, startingState, sessionData).then((action) => {
+			loadData(feature, params, startingState, sessionData, store).then((action) => {
+				console.log("++LOADED DATA", typeof action);
 				if (typeof action === 'function') {
 					store.dispatch(action).then(() => {
 						finish()
@@ -220,18 +257,21 @@ router.post('/', urlencodedParser, function(req, res) {
 				function finish() {
 					const RootComponent = getRootComponent(feature)
 
-					let html = null
-					try {
-						 html = renderToString(<IntlProvider locale={Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent /></Provider></IntlProvider>)
-					} catch(ex) {
-						return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex })
-					}
+					getRenderProps(feature, params.url).then((renderProps) => {
+						let html = null
+						try {
+							 html = renderToString(<IntlProvider locale={Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
+						} catch(ex) {
+							console.log(ex.stack)
+							return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex })
+						}
 
-					const initialState = Object.assign({}, startingState, store.getState())
-					const head = Helmet.rewind()
-					res.setHeader('Cache-Control', 'public')
-					res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale }, function(err, html) {
-						res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })
+						const initialState = Object.assign({}, startingState, store.getState())
+						const head = Helmet.rewind()
+						res.setHeader('Cache-Control', 'public')
+						res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale }, function(err, html) {
+							res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })
+						})
 					})
 				}
 

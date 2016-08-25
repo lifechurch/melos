@@ -23,6 +23,8 @@ class AboutPlan extends Component {
 	render() {
 		const { readingPlan, imageConfig, auth } = this.props
 
+		console.log("AboutPlan Render", readingPlan)
+
 		if (!(readingPlan && readingPlan.stats && readingPlan.related)) {
 			return (
 				<div></div>

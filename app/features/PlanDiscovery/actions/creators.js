@@ -48,42 +48,53 @@ const ActionCreators = {
 		}
 	},
 
-	collectionAll(params, auth) {
+	collectionAll(params) {
 		return dispatch => {
-			return dispatch(ActionCreators.configuration()).then((configuration) => {
-				return dispatch(ActionCreators.collection(params, auth)).then((data) => {
+			return Promise.all([
+				dispatch(ActionCreators.configuration()),
+				dispatch(ActionCreators.collection(params)),
+				new Promise((resolve, reject) => {
 					// When uiFocus = true, the reducer will populate root collection with items in state
 					const itemsParams = Object.assign({}, params, { ids: [params.id], page: 1, uiFocus: true })
-					return dispatch(ActionCreators.collectionsItems(itemsParams)).then((collectionItems) => {
+
+					dispatch(ActionCreators.collectionsItems(itemsParams)).then((collectionItems) => {
+
 						// if we have a collection inside a collection, the reducer is going to populate the collection with it's items based on the flag
 						var ids = []
+
 						collectionItems.collections[0].items.map((item) => {
 							if (item.type === 'collection') {
 								ids.push(item.id)
 							}
 						})
-						if (ids.length > 0) return dispatch(ActionCreators.collectionsItems({ ids: ids, collectInception: true })).then(() => {})
-					})
+
+						if (ids.length > 0) {
+							resolve(dispatch(ActionCreators.collectionsItems({ ids: ids, collectInception: true })))
+						} else {
+							resolve()
+						}
+
+					}, reject)
 				})
-			})
+			])
 		}
 	},
 
 	readingplanInfo(params, auth) {
 		return dispatch => {
-			return dispatch(ActionCreators.configuration()).then((configuration) => {
-				return dispatch(ActionCreators.readingplanView(params, auth)).then((readingplan) => {
-					return dispatch(ActionCreators.readingplanStats(params, auth)).then((stats) => {
-						// tell the reducer to populate the recommendations in state.collection.plans.related
-						const planParams = Object.assign({}, params, { readingplanInfo: true })
-						return dispatch(ActionCreators.recommendations(planParams)).then((recd) => {
-							// now check if requested reading plan view is a saved plan for the user
-							const savedplanParams = Object.assign({}, params, { readingplanInfo: false, savedplanCheck: true, planId: readingplan.id })
-							return dispatch(ActionCreators.savedItems(savedplanParams, auth)).then((saved) => {})
-						})
-					})
-				})
-			})
+			// tell the reducer to populate the recommendations in state.collection.plans.related
+			const planParams = Object.assign({}, params, { readingplanInfo: true })
+
+			// now check if requested reading plan view is a saved plan for the user
+			const savedplanParams = Object.assign({}, params, { readingplanInfo: false, savedplanCheck: true, planId: params.id })
+
+			return Promise.all([
+				dispatch(ActionCreators.configuration()),
+				dispatch(ActionCreators.readingplanView(params, auth)),
+				dispatch(ActionCreators.recommendations(planParams)),
+				dispatch(ActionCreators.readingplanStats(params, auth)),
+				dispatch(ActionCreators.savedItems(savedplanParams, auth))
+			])
 		}
 	},
 

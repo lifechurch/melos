@@ -70,7 +70,7 @@ function requirePlanDiscoveryData(nextState, replace, callback) {
 function requirePlanCollectionData(nextState, replace, callback) {
 	const { params } = nextState
 	if (params.hasOwnProperty("id") && params.id > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.collectionAll({ id: params.id }, false)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.collectionAll({ id: params.id }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
