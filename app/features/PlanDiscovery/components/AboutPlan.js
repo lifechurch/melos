@@ -54,7 +54,7 @@ class AboutPlan extends Component {
 			<div className='row about-plan horizontal-center'>
 				<div className='columns large-8 medium-8'>
 					<div className='about-plan-header'>
-						<Link className='plans' to={`/en/reading-plans`}><FormattedMessage id='plans.plans back'/></Link>
+						<Link className='plans' to={`/en/reading-plans`}><FormattedMessage id='plans.plans'/></Link>
 						<ShareWidget/>
 					</div>
 					<div className='plan-image'>
