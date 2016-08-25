@@ -191,16 +191,11 @@ YouversionWeb::Application.routes.draw do
   # /reading-plans
   # /reading-plans/:id
   # /reading-plans/:id/day/:day
+  resources :plans, :only => [:index, :show], :path => 'reading-plans'
+  match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
+  match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
 
-  # get '/reading-plans/col/:id', to: 'plans#plan_collection'
-
-  resources :plans, :only => [:index, :show], :path => 'reading-plans' do
-    get "col/:id", on: :plan_collection
-  end
-
-  get '/reading-plans/:id/day/:day', to: 'plans#sample', as: "sample_plan"
-  get '/reading-plans/:id/day/:day/completed', to: 'plans#day_complete', as: "day_complete_plan"
-
+  get '/reading-plans-collection/:id' => 'plans#plan_collection'
 
   # Reading Plans
   # Legacy links that need to be supported

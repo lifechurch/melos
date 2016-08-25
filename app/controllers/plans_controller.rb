@@ -10,30 +10,6 @@ class PlansController < ApplicationController
 
   # TODO - this needs serious refactoring controller, model, service object and template - A MESS.
   def index
-    # @plan_lang      = available_plan_language()
-    # @category = PlanCategory.find(params[:category], language_tag: @plan_lang)# rescue Hashie::Mash.new({current_name: t("plans.all"), breadcrumbs: [], items: []})
-    # @plan_lengths = []
-    # if params[:category].nil?
-    #   params[:category] = "featured_plans"
-    # end
-    #
-    # # Need to query here to see if user has subscribe to any plans
-    # if current_user.present?
-    #   @subscriptions = Subscription.all(current_user, auth: current_user.auth)
-    #   @show_my_plans = @subscriptions.present? && @subscriptions.length > 0
-    # end
-    #
-    # @plans = Plan.all( query: params[:query], page: @page, category: params[:category], language_tag: @plan_lang)
-    # @sidebar = false
-    # if !@plans.nil?
-    #   @plans.each do |plan|
-    #     @plan_lengths.push plan.total_days unless @plan_lengths.include? plan.total_days
-    #   end
-    # end
-    # @plan_lengths = @plan_lengths.sort
-    # @stophere = 1
-    #PERF: We are wasting an API query here, maybe there is an elegant solution?
-
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
@@ -56,6 +32,7 @@ class PlansController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
+        "id" => params[:id]
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
@@ -70,43 +47,11 @@ class PlansController < ApplicationController
   end
 
   def show
-    # # Redirect for url format that is shared from mobile devices.
-    # if params[:day] then redirect_to( sample_plan_url(id: params[:id], day: params[:day])) and return end
-    #
-    # if current_user.present? && params[:back].present?
-    #   if params[:back] = 'subscription'
-    #     @referrer = subscription_path(user_id: current_user.to_param, id: params[:id])
-    #   end
-    # end
-    #
-    # @plan = Plan.find(params[:id])
-    #
-    # if @plan.valid?
-    #   begin
-    #   @friends_reading = @plan.friends_reading(auth: current_auth)
-    #   @friends_completed = @plan.friends_completed(auth: current_auth)
-    #   rescue => e
-    #   end
-    #   self.sidebar_presenter = Presenter::Sidebar::Plan.new(@plan,params,self)
-    #
-    #   # Need to query here to see if user has subscribe to any plans
-    #   if current_user.present?
-    #     @subscriptions = Subscription.all(current_user, auth: current_user.auth)
-    #     @show_my_plans = @subscriptions.present? && @subscriptions.length > 0
-    #     @my_saved_items = Subscription.allSavedIds(current_user)
-    #     if @my_saved_items.reading_plans.is_a? Array
-    #       @is_saved = @my_saved_items.reading_plans.include? @plan.id
-    #     else
-    #       @is_saved = false
-    #     end
-    #   end
-    #
-    # else
-    #   render_404
-    # end
     p = {
         "strings" => {},
-        "languageTag" => I18n.locale.to_s
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "id" => params[:id]
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
