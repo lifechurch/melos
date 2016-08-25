@@ -1,7 +1,6 @@
 :ruby
   @title            = "#{t('pages.home.votd.title')} - #{@vodRef.to_s}"
   @meta_description = t("meta.mobile.description")
-  #@meta_url         = "#{request.protocol}#{request.host_with_port}#{request.fullpath.split("?")[0]}?ref=#{@vodRef.usfm.to_param}"
   @meta_url         = "#{request.protocol}#{request.host_with_port}#{request.fullpath.split("?")[0]}?ref=#{@vodRef.usfm.to_param}&day=#{@vodImage.day}"
   @vod_img_url       = @showVerseImage ? "https:#{@vodImage.image_url}" : url_for(image_path(localized_bible_icon(200)))
 
@@ -39,7 +38,7 @@
 - content_for :meta_description do
   = "#{@vodContent}"
 
-= cache "votd_#{I18n.locale}_#{@vodImage.day}", expires_in: YV::Caching.a_short_time do
+= cache "votd_#{I18n.locale}_#{@vodImage.day}", expires_in: YV::Caching.a_very_long_time do
 
   .votd-row
     .row
