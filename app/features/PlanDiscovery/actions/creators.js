@@ -4,47 +4,45 @@ const ActionCreators = {
 
 	discoverAll(params, auth) {
 		return dispatch => {
-			return dispatch(ActionCreators.configuration()).then((configuration) => {
-				return dispatch(ActionCreators.discover(params, auth)).then((data) => {
-					var carousels = [];	// for all carousels
-					var ids = [];				// for collections carousels
-					var recdIds = [];		// for recommendation carousels
-					var savedId = null;	// for saved plans carousel
-					data.items.forEach((item, index) => {
-						if (item.type === 'collection') {
-							ids.push(item.id);
-						} else if (item.type === 'recommended') {
-							recdIds.push({"id": item.id, "index": index});
-						} else if (item.type === 'saved') {
-							savedId = {"id": item.id, "index": index};
-						}
-					})
-					// get all the regular carousels items
-					return dispatch(ActionCreators.collectionsItems({ ids })).then((carouselList) => {
-						// if we have recommendations, let's get recommended
-						if (recdIds.length > 0) {
-							// insert the recommendations into the carousels list in the correct order received from the api
-							recdIds.forEach((item) => {
-								dispatch(ActionCreators.recommendations({"language_tag": params["language_tag"], "id": item["id"]})).then((recCarousel) => {
-									carousels.splice(item["index"], 0, recCarousel);
-								})
-							})
-						}
+			return Promise.all([
+				dispatch(ActionCreators.configuration()),
+				new Promise((resolve, reject) => {
+					dispatch(ActionCreators.discover(params, auth)).then((data) => {
+						var collectionIds = [];			// for collections carousels
+						var recommendationIds = [];	// for recommendation carousels
+						var hasSaved = false;				// for saved plans carousel
+
+						data.items.forEach((item, index) => {
+							if (item.type === 'collection') {
+								collectionIds.push(item.id);
+							} else if (item.type === 'recommended') {
+								recommendationIds.push(item.id);
+							} else if (item.type === 'saved') {
+								hasSaved = true
+							}
+						})
+
+						var promises = []
+
+						// get all the regular carousels items
+						promises.push(dispatch(ActionCreators.collectionsItems({ ids: collectionIds })))
+
 						// if we have saved plans, let's get 'em
-						if (savedId != null) {
-							// insert saved plans into the carousels list in the correct order received from the api
-							dispatch(ActionCreators.savedItems(params, auth)).then((savedCarousel) => {
-								carousels.splice(savedId["index"], 0, savedCarousel);
-							})
+						if (hasSaved === true) {
+							promises.push(dispatch(ActionCreators.savedItems({ id: 'saved'}, auth)))
 						}
+
+						// if we have recommendations, let's get recommended
+						if (recommendationIds.length > 0) {
+							promises.concat(recommendationIds.map((id) => {
+								return dispatch(ActionCreators.recommendations({ language_tag: params.language_tag, id }))
+							}))
+						}
+
+						Promise.all(promises).then(resolve, reject)
 					})
-
-				}, (error) => {
-
 				})
-			}, (error) => {
-
-			})
+			])
 		}
 	},
 

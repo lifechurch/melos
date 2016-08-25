@@ -66,7 +66,7 @@ export default function plansDiscovery(state = {}, action) {
 					var p = Immutable.fromJS(plan).mergeDeep({ title: plan.name["default"], type: 'reading_plan' })
 
 					// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
-					if (plan.images != null) p.set('image_id', plan.id) // else plan.image_id doesn't exist
+					if (plan.images != null) p = p.set('image_id', plan.id) // else plan.image_id doesn't exist
 
 					return p.toJS()
 				})
@@ -81,15 +81,15 @@ export default function plansDiscovery(state = {}, action) {
 				var { reading_plans } = action.response
 				var items = state.items.slice(0)
 				// saved items and recommended are the same except saved doesn't come back with an id, so we set it to "saved" in discoverSuccess
-				var discoveryIndex = (action.type != type("savedItemsSuccess")) ? state.map[action.params.id] : state.map["saved"]
+				var discoveryIndex = state.map[action.params.id]
 
 				var reading_plans = action.response.reading_plans.map((plan) => {
-					var p = Immutable.from(plan)
+					var p = Immutable.fromJS(plan)
 
 					if (typeof discoveryIndex !== 'undefined') {
-						p.mergeDeep({ title: plan.name["default"], type: 'reading_plan' })
+						p = p.mergeDeep({ title: plan.name["default"], type: 'reading_plan' })
 						// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
-						if (plan.images != null)  p.set('image_id', plan.id) // else plan.image_id doesn't exist
+						if (plan.images != null)  p = p.set('image_id', plan.id) // else plan.image_id doesn't exist
 					}
 
 					return p.toJS()
@@ -164,7 +164,7 @@ function populateItems(collections, stateItems, map) {
 function buildMap(responseItems) {
 		let map = {}
 		responseItems.forEach((item, index) => {
-			if (item.id == null) {
+			if (item.type === 'saved') {
 				map["saved"] = index
 			} else {
 				map[item.id] = index
