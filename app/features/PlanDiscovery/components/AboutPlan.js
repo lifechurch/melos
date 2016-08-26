@@ -7,6 +7,8 @@ import PlanActionButtons from './PlanActionButtons'
 import { FormattedMessage } from 'react-intl'
 import AvatarList from '../../../components/AvatarList'
 import ShareWidget from './ShareWidget'
+import Helmet from 'react-helmet'
+import { injectIntl } from 'react-intl'
 
 class AboutPlan extends Component {
 
@@ -52,6 +54,10 @@ class AboutPlan extends Component {
 
 		return (
 			<div className='row about-plan horizontal-center'>
+				<Helmet
+					title={`${readingPlan.name.default} - ${readingPlan.about.text.default.substr(0, 155)}`}
+					meta={[ { name: 'description', content: readingPlan.about.text.default } ]}
+				/>
 				<div className='columns large-8 medium-8'>
 					<div className='about-plan-header'>
 						<Link className='plans' to={`/en/reading-plans`}><FormattedMessage id='plans.plans back'/></Link>
@@ -91,4 +97,4 @@ class AboutPlan extends Component {
 	}
 }
 
-export default AboutPlan
+export default injectIntl(AboutPlan)

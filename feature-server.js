@@ -260,7 +260,17 @@ router.post('/', urlencodedParser, function(req, res) {
 						}
 
 						const initialState = Object.assign({}, startingState, store.getState())
-						const head = Helmet.rewind()
+
+						let head = Helmet.rewind()
+
+						head = {
+							base: head.base.toString(),
+							meta: head.meta.toString(),
+							link: head.link.toString(),
+							title: head.title.toString(),
+							script: head.script.toString()
+						}
+
 						res.setHeader('Cache-Control', 'public')
 						res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale }, function(err, html) {
 							res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })

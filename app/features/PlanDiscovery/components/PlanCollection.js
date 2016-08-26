@@ -4,12 +4,14 @@ import Carousel from '../../../components/Carousel/Carousel'
 import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'
 import Image from '../../../components/Carousel/Image'
 import { Link } from 'react-router'
+import Helmet from 'react-helmet'
+import { injectIntl } from 'react-intl'
 
 class PlanCollection extends Component {
 
 
 	render() {
-		const { collection, imageConfig } = this.props
+		const { collection, intl, imageConfig } = this.props
 		var items = []
 		var carousels = []
 
@@ -60,6 +62,10 @@ class PlanCollection extends Component {
 
 		return (
 			<div className='row collections-view'>
+				<Helmet
+					title={`${intl.formatMessage({ id: "plans.title" })}: ${intl.formatMessage({ id: "plans.browse plans" }, { category: collection.title })}`}
+					meta={[ { name: 'description', content: `${intl.formatMessage({ id: "plans.title" })}: ${intl.formatMessage({ id: "plans.browse plans" }, { category: collection.title })}` } ]}
+				/>
 				<div className='columns medium-12'>
 					<Link className='plans' to={`/en/reading-plans`}>&larr; Plans</Link>
 					<div className='collection-title'>{collection.title}</div>
@@ -77,4 +83,4 @@ class PlanCollection extends Component {
 	}
 }
 
-export default PlanCollection
+export default injectIntl(PlanCollection)

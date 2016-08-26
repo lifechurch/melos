@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import ActionCreators from '../actions/creators'
 import Carousel from '../../../components/Carousel/Carousel'
 import { Link } from 'react-router'
+import Helmet from 'react-helmet'
+import { injectIntl } from 'react-intl'
 
 class PlanDiscovery extends Component {
 	getCollectionsPage(ids, page) {
@@ -10,7 +12,7 @@ class PlanDiscovery extends Component {
 	}
 
 	render() {
-		const { discover } = this.props
+		const { discover, intl } = this.props
 		const carousels = discover.items.map((c,i) => {
 			let nextPageLink = (c.next_page === null) ? null : (<a onClick={this.getCollectionsPage.bind(this, [ c.id ], c.next_page)}>Next Page</a>)
 
@@ -21,10 +23,14 @@ class PlanDiscovery extends Component {
 
 		return (
 			<div>
+				<Helmet
+					title={`${intl.formatMessage({ id: "plans.title" })}: ${intl.formatMessage({ id: "plans.browse plans" }, { category: intl.formatMessage({ id: "plans.all" })})}`}
+					meta={[ { name: 'description', content: `${intl.formatMessage({ id: "plans.title" })}: ${intl.formatMessage({ id: "plans.browse plans" }, { category: intl.formatMessage({ id: "plans.all" })})}` } ]}
+				/>
 				{carousels}
 			</div>
 		)
 	}
 }
 
-export default PlanDiscovery
+export default injectIntl(PlanDiscovery)
