@@ -59,8 +59,8 @@ development:
   event_api_port: "3000"
 
 staging:
-   api_root: youversionapi.com
-   api_referer: web.youversionapi.com
+  api_root: youversionapi.com
+  api_referer: web.youversionapi.com
 #  api_version: "3.1"
 #  api_root: youversionapistaging.com
 #  api_referer: web-dev-local.youversionapistaging.com
