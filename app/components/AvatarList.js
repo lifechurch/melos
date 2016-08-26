@@ -12,9 +12,9 @@ class AvatarList extends Component {
 		var friends = avatarList.map((friend) => {
 			return (
 				<a className='avatar'>
-					<Link to={friend.avatar.action_url}>
+					<a href={friend.avatar.action_url}>
 						<Image width={120} height={120} thumbnail={false} imageId="false" type="avatar" config={friend.avatar.renditions} />
-					</Link>
+					</a>
 				</a>
 			)
 		})
