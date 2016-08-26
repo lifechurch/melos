@@ -92,7 +92,7 @@ class AboutPlan extends Component {
 						</div>
 						<hr></hr>
 						<div className='row collapse'>
-							<Carousel carouselContent={readingPlan.related} carouselType="standard" imageConfig={imageConfig}/>
+							<Carousel carouselContent={readingPlan.related} carouselType="standard" imageConfig={imageConfig} localizedLink={localizedLink} />
 						</div>
 					</article>
 				</div>
