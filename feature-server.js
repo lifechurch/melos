@@ -256,7 +256,7 @@ router.post('/', urlencodedParser, function(req, res) {
 						try {
 							 html = renderToString(<IntlProvider locale={Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch(ex) {
-							return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex })
+							return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex, stack: ex.stack })
 						}
 
 						const initialState = Object.assign({}, startingState, store.getState())
