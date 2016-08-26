@@ -15,10 +15,10 @@ class SubscribeUserAction extends Component {
 	}
 
 	subscribeUser(username, plan, privacy, subscribed) {
-		const { dispatch } = this.props
+		const { dispatch, auth } = this.props
 		// if user isn't subscribed, then subscribe!
 		if (!subscribed) {
-			dispatch(ActionCreators.readingplanSubscribeUser({ id: plan.id , private: privacy }, true))
+			dispatch(ActionCreators.readingplanSubscribeUser({ id: plan.id , private: privacy }, auth.isLoggedIn))
 		}
 		// redirect to plan
 		window.location.replace(`/users/${username}/reading-plans/${plan.id}-${plan.slug}`)

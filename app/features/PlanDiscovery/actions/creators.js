@@ -208,7 +208,7 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'subscribe_user',
 				version: '3.1',
-				auth: auth,
+				auth: true,
 				params: params,
 				http_method: 'post',
 				types: [ type('planSubscribeRequest'), type('planSubscribeSuccess'), type('planSubscribeFailure') ]

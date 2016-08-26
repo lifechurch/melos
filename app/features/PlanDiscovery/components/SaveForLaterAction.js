@@ -7,11 +7,11 @@ import CheckMark from '../../../components/CheckMark'
 class SaveForLaterAction extends Component {
 
 	saveForLater(id) {
-		const { dispatch } = this.props
+		const { dispatch, auth } = this.props
 		if (this.props.readingPlan.saved) {
-			dispatch(ActionCreators.readingplanRemoveSave({ id: id }, true))
+			dispatch(ActionCreators.readingplanRemoveSave({ id: id }, auth.isLoggegIn))
 		} else {
-			dispatch(ActionCreators.readingplanSaveforlater({ id: id }, true))
+			dispatch(ActionCreators.readingplanSaveforlater({ id: id }, auth.isLoggegIn))
 		}
 	}
 
