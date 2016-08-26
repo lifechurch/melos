@@ -99,7 +99,7 @@ module YV
         end
 
         def auth_from_credentials(current_auth, current_user)
-          return { userid: current_auth.user_id, email: current_user.email, password: current_auth.password, first_name: current_user.first_name, last_name: current_user.last_name, username: current_user.username, language_tag: current_user.language_tag, timezone: current_user.timezone }
+          return { userid: current_auth.user_id, email: current_user.email, password: current_auth.password, first_name: current_user.first_name, last_name: current_user.last_name, username: current_user.username, language_tag: I18n.locale.to_s, timezone: current_user.timezone }
         end
         
       end
