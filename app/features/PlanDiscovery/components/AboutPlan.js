@@ -55,7 +55,7 @@ class AboutPlan extends Component {
 		}
 
 		return (
-			<div className='row about-plan horizontal-center'>
+			<div className='row collapse about-plan horizontal-center'>
 				<Helmet
 					title={`${readingPlan.name.default} - ${readingPlan.about.text.default.substr(0, 155)}`}
 					meta={[ { name: 'description', content: readingPlan.about.text.default } ]}
@@ -65,34 +65,36 @@ class AboutPlan extends Component {
 						<Link className='plans' to={localizedLink(`/reading-plans`)}><FormattedMessage id='plans.plans'/></Link>
 						<ShareWidget/>
 					</div>
-					<div className='plan-image'>
-						<Image width={720} height={400} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
-					</div>
-					<div className='row'>
-						<div className='columns large-8 medium-8'>
-							<h1>{ readingPlan.name.default }</h1>
-							<p className='plan_length'>{ readingPlan.formatted_length.default }</p>
-							<p className='plan_about'>{ readingPlan.about.text.default }</p>
-							<h3 className='publisher'><FormattedMessage id='plans.publisher'/></h3>
-							<p className='publisher'>{ readingPlan.copyright.text.default }</p>
-							{ publisherLink }
+					<article className='reading_plan_index'>
+						<div className='plan-image'>
+							<Image width={720} height={400} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
 						</div>
-						<div className='columns large-4 medium-4'>
-							<div className='side-col'>
-								<PlanActionButtons {...this.props} />
+						<div className='row collapse'>
+							<div className='columns large-8 medium-8'>
+								<h1>{ readingPlan.name.default }</h1>
+								<p className='plan_length'>{ readingPlan.formatted_length.default }</p>
+								<p className='plan_about'>{ readingPlan.about.text.default }</p>
+								<h3 className='publisher'><FormattedMessage id='plans.publisher'/></h3>
+								<p className='publisher'>{ readingPlan.copyright.text.default }</p>
+								{ publisherLink }
 							</div>
-							<hr></hr>
-							<div className='stats'>
-								{ friendsReading }
-								{ friendsCompleted }
-								{ readingPlansStats }
+							<div className='columns large-4 medium-4'>
+								<div className='side-col'>
+									<PlanActionButtons {...this.props} />
+									<hr></hr>
+									<div className='stats'>
+										{ friendsReading }
+										{ friendsCompleted }
+										{ readingPlansStats }
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-					<hr></hr>
-					<div className='row'>
-						<Carousel carouselContent={readingPlan.related} carouselType="standard" imageConfig={imageConfig}/>
-					</div>
+						<hr></hr>
+						<div className='row collapse'>
+							<Carousel carouselContent={readingPlan.related} carouselType="standard" imageConfig={imageConfig}/>
+						</div>
+					</article>
 				</div>
 			</div>
 		)

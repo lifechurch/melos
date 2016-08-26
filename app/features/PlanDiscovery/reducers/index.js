@@ -74,7 +74,7 @@ export default function plansDiscovery(state = {}, action) {
 
 			} else if (action.params.savedplanCheck) {
 				var { reading_plans } = action.response
-				var saved = typeof (reading_plans.find((plan) => { return plan.id === action.params.planId })) === 'undefined' ? false : true
+				var saved = typeof (reading_plans.find((plan) => { return plan.id == action.params.planId })) === 'undefined' ? false : true
 				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { saved: saved } }).toJS()
 
 			} else {

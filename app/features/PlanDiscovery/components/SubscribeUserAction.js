@@ -18,7 +18,7 @@ class SubscribeUserAction extends Component {
 		const { dispatch } = this.props
 		// if user isn't subscribed, then subscribe!
 		if (!subscribed) {
-			dispatch(ActionCreators.readingplanSubscribeUser({ id: plan.id , private: privacy }))
+			dispatch(ActionCreators.readingplanSubscribeUser({ id: plan.id , private: privacy }, true))
 		}
 		// redirect to plan
 		window.location.replace(`/users/${username}/reading-plans/${plan.id}-${plan.slug}`)
@@ -60,7 +60,7 @@ class SubscribeUserAction extends Component {
 
 
 		return (
-			<div className='rp-subscription-info'>
+			<div>
 				{ button }
 				{ dialogBox }
 			</div>

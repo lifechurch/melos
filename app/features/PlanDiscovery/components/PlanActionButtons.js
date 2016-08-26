@@ -8,11 +8,6 @@ import SaveForLaterAction from './SaveForLaterAction'
 
 class PlanActionButtons extends Component {
 
-	samplePlan(plan) {
-		// redirect to sample plan
-		window.location.replace(`/reading-plans/${plan.id}-${plan.slug}/day/1`)
-	}
-
 	render() {
 		const { readingPlan, auth, dispatch } = this.props
 
@@ -22,7 +17,7 @@ class PlanActionButtons extends Component {
 				<div className='text-center'>
 					<SaveForLaterAction readingPlan={readingPlan} auth={auth} dispatch={dispatch}/>
 					&bull;
-					<a onClick={this.samplePlan.bind(this, readingPlan)}> <FormattedMessage id="plans.sample" /></a>
+					<a href={`/reading-plans/${readingPlan.id}-${readingPlan.slug}/day/1`}> <FormattedMessage id="plans.sample" /></a>
 				</div>
 			</div>
 		)
