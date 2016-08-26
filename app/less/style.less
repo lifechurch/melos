@@ -1701,8 +1701,6 @@ ul.language-selector li {
 .checkmark-container {
 	display: inline-flex;
 	align-items: center;
-	margin-right: 5px;
-	margin-left: 5px;
 }
 
 /* for dumb elastic scrolling on mobile */
@@ -1822,7 +1820,6 @@ ul.language-selector li {
 
 		@media only screen and (min-width: 700px) {
 
-			margin-bottom: 20px;
 			height: 360px;
 
 			.slide, img {
@@ -1897,37 +1894,37 @@ ul.language-selector li {
 	width: 100%;
 
 
-		@media only screen and (max-width: 699px) {
-			.slide {
-				width: 225px;
-				height: 125px;
-				margin-left: 15px;
-				border-radius: 4px;
-			}
-
-		}
-		@media only screen and (min-width: 700px) {
-
-			.slide {
-				width: 270px;
-				height: 150px;
-				margin-left: 60px;
-				margin-right: -45px;
-				border-radius: 5px;
-			}
-
-			.slick-track {
-				width: 25920px;
-		    transform: translate3d(-285px, 0px, 0px);
-			}
-
+	@media only screen and (max-width: 699px) {
+		.slide {
+			width: 225px;
+			height: 125px;
+			margin-left: 15px;
+			border-radius: 4px;
 		}
 
+	}
+	@media only screen and (min-width: 700px) {
 
-		.slick-arrow-right-container, .slick-arrow-left-container {
+		.slide {
+			width: 270px;
 			height: 150px;
-			width: 85px;
+			margin-left: 60px;
+			margin-right: -45px;
+			border-radius: 5px;
 		}
+
+		.slick-track {
+			width: 25920px;
+	    transform: translate3d(-285px, 0px, 0px);
+		}
+
+	}
+
+
+	.slick-arrow-right-container, .slick-arrow-left-container {
+		height: 150px;
+		width: 85px;
+	}
 
 
 	&:hover {
@@ -1952,7 +1949,8 @@ ul.language-selector li {
 .carousel-title {
 	width: 100%;
 
-	margin-bottom: 10px;
+	margin-top: 15px;
+	margin-bottom: 20px;
 
 	.slick-arrow-right-container {
 		height: 44px;
@@ -1986,7 +1984,6 @@ ul.language-selector li {
 	    transform: translate3d(-190px, 0px, 0px);
 		}
 	}
-
 
 	.title-container {
 		border: 2px solid whitesmoke;
@@ -2194,6 +2191,7 @@ ul.language-selector li {
 	.carousel-standard {
 		width: 100%;
 		margin: 0;
+		margin-bottom: 25px;
 	}
 
 }
@@ -2218,6 +2216,9 @@ ul.language-selector li {
 		}
 	}
 
+	.checkmark-right {
+		bottom: 0;
+	}
 
 }
 

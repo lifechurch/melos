@@ -35,8 +35,9 @@ class SaveForLaterAction extends Component {
 		}
 
 		return (
-			<div className='save-container'>
+			<div className='checkmark-container'>
 				{ saveforlater }
+				&nbsp;
 			</div>
 		)
 	}

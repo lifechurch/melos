@@ -24,16 +24,32 @@ class ShareWidget extends Component {
 
 		if (collapsible) {
 			if (this.state.dialogOpen) {
-				var share = <a className='video addthis_sharing_toolbox' onClick={::this.handleClick}><FormattedMessage id='share'/></a>
+				var share = (
+					<div className='share-panel' onClick={::this.handleClick}>
+						<a className='right'><FormattedMessage id='share'/></a>
+						<div className='video addthis_sharing_toolbox'></div>
+					</div>
+				)
 			} else {
-				var share = <a className='video addthis_sharing_toolbox' style={"display: none;"} onClick={::this.handleClick}><FormattedMessage id='share'/></a>
+				var share = (
+					<div className='share-panel' onClick={::this.handleClick}>
+						<a className='right'><FormattedMessage id='share'/></a>
+						<div className='video addthis_sharing_toolbox' style={{"display": 'none'}}></div>
+					</div>
+				)
 			}
 		} else {
-			var share = <a className='video addthis_sharing_toolbox'><FormattedMessage id='share'/></a>
+				var share = (
+					<div className='share-panel'>
+						<div className='video addthis_sharing_toolbox'></div>
+					</div>
+				)
 		}
 
 		return (
-			<p className='share-panel'>{ share }</p>
+			<div className='share'>
+				{ share }
+			</div>
 		)
 	}
 }
