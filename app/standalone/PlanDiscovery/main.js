@@ -88,7 +88,7 @@ const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, re
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory} />
+			<Router routes={routes} history={browserHistory} onUpdate={() => window.scrollTo(0, 0)} />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app')
