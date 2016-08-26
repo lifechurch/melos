@@ -7,7 +7,7 @@ import { Link } from 'react-router'
 
 class CarouselGradient extends Component {
   render() {
-		const { carouselContent } = this.props
+		const { carouselContent, localizedLink } = this.props
 
     var settings = {
       centerMode: false,
@@ -24,7 +24,7 @@ class CarouselGradient extends Component {
     var slides = carouselContent.items.map( function(slide, index) {
 			return (
         <div className='radius-3' key={`${carouselContent.id}-${index}`}>
-          <Link to={`/en/reading-plans-collection/${slide.id}`}>
+          <Link to={localizedLink(`/reading-plans-collection/${slide.id}`)}>
             <CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/>
           </Link>
         </div>

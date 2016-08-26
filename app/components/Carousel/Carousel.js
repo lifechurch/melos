@@ -7,25 +7,25 @@ import CarouselStandard from './CarouselStandard'
 
 class Carousel extends Component {
     render() {
-			const { carouselContent, carouselType, carouselSettings, imageConfig } = this.props
+			const { carouselContent, carouselType, carouselSettings, imageConfig, localizedLink } = this.props
 
 			var carousel = null
 			switch (carouselType) {
 
 				case 'banner':
-					carousel = <CarouselBanner carouselContent={carouselContent} imageConfig={imageConfig} />
+					carousel = <CarouselBanner carouselContent={carouselContent} imageConfig={imageConfig} localizedLink={localizedLink} />
 					break
 
 				case 'gradient':
-					carousel = <CarouselGradient carouselContent={carouselContent} imageConfig={imageConfig} />
+					carousel = <CarouselGradient carouselContent={carouselContent} imageConfig={imageConfig} localizedLink={localizedLink} />
 					break
 
 				case 'title':
-					carousel = <CarouselTitle carouselContent={carouselContent} imageConfig={imageConfig} />
+					carousel = <CarouselTitle carouselContent={carouselContent} imageConfig={imageConfig} localizedLink={localizedLink} />
 					break
 
 				case 'standard':
-					carousel = <CarouselStandard carouselContent={carouselContent} imageConfig={imageConfig} />
+					carousel = <CarouselStandard carouselContent={carouselContent} imageConfig={imageConfig} localizedLink={localizedLink} />
 					break
 
 				default:
