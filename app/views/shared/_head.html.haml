@@ -4,8 +4,15 @@
   title << " | " if @subtitle.present?
   title << (@subtitle || " | #{t('meta.mobile.title')} | #{@site.title}").to_s
 
-%title= title
-%meta{name: 'Description', content: content_for?(:meta_description) ? yield(:meta_description) : t("meta.site.description")}
+- if @title_tag.present?
+  != @title_tag
+- else
+  %title= title
+
+- if @description_meta_tag.present?
+  != @description_meta_tag
+- else
+  %meta{name: 'Description', content: content_for?(:meta_description) ? yield(:meta_description) : t("meta.site.description")}
 
 = cache "head_meta_#{@site}_#{locale}", expires_in: YV::Caching.a_short_time do
   %link{rel: "shortcut icon", href:"/favicon.ico"}

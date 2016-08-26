@@ -22,8 +22,9 @@ class PlansController < ApplicationController
       return render_404
     end
 
-    @title = fromNode['head']['title']
-
+    @title_tag = fromNode['head']['title']
+    @description_meta_tag = fromNode['head']['meta']
+    
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
@@ -41,7 +42,8 @@ class PlansController < ApplicationController
       return render_404
     end
 
-    @title = fromNode['head']['title']
+    @title_tag = fromNode['head']['title']
+    @description_meta_tag = fromNode['head']['meta']
 
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
@@ -60,7 +62,8 @@ class PlansController < ApplicationController
       return render_404
     end
 
-    @title = fromNode['head']['title']
+    @title_tag = fromNode['head']['title']
+    @description_meta_tag = fromNode['head']['meta']
 
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
