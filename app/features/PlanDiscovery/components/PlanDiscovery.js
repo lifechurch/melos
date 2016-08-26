@@ -12,12 +12,12 @@ class PlanDiscovery extends Component {
 	}
 
 	render() {
-		const { discover, intl } = this.props
+		const { discover, intl, localizedLink } = this.props
 		const carousels = discover.items.map((c,i) => {
 			let nextPageLink = (c.next_page === null) ? null : (<a onClick={this.getCollectionsPage.bind(this, [ c.id ], c.next_page)}>Next Page</a>)
 
 			return (
-				<Carousel carouselContent={c} carouselType={c.display} key={i} imageConfig={discover.configuration.images}/>
+				<Carousel carouselContent={c} carouselType={c.display} key={i} imageConfig={discover.configuration.images} localizedLink={localizedLink} />
 			)
 		})
 

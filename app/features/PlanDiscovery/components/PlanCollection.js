@@ -11,7 +11,7 @@ class PlanCollection extends Component {
 
 
 	render() {
-		const { collection, intl, imageConfig } = this.props
+		const { collection, intl, imageConfig, localizedLink } = this.props
 		var items = []
 		var carousels = []
 
@@ -22,7 +22,7 @@ class PlanCollection extends Component {
 					if (item.type == 'collection') {
 						carousels.push( <div><Carousel carouselContent={item} carouselType={item.display} imageConfig={imageConfig}/></div> )
 					} else if (item.type == 'reading_plan') {
-						var slideLink = `/en/reading-plans/${item.id}`
+						var slideLink = localizedLink(`/reading-plans/${item.id}`)
 						if (item.image_id) {
 							slide = (
 								<div className='radius-5' >
@@ -67,7 +67,7 @@ class PlanCollection extends Component {
 					meta={[ { name: 'description', content: `${intl.formatMessage({ id: "plans.title" })}: ${intl.formatMessage({ id: "plans.browse plans" }, { category: collection.title })}` } ]}
 				/>
 				<div className='columns medium-12'>
-					<Link className='plans' to={`/en/reading-plans`}>&larr; Plans</Link>
+					<Link className='plans' to={localizedLink(`/reading-plans`)}>&larr; Plans</Link>
 					<div className='collection-title'>{collection.title}</div>
 					<div className='collection-items'>
 						{carousels}

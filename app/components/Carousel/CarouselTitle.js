@@ -6,7 +6,7 @@ import { Link } from 'react-router'
 
 class CarouselTitle extends Component {
   render() {
-		const { carouselContent } = this.props
+		const { carouselContent, localizedLink } = this.props
 
     var settings = {
     	centerMode: false,
@@ -23,7 +23,7 @@ class CarouselTitle extends Component {
     var slides = carouselContent.items.map( function(slide, index) {
 			return (
           <div className='slide' key={index}>
-            <Link to={`/en/reading-plans-collection/${slide.id}`}>
+            <Link to={localizedLink(`/reading-plans-collection/${slide.id}`)}>
               <CarouselSlideTitle id={slide.id} title={slide.title}/>
             </Link>
           </div>

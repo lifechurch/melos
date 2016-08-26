@@ -4,6 +4,15 @@ import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
 
 class PlansView extends Component {
+	localizedLink(link) {
+		const { auth } = this.props
+		if (['en', 'en-US'].indexOf(auth.userData.language_tag) > -1) {
+			return link
+		} else {
+			return `/${auth.userData.language_tag}${link}`
+		}
+	}
+
 	render() {
 		const { children, auth } = this.props
 
@@ -19,7 +28,7 @@ class PlansView extends Component {
 						<li className='inactive'>{ myPlansLink }</li>
 					</ul>
 				</div>
-				{children}
+				{children && React.cloneElement(children, { localizedLink: ::this.localizedLink })}
 			</div>
 		)
 	}
