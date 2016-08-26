@@ -26,14 +26,14 @@ class ShareWidget extends Component {
 			if (this.state.dialogOpen) {
 				var share = <a className='video addthis_sharing_toolbox' onClick={::this.handleClick}><FormattedMessage id='share'/></a>
 			} else {
-				var share = <a className='share-panel' onClick={::this.handleClick}><FormattedMessage id='share'/></a>
+				var share = <a className='video addthis_sharing_toolbox' style={"display: none;"} onClick={::this.handleClick}><FormattedMessage id='share'/></a>
 			}
 		} else {
 			var share = <a className='video addthis_sharing_toolbox'><FormattedMessage id='share'/></a>
 		}
 
 		return (
-			<p className='share'>{ share }</p>
+			<p className='share-panel'>{ share }</p>
 		)
 	}
 }

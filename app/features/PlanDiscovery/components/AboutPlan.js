@@ -36,17 +36,19 @@ class AboutPlan extends Component {
 		var publisherLink = (readingPlan.publisher_url) ? <a className='publisher' href={readingPlan.publisher_url}><FormattedMessage id='plans.about publisher'/></a> : null
 
 		if ( (readingPlan.stats.friends != null) && (readingList = readingPlan.stats.friends.subscribed) ) {
+			var readingText = (readingList.length == 1) ? <FormattedMessage id='plans.stats.friends reading one'/> : <FormattedMessage id='plans.stats.friends reading other'/>
 			friendsReading = (
 				<div>
-					<p className='friends_completed'><FormattedMessage id='plans.stats.friends reading'/></p>
+					<p className='friends_completed'>{ readingText }</p>
 					<AvatarList avatarList={readingList} />
 				</div>
 			)
 		}
 		if ( (readingPlan.stats.friends != null) && (completedList = readingPlan.stats.friends.completed) ) {
+			var completedText = (completedList.length == 1) ? <FormattedMessage id='plans.stats.friends completed one'/> : <FormattedMessage id='plans.stats.friends completed other'/>
 			friendsCompleted = (
 				<div>
-					<p className='friends_completed'><FormattedMessage id='plans.stats.friends completed'/></p>
+					<p className='friends_completed'>{ completedText }</p>
 					<AvatarList avatarList={completedList} />
 				</div>
 			)
@@ -60,7 +62,7 @@ class AboutPlan extends Component {
 				/>
 				<div className='columns large-8 medium-8'>
 					<div className='about-plan-header'>
-						<Link className='plans' to={`/en/reading-plans`}><FormattedMessage id='plans.plans back'/></Link>
+						<Link className='plans' to={`/en/reading-plans`}><FormattedMessage id='plans.plans'/></Link>
 						<ShareWidget/>
 					</div>
 					<div className='plan-image'>
