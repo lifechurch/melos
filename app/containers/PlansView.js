@@ -5,11 +5,13 @@ import { Link } from 'react-router'
 
 class PlansView extends Component {
 	localizedLink(link) {
-		const { auth } = this.props
-		if (['en', 'en-US'].indexOf(auth.userData.language_tag) > -1) {
+		const { params, serverLanguageTag } = this.props
+		const languageTag = params.lang || serverLanguageTag || 'en'
+
+		if (['en', 'en-US'].indexOf(languageTag) > -1) {
 			return link
 		} else {
-			return `/${auth.userData.language_tag}${link}`
+			return `/${languageTag}${link}`
 		}
 	}
 
@@ -36,7 +38,8 @@ class PlansView extends Component {
 
 function mapStateToProps(state) {
 	return {
-		auth: state.auth
+		auth: state.auth,
+		serverLanguageTag: state.serverLanguageTag
 	}
 }
 
