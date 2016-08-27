@@ -109,13 +109,6 @@ export default function plansDiscovery(state = {}, action) {
 		case type("planInfoSuccess"):
 			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: action.response }).toJS()
 
-		// case type("userSubscriptionsSuccess"):
-		// 	if (action.params.subscribedCheck) {
-		// 		var { reading_plans } = action.response
-		// 		var subscribed = typeof (reading_plans.find((plan) => { return plan.id == action.params.id })) === 'undefined' ? false : true
-		// 		return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { subscribed: subscribed } }).toJS()
-		// 	}
-
 		case type("planStatsSuccess"):
 			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { stats: action.response } }).toJS()
 
