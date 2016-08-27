@@ -22,6 +22,7 @@ export default function plansDiscovery(state = {}, action) {
 		case type("savedItemsRequest"):
 		case type("recommendationsItemsRequest"):
 		case type("collectionsItemsRequest"):
+		case type("planSubscribeRequest"):
 			return Immutable.fromJS(state).mergeDeep({ isFetching: true, hasErrors: false, errors: [] }).toJS()
 
 		case type("planSaveforlaterFailure"):
@@ -31,6 +32,7 @@ export default function plansDiscovery(state = {}, action) {
 		case type("savedItemsFailure"):
 		case type("recommendationsItemsFailure"):
 		case type("collectionsItemsFailure"):
+		case type("planSubscribeFailure"):
 			return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors }).toJS()
 
 		case type("collectionsItemsSuccess"):
@@ -114,13 +116,6 @@ export default function plansDiscovery(state = {}, action) {
 
 		case type('configurationSuccess'):
 			return Immutable.fromJS(state).mergeDeep({ configuration: action.response }).toJS()
-
-		case type('collectionRequest'):
-		case type('collectionFailure'):
-			return state
-
-		case type('collectionSuccess'):
-			return Immutable.fromJS(state).mergeDeep({ collection: action.response }).toJS()
 
 		default:
 			return state

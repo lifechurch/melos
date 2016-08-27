@@ -8,10 +8,11 @@ class SaveForLaterAction extends Component {
 
 	saveForLater(id) {
 		const { dispatch, auth } = this.props
+
 		if (this.props.readingPlan.saved) {
-			dispatch(ActionCreators.readingplanRemoveSave({ id: id }, auth.isLoggegIn))
+			dispatch(ActionCreators.readingplanRemoveSave({ id: id }, auth.isLoggedIn))
 		} else {
-			dispatch(ActionCreators.readingplanSaveforlater({ id: id }, auth.isLoggegIn))
+			dispatch(ActionCreators.readingplanSaveforlater({ id: id }, auth.isLoggedIn))
 		}
 	}
 
