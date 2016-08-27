@@ -17,7 +17,7 @@ class SubscribeUserAction extends Component {
 	subscribeUser(privacy) {
 		const { dispatch, readingPlan, auth } = this.props
 		// if user isn't subscribed, then subscribe!
-		if (!readingPlan.subscribed) {
+		if (!readingPlan.subscribed_id) {
 			dispatch(ActionCreators.readingplanSubscribeUser({ id: readingPlan.id , private: privacy }, auth.isLoggedIn)).then(() => {
 				// redirect to plan
 				this.goToPlan()
@@ -36,7 +36,7 @@ class SubscribeUserAction extends Component {
 		const { readingPlan, auth } = this.props
 
 		// subscribe user or go to plan day if already subscribed
-		if (readingPlan.subscribed) {
+		if (readingPlan.subscribed_id) {
 			var button = (
 				<div className='solid-button green padded' onClick={::this.goToPlan}>
 					<FormattedMessage id="plans.read today" />

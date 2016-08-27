@@ -92,8 +92,8 @@ const ActionCreators = {
 				dispatch(ActionCreators.readingplanView(params, auth)),
 				dispatch(ActionCreators.recommendations(planParams)),
 				dispatch(ActionCreators.readingplanStats(params, auth)),
-				dispatch(ActionCreators.savedItems(savedplanParams, auth)),
-				dispatch(ActionCreators.userSubscriptions(subscribedplanParams, auth))
+				dispatch(ActionCreators.savedItems(savedplanParams, auth))
+				// dispatch(ActionCreators.userSubscriptions(subscribedplanParams, auth))
 			])
 		}
 	},
