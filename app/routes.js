@@ -30,13 +30,6 @@ export default function(requireAuth, requireEvent, requirePlanDiscoveryData, req
 				<Route path="share" component={EventEditShare} onEnter={requireEvent} />
 			</Route>
 			<Route path="event/view/:id" component={EventView} onEnter={requireEvent} />
-			<Route path="reading-plans" component={PlansView}>
-				<IndexRoute component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
-				<Route path=":id(-:slug)" component={AboutPlanView} onEnter={requirePlanData} />
-			</Route>
-			<Route path="reading-plans-collection" component={PlansView}>
-				<Route path=":id" component={PlanCollectionView} onEnter={requirePlanCollectionData} />
-			</Route>
 		</Route>
 	)
 }

@@ -9,7 +9,7 @@ import { Link } from 'react-router'
 
 class CarouselStandard extends Component {
   render() {
-		const { carouselContent, imageConfig } = this.props
+		const { carouselContent, imageConfig, localizedLink } = this.props
 
 		var carouselTitle = (carouselContent.title) ? carouselContent.title : <FormattedMessage id='plans.related plans' />
 
@@ -29,7 +29,7 @@ class CarouselStandard extends Component {
     // we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
     var slides = carouselContent.items.map( function(slide, index) {
 
-    	var slideLink = (slide.type == 'collection') ? `/en/reading-plans-collection/${slide.id}` : `/en/reading-plans/${slide.id}`
+    	var slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}`) : localizedLink(`/reading-plans/${slide.id}`)
 
     	if (slide.image_id) {
 				return (
@@ -65,7 +65,7 @@ class CarouselStandard extends Component {
 
 	  return (
 	    <div className='carousel-standard' >
-	    	<Link className='carousel-header' to={`/en/reading-plans-collection/${carouselContent.id}`}>
+	    	<Link className='carousel-header' to={localizedLink(`/reading-plans-collection/${carouselContent.id}`)}>
 	    		<div className='title'>{carouselTitle}</div>
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>

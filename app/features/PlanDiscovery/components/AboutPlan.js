@@ -23,7 +23,7 @@ class AboutPlan extends Component {
 
 
 	render() {
-		const { readingPlan, imageConfig, auth } = this.props
+		const { readingPlan, imageConfig, auth, localizedLink } = this.props
 
 		if (!(readingPlan && readingPlan.stats && readingPlan.related)) {
 			return (
@@ -62,7 +62,7 @@ class AboutPlan extends Component {
 				/>
 				<div className='columns large-8 medium-8'>
 					<div className='about-plan-header'>
-						<Link className='plans' to={`/en/reading-plans`}><FormattedMessage id='plans.plans'/></Link>
+						<Link className='plans' to={localizedLink(`/reading-plans`)}><FormattedMessage id='plans.plans'/></Link>
 						<ShareWidget/>
 					</div>
 					<article className='reading_plan_index'>
@@ -92,7 +92,7 @@ class AboutPlan extends Component {
 						</div>
 						<hr></hr>
 						<div className='row collapse'>
-							<Carousel carouselContent={readingPlan.related} carouselType="standard" imageConfig={imageConfig}/>
+							<Carousel carouselContent={readingPlan.related} carouselType="standard" imageConfig={imageConfig} localizedLink={localizedLink} />
 						</div>
 					</article>
 				</div>

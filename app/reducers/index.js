@@ -24,7 +24,8 @@ const rootReducer = combineReducers({
 	plansDiscovery,
 	configuration,
 	references,
-	routing: routeReducer
+	routing: routeReducer,
+	serverLanguageTag: (state = {}, action) => { return state }
 })
 
 export default rootReducer
