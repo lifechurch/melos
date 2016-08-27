@@ -82,16 +82,18 @@ const ActionCreators = {
 		return dispatch => {
 			// tell the reducer to populate the recommendations in state.collection.plans.related
 			const planParams = Object.assign({}, params, { readingplanInfo: true })
-
 			// now check if requested reading plan view is a saved plan for the user
-			const savedplanParams = Object.assign({}, params, { readingplanInfo: false, savedplanCheck: true, planId: params.id })
+			const savedplanParams = Object.assign({}, params, { savedplanCheck: true })
+			// now check if the user is already subscribed to the requested plan
+			const subscribedplanParams = Object.assign({}, params, { subscribedCheck: true })
 
 			return Promise.all([
 				dispatch(ActionCreators.configuration()),
 				dispatch(ActionCreators.readingplanView(params, auth)),
 				dispatch(ActionCreators.recommendations(planParams)),
 				dispatch(ActionCreators.readingplanStats(params, auth)),
-				dispatch(ActionCreators.savedItems(savedplanParams, auth))
+				dispatch(ActionCreators.savedItems(savedplanParams, auth)),
+				dispatch(ActionCreators.userSubscriptions(subscribedplanParams, auth))
 			])
 		}
 	},
@@ -212,6 +214,21 @@ const ActionCreators = {
 				params: params,
 				http_method: 'post',
 				types: [ type('planSubscribeRequest'), type('planSubscribeSuccess'), type('planSubscribeFailure') ]
+			}
+		}
+	},
+
+	userSubscriptions(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'items',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('userSubscriptionsRequest'), type('userSubscriptionsSuccess'), type('userSubscriptionsFailure') ]
 			}
 		}
 	},

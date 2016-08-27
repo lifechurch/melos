@@ -14,14 +14,18 @@ class SubscribeUserAction extends Component {
 		this.setState({ dialogOpen: !this.state.dialogOpen })
 	}
 
-	subscribeUser(privacy, subscribed) {
-		const { dispatch, auth, readingPlan } = this.props
+	subscribeUser(privacy) {
+		const { dispatch, readingPlan, auth } = this.props
 		// if user isn't subscribed, then subscribe!
-		if (!subscribed) {
-			console.log("subscribing", readingPlan.id, privacy, auth.isLoggedIn)
-			dispatch(ActionCreators.readingplanSubscribeUser({ id: readingPlan.id , private: privacy }, auth.isLoggedIn)).then((data) => {console.log('done')})
+		if (!readingPlan.subscribed) {
+			dispatch(ActionCreators.readingplanSubscribeUser({ id: readingPlan.id , private: privacy }, auth.isLoggedIn))
 		}
-		console.log(auth)
+		// redirect to plan
+		this.goToPlan()
+	}
+
+	goToPlan() {
+		const { readingPlan, auth } = this.props
 		// redirect to plan
 		window.location.replace(`/users/${auth.userData.username}/reading-plans/${readingPlan.id}-${readingPlan.slug}`)
 	}
@@ -31,9 +35,9 @@ class SubscribeUserAction extends Component {
 		const { readingPlan, auth } = this.props
 
 		// subscribe user or go to plan day if already subscribed
-		if (readingPlan.subscription_id) {
+		if (readingPlan.subscribed) {
 			var button = (
-				<div className='solid-button green padded' onClick={this.subscribeUser.bind(this, false, true)}>
+				<div className='solid-button green padded' onClick={this.goToPlan.bind(this)}>
 					<FormattedMessage id="plans.read today" />
 				</div>
 			)
@@ -51,8 +55,8 @@ class SubscribeUserAction extends Component {
 				<div className='plan-privacy-buttons text-center'>
 					<p className='detail-text'><FormattedMessage id="plans.privacy.visible to friends?" /></p>
 					<div className='yes-no-buttons'>
-						<a className='yes solid-button green' onClick={this.subscribeUser.bind(this, false, false)}><FormattedMessage id="ui.yes button"/></a>
-						<a className='no solid-button gray' onClick={this.subscribeUser.bind(this, true, false)}><FormattedMessage id="ui.no button" /></a>
+						<a className='yes solid-button green' onClick={this.subscribeUser.bind(this, false)}><FormattedMessage id="ui.yes button"/></a>
+						<a className='no solid-button gray' onClick={this.subscribeUser.bind(this, true)}><FormattedMessage id="ui.no button" /></a>
 					</div>
 				</div>
 			)

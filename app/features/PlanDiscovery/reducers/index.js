@@ -23,6 +23,7 @@ export default function plansDiscovery(state = {}, action) {
 		case type("recommendationsItemsRequest"):
 		case type("collectionsItemsRequest"):
 		case type("planSubscribeRequest"):
+		case type("userSubscriptionsRequest"):
 			return Immutable.fromJS(state).mergeDeep({ isFetching: true, hasErrors: false, errors: [] }).toJS()
 
 		case type("planSaveforlaterFailure"):
@@ -33,6 +34,7 @@ export default function plansDiscovery(state = {}, action) {
 		case type("recommendationsItemsFailure"):
 		case type("collectionsItemsFailure"):
 		case type("planSubscribeFailure"):
+		case type("userSubscriptionsFailure"):
 			return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors }).toJS()
 
 		case type("collectionsItemsSuccess"):
@@ -76,7 +78,7 @@ export default function plansDiscovery(state = {}, action) {
 
 			} else if (action.params.savedplanCheck) {
 				var { reading_plans } = action.response
-				var saved = typeof (reading_plans.find((plan) => { return plan.id == action.params.planId })) === 'undefined' ? false : true
+				var saved = typeof (reading_plans.find((plan) => { return plan.id == action.params.id })) === 'undefined' ? false : true
 				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { saved: saved } }).toJS()
 
 			} else {
@@ -106,6 +108,13 @@ export default function plansDiscovery(state = {}, action) {
 
 		case type("planInfoSuccess"):
 			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: action.response }).toJS()
+
+		case type("userSubscriptionsSuccess"):
+			if (action.params.subscribedCheck) {
+				var { reading_plans } = action.response
+				var subscribed = typeof (reading_plans.find((plan) => { return plan.id == action.params.id })) === 'undefined' ? false : true
+				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { subscribed: subscribed } }).toJS()
+			}
 
 		case type("planStatsSuccess"):
 			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { stats: action.response } }).toJS()

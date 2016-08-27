@@ -73,7 +73,7 @@ function requirePlanData(nextState, replace, callback) {
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.plans && currentState.plansDiscovery.plans.id === idNum) {
 		callback()
 	} else if (idNum > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.locale2, user_id: store.getState().auth.userData.userid }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
