@@ -93,7 +93,7 @@ export default function plansDiscovery(state = {}, action) {
 				if (action.params.context == 'saved') {
 					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { items: reading_plans, id: 'saved', context: 'saved' } }).toJS()
 				} else {
-					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { items: reading_plans, id: action.params.id, context: 'recommendation' } }).toJS()
+					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { items: reading_plans, id: action.params.id, context: 'recommended' } }).toJS()
 				}
 
 			} else {

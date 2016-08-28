@@ -12,7 +12,7 @@ class CarouselStandard extends Component {
 		const { carouselContent, imageConfig, localizedLink, context } = this.props
 		var carouselTitle = (carouselContent.title) ? carouselContent.title : <FormattedMessage id='plans.related plans' />
 		// for a dynamic collection we need to build, the header link will be different
-		var carouselLink = (context == 'recommendation') ? `/reading-plans-collection/recommendation-${carouselContent.id}` : (context == 'saved') ? `/reading-plans-collection/saved-reading-plans` : `/reading-plans-collection/${carouselContent.id}`
+		var carouselLink = (context == 'recommended') ? `/reading-plans-collection/recommended-${carouselContent.id}` : (context == 'saved') ? `/reading-plans-collection/saved-reading-plans` : `/reading-plans-collection/${carouselContent.id}`
 
     var settings = {
     	centerMode: false,

@@ -13,8 +13,8 @@ class PlanCollection extends Component {
 		const { collection, intl, imageConfig, localizedLink } = this.props
 		var items = []
 		var carousels = []
-		console.log(collection)
-		var title = (collection.context == 'recommendation') ? <FormattedMessage id='plans.related plans' /> : (collection.context == 'saved') ? <FormattedMessage id='plans.saved plans' />  : collection.title
+
+		var title = (collection.context == 'recommended') ? <FormattedMessage id='plans.related plans' /> : (collection.context == 'saved') ? <FormattedMessage id='plans.saved plans' />  : collection.title
 
 		if (collection.items) {
 			collection.items.forEach((item) => {

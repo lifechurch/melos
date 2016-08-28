@@ -87,7 +87,7 @@ const ActionCreators = {
 					dispatch(ActionCreators.savedItems(saveParams, auth))
 				])
 
-			} else if (params.context == 'recommendation' && params.id) {
+			} else if (params.context == 'recommended' && params.id) {
 				const recommendedParams = Object.assign({}, params, { dynamicCollection: true })
 				return Promise.all([
 					dispatch(ActionCreators.configuration()),

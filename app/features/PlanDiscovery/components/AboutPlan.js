@@ -95,7 +95,7 @@ class AboutPlan extends Component {
 						</div>
 						<hr></hr>
 						<div className='row collapse'>
-							<CarouselStandard carouselContent={readingPlan.related} context="recommendation" imageConfig={imageConfig} localizedLink={localizedLink} />
+							<CarouselStandard carouselContent={readingPlan.related} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} />
 						</div>
 					</article>
 				</div>
