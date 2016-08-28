@@ -9,6 +9,7 @@ class SaveForLaterAction extends Component {
 	saveForLater(id) {
 		const { dispatch, auth } = this.props
 
+		if (!auth.isLoggedIn) window.location.replace(`/sign-in`)
 		if (this.props.readingPlan.saved) {
 			dispatch(ActionCreators.readingplanRemoveSave({ id: id }, auth.isLoggedIn))
 		} else {

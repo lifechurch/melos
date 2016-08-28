@@ -16,6 +16,8 @@ class SubscribeUserAction extends Component {
 
 	subscribeUser(privacy) {
 		const { dispatch, readingPlan, auth } = this.props
+
+		if (!auth.isLoggedIn) window.location.replace(`/sign-in`)
 		// if user isn't subscribed, then subscribe!
 		if (!readingPlan.subscription_id) {
 			dispatch(ActionCreators.readingplanSubscribeUser({ id: readingPlan.id , private: privacy }, auth.isLoggedIn)).then(() => {
