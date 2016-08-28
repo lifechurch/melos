@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import ActionCreators from '../actions/creators'
-import Carousel from '../../../components/Carousel/Carousel'
+import CarouselStandard from '../../../components/Carousel/CarouselStandard'
 import Image from '../../../components/Carousel/Image'
 import { Link } from 'react-router'
 import PlanActionButtons from './PlanActionButtons'
@@ -92,7 +92,7 @@ class AboutPlan extends Component {
 						</div>
 						<hr></hr>
 						<div className='row collapse'>
-							<Carousel carouselContent={readingPlan.related} carouselType="standard" imageConfig={imageConfig} localizedLink={localizedLink} />
+							<CarouselStandard carouselContent={readingPlan.related} context="recommendation" imageConfig={imageConfig} localizedLink={localizedLink} />
 						</div>
 					</article>
 				</div>

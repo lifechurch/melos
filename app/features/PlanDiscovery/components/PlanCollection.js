@@ -5,15 +5,16 @@ import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'
 import Image from '../../../components/Carousel/Image'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
-import { injectIntl } from 'react-intl'
+import { injectIntl, FormattedMessage } from 'react-intl'
 
 class PlanCollection extends Component {
-
 
 	render() {
 		const { collection, intl, imageConfig, localizedLink } = this.props
 		var items = []
 		var carousels = []
+		console.log(collection)
+		var title = (collection.context == 'recommendation') ? <FormattedMessage id='plans.related plans' /> : (collection.context == 'saved') ? <FormattedMessage id='plans.saved plans' />  : collection.title
 
 		if (collection.items) {
 			collection.items.forEach((item) => {
@@ -68,12 +69,12 @@ class PlanCollection extends Component {
 				/>
 				<div className='columns medium-12'>
 					<Link className='plans' to={localizedLink(`/reading-plans`)}>&larr; Plans</Link>
-					<div className='collection-title'>{collection.title}</div>
+					<div className='collection-title'>{ title }</div>
 					<div className='collection-items'>
-						{carousels}
+						{ carousels }
 						<div className='horizontal-center'>
 							<ul className="medium-block-grid-3 small-block-grid-2">
-								{items}
+								{ items }
 							</ul>
 						</div>
 					</div>

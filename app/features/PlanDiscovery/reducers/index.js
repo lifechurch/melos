@@ -81,6 +81,22 @@ export default function plansDiscovery(state = {}, action) {
 				var saved = typeof (reading_plans.find((plan) => { return plan.id == action.params.id })) === 'undefined' ? false : true
 				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { saved: saved } }).toJS()
 
+			} else if (action.params.dynamicCollection) { // let's populate collection view data for related or saved plans view
+				var reading_plans = action.response.reading_plans.map((plan) => {
+					var p = Immutable.fromJS(plan).mergeDeep({ title: plan.name["default"], type: 'reading_plan' })
+
+					// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
+					if (plan.images != null) p = p.set('image_id', plan.id) // else plan.image_id doesn't exist
+
+					return p.toJS()
+				})
+				console.log('response', action.response)
+				if (action.params.context == 'saved') {
+					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { items: reading_plans, id: 'saved', context: 'saved' } }).toJS()
+				} else {
+					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { items: reading_plans, id: action.params.id, context: 'recommendation' } }).toJS()
+				}
+
 			} else {
 				var { reading_plans } = action.response
 				var items = state.items.slice(0)

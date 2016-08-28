@@ -66,14 +66,17 @@ function requirePlanCollectionData(nextState, replace, callback) {
 	}
 }
 
-function requirePlanData(nextState, replace, callback) {
+function requireDynamicCollectionData(nextState, replace, callback) {
 	const { params } = nextState
-	var idNum = parseInt(params.id.split("-")[0])
+	var type = params.context.split("-")[0]
+	var id = parseInt(params.context.split("-")[1])
 	const currentState = store.getState()
-	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.plans && currentState.plansDiscovery.plans.id === idNum) {
+
+	// Do we already have data from server?
+	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.collection && (currentState.plansDiscovery.collection.id == id || currentState.plansDiscovery.collection.id == type) && currentState.plansDiscovery.collection.items && currentState.plansDiscovery.collection.items.length) {
 		callback()
-	} else if (idNum > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.locale2, user_id: store.getState().auth.userData.userid }, store.getState().auth.isLoggedIn)).then((event) => {
+	} else if ( (id > 0) || (type == 'saved') ) {
+		store.dispatch(PlanDiscoveryActionCreators.dynamicCollection({ context: type, id: id, language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
@@ -83,7 +86,24 @@ function requirePlanData(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData)
+function requirePlanData(nextState, replace, callback) {
+	const { params } = nextState
+	var idNum = parseInt(params.id.split("-")[0])
+	const currentState = store.getState()
+	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.plans && currentState.plansDiscovery.plans.id === idNum) {
+		callback()
+	} else if (idNum > 0) {
+		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
+			callback()
+		}, (error) => {
+			callback()
+		})
+	} else {
+		callback()
+	}
+}
+
+const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireDynamicCollectionData)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>

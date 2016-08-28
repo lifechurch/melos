@@ -9,9 +9,11 @@ import { Link } from 'react-router'
 
 class CarouselStandard extends Component {
   render() {
-		const { carouselContent, imageConfig, localizedLink } = this.props
-
+		const { carouselContent, imageConfig, localizedLink, context } = this.props
+		console.log('context is', context)
 		var carouselTitle = (carouselContent.title) ? carouselContent.title : <FormattedMessage id='plans.related plans' />
+		// for a dynamic collection we need to build, the header link will be different
+		var carouselLink = (context == 'recommendation') ? `/reading-plans-collection/recommendation-${carouselContent.id}` : (context == 'saved') ? `/reading-plans-collection/saved-reading-plans` : `/reading-plans-collection/${carouselContent.id}`
 
     var settings = {
     	centerMode: false,
@@ -62,15 +64,16 @@ class CarouselStandard extends Component {
 			}
     })
 
+    console.log(carouselLink)
 
 	  return (
 	    <div className='carousel-standard' >
-	    	<Link className='carousel-header' to={localizedLink(`/reading-plans-collection/${carouselContent.id}`)}>
-	    		<div className='title'>{carouselTitle}</div>
+	    	<Link className='carousel-header' to={localizedLink( carouselLink )}>
+	    		<div className='title'>{ carouselTitle }</div>
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>
 	    	</Link>
-				<Slider {...settings}>{slides}</Slider>
+				<Slider {...settings}>{ slides }</Slider>
 	    </div>
 	  );
 	}

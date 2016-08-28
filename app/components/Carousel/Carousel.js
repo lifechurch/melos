@@ -25,7 +25,7 @@ class Carousel extends Component {
 					break
 
 				case 'standard':
-					carousel = <CarouselStandard carouselContent={carouselContent} imageConfig={imageConfig} localizedLink={localizedLink} />
+					carousel = <CarouselStandard carouselContent={carouselContent} context={carouselContent.type} imageConfig={imageConfig} localizedLink={localizedLink} />
 					break
 
 				default:

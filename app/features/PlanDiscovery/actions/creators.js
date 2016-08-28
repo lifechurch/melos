@@ -78,14 +78,32 @@ const ActionCreators = {
 		}
 	},
 
+	dynamicCollection(params, auth) {
+		return dispatch => {
+			if (params.context == 'saved') {
+				const saveParams = Object.assign({}, params, { dynamicCollection: true })
+				return Promise.all([
+					dispatch(ActionCreators.configuration()),
+					dispatch(ActionCreators.savedItems(saveParams, auth))
+				])
+
+			} else if (params.context == 'recommendation' && params.id) {
+				const recommendedParams = Object.assign({}, params, { dynamicCollection: true })
+				return Promise.all([
+					dispatch(ActionCreators.configuration()),
+					dispatch(ActionCreators.recommendations(recommendedParams))
+				])
+			}
+
+		}
+	},
+
 	readingplanInfo(params, auth) {
 		return dispatch => {
 			// tell the reducer to populate the recommendations in state.collection.plans.related
 			const planParams = Object.assign({}, params, { readingplanInfo: true })
 			// now check if requested reading plan view is a saved plan for the user
 			const savedplanParams = Object.assign({}, params, { savedplanCheck: true })
-			// now check if the user is already subscribed to the requested plan
-			const subscribedplanParams = Object.assign({}, params, { subscribedCheck: true })
 
 			return Promise.all([
 				dispatch(ActionCreators.configuration()),
