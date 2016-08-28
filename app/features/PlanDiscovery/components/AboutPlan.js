@@ -34,6 +34,7 @@ class AboutPlan extends Component {
 		var friendsReading, friendsCompleted, completions, readingList, completedList = null
 		var readingPlansStats = ((completions = readingPlan.stats.total_completed) >= 1000) ? <p className='friends_completed'><FormattedMessage id='plans.stats.total completions' values={{count: completions}} /></p> : null
 		var publisherLink = (readingPlan.publisher_url) ? <a className='publisher' href={readingPlan.publisher_url}><FormattedMessage id='plans.about publisher'/></a> : null
+		var language_tag = auth.userData.language_tag
 
 		if ( (readingPlan.stats.friends != null) && (readingList = readingPlan.stats.friends.subscribed) ) {
 			var readingText = (readingList.length == 1) ? <FormattedMessage id='plans.stats.friends reading one'/> : <FormattedMessage id='plans.stats.friends reading other'/>
@@ -57,13 +58,15 @@ class AboutPlan extends Component {
 		return (
 			<div className='row collapse about-plan horizontal-center'>
 				<Helmet
-					title={`${readingPlan.name.default} - ${readingPlan.about.text.default.substr(0, 155)}`}
-					meta={[ { name: 'description', content: readingPlan.about.text.default } ]}
+					title={`${readingPlan.name[language_tag] || readingPlan.name.default} - ${readingPlan.about.text[language_tag] || readingPlan.about.text.default.substr(0, 155)}`}
+					meta={[ { name: 'description', content: readingPlan.about.text[language_tag] || readingPlan.about.text.default } ]}
 				/>
 				<div className='columns large-8 medium-8'>
-					<div className='about-plan-header'>
+					<div className='reading_plan_index_header'>
 						<Link className='plans' to={localizedLink(`/reading-plans`)}><FormattedMessage id='plans.plans'/></Link>
-						<ShareWidget/>
+						<div className='right'>
+							<ShareWidget/>
+						</div>
 					</div>
 					<article className='reading_plan_index'>
 						<div className='plan-image'>
@@ -71,18 +74,18 @@ class AboutPlan extends Component {
 						</div>
 						<div className='row collapse'>
 							<div className='columns large-8 medium-8'>
-								<h1>{ readingPlan.name.default }</h1>
-								<p className='plan_length'>{ readingPlan.formatted_length.default }</p>
-								<p className='plan_about'>{ readingPlan.about.text.default }</p>
+								<h1>{ readingPlan.name[language_tag] || readingPlan.name.default }</h1>
+								<p className='plan_length'>{ readingPlan.formatted_length[language_tag] || readingPlan.formatted_length.default}</p>
+								<p className='plan_about'>{ readingPlan.about.text[language_tag] || readingPlan.about.text.default }</p>
 								<h3 className='publisher'><FormattedMessage id='plans.publisher'/></h3>
-								<p className='publisher'>{ readingPlan.copyright.text.default }</p>
+								<p className='publisher'>{ readingPlan.copyright.text[language_tag] || readingPlan.copyright.text.default }</p>
 								{ publisherLink }
 							</div>
 							<div className='columns large-4 medium-4'>
 								<div className='side-col'>
 									<PlanActionButtons {...this.props} />
 									<hr></hr>
-									<div className='stats'>
+									<div className='widget'>
 										{ friendsReading }
 										{ friendsCompleted }
 										{ readingPlansStats }

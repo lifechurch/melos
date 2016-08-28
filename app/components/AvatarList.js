@@ -19,7 +19,7 @@ class AvatarList extends Component {
 
 
 		return (
-			<div className='avatar-container'>
+			<div className='avatar-container text-center'>
 				{friends}
 			</div>
 		)

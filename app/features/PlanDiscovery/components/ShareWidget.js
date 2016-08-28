@@ -22,33 +22,23 @@ class ShareWidget extends Component {
 	render() {
 		const collapsible = this.props.collapsible || true
 
+		var shareText = null
+		var classes = 'share-panel'
+
 		if (collapsible) {
-			if (this.state.dialogOpen) {
-				var share = (
-					<div className='share-panel' onClick={::this.handleClick}>
-						<a className='right'><FormattedMessage id='share'/></a>
-						<div className='video addthis_sharing_toolbox'></div>
-					</div>
-				)
-			} else {
-				var share = (
-					<div className='share-panel' onClick={::this.handleClick}>
-						<a className='right'><FormattedMessage id='share'/></a>
-						<div className='video addthis_sharing_toolbox' style={{"display": 'none'}}></div>
-					</div>
-				)
+			shareText = <a onClick={::this.handleClick}><FormattedMessage id='features.EventEdit.components.EventEditNav.share'/></a>
+			if (!this.state.dialogOpen) {
+				// hide the widget
+				classes = 'share-panel ng-hide'
 			}
-		} else {
-				var share = (
-					<div className='share-panel'>
-						<div className='video addthis_sharing_toolbox'></div>
-					</div>
-				)
 		}
 
 		return (
-			<div className='share'>
-				{ share }
+			<div>
+				{ shareText }
+				<div className={classes}>
+					<div className='video addthis_sharing_toolbox'></div>
+				</div>
 			</div>
 		)
 	}
