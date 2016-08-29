@@ -5,7 +5,7 @@ import PlanCollectionView from '../../containers/PlanCollectionView'
 import PlansView from '../../containers/PlansView'
 import AboutPlanView from '../../containers/AboutPlanView'
 
-export default function(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData) {
+export default function(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireDynamicCollectionData) {
 	return (
 		<Route path="/">
 			<Route path="(:lang/)reading-plans" component={PlansView}>
@@ -13,6 +13,8 @@ export default function(requirePlanDiscoveryData, requirePlanCollectionData, req
 				<Route path=":id(-:slug)" component={AboutPlanView} onEnter={requirePlanData} />
 			</Route>
 			<Route path="(:lang/)reading-plans-collection" component={PlansView}>
+				<Route path=":context" component={PlanCollectionView} onEnter={requireDynamicCollectionData} />
+				<Route path=":context-:id(-:slug)" component={PlanCollectionView} onEnter={requireDynamicCollectionData} />
 				<Route path=":id(-:slug)" component={PlanCollectionView} onEnter={requirePlanCollectionData} />
 			</Route>
 		</Route>

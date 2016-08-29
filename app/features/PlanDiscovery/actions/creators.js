@@ -78,13 +78,32 @@ const ActionCreators = {
 		}
 	},
 
+	dynamicCollection(params, auth) {
+		return dispatch => {
+			if (params.context == 'saved') {
+				const saveParams = Object.assign({}, params, { dynamicCollection: true })
+				return Promise.all([
+					dispatch(ActionCreators.configuration()),
+					dispatch(ActionCreators.savedItems(saveParams, auth))
+				])
+
+			} else if (params.context == 'recommended' && params.id) {
+				const recommendedParams = Object.assign({}, params, { dynamicCollection: true })
+				return Promise.all([
+					dispatch(ActionCreators.configuration()),
+					dispatch(ActionCreators.recommendations(recommendedParams))
+				])
+			}
+
+		}
+	},
+
 	readingplanInfo(params, auth) {
 		return dispatch => {
 			// tell the reducer to populate the recommendations in state.collection.plans.related
 			const planParams = Object.assign({}, params, { readingplanInfo: true })
-
 			// now check if requested reading plan view is a saved plan for the user
-			const savedplanParams = Object.assign({}, params, { readingplanInfo: false, savedplanCheck: true, planId: params.id })
+			const savedplanParams = Object.assign({}, params, { savedplanCheck: true })
 
 			return Promise.all([
 				dispatch(ActionCreators.configuration()),
@@ -212,6 +231,21 @@ const ActionCreators = {
 				params: params,
 				http_method: 'post',
 				types: [ type('planSubscribeRequest'), type('planSubscribeSuccess'), type('planSubscribeFailure') ]
+			}
+		}
+	},
+
+	userSubscriptions(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'items',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('userSubscriptionsRequest'), type('userSubscriptionsSuccess'), type('userSubscriptionsFailure') ]
 			}
 		}
 	},

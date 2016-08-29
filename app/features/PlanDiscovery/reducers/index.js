@@ -22,6 +22,8 @@ export default function plansDiscovery(state = {}, action) {
 		case type("savedItemsRequest"):
 		case type("recommendationsItemsRequest"):
 		case type("collectionsItemsRequest"):
+		case type("planSubscribeRequest"):
+		case type("userSubscriptionsRequest"):
 			return Immutable.fromJS(state).mergeDeep({ isFetching: true, hasErrors: false, errors: [] }).toJS()
 
 		case type("planSaveforlaterFailure"):
@@ -31,6 +33,8 @@ export default function plansDiscovery(state = {}, action) {
 		case type("savedItemsFailure"):
 		case type("recommendationsItemsFailure"):
 		case type("collectionsItemsFailure"):
+		case type("planSubscribeFailure"):
+		case type("userSubscriptionsFailure"):
 			return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors }).toJS()
 
 		case type("collectionsItemsSuccess"):
@@ -74,8 +78,23 @@ export default function plansDiscovery(state = {}, action) {
 
 			} else if (action.params.savedplanCheck) {
 				var { reading_plans } = action.response
-				var saved = typeof (reading_plans.find((plan) => { return plan.id == action.params.planId })) === 'undefined' ? false : true
+				var saved = typeof (reading_plans.find((plan) => { return plan.id == action.params.id })) === 'undefined' ? false : true
 				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { saved: saved } }).toJS()
+
+			} else if (action.params.dynamicCollection) { // let's populate collection view data for related or saved plans view
+				var reading_plans = action.response.reading_plans.map((plan) => {
+					var p = Immutable.fromJS(plan).mergeDeep({ title: plan.name["default"], type: 'reading_plan' })
+
+					// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
+					if (plan.images != null) p = p.set('image_id', plan.id) // else plan.image_id doesn't exist
+
+					return p.toJS()
+				})
+				if (action.params.context == 'saved') {
+					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { items: reading_plans, id: 'saved', context: 'saved' } }).toJS()
+				} else {
+					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { items: reading_plans, id: action.params.id, context: 'recommended' } }).toJS()
+				}
 
 			} else {
 				var { reading_plans } = action.response
@@ -114,13 +133,6 @@ export default function plansDiscovery(state = {}, action) {
 
 		case type('configurationSuccess'):
 			return Immutable.fromJS(state).mergeDeep({ configuration: action.response }).toJS()
-
-		case type('collectionRequest'):
-		case type('collectionFailure'):
-			return state
-
-		case type('collectionSuccess'):
-			return Immutable.fromJS(state).mergeDeep({ collection: action.response }).toJS()
 
 		default:
 			return state

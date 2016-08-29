@@ -66,6 +66,26 @@ function requirePlanCollectionData(nextState, replace, callback) {
 	}
 }
 
+function requireDynamicCollectionData(nextState, replace, callback) {
+	const { params } = nextState
+	var type = params.context.split("-")[0]
+	var id = parseInt(params.context.split("-")[1])
+	const currentState = store.getState()
+
+	// Do we already have data from server?
+	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.collection && (currentState.plansDiscovery.collection.id == id || currentState.plansDiscovery.collection.id == type) && currentState.plansDiscovery.collection.items && currentState.plansDiscovery.collection.items.length) {
+		callback()
+	} else if ( (id > 0) || (type == 'saved') ) {
+		store.dispatch(PlanDiscoveryActionCreators.dynamicCollection({ context: type, id: id, language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
+			callback()
+		}, (error) => {
+			callback()
+		})
+	} else {
+		callback()
+	}
+}
+
 function requirePlanData(nextState, replace, callback) {
 	const { params } = nextState
 	var idNum = parseInt(params.id.split("-")[0])
@@ -83,7 +103,7 @@ function requirePlanData(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData)
+const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireDynamicCollectionData)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
