@@ -30,14 +30,42 @@
     ref = nil
   end
 
-  forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref , content: ref_index)
 
-  #This is last ref. Use Checkmark instead of arrow for 'Next'
+
+
   show_complete = false
   references = presenter.reading.references(version_id: subscription.version_id)
-  next_ref_index = ref_index.nil? ? 0 : ref_index + 1
-  if next_ref_index >= references.length
+  completed_refs = 0
+  references.each_with_index do |r, i|
+    if (r.completed)
+      completed_refs = completed_refs + 1
+    end
+  end
+
+  # if we only have a devotional and no refs
+  if day_status.references.empty? && presenter.reading.devotional
+    forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: nil, devo: 'true')
     show_complete = true
+  else # we do have refs
+    # if we are on the devotional
+    if (ref_index == nil)
+      # let's make sure we've completed all references to allow day completion
+      if (completed_refs == references.length)
+        forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref, devo: 'true')
+        show_complete = true
+      else
+        forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref, devo: ref_index == nil ? true : day_status.additional_content.completed, content: ref_index)
+      end
+    # else if we are on a reference
+    elsif (ref_index != nil)
+      # if we're on the last reference that we haven't completed or we're on a reference and we've already completed all refs (and devo)
+      if ( ((completed_refs == references.length - 1) && !references[ref_index].completed && day_status.additional_content.completed) || (completed_refs == references.length && day_status.additional_content.completed) )
+        forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref, devo: 'true')
+        show_complete = true
+      else
+        forward_path = subscription_path(user_id: current_user.to_param, id: subscription, day: day, completed: 'true', ref: ref, devo: ref_index == nil ? true : day_status.additional_content.completed, content: ref_index)
+      end
+    end
   end
 
   display_total_refs = presenter.reading.devotional ? references.length + 1 : references.length
@@ -62,7 +90,7 @@
             = image_tag image_path("Circle-Left-Arrow.svg")
 
       .right
-        -if day_status && !day_status.references.empty?
+        -if (day_status && (!day_status.references.empty? || !day_status.additional_content.empty?))
           -#= link_to(forward_path, "target" => "_self" ) do
           - if is_rtl?
             = link_to(back_path, "target" => "_self" ) do

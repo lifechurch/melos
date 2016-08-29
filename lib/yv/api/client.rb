@@ -141,7 +141,7 @@ module YV
             "User-Agent"                => "Web App: #{ENV['RACK_ENV'] || Rails.env.capitalize} GZIP",  # API 3.1 requires a user agent to be set
             "X-YouVersion-Client"       => "youversion",                                           # API 3.1 requires a youversion client header to be set: http://developers.youversion.com/api/docs/3.1/intro.html#headers
             "X-YouVersion-App-Platform" => "web",
-            "X-YouVersion-App-Version"  => "0",
+            "X-YouVersion-App-Version"  => "2",
             "Accept-Encoding"           => "gzip, deflate"
           }
         end
