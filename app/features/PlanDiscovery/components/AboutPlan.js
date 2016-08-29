@@ -70,7 +70,7 @@ class AboutPlan extends Component {
 					</div>
 					<article className='reading_plan_index'>
 						<div className='plan-image'>
-							<Image width={720} height={400} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
+							<Image className="rp-hero-img" width={720} height={400} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
 						</div>
 						<div className='row collapse'>
 							<div className='columns large-8 medium-8'>

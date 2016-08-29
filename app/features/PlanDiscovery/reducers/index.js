@@ -39,7 +39,14 @@ export default function plansDiscovery(state = {}, action) {
 
 		case type("collectionsItemsSuccess"):
 			if (action.params.uiFocus) {
-				var collection = Immutable.fromJS(action.response.collections[0]).mergeDeep(state.collection).toJS()
+
+				var collection
+				if (action.params.id == state.collection.id) {
+					collection = Immutable.fromJS(action.response.collections[0]).mergeDeep(state.collection).toJS()
+				} else {
+					collection = Immutable.fromJS(action.response.collections[0]).toJS()
+				}
+
 				var responseItems = collection.items.map((item) => {
 					return Immutable.fromJS(item).set('items', []).toJS()
 				})

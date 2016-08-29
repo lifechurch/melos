@@ -78,23 +78,23 @@ const ActionCreators = {
 		}
 	},
 
-	dynamicCollection(params, auth) {
+	recommendedPlansInfo(params, auth) {
 		return dispatch => {
-			if (params.context == 'saved') {
-				const saveParams = Object.assign({}, params, { dynamicCollection: true })
-				return Promise.all([
-					dispatch(ActionCreators.configuration()),
-					dispatch(ActionCreators.savedItems(saveParams, auth))
-				])
+			const recommendedParams = Object.assign({}, params, { dynamicCollection: true })
+			return Promise.all([
+				dispatch(ActionCreators.configuration()),
+				dispatch(ActionCreators.recommendations(recommendedParams))
+			])
+		}
+	},
 
-			} else if (params.context == 'recommended' && params.id) {
-				const recommendedParams = Object.assign({}, params, { dynamicCollection: true })
-				return Promise.all([
-					dispatch(ActionCreators.configuration()),
-					dispatch(ActionCreators.recommendations(recommendedParams))
-				])
-			}
-
+	savedPlanInfo(params, auth) {
+		return dispatch => {
+			const saveParams = Object.assign({}, params, { dynamicCollection: true })
+			return Promise.all([
+				dispatch(ActionCreators.configuration()),
+				dispatch(ActionCreators.savedItems(saveParams, auth))
+			])
 		}
 	},
 

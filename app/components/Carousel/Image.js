@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react'
 class Image extends Component {
 
 	render() {
-		const { height, width, imageId, type, config, thumbnail } = this.props
+		const { height, width, imageId, type, config, thumbnail, className } = this.props
 		let actualWidth = width
 		let actualHeight = height
 
@@ -14,7 +14,7 @@ class Image extends Component {
 				return (currentDiff < lastMatch.diff) ? { diff: currentDiff, width: currentSize.width, height: currentSize.height, url: currentSize.url } : lastMatch
 			}, { diff: width, width: width, height: height })
 
-			return (<img src={selectedImage.url} width={selectedImage.width} height={selectedImage.height} />)
+			return (<img className={className || ''} src={selectedImage.url} width={selectedImage.width} height={selectedImage.height} />)
 
 		// format is different for creating an avatar image as well
 		} else if (type === 'avatar') {
@@ -23,7 +23,7 @@ class Image extends Component {
 				return (currentDiff < lastMatch.diff) ? { diff: currentDiff, width: currentSize.width, height: currentSize.height, url: currentSize.url } : lastMatch
 			}, { diff: width, width: width, height: height })
 
-			return (<img src={selectedImage.url} width={selectedImage.width} height={selectedImage.height} />)
+			return (<img className={className || ''} src={selectedImage.url} width={selectedImage.width} height={selectedImage.height} />)
 
 		} else { // else we're getting an image data from state.configuration
 			const map = (type === 'reading_plan') ? config['reading_plans'] : (type === 'collection') ? config['collections'] : null
@@ -42,7 +42,7 @@ class Image extends Component {
 				var src = map.url.replace(/\{image_id\}/, imageId).replace(/\{0\}/, actualSize.width).replace(/\{1\}/, actualSize.height)
 			}
 
-			return (<img src={src} width={actualSize.width} height={actualSize.height} />)
+			return (<img src={src} className={className || ''} width={actualSize.width} height={actualSize.height} />)
 
 		}
 	}

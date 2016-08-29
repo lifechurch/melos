@@ -66,17 +66,32 @@ function requirePlanCollectionData(nextState, replace, callback) {
 	}
 }
 
-function requireDynamicCollectionData(nextState, replace, callback) {
+function requireSavedPlanData(nextState, replace, callback) {
 	const { params } = nextState
-	var type = params.context.split("-")[0]
-	var id = parseInt(params.context.split("-")[1])
 	const currentState = store.getState()
 
 	// Do we already have data from server?
-	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.collection && (currentState.plansDiscovery.collection.id == id || currentState.plansDiscovery.collection.id == type) && currentState.plansDiscovery.collection.items && currentState.plansDiscovery.collection.items.length) {
+	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.collection && currentState.plansDiscovery.collection.context == 'saved' && currentState.plansDiscovery.collection.items && currentState.plansDiscovery.collection.items.length) {
 		callback()
-	} else if ( (id > 0) || (type == 'saved') ) {
-		store.dispatch(PlanDiscoveryActionCreators.dynamicCollection({ context: type, id: id, language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
+	} else {
+		store.dispatch(PlanDiscoveryActionCreators.savedPlanInfo({ context: 'saved' }, store.getState().auth.isLoggedIn)).then((event) => {
+			callback()
+		}, (error) => {
+			callback()
+		})
+	}
+}
+
+function requireRecommendedPlanData(nextState, replace, callback) {
+	const { params } = nextState
+	const currentState = store.getState()
+	const idNum = params.hasOwnProperty('id') ? parseInt(params.id.split("-")[0]) : 0
+
+	// Do we already have data from server?
+	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.collection && currentState.plansDiscovery.collection.context == 'recommended' && currentState.plansDiscovery.collection.items && currentState.plansDiscovery.collection.items.length) {
+		callback()
+	} else if (idNum > 0) {
+		store.dispatch(PlanDiscoveryActionCreators.recommendedPlansInfo({ context: 'recommended', id: idNum, language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
@@ -103,7 +118,7 @@ function requirePlanData(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireDynamicCollectionData)
+const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireSavedPlanData, requireRecommendedPlanData)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
