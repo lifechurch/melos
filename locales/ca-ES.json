@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Sí",
 	"ui.no button": "No",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Plans",
+	"plans.related plans": "Plans relacionats",
 	"plans.see all": "Veure-ho tot",
 	"plans.discover": "Descobreix",
 	"plans.my_plans": "Els meus plans",

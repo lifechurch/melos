@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Kyllä",
 	"ui.no button": "Ei",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Suunnitelmat",
+	"plans.related plans": "Samankaltaiset suunnitelmat",
 	"plans.see all": "Näytä kaikki",
 	"plans.discover": "Löydä",
 	"plans.my_plans": "Omat suunnitelmat",

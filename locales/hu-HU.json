@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Igen",
 	"ui.no button": "Nem",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Tervek",
+	"plans.related plans": "Kapcsolódó tervek",
 	"plans.see all": "Összes megtekintése",
 	"plans.discover": "Felfedezés",
 	"plans.my_plans": "Terveim",

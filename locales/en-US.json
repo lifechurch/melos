@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Yes",
 	"ui.no button": "No",
-	"plans.plans back": "&larr; Plans",
+	"plans.plans": "Plans",
+	"plans.related plans": "Related Plans",
 	"plans.see all": "See All",
 	"plans.discover": "Discover",
 	"plans.my_plans": "My Plans",

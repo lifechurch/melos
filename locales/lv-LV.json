@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Jā",
 	"ui.no button": "Nē",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Plāns",
+	"plans.related plans": "Saistītie plāni",
 	"plans.see all": "Apskatīt visu",
 	"plans.discover": "Atklāj",
 	"plans.my_plans": "Mans plāns",

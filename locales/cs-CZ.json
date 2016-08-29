@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Ano",
 	"ui.no button": "Ne",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Plány",
+	"plans.related plans": "Podobné plány",
 	"plans.see all": "Zobrazit vše",
 	"plans.discover": "Objevujte",
 	"plans.my_plans": "Moje plány",

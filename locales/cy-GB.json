@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Ie",
 	"ui.no button": "Na",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Cynlluniau",
+	"plans.related plans": "Cynlluniau Tebyg",
 	"plans.see all": "Y cwbl",
 	"plans.discover": "Darganfod",
 	"plans.my_plans": "Fy Nghynlluniau",

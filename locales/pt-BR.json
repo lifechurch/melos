@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Sim",
 	"ui.no button": "Não",
-	"plans.plans back": "← Planos",
+	"plans.plans": "Planos",
+	"plans.related plans": "Planos Relacionados",
 	"plans.see all": "Ver Todos",
 	"plans.discover": "Descubra",
 	"plans.my_plans": "Meus planos",
@@ -236,7 +237,7 @@
 	"features.EventEdit.features.content.components.ContentHelpModal.text.title": "Módulo de Texto",
 	"features.EventEdit.features.content.components.ContentHelpModal.text.desc": "Esboços, pontos chave, questões para discussão… Compartilhe qualquer conteúdo geral baseado em texto que ajudará seus participantes a acompanhar a mensagem enquanto ela está acontecendo. Seus módulos de texto podem ser de qualquer tamanho e podem incluir formatação no padrão \"rich text formatting\" (RTF)",
 	"features.EventEdit.features.content.components.ContentHelpModal.reference.title": "Módulo de Referência Bíblica",
-	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "Selecione qualquer versículo ou passagem da Bíblia, conectadas diretamente com qualquer das mais de 1.200 versões da YouVersion, em mais de 900 idiomas. As pessoas que estiverem vendo o seu Evento podem tocar em sua referência bíblica para v��-la no painel de leitura do App da Bíblia, onde poderá marcar, destacar e muito mais.",
+	"features.EventEdit.features.content.components.ContentHelpModal.reference.desc": "Selecione qualquer versículo ou passagem da Bíblia, conectadas diretamente com qualquer das mais de 1.200 versões da YouVersion, em mais de 900 idiomas. As pessoas que estiverem vendo o seu Evento podem tocar em sua referência bíblica para vê-la no painel de leitura do App da Bíblia, onde poderá marcar, destacar e muito mais.",
 	"features.EventEdit.features.content.components.ContentHelpModal.plan.title": "Módulo de Plano",
 	"features.EventEdit.features.content.components.ContentHelpModal.plan.desc": "Ligue os Planos Bíblicos e Devocionais que se referem aos seus pontos de ensino, auxiliando sua audiência a continuar engajada com a Palavra de Deus durante a semana.",
 	"features.EventEdit.features.content.components.ContentHelpModal.image.title": "Módulo da imagem",

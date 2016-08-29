@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Ya",
 	"ui.no button": "Tidak",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Rencana",
+	"plans.related plans": "Rencana Terkait",
 	"plans.see all": "Lihat Semua",
 	"plans.discover": "Temukan",
 	"plans.my_plans": "Rencana Saya",

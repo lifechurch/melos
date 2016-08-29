@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Ja",
 	"ui.no button": "Nee",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Planne",
+	"plans.related plans": "Verwante Planne",
 	"plans.see all": "Sien Alles",
 	"plans.discover": "Ontdek",
 	"plans.my_plans": "My Planne",

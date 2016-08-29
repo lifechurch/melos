@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Po",
 	"ui.no button": "Jo",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Plane",
+	"plans.related plans": "Plane të ngjashme",
 	"plans.see all": "Shiko të gjitha",
 	"plans.discover": "Zbulo",
 	"plans.my_plans": "Planet e mia",
