@@ -1443,7 +1443,8 @@ uk:
             yes button: "Так"
             no button: "Ні"
         plans: 
-            plans back: "← Plans"
+            plans: "Плани читання"
+            related plans: "Схожі Плани"
             see all: "Всі"
             discover: "Пізнавайте"
             my_plans: "Мої плани"

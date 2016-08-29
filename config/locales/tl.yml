@@ -1413,11 +1413,12 @@ tl:
             yes button: "Oo"
             no button: "Hindi"
         plans: 
-            plans back: "← Plans"
+            plans: "Mga Babasahin"
+            related plans: "Mga Kaugnay na Mga Plano"
             see all: "Tingnan Lahat"
             discover: "Tuklasin"
             my_plans: "Mga Plano Ko"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>Si %{username} ay natapos ang ika-%{day} Araw ng Babasahin na: %{plan_title}</b><b></b><b></b>"
             status: 
                 on track: "Nakakasunod!"
                 days ahead: 

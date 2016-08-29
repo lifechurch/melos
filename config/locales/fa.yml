@@ -1398,11 +1398,12 @@ fa:
             yes button: "بله"
             no button: "نه"
         plans: 
-            plans back: "← Plans"
+            plans: "برنامه‌های مطالعه"
+            related plans: "برنامه‌های مطالعۀ مربوطه"
             see all: "همه را ببینید"
             discover: "مطالب تازه را کشف کنید"
             my_plans: "برنامه‌های مطالعۀ من"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>%{username}</b><b>روز %{day}</b>را از برنامه مطالعه %{plan_title}تمام کرده است.<b></b>"
             status: 
                 on track: "مطالعه طبق برنامه است!"
                 days ahead: 

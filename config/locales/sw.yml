@@ -1413,7 +1413,8 @@ sw:
             yes button: "Ndio"
             no button: "Apana"
         plans: 
-            plans back: "← Mipango"
+            plans: "Mipango ya bibilia"
+            related plans: "Mipangilio yanayo husiana"
             see all: "Ona zote"
             discover: "Gundua"
             my_plans: "mipango yangu"

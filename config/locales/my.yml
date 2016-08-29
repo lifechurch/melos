@@ -1398,7 +1398,8 @@ my:
             yes button: "ဟုတ်"
             no button: "မဟုတ်"
         plans: 
-            plans back: "← Plans"
+            plans: "အစီအစဉ်"
+            related plans: "ဆက်စပ်နေသောအစီအစဉ်များ"
             see all: "အားလုံးကြည့်ရန်"
             discover: "ရှာဖွေရန်"
             my_plans: "ကျွန်တော်၏အစီအစဉ်"

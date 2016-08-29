@@ -1413,7 +1413,8 @@ nl:
             yes button: "Ja"
             no button: "Nee"
         plans: 
-            plans back: "← Plans"
+            plans: "Leesplannen"
+            related plans: "Gerelateerde leesplannen"
             see all: "Bekijk alles"
             discover: "Ontdek"
             my_plans: "Mijn Leesplannen"

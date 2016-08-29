@@ -1413,7 +1413,8 @@ af:
             yes button: "Ja"
             no button: "Nee"
         plans: 
-            plans back: "← Plans"
+            plans: "Planne"
+            related plans: "Verwante Planne"
             see all: "Sien Alles"
             discover: "Ontdek"
             my_plans: "My Planne"

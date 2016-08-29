@@ -1443,7 +1443,8 @@ ru:
             yes button: "Да"
             no button: "Нет"
         plans: 
-            plans back: "← Plans"
+            plans: "Планы чтения"
+            related plans: "Планы, относящиеся к теме"
             see all: "Увидеть все"
             discover: "Узнавайте"
             my_plans: "Мои планы чтения"

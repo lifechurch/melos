@@ -1443,7 +1443,8 @@ pl:
             yes button: "Tak"
             no button: "Nie"
         plans: 
-            plans back: "← Plans"
+            plans: "Plany czytania"
+            related plans: "Podobne plany"
             see all: "Zobacz wszystko"
             discover: "Odkryj"
             my_plans: "Moje plany"

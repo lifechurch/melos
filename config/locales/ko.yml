@@ -1398,7 +1398,8 @@ ko:
             yes button: "예"
             no button: "아니요"
         plans: 
-            plans back: "← Plans"
+            plans: "묵상"
+            related plans: "관련 묵상 계획"
             see all: "모두 보기"
             discover: "찾기"
             my_plans: "내 묵상 계획"

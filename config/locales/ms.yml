@@ -1398,7 +1398,8 @@ ms:
             yes button: "Ya"
             no button: "Tidak"
         plans: 
-            plans back: "← Plans"
+            plans: "Pelan"
+            related plans: "Pelan yang berkaitan"
             see all: "Lihat semua"
             discover: "Menerokai"
             my_plans: "Pelan Saya"

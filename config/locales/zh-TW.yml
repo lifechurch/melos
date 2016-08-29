@@ -1398,11 +1398,12 @@ zh-TW:
             yes button: "是"
             no button: "否"
         plans: 
-            plans back: "← Plans"
+            plans: "計劃"
+            related plans: "相關題材的計劃"
             see all: "查看全部"
             discover: "發掘"
             my_plans: "我的計劃"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>%{username}</b> 完成了讀經計劃：<b> %{plan_title}</b><b> 中的第 %{day} 天</b>"
             status: 
                 on track: "如期進行！"
                 days ahead: 

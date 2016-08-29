@@ -1398,7 +1398,8 @@ ja:
             yes button: "はい"
             no button: "いいえ"
         plans: 
-            plans back: "← Plans"
+            plans: "プラン"
+            related plans: "関連項目"
             see all: "一覧表示"
             discover: "発見"
             my_plans: "自分のプラン"

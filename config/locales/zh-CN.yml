@@ -1398,11 +1398,12 @@ zh-CN:
             yes button: "是"
             no button: "否"
         plans: 
-            plans back: "← Plans"
+            plans: "计划"
+            related plans: "相关题材的计划"
             see all: "查看全部"
             discover: "发掘"
             my_plans: "我的读经计划"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>%{username}</b>完成了读经计划<b>%{plan_title}</b>中的<b>第%{day}天</b>"
             status: 
                 on track: "如期进展！"
                 days ahead: 
@@ -1501,7 +1502,7 @@ zh-CN:
             restart: "重启计划"
             privacy description: 
                 private: "你的计划是保密的。要与朋友们分享你的计划活动，请将你的设置换成【与朋友们分享】。"
-                public: "您的计划是对朋友们公开的。如果不想公开您的计划活动，请选择『设为保密』。"
+                public: "你的计划是对朋友们公开的。如果不想公开你的计划活动，请选择【设为保密】。"
             make private: "设置为保密"
             make public: "和朋友们分享"
             privacy title: "保密的"

@@ -1398,7 +1398,8 @@ km:
             yes button: "បាទ/ចា៎"
             no button: "ទេ"
         plans: 
-            plans back: "← Plans"
+            plans: "គំរោង​ច្រើន"
+            related plans: "គម្រោងដែលពាក់ព័ន្ធ"
             see all: "មើល​ទាំង​អស់"
             discover: "រុក​រក"
             my_plans: "គំរោង​របស់​ខ្ញុំ"
@@ -1434,7 +1435,7 @@ km:
                 private: "ឯកជន"
                 public: "សាធារណៈ"
             title: "គំរោង​អាន​"
-            meta title: "Online Bible study, devotionals and reading plans"
+            meta title: "សិក្សា​ព្រះ​គម្ពីរ​លើ​បណ្ដាញ ការចំណាយ​ពេល​ជាមួយ​ព្រះ និងគំរោង​អាន​ព្រះគម្ពីរ"
             browse by category: "រុក​រក​តាម​ប្រភេទ"
             subcategory: "ប្រភេទរង"
             browse plans: "គំរោង​រុក​រក %{category}"

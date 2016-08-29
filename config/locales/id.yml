@@ -1398,7 +1398,8 @@ id:
             yes button: "Ya"
             no button: "Tidak"
         plans: 
-            plans back: "← Plans"
+            plans: "Rencana"
+            related plans: "Rencana Terkait"
             see all: "Lihat Semua"
             discover: "Temukan"
             my_plans: "Rencana Saya"
