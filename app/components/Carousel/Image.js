@@ -17,7 +17,7 @@ class Image extends Component {
 				height: 405
 			}
 		}
-		const selectedImage = imageUtil(height, width, imageId, type, config, thumbnail)
+
 		return (<img className={className || ''} src={selectedImage.url} width={selectedImage.width} height={selectedImage.height} />)
 	}
 }
