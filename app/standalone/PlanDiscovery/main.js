@@ -39,7 +39,7 @@ function requirePlanDiscoveryData(nextState, replace, callback) {
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.items && currentState.plansDiscovery.items.length) {
 		callback()
 	} else {
-		store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: window.__LOCALE__.locale.replace('-', '_') }, store.getState().auth.isLoggedIn)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: window.__LOCALE__.planLocale }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
@@ -91,7 +91,7 @@ function requireRecommendedPlanData(nextState, replace, callback) {
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.collection && currentState.plansDiscovery.collection.context == 'recommended' && currentState.plansDiscovery.collection.items && currentState.plansDiscovery.collection.items.length) {
 		callback()
 	} else if (idNum > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.recommendedPlansInfo({ context: 'recommended', id: idNum, language_tag: window.__LOCALE__.locale.replace('-', '_') }, store.getState().auth.isLoggedIn)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.recommendedPlansInfo({ context: 'recommended', id: idNum, language_tag: window.__LOCALE__.planLocale }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
@@ -108,7 +108,7 @@ function requirePlanData(nextState, replace, callback) {
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.plans && currentState.plansDiscovery.plans.id === idNum) {
 		callback()
 	} else if (idNum > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.locale.replace('-', '_') }, store.getState().auth.isLoggedIn)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.planLocale }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()

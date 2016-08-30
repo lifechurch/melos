@@ -191,6 +191,7 @@ function getLocale(languageTag) {
 			final.locale2 = lc.locale2
 			final.locale3 = lc.locale3
 			final.momentLocale = lc.momentLocale
+			final.planLocale = ['pt-PT', 'zh-CN', 'zh-TW'].indexOf(final.locale) > -1 ? final.locale.replace('-', '_') : lc.locale2
 		}
 	}
 

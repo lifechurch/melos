@@ -12,7 +12,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const auth = (sessionData.email && sessionData.password) ? { username: sessionData.email, password: sessionData.password } : false
 
 			if (isIndex.test(params.url)) {
-				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.locale.replace('-', '_') }, auth)).then(() => {
+				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.planLocale }, auth)).then(() => {
 					resolve()
 				})
 			} else if (isSaved.test(params.url)) {
@@ -25,11 +25,11 @@ export default function loadData(params, startingState, sessionData, store, Loca
 						resolve()
 					})
 				} else if (isPlan.test(params.url)) {
-					store.dispatch(ActionCreator.readingplanInfo({ id: params.id, language_tag: Locale.locale.replace('-', '_') }, auth)).then(() => {
+					store.dispatch(ActionCreator.readingplanInfo({ id: params.id, language_tag: Locale.planLocale }, auth)).then(() => {
 						resolve()
 					})
 				} else if (isRecommended.test(params.url)) {
-					store.dispatch(ActionCreator.recommendedPlansInfo({ context: 'recommended', id: params.id, language_tag: Locale.locale.replace('-', '_') }, auth)).then(() => {
+					store.dispatch(ActionCreator.recommendedPlansInfo({ context: 'recommended', id: params.id, language_tag: Locale.planLocale }, auth)).then(() => {
 						resolve()
 					})
 				} else {
