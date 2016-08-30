@@ -37,7 +37,9 @@ const ActionCreators = {
 						// if we have recommendations, let's get recommended
 						if (recommendationIds.length > 0) {
 							promises.concat(recommendationIds.map((id) => {
-								return dispatch(ActionCreators.recommendations({ language_tag: params.language_tag, id }))
+								return new Promise((resolve, reject) => {
+									dispatch(ActionCreators.recommendations({ language_tag: params.language_tag, id })).then(resolve, resolve)
+								})
 							}))
 						}
 
@@ -108,13 +110,20 @@ const ActionCreators = {
 			// now check if requested reading plan view is a saved plan for the user
 			const savedplanParams = Object.assign({}, params, { savedplanCheck: true })
 
-			return Promise.all([
+			let promises = [
 				dispatch(ActionCreators.configuration()),
 				dispatch(ActionCreators.readingplanView(params, auth)),
-				dispatch(ActionCreators.recommendations(planParams)),
-				dispatch(ActionCreators.readingplanStats(params, auth)),
-				dispatch(ActionCreators.savedItems(savedplanParams, auth))
-			])
+				new Promise((resolve, reject) => {
+					dispatch(ActionCreators.recommendations(planParams)).then(resolve, resolve)
+				}),
+				dispatch(ActionCreators.readingplanStats(params, auth))
+			]
+
+			if (auth) {
+				promises.push(dispatch(ActionCreators.savedItems(savedplanParams, auth)))
+			}
+
+			return Promise.all(promises)
 		}
 	},
 

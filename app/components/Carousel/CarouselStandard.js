@@ -18,7 +18,7 @@ class CarouselStandard extends Component {
 
     var settings = {
     	centerMode: false,
-      infinite: true,
+      infinite: false,
       variableWidth: true,
       arrows: true,
       slidesToScroll: 2,
