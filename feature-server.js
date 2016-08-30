@@ -20,7 +20,6 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 import getRoutes from './app/routes.js'
 import createLogger from 'redux-node-logger'
 
-
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
 const availableLocales = require('./locales/config/availableLocales.json');
@@ -159,12 +158,12 @@ function getConfig(feature) {
 	return Object.assign({}, defaultConfig, config)
 }
 
-function loadData(feature, params, startingState, sessionData, store) {
+function loadData(feature, params, startingState, sessionData, store, Locale) {
 	return new Promise((resolve, reject) => {
 		let fn = null
 		try {
 			fn = require('./app/standalone/' + feature + '/loadData').default
-			resolve(fn(params, startingState, sessionData, store))
+			resolve(fn(params, startingState, sessionData, store, Locale))
 		} catch(ex) {
 			resolve()
 		}
@@ -232,9 +231,11 @@ router.post('/', urlencodedParser, function(req, res) {
 		const defaultState = getDefaultState(feature)
 		let startingState = Object.assign({}, defaultState, { auth: verifiedAuth })
 		startingState = mapStateToParams(feature, startingState, params)
+
 		try {
 			const store = getStore(feature, startingState, null, null)
-			loadData(feature, params, startingState, sessionData, store).then((action) => {
+			loadData(feature, params, startingState, sessionData, store, Locale).then((action) => {
+
 				if (typeof action === 'function') {
 					store.dispatch(action).then(() => {
 						finish()

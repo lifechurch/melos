@@ -6,11 +6,19 @@ import Image from '../../../components/Carousel/Image'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import { injectIntl, FormattedMessage } from 'react-intl'
+import Waypoint from 'react-waypoint'
 
 class PlanCollection extends Component {
 
+	loadMore(currentPosition, previousPosition) {
+		const { dispatch, collection } = this.props
+		if (collection.next_page > 0) {
+			dispatch(ActionCreators.collectionsItems({ ids: [collection.id], page: collection.next_page, uiFocus: true }))
+		}
+	}
+
 	render() {
-		const { collection, intl, imageConfig, localizedLink } = this.props
+		const { collection, intl, imageConfig, localizedLink, isRtl } = this.props
 		var items = []
 		var carousels = []
 
@@ -21,7 +29,7 @@ class PlanCollection extends Component {
 					let slide = null
 
 					if (item.type == 'collection') {
-						carousels.push( <div><Carousel carouselContent={item} carouselType={item.display} imageConfig={imageConfig}/></div> )
+						carousels.push( <div key={`collection-${item.id}`}><Carousel localizedLink={localizedLink} isRtl={isRtl} carouselContent={item} carouselType={item.display} imageConfig={imageConfig}/></div> )
 					} else if (item.type == 'reading_plan') {
 						var slideLink = localizedLink(`/reading-plans/${item.id}`)
 						if (item.image_id) {
@@ -49,7 +57,7 @@ class PlanCollection extends Component {
 						}
 						items.push(
 							(
-								<li className="collection-item" key={item.id}>
+								<li className="collection-item" key={`item-${item.id}`}>
 									<Link to={slideLink}>
 										{slide}
 									</Link>
@@ -68,13 +76,14 @@ class PlanCollection extends Component {
 					meta={[ { name: 'description', content: `${intl.formatMessage({ id: "plans.title" })}: ${intl.formatMessage({ id: "plans.browse plans" }, { category: collection.title })}` } ]}
 				/>
 				<div className='columns medium-12'>
-					<Link className='plans' to={localizedLink(`/reading-plans`)}>&larr; Plans</Link>
+					<Link className='plans' to={localizedLink(`/reading-plans`)}>&larr; <FormattedMessage id="plans.plans" /></Link>
 					<div className='collection-title'>{ title }</div>
 					<div className='collection-items'>
 						{ carousels }
 						<div className='horizontal-center'>
 							<ul className="medium-block-grid-3 small-block-grid-2">
 								{ items }
+								<li><Waypoint onEnter={::this.loadMore} /></li>
 							</ul>
 						</div>
 					</div>

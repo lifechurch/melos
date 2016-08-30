@@ -8,7 +8,7 @@ import { Link } from 'react-router'
 
 class CarouselBanner extends Component {
 	render() {
-		const { carouselContent, imageConfig, localizedLink } = this.props
+		const { carouselContent, imageConfig, localizedLink, isRtl } = this.props
 
     var settings = {
       centerMode: true,
@@ -17,6 +17,7 @@ class CarouselBanner extends Component {
       initialSlide: 0,
       slickGoTo: 0,
 			arrows: true,
+			rlt: isRtl(),
 			prevArrow: <CarouselArrow dir='left' width='30' height='30' backColor='black'/>,
 			nextArrow: <CarouselArrow dir='right' width='30' height='30' backColor='black'/>,
       responsive: [ {
@@ -27,7 +28,7 @@ class CarouselBanner extends Component {
 		// for banner carousels, we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
 		var slides = carouselContent.items.map( function(slide, index) {
 
-			var slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}`) : localizedLink(`/reading-plans/${slide.id}`)
+			var slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}-${slide.slug}`) : localizedLink(`/reading-plans/${slide.id}-${slide.slug}`)
 
 			if (slide.image_id) {
 				return (

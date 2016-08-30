@@ -7,13 +7,14 @@ import { Link } from 'react-router'
 
 class CarouselGradient extends Component {
   render() {
-		const { carouselContent, localizedLink } = this.props
+		const { carouselContent, localizedLink, isRtl } = this.props
 
     var settings = {
       centerMode: false,
       infinite: true,
       variableWidth: true,
       slidesToScroll: 2,
+      rlt: isRtl(),
       prevArrow: <CarouselArrow dir='left' width={25} height={25} backColor='black'/>,
       nextArrow: <CarouselArrow dir='right' width={25} height={25} backColor='black'/>,
       responsive: [ {
@@ -24,7 +25,7 @@ class CarouselGradient extends Component {
     var slides = carouselContent.items.map( function(slide, index) {
 			return (
         <div className='radius-3' key={`${carouselContent.id}-${index}`}>
-          <Link to={localizedLink(`/reading-plans-collection/${slide.id}`)}>
+          <Link to={localizedLink(`/reading-plans-collection/${slide.id}-${slide.slug}`)}>
             <CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/>
           </Link>
         </div>

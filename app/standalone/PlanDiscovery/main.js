@@ -39,7 +39,7 @@ function requirePlanDiscoveryData(nextState, replace, callback) {
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.items && currentState.plansDiscovery.items.length) {
 		callback()
 	} else {
-		store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: 'en' }, store.getState().auth.isLoggedIn)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.discoverAll({ language_tag: window.__LOCALE__.locale.replace('-', '_') }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
@@ -49,7 +49,7 @@ function requirePlanDiscoveryData(nextState, replace, callback) {
 
 function requirePlanCollectionData(nextState, replace, callback) {
 	const { params } = nextState
-	var idNum = parseInt(params.id.split("-")[0])
+	var idNum = parseInt(params.id.toString().split("-")[0])
 	const currentState = store.getState()
 
 	// Do we already have data from server?
@@ -85,13 +85,13 @@ function requireSavedPlanData(nextState, replace, callback) {
 function requireRecommendedPlanData(nextState, replace, callback) {
 	const { params } = nextState
 	const currentState = store.getState()
-	const idNum = params.hasOwnProperty('id') ? parseInt(params.id.split("-")[0]) : 0
+	const idNum = params.hasOwnProperty('id') ? parseInt(params.id.toString().split("-")[0]) : 0
 
 	// Do we already have data from server?
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.collection && currentState.plansDiscovery.collection.context == 'recommended' && currentState.plansDiscovery.collection.items && currentState.plansDiscovery.collection.items.length) {
 		callback()
 	} else if (idNum > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.recommendedPlansInfo({ context: 'recommended', id: idNum, language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.recommendedPlansInfo({ context: 'recommended', id: idNum, language_tag: window.__LOCALE__.locale.replace('-', '_') }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()
@@ -103,12 +103,12 @@ function requireRecommendedPlanData(nextState, replace, callback) {
 
 function requirePlanData(nextState, replace, callback) {
 	const { params } = nextState
-	var idNum = parseInt(params.id.split("-")[0])
+	var idNum = parseInt(params.id.toString().split("-")[0])
 	const currentState = store.getState()
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.plans && currentState.plansDiscovery.plans.id === idNum) {
 		callback()
 	} else if (idNum > 0) {
-		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.locale2 }, store.getState().auth.isLoggedIn)).then((event) => {
+		store.dispatch(PlanDiscoveryActionCreators.readingplanInfo({ id: idNum, language_tag: window.__LOCALE__.locale.replace('-', '_') }, store.getState().auth.isLoggedIn)).then((event) => {
 			callback()
 		}, (error) => {
 			callback()

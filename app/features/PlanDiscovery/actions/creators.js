@@ -12,15 +12,17 @@ const ActionCreators = {
 						var recommendationIds = [];	// for recommendation carousels
 						var hasSaved = false;				// for saved plans carousel
 
-						data.items.forEach((item, index) => {
-							if (item.type === 'collection') {
-								collectionIds.push(item.id);
-							} else if (item.type === 'recommended') {
-								recommendationIds.push(item.id);
-							} else if (item.type === 'saved') {
-								hasSaved = true
-							}
-						})
+						if (data && data.items) {
+							data.items.forEach((item, index) => {
+								if (item.type === 'collection') {
+									collectionIds.push(item.id);
+								} else if (item.type === 'recommended') {
+									recommendationIds.push(item.id);
+								} else if (item.type === 'saved') {
+									hasSaved = true
+								}
+							})
+						}
 
 						var promises = []
 
@@ -100,6 +102,7 @@ const ActionCreators = {
 
 	readingplanInfo(params, auth) {
 		return dispatch => {
+			params.id = parseInt(params.id.toString().split('-')[0])
 			// tell the reducer to populate the recommendations in state.collection.plans.related
 			const planParams = Object.assign({}, params, { readingplanInfo: true })
 			// now check if requested reading plan view is a saved plan for the user

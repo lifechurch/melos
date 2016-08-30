@@ -9,10 +9,12 @@ import { Link } from 'react-router'
 
 class CarouselStandard extends Component {
   render() {
-		const { carouselContent, imageConfig, localizedLink, context } = this.props
+		const { carouselContent, imageConfig, localizedLink, context, isRtl } = this.props
 		var carouselTitle = (carouselContent.title) ? carouselContent.title : <FormattedMessage id='plans.related plans' />
 		// for a dynamic collection we need to build, the header link will be different
 		var carouselLink = (context == 'recommended') ? `/recommended-plans-collection/${carouselContent.id}` : (context == 'saved') ? `/saved-plans-collection` : `/reading-plans-collection/${carouselContent.id}`
+
+
 
     var settings = {
     	centerMode: false,
@@ -20,6 +22,7 @@ class CarouselStandard extends Component {
       variableWidth: true,
       arrows: true,
       slidesToScroll: 2,
+      rlt: isRtl(),
       prevArrow: <CarouselArrow dir='left' fill='gray' width={19} height={19}/>,
       nextArrow: <CarouselArrow dir='right' fill='gray' width={19} height={19}/>,
       responsive: [ {
@@ -30,7 +33,7 @@ class CarouselStandard extends Component {
     // we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
     var slides = carouselContent.items.map( function(slide, index) {
 
-    	var slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}`) : localizedLink(`/reading-plans/${slide.id}`)
+    	var slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}-${slide.slug}`) : localizedLink(`/reading-plans/${slide.id}-${slide.slug}`)
 
     	if (slide.image_id) {
 				return (
@@ -71,7 +74,9 @@ class CarouselStandard extends Component {
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>
 	    	</Link>
-				<Slider {...settings}>{ slides }</Slider>
+				<Slider {...settings}>
+					{ slides }
+				</Slider>
 	    </div>
 	  );
 	}

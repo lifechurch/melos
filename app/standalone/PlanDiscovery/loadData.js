@@ -1,6 +1,6 @@
 import ActionCreator from '../../features/PlanDiscovery/actions/creators'
 
-export default function loadData(params, startingState, sessionData, store) {
+export default function loadData(params, startingState, sessionData, store, Locale) {
 
 	return new Promise((resolve, reject) => {
 		if (typeof store !== 'undefined' && params.hasOwnProperty('url') && params.hasOwnProperty('languageTag')) {
@@ -12,7 +12,7 @@ export default function loadData(params, startingState, sessionData, store) {
 			const auth = (sessionData.email && sessionData.password) ? { username: sessionData.email, password: sessionData.password } : false
 
 			if (isIndex.test(params.url)) {
-				store.dispatch(ActionCreator.discoverAll({ language_tag: params.languageTag }, auth)).then(() => {
+				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.locale.replace('-', '_') }, auth)).then(() => {
 					resolve()
 				})
 			} else if (isSaved.test(params.url)) {
@@ -25,11 +25,11 @@ export default function loadData(params, startingState, sessionData, store) {
 						resolve()
 					})
 				} else if (isPlan.test(params.url)) {
-					store.dispatch(ActionCreator.readingplanInfo({ id: params.id, language_tag: params.languageTag }, auth)).then(() => {
+					store.dispatch(ActionCreator.readingplanInfo({ id: params.id, language_tag: Locale.locale.replace('-', '_') }, auth)).then(() => {
 						resolve()
 					})
 				} else if (isRecommended.test(params.url)) {
-					store.dispatch(ActionCreator.recommendedPlansInfo({ context: 'recommended', id: params.id, language_tag: params.languageTag }, auth)).then(() => {
+					store.dispatch(ActionCreator.recommendedPlansInfo({ context: 'recommended', id: params.id, language_tag: Locale.locale.replace('-', '_') }, auth)).then(() => {
 						resolve()
 					})
 				} else {
