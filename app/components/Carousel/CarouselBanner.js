@@ -30,9 +30,11 @@ class CarouselBanner extends Component {
 
 			var slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}-${slide.slug}`) : localizedLink(`/reading-plans/${slide.id}-${slide.slug}`)
 
+			const slideStyle = isRtl() ? { display: 'inline-block' } : {}
+
 			if (slide.image_id) {
 				return (
-					<div className='' key={`${carouselContent.id}-${index}`}>
+					<div className='' key={`${carouselContent.id}-${index}`} style={slideStyle}>
 						<Link to={slideLink}>
 							<CarouselSlideImage>
 								<Image width={720} height={405} thumbnail={false} imageId={slide.image_id} type={slide.type} config={imageConfig} />
@@ -42,7 +44,7 @@ class CarouselBanner extends Component {
 				)
 			} else if (slide.gradient) {
 				return (
-					<div className='' key={`${carouselContent.id}-${index}`}>
+					<div className='' key={`${carouselContent.id}-${index}`} style={slideStyle}>
 						<Link to={slideLink}>
 							<CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/>
 						</Link>
@@ -50,7 +52,7 @@ class CarouselBanner extends Component {
 				)
 			} else {
 				return (
-					<div className='' key={`${carouselContent.id}-${index}`}>
+					<div className='' key={`${carouselContent.id}-${index}`} style={slideStyle}>
 						<Link to={slideLink}>
 							<CarouselSlideImage>
 								<Image width={720} height={405} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
@@ -61,9 +63,32 @@ class CarouselBanner extends Component {
 			}
 		})
 
+		let slider = null
+
+		if (isRtl()) {
+
+			const outerStyle = {
+				width: "100%",
+				overflowX: "scroll"
+			}
+
+			const innerStyle = {
+				width: 10000
+			}
+
+			slider = (
+				<div className='rtl-faux-slider' style={outerStyle}>
+					<div style={innerStyle}>{slides}</div>
+				</div>
+			)
+
+		} else {
+			slider = <Slider {...settings}>{slides}</Slider>
+		}
+
 		return (
 			<div className='carousel-banner'>
-				<Slider {...settings}>{slides}</Slider>
+				{slider}
 			</div>
 		);
 	}

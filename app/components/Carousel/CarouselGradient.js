@@ -22,9 +22,11 @@ class CarouselGradient extends Component {
       } ]
     }
 
+    const slideStyle = isRtl() ? { display: 'inline-block' } : {}
+
     var slides = carouselContent.items.map( function(slide, index) {
 			return (
-        <div className='radius-3' key={`${carouselContent.id}-${index}`}>
+        <div className='radius-3' key={`${carouselContent.id}-${index}`} style={slideStyle}>
           <Link to={localizedLink(`/reading-plans-collection/${slide.id}-${slide.slug}`)}>
             <CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/>
           </Link>
@@ -34,9 +36,27 @@ class CarouselGradient extends Component {
 
     var classes = `carousel-gradient`
 
+    let slider = null
+
+    if (isRtl()) {
+
+      const outerStyle = {
+        width: "100%",
+        overflowX: "scroll"
+      }
+
+      const innerStyle = {
+        width: 10000
+      }
+
+      slider = <div className='rtl-faux-slider' style={outerStyle}><div style={innerStyle}>{slides}</div></div>
+    } else {
+      slider = <Slider {...settings}>{slides}</Slider>
+    }
+
 	  return (
 	    <div className={classes} >
-       <Slider {...settings}>{slides}</Slider>
+       {slider}
 	    </div>
 	  );
 	}

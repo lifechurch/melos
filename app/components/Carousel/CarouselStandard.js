@@ -30,6 +30,8 @@ class CarouselStandard extends Component {
       } ]
     };
 
+		const slideStyle = isRtl() ? { display: 'inline-block' } : {}
+
     // we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
     var slides = carouselContent.items.map( function(slide, index) {
 
@@ -37,7 +39,7 @@ class CarouselStandard extends Component {
 
     	if (slide.image_id) {
 				return (
-					<div className='radius-5' key={index}>
+					<div className='radius-5' key={index} style={slideStyle}>
 						<Link to={slideLink}>
 							<CarouselSlideImage title={slide.title}>
 	    					<Image width={320} height={180} thumbnail={false} imageId={slide.image_id} type={slide.type} config={imageConfig} />
@@ -47,7 +49,7 @@ class CarouselStandard extends Component {
 				)
 			} else if (slide.gradient) {
 				return (
-					<div className='radius-5' >
+					<div className='radius-5' style={slideStyle}>
 						<Link to={slideLink}>
 							<CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/>
 						</Link>
@@ -55,7 +57,7 @@ class CarouselStandard extends Component {
 				)
 			} else {
 				return (
-					<div className='radius-5' key={index}>
+					<div className='radius-5' key={index} style={slideStyle}>
 						<Link to={slideLink}>
 							<CarouselSlideImage title={slide.title} >
 								<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
@@ -66,6 +68,23 @@ class CarouselStandard extends Component {
 			}
     })
 
+		let slider = null
+
+		if (isRtl()) {
+
+			const outerStyle = {
+				width: "100%",
+				overflowX: "scroll"
+			}
+
+			const innerStyle = {
+				width: 10000
+			}
+
+			slider = <div className='rtl-faux-slider' style={outerStyle}><div style={innerStyle}>{slides}</div></div>
+		} else {
+			slider = <Slider {...settings}>{slides}</Slider>
+		}
 
 	  return (
 	    <div className='carousel-standard' >
@@ -74,9 +93,7 @@ class CarouselStandard extends Component {
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>
 	    	</Link>
-				<Slider {...settings}>
-					{ slides }
-				</Slider>
+	    	{slider}
 	    </div>
 	  );
 	}
