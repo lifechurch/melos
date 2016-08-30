@@ -33,6 +33,14 @@ class ShareWidget extends Component {
 			}
 		}
 
+		var interval = setInterval(function() {
+			if (typeof window != 'undefined' && window.addthis
+				&& window.addthis.layers && window.addthis.layers.refresh) {
+				clearInterval(interval);
+				window.addthis.layers.refresh()
+			}
+		}, 100);
+
 		return (
 			<div>
 				{ shareText }
