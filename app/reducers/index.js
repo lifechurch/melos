@@ -10,6 +10,7 @@ import content from '../features/EventEdit/features/content/reducers/content'
 import references from './references'
 import plans from './plans'
 import configuration from '../features/EventFeedMine/reducers/configuration'
+import plansDiscovery from '../features/PlanDiscovery/reducers'
 
 const rootReducer = combineReducers({
 	auth: auth,
@@ -20,9 +21,11 @@ const rootReducer = combineReducers({
 	loc,
 	locations,
 	plans,
+	plansDiscovery,
 	configuration,
 	references,
-	routing: routeReducer
+	routing: routeReducer,
+	serverLanguageTag: (state = {}, action) => { return state }
 })
 
 export default rootReducer

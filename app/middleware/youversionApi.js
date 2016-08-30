@@ -2,7 +2,7 @@ import { getClient } from '@youversion/js-api'
 import ActionCreators from '../features/Auth/actions/creators'
 import { routeActions } from 'react-router-redux'
 
-const endpoints = [ 'events', 'search', 'users', 'bible' ]
+const endpoints = [ 'events', 'search', 'users', 'bible', 'reading-plans' ]
 const versions = [ '3.2', '3.1' ]
 const envs = [ 'staging', 'production' ]
 const http_methods = [ 'get', 'post' ]
@@ -78,9 +78,18 @@ export default store => next => action => {
 		.setVersion(version)
 		.params(params)
 
+	if (process && process.env && process.env.NODE_ENV) {
+		client.setEnvironment(process.env.NODE_ENV);
+	}
+
 	const auth = api_call.auth
 	if (auth === true) {
 		client.auth()
+	}
+
+	if (typeof auth === 'object') {
+		const { username, password } = auth
+		client.auth(username, password)
 	}
 
 	const apiPromise = client[http_method]();

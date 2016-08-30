@@ -12,6 +12,7 @@ import ActionCreators from '../features/EventFeedMine/actions/creators'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
+
 class EventFeedMine extends Component {
 	componentWillMount() {
 		const { dispatch, page } = this.props
@@ -104,6 +105,8 @@ class EventFeedMine extends Component {
 				<EventHeader {...this.props} />
 				{eventFeed}
 			</div>
+
+
 		)
 	}
 }

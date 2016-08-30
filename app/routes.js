@@ -11,10 +11,14 @@ import EventEditPreview from './containers/EventEditPreview'
 import EventEditShare from './containers/EventEditShare'
 import EventView from './containers/EventView'
 import SelectLanguage from './containers/SelectLanguage'
+import PlansView from './containers/PlansView'
+import PlanDiscoveryView from './containers/PlanDiscoveryView'
+import PlanCollectionView from './containers/PlanCollectionView'
+import AboutPlanView from './containers/AboutPlanView'
 
-export default function(requireAuth, requireEvent) {
+export default function(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData) {
 	return (
-		<Route path="/:locale/" component={App} onEnter={requireAuth}>
+		<Route path="/(:locale/)" component={App} onEnter={requireAuth}>
 			<IndexRoute component={EventFeedMine} />
 			<Route path="select_language" component={SelectLanguage} />
 			<Route path="login" component={Auth} />

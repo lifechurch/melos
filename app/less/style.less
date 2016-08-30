@@ -4,6 +4,19 @@
 @import "colors";
 @import "typography";
 
+
+
+/*@small: only screen and (max-width: 479px);
+@medium: only screen and (min-width: 768px) and (max-width: 959px);
+@large: only screen and (min-width: 960px);*/
+
+/*@small-range: (0em, 37.438em);
+@medium-range: (37.5em, 63.938em);
+@large-range: (64em, 90em);
+@xlarge-range: (90.063em, 120em);
+@xxlarge-range: (120.063em, 99999999em);*/
+
+
 .img-box {
 	position: relative;
 	width: 100%;
@@ -1675,3 +1688,543 @@ ul.language-selector li {
 		opacity: 0.6;
 	}
 }
+
+
+
+
+
+
+/*************************************************** PLANS DISCOVERY/CAROUSELS/READINGPLANS ***************************************************/
+
+/* general */
+
+.checkmark-container {
+	display: inline-flex;
+	align-items: center;
+
+	.checkmark-right {
+    padding-top: 5px;
+    padding-right: 2px;
+	}
+}
+
+/* for dumb elastic scrolling on mobile */
+@media only screen and (max-width: 699px) {
+	html,
+	body {
+	  height: 100%;
+	  width: 100%;
+	  overflow: auto;
+	}
+}
+
+.discover-buttons {
+	margin-bottom: 40px;
+}
+
+.button-group.primary-toggle {
+  li {
+    margin: 0 -3px;
+    a {
+      padding: 8px 40px;
+      border: solid 1px #4EAE50;
+
+/*      @media #{$small-only} {
+        padding: 8px 30px;
+      }*/
+    }
+  }
+
+  li:first-child {
+    a.solid-button.green {
+      border-radius: 5px 0 0 5px;
+    }
+  }
+
+  li:last-child {
+    a.solid-button.green {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  li.inactive {
+    a.solid-button.green {
+      background-color: white !important;
+      color: #4EAE50 !important;
+    }
+  }
+}
+
+
+
+.radius-3 {
+	border-radius: 3px;
+}
+.radius-5 {
+	border-radius: 5px;
+}
+.vertical-center {
+	display: flex;
+	align-items: center;
+}
+.horizontal-center {
+	display: flex;
+	justify-content: center;
+}
+
+.title-padding {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+	/* we want shadowed containers on all carousels except for standard */
+.slick-arrow-right-container {
+	display: flex;
+	position: absolute;
+	top: 0px;
+	opacity: 0;
+	right: 0px;
+	justify-content: flex-end;
+}
+.slick-arrow-left-container {
+	display: flex;
+	position: absolute;
+	top: 0px;
+	opacity: 0;
+	left: 0px;
+	justify-content: flex-start;
+}
+.slick-arrow-right-container:hover, .slick-arrow-left-container:hover {
+	cursor: pointer;
+}
+
+
+
+/* Banner Carousels: (Featured Plans?) */
+.carousel-banner {
+	width: 100%;
+
+		@media only screen and (max-width: 699px) {
+
+			.slick-slider {
+				margin-bottom: 15px;
+			}
+			.slide, img {
+				width: 280px;
+				height: 165px;
+				margin-right: 15px;
+				border-radius: 8px;
+			}
+			.slick-track {
+				width: 30000px;
+				transform: translate3d(-480px, 0px, 0px);
+			}
+		}
+
+		@media only screen and (min-width: 700px) {
+
+			height: 360px;
+
+			.slide, img {
+				width: 600px;
+				height: 350px;
+				border-radius: 8px;
+				transform: scale(0.85);
+				transition: transform 0.5s ease-in-out;
+			}
+			.slick-active {
+				.slide, img {
+					transform: scale(1);
+				}
+			}
+
+			.slick-track {
+				width: 31680px;
+				transform: translate3d(-780px, 0px, 0px);
+			}
+
+			.slick-arrow-right-container {
+				/* 85% of the slide height */
+				height: 297px;
+				width: 85px;
+				right: 0px;
+				/* half of the difference between the full slide height and the scaled slide height */
+				top: 27px;
+			}
+			.slick-arrow-left-container {
+				/* 85% of the slide height */
+				height: 297px;
+				width: 85px;
+				left: 0px;
+				/* half of the difference between the full slide height and the scaled slide height */
+				top: 27px;
+			}
+		}
+
+
+
+	&:hover {
+		.slick-arrow-right-container, .slick-arrow-left-container {
+			opacity: 0.5;
+		}
+	};
+
+	.slick-track {
+		display: inline-flex;
+		align-items: center;
+	}
+
+
+
+
+	/* rules for gradient title in a banner carousel is a little different */
+	.gradient-title-container {
+		border: 2px solid white;
+		color: white;
+		text-align: center;
+		font-size: 18px;
+		padding-left: 40px;
+		padding-right: 40px;
+		padding-top: 18px;
+		padding-bottom: 18px;
+	}
+
+}
+
+
+/* Gradient Carousels */
+.carousel-gradient {
+	width: 100%;
+
+
+	@media only screen and (max-width: 699px) {
+		.slide {
+			width: 225px;
+			height: 125px;
+			margin-left: 15px;
+			border-radius: 4px;
+		}
+
+	}
+	@media only screen and (min-width: 700px) {
+
+		.slide {
+			width: 270px;
+			height: 150px;
+			margin-left: 60px;
+			margin-right: -45px;
+			border-radius: 5px;
+		}
+
+		.slick-track {
+			width: 25920px;
+	    transform: translate3d(-285px, 0px, 0px);
+		}
+
+	}
+
+
+	.slick-arrow-right-container, .slick-arrow-left-container {
+		height: 150px;
+		width: 85px;
+	}
+
+
+	&:hover {
+		.slick-arrow-right-container, .slick-arrow-left-container {
+			opacity: 0.5;
+		}
+	};
+
+
+	.gradient-title-container {
+		border: 2px solid white;
+		color: white;
+		text-align: center;
+		font-size: 14px;
+	}
+
+}
+
+
+
+/* Title Carousels */
+.carousel-title {
+	width: 100%;
+
+	margin-top: 15px;
+	margin-bottom: 20px;
+
+	.slick-arrow-right-container {
+		height: 44px;
+		width: 85px;
+	}
+	.slick-arrow-left-container {
+		height: 44px;
+		width: 85px;
+	}
+
+	&:hover {
+		.slick-arrow-right-container, .slick-arrow-left-container {
+			opacity: 0.5;
+		}
+	};
+
+	@media only screen and (max-width: 699px) {
+		.slide {
+			margin-left: 15px;
+			margin-right: -5px;
+		}
+	}
+	@media only screen and (min-width: 700px) {
+		.slide {
+			margin-left: 20px;
+			margin-right: -15px;
+		}
+
+		.slick-track {
+	    width: 14400px;
+	    transform: translate3d(-190px, 0px, 0px);
+		}
+	}
+
+	.title-container {
+		border: 2px solid whitesmoke;
+		color: black;
+		text-align: center;
+		font-size: 16px;
+	}
+
+}
+
+/* Standard Carousels: (Saved, Recommended, and Collections) */
+.carousel-standard {
+	width: 90%;
+
+	@media only screen and (max-width: 519px) {
+		margin-top: 15px;
+		padding-left: 15px;
+		width: 100%;
+		.see-all {
+			justify-content: flex-end;
+			align-items: center;
+			text-align: right;
+			font-size: 12px;
+			flex-grow: 1;
+			min-width: 60px;
+			color: #4EAE50;
+		}
+		.carousel-header {
+			margin-bottom: 5px;
+			.slick-arrow-right-container {
+				justify-content: flex-end;
+				margin-left: 10px;
+			}
+			.title {
+				font-size: 17px;
+			}
+		}
+	}
+	@media only screen and (min-width: 520px) {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		margin-left: 5%;
+		margin-right: 5%;
+		.see-all {
+			display: none;
+		}
+		.carousel-header {
+			margin-bottom: 10px;
+			.slick-arrow-right-container {
+				height: 100%;
+				justify-content: flex-start;
+			}
+			.title {
+				font-size: 20px;
+			}
+		}
+
+		.slick-arrow-right-container {
+			height: 120px;
+			right: -40px;
+			opacity: 0.8;
+		}
+		.slick-arrow-left-container {
+			height: 120px;
+			left: -40px;
+			opacity: 0.8;
+		}
+		.slick-track {
+			width: 10368px;
+			transform: translate3d(-240px, 0px, 0px);
+		}
+
+	}
+
+
+	.carousel-header {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		white-space: normal;
+		padding-right: 5px;
+		padding-left: 2px;
+
+		.slick-arrow-right-container {
+			opacity: 1;
+			position: relative;
+		}
+
+	}
+
+	.title {
+		color: rgba(0,0,0,0.33);
+	}
+
+	.carousel-header:hover	{
+		cursor: pointer;
+		.title {
+			color: #1e89a1;
+		}
+	}
+
+	.slide-title {
+		width: 225px;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		white-space: normal;
+		text-align: left;
+		font-size: 14px;
+		line-height: 16px;
+		margin-top: 15px;
+		padding-left: 2px;
+		color: #515151;
+	}
+
+
+  .slide, img {
+  	border-radius: 4px;
+		width: 225px;
+		height: 125px;
+		margin-right: 15px;
+	}
+}
+
+.collections-view {
+
+	.collection-items {
+		margin-top: 40px;
+	}
+
+	@media only screen and (max-width: 1024px) {
+		width: 100%;
+
+		.collection-item {
+			width: 50%;
+			margin-top: 15px;
+		}
+		.slide, img {
+			height: 100%;
+		}
+		.collection-title {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-size: 22px;
+			color: rgba(0,0,0,0.33);
+		}
+		.slide-title {
+			margin-top: 10px;
+			font-size: 14px;
+		}
+		.carousel-standard {
+			padding-right: 0;
+		}
+	}
+	@media only screen and (min-width: 1025px) {
+		width: 75%;
+
+		.collection-item {
+			width: 33%;
+			margin-top: 20px;
+		}
+		.slide, img {
+			height: 100%;
+		}
+		.collection-title {
+			margin-top: 40px;
+			font-size: 27px;
+			color: rgba(0,0,0,0.33);
+		}
+		.slide-title {
+			margin-top: 15px;
+			font-size: 17px;
+		}
+		.carousel-standard {
+			padding-right: 0.67rem;
+		}
+	}
+
+	.plans {
+		font-size: 12px;
+		color: #4EAE50;
+	}
+
+  .slide, img {
+  	border-radius: 7px;
+		align-items: center;
+	}
+	.collection-item {
+		display: flex;
+		justify-content: center;
+	}
+
+	.slide-title {
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		white-space: normal;
+		text-align: left;
+		line-height: 16px;
+		padding-left: 2px;
+		color: #515151;
+	}
+
+	/* collections inside of collections */
+	.carousel-standard {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 25px;
+	}
+
+}
+
+
+/* ABOUT PLAN VIEW */
+.about-plan {
+
+	.plan-image {
+		img {
+			width: 100%;
+		}
+	}
+
+}
+
+.slick-track {
+	opacity: 1;
+}
+
+.slick-list {
+	padding: 0 0 !important;
+}
+
+.slick-arrow-left-container, .slick-arrow-right-container {
+	z-index: 50;
+}
+
+
+
+
