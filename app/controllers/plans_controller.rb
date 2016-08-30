@@ -23,7 +23,7 @@ class PlansController < ApplicationController
     end
 
     @title_tag = fromNode['head']['title']
-    @description_meta_tag = fromNode['head']['meta']
+    @node_meta_tags = fromNode['head']['meta']
     
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
@@ -43,7 +43,7 @@ class PlansController < ApplicationController
     end
 
     @title_tag = fromNode['head']['title']
-    @description_meta_tag = fromNode['head']['meta']
+    @node_meta_tags = fromNode['head']['meta']
 
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
@@ -63,7 +63,7 @@ class PlansController < ApplicationController
     end
 
     @title_tag = fromNode['head']['title']
-    @description_meta_tag = fromNode['head']['meta']
+    @node_meta_tags = fromNode['head']['meta']
 
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
