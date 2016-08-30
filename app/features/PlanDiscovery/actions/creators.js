@@ -12,15 +12,17 @@ const ActionCreators = {
 						var recommendationIds = [];	// for recommendation carousels
 						var hasSaved = false;				// for saved plans carousel
 
-						data.items.forEach((item, index) => {
-							if (item.type === 'collection') {
-								collectionIds.push(item.id);
-							} else if (item.type === 'recommended') {
-								recommendationIds.push(item.id);
-							} else if (item.type === 'saved') {
-								hasSaved = true
-							}
-						})
+						if (data && data.items) {
+							data.items.forEach((item, index) => {
+								if (item.type === 'collection') {
+									collectionIds.push(item.id);
+								} else if (item.type === 'recommended') {
+									recommendationIds.push(item.id);
+								} else if (item.type === 'saved') {
+									hasSaved = true
+								}
+							})
+						}
 
 						var promises = []
 
@@ -35,7 +37,9 @@ const ActionCreators = {
 						// if we have recommendations, let's get recommended
 						if (recommendationIds.length > 0) {
 							promises.concat(recommendationIds.map((id) => {
-								return dispatch(ActionCreators.recommendations({ language_tag: params.language_tag, id }))
+								return new Promise((resolve, reject) => {
+									dispatch(ActionCreators.recommendations({ language_tag: params.language_tag, id })).then(resolve, resolve)
+								})
 							}))
 						}
 
@@ -78,40 +82,48 @@ const ActionCreators = {
 		}
 	},
 
-	dynamicCollection(params, auth) {
+	recommendedPlansInfo(params, auth) {
 		return dispatch => {
-			if (params.context == 'saved') {
-				const saveParams = Object.assign({}, params, { dynamicCollection: true })
-				return Promise.all([
-					dispatch(ActionCreators.configuration()),
-					dispatch(ActionCreators.savedItems(saveParams, auth))
-				])
+			const recommendedParams = Object.assign({}, params, { dynamicCollection: true })
+			return Promise.all([
+				dispatch(ActionCreators.configuration()),
+				dispatch(ActionCreators.recommendations(recommendedParams))
+			])
+		}
+	},
 
-			} else if (params.context == 'recommended' && params.id) {
-				const recommendedParams = Object.assign({}, params, { dynamicCollection: true })
-				return Promise.all([
-					dispatch(ActionCreators.configuration()),
-					dispatch(ActionCreators.recommendations(recommendedParams))
-				])
-			}
-
+	savedPlanInfo(params, auth) {
+		return dispatch => {
+			const saveParams = Object.assign({}, params, { dynamicCollection: true })
+			return Promise.all([
+				dispatch(ActionCreators.configuration()),
+				dispatch(ActionCreators.savedItems(saveParams, auth))
+			])
 		}
 	},
 
 	readingplanInfo(params, auth) {
 		return dispatch => {
+			params.id = parseInt(params.id.toString().split('-')[0])
 			// tell the reducer to populate the recommendations in state.collection.plans.related
 			const planParams = Object.assign({}, params, { readingplanInfo: true })
 			// now check if requested reading plan view is a saved plan for the user
 			const savedplanParams = Object.assign({}, params, { savedplanCheck: true })
 
-			return Promise.all([
+			let promises = [
 				dispatch(ActionCreators.configuration()),
 				dispatch(ActionCreators.readingplanView(params, auth)),
-				dispatch(ActionCreators.recommendations(planParams)),
-				dispatch(ActionCreators.readingplanStats(params, auth)),
-				dispatch(ActionCreators.savedItems(savedplanParams, auth))
-			])
+				new Promise((resolve, reject) => {
+					dispatch(ActionCreators.recommendations(planParams)).then(resolve, resolve)
+				}),
+				dispatch(ActionCreators.readingplanStats(params, auth))
+			]
+
+			if (auth) {
+				promises.push(dispatch(ActionCreators.savedItems(savedplanParams, auth)))
+			}
+
+			return Promise.all(promises)
 		}
 	},
 

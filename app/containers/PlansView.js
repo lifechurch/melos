@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
+import rtlDetect from 'rtl-detect'
 
 class PlansView extends Component {
 	localizedLink(link) {
@@ -13,6 +14,12 @@ class PlansView extends Component {
 		} else {
 			return `/${languageTag}${link}`
 		}
+	}
+
+	isRtl() {
+		const { params, serverLanguageTag } = this.props
+		const languageTag = params.lang || serverLanguageTag || 'en'
+		return rtlDetect.isRtlLang(languageTag)
 	}
 
 	render() {
@@ -30,7 +37,7 @@ class PlansView extends Component {
 						<li className='inactive'>{ myPlansLink }</li>
 					</ul>
 				</div>
-				{children && React.cloneElement(children, { localizedLink: ::this.localizedLink })}
+				{children && React.cloneElement(children, { localizedLink: ::this.localizedLink, isRtl: ::this.isRtl })}
 			</div>
 		)
 	}

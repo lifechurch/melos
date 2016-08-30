@@ -24,7 +24,12 @@ export default function plansDiscovery(state = {}, action) {
 		case type("collectionsItemsRequest"):
 		case type("planSubscribeRequest"):
 		case type("userSubscriptionsRequest"):
-			return Immutable.fromJS(state).mergeDeep({ isFetching: true, hasErrors: false, errors: [] }).toJS()
+			if (action.params.uiFocus) {
+				return Immutable.fromJS(state).mergeDeep({ isFetching: true, hasErrors: false, errors: [], collection: { isFetching: true } }).toJS()
+			} else {
+				return Immutable.fromJS(state).mergeDeep({ isFetching: true, hasErrors: false, errors: [] }).toJS()
+			}
+
 
 		case type("planSaveforlaterFailure"):
 		case type("planRemoveSaveFailure"):
@@ -35,17 +40,39 @@ export default function plansDiscovery(state = {}, action) {
 		case type("collectionsItemsFailure"):
 		case type("planSubscribeFailure"):
 		case type("userSubscriptionsFailure"):
-			return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors }).toJS()
+			return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors, collection: { isFetching: false } }).toJS()
 
 		case type("collectionsItemsSuccess"):
 			if (action.params.uiFocus) {
-				var collection = Immutable.fromJS(action.response.collections[0]).mergeDeep(state.collection).toJS()
+
+				var collection
+				if (action.params.ids.indexOf(state.collection.id) > -1) {
+					var uniqueKeys = {}
+					var allItems = [
+						...state.collection.items,
+						...action.response.collections[0].items
+					].map((item) => {
+						if (!uniqueKeys[item.id]) {
+							uniqueKeys[item.id] = true
+							return item
+						}
+					})
+					var next_page = action.response.collections[0].next_page || 0
+					collection = Immutable.fromJS(action.response.collections[0]).mergeDeep(state.collection).set("items", allItems).set("next_page", next_page).toJS()
+				} else {
+					collection = Immutable.fromJS(action.response.collections[0]).set("next_page", action.response.collections[0].next_page || 0).toJS()
+				}
+
 				var responseItems = collection.items.map((item) => {
-					return Immutable.fromJS(item).set('items', []).toJS()
+					if (item.type === 'collection') {
+						return Immutable.fromJS(item).set('items', []).toJS()
+					} else {
+						return item
+					}
 				})
 				var map = buildMap(responseItems) // let's build a mapping for placing collections items inside any of these collections
-				var updatedCollection = Immutable.fromJS(collection).mergeDeep({ map }).toJS()
-				return Immutable.fromJS(state).mergeDeep({ collection: updatedCollection }).toJS()
+				var updatedCollection = Immutable.fromJS(collection).mergeDeep({ map, isFetching: false }).toJS()
+				return Immutable.fromJS(state).mergeDeep({ isFetching: false }).set('collection', updatedCollection).toJS()
 
 			//  if a collection is inside a collection, then we need to get those items
 			} else if (action.params.collectInception) {
@@ -53,13 +80,13 @@ export default function plansDiscovery(state = {}, action) {
 				var items = state.collection.items.slice(0)
 				var updatedstateItems = populateItems(collections, items, state.collection.map)
 				var updatedCollection = Immutable.fromJS(state.collection).set('items', updatedstateItems).toJS()
-				return Immutable.fromJS(state).mergeDeep({ collection: updatedCollection }).toJS()
+				return Immutable.fromJS(state).mergeDeep({ isFetching: false, collection: updatedCollection }).toJS()
 
 			} else {
 				const { collections } = action.response
 				var items = state.items.slice(0)
 				var updatedStateItems = populateItems(collections, items, state.map)
-				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], items: updatedStateItems }).toJS()
+				return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: false, errors: [], items: updatedStateItems }).toJS()
 			}
 
 		case type("savedItemsSuccess"):
@@ -91,9 +118,9 @@ export default function plansDiscovery(state = {}, action) {
 					return p.toJS()
 				})
 				if (action.params.context == 'saved') {
-					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { items: reading_plans, id: 'saved', context: 'saved' } }).toJS()
+					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { id: 'saved', context: 'saved' } }).setIn(['collection', 'items'], reading_plans).toJS()
 				} else {
-					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { items: reading_plans, id: action.params.id, context: 'recommended' } }).toJS()
+					return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], collection: { id: action.params.id, context: 'recommended' } }).setIn(['collection', 'items'], reading_plans).toJS()
 				}
 
 			} else {

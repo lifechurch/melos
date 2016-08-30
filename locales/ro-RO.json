@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Da",
 	"ui.no button": "Nu",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Planuri de citire",
+	"plans.related plans": "Planuri asemănătoare",
 	"plans.see all": "Vezi toate",
 	"plans.discover": "Descoperă",
 	"plans.my_plans": "Planurile mele",

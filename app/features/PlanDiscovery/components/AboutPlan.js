@@ -9,6 +9,7 @@ import AvatarList from '../../../components/AvatarList'
 import ShareWidget from './ShareWidget'
 import Helmet from 'react-helmet'
 import { injectIntl } from 'react-intl'
+import imageUtil from '../../../lib/imageUtil'
 
 class AboutPlan extends Component {
 
@@ -21,9 +22,8 @@ class AboutPlan extends Component {
 		this.setState({ dialogOpen: !this.state.dialogOpen })
 	}
 
-
 	render() {
-		const { readingPlan, imageConfig, auth, localizedLink } = this.props
+		const { readingPlan, imageConfig, auth, localizedLink, isRtl, params } = this.props
 
 		if (!(readingPlan && readingPlan.stats && readingPlan.related)) {
 			return (
@@ -32,12 +32,13 @@ class AboutPlan extends Component {
 		}
 
 		var friendsReading, friendsCompleted, completions, readingList, completedList = null
-		var readingPlansStats = ((completions = readingPlan.stats.total_completed) >= 1000) ? <p className='friends_completed'><FormattedMessage id='plans.stats.total completions' values={{count: completions}} /></p> : null
 		var publisherLink = (readingPlan.publisher_url) ? <a className='publisher' href={readingPlan.publisher_url}><FormattedMessage id='plans.about publisher'/></a> : null
-		var language_tag = auth.userData.language_tag
+		var language_tag = params.lang || auth.userData.language_tag || 'en'
+
+
 
 		if ( (readingPlan.stats.friends != null) && (readingList = readingPlan.stats.friends.subscribed) ) {
-			var readingText = (readingList.length == 1) ? <FormattedMessage id='plans.stats.friends reading one'/> : <FormattedMessage id='plans.stats.friends reading other'/>
+			var readingText = (readingList.length == 1) ? <FormattedMessage id='plans.stats.friends reading.one' values={{ count: readingPlan.stats.friends.subscribed.length }} /> : <FormattedMessage id='plans.stats.friends reading.other' values={{ count: readingPlan.stats.friends.subscribed.length }} />
 			friendsReading = (
 				<div>
 					<p className='friends_completed'>{ readingText }</p>
@@ -45,8 +46,9 @@ class AboutPlan extends Component {
 				</div>
 			)
 		}
+
 		if ( (readingPlan.stats.friends != null) && (completedList = readingPlan.stats.friends.completed) ) {
-			var completedText = (completedList.length == 1) ? <FormattedMessage id='plans.stats.friends completed one'/> : <FormattedMessage id='plans.stats.friends completed other'/>
+			var completedText = (completedList.length == 1) ? <FormattedMessage id='plans.stats.friends completed.one' values={{ count: readingPlan.stats.friends.completed.length }} /> : <FormattedMessage id='plans.stats.friends completed.other' values={{ count: readingPlan.stats.friends.completed.length }} />
 			friendsCompleted = (
 				<div>
 					<p className='friends_completed'>{ completedText }</p>
@@ -55,22 +57,53 @@ class AboutPlan extends Component {
 			)
 		}
 
+		const milestones = [0, 1000, 2500, 5000, 7500, 10000, 25000, 50000, 75000, 100000, 250000, 500000, 750000]
+		let completedMilestone = 0
+
+		milestones.forEach((milestone) => {
+			if (readingPlan.stats.total_completed > milestone &&  milestone > completedMilestone) {
+				completedMilestone = milestone
+			}
+		})
+
+
+		const readingPlansStats = (completedMilestone !== 0) ?
+			<p className='friends_completed'><FormattedMessage id='plans.stats.total completions' values={{count: completedMilestone}} /></p> :
+			null
+
+		const selectedImage = imageUtil(360, 640, false, 'about_plan', readingPlan, false)
+		const url = `https://www.bible.com/reading-plans/${readingPlan.id}-${readingPlan.slug}`
+
 		return (
 			<div className='row collapse about-plan horizontal-center'>
 				<Helmet
-					title={`${readingPlan.name[language_tag] || readingPlan.name.default} - ${readingPlan.about.text[language_tag] || readingPlan.about.text.default.substr(0, 155)}`}
-					meta={[ { name: 'description', content: readingPlan.about.text[language_tag] || readingPlan.about.text.default } ]}
+					title={`${readingPlan.name[language_tag] || readingPlan.name.default} - ${readingPlan.about.text[language_tag] || readingPlan.about.text.default}`}
+					meta={[
+						{ name: 'description', content: readingPlan.about.text[language_tag] || readingPlan.about.text.default },
+						{ name: 'og:image', content: `https:${selectedImage.url}` },
+						{ name: 'og:title', content: `${readingPlan.name[language_tag] || readingPlan.name.default}` },
+						{ name: 'og:url', content: url },
+						{ name: 'og:description', content: `${readingPlan.about.text[language_tag] || readingPlan.about.text.default}` },
+						{ name: 'twitter:image', content: `https:${selectedImage.url}` },
+						{ name: 'twitter:card', content: 'summary' },
+						{ name: 'twitter:url', content: url },
+						{ name: 'twitter:title', content: `${readingPlan.name[language_tag] || readingPlan.name.default}` },
+						{ name: 'twitter:description', content: `${readingPlan.about.text[language_tag] || readingPlan.about.text.default}` },
+						{ name: 'twitter:site', content: '@YouVersion' },
+						{ name: 'og:image:width', content: selectedImage.width },
+						{ name: 'og:image:height', content: selectedImage.height }
+					]}
 				/>
 				<div className='columns large-8 medium-8'>
 					<div className='reading_plan_index_header'>
-						<Link className='plans' to={localizedLink(`/reading-plans`)}><FormattedMessage id='plans.plans'/></Link>
+						<Link className='plans' to={localizedLink(`/reading-plans`)}>&larr;<FormattedMessage id='plans.plans'/></Link>
 						<div className='right'>
 							<ShareWidget/>
 						</div>
 					</div>
 					<article className='reading_plan_index'>
 						<div className='plan-image'>
-							<Image width={720} height={400} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
+							<Image className="rp-hero-img" width={720} height={400} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
 						</div>
 						<div className='row collapse'>
 							<div className='columns large-8 medium-8'>
@@ -95,7 +128,7 @@ class AboutPlan extends Component {
 						</div>
 						<hr></hr>
 						<div className='row collapse'>
-							<CarouselStandard carouselContent={readingPlan.related} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} />
+							<CarouselStandard carouselContent={readingPlan.related} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
 						</div>
 					</article>
 				</div>

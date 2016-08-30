@@ -19,7 +19,7 @@ import { getClient } from '@youversion/js-api'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import getRoutes from './app/routes.js'
 import createLogger from 'redux-node-logger'
-
+import planLocales from './locales/config/planLocales.json'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
@@ -159,12 +159,12 @@ function getConfig(feature) {
 	return Object.assign({}, defaultConfig, config)
 }
 
-function loadData(feature, params, startingState, sessionData, store) {
+function loadData(feature, params, startingState, sessionData, store, Locale) {
 	return new Promise((resolve, reject) => {
 		let fn = null
 		try {
 			fn = require('./app/standalone/' + feature + '/loadData').default
-			resolve(fn(params, startingState, sessionData, store))
+			resolve(fn(params, startingState, sessionData, store, Locale))
 		} catch(ex) {
 			resolve()
 		}
@@ -192,6 +192,7 @@ function getLocale(languageTag) {
 			final.locale2 = lc.locale2
 			final.locale3 = lc.locale3
 			final.momentLocale = lc.momentLocale
+			final.planLocale = planLocales[lc.locale]
 		}
 	}
 
@@ -232,9 +233,11 @@ router.post('/', urlencodedParser, function(req, res) {
 		const defaultState = getDefaultState(feature)
 		let startingState = Object.assign({}, defaultState, { auth: verifiedAuth })
 		startingState = mapStateToParams(feature, startingState, params)
+
 		try {
 			const store = getStore(feature, startingState, null, null)
-			loadData(feature, params, startingState, sessionData, store).then((action) => {
+			loadData(feature, params, startingState, sessionData, store, Locale).then((action) => {
+
 				if (typeof action === 'function') {
 					store.dispatch(action).then(() => {
 						finish()

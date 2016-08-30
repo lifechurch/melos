@@ -36,6 +36,14 @@
 		"displayName": "Català"
 	},
 	{
+		"nativeName": "Português (Portugal)",
+		"englishName": "Portuguese (Portugal)",
+		"locale": "pt-PT",
+		"locale2": "pt",
+		"locale3": "por",
+		"displayName": "Português (Portugal)"
+	},
+	{
 		"nativeName": "Čeština",
 		"englishName": "Czech",
 		"locale": "cs-CZ",

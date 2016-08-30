@@ -1,7 +1,8 @@
 {
 	"ui.yes button": "Evet",
 	"ui.no button": "Hayır",
-	"plans.plans back": "← Plans",
+	"plans.plans": "Okuma Planları",
+	"plans.related plans": "Benzer Planlar",
 	"plans.see all": "Hepsini Gör",
 	"plans.discover": "Keşfedin",
 	"plans.my_plans": "Planlarım",
