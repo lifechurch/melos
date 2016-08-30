@@ -4,8 +4,24 @@
   title << " | " if @subtitle.present?
   title << (@subtitle || " | #{t('meta.mobile.title')} | #{@site.title}").to_s
 
-%title= title
-%meta{name: 'Description', content: content_for?(:meta_description) ? yield(:meta_description) : t("meta.site.description")}
+- if @title_tag.present?
+  != @title_tag
+- else
+  %title= title
+
+- if @node_meta_tags.present?
+  != @node_meta_tags
+- else
+  %meta{name: 'Description', content: content_for?(:meta_description) ? yield(:meta_description) : t("meta.site.description")}
+  - if content_for?(:twitter_meta)
+    = yield :twitter_meta
+  - else
+    %meta{name: "twitter:image", content: url_for(image_path(localized_bible_icon(121)))}
+
+  - if content_for?(:facebook_meta)
+    = yield :facebook_meta
+  - else
+    %meta{property: "og:image", content: url_for(image_path(localized_bible_icon(200)))}
 
 = cache "head_meta_#{@site}_#{locale}", expires_in: YV::Caching.a_short_time do
   %link{rel: "shortcut icon", href:"/favicon.ico"}
@@ -35,16 +51,6 @@
   /  = stylesheet_link_tag "ie8"
   /[if IE 7]
   /  = stylesheet_link_tag "ie7"
-
-- if content_for?(:twitter_meta)
-  = yield :twitter_meta
-- else
-  %meta{name: "twitter:image", content: url_for(image_path(localized_bible_icon(121)))}
-
-- if content_for?(:facebook_meta)
-  = yield :facebook_meta
-- else
-  %meta{property: "og:image", content: url_for(image_path(localized_bible_icon(200)))}
 
 = content_for?(:additional_meta) ? yield(:additional_meta) : nil
 = content_for?(:stylesheets) ? yield(:stylesheets) : nil
