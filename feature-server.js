@@ -19,6 +19,7 @@ import { getClient } from '@youversion/js-api'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import getRoutes from './app/routes.js'
 import createLogger from 'redux-node-logger'
+import planLocales from './locales/config/planLocales.json'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
@@ -191,7 +192,7 @@ function getLocale(languageTag) {
 			final.locale2 = lc.locale2
 			final.locale3 = lc.locale3
 			final.momentLocale = lc.momentLocale
-			final.planLocale = ['pt-PT', 'zh-CN', 'zh-TW'].indexOf(final.locale) > -1 ? final.locale.replace('-', '_') : lc.locale2
+			final.planLocale = planLocales[lc.locale]
 		}
 	}
 
