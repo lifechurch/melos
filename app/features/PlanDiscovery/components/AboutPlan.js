@@ -71,17 +71,7 @@ class AboutPlan extends Component {
 			<p className='friends_completed'><FormattedMessage id='plans.stats.total completions' values={{count: completedMilestone}} /></p> :
 			null
 
-		let selectedImage = {}
-		if (readingPlan.images) {
-			selectedImage = imageUtil(360, 640, false, 'about_plan', readingPlan, false)
-		} else {
-			selectedImage = {
-				url: "https://s3.amazonaws.com/yvplans-staging/default/720x405.jpg",
-				width: 720,
-				height: 405
-			}
-		}
-
+		const selectedImage = imageUtil(360, 640, false, 'about_plan', readingPlan, false)
 		const url = `https://www.bible.com/reading-plans/${readingPlan.id}-${readingPlan.slug}`
 
 		return (

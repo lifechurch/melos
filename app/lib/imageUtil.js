@@ -2,15 +2,23 @@ export default function(height, width, imageId, type, config, thumbnail) {
 
 	// if we're getting the image from reading plan view call, then the formatting is different
 	if (type === 'about_plan') {
-		const selectedImage = config.images.reduce((lastMatch, currentSize) => {
-			const currentDiff = Math.abs(currentSize.width - width)
-			return (currentDiff < lastMatch.diff) ? { diff: currentDiff, width: currentSize.width, height: currentSize.height, url: currentSize.url } : lastMatch
-		}, { diff: width, width: width, height: height })
+		if (Array.isArray(config.images)) {
+			const selectedImage = config.images.reduce((lastMatch, currentSize) => {
+				const currentDiff = Math.abs(currentSize.width - width)
+				return (currentDiff < lastMatch.diff) ? { diff: currentDiff, width: currentSize.width, height: currentSize.height, url: currentSize.url } : lastMatch
+			}, { diff: width, width: width, height: height })
 
-		return {
-			url: selectedImage.url,
-			width: selectedImage.width,
-			height: selectedImage.height
+			return {
+				url: selectedImage.url,
+				width: selectedImage.width,
+				height: selectedImage.height
+			}
+		} else {
+			return {
+				url: "https://s3.amazonaws.com/yvplans-staging/default/720x405.jpg",
+				width,
+				height
+			}
 		}
 
 	// format is different for creating an avatar image as well
