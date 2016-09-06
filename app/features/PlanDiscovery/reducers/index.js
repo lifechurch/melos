@@ -45,6 +45,8 @@ export default function plansDiscovery(state = {}, action) {
 			// if there are no related plans let's clear it out so we don't show related plans from a previous plan
 			if (action.params.readingplanInfo) {
 				return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors, collection: { isFetching: false } }).deleteIn(['plans', 'related']).toJS()
+			} else {
+				return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors, collection: { isFetching: false } }).toJS()
 			}
 
 		case type("collectionsItemsSuccess"):
