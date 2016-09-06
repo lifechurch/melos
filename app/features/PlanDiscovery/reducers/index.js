@@ -36,11 +36,16 @@ export default function plansDiscovery(state = {}, action) {
 		case type("planInfoFailure"):
 		case type("planStatsFailure"):
 		case type("savedItemsFailure"):
-		case type("recommendationsItemsFailure"):
 		case type("collectionsItemsFailure"):
 		case type("planSubscribeFailure"):
 		case type("userSubscriptionsFailure"):
 			return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors, collection: { isFetching: false } }).toJS()
+
+		case type("recommendationsItemsFailure"):
+			// if there are no related plans let's clear it out so we don't show related plans from a previous plan
+			if (action.params.readingplanInfo) {
+				return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors, collection: { isFetching: false } }).deleteIn(['plans', 'related']).toJS()
+			}
 
 		case type("collectionsItemsSuccess"):
 			if (action.params.uiFocus) {
