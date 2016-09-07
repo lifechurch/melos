@@ -25,17 +25,21 @@ class AboutPlan extends Component {
 	render() {
 		const { readingPlan, imageConfig, auth, localizedLink, isRtl, params } = this.props
 
-		if (!(readingPlan && readingPlan.stats && readingPlan.related)) {
+		if (!(readingPlan && readingPlan.stats)) {
 			return (
 				<div></div>
 			)
 		}
 
-		var friendsReading, friendsCompleted, completions, readingList, completedList = null
+		var friendsReading, friendsCompleted, completions, readingList, completedList, relatedCarousel = null
 		var publisherLink = (readingPlan.publisher_url) ? <a className='publisher' href={readingPlan.publisher_url}><FormattedMessage id='plans.about publisher'/></a> : null
 		var language_tag = params.lang || auth.userData.language_tag || 'en'
 
-
+		if (readingPlan.related) relatedCarousel = (
+				<div className='row collapse'>
+					<CarouselStandard carouselContent={readingPlan.related} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
+				</div>
+			)
 
 		if ( (readingPlan.stats.friends != null) && (readingList = readingPlan.stats.friends.subscribed) ) {
 			var readingText = (readingList.length == 1) ? <FormattedMessage id='plans.stats.friends reading.one' values={{ count: readingPlan.stats.friends.subscribed.length }} /> : <FormattedMessage id='plans.stats.friends reading.other' values={{ count: readingPlan.stats.friends.subscribed.length }} />
@@ -127,9 +131,7 @@ class AboutPlan extends Component {
 							</div>
 						</div>
 						<hr></hr>
-						<div className='row collapse'>
-							<CarouselStandard carouselContent={readingPlan.related} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
-						</div>
+						{ relatedCarousel }
 					</article>
 				</div>
 			</div>
