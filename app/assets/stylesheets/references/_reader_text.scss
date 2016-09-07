@@ -428,4 +428,9 @@
     font-style: italic;
     font-weight: bold;
   }
+
+  // hide cross references in
+  .vid191 .note.x {
+    display: none;
+  }
 }
