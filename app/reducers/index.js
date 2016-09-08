@@ -11,6 +11,7 @@ import references from './references'
 import plans from './plans'
 import configuration from '../features/EventFeedMine/reducers/configuration'
 import plansDiscovery from '../features/PlanDiscovery/reducers'
+import saveForLater from '../features/SaveForLater/reducers'
 
 const rootReducer = combineReducers({
 	auth: auth,
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
 	locations,
 	plans,
 	plansDiscovery,
+	saveForLater,
 	configuration,
 	references,
 	routing: routeReducer,
