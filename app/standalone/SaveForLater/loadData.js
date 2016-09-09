@@ -1,4 +1,4 @@
-import ActionCreators from '../../features/SaveForLater/actions/creators'
+import ActionCreators from '../../features/PlanDiscovery/actions/creators'
 
 export default function loadData(params, startingState, sessionData, store, Locale) {
 	return new Promise((resolve, reject) => {

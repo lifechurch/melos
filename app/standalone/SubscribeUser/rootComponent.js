@@ -1,2 +1,2 @@
-import { RouterContext } from 'react-router'
-export default RouterContext
+import SubscribeUserView from '../../features/SubscribeUser/components/SubscribeUserView'
+export default SubscribeUserView

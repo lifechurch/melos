@@ -1,2 +1,2 @@
-import { RouterContext } from 'react-router'
-export default RouterContext
+import SaveForLaterView from '../../features/SaveForLater/components/SaveForLaterView'
+export default SaveForLaterView

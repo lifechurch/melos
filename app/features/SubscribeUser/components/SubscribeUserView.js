@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import Image from '../../../components/Carousel/Image'
-import CheckMark from '../../../components/CheckMark'
+import SubscribeUserDialog from '../../PlanDiscovery/components/SubscribeUserDialog'
 
-class SaveForLaterView extends Component {
+class SubscribeUserView extends Component {
 
 	render() {
 		const { readingPlan, auth } = this.props
@@ -12,6 +12,8 @@ class SaveForLaterView extends Component {
 		return (
 			<div className='row horizontal-center'>
 				<div className='columns large-8 text-center'>
+
+					<h6><FormattedMessage id='plans.start'/></h6>
 
 					<a href={readingPlan.short_url}>
 						<Image width={320} height={180} thumbnail={false} imageId="false" type="about_plan" config={readingPlan} />
@@ -24,11 +26,9 @@ class SaveForLaterView extends Component {
 							<a href={readingPlan.short_url}>{ readingPlan.name[auth.userData.language_tag] || readingPlan.name.default }</a>
 						</h3>
 
-						<h5 className='vertical-center horizontal-center'>
-							<CheckMark height={30} width={30} />
-							&nbsp;
-							<FormattedMessage id="plans.saved for later" />
-						</h5>
+						<hr/>
+
+						<SubscribeUserDialog {...this.props} />
 					</div>
 
 				</div>
@@ -44,4 +44,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(SaveForLaterView)
+export default connect(mapStateToProps, null)(SubscribeUserView)

@@ -1,10 +1,10 @@
 export default function(height, width, imageId, type, config, thumbnail) {
 
-	// if we're getting the image from reading plan view call, then the formatting is different
+	// if we're getting the image from reading plan view call, then config contains the actual images instead of state.configuration
 	if (type === 'about_plan') {
 		if (Array.isArray(config.images)) {
 			const selectedImage = config.images.reduce((lastMatch, currentSize) => {
-				const currentDiff = Math.abs(currentSize.width - width)
+				const currentDiff = Math.abs( (currentSize.width - width) + (currentSize.height - height) )
 				return (currentDiff < lastMatch.diff) ? { diff: currentDiff, width: currentSize.width, height: currentSize.height, url: currentSize.url } : lastMatch
 			}, { diff: width, width: width, height: height })
 
