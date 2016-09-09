@@ -1413,7 +1413,8 @@ da:
             yes button: "Ja"
             no button: "Nej"
         plans: 
-            plans back: "← Plans"
+            plans: "Planer"
+            related plans: "Lignende Planer"
             see all: "Se alle"
             discover: "Opdag"
             my_plans: "Mine planer"

@@ -1428,7 +1428,8 @@ ro:
             yes button: "Da"
             no button: "Nu"
         plans: 
-            plans back: "← Planuri"
+            plans: "Planuri de citire"
+            related plans: "Planuri asemănătoare"
             see all: "Vezi toate"
             discover: "Descoperă"
             my_plans: "Planurile mele"

@@ -1443,7 +1443,8 @@ hr:
             yes button: "Da"
             no button: "Ne"
         plans: 
-            plans back: "← Plans"
+            plans: "Planovi"
+            related plans: "Povezani planovi"
             see all: "Pogledaj sve"
             discover: "Otkrij"
             my_plans: "Moji planovi"

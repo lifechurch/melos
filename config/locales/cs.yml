@@ -1428,7 +1428,8 @@ cs:
             yes button: "Ano"
             no button: "Ne"
         plans: 
-            plans back: "← Plány čtení"
+            plans: "Plány"
+            related plans: "Podobné plány"
             see all: "Zobrazit vše"
             discover: "Objevujte"
             my_plans: "Moje plány"

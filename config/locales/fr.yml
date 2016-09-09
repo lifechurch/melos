@@ -1413,7 +1413,8 @@ fr:
             yes button: "Oui"
             no button: "Non"
         plans: 
-            plans back: "← Plans"
+            plans: "Plans"
+            related plans: "Plans suggérés"
             see all: "Tout Voir"
             discover: "Découvrir"
             my_plans: "Mes plans"

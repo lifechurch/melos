@@ -1413,7 +1413,8 @@ hu:
             yes button: "Igen"
             no button: "Nem"
         plans: 
-            plans back: "← Plans"
+            plans: "Tervek"
+            related plans: "Kapcsolódó tervek"
             see all: "Összes megtekintése"
             discover: "Felfedezés"
             my_plans: "Terveim"

@@ -1413,7 +1413,8 @@ mk:
             yes button: "Да"
             no button: "Не"
         plans: 
-            plans back: "← Plans"
+            plans: "Планови"
+            related plans: "Слични Планови"
             see all: "Види ги сите"
             discover: "Откриј"
             my_plans: "Мои планови"

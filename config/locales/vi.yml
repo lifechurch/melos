@@ -127,7 +127,7 @@ vi:
         best educational app: "App giáo dục tốt nhất!"
         kids_app: 
             title: "Ứng Dụng Kinh Thánh Thiếu Nhi"
-            description: "App Kinh Thánh Thiếu Nhi là một cách tuyệt vời để trẻ em học biết những câu chuyện về Đức Chúa Jêsus, món quà sự sống đời đời, cũng như nhiều bài học khác mà Chúa dạy chúng ta. Qua các cảm ứng tương tác hình ảnh, điểm thưởng nhận được và các bộ sưu tầm châu báu, các em sẽ trực tiếp tương giao và lớn lên trong Lời Chúa."
+            description: "Ứng dụng Kinh Thánh Thiếu Nhi là một cách tuyệt vời để trẻ em học biết những câu chuyện về Đức Chúa Jêsus, món quà sự sống đời đời, cũng như nhiều bài học khác mà Chúa dạy chúng ta. Qua các cảm ứng tương tác hình ảnh, điểm thưởng nhận được và các bộ sưu tầm châu báu, các em sẽ trực tiếp tương giao và lớn lên trong Lời Chúa."
         100million: 
             title: "Khởi đầu với 100 triệu"
             description: "App Kinh Thánh đã đạt 100 triệu lượt cài đặt -  một cột mốc tuyệt vời! Nhưng chúng ta chỉ mới khởi đầu. Hãy tải App Kinh Thánh và chia sẻ với bạn bè hôm nay! Hãy cùng nhau làm nên lịch sử!"
@@ -165,23 +165,23 @@ vi:
         feature 4: "Các trò chơi và hoạt động giúp trẻ nhớ những gì đã học"
         feature 5: "Bảng điều khiển dễ sử dụng cho trẻ em"
         share: 
-            tell friends: "Hãy chia sẻ về App Kinh Thánh Thiếu Nhi cho mọi người!"
-            facebook name: "App Kinh Thánh Thiếu Nhi"
-            facebook description: "App Kinh Thánh Thiếu Nhi đã sẵn sàng! Hãy tải về miễn phí cho iOS hoặc Android: các câu chuyện Kinh Thánh sống động giúp con em của bạn học hỏi, vui chơi và lớn lên trong Lời Chúa. https://www.bible.com/vi/kids"
+            tell friends: "Hãy chia sẻ về Ứng dụng Kinh Thánh Thiếu Nhi cho mọi người!"
+            facebook name: "Ứng dụng Kinh Thánh Thiếu Nhi"
+            facebook description: "Ứng dụng Kinh Thánh Thiếu Nhi đã sẵn sàng! Hãy tải về miễn phí cho iOS hoặc Android: các câu chuyện Kinh Thánh sống động giúp con em của bạn học hỏi, vui chơi và lớn lên trong Lời Chúa. https://www.bible.com/vi/kids"
             facebook link: "http://www.bible.com/vi/kids"
             facebook redirect: "http://www.bible.com/vi/kids"
-            twitter description: "App Kinh Thánh Thiếu Nhi từ @YouVersion đã sẵn sàng! Hữu ích và hoàn toàn miễn phí! Tải về từ bible.com/vi/kids."
+            twitter description: "Ứng dụng Kinh Thánh Thiếu Nhi từ @YouVersion đã sẵn sàng! Hữu ích và hoàn toàn miễn phí! Tải về từ bible.com/vi/kids."
             twitter hashtags: "vikidsbible"
             email: "Email"
-            email subject: "App Kinh Thánh Thiếu Nhi đã sẵn sàng!"
-            email body: "App Kinh Thánh Thiếu Nhi đã sẵn sàng, hoàn toàn miễn phí dành cho các thiết bị iPhone, iPad, iPod touch và Android! App tập hợp các mẩu chuyện Kinh Thánh với hình động cảm ứng và các hoạt động kích thích sự học hỏi - một cách tuyệt vời để giúp con em bạn làm quen với những câu chuyện quan trọng trong Kinh Thánh. Hãy vào bible.com/vi/kids trên thiết bị di động của bạn để tải về!"
+            email subject: "Ứng dụng Kinh Thánh Thiếu Nhi đã sẵn sàng!"
+            email body: "Ứng dụng Kinh Thánh Thiếu Nhi đã sẵn sàng, hoàn toàn miễn phí dành cho các thiết bị iPhone, iPad, iPod touch và Android! App tập hợp các mẩu chuyện Kinh Thánh với hình động cảm ứng và các hoạt động kích thích sự học hỏi - một cách tuyệt vời để giúp con em bạn làm quen với những câu chuyện quan trọng trong Kinh Thánh. Hãy vào bible.com/vi/kids trên thiết bị di động của bạn để tải về!"
         partner: 
             youversion: "YouVersion: App Kinh Thánh phổ biến nhất hiện nay"
             in partnership: "hợp tác với"
             one hope: "One Hope: Kinh Thánh Đặc Biệt Dành Cho Thiếu Nhi"
         links: 
-            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
-            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            apple: "https://itunes.apple.com/vi/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=vi"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Bây giờ"
     select dropdown: "--Chọn lựa--"
@@ -1150,7 +1150,7 @@ vi:
         banner open: "Mở"
     download bafk ad: 
         title: "Tải Ứng Dụng Kinh Thánh Thiếu Nhi"
-        description copy: "App Kinh Thánh Thiếu Nhi là cách tuyệt vời để dạy trẻ em các câu chuyện Kinh Thánh về Chúa Jêsus."
+        description copy: "Ứng dụng Kinh Thánh Thiếu Nhi là cách tuyệt vời để dạy trẻ em các câu chuyện Kinh Thánh về Chúa Jêsus."
         download: "Tải bây giờ"
     about page: 
         relevancy: "Tầm quan trọng"
@@ -1398,7 +1398,8 @@ vi:
             yes button: "Có"
             no button: "Không"
         plans: 
-            plans back: "← Plans"
+            plans: "Kế hoạch"
+            related plans: "Các kế hoạch liên quan"
             see all: "Xem tất cả"
             discover: "Khám phá"
             my_plans: "Kế hoạch của tôi"

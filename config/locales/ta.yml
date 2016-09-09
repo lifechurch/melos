@@ -164,7 +164,7 @@ ta:
         amazon: "Amazon Appstore for Android-ல் உள்ளது"
         app icon: "App icon for The Bible App for Kids"
         jesus and friends: "இயேசுவும் நண்பர்களும்"
-        interact text: "Interact with the Bible and see it come to life."
+        interact text: "பைபிளுடன் தொடர்பு கொண்டு அது உயிர் பெறுவதை பாருங்கள்."
         story text 1: "ஏதேன் தோட்டம்"
         story text 2: "முதல் கிறிஸ்மஸ்"
         story text 3: "யோசேப்பு, மரியாள், குழந்தை இயேசுவும் தொழுவத்தில்"
@@ -176,7 +176,7 @@ ta:
         feature 4: "Games and activities help kids remember what they learn"
         feature 5: "Kid-friendly navigation"
         share: 
-            tell friends: "Tell your friends about the Bible App for Kids."
+            tell friends: "சிறுவருக்கான பைபிளை பற்றி உங்கள் நண்பர்களிடம் சொல்லுங்கள்."
             facebook name: "சிறுவருக்கான பைபிள்"
             facebook description: "The Bible App for Kids is here! Download the free app for iOS and Android today: interactive Bible stories to help your child learn, play, and grow in God’s Word. www.bible.com/kids"
             facebook link: "https://www.bible.com/ta/kids"
@@ -1413,11 +1413,12 @@ ta:
             yes button: "ஆம்"
             no button: "இல்லை"
         plans: 
-            plans back: "← Plans"
+            plans: "வாசிப்பு திட்டங்கள்"
+            related plans: "சம்பந்தப்பட்ட திட்டங்கள்"
             see all: "அனைத்தும் பார்"
             discover: "கண்டறிக"
             my_plans: "என்னுடைய திட்டங்கள்"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>%{plan_title} பைபிள் திட்டத்தினை %{username} %{day} அன்று நிறைவு செய்துள்ளார்.</b><b></b><b></b>"
             status: 
                 on track: "சரியான தடத்தில்!"
                 days ahead: 

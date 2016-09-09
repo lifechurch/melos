@@ -1398,11 +1398,12 @@ ja:
             yes button: "はい"
             no button: "いいえ"
         plans: 
-            plans back: "← Plans"
+            plans: "プラン"
+            related plans: "関連項目"
             see all: "一覧表示"
             discover: "発見"
             my_plans: "自分のプラン"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>%{username}さんが</b>読書プラン<b>「%{plan_title}」の</b><b>%{day}日目を</b>読み終えました。"
             status: 
                 on track: "予定通り!"
                 days ahead: 

@@ -1398,11 +1398,12 @@ fa:
             yes button: "بله"
             no button: "نه"
         plans: 
-            plans back: "← Plans"
+            plans: "برنامه‌های مطالعه"
+            related plans: "برنامه‌های مطالعۀ مربوطه"
             see all: "همه را ببینید"
             discover: "مطالب تازه را کشف کنید"
             my_plans: "برنامه‌های مطالعۀ من"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>%{username}</b><b>روز %{day}</b>را از برنامه مطالعه %{plan_title}تمام کرده است.<b></b>"
             status: 
                 on track: "مطالعه طبق برنامه است!"
                 days ahead: 
@@ -1543,7 +1544,7 @@ fa:
             day number: "روز %{day}"
             which day in plan: "%{day} از %{total} روز"
             must start to complete: "این برنامه را آغاز کنید تا مطالعات انجام شده را ذخیره نمایید!"
-            invalid reference: "Sorry, one of the scripture references for this reading may not exist in the selected version. Try selecting a different version, above. If you continue to see this message, please let our <a href='%{support_url}' target='_self'>support team</a> know about the issue."
+            invalid reference: "متأسفانه یکی از آیات ذکر شده برای این مطالعه در ترجمۀ انتخابی شما وجود ندارد. لطفاً ترجمۀ دیگری را انتخاب کنید. اگر شما باز این پیغام را در یافت کردید لطفاً <a href='%{support_url}' target='_self'>تیم پشتبانی ما</a> را با خبر سازید."
             sidebar notice: "شما در حال مشاهدهٔ برنامه‌ای برای مطالعه هستید."
             congratulations: "تبریک می‌گوییم!"
             completed notice: "تبریک می‌گوییم! شما برنامهٔ مطالعه را تمام کردید"
