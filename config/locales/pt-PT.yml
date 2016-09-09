@@ -1413,7 +1413,8 @@ pt-PT:
             yes button: "Sim"
             no button: "Não"
         plans: 
-            plans back: "← Plans"
+            plans: "Planos"
+            related plans: "Planos Relacionados"
             see all: "Ver Todos"
             discover: "Descubra"
             my_plans: "Os meus planos"

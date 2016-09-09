@@ -1428,7 +1428,8 @@ lv:
             yes button: "Jā"
             no button: "Nē"
         plans: 
-            plans back: "← Plans"
+            plans: "Plāns"
+            related plans: "Saistītie plāni"
             see all: "Apskatīt visu"
             discover: "Atklāj"
             my_plans: "Mans plāns"

@@ -1473,7 +1473,8 @@ cy:
             yes button: "Ie"
             no button: "Na"
         plans: 
-            plans back: "← Plans"
+            plans: "Cynlluniau"
+            related plans: "Cynlluniau Tebyg"
             see all: "Y cwbl"
             discover: "Darganfod"
             my_plans: "Fy Nghynlluniau"

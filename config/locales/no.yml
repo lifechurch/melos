@@ -1413,7 +1413,8 @@
             yes button: "Ja"
             no button: "Nei"
         plans: 
-            plans back: "← Plans"
+            plans: "Leseplaner"
+            related plans: "Liknende planer"
             see all: "Se alle"
             discover: "Oppdag"
             my_plans: "Mine leseplaner"

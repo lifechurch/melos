@@ -1398,7 +1398,8 @@ th:
             yes button: "ใช่"
             no button: "ไม่"
         plans: 
-            plans back: "← Plans"
+            plans: "แผนการอ่าน"
+            related plans: "แผนการอ่านที่เกี่ยวข้อง"
             see all: "ดูทั้งหมด"
             discover: "ค้นหา"
             my_plans: "แผนฯของฉัน"

@@ -1413,7 +1413,8 @@ sq:
             yes button: "Po"
             no button: "Jo"
         plans: 
-            plans back: "← Plans"
+            plans: "Plane"
+            related plans: "Plane të ngjashme"
             see all: "Shiko të gjitha"
             discover: "Zbulo"
             my_plans: "Planet e mia"

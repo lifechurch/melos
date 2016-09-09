@@ -1473,7 +1473,8 @@ ar:
             yes button: "نعم"
             no button: "لا"
         plans: 
-            plans back: "← Plans"
+            plans: "خطط"
+            related plans: "خطط القراءة ذات صلة"
             see all: "عرض كل المحتوي"
             discover: "اكتشف"
             my_plans: "خططي"

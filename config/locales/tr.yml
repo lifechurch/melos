@@ -1413,7 +1413,8 @@ tr:
             yes button: "Evet"
             no button: "Hayır"
         plans: 
-            plans back: "← Plans"
+            plans: "Okuma Planları"
+            related plans: "Benzer Planlar"
             see all: "Hepsini Gör"
             discover: "Keşfedin"
             my_plans: "Planlarım"
