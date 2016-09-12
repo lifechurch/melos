@@ -21,8 +21,8 @@ class CarouselStandard extends Component {
       infinite: false,
       variableWidth: true,
       arrows: true,
-      slidesToScroll: 2,
-      rlt: isRtl(),
+      slidesToScroll: 3,
+      rtl: isRtl(),
       prevArrow: <CarouselArrow dir='left' fill='gray' width={19} height={19}/>,
       nextArrow: <CarouselArrow dir='right' fill='gray' width={19} height={19}/>,
       responsive: [ {

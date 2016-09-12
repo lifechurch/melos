@@ -77,7 +77,7 @@
     "react-redux": "^4.0.6",
     "react-router": "^2.6.1",
     "react-router-redux": "^2.1.0",
-    "react-slick": "^0.12.2",
+    "react-slick": "^0.14.2",
     "react-time-picker": "^1.1.0",
     "react-waypoint": "^3.1.1",
     "redux": "^3.0.5",
