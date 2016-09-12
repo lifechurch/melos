@@ -27,9 +27,14 @@
 
 - VA Copy
 
-- VA Bookmark
-
 - VA Note
+- VA Bookmark
+	- Verse Card
+	- Label Selector
+		- Label Pill
+		- Label List
+	- Note Text Editor
+	- Reference Selector
 
 - Audio Player
 	- Trigger Button

@@ -17,6 +17,8 @@
 		}
 	},
 
+	audio: {},
+
 	languages: {
 		byFilter: {
 			filter: "blah",
@@ -194,5 +196,9 @@
 			1: {},
 			3: {}
 		}
+	}
+
+	verseAction: {
+
 	}
 }

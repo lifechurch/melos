@@ -11,9 +11,11 @@ import references from './references'
 import plans from './plans'
 import configuration from '../features/EventFeedMine/reducers/configuration'
 import plansDiscovery from '../features/PlanDiscovery/reducers'
+import bibleReader from '../features/Bible/reducers'
 
 const rootReducer = combineReducers({
 	auth: auth,
+	bibleReader,
 	eventFeeds,
 	content,
 	event,
