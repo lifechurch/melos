@@ -1,0 +1,198 @@
+{
+	highlightColors: [],
+	verseSelection: [],
+
+	settings: {
+		fontSize: 'M',
+		fontFamily: 'Avenir',
+		footnotes: true,
+		numbersAndTitles: true
+		fontSizes: [
+			{ label: 'S', size: '14px' },
+			{ label: 'M', size: '20px' },
+			{ label: 'L', size: '24px' }
+		],
+		audio: {
+			playbackRate: 1.5
+		}
+	},
+
+	languages: {
+		byFilter: {
+			filter: "blah",
+			results: {}
+		},
+		all: {
+			ium: {
+				name: "Iu Mien",
+				language_tag: "ium",
+				iso_639_1: null,
+				iso_639_3: "ium",
+				local_name: " \u0e20\u0e32\u0e29\u0e32\u0e2d\u0e34\u0e27\u0e40\u0e21\u0e35\u0e48\u0e22\u0e19",
+				id: 233,
+				text_direction: "ltr",
+				has_text: true,
+				has_audio: false,
+				font: null,
+				total_versions: 1
+			}
+		}
+	},
+
+	show: {
+		audio: true,
+		next: true,
+		prev: true,
+		parallel: true
+	},
+
+	chapter: {
+		reference: {
+			human: "Genesis 1",
+			version_id: 1,
+			usfm: [
+				"GEN.1"
+			]
+		},
+		copyright: {
+			text: "Crown Copyright in UK",
+			html: "Crown Copyright in UK"
+		},
+		next: {
+			toc: true,
+			canonical: true,
+			human: "Genesis 2",
+			version_id: 1,
+			usfm: [
+				"GEN.2"
+			]
+		},
+		content: "<div class='version vid1 iso6393eng' data-vid='1' data-iso6393='eng'>\n    <div class='book bkGEN'>\n        <div class='chapter ch1' data-usfm='GEN.1'>\n            <div class='label'>1</div><div class='p'><span class='content'>  </span><span class='verse v1' data-usfm='GEN.1.1'><span class='label'>1</span><span class='content'>In the beginning God created the heaven and the earth.</span></span></div><div class='p'><span class='verse v1' data-usfm='GEN.1.1'><span class='content'>  </span></span><span class='verse v2' data-usfm='GEN.1.2'><span class='label'>2</span><span class='content'>And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.</span></span></div><div class='p'><span class='verse v2' data-usfm='GEN.1.2'><span class='content'>  </span></span><span class='verse v3' data-usfm='GEN.1.3'><span class='label'>3</span><span class='content'>And God said, Let there be light: and there was light.</span></span></div><div class='p'><span class='verse v3' data-usfm='GEN.1.3'><span class='content'>  </span></span><span class='verse v4' data-usfm='GEN.1.4'><span class='label'>4</span><span class='content'>And God saw the light, that it was good: and God divided the light from the darkness.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>the light from&#8230;: Heb. between the light and between the darkness</span></span></span></span></div><div class='p'><span class='verse v4' data-usfm='GEN.1.4'><span class='content'>  </span></span><span class='verse v5' data-usfm='GEN.1.5'><span class='label'>5</span><span class='content'>And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>And the evening&#8230;: Heb. And the evening was, and the morning was etc.</span></span></span></span></div><div class='p'><span class='verse v5' data-usfm='GEN.1.5'><span class='content'>  </span></span><span class='verse v6' data-usfm='GEN.1.6'><span class='label'>6</span><span class='content'>And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>firmament: Heb. expansion</span></span></span></span></div><div class='p'><span class='verse v6' data-usfm='GEN.1.6'><span class='content'>  </span></span><span class='verse v7' data-usfm='GEN.1.7'><span class='label'>7</span><span class='content'>And God made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so.</span></span></div><div class='p'><span class='verse v7' data-usfm='GEN.1.7'><span class='content'>  </span></span><span class='verse v8' data-usfm='GEN.1.8'><span class='label'>8</span><span class='content'>And God called the firmament Heaven. And the evening and the morning were the second day.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>And the evening&#8230;: Heb. And the evening was, and the morning was etc.</span></span></span></span></div><div class='p'><span class='verse v8' data-usfm='GEN.1.8'><span class='content'>  </span></span><span class='verse v9' data-usfm='GEN.1.9'><span class='label'>9</span><span class='content'>And God said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear: and it was so.</span></span></div><div class='p'><span class='verse v9' data-usfm='GEN.1.9'><span class='content'>  </span></span><span class='verse v10' data-usfm='GEN.1.10'><span class='label'>10</span><span class='content'>And God called the dry land Earth; and the gathering together of the waters called he Seas: and God saw that it was good.</span></span></div><div class='p'><span class='verse v10' data-usfm='GEN.1.10'><span class='content'>  </span></span><span class='verse v11' data-usfm='GEN.1.11'><span class='label'>11</span><span class='content'>And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>grass: Heb. tender grass</span></span></span></span></div><div class='p'><span class='verse v11' data-usfm='GEN.1.11'><span class='content'>  </span></span><span class='verse v12' data-usfm='GEN.1.12'><span class='label'>12</span><span class='content'>And the earth brought forth grass, and herb yielding seed after his kind, and the tree yielding fruit, whose seed was in itself, after his kind: and God saw that it was good.</span></span></div><div class='p'><span class='verse v12' data-usfm='GEN.1.12'><span class='content'>  </span></span><span class='verse v13' data-usfm='GEN.1.13'><span class='label'>13</span><span class='content'>And the evening and the morning were the third day.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>And the evening&#8230;: Heb. And the evening was, and the morning was etc.</span></span></span></span></div><div class='p'><span class='verse v13' data-usfm='GEN.1.13'><span class='content'>  </span></span><span class='verse v14' data-usfm='GEN.1.14'><span class='label'>14</span><span class='content'>And God said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>the day&#8230;: Heb. between the day and between the night</span></span></span></span></div><div class='p'><span class='verse v14' data-usfm='GEN.1.14'><span class='content'>  </span></span><span class='verse v15' data-usfm='GEN.1.15'><span class='label'>15</span><span class='content'>And let them be for lights in the firmament of the heaven to give light upon the earth: and it was so.</span></span></div><div class='p'><span class='verse v15' data-usfm='GEN.1.15'><span class='content'>  </span></span><span class='verse v16' data-usfm='GEN.1.16'><span class='label'>16</span><span class='content'>And God made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>to rule the day&#8230;: Heb. for the rule of the day, etc.</span></span></span></span></div><div class='p'><span class='verse v16' data-usfm='GEN.1.16'><span class='content'>  </span></span><span class='verse v17' data-usfm='GEN.1.17'><span class='label'>17</span><span class='content'>And God set them in the firmament of the heaven to give light upon the earth,</span></span></div><div class='p'><span class='verse v17' data-usfm='GEN.1.17'><span class='content'>  </span></span><span class='verse v18' data-usfm='GEN.1.18'><span class='label'>18</span><span class='content'>And to rule over the day and over the night, and to divide the light from the darkness: and God saw that it was good.</span></span></div><div class='p'><span class='verse v18' data-usfm='GEN.1.18'><span class='content'>  </span></span><span class='verse v19' data-usfm='GEN.1.19'><span class='label'>19</span><span class='content'>And the evening and the morning were the fourth day.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>And the evening&#8230;: Heb. And the evening was, and the morning was etc.</span></span></span></span></div><div class='p'><span class='verse v19' data-usfm='GEN.1.19'><span class='content'>  </span></span><span class='verse v20' data-usfm='GEN.1.20'><span class='label'>20</span><span class='content'>And God said, Let the waters bring forth abundantly the moving creature that hath life, and fowl that may fly above the earth in the open firmament of heaven.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>moving: or, creeping</span></span></span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>life: Heb. soul</span></span></span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>fowl&#8230;: Heb. let fowl fly</span></span></span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>open&#8230;: Heb. face of the firmament of heaven</span></span></span></span></div><div class='p'><span class='verse v20' data-usfm='GEN.1.20'><span class='content'>  </span></span><span class='verse v21' data-usfm='GEN.1.21'><span class='label'>21</span><span class='content'>And God created great whales, and every living creature that moveth, which the waters brought forth abundantly, after their kind, and every winged fowl after his kind: and God saw that it was good.</span></span></div><div class='p'><span class='verse v21' data-usfm='GEN.1.21'><span class='content'>  </span></span><span class='verse v22' data-usfm='GEN.1.22'><span class='label'>22</span><span class='content'>And God blessed them, saying, Be fruitful, and multiply, and fill the waters in the seas, and let fowl multiply in the earth.</span></span></div><div class='p'><span class='verse v22' data-usfm='GEN.1.22'><span class='content'>  </span></span><span class='verse v23' data-usfm='GEN.1.23'><span class='label'>23</span><span class='content'>And the evening and the morning were the fifth day.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>And the evening&#8230;: Heb. And the evening was, and the morning was etc.</span></span></span></span></div><div class='p'><span class='verse v23' data-usfm='GEN.1.23'><span class='content'>  </span></span><span class='verse v24' data-usfm='GEN.1.24'><span class='label'>24</span><span class='content'>And God said, Let the earth bring forth the living creature after his kind, cattle, and creeping thing, and beast of the earth after his kind: and it was so.</span></span></div><div class='p'><span class='verse v24' data-usfm='GEN.1.24'><span class='content'>  </span></span><span class='verse v25' data-usfm='GEN.1.25'><span class='label'>25</span><span class='content'>And God made the beast of the earth after his kind, and cattle after their kind, and every thing that creepeth upon the earth after his kind: and God saw that it was good.</span></span></div><div class='p'><span class='verse v25' data-usfm='GEN.1.25'><span class='content'>  </span></span><span class='verse v26' data-usfm='GEN.1.26'><span class='label'>26</span><span class='content'>And God said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.</span></span></div><div class='p'><span class='verse v26' data-usfm='GEN.1.26'><span class='content'>  </span></span><span class='verse v27' data-usfm='GEN.1.27'><span class='label'>27</span><span class='content'>So God created man in his own image, in the image of God created he him; male and female created he them.</span></span></div><div class='p'><span class='verse v27' data-usfm='GEN.1.27'><span class='content'>  </span></span><span class='verse v28' data-usfm='GEN.1.28'><span class='label'>28</span><span class='content'>And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>moveth: Heb. creepeth</span></span></span></span></div><div class='p'><span class='verse v28' data-usfm='GEN.1.28'><span class='content'>  </span></span><span class='verse v29' data-usfm='GEN.1.29'><span class='label'>29</span><span class='content'>And God said, Behold, I have given you every herb bearing seed, which is upon the face of all the earth, and every tree, in the which is the fruit of a tree yielding seed; to you it shall be for meat.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>bearing&#8230;: Heb. seeding seed</span></span></span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>yielding&#8230;: Heb. seeding seed</span></span></span></span></div><div class='p'><span class='verse v29' data-usfm='GEN.1.29'><span class='content'>  </span></span><span class='verse v30' data-usfm='GEN.1.30'><span class='label'>30</span><span class='content'>And to every beast of the earth, and to every fowl of the air, and to every thing that creepeth upon the earth, wherein there is life, I have given every green herb for meat: and it was so.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>life: Heb. a living soul</span></span></span></span></div><div class='p'><span class='verse v30' data-usfm='GEN.1.30'><span class='content'>  </span></span><span class='verse v31' data-usfm='GEN.1.31'><span class='label'>31</span><span class='content'>And God saw every thing that he had made, and, behold, it was very good. And the evening and the morning were the sixth day.</span><span class='note f'><span class='label'>#</span><span class=' body'><span class='ft'>And the evening&#8230;: Heb. And the evening was, and the morning was etc.</span></span></span></span></div>\n        </div>\n    </div>\n</div>",
+		audio: [
+			{
+				download_urls: {
+					format_mp3_32k: "//d1ibykdbqak8v3.cloudfront.net/bible/audio/8/32k/GEN/1-b5969203ff27ab059b850b2210ae90b7.mp3?version_id=1"
+				},
+				timing_available: true,
+				id: 8,
+				version_id: 1,
+				title: "KJV Listener's Bible"
+			}
+		],
+		previous: null
+	},
+
+	parallelChapter: {},
+
+	books: {
+		all: {},
+		byFilter: {
+			filter: 'blah',
+			results: {}
+		},
+		byCanon: {}
+	},
+
+	chapters: {
+		"MAT.1": {},
+		"MAT.2": {},
+		"MAT.3": {}
+	},
+
+	versions: {
+
+		byLang: {
+			eng: {
+				1: {
+				abbreviation: "lifNT",
+
+				books: {
+					MAT: {
+						usfm: "MAT",
+						audio: false,
+						abbreviation: "Mat",
+						human: "Matthew",
+						human_long: "MATTHEW",
+						text: true,
+						canon: "nt"
+					}
+				},
+
+				chapters: {
+					MAT: {
+						MAT.1: {
+							toc: true,
+							canonical: true,
+							human: 1,
+							usmf: "MAT.1"
+						},
+						MAT.2: {
+							toc: true,
+							canonical: true,
+							human: 1,
+							usmf: "MAT.1"
+						}
+					}
+				},
+
+				copyright_long: {
+					text: "Limbu (lif) Nepal   Copyright Information \u00a9 2009, Wycliffe. All rights reserved. This translation text is made available to you under the terms of the Creative Commons License: Attribution-Noncommercial-No Derivative Works. (http://creativecommons.org/licenses/by-nc-nd/3.0/  You may share, copy, distribute, transmit, and extract portions or quotations from this work, provided that you include the above copyright information: You must give Attribution to the work. You do not sell this work for a profit. You do not make any derivative works that change any of the actual words or punctuation of the Scriptures. Permissions beyond the scope of this license may be available if you contact us  Printed book ISBN 9789937217637 First edition ",
+					html: "<p>Limbu (lif) Nepal</br> </br> </p> <h2>Copyright Information</h2> <p>\u00a9 2009, Wycliffe. All rights reserved.</p> <p>This translation text is made available to you under the terms of the Creative Commons License: Attribution-Noncommercial-No Derivative Works. (<a href='http://creativecommons.org/licenses/by-nc-nd/3.0/'>http://creativecommons.org/licenses/by-nc-nd/3.0/</a> </p> <p>You may share, copy, distribute, transmit, and extract portions or quotations from this work, provided that you include the above copyright information:</p> <ul> <li>You must give Attribution to the work.</li> <li>You do not sell this work for a profit.</li> <li>You do not make any derivative works that change any of the actual words or punctuation of the Scriptures.</li> </ul> <p>Permissions beyond the scope of this license may be available if you <a href='mailto:ScriptureCopyrightPermissions_Intl@Wycliffe.org'>contact us</a> </p> <p>Printed book ISBN 9789937217637</p> <p>First edition </p>"
+				},
+
+				copyright_short: {
+					text: "Wycliffe",
+					html: "<p>Wycliffe</p>"
+				},
+
+				language: {
+					name: "Limbu",
+					language_tag: "lif",
+					iso_639_1: null,
+					iso_639_3: "lif",
+					local_name: "Limbu",
+					text_direction: "ltr"
+				},
+
+				local_title: "\u190f\u1921\u1931\u1918\u1920\u1939\u1911\u1922 \u1910\u1920\u193a\u1934\u1908\u1920\u1930 \u1901\u1922\u191b\u1931 \u1914\u1920\u1931\u191c\u1922\u1935",
+
+				platforms: {
+					win8: true,
+					wp7: true,
+					ios: true,
+					facebook: true,
+					blackberry: true,
+					android: true
+				},
+
+				publisher: {
+					url: "http://www.wycliffe.org",
+					description: null,
+					id: 3,
+					name: "Wycliffe"
+				},
+
+				reader_footer: {
+					text: null,
+					html: null
+				},
+
+				reader_footer_url: null,
+
+				text: true,
+
+				title: "Limbu New Testament"
+			}
+		},
+
+		byFilter: {
+			filter: 'blah',
+			results: {}
+		},
+
+		recent: {
+			1: {},
+			3: {}
+		}
+	}
+}

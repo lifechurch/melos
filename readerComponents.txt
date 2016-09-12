@@ -1,0 +1,46 @@
+- Header
+	- Chapter Picker
+		- Chapter Label
+			- Chapter Filter
+			- Chapter Selector
+				- Book List
+				- Chapter List
+	- Version Picker
+		- Version Label
+			- Version Filter
+			- Version Selector
+				- Language List
+				- Version List
+
+- Chapter
+	- Verse
+
+- Verse Action
+  - Selected Label
+	- Action List
+		- Action
+	- Color List
+		- Color
+	- Close Button
+
+- VA Share
+
+- VA Copy
+
+- VA Bookmark
+
+- VA Note
+
+- Audio Player
+	- Trigger Button
+  - Speed Bar
+  - Play Button
+  - Seek Button
+  - Audio Track
+
+- Reader Settings
+  - Trigger Button
+  - Font Size Selector
+  - Font Family Selector
+  - Footnotes Toggle
+  - Numbers and Title Toggle
