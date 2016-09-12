@@ -6,7 +6,6 @@ import { Link } from 'react-router'
 class SubscribeUserDialog extends Component {
 
 	subscribeUser(privacy) {
-		console.log('subscribeUser yo')
 		const { dispatch, readingPlan, auth } = this.props
 		if (!auth.isLoggedIn) window.location.replace(`/sign-in`)
 		// if user isn't subscribed, then subscribe!
@@ -30,8 +29,6 @@ class SubscribeUserDialog extends Component {
 
 	render() {
 
-		console.log('rendering')
-		console.log(this.props)
 		return (
 			<div className='plan-privacy-buttons text-center'>
 				<p className='detail-text'><FormattedMessage id="plans.privacy.visible to friends?" /></p>

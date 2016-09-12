@@ -7,17 +7,11 @@ import defaultState from './defaultState'
 import createLogger from 'redux-logger'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
-import { useRouterHistory } from 'react-router'
-import { createHistory } from 'history'
-import getRoutes from './routes'
+import SaveForLaterView from '../../features/SaveForLater/components/SaveForLaterView'
 
 require('moment/min/locales')
 
 let initialState = defaultState
-
-let browserHistory = useRouterHistory(createHistory)({
-	basename: '/'
-})
 
 if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
 	initialState = window.__INITIAL_STATE__
@@ -33,12 +27,10 @@ addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 
 
-const routes = getRoutes()
-
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<Router routes={routes} history={browserHistory} onUpdate={() => window.scrollTo(0, 0)} />
+			<SaveForLaterView />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app')
