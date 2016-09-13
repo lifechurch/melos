@@ -1,6 +1,18 @@
 - events_link = "/sign-up?redirect=events-admin"
 - if current_auth
   - events_link = "https://events.bible.com/"
+:ruby
+  puts case I18n.locale.to_s
+  when "fr", "ru", "zh-TW", "ko", "de", "nl"
+    image_dir = I18n.locale
+  when "pt", "pt-BR"
+    image_dir = "pt-BR"
+  when "es", "es-ES"
+    image_dir = "es"
+  when "zh", "zh-CN"
+    image_dir = "zh-CN"
+  else image_dir = "en"
+  end
 
 .MobileDropdown
   .close-dropdown-btn-mobile
@@ -18,8 +30,8 @@
       .mobile-menu-btn.show-mobile
         %img{:alt => "", "data-no-retina" => "", :src => image_path("features/events/menu-icon.svg"), :style => "width:19px;"}/
       %a.logo{:href => "/features/events"}
-        %img.logo-white{:alt => "", "data-no-retina" => "", :src => image_path("features/events/yv-logo-white.svg")}/
-        %img.logo-black{:alt => "", "data-no-retina" => "", :src => image_path("features/events/yv-logo-gray.svg")}/
+        %img.logo-white{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/yv-logo-white.svg")}/
+        %img.logo-black{:alt => "", "data-no-retina" => "", :src => image_path("features/events/#{image_dir}/yv-logo-gray.svg")}/
       %ul.main-nav
         %li
           %a.features-btn{:href => '/features/events'}=t('events.menu.features')
