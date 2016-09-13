@@ -68,6 +68,56 @@ class PlansController < ApplicationController
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
+  # action and view from node server for save for later url (from email link)
+  def save_for_later_action
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "id" => params[:id]
+    }
+
+    if (!current_auth)
+      redirect_to sign_in_path(redirect: save_for_later_action_path) and return
+    end
+
+    fromNode = YV::Nodestack::Fetcher.get('SaveForLater', p, cookies, current_auth, current_user)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render locals: { html: fromNode['html'] }
+  end
+
+  # action and view from node server for subscribe user url (from email link)
+  def subscribe_user_action
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "id" => params[:id]
+    }
+
+    if (!current_auth)
+      redirect_to sign_in_path(redirect: subscribe_user_action_path) and return 
+    end
+
+    fromNode = YV::Nodestack::Fetcher.get('SubscribeUser', p, cookies, current_auth, current_user)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render locals: { html: fromNode['html'], js: fromNode['js'] }
+  end
+
   def sample
     respond_to do |format|
       format.json { return render nothing: true }
