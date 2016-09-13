@@ -14,7 +14,7 @@ class CarouselGradient extends Component {
       infinite: true,
       variableWidth: true,
       slidesToScroll: 2,
-      rlt: isRtl(),
+      rtl: isRtl(),
       prevArrow: <CarouselArrow dir='left' width={25} height={25} backColor='black'/>,
       nextArrow: <CarouselArrow dir='right' width={25} height={25} backColor='black'/>,
       responsive: [ {

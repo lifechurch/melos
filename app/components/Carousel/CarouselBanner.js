@@ -17,7 +17,7 @@ class CarouselBanner extends Component {
       initialSlide: 0,
       slickGoTo: 0,
 			arrows: true,
-			rlt: isRtl(),
+			rtl: isRtl(),
 			prevArrow: <CarouselArrow dir='left' width='30' height='30' backColor='black'/>,
 			nextArrow: <CarouselArrow dir='right' width='30' height='30' backColor='black'/>,
       responsive: [ {
