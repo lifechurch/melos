@@ -1403,7 +1403,7 @@ ko:
             see all: "모두 보기"
             discover: "찾기"
             my_plans: "내 묵상 계획"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>%{username}</b>님이 <b>%{plan_title}</b>묵상 계획<b> %{day}일 분량을</b>마치셨습니다."
             status: 
                 on track: "순조롭게 진행 중!"
                 days ahead: 

@@ -42,29 +42,29 @@ common:
   event_api_host: "events-staging.bible.com"
 
 development:
-#  api_root: youversionapi.com
-#  api_referer: web-dev-staging.youversionapistaging.com
-#  api_version: "3.1"
-  api_root: youversionapistaging.com
-  api_referer: web-dev-local.youversionapistaging.com
+  api_root: youversionapi.com
+  api_referer: web.youversionapi.com
   api_version: "3.1"
+#  api_root: youversionapistaging.com
+#  api_referer: web-dev-local.youversionapistaging.com
+#  api_version: "3.1"
   api_default_timeout: 15000
   rack_execution_timeout: 15000
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
   twitter_secret: "LppBTdEyoJ3ASfPqxHz97IDW5UxpXVim2DbrqdJSrTI"
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
-  #event_import_url: "http://localhost:3000/featureImport/"
-  event_import_url: "https://events-staging.bible.com/featureImport/"
+  event_import_url: "http://localhost:3000/featureImport/"
+  #event_import_url: "https://events-staging.bible.com/featureImport/"
   event_api_host: "localhost"
   event_api_port: "3000"
 
 staging:
-#  api_root: youversionapi.com
-#  api_referer: web-dev-staging.youversionapistaging.com
-#  api_version: "3.1"
   api_root: youversionapistaging.com
-  api_referer: web-dev-local.youversionapistaging.com
+  api_referer: web-dev-staging.youversionapistaging.com
   api_version: "3.1"
+#  api_root: youversionapi.com
+#  api_referer: web.youversionapi.com
+#  api_version: "3.1"
   api_default_timeout: 15
   rack_execution_timeout: 15
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"

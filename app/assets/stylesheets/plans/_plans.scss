@@ -1738,11 +1738,11 @@ html[dir="rtl"] .plan-settings {
 .reading_plan_index_header {
   .share-panel {
     position: absolute;
-    width: 185px;
+    /* width: 185px; */
     height: 38px;
     z-index: 98;
     right: -5px;
-    padding-left: 2px;
+    padding-left: 5px;
     background-color: rgba(255,255,255,0.75);
   }
 }
@@ -1996,5 +1996,12 @@ html[dir="rtl"] {
         color: $gray;
       }
     }
+  }
+}
+
+// link for subscribing user
+.a_subscribe_user_action {
+  .plan-privacy-buttons {
+    border: none;
   }
 }
