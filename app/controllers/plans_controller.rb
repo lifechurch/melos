@@ -33,7 +33,7 @@ class PlansController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
-        "id" => params[:id]
+        "id" => params[:id].split("-")[0]
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
@@ -53,7 +53,7 @@ class PlansController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
-        "id" => params[:id]
+        "id" => params[:id].split("-")[0]
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
