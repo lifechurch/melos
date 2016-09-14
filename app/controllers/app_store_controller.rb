@@ -98,16 +98,15 @@ class AppStoreController < ActionController::Base
       if params.has_key?(:ret)
         'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
       else
-
-        browser = Browser.new(request.env["HTTP_USER_AGENT"])
-        if browser.platform.android? and browser.chrome?
-          android_scheme = "market"
-          android_package = "com.android.vending"
-          encoded_browser_fallback = ERB::Util.url_encode("#{request.base_url}/app?ret=1")
-          "intent://details?id=com.sirma.mobile.bible.android#Intent;scheme=#{android_scheme};package=#{android_package};S.browser_fallback_url=#{encoded_browser_fallback};end;"
-        else
-          'http://app.bible.com/b'
-        end
+        # browser = Browser.new(request.env["HTTP_USER_AGENT"])
+        # if browser.platform.android? and browser.chrome?
+        #   android_scheme = "market"
+        #   android_package = "com.android.vending"
+        #   encoded_browser_fallback = ERB::Util.url_encode("#{request.base_url}/app?ret=1")
+        #   return "intent://details?id=com.sirma.mobile.bible.android#Intent;scheme=#{android_scheme};package=#{android_package};S.browser_fallback_url=#{encoded_browser_fallback};end;"
+        # else
+        'http://app.bible.com/b'
+        # end
       end
     when /amazon/
       'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
@@ -134,7 +133,7 @@ class AppStoreController < ActionController::Base
     when /iphone|iPhone|ipad|iPad|ipod|iPod/
       store_path('ios')
     when /android|Android/
-      'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
+      store_path('android')
     when /silk|Silk/
       store_path('amazon')
     when /blackberry|BlackBerry|bb/
