@@ -91,13 +91,15 @@ class AppStoreController < ActionController::Base
       if params.has_key?(:ret)
         'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=282935706&mt=8'
       else
+        # branch link
         'http://app.bible.com/b'
       end
     when /android/
       if params.has_key?(:ret)
         'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
       else
-        'http://app.bible.com/b'
+        # firebase link
+        'https://j794q.app.goo.gl/H3Ed'
       end
     when /amazon/
       'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
