@@ -16,7 +16,7 @@ class AppStoreController < ActionController::Base
       unless (I18n.locale.to_s.eql?("zh-CN") and "android".casecmp(request.env["X_MOBILE_DEVICE"].nil? ? "" : request.env["X_MOBILE_DEVICE"]))
         # return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
         # return redirect_to store_path(params[:store]) if params[:store].present?
-        return redirect_to 'https://j794q.app.goo.gl/crwp', :status => 307 and return
+        redirect_to 'https://j794q.app.goo.gl/crwp', :status => 307 and return
 
 
       end
