@@ -105,7 +105,7 @@ class AppStoreController < ActionController::Base
         #   encoded_browser_fallback = ERB::Util.url_encode("#{request.base_url}/app?ret=1")
         #   return "intent://details?id=com.sirma.mobile.bible.android#Intent;scheme=#{android_scheme};package=#{android_package};S.browser_fallback_url=#{encoded_browser_fallback};end;"
         # else
-        'http://app.bible.com/b'
+        'https://j794q.app.goo.gl/H3Ed'
         # end
       end
     when /amazon/
