@@ -88,25 +88,18 @@ class AppStoreController < ActionController::Base
   def store_path(store=nil)
     case store
     when /ios/
-      if params.has_key?(:ret)
+      if params.has_key?(:ret) # fallback if firebase link fails
         'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=282935706&mt=8'
       else
-        # branch link
-        'http://app.bible.com/b'
+        # firebase link to open app
+        'https://j794q.app.goo.gl/4M9Y'
       end
     when /android/
-      if params.has_key?(:ret)
+      if params.has_key?(:ret) # fallback if firebase link fails
         'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
       else
-        # browser = Browser.new(request.env["HTTP_USER_AGENT"])
-        # if browser.platform.android? and browser.chrome?
-        #   android_scheme = "market"
-        #   android_package = "com.android.vending"
-        #   encoded_browser_fallback = ERB::Util.url_encode("#{request.base_url}/app?ret=1")
-        #   return "intent://details?id=com.sirma.mobile.bible.android#Intent;scheme=#{android_scheme};package=#{android_package};S.browser_fallback_url=#{encoded_browser_fallback};end;"
-        # else
+        # firebase link to open app
         'https://j794q.app.goo.gl/H3Ed'
-        # end
       end
     when /amazon/
       'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
