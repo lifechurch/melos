@@ -99,7 +99,7 @@ class AppStoreController < ActionController::Base
         'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
       else
         # firebase link to open app
-        'https://j794q.app.goo.gl/H3Ed'
+        'https://j794q.app.goo.gl/4M9Y'
       end
     when /amazon/
       'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
