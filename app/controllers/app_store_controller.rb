@@ -99,7 +99,7 @@ class AppStoreController < ActionController::Base
         'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
       else
         # firebase link
-        'https://j794q.app.goo.gl/?link=https://www.bible.com/&al=youversion://home&apn=com.sirma.mobile.bible.android&afl=https://www.bible.com/app?ret%3D1&isi=282935706&ad=1&utm_source=bible.com&utm_medium=link&utm_campaign=app'
+        'https://j794q.app.goo.gl/crwp'
       end
     when /amazon/
       'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
