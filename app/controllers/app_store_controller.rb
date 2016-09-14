@@ -14,11 +14,8 @@ class AppStoreController < ActionController::Base
     unless googleBot?(request)
       # for chinese locale we do not want to auto-redirect to google playstore
       unless (I18n.locale.to_s.eql?("zh-CN") and "android".casecmp(request.env["X_MOBILE_DEVICE"].nil? ? "" : request.env["X_MOBILE_DEVICE"]))
-        # return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
-        # return redirect_to store_path(params[:store]) if params[:store].present?
-        redirect_to 'https://j794q.app.goo.gl/crwp', :status => 307 and return
-
-
+        return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
+        return redirect_to store_path(params[:store]) if params[:store].present?
       end
     end
     render "pages/app", layout: "layouts/application"
@@ -101,8 +98,16 @@ class AppStoreController < ActionController::Base
       if params.has_key?(:ret)
         'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
       else
-        # firebase link
-        'https://j794q.app.goo.gl/crwp'
+
+        browser = Browser.new(request.env["HTTP_USER_AGENT"])
+        if browser.platform.android? and browser.chrome?
+          android_scheme = "market"
+          android_package = "com.android.vending"
+          encoded_browser_fallback = ERB::Util.url_encode("#{request.base_url}/app?ret=1")
+          "intent://details?id=com.sirma.mobile.bible.android#Intent;scheme=#{android_scheme};package=#{android_package};S.browser_fallback_url=#{encoded_browser_fallback};end;"
+        else
+          'http://app.bible.com/b'
+        end
       end
     when /amazon/
       'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
