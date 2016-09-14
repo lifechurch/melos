@@ -21,7 +21,7 @@ class NotificationsController < ApplicationController
 
   def edit
     @current_user = get_user
-    if (!current_user)
+    if (!@current_user)
       redirect_to sign_in_path(redirect: notification_settings_path) and return
     end
 
