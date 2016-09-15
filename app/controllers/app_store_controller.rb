@@ -92,14 +92,14 @@ class AppStoreController < ActionController::Base
         'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=282935706&mt=8'
       else
         # firebase link to open app
-        'https://j794q.app.goo.gl/?link=https%3A%2F%2Fwww.bible.com&al=youversion%3A%2F%2Fbible.com&apn=com.sirma.mobile.bible.android&amv=6010979&isi=282935706&ibi=tv.lifechurch.bible&ipbi=tv.lifechurch.bible&utm_source=bible.com&utm_medium=link&utm_campaign=app'
+        'https://j794q.app.goo.gl/0RKn'
       end
     when /android/
       if params.has_key?(:ret) # fallback if firebase link fails
         'https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'
       else
         # firebase link to open app
-        'https://j794q.app.goo.gl/?link=https%3A%2F%2Fwww.bible.com&al=youversion%3A%2F%2Fbible.com&apn=com.sirma.mobile.bible.android&amv=6010979&isi=282935706&ibi=tv.lifechurch.bible&ipbi=tv.lifechurch.bible&utm_source=bible.com&utm_medium=link&utm_campaign=app'
+        'https://j794q.app.goo.gl/0RKn'
       end
     when /amazon/
       'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
