@@ -14,7 +14,7 @@ class AppStoreController < ActionController::Base
     unless googleBot?(request)
       # for chinese locale we do not want to auto-redirect to google playstore
       unless (I18n.locale.to_s.eql?("zh-CN") and "android".casecmp(request.env["X_MOBILE_DEVICE"].nil? ? "" : request.env["X_MOBILE_DEVICE"]))
-        redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]), :status => 307 and return unless request.env["X_MOBILE_DEVICE"].nil?
+        return redirect_to store_path_for_device(request.env["X_MOBILE_DEVICE"]) unless request.env["X_MOBILE_DEVICE"].nil?
         return redirect_to store_path(params[:store]) if params[:store].present?
       end
     end
