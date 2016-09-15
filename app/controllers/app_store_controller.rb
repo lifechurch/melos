@@ -89,13 +89,13 @@ class AppStoreController < ActionController::Base
     case store
     when /ios/
       # firebase link to open app
-      # 'https://j794q.app.goo.gl/0RKn'
+      'https://j794q.app.goo.gl/?link=https%3A%2F%2Fwww.bible.com%2Fapp%3Fret%3D1&afl=market://details?id=com.sirma.mobile.bible.android&al=youversion%3A%2F%2Fbible.com&apn=com.sirma.mobile.bible.android&amv=7010992&isi=282935706&ibi=tv.lifechurch.bible&utm_source=bible.com&utm_medium=link&utm_campaign=app'
       #
-      'http://app.bible.com/b'
+      # 'http://app.bible.com/b'
     when /android/
       # firebase link to open app
-      # 'https://j794q.app.goo.gl/0RKn'
-      'http://app.bible.com/b'
+      'https://j794q.app.goo.gl/?link=https%3A%2F%2Fwww.bible.com%2Fapp%3Fret%3D1&afl=market://details?id=com.sirma.mobile.bible.android&al=youversion%3A%2F%2Fbible.com&apn=com.sirma.mobile.bible.android&amv=7010992&isi=282935706&ibi=tv.lifechurch.bible&utm_source=bible.com&utm_medium=link&utm_campaign=app'
+      # 'http://app.bible.com/b'
     when /amazon/
       'http://www.amazon.com/gp/mas/dl/android?p=com.sirma.mobile.bible.android'
     when /bb/
