@@ -209,6 +209,9 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ja/kids",:rel=>"alternate",:hreflang=>"ja"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/vi/kids",:rel=>"alternate",:hreflang=>"vi"}
 
+    - if I18n.locale.to_s.eql?("vi") then
+      %link{:href=> "https://fonts.googleapis.com/css?family=Open+Sans", :rel=>"stylesheet"}
+
     - locale_dir = I18n.locale.to_s.eql?("en") ? '' : '/' + I18n.locale.to_s
     %link{rel: "canonical", href: "#{request.protocol}#{request.host_with_port}#{locale_dir}/kids"}
 
