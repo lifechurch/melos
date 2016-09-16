@@ -1,51 +1,55 @@
-- Header
-	- Chapter Picker
-		- Chapter Label
-			- Chapter Filter
-			- Chapter Selector
-				- Book List
-				- Chapter List
-	- Version Picker
-		- Version Label
-			- Version Filter
-			- Version Selector
-				- Language List
-				- Version List
+> Header (9890)
+	> Chapter Picker (9893)
+		> Chapter Label (9894)
+			> Chapter Selector/Filter (9895)
+				= Book List (9896)
+				= Chapter List (9897)
+	> Version Picker (9898)
+		> Version Label (9922)
+			> Version Selector/Filter (9923)
+				= Language List (9924)
+				= Version List (9925)
 
-- Chapter
-	- Verse
+> Chapter (9891)
+	> Verse (9899)
 
-- Verse Action
-  - Selected Label
-	- Action List
-		- Action
-	- Color List
-		- Color
-	- Close Button
+> Verse Action (9900)
+  > Selected Label (9901)
+	> Action List (9902)
+		= Action (9903)
+	> Color List (9904)
+		= Color (9905)
+	> Close Button (9906)
 
-- VA Share
+> VA Share (9926)
 
-- VA Copy
+> VA Copy (9927)
 
-- VA Note
-- VA Bookmark
-	- Verse Card
-	- Label Selector
-		- Label Pill
-		- Label List
-	- Note Text Editor
-	- Reference Selector
+> VA Note (9929)
+> VA Bookmark (9930)
+	> Verse Card (9931)
+	> Label Selector (9932)
+		> Label Input (9933)
+			= Label Auto-Suggest (9934)
+			= Label Pill (9936)
+		> Label List (9935)
+	> Note Text Editor (9937)
+	> Reference Selector (9938)
 
-- Audio Player
-	- Trigger Button
-  - Speed Bar
-  - Play Button
-  - Seek Button
-  - Audio Track
+> Audio Player (9908)
+	> Trigger Button (9909)
+  > Speed Bar (9910)
+  > Play Button (9911)
+  > Seek Button (9912)
+  > Audio Track (9913)
 
-- Reader Settings
-  - Trigger Button
-  - Font Size Selector
-  - Font Family Selector
-  - Footnotes Toggle
-  - Numbers and Title Toggle
+> Reader Settings (9914)
+  > Trigger Button (9915)
+  > Font Size Selector (9916)
+  > Font Family Selector (9917)
+  > Footnotes Toggle (9918)
+  > Numbers and Title Toggle (9919)
+
+- Services
+ = Filter: filter long list of items efficiently (9920)
+ = Local Storage Middleware (9921)

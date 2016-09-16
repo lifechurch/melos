@@ -215,7 +215,7 @@ router.get('/*', cookieParser(), function(req, res) {
 				res.setHeader('Cache-Control', 'public');
 				res.render('index', {appString: html, rtl: rtl, locale: req.Locale, head: Helmet.rewind(), initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath })
 			} catch(ex) {
-				console.log('ex', ex);
+				console.log('ex', ex, ex.stack);
 				res.status(500).send()
 			}
 

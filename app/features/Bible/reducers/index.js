@@ -8,6 +8,7 @@ import languages from './languages'
 import show from './show'
 import verseAction from './verseAction'
 import verseSelection from './verseSelection'
+import version from './version'
 import versions from './versions'
 
 const bibleReaderReducer = combineReducers({
@@ -20,6 +21,7 @@ const bibleReaderReducer = combineReducers({
 	show,
 	verseAction,
 	verseSelection,
+	version,
 	versions
 })
 

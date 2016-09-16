@@ -1,4 +1,4 @@
-import contentType from './constants'
+import type from './constants'
 
 const ActionCreators = {
 

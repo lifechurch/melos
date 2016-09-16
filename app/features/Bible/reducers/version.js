@@ -3,14 +3,14 @@ import Immutable from 'immutable'
 
 export default function reducer(state = {}, action) {
 	switch (action.type) {
-		case type('bibleChapterRequest'):
+		case type('bibleVersionRequest'):
 			return { loading: true }
 
-		case type('bibleChapterFailure'):
+		case type('bibleVersionFailure'):
 			return { loading: false }
 
-		case type('bibleChapterSuccess'):
-			return Immutable.fromJS(action.response).delete('audio').toJS()
+		case type('bibleVersionSuccess'):
+			return Immutable.fromJS(action.response).set('loading', false).delete('books').toJS()
 
 		default:
 			return state
