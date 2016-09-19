@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import ActionCreators from '../actions/creators'
 import { Link } from 'react-router'
+import SubscribeUserDialog from './SubscribeUserDialog'
 
 class SubscribeUserAction extends Component {
 
@@ -12,19 +13,6 @@ class SubscribeUserAction extends Component {
 
 	handleClick() {
 		this.setState({ dialogOpen: !this.state.dialogOpen })
-	}
-
-	subscribeUser(privacy) {
-		const { dispatch, readingPlan, auth } = this.props
-
-		if (!auth.isLoggedIn) window.location.replace(`/sign-in`)
-		// if user isn't subscribed, then subscribe!
-		if (!readingPlan.subscription_id) {
-			dispatch(ActionCreators.readingplanSubscribeUser({ id: readingPlan.id , private: privacy }, auth.isLoggedIn)).then(() => {
-				// redirect to plan
-				this.goToPlan()
-			})
-		}
 	}
 
 	goToPlan() {
@@ -54,15 +42,7 @@ class SubscribeUserAction extends Component {
 
 		// toggle subscribe box
 		if (this.state.dialogOpen) {
-			var dialogBox = (
-				<div className='plan-privacy-buttons text-center'>
-					<p className='detail-text'><FormattedMessage id="plans.privacy.visible to friends?" /></p>
-					<div className='yes-no-buttons'>
-						<a className='yes solid-button green' onClick={this.subscribeUser.bind(this, false)}><FormattedMessage id="ui.yes button"/></a>
-						<a className='no solid-button gray' onClick={this.subscribeUser.bind(this, true)}><FormattedMessage id="ui.no button" /></a>
-					</div>
-				</div>
-			)
+			var dialogBox = <SubscribeUserDialog {...this.props} />
 		} else {
 			var dialogBox = null
 		}

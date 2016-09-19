@@ -13,7 +13,7 @@ class PlanActionButtons extends Component {
 
 		return (
 			<div className='rp-subscription-info'>
-				<SubscribeUserAction readingPlan={readingPlan} auth={auth} dispatch={dispatch}/>
+				<SubscribeUserAction readingPlan={readingPlan} isButton={true} auth={auth} dispatch={dispatch}/>
 				<div className='text-center'>
 					<SaveForLaterAction readingPlan={readingPlan} auth={auth} dispatch={dispatch}/>
 					&bull;
