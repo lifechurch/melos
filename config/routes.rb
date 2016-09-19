@@ -195,15 +195,16 @@ YouversionWeb::Application.routes.draw do
   resources :plans, :only => [:index, :show], :path => 'reading-plans'
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
   match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
+  # expose save-for-later action for emails
+  match '/reading-plans/:id?save=true' => 'plans#save_for_later_action', as: "save_for_later_action"
+  # expose subscribe user to plan action for emails
+  match '/reading-plans/:id?subscribe=true' => 'plans#subscribe_user_action', as: "subscribe_user_action"
 
   get '/reading-plans-collection/:id' => 'plans#plan_collection'
   get '/recommended-plans-collection/:id' => 'plans#plan_collection'
   get '/saved-plans-collection' => 'plans#plan_collection'
 
-  # expose save-for-later action for emails
-  get '/reading-plans/:id/save-for-later' => 'plans#save_for_later_action', as: "save_for_later_action"
-  # expose subscribe user to plan action for emails
-  get '/reading-plans/:id/subscribe-user' => 'plans#subscribe_user_action', as: "subscribe_user_action"
+
 
   # Reading Plans
   # Legacy links that need to be supported
