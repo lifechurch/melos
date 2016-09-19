@@ -54,7 +54,7 @@
 		audio: true,
 		next: true,
 		prev: true,
-		parallel: true
+		parallelChapter: true
 	},
 
 	chapter: {
