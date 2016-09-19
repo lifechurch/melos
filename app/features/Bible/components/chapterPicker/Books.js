@@ -1,8 +1,17 @@
 import React, { Component, PropTypes } from 'react'
 
 class Books extends Component {
+
 	render() {
-		return (<div>Books</div>)
+		const { bookList, clickHandler } = this.props
+
+		var books = bookList.map((book, index) => {
+			return ()
+		})
+
+		return (
+
+		)
 	}
 }
 
