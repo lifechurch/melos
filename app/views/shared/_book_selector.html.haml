@@ -77,9 +77,9 @@
 
   %script{'type' => 'text/ng-template', 'id' => '/reader-book-selector.tpl.html'}
     .row.full
-      %div{:class => "{{$last ? 'end' : ''}}", "ng-class" => "foundationColumnSize", "ng-repeat" => "column in ::columns"}
+      %div{:class => "{{$last ? 'end' : ''}}", "ng-class" => "foundationColumnSize", "ng-repeat" => "column in columns"}
         %ul.side-nav{:role => "navigation"}
-          %li.menuitem{"ng-if" => "filterBook(filter, book.human)", "ng-repeat" => "book in ::column"}
+          %li.menuitem{"ng-if" => "filterBook(filter, book.human)", "ng-repeat" => "book in column"}
             %a{"ng-click" => "showChapters(book)", "ng-if" => "!book.labelOnly"}
               = "{{::book.human}}"
 
