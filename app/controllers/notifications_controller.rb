@@ -21,6 +21,10 @@ class NotificationsController < ApplicationController
 
   def edit
     @current_user = get_user
+    if (!@current_user)
+      redirect_to sign_in_path(redirect: notification_settings_path) and return
+    end
+
     @results = NotificationSettings.find(params[:token].present? ? {token: params[:token]} : {auth: current_auth})
     @settings = @results.data
     self.sidebar_presenter = Presenter::Sidebar::User.new(@user,params,self)

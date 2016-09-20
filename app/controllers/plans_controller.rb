@@ -33,7 +33,7 @@ class PlansController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
-        "id" => params[:id]
+        "id" => params[:id].split("-")[0]
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
@@ -49,11 +49,19 @@ class PlansController < ApplicationController
   end
 
   def show
+    if (params[:save].present?)
+      return save_for_later_action
+    end
+
+    if (params[:subscribe].present?)
+      return subscribe_user_action
+    end
+
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
-        "id" => params[:id]
+        "id" => params[:id].split("-")[0]
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
@@ -73,8 +81,8 @@ class PlansController < ApplicationController
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
-        "url" => request.path,
-        "id" => params[:id]
+        "url" => request.fullpath,
+        "id" => params[:id].split("-")[0]
     }
 
     if (!current_auth)
@@ -90,7 +98,7 @@ class PlansController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render locals: { html: fromNode['html'] }
+    render 'save_for_later_action', locals: { html: fromNode['html'] }
   end
 
   # action and view from node server for subscribe user url (from email link)
@@ -98,12 +106,12 @@ class PlansController < ApplicationController
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
-        "url" => request.path,
-        "id" => params[:id]
+        "url" => request.fullpath,
+        "id" => params[:id].split("-")[0]
     }
 
     if (!current_auth)
-      redirect_to sign_in_path(redirect: subscribe_user_action_path) and return 
+      redirect_to sign_in_path(redirect: subscribe_user_action_path) and return
     end
 
     fromNode = YV::Nodestack::Fetcher.get('SubscribeUser', p, cookies, current_auth, current_user)
@@ -115,7 +123,7 @@ class PlansController < ApplicationController
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
 
-    render locals: { html: fromNode['html'], js: fromNode['js'] }
+    render 'subscribe_user_action', locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   def sample
