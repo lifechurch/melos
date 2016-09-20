@@ -17,9 +17,13 @@ class Books extends Component {
 	render() {
 		const { list, onSelect } = this.props
 
-		var books = list.map((book) => {
-			return (<li key={book.usfm} className={ (book.usfm == this.state.selectedBook) ? 'active' : ''}><a onClick={this.bookSelect.bind(this, book)}>{ book.human }</a></li>)
-		})
+		var books = null
+
+		if (typeof list == 'array') {
+			books = list.map((book) => {
+				return (<li key={book.usfm} className={ (book.usfm == this.state.selectedBook) ? 'active' : ''}><a onClick={this.bookSelect.bind(this, book)}>{ book.human }</a></li>)
+			})
+		}
 
 		return (
 			<ul className='book-list'>
@@ -31,7 +35,7 @@ class Books extends Component {
 
 
 /**
- * 		@list					  	array of book objects for the current version
+ * 		@list					  			array of book objects for the current version
  * 		@onSelect			  			function to call when selecting book
  * 		@initialSelection	   	usfm for highlighting currently selected book
  */
