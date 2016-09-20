@@ -1703,10 +1703,24 @@ ul.language-selector li {
 	align-items: center;
 
 	.checkmark-right {
-    padding-top: 5px;
     padding-right: 2px;
 	}
 }
+
+
+.slick-track {
+	opacity: 1;
+}
+
+.slick-list {
+	padding: 0 0 !important;
+}
+
+.slick-arrow-left-container, .slick-arrow-right-container {
+	z-index: 50;
+}
+
+
 
 /* for dumb elastic scrolling on mobile */
 @media only screen and (max-width: 699px) {
@@ -1728,10 +1742,6 @@ ul.language-selector li {
     a {
       padding: 8px 40px;
       border: solid 1px #4EAE50;
-
-/*      @media #{$small-only} {
-        padding: 8px 30px;
-      }*/
     }
   }
 
@@ -2213,18 +2223,45 @@ ul.language-selector li {
 
 }
 
-.slick-track {
-	opacity: 1;
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************************************************
+				BIBLE
+				READER
+**********************************************************************************/
+
+
+
+
+
+
+
+
+
+.book-list {
+	list-style: none;
+	font-size: 15px;
+	li {
+		padding-left: 15px;
+		a {
+			color: black;
+		}
+	}
+	.active {
+		background-color: #6AB750;
+		a {
+			color: white;
+		}
+	}
 }
-
-.slick-list {
-	padding: 0 0 !important;
-}
-
-.slick-arrow-left-container, .slick-arrow-right-container {
-	z-index: 50;
-}
-
-
 
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ActionCreators from '../features/Bible/actions/creators'
 import Bible from '../features/Bible/components/Bible'
+import Books from '../features/Bible/components/chapterPicker/Books'
 
 class BibleView extends Component {
 	getVersions() {
@@ -33,9 +34,11 @@ class BibleView extends Component {
 			})
 		}
 
-		const books = Array.isArray(bible.books.all) ? bible.books.all.map((book) => {
-			return (<li key={`BOOK${book.usfm}`}><a onClick={this.getBook.bind(this, book)}>{book.human}</a></li>)
-		}) : []
+		// const books = Array.isArray(bible.books.all) ? bible.books.all.map((book) => {
+		// 	return (<li key={`BOOK${book.usfm}`}><a onClick={this.getBook.bind(this, book)}>{book.human}</a></li>)
+		// }) : []
+
+		const books = Array.isArray(bible.books.all) ? <Books list={bible.books.all} onSelect={::this.getBook} initialSelection={'MAT'} /> : []
 
 		return (
 			<div>
@@ -56,9 +59,7 @@ class BibleView extends Component {
 						<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 					</div>
 					<div className="columns medium-3">
-						<ul>
-							{books}
-						</ul>
+						{ books }
 					</div>
 				</div>
 			</div>
