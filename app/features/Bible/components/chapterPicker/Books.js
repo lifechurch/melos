@@ -4,18 +4,20 @@ class Books extends Component {
 
 	constructor(props) {
 		super(props)
-		this.state = { selectedBook: this.props.initialSelection || null }
+		this.state = { selectedBook: props.initialSelection || null }
 	}
 
 	bookSelect(book) {
 		this.setState( { selectedBook: book.usfm } )
-		this.props.clickHandler(book)
+		if (typeof this.props.onSelect == 'function') {
+			this.props.onSelect(book)
+		}
 	}
 
 	render() {
-		const { bookList, clickHandler } = this.props
+		const { list, onSelect } = this.props
 
-		var books = bookList.map((book) => {
+		var books = list.map((book) => {
 			return (<li key={book.usfm} className={ (book.usfm == this.state.selectedBook) ? 'active' : ''}><a onClick={this.bookSelect.bind(this, book)}>{ book.human }</a></li>)
 		})
 
@@ -29,13 +31,13 @@ class Books extends Component {
 
 
 /**
- * 		@bookList					  	array of book objects for the current version
- * 		@clickHandler			  	function to call when selecting book
+ * 		@list					  	array of book objects for the current version
+ * 		@onSelect			  			function to call when selecting book
  * 		@initialSelection	   	usfm for highlighting currently selected book
  */
 Books.propTypes = {
-	bookList: React.PropTypes.array.isRequired,
-	clickHandler: React.PropTypes.func,
+	list: React.PropTypes.array.isRequired,
+	onSelect: React.PropTypes.func,
 	initialSelection: React.PropTypes.string
 }
 

@@ -38,7 +38,7 @@ class BibleView extends Component {
 		// 	return (<li key={`BOOK${book.usfm}`}><a onClick={this.getBook.bind(this, book)}>{book.human}</a></li>)
 		// }) : []
 
-		const books = Array.isArray(bible.books.all) ? <Books bookList={bible.books.all} clickHandler={::this.getBook} /> : []
+		const books = Array.isArray(bible.books.all) ? <Books list={bible.books.all} onSelect={::this.getBook} initialSelection={'MAT'} /> : []
 
 		return (
 			<div>
