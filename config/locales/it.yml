@@ -191,8 +191,8 @@ it:
             in partnership: "In collaborazione con"
             one hope: "Una Speranza: Contenuto biblico straordinario per Ragazzi"
         links: 
-            apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
-            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            apple: "https://itunes.apple.com/it/app/bible-for-kids/id668692393?ls=1&mt=8"
+            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=it"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Ora"
     select dropdown: "--Seleziona--"
@@ -1414,6 +1414,7 @@ it:
             no button: "No"
         plans: 
             plans: "Piani"
+            plans back: "← Piani"
             related plans: "Piani Collegati"
             see all: "Vedi Tutti"
             discover: "Scopri"
