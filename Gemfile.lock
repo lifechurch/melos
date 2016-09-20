@@ -213,6 +213,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     mimemagic (0.3.0)
+    mini_portile2 (2.1.0)
     minitest (5.7.0)
     multi_json (1.11.2)
     multi_test (0.1.2)
@@ -224,7 +225,9 @@ GEM
     net-ssh (3.0.1)
     netrc (0.10.3)
     newrelic_rpm (3.9.9.275)
-    nokogiri (1.5.11)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -256,6 +259,7 @@ GEM
     parallel (1.6.0)
     parallel_tests (1.6.0)
       parallel
+    pkg-config (1.1.7)
     polyglot (0.3.5)
     powder (0.3.0)
       thor (>= 0.11.5)
@@ -441,7 +445,7 @@ DEPENDENCIES
   memcachier
   minitest
   newrelic_rpm (~> 3.9.9.275)
-  nokogiri (~> 1.5.2)
+  nokogiri (~> 1.6.5)
   oj
   omniauth-facebook (~> 2.0.0)
   omniauth-google-oauth2 (~> 0.1.9)

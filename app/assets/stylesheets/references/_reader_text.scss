@@ -144,7 +144,7 @@
     margin-left: 1em;
     display: list-item;
   }
-  .io2, io3 {
+  .io2, .io3 {
     list-style-type: disc;
     margin-left: 2em;
     display: list-item;
@@ -152,7 +152,7 @@
   .ipi {
     text-indent: 1em;
   }
-  .imt2, .imt3, imt4 {
+  .imt2, .imt3, .imt4 {
     font-size: 1em;
     line-height: $reader_line_height;
     margin: 0.5em 0;
