@@ -43,11 +43,11 @@ http {
   }
 
     location /apple-app-site-association {
-        try_files /var/www/youversion-web/current/public/apple-app-site-association;
+        try_files /var/www/youversion-web/current/apple-app-site-association;
     }
 
     location /.well_known/apple-app-site-association {
-        try_files /var/www/youversion-web/current/public/apple-app-site-association;
+        try_files /var/www/youversion-web/current/apple-app-site-association;
     }
 
 }
