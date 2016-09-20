@@ -41,4 +41,13 @@ http {
       passenger_env_var MEMCACHE_SERVERS 127.0.0.1:11211;
       rails_env development;
   }
+
+    location /apple-app-site-association {
+        try_files /var/www/youversion-web/current/public/apple-app-site-association;
+    }
+
+    location /.well_known/apple-app-site-association {
+        try_files /var/www/youversion-web/current/public/apple-app-site-association;
+    }
+
 }
