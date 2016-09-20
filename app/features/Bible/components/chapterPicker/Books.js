@@ -18,8 +18,7 @@ class Books extends Component {
 		const { list, onSelect } = this.props
 
 		var books = null
-
-		if (typeof list == 'array') {
+		if (Array.isArray(list)) {
 			books = list.map((book) => {
 				return (<li key={book.usfm} className={ (book.usfm == this.state.selectedBook) ? 'active' : ''}><a onClick={this.bookSelect.bind(this, book)}>{ book.human }</a></li>)
 			})
