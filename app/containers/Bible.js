@@ -4,6 +4,7 @@ import ActionCreators from '../features/Bible/actions/creators'
 import Bible from '../features/Bible/components/Bible'
 import Filter from '../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import Books from '../features/Bible/components/chapterPicker/Books'
 
 class BibleView extends Component {
 	constructor(props) {
@@ -84,9 +85,11 @@ class BibleView extends Component {
 			return (<li key={v.id}>{v.abbreviation} {v.title}</li>)
 		})
 
-		const books = Array.isArray(bible.books.all) ? bible.books.all.map((book) => {
-			return (<li key={`BOOK${book.usfm}`}><a onClick={this.getBook.bind(this, book)}>{book.human}</a></li>)
-		}) : []
+		// const books = Array.isArray(bible.books.all) ? bible.books.all.map((book) => {
+		// 	return (<li key={`BOOK${book.usfm}`}><a onClick={this.getBook.bind(this, book)}>{book.human}</a></li>)
+		// }) : []
+
+		const books = Array.isArray(bible.books.all) ? <Books list={bible.books.all} onSelect={::this.getBook} initialSelection={'MAT'} /> : []
 
 		return (
 			<div>
@@ -109,9 +112,7 @@ class BibleView extends Component {
 						<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 					</div>
 					<div className="columns medium-3">
-						<ul>
-							{books}
-						</ul>
+						{ books }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />
