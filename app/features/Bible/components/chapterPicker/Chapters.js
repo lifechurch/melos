@@ -21,7 +21,7 @@ class Chapters extends Component {
 		if (list) {
 			Object.keys(list).forEach((usfm) =>  {
 				var chapter = list[usfm]
-				chapters.push( (<li key={usfm} onClick={this.chapterSelect.bind(this, chapter)} className={ (usfm == this.state.selectedChapter) ? 'active' : ''}><a>{ chapter.human }</a></li>) )
+				chapters.push( (<li key={usfm} onClick={this.chapterSelect.bind(this, chapter)} className={ (usfm == this.state.selectedChapter) ? 'active' : ''}>{ chapter.human }</li>) )
 			})
 		}
 
