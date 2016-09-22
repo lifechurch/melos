@@ -180,10 +180,6 @@ function getLocale(languageTag) {
 		final = { locale: availableLocales[languageTag], source: 'param' }
 	}
 
-	// Get the appropriate react-intl locale data for this locale
-	var localeData = require('react-intl/locale-data/' + final.locale.split('-')[0]);
-	final.data = localeData;
-
 	// Get the appropriate set of localized strings for this locale
 	final.messages = require('./locales/' + final.locale + '.json');
 
@@ -195,6 +191,9 @@ function getLocale(languageTag) {
 			final.planLocale = planLocales[lc.locale]
 		}
 	}
+	// Get the appropriate react-intl locale data for this locale
+	var localeData = require('react-intl/locale-data/' + final.locale2);
+	final.data = localeData;
 
 	return final;
 }
@@ -257,7 +256,7 @@ router.post('/', urlencodedParser, function(req, res) {
 					getRenderProps(feature, params.url).then((renderProps) => {
 						let html = null
 						try {
-							 html = renderToString(<IntlProvider locale={Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
+							 html = renderToString(<IntlProvider locale={ (Locale.locale2 == "mn") ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch(ex) {
 							return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex, stack: ex.stack })
 						}
