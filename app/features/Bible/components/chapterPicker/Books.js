@@ -19,8 +19,8 @@ class Books extends Component {
 
 		var books = null
 		if (Array.isArray(list)) {
-			books = list.map((book) => {
-				return (<li key={book.usfm} className={ (book.usfm == this.state.selectedBook) ? 'active' : ''}><a onClick={this.bookSelect.bind(this, book)}>{ book.human }</a></li>)
+			books = list.map((book) =>  {
+				return( (<li key={book.usfm} className={ (book.usfm == this.state.selectedBook) ? 'active' : ''}><a onClick={this.bookSelect.bind(this, book)}>{ book.human }</a></li>) )
 			})
 		}
 
@@ -34,7 +34,7 @@ class Books extends Component {
 
 
 /**
- * 		@list					  			array of book objects for the current version
+ * 		@list					  			array of book arrays for the current version
  * 		@onSelect			  			function to call when selecting book
  * 		@initialSelection	   	usfm for highlighting currently selected book
  */

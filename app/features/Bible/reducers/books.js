@@ -1,5 +1,6 @@
 import type from '../actions/constants'
 import Immutable from 'immutable'
+import arrayToObject from '../../../lib/arrayToObject'
 
 export default function reducer(state = {}, action) {
 	switch (action.type) {
@@ -20,20 +21,16 @@ export default function reducer(state = {}, action) {
 
 		case type("bibleVersionSuccess"):
 			if (typeof action.response.books !== 'undefined') {
-				const all = Immutable.fromJS(action.response.books)
-
-				let byCanon = {}
-				action.response.books.forEach((book) => {
-					if (typeof book.canon !== 'undefined') {
-						if (typeof byCanon[book.canon] == 'undefined') { byCanon[book.canon] = {} }
-						byCanon[book.canon][book.usfm] = book
-					} else {
-						byCanon['other'][book.usfm] = book
-					}
+				// ordered array of books from api
+				const all = action.response.books.slice(0)
+				// map of book usfm to its index in the books array
+				const map = all.reduce((newBooks, book, idx) => {
+					// replace chapter array with keyed chapter object
+					book.chapters = arrayToObject(book.chapters, 'usfm')
+					return Object.assign(newBooks, { [book.usfm]: idx })
 				})
 
-				return Immutable.fromJS({}).set('all', all).set('byCanon', byCanon).set('loading', false).toJS()
-
+				return { all, map }
 			} else {
 				return Immutable.fromJS(state).set('loading', false).toJS()
 			}

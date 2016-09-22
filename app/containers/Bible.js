@@ -3,8 +3,19 @@ import { connect } from 'react-redux'
 import ActionCreators from '../features/Bible/actions/creators'
 import Bible from '../features/Bible/components/Bible'
 import Books from '../features/Bible/components/chapterPicker/Books'
+import Chapters from '../features/Bible/components/chapterPicker/Chapters'
+
+
 
 class BibleView extends Component {
+
+// *********** BOOK | CHAPTER SELECTOR ********** //
+	constructor(props) {
+		super(props)
+		this.state = { selectedBook: 'MAT', selectedChapter: 'MAT.1' }
+	}
+// ********************************************** //
+
 	getVersions() {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.bibleVersions({ language_tag: 'eng', type: 'all' }))
@@ -15,14 +26,21 @@ class BibleView extends Component {
 
 	getVC(version) {
 		const { dispatch, bible } = this.props
-		dispatch(ActionCreators.loadVersionAndChapter({ id: version.id, reference: bible.chapter.reference.usfm[0] }))
+		dispatch(ActionCreators.loadVersionAndChapter({ id: version.id, reference: this.state.selectedChapter }))
 	}
 
+
+// ********* BOOK | CHAPTER SELECTOR *********** //
 	getBook(book) {
-		const { dispatch, bible } = this.props
-		dispatch(ActionCreators.bibleChapter({ id:bible.version.id, reference: book.chapters[0].usfm }))
+		this.setState({ selectedBook: book.usfm })
 	}
 
+	getChapter(chapter) {
+		const { dispatch, bible } = this.props
+		this.setState({ selectedChapter: chapter.usfm })
+		dispatch(ActionCreators.bibleChapter({ id: bible.version.id, reference: chapter.usfm }))
+	}
+// ********************************************* //
 	render() {
 		const { bible } = this.props
 
@@ -34,11 +52,14 @@ class BibleView extends Component {
 			})
 		}
 
-		// const books = Array.isArray(bible.books.all) ? bible.books.all.map((book) => {
-		// 	return (<li key={`BOOK${book.usfm}`}><a onClick={this.getBook.bind(this, book)}>{book.human}</a></li>)
-		// }) : []
-
-		const books = Array.isArray(bible.books.all) ? <Books list={bible.books.all} onSelect={::this.getBook} initialSelection={'MAT'} /> : []
+		var books = null
+		if (Array.isArray(bible.books.all) && bible.books.map) {
+			books = <Books list={bible.books.all} onSelect={::this.getBook} initialSelection={this.state.selectedBook} />
+		}
+		var chapters = null
+		if (Array.isArray(bible.books.all) && bible.books.map) {
+			chapters = <Chapters list={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} onSelect={::this.getChapter} initialSelection={this.state.selectedChapter} />
+		}
 
 		return (
 			<div>
@@ -60,6 +81,9 @@ class BibleView extends Component {
 					</div>
 					<div className="columns medium-3">
 						{ books }
+					</div>
+					<div className="columns medium-3">
+						{ chapters }
 					</div>
 				</div>
 			</div>
