@@ -5,11 +5,16 @@ import Bible from '../features/Bible/components/Bible'
 import Filter from '../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Books from '../features/Bible/components/chapterPicker/Books'
+import Chapters from '../features/Bible/components/chapterPicker/Chapters'
+
+
 
 class BibleView extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
+			selectedBook: 'MAT',
+			selectedChapter: 'MAT.1'
 			dbReady: false,
 			db: null,
 			results: [],
@@ -47,13 +52,21 @@ class BibleView extends Component {
 
 	getVC(version) {
 		const { dispatch, bible } = this.props
-		dispatch(ActionCreators.loadVersionAndChapter({ id: version.id, reference: bible.chapter.reference.usfm[0] }))
+		dispatch(ActionCreators.loadVersionAndChapter({ id: version.id, reference: this.state.selectedChapter }))
 	}
 
+
+// ********* BOOK | CHAPTER SELECTOR *********** //
 	getBook(book) {
-		const { dispatch, bible } = this.props
-		dispatch(ActionCreators.bibleChapter({ id:bible.version.id, reference: book.chapters[0].usfm }))
+		this.setState({ selectedBook: book.usfm })
 	}
+
+	getChapter(chapter) {
+		const { dispatch, bible } = this.props
+		this.setState({ selectedChapter: chapter.usfm })
+		dispatch(ActionCreators.bibleChapter({ id: bible.version.id, reference: chapter.usfm }))
+	}
+// ********************************************* //
 
 	filterLang(changeEvent) {
 		const filter = changeEvent.target.value;
@@ -85,11 +98,14 @@ class BibleView extends Component {
 			return (<li key={v.id}>{v.abbreviation} {v.title}</li>)
 		})
 
-		// const books = Array.isArray(bible.books.all) ? bible.books.all.map((book) => {
-		// 	return (<li key={`BOOK${book.usfm}`}><a onClick={this.getBook.bind(this, book)}>{book.human}</a></li>)
-		// }) : []
-
-		const books = Array.isArray(bible.books.all) ? <Books list={bible.books.all} onSelect={::this.getBook} initialSelection={'MAT'} /> : []
+		var books = null
+		if (Array.isArray(bible.books.all) && bible.books.map) {
+			books = <Books list={bible.books.all} onSelect={::this.getBook} initialSelection={this.state.selectedBook} />
+		}
+		var chapters = null
+		if (Array.isArray(bible.books.all) && bible.books.map) {
+			chapters = <Chapters list={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} onSelect={::this.getChapter} initialSelection={this.state.selectedChapter} />
+		}
 
 		return (
 			<div>
@@ -113,6 +129,7 @@ class BibleView extends Component {
 					</div>
 					<div className="columns medium-3">
 						{ books }
+						{ chapters }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />

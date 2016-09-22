@@ -2250,12 +2250,14 @@ ul.language-selector li {
 .book-list {
 	list-style: none;
 	font-size: 15px;
+
 	li {
 		padding-left: 15px;
 		a {
 			color: black;
 		}
 	}
+
 	.active {
 		background-color: #6AB750;
 		a {
@@ -2264,4 +2266,35 @@ ul.language-selector li {
 	}
 }
 
+.chapter-list {
+	list-style: none;
+	font-size: 15px;
+	display: inline-flex;
+	flex-wrap: wrap;
 
+	li {
+		width: 64px;
+		height: 64px;
+		border: 1px solid #D4D4D4;
+		/* these margins are so the touching borders don't look bold */
+		margin-left: -1px;
+		margin-bottom: -1px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		font-weight: bold;
+		color: #D4D4D4;
+
+	}
+	li:hover {
+		background-color: #D4D4D4;
+		color: white;
+		cursor: pointer;
+	}
+
+	.active {
+		background-color: #6AB750;
+		color: white;
+	}
+}
