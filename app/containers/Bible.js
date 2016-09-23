@@ -14,7 +14,7 @@ class BibleView extends Component {
 		super(props)
 		this.state = {
 			selectedBook: 'MAT',
-			selectedChapter: 'MAT.1'
+			selectedChapter: 'MAT.1',
 			dbReady: false,
 			db: null,
 			results: [],

@@ -4,13 +4,10 @@ import PlanDiscoveryView from '../../containers/PlanDiscoveryView'
 import PlanCollectionView from '../../containers/PlanCollectionView'
 import PlansView from '../../containers/PlansView'
 import AboutPlanView from '../../containers/AboutPlanView'
-import VersePageView from '../../containers/VersePageView'
 
 export default function(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireSavedPlanData, requireRecommendedPlanData) {
 	return (
 		<Route path="/">
-			<Route path="(:lang/)bible/:ref" component={VersePageView} />
-
 			<Route path="(:lang/)reading-plans" component={PlansView}>
 				<IndexRoute component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
 				<Route path=":id(-:slug)" component={AboutPlanView} onEnter={requirePlanData} />
