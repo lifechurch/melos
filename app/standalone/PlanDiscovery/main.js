@@ -121,7 +121,7 @@ function requirePlanData(nextState, replace, callback) {
 const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireSavedPlanData, requireRecommendedPlanData)
 
 render(
-	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
+	<IntlProvider locale={window.__LOCALE__.locale2 == "mn" ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
 			<Router routes={routes} history={browserHistory} onUpdate={() => window.scrollTo(0, 0)} />
 		</Provider>
