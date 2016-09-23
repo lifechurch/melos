@@ -24,8 +24,7 @@ http {
 	gzip_disable "msie6";
 
 	passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
-	passenger_ruby /home/yvdep/.rvm/wrappers/ruby-1.9.3-p551@youversion-web/ruby;
-
+        passenger_ruby /home/yvdep/.rvm/wrappers/ruby-2.2.2@youversion-web/ruby;
   server {
       server_name bible.com www.bible.com localdev.bible.com review02.bible.com;
       listen *:80;
@@ -40,5 +39,18 @@ http {
       root /var/www/youversion-web/current/public;
       passenger_env_var MEMCACHE_SERVERS 127.0.0.1:11211;
       rails_env development;
+
+    location /apple-app-site-association {
+        root /var/www/youversion-web/current;
+        try_files $uri =404;
+    }
+
+    location /.well_known/apple-app-site-association {
+        root /var/www/youversion-web/current;
+        try_files $uri /apple-app-site-association =404;
+    }
+
   }
+
+
 }

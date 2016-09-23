@@ -49,6 +49,16 @@ http {
       passenger_env_var TREADSTONE_SECRET 6Ag54rcIa7pS3DRs6jkzVRtceSUuGaqfU2Lxi57bZDozpTVcIYVZeRCXpmzmdJw;
       rails_env staging;
 
+    location /apple-app-site-association {
+        root /var/www/youversion-web/current;
+        try_files $uri =404;
+    }
+
+    location /.well_known/apple-app-site-association {
+        root /var/www/youversion-web/current;
+        try_files $uri /apple-app-site-association =404;
+    }
+
   location ~ ^/(assets|images|javascripts|stylesheets|swfs|system)/ {
       gzip_static on;
       expires     max;
