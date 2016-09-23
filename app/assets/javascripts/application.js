@@ -148,7 +148,7 @@ var isResetPassword     = isFirst("resetPassword");
 var isReadingPlanSample = isFirst("reading-plans") && inPathNotFirst("day");
 var isReader 			= isFirst("bible");
 var isHomeFeed 			= isFirst("moments");
-var isPlanIndex         = isFirst("reading-plans");
+var isPlanIndex         = isFirst("reading-plans") && !inPathNotFirst("day");
 var isPlanCollection    = isFirst("reading-plans-collection");
 
 var isFriendsFeed		= isFirst("users") && inPathNotFirst("friends");
