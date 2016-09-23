@@ -13,7 +13,8 @@ class PlansController < ApplicationController
     p = {
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
-        "url" => request.path
+        "url" => request.path,
+        "cache_for" => YV::Caching::a_very_long_time
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
@@ -33,7 +34,8 @@ class PlansController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
-        "id" => params[:id].split("-")[0]
+        "id" => params[:id].split("-")[0],
+        "cache_for" => YV::Caching::a_very_long_time
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
@@ -61,7 +63,8 @@ class PlansController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
-        "id" => params[:id].split("-")[0]
+        "id" => params[:id].split("-")[0],
+        "cache_for" => YV::Caching::a_very_long_time
     }
 
     fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
@@ -82,7 +85,8 @@ class PlansController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.fullpath,
-        "id" => params[:id].split("-")[0]
+        "id" => params[:id].split("-")[0],
+        "cache_for" => YV::Caching::a_very_long_time
     }
 
     if (!current_auth)
@@ -107,7 +111,8 @@ class PlansController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.fullpath,
-        "id" => params[:id].split("-")[0]
+        "id" => params[:id].split("-")[0],
+        "cache_for" => YV::Caching::a_very_long_time
     }
 
     if (!current_auth)
