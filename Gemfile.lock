@@ -112,8 +112,6 @@ GEM
     descriptive_statistics (1.1.5)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    dogapi (1.19.0)
-      multi_json
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -421,7 +419,6 @@ DEPENDENCIES
   curb
   dalli (~> 2.6.3)
   descriptive_statistics (~> 1.1.0)
-  dogapi
   fast_gettext
   foundation-rails (~> 5.5.2.1)
   gabba

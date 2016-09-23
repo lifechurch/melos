@@ -13,6 +13,8 @@ module YV
       class << self
         def get(feature, params, cookies, current_auth, current_user)
 
+          started_at    = Time.now.to_f
+
           if cookies.has_key?(CookieName)
             auth = auth_from_cookie(cookies)
           elsif current_user && current_auth && current_auth.has_key?(:user_id) && current_user.present?
