@@ -13,12 +13,14 @@ module YV
       class << self
         def get(feature, params, cookies, current_auth, current_user)
 
-          started_at    = Time.now.to_f
-
+          started_at = Time.now.to_f
+          can_cache  = true
           if cookies.has_key?(CookieName)
             auth = auth_from_cookie(cookies)
+            can_cache = false
           elsif current_user && current_auth && current_auth.has_key?(:user_id) && current_user.present?
             auth = auth_from_credentials(current_auth, current_user)
+            can_cache = false
           else
             auth = {}
           end
@@ -83,10 +85,27 @@ module YV
 
             end
           end
-          return curb_get.call
+          opts = params.clone
+          opts.delete('strings')
+          opts.delete('cache_for')
+          opts.delete('url')
+
+          key = [params['url'], opts.sort_by{|k,v| k.to_s}].flatten.join("_")
+          return data_from_cache_or_api(key, curb_get, can_cache, params)
+          #return curb_get.call
         end
 
         private
+
+        def data_from_cache_or_api(key, curl_lambda, can_cache, params)
+          if !can_cache || !params['cache_for'].present?
+            return curl_lambda.call
+          end
+          # try pulling from cache
+          Rails.cache.fetch(key,expires_in: params['cache_for']) do
+            curl_lambda.call # cache miss - we need to call to API
+          end
+        end
 
         def log_node_stack_error(path,ex)
           "Non-timeout Node Stack Fetch Error for #{path}: #{ex.class} : #{ex.to_s}"
