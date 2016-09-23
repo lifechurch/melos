@@ -4,8 +4,7 @@ import ActionCreators from '../features/Bible/actions/creators'
 import Bible from '../features/Bible/components/Bible'
 import Filter from '../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import Books from '../features/Bible/components/chapterPicker/Books'
-import Chapters from '../features/Bible/components/chapterPicker/Chapters'
+import ChapterPicker from '../features/Bible/components/chapterPicker/ChapterPicker'
 
 
 
@@ -14,7 +13,7 @@ class BibleView extends Component {
 		super(props)
 		this.state = {
 			selectedBook: 'MAT',
-			selectedChapter: 'MAT.1'
+			selectedChapter: 'MAT.1',
 			dbReady: false,
 			db: null,
 			results: [],
@@ -55,8 +54,6 @@ class BibleView extends Component {
 		dispatch(ActionCreators.loadVersionAndChapter({ id: version.id, reference: this.state.selectedChapter }))
 	}
 
-
-// ********* BOOK | CHAPTER SELECTOR *********** //
 	getBook(book) {
 		this.setState({ selectedBook: book.usfm })
 	}
@@ -66,7 +63,7 @@ class BibleView extends Component {
 		this.setState({ selectedChapter: chapter.usfm })
 		dispatch(ActionCreators.bibleChapter({ id: bible.version.id, reference: chapter.usfm }))
 	}
-// ********************************************* //
+
 
 	filterLang(changeEvent) {
 		const filter = changeEvent.target.value;
@@ -98,13 +95,9 @@ class BibleView extends Component {
 			return (<li key={v.id}>{v.abbreviation} {v.title}</li>)
 		})
 
-		var books = null
+		var chapterPicker = null
 		if (Array.isArray(bible.books.all) && bible.books.map) {
-			books = <Books list={bible.books.all} onSelect={::this.getBook} initialSelection={this.state.selectedBook} />
-		}
-		var chapters = null
-		if (Array.isArray(bible.books.all) && bible.books.map) {
-			chapters = <Chapters list={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} onSelect={::this.getChapter} initialSelection={this.state.selectedChapter} />
+			chapterPicker = <ChapterPicker bookList={bible.books.all} chapterList={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} selectedBook={this.state.selectedBook} selectedChapter={this.state.selectedChapter} getChapter={::this.getChapter} getBook={::this.getBook} />
 		}
 
 		return (
@@ -113,6 +106,9 @@ class BibleView extends Component {
 					<div className="columns medium-12">
 						<Bible bible={bible} />
 					</div>
+				</div>
+				<div className=''>
+					{ chapterPicker }
 				</div>
 				<div className="row">
 					<div className="columns medium-3">
@@ -126,10 +122,6 @@ class BibleView extends Component {
 					</div>
 					<div className="columns medium-3">
 						<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
-					</div>
-					<div className="columns medium-3">
-						{ books }
-						{ chapters }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />

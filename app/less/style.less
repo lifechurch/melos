@@ -2241,60 +2241,128 @@ ul.language-selector li {
 
 
 
+.chap-picker {
 
-
-
-
-
-
-.book-list {
-	list-style: none;
-	font-size: 15px;
-
-	li {
-		padding-left: 15px;
-		a {
-			color: black;
-		}
-	}
-
-	.active {
-		background-color: #6AB750;
-		a {
-			color: white;
-		}
-	}
-}
-
-.chapter-list {
-	list-style: none;
-	font-size: 15px;
 	display: inline-flex;
-	flex-wrap: wrap;
+	height: 500px;
+	width: 560px;
+	border: 1px solid #D4D4D4;
 
-	li {
-		width: 64px;
-		height: 64px;
-		border: 1px solid #D4D4D4;
-		/* these margins are so the touching borders don't look bold */
-		margin-left: -1px;
-		margin-bottom: -1px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 
-		font-weight: bold;
-		color: #D4D4D4;
-
+	// scroll bar styling for safari, chrome
+	::-webkit-scrollbar {
+	  width: 6px;
 	}
-	li:hover {
-		background-color: #D4D4D4;
-		color: white;
-		cursor: pointer;
+	::-webkit-scrollbar-thumb {
+	  background: #D4D4D4;
+	  border: 0px solid #ffffff;
+	  border-radius: 60px;
+	}
+	::-webkit-scrollbar-track {
+	  background: transparent;
 	}
 
-	.active {
-		background-color: #6AB750;
-		color: white;
+
+	.header {
+		width: inherit;
+		background-color: #F4F4F4;
+		border-bottom: 1px solid #D4D4D4;
+		height: 30px;
+		text-align: center;
 	}
+
+
+	// books *******************************************
+	.book-container {
+		flex-grow: 1;
+
+		@media only screen and (min-width: 520px) {
+			border-right: 1px solid #D4D4D4;
+		}
+
+		.book-list:hover {
+			overflow-y: overlay;
+		}
+		.book-list {
+			max-height: 470px;
+			overflow-y: hidden;
+			font-size: 15px;
+			margin-left: 0;
+			margin-right: -1px;
+
+			li {
+				padding-left: 15px;
+				a {
+					color: black;
+				}
+			}
+
+			.active {
+				background-color: #6AB750;
+				a {
+					color: white;
+				}
+			}
+		}
+	}
+
+
+	// chapters *****************************************
+	.chapter-container {
+		width: 320px;
+
+		@media only screen and (min-width: 520px) {
+			.header {
+				width: 315px;
+			}
+			margin-right: -5px;
+			margin-left: -1px;
+		}
+
+		.chapter-list:hover {
+			overflow-y: overlay;
+		}
+		.chapter-list {
+			max-height: 470px;
+			overflow: hidden;
+			// width: 320px;
+			font-size: 15px;
+			display: inline-flex;
+			flex-wrap: wrap;
+			margin-left: 0;
+
+
+			li {
+				width: 64px;
+				height: 64px;
+				border: 1px solid #D4D4D4;
+				/* these margins are so the touching borders don't look bold */
+				margin-top: -1px;
+				margin-right: -1px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				font-weight: bold;
+				color: #888888;
+
+			}
+			li:hover {
+				background-color: #D4D4D4;
+				color: white;
+				cursor: pointer;
+			}
+
+			.active {
+				background-color: #6AB750;
+				color: white;
+			}
+		}
+	}
+
 }
+
+
+
+
+
