@@ -174,7 +174,7 @@ function loadData(feature, params, startingState, sessionData, store, Locale) {
 function getLocale(languageTag) {
 	let final = {}
 
-	if (typeof languageTag === 'undefined' || languageTag === null || languageTag === '' || availableLocales[languageTag] === 'undefined') {
+	if (typeof languageTag === 'undefined' || languageTag === null || languageTag === '' || typeof availableLocales[languageTag] === 'undefined') {
 		final = { locale: availableLocales['en-US'], source: 'default' }
 	} else {
 		final = { locale: availableLocales[languageTag], source: 'param' }
