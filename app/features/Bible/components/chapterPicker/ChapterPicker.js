@@ -10,27 +10,28 @@ class ChapterPicker extends Component {
 
 		var books, chapters = null
 
-	/**
-	 * 	3 scenarios of rendering:
-	 *
-	 * 			all based on which inputs this component receives.
-	 * 			handling the logic of which lists to render will be done by the parent by passing down the appropriate
-	 * 			params. (I think this logic will be based off of what is in the filter input component?)
-	 *
-	 * 			1. Both book list and chapter list
-	 * 					triggered by: dropdown arrow
-	 *
-	 * 					this only happens if both the bookList, chapterList, and selectedBook are passed to this component
-	 *
-	 * 			2. Just book list
-	 * 					triggered by: filtering for book, or dropdown arrow on mobile (mobile will always show book first, then chapter
-	 * 						when using the dropdown button)
-	 *
-	 * 					this only happens if the bookList is passed but either chapterList or selectedBook isn't passed
-	 *
-	 * 			3. Just chapter list
-	 * 					triggered by: filtering for chapter, or clicking on chapter from dropdown on mobile
-	 */
+		/**
+		 * 	3 scenarios of rendering:
+		 *
+		 * 			all based on which inputs this component receives.
+		 * 			handling the logic of which lists to render will be done by the parent by passing down the appropriate
+		 * 			params.
+		 *
+		 * 			1. Both book list and chapter list
+		 * 					triggered by: dropdown arrow
+		 *
+		 * 					this only happens if both the bookList, chapterList, and selectedBook are passed to this component
+		 *
+		 * 			2. Just book list
+		 * 					triggered by: filtering for book
+		 *
+		 * 					this only happens if the bookList is passed but either chapterList or selectedBook isn't passed
+		 *
+		 * 			3. Just chapter list
+		 * 					triggered by: filtering for chapter
+		 *
+		 * 					this only happens if the bookList is not passed, but both chapterList and selectedBook are passed
+		 */
 
 		if (bookList) {
 			books = (

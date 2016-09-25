@@ -62,6 +62,8 @@ class BibleView extends Component {
 		const { dispatch, bible } = this.props
 		this.setState({ selectedChapter: chapter.usfm })
 		dispatch(ActionCreators.bibleChapter({ id: bible.version.id, reference: chapter.usfm }))
+
+		// then write cookie for selected chapter
 	}
 
 
