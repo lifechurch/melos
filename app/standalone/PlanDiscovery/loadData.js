@@ -9,10 +9,6 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isSaved = new RegExp("^\/saved-plans-collection$")
 			const isRecommended = new RegExp("^\/recommended-plans-collection\/[0-9]+")
 			const isPlan = new RegExp("^\/reading-plans\/[0-9]+")
-
-
-			const isReference = new RegExp("^\/bible\/([0-9]{1}[a-z]{2}|[a-z]{3})\.[0-9]+\.[0-9]+")
-
 			const auth = (sessionData.email && sessionData.password) ? { username: sessionData.email, password: sessionData.password } : false
 			console.log(params.url)
 			if (isIndex.test(params.url)) {

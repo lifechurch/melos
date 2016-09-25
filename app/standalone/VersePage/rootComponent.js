@@ -1,2 +1,2 @@
-import { RouterContext } from 'react-router'
-export default RouterContext
+import VersePageView from '../../containers/VersePageView'
+export default VersePageView
