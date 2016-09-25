@@ -2245,13 +2245,13 @@ ul.language-selector li {
 
 	display: inline-flex;
 	height: 500px;
-	width: 560px;
 	border: 1px solid #D4D4D4;
 
 
 	// scroll bar styling for safari, chrome
 	::-webkit-scrollbar {
 	  width: 6px;
+	  margin-right: 1px;
 	}
 	::-webkit-scrollbar-thumb {
 	  background: #D4D4D4;
@@ -2274,11 +2274,8 @@ ul.language-selector li {
 
 	// books *******************************************
 	.book-container {
-		flex-grow: 1;
+		width: 300px;
 
-		@media only screen and (min-width: 520px) {
-			border-right: 1px solid #D4D4D4;
-		}
 
 		.book-list:hover {
 			overflow-y: overlay;
@@ -2313,10 +2310,10 @@ ul.language-selector li {
 
 		@media only screen and (min-width: 520px) {
 			.header {
-				width: 315px;
+				width: 314px;
 			}
+			border-left: 1px solid #D4D4D4;
 			margin-right: -5px;
-			margin-left: -1px;
 		}
 
 		.chapter-list:hover {
@@ -2338,7 +2335,7 @@ ul.language-selector li {
 				border: 1px solid #D4D4D4;
 				/* these margins are so the touching borders don't look bold */
 				margin-top: -1px;
-				margin-right: -1px;
+				margin-left: -1px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
