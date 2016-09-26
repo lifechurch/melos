@@ -20,6 +20,8 @@ class BibleView extends Component {
 			results: [],
 			versions: []
 		}
+		props.dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: 'MAT.1' }))
+		props.dispatch(ActionCreators.momentsColors())
 	}
 
 	getVersions() {
@@ -46,8 +48,6 @@ class BibleView extends Component {
 			console.timeEnd("Add Items")
 		})
 
-		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: 'MAT.1' }))
-		dispatch(ActionCreators.momentsColors())
 	}
 
 	getVC(version) {
