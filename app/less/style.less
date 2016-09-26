@@ -2241,6 +2241,25 @@ ul.language-selector li {
 
 
 
+// on mobile hide chapter until book is selected, then hide book when selecting chapter
+@media only screen and (max-width: 520px) {
+	.hide-chaps {
+		.book-container {
+			display: block;
+		}
+		.chapter-container {
+			display: none;
+		}
+	}
+	.hide-books {
+		.book-container {
+			display: none;
+		}
+		.chapter-container {
+			display: block;
+		}
+	}
+}
 .chap-picker {
 
 	display: inline-flex;
@@ -2268,7 +2287,24 @@ ul.language-selector li {
 		background-color: #F4F4F4;
 		border-bottom: 1px solid #D4D4D4;
 		height: 30px;
-		text-align: center;
+		display: inline-flex;
+		justify-content: space-between;
+
+		.prev {
+			display: none;
+		}
+		.cancel {
+			display: none;
+		}
+		@media only screen and (max-width: 520px) {
+			.prev {
+				display: block;
+			}
+			.cancel {
+				display: block;
+			}
+		}
+
 	}
 
 

@@ -6,9 +6,12 @@ import Chapters from './Chapters'
 class ChapterPicker extends Component {
 
 	render() {
-		const { bookList, chapterList, getBook, getChapter, selectedBook, selectedChapter } = this.props
+		const { bookList, chapterList, getBook, getChapter, selectedBook, selectedChapter, classes, toggle } = this.props
 
 		var books, chapters = null
+
+		// if we are passing down a class name, lets apply it
+		var classNames = (classes) ? `chap-picker ${classes}` : 'chap-picker'
 
 		/**
 		 * 	3 scenarios of rendering:
@@ -21,6 +24,10 @@ class ChapterPicker extends Component {
 		 * 					triggered by: dropdown arrow
 		 *
 		 * 					this only happens if both the bookList, chapterList, and selectedBook are passed to this component
+		 *
+		 * 					mobile:
+		 *						selecting book and chapter and prev arrow determine the class passed down to this component which
+		 *						hides and shows the appropriate list for mobile view
 		 *
 		 * 			2. Just book list
 		 * 					triggered by: filtering for book
@@ -45,14 +52,18 @@ class ChapterPicker extends Component {
 		if (chapterList && selectedBook) {
 			chapters = (
 				<div className='chapter-container'>
-					<div className='header'>CHAPTER</div>
+					<div className='header'>
+						<a className='prev' onClick={toggle}>&larr;</a>
+						<div>CHAPTER</div>
+						<a className='cancel'>Cancel</a>
+					</div>
 					<Chapters list={chapterList} onSelect={getChapter} initialSelection={selectedChapter} />
 				</div>
 			)
 		}
 
 		return (
-			<div className='chap-picker'>
+			<div className={classNames} >
 				{ books }
 				{ chapters }
 			</div>
@@ -76,6 +87,8 @@ class ChapterPicker extends Component {
  *	@selectedChapter		currently selected chapter, used for highlighting the chapter in chapter list
  *	@getBook						function passed down to the book list to call when a book is selected
  *	@getChapter					function passed down to the chapter list to call when a chapter is selected
+ *	@classes						classes to apply. for showing and hiding on mobile views
+ *	@toggle							function to call on prev arrow click on chapter header to hide chaps and show books
  *
  */
 ChapterPicker.propTypes = {
@@ -84,7 +97,9 @@ ChapterPicker.propTypes = {
 	selectedBook: React.PropTypes.string,
 	selectedChapter: React.PropTypes.string,
 	getBook: React.PropTypes.func,
-	getChapter: React.PropTypes.func
+	getChapter: React.PropTypes.func,
+	classes: React.PropTypes.string,
+	toggle: React.propTypes.func
 }
 
 export default ChapterPicker

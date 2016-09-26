@@ -14,6 +14,7 @@ class BibleView extends Component {
 		this.state = {
 			selectedBook: 'MAT',
 			selectedChapter: 'MAT.1',
+			classes: 'hide-chaps',
 			dbReady: false,
 			db: null,
 			results: [],
@@ -56,14 +57,21 @@ class BibleView extends Component {
 
 	getBook(book) {
 		this.setState({ selectedBook: book.usfm })
+		this.toggleChapterPickerList()
 	}
 
 	getChapter(chapter) {
 		const { dispatch, bible } = this.props
 		this.setState({ selectedChapter: chapter.usfm })
+		this.toggleChapterPickerList()
 		dispatch(ActionCreators.bibleChapter({ id: bible.version.id, reference: chapter.usfm }))
 
 		// then write cookie for selected chapter
+	}
+
+	// this handles the class toggling for book and chapter clicks on mobile
+	toggleChapterPickerList() {
+		(this.state.classes) == 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
 	}
 
 
@@ -99,7 +107,7 @@ class BibleView extends Component {
 
 		var chapterPicker = null
 		if (Array.isArray(bible.books.all) && bible.books.map) {
-			chapterPicker = <ChapterPicker bookList={bible.books.all} chapterList={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} selectedBook={this.state.selectedBook} selectedChapter={this.state.selectedChapter} getChapter={::this.getChapter} getBook={::this.getBook} />
+			chapterPicker = <ChapterPicker classes={this.state.classes} bookList={bible.books.all} chapterList={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} selectedBook={this.state.selectedBook} selectedChapter={this.state.selectedChapter} getChapter={::this.getChapter} getBook={::this.getBook} toggle={::this.toggleChapterPickerList} />
 		}
 
 		return (
