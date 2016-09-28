@@ -5,6 +5,8 @@ import Bible from '../features/Bible/components/Bible'
 import Filter from '../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import ChapterPicker from '../features/Bible/components/chapterPicker/ChapterPicker'
+import cookie from 'react-cookie';
+import moment from 'moment'
 
 
 
@@ -12,8 +14,8 @@ class BibleView extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			selectedBook: 'MAT',
-			selectedChapter: 'MAT.1',
+			selectedBook: cookie.load('last_read') ? cookie.load('last_read').split('.')[0] : 'MAT',
+			selectedChapter: cookie.load('last_read') || 'MAT.1',
 			classes: 'hide-chaps',
 			dbReady: false,
 			db: null,
@@ -46,7 +48,7 @@ class BibleView extends Component {
 			console.timeEnd("Add Items")
 		})
 
-		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: 'MAT.1' }))
+		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: this.state.selectedChapter }))
 		dispatch(ActionCreators.momentsColors())
 	}
 
@@ -65,8 +67,8 @@ class BibleView extends Component {
 		this.setState({ selectedChapter: chapter.usfm })
 		this.toggleChapterPickerList()
 		dispatch(ActionCreators.bibleChapter({ id: bible.version.id, reference: chapter.usfm }))
-
 		// then write cookie for selected chapter
+		cookie.save('last_read', chapter.usfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 	}
 
 	// this handles the class toggling for book and chapter clicks on mobile
