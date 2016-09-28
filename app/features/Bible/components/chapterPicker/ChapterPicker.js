@@ -10,7 +10,7 @@ class ChapterPicker extends Component {
 
 		var books, chapters = null
 
-		// if we are passing down a class name, lets apply it
+		// apply the correct mobile class from the click handlers passed down
 		var classNames = (classes) ? `chap-picker ${classes}` : 'chap-picker'
 
 		/**
@@ -54,7 +54,7 @@ class ChapterPicker extends Component {
 				<div className='chapter-container'>
 					<div className='header'>
 						<a className='prev' onClick={toggle}>&larr;</a>
-						<div>CHAPTER</div>
+						CHAPTER
 						<a className='cancel'>Cancel</a>
 					</div>
 					<Chapters list={chapterList} onSelect={getChapter} initialSelection={selectedChapter} />
@@ -99,7 +99,7 @@ ChapterPicker.propTypes = {
 	getBook: React.PropTypes.func,
 	getChapter: React.PropTypes.func,
 	classes: React.PropTypes.string,
-	toggle: React.propTypes.func
+	toggle: React.PropTypes.func
 }
 
 export default ChapterPicker

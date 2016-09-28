@@ -2287,8 +2287,7 @@ ul.language-selector li {
 		background-color: #F4F4F4;
 		border-bottom: 1px solid #D4D4D4;
 		height: 30px;
-		display: inline-flex;
-		justify-content: space-between;
+		text-align: center;
 
 		.prev {
 			display: none;
@@ -2299,9 +2298,13 @@ ul.language-selector li {
 		@media only screen and (max-width: 520px) {
 			.prev {
 				display: block;
+				float: left;
+				padding-left: 5px;
 			}
 			.cancel {
 				display: block;
+				float: right;
+				padding-right: 5px;
 			}
 		}
 
@@ -2342,14 +2345,12 @@ ul.language-selector li {
 
 	// chapters *****************************************
 	.chapter-container {
-		width: 320px;
 
-		@media only screen and (min-width: 520px) {
-			.header {
-				width: 314px;
-			}
-			border-left: 1px solid #D4D4D4;
-			margin-right: -5px;
+		width: 320px;
+		border-left: 1px solid #D4D4D4;
+		margin-right: -5px;
+		.header {
+			width: 314px;
 		}
 
 		.chapter-list:hover {
@@ -2358,7 +2359,6 @@ ul.language-selector li {
 		.chapter-list {
 			max-height: 460px;
 			overflow: hidden;
-			// width: 320px;
 			font-size: 15px;
 			display: inline-flex;
 			flex-wrap: wrap;
