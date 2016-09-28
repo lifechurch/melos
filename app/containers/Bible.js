@@ -6,6 +6,10 @@ import Filter from '../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Books from '../features/Bible/components/chapterPicker/Books'
 import Chapters from '../features/Bible/components/chapterPicker/Chapters'
+import Versions from '../features/Bible/components/versionPicker/Versions'
+import cookie from 'react-cookie';
+import moment from 'moment'
+
 
 
 
@@ -14,7 +18,9 @@ class BibleView extends Component {
 		super(props)
 		this.state = {
 			selectedBook: 'MAT',
-			selectedChapter: 'MAT.1'
+			selectedChapter: 'MAT.1',
+			selectedVersion: cookie.load('version') || 111,
+			selectedLanguage: 'eng',
 			dbReady: false,
 			db: null,
 			results: [],
@@ -24,11 +30,11 @@ class BibleView extends Component {
 		props.dispatch(ActionCreators.momentsColors())
 	}
 
-	getVersions() {
+	getVersions(languageTag) {
 		const { dispatch } = this.props
 		const comp = this
-
-		dispatch(ActionCreators.bibleVersions({ language_tag: 'eng', type: 'all' })).then((versions) => {
+		this.setState({ selectedLanguage: languageTag })
+		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
 			console.time("Build Versions Index")
 			Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
 			console.timeEnd("Build Versions Index")
@@ -50,9 +56,10 @@ class BibleView extends Component {
 
 	}
 
-	getVC(version) {
+	getVC(versionID) {
 		const { dispatch, bible } = this.props
-		dispatch(ActionCreators.loadVersionAndChapter({ id: version.id, reference: this.state.selectedChapter }))
+		this.setState({ selectedVersion: versionID })
+		dispatch(ActionCreators.loadVersionAndChapter({ id: versionID, reference: this.state.selectedChapter }))
 	}
 
 
@@ -64,7 +71,7 @@ class BibleView extends Component {
 	getChapter(chapter) {
 		const { dispatch, bible } = this.props
 		this.setState({ selectedChapter: chapter.usfm })
-		dispatch(ActionCreators.bibleChapter({ id: bible.version.id, reference: chapter.usfm }))
+		dispatch(ActionCreators.bibleChapter({ id: this.state.selectedVersion, reference: chapter.usfm }))
 	}
 // ********************************************* //
 
@@ -107,6 +114,11 @@ class BibleView extends Component {
 			chapters = <Chapters list={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} onSelect={::this.getChapter} initialSelection={this.state.selectedChapter} />
 		}
 
+		var versionsss = null
+		if (bible.versions.byLang) {
+			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} />
+		}
+
 		return (
 			<div>
 				<div className="row">
@@ -116,7 +128,7 @@ class BibleView extends Component {
 				</div>
 				<div className="row">
 					<div className="columns medium-3">
-						<a onClick={::this.getVersions}>Get Versions</a>
+						<a onClick={this.getVersions.bind(this, 'eng')}>Get Versions</a>
 						<input onChange={::this.filterVersions} />
 						<ul>
 							<ReactCSSTransitionGroup transitionName='content' transitionEnterTimeout={250} transitionLeaveTimeout={250}>
@@ -130,6 +142,7 @@ class BibleView extends Component {
 					<div className="columns medium-3">
 						{ books }
 						{ chapters }
+						{ versions }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />

@@ -7,7 +7,7 @@ class Versions extends Component {
 	}
 
 	versionSelect(version) {
-		this.setState( { selectedVersion: version.usfm } )
+		this.setState( { selectedVersion: version.id } )
 		if (typeof this.props.onSelect == 'function') {
 			this.props.onSelect(version)
 		}
@@ -18,19 +18,32 @@ class Versions extends Component {
 
 		var versions, recents = null
 		if (Array.isArray(recentlyUsed)) {
-			recents = recentlyUsed.map((recent) => {
-				return( (<li key={version.usfm} className={ (version.usfm == this.state.selectedVersion) ? 'active' : ''}><a onClick={this.versionselect.bind(this, version)}>{ version.human }</a></li>) )
+			var recentList = recentlyUsed.map((recent) => {
+				return( (<li key={version.id} className={ (version.id == this.state.selectedVersion) ? 'active' : ''}><a onClick={this.versionselect.bind(this, version)}>{ version.human }</a></li>) )
 			})
+			recents = (
+				<div className='recentsContainer'>
+					<h4 className='version-header'>Recently Used</h4>
+					{ recentList }
+				</div>
+			)
 		}
-
-		if (Array.isArray(list)) {
-			versions = list.map((version) =>  {
-				return( (<li key={version.usfm} className={ (version.usfm == this.state.selectedVersion) ? 'active' : ''}><a onClick={this.versionselect.bind(this, version)}>{ version.human }</a></li>) )
+		console.log(list)
+		if (list) {
+			var versionList = Object.keys(list).forEach((version) =>  {
+				return( (<li key={version.id} className={ (version.id == this.state.selectedVersion) ? 'active' : ''}><a onClick={this.versionselect.bind(this, version)}>{ version.human }</a></li>) )
 			})
+			versions = (
+				<div className='versionsContainer'>
+					<h4 className='version-header'>{ Object.keys(list)[0].name }</h4>
+					{ versionList }
+				</div>
+			)
 		}
 
 		return (
-			<ul className='book-list'>
+			<ul className='version-list'>
+				{ recents }
 				{ versions }
 			</ul>
 		)
@@ -39,15 +52,15 @@ class Versions extends Component {
 
 
 /**
- * 		@list					  			array of book objects for the current version
- * 		@onSelect			  			function to call when selecting book
- * 		@initialSelection	   	usfm for highlighting currently selected book
+ * 		@list					  			object of version objects for the specific language
+ * 		@onSelect			  			function to call when selecting version
+ * 		@initialSelection	   	id for highlighting currently selected version
  */
 Versions.propTypes = {
-	list: React.PropTypes.array.isRequired,
+	list: React.PropTypes.object,
 	recentlyUsed: React.PropTypes.array,
 	onSelect: React.PropTypes.func,
-	initialSelection: React.PropTypes.string
+	initialSelection: React.PropTypes.number
 }
 
 export default Versions
