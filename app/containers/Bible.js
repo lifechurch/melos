@@ -26,14 +26,15 @@ class BibleView extends Component {
 			results: [],
 			versions: []
 		}
-		props.dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: 'MAT.1' }))
-		props.dispatch(ActionCreators.momentsColors())
+		// props.dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: 'MAT.1' }))
+		// props.dispatch(ActionCreators.momentsColors())
 	}
 
 	getVersions(languageTag) {
 		const { dispatch } = this.props
 		const comp = this
 		this.setState({ selectedLanguage: languageTag })
+
 		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
 			console.time("Build Versions Index")
 			Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
@@ -115,7 +116,7 @@ class BibleView extends Component {
 		}
 
 		var versionsss = null
-		if (bible.versions.byLang) {
+		if (bible.versions.byLang && bible.versions.byLang[this.state.selectedLanguage]) {
 			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} />
 		}
 
@@ -128,7 +129,7 @@ class BibleView extends Component {
 				</div>
 				<div className="row">
 					<div className="columns medium-3">
-						<a onClick={this.getVersions.bind(this, 'eng')}>Get Versions</a>
+						<a onClick={this.getVersions.bind(this, this.state.selectedLanguage)}>Get Versions</a>
 						<input onChange={::this.filterVersions} />
 						<ul>
 							<ReactCSSTransitionGroup transitionName='content' transitionEnterTimeout={250} transitionLeaveTimeout={250}>
@@ -142,7 +143,7 @@ class BibleView extends Component {
 					<div className="columns medium-3">
 						{ books }
 						{ chapters }
-						{ versions }
+						{ versionsss }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />

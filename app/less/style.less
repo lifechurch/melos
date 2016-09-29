@@ -2252,7 +2252,7 @@ ul.language-selector li {
 	font-size: 15px;
 
 	li {
-		padding-left: 15px;
+		padding: 4px 0px 4px 15px;
 		a {
 			color: black;
 		}
@@ -2296,5 +2296,49 @@ ul.language-selector li {
 	.active {
 		background-color: #6AB750;
 		color: white;
+	}
+}
+
+
+
+
+
+
+.version-list {
+	.version-header {
+		padding-left: 15px;
+		padding-bottom: 5px;
+		font-weight: bold;
+		color: black;
+		font-size: 15px;
+	}
+
+	.recentsContainer {
+		margin-bottom: 30px;
+	}
+
+	ul {
+		width: 100%;
+		list-style: none;
+		font-size: 15px;
+		margin-left: 0;
+	}
+
+	li {
+		padding: 4px 0px 4px 15px;
+		a {
+			display: block;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			color: black;
+		}
+	}
+
+	.active {
+		background-color: #6AB750;
+		a {
+			color: white;
+		}
 	}
 }
