@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import ActionCreators from '../../actions/creators'
+import { FormattedMessage } from 'react-intl'
 import Books from './Books'
 import Chapters from './Chapters'
 
@@ -8,10 +8,10 @@ class ChapterPicker extends Component {
 	render() {
 		const { bookList, chapterList, getBook, getChapter, selectedBook, selectedChapter, classes, toggle } = this.props
 
-		var books, chapters = null
+		let books, chapters = null
 
 		// apply the correct mobile class from the click handlers passed down
-		var classNames = (classes) ? `chap-picker ${classes}` : 'chap-picker'
+		let classNames = (classes) ? `chap-picker ${classes}` : 'chap-picker'
 
 		/**
 		 * 	3 scenarios of rendering:
@@ -43,7 +43,7 @@ class ChapterPicker extends Component {
 		if (bookList) {
 			books = (
 				<div className='book-container'>
-					<div className='header'>BOOK</div>
+					<div className='header'><FormattedMessage id="Reader.book label" /></div>
 					<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} />
 				</div>
 			)
@@ -54,7 +54,7 @@ class ChapterPicker extends Component {
 				<div className='chapter-container'>
 					<div className='header'>
 						<a className='prev' onClick={toggle}>&larr;</a>
-						CHAPTER
+						<FormattedMessage id="Reader.chapter label" />
 						<a className='cancel'>Cancel</a>
 					</div>
 					<Chapters list={chapterList} onSelect={getChapter} initialSelection={selectedChapter} />
