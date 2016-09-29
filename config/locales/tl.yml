@@ -1414,6 +1414,7 @@ tl:
             no button: "Hindi"
         plans: 
             plans: "Mga Babasahin"
+            plans back: "←Mga Babasahin"
             related plans: "Mga Kaugnay na Mga Plano"
             see all: "Tingnan Lahat"
             discover: "Tuklasin"

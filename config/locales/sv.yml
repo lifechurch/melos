@@ -1414,6 +1414,7 @@ sv:
             no button: "Nej"
         plans: 
             plans: "Läsplaner"
+            plans back: "planererar"
             related plans: "Relaterade Planer"
             see all: "Se alla"
             discover: "Upptäck"

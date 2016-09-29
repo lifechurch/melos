@@ -1399,6 +1399,7 @@ zh-TW:
             no button: "否"
         plans: 
             plans: "計劃"
+            plans back: "← 計劃"
             related plans: "相關題材的計劃"
             see all: "查看全部"
             discover: "發掘"

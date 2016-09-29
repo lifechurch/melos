@@ -1414,6 +1414,7 @@ fi:
             no button: "Ei"
         plans: 
             plans: "Suunnitelmat"
+            plans back: "← Suunnitelmat"
             related plans: "Samankaltaiset suunnitelmat"
             see all: "Näytä kaikki"
             discover: "Löydä"

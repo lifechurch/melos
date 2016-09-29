@@ -1399,6 +1399,7 @@ ja:
             no button: "いいえ"
         plans: 
             plans: "プラン"
+            plans back: "←読書プラン"
             related plans: "関連項目"
             see all: "一覧表示"
             discover: "発見"

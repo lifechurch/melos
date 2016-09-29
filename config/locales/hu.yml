@@ -1414,6 +1414,7 @@ hu:
             no button: "Nem"
         plans: 
             plans: "Tervek"
+            plans back: "← Plans"
             related plans: "Kapcsolódó tervek"
             see all: "Összes megtekintése"
             discover: "Felfedezés"

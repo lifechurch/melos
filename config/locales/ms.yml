@@ -1399,6 +1399,7 @@ ms:
             no button: "Tidak"
         plans: 
             plans: "Pelan"
+            plans back: "← Pelan"
             related plans: "Pelan yang berkaitan"
             see all: "Lihat semua"
             discover: "Menerokai"

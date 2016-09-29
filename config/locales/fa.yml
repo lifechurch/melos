@@ -1399,6 +1399,7 @@ fa:
             no button: "نه"
         plans: 
             plans: "برنامه‌های مطالعه"
+            plans back: "برنامه‌های مطالعه ←"
             related plans: "برنامه‌های مطالعۀ مربوطه"
             see all: "همه را ببینید"
             discover: "مطالب تازه را کشف کنید"

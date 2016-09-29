@@ -1414,6 +1414,7 @@ el:
             no button: "Όχι"
         plans: 
             plans: "Σχέδια "
+            plans back: "← Σχέδια"
             related plans: "Σχετικά σχέδια μελέτης"
             see all: "Εμφάνιση όλων"
             discover: "Ανακαλύψτε"

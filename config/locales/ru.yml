@@ -1444,6 +1444,7 @@ ru:
             no button: "Нет"
         plans: 
             plans: "Планы чтения"
+            plans back: "← Планы"
             related plans: "Планы, относящиеся к теме"
             see all: "Увидеть все"
             discover: "Узнавайте"

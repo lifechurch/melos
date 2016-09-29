@@ -1414,6 +1414,7 @@ mn:
             no button: "Үгүй"
         plans: 
             plans: "Тѳлѳвлѳгѳѳ"
+            plans back: "←Төлөвлөгөөнүүд"
             related plans: "Холбоотой унших төлөвлөгөө"
             see all: "Бүгдийг Харах"
             discover: "Мэдэж авах"

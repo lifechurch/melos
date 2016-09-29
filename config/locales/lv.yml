@@ -1429,6 +1429,7 @@ lv:
             no button: "Nē"
         plans: 
             plans: "Plāns"
+            plans back: "←Plāni"
             related plans: "Saistītie plāni"
             see all: "Apskatīt visu"
             discover: "Atklāj"

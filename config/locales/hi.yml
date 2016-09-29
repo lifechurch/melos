@@ -1414,6 +1414,7 @@ hi:
             no button: "नहीं"
         plans: 
             plans: "योजनाएँ"
+            plans back: "← Plans"
             related plans: "संबंधित योजनाएं "
             see all: "सब कुछ देखे"
             discover: "खोजें"

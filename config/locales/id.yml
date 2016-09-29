@@ -1399,6 +1399,7 @@ id:
             no button: "Tidak"
         plans: 
             plans: "Rencana"
+            plans back: "← Rencana"
             related plans: "Rencana Terkait"
             see all: "Lihat Semua"
             discover: "Temukan"

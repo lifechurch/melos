@@ -200,9 +200,9 @@ pl:
         share: 
             tell friends: "Powiedz swoim znajomym o Aplikacji Biblii dla Dzieci."
             facebook name: "Aplikacja Biblii dla Dzieci"
-            facebook description: "Aplikacja Biblii dla Dzieci już jest! Pobierz dzisiaj darmową aplikację dla iOS i Android: interaktywne historie biblijne, które pomogą twojemu dziecku w nauce, zabawie i wzrastaniu w Słowo Boże. www.bible.com/dzieci"
-            facebook link: "http://www.bible.com/dzieci"
-            facebook redirect: "http://www.bible.com/dzieci"
+            facebook description: "Aplikacja Biblii dla Dzieci już jest! Pobierz dzisiaj darmową aplikację dla iOS i Android: interaktywne historie biblijne, które pomogą twojemu dziecku w nauce, zabawie i wzrastaniu w Słowo Boże. www.bible.com/pl/kids"
+            facebook link: "http://www.bible.com/pl/kids"
+            facebook redirect: "http://www.bible.com/pl/kids"
             twitter description: "Aplikacja Biblii dla Dzieci od @YouVersion już jest! Jest zabawna i całkowicie darmowa. Pobierz ją z: bible.com/dzieci"
             twitter hashtags: "bibliadzieci"
             email: "E-mail"
@@ -1444,6 +1444,7 @@ pl:
             no button: "Nie"
         plans: 
             plans: "Plany czytania"
+            plans back: "← Plany"
             related plans: "Podobne plany"
             see all: "Zobacz wszystko"
             discover: "Odkryj"

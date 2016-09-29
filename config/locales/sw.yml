@@ -1414,6 +1414,7 @@ sw:
             no button: "Apana"
         plans: 
             plans: "Mipango ya bibilia"
+            plans back: "← Mipango"
             related plans: "Mipangilio yanayo husiana"
             see all: "Ona zote"
             discover: "Gundua"

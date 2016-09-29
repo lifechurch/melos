@@ -1474,11 +1474,12 @@ cy:
             no button: "Na"
         plans: 
             plans: "Cynlluniau"
+            plans back: "←Cynlluniau"
             related plans: "Cynlluniau Tebyg"
             see all: "Y cwbl"
             discover: "Darganfod"
             my_plans: "Fy Nghynlluniau"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>Cwblhaodd %{username} ddiwrnod %{day} o Gynllun Beibl %{plan_title}</b><b></b><b></b>"
             status: 
                 on track: "Ar y trywydd iawn!"
                 days ahead: 

@@ -268,7 +268,7 @@ ro:
     username or email prompt: "E-mail (sau nume de utilizator)"
     password prompt: "Parolă"
     sign in: "Autentificare"
-    sign in to youversion: "Autentifică-te la YouVersion"
+    sign in to youversion: "Autentifică-te pe YouVersion"
     remove: "Șterge"
     confirm danger: "Da, sunt sigur"
     registered ago: "Înregistrat cu %{time_ago} în urmă"
@@ -1429,6 +1429,7 @@ ro:
             no button: "Nu"
         plans: 
             plans: "Planuri de citire"
+            plans back: "← Planuri"
             related plans: "Planuri asemănătoare"
             see all: "Vezi toate"
             discover: "Descoperă"

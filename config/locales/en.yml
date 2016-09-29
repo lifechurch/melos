@@ -1893,3 +1893,27 @@ en:
             save:                               "Save Event"
             signIn:                             "Sign In to Save Event"
             saved:                              "Event Saved"
+    Reader:
+      header:
+        parallel:                               "Parallel"
+        parallel exit:                          "Exit Parallel Mode"
+        cancel:                                 "Cancel"
+        audio label:                            "AUDIO"
+        audio window:                           "Open in new window"
+        font label:                             "READER SETTINGS"
+        notifications label:                    "NOTIFICATIONS"
+        more label:                             "MORE"
+        search input:                           "Reference or Keyword..."
+      chapterpicker:
+        book label:                             "BOOK"
+        chapter label:                          "CHAPTER"
+        chapter unavailable:                    "This chapter is not available in this version. Please choose a different chapter or version."
+      versionpicker:
+        language label:                         "BIBLE LANGUAGES"
+        language sub-label:                     "Bible Language"
+        change language:                        "Change Language"
+        filter languages:                       "Filter Languages..."
+        version label:                          "VERSIONS"
+      reader settings:
+        footnotes:                              "Footnotes"
+        numbers:                                "Numbers and Titles"
