@@ -88,7 +88,7 @@ function requireRecommendedPlanData(nextState, replace, callback) {
 	const idNum = params.hasOwnProperty('id') ? parseInt(params.id.toString().split("-")[0]) : 0
 
 	// Do we already have data from server?
-	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.collection && currentState.plansDiscovery.collection.context == 'recommended' && currentState.plansDiscovery.collection.items && currentState.plansDiscovery.collection.items.length) {
+	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.collection && currentState.plansDiscovery.collection.context == 'recommended' && currentState.plansDiscovery.collection.id === idNum && currentState.plansDiscovery.collection.items && currentState.plansDiscovery.collection.items.length) {
 		callback()
 	} else if (idNum > 0) {
 		store.dispatch(PlanDiscoveryActionCreators.recommendedPlansInfo({ context: 'recommended', id: idNum, language_tag: window.__LOCALE__.planLocale }, store.getState().auth.isLoggedIn)).then((event) => {
