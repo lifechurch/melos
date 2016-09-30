@@ -1,54 +1,43 @@
 import React, { Component, PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
 
 class Versions extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { selectedVersion: props.initialSelection || null }
+		const { initialSelection } = props
+		this.state = { selectedVersion: initialSelection || null }
 	}
 
 	versionSelect(versionID) {
+		const { onSelect } = this.props
 		this.setState( { selectedVersion: versionID } )
-		if (typeof this.props.onSelect == 'function') {
-			this.props.onSelect(versionID)
+		if (typeof onSelect == 'function') {
+			onSelect(versionID)
 		}
 	}
 
 	render() {
-		const { recentlyUsed, list, onSelect } = this.props
+		const { list, onSelect, header } = this.props
+		const { selectedVersion } = this.state
 
-		let versions, recents = null
+		let versions = null
 
-		if (recentlyUsed) {
-			let recentList = []
-			Object.keys(recentlyUsed).forEach((id) =>  {
-				let recent = recentlyUsed[id]
-				recentList.push( (<li key={id} className={ (id == this.state.selectedVersion) ? 'active' : ''}><a onClick={this.versionSelect.bind(this, recent.id)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</a></li>) )
-			})
-			recents = (
-				<div className='recentsContainer'>
-					<p className='version-header'><FormattedMessage id="recent versions"/></p>
-					<ul>{ recentList }</ul>
-				</div>
-			)
-		}
 		if (list) {
 			let versionList = []
 			Object.keys(list).forEach((id) =>  {
 				let version = list[id]
-				versionList.push( (<li key={id} className={ (id == this.state.selectedVersion) ? 'active' : ''}><a onClick={this.versionSelect.bind(this, version.id)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</a></li>) )
+				versionList.push( (<li key={id} className={ (id == selectedVersion) ? 'active' : ''}><a onClick={this.versionSelect.bind(this, version.id)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</a></li>) )
 			})
+			/* the header would either be the language title or recently used */
 			versions = (
-				<div className='versionsContainer'>
-					<p className='version-header'>{ list[Object.keys(list)[0]].language.name }</p>
-					<ul>{ versionList }</ul>
-				</div>
+			<div className='version-list'>
+				<p className='version-header'>{ header }</p>
+				<ul>{ versionList }</ul>
+			</div>
 			)
 		}
 
 		return (
-			<div className='version-list'>
-				{ recents }
+			<div>
 				{ versions }
 			</div>
 		)
@@ -58,13 +47,13 @@ class Versions extends Component {
 
 /**
  * 		@list					  			object of version objects for the specific language
- * 		@recentlyUsed					object of recent version objects for displaying the 5 most recent
+ * 		@header								bold header for version list–either language title or recently used
  * 		@onSelect			  			function to call when selecting version
  * 		@initialSelection	   	id for highlighting currently selected version
  */
 Versions.propTypes = {
 	list: React.PropTypes.object,
-	recentlyUsed: React.PropTypes.array,
+	header: React.PropTypes.string,
 	onSelect: React.PropTypes.func,
 	initialSelection: React.PropTypes.number
 }

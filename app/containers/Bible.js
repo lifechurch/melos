@@ -117,7 +117,7 @@ class BibleView extends Component {
 
 		var versionsss = null
 		if (bible.versions.byLang && bible.versions.byLang[this.state.selectedLanguage]) {
-			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} />
+			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} header='English' />
 		}
 
 		return (
