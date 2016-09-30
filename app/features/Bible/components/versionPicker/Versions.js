@@ -1,13 +1,61 @@
 import React, { Component, PropTypes } from 'react'
 
 class Versions extends Component {
+	constructor(props) {
+		super(props)
+		const { initialSelection } = props
+		this.state = { selectedVersion: initialSelection || null }
+	}
+
+	versionSelect(versionID) {
+		const { onSelect } = this.props
+		this.setState( { selectedVersion: versionID } )
+		if (typeof onSelect == 'function') {
+			onSelect(versionID)
+		}
+	}
+
 	render() {
-		return (<div>Versions</div>)
+		const { list, onSelect, header } = this.props
+		const { selectedVersion } = this.state
+
+		let versions = null
+
+		if (list) {
+			let versionList = []
+			Object.keys(list).forEach((id) =>  {
+				let version = list[id]
+				versionList.push( (<li key={id} className={ (id == selectedVersion) ? 'active' : ''} onClick={this.versionSelect.bind(this, version.id)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
+			})
+			/* the header would either be the language title or recently used */
+			versions = (
+			<div className='version-list'>
+				<p className='version-header'>{ header }</p>
+				<ul>{ versionList }</ul>
+			</div>
+			)
+		}
+
+		return (
+			<div>
+				{ versions }
+			</div>
+		)
 	}
 }
 
-Versions.propTypes = {
 
+/**
+ * 		@list					  			object of version objects for the specific language
+ * 		@header								bold header for version list–either language title or recently used
+ * 		@onSelect			  			function to call when selecting version
+ * 		@initialSelection	   	id for highlighting currently selected version
+ */
+Versions.propTypes = {
+	list: React.PropTypes.object,
+	header: React.PropTypes.string,
+	onSelect: React.PropTypes.func,
+	initialSelection: React.PropTypes.number
 }
 
 export default Versions

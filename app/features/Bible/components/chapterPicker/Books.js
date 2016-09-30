@@ -4,23 +4,26 @@ class Books extends Component {
 
 	constructor(props) {
 		super(props)
-		this.state = { selectedBook: props.initialSelection || null }
+		const { initialSelection } = props
+		this.state = { selectedBook: initialSelection || null }
 	}
 
 	bookSelect(book) {
 		this.setState( { selectedBook: book.usfm } )
-		if (typeof this.props.onSelect == 'function') {
-			this.props.onSelect(book)
+		const { onSelect } = this.props
+		if (typeof onSelect == 'function') {
+			onSelect(book)
 		}
 	}
 
 	render() {
 		const { list, onSelect } = this.props
+		const { selectedBook } = this.state
 
 		var books = null
 		if (Array.isArray(list)) {
 			books = list.map((book) =>  {
-				return( (<li key={book.usfm} className={ (book.usfm == this.state.selectedBook) ? 'active' : ''}><a onClick={this.bookSelect.bind(this, book)}>{ book.human }</a></li>) )
+				return( (<li key={book.usfm} className={ (book.usfm == selectedBook) ? 'active' : '' } onClick={this.bookSelect.bind(this, book)}>{ book.human }</li>) )
 			})
 		}
 

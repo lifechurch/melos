@@ -7,27 +7,36 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Books from '../features/Bible/components/chapterPicker/Books'
 import Chapters from '../features/Bible/components/chapterPicker/Chapters'
 import Languages from '../features/Bible/components/versionPicker/Languages'
+import Versions from '../features/Bible/components/versionPicker/Versions'
+import cookie from 'react-cookie';
+import moment from 'moment'
+import ChapterPicker from '../features/Bible/components/chapterPicker/ChapterPicker'
 
 
 class BibleView extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			selectedBook: 'MAT',
-			selectedChapter: 'MAT.1',
+			selectedBook: cookie.load('last_read') ? cookie.load('last_read').split('.')[0] : 'MAT',
+			selectedChapter: cookie.load('last_read') || 'MAT.1',
+			classes: 'hide-chaps',
+			selectedVersion: cookie.load('version') || 111,
 			selectedLanguage: 'eng',
 			dbReady: false,
 			db: null,
 			results: [],
 			versions: []
 		}
+		// props.dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: 'MAT.1' }))
+		// props.dispatch(ActionCreators.momentsColors())
 	}
 
-	getVersions() {
+	getVersions(languageTag) {
 		const { dispatch } = this.props
 		const comp = this
+		this.setState({ selectedLanguage: languageTag })
 
-		dispatch(ActionCreators.bibleVersions({ language_tag: 'eng', type: 'all' })).then((versions) => {
+		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
 			console.time("Build Versions Index")
 			Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
 			console.timeEnd("Build Versions Index")
@@ -47,27 +56,35 @@ class BibleView extends Component {
 			console.timeEnd("Add Items")
 		})
 
-		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: 'MAT.1' }))
+		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: this.state.selectedChapter }))
 		dispatch(ActionCreators.momentsColors())
 	}
 
-	getVC(version) {
+	getVC(versionID) {
 		const { dispatch, bible } = this.props
-		dispatch(ActionCreators.loadVersionAndChapter({ id: version.id, reference: this.state.selectedChapter }))
+		this.setState({ selectedVersion: versionID })
+		dispatch(ActionCreators.loadVersionAndChapter({ id: versionID, reference: this.state.selectedChapter }))
 	}
 
-
-// ********* BOOK | CHAPTER SELECTOR *********** //
 	getBook(book) {
 		this.setState({ selectedBook: book.usfm })
+		this.toggleChapterPickerList()
 	}
 
 	getChapter(chapter) {
 		const { dispatch, bible } = this.props
 		this.setState({ selectedChapter: chapter.usfm })
-		dispatch(ActionCreators.bibleChapter({ id: bible.version.id, reference: chapter.usfm }))
+		this.toggleChapterPickerList()
+		dispatch(ActionCreators.bibleChapter({ id: this.state.selectedVersion, reference: chapter.usfm }))
+		// then write cookie for selected chapter
+		cookie.save('last_read', chapter.usfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 	}
-// ********************************************* //
+
+	// this handles the class toggling for book and chapter clicks on mobile
+	toggleChapterPickerList() {
+		(this.state.classes) == 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
+	}
+
 
 	filterLang(changeEvent) {
 		const filter = changeEvent.target.value;
@@ -99,18 +116,19 @@ class BibleView extends Component {
 			return (<li key={v.id}>{v.abbreviation} {v.title}</li>)
 		})
 
-		var books = null
+		var chapterPicker = null
 		if (Array.isArray(bible.books.all) && bible.books.map) {
-			books = <Books list={bible.books.all} onSelect={::this.getBook} initialSelection={this.state.selectedBook} />
+			chapterPicker = <ChapterPicker classes={this.state.classes} bookList={bible.books.all} chapterList={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} selectedBook={this.state.selectedBook} selectedChapter={this.state.selectedChapter} getChapter={::this.getChapter} getBook={::this.getBook} toggle={::this.toggleChapterPickerList} />
 		}
-		var chapters = null
-		if (Array.isArray(bible.books.all) && bible.books.map) {
-			chapters = <Chapters list={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} onSelect={::this.getChapter} initialSelection={this.state.selectedChapter} />
+
+		var versionsss = null
+		if (bible.versions.byLang && bible.versions.byLang[this.state.selectedLanguage]) {
+			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} header='English' />
 		}
 
 		var languages = null
 		if (Array.isArray(bible.languages.all) && bible.languages.map) {
-			languages = <Languages list={bible.languages.all} onSelect={::this.getChapter} initialSelection={this.state.selectedLanguage} />
+			languages = <Languages list={bible.languages.all} onSelect={::this.getVersions} initialSelection={this.state.selectedLanguage} header='All' />
 		}
 
 		return (
@@ -120,9 +138,12 @@ class BibleView extends Component {
 						<Bible bible={bible} />
 					</div>
 				</div>
+				<div className=''>
+					{ chapterPicker }
+				</div>
 				<div className="row">
 					<div className="columns medium-3">
-						<a onClick={::this.getVersions}>Get Versions</a>
+						<a onClick={this.getVersions.bind(this, this.state.selectedLanguage)}>Get Versions</a>
 						<input onChange={::this.filterVersions} />
 						<ul>
 							<ReactCSSTransitionGroup transitionName='content' transitionEnterTimeout={250} transitionLeaveTimeout={250}>
@@ -134,9 +155,8 @@ class BibleView extends Component {
 						<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 					</div>
 					<div className="columns medium-3">
-						{ books }
-						{ chapters }
 						{ languages }
+						{ versionsss }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />
