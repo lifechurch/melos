@@ -4,24 +4,28 @@ class Chapters extends Component {
 
 	constructor(props) {
 		super(props)
-		this.state = { selectedChapter: props.initialSelection || null }
+		const { initialSelection } = props
+		this.state = { selectedChapter: initialSelection || null }
 	}
 
 	chapterSelect(chapter) {
 		this.setState( { selectedChapter: chapter.usfm } )
-		if (typeof this.props.onSelect == 'function') {
-			this.props.onSelect(chapter)
+		const { onSelect } = this.props
+		if (typeof onSelect == 'function') {
+			onSelect(chapter)
 		}
 	}
 
 	render() {
 		const { list, onSelect } = this.props
+		const { selectedChapter } = this.state
 
 		var chapters = []
+
 		if (list) {
 			Object.keys(list).forEach((usfm) =>  {
 				var chapter = list[usfm]
-				chapters.push( (<li key={usfm} onClick={this.chapterSelect.bind(this, chapter)} className={ (usfm == this.state.selectedChapter) ? 'active' : ''}>{ chapter.human }</li>) )
+				chapters.push( (<li key={usfm} onClick={this.chapterSelect.bind(this, chapter)} className={ (usfm == selectedChapter) ? 'active' : ''}>{ chapter.human }</li>) )
 			})
 		}
 

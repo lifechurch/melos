@@ -4,9 +4,12 @@ import ActionCreators from '../features/Bible/actions/creators'
 import Bible from '../features/Bible/components/Bible'
 import Filter from '../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import ChapterPicker from '../features/Bible/components/chapterPicker/ChapterPicker'
+import Books from '../features/Bible/components/chapterPicker/Books'
+import Chapters from '../features/Bible/components/chapterPicker/Chapters'
+import Versions from '../features/Bible/components/versionPicker/Versions'
 import cookie from 'react-cookie';
 import moment from 'moment'
+import ChapterPicker from '../features/Bible/components/chapterPicker/ChapterPicker'
 
 
 
@@ -17,18 +20,23 @@ class BibleView extends Component {
 			selectedBook: cookie.load('last_read') ? cookie.load('last_read').split('.')[0] : 'MAT',
 			selectedChapter: cookie.load('last_read') || 'MAT.1',
 			classes: 'hide-chaps',
+			selectedVersion: cookie.load('version') || 111,
+			selectedLanguage: 'eng',
 			dbReady: false,
 			db: null,
 			results: [],
 			versions: []
 		}
+		// props.dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: 'MAT.1' }))
+		// props.dispatch(ActionCreators.momentsColors())
 	}
 
-	getVersions() {
+	getVersions(languageTag) {
 		const { dispatch } = this.props
 		const comp = this
+		this.setState({ selectedLanguage: languageTag })
 
-		dispatch(ActionCreators.bibleVersions({ language_tag: 'eng', type: 'all' })).then((versions) => {
+		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
 			console.time("Build Versions Index")
 			Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
 			console.timeEnd("Build Versions Index")
@@ -52,9 +60,10 @@ class BibleView extends Component {
 		dispatch(ActionCreators.momentsColors())
 	}
 
-	getVC(version) {
+	getVC(versionID) {
 		const { dispatch, bible } = this.props
-		dispatch(ActionCreators.loadVersionAndChapter({ id: version.id, reference: this.state.selectedChapter }))
+		this.setState({ selectedVersion: versionID })
+		dispatch(ActionCreators.loadVersionAndChapter({ id: versionID, reference: this.state.selectedChapter }))
 	}
 
 	getBook(book) {
@@ -66,7 +75,7 @@ class BibleView extends Component {
 		const { dispatch, bible } = this.props
 		this.setState({ selectedChapter: chapter.usfm })
 		this.toggleChapterPickerList()
-		dispatch(ActionCreators.bibleChapter({ id: bible.version.id, reference: chapter.usfm }))
+		dispatch(ActionCreators.bibleChapter({ id: this.state.selectedVersion, reference: chapter.usfm }))
 		// then write cookie for selected chapter
 		cookie.save('last_read', chapter.usfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 	}
@@ -112,6 +121,11 @@ class BibleView extends Component {
 			chapterPicker = <ChapterPicker classes={this.state.classes} bookList={bible.books.all} chapterList={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} selectedBook={this.state.selectedBook} selectedChapter={this.state.selectedChapter} getChapter={::this.getChapter} getBook={::this.getBook} toggle={::this.toggleChapterPickerList} />
 		}
 
+		var versionsss = null
+		if (bible.versions.byLang && bible.versions.byLang[this.state.selectedLanguage]) {
+			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} header='English' />
+		}
+
 		return (
 			<div>
 				<div className="row">
@@ -124,7 +138,7 @@ class BibleView extends Component {
 				</div>
 				<div className="row">
 					<div className="columns medium-3">
-						<a onClick={::this.getVersions}>Get Versions</a>
+						<a onClick={this.getVersions.bind(this, this.state.selectedLanguage)}>Get Versions</a>
 						<input onChange={::this.filterVersions} />
 						<ul>
 							<ReactCSSTransitionGroup transitionName='content' transitionEnterTimeout={250} transitionLeaveTimeout={250}>
@@ -134,6 +148,11 @@ class BibleView extends Component {
 					</div>
 					<div className="columns medium-3">
 						<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
+					</div>
+					<div className="columns medium-3">
+						{ books }
+						{ chapters }
+						{ versionsss }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />
