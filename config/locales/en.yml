@@ -1904,6 +1904,11 @@ en:
         notifications label:                    "NOTIFICATIONS"
         more label:                             "MORE"
         search input:                           "Reference or Keyword..."
+        home:                                   "Home"
+        bible:                                  "Bible"
+        plans:                                  "Plans"
+        videos:                                 "Videos"
+        me:                                     "Me"
       chapterpicker:
         book label:                             "BOOK"
         chapter label:                          "CHAPTER"
@@ -1917,3 +1922,10 @@ en:
       reader settings:
         footnotes:                              "Footnotes"
         numbers:                                "Numbers and Titles"
+      more:
+        events:                                 "Events"
+        settings:                               "Settings"
+      search:
+        bible:                                  "Bible"
+        users:                                  "Users"
+        plans:                                  "Plans"
