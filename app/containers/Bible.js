@@ -6,7 +6,7 @@ import Filter from '../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Books from '../features/Bible/components/chapterPicker/Books'
 import Chapters from '../features/Bible/components/chapterPicker/Chapters'
-
+import Languages from '../features/Bible/components/versionPicker/Languages'
 
 
 class BibleView extends Component {
@@ -14,7 +14,8 @@ class BibleView extends Component {
 		super(props)
 		this.state = {
 			selectedBook: 'MAT',
-			selectedChapter: 'MAT.1'
+			selectedChapter: 'MAT.1',
+			selectedLanguage: 'eng',
 			dbReady: false,
 			db: null,
 			results: [],
@@ -107,6 +108,11 @@ class BibleView extends Component {
 			chapters = <Chapters list={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} onSelect={::this.getChapter} initialSelection={this.state.selectedChapter} />
 		}
 
+		var languages = null
+		if (Array.isArray(bible.languages.all) && bible.languages.map) {
+			languages = <Languages list={bible.languages.all} onSelect={::this.getChapter} initialSelection={this.state.selectedLanguage} />
+		}
+
 		return (
 			<div>
 				<div className="row">
@@ -130,6 +136,7 @@ class BibleView extends Component {
 					<div className="columns medium-3">
 						{ books }
 						{ chapters }
+						{ languages }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />
