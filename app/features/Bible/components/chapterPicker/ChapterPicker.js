@@ -43,7 +43,7 @@ class ChapterPicker extends Component {
 		if (bookList) {
 			books = (
 				<div className='book-container'>
-					<div className='header'><FormattedMessage id="Reader.book label" /></div>
+					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.chapterpicker.book label" /></div>
 					<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} />
 				</div>
 			)
@@ -52,10 +52,10 @@ class ChapterPicker extends Component {
 		if (chapterList && selectedBook) {
 			chapters = (
 				<div className='chapter-container'>
-					<div className='header'>
-						<a className='prev' onClick={toggle}>&larr;</a>
-						<FormattedMessage id="Reader.chapter label" />
-						<a className='cancel'>Cancel</a>
+					<div className='header vertical-center'>
+						<a className='prev columns medium-4' onClick={toggle}><p>&larr;</p></a>
+						<p className='columns medium-4'><FormattedMessage id="Reader.chapterpicker.chapter label" /></p>
+						<a className='cancel columns medium-4'><FormattedMessage id="Reader.header.cancel" /></a>
 					</div>
 					<Chapters list={chapterList} onSelect={getChapter} initialSelection={selectedChapter} />
 				</div>

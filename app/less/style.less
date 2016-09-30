@@ -2264,7 +2264,12 @@ ul.language-selector li {
 
 	display: inline-flex;
 	max-height: 490px;
+	border-radius: 5px 5px 0px 0px;
 	border: 1px solid #D4D4D4;
+
+  box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
+  -moz-box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
+  -webkit-box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
 
 
 	// scroll bar styling for safari, chrome
@@ -2298,15 +2303,16 @@ ul.language-selector li {
 		@media only screen and (max-width: 520px) {
 			.prev {
 				display: block;
-				float: left;
-				padding-left: 5px;
+				text-align: left;
+				padding: 5px;
 				color: #979797;
 			}
 			.cancel {
 				display: block;
-				float: right;
-				padding-right: 5px;
+				text-align: right;
+				padding: 5px;
 				color: #979797;
+				font-size: 13px;
 			}
 		}
 
@@ -2315,8 +2321,10 @@ ul.language-selector li {
 
 	// books *******************************************
 	.book-container {
-		width: 240px;
-
+		min-width: 240px;
+		@media only screen and (max-width: 520px) {
+			width: 320px;
+		}
 
 		.book-list:hover {
 			overflow-y: overlay;
@@ -2334,12 +2342,15 @@ ul.language-selector li {
 					color: black;
 				}
 			}
+			li:hover {
+				background-color: #D4D4D4;
+				color: white;
+				cursor: pointer;
+			}
 
 			.active {
 				background-color: #6AB750;
-				a {
-					color: white;
-				}
+				color: white;
 			}
 		}
 	}
