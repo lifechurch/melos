@@ -2241,60 +2241,174 @@ ul.language-selector li {
 
 
 
-
-
-
-
-
-
-.book-list {
-	list-style: none;
-	font-size: 15px;
-
-	li {
-		padding-left: 15px;
-		a {
-			color: black;
+// on mobile hide chapter until book is selected, then hide book when selecting chapter
+@media only screen and (max-width: 520px) {
+	.hide-chaps {
+		.book-container {
+			display: block;
+		}
+		.chapter-container {
+			display: none;
 		}
 	}
-
-	.active {
-		background-color: #6AB750;
-		a {
-			color: white;
+	.hide-books {
+		.book-container {
+			display: none;
+		}
+		.chapter-container {
+			display: block;
 		}
 	}
 }
+.chap-picker {
 
-.chapter-list {
-	list-style: none;
-	font-size: 15px;
 	display: inline-flex;
-	flex-wrap: wrap;
+	max-height: 490px;
+	border-radius: 5px 5px 0px 0px;
+	border: 1px solid #D4D4D4;
 
-	li {
-		width: 64px;
-		height: 64px;
-		border: 1px solid #D4D4D4;
-		/* these margins are so the touching borders don't look bold */
-		margin-left: -1px;
-		margin-bottom: -1px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+  box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
+  -moz-box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
+  -webkit-box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
 
-		font-weight: bold;
-		color: #D4D4D4;
+
+	// scroll bar styling for safari, chrome
+	::-webkit-scrollbar {
+	  width: 6px;
+	  margin-right: 1px;
+	}
+	::-webkit-scrollbar-thumb {
+	  background: #D4D4D4;
+	  border: 0px solid #ffffff;
+	  border-radius: 60px;
+	}
+	::-webkit-scrollbar-track {
+	  background: transparent;
+	}
+
+
+	.header {
+		width: inherit;
+		background-color: #F4F4F4;
+		border-bottom: 1px solid #D4D4D4;
+		height: 30px;
+		text-align: center;
+
+		.prev {
+			display: none;
+		}
+		.cancel {
+			display: none;
+		}
+		@media only screen and (max-width: 520px) {
+			.prev {
+				display: block;
+				text-align: left;
+				padding: 5px;
+				color: #979797;
+			}
+			.cancel {
+				display: block;
+				text-align: right;
+				padding: 5px;
+				color: #979797;
+				font-size: 13px;
+			}
+		}
 
 	}
-	li:hover {
-		background-color: #D4D4D4;
-		color: white;
-		cursor: pointer;
+
+
+	// books *******************************************
+	.book-container {
+		min-width: 240px;
+		@media only screen and (max-width: 520px) {
+			width: 320px;
+		}
+
+		.book-list:hover {
+			overflow-y: overlay;
+		}
+		.book-list {
+			max-height: 460px;
+			overflow-y: hidden;
+			font-size: 15px;
+			margin-left: 0;
+			margin-right: -1px;
+
+			li {
+				padding-left: 15px;
+				a {
+					color: black;
+				}
+			}
+			li:hover {
+				background-color: #D4D4D4;
+				color: white;
+				cursor: pointer;
+			}
+
+			.active {
+				background-color: #6AB750;
+				color: white;
+			}
+		}
 	}
 
-	.active {
-		background-color: #6AB750;
-		color: white;
+
+	// chapters *****************************************
+	.chapter-container {
+
+		width: 320px;
+		border-left: 1px solid #D4D4D4;
+		margin-right: -5px;
+		.header {
+			width: 314px;
+		}
+
+		.chapter-list:hover {
+			overflow-y: overlay;
+		}
+		.chapter-list {
+			max-height: 460px;
+			overflow: hidden;
+			font-size: 15px;
+			display: inline-flex;
+			flex-wrap: wrap;
+			margin-left: 0;
+
+
+			li {
+				width: 64px;
+				height: 64px;
+				border: 1px solid #D4D4D4;
+				/* these margins are so the touching borders don't look bold */
+				margin-top: -1px;
+				margin-left: -1px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				font-weight: bold;
+				color: #888888;
+
+			}
+			li:hover {
+				background-color: #D4D4D4;
+				color: white;
+				cursor: pointer;
+			}
+
+			.active {
+				background-color: #6AB750;
+				color: white;
+			}
+		}
 	}
+
 }
+
+
+
+
+

@@ -4,8 +4,9 @@ import ActionCreators from '../features/Bible/actions/creators'
 import Bible from '../features/Bible/components/Bible'
 import Filter from '../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import Books from '../features/Bible/components/chapterPicker/Books'
-import Chapters from '../features/Bible/components/chapterPicker/Chapters'
+import ChapterPicker from '../features/Bible/components/chapterPicker/ChapterPicker'
+import cookie from 'react-cookie';
+import moment from 'moment'
 
 
 
@@ -13,8 +14,9 @@ class BibleView extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			selectedBook: 'MAT',
-			selectedChapter: 'MAT.1'
+			selectedBook: cookie.load('last_read') ? cookie.load('last_read').split('.')[0] : 'MAT',
+			selectedChapter: cookie.load('last_read') || 'MAT.1',
+			classes: 'hide-chaps',
 			dbReady: false,
 			db: null,
 			results: [],
@@ -46,7 +48,7 @@ class BibleView extends Component {
 			console.timeEnd("Add Items")
 		})
 
-		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: 'MAT.1' }))
+		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: this.state.selectedChapter }))
 		dispatch(ActionCreators.momentsColors())
 	}
 
@@ -55,18 +57,25 @@ class BibleView extends Component {
 		dispatch(ActionCreators.loadVersionAndChapter({ id: version.id, reference: this.state.selectedChapter }))
 	}
 
-
-// ********* BOOK | CHAPTER SELECTOR *********** //
 	getBook(book) {
 		this.setState({ selectedBook: book.usfm })
+		this.toggleChapterPickerList()
 	}
 
 	getChapter(chapter) {
 		const { dispatch, bible } = this.props
 		this.setState({ selectedChapter: chapter.usfm })
+		this.toggleChapterPickerList()
 		dispatch(ActionCreators.bibleChapter({ id: bible.version.id, reference: chapter.usfm }))
+		// then write cookie for selected chapter
+		cookie.save('last_read', chapter.usfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 	}
-// ********************************************* //
+
+	// this handles the class toggling for book and chapter clicks on mobile
+	toggleChapterPickerList() {
+		(this.state.classes) == 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
+	}
+
 
 	filterLang(changeEvent) {
 		const filter = changeEvent.target.value;
@@ -98,13 +107,9 @@ class BibleView extends Component {
 			return (<li key={v.id}>{v.abbreviation} {v.title}</li>)
 		})
 
-		var books = null
+		var chapterPicker = null
 		if (Array.isArray(bible.books.all) && bible.books.map) {
-			books = <Books list={bible.books.all} onSelect={::this.getBook} initialSelection={this.state.selectedBook} />
-		}
-		var chapters = null
-		if (Array.isArray(bible.books.all) && bible.books.map) {
-			chapters = <Chapters list={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} onSelect={::this.getChapter} initialSelection={this.state.selectedChapter} />
+			chapterPicker = <ChapterPicker classes={this.state.classes} bookList={bible.books.all} chapterList={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} selectedBook={this.state.selectedBook} selectedChapter={this.state.selectedChapter} getChapter={::this.getChapter} getBook={::this.getBook} toggle={::this.toggleChapterPickerList} />
 		}
 
 		return (
@@ -113,6 +118,9 @@ class BibleView extends Component {
 					<div className="columns medium-12">
 						<Bible bible={bible} />
 					</div>
+				</div>
+				<div className=''>
+					{ chapterPicker }
 				</div>
 				<div className="row">
 					<div className="columns medium-3">
@@ -126,10 +134,6 @@ class BibleView extends Component {
 					</div>
 					<div className="columns medium-3">
 						<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
-					</div>
-					<div className="columns medium-3">
-						{ books }
-						{ chapters }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />
