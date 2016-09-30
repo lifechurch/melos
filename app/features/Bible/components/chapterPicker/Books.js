@@ -23,7 +23,7 @@ class Books extends Component {
 		var books = null
 		if (Array.isArray(list)) {
 			books = list.map((book) =>  {
-				return( (<li key={book.usfm} className={ (book.usfm == selectedBook) ? 'active' : ''}><a onClick={this.bookSelect.bind(this, book)}>{ book.human }</a></li>) )
+				return( (<li key={book.usfm} className={ (book.usfm == selectedBook) ? 'active' : '' } onClick={this.bookSelect.bind(this, book)}>{ book.human }</li>) )
 			})
 		}
 
