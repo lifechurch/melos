@@ -10,6 +10,7 @@ import Versions from '../features/Bible/components/versionPicker/Versions'
 import cookie from 'react-cookie';
 import moment from 'moment'
 import ChapterPicker from '../features/Bible/components/chapterPicker/ChapterPicker'
+import Color from '../features/Bible/components/verseAction/Color'
 
 
 
@@ -104,6 +105,10 @@ class BibleView extends Component {
 		instance.setState({ versions })
 	}
 
+	getColor(color) {
+		console.log(color)
+	}
+
 	render() {
 		const { bible } = this.props
 		const { results, versions } = this.state
@@ -124,6 +129,18 @@ class BibleView extends Component {
 		var versionsss = null
 		if (bible.versions.byLang && bible.versions.byLang[this.state.selectedLanguage]) {
 			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} header='English' />
+		}
+
+		let color = null
+		if (Array.isArray(bible.highlightColors)) {
+			color = (
+				<div>
+					<Color color={bible.highlightColors[3]} onSelect={::this.getColor} />
+					<Color color={bible.highlightColors[7]} onSelect={::this.getColor} />
+					<Color color={bible.highlightColors[13]} onSelect={::this.getColor} />
+				</div>
+
+			)
 		}
 
 		return (
@@ -150,9 +167,8 @@ class BibleView extends Component {
 						<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 					</div>
 					<div className="columns medium-3">
-						{ books }
-						{ chapters }
 						{ versionsss }
+						{ color }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />
