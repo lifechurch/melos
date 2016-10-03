@@ -19,8 +19,6 @@ class Versions extends Component {
 		const { list, onSelect, header } = this.props
 		const { selectedVersion } = this.state
 
-		let versions = null
-
 		if (list) {
 			let versionList = []
 			Object.keys(list).forEach((id) =>  {
@@ -28,19 +26,18 @@ class Versions extends Component {
 				versionList.push( (<li key={id} className={ (id == selectedVersion) ? 'active' : ''} onClick={this.versionSelect.bind(this, version.id)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
 			})
 			/* the header would either be the language title or recently used */
-			versions = (
-			<div className='version-list'>
-				<p className='version-header'>{ header }</p>
-				<ul>{ versionList }</ul>
-			</div>
+			return (
+				<div className='version-list'>
+					<p className='version-header'>{ header }</p>
+					<ul>{ versionList }</ul>
+				</div>
+			)
+		} else {
+			return (
+				<div></div>
 			)
 		}
 
-		return (
-			<div>
-				{ versions }
-			</div>
-		)
 	}
 }
 
