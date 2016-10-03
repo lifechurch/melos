@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import shadeColor from '../../../../lib/shadeColor'
 
 class Color extends Component {
 
@@ -7,7 +8,15 @@ class Color extends Component {
 
 		if (color) {
 			return (
-				<div className='color' style={ { 'backgroundColor': `#${color}` } } onClick={onSelect.bind(this, color)}></div>
+				<div className={`color color-${color}`} style={ { 'backgroundColor': `#${color}` } } onClick={onSelect.bind(this, color)}>
+				<style>
+				{`
+					.color-${color}:hover {
+						border: 1px solid ${shadeColor(`#${color}`, -0.18)}
+					}
+				`}
+				</style>
+				</div>
 			)
 		} else {
 			return (

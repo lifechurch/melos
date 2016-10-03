@@ -133,7 +133,14 @@ class BibleView extends Component {
 
 		let color = null
 		if (Array.isArray(bible.highlightColors)) {
-			color = <Color color={bible.highlightColors[0]} onSelect={::this.getColor} />
+			color = (
+				<div>
+					<Color color={bible.highlightColors[3]} onSelect={::this.getColor} />
+					<Color color={bible.highlightColors[7]} onSelect={::this.getColor} />
+					<Color color={bible.highlightColors[13]} onSelect={::this.getColor} />
+				</div>
+
+			)
 		}
 
 		return (
