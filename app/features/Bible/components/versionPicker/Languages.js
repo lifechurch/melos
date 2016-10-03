@@ -19,26 +19,24 @@ class Languages extends Component {
 		const { list, onSelect, header } = this.props
 		const { selectedLanguage } = this.state
 
-		let languages = null
 
 		if (Array.isArray(list)) {
 			let languageList = list.map((language) =>  {
-				return( (<li key={language.id} className={ (language.language_tag == selectedLanguage) ? 'active' : ''} onClick={this.languageSelect.bind(this, language.language_tag)}>{ language.name }</li>) )
+				let name = (language.name == language.local_name) ? language.local_name : <span>{language.local_name}<small>{language.name}</small></span>
+				return( (<li key={language.id} className={ (language.language_tag == selectedLanguage) ? 'active' : ''} onClick={this.languageSelect.bind(this, language.language_tag)}>{ name }</li>) )
 			})
 			/* the header would either be the all or recently used */
-			languages = (
+			return (
 				<div className='language-list'>
 					<p className='language-header'>{ header }</p>
 					<ul>{ languageList }</ul>
 				</div>
 			)
+		} else {
+			return (
+				<div></div>
+			)
 		}
-
-		return (
-			<div>
-				{ languages }
-			</div>
-		)
 	}
 }
 
