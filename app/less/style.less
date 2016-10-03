@@ -2408,10 +2408,10 @@ ul.language-selector li {
 
 }
 
-.version-list {
+.version-list, .language-list {
 	margin-bottom: 30px;
 
-	.version-header {
+	.version-header, .language-header {
 		padding-left: 15px;
 		padding-bottom: 5px;
 		font-weight: bold;
@@ -2427,21 +2427,29 @@ ul.language-selector li {
 	}
 
 	li {
-		padding: 4px 0px 4px 15px;
-		a {
+		padding: 6px 0px 6px 15px;
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		color: black;
+
+		small {
 			display: block;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			color: black;
+			margin-top: -3px;
+			color: #888888;
 		}
+
+	}
+	li:hover {
+		background-color: #D4D4D4;
+		color: white;
+		cursor: pointer;
 	}
 
 	.active {
 		background-color: #6AB750;
-		a {
-			color: white;
-		}
+		color: white;
 	}
 }
 

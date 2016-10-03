@@ -6,12 +6,12 @@ import Filter from '../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Books from '../features/Bible/components/chapterPicker/Books'
 import Chapters from '../features/Bible/components/chapterPicker/Chapters'
+import Languages from '../features/Bible/components/versionPicker/Languages'
 import Versions from '../features/Bible/components/versionPicker/Versions'
 import cookie from 'react-cookie';
 import moment from 'moment'
 import ChapterPicker from '../features/Bible/components/chapterPicker/ChapterPicker'
 import Color from '../features/Bible/components/verseAction/Color'
-
 
 
 class BibleView extends Component {
@@ -131,6 +131,9 @@ class BibleView extends Component {
 			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} header='English' />
 		}
 
+		var languages = null
+		if (Array.isArray(bible.languages.all) && bible.languages.map) {
+			languages = <Languages list={bible.languages.all} onSelect={::this.getVersions} initialSelection={this.state.selectedLanguage} header='All' />
 		let color = null
 		if (Array.isArray(bible.highlightColors)) {
 			color = (
@@ -167,6 +170,7 @@ class BibleView extends Component {
 						<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 					</div>
 					<div className="columns medium-3">
+						{ languages }
 						{ versionsss }
 						{ color }
 					</div>

@@ -23,7 +23,7 @@ class Versions extends Component {
 			let versionList = []
 			Object.keys(list).forEach((id) =>  {
 				let version = list[id]
-				versionList.push( (<li key={id} className={ (id == selectedVersion) ? 'active' : ''}><a onClick={this.versionSelect.bind(this, version.id)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</a></li>) )
+				versionList.push( (<li key={id} className={ (id == selectedVersion) ? 'active' : ''} onClick={this.versionSelect.bind(this, version.id)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
 			})
 			/* the header would either be the language title or recently used */
 			return (
