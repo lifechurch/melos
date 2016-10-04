@@ -11,6 +11,7 @@ import Versions from '../features/Bible/components/versionPicker/Versions'
 import cookie from 'react-cookie';
 import moment from 'moment'
 import ChapterPicker from '../features/Bible/components/chapterPicker/ChapterPicker'
+import LabelPill from '../features/Bible/components/verseAction/bookmark/LabelPill'
 import Color from '../features/Bible/components/verseAction/Color'
 
 
@@ -105,6 +106,14 @@ class BibleView extends Component {
 		instance.setState({ versions })
 	}
 
+	labelSelect(label) {
+		console.log('select', label)
+	}
+
+	labelDelete(label) {
+		console.log('delete', label)
+	}
+
 	getColor(color) {
 		console.log(color)
 	}
@@ -170,6 +179,9 @@ class BibleView extends Component {
 						<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 					</div>
 					<div className="columns medium-3">
+						<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />
+						<LabelPill label='Holy' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={6} active={true} />
+						<LabelPill label='Peace' canDelete={true} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={1} active={false} />
 						{ languages }
 						{ versionsss }
 						{ color }
