@@ -6,12 +6,13 @@ import Filter from '../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Books from '../features/Bible/components/chapterPicker/Books'
 import Chapters from '../features/Bible/components/chapterPicker/Chapters'
+import Languages from '../features/Bible/components/versionPicker/Languages'
 import Versions from '../features/Bible/components/versionPicker/Versions'
 import cookie from 'react-cookie';
 import moment from 'moment'
 import ChapterPicker from '../features/Bible/components/chapterPicker/ChapterPicker'
 import LabelPill from '../features/Bible/components/verseAction/bookmark/LabelPill'
-
+import Color from '../features/Bible/components/verseAction/Color'
 
 
 class BibleView extends Component {
@@ -113,6 +114,10 @@ class BibleView extends Component {
 		console.log('delete', label)
 	}
 
+	getColor(color) {
+		console.log(color)
+	}
+
 	render() {
 		const { bible } = this.props
 		const { results, versions } = this.state
@@ -133,6 +138,21 @@ class BibleView extends Component {
 		var versionsss = null
 		if (bible.versions.byLang && bible.versions.byLang[this.state.selectedLanguage]) {
 			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} header='English' />
+		}
+
+		var languages = null
+		if (Array.isArray(bible.languages.all) && bible.languages.map) {
+			languages = <Languages list={bible.languages.all} onSelect={::this.getVersions} initialSelection={this.state.selectedLanguage} header='All' />
+		let color = null
+		if (Array.isArray(bible.highlightColors)) {
+			color = (
+				<div>
+					<Color color={bible.highlightColors[3]} onSelect={::this.getColor} />
+					<Color color={bible.highlightColors[7]} onSelect={::this.getColor} />
+					<Color color={bible.highlightColors[13]} onSelect={::this.getColor} />
+				</div>
+
+			)
 		}
 
 		return (
@@ -162,7 +182,9 @@ class BibleView extends Component {
 						<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />
 						<LabelPill label='Holy' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={6} active={true} />
 						<LabelPill label='Peace' canDelete={true} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={1} active={false} />
+						{ languages }
 						{ versionsss }
+						{ color }
 					</div>
 					<div className="columns medium-3">
 						<input onChange={::this.filterLang} />
