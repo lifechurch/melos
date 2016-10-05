@@ -135,7 +135,7 @@ function init() {
 		parseReaderVars();
 	}
 
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection) {
+    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isReader) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);

@@ -1,20 +1,40 @@
 class ReferencesController < ApplicationController
 
-  before_filter :mobile_redirect,               only: [:show]
-  before_filter :check_site_requirements,       only: [:show]
-  before_filter :fix_invalid_reference,         only: [:show]
-  before_filter :strip_format,                  only: [:show]
-  before_filter :setup_presenters,              only: [:show]
+  # before_filter :mobile_redirect,               only: [:show]
+  # before_filter :check_site_requirements,       only: [:show]
+  # before_filter :fix_invalid_reference,         only: [:show]
+  # before_filter :strip_format,                  only: [:show]
+  # before_filter :setup_presenters,              only: [:show]
 
   rescue_from InvalidReferenceError, with: :ref_not_found
 
   def show
-    now_reading(self.presenter.reference)
-    respond_to do |format|
-      format.html 
-      format.xml  { render nothing: true }
-      format.json { render "show.json.rabl" }
-    end      
+    # now_reading(self.presenter.reference)
+    # respond_to do |format|
+    #   format.html
+    #   format.xml  { render nothing: true }
+    #   format.json { render "show.json.rabl" }
+    # end
+
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "cache_for" => YV::Caching::a_very_long_time,
+        "version" => params[:version],
+        "ref" => params[:reference]
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   protected
