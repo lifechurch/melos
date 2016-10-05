@@ -1,6 +1,26 @@
 import type from './constants'
+import Filter from '../../../lib/filter'
 
 const ActionCreators = {
+
+	/**
+	 * @version: VERSION_ID
+   * @reference: USFM
+   * @lang: locale
+	 */
+	readerLoad(params) {
+		console.log(params)
+		return dispatch => {
+			const { version, reference, language_tag } = params
+			return Promise.all([
+				dispatch(ActionCreators.bibleVersions({ language_tag: language_tag, type: 'all' })),
+				dispatch(ActionCreators.bibleConfiguration()),
+				dispatch(ActionCreators.bibleVersion({ id: version })),
+				dispatch(ActionCreators.bibleChapter({ id: version, reference: reference, format: 'html', language_tag: language_tag })),
+				dispatch(ActionCreators.momentsColors())
+			]).then(() => {})
+		}
+	},
 
 	/**
 	 * @id: VERSION_ID

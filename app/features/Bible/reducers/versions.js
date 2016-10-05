@@ -5,14 +5,7 @@ import arrayToObject from '../../../lib/arrayToObject'
 export default function reducer(state = {}, action) {
 	switch (action.type) {
 		case type('bibleVersionsRequest'):
-			return {
-				loading: true,
-				byFilter: {
-					filter: "",
-					results: {}
-				},
-				byLang: {}
-			}
+			return Immutable.fromJS(state).set('loading', true).toJS()
 
 		case type('bibleVersionsFailure'):
 			return Immutable.fromJS(state).set('loading', false).toJS()
@@ -20,7 +13,7 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersionsSuccess'):
 			if (typeof action.response.versions !== 'undefined') {
 				const versions = arrayToObject(action.response.versions, 'id')
-				return Immutable.fromJS(state).set('byLang', { [action.params.language_tag]: versions }).set('loading', false).toJS()
+				return Immutable.fromJS(state).mergeDeep({ selectedLanguage: action.params.language_tag, byLang: { [action.params.language_tag]: versions } }).set('loading', false).toJS()
 			} else {
 				return Immutable.fromJS(state).set('loading', false).toJS()
 			}
