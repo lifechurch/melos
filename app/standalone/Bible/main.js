@@ -40,7 +40,7 @@ function requireBibleData(nextState, replace, callback) {
 	const currentState = store.getState()
 	// let lang = params.lang || cookie.load('locale') || Locale.locale
 	let lang = window.__LOCALE__.locale3
-	let version = params.version || cookie.load('version') || 1
+	let version = params.version || cookie.load('version') || '1'
 	let reference = params.ref || cookie.load('last_read') || 'MAT.1'
 	reference = reference.toUpperCase()
 
