@@ -42,12 +42,16 @@ function getAssetPath(path) {
  * @param {Object} req - the Express request object
  */
 function getLocalesFromHeader(req) {
-	return req.headers['accept-language'].split(',').map(function(l) {
-		var locale = l.split(';');
-		var weight = (locale.length > 1) ? parseFloat(locale[1].split('=')[1]) : 1;
-		var prefix = locale[0].split('-')[0];
-		return { locale: locale[0], prefix: prefix, weight: weight };
-	});
+	if (req && req.headers && req.headers['accept-language']) {
+		return req.headers['accept-language'].split(',').map(function(l) {
+			var locale = l.split(';');
+			var weight = (locale.length > 1) ? parseFloat(locale[1].split('=')[1]) : 1;
+			var prefix = locale[0].split('-')[0];
+			return { locale: locale[0], prefix: prefix, weight: weight };
+		});
+	} else {
+		return []
+	}
 }
 
 /**
@@ -168,9 +172,7 @@ router.get('/*', cookieParser(), function(req, res) {
 
 			/**/
 			reactCookie.plugToRequest(req, res)
-
 			let startingState = defaultState
-
 			try {
 				startingState = getStateFromToken()
 			} catch(err) {
@@ -225,7 +227,7 @@ router.get('/*', cookieParser(), function(req, res) {
 			res.status(404).send('Not found');
 
 		}
-	});
+	 });
 });
 
 module.exports = router;
