@@ -16,14 +16,14 @@ module YV
                 s.human = ref.human
                 s.usfm  = ref.usfm
                 s.version_id = ref.version_id
-                s.version_abbreviation = verse.version.abbreviation 
+                s.version_local_abbreviation = verse.version.local_abbreviation
                 s.content = verse.content
                 s.highlight = verse.highlight
                 s
               end
               YV::API::Results.new(verses)
             end
-            
+
           end
         end
       end
