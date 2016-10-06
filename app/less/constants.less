@@ -1,0 +1,51 @@
+
+// media queries
+
+@small-min: 0em;
+@small-max: 37.438em;
+@medium-min: 37.5em;
+@medium-max: 63.938em;
+// @medium-small-range: (em-calc(641), em-calc(754));
+@large-min: 64em;
+@large-max: 90em;
+@xlarge-min: 90.063em;
+@xlarge-max: 120em;
+@xxlarge-min: 120.063em;
+@xxlarge-max: 99999999em;
+
+@screen: ~"only screen";
+
+@landscape: ~"@screen and (orientation: landscape)";
+@portrait: ~"@screen and (orientation: portrait)";
+
+@small-up: screen;
+@small-only: ~"@{screen} and (max-width: @{small-max})";
+
+@medium-up: ~"@{screen} and (min-width: @{medium-min})";
+@medium-only: ~"@{screen} and (min-width: @{medium-min}) and (max-width: @{medium-max})";
+
+@large-up: ~"@{screen} and (min-width: @{large-min})";
+@large-only: ~"@{screen} and (min-width: @{large-min}) and (max-width: @{large-max})";
+
+@xlarge-up: ~"@{screen} and (min-width: @{xlarge-min})";
+@xlarge-only: ~"@{screen} and (min-width: @{xlarge-min}) and (max-width: @{xlarge-max})";
+
+@xxlarge-up: ~"@{screen} and (min-width: @{xxlarge-min})";
+@xxlarge-only: ~"@{screen} and (min-width: @{xxlarge-min}) and (max-width: @{xxlarge-max})";
+
+
+
+// RTL
+@text-direction: ltr !default;
+@opposite-direction: right !default;
+@default-float: left !default;
+
+// colors
+@green: #6ab750;
+@red: #CC0000;
+@blue: #0099CC;
+@color-muted: #979797;
+@font-grey: #888888;
+@background-grey: #D4D4D4;
+@dark_grey: #616161;
+@brown: #824F2B;

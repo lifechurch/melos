@@ -1,0 +1,44 @@
+.version-list, .language-list {
+	margin-bottom: 30px;
+
+	.version-header, .language-header {
+		padding-left: 15px;
+		padding-bottom: 5px;
+		font-weight: bold;
+		color: black;
+		font-size: 15px;
+	}
+
+	ul {
+		width: 100%;
+		list-style: none;
+		font-size: 15px;
+		margin-left: 0;
+	}
+
+	li {
+		padding: 6px 0px 6px 15px;
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		color: black;
+
+		small {
+			display: block;
+			margin-top: -3px;
+			color: @font-grey;
+		}
+
+	}
+	li:hover {
+		background-color: @background-grey;
+		color: white;
+		cursor: pointer;
+	}
+
+	.active {
+		background-color: @green;
+		color: white;
+	}
+}

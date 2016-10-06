@@ -12,10 +12,10 @@ class LabelPill extends Component {
 
 		if (label) {
 			if (canDelete) {
-				classes = (active) ? 'label-pill vertical-center active' : 'label-pill vertical-center'
+				classes = (active) ? 'label-pill active' : 'label-pill'
 				labelPill = <DeletableLabel label={label} onDelete={onDelete} />
 			} else {
-				classes = (active) ? 'label-pill selectable vertical-center active' : 'label-pill selectable vertical-center'
+				classes = (active) ? 'label-pill selectable active' : 'label-pill selectable'
 				labelPill = <SelectableLabel label={label} onSelect={onSelect} count={count} />
 			}
 		}
