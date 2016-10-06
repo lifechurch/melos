@@ -1,0 +1,39 @@
+.version-list, .language-list {
+	margin-bottom: 30px;
+
+	.version-header, .language-header {
+		padding-left: 15px;
+		padding-bottom: 5px;
+		font-weight: bold;
+		color: black;
+		font-size: @list-font-size;
+	}
+
+	ul {
+		width: 100%;
+		list-style: none;
+		font-size: @list-font-size;
+		margin-left: 0;
+	}
+
+	li {
+		padding: 6px 0px 6px 15px;
+		display: block;
+		.yv-text-ellipsis;
+		color: black;
+
+		small {
+			display: block;
+			margin-top: -3px;
+			color: @font-grey;
+		}
+
+	}
+	li:hover {
+		.yv-hover;
+	}
+
+	.active {
+		.yv-active;
+	}
+}
