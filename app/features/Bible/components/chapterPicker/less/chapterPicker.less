@@ -21,33 +21,16 @@
 
 	display: inline-flex;
 	max-height: 490px;
-	border-radius: 5px 5px 0px 0px;
-	border: 1px solid @background-grey;
+	border-radius: @default-radius @default-radius 0px 0px;
+	border: @thin-grey-border;
 
-  box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
-  -moz-box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
-  -webkit-box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
-
-
-	// scroll bar styling for safari, chrome
-	::-webkit-scrollbar {
-	  width: 6px;
-	  margin-right: 1px;
-	}
-	::-webkit-scrollbar-thumb {
-	  background: @background-grey;
-	  border: 0px solid @background-grey;
-	  border-radius: 60px;
-	}
-	::-webkit-scrollbar-track {
-	  background: transparent;
-	}
-
+	.yv-drop-shadow;
+	.yv-scroll-bar;
 
 	.header {
 		width: inherit;
-		background-color: #F4F4F4;
-		border-bottom: 1px solid @background-grey;
+		background-color: @light-grey;
+		border-bottom: @thin-grey-border;
 		height: 30px;
 		text-align: center;
 
@@ -60,14 +43,14 @@
 		@media @small-only {
 			.prev {
 				display: block;
-				text-align: left;
-				padding: 5px;
+				text-align: @default-float;
+				padding: @default-padding;
 				color: @font-grey;
 			}
 			.cancel {
 				display: block;
-				text-align: right;
-				padding: 5px;
+				text-align: @opposite-direction;
+				padding: @default-padding;
 				color: @font-grey;
 				font-size: 13px;
 			}
@@ -89,7 +72,7 @@
 		.book-list {
 			max-height: 460px;
 			overflow-y: hidden;
-			font-size: 15px;
+			font-size: @list-font-size;
 			margin-left: 0;
 			margin-right: -1px;
 
@@ -100,14 +83,11 @@
 				}
 			}
 			li:hover {
-				background-color: @background-grey;
-				color: white;
-				cursor: pointer;
+				.yv-hover;
 			}
 
 			.active {
-				background-color: @green;
-				color: white;
+				.yv-active;
 			}
 		}
 	}
@@ -117,7 +97,7 @@
 	.chapter-container {
 
 		width: 320px;
-		border-left: 1px solid @background-grey;
+		border-left: @thin-grey-border;
 		margin-right: -5px;
 		.header {
 			width: 314px;
@@ -129,7 +109,7 @@
 		.chapter-list {
 			max-height: 460px;
 			overflow: hidden;
-			font-size: 15px;
+			font-size: @list-font-size;
 			display: inline-flex;
 			flex-wrap: wrap;
 			margin-left: 0;
@@ -138,27 +118,22 @@
 			li {
 				width: 64px;
 				height: 64px;
-				border: 1px solid @background-grey;
+				border: @thin-grey-border;
 				/* these margins are so the touching borders don't look bold */
 				margin-top: -1px;
 				margin-left: -1px;
 				display: flex;
-				justify-content: center;
-				align-items: center;
-
+				.yv-flex-center-all;
 				font-weight: bold;
 				color: @font-grey;
 
 			}
 			li:hover {
-				background-color: @background-grey;
-				color: white;
-				cursor: pointer;
+				.yv-hover;
 			}
 
 			.active {
-				background-color: @green;
-				color: white;
+				.yv-active;
 			}
 		}
 	}

@@ -1,6 +1,5 @@
 
-// media queries
-
+// media queries **************************************************************
 @small-min: 0em;
 @small-max: 37.438em;
 @medium-min: 37.5em;
@@ -35,17 +34,77 @@
 
 
 
-// RTL
-@text-direction: ltr !default;
-@opposite-direction: right !default;
-@default-float: left !default;
+// RTL ***********************************************************************
+@text-direction: ltr;
+//!default;
+@opposite-direction: right;
+//!default;
+@default-float: left;
+//!default;
 
-// colors
+
+
+// colors ********************************************************************
 @green: #6ab750;
 @red: #CC0000;
 @blue: #0099CC;
+@light-grey: #F4F4F4;
 @color-muted: #979797;
 @font-grey: #888888;
 @background-grey: #D4D4D4;
 @dark_grey: #616161;
 @brown: #824F2B;
+
+
+// mixins ********************************************************************
+
+.yv-drop-shadow {
+  box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
+  -moz-box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
+  -webkit-box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
+}
+
+// scroll bar styling for safari, chrome
+.yv-scroll-bar {
+	::-webkit-scrollbar {
+	  width: 6px;
+	  margin-right: 1px;
+	}
+	::-webkit-scrollbar-thumb {
+	  background: @background-grey;
+	  border: 0px solid @background-grey;
+	  border-radius: 60px;
+	}
+	::-webkit-scrollbar-track {
+	  background: transparent;
+	}
+}
+
+.yv-active {
+	background-color: @green;
+	color: white;
+}
+.yv-hover {
+	background-color: @background-grey;
+	color: white;
+	cursor: pointer;
+}
+
+.yv-flex-center-all {
+	justify-content: center;
+	align-items: center;
+}
+
+.yv-text-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+
+//  **************************************************************************
+@default-radius: 5px;
+@default-padding: 5px;
+@thin-grey-border: 1px solid @background-grey;
+@list-font-size: 15px;

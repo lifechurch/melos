@@ -6,22 +6,20 @@
 		padding-bottom: 5px;
 		font-weight: bold;
 		color: black;
-		font-size: 15px;
+		font-size: @list-font-size;
 	}
 
 	ul {
 		width: 100%;
 		list-style: none;
-		font-size: 15px;
+		font-size: @list-font-size;
 		margin-left: 0;
 	}
 
 	li {
 		padding: 6px 0px 6px 15px;
 		display: block;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
+		.yv-text-ellipsis;
 		color: black;
 
 		small {
@@ -32,13 +30,10 @@
 
 	}
 	li:hover {
-		background-color: @background-grey;
-		color: white;
-		cursor: pointer;
+		.yv-hover;
 	}
 
 	.active {
-		background-color: @green;
-		color: white;
+		.yv-active;
 	}
 }
