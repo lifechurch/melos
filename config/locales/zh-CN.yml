@@ -1399,6 +1399,7 @@ zh-CN:
             no button: "否"
         plans: 
             plans: "计划"
+            plans back: "←读经计划"
             related plans: "相关题材的计划"
             see all: "查看全部"
             discover: "发掘"

@@ -1414,6 +1414,7 @@ de:
             no button: "Nein"
         plans: 
             plans: "Lesepläne"
+            plans back: "← Lesepläne"
             related plans: "Ähnliche Lesepläne"
             see all: "Alle anzeigen"
             discover: "Entdecken"

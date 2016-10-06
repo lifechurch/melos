@@ -1399,6 +1399,7 @@ th:
             no button: "ไม่"
         plans: 
             plans: "แผนการอ่าน"
+            plans back: "← แผนการอ่าน"
             related plans: "แผนการอ่านที่เกี่ยวข้อง"
             see all: "ดูทั้งหมด"
             discover: "ค้นหา"

@@ -1429,6 +1429,7 @@ cs:
             no button: "Ne"
         plans: 
             plans: "Plány"
+            plans back: "← Plány čtení"
             related plans: "Podobné plány"
             see all: "Zobrazit vše"
             discover: "Objevujte"

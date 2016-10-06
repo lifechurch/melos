@@ -1399,6 +1399,7 @@ km:
             no button: "ទេ"
         plans: 
             plans: "គំរោង​ច្រើន"
+            plans back: "← Plans"
             related plans: "គម្រោងដែលពាក់ព័ន្ធ"
             see all: "មើល​ទាំង​អស់"
             discover: "រុក​រក"

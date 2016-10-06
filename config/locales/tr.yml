@@ -1414,6 +1414,7 @@ tr:
             no button: "Hayır"
         plans: 
             plans: "Okuma Planları"
+            plans back: "← Planlar"
             related plans: "Benzer Planlar"
             see all: "Hepsini Gör"
             discover: "Keşfedin"

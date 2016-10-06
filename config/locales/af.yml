@@ -1414,6 +1414,7 @@ af:
             no button: "Nee"
         plans: 
             plans: "Planne"
+            plans back: "← Leesplanne"
             related plans: "Verwante Planne"
             see all: "Sien Alles"
             discover: "Ontdek"

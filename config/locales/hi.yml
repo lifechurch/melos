@@ -254,7 +254,7 @@ hi:
     sign out: "साइन आउट"
     sign back in: "आपकी सुरक्षा के लिए लॉग इन्स दो सप्ताह के बाद समाप्त हो जायेगा।पुन:साईंन इन कीजिये।"
     youversion: "YouVersion"
-    username or email prompt: "Email (or Username)"
+    username or email prompt: "ईमेल (या Username)"
     password prompt: "पासवर्ड"
     sign in: "साइन इन"
     sign in to youversion: "YouVersion में साइन इन कीजिए"
@@ -407,11 +407,11 @@ hi:
     alphabetic: "वर्णानुक्रमक"
     versions title: "संस्करण"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "बाइबिल भाषा और अनुवाद"
+        most popular: "सबसे प्रचलित भाषा"
+        additional: "कुछ और भाषा"
+        download language: "%{language_name} भाषा मे, बाइबिल डाउनलोड करो"
+        bible in: "बाइबिल %{language_name} भाषा मे"
     or: 
         lower: "या"
         upper: "या"
@@ -1414,6 +1414,7 @@ hi:
             no button: "नहीं"
         plans: 
             plans: "योजनाएँ"
+            plans back: "← पढ़ने की योजना"
             related plans: "संबंधित योजनाएं "
             see all: "सब कुछ देखे"
             discover: "खोजें"
@@ -1571,7 +1572,7 @@ hi:
             loading sidebar content: "साइड बार विषय सूची लोड किया जा रहा हैं............."
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "एक त्रुटि हुई।"
                 announcement: 
                     events: 
                         title: 
@@ -1597,15 +1598,15 @@ hi:
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "URL ज़ारूरी हैं।"
                         title: 
-                            required: "URL Label is required."
+                            required: "URL की चिप्पी ज़रूरी हैं।"
             EventHeader: 
                 status: 
                     published: "प्रकाशित"
                     draft: "ड्राफ्ट"
                     live: "लाइव"
-                    archived: "Archived"
+                    archived: "संग्रहीत / आरकाइव्ड "
                 unpublish: "अप्रकाशित"
                 saving: "Saving..."
                 saveAsDraft: "प्रारूप के तौर में save कीजिये"
@@ -1656,8 +1657,8 @@ hi:
                 discover: "खोजें"
             EventFeedMine: 
                 title: "मेरे कार्यक्रम "
-                previous: "← Previous"
-                next: "Next →"
+                previous: "← पिछला"
+                next: "अगला →"
                 my: "मेरे कार्यक्रम "
                 new: "Create New Event"
                 subTitle: "EVENTS CREATED BY ME"
@@ -1668,19 +1669,19 @@ hi:
             EventView: 
                 title: "YouVersion कार्यक्रम "
             SelectLanguage: 
-                choose: "Choose Your Language"
+                choose: "भाषा चुनाव करिये।"
         features: 
             Auth: 
                 errors: 
                     sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    invalidEmail: "ईमेल या पासवर्ड गलत हे।"
             EventEdit: 
                 errors: 
                     locationMustHaveTime: "All locations must have at least one time."
                     locationRequired: "You cannot publish an Event with no locations."
                     contentRequired: "You cannot publish an Event with no content."
                     planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    noMatchingPlans: "योजने नहीं मेल खाते हैं।"
                 components: 
                     EventEditNav: 
                         details: "विवरण "
@@ -1733,19 +1734,19 @@ hi:
                                 dirty: "आपके लिखना बंद करते ही आपकी लिखी हुयी सामग्री स्वतः सुरक्षित कर ली जाएगी !"
                                 failed: "सुरक्षित रखने में असमर्थ"
                                 tryAgain: "पुनः प्रयास करें"
-                                lastSaved: "Last saved %{when}"
+                                lastSaved: "पिछला बार कि आप ने Save किया - %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
+                                    wrongSize: "ज़रूरी है कि चित्र की परिमाण%{requiredWidth} x %{requiredHeight} हैं। आप की परिमाण%{yourWidth} x %{yourHeight} हैं।"
                                     wrongType: "Invalid filetype. Must be JPG."
                                 caption: "Add caption"
                                 prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
+                                onlyJpg: "[सिर्फ JPG]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
                                 select: "इमेज को चुनें"
                             ContentTypeLink: 
                                 kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
+                                label: "लिन्क की चिप्पी"
                                 prompt: "Write something here..."
                                 url: "URL"
                             ContentTypePlan: 
@@ -1769,19 +1770,19 @@ hi:
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
+                                    wrongSize: "ज़रूरी हैं कि चित्र की परिमाण %{requiredWidth} x %{requiredHeight} हैं। आपकी चित्र %{yourWidth} x %{yourHeight} हैं।"
                                     wrongType: "अमान्य फाइल प्रकार   - JPG होना अनिवार्य "
                                 changeImage: "चित्र बदलें"
                                 removeImage: "चित्र हटाये"
                                 prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
+                                onlyJpg: "[सिर्फ JPG]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
                                 sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
                                 eventName: "कार्यक्रम का नाम "
                                 org: "चर्च या संस्था का नाम "
                                 desc: "कार्यक्रम का विवरण "
                                 next: "आगे - स्थान और समय जोडें !"
-                                blank: "%{field} cannot be blank."
+                                blank: "%{field} खाली नही हो सकती है।"
                     location: 
                         components: 
                             Location: 
@@ -1819,7 +1820,7 @@ hi:
                                 shift: "शुरू की तिथियाँ बदले "
                                 forward: "अगला "
                                 backward: " पिछला"
-                                by: "by"
+                                by: "से"
                                 week: "हफ्ता"
                                 weeks: "हफ्ते "
                                 month: "महिना"
@@ -1858,14 +1859,14 @@ hi:
                                     title: "हटाए:"
                                     desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "फैलो"
                             PreviewTypePlan: 
                                 read: "पढ़िए"
                                 info: "योजना की जानकारी"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "प्रतिरूप बनानादूना करो"
                         share: "शेयर"
                         delete: "डिलीट"
                         draft: "ड्राफ्ट"
@@ -1881,11 +1882,11 @@ hi:
                         read: "पढ़िए"
                         readPlan: "Read Plan"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "फैलो"
+                        collapse: "सिकोड़ो"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "फैलो"
+                        collapse: "सिकोड़ो"
                         save: "कार्यक्रम सेव करे "
                         signIn: "Sign In to Save Event"
                         saved: "Event Saved"

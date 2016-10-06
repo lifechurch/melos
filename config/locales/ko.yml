@@ -1399,6 +1399,7 @@ ko:
             no button: "아니요"
         plans: 
             plans: "묵상"
+            plans back: "← 묵상"
             related plans: "관련 묵상 계획"
             see all: "모두 보기"
             discover: "찾기"

@@ -1414,6 +1414,7 @@ fr:
             no button: "Non"
         plans: 
             plans: "Plans"
+            plans back: "← Plans"
             related plans: "Plans suggérés"
             see all: "Tout Voir"
             discover: "Découvrir"

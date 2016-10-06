@@ -1414,6 +1414,7 @@ sq:
             no button: "Jo"
         plans: 
             plans: "Plane"
+            plans back: "← Planet"
             related plans: "Plane të ngjashme"
             see all: "Shiko të gjitha"
             discover: "Zbulo"

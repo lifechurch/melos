@@ -1414,6 +1414,7 @@ da:
             no button: "Nej"
         plans: 
             plans: "Planer"
+            plans back: "← Planer"
             related plans: "Lignende Planer"
             see all: "Se alle"
             discover: "Opdag"

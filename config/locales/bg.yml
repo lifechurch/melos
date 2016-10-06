@@ -1414,6 +1414,7 @@ bg:
             no button: "Не"
         plans: 
             plans: "Планове"
+            plans back: "← Планове"
             related plans: "Подобни планове"
             see all: "Виж всички"
             discover: "Открий"

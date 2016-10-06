@@ -1414,6 +1414,7 @@ es:
             no button: "No"
         plans: 
             plans: "Planes"
+            plans back: "Planes"
             related plans: "Planes relacionados"
             see all: "Ver Todos"
             discover: "Descubrir"

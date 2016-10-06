@@ -1414,6 +1414,7 @@ ca:
             no button: "No"
         plans: 
             plans: "Plans"
+            plans back: "← Plans"
             related plans: "Plans relacionats"
             see all: "Veure-ho tot"
             discover: "Descobreix"

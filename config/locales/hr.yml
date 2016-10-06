@@ -1444,6 +1444,7 @@ hr:
             no button: "Ne"
         plans: 
             plans: "Planovi"
+            plans back: "← Planovi"
             related plans: "Povezani planovi"
             see all: "Pogledaj sve"
             discover: "Otkrij"

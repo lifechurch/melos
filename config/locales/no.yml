@@ -1414,6 +1414,7 @@
             no button: "Nei"
         plans: 
             plans: "Leseplaner"
+            plans back: "←Planer"
             related plans: "Liknende planer"
             see all: "Se alle"
             discover: "Oppdag"

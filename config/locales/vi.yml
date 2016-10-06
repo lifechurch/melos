@@ -1399,6 +1399,7 @@ vi:
             no button: "Không"
         plans: 
             plans: "Kế hoạch"
+            plans back: "←Kế hoạch"
             related plans: "Các kế hoạch liên quan"
             see all: "Xem tất cả"
             discover: "Khám phá"

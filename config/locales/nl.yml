@@ -1414,6 +1414,7 @@ nl:
             no button: "Nee"
         plans: 
             plans: "Leesplannen"
+            plans back: "← Leesplannen"
             related plans: "Gerelateerde leesplannen"
             see all: "Bekijk alles"
             discover: "Ontdek"

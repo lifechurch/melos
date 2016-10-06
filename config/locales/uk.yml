@@ -1444,6 +1444,7 @@ uk:
             no button: "Ні"
         plans: 
             plans: "Плани читання"
+            plans back: "← Plans"
             related plans: "Схожі Плани"
             see all: "Всі"
             discover: "Пізнавайте"
