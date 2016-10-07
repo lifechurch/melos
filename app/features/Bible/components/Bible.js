@@ -14,6 +14,7 @@ import Versions from './versionPicker/Versions'
 import cookie from 'react-cookie';
 import moment from 'moment'
 import ChapterPicker from './chapterPicker/ChapterPicker'
+import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
 import Color from './verseAction/Color'
 
@@ -201,16 +202,17 @@ class Bible extends Component {
 							{ color }
 						</div>
 						<div className="columns medium-3">
-							<input onChange={::this.filterLang} />
-							<ul>
-								{/*resultItems*/}
-							</ul>
+							<Label input='Mathew' />
 						</div>
 					</div>
 				</div>
 			</div>
 		)
 	}
+							// <input onChange={::this.filterLang} />
+							// <ul>
+							// 	{/*resultItems*/}
+							// </ul>
 }
 
 Bible.propTypes = {
