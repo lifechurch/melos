@@ -13,10 +13,10 @@ import Languages from './versionPicker/Languages'
 import Versions from './versionPicker/Versions'
 import cookie from 'react-cookie';
 import moment from 'moment'
-import ChapterPicker from './chapterPicker/ChapterPicker'
 import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
 import Color from './verseAction/Color'
+import ChapterPicker from './chapterPicker/ChapterPicker'
 
 
 class Bible extends Component {
@@ -177,9 +177,6 @@ class Bible extends Component {
 					<Audio audio={audio} />
 					<Settings settings={settings} />
 					<VerseAction verseAction={verseAction} />
-					<div className=''>
-						{ chapterPicker }
-					</div>
 					<div className="row">
 						<div className="columns medium-3">
 							<a onClick={this.getVersions.bind(this, this.state.selectedLanguage)}>Get Versions</a>
@@ -202,7 +199,7 @@ class Bible extends Component {
 							{ color }
 						</div>
 						<div className="columns medium-3">
-							<Label input='Mathew' />
+							<ChapterPicker {...this.props} />
 						</div>
 					</div>
 				</div>

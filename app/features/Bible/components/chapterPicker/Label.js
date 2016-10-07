@@ -10,14 +10,15 @@ class Label extends Component {
 	}
 
 	handleChange(changeEvent) {
-		this.setState( { value: changeEvent.target.value } )
 		const { onChange } = this.props
+		this.setState( { value: changeEvent.target.value } )
 		if (typeof onChange == 'function') {
 			onChange(changeEvent.target.value)
 		}
 	}
 
 	handleKeyUp(keyEvent) {
+		const { onKeyUp } = this.props
 		console.log(keyEvent.key)
 		if (typeof onKeyUp == 'function') {
 			onKeyUp(keyEvent.key)
@@ -25,14 +26,14 @@ class Label extends Component {
 	}
 
 	handleClick() {
+		const { onClick } = this.props
 		this.setState( { dropdown: !this.state.dropdown } )
 		if (typeof onClick == 'function') {
-			onClick()
+			onClick(this.state.dropdown)
 		}
 	}
 
 	render() {
-		const { onClick, onKeyUp, onChange } = this.props
 		const { value, dropdown } = this.state
 
 		let classes, dir = null
