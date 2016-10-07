@@ -4,7 +4,7 @@ module Search
   class Bible < Base
 
     api_response_mapper YV::API::Mapper::BibleSearch
-    attributes [:query,:opts,:human,:usfm,:version_id,:version_abbreviation,:content,:highlight]
+    attributes [:query,:opts,:human,:usfm,:version_id,:version_local_abbreviation,:content,:highlight]
 
 
     class << self
