@@ -51,7 +51,7 @@ class PlansController < ApplicationController
   end
 
   def show
-    if (params[:save].present?)
+    if (params[:add_to_queue].present?)
       return save_for_later_action
     end
 
