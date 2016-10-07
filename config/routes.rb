@@ -58,6 +58,9 @@ YouversionWeb::Application.routes.draw do
   get "/thieunhi",       to: "redirects#thieunhi"
   get "/thi%E1%BA%BFunhi", to: "redirects#thieunhi"
   get "/ragazzi",        to: "redirects#ragazzi"
+  get "/dzieci",        to: "redirects#dzieci"
+  get "/bibliadzieci",        to: "redirects#dzieci"
+  get "/copii",        to: "redirects#copii"
 
   get "/trending-bible-verses", to: "pages#trending"
   get "/verse-of-the-day", to: "pages#votd"
