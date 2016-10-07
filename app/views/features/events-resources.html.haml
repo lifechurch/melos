@@ -1,6 +1,4 @@
-- events_link = "https://events.bible.com/#{image_dir}/"
-- if current_auth
-  - events_link = "https://events.bible.com/"
+
 :ruby
   puts case I18n.locale.to_s
   when "fr", "ru", "zh-TW", "ko", "de", "nl"
@@ -13,6 +11,8 @@
     image_dir = "zh-CN"
   else image_dir = "en"
   end
+
+- events_link = "https://events.bible.com/#{image_dir}/"
 
 .MobileDropdown
   .close-dropdown-btn-mobile
