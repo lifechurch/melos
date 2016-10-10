@@ -17,13 +17,23 @@ class Books extends Component {
 	}
 
 	render() {
-		const { list, onSelect } = this.props
+		const { list, onSelect, listSelectionIndex, onMouseOver, focus } = this.props
 		const { selectedBook } = this.state
 
 		var books = null
 		if (Array.isArray(list)) {
-			books = list.map((book) =>  {
-				return( (<li key={book.usfm} className={ (book.usfm == selectedBook) ? 'active' : '' } onClick={this.bookSelect.bind(this, book)}>{ book.human }</li>) )
+			books = list.map((book, index) =>  {
+				let active = (book.usfm == selectedBook) ? 'active' : ''
+				if (focus) {
+					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
+					return(
+						(<li key={book.usfm} className={`${active} ${focusClass}`} onClick={this.bookSelect.bind(this, book)} onMouseOver={onMouseOver.bind(this, index)} >{ book.human }</li>)
+					)
+				} else {
+					return(
+						(<li key={book.usfm} className={`${active}`} onClick={this.bookSelect.bind(this, book)} >{ book.human }</li>)
+					)
+				}
 			})
 		}
 
@@ -40,11 +50,15 @@ class Books extends Component {
  * 		@list					  			array of book objects for the current version
  * 		@onSelect			  			function to call when selecting book
  * 		@initialSelection	   	usfm for highlighting currently selected book
+ * 		@onMouseOver					function to call when hovering over book
+ * 		@listSelectionIndex 	index for selecting list element with arrow keys
  */
 Books.propTypes = {
 	list: React.PropTypes.array.isRequired,
 	onSelect: React.PropTypes.func,
-	initialSelection: React.PropTypes.string
+	initialSelection: React.PropTypes.string,
+	onMouseOver: React.PropTypes.func,
+	listSelectionIndex: React.PropTypes.number
 }
 
 export default Books

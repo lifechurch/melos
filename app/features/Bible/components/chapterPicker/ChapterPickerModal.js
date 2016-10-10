@@ -6,7 +6,7 @@ import Chapters from './Chapters'
 class ChapterPickerModal extends Component {
 
 	render() {
-		const { bookList, chapterList, getBook, getChapter, selectedBook, selectedChapter, classes, toggle } = this.props
+		const { bookList, chapterList, getBook, getChapter, selectedBook, selectedChapter, classes, toggle, listSelectionIndex, onMouseOver } = this.props
 
 		let books, chapters = null
 
@@ -41,10 +41,17 @@ class ChapterPickerModal extends Component {
 		 */
 
 		if (bookList) {
+			// if we're rendering just the book list, let's handle the list selection stuff
+			// this tells the books component to fire onMouseOver and style the focus list element
+			if (!(chapterList && selectedBook)) {
+				let focus = true
+			} else {
+				let focus = false
+			}
 			books = (
 				<div className='book-container'>
 					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.chapterpicker.book label" /></div>
-					<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} />
+					<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} focus={focus} listSelectionIndex={listSelectionIndex} onMouseOver={onMouseOver}/>
 				</div>
 			)
 		}
@@ -78,17 +85,19 @@ class ChapterPickerModal extends Component {
  *	appropriate one(s) based on the given inputs
  *
  *
- *	@bookList						array of books to be rendered. if null, then we only render chapter list
- *											(as long as selectedChapter is present)
- *	@chapterList				object containing all the chapters of the selected book. only renders if
- *											both the object is present and selectedBook is present
- *	@selectedBook				the book to get the chapters for (logic in parent). if this isn't present, then we won't render
- *											any chapters. this is also passed down to the book list for highlighting the selected book
- *	@selectedChapter		currently selected chapter, used for highlighting the chapter in chapter list
- *	@getBook						function passed down to the book list to call when a book is selected
- *	@getChapter					function passed down to the chapter list to call when a chapter is selected
- *	@classes						classes to apply. for showing and hiding on mobile views
- *	@toggle							function to call on prev arrow click on chapter header to hide chaps and show books
+ *	@bookList							array of books to be rendered. if null, then we only render chapter list
+ *												(as long as selectedChapter is present)
+ *	@chapterList					object containing all the chapters of the selected book. only renders if
+ *												both the object is present and selectedBook is present
+ *	@selectedBook					the book to get the chapters for (logic in parent). if this isn't present, then we won't render
+ *												any chapters. this is also passed down to the book list for highlighting the selected book
+ *	@selectedChapter			currently selected chapter, used for highlighting the chapter in chapter list
+ *	@getBook							function passed down to the book list to call when a book is selected
+ *	@getChapter						function passed down to the chapter list to call when a chapter is selected
+ *	@classes							classes to apply. for showing and hiding on mobile views
+ *	@toggle								function to call on prev arrow click on chapter header to hide chaps and show books
+ * 	@listSelectionIndex 	index for selecting list element with arrow keys
+ * 	@onMouseOver					function to call when hovering over list element
  *
  */
 ChapterPickerModal.propTypes = {
@@ -99,7 +108,9 @@ ChapterPickerModal.propTypes = {
 	getBook: React.PropTypes.func,
 	getChapter: React.PropTypes.func,
 	classes: React.PropTypes.string,
-	toggle: React.PropTypes.func
+	toggle: React.PropTypes.func,
+	listSelectionIndex: React.PropTypes.number,
+	onMouseOver: React.PropTypes.func
 }
 
 export default ChapterPickerModal

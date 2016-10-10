@@ -6,12 +6,12 @@ class Label extends Component {
 	constructor(props) {
 		super(props)
 		const { input } = props
-		this.state = { value: input || '', dropdown: false }
+		this.state = { dropdown: false }
 	}
 
 	handleChange(changeEvent) {
 		const { onChange } = this.props
-		this.setState( { value: changeEvent.target.value } )
+		// this.setState( { value: changeEvent.target.value } )
 		if (typeof onChange == 'function') {
 			onChange(changeEvent.target.value)
 		}
@@ -33,8 +33,16 @@ class Label extends Component {
 		}
 	}
 
+	handleBlur() {
+		const { onBlur } = this.props
+		if (typeof onBlur == 'function') {
+			onBlur()
+		}
+	}
+
 	render() {
-		const { value, dropdown } = this.state
+		const { input } = this.props
+		const { dropdown } = this.state
 
 		let classes, dir = null
 		if (dropdown) {
@@ -44,10 +52,9 @@ class Label extends Component {
 			classes = `dropdown-arrow-container`
 			dir = "down"
 		}
-
 		return (
 			<div className='chapterpicker-label'>
-				<input value={value} onChange={this.handleChange.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} />
+				<input value={input} onChange={this.handleChange.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} onBlur={this.handleBlur.bind(this)} />
 				<div className={classes} onClick={this.handleClick.bind(this)} >
 					<DropDownArrow dir={dir} height={6} width={12} />
 				</div>
@@ -63,12 +70,14 @@ class Label extends Component {
  * 														used for doing stuff like arrow key auto-completes etc.
  * 		@onClick			  			function to call when clicking dropdown arrow
  * 		@onChange							function to call when input field value changes
+ * 		@onBlur								function to call when clicking out of the input field
  */
 Label.propTypes = {
 	input: React.PropTypes.string,
 	onKeyUp: React.PropTypes.func,
 	onClick: React.PropTypes.func,
-	onChange: React.PropTypes.func
+	onChange: React.PropTypes.func,
+	onBlur: React.PropTypes.func
 }
 
 export default Label

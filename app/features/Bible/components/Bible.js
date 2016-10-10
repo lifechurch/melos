@@ -147,8 +147,9 @@ class Bible extends Component {
 			})
 		}
 
-		if (Array.isArray(bible.books.all) && bible.books.map) {
-			chapterPicker = <ChapterPicker classes={this.state.classes} bookList={bible.books.all} chapterList={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} selectedBook={this.state.selectedBook} selectedChapter={this.state.selectedChapter} getChapter={::this.getChapter} getBook={::this.getBook} toggle={::this.toggleChapterPickerList} />
+		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && bible.chapter.reference) {
+			console.log('should be renderin chapter picker bruh')
+			chapterPicker = <ChapterPicker {...this.props} chapter={bible.chapter} books={bible.books.all} bookMap={bible.books.map} selectedLanguage={this.state.selectedLanguage}/>
 		}
 
 		if (bible.versions.byLang && bible.versions.byLang[this.state.selectedLanguage]) {
@@ -177,6 +178,9 @@ class Bible extends Component {
 					<Audio audio={audio} />
 					<Settings settings={settings} />
 					<VerseAction verseAction={verseAction} />
+						<div className="columns medium-3">
+							{ chapterPicker }
+						</div>
 					<div className="row">
 						<div className="columns medium-3">
 							<a onClick={this.getVersions.bind(this, this.state.selectedLanguage)}>Get Versions</a>
@@ -197,9 +201,6 @@ class Bible extends Component {
 							{ languages }
 							{ versionsss }
 							{ color }
-						</div>
-						<div className="columns medium-3">
-							<ChapterPicker {...this.props} />
 						</div>
 					</div>
 				</div>

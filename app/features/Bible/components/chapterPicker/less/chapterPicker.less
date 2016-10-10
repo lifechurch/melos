@@ -89,6 +89,9 @@
 			.active {
 				.yv-active;
 			}
+			.focus {
+				.yv-hover;
+			}
 		}
 	}
 
@@ -152,7 +155,7 @@ input {
 	border-bottom: @thin-grey-border;
 }
 .dropdown-arrow-container {
-	width: 37px;
+	width: 38px;
 	height: 37px;
 	.dropdown-arrow {
 		height: 100%;
@@ -165,8 +168,17 @@ input {
 }
 .open {
 	background-color: @light-grey;
+	border: @thin-grey-border;
+	border-bottom: none;
+	z-index: 20;
 }
 
 .hide {
 	display: none;
+}
+.modal {
+	position: absolute;
+	z-index: 10;
+	// just under the size of the label
+	top: 37px;
 }
