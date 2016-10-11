@@ -88,8 +88,13 @@ export default store => next => action => {
 	}
 
 	if (typeof auth === 'object') {
-		const { username, password } = auth
-		client.auth(username, password)
+		if (typeof auth.username !== 'undefined') {
+			const { username, password } = auth
+			client.auth(username, password)
+		} else if (typeof auth.tp_token) {
+			const { tp_token } = auth
+			client.auth(tp_token)
+		}
 	}
 
 	const apiPromise = client[http_method]();
