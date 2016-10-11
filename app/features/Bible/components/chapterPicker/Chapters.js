@@ -17,15 +17,25 @@ class Chapters extends Component {
 	}
 
 	render() {
-		const { list, onSelect } = this.props
+		const { list, onSelect, focus, listSelectionIndex, onMouseOver } = this.props
 		const { selectedChapter } = this.state
 
 		var chapters = []
 
 		if (list) {
-			Object.keys(list).forEach((usfm) =>  {
-				var chapter = list[usfm]
-				chapters.push( (<li key={usfm} onClick={this.chapterSelect.bind(this, chapter)} className={ (usfm == selectedChapter) ? 'active' : ''}>{ chapter.human }</li>) )
+			Object.keys(list).forEach((usfm, index) =>  {
+				let chapter = list[usfm]
+
+				let active = (usfm == selectedChapter) ? 'active' : ''
+				if (focus) {
+					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
+					chapters.push( (<li key={usfm} onClick={this.chapterSelect.bind(this, chapter)} className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "chapters", index)} >{ chapter.human }</li>) )
+				} else {
+					chapters.push( (<li key={usfm} onClick={this.chapterSelect.bind(this, chapter)} className={`${active}`}>{ chapter.human }</li>) )
+				}
+
+
+
 			})
 		}
 
@@ -42,11 +52,15 @@ class Chapters extends Component {
  * 		@list					  			object of chapter objects for the current version
  * 		@onSelect			  			function to call when selecting chapter
  * 		@initialSelection	   	usfm for highlighting currently selected chapter
+ * 		@listSelectionIndex 	index for selecting list element with arrow keys
+ * 		@focus								allow mouse over and key actions on list items
  */
 Chapters.propTypes = {
 	list: React.PropTypes.object.isRequired,
 	onSelect: React.PropTypes.func,
-	initialSelection: React.PropTypes.string
+	initialSelection: React.PropTypes.string,
+	listSelectionIndex: React.PropTypes.number,
+	focus: React.PropTypes.bool
 }
 
 export default Chapters
