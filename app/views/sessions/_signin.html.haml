@@ -4,7 +4,9 @@
 
 .medium-centered
   .columns.medium-centered.large-11
-    = form_tag sign_in_path(source: params[:source], redirect: params[:redirect]) do
+    = render partial: 'shared/google_signin', locals: { form_id: "signin_form", form_action: sign_in_path(source: params[:source], redirect: params[:redirect]) }
+    %hr
+    = form_tag sign_in_path(source: params[:source], redirect: params[:redirect]), id: "signin_form" do
       %p
         .alt-path.terms= t('users.sign in alternate', sign_up_path: sign_up_path).html_safe
       %p

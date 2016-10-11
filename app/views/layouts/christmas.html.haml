@@ -14,6 +14,8 @@
     %title= strip_tags(meta_title)
     %link{rel: "canonical", href: meta_url}
     %link{rel: "shortcut icon", href:"/favicon.ico"}
+    %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
+    %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     %meta{charset:"utf-8"}
     %meta{'http-equiv' => 'content-language', :content => I18n.locale.downcase}
     %meta{name: "description",    content: meta_description}

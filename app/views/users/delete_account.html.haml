@@ -9,11 +9,12 @@
 = form_tag user_path(@user.username), method: :delete do
   = render partial: "shared/form_errors", locals: {errors: @user.errors}
 
-  %p
-    = label_tag :password do
-      = t("password prompt")
-    = password_field_tag :password, params[:password], class: "autofocus"
-    %span.small= link_to t('users.forgot password'), forgot_password_path, { class: ""}
+  -if @requirePassword
+    %p
+      = label_tag :password do
+        = t("password prompt")
+      = password_field_tag :password, params[:password], class: "autofocus"
+      %span.small= link_to t('users.forgot password'), forgot_password_path, { class: ""}
 
   %p
     = submit_tag t("users.delete account button"), class: "confirm solid-button red", "data-confirm-text" => t('users.yes delete')

@@ -40,6 +40,8 @@ common:
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
   event_import_url: "https://events-staging.bible.com/featureImport/"
   event_api_host: "events-staging.bible.com"
+  google_signin_client_id: "201895780642-ln00r1cev5fp6u3eqpq07olmi2dabmkl.apps.googleusercontent.com"
+  google_signin_scope: "profile email"
 
 development:
 #  api_root: youversionapi.com
@@ -98,3 +100,4 @@ production:
   branch_key: "key_live_jpmoQCKshT4dmEI1OZyuGmlmjffQNTlA"
   event_import_url: "https://events.bible.com/featureImport/"
   event_api_host: "events.bible.com"
+  google_signin_client_id: "201895780642-g4oj7hm4p3h81eg7b1di2l2l93k5gcm3.apps.googleusercontent.com"

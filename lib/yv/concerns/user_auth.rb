@@ -44,21 +44,32 @@ module YV
 
       def current_auth
         return @current_auth if @current_auth
-        if cookies.signed[:a] && cookies.signed[:b] && cookies.signed[:c]
-          @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} )
+        if cookies.signed[:a] && cookies.signed[:b] && (cookies.signed[:c] || (cookies.signed[:t] && cookies.signed[:ti]))
+          @current_auth ||= Hashie::Mash.new( { 'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c] ? cookies.signed[:c] : nil, 'tp_token' => cookies.signed[:t] ? cookies.signed[:t] : nil, 'tp_id' => cookies.signed[:ti] ? cookies.signed[:ti] : nil } )
         end
       end
 
-      def set_auth(user, password)
+      def set_auth(user, password, tp_token, tp_id)
         cookies.permanent.signed[:a] = user.id
         cookies.permanent.signed[:b] = user.username
-        cookies.permanent.signed[:c] = password
+        if password.present?
+          cookies.permanent.signed[:c] = password
+        end
+
+        if tp_token.present?
+          cookies.permanent.signed[:t] = tp_token
+        end
+
+        if tp_id.present?
+          cookies.permanent.signed[:ti] = tp_id
+        end
+
         cookies.delete 'YouVersionToken'
-        @current_auth = Hashie::Mash.new( {'user_id' => user.id, 'username' => user.username, 'password' => password} )
+        @current_auth = Hashie::Mash.new( { 'user_id' => user.id, 'username' => user.username, 'password' => password, 'tp_token' => tp_token, 'tp_id' => tp_id } )
       end
 
-      def sign_in(user, password = nil)
-        set_auth(user, password || params[:password])
+      def sign_in(user, password = nil, tp_token = nil, tp_id = nil)
+        set_auth(user, password || params[:password], tp_token, tp_id)
       end
 
       def sign_out
@@ -66,6 +77,8 @@ module YV
         cookies.delete :b
         cookies.delete :c
         cookies.delete :f
+        cookies.delete :t
+        cookies.delete :ti
         cookies.delete 'YouVersionToken'
         clear_redirect
       end

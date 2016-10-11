@@ -1,3 +1,46 @@
+
+#googleSigninButton {
+  display: inline-block;
+  background: white;
+  color: #444;
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px $lightGray;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,.25);
+  white-space: nowrap;
+  transition: box-shadow 0.5s ease;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 2px rgba(66,133,244,.5);
+  }
+
+  span {
+    &.label {
+      font-family: serif;
+      font-weight: normal;
+    }
+    &.icon {
+      background: image-url("g-normal.png") transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+      position: absolute;
+    }
+    &.buttonText {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      width: 100%;
+      height: 42px;
+      padding-top: 9px;
+    }
+  }
+}
+
 body.c_sessions.a_new,
 body.c_sessions.a_create {
 
