@@ -117,13 +117,14 @@ class ChapterPicker extends Component {
 			let chapterNum = parseInt(chapterSplit[chapterSplit.length - 1])
 			// let chapIndex = Object.keys(books[bookMap[selectedBook]].chapters)[chapterNum - 1]
 
-			if (chapIndex == undefined) {
+			if (chapterNum == undefined) {
 				this.setState({
-					listErrorAlert: true
+					listErrorAlert: true,
+					chapterlistSelectionIndex: 0
 				})
 			} else {
 				this.setState({
-					chapterlistSelectionIndex: chapNum,
+					chapterlistSelectionIndex: chapterNum - 1,
 					listErrorAlert: false
 				})
 
@@ -134,7 +135,7 @@ class ChapterPicker extends Component {
 		}
 	}
 
-	handleLabelKeyUp(keyEventName, keyEventCode) {
+	handleLabelKeyUp(event, keyEventName, keyEventCode) {
 		const { books, bookMap } = this.props
 		const {
 			inputValue,
@@ -146,6 +147,8 @@ class ChapterPicker extends Component {
 
 		// filtering books
 		if (this.state.books && !this.state.chapters) {
+			this.setState({ chapterlistSelectionIndex: 0 })
+
 			if (keyEventName == "ArrowUp") {
 				if (booklistSelectionIndex > 0 ) {
 					this.setState({ booklistSelectionIndex: booklistSelectionIndex - 1 })
@@ -166,6 +169,8 @@ class ChapterPicker extends Component {
 			}
 		// filtering chapters
 		} else if (this.state.chapters) {
+			this.setState({ booklistSelectionIndex: 0 })
+
 			if (keyEventName == "ArrowUp") {
 				if (chapterlistSelectionIndex > 4 ) {
 					this.setState({ chapterlistSelectionIndex: chapterlistSelectionIndex - 5 })
@@ -174,10 +179,10 @@ class ChapterPicker extends Component {
 				}
 			}
 			if (keyEventName == "ArrowDown") {
-				if (chapterlistSelectionIndex < books[bookMap[selectedBook]].chapters.length - 6) {
+				if (chapterlistSelectionIndex < (Object.keys(books[bookMap[selectedBook]].chapters).length) - 6) {
 					this.setState({ chapterlistSelectionIndex: chapterlistSelectionIndex + 5 })
 				} else {
-					this.setState({ chapterlistSelectionIndex: books[bookMap[selectedBook]].chapters.length - 1 })
+					this.setState({ chapterlistSelectionIndex: (Object.keys(books[bookMap[selectedBook]].chapters).length) - 1 })
 				}
 			}
 			if (keyEventName == "ArrowLeft") {
@@ -188,23 +193,15 @@ class ChapterPicker extends Component {
 				}
 			}
 			if (keyEventName == "ArrowRight") {
-				if (chapterlistSelectionIndex < books[bookMap[selectedBook]].chapters.length - 1) {
+				if (chapterlistSelectionIndex < (Object.keys(books[bookMap[selectedBook]].chapters).length) - 1) {
 					this.setState({ chapterlistSelectionIndex: chapterlistSelectionIndex + 1 })
 				} else {
 					this.setState({ chapterlistSelectionIndex: 0 })
 				}
 			}
 			if (keyEventName == "Enter") {
-
-				// // let's get the chapter info from the input value
-				// let chapterSplit = inputValue.split(' ')
-				// let chapterNum = parseInt(chapterSplit[chapterSplit.length - 1])
-				// let chapIndex = Object.keys(books[bookMap[selectedBook]].chapters)[chapterNum - 1]
-				console.log(chapterlistSelectionIndex)
-				console.log(books[bookMap[selectedBook]].chapters)
 				let chapIndex = Object.keys(books[bookMap[selectedBook]].chapters)[chapterlistSelectionIndex]
 				this.getChapter((books[bookMap[selectedBook]].chapters)[chapIndex])
-
 			}
 		}
 	}

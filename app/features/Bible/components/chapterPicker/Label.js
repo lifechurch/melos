@@ -21,7 +21,7 @@ class Label extends Component {
 		const { onKeyUp } = this.props
 		console.log(keyEvent.key)
 		if (typeof onKeyUp == 'function') {
-			onKeyUp(keyEvent.key, keyEvent.keyCode)
+			onKeyUp(keyEvent, keyEvent.key, keyEvent.keyCode)
 		}
 	}
 
