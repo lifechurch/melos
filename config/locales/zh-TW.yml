@@ -1399,6 +1399,7 @@ zh-TW:
             no button: "否"
         plans: 
             plans: "計劃"
+            plans back: "← 計劃"
             related plans: "相關題材的計劃"
             see all: "查看全部"
             discover: "發掘"
@@ -1870,3 +1871,39 @@ zh-TW:
                         save: "儲存互動"
                         signIn: "登入以儲存互動"
                         saved: "互動已儲存"
+        Reader: 
+            header: 
+                parallel: "Parallel"
+                parallel exit: "Exit Parallel Mode"
+                cancel: "Cancel"
+                audio label: "AUDIO"
+                audio window: "Open in new window"
+                font label: "READER SETTINGS"
+                notifications label: "NOTIFICATIONS"
+                more label: "MORE"
+                search input: "Reference or Keyword..."
+                home: "Home"
+                bible: "Bible"
+                plans: "Plans"
+                videos: "Videos"
+                me: "Me"
+            chapterpicker: 
+                book label: "BOOK"
+                chapter label: "CHAPTER"
+                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+            versionpicker: 
+                language label: "BIBLE LANGUAGES"
+                language sub-label: "Bible Language"
+                change language: "Change Language"
+                filter languages: "Filter Languages..."
+                version label: "VERSIONS"
+            reader settings: 
+                footnotes: "Footnotes"
+                numbers: "Numbers and Titles"
+            more: 
+                events: "Events"
+                settings: "Settings"
+            search: 
+                bible: "Bible"
+                users: "Users"
+                plans: "Plans"

@@ -1474,11 +1474,12 @@ cy:
             no button: "Na"
         plans: 
             plans: "Cynlluniau"
+            plans back: "←Cynlluniau"
             related plans: "Cynlluniau Tebyg"
             see all: "Y cwbl"
             discover: "Darganfod"
             my_plans: "Fy Nghynlluniau"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>Cwblhaodd %{username} ddiwrnod %{day} o Gynllun Beibl %{plan_title}</b><b></b><b></b>"
             status: 
                 on track: "Ar y trywydd iawn!"
                 days ahead: 
@@ -1965,3 +1966,39 @@ cy:
                         save: "Cadw Digwyddiad"
                         signIn: "Mewngofnoda i Arbed y Digwyddiad"
                         saved: "Arbedwyd y Digwyddiad"
+        Reader: 
+            header: 
+                parallel: "Parallel"
+                parallel exit: "Exit Parallel Mode"
+                cancel: "Cancel"
+                audio label: "AUDIO"
+                audio window: "Open in new window"
+                font label: "READER SETTINGS"
+                notifications label: "NOTIFICATIONS"
+                more label: "MORE"
+                search input: "Reference or Keyword..."
+                home: "Home"
+                bible: "Bible"
+                plans: "Plans"
+                videos: "Videos"
+                me: "Me"
+            chapterpicker: 
+                book label: "BOOK"
+                chapter label: "CHAPTER"
+                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+            versionpicker: 
+                language label: "BIBLE LANGUAGES"
+                language sub-label: "Bible Language"
+                change language: "Change Language"
+                filter languages: "Filter Languages..."
+                version label: "VERSIONS"
+            reader settings: 
+                footnotes: "Footnotes"
+                numbers: "Numbers and Titles"
+            more: 
+                events: "Events"
+                settings: "Settings"
+            search: 
+                bible: "Bible"
+                users: "Users"
+                plans: "Plans"

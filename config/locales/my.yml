@@ -1399,11 +1399,12 @@ my:
             no button: "မဟုတ်"
         plans: 
             plans: "အစီအစဉ်"
+            plans back: "← အစီအစဉ်"
             related plans: "ဆက်စပ်နေသောအစီအစဉ်များ"
             see all: "အားလုံးကြည့်ရန်"
             discover: "ရှာဖွေရန်"
             my_plans: "ကျွန်တော်၏အစီအစဉ်"
-            day_completed: "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+            day_completed: "<b>%{username}​ သည်</b><b>%{plan_title}</b> ကျမ်းစာဖတ်ခြင်းအစီအစဉ်ထဲမှ <b>%{day} ရက်မြောက်ကို</b> ဖတ်ပြီးခဲ့ပြီ။"
             status: 
                 on track: "အမီလိုက်နေသည်။"
                 days ahead: 
@@ -1439,7 +1440,7 @@ my:
             browse by category: "အခန်းကဏ္ဍအလိုက်စူးစမ်းကြည့်ရန်"
             subcategory: "အခန်းကဏ္ဍခွဲ"
             browse plans: "%{category} အစီအစဉ်ကို ကြည့်ရှုရန်"
-            swap list localization: "(<a href='%{swap_link}' target='_self'>View in %{swap_locale}</a>)"
+            swap list localization: "(<a href='%{swap_link}' target='_self'>%{swap_locale} တွင်ကြည့်ရှုရန်</a>)"
             showing language filtered: "%{lang_name} မှရရှိနိုင်သောအစီစဉ်ကိုသာ ပြနေသည်"
             all: "အားလုံး"
             all plans: "အစီအစဉ်အားလုံး"
@@ -1490,7 +1491,7 @@ my:
             read today: "ယနေ့အတွက်ဖတ်စရာ"
             devotional: "ဝိညာဉ်ရေးရာ"
             completion status _ below percentage: "ပြီးဆုံးပြီ။"
-            current progress html: "Day <b>%{day}</b> of <b>%{total_days}</b>"
+            current progress html: "<b>%{total_days}</b> ရက်တွင် <b>%{day}</b>ရက်မြောက်။"
             start date _ before date string: "စတင်နေ့"
             end date _ before date string: "ပြီးဆုံးနေ့"
             are you behind: "အနည်းငယ်နောက်ကျနေသလား"
@@ -1870,3 +1871,39 @@ my:
                         save: "လှုပ်ရှားမှုအစီအစဉ်ကို သိမ်းရန်"
                         signIn: "အစီအစဉ်ကိုသိမ်းဆည်းနိုင်ရန် အကောင့်သို့ဝင်ပါ"
                         saved: "အစီအစဉ်ကိုသိမ်းဆည်းပြီ"
+        Reader: 
+            header: 
+                parallel: "Parallel"
+                parallel exit: "Exit Parallel Mode"
+                cancel: "Cancel"
+                audio label: "AUDIO"
+                audio window: "Open in new window"
+                font label: "READER SETTINGS"
+                notifications label: "NOTIFICATIONS"
+                more label: "MORE"
+                search input: "Reference or Keyword..."
+                home: "Home"
+                bible: "Bible"
+                plans: "Plans"
+                videos: "Videos"
+                me: "Me"
+            chapterpicker: 
+                book label: "BOOK"
+                chapter label: "CHAPTER"
+                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+            versionpicker: 
+                language label: "BIBLE LANGUAGES"
+                language sub-label: "Bible Language"
+                change language: "Change Language"
+                filter languages: "Filter Languages..."
+                version label: "VERSIONS"
+            reader settings: 
+                footnotes: "Footnotes"
+                numbers: "Numbers and Titles"
+            more: 
+                events: "Events"
+                settings: "Settings"
+            search: 
+                bible: "Bible"
+                users: "Users"
+                plans: "Plans"

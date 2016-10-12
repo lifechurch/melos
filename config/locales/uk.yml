@@ -1444,6 +1444,7 @@ uk:
             no button: "Ні"
         plans: 
             plans: "Плани читання"
+            plans back: "← Плани"
             related plans: "Схожі Плани"
             see all: "Всі"
             discover: "Пізнавайте"
@@ -1852,7 +1853,7 @@ uk:
                                 addAnother: "Додати інший час"
                                 cancel: "Скасувати"
                                 save: "Зберегти це місце"
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Введіть назву міста, щоб встановити ваш часовий пояс..."
                             LocationTimeShifter: 
                                 shift: "Зсунути дати"
                                 forward: "Перенаправити"
@@ -1927,3 +1928,39 @@ uk:
                         save: "Зберегти подію"
                         signIn: "Увійдіть, щоб зберегти подію"
                         saved: "Подію збережено"
+        Reader: 
+            header: 
+                parallel: "Parallel"
+                parallel exit: "Exit Parallel Mode"
+                cancel: "Cancel"
+                audio label: "AUDIO"
+                audio window: "Open in new window"
+                font label: "READER SETTINGS"
+                notifications label: "NOTIFICATIONS"
+                more label: "MORE"
+                search input: "Reference or Keyword..."
+                home: "Home"
+                bible: "Bible"
+                plans: "Plans"
+                videos: "Videos"
+                me: "Me"
+            chapterpicker: 
+                book label: "BOOK"
+                chapter label: "CHAPTER"
+                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+            versionpicker: 
+                language label: "BIBLE LANGUAGES"
+                language sub-label: "Bible Language"
+                change language: "Change Language"
+                filter languages: "Filter Languages..."
+                version label: "VERSIONS"
+            reader settings: 
+                footnotes: "Footnotes"
+                numbers: "Numbers and Titles"
+            more: 
+                events: "Events"
+                settings: "Settings"
+            search: 
+                bible: "Bible"
+                users: "Users"
+                plans: "Plans"
