@@ -57,7 +57,10 @@
 %div{ "id" =>  "#{google_signin_button_id}" }
   %span.icon
   %span.buttonText
-    = "Sign in with Google"
+    -if is_continue
+      =t('users.continue google')
+    -else
+      =t('users.sign up google')
 
 %form#google-sign-in-form{ action: "#{form_action}", method: "POST" }
   %input#google-sign-in-token{ type: "hidden", name: "google_token" }

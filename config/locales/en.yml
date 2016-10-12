@@ -639,7 +639,7 @@ en:
     sign up google:                             "Sign up with Google"
     continue google:                            "Continue with Google"
     sign up facebook:                           "Sign up with Facebook"
-    continue facebook:                          "Continue with Facebook
+    continue facebook:                          "Continue with Facebook"
     thanks for registering:                     "Thanks for registering!"
     confirm message:                            "We just sent a message to %{email}"
     confirm message click:                      "Click the link in that email to confirm that's you."
