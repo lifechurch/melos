@@ -359,9 +359,11 @@ module ApplicationHelper
     image_tag(name_at_1x, options.merge("data-at2x" => asset_path(name_at_2x)))
   end
 
-  def google_sign_in()
-    tp_token = "GoogleJWT #{params['google_token']}"
-    tp_id = params['google_id']
+  def tp_sign_in()
+    tp_token = "#{params['tp_source']} #{params['tp_token']}"
+    tp_id = params['tp_id']
+    tp_source = "#{params['tp_source']}"
+
     @user = User.find(nil, { auth: { tp_token: tp_token } })
 
     finish_login = lambda do
@@ -379,7 +381,11 @@ module ApplicationHelper
       return finish_login.call
     else
       # Let's create a new user
-      @user = User.register({ "google_id_token" => "#{params['google_token']}", agree: true, "google_id" => "#{params['google_id']}"})
+      if tp_source == "GoogleJWT"
+        @user = User.register({ "google_id_token" => "#{params['tp_token']}", agree: true, "google_id" => "#{params['tp_id']}"})
+      elsif tp_source == "Facebook"
+        @user = User.register({ "facebook_access_token" => "#{params['tp_token']}", agree: true, "facebook_id" => "#{params['tp_id']}"})
+      end
 
       # Created and Verified!
       if @user.valid?
@@ -387,6 +393,18 @@ module ApplicationHelper
 
       # Creation Incomplete, take extra steps
       else
+
+        errors = @user['errors'].map{ |e| e["key"] }
+
+        # "users.token.invalid"
+        # "users.email.required"
+        if errors.include? "users.email.required"
+          # must prompt user for email
+          return render('users/tp_email_required')
+        end
+
+
+
         # 401 : invalid token
         # 403 : users.token.invalid
         #     : users.hash.not_verified

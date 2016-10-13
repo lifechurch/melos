@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if params.has_key?('google_token') && params.has_key?('google_id')
-      google_sign_in
+    if params.has_key?('tp_token') && params.has_key?('tp_id')
+      tp_sign_in
     else
       begin
         @user = User.authenticate(params[:username], params[:password])

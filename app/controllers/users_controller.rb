@@ -68,8 +68,8 @@ class UsersController < ApplicationController
   def create
     return redirect_to moments_path if current_auth
 
-    if params.has_key?('google_token') && params.has_key?('google_id')
-      google_sign_in
+    if params.has_key?('tp_token') && params.has_key?('tp_id')
+      tp_sign_in
     else
       return render_404 unless params[:user].present?
       @user = User.register(params[:user].merge!(language_tag: I18n.locale))
