@@ -651,6 +651,7 @@ ro:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Mulțumim pentru înregistrare!"
         confirm message: "Tocmai am trimis un mesaj la %{email}"
         confirm message click: "Dă clic pe link-ul din emailul primit pentru confirmare."

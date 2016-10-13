@@ -640,6 +640,7 @@ hi:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "दर्ज करने के लिए धन्यवाद!"
         confirm message: "हमने अभी इस ईमेल %{email} पर सन्देश भेजा है"
         confirm message click: "ईमेल में भेजे लिंक को दबाकर पुष्टि करें की यह आप ही हैं "

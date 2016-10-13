@@ -640,6 +640,7 @@ sw:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Asante kwa kujiunga!"
         confirm message: "Tumetuma ujumbe kwa %{email}"
         confirm message click: "Gonga kiungo ndani ya barua pepe hiyo kwa kukamilisha kama ni wewe."

@@ -640,6 +640,7 @@ tr:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Kaydolduğunuz için teşekkür ederiz!"
         confirm message: "%{email} adresinize bir mesaj gönderdik."
         confirm message click: "Siz olduğunuzu doğrulamak amacıyla bu e-postadaki bağlantıya tıklayınız."

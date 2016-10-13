@@ -651,6 +651,7 @@ lv:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Paldies par reģistrēšanos!"
         confirm message: "Mēs tikko nosūtījām ziņu uz %{email}"
         confirm message click: "Klikšķini uz saites, lai apstiprinātu, ka tas esi tu."

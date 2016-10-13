@@ -640,6 +640,7 @@ tl:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Salamat sa pagpapatala!"
         confirm message: "Kapapadala lamang namin ng mensahe sa %{email}"
         confirm message click: "Pindutin ang link sa email upang kumpirmahin ang iyong pagkakakilanlan."

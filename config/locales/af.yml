@@ -640,6 +640,7 @@ af:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Dankie vir jou registrasie!"
         confirm message: "Ons het nou net 'n boodskap gestuur na %{email}"
         confirm message click: "Klik op die skakel in die epos om te bevestig dat dit u is."

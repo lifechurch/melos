@@ -629,6 +629,7 @@ vi:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Cảm ơn bạn đã đăng ký!"
         confirm message: "Chúng tôi vừa email vào %{email}."
         confirm message click: "Xin hãy nhấp vào đường dẫn trong email đó để xác nhận."

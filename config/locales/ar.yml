@@ -684,6 +684,7 @@ ar:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "نشكرك على  التسجيل !"
         confirm message: "لقد أرسلنا لك رسالة إلى %{email} للتو"
         confirm message click: "إضغط على الرابط في البريد الإلكتروني لكي تؤكد أنه أنت من إشترك."

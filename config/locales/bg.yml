@@ -640,6 +640,7 @@ bg:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Благодарим Ви за регистрацията!"
         confirm message: "Изпратихме съобщение до %{email}"
         confirm message click: "Кликнете върху линка в този имейл, за да потвърдите, че сте Вие."

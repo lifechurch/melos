@@ -640,6 +640,7 @@ ta:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "பதிவு செய்ததற்கு நன்றி!"
         confirm message: "நாங்கள் %{email} க்கு ஒரு செய்தி அனுப்பியுள்ளோம். "
         confirm message click: " நீங்கள் தான் என்பதை உறுதிப்படுத்த அந்த மின்னஞ்சலில் உள்ள இணைப்பை கிளிக் செய்யவும்."

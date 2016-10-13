@@ -629,6 +629,7 @@ ms:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Terima kasih atas pendaftaran!"
         confirm message: "Kami baru menghantar mesej ke %{email}"
         confirm message click: "Klik pautan dalam emel untuk mengesahkan identiti anda."

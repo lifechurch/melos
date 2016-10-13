@@ -629,6 +629,7 @@ ko:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "등록해 주셔서 감사합니다!"
         confirm message: "메세지를 %{email}로 보냈습니다."
         confirm message click: "본인 확인을 위해서 이메일에 있는 링크를 클릭해주세요."

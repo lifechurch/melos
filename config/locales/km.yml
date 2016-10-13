@@ -629,6 +629,7 @@ km:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "អរគុណ​ដែល​បាន​ចុះ​ឈ្មោះ!"
         confirm message: "យើងទើបតែបានយើងសារទៅកាន់ %{email}"
         confirm message click: "ចុចលើតំណភ្ជាប់នៅក្នុងអ៊ីម៉ែលដើម្បីបញ្ជាក់​ថាគឺជាអ្នក។"
