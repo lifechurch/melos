@@ -5,11 +5,38 @@ $fbLightBlue: lighten($fbBlue, 10%);
 #fbAuthProfile {
   padding: 10px;
   text-align: center;
+  transition: transform 1s ease;
+  transform: scale(1,1);
+  display: block;
+
+  &.empty {
+    display: none;
+    transform: scale(1,0);
+  }
+
   #fbAvatar {
     border-radius: 100%;
   }
   #fbName {
     font-weight: bold;
+  }
+}
+
+
+#tp-require-email-form {
+  text-align: center;
+  margin-top:75px;
+  margin-bottom:75px;
+
+  h1 {
+    width: 100%;
+  }
+
+  input {
+    width: 75%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 10px;
   }
 }
 
@@ -84,6 +111,15 @@ $fbLightBlue: lighten($fbBlue, 10%);
   &:hover {
     box-shadow: 0px 0px 4px 2px rgba(59,89,152,.5);
     background: $fbLightBlue;
+  }
+
+  &.disabled {
+    background: $darkGray;
+    color: $lightGray;
+
+    &:hover {
+      cursor: not-allowed;
+    }
   }
 
   span {

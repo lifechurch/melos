@@ -51,8 +51,8 @@ class User < YV::Resource
 
       opts[:agree] = true if opts[:agree]
 
-      if opts[:google_id]
-        opts[:token] = Digest::MD5.hexdigest ".Yv6-#{opts[:google_id]}"
+      if opts[:tp_id]
+        opts[:token] = Digest::MD5.hexdigest ".Yv6-#{opts[:tp_id]}"
       else
         opts[:token] = Digest::MD5.hexdigest "#{opts[:email]}.Yv6-#{opts[:password]}"
       end

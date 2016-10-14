@@ -206,6 +206,11 @@
 	-webkit-align-content: center;
 }
 
+h1.clean {
+  font-family: Arial;
+  font-size: 30px;
+}
+
 .mobile-full {
 		@media #{$small-only} {
 			width: 100%;
