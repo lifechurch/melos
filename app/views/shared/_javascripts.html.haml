@@ -14,9 +14,11 @@
       version    : 'v2.8'
     });
 
-    if (typeof fbapiStartApp === 'function') {
-      fbapiStartApp();
-    }
+    setTimeout(function() {
+      if (typeof fbapiStartApp === 'function') {
+        fbapiStartApp();
+      }
+    }, 250);
   };
 
   (function(d, s, id){
