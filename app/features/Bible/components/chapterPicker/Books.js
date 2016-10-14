@@ -8,11 +8,11 @@ class Books extends Component {
 		this.state = { selectedBook: initialSelection || null }
 	}
 
-	bookSelect(book) {
+	bookSelect(book, filtering) {
 		this.setState( { selectedBook: book.usfm } )
 		const { onSelect } = this.props
 		if (typeof onSelect == 'function') {
-			onSelect(book)
+			onSelect(book, filtering)
 		}
 	}
 
@@ -27,7 +27,7 @@ class Books extends Component {
 				if (focus) {
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
 					return(
-						(<li key={book.usfm} className={`${active} ${focusClass}`} onClick={this.bookSelect.bind(this, book)} onMouseOver={onMouseOver.bind(this, "books", index)} >{ book.human }</li>)
+						(<li key={book.usfm} className={`${active} ${focusClass}`} onClick={this.bookSelect.bind(this, book, true)} onMouseOver={onMouseOver.bind(this, "books", index)} >{ book.human }</li>)
 					)
 				} else {
 					return(

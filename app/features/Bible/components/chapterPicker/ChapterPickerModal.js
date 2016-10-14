@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import Books from './Books'
 import Chapters from './Chapters'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class ChapterPickerModal extends Component {
 
@@ -61,10 +62,12 @@ class ChapterPickerModal extends Component {
 				bookFocus = true
 			}
 			books = (
-				<div className='book-container'>
-					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.chapterpicker.book label" /></div>
-					<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} focus={bookFocus} listSelectionIndex={booklistSelectionIndex} onMouseOver={onMouseOver}/>
-				</div>
+				<ReactCSSTransitionGroup  >
+					<div className='book-container'>
+						<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.chapterpicker.book label" /></div>
+						<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} focus={bookFocus} listSelectionIndex={booklistSelectionIndex} onMouseOver={onMouseOver}/>
+					</div>
+				</ReactCSSTransitionGroup>
 			)
 		}
 
