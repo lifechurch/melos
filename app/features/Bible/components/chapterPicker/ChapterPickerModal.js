@@ -87,6 +87,7 @@ class ChapterPickerModal extends Component {
 			)
 		}
 
+
 		return (
 			<div className={classNames} >
 				{ books }

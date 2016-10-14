@@ -33,9 +33,6 @@ class Chapters extends Component {
 				} else {
 					chapters.push( (<li key={usfm} onClick={this.chapterSelect.bind(this, chapter)} className={`${active}`}>{ chapter.human }</li>) )
 				}
-
-
-
 			})
 		}
 

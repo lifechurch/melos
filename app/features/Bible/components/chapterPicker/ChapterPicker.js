@@ -25,6 +25,8 @@ class ChapterPicker extends Component {
 			inputValue: chapter.reference.human,
 			booklistSelectionIndex: 0,
 			chapterlistSelectionIndex: 0,
+			cancelBlur: false,
+			inputDisabled: false,
 			dropdown: false,
 			listErrorAlert: false,
 			classes: 'hide-chaps'
@@ -45,14 +47,14 @@ class ChapterPicker extends Component {
 		console.timeEnd("Add Items")
 	}
 
-	getBook(selectedBook) {
+	getBook(selectedBook, filtering) {
 		const { books, bookMap } = this.props
-		console.log('gettin dem books', selectedBook)
 		this.setState({
 			selectedBook: selectedBook.usfm,
 			inputValue: `${selectedBook.human} `,
+			// if we're filtering, then don't render books after book selection
+			books: filtering ? null : books,
 			chapters: books[bookMap[selectedBook.usfm]].chapters,
-			books: null,
 			dropdown: true,
 			booklistSelectionIndex: 0,
 		})
@@ -61,7 +63,6 @@ class ChapterPicker extends Component {
 
 	getChapter(selectedChapter) {
 		const { dispatch, chapter } = this.props
-		console.log(selectedChapter)
 		this.setState({
 			selectedChapter: selectedChapter.usfm,
 			inputValue: `${this.state.inputValue} ${selectedChapter.human}`,
@@ -81,22 +82,6 @@ class ChapterPicker extends Component {
 		classes == 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
 	}
 
-	// getFilter(inputValue) {
-	// 	const { books, bookMap } = this.props
-	// 	const { selectedBook } = this.state
-
-	// 	let filterContext = null
-
-	// 	if (results.length > 0 && `${results[0].human} ` == inputValue) {
-	// 	 	filterContext == "book match"
-	// 	} else if (inputValue.includes(`${books[bookMap[selectedBook]].human} `)) {
-	// 		filterContext == "chapters"
-	// 	} else if (results.length > 0) {
-	// 		filterContext == "books"
-	// 	}
-
-	// 	return { results: results, context: filterContext }
-	// }
 
 	handleLabelChange(inputValue) {
 		const { books, bookMap } = this.props
@@ -109,33 +94,67 @@ class ChapterPicker extends Component {
 		// if the input already matches a book exactly, let's filter chapters
 		if (results.length > 0 && `${results[0].human} ` == inputValue) {
 			// getBook will set state appropriately
-			this.getBook(results[0])
+			this.getBook(results[0], true)
 		// if we already have book and are now filtering chapters, let's keep the chapter modal open
 		} else if (inputValue.includes(`${books[bookMap[selectedBook]].human} `)) {
 			// let's get the chapter info from the input value
 			let chapterSplit = inputValue.split(' ')
 			let chapterNum = parseInt(chapterSplit[chapterSplit.length - 1])
-			// let chapIndex = Object.keys(books[bookMap[selectedBook]].chapters)[chapterNum - 1]
 
 			if (chapterNum == undefined) {
 				this.setState({
-					listErrorAlert: true,
 					chapterlistSelectionIndex: 0
 				})
 			} else {
 				this.setState({
 					chapterlistSelectionIndex: chapterNum - 1,
-					listErrorAlert: false
 				})
-
 			}
+			this.setState({ books: null })
 		// or we're actually filtering book names
 		} else if (results.length > 0) {
-			this.setState({ books: results, chapters: null, dropdown: true })
+			this.setState({ books: results, chapters: null, dropdown: true, booklistSelectionIndex: 0 })
 		}
 	}
 
-	handleLabelKeyUp(event, keyEventName, keyEventCode) {
+
+	scrollList(elementToView, elementContainer, list, direction, amount) {
+
+		let focusElement, containerHeight, topPos, listElement, listItem = null
+		if (typeof window !== 'undefined') {
+			focusElement = document.getElementsByClassName(elementToView)[0]
+			containerHeight = document.getElementsByClassName(elementContainer)[0].offsetHeight
+			topPos = focusElement.offsetTop
+			listElement = document.getElementsByClassName(`${list}-list`)[0]
+			listItem = listElement.querySelector('li:first-of-type').offsetHeight
+		}
+
+// TODO: check if element is not visible first before scrolling?
+		if (focusElement && listElement) {
+
+			if (direction === 'up') {
+				if (amount === 'item') {
+					listElement.scrollTop = (topPos - (containerHeight))
+				} else if (amount === 'top') {
+					listElement.scrollTop = 0
+				}
+
+			} else if (direction === 'down') {
+				if (amount === 'item') {
+					listElement.scrollTop = (topPos - (containerHeight - (2 * listItem)))
+				} else if (amount === 'bottom') {
+					listElement.scrollTop = 10000
+				}
+
+			}
+
+		}
+
+
+	}
+
+
+	handleLabelKeyDown(event, keyEventName, keyEventCode) {
 		const { books, bookMap } = this.props
 		const {
 			inputValue,
@@ -150,57 +169,85 @@ class ChapterPicker extends Component {
 			this.setState({ chapterlistSelectionIndex: 0 })
 
 			if (keyEventName == "ArrowUp") {
+				event.preventDefault()
+
 				if (booklistSelectionIndex > 0 ) {
 					this.setState({ booklistSelectionIndex: booklistSelectionIndex - 1 })
+					this.scrollList('focus', 'modal', 'book', 'up', 'item')
 				} else {
-					this.setState({ booklistSelectionIndex: books.length - 1 })
+					this.setState({ booklistSelectionIndex: this.state.books.length - 1 })
+					this.scrollList('focus', 'modal', 'book', 'down', 'bottom')
 				}
 			}
 			if (keyEventName == "ArrowDown") {
-				if (booklistSelectionIndex < books.length - 1) {
+				event.preventDefault()
+
+				if (booklistSelectionIndex < this.state.books.length - 1) {
 					this.setState({ booklistSelectionIndex: booklistSelectionIndex + 1 })
+					this.scrollList('focus', 'modal', 'book', 'down', 'item')
 				} else {
 					this.setState({ booklistSelectionIndex: 0 })
+					this.scrollList('focus', 'modal', 'book', 'up', 'top')
 				}
 			}
 			if (keyEventName == "Enter" || keyEventName == "ArrowRight" || keyEventCode == 32) {
+				event.preventDefault()
 				//
-				this.getBook(this.state.books[booklistSelectionIndex])
+				this.getBook(this.state.books[booklistSelectionIndex], true)
 			}
+
+
+
 		// filtering chapters
 		} else if (this.state.chapters) {
+
+			let chapterKeys = Object.keys(books[bookMap[selectedBook]].chapters)
 			this.setState({ booklistSelectionIndex: 0 })
 
 			if (keyEventName == "ArrowUp") {
+				event.preventDefault()
+
 				if (chapterlistSelectionIndex > 4 ) {
 					this.setState({ chapterlistSelectionIndex: chapterlistSelectionIndex - 5 })
+					this.scrollList('focus', 'modal', 'chapter', 'up', 'item')
 				} else {
 					this.setState({ chapterlistSelectionIndex: 0 })
+					this.scrollList('focus', 'modal', 'chapter', 'up', 'top')
 				}
 			}
 			if (keyEventName == "ArrowDown") {
-				if (chapterlistSelectionIndex < (Object.keys(books[bookMap[selectedBook]].chapters).length) - 6) {
+				event.preventDefault()
+
+				if (chapterlistSelectionIndex < chapterKeys.length - 6) {
 					this.setState({ chapterlistSelectionIndex: chapterlistSelectionIndex + 5 })
+					this.scrollList('focus', 'modal', 'chapter', 'down', 'item')
 				} else {
-					this.setState({ chapterlistSelectionIndex: (Object.keys(books[bookMap[selectedBook]].chapters).length) - 1 })
+					this.setState({ chapterlistSelectionIndex: chapterKeys.length - 1 })
+					this.scrollList('focus', 'modal', 'chapter', 'down', 'bottom')
 				}
 			}
 			if (keyEventName == "ArrowLeft") {
+				event.preventDefault()
+
 				if (chapterlistSelectionIndex > 0 ) {
 					this.setState({ chapterlistSelectionIndex: chapterlistSelectionIndex - 1 })
+					this.scrollList('focus', 'modal', 'chapter', 'up', 'item')
 				} else {
-					this.setState({ chapterlistSelectionIndex: chapterlistSelectionIndex + 4 })
+					this.setState({ chapterlistSelectionIndex: chapterKeys.length - 1 })
+					this.scrollList('focus', 'modal', 'chapter', 'down', 'bottom')
 				}
 			}
 			if (keyEventName == "ArrowRight") {
-				if (chapterlistSelectionIndex < (Object.keys(books[bookMap[selectedBook]].chapters).length) - 1) {
+				if (chapterlistSelectionIndex < chapterKeys.length - 1) {
 					this.setState({ chapterlistSelectionIndex: chapterlistSelectionIndex + 1 })
+					this.scrollList('focus', 'modal', 'chapter', 'down', 'item')
 				} else {
 					this.setState({ chapterlistSelectionIndex: 0 })
+					this.scrollList('focus', 'modal', 'chapter', 'up', 'top')
 				}
 			}
 			if (keyEventName == "Enter") {
-				let chapIndex = Object.keys(books[bookMap[selectedBook]].chapters)[chapterlistSelectionIndex]
+				let chapIndex = chapterKeys[chapterlistSelectionIndex]
 				this.getChapter((books[bookMap[selectedBook]].chapters)[chapIndex])
 			}
 		}
@@ -217,20 +264,70 @@ class ChapterPicker extends Component {
 	handleDropDownClick() {
 		const { books, chapter, bookMap } = this.props
 		const { selectedBook } = this.state
+
+		// don't close the dropdown modal when losing focus of the input,
+		// because we're clicking the dropdown (not some other random place)
+		this.setState({ cancelBlur: true })
+
+		// if the full modal is being rendered, let's toggle the dropdown rendering
+		if (this.state.books && this.state.chapters) {
+			// if the user is closing the dropdown and hasn't selected anything, let's
+			// fill the input back up with the correct reference
+			if (this.state.dropdown) {
+				this.setState({
+					dropdown: false,
+					inputValue: chapter.reference.human,
+					inputDisabled: false,
+				})
+
+			// we're opening the dropdown so let's disable the input field
+			} else {
+				this.setState({
+					dropdown: true,
+					inputDisabled: true
+				})
+			}
+
+		// not full modal
+		// this will be fired only when a user has been filtering and then clicks on the dropwdown
+		} else {
+			this.setState({
+				dropdown: true,
+				inputDisabled: true
+			})
+		}
+
+		// in all cases, the dropdown needs both lists
 		this.setState({
-			dropdown: !this.state.dropdown,
 			books: books,
 			chapters: books[bookMap[selectedBook]].chapters
 		})
+
 	}
 
 	onBlur() {
 		const { books, chapter, bookMap } = this.props
-		// this.setState({
-		// 	dropdown: false,
-		// 	books: books,
-		// 	chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters
-		// })
+		let dat = this
+
+		// when we click out of the input, we need to wait and check if either
+		// the dropdown or a book/chapter has been clicked
+		// otherwise let's close and reset
+		setTimeout(function() {
+
+			// cancel blur is only true when dropdown or book/chapter is clicked
+			if (dat.state.cancelBlur) {
+				dat.setState({ cancelBlur: false })
+			} else {
+				dat.setState({
+					dropdown: false,
+					inputValue: chapter.reference.human,
+					books: books,
+					chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters
+				})
+			}
+
+		}, 300)
+
 	}
 
 
@@ -248,20 +345,23 @@ class ChapterPicker extends Component {
 			selectedVersion,
 			booklistSelectionIndex,
 			chapterlistSelectionIndex,
-			listErrorAlert
+			listErrorAlert,
+			inputDisabled
 		} = this.state
 
 		let hide = (dropdown) ? '' : 'hide'
 
 		return (
-			<div className={`chapter-picker-container`}>
-				<Label input={inputValue}
+			<div className={`chapter-picker-container`} >
+				<Label
+					input={inputValue}
 					onClick={::this.handleDropDownClick}
 					onChange={::this.handleLabelChange}
-					onKeyUp={::this.handleLabelKeyUp}
+					onKeyDown={::this.handleLabelKeyDown}
 					onBlur={::this.onBlur}
+					disabled={inputDisabled}
 				/>
-				<div className={`modal ${hide}`}>
+				<div className={`modal ${hide}`} onClick={() => this.setState({ cancelBlur: true })}>
 					<ChapterPickerModal
 						classes={classes}
 						bookList={books}
