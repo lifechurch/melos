@@ -9,7 +9,11 @@ export default function loadData(params, startingState, sessionData) {
 			.params({ id: params.id })
 
 		if (startingState.auth.isLoggedIn === true) {
-			client.auth(sessionData.email , sessionData.password)
+			if (typeof sessionData.email !== 'undefined') {
+				client.auth(sessionData.email , sessionData.password)
+			} else {
+				client.auth(sessionData.tp_token)
+			}
 		}
 
 		client.get().then((response) => {
