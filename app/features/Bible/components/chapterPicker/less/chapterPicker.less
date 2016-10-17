@@ -24,14 +24,13 @@
 	border-radius: @default-radius @default-radius 0px 0px;
 	border: @thin-grey-border;
 
-	.yv-drop-shadow;
 	.yv-scroll-bar;
 
 	.header {
 		width: inherit;
 		background-color: @light-grey;
 		border-bottom: @thin-grey-border;
-		height: 30px;
+		max-height: 30px;
 		text-align: center;
 
 		.prev {
@@ -58,10 +57,17 @@
 
 	}
 
+	.picker-error {
+		.picker-error;
+	}
 
 	// books *******************************************
 	.book-container {
-		min-width: 240px;
+		min-width: 247px;
+		.header {
+			border-right: 1px solid @light-grey;;
+		}
+
 		@media @small-only {
 			width: 320px;
 		}
@@ -70,6 +76,7 @@
 			overflow-y: overlay;
 		}
 		.book-list {
+
 			max-height: 460px;
 			overflow-y: hidden;
 			font-size: @list-font-size;
@@ -110,6 +117,7 @@
 			overflow-y: overlay;
 		}
 		.chapter-list {
+
 			max-height: 460px;
 			overflow: hidden;
 			font-size: @list-font-size;
@@ -176,12 +184,57 @@ input {
 	z-index: 20;
 }
 
-.hide {
-	display: none;
+
+
+
+
+
+.hide-modal {
+	overflow: hidden;
+
+	.chapter-picker-modal {
+		/* only transition on transform properties which are hardware accelerated = way better performances */
+		-webkit-transition: -webkit-transform .5s cubic-bezier(0,1,0,1);
+		-moz-transition:    -moz-transform .5s cubic-bezier(0,1,0,1);
+		-ms-transition:     -ms-transform .5s cubic-bezier(0,1,0,1);
+		transition:         transform .5s cubic-bezier(0,1,0,1);
+
+	  -webkit-transform: translate(0, -105%) !important;
+	     -moz-transform: translate(0, -105%) !important;
+	      -ms-transform: translate(0, -105%) !important;
+	          transform: translate(0, -105%) !important;
+	}
 }
+	//
+
 .modal {
 	position: absolute;
 	z-index: 10;
 	// just under the size of the label
-	top: 37px;
+	top: 36px;
+	overflow: hidden;
+	// because of the overflow hidden, we need to allow padding and compensate
+	// for the drop shadows
+	padding: 0px 15px 25px 15px;
+	left: -5px;
+
+	-webkit-transition:padding .8s cubic-bezier(0,1,0,1);
+	-moz-transition:   padding .8s cubic-bezier(0,1,0,1);
+	-ms-transition:    padding .8s cubic-bezier(0,1,0,1);
+	transition:        padding .8s cubic-bezier(0,1,0,1);
+
+	.chapter-picker-modal {
+		.yv-drop-shadow;
+
+		/* only transition on transform properties which are hardware accelerated = way better performances */
+		-webkit-transition:-webkit-transform .8s cubic-bezier(0,1,0,1);
+		-moz-transition:   -moz-transform .8s cubic-bezier(0,1,0,1);
+		-ms-transition:    -ms-transform .8s cubic-bezier(0,1,0,1);
+		transition:        transform .8s cubic-bezier(0,1,0,1);
+
+	  -webkit-transform: translate(0, 0%);
+	     -moz-transform: translate(0, 0%);
+	      -ms-transform: translate(0, 0%);
+	          transform: translate(0, 0%);
+	}
 }

@@ -62,12 +62,10 @@ class ChapterPickerModal extends Component {
 				bookFocus = true
 			}
 			books = (
-				<ReactCSSTransitionGroup  >
-					<div className='book-container'>
-						<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.chapterpicker.book label" /></div>
-						<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} focus={bookFocus} listSelectionIndex={booklistSelectionIndex} onMouseOver={onMouseOver}/>
-					</div>
-				</ReactCSSTransitionGroup>
+				<div className='book-container'>
+					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.chapterpicker.book label" /></div>
+					<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} focus={bookFocus} listSelectionIndex={booklistSelectionIndex} onMouseOver={onMouseOver}/>
+				</div>
 			)
 		}
 

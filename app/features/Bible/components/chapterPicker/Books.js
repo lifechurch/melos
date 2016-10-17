@@ -2,14 +2,8 @@ import React, { Component, PropTypes } from 'react'
 
 class Books extends Component {
 
-	constructor(props) {
-		super(props)
-		const { initialSelection } = props
-		this.state = { selectedBook: initialSelection || null }
-	}
 
 	bookSelect(book, filtering) {
-		this.setState( { selectedBook: book.usfm } )
 		const { onSelect } = this.props
 		if (typeof onSelect == 'function') {
 			onSelect(book, filtering)
@@ -17,13 +11,12 @@ class Books extends Component {
 	}
 
 	render() {
-		const { list, onSelect, listSelectionIndex, onMouseOver, focus } = this.props
-		const { selectedBook } = this.state
+		const { list, onSelect, listSelectionIndex, onMouseOver, focus, initialSelection } = this.props
 
 		var books = null
 		if (Array.isArray(list)) {
 			books = list.map((book, index) =>  {
-				let active = (book.usfm == selectedBook) ? 'active' : ''
+				let active = (book.usfm == initialSelection) ? 'active' : ''
 				if (focus) {
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
 					return(
@@ -31,7 +24,7 @@ class Books extends Component {
 					)
 				} else {
 					return(
-						(<li key={book.usfm} className={`${active}`} onClick={this.bookSelect.bind(this, book)} >{ book.human }</li>)
+						(<li key={book.usfm} className={`${active}`} onClick={this.bookSelect.bind(this, book, false)} >{ book.human }</li>)
 					)
 				}
 			})
