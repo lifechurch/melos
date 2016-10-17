@@ -136,6 +136,7 @@ class User < YV::Resource
     end
 
     def find_by_auth(opts = {})
+      opts.delete :cache_for
       data, errs = get("users/view", opts)
       return YV::API::Results.new(new(data.merge!(auth: opts[:auth])), errs)
     end

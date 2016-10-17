@@ -4,8 +4,8 @@
 
 .medium-centered
   .columns.medium-centered.large-11
-    = render partial: 'shared/google_signin', locals: { form_id: "signin_form", form_action: sign_in_path(source: params[:source], redirect: params[:redirect]), is_continue: true }
     = render partial: 'shared/facebook_signin', locals: { form_id: "signin_form", form_action: sign_in_path(source: params[:source], redirect: params[:redirect]), is_continue: true }
+    = render partial: 'shared/google_signin', locals: { form_id: "signin_form", form_action: sign_in_path(source: params[:source], redirect: params[:redirect]), is_continue: true }
     %hr
     = form_tag sign_in_path(source: params[:source], redirect: params[:redirect]), id: "signin_form" do
       %p
