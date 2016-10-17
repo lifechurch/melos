@@ -63,7 +63,7 @@ function checkAuth(auth) {
 				reject({error: 1, message: 'Invalid or Expired Token'})
 			}
 
-		} else if (typeof auth === 'object' && typeof auth.password === 'string') {
+		} else if (typeof auth === 'object' && (typeof auth.password === 'string' || typeof auth.tp_token === 'string')) {
 			// No token, but we have enough info to create one
 			const sessionData = auth
 			const token = tokenAuth.token(sessionData)
