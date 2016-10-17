@@ -629,6 +629,7 @@ fa:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "از ثبت نام شما متشکریم!"
         confirm message: "ما به آدرس %{email} ایمیلی فرستادیم. "
         confirm message click: "برای تأیید، لطفاً روی لینک ارسالی کلیک کنید."

@@ -640,6 +640,7 @@ es-ES:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "¡Gracias por registrarse!"
         confirm message: "Acabamos de enviar un email a %{email}"
         confirm message click: "Haz click en el vínculo del email para confirmar que eres tu."

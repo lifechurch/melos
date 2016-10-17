@@ -640,6 +640,7 @@ el:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Ευχαριστούμε για την εγγραφή!"
         confirm message: "Μόλις στείλαμε ένα μήνυμα στο %{email}"
         confirm message click: "Κάντε κλικ στο σύνδεσμο που σας στείλαμε για να επιβεβαιώσετε οτι είστε εσείς."

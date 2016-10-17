@@ -651,6 +651,7 @@ cs:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Děkujeme za registraci!"
         confirm message: "Právě jsme zaslali zprávu na email %{email}"
         confirm message click: "Prosím klikněte na odkaz v emailu. Dojde k potvrzení vaší autorizace."

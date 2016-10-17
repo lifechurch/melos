@@ -1,0 +1,75 @@
+:ruby
+  facebook_signin_button_id = "facebookSigninButton"
+
+:javascript
+
+  function fbapiStatusChangeCallback(response) {
+    fbapiDisableDefaultForm()
+    if (response.status === 'connected') {
+      document.getElementById('facebook-sign-in-token').value = response.authResponse.accessToken;
+      document.getElementById('facebook-sign-in-id').value = response.authResponse.userID;
+      document.getElementById('facebook-sign-in-form').submit();
+    }
+  }
+
+  function fbapiDisableDefaultForm() {
+    var userCreateForm = document.getElementById("#{form_id}")
+    if (userCreateForm !== null) {
+      var inputs = userCreateForm.getElementsByTagName('input')
+      for (x = 0; x < inputs.length; x++) {
+        inputs[x].disabled = true;
+      }
+    }
+  }
+
+  function fbapiStartApp() {
+    var loginButton = document.getElementById("#{facebook_signin_button_id}");
+    FB.getLoginStatus(function(response) {
+      loginButton.classList.remove('disabled');
+      if (response.status === 'connected') {
+        document.getElementById('facebook-sign-in-token').value = response.authResponse.accessToken;
+        document.getElementById('facebook-sign-in-id').value = response.authResponse.userID;
+        loginButton.onclick = function() {
+          fbapiDisableDefaultForm();
+          document.getElementById('facebook-sign-in-form').submit();
+        }
+        FB.api('/me', function(response) {
+          document.getElementById('fbName').innerHTML = response.name;
+          FB.api('/' + response.id + '/picture?height=96&width=96', function(response) {
+            document.getElementById('fbAvatar').src = response.data.url;
+            document.getElementById('fbAuthProfile').classList.remove('empty');
+          })
+        })
+
+      } else if (response.status === 'not_authorized') {
+        loginButton.onclick = function() {
+          FB.login(fbapiStatusChangeCallback)
+        }
+
+      } else {
+        loginButton.onclick = function() {
+          FB.login(fbapiStatusChangeCallback)
+        }
+
+      }
+    });
+  }
+
+#fbAuthProfile.empty
+  %img#fbAvatar
+  %p#fbName
+
+.tpAuthSigninButton.disabled{ "id" =>  "#{facebook_signin_button_id}" }
+  %span.icon
+  %span.buttonText
+    -if is_continue
+      =t('users.continue facebook')
+    -else
+      =t('users.sign up facebook')
+
+%form#facebook-sign-in-form{ action: "#{form_action}", method: "POST" }
+  %input#facebook-sign-in-token{ type: "hidden", name: "tp_token" }
+  %input#facebook-sign-in-id{ type: "hidden", name: "tp_id" }
+  %input{ type: "hidden", name: "tp_source", value: "Facebook" }
+
+  -#%input#facebook-sign-in-name{ type: "hidden", name: "tp_name" }

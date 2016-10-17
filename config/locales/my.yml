@@ -629,6 +629,7 @@ my:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "မှတ်ပုံတင်သည့်အတွက် ကျေးဇူးတင်ပါသည်။"
         confirm message: "%{email}သို့ ခုလေးတွင် မက်ဆေ့ပို့ခဲ့သည်။"
         confirm message click: "ထိုအီးမေးလ်ထဲမှလင့်ကိုနှိပ်ပြီ သင်မှန်ကန်ဖြစ်ကြောင်းအတည်ပြုပါ။"

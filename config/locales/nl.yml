@@ -640,6 +640,7 @@ nl:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Dank je wel voor je aanmelding!"
         confirm message: "We hebben zojuist een bericht gestuurd naar %{email}"
         confirm message click: "Klik op de link in die email om te bevestigen dat jij het bent."

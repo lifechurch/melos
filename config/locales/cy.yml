@@ -684,6 +684,7 @@ cy:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Diolch am gofrestru!"
         confirm message: "Rydyn ni newydd anfon neges i %{email}"
         confirm message click: "Clicia ar y ddolen yn yr ebost i gadarnhau mai ti ydy o."

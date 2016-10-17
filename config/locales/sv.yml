@@ -640,6 +640,7 @@ sv:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Tack för att du registrerade dig!"
         confirm message: "Vi har skickat ett meddelande till %{email}"
         confirm message click: "Klicka på länken i mejlet för att bekräfta att det är du."

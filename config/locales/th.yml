@@ -629,6 +629,7 @@ th:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "ขอบคุณสำหรับการสมัครสมาชิก!"
         confirm message: "เราได้จัดส่งข้อความไปยัง %{email}"
         confirm message click: "คลิ๊กลิงค์ในอีเมลล์เพื่อยืนยันว่านี่คือคุณ"

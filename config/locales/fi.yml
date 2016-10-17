@@ -640,6 +640,7 @@ fi:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Kiitos rekisteröitymisestä!"
         confirm message: "Lähetimme juuri viestin osoitteeseen %{email}"
         confirm message click: "Napauta linkkiä kyseisessä viestissä vahvistaaksesi sähköpostiosoitteesi."

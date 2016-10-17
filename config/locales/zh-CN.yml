@@ -629,6 +629,7 @@ zh-CN:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "感谢注册！"
         confirm message: "我们刚刚给%{email}发了一份邮件 "
         confirm message click: "请点击电邮里面的链接，以确认你的身份。"

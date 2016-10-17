@@ -662,6 +662,7 @@ uk:
         continue google: "Continue with Google"
         sign up facebook: "Sign up with Facebook"
         continue facebook: "Continue with Facebook"
+        tp need email: "We need your email address to complete sign-up."
         thanks for registering: "Дякуємо за реєстрацію!"
         confirm message: "Ми вже надіслали повідомлення на %{email}"
         confirm message click: "Натисніть на посилання у листі, щоб підтвердити вашу особу."
