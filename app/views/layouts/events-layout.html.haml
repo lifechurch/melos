@@ -33,6 +33,8 @@
   %head{lang: I18n.locale}
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
+    %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
 
     / Open Graph Markup for Facebook
     / (Refer to https://developers.facebook.com/docs/sharing/webmasters)

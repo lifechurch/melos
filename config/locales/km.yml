@@ -161,7 +161,7 @@ km:
         story text 5: "Jesus heals the paralytic"
         feature 1: "A free Bible experience for your kids"
         feature 2: "Animated storybook app for smartphones and tablets"
-        feature 3: "Colorful illustrations with touch-activated animations"
+        feature 3: "Vivid illustrations with touch-activated animations"
         feature 4: "Games and activities help kids remember what they learn"
         feature 5: "Kid-friendly navigation"
         share: 
@@ -625,6 +625,11 @@ km:
         facebook sign up success: "ល្អ​ណាស់! អ្នក​ត្រូវ​បាន​អនុញ្ញាត​ជាមួយនឹង​ហ្វេសប៊ុក។ រើស​យកឈ្មោះ​ប្រើ​ប្រាស់ និង​ ពាក្យ​សម្ងាត់ YouVersion រួច​បន្ត។"
         register: "ចុះ​ឈ្មោះ"
         sign up: "ចុះ​ឈ្មោះ"
+        sign up google: "ចុះឈ្មោះជាមួយ Google"
+        continue google: "បន្តជាមួយ Google"
+        sign up facebook: "ចុះ​ឈ្មោះ​ជាមួយ​ហ្វេសប៊ុក"
+        continue facebook: "បន្ត​ជាមួយ​ហ្វេស​ប៊ុក"
+        tp need email: "យើង​ត្រូវការ​អាស័យ​ដ្ឋាន​អ៊ីម៉ែល​របស់​អ្នក​ដើម្បីបញ្ចប់​ការចុះ​ឈ្មោះ។"
         thanks for registering: "អរគុណ​ដែល​បាន​ចុះ​ឈ្មោះ!"
         confirm message: "យើងទើបតែបានយើងសារទៅកាន់ %{email}"
         confirm message click: "ចុចលើតំណភ្ជាប់នៅក្នុងអ៊ីម៉ែលដើម្បីបញ្ជាក់​ថាគឺជាអ្នក។"
@@ -1698,9 +1703,9 @@ km:
                                     desc: "តំណរ​​ទៅ​កាន់​គំរោង​អាន​ព្រះ​គម្ពីរ​និង ការ​ចំណាយ​ពេល​ជា​មួយ​នឹង​ព្រះ​ជា​ម្ចាស់ ទាក់​ទងនឹង​ចំនុច​បង្រៀន​របស់​លោក​អ្នក ថែម​ទាំង​ជួយ​អោយ​អ្នក​ចូល​រួម​បន្ត​មាន​ទំនាក់​ទំនង​ដោយ​ផ្ទាល់​ជាមួយ​នឹង​ព្រះ​បន្ទូល​របស់​ព្រះ​ជា​ម្ចាស់ក្នុង​កំឡុង​ពេល​នៃ​សប្ដាហ៍។"
                                 image: 
                                     title: "រូប​ភាព"
-                                    desc: "Bring your Event to life with any kind of supporting graphics: series art, photos, Verse Images etc. Attenders will be able to easily share your Event images to their social media, taking your message viral."
+                                    desc: "ធ្វើ​អោយ​ព្រឹត្តិការណ៍​របស់​លោកអ្នក​មានជីវិត​ដែល​អាច​ប្រើប្រាស់​បាន​ជាមួយ​នឹង​ក្រាហ្វិក​គ្រប់​ទំរង់៖ គំនូ រូបថត រូបខគម្ពីរ ។ល។ អ្នក​ចូលរួម​នឹង​អាច​ចែក​រំលែក​នូវ​រូបភាព​ព្រឹត្តិការណ៍​របស់​អ្នក​ទៅកាន់​បណ្ដាញ​សង្គម ធ្វើ​អោយ​សារ​របស់​អ្នក​ផ្ទុះ​តែ​ម្ដង។"
                                 link: 
-                                    title: "External Link Module"
+                                    title: "គំរូ​តំណរ​ខាង​ក្រៅ"
                                     desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
                                 announcement: 
                                     title: "Announcement Module"
@@ -1835,7 +1840,7 @@ km:
                                     desc: "ព្រឹត្តិការណ៍របស់​លោក​អ្នក​អាច​មើល​ឃើញ​បានតាម​រយៈទី​តាំង​ព្រឹត្តិការណ៍​ក្នុង​កម្ម​វិធី​ព្រះ​គម្ពីរ​ និង អាច​ធ្វើ​ការ​ស្វែងរកឃើញ​បាន​ ៥ថ្ងៃ​មុន​ព្រឹត្តិ​ការណ៍​ចាប់​ផ្ដើម។"
                                 status: 
                                     title: "ស្ថាន​ភាព​កំណត់​ត្រា"
-                                    desc: "The red LIVE badge will display when your earliest start time begins."
+                                    desc: "ផ្លាក ផ្ទាល់​ពណ៌​ក្រហម​នឹង​បង្ហាញ​នៅ​ពេល​លោក​អ្នកចាប់​ផ្ដើម​ពី​តំបូង​មុន​គេ។"
                                 remove: 
                                     title: "លុប​ចេញ៖"
                                     desc: "ព្រឹត្តិ​ការណ៍​របស់​លោក​អ្នក​នឹង​ត្រូវ​លុប​បាត់​បន្ទាប់​ពី​ពេល​វេ​លាចុង​ក្រោយ​របស់​វា​ត្រូវ​បាន​បញ្ចប់។ អ្នក​ចូល​រួម​ដែល​បាន​ចុច​លើ​ \"រក្សា​ទុក​ព្រឹត្តិ​ការណ៍\" នៅ​ពេល​ដែល​ព្រឹត្តិការ​ណ៍​របស់​លោក​អ្នក​នៅ​មាន​វត្្តមាន​នៅ​ឡើយ អាច​ចូល​ទៅ​កាន់​ឃ្លាំង​ទុក​ឯកសារ​ចាស់ដើម្បី​ស្វែង​រក​វា។ ព្រឹត្តិការណ៍នេះ​ក៏​នឹង​នៅ​តែអាច​ត្រូវ​បាន​គេ​រក​បាន​តាម​រយៈតំណរ​ដែល​ត្រូវ​បាន​បញ្ជូន​មក។"
@@ -1871,3 +1876,39 @@ km:
                         save: "រក្សាទុក​ព្រឹត្តិការណ៍"
                         signIn: "Sign In to Save Event"
                         saved: "Event Saved"
+        Reader: 
+            header: 
+                parallel: "ប៉ារ៉ា​ឡែល"
+                parallel exit: "Exit Parallel Mode"
+                cancel: "បោះ​បង់"
+                audio label: "សំលេង"
+                audio window: "Open in new window"
+                font label: "ការ​កំណត់​របស់​អ្នក"
+                notifications label: "ការ​ជូនដំណឹង"
+                more label: "បន្ថែម​ទៀត"
+                search input: "Reference or Keyword..."
+                home: "គេហ៍"
+                bible: "ព្រះគម្ពីរ"
+                plans: "គំរោង​ច្រើន"
+                videos: "វីដេអូ"
+                me: "ខ្ញុំ"
+            chapterpicker: 
+                book label: "សៀវភៅ"
+                chapter label: "ជំពូក"
+                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+            versionpicker: 
+                language label: "ភាសា​ព្រះ​គម្ពីរ"
+                language sub-label: "ភាសា​ព្រះគម្ពីរ"
+                change language: "ប្ដូរភាសា"
+                filter languages: "Filter Languages..."
+                version label: "ជំនាន់"
+            reader settings: 
+                footnotes: "កំណត់ចំណាំ"
+                numbers: "លេខ និងចំណងជើង"
+            more: 
+                events: "ព្រឹត្តិការណ៍នានា"
+                settings: "ការ​កំណត់"
+            search: 
+                bible: "ព្រះគម្ពីរ"
+                users: "អ្នក​ប្រើ​ប្រាស់"
+                plans: "គំរោង​ច្រើន"

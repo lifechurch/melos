@@ -186,6 +186,8 @@
     %meta{name: "twitter:app:id:ipad", content: "668692393"}
     %meta{name: "twitter:app:name:googleplay", content: "Bible for Kids"}
     %meta{name: "twitter:app:id:googleplay", content: "com.bible.kids"}
+    %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
+    %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en-gb"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/es/kids",:rel=>"alternate",:hreflang=>"es"}

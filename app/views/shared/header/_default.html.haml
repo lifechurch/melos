@@ -122,7 +122,7 @@
                   %md-button{href: "/settings", target: "_self"}
                     =t("settings")
                 %md-menu-item
-                  %md-button{href: sign_out_path, target: "_self"}
+                  %md-button{"ng-click" =>"signOut('#{sign_out_path}')"}
                     =t("sign out")
 
         - else

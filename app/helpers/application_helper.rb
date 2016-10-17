@@ -359,6 +359,92 @@ module ApplicationHelper
     image_tag(name_at_1x, options.merge("data-at2x" => asset_path(name_at_2x)))
   end
 
+  def tp_sign_in()
+    # Get the 3rd Party Token Info
+    tp_token = "#{params['tp_source']} #{params['tp_token']}"
+    tp_id = params['tp_id']
+    tp_source = "#{params['tp_source']}"
+    email = params['email'].present? ? "#{params['email']}" : nil
+
+    # Handle Successful Sign In/Up
+    finish_login = lambda do
+      begin
+        sign_in(@user, nil, tp_token, tp_id)
+        I18n.locale = @user.language_tag.gsub('_', '-') unless @user.language_tag.nil?
+        location = redirect_path
+        location ||= (I18n.locale == I18n.default_locale) ? "/#{I18n.default_locale}#{moments_path}" : moments_path
+        clear_redirect
+        redirect_to(location) and return
+      end
+    end
+
+    # Handle unverified Sign In/Up
+    handle_unverified = lambda do
+      return redirect_to confirm_email_path(@confirm_email, redirect: params[:redirect])
+    end
+
+    # Try to find user first
+    begin
+      @user = User.find(nil, { auth: { tp_token: tp_token } })
+    rescue UnverifiedAccountError
+      return handle_unverified.call
+    end
+
+    # Everything is good, log them in!
+    if @user.valid?
+      return finish_login.call
+
+    # Something's not right, let's dig into it
+    else
+      errors = @user.attributes && @user.attributes.errors.present? ? @user.attributes.errors : @user['errors']
+      errors = errors.map{ |e| e["key"] }
+
+      # 403: must prompt user for email
+      #   - "users.third_party_email.required"
+      if errors.include? "users.third_party_email.required" and email.nil?
+        return render 'users/tp_email_required', locals: { tp_token: params['tp_token'] , tp_id: tp_id, tp_source: tp_source }, layout: "application"
+
+      # 403: user/email not verified
+      #   - "users.third_party_email.not_verified"
+      #   - "users.hash.not_verified"
+      elsif errors.include? "users.third_party_email.not_verified" or errors.include? "users.hash.not_verified"
+        return handle_unverified.call
+
+      #401: expired token or bad client_id, need to get new token from 3rd party
+      elsif errors.include? "generic_error"
+        sign_out
+        redirect_to sign_in_path
+
+      # 403: token invalid, no user found for this token, try to create
+      else
+        if tp_source == "GoogleJWT"
+          @user = User.register({ "google_id_token" => "#{params['tp_token']}", agree: true, "tp_id" => "#{params['tp_id']}", email: email })
+        elsif tp_source == "Facebook"
+          @user = User.register({ "facebook_access_token" => "#{params['tp_token']}", agree: true, "tp_id" => "#{params['tp_id']}", email: email })
+        end
+
+        if @user.valid?
+          cookies.signed[:a] = @user.id
+          cookies.signed[:b] = @user.email
+          cookies[:tempemail] = @user.email
+
+          # If this is an unverified email, then send them
+          #  to the verify notice, otherwise log them in
+          if email.nil?
+            return finish_login.call
+          else
+            return handle_unverified.call
+          end
+
+        # Something went wrong? Just go back to Sign Up page.
+        else
+          return render action: "users/new", layout: "application"
+        end
+      end
+
+    end
+  end
+
   private
   def lang_code(locale, host=nil)
     case host

@@ -131,16 +131,21 @@ function inPathNotFirst(segment, path) {
 
 function init() {
 
-	if (isReader || isReadingPlanSample || isReaderPlanUser) {
-		parseReaderVars();
-	}
+    if (isReader || isReadingPlanSample || isReaderPlanUser) {
+        parseReaderVars();
+    }
 
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection) {
+    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
     }
 
+    if (gapi) {
+        gapi.load('auth2', function () {
+            gapi.auth2.init();
+        })
+    }
 }
 
 var isEvents            = isFirst("events");
@@ -150,6 +155,8 @@ var isReader 			= isFirst("bible");
 var isHomeFeed 			= isFirst("moments");
 var isPlanIndex         = isFirst("reading-plans") && !inPathNotFirst("day");
 var isPlanCollection    = isFirst("reading-plans-collection");
+var isSignUp            = isFirst("sign-up");
+var isSignIn            = isFirst("sign-in");
 
 var isFriendsFeed		= isFirst("users") && inPathNotFirst("friends");
 var isNotesFeed			= isFirst("users") && inPathNotFirst("notes");
