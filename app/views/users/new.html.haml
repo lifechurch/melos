@@ -38,6 +38,10 @@
           %hr
           -#%p= link_to t("registration.with facebook"), auth_connect_path(:facebook, redirect: facebook_sign_up_path), class: "action_button_blue"
 
+      = render partial: 'shared/google_signin', locals: { form_id: "user_create_form", form_action: sign_up_path(source: params[:source], redirect: params[:redirect]), is_continue: false }
+
+      %hr{ width: "75%" }
+
       = render 'create_form'
 
   .medium-5.large-5.columns.show-for-medium-up

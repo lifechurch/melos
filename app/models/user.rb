@@ -45,17 +45,18 @@ class User < YV::Resource
     # returns a YV::API::Result with errors if create fails
     def register(opts = {})
       opts = {
-        email: "",
-        first_name: "",
-        last_name: "",
-        username: "",
-        password: "",
         verified: false,
         agree: false
       }.merge!(opts.symbolize_keys)
 
       opts[:agree] = true if opts[:agree]
-      opts[:token] = Digest::MD5.hexdigest "#{opts[:email]}.Yv6-#{opts[:password]}"
+
+      if opts[:google_id]
+        opts[:token] = Digest::MD5.hexdigest ".Yv6-#{opts[:google_id]}"
+      else
+        opts[:token] = Digest::MD5.hexdigest "#{opts[:email]}.Yv6-#{opts[:password]}"
+      end
+
       opts[:notification_settings] = { newsletter: {email: true}}
 
       # timezone is passed in through form in opts
@@ -73,8 +74,13 @@ class User < YV::Resource
     # Authenticate a user with (username, password)
     # returns a YV::API::Result decorator for a User instance if user is properly authenticated
     # returns a YV::API::Result with errors if authentication is invalid
-    def authenticate(username, password)
-      auth = {username: username, password: password}
+    def authenticate(username, password, tp_token = nil)
+      if !tp_token.nil?
+        auth = { tp_token: tp_token }
+      else
+        auth = {username: username, password: password}
+      end
+
       id_results = find_id(username)
       if id_results.valid?
 
@@ -129,6 +135,11 @@ class User < YV::Resource
       return YV::API::Results.new(new(data.merge!(auth: opts[:auth])), errs)
     end
 
+    def find_by_auth(opts = {})
+      data, errs = get("users/view", opts)
+      return YV::API::Results.new(new(data.merge!(auth: opts[:auth])), errs)
+    end
+
     # Find a user by id, username or email address
     # Returns YV::API::Results decorator for User instance
     def find(username_or_id, opts = {})
@@ -138,13 +149,19 @@ class User < YV::Resource
           return find_by_username( username_or_id , opts )
         when Fixnum
           return find_by_id(username_or_id, opts )
+        else
+          return find_by_auth(opts)
       end
     end
 
     # Destroy user
     # Returns YV::API::Results with custom data or errors
     def destroy(auth)
-      token = Digest::MD5.hexdigest "#{auth[:username]}.Yv6-#{auth[:password]}"
+      if auth[:tp_id]
+        token = Digest::MD5.hexdigest ".Yv6-#{auth[:tp_id]}"
+      else
+        token = Digest::MD5.hexdigest "#{auth[:username]}.Yv6-#{auth[:password]}"
+      end
       data, errs = post(delete_path, auth: auth, token: token)
       return YV::API::Results.new(data,errs)
     end

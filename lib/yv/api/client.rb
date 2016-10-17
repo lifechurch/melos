@@ -25,13 +25,21 @@ module YV
             curl.headers = opts[:headers]
             curl.timeout = opts[:timeout] || Cfg.api_default_timeout.to_f
             if opts[:auth].present?
-              curl.http_auth_types = :basic
-              curl.username = opts[:auth][:username]
-              curl.password = opts[:auth][:password]
+              if opts[:auth][:tp_token].present?
+                curl.headers["Authorization"] = opts[:auth][:tp_token]
+              else
+                curl.http_auth_types = :basic
+                curl.username = opts[:auth][:username]
+                curl.password = opts[:auth][:password]
+              end
             end
             curl.encoding = ''
             curl.perform
             response = JSON.parse curl.body_str
+
+            if curl.response_code >= 400 && response["response"].present? && !response["response"]["data"].present?
+              response["response"]["data"] = { "errors" => [ { "key" => 'generic_error', "error" => curl.response_code.to_s } ] }
+            end
 
             # Raise an error here if response code is 400 or greater and the API hasn't sent back a response object.
             # IMPORTANTLY - This avoids us potentially caching a bad API request
@@ -107,13 +115,21 @@ module YV
             c.timeout = opts[:timeout] || Cfg.api_default_timeout.to_f
             c.encoding = ''
             if opts[:auth].present?
-              puts 'auth'
-              c.http_auth_types = :basic
-              c.username = opts[:auth][:username]
-              c.password = opts[:auth][:password]
+              if opts[:auth][:tp_token].present?
+                c.headers["Authorization"] = opts[:auth][:tp_token]
+              else
+                puts 'auth'
+                c.http_auth_types = :basic
+                c.username = opts[:auth][:username]
+                c.password = opts[:auth][:password]
+              end
             end
           end    
           response = JSON.parse curl.body_str
+
+          if curl.response_code >= 400 && response["response"].present? && !response["response"]["data"].present?
+            response["response"]["data"] = { "errors" => [ { "key" => 'generic_error', "error" => curl.response_code.to_s } ] }
+          end
 
           rescue MultiJson::DecodeError => e
             response = JSON_500

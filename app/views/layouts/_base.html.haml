@@ -11,6 +11,8 @@
 
   %head{lang: 'en-us'}
     %meta{name: "fragment", content: "!"}
+    %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
+    %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     %base{href: "/"}
     = csrf_meta_tags
     = render '/shared/head'

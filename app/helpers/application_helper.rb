@@ -359,6 +359,45 @@ module ApplicationHelper
     image_tag(name_at_1x, options.merge("data-at2x" => asset_path(name_at_2x)))
   end
 
+  def google_sign_in()
+    tp_token = "GoogleJWT #{params['google_token']}"
+    tp_id = params['google_id']
+    @user = User.find(nil, { auth: { tp_token: tp_token } })
+
+    finish_login = lambda do
+      begin
+        sign_in(@user, nil, tp_token, tp_id)
+        I18n.locale = @user.language_tag.gsub('_', '-') unless @user.language_tag.nil?
+        location = redirect_path
+        location ||= (I18n.locale == I18n.default_locale) ? "/#{I18n.default_locale}#{moments_path}" : moments_path
+        clear_redirect
+        redirect_to(location) and return
+      end
+    end
+
+    if @user.valid?
+      return finish_login.call
+    else
+      # Let's create a new user
+      @user = User.register({ "google_id_token" => "#{params['google_token']}", agree: true, "google_id" => "#{params['google_id']}"})
+
+      # Created and Verified!
+      if @user.valid?
+        return finish_login.call
+
+      # Creation Incomplete, take extra steps
+      else
+        # 401 : invalid token
+        # 403 : users.token.invalid
+        #     : users.hash.not_verified
+        #     : users.third_party_email.not_verified
+        #     : users.third_party_email.required
+
+      end
+
+    end
+  end
+
   private
   def lang_code(locale, host=nil)
     case host
