@@ -19,6 +19,9 @@
 }
 .chapter-picker-modal {
 
+	z-index: 10;
+	background-color: white;
+
 	display: inline-flex;
 	max-height: 490px;
 	border-radius: @default-radius @default-radius 0px 0px;
@@ -31,7 +34,8 @@
 		background-color: @light-grey;
 		border-bottom: @thin-grey-border;
 		max-height: 30px;
-		text-align: center;
+
+
 
 		.prev {
 			display: none;
@@ -57,16 +61,10 @@
 
 	}
 
-	.picker-error {
-		.picker-error;
-	}
 
 	// books *******************************************
 	.book-container {
 		min-width: 247px;
-		.header {
-			border-right: 1px solid @light-grey;;
-		}
 
 		@media @small-only {
 			width: 320px;
@@ -104,11 +102,42 @@
 
 
 	// chapters *****************************************
+	.picker-error {
+
+		position: absolute;
+		width: 314px;
+		height: 60px;
+		z-index: -100;
+		opacity: 0;
+
+		display: flex;
+		.yv-flex-center-all;
+
+		.picker-error;
+
+	}
+	.picker-alert {
+		.picker-error {
+			opacity: 1;
+		}
+		.chapter-list {
+			.dropdown-transform;
+
+		  -webkit-transform: translate(0, 60px);
+		     -moz-transform: translate(0, 60px);
+		      -ms-transform: translate(0, 60px);
+		          transform: translate(0, 60px);
+		}
+	}
+
 	.chapter-container {
 
 		width: 320px;
 		border-left: @thin-grey-border;
 		margin-right: -5px;
+
+		overflow: hidden;
+
 		.header {
 			width: 314px;
 		}
@@ -137,6 +166,7 @@
 				.yv-flex-center-all;
 				font-weight: bold;
 				color: @font-grey;
+				background-color: white;
 
 			}
 			li:hover {
@@ -194,18 +224,14 @@ input {
 
 	.chapter-picker-modal {
 		/* only transition on transform properties which are hardware accelerated = way better performances */
-		-webkit-transition: -webkit-transform .5s cubic-bezier(0,1,0,1);
-		-moz-transition:    -moz-transform .5s cubic-bezier(0,1,0,1);
-		-ms-transition:     -ms-transform .5s cubic-bezier(0,1,0,1);
-		transition:         transform .5s cubic-bezier(0,1,0,1);
+		.dropdown-transform;
 
-	  -webkit-transform: translate(0, -105%) !important;
-	     -moz-transform: translate(0, -105%) !important;
-	      -ms-transform: translate(0, -105%) !important;
-	          transform: translate(0, -105%) !important;
+	  -webkit-transform: translate(0, -106%) !important;
+	     -moz-transform: translate(0, -106%) !important;
+	      -ms-transform: translate(0, -106%) !important;
+	          transform: translate(0, -106%) !important;
 	}
 }
-	//
 
 .modal {
 	position: absolute;
@@ -227,10 +253,7 @@ input {
 		.yv-drop-shadow;
 
 		/* only transition on transform properties which are hardware accelerated = way better performances */
-		-webkit-transition:-webkit-transform .8s cubic-bezier(0,1,0,1);
-		-moz-transition:   -moz-transform .8s cubic-bezier(0,1,0,1);
-		-ms-transition:    -ms-transform .8s cubic-bezier(0,1,0,1);
-		transition:        transform .8s cubic-bezier(0,1,0,1);
+		.dropdown-transform;
 
 	  -webkit-transform: translate(0, 0%);
 	     -moz-transform: translate(0, 0%);

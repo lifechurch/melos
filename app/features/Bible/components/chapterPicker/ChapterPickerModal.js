@@ -19,7 +19,8 @@ class ChapterPickerModal extends Component {
 			toggle,
 			booklistSelectionIndex,
 			chapterlistSelectionIndex,
-			onMouseOver
+			onMouseOver,
+			alert
 		} = this.props
 
 		let books, chapters = null
@@ -71,19 +72,27 @@ class ChapterPickerModal extends Component {
 
 		if (chapterList && selectedBook) {
 			let chapterFocus = false
+			let alertClass = ''
 			// if we're rendering just the chapter list, let's handle the list selection stuff
 			// this tells the chapters component to fire onMouseOver and style the focus list element
 			if (!bookList) {
 				chapterFocus = true
 			}
+			if (alert) {
+				alertClass = 'picker-alert'
+			}
 			chapters = (
-				<div className='chapter-container'>
-					<div className='header vertical-center'>
+				<div className={`chapter-container ${alertClass}`}>
+					<div className='header vertical-center horizontal-center'>
 						<a className='prev columns medium-4' onClick={toggle}><p>&larr;</p></a>
 						<p className='columns medium-4'><FormattedMessage id="Reader.chapterpicker.chapter label" /></p>
 						<a className='cancel columns medium-4'><FormattedMessage id="Reader.header.cancel" /></a>
 					</div>
-					<Chapters list={chapterList} onSelect={getChapter} initialSelection={selectedChapter} listSelectionIndex={chapterlistSelectionIndex} focus={chapterFocus} onMouseOver={onMouseOver} />
+					{/* this is hidden on default and only shown if picker alert is applied to the parent */}
+					<div className='picker-error'>
+						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
+					</div>
+					<Chapters list={chapterList} onSelect={getChapter} initialSelection={selectedChapter} listSelectionIndex={chapterlistSelectionIndex} focus={chapterFocus} onMouseOver={onMouseOver} alert={alert} />
 				</div>
 			)
 		}
@@ -119,6 +128,7 @@ class ChapterPickerModal extends Component {
  * 	@booklistSelectionIndex 		index for selecting list element with arrow keys
  * 	@chapterlistSelectionIndex 	index for selecting list element with arrow keys
  * 	@onMouseOver								function to call when hovering over list element
+ * 	@alert											show alert message
  *
  */
 ChapterPickerModal.propTypes = {
@@ -132,7 +142,8 @@ ChapterPickerModal.propTypes = {
 	toggle: React.PropTypes.func,
 	booklistSelectionIndex: React.PropTypes.number,
 	chapterlistSelectionIndex: React.PropTypes.number,
-	onMouseOver: React.PropTypes.func
+	onMouseOver: React.PropTypes.func,
+	alert: React.PropTypes.bool
 }
 
 export default ChapterPickerModal

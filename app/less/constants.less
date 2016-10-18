@@ -108,6 +108,13 @@
 	font-size: 12px;
 }
 
+.dropdown-transform {
+	/* only transition on transform properties which are hardware accelerated = way better performances */
+	-webkit-transition:-webkit-transform .7s cubic-bezier(0.42,1,.16,.93);
+	-moz-transition:   -moz-transform .7s cubic-bezier(0.42,1,.16,.93);
+	-ms-transition:    -ms-transform .7s cubic-bezier(0.42,1,.16,.93);
+	transition:        transform .7s cubic-bezier(0.42,1,.16,.93);
+}
 
 //  **************************************************************************
 @default-radius: 5px;

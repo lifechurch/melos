@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import ActionCreators from '../../actions/creators'
 import Filter from '../../../../lib/filter'
+import scrollList from '../../../../lib/scrollToView'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import cookie from 'react-cookie';
 import moment from 'moment'
@@ -13,13 +14,12 @@ class ChapterPicker extends Component {
 
 	constructor(props) {
 		super(props)
-		const { chapter, selectedLanguage, books, bookMap } = props
+		const { chapter, books, bookMap } = props
 
 		this.state = {
 			selectedBook: chapter.reference.usfm.split('.')[0],
 			selectedChapter: chapter.reference.usfm,
 			selectedVersion: chapter.reference.version_id,
-			selectedLanguage: selectedLanguage,
 			books: books,
 			chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters,
 			inputValue: chapter.reference.human,
@@ -65,22 +65,29 @@ class ChapterPicker extends Component {
 		// positions to make sure the selected elements are in view
 		if (chapterlistSelectionIndex !== prevState.chapterlistSelectionIndex) {
 			listElement = document.getElementsByClassName('chapter-list')[0]
-			this.scrollList(focusElement, containerElement, listElement)
+			scrollList(focusElement, containerElement, listElement)
 		}
 		if (booklistSelectionIndex !== prevState.booklistSelectionIndex) {
 			listElement = document.getElementsByClassName('book-list')[0]
-			this.scrollList(focusElement, containerElement, listElement)
+			scrollList(focusElement, containerElement, listElement)
 		}
 		// scroll to the actively selected book and chapter on dropdown
 		if ((dropdown !== prevState.dropdown) && books && chapters) {
 			listElement = document.getElementsByClassName('book-list')[0]
-			this.scrollList(activeElements[0], containerElement, listElement)
+			scrollList(activeElements[0], containerElement, listElement)
 			listElement = document.getElementsByClassName('chapter-list')[0]
-			this.scrollList(activeElements[1], containerElement, listElement)
+			scrollList(activeElements[1], containerElement, listElement)
 		}
 
 	}
 
+	/**
+	 * Sets up state for the selected book
+	 *
+	 * @param      {<Object>}  selectedBook  The selected book
+	 * @param      {<Bool>}    filtering     are we filtering book list?
+	 *                                       this tells us whether to still render the book list
+	 */
 	getBook(selectedBook, filtering) {
 		const { books, bookMap } = this.props
 		this.setState({
@@ -97,21 +104,20 @@ class ChapterPicker extends Component {
 
 	getChapter(selectedChapter) {
 		const { dispatch, chapter } = this.props
+		const { selectedVersion, inputValue } = this.state
+
 		if (selectedChapter && selectedChapter.usfm) {
 			this.setState({
 				selectedChapter: selectedChapter.usfm,
-				inputValue: `${this.state.inputValue} ${selectedChapter.human}`,
+				inputValue: `${inputValue} ${selectedChapter.human}`,
 				dropdown: false,
 				chapterlistSelectionIndex: 0
 			})
-			dispatch(ActionCreators.bibleChapter({ id: this.state.selectedVersion, reference: selectedChapter.usfm })).then((chapter) => {
-				this.setState({ listErrorAlert: false })
-				// then write cookie for selected chapter
-				this.toggleChapterPickerList()
-				cookie.save('last_read', selectedChapter.usfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
-			}, (error) => {
-				this.setState({ listErrorAlert: true })
-			})
+			dispatch(ActionCreators.bibleChapter({ id: selectedVersion, reference: selectedChapter.usfm }))
+			this.setState({ listErrorAlert: false })
+			this.toggleChapterPickerList()
+			// then write cookie for selected chapter
+			cookie.save('last_read', selectedChapter.usfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 		} else {
 			this.setState({ listErrorAlert: true })
 		}
@@ -124,49 +130,20 @@ class ChapterPicker extends Component {
 	}
 
 
-	/**
-	 * scroll an overflowed list so that the elementToView is visible
-	 *
-	 * @param      {<NodeList item>}   elementToView     list element to make visible
-	 * @param      {<NodeList item>}   elementContainer  element containing the elementToView
-	 * @param      {<NodeList item>}   listElement       actual list (<ul>?) element to scroll (could be the same as container)
-	 *
-	 *
-	 */
-	scrollList(elementToView, elementContainer, listElement) {
-		let containerHeight, topPos, listItem, temp = null
-
-		if (typeof window !== 'undefined' && elementToView && elementContainer && listElement) {
-			temp = window.getComputedStyle(elementContainer, null).getPropertyValue('padding-top')
-			temp = parseInt(temp) + parseInt(window.getComputedStyle(elementContainer, null).getPropertyValue('padding-bottom'))
-			// temp holds the top and bottom padding
-			// usable space is the offsetHeight - padding
-			containerHeight = elementContainer.offsetHeight - temp
-			// amount of pixels away from the top of the container
-			topPos = elementToView.offsetTop
-			if (!containerHeight || !topPos) return false
-			// get the height of the the first list item in the list to scroll
-			listItem = listElement.querySelector('li:first-of-type').offsetHeight
-			// actually do the scrolling now
-			// scroll the top of the list to show the elementToView on the bottom
-			listElement.scrollTop = (topPos - (containerHeight - listItem))
-		}
-
-	}
-
-
 	handleLabelChange(inputValue) {
 		const { books, bookMap } = this.props
 		const { selectedBook } = this.state
 
+		// filter the books given the input change
 		let results = Filter.filter("BooksStore", inputValue.trim())
 
-		this.setState({ inputValue: inputValue })
+		this.setState({ inputValue: inputValue, listErrorAlert: false })
 
 		// if the input already matches a book exactly, let's filter chapters
 		if (results.length > 0 && `${results[0].human} ` == inputValue) {
 			// getBook will set state appropriately
 			this.getBook(results[0], true)
+
 		// if we already have book and are now filtering chapters, let's keep the chapter modal open
 		} else if (inputValue.includes(`${books[bookMap[selectedBook]].human} `)) {
 			// let's get the chapter info from the input value
@@ -183,13 +160,18 @@ class ChapterPicker extends Component {
 				})
 			}
 			this.setState({ books: null, dropdown: true })
-		// or we're actually filtering book names
+
+		// or we're actually just filtering book names
 		} else if (results.length > 0) {
 			this.setState({ books: results, chapters: null, dropdown: true, booklistSelectionIndex: 0 })
 			this.toggleChapterPickerList()
 		}
 	}
 
+	/**
+	 * This is called when the dropdown arrow is clicked to render the book and chapter
+	 * picker modal
+	 */
 	handleDropDownClick() {
 		const { books, chapter, bookMap } = this.props
 		const { selectedBook } = this.state
@@ -210,6 +192,7 @@ class ChapterPicker extends Component {
 					selectedChapter: chapter.reference.usfm,
 					chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters,
 					inputDisabled: false,
+					listErrorAlert: false
 				})
 			// we're opening the dropdown so let's disable the input field
 			} else {
@@ -228,14 +211,19 @@ class ChapterPicker extends Component {
 				dropdown: true,
 				inputDisabled: true,
 				books: books,
-				chapters: books[bookMap[selectedBook]].chapters
+				chapters: books[bookMap[selectedBook]].chapters,
+				listErrorAlert: false
 			})
 		}
 
 	}
 
-
-
+	/**
+	 * this handles changing the selection index on hover of the list in context
+	 *
+	 * @param      {string}  context  The list that we're changing the index on
+	 * @param      {number}  index    The index of the book or chapter being hovered over
+	 */
 	handleListHover(context, index) {
 		if (context == "books") {
 			this.setState({ booklistSelectionIndex: index })
@@ -245,7 +233,13 @@ class ChapterPicker extends Component {
 	}
 
 
-
+	/**
+	 * this handles pressing certain keys in the ChapterPicker label
+	 *
+	 * @param      {object}  event         KeyDown event
+	 * @param      {string}  keyEventName  Name of key event used for all except space bar
+	 * @param      {number}  keyEventCode  Code value of key event
+	 */
 	handleLabelKeyDown(event, keyEventName, keyEventCode) {
 		const { books, bookMap } = this.props
 		const {
@@ -332,7 +326,13 @@ class ChapterPicker extends Component {
 	}
 
 
-
+	/**
+	 * handles clicking out of the ChapterPicker label/input
+	 *
+	 * if the blur target is a book or chapter, we need to do the right thing and get
+	 * what was clicked, otherwise we're going to close the modal and reset the state of
+	 * the dropdown items
+	 */
 	onBlur() {
 		const { books, chapter, bookMap } = this.props
 		let dat = this
@@ -357,11 +357,10 @@ class ChapterPicker extends Component {
 					// doesn't look weird
 					dis.setState({
 						books: books,
-						chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters
+						chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters,
+						listErrorAlert: false
 					})
-
-				}, 400)
-
+				}, 600)
 			}
 
 		}, 300)
@@ -380,7 +379,6 @@ class ChapterPicker extends Component {
 			classes,
 			selectedBook,
 			selectedChapter,
-			selectedLanguage,
 			selectedVersion,
 			booklistSelectionIndex,
 			chapterlistSelectionIndex,
@@ -389,13 +387,6 @@ class ChapterPicker extends Component {
 		} = this.state
 
 		let hide = (dropdown) ? '' : 'hide-modal'
-		let errorModal = null
-
-		if (listErrorAlert) {
-			errorModal = (
-				<div className='picker-error'>Oh noesssss</div>
-			)
-		}
 
 		return (
 			<div className={`chapter-picker-container`} >
@@ -430,13 +421,14 @@ class ChapterPicker extends Component {
 
 
 /**
- *
+ *	@books: 							array of books for preselected version/language
+ *	@bookMap: 						object relating book usfm to array index
+ *	@chapter: 						rendered chapter object
  */
 ChapterPicker.propTypes = {
 	books: React.PropTypes.array,
 	bookMap: React.PropTypes.object,
-	chapter: React.PropTypes.object,
-	selectedLanguage: React.PropTypes.string
+	chapter: React.PropTypes.object
 }
 
 export default ChapterPicker

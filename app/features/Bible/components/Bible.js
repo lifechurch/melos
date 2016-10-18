@@ -174,14 +174,24 @@ class Bible extends Component {
 		return (
 			<div className="row">
 				<div>
+					<div className='row'>
+						<div className="columns medium-8">
+							{ chapterPicker }
+						</div>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<div className="columns medium-8">
+							<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
+						</div>
+					</div>
+
+					<div className="row">
 					<Header {...this.props} />
 					<Audio audio={audio} />
 					<Settings settings={settings} />
 					<VerseAction verseAction={verseAction} />
-						<div className="columns medium-3">
-							{ chapterPicker }
-						</div>
-					<div className="row">
 						<div className="columns medium-3">
 							<a onClick={this.getVersions.bind(this, this.state.selectedLanguage)}>Get Versions</a>
 							<input onChange={::this.filterVersions} />
@@ -190,9 +200,6 @@ class Bible extends Component {
 								{/*versionItems*/}
 								</ReactCSSTransitionGroup>
 							</ul>
-						</div>
-						<div className="columns medium-3">
-							<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 						</div>
 						<div className="columns medium-3">
 							<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />
