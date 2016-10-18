@@ -156,7 +156,7 @@ class ChapterPicker extends Component {
 				})
 			} else {
 				this.setState({
-					chapterlistSelectionIndex: chapterNum - 1,
+					chapterlistSelectionIndex: books[bookMap[selectedBook]].chapterMap[chapterNum],
 				})
 			}
 			this.setState({ books: null, dropdown: true })
