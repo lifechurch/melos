@@ -43,12 +43,12 @@
 
       } else if (response.status === 'not_authorized') {
         loginButton.onclick = function() {
-          FB.login(fbapiStatusChangeCallback)
+          FB.login(fbapiStatusChangeCallback, { scope: "#{Cfg.facebook_signin_scope}" })
         }
 
       } else {
         loginButton.onclick = function() {
-          FB.login(fbapiStatusChangeCallback)
+          FB.login(fbapiStatusChangeCallback, { scope: "#{Cfg.facebook_signin_scope}" })
         }
 
       }

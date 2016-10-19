@@ -44,6 +44,7 @@ common:
   google_signin_scope: "profile email"
   facebook_signin_scope: "public_profile,email"
   facebook_signin_app_id: "117344358296665"
+  facebook_signin_app_secret: "8cc85686e4ff71fe0ee8de801dd5d7f3"
 
 development:
 #  api_root: youversionapi.com
