@@ -148,7 +148,7 @@ class ChapterPicker extends Component {
 		} else if (inputValue.includes(`${books[bookMap[selectedBook]].human} `)) {
 			// let's get the chapter info from the input value
 			let chapterSplit = inputValue.split(' ')
-			let chapterNum = parseInt(chapterSplit[chapterSplit.length - 1])
+			let chapterNum = parseInt(chapterSplit[chapterSplit.length - 1], 10)
 
 			if (chapterNum == 'undefined') {
 				this.setState({
@@ -272,7 +272,7 @@ class ChapterPicker extends Component {
 					this.setState({ booklistSelectionIndex: 0 })
 				}
 			}
-			if (keyEventName == "Enter" || keyEventName == "ArrowRight" || keyEventCode == 32) {
+			if (keyEventName == "Enter" || keyEventName == "ArrowRight") {
 				event.preventDefault()
 				//
 				this.getBook(this.state.books[booklistSelectionIndex], true)
