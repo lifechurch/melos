@@ -17,6 +17,7 @@ import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
 import Color from './verseAction/Color'
 import ChapterPicker from './chapterPicker/ChapterPicker'
+import VersionPickerModal from './versionPicker/VersionPickerModal'
 
 
 class Bible extends Component {
@@ -89,9 +90,50 @@ class Bible extends Component {
 		cookie.save('last_read', chapter.usfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 	}
 
+	getVersion(version) {
+		const { dispatch, bible } = this.props
+		console.log(version)
+		this.setState({ selectedVersion: version.id })
+		this.toggleVersionPickerList()
+		dispatch(ActionCreators.bibleChapter({ id: version.id, reference: this.state.selectedChapter}))
+		// then write cookie for selected version
+		cookie.save('version', version.id, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+	}
+
+
+	getLanguage(language) {
+
+	}
+
+	handleLabelChange(inputValue) {
+		// const { books, bookMap } = this.props
+		// const { selectedBook } = this.state
+
+		// filter the books given the input change
+		// let results = Filter.filter("BooksStore", inputValue.trim())
+
+		this.setState({ inputValue: inputValue })
+
+	}
+
+	handleLabelKeyDown(event, keyEventName, keyEventCode) {
+		// const { books, bookMap } = this.props
+		// const {
+		// 	inputValue,
+		// 	booklistSelectionIndex,
+		// 	chapterlistSelectionIndex,
+		// 	selectedBook
+		// } = this.state
+
+	}
+
 	// this handles the class toggling for book and chapter clicks on mobile
 	toggleChapterPickerList() {
 		(this.state.classes) == 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
+	}
+
+	toggleVersionPickerList() {
+		(this.state.classes) == 'hide-langs' ? this.setState({ classes: 'hide-versions' }) : this.setState({ classes: 'hide-langs' })
 	}
 
 
@@ -133,7 +175,7 @@ class Bible extends Component {
 
 		var chapterPicker = null
 		var versionsss = null
-		var languages = null
+		var versionPicker = null
 
 		if (Array.isArray(results)) {
 			let resultItems = results.map((r) => {
@@ -157,7 +199,7 @@ class Bible extends Component {
 		}
 
 		if (Array.isArray(bible.languages.all) && bible.languages.map) {
-			languages = <Languages list={bible.languages.all} onSelect={::this.getVersions} initialSelection={this.state.selectedLanguage} header='All' />
+			versionPicker = <VersionPickerModal classes={this.state.classes} languageList={bible.languages.all} versionList={bible.versions.byLang[this.state.selectedLanguage]} selectedLanguage={this.state.selectedLanguage} selectedVersion={this.state.selectedVersion} getLanguage={::this.getLanguage} getVersion={::this.getVersion} toggle={::this.toggleVersionPickerList} handleChange={::this.handleLabelChange} handleKeyDown={::this.handleLabelKeyDown} inputValue={this.state.inputValue}/>
 		}
 
 		let color = null
@@ -177,6 +219,9 @@ class Bible extends Component {
 					<div className='row'>
 						<div className="columns medium-8">
 							{ chapterPicker }
+						</div>
+						<div>
+							{ versionPicker }
 						</div>
 						<br/>
 						<br/>
@@ -205,7 +250,6 @@ class Bible extends Component {
 							<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />
 							<LabelPill label='Holy' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={6} active={true} />
 							<LabelPill label='Peace' canDelete={true} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={1} active={false} />
-							{ languages }
 							{ versionsss }
 							{ color }
 						</div>

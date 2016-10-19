@@ -1,39 +1,267 @@
-.version-list, .language-list {
-	margin-bottom: 30px;
 
-	.version-header, .language-header {
-		padding-left: 15px;
-		padding-bottom: 5px;
-		font-weight: bold;
-		color: black;
-		font-size: @list-font-size;
-	}
 
-	ul {
-		width: 100%;
-		list-style: none;
-		font-size: @list-font-size;
-		margin-left: 0;
-	}
 
-	li {
-		padding: 6px 0px 6px 15px;
-		display: block;
-		.yv-text-ellipsis;
-		color: black;
-
-		small {
+// on mobile hide chapter until book is selected, then hide book when selecting chapter
+@media @small-only {
+	.hide-langs {
+		.version-container {
 			display: block;
-			margin-top: -3px;
-			color: @font-grey;
+		}
+		.language-container {
+			display: none;
+		}
+	}
+	.hide-versions {
+		.version-container {
+			display: none;
+		}
+		.language-container {
+			display: block;
+		}
+	}
+}
+.version-picker-modal {
+
+	display: inline-flex;
+	max-height: 490px;
+	border-radius: @default-radius @default-radius 0px 0px;
+	border: @thin-grey-border;
+
+	.yv-drop-shadow;
+	.yv-scroll-bar;
+
+	.header {
+		width: inherit;
+		background-color: @light-grey;
+		border-bottom: @thin-grey-border;
+		height: 30px;
+
+		.prev {
+			display: none;
+		}
+		.cancel {
+			display: none;
+		}
+		@media @small-only {
+			.prev {
+				display: block;
+				text-align: @default-float;
+				padding: @default-padding;
+				color: @font-grey;
+			}
+			.cancel {
+				display: block;
+				text-align: @opposite-direction;
+				padding: @default-padding;
+				color: @font-grey;
+				font-size: 13px;
+			}
 		}
 
 	}
-	li:hover {
-		.yv-hover;
+
+
+	.version-list:hover, .language-list:hover {
+		overflow-y: overlay;
+	}
+	.version-list, .language-list {
+		margin-bottom: 30px;
+		overflow-y: hidden;
+		font-size: @list-font-size;
+
+
+		.version-header, .language-header {
+			padding-left: 20px;
+			padding-bottom: 5px;
+			font-weight: bold;
+			color: black;
+			font-size: @list-font-size;
+		}
+
+		ul {
+			width: 100%;
+			list-style: none;
+			font-size: @list-font-size;
+			margin-left: 0;
+		}
+
+		li {
+			padding: 6px 0px 6px 20px;
+			display: block;
+			.yv-text-ellipsis;
+			color: black;
+
+			small {
+				display: block;
+				margin-top: -3px;
+				color: @font-grey;
+			}
+
+		}
+		li:hover {
+			.yv-hover;
+		}
+
+		.active {
+			.yv-active;
+		}
 	}
 
-	.active {
-		.yv-active;
+
+
+	// languages *******************************************
+	.language-container {
+		width: 320px;
+
+		.filter-langs {
+			display: flex;
+			.yv-flex-center-all;
+			padding-left: 10px;
+			padding-right: 10px;
+			height: 40px;
+
+			input {
+				width: 100%;
+				border-bottom: @thin-grey-border;
+			}
+		}
+
+		.language-list {
+			max-height: 420px;
+		}
+	}
+
+
+	// versions *****************************************
+	.version-container {
+
+		width: 320px;
+		border-left: @thin-grey-border;
+		// margin-right: -5px;
+
+		@media @small-only {
+			.language-selector {
+				display: block;
+			}
+		}
+		@media @medium-up {
+			.language-selector {
+				display: none;
+			}
+		}
+
+		.version-list {
+			max-height: 460px;
+		}
+
+
+	}
+
+
+}
+
+
+	.picker-error {
+
+		position: absolute;
+		width: 314px;
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 60px;
+		z-index: -100;
+		opacity: 0;
+
+		display: flex;
+		.yv-flex-center-all;
+
+		.picker-error;
+
+	}
+	.picker-alert {
+		.picker-error {
+			opacity: 1;
+		}
+		.chapter-list {
+			.dropdown-transform;
+
+		  -webkit-transform: translate(0, 60px);
+		     -moz-transform: translate(0, 60px);
+		      -ms-transform: translate(0, 60px);
+		          transform: translate(0, 60px);
+		}
+	}
+
+
+
+
+.versionpicker-label {
+	display: inline-flex;
+	border-bottom: @thin-grey-border;
+}
+.dropdown-arrow-container {
+	width: 38px;
+	height: 37px;
+	.dropdown-arrow {
+		height: 100%;
+		display: flex;
+		.yv-flex-center-all;
+	}
+}
+.dropdown-arrow-container:hover {
+	cursor: pointer;
+}
+.open {
+	background-color: @light-grey;
+	border: @thin-grey-border;
+	border-bottom: none;
+	z-index: 20;
+}
+
+
+
+
+
+
+.hide-modal {
+	overflow: hidden;
+	z-index: -10 !important;
+
+	.version-picker-modal {
+		/* only transition on transform properties which are hardware accelerated = way better performances */
+		.dropdown-transform;
+
+	  -webkit-transform: translate(0, -106%) !important;
+	     -moz-transform: translate(0, -106%) !important;
+	      -ms-transform: translate(0, -106%) !important;
+	          transform: translate(0, -106%) !important;
+	}
+}
+
+.modal {
+	position: absolute;
+	z-index: 10;
+	// just under the size of the label
+	top: 36px;
+	overflow: hidden;
+	// because of the overflow hidden, we need to allow padding and compensate
+	// for the drop shadows
+	padding: 0px 15px 25px 15px;
+	left: -5px;
+
+	-webkit-transition:padding .8s cubic-bezier(0,1,0,1);
+	-moz-transition:   padding .8s cubic-bezier(0,1,0,1);
+	-ms-transition:    padding .8s cubic-bezier(0,1,0,1);
+	transition:        padding .8s cubic-bezier(0,1,0,1);
+
+	.version-picker-modal {
+		.yv-drop-shadow;
+
+		/* only transition on transform properties which are hardware accelerated = way better performances */
+		.dropdown-transform;
+
+	  -webkit-transform: translate(0, 0%);
+	     -moz-transform: translate(0, 0%);
+	      -ms-transform: translate(0, 0%);
+	          transform: translate(0, 0%);
 	}
 }
