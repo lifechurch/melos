@@ -360,7 +360,7 @@ class ChapterPicker extends Component {
 						chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters,
 						listErrorAlert: false
 					})
-				}, 600)
+				}, 700)
 			}
 
 		}, 300)
