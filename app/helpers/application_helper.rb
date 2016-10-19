@@ -369,6 +369,30 @@ module ApplicationHelper
     # Handle Successful Sign In/Up
     finish_login = lambda do
       begin
+        if params['tp_source'] == "Facebook"
+
+          begin
+            # Exchange short token for a long one
+            facebook_api_root = "https://graph.facebook.com/v2.8/oauth/access_token"
+            query = { "grant_type" => "fb_exchange_token", "client_id" => "#{Cfg.facebook_signin_app_id}", "client_secret" => "#{Cfg.facebook_signin_app_secret}", "fb_exchange_token" => "#{params['tp_token']}" }
+            curl = Curl::Easy.new
+            curl.url = "#{facebook_api_root}?#{query.to_query}"
+            curl.timeout = Cfg.api_default_timeout.to_f
+            curl.encoding = ''
+            curl.perform
+            response = JSON.parse curl.body_str
+
+            # Use long term token if we have one
+            if response.present? and response.has_key? "access_token"
+              tp_token = "Facebook #{response['access_token']}"
+            end
+
+          rescue Exception => e
+            Raven.capture_exception(e)
+
+          end
+        end
+
         sign_in(@user, nil, tp_token, tp_id)
         I18n.locale = @user.language_tag.gsub('_', '-') unless @user.language_tag.nil?
         location = redirect_path
