@@ -10,6 +10,8 @@ class VersionPickerModal extends Component {
 		const {
 			languageList,
 			versionList,
+			recentLanguages,
+			recentVersions,
 			getLanguage,
 			getVersion,
 			handleChange,
@@ -22,7 +24,8 @@ class VersionPickerModal extends Component {
 			versionlistSelectionIndex,
 			onMouseOver,
 			alert,
-			inputValue
+			inputValue,
+			versionsLanguageName
 		} = this.props
 
 		let languages, versions = null
@@ -46,9 +49,12 @@ class VersionPickerModal extends Component {
 						<a className='cancel columns medium-4'><FormattedMessage id="Reader.header.cancel" /></a>
 					</div>
 					<div className='filter-langs'>
-						<input value={inputValue} onChange={handleChange.bind(this)} onKeyDown={handleKeyDown.bind(this)} />
+						<input value={inputValue} onChange={handleChange.bind(this)} onKeyDown={handleKeyDown.bind(this)} placeholder={<FormattedMessage id='Reader.versionpicker.filter languages' />} />
 					</div>
-					<Languages list={languageList} onSelect={getLanguage} initialSelection={selectedLanguage} focus={languageFocus} listSelectionIndex={languagelistSelectionIndex} onMouseOver={onMouseOver}/>
+					<div className='language-list'>
+						<Languages list={[]} onSelect={getLanguage} initialSelection={selectedLanguage} focus={languageFocus} listSelectionIndex={languagelistSelectionIndex} onMouseOver={onMouseOver} header='Recently Used'/>
+						<Languages list={languageList} onSelect={getLanguage} initialSelection={selectedLanguage} focus={languageFocus} listSelectionIndex={languagelistSelectionIndex} onMouseOver={onMouseOver} header='All'/>
+					</div>
 				</div>
 			)
 		}
@@ -71,7 +77,10 @@ class VersionPickerModal extends Component {
 					<div className='picker-error'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
-					<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} onMouseOver={onMouseOver} alert={alert} />
+					<div className='version-list'>
+						<Versions list={{}} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} onMouseOver={onMouseOver} alert={alert} header='Recently Used'/>
+						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} onMouseOver={onMouseOver} alert={alert} header={versionsLanguageName}/>
+					</div>
 				</div>
 			)
 		}
@@ -113,6 +122,8 @@ class VersionPickerModal extends Component {
 VersionPickerModal.propTypes = {
 	languageList: React.PropTypes.array,
 	versionList: React.PropTypes.object,
+	recentLanguages: React.PropTypes.array,
+	recentsVersions: React.PropTypes.object,
 	selectedLanguage: React.PropTypes.string,
 	selectedVersion: React.PropTypes.number,
 	getLanguage: React.PropTypes.func,

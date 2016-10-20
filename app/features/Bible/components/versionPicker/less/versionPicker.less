@@ -36,6 +36,7 @@
 		border-bottom: @thin-grey-border;
 		height: 30px;
 
+
 		.prev {
 			display: none;
 		}
@@ -64,14 +65,17 @@
 	.version-list:hover, .language-list:hover {
 		overflow-y: overlay;
 	}
-	.version-list, .language-list {
+	.versions, .languages {
 		margin-bottom: 30px;
+	}
+	.version-list, .language-list {
 		overflow-y: hidden;
 		font-size: @list-font-size;
 
 
 		.version-header, .language-header {
 			padding-left: 20px;
+			padding-top: 10px;
 			padding-bottom: 5px;
 			font-weight: bold;
 			color: black;

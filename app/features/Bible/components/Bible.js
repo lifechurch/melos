@@ -17,7 +17,7 @@ import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
 import Color from './verseAction/Color'
 import ChapterPicker from './chapterPicker/ChapterPicker'
-import VersionPickerModal from './versionPicker/VersionPickerModal'
+import VersionPicker from './versionPicker/VersionPicker'
 
 
 class Bible extends Component {
@@ -199,7 +199,15 @@ class Bible extends Component {
 		}
 
 		if (Array.isArray(bible.languages.all) && bible.languages.map) {
-			versionPicker = <VersionPickerModal classes={this.state.classes} languageList={bible.languages.all} versionList={bible.versions.byLang[this.state.selectedLanguage]} selectedLanguage={this.state.selectedLanguage} selectedVersion={this.state.selectedVersion} getLanguage={::this.getLanguage} getVersion={::this.getVersion} toggle={::this.toggleVersionPickerList} handleChange={::this.handleLabelChange} handleKeyDown={::this.handleLabelKeyDown} inputValue={this.state.inputValue}/>
+			versionPicker = (
+				<VersionPicker
+					{...this.props}
+					version={bible.version}
+					languages={bible.languages.all}
+					versions={bible.versions}
+					languageMap={bible.languages.map}
+				/>
+			)
 		}
 
 		let color = null

@@ -1,33 +1,38 @@
 import React, { Component, PropTypes } from 'react'
 
 class Versions extends Component {
-	constructor(props) {
-		super(props)
-		const { initialSelection } = props
-		this.state = { selectedVersion: initialSelection || null }
-	}
 
-	versionSelect(versionID) {
+	versionSelect(version, filtering) {
 		const { onSelect } = this.props
-		this.setState( { selectedVersion: versionID } )
 		if (typeof onSelect == 'function') {
-			onSelect(versionID)
+			onSelect(version, filtering)
 		}
 	}
 
 	render() {
-		const { list, onSelect, header } = this.props
-		const { selectedVersion } = this.state
+		const {
+			list,
+			onSelect,
+			header,
+			initialSelection,
+			focus
+		} = this.props
 
 		if (list) {
 			let versionList = []
 			Object.keys(list).forEach((id) =>  {
 				let version = list[id]
-				versionList.push( (<li key={id} className={ (id == selectedVersion) ? 'active' : ''} onClick={this.versionSelect.bind(this, version.id)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
+				let active = (id == initialSelection) ? 'active' : ''
+				if (focus) {
+					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
+					versionList.push( (<li key={id} className={`${active} ${focusClass}`} onClick={this.versionSelect.bind(this, version, true)} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
+				} else {
+					versionList.push( (<li key={id} className={`${active}`} onClick={this.versionSelect.bind(this, version, false)} >{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
+				}
 			})
 			/* the header would either be the language title or recently used */
 			return (
-				<div className='version-list'>
+				<div className='versions'>
 					<p className='version-header'>{ header }</p>
 					<ul>{ versionList }</ul>
 				</div>
@@ -47,12 +52,18 @@ class Versions extends Component {
  * 		@header								bold header for version list–either language title or recently used
  * 		@onSelect			  			function to call when selecting version
  * 		@initialSelection	   	id for highlighting currently selected version
+ * 		@onMouseOver					function to call when hovering over version
+ * 		@listSelectionIndex 	index for selecting list element with arrow keys
+ * 		@focus								allow mouse over and key actions on list items
  */
 Versions.propTypes = {
 	list: React.PropTypes.object,
 	header: React.PropTypes.string,
 	onSelect: React.PropTypes.func,
-	initialSelection: React.PropTypes.number
+	initialSelection: React.PropTypes.number,
+	onMouseOver: React.PropTypes.func,
+	listSelectionIndex: React.PropTypes.number,
+	focus: React.PropTypes.bool
 }
 
 export default Versions

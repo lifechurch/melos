@@ -53,7 +53,7 @@ class Label extends Component {
 			dir = "down"
 		}
 		return (
-			<div className='chapterpicker-label'>
+			<div className='picker-label'>
 				<input value={input} disabled={disabled} onChange={this.handleChange.bind(this)} onKeyDown={this.handleKeyDown.bind(this)} onBlur={this.handleBlur.bind(this)} />
 				<div className={classes} onClick={this.handleClick.bind(this)} >
 					<DropDownArrow dir={dir} height={6} width={12} />
