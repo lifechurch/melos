@@ -198,7 +198,7 @@ class Bible extends Component {
 			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} header='English' />
 		}
 
-		if (Array.isArray(bible.languages.all) && bible.languages.map) {
+		if (Array.isArray(bible.languages.all) && bible.languages.map && bible.chapter.reference && bible.chapter.reference.usfm && bible.version.abbreviation) {
 			versionPicker = (
 				<VersionPicker
 					{...this.props}
@@ -206,6 +206,7 @@ class Bible extends Component {
 					languages={bible.languages.all}
 					versions={bible.versions}
 					languageMap={bible.languages.map}
+					selectedChapter={bible.chapter.reference.usfm}
 				/>
 			)
 		}
@@ -225,10 +226,8 @@ class Bible extends Component {
 			<div className="row">
 				<div>
 					<div className='row'>
-						<div className="columns medium-8">
+						<div className="columns medium-12 vertical-center">
 							{ chapterPicker }
-						</div>
-						<div>
 							{ versionPicker }
 						</div>
 						<br/>

@@ -15,12 +15,14 @@ class Versions extends Component {
 			onSelect,
 			header,
 			initialSelection,
-			focus
+			focus,
+			listSelectionIndex,
+			onMouseOver
 		} = this.props
 
 		if (list) {
 			let versionList = []
-			Object.keys(list).forEach((id) =>  {
+			Object.keys(list).forEach((id, index) =>  {
 				let version = list[id]
 				let active = (id == initialSelection) ? 'active' : ''
 				if (focus) {

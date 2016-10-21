@@ -36,9 +36,8 @@ class VersionPickerModal extends Component {
 
 		if (languageList) {
 			let languageFocus = false
-			// if we're rendering just the language list, let's handle the list selection stuff
-			// this tells the languages component to fire onMouseOver and style the focus list element
-			if (!(versionList && selectedLanguage)) {
+			// we're filtering languages?
+			if (languageList.length < 66) {
 				languageFocus = true
 			}
 			languages = (
@@ -60,13 +59,13 @@ class VersionPickerModal extends Component {
 		}
 
 		if (versionList && selectedLanguage) {
-			let versionFocus = false
+			let versionFocus = true
 			let alertClass = ''
 			// if we're rendering just the version list, let's handle the list selection stuff
 			// this tells the versions component to fire onMouseOver and style the focus list element
-			if (!languageList) {
-				versionFocus = true
-			}
+			// if (!languageList) {
+			// 	versionFocus = true
+			// }
 			if (alert) {
 				alertClass = 'picker-alert'
 			}

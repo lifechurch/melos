@@ -22,6 +22,7 @@ class VersionPicker extends Component {
 			languages: languages,
 			versions: versions.byLang[versions.selectedLanguage],
 			inputValue: version.abbreviation.toUpperCase(),
+			langInputValue: null,
 			languagelistSelectionIndex: 0,
 			versionlistSelectionIndex: 0,
 			cancelBlur: false,
@@ -38,7 +39,9 @@ class VersionPicker extends Component {
 		Filter.build("LanguageStore", [ "name", "local_name" ])
 		Filter.add("LanguageStore", languages)
 		Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
-		Filter.add("VersionStore", versions)
+		// versions.byLang["lang_tag"] is an object, so we need to pass as array for filter
+		let versionsObj = versions.byLang[versions.selectedLanguage]
+		Filter.add("VersionStore", Object.keys(versionsObj).map(key => versionsObj[key]))
 	}
 
 	/**
@@ -90,44 +93,45 @@ class VersionPicker extends Component {
 	 *                                       			this tells us whether to still render the language list
 	 */
 	getLanguage(selectedLanguage, filtering) {
-		const { languages, languageMap } = this.props
+		const { languages, languageMap, dispatch, version } = this.props
 
 		if (selectedLanguage.language_tag) {
 			dispatch(ActionCreators.bibleVersions({ language_tag: selectedLanguage.language_tag, type: 'all' })).then((versions) => {
 				Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
 				Filter.add("VersionStore", versions.versions)
-
-				this.setState({
-					selectedLanguage: selectedLanguage.language_tag,
-					// if we're filtering, then don't render languages after selection
-					languages: filtering ? null : languages,
-					versions: version.versions,
-					dropdown: true,
-					languagelistSelectionIndex: 0,
-					listErrorAlert: false
-				})
-				this.toggleVersionPickerList()
 			}, (error) => {
 				this.setState({ listErrorAlert: true })
 			})
+
+			this.setState({
+				selectedLanguage: selectedLanguage.language_tag,
+				// if we're filtering, then don't render languages after selection
+				languages: languages,
+				versions: version.versions,
+				dropdown: true,
+				languagelistSelectionIndex: 0,
+				listErrorAlert: false
+			})
+			this.toggleVersionPickerList()
 		} else {
 			this.setState({ listErrorAlert: true })
 		}
 	}
 
 	getVersion(version) {
-		const { selectedChapter } = this.props
+		const { selectedChapter, dispatch } = this.props
 
 		if (version.id) {
-			dispatch(ActionCreators.bibleChapter({ id: version.id, reference: selectedChapter})).then(() => {
-
-				this.setState({ selectedVersion: version.id, listErrorAlert: false })
-				this.toggleVersionPickerList()
-				// then write cookie for selected version
-				cookie.save('version', version.id, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
-			}, (error) => {
-				this.setState({ listErrorAlert: true })
+			dispatch(ActionCreators.loadVersionAndChapter({ id: version.id, reference: selectedChapter}))
+			this.setState({
+				selectedVersion: version.id,
+				listErrorAlert: false,
+				dropdown: false,
+				inputValue: version.abbreviation.toUpperCase()
 			})
+			this.toggleVersionPickerList()
+			// then write cookie for selected version
+			cookie.save('version', version.id, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 		} else {
 			this.setState({ listErrorAlert: true })
 		}
@@ -143,14 +147,29 @@ class VersionPicker extends Component {
 	handleLabelChange(inputValue) {
 		const { languages, languageMap } = this.props
 		const { selectedLanguage } = this.state
-
+ 		console.log(inputValue)
 		// filter the versions given the input change
 		let results = Filter.filter("VersionStore", inputValue.trim())
-
+		console.log(results)
 		this.setState({ inputValue: inputValue, listErrorAlert: false })
 
 		if (results.length > 0) {
 			this.setState({ languages: null, versions: results, dropdown: true, versionlistSelectionIndex: 0 })
+			this.toggleVersionPickerList()
+		}
+	}
+
+	handleLanguageFilter(inputValue) {
+		const { languages, languageMap } = this.props
+		const { selectedLanguage } = this.state
+
+		// filter the versions given the input change
+		let results = Filter.filter("LanguageStore", inputValue.trim())
+
+		this.setState({ langInputValue: inputValue, listErrorAlert: false })
+
+		if (results.length > 0) {
+			this.setState({ languages: results, dropdown: true, languagelistSelectionIndex: 0 })
 			this.toggleVersionPickerList()
 		}
 	}
@@ -160,8 +179,8 @@ class VersionPicker extends Component {
 	 * picker modal
 	 */
 	handleDropDownClick() {
-		const { languages, version, languageMap } = this.props
-		const { selectedLanguage } = this.state
+		const { languages, version, languageMap, versions } = this.props
+		// const { selectedLanguage } = this.state
 
 		// don't close the dropdown modal when losing focus of the input,
 		// because we're clicking the dropdown (not some other random place)
@@ -176,8 +195,8 @@ class VersionPicker extends Component {
 					dropdown: false,
 					inputValue: version.abbreviation.toUpperCase(),
 					selectedLanguage: versions.selectedLanguage,
-					selectedVersion: version.reference.usfm,
-					versions: version.byLang[versions.selectedLanguage],
+					selectedVersion: version.id,
+					versions: versions.byLang[versions.selectedLanguage],
 					inputDisabled: false,
 					listErrorAlert: false
 				})
@@ -267,7 +286,49 @@ class VersionPicker extends Component {
 
 	// }
 
-}
+	}
+
+	handleLangKeyDown(event, keyEventName, keyEventCode) {
+		const { languages, languageMap } = this.props
+		const {
+			inputValue,
+			languagelistSelectionIndex,
+			versionlistSelectionIndex,
+			selectedLanguage
+		} = this.state
+
+
+	// 	// filtering
+	// 	if (true) {
+	// 		this.setState({ versionlistSelectionIndex: 0 })
+
+	// 		if (keyEventName == "ArrowUp") {
+	// 			event.preventDefault()
+
+	// 			if (languagelistSelectionIndex > 0 ) {
+	// 				this.setState({ languagelistSelectionIndex: languagelistSelectionIndex - 1 })
+	// 			} else {
+	// 				this.setState({ languagelistSelectionIndex: this.state.languages.length - 1 })
+	// 			}
+	// 		}
+	// 		if (keyEventName == "ArrowDown") {
+	// 			event.preventDefault()
+
+	// 			if (languagelistSelectionIndex < this.state.languages.length - 1) {
+	// 				this.setState({ languagelistSelectionIndex: languagelistSelectionIndex + 1 })
+	// 			} else {
+	// 				this.setState({ languagelistSelectionIndex: 0 })
+	// 			}
+	// 		}
+	// 		if (keyEventName == "Enter" || keyEventName == "ArrowRight") {
+	// 			event.preventDefault()
+	// 			//
+	// 			this.getLanguage(this.state.languages[languagelistSelectionIndex], true)
+	// 		}
+
+	// }
+
+	}
 
 
 	/**
@@ -278,7 +339,7 @@ class VersionPicker extends Component {
 	 * the dropdown items
 	 */
 	onBlur() {
-		const { languages, version } = this.props
+		const { languages, version, versions } = this.props
 		let dat = this
 
 		// when we click out of the input, we need to wait and check if either
@@ -351,6 +412,8 @@ class VersionPicker extends Component {
 						selectedVersion={selectedVersion}
 						getVersion={::this.getVersion}
 						getLanguage={::this.getLanguage}
+						handleChange={::this.handleLanguageFilter}
+						handleKeyDown={::this.handleLangKeyDown}
 						toggle={::this.toggleVersionPickerList}
 						languagelistSelectionIndex={languagelistSelectionIndex}
 						versionlistSelectionIndex={versionlistSelectionIndex}

@@ -22,14 +22,14 @@ class Languages extends Component {
 
 
 		if (Array.isArray(list)) {
-			let languageList = list.map((language) =>  {
+			let languageList = list.map((language, index) =>  {
 				let name = (language.name == language.local_name) ? language.local_name : <span>{language.local_name}<small>{language.name}</small></span>
 				let active = (language.language_tag == initialSelection) ? 'active' : ''
 				if (focus) {
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
-					return( (<li key={language.id} className={`${active} ${focusClass}`} onClick={this.languageSelect.bind(this, language, true)} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ name }</li>) )
+					return( (<li key={language.id} className={`${active} ${focusClass}`} onClick={this.languageSelect.bind(this, language)} onMouseOver={onMouseOver.bind(this, "languages", index)}>{ name }</li>) )
 				} else {
-					return( (<li key={language.id} className={`${active}`} onClick={this.languageSelect.bind(this, language, false)}>{ name }</li>) )
+					return( (<li key={language.id} className={`${active}`} onClick={this.languageSelect.bind(this, language)}>{ name }</li>) )
 				}
 			})
 			/* the header would either be the all or recently used */
