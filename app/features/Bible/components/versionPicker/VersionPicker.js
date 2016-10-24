@@ -8,13 +8,14 @@ import cookie from 'react-cookie';
 import moment from 'moment'
 import VersionPickerModal from './VersionPickerModal'
 import Label from '../chapterPicker/Label'
+import arrayToObject from '../../../../lib/arrayToObject'
 
 
 class VersionPicker extends Component {
 
 	constructor(props) {
 		super(props)
-		const { version, languages, languageMap, versions } = props
+		const { version, languages, languageMap, versions, alert } = props
 
 		this.state = {
 			selectedLanguage: versions.selectedLanguage,
@@ -27,8 +28,9 @@ class VersionPicker extends Component {
 			versionlistSelectionIndex: 0,
 			cancelBlur: false,
 			inputDisabled: false,
-			dropdown: false,
-			listErrorAlert: false,
+			dropdown: alert ? true : false,
+			listErrorAlert: alert,
+			versionFiltering: false,
 			classes: 'hide-langs'
 		}
 	}
@@ -52,12 +54,14 @@ class VersionPicker extends Component {
 	 * @param  prevState  				The previous state
 	 */
 	componentDidUpdate(prevProps, prevState) {
+		const { alert } = this.props
 		const {
 			versionlistSelectionIndex,
 			languagelistSelectionIndex,
 			dropdown,
 			languages,
-			versions
+			versions,
+			listErrorAlert
 		} = this.state
 
 		let focusElement = document.getElementsByClassName('focus')[0]
@@ -83,6 +87,18 @@ class VersionPicker extends Component {
 			scrollList(activeElements[1], containerElement, listElement)
 		}
 
+		// if (alert != prevProps.alert) {
+		// 	this.setState({
+		// 		listErrorAlert: alert
+		// 	})
+		// }
+
+		if (!dropdown) {
+			this.setState({
+				versionFiltering: false
+			})
+		}
+
 	}
 
 	/**
@@ -92,7 +108,7 @@ class VersionPicker extends Component {
 	 * @param      {<Bool>}    filtering     			are we filtering language list?
 	 *                                       			this tells us whether to still render the language list
 	 */
-	getLanguage(selectedLanguage, filtering) {
+	getLanguage(selectedLanguage) {
 		const { languages, languageMap, dispatch, version } = this.props
 
 		if (selectedLanguage.language_tag) {
@@ -105,8 +121,6 @@ class VersionPicker extends Component {
 
 			this.setState({
 				selectedLanguage: selectedLanguage.language_tag,
-				// if we're filtering, then don't render languages after selection
-				languages: languages,
 				versions: version.versions,
 				dropdown: true,
 				languagelistSelectionIndex: 0,
@@ -154,7 +168,12 @@ class VersionPicker extends Component {
 		this.setState({ inputValue: inputValue, listErrorAlert: false })
 
 		if (results.length > 0) {
-			this.setState({ languages: null, versions: results, dropdown: true, versionlistSelectionIndex: 0 })
+			this.setState({
+				versions: arrayToObject(results, 'id'),
+				dropdown: true,
+				versionlistSelectionIndex: 0,
+				versionFiltering: true
+			})
 			this.toggleVersionPickerList()
 		}
 	}
@@ -187,7 +206,7 @@ class VersionPicker extends Component {
 		this.setState({ cancelBlur: true })
 
 		// if the full modal is being rendered, let's toggle the dropdown rendering
-		if (this.state.languages && this.state.versions) {
+		if (!this.state.versionFiltering) {
 			// if the user is closing the dropdown and hasn't selected anything, let's
 			// fill the input back up with the correct reference
 			if (this.state.dropdown) {
@@ -216,9 +235,9 @@ class VersionPicker extends Component {
 			this.setState({
 				dropdown: true,
 				inputDisabled: true,
-				languages: languages,
 				versions: versions.byLang[versions.selectedLanguage],
-				listErrorAlert: false
+				listErrorAlert: false,
+				versionFiltering: false
 			})
 		}
 
@@ -388,7 +407,8 @@ class VersionPicker extends Component {
 			languagelistSelectionIndex,
 			versionlistSelectionIndex,
 			listErrorAlert,
-			inputDisabled
+			inputDisabled,
+			versionFiltering
 		} = this.state
 
 		let hide = (dropdown) ? '' : 'hide-modal'
@@ -400,6 +420,7 @@ class VersionPicker extends Component {
 					onClick={::this.handleDropDownClick}
 					onChange={::this.handleLabelChange}
 					onKeyDown={::this.handleLabelKeyDown}
+					dropdown={dropdown}
 					onBlur={::this.onBlur}
 					disabled={inputDisabled}
 				/>
@@ -420,6 +441,7 @@ class VersionPicker extends Component {
 						onMouseOver={::this.handleListHover}
 						alert={listErrorAlert}
 						versionsLanguageName='English'
+						versionFiltering={versionFiltering}
 					/>
 				</div>
 			</div>
@@ -432,13 +454,18 @@ class VersionPicker extends Component {
  *	@languages: 					array of languages
  *	@languageMap: 				object relating language_tag to array index
  *	@version: 						currently rendered version object
+ *	@versions:    				list of versions for version.selectedLanguage
+ *	@selectedChapter: 		rendered chapter
+ *	@getChapter:  				promise of chapter call so this component can determine
+ *												whether the chapter is available in the newly selected version
  */
 VersionPicker.propTypes = {
 	languages: React.PropTypes.array,
 	languageMap: React.PropTypes.object,
 	version: React.PropTypes.object,
 	versions: React.PropTypes.object,
-	selectedChapter: React.PropTypes.string
+	selectedChapter: React.PropTypes.string,
+	getChapter: React.PropTypes.func
 }
 
 export default VersionPicker

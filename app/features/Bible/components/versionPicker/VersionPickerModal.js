@@ -25,16 +25,17 @@ class VersionPickerModal extends Component {
 			onMouseOver,
 			alert,
 			inputValue,
-			versionsLanguageName
+			versionsLanguageName,
+			versionFiltering
 		} = this.props
 
-		let languages, versions = null
+		let languages, versionBlock = null
 
 		// apply the correct mobile class from the click handlers passed down
 		let classNames = (classes) ? `version-picker-modal ${classes}` : 'version-picker-modal'
 
 
-		if (languageList) {
+		if (languageList && !versionFiltering) {
 			let languageFocus = false
 			// we're filtering languages?
 			if (languageList.length < 66) {
@@ -59,27 +60,35 @@ class VersionPickerModal extends Component {
 		}
 
 		if (versionList && selectedLanguage) {
-			let versionFocus = true
-			let alertClass = ''
+			let versionFocus = false
+			let versions = null
+			let alertClass = alert ? 'picker-alert' : ''
 			// if we're rendering just the version list, let's handle the list selection stuff
 			// this tells the versions component to fire onMouseOver and style the focus list element
-			// if (!languageList) {
-			// 	versionFocus = true
-			// }
-			if (alert) {
-				alertClass = 'picker-alert'
+			if (versionFiltering) {
+				versionFocus = true
+				versions = (
+					<div className='version-list'>
+						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} onMouseOver={onMouseOver} alert={alert} header={null}/>
+					</div>
+				)
+			} else {
+				versions = (
+					<div className='version-list'>
+						<Versions list={{}} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} alert={alert} header={'Recently Used'}/>
+						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} alert={alert} header={versionsLanguageName}/>
+					</div>
+				)
 			}
-			versions = (
+
+			versionBlock = (
 				<div className={`version-container ${alertClass}`}>
 					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.versionpicker.version label" /></div>
 					{/* this is hidden on default and only shown if picker alert is applied to the parent */}
 					<div className='picker-error'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
-					<div className='version-list'>
-						<Versions list={{}} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} onMouseOver={onMouseOver} alert={alert} header='Recently Used'/>
-						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} onMouseOver={onMouseOver} alert={alert} header={versionsLanguageName}/>
-					</div>
+					{ versions }
 				</div>
 			)
 		}
@@ -88,7 +97,7 @@ class VersionPickerModal extends Component {
 		return (
 			<div className={classNames} >
 				{ languages }
-				{ versions }
+				{ versionBlock }
 			</div>
 		)
 	}
@@ -116,6 +125,7 @@ class VersionPickerModal extends Component {
  * 	@versionlistSelectionIndex 	index for selecting list element with arrow keys
  * 	@onMouseOver								function to call when hovering over list element
  * 	@alert											show alert message
+ * 	@versionFiltering 					are we filtering versions?
  *
  */
 VersionPickerModal.propTypes = {
@@ -134,7 +144,8 @@ VersionPickerModal.propTypes = {
 	languagelistSelectionIndex: React.PropTypes.number,
 	versionlistSelectionIndex: React.PropTypes.number,
 	onMouseOver: React.PropTypes.func,
-	alert: React.PropTypes.bool
+	alert: React.PropTypes.bool,
+	versionFiltering: React.PropTypes.bool
 }
 
 export default VersionPickerModal

@@ -30,6 +30,7 @@ class Bible extends Component {
 			selectedChapter: bible.chapter.reference.usfm,
 			selectedVersion: bible.chapter.reference.version_id,
 			selectedLanguage: bible.versions.selectedLanguage,
+			chapter: bible.chapter,
 			classes: 'hide-chaps',
 			dbReady: false,
 			db: null,
@@ -167,7 +168,32 @@ class Bible extends Component {
 		console.log(color)
 	}
 
+	componentDidUpdate(prevProps, prevState) {
+		const { bible } = this.props
+		const { chapter } = this.state
 
+		// if (bible.chapter.content != prevProps.bible.chapter.content) {
+		// 	// if the new chapter call was successful, then let's render the new chapter
+		// 	if (bible.chapter.content) {
+		// 		this.setState({
+		// 			chapter: bible.chapter,
+		// 			chapterError: false
+		// 		})
+		// 	} else {
+		// 		// if it isn't valid, then keep the previous chapter rendered, and then let the
+		// 		// version picker know there was an error
+		// 		this.setState({
+		// 			chapterError: true
+		// 		})
+		// 	}
+		// }
+		if (bible.chapter.content == null) {
+			this.setState({ chapterError: true })
+		} else {
+			this.setState({ chapterError: false })
+		}
+
+	}
 
 	render() {
 		const { bible, audio, settings, verseAction } = this.props
@@ -198,7 +224,7 @@ class Bible extends Component {
 			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} header='English' />
 		}
 
-		if (Array.isArray(bible.languages.all) && bible.languages.map && bible.chapter.reference && bible.chapter.reference.usfm && bible.version.abbreviation) {
+		if (Array.isArray(bible.languages.all) && bible.languages.map && bible.chapter && bible.version.abbreviation) {
 			versionPicker = (
 				<VersionPicker
 					{...this.props}
@@ -207,6 +233,7 @@ class Bible extends Component {
 					versions={bible.versions}
 					languageMap={bible.languages.map}
 					selectedChapter={bible.chapter.reference.usfm}
+					alert={this.state.chapterError}
 				/>
 			)
 		}
@@ -222,6 +249,7 @@ class Bible extends Component {
 			)
 		}
 
+
 		return (
 			<div className="row">
 				<div>
@@ -235,7 +263,7 @@ class Bible extends Component {
 						<br/>
 						<br/>
 						<div className="columns medium-8">
-							<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
+							<div dangerouslySetInnerHTML={{ __html: this.state.chapter.content }} />
 						</div>
 					</div>
 

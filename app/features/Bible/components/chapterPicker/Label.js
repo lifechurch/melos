@@ -3,15 +3,8 @@ import DropDownArrow from '../../../../components/DropDownArrow'
 
 class Label extends Component {
 
-	constructor(props) {
-		super(props)
-		const { input } = props
-		this.state = { dropdown: false }
-	}
-
 	handleChange(changeEvent) {
 		const { onChange } = this.props
-		// this.setState( { value: changeEvent.target.value } )
 		if (typeof onChange == 'function') {
 			onChange(changeEvent.target.value)
 		}
@@ -19,7 +12,6 @@ class Label extends Component {
 
 	handleKeyDown(keyEvent) {
 		const { onKeyDown } = this.props
-		console.log(keyEvent.key)
 		if (typeof onKeyDown == 'function') {
 			onKeyDown(keyEvent, keyEvent.key, keyEvent.keyCode)
 		}
@@ -27,9 +19,8 @@ class Label extends Component {
 
 	handleClick() {
 		const { onClick } = this.props
-		this.setState( { dropdown: !this.state.dropdown } )
 		if (typeof onClick == 'function') {
-			onClick(this.state.dropdown)
+			onClick()
 		}
 	}
 
@@ -41,8 +32,7 @@ class Label extends Component {
 	}
 
 	render() {
-		const { input, disabled } = this.props
-		const { dropdown } = this.state
+		const { input, disabled, dropdown } = this.props
 
 		let classes, dir = null
 		if (dropdown) {

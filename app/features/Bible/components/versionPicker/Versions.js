@@ -33,9 +33,10 @@ class Versions extends Component {
 				}
 			})
 			/* the header would either be the language title or recently used */
+			let title = header ? <p className='version-header'>{ header }</p> : null
 			return (
 				<div className='versions'>
-					<p className='version-header'>{ header }</p>
+					{ title }
 					<ul>{ versionList }</ul>
 				</div>
 			)

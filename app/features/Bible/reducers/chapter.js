@@ -7,7 +7,7 @@ export default function reducer(state = {}, action) {
 			return { loading: true }
 
 		case type('bibleChapterFailure'):
-			return { loading: false, errors: action.errors }
+			return { content: null, loading: false, errors: action.api_errors }
 
 		case type('bibleChapterSuccess'):
 			const chapter = Immutable.fromJS(action.response).delete('audio').toJS()
