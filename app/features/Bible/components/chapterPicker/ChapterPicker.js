@@ -20,13 +20,14 @@ class ChapterPicker extends Component {
 			selectedBook: chapter.reference.usfm.split('.')[0],
 			selectedChapter: chapter.reference.usfm,
 			selectedVersion: chapter.reference.version_id,
+			inputValue: chapter.reference.human,
 			books: books,
 			chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters,
-			inputValue: chapter.reference.human,
 			booklistSelectionIndex: 0,
 			chapterlistSelectionIndex: 0,
 			cancelBlur: false,
 			inputDisabled: false,
+			filtering: false,
 			dropdown: false,
 			listErrorAlert: false,
 			classes: 'hide-chaps'
@@ -137,7 +138,7 @@ class ChapterPicker extends Component {
 		// filter the books given the input change
 		let results = Filter.filter("BooksStore", inputValue.trim())
 
-		this.setState({ inputValue: inputValue, listErrorAlert: false })
+		this.setState({ inputValue: inputValue, listErrorAlert: false, filtering: true })
 
 		// if the input already matches a book exactly, let's filter chapters
 		if (results.length > 0 && `${results[0].human} ` == inputValue) {
@@ -178,7 +179,7 @@ class ChapterPicker extends Component {
 
 		// don't close the dropdown modal when losing focus of the input,
 		// because we're clicking the dropdown (not some other random place)
-		this.setState({ cancelBlur: true })
+		this.setState({ cancelBlur: true, filtering: false })
 
 		// if the full modal is being rendered, let's toggle the dropdown rendering
 		if (this.state.books && this.state.chapters) {
@@ -383,7 +384,8 @@ class ChapterPicker extends Component {
 			booklistSelectionIndex,
 			chapterlistSelectionIndex,
 			listErrorAlert,
-			inputDisabled
+			inputDisabled,
+			filtering
 		} = this.state
 
 		let hide = (dropdown) ? '' : 'hide-modal'
@@ -395,6 +397,8 @@ class ChapterPicker extends Component {
 					onClick={::this.handleDropDownClick}
 					onChange={::this.handleLabelChange}
 					onKeyDown={::this.handleLabelKeyDown}
+					dropdown={dropdown}
+					filtering={filtering}
 					onBlur={::this.onBlur}
 					disabled={inputDisabled}
 				/>

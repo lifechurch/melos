@@ -31,7 +31,7 @@ class Bible extends Component {
 			selectedVersion: bible.chapter.reference.version_id,
 			selectedLanguage: bible.versions.selectedLanguage,
 			chapter: bible.chapter,
-			classes: 'hide-chaps',
+			chapterError: false,
 			dbReady: false,
 			db: null,
 			results: [],
@@ -187,10 +187,12 @@ class Bible extends Component {
 		// 		})
 		// 	}
 		// }
-		if (bible.chapter.content == null) {
-			this.setState({ chapterError: true })
-		} else {
-			this.setState({ chapterError: false })
+		if (bible.chapter != prevProps.bible.chapter) {
+			if (bible.chapter.errors) {
+				this.setState({ chapterError: true, chapter: prevProps.bible.chapter })
+			} else {
+				this.setState({ chapterError: false })
+			}
 		}
 
 	}
@@ -215,16 +217,16 @@ class Bible extends Component {
 			})
 		}
 
-		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && bible.chapter.reference) {
-			console.log('should be renderin chapter picker bruh')
-			chapterPicker = <ChapterPicker {...this.props} chapter={bible.chapter} books={bible.books.all} bookMap={bible.books.map} selectedLanguage={this.state.selectedLanguage}/>
+		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
+			console.log(this.state.chapter)
+			chapterPicker = <ChapterPicker {...this.props} chapter={this.state.chapter} books={bible.books.all} bookMap={bible.books.map} selectedLanguage={this.state.selectedLanguage}/>
 		}
 
 		if (bible.versions.byLang && bible.versions.byLang[this.state.selectedLanguage]) {
 			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} header='English' />
 		}
 
-		if (Array.isArray(bible.languages.all) && bible.languages.map && bible.chapter && bible.version.abbreviation) {
+		if (Array.isArray(bible.languages.all) && bible.languages.map && bible.chapter && bible.version.abbreviation ) {
 			versionPicker = (
 				<VersionPicker
 					{...this.props}
@@ -232,8 +234,8 @@ class Bible extends Component {
 					languages={bible.languages.all}
 					versions={bible.versions}
 					languageMap={bible.languages.map}
-					selectedChapter={bible.chapter.reference.usfm}
-					alert={this.state.chapterError}
+					selectedChapter={bible.chapter.reference ? bible.chapter.reference.usfm : this.state.selectedChapter}
+					alert={bible.chapter.errors}
 				/>
 			)
 		}
@@ -263,7 +265,7 @@ class Bible extends Component {
 						<br/>
 						<br/>
 						<div className="columns medium-8">
-							<div dangerouslySetInnerHTML={{ __html: this.state.chapter.content }} />
+							<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 						</div>
 					</div>
 

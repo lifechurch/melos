@@ -36,7 +36,7 @@ class VersionPicker extends Component {
 	}
 
 	componentDidMount() {
-		const { languages, versions } = this.props
+		const { languages, versions, alert } = this.props
 		// build languages and versions index client side when the component renders
 		Filter.build("LanguageStore", [ "name", "local_name" ])
 		Filter.add("LanguageStore", languages)
@@ -44,6 +44,8 @@ class VersionPicker extends Component {
 		// versions.byLang["lang_tag"] is an object, so we need to pass as array for filter
 		let versionsObj = versions.byLang[versions.selectedLanguage]
 		Filter.add("VersionStore", Object.keys(versionsObj).map(key => versionsObj[key]))
+
+		// this.state({ dropdown: alert, listErrorAlert: alert })
 	}
 
 	/**
@@ -85,18 +87,6 @@ class VersionPicker extends Component {
 			scrollList(activeElements[0], containerElement, listElement)
 			listElement = document.getElementsByClassName('version-list')[0]
 			scrollList(activeElements[1], containerElement, listElement)
-		}
-
-		// if (alert != prevProps.alert) {
-		// 	this.setState({
-		// 		listErrorAlert: alert
-		// 	})
-		// }
-
-		if (!dropdown) {
-			this.setState({
-				versionFiltering: false
-			})
 		}
 
 	}
@@ -178,10 +168,11 @@ class VersionPicker extends Component {
 		}
 	}
 
-	handleLanguageFilter(inputValue) {
+	handleLanguageFilter(changeEvent) {
 		const { languages, languageMap } = this.props
 		const { selectedLanguage } = this.state
 
+		let inputValue = changeEvent.target.value
 		// filter the versions given the input change
 		let results = Filter.filter("LanguageStore", inputValue.trim())
 
@@ -215,7 +206,6 @@ class VersionPicker extends Component {
 					inputValue: version.abbreviation.toUpperCase(),
 					selectedLanguage: versions.selectedLanguage,
 					selectedVersion: version.id,
-					versions: versions.byLang[versions.selectedLanguage],
 					inputDisabled: false,
 					listErrorAlert: false
 				})
@@ -227,7 +217,6 @@ class VersionPicker extends Component {
 					languages: languages,
 					versions: versions.byLang[versions.selectedLanguage]
 				})
-
 			}
 		// not full modal
 		// this will be fired only when a user has been filtering and then clicks on the dropwdown
@@ -271,39 +260,40 @@ class VersionPicker extends Component {
 			inputValue,
 			languagelistSelectionIndex,
 			versionlistSelectionIndex,
-			selectedLanguage
+			selectedLanguage,
+			versionFiltering
 		} = this.state
 
 
-	// 	// filtering
-	// 	if (true) {
-	// 		this.setState({ versionlistSelectionIndex: 0 })
+		// filtering
+		if (versionFiltering) {
+			this.setState({ versionlistSelectionIndex: 0 })
 
-	// 		if (keyEventName == "ArrowUp") {
-	// 			event.preventDefault()
+			if (keyEventName == "ArrowUp") {
+				event.preventDefault()
 
-	// 			if (languagelistSelectionIndex > 0 ) {
-	// 				this.setState({ languagelistSelectionIndex: languagelistSelectionIndex - 1 })
-	// 			} else {
-	// 				this.setState({ languagelistSelectionIndex: this.state.languages.length - 1 })
-	// 			}
-	// 		}
-	// 		if (keyEventName == "ArrowDown") {
-	// 			event.preventDefault()
+				if (versionlistSelectionIndex > 0 ) {
+					this.setState({ versionlistSelectionIndex: versionlistSelectionIndex - 1 })
+				} else {
+					this.setState({ versionlistSelectionIndex: this.state.languages.length - 1 })
+				}
+			}
+			if (keyEventName == "ArrowDown") {
+				event.preventDefault()
 
-	// 			if (languagelistSelectionIndex < this.state.languages.length - 1) {
-	// 				this.setState({ languagelistSelectionIndex: languagelistSelectionIndex + 1 })
-	// 			} else {
-	// 				this.setState({ languagelistSelectionIndex: 0 })
-	// 			}
-	// 		}
-	// 		if (keyEventName == "Enter" || keyEventName == "ArrowRight") {
-	// 			event.preventDefault()
-	// 			//
-	// 			this.getLanguage(this.state.languages[languagelistSelectionIndex], true)
-	// 		}
+				if (versionlistSelectionIndex < this.state.languages.length - 1) {
+					this.setState({ versionlistSelectionIndex: versionlistSelectionIndex + 1 })
+				} else {
+					this.setState({ versionlistSelectionIndex: 0 })
+				}
+			}
+			if (keyEventName == "Enter") {
+				event.preventDefault()
+				//
+				this.getLanguage(this.state.languages[versionlistSelectionIndex], true)
+			}
 
-	// }
+	}
 
 	}
 
@@ -421,6 +411,7 @@ class VersionPicker extends Component {
 					onChange={::this.handleLabelChange}
 					onKeyDown={::this.handleLabelKeyDown}
 					dropdown={dropdown}
+					filtering={versionFiltering}
 					onBlur={::this.onBlur}
 					disabled={inputDisabled}
 				/>

@@ -32,10 +32,10 @@ class Label extends Component {
 	}
 
 	render() {
-		const { input, disabled, dropdown } = this.props
+		const { input, disabled, dropdown, filtering } = this.props
 
 		let classes, dir = null
-		if (dropdown) {
+		if (dropdown && !filtering) {
 			classes = `open dropdown-arrow-container`
 			dir = "up"
 		} else {
