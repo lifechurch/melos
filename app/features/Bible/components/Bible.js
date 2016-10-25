@@ -17,7 +17,7 @@ import ChapterPicker from './chapterPicker/ChapterPicker'
 import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
 import Color from './verseAction/Color'
-
+import Chapter from './content/Chapter'
 
 class Bible extends Component {
 
@@ -171,7 +171,12 @@ class Bible extends Component {
 		}
 
 		return (
-			<div className="row">
+			<div className="">
+				<div className="row">
+					<div className="columns large-6 medium-10 centered">
+						<Chapter chapter={bible.chapter} />
+					</div>
+				</div>
 				<div>
 					<Header {...this.props} />
 					<Audio audio={audio} />
