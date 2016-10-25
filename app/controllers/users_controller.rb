@@ -235,7 +235,11 @@ class UsersController < ApplicationController
   def user_settings
     if current_auth
       settings = User.view_settings(current_auth)
-      settings.updated_dt = Date.parse(settings.updated_dt).strftime('%Q').to_i
+
+      if settings.updated_dt.nil?
+        settings.updated_dt = Date.parse(settings.updated_dt).strftime('%Q').to_i
+      end
+
       return render :json => settings
     else
       return render :json => {}

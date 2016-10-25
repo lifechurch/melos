@@ -462,7 +462,7 @@ module ApplicationHelper
 
         # Something went wrong? Just go back to Sign Up page.
         else
-          return render action: "users/new", layout: "application"
+          return render template: "users/new", layout: "application"
         end
       end
 
