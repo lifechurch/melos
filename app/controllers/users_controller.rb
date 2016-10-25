@@ -238,6 +238,8 @@ class UsersController < ApplicationController
 
       if !settings.updated_dt.nil?
         settings.updated_dt = Date.parse(settings.updated_dt).strftime('%Q').to_i
+      else
+        settings.updated_dt = ""
       end
 
       return render :json => settings
