@@ -26,7 +26,9 @@ class VersionPickerModal extends Component {
 			alert,
 			inputValue,
 			versionsLanguageName,
-			versionFiltering
+			versionFiltering,
+			languageFiltering,
+			intl
 		} = this.props
 
 		let languages, versionBlock = null
@@ -38,7 +40,7 @@ class VersionPickerModal extends Component {
 		if (languageList && !versionFiltering) {
 			let languageFocus = false
 			// we're filtering languages?
-			if (languageList.length < 66) {
+			if (languageFiltering) {
 				languageFocus = true
 			}
 			languages = (
@@ -49,7 +51,7 @@ class VersionPickerModal extends Component {
 						<a className='cancel columns medium-4'><FormattedMessage id="Reader.header.cancel" /></a>
 					</div>
 					<div className='filter-langs'>
-						<input value={inputValue} onChange={handleChange.bind(this)} onKeyDown={handleKeyDown.bind(this)} placeholder={<FormattedMessage id='Reader.versionpicker.filter languages' />} />
+						<input value={inputValue} onChange={handleChange.bind(this)} onKeyDown={handleKeyDown.bind(this)} placeholder={intl.formatMessage({ id: 'Reader.versionpicker.filter languages' })} />
 					</div>
 					<div className='language-list'>
 						<Languages list={[]} onSelect={getLanguage} initialSelection={selectedLanguage} focus={languageFocus} listSelectionIndex={languagelistSelectionIndex} onMouseOver={onMouseOver} header='Recently Used'/>
@@ -69,14 +71,14 @@ class VersionPickerModal extends Component {
 				versionFocus = true
 				versions = (
 					<div className='version-list'>
-						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} onMouseOver={onMouseOver} alert={alert} header={null}/>
+						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} onMouseOver={onMouseOver} />
 					</div>
 				)
 			} else {
 				versions = (
 					<div className='version-list'>
-						<Versions list={{}} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} alert={alert} header={'Recently Used'}/>
-						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} alert={alert} header={versionsLanguageName}/>
+						<Versions list={{}} onSelect={getVersion} initialSelection={selectedVersion} header={'Recently Used'}/>
+						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} header={versionsLanguageName}/>
 					</div>
 				)
 			}
@@ -84,6 +86,10 @@ class VersionPickerModal extends Component {
 			versionBlock = (
 				<div className={`version-container ${alertClass}`}>
 					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.versionpicker.version label" /></div>
+					{/* this is hidden on default and only shown if mobile */}
+					<div className='change-language'>
+
+					</div>
 					{/* this is hidden on default and only shown if picker alert is applied to the parent */}
 					<div className='picker-error'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />

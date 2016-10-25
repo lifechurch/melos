@@ -32,6 +32,15 @@ class ChapterPicker extends Component {
 			listErrorAlert: false,
 			classes: 'hide-chaps'
 		}
+
+		this.handleDropDownClick = ::this.handleDropDownClick
+		this.handleLabelChange = ::this.handleLabelChange
+		this.handleLabelKeyDown = ::this.handleLabelKeyDown
+		this.onBlur = ::this.onBlur
+		this.getChapter = ::this.getChapter
+		this.getBook = ::this.getBook
+		this.toggleChapterPickerList = ::this.toggleChapterPickerList
+		this.handleListHover = ::this.handleListHover
 	}
 
 	componentDidMount() {
@@ -104,7 +113,7 @@ class ChapterPicker extends Component {
 	}
 
 	getChapter(selectedChapter) {
-		const { dispatch, chapter } = this.props
+		const { dispatch, chapter, getChapter } = this.props
 		const { selectedVersion, inputValue } = this.state
 
 		if (selectedChapter && selectedChapter.usfm) {
@@ -114,7 +123,7 @@ class ChapterPicker extends Component {
 				dropdown: false,
 				chapterlistSelectionIndex: 0
 			})
-			dispatch(ActionCreators.bibleChapter({ id: selectedVersion, reference: selectedChapter.usfm }))
+			getChapter(selectedVersion, selectedChapter.usfm)
 			this.setState({ listErrorAlert: false })
 			this.toggleChapterPickerList()
 			// then write cookie for selected chapter
@@ -394,12 +403,12 @@ class ChapterPicker extends Component {
 			<div className={`chapter-picker-container`} >
 				<Label
 					input={inputValue}
-					onClick={::this.handleDropDownClick}
-					onChange={::this.handleLabelChange}
-					onKeyDown={::this.handleLabelKeyDown}
+					onClick={this.handleDropDownClick}
+					onChange={this.handleLabelChange}
+					onKeyDown={this.handleLabelKeyDown}
 					dropdown={dropdown}
 					filtering={filtering}
-					onBlur={::this.onBlur}
+					onBlur={this.onBlur}
 					disabled={inputDisabled}
 				/>
 				<div className={`modal ${hide}`} onClick={() => this.setState({ cancelBlur: true })}>
@@ -409,12 +418,12 @@ class ChapterPicker extends Component {
 						chapterList={chapters}
 						selectedBook={selectedBook}
 						selectedChapter={selectedChapter}
-						getChapter={::this.getChapter}
-						getBook={::this.getBook}
-						toggle={::this.toggleChapterPickerList}
+						getChapter={this.getChapter}
+						getBook={this.getBook}
+						toggle={this.toggleChapterPickerList}
 						booklistSelectionIndex={booklistSelectionIndex}
 						chapterlistSelectionIndex={chapterlistSelectionIndex}
-						onMouseOver={::this.handleListHover}
+						onMouseOver={this.handleListHover}
 						alert={listErrorAlert}
 					/>
 				</div>
@@ -432,7 +441,8 @@ class ChapterPicker extends Component {
 ChapterPicker.propTypes = {
 	books: React.PropTypes.array,
 	bookMap: React.PropTypes.object,
-	chapter: React.PropTypes.object
+	chapter: React.PropTypes.object,
+	getChapter: React.PropTypes.func
 }
 
 export default ChapterPicker

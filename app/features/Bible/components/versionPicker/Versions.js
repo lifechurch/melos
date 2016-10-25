@@ -26,10 +26,11 @@ class Versions extends Component {
 				let version = list[id]
 				let active = (id == initialSelection) ? 'active' : ''
 				if (focus) {
+					console.log(listSelectionIndex)
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
-					versionList.push( (<li key={id} className={`${active} ${focusClass}`} onClick={this.versionSelect.bind(this, version, true)} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
+					versionList.push( (<li key={id} className={`${active} ${focusClass}`} onClick={this.versionSelect.bind(this, version)} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
 				} else {
-					versionList.push( (<li key={id} className={`${active}`} onClick={this.versionSelect.bind(this, version, false)} >{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
+					versionList.push( (<li key={id} className={`${active}`} onClick={this.versionSelect.bind(this, version)} >{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
 				}
 			})
 			/* the header would either be the language title or recently used */

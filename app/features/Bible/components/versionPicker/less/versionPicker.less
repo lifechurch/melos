@@ -73,6 +73,7 @@
 	.version-list, .language-list {
 		overflow-y: hidden;
 		font-size: @list-font-size;
+		background-color: white;
 
 
 		.version-header, .language-header {
@@ -110,6 +111,9 @@
 
 		.active {
 			.yv-active;
+		}
+		.focus {
+			.yv-hover;
 		}
 	}
 
@@ -231,7 +235,7 @@
 
 .hide-modal {
 	overflow: hidden;
-	z-index: -10 !important;
+	// z-index: 0 !important;
 
 	.version-picker-modal {
 		/* only transition on transform properties which are hardware accelerated = way better performances */

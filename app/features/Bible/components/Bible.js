@@ -37,8 +37,12 @@ class Bible extends Component {
 			results: [],
 			versions: []
 		}
-		// props.dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: 'MAT.1' }))
-		// props.dispatch(ActionCreators.momentsColors())
+
+		this.chapterPicker = null
+		this.versionsss = null
+		this.versionPicker = null
+		this.color = null
+		this.content = null
 	}
 
 	getVersions(languageTag) {
@@ -56,18 +60,18 @@ class Bible extends Component {
 			console.timeEnd("Add V Items")
 		})
 
-		dispatch(ActionCreators.bibleConfiguration()).then((config) => {
-			console.time("Build Index")
-			Filter.build("LangStore", [ "name", "local_name" ])
-			console.timeEnd("Build Index")
+		// dispatch(ActionCreators.bibleConfiguration()).then((config) => {
+		// 	console.time("Build Index")
+		// 	Filter.build("LangStore", [ "name", "local_name" ])
+		// 	console.timeEnd("Build Index")
 
-			console.time("Add Items")
-			Filter.add("LangStore", config.default_versions)
-			console.timeEnd("Add Items")
-		})
+		// 	console.time("Add Items")
+		// 	Filter.add("LangStore", config.default_versions)
+		// 	console.timeEnd("Add Items")
+		// })
 
-		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: this.state.selectedChapter }))
-		dispatch(ActionCreators.momentsColors())
+		// dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: this.state.selectedChapter }))
+		// dispatch(ActionCreators.momentsColors())
 	}
 
 	getVC(versionID) {
@@ -81,14 +85,13 @@ class Bible extends Component {
 		this.toggleChapterPickerList()
 	}
 
-	getChapter(chapter) {
+	getChapter(versionid, chapterusfm) {
 		const { dispatch, bible } = this.props
-		console.log(chapter)
-		this.setState({ selectedChapter: chapter.usfm })
+		this.setState({ selectedChapter: chapterusfm })
 		this.toggleChapterPickerList()
-		dispatch(ActionCreators.bibleChapter({ id: this.state.selectedVersion, reference: chapter.usfm }))
+		dispatch(ActionCreators.loadVersionAndChapter({ id: versionid, reference: chapterusfm }))
 		// then write cookie for selected chapter
-		cookie.save('last_read', chapter.usfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+		cookie.save('last_read', chapterusfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 	}
 
 	getVersion(version) {
@@ -191,7 +194,7 @@ class Bible extends Component {
 			if (bible.chapter.errors) {
 				this.setState({ chapterError: true, chapter: prevProps.bible.chapter })
 			} else {
-				this.setState({ chapterError: false })
+				this.setState({ chapterError: false, chapter: bible.chapter })
 			}
 		}
 
@@ -201,48 +204,41 @@ class Bible extends Component {
 		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions } = this.state
 
-		var chapterPicker = null
-		var versionsss = null
-		var versionPicker = null
 
-		if (Array.isArray(results)) {
-			let resultItems = results.map((r) => {
-				return (<li key={r.language_tag}>{r.name} {r.local_name}</li>)
-			})
-		}
-
-		if (Array.isArray(versions)) {
-			let versionItems = versions.map((v) => {
-				return (<li key={v.id}>{v.abbreviation} {v.title}</li>)
-			})
-		}
-
-		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
+		if (Array.isArray(bible.books.all) && bible.books.map && this.state.chapter && this.state.chapter.reference) {
 			console.log(this.state.chapter)
-			chapterPicker = <ChapterPicker {...this.props} chapter={this.state.chapter} books={bible.books.all} bookMap={bible.books.map} selectedLanguage={this.state.selectedLanguage}/>
+			this.chapterPicker = (
+				<ChapterPicker
+					{...this.props}
+					chapter={this.state.chapter}
+					books={bible.books.all}
+					bookMap={bible.books.map}
+					selectedLanguage={this.state.selectedLanguage}
+					getChapter={::this.getChapter}
+				/>
+			)
 		}
 
-		if (bible.versions.byLang && bible.versions.byLang[this.state.selectedLanguage]) {
-			versionsss = <Versions list={bible.versions.byLang[this.state.selectedLanguage]} onSelect={::this.getVC} initialSelection={this.state.selectedVersion} header='English' />
-		}
 
-		if (Array.isArray(bible.languages.all) && bible.languages.map && bible.chapter && bible.version.abbreviation ) {
-			versionPicker = (
+
+		if (Array.isArray(bible.languages.all) && bible.languages.map && this.state.chapter && bible.version.abbreviation ) {
+			this.versionPicker = (
 				<VersionPicker
 					{...this.props}
 					version={bible.version}
 					languages={bible.languages.all}
 					versions={bible.versions}
 					languageMap={bible.languages.map}
-					selectedChapter={bible.chapter.reference ? bible.chapter.reference.usfm : this.state.selectedChapter}
-					alert={bible.chapter.errors}
+					selectedChapter={this.state.chapter.reference ? this.state.chapter.reference.usfm : this.state.selectedChapter}
+					alert={this.state.chapterError}
+					getChapter={::this.getChapter}
+					getVersions={::this.getVersions}
 				/>
 			)
 		}
 
-		let color = null
 		if (Array.isArray(bible.highlightColors)) {
-			color = (
+			this.color = (
 				<div>
 					<Color color={bible.highlightColors[3]} onSelect={::this.getColor} />
 					<Color color={bible.highlightColors[7]} onSelect={::this.getColor} />
@@ -251,21 +247,26 @@ class Bible extends Component {
 			)
 		}
 
+		if (this.state.chapterError) {
+			this.content = <h2>Oh nooooooooo</h2>
+		} else {
+			this.content = <div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
+		}
 
 		return (
 			<div className="row">
 				<div>
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
-							{ chapterPicker }
-							{ versionPicker }
+							{ this.chapterPicker }
+							{ this.versionPicker }
 						</div>
 						<br/>
 						<br/>
 						<br/>
 						<br/>
 						<div className="columns medium-8">
-							<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
+							{ this.content }
 						</div>
 					</div>
 
@@ -274,21 +275,12 @@ class Bible extends Component {
 					<Audio audio={audio} />
 					<Settings settings={settings} />
 					<VerseAction verseAction={verseAction} />
-						<div className="columns medium-3">
-							<a onClick={this.getVersions.bind(this, this.state.selectedLanguage)}>Get Versions</a>
-							<input onChange={::this.filterVersions} />
-							<ul>
-								<ReactCSSTransitionGroup transitionName='content' transitionEnterTimeout={250} transitionLeaveTimeout={250}>
-								{/*versionItems*/}
-								</ReactCSSTransitionGroup>
-							</ul>
-						</div>
+
 						<div className="columns medium-3">
 							<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />
 							<LabelPill label='Holy' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={6} active={true} />
 							<LabelPill label='Peace' canDelete={true} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={1} active={false} />
-							{ versionsss }
-							{ color }
+							{ this.color }
 						</div>
 					</div>
 				</div>
