@@ -6,26 +6,6 @@
 //----------------------------------------------------------------------------------------------------
 .reader {
 
-  // introductory paragraph after a header paragraph
-  .s + .p,
-  .s1 + .p,
-  .s2 + .p,
-  .s + .pi,
-  .s + .pi1,
-  .s1 + .pi,
-  .s1 + .pi1,
-  .pi + .p,
-  .pi1 + .p,
-  .ms + .p,
-  .ms1 + .p,
-  .ms2 + .p,
-  .r + .p {
-    text-indent: 0;
-    margin: 1em 0 0 0;
-  }
-  .s, .s1 {
-    line-height: 1em;
-  }
   // Giving top margins to body text that follows headers
   // and to headers that follow body text
   .p + .s,
