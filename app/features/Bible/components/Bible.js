@@ -25,13 +25,33 @@ class Bible extends Component {
 	constructor(props) {
 		super(props)
 		const { bible } = props
+
+		// if we get a bad chapter call, let's grab the first valid book and chapter
+		// for the selected version
+		if (!bible.chapter.reference) {
+			let chap = bible.books.all[0].chapters[Object.keys(bible.books.all[0].chapters)[0]]
+			this.chapterError = true
+			this.selectedBook = bible.books.all[0].usfm
+			this.selectedChapter = chap.usfm
+			this.selectedVersion = bible.version.id
+			this.inputValue = `${bible.books.all[0].human} ${chap.human}`
+			this.chapters = bible.books.all[0].chapters
+		} else {
+			this.chapterError = false
+			this.selectedBook = bible.chapter.reference.usfm.split('.')[0]
+			this.selectedChapter = bible.chapter.reference.usfm
+			this.selectedVersion = bible.chapter.reference.version_id
+			this.inputValue = bible.chapter.reference.human
+			this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
+		}
+
+
 		this.state = {
-			selectedBook: bible.chapter.reference.usfm.split('.')[0],
-			selectedChapter: bible.chapter.reference.usfm,
-			selectedVersion: bible.chapter.reference.version_id,
+			selectedBook: this.selectedBook,
+			selectedChapter: this.selectedChapter,
+			selectedVersion: this.selectedVersion,
 			selectedLanguage: bible.versions.selectedLanguage,
-			chapter: bible.chapter,
-			chapterError: false,
+			chapterError: this.chapterError,
 			dbReady: false,
 			db: null,
 			results: [],
@@ -85,23 +105,31 @@ class Bible extends Component {
 		this.toggleChapterPickerList()
 	}
 
-	getChapter(versionid, chapterusfm) {
+	getChapter(chapterusfm) {
 		const { dispatch, bible } = this.props
 		this.setState({ selectedChapter: chapterusfm })
+		this.chapterVersionCall(this.state.selectedVersion, chapterusfm)
 		this.toggleChapterPickerList()
-		dispatch(ActionCreators.loadVersionAndChapter({ id: versionid, reference: chapterusfm }))
 		// then write cookie for selected chapter
 		cookie.save('last_read', chapterusfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 	}
 
-	getVersion(version) {
+	getVersion(versionid) {
 		const { dispatch, bible } = this.props
-		console.log(version)
-		this.setState({ selectedVersion: version.id })
+		this.chapterVersionCall(versionid, this.state.selectedChapter)
+		this.setState({ selectedVersion: versionid })
 		this.toggleVersionPickerList()
-		dispatch(ActionCreators.bibleChapter({ id: version.id, reference: this.state.selectedChapter}))
 		// then write cookie for selected version
-		cookie.save('version', version.id, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+		cookie.save('version', versionid, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+	}
+
+	chapterVersionCall(versionid, reference) {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.bibleChapter({ id: versionid, reference: reference}))
+		if (versionid !== this.state.selectedVersion) {
+			this.setState({ selectedVersion: versionid })
+			dispatch(ActionCreators.bibleVersion({ id: versionid }))
+		}
 	}
 
 
@@ -192,9 +220,9 @@ class Bible extends Component {
 		// }
 		if (bible.chapter != prevProps.bible.chapter) {
 			if (bible.chapter.errors) {
-				this.setState({ chapterError: true, chapter: prevProps.bible.chapter })
+				this.setState({ chapterError: true })
 			} else {
-				this.setState({ chapterError: false, chapter: bible.chapter })
+				this.setState({ chapterError: false })
 			}
 		}
 
@@ -205,23 +233,26 @@ class Bible extends Component {
 		const { results, versions } = this.state
 
 
-		if (Array.isArray(bible.books.all) && bible.books.map && this.state.chapter && this.state.chapter.reference) {
-			console.log(this.state.chapter)
+		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
 			this.chapterPicker = (
 				<ChapterPicker
 					{...this.props}
-					chapter={this.state.chapter}
+					chapter={bible.chapter}
 					books={bible.books.all}
 					bookMap={bible.books.map}
 					selectedLanguage={this.state.selectedLanguage}
 					getChapter={::this.getChapter}
+					initialBook={this.state.selectedBook}
+					initialChapter={this.state.selectedChapter}
+					initialInput={this.inputValue}
+					initialChapters={this.chapters}
 				/>
 			)
 		}
 
 
 
-		if (Array.isArray(bible.languages.all) && bible.languages.map && this.state.chapter && bible.version.abbreviation ) {
+		if (Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
 			this.versionPicker = (
 				<VersionPicker
 					{...this.props}
@@ -229,9 +260,9 @@ class Bible extends Component {
 					languages={bible.languages.all}
 					versions={bible.versions}
 					languageMap={bible.languages.map}
-					selectedChapter={this.state.chapter.reference ? this.state.chapter.reference.usfm : this.state.selectedChapter}
+					selectedChapter={bible.chapter.reference ? bible.chapter.reference.usfm : this.state.selectedChapter}
 					alert={this.state.chapterError}
-					getChapter={::this.getChapter}
+					getVersion={::this.getVersion}
 					getVersions={::this.getVersions}
 				/>
 			)

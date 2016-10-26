@@ -20,14 +20,12 @@ class VersionPickerModal extends Component {
 			selectedVersion,
 			classes,
 			toggle,
-			languagelistSelectionIndex,
 			versionlistSelectionIndex,
 			onMouseOver,
 			alert,
 			inputValue,
 			versionsLanguageName,
 			versionFiltering,
-			languageFiltering,
 			intl
 		} = this.props
 
@@ -38,11 +36,6 @@ class VersionPickerModal extends Component {
 
 
 		if (languageList && !versionFiltering) {
-			let languageFocus = false
-			// we're filtering languages?
-			if (languageFiltering) {
-				languageFocus = true
-			}
 			languages = (
 				<div className='language-container'>
 					<div className='header vertical-center horizontal-center'>
@@ -51,11 +44,11 @@ class VersionPickerModal extends Component {
 						<a className='cancel columns medium-4'><FormattedMessage id="Reader.header.cancel" /></a>
 					</div>
 					<div className='filter-langs'>
-						<input value={inputValue} onChange={handleChange.bind(this)} onKeyDown={handleKeyDown.bind(this)} placeholder={intl.formatMessage({ id: 'Reader.versionpicker.filter languages' })} />
+						<input value={inputValue} onChange={handleChange.bind(this)} placeholder={intl.formatMessage({ id: 'Reader.versionpicker.filter languages' })} />
 					</div>
 					<div className='language-list'>
-						<Languages list={[]} onSelect={getLanguage} initialSelection={selectedLanguage} focus={languageFocus} listSelectionIndex={languagelistSelectionIndex} onMouseOver={onMouseOver} header='Recently Used'/>
-						<Languages list={languageList} onSelect={getLanguage} initialSelection={selectedLanguage} focus={languageFocus} listSelectionIndex={languagelistSelectionIndex} onMouseOver={onMouseOver} header='All'/>
+						<Languages list={[]} onSelect={getLanguage} initialSelection={selectedLanguage} header='Recently Used'/>
+						<Languages list={languageList} onSelect={getLanguage} initialSelection={selectedLanguage} header='All'/>
 					</div>
 				</div>
 			)
@@ -88,7 +81,8 @@ class VersionPickerModal extends Component {
 					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.versionpicker.version label" /></div>
 					{/* this is hidden on default and only shown if mobile */}
 					<div className='change-language'>
-
+						<span><small>{intl.formatMessage({ id: 'Reader.versionpicker.language sub-label'})}</small>{versionsLanguageName}</span>
+						<FormattedMessage id="Reader.versionpicker.change language" />
 					</div>
 					{/* this is hidden on default and only shown if picker alert is applied to the parent */}
 					<div className='picker-error'>

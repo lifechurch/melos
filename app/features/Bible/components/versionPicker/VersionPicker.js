@@ -39,7 +39,6 @@ class VersionPicker extends Component {
 		this.handleLabelChange = ::this.handleLabelChange
 		this.handleLabelKeyDown = ::this.handleLabelKeyDown
 		this.handleLanguageFilter = ::this.handleLanguageFilter
-		this.handleLangKeyDown = ::this.handleLangKeyDown
 		this.onBlur = ::this.onBlur
 		this.getLanguage = ::this.getLanguage
 		this.getVersion = ::this.getVersion
@@ -121,6 +120,7 @@ class VersionPicker extends Component {
 		// if the new version call is successful, let's close the modal
 		if ((version.abbreviation !== prevProps.version.abbreviation) && !alert && !listErrorAlert) {
 			this.setState({ dropdown: false })
+			this.toggleVersionPickerList()
 		}
 
 		// if we've changed languages, let's update the versions list
@@ -155,15 +155,14 @@ class VersionPicker extends Component {
 	}
 
 	getVersion(version) {
-		const { selectedChapter, dispatch, getChapter } = this.props
+		const { selectedChapter, dispatch, getVersion } = this.props
 
 		if (version.id) {
 			this.setState({
 				selectedVersion: version.id,
 				inputValue: version.abbreviation.toUpperCase()
 			})
-			getChapter(version.id, selectedChapter)
-			this.toggleVersionPickerList()
+			getVersion(version.id)
 			// then write cookie for selected version
 			cookie.save('version', version.id, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 		} else {
@@ -235,17 +234,15 @@ class VersionPicker extends Component {
 			// fill the input back up with the correct reference
 			if (this.state.dropdown) {
 				this.setState({
-					dropdown: false,
-					inputValue: version.abbreviation.toUpperCase(),
-					selectedLanguage: versions.selectedLanguage,
-					selectedVersion: version.id,
-					inputDisabled: false,
+					dropdown: false
+					// inputValue: version.abbreviation.toUpperCase(),
+					// selectedLanguage: versions.selectedLanguage,
+					// selectedVersion: version.id,
 				})
 			// we're opening the dropdown so let's disable the input field
 			} else {
 				this.setState({
 					dropdown: true,
-					inputDisabled: true,
 					languages: languages,
 					versions: versions.byLang[versions.selectedLanguage]
 				})
@@ -255,8 +252,7 @@ class VersionPicker extends Component {
 		} else {
 			this.setState({
 				dropdown: true,
-				inputDisabled: true,
-				versions: versions.byLang[versions.selectedLanguage],
+				versions: versions.byLang[versions.selectedLanguage]
 			})
 		}
 
@@ -269,9 +265,7 @@ class VersionPicker extends Component {
 	 * @param      {number}  index    The index of the book or version being hovered over
 	 */
 	handleListHover(context, index) {
-		if (context == "languages") {
-			this.setState({ languagelistSelectionIndex: index })
-		} else if (context == "versions") {
+		if (context == "versions") {
 			this.setState({ versionlistSelectionIndex: index })
 		}
 	}
@@ -298,7 +292,6 @@ class VersionPicker extends Component {
 
 		// filtering
 		if (versionFiltering) {
-			console.log(keyEventName)
 
 			this.setState({ languagelistSelectionIndex: 0 })
 			let versionKeys = Object.keys(versions)
@@ -326,49 +319,7 @@ class VersionPicker extends Component {
 				this.getVersion(versions[versionKeys[versionlistSelectionIndex]])
 			}
 
-	}
-
-	}
-
-	handleLangKeyDown(event, keyEventName, keyEventCode) {
-		const { languages, languageMap } = this.props
-		const {
-			inputValue,
-			languagelistSelectionIndex,
-			versionlistSelectionIndex,
-			selectedLanguage
-		} = this.state
-
-
-	// 	// filtering
-	// 	if (true) {
-	// 		this.setState({ versionlistSelectionIndex: 0 })
-
-	// 		if (keyEventName == "ArrowUp") {
-	// 			event.preventDefault()
-
-	// 			if (languagelistSelectionIndex > 0 ) {
-	// 				this.setState({ languagelistSelectionIndex: languagelistSelectionIndex - 1 })
-	// 			} else {
-	// 				this.setState({ languagelistSelectionIndex: this.state.languages.length - 1 })
-	// 			}
-	// 		}
-	// 		if (keyEventName == "ArrowDown") {
-	// 			event.preventDefault()
-
-	// 			if (languagelistSelectionIndex < this.state.languages.length - 1) {
-	// 				this.setState({ languagelistSelectionIndex: languagelistSelectionIndex + 1 })
-	// 			} else {
-	// 				this.setState({ languagelistSelectionIndex: 0 })
-	// 			}
-	// 		}
-	// 		if (keyEventName == "Enter" || keyEventName == "ArrowRight") {
-	// 			event.preventDefault()
-	// 			//
-	// 			this.getLanguage(this.state.languages[languagelistSelectionIndex], true)
-	// 		}
-
-	// }
+		}
 
 	}
 
@@ -460,7 +411,6 @@ class VersionPicker extends Component {
 						handleChange={this.handleLanguageFilter}
 						handleKeyDown={this.handleLangKeyDown}
 						toggle={this.toggleVersionPickerList}
-						languagelistSelectionIndex={languagelistSelectionIndex}
 						versionlistSelectionIndex={versionlistSelectionIndex}
 						onMouseOver={this.handleListHover}
 						alert={listErrorAlert}
@@ -481,7 +431,7 @@ class VersionPicker extends Component {
  *	@version: 						currently rendered version object
  *	@versions:    				list of versions for version.selectedLanguage
  *	@selectedChapter: 		rendered chapter
- *	@getChapter:
+ *	@getVersion:
  */
 VersionPicker.propTypes = {
 	languages: React.PropTypes.array,
@@ -489,7 +439,7 @@ VersionPicker.propTypes = {
 	version: React.PropTypes.object,
 	versions: React.PropTypes.object,
 	selectedChapter: React.PropTypes.string,
-	getChapter: React.PropTypes.func,
+	getVersion: React.PropTypes.func,
 	getVersions: React.PropTypes.func
 }
 
