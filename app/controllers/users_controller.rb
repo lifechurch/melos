@@ -252,7 +252,7 @@ class UsersController < ApplicationController
     if current_auth && params['recent_versions'].present?
       new_settings = User.update_settings(current_auth, { bible: { recent_versions: params['recent_versions'] } })
 
-      if !new_settings.nil?
+      if !new_settings.nil? && !new_settings.updated_dt.nil?
         new_settings.updated_dt = Date.parse(new_settings.updated_dt).strftime('%Q').to_i
         return render :json => new_settings
       else
