@@ -169,10 +169,30 @@
 
 		.change-language {
 			@media @small-only {
-				display: flex;
+				display: inline-flex;
 			}
 			@media @medium-up {
 				display: none;
+			}
+			justify-content: space-between;
+			width: 100%;
+			padding: 15px 10px 10px 15px;
+			border-bottom: @thin-grey-border;
+
+			.language-name {
+				display: block;
+				small {
+					display: block;
+					color: @font-grey;
+					margin-bottom: -5px;
+					margin-top: -5px;
+				}
+			}
+			.language-button {
+				.yv-green-link;
+				display: flex;
+				.yv-flex-center-all;
+				font-size: 10px;
 			}
 		}
 
@@ -186,15 +206,12 @@
 
 	position: absolute;
 	width: 314px;
-	padding-left: 10px;
-	padding-right: 10px;
 	height: 60px;
 	z-index: -100;
 	opacity: 0;
 
 	display: flex;
 	.yv-flex-center-all;
-
 	.picker-error;
 
 }

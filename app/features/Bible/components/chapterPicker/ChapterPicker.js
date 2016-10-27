@@ -24,20 +24,6 @@ class ChapterPicker extends Component {
 			initialChapter
 		} = props
 
-		// // if we get a bad chapter call, let's grab the first valid book and chapter
-		// // for the selected version
-		// if (!chapter.reference) {
-		// 	let chap = books[0].chapters[Object.keys(books[0].chapters)[0]]
-		// 	this.selectedBook = books[0].usfm
-		// 	this.selectedChapter = chap.usfm
-		// 	this.inputValue = `${books[0].human} ${chap.human}`
-		// 	this.chapters = books[0].chapters
-		// } else {
-		// 	this.selectedBook = chapter.reference.usfm.split('.')[0]
-		// 	this.selectedChapter = chapter.reference.usfm
-		// 	this.inputValue = chapter.reference.human
-		// 	this.chapters = books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters
-		// }
 
 		this.state = {
 			selectedBook: initialBook,
@@ -80,7 +66,7 @@ class ChapterPicker extends Component {
 	 * @param  prevState  				The previous state
 	 */
 	componentDidUpdate(prevProps, prevState) {
-		const { books } = this.props
+		const { books, togglePickerExclusion, chapter } = this.props
 		const {
 			chapterlistSelectionIndex,
 			booklistSelectionIndex,
@@ -111,13 +97,24 @@ class ChapterPicker extends Component {
 			scrollList(activeElements[1], containerElement, listElement)
 		}
 
-		// only disable the input when modal is open and not filtering
+		// handle state change on dropdown open and close
 		if (dropdown !== prevState.dropdown) {
 			// if we're not filtering, disable the input
 			if (dropdown && (this.state.books && this.state.chapters)) {
 				this.setState({ inputDisabled: true })
 			} else {
 				this.setState({ inputDisabled: false })
+				if (chapter.reference) {
+					this.setState({ inputValue: chapter.reference.human })
+				}
+			}
+
+			// let's tell the parent component that we're open
+			// so that the versionPicker doesn't get opened
+			if (dropdown) {
+				togglePickerExclusion('chapter')
+			} else {
+				togglePickerExclusion('none')
 			}
 
 		}
@@ -216,63 +213,64 @@ class ChapterPicker extends Component {
 	 * picker modal
 	 */
 	handleDropDownClick() {
-		const { books, bookMap, chapter } = this.props
+		const { books, bookMap, chapter, cancelDropDown } = this.props
 		const { selectedBook } = this.state
 
 		// don't close the dropdown modal when losing focus of the input,
 		// because we're clicking the dropdown (not some other random place)
 		this.setState({ cancelBlur: true, filtering: false })
 
-		// if the full modal is being rendered, let's toggle the dropdown rendering
-		if (this.state.books && this.state.chapters) {
-			// if the user is closing the dropdown and hasn't selected anything, let's
-			// fill the input back up with the correct reference
-			if (this.state.dropdown) {
-				// if chapter content is legit, let's reset accordingly
-				// not changing chapter on chapter/version error
-				if (chapter.reference) {
+		if (!cancelDropDown) {
+			// if the full modal is being rendered, let's toggle the dropdown rendering
+			if (this.state.books && this.state.chapters) {
+				// if the user is closing the dropdown and hasn't selected anything, let's
+				// fill the input back up with the correct reference
+				if (this.state.dropdown) {
+					// if chapter content is legit, let's reset accordingly
+					// not changing chapter on chapter/version error
+					if (chapter.reference) {
+						this.setState({
+							selectedBook: chapter.reference.usfm.split('.')[0],
+							selectedChapter: chapter.reference.usfm
+						})
+					}
 					this.setState({
-						selectedBook: chapter.reference.usfm.split('.')[0],
-						selectedChapter: chapter.reference.usfm,
-						inputValue: chapter.reference.human
+						dropdown: false,
+						listErrorAlert: false
 					})
+				// we're opening the dropdown so let's disable the input field
+				} else {
+					this.setState({
+						dropdown: true,
+						books: books
+					})
+
 				}
-				this.setState({
-					dropdown: false,
-					listErrorAlert: false
-				})
-			// we're opening the dropdown so let's disable the input field
+			// not full modal
+			// this will be fired only when a user has been filtering and then clicks on the dropwdown
 			} else {
 				this.setState({
 					dropdown: true,
-					books: books
+					books: books,
+					listErrorAlert: false
 				})
-
 			}
-		// not full modal
-		// this will be fired only when a user has been filtering and then clicks on the dropwdown
-		} else {
-			this.setState({
-				dropdown: true,
-				books: books,
-				listErrorAlert: false
-			})
-		}
-		// in all cases, let's reset chapters if chapter exists
-		if (chapter.reference) {
-			this.setState({
-				chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters
-			})
-		} else {
-			// if we've rendered a bad chapter, then let's select the correct stuff
-			// for the new version
-			this.setState({
-				selectedBook: books[0].usfm,
-				selectedChapter: books[0].chapters[Object.keys(books[0].chapters)[0]].usfm,
-				chapterlistSelectionIndex: 0,
-				booklistSelectionIndex: 0,
-				chapters: books[0].chapters
-			})
+			// in all cases, let's reset chapters if chapter exists
+			if (chapter.reference) {
+				this.setState({
+					chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters
+				})
+			} else {
+				// if we've rendered a bad chapter, then let's select the correct stuff
+				// for the new version
+				this.setState({
+					selectedBook: books[0].usfm,
+					selectedChapter: books[0].chapters[Object.keys(books[0].chapters)[0]].usfm,
+					chapterlistSelectionIndex: 0,
+					booklistSelectionIndex: 0,
+					chapters: books[0].chapters
+				})
+			}
 		}
 	}
 
@@ -472,6 +470,7 @@ class ChapterPicker extends Component {
 						chapterlistSelectionIndex={chapterlistSelectionIndex}
 						onMouseOver={this.handleListHover}
 						alert={listErrorAlert}
+						cancel={() => this.setState({ dropdown: false })}
 					/>
 				</div>
 			</div>

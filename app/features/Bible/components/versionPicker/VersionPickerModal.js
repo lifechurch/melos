@@ -26,7 +26,8 @@ class VersionPickerModal extends Component {
 			inputValue,
 			versionsLanguageName,
 			versionFiltering,
-			intl
+			intl,
+			cancel
 		} = this.props
 
 		let languages, versionBlock = null
@@ -41,7 +42,7 @@ class VersionPickerModal extends Component {
 					<div className='header vertical-center horizontal-center'>
 						<a className='prev columns medium-4' onClick={toggle}><p>&larr;</p></a>
 						<p className='columns medium-4'><FormattedMessage id="Reader.versionpicker.language label" /></p>
-						<a className='cancel columns medium-4'><FormattedMessage id="Reader.header.cancel" /></a>
+						<a className='cancel columns medium-4' onClick={cancel}><FormattedMessage id="Reader.header.cancel" /></a>
 					</div>
 					<div className='filter-langs'>
 						<input value={inputValue} onChange={handleChange.bind(this)} placeholder={intl.formatMessage({ id: 'Reader.versionpicker.filter languages' })} />
@@ -81,8 +82,8 @@ class VersionPickerModal extends Component {
 					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.versionpicker.version label" /></div>
 					{/* this is hidden on default and only shown if mobile */}
 					<div className='change-language'>
-						<span><small>{intl.formatMessage({ id: 'Reader.versionpicker.language sub-label'})}</small>{versionsLanguageName}</span>
-						<FormattedMessage id="Reader.versionpicker.change language" />
+						<span className='language-name'><small>{intl.formatMessage({ id: 'Reader.versionpicker.language sub-label'})}</small>{versionsLanguageName}</span>
+						<div className='language-button' onClick={toggle}><FormattedMessage id="Reader.versionpicker.change language" /></div>
 					</div>
 					{/* this is hidden on default and only shown if picker alert is applied to the parent */}
 					<div className='picker-error'>

@@ -65,7 +65,7 @@ class VersionPicker extends Component {
 	 * @param  prevState  				The previous state
 	 */
 	componentDidUpdate(prevProps, prevState) {
-		const { alert, versions, version } = this.props
+		const { alert, versions, version, togglePickerExclusion, chapter } = this.props
 		const {
 			versionlistSelectionIndex,
 			languagelistSelectionIndex,
@@ -115,12 +115,20 @@ class VersionPicker extends Component {
 			} else {
 				this.setState({ inputDisabled: false, langInputValue: null })
 			}
+
+			// let's tell the parent component that we're open
+			// so that the chapterPicker doesn't get opened
+			if (dropdown) {
+				togglePickerExclusion('version')
+			} else {
+				togglePickerExclusion('none')
+			}
+
 		}
 
 		// if the new version call is successful, let's close the modal
-		if ((version.abbreviation !== prevProps.version.abbreviation) && !alert && !listErrorAlert) {
+		if ( chapter && (chapter.reference.usfm !== prevProps.chapter.reference.usfm) && !alert && !listErrorAlert) {
 			this.setState({ dropdown: false })
-			this.toggleVersionPickerList()
 		}
 
 		// if we've changed languages, let's update the versions list
@@ -221,39 +229,38 @@ class VersionPicker extends Component {
 	 * picker modal
 	 */
 	handleDropDownClick() {
-		const { languages, version, languageMap, versions } = this.props
+		const { languages, version, languageMap, versions, cancelDropDown } = this.props
 		// const { selectedLanguage } = this.state
 
-		// don't close the dropdown modal when losing focus of the input,
-		// because we're clicking the dropdown (not some other random place)
-		this.setState({ cancelBlur: true, versionFiltering: false })
+		if (!cancelDropDown) {
+			// don't close the dropdown modal when losing focus of the input,
+			// because we're clicking the dropdown (not some other random place)
+			this.setState({ cancelBlur: true, versionFiltering: false })
 
-		// if the full modal is being rendered, let's toggle the dropdown rendering
-		if (!this.state.versionFiltering) {
-			// if the user is closing the dropdown and hasn't selected anything, let's
-			// fill the input back up with the correct reference
-			if (this.state.dropdown) {
-				this.setState({
-					dropdown: false
-					// inputValue: version.abbreviation.toUpperCase(),
-					// selectedLanguage: versions.selectedLanguage,
-					// selectedVersion: version.id,
-				})
-			// we're opening the dropdown so let's disable the input field
+			// if the full modal is being rendered, let's toggle the dropdown rendering
+			if (!this.state.versionFiltering) {
+				// if the user is closing the dropdown and hasn't selected anything, let's
+				// fill the input back up with the correct reference
+				if (this.state.dropdown) {
+					this.setState({
+						dropdown: false
+					})
+				// we're opening the dropdown so let's disable the input field
+				} else {
+					this.setState({
+						dropdown: true,
+						languages: languages,
+						versions: versions.byLang[versions.selectedLanguage]
+					})
+				}
+			// not full modal
+			// this will be fired only when a user has been filtering and then clicks on the dropwdown
 			} else {
 				this.setState({
 					dropdown: true,
-					languages: languages,
 					versions: versions.byLang[versions.selectedLanguage]
 				})
 			}
-		// not full modal
-		// this will be fired only when a user has been filtering and then clicks on the dropwdown
-		} else {
-			this.setState({
-				dropdown: true,
-				versions: versions.byLang[versions.selectedLanguage]
-			})
 		}
 
 	}
@@ -336,7 +343,7 @@ class VersionPicker extends Component {
 		let dat = this
 
 		// when we click out of the input, we need to wait and check if either
-		// the dropdown or a book/version has been clicked
+		// the dropdown or a lang/version has been clicked
 		// otherwise let's close and reset
 		setTimeout(function() {
 
@@ -362,7 +369,6 @@ class VersionPicker extends Component {
 			}
 
 		}, 300)
-
 
 	}
 
@@ -417,6 +423,7 @@ class VersionPicker extends Component {
 						versionsLanguageName='English'
 						versionFiltering={versionFiltering}
 						intl={intl}
+						cancel={() => this.setState({ dropdown: false })}
 					/>
 				</div>
 			</div>

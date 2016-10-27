@@ -53,6 +53,8 @@ class Bible extends Component {
 			selectedLanguage: bible.versions.selectedLanguage,
 			chapterError: this.chapterError,
 			dbReady: false,
+			chapDropDownCancel: false,
+			versionDropDownCancel: false,
 			db: null,
 			results: [],
 			versions: []
@@ -168,6 +170,17 @@ class Bible extends Component {
 		(this.state.classes) == 'hide-langs' ? this.setState({ classes: 'hide-versions' }) : this.setState({ classes: 'hide-langs' })
 	}
 
+	togglePickerExclusion(context) {
+		// each picker calls to tell which context is now open
+		if (context == 'chapter') {
+			this.setState({ versionDropDownCancel: true, chapDropDownCancel: false })
+		} else if (context == 'version') {
+			this.setState({ versionDropDownCancel: false, chapDropDownCancel: true })
+		} else if (context == 'none') {
+			this.setState({ versionDropDownCancel: false, chapDropDownCancel: false })
+		}
+	}
+
 
 	filterLang(changeEvent) {
 		const filter = changeEvent.target.value;
@@ -203,21 +216,6 @@ class Bible extends Component {
 		const { bible } = this.props
 		const { chapter } = this.state
 
-		// if (bible.chapter.content != prevProps.bible.chapter.content) {
-		// 	// if the new chapter call was successful, then let's render the new chapter
-		// 	if (bible.chapter.content) {
-		// 		this.setState({
-		// 			chapter: bible.chapter,
-		// 			chapterError: false
-		// 		})
-		// 	} else {
-		// 		// if it isn't valid, then keep the previous chapter rendered, and then let the
-		// 		// version picker know there was an error
-		// 		this.setState({
-		// 			chapterError: true
-		// 		})
-		// 	}
-		// }
 		if (bible.chapter != prevProps.bible.chapter) {
 			if (bible.chapter.errors) {
 				this.setState({ chapterError: true })
@@ -246,6 +244,8 @@ class Bible extends Component {
 					initialChapter={this.state.selectedChapter}
 					initialInput={this.inputValue}
 					initialChapters={this.chapters}
+					cancelDropDown={this.state.chapDropDownCancel}
+					togglePickerExclusion={::this.togglePickerExclusion}
 				/>
 			)
 		}
@@ -264,6 +264,8 @@ class Bible extends Component {
 					alert={this.state.chapterError}
 					getVersion={::this.getVersion}
 					getVersions={::this.getVersions}
+					cancelDropDown={this.state.versionDropDownCancel}
+					togglePickerExclusion={::this.togglePickerExclusion}
 				/>
 			)
 		}

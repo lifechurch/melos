@@ -20,7 +20,8 @@ class ChapterPickerModal extends Component {
 			booklistSelectionIndex,
 			chapterlistSelectionIndex,
 			onMouseOver,
-			alert
+			alert,
+			cancel
 		} = this.props
 
 		let books, chapters = null
@@ -86,7 +87,7 @@ class ChapterPickerModal extends Component {
 					<div className='header vertical-center horizontal-center'>
 						<a className='prev columns medium-4' onClick={toggle}><p>&larr;</p></a>
 						<p className='columns medium-4'><FormattedMessage id="Reader.chapterpicker.chapter label" /></p>
-						<a className='cancel columns medium-4'><FormattedMessage id="Reader.header.cancel" /></a>
+						<a className='cancel columns medium-4' onClick={cancel}><FormattedMessage id="Reader.header.cancel" /></a>
 					</div>
 					{/* this is hidden on default and only shown if picker alert is applied to the parent */}
 					<div className='picker-error'>
