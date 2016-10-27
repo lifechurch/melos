@@ -76,28 +76,6 @@ class VersionPicker extends Component {
 			selectedVersion
 		} = this.state
 
-		let focusElement = document.getElementsByClassName('focus')[0]
-		let activeElements = document.getElementsByClassName('active')
-		let containerElement = document.getElementsByClassName('modal')[0]
-		let listElement = null
-
-		// let's check if any selection index has changed, and then scroll to the correct
-		// positions to make sure the selected elements are in view
-		if (versionlistSelectionIndex !== prevState.versionlistSelectionIndex) {
-			listElement = document.getElementsByClassName('version-list')[0]
-			scrollList(focusElement, containerElement, listElement)
-		}
-		if (languagelistSelectionIndex !== prevState.languagelistSelectionIndex) {
-			listElement = document.getElementsByClassName('language-list')[0]
-			scrollList(focusElement, containerElement, listElement)
-		}
-		// scroll to the actively selected language and version on dropdown
-		if ((dropdown !== prevState.dropdown) && languages && versions) {
-			listElement = document.getElementsByClassName('language-list')[0]
-			scrollList(activeElements[0], containerElement, listElement)
-			listElement = document.getElementsByClassName('version-list')[0]
-			scrollList(activeElements[1], containerElement, listElement)
-		}
 
 		// keep the dropdown open to display error
 		if (alert !== prevProps.alert) {
@@ -141,8 +119,6 @@ class VersionPicker extends Component {
 	 * Sets up state for the selected language
 	 *
 	 * @param      {<Object>}  selectedLanguage  	The selected language
-	 * @param      {<Bool>}    filtering     			are we filtering language list?
-	 *                                       			this tells us whether to still render the language list
 	 */
 	getLanguage(selectedLanguage) {
 		const { languages, languageMap, dispatch, versions, getVersions } = this.props
@@ -171,8 +147,6 @@ class VersionPicker extends Component {
 				inputValue: version.abbreviation.toUpperCase()
 			})
 			getVersion(version.id)
-			// then write cookie for selected version
-			cookie.save('version', version.id, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
 		} else {
 			this.setState({ listErrorAlert: true })
 		}
@@ -388,7 +362,8 @@ class VersionPicker extends Component {
 			versionlistSelectionIndex,
 			listErrorAlert,
 			inputDisabled,
-			versionFiltering
+			versionFiltering,
+			langInputValue
 		} = this.state
 
 		let hide = (dropdown) ? '' : 'hide-modal'
@@ -424,6 +399,7 @@ class VersionPicker extends Component {
 						versionFiltering={versionFiltering}
 						intl={intl}
 						cancel={() => this.setState({ dropdown: false })}
+						inputValue={langInputValue}
 					/>
 				</div>
 			</div>

@@ -228,7 +228,7 @@ class ChapterPicker extends Component {
 				if (this.state.dropdown) {
 					// if chapter content is legit, let's reset accordingly
 					// not changing chapter on chapter/version error
-					if (chapter.reference) {
+					if (chapter.reference.usfm) {
 						this.setState({
 							selectedBook: chapter.reference.usfm.split('.')[0],
 							selectedChapter: chapter.reference.usfm
@@ -256,7 +256,7 @@ class ChapterPicker extends Component {
 				})
 			}
 			// in all cases, let's reset chapters if chapter exists
-			if (chapter.reference) {
+			if (chapter.reference.usfm) {
 				this.setState({
 					chapters: books[bookMap[chapter.reference.usfm.split('.')[0]]].chapters
 				})

@@ -81,19 +81,6 @@ class Bible extends Component {
 			Filter.add("VersionStore", versions.versions)
 			console.timeEnd("Add V Items")
 		})
-
-		// dispatch(ActionCreators.bibleConfiguration()).then((config) => {
-		// 	console.time("Build Index")
-		// 	Filter.build("LangStore", [ "name", "local_name" ])
-		// 	console.timeEnd("Build Index")
-
-		// 	console.time("Add Items")
-		// 	Filter.add("LangStore", config.default_versions)
-		// 	console.timeEnd("Add Items")
-		// })
-
-		// dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: this.state.selectedChapter }))
-		// dispatch(ActionCreators.momentsColors())
 	}
 
 	getVC(versionID) {

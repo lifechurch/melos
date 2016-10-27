@@ -41,7 +41,7 @@ class VersionPickerModal extends Component {
 				<div className='language-container'>
 					<div className='header vertical-center horizontal-center'>
 						<a className='prev columns medium-4' onClick={toggle}><p>&larr;</p></a>
-						<p className='columns medium-4'><FormattedMessage id="Reader.versionpicker.language label" /></p>
+						<p className='columns'><FormattedMessage id="Reader.versionpicker.language label" /></p>
 						<a className='cancel columns medium-4' onClick={cancel}><FormattedMessage id="Reader.header.cancel" /></a>
 					</div>
 					<div className='filter-langs'>
