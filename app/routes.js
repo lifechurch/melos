@@ -19,7 +19,7 @@ import Bible from './containers/Bible'
 
 export default function(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData) {
 	return (
-		<Route path="/(:locale/)" component={App} onEnter={requireAuth}>
+		<Route path="/(:locale(:/))" component={App} onEnter={requireAuth}>
 			<IndexRoute component={EventFeedMine} />
 			<Route path="select_language" component={SelectLanguage} />
 			<Route path="login" component={Auth} />

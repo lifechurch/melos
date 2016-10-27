@@ -151,6 +151,14 @@
 		"locale3": "ita",
 		"displayName": "Italiano"
 	},
+		{
+		"nativeName": "ភាសាខ្មែរ",
+		"englishName": "Khmer",
+		"locale": "km-KH",
+		"locale2": "km",
+		"locale3": "khm",
+		"displayName": "ភាសាខ្មែរ"
+	},
 	{
 		"nativeName": "Kiswahili",
 		"englishName": "Swahili",
@@ -193,7 +201,7 @@
 		"locale": "no-NO",
 		"momentLocale": "nb",
 		"locale2": "no",
-		"locale3": "nor",
+		"locale3": "nob",
 		"displayName": "Norsk"
 	},
 	{
@@ -294,6 +302,14 @@
 		"locale2": "el",
 		"locale3": "ell",
 		"displayName": "Ελληνικά"
+	},
+		{
+		"nativeName": "हिन्दी",
+		"englishName": "Hindi",
+		"locale": "hi-IN",
+		"locale2": "hi",
+		"locale3": "hin",
+		"displayName": "हिन्दी"
 	},
 	{
 		"nativeName": "Български",

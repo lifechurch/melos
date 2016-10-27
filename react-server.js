@@ -42,12 +42,16 @@ function getAssetPath(path) {
  * @param {Object} req - the Express request object
  */
 function getLocalesFromHeader(req) {
-	return req.headers['accept-language'].split(',').map(function(l) {
-		var locale = l.split(';');
-		var weight = (locale.length > 1) ? parseFloat(locale[1].split('=')[1]) : 1;
-		var prefix = locale[0].split('-')[0];
-		return { locale: locale[0], prefix: prefix, weight: weight };
-	});
+	if (req && req.headers && req.headers['accept-language']) {
+		return req.headers['accept-language'].split(',').map(function(l) {
+			var locale = l.split(';');
+			var weight = (locale.length > 1) ? parseFloat(locale[1].split('=')[1]) : 1;
+			var prefix = locale[0].split('-')[0];
+			return { locale: locale[0], prefix: prefix, weight: weight };
+		});
+	} else {
+		return []
+	}
 }
 
 /**
@@ -155,55 +159,55 @@ function getStateFromToken() {
  * Entry point for handling React app URLs
  */
 router.get('/*', cookieParser(), function(req, res) {
-	reactCookie.plugToRequest(req, res)
-
-	let startingState = defaultState
-
-	try {
-		startingState = getStateFromToken()
-	} catch(err) {
-
-	}
-
-	const profileLanguageTag = startingState !== null &&
-		typeof startingState !== 'undefined' &&
-		typeof startingState.auth !== 'undefined' &&
-		typeof startingState.auth.userData !== 'undefined' &&
-		typeof startingState.auth.userData.language_tag ? startingState.auth.userData.language_tag : null
-
-	req.Locale = getLocale(req, profileLanguageTag);
-
-	// We are not authenticated
-	if (!startingState.auth.isLoggedIn && req.path !== '/' + req.Locale.locale + '/login') {
-		return res.redirect('/' + req.Locale.locale + '/login');
-
-	// This was a route with no language tag
-	} else if (req.Locale.source !== 'url') {
-
-		//Try to be smart... did the user intend this to include a language in URL?
-		const firstPathSegment = req.params[0].split('/')[0]
-		const pathWithoutFirstSegment = req.params[0].split('/').slice(1)
-		let newUrl = null
-
-		if (/^[a-zA-Z]{2}(?:[-_][a-zA-Z]{2})?$/.test(firstPathSegment)) {
-			newUrl = '/' + req.Locale.locale + '/' + pathWithoutFirstSegment
-		} else {
-			newUrl = '/' + req.Locale.locale + '/' + req.params[0]
-		}
-
-		return res.redirect(302, newUrl);
-	}
-
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
+
 		if (error) {
 			console.log("ERROR", error);
 			res.status(500).send(error.message);
 
 		} else if (redirectLocation) {
-
 			res.redirect(302, redirectLocation.pathname + redirectLocation.search);
 
 		} else if (renderProps) {
+
+			/**/
+			reactCookie.plugToRequest(req, res)
+			let startingState = defaultState
+			try {
+				startingState = getStateFromToken()
+			} catch(err) {
+
+			}
+
+			const profileLanguageTag = startingState !== null &&
+				typeof startingState !== 'undefined' &&
+				typeof startingState.auth !== 'undefined' &&
+				typeof startingState.auth.userData !== 'undefined' &&
+				typeof startingState.auth.userData.language_tag ? startingState.auth.userData.language_tag : null
+
+			req.Locale = getLocale(req, profileLanguageTag);
+
+			// We are not authenticated
+			if (!startingState.auth.isLoggedIn && req.path !== '/' + req.Locale.locale + '/login') {
+				return res.redirect('/' + req.Locale.locale + '/login');
+
+			// This was a route with no language tag
+			} else if (req.Locale.source !== 'url') {
+
+				//Try to be smart... did the user intend this to include a language in URL?
+				const firstPathSegment = req.params[0].split('/')[0]
+				const pathWithoutFirstSegment = req.params[0].split('/').slice(1)
+				let newUrl = null
+
+				if (/^[a-zA-Z]{2}(?:[-_][a-zA-Z]{2})?$/.test(firstPathSegment)) {
+					newUrl = '/' + req.Locale.locale + '/' + pathWithoutFirstSegment
+				} else {
+					newUrl = '/' + req.Locale.locale + '/' + req.params[0]
+				}
+
+				return res.redirect(302, newUrl);
+			}
+			/**/
 
 			try {
 				const logger = createNodeLogger()
@@ -220,11 +224,10 @@ router.get('/*', cookieParser(), function(req, res) {
 			}
 
 		} else {
-
 			res.status(404).send('Not found');
 
 		}
-	});
+	 });
 });
 
 module.exports = router;
