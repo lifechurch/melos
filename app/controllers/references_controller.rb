@@ -1,9 +1,9 @@
 class ReferencesController < ApplicationController
 
-  # before_filter :mobile_redirect,               only: [:show]
-  # before_filter :check_site_requirements,       only: [:show]
-  # before_filter :fix_invalid_reference,         only: [:show]
-  # before_filter :strip_format,                  only: [:show]
+  before_filter :mobile_redirect,               only: [:show]
+  before_filter :check_site_requirements,       only: [:show]
+  before_filter :fix_invalid_reference,         only: [:show]
+  before_filter :strip_format,                  only: [:show]
   # before_filter :setup_presenters,              only: [:show]
 
   rescue_from InvalidReferenceError, with: :ref_not_found
