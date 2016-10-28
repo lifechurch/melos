@@ -37,7 +37,7 @@ module YV
             curl.perform
             response = JSON.parse curl.body_str
 
-            if curl.response_code >= 400 && response["response"].present? && !response["response"]["data"].present?
+            if curl.response_code >= 400 && response["response"].present? && response["response"]["data"].present? && !response["response"]["data"]["errors"].present?
               response["response"]["data"] = { "errors" => [ { "key" => 'generic_error', "error" => curl.response_code.to_s } ] }
             end
 

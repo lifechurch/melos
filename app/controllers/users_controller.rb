@@ -184,7 +184,7 @@ class UsersController < ApplicationController
 
 
   def delete_account
-    @requirePassword = !current_auth.has_key?('tp_id')
+    @requirePassword = !(current_auth.has_key?('tp_id') && current_auth.tp_id != nil)
     render layout: "settings"
   end
 
