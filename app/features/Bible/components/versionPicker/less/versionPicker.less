@@ -43,6 +43,13 @@
 		.cancel {
 			display: none;
 		}
+		span {
+			display: inline-block;
+			text-align: center;
+		}
+		@media @medium-up {
+			text-align: center;
+		}
 		@media @small-only {
 			.prev {
 				display: block;
@@ -56,6 +63,10 @@
 				padding: @default-padding;
 				color: @font-grey;
 				font-size: 13px;
+			}
+			span {
+				font-size: 11px;
+				line-height: 1;
 			}
 		}
 
