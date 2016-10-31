@@ -125,6 +125,9 @@ class Bible extends Component {
 		console.log(color)
 	}
 
+	handleVerseSelect(e) {
+		console.log(e)
+	}
 
 
 	render() {
@@ -174,7 +177,16 @@ class Bible extends Component {
 			<div className="">
 				<div className="row">
 					<div className="columns large-6 medium-10 centered">
-						<Chapter chapter={bible.chapter} />
+						<Chapter
+							chapter={bible.chapter}
+							fontSize="20"
+							fontFamily="Arial"
+							onSelect={::this.handleVerseSelect}
+							textDirection={bible.version.language.text_direction}
+							showFootnotes={true}
+							showTitles={true}
+							showVerseNumbers={true}
+						/>
 					</div>
 				</div>
 				<div>

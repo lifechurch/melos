@@ -1,6 +1,3 @@
-function getVersesFrom {
-
-}
 
 /**
  * Takes an Object or Array representing a list of selected verses
@@ -9,7 +6,7 @@ function getVersesFrom {
  * @selection 	Object whose keys are USFMs to single verses i.e. JHN.1.1 or
  *							Array whose values are single verse USFMs
  */
-function getSelectionStringFromUSFMs(selection) {
+export function getSelectionString(selection) {
 	// Convert object to array if necessary
 	if (!Array.isArray(selection) && typeof selection === 'object') {
 		selection = Object.keys(selection)
@@ -82,8 +79,4 @@ function getSelectionStringFromUSFMs(selection) {
 	}, "")
 
 	return selectionString
-}
-
-export default {
-	getSelectionStringFromUSFMs
 }

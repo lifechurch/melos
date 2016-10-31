@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react'
+import { getSelectionString } from '../../../../lib/usfmUtils'
+import ChapterCopyright from './ChapterCopyright'
 
 class Chapter extends Component {
 	constructor(props) {
@@ -6,17 +8,15 @@ class Chapter extends Component {
 		this.state = { selection: {}, selectedClasses: {} }
 	}
 
-	handleClick(e) {
+	handleVerseClick(verseNode) {
 		const { onSelect } = this.props
 		let { selection, selectedClasses } = this.state
 
-		e.preventDefault()
-
-		const selectedVerse = e.target.parentNode.getAttribute('data-usfm')
-		let selectedClass = e.target.parentNode.getAttribute('class')
+		const selectedVerse = verseNode.getAttribute('data-usfm')
+		let selectedClass = verseNode.getAttribute('class')
 
 		try {
-			selectedClass = selectedClass.split(' ')[1]
+			selectedClass = `.bible-reader .${selectedClass.split(' ')[1]}`
 		} catch(e) {}
 
 		if (typeof this.state.selection[selectedVerse] === 'undefined') {
@@ -35,17 +35,44 @@ class Chapter extends Component {
 			delete selectedClasses[selectedClass]
 		}
 
-		console.log(selectedClass, selectedVerse, selection, getSelectionString(selection))
-
 		this.setState({ selection })
 
 		if (typeof onSelect == 'function') {
-			onSelect()
+			onSelect({
+				selection: Object.keys(selection),
+				human: getSelectionString(selection)
+			})
+		}
+	}
+
+	handleFootnoteClick(footnoteNode) {
+		console.log("ouch fn", footnoteNode)
+		footnoteNode.classList.toggle('show')
+	}
+
+	handleClick(e) {
+		e.preventDefault()
+
+		console.log("Original:", e.target.classList)
+
+		let node = e.target
+		while (typeof node !== 'undefined' && typeof node.classList !== 'undefined' && !node.classList.contains('verse') && !node.classList.contains('note')) {
+			node = node.parentNode
+			console.log("Parent: ", node.classList)
+		}
+
+		if (typeof node !== 'undefined' && typeof node.classList !== 'undefined') {
+			if (node.classList.contains('verse')) {
+				::this.handleVerseClick(node)
+			} else if (node.classList.contains('note')) {
+				::this.handleFootnoteClick(node)
+			}
 		}
 	}
 
 	render() {
-		let { chapter } = this.props
+		const { selectedClasses } = this.state
+		let { chapter, fontSize, fontFamily, textDirection, showFootnotes, showVerseNumbers, showTitles } = this.props
 
 		if (typeof chapter !== 'object') {
 			chapter = {}
@@ -55,7 +82,48 @@ class Chapter extends Component {
 
 		const innerContent = { __html: content }
 
-		return (<div onClick={::this.handleClick} dangerouslySetInnerHTML={innerContent} />)
+		const style = {
+			fontSize,
+			fontFamily
+		}
+
+
+		let selectedStyles = ""
+		if (Object.keys(selectedClasses).length > 0) {
+			selectedStyles = `${Object.keys(selectedClasses).join(',')} { border-bottom: dotted 1px #777; }`
+		}
+
+
+
+		let footnoteStyles = ""
+		if (showFootnotes) {
+			footnoteStyles += ".bible-reader .note::before { display: inline-block; width: 12px; height: 12px; content: ''; background-image: url(/assets/footnote.png); background-size: contain; background-repeat: no-repeat; background-size: 12px; margin: 5px; cursor: pointer; cursor: context-menu; }"
+		} else {
+			footnoteStyles = ".bible-reader .note { display: none !important }"
+		}
+
+		let verseNumberStyles = `.bible-reader .label { display: ${showVerseNumbers ? 'inherit' : 'none'} }`
+
+		const innerStyle = { __html: [selectedStyles, footnoteStyles, verseNumberStyles].join(' ') }
+
+		return (
+			<div
+				className="bible-reader"
+				dir={textDirection} >
+
+				<style dangerouslySetInnerHTML={innerStyle} />
+
+				<div
+					className="reader"
+					onClick={::this.handleClick}
+					dangerouslySetInnerHTML={innerContent}
+					style={style}
+				/>
+
+				<ChapterCopyright copyright={chapter.copyright} />
+
+			</div>
+		)
 	}
 }
 
