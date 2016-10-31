@@ -16,7 +16,7 @@ import moment from 'moment'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
-import Color from './verseAction/Color'
+import ColorList from './verseAction/ColorList'
 
 
 class Bible extends Component {
@@ -65,7 +65,6 @@ class Bible extends Component {
 		})
 
 		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: this.state.selectedChapter }))
-		dispatch(ActionCreators.momentsColors())
 	}
 
 	getVC(versionID) {
@@ -125,6 +124,11 @@ class Bible extends Component {
 		console.log(color)
 	}
 
+	getColors() {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.momentsColors())
+	}
+
 
 
 	render() {
@@ -162,11 +166,7 @@ class Bible extends Component {
 		let color = null
 		if (Array.isArray(bible.highlightColors)) {
 			color = (
-				<div>
-					<Color color={bible.highlightColors[3]} onSelect={::this.getColor} />
-					<Color color={bible.highlightColors[7]} onSelect={::this.getColor} />
-					<Color color={bible.highlightColors[13]} onSelect={::this.getColor} />
-				</div>
+				<ColorList list={bible.highlightColors} />
 			)
 		}
 
@@ -194,15 +194,12 @@ class Bible extends Component {
 							<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 						</div>
 						<div className="columns medium-3">
-							<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />
-							<LabelPill label='Holy' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={6} active={true} />
-							<LabelPill label='Peace' canDelete={true} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={1} active={false} />
 							{ languages }
 							{ versionsss }
 							{ color }
 						</div>
 						<div className="columns medium-3">
-							<Label input='Mathew' />
+							<div onClick={::this.getColors}>Get Colors</div>
 						</div>
 					</div>
 				</div>
