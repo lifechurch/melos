@@ -269,8 +269,8 @@ class Bible extends Component {
 			this.content = <div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 		}
 
-		if (bible.momentsLabels && bible.momentsLabels.byCount) {
-			this.labels = <LabelList list={bible.momentsLabels.byCount} onSelect={() => {}} />
+		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical) {
+			this.labels = <LabelList byAlphabetical={bible.momentsLabels.byAlphabetical} byCount={bible.momentsLabels.byCount} />
 		}
 
 		return (
