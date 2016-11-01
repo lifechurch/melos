@@ -106,8 +106,6 @@
 
 		position: absolute;
 		width: 314px;
-		padding-left: 10px;
-		padding-right: 10px;
 		height: 60px;
 		z-index: -100;
 		opacity: 0;
@@ -169,6 +167,7 @@
 				font-weight: bold;
 				color: @font-grey;
 				background-color: white;
+				.yv-text-ellipsis;
 
 			}
 			li:hover {
@@ -192,10 +191,12 @@
 
 input {
 	border: none;
+	.yv-text-ellipsis;
 }
-.chapterpicker-label {
+.picker-label {
 	display: inline-flex;
 	border-bottom: @thin-grey-border;
+	margin-right: 15px;
 }
 .dropdown-arrow-container {
 	width: 38px;
@@ -223,6 +224,12 @@ input {
 
 .hide-modal {
 	overflow: hidden;
+	z-index: 0 !important;
+
+	-webkit-transition:z-index 1s cubic-bezier(0.42,1,.16,.93);
+	-moz-transition:   z-index 1s cubic-bezier(0.42,1,.16,.93);
+	-ms-transition:    z-index 1s cubic-bezier(0.42,1,.16,.93);
+	transition:        z-index 1s cubic-bezier(0.42,1,.16,.93);
 
 	.chapter-picker-modal {
 		/* only transition on transform properties which are hardware accelerated = way better performances */

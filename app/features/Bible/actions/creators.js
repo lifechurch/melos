@@ -32,7 +32,7 @@ const ActionCreators = {
 			const { id, reference, format } = params
 			return Promise.all([
 				dispatch(ActionCreators.bibleVersion({ id })),
-				dispatch(ActionCreators.bibleChapter({ id, reference, format }))
+				dispatch(ActionCreators.bibleChapter({ id, reference, format: 'html' }))
 			])
 		}
 	},
