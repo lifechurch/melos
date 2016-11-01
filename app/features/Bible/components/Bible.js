@@ -17,10 +17,10 @@ import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
 import ColorList from './verseAction/ColorList'
 import Color from './verseAction/Color'
+import Chapter from './content/Chapter'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
-
 
 class Bible extends Component {
 
@@ -208,6 +208,10 @@ class Bible extends Component {
 		console.log(color)
 	}
 
+	handleVerseSelect(e) {
+		console.log(e)
+	}
+
 	getColors() {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.momentsColors())
@@ -294,7 +298,21 @@ class Bible extends Component {
 		}
 
 		return (
-			<div className="row">
+			<div className="">
+				<div className="row">
+					<div className="columns large-6 medium-10 medium-centered">
+						<Chapter
+							chapter={bible.chapter}
+							fontSize="20"
+							fontFamily="Arial"
+							onSelect={::this.handleVerseSelect}
+							textDirection={bible.version.language.text_direction}
+							showFootnotes={true}
+							showTitles={true}
+							showVerseNumbers={true}
+						/>
+					</div>
+				</div>
 				<div>
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
