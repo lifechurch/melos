@@ -26,7 +26,6 @@ class Versions extends Component {
 				let version = list[id]
 				let active = (id == initialSelection) ? 'active' : ''
 				if (focus) {
-					console.log(listSelectionIndex)
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
 					versionList.push( (<li key={id} className={`${active} ${focusClass}`} onClick={this.versionSelect.bind(this, version)} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
 				} else {

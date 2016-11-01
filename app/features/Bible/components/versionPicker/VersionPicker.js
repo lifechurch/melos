@@ -105,7 +105,7 @@ class VersionPicker extends Component {
 		}
 
 		// if the new version call is successful, let's close the modal
-		if ( chapter && (chapter.reference.usfm !== prevProps.chapter.reference.usfm) && !alert && !listErrorAlert) {
+		if ( version.id !== prevProps.version.id && !alert && !listErrorAlert) {
 			this.setState({ dropdown: false })
 		}
 
