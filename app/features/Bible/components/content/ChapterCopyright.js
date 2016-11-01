@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 
 class ChapterCopyright extends Component {
 		render() {
-			const { copyright } = this.props
+			const { copyright, versionId } = this.props
 			let copyrightElement = null
 
 			if (typeof copyright !== 'undefined') {
@@ -16,14 +16,15 @@ class ChapterCopyright extends Component {
 			return (
 				<div className="version-copyright">
 					{copyrightElement}
-					<a href="#">Learn More</a>
+					<a href={`/versions/${versionId}`}>Learn More</a>
 				</div>
 			)
 		}
 }
 
 ChapterCopyright.propTypes = {
-	copyright: React.PropTypes.object.required
+	copyright: React.PropTypes.object.required,
+	versionId: React.PropTypes.number.required
 }
 
 export default ChapterCopyright

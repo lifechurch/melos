@@ -183,9 +183,9 @@ class Bible extends Component {
 							fontFamily="Arial"
 							onSelect={::this.handleVerseSelect}
 							textDirection={bible.version.language.text_direction}
-							showFootnotes={false}
+							showFootnotes={true}
 							showTitles={true}
-							showVerseNumbers={false}
+							showVerseNumbers={true}
 						/>
 					</div>
 				</div>

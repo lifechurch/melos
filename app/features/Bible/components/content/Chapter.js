@@ -12,32 +12,46 @@ class Chapter extends Component {
 		const { onSelect } = this.props
 		let { selection, selectedClasses } = this.state
 
-		const selectedVerse = verseNode.getAttribute('data-usfm')
-		let selectedClass = verseNode.getAttribute('class')
+		node.classList
 
-		try {
-			selectedClass = `.bible-reader .${selectedClass.split(' ')[1]}`
-		} catch(e) {}
-
-		if (typeof this.state.selection[selectedVerse] === 'undefined') {
-			if (typeof selectedVerse !== 'undefined') {
-				selection[selectedVerse] = true
+		// Build CSS Selector for Verse Selection
+		if (typeof verseNode.getAttribute('class') === 'string') {
+			let selectedClassString = verseNode.getAttribute('class')
+			let newClasses = selectedClassString.split(' ')
+			let remIndex = newClasses.indexOf('verse')
+			if (remIndex > -1) {
+				newClasses.splice(remIndex, 1)
 			}
-		} else {
-			delete selection[selectedVerse]
+			newClasses.forEach((newClass) => {
+				const newClassString = `.bible-reader .${newClass}`
+				if (typeof this.state.selectedClasses[newClassString] === 'undefined') {
+					const isVerseSelector = new RegExp("^v[0-9]+$")
+					if (typeof newClassString !== 'undefined' && isVerseSelector.test(newClass)) {
+						selectedClasses[newClassString] = true
+					}
+				} else {
+					delete selectedClasses[newClassString]
+				}
+			})
 		}
 
-		if (typeof this.state.selectedClasses[selectedClass] === 'undefined') {
-			if (typeof selectedClass !== 'undefined') {
-				selectedClasses[selectedClass] = true
-			}
-		} else {
-			delete selectedClasses[selectedClass]
+		// Build Selected Verses Array of USFMs
+		if (typeof verseNode.getAttribute('data-usfm') === 'string') {
+			const selectedVerses = verseNode.getAttribute('data-usfm').split("+")
+			selectedVerses.forEach((selectedVerse) => {
+				if (typeof this.state.selection[selectedVerse] === 'undefined') {
+					const isUSFM = new RegExp("^[0-9A-Za-z]{3}\.[0-9]+\.[0-9]+$")
+					if (typeof selectedVerse !== 'undefined' && isUSFM.test(selectedVerse)) {
+						selection[selectedVerse] = true
+					}
+				} else {
+					delete selection[selectedVerse]
+				}
+			})
+			this.setState({ selection })
 		}
 
-		this.setState({ selection })
-
-		if (typeof onSelect == 'function') {
+		if (typeof onSelect === 'function') {
 			onSelect({
 				verses: Object.keys(selection),
 				human: getSelectionString(selection)
@@ -68,7 +82,7 @@ class Chapter extends Component {
 
 	render() {
 		const { selectedClasses } = this.state
-		let { chapter, fontSize, fontFamily, textDirection, showFootnotes, showVerseNumbers, showTitles } = this.props
+		let { chapter, fontSize, fontFamily, textDirection, showFootnotes, showVerseNumbers } = this.props
 
 		if (typeof chapter !== 'object') {
 			chapter = {}
@@ -115,7 +129,7 @@ class Chapter extends Component {
 					style={style}
 				/>
 
-				<ChapterCopyright copyright={chapter.copyright} />
+				<ChapterCopyright copyright={chapter.copyright} versionId={chapter.reference.version_id} />
 
 			</div>
 		)
@@ -130,7 +144,6 @@ Chapter.propTypes = {
 	fontFamily: React.PropTypes.string,
 	showFootnotes: React.PropTypes.bool,
 	showVerseNumbers: React.PropTypes.bool,
-	showTitles: React.PropTypes.bool
 }
 
 export default Chapter
