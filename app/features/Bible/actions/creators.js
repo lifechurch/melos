@@ -154,7 +154,7 @@ const ActionCreators = {
 	},
 
 	/* no params */
-	momentsLabels(auth, params) {
+	momentsLabels(auth, params = {}) {
 		return {
 			params,
 			api_call: {

@@ -18,6 +18,7 @@ import LabelPill from './verseAction/bookmark/LabelPill'
 import Color from './verseAction/Color'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
+import LabelList from './verseAction/bookmark/LabelList'
 
 
 class Bible extends Component {
@@ -65,6 +66,7 @@ class Bible extends Component {
 		this.versionPicker = null
 		this.color = null
 		this.content = null
+		this.labels = null
 	}
 
 	getVersions(languageTag) {
@@ -137,15 +139,9 @@ class Bible extends Component {
 
 	}
 
-	handleLabelKeyDown(event, keyEventName, keyEventCode) {
-		// const { books, bookMap } = this.props
-		// const {
-		// 	inputValue,
-		// 	booklistSelectionIndex,
-		// 	chapterlistSelectionIndex,
-		// 	selectedBook
-		// } = this.state
-
+	getLabels() {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.momentsLabels(true, { selectedLanguage: this.state.selectedLanguage }))
 	}
 
 	// this handles the class toggling for book and chapter clicks on mobile
@@ -273,6 +269,10 @@ class Bible extends Component {
 			this.content = <div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
 		}
 
+		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical) {
+			this.labels = <LabelList byAlphabetical={bible.momentsLabels.byAlphabetical} byCount={bible.momentsLabels.byCount} />
+		}
+
 		return (
 			<div className="row">
 				<div>
@@ -289,7 +289,8 @@ class Bible extends Component {
 							{ this.content }
 						</div>
 					</div>
-
+					<div onClick={::this.getLabels} >Get Labels Bruh</div>
+					<div>{ this.labels }</div>
 					<div className="row">
 					<Header {...this.props} />
 					<Audio audio={audio} />

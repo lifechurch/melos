@@ -8,7 +8,7 @@ class LabelPill extends Component {
 	render() {
 		const { label, count, onSelect, canDelete, onDelete, active } = this.props
 
-		let labelPill,classes = null
+		let labelPill, classes = null
 
 		if (label) {
 			if (canDelete) {

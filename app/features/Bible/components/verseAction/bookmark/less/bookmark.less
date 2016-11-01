@@ -4,6 +4,8 @@
 	display: inline-block;
 	padding-left: 10px;
 	padding-right: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 
 	.label-title {
 		color: @font-grey;
@@ -29,9 +31,88 @@
 	cursor: pointer;
 }
 .selectable:hover {
-	background-color: @background-grey;
-	cursor: pointer;
+	.yv-hover;
 	.label-title, .count {
 		color: white;
+	}
+}
+
+
+
+.labels-modal {
+	width: 550px;
+	position: absolute;
+	z-index: 10;
+	background-color: white;
+	border: @thin-grey-border;
+	.yv-drop-shadow;
+	.yv-scroll-bar;
+
+
+	.label-list:hover {
+		overflow-y: overlay;
+	}
+	.label-list {
+		padding-top: 15px;
+		padding-left: 25px;
+		padding-left: 25px;
+		overflow-y: hidden;
+		max-height: 400px;
+
+	}
+
+	.group-heading {
+		color: @font-grey;
+		font-size: 12px;
+	}
+
+	.header {
+		width: 100%;
+		background-color: @light-grey;
+		border-bottom: @thin-grey-border;
+		max-height: 50px;
+
+		.cancel, .add {
+			display: block;
+			padding: @default-padding;
+			font-size: 13px;
+		}
+		.cancel {
+			text-align: @text-direction;
+			color: @font-grey;
+		}
+		.add {
+			text-align: @opposite-direction;
+			.yv-green-link;
+		}
+		.title {
+			text-align: center;
+		}
+
+	}
+
+	.footer {
+		border-top: @thin-grey-border;
+		height: 40px;
+		display: inline-flex;
+		width: inherit;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		.filter-button {
+			height: 100%;
+			padding-left: 20px;
+			padding-right: 20px;
+			border-top: 3px solid white;
+			font-size: 12px;
+		}
+		.active-button {
+			border-top: 3px solid @green;
+		}
+		.labels-privacy {
+			font-size: 12px;
+			color: @font-grey;
+			margin-left: auto;
+		}
 	}
 }
