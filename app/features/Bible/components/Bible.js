@@ -176,16 +176,16 @@ class Bible extends Component {
 		return (
 			<div className="">
 				<div className="row">
-					<div className="columns large-6 medium-10 centered">
+					<div className="columns large-6 medium-10 medium-centered">
 						<Chapter
 							chapter={bible.chapter}
 							fontSize="20"
 							fontFamily="Arial"
 							onSelect={::this.handleVerseSelect}
 							textDirection={bible.version.language.text_direction}
-							showFootnotes={true}
+							showFootnotes={false}
 							showTitles={true}
-							showVerseNumbers={true}
+							showVerseNumbers={false}
 						/>
 					</div>
 				</div>

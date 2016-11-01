@@ -39,26 +39,22 @@ class Chapter extends Component {
 
 		if (typeof onSelect == 'function') {
 			onSelect({
-				selection: Object.keys(selection),
+				verses: Object.keys(selection),
 				human: getSelectionString(selection)
 			})
 		}
 	}
 
 	handleFootnoteClick(footnoteNode) {
-		console.log("ouch fn", footnoteNode)
 		footnoteNode.classList.toggle('show')
 	}
 
 	handleClick(e) {
 		e.preventDefault()
 
-		console.log("Original:", e.target.classList)
-
 		let node = e.target
 		while (typeof node !== 'undefined' && typeof node.classList !== 'undefined' && !node.classList.contains('verse') && !node.classList.contains('note')) {
 			node = node.parentNode
-			console.log("Parent: ", node.classList)
 		}
 
 		if (typeof node !== 'undefined' && typeof node.classList !== 'undefined') {
@@ -94,10 +90,9 @@ class Chapter extends Component {
 		}
 
 
-
 		let footnoteStyles = ""
 		if (showFootnotes) {
-			footnoteStyles += ".bible-reader .note::before { display: inline-block; width: 12px; height: 12px; content: ''; background-image: url(/assets/footnote.png); background-size: contain; background-repeat: no-repeat; background-size: 12px; margin: 5px; cursor: pointer; cursor: context-menu; }"
+			footnoteStyles = ".bible-reader .note::before { display: inline-block; width: 12px; height: 12px; content: ''; background-image: url(/assets/footnote.png); background-size: contain; background-repeat: no-repeat; background-size: 12px; margin: 5px; cursor: pointer; cursor: context-menu; }"
 		} else {
 			footnoteStyles = ".bible-reader .note { display: none !important }"
 		}
