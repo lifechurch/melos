@@ -18,17 +18,26 @@ export default function reducer(state = {}, action) {
 				// return 0 if values are equal
 				// localeCompare does lowercase and unicode compare
 				// we can also pass in language_tag for locale
-				//
 				let val = a.label.localeCompare(b.label)
 
 				return val
 			})
-
+			// if the first sorted label is not alphabetical set up the swagtag header
+			if (!byAlphabetical[0].label.charAt(0).match(/^[a-zA-Z]/)) {
+				byAlphabetical[0].group = '#'
+			} else {
+				byAlphabetical[0].group = byAlphabetical[0].label.charAt(0)
+			}
 			byAlphabetical.sort((a, b) => {
 				// build headers for alphabetic groupings
 				// compare the first character of each label
-				if ((a.label.charAt(0).localeCompare(b.label.charAt(0))) != 0) {
-					a.group = a.label.charAt(0)
+				if (action.params.selectedLanguage == 'eng') {
+					// if the label starts with a letter set up the header once per letter appearance
+ 					if (a.label.charAt(0).match(/^[a-zA-Z]/) && (a.label.charAt(0).localeCompare(b.label.charAt(0))) != 0) {
+						a.group = a.label.charAt(0).toUpperCase()
+					} else {
+						a.group = null
+					}
 				} else {
 					a.group = null
 				}

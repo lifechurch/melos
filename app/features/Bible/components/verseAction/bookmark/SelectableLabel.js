@@ -7,7 +7,7 @@ class SelectableLabel extends Component {
 		const { label, onSelect, count, index } = this.props
 
 		return (
-			<div className='selectable-label' onClick={onSelect.bind(this, index)}>
+			<div className='selectable-label' onClick={onSelect.bind(this, label)}>
 				<span className='label-title'>{ label }</span>
 				<span className='count'>{ count }</span>
 			</div>

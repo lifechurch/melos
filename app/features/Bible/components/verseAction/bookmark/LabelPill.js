@@ -6,17 +6,17 @@ import DeletableLabel from './DeletableLabel'
 class LabelPill extends Component {
 
 	render() {
-		const { label, count, onSelect, canDelete, onDelete, active, index } = this.props
+		const { label, count, onSelect, canDelete, onDelete, active } = this.props
 
 		let labelPill, classes = null
 
 		if (label) {
 			if (canDelete) {
 				classes = (active) ? 'label-pill active' : 'label-pill'
-				labelPill = <DeletableLabel label={label} onDelete={onDelete} index={index}/>
+				labelPill = <DeletableLabel label={label} onDelete={onDelete} />
 			} else {
 				classes = (active) ? 'label-pill selectable active' : 'label-pill selectable'
-				labelPill = <SelectableLabel label={label} onSelect={onSelect} count={count} index={index}/>
+				labelPill = <SelectableLabel label={label} onSelect={onSelect} count={count} />
 			}
 		}
 
@@ -43,8 +43,7 @@ LabelPill.propTypes = {
 	onSelect: React.PropTypes.func,
 	canDelete: React.PropTypes.bool,
 	onDelete: React.PropTypes.func,
-	active: React.PropTypes.bool,
-	index: React.PropTypes.number
+	active: React.PropTypes.bool
 }
 
 export default LabelPill

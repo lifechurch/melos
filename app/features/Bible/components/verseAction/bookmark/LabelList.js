@@ -21,20 +21,20 @@ class LabelList extends Component {
 
 	}
 
-	onSelect(index) {
+	onSelect(label) {
 		const { selectedLabels, selected } = this.state
 
-		if (`${index}` in selectedLabels) {
+		if (`${label}` in selectedLabels) {
 			// if the toggled label is now true
-			if (!selectedLabels[index]) {
+			if (!selectedLabels[label]) {
 				this.setState({ selected: selected + 1 })
 			} else {
 				this.setState({ selected: selected - 1 })
 			}
-			this.setState({ selectedLabels: Object.assign(selectedLabels, { [index]: !selectedLabels[index]}) })
+			this.setState({ selectedLabels: Object.assign(selectedLabels, { [label]: !selectedLabels[label]}) })
 		} else {
 			this.setState({
-				selectedLabels: Object.assign(selectedLabels, { [index]: true }),
+				selectedLabels: Object.assign(selectedLabels, { [label]: true }),
 				selected: selected + 1
 			})
 		}
@@ -52,7 +52,7 @@ class LabelList extends Component {
 				// count does not
 				if ('group' in label && label.group != null) {
 					labels.push (
-						<h4 className='group-heading'>{ label.group }</h4>
+						<div className='group-heading'>{ label.group }</div>
 					)
 				}
 				labels.push (
@@ -61,8 +61,7 @@ class LabelList extends Component {
 						count={label.count}
 						canDelete={false}
 						onSelect={this.onSelect}
-						index={index}
-						active={selectedLabels[index]}
+						active={selectedLabels[label.label]}
 					/>
 				)
 			})
@@ -75,8 +74,7 @@ class LabelList extends Component {
 						count={label.count}
 						canDelete={false}
 						onSelect={this.onSelect}
-						index={index}
-						active={selectedLabels[index]}
+						active={selectedLabels[label.label]}
 					/>
 				)
 			})

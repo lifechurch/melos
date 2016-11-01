@@ -141,7 +141,7 @@ class Bible extends Component {
 
 	getLabels() {
 		const { dispatch } = this.props
-		dispatch(ActionCreators.momentsLabels(true))
+		dispatch(ActionCreators.momentsLabels(true, { selectedLanguage: this.state.selectedLanguage }))
 	}
 
 	// this handles the class toggling for book and chapter clicks on mobile
