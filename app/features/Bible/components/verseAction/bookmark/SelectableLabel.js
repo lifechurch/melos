@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react'
 class SelectableLabel extends Component {
 
 	render() {
-		const { label, onSelect, count } = this.props
+		const { label, onSelect, count, index } = this.props
 
 		return (
 			<div className='selectable-label' onClick={onSelect.bind(this, label)}>
@@ -24,7 +24,8 @@ class SelectableLabel extends Component {
 SelectableLabel.propTypes = {
 	label: React.PropTypes.string.isRequired,
 	onSelect: React.PropTypes.func,
-	count: React.PropTypes.number
+	count: React.PropTypes.number,
+	index: React.PropTypes.number
 }
 
 export default SelectableLabel

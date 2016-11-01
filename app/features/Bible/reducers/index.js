@@ -6,6 +6,7 @@ import chapters from './chapters'
 import highlightColors from './highlightColors'
 import languages from './languages'
 import show from './show'
+import momentsLabels from './momentsLabels'
 import verseAction from './verseAction'
 import verseSelection from './verseSelection'
 import version from './version'
@@ -19,6 +20,7 @@ const bibleReaderReducer = combineReducers({
 	highlightColors,
 	languages,
 	show,
+	momentsLabels,
 	verseAction,
 	verseSelection,
 	version,

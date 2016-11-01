@@ -32,7 +32,7 @@ const ActionCreators = {
 			const { id, reference, format } = params
 			return Promise.all([
 				dispatch(ActionCreators.bibleVersion({ id })),
-				dispatch(ActionCreators.bibleChapter({ id, reference, format }))
+				dispatch(ActionCreators.bibleChapter({ id, reference, format: 'html' }))
 			])
 		}
 	},
@@ -154,7 +154,7 @@ const ActionCreators = {
 	},
 
 	/* no params */
-	momentsLabels(auth, params) {
+	momentsLabels(auth, params = {}) {
 		return {
 			params,
 			api_call: {

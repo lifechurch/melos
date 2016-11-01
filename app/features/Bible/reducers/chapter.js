@@ -7,13 +7,18 @@ export default function reducer(state = {}, action) {
 			return { loading: true }
 
 		case type('bibleChapterFailure'):
-			return { loading: false, errors: action.errors }
+			return { loading: false, errors: true, reference: { usfm: null } }
 
 		case type('bibleChapterSuccess'):
 			const chapter = Immutable.fromJS(action.response).delete('audio').toJS()
 			chapter.reference.usfm = chapter.reference.usfm[0]
-			chapter.previous.usfm = chapter.previous.usfm[0]
-			chapter.next.usfm = chapter.next.usfm[0]
+			if (chapter.previous) {
+				chapter.previous.usfm = chapter.previous.usfm[0]
+			}
+			if (chapter.next) {
+				chapter.next.usfm = chapter.next.usfm[0]
+			}
+			chapter.errors = false
 			return Immutable.fromJS(chapter).toJS()
 
 		default:
