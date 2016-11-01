@@ -13,10 +13,10 @@ import Languages from './versionPicker/Languages'
 import Versions from './versionPicker/Versions'
 import cookie from 'react-cookie';
 import moment from 'moment'
-import ChapterPicker from './chapterPicker/ChapterPicker'
 import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
 import Color from './verseAction/Color'
+import ChapterPicker from './chapterPicker/ChapterPicker'
 
 
 class Bible extends Component {
@@ -147,8 +147,9 @@ class Bible extends Component {
 			})
 		}
 
-		if (Array.isArray(bible.books.all) && bible.books.map) {
-			chapterPicker = <ChapterPicker classes={this.state.classes} bookList={bible.books.all} chapterList={bible.books.all[bible.books.map[this.state.selectedBook]].chapters} selectedBook={this.state.selectedBook} selectedChapter={this.state.selectedChapter} getChapter={::this.getChapter} getBook={::this.getBook} toggle={::this.toggleChapterPickerList} />
+		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && bible.chapter.reference) {
+			console.log('should be renderin chapter picker bruh')
+			chapterPicker = <ChapterPicker {...this.props} chapter={bible.chapter} books={bible.books.all} bookMap={bible.books.map} selectedLanguage={this.state.selectedLanguage}/>
 		}
 
 		if (bible.versions.byLang && bible.versions.byLang[this.state.selectedLanguage]) {
@@ -173,14 +174,24 @@ class Bible extends Component {
 		return (
 			<div className="row">
 				<div>
+					<div className='row'>
+						<div className="columns medium-8">
+							{ chapterPicker }
+						</div>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<div className="columns medium-8">
+							<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
+						</div>
+					</div>
+
+					<div className="row">
 					<Header {...this.props} />
 					<Audio audio={audio} />
 					<Settings settings={settings} />
 					<VerseAction verseAction={verseAction} />
-					<div className=''>
-						{ chapterPicker }
-					</div>
-					<div className="row">
 						<div className="columns medium-3">
 							<a onClick={this.getVersions.bind(this, this.state.selectedLanguage)}>Get Versions</a>
 							<input onChange={::this.filterVersions} />
@@ -191,18 +202,12 @@ class Bible extends Component {
 							</ul>
 						</div>
 						<div className="columns medium-3">
-							<div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
-						</div>
-						<div className="columns medium-3">
 							<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />
 							<LabelPill label='Holy' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={6} active={true} />
 							<LabelPill label='Peace' canDelete={true} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={1} active={false} />
 							{ languages }
 							{ versionsss }
 							{ color }
-						</div>
-						<div className="columns medium-3">
-							<Label input='Mathew' />
 						</div>
 					</div>
 				</div>
