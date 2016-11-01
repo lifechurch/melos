@@ -15,6 +15,7 @@ import cookie from 'react-cookie';
 import moment from 'moment'
 import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
+import ColorList from './verseAction/ColorList'
 import Color from './verseAction/Color'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
@@ -83,6 +84,18 @@ class Bible extends Component {
 			Filter.add("VersionStore", versions.versions)
 			console.timeEnd("Add V Items")
 		})
+
+		dispatch(ActionCreators.bibleConfiguration()).then((config) => {
+			console.time("Build Index")
+			Filter.build("LangStore", [ "name", "local_name" ])
+			console.timeEnd("Build Index")
+
+			console.time("Add Items")
+			Filter.add("LangStore", config.default_versions)
+			console.timeEnd("Add Items")
+		})
+
+		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: this.state.selectedChapter }))
 	}
 
 	getVC(versionID) {
@@ -195,6 +208,11 @@ class Bible extends Component {
 		console.log(color)
 	}
 
+	getColors() {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.momentsColors())
+	}
+
 	componentDidUpdate(prevProps, prevState) {
 		const { bible } = this.props
 		const { chapter } = this.state
@@ -254,6 +272,8 @@ class Bible extends Component {
 		}
 
 		if (Array.isArray(bible.highlightColors)) {
+			color = (
+				<ColorList list={bible.highlightColors} />
 			this.color = (
 				<div>
 					<Color color={bible.highlightColors[3]} onSelect={::this.getColor} />
@@ -298,6 +318,12 @@ class Bible extends Component {
 					<VerseAction verseAction={verseAction} />
 
 						<div className="columns medium-3">
+							{ languages }
+							{ versionsss }
+							{ color }
+						</div>
+						<div className="columns medium-3">
+							<div onClick={::this.getColors}>Get Colors</div>
 							<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />
 							<LabelPill label='Holy' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={6} active={true} />
 							<LabelPill label='Peace' canDelete={true} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={1} active={false} />
