@@ -17,22 +17,25 @@
 		}
 	}
 }
-.chap-picker {
+.chapter-picker-modal {
+
+	z-index: 10;
+	background-color: white;
 
 	display: inline-flex;
 	max-height: 490px;
 	border-radius: @default-radius @default-radius 0px 0px;
 	border: @thin-grey-border;
 
-	.yv-drop-shadow;
 	.yv-scroll-bar;
 
 	.header {
 		width: inherit;
 		background-color: @light-grey;
 		border-bottom: @thin-grey-border;
-		height: 30px;
-		text-align: center;
+		max-height: 30px;
+
+
 
 		.prev {
 			display: none;
@@ -61,7 +64,8 @@
 
 	// books *******************************************
 	.book-container {
-		min-width: 240px;
+		min-width: 247px;
+
 		@media @small-only {
 			width: 320px;
 		}
@@ -70,6 +74,7 @@
 			overflow-y: overlay;
 		}
 		.book-list {
+
 			max-height: 460px;
 			overflow-y: hidden;
 			font-size: @list-font-size;
@@ -89,16 +94,50 @@
 			.active {
 				.yv-active;
 			}
+			.focus {
+				.yv-hover;
+			}
 		}
 	}
 
 
 	// chapters *****************************************
+	.picker-error {
+
+		position: absolute;
+		width: 314px;
+		height: 60px;
+		z-index: -100;
+		opacity: 0;
+
+		display: flex;
+		.yv-flex-center-all;
+
+		.picker-error;
+
+	}
+	.picker-alert {
+		.picker-error {
+			opacity: 1;
+		}
+		.chapter-list {
+			.dropdown-transform;
+
+		  -webkit-transform: translate(0, 60px);
+		     -moz-transform: translate(0, 60px);
+		      -ms-transform: translate(0, 60px);
+		          transform: translate(0, 60px);
+		}
+	}
+
 	.chapter-container {
 
 		width: 320px;
 		border-left: @thin-grey-border;
 		margin-right: -5px;
+
+		overflow: hidden;
+
 		.header {
 			width: 314px;
 		}
@@ -107,6 +146,7 @@
 			overflow-y: overlay;
 		}
 		.chapter-list {
+
 			max-height: 460px;
 			overflow: hidden;
 			font-size: @list-font-size;
@@ -126,6 +166,8 @@
 				.yv-flex-center-all;
 				font-weight: bold;
 				color: @font-grey;
+				background-color: white;
+				.yv-text-ellipsis;
 
 			}
 			li:hover {
@@ -134,6 +176,9 @@
 
 			.active {
 				.yv-active;
+			}
+			.focus {
+				.yv-hover;
 			}
 		}
 	}
@@ -146,13 +191,15 @@
 
 input {
 	border: none;
+	.yv-text-ellipsis;
 }
-.chapterpicker-label {
+.picker-label {
 	display: inline-flex;
 	border-bottom: @thin-grey-border;
+	margin-right: 15px;
 }
 .dropdown-arrow-container {
-	width: 37px;
+	width: 38px;
 	height: 37px;
 	.dropdown-arrow {
 		height: 100%;
@@ -165,4 +212,61 @@ input {
 }
 .open {
 	background-color: @light-grey;
+	border: @thin-grey-border;
+	border-bottom: none;
+	z-index: 20;
+}
+
+
+
+
+
+
+.hide-modal {
+	overflow: hidden;
+	z-index: 0 !important;
+
+	-webkit-transition:z-index 1s cubic-bezier(0.42,1,.16,.93);
+	-moz-transition:   z-index 1s cubic-bezier(0.42,1,.16,.93);
+	-ms-transition:    z-index 1s cubic-bezier(0.42,1,.16,.93);
+	transition:        z-index 1s cubic-bezier(0.42,1,.16,.93);
+
+	.chapter-picker-modal {
+		/* only transition on transform properties which are hardware accelerated = way better performances */
+		.dropdown-transform;
+
+	  -webkit-transform: translate(0, -106%) !important;
+	     -moz-transform: translate(0, -106%) !important;
+	      -ms-transform: translate(0, -106%) !important;
+	          transform: translate(0, -106%) !important;
+	}
+}
+
+.modal {
+	position: absolute;
+	z-index: 10;
+	// just under the size of the label
+	top: 36px;
+	overflow: hidden;
+	// because of the overflow hidden, we need to allow padding and compensate
+	// for the drop shadows
+	padding: 0px 15px 25px 15px;
+	left: -5px;
+
+	-webkit-transition:padding .8s cubic-bezier(0,1,0,1);
+	-moz-transition:   padding .8s cubic-bezier(0,1,0,1);
+	-ms-transition:    padding .8s cubic-bezier(0,1,0,1);
+	transition:        padding .8s cubic-bezier(0,1,0,1);
+
+	.chapter-picker-modal {
+		.yv-drop-shadow;
+
+		/* only transition on transform properties which are hardware accelerated = way better performances */
+		.dropdown-transform;
+
+	  -webkit-transform: translate(0, 0%);
+	     -moz-transform: translate(0, 0%);
+	      -ms-transform: translate(0, 0%);
+	          transform: translate(0, 0%);
+	}
 }

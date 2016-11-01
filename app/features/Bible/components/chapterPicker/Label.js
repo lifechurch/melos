@@ -3,50 +3,48 @@ import DropDownArrow from '../../../../components/DropDownArrow'
 
 class Label extends Component {
 
-	constructor(props) {
-		super(props)
-		const { input } = props
-		this.state = { value: input || '', dropdown: false }
-	}
-
 	handleChange(changeEvent) {
-		this.setState( { value: changeEvent.target.value } )
 		const { onChange } = this.props
 		if (typeof onChange == 'function') {
 			onChange(changeEvent.target.value)
 		}
 	}
 
-	handleKeyUp(keyEvent) {
-		console.log(keyEvent.key)
-		if (typeof onKeyUp == 'function') {
-			onKeyUp(keyEvent.key)
+	handleKeyDown(keyEvent) {
+		const { onKeyDown } = this.props
+		if (typeof onKeyDown == 'function') {
+			onKeyDown(keyEvent, keyEvent.key, keyEvent.keyCode)
 		}
 	}
 
 	handleClick() {
-		this.setState( { dropdown: !this.state.dropdown } )
+		const { onClick } = this.props
 		if (typeof onClick == 'function') {
 			onClick()
 		}
 	}
 
+	handleBlur() {
+		const { onBlur } = this.props
+		if (typeof onBlur == 'function') {
+			onBlur()
+		}
+	}
+
 	render() {
-		const { onClick, onKeyUp, onChange } = this.props
-		const { value, dropdown } = this.state
+		const { input, disabled, dropdown, filtering } = this.props
 
 		let classes, dir = null
-		if (dropdown) {
+		if (dropdown && !filtering) {
 			classes = `open dropdown-arrow-container`
 			dir = "up"
 		} else {
 			classes = `dropdown-arrow-container`
 			dir = "down"
 		}
-
 		return (
-			<div className='chapterpicker-label'>
-				<input value={value} onChange={this.handleChange.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} />
+			<div className='picker-label'>
+				<input value={input} disabled={disabled} onChange={this.handleChange.bind(this)} onKeyDown={this.handleKeyDown.bind(this)} onBlur={this.handleBlur.bind(this)} />
 				<div className={classes} onClick={this.handleClick.bind(this)} >
 					<DropDownArrow dir={dir} height={6} width={12} />
 				</div>
@@ -58,16 +56,20 @@ class Label extends Component {
 
 /**
  * 		@input					  		string input value for the input field
- * 		@onKeyUp	   					function to call when pressing a key on the input
+ * 		@disabled							input is disabled
+ * 		@onKeyDown	   					function to call when pressing a key on the input
  * 														used for doing stuff like arrow key auto-completes etc.
  * 		@onClick			  			function to call when clicking dropdown arrow
  * 		@onChange							function to call when input field value changes
+ * 		@onBlur								function to call when clicking out of the input field
  */
 Label.propTypes = {
 	input: React.PropTypes.string,
-	onKeyUp: React.PropTypes.func,
+	disabled: React.PropTypes.bool,
+	onKeyDown: React.PropTypes.func,
 	onClick: React.PropTypes.func,
-	onChange: React.PropTypes.func
+	onChange: React.PropTypes.func,
+	onBlur: React.PropTypes.func
 }
 
 export default Label
