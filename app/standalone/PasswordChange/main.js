@@ -22,7 +22,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 const store = configureStore(initialState, null, logger)
 
 render(
-	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
+	<IntlProvider locale={window.__LOCALE__.locale2 == "mn" ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
 			<PasswordChange />
 		</Provider>

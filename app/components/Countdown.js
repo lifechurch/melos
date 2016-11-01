@@ -10,7 +10,9 @@ class Countdown extends Component {
 	}
 
 	componentDidMount() {
-  		this.interval = setInterval(::this.tick, 1000);
+			if (typeof window !== 'undefined') {
+  			this.interval = setInterval(::this.tick, 1000);
+  		}
 	}
 
 	tick() {

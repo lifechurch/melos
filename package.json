@@ -6,7 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@youversion/js-api": "^0.0.67",
+    "@youversion/js-api": "^0.0.70",
     "@youversion/token-storage": "^0.0.36",
     "async": "^2.0.0-rc.3",
     "babel-plugin-react-intl": "^2.1.2",
