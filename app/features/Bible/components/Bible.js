@@ -21,6 +21,7 @@ import Chapter from './content/Chapter'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
+import LocalStore from '../../../lib/localStore'
 
 class Bible extends Component {
 
@@ -68,6 +69,21 @@ class Bible extends Component {
 		this.color = null
 		this.content = null
 		this.labels = null
+
+		LocalStore.setIn('mySettings.bob.john.fred', 'superman')
+		console.log(LocalStore.getIn('mySettings.bob.john.fred'))
+
+		LocalStore.setIn('mySettings.bob.john.fred', 'aquaman')
+		console.log(LocalStore.getIn('mySettings.bob.john.fred'))
+
+		LocalStore.deleteIn('mySettings.bob.john.fred')
+		console.log(LocalStore.getIn('mySettings.bob.john.fred'))
+
+		LocalStore.set('most-recent-version', 111)
+		console.log(LocalStore.get('most-recent-version'))
+
+		LocalStore.delete('most-recent-version')
+		console.log(LocalStore.get('most-recent-version'))
 	}
 
 	getVersions(languageTag) {
