@@ -276,8 +276,8 @@ class Bible extends Component {
 		}
 
 		if (Array.isArray(bible.highlightColors)) {
-			color = (
-				<ColorList list={bible.highlightColors} />
+			// color = (
+			// 	<ColorList list={bible.highlightColors} />
 			this.color = (
 				<div>
 					<Color color={bible.highlightColors[3]} onSelect={::this.getColor} />
@@ -289,8 +289,19 @@ class Bible extends Component {
 
 		if (this.state.chapterError) {
 			this.content = <h2>Oh nooooooooo</h2>
-		} else {
-			this.content = <div dangerouslySetInnerHTML={{ __html: bible.chapter.content }} />
+		} else if (bible.chapter && bible.version) {
+			this.content = (
+				<Chapter
+					chapter={bible.chapter}
+					fontSize="20"
+					fontFamily="Arial"
+					onSelect={::this.handleVerseSelect}
+					textDirection={bible.version.language.text_direction}
+					showFootnotes={true}
+					showTitles={true}
+					showVerseNumbers={true}
+				/>
+			)
 		}
 
 		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical) {
@@ -300,33 +311,19 @@ class Bible extends Component {
 		return (
 			<div className="">
 				<div className="row">
-					<div className="columns large-6 medium-10 medium-centered">
-						<Chapter
-							chapter={bible.chapter}
-							fontSize="20"
-							fontFamily="Arial"
-							onSelect={::this.handleVerseSelect}
-							textDirection={bible.version.language.text_direction}
-							showFootnotes={true}
-							showTitles={true}
-							showVerseNumbers={true}
-						/>
-					</div>
-				</div>
-				<div>
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
 							{ this.chapterPicker }
 							{ this.versionPicker }
 						</div>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<div className="columns medium-8">
-							{ this.content }
-						</div>
 					</div>
+				</div>
+				<div className="row">
+					<div className="columns large-6 medium-10 medium-centered">
+						{ this.content }
+					</div>
+				</div>
+				<div>
 					<div onClick={::this.getLabels} >Get Labels Bruh</div>
 					<div>{ this.labels }</div>
 					<div className="row">
@@ -336,9 +333,6 @@ class Bible extends Component {
 					<VerseAction verseAction={verseAction} />
 
 						<div className="columns medium-3">
-							{ languages }
-							{ versionsss }
-							{ color }
 						</div>
 						<div className="columns medium-3">
 							<div onClick={::this.getColors}>Get Colors</div>
@@ -352,10 +346,6 @@ class Bible extends Component {
 			</div>
 		)
 	}
-							// <input onChange={::this.filterLang} />
-							// <ul>
-							// 	{/*resultItems*/}
-							// </ul>
 }
 
 Bible.propTypes = {
