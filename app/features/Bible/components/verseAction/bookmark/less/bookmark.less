@@ -64,6 +64,7 @@
 	.group-heading {
 		color: @font-grey;
 		font-size: 12px;
+		margin-bottom: 5px;
 	}
 
 	.header {
@@ -114,5 +115,26 @@
 			color: @font-grey;
 			margin-left: auto;
 		}
+	}
+}
+
+input {
+	border: none;
+	.yv-text-ellipsis;
+}
+.label-input {
+	display: inline-flex;
+	border-bottom: @thin-grey-border;
+	margin-right: 15px;
+}
+.plus-button-container:hover {
+	cursor: pointer;
+}
+.plus-button-container {
+	display: flex;
+	.yv-flex-center-all;
+	.plus-button {
+		border-radius: 38px;
+		border: 1px solid @color-muted;
 	}
 }

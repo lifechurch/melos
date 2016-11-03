@@ -5,54 +5,25 @@ import LabelPill from './LabelPill'
 
 class LabelList extends Component {
 
-	constructor(props) {
-		super(props)
-		this.state = {
-			filterBy: 'alphabetical',
-			selectedLabels: {},
-			selected: 0
-		}
-
-		this.addLabel = this.addLabel.bind(this)
-		this.onSelect = this.onSelect.bind(this)
-	}
-
-	addLabel() {
-
-	}
-
-	onSelect(label) {
-		const { selectedLabels, selected } = this.state
-
-		if (`${label}` in selectedLabels) {
-			// if the toggled label is now true
-			if (!selectedLabels[label]) {
-				this.setState({ selected: selected + 1 })
-			} else {
-				this.setState({ selected: selected - 1 })
-			}
-			this.setState({ selectedLabels: Object.assign(selectedLabels, { [label]: !selectedLabels[label]}) })
-		} else {
-			this.setState({
-				selectedLabels: Object.assign(selectedLabels, { [label]: true }),
-				selected: selected + 1
-			})
-		}
-	}
-
 	render() {
-		const { byCount, byAlphabetical } = this.props
-		const { filterBy, selectedLabels, selected } = this.state
+		const {
+			list,
+			showHeading,
+			sortBy,
+			onSelect,
+			selectedLabels
+		} = this.props
 
 		let labels = []
 
-		if (byAlphabetical && filterBy == 'alphabetical') {
-			byAlphabetical.forEach((label, index) => {
+		if (list && sortBy == 'alphabetical') {
+			list.forEach((label, index) => {
 				// alphabetical sorting contains a group label
 				// count does not
-				if ('group' in label && label.group != null) {
+				// group headings are set to null if the label's first character has been seen before
+				if (showHeading && 'groupHeading' in label && label.groupHeading != null) {
 					labels.push (
-						<div className='group-heading'>{ label.group }</div>
+						<div className='group-heading'>{ label.groupHeading }</div>
 					)
 				}
 				labels.push (
@@ -60,20 +31,20 @@ class LabelList extends Component {
 						label={label.label}
 						count={label.count}
 						canDelete={false}
-						onSelect={this.onSelect}
+						onSelect={onSelect.bind(label.label)}
 						active={selectedLabels[label.label]}
 					/>
 				)
 			})
 
-		} else if (byCount && filterBy == 'count') {
-			byCount.forEach((label, index) => {
+		} else if (list && sortBy == 'count') {
+			list.forEach((label, index) => {
 				labels.push (
 					<LabelPill
 						label={label.label}
 						count={label.count}
 						canDelete={false}
-						onSelect={this.onSelect}
+						onSelect={onSelect.bind(label.label)}
 						active={selectedLabels[label.label]}
 					/>
 				)
@@ -81,27 +52,20 @@ class LabelList extends Component {
 		}
 
 		return (
-			<div className='labels-modal'>
-				<div className='header vertical-center'>
-					<a className='cancel columns medium-4' onClick={() => {}}><FormattedMessage id="Reader.header.cancel" /></a>
-					<p className='title columns medium-4'><FormattedMessage id="Reader.labels" /></p>
-					<a className='add columns medium-4' onClick={this.addLabel}><FormattedMessage id="Reader.add" />{selected > 0 ? `(${selected})` : null}</a>
-				</div>
-				<div className='label-list'>
-					{ labels }
-				</div>
-				<div className='footer'>
-					<div className={`filter-button vertical-center ${filterBy == 'alphabetical' ? 'active-button' : ''}`} onClick={() => this.setState({ filterBy: 'alphabetical' })}><FormattedMessage id='Reader.alphabetical' /></div>
-					<div className={`filter-button vertical-center ${filterBy == 'count' ? 'active-button' : ''}`} onClick={() => this.setState({ filterBy: 'count' })}><FormattedMessage id="Reader.count" /></div>
-					<div className='labels-privacy vertical-center'><FormattedMessage id='Reader.labels.private' /></div>
-				</div>
+			<div className='label-list'>
+				{ labels }
 			</div>
 		)
 	}
 }
 
 LabelList.propTypes = {
-
+	list: React.PropTypes.array,
+	addLabels: React.PropTypes.func,
+	showHeading: React.PropTypes.bool,
+	sortBy: React.PropTypes.oneOf(['alphabetical', 'count']),
+	onSelect: React.PropTypes.func,
+	selectedLabels: React.PropTypes.object
 }
 
 export default LabelList
