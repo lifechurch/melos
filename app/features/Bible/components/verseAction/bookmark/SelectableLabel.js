@@ -3,11 +3,24 @@ import React, { Component, PropTypes } from 'react'
 
 class SelectableLabel extends Component {
 
+	constructor(props) {
+		super(props)
+
+		this.onSelect = ::this.onSelect
+	}
+
+	onSelect() {
+		const { onSelect, label } = this.props
+		if (typeof onSelect == 'function') {
+			onSelect(label)
+		}
+	}
+
 	render() {
-		const { label, onSelect, count, index } = this.props
+		const { label, onSelect, count } = this.props
 
 		return (
-			<div className='selectable-label' onClick={onSelect.bind(this, label)}>
+			<div className='selectable-label' onClick={this.onSelect}>
 				<span className='label-title'>{ label }</span>
 				<span className='count'>{ count }</span>
 			</div>

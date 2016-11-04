@@ -19,8 +19,7 @@ import ColorList from './verseAction/ColorList'
 import Chapter from './content/Chapter'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
-import LabelList from './verseAction/bookmark/LabelList'
-import LabelInput from './verseAction/bookmark/LabelInput'
+import LabelSelector from './verseAction/bookmark/LabelSelector'
 
 class Bible extends Component {
 
@@ -299,8 +298,7 @@ class Bible extends Component {
 		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical) {
 			this.labels = (
 				<div>
-					<LabelInput input='hello' disabled={false} dropdown={true} />
-					<LabelList byAlphabetical={bible.momentsLabels.byAlphabetical} byCount={bible.momentsLabels.byCount} />
+					<LabelSelector byAlphabetical={bible.momentsLabels.byAlphabetical} byCount={bible.momentsLabels.byCount} />
 				</div>
 			)
 		}

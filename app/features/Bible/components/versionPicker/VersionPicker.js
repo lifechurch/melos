@@ -348,7 +348,7 @@ class VersionPicker extends Component {
 
 
 	render() {
-		const { version, intl } = this.props
+		const { version, intl, languageMap } = this.props
 		const {
 			languages,
 			versions,
@@ -395,7 +395,7 @@ class VersionPicker extends Component {
 						versionlistSelectionIndex={versionlistSelectionIndex}
 						onMouseOver={this.handleListHover}
 						alert={listErrorAlert}
-						versionsLanguageName='English'
+						versionsLanguageName={languages[languageMap[selectedLanguage]].name}
 						versionFiltering={versionFiltering}
 						intl={intl}
 						cancel={() => this.setState({ dropdown: false })}

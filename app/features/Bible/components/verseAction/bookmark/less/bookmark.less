@@ -1,3 +1,4 @@
+
 .label-pill {
 	border-radius: 20px;
 	border: @thin-grey-border;
@@ -121,6 +122,7 @@
 input {
 	border: none;
 	.yv-text-ellipsis;
+	min-width: 100px;
 }
 .label-input {
 	display: inline-flex;
@@ -137,4 +139,28 @@ input {
 		border-radius: 38px;
 		border: 1px solid @color-muted;
 	}
+}
+
+.labels {
+
+
+	.modal {
+		height: 550px;
+		padding: 0px 15px 25px 15px;
+		position: relative;
+		overflow: hidden;
+		z-index: 10;
+		.labels-modal {
+			.dropdown-transform-show;
+		}
+	}
+
+	.hide-modal {
+		overflow: hidden;
+
+		.labels-modal {
+			.dropdown-transform-hide;
+		}
+	}
+
 }

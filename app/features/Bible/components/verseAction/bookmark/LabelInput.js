@@ -1,8 +1,18 @@
 import React, { Component, PropTypes } from 'react'
 import PlusButton from '../../../../../components/PlusButton'
 import RevManifest from '../../../../../../app/lib/revManifest'
+import LabelList from './LabelList'
 
 class LabelInput extends Component {
+
+	constructor(props) {
+		super(props)
+
+		this.handleChange = ::this.handleChange
+		this.handleClick = ::this.handleClick
+		this.handleBlur = ::this.handleBlur
+		this.handleKeyDown = ::this.handleKeyDown
+	}
 
 	handleChange(changeEvent) {
 		const { onChange } = this.props
@@ -33,15 +43,28 @@ class LabelInput extends Component {
 	}
 
 	render() {
-		const { input, disabled } = this.props
+		const { input, disabled, addedLabels, onDelete } = this.props
+
+		let labels = []
+		if (Object.keys(addedLabels).length > 0) {
+			Object.keys(addedLabels).forEach((key) => {
+				// if the label hasn't been deleted, render it next to the input
+				if (addedLabels[key]) {
+					labels.push({ label: key })
+				}
+			})
+		}
 
 		return (
 			<div className='label-input'>
 				<div className='label-icon-container'>
 					<img className='label-icon' src={`/images/${RevManifest('label.png')}`} />
 				</div>
-				<input value={input} disabled={disabled} onChange={this.handleChange.bind(this)} onKeyDown={this.handleKeyDown.bind(this)} onBlur={this.handleBlur.bind(this)} />
-				<div className='plus-button-container' onClick={this.handleClick.bind(this)} >
+				<div className='added-labels'>
+					<LabelList list={labels} canDelete={true} onDelete={onDelete} />
+				</div>
+				<input value={input} disabled={disabled} onChange={this.handleChange} onKeyDown={this.handleKeyDown} onBlur={this.handleBlur} />
+				<div className='plus-button-container' onClick={this.handleClick} >
 					<PlusButton />
 				</div>
 			</div>

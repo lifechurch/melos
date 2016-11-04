@@ -1,24 +1,32 @@
 import React, { Component, PropTypes } from 'react'
 import LabelsModal from './LabelsModal'
 import LabelInput from './LabelInput'
+import LabelList from './LabelList'
+import Filter from '../../../../../../app/lib/Filter'
 
 class LabelSelector extends Component {
 
-	constuctor(props) {
+	constructor(props) {
 		super(props)
 
 		this.state = {
 			inputValue: null,
 			dropdown: false,
 			filtering: false,
-			disabled: false,
+			inputDisabled: false,
 			selectedLabels: {},
+			addedLabels: {},
 			selected: 0
 		}
 
-		this.handleClick = this.handleClick.bind(this)
-		this.handleChange = this.handleChange.bind(this)
-		this.handleSelect =
+		this.handleClick = ::this.handleClick
+		this.handleChange = ::this.handleChange
+		this.onSelect = ::this.onSelect
+		this.handleKeyDown = ::this.handleKeyDown
+		this.cancelDropDown = ::this.cancelDropDown
+		this.onDelete = ::this.onDelete
+		this.addLabels = ::this.addLabels
+
 	}
 
 	componentDidMount() {
@@ -28,8 +36,22 @@ class LabelSelector extends Component {
 		Filter.add("LabelStore", byCount)
 	}
 
-	handleClick() {
+	componentDidUpdate(prevProps, prevState) {
+		const { filtering, dropdown } = this.state
 
+		// handle state change on dropdown open and close
+		if (dropdown !== prevState.dropdown) {
+			// if we're not filtering, disable the input
+			if (dropdown && !filtering) {
+				this.setState({ inputDisabled: true })
+			} else {
+				this.setState({ inputDisabled: false })
+			}
+
+		}
+	}
+
+	handleClick() {
 		this.setState({
 			dropdown: true,
 
@@ -37,7 +59,7 @@ class LabelSelector extends Component {
 	}
 
 	cancelDropDown() {
-
+		this.setState({ dropdown: false })
 	}
 
 	handleChange(inputValue) {
@@ -47,7 +69,7 @@ class LabelSelector extends Component {
 
 		if (results.length > 0) {
 			this.setState({
-				labels: results
+				labels: results,
 				dropdown: false,
 				filtering: true
 			})
@@ -76,6 +98,7 @@ class LabelSelector extends Component {
 
 	}
 
+	// onSelect is used for the labels inside the modal list
 	onSelect(label) {
 		const { selectedLabels, selected } = this.state
 
@@ -86,7 +109,7 @@ class LabelSelector extends Component {
 			} else {
 				this.setState({ selected: selected - 1 })
 			}
-			this.setState({ selectedLabels: Object.assign(selectedLabels, { [label]: !selectedLabels[label]}) })
+			this.setState({ selectedLabels: Object.assign(selectedLabels, { [label]: !selectedLabels[label] }) })
 		} else {
 			this.setState({
 				selectedLabels: Object.assign(selectedLabels, { [label]: true }),
@@ -95,22 +118,84 @@ class LabelSelector extends Component {
 		}
 	}
 
+	/**
+	 * add labels to bookmark, either from filtering enter or click, or
+	 * add button on modal
+	 *
+	 * @param      {string}  label   	label to add to the bookmark
+	 * 																if no label is passed, then we're adding
+	 * 																all selected labels
+	 */
+	addLabels(label) {
+		const { addedLabels, selectedLabels } = this.state
+		// if we don't pass a label, then we're just adding all selected labels with
+		// modal add button, then we just merge selected to added
+		if (typeof label != 'string') {
+			this.setState({ addedLabels: Object.assign(addedLabels, selectedLabels) })
+		// else we're passing a label to add (from filtering enter or click)
+		} else {
+			this.setState({ addedLabels: Object.assign(addedLabels, { [label]: true }) })
+		}
+	}
+
+	// delete a label that has already been added
+	onDelete(label) {
+		const { addedLabels } = this.state
+
+		this.setState({ addedLabels: Object.assign(addedLabels, { [label]: false }) })
+	}
+
 
 	render() {
-		const { inputValue, disabled, dropdown, filtering } = this.state
+		const { byAlphabetical, byCount } = this.props
+		const {
+			inputValue,
+			inputDisabled,
+			dropdown,
+			filtering,
+			labels,
+			selectedLabels,
+			selected,
+			addedLabels
+		} = this.state
 
 		let filteredLabels = null
+		let filterClass = 'hide-filter'
 		if (filtering) {
-			filteredLabels = <LabelList />
+			filterClass = 'show-filter'
+			filteredLabels = <LabelList list={labels} onSelect={this.addLabels} selectedLabels={selectedLabels} />
 		}
 
+		let hide = dropdown ? '' : 'hide-modal'
+
+		console.log(selectedLabels)
+		console.log(addedLabels)
+
 		return (
-			<div>
-				<LabelInput input={inputValue} disabled={disabled} onClick={this.handleClick} />
-				<div className='filtered-labels'>
-					{  }
+			<div className='labels'>
+				<LabelInput
+					input={inputValue}
+					disabled={inputDisabled}
+					addedLabels={addedLabels}
+					onDelete={this.onDelete}
+					onClick={this.handleClick}
+					onChange={this.handleChange}
+					onKeyDown={this.handleKeyDown}
+				/>
+				<div className={`filtered-labels ${filterClass}`}>
+					{ filteredLabels }
 				</div>
-				<LabelsModal byAlphabetical={bible.momentsLabels.byAlphabetical} byCount={bible.momentsLabels.byCount} onSelect={this.onSelect} />
+				<div className={`modal ${hide}`}>
+					<LabelsModal
+						byAlphabetical={byAlphabetical}
+						byCount={byCount}
+						addLabels={this.addLabels}
+						onSelect={this.onSelect}
+						selectedLabels={selectedLabels}
+						selected={selected}
+						cancelDropDown={this.cancelDropDown}
+					/>
+				</div>
 			</div>
 		)
 	}

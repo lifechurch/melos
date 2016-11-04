@@ -404,7 +404,7 @@ class ChapterPicker extends Component {
 			} else {
 				dat.setState({
 					dropdown: false,
-					inputValue: this.inputValue
+					inputValue: dat.state.inputValue
 				})
 
 				let dis = dat
@@ -413,7 +413,7 @@ class ChapterPicker extends Component {
 					// doesn't look weird
 					dis.setState({
 						books: books,
-						chapters: this.chapters,
+						chapters: dis.state.chapters,
 						listErrorAlert: false
 					})
 				}, 700)

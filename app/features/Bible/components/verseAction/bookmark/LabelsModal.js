@@ -11,29 +11,27 @@ class LabelsModal extends Component {
 			filterBy: 'alphabetical'
 		}
 
-		this.addLabel = this.addLabel.bind(this)
-		this.onSelect = this.onSelect.bind(this)
 	}
-
-	addLabel() {
-		const { addLabels } = this.props
-		const { selectedLabels } = this.state
-
-		addLabels(selectedLabels)
-	}
-
 
 
 	render() {
-		const { byCount, byAlphabetical, cancelDropDown } = this.props
-		const { filterBy, selectedLabels, selected } = this.state
+		const {
+			byCount,
+			byAlphabetical,
+			addLabels,
+			selectedLabels,
+			selected,
+			cancelDropDown,
+			onSelect
+		} = this.props
+		const { filterBy  } = this.state
 
 		let labels = null
 
 		if (byAlphabetical && filterBy == 'alphabetical') {
-			labels = <LabelList list={byAlphabetical} sortBy={'alphabetical'} showHeading={true} onSelect={this.onSelect} selectedLabels={selectedLabels} />
+			labels = <LabelList list={byAlphabetical} showHeading={true} onSelect={onSelect} selectedLabels={selectedLabels} />
 		} else if (byCount && filterBy == 'count') {
-			labels = <LabelList list={byCount} sortBy={'count'} onSelect={this.onSelect} selectedLabels={selectedLabels} />
+			labels = <LabelList list={byCount} onSelect={onSelect} selectedLabels={selectedLabels} />
 		}
 
 		return (
@@ -41,7 +39,7 @@ class LabelsModal extends Component {
 				<div className='header vertical-center'>
 					<a className='cancel columns medium-4' onClick={cancelDropDown}><FormattedMessage id="Reader.header.cancel" /></a>
 					<p className='title columns medium-4'><FormattedMessage id="Reader.labels" /></p>
-					<a className='add columns medium-4' onClick={this.addLabel}><FormattedMessage id="Reader.add" />{selected > 0 ? `(${selected})` : null}</a>
+					<a className='add columns medium-4' onClick={addLabels}><FormattedMessage id="Reader.add" />{selected > 0 ? ` (${selected})` : null}</a>
 				</div>
 				{ labels }
 				<div className='footer'>

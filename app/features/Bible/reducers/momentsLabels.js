@@ -31,13 +31,9 @@ export default function reducer(state = {}, action) {
 			byAlphabetical.sort((a, b) => {
 				// build headers for alphabetic groupings
 				// compare the first character of each label
-				if (action.params.selectedLanguage == 'eng') {
-					// if the label starts with a letter set up the header once per letter appearance
- 					if (a.label.charAt(0).match(/^[a-zA-Z]/) && (a.label.charAt(0).localeCompare(b.label.charAt(0))) != 0) {
-						a.groupHeading = a.label.charAt(0).toUpperCase()
-					} else {
-						a.groupHeading = null
-					}
+				// if the label starts with a letter set up the header once per letter appearance
+				if (a.label.charAt(0).match(/^[a-zA-Z]/) && (a.label.charAt(0).localeCompare(b.label.charAt(0))) != 0) {
+					a.groupHeading = a.label.charAt(0).toUpperCase()
 				} else {
 					a.groupHeading = null
 				}

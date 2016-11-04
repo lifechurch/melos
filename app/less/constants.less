@@ -121,6 +121,24 @@
 	transition:        transform .7s cubic-bezier(0.42,1,.16,.93);
 }
 
+.dropdown-transform-show {
+	.dropdown-transform;
+
+  -webkit-transform: translate(0, 0%);
+     -moz-transform: translate(0, 0%);
+      -ms-transform: translate(0, 0%);
+          transform: translate(0, 0%);
+}
+
+.dropdown-transform-hide {
+	.dropdown-transform;
+
+  -webkit-transform: translate(0, -106%) !important;
+     -moz-transform: translate(0, -106%) !important;
+      -ms-transform: translate(0, -106%) !important;
+          transform: translate(0, -106%) !important;
+}
+
 //  **************************************************************************
 @default-radius: 5px;
 @default-padding: 5px;

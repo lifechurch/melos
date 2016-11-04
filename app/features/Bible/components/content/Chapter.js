@@ -12,8 +12,6 @@ class Chapter extends Component {
 		const { onSelect } = this.props
 		let { selection, selectedClasses } = this.state
 
-		node.classList
-
 		// Build CSS Selector for Verse Selection
 		if (typeof verseNode.getAttribute('class') === 'string') {
 			let selectedClassString = verseNode.getAttribute('class')

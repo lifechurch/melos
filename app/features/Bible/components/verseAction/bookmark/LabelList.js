@@ -9,14 +9,15 @@ class LabelList extends Component {
 		const {
 			list,
 			showHeading,
-			sortBy,
 			onSelect,
-			selectedLabels
+			onDelete,
+			selectedLabels,
+			canDelete
 		} = this.props
 
 		let labels = []
 
-		if (list && sortBy == 'alphabetical') {
+		if (list) {
 			list.forEach((label, index) => {
 				// alphabetical sorting contains a group label
 				// count does not
@@ -30,22 +31,10 @@ class LabelList extends Component {
 					<LabelPill
 						label={label.label}
 						count={label.count}
-						canDelete={false}
-						onSelect={onSelect.bind(label.label)}
-						active={selectedLabels[label.label]}
-					/>
-				)
-			})
-
-		} else if (list && sortBy == 'count') {
-			list.forEach((label, index) => {
-				labels.push (
-					<LabelPill
-						label={label.label}
-						count={label.count}
-						canDelete={false}
-						onSelect={onSelect.bind(label.label)}
-						active={selectedLabels[label.label]}
+						canDelete={canDelete || false}
+						onDelete={onDelete ? onDelete.bind(label.label) : null}
+						onSelect={onSelect ? onSelect.bind(label.label) : null}
+						active={selectedLabels ? selectedLabels[label.label] : false}
 					/>
 				)
 			})
@@ -59,11 +48,14 @@ class LabelList extends Component {
 	}
 }
 
+
+/**
+ * 		@list					  		array of list objects formatted:
+ * 												{ label: 'labelname', [optionally] count: 3, [optionally] groupHeading: 'a' }
+ */
 LabelList.propTypes = {
 	list: React.PropTypes.array,
-	addLabels: React.PropTypes.func,
 	showHeading: React.PropTypes.bool,
-	sortBy: React.PropTypes.oneOf(['alphabetical', 'count']),
 	onSelect: React.PropTypes.func,
 	selectedLabels: React.PropTypes.object
 }
