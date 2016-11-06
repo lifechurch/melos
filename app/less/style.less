@@ -1797,6 +1797,9 @@ ul.language-selector li {
 	opacity: 0;
 	right: 0px;
 	justify-content: flex-end;
+	transition: opacity .5s ease-in-out;
+	-moz-transition: opacity .5s ease-in-out;
+	-webkit-transition: opacity .5s ease-in-out;
 }
 .slick-arrow-left-container {
 	display: flex;
@@ -1805,6 +1808,9 @@ ul.language-selector li {
 	opacity: 0;
 	left: 0px;
 	justify-content: flex-start;
+	transition: opacity .5s ease-in-out;
+	-moz-transition: opacity .5s ease-in-out;
+	-webkit-transition: opacity .5s ease-in-out;
 }
 .slick-arrow-right-container:hover, .slick-arrow-left-container:hover {
 	cursor: pointer;
@@ -1818,14 +1824,14 @@ ul.language-selector li {
 
 		@media only screen and (max-width: 699px) {
 
-			.slick-slider {
-				margin-bottom: 15px;
-			}
 			.slide, img {
-				width: 280px;
+				width: 235px;
 				height: 165px;
 				margin-right: 15px;
 				border-radius: 8px;
+			}
+			.slide-title {
+				width: 235px;
 			}
 			.slick-track {
 				width: 30000px;
@@ -1843,6 +1849,9 @@ ul.language-selector li {
 				border-radius: 8px;
 				transform: scale(0.85);
 				transition: transform 0.5s ease-in-out;
+			}
+			.slide-title {
+				width: 600px;
 			}
 			.slick-active {
 				.slide, img {
@@ -1886,7 +1895,26 @@ ul.language-selector li {
 		align-items: center;
 	}
 
-
+	.slick-active {
+		.slide-title {
+			opacity: 1;
+		}
+	}
+	.slide-title {
+		transition: opacity .5s ease-in-out;
+		-moz-transition: opacity .5s ease-in-out;
+		-webkit-transition: opacity .5s ease-in-out;
+		opacity: 0;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-align: left;
+		font-size: 13px;
+		margin-top: 7px;
+		margin-bottom: 10px;
+		padding-left: 2px;
+		color: #515151;
+	}
 
 
 	/* rules for gradient title in a banner carousel is a little different */
@@ -1964,7 +1992,6 @@ ul.language-selector li {
 .carousel-title {
 	width: 100%;
 
-	margin-top: 15px;
 	margin-bottom: 20px;
 
 	.slick-arrow-right-container {
@@ -1989,6 +2016,7 @@ ul.language-selector li {
 		}
 	}
 	@media only screen and (min-width: 700px) {
+		margin-top: 35px;
 		.slide {
 			margin-left: 20px;
 			margin-right: -15px;

@@ -29,7 +29,7 @@ class CarouselStandard extends Component {
       prevArrow: <CarouselArrow dir='left' fill='gray' width={19} height={19}/>,
       nextArrow: <CarouselArrow dir='right' fill='gray' width={19} height={19}/>,
       responsive: [ {
-      	breakpoint: 524, settings: { arrows: false, slidesToShow: 1 }
+      	breakpoint: 524, settings: { arrows: false, slidesToShow: 1, slidesToScroll: 1 }
       } ]
 		}
 

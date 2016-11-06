@@ -36,7 +36,7 @@ class CarouselBanner extends Component {
 				return (
 					<div className='' key={`${carouselContent.id}-${index}`} style={slideStyle}>
 						<Link to={slideLink}>
-							<CarouselSlideImage>
+							<CarouselSlideImage title={slide.title}>
 								<Image width={720} height={405} thumbnail={false} imageId={slide.image_id} type={slide.type} config={imageConfig} />
 							</CarouselSlideImage>
 						</Link>
@@ -54,7 +54,7 @@ class CarouselBanner extends Component {
 				return (
 					<div className='' key={`${carouselContent.id}-${index}`} style={slideStyle}>
 						<Link to={slideLink}>
-							<CarouselSlideImage>
+							<CarouselSlideImage title={slide.title}>
 								<Image width={720} height={405} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
 							</CarouselSlideImage>
 						</Link>
