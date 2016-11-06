@@ -21,7 +21,7 @@ class CarouselBanner extends Component {
 			prevArrow: <CarouselArrow dir='left' width='30' height='30' backColor='black'/>,
 			nextArrow: <CarouselArrow dir='right' width='30' height='30' backColor='black'/>,
       responsive: [ {
-      	breakpoint: 524, settings: { arrows: false }
+      	breakpoint: 524, settings: { arrows: false, slidesToShow: 1, slidesToScroll: 1 }
       } ]
     };
 
