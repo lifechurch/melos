@@ -10,10 +10,10 @@ class TriggerButton extends Component {
 	handleClick() {
 		const { onClick } = this.props
 		const { isOpen } = this.state
-		this.setState({ isOpen: !isOpen })
 		if (typeof onClick === 'function') {
-			onClick()
+			onClick({ isOpen: !isOpen })
 		}
+		this.setState({ isOpen: !isOpen })
 	}
 
 	render() {
