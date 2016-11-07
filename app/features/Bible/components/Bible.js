@@ -21,6 +21,7 @@ import Chapter from './content/Chapter'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
+import ButtonBar from '../../../components/ButtonBar'
 
 class Bible extends Component {
 
@@ -235,6 +236,11 @@ class Bible extends Component {
 		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions } = this.state
 
+		const buttons = [
+			{ label: 'Susie', value: 's' },
+			{ label: 'Johnny', value: 'm' },
+			{ label: 'C3PO Human Cyborg Relations', value: 'l' }
+		]
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
 			this.chapterPicker = (
@@ -310,6 +316,7 @@ class Bible extends Component {
 
 		return (
 			<div className="">
+				<ButtonBar items={buttons} />
 				<div className="row">
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
