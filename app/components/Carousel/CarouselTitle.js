@@ -17,7 +17,7 @@ class CarouselTitle extends Component {
       prevArrow: <CarouselArrow dir='left' width={20} height={20} fill='gray' backColor='whitesmoke'/>,
       nextArrow: <CarouselArrow dir='right' width={20} height={20} fill='gray' backColor='whitesmoke'/>,
       responsive: [ {
-      	breakpoint: 524, settings: { arrows: false }
+      	breakpoint: 524, settings: { arrows: false, slidesToScroll: 2 }
       } ]
     };
 
