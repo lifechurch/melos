@@ -24,6 +24,14 @@ const constants = {
 	momentsColorsSuccess: "MOMENTS_COLORS_SUCCESS",
 	momentsColorsFailure: "MOMENTS_COLORS_FAILURE",
 
+	usersViewSettingsRequest: "USERS_VIEW_SETTINGS_REQUEST",
+	usersViewSettingsSuccess: "USERS_VIEW_SETTINGS_SUCCESS",
+	usersViewSettingsFailure: "USERS_VIEW_SETTINGS_FAILURE",
+
+	usersUpdateSettingsRequest: "USERS_UPDATE_SETTINGS_REQUEST",
+	usersUpdateSettingsSuccess: "USERS_UPDATE_SETTINGS_SUCCESS",
+	usersUpdateSettingsFailure: "USERS_UPDATE_SETTINGS_FAILURE",
+
 	momentsCreateRequest: "MOMENTS_CREATE_REQUEST",
 	momentsCreateSuccess: "MOMENTS_CREATE_SUCCESS",
 	momentsCreateFailure: "MOMENTS_CREATE_FAILURE",

@@ -22,6 +22,7 @@ import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
 import LocalStore from '../../../lib/localStore'
+import RecentVersions from '../lib/RecentVersions'
 
 class Bible extends Component {
 
@@ -130,8 +131,9 @@ class Bible extends Component {
 		this.setState({ selectedChapter: chapterusfm })
 		this.chapterVersionCall(this.state.selectedVersion, chapterusfm)
 		this.toggleChapterPickerList()
+
 		// then write cookie for selected chapter
-		cookie.save('last_read', chapterusfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+		LocalStore.set('last_read', chapterusfm)
 	}
 
 	getVersion(versionid) {
@@ -139,8 +141,11 @@ class Bible extends Component {
 		this.chapterVersionCall(versionid, this.state.selectedChapter)
 		this.setState({ selectedVersion: versionid })
 		this.toggleVersionPickerList()
+
+		this.recentVersions.add(versionid)
+
 		// then write cookie for selected version
-		cookie.save('version', versionid, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+		LocalStore.set('version', versionid)
 	}
 
 	chapterVersionCall(versionid, reference) {
@@ -148,7 +153,9 @@ class Bible extends Component {
 		dispatch(ActionCreators.bibleChapter({ id: versionid, reference: reference}))
 		if (versionid !== this.state.selectedVersion) {
 			this.setState({ selectedVersion: versionid })
-			dispatch(ActionCreators.bibleVersion({ id: versionid }))
+			dispatch(ActionCreators.bibleVersion({ id: versionid })).then((version) => {
+				this.recentVersions.addVersion(version)
+			})
 		}
 	}
 
@@ -247,10 +254,23 @@ class Bible extends Component {
 
 	}
 
+	componentDidMount() {
+		const { dispatch, bible, auth } = this.props
+
+		this.recentVersions = new RecentVersions()
+
+		this.recentVersions.onUpdate((settings) => {
+			dispatch(ActionCreators.usersUpdateSettings(auth.isLoggedIn, settings))
+		})
+
+		this.recentVersions.syncVersions(bible.settings)
+
+		console.log("Recent Versions:", this.recentVersions.get())
+	}
+
 	render() {
 		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions } = this.state
-
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
 			this.chapterPicker = (
@@ -270,8 +290,6 @@ class Bible extends Component {
 				/>
 			)
 		}
-
-
 
 		if (Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
 			this.versionPicker = (
@@ -305,7 +323,7 @@ class Bible extends Component {
 
 		if (this.state.chapterError) {
 			this.content = <h2>Oh nooooooooo</h2>
-		} else if (bible.chapter && bible.version) {
+		} else if (bible.chapter && bible.version && bible.version.language && bible.chapter.content) {
 			this.content = (
 				<Chapter
 					chapter={bible.chapter}

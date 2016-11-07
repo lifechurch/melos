@@ -11,9 +11,14 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			reference = reference.toUpperCase()
 // const isReference = new RegExp("^\/bible\/([0-9]{1}[a-z]{2}|[a-z]{3})\.[0-9]+\.[0-9]+")
       const isChapter = new RegExp("^\/bible(\/[0-9]+\/([0-9]{1}[a-z]{2}|[a-z]{3})\.[0-9]+)?")
-			const auth = (sessionData.email && sessionData.password) ? { username: sessionData.email, password: sessionData.password } : false
-
 			if (isChapter.test(params.url)) {
+				let auth = false
+				if (sessionData.email && sessionData.password) {
+					auth = { username: sessionData.email, password: sessionData.password }
+				} else if (sessionData.tp_token) {
+					auth = { tp_token: sessionData.tp_token }
+				}
+
 				store.dispatch(ActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference }, auth)).then(() => {
 					resolve()
 				})

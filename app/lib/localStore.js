@@ -49,7 +49,8 @@ export default {
 	},
 
 	get(key) {
-		return cookie.load(key)
+		const value = cookie.load(key)
+		return value === "" ? null : value
 	},
 
 	getIn(key) {
