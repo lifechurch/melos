@@ -297,7 +297,6 @@ class Bible extends Component {
 			{ label: 'Facebook', value: 'm1' },
 			{ label: 'San Fran', value: 'l1' },
 			{ label: 'Proxima Nova', value: 'z1' },
-			{ label: (<Color color={'a3b2c1'} onSelect={::this.getColor} />), value: 's2' },
 			{ label: 'Guatemala', value: 'm2' },
 			{ label: 'Costa Rica', value: 'l2' },
 			{ label: 'Neverland', value: 'z2' }

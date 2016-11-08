@@ -33,6 +33,7 @@ class LabelList extends Component {
 				let labelString = label.label ? label.label : label
 				labels.push (
 					<LabelPill
+						key={labelString}
 						label={labelString}
 						count={label.count}
 						canDelete={canDelete || false}
