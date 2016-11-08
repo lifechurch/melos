@@ -69,6 +69,8 @@ class Bible extends Component {
 		this.color = null
 		this.content = null
 		this.labels = null
+
+		this.handleButtonBarClick = ::this.handleButtonBarClick
 	}
 
 	getVersions(languageTag) {
@@ -232,14 +234,27 @@ class Bible extends Component {
 
 	}
 
+	handleButtonBarClick(item) {
+		console.log("BBC", item)
+	}
+
 	render() {
 		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions } = this.state
 
 		const buttons = [
-			{ label: 'Susie', value: 's' },
-			{ label: 'Johnny', value: 'm' },
-			{ label: 'C3PO Human Cyborg Relations', value: 'l' }
+			{ label: 'Arial', value: 's' },
+			{ label: 'Tisa Pro', value: 'm' },
+			{ label: 'Avenir', value: 'l' },
+			{ label: 'Courier New', value: 'z' },
+			{ label: (<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />), value: 's1' },
+			{ label: 'Facebook', value: 'm1' },
+			{ label: 'San Fran', value: 'l1' },
+			{ label: 'Proxima Nova', value: 'z1' },
+			{ label: (<Color color={'a3b2c1'} onSelect={::this.getColor} />), value: 's2' },
+			{ label: 'Guatemala', value: 'm2' },
+			{ label: 'Costa Rica', value: 'l2' },
+			{ label: 'Neverland', value: 'z2' }
 		]
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
@@ -316,7 +331,10 @@ class Bible extends Component {
 
 		return (
 			<div className="">
-				<ButtonBar items={buttons} />
+				<ButtonBar items={buttons} cols={1} onClick={this.handleButtonBarClick} /><br/>
+				<ButtonBar items={buttons} cols={2} onClick={this.handleButtonBarClick} /><br/>
+				<ButtonBar items={buttons} cols={3} onClick={this.handleButtonBarClick} /><br/>
+				<ButtonBar items={buttons} cols={4} onClick={this.handleButtonBarClick} />
 				<div className="row">
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
