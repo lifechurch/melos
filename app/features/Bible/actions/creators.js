@@ -8,17 +8,22 @@ const ActionCreators = {
    * @reference: USFM
    * @lang: locale
 	 */
-	readerLoad(params) {
-		console.log(params)
+	readerLoad(params, auth) {
 		return dispatch => {
 			const { version, reference, language_tag } = params
-			return Promise.all([
+			let promises = [
 				dispatch(ActionCreators.bibleVersions({ language_tag: language_tag, type: 'all' })),
 				dispatch(ActionCreators.bibleConfiguration()),
 				dispatch(ActionCreators.bibleVersion({ id: version })),
-				dispatch(ActionCreators.bibleChapter({ id: version, reference: reference, format: 'html', language_tag: language_tag })),
-				dispatch(ActionCreators.momentsColors())
-			]).then(() => {})
+				dispatch(ActionCreators.bibleChapter({ id: version, reference: reference, format: 'html', language_tag: language_tag }))
+			]
+
+			if (auth) {
+				promises.push(dispatch(ActionCreators.momentsColors(auth)))
+				promises.push(dispatch(ActionCreators.usersViewSettings(auth)))
+			}
+
+			return Promise.all(promises)
 		}
 	},
 
@@ -125,6 +130,37 @@ const ActionCreators = {
 			}
 		}
 	},
+
+	usersViewSettings(auth, params = {}) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'users',
+				method: 'view_settings',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('usersViewSettingsRequest'), type('usersViewSettingsSuccess'), type('usersViewSettingsFailure') ]
+			}
+		}
+	},
+
+	usersUpdateSettings(auth, params = {}) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'users',
+				method: 'update_settings',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'post',
+				types: [ type('usersUpdateSettingsRequest'), type('usersUpdateSettingsSuccess'), type('usersUpdateSettingsFailure') ]
+			}
+		}
+	},
+
 
 	/**
 	 * See http://developers.youversion.com/api/docs/3.1/sections/moments/create.html

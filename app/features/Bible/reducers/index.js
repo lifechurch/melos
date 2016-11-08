@@ -11,6 +11,7 @@ import verseAction from './verseAction'
 import verseSelection from './verseSelection'
 import version from './version'
 import versions from './versions'
+import settings from './settings'
 
 const bibleReaderReducer = combineReducers({
 	audio,
@@ -19,6 +20,7 @@ const bibleReaderReducer = combineReducers({
 	chapters,
 	highlightColors,
 	languages,
+	settings,
 	show,
 	momentsLabels,
 	verseAction,

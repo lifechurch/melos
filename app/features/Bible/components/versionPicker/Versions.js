@@ -25,11 +25,14 @@ class Versions extends Component {
 			Object.keys(list).forEach((id, index) =>  {
 				let version = list[id]
 				let active = (id == initialSelection) ? 'active' : ''
+				let name = version.local_title || version.title
+				let abbr = version.local_abbreviation || version.abbreviation
+				abbr = abbr.toLocaleUpperCase()
 				if (focus) {
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
-					versionList.push( (<li key={id} className={`${active} ${focusClass}`} onClick={this.versionSelect.bind(this, version)} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
+					versionList.push( (<li key={id} className={`${active} ${focusClass}`} onClick={this.versionSelect.bind(this, version)} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</li>) )
 				} else {
-					versionList.push( (<li key={id} className={`${active}`} onClick={this.versionSelect.bind(this, version)} >{ `${version.abbreviation.toUpperCase()} ${version.title}` }</li>) )
+					versionList.push( (<li key={id} className={`${active}`} onClick={this.versionSelect.bind(this, version)} >{ `${abbr} ${name}` }</li>) )
 				}
 			})
 			/* the header would either be the language title or recently used */
