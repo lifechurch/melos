@@ -1,4 +1,17 @@
-
+.label-enter {
+  opacity: 0.01;
+}
+.label-enter.label-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.label-leave {
+  opacity: 1;
+}
+.label-leave.label-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
 .label-pill {
 	border-radius: 20px;
 	border: @thin-grey-border;
@@ -81,11 +94,10 @@
 		}
 		.cancel {
 			text-align: @text-direction;
-			color: @font-grey;
+			.yv-gray-link;
 		}
 		.add {
 			text-align: @opposite-direction;
-			.yv-green-link;
 		}
 		.title {
 			text-align: center;
@@ -126,8 +138,10 @@ input {
 }
 .label-input {
 	display: inline-flex;
-	border-bottom: @thin-grey-border;
 	margin-right: 15px;
+}
+.inputactive {
+	border-bottom: @thin-grey-border;
 }
 .plus-button-container:hover {
 	cursor: pointer;
@@ -140,14 +154,19 @@ input {
 		border: 1px solid @color-muted;
 	}
 }
+.label-icon-container {
+	display: flex;
+	.yv-flex-center-all;
+}
 
 .labels {
-
 
 	.modal {
 		height: 550px;
 		padding: 0px 15px 25px 15px;
 		position: relative;
+		margin-top: -1px;
+		left: -15px;
 		overflow: hidden;
 		z-index: 10;
 		.labels-modal {
@@ -161,6 +180,10 @@ input {
 		.labels-modal {
 			.dropdown-transform-hide;
 		}
+	}
+
+	.filtered-labels {
+		margin-top: 15px;
 	}
 
 }

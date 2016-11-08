@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import ActionCreators from '../../../actions/creators'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import LabelPill from './LabelPill'
 
 class LabelList extends Component {
@@ -12,6 +13,7 @@ class LabelList extends Component {
 			onSelect,
 			onDelete,
 			selectedLabels,
+			addedLabels,
 			canDelete
 		} = this.props
 
@@ -27,14 +29,16 @@ class LabelList extends Component {
 						<div className='group-heading'>{ label.groupHeading }</div>
 					)
 				}
+				// if our array isn't full of objects
+				let labelString = label.label ? label.label : label
 				labels.push (
 					<LabelPill
-						label={label.label}
+						label={labelString}
 						count={label.count}
 						canDelete={canDelete || false}
-						onDelete={onDelete ? onDelete.bind(label.label) : null}
-						onSelect={onSelect ? onSelect.bind(label.label) : null}
-						active={selectedLabels ? selectedLabels[label.label] : false}
+						onDelete={onDelete ? onDelete.bind(labelString) : null}
+						onSelect={onSelect ? onSelect.bind(labelString) : null}
+						active={(selectedLabels ? `${labelString}` in selectedLabels : false) || (addedLabels ? `${labelString}` in addedLabels : false)}
 					/>
 				)
 			})
@@ -42,7 +46,14 @@ class LabelList extends Component {
 
 		return (
 			<div className='label-list'>
-				{ labels }
+        <ReactCSSTransitionGroup
+          transitionName="label"
+          transitionAppear={true}
+      		transitionAppearTimeout={100}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
+					{ labels }
+        </ReactCSSTransitionGroup>
 			</div>
 		)
 	}

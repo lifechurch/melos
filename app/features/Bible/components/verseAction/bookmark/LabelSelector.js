@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react'
+import { injectIntl } from 'react-intl'
 import LabelsModal from './LabelsModal'
 import LabelInput from './LabelInput'
 import LabelList from './LabelList'
 import Filter from '../../../../../../app/lib/Filter'
+import arrayToObject from '../../../../../../app/lib/arrayToObject'
+import Immutable from 'immutable'
 
 class LabelSelector extends Component {
 
@@ -16,6 +19,7 @@ class LabelSelector extends Component {
 			inputDisabled: false,
 			selectedLabels: {},
 			addedLabels: {},
+			filteredLabels: null,
 			selected: 0
 		}
 
@@ -37,18 +41,49 @@ class LabelSelector extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		const { filtering, dropdown } = this.state
+		const { filtering, dropdown, addedLabels, filteredLabels } = this.state
 
 		// handle state change on dropdown open and close
 		if (dropdown !== prevState.dropdown) {
-			// if we're not filtering, disable the input
-			if (dropdown && !filtering) {
-				this.setState({ inputDisabled: true })
+			if (dropdown) {
+				this.setState({
+					inputDisabled: true,
+					filteredLabels: null,
+					inputValue: null,
+					selected: 0,
+					filtering: false
+				})
 			} else {
 				this.setState({ inputDisabled: false })
 			}
-
 		}
+
+		// anytime we add labels, let's make sure we remove
+		// the label from the filtered labels
+		if (addedLabels !== prevState.addedLabels) {
+			this.setState({
+				filteredLabels: this.cleanFilteredLabels(filteredLabels),
+				selectedLabels: addedLabels,
+			})
+		}
+	}
+
+	// remove all labels that have already been added to the bookmark
+	// from the filtered list
+	cleanFilteredLabels(filteredLabels) {
+		const { addedLabels } = this.state
+		// convert the filtered labels to an object for accessing label
+		let filtered = arrayToObject(filteredLabels, 'label')
+
+		if (Object.keys(addedLabels).length > 0) {
+			Object.keys(addedLabels).forEach((key) => {
+				if (addedLabels[key] && `${key}` in filtered) {
+					delete filtered[key]
+				}
+			})
+		}
+		// convert back to array for LabelLists
+		return Object.keys(filtered).map(key => filtered[key])
 	}
 
 	handleClick() {
@@ -67,9 +102,14 @@ class LabelSelector extends Component {
 		let results = Filter.filter("LabelStore", inputValue.trim())
 		this.setState({ inputValue: inputValue })
 
-		if (results.length > 0) {
+		if (inputValue == '') {
 			this.setState({
-				labels: results,
+				filteredLabels: null,
+				filtering: false
+			})
+		} else if (results.length > 0) {
+			this.setState({
+				filteredLabels: this.cleanFilteredLabels(results),
 				dropdown: false,
 				filtering: true
 			})
@@ -86,34 +126,31 @@ class LabelSelector extends Component {
 	handleKeyDown(event, keyEventName, keyEventCode) {
 		const {
 			inputValue,
-			labels
+			filteredLabels
 		} = this.state
-
 
 		if (keyEventName == "Enter") {
 			event.preventDefault()
-
+			this.addLabels(inputValue)
 		}
-
 
 	}
 
 	// onSelect is used for the labels inside the modal list
 	onSelect(label) {
-		const { selectedLabels, selected } = this.state
+		const { selectedLabels, addedLabels, selected } = this.state
 
+		// unselecting
 		if (`${label}` in selectedLabels) {
-			// if the toggled label is now true
-			if (!selectedLabels[label]) {
-				this.setState({ selected: selected + 1 })
-			} else {
-				this.setState({ selected: selected - 1 })
-			}
-			this.setState({ selectedLabels: Object.assign(selectedLabels, { [label]: !selectedLabels[label] }) })
+			this.setState({
+				selectedLabels: Immutable.fromJS(selectedLabels).delete(label).toJS(),
+				selected: (selected > 0 && !(`${label}` in addedLabels)) ? selected - 1 : selected
+			})
+		// selecting
 		} else {
 			this.setState({
-				selectedLabels: Object.assign(selectedLabels, { [label]: true }),
-				selected: selected + 1
+				selectedLabels: Immutable.fromJS(selectedLabels).merge({ [label]: true }).toJS(),
+				selected: !(`${label}` in addedLabels) ? selected + 1 : selected
 			})
 		}
 	}
@@ -131,60 +168,66 @@ class LabelSelector extends Component {
 		// if we don't pass a label, then we're just adding all selected labels with
 		// modal add button, then we just merge selected to added
 		if (typeof label != 'string') {
-			this.setState({ addedLabels: Object.assign(addedLabels, selectedLabels) })
+			this.setState({
+				addedLabels: Immutable.fromJS(addedLabels).merge(selectedLabels).toJS(),
+				dropdown: false
+			})
 		// else we're passing a label to add (from filtering enter or click)
 		} else {
-			this.setState({ addedLabels: Object.assign(addedLabels, { [label]: true }) })
+			this.setState({ addedLabels: Immutable.fromJS(addedLabels).merge({ [label]: true }).toJS() })
 		}
 	}
 
+
 	// delete a label that has already been added
 	onDelete(label) {
-		const { addedLabels } = this.state
+		const { addedLabels, filteredLabels } = this.state
 
-		this.setState({ addedLabels: Object.assign(addedLabels, { [label]: false }) })
+		this.setState({
+			addedLabels: Immutable.fromJS(addedLabels).delete(label).toJS()
+		})
 	}
 
 
 	render() {
-		const { byAlphabetical, byCount } = this.props
+		const { byAlphabetical, byCount, intl } = this.props
 		const {
 			inputValue,
 			inputDisabled,
 			dropdown,
 			filtering,
-			labels,
+			filteredLabels,
 			selectedLabels,
 			selected,
 			addedLabels
 		} = this.state
 
-		let filteredLabels = null
-		let filterClass = 'hide-filter'
+		let filteredlabels = null
 		if (filtering) {
-			filterClass = 'show-filter'
-			filteredLabels = <LabelList list={labels} onSelect={this.addLabels} selectedLabels={selectedLabels} />
+			filteredlabels = (
+				<div className={`filtered-labels`}>
+					<LabelList list={filteredLabels} onSelect={this.addLabels} selectedLabels={selectedLabels} />
+				</div>
+			)
 		}
 
 		let hide = dropdown ? '' : 'hide-modal'
 
-		console.log(selectedLabels)
-		console.log(addedLabels)
-
 		return (
 			<div className='labels'>
+				<div className='added-labels'>
+					<LabelList list={Object.keys(addedLabels)} canDelete={true} onDelete={this.onDelete} />
+				</div>
 				<LabelInput
 					input={inputValue}
 					disabled={inputDisabled}
-					addedLabels={addedLabels}
 					onDelete={this.onDelete}
 					onClick={this.handleClick}
 					onChange={this.handleChange}
 					onKeyDown={this.handleKeyDown}
+					intl={intl}
 				/>
-				<div className={`filtered-labels ${filterClass}`}>
-					{ filteredLabels }
-				</div>
+				{ filteredlabels }
 				<div className={`modal ${hide}`}>
 					<LabelsModal
 						byAlphabetical={byAlphabetical}
@@ -192,6 +235,7 @@ class LabelSelector extends Component {
 						addLabels={this.addLabels}
 						onSelect={this.onSelect}
 						selectedLabels={selectedLabels}
+						addedLabels={addedLabels}
 						selected={selected}
 						cancelDropDown={this.cancelDropDown}
 					/>
@@ -202,7 +246,8 @@ class LabelSelector extends Component {
 }
 
 LabelSelector.propTypes = {
-
+	byAlphabetical: React.PropTypes.array,
+	byCount: React.PropTypes.array,
 }
 
-export default LabelSelector
+export default injectIntl(LabelSelector)

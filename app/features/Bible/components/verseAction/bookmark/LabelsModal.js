@@ -10,9 +10,7 @@ class LabelsModal extends Component {
 		this.state = {
 			filterBy: 'alphabetical'
 		}
-
 	}
-
 
 	render() {
 		const {
@@ -20,6 +18,7 @@ class LabelsModal extends Component {
 			byAlphabetical,
 			addLabels,
 			selectedLabels,
+			addedLabels,
 			selected,
 			cancelDropDown,
 			onSelect
@@ -29,9 +28,9 @@ class LabelsModal extends Component {
 		let labels = null
 
 		if (byAlphabetical && filterBy == 'alphabetical') {
-			labels = <LabelList list={byAlphabetical} showHeading={true} onSelect={onSelect} selectedLabels={selectedLabels} />
+			labels = <LabelList list={byAlphabetical} showHeading={true} onSelect={onSelect} selectedLabels={selectedLabels} addedLabels={addedLabels} />
 		} else if (byCount && filterBy == 'count') {
-			labels = <LabelList list={byCount} onSelect={onSelect} selectedLabels={selectedLabels} />
+			labels = <LabelList list={byCount} onSelect={onSelect} selectedLabels={selectedLabels} addedLabels={addedLabels} />
 		}
 
 		return (
@@ -39,7 +38,7 @@ class LabelsModal extends Component {
 				<div className='header vertical-center'>
 					<a className='cancel columns medium-4' onClick={cancelDropDown}><FormattedMessage id="Reader.header.cancel" /></a>
 					<p className='title columns medium-4'><FormattedMessage id="Reader.labels" /></p>
-					<a className='add columns medium-4' onClick={addLabels}><FormattedMessage id="Reader.add" />{selected > 0 ? ` (${selected})` : null}</a>
+					<a className={`add columns medium-4 ${selected > 0 ? 'yv-green-link' : 'yv-gray-link'}`} onClick={addLabels}><FormattedMessage id="Reader.add" />{selected > 0 ? ` (${selected})` : null}</a>
 				</div>
 				{ labels }
 				<div className='footer'>

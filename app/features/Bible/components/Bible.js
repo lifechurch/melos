@@ -298,7 +298,10 @@ class Bible extends Component {
 		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical) {
 			this.labels = (
 				<div>
-					<LabelSelector byAlphabetical={bible.momentsLabels.byAlphabetical} byCount={bible.momentsLabels.byCount} />
+					<LabelSelector
+						byAlphabetical={bible.momentsLabels.byAlphabetical}
+						byCount={bible.momentsLabels.byCount}
+					/>
 				</div>
 			)
 		}
