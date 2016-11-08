@@ -26,6 +26,7 @@ import RecentVersions from '../lib/RecentVersions'
 import FontSettingsTriggerImage from './settings/FontSettingsTriggerImage'
 import TriggerButton from '../../../components/TriggerButton'
 import ButtonBar from '../../../components/ButtonBar'
+import Toggle from '../../../components/Toggle'
 
 class Bible extends Component {
 
@@ -378,6 +379,7 @@ class Bible extends Component {
 				<ButtonBar items={buttons} cols={2} onClick={this.handleButtonBarClick} /><br/>
 				<ButtonBar items={buttons} cols={3} onClick={this.handleButtonBarClick} /><br/>
 				<ButtonBar items={buttons} cols={4} onClick={this.handleButtonBarClick} />
+				<Toggle label="Give Me More!" value={true} />
 				<div className="row">
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
