@@ -1,0 +1,36 @@
+.button-bar {
+  border: solid 1px @background-grey;
+  border-radius: 5px;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  line-height: 1;
+
+	.button-bar-button {
+	  cursor: pointer;
+	  border-right: solid 1px @background-grey;
+		flex-grow: 1;
+		display: flex;
+		transition: background-color 0.5s cubic-bezier(0.42,1,.16,.93);
+		background-color: white;
+
+		&.selected {
+			background-color: @background-grey;
+			transition: background-color 0.5s cubic-bezier(0.42,1,.16,.93);
+		}
+
+		&:first-child {
+			border-radius: 5px 0px 0px 5px;
+		}
+
+		&:last-child {
+			border: none;
+			border-radius: 0 5px 5px 0;
+		}
+
+		.button-bar-button-content {
+			margin: auto;
+			padding: 15px;
+		}
+	}
+}

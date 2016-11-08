@@ -23,9 +23,9 @@ import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
 import LocalStore from '../../../lib/localStore'
 import RecentVersions from '../lib/RecentVersions'
-
 import FontSettingsTriggerImage from './settings/FontSettingsTriggerImage'
 import TriggerButton from '../../../components/TriggerButton'
+import ButtonBar from '../../../components/ButtonBar'
 
 class Bible extends Component {
 
@@ -281,6 +281,11 @@ class Bible extends Component {
 
 		const triggerImage = (<FontSettingsTriggerImage />)
 		const trigger = (<TriggerButton image={triggerImage} onClick={::this.handleTriggerClick} />)
+		const buttons = [
+			{ label: 'Susie', value: 's' },
+			{ label: 'Johnny', value: 'm' },
+			{ label: 'C3PO Human Cyborg Relations', value: 'l' }
+		]
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
 			this.chapterPicker = (
@@ -354,6 +359,7 @@ class Bible extends Component {
 
 		return (
 			<div className="">
+				<ButtonBar items={buttons} />
 				<div className="row">
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
