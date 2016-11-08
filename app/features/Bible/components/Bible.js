@@ -23,6 +23,9 @@ import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
 import LocalStore from '../../../lib/localStore'
 
+import FontSettingsTriggerImage from './settings/FontSettingsTriggerImage'
+import TriggerButton from '../../../components/TriggerButton'
+
 class Bible extends Component {
 
 	constructor(props) {
@@ -247,10 +250,16 @@ class Bible extends Component {
 
 	}
 
+	handleTriggerClick() {
+		console.log("Ouch!")
+	}
+
 	render() {
 		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions } = this.state
 
+		const triggerImage = (<FontSettingsTriggerImage />)
+		const trigger = (<TriggerButton image={triggerImage} onClick={::this.handleTriggerClick} />)
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
 			this.chapterPicker = (
@@ -329,6 +338,7 @@ class Bible extends Component {
 				<div className="row">
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
+							{ trigger }
 							{ this.chapterPicker }
 							{ this.versionPicker }
 						</div>
