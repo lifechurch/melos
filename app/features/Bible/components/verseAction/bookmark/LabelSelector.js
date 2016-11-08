@@ -30,7 +30,6 @@ class LabelSelector extends Component {
 		this.cancelDropDown = ::this.cancelDropDown
 		this.onDelete = ::this.onDelete
 		this.addLabels = ::this.addLabels
-
 	}
 
 	componentDidMount() {
@@ -63,13 +62,20 @@ class LabelSelector extends Component {
 		if (addedLabels !== prevState.addedLabels) {
 			this.setState({
 				filteredLabels: this.cleanFilteredLabels(filteredLabels),
-				selectedLabels: addedLabels,
+				selectedLabels: addedLabels
 			})
 		}
 	}
 
-	// remove all labels that have already been added to the bookmark
-	// from the filtered list
+	/**
+	 * called anytime the filteredLabels or the addedLabels change
+	 *
+	 * this removes any label from the filtered list that has been added
+	 * to the bookmark
+	 *
+	 * @param  {filteredLabels}  array 		contains all the labels that have been
+	 * 																		filtered by handleChange (input)
+	 */
 	cleanFilteredLabels(filteredLabels) {
 		const { addedLabels } = this.state
 		// convert the filtered labels to an object for accessing label
@@ -86,22 +92,28 @@ class LabelSelector extends Component {
 		return Object.keys(filtered).map(key => filtered[key])
 	}
 
+	/**
+	 * click handlers for opening and closing the modal
+	 * attached to plus button and cancel button respectively
+	 */
 	handleClick() {
-		this.setState({
-			dropdown: true,
-
-		})
+		this.setState({ dropdown: true })
 	}
-
 	cancelDropDown() {
 		this.setState({ dropdown: false })
 	}
 
+	/**
+	 * filters the labels based on inputValue
+	 *
+	 * @param      {string}  inputValue   	current value of the input field
+	 */
 	handleChange(inputValue) {
 		// filter the labels given the input change
 		let results = Filter.filter("LabelStore", inputValue.trim())
 		this.setState({ inputValue: inputValue })
 
+		// reset when there are no characters in the input
 		if (inputValue == '') {
 			this.setState({
 				filteredLabels: null,
@@ -136,7 +148,13 @@ class LabelSelector extends Component {
 
 	}
 
-	// onSelect is used for the labels inside the modal list
+	/**
+	 * fired on clicking a selectable label
+	 * note that the number of selected labels only changes if we're
+	 * selecting or unselecting a new label (one that hasn't already been added)
+	 *
+	 * @param      {string}  label   	label being selected
+	 */
 	onSelect(label) {
 		const { selectedLabels, addedLabels, selected } = this.state
 
@@ -179,9 +197,14 @@ class LabelSelector extends Component {
 	}
 
 
-	// delete a label that has already been added
+	/**
+	 * fired on clicking 'x' on label
+	 * remove label from addedLabels state
+	 *
+	 * @param      {string}  label   	label to delete
+	 */
 	onDelete(label) {
-		const { addedLabels, filteredLabels } = this.state
+		const { addedLabels } = this.state
 
 		this.setState({
 			addedLabels: Immutable.fromJS(addedLabels).delete(label).toJS()
