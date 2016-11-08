@@ -49,7 +49,7 @@ class LabelList extends Component {
         <ReactCSSTransitionGroup
           transitionName="label"
           transitionAppear={true}
-      		transitionAppearTimeout={100}
+      		transitionAppearTimeout={500}
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
 					{ labels }

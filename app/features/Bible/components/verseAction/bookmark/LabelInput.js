@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import PlusButton from '../../../../../components/PlusButton'
-import RevManifest from '../../../../../../app/lib/revManifest'
+import LabelIcon from '../../../../../components/LabelIcon'
 import LabelList from './LabelList'
 
 class LabelInput extends Component {
@@ -67,7 +67,7 @@ class LabelInput extends Component {
 		return (
 			<div className={`label-input ${inputActive ? 'inputactive' : ''} `}>
 				<div className='label-icon-container' onClick={this.activateInput} >
-					<img className='label-icon' src={`/images/${RevManifest('label.png')}`} />
+					<LabelIcon />
 				</div>
 				<input
 					value={input}
