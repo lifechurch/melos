@@ -21,6 +21,7 @@ import Chapter from './content/Chapter'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
+import Toggle from '../../../components/Toggle'
 
 class Bible extends Component {
 
@@ -310,6 +311,7 @@ class Bible extends Component {
 
 		return (
 			<div className="">
+				<Toggle label="Give Me More!" value={true} />
 				<div className="row">
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
