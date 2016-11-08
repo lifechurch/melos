@@ -22,24 +22,20 @@ export default function reducer(state = {}, action) {
 
 				return val
 			})
-			// if the first sorted label is not alphabetical set up the swagtag header
+			// if the first sorted label is not an alphabetical character set up the swagtag header
 			if (!byAlphabetical[0].label.charAt(0).match(/^[a-zA-Z]/)) {
-				byAlphabetical[0].group = '#'
+				byAlphabetical[0].groupHeading = '#'
 			} else {
-				byAlphabetical[0].group = byAlphabetical[0].label.charAt(0)
+				byAlphabetical[0].groupHeading = byAlphabetical[0].label.charAt(0).toUpperCase()
 			}
 			byAlphabetical.sort((a, b) => {
 				// build headers for alphabetic groupings
 				// compare the first character of each label
-				if (action.params.selectedLanguage == 'eng') {
-					// if the label starts with a letter set up the header once per letter appearance
- 					if (a.label.charAt(0).match(/^[a-zA-Z]/) && (a.label.charAt(0).localeCompare(b.label.charAt(0))) != 0) {
-						a.group = a.label.charAt(0).toUpperCase()
-					} else {
-						a.group = null
-					}
+				// if the label starts with a letter set up the header once per letter appearance
+				if (a.label.charAt(0).match(/^[a-zA-Z]/) && (a.label.charAt(0).localeCompare(b.label.charAt(0))) != 0) {
+					a.groupHeading = a.label.charAt(0).toUpperCase()
 				} else {
-					a.group = null
+					a.groupHeading = null
 				}
 			})
 

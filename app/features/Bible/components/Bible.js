@@ -16,7 +16,6 @@ import moment from 'moment'
 import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
 import ColorList from './verseAction/ColorList'
-import Color from './verseAction/Color'
 import Chapter from './content/Chapter'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
@@ -27,6 +26,7 @@ import FontSettingsTriggerImage from './settings/FontSettingsTriggerImage'
 import TriggerButton from '../../../components/TriggerButton'
 import ButtonBar from '../../../components/ButtonBar'
 import Toggle from '../../../components/Toggle'
+import LabelSelector from './verseAction/bookmark/LabelSelector'
 
 class Bible extends Component {
 
@@ -341,20 +341,12 @@ class Bible extends Component {
 		}
 
 		if (Array.isArray(bible.highlightColors)) {
-			// color = (
-			// 	<ColorList list={bible.highlightColors} />
-			this.color = (
-				<div>
-					<Color color={bible.highlightColors[3]} onSelect={::this.getColor} />
-					<Color color={bible.highlightColors[7]} onSelect={::this.getColor} />
-					<Color color={bible.highlightColors[13]} onSelect={::this.getColor} />
-				</div>
-			)
+			this.color = <ColorList list={bible.highlightColors} />
 		}
 
 		if (this.state.chapterError) {
 			this.content = <h2>Oh nooooooooo</h2>
-		} else if (bible.chapter && bible.version && bible.version.language && bible.chapter.content) {
+		} else if (bible.chapter && bible.chapter.reference && bible.version && bible.version.language && bible.chapter.content) {
 			this.content = (
 				<Chapter
 					chapter={bible.chapter}
@@ -370,7 +362,14 @@ class Bible extends Component {
 		}
 
 		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical) {
-			this.labels = <LabelList byAlphabetical={bible.momentsLabels.byAlphabetical} byCount={bible.momentsLabels.byCount} />
+			this.labels = (
+				<div>
+					<LabelSelector
+						byAlphabetical={bible.momentsLabels.byAlphabetical}
+						byCount={bible.momentsLabels.byCount}
+					/>
+				</div>
+			)
 		}
 
 		return (
@@ -402,14 +401,8 @@ class Bible extends Component {
 					<Audio audio={audio} />
 					<Settings settings={settings} />
 					<VerseAction verseAction={verseAction} />
-
-						<div className="columns medium-3">
-						</div>
 						<div className="columns medium-3">
 							<div onClick={::this.getColors}>Get Colors</div>
-							<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />
-							<LabelPill label='Holy' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={6} active={true} />
-							<LabelPill label='Peace' canDelete={true} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={1} active={false} />
 							{ this.color }
 						</div>
 					</div>

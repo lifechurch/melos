@@ -244,6 +244,37 @@
 	.picker-label {
 		// width: 150px;
 	}
+	.hide-modal {
+		overflow: hidden;
+		// z-index: 0 !important;
+
+		.version-picker-modal {
+			/* only transition on transform properties which are hardware accelerated = way better performances */
+			.dropdown-transform-hide;
+		}
+	}
+
+	.modal {
+		position: absolute;
+		z-index: 10;
+		// just under the size of the label
+		top: 36px;
+		overflow: hidden;
+		// because of the overflow hidden, we need to allow padding and compensate
+		// for the drop shadows
+		padding: 0px 15px 25px 15px;
+		left: -5px;
+
+		.version-picker-modal {
+			.yv-drop-shadow;
+
+			/* only transition on transform properties which are hardware accelerated = way better performances */
+			.dropdown-transform-show;
+		}
+	}
+}
+.dropdown-arrow-container:hover {
+	cursor: pointer;
 }
 .dropdown-arrow-container {
 	width: 38px;
@@ -253,9 +284,8 @@
 		display: flex;
 		.yv-flex-center-all;
 	}
-}
-.dropdown-arrow-container:hover {
-	cursor: pointer;
+
+
 }
 .open {
 	background-color: @light-grey;
@@ -268,47 +298,3 @@
 
 
 
-
-.hide-modal {
-	overflow: hidden;
-	// z-index: 0 !important;
-
-	.version-picker-modal {
-		/* only transition on transform properties which are hardware accelerated = way better performances */
-		.dropdown-transform;
-
-	  -webkit-transform: translate(0, -106%) !important;
-	     -moz-transform: translate(0, -106%) !important;
-	      -ms-transform: translate(0, -106%) !important;
-	          transform: translate(0, -106%) !important;
-	}
-}
-
-.modal {
-	position: absolute;
-	z-index: 10;
-	// just under the size of the label
-	top: 36px;
-	overflow: hidden;
-	// because of the overflow hidden, we need to allow padding and compensate
-	// for the drop shadows
-	padding: 0px 15px 25px 15px;
-	left: -5px;
-
-	// -webkit-transition:padding .8s cubic-bezier(0,1,0,1);
-	// -moz-transition:   padding .8s cubic-bezier(0,1,0,1);
-	// -ms-transition:    padding .8s cubic-bezier(0,1,0,1);
-	// transition:        padding .8s cubic-bezier(0,1,0,1);
-
-	.version-picker-modal {
-		.yv-drop-shadow;
-
-		/* only transition on transform properties which are hardware accelerated = way better performances */
-		.dropdown-transform;
-
-	  -webkit-transform: translate(0, 0%);
-	     -moz-transform: translate(0, 0%);
-	      -ms-transform: translate(0, 0%);
-	          transform: translate(0, 0%);
-	}
-}
