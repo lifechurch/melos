@@ -1892,7 +1892,7 @@ my:
                 plans: "အစီအစဉ်"
                 videos: "ဗီဒီယို"
                 me: "ကျွန်တော်"
-            chapterpicker: 
+            chapterpicker:
                 book label: "ကျမ်း"
                 chapter label: "အခန်းကြီး"
                 chapter unavailable: "ဤဗားရှင်းတွင် ဤအခန်းကြီးမရှိပါ။ အခြားဗားရှင်း (သို့) အခန်းကြီးကိုရွေးပါ။"

@@ -1930,7 +1930,7 @@ sk:
                 plans: "Plány"
                 videos: "Videá"
                 me: "Ja"
-            chapterpicker: 
+            chapterpicker:
                 book label: "Kniha"
                 chapter label: "Kapitola"
                 chapter unavailable: "Táto kapitola nie je k dispozícii v tejto verzii. Prosím, vyberte inú kapitolu alebo verziu."

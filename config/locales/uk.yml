@@ -1949,7 +1949,7 @@ uk:
                 plans: "Плани читання"
                 videos: "Відео"
                 me: "Я"
-            chapterpicker: 
+            chapterpicker:
                 book label: "КНИГА"
                 chapter label: "РОЗДІЛ"
                 chapter unavailable: "Цей розділ не доступний у цій версії Оберіть інший розділ або версію"

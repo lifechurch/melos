@@ -1892,7 +1892,7 @@ vi:
                 plans: "Kế hoạch"
                 videos: "Video"
                 me: "Hồ sơ"
-            chapterpicker: 
+            chapterpicker:
                 book label: "SÁCH"
                 chapter label: "ĐOẠN"
                 chapter unavailable: "Đoạn này không có trong bản Kinh Thánh. Vui lòng chọn một đoạn hoặc phiên bản khác."

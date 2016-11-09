@@ -1911,7 +1911,7 @@ sq:
                 plans: "Plane"
                 videos: "Video"
                 me: "Unë"
-            chapterpicker: 
+            chapterpicker:
                 book label: "LIBRI"
                 chapter label: "KAPITULLI"
                 chapter unavailable: "Ky kapitull nuk është i disponueshëm në këtë version. Ju lutemi zgjidhni një kapitull ose version tjetër."

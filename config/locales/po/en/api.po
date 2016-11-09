@@ -384,7 +384,7 @@ msgid "share.invite_facebook_direct"
 msgstr "Do you have the Bible App? I love it, and I think you would too. Here's the link:"
 
 msgid "share.invite_sms"
-msgstr "Do you have the Bible App from YouVersion? I love it, and I think you would too. Here's the link:"
+msgstr "I love the YouVersion Bible App. I think you would, too:"
 
 msgid "share.invite_sms_prefix"
 msgstr "From {name}:"

@@ -1896,7 +1896,7 @@ el:
                         signIn: "Σύνδεση για αποθήκευση εκδήλωσης"
                         saved: "Αποθηκεύτηκε η εκδήλωση"
         Reader: 
-            header: 
+            header:
                 parallel: "Παράλληλη προβολή"
                 parallel exit: "Έξοδος από την παράλληλη προβολή"
                 cancel: "Ακύρωση"
@@ -1911,7 +1911,7 @@ el:
                 plans: "Σχέδια "
                 videos: "Βίντεο"
                 me: "Εγώ"
-            chapterpicker: 
+            chapterpicker:
                 book label: "ΒΙΒΛΙΟ"
                 chapter label: "ΚΕΦΑΛΑΙΟ"
                 chapter unavailable: "Αυτό το κεφάλαιο δεν είναι διαθέσιμο σε αυτή την έκδοση. Επιλέξτε άλλο κεφάλαιο ή έκδοση."
