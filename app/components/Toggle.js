@@ -5,7 +5,7 @@ class Toggle extends Component {
 	constructor(props) {
 		super(props)
 
-		this.state = { value: props.value || false }
+		this.state = { value: props.initialValue || false }
 
 		this.check = (
 			<svg className="toggle-check" width="10px" height="7px" viewBox="0 0 10 7" version="1.1">
@@ -58,7 +58,8 @@ class Toggle extends Component {
 }
 
 Toggle.propTypes = {
-	label: React.PropTypes.node
+	label: React.PropTypes.node,
+	initialValue: React.PropTypes.bool
 }
 
 export default Toggle

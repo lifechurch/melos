@@ -43,7 +43,18 @@ ButtonBarButton.propTypes = {
 class ButtonBar extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { selectedItem: {} }
+		const { initialValue, items } = props
+
+		let initialItem = {}
+		if (Array.isArray(items)) {
+			items.forEach((item) => {
+				if (item.value === initialValue) {
+					initialItem = item
+				}
+			})
+		}
+
+		this.state = { selectedItem: initialItem }
 		this.handleClick = ::this.handleClick
 	}
 
@@ -74,7 +85,8 @@ class ButtonBar extends Component {
 ButtonBar.propTypes = {
 	items: React.PropTypes.array.isRequired,
 	onClick: React.PropTypes.func,
-	cols: React.PropTypes.oneOf(VALID_COLUMN_COUNTS)
+	cols: React.PropTypes.oneOf(VALID_COLUMN_COUNTS),
+	initialValue: React.PropTypes.any
 }
 
 export default ButtonBar
