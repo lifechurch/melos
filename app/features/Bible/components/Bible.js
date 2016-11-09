@@ -360,8 +360,8 @@ class Bible extends Component {
 						showVerseNumbers={true}
 					/>
 					<ReaderArrows
-						previousChapter={bible.chapter.previous.usfm}
-						nextChapter={bible.chapter.next.usfm}
+						previousChapter={bible.chapter.previous ? bible.chapter.previous.usfm : null}
+						nextChapter={bible.chapter.next ? bible.chapter.next.usfm : null}
 						onClick={::this.getChapter}
 					/>
 				</div>

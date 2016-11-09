@@ -48,12 +48,31 @@
 
 }
 
+.reader-arrows:hover {
+	cursor: pointer;
+}
 .reader-arrows {
 	.reader-arrow {
+		margin: auto;
+	}
+	.next-arrow, .prev-arrow {
+		position: fixed;
+		top: 50%;
 		width: 50px;
 		height: 50px;
-		.yv-drop-shadow;
+		padding-bottom: 2px;
 		border-radius: 30px;
 		border: @thin-grey-border;
+
+		box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.23);
+	}
+
+	.next-arrow {
+		left: 80%;
+		padding-left: 2px;
+	}
+	.prev-arrow {
+		right: 80%;
+		padding-right: 2px;
 	}
 }

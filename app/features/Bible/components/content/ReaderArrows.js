@@ -3,15 +3,8 @@ import CarouselArrow from '../../../../components/Carousel/CarouselArrow'
 
 class ReaderArrows extends Component {
 
-	constructor(props) {
-		super(props)
-
-		this.getChapter = ::this.getChapter
-	}
-
 	getChapter(chapter) {
 		const { onClick } = this.props
-
 		if (typeof onClick == 'function' && typeof chapter == 'string') {
 			onClick(chapter)
 		}
@@ -23,14 +16,44 @@ class ReaderArrows extends Component {
 			nextChapter
 		} = this.props
 
+		let left, right = null
+
+		if (previousChapter) {
+			left = (
+				<div onClick={this.getChapter.bind(this, previousChapter)}>
+					<CarouselArrow
+						key='left'
+						dir='left'
+						fill='#888888'
+						containerClass='prev-arrow'
+						arrowClass='reader-arrow'
+						width={18}
+						height={35}
+					/>
+				</div>
+			)
+		}
+
+		if (nextChapter) {
+			right = (
+				<div onClick={this.getChapter.bind(this, nextChapter)}>
+					<CarouselArrow
+						key='right'
+						dir='right'
+						fill='#888888'
+						containerClass='next-arrow'
+						arrowClass='reader-arrow'
+						width={18}
+						height={35}
+					/>
+				</div>
+			)
+		}
+
 		return (
 			<div className='reader-arrows'>
-				<div onClick={this.getChapter.bind(this,previousChapter)}>
-					<CarouselArrow dir='left' fill='#888888' containerClass='reader-arrow' arrowClass='arrow' />
-				</div>
-				<div onClick={this.getChapter.bind(this,nextChapter)}>
-					<CarouselArrow dir='right' fill='#888888' containerClass='reader-arrow' arrowClass='arrow' />
-				</div>
+				{ left }
+				{ right }
 			</div>
 		)
 	}
@@ -38,8 +61,7 @@ class ReaderArrows extends Component {
 
 
 /**
- * 		@list					  		array of list objects formatted:
- * 												{ label: 'labelname', [optionally] count: 3, [optionally] groupHeading: 'a' }
+ *
  */
 ReaderArrows.propTypes = {
 
