@@ -17,6 +17,7 @@ import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
 import ColorList from './verseAction/ColorList'
 import Chapter from './content/Chapter'
+import ReaderArrows from './content/ReaderArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
@@ -347,16 +348,23 @@ class Bible extends Component {
 			this.content = <h2>Oh nooooooooo</h2>
 		} else if (bible.chapter && bible.chapter.reference && bible.version && bible.version.language && bible.chapter.content) {
 			this.content = (
-				<Chapter
-					chapter={bible.chapter}
-					fontSize="20"
-					fontFamily="Arial"
-					onSelect={::this.handleVerseSelect}
-					textDirection={bible.version.language.text_direction}
-					showFootnotes={true}
-					showTitles={true}
-					showVerseNumbers={true}
-				/>
+				<div>
+					<Chapter
+						chapter={bible.chapter}
+						fontSize="20"
+						fontFamily="Arial"
+						onSelect={::this.handleVerseSelect}
+						textDirection={bible.version.language.text_direction}
+						showFootnotes={true}
+						showTitles={true}
+						showVerseNumbers={true}
+					/>
+					<ReaderArrows
+						previousChapter={bible.chapter.previous.usfm}
+						nextChapter={bible.chapter.next.usfm}
+						onClick={::this.getChapter}
+					/>
+				</div>
 			)
 		}
 
