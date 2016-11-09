@@ -17,6 +17,7 @@ class CarouselStandard extends Component {
 		var carouselLink = (context == 'recommended') ? `/recommended-plans-collection/${carouselContent.id}` : (context == 'saved') ? `/saved-plans-collection` : `/reading-plans-collection/${carouselContent.id}`
 
 		const slideStyle = isRtl() ? { display: 'inline-block' } : {}
+		let slider = null
 
     var settings = {
 			centerMode: false,
@@ -33,58 +34,58 @@ class CarouselStandard extends Component {
       } ]
 		}
 
-    // we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
-    var slides = carouselContent.items.map( function(slide, index) {
+		if (carouselContent.items && carouselContent.items.length > 0) {
+	    // we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
+	    var slides = carouselContent.items.map( function(slide, index) {
 
-    	var slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}-${slide.slug}`) : localizedLink(`/reading-plans/${slide.id}-${slide.slug}`)
+	    	var slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}-${slide.slug}`) : localizedLink(`/reading-plans/${slide.id}-${slide.slug}`)
 
-    	if (slide.image_id) {
-				return (
-					<div className='radius-5' key={index} style={slideStyle}>
-						<Link to={slideLink}>
-							<CarouselSlideImage title={slide.title}>
-	    					<Image width={320} height={180} thumbnail={false} imageId={slide.image_id} type={slide.type} config={imageConfig} />
-	    				</CarouselSlideImage>
-    				</Link>
-					</div>
-				)
-			} else if (slide.gradient) {
-				return (
-					<div className='radius-5' style={slideStyle}>
-						<Link to={slideLink}>
-							<CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/>
-						</Link>
-					</div>
-				)
+	    	if (slide.image_id) {
+					return (
+						<div className='radius-5' key={index} style={slideStyle}>
+							<Link to={slideLink}>
+								<CarouselSlideImage title={slide.title}>
+		    					<Image width={320} height={180} thumbnail={false} imageId={slide.image_id} type={slide.type} config={imageConfig} />
+		    				</CarouselSlideImage>
+	    				</Link>
+						</div>
+					)
+				} else if (slide.gradient) {
+					return (
+						<div className='radius-5' style={slideStyle}>
+							<Link to={slideLink}>
+								<CarouselSlideGradient gradient={slide.gradient} id={slide.id} title={slide.title}/>
+							</Link>
+						</div>
+					)
+				} else {
+					return (
+						<div className='radius-5' key={index} style={slideStyle}>
+							<Link to={slideLink}>
+								<CarouselSlideImage title={slide.title} >
+									<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
+								</CarouselSlideImage>
+							</Link>
+						</div>
+					)
+				}
+	    })
+
+			if (isRtl()) {
+
+				const outerStyle = {
+					width: "100%",
+					overflowX: "scroll"
+				}
+
+				const innerStyle = {
+					width: 10000
+				}
+
+				slider = <div className='rtl-faux-slider' style={outerStyle}><div style={innerStyle}>{slides}</div></div>
 			} else {
-				return (
-					<div className='radius-5' key={index} style={slideStyle}>
-						<Link to={slideLink}>
-							<CarouselSlideImage title={slide.title} >
-								<Image width={320} height={180} thumbnail={false} imageId='default' type={slide.type} config={imageConfig} />
-							</CarouselSlideImage>
-						</Link>
-					</div>
-				)
+				slider = <Slider {...settings}>{slides}</Slider>
 			}
-    })
-
-		let slider = null
-
-		if (isRtl()) {
-
-			const outerStyle = {
-				width: "100%",
-				overflowX: "scroll"
-			}
-
-			const innerStyle = {
-				width: 10000
-			}
-
-			slider = <div className='rtl-faux-slider' style={outerStyle}><div style={innerStyle}>{slides}</div></div>
-		} else {
-			slider = <Slider {...settings}>{slides}</Slider>
 		}
 
 	  return (
