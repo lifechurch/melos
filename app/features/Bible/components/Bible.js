@@ -22,11 +22,14 @@ import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
 import LocalStore from '../../../lib/localStore'
 import RecentVersions from '../lib/RecentVersions'
-import FontSettingsTriggerImage from './settings/FontSettingsTriggerImage'
-import TriggerButton from '../../../components/TriggerButton'
-import ButtonBar from '../../../components/ButtonBar'
-import Toggle from '../../../components/Toggle'
 import LabelSelector from './verseAction/bookmark/LabelSelector'
+
+const DEFAULT_READER_SETTINGS = {
+	fontFamily: 'Arial',
+	fontSize: 18,
+	showFootnotes: true,
+	showVerseNumbers: true
+}
 
 class Bible extends Component {
 
@@ -53,6 +56,13 @@ class Bible extends Component {
 			this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
 		}
 
+		const showFootnoes = LocalStore.getIn("reader.settings.showFootnotes")
+		const showVerseNumbers = LocalStore.getIn("reader.settings.showVerseNumbers")
+
+
+		LocalStore.setIn('mySettings.bob.john.fred', 'superman')
+		console.log(LocalStore.getIn('mySettings.bob.john.fred'))
+
 
 		this.state = {
 			selectedBook: this.selectedBook,
@@ -65,7 +75,11 @@ class Bible extends Component {
 			versionDropDownCancel: false,
 			db: null,
 			results: [],
-			versions: []
+			versions: [],
+			fontSize: LocalStore.getIn("reader.settings.fontSize") || DEFAULT_READER_SETTINGS.fontSize,
+			fontFamily: LocalStore.getIn("reader.settings.fontFamily") || DEFAULT_READER_SETTINGS.fontFamily,
+			showFootnotes: typeof showFootnoes === "boolean" ? showFootnoes : DEFAULT_READER_SETTINGS.showFootnotes,
+			showVerseNumbers: typeof showVerseNumbers === "boolean" ? showVerseNumbers : DEFAULT_READER_SETTINGS.showVerseNumbers
 		}
 
 		this.chapterPicker = null
@@ -74,28 +88,14 @@ class Bible extends Component {
 		this.color = null
 		this.content = null
 		this.labels = null
-
-		LocalStore.setIn('mySettings.bob.john.fred', 'superman')
-		console.log(LocalStore.getIn('mySettings.bob.john.fred'))
-
-		LocalStore.setIn('mySettings.bob.john.fred', 'aquaman')
-		console.log(LocalStore.getIn('mySettings.bob.john.fred'))
-
-		LocalStore.deleteIn('mySettings.bob.john.fred')
-		console.log(LocalStore.getIn('mySettings.bob.john.fred'))
-
-		LocalStore.set('most-recent-version', 111)
-		console.log(LocalStore.get('most-recent-version'))
-
-		LocalStore.delete('most-recent-version')
-		console.log(LocalStore.get('most-recent-version'))
-
 		this.handleButtonBarClick = ::this.handleButtonBarClick
+		this.handleSettingsChange = ::this.handleSettingsChange
 	}
 
 	getVersions(languageTag) {
 		const { dispatch } = this.props
 		const comp = this
+
 		this.setState({ selectedLanguage: languageTag })
 
 		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
@@ -264,6 +264,13 @@ class Bible extends Component {
 		console.log("Ouch!")
 	}
 
+	handleSettingsChange(key, value) {
+		console.log("Settings", key, value)
+		LocalStore.setIn(key, value)
+		const stateKey = key.split('.').pop()
+		this.setState({ [stateKey]: value })
+	}
+
 	componentDidMount() {
 		const { dispatch, bible, auth } = this.props
 
@@ -284,23 +291,7 @@ class Bible extends Component {
 
 	render() {
 		const { bible, audio, settings, verseAction } = this.props
-		const { results, versions } = this.state
-
-		const triggerImage = (<FontSettingsTriggerImage />)
-		const trigger = (<TriggerButton image={triggerImage} onClick={::this.handleTriggerClick} />)
-		const buttons = [
-			{ label: 'Arial', value: 's' },
-			{ label: 'Tisa Pro', value: 'm' },
-			{ label: 'Avenir', value: 'l' },
-			{ label: 'Courier New', value: 'z' },
-			{ label: (<LabelPill label='Righteous' canDelete={false} onDelete={::this.labelDelete} onSelect={::this.labelSelect} count={26} active={false} />), value: 's1' },
-			{ label: 'Facebook', value: 'm1' },
-			{ label: 'San Fran', value: 'l1' },
-			{ label: 'Proxima Nova', value: 'z1' },
-			{ label: 'Guatemala', value: 'm2' },
-			{ label: 'Costa Rica', value: 'l2' },
-			{ label: 'Neverland', value: 'z2' }
-		]
+		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
 			this.chapterPicker = (
@@ -349,13 +340,12 @@ class Bible extends Component {
 			this.content = (
 				<Chapter
 					chapter={bible.chapter}
-					fontSize="20"
-					fontFamily="Arial"
+					fontSize={fontSize}
+					fontFamily={fontFamily}
 					onSelect={::this.handleVerseSelect}
 					textDirection={bible.version.language.text_direction}
-					showFootnotes={true}
-					showTitles={true}
-					showVerseNumbers={true}
+					showFootnotes={showFootnotes}
+					showVerseNumbers={showVerseNumbers}
 				/>
 			)
 		}
@@ -373,15 +363,16 @@ class Bible extends Component {
 
 		return (
 			<div className="">
-				<ButtonBar items={buttons} cols={1} onClick={this.handleButtonBarClick} /><br/>
-				<ButtonBar items={buttons} cols={2} onClick={this.handleButtonBarClick} /><br/>
-				<ButtonBar items={buttons} cols={3} onClick={this.handleButtonBarClick} /><br/>
-				<ButtonBar items={buttons} cols={4} onClick={this.handleButtonBarClick} />
-				<Toggle label="Give Me More!" value={true} />
+				<Settings
+					onChange={this.handleSettingsChange}
+					initialFontSize={fontSize}
+					initialFontFamily={fontFamily}
+					initialShowFootnotes={showFootnotes}
+					initialShowVerseNumbers={showVerseNumbers}
+				/>
 				<div className="row">
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
-							{ trigger }
 							{ this.chapterPicker }
 							{ this.versionPicker }
 						</div>

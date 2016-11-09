@@ -138,7 +138,7 @@ Chapter.propTypes = {
 	chapter: React.PropTypes.object,
 	onSelect: React.PropTypes.func,
 	textDirection: React.PropTypes.string,
-	fontSize: React.PropTypes.string,
+	fontSize: React.PropTypes.number,
 	fontFamily: React.PropTypes.string,
 	showFootnotes: React.PropTypes.bool,
 	showVerseNumbers: React.PropTypes.bool,
