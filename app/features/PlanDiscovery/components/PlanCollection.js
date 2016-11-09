@@ -44,7 +44,7 @@ class PlanCollection extends Component {
 			collection.items.forEach((item) => {
 					let slide = null
 
-					if (item.type == 'collection' && item.items) {
+					if (item.type == 'collection' && item.items && item.items.length > 0) {
 						carousels.push( <div key={`collection-${item.id}`}><Carousel localizedLink={localizedLink} isRtl={isRtl} carouselContent={item} carouselType={item.display} imageConfig={imageConfig}/></div> )
 					} else if (item.type == 'reading_plan') {
 						var slideLink = localizedLink(`/reading-plans/${item.id}`)
