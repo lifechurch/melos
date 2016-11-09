@@ -61,10 +61,12 @@ class ReaderArrows extends Component {
 
 
 /**
- *
+ *	previousChapter		{string}		usfm to call for new chapter
+ *	nextChapter				{string}		usfm to call for new chapter
  */
 ReaderArrows.propTypes = {
-
+	previousChapter: React.PropTypes.string,
+	nextChapter: React.PropTypes.string,
 }
 
 export default ReaderArrows
