@@ -254,7 +254,7 @@ class Bible extends Component {
 			if (bible.chapter.errors) {
 				this.setState({ chapterError: true })
 			} else {
-				if (bible.chapter.reference) {
+				if (bible.chapter.reference && bible.chapter.reference.usfm) {
 					this.setState({
 						chapterError: false,
 						selectedChapter: bible.chapter.reference.usfm,
