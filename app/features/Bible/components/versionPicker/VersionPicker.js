@@ -395,7 +395,7 @@ class VersionPicker extends Component {
 						versionlistSelectionIndex={versionlistSelectionIndex}
 						onMouseOver={this.handleListHover}
 						alert={listErrorAlert}
-						versionsLanguageName={languages[languageMap[selectedLanguage]].name}
+						versionsLanguageName={this.props.languages[languageMap[selectedLanguage]].name}
 						versionFiltering={versionFiltering}
 						intl={intl}
 						cancel={() => this.setState({ dropdown: false })}

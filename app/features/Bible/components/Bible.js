@@ -1,7 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import Audio from './audio/Audio'
-import Header from './header/Header'
-import Settings from './settings/Settings'
 import VerseAction from './verseAction/VerseAction'
 import { connect } from 'react-redux'
 import ActionCreators from '../actions/creators'
@@ -24,6 +21,10 @@ import LabelList from './verseAction/bookmark/LabelList'
 import LocalStore from '../../../lib/localStore'
 import RecentVersions from '../lib/RecentVersions'
 import LabelSelector from './verseAction/bookmark/LabelSelector'
+import Header from './header/Header'
+import Settings from './settings/Settings'
+import Audio from './audio/Audio'
+
 
 const DEFAULT_READER_SETTINGS = {
 	fontFamily: 'Arial',
@@ -118,8 +119,6 @@ class Bible extends Component {
 			Filter.add("LangStore", config.default_versions)
 			console.timeEnd("Add Items")
 		})
-
-		dispatch(ActionCreators.loadVersionAndChapter({ id: 100, reference: this.state.selectedChapter }))
 	}
 
 	getVC(versionID) {
@@ -255,7 +254,11 @@ class Bible extends Component {
 			if (bible.chapter.errors) {
 				this.setState({ chapterError: true })
 			} else {
-				this.setState({ chapterError: false })
+				this.setState({
+					chapterError: false,
+					selectedChapter: bible.chapter.reference.usfm,
+					inputValue: bible.chapter.reference.human
+				})
 			}
 		}
 
@@ -294,40 +297,44 @@ class Bible extends Component {
 		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
 
-		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
+		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
 			this.chapterPicker = (
-				<ChapterPicker
-					{...this.props}
-					chapter={bible.chapter}
-					books={bible.books.all}
-					bookMap={bible.books.map}
-					selectedLanguage={this.state.selectedLanguage}
-					getChapter={::this.getChapter}
-					initialBook={this.state.selectedBook}
-					initialChapter={this.state.selectedChapter}
-					initialInput={this.inputValue}
-					initialChapters={this.chapters}
-					cancelDropDown={this.state.chapDropDownCancel}
-					togglePickerExclusion={::this.togglePickerExclusion}
-				/>
-			)
-		}
-
-		if (Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
-			this.versionPicker = (
-				<VersionPicker
-					{...this.props}
-					version={bible.version}
-					languages={bible.languages.all}
-					versions={bible.versions}
-					languageMap={bible.languages.map}
-					selectedChapter={bible.chapter.reference ? bible.chapter.reference.usfm : this.state.selectedChapter}
-					alert={this.state.chapterError}
-					getVersion={::this.getVersion}
-					getVersions={::this.getVersions}
-					cancelDropDown={this.state.versionDropDownCancel}
-					togglePickerExclusion={::this.togglePickerExclusion}
-				/>
+				<Header sticky={true} >
+					<ChapterPicker
+						{...this.props}
+						chapter={bible.chapter}
+						books={bible.books.all}
+						bookMap={bible.books.map}
+						selectedLanguage={this.state.selectedLanguage}
+						getChapter={::this.getChapter}
+						initialBook={this.state.selectedBook}
+						initialChapter={this.state.selectedChapter}
+						initialInput={this.inputValue}
+						initialChapters={this.chapters}
+						cancelDropDown={this.state.chapDropDownCancel}
+						togglePickerExclusion={::this.togglePickerExclusion}
+					/>
+					<VersionPicker
+						{...this.props}
+						version={bible.version}
+						languages={bible.languages.all}
+						versions={bible.versions}
+						languageMap={bible.languages.map}
+						selectedChapter={bible.chapter.reference ? bible.chapter.reference.usfm : this.state.selectedChapter}
+						alert={this.state.chapterError}
+						getVersion={::this.getVersion}
+						getVersions={::this.getVersions}
+						cancelDropDown={this.state.versionDropDownCancel}
+						togglePickerExclusion={::this.togglePickerExclusion}
+					/>
+					<Settings
+						onChange={this.handleSettingsChange}
+						initialFontSize={fontSize}
+						initialFontFamily={fontFamily}
+						initialShowFootnotes={showFootnotes}
+						initialShowVerseNumbers={showVerseNumbers}
+					/>
+				</Header>
 			)
 		}
 
@@ -371,22 +378,9 @@ class Bible extends Component {
 
 		return (
 			<div className="">
-				<Settings
-					onChange={this.handleSettingsChange}
-					initialFontSize={fontSize}
-					initialFontFamily={fontFamily}
-					initialShowFootnotes={showFootnotes}
-					initialShowVerseNumbers={showVerseNumbers}
-				/>
+				{ this.chapterPicker }
 				<div className="row">
-					<div className='row'>
-						<div className="columns medium-12 vertical-center">
-							{ this.chapterPicker }
-							{ this.versionPicker }
-						</div>
-					</div>
-				</div>
-				<div className="row">
+
 					<div className="columns large-6 medium-10 medium-centered">
 						{ this.content }
 					</div>
@@ -395,9 +389,6 @@ class Bible extends Component {
 					<div onClick={::this.getLabels} >Get Labels Bruh</div>
 					<div>{ this.labels }</div>
 					<div className="row">
-					<Header {...this.props} />
-					<Audio audio={audio} />
-					<Settings settings={settings} />
 					<VerseAction verseAction={verseAction} />
 						<div className="columns medium-3">
 							<div onClick={::this.getColors}>Get Colors</div>

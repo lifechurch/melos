@@ -19,7 +19,6 @@
 }
 .chapter-picker-modal {
 
-	z-index: 10;
 	background-color: white;
 
 	display: inline-flex;
@@ -223,13 +222,7 @@ input {
 
 .chapter-picker-container {
 	.hide-modal {
-		overflow: hidden;
-		z-index: 0 !important;
-
-		-webkit-transition:z-index 1s cubic-bezier(0.42,1,.16,.93);
-		-moz-transition:   z-index 1s cubic-bezier(0.42,1,.16,.93);
-		-ms-transition:    z-index 1s cubic-bezier(0.42,1,.16,.93);
-		transition:        z-index 1s cubic-bezier(0.42,1,.16,.93);
+		pointer-events: none;
 
 		.chapter-picker-modal {
 			/* only transition on transform properties which are hardware accelerated = way better performances */
@@ -240,13 +233,12 @@ input {
 	.modal {
 		position: absolute;
 		z-index: 10;
-		// just under the size of the label
-		top: 36px;
+		top: 52px;
 		overflow: hidden;
 		// because of the overflow hidden, we need to allow padding and compensate
 		// for the drop shadows
 		padding: 0px 15px 25px 15px;
-		left: -5px;
+		left: 430px;
 
 		.chapter-picker-modal {
 			.yv-drop-shadow;

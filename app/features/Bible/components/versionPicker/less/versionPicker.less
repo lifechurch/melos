@@ -245,9 +245,8 @@
 		// width: 150px;
 	}
 	.hide-modal {
-		overflow: hidden;
-		// z-index: 0 !important;
 
+		pointer-events: none;
 		.version-picker-modal {
 			/* only transition on transform properties which are hardware accelerated = way better performances */
 			.dropdown-transform-hide;
@@ -258,12 +257,12 @@
 		position: absolute;
 		z-index: 10;
 		// just under the size of the label
-		top: 36px;
+		top: 52px;
 		overflow: hidden;
 		// because of the overflow hidden, we need to allow padding and compensate
 		// for the drop shadows
 		padding: 0px 15px 25px 15px;
-		left: -5px;
+		left: 430px;
 
 		.version-picker-modal {
 			.yv-drop-shadow;
