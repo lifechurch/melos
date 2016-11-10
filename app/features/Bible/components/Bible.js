@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import Audio from './audio/Audio'
+import AudioPopup from './audio/AudioPopup'
 import Header from './header/Header'
 import Settings from './settings/Settings'
 import VerseAction from './verseAction/VerseAction'
@@ -378,6 +378,7 @@ class Bible extends Component {
 					initialShowFootnotes={showFootnotes}
 					initialShowVerseNumbers={showVerseNumbers}
 				/>
+				<AudioPopup audio={audio} />
 				<div className="row">
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
@@ -396,7 +397,7 @@ class Bible extends Component {
 					<div>{ this.labels }</div>
 					<div className="row">
 					<Header {...this.props} />
-					<Audio audio={audio} />
+					<AudioPopup audio={audio} />
 					<Settings settings={settings} />
 					<VerseAction verseAction={verseAction} />
 						<div className="columns medium-3">
