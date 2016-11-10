@@ -1,10 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-<<<<<<< HEAD
-=======
-import AudioPopup from './audio/AudioPopup'
-import Header from './header/Header'
-import Settings from './settings/Settings'
->>>>>>> reader-integration
 import VerseAction from './verseAction/VerseAction'
 import { connect } from 'react-redux'
 import ActionCreators from '../actions/creators'
@@ -29,7 +23,7 @@ import RecentVersions from '../lib/RecentVersions'
 import LabelSelector from './verseAction/bookmark/LabelSelector'
 import Header from './header/Header'
 import Settings from './settings/Settings'
-import Audio from './audio/Audio'
+import AudioPopup from './audio/AudioPopup'
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -260,11 +254,13 @@ class Bible extends Component {
 			if (bible.chapter.errors) {
 				this.setState({ chapterError: true })
 			} else {
-				this.setState({
-					chapterError: false,
-					selectedChapter: bible.chapter.reference.usfm,
-					inputValue: bible.chapter.reference.human
-				})
+				if (bible.chapter.reference) {
+					this.setState({
+						chapterError: false,
+						selectedChapter: bible.chapter.reference.usfm,
+						inputValue: bible.chapter.reference.human
+					})
+				}
 			}
 		}
 
