@@ -1,4 +1,10 @@
 import React, { Component, PropTypes } from 'react'
+<<<<<<< HEAD
+=======
+import AudioPopup from './audio/AudioPopup'
+import Header from './header/Header'
+import Settings from './settings/Settings'
+>>>>>>> reader-integration
 import VerseAction from './verseAction/VerseAction'
 import { connect } from 'react-redux'
 import ActionCreators from '../actions/creators'
@@ -327,6 +333,7 @@ class Bible extends Component {
 						cancelDropDown={this.state.versionDropDownCancel}
 						togglePickerExclusion={::this.togglePickerExclusion}
 					/>
+					<AudioPopup audio={audio} />
 					<Settings
 						onChange={this.handleSettingsChange}
 						initialFontSize={fontSize}
@@ -380,7 +387,6 @@ class Bible extends Component {
 			<div className="">
 				{ this.chapterPicker }
 				<div className="row">
-
 					<div className="columns large-6 medium-10 medium-centered">
 						{ this.content }
 					</div>
