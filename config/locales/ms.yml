@@ -1892,7 +1892,7 @@ ms:
                 plans: "Pelan"
                 videos: "Video"
                 me: "Saya"
-            chapterpicker:
+            chapterpicker: 
                 book label: "KITAB"
                 chapter label: "BAB"
                 chapter unavailable: "Bab ini tidak tersedia dalam versi ini. Sila pilih bab atau versi yang berlainan."

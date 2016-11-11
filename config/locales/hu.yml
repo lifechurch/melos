@@ -1911,7 +1911,7 @@ hu:
                 plans: "Tervek"
                 videos: "Videók"
                 me: "Én"
-            chapterpicker:
+            chapterpicker: 
                 book label: "Könyv"
                 chapter label: "Fejezet"
                 chapter unavailable: "Ez a fejezet nem érhető el ebben a fordításban. Válassz másik fejezetet vagy fordítást."

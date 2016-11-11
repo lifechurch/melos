@@ -1682,7 +1682,7 @@ ro:
             EventFeedMine: 
                 title: "Evenimentele mele"
                 previous: "← Anterior"
-                next: "Următor →"
+                next: "Continuă →"
                 my: "Evenimentele mele"
                 new: "Creează eveniment nou"
                 subTitle: "EVENIMENTE CREATE DE MINE"
