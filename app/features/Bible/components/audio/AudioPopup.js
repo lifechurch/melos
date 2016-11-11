@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import AudioTriggerImage from './AudioTriggerImage'
 import TriggerButton from '../../../../components/TriggerButton'
+import DropdownTransition from '../../../../components/DropdownTransition'
 //import LocalStore from '../../../../lib/localStore'
 
 class AudioPopup extends Component {
@@ -19,18 +20,15 @@ class AudioPopup extends Component {
 	}
 
 	render() {
-		const modalClass = this.state.isOpen ? '' : 'hide-modal'
 		return (
 			<div className='audio-popup'>
 				<TriggerButton image={<AudioTriggerImage />} onClick={this.triggerClick} />
-				<div className={`modal ${modalClass}`}>
-					<div className="audio-popup-modal">
-						<div className="header vertical-center horizontal-center">AUDIO</div>
-						<div className="body">
-							Play Some Audio!
-						</div>
+				<DropdownTransition show={this.state.isOpen} classes={'audio-popup-modal'}>
+					<div className="header vertical-center horizontal-center">AUDIO</div>
+					<div className="body">
+						Play Some Audio!
 					</div>
-				</div>
+				</DropdownTransition>
 			</div>
 		)
 	}

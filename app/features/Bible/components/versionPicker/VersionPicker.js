@@ -9,6 +9,7 @@ import moment from 'moment'
 import VersionPickerModal from './VersionPickerModal'
 import Label from '../chapterPicker/Label'
 import arrayToObject from '../../../../lib/arrayToObject'
+import DropdownTransition from '../../../../components/DropdownTransition'
 import { injectIntl } from 'react-intl'
 
 
@@ -57,13 +58,6 @@ class VersionPicker extends Component {
 		Filter.add("VersionStore", Object.keys(versionsObj).map(key => versionsObj[key]))
 	}
 
-	/**
-	 * on component update, we're going to scroll the active/focused elements into view if their
-	 * index has changed
-	 *
-	 * @param  prevProps  				The previous properties
-	 * @param  prevState  				The previous state
-	 */
 	componentDidUpdate(prevProps, prevState) {
 		const { alert, versions, version, togglePickerExclusion, chapter } = this.props
 		const {
@@ -105,7 +99,7 @@ class VersionPicker extends Component {
 		}
 
 		// if the new version call is successful, let's close the modal
-		if ( version.id !== prevProps.version.id && !alert && !listErrorAlert) {
+		if (version.id !== prevProps.version.id && !alert && !listErrorAlert) {
 			this.setState({ dropdown: false })
 		}
 
@@ -366,8 +360,6 @@ class VersionPicker extends Component {
 			langInputValue
 		} = this.state
 
-		let hide = (dropdown) ? '' : 'hide-modal'
-
 		return (
 			<div className={`version-picker-container`} >
 				<Label
@@ -380,28 +372,30 @@ class VersionPicker extends Component {
 					onBlur={this.onBlur}
 					disabled={inputDisabled}
 				/>
-				<div className={`modal ${hide}`} onClick={() => this.setState({ cancelBlur: true })}>
-					<VersionPickerModal
-						classes={classes}
-						languageList={languages}
-						versionList={versions}
-						selectedLanguage={selectedLanguage}
-						selectedVersion={selectedVersion}
-						getVersion={this.getVersion}
-						getLanguage={this.getLanguage}
-						handleChange={this.handleLanguageFilter}
-						handleKeyDown={this.handleLangKeyDown}
-						toggle={this.toggleVersionPickerList}
-						versionlistSelectionIndex={versionlistSelectionIndex}
-						onMouseOver={this.handleListHover}
-						alert={listErrorAlert}
-						versionsLanguageName={this.props.languages[languageMap[selectedLanguage]].name}
-						versionFiltering={versionFiltering}
-						intl={intl}
-						cancel={() => this.setState({ dropdown: false })}
-						inputValue={langInputValue}
-					/>
-				</div>
+				<DropdownTransition show={dropdown}>
+					<div onClick={() => this.setState({ cancelBlur: true })}>
+						<VersionPickerModal
+							classes={classes}
+							languageList={languages}
+							versionList={versions}
+							selectedLanguage={selectedLanguage}
+							selectedVersion={selectedVersion}
+							getVersion={this.getVersion}
+							getLanguage={this.getLanguage}
+							handleChange={this.handleLanguageFilter}
+							handleKeyDown={this.handleLangKeyDown}
+							toggle={this.toggleVersionPickerList}
+							versionlistSelectionIndex={versionlistSelectionIndex}
+							onMouseOver={this.handleListHover}
+							alert={listErrorAlert}
+							versionsLanguageName={this.props.languages[languageMap[selectedLanguage]].name}
+							versionFiltering={versionFiltering}
+							intl={intl}
+							cancel={() => this.setState({ dropdown: false })}
+							inputValue={langInputValue}
+						/>
+					</div>
+				</DropdownTransition>
 			</div>
 		)
 	}

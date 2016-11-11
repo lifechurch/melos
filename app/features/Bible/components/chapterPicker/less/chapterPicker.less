@@ -217,34 +217,13 @@ input {
 }
 
 
-
-
-
 .chapter-picker-container {
-	.hide-modal {
-		pointer-events: none;
 
-		.chapter-picker-modal {
-			/* only transition on transform properties which are hardware accelerated = way better performances */
-			.dropdown-transform-hide;
-		}
-	}
 
 	.modal {
-		position: absolute;
-		z-index: 10;
 		top: 52px;
-		overflow: hidden;
 		// because of the overflow hidden, we need to allow padding and compensate
 		// for the drop shadows
-		padding: 0px 15px 25px 15px;
 		margin-left: -20px;
-
-		.chapter-picker-modal {
-			.yv-drop-shadow;
-
-			/* only transition on transform properties which are hardware accelerated = way better performances */
-			.dropdown-transform-show;
-		}
 	}
 }

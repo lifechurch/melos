@@ -8,6 +8,7 @@ import cookie from 'react-cookie';
 import moment from 'moment'
 import ChapterPickerModal from './ChapterPickerModal'
 import Label from './Label'
+import DropdownTransition from '../../../../components/DropdownTransition'
 
 
 class ChapterPicker extends Component {
@@ -442,8 +443,6 @@ class ChapterPicker extends Component {
 			filtering
 		} = this.state
 
-		let hide = (dropdown) ? '' : 'hide-modal'
-
 		return (
 			<div className={`chapter-picker-container`} >
 				<Label
@@ -456,23 +455,25 @@ class ChapterPicker extends Component {
 					onBlur={this.onBlur}
 					disabled={inputDisabled}
 				/>
-				<div className={`modal ${hide}`} onClick={() => this.setState({ cancelBlur: true })}>
-					<ChapterPickerModal
-						classes={classes}
-						bookList={books}
-						chapterList={chapters}
-						selectedBook={selectedBook}
-						selectedChapter={selectedChapter}
-						getChapter={this.getChapter}
-						getBook={this.getBook}
-						toggle={this.toggleChapterPickerList}
-						booklistSelectionIndex={booklistSelectionIndex}
-						chapterlistSelectionIndex={chapterlistSelectionIndex}
-						onMouseOver={this.handleListHover}
-						alert={listErrorAlert}
-						cancel={() => this.setState({ dropdown: false })}
-					/>
-				</div>
+				<DropdownTransition show={dropdown} classes={''}>
+					<div onClick={() => this.setState({ cancelBlur: true })}>
+						<ChapterPickerModal
+							classes={classes}
+							bookList={books}
+							chapterList={chapters}
+							selectedBook={selectedBook}
+							selectedChapter={selectedChapter}
+							getChapter={this.getChapter}
+							getBook={this.getBook}
+							toggle={this.toggleChapterPickerList}
+							booklistSelectionIndex={booklistSelectionIndex}
+							chapterlistSelectionIndex={chapterlistSelectionIndex}
+							onMouseOver={this.handleListHover}
+							alert={listErrorAlert}
+							cancel={() => this.setState({ dropdown: false })}
+						/>
+					</div>
+				</DropdownTransition>
 			</div>
 		)
 	}

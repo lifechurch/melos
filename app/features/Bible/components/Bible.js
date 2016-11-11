@@ -24,6 +24,7 @@ import LabelSelector from './verseAction/bookmark/LabelSelector'
 import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
+import DropdownTransition from '../../../components/DropdownTransition'
 
 
 const DEFAULT_READER_SETTINGS = {
