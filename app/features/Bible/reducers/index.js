@@ -11,6 +11,7 @@ import verseAction from './verseAction'
 import verseSelection from './verseSelection'
 import version from './version'
 import versions from './versions'
+import verses from './verses'
 import settings from './settings'
 
 const bibleReaderReducer = combineReducers({
@@ -25,6 +26,7 @@ const bibleReaderReducer = combineReducers({
 	momentsLabels,
 	verseAction,
 	verseSelection,
+	verses,
 	version,
 	versions
 })

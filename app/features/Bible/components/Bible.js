@@ -21,6 +21,7 @@ import ReaderArrows from './content/ReaderArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
+import VerseCard from './verseAction/bookmark/VerseCard'
 import LocalStore from '../../../lib/localStore'
 import RecentVersions from '../lib/RecentVersions'
 import LabelSelector from './verseAction/bookmark/LabelSelector'
@@ -396,9 +397,10 @@ class Bible extends Component {
 					<div onClick={::this.getLabels} >Get Labels Bruh</div>
 					<div>{ this.labels }</div>
 					<div className="row">
-					<Header {...this.props} />
-					<AudioPopup audio={audio} />
-					<Settings settings={settings} />
+
+					<VerseCard references={['PSA.23.5+PSA.23.6']} version={this.state.selectedVersion} {...this.props}/>
+
+
 					<VerseAction verseAction={verseAction} />
 						<div className="columns medium-3">
 							<div onClick={::this.getColors}>Get Colors</div>

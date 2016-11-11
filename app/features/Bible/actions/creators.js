@@ -115,6 +115,26 @@ const ActionCreators = {
 		}
 	},
 
+	/**
+	 * @id 						id of bible version
+	 * @references		verse, or range of verses to get
+	 * @format				html by default, or text
+	 */
+	bibleVerses(params) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'bible',
+				method: 'verses',
+				version: '3.1',
+				auth: false,
+				params: params,
+				http_method: 'get',
+				types: [ type('bibleVersesRequest'), type('bibleVersesSuccess'), type('bibleVersesFailure') ]
+			}
+		}
+	},
+
 	/* no params */
 	momentsColors(auth, params = {}) {
 		return {
