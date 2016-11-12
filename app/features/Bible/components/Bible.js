@@ -90,6 +90,7 @@ class Bible extends Component {
 		this.color = null
 		this.content = null
 		this.labels = null
+		this.versecard = null
 		this.handleButtonBarClick = ::this.handleButtonBarClick
 		this.handleSettingsChange = ::this.handleSettingsChange
 	}
@@ -357,6 +358,14 @@ class Bible extends Component {
 					/>
 				</div>
 			)
+			this.versecard = (
+				<VerseCard
+					references={['REV.22.1+REV.22.3+REV.22.4', 'REV.22.20']}
+					version={bible.version.id}
+					versionAbbr={bible.version.abbreviation}
+					{...this.props}
+				/>
+			)
 		}
 
 		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical) {
@@ -398,8 +407,7 @@ class Bible extends Component {
 					<div>{ this.labels }</div>
 					<div className="row">
 
-					<VerseCard references={['PSA.23.5+PSA.23.6']} version={this.state.selectedVersion} {...this.props}/>
-
+					{this.versecard}
 
 					<VerseAction verseAction={verseAction} />
 						<div className="columns medium-3">
