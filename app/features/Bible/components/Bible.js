@@ -363,6 +363,7 @@ class Bible extends Component {
 					references={['REV.22.1+REV.22.3+REV.22.4', 'REV.22.20']}
 					version={bible.version.id}
 					versionAbbr={bible.version.abbreviation}
+					canDeleteVerses={true}
 					{...this.props}
 				/>
 			)
