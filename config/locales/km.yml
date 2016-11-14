@@ -1879,14 +1879,14 @@ km:
         Reader: 
             header: 
                 parallel: "ប៉ារ៉ា​ឡែល"
-                parallel exit: "Exit Parallel Mode"
+                parallel exit: "ចេញ​ពី​ម៉ូដ​ស្រប"
                 cancel: "បោះ​បង់"
                 audio label: "សំលេង"
-                audio window: "Open in new window"
+                audio window: "បើក​ក្នុង​បង្អួច​ថ្មី"
                 font label: "ការ​កំណត់​របស់​អ្នក"
                 notifications label: "ការ​ជូនដំណឹង"
                 more label: "បន្ថែម​ទៀត"
-                search input: "Reference or Keyword..."
+                search input: "អំណៈអំណាង ឬ​ពាក្យ​គន្លឹះ..."
                 home: "គេហ៍"
                 bible: "ព្រះគម្ពីរ"
                 plans: "គំរោង​ច្រើន"
@@ -1895,12 +1895,12 @@ km:
             chapterpicker: 
                 book label: "សៀវភៅ"
                 chapter label: "ជំពូក"
-                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+                chapter unavailable: "ជំពូក​នេះ​មិន​មាន​នៅ​ក្នុង​ជំនាន់​នេះ​ទេ។ សូម​ជ្រើស​រើស​ជំពូក​ផ្សេង ឬ​ជំនាន់​ផ្សេង។"
             versionpicker: 
                 language label: "ភាសា​ព្រះ​គម្ពីរ"
                 language sub-label: "ភាសា​ព្រះគម្ពីរ"
                 change language: "ប្ដូរភាសា"
-                filter languages: "Filter Languages..."
+                filter languages: "ជម្រើស​ភាសា..."
                 version label: "ជំនាន់"
             reader settings: 
                 footnotes: "កំណត់ចំណាំ"

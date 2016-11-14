@@ -431,7 +431,7 @@ nl:
         likes: "Vind ik leuks"
         more than one like: 
         vod: 
-            title: "Vers van de dag"
+            title: "Tekst van de Dag"
             get daily email: "Ontvang dagelijkse e-mail"
             subscribe: "Aanmelden"
             update: "Bijwerken"
@@ -439,7 +439,7 @@ nl:
             version: "Versies"
             view more: "Meer bekijken"
             time: "Tijd"
-            blurb: "Abonneer je op het vers van de dag. Ontvang dagelijks een email of push bericht op je mobiele apparaat"
+            blurb: "Abonneer je op de Tekst van de Dag. Ontvang dagelijks een email of push bericht op je mobiele apparaat"
         friendship: 
             now friends: "Je bent nu vrienden met"
         cta: 
@@ -670,11 +670,11 @@ nl:
         edit notifications: "Meldingen beheren"
         edit connections: "Verbonden accounts"
         edit devices: "Verbonden apparaten"
-        vod_subscriptions: "Vers van de dag abonnering"
-        vod_subscription success: "Je hebt de instellingen voor Vers van de Dag met succes aangepast!"
-        vod_subscription failure: "Excuses, er was een probleem bij het aanpassen van je Vers van de Dag instellingen."
+        vod_subscriptions: "Tekst van de Dag abonnering"
+        vod_subscription success: "Je hebt de instellingen voor Tekst van de Dag met succes aangepast!"
+        vod_subscription failure: "Excuses, er was een probleem bij het aanpassen van je Tekst van de Dag instellingen."
         daily email delivery: "Dagelijkse e-mailbezorging"
-        vod_not_subscribed: "U bent niet aangemeld voor de Vers van de Dag e-mails. Log alstublieft in als u zich hiervoor wilt aanmelden."
+        vod_not_subscribed: "U bent niet aangemeld voor de Tekst van de Dag e-mails. Log alstublieft in als u zich hiervoor wilt aanmelden."
         time: "Tijd"
         daily push notifications: "Dagelijkse push melding voor mobiele apps"
         subscribe: "Aanmelden"
@@ -1282,9 +1282,9 @@ nl:
             read_listen: "Lees, Luister, Kijk, Deel"
             start_now: "Begin nu"
             votd: 
-                title: "VERS VAN DE DAG"
+                title: "Tekst van de Dag"
                 highlight_bookmark: "Markeer, maak een bladwijzer aan, of deel dit vers"
-                subscribe: "Abonneer op het vers van de dag"
+                subscribe: "Abonneer op de Tekst van de Dag"
             hero: 
                 heading: "Gratis Bijbel voor je telefoon, tablet en computer."
                 description: "YouVersion is een eenvoudige, reclamevrije Bijbel die Gods Woord je dagelijkse leven in brengt."

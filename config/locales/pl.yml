@@ -193,7 +193,7 @@ pl:
         story text 4: "Aniołowie pojawiają się pasterzom, aby powiedzieć im o narodzeniu Chrystusa."
         story text 5: "Jezus ulecza paralityka"
         feature 1: "Darmowe przeżycie Biblii dla twoich dzieci"
-        feature 2: "Animowana aplikacja opowiadań dla dzieci na smartfony i tablety "
+        feature 2: "Animowana aplikacja historii dla dzieci na smartfony i tablety"
         feature 3: "Kolorowe ilustracje<br> z dotykowymi animacjami "
         feature 4: "Gry i aktywności pomagają dzieciom<br> w zapamiętywaniu"
         feature 5: "Nawigacja przyjazna dzieciom"
@@ -214,7 +214,7 @@ pl:
             one hope: "One Hope: Nadzwyczajne treści biblijne dla dzieci"
         links: 
             apple: "https://itunes.apple.com/pl/app/bible-for-kids/id668692393?ls=1&mt=8"
-            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
+            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=pl"
             amazon: "http://www.amazon.com/gp/product/B00GURLC40"
     now: "Teraz"
     select dropdown: "--Wybierz--"
@@ -1936,14 +1936,14 @@ pl:
         Reader: 
             header: 
                 parallel: "Równolegle"
-                parallel exit: "Exit Parallel Mode"
+                parallel exit: "Wyjdź z trybu równoległego"
                 cancel: "Anuluj"
                 audio label: "Dźwięk"
-                audio window: "Open in new window"
+                audio window: "Otwórz w nowym oknie"
                 font label: "Ustawienia czytnika"
                 notifications label: "Powiadomienia"
                 more label: "Więcej"
-                search input: "Reference or Keyword..."
+                search input: "Referencyjna lub słowo kluczowe ..."
                 home: "Strona główna"
                 bible: "Biblia"
                 plans: "Plany czytania"
@@ -1952,12 +1952,12 @@ pl:
             chapterpicker: 
                 book label: "Księga"
                 chapter label: "Rozdział"
-                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+                chapter unavailable: "Ten rozdział nie jest dostępny w tym przekładzie.  Proszę wybierz inny rozdział lub inny przekład."
             versionpicker: 
                 language label: "Języki Biblii"
                 language sub-label: "Język Biblii"
                 change language: "Zmień język"
-                filter languages: "Filter Languages..."
+                filter languages: "Filtru Języki..."
                 version label: "Wersje"
             reader settings: 
                 footnotes: "Stopki"

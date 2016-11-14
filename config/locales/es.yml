@@ -1898,14 +1898,14 @@ es:
         Reader: 
             header: 
                 parallel: "Biblias en Paralelo"
-                parallel exit: "Exit Parallel Mode"
+                parallel exit: "Salir de Modo Paralelo"
                 cancel: "Cancelar"
                 audio label: "Audio"
-                audio window: "Open in new window"
-                font label: "Configuración del Lector"
+                audio window: "Abrir en ventana nueva"
+                font label: "Configuración de Lector"
                 notifications label: "Notificaciones"
                 more label: "Más"
-                search input: "Reference or Keyword..."
+                search input: "Referencia o Palabra Clave..."
                 home: "Inicio"
                 bible: "Biblia"
                 plans: "Planes"
@@ -1914,12 +1914,12 @@ es:
             chapterpicker: 
                 book label: "Libro"
                 chapter label: "Capítulo"
-                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+                chapter unavailable: "Ese capítulo no está disponible en esta versión.  Por favor, seleccione un capítulo o una versión diferente."
             versionpicker: 
                 language label: "Idiomas de la Biblia"
                 language sub-label: "Idiomas de la Biblia"
                 change language: "Cambiar idioma"
-                filter languages: "Filter Languages..."
+                filter languages: "Filtrar idiomas..."
                 version label: "Versiones"
             reader settings: 
                 footnotes: "Pie de página"

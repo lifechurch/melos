@@ -1898,14 +1898,14 @@
         Reader: 
             header: 
                 parallel: "Parallell"
-                parallel exit: "Exit Parallel Mode"
+                parallel exit: "Gå ut av parallelt modus "
                 cancel: "Avbryt"
-                audio label: "Lyd"
-                audio window: "Open in new window"
+                audio label: "LYD"
+                audio window: "Åpne i nytt vindu"
                 font label: "Leseinnstillinger"
                 notifications label: "Varslinger"
                 more label: "Mer"
-                search input: "Reference or Keyword..."
+                search input: "Referanse eller nøkkelord..."
                 home: "Hjem"
                 bible: "Bibel"
                 plans: "Leseplaner"
@@ -1914,12 +1914,12 @@
             chapterpicker: 
                 book label: "Bok"
                 chapter label: "Kapittel"
-                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+                chapter unavailable: "Dette kapitlet er ikke tilgjengelig i denne versjonen. Vennligst velg et annet kapittel eller en annen versjon."
             versionpicker: 
                 language label: "Bibelspråk"
                 language sub-label: "Bibelspråk"
                 change language: "Endre språk"
-                filter languages: "Filter Languages..."
+                filter languages: "Filtrer språk..."
                 version label: "Versjoner"
             reader settings: 
                 footnotes: "Fotnoter"

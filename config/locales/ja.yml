@@ -460,7 +460,7 @@ ja:
             delete highlight title: "このハイライトを削除する"
             delete bookmark title: "このブックマークを削除する"
             delete note title: "このノートを削除する"
-            more: "さらに"
+            more: "詳細"
             cancel: "キャンセル"
             read in bible: "聖書を読む"
             read plan: "読む"
@@ -603,8 +603,8 @@ ja:
         invalid chapter title: "この訳について"
         invalid chapter text: "この訳には該当する章はありません。"
         invalid secondary chapter text: "第二に設定されている聖書訳に、この章はありません。"
-        no secondary version title: "併読機能について"
-        no secondary version text: "%{language_name}には1種類の聖書訳しかありませんので、こちらで2つ目の聖書訳を選ぶことが出来ませんでした。併読されるの2つ目の聖書訳をお選びください。"
+        no secondary version title: "並列表示機能について"
+        no secondary version text: "%{language_name}には1種類の聖書訳しかありませんので、こちらで2つ目の聖書訳を選ぶことが出来ませんでした。並列表示されるの2つ目の聖書訳をお選びください。"
         select another chapter: "他の章を選択"
         view in reader: "リーダーで %{reference} を表示"
     users: 
@@ -901,7 +901,7 @@ ja:
         status: 
             on track: "予定通り!"
             days ahead: 
-                other: "%{count}日先行!"
+                other: "%{count}日、予定より早く進んでいます!"
             missed days: 
                 other: "%{count}日未読"
         bible plan language: "読書プランの言語"
@@ -1413,7 +1413,7 @@ ja:
             status: 
                 on track: "予定通り!"
                 days ahead: 
-                    other: "%{count}日先行!"
+                    other: "%{count}日、予定より早く進んでいます!"
                 missed days: 
                     other: "%{count}日未読"
             bible plan language: "読書プランの言語"
@@ -1879,13 +1879,13 @@ ja:
         Reader: 
             header: 
                 parallel: "並列表示"
-                parallel exit: "パラレルモードを終了する"
+                parallel exit: "並列表示を終了する"
                 cancel: "キャンセル"
                 audio label: "音声"
                 audio window: "新しいウインドウで開く"
                 font label: "聖書リーダーの設定"
                 notifications label: "通知"
-                more label: "さらに"
+                more label: "詳細"
                 search input: "参照またはキーワード"
                 home: "ホーム"
                 bible: "聖書"
@@ -1895,12 +1895,12 @@ ja:
             chapterpicker: 
                 book label: "書物"
                 chapter label: "章"
-                chapter unavailable: "この章はこちらのバージョンでは利用できません別の章かバージョンをお選びください"
+                chapter unavailable: "ご利用の聖書訳に該当する章がありません。別の章または聖書訳を選んでください。"
             versionpicker: 
                 language label: "聖書の言語"
                 language sub-label: "聖書の言語"
                 change language: "言語を変更"
-                filter languages: "言語をフィルタする"
+                filter languages: "言語を絞り込む"
                 version label: "聖書訳"
             reader settings: 
                 footnotes: "脚注"
