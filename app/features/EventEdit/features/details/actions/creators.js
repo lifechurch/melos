@@ -51,14 +51,14 @@ function view(id, auth=true) {
 }
 
 function create(event) {
-	const { title, org_name, description } = event
+	const { title, org_name, description, image_id } = event
 	return {
 		api_call: {
 			endpoint: 'events',
 			method: 'create',
 			version: '3.2',
 			auth: true,
-			params: {title, org_name, description},
+			params: { title, org_name, description, image_id },
 			http_method: 'post',
 			types: [ type('createRequest'), type('createSuccess'), type('createFailure') ]
 		}

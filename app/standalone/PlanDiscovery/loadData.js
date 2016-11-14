@@ -9,19 +9,21 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isSaved = new RegExp("^\/saved-plans-collection$")
 			const isRecommended = new RegExp("^\/recommended-plans-collection\/[0-9]+")
 			const isPlan = new RegExp("^\/reading-plans\/[0-9]+")
-			const auth = (sessionData.email && sessionData.password) ? { username: sessionData.email, password: sessionData.password } : false
-			console.log(params.url)
+
+			let auth = false
+
+			if (sessionData.email && sessionData.password) {
+				auth = { username: sessionData.email, password: sessionData.password }
+			} else if (sessionData.tp_token) {
+				auth = { tp_token: sessionData.tp_token }
+			}
+
 			if (isIndex.test(params.url)) {
 				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.planLocale }, auth)).then(() => {
 					resolve()
 				})
 			} else if (isSaved.test(params.url)) {
 				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => {
-					resolve()
-				})
-			} else if (isReference.test(params.url)) {
-				console.log('isReference')
-				store.dispatch(ActionCreator.versePage({ language_tag: Locale.planLocale }, auth)).then(() => {
 					resolve()
 				})
 			} else if (params.hasOwnProperty("id")) {

@@ -1,0 +1,258 @@
+// on mobile hide chapter until book is selected, then hide book when selecting chapter
+@media @small-only {
+	.hide-chaps {
+		.book-container {
+			display: block;
+		}
+		.chapter-container {
+			display: none;
+		}
+	}
+	.hide-books {
+		.book-container {
+			display: none;
+		}
+		.chapter-container {
+			display: block;
+		}
+	}
+}
+.chapter-picker-modal {
+
+	z-index: 10;
+	background-color: white;
+
+	display: inline-flex;
+	max-height: 490px;
+	border-radius: @default-radius @default-radius 0px 0px;
+	border: @thin-grey-border;
+
+	.yv-scroll-bar;
+
+	.header {
+		width: inherit;
+		background-color: @light-grey;
+		border-bottom: @thin-grey-border;
+		max-height: 30px;
+
+
+
+		.prev {
+			display: none;
+		}
+		.cancel {
+			display: none;
+		}
+		@media @small-only {
+			.prev {
+				display: block;
+				text-align: @default-float;
+				padding: @default-padding;
+				color: @font-grey;
+			}
+			.cancel {
+				display: block;
+				text-align: @opposite-direction;
+				padding: @default-padding;
+				color: @font-grey;
+				font-size: 13px;
+			}
+		}
+
+	}
+
+
+	// books *******************************************
+	.book-container {
+		min-width: 247px;
+
+		@media @small-only {
+			width: 320px;
+		}
+
+		.book-list:hover {
+			overflow-y: overlay;
+		}
+		.book-list {
+
+			max-height: 460px;
+			overflow-y: hidden;
+			font-size: @list-font-size;
+			margin-left: 0;
+			margin-right: -1px;
+
+			li {
+				padding: 4px 0px 4px 15px;
+				a {
+					color: black;
+				}
+			}
+			li:hover {
+				.yv-hover;
+			}
+
+			.active {
+				.yv-active;
+			}
+			.focus {
+				.yv-hover;
+			}
+		}
+	}
+
+
+	// chapters *****************************************
+	.picker-error {
+
+		position: absolute;
+		width: 314px;
+		height: 60px;
+		z-index: -100;
+		opacity: 0;
+
+		display: flex;
+		.yv-flex-center-all;
+
+		.picker-error;
+
+	}
+	.picker-alert {
+		.picker-error {
+			opacity: 1;
+		}
+		.chapter-list {
+			.dropdown-transform;
+
+		  -webkit-transform: translate(0, 60px);
+		     -moz-transform: translate(0, 60px);
+		      -ms-transform: translate(0, 60px);
+		          transform: translate(0, 60px);
+		}
+	}
+
+	.chapter-container {
+
+		width: 320px;
+		border-left: @thin-grey-border;
+		margin-right: -5px;
+
+		overflow: hidden;
+
+		.header {
+			width: 314px;
+		}
+
+		.chapter-list:hover {
+			overflow-y: overlay;
+		}
+		.chapter-list {
+
+			max-height: 460px;
+			overflow: hidden;
+			font-size: @list-font-size;
+			display: inline-flex;
+			flex-wrap: wrap;
+			margin-left: 0;
+
+
+			li {
+				width: 64px;
+				height: 64px;
+				border: @thin-grey-border;
+				/* these margins are so the touching borders don't look bold */
+				margin-top: -1px;
+				margin-left: -1px;
+				display: flex;
+				.yv-flex-center-all;
+				font-weight: bold;
+				color: @font-grey;
+				background-color: white;
+				.yv-text-ellipsis;
+
+			}
+			li:hover {
+				.yv-hover;
+			}
+
+			.active {
+				.yv-active;
+			}
+			.focus {
+				.yv-hover;
+			}
+		}
+	}
+
+}
+
+
+
+// label
+
+input {
+	border: none;
+	.yv-text-ellipsis;
+}
+.picker-label {
+	display: inline-flex;
+	border-bottom: @thin-grey-border;
+	margin-right: 15px;
+}
+.dropdown-arrow-container {
+	width: 38px;
+	height: 37px;
+	.dropdown-arrow {
+		height: 100%;
+		display: flex;
+		.yv-flex-center-all;
+	}
+}
+.dropdown-arrow-container:hover {
+	cursor: pointer;
+}
+.open {
+	background-color: @light-grey;
+	border: @thin-grey-border;
+	border-bottom: none;
+	z-index: 20;
+}
+
+
+
+
+
+.chapter-picker-container {
+	.hide-modal {
+		overflow: hidden;
+		z-index: 0 !important;
+
+		-webkit-transition:z-index 1s cubic-bezier(0.42,1,.16,.93);
+		-moz-transition:   z-index 1s cubic-bezier(0.42,1,.16,.93);
+		-ms-transition:    z-index 1s cubic-bezier(0.42,1,.16,.93);
+		transition:        z-index 1s cubic-bezier(0.42,1,.16,.93);
+
+		.chapter-picker-modal {
+			/* only transition on transform properties which are hardware accelerated = way better performances */
+			.dropdown-transform-hide;
+		}
+	}
+
+	.modal {
+		position: absolute;
+		z-index: 10;
+		// just under the size of the label
+		top: 36px;
+		overflow: hidden;
+		// because of the overflow hidden, we need to allow padding and compensate
+		// for the drop shadows
+		padding: 0px 15px 25px 15px;
+		left: -5px;
+
+		.chapter-picker-modal {
+			.yv-drop-shadow;
+
+			/* only transition on transform properties which are hardware accelerated = way better performances */
+			.dropdown-transform-show;
+		}
+	}
+}

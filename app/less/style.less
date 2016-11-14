@@ -1,10 +1,22 @@
 @import (inline) "../../node_modules/react-datepicker/dist/react-datepicker.css";
 @import (inline) "../../node_modules/quill/dist/quill.base.css";
 @import (inline) "../../node_modules/quill/dist/quill.snow.css";
-@import "colors";
+@import "constants";
 @import "typography";
 
 
+@import "../features/Bible/components/chapterPicker/less/chapterPicker.less";
+@import "../features/Bible/components/versionPicker/less/versionPicker.less";
+@import "../features/Bible/components/verseAction/less/verseAction.less";
+@import "../features/Bible/components/verseAction/bookmark/less/bookmark.less";
+@import "../features/Bible/components/content/less/content.less";
+
+@import "../components/less/ButtonBar.less";
+@import "../components/less/Toggle.less";
+@import "../components/less/TriggerButton.less";
+@import "../components/less/card.less";
+@import "../features/Bible/components/settings/less/Settings.less";
+@import "../features/Bible/components/audio/less/Audio.less";
 
 /*@small: only screen and (max-width: 479px);
 @medium: only screen and (min-width: 768px) and (max-width: 959px);
@@ -2012,6 +2024,7 @@ ul.language-selector li {
 /* Standard Carousels: (Saved, Recommended, and Collections) */
 .carousel-standard {
 	width: 90%;
+	min-height: 190px;
 
 	@media only screen and (max-width: 519px) {
 		margin-top: 15px;
@@ -2246,55 +2259,3 @@ ul.language-selector li {
 
 
 
-
-.book-list {
-	list-style: none;
-	font-size: 15px;
-
-	li {
-		padding-left: 15px;
-		a {
-			color: black;
-		}
-	}
-
-	.active {
-		background-color: #6AB750;
-		a {
-			color: white;
-		}
-	}
-}
-
-.chapter-list {
-	list-style: none;
-	font-size: 15px;
-	display: inline-flex;
-	flex-wrap: wrap;
-
-	li {
-		width: 64px;
-		height: 64px;
-		border: 1px solid #D4D4D4;
-		/* these margins are so the touching borders don't look bold */
-		margin-left: -1px;
-		margin-bottom: -1px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		font-weight: bold;
-		color: #D4D4D4;
-
-	}
-	li:hover {
-		background-color: #D4D4D4;
-		color: white;
-		cursor: pointer;
-	}
-
-	.active {
-		background-color: #6AB750;
-		color: white;
-	}
-}

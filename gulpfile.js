@@ -90,6 +90,20 @@ gulp.task('javascript:prod:planDiscovery', function() {
 		.pipe(gulp.dest('build/assets'));
 });
 
+gulp.task('javascript:prod:Bible', function() {
+	return browserify("app/standalone/Bible/main.js", { debug: !IS_PROD })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+		.transform('loose-envify', { NODE_ENV: 'production' })
+		.bundle()
+		.pipe(source('Bible.js'))
+		.pipe(buffer())
+		.pipe(uglify())
+		.pipe(rev())
+		.pipe(gulp.dest("./public/javascripts/"))
+		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(gulp.dest('build/assets'));
+});
+
 gulp.task('javascript:prod:subscribeUser', function() {
 	return browserify("app/standalone/SubscribeUser/main.js", { debug: !IS_PROD })
 		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
@@ -140,6 +154,15 @@ gulp.task('javascript:dev:planDiscovery', function() {
 		.pipe(gulp.dest("./public/javascripts/"));
 });
 
+gulp.task('javascript:dev:Bible', function() {
+	return browserify("app/standalone/Bible/main.js", { debug: !IS_PROD })
+		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+		.bundle()
+		.pipe(source('Bible.js'))
+		.pipe(buffer())
+		.pipe(gulp.dest("./public/javascripts/"));
+});
+
 gulp.task('javascript:dev:subscribeUser', function() {
 	return browserify("app/standalone/SubscribeUser/main.js", { debug: !IS_PROD })
 		.transform("babelify", { presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
@@ -163,9 +186,9 @@ gulp.task('images:clean', function() {
 
 gulp.task('javascript', function(callback) {
 	if (IS_PROD) {
-		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:subscribeUser', callback);
+		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', callback);
 	} else {
-		runSequence('javascript:clean', ['javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
+		runSequence('javascript:clean', ['javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:Bible', 'javascript:dev:subscribeUser'], callback);
 	}
 });
 
@@ -219,15 +242,15 @@ gulp.task('images:dev', function() {
 gulp.task('build', ['images', 'css', 'javascript']);
 
 gulp.task('build:production', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], 'images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:subscribeUser', callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], 'images:prod', 'css:prod', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:planDiscovery', 'javascript:prod:subscribeUser', callback);
 });
 
 gulp.task('build:staging', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
 });
 
 gulp.task('build:review', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
 });
 
 gulp.task('watch', ['images', 'css', 'javascript'], function() {

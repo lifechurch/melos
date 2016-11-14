@@ -1,6 +1,31 @@
 import type from './constants'
+import Filter from '../../../lib/filter'
 
 const ActionCreators = {
+
+	/**
+	 * @version: VERSION_ID
+   * @reference: USFM
+   * @lang: locale
+	 */
+	readerLoad(params, auth) {
+		return dispatch => {
+			const { version, reference, language_tag } = params
+			let promises = [
+				dispatch(ActionCreators.bibleVersions({ language_tag: language_tag, type: 'all' })),
+				dispatch(ActionCreators.bibleConfiguration()),
+				dispatch(ActionCreators.bibleVersion({ id: version })),
+				dispatch(ActionCreators.bibleChapter({ id: version, reference: reference, format: 'html', language_tag: language_tag }))
+			]
+
+			if (auth) {
+				promises.push(dispatch(ActionCreators.momentsColors(auth)))
+				promises.push(dispatch(ActionCreators.usersViewSettings(auth)))
+			}
+
+			return Promise.all(promises)
+		}
+	},
 
 	/**
 	 * @id: VERSION_ID
@@ -12,8 +37,27 @@ const ActionCreators = {
 			const { id, reference, format } = params
 			return Promise.all([
 				dispatch(ActionCreators.bibleVersion({ id })),
-				dispatch(ActionCreators.bibleChapter({ id, reference, format }))
+				dispatch(ActionCreators.bibleChapter({ id, reference, format: 'html' }))
 			])
+		}
+	},
+
+	/**
+	 * @version: VERSION_ID
+   * @reference: USFM
+   * @lang: locale
+	 */
+	verseLoad(params, auth) {
+		return dispatch => {
+			const { verse, versions, language_tag } = params
+			let promises = []
+			versions.forEach((version) => {
+				promises.push(dispatch(ActionCreators.bibleVerses({ id: version, reference: verse })))
+			})
+			// then make related reading plans call for the verse
+			//
+			//
+			return Promise.all(promises)
 		}
 	},
 
@@ -90,6 +134,26 @@ const ActionCreators = {
 		}
 	},
 
+	/**
+	 * @id 						id of bible version
+	 * @references		verse, or range of verses to get
+	 * @format				html by default, or text
+	 */
+	bibleVerses(params) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'bible',
+				method: 'verses',
+				version: '3.1',
+				auth: false,
+				params: params,
+				http_method: 'get',
+				types: [ type('bibleVersesRequest'), type('bibleVersesSuccess'), type('bibleVersesFailure') ]
+			}
+		}
+	},
+
 	/* no params */
 	momentsColors(auth, params = {}) {
 		return {
@@ -105,6 +169,37 @@ const ActionCreators = {
 			}
 		}
 	},
+
+	usersViewSettings(auth, params = {}) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'users',
+				method: 'view_settings',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('usersViewSettingsRequest'), type('usersViewSettingsSuccess'), type('usersViewSettingsFailure') ]
+			}
+		}
+	},
+
+	usersUpdateSettings(auth, params = {}) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'users',
+				method: 'update_settings',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'post',
+				types: [ type('usersUpdateSettingsRequest'), type('usersUpdateSettingsSuccess'), type('usersUpdateSettingsFailure') ]
+			}
+		}
+	},
+
 
 	/**
 	 * See http://developers.youversion.com/api/docs/3.1/sections/moments/create.html
@@ -134,7 +229,7 @@ const ActionCreators = {
 	},
 
 	/* no params */
-	momentsLabels(auth, params) {
+	momentsLabels(auth, params = {}) {
 		return {
 			params,
 			api_call: {

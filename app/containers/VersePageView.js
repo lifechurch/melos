@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import AboutPlan from '../features/PlanDiscovery/components/AboutPlan'
 import { connect } from 'react-redux'
 
 class VersePageView extends Component {

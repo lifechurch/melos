@@ -19,8 +19,17 @@ export default function reducer(state = {}, action) {
 
 		case type("bibleConfigurationSuccess"):
 			if (typeof action.response.default_versions !== 'undefined') {
-				const languages = arrayToObject(action.response.default_versions, 'language_tag')
-				return Immutable.fromJS(state).mergeDeep({ all: languages, loading: false }).toJS()
+
+				// ordered array of languages from api
+				const all = Immutable.fromJS(action.response.default_versions).toJS()
+
+				// map of language_tag to its index in the languages array
+				const map = all.reduce((map, lang, idx) => {
+					return Object.assign(map, { [lang.language_tag]: idx })
+				}, {})
+
+				return { all, map }
+
 			} else {
 				return Immutable.fromJS(state).set('loading', false).toJS()
 			}

@@ -61,13 +61,17 @@ class EventEditShare extends Component {
 	render() {
 		const { event, intl, params } = this.props
 	  const eventItem = event.item
-		var interval = setInterval(function() {
-			if (typeof window != 'undefined' && window.addthis
-				&& window.addthis.layers && window.addthis.layers.refresh) {
-				clearInterval(interval);
-				window.addthis.layers.refresh()
-			}
-		}, 100);
+
+	  if (typeof window !== 'undefined') {
+			var interval = setInterval(function() {
+				if (typeof window != 'undefined' && window.addthis
+					&& window.addthis.layers && window.addthis.layers.refresh) {
+					clearInterval(interval);
+					window.addthis.layers.refresh()
+				}
+			}, 100);
+		}
+
 		var image = ::this.getEventImage()
 		return (
 			<div className="medium-6 columns small-centered share">

@@ -1,13 +1,40 @@
 import React, { Component, PropTypes } from 'react'
+import shadeColor from '../../../../lib/shadeColor'
 
 class Color extends Component {
+
 	render() {
-		return (<div>Color</div>)
+		const { color, onSelect, index } = this.props
+
+		if (color) {
+			return (
+				<div className={`color color-${color}`} style={ { 'backgroundColor': `#${color}` } } onClick={onSelect.bind(this, index)}>
+				<style>
+				{`
+					.color-${color}:hover {
+						border: 1px solid ${shadeColor(`#${color}`, -0.18)}
+					}
+				`}
+				</style>
+				</div>
+			)
+		} else {
+			return (
+				<div></div>
+			)
+		}
+
 	}
 }
 
-Color.propTypes = {
 
+/**
+ * 		@color					  		string of hex color
+ * 		@onSelect			  			function to call when selecting color
+ */
+Color.propTypes = {
+	color: React.PropTypes.string,
+	onSelect: React.PropTypes.func
 }
 
 export default Color

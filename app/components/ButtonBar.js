@@ -1,0 +1,92 @@
+import React, { Component, PropTypes } from 'react'
+const VALID_COLUMN_COUNTS = [1, 2, 3, 4]
+
+/**
+ * Button component for use in the ButtonBar
+ *  This exists as separate component so that click handler
+ *  is not created as new function each render or loop iteration
+ */
+class ButtonBarButton extends Component {
+	constructor(props) {
+		super(props)
+		this.handleClick = ::this.handleClick
+	}
+
+	handleClick() {
+		const { item, onClick } = this.props
+		if (typeof onClick === 'function') {
+			onClick(item)
+		}
+	}
+
+	render() {
+		const { selectedClass, item } = this.props
+		return (
+			<div className={`button-bar-button ${selectedClass}`} onClick={this.handleClick}>
+				<div className='button-bar-button-content'>{item.label}</div>
+			</div>
+		)
+	}
+}
+
+ButtonBarButton.propTypes = {
+	item: React.PropTypes.object.isRequired,
+	selectedClass: React.PropTypes.string.isRequired,
+	onClick: React.PropTypes.func.isRequired
+}
+
+
+/**
+ * ButtonBar component for display lists of buttons
+ *  Optionally, can break into 2, 3 or 4 columns of buttons
+ */
+class ButtonBar extends Component {
+	constructor(props) {
+		super(props)
+		const { initialValue, items } = props
+
+		let initialItem = {}
+		if (Array.isArray(items)) {
+			items.forEach((item) => {
+				if (item.value === initialValue) {
+					initialItem = item
+				}
+			})
+		}
+
+		this.state = { selectedItem: initialItem }
+		this.handleClick = ::this.handleClick
+	}
+
+	handleClick(item) {
+		const { onClick } = this.props
+		if (typeof onClick === 'function') {
+			onClick(item)
+		}
+		this.setState({ selectedItem: item })
+	}
+
+	render() {
+		const { items, cols } = this.props
+		const columnsClass = VALID_COLUMN_COUNTS.indexOf(cols) !== -1 && cols !== 1 ? `cols cols-${cols.toString()}` : ''
+		const buttons = items.map((item) => {
+			const selectedClass = (item.value === this.state.selectedItem.value) ? 'selected' : ''
+			return (<ButtonBarButton key={item.value} item={item} selectedClass={selectedClass} onClick={this.handleClick} />)
+		})
+
+		return (
+			<div className={`button-bar ${columnsClass}`}>
+				{buttons}
+			</div>
+		)
+	}
+}
+
+ButtonBar.propTypes = {
+	items: React.PropTypes.array.isRequired,
+	onClick: React.PropTypes.func,
+	cols: React.PropTypes.oneOf(VALID_COLUMN_COUNTS),
+	initialValue: React.PropTypes.any
+}
+
+export default ButtonBar
