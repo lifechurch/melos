@@ -82,22 +82,24 @@ class AudioPlayer extends Component {
 	}
 
 	handlePlayerLoaded(player) {
-		const { currentTime, playing } = this.state
+		if (typeof player !== 'undefined' && player !== null) {
+			const { currentTime, playing } = this.state
 
-		this.player = player
-		this.player.onerror = this.handlePlayerError
-		this.player.onplay = this.handlePlayerPlaying
-		this.player.onpause = this.handlePlayerPause
-		this.player.playbackRate = this.state.playbackRate
-		this.player.ontimeupdate = this.handlePlayerTimeUpdate
-		this.player.ondurationchange = this.handlePlayerDurationChange
-		this.player.currentTime = currentTime
+			this.player = player
+			this.player.onerror = this.handlePlayerError
+			this.player.onplay = this.handlePlayerPlaying
+			this.player.onpause = this.handlePlayerPause
+			this.player.playbackRate = this.state.playbackRate
+			this.player.ontimeupdate = this.handlePlayerTimeUpdate
+			this.player.ondurationchange = this.handlePlayerDurationChange
+			this.player.currentTime = currentTime
 
-		if (playing) {
-			this.handlePlayerPlayRequest()
+			if (playing) {
+				this.handlePlayerPlayRequest()
+			}
+
+			this.setState({ initialized: true })
 		}
-
-		this.setState({ initialized: true })
 	}
 
 	handlePlayerError(e) {
