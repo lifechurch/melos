@@ -64,7 +64,6 @@ class Bible extends Component {
 
 
 		LocalStore.setIn('mySettings.bob.john.fred', 'superman')
-		console.log(LocalStore.getIn('mySettings.bob.john.fred'))
 
 
 		this.state = {
@@ -99,23 +98,13 @@ class Bible extends Component {
 		this.setState({ selectedLanguage: languageTag })
 
 		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
-			console.time("Build Versions Index")
 			Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
-			console.timeEnd("Build Versions Index")
-
-			console.time("Add V Items")
 			Filter.add("VersionStore", versions.versions)
-			console.timeEnd("Add V Items")
 		})
 
 		dispatch(ActionCreators.bibleConfiguration()).then((config) => {
-			console.time("Build Index")
 			Filter.build("LangStore", [ "name", "local_name" ])
-			console.timeEnd("Build Index")
-
-			console.time("Add Items")
 			Filter.add("LangStore", config.default_versions)
-			console.timeEnd("Add Items")
 		})
 	}
 
@@ -143,7 +132,6 @@ class Bible extends Component {
 	getVersion(versionid) {
 		const { dispatch, bible } = this.props
 		this.chapterVersionCall(versionid, this.state.selectedChapter)
-		this.setState({ selectedVersion: versionid })
 		this.toggleVersionPickerList()
 
 		this.recentVersions.add(versionid)
@@ -158,14 +146,11 @@ class Bible extends Component {
 		if (versionid !== this.state.selectedVersion) {
 			this.setState({ selectedVersion: versionid })
 			dispatch(ActionCreators.bibleVersion({ id: versionid })).then((version) => {
+				Filter.build("BooksStore", [ "human", "usfm" ])
+				Filter.add("BooksStore", version.books)
 				this.recentVersions.addVersion(version)
 			})
 		}
-	}
-
-	getLabels() {
-		const { dispatch } = this.props
-		dispatch(ActionCreators.momentsLabels(true, { selectedLanguage: this.state.selectedLanguage }))
 	}
 
 	// this handles the class toggling for book and chapter clicks on mobile
@@ -196,19 +181,16 @@ class Bible extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		const { bible } = this.props
-		const { chapter } = this.state
-
+		// console.log(bible.chapter)
+		//
+		// send error down to pickers
 		if (bible.chapter != prevProps.bible.chapter) {
 			if (bible.chapter.errors) {
 				this.setState({ chapterError: true })
 			} else {
-				if (bible.chapter.reference && bible.chapter.reference.usfm) {
-					this.setState({
-						chapterError: false,
-						selectedChapter: bible.chapter.reference.usfm,
-						inputValue: bible.chapter.reference.human
-					})
-				}
+				this.setState({
+					chapterError: false,
+				})
 			}
 		}
 

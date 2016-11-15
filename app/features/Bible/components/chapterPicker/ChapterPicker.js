@@ -39,7 +39,8 @@ class ChapterPicker extends Component {
 			filtering: false,
 			dropdown: false,
 			listErrorAlert: false,
-			classes: 'hide-chaps'
+			classes: 'hide-chaps',
+			chapterLoading: false
 		}
 
 		this.handleDropDownClick = ::this.handleDropDownClick
@@ -67,12 +68,14 @@ class ChapterPicker extends Component {
 	 * @param  prevState  				The previous state
 	 */
 	componentDidUpdate(prevProps, prevState) {
-		const { books, togglePickerExclusion, chapter } = this.props
+		const { books, togglePickerExclusion, chapter, bookMap } = this.props
 		const {
 			chapterlistSelectionIndex,
 			booklistSelectionIndex,
+			selectedBook,
 			dropdown,
-			chapters
+			chapters,
+			chapterLoading
 		} = this.state
 
 		let focusElement = document.getElementsByClassName('focus')[0]
@@ -105,7 +108,9 @@ class ChapterPicker extends Component {
 				this.setState({ inputDisabled: true })
 			} else {
 				this.setState({ inputDisabled: false })
-				if (chapter.reference) {
+				// if a new chapter is loading, then it was selected and the input value
+				// has already been set without waiting for new chapter call
+				if (!chapterLoading && !dropdown && chapter.reference) {
 					this.setState({ inputValue: chapter.reference.human })
 				}
 			}
@@ -120,15 +125,37 @@ class ChapterPicker extends Component {
 
 		}
 
-		if (chapter.reference && prevProps.chapter && chapter.reference.version_id && prevProps.chapter.version_id &&
-			(chapter.reference.version_id != prevProps.chapter.reference.version_id)
-		) {
-			console.log('new filter?')
-			// we need to rebuild the filter index in case new version doesn't have the same books
-			Filter.build("BooksStore", [ "human", "usfm" ])
-			Filter.add("BooksStore", books)
+		// update the picker if new chapter call
+		if (chapter.reference.usfm != prevProps.chapter.reference.usfm) {
+			if (chapter.errors) {
+				this.setState({ listErrorAlert: true })
+			} else {
+				// force the input to lose focus after successful load
+				if (document.activeElement != document.body) document.activeElement.blur();
+
+				if (chapter.reference && chapter.reference.usfm) {
+					this.setState({
+						listErrorAlert: false,
+						selectedBook: chapter.reference.usfm.split('.')[0],
+						selectedChapter: chapter.reference.usfm,
+						inputValue: chapter.reference.human,
+						chapterLoading: false
+					})
+				}
+			}
 		}
 
+		// update books and chapters for a new version
+		if (chapter.reference.version_id != prevProps.chapter.reference.version_id) {
+			if (chapter.errors) {
+				this.setState({ listErrorAlert: true })
+			} else {
+				this.setState({
+					books: books,
+					chapters: books[bookMap[selectedBook]].chapters
+				})
+			}
+		}
 
 	}
 
@@ -162,17 +189,17 @@ class ChapterPicker extends Component {
 		const { getChapter, books, bookMap } = this.props
 
 		if (selectedChapter && selectedChapter.usfm) {
+			console.log(`${books[bookMap[selectedChapter.usfm.split('.')[0]]].human} ${selectedChapter.human}`)
 			this.setState({
 				selectedChapter: selectedChapter.usfm,
 				inputValue: `${books[bookMap[selectedChapter.usfm.split('.')[0]]].human} ${selectedChapter.human}`,
 				chapterlistSelectionIndex: 0,
-				dropdown: false
+				chapterLoading: true,
+				dropdown: false,
 			})
-			getChapter(selectedChapter.usfm)
 			this.setState({ listErrorAlert: false })
 			this.toggleChapterPickerList()
-			// then write cookie for selected chapter
-			cookie.save('last_read', selectedChapter.usfm, { maxAge: moment().add(1, 'y').toDate(), path: '/' })
+			getChapter(selectedChapter.usfm)
 		} else {
 			this.setState({ listErrorAlert: true })
 		}
@@ -188,6 +215,11 @@ class ChapterPicker extends Component {
 	handleLabelChange(inputValue) {
 		const { books, bookMap } = this.props
 		const { selectedBook } = this.state
+
+		if (!books[bookMap[selectedBook]]) {
+			this.setState({ listErrorAlert: true, dropdown: true })
+			return false
+		}
 
 		// filter the books given the input change
 		let results = Filter.filter("BooksStore", inputValue.trim())
@@ -320,6 +352,9 @@ class ChapterPicker extends Component {
 			selectedBook
 		} = this.state
 
+		if (!books[bookMap[selectedBook]]) {
+			return false
+		}
 
 		// filtering books
 		if (this.state.books && !this.state.chapters) {

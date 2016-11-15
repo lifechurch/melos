@@ -33,7 +33,7 @@ class VersionPicker extends Component {
 			dropdown: alert ? true : false,
 			listErrorAlert: alert,
 			versionFiltering: false,
-			classes: 'hide-langs'
+			classes: 'hide-langs',
 		}
 
 		this.handleDropDownClick = ::this.handleDropDownClick
@@ -84,7 +84,7 @@ class VersionPicker extends Component {
 		if (dropdown !== prevState.dropdown) {
 			if (dropdown && !versionFiltering) {
 				this.setState({ inputDisabled: true })
-			} else {
+			} else if (!dropdown) {
 				this.setState({
 					inputDisabled: false,
 					langInputValue: null,
@@ -104,6 +104,8 @@ class VersionPicker extends Component {
 
 		// if the new version call is successful, let's close the modal
 		if (version.id !== prevProps.version.id && !alert && !listErrorAlert) {
+			// force the input to lose focus after successful load
+			if (document.activeElement != document.body) document.activeElement.blur();
 			this.setState({ dropdown: false })
 		}
 
@@ -142,7 +144,7 @@ class VersionPicker extends Component {
 		if (version.id) {
 			this.setState({
 				selectedVersion: version.id,
-				inputValue: version.abbreviation.toUpperCase()
+				inputValue: version.abbreviation.toUpperCase(),
 			})
 			getVersion(version.id)
 		} else {
@@ -268,7 +270,7 @@ class VersionPicker extends Component {
 			versions
 		} = this.state
 
-		let versionKeys = Object.keys(versions)
+		let versionKeys = typeof versions == 'object' ? Object.keys(versions) : []
 		// filtering
 		if (versionFiltering && versionKeys.length > 0) {
 
