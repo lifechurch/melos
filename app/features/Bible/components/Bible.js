@@ -221,7 +221,7 @@ class Bible extends Component {
 
 
 	render() {
-		const { bible, audio, settings, verseAction } = this.props
+		const { bible, audio, settings, verseAction, hosts } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
@@ -254,7 +254,7 @@ class Bible extends Component {
 						cancelDropDown={this.state.versionDropDownCancel}
 						togglePickerExclusion={::this.togglePickerExclusion}
 					/>
-					<AudioPopup audio={audio} />
+					<AudioPopup audio={bible.audio} hosts={hosts} />
 					<Settings
 						onChange={this.handleSettingsChange}
 						initialFontSize={fontSize}
@@ -303,7 +303,8 @@ class Bible extends Component {
 }
 
 Bible.propTypes = {
-	bible: PropTypes.object.isRequired
+	bible: PropTypes.object.isRequired,
+	hosts: PropTypes.object.isRequired
 }
 
 export default Bible

@@ -66,6 +66,18 @@ class ButtonBar extends Component {
 		this.setState({ selectedItem: item })
 	}
 
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.initialValue !== this.state.selectedItem.value) {
+			let selectedItem = {}
+			this.props.items.forEach((item) => {
+				if (item.value === nextProps.initialValue) {
+					selectedItem = item
+				}
+			})
+			this.setState({ selectedItem })
+		}
+	}
+
 	render() {
 		const { items, cols } = this.props
 		const columnsClass = VALID_COLUMN_COUNTS.indexOf(cols) !== -1 && cols !== 1 ? `cols cols-${cols.toString()}` : ''
