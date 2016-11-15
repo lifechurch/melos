@@ -17,7 +17,7 @@ class PlansController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
 
     if (fromNode['error'].present?)
       return render_404
@@ -38,7 +38,7 @@ class PlansController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
 
     if (fromNode['error'].present?)
       return render_404
@@ -67,7 +67,7 @@ class PlansController < ApplicationController
         "cache_for" => YV::Caching::a_very_long_time
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
 
     if (fromNode['error'].present?)
       return render_404
@@ -93,7 +93,7 @@ class PlansController < ApplicationController
       redirect_to sign_in_path(redirect: save_for_later_action_path) and return
     end
 
-    fromNode = YV::Nodestack::Fetcher.get('SaveForLater', p, cookies, current_auth, current_user)
+    fromNode = YV::Nodestack::Fetcher.get('SaveForLater', p, cookies, current_auth, current_user, request)
 
     if (fromNode['error'].present?)
       return render_404
@@ -119,7 +119,7 @@ class PlansController < ApplicationController
       redirect_to sign_in_path(redirect: subscribe_user_action_path) and return
     end
 
-    fromNode = YV::Nodestack::Fetcher.get('SubscribeUser', p, cookies, current_auth, current_user)
+    fromNode = YV::Nodestack::Fetcher.get('SubscribeUser', p, cookies, current_auth, current_user, request)
 
     if (fromNode['error'].present?)
       return render_404
