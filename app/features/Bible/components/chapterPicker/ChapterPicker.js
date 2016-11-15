@@ -120,6 +120,15 @@ class ChapterPicker extends Component {
 
 		}
 
+		if (chapter.reference && prevProps.chapter && chapter.reference.version_id && prevProps.chapter.version_id &&
+			(chapter.reference.version_id != prevProps.chapter.reference.version_id)
+		) {
+			console.log('new filter?')
+			// we need to rebuild the filter index in case new version doesn't have the same books
+			Filter.build("BooksStore", [ "human", "usfm" ])
+			Filter.add("BooksStore", books)
+		}
+
 
 	}
 
@@ -132,16 +141,21 @@ class ChapterPicker extends Component {
 	 */
 	getBook(selectedBook, filtering) {
 		const { books, bookMap } = this.props
-		this.setState({
-			selectedBook: selectedBook.usfm,
-			inputValue: `${selectedBook.human} `,
-			// if we're filtering, then don't render books after book selection
-			books: filtering ? null : books,
-			chapters: books[bookMap[selectedBook.usfm]].chapters,
-			dropdown: true,
-			booklistSelectionIndex: 0,
-		})
-		this.toggleChapterPickerList()
+
+		if (selectedBook.usfm && selectedBook.usfm in bookMap) {
+			this.setState({
+				selectedBook: selectedBook.usfm,
+				inputValue: `${selectedBook.human} `,
+				// if we're filtering, then don't render books after book selection
+				books: filtering ? null : books,
+				chapters: books[bookMap[selectedBook.usfm]].chapters,
+				dropdown: true,
+				booklistSelectionIndex: 0,
+			})
+			this.toggleChapterPickerList()
+		} else {
+			this.setState({ listErrorAlert: true })
+		}
 	}
 
 	getChapter(selectedChapter) {

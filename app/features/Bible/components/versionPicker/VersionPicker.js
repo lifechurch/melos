@@ -85,7 +85,11 @@ class VersionPicker extends Component {
 			if (dropdown && !versionFiltering) {
 				this.setState({ inputDisabled: true })
 			} else {
-				this.setState({ inputDisabled: false, langInputValue: null })
+				this.setState({
+					inputDisabled: false,
+					langInputValue: null,
+					inputValue: version.abbreviation.toUpperCase(),
+				})
 			}
 
 			// let's tell the parent component that we're open
@@ -264,12 +268,11 @@ class VersionPicker extends Component {
 			versions
 		} = this.state
 
-
+		let versionKeys = Object.keys(versions)
 		// filtering
-		if (versionFiltering) {
+		if (versionFiltering && versionKeys.length > 0) {
 
 			this.setState({ languagelistSelectionIndex: 0 })
-			let versionKeys = Object.keys(versions)
 			if (keyEventName == "ArrowUp") {
 				event.preventDefault()
 

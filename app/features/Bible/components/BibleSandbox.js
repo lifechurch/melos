@@ -34,7 +34,7 @@ const DEFAULT_READER_SETTINGS = {
 	showVerseNumbers: true
 }
 
-class Bible extends Component {
+class Sandbox extends Component {
 
 	constructor(props) {
 		super(props)
@@ -85,9 +85,12 @@ class Bible extends Component {
 			showVerseNumbers: typeof showVerseNumbers === "boolean" ? showVerseNumbers : DEFAULT_READER_SETTINGS.showVerseNumbers
 		}
 
-		this.header = null
+		this.chapterPicker = null
+		this.versionsss = null
+		this.versionPicker = null
+		this.color = null
 		this.content = null
-
+		this.labels = null
 		this.handleButtonBarClick = ::this.handleButtonBarClick
 		this.handleSettingsChange = ::this.handleSettingsChange
 	}
@@ -163,6 +166,22 @@ class Bible extends Component {
 		}
 	}
 
+
+	getLanguage(language) {
+
+	}
+
+	handleLabelChange(inputValue) {
+		// const { books, bookMap } = this.props
+		// const { selectedBook } = this.state
+
+		// filter the books given the input change
+		// let results = Filter.filter("BooksStore", inputValue.trim())
+
+		this.setState({ inputValue: inputValue })
+
+	}
+
 	getLabels() {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.momentsLabels(true, { selectedLanguage: this.state.selectedLanguage }))
@@ -189,10 +208,44 @@ class Bible extends Component {
 	}
 
 
+	filterLang(changeEvent) {
+		const filter = changeEvent.target.value;
+		const instance = this
+		console.time("Filter Items")
+		const results = Filter.filter("LangStore", filter)
+		console.timeEnd("Filter Items")
+		instance.setState({ results })
+	}
+
+	filterVersions(changeEvent) {
+		const filter = changeEvent.target.value;
+		const instance = this
+		console.time("Filter V Items")
+		const versions = Filter.filter("VersionStore", filter)
+		console.timeEnd("Filter V Items")
+		instance.setState({ versions })
+	}
+
+	labelSelect(label) {
+		console.log('select', label)
+	}
+
+	labelDelete(label) {
+		console.log('delete', label)
+	}
+
+	getColor(color) {
+		console.log(color)
+	}
+
 	handleVerseSelect(e) {
 		console.log(e)
 	}
 
+	getColors() {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.momentsColors())
+	}
 
 	componentDidUpdate(prevProps, prevState) {
 		const { bible } = this.props
@@ -214,10 +267,10 @@ class Bible extends Component {
 
 	}
 
-
-	handleButtonBarClick(item) {
-		console.log("BBC", item)
+	handleTriggerClick() {
+		console.log("Ouch!")
 	}
+
 	handleSettingsChange(key, value) {
 		console.log("Settings", key, value)
 		LocalStore.setIn(key, value)
@@ -235,15 +288,20 @@ class Bible extends Component {
 		})
 
 		this.recentVersions.syncVersions(bible.settings)
+
+		console.log("Recent Versions:", this.recentVersions.get())
 	}
 
+	handleButtonBarClick(item) {
+		console.log("BBC", item)
+	}
 
 	render() {
 		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
-			this.header = (
+			this.chapterPicker = (
 				<Header sticky={true} >
 					<ChapterPicker
 						{...this.props}
@@ -284,6 +342,10 @@ class Bible extends Component {
 			)
 		}
 
+		if (Array.isArray(bible.highlightColors)) {
+			this.color = <ColorList list={bible.highlightColors} />
+		}
+
 		if (this.state.chapterError) {
 			this.content = <h2>Oh nooooooooo</h2>
 		} else if (bible.chapter && bible.chapter.reference && bible.version && bible.version.language && bible.chapter.content) {
@@ -307,12 +369,34 @@ class Bible extends Component {
 			)
 		}
 
+		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical) {
+			this.labels = (
+				<div>
+					<LabelSelector
+						byAlphabetical={bible.momentsLabels.byAlphabetical}
+						byCount={bible.momentsLabels.byCount}
+					/>
+				</div>
+			)
+		}
+
 		return (
 			<div className="">
-				{ this.header }
+				{ this.chapterPicker }
 				<div className="row">
 					<div className="columns large-6 medium-10 medium-centered">
 						{ this.content }
+					</div>
+				</div>
+				<div>
+					<div onClick={::this.getLabels} >Get Labels Bruh</div>
+					<div>{ this.labels }</div>
+					<div className="row">
+					<VerseAction verseAction={verseAction} />
+						<div className="columns medium-3">
+							<div onClick={::this.getColors}>Get Colors</div>
+							{ this.color }
+						</div>
 					</div>
 				</div>
 			</div>
@@ -320,8 +404,8 @@ class Bible extends Component {
 	}
 }
 
-Bible.propTypes = {
+Sandbox.propTypes = {
 	bible: PropTypes.object.isRequired
 }
 
-export default Bible
+export default Sandbox
