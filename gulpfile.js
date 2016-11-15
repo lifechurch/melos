@@ -246,11 +246,11 @@ gulp.task('build:production', function(callback) {
 });
 
 gulp.task('build:staging', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:dev', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
 });
 
 gulp.task('build:review', function(callback) {
-	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
+	runSequence(['images:clean', 'javascript:clean', 'css:clean'], ['images:prod', 'css:dev', 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:subscribeUser'], callback);
 });
 
 gulp.task('watch', ['images', 'css', 'javascript'], function() {
