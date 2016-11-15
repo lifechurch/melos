@@ -4,6 +4,7 @@ import TriggerButton from '../../../../components/TriggerButton'
 import AudioPlayer from './AudioPlayer'
 import { FormattedMessage } from 'react-intl'
 import LocalStore from '../../../../lib/localStore'
+import DropdownTransition from '../../../../components/DropdownTransition'
 
 class AudioPopup extends Component {
 	constructor(props) {
@@ -41,19 +42,17 @@ class AudioPopup extends Component {
 
 	render() {
 		const { percentComplete, hasStandalone } = this.state
-		const modalClass = this.state.isOpen ? '' : 'hide-modal'
+
 		return (
 			<div className='audio-popup'>
 				<TriggerButton image={<AudioTriggerImage percentComplete={percentComplete} width={40} height={40} />} onClick={this.triggerClick} />
-				<div className={`modal ${modalClass}`}>
-					<div className="audio-popup-modal">
-						<div className="header vertical-center horizontal-center"><FormattedMessage id="bible.audio" /></div>
-						<div className="body">
-							<AudioPlayer {...this.props} onTimeChange={this.handleTimeChange} hasStandalone={hasStandalone} onResumeFromStandalone={this.handleResumeFromStandalone} />
-							<a onClick={this.openInNewWindow}><FormattedMessage id="open.new.window" /></a>
-						</div>
+				<DropdownTransition show={this.state.isOpen} classes={'audio-popup-modal'}>
+					<div className="header vertical-center horizontal-center">AUDIO</div>
+					<div className="body">
+						<AudioPlayer {...this.props} onTimeChange={this.handleTimeChange} hasStandalone={hasStandalone} onResumeFromStandalone={this.handleResumeFromStandalone} />
+						<a onClick={this.openInNewWindow}><FormattedMessage id="open.new.window" /></a>
 					</div>
-				</div>
+				</DropdownTransition>
 			</div>
 		)
 	}
