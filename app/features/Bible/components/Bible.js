@@ -291,7 +291,7 @@ class Bible extends Component {
 	}
 
 	render() {
-		const { bible, audio, settings, verseAction } = this.props
+		const { bible, audio, settings, verseAction, hosts } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter) {
@@ -378,7 +378,7 @@ class Bible extends Component {
 					initialShowFootnotes={showFootnotes}
 					initialShowVerseNumbers={showVerseNumbers}
 				/>
-				<AudioPopup audio={audio} />
+				<AudioPopup audio={bible.audio} hosts={hosts} />
 				<div className="row">
 					<div className='row'>
 						<div className="columns medium-12 vertical-center">
@@ -397,7 +397,6 @@ class Bible extends Component {
 					<div>{ this.labels }</div>
 					<div className="row">
 					<Header {...this.props} />
-					<AudioPopup audio={audio} />
 					<Settings settings={settings} />
 					<VerseAction verseAction={verseAction} />
 						<div className="columns medium-3">
@@ -412,7 +411,8 @@ class Bible extends Component {
 }
 
 Bible.propTypes = {
-	bible: PropTypes.object.isRequired
+	bible: PropTypes.object.isRequired,
+	hosts: PropTypes.object.isRequired
 }
 
 export default Bible

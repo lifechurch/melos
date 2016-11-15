@@ -188,7 +188,7 @@ gulp.task('javascript', function(callback) {
 	if (IS_PROD) {
 		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', callback);
 	} else {
-		runSequence('javascript:clean', ['javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:Bible', 'javascript:dev:subscribeUser'], callback);
+		runSequence('javascript:clean', ['javascript:dev', /*'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery',*/ 'javascript:dev:Bible' /*, 'javascript:dev:subscribeUser'*/], callback);
 	}
 });
 

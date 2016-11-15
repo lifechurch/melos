@@ -22,7 +22,8 @@ class BibleView extends Component {
 function mapStateToProps(state) {
 	return {
 		auth: state.auth,
-		bible: state.bibleReader
+		bible: state.bibleReader,
+		hosts: state.hosts
 	}
 }
 
