@@ -205,11 +205,11 @@ class AudioPlayer extends Component {
 	}
 
 	handleYieldToStandalone() {
-		const { audio } = this.props
+		const { audio, hosts } = this.props
 		LocalStore.set("standaloneAudioPlayerState", Object.assign({}, this.state, { standaloneWindow: null }))
 		LocalStore.set("standaloneAudioPlayerAudio", audio)
 		this.handlePlayerPauseRequest()
-		let standaloneWindow = window.open('http://localhost:3000/en-US/bible-audio-player', '_blank')
+		let standaloneWindow = window.open('${hosts.nodeHost}/en-US/bible-audio-player', '_blank')
 		this.setState({ hasStandalone: true, standaloneWindow: standaloneWindow })
 	}
 
