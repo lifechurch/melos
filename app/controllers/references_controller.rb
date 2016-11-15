@@ -25,7 +25,7 @@ class ReferencesController < ApplicationController
         "ref" => params[:reference]
     }
 
-    fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user)
+    fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user, request)
 
     if (fromNode['error'].present?)
       return render_404
