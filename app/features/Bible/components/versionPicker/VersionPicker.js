@@ -24,7 +24,7 @@ class VersionPicker extends Component {
 			selectedVersion: version.id,
 			languages: languages,
 			versions: versions.byLang[versions.selectedLanguage],
-			inputValue: version.abbreviation.toUpperCase(),
+			inputValue: version.local_abbreviation.toUpperCase(),
 			langInputValue: null,
 			languagelistSelectionIndex: 0,
 			versionlistSelectionIndex: 0,
@@ -52,7 +52,7 @@ class VersionPicker extends Component {
 		// build languages and versions index client side when the component renders
 		Filter.build("LanguageStore", [ "name", "local_name" ])
 		Filter.add("LanguageStore", languages)
-		Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
+		Filter.build("VersionStore", [ "title", "local_title", "local_abbreviation" ])
 		// versions.byLang["lang_tag"] is an object, so we need to pass as array for filter
 		let versionsObj = versions.byLang[versions.selectedLanguage]
 		Filter.add("VersionStore", Object.keys(versionsObj).map(key => versionsObj[key]))
@@ -88,7 +88,7 @@ class VersionPicker extends Component {
 				this.setState({
 					inputDisabled: false,
 					langInputValue: null,
-					inputValue: version.abbreviation.toUpperCase(),
+					inputValue: version.local_abbreviation.toUpperCase(),
 				})
 			}
 
@@ -144,7 +144,7 @@ class VersionPicker extends Component {
 		if (version.id) {
 			this.setState({
 				selectedVersion: version.id,
-				inputValue: version.abbreviation.toUpperCase(),
+				inputValue: version.local_abbreviation.toUpperCase(),
 			})
 			getVersion(version.id)
 		} else {
@@ -326,7 +326,7 @@ class VersionPicker extends Component {
 			} else {
 				dat.setState({
 					dropdown: false,
-					inputValue: version.abbreviation.toUpperCase()
+					inputValue: version.local_abbreviation.toUpperCase()
 				})
 
 				let dis = dat
