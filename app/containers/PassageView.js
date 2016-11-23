@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-class VersePageView extends Component {
+class PassageView extends Component {
 	render() {
 		return (
 			<h1>Verse Page</h1>
@@ -12,9 +12,9 @@ class VersePageView extends Component {
 function mapStateToProps(state) {
 	return {
 		readingPlans: state.readingPlans ? state.readingPlans : {},
-		bible: (state.bible) ? state.bible : {},
+		passage: (state.passage) ? state.passage : {},
 		auth: (state.auth)
 	}
 }
 
-export default connect(mapStateToProps, null)(VersePageView)
+export default connect(mapStateToProps, null)(PassageView)

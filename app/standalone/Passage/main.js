@@ -7,7 +7,7 @@ import defaultState from './defaultState'
 import createLogger from 'redux-logger'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
-import VersePageView from '../../containers/VersePageView'
+import PassageView from '../../containers/PassageView'
 
 require('moment/min/locales')
 
@@ -30,7 +30,7 @@ moment.locale(window.__LOCALE__.locale)
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
 		<Provider store={store}>
-			<VersePageView />
+			<PassageView />
 		</Provider>
 	</IntlProvider>,
   document.getElementById('react-app')

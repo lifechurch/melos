@@ -12,6 +12,7 @@ import plans from './plans'
 import configuration from '../features/EventFeedMine/reducers/configuration'
 import plansDiscovery from '../features/PlanDiscovery/reducers'
 import bibleReader from '../features/Bible/reducers'
+import passage from '../features/Passage/reducers'
 
 const rootReducer = combineReducers({
 	auth: auth,
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
 	modals,
 	loc,
 	locations,
+	passage,
 	plans,
 	plansDiscovery,
 	configuration,
