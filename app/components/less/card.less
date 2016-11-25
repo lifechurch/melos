@@ -1,5 +1,5 @@
 .card {
-	padding: 45px;
+	padding: 35px;
 	background: white;
 	box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.07);
 	border-radius: 2px;
@@ -7,10 +7,31 @@
 }
 
 .verse-card {
+	.verse {
+		flex-wrap: wrap;
+	}
+
 	.heading {
+		flex-grow: 1;
+		min-width: 100%;
 		font-weight: bold;
 		font-size: 16px;
 		color: black;
-		margin-bottom: 15px;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
+	.verse-content {
+		max-width: 95%;
+		margin-bottom: 20px;
+	}
+
+	.xmark-container:hover {
+		cursor: pointer;
+	}
+	.xmark-container {
+		display: inline-flex;
+		margin-left: auto;
+		margin-bottom: 40px;
 	}
 }
