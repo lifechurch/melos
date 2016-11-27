@@ -9,6 +9,14 @@ const constants = {
 	bibleVersesSuccess: "BIBLE_VERSES_SUCCESS",
 	bibleVersesFailure: "BIBLE_VERSES_FAILURE",
 
+	readingplansConfigurationRequest: "READINGPLANS_CONFIGURATION_REQUEST",
+	readingplansConfigurationSuccess: "READINGPLANS_CONFIGURATION_SUCCESS",
+	readingplansConfigurationFailure: "READINGPLANS_CONFIGURATION_FAILURE",
+
+	readingplansPlansByReferenceRequest: "READINGPLANS_PLANSBYREFERENCE_REQUEST",
+	readingplansPlansByReferenceSuccess: "READINGPLANS_PLANSBYREFERENCE_SUCCESS",
+	readingplansPlansByReferenceFailure: "READINGPLANS_PLANSBYREFERENCE_FAILURE",
+
 }
 
 export default function (key) {
