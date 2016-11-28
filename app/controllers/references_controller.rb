@@ -1,3 +1,5 @@
+DEFAULT_VERSIONS = YAML.load_file("#{Rails.root}/config/locale_versions.yml")
+
 class ReferencesController < ApplicationController
 
   before_filter :mobile_redirect,               only: [:show]
@@ -35,6 +37,37 @@ class ReferencesController < ApplicationController
     @node_meta_tags = fromNode['head']['meta']
 
     render locals: { html: fromNode['html'], js: fromNode['js'] }
+  end
+
+  def passage
+    # now_reading(self.presenter.reference)
+    # respond_to do |format|
+    #   format.html
+    #   format.xml  { render nothing: true }
+    #   format.json { render "show.json.rabl" }
+    # end
+
+    versions = DEFAULT_VERSIONS.key?(I18n.locale.to_s) ? DEFAULT_VERSIONS[I18n.locale.to_s] : DEFAULT_VERSIONS["en"]
+
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "cache_for" => YV::Caching::a_very_long_time,
+        "versions" => versions['text'],
+        "ref" => params[:reference]
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('Passage', p, cookies, current_auth, current_user, request)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'show', locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   protected
