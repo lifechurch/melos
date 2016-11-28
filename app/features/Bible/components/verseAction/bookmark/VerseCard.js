@@ -15,12 +15,23 @@ class VerseCard extends Component {
 
 	componentDidMount() {
 		const {
-			references,
+			verses,
 			version
 		} = this.props
 
-		if (version && references) {
-			this.addVerse(version, references)
+		this.setState({
+			verseContent: verses,
+		})
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { verses } = this.props
+		const { verseContent } = this.state
+
+		if (verses !== nextProps.verses) {
+			this.setState({
+				verseContent: Immutable.fromJS(verseContent).merge(nextProps.verses).toJS(),
+			})
 		}
 	}
 
@@ -28,23 +39,14 @@ class VerseCard extends Component {
 		const { dispatch } = this.props
 		const { verseContent } = this.state
 
-		dispatch(ActionCreators.bibleVerses({ id: versionID, references: references, format: 'html' })).then((verses) => {
-			let content = {}
-			verses.verses.forEach((verse) => {
-				content[verse.reference.usfm] = { content: verse.content, heading: ` ${verse.reference.human}` }
-			})
-			this.setState({
-				verseContent: Immutable.fromJS(verseContent).merge(content).toJS(),
-			})
-			console.log(verses)
-		})
+		dispatch(ActionCreators.bibleVerses({ id: versionID, references: references, format: 'html' }))
 	}
 
-	deleteVerse(usfm) {
+	deleteVerse(key) {
 		const { verseContent } = this.state
-		if (usfm in verseContent) {
+		if (key in verseContent) {
 			this.setState({
-				verseContent: Immutable.fromJS(verseContent).delete(usfm).toJS(),
+				verseContent: Immutable.fromJS(verseContent).delete(key).toJS(),
 			})
 		}
 	}
@@ -71,7 +73,7 @@ class VerseCard extends Component {
 				} else {
 					verses.push (
 						<div key={key} className='verse'>
-							<div className='heading'>{ `${verse.heading} ${versionAbbr.toUpperCase()}` }</div>
+							<div className='heading'>{ `${verse.heading} ${versionAbbr ? versionAbbr.toUpperCase() : ''}` }</div>
 							<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
 						</div>
 					)

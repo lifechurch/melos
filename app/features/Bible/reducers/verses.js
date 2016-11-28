@@ -7,10 +7,15 @@ export default function reducer(state = {}, action) {
 			return { loading: true }
 
 		case type('bibleVersesFailure'):
-			return { loading: false, errors: true, reference: { usfm: null } }
+			return Immutable.fromJS(action).set('loading', false).toJS()
 
 		case type('bibleVersesSuccess'):
-			return Immutable.fromJS(action.response).toJS()
+			let content = {}
+			Immutable.fromJS(action.response.verses).toJS().forEach((verse) => {
+				content[`${action.params.id}-${verse.reference.usfm}`] = { content: verse.content, heading: ` ${verse.reference.human}`, version: action.params.id }
+			})
+
+			return Immutable.fromJS(state).merge(content).delete('loading').toJS()
 
 		default:
 			return state
