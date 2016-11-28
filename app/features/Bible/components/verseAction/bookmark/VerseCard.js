@@ -39,16 +39,7 @@ class VerseCard extends Component {
 		const { dispatch } = this.props
 		const { verseContent } = this.state
 
-		dispatch(ActionCreators.bibleVerses({ id: versionID, references: references, format: 'html' })).then((verses) => {
-			// let content = {}
-			// verses.verses.forEach((verse) => {
-			// 	content[verse.reference.usfm] = { content: verse.content, heading: ` ${verse.reference.human}` }
-			// })
-			// this.setState({
-			// 	verseContent: Immutable.fromJS(verseContent).merge(content).toJS(),
-			// })
-			// console.log(verses)
-		})
+		dispatch(ActionCreators.bibleVerses({ id: versionID, references: references, format: 'html' }))
 	}
 
 	deleteVerse(key) {
