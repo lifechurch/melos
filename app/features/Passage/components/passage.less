@@ -1,15 +1,49 @@
 .main-content {
+	// background-color: @background-grey;
+	text-align: center;
+	border-bottom: @thin-grey-border;
+
+	.single-verse {
+		font-size: 20px;
+		text-align: left;
+	}
+
+	.chapter-button {
+		border: @thin-grey-border;
+		background-color: white;
+		position: relative;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		color: @font-grey;
+		bottom: -47px;
+	}
+	.title {
+		font-size: 20px;
+		// padding: 25px;
+		margin-bottom: 30px;
+	}
+}
+
+.related-plans {
+	padding-top: 30px;
+	padding-bottom: 30px;
 	background-color: @background-grey;
-	padding-top: 75px;
-	padding-bottom: 75px;
 }
+.carousel-gradient {
+	margin-top: 60px;
 
-.single-verse {
-	font-size: 20px;
-}
+	.slick-arrow-right-container, .slick-arrow-left-container {
+		height: 380px;
+		width: 85px;
+	}
 
-.chapter-button {
-	border: @thin-grey-border;
-	background-color: white;
-	margin-bottom: 140px;
+	.slick-slide {
+		width: 400px;
+		padding: 10px;
+	}
+	.card {
+		height: 100%;
+		font-size: 14px;
+		color: @font-grey;
+	}
 }

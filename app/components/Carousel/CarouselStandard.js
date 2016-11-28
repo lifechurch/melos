@@ -90,7 +90,7 @@ class CarouselStandard extends Component {
 
 		let heading = null
 		if (context == false) {
-			heading = <div className='title'><FormattedMessage id="plans.related plans" /></div>
+			heading = <div className='carousel-header'><div className='title'><FormattedMessage id="plans.related plans" /></div></div>
 		} else {
 			heading = (
 	    	<Link className='carousel-header' to={localizedLink( carouselLink )}>
