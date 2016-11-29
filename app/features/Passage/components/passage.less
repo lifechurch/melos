@@ -7,9 +7,23 @@
 		// text-align: center;
 		padding: 0px 35px 0px 35px;
 
+
 		.single-verse {
-			font-size: 20px;
+			font-size: 22px;
 			text-align: left;
+			h2 {
+				display: inline-flex;
+				.heading {
+					font-weight: bold;
+					font-size: 19px;
+					margin-right: 10px;
+				}
+				.name {
+					padding-top: 9px;
+					font-size: 14px;
+					color: @font-grey;
+				}
+			}
 
 		}
 
@@ -20,6 +34,7 @@
 			padding-top: 15px;
 			padding-bottom: 15px;
 			color: @font-grey;
+			margin-right: 15px;
 		}
 		.title {
 			font-size: 24px;
@@ -62,8 +77,11 @@
 		.card:hover {
 			background-color: @font-grey;
 			.heading {
-				color: @light-grey;
+				color: white;
 				border: 1px solid white;
+			}
+			.name {
+				color: white;
 			}
 			.verse-content {
 				color: white;
@@ -98,6 +116,7 @@
 	}
 
 
+	.note { display: none !important; }
 
 	.verse {
 		.heading {
@@ -106,6 +125,19 @@
 			padding: 4px 10px 4px 10px;
 			min-width: 0;
 			display: inline;
+		}
+
+		h2 {
+			display: inline-flex;
+			.heading {
+				margin-right: 10px;
+			}
+			.name {
+				padding-top: 18px;
+				font-size: 11px;
+				color: @font-grey;
+				.yv-text-ellipsis;
+			}
 		}
 		.verse-content {
 			margin-top: 18px;

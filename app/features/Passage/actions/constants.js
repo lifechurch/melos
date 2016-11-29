@@ -9,6 +9,10 @@ const constants = {
 	bibleVersesSuccess: "BIBLE_VERSES_SUCCESS",
 	bibleVersesFailure: "BIBLE_VERSES_FAILURE",
 
+	bibleVersionRequest: "BIBLE_VERSION_REQUEST",
+	bibleVersionSuccess: "BIBLE_VERSION_SUCCESS",
+	bibleVersionFailure: "BIBLE_VERSION_FAILURE",
+
 	readingplansConfigurationRequest: "READINGPLANS_CONFIGURATION_REQUEST",
 	readingplansConfigurationSuccess: "READINGPLANS_CONFIGURATION_SUCCESS",
 	readingplansConfigurationFailure: "READINGPLANS_CONFIGURATION_FAILURE",

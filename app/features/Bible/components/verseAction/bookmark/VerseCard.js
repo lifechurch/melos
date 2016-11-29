@@ -54,7 +54,7 @@ class VerseCard extends Component {
 
 
 	render() {
-		const { canDeleteVerses, canAddVerses, versionAbbr, versionTitle, intl } = this.props
+		const { canDeleteVerses, canAddVerses, verseHeading, intl } = this.props
 		const { verseContent } = this.state
 
 		let verses = []
@@ -63,12 +63,11 @@ class VerseCard extends Component {
 		if (Object.keys(verseContent).length > 0) {
 			Object.keys(verseContent).forEach((key) => {
 				let verse = verseContent[key]
+				let heading = verseHeading ? verseHeading : <h2 className='heading'>{ `${ verse.heading }` }</h2>
 				if (canDeleteVerses) {
 					verses.push (
 						<div key={key} className='vertical-center verse'>
-							<h2 className='heading'>
-								{ `${verse.heading} ${versionAbbr ? versionAbbr.toUpperCase() : ''} ${versionTitle ? versionTitle : ''}` }
-							</h2>
+							{ heading }
 							<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
 							<XMark width={18} height={18} onClick={this.deleteVerse.bind(this, key)}/>
 						</div>
@@ -78,12 +77,10 @@ class VerseCard extends Component {
 						<a
 							key={key}
 							className='verse'
-							href={`/bible/${verse.version}/${verse.usfm}`}
-							title={`${intl.formatMessage({ id: "read reference" }, { reference: `${verse.human}` })} ${versionAbbr}`}
+							href={`/bible/${verse.versionInfo.id}/${verse.usfm}`}
+							title={`${intl.formatMessage({ id: "read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
 						>
-							<h2 className='heading'>
-								{ `${verse.heading} ${versionAbbr ? versionAbbr.toUpperCase() : ''} ${versionTitle ? versionTitle : ''}` }
-							</h2>
+							{ heading }
 							<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
 						</a>
 					)
