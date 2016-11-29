@@ -1,49 +1,114 @@
-.main-content {
-	// background-color: @background-grey;
-	text-align: center;
-	border-bottom: @thin-grey-border;
+.passage {
 
-	.single-verse {
-		font-size: 20px;
-		text-align: left;
+
+
+	.main-content {
+		// background-color: @background-grey;
+		// text-align: center;
+		padding: 0px 35px 0px 35px;
+
+		.single-verse {
+			font-size: 20px;
+			text-align: left;
+
+		}
+
+		.chapter-button {
+			border: @thin-grey-border;
+			background-color: white;
+			margin-top: 15px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			color: @font-grey;
+		}
+		.title {
+			font-size: 24px;
+			// padding: 25px;
+			margin-bottom: 75px;
+			width: 100%;
+			text-align: center;
+		}
 	}
 
-	.chapter-button {
-		border: @thin-grey-border;
-		background-color: white;
-		position: relative;
-		padding-top: 15px;
-		padding-bottom: 15px;
-		color: @font-grey;
-		bottom: -47px;
-	}
-	.title {
-		font-size: 20px;
-		// padding: 25px;
-		margin-bottom: 30px;
-	}
-}
 
-.related-plans {
-	padding-top: 30px;
-	padding-bottom: 30px;
-	background-color: @background-grey;
-}
-.carousel-gradient {
-	margin-top: 60px;
 
-	.slick-arrow-right-container, .slick-arrow-left-container {
-		height: 380px;
-		width: 85px;
+
+
+	.verses {
+		margin-top: 60px;
+
+		.list {
+			display: flex;
+			flex-wrap: wrap;
+
+			li {
+				display: flex;
+				width: 33%;
+			}
+		}
+
+		.verse-container {
+			padding: 15px;
+		}
+		.card, a {
+			height: 100%;
+			font-size: 14px;
+			color: @font-grey;
+
+			.heading {
+				font-size: 14px;
+			}
+		}
+		.card:hover {
+			background-color: @font-grey;
+			.heading {
+				color: @light-grey;
+				border: 1px solid white;
+			}
+			.verse-content {
+				color: white;
+			}
+		}
 	}
 
-	.slick-slide {
-		width: 400px;
-		padding: 10px;
+
+	.related-plans {
+		width: 100%;
+		margin-top: 25px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		background-color: @background-grey;
+
+		.heading {
+			width: 100%;
+			text-align: center;
+		}
+
+		.list {
+			display: flex;
+			flex-wrap: wrap;
+
+			li {
+				padding: 15px;
+				display: flex;
+				width: 33%;
+			}
+		}
+
 	}
-	.card {
-		height: 100%;
-		font-size: 14px;
-		color: @font-grey;
+
+
+
+	.verse {
+		.heading {
+			border: @thin-grey-border;
+			border-radius: @default-radius;
+			padding: 4px 10px 4px 10px;
+			min-width: 0;
+			display: inline;
+		}
+		.verse-content {
+			margin-top: 18px;
+		}
 	}
 }

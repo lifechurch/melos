@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import ActionCreators from '../../../actions/creators'
 import Card from '../../../../../components/Card'
 import XMark from '../../../../../components/XMark'
+import { injectIntl, FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
 
 class VerseCard extends Component {
@@ -53,7 +54,7 @@ class VerseCard extends Component {
 
 
 	render() {
-		const { canDeleteVerses, canAddVerses, versionAbbr } = this.props
+		const { canDeleteVerses, canAddVerses, versionAbbr, versionTitle, intl } = this.props
 		const { verseContent } = this.state
 
 		let verses = []
@@ -65,17 +66,26 @@ class VerseCard extends Component {
 				if (canDeleteVerses) {
 					verses.push (
 						<div key={key} className='vertical-center verse'>
-							<div className='heading'>{ `${verse.heading} ${versionAbbr.toUpperCase()}` }</div>
+							<h2 className='heading'>
+								{ `${verse.heading} ${versionAbbr ? versionAbbr.toUpperCase() : ''} ${versionTitle ? versionTitle : ''}` }
+							</h2>
 							<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
 							<XMark width={18} height={18} onClick={this.deleteVerse.bind(this, key)}/>
 						</div>
 					)
 				} else {
 					verses.push (
-						<div key={key} className='verse'>
-							<div className='heading'>{ `${verse.heading} ${versionAbbr ? versionAbbr.toUpperCase() : ''}` }</div>
+						<a
+							key={key}
+							className='verse'
+							href={`/bible/${verse.version}/${verse.usfm}`}
+							title={`${intl.formatMessage({ id: "read reference" }, { reference: `${verse.human}` })} ${versionAbbr}`}
+						>
+							<h2 className='heading'>
+								{ `${verse.heading} ${versionAbbr ? versionAbbr.toUpperCase() : ''} ${versionTitle ? versionTitle : ''}` }
+							</h2>
 							<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
-						</div>
+						</a>
 					)
 				}
 			})
@@ -120,4 +130,4 @@ VerseCard.propTypes = {
 	canAddVerses: React.PropTypes.bool,
 }
 
-export default VerseCard
+export default injectIntl(VerseCard)
