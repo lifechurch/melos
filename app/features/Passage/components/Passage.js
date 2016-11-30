@@ -3,6 +3,7 @@ import VerseCard from '../../Bible/components/verseAction/bookmark/VerseCard'
 import ReaderArrows from '../../Bible/components/content/ReaderArrows'
 import Helmet from 'react-helmet'
 import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'
+import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 import Image from '../../../components/Carousel/Image'
 import { injectIntl, FormattedMessage } from 'react-intl'
 
@@ -107,8 +108,13 @@ class Passage extends Component {
 					meta={[ { name: 'description', content: `${metaContent}` } ]}
 				/>
 				<div className='row main-content'>
-					<ReaderArrows />
-					<h1 className='title'>{ passage.verses.title }</h1>
+					<div className='title-heading'>
+						<CarouselArrow width={19} height={19} fill='gray'/>
+						<h1 className='title'>
+							{ passage.verses.title }
+						</h1>
+						<CarouselArrow width={19} height={19} dir='left' fill='gray'/>
+					</div>
 					<div className='single-verse'>
 						{ mainVerse }
 					</div>
