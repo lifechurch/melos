@@ -18,6 +18,7 @@ import ReaderArrows from './content/ReaderArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
+import BookMark from './verseAction/bookmark/BookMark'
 import LocalStore from '../../../lib/localStore'
 import RecentVersions from '../lib/RecentVersions'
 import LabelSelector from './verseAction/bookmark/LabelSelector'
@@ -91,6 +92,7 @@ class Sandbox extends Component {
 		this.color = null
 		this.content = null
 		this.labels = null
+		this.bookMark = null
 		this.handleButtonBarClick = ::this.handleButtonBarClick
 		this.handleSettingsChange = ::this.handleSettingsChange
 	}
@@ -296,6 +298,19 @@ class Sandbox extends Component {
 		console.log("BBC", item)
 	}
 
+	createBookMark(refs) {
+		const { dispatch } = this.props
+		// get verses
+		dispatch(ActionCreators.bibleVerses({
+			id: this.selectedVersion,
+			references: refs,
+			format: 'html',
+			local_abbreviation: this.props.bible.version.local_abbreviation,
+		})).then((verseContent) => {
+			this.bookMark = <BookMark verseContent={verseContent} versionID={this.state.selectedVersion} isLoggedIn={this.props.auth.isLoggedIn}/>
+		})
+	}
+
 	render() {
 		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
@@ -380,6 +395,7 @@ class Sandbox extends Component {
 			)
 		}
 
+
 		return (
 			<div className="">
 				{ this.chapterPicker }
@@ -398,6 +414,10 @@ class Sandbox extends Component {
 							{ this.color }
 						</div>
 					</div>
+					<div onClick={this.createBookMark.bind(this, ['REV.21.1'])}>
+						Create BookMark
+					</div>
+					{ this.bookMark }
 				</div>
 			</div>
 		)
