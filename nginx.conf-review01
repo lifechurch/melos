@@ -50,7 +50,7 @@ http {
       passenger_env_var NEW_RELIC_LOG_LEVEL info;
       passenger_env_var LOG_LEVEL warn;
       passenger_env_var TREADSTONE_SECRET 6Ag54rcIa7pS3DRs6jkzVRtceSUuGaqfU2Lxi57bZDozpTVcIYVZeRCXpmzmdJw;
-      rails_env review01;
+      rails_env development;
 
     location /apple-app-site-association {
         root /var/www/youversion-web/current;
