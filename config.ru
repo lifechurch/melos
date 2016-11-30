@@ -1,6 +1,6 @@
 # This file is used by Rack-based servers to start the application.
 
-if ENV['RAILS_ENV'] == 'development'
+if (ENV['RAILS_ENV'] == 'development')
   require 'rubygems'
   require 'bundler'
   Bundler.setup

@@ -89,8 +89,8 @@ review01:
   facebook_app_id: 105030176203924
   facebook_secret: 9d03678ddd8b5588c4e6c91bd996cce2
   branch_key: "key_test_kfexIKCVofZXO9YVmsronefnABfGz4ta"
-  event_import_url: "https://events-review01.bible.com/featureImport/"
-  event_api_host: "events-review01.bible.com"
+  event_import_url: "https://events-review.bible.com/featureImport/"
+  event_api_host: "events-review.bible.com"
 
 test:
   api_root: youversionapistaging.com
