@@ -3,8 +3,9 @@ import { injectIntl } from 'react-intl'
 import LabelsModal from './LabelsModal'
 import LabelInput from './LabelInput'
 import LabelList from './LabelList'
-import Filter from '../../../../../../app/lib/Filter'
+import Filter from '../../../../../../app/lib/filter'
 import arrayToObject from '../../../../../../app/lib/arrayToObject'
+import DropdownTransition from '../../../../../components/DropdownTransition'
 import Immutable from 'immutable'
 
 class LabelSelector extends Component {
@@ -251,7 +252,7 @@ class LabelSelector extends Component {
 					intl={intl}
 				/>
 				{ filteredlabels }
-				<div className={`modal ${hide}`}>
+				<DropdownTransition show={dropdown}>
 					<LabelsModal
 						byAlphabetical={byAlphabetical}
 						byCount={byCount}
@@ -262,7 +263,7 @@ class LabelSelector extends Component {
 						selected={selected}
 						cancelDropDown={this.cancelDropDown}
 					/>
-				</div>
+				</DropdownTransition>
 			</div>
 		)
 	}

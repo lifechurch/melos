@@ -19,7 +19,6 @@
 }
 .chapter-picker-modal {
 
-	z-index: 10;
 	background-color: white;
 
 	display: inline-flex;
@@ -103,11 +102,10 @@
 
 	// chapters *****************************************
 	.picker-error {
-
+		pointer-events: none;
 		position: absolute;
 		width: 314px;
 		height: 60px;
-		z-index: -100;
 		opacity: 0;
 
 		display: flex;
@@ -218,41 +216,13 @@ input {
 }
 
 
-
-
-
 .chapter-picker-container {
-	.hide-modal {
-		overflow: hidden;
-		z-index: 0 !important;
 
-		-webkit-transition:z-index 1s cubic-bezier(0.42,1,.16,.93);
-		-moz-transition:   z-index 1s cubic-bezier(0.42,1,.16,.93);
-		-ms-transition:    z-index 1s cubic-bezier(0.42,1,.16,.93);
-		transition:        z-index 1s cubic-bezier(0.42,1,.16,.93);
-
-		.chapter-picker-modal {
-			/* only transition on transform properties which are hardware accelerated = way better performances */
-			.dropdown-transform-hide;
-		}
-	}
 
 	.modal {
-		position: absolute;
-		z-index: 10;
-		// just under the size of the label
-		top: 36px;
-		overflow: hidden;
+		top: 52px;
 		// because of the overflow hidden, we need to allow padding and compensate
 		// for the drop shadows
-		padding: 0px 15px 25px 15px;
-		left: -5px;
-
-		.chapter-picker-modal {
-			.yv-drop-shadow;
-
-			/* only transition on transform properties which are hardware accelerated = way better performances */
-			.dropdown-transform-show;
-		}
+		margin-left: -20px;
 	}
 }

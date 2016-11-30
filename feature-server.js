@@ -111,6 +111,10 @@ function getAssetPrefix(req) {
 	}
 }
 
+function getNodeHost(req) {
+	return [req.protocol, '://', req.get('Host')].join('')
+}
+
 function getDefaultState(feature) {
 	let defaultState = {}
 	try {
@@ -261,7 +265,7 @@ router.post('/', urlencodedParser, function(req, res) {
 							return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex, stack: ex.stack })
 						}
 
-						const initialState = Object.assign({}, startingState, store.getState())
+						const initialState = Object.assign({}, startingState, store.getState(), { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost }})
 
 						let head = Helmet.rewind()
 
@@ -274,7 +278,7 @@ router.post('/', urlencodedParser, function(req, res) {
 						}
 
 						res.setHeader('Cache-Control', 'public')
-						res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale }, function(err, html) {
+						res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost }, function(err, html) {
 							res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })
 						})
 					})

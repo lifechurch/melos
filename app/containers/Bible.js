@@ -9,8 +9,8 @@ class BibleView extends Component {
 	render() {
 		return (
 			<div>
-				<div className="row">
-					<div className="columns medium-12">
+				<div className="">
+					<div className="">
 						<Bible {...this.props} />
 					</div>
 				</div>
@@ -22,7 +22,8 @@ class BibleView extends Component {
 function mapStateToProps(state) {
 	return {
 		auth: state.auth,
-		bible: state.bibleReader
+		bible: state.bibleReader,
+		hosts: state.hosts
 	}
 }
 

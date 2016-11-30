@@ -14,18 +14,20 @@ class Books extends Component {
 		const { list, onSelect, listSelectionIndex, onMouseOver, focus, initialSelection } = this.props
 
 		var books = null
-		if (Array.isArray(list)) {
+		if (Array.isArray(list) && list.length > 0) {
 			books = list.map((book, index) =>  {
-				let active = (book.usfm == initialSelection) ? 'active' : ''
-				if (focus) {
-					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
-					return(
-						(<li key={book.usfm} className={`${active} ${focusClass}`} onClick={this.bookSelect.bind(this, book, true)} onMouseOver={onMouseOver.bind(this, "books", index)} >{ book.human }</li>)
-					)
-				} else {
-					return(
-						(<li key={book.usfm} className={`${active}`} onClick={this.bookSelect.bind(this, book, false)} >{ book.human }</li>)
-					)
+				if (book && book.usfm) {
+					let active = (book.usfm == initialSelection) ? 'active' : ''
+					if (focus) {
+						let focusClass = (index == listSelectionIndex) ? 'focus' : ''
+						return(
+							(<li key={book.usfm} className={`${active} ${focusClass}`} onClick={this.bookSelect.bind(this, book, true)} onMouseOver={onMouseOver.bind(this, "books", index)} >{ book.human }</li>)
+						)
+					} else {
+						return(
+							(<li key={book.usfm} className={`${active}`} onClick={this.bookSelect.bind(this, book, false)} >{ book.human }</li>)
+						)
+					}
 				}
 			})
 		}

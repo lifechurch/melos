@@ -16,6 +16,7 @@ import PlanDiscoveryView from './containers/PlanDiscoveryView'
 import PlanCollectionView from './containers/PlanCollectionView'
 import AboutPlanView from './containers/AboutPlanView'
 import Bible from './containers/Bible'
+import BibleAudio from './containers/BibleAudio'
 
 export default function(requireAuth, requireEvent, requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData) {
 	return (
@@ -32,6 +33,7 @@ export default function(requireAuth, requireEvent, requirePlanDiscoveryData, req
 			</Route>
 			<Route path="event/view/:id" component={EventView} onEnter={requireEvent} />
 			<Route path="bible" component={Bible} />
+			<Route path="bible-audio-player" component={BibleAudio} />
 		</Route>
 	)
 }
