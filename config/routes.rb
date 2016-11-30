@@ -23,6 +23,7 @@ YouversionWeb::Application.routes.draw do
 
   get "/marriage",      to: redirect("http://blog.youversion.com/2015/10/top-10-marriage-bible-plans-on-youversion/")
   get "/200million",    to: redirect("http://installs.youversion.com/200million/index.html")
+  get "/250million",    to: redirect("http://installs.youversion.com/250million/index.html")
   get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
   get "/blog-events",      to: redirect("http://blog.youversion.com/2016/03/introducing-events-the-newest-feature-in-the-bible-app")
   get "volunteer-form", to: redirect("https://lifechurch.formstack.com/forms/volunteer_interest_form")
