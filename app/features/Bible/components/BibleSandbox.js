@@ -306,8 +306,8 @@ class Sandbox extends Component {
 			references: refs,
 			format: 'html',
 			local_abbreviation: this.props.bible.version.local_abbreviation,
-		})).then((verseContent) => {
-			this.bookMark = <BookMark verseContent={verseContent} versionID={this.state.selectedVersion} isLoggedIn={this.props.auth.isLoggedIn}/>
+		})).then(() => {
+			this.bookMark = <BookMark verseContent={this.props.bible.verses} isLoggedIn={this.props.auth.isLoggedIn}/>
 		})
 	}
 

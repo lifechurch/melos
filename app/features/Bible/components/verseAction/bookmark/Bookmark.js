@@ -17,14 +17,18 @@ class Bookmark extends Component {
 	}
 
 	render() {
+		const { verseContent } = this.props
+
 		return (
-			<div className='bookmark-create horizontal-center'>
-				<div className='heading row vertical-center'>
+			<div className='bookmark-create'>
+				<div className='heading row vertical-center horizontal-center'>
 					<div className='columns medium-4 cancel'><XMark width={18} height={18} /></div>
 					<div className='columns medium-4 title'><FormattedMessage id='bookmark' /></div>
 					<div className='columns medium-4 save'><div className='solid-button green'>Save</div></div>
 				</div>
-				<VerseCard />
+				<div className='row'>
+					<VerseCard verses={verseContent} />
+				</div>
 			</div>
 		)
 	}
