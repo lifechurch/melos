@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import ActionCreators from '../../../actions/creators'
 import { FormattedMessage } from 'react-intl'
 import XMark from '../../../../../components/XMark'
+import VerseCard from './VerseCard'
 
 class Bookmark extends Component {
 
@@ -17,12 +18,13 @@ class Bookmark extends Component {
 
 	render() {
 		return (
-			<div className='bookmark-create'>
-				<div className='heading row'>
-					<div className='columns medium-4'><XMark width={18} height={18} /></div>
-					<div className=''><FormattedMessage id='bookmark' /></div>
-					<div className='solid-button padded green'>Save</div>
+			<div className='bookmark-create horizontal-center'>
+				<div className='heading row vertical-center'>
+					<div className='columns medium-4 cancel'><XMark width={18} height={18} /></div>
+					<div className='columns medium-4 title'><FormattedMessage id='bookmark' /></div>
+					<div className='columns medium-4 save'><div className='solid-button green'>Save</div></div>
 				</div>
+				<VerseCard />
 			</div>
 		)
 	}
