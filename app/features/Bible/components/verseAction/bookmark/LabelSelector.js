@@ -41,6 +41,7 @@ class LabelSelector extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
+		const { updateLabels } = this.props
 		const { filtering, dropdown, addedLabels, filteredLabels } = this.state
 
 		// handle state change on dropdown open and close
@@ -65,6 +66,10 @@ class LabelSelector extends Component {
 				filteredLabels: this.cleanFilteredLabels(filteredLabels),
 				selectedLabels: addedLabels
 			})
+			// let the parent that is saving the bookmark know what labels to save
+			if (typeof updateLabels == 'function') {
+				updateLabels(addedLabels)
+			}
 		}
 	}
 
@@ -145,6 +150,7 @@ class LabelSelector extends Component {
 		if (keyEventName == "Enter") {
 			event.preventDefault()
 			this.addLabels(inputValue)
+			this.setState({ inputValue: null })
 		}
 
 	}
@@ -186,12 +192,12 @@ class LabelSelector extends Component {
 		const { addedLabels, selectedLabels } = this.state
 		// if we don't pass a label, then we're just adding all selected labels with
 		// modal add button, then we just merge selected to added
-		if (typeof label != 'string') {
+		if (typeof label !== 'string') {
 			this.setState({
 				addedLabels: Immutable.fromJS(addedLabels).merge(selectedLabels).toJS(),
 				dropdown: false
 			})
-		// else we're passing a label to add (from filtering enter or click)
+		// else we're passing a label to add (from filtering enter or click of filtered label)
 		} else {
 			this.setState({ addedLabels: Immutable.fromJS(addedLabels).merge({ [label]: true }).toJS() })
 		}
@@ -269,9 +275,11 @@ class LabelSelector extends Component {
 	}
 }
 
+
 LabelSelector.propTypes = {
 	byAlphabetical: React.PropTypes.array,
 	byCount: React.PropTypes.array,
+	updateLabels: React.PropTypes.func,
 }
 
 export default injectIntl(LabelSelector)

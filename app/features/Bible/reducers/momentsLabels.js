@@ -7,7 +7,7 @@ export default function reducer(state = {}, action) {
 			return { loading: true }
 
 		case type('momentsLabelsFailure'):
-			return { loading: false, errors: true }
+			return Immutable.fromJS(action).set('loading', false).toJS()
 
 		case type('momentsLabelsSuccess'):
 			const byCount = Immutable.fromJS(action.response.data).toJS()
@@ -18,7 +18,7 @@ export default function reducer(state = {}, action) {
 				// return 0 if values are equal
 				// localeCompare does lowercase and unicode compare
 				// we can also pass in language_tag for locale
-				let val = a.label.localeCompare(b.label)
+				let val = a.label.toLowerCase().localeCompare(b.label.toLowerCase(), { sensitivity: 'base' })
 
 				return val
 			})
@@ -32,7 +32,7 @@ export default function reducer(state = {}, action) {
 				// build headers for alphabetic groupings
 				// compare the first character of each label
 				// if the label starts with a letter set up the header once per letter appearance
-				if (a.label.charAt(0).match(/^[a-zA-Z]/) && (a.label.charAt(0).localeCompare(b.label.charAt(0))) != 0) {
+				if (a.label.charAt(0).match(/^[a-zA-Z]/) && (a.label.charAt(0).toLowerCase().localeCompare(b.label.charAt(0).toLowerCase(), { sensitivity: 'base' })) !== 0) {
 					a.groupHeading = a.label.charAt(0).toUpperCase()
 				} else {
 					a.groupHeading = null

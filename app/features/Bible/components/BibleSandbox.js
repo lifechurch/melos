@@ -186,7 +186,7 @@ class Sandbox extends Component {
 
 	getLabels() {
 		const { dispatch } = this.props
-		dispatch(ActionCreators.momentsLabels(true, { selectedLanguage: this.state.selectedLanguage }))
+		dispatch(ActionCreators.momentsLabels(true))
 	}
 
 	// this handles the class toggling for book and chapter clicks on mobile
@@ -306,9 +306,7 @@ class Sandbox extends Component {
 			references: refs,
 			format: 'html',
 			local_abbreviation: this.props.bible.version.local_abbreviation,
-		})).then(() => {
-			this.bookMark = <BookMark verseContent={this.props.bible.verses} isLoggedIn={this.props.auth.isLoggedIn}/>
-		})
+		}))
 	}
 
 	render() {
@@ -384,7 +382,7 @@ class Sandbox extends Component {
 			)
 		}
 
-		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical) {
+		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical && Object.keys(bible.verses).length > 0) {
 			this.labels = (
 				<div>
 					<LabelSelector
@@ -393,6 +391,9 @@ class Sandbox extends Component {
 					/>
 				</div>
 			)
+			this.bookMark = <BookMark
+			{...this.props}
+			verseContent={bible.verses} labels={bible.momentsLabels} isLoggedIn={this.props.auth.isLoggedIn}/>
 		}
 
 
