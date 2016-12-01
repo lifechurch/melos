@@ -138,7 +138,7 @@ hi:
         best educational app: "शिक्षा के लिए सर्वोत्तम एप्प"
         kids_app: 
             title: "नन्हे-मुन्ने बच्चों के लिए बाइबिल App"
-            description: "बच्चों के लिए बाइबिल App अपने बच्चों को यीशु, अनन्त जीवन का उपहार, और भगवान ने हमें सिखाता कई सबक के बारे में बाइबिल कहानियों को जानने के लिए एक शानदार तरीका है. खजाने पढ़ने और इकट्ठा करने के लिए अंक अर्जित करते हुए इस इंटरैक्टिव अनुभव में, बच्चों को सीधे मनोहर दृश्यों के साथ भगवान के शब्द के साथ व्यस्त हैं।"
+            description: "बाइबल एप्प बच्चों के लिए आपके बच्चों को बाइबल से यीशु की कहानियाँ,नित्य जीवन का उपहार,और प्रभु के बारे में कई गुणकारी शिक्षण को जानने में मददगार साबित होगा । इस परस्पर संवादात्मक अनुभव से आपके बच्चे प्रभु के वचन से जुड़ने में हमेशा उत्सुक रहेंगे। "
         100million: 
             title: "100 मिलियन से शुभारंभ हुआ।"
             description: "100 मिलियन से अधिक इन्स्टाल के साथ एक नया कीर्तिमान रचित हुआ। यह मात्र शुरुआत हैं। निशुल्क बाइबिल App आज ही डाउनलोड कर अपने  मित्रों के  साथ शेयर करे। आओ हम साथ मिलकर इतिहास की रचना करे।"
@@ -157,43 +157,43 @@ hi:
         for: "for"
         kids: "नन्हें मुन्ने बच्चों के लिए"
         by youversion: "by YouVersion"
-        help your kids: "अपने नन्हें मुन्ने बच्चों को परमेश्वर के वचनों के साथ प्यार होने में मदद करे "
+        help your kids: "अपने बच्चों को परमेश्वर के वचनों से प्यार करने में मदद करे।  "
         free download: "निःशुल्क डाउनलोड करे!"
         app store: " App store में उपलब्ध है"
         google play: "Google Play पर उपलब्ध"
-        amazon: "Amazon Appstore for Android में उपलब्ध हैं "
+        amazon: "एंड्राइड संस्करण Amazon Appstore पर उपलब्ध"
         app icon: "App icon for The Bible App for Kids"
         jesus and friends: "यीशु और मित्र"
-        interact text: "बाइबिल से बातचीत करें और उसे जीवित होता हुआ देखें"
+        interact text: "परस्पर संवादात्मक बाइबल अनुभव। "
         story text 1: "अदन की वाटिका"
         story text 2: "पहला क्रिसमस"
         story text 3: "यूसुफ,मरियम,और बालक यीशु चरनी में"
         story text 4: "मसीह के जन्म के बारे में बताने के लिए फरिश्तों ने चरवाहों को दर्शन दिया "
         story text 5: "यीशु ने लकवाग्रस्त रोगी को चंगा किया "
-        feature 1: "आपके बच्चों के लिए एक नि:शुल्क बाइबिल का अनुभव"
-        feature 2: "स्मार्टफोन और टेबलेट के लिए एनिमेटेड कहानी-पुस्तक App"
+        feature 1: "आपके बच्चों के लिए नि:शुल्क बाइबल अनुभव"
+        feature 2: "स्मार्टफोन और टेबलेट के लिए कहानियों की पुस्तक एप्प "
         feature 3: "रंग-बिरंगे चित्रण सहित स्पर्श-सक्रिय एनीमेशन "
-        feature 4: "बच्चें जो सीखते हैं उसे याद रखने में खेल और कार्यकलाप मदद करतें हैं "
-        feature 5: "बच्चों के अनुकूल संचलन"
+        feature 4: "खेलों के मदद से सीखी गई बातों को याद रखने में मददगार "
+        feature 5: "बच्चों के अनुकूल संचालन "
         share: 
-            tell friends: "अपने मित्रों को बच्चों के लिए बाइबिल App के बारे में बताए "
-            facebook name: "नन्हे-मुन्ने बच्चों के लिए बाइबिल App"
-            facebook description: "प्रस्तुत है बच्चों के लिए बाइबिल App! iOS और Android के लिए यह नि:शुल्क App आज ही डाउनलोड करें: परस्पर संवादात्मक बाइबिल की कहानियां जो आपके बच्चे को परमेश्वर के वचन में सीखने, खेलने, और बढ़ने के लिए मदद करे www.bible.com/kids"
+            tell friends: "बाइबल एप्प बच्चों के लिए - मित्रों को इसके बारे में बताए "
+            facebook name: "बाइबल एप्प बच्चों के लिए "
+            facebook description: "बाइबल एप्प बच्चों के लिए आ गया ! iOS और एंड्राइड के लिए यह नि:शुल्क एप्प आज ही डाउनलोड करें: परस्पर संवादात्मक बाइबल की कहानियाँ आपके बच्चों को परमेश्वर के वचन से सीखने,खेलने,और उससे बढ़ने में मदद करेगा।  www.bible.com/kids"
             facebook link: "http://www.bible.com/kids"
             facebook redirect: "http://www.bible.com/kids"
-            twitter description: "बच्चों के लिए बाइबिल App @YouVersion यहाँ उपलब्ध हैं! निःशुल्क और मज़ेदार  डाउनलोड: bible.com/kids"
+            twitter description: "@YouVersion के द्वारा बाइबल एप्प बच्चों के लिए यहाँ उपलब्ध हैं! निःशुल्क और मज़ेदार।   डाउनलोड:bible.com/kids"
             twitter hashtags: "नन्हे मुन्नों की बाइबिल "
             email: "इमेल"
             email subject: "बच्चों की बाइबिल एप्प अभी उपलब्ध!"
-            email body: "बढ़िया खबर - प्रस्तुत है बच्चों के लिए बाइबिल App! यह पूरी तरह नि:शुल्क है और iPhone, iPad, iPad Touch, तथा Android यंत्रों पर उपलब्ध है। यह App स्पर्श सक्रिय एनीमेशन और शिक्षण कार्यकलापों सहित बाइबिल की कहानियों का एक बढ़ता संग्रह है, और उत्तम रूप से बच्चों को बाइबिल की बढ़ी कहानियों को पढ़ने में सहायता करता है। अपने mobile यंत्र पर bible.com/kids में जाकर आज ही डाउनलोड करें।"
+            email body: "खुश खबरी- बाइबल एप्प बच्चों के लिए उप्लब्धित ! पूरी तरह नि:शुल्क यह iPhone,iPad, iPod Touch,तथा एंड्राइड डिवाइस पर उपलब्ध है। यह एप्प स्पर्श सक्रिय एनीमेशन और अध्ययन कार्यकलापों सहित बाइबल की कहानियों का एक बढ़ता संग्रह है,जो उत्तम रूप से बच्चों को बाइबल की बड़ी कहानियों को पढ़ने में सहायता करेगा। अपने मोबाइल डिवाइस पर bible.com/kids में जाकर आज ही डाउनलोड करें।"
         partner: 
             youversion: "YouVersion: दुनिया का सबसे लोकप्रिय बाइबिल App"
-            in partnership: "इसके साथ भागीदारी में"
+            in partnership: "के साझेदार "
             one hope: "एक आशा: बच्चों के लिए उल्लेखनीय बाइबिल प्रकरण "
         links: 
             apple: "https://itunes.apple.com/us/app/bible-for-kids/id668692393?ls=1&mt=8"
-            google: "http://play.google.com/store/apps/details?id=com.bible.kids"
-            amazon: "http://www.amazon.com/gp/product/B00GURLC40"
+            google: "https://play.google.com/store/apps/details?id=com.bible.kids&featurem&hl=hi"
+            amazon: "https://www.amazon.com/gp/product/B00GURLC40"
     now: "अभी"
     select dropdown: "कृपया चुनिए"
     celebrating 50MM: "50 मिलियन app स्थापना उत्सव!"
@@ -254,7 +254,7 @@ hi:
     sign out: "साइन आउट"
     sign back in: "आपकी सुरक्षा के लिए लॉग इन्स दो सप्ताह के बाद समाप्त हो जायेगा।पुन:साईंन इन कीजिये।"
     youversion: "YouVersion"
-    username or email prompt: "Email (or Username)"
+    username or email prompt: "ईमेल (या Username)"
     password prompt: "पासवर्ड"
     sign in: "साइन इन"
     sign in to youversion: "YouVersion में साइन इन कीजिए"
@@ -407,11 +407,11 @@ hi:
     alphabetic: "वर्णानुक्रमक"
     versions title: "संस्करण"
     languages: 
-        title: "Bible languages and translations"
-        most popular: "Most popular languages"
-        additional: "Additional languages"
-        download language: "Download the Bible in %{language_name}"
-        bible in: "The Bible in %{language_name}"
+        title: "बाइबिल भाषा और अनुवाद"
+        most popular: "सबसे प्रचलित भाषा"
+        additional: "कुछ और भाषा"
+        download language: "%{language_name} भाषा मे, बाइबिल डाउनलोड करो"
+        bible in: "बाइबिल %{language_name} भाषा मे"
     or: 
         lower: "या"
         upper: "या"
@@ -636,6 +636,11 @@ hi:
         facebook sign up success: "आप फेसबुक द्वारा अधिकृत हैं। YouVersion username और पासवर्ड चुनिए।"
         register: "दर्ज कीजिए"
         sign up: "साइन अप"
+        sign up google: "गूगल के द्वारा साइन अप करे "
+        continue google: "Google मे जारी रखो"
+        sign up facebook: "फेसबुक द्वारा साइन अप करें"
+        continue facebook: "फेसबुक पर जारी रखो"
+        tp need email: "पंजीकरण / साइन-अप के लिये, आपका ईमेल आई-डी दे दीजिये।"
         thanks for registering: "दर्ज करने के लिए धन्यवाद!"
         confirm message: "हमने अभी इस ईमेल %{email} पर सन्देश भेजा है"
         confirm message click: "ईमेल में भेजे लिंक को दबाकर पुष्टि करें की यह आप ही हैं "
@@ -1164,9 +1169,9 @@ hi:
         banner action: "डाउनलोड"
         banner open: "खोलें"
     download bafk ad: 
-        title: "बच्चों के लिए बाइबिल App डाउनलोड करें "
-        description copy: "बच्चों के लिए बाइबिल App आपके बच्चों के लिए येशु के बारे में बाइबिल की कहानियाँ सीखने का एक महान माध्यम है "
-        download: "कृपया डाउनलोड करें"
+        title: "बाइबल एप्प बच्चों के लिए डाउनलोड करें "
+        description copy: "बाइबल एप्प बच्चों के लिए आपके बच्चों को यीशु के बारे में और अधिक जानने का एक महान माध्यम है।  "
+        download: "डाउनलोड करें"
     about page: 
         relevancy: "प्रासंगिकता"
         relevancy copy: "हमारे अतीत की पीढ़ी को बाइबिल का एक्सेस बहुत सीमित था। आजकल यह मामला नहीं हैं। हालांकि कई लोग जो बाइबिल का उपयोग करते हैं उनका मान्यता यह हैं की यह सन्देश हमारे जीवन पर लागु नहीं होता वही दुसरे लोग हैं जिनकी मान्यता हैं की बाइबिल और उनके नित्य जीवन के अनुभव के बीच कनेक्शन हैं।"
@@ -1414,6 +1419,7 @@ hi:
             no button: "नहीं"
         plans: 
             plans: "योजनाएँ"
+            plans back: "← पढ़ने की योजना"
             related plans: "संबंधित योजनाएं "
             see all: "सब कुछ देखे"
             discover: "खोजें"
@@ -1571,7 +1577,7 @@ hi:
             loading sidebar content: "साइड बार विषय सूची लोड किया जा रहा हैं............."
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "एक त्रुटि हुई।"
                 announcement: 
                     events: 
                         title: 
@@ -1597,15 +1603,15 @@ hi:
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "URL ज़ारूरी हैं।"
                         title: 
-                            required: "URL Label is required."
+                            required: "URL की चिप्पी ज़रूरी हैं।"
             EventHeader: 
                 status: 
                     published: "प्रकाशित"
                     draft: "ड्राफ्ट"
                     live: "लाइव"
-                    archived: "Archived"
+                    archived: "संग्रहीत / आरकाइव्ड "
                 unpublish: "अप्रकाशित"
                 saving: "Saving..."
                 saveAsDraft: "प्रारूप के तौर में save कीजिये"
@@ -1656,8 +1662,8 @@ hi:
                 discover: "खोजें"
             EventFeedMine: 
                 title: "मेरे कार्यक्रम "
-                previous: "← Previous"
-                next: "Next →"
+                previous: "← पिछला"
+                next: "अगला →"
                 my: "मेरे कार्यक्रम "
                 new: "Create New Event"
                 subTitle: "EVENTS CREATED BY ME"
@@ -1668,19 +1674,19 @@ hi:
             EventView: 
                 title: "YouVersion कार्यक्रम "
             SelectLanguage: 
-                choose: "Choose Your Language"
+                choose: "भाषा चुनाव करिये।"
         features: 
             Auth: 
                 errors: 
                     sessionExpired: "Your session expired. Please login again."
-                    invalidEmail: "Invalid email or password."
+                    invalidEmail: "ईमेल या पासवर्ड गलत हे।"
             EventEdit: 
                 errors: 
                     locationMustHaveTime: "All locations must have at least one time."
                     locationRequired: "You cannot publish an Event with no locations."
                     contentRequired: "You cannot publish an Event with no content."
                     planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    noMatchingPlans: "योजने नहीं मेल खाते हैं।"
                 components: 
                     EventEditNav: 
                         details: "विवरण "
@@ -1733,19 +1739,19 @@ hi:
                                 dirty: "आपके लिखना बंद करते ही आपकी लिखी हुयी सामग्री स्वतः सुरक्षित कर ली जाएगी !"
                                 failed: "सुरक्षित रखने में असमर्थ"
                                 tryAgain: "पुनः प्रयास करें"
-                                lastSaved: "Last saved %{when}"
+                                lastSaved: "पिछला बार कि आप ने Save किया - %{when}"
                             ContentTypeImage: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
+                                    wrongSize: "ज़रूरी है कि चित्र की परिमाण%{requiredWidth} x %{requiredHeight} हैं। आप की परिमाण%{yourWidth} x %{yourHeight} हैं।"
                                     wrongType: "Invalid filetype. Must be JPG."
                                 caption: "Add caption"
                                 prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
+                                onlyJpg: "[सिर्फ JPG]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
                                 select: "इमेज को चुनें"
                             ContentTypeLink: 
                                 kindrid: "If you are looking for a smart, simple giving platform, <a href='%{url}'>try Kindrid</a>."
-                                label: "Link Label"
+                                label: "लिन्क की चिप्पी"
                                 prompt: "Write something here..."
                                 url: "URL"
                             ContentTypePlan: 
@@ -1769,19 +1775,19 @@ hi:
                         components: 
                             DetailsEdit: 
                                 errors: 
-                                    wrongSize: "Image size must be %{requiredWidth}x%{requiredHeight}. Your image is %{yourWidth}x%{yourHeight}."
+                                    wrongSize: "ज़रूरी हैं कि चित्र की परिमाण %{requiredWidth} x %{requiredHeight} हैं। आपकी चित्र %{yourWidth} x %{yourHeight} हैं।"
                                     wrongType: "अमान्य फाइल प्रकार   - JPG होना अनिवार्य "
                                 changeImage: "चित्र बदलें"
                                 removeImage: "चित्र हटाये"
                                 prompt: "Drag and Drop an Image"
-                                onlyJpg: "[JPG only]"
+                                onlyJpg: "[सिर्फ JPG]"
                                 sizePrompt: "%{requiredWidth}px width x %{requiredHeight}px height"
                                 sizePrompt2: "Your image dimensions should be %{requiredWidth} x %{requiredHeight} pixels."
                                 eventName: "कार्यक्रम का नाम "
                                 org: "चर्च या संस्था का नाम "
                                 desc: "कार्यक्रम का विवरण "
                                 next: "आगे - स्थान और समय जोडें !"
-                                blank: "%{field} cannot be blank."
+                                blank: "%{field} खाली नही हो सकती है।"
                     location: 
                         components: 
                             Location: 
@@ -1819,7 +1825,7 @@ hi:
                                 shift: "शुरू की तिथियाँ बदले "
                                 forward: "अगला "
                                 backward: " पिछला"
-                                by: "by"
+                                by: "से"
                                 week: "हफ्ता"
                                 weeks: "हफ्ते "
                                 month: "महिना"
@@ -1858,14 +1864,14 @@ hi:
                                     title: "हटाए:"
                                     desc: "Your Event will no longer be discoverable after its final end time. Attenders who tapped “Save Event” when your Event was discoverable will still have access to an archived version of it, This Event will also continue to be accessible through direct inbound links."
                             PreviewTypeAnnouncement: 
-                                expand: "Expand"
+                                expand: "फैलो"
                             PreviewTypePlan: 
                                 read: "पढ़िए"
                                 info: "योजना की जानकारी"
             EventFeedMine: 
                 components: 
                     EventListItem: 
-                        duplicate: "Duplicate"
+                        duplicate: "प्रतिरूप बनानादूना करो"
                         share: "शेयर"
                         delete: "डिलीट"
                         draft: "ड्राफ्ट"
@@ -1881,11 +1887,47 @@ hi:
                         read: "पढ़िए"
                         readPlan: "Read Plan"
                     EventViewContentAnnouncement: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "फैलो"
+                        collapse: "सिकोड़ो"
                     EventViewDetails: 
-                        expand: "Expand"
-                        collapse: "Collapse"
+                        expand: "फैलो"
+                        collapse: "सिकोड़ो"
                         save: "कार्यक्रम सेव करे "
                         signIn: "Sign In to Save Event"
                         saved: "Event Saved"
+        Reader: 
+            header: 
+                parallel: "समानांतर"
+                parallel exit: "समानांतर प्रणाली निकालो"
+                cancel: "रद्द करें"
+                audio label: "ऑडियो"
+                audio window: "नायी खिड़कीं मे खोलो।"
+                font label: "रीडर सेटिंग्स"
+                notifications label: "अधिसूचनाऍ"
+                more label: "और अधिक"
+                search input: " संदर्भ या खोजशब्द/कीवर्ड..."
+                home: "होम"
+                bible: "बाइबिल"
+                plans: "योजनाएँ"
+                videos: "चलचित्र"
+                me: "में"
+            chapterpicker: 
+                book label: "ग्रन्थ"
+                chapter label: "अध्याय"
+                chapter unavailable: "यह अध्याय इस अध्याय मे नहीं उपलब्ध हैं। कृप्या दूसरा अध्याय या संस्करण चुनाव करिये।"
+            versionpicker: 
+                language label: "बाइबिल भाषाएँ "
+                language sub-label: "बाइबिल भाषाएँ "
+                change language: "भाषा बदले"
+                filter languages: "भाशे छानो..."
+                version label: "संस्करण"
+            reader settings: 
+                footnotes: "पद नोट "
+                numbers: "संख्याएं और शीर्षक"
+            more: 
+                events: "कार्यक्रम "
+                settings: "सेटिंगस"
+            search: 
+                bible: "बाइबिल"
+                users: "users"
+                plans: "योजनाएँ"

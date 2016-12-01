@@ -7,7 +7,7 @@
   i18n_image_dir  = ""
   i18n_css_class = "en"
   prelaunch = false
-  youtube_url = "//www.youtube.com/embed/97YQAoCjpcs?rel=0"
+  youtube_url = "//www.youtube.com/embed/qNH48cWVoos?rel=0"
   dir = "ltr"
   facebook_locale = "en_US"
   if (I18n.locale.to_s.eql?("es") or I18n.locale.to_s.eql?("es-ES")) then
@@ -137,6 +137,24 @@
     meta_url = "#{request.protocol}#{request.host_with_port}/vi/kids"
     facebook_locale = "vi"
     youtube_url = ""
+  elsif I18n.locale.to_s.eql?("hi") then
+    i18n_css_class = "hi"
+    i18n_image_dir = "/hi"
+    meta_url = "#{request.protocol}#{request.host_with_port}/hi/kids"
+    facebook_locale = "hi"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("pl") then
+    i18n_css_class = "pl"
+    i18n_image_dir = "/pl"
+    meta_url = "#{request.protocol}#{request.host_with_port}/pl/kids"
+    facebook_locale = "pl"
+    youtube_url = ""
+  elsif I18n.locale.to_s.eql?("ro") then
+    i18n_css_class = "ro"
+    i18n_image_dir = "/ro"
+    meta_url = "#{request.protocol}#{request.host_with_port}/ro/kids"
+    facebook_locale = "ro"
+    youtube_url = ""
   end
 
 
@@ -177,6 +195,9 @@
     %meta{property: "og:locale:alternate", content: "ur_PK"}
     %meta{property: "og:locale:alternate", content: "ja_JP"}
     %meta{property: "og:locale:alternate", content: "vi_VN"}
+    %meta{property: "og:locale:alternate", content: "hi_IN"}
+    %meta{property: "og:locale:alternate", content: "pl_PL"}
+    %meta{property: "og:locale:alternate", content: "ro_RO"}
     %meta{name: "twitter:card",             content: "app"}
     %meta{name: "twitter:site",             content: "@BibleAppForKids"}
     %meta{name: "twitter:description",      content: meta_description}
@@ -186,6 +207,8 @@
     %meta{name: "twitter:app:id:ipad", content: "668692393"}
     %meta{name: "twitter:app:name:googleplay", content: "Bible for Kids"}
     %meta{name: "twitter:app:id:googleplay", content: "com.bible.kids"}
+    %meta{ name: "google-signin-client_id", content: "#{Cfg.google_signin_client_id}" }
+    %meta{ name: "google-signin-scope", content: "#{Cfg.google_signin_scope}" }
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/kids",:rel=>"alternate",:hreflang=>"en-gb"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/es/kids",:rel=>"alternate",:hreflang=>"es"}
@@ -208,6 +231,9 @@
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ur/kids",:rel=>"alternate",:hreflang=>"ur"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/ja/kids",:rel=>"alternate",:hreflang=>"ja"}
     %link{:href=> "#{request.protocol}#{request.host_with_port}/vi/kids",:rel=>"alternate",:hreflang=>"vi"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/hi/kids",:rel=>"alternate",:hreflang=>"hi"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/pl/kids",:rel=>"alternate",:hreflang=>"pl"}
+    %link{:href=> "#{request.protocol}#{request.host_with_port}/ro/kids",:rel=>"alternate",:hreflang=>"ro"}
 
     - if I18n.locale.to_s.eql?("vi") then
       %link{:href=> "https://fonts.googleapis.com/css?family=Open+Sans", :rel=>"stylesheet"}
@@ -228,7 +254,7 @@
 
       -# !Logo and intro copy
       -# This is way too hackish, but it works for now I suppose
-      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it"))
+      - if (I18n.locale.to_s.eql?("ko") or I18n.locale.to_s.eql?("ko-KR") or I18n.locale.to_s.eql?("zh") or I18n.locale.to_s.eql?("zh-CN") or I18n.locale.to_s.eql?("zh-TW") or I18n.locale.to_s.eql?("pt") or I18n.locale.to_s.eql?("pt-BR") or I18n.locale.to_s.eql?("ru") or I18n.locale.to_s.eql?("nl") or I18n.locale.to_s.eql?("de") or I18n.locale.to_s.eql?("fr") or I18n.locale.to_s.eql?("ar") or I18n.locale.to_s.eql?("id") or I18n.locale.to_s.eql?("tr") or I18n.locale.to_s.eql?("fa") or I18n.locale.to_s.eql?("ur") or I18n.locale.to_s.eql?("ja") or I18n.locale.to_s.eql?("af") or I18n.locale.to_s.eql?("tl") or I18n.locale.to_s.eql?("th") or I18n.locale.to_s.eql?("vi") or I18n.locale.to_s.eql?("it") or I18n.locale.to_s.eql?("hi") or I18n.locale.to_s.eql?("pl") or I18n.locale.to_s.eql?("ro"))
         %h1.intro-bible
           = image_tag "campaigns/kids#{i18n_image_dir}/logos-bafk.png", alt: meta_title
         .intro-forkids

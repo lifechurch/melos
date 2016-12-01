@@ -51,7 +51,7 @@ class PlansController < ApplicationController
   end
 
   def show
-    if (params[:save].present?)
+    if (params[:add_to_queue].present?)
       return save_for_later_action
     end
 
@@ -90,7 +90,7 @@ class PlansController < ApplicationController
     }
 
     if (!current_auth)
-      redirect_to sign_in_path(redirect: save_for_later_action_path) and return
+      redirect_to sign_in_path(redirect: plan_path(id: params[:id], add_to_queue: true)) and return
     end
 
     fromNode = YV::Nodestack::Fetcher.get('SaveForLater', p, cookies, current_auth, current_user, request)
@@ -116,7 +116,7 @@ class PlansController < ApplicationController
     }
 
     if (!current_auth)
-      redirect_to sign_in_path(redirect: subscribe_user_action_path) and return
+      redirect_to sign_in_path(redirect: plan_path(id: params[:id], subscribe: true)) and return
     end
 
     fromNode = YV::Nodestack::Fetcher.get('SubscribeUser', p, cookies, current_auth, current_user, request)

@@ -23,6 +23,7 @@ YouversionWeb::Application.routes.draw do
 
   get "/marriage",      to: redirect("http://blog.youversion.com/2015/10/top-10-marriage-bible-plans-on-youversion/")
   get "/200million",    to: redirect("http://installs.youversion.com/200million/index.html")
+  get "/250million",    to: redirect("http://installs.youversion.com/250million/index.html")
   get "/redesign",      to: redirect("http://blog.youversion.com/2016/01/all-new-bible-dot-com-by-youversion-bible-app/")
   get "/blog-events",      to: redirect("http://blog.youversion.com/2016/03/introducing-events-the-newest-feature-in-the-bible-app")
   get "volunteer-form", to: redirect("https://lifechurch.formstack.com/forms/volunteer_interest_form")
@@ -58,6 +59,9 @@ YouversionWeb::Application.routes.draw do
   get "/thieunhi",       to: "redirects#thieunhi"
   get "/thi%E1%BA%BFunhi", to: "redirects#thieunhi"
   get "/ragazzi",        to: "redirects#ragazzi"
+  get "/dzieci",        to: "redirects#dzieci"
+  get "/bibliadzieci",        to: "redirects#dzieci"
+  get "/copii",        to: "redirects#copii"
 
   get "/trending-bible-verses", to: "pages#trending"
   get "/verse-of-the-day", to: "pages#votd"
@@ -198,10 +202,6 @@ YouversionWeb::Application.routes.draw do
   resources :plans, :only => [:index, :show], :path => 'reading-plans'
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
   match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
-  # expose save-for-later action for emails
-  match '/reading-plans/:id?save=true' => 'plans#save_for_later_action', as: "save_for_later_action"
-  # expose subscribe user to plan action for emails
-  match '/reading-plans/:id?subscribe=true' => 'plans#subscribe_user_action', as: "subscribe_user_action"
 
   get '/reading-plans-collection/:id' => 'plans#plan_collection'
   get '/recommended-plans-collection/:id' => 'plans#plan_collection'

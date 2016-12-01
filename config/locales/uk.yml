@@ -658,6 +658,11 @@ uk:
         facebook sign up success: "Чудово! Ви авторизувалися через Facebook. Оберіть ім'я користувача і пароль для YouVersion і продовжуйте."
         register: "Реєстрація"
         sign up: "Зареєструватися"
+        sign up google: "Зареєструватися через Google"
+        continue google: "Продовжити з Google"
+        sign up facebook: "Зареєструватися через Facebook"
+        continue facebook: "Продовжити у Facebook"
+        tp need email: "Нам потрібна ваша адреса електронної пошти для завершення реєстрації."
         thanks for registering: "Дякуємо за реєстрацію!"
         confirm message: "Ми вже надіслали повідомлення на %{email}"
         confirm message click: "Натисніть на посилання у листі, щоб підтвердити вашу особу."
@@ -1444,6 +1449,7 @@ uk:
             no button: "Ні"
         plans: 
             plans: "Плани читання"
+            plans back: "← Плани"
             related plans: "Схожі Плани"
             see all: "Всі"
             discover: "Пізнавайте"
@@ -1852,7 +1858,7 @@ uk:
                                 addAnother: "Додати інший час"
                                 cancel: "Скасувати"
                                 save: "Зберегти це місце"
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "Введіть назву міста, щоб встановити ваш часовий пояс..."
                             LocationTimeShifter: 
                                 shift: "Зсунути дати"
                                 forward: "Перенаправити"
@@ -1927,3 +1933,39 @@ uk:
                         save: "Зберегти подію"
                         signIn: "Увійдіть, щоб зберегти подію"
                         saved: "Подію збережено"
+        Reader: 
+            header: 
+                parallel: "Паралельне читання"
+                parallel exit: "Вийти із паралельного режиму"
+                cancel: "Скасувати"
+                audio label: "ЗВУК"
+                audio window: "Відкрити у новому вікні"
+                font label: "НАЛАШТУНКИ ЧИТАННЯ"
+                notifications label: "СПОВІЩЕННЯ"
+                more label: "БІЛЬШЕ"
+                search input: "Посилання або ключове слово"
+                home: "Домівка"
+                bible: "Біблія"
+                plans: "Плани читання"
+                videos: "Відео"
+                me: "Я"
+            chapterpicker: 
+                book label: "КНИГА"
+                chapter label: "РОЗДІЛ"
+                chapter unavailable: "Цей розділ не доступний у цій версії Оберіть інший розділ або версію"
+            versionpicker: 
+                language label: "МОВИ БІБЛІЇ"
+                language sub-label: "Мова Біблії"
+                change language: "Змінити мову"
+                filter languages: "Фільтрувати мови..."
+                version label: "ВЕРСІЇ"
+            reader settings: 
+                footnotes: "Примітки"
+                numbers: "Числа та Заголовки"
+            more: 
+                events: "Події"
+                settings: "Налаштування"
+            search: 
+                bible: "Біблія"
+                users: "Користувачі"
+                plans: "Плани читання"

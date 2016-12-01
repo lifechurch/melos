@@ -66,27 +66,33 @@ class UsersController < ApplicationController
   end
 
   def create
-    return redirect_to moments_path    if current_auth
-    return render_404                  unless params[:user].present?
-    @user = User.register(params[:user].merge!(language_tag: I18n.locale))
-    if @user.persisted?
-      # save username so we can populate sign in form
-      cookies.signed[:a] = @user.id
-      cookies.signed[:b] = @user.email
-      # maybe something like this, but we have to globally rescue UnverifiedAccountError
-      # set_auth(@user.id, params[:user][:password])
+    return redirect_to moments_path if current_auth
 
-      if next_redirect?(authorize_licenses_path)
-        return redirect_to(authorize_licenses_path(confirm: true))
-      else
-        cookies[:tempemail] = @user.email
-        return redirect_to confirm_email_path(@confirm_email, redirect: params[:redirect])
-        # maybe we can sign them in and redirect them. but maybe not.
-        # return follow_redirect(notice: "#{t("users.thanks for registering")} #{t("users.confirm email")}")
-      end
-
+    if params.has_key?('tp_token') && params.has_key?('tp_id')
+      tp_sign_in
     else
-      return render action: "new", layout: "application"
+      return render_404 unless params[:user].present?
+      @user = User.register(params[:user].merge!(language_tag: I18n.locale))
+      if @user.persisted?
+        # save username so we can populate sign in form
+        cookies.signed[:a] = @user.id
+        cookies.signed[:b] = @user.email
+
+        # maybe something like this, but we have to globally rescue UnverifiedAccountError
+        # set_auth(@user.id, params[:user][:password])
+
+        if next_redirect?(authorize_licenses_path)
+          return redirect_to(authorize_licenses_path(confirm: true))
+        else
+          cookies[:tempemail] = @user.email
+          return redirect_to confirm_email_path(@confirm_email, redirect: params[:redirect])
+          # maybe we can sign them in and redirect them. but maybe not.
+          # return follow_redirect(notice: "#{t("users.thanks for registering")} #{t("users.confirm email")}")
+        end
+
+      else
+        return render action: "new", layout: "application"
+      end
     end
   end
 
@@ -178,6 +184,7 @@ class UsersController < ApplicationController
 
 
   def delete_account
+    @requirePassword = !(current_auth.has_key?('tp_id') && current_auth.tp_id != nil)
     render layout: "settings"
   end
 
@@ -186,7 +193,7 @@ class UsersController < ApplicationController
 
     begin
       #auth first to give the validate user is at keyboard, and doesn't just have valid cookies
-      user = User.authenticate(current_user.username, params[:password])
+      user = User.authenticate(current_user.username, params[:password], current_auth.tp_token)
     rescue AuthError
       user = false
     end
@@ -228,7 +235,13 @@ class UsersController < ApplicationController
   def user_settings
     if current_auth
       settings = User.view_settings(current_auth)
-      settings.updated_dt = Date.parse(settings.updated_dt).strftime('%Q').to_i
+
+      if !settings.updated_dt.nil?
+        settings.updated_dt = Date.parse(settings.updated_dt).strftime('%Q').to_i
+      else
+        settings.updated_dt = ""
+      end
+
       return render :json => settings
     else
       return render :json => {}
@@ -239,7 +252,7 @@ class UsersController < ApplicationController
     if current_auth && params['recent_versions'].present?
       new_settings = User.update_settings(current_auth, { bible: { recent_versions: params['recent_versions'] } })
 
-      if !new_settings.nil?
+      if !new_settings.nil? && !new_settings.updated_dt.nil?
         new_settings.updated_dt = Date.parse(new_settings.updated_dt).strftime('%Q').to_i
         return render :json => new_settings
       else

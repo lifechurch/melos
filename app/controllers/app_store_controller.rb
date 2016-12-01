@@ -27,8 +27,8 @@ class AppStoreController < ActionController::Base
 
   def current_auth
     return @current_auth if @current_auth
-    if cookies.signed[:a] && cookies.signed[:b] && cookies.signed[:c]
-      @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c]} )
+    if cookies.signed[:a] && cookies.signed[:b] && (cookies.signed[:c] || (cookies.signed[:t] && cookies.signed[:ti]))
+      @current_auth ||= Hashie::Mash.new( {'user_id' => cookies.signed[:a], 'username' => cookies.signed[:b], 'password' => cookies.signed[:c] ? cookies.signed[:c] : nil, 'tp_token' => cookies.signed[:t] ? cookies.signed[:t] : nil, 'tp_id' => cookies.signed[:ti] ? cookies.signed[:ti] : nil } )
     end
   end
 

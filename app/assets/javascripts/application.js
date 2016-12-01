@@ -54,7 +54,7 @@ function parseReaderVars() {
         next_link = angular.element(document.getElementById("reader_next")).attr("href").split("/");
     }
 
-	TEMPLATE_FROM_RAILS[window.location.pathname] = { 
+	TEMPLATE_FROM_RAILS[window.location.pathname] = {
 		reader_book: angular.element(document.getElementById("reader_book")).text(),
 		reader_chapter: angular.element(document.getElementById("reader_chapter")).text(),
 		reader_version: angular.element(document.getElementById("reader_version")).text(),
@@ -75,7 +75,7 @@ function parseReaderVars() {
 		next_chapter_hash: {
 			version_id: next_link[version_pos],
 			usfm: [ next_link[usfm_pos] ]
-		} 
+		}
 	};
 }
 
@@ -131,16 +131,21 @@ function inPathNotFirst(segment, path) {
 
 function init() {
 
-	if (isReader || isReadingPlanSample || isReaderPlanUser) {
-		parseReaderVars();
-	}
+    if (isReader || isReadingPlanSample || isReaderPlanUser) {
+        parseReaderVars();
+    }
 
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isReader) {
+    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
     }
 
+    if (gapi) {
+        gapi.load('auth2', function () {
+            gapi.auth2.init();
+        })
+    }
 }
 
 var isEvents            = isFirst("events");
@@ -150,6 +155,8 @@ var isReader 			= isFirst("bible");
 var isHomeFeed 			= isFirst("moments");
 var isPlanIndex         = isFirst("reading-plans") && !inPathNotFirst("day");
 var isPlanCollection    = isFirst("reading-plans-collection");
+var isSignUp            = isFirst("sign-up");
+var isSignIn            = isFirst("sign-in");
 
 var isFriendsFeed		= isFirst("users") && inPathNotFirst("friends");
 var isNotesFeed			= isFirst("users") && inPathNotFirst("notes");

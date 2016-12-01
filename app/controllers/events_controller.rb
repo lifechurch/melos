@@ -15,7 +15,7 @@ class EventsController < ApplicationController
       return render_404
     end
 
-    @title = fromNode['head']['title']
+    @title_tag = fromNode['head']['title']
 
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end

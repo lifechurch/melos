@@ -172,7 +172,7 @@ fi:
         story text 5: "Jeesus parantaa halvaantuneen"
         feature 1: "Ilmainen Raamattu-elämys lapsillesi"
         feature 2: "Kuvitettu kertomussovellus älypuhelimille ja tableteille"
-        feature 3: "Värikäs kuvitus ja kosketuksella toimivat piirrosanimaatiot"
+        feature 3: "Vivid illustrations with touch-activated animations"
         feature 4: "Pelit ja leikit auttavat lapsia muistamaan oppimansa"
         feature 5: "Lapsiystävällinen navigointi"
         share: 
@@ -636,6 +636,11 @@ fi:
         facebook sign up success: "Mahtavaa! Olet valtuuttanut Facebookin. Valitse YouVersion-käyttäjänimi ja salasana jatkaaksesi."
         register: "Rekisteröidy"
         sign up: "Rekisteröidy"
+        sign up google: "Rekisteröidy Google-tilillä"
+        continue google: "Rekisteröidy Googlella"
+        sign up facebook: "Rekisteröidy Facebook-tunnuksilla"
+        continue facebook: "Rekisteröidy Facebookilla"
+        tp need email: "Tarvitsemme sähköpostiosoitteesi voidaksemme suorittaa rekisteröitymisen loppuun."
         thanks for registering: "Kiitos rekisteröitymisestä!"
         confirm message: "Lähetimme juuri viestin osoitteeseen %{email}"
         confirm message click: "Napauta linkkiä kyseisessä viestissä vahvistaaksesi sähköpostiosoitteesi."
@@ -1414,6 +1419,7 @@ fi:
             no button: "Ei"
         plans: 
             plans: "Suunnitelmat"
+            plans back: "← Suunnitelmat"
             related plans: "Samankaltaiset suunnitelmat"
             see all: "Näytä kaikki"
             discover: "Löydä"
@@ -1889,3 +1895,39 @@ fi:
                         save: "Tallenna tapahtuma"
                         signIn: "Kirjaudu sisään tallentaaksesi tapahtuma"
                         saved: "Tapahtuma tallennettu"
+        Reader: 
+            header: 
+                parallel: "Vertailunäkymä"
+                parallel exit: "Poistu vertailunäkymästä"
+                cancel: "Peruuta"
+                audio label: "Ääni"
+                audio window: "Avaa uudessa ikkunassa"
+                font label: "Lukijan asetukset"
+                notifications label: "Ilmoitukset"
+                more label: "Lisää"
+                search input: "Raamatunkohta tai hakusana..."
+                home: "Koti"
+                bible: "Raamattu"
+                plans: "Suunnitelmat"
+                videos: "Videot"
+                me: "Minä"
+            chapterpicker: 
+                book label: "Kirja"
+                chapter label: "Luku"
+                chapter unavailable: "Tämä luku puuttuu valitusta käännöksestä. Valitse jokin muu luku tai eri käännös."
+            versionpicker: 
+                language label: "Kielet"
+                language sub-label: "Kieli"
+                change language: "Vaihda kieltä"
+                filter languages: "Suodata kieliä..."
+                version label: "Käännökset"
+            reader settings: 
+                footnotes: "Alaviitteet:"
+                numbers: "Numerot ja otsikot"
+            more: 
+                events: "Tapahtumat"
+                settings: "Asetukset"
+            search: 
+                bible: "Raamattu"
+                users: "Käyttäjät"
+                plans: "Suunnitelmat"

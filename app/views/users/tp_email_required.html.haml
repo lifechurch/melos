@@ -1,0 +1,11 @@
+.row
+  .columns.medium-6.large-5.medium-centered.text-center
+    %form#tp-require-email-form{ method: "POST" }
+      %h1.clean= t("users.tp need email")
+      %br
+      %input{ type: "email", name: "email", placeholder: "#{t('users.email')}" }
+      %input{ type: "hidden", name: "tp_token", value: "#{tp_token}" }
+      %input{ type: "hidden", name: "tp_id", value: "#{tp_id}" }
+      %input{ type: "hidden", name: "tp_source", value: "#{tp_source}" }
+      %input.solid-button.green.expand{ type: "submit", value: "#{t('sign up')}" }
+

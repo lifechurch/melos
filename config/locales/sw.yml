@@ -172,7 +172,7 @@ sw:
         story text 5: "Jesus heals the paralytic"
         feature 1: "A free Bible experience for your kids"
         feature 2: "Animated storybook app for smartphones and tablets"
-        feature 3: "Colorful illustrations with touch-activated animations"
+        feature 3: "Vivid illustrations with touch-activated animations"
         feature 4: "Games and activities help kids remember what they learn"
         feature 5: "Kid-friendly navigation"
         share: 
@@ -636,6 +636,11 @@ sw:
         facebook sign up success: "Vizuri! umeidhinishwa na facebook. chagua jina la mtumiaji na kitambulisho cha siri ili kuendelea."
         register: "Jiunge"
         sign up: "Jiandikishe"
+        sign up google: "Weka saini na Google"
+        continue google: "Endelea kutumia Google"
+        sign up facebook: "Ingia kwa kutumia Facebook"
+        continue facebook: "Endelea na Facebook"
+        tp need email: "Tunahitaji barua pepe yako kukamilisha usajili"
         thanks for registering: "Asante kwa kujiunga!"
         confirm message: "Tumetuma ujumbe kwa %{email}"
         confirm message click: "Gonga kiungo ndani ya barua pepe hiyo kwa kukamilisha kama ni wewe."
@@ -1414,6 +1419,7 @@ sw:
             no button: "Apana"
         plans: 
             plans: "Mipango ya bibilia"
+            plans back: "← Mipango"
             related plans: "Mipangilio yanayo husiana"
             see all: "Ona zote"
             discover: "Gundua"
@@ -1889,3 +1895,39 @@ sw:
                         save: "TunzaTukio"
                         signIn: "Ingia ili kutunza Tukio"
                         saved: "tukio limetunzwa"
+        Reader: 
+            header: 
+                parallel: "sambamba na"
+                parallel exit: "Ondoka kwa muundo sambamba"
+                cancel: "Ondoa"
+                audio label: "Sauti"
+                audio window: "Fungua kwenye dirisha jipya"
+                font label: "Mpangilio wa msomi"
+                notifications label: "Taarifa"
+                more label: "Zaidi"
+                search input: "Shahiri ama neno la msingi"
+                home: "nyumbani\n"
+                bible: "Bibilia"
+                plans: "Mipango ya bibilia"
+                videos: "Video"
+                me: "mimi"
+            chapterpicker: 
+                book label: "kitabu"
+                chapter label: "Sura"
+                chapter unavailable: "Sura hii haipatikani katika toleo hili. Tafadhali chagua sura ama tafsiri tofauti."
+            versionpicker: 
+                language label: "Lugha za biblia"
+                language sub-label: "Luhga za biblia"
+                change language: "lugha"
+                filter languages: "Chuja Lugha"
+                version label: "Matoleo"
+            reader settings: 
+                footnotes: "tanbihi"
+                numbers: "Hesabu na wadhifa"
+            more: 
+                events: "Matukio"
+                settings: "mipangilio/marekebisho"
+            search: 
+                bible: "Bibilia"
+                users: "watumiaji"
+                plans: "Mipango ya bibilia"

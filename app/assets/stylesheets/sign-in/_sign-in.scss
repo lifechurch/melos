@@ -1,3 +1,138 @@
+$fbBlue: #3B5998;
+$fbLightBlue: lighten($fbBlue, 10%);
+
+
+#fbAuthProfile {
+  padding: 10px;
+  text-align: center;
+  transition: transform 1s ease;
+  transform: scale(1,1);
+  display: block;
+
+  &.empty {
+    display: none;
+    transform: scale(1,0);
+  }
+
+  #fbAvatar {
+    border-radius: 100%;
+  }
+  #fbName {
+    font-weight: bold;
+  }
+}
+
+
+#tp-require-email-form {
+  text-align: center;
+  margin-top:75px;
+  margin-bottom:75px;
+
+  h1 {
+    width: 100%;
+  }
+
+  input {
+    width: 75%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 10px;
+  }
+}
+
+.tpAuthSigninButton {
+  display: inline-block;
+  background: white;
+  color: #444;
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px $lightGray;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,.25);
+  white-space: nowrap;
+  transition: box-shadow 0.5s ease, background 0.5s ease;
+  margin-bottom: 10px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 2px rgba(66,133,244,.5);
+  }
+
+  span {
+    &.label {
+      font-family: serif;
+      font-weight: normal;
+    }
+    &.icon {
+      background: image-url("g-normal.png") transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+      position: absolute;
+    }
+    &.buttonText {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      width: 100%;
+      height: 42px;
+      padding-top: 9px;
+    }
+  }
+}
+
+
+#googleSigninButton.tpAuthSigninButton {
+  background: white;
+  color: #444;
+  border: solid 1px $lightGray;
+
+  &:hover {
+    box-shadow: 0px 0px 4px 2px rgba(66,133,244,.5);
+  }
+
+  span {
+    &.icon {
+      background: image-url("g-normal.png") transparent 5px 50% no-repeat;
+    }
+    &.buttonText {
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+}
+
+#facebookSigninButton.tpAuthSigninButton {
+  background: $fbBlue;
+  color: white;
+  border: solid 1px $fbBlue;
+
+  &:hover {
+    box-shadow: 0px 0px 4px 2px rgba(59,89,152,.5);
+    background: $fbLightBlue;
+  }
+
+  &.disabled {
+    background: $darkGray;
+    color: $lightGray;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    &.icon {
+      background: image-url("f-normal.svg")  10px 10px no-repeat;
+      background-size: 50%;
+    }
+    &.buttonText {
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+}
+
 body.c_sessions.a_new,
 body.c_sessions.a_create {
 

@@ -34,7 +34,7 @@ module YV
               instance.id               = data.id
               instance.name             = YV::Resource.i18nize(data.name)
               instance.total_days       = data.total_days
-              instance.copyright        = YV::Resource.i18nize(data.copyright.text) #TODO: html data
+              instance.copyright        = data.copyright.nil? ? "" : YV::Resource.i18nize(data.copyright.text) #TODO: html data
               instance.about            = YV::Resource.i18nize(data.about.text) #TODO: html data
               instance.version_id       = data.version_id
               instance.created_dt       = data.created_dt
