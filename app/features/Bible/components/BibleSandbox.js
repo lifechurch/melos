@@ -26,6 +26,7 @@ import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import DropdownTransition from '../../../components/DropdownTransition'
+import Note from './verseAction/note/Note'
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -93,6 +94,7 @@ class Sandbox extends Component {
 		this.content = null
 		this.labels = null
 		this.bookMark = null
+		this.note = null
 		this.handleButtonBarClick = ::this.handleButtonBarClick
 		this.handleSettingsChange = ::this.handleSettingsChange
 	}
@@ -309,6 +311,17 @@ class Sandbox extends Component {
 		}))
 	}
 
+	createNote(refs) {
+		const { dispatch } = this.props
+		// get verses
+		dispatch(ActionCreators.bibleVerses({
+			id: this.selectedVersion,
+			references: refs,
+			format: 'html',
+			local_abbreviation: this.props.bible.version.local_abbreviation,
+		}))
+	}
+
 	render() {
 		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
@@ -383,17 +396,15 @@ class Sandbox extends Component {
 		}
 
 		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical && bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
-			this.labels = (
-				<div>
-					<LabelSelector
-						byAlphabetical={bible.momentsLabels.byAlphabetical}
-						byCount={bible.momentsLabels.byCount}
-					/>
-				</div>
-			)
 			this.bookMark = <BookMark
 			{...this.props}
 			verseContent={bible.verses} labels={bible.momentsLabels} isLoggedIn={this.props.auth.isLoggedIn}/>
+		}
+
+		if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
+			this.note = <Note
+			{...this.props}
+			verseContent={bible.verses} isLoggedIn={this.props.auth.isLoggedIn}/>
 		}
 
 
@@ -417,6 +428,10 @@ class Sandbox extends Component {
 						Create BookMark
 					</div>
 					{ this.bookMark }
+					<div onClick={this.createNote.bind(this, ['REV.21.1+REV.21.2'])}>
+						Create Note
+					</div>
+					{ this.note }
 				</div>
 			</div>
 		)

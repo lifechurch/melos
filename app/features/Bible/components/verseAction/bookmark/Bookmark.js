@@ -26,6 +26,7 @@ class Bookmark extends Component {
 		}
 	}
 
+	// called by LabelSelector when labels are added or deleted
 	updateLabels(labels) {
 		this.setState({
 			labels: Object.keys(labels),
@@ -48,7 +49,7 @@ class Bookmark extends Component {
 		const { verseContent, labels } = this.props
 
 		return (
-			<div className='bookmark-create'>
+			<div className='verse-action-create'>
 				<div className='row large-6'>
 					<div className='heading vertical-center'>
 						<div className='columns medium-4 cancel'><XMark width={18} height={18} /></div>
@@ -57,7 +58,7 @@ class Bookmark extends Component {
 							<div onClick={this.saveBookMark} className='solid-button green'>Save</div>
 						</div>
 					</div>
-					<VerseCard verses={verseContent.verses}>
+					<VerseCard versesContent={verseContent.verses}>
 						<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
 					</VerseCard>
 				</div>
@@ -66,8 +67,12 @@ class Bookmark extends Component {
 	}
 }
 
+/**
+ * { item_description }
+ */
 Bookmark.propTypes = {
-
+	verseContent: React.PropTypes.object,
+	labels: React.PropTypes.object,
 }
 
 export default Bookmark
