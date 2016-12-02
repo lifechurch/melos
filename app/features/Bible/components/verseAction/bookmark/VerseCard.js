@@ -63,7 +63,7 @@ class VerseCard extends Component {
 		if (Object.keys(verseContent).length > 0) {
 			Object.keys(verseContent).forEach((key) => {
 				let verse = verseContent[key]
-				let heading = verseHeading ? verseHeading : <h2 className='heading'>{ `${ verse.human }` }</h2>
+				let heading = verseHeading ? verseHeading : <h2 className='heading'>{ `${ verse.heading }` }</h2>
 				if (canDeleteVerses) {
 					verses.push (
 						<div key={key} className='vertical-center verse'>

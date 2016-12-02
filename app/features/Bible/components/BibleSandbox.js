@@ -382,7 +382,7 @@ class Sandbox extends Component {
 			)
 		}
 
-		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical && Object.keys(bible.verses).length > 0) {
+		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical && bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
 			this.labels = (
 				<div>
 					<LabelSelector
@@ -406,8 +406,6 @@ class Sandbox extends Component {
 					</div>
 				</div>
 				<div>
-					<div onClick={::this.getLabels} >Get Labels Bruh</div>
-					<div>{ this.labels }</div>
 					<div className="row">
 					<VerseAction verseAction={verseAction} />
 						<div className="columns medium-3">
@@ -415,7 +413,7 @@ class Sandbox extends Component {
 							{ this.color }
 						</div>
 					</div>
-					<div onClick={this.createBookMark.bind(this, ['REV.21.1'])}>
+					<div onClick={this.createBookMark.bind(this, ['REV.21.1+REV.21.2'])}>
 						Create BookMark
 					</div>
 					{ this.bookMark }

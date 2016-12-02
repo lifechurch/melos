@@ -10,8 +10,8 @@ export default function reducer(state = {}, action) {
 			return Immutable.fromJS(action).set('loading', false).toJS()
 
 		case type('momentsLabelsSuccess'):
-			const byCount = Immutable.fromJS(action.response.data).toJS()
-			const byAlphabetical = Immutable.fromJS(action.response.data).toJS().sort((a, b) => {
+			const byCount = Immutable.fromJS(action.response.labels).toJS()
+			const byAlphabetical = Immutable.fromJS(action.response.labels).toJS().sort((a, b) => {
 				// sort takes a function to compare elements
 				// return -1 if value should be before second element
 				// return 1 if value should be after

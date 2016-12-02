@@ -14,15 +14,16 @@ export default function reducer(state = {}, action) {
 			let references = []
 			Immutable.fromJS(action.response.verses).toJS().forEach((verse) => {
 				content[`${action.params.id}-${verse.reference.usfm}`] = {
+					heading: `${verse.reference.human} ${action.params.local_abbreviation}`,
 					content: verse.content,
-					usfm: verse.reference.usfm[0],
+					usfm: verse.reference.usfm,
 					human: verse.reference.human,
 					versionInfo: {
 						id: action.params.id,
 						local_abbreviation: action.params.local_abbreviation,
 					},
 				}
-				references.push({ usfm: [verse.reference.usfm[0]], version_id: action.params.id })
+				references.push({ usfm: verse.reference.usfm, version_id: action.params.id })
 			})
 			return Immutable.fromJS(state).merge({ verses: content, references }).delete('loading').toJS()
 
