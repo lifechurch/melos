@@ -38,7 +38,7 @@ export default function reducer(state = {}, action) {
 					let a = byAlphabetical[index - 1]
 					let b = byAlphabetical[index]
 
-					if (a.label.charAt(0).match(/^[a-zA-Z]/) && (a.label.charAt(0).toLowerCase().localeCompare(b.label.charAt(0).toLowerCase(), { sensitivity: 'base' })) !== 0) {
+					if (b.label.charAt(0).match(/^[a-zA-Z]/) && (a.label.charAt(0).toLowerCase().localeCompare(b.label.charAt(0).toLowerCase(), { sensitivity: 'base' })) !== 0) {
 						b.groupHeading = b.label.charAt(0).toUpperCase()
 					} else {
 						b.groupHeading = null
