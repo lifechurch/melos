@@ -18,6 +18,7 @@ import ReaderArrows from './content/ReaderArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
+import BookMark from './verseAction/bookmark/BookMark'
 import LocalStore from '../../../lib/localStore'
 import RecentVersions from '../lib/RecentVersions'
 import LabelSelector from './verseAction/bookmark/LabelSelector'
@@ -91,6 +92,7 @@ class Sandbox extends Component {
 		this.color = null
 		this.content = null
 		this.labels = null
+		this.bookMark = null
 		this.handleButtonBarClick = ::this.handleButtonBarClick
 		this.handleSettingsChange = ::this.handleSettingsChange
 	}
@@ -184,7 +186,7 @@ class Sandbox extends Component {
 
 	getLabels() {
 		const { dispatch } = this.props
-		dispatch(ActionCreators.momentsLabels(true, { selectedLanguage: this.state.selectedLanguage }))
+		dispatch(ActionCreators.momentsLabels(true))
 	}
 
 	// this handles the class toggling for book and chapter clicks on mobile
@@ -296,6 +298,17 @@ class Sandbox extends Component {
 		console.log("BBC", item)
 	}
 
+	createBookMark(refs) {
+		const { dispatch } = this.props
+		// get verses
+		dispatch(ActionCreators.bibleVerses({
+			id: this.selectedVersion,
+			references: refs,
+			format: 'html',
+			local_abbreviation: this.props.bible.version.local_abbreviation,
+		}))
+	}
+
 	render() {
 		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
@@ -369,7 +382,7 @@ class Sandbox extends Component {
 			)
 		}
 
-		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical) {
+		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical && bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
 			this.labels = (
 				<div>
 					<LabelSelector
@@ -378,7 +391,11 @@ class Sandbox extends Component {
 					/>
 				</div>
 			)
+			this.bookMark = <BookMark
+			{...this.props}
+			verseContent={bible.verses} labels={bible.momentsLabels} isLoggedIn={this.props.auth.isLoggedIn}/>
 		}
+
 
 		return (
 			<div className="">
@@ -389,8 +406,6 @@ class Sandbox extends Component {
 					</div>
 				</div>
 				<div>
-					<div onClick={::this.getLabels} >Get Labels Bruh</div>
-					<div>{ this.labels }</div>
 					<div className="row">
 					<VerseAction verseAction={verseAction} />
 						<div className="columns medium-3">
@@ -398,6 +413,10 @@ class Sandbox extends Component {
 							{ this.color }
 						</div>
 					</div>
+					<div onClick={this.createBookMark.bind(this, ['REV.21.1+REV.21.2'])}>
+						Create BookMark
+					</div>
+					{ this.bookMark }
 				</div>
 			</div>
 		)
