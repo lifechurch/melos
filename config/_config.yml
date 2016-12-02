@@ -81,12 +81,13 @@ staging:
   event_api_host: "events-staging.bible.com"
 
 review01:
-  api_root: youversionapistaging.com
-  api_referer: web-dev-staging.youversionapistaging.com
+  api_root: youversionapi.com
+  api_referer: web.youversionapi.com
   api_version: "3.1"
 #  api_root: youversionapi.com
 #  api_referer: web.youversionapi.com
 #  api_version: "3.1"
+  memcache_server: memcache.youversion.com
   api_default_timeout: 15
   rack_execution_timeout: 15
   twitter_key: "HhYNsW1KCxFH5WeCQ3nRXQ"
