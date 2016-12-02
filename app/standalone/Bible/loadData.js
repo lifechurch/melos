@@ -7,6 +7,19 @@ export default function loadData(params, startingState, sessionData, store, Loca
 		if (typeof store !== 'undefined' && params.hasOwnProperty('url') && params.hasOwnProperty('languageTag')) {
 			let lang = Locale.locale3
 			let version = params.version || cookie.load('version') || '1'
+			// let ref = null
+			// if (params.ref) {
+			// 	let refString = params.ref.split('.')
+			// 	if (indexOf(refString[2]) && typeof refString[2] == 'string') {
+			// 		ref = refString.slice(0, 2).join('.')
+			// 	} else {
+			// 		ref = params.ref
+			// 	}
+			// }
+			// console.log(ref)
+			// // const isRef = new RegExp("^([0-9]{1}[a-z]{2}|[a-z]{3})\.[0-9]+)?")
+			// // isRef.test(ref)
+
 			let reference = params.ref || cookie.load('last_read') || 'MAT.1'
 			reference = reference.toUpperCase()
 // const isReference = new RegExp("^\/bible\/([0-9]{1}[a-z]{2}|[a-z]{3})\.[0-9]+\.[0-9]+")
