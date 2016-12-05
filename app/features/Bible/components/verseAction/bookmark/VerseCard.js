@@ -7,34 +7,6 @@ import Immutable from 'immutable'
 
 class VerseCard extends Component {
 
-	// componentWillReceiveProps(nextProps) {
-	// 	const { verses } = this.props
-	// 	const { versesContent } = this.state
-
-	// 	if (verses !== nextProps.verses) {
-	// 		this.setState({
-	// 			versesContent: Immutable.fromJS(versesContent).merge(nextProps.verses).toJS(),
-	// 		})
-	// 	}
-	// }
-
-	// addVerse(versionID, references) {
-	// 	const { dispatch } = this.props
-	// 	const { versesContent } = this.state
-
-	// 	dispatch(ActionCreators.bibleVerses({ id: versionID, references: references, format: 'html' }))
-	// }
-
-	// deleteVerse(key) {
-	// 	const { versesContent } = this.state
-	// 	if (key in versesContent) {
-	// 		this.setState({
-	// 			versesContent: Immutable.fromJS(versesContent).delete(key).toJS(),
-	// 		})
-	// 	}
-	// }
-
-
 	render() {
 		const { versesContent, verseHeading, deleteVerse, intl } = this.props
 
@@ -93,11 +65,25 @@ class VerseCard extends Component {
 
 
 /**
- * @versesContent 		{object} 			verse references to display on card
+ * @versesContent 		{object} 			object of verse reference objects to display on card
+ * 										{
+ *
+ * 											59-REV.21.1: {
+ * 													content: "<div> class= ......",
+ * 													heading: "Revelation 21:1 ESV",
+ * 													human: "Revelation 21:1",
+ * 												 	usfm: ["REV.21.1"],
+ * 													versionInfo: {
+ * 															id: 59,
+ * 															local_abbreviation: "ESV",
+ * 													}
+ * 											}
+ *
+ * 										}
  * @deleteVerse				{function}		display X and call function on click
  */
 VerseCard.propTypes = {
-	versesContent: React.PropTypes.array,
+	versesContent: React.PropTypes.object,
 	deleteVerse: React.PropTypes.func,
 }
 

@@ -533,12 +533,17 @@ class ChapterPicker extends Component {
  *	@books: 							array of books for preselected version/language
  *	@bookMap: 						object relating book usfm to array index
  *	@chapter: 						rendered chapter object
+ *	@getChapter: 					callback for rendering a new chapter
  */
 ChapterPicker.propTypes = {
 	books: React.PropTypes.array,
 	bookMap: React.PropTypes.object,
 	chapter: React.PropTypes.object,
-	getChapter: React.PropTypes.func
+	getChapter: React.PropTypes.func,
+	initialChapters: React.PropTypes.object,
+	initialBook: React.PropTypes.string,
+	initialInput: React.PropTypes.string,
+	initialChapter: React.PropTypes.string,
 }
 
 export default ChapterPicker

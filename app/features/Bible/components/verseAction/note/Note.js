@@ -63,11 +63,11 @@ class Note extends Component {
 	}
 
 	saveNote() {
-		const { dispatch, isLoggedIn } = this.props
-		const { content, verseContent } = this.state
+		const { dispatch, isLoggedIn, references } = this.props
+		const { content } = this.state
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
 			kind: 'note',
-			references: verseContent.references,
+			references: references,
 			content: content,
 			created_dt: moment().format(),
 		}))
