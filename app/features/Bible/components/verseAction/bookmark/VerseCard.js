@@ -8,22 +8,24 @@ import Immutable from 'immutable'
 class VerseCard extends Component {
 
 	render() {
-		const { versesContent, verseHeading, deleteVerse, intl } = this.props
+		const { verseContent, verseHeading, deleteVerse, intl } = this.props
 
 		let verses = []
 		let cardFooter = null
 
-		if (Object.keys(versesContent).length > 0) {
-			Object.keys(versesContent).forEach((key) => {
-				let verse = versesContent[key]
+		if (verseContent && Object.keys(verseContent).length > 0) {
+			Object.keys(verseContent).forEach((key) => {
+				let verse = verseContent[key]
 				let heading = verseHeading ? verseHeading : <h2 className='heading'>{ `${ verse.heading }` }</h2>
 
 				if (deleteVerse) {
 					verses.push (
-						<div key={key} className='verse'>
-							{ heading }
-							<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
-							<XMark width={18} height={18} onClick={deleteVerse.bind(this, key)}/>
+						<div>
+							<div key={key} className='verse small-11'>
+								{ heading }
+								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
+							</div>
+							<div className='delete small-1'><XMark width={18} height={18} onClick={deleteVerse.bind(this, key)}/></div>
 						</div>
 					)
 				} else {
@@ -65,26 +67,27 @@ class VerseCard extends Component {
 
 
 /**
- * @versesContent 		{object} 			object of verse reference objects to display on card
- * 										{
+ * card to display verses with headers and optional children (add labels, etc.)
  *
- * 											59-REV.21.1: {
- * 													content: "<div> class= ......",
- * 													heading: "Revelation 21:1 ESV",
- * 													human: "Revelation 21:1",
- * 												 	usfm: ["REV.21.1"],
- * 													versionInfo: {
- * 															id: 59,
- * 															local_abbreviation: "ESV",
- * 													}
- * 											}
- *
- * 										}
+ * @verseContent 			{object} 			object of verse reference objects to display on card
  * @deleteVerse				{function}		display X and call function on click
+ * @verseHeading			{node}				optional element for verse card heading
+ * 																	if not passed, then the verseContent.heading will be rendered
+ * 																	inside an h2
  */
 VerseCard.propTypes = {
-	versesContent: React.PropTypes.object,
+	verseContent: React.PropTypes.shape({
+		content: React.PropTypes.string,
+		heading: React.PropTypes.string,
+		human: React.PropTypes.string,
+		usfm: React.PropTypes.array,
+		versionInfo: React.PropTypes.shape({
+			id: React.PropTypes.number,
+			local_abbreviation: React.PropTypes.string,
+		}),
+	}),
 	deleteVerse: React.PropTypes.func,
+	verseHeading: React.PropTypes.node,
 }
 
 export default injectIntl(VerseCard)

@@ -11,7 +11,7 @@ class Bookmark extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			labels: {}
+			addedLabels: {}
 		}
 
 		this.updateLabels = this.updateLabels.bind(this)
@@ -29,24 +29,29 @@ class Bookmark extends Component {
 	// called by LabelSelector when labels are added or deleted
 	updateLabels(labels) {
 		this.setState({
-			labels: Object.keys(labels),
+			addedLabels: Object.keys(labels),
 		})
 	}
 
 	saveBookMark() {
-		const { dispatch, isLoggedIn, verseContent } = this.props
-		const { labels } = this.state
+		const { dispatch, isLoggedIn, references } = this.props
+		const { addedLabels } = this.state
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
 			kind: 'bookmark',
-			references: verseContent.references,
-			labels: labels,
+			references: references,
+			labels: addedLabels,
 			created_dt: moment().format(),
 		}))
 	}
 
 
 	render() {
-		const { verseContent, labels } = this.props
+		const { verses, labels } = this.props
+
+		let labelsDiv = null
+		if (labels && labels.byAlphabetical && labels.byCount) {
+			<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
+		}
 
 		return (
 			<div className='verse-action-create'>
@@ -58,8 +63,8 @@ class Bookmark extends Component {
 							<div onClick={this.saveBookMark} className='solid-button green'>Save</div>
 						</div>
 					</div>
-					<VerseCard versesContent={verseContent.verses}>
-						<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
+					<VerseCard verseContent={verses}>
+						{ labelsDiv }
 					</VerseCard>
 				</div>
 			</div>
@@ -68,10 +73,16 @@ class Bookmark extends Component {
 }
 
 /**
- * { item_description }
+ * create new bookmark from selected verses
+ *
+ * @verses				{object} 				verses object containing verse objects. passed to verse card
+ * @references		{array}					array of usfms formatted for the momentsCreate API call
+ * @labels				{object}				labels object containing an array of labels sorted alphabetically
+ * 																and an array sorted by count
  */
 Bookmark.propTypes = {
-	verseContent: React.PropTypes.object,
+	verses: React.PropTypes.object,
+	references: React.PropTypes.array,
 	labels: React.PropTypes.object,
 }
 

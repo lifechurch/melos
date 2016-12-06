@@ -11,7 +11,7 @@ class Note extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			verseContent: {},
+			verseContent: props.verses,
 			content: null,
 		}
 
@@ -31,19 +31,12 @@ class Note extends Component {
 	componentWillReceiveProps(nextProps) {
 		const { verses } = this.props
 		const { verseContent } = this.state
-
+		// merge in new verses
 		if (verses !== nextProps.verses) {
 			this.setState({
 				verseContent: Immutable.fromJS(verseContent).merge(nextProps.verses).toJS(),
 			})
 		}
-	}
-
-	addVerse(versionID, references) {
-		const { dispatch } = this.props
-		const { verseContent } = this.state
-
-		dispatch(ActionCreators.bibleVerses({ id: versionID, references: references, format: 'html' }))
 	}
 
 	deleteVerse(key) {
@@ -55,10 +48,10 @@ class Note extends Component {
 		}
 	}
 
-	//
+	// note content on keypress
 	updateNote(content) {
 		this.setState({
-			content,
+			content: content,
 		})
 	}
 
@@ -79,7 +72,7 @@ class Note extends Component {
 
 		return (
 			<div className='verse-action-create'>
-				<div className='row large-6'>
+				<div className='row large-6 medium-9 small-12'>
 					<div className='heading vertical-center'>
 						<div className='columns medium-4 cancel'><XMark width={18} height={18} /></div>
 						<div className='columns medium-4 title'><FormattedMessage id='note' /></div>
@@ -87,8 +80,7 @@ class Note extends Component {
 							<div onClick={this.saveNote} className='solid-button green'>Save</div>
 						</div>
 					</div>
-					<VerseCard versesContent={verseContent.verses} deleteVerse={this.deleteVerse} >
-					</VerseCard>
+					<VerseCard verseContent={verseContent} deleteVerse={this.deleteVerse} />
 					<div className='note-editor'>
 						<NoteEditor intl={intl} updateNote={this.updateNote} />
 					</div>
@@ -98,8 +90,15 @@ class Note extends Component {
 	}
 }
 
+/**
+ * create new note from selected verses
+ *
+ * @verses				{object} 				verses object containing verse objects. passed to verse card
+ * @references		{array}					array of usfms formatted for the momentsCreate API call
+ */
 Note.propTypes = {
-
+	verses: React.PropTypes.object,
+	references: React.PropTypes.array,
 }
 
 export default injectIntl(Note)

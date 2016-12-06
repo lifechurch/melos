@@ -11,15 +11,16 @@
 	.note { display: none !important; }
 
 	.verse {
-		flex-wrap: wrap;
+		display: inline-block;
 
 		.xmark-container:hover {
 			cursor: pointer;
 		}
+	}
+	.delete {
+		display: inline-flex;
 		.xmark-container {
-			display: inline-flex;
 			margin-left: auto;
-			margin-bottom: 40px;
 		}
 	}
 
@@ -40,7 +41,7 @@
 
 	.verse-content {
 		display: inline-flex;
-		max-width: 92%;
+		padding-right: 25px;
 		margin-bottom: 20px;
 		color: @font-grey;
 	}

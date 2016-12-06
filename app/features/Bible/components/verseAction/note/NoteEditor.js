@@ -50,8 +50,13 @@ class NoteEditor extends Component {
 	}
 }
 
+/**
+ * text field for adding a note
+ *
+ * @updateNote 		{function} 		callback to update text value
+ */
 NoteEditor.propTypes = {
-
+	updateNote: React.PropTypes.func,
 }
 
 export default NoteEditor

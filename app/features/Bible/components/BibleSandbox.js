@@ -398,13 +398,13 @@ class Sandbox extends Component {
 		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical && bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
 			this.bookMark = <BookMark
 			{...this.props}
-			verseContent={bible.verses} labels={bible.momentsLabels} isLoggedIn={this.props.auth.isLoggedIn}/>
+			verses={bible.verses.verses} references={bible.verses.references} labels={bible.momentsLabels} isLoggedIn={this.props.auth.isLoggedIn}/>
 		}
 
 		if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
 			this.note = <Note
 			{...this.props}
-			verseContent={bible.verses} isLoggedIn={this.props.auth.isLoggedIn}/>
+			verses={bible.verses.verses} references={bible.verses.references} isLoggedIn={this.props.auth.isLoggedIn}/>
 		}
 
 
@@ -424,7 +424,7 @@ class Sandbox extends Component {
 							{ this.color }
 						</div>
 					</div>
-					<div onClick={this.createBookMark.bind(this, ['REV.21.1+REV.21.2'])}>
+					<div onClick={this.createBookMark.bind(this, ['REV.21.1+REV.21.2', 'REV.21.12'])}>
 						Create BookMark
 					</div>
 					{ this.bookMark }
