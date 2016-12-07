@@ -37,8 +37,8 @@ class ColorList extends Component {
       variableWidth: true,
       slidesToScroll: 4,
       arrows: true,
-      prevArrow: <CarouselArrow dir='left' fill='gray' width={10} height={10}/>,
-      nextArrow: <CarouselArrow dir='right' fill='gray' width={10} height={10}/>,
+      prevArrow: <CarouselArrow dir='left' fill='gray' width={15} height={15} />,
+      nextArrow: <CarouselArrow dir='right' fill='gray' width={15} height={15} />,
       responsive: [ {
       	breakpoint: 524, settings: { arrows: false, slidesToShow: 1 }
       } ]
@@ -53,7 +53,6 @@ class ColorList extends Component {
 						<Color
 							color={color}
 							onSelect={this.selectColor.bind(this, index)}
-							selected={index == selectedColor}
 						/>
 					</div>
 				)
@@ -66,7 +65,7 @@ class ColorList extends Component {
 		}
 
 		return (
-			<div className='color-list'>
+			<div className='color-list carousel-standard'>
 				{ slider }
 			</div>
 		)
