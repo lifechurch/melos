@@ -9,6 +9,7 @@ class ColorList extends Component {
 		super(props)
 		this.state = {
 			selectedColor: null,
+			dropdown: false,
 		}
 	}
 
@@ -27,9 +28,15 @@ class ColorList extends Component {
 		})
 	}
 
+	handleDropdownClick() {
+		this.setState({
+			dropdown: !this.state.dropdown,
+		})
+	}
+
 	render() {
-		const { list } = this.props
-		const { selectedColor } = this.state
+		const { list, type } = this.props
+		const { selectedColor, dropdown } = this.state
 
     let settings = {
 			centerMode: false,
@@ -44,7 +51,7 @@ class ColorList extends Component {
       } ]
 		}
 
-		let colors, slider = null
+		let colors, content = null
 
 		if (list) {
 			colors = list.map((color, index) => {
@@ -57,16 +64,37 @@ class ColorList extends Component {
 					</div>
 				)
 			})
-			slider = (
-				<Slider {...settings}>
-					{ colors }
-				</Slider>
-			)
+
+			if (type == 'grid') {
+				<div>
+					<div onClick={this.handleDropdownClick}>
+						{
+							selectedColor
+							?
+							colors[selectedColor]
+							:
+							o
+						}
+					</div>
+					<DropdownTransition show={dropdown}>
+						<div>
+
+						</div>
+					</DropdownTransition>
+				</div>
+			} else if (type == 'carousel') {
+				content = (
+					<Slider {...settings}>
+						{ colors }
+					</Slider>
+				)
+			}
 		}
+
 
 		return (
 			<div className='color-list carousel-standard'>
-				{ slider }
+				{ content }
 			</div>
 		)
 	}

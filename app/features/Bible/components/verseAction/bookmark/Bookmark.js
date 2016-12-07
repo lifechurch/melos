@@ -54,7 +54,9 @@ class Bookmark extends Component {
 			labelsDiv = <LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
 		}
 		if (colors) {
-			colorsDiv = <ColorList list={colors} />
+			colorsDiv = (
+				<ColorList list={colors} type='dropdown' />
+			)
 		}
 
 		return (
