@@ -395,10 +395,15 @@ class Sandbox extends Component {
 			)
 		}
 
-		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical && bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
+		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical && bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0 && Array.isArray(bible.highlightColors)) {
 			this.bookMark = <BookMark
 			{...this.props}
-			verses={bible.verses.verses} references={bible.verses.references} labels={bible.momentsLabels} isLoggedIn={this.props.auth.isLoggedIn}/>
+			verses={bible.verses.verses}
+			references={bible.verses.references}
+			labels={bible.momentsLabels}
+			isLoggedIn={this.props.auth.isLoggedIn}
+			colors={bible.highlightColors}
+			/>
 		}
 
 		if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
@@ -417,13 +422,7 @@ class Sandbox extends Component {
 					</div>
 				</div>
 				<div>
-					<div className="row">
-					<VerseAction verseAction={verseAction} />
-						<div className="columns medium-3">
-							<div onClick={::this.getColors}>Get Colors</div>
-							{ this.color }
-						</div>
-					</div>
+
 					<div onClick={this.createBookMark.bind(this, ['REV.21.1+REV.21.2', 'REV.21.12'])}>
 						Create BookMark
 					</div>

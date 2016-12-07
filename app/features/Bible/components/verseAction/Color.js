@@ -4,14 +4,14 @@ import shadeColor from '../../../../lib/shadeColor'
 class Color extends Component {
 
 	render() {
-		const { color, onSelect, index } = this.props
+		const { color, onSelect, selected } = this.props
 
 		if (color) {
 			return (
-				<div className={`color color-${color}`} style={ { 'backgroundColor': `#${color}` } } onClick={onSelect.bind(this, index)}>
+				<div className={`color color-${color} ${selected ? 'selected-color' : ''}`} style={ { 'backgroundColor': `#${color}` } } onClick={onSelect}>
 				<style>
 				{`
-					.color-${color}:hover {
+					.color-${color}:hover, .selected-color {
 						border: 1px solid ${shadeColor(`#${color}`, -0.18)}
 					}
 				`}

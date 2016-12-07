@@ -20,8 +20,8 @@ class VerseCard extends Component {
 
 				if (deleteVerse) {
 					verses.push (
-						<div>
-							<div key={key} className='verse small-11'>
+						<div key={key}>
+							<div className='verse small-11'>
 								{ heading }
 								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
 							</div>

@@ -5,6 +5,7 @@ import moment from 'moment-timezone'
 import XMark from '../../../../../components/XMark'
 import VerseCard from './VerseCard'
 import LabelSelector from './LabelSelector'
+import ColorList from '../ColorList'
 
 class Bookmark extends Component {
 
@@ -46,11 +47,14 @@ class Bookmark extends Component {
 
 
 	render() {
-		const { verses, labels } = this.props
+		const { verses, labels, colors } = this.props
 
-		let labelsDiv = null
+		let labelsDiv, colorsDiv = null
 		if (labels && labels.byAlphabetical && labels.byCount) {
-			<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
+			labelsDiv = <LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
+		}
+		if (colors) {
+			colorsDiv = <ColorList list={colors} />
 		}
 
 		return (
@@ -65,6 +69,7 @@ class Bookmark extends Component {
 					</div>
 					<VerseCard verseContent={verses}>
 						{ labelsDiv }
+						{ colorsDiv }
 					</VerseCard>
 				</div>
 			</div>
@@ -84,6 +89,7 @@ Bookmark.propTypes = {
 	verses: React.PropTypes.object,
 	references: React.PropTypes.array,
 	labels: React.PropTypes.object,
+	colors: React.PropTypes.array,
 }
 
 export default Bookmark

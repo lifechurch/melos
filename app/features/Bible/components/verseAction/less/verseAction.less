@@ -7,19 +7,23 @@
 	display: inline-flex;
 	align-items: center;
 	overflow-x: hidden;
+
+	.color {
+		width: 26px;
+		height: 26px;
+		border-radius: 26px;
+		transform: scale(0.85);
+		transition: transform 0.15s ease-in-out;
+		display: inline-flex;
+		margin: 5px;
+	}
+	.color:hover, .selected-color {
+		cursor: pointer;
+		transform: scale(1);
+	}
+
 }
 
-.color {
-	width: 26px;
-	height: 26px;
-	border-radius: 26px;
-	transform: scale(0.85);
-	transition: transform 0.15s ease-in-out;
-}
-.color:hover {
-	cursor: pointer;
-	transform: scale(1);
-}
 
 
 
@@ -54,13 +58,32 @@
 
 
 // NOTE
+.note-create {
+	.user-status-dropdown {
+		display: flex;
+		justify-content: flex-end;
+	}
+	.select-field {
+		margin-top: 15px;
+		margin-bottom: 15px;
 
-.note-editor {
-	margin-top: 30px;
+		.selected, li {
+			min-width: 100px;
+			font-size: 12px !important;
+			padding-left: 10px;
+		}
+		li {
+			background-color: @light-grey;
+		}
 
-	textarea {
-		margin: 0;
-		border: none;
-		resize: none;
+	}
+
+	.note-editor {
+
+		textarea {
+			margin: 0;
+			border: none;
+			resize: none;
+		}
 	}
 }
