@@ -10,7 +10,6 @@ import VersionPickerModal from './VersionPickerModal'
 import Label from '../chapterPicker/Label'
 import arrayToObject from '../../../../lib/arrayToObject'
 import DropdownTransition from '../../../../components/DropdownTransition'
-import { injectIntl } from 'react-intl'
 
 
 class VersionPicker extends Component {
@@ -199,12 +198,11 @@ class VersionPicker extends Component {
 	}
 
 	/**
-	 * This is called when the dropdown arrow is clicked to render the book and version
+	 * This is called when the dropdown arrow is clicked to render the version and language
 	 * picker modal
 	 */
 	handleDropDownClick() {
 		const { languages, version, languageMap, versions, cancelDropDown } = this.props
-		// const { selectedLanguage } = this.state
 
 		if (!cancelDropDown) {
 			// don't close the dropdown modal when losing focus of the input,
@@ -425,4 +423,4 @@ VersionPicker.propTypes = {
 	getVersions: React.PropTypes.func
 }
 
-export default injectIntl(VersionPicker)
+export default VersionPicker
