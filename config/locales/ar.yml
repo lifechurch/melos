@@ -1974,14 +1974,14 @@ ar:
         Reader: 
             header: 
                 parallel: "على التوازي"
-                parallel exit: "Exit Parallel Mode"
+                parallel exit: "أخرج من وضع العرض المتوازي"
                 cancel: "إلغاء"
-                audio label: "صوت"
-                audio window: "Open in new window"
+                audio label: "صوتي"
+                audio window: "افتح في نافذة جديدة"
                 font label: "إعدادات القارئ"
                 notifications label: "إشعارات"
                 more label: "المزيد"
-                search input: "Reference or Keyword..."
+                search input: "كلمه مرجعية"
                 home: "الصفحة الرئيسية"
                 bible: "الكتاب المقدس"
                 plans: "خطط"
@@ -1990,13 +1990,13 @@ ar:
             chapterpicker: 
                 book label: "سفر"
                 chapter label: "إصحاح"
-                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+                chapter unavailable: "هذا الإصحاح غير متاح في هذه الترجمة. رجاء إختيار إصحاح مختلف أو ترجمة مختلفه."
             versionpicker: 
                 language label: "لغات الكتاب المقدس"
                 language sub-label: "لغات الكتاب المقدس"
                 change language: "غير اللغه"
-                filter languages: "Filter Languages..."
-                version label: "نسخات"
+                filter languages: "فلترة اللغات"
+                version label: "ترجمات"
             reader settings: 
                 footnotes: "الحواشي"
                 numbers: "أرقام وعناوين"

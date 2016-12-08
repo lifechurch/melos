@@ -1898,10 +1898,10 @@ mk:
         Reader: 
             header: 
                 parallel: "Паралелно"
-                parallel exit: "Излези од паралелниот мод"
+                parallel exit: "Исклучи паралелен режим"
                 cancel: "Откажи"
                 audio label: "Аудио"
-                audio window: "Отвори нов прозор"
+                audio window: "Отвори во нов прозор"
                 font label: "Твоите уредувања"
                 notifications label: "Известувања"
                 more label: "Повеќе"
@@ -1914,13 +1914,13 @@ mk:
             chapterpicker: 
                 book label: "Книга"
                 chapter label: "Глава"
-                chapter unavailable: "Ова поглавје не е достапно на оваа верзија. Одберете друго поглавје или верзија."
+                chapter unavailable: "Ова поглавје не е достапно во оваа верзија. Одберете друго поглавје или верзија."
             versionpicker: 
                 language label: "Јазик на Библискиот текст"
                 language sub-label: "Јазик на Библискиот текст"
                 change language: "Промени јазик"
                 filter languages: "Филтрирај јазици..."
-                version label: "Верзија"
+                version label: "Верзии"
             reader settings: 
                 footnotes: "Фусноти"
                 numbers: "Броеви и наслови"

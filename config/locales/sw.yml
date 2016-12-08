@@ -1898,14 +1898,14 @@ sw:
         Reader: 
             header: 
                 parallel: "sambamba na"
-                parallel exit: "Exit Parallel Mode"
+                parallel exit: "Ondoka kwa muundo sambamba"
                 cancel: "Ondoa"
                 audio label: "Sauti"
-                audio window: "Open in new window"
-                font label: "mipangilio yako"
+                audio window: "Fungua kwenye dirisha jipya"
+                font label: "Mpangilio wa msomi"
                 notifications label: "Taarifa"
                 more label: "Zaidi"
-                search input: "Reference or Keyword..."
+                search input: "Shahiri ama neno la msingi"
                 home: "nyumbani\n"
                 bible: "Bibilia"
                 plans: "Mipango ya bibilia"
@@ -1914,12 +1914,12 @@ sw:
             chapterpicker: 
                 book label: "kitabu"
                 chapter label: "Sura"
-                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+                chapter unavailable: "Sura hii haipatikani katika toleo hili. Tafadhali chagua sura ama tafsiri tofauti."
             versionpicker: 
                 language label: "Lugha za biblia"
                 language sub-label: "Luhga za biblia"
                 change language: "lugha"
-                filter languages: "Filter Languages..."
+                filter languages: "Chuja Lugha"
                 version label: "Matoleo"
             reader settings: 
                 footnotes: "tanbihi"

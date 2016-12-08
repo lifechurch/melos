@@ -1974,14 +1974,14 @@ cy:
         Reader: 
             header: 
                 parallel: "Cyfosod"
-                parallel exit: "Exit Parallel Mode"
+                parallel exit: "Gadael Modd Paralel"
                 cancel: "Canslo"
                 audio label: "Sain"
-                audio window: "Open in new window"
+                audio window: "Agor mewn ffenestr newydd"
                 font label: "Gosodiadau Darllenydd"
                 notifications label: "Hysbysiadau"
                 more label: "Mwy"
-                search input: "Reference or Keyword..."
+                search input: "Cyfeirnod neu air allweddol"
                 home: "Gartref"
                 bible: "Beibl"
                 plans: "Cynlluniau"
@@ -1990,12 +1990,12 @@ cy:
             chapterpicker: 
                 book label: "Llyfr"
                 chapter label: "Pennod"
-                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+                chapter unavailable: "Dydy’r bennod ddim yn bodoli yn y fersiwn yma. Dewis bennod neu fersiwn gwahanol."
             versionpicker: 
                 language label: "Ieithoedd y Beibl"
                 language sub-label: "Iaith y Beibl"
                 change language: "Newid Iaith"
-                filter languages: "Filter Languages..."
+                filter languages: "Didoli ieithoedd"
                 version label: "Fersiynau"
             reader settings: 
                 footnotes: "Troednodiadau"

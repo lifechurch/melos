@@ -299,7 +299,7 @@
     line-height: $reader_line_height;
     text-indent: 0;
     font-weight: normal;
-    font-style: italic;
+    font-style: normal;
     text-transform: none;
     text-decoration: none;
   }
@@ -404,9 +404,14 @@
     word-spacing: 0.4em;
   }
 
+  /* Bulgarian Protestant Bible */
   .vid1443 .k {
-    font-style: italic;
     font-weight: bold;
+  }
+
+  /* Bulgarian Orthodox Bible 2006 */
+  .vid1558 .sls {
+    font-style: normal;
   }
 
   // hide cross references in

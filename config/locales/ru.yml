@@ -1936,14 +1936,14 @@ ru:
         Reader: 
             header: 
                 parallel: "Режим параллельного чтения"
-                parallel exit: "Exit Parallel Mode"
+                parallel exit: "Выход из режима параллельного текста"
                 cancel: "Отменить"
                 audio label: "Аудио"
                 audio window: "Открыть в новом окне"
                 font label: "Настройки окна чтения"
                 notifications label: "Уведомления"
                 more label: "Далее"
-                search input: "Reference or Keyword..."
+                search input: "Ссылка или ключевое слово..."
                 home: "Главная"
                 bible: "Библия"
                 plans: "Планы чтения"
@@ -1952,7 +1952,7 @@ ru:
             chapterpicker: 
                 book label: "Книга"
                 chapter label: "Глава"
-                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+                chapter unavailable: "В данном варианте перевода запрашиваемая глава не существует. Пожалуйста, выберите другую главу или вариант перевода."
             versionpicker: 
                 language label: "Языки текста Библии"
                 language sub-label: "Язык Библии"

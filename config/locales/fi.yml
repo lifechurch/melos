@@ -1898,14 +1898,14 @@ fi:
         Reader: 
             header: 
                 parallel: "Vertailunäkymä"
-                parallel exit: "Exit Parallel Mode"
+                parallel exit: "Poistu vertailunäkymästä"
                 cancel: "Peruuta"
                 audio label: "Ääni"
-                audio window: "Open in new window"
+                audio window: "Avaa uudessa ikkunassa"
                 font label: "Lukijan asetukset"
                 notifications label: "Ilmoitukset"
                 more label: "Lisää"
-                search input: "Reference or Keyword..."
+                search input: "Raamatunkohta tai hakusana..."
                 home: "Koti"
                 bible: "Raamattu"
                 plans: "Suunnitelmat"
@@ -1914,12 +1914,12 @@ fi:
             chapterpicker: 
                 book label: "Kirja"
                 chapter label: "Luku"
-                chapter unavailable: "This chapter is not available in this version. Please choose a different chapter or version."
+                chapter unavailable: "Tämä luku puuttuu valitusta käännöksestä. Valitse jokin muu luku tai eri käännös."
             versionpicker: 
                 language label: "Kielet"
                 language sub-label: "Kieli"
                 change language: "Vaihda kieltä"
-                filter languages: "Filter Languages..."
+                filter languages: "Suodata kieliä..."
                 version label: "Käännökset"
             reader settings: 
                 footnotes: "Alaviitteet:"
