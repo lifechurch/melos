@@ -82,6 +82,7 @@
         nativeTimeout = setTimeout(function() {
           var now = +new Date
             , tenMinutes = 600000
+
           if (now - launchTime < 1500) {
             document.cookie = [
               'noNative=true',
@@ -94,5 +95,6 @@
         window.addEventListener('pagehide', function() {
           clearTimeout(nativeTimeout);
         });
+
         window.location = nativeUrl;
       }());
