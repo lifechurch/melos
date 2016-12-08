@@ -65,32 +65,32 @@
     %link{rel: "alternate", href: "android-app://com.sirma.mobile.bible.android/youversion/#{@native_path}"}
     %link{rel: "alternate", href: "ios-app://282935706/youversion/#{@native_path}"}
 
-  - if @user_agent == "ios"
-    :javascript
-      (function() {
-        if (!document.querySelector) return;
-
-        var metaNativeUrl = document.querySelector("meta[name=native-url]"),
-            nativeUrl = metaNativeUrl && metaNativeUrl.content,
-            nativeTimeout,
-            launchTime = +new Date;
-
-        if (!nativeUrl) return;
-        if (document.cookie && ~document.cookie.indexOf('noNative=true')) return;
-
-        nativeTimeout = setTimeout(function() {
-          var now = +new Date
-            , tenMinutes = 600000
-          if (now - launchTime < 1500) {
-            document.cookie = [
-              'noNative=true',
-              'expires=' + new Date(now + tenMinutes).toUTCString()
-            ].join('; ');
-          }
-        }, 1000);
-
-        window.addEventListener('pagehide', function() {
-          clearTimeout(nativeTimeout);
-        });
-        window.location = nativeUrl;
-      }());
+  -#- if @user_agent == "ios"
+  -#  :javascript
+  -#    (function() {
+  -#      if (!document.querySelector) return;
+  -#
+  -#      var metaNativeUrl = document.querySelector("meta[name=native-url]"),
+  -#          nativeUrl = metaNativeUrl && metaNativeUrl.content,
+  -#          nativeTimeout,
+  -#          launchTime = +new Date;
+  -#
+  -#      if (!nativeUrl) return;
+  -#      if (document.cookie && ~document.cookie.indexOf('noNative=true')) return;
+  -#
+  -#      nativeTimeout = setTimeout(function() {
+  -#        var now = +new Date
+  -#          , tenMinutes = 600000
+  -#        if (now - launchTime < 1500) {
+  -#          document.cookie = [
+  -#            'noNative=true',
+  -#            'expires=' + new Date(now + tenMinutes).toUTCString()
+  -#          ].join('; ');
+  -#        }
+  -#      }, 1000);
+  -#
+  -#      window.addEventListener('pagehide', function() {
+  -#        clearTimeout(nativeTimeout);
+  -#      });
+  -#      window.location = nativeUrl;
+  -#    }());
