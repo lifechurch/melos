@@ -25,7 +25,8 @@ module.exports = {
 			"unicodeCodePointEscapes": true,
 			"globalReturn": true,
 			"jsx": true,
-			"experimentalObjectRestSpread": true
+			"experimentalObjectRestSpread": true,
+			"experimentalClassProperties": true
 		},
 		"rules": {
 			"semi": 0,

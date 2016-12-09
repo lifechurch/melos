@@ -13,7 +13,7 @@ var auth = api.tokenAuth;
 var cors = require('cors');
 var cookieParser = require('cookie-parser');
 
-require("babel-register")({ presets: [ "es2015", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] });
+require("babel-register")({ presets: [ "es2015", "stage-0", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] });
 
 var reactServer = require('./react-server');
 var featureServer = require('./feature-server');

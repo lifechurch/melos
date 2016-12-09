@@ -1,48 +1,49 @@
 import React, { Component, PropTypes } from 'react'
 import Slider from 'react-slick'
 import CarouselArrow from '../../../../components/Carousel/CarouselArrow'
+import EllipsisMoreIcon from '../../../../components/EllipsisMoreIcon'
+import XMark from '../../../../components/XMark'
 import Color from './Color'
+import { SliderPicker } from 'react-color'
 
 class ColorList extends Component {
 
 	constructor(props) {
 		super(props)
 		this.state = {
-			selectedColor: null,
-			dropdown: false,
+			screen: 'carousel',
+			sliderColor: props.list[0],
 		}
+
+		this.selectColor = ::this.selectColor
+		this.handleScreenChange = ::this.handleScreenChange
 	}
 
-	componentWillReceiveProps(nextProps) {
-		const { selectedColor } = this.props
-		if (selectedColor !== nextProps.selectedColor) {
-			this.setState({
-				selectedColor: nextProps.selectedColor,
-			})
+	selectColor(color) {
+		const { onClick } = this.props
+		if (typeof onClick == 'function') {
+			onClick(color)
 		}
-	}
-
-	selectColor(index) {
 		this.setState({
-			selectedColor: index,
+			sliderColor: color,
 		})
 	}
 
-	handleDropdownClick() {
+	handleScreenChange() {
 		this.setState({
-			dropdown: !this.state.dropdown,
+			screen: this.state.screen == 'carousel' ? 'picker' : 'carousel',
 		})
 	}
 
 	render() {
 		const { list, type } = this.props
-		const { selectedColor, dropdown } = this.state
+		const { selectedColor, dropdown, sliderColor, screen } = this.state
 
     let settings = {
 			centerMode: false,
       infinite: false,
       variableWidth: true,
-      slidesToScroll: 4,
+      slidesToScroll: 6,
       arrows: true,
       prevArrow: <CarouselArrow dir='left' fill='gray' width={15} height={15} />,
       nextArrow: <CarouselArrow dir='right' fill='gray' width={15} height={15} />,
@@ -56,41 +57,38 @@ class ColorList extends Component {
 		if (list) {
 			colors = list.map((color, index) => {
 				return (
-					<div>
+					<div key={color}>
 						<Color
 							color={color}
-							onSelect={this.selectColor.bind(this, index)}
+							onSelect={this.selectColor.bind(undefined, color)}
 						/>
 					</div>
 				)
 			})
-
-			if (type == 'grid') {
-				<div>
-					<div onClick={this.handleDropdownClick}>
-						{
-							selectedColor
-							?
-							colors[selectedColor]
-							:
-							o
-						}
-					</div>
-					<DropdownTransition show={dropdown}>
-						<div>
-
-						</div>
-					</DropdownTransition>
+			colors.push (
+				<div key={'custom-color'} className='custom-color-icon color' onClick={this.handleScreenChange}>
+					<EllipsisMoreIcon />
 				</div>
-			} else if (type == 'carousel') {
-				content = (
-					<Slider {...settings}>
-						{ colors }
-					</Slider>
-				)
-			}
+			)
 		}
 
+		if (screen == 'carousel') {
+			content = (
+				<Slider {...settings}>
+					{ colors }
+				</Slider>
+			)
+		} else if (screen == 'picker') {
+			content = (
+				<div className='custom-color-picker'>
+					<SliderPicker color={sliderColor} onChange={this.selectColor.bind(undefined)} />
+					<div className='buttons'>
+						<Color color={sliderColor} onClick={this.selectColor.bind(undefined, sliderColor)}/>
+						<XMark onClick={this.handleScreenChange} width={17} height={17} />
+					</div>
+				</div>
+			)
+		}
 
 		return (
 			<div className='color-list carousel-standard'>
@@ -101,8 +99,8 @@ class ColorList extends Component {
 }
 
 ColorList.propTypes = {
-	colors: React.PropTypes.array.isRequired,
-	selectedColor: React.PropTypes.number,
+	list: React.PropTypes.array.isRequired,
+	onClick: React.PropTypes.func,
 }
 
 export default ColorList

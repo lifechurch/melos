@@ -55,7 +55,7 @@ class Bookmark extends Component {
 		}
 		if (colors) {
 			colorsDiv = (
-				<ColorList list={colors} type='dropdown' />
+				<ColorList list={colors} />
 			)
 		}
 
