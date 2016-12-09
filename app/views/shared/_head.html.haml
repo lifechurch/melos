@@ -78,23 +78,19 @@
         if (!nativeUrl) return;
         if (document.cookie && ~document.cookie.indexOf('noNative=true')) return;
 
-        var webUrl = window.location
         nativeTimeout = setTimeout(function() {
           var now = +new Date
             , tenMinutes = 600000
-
           if (now - launchTime < 1500) {
             document.cookie = [
               'noNative=true',
               'expires=' + new Date(now + tenMinutes).toUTCString()
             ].join('; ');
-            window.location = webUrl;
           }
         }, 1000);
 
         window.addEventListener('pagehide', function() {
           clearTimeout(nativeTimeout);
         });
-
         window.location = nativeUrl;
       }());
