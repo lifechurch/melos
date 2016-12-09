@@ -17,14 +17,23 @@ class ColorList extends Component {
 
 	}
 
+	/**
+	 * handle Color click
+	 *
+	 * @param      {string}  color   hex value
+	 */
 	selectColor = (color) => {
 		const { onClick } = this.props
 		if (typeof onClick == 'function') {
-			console.log(color)
 			onClick(color)
 		}
 	}
 
+	/**
+	 * when custom color slider changes
+	 *
+	 * @param      {object}  color   The color object from the SliderPicker component
+	 */
 	handleColorChange = (color) => {
 		if (color && color.hex) {
 			this.setState({
@@ -33,15 +42,19 @@ class ColorList extends Component {
 		}
 	}
 
+	/**
+	 * toggle between the color carousel and the custom color picker
+	 */
 	handleScreenChange = () => {
 		this.setState({
 			screen: this.state.screen == 'carousel' ? 'picker' : 'carousel',
 		})
 	}
 
+
 	render() {
-		const { list, type } = this.props
-		const { selectedColor, dropdown, sliderColor, screen } = this.state
+		const { list } = this.props
+		const { sliderColor, screen } = this.state
 
     let settings = {
 			centerMode: false,
@@ -69,6 +82,7 @@ class ColorList extends Component {
 					</div>
 				)
 			})
+			// push custom picker trigger as the last 'color' in the list
 			colors.push (
 				<div key={'custom-color'} className='custom-color-icon color' onClick={this.handleScreenChange}>
 					<EllipsisMoreIcon />

@@ -77,10 +77,10 @@ class Bookmark extends Component {
 							?
 							<Color color={selectedColor} />
 							:
-							<FormattedMessage id='add color' />
+							<div className='yv-gray-link'><FormattedMessage id='add color' /></div>
 						}
 					</div>
-					<DropdownTransition show={dropdown}>
+					<DropdownTransition show={dropdown} hideDir='right'>
 						<div className='labels-modal'>
 							<ColorList list={colors} onClick={this.addColor} />
 						</div>
