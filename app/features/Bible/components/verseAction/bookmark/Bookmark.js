@@ -3,20 +3,21 @@ import ActionCreators from '../../../actions/creators'
 import { FormattedMessage } from 'react-intl'
 import moment from 'moment-timezone'
 import XMark from '../../../../../components/XMark'
+import DropdownTransition from '../../../../../components/DropdownTransition'
 import VerseCard from './VerseCard'
 import LabelSelector from './LabelSelector'
 import ColorList from '../ColorList'
+import Color from '../Color'
 
 class Bookmark extends Component {
 
 	constructor(props) {
 		super(props)
 		this.state = {
-			addedLabels: {}
+			addedLabels: {},
+			dropdown: false,
+			selectedColor: null,
 		}
-
-		this.updateLabels = this.updateLabels.bind(this)
-		this.saveBookMark = ::this.saveBookMark
 	}
 
 	componentDidMount() {
@@ -27,14 +28,27 @@ class Bookmark extends Component {
 		}
 	}
 
+	handleDropdownClick = () => {
+		this.setState({
+			dropdown: !this.state.dropdown,
+		})
+	}
+
+	addColor = (color) => {
+		this.setState({
+			selectedColor: color,
+		})
+		this.handleDropdownClick()
+	}
+
 	// called by LabelSelector when labels are added or deleted
-	updateLabels(labels) {
+	updateLabels = (labels) => {
 		this.setState({
 			addedLabels: Object.keys(labels),
 		})
 	}
 
-	saveBookMark() {
+	saveBookMark = () => {
 		const { dispatch, isLoggedIn, references } = this.props
 		const { addedLabels } = this.state
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
@@ -48,17 +62,32 @@ class Bookmark extends Component {
 
 	render() {
 		const { verses, labels, colors } = this.props
+		const { dropdown, selectedColor } = this.state
 
 		let labelsDiv, colorsDiv = null
-		if (labels && labels.byAlphabetical && labels.byCount) {
-			labelsDiv = <LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
-		}
+
+		labelsDiv = <LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
+
 		if (colors) {
 			colorsDiv = (
-				<ColorList list={colors} />
+				<div className='colors-div'>
+					<div onClick={this.handleDropdownClick} className='color-trigger-button'>
+						{
+							selectedColor
+							?
+							<Color color={selectedColor} />
+							:
+							<FormattedMessage id='add color' />
+						}
+					</div>
+					<DropdownTransition show={dropdown}>
+						<div className='labels-modal'>
+							<ColorList list={colors} onClick={this.addColor} />
+						</div>
+					</DropdownTransition>
+				</div>
 			)
 		}
-
 		return (
 			<div className='verse-action-create'>
 				<div className='row large-6'>
@@ -70,8 +99,12 @@ class Bookmark extends Component {
 						</div>
 					</div>
 					<VerseCard verseContent={verses}>
-						{ labelsDiv }
-						{ colorsDiv }
+							<div className='small-10'>
+								{ labelsDiv }
+							</div>
+							<div className='small-2'>
+								{ colorsDiv }
+							</div>
 					</VerseCard>
 				</div>
 			</div>

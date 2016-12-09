@@ -11,36 +11,30 @@ class LabelInput extends Component {
 		this.state = {
 			inputActive: false
 		}
-
-		this.handleChange = ::this.handleChange
-		this.handleClick = ::this.handleClick
-		this.handleBlur = ::this.handleBlur
-		this.handleKeyDown = ::this.handleKeyDown
-		this.activateInput = ::this.activateInput
 	}
 
-	handleChange(changeEvent) {
+	handleChange = (changeEvent) => {
 		const { onChange } = this.props
 		if (typeof onChange == 'function') {
 			onChange(changeEvent.target.value)
 		}
 	}
 
-	handleKeyDown(keyEvent) {
+	handleKeyDown = (keyEvent) => {
 		const { onKeyDown } = this.props
 		if (typeof onKeyDown == 'function') {
 			onKeyDown(keyEvent, keyEvent.key, keyEvent.keyCode)
 		}
 	}
 
-	handleClick() {
+	handleClick = () => {
 		const { onClick } = this.props
 		if (typeof onClick == 'function') {
 			onClick()
 		}
 	}
 
-	handleBlur() {
+	handleBlur = () => {
 		const { onBlur } = this.props
 		if (typeof onBlur == 'function') {
 			onBlur()
@@ -48,7 +42,7 @@ class LabelInput extends Component {
 	}
 
 	// the input looks different before the user interacts with it
-	activateInput() {
+	activateInput = () => {
 		const { inputActive } = this.state
 
 		if (!inputActive) {
@@ -57,7 +51,7 @@ class LabelInput extends Component {
 	}
 
 	render() {
-		const { input, disabled, addedLabels, intl } = this.props
+		const { input, disabled, intl } = this.props
 		const { inputActive } = this.state
 
 		// don't show the dropdown button when the modal is open

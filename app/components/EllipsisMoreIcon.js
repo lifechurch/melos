@@ -7,7 +7,7 @@ class EllipsisMoreIcon extends Component {
 
 		const width = this.props.width || 15
 		const height = this.props.height || 15
-		const fill = this.props.fill || '#4EAE50'
+		const fill = this.props.fill || 'gray'
 
 		var classes = `ellipsis-icon-container`
 

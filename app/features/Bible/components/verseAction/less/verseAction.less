@@ -2,9 +2,10 @@
 
 .color-list {
 
-	&.carousel-standard {
+	.carousel-standard {
 		margin: 0 auto 0 auto;
-		width: 300px;
+		min-width: 200px;
+		max-width: 300px;
 		min-height: 38px;
 		.slick-arrow-right-container, .slick-arrow-left-container {
 			height: 32px;
@@ -38,12 +39,32 @@
 		cursor: pointer;
 		transform: scale(1);
 	}
-
-	.buttons {
+	.custom-color-icon, .ellipsis-icon-container {
 		display: flex;
+		.yv-flex-center-all;
+	}
+	.custom-color-icon {
+		border: @thin-grey-border;
+	}
+	.ellipsis-icon-container {
+		padding-top: 1px;
+	}
+
+	.custom-color-picker {
+		display: flex;
+		align-items: center;
+	}
+	.slider {
+		display: inline-block;
+	}
+	.buttons {
+		display: inline-flex;
+		flex-direction: column;
+		.yv-flex-center-all;
 		.color {
-			width: 35px;
-			height: 35px;
+			width: 31px;
+			height: 31px;
+			margin: 0 0 8px 0;
 		}
 	}
 
@@ -79,8 +100,32 @@
 		}
 	}
 	.color-list {
-		margin-top: 30px;
+		padding: 20px 10px 20px 10px;
+	}
+	.colors-div {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+		.color-trigger-button {
+			display: flex;
+			justify-content: flex-end;
+			margin-bottom: 1px;
+			.color {
+				width: 26px;
+				height: 26px;
+				border-radius: 26px;
+				display: inline-flex;
+			}
+		}
 
+		.modal {
+			margin-left: -400px;
+			margin-top: 5px;
+		}
+	}
+	.labels {
+		width: 100%;
 	}
 }
 

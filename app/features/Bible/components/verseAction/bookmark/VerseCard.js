@@ -8,7 +8,7 @@ import Immutable from 'immutable'
 class VerseCard extends Component {
 
 	render() {
-		const { verseContent, verseHeading, deleteVerse, intl } = this.props
+		const { verseContent, verseHeading, deleteVerse, intl, isLink } = this.props
 
 		let verses = []
 		let cardFooter = null
@@ -29,17 +29,26 @@ class VerseCard extends Component {
 						</div>
 					)
 				} else {
-					verses.push (
-						<a
-							key={key}
-							className='verse'
-							href={`/bible/${verse.versionInfo.id}/${verse.usfm}`}
-							title={`${intl.formatMessage({ id: "read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
-						>
-							{ heading }
-							<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
-						</a>
-					)
+					if (isLink) {
+						verses.push (
+							<a
+								key={key}
+								className='verse'
+								href={`/bible/${verse.versionInfo.id}/${verse.usfm}`}
+								title={`${intl.formatMessage({ id: "read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
+							>
+								{ heading }
+								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
+							</a>
+						)
+					} else {
+						verses.push (
+							<div key={key} className='verse'>
+								{ heading }
+								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
+							</div>
+						)
+					}
 				}
 			})
 		}
@@ -88,6 +97,7 @@ VerseCard.propTypes = {
 	}),
 	deleteVerse: React.PropTypes.func,
 	verseHeading: React.PropTypes.node,
+	isLink: React.PropTypes.bool,
 }
 
 export default injectIntl(VerseCard)

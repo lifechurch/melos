@@ -15,21 +15,25 @@ class ColorList extends Component {
 			sliderColor: props.list[0],
 		}
 
-		this.selectColor = ::this.selectColor
-		this.handleScreenChange = ::this.handleScreenChange
 	}
 
-	selectColor(color) {
+	selectColor = (color) => {
 		const { onClick } = this.props
 		if (typeof onClick == 'function') {
+			console.log(color)
 			onClick(color)
 		}
-		this.setState({
-			sliderColor: color,
-		})
 	}
 
-	handleScreenChange() {
+	handleColorChange = (color) => {
+		if (color && color.hex) {
+			this.setState({
+				sliderColor: color.hex,
+			})
+		}
+	}
+
+	handleScreenChange = () => {
 		this.setState({
 			screen: this.state.screen == 'carousel' ? 'picker' : 'carousel',
 		})
@@ -60,7 +64,7 @@ class ColorList extends Component {
 					<div key={color}>
 						<Color
 							color={color}
-							onSelect={this.selectColor.bind(undefined, color)}
+							onClick={this.selectColor}
 						/>
 					</div>
 				)
@@ -74,16 +78,20 @@ class ColorList extends Component {
 
 		if (screen == 'carousel') {
 			content = (
-				<Slider {...settings}>
-					{ colors }
-				</Slider>
+				<div className='carousel-standard'>
+					<Slider {...settings}>
+						{ colors }
+					</Slider>
+				</div>
 			)
 		} else if (screen == 'picker') {
 			content = (
 				<div className='custom-color-picker'>
-					<SliderPicker color={sliderColor} onChange={this.selectColor.bind(undefined)} />
-					<div className='buttons'>
-						<Color color={sliderColor} onClick={this.selectColor.bind(undefined, sliderColor)}/>
+					<div className='slider small-10'>
+						<SliderPicker color={sliderColor} onChange={this.handleColorChange} />
+					</div>
+					<div className='buttons small-2'>
+						<Color color={sliderColor} onClick={this.selectColor}/>
 						<XMark onClick={this.handleScreenChange} width={17} height={17} />
 					</div>
 				</div>
@@ -91,7 +99,7 @@ class ColorList extends Component {
 		}
 
 		return (
-			<div className='color-list carousel-standard'>
+			<div className='color-list'>
 				{ content }
 			</div>
 		)

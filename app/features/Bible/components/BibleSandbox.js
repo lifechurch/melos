@@ -368,10 +368,6 @@ class Sandbox extends Component {
 			)
 		}
 
-		if (Array.isArray(bible.highlightColors)) {
-			this.color = <ColorList list={bible.highlightColors} />
-		}
-
 		if (this.state.chapterError) {
 			this.content = <h2>Oh nooooooooo</h2>
 		} else if (bible.chapter && bible.chapter.reference && bible.version && bible.version.language && bible.chapter.content) {
@@ -395,7 +391,7 @@ class Sandbox extends Component {
 			)
 		}
 
-		if (bible.momentsLabels && bible.momentsLabels.byCount && bible.momentsLabels.byAlphabetical && bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0 && Array.isArray(bible.highlightColors)) {
+		if (bible.momentsLabels && bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0 && Array.isArray(bible.highlightColors)) {
 			this.bookMark = <BookMark
 			{...this.props}
 			verses={bible.verses.verses}
@@ -411,7 +407,6 @@ class Sandbox extends Component {
 			{...this.props}
 			verses={bible.verses.verses} references={bible.verses.references} isLoggedIn={this.props.auth.isLoggedIn}/>
 		}
-
 
 		return (
 			<div className="">
