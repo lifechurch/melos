@@ -7,13 +7,14 @@ import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 import Image from '../../../components/Carousel/Image'
 import { injectIntl, FormattedMessage } from 'react-intl'
 
+// const MAIN_VERSION =
 
 class Passage extends Component {
 
 	render() {
 		const { auth, passage, isRtl, localizedLink, intl } = this.props
 
-		let mainVerse, versesCarousel, plansCarousel, metaContent, metaTitle = null
+		let mainVerse, versesCarousel, plansCarousel, metaContent, metaTitle, chapterLink = null
 
 		// main verse and verse cards
 		let verses = []
@@ -28,11 +29,17 @@ class Passage extends Component {
 								<div className='heading'>{ verse.versionInfo.local_abbreviation }</div>
 								<div className='name'>{ verse.versionInfo.local_title }</div>
 							</h2>
-							<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
+							<a
+								href={`/bible/${verse.versionInfo.id}/${verse.usfm}`}
+								title={`${intl.formatMessage({ id: "read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
+								className='verse-content'
+								dangerouslySetInnerHTML={{ __html: verse.content }}
+							/>
 						</div>
 					)
 					metaTitle = `${passage.verses.title}: ${verse.text}`
 					metaContent = `${verse.text}`
+					chapterLink = `bible/${verse.versionInfo.id}/${(verse.usfm[0]).split('.').slice(0, 2).join('.')}`
 				} else {
 					let heading = (
 						<h2>
@@ -42,7 +49,7 @@ class Passage extends Component {
 					)
 					verses.push(
 						<li className='verse-container' key={key}>
-							<VerseCard verses={{ [key]: passage.verses.verses[key] }} verseHeading={heading} />
+							<VerseCard verseContent={{ [key]: passage.verses.verses[key] }} verseHeading={heading} />
 						</li>
 					)
 				}
@@ -111,16 +118,26 @@ class Passage extends Component {
 				/>
 				<div className='row main-content'>
 					<div className='title-heading'>
-						<CarouselArrow width={19} height={19} fill='gray'/>
+						<a
+							href={`/passage/${passage.verses.previous_verse}`}
+							title={``}
+						>
+							<CarouselArrow width={23} height={23} dir='left' fill='gray'/>
+						</a>
 						<h1 className='title'>
 							{ passage.verses.title }
 						</h1>
-						<CarouselArrow width={19} height={19} dir='left' fill='gray'/>
+						<a
+							href={`/passage/${passage.verses.next_verse}`}
+							title={``}
+						>
+							<CarouselArrow width={23} height={23} dir='right' fill='gray'/>
+						</a>
 					</div>
 					<div className='single-verse'>
 						{ mainVerse }
 					</div>
-					<a className='chapter-button solid-button'><FormattedMessage id='read chapter' /></a>
+					<a href={chapterLink} className='chapter-button solid-button'><FormattedMessage id='read chapter' /></a>
 					<a href='#related-plans' className='chapter-button solid-button'><FormattedMessage id='related plans' /></a>
 				</div>
 				<div className='row verses'>

@@ -1,5 +1,4 @@
 import type from './constants'
-import Filter from '../../../lib/filter'
 
 const ActionCreators = {
 

@@ -1,25 +1,25 @@
 const constants = {
 
 	/* API CALLS */
-	bibleConfigurationRequest: "BIBLE_CONFIGURATION_REQUEST",
-	bibleConfigurationSuccess: "BIBLE_CONFIGURATION_SUCCESS",
-	bibleConfigurationFailure: "BIBLE_CONFIGURATION_FAILURE",
+	bibleConfigurationRequest: "PASSAGE_BIBLE_CONFIGURATION_REQUEST",
+	bibleConfigurationSuccess: "PASSAGE_BIBLE_CONFIGURATION_SUCCESS",
+	bibleConfigurationFailure: "PASSAGE_BIBLE_CONFIGURATION_FAILURE",
 
-	bibleVersesRequest: "BIBLE_VERSES_REQUEST",
-	bibleVersesSuccess: "BIBLE_VERSES_SUCCESS",
-	bibleVersesFailure: "BIBLE_VERSES_FAILURE",
+	bibleVersesRequest: "PASSAGE_BIBLE_VERSES_REQUEST",
+	bibleVersesSuccess: "PASSAGE_BIBLE_VERSES_SUCCESS",
+	bibleVersesFailure: "PASSAGE_BIBLE_VERSES_FAILURE",
 
-	bibleVersionRequest: "BIBLE_VERSION_REQUEST",
-	bibleVersionSuccess: "BIBLE_VERSION_SUCCESS",
-	bibleVersionFailure: "BIBLE_VERSION_FAILURE",
+	bibleVersionRequest: "PASSAGE_BIBLE_VERSION_REQUEST",
+	bibleVersionSuccess: "PASSAGE_BIBLE_VERSION_SUCCESS",
+	bibleVersionFailure: "PASSAGE_BIBLE_VERSION_FAILURE",
 
-	readingplansConfigurationRequest: "READINGPLANS_CONFIGURATION_REQUEST",
-	readingplansConfigurationSuccess: "READINGPLANS_CONFIGURATION_SUCCESS",
-	readingplansConfigurationFailure: "READINGPLANS_CONFIGURATION_FAILURE",
+	readingplansConfigurationRequest: "PASSAGE_READINGPLANS_CONFIGURATION_REQUEST",
+	readingplansConfigurationSuccess: "PASSAGE_READINGPLANS_CONFIGURATION_SUCCESS",
+	readingplansConfigurationFailure: "PASSAGE_READINGPLANS_CONFIGURATION_FAILURE",
 
-	readingplansPlansByReferenceRequest: "READINGPLANS_PLANSBYREFERENCE_REQUEST",
-	readingplansPlansByReferenceSuccess: "READINGPLANS_PLANSBYREFERENCE_SUCCESS",
-	readingplansPlansByReferenceFailure: "READINGPLANS_PLANSBYREFERENCE_FAILURE",
+	readingplansPlansByReferenceRequest: "PASSAGE_READINGPLANS_PLANSBYREFERENCE_REQUEST",
+	readingplansPlansByReferenceSuccess: "PASSAGE_READINGPLANS_PLANSBYREFERENCE_SUCCESS",
+	readingplansPlansByReferenceFailure: "PASSAGE_READINGPLANS_PLANSBYREFERENCE_FAILURE",
 
 }
 
