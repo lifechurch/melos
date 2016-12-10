@@ -1,8 +1,10 @@
 {
   "plugins": [
-    ["react-intl", {
-        "messagesDir": "./locales",
-        "enforceDescriptions": true
-    }]
+    [
+	    "react-intl", {
+	        "messagesDir": "./locales",
+	        "enforceDescriptions": true
+	    },
+    ]
   ]
 }

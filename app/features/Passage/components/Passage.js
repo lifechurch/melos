@@ -20,6 +20,7 @@ class Passage extends Component {
 		if (passage && passage.verses && passage.verses.verses) {
 			Object.keys(passage.verses.verses).forEach((key, index) => {
 				let verse = passage.verses.verses[key]
+				// should the main verse be a specific version?
 				if (index == 0) {
 					mainVerse = (
 						<div key={key} className='verse'>
@@ -100,6 +101,7 @@ class Passage extends Component {
 				</div>
 			)
 		}
+
 
 		return (
 			<div className='passage'>

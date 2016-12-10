@@ -18,7 +18,7 @@ import ReaderArrows from './content/ReaderArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
-import VerseCard from './verseAction/bookmark/VerseCard'
+import BookMark from './verseAction/bookmark/BookMark'
 import LocalStore from '../../../lib/localStore'
 import RecentVersions from '../lib/RecentVersions'
 import LabelSelector from './verseAction/bookmark/LabelSelector'
@@ -26,6 +26,7 @@ import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import DropdownTransition from '../../../components/DropdownTransition'
+import Note from './verseAction/note/Note'
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -35,7 +36,7 @@ const DEFAULT_READER_SETTINGS = {
 	showVerseNumbers: true
 }
 
-class Bible extends Component {
+class Sandbox extends Component {
 
 	constructor(props) {
 		super(props)
@@ -65,6 +66,7 @@ class Bible extends Component {
 
 
 		LocalStore.setIn('mySettings.bob.john.fred', 'superman')
+		console.log(LocalStore.getIn('mySettings.bob.john.fred'))
 
 
 		this.state = {
@@ -85,9 +87,14 @@ class Bible extends Component {
 			showVerseNumbers: typeof showVerseNumbers === "boolean" ? showVerseNumbers : DEFAULT_READER_SETTINGS.showVerseNumbers
 		}
 
-		this.header = null
+		this.chapterPicker = null
+		this.versionsss = null
+		this.versionPicker = null
+		this.color = null
 		this.content = null
-
+		this.labels = null
+		this.bookMark = null
+		this.note = null
 		this.handleButtonBarClick = ::this.handleButtonBarClick
 		this.handleSettingsChange = ::this.handleSettingsChange
 	}
@@ -99,13 +106,23 @@ class Bible extends Component {
 		this.setState({ selectedLanguage: languageTag })
 
 		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
+			console.time("Build Versions Index")
 			Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
+			console.timeEnd("Build Versions Index")
+
+			console.time("Add V Items")
 			Filter.add("VersionStore", versions.versions)
+			console.timeEnd("Add V Items")
 		})
 
 		dispatch(ActionCreators.bibleConfiguration()).then((config) => {
+			console.time("Build Index")
 			Filter.build("LangStore", [ "name", "local_name" ])
+			console.timeEnd("Build Index")
+
+			console.time("Add Items")
 			Filter.add("LangStore", config.default_versions)
+			console.timeEnd("Add Items")
 		})
 	}
 
@@ -133,6 +150,7 @@ class Bible extends Component {
 	getVersion(versionid) {
 		const { dispatch, bible } = this.props
 		this.chapterVersionCall(versionid, this.state.selectedChapter)
+		this.setState({ selectedVersion: versionid })
 		this.toggleVersionPickerList()
 
 		this.recentVersions.add(versionid)
@@ -147,11 +165,30 @@ class Bible extends Component {
 		if (versionid !== this.state.selectedVersion) {
 			this.setState({ selectedVersion: versionid })
 			dispatch(ActionCreators.bibleVersion({ id: versionid })).then((version) => {
-				Filter.build("BooksStore", [ "human", "usfm" ])
-				Filter.add("BooksStore", version.books)
 				this.recentVersions.addVersion(version)
 			})
 		}
+	}
+
+
+	getLanguage(language) {
+
+	}
+
+	handleLabelChange(inputValue) {
+		// const { books, bookMap } = this.props
+		// const { selectedBook } = this.state
+
+		// filter the books given the input change
+		// let results = Filter.filter("BooksStore", inputValue.trim())
+
+		this.setState({ inputValue: inputValue })
+
+	}
+
+	getLabels() {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.momentsLabels(true))
 	}
 
 	// this handles the class toggling for book and chapter clicks on mobile
@@ -175,32 +212,69 @@ class Bible extends Component {
 	}
 
 
+	filterLang(changeEvent) {
+		const filter = changeEvent.target.value;
+		const instance = this
+		console.time("Filter Items")
+		const results = Filter.filter("LangStore", filter)
+		console.timeEnd("Filter Items")
+		instance.setState({ results })
+	}
+
+	filterVersions(changeEvent) {
+		const filter = changeEvent.target.value;
+		const instance = this
+		console.time("Filter V Items")
+		const versions = Filter.filter("VersionStore", filter)
+		console.timeEnd("Filter V Items")
+		instance.setState({ versions })
+	}
+
+	labelSelect(label) {
+		console.log('select', label)
+	}
+
+	labelDelete(label) {
+		console.log('delete', label)
+	}
+
+	getColor(color) {
+		console.log(color)
+	}
+
 	handleVerseSelect(e) {
 		console.log(e)
 	}
 
+	getColors() {
+		const { dispatch } = this.props
+		dispatch(ActionCreators.momentsColors())
+	}
 
 	componentDidUpdate(prevProps, prevState) {
 		const { bible } = this.props
-		// console.log(bible.chapter)
-		//
-		// send error down to pickers
+		const { chapter } = this.state
+
 		if (bible.chapter != prevProps.bible.chapter) {
 			if (bible.chapter.errors) {
 				this.setState({ chapterError: true })
 			} else {
-				this.setState({
-					chapterError: false,
-				})
+				if (bible.chapter.reference && bible.chapter.reference.usfm) {
+					this.setState({
+						chapterError: false,
+						selectedChapter: bible.chapter.reference.usfm,
+						inputValue: bible.chapter.reference.human
+					})
+				}
 			}
 		}
 
 	}
 
-
-	handleButtonBarClick(item) {
-		console.log("BBC", item)
+	handleTriggerClick() {
+		console.log("Ouch!")
 	}
+
 	handleSettingsChange(key, value) {
 		console.log("Settings", key, value)
 		LocalStore.setIn(key, value)
@@ -218,15 +292,42 @@ class Bible extends Component {
 		})
 
 		this.recentVersions.syncVersions(bible.settings)
+
+		console.log("Recent Versions:", this.recentVersions.get())
 	}
 
+	handleButtonBarClick(item) {
+		console.log("BBC", item)
+	}
+
+	createBookMark(refs) {
+		const { dispatch } = this.props
+		// get verses
+		dispatch(ActionCreators.bibleVerses({
+			id: this.selectedVersion,
+			references: refs,
+			format: 'html',
+			local_abbreviation: this.props.bible.version.local_abbreviation,
+		}))
+	}
+
+	createNote(refs) {
+		const { dispatch } = this.props
+		// get verses
+		dispatch(ActionCreators.bibleVerses({
+			id: this.selectedVersion,
+			references: refs,
+			format: 'html',
+			local_abbreviation: this.props.bible.version.local_abbreviation,
+		}))
+	}
 
 	render() {
-		const { bible, audio, settings, verseAction, hosts } = this.props
+		const { bible, audio, settings, verseAction } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
-			this.header = (
+			this.chapterPicker = (
 				<Header sticky={true} >
 					<ChapterPicker
 						{...this.props}
@@ -255,7 +356,7 @@ class Bible extends Component {
 						cancelDropDown={this.state.versionDropDownCancel}
 						togglePickerExclusion={::this.togglePickerExclusion}
 					/>
-					<AudioPopup audio={bible.audio} hosts={hosts} />
+					<AudioPopup audio={audio} />
 					<Settings
 						onChange={this.handleSettingsChange}
 						initialFontSize={fontSize}
@@ -290,22 +391,49 @@ class Bible extends Component {
 			)
 		}
 
+		if (bible.momentsLabels && bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0 && Array.isArray(bible.highlightColors)) {
+			this.bookMark = <BookMark
+			{...this.props}
+			verses={bible.verses.verses}
+			references={bible.verses.references}
+			labels={bible.momentsLabels}
+			isLoggedIn={this.props.auth.isLoggedIn}
+			colors={bible.highlightColors}
+			/>
+		}
+
+		if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
+			this.note = <Note
+			{...this.props}
+			verses={bible.verses.verses} references={bible.verses.references} isLoggedIn={this.props.auth.isLoggedIn}/>
+		}
+
 		return (
 			<div className="">
-				{ this.header }
+				{ this.chapterPicker }
 				<div className="row">
 					<div className="columns large-6 medium-10 medium-centered">
 						{ this.content }
 					</div>
+				</div>
+				<div>
+
+					<div onClick={this.createBookMark.bind(this, ['REV.21.1+REV.21.2', 'REV.21.12'])}>
+						Create BookMark
+					</div>
+					{ this.bookMark }
+					<div onClick={this.createNote.bind(this, ['REV.21.1+REV.21.2'])}>
+						Create Note
+					</div>
+					{ this.note }
 				</div>
 			</div>
 		)
 	}
 }
 
-Bible.propTypes = {
-	bible: PropTypes.object.isRequired,
-	hosts: PropTypes.object.isRequired
+Sandbox.propTypes = {
+	bible: PropTypes.object.isRequired
 }
 
-export default Bible
+export default Sandbox

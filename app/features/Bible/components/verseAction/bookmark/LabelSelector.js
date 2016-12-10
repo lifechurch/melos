@@ -3,8 +3,9 @@ import { injectIntl } from 'react-intl'
 import LabelsModal from './LabelsModal'
 import LabelInput from './LabelInput'
 import LabelList from './LabelList'
-import Filter from '../../../../../../app/lib/Filter'
+import Filter from '../../../../../../app/lib/filter'
 import arrayToObject from '../../../../../../app/lib/arrayToObject'
+import DropdownTransition from '../../../../../components/DropdownTransition'
 import Immutable from 'immutable'
 
 class LabelSelector extends Component {
@@ -22,14 +23,6 @@ class LabelSelector extends Component {
 			filteredLabels: null,
 			selected: 0
 		}
-
-		this.handleClick = ::this.handleClick
-		this.handleChange = ::this.handleChange
-		this.onSelect = ::this.onSelect
-		this.handleKeyDown = ::this.handleKeyDown
-		this.cancelDropDown = ::this.cancelDropDown
-		this.onDelete = ::this.onDelete
-		this.addLabels = ::this.addLabels
 	}
 
 	componentDidMount() {
@@ -40,6 +33,7 @@ class LabelSelector extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
+		const { updateLabels } = this.props
 		const { filtering, dropdown, addedLabels, filteredLabels } = this.state
 
 		// handle state change on dropdown open and close
@@ -64,6 +58,10 @@ class LabelSelector extends Component {
 				filteredLabels: this.cleanFilteredLabels(filteredLabels),
 				selectedLabels: addedLabels
 			})
+			// let the parent that is saving the bookmark know what labels to save
+			if (typeof updateLabels == 'function') {
+				updateLabels(addedLabels)
+			}
 		}
 	}
 
@@ -76,7 +74,7 @@ class LabelSelector extends Component {
 	 * @param  {filteredLabels}  array 		contains all the labels that have been
 	 * 																		filtered by handleChange (input)
 	 */
-	cleanFilteredLabels(filteredLabels) {
+	cleanFilteredLabels = (filteredLabels) => {
 		const { addedLabels } = this.state
 		// convert the filtered labels to an object for accessing label
 		let filtered = arrayToObject(filteredLabels, 'label')
@@ -96,10 +94,10 @@ class LabelSelector extends Component {
 	 * click handlers for opening and closing the modal
 	 * attached to plus button and cancel button respectively
 	 */
-	handleClick() {
+	handleClick = () => {
 		this.setState({ dropdown: true })
 	}
-	cancelDropDown() {
+	cancelDropDown = () => {
 		this.setState({ dropdown: false })
 	}
 
@@ -108,7 +106,7 @@ class LabelSelector extends Component {
 	 *
 	 * @param      {string}  inputValue   	current value of the input field
 	 */
-	handleChange(inputValue) {
+	handleChange = (inputValue) => {
 		// filter the labels given the input change
 		let results = Filter.filter("LabelStore", inputValue.trim())
 		this.setState({ inputValue: inputValue })
@@ -130,12 +128,14 @@ class LabelSelector extends Component {
 
 	/**
 	 * this handles pressing certain keys
+	 * pressing Enter will add the current input value as a label
+	 * this is how a user would add new labels
 	 *
 	 * @param      {object}  event         KeyDown event
 	 * @param      {string}  keyEventName  Name of key event used for all except space bar
 	 * @param      {number}  keyEventCode  Code value of key event
 	 */
-	handleKeyDown(event, keyEventName, keyEventCode) {
+	handleKeyDown = (event, keyEventName, keyEventCode) => {
 		const {
 			inputValue,
 			filteredLabels
@@ -144,6 +144,7 @@ class LabelSelector extends Component {
 		if (keyEventName == "Enter") {
 			event.preventDefault()
 			this.addLabels(inputValue)
+			this.setState({ inputValue: null })
 		}
 
 	}
@@ -155,7 +156,7 @@ class LabelSelector extends Component {
 	 *
 	 * @param      {string}  label   	label being selected
 	 */
-	onSelect(label) {
+	onSelect = (label) => {
 		const { selectedLabels, addedLabels, selected } = this.state
 
 		// unselecting
@@ -181,16 +182,16 @@ class LabelSelector extends Component {
 	 * 																if no label is passed, then we're adding
 	 * 																all selected labels
 	 */
-	addLabels(label) {
+	addLabels = (label) => {
 		const { addedLabels, selectedLabels } = this.state
 		// if we don't pass a label, then we're just adding all selected labels with
 		// modal add button, then we just merge selected to added
-		if (typeof label != 'string') {
+		if (typeof label !== 'string') {
 			this.setState({
 				addedLabels: Immutable.fromJS(addedLabels).merge(selectedLabels).toJS(),
 				dropdown: false
 			})
-		// else we're passing a label to add (from filtering enter or click)
+		// else we're passing a label to add (from filtering enter or click of filtered label)
 		} else {
 			this.setState({ addedLabels: Immutable.fromJS(addedLabels).merge({ [label]: true }).toJS() })
 		}
@@ -203,7 +204,7 @@ class LabelSelector extends Component {
 	 *
 	 * @param      {string}  label   	label to delete
 	 */
-	onDelete(label) {
+	onDelete = (label) => {
 		const { addedLabels } = this.state
 
 		this.setState({
@@ -251,7 +252,7 @@ class LabelSelector extends Component {
 					intl={intl}
 				/>
 				{ filteredlabels }
-				<div className={`modal ${hide}`}>
+				<DropdownTransition show={dropdown}>
 					<LabelsModal
 						byAlphabetical={byAlphabetical}
 						byCount={byCount}
@@ -262,15 +263,17 @@ class LabelSelector extends Component {
 						selected={selected}
 						cancelDropDown={this.cancelDropDown}
 					/>
-				</div>
+				</DropdownTransition>
 			</div>
 		)
 	}
 }
 
+
 LabelSelector.propTypes = {
 	byAlphabetical: React.PropTypes.array,
 	byCount: React.PropTypes.array,
+	updateLabels: React.PropTypes.func,
 }
 
 export default injectIntl(LabelSelector)

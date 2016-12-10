@@ -2,7 +2,7 @@
 	"ecmaFeatures": {
 		"arrowFunctions": true,
 		"binaryLiterals": true,
-		"blockBindings": true,		
+		"blockBindings": true,
 		"classes": true,
 		"defaultParams": true,
 		"destructuring": true,
@@ -11,7 +11,7 @@
 		"modules": true,
 		"objectLiteralComputedProperties": true,
 		"objectLiteralDuplicateProperties": true,
-		"objectLiteralShorthandMethods": true,	
+		"objectLiteralShorthandMethods": true,
 		"objectLiteralShorthandProperties": true,
 		"octalLiterals": true,
 		"regexUFlag": true,
@@ -23,6 +23,7 @@
 		"unicodeCodePointEscapes": true,
 		"globalReturn": true,
 		"jsx": true,
-		"experimentalObjectRestSpread": true
+		"experimentalObjectRestSpread": true,
+		"experimentalClassProperties": true
 	}
 }

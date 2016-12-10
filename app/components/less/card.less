@@ -1,5 +1,5 @@
 .card {
-	padding: 35px;
+	padding: 35px 45px 35px 45px;
 	background: white;
 	box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.07);
 	border-radius: 2px;
@@ -7,8 +7,21 @@
 }
 
 .verse-card {
+
+	.note { display: none !important; }
+
 	.verse {
-		flex-wrap: wrap;
+		display: inline-block;
+
+		.xmark-container:hover {
+			cursor: pointer;
+		}
+	}
+	.delete {
+		display: inline-flex;
+		.xmark-container {
+			margin-left: auto;
+		}
 	}
 
 	.heading {
@@ -17,26 +30,30 @@
 		font-weight: bold;
 		font-size: 16px;
 		color: black;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 		margin-top: 10px;
 		letter-spacing: 1px;
+		.yv-text-ellipsis;
+	}
+	h2 {
+		letter-spacing: 0.9px;
+		text-transform: none;
 	}
 
 	.verse-content {
-		max-width: 95%;
+		display: inline-flex;
+		padding-right: 25px;
 		margin-bottom: 20px;
+		color: @font-grey;
 
 		.note {
 			display: none !important
 		}
 	}
 
-	.xmark-container:hover {
-		cursor: pointer;
-	}
-	.xmark-container {
+	.card-footer {
 		display: inline-flex;
-		margin-left: auto;
-		margin-bottom: 40px;
+		width: 100%;
 	}
+
 }

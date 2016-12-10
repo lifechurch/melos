@@ -27,10 +27,17 @@ class LabelsModal extends Component {
 
 		let labels = null
 
-		if (byAlphabetical && filterBy == 'alphabetical') {
+		if (byAlphabetical && filterBy == 'alphabetical' && byAlphabetical.length > 0) {
 			labels = <LabelList list={byAlphabetical} showHeading={true} onSelect={onSelect} selectedLabels={selectedLabels} addedLabels={addedLabels} />
-		} else if (byCount && filterBy == 'count') {
+		} else if (byCount && filterBy == 'count' && byCount.length > 0) {
 			labels = <LabelList list={byCount} onSelect={onSelect} selectedLabels={selectedLabels} addedLabels={addedLabels} />
+		} else {
+			// labels = <FormattedMessage id='no labels' />
+			labels = (
+				<div className='label-list'>
+					'You haven\'t created any labels! Type a new label into the input and press Enter to add it to this bookmark!'
+				</div>
+				)
 		}
 
 		return (

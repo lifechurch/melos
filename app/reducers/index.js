@@ -29,7 +29,8 @@ const rootReducer = combineReducers({
 	configuration,
 	references,
 	routing: routeReducer,
-	serverLanguageTag: (state = {}, action) => { return state }
+	serverLanguageTag: (state = {}, action) => { return state },
+	hosts: (state = {}, action) => { return state }
 })
 
 export default rootReducer

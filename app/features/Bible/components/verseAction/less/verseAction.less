@@ -1,22 +1,163 @@
 
 
-.color-list:hover {
-
-}
 .color-list {
-	display: inline-flex;
-	align-items: center;
-	overflow-x: hidden;
+
+	.carousel-standard {
+		margin: 0 auto 0 auto;
+		min-width: 200px;
+		max-width: 300px;
+		min-height: 38px;
+		.slick-arrow-right-container, .slick-arrow-left-container {
+			height: 32px;
+			width: 55px;
+			z-index: 1;
+		}
+		.slick-arrow-left-container {
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+70,0+100 */
+			background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		}
+		.slick-arrow-right-container {
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+30 */
+			background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		}
+	}
+
+	.color {
+		width: 26px;
+		height: 26px;
+		border-radius: 26px;
+		transform: scale(0.85);
+		transition: transform 0.15s ease-in-out;
+		display: inline-flex;
+		margin: 5px 5px 5px 0;
+	}
+	.color:hover {
+		cursor: pointer;
+		transform: scale(1);
+	}
+	.custom-color-icon, .ellipsis-icon-container {
+		display: flex;
+		.yv-flex-center-all;
+	}
+	.custom-color-icon {
+		border: @thin-grey-border;
+	}
+	.ellipsis-icon-container {
+		padding-top: 1px;
+	}
+
+	.custom-color-picker {
+		display: flex;
+		align-items: center;
+	}
+	.slider {
+		display: inline-block;
+	}
+	.buttons {
+		display: inline-flex;
+		flex-direction: column;
+		.yv-flex-center-all;
+		.color {
+			width: 31px;
+			height: 31px;
+			margin: 0 0 8px 0;
+		}
+	}
+
 }
 
-.color {
-	width: 26px;
-	height: 26px;
-	border-radius: 26px;
-	transform: scale(0.85);
-	transition: transform 0.15s ease-in-out;
+
+
+
+
+
+
+
+// CREATE BOOKMARK/CREATE NOTE
+.verse-action-create {
+	padding: 25px 0 25px 0;
+	background-color: @light-grey;
+
+	.heading {
+		display: inline-flex;
+		width: 100%;
+		margin-bottom: 25px;
+		.cancel {
+			text-align: left;
+		}
+		.title {
+			text-align: center;
+		}
+		.save {
+			text-align: right;
+			.solid-button {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.color-list {
+		padding: 20px 10px 20px 10px;
+	}
+	.colors-div {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+		.color-trigger-button {
+			display: flex;
+			justify-content: flex-end;
+			margin-bottom: 1px;
+			.color {
+				width: 26px;
+				height: 26px;
+				border-radius: 26px;
+				display: inline-flex;
+			}
+		}
+
+		.modal {
+			margin-left: -52px;
+			margin-top: 50px;
+		}
+	}
+	.labels {
+		width: 100%;
+	}
 }
-.color:hover {
-	cursor: pointer;
-	transform: scale(1);
+
+
+
+// NOTE
+.note-create {
+	.user-status-dropdown {
+		display: flex;
+		justify-content: flex-end;
+	}
+	.select-field {
+		margin-top: 15px;
+		margin-bottom: 15px;
+
+		.selected, li {
+			min-width: 100px;
+			font-size: 12px !important;
+			padding-left: 10px;
+		}
+		li {
+			background-color: @light-grey;
+		}
+
+	}
+
+	.note-editor {
+
+		textarea {
+			margin: 0;
+			border: none;
+			resize: none;
+		}
+	}
 }

@@ -20,6 +20,7 @@ const ActionCreators = {
 
 			if (auth) {
 				promises.push(dispatch(ActionCreators.momentsColors(auth)))
+				promises.push(dispatch(ActionCreators.momentsLabels(auth)))
 				promises.push(dispatch(ActionCreators.usersViewSettings(auth)))
 			}
 
@@ -229,7 +230,7 @@ const ActionCreators = {
 	},
 
 	/* no params */
-	momentsLabels(auth, params = {}) {
+	momentsLabels(auth, params={}) {
 		return {
 			params,
 			api_call: {

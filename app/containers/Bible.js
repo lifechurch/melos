@@ -2,16 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ActionCreators from '../features/Bible/actions/creators'
 import Bible from '../features/Bible/components/Bible'
+import BibleSandbox from '../features/Bible/components/BibleSandbox'
 
 
 class BibleView extends Component {
 
+						// <Bible {...this.props} />
 	render() {
 		return (
 			<div>
-				<div className="row">
-					<div className="columns medium-12">
-						<Bible {...this.props} />
+				<div className="">
+					<div className="">
+						<BibleSandbox {...this.props} />
 					</div>
 				</div>
 			</div>
@@ -22,7 +24,8 @@ class BibleView extends Component {
 function mapStateToProps(state) {
 	return {
 		auth: state.auth,
-		bible: state.bibleReader
+		bible: state.bibleReader,
+		hosts: state.hosts
 	}
 }
 
