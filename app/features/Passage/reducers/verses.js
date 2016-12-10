@@ -16,7 +16,7 @@ export default function reducer(state = {}, action) {
 				content[`${action.params.id}-${verse.reference.usfm}`] = {
 					heading: ``,
 					content: verse.content,
-					usfm: verse.reference.usfm[0],
+					usfm: verse.reference.usfm,
 					text: action.params.text,
 					human: verse.reference.human,
 					versionInfo: action.params.versionInfo,
