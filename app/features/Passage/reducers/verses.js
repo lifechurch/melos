@@ -22,7 +22,11 @@ export default function reducer(state = {}, action) {
 					versionInfo: action.params.versionInfo,
 				}
 			})
-			return Immutable.fromJS(state).mergeDeep({ verses: content, title: action.response.verses[0].reference.human}).delete('loading').toJS()
+			return Immutable.fromJS(state).mergeDeep({
+				verses: content,
+				title: action.response.verses[0].reference.human,
+
+			}).delete('loading').toJS()
 
 
 		default:
