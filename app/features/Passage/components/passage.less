@@ -18,7 +18,7 @@
 			.slick-arrow-right-container, .slick-arrow-left-container {
 				opacity: 1;
 				position: relative;
-				height: 42px;
+				height: 39px;
 			}
 
 		}
@@ -28,28 +28,34 @@
 			text-align: left;
 			h2 {
 				display: inline-flex;
+				margin-bottom: 20px;
 				.heading {
 					font-weight: bold;
 					font-size: 19px;
 					margin-right: 10px;
 				}
 				.name {
-					padding-top: 9px;
 					font-size: 14px;
 					color: @font-grey;
 				}
 			}
-
+			.verse-content {
+				color: black;
+			}
 		}
 
-		.chapter-button {
-			border: @thin-grey-border;
-			background-color: white;
-			margin-top: 25px;
-			padding-top: 15px;
-			padding-bottom: 15px;
-			color: @font-grey;
-			margin-right: 15px;
+		.buttons {
+			display: inline-flex;
+			flex-wrap: wrap;
+			margin-top: 30px;
+			.chapter-button {
+				border: @thin-grey-border;
+				background-color: white;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				color: @font-grey;
+				margin-right: 15px;
+			}
 		}
 		.title {
 			font-size: 24px;
@@ -65,16 +71,6 @@
 	.verses {
 		margin-top: 60px;
 
-		.list {
-			display: flex;
-			flex-wrap: wrap;
-
-			li {
-				display: flex;
-				width: 33%;
-			}
-		}
-
 		.verse-container {
 			padding: 15px;
 		}
@@ -87,21 +83,32 @@
 				font-size: 14px;
 			}
 		}
+
 		// render the dropshadow and transition on opacity for hardware accelerated
 		// transition performance
-		.card::after {
-			position: fixed;
-			left: 0;
-		 	width: inherit;
-		  height: inherit;
-			content: '';
-			box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.17);
-			z-index: -1;
-			opacity: 0;
-		  -webkit-transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-		  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+		.card {
+			position: relative;
+			-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+			transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 		}
-		.card:hover, .card::after {
+		.card::after {
+		  content: '';
+		  position: absolute;
+		  z-index: -1;
+		  width: 100%;
+		  height: 100%;
+			top: 0;
+			left: 0;
+		  opacity: 0;
+			.yv-drop-shadow;
+		  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+		  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+		}
+		.card:hover {
+		  -webkit-transform: scale(1.06, 1.06);
+		  transform: scale(1.06, 1.06);
+		}
+		.card:hover::after {
 			opacity: 1 !important;
 		}
 	}
@@ -118,20 +125,29 @@
 			width: 100%;
 			text-align: center;
 		}
-
-		.list {
-			display: flex;
-			flex-wrap: wrap;
-
-			li {
-				padding: 15px;
-				display: flex;
-				width: 33%;
-			}
+		li {
+			padding: 15px;
 		}
-
 	}
 
+
+	// both verses and plans
+	.list {
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			display: flex;
+			@media @small-only {
+				width: 90%;
+			}
+			@media @medium-only {
+				width: 47%;
+			}
+			@media @large-up {
+				width: 32%;
+			}
+		}
+	}
 
 	.note { display: none !important; }
 
@@ -141,23 +157,26 @@
 			border-radius: @default-radius;
 			padding: 4px 10px 4px 10px;
 			min-width: 0;
+			margin: 0;
 			display: inline;
 		}
-
 		h2 {
 			display: inline-flex;
+			align-items: center;
+			width: 100%;
 			.heading {
 				margin-right: 10px;
 			}
 			.name {
-				padding-top: 18px;
+				flex-shrink: 10;
+				max-width: 60%;
+				// padding-top: 18px;
 				font-size: 11px;
 				color: @font-grey;
-				.yv-text-ellipsis;
 			}
 		}
 		.verse-content {
-			margin-top: 18px;
+			margin-top: 15px;
 		}
 	}
 }

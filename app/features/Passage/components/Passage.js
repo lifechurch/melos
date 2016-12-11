@@ -5,16 +5,17 @@ import Helmet from 'react-helmet'
 import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'
 import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 import Image from '../../../components/Carousel/Image'
+import LocalStore from '../../../lib/localStore'
 import { injectIntl, FormattedMessage } from 'react-intl'
 
-// const MAIN_VERSION =
+// const MAIN_VERSION = LocalStore.get('version') || LocalStore.get('recent_versions')[0]
 
 class Passage extends Component {
 
 	render() {
 		const { auth, passage, isRtl, localizedLink, intl } = this.props
 
-		let mainVerse, versesCarousel, plansCarousel, metaContent, metaTitle, chapterLink = null
+		let mainVerse, versesCarousel, plansCarousel, metaContent, metaTitle, chapterLink, relatedPlansLink = null
 
 		// main verse and verse cards
 		let verses = []
@@ -37,9 +38,10 @@ class Passage extends Component {
 							/>
 						</div>
 					)
-					metaTitle = `${passage.verses.title}: ${verse.text}`
+					metaTitle = `${passage.verses.title}; ${verse.text}`
 					metaContent = `${verse.text}`
-					chapterLink = `bible/${verse.versionInfo.id}/${(verse.usfm[0]).split('.').slice(0, 2).join('.')}`
+					chapterLink = `bible/${verse.versionInfo.id}/${verse.chapUsfm}`
+					relatedPlansLink = `/passage/${verse.usfm}#related-plans`
 				} else {
 					let heading = (
 						<h2>
@@ -49,7 +51,7 @@ class Passage extends Component {
 					)
 					verses.push(
 						<li className='verse-container' key={key}>
-							<VerseCard verseContent={{ [key]: passage.verses.verses[key] }} verseHeading={heading} />
+							<VerseCard verseContent={{ [key]: passage.verses.verses[key] }} verseHeading={heading} isLink={true} />
 						</li>
 					)
 				}
@@ -100,12 +102,35 @@ class Passage extends Component {
 			plansDiv = (
 				<div className='related-plans collections-view'>
 					<h2 id='related-plans' className='heading'><FormattedMessage id='plans related to reference' values={{ reference: passage.verses.title }} /></h2>
-					<div className='row horizontal-center collection-items'>
+					<div className='row collection-items small-12'>
 						<ul className='list'>
 							{ items }
 						</ul>
 					</div>
 				</div>
+			)
+		}
+
+		// previous verse and next verse
+		let prevArrow, nextArrow = null
+		if (passage.verses.previous_verse) {
+			prevArrow = (
+				<a
+					href={`/passage/${passage.verses.previous_verse}`}
+					title={``}
+				>
+					<CarouselArrow width={23} height={23} dir='left' fill='gray'/>
+				</a>
+			)
+		}
+		if (passage.verses.next_verse) {
+			nextArrow = (
+				<a
+					href={`/passage/${passage.verses.next_verse}`}
+					title={``}
+				>
+					<CarouselArrow width={23} height={23} dir='right' fill='gray'/>
+				</a>
 			)
 		}
 
@@ -116,31 +141,23 @@ class Passage extends Component {
 					title={`${metaTitle}`}
 					meta={[ { name: 'description', content: `${metaContent}` } ]}
 				/>
-				<div className='row main-content'>
+				<div className='row main-content small-12 medium-8'>
 					<div className='title-heading'>
-						<a
-							href={`/passage/${passage.verses.previous_verse}`}
-							title={``}
-						>
-							<CarouselArrow width={23} height={23} dir='left' fill='gray'/>
-						</a>
+						{ prevArrow }
 						<h1 className='title'>
 							{ passage.verses.title }
 						</h1>
-						<a
-							href={`/passage/${passage.verses.next_verse}`}
-							title={``}
-						>
-							<CarouselArrow width={23} height={23} dir='right' fill='gray'/>
-						</a>
+						{ nextArrow }
 					</div>
 					<div className='single-verse'>
 						{ mainVerse }
 					</div>
-					<a href={chapterLink} className='chapter-button solid-button'><FormattedMessage id='read chapter' /></a>
-					<a href='#related-plans' className='chapter-button solid-button'><FormattedMessage id='related plans' /></a>
+					<div className='buttons'>
+						<a href={chapterLink} className='chapter-button solid-button'><FormattedMessage id='read chapter' /></a>
+						<a href={relatedPlansLink} className='chapter-button solid-button'><FormattedMessage id='related plans' /></a>
+					</div>
 				</div>
-				<div className='row verses'>
+				<div className='row verses small-12'>
 					<ul className='list'>
 						{ verses }
 					</ul>

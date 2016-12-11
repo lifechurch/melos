@@ -23,20 +23,18 @@ const ActionCreators = {
 								// for each verse, pass the text content and make the same call for
 								// html content
 								verses.verses.forEach((verse) => {
-									resolve(
-										dispatch(ActionCreators.bibleVerses({
-											id: id,
-											references: [passage],
-											text: verse.content,
-											versionInfo: {
-												local_abbreviation: version.local_abbreviation.toUpperCase(),
-												local_title: version.local_title,
-												id: version.id,
-											},
-										}))
-									)
+									dispatch(ActionCreators.bibleVerses({
+										id: id,
+										references: [passage],
+										text: verse.content,
+										versionInfo: {
+											local_abbreviation: version.local_abbreviation.toUpperCase(),
+											local_title: version.local_title,
+											id: version.id,
+										},
+									}))
+									.then(() => resolve())
 								})
-
 							})
 						})
 					}, (reason) => console.log(reason))

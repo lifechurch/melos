@@ -1,5 +1,6 @@
 import type from '../actions/constants'
 import Immutable from 'immutable'
+import { getSelectionString } from '../../../lib/usfmUtils'
 
 export default function reducer(state = {}, action) {
 	switch (action.type) {
@@ -15,7 +16,8 @@ export default function reducer(state = {}, action) {
 				content[`${action.params.id}-${verse.reference.usfm}`] = {
 					heading: ``,
 					content: verse.content,
-					usfm: verse.reference.usfm,
+					chapUsfm: verse.reference.usfm[0].split('.').slice(0, 2).join('.'),
+					usfm: `${verse.reference.usfm[0].split('.').slice(0, 2).join('.')}.${getSelectionString(verse.reference.usfm)}`,
 					text: action.params.text,
 					human: verse.reference.human,
 					versionInfo: action.params.versionInfo,
