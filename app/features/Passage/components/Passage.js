@@ -8,9 +8,50 @@ import Image from '../../../components/Carousel/Image'
 import LocalStore from '../../../lib/localStore'
 import { injectIntl, FormattedMessage } from 'react-intl'
 
-// const MAIN_VERSION = LocalStore.get('version') || LocalStore.get('recent_versions')[0]
 
 class Passage extends Component {
+
+	/**
+	 * get the version for the main, big verse based on the user's previous versions.
+	 * if the last version cookie matches, use that. if not check last 5 recent versions
+	 * and match one of those. finally if none of those match (new user that hasn't
+	 * been to the site?) then just use the version of the first verse back from the
+	 * api
+	 *
+	 * @param      {object}  verses  verses object of verse objects to display
+	 */
+	getMainVersion(verses) {
+		// if the following checks don't match any version cookies, than it'll just
+		// be the first version back from the verses call
+		if (Object.keys(verses).length > 0) {
+			let mainVersion = verses[Object.keys(verses)[0]].versionInfo.id
+			let usfm = verses[Object.keys(verses)[0]].usfm
+			let lastVersion = LocalStore.get('version')
+			let recentVersions = LocalStore.get('RecentVersions').data
+
+			// first check last version
+			if (lastVersion && `${lastVersion}-${usfm}` in verses) {
+				mainVersion = lastVersion
+
+			// then go through recent versions and check those
+			} else {
+				if (recentVersions.length > 0) {
+					recentVersions.forEach((version, index) => {
+						// for each one that matches, we'll overwrite,
+						// because the last one in the array is the most
+						// recent
+						if (`${version}-${usfm}` in verses) {
+							mainVersion = version
+						}
+					})
+				}
+			}
+
+			return mainVersion
+		} else {
+			return null
+		}
+	}
 
 	render() {
 		const { auth, passage, isRtl, localizedLink, intl } = this.props
@@ -20,10 +61,13 @@ class Passage extends Component {
 		// main verse and verse cards
 		let verses = []
 		if (passage && passage.verses && passage.verses.verses) {
+			let mainVersionID = this.getMainVersion(passage.verses.verses)
+			console.log(mainVersionID)
 			Object.keys(passage.verses.verses).forEach((key, index) => {
 				let verse = passage.verses.verses[key]
-				// should the main verse be a specific version?
-				if (index == 0) {
+				// if we've found a main version, then let's set the maine verse
+				// to that, otherwise, the main verse is just the first one
+				if (mainVersionID ? verse.versionInfo.id == mainVersionID : index == 0) {
 					mainVerse = (
 						<div key={key} className='verse'>
 							<h2>
