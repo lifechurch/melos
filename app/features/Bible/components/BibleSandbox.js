@@ -27,6 +27,7 @@ import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import DropdownTransition from '../../../components/DropdownTransition'
 import Note from './verseAction/note/Note'
+import MomentCreate from './verseAction/MomentCreate'
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -392,8 +393,9 @@ class Sandbox extends Component {
 		}
 
 		if (bible.momentsLabels && bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0 && Array.isArray(bible.highlightColors)) {
-			this.bookMark = <BookMark
+			this.bookMark = <MomentCreate
 			{...this.props}
+			kind='bookmark'
 			verses={bible.verses.verses}
 			references={bible.verses.references}
 			labels={bible.momentsLabels}
@@ -403,8 +405,9 @@ class Sandbox extends Component {
 		}
 
 		if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0 && Array.isArray(bible.highlightColors)) {
-			this.note = <Note
+			this.note = <MomentCreate
 			{...this.props}
+			kind='note'
 			verses={bible.verses.verses}
 			references={bible.verses.references}
 			isLoggedIn={this.props.auth.isLoggedIn}
