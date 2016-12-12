@@ -402,10 +402,14 @@ class Sandbox extends Component {
 			/>
 		}
 
-		if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
+		if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0 && Array.isArray(bible.highlightColors)) {
 			this.note = <Note
 			{...this.props}
-			verses={bible.verses.verses} references={bible.verses.references} isLoggedIn={this.props.auth.isLoggedIn}/>
+			verses={bible.verses.verses}
+			references={bible.verses.references}
+			isLoggedIn={this.props.auth.isLoggedIn}
+			colors={bible.highlightColors}
+			/>
 		}
 
 		return (

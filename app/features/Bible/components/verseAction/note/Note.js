@@ -3,10 +3,13 @@ import { injectIntl, FormattedMessage } from 'react-intl'
 import moment from 'moment-timezone'
 import ActionCreators from '../../../actions/creators'
 import XMark from '../../../../../components/XMark'
+import DropdownTransition from '../../../../../components/DropdownTransition'
 import Immutable from 'immutable'
 import VerseCard from '../bookmark/VerseCard'
 import NoteEditor from './NoteEditor'
 import Select from '../../../../../components/Select'
+import ColorList from '../ColorList'
+import Color from '../Color'
 
 class Note extends Component {
 	constructor(props) {
@@ -16,6 +19,8 @@ class Note extends Component {
 			references: props.references,
 			content: null,
 			user_status: 'private',
+			selectedColor: null,
+			dropdown: false,
 		}
 
 		this.USER_STATUS = {
@@ -25,10 +30,6 @@ class Note extends Component {
 											'draft': props.intl.formatMessage({ id: 'notes.status.draft' }),
 										}
 
-		this.updateNote = ::this.updateNote
-		this.deleteVerse = ::this.deleteVerse
-		this.saveNote = ::this.saveNote
-		this.changeUserStatus = ::this.changeUserStatus
 	}
 
 	componentDidMount() {
@@ -55,7 +56,7 @@ class Note extends Component {
 		}
 	}
 
-	deleteVerse(key) {
+	deleteVerse = (key) => {
 		const { verseContent, references } = this.state
 		if (key in verseContent) {
 			this.setState({
@@ -73,19 +74,19 @@ class Note extends Component {
 	}
 
 	// note content on keypress
-	updateNote(content) {
+	updateNote = (content) => {
 		this.setState({
 			content: content,
 		})
 	}
 
-	changeUserStatus(key) {
+	changeUserStatus = (key) => {
 		this.setState({
 			user_status: key,
 		})
 	}
 
-	saveNote() {
+	saveNote = () => {
 		const { dispatch, isLoggedIn } = this.props
 		const { content, user_status, references } = this.state
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
@@ -97,9 +98,44 @@ class Note extends Component {
 		}))
 	}
 
+	handleDropdownClick = () => {
+		this.setState({
+			dropdown: !this.state.dropdown,
+		})
+	}
+
+	addColor = (color) => {
+		this.setState({
+			selectedColor: color,
+		})
+		this.handleDropdownClick()
+	}
+
 	render() {
-		const { intl } = this.props
-		const { verseContent } = this.state
+		const { intl, colors } = this.props
+		const { verseContent, selectedColor, dropdown } = this.state
+
+		let colorsDiv = null
+		if (colors) {
+			colorsDiv = (
+				<div className='colors-div'>
+					<div onClick={this.handleDropdownClick} className='color-trigger-button'>
+						{
+							selectedColor
+							?
+							<Color color={selectedColor} />
+							:
+							<div className='yv-gray-link'><FormattedMessage id='add color' /></div>
+						}
+					</div>
+					<DropdownTransition show={dropdown} hideDir='right'>
+						<div className='labels-modal'>
+							<ColorList list={colors} onClick={this.addColor} />
+						</div>
+					</DropdownTransition>
+				</div>
+			)
+		}
 
 		return (
 			<div className='verse-action-create note-create'>
@@ -111,7 +147,9 @@ class Note extends Component {
 							<div onClick={this.saveNote} className='solid-button green'>Save</div>
 						</div>
 					</div>
-					<VerseCard verseContent={verseContent} deleteVerse={this.deleteVerse} />
+					<VerseCard verseContent={verseContent} deleteVerse={this.deleteVerse}>
+						{ colorsDiv }
+					</VerseCard>
 					<div className='user-status-dropdown'>
 						<Select list={this.USER_STATUS} onChange={this.changeUserStatus} />
 					</div>
