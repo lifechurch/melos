@@ -13,11 +13,12 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersesSuccess'):
 			let content = {}
 			Immutable.fromJS(action.response.verses).toJS().forEach((verse) => {
-				content[`${action.params.id}-${verse.reference.usfm}`] = {
+				let usfm = `${verse.reference.usfm[0].split('.').slice(0, 2).join('.')}.${getSelectionString(verse.reference.usfm)}`
+				content[`${action.params.id}-${usfm}`] = {
 					heading: ``,
 					content: verse.content,
 					chapUsfm: verse.reference.usfm[0].split('.').slice(0, 2).join('.'),
-					usfm: `${verse.reference.usfm[0].split('.').slice(0, 2).join('.')}.${getSelectionString(verse.reference.usfm)}`,
+					usfm: usfm,
 					text: action.params.text,
 					human: verse.reference.human,
 					versionInfo: action.params.versionInfo,
