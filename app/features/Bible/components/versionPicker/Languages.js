@@ -33,7 +33,7 @@ class Languages extends Component {
 				let name = (language.name == language.local_name) ? language.local_name : <span>{language.local_name}<small>{language.name}</small></span>
 				let active = (language.language_tag == initialSelection) ? 'active' : ''
 
-				return( (<li key={language.id ? language.id.toString() : index} className={`${active}`} onClick={this.languageSelect.bind(this, language)}>{ name }</li>) )
+				return( (<li key={`${language.id}_${index}`} className={`${active}`} onClick={this.languageSelect.bind(this, language)}>{ name }</li>) )
 			})
 			/* the header would either be the all or recently used */
 			return (

@@ -13,6 +13,7 @@ import version from './version'
 import versions from './versions'
 import verses from './verses'
 import settings from './settings'
+import verseColors from './verseColors'
 
 const bibleReaderReducer = combineReducers({
 	audio,
@@ -28,7 +29,8 @@ const bibleReaderReducer = combineReducers({
 	verseSelection,
 	verses,
 	version,
-	versions
+	versions,
+	verseColors
 })
 
 export default bibleReaderReducer
