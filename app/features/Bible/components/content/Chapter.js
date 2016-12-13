@@ -1,16 +1,35 @@
 import React, { Component, PropTypes } from 'react'
-import { getSelectionString } from '../../../../lib/usfmUtils'
+import { getSelectionString, getSelectionText } from '../../../../lib/usfmUtils'
 import ChapterCopyright from './ChapterCopyright'
+
+const DEFAULT_STATE = { selection: null, selectedClasses: null, selectedText: null }
 
 class Chapter extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { selection: {}, selectedClasses: {} }
+		this.state = Object.assign({}, DEFAULT_STATE)
+		this.clearSelection = ::this.clearSelection
+	}
+
+	clearSelection() {
+		this.setState(Object.assign({}, DEFAULT_STATE))
 	}
 
 	handleVerseClick(verseNode) {
 		const { onSelect } = this.props
-		let { selection, selectedClasses } = this.state
+		let { selection, selectedClasses, selectedText } = this.state
+
+		if (selection === null) {
+			selection = {}
+		}
+
+		if (selectedClasses === null) {
+			selectedClasses = {}
+		}
+
+		if (selectedText === null) {
+			selectedText = {}
+		}
 
 		// Build CSS Selector for Verse Selection
 		if (typeof verseNode.getAttribute('class') === 'string') {
@@ -22,7 +41,7 @@ class Chapter extends Component {
 			}
 			newClasses.forEach((newClass) => {
 				const newClassString = `.bible-reader .${newClass}`
-				if (typeof this.state.selectedClasses[newClassString] === 'undefined') {
+				if (typeof selectedClasses[newClassString] === 'undefined') {
 					const isVerseSelector = new RegExp("^v[0-9]+$")
 					if (typeof newClassString !== 'undefined' && isVerseSelector.test(newClass)) {
 						selectedClasses[newClassString] = true
@@ -36,8 +55,10 @@ class Chapter extends Component {
 		// Build Selected Verses Array of USFMs
 		if (typeof verseNode.getAttribute('data-usfm') === 'string') {
 			const selectedVerses = verseNode.getAttribute('data-usfm').split("+")
+			let lastUsfm
+
 			selectedVerses.forEach((selectedVerse) => {
-				if (typeof this.state.selection[selectedVerse] === 'undefined') {
+				if (typeof selection[selectedVerse] === 'undefined') {
 					const isUSFM = new RegExp("^[0-9A-Za-z]{3}\.[0-9]+\.[0-9]+$")
 					if (typeof selectedVerse !== 'undefined' && isUSFM.test(selectedVerse)) {
 						selection[selectedVerse] = true
@@ -45,14 +66,24 @@ class Chapter extends Component {
 				} else {
 					delete selection[selectedVerse]
 				}
+				selectedText[selectedVerse] = true
+				lastUsfm = selectedVerse
 			})
-			this.setState({ selection })
+
+			// Get selected text
+			verseNode.childNodes.forEach((cNode) => {
+				if (cNode.getAttribute('class') === 'content') {
+					selectedText[lastUsfm] = cNode.innerText
+				}
+			})
+			this.setState({ selectedText, selection, selectedClasses })
 		}
 
 		if (typeof onSelect === 'function') {
 			onSelect({
 				verses: Object.keys(selection),
-				human: getSelectionString(selection)
+				human: getSelectionString(selection),
+				text: getSelectionString(selectedText, true)
 			})
 		}
 	}
@@ -79,11 +110,15 @@ class Chapter extends Component {
 	}
 
 	render() {
-		const { selectedClasses } = this.state
-		let { chapter, fontSize, fontFamily, textDirection, showFootnotes, showVerseNumbers } = this.props
+		let { selectedClasses } = this.state
+		let { chapter, fontSize, fontFamily, textDirection, showFootnotes, showVerseNumbers, verseColors } = this.props
 
 		if (typeof chapter !== 'object') {
 			chapter = {}
+		}
+
+		if (selectedClasses === null) {
+			selectedClasses = {}
 		}
 
 		const { content, copyright, next, previous, reference } = chapter
@@ -93,6 +128,17 @@ class Chapter extends Component {
 		const style = {
 			fontSize,
 			fontFamily
+		}
+
+		let highlightedStyles = ""
+		if (Array.isArray(verseColors) && verseColors.length > 0) {
+			let selectors = []
+			verseColors.forEach((verseColor) => {
+				const [ usfm, color ] = verseColor
+				if (typeof usfm === 'string' && typeof color === 'string') {
+					highlightedStyles += ` .v${usfm.split('.')[2]} { background-color: #${color}; } `
+				}
+			})
 		}
 
 
@@ -111,7 +157,7 @@ class Chapter extends Component {
 
 		let verseNumberStyles = `.bible-reader .label { display: ${showVerseNumbers ? 'inherit' : 'none'} }`
 
-		const innerStyle = { __html: [selectedStyles, footnoteStyles, verseNumberStyles].join(' ') }
+		const innerStyle = { __html: [selectedStyles, footnoteStyles, verseNumberStyles, highlightedStyles].join(' ') }
 
 		return (
 			<div
@@ -142,6 +188,7 @@ Chapter.propTypes = {
 	fontFamily: React.PropTypes.string,
 	showFootnotes: React.PropTypes.bool,
 	showVerseNumbers: React.PropTypes.bool,
+	verseColors: React.PropTypes.array
 }
 
 export default Chapter

@@ -19,11 +19,11 @@ const ActionCreators = {
 			]
 
 			if (auth) {
+				promises.push(dispatch(ActionCreators.momentsVerseColors(auth, { usfm: reference, version_id: version })))
 				promises.push(dispatch(ActionCreators.momentsColors(auth)))
 				promises.push(dispatch(ActionCreators.momentsLabels(auth)))
 				promises.push(dispatch(ActionCreators.usersViewSettings(auth)))
 			}
-
 			return Promise.all(promises)
 		}
 	},

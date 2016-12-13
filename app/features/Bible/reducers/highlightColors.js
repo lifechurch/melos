@@ -8,8 +8,8 @@ export default function reducer(state = {}, action) {
 			return state
 
 		case type('momentsColorsSuccess'):
-			if (typeof action.response.data !== 'undefined') {
-				return Immutable.fromJS(action.response.data).toJS()
+			if (typeof action.response.colors !== 'undefined') {
+				return Immutable.fromJS(action.response.colors).toJS()
 			} else {
 				return state
 			}

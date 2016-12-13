@@ -144,6 +144,7 @@ class Bible extends Component {
 	chapterVersionCall(versionid, reference) {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.bibleChapter({ id: versionid, reference: reference}))
+		dispatch(ActionCreators.momentsVerseColors(auth, { usfm: reference, version_id: versionid }))
 		if (versionid !== this.state.selectedVersion) {
 			this.setState({ selectedVersion: versionid })
 			dispatch(ActionCreators.bibleVersion({ id: versionid })).then((version) => {
@@ -176,7 +177,6 @@ class Bible extends Component {
 
 
 	handleVerseSelect(e) {
-		console.log(e)
 	}
 
 
@@ -199,10 +199,9 @@ class Bible extends Component {
 
 
 	handleButtonBarClick(item) {
-		console.log("BBC", item)
 	}
+
 	handleSettingsChange(key, value) {
-		console.log("Settings", key, value)
 		LocalStore.setIn(key, value)
 		const stateKey = key.split('.').pop()
 		this.setState({ [stateKey]: value })

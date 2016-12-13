@@ -26,7 +26,7 @@ import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import DropdownTransition from '../../../components/DropdownTransition'
-
+import Immutable from 'immutable'
 
 const DEFAULT_READER_SETTINGS = {
 	fontFamily: 'Arial',
@@ -63,11 +63,6 @@ class Sandbox extends Component {
 		const showFootnoes = LocalStore.getIn("reader.settings.showFootnotes")
 		const showVerseNumbers = LocalStore.getIn("reader.settings.showVerseNumbers")
 
-
-		LocalStore.setIn('mySettings.bob.john.fred', 'superman')
-		console.log(LocalStore.getIn('mySettings.bob.john.fred'))
-
-
 		this.state = {
 			selectedBook: this.selectedBook,
 			selectedChapter: this.selectedChapter,
@@ -83,7 +78,8 @@ class Sandbox extends Component {
 			fontSize: LocalStore.getIn("reader.settings.fontSize") || DEFAULT_READER_SETTINGS.fontSize,
 			fontFamily: LocalStore.getIn("reader.settings.fontFamily") || DEFAULT_READER_SETTINGS.fontFamily,
 			showFootnotes: typeof showFootnoes === "boolean" ? showFootnoes : DEFAULT_READER_SETTINGS.showFootnotes,
-			showVerseNumbers: typeof showVerseNumbers === "boolean" ? showVerseNumbers : DEFAULT_READER_SETTINGS.showVerseNumbers
+			showVerseNumbers: typeof showVerseNumbers === "boolean" ? showVerseNumbers : DEFAULT_READER_SETTINGS.showVerseNumbers,
+			verseSelection: {}
 		}
 
 		this.chapterPicker = null
@@ -95,6 +91,8 @@ class Sandbox extends Component {
 		this.bookMark = null
 		this.handleButtonBarClick = ::this.handleButtonBarClick
 		this.handleSettingsChange = ::this.handleSettingsChange
+		this.handleVerseSelectionClear = ::this.handleVerseSelectionClear
+		this.handleVerseSelect = ::this.handleVerseSelect
 	}
 
 	getVersions(languageTag) {
@@ -160,6 +158,7 @@ class Sandbox extends Component {
 	chapterVersionCall(versionid, reference) {
 		const { dispatch } = this.props
 		dispatch(ActionCreators.bibleChapter({ id: versionid, reference: reference}))
+		dispatch(ActionCreators.momentsVerseColors(true, { usfm: reference, version_id: versionid }))
 		if (versionid !== this.state.selectedVersion) {
 			this.setState({ selectedVersion: versionid })
 			dispatch(ActionCreators.bibleVersion({ id: versionid })).then((version) => {
@@ -229,19 +228,25 @@ class Sandbox extends Component {
 	}
 
 	labelSelect(label) {
-		console.log('select', label)
 	}
 
 	labelDelete(label) {
-		console.log('delete', label)
 	}
 
 	getColor(color) {
-		console.log(color)
 	}
 
-	handleVerseSelect(e) {
-		console.log(e)
+	handleVerseSelect(verseSelection) {
+		const { hosts, bible: { version: { id }, chapter: { reference: { human, usfm } } } } = this.props
+		const refUrl = `${hosts.railsHost}/${id}/${usfm}.${verseSelection.human}`
+		this.setState({ verseSelection: Immutable.fromJS(verseSelection).merge({ chapter: human, url: refUrl, version: id }).toJS() });
+	}
+
+	handleVerseSelectionClear() {
+		if (typeof this.chapter !== 'undefined') {
+			this.chapter.clearSelection()
+		}
+		this.setState({ verseSelection: {} })
 	}
 
 	getColors() {
@@ -270,11 +275,9 @@ class Sandbox extends Component {
 	}
 
 	handleTriggerClick() {
-		console.log("Ouch!")
 	}
 
 	handleSettingsChange(key, value) {
-		console.log("Settings", key, value)
 		LocalStore.setIn(key, value)
 		const stateKey = key.split('.').pop()
 		this.setState({ [stateKey]: value })
@@ -290,12 +293,9 @@ class Sandbox extends Component {
 		})
 
 		this.recentVersions.syncVersions(bible.settings)
-
-		console.log("Recent Versions:", this.recentVersions.get())
 	}
 
 	handleButtonBarClick(item) {
-		console.log("BBC", item)
 	}
 
 	createBookMark(refs) {
@@ -310,8 +310,8 @@ class Sandbox extends Component {
 	}
 
 	render() {
-		const { bible, audio, settings, verseAction } = this.props
-		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
+		const { bible, audio, settings, verseAction, dispatch } = this.props
+		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
 			this.chapterPicker = (
@@ -365,13 +365,16 @@ class Sandbox extends Component {
 			this.content = (
 				<div>
 					<Chapter
+						{...this.props}
 						chapter={bible.chapter}
+						verseColors={bible.verseColors}
 						fontSize={fontSize}
 						fontFamily={fontFamily}
-						onSelect={::this.handleVerseSelect}
+						onSelect={this.handleVerseSelect}
 						textDirection={bible.version.language.text_direction}
 						showFootnotes={showFootnotes}
 						showVerseNumbers={showVerseNumbers}
+						ref={(chapter) => { this.chapter = chapter }}
 					/>
 					<ReaderArrows
 						previousChapter={bible.chapter.previous ? bible.chapter.previous.usfm : null}
@@ -407,7 +410,7 @@ class Sandbox extends Component {
 				</div>
 				<div>
 					<div className="row">
-					<VerseAction verseAction={verseAction} />
+					<VerseAction verseAction={verseAction} selection={verseSelection} colors={bible.highlightColors} onClose={this.handleVerseSelectionClear} dispatch={dispatch} />
 						<div className="columns medium-3">
 							<div onClick={::this.getColors}>Get Colors</div>
 							{ this.color }
