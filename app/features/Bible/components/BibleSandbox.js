@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import VerseAction from './verseAction/VerseAction'
 import { connect } from 'react-redux'
+import { injectIntl, FormattedMessage } from 'react-intl'
 import ActionCreators from '../actions/creators'
 import Filter from '../../../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
@@ -427,8 +428,8 @@ class Sandbox extends Component {
 					</div>
 				</div>
 				<div>
-					<VerseAction verseAction={verseAction} selection={verseSelection} colors={bible.highlightColors} onClose={this.handleVerseSelectionClear} dispatch={dispatch} />
 					<div className="row">
+					<VerseAction verseAction={verseAction} selection={verseSelection} colors={bible.highlightColors} onClose={this.handleVerseSelectionClear} dispatch={dispatch} />
 						<div className="columns medium-3">
 							<div onClick={::this.getColors}>Get Colors</div>
 							{ this.color }
@@ -452,4 +453,4 @@ Sandbox.propTypes = {
 	bible: PropTypes.object.isRequired
 }
 
-export default Sandbox
+export default injectIntl(Sandbox)

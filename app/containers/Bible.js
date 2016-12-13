@@ -13,7 +13,7 @@ class BibleView extends Component {
 			<div>
 				<div className="">
 					<div className="">
-						<Bible {...this.props} />
+						<BibleSandbox {...this.props} />
 					</div>
 				</div>
 			</div>
