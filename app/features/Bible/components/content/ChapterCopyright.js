@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { FormattedMessage } from 'react-intl'
 
 class ChapterCopyright extends Component {
 	render() {
@@ -16,7 +17,7 @@ class ChapterCopyright extends Component {
 		return (
 			<div className="version-copyright">
 				{copyrightElement}
-				<a href={`/versions/${versionId}`}>Learn More</a>
+				<a href={`/versions/${versionId}`}><FormattedMessage id="Learn More" /></a>
 			</div>
 		)
 	}
