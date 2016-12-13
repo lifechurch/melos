@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import VerseAction from './verseAction/VerseAction'
 import { connect } from 'react-redux'
+import { injectIntl, FormattedMessage } from 'react-intl'
 import ActionCreators from '../actions/creators'
 import Filter from '../../../lib/filter'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
@@ -26,6 +27,7 @@ import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import DropdownTransition from '../../../components/DropdownTransition'
+
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -182,16 +184,20 @@ class Bible extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		const { bible } = this.props
-		// console.log(bible.chapter)
-		//
+		const { chapter } = this.state
+
 		// send error down to pickers
 		if (bible.chapter != prevProps.bible.chapter) {
 			if (bible.chapter.errors) {
 				this.setState({ chapterError: true })
 			} else {
-				this.setState({
-					chapterError: false,
-				})
+				if (bible.chapter.reference && bible.chapter.reference.usfm) {
+					this.setState({
+						chapterError: false,
+						selectedChapter: bible.chapter.reference.usfm,
+						inputValue: bible.chapter.reference.human
+					})
+				}
 			}
 		}
 
@@ -240,6 +246,7 @@ class Bible extends Component {
 						initialChapters={this.chapters}
 						cancelDropDown={this.state.chapDropDownCancel}
 						togglePickerExclusion={::this.togglePickerExclusion}
+						ref={(cpicker) => { this.chapterPickerInstance = cpicker }}
 					/>
 					<VersionPicker
 						{...this.props}
@@ -253,6 +260,7 @@ class Bible extends Component {
 						getVersions={::this.getVersions}
 						cancelDropDown={this.state.versionDropDownCancel}
 						togglePickerExclusion={::this.togglePickerExclusion}
+						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
 					/>
 					<AudioPopup audio={bible.audio} hosts={hosts} />
 					<Settings
@@ -267,7 +275,21 @@ class Bible extends Component {
 		}
 
 		if (this.state.chapterError) {
-			this.content = <h2>Oh nooooooooo</h2>
+			this.content = (
+				<div className='row reader-center reader-content-error'>
+					<div className='content'>
+						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
+					</div>
+					<div className='row buttons'>
+						<div className='solid-button' onClick={this.chapterPickerInstance.handleDropDownClick}>
+							<FormattedMessage id="chapter" />
+						</div>
+						<div className='solid-button' onClick={this.versionPickerInstance.handleDropDownClick}>
+							<FormattedMessage id="EventEdit.features.content.components.ContentTypeReference.version" />
+						</div>
+					</div>
+				</div>
+			)
 		} else if (bible.chapter && bible.chapter.reference && bible.version && bible.version.language && bible.chapter.content) {
 			this.content = (
 				<div>
@@ -307,4 +329,4 @@ Bible.propTypes = {
 	hosts: PropTypes.object.isRequired
 }
 
-export default Bible
+export default injectIntl(Bible)

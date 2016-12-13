@@ -7,13 +7,13 @@ import BibleSandbox from '../features/Bible/components/BibleSandbox'
 
 class BibleView extends Component {
 
-						// <Bible {...this.props} />
+						// <BibleSandbox {...this.props} />
 	render() {
 		return (
 			<div>
 				<div className="">
 					<div className="">
-						<BibleSandbox {...this.props} />
+						<Bible {...this.props} />
 					</div>
 				</div>
 			</div>
