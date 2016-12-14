@@ -400,10 +400,5 @@
 	"Reader.more.settings": "Settings",
 	"Reader.search.bible": "Bible",
 	"Reader.search.users": "Users",
-	"Reader.search.plans": "Plans",
-	"verseAction.Actions.Share": "Share",
-	"verseAction.Actions.Copy": "Copy",
-	"verseAction.Actions.Copied": "Copied",
-	"verseAction.Actions.Bookmark": "Bookmark",
-	"verseAction.Actions.Note": "Note"
+	"Reader.search.plans": "Plans"
 }
