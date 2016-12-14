@@ -13,7 +13,6 @@ export default function reducer(state = {}, action) {
 			return Immutable.fromJS(action).set('loading', false).toJS()
 
 		case type('readingplansConfigurationSuccess'):
-
 			return Immutable.fromJS(action.response).delete('loading').toJS()
 
 

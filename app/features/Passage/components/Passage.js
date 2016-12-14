@@ -32,7 +32,6 @@ class Passage extends Component {
 			// first check last version
 			if (lastVersion && `${lastVersion}-${usfm}` in verses) {
 				mainVersion = lastVersion
-
 			// then go through recent versions and check those
 			} else {
 				if (recentVersions.length > 0) {

@@ -1,11 +1,12 @@
 import type from './constants'
+import Immutable from 'immutable'
 
 const ActionCreators = {
 
 	/**
-	 * @version: VERSION_ID
-   * @reference: USFM
-   * @lang: locale
+	 * @passage: usfm of verse
+   * @versions: list of versions for the locale
+   * @language_tag: locale
 	 */
 	passageLoad(params, auth) {
 		return dispatch => {
@@ -23,17 +24,24 @@ const ActionCreators = {
 								// for each verse, pass the text content and make the same call for
 								// html content
 								verses.verses.forEach((verse) => {
-									dispatch(ActionCreators.bibleVerses({
-										id: id,
-										references: [passage],
+									// build extra info for the verses
+									let text = {
 										text: verse.content,
 										versionInfo: {
 											local_abbreviation: version.local_abbreviation.toUpperCase(),
 											local_title: version.local_title,
 											id: version.id,
 										},
+									}
+									// get the html content now
+									dispatch(ActionCreators.bibleVerses({
+										id: id,
+										references: [passage],
 									}))
-									.then(() => resolve())
+									// resolve the promise with both text info and html result to build the data object for
+									// the verse card in the reducer
+									.then((html) => resolve(Immutable.fromJS(html).merge(text).toJS()))
+
 								})
 							})
 						})
@@ -45,8 +53,11 @@ const ActionCreators = {
 			promises.push(dispatch(ActionCreators.readingplansConfiguration()))
 			promises.push(dispatch(ActionCreators.readingPlansByReference({ usfm: passage, language_tag })))
 
-
-			return Promise.all(promises)
+			// wait for all the promises and then dispatch the action
+			// to build the data object
+			return Promise.all(promises).then((data) => {
+				dispatch({ type: type('passageLoadSuccess'), data })
+			}, (reason) => dispatch({ type: type('passageLoadFailure'), reason }))
 		}
 	},
 

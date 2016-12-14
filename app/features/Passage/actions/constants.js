@@ -1,5 +1,8 @@
 const constants = {
 
+	passageLoadFailure: "PASSAGE_LOAD_DATA_FAILURE",
+	passageLoadSuccess: "PASSAGE_LOAD_DATA_SUCCESS",
+
 	/* API CALLS */
 	bibleConfigurationRequest: "PASSAGE_BIBLE_CONFIGURATION_REQUEST",
 	bibleConfigurationSuccess: "PASSAGE_BIBLE_CONFIGURATION_SUCCESS",
