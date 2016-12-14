@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import ColorList from './ColorList'
-import { injectIntl } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import ButtonBar from '../../../../components/ButtonBar'
 import DropDownTransition from '../../../../components/DropdownTransition'
 import TriggerButton from '../../../../components/TriggerButton'
@@ -117,8 +117,8 @@ class VerseAction extends Component {
 					}, 10000)
 				}}>
 				<span className="yv-green-link">{copied ?
-					intl.formatMessage({ id: 'verseAction.Actions.Copied' }) :
-					intl.formatMessage({ id: 'verseAction.Actions.Copy' }) }
+					intl.formatMessage({ id: 'features.EventView.components.EventViewContent.copied' }) :
+					intl.formatMessage({ id: 'Reader.verse action.copy' }) }
 				</span>
 			</CopyToClipboard>
 		)
@@ -126,8 +126,8 @@ class VerseAction extends Component {
 		const actions = [
 			{ value: 'share', label: <ShareWidget label={`${chapter}:${human}`} url={url} text={text} /> },
 			{ value: 'copy', label: copyAction },
-			{ value: 'bookmark', label: <span className="yv-green-link">{intl.formatMessage( { id: 'verseAction.Actions.Bookmark' })}</span> },
-			{ value: 'note', label: <span className="yv-green-link">{intl.formatMessage( { id: 'verseAction.Actions.Note' })}</span> }
+			{ value: 'bookmark', label: <span className="yv-green-link">{intl.formatMessage( { id: 'Reader.verse action.bookmark' })}</span> },
+			{ value: 'note', label: <span className="yv-green-link">{intl.formatMessage( { id: 'Reader.verse action.note' })}</span> }
 		]
 
 		let colorList
@@ -138,7 +138,7 @@ class VerseAction extends Component {
 		return (
 			<div>
 				<div className={`verse-action-footer`} ref={(c) => { this.container = c }}>
-					<a onClick={this.handleClose} className="close-button yv-gray-link">Close</a>
+					<a onClick={this.handleClose} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
 					<span className="verse-selection" style={{opacity: (chapter && chapter.length && human && human.length) ? 1 : 0 }}>{chapter}:{human}</span>
 					<ButtonBar items={actions} onClick={this.handleActionClick} />
 					{colorList}

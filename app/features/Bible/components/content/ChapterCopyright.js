@@ -17,7 +17,7 @@ class ChapterCopyright extends Component {
 		return (
 			<div className="version-copyright">
 				{copyrightElement}
-				<a href={`/versions/${versionId}`}><FormattedMessage id="Learn More" /></a>
+				<a href={`/versions/${versionId}`}><FormattedMessage id="Reader.version.learn more" /></a>
 			</div>
 		)
 	}

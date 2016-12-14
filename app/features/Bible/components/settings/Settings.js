@@ -5,6 +5,7 @@ import ButtonBar from '../../../../components/ButtonBar'
 import Toggle from '../../../../components/Toggle'
 import LocalStore from '../../../../lib/localStore'
 import DropdownTransition from '../../../../components/DropdownTransition'
+import { FormattedMessage } from 'react-intl'
 
 class Settings extends Component {
 	constructor(props) {
@@ -69,12 +70,12 @@ class Settings extends Component {
 			<div className='reader-settings'>
 				<TriggerButton image={<FontSettingsTriggerImage />} onClick={this.triggerClick} />
 					<DropdownTransition show={this.state.isOpen} classes={'reader-settings-modal'}>
-						<div className="header vertical-center horizontal-center">FONT SETTINGS</div>
+						<div className="header vertical-center horizontal-center"><FormattedMessage id="Reader.header.font label" /></div>
 						<div className="body">
 							<ButtonBar items={this.fontSizes} onClick={this.handleFontSizeChange} initialValue={initialFontSize} />
 							<ButtonBar items={this.fontFamilies} onClick={this.handleFontFamilyChange} cols={2} initialValue={initialFontFamily} />
-							<Toggle label="Footnotes" onClick={this.handleFootnotesToggle} initialValue={initialShowFootnotes} />
-							<Toggle label="Numbers and Titles" onClick={this.handleVerseNumbersToggle} initialValue={initialShowVerseNumbers} />
+							<Toggle label={<FormattedMessage id='Reader.reader settings.footnotes' />} onClick={this.handleFootnotesToggle} initialValue={initialShowFootnotes} />
+							<Toggle label={<FormattedMessage id='Reader.reader settings.footnotes.numbers' />} onClick={this.handleVerseNumbersToggle} initialValue={initialShowVerseNumbers} />
 						</div>
 					</DropdownTransition>
 			</div>

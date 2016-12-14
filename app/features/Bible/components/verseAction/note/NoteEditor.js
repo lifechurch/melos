@@ -40,7 +40,7 @@ class NoteEditor extends Component {
 			<Card>
 				<Textarea
 					onChange={this.onChange}
-					placeholder={intl.formatMessage({ id: 'write something' })}
+					placeholder={intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt" })}
 					name='note-text'
 					autofocus
 					required
