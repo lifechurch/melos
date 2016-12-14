@@ -21,6 +21,19 @@ export default {
 	},
 
 	/**
+	 * Remove all values from store
+	 */
+	clear(storeName) {
+		if (typeof window.yvIndex === 'object') {
+			const db = window.yvIndex.databases[DB_NAME]
+			if (typeof db.stores[storeName] === 'object') {
+				db.stores[storeName] = Object.assign({}, db.stores[storeName], { searchIndex: {}, searchKeys: [] })
+			}
+		}
+		return
+	},
+
+	/**
 	 * Add values to index
 	 * @storeName {string} - name of store
 	 * @values {Array} - array of objects

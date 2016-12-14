@@ -43,6 +43,15 @@ class MomentCreate extends Component {
 		}
 	}
 
+	componentWillReceiveProps(nextProps) {
+		const { verses, references } = nextProps
+		const { verses:currentVerses, references:currentReferences } = this.props
+
+		if (verses !== currentVerses || references !== currentReferences) {
+			this.setState({ verseContent: verses, references })
+		}
+	}
+
 	/**
 	 * handle color picker modal show/hide
 	 *
@@ -51,6 +60,13 @@ class MomentCreate extends Component {
 		this.setState({
 			dropdown: !this.state.dropdown,
 		})
+	}
+
+	handleClose = () => {
+		const { onClose } = this.props
+		if (typeof onClose === 'function') {
+			onClose()
+		}
 	}
 
 	/**
@@ -130,7 +146,7 @@ class MomentCreate extends Component {
 	 * some keys to the api will be null, depending on which kind we are creating
 	 */
 	save = () => {
-		const { dispatch, isLoggedIn, kind } = this.props
+		const { dispatch, isLoggedIn, kind, onClose } = this.props
 		const { references, addedLabels, content, user_status, selectedColor } = this.state
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
 			kind: kind,
@@ -140,12 +156,18 @@ class MomentCreate extends Component {
 			content: content,
 			user_status: user_status,
 			color: selectedColor.replace('#', ''),
-		}))
+		})).then(data => {
+			if (typeof onClose === 'function') {
+				onClose(true)
+			}
+		}, error => {
+
+		})
 	}
 
 
 	render() {
-		const { verses, labels, colors, kind, closeMomentCreate, intl } = this.props
+		const { verses, labels, colors, kind, intl } = this.props
 		const { dropdown, selectedColor, verseContent } = this.state
 
 		let labelsDiv, colorsDiv, content, createHeader = null
@@ -205,7 +227,7 @@ class MomentCreate extends Component {
 			<div className='verse-action-create'>
 				<div className='row large-6'>
 					<div className='heading vertical-center'>
-						<div className='columns medium-4 cancel'><XMark onClick={this.closeMomentCreate} width={18} height={18} /></div>
+						<div className='columns medium-4 cancel'><XMark onClick={this.handleClose} width={18} height={18} /></div>
 						<div className='columns medium-4 title'>{ createHeader }</div>
 						<div className='columns medium-4 save'>
 							<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: "Reader.save"}) }</div>
@@ -227,7 +249,7 @@ class MomentCreate extends Component {
  * @labels						{object}				labels object containing an array of labels sorted alphabetically
  * 																		and an array sorted by count
  * @colors 						{array} 				available colors to add to moment
- * @closeMomentCreate {func}					on click of the XMark in header. should close the component
+ * @onClose 					{func}					on click of the XMark in header. should close the component
  */
 MomentCreate.propTypes = {
 	kind: React.PropTypes.oneOf(['bookmark', 'note', 'image']).isRequired,
@@ -235,7 +257,7 @@ MomentCreate.propTypes = {
 	references: React.PropTypes.array,
 	labels: React.PropTypes.object,
 	colors: React.PropTypes.array,
-	closeMomentCreate: React.PropTypes.func,
+	onClose: React.PropTypes.func,
 }
 
 export default injectIntl(MomentCreate)

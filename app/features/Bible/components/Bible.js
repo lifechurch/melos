@@ -19,7 +19,6 @@ import ReaderArrows from './content/ReaderArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 import LabelList from './verseAction/bookmark/LabelList'
-import VerseCard from './verseAction/bookmark/VerseCard'
 import LocalStore from '../../../lib/localStore'
 import RecentVersions from '../lib/RecentVersions'
 import LabelSelector from './verseAction/bookmark/LabelSelector'
@@ -27,7 +26,7 @@ import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 import DropdownTransition from '../../../components/DropdownTransition'
-
+import Immutable from 'immutable'
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -37,14 +36,16 @@ const DEFAULT_READER_SETTINGS = {
 	showVerseNumbers: true
 }
 
+
 class Bible extends Component {
 
 	constructor(props) {
 		super(props)
+
 		const { bible } = props
 
-		// if we get a bad chapter call, let's grab the first valid book and chapter
-		// for the selected version
+		// if we get a bad chapter call, let's grab the first
+		//  valid book and chapter for the selected version
 		if (!bible.chapter.reference) {
 			let chap = bible.books.all[0].chapters[Object.keys(bible.books.all[0].chapters)[0]]
 			this.chapterError = true
@@ -65,10 +66,6 @@ class Bible extends Component {
 		const showFootnoes = LocalStore.getIn("reader.settings.showFootnotes")
 		const showVerseNumbers = LocalStore.getIn("reader.settings.showVerseNumbers")
 
-
-		LocalStore.setIn('mySettings.bob.john.fred', 'superman')
-
-
 		this.state = {
 			selectedBook: this.selectedBook,
 			selectedChapter: this.selectedChapter,
@@ -84,14 +81,23 @@ class Bible extends Component {
 			fontSize: LocalStore.getIn("reader.settings.fontSize") || DEFAULT_READER_SETTINGS.fontSize,
 			fontFamily: LocalStore.getIn("reader.settings.fontFamily") || DEFAULT_READER_SETTINGS.fontFamily,
 			showFootnotes: typeof showFootnoes === "boolean" ? showFootnoes : DEFAULT_READER_SETTINGS.showFootnotes,
-			showVerseNumbers: typeof showVerseNumbers === "boolean" ? showVerseNumbers : DEFAULT_READER_SETTINGS.showVerseNumbers
+			showVerseNumbers: typeof showVerseNumbers === "boolean" ? showVerseNumbers : DEFAULT_READER_SETTINGS.showVerseNumbers,
+			verseSelection: {}
 		}
+
+		// Filter.build("BooksStore", [ "human", "usfm" ])
+		// Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
+		// Filter.build("LangStore", [ "name", "local_name" ])
 
 		this.header = null
 		this.content = null
 
-		this.handleButtonBarClick = ::this.handleButtonBarClick
+		this.chapterPicker = null
+		this.versionPicker = null
+
 		this.handleSettingsChange = ::this.handleSettingsChange
+		this.handleVerseSelectionClear = ::this.handleVerseSelectionClear
+		this.handleVerseSelect = ::this.handleVerseSelect
 	}
 
 	getVersions(languageTag) {
@@ -101,14 +107,13 @@ class Bible extends Component {
 		this.setState({ selectedLanguage: languageTag })
 
 		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
-			Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
+			Filter.clear("VersionStore")
 			Filter.add("VersionStore", versions.versions)
 		})
 
-		dispatch(ActionCreators.bibleConfiguration()).then((config) => {
-			Filter.build("LangStore", [ "name", "local_name" ])
-			Filter.add("LangStore", config.default_versions)
-		})
+		// dispatch(ActionCreators.bibleConfiguration()).then((config) => {
+		// 	Filter.add("LangStore", config.default_versions)
+		// })
 	}
 
 	getVC(versionID) {
@@ -135,8 +140,8 @@ class Bible extends Component {
 	getVersion(versionid) {
 		const { dispatch, bible } = this.props
 		this.chapterVersionCall(versionid, this.state.selectedChapter)
+		this.setState({ selectedVersion: versionid })
 		this.toggleVersionPickerList()
-
 		this.recentVersions.add(versionid)
 
 		// then write cookie for selected version
@@ -144,13 +149,17 @@ class Bible extends Component {
 	}
 
 	chapterVersionCall(versionid, reference) {
-		const { dispatch } = this.props
+		const { dispatch, auth } = this.props
 		dispatch(ActionCreators.bibleChapter({ id: versionid, reference: reference}))
-		dispatch(ActionCreators.momentsVerseColors(auth, { usfm: reference, version_id: versionid }))
+
+		if (auth.isLoggedIn) {
+			dispatch(ActionCreators.momentsVerseColors(auth.isLoggedIn, { usfm: reference, version_id: versionid }))
+		}
+
 		if (versionid !== this.state.selectedVersion) {
 			this.setState({ selectedVersion: versionid })
 			dispatch(ActionCreators.bibleVersion({ id: versionid })).then((version) => {
-				Filter.build("BooksStore", [ "human", "usfm" ])
+				Filter.clear("BooksStore")
 				Filter.add("BooksStore", version.books)
 				this.recentVersions.addVersion(version)
 			})
@@ -178,7 +187,17 @@ class Bible extends Component {
 	}
 
 
-	handleVerseSelect(e) {
+	handleVerseSelect(verseSelection) {
+		const { hosts, bible: { version: { id }, chapter: { reference: { human, usfm } } } } = this.props
+		const refUrl = `${hosts.railsHost}/${id}/${usfm}.${verseSelection.human}`
+		this.setState({ verseSelection: Immutable.fromJS(verseSelection).merge({ chapter: human, url: refUrl, version: id }).toJS() });
+	}
+
+	handleVerseSelectionClear() {
+		if (typeof this.chapter !== 'undefined') {
+			this.chapter.clearSelection()
+		}
+		this.setState({ verseSelection: {} })
 	}
 
 
@@ -203,10 +222,6 @@ class Bible extends Component {
 
 	}
 
-
-	handleButtonBarClick(item) {
-	}
-
 	handleSettingsChange(key, value) {
 		LocalStore.setIn(key, value)
 		const stateKey = key.split('.').pop()
@@ -227,8 +242,8 @@ class Bible extends Component {
 
 
 	render() {
-		const { bible, audio, settings, verseAction, hosts } = this.props
-		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers } = this.state
+		const { bible, settings, verseAction, hosts } = this.props
+		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
 			this.header = (
@@ -294,13 +309,16 @@ class Bible extends Component {
 			this.content = (
 				<div>
 					<Chapter
+						{...this.props}
 						chapter={bible.chapter}
+						verseColors={bible.verseColors}
 						fontSize={fontSize}
 						fontFamily={fontFamily}
-						onSelect={::this.handleVerseSelect}
+						onSelect={this.handleVerseSelect}
 						textDirection={bible.version.language.text_direction}
 						showFootnotes={showFootnotes}
 						showVerseNumbers={showVerseNumbers}
+						ref={(chapter) => { this.chapter = chapter }}
 					/>
 					<ReaderArrows
 						previousChapter={bible.chapter.previous ? bible.chapter.previous.usfm : null}
@@ -319,6 +337,13 @@ class Bible extends Component {
 						{ this.content }
 					</div>
 				</div>
+				<VerseAction
+					{...this.props}
+					verseAction={verseAction}
+					selection={verseSelection}
+					colors={bible.highlightColors}
+					onClose={this.handleVerseSelectionClear}
+				/>
 			</div>
 		)
 	}

@@ -26,7 +26,7 @@ class DropdownTransition extends Component {
 DropdownTransition.propTypes = {
 	show: React.PropTypes.bool,
 	classes: React.PropTypes.string,
-	hideDir: React.PropTypes.oneOf(['down, up, left, right'])
+	hideDir: React.PropTypes.oneOf(['down', 'up', 'left', 'right'])
 }
 
 export default DropdownTransition
