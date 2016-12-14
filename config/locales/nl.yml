@@ -912,8 +912,8 @@ nl:
         status: 
             on track: "Op schema!"
             days ahead: 
-                one: "%{count} dag voor de boeg!"
-                other: "%{count} dagen voor de boeg!"
+                one: "%{count} dag voor op schema!"
+                other: "%{count} dagen voor op schema!"
             missed days: 
                 one: "%{count} gemiste dag"
                 other: "%{count} gemiste dagen"
@@ -1931,3 +1931,21 @@ nl:
                 bible: "Bijbel"
                 users: "Gebruikers"
                 plans: "Leesplannen"
+            version: 
+                learn more: "Learn More"
+            verse action: 
+                copy: "Copy"
+                bookmark: "Bookmark"
+                note: "Note"
+                private: "Private"
+                public: "Public"
+                friends: "Friends"
+                draft: "Draft"
+                save: "Save"
+                add labels: "Add Labels…"
+                labels: "Labels"
+                add with count: "Add (%{count})"
+                alphabetical: "Alphabetical"
+                count: "Count"
+                add color: "Add Color"
+                labels private: "Labels are always private"
