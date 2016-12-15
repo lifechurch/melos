@@ -60,6 +60,7 @@ class VerseAction extends Component {
 
 	handleClose() {
 		const { onClose } = this.props
+		this.setState({ momentContainerOpen: false })
 		if (typeof onClose === 'function') {
 			onClose()
 		}
@@ -111,7 +112,7 @@ class VerseAction extends Component {
 			if (momentContainerOpen) {
 				setTimeout(() => {
 					document.getElementsByTagName("body")[0].style.position = 'fixed'
-				}, 600)
+				}, 700)
 			} else {
 				document.getElementsByTagName("body")[0].style.position = 'static'
 			}
