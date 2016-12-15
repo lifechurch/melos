@@ -298,6 +298,14 @@
 		"displayName": "Ελληνικά"
 	},
 	{
+		"nativeName": "Беларуская",
+		"englishName": "Belarusian",
+		"locale": "be-BY",
+		"locale2": "be",
+		"locale3": "bel",
+		"displayName": "Беларуская"
+	},
+	{
 		"nativeName": "Български",
 		"englishName": "Bulgarian",
 		"locale": "bg-BG",

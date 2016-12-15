@@ -66,7 +66,7 @@ class LabelInput extends Component {
 				<input
 					value={input}
 					disabled={disabled}
-					placeholder={!inputActive ? intl.formatMessage({ id: 'Reader.labels.add labels' }) : null}
+					placeholder={!inputActive ? intl.formatMessage({ id: 'Reader.verse action.add labels' }) : null}
 					onChange={this.handleChange}
 					onKeyDown={this.handleKeyDown}
 					onBlur={this.handleBlur}

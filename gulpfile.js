@@ -264,7 +264,7 @@ gulp.task('smartling', function(callback) {
 	return smartlingAuth().then(function(response) {
 		var token = response.response.data.accessToken;
 		return smartlingFetchAvailableLocales(token).then(function(response) {
-
+			console.log(response)
 			var locales = response.response.data.items;
 
 			var queue = async.queue(function(task, callback) {

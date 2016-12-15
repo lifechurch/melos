@@ -43,14 +43,14 @@ class LabelsModal extends Component {
 			<div className='labels-modal'>
 				<div className='header vertical-center'>
 					<a className='cancel columns medium-4' onClick={cancelDropDown}><FormattedMessage id="Reader.header.cancel" /></a>
-					<p className='title columns medium-4'><FormattedMessage id="Reader.labels" /></p>
-					<a className={`add columns medium-4 ${selected > 0 ? 'yv-green-link' : 'yv-gray-link'}`} onClick={addLabels}><FormattedMessage id="Reader.add" />{selected > 0 ? ` (${selected})` : null}</a>
+					<p className='title columns medium-4'><FormattedMessage id="Reader.verse action.labels" /></p>
+					<a className={`add columns medium-4 ${selected > 0 ? 'yv-green-link' : 'yv-gray-link'}`} onClick={addLabels}><FormattedMessage id="Reader.verse action.add with count" values={{ count: selected }} /></a>
 				</div>
 				{ labels }
 				<div className='footer'>
-					<div className={`filter-button vertical-center ${filterBy == 'alphabetical' ? 'active-button' : ''}`} onClick={() => this.setState({ filterBy: 'alphabetical' })}><FormattedMessage id='Reader.alphabetical' /></div>
-					<div className={`filter-button vertical-center ${filterBy == 'count' ? 'active-button' : ''}`} onClick={() => this.setState({ filterBy: 'count' })}><FormattedMessage id="Reader.count" /></div>
-					<div className='labels-privacy vertical-center'><FormattedMessage id='Reader.labels.private' /></div>
+					<div className={`filter-button vertical-center ${filterBy == 'alphabetical' ? 'active-button' : ''}`} onClick={() => this.setState({ filterBy: 'alphabetical' })}><FormattedMessage id='Reader.verse action.alphabetical' /></div>
+					<div className={`filter-button vertical-center ${filterBy == 'count' ? 'active-button' : ''}`} onClick={() => this.setState({ filterBy: 'count' })}><FormattedMessage id="Reader.verse action.count" /></div>
+					<div className='labels-privacy vertical-center'><FormattedMessage id='Reader.verse action.labels private' /></div>
 				</div>
 			</div>
 		)

@@ -77,7 +77,7 @@ class Bookmark extends Component {
 							?
 							<Color color={selectedColor} />
 							:
-							<div className='yv-gray-link'><FormattedMessage id='add color' /></div>
+							<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
 						}
 					</div>
 					<DropdownTransition show={dropdown} hideDir='right'>
@@ -93,7 +93,7 @@ class Bookmark extends Component {
 				<div className='row large-6'>
 					<div className='heading vertical-center'>
 						<div className='columns medium-4 cancel'><XMark width={18} height={18} /></div>
-						<div className='columns medium-4 title'><FormattedMessage id='bookmark' /></div>
+						<div className='columns medium-4 title'><FormattedMessage id='Reader.verse action.bookmark' /></div>
 						<div className='columns medium-4 save'>
 							<div onClick={this.saveBookMark} className='solid-button green'>Save</div>
 						</div>

@@ -48,7 +48,7 @@ class VersionPickerModal extends Component {
 						<input value={inputValue} onChange={handleChange.bind(this)} placeholder={intl.formatMessage({ id: 'Reader.versionpicker.filter languages' })} />
 					</div>
 					<div className='language-list'>
-						<Languages list={[]} onSelect={getLanguage} initialSelection={selectedLanguage} header='Recently Used'/>
+						<Languages list={[]} onSelect={getLanguage} initialSelection={selectedLanguage} header={intl.formatMessage({ id: 'Reader.header.recent versions' })} />
 						<Languages list={languageList} onSelect={getLanguage} initialSelection={selectedLanguage} header='All'/>
 					</div>
 				</div>
@@ -71,7 +71,7 @@ class VersionPickerModal extends Component {
 			} else {
 				versions = (
 					<div className='version-list'>
-						<Versions list={{}} onSelect={getVersion} initialSelection={selectedVersion} header={'Recently Used'}/>
+						<Versions list={{}} onSelect={getVersion} initialSelection={selectedVersion} header={intl.formatMessage({ id: 'Reader.header.recent versions' })}/>
 						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} header={versionsLanguageName}/>
 					</div>
 				)

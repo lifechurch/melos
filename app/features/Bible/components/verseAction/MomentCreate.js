@@ -27,10 +27,10 @@ class MomentCreate extends Component {
 		}
 
 		this.USER_STATUS = {
-			'private': props.intl.formatMessage({ id: 'notes.status.private' }),
-			'public': props.intl.formatMessage({ id: 'notes.status.public' }),
-			'friends': props.intl.formatMessage({ id: 'notes.status.friends' }),
-			'draft': props.intl.formatMessage({ id: 'notes.status.draft' }),
+			'private': props.intl.formatMessage({ id: 'Reader.verse action.private' }),
+			'public': props.intl.formatMessage({ id: 'Reader.verse action.public' }),
+			'friends': props.intl.formatMessage({ id: 'Reader.verse action.friends' }),
+			'draft': props.intl.formatMessage({ id: 'Reader.verse action.draft' }),
 		}
 
 	}
@@ -193,7 +193,7 @@ class MomentCreate extends Component {
 							?
 							<Color color={selectedColor} />
 							:
-							<div className='yv-gray-link'><FormattedMessage id='add color' /></div>
+							<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
 						}
 					</div>
 					<DropdownTransition show={dropdown} hideDir='right'>
@@ -207,9 +207,9 @@ class MomentCreate extends Component {
 
 		// display Bookmark create
 		if (kind == 'bookmark') {
-			createHeader = <FormattedMessage id='bookmark' />
+			createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
 			contentDiv = (
-					<VerseCard verseContent={localVerses}>
+					<VerseCard verseContent={verseContent}>
 							<div className='small-10'>
 								<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
 							</div>
@@ -219,7 +219,7 @@ class MomentCreate extends Component {
 					</VerseCard>
 			)
 		} else if (kind == 'note') {
-			createHeader = <FormattedMessage id='note' />
+			createHeader = <FormattedMessage id='Reader.verse action.note' />
 			contentDiv = (
 				<div className='note-create'>
 					<VerseCard verseContent={localVerses} deleteVerse={this.deleteVerse}>
@@ -242,7 +242,7 @@ class MomentCreate extends Component {
 						<div className='columns medium-4 cancel'><XMark onClick={this.handleClose} width={18} height={18} /></div>
 						<div className='columns medium-4 title'>{ createHeader }</div>
 						<div className='columns medium-4 save'>
-							<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: "Reader.save"}) }</div>
+							<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: "Reader.verse action.save"}) }</div>
 						</div>
 					</div>
 					{ contentDiv }

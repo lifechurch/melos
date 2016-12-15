@@ -125,7 +125,7 @@ class Note extends Component {
 							?
 							<Color color={selectedColor} />
 							:
-							<div className='yv-gray-link'><FormattedMessage id='add color' /></div>
+							<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
 						}
 					</div>
 					<DropdownTransition show={dropdown} hideDir='right'>
