@@ -71,7 +71,8 @@
 }
 
 .color-list {
-
+	max-width: 320px;
+	width: 100%;
 	.carousel-standard {
 		margin: 0 auto 0 auto;
 		min-width: 200px;
@@ -123,6 +124,7 @@
 	.custom-color-picker {
 		display: flex;
 		align-items: center;
+		width: 100%;
 	}
 	.slider {
 		display: inline-block;
@@ -149,8 +151,12 @@
 
 // CREATE BOOKMARK/CREATE NOTE
 .verse-action-create {
-	padding: 25px 0 25px 0;
+	padding: 25px 0 250px 0;
 	background-color: @light-grey;
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+	.yv-scroll-bar;
 
 	.heading {
 		display: inline-flex;
@@ -198,6 +204,10 @@
 	.labels {
 		width: 100%;
 	}
+
+	.card {
+		// margin-bottom: 250px;
+	}
 }
 
 // NOTE
@@ -231,27 +241,28 @@
 	}
 }
 
+
+
+
+
+
 .va-share {
 	position: relative;
 }
 
-.va-moment-container {
+
+.verse-action > .modal {
 	position: fixed;
 	width: 100%;
 	top: 70px;
 	bottom: 0;
-	z-index: 11;
-	padding-bottom: 170px;
-	transition: transform 0.6s ease;
-	transform: translateY(100%);
-
-	&.closed {
-
-	}
-
-	&.open {
-		transform: translateY(0%);
-	}
+	margin: 0;
+	padding: 0;
+}
+.va-moment-container {
+	height: 100%;
+	width: 100%;
+	position: fixed;
 }
 
 .va-share-panel-wrapper {
@@ -291,4 +302,8 @@
 	&.va-share-open {
 		transform: translateY(0%);
 	}
+}
+
+.xmark-container:hover {
+	cursor: pointer;
 }

@@ -17,11 +17,9 @@ class MomentCreate extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			verseContent: props.verses,
-			references: props.references,
 			content: null,
 			user_status: 'private',
-			addedLabels: {},
+			addedLabels: null,
 			dropdown: false,
 			selectedColor: null,
 		}
@@ -43,14 +41,6 @@ class MomentCreate extends Component {
 		}
 	}
 
-	componentWillReceiveProps(nextProps) {
-		const { verses, references } = nextProps
-		const { verses:currentVerses, references:currentReferences } = this.props
-
-		if (verses !== currentVerses || references !== currentReferences) {
-			this.setState({ verseContent: verses, references })
-		}
-	}
 
 	/**
 	 * handle color picker modal show/hide
@@ -146,20 +136,26 @@ class MomentCreate extends Component {
 	 * some keys to the api will be null, depending on which kind we are creating
 	 */
 	save = () => {
-		const { dispatch, isLoggedIn, kind, onClose } = this.props
-		const { references, addedLabels, content, user_status, selectedColor } = this.state
+		const { dispatch, isLoggedIn, kind, onClose, references } = this.props
+		const { addedLabels, content, user_status, selectedColor } = this.state
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
 			kind: kind,
 			references: references,
-			labels: addedLabels,
+			labels: addedLabels ? addedLabels : null,
 			created_dt: moment().format(),
 			content: content,
 			user_status: user_status,
-			color: selectedColor.replace('#', ''),
+			color: selectedColor ? selectedColor.replace('#', '') : null,
 		})).then(data => {
 			if (typeof onClose === 'function') {
 				onClose(true)
 			}
+			// reset some stuff so it isn't there for the next moment create
+			this.setState({
+				addedLabels: null,
+				content: null,
+				selectedColor: null,
+			})
 		}, error => {
 
 		})
@@ -168,7 +164,7 @@ class MomentCreate extends Component {
 
 	render() {
 		const { verses, labels, colors, kind, intl } = this.props
-		const { dropdown, selectedColor, verseContent } = this.state
+		const { dropdown, selectedColor } = this.state
 
 		let labelsDiv, colorsDiv, content, createHeader = null
 
@@ -197,7 +193,7 @@ class MomentCreate extends Component {
 		if (kind == 'bookmark') {
 			createHeader = <FormattedMessage id='bookmark' />
 			content = (
-					<VerseCard verseContent={verseContent}>
+					<VerseCard verseContent={verses}>
 							<div className='small-10'>
 								<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
 							</div>
@@ -210,7 +206,7 @@ class MomentCreate extends Component {
 			createHeader = <FormattedMessage id='note' />
 			content = (
 				<div className='note-create'>
-					<VerseCard verseContent={verseContent} deleteVerse={this.deleteVerse}>
+					<VerseCard verseContent={verses} deleteVerse={this.deleteVerse}>
 						{ colorsDiv }
 					</VerseCard>
 					<div className='user-status-dropdown'>
