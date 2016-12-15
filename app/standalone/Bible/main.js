@@ -48,6 +48,7 @@ function requireBibleData(nextState, replace, callback) {
 		callback()
 	} else if (version > 0 && reference) {
 		store.dispatch(ActionCreators.readerLoad({ language_tag: lang, version: version, reference: reference }, store.getState().auth.isLoggedIn)).then(() => {
+			console.log('loaded data!')
 			callback()
 		}, (error) => {
 			callback()
