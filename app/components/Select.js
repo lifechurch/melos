@@ -53,7 +53,7 @@ class Select extends Component {
 				// leave the selected value out of the list
 				if (selectedValue !== val) {
 					optionList.push (
-						<li onClick={this.selectOption.bind(this, key)}>{val}</li>
+						<li key={val} onClick={this.selectOption.bind(this, key)}>{val}</li>
 					)
 				}
 			})

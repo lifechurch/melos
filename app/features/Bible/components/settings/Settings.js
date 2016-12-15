@@ -75,7 +75,7 @@ class Settings extends Component {
 							<ButtonBar items={this.fontSizes} onClick={this.handleFontSizeChange} initialValue={initialFontSize} />
 							<ButtonBar items={this.fontFamilies} onClick={this.handleFontFamilyChange} cols={2} initialValue={initialFontFamily} />
 							<Toggle label={<FormattedMessage id='Reader.reader settings.footnotes' />} onClick={this.handleFootnotesToggle} initialValue={initialShowFootnotes} />
-							<Toggle label={<FormattedMessage id='Reader.reader settings.footnotes.numbers' />} onClick={this.handleVerseNumbersToggle} initialValue={initialShowVerseNumbers} />
+							<Toggle label={<FormattedMessage id='Reader.reader settings.numbers' />} onClick={this.handleVerseNumbersToggle} initialValue={initialShowVerseNumbers} />
 						</div>
 					</DropdownTransition>
 			</div>

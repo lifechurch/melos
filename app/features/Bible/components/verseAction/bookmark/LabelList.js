@@ -26,7 +26,7 @@ class LabelList extends Component {
 				// group headings are set to null if the label's first character has been seen before
 				if (showHeading && 'groupHeading' in label && label.groupHeading != null) {
 					labels.push (
-						<div className='group-heading'>{ label.groupHeading }</div>
+						<div key={`label-list-heading-${label.groupHeading}`} className='group-heading'>{ label.groupHeading }</div>
 					)
 				}
 				// if our array isn't full of objects

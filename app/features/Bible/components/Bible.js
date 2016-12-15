@@ -116,16 +116,16 @@ class Bible extends Component {
 		// })
 	}
 
-	getVC(versionID) {
-		const { dispatch, bible } = this.props
-		this.setState({ selectedVersion: versionID })
-		dispatch(ActionCreators.loadVersionAndChapter({ id: versionID, reference: this.state.selectedChapter }))
-	}
+	// getVC(versionID) {
+	// 	const { dispatch, bible } = this.props
+	// 	this.setState({ selectedVersion: versionID })
+	// 	dispatch(ActionCreators.loadVersionAndChapter({ id: versionID, reference: this.state.selectedChapter }))
+	// }
 
-	getBook(book) {
-		this.setState({ selectedBook: book.usfm })
-		this.toggleChapterPickerList()
-	}
+	// getBook(book) {
+	// 	this.setState({ selectedBook: book.usfm })
+	// 	this.toggleChapterPickerList()
+	// }
 
 	getChapter(chapterusfm) {
 		const { dispatch, bible } = this.props
@@ -150,6 +150,7 @@ class Bible extends Component {
 
 	chapterVersionCall(versionid, reference) {
 		const { dispatch, auth } = this.props
+
 		dispatch(ActionCreators.bibleChapter({ id: versionid, reference: reference}))
 
 		if (auth.isLoggedIn) {
@@ -163,6 +164,10 @@ class Bible extends Component {
 				Filter.add("BooksStore", version.books)
 				this.recentVersions.addVersion(version)
 			})
+		}
+
+		if (typeof this.chapter !== 'undefined') {
+			this.chapter.clearSelection()
 		}
 	}
 
