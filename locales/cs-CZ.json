@@ -179,7 +179,7 @@
 	"components.HtmlEditor.italic": "kurzíva",
 	"containers.Auth.title": "Přihlásit se do události",
 	"containers.Auth.signIn": "Přihlásit se",
-	"containers.Auth.subHead1": "Pokud jste uživatel aplikace BibleApp a máte již založený účet na YouVersion, můžete se přihlásit pomocí svých přihlašovacích údajů.<br/><br/>Ještě nemáte účet na YouVersion?<br/><a href='{url}'>Přihlašte se nyní na Bible.com</a> a začněte vytvářet události.",
+	"containers.Auth.subHead1": "Pokud jste uživatel aplikace BibleApp a máte již založený účet na YouVersion, mů��ete se přihlásit pomocí svých přihlašovacích údajů.<br/><br/>Ještě nemáte účet na YouVersion?<br/><a href='{url}'>Přihlašte se nyní na Bible.com</a> a začněte vytvářet události.",
 	"containers.Auth.email": "E-mail",
 	"containers.Auth.password": "Heslo",
 	"containers.Auth.forgotPassword": "Zapomenuté heslo",

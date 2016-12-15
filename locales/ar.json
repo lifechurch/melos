@@ -173,7 +173,7 @@
 	"components.ErrorMessage.default.events.times.start_dt.must_be_a_future_date": "وقت البدايه لايمكن ان يكون فى الماضي.",
 	"components.ErrorMessage.default.events.timezone.required": "وقت المنطقه مطلوب.",
 	"components.ErrorMessage.reference.events.usfm.invalid": "الشاهد الكتابي غير صحيح.",
-	"components.ErrorMessage.url.events.url.required": "مطلوب الرا��ط.",
+	"components.ErrorMessage.url.events.url.required": "مطلوب الرابط.",
 	"components.ErrorMessage.url.events.title.required": "علامه الرابط مطلوبه.",
 	"components.EventHeader.status.published": "تم النشر",
 	"components.EventHeader.status.draft": "مسودات",

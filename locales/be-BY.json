@@ -357,7 +357,7 @@
 	"features.EventEdit.features.preview.components.PreviewFeed.status.title": "Статус:",
 	"features.EventEdit.features.preview.components.PreviewFeed.status.desc": "Чырвоны значак LIVE з'явіцца, як толькі надыдзе час пачатку.",
 	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "Выдаліць:",
-	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Вашую падзею нельга будзе адшукаць пасьля яе заканчэньня. Наведвальнікі, якія з��хавалі вашую падзею, будуць мець доступ да яе архіўнай вэрсіі. Таксама падзея будзе дасяжная па прамых унутраных спасылках.",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Вашую падзею нельга будзе адшукаць пасьля яе заканчэньня. Наведвальнікі, якія захавалі вашую падзею, будуць мець доступ да яе архіўнай вэрсіі. Таксама падзея будзе дасяжная па прамых унутраных спасылках.",
 	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "Expand",
 	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "Чытаць",
 	"features.EventEdit.features.preview.components.PreviewTypePlan.info": "Інфармацыя аб пляне",

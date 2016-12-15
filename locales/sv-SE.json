@@ -333,7 +333,7 @@
 	"features.EventEdit.features.location.components.LocationTimeShifter.shiftButton": "Ändra alla datum och tider samtigt",
 	"features.EventEdit.features.location.components.UnpublishModal.cancel": "Avbryt",
 	"features.EventEdit.features.location.components.UnpublishModal.title": "Avpublicera för att göra förändringar",
-	"features.EventEdit.features.location.components.UnpublishModal.desc": "F��r att lägga till, ändra eller ta bort tid och plats, avpublicera händelsen tillfälligt. Under tiden kommer det inte vara möjligt att söka upp händelsen. Glöm inte att publicera din händelse igen.",
+	"features.EventEdit.features.location.components.UnpublishModal.desc": "För att lägga till, ändra eller ta bort tid och plats, avpublicera händelsen tillfälligt. Under tiden kommer det inte vara möjligt att söka upp händelsen. Glöm inte att publicera din händelse igen.",
 	"features.EventEdit.features.location.components.UnpublishModal.unpublish": "Avpublicera",
 	"features.EventEdit.features.preview.notes.prompt": "Lägg till dina privata Anteckningar...",
 	"features.EventEdit.features.preview.notes.noAuthPrompt": "<a href='{url}'><span className='highlight'>Logga in</span> för att skriva dina privata anteckningar…</a>",
