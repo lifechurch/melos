@@ -21,11 +21,12 @@ class NoteEditor extends Component {
 	}
 
 	render() {
-		const { intl } = this.props
+		const { intl, content } = this.props
 
 		return (
 			<Card>
 				<Textarea
+					value={content}
 					onChange={this.onChange}
 					placeholder={intl.formatMessage({ id: "features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt" })}
 					name='note-text'

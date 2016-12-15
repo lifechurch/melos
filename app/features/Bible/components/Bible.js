@@ -166,9 +166,7 @@ class Bible extends Component {
 			})
 		}
 
-		if (typeof this.chapter !== 'undefined') {
-			this.chapter.clearSelection()
-		}
+		this.handleVerseSelectionClear()
 	}
 
 	// this handles the class toggling for book and chapter clicks on mobile
@@ -179,18 +177,6 @@ class Bible extends Component {
 	toggleVersionPickerList() {
 		(this.state.classes) == 'hide-langs' ? this.setState({ classes: 'hide-versions' }) : this.setState({ classes: 'hide-langs' })
 	}
-
-	togglePickerExclusion(context) {
-		// each picker calls to tell which context is now open
-		if (context == 'chapter') {
-			this.setState({ versionDropDownCancel: true, chapDropDownCancel: false })
-		} else if (context == 'version') {
-			this.setState({ versionDropDownCancel: false, chapDropDownCancel: true })
-		} else if (context == 'none') {
-			this.setState({ versionDropDownCancel: false, chapDropDownCancel: false })
-		}
-	}
-
 
 	handleVerseSelect(verseSelection) {
 		const { hosts, bible: { version: { id }, chapter: { reference: { human, usfm } } } } = this.props
@@ -265,7 +251,6 @@ class Bible extends Component {
 						initialInput={this.inputValue}
 						initialChapters={this.chapters}
 						cancelDropDown={this.state.chapDropDownCancel}
-						togglePickerExclusion={::this.togglePickerExclusion}
 						ref={(cpicker) => { this.chapterPickerInstance = cpicker }}
 					/>
 					<VersionPicker
@@ -279,7 +264,6 @@ class Bible extends Component {
 						getVersion={::this.getVersion}
 						getVersions={::this.getVersions}
 						cancelDropDown={this.state.versionDropDownCancel}
-						togglePickerExclusion={::this.togglePickerExclusion}
 						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
 					/>
 					<AudioPopup audio={bible.audio} hosts={hosts} />

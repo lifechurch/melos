@@ -39,6 +39,11 @@ class MomentCreate extends Component {
 		const { verses, references } = this.props
 		const { localVerses, localRefs } = this.state
 		// merge in new verses
+		console.log(verses)
+		console.log(references)
+		console.log(localVerses)
+		console.log(localRefs)
+		if (nextProps.verses && nextProps.references) {
 			if (verses !== nextProps.verses) {
 				this.setState({
 					localVerses: Immutable.fromJS(localVerses).merge(nextProps.verses).toJS(),
@@ -49,6 +54,7 @@ class MomentCreate extends Component {
 					localRefs: Immutable.fromJS(localRefs).concat(nextProps.references).toJS(),
 				})
 			}
+		}
 	}
 
 	/**
@@ -209,7 +215,7 @@ class MomentCreate extends Component {
 		if (kind == 'bookmark') {
 			createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
 			contentDiv = (
-					<VerseCard verseContent={verseContent}>
+					<VerseCard verseContent={localVerses}>
 							<div className='small-10'>
 								<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
 							</div>

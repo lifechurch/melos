@@ -58,7 +58,7 @@ class VersionPicker extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		const { alert, versions, version, togglePickerExclusion, chapter } = this.props
+		const { alert, versions, version, chapter } = this.props
 		const {
 			versionlistSelectionIndex,
 			languagelistSelectionIndex,
@@ -89,14 +89,6 @@ class VersionPicker extends Component {
 					langInputValue: null,
 					inputValue: version.local_abbreviation.toUpperCase(),
 				})
-			}
-
-			// let's tell the parent component that we're open
-			// so that the chapterPicker doesn't get opened
-			if (dropdown) {
-				togglePickerExclusion('version')
-			} else {
-				togglePickerExclusion('none')
 			}
 
 		}
@@ -340,9 +332,19 @@ class VersionPicker extends Component {
 			}
 
 		}, 300)
-
 	}
 
+	closeDropdown = () => {
+		this.setState({
+			dropdown: false,
+		})
+	}
+
+	cancelBlur = () => {
+		this.setState({
+			cancelBlur: true,
+		})
+	}
 
 	render() {
 		const { version, intl, languageMap } = this.props
@@ -375,8 +377,8 @@ class VersionPicker extends Component {
 					onBlur={this.onBlur}
 					disabled={inputDisabled}
 				/>
-				<DropdownTransition show={dropdown}>
-					<div onClick={() => this.setState({ cancelBlur: true })}>
+				<DropdownTransition show={dropdown} exemptSelector='.version-picker-container > .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
+					<div onClick={this.cancelBlur}>
 						<VersionPickerModal
 							classes={classes}
 							languageList={languages}
@@ -394,7 +396,7 @@ class VersionPicker extends Component {
 							versionsLanguageName={this.props.languages[languageMap[selectedLanguage]].name}
 							versionFiltering={versionFiltering}
 							intl={intl}
-							cancel={() => this.setState({ dropdown: false })}
+							cancel={this.closeDropdown}
 							inputValue={langInputValue}
 						/>
 					</div>

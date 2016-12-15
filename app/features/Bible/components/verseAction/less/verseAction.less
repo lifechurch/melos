@@ -221,7 +221,7 @@
 		margin-bottom: 15px;
 
 		.selected, li {
-			min-width: 100px;
+			min-width: 50px;
 			font-size: 12px !important;
 			padding-left: 10px;
 		}
@@ -232,7 +232,7 @@
 	}
 
 	.note-editor {
-		margin-top: -110px;
+		margin-top: -115px;
 		textarea {
 			margin: 0;
 			border: none;
@@ -270,6 +270,7 @@
 	bottom: 130%;
 	left: 0;
 	overflow: hidden;
+	pointer-events: none;
 }
 
 .va-share-panel {
@@ -301,6 +302,7 @@
 
 	&.va-share-open {
 		transform: translateY(0%);
+		pointer-events: auto;
 	}
 }
 

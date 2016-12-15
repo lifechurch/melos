@@ -68,7 +68,7 @@ class ChapterPicker extends Component {
 	 * @param  prevState  				The previous state
 	 */
 	componentDidUpdate(prevProps, prevState) {
-		const { books, togglePickerExclusion, chapter, bookMap } = this.props
+		const { books, chapter, bookMap } = this.props
 		const {
 			chapterlistSelectionIndex,
 			booklistSelectionIndex,
@@ -113,14 +113,6 @@ class ChapterPicker extends Component {
 				if (!chapterLoading && !dropdown && chapter.reference) {
 					this.setState({ inputValue: chapter.reference.human })
 				}
-			}
-
-			// let's tell the parent component that we're open
-			// so that the versionPicker doesn't get opened
-			if (dropdown) {
-				togglePickerExclusion('chapter')
-			} else {
-				togglePickerExclusion('none')
 			}
 
 		}
@@ -189,7 +181,6 @@ class ChapterPicker extends Component {
 		const { getChapter, books, bookMap } = this.props
 
 		if (selectedChapter && selectedChapter.usfm) {
-			console.log(`${books[bookMap[selectedChapter.usfm.split('.')[0]]].human} ${selectedChapter.human}`)
 			this.setState({
 				selectedChapter: selectedChapter.usfm,
 				inputValue: `${books[bookMap[selectedChapter.usfm.split('.')[0]]].human} ${selectedChapter.human}`,
@@ -470,10 +461,19 @@ class ChapterPicker extends Component {
 			}
 
 		}, 300)
-
-
 	}
 
+	closeDropdown = () => {
+		this.setState({
+			dropdown: false,
+		})
+	}
+
+	cancelBlur = () => {
+		this.setState({
+			cancelBlur: true,
+		})
+	}
 
 	render() {
 		const { bookMap, chapter } = this.props
@@ -504,8 +504,8 @@ class ChapterPicker extends Component {
 					onBlur={this.onBlur}
 					disabled={inputDisabled}
 				/>
-				<DropdownTransition show={dropdown} classes={''}>
-					<div onClick={() => this.setState({ cancelBlur: true })}>
+				<DropdownTransition show={dropdown} exemptSelector='.chapter-picker-container > .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
+					<div onClick={this.cancelBlur}>
 						<ChapterPickerModal
 							classes={classes}
 							bookList={books}
@@ -519,7 +519,7 @@ class ChapterPicker extends Component {
 							chapterlistSelectionIndex={chapterlistSelectionIndex}
 							onMouseOver={this.handleListHover}
 							alert={listErrorAlert}
-							cancel={() => this.setState({ dropdown: false })}
+							cancel={this.closeDropdown}
 						/>
 					</div>
 				</DropdownTransition>
