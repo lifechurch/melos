@@ -173,10 +173,10 @@ class MomentCreate extends Component {
 			if (typeof onClose === 'function') {
 				onClose(true)
 			}
-			this.clearLocalMomentData()
 		}, error => {
 
 		})
+		this.clearLocalMomentData()
 	}
 
 
@@ -208,7 +208,7 @@ class MomentCreate extends Component {
 		}
 
 		// display Bookmark create
-		if (kind == 'bookmark') {
+		if (kind == 'bookmark' && localVerses) {
 			createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
 			contentDiv = (
 					<VerseCard verseContent={localVerses}>
@@ -220,7 +220,7 @@ class MomentCreate extends Component {
 							</div>
 					</VerseCard>
 			)
-		} else if (kind == 'note') {
+		} else if (kind == 'note' && localVerses) {
 			createHeader = <FormattedMessage id='Reader.verse action.note' />
 			contentDiv = (
 				<div className='note-create'>
@@ -231,7 +231,7 @@ class MomentCreate extends Component {
 						<Select list={this.USER_STATUS} onChange={this.changeUserStatus} />
 					</div>
 					<div className='note-editor'>
-						<NoteEditor intl={intl} updateNote={this.onNoteKeyPress} content={content} />
+						<NoteEditor intl={intl} updateNote={this.onNoteKeyPress} />
 					</div>
 				</div>
 			)
