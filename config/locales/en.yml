@@ -1947,6 +1947,7 @@ en:
         draft:                                  "Draft"
         save:                                   "Save"
         add labels:                             "Add Labels…"
+        no labels:                              "You don't have any labels yet. Simply start typing and press Enter to add a new label to this Bookmark. Once you've created a new label, it will be available for you to add to any of your Bookmarks."
         labels:                                 "Labels"
         add with count:                         "Add (%{count})"
         alphabetical:                           "Alphabetical"

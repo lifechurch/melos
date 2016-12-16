@@ -901,7 +901,7 @@ zh-CN:
         status: 
             on track: "如期进展！"
             days ahead: 
-                other: "还剩 %{count} 天！"
+                other: "进度超前%{count}天！"
             missed days: 
                 other: "错过了%{count} 天"
         bible plan language: "读经计划的语言"
@@ -1892,6 +1892,7 @@ zh-CN:
                 plans: "计划"
                 videos: "视频"
                 me: "我"
+                recent versions: "最近使用的圣经译本"
             chapterpicker: 
                 book label: "书卷"
                 chapter label: "章"
@@ -1912,3 +1913,21 @@ zh-CN:
                 bible: "圣经"
                 users: "用户"
                 plans: "计划"
+            version: 
+                learn more: "获取更多信息"
+            verse action: 
+                copy: "复制"
+                bookmark: "书签"
+                note: "笔记"
+                private: "保密"
+                public: "公开"
+                friends: "朋友"
+                draft: "草稿"
+                save: "保存"
+                add labels: "添加标签……"
+                labels: "标签"
+                add with count: "添加(%{count})"
+                alphabetical: "字母顺序"
+                count: "书签计数"
+                add color: "添加颜色"
+                labels private: "标签不会被公开"
