@@ -39,10 +39,6 @@ class MomentCreate extends Component {
 		const { verses, references } = this.props
 		const { localVerses, localRefs } = this.state
 		// merge in new verses
-		console.log(verses)
-		console.log(references)
-		console.log(localVerses)
-		console.log(localRefs)
 		if (nextProps.verses && nextProps.references) {
 			if (verses !== nextProps.verses) {
 				this.setState({

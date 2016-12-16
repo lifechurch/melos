@@ -15,12 +15,12 @@ const ActionCreators = {
 				dispatch(ActionCreators.bibleVersions({ language_tag: language_tag, type: 'all' })),
 				dispatch(ActionCreators.bibleConfiguration()),
 				dispatch(ActionCreators.bibleVersion({ id: version })),
-				dispatch(ActionCreators.bibleChapter({ id: version, reference: reference, format: 'html', language_tag: language_tag }))
+				dispatch(ActionCreators.bibleChapter({ id: version, reference: reference, format: 'html', language_tag: language_tag })),
+				dispatch(ActionCreators.momentsColors(auth))
 			]
 
 			if (auth) {
 				promises.push(dispatch(ActionCreators.momentsVerseColors(auth, { usfm: reference, version_id: version })))
-				promises.push(dispatch(ActionCreators.momentsColors(auth)))
 				promises.push(dispatch(ActionCreators.momentsLabels(auth)))
 				promises.push(dispatch(ActionCreators.usersViewSettings(auth)))
 			}
