@@ -34,7 +34,7 @@ class LabelsModal extends Component {
 		} else {
 			labels = (
 				<div className='label-list'>
-					<FormattedMessage id='moment create.no labels' />
+					<FormattedMessage id='Reader.verse action.no labels' />
 				</div>
 			)
 		}
