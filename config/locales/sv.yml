@@ -138,7 +138,7 @@ sv:
         best educational app: "Bästa utbildningsappen"
         kids_app: 
             title: "Bibelappen för barn"
-            description: "Bibelappen för barn är ett bra sätt för dina barn att lära sig bibliska historier om Jesus, om gåvan evigt liv och om Guds många lärdomar för oss.I denna härligt illustrerade interaktiva upplevelse ägnar sig barn åt Guds Ord samtidigt som de tjänar poäng för att läsa och samla skatter."
+            description: "Bibelappen för barn är ett bra sätt för dina barn att lära sig bibelberättelser om Jesus, om gåvan evigt liv och om Guds många lärdomar för oss. I denna härligt illustrerade interaktiva upplevelse ägnar sig barn åt Guds Ord samtidigt som de tjänar poäng för att läsa och samla skatter."
         100million: 
             title: "Det närmar sig 100 miljoner"
             description: "Bibelappen har installerats nästan 100 miljoner gånger - en otrolig milstolpe! Men vi har precis kommit igång. Ladda ner den fria Bibelappen idag - och dela sedan appen med dina vänner. Låt oss skapa historia tillsammans."
@@ -161,9 +161,9 @@ sv:
         free download: "Ladda ner gratis!"
         app store: "Tillgänglig i App store"
         google play: "Hämta den i Google Play"
-        amazon: "Tillgängligt i Amazon Appstore för Android"
+        amazon: "Tillgänglig i Amazon Appstore för Android"
         app icon: "App icon for The Bible App for Kids"
-        jesus and friends: "Jesus och vänner"
+        jesus and friends: "Jesus med vänner"
         interact text: "Interagera med Bibeln och se den bli levande."
         story text 1: "Edens lustgård"
         story text 2: "Första julen"
@@ -178,14 +178,14 @@ sv:
         share: 
             tell friends: "Berätta för dina vänner om Bibelappen för barn"
             facebook name: "Bibelappen för barn"
-            facebook description: "Bibelappen för barn är här! Ladda ned gratisappen för iOS och Android idag: Interaktiva bibelhistorier för att hjälpa ditt barn att lära, spela och växa i Guds Ord. www.bible.com/sv/kids"
+            facebook description: "Bibelappen för barn är här! Ladda ned gratisappen för iOS och Android idag: Interaktiva bibelberättelser för att hjälpa ditt barn att lära, spela och växa i Guds Ord. www.bible.com/sv/kids"
             facebook link: "https://www.bible.com/sv/kids"
             facebook redirect: "https://www.bible.com/sv/kids"
             twitter description: "Bibelappen för barn från @YouVersion är här! Den är rolig och helt gratis. Ladda ned: bible.com/sv/kids"
             twitter hashtags: "barnbibeln"
             email: "E-post"
             email subject: "Bibelappen för barn är här!"
-            email body: "Goda nyheter - Bibelappen för barn är här! Den är helt gratis och nu är tillgänglig för iPhone, iPad, iPod touch och Android-enheter. Appen är en växande samling Bibelberättelser med beröringsaktiverade animationer och lärande, perfekt för att hjälpa barnen att lära sig de stora berättelserna i Bibeln. Gå till bible.com/sv/kids på din mobila enheten för att ladda ned den i dag."
+            email body: "Goda nyheter - Bibelappen för barn är här! Den är helt gratis och är nu tillgänglig för iPhone, iPad, iPod touch och Android-enheter. Appen har en växande samling Bibelberättelser med beröringsaktiverade animationer och lärande, perfekt för att hjälpa barnen att lära sig de stora berättelserna i Bibeln. Gå till bible.com/sv/kids på din mobila enheten för att ladda ner den i dag."
         partner: 
             youversion: "YouVersion: Världens populäraste Bibelapp"
             in partnership: "i samarbete med"
@@ -1170,7 +1170,7 @@ sv:
         banner open: "Öppna"
     download bafk ad: 
         title: "Ladda ned Bibelappen för barn"
-        description copy: "Bibelappen för barn är ett fantastiskt verktyg för dina barn att lära sig Bibelns historier om Jesus."
+        description copy: "Bibelappen för barn är ett fantastiskt verktyg för dina barn att lära sig Bibelns berättelser om Jesus."
         download: "Ladda ned nu"
     about page: 
         relevancy: "Relevans"
@@ -1911,6 +1911,7 @@ sv:
                 plans: "Läsplaner"
                 videos: "Videor"
                 me: "Mig"
+                recent versions: "Senast använda"
             chapterpicker: 
                 book label: "BOK"
                 chapter label: "KAPITEL"
@@ -1931,3 +1932,21 @@ sv:
                 bible: "Bibeln"
                 users: "Användare"
                 plans: "Läsplaner"
+            version: 
+                learn more: "Läs mer"
+            verse action: 
+                copy: "Kopiera"
+                bookmark: "Bokmärke"
+                note: "Anteckning"
+                private: "Privata"
+                public: "Offentliga"
+                friends: "Vänner"
+                draft: "Utkast"
+                save: "Spara"
+                add labels: "Add Labels…"
+                labels: "Etiketter"
+                add with count: "Add (%{count})"
+                alphabetical: "Alfabetisk"
+                count: "Count"
+                add color: "Add Color"
+                labels private: "Labels are always private"

@@ -184,7 +184,7 @@ ro:
         feature 1: "O experiență biblică gratuită pentru copii tăi"
         feature 2: "Aplicație cu povestiri animate pentru smartphone și tablete"
         feature 3: "Ilustrații colorate cu animații activate de atingere"
-        feature 4: "Jocurile și activitățile îi ajută pe copii să își aminească ce învață"
+        feature 4: "Jocurile și activitățile îi ajută pe copii să își amintească ce învață"
         feature 5: "Navigare ușoară pentru copii"
         share: 
             tell friends: "Spune-le prietenilor tăi despre Aplicația Biblia pentru copii."
@@ -1930,6 +1930,7 @@ ro:
                 plans: "Planuri de citire"
                 videos: "Videoclipuri"
                 me: "Eu"
+                recent versions: "Folosite recent"
             chapterpicker: 
                 book label: "CARTE"
                 chapter label: "CAPITOL"
@@ -1950,3 +1951,21 @@ ro:
                 bible: "Biblia"
                 users: "Utilizatori"
                 plans: "Planuri de citire"
+            version: 
+                learn more: "Află mai mult"
+            verse action: 
+                copy: "Copiază"
+                bookmark: "Marcaj"
+                note: "Notiță"
+                private: "Privat"
+                public: "Public"
+                friends: "Prieteni"
+                draft: "Ciornă"
+                save: "Salvează"
+                add labels: "Add Labels…"
+                labels: "etichete"
+                add with count: "Add (%{count})"
+                alphabetical: "Alfabetic"
+                count: "Count"
+                add color: "Add Color"
+                labels private: "Labels are always private"
