@@ -10,12 +10,16 @@
   <sitemap><loc>https://www.bible.com/sitemaps/sm-version-256.xml</loc></sitemap>
 
   <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1260.xml</loc></sitemap>
-  <sitemap><loc>https://www.bible.com/sitemaps/sm-en-version-1517.xml</loc></sitemap>
-  <sitemap><loc>https://www.bible.com/sitemaps/sm-en-version-1217.xml</loc></sitemap>
-  <sitemap><loc>https://www.bible.com/sitemaps/sm-en-version-1423.xml</loc></sitemap>
-  <sitemap><loc>https://www.bible.com/sitemaps/sm-en-version-1491.xml</loc></sitemap>
-  <sitemap><loc>https://www.bible.com/sitemaps/sm-en-version-1493.xml</loc></sitemap>
-  <sitemap><loc>https://www.bible.com/sitemaps/sm-en-version-1494.xml</loc></sitemap>
-  <sitemap><loc>https://www.bible.com/sitemaps/sm-en-version-1479.xml</loc></sitemap>
-  <sitemap><loc>https://www.bible.com/sitemaps/sm-en-version-1437.xml</loc></sitemap>
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1517.xml</loc></sitemap>
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1217.xml</loc></sitemap>
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1423.xml</loc></sitemap>
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1491.xml</loc></sitemap>
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1493.xml</loc></sitemap>
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1494.xml</loc></sitemap>
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1479.xml</loc></sitemap>
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1437.xml</loc></sitemap>
+
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1461.xml</loc></sitemap>
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1613.xml</loc></sitemap>
+  <sitemap><loc>https://www.bible.com/sitemaps/sm-version-1260.xml</loc></sitemap>
 </sitemapindex>
