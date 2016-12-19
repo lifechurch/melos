@@ -7,7 +7,7 @@ import TriggerButton from '../../../../components/TriggerButton'
 import ShareWidget from './share/Share'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import ActionCreators from '../../actions/creators'
-import moment from 'moment'
+// import moment from 'moment'
 import MomentCreate from './MomentCreate'
 
 class VerseAction extends Component {
@@ -73,7 +73,7 @@ class VerseAction extends Component {
 			kind: 'highlight',
 			references: references,
 			color: color,
-			created_dt: moment().format()
+			created_dt: new Date().toISOString()
 		}))
 
 		this.handleClose({})

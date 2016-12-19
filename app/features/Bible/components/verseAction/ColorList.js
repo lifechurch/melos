@@ -4,7 +4,8 @@ import CarouselArrow from '../../../../components/Carousel/CarouselArrow'
 import EllipsisMoreIcon from '../../../../components/EllipsisMoreIcon'
 import XMark from '../../../../components/XMark'
 import Color from './Color'
-import { SliderPicker } from 'react-color'
+// import { SliderPicker } from 'react-color'
+import SliderPicker from '../../../../../node_modules/react-color/lib/components/slider/Slider'
 
 class ColorList extends Component {
 

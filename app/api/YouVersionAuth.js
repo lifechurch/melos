@@ -1,4 +1,4 @@
-import Promise from 'bluebird'
+// import Promise from 'bluebird'
 import https from 'https'
 import { fetchToken } from '@youversion/token-storage'
 

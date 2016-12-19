@@ -6,14 +6,14 @@ import configureStore from './store'
 import defaultState from './defaultState'
 import createLogger from 'redux-logger'
 import { addLocaleData, IntlProvider } from 'react-intl'
-import moment from 'moment'
+// import moment from 'moment'
 import { useRouterHistory } from 'react-router'
 import { createHistory } from 'history'
 import getRoutes from './routes'
 import cookie from 'react-cookie';
 import ActionCreators from '../../features/Bible/actions/creators'
 
-require('moment/min/locales')
+// require('moment/min/locales')
 
 let initialState = defaultState
 
@@ -32,7 +32,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 
 const store = configureStore(initialState, null, logger)
 addLocaleData(window.__LOCALE__.data)
-moment.locale(window.__LOCALE__.locale)
+// moment.locale(window.__LOCALE__.locale)
 
 
 function requireBibleData(nextState, replace, callback) {

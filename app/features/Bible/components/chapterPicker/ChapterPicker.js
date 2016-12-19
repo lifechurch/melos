@@ -5,7 +5,6 @@ import Filter from '../../../../lib/filter'
 import scrollList from '../../../../lib/scrollToView'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import cookie from 'react-cookie';
-import moment from 'moment'
 import ChapterPickerModal from './ChapterPickerModal'
 import Label from './Label'
 import DropdownTransition from '../../../../components/DropdownTransition'
