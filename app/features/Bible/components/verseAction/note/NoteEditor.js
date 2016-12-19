@@ -5,16 +5,6 @@ import LabelSelector from '../bookmark/LabelSelector'
 
 class NoteEditor extends Component {
 
-	constructor(props) {
-		super(props)
-
-		this.state = {
-			inputValue: null
-		}
-
-		this.onChange = ::this.onChange
-	}
-
 	componentDidMount() {
 		// focus the text area
 		if (document.getElementsByName('note-text')) {
@@ -22,12 +12,9 @@ class NoteEditor extends Component {
 		}
 	}
 
-	onChange(e) {
+	onChange = (e) => {
 		const { updateNote } = this.props
 
-		this.setState({
-			inputValue: e.target.value
-		})
    	if (typeof updateNote == 'function') {
    		updateNote(e.target.value)
    	}

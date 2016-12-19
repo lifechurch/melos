@@ -71,7 +71,7 @@ class Chapter extends Component {
 			})
 
 			// Get selected text
-			verseNode.childNodes.forEach((cNode) => {
+			Array.prototype.forEach.call(verseNode.childNodes, (cNode) => {
 				if (cNode.getAttribute('class') === 'content') {
 					selectedText[lastUsfm] = cNode.innerText
 				}

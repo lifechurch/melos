@@ -1,30 +1,23 @@
 import React, { Component, PropTypes } from 'react'
 import VerseAction from './verseAction/VerseAction'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import ActionCreators from '../actions/creators'
 import Filter from '../../../lib/filter'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import Books from './chapterPicker/Books'
-import Chapters from './chapterPicker/Chapters'
-import Languages from './versionPicker/Languages'
-import Versions from './versionPicker/Versions'
-import cookie from 'react-cookie';
-import Label from './chapterPicker/Label'
-import LabelPill from './verseAction/bookmark/LabelPill'
-import ColorList from './verseAction/ColorList'
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+// import cookie from 'react-cookie';
 import Chapter from './content/Chapter'
 import ReaderArrows from './content/ReaderArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
-import LabelList from './verseAction/bookmark/LabelList'
+// import LabelList from './verseAction/bookmark/LabelList'
 import LocalStore from '../../../lib/localStore'
 import RecentVersions from '../lib/RecentVersions'
-import LabelSelector from './verseAction/bookmark/LabelSelector'
+// import LabelSelector from './verseAction/bookmark/LabelSelector'
 import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
-import DropdownTransition from '../../../components/DropdownTransition'
+// import DropdownTransition from '../../../components/DropdownTransition'
 import Immutable from 'immutable'
 
 
@@ -165,9 +158,7 @@ class Bible extends Component {
 			})
 		}
 
-		if (typeof this.chapter !== 'undefined') {
-			this.chapter.clearSelection()
-		}
+		this.handleVerseSelectionClear()
 	}
 
 	// this handles the class toggling for book and chapter clicks on mobile
@@ -178,18 +169,6 @@ class Bible extends Component {
 	toggleVersionPickerList() {
 		(this.state.classes) == 'hide-langs' ? this.setState({ classes: 'hide-versions' }) : this.setState({ classes: 'hide-langs' })
 	}
-
-	togglePickerExclusion(context) {
-		// each picker calls to tell which context is now open
-		if (context == 'chapter') {
-			this.setState({ versionDropDownCancel: true, chapDropDownCancel: false })
-		} else if (context == 'version') {
-			this.setState({ versionDropDownCancel: false, chapDropDownCancel: true })
-		} else if (context == 'none') {
-			this.setState({ versionDropDownCancel: false, chapDropDownCancel: false })
-		}
-	}
-
 
 	handleVerseSelect(verseSelection) {
 		const { hosts, bible: { version: { id }, chapter: { reference: { human, usfm } } } } = this.props
@@ -264,7 +243,6 @@ class Bible extends Component {
 						initialInput={this.inputValue}
 						initialChapters={this.chapters}
 						cancelDropDown={this.state.chapDropDownCancel}
-						togglePickerExclusion={::this.togglePickerExclusion}
 						ref={(cpicker) => { this.chapterPickerInstance = cpicker }}
 					/>
 					<VersionPicker
@@ -278,7 +256,6 @@ class Bible extends Component {
 						getVersion={::this.getVersion}
 						getVersions={::this.getVersions}
 						cancelDropDown={this.state.versionDropDownCancel}
-						togglePickerExclusion={::this.togglePickerExclusion}
 						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
 					/>
 					<AudioPopup audio={bible.audio} hosts={hosts} />

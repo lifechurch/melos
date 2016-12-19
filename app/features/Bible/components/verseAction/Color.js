@@ -10,8 +10,15 @@ class Color extends Component {
 		}
 	}
 
+	onDelete = () => {
+		const { deleteColor, color } = this.props
+		if (typeof deleteColor == 'function') {
+			deleteColor(color)
+		}
+	}
+
 	render() {
-		const { color } = this.props
+		const { color, deleteColor } = this.props
 
 		if (color) {
 			let val
@@ -20,17 +27,32 @@ class Color extends Component {
 			} else {
 				val = color
 			}
-			return (
-				<div className={`color color-${val}`} style={ { 'backgroundColor': `#${val}` } } onClick={this.onSelect}>
-				<style>
-				{`
-					.color-${val}:hover {
-						border: 1px solid ${shadeColor(`#${val}`, -0.18)}
-					}
-				`}
-				</style>
-				</div>
-			)
+			if (deleteColor) {
+				return (
+					<div className={`color color-${val}`} style={ { 'backgroundColor': `#${val}` } } onClick={this.onSelect}>
+						<style>
+						{`
+							.color-${val}:hover {
+								border: 1px solid ${shadeColor(`#${val}`, -0.18)}
+							}
+						`}
+						</style>
+						<div className='delete-color' onClick={this.deleteColor}><XMark /></div>
+					</div>
+				)
+			} else {
+				return (
+					<div className={`color color-${val}`} style={ { 'backgroundColor': `#${val}` } } onClick={this.onSelect}>
+					<style>
+					{`
+						.color-${val}:hover {
+							border: 1px solid ${shadeColor(`#${val}`, -0.18)}
+						}
+					`}
+					</style>
+					</div>
+				)
+			}
 		} else {
 			return (
 				<div></div>
@@ -44,10 +66,12 @@ class Color extends Component {
 /**
  * 		@color					  		string of hex color
  * 		@onSelect			  			function to call when selecting color
+ * 		@deleteColor					function to show X and delete color
  */
 Color.propTypes = {
 	color: React.PropTypes.string,
-	onSelect: React.PropTypes.func
+	onSelect: React.PropTypes.func,
+	deleteColor: React.PropTypes.func,
 }
 
 export default Color

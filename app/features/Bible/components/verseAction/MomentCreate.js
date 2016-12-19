@@ -17,11 +17,11 @@ class MomentCreate extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			verseContent: props.verses,
-			references: props.references,
+			localVerses: props.verses || {},
+			localRefs: props.references || [],
 			content: null,
 			user_status: 'private',
-			addedLabels: {},
+			addedLabels: null,
 			dropdown: false,
 			selectedColor: null,
 		}
@@ -35,20 +35,21 @@ class MomentCreate extends Component {
 
 	}
 
-	componentDidMount() {
-		const { isLoggedIn } = this.props
-		// redirect to sign in page
-		if (!isLoggedIn) {
-			window.location.replace('/sign-in')
-		}
-	}
-
 	componentWillReceiveProps(nextProps) {
-		const { verses, references } = nextProps
-		const { verses:currentVerses, references:currentReferences } = this.props
-
-		if (verses !== currentVerses || references !== currentReferences) {
-			this.setState({ verseContent: verses, references })
+		const { verses, references } = this.props
+		const { localVerses, localRefs } = this.state
+		// merge in new verses
+		if (nextProps.verses && nextProps.references) {
+			if (verses !== nextProps.verses) {
+				this.setState({
+					localVerses: Immutable.fromJS(localVerses).merge(nextProps.verses).toJS(),
+				})
+			}
+			if (references !== nextProps.references) {
+				this.setState({
+					localRefs: Immutable.fromJS(localRefs).concat(nextProps.references).toJS(),
+				})
+			}
 		}
 	}
 
@@ -67,6 +68,7 @@ class MomentCreate extends Component {
 		if (typeof onClose === 'function') {
 			onClose()
 		}
+		this.clearLocalMomentData()
 	}
 
 	/**
@@ -77,17 +79,17 @@ class MomentCreate extends Component {
 	 *   														 i.e. 59-REV.2.1
 	 */
 	deleteVerse = (key) => {
-		const { verseContent, references } = this.state
+		const { localVerses, localRefs } = this.state
 
-		if (key in verseContent) {
+		if (key in localVerses) {
 			this.setState({
-				verseContent: Immutable.fromJS(verseContent).delete(key).toJS(),
+				localVerses: Immutable.fromJS(localVerses).delete(key).toJS(),
 			})
 			// delete from references as well
-			references.forEach((ref, index) => {
-				if (verseContent[key].usfm[0] == ref.usfm[0]) {
+			localRefs.forEach((ref, index) => {
+				if (localVerses[key].usfm[0] == ref.usfm[0]) {
 					this.setState({
-						references: Immutable.fromJS(references).delete(index).toJS(),
+						localRefs: Immutable.fromJS(localRefs).delete(index).toJS(),
 					})
 				}
 			})
@@ -140,6 +142,17 @@ class MomentCreate extends Component {
 		})
 	}
 
+	clearLocalMomentData = () => {
+		// reset some stuff so it isn't there for the next moment create
+		this.setState({
+			addedLabels: null,
+			content: null,
+			selectedColor: null,
+			localVerses: {},
+			localRefs: [],
+		})
+	}
+
 	/**
 	 * on save button click. actually creates the moment
 	 *
@@ -147,15 +160,15 @@ class MomentCreate extends Component {
 	 */
 	save = () => {
 		const { dispatch, isLoggedIn, kind, onClose } = this.props
-		const { references, addedLabels, content, user_status, selectedColor } = this.state
+		const { localRefs, addedLabels, content, user_status, selectedColor } = this.state
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
 			kind: kind,
-			references: references,
-			labels: addedLabels,
+			references: localRefs,
+			labels: addedLabels ? addedLabels : null,
 			created_dt: new Date().toISOString().split('.')[0] + "+00:00",
 			content: content,
 			user_status: user_status,
-			color: selectedColor.replace('#', ''),
+			color: selectedColor ? selectedColor.replace('#', '') : null,
 		})).then(data => {
 			if (typeof onClose === 'function') {
 				onClose(true)
@@ -163,14 +176,15 @@ class MomentCreate extends Component {
 		}, error => {
 
 		})
+		this.clearLocalMomentData()
 	}
 
 
 	render() {
-		const { verses, labels, colors, kind, intl } = this.props
-		const { dropdown, selectedColor, verseContent } = this.state
+		const { labels, colors, kind, intl } = this.props
+		const { localVerses, dropdown, selectedColor, content } = this.state
 
-		let labelsDiv, colorsDiv, content, createHeader = null
+		let labelsDiv, colorsDiv, contentDiv, createHeader = null
 
 		if (colors) {
 			colorsDiv = (
@@ -194,10 +208,10 @@ class MomentCreate extends Component {
 		}
 
 		// display Bookmark create
-		if (kind == 'bookmark') {
+		if (kind == 'bookmark' && localVerses) {
 			createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
-			content = (
-					<VerseCard verseContent={verseContent}>
+			contentDiv = (
+					<VerseCard verseContent={localVerses}>
 							<div className='small-10'>
 								<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
 							</div>
@@ -206,11 +220,11 @@ class MomentCreate extends Component {
 							</div>
 					</VerseCard>
 			)
-		} else if (kind == 'note') {
+		} else if (kind == 'note' && localVerses) {
 			createHeader = <FormattedMessage id='Reader.verse action.note' />
-			content = (
+			contentDiv = (
 				<div className='note-create'>
-					<VerseCard verseContent={verseContent} deleteVerse={this.deleteVerse}>
+					<VerseCard verseContent={localVerses} deleteVerse={this.deleteVerse}>
 						{ colorsDiv }
 					</VerseCard>
 					<div className='user-status-dropdown'>
@@ -233,7 +247,7 @@ class MomentCreate extends Component {
 							<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: "Reader.verse action.save"}) }</div>
 						</div>
 					</div>
-					{ content }
+					{ contentDiv }
 				</div>
 			</div>
 		)

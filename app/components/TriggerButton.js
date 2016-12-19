@@ -16,6 +16,15 @@ class TriggerButton extends Component {
 		this.setState({ isOpen: !isOpen })
 	}
 
+	componentWillReceiveProps(nextProps) {
+		const { isOpen } = this.state
+		if (isOpen !== nextProps.isOpen) {
+			this.setState({
+				isOpen: nextProps.isOpen,
+			})
+		}
+	}
+
 	render() {
 		const { image, label } = this.props
 		const { isOpen } = this.state

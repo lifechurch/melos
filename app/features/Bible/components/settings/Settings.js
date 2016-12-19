@@ -63,13 +63,19 @@ class Settings extends Component {
 		this.onChange("reader.settings.showVerseNumbers", value)
 	}
 
+	closeDropdown = () => {
+		this.setState({
+			isOpen: false,
+		})
+	}
+
 	render() {
 		const { initialFontSize, initialFontFamily, initialShowFootnotes, initialShowVerseNumbers } = this.props
 
 		return (
 			<div className='reader-settings'>
 				<TriggerButton image={<FontSettingsTriggerImage />} onClick={this.triggerClick} />
-					<DropdownTransition show={this.state.isOpen} classes={'reader-settings-modal'}>
+					<DropdownTransition show={this.state.isOpen} classes={'reader-settings-modal'} onOutsideClick={this.closeDropdown} exemptClass='reader-settings'>
 						<div className="header vertical-center horizontal-center"><FormattedMessage id="Reader.header.font label" /></div>
 						<div className="body">
 							<ButtonBar items={this.fontSizes} onClick={this.handleFontSizeChange} initialValue={initialFontSize} />

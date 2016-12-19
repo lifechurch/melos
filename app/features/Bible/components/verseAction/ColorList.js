@@ -72,7 +72,7 @@ class ColorList extends Component {
 
 		let colors, content = null
 
-		if (list) {
+		if (Array.isArray(list)) {
 			colors = list.map((color, index) => {
 				return (
 					<div key={color}>

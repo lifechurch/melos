@@ -71,6 +71,8 @@
 }
 
 .color-list {
+	max-width: 320px;
+	width: 100%;
 
 	.carousel-standard {
 		margin: 0 auto 0 auto;
@@ -123,6 +125,7 @@
 	.custom-color-picker {
 		display: flex;
 		align-items: center;
+		width: 100%;
 	}
 	.slider {
 		display: inline-block;
@@ -149,8 +152,12 @@
 
 // CREATE BOOKMARK/CREATE NOTE
 .verse-action-create {
-	padding: 25px 0 25px 0;
+	padding: 25px 0 250px 0;
 	background-color: @light-grey;
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+	.yv-scroll-bar;
 
 	.heading {
 		display: inline-flex;
@@ -171,6 +178,8 @@
 	}
 	.color-list {
 		padding: 20px 10px 20px 10px;
+		margin-right: auto;
+		margin-left: auto;
 	}
 	.colors-div {
     height: 100%;
@@ -198,6 +207,7 @@
 	.labels {
 		width: 100%;
 	}
+
 }
 
 // NOTE
@@ -211,7 +221,7 @@
 		margin-bottom: 15px;
 
 		.selected, li {
-			min-width: 100px;
+			min-width: 50px;
 			font-size: 12px !important;
 			padding-left: 10px;
 		}
@@ -222,7 +232,7 @@
 	}
 
 	.note-editor {
-
+		margin-top: -115px;
 		textarea {
 			margin: 0;
 			border: none;
@@ -231,27 +241,28 @@
 	}
 }
 
+
+
+
+
+
 .va-share {
 	position: relative;
 }
 
-.va-moment-container {
+
+.verse-action > .modal {
 	position: fixed;
 	width: 100%;
 	top: 70px;
 	bottom: 0;
-	z-index: 11;
-	padding-bottom: 170px;
-	transition: transform 0.6s ease;
-	transform: translateY(100%);
-
-	&.closed {
-
-	}
-
-	&.open {
-		transform: translateY(0%);
-	}
+	margin: 0;
+	padding: 0;
+}
+.va-moment-container {
+	height: 100%;
+	width: 100%;
+	position: fixed;
 }
 
 .va-share-panel-wrapper {
@@ -259,6 +270,7 @@
 	bottom: 130%;
 	left: 0;
 	overflow: hidden;
+	pointer-events: none;
 }
 
 .va-share-panel {
@@ -290,5 +302,10 @@
 
 	&.va-share-open {
 		transform: translateY(0%);
+		pointer-events: auto;
 	}
+}
+
+.xmark-container:hover {
+	cursor: pointer;
 }
