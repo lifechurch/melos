@@ -45,7 +45,7 @@ class EventViewDetails extends Component {
 				<li key={l}>
 					{name}
 					{address}
-					<div className="times">{locations[l].times.map((t) => {return moment(t.start_dt).format('dddd h:mm A')}).join(', ')}</div>
+					<div className="times">{locations[l].times.map((t) => {return moment.tz(t.start_dt, locations[l].timezone).format('dddd h:mm A')}).join(', ')}</div>
 				</li>
 			)
 		})
