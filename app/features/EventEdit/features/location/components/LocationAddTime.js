@@ -14,9 +14,9 @@ Number.isInteger = Number.isInteger || function(value) {
     Math.floor(value) === value;
 };
 
-function changeTime(dt, t) {
+function changeTime(dt, t, tz) {
 	var t = t.replace(/ /, ':').split(':')
-	let new_dt = moment(dt)
+	let new_dt = moment.tz(dt, tz)
 
 	if (t.length > 2 && t[0] != 12 && t[2].toLowerCase() == 'pm') {
 		t[0] = parseInt(t[0]) + 12
@@ -54,16 +54,16 @@ function getDurationAndInterval(start_dt, end_dt) {
 	}
 }
 
-function getEndDate(start_dt, start_time, duration, interval) {
-	var end_dt = changeTime(start_dt, start_time)
+function getEndDate(start_dt, start_time, duration, interval, tz) {
+	var end_dt = changeTime(start_dt, start_time, tz)
 	end_dt.add(duration, interval)
 	return end_dt
 }
 
 function getState(start_dt, start_time, duration, interval, props) {
 	const { handleTimeChange, timeIndex } = props
-	var new_start_dt = changeTime(start_dt, start_time)
-	var new_end_dt = getEndDate(new_start_dt, start_time, duration, interval)
+	var new_start_dt = changeTime(start_dt, start_time, props.tz)
+	var new_end_dt = getEndDate(new_start_dt, start_time, duration, interval, props.tz)
 	handleTimeChange(timeIndex, new_start_dt, new_end_dt)
 	return {
 		start_dt: new_start_dt,
