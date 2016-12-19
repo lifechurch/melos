@@ -111,7 +111,7 @@ gulp.task('javascript:prod:planDiscovery', function() {
 // });
 
 gulp.task('javascript:prod:Bible', function() {
-	return browserify("app/standalone/Bible/main.js", { debug: false })
+	return browserify("app/standalone/Bible/main.js", { debug: !IS_PROD })
 		.transform("babelify", { presets: [ "es2015", "stage-0", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
 		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
