@@ -152,7 +152,7 @@ class MomentCreate extends Component {
 			kind: kind,
 			references: references,
 			labels: addedLabels,
-			created_dt: new Date().toISOString(),
+			created_dt: new Date().toISOString().split('.')[0] + "+00:00",
 			content: content,
 			user_status: user_status,
 			color: selectedColor.replace('#', ''),

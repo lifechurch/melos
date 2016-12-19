@@ -73,7 +73,7 @@ class VerseAction extends Component {
 			kind: 'highlight',
 			references: references,
 			color: color,
-			created_dt: new Date().toISOString()
+			created_dt: new Date().toISOString().split('.')[0] + "+00:00"
 		}))
 
 		this.handleClose({})

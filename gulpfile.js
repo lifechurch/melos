@@ -18,8 +18,8 @@ var fs = require('fs');
 var async = require('async');
 var langmap = require('langmap');
 var langs = require('langs');
-var sourcemaps = require("gulp-sourcemaps");
-var gutil = require("gulp-util");
+// var sourcemaps = require("gulp-sourcemaps");
+// var gutil = require("gulp-util");
 
 // Just set this to something because @youversion/js-api expects a value and will crash without it
 process.env['YOUVERSION_TOKEN_PHRASE'] = 'just-a-test';
@@ -92,21 +92,36 @@ gulp.task('javascript:prod:planDiscovery', function() {
 		.pipe(gulp.dest('build/assets'));
 });
 
+//Leaving here for a how-to on doing sourceMaps to inspect package size
+// gulp.task('javascript:prod:Bible', function() {
+// 	return browserify({ entries: "app/standalone/Bible/main.js", debug: false })
+// 		.transform("babelify", { presets: [ "es2015", "stage-0", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
+// 		.transform('loose-envify', { NODE_ENV: 'staging' })
+// 		.bundle()
+// 		.pipe(source('Bible.js'))
+// 		.pipe(buffer())
+// 		.pipe(sourcemaps.init({ loadMaps:true }))
+// 		.pipe(uglify())
+// 		.on('error', gutil.log)
+// 		//.pipe(rev())
+// 		.pipe(sourcemaps.write())
+// 		.pipe(gulp.dest("./public/javascripts/"))
+// 		//.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+// 		//.pipe(gulp.dest('build/assets'));
+// });
+
 gulp.task('javascript:prod:Bible', function() {
-	return browserify({ entries: "app/standalone/Bible/main.js", debug: false })
+	return browserify("app/standalone/Bible/main.js", { debug: false })
 		.transform("babelify", { presets: [ "es2015", "stage-0", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] })
-		.transform('loose-envify', { NODE_ENV: 'staging' })
+		.transform('loose-envify', { NODE_ENV: 'production' })
 		.bundle()
 		.pipe(source('Bible.js'))
 		.pipe(buffer())
-		.pipe(sourcemaps.init({ loadMaps:true }))
 		.pipe(uglify())
-		.on('error', gutil.log)
-		//.pipe(rev())
-		.pipe(sourcemaps.write())
+		.pipe(rev())
 		.pipe(gulp.dest("./public/javascripts/"))
-		//.pipe(rev.manifest({merge:true, base: 'build/assets'}))
-		//.pipe(gulp.dest('build/assets'));
+		.pipe(rev.manifest({merge:true, base: 'build/assets'}))
+		.pipe(gulp.dest('build/assets'));
 });
 
 gulp.task('javascript:prod:subscribeUser', function() {
@@ -193,7 +208,7 @@ gulp.task('javascript', function(callback) {
 	if (IS_PROD) {
 		runSequence('javascript:clean', 'javascript:prod', 'javascript:prod:event', 'javascript:prod:passwordChange', 'javascript:prod:planDiscovery', 'javascript:prod:Bible', 'javascript:prod:subscribeUser', callback);
 	} else {
-		runSequence('javascript:clean', [ /* 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery',*/ 'javascript:dev:Bible' /* , 'javascript:dev:subscribeUser'*/], callback);
+		runSequence('javascript:clean', [ 'javascript:dev', 'javascript:dev:event', 'javascript:dev:passwordChange', 'javascript:dev:planDiscovery', 'javascript:dev:Bible', 'javascript:dev:subscribeUser' ], callback);
 	}
 });
 
