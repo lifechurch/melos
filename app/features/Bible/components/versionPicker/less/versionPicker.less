@@ -1,21 +1,18 @@
 
-// on mobile hide chapter until book is selected, then hide book when selecting chapter
-@media @small-only {
-	.hide-langs {
-		.version-container {
-			display: block;
-		}
-		.language-container {
-			display: none;
-		}
+.hide-langs {
+	.version-container {
+		display: block;
 	}
-	.hide-versions {
-		.version-container {
-			display: none;
-		}
-		.language-container {
-			display: block;
-		}
+	.language-container {
+		display: none;
+	}
+}
+.hide-versions {
+	.version-container {
+		display: none;
+	}
+	.language-container {
+		display: block;
 	}
 }
 .version-picker-modal {
@@ -35,39 +32,28 @@
 		background-color: @light-grey;
 		border-bottom: @thin-grey-border;
 		height: 30px;
+		padding: 0 5px 0 5px;
 
 
 		.prev {
-			display: none;
+			display: block;
+			text-align: @default-float;
+			padding: @default-padding;
+			color: @font-grey;
 		}
 		.cancel {
-			display: none;
+			display: block;
+			text-align: @opposite-direction;
+			padding: @default-padding;
+			color: @font-grey;
+			font-size: 13px;
 		}
 		span {
-			display: inline-block;
-			text-align: center;
+			font-size: 11px;
+			line-height: 1;
 		}
-		@media @medium-up {
+		p {
 			text-align: center;
-		}
-		@media @small-only {
-			.prev {
-				display: block;
-				text-align: @default-float;
-				padding: @default-padding;
-				color: @font-grey;
-			}
-			.cancel {
-				display: block;
-				text-align: @opposite-direction;
-				padding: @default-padding;
-				color: @font-grey;
-				font-size: 13px;
-			}
-			span {
-				font-size: 11px;
-				line-height: 1;
-			}
 		}
 
 	}
@@ -161,28 +147,18 @@
 		overflow: hidden;
 		// margin-right: -5px;
 
-		@media @small-only {
-			.language-selector {
-				display: block;
-			}
-		}
-		@media @medium-up {
-			.language-selector {
-				display: none;
-			}
+		.language-selector {
+			display: block;
 		}
 
 		.version-list {
 			max-height: 460px;
+			min-height: 55px;
 		}
 
 		.change-language {
-			@media @small-only {
-				display: inline-flex;
-			}
-			@media @medium-up {
-				display: none;
-			}
+			display: inline-flex;
+
 			justify-content: space-between;
 			width: 100%;
 			padding: 15px 10px 10px 15px;
@@ -243,13 +219,13 @@
 	.picker-label {
 		// width: 150px;
 		input {
-			width: 65px;
+			width: 80px;
 		}
 	}
 
 	.modal {
 		top: 52px;
-		margin-left: -300px;
+		margin-left: -190px;
 	}
 }
 .dropdown-arrow-container:hover {

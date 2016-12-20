@@ -30,7 +30,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 	logger = createLogger()
 }
 
-const store = configureStore(initialState, null, logger)
+const store = configureStore(initialState, browserHistory, logger)
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 
@@ -44,7 +44,14 @@ function requireBibleData(nextState, replace, callback) {
 	let reference = params.ref || cookie.load('last_read') || 'MAT.1'
 	reference = reference.toUpperCase()
 
-	if (currentState && currentState.bibleReader && currentState.bibleReader.chapter && currentState.bibleReader.chapter.reference && currentState.bibleReader.chapter.reference.usfm == reference) {
+	if (currentState &&
+			currentState.bibleReader &&
+			currentState.bibleReader.chapter &&
+			currentState.bibleReader.chapter.reference &&
+			currentState.bibleReader.chapter.reference.usfm == reference &&
+			currentState.bibleReader.version &&
+			currentState.bibleReader.version.id == version
+		) {
 		callback()
 	} else if (version > 0 && reference) {
 		store.dispatch(ActionCreators.readerLoad({ language_tag: lang, version: version, reference: reference }, store.getState().auth.isLoggedIn)).then(() => {

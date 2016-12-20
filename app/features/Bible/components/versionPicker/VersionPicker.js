@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import { routeActions } from 'react-router-redux'
 import ActionCreators from '../../actions/creators'
 import Filter from '../../../../lib/filter'
 import scrollList from '../../../../lib/scrollToView'
@@ -41,7 +42,6 @@ class VersionPicker extends Component {
 		this.handleLanguageFilter = ::this.handleLanguageFilter
 		this.onBlur = ::this.onBlur
 		this.getLanguage = ::this.getLanguage
-		this.getVersion = ::this.getVersion
 		this.toggleVersionPickerList = ::this.toggleVersionPickerList
 		this.handleListHover = ::this.handleListHover
 	}
@@ -97,7 +97,12 @@ class VersionPicker extends Component {
 		if (version.id !== prevProps.version.id && !alert && !listErrorAlert) {
 			// force the input to lose focus after successful load
 			if (document.activeElement != document.body) document.activeElement.blur();
-			this.setState({ dropdown: false })
+
+			this.setState({
+				dropdown: false,
+				selectedVersion: version.id,
+				inputValue: version.local_abbreviation.toUpperCase(),
+			})
 		}
 
 		// if we've changed languages, let's update the versions list
@@ -129,20 +134,6 @@ class VersionPicker extends Component {
 		}
 	}
 
-	getVersion(version) {
-		const { selectedChapter, dispatch, getVersion } = this.props
-
-		if (version.id) {
-			this.setState({
-				selectedVersion: version.id,
-				inputValue: version.local_abbreviation.toUpperCase(),
-			})
-			getVersion(version.id)
-		} else {
-			this.setState({ listErrorAlert: true })
-		}
-	}
-
 	// this handles the class toggling for book and version clicks on mobile
 	toggleVersionPickerList() {
 		const { classes } = this.state
@@ -164,7 +155,6 @@ class VersionPicker extends Component {
 				versionlistSelectionIndex: 0,
 				versionFiltering: true
 			})
-			this.toggleVersionPickerList()
 		}
 	}
 
@@ -185,7 +175,6 @@ class VersionPicker extends Component {
 				languagelistSelectionIndex: 0,
 				languageFiltering: true
 			})
-			this.toggleVersionPickerList()
 		}
 	}
 
@@ -201,27 +190,17 @@ class VersionPicker extends Component {
 			// because we're clicking the dropdown (not some other random place)
 			this.setState({ cancelBlur: true, versionFiltering: false })
 
-			// if the full modal is being rendered, let's toggle the dropdown rendering
-			if (!this.state.versionFiltering) {
-				// if the user is closing the dropdown and hasn't selected anything, let's
-				// fill the input back up with the correct reference
-				if (this.state.dropdown) {
-					this.setState({
-						dropdown: false
-					})
-				// we're opening the dropdown so let's disable the input field
-				} else {
-					this.setState({
-						dropdown: true,
-						languages: languages,
-						versions: versions.byLang[versions.selectedLanguage]
-					})
-				}
-			// not full modal
-			// this will be fired only when a user has been filtering and then clicks on the dropwdown
+			// if the user is closing the dropdown and hasn't selected anything, let's
+			// fill the input back up with the correct reference
+			if (this.state.dropdown) {
+				this.setState({
+					dropdown: false
+				})
+			// we're opening the dropdown so let's disable the input field
 			} else {
 				this.setState({
 					dropdown: true,
+					languages: languages,
 					versions: versions.byLang[versions.selectedLanguage]
 				})
 			}
@@ -250,7 +229,7 @@ class VersionPicker extends Component {
 	 * @param      {number}  keyEventCode  Code value of key event
 	 */
 	handleLabelKeyDown(event, keyEventName, keyEventCode) {
-		const { languages, languageMap } = this.props
+		const { languages, selectedChapter, languageMap, dispatch } = this.props
 		const {
 			inputValue,
 			languagelistSelectionIndex,
@@ -286,7 +265,8 @@ class VersionPicker extends Component {
 			if (keyEventName == "Enter") {
 				event.preventDefault()
 				//
-				this.getVersion(versions[versionKeys[versionlistSelectionIndex]])
+				let chapURL = this.props.localizedLink(`/bible/${versions[versionKeys[versionlistSelectionIndex]].id}/${selectedChapter}`)
+				dispatch(routeActions.push(chapURL))
 			}
 
 		}
@@ -335,9 +315,14 @@ class VersionPicker extends Component {
 	}
 
 	closeDropdown = () => {
+		const { classes } = this.state
 		this.setState({
 			dropdown: false,
 		})
+		// always reset to show versions when the modal is closing
+		if (classes == 'hide-versions') {
+			this.toggleVersionPickerList()
+		}
 	}
 
 	cancelBlur = () => {
@@ -347,7 +332,7 @@ class VersionPicker extends Component {
 	}
 
 	render() {
-		const { version, intl, languageMap } = this.props
+		const { version, intl, selectedChapter, languageMap, recentVersions } = this.props
 		const {
 			languages,
 			versions,
@@ -356,7 +341,6 @@ class VersionPicker extends Component {
 			classes,
 			selectedLanguage,
 			selectedVersion,
-			selectedChapter,
 			languagelistSelectionIndex,
 			versionlistSelectionIndex,
 			listErrorAlert,
@@ -380,12 +364,14 @@ class VersionPicker extends Component {
 				<DropdownTransition show={dropdown} exemptSelector='.version-picker-container > .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
 					<div onClick={this.cancelBlur}>
 						<VersionPickerModal
+							{...this.props}
 							classes={classes}
 							languageList={languages}
 							versionList={versions}
+							recentVersions={recentVersions}
 							selectedLanguage={selectedLanguage}
 							selectedVersion={selectedVersion}
-							getVersion={this.getVersion}
+							usfm={selectedChapter}
 							getLanguage={this.getLanguage}
 							handleChange={this.handleLanguageFilter}
 							handleKeyDown={this.handleLangKeyDown}
@@ -413,15 +399,14 @@ class VersionPicker extends Component {
  *	@version: 						currently rendered version object
  *	@versions:    				list of versions for version.selectedLanguage
  *	@selectedChapter: 		rendered chapter
- *	@getVersion:
  */
 VersionPicker.propTypes = {
 	languages: React.PropTypes.array,
 	languageMap: React.PropTypes.object,
 	version: React.PropTypes.object,
 	versions: React.PropTypes.object,
+	recentVersions: React.PropTypes.object,
 	selectedChapter: React.PropTypes.string,
-	getVersion: React.PropTypes.func,
 	getVersions: React.PropTypes.func
 }
 

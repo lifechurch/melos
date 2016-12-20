@@ -238,10 +238,11 @@ router.post('/', urlencodedParser, function(req, res) {
 		startingState = mapStateToParams(feature, startingState, params)
 
 		try {
-			const store = getStore(feature, startingState, null, null)
+			const history = createMemoryHistory()
+			const store = getStore(feature, startingState, history, null)
 			loadData(feature, params, startingState, sessionData, store, Locale).then((action) => {
-
 				if (typeof action === 'function') {
+
 					store.dispatch(action).then(() => {
 						finish()
 					}, (err) => {
