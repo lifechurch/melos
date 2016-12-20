@@ -482,7 +482,7 @@ class ChapterPicker extends Component {
 					onBlur={this.onBlur}
 					disabled={inputDisabled}
 				/>
-				<DropdownTransition show={dropdown} exemptSelector='.chapter-picker-container > .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
+				<DropdownTransition show={dropdown} exemptSelector='.chapter-picker-container .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
 					<div onClick={this.cancelBlur}>
 						<ChapterPickerModal
 							localizedLink={this.props.localizedLink}

@@ -104,57 +104,7 @@ class Bible extends Component {
 			Filter.clear("VersionStore")
 			Filter.add("VersionStore", versions.versions)
 		})
-
-		// dispatch(ActionCreators.bibleConfiguration()).then((config) => {
-		// 	Filter.add("LangStore", config.default_versions)
-		// })
 	}
-
-	// getVC(versionID) {
-	// 	const { dispatch, bible } = this.props
-	// 	this.setState({ selectedVersion: versionID })
-	// 	dispatch(ActionCreators.loadVersionAndChapter({ id: versionID, reference: this.state.selectedChapter }))
-	// }
-
-	// getBook(book) {
-	// 	this.setState({ selectedBook: book.usfm })
-	// 	this.toggleChapterPickerList()
-	// }
-
-	// getChapter(chapterusfm) {
-	// 	const { dispatch, bible } = this.props
-	// 	this.setState({ selectedChapter: chapterusfm })
-	// 	this.chapterVersionCall(this.state.selectedVersion, chapterusfm)
-	// 	this.toggleChapterPickerList()
-
-	// 	// then write cookie for selected chapter
-
-	// }
-	// getVersion(versionid) {
-	// 	const { dispatch, bible } = this.props
-	// 	this.chapterVersionCall(versionid, this.state.selectedChapter)
-	// 	this.setState({ selectedVersion: versionid })
-	// 	this.toggleVersionPickerList()
-
-
-	// 	// then write cookie for selected version
-	// }
-	// chapterVersionCall(versionid, reference) {
-	// 	const { dispatch, auth } = this.props
-
-	// 	dispatch(ActionCreators.bibleChapter({ id: versionid, reference: reference}))
-
-	// 	if (auth.isLoggedIn) {
-	// 		dispatch(ActionCreators.momentsVerseColors(auth.isLoggedIn, { usfm: reference, version_id: versionid }))
-	// 	}
-
-	// 	if (versionid !== this.state.selectedVersion) {
-	// 		this.setState({ selectedVersion: versionid })
-	// 		dispatch(ActionCreators.bibleVersion({ id: versionid })).then((version) => {
-
-	// 		})
-	// 	}
-	// }
 
 	// this handles the class toggling for book and chapter clicks on mobile
 	toggleChapterPickerList() {

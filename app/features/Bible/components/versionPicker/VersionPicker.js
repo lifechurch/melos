@@ -361,7 +361,7 @@ class VersionPicker extends Component {
 					onBlur={this.onBlur}
 					disabled={inputDisabled}
 				/>
-				<DropdownTransition show={dropdown} exemptSelector='.version-picker-container > .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
+				<DropdownTransition show={dropdown} exemptSelector='.version-picker-container .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
 					<div onClick={this.cancelBlur}>
 						<VersionPickerModal
 							{...this.props}
