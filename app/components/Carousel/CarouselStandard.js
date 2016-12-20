@@ -36,7 +36,8 @@ class CarouselStandard extends Component {
     // we want an image first, if that doesn't exist then we go to gradient, if gradient doesn't exist then just set default plan image
     var slides = carouselContent.items.map( function(slide, index) {
 
-    	var slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}-${slide.slug}`) : localizedLink(`/reading-plans/${slide.id}-${slide.slug}`)
+    	let slug = slide.slug ? `-${slide.slug}` : ''
+    	var slideLink = (slide.type == 'collection') ? localizedLink(`/reading-plans-collection/${slide.id}${slug}`) : localizedLink(`/reading-plans/${slide.id}${slug}`)
 
     	if (slide.image_id) {
 				return (
@@ -87,13 +88,22 @@ class CarouselStandard extends Component {
 			slider = <Slider {...settings}>{slides}</Slider>
 		}
 
-	  return (
-	    <div className='carousel-standard' >
+		let heading = null
+		if (context == false) {
+			heading = <div className='carousel-header'><div className='title'><FormattedMessage id="plans.related plans" /></div></div>
+		} else {
+			heading = (
 	    	<Link className='carousel-header' to={localizedLink( carouselLink )}>
 	    		<div className='title'>{ carouselTitle }</div>
 	    		<div className='see-all'><FormattedMessage id="plans.see all" /></div>
 	    		<CarouselArrow width={19} height={19} fill='gray'/>
 	    	</Link>
+			)
+		}
+
+	  return (
+	    <div className='carousel-standard' >
+	    	{heading}
 	    	{slider}
 	    </div>
 	  );

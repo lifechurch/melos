@@ -1,10 +1,10 @@
 import ActionCreator from '../../features/Bible/actions/creators'
 import cookie from 'react-cookie';
+import defaultVersions from '../../../locales/config/defaultVersions'
 
 export default function loadData(params, startingState, sessionData, store, Locale) {
 	return new Promise((resolve, reject) => {
 		if (typeof store !== 'undefined' && params.hasOwnProperty('url') && params.hasOwnProperty('languageTag')) {
-
 			const BIBLE 						= new RegExp("^\/bible$") // /bible
 			const CHAPTER_NOTV 			= new RegExp("^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}$") 													// /bible/1/mat.1
 			const VERSE_NOTV 				= new RegExp("^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9]{1,3}$") 							// /bible/1/mat.1.1
@@ -34,7 +34,19 @@ export default function loadData(params, startingState, sessionData, store, Loca
       }
 
       const loadVerse = (finalParams) => {
-      	resolve()
+				let verse = params.ref.toUpperCase()
+				let versions = defaultVersions[lang]
+				let auth = false
+
+				if (sessionData.email && sessionData.password) {
+					auth = { username: sessionData.email, password: sessionData.password }
+				} else if (sessionData.tp_token) {
+					auth = { tp_token: sessionData.tp_token }
+				}
+
+				store.dispatch(ActionCreator.verseLoad({ language_tag: lang, versions: versions, verse: verse }, auth)).then(() => {
+					resolve()
+				})
       }
 
       if (BIBLE.test(params.url)) {
@@ -67,9 +79,6 @@ export default function loadData(params, startingState, sessionData, store, Loca
       	console.log("Something else!")
       	resolve()
       }
-
-
-
 		} else {
 			resolve()
 		}
