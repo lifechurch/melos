@@ -40,6 +40,8 @@ export default function reducer(state = {}, action) {
 			})
 
 			return Immutable.fromJS(state).mergeDeep({
+				primaryVersion: action.primaryVersion,
+				versions: action.versions,
 				verses: content,
 				title: title,
 				next_verse: next_verse,

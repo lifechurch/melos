@@ -225,7 +225,7 @@ router.post('/', urlencodedParser, function(req, res) {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
-
+	console.log(params)
 	reactCookie.plugToRequest(req, res)
 
 	let verifiedAuth = null
@@ -240,7 +240,6 @@ router.post('/', urlencodedParser, function(req, res) {
 		try {
 			const store = getStore(feature, startingState, null, null)
 			loadData(feature, params, startingState, sessionData, store, Locale).then((action) => {
-
 				if (typeof action === 'function') {
 					store.dispatch(action).then(() => {
 						finish()

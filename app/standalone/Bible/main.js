@@ -4,7 +4,6 @@ import { Router } from 'react-router'
 import { Provider } from 'react-redux'
 import configureStore from './store'
 import defaultState from './defaultState'
-import defaultVersions from '../../../locales/config/defaultVersions'
 import createLogger from 'redux-logger'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
@@ -37,17 +36,12 @@ moment.locale(window.__LOCALE__.locale)
 
 
 function requireChapterData(nextState, replace, callback) {
-	const { params } = nextState
+	const { params: { lang:routeLang, version:routeVersion, book, chapter, verse, vabbr } } = nextState
 	const currentState = store.getState()
 	// let lang = params.lang || cookie.load('locale') || Locale.locale
 	let lang = window.__LOCALE__.locale3
-	let version = params.version || cookie.load('version') || '1'
-	let reference = params.ref || cookie.load('last_read') || 'MAT.1'
-	reference = reference.toUpperCase()
-
-	if (reference.split('.').length > 2) {
-		reference = reference.split('.').slice(0,2).join('.')
-	}
+	let version = routeVersion || cookie.load('version') || '1'
+	let reference = `${book.toUpperCase()}.${chapter}` || cookie.load('last_read') || 'MAT.1'
 
 	if (currentState && currentState.bibleReader && currentState.bibleReader.chapter && currentState.bibleReader.chapter.reference && currentState.bibleReader.chapter.reference.usfm == reference) {
 		callback()
@@ -63,17 +57,17 @@ function requireChapterData(nextState, replace, callback) {
 }
 
 function requireVerseData(nextState, replace, callback) {
-	const { params } = nextState
+	const { params: { lang:routeLang, version:routeVersion, book, chapter, verse, vabbr } } = nextState
 	const currentState = store.getState()
 
 	let lang = window.__LOCALE__.locale3
-	let verse = params.ref.toUpperCase()
+	let reference = `${book.toUpperCase()}.${chapter}.${verse}`
 	let versions = defaultVersions[lang]
 
 	if (currentState && currentState.bibleReader && currentState.bibleReader.chapter && currentState.bibleReader.chapter.reference && currentState.bibleReader.chapter.reference.usfm == reference) {
 		callback()
-	} else if (versions.length > 0 && verse) {
-		store.dispatch(ActionCreators.verseLoad({ language_tag: lang, versions: versions, verse: verse }, store.getState().auth.isLoggedIn)).then(() => {
+	} else if (versions.length > 0 && reference) {
+		store.dispatch(ActionCreators.verseLoad({ language_tag: lang, versions: versions, verse: reference }, store.getState().auth.isLoggedIn)).then(() => {
 			callback()
 		}, (error) => {
 			callback()
@@ -83,7 +77,7 @@ function requireVerseData(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(requireBibleData, requireVerseData)
+const routes = getRoutes(requireChapterData, requireVerseData)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>

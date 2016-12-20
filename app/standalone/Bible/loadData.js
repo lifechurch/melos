@@ -1,4 +1,5 @@
-import ActionCreator from '../../features/Bible/actions/creators'
+import BibleActionCreator from '../../features/Bible/actions/creators'
+import PassageActionCreator from '../../features/Passage/actions/creators'
 import cookie from 'react-cookie';
 import defaultVersions from '../../../locales/config/defaultVersions'
 
@@ -15,37 +16,33 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const CHAPTER_CV  			= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[a-zA-Z]+$") 						// /bible/kjv/mat.1.kjv
 			const VERSE_CV 					= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9]{1,3}\.[a-zA-Z]+$") // /bible/kjv/mat.1.1.kjv
 
+			console.log(params)
 			let language_tag = Locale.locale3
 			let version = params.version || cookie.load('version') || '1'
 			let reference = params.ref.toUpperCase() || cookie.load('last_read').toUpperCase() || 'JHN.1'
 
+			let auth = false
+			if (sessionData.email && sessionData.password) {
+				auth = { username: sessionData.email, password: sessionData.password }
+			} else if (sessionData.tp_token) {
+				auth = { tp_token: sessionData.tp_token }
+			}
+
       const loadChapter = (finalParams) => {
-				let auth = false
-
-				if (sessionData.email && sessionData.password) {
-					auth = { username: sessionData.email, password: sessionData.password }
-				} else if (sessionData.tp_token) {
-					auth = { tp_token: sessionData.tp_token }
-				}
-
-				store.dispatch(ActionCreator.readerLoad(finalParams, auth)).then((data) => {
-					resolve()
+      	console.log("FP-C", finalParams)
+      	store.dispatch(PassageActionCreator.passageAltVersionsLoad(params.altVersions)).then(() => {
+					store.dispatch(BibleActionCreator.readerLoad(finalParams, auth)).then((data) => {
+						resolve()
+					})
 				})
       }
 
       const loadVerse = (finalParams) => {
-				let verse = params.ref.toUpperCase()
-				let versions = defaultVersions[lang]
-				let auth = false
-
-				if (sessionData.email && sessionData.password) {
-					auth = { username: sessionData.email, password: sessionData.password }
-				} else if (sessionData.tp_token) {
-					auth = { tp_token: sessionData.tp_token }
-				}
-
-				store.dispatch(ActionCreator.verseLoad({ language_tag: lang, versions: versions, verse: verse }, auth)).then(() => {
-					resolve()
+      	console.log("FP-V", finalParams)
+      	store.dispatch(PassageActionCreator.passageAltVersionsLoad(params.altVersions)).then(() => {
+					store.dispatch(PassageActionCreator.passageLoad(finalParams, auth)).then(() => {
+						resolve()
+					})
 				})
       }
 
@@ -61,19 +58,23 @@ export default function loadData(params, startingState, sessionData, store, Loca
 
       } else if (VERSE_NOTV.test(params.url)) {
       	console.log("Verse No Trailing Version")
-      	loadVerse({ language_tag, version, reference })
+      	reference = reference.split('.').slice(0,3).join('.')
+      	loadVerse({ versions: params.altVersions[params.languageTag].text, language_tag: Locale.planLocale, passage: reference })
 
       } else if (VERSE.test(params.url)) {
       	console.log("Verse Proper")
-      	loadVerse({ language_tag, version, reference })
+      	reference = reference.split('.').slice(0,3).join('.')
+      	loadVerse({ versions: params.altVersions[params.languageTag].text, language_tag: Locale.planLocale, passage: reference })
 
       } else if (VERSE_NOTV_CV.test(params.url)) {
       	console.log("Verse No Trailing Version with Char Version")
-      	loadVerse({ language_tag, version, reference })
+      	reference = reference.split('.').slice(0,3).join('.')
+      	loadVerse({ versions: params.altVersions[params.languageTag].text, language_tag: Locale.planLocale, passage: reference })
 
       } else if (VERSE_CV.test(params.url)) {
       	console.log("Verse with Char Version")
-      	loadVerse({ language_tag, version, reference })
+      	reference = reference.split('.').slice(0,3).join('.')
+      	loadVerse({ versions: params.altVersions[params.languageTag].text, language_tag: Locale.planLocale, passage: reference })
 
       } else {
       	console.log("Something else!")

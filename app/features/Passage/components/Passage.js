@@ -21,35 +21,38 @@ class Passage extends Component {
 	 * @param      {object}  verses  verses object of verse objects to display
 	 */
 	getMainVersion(verses) {
+		const { params: { version } } = this.props
+		console.log("VVV", verses)
+		return version
 		// if the following checks don't match any version cookies, than it'll just
 		// be the first version back from the verses call
-		if (Object.keys(verses).length > 0) {
-			let mainVersion = verses[Object.keys(verses)[0]].versionInfo.id
-			let usfm = verses[Object.keys(verses)[0]].usfm
-			let lastVersion = LocalStore.get('version')
-			let recentVersions = LocalStore.get('RecentVersions').data
+		// if (Object.keys(verses).length > 0) {
+		// 	let mainVersion = verses[Object.keys(verses)[0]].versionInfo.id
+		// 	let usfm = verses[Object.keys(verses)[0]].usfm
+		// 	let lastVersion = LocalStore.get('version')
+		// 	let recentVersions = LocalStore.get('RecentVersions').data
 
-			// first check last version
-			if (lastVersion && `${lastVersion}-${usfm}` in verses) {
-				mainVersion = lastVersion
-			// then go through recent versions and check those
-			} else {
-				if (recentVersions.length > 0) {
-					recentVersions.forEach((version, index) => {
-						// for each one that matches, we'll overwrite,
-						// because the last one in the array is the most
-						// recent
-						if (`${version}-${usfm}` in verses) {
-							mainVersion = version
-						}
-					})
-				}
-			}
+		// 	// first check last version
+		// 	if (lastVersion && `${lastVersion}-${usfm}` in verses) {
+		// 		mainVersion = lastVersion
+		// 	// then go through recent versions and check those
+		// 	} else {
+		// 		if (recentVersions.length > 0) {
+		// 			recentVersions.forEach((version, index) => {
+		// 				// for each one that matches, we'll overwrite,
+		// 				// because the last one in the array is the most
+		// 				// recent
+		// 				if (`${version}-${usfm}` in verses) {
+		// 					mainVersion = version
+		// 				}
+		// 			})
+		// 		}
+		// 	}
 
-			return mainVersion
-		} else {
-			return null
-		}
+		// 	return mainVersion
+		// } else {
+		// 	return null
+		// }
 	}
 
 	render() {
@@ -60,8 +63,8 @@ class Passage extends Component {
 		// main verse and verse cards
 		let verses = []
 		if (passage && passage.verses && passage.verses.verses) {
-			let mainVersionID = this.getMainVersion(passage.verses.verses)
-			console.log(mainVersionID)
+			let mainVersionID = passage.verses.primaryVersion //this.getMainVersion(passage.verses.verses)
+			console.log("MVID", mainVersionID)
 			Object.keys(passage.verses.verses).forEach((key, index) => {
 				let verse = passage.verses.verses[key]
 				// if we've found a main version, then let's set the maine verse
