@@ -35,7 +35,7 @@ addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 
 
-function requireBibleData(nextState, replace, callback) {
+function requireChapterData(nextState, replace, callback) {
 	const { params } = nextState
 	const currentState = store.getState()
 	// let lang = params.lang || cookie.load('locale') || Locale.locale
@@ -43,6 +43,10 @@ function requireBibleData(nextState, replace, callback) {
 	let version = params.version || cookie.load('version') || '1'
 	let reference = params.ref || cookie.load('last_read') || 'MAT.1'
 	reference = reference.toUpperCase()
+
+	if (reference.split('.').length > 2) {
+		reference = reference.split('.').slice(0,2).join('.')
+	}
 
 	if (currentState && currentState.bibleReader && currentState.bibleReader.chapter && currentState.bibleReader.chapter.reference && currentState.bibleReader.chapter.reference.usfm == reference) {
 		callback()
@@ -57,7 +61,7 @@ function requireBibleData(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(requireBibleData)
+const routes = getRoutes(requireChapterData)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>
