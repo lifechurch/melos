@@ -21,7 +21,7 @@ class ReferencesController < ApplicationController
         "languageTag" => I18n.locale.to_s,
         "url" => request.path,
         "cache_for" => YV::Caching::a_very_long_time,
-        "version" => params[:version],
+        "version" => self.presenter.reference.version,
         "ref" => params[:reference]
     }
 
