@@ -11,7 +11,8 @@ import { useRouterHistory } from 'react-router'
 import { createHistory } from 'history'
 import getRoutes from './routes'
 import cookie from 'react-cookie';
-import ActionCreators from '../../features/Bible/actions/creators'
+import BibleActionCreator from '../../features/Bible/actions/creators'
+import PassageActionCreator from '../../features/Passage/actions/creators'
 
 // require('moment/min/locales')
 
@@ -35,14 +36,13 @@ addLocaleData(window.__LOCALE__.data)
 // moment.locale(window.__LOCALE__.locale)
 
 
-function requireBibleData(nextState, replace, callback) {
-	const { params } = nextState
+function requireChapterData(nextState, replace, callback) {
+	const { params: { lang:routeLang, version:routeVersion, book, chapter, verse, vabbr } } = nextState
 	const currentState = store.getState()
 	// let lang = params.lang || cookie.load('locale') || Locale.locale
 	let lang = window.__LOCALE__.locale3
-	let version = params.version || cookie.load('version') || '1'
-	let reference = params.ref || cookie.load('last_read') || 'MAT.1'
-	reference = reference.toUpperCase()
+	let version = routeVersion || cookie.load('version') || '1'
+	let reference = `${book.toUpperCase()}.${chapter}` || cookie.load('last_read') || 'MAT.1'
 
 	if (currentState &&
 			currentState.bibleReader &&
@@ -54,7 +54,7 @@ function requireBibleData(nextState, replace, callback) {
 		) {
 		callback()
 	} else if (version > 0 && reference) {
-		store.dispatch(ActionCreators.readerLoad({ language_tag: lang, version: version, reference: reference }, store.getState().auth.isLoggedIn)).then(() => {
+		store.dispatch(BibleActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference }, store.getState().auth.isLoggedIn)).then(() => {
 			callback()
 		}, (error) => {
 			callback()
@@ -64,7 +64,28 @@ function requireBibleData(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(requireBibleData)
+function requireVerseData(nextState, replace, callback) {
+	const { params: { lang:routeLang, version:routeVersion, book, chapter, verse, vabbr } } = nextState
+	const currentState = store.getState()
+
+	let lang = window.__LOCALE__.planLocale
+	let reference = `${book.toUpperCase()}.${chapter}.${verse}`
+	let versions = [ parseInt(routeVersion), ...currentState.altVersions[currentState.serverLanguageTag].text ]
+	let isLoggedIn = currentState.auth.isLoggedIn
+	if (currentState && currentState.passage && currentState.passage.verses && currentState.passage.verses.versions && currentState.passage.verses.versions.length && currentState.passage.verses.versions[0] == routeVersion && currentState.passage.verses.current_verse == reference) {
+		callback()
+	} else if (versions.length > 0 && reference) {
+		store.dispatch(PassageActionCreator.passageLoad({ language_tag: lang , versions: versions, passage: reference }, isLoggedIn)).then(() => {
+			callback()
+		}, (error) => {
+			callback()
+		})
+	} else {
+		callback()
+	}
+}
+
+const routes = getRoutes(requireChapterData, requireVerseData)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>

@@ -225,7 +225,7 @@ router.post('/', urlencodedParser, function(req, res) {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
-
+	console.log(params)
 	reactCookie.plugToRequest(req, res)
 
 	let verifiedAuth = null
