@@ -12,6 +12,37 @@ const ActionCreators = {
 		return dispatch => {
 			const { version, passage, versions, language_tag } = params
 			let promises = []
+			console.log('lnakwjrhbakwjerhbfjkawehfbjkawehbfjawebfs')
+			// rev.2.1 || rev.2.2-4 || rev.2.3,8 || rev.2.2-4,8
+			let chapUSFM = passage.split('.').slice(0,2).join('.')
+			let verseORVerseRange = passage.split('.').pop()
+			let versesString = []
+			let versesArray = []
+
+			if (verseORVerseRange.includes('-')) {
+				let firstVerseOfRange = verseORVerseRange.split('-')[0]
+				// split on comma in case there are more verses after the -
+				let lastVerseOfRange = (verseORVerseRange.split('-')[1]).split(',')[0]
+				let rangeString = ''
+
+				for (let i = firstVerseOfRange; i <= lastVerseOfRange; i++) {
+					versesString.push(`${chapUSFM}.${i}`)
+				}
+
+				versesArray.push(versesString.join('+'))
+				console.log(verseORVerseRange)
+				// if there are verses after -
+				if (verseORVerseRange.includes(',')) {
+					verseORVerseRange.split(',').forEach((verseNum, index) => {
+						// we've already handled the first string before the , up above
+						if (index !== 0) {
+							versesArray.push(`${chapUSFM}.${i}`)
+						}
+					})
+				}
+			}
+
+			console.log(versesArray)
 
 			versions.forEach((id) => {
 				// get the version info, and then pass it along to the verses call
@@ -20,7 +51,7 @@ const ActionCreators = {
 						// get version info to pass down
 						dispatch(ActionCreators.bibleVersion({ id: id })).then((version) => {
 							// now we need to get the text for the verses
-							dispatch(ActionCreators.bibleVerses({ id, references: [passage], format: 'text' })).then((verses) => {
+							dispatch(ActionCreators.bibleVerses({ id, references: versesArray, format: 'text' })).then((verses) => {
 								// for each verse, pass the text content and make the same call for
 								// html content
 								verses.verses.forEach((verse) => {
@@ -36,7 +67,7 @@ const ActionCreators = {
 									// get the html content now
 									dispatch(ActionCreators.bibleVerses({
 										id: id,
-										references: [passage],
+										references: versesArray,
 									}))
 									// resolve the promise with both text info and html result to build the data object for
 									// the verse card in the reducer
