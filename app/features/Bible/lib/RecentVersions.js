@@ -1,5 +1,6 @@
 import SyncStore from '../../../lib/syncStore'
 import Immutable from 'immutable'
+import LocalStore from '../../../lib/localStore'
 
 /**
  * Class representing list of recently used Bible versions
@@ -50,9 +51,30 @@ class RecentVersions extends SyncStore {
 		let { id, abbreviation, title, local_title, local_abbreviation } = version
 		title = local_title || title
 		abbreviation = local_abbreviation || abbreviation
-		if (typeof id !== undefined) {
+		if (typeof id !== undefined && id) {
  			this.add(id, { id, abbreviation, title })
  		}
+	}
+
+	/**
+	 * gets version objects for each of the recent versions, from a complete versions
+	 * list passed in as a param
+	 *
+	 * @param      {object}  versionsList  Object of version objects
+	 */
+	getVersions(versionsList) {
+		let recentVersions = LocalStore.get('RecentVersions').data
+		let versionsInfo = {}
+
+		if (Array.isArray(recentVersions) && recentVersions.length > 0) {
+			recentVersions.forEach((id) => {
+				if (id in versionsList) {
+					versionsInfo[id] = versionsList[id]
+				}
+			})
+		}
+
+		return versionsInfo
 	}
 
 	/**

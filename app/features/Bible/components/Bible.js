@@ -65,6 +65,7 @@ class Bible extends Component {
 			selectedVersion: this.selectedVersion,
 			selectedLanguage: bible.versions.selectedLanguage,
 			chapterError: this.chapterError,
+			recentVersions: {},
 			dbReady: false,
 			chapDropDownCancel: false,
 			versionDropDownCancel: false,
@@ -103,63 +104,6 @@ class Bible extends Component {
 			Filter.clear("VersionStore")
 			Filter.add("VersionStore", versions.versions)
 		})
-
-		// dispatch(ActionCreators.bibleConfiguration()).then((config) => {
-		// 	Filter.add("LangStore", config.default_versions)
-		// })
-	}
-
-	// getVC(versionID) {
-	// 	const { dispatch, bible } = this.props
-	// 	this.setState({ selectedVersion: versionID })
-	// 	dispatch(ActionCreators.loadVersionAndChapter({ id: versionID, reference: this.state.selectedChapter }))
-	// }
-
-	// getBook(book) {
-	// 	this.setState({ selectedBook: book.usfm })
-	// 	this.toggleChapterPickerList()
-	// }
-
-	getChapter(chapterusfm) {
-		const { dispatch, bible } = this.props
-		this.setState({ selectedChapter: chapterusfm })
-		this.chapterVersionCall(this.state.selectedVersion, chapterusfm)
-		this.toggleChapterPickerList()
-
-		// then write cookie for selected chapter
-		LocalStore.set('last_read', chapterusfm)
-	}
-
-	getVersion(versionid) {
-		const { dispatch, bible } = this.props
-		this.chapterVersionCall(versionid, this.state.selectedChapter)
-		this.setState({ selectedVersion: versionid })
-		this.toggleVersionPickerList()
-		this.recentVersions.add(versionid)
-
-		// then write cookie for selected version
-		LocalStore.set('version', versionid)
-	}
-
-	chapterVersionCall(versionid, reference) {
-		const { dispatch, auth } = this.props
-
-		dispatch(ActionCreators.bibleChapter({ id: versionid, reference: reference}))
-
-		if (auth.isLoggedIn) {
-			dispatch(ActionCreators.momentsVerseColors(auth.isLoggedIn, { usfm: reference, version_id: versionid }))
-		}
-
-		if (versionid !== this.state.selectedVersion) {
-			this.setState({ selectedVersion: versionid })
-			dispatch(ActionCreators.bibleVersion({ id: versionid })).then((version) => {
-				Filter.clear("BooksStore")
-				Filter.add("BooksStore", version.books)
-				this.recentVersions.addVersion(version)
-			})
-		}
-
-		this.handleVerseSelectionClear()
 	}
 
 	// this handles the class toggling for book and chapter clicks on mobile
@@ -178,7 +122,7 @@ class Bible extends Component {
 	}
 
 	handleVerseSelectionClear() {
-		if (typeof this.chapter !== 'undefined') {
+		if (typeof this.chapter !== 'undefined' && this.chapter) {
 			this.chapter.clearSelection()
 		}
 		this.setState({ verseSelection: {} })
@@ -198,10 +142,28 @@ class Bible extends Component {
 					this.setState({
 						chapterError: false,
 						selectedChapter: bible.chapter.reference.usfm,
+						selectedVersion: bible.chapter.reference.version_id,
 						inputValue: bible.chapter.reference.human
 					})
+
+					LocalStore.set('last_read', bible.chapter.reference.usfm)
+					this.handleVerseSelectionClear()
 				}
 			}
+		}
+
+		// update version for the chapter picker if a new version has been selected
+		if (bible.version && bible.version.id && bible.version.id !== prevProps.bible.version.id) {
+			this.recentVersions.addVersion(bible.version)
+
+			this.setState({
+				selectedVersion: bible.version.id,
+				recentVersions: this.recentVersions.getVersions(bible.versions.byLang[bible.versions.selectedLanguage]),
+			})
+
+			Filter.clear("BooksStore")
+			Filter.add("BooksStore", bible.version.books)
+			LocalStore.set('version', bible.version.id)
 		}
 
 	}
@@ -222,7 +184,12 @@ class Bible extends Component {
 		})
 
 		this.recentVersions.syncVersions(bible.settings)
+
+		this.setState({
+			recentVersions: this.recentVersions.getVersions(bible.versions.byLang[bible.versions.selectedLanguage]),
+		})
 	}
+
 
 
 	render() {
@@ -238,9 +205,9 @@ class Bible extends Component {
 						books={bible.books.all}
 						bookMap={bible.books.map}
 						selectedLanguage={this.state.selectedLanguage}
-						getChapter={::this.getChapter}
 						initialBook={this.state.selectedBook}
 						initialChapter={this.state.selectedChapter}
+						versionID={this.state.selectedVersion}
 						initialInput={this.inputValue}
 						initialChapters={this.chapters}
 						cancelDropDown={this.state.chapDropDownCancel}
@@ -251,10 +218,10 @@ class Bible extends Component {
 						version={bible.version}
 						languages={bible.languages.all}
 						versions={bible.versions}
+						recentVersions={this.state.recentVersions}
 						languageMap={bible.languages.map}
-						selectedChapter={bible.chapter.reference ? bible.chapter.reference.usfm : this.state.selectedChapter}
+						selectedChapter={this.state.selectedChapter}
 						alert={this.state.chapterError}
-						getVersion={::this.getVersion}
 						getVersions={::this.getVersions}
 						cancelDropDown={this.state.versionDropDownCancel}
 						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
@@ -303,9 +270,9 @@ class Bible extends Component {
 						ref={(chapter) => { this.chapter = chapter }}
 					/>
 					<ReaderArrows
-						previousChapter={bible.chapter.previous ? bible.chapter.previous.usfm : null}
-						nextChapter={bible.chapter.next ? bible.chapter.next.usfm : null}
-						onClick={::this.getChapter}
+						{...this.props}
+						previousChapterURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}` : null}
+						nextChapterURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}` : null}
 					/>
 				</div>
 			)

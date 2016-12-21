@@ -1,26 +1,20 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 
 class Chapters extends Component {
 
-	constructor(props) {
-		super(props)
-		const { initialSelection } = props
-		this.state = { selectedChapter: initialSelection || null }
-	}
-
-	chapterSelect(chapter) {
-		this.setState( { selectedChapter: chapter.usfm } )
-		const { onSelect } = this.props
-		if (typeof onSelect == 'function') {
-			onSelect(chapter)
-		}
-	}
-
 	render() {
-		const { list, onSelect, focus, listSelectionIndex, onMouseOver } = this.props
-		const { selectedChapter } = this.state
+		const {
+			list,
+			focus,
+			versionID,
+			listSelectionIndex,
+			onMouseOver,
+			selectedChapter,
+			localizedLink
+		} = this.props
 
-		var chapters = []
+		let chapters = []
 
 		if (list) {
 			Object.keys(list).forEach((usfm, index) =>  {
@@ -29,9 +23,17 @@ class Chapters extends Component {
 				let active = (usfm == selectedChapter) ? 'active' : ''
 				if (focus) {
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
-					chapters.push( (<li key={usfm} onClick={this.chapterSelect.bind(this, chapter)} className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "chapters", index)} >{ chapter.human }</li>) )
+					chapters.push(
+						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}`)} >
+							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "chapters", index)} >{ chapter.human }</li>
+						</Link>
+					)
 				} else {
-					chapters.push( (<li key={usfm} onClick={this.chapterSelect.bind(this, chapter)} className={`${active}`}>{ chapter.human }</li>) )
+					chapters.push(
+						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}`)} >
+							<li className={`${active}`}>{ chapter.human }</li>
+						</Link>
+					)
 				}
 			})
 		}
@@ -47,15 +49,14 @@ class Chapters extends Component {
 
 /**
  * 		@list					  			object of chapter objects for the current version
- * 		@onSelect			  			function to call when selecting chapter
  * 		@initialSelection	   	usfm for highlighting currently selected chapter
  * 		@listSelectionIndex 	index for selecting list element with arrow keys
  * 		@focus								allow mouse over and key actions on list items
  */
 Chapters.propTypes = {
 	list: React.PropTypes.object.isRequired,
-	onSelect: React.PropTypes.func,
 	initialSelection: React.PropTypes.string,
+	versionID: React.PropTypes.number,
 	listSelectionIndex: React.PropTypes.number,
 	focus: React.PropTypes.bool
 }

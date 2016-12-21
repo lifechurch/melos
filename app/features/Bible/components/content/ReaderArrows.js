@@ -1,26 +1,21 @@
 import React, { Component, PropTypes } from 'react'
 import CarouselArrow from '../../../../components/Carousel/CarouselArrow'
+import { Link } from 'react-router'
 
 class ReaderArrows extends Component {
 
-	getChapter(chapter) {
-		const { onClick } = this.props
-		if (typeof onClick == 'function' && typeof chapter == 'string') {
-			onClick(chapter)
-		}
-	}
-
 	render() {
 		const {
-			previousChapter,
-			nextChapter
+			previousChapterURL,
+			nextChapterURL,
+			localizedLink,
 		} = this.props
 
 		let left, right = null
 
-		if (previousChapter) {
+		if (previousChapterURL) {
 			left = (
-				<div onClick={this.getChapter.bind(this, previousChapter)}>
+				<Link to={localizedLink(`${previousChapterURL}`)}>
 					<CarouselArrow
 						key='left'
 						dir='left'
@@ -30,13 +25,13 @@ class ReaderArrows extends Component {
 						width={18}
 						height={35}
 					/>
-				</div>
+				</Link>
 			)
 		}
 
-		if (nextChapter) {
+		if (nextChapterURL) {
 			right = (
-				<div onClick={this.getChapter.bind(this, nextChapter)}>
+				<Link to={localizedLink(`${nextChapterURL}`)}>
 					<CarouselArrow
 						key='right'
 						dir='right'
@@ -46,7 +41,7 @@ class ReaderArrows extends Component {
 						width={18}
 						height={35}
 					/>
-				</div>
+				</Link>
 			)
 		}
 
@@ -61,12 +56,12 @@ class ReaderArrows extends Component {
 
 
 /**
- *	previousChapter		{string}		usfm to call for new chapter
- *	nextChapter				{string}		usfm to call for new chapter
+ *	previousChapterURL		{string}		usfm to call for new chapter
+ *	nextChapterURL				{string}		usfm to call for new chapter
  */
 ReaderArrows.propTypes = {
-	previousChapter: React.PropTypes.string,
-	nextChapter: React.PropTypes.string,
+	previousChapterURL: React.PropTypes.string,
+	nextChapterURL: React.PropTypes.string,
 }
 
 export default ReaderArrows

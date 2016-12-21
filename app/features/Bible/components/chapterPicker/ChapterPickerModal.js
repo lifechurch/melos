@@ -12,7 +12,6 @@ class ChapterPickerModal extends Component {
 			bookList,
 			chapterList,
 			getBook,
-			getChapter,
 			selectedBook,
 			selectedChapter,
 			classes,
@@ -21,7 +20,8 @@ class ChapterPickerModal extends Component {
 			chapterlistSelectionIndex,
 			onMouseOver,
 			alert,
-			cancel
+			cancel,
+			versionID,
 		} = this.props
 
 		let books, chapters = null
@@ -93,7 +93,16 @@ class ChapterPickerModal extends Component {
 					<div className='picker-error'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
-					<Chapters list={chapterList} onSelect={getChapter} initialSelection={selectedChapter} listSelectionIndex={chapterlistSelectionIndex} focus={chapterFocus} onMouseOver={onMouseOver} alert={alert} />
+					<Chapters
+						localizedLink={this.props.localizedLink}
+						list={chapterList}
+						selectedChapter={selectedChapter}
+						listSelectionIndex={chapterlistSelectionIndex}
+						focus={chapterFocus}
+						onMouseOver={onMouseOver}
+						alert={alert}
+						versionID={versionID}
+					/>
 				</div>
 			)
 		}
@@ -123,7 +132,7 @@ class ChapterPickerModal extends Component {
  *															any chapters. this is also passed down to the book list for highlighting the selected book
  *	@selectedChapter						currently selected chapter, used for highlighting the chapter in chapter list
  *	@getBook										function passed down to the book list to call when a book is selected
- *	@getChapter									function passed down to the chapter list to call when a chapter is selected
+ *	@versionID 									id of the selected version
  *	@classes										classes to apply. for showing and hiding on mobile views
  *	@toggle											function to call on prev arrow click on chapter header to hide chaps and show books
  * 	@booklistSelectionIndex 		index for selecting list element with arrow keys
@@ -138,7 +147,7 @@ ChapterPickerModal.propTypes = {
 	selectedBook: React.PropTypes.string,
 	selectedChapter: React.PropTypes.string,
 	getBook: React.PropTypes.func,
-	getChapter: React.PropTypes.func,
+	versionID: React.PropTypes.number,
 	classes: React.PropTypes.string,
 	toggle: React.PropTypes.func,
 	booklistSelectionIndex: React.PropTypes.number,

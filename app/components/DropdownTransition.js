@@ -37,7 +37,7 @@ class DropdownTransition extends Component {
 			let target = e.target || e.srcElement
 			// loop through all nodes with the exempt class, and check if
 			// the element that was clicked on, is a child of the exempt class
-			Array.prototype.forEach.call(document.getElementsByClassName(`${exemptClass}`), (exemptNode) => {
+			Array.prototype.forEach.call(document.getElementsByClassName(exemptClass), (exemptNode) => {
 				if (exemptNode.contains(target)) exempt = true
 			})
 
@@ -47,7 +47,7 @@ class DropdownTransition extends Component {
 			let target = e.target || e.srcElement
 			// loop through all nodes with the exempt class, and check if
 			// the element that was clicked on, is a child of the exempt class
-			Array.prototype.forEach.call(document.querySelectorAll(`${exemptSelector}`), (exemptNode) => {
+			Array.prototype.forEach.call(document.querySelectorAll(exemptSelector), (exemptNode) => {
 				if (exemptNode.contains(target)) exempt = true
 			})
 		}

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import { routeActions } from 'react-router-redux'
 import ActionCreators from '../../actions/creators'
 import Filter from '../../../../lib/filter'
 import scrollList from '../../../../lib/scrollToView'
@@ -47,7 +48,6 @@ class ChapterPicker extends Component {
 		this.handleLabelChange = ::this.handleLabelChange
 		this.handleLabelKeyDown = ::this.handleLabelKeyDown
 		this.onBlur = ::this.onBlur
-		this.getChapter = ::this.getChapter
 		this.getBook = ::this.getBook
 		this.toggleChapterPickerList = ::this.toggleChapterPickerList
 		this.handleListHover = ::this.handleListHover
@@ -75,7 +75,6 @@ class ChapterPicker extends Component {
 			selectedBook,
 			dropdown,
 			chapters,
-			chapterLoading
 		} = this.state
 
 		let focusElement = document.getElementsByClassName('focus')[0]
@@ -108,11 +107,6 @@ class ChapterPicker extends Component {
 				this.setState({ inputDisabled: true })
 			} else {
 				this.setState({ inputDisabled: false })
-				// if a new chapter is loading, then it was selected and the input value
-				// has already been set without waiting for new chapter call
-				if (!chapterLoading && !dropdown && chapter.reference) {
-					this.setState({ inputValue: chapter.reference.human })
-				}
 			}
 
 		}
@@ -131,9 +125,11 @@ class ChapterPicker extends Component {
 						selectedBook: chapter.reference.usfm.split('.')[0],
 						selectedChapter: chapter.reference.usfm,
 						inputValue: chapter.reference.human,
-						chapterLoading: false
+						dropdown: false,
+						chapterlistSelectionIndex: 0,
 					})
 				}
+				this.toggleChapterPickerList()
 			}
 		}
 
@@ -172,25 +168,6 @@ class ChapterPicker extends Component {
 				booklistSelectionIndex: 0,
 			})
 			this.toggleChapterPickerList()
-		} else {
-			this.setState({ listErrorAlert: true })
-		}
-	}
-
-	getChapter(selectedChapter) {
-		const { getChapter, books, bookMap } = this.props
-
-		if (selectedChapter && selectedChapter.usfm) {
-			this.setState({
-				selectedChapter: selectedChapter.usfm,
-				inputValue: `${books[bookMap[selectedChapter.usfm.split('.')[0]]].human} ${selectedChapter.human}`,
-				chapterlistSelectionIndex: 0,
-				chapterLoading: true,
-				dropdown: false,
-			})
-			this.setState({ listErrorAlert: false })
-			this.toggleChapterPickerList()
-			getChapter(selectedChapter.usfm)
 		} else {
 			this.setState({ listErrorAlert: true })
 		}
@@ -335,7 +312,7 @@ class ChapterPicker extends Component {
 	 * @param      {number}  keyEventCode  Code value of key event
 	 */
 	handleLabelKeyDown(event, keyEventName, keyEventCode) {
-		const { books, bookMap } = this.props
+		const { books, bookMap, versionID, dispatch } = this.props
 		const {
 			inputValue,
 			booklistSelectionIndex,
@@ -417,7 +394,8 @@ class ChapterPicker extends Component {
 			}
 			if (keyEventName == "Enter") {
 				let chapIndex = chapterKeys[chapterlistSelectionIndex]
-				this.getChapter((books[bookMap[selectedBook]].chapters)[chapIndex])
+				let chapURL = this.props.localizedLink(`/bible/${versionID}/${(books[bookMap[selectedBook]].chapters)[chapIndex].usfm}`)
+				dispatch(routeActions.push(chapURL))
 			}
 		}
 	}
@@ -476,7 +454,7 @@ class ChapterPicker extends Component {
 	}
 
 	render() {
-		const { bookMap, chapter } = this.props
+		const { bookMap, chapter, versionID } = this.props
 		const {
 			books,
 			chapters,
@@ -504,15 +482,16 @@ class ChapterPicker extends Component {
 					onBlur={this.onBlur}
 					disabled={inputDisabled}
 				/>
-				<DropdownTransition show={dropdown} exemptSelector='.chapter-picker-container > .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
+				<DropdownTransition show={dropdown} exemptSelector='.chapter-picker-container .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
 					<div onClick={this.cancelBlur}>
 						<ChapterPickerModal
+							localizedLink={this.props.localizedLink}
+							versionID={versionID}
 							classes={classes}
 							bookList={books}
 							chapterList={chapters}
 							selectedBook={selectedBook}
 							selectedChapter={selectedChapter}
-							getChapter={this.getChapter}
 							getBook={this.getBook}
 							toggle={this.toggleChapterPickerList}
 							booklistSelectionIndex={booklistSelectionIndex}
@@ -533,13 +512,11 @@ class ChapterPicker extends Component {
  *	@books: 							array of books for preselected version/language
  *	@bookMap: 						object relating book usfm to array index
  *	@chapter: 						rendered chapter object
- *	@getChapter: 					callback for rendering a new chapter
  */
 ChapterPicker.propTypes = {
 	books: React.PropTypes.array,
 	bookMap: React.PropTypes.object,
 	chapter: React.PropTypes.object,
-	getChapter: React.PropTypes.func,
 	initialChapters: React.PropTypes.object,
 	initialBook: React.PropTypes.string,
 	initialInput: React.PropTypes.string,

@@ -1,23 +1,18 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 
 class Versions extends Component {
-
-	versionSelect(version, filtering) {
-		const { onSelect } = this.props
-		if (typeof onSelect == 'function') {
-			onSelect(version, filtering)
-		}
-	}
 
 	render() {
 		const {
 			list,
-			onSelect,
 			header,
 			initialSelection,
 			focus,
+			usfm,
 			listSelectionIndex,
-			onMouseOver
+			onMouseOver,
+			localizedLink
 		} = this.props
 
 		if (list) {
@@ -30,9 +25,17 @@ class Versions extends Component {
 				abbr = abbr.toLocaleUpperCase()
 				if (focus) {
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
-					versionList.push( (<li key={id} className={`${active} ${focusClass}`} onClick={this.versionSelect.bind(this, version)} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</li>) )
+					versionList.push(
+						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}`)}>
+							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</li>
+						</Link>
+					)
 				} else {
-					versionList.push( (<li key={id} className={`${active}`} onClick={this.versionSelect.bind(this, version)} >{ `${abbr} ${name}` }</li>) )
+					versionList.push(
+						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}`)}>
+							<li className={`${active}`} >{ `${abbr} ${name}` }</li>
+						</Link>
+					)
 				}
 			})
 			/* the header would either be the language title or recently used */
@@ -65,7 +68,6 @@ class Versions extends Component {
 Versions.propTypes = {
 	list: React.PropTypes.object,
 	header: React.PropTypes.string,
-	onSelect: React.PropTypes.func,
 	initialSelection: React.PropTypes.number,
 	onMouseOver: React.PropTypes.func,
 	listSelectionIndex: React.PropTypes.number,

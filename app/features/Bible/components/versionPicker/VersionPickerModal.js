@@ -12,8 +12,8 @@ class VersionPickerModal extends Component {
 			versionList,
 			recentLanguages,
 			recentVersions,
+			usfm,
 			getLanguage,
-			getVersion,
 			handleChange,
 			handleKeyDown,
 			selectedLanguage,
@@ -36,7 +36,7 @@ class VersionPickerModal extends Component {
 		let classNames = (classes) ? `version-picker-modal ${classes}` : 'version-picker-modal'
 
 
-		if (languageList && !versionFiltering) {
+		if (languageList) {
 			languages = (
 				<div className='language-container'>
 					<div className='header vertical-center horizontal-center'>
@@ -65,14 +65,40 @@ class VersionPickerModal extends Component {
 				versionFocus = true
 				versions = (
 					<div className='version-list'>
-						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} listSelectionIndex={versionlistSelectionIndex} focus={versionFocus} onMouseOver={onMouseOver} />
+						<Versions
+							list={versionList}
+							usfm={usfm}
+							initialSelection={selectedVersion}
+							listSelectionIndex={versionlistSelectionIndex}
+							focus={versionFocus}
+							onMouseOver={onMouseOver}
+							localizedLink={this.props.localizedLink}
+						/>
 					</div>
 				)
 			} else {
 				versions = (
 					<div className='version-list'>
-						<Versions list={{}} onSelect={getVersion} initialSelection={selectedVersion} header={intl.formatMessage({ id: 'Reader.header.recent versions' })}/>
-						<Versions list={versionList} onSelect={getVersion} initialSelection={selectedVersion} header={versionsLanguageName}/>
+						{
+							recentVersions && Object.keys(recentVersions).length > 0
+							?
+							<Versions
+								list={recentVersions}
+								usfm={usfm}
+								initialSelection={selectedVersion}
+								header={intl.formatMessage({ id: 'Reader.header.recent versions' })}
+								localizedLink={this.props.localizedLink}
+							/>
+							:
+							null
+						}
+						<Versions
+							list={versionList}
+							usfm={usfm}
+							initialSelection={selectedVersion}
+							header={versionsLanguageName}
+							localizedLink={this.props.localizedLink}
+						/>
 					</div>
 				)
 			}
@@ -119,7 +145,6 @@ class VersionPickerModal extends Component {
  *															any versions. this is also passed down to the language list for highlighting the selected language
  *	@selectedVersion						currently selected version, used for highlighting the version in version list
  *	@getLanguage								function passed down to the language list to call when a language is selected
- *	@getVersion									function passed down to the version list to call when a version is selected
  *	@classes										classes to apply. for showing and hiding on mobile views
  *	@toggle											function to call on prev arrow click on language header to show languages
  * 	@languagelistSelectionIndex index for selecting list element with arrow keys
@@ -133,11 +158,10 @@ VersionPickerModal.propTypes = {
 	languageList: React.PropTypes.array,
 	versionList: React.PropTypes.object,
 	recentLanguages: React.PropTypes.array,
-	recentsVersions: React.PropTypes.object,
+	recentVersions: React.PropTypes.object,
 	selectedLanguage: React.PropTypes.string,
 	selectedVersion: React.PropTypes.number,
 	getLanguage: React.PropTypes.func,
-	getVersion: React.PropTypes.func,
 	handleChange: React.PropTypes.func,
 	handleKeyDown: React.PropTypes.func,
 	classes: React.PropTypes.string,
