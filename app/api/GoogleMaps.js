@@ -1,4 +1,4 @@
-var Promise = require('bluebird');
+// var Promise = require('bluebird');
 var	https = require('https');
 var querystring = require('querystring');
 
