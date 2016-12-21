@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import ActionCreators from '../../actions/creators'
 import { injectIntl, FormattedMessage } from 'react-intl'
-import moment from 'moment-timezone'
+// import moment from 'moment'
 import Immutable from 'immutable'
 import XMark from '../../../../components/XMark'
 import DropdownTransition from '../../../../components/DropdownTransition'
@@ -165,7 +165,7 @@ class MomentCreate extends Component {
 			kind: kind,
 			references: localRefs,
 			labels: addedLabels ? addedLabels : null,
-			created_dt: moment().format(),
+			created_dt: new Date().toISOString().split('.')[0] + "+00:00",
 			content: content,
 			user_status: user_status,
 			color: selectedColor ? selectedColor.replace('#', '') : null,

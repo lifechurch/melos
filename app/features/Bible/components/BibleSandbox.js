@@ -10,7 +10,6 @@ import Chapters from './chapterPicker/Chapters'
 import Languages from './versionPicker/Languages'
 import Versions from './versionPicker/Versions'
 import cookie from 'react-cookie';
-import moment from 'moment'
 import Label from './chapterPicker/Label'
 import LabelPill from './verseAction/bookmark/LabelPill'
 import ColorList from './verseAction/ColorList'

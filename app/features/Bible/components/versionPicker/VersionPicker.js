@@ -6,7 +6,6 @@ import Filter from '../../../../lib/filter'
 import scrollList from '../../../../lib/scrollToView'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import cookie from 'react-cookie';
-import moment from 'moment'
 import VersionPickerModal from './VersionPickerModal'
 import Label from '../chapterPicker/Label'
 import arrayToObject from '../../../../lib/arrayToObject'

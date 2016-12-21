@@ -7,7 +7,7 @@ import CarouselStandard from './CarouselStandard'
 
 class Carousel extends Component {
     render() {
-			const { carouselContent, carouselType, carouselSettings, imageConfig, localizedLink, isRtl } = this.props
+			const { carouselContent, carouselType, imageConfig, localizedLink, isRtl } = this.props
 
 			var carousel = null
 			switch (carouselType) {

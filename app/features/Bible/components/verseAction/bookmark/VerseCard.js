@@ -4,6 +4,7 @@ import Card from '../../../../../components/Card'
 import XMark from '../../../../../components/XMark'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
+import { Link } from 'react-router'
 
 class VerseCard extends Component {
 
@@ -31,15 +32,15 @@ class VerseCard extends Component {
 				} else {
 					if (isLink) {
 						verses.push (
-							<a
+							<Link
 								key={key}
 								className='verse'
-								href={`/bible/${verse.versionInfo.id}/${verse.usfm}`}
+								to={`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`}
 								title={`${intl.formatMessage({ id: "read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
 							>
 								{ heading }
 								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
-							</a>
+							</Link>
 						)
 					} else {
 						verses.push (
