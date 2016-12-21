@@ -135,7 +135,7 @@ function init() {
         parseReaderVars();
     }
 
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader) {
+    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
@@ -157,6 +157,7 @@ var isPlanIndex         = isFirst("reading-plans") && !inPathNotFirst("day");
 var isPlanCollection    = isFirst("reading-plans-collection");
 var isSignUp            = isFirst("sign-up");
 var isSignIn            = isFirst("sign-in");
+var isPassage           = isFirst("passage");
 
 var isFriendsFeed		= isFirst("users") && inPathNotFirst("friends");
 var isNotesFeed			= isFirst("users") && inPathNotFirst("notes");

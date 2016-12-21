@@ -98,6 +98,10 @@ YouversionWeb::Application.routes.draw do
   match 'bible/:version/:reference/notes' => 'notes#sidebar', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
   match 'bible-chapters/:version/:reference' => 'references#chapters', :constraints => {:version => /[^\/\.]*/, :reference => /[^\/]*/}
 
+  # Single Verse / Range page for SEO
+  match 'passage/:reference' => 'references#passage', constraints: {:reference => /[^\/]*/}
+
+
   get "/events", to: "features#events"
 
   resources "events", only: [:show]
