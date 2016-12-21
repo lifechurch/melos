@@ -16,7 +16,6 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const CHAPTER_CV  			= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[a-zA-Z]+$") 						// /bible/kjv/mat.1.kjv
 			const VERSE_CV 					= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9]{1,3}\.[a-zA-Z]+$") // /bible/kjv/mat.1.1.kjv
 
-			console.log(params)
 			let language_tag = Locale.locale3
 			let version = params.version || cookie.load('version') || '1'
 			let reference = params.ref.toUpperCase() || cookie.load('last_read').toUpperCase() || 'JHN.1'
@@ -28,61 +27,46 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				auth = { tp_token: sessionData.tp_token }
 			}
 
-      const loadChapter = (finalParams) => {
-      	console.log("FP-C", finalParams)
-      	store.dispatch(PassageActionCreator.passageAltVersionsLoad(params.altVersions)).then(() => {
-					store.dispatch(BibleActionCreator.readerLoad(finalParams, auth)).then((data) => {
-						resolve()
-					})
-				})
-      }
+			const loadChapter = (finalParams) => {
+				store.dispatch(BibleActionCreator.readerLoad(finalParams, auth)).then((data) => {
+					resolve()
+			 	})
+			}
 
-      const loadVerse = (finalParams) => {
-      	console.log("FP-V", finalParams)
-      	store.dispatch(PassageActionCreator.passageAltVersionsLoad(params.altVersions)).then(() => {
-					store.dispatch(PassageActionCreator.passageLoad(finalParams, auth)).then(() => {
-						resolve()
-					})
-				})
-      }
+			const loadVerse = (finalParams) => {
+				store.dispatch(PassageActionCreator.passageLoad(finalParams, auth)).then(() => {
+					resolve()
+			 	})
+			}
 
-      if (BIBLE.test(params.url)) {
-      	resolve()
+			if (BIBLE.test(params.url)) {
+			 resolve()
 
-      } else if (CHAPTER_NOTV.test(params.url)
-      	|| CHAPTER.test(params.url)
-      	|| CHAPTER_NOTV_CV.test(params.url)
-      	|| CHAPTER_CV.test(params.url)) {
-      	reference = reference.split('.').slice(0,2).join('.')
-      	loadChapter({ language_tag, version, reference })
+			} else if (CHAPTER_NOTV.test(params.url)
+			 || CHAPTER.test(params.url)
+			 || CHAPTER_NOTV_CV.test(params.url)
+			 || CHAPTER_CV.test(params.url)) {
+			 reference = reference.split('.').slice(0,2).join('.')
+			 loadChapter({ language_tag, version, reference })
 
-      } else if (VERSE_NOTV.test(params.url)) {
-      	console.log("Verse No Trailing Version")
-      	reference = reference.split('.').slice(0,3).join('.')
-      	loadVerse({ versions: params.altVersions[params.languageTag].text, language_tag: Locale.planLocale, passage: reference })
+			} else if (VERSE_NOTV.test(params.url)
+			 || VERSE.test(params.url)
+			 || VERSE_NOTV_CV.test(params.url)
+			 || VERSE_CV.test(params.url)) {
+			 reference = reference.split('.').slice(0,3).join('.')
+			 loadVerse({
+			 	versions: [ parseInt(version), ...params.altVersions[startingState.serverLanguageTag].text ] ,
+			 	language_tag: Locale.planLocale,
+			 	passage: reference
+			 })
 
-      } else if (VERSE.test(params.url)) {
-      	console.log("Verse Proper")
-      	reference = reference.split('.').slice(0,3).join('.')
-      	loadVerse({ versions: params.altVersions[params.languageTag].text, language_tag: Locale.planLocale, passage: reference })
+			} else {
+			 resolve()
 
-      } else if (VERSE_NOTV_CV.test(params.url)) {
-      	console.log("Verse No Trailing Version with Char Version")
-      	reference = reference.split('.').slice(0,3).join('.')
-      	loadVerse({ versions: params.altVersions[params.languageTag].text, language_tag: Locale.planLocale, passage: reference })
+			}
 
-      } else if (VERSE_CV.test(params.url)) {
-      	console.log("Verse with Char Version")
-      	reference = reference.split('.').slice(0,3).join('.')
-      	loadVerse({ versions: params.altVersions[params.languageTag].text, language_tag: Locale.planLocale, passage: reference })
-
-      } else {
-      	console.log("Something else!")
-      	resolve()
-      }
 		} else {
 			resolve()
 		}
-
 	})
 }

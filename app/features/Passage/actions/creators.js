@@ -3,10 +3,6 @@ import Immutable from 'immutable'
 
 const ActionCreators = {
 
-	passageAltVersionsLoad(versions) {
-		return { type: type('passageAltVersionsLoad'), versions }
-	}
-
 	/**
 	 * @passage: usfm of verse
    * @versions: list of versions for the locale
@@ -60,7 +56,7 @@ const ActionCreators = {
 			// wait for all the promises and then dispatch the action
 			// to build the data object
 			return Promise.all(promises).then((data) => {
-				dispatch({ type: type('passageLoadSuccess'), data, primaryVersion: versions[0], versions })
+				dispatch({ type: type('passageLoadSuccess'), data, primaryVersion: versions[0], current_verse: passage, versions })
 			}, (reason) => dispatch({ type: type('passageLoadFailure'), reason }))
 		}
 	},

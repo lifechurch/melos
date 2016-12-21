@@ -7,7 +7,7 @@ import CarouselArrow from '../../../components/Carousel/CarouselArrow'
 import Image from '../../../components/Carousel/Image'
 import LocalStore from '../../../lib/localStore'
 import { injectIntl, FormattedMessage } from 'react-intl'
-
+import { Link } from 'react-router'
 
 class Passage extends Component {
 
@@ -20,43 +20,43 @@ class Passage extends Component {
 	 *
 	 * @param      {object}  verses  verses object of verse objects to display
 	 */
-	getMainVersion(verses) {
-		const { params: { version } } = this.props
-		console.log("VVV", verses)
-		return version
-		// if the following checks don't match any version cookies, than it'll just
-		// be the first version back from the verses call
-		// if (Object.keys(verses).length > 0) {
-		// 	let mainVersion = verses[Object.keys(verses)[0]].versionInfo.id
-		// 	let usfm = verses[Object.keys(verses)[0]].usfm
-		// 	let lastVersion = LocalStore.get('version')
-		// 	let recentVersions = LocalStore.get('RecentVersions').data
+	// getMainVersion(verses) {
+	// 	const { params: { version } } = this.props
+	// 	console.log("VVV", verses)
+	// 	return version
+	// 	if the following checks don't match any version cookies, than it'll just
+	// 	be the first version back from the verses call
+	// 	if (Object.keys(verses).length > 0) {
+	// 		let mainVersion = verses[Object.keys(verses)[0]].versionInfo.id
+	// 		let usfm = verses[Object.keys(verses)[0]].usfm
+	// 		let lastVersion = LocalStore.get('version')
+	// 		let recentVersions = LocalStore.get('RecentVersions').data
 
-		// 	// first check last version
-		// 	if (lastVersion && `${lastVersion}-${usfm}` in verses) {
-		// 		mainVersion = lastVersion
-		// 	// then go through recent versions and check those
-		// 	} else {
-		// 		if (recentVersions.length > 0) {
-		// 			recentVersions.forEach((version, index) => {
-		// 				// for each one that matches, we'll overwrite,
-		// 				// because the last one in the array is the most
-		// 				// recent
-		// 				if (`${version}-${usfm}` in verses) {
-		// 					mainVersion = version
-		// 				}
-		// 			})
-		// 		}
-		// 	}
+	// 		// first check last version
+	// 		if (lastVersion && `${lastVersion}-${usfm}` in verses) {
+	// 			mainVersion = lastVersion
+	// 		// then go through recent versions and check those
+	// 		} else {
+	// 			if (recentVersions.length > 0) {
+	// 				recentVersions.forEach((version, index) => {
+	// 					// for each one that matches, we'll overwrite,
+	// 					// because the last one in the array is the most
+	// 					// recent
+	// 					if (`${version}-${usfm}` in verses) {
+	// 						mainVersion = version
+	// 					}
+	// 				})
+	// 			}
+	// 		}
 
-		// 	return mainVersion
-		// } else {
-		// 	return null
-		// }
-	}
+	// 		return mainVersion
+	// 	} else {
+	// 		return null
+	// 	}
+	// }
 
 	render() {
-		const { auth, passage, isRtl, localizedLink, intl } = this.props
+		const { auth, passage, isRtl, localizedLink, intl, params } = this.props
 
 		let mainVerse, versesCarousel, plansCarousel, metaContent, metaTitle, chapterLink, relatedPlansLink = null
 
@@ -64,7 +64,6 @@ class Passage extends Component {
 		let verses = []
 		if (passage && passage.verses && passage.verses.verses) {
 			let mainVersionID = passage.verses.primaryVersion //this.getMainVersion(passage.verses.verses)
-			console.log("MVID", mainVersionID)
 			Object.keys(passage.verses.verses).forEach((key, index) => {
 				let verse = passage.verses.verses[key]
 				// if we've found a main version, then let's set the maine verse
@@ -76,8 +75,8 @@ class Passage extends Component {
 								<div className='heading'>{ verse.versionInfo.local_abbreviation }</div>
 								<div className='name'>{ verse.versionInfo.local_title }</div>
 							</h2>
-							<a
-								href={`/bible/${verse.versionInfo.id}/${verse.usfm}`}
+							<Link
+								to={`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation}`}
 								title={`${intl.formatMessage({ id: "read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
 								className='verse-content'
 								dangerouslySetInnerHTML={{ __html: verse.content }}
@@ -86,8 +85,8 @@ class Passage extends Component {
 					)
 					metaTitle = `${passage.verses.title}; ${verse.text}`
 					metaContent = `${verse.text}`
-					chapterLink = `bible/${verse.versionInfo.id}/${verse.chapUsfm}`
-					relatedPlansLink = `/passage/${verse.usfm}#related-plans`
+					chapterLink = `/bible/${verse.versionInfo.id}/${verse.chapUsfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`
+					relatedPlansLink = `/bible/${params.version}/${verse.usfm}.${params.vabbr}#related-plans`
 				} else {
 					let heading = (
 						<h2>
@@ -159,24 +158,26 @@ class Passage extends Component {
 
 		// previous verse and next verse
 		let prevArrow, nextArrow = null
-		if (passage.verses.previous_verse) {
+
+		if (passage.verses && passage.verses.previous_verse) {
 			prevArrow = (
-				<a
-					href={`/passage/${passage.verses.previous_verse}`}
+				<Link
+					to={`/bible/${params.version}/${passage.verses.previous_verse}.${params.vabbr.toLowerCase()}`}
 					title={``}
 				>
 					<CarouselArrow width={23} height={23} dir='left' fill='gray'/>
-				</a>
+				</Link>
 			)
 		}
-		if (passage.verses.next_verse) {
+
+		if (passage.verses && passage.verses.next_verse) {
 			nextArrow = (
-				<a
-					href={`/passage/${passage.verses.next_verse}`}
+				<Link
+					to={`/bible/${params.version}/${passage.verses.next_verse}.${params.vabbr.toLowerCase()}`}
 					title={``}
 				>
 					<CarouselArrow width={23} height={23} dir='right' fill='gray'/>
-				</a>
+				</Link>
 			)
 		}
 
@@ -191,7 +192,7 @@ class Passage extends Component {
 					<div className='title-heading'>
 						{ prevArrow }
 						<h1 className='title'>
-							{ passage.verses.title }
+							{ passage.verses ? passage.verses.title : null }
 						</h1>
 						{ nextArrow }
 					</div>
@@ -199,8 +200,8 @@ class Passage extends Component {
 						{ mainVerse }
 					</div>
 					<div className='buttons'>
-						<a href={chapterLink} className='chapter-button solid-button'><FormattedMessage id='read chapter' /></a>
-						<a href={relatedPlansLink} className='chapter-button solid-button'><FormattedMessage id='related plans' /></a>
+						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read chapter' /></Link>
+						<a href={relatedPlansLink} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
 					</div>
 				</div>
 				<div className='row verses small-12'>

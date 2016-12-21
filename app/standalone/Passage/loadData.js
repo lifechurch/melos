@@ -7,9 +7,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const auth = (sessionData.email && sessionData.password) ? { username: sessionData.email, password: sessionData.password } : false
 
 			if (isReference.test(params.url)) {
-				console.log('isreference')
 				store.dispatch(ActionCreators.passageLoad({ versions: params.versions, language_tag: Locale.planLocale, passage: params.ref }, auth)).then(() => {
-					console.log('success!')
 					resolve()
 				})
 			} else {

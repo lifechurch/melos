@@ -4,12 +4,12 @@ import { getSelectionString } from '../../../lib/usfmUtils'
 
 export default function reducer(state = {}, action) {
 	switch (action.type) {
-		case type('bibleVersesRequest'):
-			return { loading: true }
+		// case type('bibleVersesRequest'):
+		// 	return { loading: true }
 
-		case type('bibleVersesFailure'):
-		case type('passageLoadFailure'):
-			return Immutable.fromJS(action).set('loading', false).toJS()
+		// case type('bibleVersesFailure'):
+		// case type('passageLoadFailure'):
+		// 	return Immutable.fromJS(action).set('loading', false).toJS()
 
 		// case type('bibleVersesSuccess'):
 		// this action is dispatched when all the promises resolve
@@ -40,6 +40,7 @@ export default function reducer(state = {}, action) {
 			})
 
 			return Immutable.fromJS(state).mergeDeep({
+				current_verse: action.current_verse,
 				primaryVersion: action.primaryVersion,
 				versions: action.versions,
 				verses: content,

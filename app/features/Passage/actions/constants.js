@@ -1,7 +1,5 @@
 const constants = {
 
-	passageAltVersionsLoad: "PASSAGE_ALT_VERSIONS_LOAD",
-
 	passageLoadFailure: "PASSAGE_LOAD_DATA_FAILURE",
 	passageLoadSuccess: "PASSAGE_LOAD_DATA_SUCCESS",
 

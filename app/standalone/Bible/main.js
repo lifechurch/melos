@@ -11,7 +11,8 @@ import { useRouterHistory } from 'react-router'
 import { createHistory } from 'history'
 import getRoutes from './routes'
 import cookie from 'react-cookie';
-import ActionCreators from '../../features/Bible/actions/creators'
+import BibleActionCreator from '../../features/Bible/actions/creators'
+import PassageActionCreator from '../../features/Passage/actions/creators'
 
 // require('moment/min/locales')
 
@@ -46,7 +47,7 @@ function requireChapterData(nextState, replace, callback) {
 	if (currentState && currentState.bibleReader && currentState.bibleReader.chapter && currentState.bibleReader.chapter.reference && currentState.bibleReader.chapter.reference.usfm == reference) {
 		callback()
 	} else if (version > 0 && reference) {
-		store.dispatch(ActionCreators.readerLoad({ language_tag: lang, version: version, reference: reference }, store.getState().auth.isLoggedIn)).then(() => {
+		store.dispatch(BibleActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference }, store.getState().auth.isLoggedIn)).then(() => {
 			callback()
 		}, (error) => {
 			callback()
@@ -60,14 +61,14 @@ function requireVerseData(nextState, replace, callback) {
 	const { params: { lang:routeLang, version:routeVersion, book, chapter, verse, vabbr } } = nextState
 	const currentState = store.getState()
 
-	let lang = window.__LOCALE__.locale3
+	let lang = window.__LOCALE__.planLocale
 	let reference = `${book.toUpperCase()}.${chapter}.${verse}`
-	let versions = defaultVersions[lang]
-
-	if (currentState && currentState.bibleReader && currentState.bibleReader.chapter && currentState.bibleReader.chapter.reference && currentState.bibleReader.chapter.reference.usfm == reference) {
+	let versions = [ parseInt(routeVersion), ...currentState.altVersions[currentState.serverLanguageTag].text ]
+	let isLoggedIn = currentState.auth.isLoggedIn
+	if (currentState && currentState.passage && currentState.passage.verses && currentState.passage.verses.versions && currentState.passage.verses.versions.length && currentState.passage.verses.versions[0] == routeVersion && currentState.passage.verses.current_verse == reference) {
 		callback()
 	} else if (versions.length > 0 && reference) {
-		store.dispatch(ActionCreators.verseLoad({ language_tag: lang, versions: versions, verse: reference }, store.getState().auth.isLoggedIn)).then(() => {
+		store.dispatch(PassageActionCreator.passageLoad({ language_tag: lang , versions: versions, passage: reference }, isLoggedIn)).then(() => {
 			callback()
 		}, (error) => {
 			callback()

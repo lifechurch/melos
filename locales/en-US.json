@@ -417,5 +417,6 @@
 	"Reader.verse action.alphabetical": "Alphabetical",
 	"Reader.verse action.count": "Count",
 	"Reader.verse action.add color": "Add Color",
-	"Reader.verse action.labels private": "Labels are always private"
+	"Reader.verse action.labels private": "Labels are always private",
+	"Reader.read chapter": "Read full chapter"
 }

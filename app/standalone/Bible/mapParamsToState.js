@@ -1,5 +1,6 @@
 export default function mapParamsToState(state, params) {
 	return Object.assign({}, state, {
-		serverLanguageTag: params.languageTag
+		serverLanguageTag: params.languageTag,
+		altVersions: params.altVersions
 	})
 }
