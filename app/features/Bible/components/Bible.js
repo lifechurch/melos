@@ -285,11 +285,7 @@ class Bible extends Component {
 
 			if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
 				metaContent = `
-					${bible.chapter.reference.human},
-					${bible.version.local_title}
-					(${bible.version.local_abbreviation.toUpperCase()})
-					${JSON.stringify(bible.verses.verses[Object.keys(bible.verses.verses)[0]].content.substring(0, 170)).slice(1, -1)}
-				`
+					${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()})  ${bible.verses.verses[Object.keys(bible.verses.verses)[0]].content.substring(0, 170)}`
 			}
 		}
 
