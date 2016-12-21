@@ -37,6 +37,7 @@ class ReferencesController < ApplicationController
 
     @title_tag = fromNode['head']['title']
     @node_meta_tags = fromNode['head']['meta']
+    @render_rails_meta = true
 
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
