@@ -16,7 +16,9 @@ const ActionCreators = {
 				dispatch(ActionCreators.bibleConfiguration()),
 				dispatch(ActionCreators.bibleVersion({ id: version })),
 				dispatch(ActionCreators.bibleChapter({ id: version, reference: reference, format: 'html', language_tag: language_tag })),
-				dispatch(ActionCreators.momentsColors(auth))
+				dispatch(ActionCreators.momentsColors(auth)),
+				// get first two verse text for bible meta data
+				dispatch(ActionCreators.bibleVerses({ id: version, references: [`${reference}.1+${reference}.2`], format: 'text' }))
 			]
 
 			if (auth) {

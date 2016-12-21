@@ -32,7 +32,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					auth = { tp_token: sessionData.tp_token }
 				}
 
-				store.dispatch(ActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference }, auth)).then(() => {
+				store.dispatch(ActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference, params }, auth)).then(() => {
 					resolve()
 				})
 			} else {
