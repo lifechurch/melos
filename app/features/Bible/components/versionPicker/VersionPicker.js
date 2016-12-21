@@ -264,7 +264,7 @@ class VersionPicker extends Component {
 			if (keyEventName == "Enter") {
 				event.preventDefault()
 				//
-				let chapURL = this.props.localizedLink(`/bible/${versions[versionKeys[versionlistSelectionIndex]].id}/${selectedChapter}`)
+				let chapURL = this.props.localizedLink(`/bible/${versions[versionKeys[versionlistSelectionIndex]].id}/${selectedChapter}.${this.props.params.vabbr}`)
 				dispatch(routeActions.push(chapURL))
 			}
 

@@ -192,7 +192,7 @@ class Bible extends Component {
 
 
 	render() {
-		const { bible, settings, verseAction, hosts } = this.props
+		const { bible, settings, verseAction, hosts, params } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
@@ -270,8 +270,8 @@ class Bible extends Component {
 					/>
 					<ReaderArrows
 						{...this.props}
-						previousChapterURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}` : null}
-						nextChapterURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}` : null}
+						previousChapterURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
+						nextChapterURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
 					/>
 				</div>
 			)

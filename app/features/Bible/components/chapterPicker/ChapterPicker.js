@@ -393,7 +393,7 @@ class ChapterPicker extends Component {
 			}
 			if (keyEventName == "Enter") {
 				let chapIndex = chapterKeys[chapterlistSelectionIndex]
-				let chapURL = this.props.localizedLink(`/bible/${versionID}/${(books[bookMap[selectedBook]].chapters)[chapIndex].usfm}`)
+				let chapURL = this.props.localizedLink(`/bible/${versionID}/${(books[bookMap[selectedBook]].chapters)[chapIndex].usfm}.${this.props.params.vabbr}`)
 				dispatch(routeActions.push(chapURL))
 			}
 		}
@@ -484,6 +484,7 @@ class ChapterPicker extends Component {
 				<DropdownTransition show={dropdown} exemptSelector='.chapter-picker-container .dropdown-arrow-container' onOutsideClick={this.closeDropdown}>
 					<div onClick={this.cancelBlur}>
 						<ChapterPickerModal
+							params={this.props.params}
 							localizedLink={this.props.localizedLink}
 							versionID={versionID}
 							classes={classes}
