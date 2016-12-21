@@ -17,6 +17,7 @@ class ReferencesController < ApplicationController
     #   format.xml  { render nothing: true }
     #   format.json { render "show.json.rabl" }
     # end
+    # versions = DEFAULT_VERSIONS.key?(I18n.locale.to_s) ? DEFAULT_VERSIONS[I18n.locale.to_s] : DEFAULT_VERSIONS["en"]
 
     p = {
         "strings" => {},
@@ -24,7 +25,8 @@ class ReferencesController < ApplicationController
         "url" => request.path,
         "cache_for" => YV::Caching::a_very_long_time,
         "version" => self.presenter.reference.version,
-        "ref" => params[:reference]
+        "ref" => params[:reference],
+        "altVersions" => DEFAULT_VERSIONS
     }
 
     fromNode = YV::Nodestack::Fetcher.get('Bible', p, cookies, current_auth, current_user, request)
@@ -39,36 +41,36 @@ class ReferencesController < ApplicationController
     render locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
-  def passage
-    # now_reading(self.presenter.reference)
-    # respond_to do |format|
-    #   format.html
-    #   format.xml  { render nothing: true }
-    #   format.json { render "show.json.rabl" }
-    # end
-
-    versions = DEFAULT_VERSIONS.key?(I18n.locale.to_s) ? DEFAULT_VERSIONS[I18n.locale.to_s] : DEFAULT_VERSIONS["en"]
-
-    p = {
-        "strings" => {},
-        "languageTag" => I18n.locale.to_s,
-        "url" => request.path,
-        "cache_for" => YV::Caching::a_very_long_time,
-        "versions" => versions['text'],
-        "ref" => params[:reference]
-    }
-
-    fromNode = YV::Nodestack::Fetcher.get('Passage', p, cookies, current_auth, current_user, request)
-
-    if (fromNode['error'].present?)
-      return render_404
-    end
-
-    @title_tag = fromNode['head']['title']
-    @node_meta_tags = fromNode['head']['meta']
-
-    render 'show', locals: { html: fromNode['html'], js: fromNode['js'] }
-  end
+  # def passage
+  #   # now_reading(self.presenter.reference)
+  #   # respond_to do |format|
+  #   #   format.html
+  #   #   format.xml  { render nothing: true }
+  #   #   format.json { render "show.json.rabl" }
+  #   # end
+  #
+  #   versions = DEFAULT_VERSIONS.key?(I18n.locale.to_s) ? DEFAULT_VERSIONS[I18n.locale.to_s] : DEFAULT_VERSIONS["en"]
+  #
+  #   p = {
+  #       "strings" => {},
+  #       "languageTag" => I18n.locale.to_s,
+  #       "url" => request.path,
+  #       "cache_for" => YV::Caching::a_very_long_time,
+  #       "versions" => versions['text'],
+  #       "ref" => params[:reference]
+  #   }
+  #
+  #   fromNode = YV::Nodestack::Fetcher.get('Passage', p, cookies, current_auth, current_user, request)
+  #
+  #   if (fromNode['error'].present?)
+  #     return render_404
+  #   end
+  #
+  #   @title_tag = fromNode['head']['title']
+  #   @node_meta_tags = fromNode['head']['meta']
+  #
+  #   render 'show', locals: { html: fromNode['html'], js: fromNode['js'] }
+  # end
 
   protected
 
@@ -79,9 +81,17 @@ class ReferencesController < ApplicationController
       # this is a temporary hack until Version/Reference class clean-up
       ref_string  = YV::ReferenceString.new(ref, overrides: {version: params[:version] || current_version})
       ref_hash    = ref_string.to_hash
+      tmp_ref_string  = YV::ReferenceString.new(ref)
+      tmp_ref_hash = tmp_ref_string.to_hash
 
       # If somebody visits just /bible
       if params[:version].blank? && ref_hash[:chapter].present? # url
+        ref_hash[:version] ||= current_version
+        ref_hash[:chapter] ||= "1"
+        flash.keep
+        reference = Reference.new(ref_hash)
+        return redirect_to reference_path(version: reference.version, reference: reference.to_param)
+      elsif !tmp_ref_hash[:version].present?
         ref_hash[:version] ||= current_version
         ref_hash[:chapter] ||= "1"
         flash.keep

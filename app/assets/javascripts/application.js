@@ -136,7 +136,6 @@ function init() {
     }
 
     if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage) {
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isReader || isPassage) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
