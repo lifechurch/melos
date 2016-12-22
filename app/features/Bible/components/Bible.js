@@ -19,6 +19,7 @@ import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
 // import DropdownTransition from '../../../components/DropdownTransition'
 import Immutable from 'immutable'
+import Helmet from 'react-helmet'
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -192,8 +193,11 @@ class Bible extends Component {
 
 
 	render() {
-		const { bible, settings, verseAction, hosts, params } = this.props
+		const { bible, settings, verseAction, hosts, params, intl } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
+
+		let metaTitle = `${intl.formatMessage({ id: 'meta.mobile.title' })} | ${intl.formatMessage({ id: 'meta.site.title' })}`
+		let metaContent = ''
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
 			this.header = (
@@ -275,10 +279,34 @@ class Bible extends Component {
 					/>
 				</div>
 			)
+
+			// overwrite meta with bible stuff
+			metaTitle = `${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()}) | ${intl.formatMessage({ id: 'chapter' })} ${bible.chapter.reference.usfm.split('.').pop()} | ${intl.formatMessage({ id: 'meta.mobile.title' })} | ${intl.formatMessage({ id: 'meta.site.title' })}`
+
+			if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
+				metaContent = `
+					${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()})  ${bible.verses.verses[Object.keys(bible.verses.verses)[0]].content.substring(0, 170)}`
+			}
 		}
 
 		return (
 			<div className="">
+				<Helmet
+					title={metaTitle}
+					meta={[
+						{ name: 'description', content: `${metaContent.substring(0, 200)}...` },
+						{ name: 'og:title', content: metaTitle },
+						{ name: 'og:description', content: `${metaContent.substring(0, 200)}...` },
+						// hacky meta rendering on rails side
+						// { name: 'og:image', content: `` },
+						// { name: 'og:url', content: '' },
+						// { name: 'twitter:image', content: `` },
+						// { name: 'twitter:url', content: `` },
+						{ name: 'twitter:title', content: metaTitle },
+						{ name: 'twitter:description', content: `${metaContent.substring(0, 200)}...` },
+						{ name: 'twitter:site', content: '@YouVersion' },
+					]}
+				/>
 				{ this.header }
 				<div className="row">
 					<div className="columns large-6 medium-10 medium-centered">

@@ -14,6 +14,8 @@ import cookie from 'react-cookie';
 import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
 
+import ReactGA from 'react-ga'
+
 // require('moment/min/locales')
 
 let initialState = defaultState
@@ -24,6 +26,7 @@ let browserHistory = useRouterHistory(createHistory)({
 
 if (typeof window !== 'undefined' && typeof window.__INITIAL_STATE__ !== 'undefined') {
 	initialState = window.__INITIAL_STATE__
+	ReactGA.initialize("UA-3571547-76")
 }
 
 let logger = null
@@ -54,7 +57,11 @@ function requireChapterData(nextState, replace, callback) {
 		) {
 		callback()
 	} else if (version > 0 && reference) {
-		store.dispatch(BibleActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference }, store.getState().auth.isLoggedIn)).then(() => {
+		if (window.location.hostname === 'www.bible.com') {
+			ReactGA.set({ page: `/${nextState.location.pathname}` })
+			ReactGA.pageview(`/${nextState.location.pathname}`)
+		}
+		store.dispatch(BibleActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference, params }, store.getState().auth.isLoggedIn)).then(() => {
 			callback()
 		}, (error) => {
 			callback()
@@ -67,7 +74,6 @@ function requireChapterData(nextState, replace, callback) {
 function requireVerseData(nextState, replace, callback) {
 	const { params: { lang:routeLang, version:routeVersion, book, chapter, verse, vabbr } } = nextState
 	const currentState = store.getState()
-
 	let lang = window.__LOCALE__.planLocale
 	let reference = `${book.toUpperCase()}.${chapter}.${verse}`
 	let versions = [ parseInt(routeVersion), ...currentState.altVersions[currentState.serverLanguageTag].text ]
@@ -75,6 +81,10 @@ function requireVerseData(nextState, replace, callback) {
 	if (currentState && currentState.passage && currentState.passage.verses && currentState.passage.verses.versions && currentState.passage.verses.versions.length && currentState.passage.verses.versions[0] == routeVersion && currentState.passage.verses.current_verse == reference) {
 		callback()
 	} else if (versions.length > 0 && reference) {
+		if (window.location.hostname === 'www.bible.com') {
+			ReactGA.set({ page: `/${nextState.location.pathname}` })
+			ReactGA.pageview(`/${nextState.location.pathname}`)
+		}
 		store.dispatch(PassageActionCreator.passageLoad({ language_tag: lang , versions: versions, passage: reference }, isLoggedIn)).then(() => {
 			callback()
 		}, (error) => {
