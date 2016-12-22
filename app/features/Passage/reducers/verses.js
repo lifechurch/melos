@@ -4,14 +4,6 @@ import { getSelectionString } from '../../../lib/usfmUtils'
 
 export default function reducer(state = {}, action) {
 	switch (action.type) {
-		// case type('bibleVersesRequest'):
-		// 	return { loading: true }
-
-		// case type('bibleVersesFailure'):
-		// case type('passageLoadFailure'):
-		// 	return Immutable.fromJS(action).set('loading', false).toJS()
-
-		// case type('bibleVersesSuccess'):
 		// this action is dispatched when all the promises resolve
 		// for the passageLoad function
 		case type('passageLoadSuccess'):
@@ -23,23 +15,23 @@ export default function reducer(state = {}, action) {
 			action.data.forEach((promise) => {
 				// bible verses call
 				if ('verses' in promise && 'text' in promise) {
-					let usfm = `${promise.verses[0].reference.usfm[0].split('.').slice(0, 2).join('.')}.${getSelectionString(promise.verses[0].reference.usfm)}`
-					content[`${promise.versionInfo.id}-${usfm}`] = {
+					content[`${promise.versionInfo.id}-${promise.usfm}`] = {
 						heading: ``,
-						content: promise.verses[0].content,
+						// concat all the content for each verse together
+						content: promise.verses.reduce((acc, curr) => { return acc + curr.content }, ''),
 						chapUsfm: promise.verses[0].reference.usfm[0].split('.').slice(0, 2).join('.'),
-						usfm: usfm,
+						usfm: promise.usfm,
 						text: promise.text,
-						human: promise.verses[0].reference.human,
+						human: `${promise.verses[0].reference.human.split(':').slice(0,1)}:${action.verseRange}`,
 						versionInfo: promise.versionInfo,
 					}
-					if (!title) title = promise.verses[0].reference.human
+					if (!title) title = `${promise.verses[0].reference.human.split(':').slice(0,1)}:${action.verseRange}`
 					if (!next_verse) next_verse = promise.next_verse
 					if (!previous_verse) previous_verse = promise.previous_verse
 				}
 			})
 
-			return Immutable.fromJS(state).mergeDeep({
+			return {
 				current_verse: action.current_verse,
 				primaryVersion: action.primaryVersion,
 				versions: action.versions,
@@ -47,7 +39,7 @@ export default function reducer(state = {}, action) {
 				title: title,
 				next_verse: next_verse,
 				previous_verse: previous_verse,
-			}).delete('loading').toJS()
+			}
 
 
 		default:

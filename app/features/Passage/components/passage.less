@@ -152,31 +152,31 @@
 	.note { display: none !important; }
 
 	.verse {
-		.heading {
-			border: @thin-grey-border;
-			border-radius: @default-radius;
-			padding: 4px 10px 4px 10px;
-			min-width: 0;
-			margin: 0;
-			display: inline;
-		}
 		h2 {
 			display: inline-flex;
 			align-items: center;
 			width: 100%;
 			.heading {
+				border: @thin-grey-border;
+				border-radius: @default-radius;
+				padding: 4px 10px 4px 10px;
+				min-width: 0;
+				margin: 0;
+				display: inline;
 				margin-right: 10px;
 			}
 			.name {
 				flex-shrink: 10;
 				max-width: 60%;
-				// padding-top: 18px;
 				font-size: 11px;
 				color: @font-grey;
 			}
 		}
 		.verse-content {
+			display: inline-block !important;
 			margin-top: 15px;
 		}
 	}
+
+
 }

@@ -11,50 +11,6 @@ import { Link } from 'react-router'
 
 class Passage extends Component {
 
-	/**
-	 * get the version for the main, big verse based on the user's previous versions.
-	 * if the last version cookie matches, use that. if not check last 5 recent versions
-	 * and match one of those. finally if none of those match (new user that hasn't
-	 * been to the site?) then just use the version of the first verse back from the
-	 * api
-	 *
-	 * @param      {object}  verses  verses object of verse objects to display
-	 */
-	// getMainVersion(verses) {
-	// 	const { params: { version } } = this.props
-	// 	console.log("VVV", verses)
-	// 	return version
-	// 	if the following checks don't match any version cookies, than it'll just
-	// 	be the first version back from the verses call
-	// 	if (Object.keys(verses).length > 0) {
-	// 		let mainVersion = verses[Object.keys(verses)[0]].versionInfo.id
-	// 		let usfm = verses[Object.keys(verses)[0]].usfm
-	// 		let lastVersion = LocalStore.get('version')
-	// 		let recentVersions = LocalStore.get('RecentVersions').data
-
-	// 		// first check last version
-	// 		if (lastVersion && `${lastVersion}-${usfm}` in verses) {
-	// 			mainVersion = lastVersion
-	// 		// then go through recent versions and check those
-	// 		} else {
-	// 			if (recentVersions.length > 0) {
-	// 				recentVersions.forEach((version, index) => {
-	// 					// for each one that matches, we'll overwrite,
-	// 					// because the last one in the array is the most
-	// 					// recent
-	// 					if (`${version}-${usfm}` in verses) {
-	// 						mainVersion = version
-	// 					}
-	// 				})
-	// 			}
-	// 		}
-
-	// 		return mainVersion
-	// 	} else {
-	// 		return null
-	// 	}
-	// }
-
 	render() {
 		const { auth, passage, isRtl, localizedLink, intl, params } = this.props
 

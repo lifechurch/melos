@@ -7,14 +7,14 @@ export default function loadData(params, startingState, sessionData, store, Loca
 	return new Promise((resolve, reject) => {
 		if (typeof store !== 'undefined' && params.hasOwnProperty('url') && params.hasOwnProperty('languageTag')) {
 			const BIBLE 						= new RegExp("^\/bible$") // /bible
-			const CHAPTER_NOTV 			= new RegExp("^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}$") 													// /bible/1/mat.1
-			const VERSE_NOTV 				= new RegExp("^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9]{1,3}$") 							// /bible/1/mat.1.1
-			const CHAPTER  					= new RegExp("^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[a-zA-Z]+$") 								// /bible/1/mat.1.kjv
-			const VERSE  						= new RegExp("^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9]{1,3}\.[a-zA-Z]+$") 		// /bible/1/mat.1.1.kjv
-			const CHAPTER_NOTV_CV  	= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}$") 												// /bible/kjv/mat.1
-			const VERSE_NOTV_CV  		= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9]{1,3}$") 						// /bible/kjv/mat.1.1
-			const CHAPTER_CV  			= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[a-zA-Z]+$") 						// /bible/kjv/mat.1.kjv
-			const VERSE_CV 					= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9]{1,3}\.[a-zA-Z]+$") // /bible/kjv/mat.1.1.kjv
+			const CHAPTER_NOTV 			= new RegExp("^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]+$") 																// /bible/1/mat.1
+			const VERSE_NOTV 				= new RegExp("^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9\-,]+$") 									// /bible/1/mat.1.1
+			const CHAPTER  					= new RegExp("^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[a-zA-Z]+$") 									// /bible/1/mat.1.kjv
+			const VERSE  						= new RegExp("^\/bible\/[0-9]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9\-,]+\.[a-zA-Z]+$") 			// /bible/1/mat.1.1-4,6.kjv
+			const CHAPTER_NOTV_CV  	= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}$") 													// /bible/kjv/mat.1
+			const VERSE_NOTV_CV  		= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9\-,]+$") 							// /bible/kjv/mat.1.1-3,5
+			const CHAPTER_CV  			= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[a-zA-Z]+$") 							// /bible/kjv/mat.1.kjv
+			const VERSE_CV 					= new RegExp("^\/bible\/[a-zA-Z]+\/[0-9a-zA-Z]{3}\.[0-9]{1,3}\.[0-9\-,]+\.[a-zA-Z]+$") 		// /bible/kjv/mat.1.1.kjv
 
 			let language_tag = Locale.locale3
 			let version = params.version || cookie.load('version') || '1'
