@@ -25,7 +25,8 @@ export default function reducer(state = {}, action) {
 				}
 				references.push({ usfm: verse.reference.usfm, version_id: action.params.id })
 			})
-			return Immutable.fromJS(state).merge({ verses: content, references }).delete('loading').toJS()
+			// return Immutable.fromJS(state).merge({ verses: content, references }).delete('loading').toJS()
+			return { verses: content, references }
 
 		default:
 			return state

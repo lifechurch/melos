@@ -42,12 +42,12 @@ class MomentCreate extends Component {
 		if (nextProps.verses && nextProps.references) {
 			if (verses !== nextProps.verses) {
 				this.setState({
-					localVerses: Immutable.fromJS(localVerses).merge(nextProps.verses).toJS(),
+					localVerses: Immutable.fromJS(nextProps.verses).toJS()
 				})
 			}
 			if (references !== nextProps.references) {
 				this.setState({
-					localRefs: Immutable.fromJS(localRefs).concat(nextProps.references).toJS(),
+					localRefs: Immutable.fromJS(nextProps.references).toJS()
 				})
 			}
 		}

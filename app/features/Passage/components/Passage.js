@@ -33,7 +33,7 @@ class Passage extends Component {
 							</h2>
 							<Link
 								to={`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation}`}
-								title={`${intl.formatMessage({ id: "read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
+								title={`${intl.formatMessage({ id: "Reader.read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
 								className='verse-content'
 								dangerouslySetInnerHTML={{ __html: verse.content }}
 							/>
@@ -100,9 +100,10 @@ class Passage extends Component {
 
 		let plansDiv = null
 		if (items.length > 0) {
+			// values={{ reference: passage.verses.title }}
 			plansDiv = (
 				<div className='related-plans collections-view'>
-					<h2 id='related-plans' className='heading'><FormattedMessage id='plans related to reference' values={{ reference: passage.verses.title }} /></h2>
+					<h2 id='related-plans' className='heading'><FormattedMessage id='Reader.plan title' /></h2>
 					<div className='row collection-items small-12'>
 						<ul className='list'>
 							{ items }

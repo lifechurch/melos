@@ -250,7 +250,7 @@
 	"features.EventEdit.features.content.components.ContentInsertionPoint.title": "Lägg till nästa modul här",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.title": "Titel",
 	"features.EventEdit.features.content.components.ContentTypeAnnouncement.prompt": "Skriv något här...",
-	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "I din händelse kommer enbart din titel (ovan) visas. När en användare trycker på titeln kommer innehållet (nedan) visas i en separat vy.",
+	"features.EventEdit.features.content.components.ContentTypeAnnouncement.caption": "I din händelse kommer enbart din titel (ovan) visas. N��r en användare trycker på titeln kommer innehållet (nedan) visas i en separat vy.",
 	"features.EventEdit.features.content.components.ContentTypeContainer.dirty": "Innehållet kommer automatiskt sparas några sekunder efter att du sluta skriva.",
 	"features.EventEdit.features.content.components.ContentTypeContainer.failed": "Kan inte spara.",
 	"features.EventEdit.features.content.components.ContentTypeContainer.tryAgain": "Försök igen.",
