@@ -1899,6 +1899,14 @@ en:
             signIn:                             "Sign In to Save Event"
             saved:                              "Event Saved"
     Reader:
+      chapter:                                  "Chapter"
+      read reference:                           "Read %{reference}"
+      plan title:                               "Free Reading Plans and Devotionals"
+      meta:
+        mobile:
+          title:                                "The Bible App"
+        site:
+          title:                                "Bible.com"
       header:
         parallel:                               "Parallel"
         parallel exit:                          "Exit Parallel Mode"
