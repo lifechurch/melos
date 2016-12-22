@@ -14,13 +14,13 @@ export default function reducer(state = {}, action) {
 			let references = []
 			Immutable.fromJS(action.response.verses).toJS().forEach((verse) => {
 				content[`${action.params.id}-${verse.reference.usfm}`] = {
-					heading: `${verse.reference.human} ${action.params.local_abbreviation.toUpperCase()}`,
+					heading: `${verse.reference.human} ${action.params.local_abbreviation ? action.params.local_abbreviation.toUpperCase() : ''}`,
 					content: verse.content,
 					usfm: verse.reference.usfm,
 					human: verse.reference.human,
 					versionInfo: {
 						id: action.params.id,
-						local_abbreviation: action.params.local_abbreviation.toUpperCase(),
+						local_abbreviation: action.params.local_abbreviation ? action.params.local_abbreviation.toUpperCase() : '',
 					},
 				}
 				references.push({ usfm: verse.reference.usfm, version_id: action.params.id })

@@ -54,7 +54,7 @@ function requireChapterData(nextState, replace, callback) {
 		) {
 		callback()
 	} else if (version > 0 && reference) {
-		store.dispatch(BibleActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference }, store.getState().auth.isLoggedIn)).then(() => {
+		store.dispatch(BibleActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference, params }, store.getState().auth.isLoggedIn)).then(() => {
 			callback()
 		}, (error) => {
 			callback()
