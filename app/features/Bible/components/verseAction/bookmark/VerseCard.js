@@ -36,7 +36,7 @@ class VerseCard extends Component {
 								key={key}
 								className='verse'
 								to={`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`}
-								title={`${intl.formatMessage({ id: "read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
+								title={`${intl.formatMessage({ id: "Reader.read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
 							>
 								{ heading }
 								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
