@@ -61,7 +61,7 @@ function requireChapterData(nextState, replace, callback) {
 			ReactGA.set({ page: `/${nextState.location.pathname}` })
 			ReactGA.pageview(`/${nextState.location.pathname}`)
 		}
-		store.dispatch(BibleActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference, nextState.params }, store.getState().auth.isLoggedIn)).then(() => {
+		store.dispatch(BibleActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference, params: nextState.params }, store.getState().auth.isLoggedIn)).then(() => {
 			callback()
 		}, (error) => {
 			callback()
