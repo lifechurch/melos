@@ -131,10 +131,9 @@ class Bible extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		const { bible } = this.props
-		const { chapter } = this.state
 
 		// send error down to pickers
-		if (bible.chapter != prevProps.bible.chapter) {
+		if (bible.chapter && prevProps.bible.chapter && bible.chapter.reference.usfm !== prevProps.bible.chapter.reference.usfm) {
 			if (bible.chapter.errors) {
 				this.setState({ chapterError: true })
 			} else {
@@ -143,7 +142,6 @@ class Bible extends Component {
 						chapterError: false,
 						selectedChapter: bible.chapter.reference.usfm,
 						selectedVersion: bible.chapter.reference.version_id,
-						inputValue: bible.chapter.reference.human
 					})
 
 					LocalStore.set('last_read', bible.chapter.reference.usfm)
@@ -153,19 +151,29 @@ class Bible extends Component {
 		}
 
 		// update version for the chapter picker if a new version has been selected
-		if (bible.version && bible.version.id && bible.version.id !== prevProps.bible.version.id) {
+		if (bible.version && bible.version.id && bible.books && bible.books.all && prevProps.bible.version && prevProps.bible.version.id && bible.version.id !== prevProps.bible.version.id) {
 			this.recentVersions.addVersion(bible.version)
 
 			this.setState({
 				selectedVersion: bible.version.id,
-				recentVersions: this.recentVersions.getVersions(bible.versions.byLang[bible.versions.selectedLanguage]),
 			})
-
+			this.updateRecentVersions()
 			Filter.clear("BooksStore")
-			Filter.add("BooksStore", bible.version.books)
+			Filter.add("BooksStore", bible.books.all)
 			LocalStore.set('version', bible.version.id)
 		}
 
+	}
+
+	updateRecentVersions = () => {
+		const { bible } = this.props
+		let versionList = Object.keys(bible.versions.byLang).reduce((acc, curr) => {
+			return Object.assign(acc, bible.versions.byLang[curr])
+		}, {})
+
+		this.setState({
+			recentVersions: this.recentVersions.getVersions(versionList),
+		})
 	}
 
 	handleSettingsChange(key, value) {
@@ -184,10 +192,7 @@ class Bible extends Component {
 		})
 
 		this.recentVersions.syncVersions(bible.settings)
-
-		this.setState({
-			recentVersions: this.recentVersions.getVersions(bible.versions.byLang[bible.versions.selectedLanguage]),
-		})
+		this.updateRecentVersions()
 	}
 
 

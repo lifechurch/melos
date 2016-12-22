@@ -101,12 +101,15 @@ class VersionPicker extends Component {
 				dropdown: false,
 				selectedVersion: version.id,
 				inputValue: version.local_abbreviation.toUpperCase(),
+				selectedLanguage: version.language.language_tag,
 			})
 		}
 
 		// if we've changed languages, let's update the versions list
 		if ((versions.selectedLanguage !== prevProps.versions.selectedLanguage) ) {
-			this.setState({ versions: versions.byLang[versions.selectedLanguage] })
+			this.setState({
+				versions: versions.byLang[versions.selectedLanguage],
+			})
 		}
 	}
 

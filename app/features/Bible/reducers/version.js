@@ -4,7 +4,7 @@ import Immutable from 'immutable'
 export default function reducer(state = {}, action) {
 	switch (action.type) {
 		case type('bibleVersionRequest'):
-			return { loading: true }
+			return Immutable.fromJS(state).merge({ loading: true }).toJS()
 
 		case type('bibleVersionFailure'):
 			return { loading: false }
