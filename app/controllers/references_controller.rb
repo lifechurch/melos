@@ -39,7 +39,7 @@ class ReferencesController < ApplicationController
     @node_meta_tags = fromNode['head']['meta']
     @render_rails_meta = true
 
-    render locals: { html: fromNode['html'], js: fromNode['js'] }
+    render layout: "node_app", locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   # def passage
