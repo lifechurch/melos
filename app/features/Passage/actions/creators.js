@@ -12,37 +12,31 @@ const ActionCreators = {
 		return dispatch => {
 			const { version, passage, versions, language_tag } = params
 			let promises = []
-			console.log('lnakwjrhbakwjerhbfjkawehfbjkawehbfjawebfs')
+
 			// rev.2.1 || rev.2.2-4 || rev.2.3,8 || rev.2.2-4,8
-			let chapUSFM = passage.split('.').slice(0,2).join('.')
-			let verseORVerseRange = passage.split('.').pop()
-			let versesString = []
+			const chapUSFM = passage.split('.').slice(0,2).join('.')
+			const verseORVerseRange = passage.split('.').pop()
 			let versesArray = []
 
-			if (verseORVerseRange.includes('-')) {
-				let firstVerseOfRange = verseORVerseRange.split('-')[0]
-				// split on comma in case there are more verses after the -
-				let lastVerseOfRange = (verseORVerseRange.split('-')[1]).split(',')[0]
-				let rangeString = ''
+			// break up the verses into single verse, or verse range
+			versesArray = verseORVerseRange.split(',').map((verseNum) => {
+				// if it's a range, build the string for the API
+				if (verseNum.includes('-')) {
+					let consecutiveString = []
+					let firstVerseOfRange = parseInt(verseNum.split('-')[0])
+					let lastVerseOfRange = parseInt(verseNum.split('-')[1])
 
-				for (let i = firstVerseOfRange; i <= lastVerseOfRange; i++) {
-					versesString.push(`${chapUSFM}.${i}`)
+					for (let i = firstVerseOfRange; i <= lastVerseOfRange; i++) {
+						consecutiveString.push(`${chapUSFM}.${i}`)
+					}
+					// 'REV.2.2+REV.2.3+REV.2.4'
+					return consecutiveString.join('+')
+
+				} else {
+					return `${chapUSFM}.${verseNum}`
 				}
+			})
 
-				versesArray.push(versesString.join('+'))
-				console.log(verseORVerseRange)
-				// if there are verses after -
-				if (verseORVerseRange.includes(',')) {
-					verseORVerseRange.split(',').forEach((verseNum, index) => {
-						// we've already handled the first string before the , up above
-						if (index !== 0) {
-							versesArray.push(`${chapUSFM}.${i}`)
-						}
-					})
-				}
-			}
-
-			console.log(versesArray)
 
 			versions.forEach((id) => {
 				// get the version info, and then pass it along to the verses call
@@ -54,10 +48,11 @@ const ActionCreators = {
 							dispatch(ActionCreators.bibleVerses({ id, references: versesArray, format: 'text' })).then((verses) => {
 								// for each verse, pass the text content and make the same call for
 								// html content
-								verses.verses.forEach((verse) => {
+								verses.verses.forEach((verse, index) => {
 									// build extra info for the verses
 									let text = {
 										text: verse.content,
+										usfm: versesArray,
 										versionInfo: {
 											local_abbreviation: version.local_abbreviation.toUpperCase(),
 											local_title: version.local_title,
@@ -87,7 +82,7 @@ const ActionCreators = {
 			// wait for all the promises and then dispatch the action
 			// to build the data object
 			return Promise.all(promises).then((data) => {
-				dispatch({ type: type('passageLoadSuccess'), data, primaryVersion: versions[0], current_verse: passage, versions })
+				dispatch({ type: type('passageLoadSuccess'), data, primaryVersion: versions[0], current_verse: passage, versions, verseRange: verseORVerseRange })
 			}, (reason) => dispatch({ type: type('passageLoadFailure'), reason }))
 		}
 	},
