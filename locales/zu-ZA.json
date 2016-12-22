@@ -408,6 +408,7 @@
 	"Reader.verse action.draft": "Draft",
 	"Reader.verse action.save": "Save",
 	"Reader.verse action.add labels": "Add Labels…",
+	"Reader.verse action.no labels": "You don't have any labels yet. Simply start typing and press Enter to add a new label to this Bookmark. Once you've created a new label, it will be available for you to add to any of your Bookmarks.",
 	"Reader.verse action.labels": "Labels",
 	"Reader.verse action.add with count": "Add ({count})",
 	"Reader.verse action.alphabetical": "Alphabetical",
