@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV === 'production') {
 	require('newrelic');
 }
-
+var Raven = require('raven');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -13,12 +13,15 @@ var auth = api.tokenAuth;
 var cors = require('cors');
 var cookieParser = require('cookie-parser');
 
+Raven.config('https://279a665f62af433bbb4136e1edb1b216:f356f41771004bfca1cbcfcf0cc949ef@sentry.io/6470').install();
+
 require("babel-register")({ presets: [ "es2015", "stage-0", "react" ], plugins: [ "transform-object-rest-spread", "transform-function-bind", "transform-object-assign" ] });
 
 var reactServer = require('./react-server');
 var featureServer = require('./feature-server');
 
 var app = express();
+app.use(Raven.requestHandler());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -68,6 +71,8 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+
+app.use(Raven.errorHandler());
 
 // development error handler
 // will print stacktrace

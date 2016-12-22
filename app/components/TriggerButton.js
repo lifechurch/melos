@@ -8,12 +8,15 @@ class TriggerButton extends Component {
 	}
 
 	handleClick() {
-		const { onClick } = this.props
-		const { isOpen } = this.state
-		if (typeof onClick === 'function') {
-			onClick({ isOpen: !isOpen })
+		const { onClick, enabled } = this.props
+
+		if (enabled) {
+			const { isOpen } = this.state
+			if (typeof onClick === 'function') {
+				onClick({ isOpen: !isOpen })
+			}
+			this.setState({ isOpen: !isOpen })
 		}
-		this.setState({ isOpen: !isOpen })
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -26,7 +29,7 @@ class TriggerButton extends Component {
 	}
 
 	render() {
-		const { image, label } = this.props
+		const { image, label, enabled } = this.props
 		const { isOpen } = this.state
 
 		let imageEl = null
@@ -40,9 +43,10 @@ class TriggerButton extends Component {
 		}
 
 		const openClassName = isOpen ? 'open' : ''
+		const style = enabled ? { cursor: 'pointer' } : { opacity: 0.5, cursor: 'not-allowed' }
 
 		return (
-			<div className={`trigger-button ${openClassName}`} onClick={::this.handleClick} >
+			<div className={`trigger-button ${openClassName}`} onClick={::this.handleClick} style={style}>
 				{imageEl}
 				{labelEl}
 			</div>
@@ -54,7 +58,12 @@ TriggerButton.propTypes = {
 	onClick: React.PropTypes.func,
 	image: React.PropTypes.element,
 	label: React.PropTypes.string,
-	isOpen: React.PropTypes.bool
+	isOpen: React.PropTypes.bool,
+	enabled: React.PropTypes.bool
+}
+
+TriggerButton.defaultProps = {
+	enabled: true
 }
 
 export default TriggerButton

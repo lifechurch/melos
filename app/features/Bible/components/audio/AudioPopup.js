@@ -49,10 +49,10 @@ class AudioPopup extends Component {
 
 	render() {
 		const { percentComplete, hasStandalone } = this.state
-
+		const { enabled } = this.props
 		return (
 			<div className='audio-popup'>
-				<TriggerButton image={<AudioTriggerImage percentComplete={percentComplete} width={40} height={40} />} onClick={this.triggerClick} />
+				<TriggerButton enabled={enabled} image={<AudioTriggerImage percentComplete={percentComplete} width={40} height={40} />} onClick={this.triggerClick} />
 				<DropdownTransition show={this.state.isOpen} classes={'audio-popup-modal'} onOutsideClick={this.closeDropdown} exemptClass='audio-popup'>
 					<div className="header vertical-center horizontal-center"><FormattedMessage id="Reader.header.audio label" /></div>
 					<div className="body">

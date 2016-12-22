@@ -27,13 +27,13 @@ class Versions extends Component {
 				if (focus) {
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
 					versionList.push(
-						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${params.vabbr}`)}>
+						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase()}`)}>
 							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</li>
 						</Link>
 					)
 				} else {
 					versionList.push(
-						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${params.vabbr}`)}>
+						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase()}`)}>
 							<li className={`${active}`} >{ `${abbr} ${name}` }</li>
 						</Link>
 					)
