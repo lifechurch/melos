@@ -66,6 +66,7 @@ class VersionPickerModal extends Component {
 				versions = (
 					<div className='version-list'>
 						<Versions
+							params={this.props.params}
 							list={versionList}
 							usfm={usfm}
 							initialSelection={selectedVersion}
@@ -83,6 +84,7 @@ class VersionPickerModal extends Component {
 							recentVersions && Object.keys(recentVersions).length > 0
 							?
 							<Versions
+								params={this.props.params}
 								list={recentVersions}
 								usfm={usfm}
 								initialSelection={selectedVersion}
@@ -93,6 +95,7 @@ class VersionPickerModal extends Component {
 							null
 						}
 						<Versions
+							params={this.props.params}
 							list={versionList}
 							usfm={usfm}
 							initialSelection={selectedVersion}

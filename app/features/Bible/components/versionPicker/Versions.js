@@ -12,7 +12,8 @@ class Versions extends Component {
 			usfm,
 			listSelectionIndex,
 			onMouseOver,
-			localizedLink
+			localizedLink,
+			params
 		} = this.props
 
 		if (list) {
@@ -26,13 +27,13 @@ class Versions extends Component {
 				if (focus) {
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
 					versionList.push(
-						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}`)}>
+						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${params.vabbr}`)}>
 							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</li>
 						</Link>
 					)
 				} else {
 					versionList.push(
-						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}`)}>
+						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${params.vabbr}`)}>
 							<li className={`${active}`} >{ `${abbr} ${name}` }</li>
 						</Link>
 					)

@@ -11,7 +11,8 @@ class Chapters extends Component {
 			listSelectionIndex,
 			onMouseOver,
 			selectedChapter,
-			localizedLink
+			localizedLink,
+			params
 		} = this.props
 
 		let chapters = []
@@ -24,13 +25,13 @@ class Chapters extends Component {
 				if (focus) {
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
 					chapters.push(
-						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}`)} >
+						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}.${params.vabbr}`)} >
 							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "chapters", index)} >{ chapter.human }</li>
 						</Link>
 					)
 				} else {
 					chapters.push(
-						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}`)} >
+						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}.${params.vabbr}`)} >
 							<li className={`${active}`}>{ chapter.human }</li>
 						</Link>
 					)

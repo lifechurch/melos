@@ -94,6 +94,7 @@ class ChapterPickerModal extends Component {
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
 					<Chapters
+						params={this.props.params}
 						localizedLink={this.props.localizedLink}
 						list={chapterList}
 						selectedChapter={selectedChapter}

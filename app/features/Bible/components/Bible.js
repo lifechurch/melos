@@ -193,7 +193,7 @@ class Bible extends Component {
 
 
 	render() {
-		const { bible, settings, verseAction, hosts, intl } = this.props
+		const { bible, settings, verseAction, hosts, params, intl } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
 
 		let metaTitle = `${intl.formatMessage({ id: 'meta.mobile.title' })} | ${intl.formatMessage({ id: 'meta.site.title' })}`
@@ -274,8 +274,8 @@ class Bible extends Component {
 					/>
 					<ReaderArrows
 						{...this.props}
-						previousChapterURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}` : null}
-						nextChapterURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}` : null}
+						previousChapterURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
+						nextChapterURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
 					/>
 				</div>
 			)
