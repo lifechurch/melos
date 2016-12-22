@@ -229,7 +229,7 @@ class Bible extends Component {
 						cancelDropDown={this.state.versionDropDownCancel}
 						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
 					/>
-					<AudioPopup audio={bible.audio} hosts={hosts} />
+					<AudioPopup audio={bible.audio} hosts={hosts} enabled={typeof bible.audio.id !== 'undefined'} />
 					<Settings
 						onChange={this.handleSettingsChange}
 						initialFontSize={fontSize}
