@@ -1,6 +1,15 @@
+@media @small-only {
+	.verse-action-footer {
+		bottom: 51px;
+	}
+}
+@media @medium-up {
+	.verse-action-footer {
+		bottom: 0;
+	}
+}
 .verse-action-footer {
 	position: fixed;
-	bottom: 0;
 	background-color: white;
 	border-top: solid 1px #ddd;
 	width: 100%;
@@ -28,9 +37,18 @@
 	&.closed {
 	}
 
+	@media @medium-up {
+		.close-button {
+			right: 50px;
+		}
+	}
+	@media @small-only {
+		.close-button {
+			right: 8px;
+		}
+	}
 	.close-button {
 		position: fixed;
-		right: 50px;
 		font-size: 13px;
 	}
 

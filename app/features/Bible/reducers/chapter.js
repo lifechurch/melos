@@ -7,7 +7,7 @@ export default function reducer(state = {}, action) {
 			return Immutable.fromJS(state).merge({ loading: true }).toJS()
 
 		case type('bibleChapterFailure'):
-			return { loading: false, errors: true, reference: { usfm: null } }
+			return Immutable.fromJS(state).merge({ loading: false, errors: true, reference: { usfm: null } }).toJS()
 
 		case type('bibleChapterSuccess'):
 			const chapter = Immutable.fromJS(action.response).delete('audio').toJS()

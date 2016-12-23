@@ -71,6 +71,14 @@ class DropdownTransition extends Component {
 		const { classes, hideDir, show } = this.props
 		let transitionDir = hideDir || 'up'
 
+		if (typeof window !== 'undefined') {
+			if (show) {
+				document.getElementById('current-ui-view').classList.add('modal-open')
+			} else {
+				document.getElementById('current-ui-view').classList.remove('modal-open')
+			}
+		}
+
 		return (
 			<div className={`modal ${show ? '' : 'hide-modal'}` } onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} >
 				<div className={`element-to-translate ${classes ? classes : ''} ${transitionDir}`}>

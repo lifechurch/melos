@@ -107,6 +107,9 @@ class ChapterPicker extends Component {
 			} else {
 				this.setState({ inputDisabled: false })
 			}
+			if (chapter && chapter.reference && chapter.reference.human) {
+				this.setState({ inputValue: chapter.reference.human })
+			}
 
 		}
 
@@ -139,7 +142,8 @@ class ChapterPicker extends Component {
 			} else {
 				this.setState({
 					books: books,
-					chapters: books[bookMap[selectedBook]].chapters
+					chapters: books[bookMap[selectedBook]].chapters,
+					inputValue: chapter.reference.human,
 				})
 			}
 		}

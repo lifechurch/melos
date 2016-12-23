@@ -6,15 +6,7 @@ export default function reducer(state = {}, action) {
 	switch (action.type) {
 
 		case type("bibleVersionRequest"):
-			return {
-				loading: true,
-				all: {},
-				byFilter: {
-					filter: "",
-					results: {}
-				},
-				byCanon: {}
-			}
+			return Immutable.fromJS(state).set('loading', true).toJS()
 
 		case type('bibleVersionFailure'):
 			return Immutable.fromJS(state).set('loading', false).toJS()
