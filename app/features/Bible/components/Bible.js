@@ -201,7 +201,7 @@ class Bible extends Component {
 		const { bible, settings, verseAction, hosts, params, intl } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
 
-		let metaTitle = `${intl.formatMessage({ id: 'meta.mobile.title' })} | ${intl.formatMessage({ id: 'meta.site.title' })}`
+		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 		let metaContent = ''
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
@@ -234,7 +234,7 @@ class Bible extends Component {
 						cancelDropDown={this.state.versionDropDownCancel}
 						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
 					/>
-					<AudioPopup audio={bible.audio} hosts={hosts} />
+					<AudioPopup audio={bible.audio} hosts={hosts} enabled={typeof bible.audio.id !== 'undefined'} />
 					<Settings
 						onChange={this.handleSettingsChange}
 						initialFontSize={fontSize}
@@ -286,7 +286,7 @@ class Bible extends Component {
 			)
 
 			// overwrite meta with bible stuff
-			metaTitle = `${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()}) | ${intl.formatMessage({ id: 'chapter' })} ${bible.chapter.reference.usfm.split('.').pop()} | ${intl.formatMessage({ id: 'meta.mobile.title' })} | ${intl.formatMessage({ id: 'meta.site.title' })}`
+			metaTitle = `${bible.chapter.reference.human}, ${bible.version.local_title} (${bible.version.local_abbreviation.toUpperCase()}) | ${intl.formatMessage({ id: 'Reader.chapter' })} ${bible.chapter.reference.usfm.split('.').pop()} | ${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 
 			if (bible.verses && bible.verses.verses && Object.keys(bible.verses.verses).length > 0) {
 				metaContent = `
