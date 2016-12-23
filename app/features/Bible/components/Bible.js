@@ -262,7 +262,7 @@ class Bible extends Component {
 					</div>
 				</div>
 			)
-		} else if (bible.chapter && bible.chapter.reference && bible.version && bible.version.language && bible.chapter.content) {
+		} else if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm && bible.version && bible.version.language && bible.chapter.content) {
 			this.content = (
 				<div>
 					<Chapter
