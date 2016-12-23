@@ -2,6 +2,13 @@
 @media @large-up {
 	.reader-header, .reader-header::after {
 		top: 70px;
+
+	}
+	.version-picker-container {
+		margin-right: 45px;
+	}
+	.chapter-picker-container {
+		margin-right: 45px;
 	}
 	.waypoint {
 		top: 20px;
@@ -11,26 +18,43 @@
 @media @medium-only {
 	.reader-header, .reader-header::after {
 		top: 44px;
+
+	}
+	.version-picker-container {
+		margin-right: 35px;
+	}
+	.chapter-picker-container {
+		margin-right: 35px;
 	}
 	.waypoint {
 		top: 0px;
 		height: 30px;
 	}
+
 }
 @media @small-only {
 	.reader-header, .reader-header::after {
+		padding: 0 15px 0 15px;
 		top: 0px;
+		.version-picker-container {
+			margin-right: 15px;
+			width: 30%;
+			.picker-label {
+				width: 80%;
+			}
+		}
 	}
 	.chapter-picker-container {
 		width: 40%;
 		.picker-label {
-			width: 70%;
+			width: 85%;
 		}
 	}
 	.waypoint {
 		top: 0px;
 		height: 1px;
 	}
+
 }
 .reader-header {
 	position: fixed;
@@ -74,8 +98,5 @@
 .reader-header {
 	.trigger-button {
 		margin-left: 15px;
-	}
-	.version-picker-container {
-		margin-right: 50px;
 	}
 }

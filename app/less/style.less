@@ -2255,13 +2255,34 @@ body.c_references.a_show {
 	width: 100%;
 }
 
+//
 @media @small-only, @medium-only {
+	// center all the modals horizontally when small or medium viewport
 	.modal {
-		margin: 0;
+		margin: 0 !important;
 		left: 50%;
-		transform: translate(-50%, 0);
+		transform: 				translate(-50%, 0%);
+		-webkit-transform:translate(-50%, 0%);
+		-moz-transform:   translate(-50%, 0%);
+		-ms-transform:    translate(-50%, 0%);
+	  -o-transform:     translate(-50%, 0%);
+		transition:       translate(-50%, 0%);
+
+	}
+
+	#current-ui-view.modal-open {
+		background-color: @background-grey;
+	}
+	#current-ui-view {
+		background-color: transparent;
+    -webkit-transition: background 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out;
+    -ms-transition: background 0.5s ease-in-out;
+    -o-transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
 	}
 }
+
 
 
 
