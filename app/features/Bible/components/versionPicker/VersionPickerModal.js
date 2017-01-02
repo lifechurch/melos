@@ -10,6 +10,7 @@ class VersionPickerModal extends Component {
 		const {
 			languageList,
 			versionList,
+			versionsMap,
 			recentLanguages,
 			recentVersions,
 			usfm,
@@ -59,7 +60,7 @@ class VersionPickerModal extends Component {
 			let versionFocus = false
 			let versions = null
 			let alertClass = alert ? 'picker-alert' : ''
-			// if we're rendering just the version list, let's handle the list selection stuff
+			// if we're filtering the version list, let's handle the list selection stuff
 			// this tells the versions component to fire onMouseOver and style the focus list element
 			if (versionFiltering) {
 				versionFocus = true
@@ -97,6 +98,7 @@ class VersionPickerModal extends Component {
 						<Versions
 							params={this.props.params}
 							list={versionList}
+							map={versionsMap}
 							usfm={usfm}
 							initialSelection={selectedVersion}
 							header={versionsLanguageName}

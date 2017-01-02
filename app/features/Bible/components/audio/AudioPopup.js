@@ -57,7 +57,7 @@ class AudioPopup extends Component {
 					<div className="header vertical-center horizontal-center"><FormattedMessage id="Reader.header.audio label" /></div>
 					<div className="body">
 						<AudioPlayer {...this.props} onTimeChange={this.handleTimeChange} hasStandalone={hasStandalone} onResumeFromStandalone={this.handleResumeFromStandalone} />
-						<a onClick={this.openInNewWindow}><FormattedMessage id="Reader.header.audio label" /></a>
+						<a onClick={this.openInNewWindow}><FormattedMessage id="Reader.header.audio window" /></a>
 					</div>
 				</DropdownTransition>
 			</div>

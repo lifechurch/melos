@@ -23,24 +23,29 @@ class VerseAction extends Component {
 	}
 
 	handleActionClick(e) {
-		const { colors, dispatch, selection: { verses }, bible: { version: { id, local_abbreviation } } } = this.props
+		const { colors, dispatch, auth, selection: { verses }, bible: { version: { id, local_abbreviation } } } = this.props
 
-		switch (e.value) {
-			case 'note':
-			case 'bookmark':
-				dispatch(ActionCreators.bibleVerses({
-					id: id,
-					references: verses,
-					format: 'html',
-					local_abbreviation: local_abbreviation
-				}))
-				this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
-				return
+		// if we're not logged in and try to make an auth'd moment
+		if (!auth.isLoggedIn && (e.value == 'note' || e.value == 'bookmark' || e.value == 'highlight')) {
+			this.setState({
+				momentContainerOpen: !this.state.momentContainerOpen,
+			})
+		} else {
+			switch (e.value) {
+				case 'note':
+				case 'bookmark':
+					dispatch(ActionCreators.bibleVerses({
+						id: id,
+						references: verses,
+						format: 'html',
+						local_abbreviation: local_abbreviation
+					}))
+					this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
+					return
+			}
 		}
 
-		// if (e.value === 'note') {
-		// 	this.handleHighlight(colors[Math.floor(Math.random() * (colors.length))])
-		// }
+
 	}
 
 	handleMomentContainerClose(closeVerseAction=false) {
@@ -76,7 +81,11 @@ class VerseAction extends Component {
 			color: color.replace('#', ''),
 			created_dt: new Date().toISOString().split('.')[0] + "+00:00"
 		}))
-
+		// tell the moment create what kind of message to display for having a user
+		// log in, if they aren't already
+		if (!auth.isLoggedIn) {
+			this.setState({ momentKind: 'highlight' })
+		}
 		this.handleClose({})
 	}
 

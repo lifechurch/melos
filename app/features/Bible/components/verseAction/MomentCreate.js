@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import ActionCreators from '../../actions/creators'
 import { injectIntl, FormattedMessage } from 'react-intl'
-// import moment from 'moment'
 import Immutable from 'immutable'
 import XMark from '../../../../components/XMark'
 import DropdownTransition from '../../../../components/DropdownTransition'
 import VerseCard from './bookmark/VerseCard'
+import Card from '../../../../components/Card'
 import LabelSelector from './bookmark/LabelSelector'
 import NoteEditor from './note/NoteEditor'
 import Select from '../../../../components/Select'
@@ -161,6 +161,7 @@ class MomentCreate extends Component {
 	save = () => {
 		const { dispatch, isLoggedIn, kind, onClose } = this.props
 		const { localRefs, addedLabels, content, user_status, selectedColor } = this.state
+
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
 			kind: kind,
 			references: localRefs,
@@ -169,73 +170,99 @@ class MomentCreate extends Component {
 			content: content,
 			user_status: user_status,
 			color: selectedColor ? selectedColor.replace('#', '') : null,
-		})).then(data => {
-			if (typeof onClose === 'function') {
-				onClose(true)
-			}
-		}, error => {
+		}))
+		.then(data => {
+				if (typeof onClose === 'function') {
+					onClose(true)
+				}
+			}, error => {
 
-		})
+			}
+		)
 		this.clearLocalMomentData()
 	}
 
 
 	render() {
-		const { labels, colors, kind, intl } = this.props
+		const { labels, colors, kind, intl, isLoggedIn } = this.props
 		const { localVerses, dropdown, selectedColor, content } = this.state
 
 		let labelsDiv, colorsDiv, contentDiv, createHeader = null
 
-		if (colors) {
-			colorsDiv = (
-				<div className='colors-div'>
-					<div onClick={this.handleDropdownClick} className='color-trigger-button'>
-						{
-							selectedColor
-							?
-							<Color color={selectedColor} />
-							:
-							<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
-						}
+		if (!isLoggedIn) {
+			let message = ''
+			if (kind == 'highlight') {
+				message = <FormattedMessage id='Reader.verse action.highlight unavailable' />
+			} else if (kind == 'note') {
+				message = <FormattedMessage id='Reader.verse action.note unavailable' />
+			} else if (kind == 'bookmark') {
+				message = <FormattedMessage id='Reader.verse action.bookmark unavailable' />
+			}
+
+			contentDiv = (
+				<Card>
+					<div><FormattedMessage id='containers.Auth.signIn' /></div>
+					<div>
+						<div className='tpAuthSigninButton' id='facebookSigninButton'></div>
+						<div className='tpAuthSigninButton' id='googleSigninButton'></div>
+						<div></div>
 					</div>
-					<DropdownTransition show={dropdown} hideDir='right'>
-						<div className='labels-modal'>
-							<ColorList list={colors} onClick={this.addColor} />
-						</div>
-					</DropdownTransition>
-				</div>
+				</Card>
 			)
+		} else {
+			if (colors) {
+				colorsDiv = (
+					<div className='colors-div'>
+						<div onClick={this.handleDropdownClick} className='color-trigger-button'>
+							{
+								selectedColor
+								?
+								<Color color={selectedColor} />
+								:
+								<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
+							}
+						</div>
+						<DropdownTransition show={dropdown} hideDir='right'>
+							<div className='labels-modal'>
+								<ColorList list={colors} onClick={this.addColor} />
+								<a onClick={this.handleDropdownClick} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
+							</div>
+						</DropdownTransition>
+					</div>
+				)
+			}
+
+			// display Bookmark create
+			if (kind == 'bookmark' && localVerses) {
+				createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
+				contentDiv = (
+						<VerseCard verseContent={localVerses}>
+								<div className='small-10'>
+									<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
+								</div>
+								<div className='small-2'>
+									{ colorsDiv }
+								</div>
+						</VerseCard>
+				)
+			} else if (kind == 'note' && localVerses) {
+				createHeader = <FormattedMessage id='Reader.verse action.note' />
+				contentDiv = (
+					<div className='note-create'>
+						<VerseCard verseContent={localVerses} deleteVerse={this.deleteVerse}>
+							{ colorsDiv }
+						</VerseCard>
+						<div className='user-status-dropdown'>
+							<Select list={this.USER_STATUS} onChange={this.changeUserStatus} />
+						</div>
+						<div className='note-editor'>
+							<NoteEditor intl={intl} updateNote={this.onNoteKeyPress} />
+						</div>
+					</div>
+				)
+			}
 		}
 
-		// display Bookmark create
-		if (kind == 'bookmark' && localVerses) {
-			createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
-			contentDiv = (
-					<VerseCard verseContent={localVerses}>
-							<div className='small-10'>
-								<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
-							</div>
-							<div className='small-2'>
-								{ colorsDiv }
-							</div>
-					</VerseCard>
-			)
-		} else if (kind == 'note' && localVerses) {
-			createHeader = <FormattedMessage id='Reader.verse action.note' />
-			contentDiv = (
-				<div className='note-create'>
-					<VerseCard verseContent={localVerses} deleteVerse={this.deleteVerse}>
-						{ colorsDiv }
-					</VerseCard>
-					<div className='user-status-dropdown'>
-						<Select list={this.USER_STATUS} onChange={this.changeUserStatus} />
-					</div>
-					<div className='note-editor'>
-						<NoteEditor intl={intl} updateNote={this.onNoteKeyPress} />
-					</div>
-				</div>
-			)
-		}
 
 		return (
 			<div className='verse-action-create'>
@@ -244,7 +271,12 @@ class MomentCreate extends Component {
 						<div className='columns medium-4 cancel'><XMark onClick={this.handleClose} width={18} height={18} /></div>
 						<div className='columns medium-4 title'>{ createHeader }</div>
 						<div className='columns medium-4 save'>
-							<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: "Reader.verse action.save"}) }</div>
+							{
+								isLoggedIn ?
+								<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: "Reader.verse action.save"}) }</div>
+								:
+								null
+							}
 						</div>
 					</div>
 					{ contentDiv }

@@ -168,7 +168,7 @@ class Bible extends Component {
 	updateRecentVersions = () => {
 		const { bible } = this.props
 		let versionList = Object.keys(bible.versions.byLang).reduce((acc, curr) => {
-			return Object.assign(acc, bible.versions.byLang[curr])
+			return Object.assign(acc, bible.versions.byLang[curr].versions)
 		}, {})
 
 		this.setState({
