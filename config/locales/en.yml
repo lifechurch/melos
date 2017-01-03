@@ -1906,6 +1906,7 @@ en:
       sign up facebook:                         "Sign up with Facebook"
       continue facebook:                        "Continue with Facebook"
       have an account:                          "Already Have an Account?"
+      sign up alternate:                        "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign In</a>"
     Reader:
       chapter:                                  "Chapter"
       read reference:                           "Read %{reference}"
