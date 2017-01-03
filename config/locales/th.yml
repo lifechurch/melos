@@ -1877,6 +1877,14 @@ th:
                         signIn: "ลงชื่อเข้าใจเพื่อบันทึกกิจกรรม"
                         saved: "กิจกรรมถูกบันทึก"
         Reader: 
+            chapter: "บทที่"
+            read reference: "อ่าน %{reference}"
+            plan title: "แผนการอ่าน และบทใคร่ครวญประจำวัน ฟรี"
+            meta: 
+                mobile: 
+                    title: "แอพพระคัมภีร์"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "เปรียบเทียบ"
                 parallel exit: "ออกจากโหมดเทียบเคียงพระคัมภีร์"
@@ -1924,10 +1932,11 @@ th:
                 friends: "เพื่อนๆ"
                 draft: "แบบร่าง"
                 save: "บันทึก"
-                add labels: "Add Labels…"
+                add labels: "เพิ่มป้ายชื่อ..."
+                no labels: "คุณยังไม่ได้ติดป้ายชื่อใด ๆ  เพียงแค่พิมพ์ และกด Enter เพื่อเพิ่มป้ายชื่อลงไปที่คั่นหน้าไว้นี้ เมื่อคุณสร้างป้ายชื่อใหม่ มันจะทำให้คุณสามารถที่จะเพิ่มการคั่นหน้าของคุณเข้าไปไว้ในหมวดนี้ได้"
                 labels: "ป้าย"
-                add with count: "Add (%{count})"
+                add with count: "เพิ่มป้ายชื่อ (%{count})"
                 alphabetical: "ตัวอักษร"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "จำนวน"
+                add color: "เพิ่มสี"
+                labels private: "ป้ายชื่อจะเป็นความลับเสมอ"

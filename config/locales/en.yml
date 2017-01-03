@@ -1898,6 +1898,14 @@ en:
             save:                               "Save Event"
             signIn:                             "Sign In to Save Event"
             saved:                              "Event Saved"
+    Auth:
+      sign up:                                  "Sign Up"
+      sign in:                                  "Sign In"
+      sign up google:                           "Sign up with Google"
+      continue google:                          "Continue with Google"
+      sign up facebook:                         "Sign up with Facebook"
+      continue facebook:                        "Continue with Facebook"
+      have an account:                          "Already Have an Account?"
     Reader:
       chapter:                                  "Chapter"
       read reference:                           "Read %{reference}"

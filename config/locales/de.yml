@@ -427,8 +427,8 @@ de:
         likes count 2 more: "%{likes_count} anderen"
         likes count 3 or more: "%{likes_count} anderen"
         users like this: "%{last_liker_link} und %{more_link} gefällt das"
-        like: "Gefällt mir"
-        likes: "Gefällt mir"
+        like: "gefällt dies"
+        likes: "gefällt dies"
         more than one like: 
         vod: 
             title: "Vers des Tages"
@@ -864,12 +864,12 @@ de:
         delete: "Dieses Lesezeichen löschen"
         title field: "Titel"
         title field field: "Titel:"
-        labels: "Etiketten"
+        labels: "Stichwörter"
         all: "Alle"
-        labels label: "Etiketten:"
+        labels label: "Stichwörter:"
         title: "Lesezeichen"
-        my labels: "Meine Etiketten"
-        remove label: "Etikette entfernen"
+        my labels: "Meine Stichwörter"
+        remove label: "Stichwörter entfernen"
         all labels: "Alle Anzeigen"
         not found: "Lesezeichen geben dir eine Übersicht über deine Lieblingsstellen oder bringen dich wieder zu dem Kapitel, das du zuletzt gelesen hast. Um ein Lesezeichen hinzuzufügen, wähle den gewünschten Vers in der Leseansicht und klicke oben auf \"Ausgewählt\"."
         other user not found: "%{username} hat bisher keine Lesezeichen gespeichert."
@@ -1605,7 +1605,7 @@ de:
                         url: 
                             required: "URL ist erforderlich."
                         title: 
-                            required: "Ein URL-Etikett ist nötig."
+                            required: "Ein URL-Stichwort ist nötig."
             EventHeader: 
                 status: 
                     published: "Veröffentlicht"
@@ -1751,7 +1751,7 @@ de:
                                 select: "Bild auswählen"
                             ContentTypeLink: 
                                 kindrid: "Wenn du einen Plattform suchst, mit der du ganz einfach spenden kannst, <a href='%{url}'>probiere Kindrid</a>aus."
-                                label: "Etikett für Link"
+                                label: "Stichwörter für Link"
                                 prompt: "Schreibe hier etwas..."
                                 url: "Internetadresse"
                             ContentTypePlan: 
@@ -1896,6 +1896,14 @@ de:
                         signIn: "Melde dich an, um eine Veranstaltung zu speichern"
                         saved: "Veranstaltung gespeichert"
         Reader: 
+            chapter: "Kapitel"
+            read reference: "%{reference} lesen"
+            plan title: "Kostenlose Lesepläne und Andachten"
+            meta: 
+                mobile: 
+                    title: "Die Bibel App"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Parallel"
                 parallel exit: "Parallelansicht beenden"
@@ -1943,10 +1951,11 @@ de:
                 friends: "Freunde"
                 draft: "Entwurf"
                 save: "Speichern"
-                add labels: "Etiketten hinzufügen…"
-                labels: "Etiketten"
+                add labels: "Stichwörter hinzufügen…"
+                no labels: "Du hast noch keine Stichwörter. Tippe einfach los und drücke auf \"Enter\", um einem Lesezeichen ein Stichwort hinzuzufügen. Wenn du ein Stichwort angelegt hast, steht es zur Verfügung, wenn du es zu einem anderen Lesezeichen hinzufügen willst."
+                labels: "Stichwörter"
                 add with count: "Hinzufügen (%{count})"
                 alphabetical: "Alphabetisch"
                 count: "Anzahl"
                 add color: "Farbe hinzufügen"
-                labels private: "Etiketten sind immer privat"
+                labels private: "Stichwörter sind immer privat."

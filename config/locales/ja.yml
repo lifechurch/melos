@@ -1877,6 +1877,14 @@ ja:
                         signIn: "サインインしてイベントを保存"
                         saved: "イベントが保存されました"
         Reader: 
+            chapter: "章"
+            read reference: "%{reference} を読む"
+            plan title: "無料の読書プランおよびデボーション"
+            meta: 
+                mobile: 
+                    title: "聖書アプリ"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "並列表示"
                 parallel exit: "並列表示を終了する"
@@ -1924,10 +1932,11 @@ ja:
                 friends: "友だち"
                 draft: "草稿"
                 save: "保存"
-                add labels: "Add Labels…"
+                add labels: "ラベルを追加..."
+                no labels: "まだラベルがありません。入力して、Enterキーを押すことで、このブックマークに新しいラベルを追加できます。新しいラベルを作成すると、ブックマークに追加するために、利用できるようになります。"
                 labels: "ラベル"
-                add with count: "Add (%{count})"
+                add with count: "追加 (%{count})"
                 alphabetical: "アルファベット配列"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "カウント"
+                add color: "色を追加"
+                labels private: "ラベルは常に非公開です"

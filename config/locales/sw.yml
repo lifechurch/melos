@@ -1896,6 +1896,14 @@ sw:
                         signIn: "Ingia ili kutunza Tukio"
                         saved: "tukio limetunzwa"
         Reader: 
+            chapter: "Sura"
+            read reference: "Soma %{reference}"
+            plan title: "Mipango ya usomaji bure na Ibada"
+            meta: 
+                mobile: 
+                    title: "Programu ya Biblia"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "sambamba na"
                 parallel exit: "Ondoka kwa muundo sambamba"
@@ -1943,10 +1951,11 @@ sw:
                 friends: "Marafiki"
                 draft: "Rasimu"
                 save: "okoa/kuokoa"
-                add labels: "Add Labels…"
+                add labels: "Ongeza Lebo"
+                no labels: "Bado huna lebo zozote. Anza tu kwa kupiga chapa kisha bonyeza Kibonye INGIZA ili kuongeza lebo mpya kwa hili Alamisho. Ukishaunda lebo mpya, itakuwa tayari kuongezwa kwa Alamisho zako zozote."
                 labels: "Maandiko"
-                add with count: "Add (%{count})"
+                add with count: "Ongeza"
                 alphabetical: "Kwa herufi"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Hesabu"
+                add color: "Ongeza Rangi"
+                labels private: "Lebo ni za kibinafsi kila mara"

@@ -1877,6 +1877,14 @@ my:
                         signIn: "အစီအစဉ်ကိုသိမ်းဆည်းနိုင်ရန် အကောင့်သို့ဝင်ပါ"
                         saved: "အစီအစဉ်ကိုသိမ်းဆည်းပြီ"
         Reader: 
+            chapter: "အခန်းကြီး"
+            read reference: "%{reference} ကိုဖတ်ပါ။"
+            plan title: "အခမဲ့ဖတ်ရှုခြင်းအစီအစဉ်နှင့် ဝိညာဉ်ရေးဆိုင်ရာအချက်အလက်"
+            meta: 
+                mobile: 
+                    title: "ကျမ်းစာအက်ပ်"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "ယှဉ်တွဲဖော်ပြချက်"
                 parallel exit: "ယှဉ်တွဲဖော်ပြမှုကိုရပ်မည်။"
@@ -1924,10 +1932,11 @@ my:
                 friends: "မိတ်ဆွေ"
                 draft: "မူကြမ်း"
                 save: "သိမ်းရန်"
-                add labels: "Add Labels…"
+                add labels: "လေဘယ်ထည့်ရန်…"
+                no labels: "သင့်၌လေဘယ်တစ်ခုမျှမရှိသေးပါ။ စာရိုက်၍ ဤမှတ်သားချက်ကို လေဘယ်အသစ်ထည့်ရန် Enter ကိုနှိပ်ပါ။ လေဘယ်အသစ်ထည့်ပြီးသည်နှင့် မည်သည့်မှတ်သားချက်ကိုမဆို ထည့်သွင်းနိုင်ပါပြီ။"
                 labels: "လေဘယ်"
-                add with count: "Add (%{count})"
+                add with count: "%{count} ထည့်ရန်"
                 alphabetical: "အက္ခရာအလိုက်"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "အရေအတွက်"
+                add color: "အရောင်ထည့်ရန်"
+                labels private: "လေဘယ်များသည်ကိုယ်ရေးသီးသန့်အမြဲဖြစ်ပါသည်။"

@@ -1896,6 +1896,14 @@ tl:
                         signIn: "Mag-sign In para Ma-save ang Kaganapan"
                         saved: "Na-save mo na ang Kaganapan"
         Reader: 
+            chapter: "Kabanata"
+            read reference: "Basahin %{reference}"
+            plan title: "Libreng Babasahin at Devotionals"
+            meta: 
+                mobile: 
+                    title: "Ang Bible App"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Parallel"
                 parallel exit: "Umalis sa Parallel na Paraan"
@@ -1943,10 +1951,11 @@ tl:
                 friends: "Mga Kaibigan"
                 draft: "Draft"
                 save: "I-save"
-                add labels: "Add Labels…"
+                add labels: "Magdagdag ng mga Label..."
+                no labels: "Ikaw ay wala pang naitatalang mga label. Magsimula lamang na mag-type at pindutin ang Enter upang magdagdag ng bagong label sa Pananda. Sa sandaling ikaw ay nakalikha ng bagong label, ito ay magagamit na upang idagdag sa alinman sa iyong mga Pananda."
                 labels: "Mga Label"
-                add with count: "Add (%{count})"
+                add with count: "Magdagdag ng (%{count})"
                 alphabetical: "Alpabetiko"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Bilang"
+                add color: "Magdagdag ng Kulay"
+                labels private: "Ang mga label ay palaging pribado"

@@ -1896,6 +1896,14 @@ bg:
                         signIn: "Впишете се, за да запазите събитие"
                         saved: "Събитието е запазено"
         Reader: 
+            chapter: "Глава"
+            read reference: "Прочетете %{reference}"
+            plan title: "Безплатни планове за четене и посвещения"
+            meta: 
+                mobile: 
+                    title: "Приложение Библията"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Паралелни версии"
                 parallel exit: "Изход от паралелния режим"
@@ -1943,10 +1951,11 @@ bg:
                 friends: "Приятели"
                 draft: "Чернова"
                 save: "Запазване"
-                add labels: "Add Labels…"
+                add labels: "Добавете етикети…"
+                no labels: "Все още нямате етикети. Просто започнете да пишете и натиснете Enter, за да добавите нов етикет за това отбелязване. След като сте създали нов етикет, той ще бъде на Ваше разположение, за да го добавите към някое от Вашите отбелязвания."
                 labels: "Етикети"
-                add with count: "Add (%{count})"
+                add with count: "Добавете (%{count})"
                 alphabetical: "По азбучен ред"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "По брой"
+                add color: "Добавете цвят"
+                labels private: "Етикетите са винаги скрити"

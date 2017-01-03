@@ -1896,6 +1896,14 @@ af:
                         signIn: "Teken in om Gebeurtenis te stoor"
                         saved: "Gebeurtenis is Gestoor"
         Reader: 
+            chapter: "Hoofstuk"
+            read reference: "Lees %{reference}"
+            plan title: "Gratis Leesplanne en Oordenkings"
+            meta: 
+                mobile: 
+                    title: "Die Bybel Toep"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Parallel"
                 parallel exit: "Verlaat Parallelle Modus"
@@ -1943,10 +1951,11 @@ af:
                 friends: "Vriende"
                 draft: "Konsep"
                 save: "Stoor"
-                add labels: "Add Labels…"
+                add labels: "Voeg Etikette By…"
+                no labels: "Jy het tans geen etikette nie. Begin tik en druk \"Enter\" om 'n nuwe etiket by hierdie Boekmerk te voeg. Sodra 'n nuwe etiket geskep is, sal dit beskikbaar wees om by enige van jou Boekmerke te voeg."
                 labels: "Etikette"
-                add with count: "Add (%{count})"
+                add with count: "Voeg(%{count}) by"
                 alphabetical: "Alfabeties"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Getal"
+                add color: "Voeg Kleur By"
+                labels private: "Etikette is altyd privaat"

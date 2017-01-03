@@ -1877,6 +1877,14 @@ fa:
                         signIn: "به منظور ذخیرۀ رویداد، نام کاربری و رمز عبور وارد کنید."
                         saved: "رویداد ذخیره شد"
         Reader: 
+            chapter: "باب"
+            read reference: "مطالعه %{reference}"
+            plan title: "برنامه‌های مطالعه و نیایشهای رایگان"
+            meta: 
+                mobile: 
+                    title: "اَپ/برنامهٔ «کتاب‌مقدس»"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "موازى"
                 parallel exit: "خروج از حالت موازی"
@@ -1925,9 +1933,10 @@ fa:
                 draft: "چرک‌نویس"
                 save: "ذخیره"
                 add labels: "افزودن برچسب‌ها..."
+                no labels: "شما هنوز برچسبی ندارید! برای افزودن برچسب، کلمه‌ای را تایپ کنید، سپس دگمۀ انتر را فشار دهید و برچسب جدید را به نشانه‌ها اضافه نمایید. برچسب جدید برای درج در نشانه‌های شما قابل دسترس خواهد بود."
                 labels: "برچسب‌ها"
-                add with count: "Add (%{count})"
+                add with count: "افزودن برچسب‌ها (%{count})"
                 alphabetical: "الفبایی"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "تعداد"
+                add color: "افزودن رنگ"
+                labels private: "برچسب‌ها همیشه شخصی هستند"

@@ -1896,6 +1896,14 @@ en-GB:
                         signIn: "Sign In to Save Event"
                         saved: "Event Saved"
         Reader: 
+            chapter: "Chapter"
+            read reference: "Read %{reference}"
+            plan title: "Free Reading plans and Devotionals"
+            meta: 
+                mobile: 
+                    title: "The Bible App"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Parallel"
                 parallel exit: "Exit parallel mode"
@@ -1943,10 +1951,11 @@ en-GB:
                 friends: "Friends"
                 draft: "Draft"
                 save: "Save"
-                add labels: "Add Labels…"
+                add labels: "Add labels…"
+                no labels: "You don't have any labels yet. Simply start typing and press Enter to add a new label to this bookmark. Once you've created a new label, it will be available for you to add to any of your bookmarks."
                 labels: "Labels"
                 add with count: "Add (%{count})"
                 alphabetical: "Alphabetical"
                 count: "Count"
-                add color: "Add Color"
+                add color: "Add colour"
                 labels private: "Labels are always private"

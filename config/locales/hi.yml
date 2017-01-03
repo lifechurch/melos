@@ -1896,6 +1896,14 @@ hi:
                         signIn: "Sign In to Save Event"
                         saved: "Event Saved"
         Reader: 
+            chapter: "अध्याय"
+            read reference: "%{reference} पढ़िए"
+            plan title: "निःशुल्क रीडिंग प्लान और भक्ति संगीत"
+            meta: 
+                mobile: 
+                    title: "बाइबिल एप्प"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "समानांतर"
                 parallel exit: "समानांतर प्रणाली निकालो"
@@ -1944,6 +1952,7 @@ hi:
                 draft: "ड्राफ्ट"
                 save: "Save"
                 add labels: "Add Labels…"
+                no labels: "You don't have any labels yet. Simply start typing and press Enter to add a new label to this Bookmark. Once you've created a new label, it will be available for you to add to any of your Bookmarks."
                 labels: "लेबल"
                 add with count: "Add (%{count})"
                 alphabetical: "ऐल्फबेटिकल"

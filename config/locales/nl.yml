@@ -1896,6 +1896,14 @@ nl:
                         signIn: "Log in om de Bijeenkomst op te slaan"
                         saved: "Bijeenkomst opgeslagen"
         Reader: 
+            chapter: "Hoofdstuk"
+            read reference: "%{reference} lezen"
+            plan title: "Gratis leesplannen en overdenkingen"
+            meta: 
+                mobile: 
+                    title: "De Bijbel app"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Parallel"
                 parallel exit: "Verlaat de Parallel Modus"
@@ -1944,6 +1952,7 @@ nl:
                 draft: "Concept"
                 save: "Opslaan"
                 add labels: "Voeg Label toe…"
+                no labels: "Je hebt nog geen labels. Begin simpelweg met typen en druk op Enter om een nieuw label toe te voegen aan de Bladwijzer. Wanneer je eenmaal een nieuw label hebt aangemaakt is het voor jou beschikbaar om toe te voegen aan jouw andere Bladwijzers."
                 labels: "Labels"
                 add with count: "Voeg toe (%{count})"
                 alphabetical: "Alfabetisch"

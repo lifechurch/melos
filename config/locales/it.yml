@@ -1896,6 +1896,14 @@ it:
                         signIn: "Accedere per Salvare Evento"
                         saved: "Evento Salvato"
         Reader: 
+            chapter: "Capitolo"
+            read reference: "Leggi %{reference}"
+            plan title: "Piani di Lettura e Devozionali Gratuiti"
+            meta: 
+                mobile: 
+                    title: "L'App Bibbia"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Parallelo"
                 parallel exit: "Uscire dal Modo Parallelo"
@@ -1944,6 +1952,7 @@ it:
                 draft: "Bozza"
                 save: "Salva"
                 add labels: "Aggiungi Etichette…"
+                no labels: "Non hai ancora etichette. Comincia semplicemente a scrivere e premi Invio per aggiungere una nuova etichetta a questo Segnalibro. Quando avrai creato una nuova etichetta, sarà disponibile per essere aggiunta a qualsiasi tuo Segnalibro."
                 labels: "Etichette"
                 add with count: "Aggiungi (%{count})"
                 alphabetical: "Alfabetico"

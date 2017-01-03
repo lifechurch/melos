@@ -1877,6 +1877,14 @@ id:
                         signIn: "Masuk untuk Simpan Acara"
                         saved: "Acara Tersimpan"
         Reader: 
+            chapter: "Pasal"
+            read reference: "Baca %{reference}"
+            plan title: "Rencana Bacaan dan Renungan Gratis"
+            meta: 
+                mobile: 
+                    title: "Aplikasi Alkitab"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Paralel"
                 parallel exit: "Keluar dari Mode Paralel"
@@ -1924,10 +1932,11 @@ id:
                 friends: "Teman"
                 draft: "Draf"
                 save: "Simpan"
-                add labels: "Add Labels…"
+                add labels: "Tambahkan Label …"
+                no labels: "Anda belum memiliki label. Silakan mulai mengetik dan tekan Masuk untuk menambahkan label baru pada Markah ini. Setelah Anda membuat label baru, label tersebut akan tersedia bagi Anda untuk ditambahkan pada Markah Anda manapun."
                 labels: "Label"
-                add with count: "Add (%{count})"
+                add with count: "Tambahkan (%{count})"
                 alphabetical: "Menurut Abjad"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Jumlah"
+                add color: "Tambahkan Warna"
+                labels private: "Label ini hanya untuk Anda pribadi"

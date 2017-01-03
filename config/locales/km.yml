@@ -1877,6 +1877,14 @@ km:
                         signIn: "Sign In to Save Event"
                         saved: "Event Saved"
         Reader: 
+            chapter: "ជំពូក"
+            read reference: "អាន %{reference}"
+            plan title: "គម្រោងអាន និងការលះបង់ជូនដោយឥតគិតថ្លៃ"
+            meta: 
+                mobile: 
+                    title: "កម្មវិធីព្រះគម្ពីរ"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "ប៉ារ៉ា​ឡែល"
                 parallel exit: "ចេញ​ពី​ម៉ូដ​ស្រប"
@@ -1925,6 +1933,7 @@ km:
                 draft: "សេចក្ដី​ព្រាង"
                 save: "រក្សា​ទុក"
                 add labels: "Add Labels…"
+                no labels: "You don't have any labels yet. Simply start typing and press Enter to add a new label to this Bookmark. Once you've created a new label, it will be available for you to add to any of your Bookmarks."
                 labels: "ផ្លាក"
                 add with count: "Add (%{count})"
                 alphabetical: "តាម​លំដាប់អក្សរ"

@@ -1877,6 +1877,14 @@ ko:
                         signIn: "이벤트를 저장하려면 로그인 하세요"
                         saved: "이벤트 저장 완료"
         Reader: 
+            chapter: "장"
+            read reference: "%{reference} 읽기"
+            plan title: "무료 읽기 계획과 묵상"
+            meta: 
+                mobile: 
+                    title: "성경 앱"
+                site: 
+                    title: "Bible.com/ko"
             header: 
                 parallel: "대역"
                 parallel exit: "읽기 전용 모드 (평행 모드)에서 나가기 "
@@ -1925,6 +1933,7 @@ ko:
                 draft: "임시저장"
                 save: "저장"
                 add labels: "라벨 추가…"
+                no labels: "만들어 놓은 라벨이 아직 없습니다. 입력을 하시고 엔터키를 누르시면 이 책갈피에 새로운 레벨이 만들어집니다. 새롭게 만들어진 레벨은 회원님의 책갈피에서 사용하실 수 있게됩니다."
                 labels: "라벨"
                 add with count: "추가 (%{count})"
                 alphabetical: "가나다(ABC) 순서"

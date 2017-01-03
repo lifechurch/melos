@@ -1915,6 +1915,14 @@ lv:
                         signIn: "Pierakstīties, lai saglabātu pasākumu"
                         saved: "Pasākums saglabāts"
         Reader: 
+            chapter: "Nodaļa"
+            read reference: "Lasi %{reference}"
+            plan title: "Bezmaksas Lasīšanas plāni un Garīgas pārdomas"
+            meta: 
+                mobile: 
+                    title: "Bībeles aplikācija"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "paralēls"
                 parallel exit: "Iziet no Parallel režīma"
@@ -1963,6 +1971,7 @@ lv:
                 draft: "Melnraksts"
                 save: "Saglabāt"
                 add labels: "Pievienot iezīmes..."
+                no labels: "Tev vēl nav nevienas iezīmes. Lai pievienotu jaunu iezīmi šai grāmatzīmei, vienkārši sāc rakstīt un nospied Enter. Tiklīdz būsi izveidojis jaunu iezīmi, tā būs tev pieejama pievienošanai jebkurai no tavām grāmatzīmēm."
                 labels: "Marķējumi"
                 add with count: "Pievienot (%{count})"
                 alphabetical: "Alfabētisks"
