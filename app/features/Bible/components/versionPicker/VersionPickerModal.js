@@ -49,7 +49,6 @@ class VersionPickerModal extends Component {
 						<input value={inputValue} onChange={handleChange.bind(this)} placeholder={intl.formatMessage({ id: 'Reader.versionpicker.filter languages' })} />
 					</div>
 					<div className='language-list'>
-						<Languages list={[]} onSelect={getLanguage} initialSelection={selectedLanguage} header={intl.formatMessage({ id: 'Reader.header.recent versions' })} />
 						<Languages list={languageList} onSelect={getLanguage} initialSelection={selectedLanguage} header='All'/>
 					</div>
 				</div>

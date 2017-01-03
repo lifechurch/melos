@@ -68,7 +68,6 @@ class MomentCreate extends Component {
 		if (typeof onClose === 'function') {
 			onClose()
 		}
-		this.clearLocalMomentData()
 	}
 
 	/**
@@ -142,17 +141,6 @@ class MomentCreate extends Component {
 		})
 	}
 
-	clearLocalMomentData = () => {
-		// reset some stuff so it isn't there for the next moment create
-		this.setState({
-			addedLabels: null,
-			content: null,
-			selectedColor: null,
-			localVerses: {},
-			localRefs: [],
-		})
-	}
-
 	/**
 	 * on save button click. actually creates the moment
 	 *
@@ -179,7 +167,6 @@ class MomentCreate extends Component {
 
 			}
 		)
-		this.clearLocalMomentData()
 	}
 
 
@@ -200,14 +187,16 @@ class MomentCreate extends Component {
 			}
 
 			contentDiv = (
-				<Card>
-					<div><FormattedMessage id='containers.Auth.signIn' /></div>
-					<div>
-						<div className='tpAuthSigninButton' id='facebookSigninButton'></div>
-						<div className='tpAuthSigninButton' id='googleSigninButton'></div>
-						<div></div>
-					</div>
-				</Card>
+				<div className='sign-in-required'>
+					<Card>
+						<div className='heading'><FormattedMessage id='Auth.sign in' /></div>
+						<div className='body'>{ message }</div>
+						<div className='buttons'>
+							<a href='/sign-up' className='solid-button green full'><FormattedMessage id='Auth.sign up' /></a>
+							<div className='alt-path terms'>{intl.formatMessage({ id: 'Auth.sign up alternate'}, { sign_in_path: '/sign-in' }) }</div>
+						</div>
+					</Card>
+				</div>
 			)
 		} else {
 			if (colors) {
@@ -222,7 +211,7 @@ class MomentCreate extends Component {
 								<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
 							}
 						</div>
-						<DropdownTransition show={dropdown} hideDir='right'>
+						<DropdownTransition show={dropdown} hideDir='right' onOutsideClick={this.handleDropdownClick}>
 							<div className='labels-modal'>
 								<ColorList list={colors} onClick={this.addColor} />
 								<a onClick={this.handleDropdownClick} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
@@ -238,7 +227,12 @@ class MomentCreate extends Component {
 				contentDiv = (
 						<VerseCard verseContent={localVerses}>
 								<div className='small-10'>
-									<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
+									<LabelSelector
+										byAlphabetical={labels.byAlphabetical}
+										byCount={labels.byCount}
+										updateLabels={this.updateLabels}
+										intl={intl}
+									/>
 								</div>
 								<div className='small-2'>
 									{ colorsDiv }
@@ -288,6 +282,7 @@ class MomentCreate extends Component {
 
 /**
  * create new moment from selected verses (bookmark, note, (image??))
+ * highlight is passed if highlight is clicked and not logged in to show message with login
  *
  * @kind       				{string}				kind of moment to create
  * @verses						{object} 				verses object containing verse objects. passed to verse card
@@ -298,7 +293,7 @@ class MomentCreate extends Component {
  * @onClose 					{func}					on click of the XMark in header. should close the component
  */
 MomentCreate.propTypes = {
-	kind: React.PropTypes.oneOf(['bookmark', 'note', 'image']).isRequired,
+	kind: React.PropTypes.oneOf(['bookmark', 'note', 'image', 'highlight']).isRequired,
 	verses: React.PropTypes.object,
 	references: React.PropTypes.array,
 	labels: React.PropTypes.object,

@@ -110,7 +110,6 @@ class Bible extends Component {
 	toggleChapterPickerList() {
 		(this.state.classes) == 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
 	}
-
 	toggleVersionPickerList() {
 		(this.state.classes) == 'hide-langs' ? this.setState({ classes: 'hide-versions' }) : this.setState({ classes: 'hide-langs' })
 	}
