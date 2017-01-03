@@ -869,7 +869,7 @@
         labels label: "Emneord:"
         title: "Bokmerker"
         my labels: "Mine emneord"
-        remove label: "Fjern emneord"
+        remove label: "Fjern nøkkelord"
         all labels: "Vis alle"
         not found: "Bokmerker gir deg en rask tilgang på dine favoritt-tekster eller det siste kapittelet du leste i en spesiell bok. For å legge til et bokmerke velger du vers når du leser og trykker på ikonet øverst for bokmerke."
         other user not found: "%{username} har ikke lagret noen bokmerker ennå."
@@ -1605,7 +1605,7 @@
                         url: 
                             required: "URL er påkrevd."
                         title: 
-                            required: "URL-tekst er påkrevd."
+                            required: "URL-nøkkelord er påkrevd."
             EventHeader: 
                 status: 
                     published: "Publisert"
@@ -1751,7 +1751,7 @@
                                 select: "Velg bilde"
                             ContentTypeLink: 
                                 kindrid: "Dersom du ser etter en smart, enkel plattform for givertjeneste, <a href='%{url}'>prøv Kindrid</a>."
-                                label: "Lenke-tekst"
+                                label: "Lenke-nøkkelord"
                                 prompt: "Skriv noe her..."
                                 url: "URL"
                             ContentTypePlan: 
@@ -1896,6 +1896,14 @@
                         signIn: "Logg inn for å lagre Event"
                         saved: "Event Lagret"
         Reader: 
+            chapter: "Kapittel"
+            read reference: "Les %{reference}"
+            plan title: "Gratis leseplaner og andakter"
+            meta: 
+                mobile: 
+                    title: "Bibel-appen"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Parallell"
                 parallel exit: "Gå ut av parallelt modus "
@@ -1943,10 +1951,11 @@
                 friends: "Venner"
                 draft: "Utkast"
                 save: "Lagre"
-                add labels: "Add Labels…"
-                labels: "Emneord"
-                add with count: "Add (%{count})"
+                add labels: "Legg til nøkkelord…"
+                no labels: "Du har ingen nøkkelord ennå. Start simpelthen å skrive og trykk Enter for å føye et nytt nøkkelord til dette bokmerket. Straks du har opprettet et nytt nøkkelord, kan det føyes til hvilket som helst av bokmerkene dine."
+                labels: "Nøkkelord"
+                add with count: "Legg til (%{count})"
                 alphabetical: "Alfabetisk"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Antall"
+                add color: "Legg til farge"
+                labels private: "Nøkkelord er alltid private"

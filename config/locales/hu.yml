@@ -1896,6 +1896,14 @@ hu:
                         signIn: "Jelentkezz be az esemény mentéséhez"
                         saved: "Esemény mentve"
         Reader: 
+            chapter: "Fejezet"
+            read reference: "%{reference} olvasása"
+            plan title: "Ingyenes olvasási tervek és áhítatok"
+            meta: 
+                mobile: 
+                    title: "A Biblia alkalmazás"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Párhuzamos"
                 parallel exit: "Kilépés a párhuzamos módból"
@@ -1943,10 +1951,11 @@ hu:
                 friends: "Barátok"
                 draft: "Piszkozat"
                 save: "Mentés"
-                add labels: "Add Labels…"
+                add labels: "Címkék hozzáadása…"
+                no labels: "Még nincsenek címkéid. Csak kezdj el írni, és nyomj Entert, ha elkészültél: ezzel létrehozol egy új címkét ehhez a könyvjelzőhöz. Amint elkészítettél egy új címkét, bármelyik könyvjelződhöz hozzárendelheted."
                 labels: "Címkék"
-                add with count: "Add (%{count})"
+                add with count: "Hozzáadás (%{count})"
                 alphabetical: "ABC sorrendben"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Gyakoriság"
+                add color: "Szín hozzáadása"
+                labels private: "A címkék mindig privátak"

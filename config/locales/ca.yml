@@ -1896,6 +1896,14 @@ ca:
                         signIn: "Registra't per a guardar l'esdeveniment"
                         saved: "Esdeveniment guardat"
         Reader: 
+            chapter: "Capítol"
+            read reference: "Llegeix %{reference}"
+            plan title: "Plans de lectura i devocionals gratuïts"
+            meta: 
+                mobile: 
+                    title: "L'Aplicació de la Bíblia"
+                site: 
+                    title: "Bíblia.com"
             header: 
                 parallel: "Paral·lel/a"
                 parallel exit: "Surt del mode paral·lel"
@@ -1943,10 +1951,11 @@ ca:
                 friends: "Amics"
                 draft: "Esborrany"
                 save: "Desa"
-                add labels: "Add Labels…"
+                add labels: "Afegeix etiquetes…"
+                no labels: "Encara no has afegit cap etiqueta. Només cal que comencis a escriure i premis Retorn per a afegir una nova etiqueta a aquest marcador. Un cop hagis creat una nova etiqueta, la tindràs disponible per a qualsevol dels teus marcadors."
                 labels: "Etiquetes"
-                add with count: "Add (%{count})"
+                add with count: "Afegeix (%{count})"
                 alphabetical: "Alfabètic"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Comptar"
+                add color: "Afegeix un color"
+                labels private: "Les etiquetes sempre són privades"

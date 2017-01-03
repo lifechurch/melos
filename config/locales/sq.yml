@@ -1896,6 +1896,14 @@ sq:
                         signIn: "Kyçy për të ruajtur Ngjarjen"
                         saved: "Ngjarja u ruajt"
         Reader: 
+            chapter: "Kapitulli"
+            read reference: "Lexo %{reference}"
+            plan title: "Devocione dhe Plane Leximi falas"
+            meta: 
+                mobile: 
+                    title: "Programi i Biblës"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Paralel"
                 parallel exit: "Dil nga Mënyra Paralele"
@@ -1943,10 +1951,11 @@ sq:
                 friends: "Miqtë"
                 draft: "Skicë"
                 save: "Ruaj"
-                add labels: "Add Labels…"
+                add labels: "Shto etiketa…"
+                no labels: "Ju akoma nuk keni ndonjë etiketë. Thjesht fillo të shkruash dhe shtyp Enter për t'i shtuar këtij shenjuesi një etiketë të re. Pasi të keni krijuar një etiketë të re, ajo do të jetë e disponueshme për t'ia shtuar cilitdo shenjues."
                 labels: "Etiketat"
-                add with count: "Add (%{count})"
+                add with count: "Shto (%{count})"
                 alphabetical: "Alfabetike"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Sipas numrave"
+                add color: "Shto ngjyrë"
+                labels private: "Etiketat janë gjithnjë private"

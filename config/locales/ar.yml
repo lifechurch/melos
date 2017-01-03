@@ -1972,6 +1972,14 @@ ar:
                         signIn: "سجل الدخول لحفظ الفاعلية"
                         saved: "تم حفظ الفاعلية"
         Reader: 
+            chapter: "إصحاح"
+            read reference: "قراءة %{reference}"
+            plan title: "خطط القراءة مجانية وصلوات"
+            meta: 
+                mobile: 
+                    title: "تطبيق الكتاب المقدس"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "على التوازي"
                 parallel exit: "أخرج من وضع العرض المتوازي"
@@ -2019,10 +2027,11 @@ ar:
                 friends: "أصدقاء"
                 draft: "مسودات"
                 save: "حفظ"
-                add labels: "Add Labels…"
+                add labels: "أضف بطاقات تسمية..."
+                no labels: "ليس لديك أي بطاقات تسمية بعد. لإضافة بطاقة تسمية جديدة لهذه الإشارة المرجعية قم ببساطة البدء في الكتابة واضغط Enter. وبمجرد الانتهاء من إنشاء بطاقة تسمية جديدة، وسوف تكون متاحة لك أن تضيفها إلى أي من الإشارات المرجعية لديك."
                 labels: "علامات"
-                add with count: "Add (%{count})"
+                add with count: "أضف ( %{count})"
                 alphabetical: "أبجدي"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "بترتيب الأعداد"
+                add color: "أضف لون"
+                labels private: "بطاقات التسمية دائمًا خاصة"

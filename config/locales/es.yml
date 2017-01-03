@@ -1896,6 +1896,14 @@ es:
                         signIn: "Iniciar sesión para guardar el evento"
                         saved: "Evento guardado"
         Reader: 
+            chapter: "Capítulo"
+            read reference: "Lea %{reference}"
+            plan title: "PLANES DE LECTURA Y DEVOCIONALES GRATIS"
+            meta: 
+                mobile: 
+                    title: "La Biblia App"
+                site: 
+                    title: "Bible.com/es"
             header: 
                 parallel: "Biblias en Paralelo"
                 parallel exit: "Salir de Modo Paralelo"
@@ -1943,10 +1951,11 @@ es:
                 friends: "Amigos"
                 draft: "Borrador"
                 save: "Guardar"
-                add labels: "Add Labels…"
+                add labels: "Agregar Etiquetas…"
+                no labels: "No tiene aún ninguna etiqueta. Simplemente inicie a teclar y pulse Enter para agregar una nueva etiqueta a este Marcador. Una vez creada una nueva etiqueta, podrá agregarla a cualquiera de sus Marcadores."
                 labels: "Etiquetas"
-                add with count: "Add (%{count})"
+                add with count: "Agregar (%{count})"
                 alphabetical: "Alfabético"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Contar"
+                add color: "Agregar color"
+                labels private: "Las etiquetas siempre son privadas"

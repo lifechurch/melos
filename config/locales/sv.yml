@@ -1896,6 +1896,14 @@ sv:
                         signIn: "Logga in för att spara händelse"
                         saved: "Händelse sparad"
         Reader: 
+            chapter: "Kapitel"
+            read reference: "Läs %{reference}"
+            plan title: "Gratis läsplaner och andakter"
+            meta: 
+                mobile: 
+                    title: "Bibelappen"
+                site: 
+                    title: "Bible.com/sv"
             header: 
                 parallel: "Parallell"
                 parallel exit: "Gå ur sida-vid-sida-läge"
@@ -1943,10 +1951,11 @@ sv:
                 friends: "Vänner"
                 draft: "Utkast"
                 save: "Spara"
-                add labels: "Add Labels…"
+                add labels: "Lägg till etikett… "
+                no labels: "Du har inga etiketter än. Skriv och tryck Retur för att lägga till en ny etikett till detta bokmärke. När du har skapat en ny etikett kommer den vara tillgänglig att lägga till på alla dina bokmärken."
                 labels: "Etiketter"
-                add with count: "Add (%{count})"
+                add with count: "Lägg till (%{count})"
                 alphabetical: "Alfabetisk"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Antal"
+                add color: "Lägg till färg"
+                labels private: "Etiketter är alltid privata"

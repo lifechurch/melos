@@ -1934,6 +1934,14 @@ hr:
                         signIn: "Prijavi se za spremanje Događaja."
                         saved: "Događaj je spremljen."
         Reader: 
+            chapter: "Poglavlje"
+            read reference: "Čitaj %{reference}"
+            plan title: "Besplatni planovi čitanja i nadahnuti sadržaji"
+            meta: 
+                mobile: 
+                    title: "Aplikacija Biblija"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Paralelno"
                 parallel exit: "Izađi iz paralelnog načina"
@@ -1981,10 +1989,11 @@ hr:
                 friends: "Prijatelji"
                 draft: "Skica"
                 save: "Spremi"
-                add labels: "Add Labels…"
+                add labels: "Dodaj oznake…"
+                no labels: "Još nemaš nijednu oznaku. Samo počni pisati i pritisni enter da dodaš novu oznaku ovoj knjižnoj oznaci. Nakon što si stvorio oznaku, bit će ti dostupna da je dodaš u bilo koju od svojih knjižnih oznaka."
                 labels: "Oznake"
-                add with count: "Add (%{count})"
+                add with count: "Dodaj (%{count})"
                 alphabetical: "Abecednim redom"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Po brojevima"
+                add color: "Dodaj boju"
+                labels private: "Oznake su uvijek privatne."

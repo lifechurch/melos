@@ -1877,6 +1877,14 @@ zh-TW:
                         signIn: "登入以儲存互動"
                         saved: "互動已儲存"
         Reader: 
+            chapter: "章節"
+            read reference: "閱讀 %{reference}"
+            plan title: "免費的讀經計劃及靈修內容"
+            meta: 
+                mobile: 
+                    title: "聖經軟體"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "並排"
                 parallel exit: "退出並排對照模式"
@@ -1925,6 +1933,7 @@ zh-TW:
                 draft: "草稿"
                 save: "儲存"
                 add labels: "加入標籤…..."
+                no labels: "你還沒有任何標籤。請開始輸入，然後按「Enter」鍵來為此書籤新增標籤。你一旦新增了標籤，隨時就可以將任何書籤納入其中了。"
                 labels: "標籤"
                 add with count: "加入 (%{count})"
                 alphabetical: "字母順序"

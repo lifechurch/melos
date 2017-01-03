@@ -1877,6 +1877,14 @@ ms:
                         signIn: "Log Masuk untuk Simpan Event"
                         saved: "Event telah Disimpan"
         Reader: 
+            chapter: "Bab"
+            read reference: "Baca %{reference}"
+            plan title: "Pelan Bacaan dan Bahan Renungan Percuma"
+            meta: 
+                mobile: 
+                    title: "App Alkitab"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Paralel"
                 parallel exit: "Keluar daripada Mod Selari"
@@ -1925,6 +1933,7 @@ ms:
                 draft: "Draf"
                 save: "Simpan"
                 add labels: "Add Labels…"
+                no labels: "You don't have any labels yet. Simply start typing and press Enter to add a new label to this Bookmark. Once you've created a new label, it will be available for you to add to any of your Bookmarks."
                 labels: "Label"
                 add with count: "Add (%{count})"
                 alphabetical: "Menurut Abjad"

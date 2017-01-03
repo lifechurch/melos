@@ -1896,6 +1896,14 @@ mn:
                         signIn: "Үйл явдлыг Хадгалахын тулд нэвтрэх"
                         saved: "Үйл явдлыг хадгалсан"
         Reader: 
+            chapter: "Бүлэг"
+            read reference: "%{reference} унших"
+            plan title: "Үнэгүй Уншлагын төлөвлөгөөнүүд ба Чимээгүй цагийн материалууд"
+            meta: 
+                mobile: 
+                    title: "Библи Апп"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Зэрэгцээ"
                 parallel exit: "Параллель хэлбэрээс гарах"
@@ -1943,10 +1951,11 @@ mn:
                 friends: "Найзууд"
                 draft: "Ноорог"
                 save: "Хадгалах"
-                add labels: "Add Labels…"
+                add labels: "Гарчиг нэмэх..."
+                no labels: "Танд одоогоор гарчиг байхгүй. Энэ хавчуурганд гарчиг шинээр нэмэхийн тулд гарчигаа бичээд оруулна уу. Та нэгэнт шинэ гарчиг үүсгэсэн бол, цаашдаа үүнийгээ өөрийн ямар ч хавчуурганд нэмэх боломжтой болно."
                 labels: "Шошгууд"
-                add with count: "Add (%{count})"
+                add with count: "%{count} нэмэх"
                 alphabetical: "Үсгийн дарааллаар"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Тоогоор"
+                add color: "Ѳнгѳ нэмэх"
+                labels private: "Гарчигууд үргэлж хувийнх байх"

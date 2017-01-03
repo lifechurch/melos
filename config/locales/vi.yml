@@ -1877,6 +1877,14 @@ vi:
                         signIn: "Đăng nhập để lưu sự kiện"
                         saved: "Đã lưu sự kiện"
         Reader: 
+            chapter: "Đoạn"
+            read reference: "Đọc %{reference}"
+            plan title: "Các kế hoạch đọc và tĩnh nguyện miễn phí"
+            meta: 
+                mobile: 
+                    title: "App Kinh Thánh"
+                site: 
+                    title: "Bible.com/vi"
             header: 
                 parallel: "Đọc hai bản cùng lúc"
                 parallel exit: "Thoát chế độ xem song song"
@@ -1924,10 +1932,11 @@ vi:
                 friends: "Bạn bè"
                 draft: "Nháp"
                 save: "Lưu"
-                add labels: "Add Labels…"
+                add labels: "Thêm nhãn..."
+                no labels: "Bạn không có bất kỳ nhãn dán nào. Rất đơn giản, bắt đầu bằng việc đánh máy và nhấn Enter để thêm nhãn mới cho ghi chú này. Một khi bạn đã tạo một nhãn mới, nó sẽ có hiệu lực cho bạn để thêm vào bất cứ ghi chú nào của bạn."
                 labels: "Nhãn tên"
-                add with count: "Add (%{count})"
+                add with count: "Thêm (%{count})"
                 alphabetical: "Thứ tự ABC"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Đếm"
+                add color: "Thêm màu"
+                labels private: "Nhãn dán luôn luôn riêng tư"

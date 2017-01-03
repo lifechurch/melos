@@ -1896,6 +1896,14 @@ fi:
                         signIn: "Kirjaudu sisään tallentaaksesi tapahtuma"
                         saved: "Tapahtuma tallennettu"
         Reader: 
+            chapter: "Luku"
+            read reference: "Lue %{reference}"
+            plan title: "Ilmaisia lukusuunnitelmia ja hartauksia"
+            meta: 
+                mobile: 
+                    title: "Raamattusovellus"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Vertailunäkymä"
                 parallel exit: "Poistu vertailunäkymästä"
@@ -1943,10 +1951,11 @@ fi:
                 friends: "Ystävät"
                 draft: "Luonnos"
                 save: "Tallenna"
-                add labels: "Add Labels…"
+                add labels: "Lisää tunnisteet..."
+                no labels: "Sinulla ei ole vielä yhtään tunnistetta. Syötä tunniste ja paina Enter-näppäintä lisätäksesi uuden tunnisteen tälle kirjanmerkille. Kun olet luonut uuden tunnisteen, se on käytettävissä missä tahansa kirjanmerkissäsi."
                 labels: "Tunnisteet"
-                add with count: "Add (%{count})"
+                add with count: "Lisää (%{count})"
                 alphabetical: "Aakkosellinen"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Tunnisteet"
+                add color: "Lisää väri"
+                labels private: "Tunnisteet ovat aina yksityisiä"

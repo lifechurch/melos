@@ -1896,6 +1896,14 @@ da:
                         signIn: "Log ind for at gemme Event"
                         saved: "Event gemt"
         Reader: 
+            chapter: "Kapitel"
+            read reference: "Læs %{reference}"
+            plan title: "Gratis bibellæseplaner og andagter"
+            meta: 
+                mobile: 
+                    title: "Bibel App´en"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Parallel"
                 parallel exit: "Stop parallel visning"
@@ -1944,6 +1952,7 @@ da:
                 draft: "Udkast"
                 save: "Gem"
                 add labels: "Tilføj mærkater..."
+                no labels: "Du har ingen overskrift endnu. Start med at skrive og tryk enter for at gemme en ny overskrift til dette bogmærke. Når du har oprettet en ny overskrift, vil den være tilgængelig for dig så du kan tilføje den til enhver af dine bogmærker."
                 labels: "Etiketter"
                 add with count: "Tilføj %{count}"
                 alphabetical: "Alfabetisk"

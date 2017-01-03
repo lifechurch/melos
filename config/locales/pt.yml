@@ -1896,6 +1896,14 @@ pt:
                         signIn: "Entre com sua conta para salvar um evento"
                         saved: "Evento salvo"
         Reader: 
+            chapter: "Capítulo"
+            read reference: "Ler %{reference}"
+            plan title: "Planos de Leitura e Devocionais Gratuitos"
+            meta: 
+                mobile: 
+                    title: "O App da Bíblia"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Paralelo"
                 parallel exit: "Sair do Modo Paralelo"
@@ -1944,6 +1952,7 @@ pt:
                 draft: "Rascunho"
                 save: "Salvar"
                 add labels: "Adicionar Etiquetas…"
+                no labels: "Você ainda não possui nenhuma etiqueta. Apenas comece a digitar e pressione Enter para adicionar uma nova etiqueta a esse Marcador. Quando você tiver criado uma nova etiqueta, ela estará disponível para você adicionar a qualquer do seus Marcadores."
                 labels: "Etiquetas"
                 add with count: "Adicionar (%{count})"
                 alphabetical: "Alfabética"

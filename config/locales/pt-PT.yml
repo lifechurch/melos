@@ -1896,6 +1896,14 @@ pt-PT:
                         signIn: "Entrar para guardar evento"
                         saved: "Evento Guardado"
         Reader: 
+            chapter: "Capítulo"
+            read reference: "Leia %{reference}"
+            plan title: "Planos e Devocionais Gratuitos de Leitura da Bíblia"
+            meta: 
+                mobile: 
+                    title: "A App da Bíblia"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Paralelo"
                 parallel exit: "Sair do modo paralelo"
@@ -1943,10 +1951,11 @@ pt-PT:
                 friends: "Amigos"
                 draft: "Rascunho"
                 save: "Guardar"
-                add labels: "Add Labels…"
+                add labels: "Adicionar rótulo"
+                no labels: "Ainda não tem nenhuma nota. Começa por escrever e clicar Enter para adicionar uma nova nota a este marcador. Uma vez que criaste uma nova nota irá estar disponível para adicionar a qualquer marcador."
                 labels: "Etiquetas"
-                add with count: "Add (%{count})"
+                add with count: "Adicionar (%{count})"
                 alphabetical: "Alfabética"
                 count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                add color: "Adicionar cor"
+                labels private: "Os rótulos são sempre privados"

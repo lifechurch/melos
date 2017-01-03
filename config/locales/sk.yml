@@ -1915,6 +1915,14 @@ sk:
                         signIn: "Prihláste sa pre uloženie udalosti"
                         saved: "Udalosť uložená"
         Reader: 
+            chapter: "Kapitola"
+            read reference: "Čítať %{reference}"
+            plan title: "Plány čítania a texty zadarmo"
+            meta: 
+                mobile: 
+                    title: "Aplikácia Biblia"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Vedľa seba"
                 parallel exit: "Opustiť paralelný mód"
@@ -1962,10 +1970,11 @@ sk:
                 friends: "Priatelia"
                 draft: "Návrh"
                 save: "Uložiť"
-                add labels: "Add Labels…"
+                add labels: "Pridaj Štítky..."
+                no labels: "Zatiaľ nemáš žiadne štítky. Jednoducho začni písať a stlač Enter na pridanie nového štítku k tejto záložke. Odkedy si vytvoril nový štítok, bude ti k dispozícii, aby si si ho mohol pridať k svojim Záložkám."
                 labels: "Menovky"
-                add with count: "Add (%{count})"
+                add with count: "Pridaj (%{count})"
                 alphabetical: "Abecedne"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Výpočet"
+                add color: "Pridaj farbu"
+                labels private: "Štítky sú vždy osobné"

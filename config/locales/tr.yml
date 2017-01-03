@@ -1896,6 +1896,14 @@ tr:
                         signIn: "Etkinliği Kaydetmek İçin Giriş Yapın"
                         saved: "Etkinlik Kaydedildi"
         Reader: 
+            chapter: "Bölüm"
+            read reference: "Şunu Oku: %{reference}"
+            plan title: "Ücretsiz Okuma Planları "
+            meta: 
+                mobile: 
+                    title: "Kutsal Kitap Uygulaması"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Karşılaştır"
                 parallel exit: "Paralel Moddan Çık"
@@ -1944,6 +1952,7 @@ tr:
                 draft: "Taslak"
                 save: "Kaydet"
                 add labels: "Etiket Ekle…"
+                no labels: "Henüz bir etiketiniz yok. Şimdi yazmaya başlayın ve bu Yer imine yeni bir etiket oluşturmak için Giriş'e basın. Yeni bir etiket oluşturduğunuz an, bu yer imilerinizin herhangi birine eklemek üzere kullanılabilir olacaktır."
                 labels: "Etiketler"
                 add with count: "Ekle (%{count})"
                 alphabetical: "Alfabetik"

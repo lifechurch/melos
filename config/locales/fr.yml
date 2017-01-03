@@ -1896,6 +1896,14 @@ fr:
                         signIn: "Connectez-vous pour enregistrer l'Événement"
                         saved: "Événement sauvegardé"
         Reader: 
+            chapter: "Chapitre"
+            read reference: "Lire %{reference}"
+            plan title: "Plans de lecture et dévotions gratuits"
+            meta: 
+                mobile: 
+                    title: "La Bible App"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "En parallèle"
                 parallel exit: "Sortir du mode parallèle"
@@ -1943,10 +1951,11 @@ fr:
                 friends: "Amis"
                 draft: "Brouillon"
                 save: "Sauver"
-                add labels: "Add Labels…"
+                add labels: "Ajouter des étiquettes..."
+                no labels: "Vous n'avez pas encore d'étiquette. Commencez à taper et appuyez sur Entrée pour ajouter une nouvelle étiquette à ce favori. Une fois la nouvelle étiquette créée, vous pourrez aussi l'ajouter à n'importe lequel de vos favoris."
                 labels: "Étiquettes"
-                add with count: "Add (%{count})"
+                add with count: "Ajouter (%{count})"
                 alphabetical: "Alphabétique"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Compte"
+                add color: "Ajouter une couleur"
+                labels private: "Les étiquettes sont toujours privées"

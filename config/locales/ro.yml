@@ -1915,6 +1915,14 @@ ro:
                         signIn: "Autentifică-te pentru a salva evenimentul"
                         saved: "Eveniment salvat"
         Reader: 
+            chapter: "Capitolul"
+            read reference: "Citește %{reference}"
+            plan title: "Planuri de citire și Devoționale Gratuite"
+            meta: 
+                mobile: 
+                    title: "Aplicația Biblia"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "În paralel"
                 parallel exit: "Ieșire din modul paralel"
@@ -1962,10 +1970,11 @@ ro:
                 friends: "Prieteni"
                 draft: "Ciornă"
                 save: "Salvează"
-                add labels: "Add Labels…"
+                add labels: "Adaugă etichete…"
+                no labels: "Încă nu ai nici o etichetă.  Pur și simplu introdu un text și apasă tasta ENTER pentru a adăuga o nouă etichetă la acest marcaj. Odată ce ai creat o nouă etichetă, aceasta va fi disponibilă să o adaugi oricăruia dintre marcajele tale."
                 labels: "etichete"
-                add with count: "Add (%{count})"
+                add with count: "Adaugă (%{count})"
                 alphabetical: "Alfabetic"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Numără"
+                add color: "Adaugă culoare"
+                labels private: "Etichetele sunt întotdeauna private"

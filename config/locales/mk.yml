@@ -1896,6 +1896,14 @@ mk:
                         signIn: "Најави се за да сочуваш настан"
                         saved: "Настанот е сочуван"
         Reader: 
+            chapter: "Глава"
+            read reference: "Прочитај %{reference}"
+            plan title: "Бесплатни Планови за читање и Дневна побожност"
+            meta: 
+                mobile: 
+                    title: "Апликација „Библија“"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Паралелно"
                 parallel exit: "Исклучи паралелен режим"
@@ -1943,10 +1951,11 @@ mk:
                 friends: "Пријатели"
                 draft: "Проба"
                 save: "Сними"
-                add labels: "Add Labels…"
+                add labels: "Додади етикети…"
+                no labels: "Сѐ уште немаш ниту една етикета. Едноставно започни со пишување и притисни ентер за да додадеш нова етикета на овој обележувач. Штом креираш нова етикета, истата ќе можеш да ја додадеш на кој било од твоите обележувачи."
                 labels: "Етикети"
                 add with count: "Додади (%{count})"
                 alphabetical: "Азбучно"
-                count: "Count"
+                count: "Број"
                 add color: "Додади боја"
-                labels private: "Labels are always private"
+                labels private: "Етикетите секогаш се приватни"

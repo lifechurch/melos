@@ -1915,6 +1915,14 @@ cs:
                         signIn: "Přihlásit se k uložení události"
                         saved: "Událost byla uložena"
         Reader: 
+            chapter: "Kapitola"
+            read reference: "Číst %{reference}"
+            plan title: "Bezplatné plány čtení a výkladové poznámky"
+            meta: 
+                mobile: 
+                    title: "Aplikace Bible"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Paralelní"
                 parallel exit: "Ukončit paralelní mód"
@@ -1963,6 +1971,7 @@ cs:
                 draft: "Koncept/y"
                 save: "Uložit"
                 add labels: "Přidat značku..."
+                no labels: "Nemáte žádné popisky. Napište a pojmenujte tak popisky vaší záložky a stiskněte Enter. Vytvořený popis můžete přidat k jakékoliv vaší záložce."
                 labels: "Štítky"
                 add with count: "Přidat (%{count})"
                 alphabetical: "Abecední"

@@ -1934,6 +1934,14 @@ pl:
                         signIn: "Zaloguj się, aby zapisać wydarzenie"
                         saved: "Wydarzenie zapisane"
         Reader: 
+            chapter: "Rozdział"
+            read reference: "Czytaj %{reference}"
+            plan title: "Darmowe Plany Czytania i Rozważania"
+            meta: 
+                mobile: 
+                    title: "Aplikacja Biblii"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Równolegle"
                 parallel exit: "Wyjdź z trybu równoległego"
@@ -1981,10 +1989,11 @@ pl:
                 friends: "Przyjaciele"
                 draft: "Szkic"
                 save: "Zapisz"
-                add labels: "Add Labels…"
+                add labels: "Dodaj etykiety..."
+                no labels: "Nie masz jeszcze żadnych etykiet. Po prostu zacznij pisać i naciśnij Enter, aby dodać etykietę do tej Zakładki. Kiedy utworzysz nową etykietę, będzie ona dostępna do dodania w każdej Zakładce."
                 labels: "Etykiety"
-                add with count: "Add (%{count})"
+                add with count: "Dodaj (%{count})"
                 alphabetical: "Alfabetycznie"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Policz"
+                add color: "Dodaj kolor"
+                labels private: "Etykiety są zawsze prywatne"

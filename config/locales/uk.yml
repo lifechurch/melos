@@ -1934,6 +1934,14 @@ uk:
                         signIn: "Увійдіть, щоб зберегти подію"
                         saved: "Подію збережено"
         Reader: 
+            chapter: "Розділ"
+            read reference: "Прочитайте %{reference}"
+            plan title: "Безкоштовні плани для читання та молитви"
+            meta: 
+                mobile: 
+                    title: "Програма Біблія"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Паралельне читання"
                 parallel exit: "Вийти із паралельного режиму"
@@ -1981,10 +1989,11 @@ uk:
                 friends: "Друзі"
                 draft: "Чернетка"
                 save: "Зберегти"
-                add labels: "Add Labels…"
+                add labels: "Додати позначки…"
+                no labels: "У вас ще немає позначок. Розпочніть вводити текст та натисніть Enter щоб додати позначку до Закладки.  Після створення позначки, вона буде доступна для всіх закладок."
                 labels: "Позначки"
-                add with count: "Add (%{count})"
+                add with count: "Додати (%{count})"
                 alphabetical: "Алфавітний"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Лічильник"
+                add color: "Додати колір"
+                labels private: "Позначки завжди залишаються приватними"

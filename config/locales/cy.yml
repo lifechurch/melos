@@ -1972,6 +1972,14 @@ cy:
                         signIn: "Mewngofnoda i Arbed y Digwyddiad"
                         saved: "Arbedwyd y Digwyddiad"
         Reader: 
+            chapter: "Pennod"
+            read reference: "Darllen %{reference}"
+            plan title: "Cynlluniau Darllen a Defosiynol am Ddim"
+            meta: 
+                mobile: 
+                    title: "Ap Beibl"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Cyfosod"
                 parallel exit: "Gadael Modd Paralel"
@@ -2019,10 +2027,11 @@ cy:
                 friends: "Ffrindiau"
                 draft: "Drafft"
                 save: "Cadw"
-                add labels: "Add Labels…"
+                add labels: "Ychwanegu Labeli ...…"
+                no labels: "Does gen ti ddim labeli eto. Does ond rhaid dechrau teipio a phwyso 'Enter' i ychwanegu label newydd i'r Nod Tudalen yma Unwaith i ti greu label newydd, bydd ar gael i ti ychwanegu unrhyw un o dy Nodau Tudalen."
                 labels: "Labeli"
-                add with count: "Add (%{count})"
+                add with count: "Ychwanegu (%{count}"
                 alphabetical: "Trefn yr Wyddor"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                count: "Cyfri"
+                add color: "Ychwanegu lliw"
+                labels private: "Mae labeli yn breifat drwy'r amser"
