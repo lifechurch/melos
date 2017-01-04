@@ -159,21 +159,6 @@ class VerseAction extends Component {
 		if (Array.isArray(colors)) {
 			colorList = <ColorList list={colors} onClick={this.handleHighlight} />
 		}
-		let momentCreateDiv
-		if (momentKind) {
-			momentCreateDiv = (
-				<MomentCreate
-					{...this.props}
-					kind={momentKind}
-					verses={bible.verses.verses}
-					references={bible.verses.references}
-					labels={bible.momentsLabels}
-					isLoggedIn={auth.isLoggedIn}
-					colors={bible.highlightColors}
-					onClose={this.handleMomentContainerClose}
-				/>
-			)
-		}
 
 		return (
 			<div className='verse-action'>
@@ -181,10 +166,22 @@ class VerseAction extends Component {
 					<a onClick={this.handleClose} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
 					<span className="verse-selection" style={{opacity: (chapter && chapter.length && human && human.length) ? 1 : 0 }}>{chapter}:{human}</span>
 					<ButtonBar items={actions} onClick={this.handleActionClick} />
-					{colorList}
+					{ colorList }
 				</div>
 				<DropdownTransition classes='va-moment-container' show={momentContainerOpen} hideDir='down'>
-					{ momentCreateDiv }
+					<MomentCreate
+						{...this.props}
+						// changing the key will cause a rerender for all children
+						// resetting all local state
+						key={selectedReferences}
+						kind={momentKind}
+						verses={bible.verses.verses}
+						references={bible.verses.references}
+						labels={bible.momentsLabels}
+						isLoggedIn={auth.isLoggedIn}
+						colors={bible.highlightColors}
+						onClose={this.handleMomentContainerClose}
+					/>
 				</DropdownTransition>
 			</div>
 		)
