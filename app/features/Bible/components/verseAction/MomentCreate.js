@@ -57,9 +57,14 @@ class MomentCreate extends Component {
 	 * handle color picker modal show/hide
 	 *
 	 */
-	handleDropdownClick = () => {
+	handleDropdownClose = () => {
 		this.setState({
-			dropdown: !this.state.dropdown,
+			dropdown: false,
+		})
+	}
+	handleDropdownOpen = () => {
+		this.setState({
+			dropdown: true,
 		})
 	}
 
@@ -202,7 +207,7 @@ class MomentCreate extends Component {
 			if (colors) {
 				colorsDiv = (
 					<div className='colors-div'>
-						<div onClick={this.handleDropdownClick} className='color-trigger-button'>
+						<div onClick={this.handleDropdownOpen} className='color-trigger-button'>
 							{
 								selectedColor
 								?
@@ -211,10 +216,10 @@ class MomentCreate extends Component {
 								<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
 							}
 						</div>
-						<DropdownTransition show={dropdown} hideDir='right' onOutsideClick={this.handleDropdownClick}>
+						<DropdownTransition show={dropdown} hideDir='right' onOutsideClick={this.handleDropdownClose} exemptClass='color-trigger-button'>
 							<div className='labels-modal'>
 								<ColorList list={colors} onClick={this.addColor} />
-								<a onClick={this.handleDropdownClick} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
+								<a onClick={this.handleDropdownClose} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
 							</div>
 						</DropdownTransition>
 					</div>
