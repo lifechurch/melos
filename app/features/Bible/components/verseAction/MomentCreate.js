@@ -131,7 +131,7 @@ class MomentCreate extends Component {
 		this.setState({
 			selectedColor: color,
 		})
-		this.handleDropdownClick()
+		this.handleDropdownClose()
 	}
 
 	/**
