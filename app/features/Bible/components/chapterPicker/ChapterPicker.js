@@ -195,7 +195,7 @@ class ChapterPicker extends Component {
 		// filter the books given the input change
 		let results = Filter.filter("BooksStore", inputValue.trim())
 
-		this.setState({ listErrorAlert: false, filtering: true })
+		this.setState({ inputValue: inputValue, listErrorAlert: false, filtering: true })
 
 		// if the input already matches a book exactly, let's filter chapters
 		if (results.length > 0 && `${results[0].human} ` == inputValue) {
@@ -217,11 +217,11 @@ class ChapterPicker extends Component {
 					chapterlistSelectionIndex: books[bookMap[selectedBook]].chapterMap[chapterNum],
 				})
 			}
-			this.setState({ inputValue: inputValue, books: null, dropdown: true })
+			this.setState({ books: null, dropdown: true })
 
 		// or we're actually just filtering book names
 		} else if (results.length > 0) {
-			this.setState({ books: results, chapters: null, inputValue: inputValue, dropdown: true, booklistSelectionIndex: 0 })
+			this.setState({ books: results, chapters: null, dropdown: true, booklistSelectionIndex: 0 })
 			this.toggleChapterPickerList()
 		}
 	}

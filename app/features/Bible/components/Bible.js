@@ -253,10 +253,10 @@ class Bible extends Component {
 					</div>
 					<div className='row buttons'>
 						<div className='solid-button' onClick={this.chapterPickerInstance.handleDropDownClick}>
-							<FormattedMessage id="chapter" />
+							<FormattedMessage id="Reader.chapterpicker.chapter label" />
 						</div>
 						<div className='solid-button' onClick={this.versionPickerInstance.handleDropDownClick}>
-							<FormattedMessage id="EventEdit.features.content.components.ContentTypeReference.version" />
+							<FormattedMessage id="Reader.versionpicker.version label" />
 						</div>
 					</div>
 				</div>
