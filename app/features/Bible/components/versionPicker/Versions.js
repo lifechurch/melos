@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
+import AudioIcon from '../../../../components/AudioIcon'
 
 class Versions extends Component {
 
 	shouldComponentUpdate(nextProps, nextState) {
-		const { list, initialSelection } = this.props
+		const { list, initialSelection, usfm, focus } = this.props
 
-		if (nextProps.list == list && nextProps.initialSelection == initialSelection) {
+		if (nextProps.list == list && nextProps.initialSelection == initialSelection && nextProps.usfm == usfm && nextProps.focus == focus) {
 			return false
 		} else {
 			return true
@@ -43,13 +44,31 @@ class Versions extends Component {
 						let focusClass = (index == listSelectionIndex) ? 'focus' : ''
 						versionList.push(
 							<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase()}`)}>
-								<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</li>
+								{
+									// show audio icon next to name
+									version.audio ?
+									<li className={`${active} ${focusClass}`}>
+										<div className={`small-10`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</div>
+										<div className={`small-2`}><AudioIcon /></div>
+									</li>
+									:
+									<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</li>
+								}
 							</Link>
 						)
 					} else {
 						versionList.push(
 							<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase()}`)}>
-								<li className={`${active}`} >{ `${abbr} ${name}` }</li>
+								{
+									// show audio icon next to name
+									version.audio ?
+									<li className={`${active}`}>
+										<div className={`small-10`} >{ `${abbr} ${name}` }</div>
+										<div className={`small-2`}><AudioIcon /></div>
+									</li>
+									:
+									<li className={`${active}`} >{ `${abbr} ${name}` }</li>
+								}
 							</Link>
 						)
 					}

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import ActionCreators from '../../actions/creators'
-import { injectIntl, FormattedMessage } from 'react-intl'
+import { injectIntl, FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import Immutable from 'immutable'
 import XMark from '../../../../components/XMark'
 import DropdownTransition from '../../../../components/DropdownTransition'
@@ -179,11 +179,11 @@ class MomentCreate extends Component {
 		if (!isLoggedIn) {
 			let message = ''
 			if (kind == 'highlight') {
-				message = <FormattedMessage id='Reader.verse action.highlight unavailable' />
+				message = <FormattedMessage id='Auth.highlight blurb' />
 			} else if (kind == 'note') {
-				message = <FormattedMessage id='Reader.verse action.note unavailable' />
+				message = <FormattedMessage id='Auth.note blurb' />
 			} else if (kind == 'bookmark') {
-				message = <FormattedMessage id='Reader.verse action.bookmark unavailable' />
+				message = <FormattedMessage id='Auth.bookmark blurb' />
 			}
 
 			contentDiv = (
@@ -193,7 +193,7 @@ class MomentCreate extends Component {
 						<div className='body'>{ message }</div>
 						<div className='buttons'>
 							<a href='/sign-up' className='solid-button green full'><FormattedMessage id='Auth.sign up' /></a>
-							<div className='alt-path terms'>{intl.formatMessage({ id: 'Auth.sign up alternate'}, { sign_in_path: '/sign-in' }) }</div>
+							<div className='alt-path terms'><FormattedHTMLMessage id='Auth.sign up alternate' values={{ sign_in_path: '/sign-in' }} /></div>
 						</div>
 					</Card>
 				</div>
