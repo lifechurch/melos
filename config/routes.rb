@@ -272,7 +272,7 @@ YouversionWeb::Application.routes.draw do
   get "/settings/notifications",           to: "redirects#settings_notifications", as: "notification_settings"
 
   # Adding a totally unique URL to that can be used in emails and that the apps are not currently using
-  get "/notification-settings/",           to: "redirects#settings_notifications", as: "notification_settings_unique"
+  get "/notification-settings",           to: "redirects#settings_notifications", as: "notification_settings_unique"
 
   get "/settings/delete_account",          to: "redirects#delete_account"
   get "/settings/vod_subscriptions",       to: "redirects#settings_vod_subscriptions"
