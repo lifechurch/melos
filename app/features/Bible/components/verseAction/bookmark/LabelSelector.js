@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { injectIntl } from 'react-intl'
 import LabelsModal from './LabelsModal'
 import LabelInput from './LabelInput'
 import LabelList from './LabelList'
@@ -252,7 +251,7 @@ class LabelSelector extends Component {
 					intl={intl}
 				/>
 				{ filteredlabels }
-				<DropdownTransition show={dropdown}>
+				<DropdownTransition show={dropdown} onOutsideClick={this.cancelDropDown}>
 					<LabelsModal
 						byAlphabetical={byAlphabetical}
 						byCount={byCount}
@@ -276,4 +275,4 @@ LabelSelector.propTypes = {
 	updateLabels: React.PropTypes.func,
 }
 
-export default injectIntl(LabelSelector)
+export default LabelSelector

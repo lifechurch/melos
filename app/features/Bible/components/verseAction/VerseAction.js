@@ -23,24 +23,29 @@ class VerseAction extends Component {
 	}
 
 	handleActionClick(e) {
-		const { colors, dispatch, selection: { verses }, bible: { version: { id, local_abbreviation } } } = this.props
+		const { colors, dispatch, auth, selection: { verses }, bible: { version: { id, local_abbreviation } } } = this.props
 
-		switch (e.value) {
-			case 'note':
-			case 'bookmark':
-				dispatch(ActionCreators.bibleVerses({
-					id: id,
-					references: verses,
-					format: 'html',
-					local_abbreviation: local_abbreviation
-				}))
-				this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
-				return
+		// if we're not logged in and try to make an auth'd moment
+		if (!auth.isLoggedIn && (e.value == 'note' || e.value == 'bookmark')) {
+			this.setState({
+				momentContainerOpen: !this.state.momentContainerOpen,
+				momentKind: e.value,
+			})
+		} else {
+			switch (e.value) {
+				case 'note':
+				case 'bookmark':
+					dispatch(ActionCreators.bibleVerses({
+						id: id,
+						references: verses,
+						format: 'html',
+						local_abbreviation: local_abbreviation
+					}))
+					this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
+					return
+			}
 		}
 
-		// if (e.value === 'note') {
-		// 	this.handleHighlight(colors[Math.floor(Math.random() * (colors.length))])
-		// }
 	}
 
 	handleMomentContainerClose(closeVerseAction=false) {
@@ -67,17 +72,22 @@ class VerseAction extends Component {
 	}
 
 	handleHighlight(color) {
-		const { selection: { verses, version }, dispatch } = this.props
+		const { selection: { verses, version }, dispatch, auth } = this.props
 		const references = [{ usfm: verses, version_id: version }]
 
-		dispatch(ActionCreators.momentsCreate(true, {
-			kind: 'highlight',
-			references: references,
-			color: color.replace('#', ''),
-			created_dt: new Date().toISOString().split('.')[0] + "+00:00"
-		}))
-
-		this.handleClose({})
+		// tell the moment create what kind of message to display for having a user
+		// log in, if they aren't already
+		if (!auth.isLoggedIn) {
+			this.setState({ momentKind: 'highlight', momentContainerOpen: !this.state.momentContainerOpen })
+		} else {
+			dispatch(ActionCreators.momentsCreate(true, {
+				kind: 'highlight',
+				references: references,
+				color: color.replace('#', ''),
+				created_dt: new Date().toISOString().split('.')[0] + "+00:00"
+			}))
+			this.handleClose({})
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -128,7 +138,7 @@ class VerseAction extends Component {
 				onCopy={() => {
 					this.setState({ copied: true })
 					setTimeout(() => {
-						this.setState({ copied:false })
+						this.setState({ copied: false })
 					}, 10000)
 				}}>
 				<span className="yv-green-link">{copied ?
@@ -149,6 +159,21 @@ class VerseAction extends Component {
 		if (Array.isArray(colors)) {
 			colorList = <ColorList list={colors} onClick={this.handleHighlight} />
 		}
+		let momentCreateDiv
+		if (momentKind) {
+			momentCreateDiv = (
+				<MomentCreate
+					{...this.props}
+					kind={momentKind}
+					verses={bible.verses.verses}
+					references={bible.verses.references}
+					labels={bible.momentsLabels}
+					isLoggedIn={auth.isLoggedIn}
+					colors={bible.highlightColors}
+					onClose={this.handleMomentContainerClose}
+				/>
+			)
+		}
 
 		return (
 			<div className='verse-action'>
@@ -159,16 +184,7 @@ class VerseAction extends Component {
 					{colorList}
 				</div>
 				<DropdownTransition classes='va-moment-container' show={momentContainerOpen} hideDir='down'>
-					<MomentCreate
-						{...this.props}
-						kind={momentKind}
-						verses={bible.verses.verses}
-						references={bible.verses.references}
-						labels={bible.momentsLabels}
-						isLoggedIn={auth.isLoggedIn}
-						colors={bible.highlightColors}
-						onClose={this.handleMomentContainerClose}
-					/>
+					{ momentCreateDiv }
 				</DropdownTransition>
 			</div>
 		)
