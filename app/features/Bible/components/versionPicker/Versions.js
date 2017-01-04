@@ -5,9 +5,9 @@ import AudioIcon from '../../../../components/AudioIcon'
 class Versions extends Component {
 
 	shouldComponentUpdate(nextProps, nextState) {
-		const { list, initialSelection, usfm, focus } = this.props
+		const { list, initialSelection, usfm, listSelectionIndex } = this.props
 
-		if (nextProps.list == list && nextProps.initialSelection == initialSelection && nextProps.usfm == usfm && nextProps.focus == focus) {
+		if (nextProps.list == list && nextProps.initialSelection == initialSelection && nextProps.usfm == usfm && nextProps.listSelectionIndex == listSelectionIndex) {
 			return false
 		} else {
 			return true

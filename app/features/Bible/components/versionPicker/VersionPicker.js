@@ -312,7 +312,7 @@ class VersionPicker extends Component {
 					// doesn't look weird
 					dis.setState({
 						languages: languages,
-						versions: versions.byLang[dis.selectedLanguage].versions,
+						versions: versions.byLang[dis.state.selectedLanguage].versions,
 						listErrorAlert: false
 					})
 				}, 700)
@@ -370,7 +370,7 @@ class VersionPicker extends Component {
 							classes={classes}
 							languageList={languages}
 							versionList={versions}
-							versionsMap={this.props.versions.byLang[selectedLanguage].map}
+							versionsMap={!this.props.versions.loading ? this.props.versions.byLang[selectedLanguage].map : []}
 							recentVersions={recentVersions}
 							selectedLanguage={selectedLanguage}
 							selectedVersion={selectedVersion}
