@@ -21,7 +21,7 @@ class MomentCreate extends Component {
 			localRefs: props.references || [],
 			content: null,
 			user_status: 'private',
-			addedLabels: null,
+			addedLabels: [],
 			dropdown: false,
 			selectedColor: null,
 		}
@@ -157,8 +157,8 @@ class MomentCreate extends Component {
 
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
 			kind: kind,
-			references: localRefs,
-			labels: addedLabels ? addedLabels : null,
+			references: (Array.isArray(localRefs) && localRefs.length > 0) ? localRefs : [],
+			labels: (Array.isArray(addedLabels) && addedLabels.length > 0) ? addedLabels : [],
 			created_dt: new Date().toISOString().split('.')[0] + "+00:00",
 			content: content,
 			user_status: user_status,
