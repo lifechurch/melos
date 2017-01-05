@@ -173,7 +173,7 @@ class VerseAction extends Component {
 						{...this.props}
 						// changing the key will cause a rerender for all children
 						// resetting all local state
-						key={selectedReferences}
+						key={momentContainerOpen}
 						kind={momentKind}
 						verses={bible.verses.verses}
 						references={bible.verses.references}
