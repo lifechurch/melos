@@ -47,7 +47,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			 || CHAPTER_NOTV_CV.test(params.url)
 			 || CHAPTER_CV.test(params.url)) {
 			 reference = reference.split('.').slice(0,2).join('.')
-			 loadChapter({ language_tag, version, reference })
+			 loadChapter({ isInitialLoad: true, hasVersionChanged: true, hasChapterChanged: true, language_tag, version, reference })
 
 			} else if (VERSE_NOTV.test(params.url)
 			 || VERSE.test(params.url)
@@ -55,7 +55,10 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			 || VERSE_CV.test(params.url)) {
 			 reference = reference.split('.').slice(0,3).join('.')
 			 loadVerse({
-			 	versions: [ parseInt(version), ...params.altVersions[startingState.serverLanguageTag].text ] ,
+			 	isInitialLoad: true,
+			 	hasVersionChanged: true,
+			 	hasChapterChanged: true,
+			 	versions: [ parseInt(version), ...params.altVersions[startingState.serverLanguageTag].text ],
 			 	language_tag: Locale.planLocale,
 			 	passage: reference
 			 })

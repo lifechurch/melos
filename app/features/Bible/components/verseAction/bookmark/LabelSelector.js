@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { injectIntl } from 'react-intl'
 import LabelsModal from './LabelsModal'
 import LabelInput from './LabelInput'
 import LabelList from './LabelList'
@@ -197,6 +196,19 @@ class LabelSelector extends Component {
 		}
 	}
 
+	resetSelection = () => {
+		this.setState({
+			inputValue: null,
+			dropdown: false,
+			filtering: false,
+			inputDisabled: false,
+			selectedLabels: {},
+			addedLabels: {},
+			filteredLabels: null,
+			selected: 0
+		})
+	}
+
 
 	/**
 	 * fired on clicking 'x' on label
@@ -276,4 +288,4 @@ LabelSelector.propTypes = {
 	updateLabels: React.PropTypes.func,
 }
 
-export default injectIntl(LabelSelector)
+export default LabelSelector

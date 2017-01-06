@@ -151,6 +151,11 @@ class MomentCreate extends Component {
 			localVerses: {},
 			localRefs: [],
 		})
+
+		if (typeof this.labelSelector !== 'undefined' && this.labelSelector) {
+			console.log(this.labelSelector)
+			this.labelSelector.resetSelection()
+		}
 	}
 
 	/**
@@ -213,7 +218,7 @@ class MomentCreate extends Component {
 			contentDiv = (
 					<VerseCard verseContent={localVerses}>
 							<div className='small-10'>
-								<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} />
+								<LabelSelector byAlphabetical={labels.byAlphabetical} byCount={labels.byCount} updateLabels={this.updateLabels} intl={intl} ref={(labelSelector) => { this.labelSelector = labelSelector }} />
 							</div>
 							<div className='small-2'>
 								{ colorsDiv }
