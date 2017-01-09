@@ -63,7 +63,7 @@ class RecentVersions extends SyncStore {
 	 * @param      {object}  versionsList  Object of version objects
 	 */
 	getVersions(versionsList) {
-		let recentVersions = LocalStore.get('RecentVersions').data
+		let recentVersions = LocalStore.get('RecentVersions') ? LocalStore.get('RecentVersions').data : null
 		let versionsInfo = {}
 
 		if (Array.isArray(recentVersions) && recentVersions.length > 0) {

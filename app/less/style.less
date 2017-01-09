@@ -2255,7 +2255,11 @@ body.c_references.a_show {
 	width: 100%;
 }
 
-//
+@media @small-only {
+	.modal {
+		max-height: 400px;
+	}
+}
 @media @small-only, @medium-only {
 	// center all the modals horizontally when small or medium viewport
 	.modal {
@@ -2267,7 +2271,6 @@ body.c_references.a_show {
 		-ms-transform:    translate(-50%, 0%);
 	  -o-transform:     translate(-50%, 0%);
 		transition:       translate(-50%, 0%);
-
 	}
 
 	#current-ui-view.modal-open {
