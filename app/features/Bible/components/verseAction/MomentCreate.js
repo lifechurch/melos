@@ -216,7 +216,7 @@ class MomentCreate extends Component {
 								<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
 							}
 						</div>
-						<DropdownTransition show={dropdown} hideDir='right' onOutsideClick={this.handleDropdownClose} exemptClass='color-trigger-button'>
+						<DropdownTransition show={dropdown} hideDir='up' onOutsideClick={this.handleDropdownClose} exemptClass='color-trigger-button'>
 							<div className='labels-modal'>
 								<ColorList list={colors} onClick={this.addColor} />
 								<a onClick={this.handleDropdownClose} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
