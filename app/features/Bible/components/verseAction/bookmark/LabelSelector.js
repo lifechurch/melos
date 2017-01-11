@@ -264,7 +264,7 @@ class LabelSelector extends Component {
 					intl={intl}
 				/>
 				{ filteredlabels }
-				<DropdownTransition show={dropdown}>
+				<DropdownTransition show={dropdown} onOutsideClick={this.cancelDropDown}>
 					<LabelsModal
 						byAlphabetical={byAlphabetical}
 						byCount={byCount}

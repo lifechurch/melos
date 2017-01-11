@@ -107,7 +107,7 @@ class ChapterPicker extends Component {
 			} else {
 				this.setState({ inputDisabled: false })
 			}
-			if (chapter && chapter.reference && chapter.reference.human) {
+			if (!dropdown && chapter && chapter.reference && chapter.reference.human) {
 				this.setState({ inputValue: chapter.reference.human })
 			}
 
@@ -185,7 +185,7 @@ class ChapterPicker extends Component {
 
 	handleLabelChange(inputValue) {
 		const { books, bookMap } = this.props
-		const { selectedBook } = this.state
+		const { selectedBook, classes } = this.state
 
 		if (!books[bookMap[selectedBook]]) {
 			this.setState({ listErrorAlert: true, dropdown: true })
@@ -222,7 +222,10 @@ class ChapterPicker extends Component {
 		// or we're actually just filtering book names
 		} else if (results.length > 0) {
 			this.setState({ books: results, chapters: null, dropdown: true, booklistSelectionIndex: 0 })
-			this.toggleChapterPickerList()
+			// show books if we weren't already on mobile
+			if (classes == 'hide-books') {
+				this.toggleChapterPickerList()
+			}
 		}
 	}
 
@@ -320,10 +323,11 @@ class ChapterPicker extends Component {
 			inputValue,
 			booklistSelectionIndex,
 			chapterlistSelectionIndex,
-			selectedBook
+			selectedBook,
+			dropdown,
 		} = this.state
 
-		if (!books[bookMap[selectedBook]]) {
+		if (!books[bookMap[selectedBook]] || !dropdown) {
 			return false
 		}
 
@@ -389,6 +393,8 @@ class ChapterPicker extends Component {
 				}
 			}
 			if (keyEventName == "ArrowRight") {
+				event.preventDefault()
+
 				if (chapterlistSelectionIndex < chapterKeys.length - 1) {
 					this.setState({ chapterlistSelectionIndex: chapterlistSelectionIndex + 1 })
 				} else {

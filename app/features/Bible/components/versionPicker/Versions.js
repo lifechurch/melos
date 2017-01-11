@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
+import AudioIcon from '../../../../components/AudioIcon'
 
 class Versions extends Component {
 
 	render() {
 		const {
 			list,
+			map,
 			header,
 			initialSelection,
 			focus,
@@ -18,25 +20,48 @@ class Versions extends Component {
 
 		if (list) {
 			let versionList = []
-			Object.keys(list).forEach((id, index) =>  {
-				let version = list[id]
-				let active = (id == initialSelection) ? 'active' : ''
-				let name = version.local_title || version.title
-				let abbr = version.local_abbreviation || version.abbreviation
-				abbr = abbr.toLocaleUpperCase()
-				if (focus) {
-					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
-					versionList.push(
-						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase()}`)}>
-							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</li>
-						</Link>
-					)
-				} else {
-					versionList.push(
-						<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase()}`)}>
-							<li className={`${active}`} >{ `${abbr} ${name}` }</li>
-						</Link>
-					)
+			let idList = (map && map.length > 0) ? map : Object.keys(list)
+
+			idList.forEach((id, index) =>  {
+				if (id in list) {
+					let version = list[id]
+					let active = (id == initialSelection) ? 'active' : ''
+					let name = version.local_title || version.title
+					let abbr = version.local_abbreviation || version.abbreviation
+					abbr = abbr.toLocaleUpperCase()
+
+					if (focus) {
+						let focusClass = (index == listSelectionIndex) ? 'focus' : ''
+						versionList.push(
+							<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase()}`)}>
+								{
+									// show audio icon next to name
+									version.audio ?
+									<li className={`${active} ${focusClass}`}>
+										<div className={`small-10`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</div>
+										<div className={`small-2`}><AudioIcon color={(id == initialSelection) ? 'white' : null}/></div>
+									</li>
+									:
+									<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</li>
+								}
+							</Link>
+						)
+					} else {
+						versionList.push(
+							<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase()}`)}>
+								{
+									// show audio icon next to name
+									version.audio ?
+									<li className={`${active}`}>
+										<div className={`small-10`} >{ `${abbr} ${name}` }</div>
+										<div className={`small-2`}><AudioIcon color={(id == initialSelection) ? 'white' : null}/></div>
+									</li>
+									:
+									<li className={`${active}`} >{ `${abbr} ${name}` }</li>
+								}
+							</Link>
+						)
+					}
 				}
 			})
 			/* the header would either be the language title or recently used */
@@ -59,6 +84,7 @@ class Versions extends Component {
 
 /**
  * 		@list					  			object of version objects for the specific language
+ * 		@map									list of version ids sorted alphabetically
  * 		@header								bold header for version list–either language title or recently used
  * 		@onSelect			  			function to call when selecting version
  * 		@initialSelection	   	id for highlighting currently selected version
@@ -68,6 +94,7 @@ class Versions extends Component {
  */
 Versions.propTypes = {
 	list: React.PropTypes.object,
+	map: React.PropTypes.array,
 	header: React.PropTypes.string,
 	initialSelection: React.PropTypes.number,
 	onMouseOver: React.PropTypes.func,

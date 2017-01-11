@@ -11,7 +11,7 @@ class DropDownArrow extends Component {
 		let classes = `dropdown-arrow`
 
     return (
-    	<div {...this.props} className={classes} onmouseover="">
+    	<div className={classes} onmouseover="">
       	<svg width={width} height={height} viewBox="189 13 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
 			    <polygon stroke="none" fill={fill} fill-rule="evenodd" transform={`translate(195.000000, 17.000000) rotate(${rotation}) translate(-195.000000, -17.000000)`} points="189 14 195 20 201 14"></polygon>
 				</svg>

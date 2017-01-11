@@ -34,13 +34,13 @@ class Label extends Component {
 	render() {
 		const { input, disabled, dropdown, filtering } = this.props
 
-		let classes, dir = null
+		let classes, dir = ''
 		if (dropdown && !filtering) {
 			classes = `open dropdown-arrow-container`
-			dir = "up"
+			dir = 'up'
 		} else {
 			classes = `dropdown-arrow-container`
-			dir = "down"
+			dir = 'down'
 		}
 		return (
 			<div className='picker-label'>

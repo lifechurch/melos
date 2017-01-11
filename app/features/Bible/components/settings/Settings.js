@@ -75,15 +75,15 @@ class Settings extends Component {
 		return (
 			<div className='reader-settings'>
 				<TriggerButton image={<FontSettingsTriggerImage />} onClick={this.triggerClick} />
-					<DropdownTransition show={this.state.isOpen} classes={'reader-settings-modal'} onOutsideClick={this.closeDropdown} exemptClass='reader-settings'>
-						<div className="header vertical-center horizontal-center"><FormattedMessage id="Reader.header.font label" /></div>
-						<div className="body">
-							<ButtonBar items={this.fontSizes} onClick={this.handleFontSizeChange} initialValue={initialFontSize} />
-							<ButtonBar items={this.fontFamilies} onClick={this.handleFontFamilyChange} cols={2} initialValue={initialFontFamily} />
-							<Toggle label={<FormattedMessage id='Reader.reader settings.footnotes' />} onClick={this.handleFootnotesToggle} initialValue={initialShowFootnotes} />
-							<Toggle label={<FormattedMessage id='Reader.reader settings.numbers' />} onClick={this.handleVerseNumbersToggle} initialValue={initialShowVerseNumbers} />
-						</div>
-					</DropdownTransition>
+				<DropdownTransition show={this.state.isOpen} classes={'reader-settings-modal'} onOutsideClick={this.closeDropdown} exemptClass='reader-settings'>
+					<div className="header vertical-center horizontal-center"><FormattedMessage id="Reader.header.font label" /></div>
+					<div className="body">
+						<ButtonBar items={this.fontSizes} onClick={this.handleFontSizeChange} initialValue={initialFontSize} />
+						<ButtonBar items={this.fontFamilies} onClick={this.handleFontFamilyChange} cols={2} initialValue={initialFontFamily} />
+						<Toggle label={<FormattedMessage id='Reader.reader settings.footnotes' />} onClick={this.handleFootnotesToggle} initialValue={initialShowFootnotes} />
+						<Toggle label={<FormattedMessage id='Reader.reader settings.numbers' />} onClick={this.handleVerseNumbersToggle} initialValue={initialShowVerseNumbers} />
+					</div>
+				</DropdownTransition>
 			</div>
 		)
 	}

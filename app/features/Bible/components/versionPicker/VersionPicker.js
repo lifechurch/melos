@@ -22,7 +22,7 @@ class VersionPicker extends Component {
 			selectedLanguage: versions.selectedLanguage,
 			selectedVersion: version.id,
 			languages: languages,
-			versions: versions.byLang[versions.selectedLanguage],
+			versions: versions.byLang[versions.selectedLanguage].versions,
 			inputValue: version.local_abbreviation.toUpperCase(),
 			langInputValue: null,
 			languagelistSelectionIndex: 0,
@@ -52,7 +52,7 @@ class VersionPicker extends Component {
 		Filter.add("LanguageStore", languages)
 		Filter.build("VersionStore", [ "title", "local_title", "local_abbreviation" ])
 		// versions.byLang["lang_tag"] is an object, so we need to pass as array for filter
-		let versionsObj = versions.byLang[versions.selectedLanguage]
+		let versionsObj = versions.byLang[versions.selectedLanguage].versions
 		Filter.add("VersionStore", Object.keys(versionsObj).map(key => versionsObj[key]))
 	}
 
@@ -65,7 +65,8 @@ class VersionPicker extends Component {
 			languages,
 			listErrorAlert,
 			versionFiltering,
-			selectedVersion
+			selectedVersion,
+			classes,
 		} = this.state
 
 
@@ -88,6 +89,10 @@ class VersionPicker extends Component {
 					langInputValue: null,
 					inputValue: version.local_abbreviation.toUpperCase(),
 				})
+				// always reset to show versions when the modal is closing
+				if (classes == 'hide-versions') {
+					this.toggleVersionPickerList()
+				}
 			}
 
 		}
@@ -108,7 +113,7 @@ class VersionPicker extends Component {
 		// if we've changed languages, let's update the versions list
 		if ((versions.selectedLanguage !== prevProps.versions.selectedLanguage) ) {
 			this.setState({
-				versions: versions.byLang[versions.selectedLanguage],
+				versions: versions.byLang[versions.selectedLanguage].versions,
 			})
 		}
 	}
@@ -203,7 +208,7 @@ class VersionPicker extends Component {
 				this.setState({
 					dropdown: true,
 					languages: languages,
-					versions: versions.byLang[versions.selectedLanguage]
+					versions: versions.byLang[versions.selectedLanguage].versions
 				})
 			}
 		}
@@ -307,7 +312,7 @@ class VersionPicker extends Component {
 					// doesn't look weird
 					dis.setState({
 						languages: languages,
-						versions: versions.byLang[dis.selectedLanguage],
+						versions: versions.byLang[dis.state.selectedLanguage].versions,
 						listErrorAlert: false
 					})
 				}, 700)
@@ -317,14 +322,9 @@ class VersionPicker extends Component {
 	}
 
 	closeDropdown = () => {
-		const { classes } = this.state
 		this.setState({
 			dropdown: false,
 		})
-		// always reset to show versions when the modal is closing
-		if (classes == 'hide-versions') {
-			this.toggleVersionPickerList()
-		}
 	}
 
 	cancelBlur = () => {
@@ -370,6 +370,7 @@ class VersionPicker extends Component {
 							classes={classes}
 							languageList={languages}
 							versionList={versions}
+							versionsMap={(!this.props.versions.loading && selectedLanguage in this.props.versions.byLang) ? this.props.versions.byLang[selectedLanguage].map : []}
 							recentVersions={recentVersions}
 							selectedLanguage={selectedLanguage}
 							selectedVersion={selectedVersion}

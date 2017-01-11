@@ -110,7 +110,6 @@ class Bible extends Component {
 	toggleChapterPickerList() {
 		(this.state.classes) == 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
 	}
-
 	toggleVersionPickerList() {
 		(this.state.classes) == 'hide-langs' ? this.setState({ classes: 'hide-versions' }) : this.setState({ classes: 'hide-langs' })
 	}
@@ -168,7 +167,7 @@ class Bible extends Component {
 	updateRecentVersions = () => {
 		const { bible } = this.props
 		let versionList = Object.keys(bible.versions.byLang).reduce((acc, curr) => {
-			return Object.assign(acc, bible.versions.byLang[curr])
+			return Object.assign(acc, bible.versions.byLang[curr].versions)
 		}, {})
 
 		this.setState({
@@ -254,10 +253,10 @@ class Bible extends Component {
 					</div>
 					<div className='row buttons'>
 						<div className='solid-button' onClick={this.chapterPickerInstance.handleDropDownClick}>
-							<FormattedMessage id="chapter" />
+							<FormattedMessage id="Reader.chapterpicker.chapter label" />
 						</div>
 						<div className='solid-button' onClick={this.versionPickerInstance.handleDropDownClick}>
-							<FormattedMessage id="EventEdit.features.content.components.ContentTypeReference.version" />
+							<FormattedMessage id="Reader.versionpicker.version label" />
 						</div>
 					</div>
 				</div>

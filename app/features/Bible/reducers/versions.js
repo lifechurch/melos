@@ -13,7 +13,14 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersionsSuccess'):
 			if (typeof action.response.versions !== 'undefined') {
 				const versions = arrayToObject(action.response.versions, 'id')
-				return Immutable.fromJS(state).mergeDeep({ selectedLanguage: action.params.language_tag, byLang: { [action.params.language_tag]: versions } }).set('loading', false).toJS()
+				const map = action.response.versions.map(version => version.id)
+
+				return Immutable.fromJS(state).mergeDeep({
+					selectedLanguage: action.params.language_tag,
+					byLang: {
+						[action.params.language_tag]: { versions, map }
+					}
+				}).set('loading', false).toJS()
 			} else {
 				return Immutable.fromJS(state).set('loading', false).toJS()
 			}

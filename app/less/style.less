@@ -2228,13 +2228,11 @@ ul.language-selector li {
 
 /* ABOUT PLAN VIEW */
 .about-plan {
-
 	.plan-image {
 		img {
 			width: 100%;
 		}
 	}
-
 }
 
 
@@ -2257,19 +2255,16 @@ body.c_references.a_show {
 	width: 100%;
 }
 
-//
+@media @small-only {
+	.modal {
+		max-height: 400px;
+	}
+}
 @media @small-only, @medium-only {
 	// center all the modals horizontally when small or medium viewport
 	.modal {
 		margin: 0 !important;
-		left: 50%;
-		transform: 				translate(-50%, 0%);
-		-webkit-transform:translate(-50%, 0%);
-		-moz-transform:   translate(-50%, 0%);
-		-ms-transform:    translate(-50%, 0%);
-	  -o-transform:     translate(-50%, 0%);
-		transition:       translate(-50%, 0%);
-
+		.absolute-horizontal-center;
 	}
 
 	#current-ui-view.modal-open {
@@ -2284,7 +2279,6 @@ body.c_references.a_show {
     transition: background 0.5s ease-in-out;
 	}
 }
-
 
 
 
