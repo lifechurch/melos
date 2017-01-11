@@ -1916,6 +1916,7 @@ en:
     Reader:
       chapter:                                  "Chapter"
       read reference:                           "Read %{reference}"
+      read chapter:                             "Read full chapter"
       plan title:                               "Free Reading Plans and Devotionals"
       meta:
         mobile:
