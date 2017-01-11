@@ -50,23 +50,30 @@ function requireChapterData(nextState, replace, callback) {
 		}
 	} = nextState
 
-	const {
-		auth: {
-			isLoggedIn
-		},
-		bibleReader: {
-			chapter: {
-				reference: {
-					usfm:currentUsfm,
-					version_id:currentVersion
+	let isLoggedIn, currentUsfm, currentVersion
+	let isInitialLoad = false
+
+	try {
+		({
+			auth: {
+				isLoggedIn
+			},
+			bibleReader: {
+				chapter: {
+					reference: {
+						usfm:currentUsfm,
+						version_id:currentVersion
+					}
 				}
 			}
-		}
-	} = currentState
+		} = currentState)
+	} catch(ex) {
+		isInitialLoad = true
+	}
 
 	const nextUsfm = `${nextBook}.${nextChapter}`
-	const hasVersionChanged = nextVersion.toString() !== currentVersion.toString()
-	const hasChapterChanged = (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) || hasVersionChanged
+	const hasVersionChanged = isInitialLoad || (nextVersion.toString() !== currentVersion.toString())
+	const hasChapterChanged = isInitialLoad || (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) || hasVersionChanged
 
 	if (!hasVersionChanged && !hasChapterChanged) {
 		callback()
@@ -81,7 +88,7 @@ function requireChapterData(nextState, replace, callback) {
     // Load data
 		store.dispatch(
 			BibleActionCreator.readerLoad({
-				isInitialLoad: false,
+				isInitialLoad,
 				hasVersionChanged,
 				hasChapterChanged,
 				language_tag: window.__LOCALE__.locale3,
@@ -126,7 +133,7 @@ function requireVerseData(nextState, replace, callback) {
 	const hasVersionChanged = nextVersion.toString() !== currentVersion.toString()
 	const hasVerseChanged = (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) || hasVersionChanged
 
-	if (!hasVersionChanged && !hasChapterChanged) {
+	if (!hasVersionChanged && !hasVerseChanged) {
 		callback()
 	} else {
 		if (window.location.hostname === 'www.bible.com') {
@@ -137,7 +144,7 @@ function requireVerseData(nextState, replace, callback) {
 			PassageActionCreator.passageLoad({
 				isInitialLoad: false,
 				hasVersionChanged,
-				hasChapterChanged,
+				hasVerseChanged,
 				language_tag: window.__LOCALE__.planLocale,
 				versions: [ parseInt(nextVersion), ...altVersions[serverLanguageTag].text ],
 				passage: nextUsfm

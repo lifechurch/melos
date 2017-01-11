@@ -18,14 +18,10 @@ class Passage extends Component {
 
 		// main verse and verse cards
 		let verses = []
-		console.log("passage", passage)
 		if (passage && passage.verses && passage.verses.verses) {
 			let mainVersionID = passage.verses.primaryVersion //this.getMainVersion(passage.verses.verses)
-			console.log("MVID", mainVersionID)
 			Object.keys(passage.verses.verses).forEach((key, index) => {
 				let verse = passage.verses.verses[key]
-
-				console.log("verse.versionInfo.id", verse.versionInfo.id)
 
 				// if we've found a main version, then let's set the maine verse
 				// to that, otherwise, the main verse is just the first one
@@ -142,8 +138,6 @@ class Passage extends Component {
 				</Link>
 			)
 		}
-
-		console.log("Chapter Link", chapterLink)
 
 		return (
 			<div className='passage'>

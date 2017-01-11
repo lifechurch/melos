@@ -153,7 +153,6 @@ class MomentCreate extends Component {
 		})
 
 		if (typeof this.labelSelector !== 'undefined' && this.labelSelector) {
-			console.log(this.labelSelector)
 			this.labelSelector.resetSelection()
 		}
 	}
