@@ -10,13 +10,14 @@ const ActionCreators = {
 	 */
 	passageLoad(params, auth) {
 		return dispatch => {
-			const { version, passage, versions, language_tag } = params
-			let promises = []
+			const { isInitialLoad, hasVerseChanged, hasVersionChanged, version, passage, versions, language_tag } = params
 
 			// rev.2.1 || rev.2.2-4 || rev.2.3,8 || rev.2.2-4,8
-			const chapUSFM = passage.split('.').slice(0,2).join('.')
-			const verseORVerseRange = passage.split('.').pop()
+			let refArray = passage.split('.')
+			const chapUSFM = refArray.slice(0,2).join('.')
+			const verseORVerseRange = refArray.pop()
 			let versesArray = []
+			let promises = []
 
 			// break up the verses into single verse, or verse range
 			versesArray = verseORVerseRange.split(',').map((verseNum) => {
@@ -38,46 +39,73 @@ const ActionCreators = {
 			})
 
 
-			versions.forEach((id) => {
-				// get the version info, and then pass it along to the verses call
+			if (isInitialLoad) {
+				// then make related reading plans call for the verse
 				promises.push(
-					new Promise((resolve, reject) => {
-						// get version info to pass down
-						dispatch(ActionCreators.bibleVersion({ id: id })).then((version) => {
-							// now we need to get the text for the verses
-							dispatch(ActionCreators.bibleVerses({ id, references: versesArray, format: 'text' })).then((verses) => {
-								// for each verse, pass the text content and make the same call for
-								// html content
-								verses.verses.forEach((verse, index) => {
-									// build extra info for the verses
-									let text = {
-										text: verse.content,
-										usfm: versesArray,
-										versionInfo: {
-											local_abbreviation: version.local_abbreviation.toUpperCase(),
-											local_title: version.local_title,
-											id: version.id,
-										},
-									}
-									// get the html content now
-									dispatch(ActionCreators.bibleVerses({
-										id: id,
-										references: versesArray,
-									}))
-									// resolve the promise with both text info and html result to build the data object for
-									// the verse card in the reducer
-									.then((html) => resolve(Immutable.fromJS(html).merge(text).toJS()))
+					dispatch(ActionCreators.readingplansConfiguration())
+				)
+			}
 
-								})
-							})
-						})
-					}, (reason) => console.log(reason))
+			if (isInitialLoad || hasVersionChanged) {
+				// promises.push(
+				// )
+			}
+
+			if (isInitialLoad || hasVerseChanged) {
+				promises.push(
+					dispatch(ActionCreators.readingPlansByReference({ usfm: passage, language_tag }))
 				)
 
-			})
-			// then make related reading plans call for the verse
-			promises.push(dispatch(ActionCreators.readingplansConfiguration()))
-			promises.push(dispatch(ActionCreators.readingPlansByReference({ usfm: passage, language_tag })))
+				versions.forEach((id) => {
+					// get the version info, and then pass it along to the verses call
+					promises.push(
+						new Promise((resolve, reject) => {
+							// get version info to pass down
+							dispatch(ActionCreators.bibleVersion({ id: id })).then((version) => {
+								// now we need to get the text for the verses
+								dispatch(ActionCreators.bibleVerses({ id, references: versesArray, format: 'text' })).then((verses) => {
+
+									// for each verse, pass the text content and make the same call for
+									// html content
+									verses.verses.forEach((verse, index) => {
+										// build extra info for the verses
+										let text = {
+											text: verse.content,
+											usfm: versesArray,
+											versionInfo: {
+												local_abbreviation: version.local_abbreviation.toUpperCase(),
+												local_title: version.local_title,
+												id: version.id,
+											},
+										}
+
+										// get the html content now
+										dispatch(ActionCreators.bibleVerses({
+											id: id,
+											references: versesArray,
+										}))
+
+										// resolve the promise with both text info and html result to build the data object for
+										// the verse card in the reducer
+										.then((html) => resolve(Immutable.fromJS(html).merge(text).toJS()))
+
+									})
+								})
+							})
+						}, (reason) => console.log(reason))
+					)
+				})
+			}
+
+			if (auth && isInitialLoad) {
+				// promises.push(
+				// )
+			}
+
+			if (auth && (isInitialLoad || hasVerseChanged || hasVersionChanged)) {
+				// promises.push(
+				// )
+			}
 
 			// wait for all the promises and then dispatch the action
 			// to build the data object

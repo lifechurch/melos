@@ -196,6 +196,19 @@ class LabelSelector extends Component {
 		}
 	}
 
+// 	resetSelection = () => {
+// 		this.setState({
+// 			inputValue: null,
+// 			dropdown: false,
+// 			filtering: false,
+// 			inputDisabled: false,
+// 			selectedLabels: {},
+// 			addedLabels: {},
+// 			filteredLabels: null,
+// 			selected: 0
+// 		})
+// 	}
+
 
 	/**
 	 * fired on clicking 'x' on label
