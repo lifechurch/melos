@@ -252,7 +252,7 @@ class MomentCreate extends Component {
 									byCount={labels.byCount}
 									updateLabels={this.updateLabels}
 									intl={intl}
-									ref={(labelSelector) => { this.labelSelector = labelSelector }}
+								// 	ref={(labelSelector) => { this.labelSelector = labelSelector }}
 								/>
 							</div>
 							<div className='small-2'>
