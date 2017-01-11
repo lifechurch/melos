@@ -60,9 +60,9 @@
 // mixins ********************************************************************
 
 .yv-drop-shadow {
-  box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
-  -moz-box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
-  -webkit-box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.30);
+  box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
+  -moz-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
+  -webkit-box-shadow:  0 2px 34px 0 rgba(0,0,0,0.20);
 }
 
 // scroll bar styling for safari, chrome
@@ -114,6 +114,16 @@
 	color: white;
 	font-size: 12px;
 	padding: 15px 15px 15px 15px;
+}
+
+.absolute-horizontal-center {
+	left: 50%;
+	transform: 				translate(-50%, 0%);
+	-webkit-transform:translate(-50%, 0%);
+	-moz-transform:   translate(-50%, 0%);
+	-ms-transform:    translate(-50%, 0%);
+  -o-transform:     translate(-50%, 0%);
+	transition:       translate(-50%, 0%);
 }
 
 .dropdown-transform {
