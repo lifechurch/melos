@@ -370,7 +370,7 @@ class VersionPicker extends Component {
 							classes={classes}
 							languageList={languages}
 							versionList={versions}
-							versionsMap={!this.props.versions.loading ? this.props.versions.byLang[selectedLanguage].map : []}
+							versionsMap={(!this.props.versions.loading && selectedLanguage in this.props.versions.byLang) ? this.props.versions.byLang[selectedLanguage].map : []}
 							recentVersions={recentVersions}
 							selectedLanguage={selectedLanguage}
 							selectedVersion={selectedVersion}

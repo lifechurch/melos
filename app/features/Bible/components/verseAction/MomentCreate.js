@@ -230,19 +230,19 @@ class MomentCreate extends Component {
 			if (kind == 'bookmark' && localVerses) {
 				createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
 				contentDiv = (
-						<VerseCard verseContent={localVerses}>
-								<div className='small-10'>
-									<LabelSelector
-										byAlphabetical={labels.byAlphabetical}
-										byCount={labels.byCount}
-										updateLabels={this.updateLabels}
-										intl={intl}
-									/>
-								</div>
-								<div className='small-2'>
-									{ colorsDiv }
-								</div>
-						</VerseCard>
+					<VerseCard verseContent={localVerses}>
+							<div className='small-10'>
+								<LabelSelector
+									byAlphabetical={labels.byAlphabetical}
+									byCount={labels.byCount}
+									updateLabels={this.updateLabels}
+									intl={intl}
+								/>
+							</div>
+							<div className='small-2'>
+								{ colorsDiv }
+							</div>
+					</VerseCard>
 				)
 			} else if (kind == 'note' && localVerses) {
 				createHeader = <FormattedMessage id='Reader.verse action.note' />

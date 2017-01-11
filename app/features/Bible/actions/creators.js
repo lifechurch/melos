@@ -12,6 +12,19 @@ const ActionCreators = {
 		return dispatch => {
 			const { version, reference, language_tag } = params
 			let promises = [
+			/**
+			 *
+			 *
+			 *
+			 *
+			 *
+			 *
+			 * this bible versions call is messing up a new versions call when selecting a new language
+			 * from the version picker.
+			 *
+			 * is the new implementation of this function that michael wrote going to
+			 * fix this???
+			 */
 				dispatch(ActionCreators.bibleVersions({ language_tag: language_tag, type: 'all' })),
 				dispatch(ActionCreators.bibleConfiguration()),
 				dispatch(ActionCreators.bibleVersion({ id: version })),
