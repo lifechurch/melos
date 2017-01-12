@@ -139,7 +139,7 @@ class Bible extends Component {
 		if (typeof this.chapter !== 'undefined' && this.chapter) {
 			this.chapter.clearSelection()
 		}
-		this.setState({ verseSelection: {} })
+		this.setState({ verseSelection: {}, deletableColors: [] })
 	}
 
 
