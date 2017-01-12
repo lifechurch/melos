@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import shadeColor from '../../../../lib/shadeColor'
+import XMark from '../../../../components/Xmark'
 
 class Color extends Component {
 
@@ -37,7 +38,7 @@ class Color extends Component {
 							}
 						`}
 						</style>
-						<div className='delete-color' onClick={this.deleteColor}><XMark /></div>
+						<div className='delete-color' onClick={this.onDelete}><XMark height={10} width={10} /></div>
 					</div>
 				)
 			} else {

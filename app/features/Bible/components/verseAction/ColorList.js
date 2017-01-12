@@ -30,6 +30,13 @@ class ColorList extends Component {
 		}
 	}
 
+	deleteColor = (color) => {
+		const { deleteColor } = this.props
+		if (typeof deleteColor == 'function') {
+			deleteColor(color)
+		}
+	}
+
 	/**
 	 * when custom color slider changes
 	 *
@@ -54,7 +61,7 @@ class ColorList extends Component {
 
 
 	render() {
-		const { list } = this.props
+		const { list, deletableColors } = this.props
 		const { sliderColor, screen } = this.state
 
     let settings = {
@@ -70,11 +77,24 @@ class ColorList extends Component {
       } ]
 		}
 
-		let colors, content = null
+		let content = null
+		let colors = []
 
+		if (Array.isArray(deletableColors)) {
+			deletableColors.forEach((color, index) => {
+				colors.push (
+					<div key={`${color}-delete`}>
+						<Color
+							color={color}
+							deleteColor={this.deleteColor}
+						/>
+					</div>
+				)
+			})
+		}
 		if (Array.isArray(list)) {
-			colors = list.map((color, index) => {
-				return (
+			list.forEach((color, index) => {
+				colors.push (
 					<div key={color}>
 						<Color
 							color={color}
@@ -123,7 +143,9 @@ class ColorList extends Component {
 
 ColorList.propTypes = {
 	list: React.PropTypes.array.isRequired,
+	deletableColors: React.PropTypes.array,
 	onClick: React.PropTypes.func,
+	deleteColor: React.PropTypes.func,
 }
 
 export default ColorList

@@ -48,6 +48,11 @@ const constants = {
 	momentsVerseColorsSuccess: "MOMENTS_VERSE_COLORS_SUCCESS",
 	momentsVerseColorsFailure: "MOMENTS_VERSE_COLORS_FAILURE",
 
+	hideVerseColorsRequest: "HIDE_VERSE_COLORS_REQUEST",
+	hideVerseColorsSuccess: "HIDE_VERSE_COLORS_SUCCESS",
+	hideVerseColorsFailure: "HIDE_VERSE_COLORS_FAILURE",
+
+
 	/* Book Selector */
 	bookSelectorOpen: "READER_BOOK_SELECTOR_OPEN",
 	bookSelectorClose: "READER_BOOK_SELECTOR_CLOSE",

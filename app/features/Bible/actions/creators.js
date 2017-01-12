@@ -24,6 +24,8 @@ const ActionCreators = {
 			 *
 			 * is the new implementation of this function that michael wrote going to
 			 * fix this???
+			 *
+			 * actually should pull this language_tag from the version itself?
 			 */
 				dispatch(ActionCreators.bibleVersions({ language_tag: language_tag, type: 'all' })),
 				dispatch(ActionCreators.bibleConfiguration()),
@@ -58,24 +60,24 @@ const ActionCreators = {
 		}
 	},
 
-	/**
-	 * @version: VERSION_ID
-   * @reference: USFM
-   * @lang: locale
-	 */
-	verseLoad(params, auth) {
-		return dispatch => {
-			const { verse, versions, language_tag } = params
-			let promises = []
-			versions.forEach((version) => {
-				promises.push(dispatch(ActionCreators.bibleVerses({ id: version, reference: verse })))
-			})
-			// then make related reading plans call for the verse
-			//
-			//
-			return Promise.all(promises)
-		}
-	},
+	// /**
+	//  * @version: VERSION_ID
+ //   * @reference: USFM
+ //   * @lang: locale
+	//  */
+	// verseLoad(params, auth) {
+	// 	return dispatch => {
+	// 		const { verse, versions, language_tag } = params
+	// 		let promises = []
+	// 		versions.forEach((version) => {
+	// 			promises.push(dispatch(ActionCreators.bibleVerses({ id: version, reference: verse })))
+	// 		})
+	// 		// then make related reading plans call for the verse
+	// 		//
+	// 		//
+	// 		return Promise.all(promises)
+	// 	}
+	// },
 
 	/**
 	 * @language_tag
@@ -278,6 +280,26 @@ const ActionCreators = {
 			}
 		}
 	},
+
+	/**
+	 * @usfm	      {string}  usfm of verse to hide color on
+	 * @version_id	{int}			version id of the verse
+	 */
+	hideVerseColors(auth, params) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'moments',
+				method: 'hide_verse_colors',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'post',
+				types: [ type('hideVerseColorsRequest'), type('hideVerseColorsSuccess'), type('hideVerseColorsFailure') ]
+			}
+		}
+	},
+
 
 	bookSelectorOpen() {
 		return {

@@ -76,7 +76,8 @@ class Bible extends Component {
 			fontFamily: LocalStore.getIn("reader.settings.fontFamily") || DEFAULT_READER_SETTINGS.fontFamily,
 			showFootnotes: typeof showFootnoes === "boolean" ? showFootnoes : DEFAULT_READER_SETTINGS.showFootnotes,
 			showVerseNumbers: typeof showVerseNumbers === "boolean" ? showVerseNumbers : DEFAULT_READER_SETTINGS.showVerseNumbers,
-			verseSelection: {}
+			verseSelection: {},
+			deletableColors: []
 		}
 
 		// Filter.build("BooksStore", [ "human", "usfm" ])
@@ -115,9 +116,23 @@ class Bible extends Component {
 	}
 
 	handleVerseSelect(verseSelection) {
-		const { hosts, bible: { version: { id }, chapter: { reference: { human, usfm } } } } = this.props
+		const { hosts, bible: { version: { id }, chapter: { reference: { human, usfm } }, verseColors } } = this.props
 		const refUrl = `${hosts.railsHost}/${id}/${usfm}.${verseSelection.human}`
-		this.setState({ verseSelection: Immutable.fromJS(verseSelection).merge({ chapter: human, url: refUrl, version: id }).toJS() });
+
+		// get the verses that are both selected and already have a highlight
+		// color associated with them, so we can allow the user to delete them
+		let deletableColors = []
+		verseSelection.verses.forEach((selectedVerse) => {
+			verseColors.forEach((colorVerse) => {
+				if (selectedVerse == colorVerse[0]) {
+					deletableColors.push(colorVerse[1])
+				}
+			})
+		})
+		this.setState({
+			deletableColors: deletableColors,
+			verseSelection: Immutable.fromJS(verseSelection).merge({ chapter: human, url: refUrl, version: id }).toJS()
+		});
 	}
 
 	handleVerseSelectionClear() {
@@ -323,6 +338,8 @@ class Bible extends Component {
 					selection={verseSelection}
 					colors={bible.highlightColors}
 					onClose={this.handleVerseSelectionClear}
+					deletableColors={this.state.deletableColors}
+					verseColors={bible.verseColors}
 				/>
 			</div>
 		)
