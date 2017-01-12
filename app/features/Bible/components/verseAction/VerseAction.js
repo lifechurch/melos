@@ -71,7 +71,7 @@ class VerseAction extends Component {
 		}
 	}
 
-	handleHighlight(color) {
+	handleHighlight(color, deleteHighlight=false) {
 		const { selection: { verses, version }, dispatch, auth } = this.props
 		const references = [{ usfm: verses, version_id: version }]
 
@@ -88,6 +88,30 @@ class VerseAction extends Component {
 			}))
 			this.handleClose({})
 		}
+	}
+
+	deleteColor = (color) => {
+		const { selection: { verses, version }, dispatch, verseColors } = this.props
+		let versesToDelete = []
+		// don't delete colors from every verse selected,
+		// only the verses that match the color x that was clicked
+		verses.forEach((selectedVerse) => {
+			verseColors.forEach((colorVerse) => {
+				if (selectedVerse == colorVerse[0] && colorVerse[1] == color) {
+					versesToDelete.push(selectedVerse)
+				}
+			})
+		})
+		// delete the verse color and then update verseColors for chapter
+		dispatch(ActionCreators.hideVerseColors(true, {
+			usfm: versesToDelete,
+			version_id: version,
+		})).then(() => {
+			dispatch(ActionCreators.momentsVerseColors(true, { usfm: verses[0].split('.').slice(0,2).join('.'), version_id: version })).then((newVerseColors) => {
+				this.handleClose()
+			})
+
+		})
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -130,7 +154,7 @@ class VerseAction extends Component {
 	}
 
 	render() {
-		const { selection: { chapter, human, text, url, verses:selectedReferences }, colors, intl, bible, auth } = this.props
+		const { selection: { chapter, human, text, url, verses:selectedReferences }, colors, deletableColors, intl, bible, auth } = this.props
 		const { copied, momentContainerOpen, momentKind } = this.state
 		const copyAction = (
 			<CopyToClipboard
@@ -157,7 +181,14 @@ class VerseAction extends Component {
 
 		let colorList
 		if (Array.isArray(colors)) {
-			colorList = <ColorList list={colors} onClick={this.handleHighlight} />
+			colorList = (
+				<ColorList
+					list={colors}
+					onClick={this.handleHighlight}
+					deletableColors={deletableColors}
+					deleteColor={this.deleteColor}
+				/>
+			)
 		}
 
 		return (

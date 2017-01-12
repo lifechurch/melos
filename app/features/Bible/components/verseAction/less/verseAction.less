@@ -120,6 +120,20 @@
 		transition: transform 0.15s ease-in-out;
 		display: inline-flex;
 		margin: 5px 6.5px 5px 0;
+		align-items: center;
+
+		.delete-color {
+			width: inherit;
+			height: inherit;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.xmark-container {
+				background-color: rgba(255, 255, 255, 0.75);
+				border-radius: 10px;
+				padding: 3px;
+			}
+		}
 	}
 	.color:hover {
 		cursor: pointer;
@@ -237,6 +251,19 @@
 	}
 	.labels {
 		width: 100%;
+
+		::-webkit-input-placeholder {
+			color: @font-grey;
+		}
+		:-moz-placeholder { /* Firefox 18- */
+			color: @font-grey;
+		}
+		::-moz-placeholder {  /* Firefox 19+ */
+			color: @font-grey;
+		}
+		:-ms-input-placeholder {
+			color: @font-grey;
+		}
 	}
 
 }
@@ -261,9 +288,20 @@
 		}
 
 	}
-
+	::-webkit-input-placeholder {
+		color: @font-grey;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+		color: @font-grey;
+	}
+	::-moz-placeholder {  /* Firefox 19+ */
+		color: @font-grey;
+	}
+	:-ms-input-placeholder {
+		color: @font-grey;
+	}
 	.note-editor {
-		margin-top: -115px;
+		margin-top: -145px;
 		textarea {
 			margin: 0;
 			border: none;
