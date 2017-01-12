@@ -146,6 +146,21 @@ class MomentCreate extends Component {
 		})
 	}
 
+// 	clearLocalMomentData = () => {
+// 		// reset some stuff so it isn't there for the next moment create
+// 		this.setState({
+// 			addedLabels: null,
+// 			content: null,
+// 			selectedColor: null,
+// 			localVerses: {},
+// 			localRefs: [],
+// 		})
+
+// 		if (typeof this.labelSelector !== 'undefined' && this.labelSelector) {
+// 			this.labelSelector.resetSelection()
+// 		}
+// 	}
+
 	/**
 	 * on save button click. actually creates the moment
 	 *
@@ -237,6 +252,7 @@ class MomentCreate extends Component {
 									byCount={labels.byCount}
 									updateLabels={this.updateLabels}
 									intl={intl}
+								// 	ref={(labelSelector) => { this.labelSelector = labelSelector }}
 								/>
 							</div>
 							<div className='small-2'>

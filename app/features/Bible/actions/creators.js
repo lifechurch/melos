@@ -10,37 +10,43 @@ const ActionCreators = {
 	 */
 	readerLoad(params, auth) {
 		return dispatch => {
-			const { version, reference, language_tag } = params
-			let promises = [
-			/**
-			 *
-			 *
-			 *
-			 *
-			 *
-			 *
-			 * this bible versions call is messing up a new versions call when selecting a new language
-			 * from the version picker.
-			 *
-			 * is the new implementation of this function that michael wrote going to
-			 * fix this???
-			 *
-			 * actually should pull this language_tag from the version itself?
-			 */
-				dispatch(ActionCreators.bibleVersions({ language_tag: language_tag, type: 'all' })),
-				dispatch(ActionCreators.bibleConfiguration()),
-				dispatch(ActionCreators.bibleVersion({ id: version })),
-				dispatch(ActionCreators.bibleChapter({ id: version, reference: reference, format: 'html', language_tag: language_tag })),
-				dispatch(ActionCreators.momentsColors(auth)),
-				// get first two verse text for bible meta data
-				dispatch(ActionCreators.bibleVerses({ id: version, references: [`${reference}.1+${reference}.2`], format: 'text' }))
-			]
+			const { isInitialLoad, hasVersionChanged, hasChapterChanged, version, reference, language_tag } = params
+			let promises = []
 
-			if (auth) {
-				promises.push(dispatch(ActionCreators.momentsVerseColors(auth, { usfm: reference, version_id: version })))
-				promises.push(dispatch(ActionCreators.momentsLabels(auth)))
-				promises.push(dispatch(ActionCreators.usersViewSettings(auth)))
+			if (isInitialLoad) {
+				promises.push(
+					dispatch(ActionCreators.bibleVersions({ language_tag: language_tag, type: 'all' })),
+					dispatch(ActionCreators.bibleConfiguration()),
+					dispatch(ActionCreators.momentsColors(auth))
+				)
 			}
+
+			if (isInitialLoad || hasVersionChanged) {
+				promises.push(
+					dispatch(ActionCreators.bibleVersion({ id: version }))
+				)
+			}
+
+			if (isInitialLoad || hasChapterChanged) {
+				promises.push(
+					dispatch(ActionCreators.bibleChapter({ id: version, reference: reference, format: 'html', language_tag: language_tag })),
+					dispatch(ActionCreators.bibleVerses({ id: version, references: [`${reference}.1+${reference}.2`], format: 'text' }))
+				)
+			}
+
+			if (auth && isInitialLoad) {
+				promises.push(
+					dispatch(ActionCreators.momentsLabels(auth)),
+					dispatch(ActionCreators.usersViewSettings(auth))
+				)
+			}
+
+			if (auth && (isInitialLoad || hasChapterChanged || hasVersionChanged)) {
+				promises.push(
+					dispatch(ActionCreators.momentsVerseColors(auth, { usfm: reference, version_id: version }))
+				)
+			}
+
 			return Promise.all(promises)
 		}
 	},

@@ -40,58 +40,119 @@ addLocaleData(window.__LOCALE__.data)
 
 
 function requireChapterData(nextState, replace, callback) {
-	const { params: { lang:routeLang, version:routeVersion, book, chapter, verse, vabbr } } = nextState
 	const currentState = store.getState()
-	// let lang = params.lang || cookie.load('locale') || Locale.locale
-	let lang = window.__LOCALE__.locale3
-	let version = routeVersion || cookie.load('version') || '1'
-	let reference = `${book.toUpperCase()}.${chapter}` || cookie.load('last_read') || 'MAT.1'
 
-	if (currentState &&
-			currentState.bibleReader &&
-			currentState.bibleReader.chapter &&
-			currentState.bibleReader.chapter.reference &&
-			currentState.bibleReader.chapter.reference.usfm == reference &&
-			currentState.bibleReader.version &&
-			currentState.bibleReader.version.id == version
-		) {
+	const {
+		params: {
+			version:nextVersion,
+			book:nextBook,
+			chapter:nextChapter,
+		}
+	} = nextState
+
+	let isLoggedIn, currentUsfm, currentVersion
+	let isInitialLoad = false
+
+	try {
+		({
+			auth: {
+				isLoggedIn
+			},
+			bibleReader: {
+				chapter: {
+					reference: {
+						usfm:currentUsfm,
+						version_id:currentVersion
+					}
+				}
+			}
+		} = currentState)
+	} catch(ex) {
+		isInitialLoad = true
+	}
+
+	const nextUsfm = `${nextBook}.${nextChapter}`
+	const hasVersionChanged = isInitialLoad || (nextVersion.toString() !== currentVersion.toString())
+	const hasChapterChanged = isInitialLoad || (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) || hasVersionChanged
+
+	if (!hasVersionChanged && !hasChapterChanged) {
 		callback()
-	} else if (version > 0 && reference) {
+	} else {
+
+		// Record page view with Google Analytics
 		if (window.location.hostname === 'www.bible.com') {
 			ReactGA.set({ page: `/${nextState.location.pathname}` })
 			ReactGA.pageview(`/${nextState.location.pathname}`)
 		}
-		store.dispatch(BibleActionCreator.readerLoad({ language_tag: lang, version: version, reference: reference, params: nextState.params }, store.getState().auth.isLoggedIn)).then(() => {
-			callback()
-		}, (error) => {
-			callback()
-		})
-	} else {
-		callback()
+
+    // Load data
+		store.dispatch(
+			BibleActionCreator.readerLoad({
+				isInitialLoad,
+				hasVersionChanged,
+				hasChapterChanged,
+				language_tag: window.__LOCALE__.locale3,
+				version: nextVersion,
+				reference: nextUsfm,
+				params: nextState.params
+			}, isLoggedIn))
+		.then(
+			() => callback(),
+			(error) => callback()
+		)
 	}
 }
 
 function requireVerseData(nextState, replace, callback) {
-	const { params: { lang:routeLang, version:routeVersion, book, chapter, verse, vabbr } } = nextState
 	const currentState = store.getState()
-	let lang = window.__LOCALE__.planLocale
-	let reference = `${book.toUpperCase()}.${chapter}.${verse}`
-	let versions = [ parseInt(routeVersion), ...currentState.altVersions[currentState.serverLanguageTag].text ]
-	let isLoggedIn = currentState.auth.isLoggedIn
-	if (currentState && currentState.passage && currentState.passage.verses && currentState.passage.verses.versions && currentState.passage.verses.versions.length && currentState.passage.verses.versions[0] == routeVersion && currentState.passage.verses.current_verse == reference) {
+
+	const {
+		params: {
+			version:nextVersion,
+			book:nextBook,
+			chapter:nextChapter,
+			verse:nextVerse
+		}
+	} = nextState
+
+	const {
+		serverLanguageTag,
+		altVersions,
+		auth: {
+			isLoggedIn
+		},
+		passage: {
+			verses: {
+				current_verse:currentUsfm,
+				primaryVersion:currentVersion
+			}
+		}
+	} = currentState
+
+	const nextUsfm = `${nextBook}.${nextChapter}.${nextVerse}`
+	const hasVersionChanged = nextVersion.toString() !== currentVersion.toString()
+	const hasVerseChanged = (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) || hasVersionChanged
+
+	if (!hasVersionChanged && !hasVerseChanged) {
 		callback()
-	} else if (versions.length > 0 && reference) {
+	} else {
 		if (window.location.hostname === 'www.bible.com') {
 			ReactGA.set({ page: `/${nextState.location.pathname}` })
 			ReactGA.pageview(`/${nextState.location.pathname}`)
 		}
-		store.dispatch(PassageActionCreator.passageLoad({ language_tag: lang , versions: versions, passage: reference }, isLoggedIn)).then(() => {
-			callback()
-		}, (error) => {
-			callback()
-		})
-	} else {
-		callback()
+		store.dispatch(
+			PassageActionCreator.passageLoad({
+				isInitialLoad: false,
+				hasVersionChanged,
+				hasVerseChanged,
+				language_tag: window.__LOCALE__.planLocale,
+				versions: [ parseInt(nextVersion), ...altVersions[serverLanguageTag].text ],
+				passage: nextUsfm
+			}, isLoggedIn))
+		.then(
+			() => callback(),
+			(error) => callback()
+		)
 	}
 }
 

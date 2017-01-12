@@ -22,6 +22,7 @@ class Passage extends Component {
 			let mainVersionID = passage.verses.primaryVersion //this.getMainVersion(passage.verses.verses)
 			Object.keys(passage.verses.verses).forEach((key, index) => {
 				let verse = passage.verses.verses[key]
+
 				// if we've found a main version, then let's set the maine verse
 				// to that, otherwise, the main verse is just the first one
 				if (mainVersionID ? verse.versionInfo.id == mainVersionID : index == 0) {
@@ -138,7 +139,6 @@ class Passage extends Component {
 			)
 		}
 
-
 		return (
 			<div className='passage'>
 				<Helmet
@@ -157,7 +157,7 @@ class Passage extends Component {
 						{ mainVerse }
 					</div>
 					<div className='buttons'>
-						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read chapter' /></Link>
+						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read reference' values={{ reference: passage.verses.title }} /></Link>
 						<a href={relatedPlansLink} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
 					</div>
 				</div>
