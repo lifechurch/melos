@@ -25,8 +25,19 @@ class VOD < YV::Resource
       # for every votd, let's add an alternate votd reference in case the first doesn't exist for the version
       every_votd.each {|vod| vod.references << alternate_votd(Date.today.mday, returnFlag: true)}
       the_one = every_votd.detect {|votd| votd.day == day}
-      the_one.date            = Date.strptime("#{Date.today.year}-#{day}","%Y-%j")
-      the_one.created_at      = DateTime.strptime("#{Date.today.year}-#{day}","%Y-%j")
+
+      # We build these dates assuming that Date.today.year-DOY is always valid.
+      # But, if last year was a leap year, then this year will not have a day #366.
+      # So, we'll catch the error and subtract 1 from year to build the day #366 VOTD
+      # This only happens for the first 25 days of every fourth year (the one after a leap)
+      begin
+        the_one.date            = Date.strptime("#{Date.today.year}-#{day}","%Y-%j")
+        the_one.created_at      = DateTime.strptime("#{Date.today.year}-#{day}","%Y-%j")
+      rescue
+        the_one.date            = Date.strptime("#{Date.today.year - 1}-#{day}","%Y-%j")
+        the_one.created_at      = DateTime.strptime("#{Date.today.year - 1}-#{day}","%Y-%j")
+      end
+
       the_one.week_day        = the_one.date.day
       the_one.version         = Version.find(opts[:version_id])
       the_one.recent_versions = recent_versions(opts[:recent_versions] || [])
