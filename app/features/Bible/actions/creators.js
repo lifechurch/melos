@@ -29,8 +29,8 @@ const ActionCreators = {
 
 			if (isInitialLoad || hasChapterChanged) {
 				promises.push(
-					dispatch(ActionCreators.bibleChapter({ id: version, reference: reference, format: 'html', language_tag: language_tag })),
-					dispatch(ActionCreators.bibleVerses({ id: version, references: [`${reference}.1+${reference}.2`], format: 'text' }))
+					dispatch(ActionCreators.bibleChapter({ id: version, reference: reference.toUpperCase(), format: 'html', language_tag: language_tag })),
+					dispatch(ActionCreators.bibleVerses({ id: version, references: [`${reference.toUpperCase()}.1+${reference.toUpperCase()}.2`], format: 'text' }))
 				)
 			}
 
@@ -43,7 +43,7 @@ const ActionCreators = {
 
 			if (auth && (isInitialLoad || hasChapterChanged || hasVersionChanged)) {
 				promises.push(
-					dispatch(ActionCreators.momentsVerseColors(auth, { usfm: reference, version_id: version }))
+					dispatch(ActionCreators.momentsVerseColors(auth, { usfm: reference.toUpperCase(), version_id: version }))
 				)
 			}
 
@@ -61,7 +61,7 @@ const ActionCreators = {
 			const { id, reference, format } = params
 			return Promise.all([
 				dispatch(ActionCreators.bibleVersion({ id })),
-				dispatch(ActionCreators.bibleChapter({ id, reference, format: 'html' }))
+				dispatch(ActionCreators.bibleChapter({ id, reference: reference.toUpperCase(), format: 'html' }))
 			])
 		}
 	},
