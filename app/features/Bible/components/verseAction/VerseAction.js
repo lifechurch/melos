@@ -156,6 +156,7 @@ class VerseAction extends Component {
 	render() {
 		const { selection: { chapter, human, text, url, verses:selectedReferences }, colors, deletableColors, intl, bible, auth } = this.props
 		const { copied, momentContainerOpen, momentKind } = this.state
+
 		const copyAction = (
 			<CopyToClipboard
 				text={`"${text}"\n\n${chapter}:${human}\n${url}`}

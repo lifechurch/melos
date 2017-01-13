@@ -71,11 +71,12 @@ class Chapter extends Component {
 			})
 
 			// Get selected text
-			Array.prototype.forEach.call(verseNode.childNodes, (cNode) => {
-				if (cNode.getAttribute('class') === 'content') {
-					selectedText[lastUsfm] = cNode.innerText
-				}
-			})
+			// loop through every child node with 'content' class, and concat the inner
+			// text to build the verse text
+			console.log(verseNode)
+			selectedText[lastUsfm] = Array.prototype.reduce.call(verseNode.getElementsByClassName('content'), (acc, cur) => {
+				return acc + cur.innerText
+			}, '')
 			this.setState({ selectedText, selection, selectedClasses })
 		}
 
