@@ -39,7 +39,7 @@ class Versions extends Component {
 									version.audio ?
 									<li className={`${active} ${focusClass}`}>
 										<div className={`small-10`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</div>
-										<div className={`small-2`}><AudioIcon color={(id == initialSelection) ? 'white' : null}/></div>
+										<div className={`small-2`}><AudioIcon color={(id == initialSelection) ? 'white' : 'gray'}/></div>
 									</li>
 									:
 									<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "versions", index)}>{ `${abbr} ${name}` }</li>
@@ -54,7 +54,7 @@ class Versions extends Component {
 									version.audio ?
 									<li className={`${active}`}>
 										<div className={`small-10`} >{ `${abbr} ${name}` }</div>
-										<div className={`small-2`}><AudioIcon color={(id == initialSelection) ? 'white' : null}/></div>
+										<div className={`small-2`}><AudioIcon color={(id == initialSelection) ? 'white' : 'gray'}/></div>
 									</li>
 									:
 									<li className={`${active}`} >{ `${abbr} ${name}` }</li>

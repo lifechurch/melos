@@ -17,7 +17,7 @@ class Chapter extends Component {
 
 	handleVerseClick(verseNode) {
 		const { onSelect } = this.props
-		let { selection, selectedClasses, selectedText } = this.state
+		let { selection, selectedClasses } = this.state
 
 		if (selection === null) {
 			selection = {}
@@ -25,10 +25,6 @@ class Chapter extends Component {
 
 		if (selectedClasses === null) {
 			selectedClasses = {}
-		}
-
-		if (selectedText === null) {
-			selectedText = {}
 		}
 
 		// Build CSS Selector for Verse Selection
@@ -66,25 +62,15 @@ class Chapter extends Component {
 				} else {
 					delete selection[selectedVerse]
 				}
-				selectedText[selectedVerse] = true
 				lastUsfm = selectedVerse
 			})
-
-			// Get selected text
-			// loop through every child node with 'content' class, and concat the inner
-			// text to build the verse text
-			console.log(verseNode)
-			selectedText[lastUsfm] = Array.prototype.reduce.call(verseNode.getElementsByClassName('content'), (acc, cur) => {
-				return acc + cur.innerText
-			}, '')
-			this.setState({ selectedText, selection, selectedClasses })
+			this.setState({ selection, selectedClasses })
 		}
 
 		if (typeof onSelect === 'function') {
 			onSelect({
 				verses: Object.keys(selection),
 				human: getSelectionString(selection),
-				text: getSelectionString(selectedText, true)
 			})
 		}
 	}
