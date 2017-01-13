@@ -33,7 +33,7 @@ class Versions extends Component {
 					if (focus) {
 						let focusClass = (index == listSelectionIndex) ? 'focus' : ''
 						versionList.push(
-							<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase()}`)}>
+							<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase().split('-')[0]}`)}>
 								{
 									// show audio icon next to name
 									version.audio ?
@@ -48,7 +48,7 @@ class Versions extends Component {
 						)
 					} else {
 						versionList.push(
-							<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase()}`)}>
+							<Link key={id} to={localizedLink(`/bible/${id}/${usfm}.${abbr.toLowerCase().split('-')[0]}`)}>
 								{
 									// show audio icon next to name
 									version.audio ?
