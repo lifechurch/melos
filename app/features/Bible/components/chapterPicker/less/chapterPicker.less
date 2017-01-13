@@ -165,7 +165,12 @@
 				font-weight: bold;
 				color: @font-grey;
 				background-color: white;
-				.yv-text-ellipsis;
+				// text ellipsis wouldn't work with
+				// text being directly in flex item
+				// so we put it in a div
+				div {
+					.yv-text-ellipsis;
+				}
 
 			}
 			li:hover {
