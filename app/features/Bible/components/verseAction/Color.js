@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import shadeColor from '../../../../lib/shadeColor'
-import XMark from '../../../../components/Xmark'
+import XMark from '../../../../components/XMark'
 
 class Color extends Component {
 
