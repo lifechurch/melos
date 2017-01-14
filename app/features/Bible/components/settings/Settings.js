@@ -43,8 +43,8 @@ class Settings extends Component {
 		}
 	}
 
-	triggerClick(isOpen) {
-		this.setState({ isOpen: !this.state.isOpen })
+	triggerClick(e) {
+		this.setState({ isOpen: e.isOpen })
 	}
 
 	handleFontSizeChange(item) {
@@ -64,18 +64,17 @@ class Settings extends Component {
 	}
 
 	closeDropdown = () => {
-		this.setState({
-			isOpen: false,
-		})
+		this.setState({ isOpen: false })
 	}
 
 	render() {
 		const { initialFontSize, initialFontFamily, initialShowFootnotes, initialShowVerseNumbers } = this.props
+		const { isOpen } = this.state
 
 		return (
 			<div className='reader-settings'>
-				<TriggerButton image={<FontSettingsTriggerImage />} onClick={this.triggerClick} />
-				<DropdownTransition show={this.state.isOpen} classes={'reader-settings-modal'} onOutsideClick={this.closeDropdown} exemptClass='reader-settings'>
+				<TriggerButton isOpen={isOpen} image={<FontSettingsTriggerImage />} onClick={this.triggerClick} />
+				<DropdownTransition show={isOpen} classes={'reader-settings-modal'} onOutsideClick={this.closeDropdown} exemptClass='reader-settings'>
 					<div className="header vertical-center horizontal-center"><FormattedMessage id="Reader.header.font label" /></div>
 					<div className="body">
 						<ButtonBar items={this.fontSizes} onClick={this.handleFontSizeChange} initialValue={initialFontSize} />

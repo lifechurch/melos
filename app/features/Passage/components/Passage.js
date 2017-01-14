@@ -28,10 +28,12 @@ class Passage extends Component {
 				if (mainVersionID ? verse.versionInfo.id == mainVersionID : index == 0) {
 					mainVerse = (
 						<div key={key} className='verse'>
-							<h2>
-								<div className='heading'>{ verse.versionInfo.local_abbreviation }</div>
-								<div className='name'>{ verse.versionInfo.local_title }</div>
-							</h2>
+							<a href={`/versions/${verse.versionInfo.id}`}>
+								<h2>
+									<div className='heading'>{ verse.versionInfo.local_abbreviation }</div>
+									<div className='name'>{ verse.versionInfo.local_title }</div>
+								</h2>
+							</a>
 							<Link
 								to={`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation}`}
 								title={`${intl.formatMessage({ id: "Reader.read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
@@ -43,13 +45,15 @@ class Passage extends Component {
 					metaTitle = `${passage.verses.title}; ${verse.text}`
 					metaContent = `${verse.text}`
 					chapterLink = `/bible/${verse.versionInfo.id}/${verse.chapUsfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`
-					relatedPlansLink = `/bible/${params.version}/${verse.usfm}.${params.vabbr}#related-plans`
+					relatedPlansLink = `/bible/${verse.versionInfo.id}/${verse.usfm}.${params.vabbr}#related-plans`
 				} else {
 					let heading = (
-						<h2>
-							<div className='heading'>{ verse.versionInfo.local_abbreviation }</div>
-							<div className='name'>{ verse.versionInfo.local_title }</div>
-						</h2>
+						<a href={`/versions/${verse.versionInfo.id}`}>
+							<h2>
+								<div className='heading'>{ verse.versionInfo.local_abbreviation }</div>
+								<div className='name'>{ verse.versionInfo.local_title }</div>
+							</h2>
+						</a>
 					)
 					verses.push(
 						<li className='verse-container' key={key}>
@@ -157,7 +161,7 @@ class Passage extends Component {
 						{ mainVerse }
 					</div>
 					<div className='buttons'>
-						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read reference' values={{ reference: passage.verses.title }} /></Link>
+						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read chapter' /></Link>
 						<a href={relatedPlansLink} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
 					</div>
 				</div>

@@ -17,7 +17,7 @@ class Chapter extends Component {
 
 	handleVerseClick(verseNode) {
 		const { onSelect } = this.props
-		let { selection, selectedClasses, selectedText } = this.state
+		let { selection, selectedClasses } = this.state
 
 		if (selection === null) {
 			selection = {}
@@ -25,10 +25,6 @@ class Chapter extends Component {
 
 		if (selectedClasses === null) {
 			selectedClasses = {}
-		}
-
-		if (selectedText === null) {
-			selectedText = {}
 		}
 
 		// Build CSS Selector for Verse Selection
@@ -66,24 +62,15 @@ class Chapter extends Component {
 				} else {
 					delete selection[selectedVerse]
 				}
-				selectedText[selectedVerse] = true
 				lastUsfm = selectedVerse
 			})
-
-			// Get selected text
-			Array.prototype.forEach.call(verseNode.childNodes, (cNode) => {
-				if (cNode.getAttribute('class') === 'content') {
-					selectedText[lastUsfm] = cNode.innerText
-				}
-			})
-			this.setState({ selectedText, selection, selectedClasses })
+			this.setState({ selection, selectedClasses })
 		}
 
 		if (typeof onSelect === 'function') {
 			onSelect({
 				verses: Object.keys(selection),
 				human: getSelectionString(selection),
-				text: getSelectionString(selectedText, true)
 			})
 		}
 	}

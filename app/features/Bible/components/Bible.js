@@ -116,7 +116,7 @@ class Bible extends Component {
 	}
 
 	handleVerseSelect(verseSelection) {
-		const { hosts, bible: { version: { id }, chapter: { reference: { human, usfm } }, verseColors } } = this.props
+		const { hosts, bible: { version: { id, local_abbreviation }, chapter: { reference: { human, usfm } }, verseColors }, dispatch } = this.props
 		const refUrl = `${hosts.railsHost}/${id}/${usfm}.${verseSelection.human}`
 
 		// get the verses that are both selected and already have a highlight
@@ -130,9 +130,35 @@ class Bible extends Component {
 			})
 		})
 		this.setState({
-			deletableColors: deletableColors,
-			verseSelection: Immutable.fromJS(verseSelection).merge({ chapter: human, url: refUrl, version: id }).toJS()
-		});
+			deletableColors,
+			verseSelection: Immutable.fromJS(verseSelection).merge({
+				chapter: human,
+				url: refUrl,
+				version: id
+			}).toJS()
+		})
+
+		// now merge in the text for the verses for actions like copy and share
+		// we're setting state with all the other verseAction before so this api call doesn't slow anything down
+		dispatch(ActionCreators.bibleVerses({
+			id: id,
+			references: verseSelection.verses,
+			format: 'text',
+			local_abbreviation: local_abbreviation
+		})).then((response) => {
+			this.setState({
+				verseSelection: Immutable.fromJS(this.state.verseSelection).merge({
+					text: response.verses.reduce((acc, curr, index) => {
+						// don't put a space in front of the first string
+						if (index !== 0) {
+							return acc + ' ' + curr.content
+						} else {
+							return acc + curr.content
+						}
+					}, '')
+				}).toJS()
+			})
+		})
 	}
 
 	handleVerseSelectionClear() {

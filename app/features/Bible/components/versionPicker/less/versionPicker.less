@@ -62,11 +62,12 @@
 	.version-list:hover, .language-list:hover {
 		overflow-y: overlay;
 	}
-	// .versions, .languages {
-	// 	margin-bottom: 30px;
-	// }
 	.version-list, .language-list {
 		overflow-y: hidden;
+		// stupid firefox hack
+		@-moz-document url-prefix() {
+			overflow-y: scroll !important;
+		}
 		font-size: @list-font-size;
 		background-color: white;
 		-webkit-overflow-scrolling: touch;
