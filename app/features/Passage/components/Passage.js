@@ -161,7 +161,7 @@ class Passage extends Component {
 						{ mainVerse }
 					</div>
 					<div className='buttons'>
-						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read reference' values={{ reference: passage.verses.title }} /></Link>
+						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read chapter' /></Link>
 						<a href={relatedPlansLink} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
 					</div>
 				</div>
