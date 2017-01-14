@@ -73,9 +73,12 @@
 			overflow-y: overlay;
 		}
 		.book-list {
-
 			max-height: 460px;
 			overflow-y: hidden;
+			// stupid firefox hack
+			@-moz-document url-prefix() {
+				overflow-y: scroll !important;
+			}
 			font-size: @list-font-size;
 			margin-left: 0;
 			margin-right: -1px;
@@ -144,9 +147,12 @@
 			overflow-y: overlay;
 		}
 		.chapter-list {
-
 			max-height: 460px;
 			overflow: hidden;
+			// stupid firefox hack
+			@-moz-document url-prefix() {
+				overflow-y: scroll !important;
+			}
 			font-size: @list-font-size;
 			display: inline-flex;
 			flex-wrap: wrap;
