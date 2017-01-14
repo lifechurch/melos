@@ -32,15 +32,15 @@ class VerseCard extends Component {
 				} else {
 					if (isLink) {
 						verses.push (
-							<Link
-								key={key}
-								className='verse'
-								to={`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`}
-								title={`${intl.formatMessage({ id: "Reader.read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
-							>
+							<div key={key} className='verse'>
 								{ heading }
-								<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
-							</Link>
+								<Link
+									to={`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`}
+									title={`${intl.formatMessage({ id: "Reader.read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
+								>
+									<div className='verse-content' dangerouslySetInnerHTML={{ __html: verse.content }}/>
+								</Link>
+							</div>
 						)
 					} else {
 						verses.push (
