@@ -75,10 +75,13 @@
 		.book-list {
 			max-height: 460px;
 			overflow-y: hidden;
+			-webkit-overflow-scrolling: touch;
+
 			// stupid firefox hack
 			@-moz-document url-prefix() {
 				overflow-y: scroll !important;
 			}
+
 			font-size: @list-font-size;
 			margin-left: 0;
 			margin-right: -1px;
@@ -149,10 +152,13 @@
 		.chapter-list {
 			max-height: 460px;
 			overflow: hidden;
+			-webkit-overflow-scrolling: touch;
+
 			// stupid firefox hack
 			@-moz-document url-prefix() {
 				overflow-y: scroll !important;
 			}
+
 			font-size: @list-font-size;
 			display: inline-flex;
 			flex-wrap: wrap;
@@ -171,7 +177,12 @@
 				font-weight: bold;
 				color: @font-grey;
 				background-color: white;
-				.yv-text-ellipsis;
+				// text ellipsis wouldn't work with
+				// text being directly in flex item
+				// so we put it in a div
+				div {
+					.yv-text-ellipsis;
+				}
 
 			}
 			li:hover {

@@ -26,13 +26,13 @@ class Chapters extends Component {
 					let focusClass = (index == listSelectionIndex) ? 'focus' : ''
 					chapters.push(
 						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}.${params.vabbr}`)} >
-							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "chapters", index)} >{ chapter.human }</li>
+							<li className={`${active} ${focusClass}`} onMouseOver={onMouseOver.bind(this, "chapters", index)} ><div>{ chapter.human }</div></li>
 						</Link>
 					)
 				} else {
 					chapters.push(
 						<Link key={usfm} to={localizedLink(`/bible/${versionID}/${usfm}.${params.vabbr}`)} >
-							<li className={`${active}`}>{ chapter.human }</li>
+							<li className={`${active}`}><div>{ chapter.human }</div></li>
 						</Link>
 					)
 				}
