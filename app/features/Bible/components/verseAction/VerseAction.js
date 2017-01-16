@@ -142,13 +142,12 @@ class VerseAction extends Component {
 	componentDidUpdate(prevState, prevProps) {
 		const { momentContainerOpen } = this.state
 		if (momentContainerOpen !== prevState.momentContainerOpen) {
+			let body = document.getElementsByTagName("body")[0]
 			// stop the body from scrolling behind the moment create
 			if (momentContainerOpen) {
-				setTimeout(() => {
-					document.getElementsByTagName("body")[0].style.position = 'fixed'
-				}, 700)
+				body.style.overflow = 'hidden'
 			} else {
-				document.getElementsByTagName("body")[0].style.position = 'static'
+				body.style.overflow = 'initial'
 			}
 		}
 	}

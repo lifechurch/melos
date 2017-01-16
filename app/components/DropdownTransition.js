@@ -72,10 +72,15 @@ class DropdownTransition extends Component {
 		let transitionDir = hideDir || 'up'
 
 		if (typeof window !== 'undefined') {
+			let body = document.getElementsByTagName("body")[0]
+
 			if (show) {
 				document.getElementById('current-ui-view').classList.add('modal-open')
+				// prevent the body from scrolling
+				body.style.overflow = 'hidden'
 			} else {
 				document.getElementById('current-ui-view').classList.remove('modal-open')
+				body.style.overflow = 'initial'
 			}
 		}
 
