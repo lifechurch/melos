@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import VerseCard from '../../Bible/components/verseAction/bookmark/VerseCard'
 import ReaderArrows from '../../Bible/components/content/ReaderArrows'
+import Share from '../../Bible/components/verseAction/share/Share'
 import Helmet from 'react-helmet'
 import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'
 import CarouselArrow from '../../../components/Carousel/CarouselArrow'
@@ -40,6 +41,7 @@ class Passage extends Component {
 								className='verse-content'
 								dangerouslySetInnerHTML={{ __html: verse.content }}
 							/>
+							<div className='copyright'>{ verse.versionInfo.copyright_short.text }</div>
 						</div>
 					)
 					metaTitle = `${passage.verses.title}; ${verse.text}`
@@ -163,6 +165,9 @@ class Passage extends Component {
 					<div className='buttons'>
 						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read chapter' /></Link>
 						<a href={relatedPlansLink} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
+						<Share button={
+							<a className='chapter-button solid-button'><FormattedMessage id='features.EventEdit.components.EventEditNav.share' /></a>
+						}/>
 					</div>
 				</div>
 				<div className='row verses small-12'>

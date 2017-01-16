@@ -59,6 +59,25 @@ class DropdownTransition extends Component {
 		}
 	}
 
+	componentDidUpdate(prevProps, prevState) {
+		const { show } = this.props
+
+		if (typeof window !== 'undefined' && show !== prevProps.show) {
+			// prevent the body from scrolling
+			// and maintain scroll position
+			let body = document.getElementsByTagName("body")[0]
+			let currPos = parseInt(body.scrollTop)
+
+			if (show) {
+				document.getElementById('current-ui-view').classList.add('modal-open')
+				body.setAttribute('style', `overflow: hidden; position: fixed; top: -${currPos}px;`)
+			} else {
+				document.getElementById('current-ui-view').classList.remove('modal-open')
+				body.setAttribute('style', `overflow: scroll; position: static;`)
+			}
+		}
+	}
+
 	handleMouseDown = () => {
 		this.insideClick = true
 	}
@@ -71,18 +90,7 @@ class DropdownTransition extends Component {
 		const { classes, hideDir, show } = this.props
 		let transitionDir = hideDir || 'up'
 
-		if (typeof window !== 'undefined') {
-			let body = document.getElementsByTagName("body")[0]
 
-			if (show) {
-				document.getElementById('current-ui-view').classList.add('modal-open')
-				// prevent the body from scrolling
-				body.style.overflow = 'hidden'
-			} else {
-				document.getElementById('current-ui-view').classList.remove('modal-open')
-				body.style.overflow = 'initial'
-			}
-		}
 
 		return (
 			<div className={`modal ${show ? '' : 'hide-modal'}` } onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} >

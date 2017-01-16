@@ -64,7 +64,7 @@ class Share extends Component {
 		const { label: nextLabel, text: nextText, url: nextUrl } = nextProps
 		const { label, text, url } = this.props
 
-		const { isOpen:nextIsOpen } = nextState
+		const { isOpen: nextIsOpen } = nextState
 		const { isOpen } = this.state
 
 		if (
@@ -94,14 +94,28 @@ class Share extends Component {
 
 	render() {
 		const { isOpen } = this.state
-		const { label, url, text } = this.props
+		const { button, label, url, text } = this.props
 		const classes = isOpen ? 'va-share-open' : 'va-share-closed'
 		const buttonLabel = isOpen ? <FormattedMessage id='plans.stats.close' /> : <FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
+
+		let buttonDiv
+		if (button) {
+			buttonDiv = (
+				<div onClick={this.handleClick}>
+					{ button }
+				</div>
+			)
+		} else {
+			buttonDiv = (
+				<a className="yv-green-link" onClick={this.handleClick}>
+					{ buttonLabel }
+				</a>
+			)
+		}
+
 		return (
 			<div className="va-share" onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp}>
-				<a className="yv-green-link" onClick={this.handleClick}>
-					{buttonLabel}
-				</a>
+				{ buttonDiv }
 				<div className='va-share-panel-wrapper'>
 					<div className={`va-share-panel ${classes}`}>
 						<div className='va-share-header'>{label}</div>
