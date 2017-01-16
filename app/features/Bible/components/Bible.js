@@ -140,25 +140,27 @@ class Bible extends Component {
 
 		// now merge in the text for the verses for actions like copy and share
 		// we're setting state with all the other verseAction before so this api call doesn't slow anything down
-		dispatch(ActionCreators.bibleVerses({
-			id: id,
-			references: verseSelection.verses,
-			format: 'text',
-			local_abbreviation: local_abbreviation
-		})).then((response) => {
-			this.setState({
-				verseSelection: Immutable.fromJS(this.state.verseSelection).merge({
-					text: response.verses.reduce((acc, curr, index) => {
-						// don't put a space in front of the first string
-						if (index !== 0) {
-							return acc + ' ' + curr.content
-						} else {
-							return acc + curr.content
-						}
-					}, '')
-				}).toJS()
+		if (verseSelection.verses && verseSelection.verses.length > 0) {
+			dispatch(ActionCreators.bibleVerses({
+				id: id,
+				references: verseSelection.verses,
+				format: 'text',
+				local_abbreviation: local_abbreviation
+			})).then((response) => {
+				this.setState({
+					verseSelection: Immutable.fromJS(this.state.verseSelection).merge({
+						text: response.verses.reduce((acc, curr, index) => {
+							// don't put a space in front of the first string
+							if (index !== 0) {
+								return acc + ' ' + curr.content
+							} else {
+								return acc + curr.content
+							}
+						}, '')
+					}).toJS()
+				})
 			})
-		})
+		}
 	}
 
 	handleVerseSelectionClear() {
