@@ -15,7 +15,6 @@ const ActionCreators = {
 
 			if (isInitialLoad) {
 				promises.push(
-					dispatch(ActionCreators.bibleVersions({ language_tag: language_tag, type: 'all' })),
 					dispatch(ActionCreators.bibleConfiguration()),
 					dispatch(ActionCreators.momentsColors(auth))
 				)
@@ -23,7 +22,13 @@ const ActionCreators = {
 
 			if (isInitialLoad || hasVersionChanged) {
 				promises.push(
-					dispatch(ActionCreators.bibleVersion({ id: version }))
+					new Promise((resolve, reject) => {
+						dispatch(ActionCreators.bibleVersion({ id: version })).then((version) => {
+							resolve (
+								dispatch(ActionCreators.bibleVersions({ language_tag: version.language.language_tag, type: 'all' }))
+							)
+						})
+					})
 				)
 			}
 
