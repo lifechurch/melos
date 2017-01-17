@@ -1914,9 +1914,25 @@ ro:
                         save: "Salvează evenimentul"
                         signIn: "Autentifică-te pentru a salva evenimentul"
                         saved: "Eveniment salvat"
+        Auth: 
+            sign up: "Înregistrare"
+            sign in: "Autentificare"
+            sign up google: "Înregistrare cu contul Google"
+            continue google: "Continuă cu Google"
+            sign up facebook: "Înregistrare cu Facebook"
+            continue facebook: "Continuă cu Facebook"
+            have an account: "Ai deja cont?"
+            sign up alternate: "Ai deja un cont? <a href='%{sign_in_path}' target='_self'>Autentificare</a>"
+            plan blurb: "Se pare că încerci să începi un plan de citire! Foarte bine! Planurile te pot ajuta să faci din Biblie o parte importantă din viața ta. Autentifică-te sau creează un cont și poți începe!"
+            bookmark blurb: "Se pare că vrei să folosești un marcaj. Foarte bine! Marcajele te ajuta să găsești mai ușor versetele pe care ai vrea să le memorezi, să le împărtășești sau să le marchezi ca favorite. Autentifică-te sau creează un cont și poți începe!"
+            friends blurb: "Se pare că vrei să interacționezi cu prieteni. O idee bună! Veți putea împărtăși ceea ce învățați și să vă ajutați între voi să fiți la zi cu lectura. Autentifică-te sau creează un cont și poți începe!"
+            share blurb: "Se pare că vrei să partajezi Scriptura. Minunat! Poți face acest lucru folosind Facebook sau Tweeter. Autentifică-te sau creează-ți cont și poți începe!"
+            highlight blurb: "Se pare că dorești să evidențiezi un pasaj din Scriptură. Excelent! Evidențierile te ajută să îți organizezi și să păstrezi versetele favorite. Intră în cont sau creează-ți un cont pentru a începe!"
+            note blurb: "Se pare că dorești să îți faci o notiță despre un verset. Bună idee! Notițele te pot ajuta să-ți amintești și să organizezi adevărurile descoperite în Cuvântul lui Dumnezeu. Intră în contul tău sau creează-ți un cont mai jos pentru a începe!"
         Reader: 
             chapter: "Capitolul"
             read reference: "Citește %{reference}"
+            read chapter: "Citește întreg capitolul"
             plan title: "Planuri de citire și Devoționale Gratuite"
             meta: 
                 mobile: 

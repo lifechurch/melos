@@ -1895,9 +1895,25 @@ en-GB:
                         save: "Save Event"
                         signIn: "Sign In to Save Event"
                         saved: "Event Saved"
+        Auth: 
+            sign up: "Sign up"
+            sign in: "Sign in"
+            sign up google: "Sign up with Google"
+            continue google: "Continue with Google"
+            sign up facebook: "Sign up with Facebook"
+            continue facebook: "Continue with Facebook"
+            have an account: "Do you already have an Aaccount?"
+            sign up alternate: "Already have an account? <a href='%{sign_in_path}' target='_self'>Sign in</a>"
+            plan blurb: "It looks like you want to start a reading Plan. Smart! Plans can help you make the Bible a part of your daily life. Sign in or create an account below and get started!"
+            bookmark blurb: "It looks like you want to use a bookmark. Great! Bookmarks help you keep track of verses you want to memorise, share, or mark as favourites. Sign in or create an account below, and get started!"
+            friends blurb: "It looks like you want to interact with Friends. Good idea! You'll be able to share what you're learning and help each other stay on track with reading goals. Sign in or create an account below and get started!"
+            share blurb: "It looks like you want to share scripture. Great! You'll be able to share scripture via Facebook or Twitter. Sign in or create an account below and get started!"
+            highlight blurb: "It looks like you want to highlight scripture. Great! highlights help you organize and keep track of your favourite verses. Sign in or create an account below and get started!"
+            note blurb: "It looks like you want to take a note about scripture. Good thinking! Notes can help you remember and organise the truth you discover in God's Word. Sign in or create an account below and get started!"
         Reader: 
             chapter: "Chapter"
             read reference: "Read %{reference}"
+            read chapter: "Read full chapter"
             plan title: "Free Reading plans and Devotionals"
             meta: 
                 mobile: 

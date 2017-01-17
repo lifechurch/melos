@@ -427,8 +427,8 @@ de:
         likes count 2 more: "%{likes_count} anderen"
         likes count 3 or more: "%{likes_count} anderen"
         users like this: "%{last_liker_link} und %{more_link} gefällt das"
-        like: "gefällt dies"
-        likes: "gefällt dies"
+        like: "Person gefällt dies"
+        likes: "Freunden gefällt dies"
         more than one like: 
         vod: 
             title: "Vers des Tages"
@@ -1895,9 +1895,25 @@ de:
                         save: "Veranstaltung speichern"
                         signIn: "Melde dich an, um eine Veranstaltung zu speichern"
                         saved: "Veranstaltung gespeichert"
+        Auth: 
+            sign up: "Registrieren"
+            sign in: "Anmelden"
+            sign up google: "Mit Google anmelden"
+            continue google: "Mit Google fortfahren"
+            sign up facebook: "Registriere dich mit deinem Facebook-Konto."
+            continue facebook: "Weiter auf Facebook"
+            have an account: "Du hast schon ein Konto?"
+            sign up alternate: "Du hast schon ein Konto? <a href='%{sign_in_path}' target='_self'>Anmelden</a>"
+            plan blurb: "Willst du mit einem Leseplan beginnen? Super! Lesepläne können dir helfen, die Bibel zu einem Teil deines täglichen Lebens zu machen. Melde dich an oder lege ein Konto an und leg gleich los!"
+            bookmark blurb: "Willst du Lesezeichen benutzen? Super! Lesezeichen sind ideal, wenn man sich Verse einprägen, mit anderen teilen oder als Lieblingsverse markieren will. Melde dich an oder lege ein Konto an und lege gleich damit los."
+            friends blurb: "Du willst mit Freunden interagieren? Super! So kannst du das teilen, was du gelernt hast und ihr könnt euch gegenseitig helfen, am Ball zu bleiben und eure Leseziele zu erreichen. Melde dich an oder lege ein Konto an und dann lege gleich los."
+            share blurb: "Es sieht so aus, als ob du Bibelverse mit anderen teilen möchtest. Super! Du kannst es auf Facebook und Twitter machen. Melde dich an oder eröffne unten ein Konto und dann kannst du starten!"
+            highlight blurb: "Es sieht so aus, als wolltest du Textpassagen hervorheben. Toll! Markierungen helfen dir deine bevorzugten Bibelverse zu organisieren und wiederzufinden. Melde dich unten an oder registriere ein neues Konto und fang an!"
+            note blurb: "Es sieht so aus, als wolltest du eine Notiz zu einer Bibelpassage erstellen. Gute Idee! Notizen können dir helfen, dich an Wahrheiten zu erinnern, die du in Gottes Wort findest, und diese zu organisieren. Melde dich unten an oder registriere ein neues Konto und fang an!"
         Reader: 
             chapter: "Kapitel"
             read reference: "%{reference} lesen"
+            read chapter: "Das ganze Kapitel lesen"
             plan title: "Kostenlose Lesepläne und Andachten"
             meta: 
                 mobile: 

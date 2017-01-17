@@ -1895,9 +1895,25 @@ es-ES:
                         save: "Guardar Evento"
                         signIn: "Entrar para guardar el evento"
                         saved: "Evento guardado"
+        Auth: 
+            sign up: "Registrarse"
+            sign in: "Iniciar sesión"
+            sign up google: "Ingresa con Goggle"
+            continue google: "Entrar con Google"
+            sign up facebook: "Acceder a Facebook"
+            continue facebook: "Entrar con Facebook"
+            have an account: "¿Ya tienes una cuenta?"
+            sign up alternate: "¿Ya tienes una cuenta? <a href='%{sign_in_path}' target='_self'>iniciar sesión</a>"
+            plan blurb: "Parece que quieres iniciar un plan de lectura. ¡Excelente decisión! Los planes pueden ayudarte a hacer de la Biblia parte de tu vida diaria. ¡Inicia sesión o crea una cuenta para comenzar!"
+            bookmark blurb: "Parece que quieres usar un marcador. ¡Buena decisión! Los marcadores te ayudan a mantener un registro de los versículos que quieres memorizar, compartir o marcar como favoritos. ¡Inicia sesión o crea una cuenta para comenzar!"
+            friends blurb: "Parece que quieres interactuar con tus Amigos. ¡Buena idea! Podréis compartir lo que cada uno está aprendiendo y ayudaros a mantener los objetivos de lectura. ¡Inicia sesión o crea una cuenta para comenzar!"
+            share blurb: "Parece que quieres compartir la Escritura. ¡Enhorabuena! Podrás compartirla vía Facebook o Twitter. Inicia sesión o crea una cuenta y comienza a compartir!"
+            highlight blurb: "Parece que quieres subrayar. ¡Genial! Subrayar te ayuda a organizarte y tener presente tus versículos favoritos. ¡Inicia sesión o crea un cuenta y comienza!"
+            note blurb: "Parece que quieres tomar nota. ¡Bien pensado! Las notas pueden ayudarte a recordar y organizar lo que descubres en la Palabra de Dios. ¡Inicia sesión o crea una cuenta y comienza!"
         Reader: 
             chapter: "Capítulo"
             read reference: "Lee %{reference}"
+            read chapter: "Lee el capítulo entero"
             plan title: "Planes de Lectura y Devocionales Gratis"
             meta: 
                 mobile: 

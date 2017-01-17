@@ -1895,9 +1895,25 @@ tr:
                         save: "Kaydet"
                         signIn: "Etkinliği Kaydetmek İçin Giriş Yapın"
                         saved: "Etkinlik Kaydedildi"
+        Auth: 
+            sign up: "Kaydol"
+            sign in: "Giriş Yap"
+            sign up google: "Google Hesabınız ile Kaydolun"
+            continue google: "Google ile devam et"
+            sign up facebook: "Facebook profilinizle kaydolun"
+            continue facebook: "Facebook ile devam et"
+            have an account: "Hesabınız var mı?"
+            sign up alternate: "Zaten bir Hesabınız mı Var? <a href='%{sign_in_path}' target='_self'>Giriş Yapın</a>"
+            plan blurb: "Bir Okuma Planı kullamak istiyor musunuz? Çok akıllıca! Okuma Planları, Kutsal Kitap’ı günlük hayatınızın bir parçası haline getirmeye çok yardımcı olur. Başlamak için aşağıdan giriş yapın veya bir hesap oluşturun!"
+            bookmark blurb: "Yer İmleri kullanmak istiyor musunuz? Süper! Yer İmleri size hatırlamak istediğiniz ayetlere ulaşmanıza yardımcı olur. Belki ayeti ezberlemek isterseniz. Yoksa onu başkalarla paylaşmak istersiniz. Başlamak için aşağıdan giriş yapın veya bir hesap oluşturun!"
+            friends blurb: "Arkadaşlar ile iletişim kurmak istiyor musunuz? İyi fikir! Böylece öğrendikleriniz paylaşabilirsiniz. Birbirinize günlük okumanızda devamlılık göstermek için destek olabilirsiniz. Başlamak için aşağıdan giriş yapın veya bir hesap oluşturun!"
+            share blurb: "Bir ayet veya bölüm paylaşmak mı istiyorsunuz? Harika! Facebook ve Twitter aracılığıyla Kutsal Kitap'ı paylaşabilirsiniz. Paylaşmaya başlamak için aşağıdan giriş yapın veya kaydolun."
+            highlight blurb: "Kutsal yazıları vurgulamak istiyorsunuz. Süper! Vurgular en sevdiğiniz ayetleri toplayıp takip edebilmenizi sağlar. Başlamak için aşağıdan giriş yapın veya bir hesap oluşturun."
+            note blurb: "Kutsal yazıların içeriğine dair bir not tutmak istiyorsunuz. İyi fikir! Notlar size Tanrı’nın Sözünden öğrendikleriniz gerçekleri saklayıp hatırlamanızı sağlar. Başlamak için aşağıdan giriş yapın veya bir hesap oluşturun."
         Reader: 
             chapter: "Bölüm"
             read reference: "Şunu Oku: %{reference}"
+            read chapter: "Tüm bölümü okuyun"
             plan title: "Ücretsiz Okuma Planları "
             meta: 
                 mobile: 

@@ -1914,9 +1914,25 @@ cs:
                         save: "Uložit událost"
                         signIn: "Přihlásit se k uložení události"
                         saved: "Událost byla uložena"
+        Auth: 
+            sign up: "Zaregistrovat se"
+            sign in: "Přihlásit se"
+            sign up google: "Registrovat přes Google+"
+            continue google: "Pokračovat s účtem Google"
+            sign up facebook: "Přihlašte se přes Facebook"
+            continue facebook: "Pokračovat účtem Facebook"
+            have an account: "Již máte účet?"
+            sign up alternate: "Máte již účet? <a href='%{sign_in_path}' target='_self'>Přihlašte se</a>"
+            plan blurb: "Vypadá to, že chcete začít plán čtení. Chytré! Plány vám můžou pomoci udělat z Bible součást vašeho každodenního života. Přihlašte se nebo si vytvořte účet níže a můžete začít!"
+            bookmark blurb: "Vypadá to, že chcete použít záložku. Skvěle! Záložky vám pomůžou uspořádat verše, které se chcete naučit zpaměti, sdílet nebo označit jako oblíbené. Přihlašte se nebo si vytvořte účet viz níže a můžete začít!"
+            friends blurb: "Vypadá to, že se chcete spojit s přáteli. Dobrý nápad! Budete moci sdílet, co se právě učíte, a pomáhat ostatním udržet odhodlání v jejich plánech číst pravidelně Bibli. Přihlašte se nebo si vytvořte účet níže a můžete začít!"
+            share blurb: "Zdá se, že chcete sdílet verše. Skvěle! Budete moci sdílet verše přes Facebook nebo Twitter. Přihlašte se nebo si založte účet viz níže a můžete začít!"
+            highlight blurb: "Zdá se, že chcete zvýraznit nějaké verše. Výborně! Zvýraznění vám pomáhají organizovat a udržovat přehled o vašich oblíbených verších. Přihlašte se, nebo si založte účet a můžete začít."
+            note blurb: "Vypadá to, že chcete vytvořit poznámku o verši. Dobrý nápad! Poznámky vám pomůžou organizovat a zapamatovat pravdy, které objevíte v Božím Slově. Přihlašte se nebo se zaregistrujte a můžete začít!"
         Reader: 
             chapter: "Kapitola"
             read reference: "Číst %{reference}"
+            read chapter: "Číst celou kapitolu"
             plan title: "Bezplatné plány čtení a výkladové poznámky"
             meta: 
                 mobile: 

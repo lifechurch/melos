@@ -1933,9 +1933,25 @@ hr:
                         save: "Spremi Događaj"
                         signIn: "Prijavi se za spremanje Događaja."
                         saved: "Događaj je spremljen."
+        Auth: 
+            sign up: "Registriraj se"
+            sign in: "Prijavi se"
+            sign up google: "Prijavi se preko Googlea"
+            continue google: "Prijavi se preko Googlea"
+            sign up facebook: "Prijavi se preko Facebooka"
+            continue facebook: "Prijavi se preko Facebooka"
+            have an account: "Već imaš korisnički račun?"
+            sign up alternate: "Već imaš račun? <a href='%{sign_in_path}' target='_self'>Prijavi se</a>"
+            plan blurb: "Izgleda da želiš pokrenuti plan čitanja Biblije. Pametno! Planovi ti mogu pomoći da Biblija bude dio tvog svakodnevnog života. Prijavi se ili kreiraj korisnički račun tu ispod i počni čitati!"
+            bookmark blurb: "Izgleda da želiš kreirati oznaku. Odlično! Oznake ti pomažu u praćenju stihova koje želiš zapamtiti ili označiti kao omiljene. Prijavi se ili kreiraj korisnički račun i kreni s oznakama!"
+            friends blurb: "Izgleda da želiš komunicirati s prijateljima. Pametno! Moći ćete podijeliti naučeno i pomagati jedni drugima da budete u toku s planovima čitanja. Prijavi se ili kreiraj korisnički račun i kreni!"
+            share blurb: "Izgleda da želiš dijeliti Pismo. Odlično! Moći ćeš dijeliti stihove preko Facebooka ili Twittera. Prijavi se ili kreiraj korisnički račun i kreni s dijeljenjem!"
+            highlight blurb: "Izgleda da želiš označiti Pismo. Odlično! Označavanje ti pomaže da organiziraš i pratiš svoje najdraže stihove. Započni tako da se dolje prijavš ili kreiraš korisnički račun."
+            note blurb: "Izgleda da želiš unijeti bilješku o Pismu. Odlično! Bilješke ti mogu pomoći da zapamtiš i organiziraš istinu koju otkrivaš u Božjoj Riječi. Prijavi se ili kreiraj korisnički račun tu ispod i započni."
         Reader: 
             chapter: "Poglavlje"
             read reference: "Čitaj %{reference}"
+            read chapter: "Čitaj cijelo poglavlje"
             plan title: "Besplatni planovi čitanja i nadahnuti sadržaji"
             meta: 
                 mobile: 

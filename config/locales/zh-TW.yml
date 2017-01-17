@@ -1876,9 +1876,25 @@ zh-TW:
                         save: "儲存互動"
                         signIn: "登入以儲存互動"
                         saved: "互動已儲存"
+        Auth: 
+            sign up: "註冊帳戶"
+            sign in: "登入"
+            sign up google: "透過谷歌註冊"
+            continue google: "透過 Google 註冊"
+            sign up facebook: "透過 Facebook 帳戶註冊"
+            continue facebook: "透過 Facebook 註冊"
+            have an account: "已有帳戶？"
+            sign up alternate: "已有帳戶？<a href='%{sign_in_path}' target='_self'>登入</a>"
+            plan blurb: "看來您想開始一個讀經計劃。明智之舉！這些計劃可以幫助您使聖經成為您日常生活的一部份。請登入或者建立一個帳戶就可以隨時開始了！"
+            bookmark blurb: "看來您想使用一個書籤。太棒了！書籤幫助您紀錄您要背誦，分享，或者標記為喜愛的聖經經節。請登入或者建立一個帳戶，然後就可以開始了！"
+            friends blurb: "看來您想和朋友互動交流。好主意！您可以分享您所學習的，還有和朋友們彼此幫助遵循進度以達到閱讀目標。請登入或者建立一個帳戶就可以開始了！"
+            share blurb: "看來您希望分享經文。太好了！您可以透過 Facebook 或 Twitter 即時分享神的話語。趕緊登入或在下方註冊一個帳戶就可以開始了！"
+            highlight blurb: "看來您想醒目顯示這節經文。太好了！醒目顯示功能幫助您整理並記錄您喜愛的聖經經節。請登入或者建立一個帳戶，然後就可以開始了！"
+            note blurb: "看來您想為這段經文寫些筆記。好主意！筆記能夠幫助您記住並整理您在上帝的話語裡所發掘的真理。請登入或者建立一個帳戶就可以開始了！"
         Reader: 
             chapter: "章節"
             read reference: "閱讀 %{reference}"
+            read chapter: "閱讀整章"
             plan title: "免費的讀經計劃及靈修內容"
             meta: 
                 mobile: 

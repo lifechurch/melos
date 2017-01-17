@@ -1895,9 +1895,25 @@ tl:
                         save: "I-save ang Event"
                         signIn: "Mag-sign In para Ma-save ang Kaganapan"
                         saved: "Na-save mo na ang Kaganapan"
+        Auth: 
+            sign up: "Mag-sign up"
+            sign in: "Mag-sign In"
+            sign up google: "Mag-sign up gamit ang Google"
+            continue google: "Magpatuloy sa Google"
+            sign up facebook: "Mag-sign up gamit ang Facebook"
+            continue facebook: "Magpatuloy sa Facebook"
+            have an account: "May Account Ka na Ba?"
+            sign up alternate: "May account na? <a href='%{sign_in_path}' target='_self'>Mag-sign In</a>"
+            plan blurb: "Mukhang gusto mong mag-umpisa ng Reading Plan. Matutulungan ka nitong gawin ang Biblia bilang bahagi ng iyong pang araw-araw na buhay. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
+            bookmark blurb: "Mukhang gusto mong gumamit ng bookmark. Magaling! Matutulungan ka nitong makita ang mga talata na nais mong tandaan, ibahagi o kaya ay markahan bilang paborito. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
+            friends blurb: "Mukhang gusto mong makipag-ugnayan sa mga Kaibigan. Magandang ideya! Magagawa mong maibahagi ang iyong napag-aaralan at makipagtulungan sa bawat isa para manatili sa iyong plano. Magsign-in o gumawa ng account sa ibaba at mag-umpisa na!"
+            share blurb: "Mukhang nais mong ibahagi ang Salita ng Diyos. Magaling! Maari mo itong gawin sa pamamagitan ng Facebook o Twitter. Mag-sign in lamang o gumawa ng account sa ibaba upang makapagsimula!"
+            highlight blurb: "Mukhang nais mong i-highlight ang kasulatan. Mabuti! Ang mga ito ay makakatulong mag-organisa at magtanda ng mga paboritong berso. Sign in o gumawa ng account sa ibaba at simulan!"
+            note blurb: "Mukhang nais mong magtala tungkol sa kasulatan. Mabuti! Ang mga tala ay maaring makatulong sa pag-alala o pag-organisa ng katotohanang iyong madidiskubre sa Salita ng Diyos. Sign in o gumawa ng account sa ibaba at simulan!"
         Reader: 
             chapter: "Kabanata"
             read reference: "Basahin %{reference}"
+            read chapter: "Basahin ang buong kabanata"
             plan title: "Libreng Babasahin at Devotionals"
             meta: 
                 mobile: 

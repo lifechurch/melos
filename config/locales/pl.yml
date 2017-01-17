@@ -1933,9 +1933,25 @@ pl:
                         save: "Zapisz wydarzenie"
                         signIn: "Zaloguj się, aby zapisać wydarzenie"
                         saved: "Wydarzenie zapisane"
+        Auth: 
+            sign up: "Rejestracja"
+            sign in: "Zaloguj się"
+            sign up google: "Zaloguj się używając konta Google"
+            continue google: "Kontynuuj z Google "
+            sign up facebook: "Zarejestruj się przez Facebook"
+            continue facebook: "Kontynuuj poprzez Facebook"
+            have an account: "Czy masz już konto?"
+            sign up alternate: "Masz już konto? <a href='%{sign_in_path}' target='_self'>Zaloguj się</a>"
+            plan blurb: "Hej, próbujesz rozpocząć plan czytania. Mądrze! Plany mogą pomóc ci uczynić z Biblii część twojego codziennego życia. Zaloguj się lub utwórz konto poniżej, aby rozpocząć!"
+            bookmark blurb: "Hej, próbujesz skorzystać z zakładki. Świetnie! Zakładki pomogą ci zaznaczyć wersety, które chcesz zapamiętać, udostępnić lub oznaczyć jako ulubione. Zaloguj się lub utwórz konto poniżej, aby rozpocząć!"
+            friends blurb: "Hej, próbujesz skontaktować się z przyjaciółmi! Dobry pomysł! Będziesz mógł podzielić się tym czego się uczysz i pomóc innym w regularnym czytaniu. Zaloguj się lub utwórz konto poniżej, aby rozpocząć!"
+            share blurb: "Chcesz podzielić się Pismem Świętym? Świetnie! Możesz podzielić się Pismem przez Facebook'a lub Twitter'a. Zaloguj się lub utwórz konto poniżej, aby rozpocząć!"
+            highlight blurb: "Wygląda na to, że chcesz zakreślić coś w Biblii. Świetnie! Zakreślenia pomogą ci zorganizować i przeglądać ulubione wersety. Zaloguj się lub utwórz konto poniżej, aby rozpocząć!"
+            note blurb: "Chcesz napisać notatkę? Doskonale! Notatki mogą pomóc ci w zapamiętaniu i uporządkowaniu prawd, które odkrywasz w Bożym Słowie. Zaloguj się lub utwórz konto poniżej, aby rozpocząć!"
         Reader: 
             chapter: "Rozdział"
             read reference: "Czytaj %{reference}"
+            read chapter: "Czytaj cały rozdział"
             plan title: "Darmowe Plany Czytania i Rozważania"
             meta: 
                 mobile: 

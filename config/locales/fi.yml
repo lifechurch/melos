@@ -1895,9 +1895,25 @@ fi:
                         save: "Tallenna tapahtuma"
                         signIn: "Kirjaudu sisään tallentaaksesi tapahtuma"
                         saved: "Tapahtuma tallennettu"
+        Auth: 
+            sign up: "Rekisteröidy"
+            sign in: "Kirjaudu sisään"
+            sign up google: "Rekisteröidy Google-tilillä"
+            continue google: "Rekisteröidy Googlella"
+            sign up facebook: "Rekisteröidy Facebook-tunnuksilla"
+            continue facebook: "Rekisteröidy Facebookilla"
+            have an account: "Onko sinulla jo tili?"
+            sign up alternate: "Onko sinulla jo tili? <a href='%{sign_in_path}' target='_self'>Kirjaudu sisään</a>"
+            plan blurb: "Vaikuttaa siltä, että haluat aloittaa lukusuunnitelman. Viisas päätös! Suunnitelmat auttavat sinua tekemään Raamatusta osan jokapäiväistä elämääsi. Kirjaudu sisään tai luo tili ja aloita!"
+            bookmark blurb: "Vaikuttaa siltä, että haluat luoda kirjanmerkin. Hyvä! Kirjanmerkit auttavat sinua löytämään nopeasti jakeet, jotka haluat painaa mieleen, jakaa tai merkitä suosikeiksi. Kirjaudu sisään tai luo tili ja aloita!"
+            friends blurb: "Vaikuttaa siltä, että haluat olla vuorovaikutuksessa ystävien kanssa. Hyvä idea! Voitte jakaa oppimaanne ja auttaa toisianne pysymään kärryillä lukusuunnitelmassa. Kirjaudu sisään tai luo tili ja aloita!"
+            share blurb: "Haluat näemmä jakaa sanaa. Mahtavaa! Voit jakaa Facebookin tai Twitterin välityksellä. Pääset alkuun kirjautumalla sisään tai luomalla tilin!"
+            highlight blurb: "Näyttää siltä, että haluat korostaa tekstiä. Hienoa! Korostukset auttavat sinua järjestämään ja löytämään suosikkikohtasi. Kirjaudu sisään alla tai luo tili ja pääset alkuun!"
+            note blurb: "Näyttää siltä, että haluat tehdä muistiinpanon tekstistä. Hyvä ajatus! Muistiinpanot auttavat sinua muistamaan ja jäsentämään Jumalan sanasta löytämiäsi totuuksia. Kirjaudu sisään alla tai luo tili ja pääset alkuun!"
         Reader: 
             chapter: "Luku"
             read reference: "Lue %{reference}"
+            read chapter: "Lue koko kappale"
             plan title: "Ilmaisia lukusuunnitelmia ja hartauksia"
             meta: 
                 mobile: 

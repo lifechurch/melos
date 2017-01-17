@@ -1895,9 +1895,25 @@ af:
                         save: "Stoor Geleentheid"
                         signIn: "Teken in om Gebeurtenis te stoor"
                         saved: "Gebeurtenis is Gestoor"
+        Auth: 
+            sign up: "Sluit aan"
+            sign in: "Teken In"
+            sign up google: "Teken aan met Google"
+            continue google: "Gaan voort met Google"
+            sign up facebook: "Teken aan met Facebook"
+            continue facebook: "Gaan voort met Facebook"
+            have an account: "Het Jy Alreeds 'n Rekening?"
+            sign up alternate: "Het alreeds 'n rekening? <a href='%{sign_in_path}' target='_self'>Teken In</a>"
+            plan blurb: "Dit lyk of jy 'n leesplan wil begin. Slim! Leesplanne kan jou help om die Bybel 'n deel van jou daaglikse lewe te maak. Teken in of skep 'n rekening hieronder en begin sommer dadelik!"
+            bookmark blurb: "Dit lyk of jy 'n boekmerk wil skep. Fantasties! Boekmerke help jou om tred te hou met verse wat jy wil memoriseer, deel , of as 'n gunsteling wil merk. Teken in of skep 'n rekening hieronder en begin sommer dadelik!"
+            friends blurb: "Dit lyk of jy interaktief met vriende wil verkeer. Goeie idee! Jy sal in staat wees om te deel wat jy leer en om mekaar te help om op datum te bly met lees doelwitte. Teken in of skep 'n rekening hieronder om te begin!"
+            share blurb: "Dit wil voorkom asof jy 'n Skrif wil deel. Wonderlik! Jy kan Skrif deel via Facebook of Twitter.  Teken in of skep hier onder 'n rekening en begin!"
+            highlight blurb: "Dit wil voorkom of jy Skrif wil kleurmerk. Fantasties! Kleurmerke help jou om verse te organiseer en om tred te hou met jou gunsteling verse. Teken in of skep 'n rekening hieronder en begin sommer dadelik!"
+            note blurb: "Dit lyk of jy 'n skriftuurlike nota wil maak. Mooi gedink! Notas kan jou help om die waarhede wat jy ontdek het in God se Woord te onthou en organiseer. Teken in of skep 'n rekening hieronder en begin sommer dadelik!"
         Reader: 
             chapter: "Hoofstuk"
             read reference: "Lees %{reference}"
+            read chapter: "Lees die hele hoofstuk"
             plan title: "Gratis Leesplanne en Oordenkings"
             meta: 
                 mobile: 

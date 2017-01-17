@@ -1876,9 +1876,25 @@ zh-CN:
                         save: "保存活动"
                         signIn: "登录以保存活动"
                         saved: "活动已保存"
+        Auth: 
+            sign up: "注册"
+            sign in: "登录"
+            sign up google: "通过谷歌注册"
+            continue google: "通过 Google 登录"
+            sign up facebook: "通过 Facebook 账户注册"
+            continue facebook: "通过 Facebook 登录"
+            have an account: "已有账户？"
+            sign up alternate: "已有一个账户？<a href='%{sign_in_path}' target='_self'>登录</a>"
+            plan blurb: "看来你想开始一个读经计划！明智之举！读经计划可以帮助你，使圣经成为你日常生活中的一部分。登录或创建一个账户就可以开始了！"
+            bookmark blurb: "看来你想使用书签功能！太好了！书签可以帮助你背诵、分享和标识你最喜欢的经句。登录或创建一个账户就可以开始了！"
+            friends blurb: "看起来你想使用【朋友】功能与好友互动交流。好主意！你可以和他们分享读经内容，相互激励帮助跟进读经进度。登录或创建一个账户就可以开始了！"
+            share blurb: "看来你想使用分享经文的功能。太好了！你可以通过 Facebook 或 Twitter 及时分享神的话语。登录或注册一个免费账户就可以开始了！"
+            highlight blurb: "看起来你想高亮显示一段经文，太棒了！高亮显示经文可以帮你整理和记录你喜欢的经节。登录或创建一个账户就可以开始了！"
+            note blurb: "看起来你想就经文写一段笔记，太棒了！【笔记】可以帮你整理和记录你从圣经中领悟的真理。登录或创建一个账户就可以开始了！"
         Reader: 
             chapter: "章节"
             read reference: "阅读 %{reference}"
+            read chapter: "阅读整章"
             plan title: "免费的【读经计划】与灵修短文"
             meta: 
                 mobile: 
