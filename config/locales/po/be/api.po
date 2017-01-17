@@ -1,0 +1,354 @@
+# Belarusian translations for Backend (YouVersion).
+# Copyright (C) 2017 LifeChurch.tv
+# This file is distributed under the same license as the Backend (YouVersion) project.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Backend (YouVersion) 1.0\n"
+"Report-Msgid-Bugs-To: developers@youversion.com\n"
+"POT-Creation-Date: 2017-01-03 11:18-0609\n"
+"PO-Revision-Date: 2017-01-03 11:18-0609\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: be\n"
+"Language-Team: be <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+msgid "moment.badge.earned.self.title"
+msgstr "Вы атрымалі <b>{title}</b> адзнаку"
+
+msgid "moment.badge.earned.title"
+msgstr "Карыстальнік {name} атрымаў <b>{title}</b> адзнаку"
+
+msgid "moment.bible.download.self.title"
+msgstr "Вы спампавалі гэты пераклад <b>{version}</b>"
+
+msgid "moment.bible.download.title"
+msgstr "Карыстальнік {name} спампаваў пераклад <b>{version}</b>"
+
+msgid "moment.bookmark.self.title"
+msgstr "Вы дадалі закладку да <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.bookmark.title"
+msgstr "Карыстальнік {name} зрабіў закладку для <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.client_side.reading_plan_carousel.april.title"
+msgstr "Абнавіцеся ў веры праз новыя пляны чытаньня."
+
+msgid "moment.client_side.reading_plan_carousel.august.title"
+msgstr "Шукайце Бога ў Ягоным Слове штодня."
+
+msgid "moment.client_side.reading_plan_carousel.december.title"
+msgstr "Падрыхтуйце ў гэты час сваё сэрца."
+
+msgid "moment.client_side.reading_plan_carousel.february.title"
+msgstr "Знайдзіце Божую любоў у Ягоным Слове."
+
+msgid "moment.client_side.reading_plan_carousel.january.title"
+msgstr "Пачынаецца найлепшы год у вашым жыцьці."
+
+msgid "moment.client_side.reading_plan_carousel.july.title"
+msgstr "Сьвяткуйма свабоду ў Хрысьце"
+
+msgid "moment.client_side.reading_plan_carousel.june.title"
+msgstr "Шукайце Бога ў Ягоным Слове."
+
+msgid "moment.client_side.reading_plan_carousel.march.title"
+msgstr "Знайдзіце надзею і абнаўленьне ў Божым Слове."
+
+msgid "moment.client_side.reading_plan_carousel.may.title"
+msgstr "Штодня прысьвячайце час Ягонаму Слову:"
+
+msgid "moment.client_side.reading_plan_carousel.november.title"
+msgstr "Адкрыйце ўдзячнасьць у Божых абяцаньнях."
+
+msgid "moment.client_side.reading_plan_carousel.october.title"
+msgstr "Пабожная мудрасьць пачынаецца з чытаньня Божага Слова."
+
+msgid "moment.client_side.reading_plan_carousel.september.title"
+msgstr "Божае Слова робіць усё новым."
+
+msgid "moment.friendship.self.title"
+msgstr "Цяпер вы сябруеце з  <b>{friend_name}</b>"
+
+msgid "moment.friendship.title"
+msgstr "{user_name} цяпер сябруе з <b>{friend_name}</b>"
+
+msgid "moment.highlight.self.title"
+msgstr "Вы пазначылі <b>{version_abbreviation} {reference_human} </b>"
+
+msgid "moment.highlight.title"
+msgstr "Карыстальнік {name} пазначыў <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.self.title"
+msgstr "Вы стварылі малюнак да <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.image.title"
+msgstr "Карыстальнік {name} стварыў малюнак да <b>{reference_human} {version_abbreviation}</b>"
+
+msgid "moment.note.no_title_no_reference.self.title"
+msgstr "Вы дадалі нататку"
+
+msgid "moment.note.no_title_no_reference.title"
+msgstr "Карыстальнік {name} дадаў нататку"
+
+msgid "moment.note.reference.self.title"
+msgstr "Вы дадалі нататку да <b>{reference_human}</b>"
+
+msgid "moment.note.reference.title"
+msgstr "Карыстальнік {name} дадаў нататку да <b>{reference_human}</b>"
+
+msgid "moment.note.self.title"
+msgstr "Вы дадалі нататку <b>{title}</b>"
+
+msgid "moment.note.title"
+msgstr "Карыстальнік {name} дадаў нататку <b>{title}</b>"
+
+msgid "moment.plan_completion.self.title"
+msgstr "Вы завяршылі свой плян чытаньня."
+
+msgid "moment.plan_completion.title"
+msgstr "Карыстальнік {name} завершыў плян чытаньня"
+
+msgid "moment.plan_completion.v2.self.title"
+msgstr "Вы скончылі плян чытаньня <b>{title}</b>"
+
+msgid "moment.plan_completion.v2.title"
+msgstr "Карыстальнік {name} скончыў плян чытаньня <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.body"
+msgstr "Дзень {segment} з {total_segments} ({percent_complete}%)"
+
+msgid "moment.plan_segment_completion.self.title"
+msgstr "Вы завершылі дзень <b>{segment}</b> пляну чытаньня <b>{title}</b>"
+
+msgid "moment.plan_segment_completion.title"
+msgstr "Карыстальнік {name} скончыў дзень <b>{segment}</b> пляну чытаньня <b>{title}</b>"
+
+msgid "moment.plan_subscription.self.title"
+msgstr "Вы пачалі новы плян чытаньня."
+
+msgid "moment.plan_subscription.title"
+msgstr "Карыстальнік {name} пачаў новы плян чытаньня"
+
+msgid "moment.plan_subscription.v2.self.title"
+msgstr "Вы пачалі новы плян чытаньня <b>{title}</b>"
+
+msgid "moment.plan_subscription.v2.title"
+msgstr "Карыстальнік {name} пачаў новы плян чытаньня <b>{title}</b>"
+
+msgid "moment.system.bafk.title"
+msgstr "Дапамажыце сваім дзецям захапіцца Божым Словам!"
+
+msgid "moment.system.bible_series_promo.body"
+msgstr "Глядзіце <i>Bible Series</i> сёньня ўвечары!"
+
+msgid "moment.system.bible_series_promo.title"
+msgstr "<i>Bible Series</i>"
+
+msgid "moment.system.christmas.title"
+msgstr "Падзяліцеся добрай весткай: Збаўца нарадзіўся!"
+
+msgid "moment.system.find_friends.title"
+msgstr "The Bible App лепш зь сябрамі. Праглядзіце свае кантакты, каб знайсьці сяброў."
+
+msgid "moment.video.watched.self.title"
+msgstr "Вы праглядзелі <b>{title}</b>"
+
+msgid "moment.video.watched.title"
+msgstr "Карыстальнік {name} праглядзеў  <b>{title}</b>"
+
+msgid "notifications.comments.moment.mine.bookmark"
+msgstr "Карыстальнік {name} пракаментаваў вашую закладку:\"{comment}\""
+
+msgid "notifications.comments.moment.mine.friendship"
+msgstr "Карыстальнік {name} пракаментаваў вашае сяброўства з {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moment.mine.friendship.friend"
+msgstr "Карыстальнік {name} пракаментаваў вашае сяброўства: “{comment}”"
+
+msgid "notifications.comments.moment.mine.highlight"
+msgstr "Карыстальнік {name} пракаментаваў вашую пазнаку: \"{comment}\""
+
+msgid "notifications.comments.moment.mine.image"
+msgstr "Карыстальнік {name} пракаментаваў вашую карцінку на верш “{comment}”"
+
+msgid "notifications.comments.moment.mine.note"
+msgstr "Карыстальнік {name} пракаментаваў вашую нататку: \"{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity"
+msgstr "Карыстальнік {name} пракаментаваў ваш плян чытаньня: “{comment}”"
+
+msgid "notifications.comments.moment.mine.plan_activity.push"
+msgstr "Карыстальнік {name} пракаментаваў ваш плян чытаньня: “{comment}”"
+
+msgid "notifications.comments.moments.friend.bookmark"
+msgstr "Карыстальнік {commenter_name} таксама пракамментаваў закладку {moment_owner_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.friendship"
+msgstr "Карыстальнік {commenter_name} таксама пракаментаваў сяброўства {moment_owner_name} з {friend_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.ours"
+msgstr "Карыстальнік {commenter_name} таксама пракаментаваў вашае сяброўства з {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.friendship.their"
+msgstr "Карыстальнік {commenter_name} таксама пракаментаваў іх сяброўства з {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.highlight"
+msgstr "Карыстальнік {commenter_name} таксама пракаментаваў зробленую {moment_owner_name} пазнаку: “{comment}”"
+
+msgid "notifications.comments.moments.friend.image"
+msgstr "Карыстальнік {commenter_name} таксама пракаментаваў малюнак, створаны {moment_owner_name}:\"{comment}\""
+
+msgid "notifications.comments.moments.friend.note"
+msgstr "Карыстальнік {commenter_name} таксама пракаментаваў створаную {moment_owner_name} нататку: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.bookmark"
+msgstr "Карыстальнік {moment_owner_name} таксама пракаментаваў закладку: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.friendship"
+msgstr "Карыстальнік {moment_owner_name} таксама пракаментаваў сяброўства з {friend_name}: \"{comment}\""
+
+msgid "notifications.comments.moments.friend.owner.friendship.ours"
+msgstr "Карыстальнік {moment_owner_name} таксама пракаментаваў сяброўства з вамі:“{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.highlight"
+msgstr "Карыстальнік {moment_owner_name} таксама пракаментаваў пазнаку: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.image"
+msgstr "Карыстальнік {moment_owner_name} таксама пракаментаваў малюнак: “{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.note"
+msgstr "Карыстальнік {moment_owner_name} таксама пракаментаваў нататку: \"{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity"
+msgstr "Карыстальнік {moment_owner_name} таксама пракаментаваў плян чытаньня:“{comment}”"
+
+msgid "notifications.comments.moments.friend.owner.plan_activity.push"
+msgstr "Карыстальнік {moment_owner_name} таксама пракаментаваў плян чытаньня: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity"
+msgstr "Карыстальнік {commenter_name} таксама пракаментаваў плян чытаньня {moment_owner_name}: “{comment}”"
+
+msgid "notifications.comments.moments.friend.plan_activity.push"
+msgstr "Карыстальнік {commenter_name} таксама пракаментаваў плян чытаньня, пачаты {moment_owner_name}: “{comment}”"
+
+msgid "notifications.friendships.accept"
+msgstr "Карыстальнік {name} прыняў ваш запыт у сябры"
+
+msgid "notifications.friendships.nowfriends"
+msgstr "{name} цяпер ваш сябра"
+
+msgid "notifications.friendships.offer"
+msgstr "{name} хоча быць вашым сябрам у YouVersion"
+
+msgid "notifications.friendships.pending"
+msgstr "На вас чакае запыт у сябры праз the Bible App."
+
+msgid "notifications.friendships.suggestion"
+msgstr "Ці хочаце вы дадаць {name} да сяброў на YouVersion?"
+
+msgid "notifications.likes.moment.mine.bookmark"
+msgstr "Карыстальнік {name} упадабаў вашую закладку, {reference_human}"
+
+msgid "notifications.likes.moment.mine.friendship"
+msgstr "Карыстальнік {name} упадабаў вашае сяброўства з {friend_name}"
+
+msgid "notifications.likes.moment.mine.highlight"
+msgstr "Карыстальнік {name} упадабаў вашую пазнаку {reference_human}"
+
+msgid "notifications.likes.moment.mine.image"
+msgstr "Карыстальнік {name} ўпадабаў вашую карцінку з {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.no_title_no_reference"
+msgstr "Карыстальнік {name} упадабаў вашую нататку"
+
+msgid "notifications.likes.moment.mine.note.reference"
+msgstr "Карыстальнік {name} упадабаў вашую нататку да {reference_human}"
+
+msgid "notifications.likes.moment.mine.note.title"
+msgstr "Карыстальнік {name} упадабаў вашую нататку, “{title}”"
+
+msgid "notifications.likes.moment.mine.plan_activity"
+msgstr "Карыстальнік {name} упадабаў ваш плян чытаньня"
+
+msgid "notifications.likes.moment.mine.plan_activity.push"
+msgstr "Карыстальнік {name} упадабаў ваш плян чытаньня"
+
+msgid "notifications.moments.create.bookmark"
+msgstr "Карыстальнік {name} стварыў закладку для {reference_human}"
+
+msgid "notifications.moments.create.highlight"
+msgstr "Карыстальнік {name} пазначыў {reference_human}"
+
+msgid "notifications.moments.create.image"
+msgstr "Карыстальнік {name} стварыў карцінку з вершам {reference_human}"
+
+msgid "notifications.moments.create.note.no_title_no_reference"
+msgstr "Карыстальнік {name} дадаў нататку"
+
+msgid "notifications.moments.create.note.reference"
+msgstr "Карыстальнік {name} дадаў нататку да {reference_human}"
+
+msgid "notifications.moments.create.note.title"
+msgstr "Карыстальнік {name} стварыў нататку, “{title}”"
+
+msgid "notifications.moments.create.plan_completion"
+msgstr "Карыстальнік {name} завяршыў плян чытаньня {title}"
+
+msgid "notifications.moments.create.plan_completion.push"
+msgstr "Карыстальнік {name} завяршыў плян чытаньня {title}"
+
+msgid "notifications.moments.create.plan_subscription"
+msgstr "Карыстальнік {name} пачаў новы плян чытаньня {title}"
+
+msgid "notifications.moments.create.plan_subscription.push"
+msgstr "Карыстальнік {name} пачаў новы плян чытаньня {title}"
+
+msgid "notifications.people.contact.joined"
+msgstr "Карыстальнік {name} далучыўся да YouVersion Націсьніце, каб дадаць яго ў сябры."
+
+msgid "notifications.system.test"
+msgstr "Спампуйце Bible App для дзяцей зараз!"
+
+msgid "share.find_friends.invite_email_html"
+msgstr "<p>Вітаю!</p><p>Я карыстаюся Bible App ад YouVersion і хачу падзяліццЯ карыстаюся Bible App ад YouVersion і хачу падзяліцца з табой. Прыкладаньне напоўніць тваё штодзённае жыцьцё праўдай і прыгажосьцю Бібліі. </p><p><strong>Усталюй Bible App:</strong> чытай, глядзі, слухай і дзяліся на сваім смартфоне ці плашэце, і анлайн на Bible.com.</p><p><strong>Завядзі свай акаўнт</strong> каб мець доступ да плянаў чытаньня Бібліі, закладак, пазнак і нататак на ўсіх прыладах.</p><p><strong>Дадавай сяброў (як я):</strong> дасьледуй Біблію і разважай разам з блізкімі людзьмі.</p><p>Усё гэта ў Bible App - усталюй тут: </p>"
+
+msgid "share.invite_email_body"
+msgstr ""
+"Вітаю!\n"
+"\n"
+"Я карыстаюся Bible App ад YouVersion і хачу падзяліцца з табой. Прыкладаньне напоўніць тваё штодзённае жыцьцё праўдай і прыгажосьцю Бібліі.\n"
+"\n"
+"Усталюй Bible App: чытай, слухай і дзяліся на сваім смартфоне ці плашэце, і анлайн на Bible.com.\n"
+"\n"
+"Завядзі свай акаўнт каб мець доступ да плянаў чытаньня Бібліі, закладак, пазнак і нататак на ўсіх прыладах.\n"
+"\n"
+" Дадавай сяброў (як я): дасьледуй Біблію і разважай разам з блізкімі людзьмі.\n"
+"\n"
+"Усё гэта ў Bible App - усталюй тут: "
+
+msgid "share.invite_email_subject"
+msgstr "Дадай мяне ў Bible App!"
+
+msgid "share.invite_facebook"
+msgstr "Мне падабаецца Bible App! Яна дапамагла мне зрабіць Біблію часткай майго штодзённага жыцьця. Яна дазваляе рабіць пазнакі, слухаць аўдыё-Бібліі, рабіць нататкі, выбіраць малітоўныя пляны... і нават глядзець відэа! Спампуй тут (гэта бясплатна):"
+
+msgid "share.invite_facebook_direct"
+msgstr "У цябе ёсьць Bible App?  Мне падабаецца і, я лічу, табе таксама спадабаецца. Вось спасылка:"
+
+msgid "share.invite_sms"
+msgstr "Мне падабаецца YouVersion Bible App.  Я лічу, табе таксама спадабаецца."
+
+msgid "share.invite_sms_prefix"
+msgstr "Ад{name}:"
+
+msgid "share.invite_twitter"
+msgstr "@YouVersion Bible App мае пастаяннае месца на маім хатнім экране. Чытай, глядзі, слухай і дзяліся... усё ў бясплатным прыкладаньні:"
+
+msgid "share.invite_twitter_direct"
+msgstr "Ты маеш Bible App ад @YouVersion?  Мне падабаецца і, я лічу, табе таксама спадабаецца. Вось спасылка:"
