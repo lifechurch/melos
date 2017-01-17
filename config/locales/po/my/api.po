@@ -1,5 +1,5 @@
 # Burmese translations for Backend (YouVersion).
-# Copyright (C) 2016 LifeChurch.tv
+# Copyright (C) 2017 LifeChurch.tv
 # This file is distributed under the same license as the Backend (YouVersion) project.
 #
 #, fuzzy
@@ -8,39 +8,42 @@ msgstr ""
 "#-#-#-#-#  moments.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-03-10 14:15-0600\n"
-"PO-Revision-Date: 2016-03-10 14:15-0600\n"
+"POT-Creation-Date: 2017-01-03 11:18-0609\n"
+"PO-Revision-Date: 2017-01-03 11:18-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: my\n"
 "Language-Team: my <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
+"Generated-By: Babel 2.3.4\n"
 "#-#-#-#-#  notifications.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-03-22 13:30-0600\n"
-"PO-Revision-Date: 2016-03-22 13:30-0600\n"
+"POT-Creation-Date: 2017-01-03 11:18-0609\n"
+"PO-Revision-Date: 2017-01-03 11:18-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: my\n"
 "Language-Team: my <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
+"Generated-By: Babel 2.3.4\n"
 "#-#-#-#-#  share.po (Backend (YouVersion) 1.0)  #-#-#-#-#\n"
 "Project-Id-Version: Backend (YouVersion) 1.0\n"
 "Report-Msgid-Bugs-To: developers@youversion.com\n"
-"POT-Creation-Date: 2016-09-15 10:50-0609\n"
-"PO-Revision-Date: 2016-09-15 10:50-0609\n"
+"POT-Creation-Date: 2017-01-03 11:17-0609\n"
+"PO-Revision-Date: 2017-01-03 11:17-0609\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: my\n"
 "Language-Team: my <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
+"Generated-By: Babel 2.3.4\n"
 
 msgid "moment.badge.earned.self.title"
 msgstr "သင်သည် <b>{title}</b> ဆုတံဆိပ်ကိုရခဲ့သည်။"
@@ -55,10 +58,10 @@ msgid "moment.bible.download.title"
 msgstr "{name}သည် <b>{version}</b>ဗားရှင်းကို ဒေါင်းလုပ်လုပ်ခဲ့သည်။"
 
 msgid "moment.bookmark.self.title"
-msgstr "သင်သည် <b>{reference_human}{version_abbreviation}</b>တို့ကို မှတ်သားထားခဲ့သည်။"
+msgstr "သင်သည် <b>{reference_human}{version_abbreviation}</b> ကို မှတ်သားထားခဲ့သည်။"
 
 msgid "moment.bookmark.title"
-msgstr "{name}သည် <b>{reference_human}{version_abbreviation}</b>တို့ကိုမှတ်သားထားခဲ့သည်။"
+msgstr "{name} သည် <b>{reference_human}{version_abbreviation}</b> ကို မှတ်သားထားခဲ့သည်။"
 
 msgid "moment.client_side.reading_plan_carousel.advent.title"
 msgstr "ခရစ္စမတ်မတိုင်မီ ၄ ပတ်ကာလ၏ကျမ်းစာအစီအစဉ်ဖြင့် ခရစ္စမတ်အတွက်ပြင်ဆင်ပါ။"
@@ -106,55 +109,55 @@ msgid "moment.friendship.title"
 msgstr "ယခု{user_name}သည် <b>{friend_name}</b>နှင့်မိတ်ဆွေဖြစ်ပါပြီ။"
 
 msgid "moment.highlight.self.title"
-msgstr "သင်သည် <b>{reference_human}{version_abbreviation}</b>တို့ကို အရောင်ခြယ်ထားခဲ့သည်။"
+msgstr "သင်သည် <b>{reference_human}{version_abbreviation}</b> ကို အရောင်မှတ်ထားခဲ့သည်။"
 
 msgid "moment.highlight.title"
-msgstr "{name}သည် <b>{reference_human}{version_abbreviation}</b>တို့ကို အရောင်ခြယ်ထားခဲ့သည်။"
+msgstr "{name} သည် <b>{reference_human}{version_abbreviation}</b> ကို အရောင်မှတ်ထားခဲ့သည်။"
 
 msgid "moment.image.self.title"
-msgstr "သင်သည် <b>{reference_human}{version_abbreviation}</b>တို့အတွက် ကျမ်းပိုဒ်ပုံကိုဖန်တီးခဲ့သည်"
+msgstr "သင်သည် <b>{reference_human}{version_abbreviation}</b> ၏ကျမ်းပိုဒ်ပါဓာတ်ပုံကို ဖန်တီးခဲ့သည်"
 
 msgid "moment.image.title"
-msgstr "{name}သည် <b>{reference_human}{version_abbreviation}</b>တို့၏ကျမ်းပိုဒ်ပုံကို ဖန်တီးခဲ့သည်။"
+msgstr "{name} သည် <b>{reference_human}{version_abbreviation}</b> ၏ကျမ်းပိုဒ်ပါဓာတ်ပုံကို ဖန်တီးခဲ့သည်။"
 
 msgid "moment.note.no_title_no_reference.self.title"
-msgstr "မှတ်စုကိုသင်ရေးခဲ့သည်"
+msgstr "မှတ်စုကို သင်ရေးခဲ့သည်"
 
 msgid "moment.note.no_title_no_reference.title"
-msgstr "{name}သည် မှတ်စုကိုထည့်ခဲ့သည်။"
+msgstr "{name} သည် မှတ်စုရေးခဲ့သည်။"
 
 msgid "moment.note.reference.self.title"
-msgstr "<b>{reference_human}</b>နှင့်ပတ်သက်သည့် မှတ်စုကို သင်ရေးခဲ့သည်။"
+msgstr "<b>{reference_human}</b> နှင့်ပတ်သက်သည့် မှတ်စုကို သင်ရေးခဲ့သည်။"
 
 msgid "moment.note.reference.title"
-msgstr "{name}သည် <b>{reference_human}</b>နှင့်ပတ်သက်သည့်မှတ်စုကို ရေးခဲ့သည်။"
+msgstr "{name} သည် <b>{reference_human}</b> နှင့်ပတ်သက်သည့်မှတ်စုကို ရေးခဲ့သည်။"
 
 msgid "moment.note.self.title"
-msgstr "<b>{title}</b>ဟူသောမှတ်စုကို သင်ထည့်ခဲ့သည်။"
+msgstr "<b>{title}</b>ဟူသောမှတ်စုကို သင်ရေးခဲ့သည်။"
 
 msgid "moment.note.title"
-msgstr "{name}သည် <b>{title}</b>တွင်မှတ်စုထည့်ခဲ့သည်။"
+msgstr "{name} သည် <b>{title}</b> တွင် မှတ်စုရေးခဲ့သည်။"
 
 msgid "moment.plan_completion.self.title"
-msgstr "သင့်အစီအစဉ်ကိုပြီးမြောက်ခဲ့ပြီ။"
+msgstr "သင့်အစီအစဉ်ကို ဖတ်ပြီးပါပြီ။"
 
 msgid "moment.plan_completion.title"
-msgstr "{name}သည် အစီအစဉ်တစ်ခုပြီးမြောက်ခဲ့သည်။"
+msgstr "{name}သည် အစီအစဉ်ကို ဖတ်ပြီးပါပြီ။"
 
 msgid "moment.plan_completion.v2.self.title"
-msgstr "သင်သည် <b>{title}</b>အစီအစဉ်ကိုပြီးမြောက်ခဲ့ပြီး။"
+msgstr "သင်သည် <b>{title}</b> အစီအစဉ်ကို ဖတ်ပြီးပါပြီ။"
 
 msgid "moment.plan_completion.v2.title"
-msgstr "{name}သည် <b>{title}</b>အစီအစဉ်ကိုပြီးမြောက်ခဲ့ပြီ။"
+msgstr "{name} သည် <b>{title}</b> အစီအစဉ်ကို ဖတ်ပြီးပါပြီ။"
 
 msgid "moment.plan_segment_completion.body"
 msgstr "{total_segments}ထဲမှ{segment}မြောက်သောနေ့။ ({percent_complete}ရာနှုန်း)"
 
 msgid "moment.plan_segment_completion.self.title"
-msgstr "<b>{title}</b>အစီအစဉ်တွင်<b>{segment}</b>ရက်မြောက်သောအပိုင်းကို သင်ပြီးမြောက်ခဲ့ပြီ။"
+msgstr "<b>သင်သည် {title}</b> အစီအစဉ်တွင် <b>{segment}</b> ရက်စာကို ဖတ်ပြီးပါပြီ။"
 
 msgid "moment.plan_segment_completion.title"
-msgstr "{name}သည် <b>{title}</b>အစီအစဉ်ထဲမှ<b>{segment}</b>ရက်မြောက်သောနေ့ကို ပြီမြောက်ခဲ့သည်။"
+msgstr "{name} သည် <b>{title}</b> အစီအစဉ်တွင် <b>{segment}</b> ရက်စာကို ဖတ်ပြီးပါပြီ။"
 
 msgid "moment.plan_subscription.self.title"
 msgstr "သင်သည် အစီအစဉ်အသက်ကိုစတင်ပြီ။"
@@ -169,7 +172,7 @@ msgid "moment.plan_subscription.v2.title"
 msgstr "{name}သည် <b>{title}</b>အစီအစဉ်အသစ်ကိုစတင်ခဲ့ပြီ။"
 
 msgid "moment.system.bafk.title"
-msgstr "သင့်ကလေးများသည် ဘုရားသခင်၏နှုတ်ကပတ်တော်ကိုခုံမင်နှစ်သက်ရန် ကူညီပါ။"
+msgstr "သင်၏သားသမီးတို့သည် ဘုရားသခင်၏နှုတ်ကပတ်တော်ကိုခုံမင်နှစ်သက်ကြရန် ကူညီပါ။"
 
 msgid "moment.system.bible_series_promo.body"
 msgstr " ယနေ့ည<i>ကျမ်းစာဇာတ်လမ်းတွဲ</i>ကိုကြည့်ရှုပါ။ "
@@ -181,7 +184,7 @@ msgid "moment.system.christmas.title"
 msgstr "ဝမ်းမြောက်ဖွယ်သတင်းကိုမျှဝေပါ - ကယ်တင်ရှင်သည်ဖွားမြင်တော်မူပြီ။"
 
 msgid "moment.system.find_friends.title"
-msgstr "ကျမ်းစာအက်ပ်သည် မိတ်ဆွေများနှင့်ဆင်နွှဲမှပို၍ကောင်းလာသည်။ သင်၏အဆက်အသွယ်ကိုကြည့်ပြီး သင့်မိတ်ဆွေကိုရှာပါ။"
+msgstr "ကျမ်းစာအက်ပ်ကို မိတ်ဆွေတို့နှင့်ဆင်နွှဲမှ ပို၍ကောင်းသည်။ သင်၏အဆက်အသွယ်ကိုကြည့်ပြီး သင့်မိတ်ဆွေကိုရှာပါ။"
 
 msgid "moment.video.watched.self.title"
 msgstr "သင်သည် <b>{title}</b>ကို ကြည့်ရှုခဲ့သည်။"
@@ -369,7 +372,7 @@ msgid "share.invite_sms_prefix"
 msgstr "{name}ထံမှ"
 
 msgid "share.invite_twitter"
-msgstr "YouVersionမှကျမ်းစာအက်ပ်သည် ကျွန်ုပ်၏ဖန်သားပြင်ပင်မစာမျက်နှာပေါ်တွင် အမြဲတမ်းရှိနေသည်။ ဖတ်ရှု၊ ကြည့်ရှု၊ နားထောင်၊ မျှဝေပါ။ ဤအခမဲ့အက်ပ်ဖြင့် အားလုံးလုပ်နိုင်သည်။"
+msgstr "YouVersionမှကျမ်းစာအက်ပ်သည် ကျွန်ုပ်၏ပင်မဖန်သားပြင်ပေါ်မှာ အမြဲတမ်းရှိနေသည်။ ဖတ်ရှု၊ ကြည့်ရှု၊ နားထောင်၊ မျှဝေပါ။ ဤအခမဲ့အက်ပ်ဖြင့် အားလုံးလုပ်နိုင်သည်။"
 
 msgid "share.invite_twitter_direct"
 msgstr "သင့်မှာ @YouVersionမှကျမ်းစာအက်ပ်ရှိပါသလား။ ကျွန်ုပ်အလွန်နှစ်သက်သည်။ သင့်အတွက်လည်းထိုနည်းတူဖြစ်မည်ထင်ပါသည်။ သည်မှာ လင့် ရှိသည်။ - "
