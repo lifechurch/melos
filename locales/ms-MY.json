@@ -384,7 +384,7 @@
 	"Auth.note blurb": "Rupanya anda ingin mencatat nota tentang alkitab. Bagus! Nota-nota membantu anda mengingati dan mengaturkan pelajaran dari Firman Allah. Log masuk atau daftarkan akaun di bawah dan bermulalah!",
 	"Reader.chapter": "Bab",
 	"Reader.read reference": "Baca {reference}",
-	"Reader.read chapter": "Read full chapter",
+	"Reader.read chapter": "Membaca seluruh bab",
 	"Reader.plan title": "Pelan Bacaan dan Bahan Renungan Percuma",
 	"Reader.meta.mobile.title": "App Alkitab",
 	"Reader.meta.site.title": "Bible.com",
@@ -428,11 +428,11 @@
 	"Reader.verse action.draft": "Draf",
 	"Reader.verse action.save": "Simpan",
 	"Reader.verse action.add labels": "Tambahkan Label ...",
-	"Reader.verse action.no labels": "Anda tidak mempunyai sebarang label. Hanya mula menaip dan tekan Enter untuk menambah label baru kepada Bookmark ini. Sebaik sahaja anda membuat label baru, ia boleh didapati untuk anda untuk menambah mana-mana Bookmarks anda.",
+	"Reader.verse action.no labels": "Anda tidak mempunyai sebarang label. Mula menaip dan tekan Enter untuk menambah label baru kepada Bookmark ini. Sebaik sahaja anda membuat label baru, ia sedia ada untuk ditambahkan kepada mana-mana Bookmarks anda.",
 	"Reader.verse action.labels": "Label",
 	"Reader.verse action.add with count": "Tambah ( {count} )",
 	"Reader.verse action.alphabetical": "Menurut Abjad",
-	"Reader.verse action.count": "Count",
+	"Reader.verse action.count": "Kenaan",
 	"Reader.verse action.add color": "Tambahkan Warna",
-	"Reader.verse action.labels private": "Labels sentiasa swasta"
+	"Reader.verse action.labels private": "Label adalah sentiasa sulit"
 }
