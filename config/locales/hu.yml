@@ -1895,9 +1895,25 @@ hu:
                         save: "Esemény mentése"
                         signIn: "Jelentkezz be az esemény mentéséhez"
                         saved: "Esemény mentve"
+        Auth: 
+            sign up: "Regisztráció"
+            sign in: "Bejelentkezés"
+            sign up google: "Regisztrálj Google fiókkal"
+            continue google: "Folytatás Google-fiókkal"
+            sign up facebook: "Regisztráció Facebook fiókkal"
+            continue facebook: "Folytatás Facebookkal"
+            have an account: "Már van fiókod?"
+            sign up alternate: "Van már fiókod? <a href='%{sign_in_path}' target='_self'>Jelentkezz be</a>"
+            plan blurb: "Úgy tűnik el akarsz kezdeni egy olvasási tervet. Remek! A tervek segítségével a Bibliát a mindennapjaid részévé teheted. Jelenkezz be, vagy hozz létre egy fiókot az alábbiakban és indulj el!"
+            bookmark blurb: "Úgy tűnik egy könyvjelzőt akarsz használni. Nagyszerű! A könyvjelzők segítségével nyomon követheted azon verseket, melyeket memorizálni, megosztani vagy kedvencként megjelölni szeretnél. Jelentkezz be, vagy készíts fiókot az alábbiakban és kezdd el!"
+            friends blurb: "Úgy tűnik a barátaiddal akarsz értekezni. Remek ötlet! Meg tudjátok osztani amit tanultok és segíthetitek egymást az olvasási célok elérésében. Jelentkezz be, vagy készíts fiókot az alábbiakban és kezdd el!"
+            share blurb: "Úgy tűnik, meg akarsz osztani egy Igét. Nagyszerű! A Facebookon vagy a Twitteren meg tudsz osztani igeverseket. Jelentkezz be vagy hozz létre lent egy fiókot és kezdheted!"
+            highlight blurb: "Úgy tűnik ki akarsz emelni egy bibliai részt. Nagyszerű! A kiemelés segít rendszerezni és nyomon követni kedvenc verseidet. Jelentkezz be, vagy hozz létre egy fiókot az alábbiakban és kezdd el!"
+            note blurb: "Úgy tűnik jegyzetelni szeretnél az igével kapcsolatban. Jó gondolat! A jegyzetek segíthetnek emlékezni és rendszerezni Isten Igéjében felfedezett igazságokat. Jelenkezz be, vagy hozz létre egy fiókot az alábbiakban és kezdd el!"
         Reader: 
             chapter: "Fejezet"
             read reference: "%{reference} olvasása"
+            read chapter: "Egész fejezet elolvasása"
             plan title: "Ingyenes olvasási tervek és áhítatok"
             meta: 
                 mobile: 

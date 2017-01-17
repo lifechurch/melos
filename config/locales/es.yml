@@ -1895,9 +1895,25 @@ es:
                         save: "Guardar evento"
                         signIn: "Iniciar sesión para guardar el evento"
                         saved: "Evento guardado"
+        Auth: 
+            sign up: "Registrarte"
+            sign in: "Iniciar sesión"
+            sign up google: "Regístrese con Google"
+            continue google: "Continuar con Google"
+            sign up facebook: "Ingresar utilizando Facebook"
+            continue facebook: "Continuar con Facebook"
+            have an account: "¿Ya tiene una cuenta?"
+            sign up alternate: "¿Ya tienes una cuenta? <a href='%{sign_in_path}' target='_self'>Ingresa</a>"
+            plan blurb: "Parece que usted quiere iniciar un Plan de Lectura. ¡Genial! Los planes le pueden ayudar a hacer de la Biblia parte de su vida diaria. ¡Ingrese, o cree una cuenta a continuación, e inicie esta maravillosa experiencia!"
+            bookmark blurb: "Parece que usted quiere usar un marcador. ¡Fantástico! Los marcadores  le ayudan a mantener un registro de los versículos que usted quiere memorizar, compartir, o marcar como favoritos. ¡Ingrese, o cree una cuenta a continuación, e inicie esta maravillosa experiencia!"
+            friends blurb: "Parece que usted desea interactuar con Amigos. ¡Buena idea! Usted será capaz de compartir lo que está aprendiendo y ayudar a otros a mantenerse enfocados en las metas de lectura. ¡Ingrese, o cree una cuenta a continuación, e inicie esta maravillosa experiencia!"
+            share blurb: "Parece que usted desea compartir las Escrituras. ¡Grandioso! Podrá compartirlas vía Facebook y Twitter.  Para iniciar ingrese, o cree su cuenta a continuación."
+            highlight blurb: "Parece que usted quiere resaltar las Escrituras. !Grandioso! Los resaltadores le ayudarán a organizar y mantener un seguimiento de sus versículos favoritos. Entre o inicie una cuenta abajo, y ¡comience!"
+            note blurb: "Parece que usted quiere tomar una nota acerca de Las Escrituras. ¡Muy bien pensado! Las Notas le pueden ayudar a recordar y organizar la verdad que usted descubra en la Palabra de Dios. Entre o inicie una cuenta abajo, y ¡comience!"
         Reader: 
             chapter: "Capítulo"
             read reference: "Lea %{reference}"
+            read chapter: "Leer el capítulo completo"
             plan title: "PLANES DE LECTURA Y DEVOCIONALES GRATIS"
             meta: 
                 mobile: 

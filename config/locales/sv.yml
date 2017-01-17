@@ -1895,9 +1895,25 @@ sv:
                         save: "Spara evenemang"
                         signIn: "Logga in för att spara händelse"
                         saved: "Händelse sparad"
+        Auth: 
+            sign up: "Skapa ett konto"
+            sign in: "Logga in"
+            sign up google: "Registrera med Google"
+            continue google: "Fortsätt med Google"
+            sign up facebook: "Registrera dig via Facebook"
+            continue facebook: "Fortsätt med Facebook"
+            have an account: "Har du redan ett konto?"
+            sign up alternate: "Har redan ett konto? <a href='%{sign_in_path}' target='_self'>Logga in</a>"
+            plan blurb: "Det ser ut som att du vill starta en läsplan. Smart! Planer kan hjälpa dig att göra Bibeln till en del av din vardag. Logga in eller skapa ett konto nedan och kom igång!"
+            bookmark blurb: "Det ser ut som att du vill använda bokmärken. Fantastiskt! Bokmärken hjälper dig att hålla ordning på verser du vill komma ihåg eller markera som favoriter. Logga in eller skapa ett konto nedan och kom igång!"
+            friends blurb: "Det ser ut som att du vill interagera med dina vänner. Bra idé! Ni kommer kunna dela vad ni lär er och hjälpa varandra att följa läsplaner. Logga in eller skapa ett konto och kom igång!"
+            share blurb: "Det verka som att du vill dela ett bibelord. Fantastiskt! Du kommer kunna dela skriften via Facebook eller Twitter. Logga in eller skapa ett konto nedan för komma igång!"
+            highlight blurb: "Det ser ut som att du vill markera i Skriften. Fantastiskt! Markeringar hjälper dig att organisera och hålla reda på dina favoritverser. Logga in eller skapa ett konto nedan och kom igång!"
+            note blurb: "Det ser ut som att du vill skapa en anteckning om Skriften. Bra tänkt! Anteckningar kan hjälpa dig att komma ihåg och organisera sanningen du hittar i Guds Ord. Logga in eller skapa ett konto nedan och kom igång!"
         Reader: 
             chapter: "Kapitel"
             read reference: "Läs %{reference}"
+            read chapter: "Läs helt kapitel"
             plan title: "Gratis läsplaner och andakter"
             meta: 
                 mobile: 

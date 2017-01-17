@@ -1895,9 +1895,25 @@ pt-PT:
                         save: "Guardar Evento"
                         signIn: "Entrar para guardar evento"
                         saved: "Evento Guardado"
+        Auth: 
+            sign up: "Registe-se"
+            sign in: "Iniciar sessão"
+            sign up google: "Registe-se com o Google"
+            continue google: "Continuar com o Google"
+            sign up facebook: "Registe-se com o Facebook"
+            continue facebook: "Continuar com o Facebook"
+            have an account: "Já possui uma conta?"
+            sign up alternate: "Já tem uma conta? <a href='%{sign_in_path}' target='_self'>Entrar</a>"
+            plan blurb: "Parece que deseja iniciar um Plano de Leitura. Ótimo! Planos ajudam-no a fazer da Bíblia uma parte integrante do seu dia-a-dia. Autentique-se ou crie uma conta em baixo para começar!"
+            bookmark blurb: "Parece que deseja usar um marcador. Excelente! Marcadores ajudam-no a manter um registo de versículos que pretende memorizar, partilhar ou marcar como favoritos. Autentique-se ou crie uma conta em baixo para começar!"
+            friends blurb: "Parece que deseja interagir com Amigos. Grande Ideia! Terá a possibilidade de partilhar os seus novos conhecimentos e ajudar outros a cumprirem as suas metas de leitura. Autentique-se ou crie uma conta em baixo para começar!"
+            share blurb: "Parece que quer partilhar as Escrituras. Ótimo! Poderá partilhar as Escrituras através do Facebook ou Twitter. Entre ou crie uma conta em baixo para começar!"
+            highlight blurb: "Parece que pretende destacar texto das escrituras. Ótimo! Destaques ajudam a organizar e manter ordenados os seus versículos favoritos. Autentique-se ou crie uma conta em baixo e comece já!"
+            note blurb: "Parece que pretende criar uma nota sobre um texto das escrituras. Boa ideia! Notas ajudam a lembrar e organizar a verdade que descobre na Palavra de Deus. Autentique-se ou crie uma conta em baixo e comece já!"
         Reader: 
             chapter: "Capítulo"
             read reference: "Leia %{reference}"
+            read chapter: "Ler o capítulo completo"
             plan title: "Planos e Devocionais Gratuitos de Leitura da Bíblia"
             meta: 
                 mobile: 
