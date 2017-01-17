@@ -869,7 +869,7 @@
         labels label: "Emneord:"
         title: "Bokmerker"
         my labels: "Mine emneord"
-        remove label: "Fjern emneord"
+        remove label: "Fjern nøkkelord"
         all labels: "Vis alle"
         not found: "Bokmerker gir deg en rask tilgang på dine favoritt-tekster eller det siste kapittelet du leste i en spesiell bok. For å legge til et bokmerke velger du vers når du leser og trykker på ikonet øverst for bokmerke."
         other user not found: "%{username} har ikke lagret noen bokmerker ennå."
@@ -1605,7 +1605,7 @@
                         url: 
                             required: "URL er påkrevd."
                         title: 
-                            required: "URL-tekst er påkrevd."
+                            required: "URL-nøkkelord er påkrevd."
             EventHeader: 
                 status: 
                     published: "Publisert"
@@ -1751,7 +1751,7 @@
                                 select: "Velg bilde"
                             ContentTypeLink: 
                                 kindrid: "Dersom du ser etter en smart, enkel plattform for givertjeneste, <a href='%{url}'>prøv Kindrid</a>."
-                                label: "Lenke-tekst"
+                                label: "Lenke-nøkkelord"
                                 prompt: "Skriv noe her..."
                                 url: "URL"
                             ContentTypePlan: 
@@ -1895,7 +1895,31 @@
                         save: "Lagre event"
                         signIn: "Logg inn for å lagre Event"
                         saved: "Event Lagret"
+        Auth: 
+            sign up: "Registrer deg"
+            sign in: "Logg inn"
+            sign up google: "Registrer deg med Google"
+            continue google: "Fortsett med Google"
+            sign up facebook: "Registrer deg med Facebook"
+            continue facebook: "Fortsett med Facebook"
+            have an account: "Har du allerede en konto?"
+            sign up alternate: "Har du allerede en konto? <a href='%{sign_in_path}' target='_self'>Logg inn</a>"
+            plan blurb: "Det ser ut til at du ønsker å starte på en leseplan. Smart! Planer kan hjelpe deg å gjøre Bibelen til en del av ditt dagligliv. Logg inn eller registrer deg under og kom i gang!"
+            bookmark blurb: "Det ser ut til at du ønsker å bruke et bokmerke. Flott! Bokmerker hjelper deg å holde oversikten på vers du vil lære, dele eller merke som favoritter. Logg inn eller registrer deg under og kom i gang!"
+            friends blurb: "Det ser ut til at du ønsker å kommunisere med venner. God idé! Dere vil kunne dele det dere lærer og hjelpe hverandre å være på rett spor med målsettingene for lesing. Logg inn eller registrer deg under og kom i gang!"
+            share blurb: "Du ønsker visst å dele et bibelvers? Supert! Du kan dele via Facebook eller Twitter. Logg inn eller opprett en brukerkonto for å komme i gang!"
+            highlight blurb: "Det ser ut til at du vil utheve et skriftsted. Flott! Uthevelser hjelper deg å organisere og finne igjen dine favorittvers. Logg inn eller opprett en konto nedenfor, og kom i gang!"
+            note blurb: "Det ser ut til at du vil lage et notat til et skriftsted. Bra tenkt! Notater kan hjelpe deg å huske og organisere sannheter du oppdager i Guds Ord. Logg inn eller opprett en konto nedenfor, og kom igang!"
         Reader: 
+            chapter: "Kapittel"
+            read reference: "Les %{reference}"
+            read chapter: "Les hele kapittelet"
+            plan title: "Gratis leseplaner og andakter"
+            meta: 
+                mobile: 
+                    title: "Bibel-appen"
+                site: 
+                    title: "Bible.com"
             header: 
                 parallel: "Parallell"
                 parallel exit: "Gå ut av parallelt modus "
@@ -1911,6 +1935,7 @@
                 plans: "Leseplaner"
                 videos: "Videoer"
                 me: "Meg"
+                recent versions: "Nylig brukt"
             chapterpicker: 
                 book label: "Bok"
                 chapter label: "Kapittel"
@@ -1932,20 +1957,21 @@
                 users: "Brukere"
                 plans: "Leseplaner"
             version: 
-                learn more: "Learn More"
+                learn more: "Lær mer"
             verse action: 
-                copy: "Copy"
-                bookmark: "Bookmark"
-                note: "Note"
-                private: "Private"
-                public: "Public"
-                friends: "Friends"
-                draft: "Draft"
-                save: "Save"
-                add labels: "Add Labels…"
-                labels: "Labels"
-                add with count: "Add (%{count})"
-                alphabetical: "Alphabetical"
-                count: "Count"
-                add color: "Add Color"
-                labels private: "Labels are always private"
+                copy: "Kopier"
+                bookmark: "Bokmerke"
+                note: "Notat"
+                private: "Privat"
+                public: "Offentlig"
+                friends: "Venner"
+                draft: "Utkast"
+                save: "Lagre"
+                add labels: "Legg til nøkkelord…"
+                no labels: "Du har ingen nøkkelord ennå. Start simpelthen å skrive og trykk Enter for å føye et nytt nøkkelord til dette bokmerket. Straks du har opprettet et nytt nøkkelord, kan det føyes til hvilket som helst av bokmerkene dine."
+                labels: "Nøkkelord"
+                add with count: "Legg til (%{count})"
+                alphabetical: "Alfabetisk"
+                count: "Antall"
+                add color: "Legg til farge"
+                labels private: "Nøkkelord er alltid private"
