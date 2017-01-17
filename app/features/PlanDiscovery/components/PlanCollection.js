@@ -13,7 +13,23 @@ class PlanCollection extends Component {
 	loadMore(currentPosition, previousPosition) {
 		const { dispatch, collection } = this.props
 		if (collection.next_page > 0) {
-			dispatch(ActionCreators.collectionsItems({ ids: [collection.id], page: collection.next_page, uiFocus: true }))
+			new Promise((resolve, reject) => {
+				dispatch(ActionCreators.collectionsItems({ ids: [collection.id], page: collection.next_page, uiFocus: true })).then((collectionItems) => {
+					// if we have a collection inside a collection, the reducer is going to populate the collection with it's items based on the flag
+					var ids = []
+					collectionItems.collections[0].items.map((item) => {
+						if (item.type === 'collection') {
+							ids.push(item.id)
+						}
+					})
+
+					if (ids.length > 0) {
+						resolve(dispatch(ActionCreators.collectionsItems({ ids: ids, collectInception: true })))
+					} else {
+						resolve()
+					}
+				}, reject)
+			})
 		}
 	}
 
@@ -28,7 +44,7 @@ class PlanCollection extends Component {
 			collection.items.forEach((item) => {
 					let slide = null
 
-					if (item.type == 'collection') {
+					if (item.type == 'collection' && item.items && item.items.length > 0) {
 						carousels.push( <div key={`collection-${item.id}`}><Carousel localizedLink={localizedLink} isRtl={isRtl} carouselContent={item} carouselType={item.display} imageConfig={imageConfig}/></div> )
 					} else if (item.type == 'reading_plan') {
 						var slideLink = localizedLink(`/reading-plans/${item.id}`)

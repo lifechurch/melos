@@ -71,7 +71,13 @@ class EventEditContentContainer extends Component {
 		const { event, dispatch, _content } = this.props
 		const lastBibleLang = cookie.load('last_bible_lang')
 		const lastBibleBook = typeof lastBibleLang !== 'undefined' ? cookie.load('last_bible_book') : lastBibleLang
-		const lastBibleVersion = typeof lastBibleBook !== 'undefined' ? cookie.load('last_bible_version') : lastBibleBook
+		let lastBibleVersion = typeof lastBibleBook !== 'undefined' ? cookie.load('last_bible_version') : lastBibleBook
+
+		try {
+			if (typeof lastBibleVersion !== 'undefined') {
+  			lastBibleVersion = parseInt(lastBibleVersion)
+			}
+		} catch(e) {}
 
 		const newContent =Object.assign({},
 			createBaseContentObject(event, 'reference', _content.insertionPoint),

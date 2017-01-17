@@ -18,7 +18,7 @@ class CarouselGradient extends Component {
       prevArrow: <CarouselArrow dir='left' width={25} height={25} backColor='black'/>,
       nextArrow: <CarouselArrow dir='right' width={25} height={25} backColor='black'/>,
       responsive: [ {
-        breakpoint: 524, settings: { arrows: false }
+        breakpoint: 524, settings: { arrows: false, slidesToScroll: 1 }
       } ]
     }
 
