@@ -2,12 +2,8 @@
 @media @large-up {
 	.reader-header, .reader-header::after {
 		top: 70px;
-
 	}
-	.version-picker-container {
-		margin-right: 45px;
-	}
-	.chapter-picker-container {
+	.version-picker-container, .chapter-picker-container {
 		margin-right: 45px;
 	}
 	.waypoint {
@@ -18,12 +14,8 @@
 @media @medium-only {
 	.reader-header, .reader-header::after {
 		top: 44px;
-
 	}
-	.version-picker-container {
-		margin-right: 35px;
-	}
-	.chapter-picker-container {
+	.version-picker-container, .chapter-picker-container {
 		margin-right: 35px;
 	}
 	.waypoint {
@@ -36,29 +28,25 @@
 	.reader-header, .reader-header::after {
 		padding: 0 15px 0 15px;
 		top: 0px;
-
-	}
-	.picker-label {
-		width: 100%;
-	}
-	.version-picker-container {
-		width: 25%;
-	}
-	.chapter-picker-container {
-		width: 40%;
-	}
-	.audio-popup {
-		width: 20%;
-	}
-	.reader-settings {
-		width: 15%;
 	}
 	.waypoint {
 		top: 0px;
 		height: 1px;
 	}
-
 }
+
+.chapter-picker-container, .version-picker-container {
+	display: inline-flex;
+	.picker-label { flex: 0 1 auto; }
+	input { width: 100%; }
+}
+.version-picker-container {
+	input {
+		max-width: 90px;
+		min-width: 50px;
+	}
+}
+
 .reader-header {
 	position: fixed;
 	z-index: 10;

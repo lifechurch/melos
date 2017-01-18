@@ -63,6 +63,10 @@
 		overflow-y: overlay;
 	}
 	.version-list, .language-list {
+		@media @small-only {
+			max-height: 300px;
+		}
+
 		overflow-y: hidden;
 		// stupid firefox hack
 		@-moz-document url-prefix() {
@@ -101,15 +105,18 @@
 			}
 
 		}
-		li:hover {
-			.yv-hover;
+
+		@media @medium-up {
+			li:hover {
+				.yv-hover;
+			}
+			.focus {
+				.yv-hover;
+			}
 		}
 
 		.active {
 			.yv-active;
-		}
-		.focus {
-			.yv-hover;
 		}
 	}
 
@@ -141,11 +148,6 @@
 				border-bottom: @thin-grey-border;
 			}
 		}
-
-		.language-list {
-			max-height: 420px;
-		}
-
 
 	}
 
@@ -227,12 +229,6 @@
 
 
 .version-picker-container {
-	.picker-label {
-		// width: 150px;
-		input {
-			width: 80px;
-		}
-	}
 
 	.modal {
 		top: 52px;
