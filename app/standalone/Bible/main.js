@@ -72,8 +72,8 @@ function requireChapterData(nextState, replace, callback) {
 	}
 
 	const nextUsfm = `${nextBook}.${nextChapter}`
-	const hasVersionChanged = isInitialLoad || (nextVersion.toString() !== currentVersion.toString())
-	const hasChapterChanged = isInitialLoad || (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) || hasVersionChanged
+	const hasVersionChanged = isInitialLoad || (currentVersion ? (nextVersion.toString() !== currentVersion.toString()) : true)
+	const hasChapterChanged = isInitialLoad || hasVersionChanged || (nextUsfm ? (nextUsfm.toLowerCase() !== currentUsfm.toLowerCase()) : true)
 
 	if (!hasVersionChanged && !hasChapterChanged) {
 		callback()

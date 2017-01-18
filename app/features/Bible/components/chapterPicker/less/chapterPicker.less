@@ -73,7 +73,6 @@
 			overflow-y: overlay;
 		}
 		.book-list {
-			max-height: 460px;
 			overflow-y: hidden;
 			-webkit-overflow-scrolling: touch;
 
@@ -92,19 +91,32 @@
 					color: black;
 				}
 			}
-			li:hover {
-				.yv-hover;
+
+			@media @medium-up {
+				li:hover {
+					.yv-hover;
+				}
+				.focus {
+					.yv-hover;
+				}
 			}
 
 			.active {
 				.yv-active;
 			}
-			.focus {
-				.yv-hover;
-			}
 		}
 	}
 
+	@media @medium-up {
+		.book-list, .chapter-list {
+			max-height: 460px;
+		}
+	}
+	@media @small-only {
+		.book-list, .chapter-list {
+			max-height: 420px;
+		}
+	}
 
 	// chapters *****************************************
 	.picker-error {
@@ -150,7 +162,6 @@
 			overflow-y: overlay;
 		}
 		.chapter-list {
-			max-height: 460px;
 			overflow: hidden;
 			-webkit-overflow-scrolling: touch;
 
