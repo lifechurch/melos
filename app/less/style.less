@@ -2286,13 +2286,22 @@ body.c_references.a_show {
 	width: 100%;
 }
 
+
 @media @small-only, @medium-only {
 	// center all the modals horizontally when small or medium viewport
+	html, body {
+		height: 100%;
+	}
+
 	.modal {
 		margin: 0 !important;
 		.absolute-horizontal-center;
 	}
-
+	.note.f {
+		.body {
+			.absolute-horizontal-center !important;
+		}
+	}
 	#current-ui-view.modal-open {
 		background-color: @background-grey;
 	}

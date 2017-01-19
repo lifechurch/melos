@@ -62,12 +62,17 @@
 	.version-list:hover, .language-list:hover {
 		overflow-y: overlay;
 	}
+
 	.version-list, .language-list {
 		@media @small-only {
-			max-height: 300px;
+			max-height: 320px;
+			overflow-y: scroll;
+			overflow-x: hidden;
 		}
-
-		overflow-y: hidden;
+		@media @medium-up {
+			max-height: 420px;
+			overflow-y: hidden;
+		}
 		// stupid firefox hack
 		@-moz-document url-prefix() {
 			overflow-y: scroll !important;
@@ -165,7 +170,6 @@
 		}
 
 		.version-list {
-			max-height: 460px;
 			min-height: 55px;
 		}
 
