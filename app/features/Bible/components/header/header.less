@@ -26,12 +26,14 @@
 }
 @media @small-only {
 	.reader-header, .reader-header::after {
-		padding: 0 15px 0 15px;
 		top: 0px;
 	}
 	.waypoint {
 		top: 0px;
 		height: 1px;
+	}
+	.reader-settings {
+		display: none;
 	}
 }
 
@@ -41,7 +43,7 @@
 	input { width: 100%; }
 }
 .version-picker-container {
-	input {
+	.picker-label input {
 		max-width: 90px;
 		min-width: 50px;
 	}

@@ -73,7 +73,6 @@
 			overflow-y: overlay;
 		}
 		.book-list {
-			overflow-y: hidden;
 			-webkit-overflow-scrolling: touch;
 
 			// stupid firefox hack
@@ -110,13 +109,16 @@
 	@media @medium-up {
 		.book-list, .chapter-list {
 			max-height: 460px;
+			overflow-y: hidden;
 		}
 	}
 	@media @small-only {
 		.book-list, .chapter-list {
 			max-height: 420px;
+			overflow-y: scroll;
 		}
 	}
+
 
 	// chapters *****************************************
 	.picker-error {
