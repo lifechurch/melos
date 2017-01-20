@@ -1,6 +1,7 @@
 @import (inline) "../../node_modules/react-datepicker/dist/react-datepicker.css";
 @import (inline) "../../node_modules/quill/dist/quill.base.css";
 @import (inline) "../../node_modules/quill/dist/quill.snow.css";
+@import (inline) "../../node_modules/react-custom-scroll/src/main/customScroll.css";
 @import "constants";
 @import "typography";
 
@@ -2285,8 +2286,11 @@ ul.language-selector li {
 body.c_references.a_show {
 	width: 100%;
 }
-
-
+.custom-scrollbar {
+	.inner-handle {
+		background-color: @background-grey;
+	}
+}
 @media @small-only, @medium-only {
 	// center all the modals horizontally when small or medium viewport
 	html, body {
