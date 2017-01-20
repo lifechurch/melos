@@ -63,17 +63,10 @@ class DropdownTransition extends Component {
 		const { show } = this.props
 
 		if (typeof window !== 'undefined' && show !== prevProps.show) {
-			// prevent the body from scrolling
-			// and maintain scroll position
-			let body = document.getElementsByTagName("body")[0]
-			let currPos = parseInt(body.scrollTop)
-
 			if (show) {
 				document.getElementById('current-ui-view').classList.add('modal-open')
-				body.setAttribute('style', `overflow: hidden; position: fixed; top: -${currPos}px;`)
 			} else {
 				document.getElementById('current-ui-view').classList.remove('modal-open')
-				body.setAttribute('style', `overflow: scroll; position: static;`)
 			}
 		}
 	}
