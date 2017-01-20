@@ -49,7 +49,7 @@ class VersionPickerModal extends Component {
 					<div className='filter-langs'>
 						<input value={inputValue} onChange={handleChange.bind(this)} placeholder={intl.formatMessage({ id: 'Reader.versionpicker.filter languages' })} />
 					</div>
-					<CustomScroll>
+					<CustomScroll allowOuterScroll={false}>
 						<div className='language-list'>
 							<Languages
 								list={languageList}
@@ -127,7 +127,7 @@ class VersionPickerModal extends Component {
 					<div className='picker-error'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
-					<CustomScroll>
+					<CustomScroll allowOuterScroll={false}>
 						{ versions }
 					</CustomScroll>
 				</div>

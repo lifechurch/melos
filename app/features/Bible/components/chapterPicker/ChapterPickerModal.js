@@ -67,7 +67,7 @@ class ChapterPickerModal extends Component {
 			books = (
 				<div className='book-container'>
 					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.chapterpicker.book label" /></div>
-					<CustomScroll>
+					<CustomScroll allowOuterScroll={false}>
 						<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} focus={bookFocus} listSelectionIndex={booklistSelectionIndex} onMouseOver={onMouseOver}/>
 					</CustomScroll>
 				</div>
@@ -96,7 +96,7 @@ class ChapterPickerModal extends Component {
 					<div className='picker-error'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
-					<CustomScroll>
+					<CustomScroll allowOuterScroll={false}>
 						<Chapters
 							params={this.props.params}
 							localizedLink={this.props.localizedLink}
