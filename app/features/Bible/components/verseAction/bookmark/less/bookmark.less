@@ -58,9 +58,25 @@
 }
 
 
-
+@media @small-only {
+	.labels-modal {
+		width: 320px;
+	}
+	.labels {
+		input {
+			width: 100%;
+		}
+	}
+	.color-trigger-button {
+		font-size: 13px;
+	}
+}
+@media @medium-up {
+	.labels-modal {
+		width: 500px;
+	}
+}
 .labels-modal {
-	width: 500px;
 	z-index: 10;
 	background-color: white;
 	border: @thin-grey-border;

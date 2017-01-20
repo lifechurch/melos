@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import Languages from './Languages'
 import Versions from './Versions'
+import CustomScroll from 'react-custom-scroll'
 
 class VersionPickerModal extends Component {
 
@@ -48,14 +49,16 @@ class VersionPickerModal extends Component {
 					<div className='filter-langs'>
 						<input value={inputValue} onChange={handleChange.bind(this)} placeholder={intl.formatMessage({ id: 'Reader.versionpicker.filter languages' })} />
 					</div>
-					<div className='language-list'>
-						<Languages
-							list={languageList}
-							onSelect={getLanguage}
-							initialSelection={selectedLanguage}
-							header={null}
-						/>
-					</div>
+					<CustomScroll>
+						<div className='language-list'>
+							<Languages
+								list={languageList}
+								onSelect={getLanguage}
+								initialSelection={selectedLanguage}
+								header={null}
+							/>
+						</div>
+					</CustomScroll>
 				</div>
 			)
 		}
@@ -124,7 +127,9 @@ class VersionPickerModal extends Component {
 					<div className='picker-error'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
-					{ versions }
+					<CustomScroll>
+						{ versions }
+					</CustomScroll>
 				</div>
 			)
 		}

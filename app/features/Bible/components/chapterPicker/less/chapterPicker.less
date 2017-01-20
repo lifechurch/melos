@@ -69,17 +69,7 @@
 			width: 320px;
 		}
 
-		.book-list:hover {
-			overflow-y: overlay;
-		}
 		.book-list {
-			-webkit-overflow-scrolling: touch;
-
-			// stupid firefox hack
-			@-moz-document url-prefix() {
-				overflow-y: scroll !important;
-			}
-
 			font-size: @list-font-size;
 			margin-left: 0;
 			margin-right: -1px;
@@ -109,16 +99,17 @@
 	@media @medium-up {
 		.book-list, .chapter-list {
 			max-height: 460px;
-			overflow-y: hidden;
 		}
 	}
 	@media @small-only {
 		.book-list, .chapter-list {
 			max-height: 420px;
-			overflow-y: scroll;
 		}
 	}
-
+	.book-list, .chapter-list {
+		// overflow for scroll is handled by custom scroll bar component wrapper
+		-webkit-overflow-scrolling: touch;
+	}
 
 	// chapters *****************************************
 	.picker-error {
@@ -154,24 +145,11 @@
 		border-left: @thin-grey-border;
 		margin-right: -5px;
 
-		overflow: hidden;
-
 		.header {
 			width: 314px;
 		}
 
-		.chapter-list:hover {
-			overflow-y: overlay;
-		}
 		.chapter-list {
-			overflow: hidden;
-			-webkit-overflow-scrolling: touch;
-
-			// stupid firefox hack
-			@-moz-document url-prefix() {
-				overflow-y: scroll !important;
-			}
-
 			font-size: @list-font-size;
 			display: inline-flex;
 			flex-wrap: wrap;
