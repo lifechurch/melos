@@ -15,10 +15,13 @@
 		display: block;
 	}
 }
+@media @medium-up {
+	.version-picker-modal {
+		max-height: 490px;
+	}
+}
 .version-picker-modal {
-
 	display: inline-flex;
-	max-height: 490px;
 	border-radius: @default-radius @default-radius 0px 0px;
 	border: @thin-grey-border;
 	background-color: white;
@@ -60,11 +63,9 @@
 
 
 	.version-list, .language-list {
+		// max height for mobile is handled by the bible component with viewport utils
 		@media @medium-up {
 			max-height: 420px;
-		}
-		@media @small-only {
-			max-height: 320px;
 		}
 
 		font-size: @list-font-size;

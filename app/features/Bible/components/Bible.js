@@ -12,6 +12,7 @@ import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 // import LabelList from './verseAction/bookmark/LabelList'
 import LocalStore from '../../../lib/localStore'
+import ViewportUtils from '../../../lib/viewportUtils'
 import RecentVersions from '../lib/RecentVersions'
 // import LabelSelector from './verseAction/bookmark/LabelSelector'
 import Header from './header/Header'
@@ -72,6 +73,7 @@ class Bible extends Component {
 			db: null,
 			results: [],
 			versions: [],
+			extraStyle: '',
 			fontSize: LocalStore.getIn("reader.settings.fontSize") || DEFAULT_READER_SETTINGS.fontSize,
 			fontFamily: LocalStore.getIn("reader.settings.fontFamily") || DEFAULT_READER_SETTINGS.fontFamily,
 			showFootnotes: typeof showFootnoes === "boolean" ? showFootnoes : DEFAULT_READER_SETTINGS.showFootnotes,
@@ -86,7 +88,7 @@ class Bible extends Component {
 
 		this.header = null
 		this.content = null
-
+		this.extraStyle = null
 		this.chapterPicker = null
 		this.versionPicker = null
 
@@ -224,6 +226,30 @@ class Bible extends Component {
 		this.setState({ [stateKey]: value })
 	}
 
+	updateMobileStyling = () => {
+		let viewport = this.viewportUtils.getViewport()
+		let listPos = this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
+		console.log(viewport, listPos, viewport.height - listPos.top - 52)
+		this.setState({
+			extraStyle: `
+				@media only screen and (max-width: 37.438em) {
+					.book-list, .chapter-list {
+						max-height: ${viewport.height - listPos.top - 82}px !important;
+					}
+					.book-container, .language-container, .version-container {
+						width: ${viewport.width}px !important;
+					}
+					.language-list {
+						max-height: ${viewport.height - listPos.top - 129}px !important;
+					}
+					.version-list {
+						max-height: ${viewport.height - listPos.top - 144}px !important;
+					}
+				}
+			`
+		})
+	}
+
 	componentDidMount() {
 		const { dispatch, bible, auth } = this.props
 
@@ -235,6 +261,9 @@ class Bible extends Component {
 
 		this.recentVersions.syncVersions(bible.settings)
 		this.updateRecentVersions()
+		this.viewportUtils = new ViewportUtils()
+		this.updateMobileStyling()
+		this.viewportUtils.registerListener('resize', this.updateMobileStyling)
 	}
 
 
@@ -369,6 +398,9 @@ class Bible extends Component {
 					deletableColors={this.state.deletableColors}
 					verseColors={bible.verseColors}
 				/>
+				<style>
+					{ this.state.extraStyle }
+				</style>
 			</div>
 		)
 	}

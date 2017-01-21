@@ -17,12 +17,16 @@
 		}
 	}
 }
+@media @medium-up {
+	.chapter-picker-modal {
+		max-height: 490px;
+	}
+}
 .chapter-picker-modal {
 
 	background-color: white;
 
 	display: inline-flex;
-	max-height: 490px;
 	border-radius: @default-radius @default-radius 0px 0px;
 	border: @thin-grey-border;
 
@@ -98,12 +102,8 @@
 
 	@media @medium-up {
 		.book-list, .chapter-list {
+			// max height for mobile is handled by the bible component with viewport utils
 			max-height: 460px;
-		}
-	}
-	@media @small-only {
-		.book-list, .chapter-list {
-			max-height: 420px;
 		}
 	}
 
