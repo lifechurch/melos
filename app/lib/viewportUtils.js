@@ -5,6 +5,27 @@
 export default class viewportUtils {
 
 	constructor() {
+
+	}
+
+	/**
+	 * addEventListener to the window object
+	 *
+	 * @param      {string}    eventListener  The event listener name
+	 * @param      {Function}  callback       The callback function
+	 */
+	registerListener(eventListener, callback) {
+		if (typeof window !== 'undefined') {
+			window.addEventListener(eventListener, callback)
+		}
+	}
+
+	/**
+	 * instead of doing this in the constructor, we'll do it explicitly so we don't have to
+	 * wastefully add a listener (there is also a warning in chrome wanting to set a passive attr
+	 * on the listener to improve scrolling performance, but it's currently not cross-browser supported - jan.22.17)
+	 */
+	initIsUsingTouchScreen() {
 		this.isUsingTouchScreen = false
 
 		this.registerListener('touchstart', () => {
@@ -15,24 +36,17 @@ export default class viewportUtils {
 	}
 
 	/**
-	 * addEventListener to the window object
-	 *
-	 * @param      {string}    eventListener  The event listener string
-	 * @param      {Function}  callback       The callback function
-	 */
-	registerListener(eventListener, callback) {
-		if (typeof window !== 'undefined') {
-			window.addEventListener(eventListener, callback)
-		}
-	}
-
-	/**
 	 * Determines if using touch screen.
 	 *
 	 * @return     {boolean}  True if using touch screen, False otherwise.
 	 */
 	isUsingTouchScreen() {
-		return this.isUsingTouchScreen
+		if (typeof this.isUsingTouchScreen !== 'undefined') {
+			return this.isUsingTouchScreen
+		} else {
+			console.log('Please initialize this functionality with initIsUsingTouchScreen')
+			return null
+		}
 	}
 
 	/**
@@ -62,7 +76,7 @@ export default class viewportUtils {
 			return null
 		}
 
-		// rect is a DOMRect object with eight properties: left, top, right, bottom, x, y, width, height
+		// DOMRect object with eight properties: left, top, right, bottom, x, y, width, height
 		return element.getBoundingClientRect()
 	}
 

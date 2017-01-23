@@ -137,8 +137,12 @@
 	}
 
 	.chapter-container {
-
-		width: 320px;
+		@media @small-only {
+			width: 322px;
+		}
+		@media @medium-up {
+			width: 320px;
+		}
 		border-left: @thin-grey-border;
 		margin-right: -5px;
 

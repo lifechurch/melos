@@ -109,14 +109,6 @@ class Bible extends Component {
 		})
 	}
 
-	// this handles the class toggling for book and chapter clicks on mobile
-	toggleChapterPickerList() {
-		(this.state.classes) == 'hide-chaps' ? this.setState({ classes: 'hide-books' }) : this.setState({ classes: 'hide-chaps' })
-	}
-	toggleVersionPickerList() {
-		(this.state.classes) == 'hide-langs' ? this.setState({ classes: 'hide-versions' }) : this.setState({ classes: 'hide-langs' })
-	}
-
 	handleVerseSelect(verseSelection) {
 		const { hosts, bible: { version: { id, local_abbreviation }, chapter: { reference: { human, usfm } }, verseColors }, dispatch } = this.props
 		const refUrl = `${hosts.railsHost}/${id}/${usfm}.${verseSelection.human}`
@@ -226,28 +218,60 @@ class Bible extends Component {
 		this.setState({ [stateKey]: value })
 	}
 
+	/**
+	 * this function is called on component mount, every screen resize, and when the versionpicker
+	 * is toggled (because when one of the lists are display:none, the calcs don't work for max-height)
+	 *
+	 * figures out the viewport size and styles the modals to fill the screen
+	 * if the user is on a mobile (small: <= 599 px) screen
+	 *
+	 */
 	updateMobileStyling = () => {
+		if (typeof window == 'undefined') {
+			return
+		}
+
 		let viewport = this.viewportUtils.getViewport()
-		let listPos = this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
-		console.log(viewport, listPos, viewport.height - listPos.top - 52)
-		this.setState({
-			extraStyle: `
-				@media only screen and (max-width: 37.438em) {
-					.book-list, .chapter-list {
-						max-height: ${viewport.height - listPos.top - 82}px !important;
+		// if we're actually going to use this style, let's do the calculations and set it
+		// i.e. we're on a mobile screen
+		if (parseInt(viewport.width) <= 599) {
+
+			// the modal is the absolute positioned element that shows the dropdowns
+			let modalPos = this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
+			// the header on mobile becomes fixed at the bottom, so we need the mobile to fill until that
+			let footerModal = this.viewportUtils.getElement(document.getElementById('fixed-page-header'))
+
+			// how much offset is there from modalPos.top and bookList.top?
+			// we need to bring that into the calculations so we don't set the height too high for the viewport
+			let bookList = document.getElementsByClassName('book-list')[0]
+			let bookContainer = document.getElementsByClassName('book-container')[0]
+			let bookOffset = Math.abs(this.viewportUtils.getElement(bookContainer).top - this.viewportUtils.getElement(bookList).top)
+
+			let versionList = document.getElementsByClassName('version-list')[0]
+			let versionContainer = document.getElementsByClassName('version-container')[0]
+			let versionOffset = Math.abs(this.viewportUtils.getElement(versionContainer).top - this.viewportUtils.getElement(versionList).top)
+
+			this.setState({
+				extraStyle: `
+					@media only screen and (max-width: 37.438em) {
+						.book-list, .chapter-list {
+							max-height: ${viewport.height - (modalPos.top + bookOffset + footerModal.height)}px !important;
+						}
+						.book-container, .language-container, .version-container {
+							width: ${viewport.width}px !important;
+						}
+						.language-list {
+							max-height: ${viewport.height - (modalPos.top + bookOffset + 40 + footerModal.height)}px !important;
+						}
+						.version-list {
+							max-height: ${viewport.height - (modalPos.top + versionOffset + footerModal.height)}px !important;
+						}
 					}
-					.book-container, .language-container, .version-container {
-						width: ${viewport.width}px !important;
-					}
-					.language-list {
-						max-height: ${viewport.height - listPos.top - 129}px !important;
-					}
-					.version-list {
-						max-height: ${viewport.height - listPos.top - 144}px !important;
-					}
-				}
-			`
-		})
+				`
+			})
+
+		}
+
 	}
 
 	componentDidMount() {
