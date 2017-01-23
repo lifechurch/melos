@@ -20,7 +20,6 @@
 	flex-direction: column;
 	align-items: center;
 	// this breaks on ie/edge
-	// justify-content: space-around;
 	max-height: 150px;
 
 	box-shadow: 0 0 5px 2px rgba(0,0,0,0.1);
@@ -192,12 +191,14 @@
 	}
 }
 .verse-action-create {
-	padding: 25px 0 250px 0;
+	padding: 25px 0 150px 0;
 	background-color: @light-grey;
 	height: 100%;
 	width: 100%;
-	overflow-y: scroll;
-	.yv-scroll-bar;
+
+	.custom-scrollbar {
+		right: -10px;
+	}
 
 	.heading {
 		display: inline-flex;
@@ -310,7 +311,9 @@
 	}
 }
 
-
+.note-create, .bookmark-create {
+	height: 100%;
+}
 
 
 

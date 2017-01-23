@@ -11,6 +11,7 @@ import NoteEditor from './note/NoteEditor'
 import Select from '../../../../components/Select'
 import ColorList from './ColorList'
 import Color from './Color'
+import CustomScroll from 'react-custom-scroll'
 
 class MomentCreate extends Component {
 
@@ -71,7 +72,7 @@ class MomentCreate extends Component {
 	handleClose = () => {
 		const { onClose } = this.props
 		if (typeof onClose === 'function') {
-			onClose()
+			onClose(true)
 		}
 	}
 
@@ -145,21 +146,6 @@ class MomentCreate extends Component {
 			addedLabels: Object.keys(labels),
 		})
 	}
-
-// 	clearLocalMomentData = () => {
-// 		// reset some stuff so it isn't there for the next moment create
-// 		this.setState({
-// 			addedLabels: null,
-// 			content: null,
-// 			selectedColor: null,
-// 			localVerses: {},
-// 			localRefs: [],
-// 		})
-
-// 		if (typeof this.labelSelector !== 'undefined' && this.labelSelector) {
-// 			this.labelSelector.resetSelection()
-// 		}
-// 	}
 
 	/**
 	 * on save button click. actually creates the moment
@@ -245,20 +231,21 @@ class MomentCreate extends Component {
 			if (kind == 'bookmark' && localVerses) {
 				createHeader = <FormattedMessage id='Reader.verse action.bookmark' />
 				contentDiv = (
-					<VerseCard verseContent={localVerses}>
-							<div className='small-10'>
-								<LabelSelector
-									byAlphabetical={labels.byAlphabetical}
-									byCount={labels.byCount}
-									updateLabels={this.updateLabels}
-									intl={intl}
-								// 	ref={(labelSelector) => { this.labelSelector = labelSelector }}
-								/>
-							</div>
-							<div className='small-2'>
-								{ colorsDiv }
-							</div>
-					</VerseCard>
+					<div className='bookmark-create'>
+						<VerseCard verseContent={localVerses}>
+								<div className='small-10'>
+									<LabelSelector
+										byAlphabetical={labels.byAlphabetical}
+										byCount={labels.byCount}
+										updateLabels={this.updateLabels}
+										intl={intl}
+									/>
+								</div>
+								<div className='small-2'>
+									{ colorsDiv }
+								</div>
+						</VerseCard>
+					</div>
 				)
 			} else if (kind == 'note' && localVerses) {
 				createHeader = <FormattedMessage id='Reader.verse action.note' />
@@ -281,21 +268,23 @@ class MomentCreate extends Component {
 
 		return (
 			<div className='verse-action-create'>
-				<div className='row large-6'>
-					<div className='heading vertical-center'>
-						<div className='columns medium-4 cancel'><XMark onClick={this.handleClose} width={18} height={18} /></div>
-						<div className='columns medium-4 title'>{ createHeader }</div>
-						<div className='columns medium-4 save'>
-							{
-								isLoggedIn ?
-								<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: "Reader.verse action.save"}) }</div>
-								:
-								null
-							}
+					<div className='row large-6'>
+						<div className='heading vertical-center'>
+							<div className='columns medium-4 cancel'><XMark onClick={this.handleClose} width={18} height={18} /></div>
+							<div className='columns medium-4 title'>{ createHeader }</div>
+							<div className='columns medium-4 save'>
+								{
+									isLoggedIn ?
+									<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: "Reader.verse action.save"}) }</div>
+									:
+									null
+								}
+							</div>
 						</div>
+						<CustomScroll allowOutsideScroll={false}>
+							{ contentDiv }
+						</CustomScroll>
 					</div>
-					{ contentDiv }
-				</div>
 			</div>
 		)
 	}

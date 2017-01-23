@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import ActionCreators from '../../../actions/creators'
 import LabelList from './LabelList'
+import CustomScroll from 'react-custom-scroll'
+
 
 class LabelsModal extends Component {
 
@@ -46,7 +48,9 @@ class LabelsModal extends Component {
 					<p className='title columns medium-4'><FormattedMessage id="Reader.verse action.labels" /></p>
 					<a className={`add columns medium-4 ${selected > 0 ? 'yv-green-link' : 'yv-gray-link'}`} onClick={addLabels}><FormattedMessage id="Reader.verse action.add with count" values={{ count: selected }} /></a>
 				</div>
-				{ labels }
+				<CustomScroll allowOutsideScroll={false}>
+					{ labels }
+				</CustomScroll>
 				<div className='footer'>
 					<div className={`filter-button vertical-center ${filterBy == 'alphabetical' ? 'active-button' : ''}`} onClick={() => this.setState({ filterBy: 'alphabetical' })}><FormattedMessage id='Reader.verse action.alphabetical' /></div>
 					<div className={`filter-button vertical-center ${filterBy == 'count' ? 'active-button' : ''}`} onClick={() => this.setState({ filterBy: 'count' })}><FormattedMessage id="Reader.verse action.count" /></div>

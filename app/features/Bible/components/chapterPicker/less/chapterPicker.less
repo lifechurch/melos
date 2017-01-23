@@ -30,8 +30,6 @@
 	border-radius: @default-radius @default-radius 0px 0px;
 	border: @thin-grey-border;
 
-	.yv-scroll-bar;
-
 	.header {
 		width: inherit;
 		background-color: @light-grey;
@@ -85,6 +83,19 @@
 				}
 			}
 
+
+
+		}
+	}
+
+	@media @medium-up {
+		.book-list, .chapter-list {
+			// max height for mobile is handled by the bible component with viewport utils
+			max-height: 460px;
+		}
+
+		.book-container, .chapter-container {
+
 			@media @medium-up {
 				li:hover {
 					.yv-hover;
@@ -93,17 +104,9 @@
 					.yv-hover;
 				}
 			}
-
 			.active {
 				.yv-active;
 			}
-		}
-	}
-
-	@media @medium-up {
-		.book-list, .chapter-list {
-			// max height for mobile is handled by the bible component with viewport utils
-			max-height: 460px;
 		}
 	}
 
@@ -176,16 +179,6 @@
 					.yv-text-ellipsis;
 				}
 
-			}
-			li:hover {
-				.yv-hover;
-			}
-
-			.active {
-				.yv-active;
-			}
-			.focus {
-				.yv-hover;
 			}
 		}
 	}
