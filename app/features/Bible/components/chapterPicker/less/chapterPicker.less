@@ -17,16 +17,18 @@
 		}
 	}
 }
+@media @medium-up {
+	.chapter-picker-modal {
+		max-height: 490px;
+	}
+}
 .chapter-picker-modal {
 
 	background-color: white;
 
 	display: inline-flex;
-	max-height: 490px;
 	border-radius: @default-radius @default-radius 0px 0px;
 	border: @thin-grey-border;
-
-	.yv-scroll-bar;
 
 	.header {
 		width: inherit;
@@ -81,6 +83,19 @@
 				}
 			}
 
+
+
+		}
+	}
+
+	@media @medium-up {
+		.book-list, .chapter-list {
+			// max height for mobile is handled by the bible component with viewport utils
+			max-height: 460px;
+		}
+
+		.book-container, .chapter-container {
+
 			@media @medium-up {
 				li:hover {
 					.yv-hover;
@@ -89,21 +104,9 @@
 					.yv-hover;
 				}
 			}
-
 			.active {
 				.yv-active;
 			}
-		}
-	}
-
-	@media @medium-up {
-		.book-list, .chapter-list {
-			max-height: 460px;
-		}
-	}
-	@media @small-only {
-		.book-list, .chapter-list {
-			max-height: 420px;
 		}
 	}
 
@@ -137,8 +140,12 @@
 	}
 
 	.chapter-container {
-
-		width: 320px;
+		@media @small-only {
+			width: 322px;
+		}
+		@media @medium-up {
+			width: 320px;
+		}
 		border-left: @thin-grey-border;
 		margin-right: -5px;
 
@@ -172,16 +179,6 @@
 					.yv-text-ellipsis;
 				}
 
-			}
-			li:hover {
-				.yv-hover;
-			}
-
-			.active {
-				.yv-active;
-			}
-			.focus {
-				.yv-hover;
 			}
 		}
 	}
