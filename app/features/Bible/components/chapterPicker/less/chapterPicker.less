@@ -93,20 +93,21 @@
 			// max height for mobile is handled by the bible component with viewport utils
 			max-height: 460px;
 		}
+	}
 
-		.book-container, .chapter-container {
+	.book-container, .chapter-container {
 
-			@media @medium-up {
-				li:hover {
-					.yv-hover;
-				}
-				.focus {
-					.yv-hover;
-				}
+		@media @medium-up {
+			li:hover {
+				.yv-hover;
 			}
-			.active {
-				.yv-active;
+			.focus {
+				.yv-hover;
 			}
+		}
+
+		.active {
+			.yv-active;
 		}
 	}
 
