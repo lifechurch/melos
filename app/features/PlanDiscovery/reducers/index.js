@@ -23,7 +23,7 @@ export default function plansDiscovery(state = {}, action) {
 		case type("recommendationsItemsRequest"):
 		case type("collectionsItemsRequest"):
 		case type("planSubscribeRequest"):
-		case type("userSubscriptionsRequest"):
+		// case type("userSubscriptionsRequest"):
 			if (action.params.uiFocus) {
 				return Immutable.fromJS(state).mergeDeep({ isFetching: true, hasErrors: false, errors: [], collection: { isFetching: true } }).toJS()
 			} else {
@@ -38,7 +38,7 @@ export default function plansDiscovery(state = {}, action) {
 		case type("savedItemsFailure"):
 		case type("collectionsItemsFailure"):
 		case type("planSubscribeFailure"):
-		case type("userSubscriptionsFailure"):
+		// case type("userSubscriptionsFailure"):
 			return Immutable.fromJS(state).mergeDeep({ isFetching: false, hasErrors: true, errors: action.errors, collection: { isFetching: false } }).toJS()
 
 		case type("recommendationsItemsFailure"):
@@ -134,12 +134,12 @@ export default function plansDiscovery(state = {}, action) {
 				var { reading_plans } = action.response
 				var items = state.items.slice(0)
 				// saved items and recommended are the same except saved doesn't come back with an id, so we set it to "saved" in discoverSuccess
-				var discoveryIndex = state.map[action.params.id]
+				var discoveryIndex = Array.isArray(state.map) ? state.map[action.params.id] : null
 
 				var reading_plans = action.response.reading_plans.map((plan) => {
 					var p = Immutable.fromJS(plan)
 
-					if (typeof discoveryIndex !== 'undefined') {
+					if (discoveryIndex !== null && typeof discoveryIndex !== 'undefined') {
 						p = p.mergeDeep({ title: plan.name["default"], type: 'reading_plan' })
 						// when slides are being built, if there are no images then when the slide checks for image_id, it'll be null
 						if (plan.images != null)  p = p.set('image_id', plan.id) // else plan.image_id doesn't exist
@@ -147,7 +147,11 @@ export default function plansDiscovery(state = {}, action) {
 
 					return p.toJS()
 				})
-				items[discoveryIndex] = Immutable.fromJS(items[discoveryIndex]).set('items', reading_plans).toJS()
+
+				if (discoveryIndex !== null && typeof discoveryIndex !== 'undefined') {
+					items[discoveryIndex] = Immutable.fromJS(items[discoveryIndex]).set('items', reading_plans).toJS()
+				}
+
 				return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], items }).toJS()
 			}
 

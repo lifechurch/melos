@@ -118,7 +118,46 @@ function requirePlanData(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireSavedPlanData, requireRecommendedPlanData)
+function requireSubscribedPlans(nextState, replace, callback) {
+	const currentState = store.getState()
+	const { auth: { userData: { userid } }, readingPlans: { subscribedPlans: { items } } } = currentState
+
+	if (Array.isArray(items)) {
+		callback()
+	} else {
+		store.dispatch(PlanDiscoveryActionCreators.items({ user_id: userid, page: 1 }, true)).then((d) => {
+			callback()
+		})
+	}
+}
+
+function requireSavedPlans(nextState, replace, callback) {
+	const currentState = store.getState()
+	const { readingPlans: { savedPlans: { items } } } = currentState
+
+	if (Array.isArray(items)) {
+		callback()
+	} else {
+		store.dispatch(PlanDiscoveryActionCreators.savedItems({ page: 1 }, true)).then((d) => {
+			callback()
+		})
+	}
+}
+
+function requireCompletedPlans(nextState, replace, callback) {
+	const currentState = store.getState()
+	const { auth: { userData: { userid } }, readingPlans: { completedPlans: { items } } } = currentState
+
+	if (Array.isArray(items)) {
+		callback()
+	} else {
+		store.dispatch(PlanDiscoveryActionCreators.completed({ user_id: userid, page: 1 }, true)).then((d) => {
+			callback()
+		})
+	}
+}
+
+const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireSavedPlanData, requireRecommendedPlanData, requireSubscribedPlans, requireSavedPlans, requireCompletedPlans)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale2 == "mn" ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>

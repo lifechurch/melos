@@ -247,21 +247,6 @@ const ActionCreators = {
 		}
 	},
 
-	userSubscriptions(params, auth) {
-		return {
-			params,
-			api_call: {
-				endpoint: 'reading-plans',
-				method: 'items',
-				version: '3.1',
-				auth: auth,
-				params: params,
-				http_method: 'get',
-				types: [ type('userSubscriptionsRequest'), type('userSubscriptionsSuccess'), type('userSubscriptionsFailure') ]
-			}
-		}
-	},
-
 	readingplanSaveforlater(params, auth) {
 		return {
 			params,
@@ -302,6 +287,36 @@ const ActionCreators = {
 				params: {},
 				http_method: 'get',
 				types: [ type('configurationRequest'), type('configurationSuccess'), type('configurationFailure') ]
+			}
+		}
+	},
+
+	items(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'items',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('itemsRequest'), type('itemsSuccess'), type('itemsFailure') ]
+			}
+		}
+	},
+
+	completed(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'completed',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('completedRequest'), type('completedSuccess'), type('completedFailure') ]
 			}
 		}
 	}

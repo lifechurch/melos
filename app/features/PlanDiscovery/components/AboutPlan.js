@@ -23,7 +23,7 @@ class AboutPlan extends Component {
 	}
 
 	render() {
-		const { readingPlan, imageConfig, auth, localizedLink, isRtl, params } = this.props
+		const { readingPlan, serverLanguageTag, imageConfig, auth, localizedLink, isRtl, params } = this.props
 
 		if (!(readingPlan && readingPlan.stats)) {
 			return (
@@ -33,7 +33,7 @@ class AboutPlan extends Component {
 
 		var friendsReading, friendsCompleted, completions, readingList, completedList, relatedCarousel = null
 		var publisherLink = (readingPlan.publisher_url) ? <a className='publisher' href={readingPlan.publisher_url}><FormattedMessage id='plans.about publisher'/></a> : null
-		var language_tag = params.lang || auth.userData.language_tag || 'en'
+		var language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 
 		if (readingPlan.related) relatedCarousel = (
 				<div className='row collapse'>

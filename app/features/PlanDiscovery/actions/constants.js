@@ -11,9 +11,11 @@ const constants = {
 	recommendationsItemsRequest: 'READING_PLANS_RECOMMENDATION_ITEMS_REQUEST',
 	recommendationsItemsSuccess: 'READING_PLANS_RECOMMENDATION_ITEMS_SUCCESS',
 	recommendationsItemsFailure: 'READING_PLANS_RECOMMENDATION_ITEMS_FAILURE',
+
 	savedItemsRequest: 'READING_PLANS_SAVED_ITEMS_REQUEST',
 	savedItemsSuccess: 'READING_PLANS_SAVED_ITEMS_SUCCESS',
 	savedItemsFailure: 'READING_PLANS_SAVED_ITEMS_FAILURE',
+
 	planInfoRequest: 'READING_PLANS_PLAN_INFO_REQUEST',
 	planInfoSuccess: 'READING_PLANS_PLAN_INFO_SUCCESS',
 	planInfoFailure: 'READING_PLANS_PLAN_INFO_FAILURE',
@@ -23,9 +25,7 @@ const constants = {
 	planSubscribeRequest: 'READING_PLANS_SUBSCRIBE_USER_REQUEST',
 	planSubscribeSuccess: 'READING_PLANS_SUBSCRIBE_USER_SUCCESS',
 	planSubscribeFailure: 'READING_PLANS_SUBSCRIBE_USER_FAILURE',
-	userSubscriptionsRequest: 'READING_PLANS_USER_SUBSCRIPTIONS_REQUEST',
-	userSubscriptionsSuccess: 'READING_PLANS_USER_SUBSCRIPTIONS_SUCCESS',
-	userSubscriptionsFailure: 'READING_PLANS_USER_SUBSCRIPTIONS_FAILURE',
+
 	planSaveforlaterRequest: 'READING_PLANS_SAVEFORLATER_REQUEST',
 	planSaveforlaterSuccess: 'READING_PLANS_SAVEFORLATER_SUCCESS',
 	planSaveforlaterFailure: 'READING_PLANS_SAVEFORLATER_FAILURE',
@@ -34,7 +34,15 @@ const constants = {
 	planRemoveSaveFailure: 'READING_PLANS_REMOVE_SAVE_FAILURE',
 	configurationRequest: 'READING_PLANS_CONFIGURATION_REQUEST',
 	configurationSuccess: 'READING_PLANS_CONFIGURATION_SUCCESS',
-	configurationFailure: 'READING_PLANS_CONFIGURATION_FAILURE'
+	configurationFailure: 'READING_PLANS_CONFIGURATION_FAILURE',
+
+	itemsRequest: 'READING_PLANS_ITEMS_REQUEST',
+	itemsSuccess: 'READING_PLANS_ITEMS_SUCCESS',
+	itemsFailure: 'READING_PLANS_ITEMS_FAILURE',
+
+	completedRequest: 'READING_PLANS_COMPLETED_REQUEST',
+	completedSuccess: 'READING_PLANS_COMPLETED_SUCCESS',
+	completedFailure: 'READING_PLANS_COMPLETED_FAILURE'
 }
 
 export default function (key) {
