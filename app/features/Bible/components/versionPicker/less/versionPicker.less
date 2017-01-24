@@ -15,10 +15,13 @@
 		display: block;
 	}
 }
+@media @medium-up {
+	.version-picker-modal {
+		max-height: 490px;
+	}
+}
 .version-picker-modal {
-
 	display: inline-flex;
-	max-height: 490px;
 	border-radius: @default-radius @default-radius 0px 0px;
 	border: @thin-grey-border;
 	background-color: white;
@@ -59,18 +62,14 @@
 	}
 
 
-	.version-list:hover, .language-list:hover {
-		overflow-y: overlay;
-	}
 	.version-list, .language-list {
-		overflow-y: hidden;
-		// stupid firefox hack
-		@-moz-document url-prefix() {
-			overflow-y: scroll !important;
+		// max height for mobile is handled by the bible component with viewport utils
+		@media @medium-up {
+			max-height: 420px;
 		}
+
 		font-size: @list-font-size;
 		background-color: white;
-		-webkit-overflow-scrolling: touch;
 
 		.version-header, .language-header {
 			padding-left: 20px;
@@ -101,15 +100,18 @@
 			}
 
 		}
-		li:hover {
-			.yv-hover;
+
+		@media @medium-up {
+			li:hover {
+				.yv-hover;
+			}
+			.focus {
+				.yv-hover;
+			}
 		}
 
 		.active {
 			.yv-active;
-		}
-		.focus {
-			.yv-hover;
 		}
 	}
 
@@ -142,11 +144,6 @@
 			}
 		}
 
-		.language-list {
-			max-height: 420px;
-		}
-
-
 	}
 
 
@@ -163,7 +160,6 @@
 		}
 
 		.version-list {
-			max-height: 460px;
 			min-height: 55px;
 		}
 
@@ -227,12 +223,6 @@
 
 
 .version-picker-container {
-	.picker-label {
-		// width: 150px;
-		input {
-			width: 80px;
-		}
-	}
 
 	.modal {
 		top: 52px;

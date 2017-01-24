@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl'
 import Books from './Books'
 import Chapters from './Chapters'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import CustomScroll from 'react-custom-scroll'
 
 class ChapterPickerModal extends Component {
 
@@ -66,7 +67,9 @@ class ChapterPickerModal extends Component {
 			books = (
 				<div className='book-container'>
 					<div className='header vertical-center horizontal-center'><FormattedMessage id="Reader.chapterpicker.book label" /></div>
-					<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} focus={bookFocus} listSelectionIndex={booklistSelectionIndex} onMouseOver={onMouseOver}/>
+					<CustomScroll allowOuterScroll={false}>
+						<Books list={bookList} onSelect={getBook} initialSelection={selectedBook} focus={bookFocus} listSelectionIndex={booklistSelectionIndex} onMouseOver={onMouseOver}/>
+					</CustomScroll>
 				</div>
 			)
 		}
@@ -93,17 +96,19 @@ class ChapterPickerModal extends Component {
 					<div className='picker-error'>
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
-					<Chapters
-						params={this.props.params}
-						localizedLink={this.props.localizedLink}
-						list={chapterList}
-						selectedChapter={selectedChapter}
-						listSelectionIndex={chapterlistSelectionIndex}
-						focus={chapterFocus}
-						onMouseOver={onMouseOver}
-						alert={alert}
-						versionID={versionID}
-					/>
+					<CustomScroll allowOuterScroll={false}>
+						<Chapters
+							params={this.props.params}
+							localizedLink={this.props.localizedLink}
+							list={chapterList}
+							selectedChapter={selectedChapter}
+							listSelectionIndex={chapterlistSelectionIndex}
+							focus={chapterFocus}
+							onMouseOver={onMouseOver}
+							alert={alert}
+							versionID={versionID}
+						/>
+					</CustomScroll>
 				</div>
 			)
 		}

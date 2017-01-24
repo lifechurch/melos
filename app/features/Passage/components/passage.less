@@ -44,6 +44,26 @@
 			}
 		}
 
+		.copyright {
+			font-size: 0.648em;
+			color: #777;
+			margin-top: 1.42857rem;
+		}
+
+		@media @small-only {
+			.buttons {
+				flex-direction: column;
+
+				span {
+					font-size: 13px;
+				}
+			}
+		}
+		@media @medium-up {
+			.buttons {
+				flex-direction: row;
+			}
+		}
 		.buttons {
 			display: inline-flex;
 			flex-wrap: wrap;
@@ -56,7 +76,47 @@
 				color: @font-grey;
 				margin-right: 15px;
 			}
+
+			@media @medium-up {
+				.va-share-panel-wrapper {
+					bottom: 21px;
+					left: 82px;
+					.va-share-panel {
+						border: none;
+						padding: 5px;
+						border-radius: 0;
+						.dropdown-transform-hide-left !important;
+
+						.va-share-header {
+							display: none;
+						}
+					}
+					.va-share-open {
+						.dropdown-transform-show !important;
+					}
+				}
+			}
+			@media @small-only {
+				.va-share-panel-wrapper {
+					bottom: -30px;
+					left: 0;
+					.va-share-panel {
+						border: none;
+						padding: 5px;
+						border-radius: 0;
+						.dropdown-transform-hide-up !important;
+
+						.va-share-header {
+							display: none;
+						}
+					}
+					.va-share-open {
+						.dropdown-transform-show !important;
+					}
+				}
+			}
 		}
+
 		.title {
 			font-size: 24px;
 			margin: 0 25px 75px 25px;
@@ -67,10 +127,17 @@
 
 
 
-
+	@media @medium-up {
+		.verses {
+			margin-top: 60px;
+		}
+	}
+	@media @small-only {
+		.verses {
+			margin-top: 25px;
+		}
+	}
 	.verses {
-		margin-top: 60px;
-
 		.verse-container {
 			padding: 15px;
 		}
@@ -95,7 +162,6 @@
 		  position: absolute;
 		  z-index: -1;
 		  width: 100%;
-		  /*height: 100%;*/
 			top: 0;
 			left: 0;
 		  opacity: 0;
@@ -123,6 +189,33 @@
 		.heading {
 			width: 100%;
 			text-align: center;
+
+			.plans-title {
+				@media @medium-up {
+					width: 75%;
+				}
+				@media @small-only {
+					width: 95%;
+				}
+				margin: auto;
+			}
+			.plans-subtitle {
+				@media @medium-up {
+					width: 40%;
+				}
+				@media @small-only {
+					width: 75%;
+				}
+				margin: auto;
+				padding-top: 10px;
+				letter-spacing: 1;
+				font-weight: normal;
+				text-transform: initial;
+		    font-size: 13px;
+		    color: #000000;
+		    line-height: 20px;
+		    font-family: inherit;
+			}
 		}
 		li {
 			padding: 15px;

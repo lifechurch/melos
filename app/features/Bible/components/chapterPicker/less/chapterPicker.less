@@ -17,24 +17,23 @@
 		}
 	}
 }
+@media @medium-up {
+	.chapter-picker-modal {
+		max-height: 490px;
+	}
+}
 .chapter-picker-modal {
 
 	background-color: white;
-
 	display: inline-flex;
-	max-height: 490px;
 	border-radius: @default-radius @default-radius 0px 0px;
 	border: @thin-grey-border;
-
-	.yv-scroll-bar;
 
 	.header {
 		width: inherit;
 		background-color: @light-grey;
 		border-bottom: @thin-grey-border;
 		max-height: 30px;
-
-
 
 		.prev {
 			display: none;
@@ -69,19 +68,7 @@
 			width: 320px;
 		}
 
-		.book-list:hover {
-			overflow-y: overlay;
-		}
 		.book-list {
-			max-height: 460px;
-			overflow-y: hidden;
-			-webkit-overflow-scrolling: touch;
-
-			// stupid firefox hack
-			@-moz-document url-prefix() {
-				overflow-y: scroll !important;
-			}
-
 			font-size: @list-font-size;
 			margin-left: 0;
 			margin-right: -1px;
@@ -92,16 +79,7 @@
 					color: black;
 				}
 			}
-			li:hover {
-				.yv-hover;
-			}
 
-			.active {
-				.yv-active;
-			}
-			.focus {
-				.yv-hover;
-			}
 		}
 	}
 
@@ -135,30 +113,20 @@
 	}
 
 	.chapter-container {
-
-		width: 320px;
+		@media @small-only {
+			width: 322px;
+		}
+		@media @medium-up {
+			width: 320px;
+		}
 		border-left: @thin-grey-border;
 		margin-right: -5px;
-
-		overflow: hidden;
 
 		.header {
 			width: 314px;
 		}
 
-		.chapter-list:hover {
-			overflow-y: overlay;
-		}
 		.chapter-list {
-			max-height: 460px;
-			overflow: hidden;
-			-webkit-overflow-scrolling: touch;
-
-			// stupid firefox hack
-			@-moz-document url-prefix() {
-				overflow-y: scroll !important;
-			}
-
 			font-size: @list-font-size;
 			display: inline-flex;
 			flex-wrap: wrap;
@@ -185,21 +153,30 @@
 				}
 
 			}
-			li:hover {
-				.yv-hover;
-			}
-
-			.active {
-				.yv-active;
-			}
-			.focus {
-				.yv-hover;
-			}
 		}
 	}
 
 }
 
+@media @medium-up {
+	.book-list, .chapter-list {
+		// max height for mobile is handled by the bible component with viewport utils
+		max-height: 460px;
+
+		li:hover {
+			.yv-hover !important;
+		}
+		.focus {
+			.yv-hover !important;
+		}
+	}
+}
+
+.book-list, .chapter-list {
+	.active {
+		.yv-active !important;
+	}
+}
 
 
 // label

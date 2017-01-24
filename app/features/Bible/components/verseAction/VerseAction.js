@@ -7,7 +7,7 @@ import TriggerButton from '../../../../components/TriggerButton'
 import ShareWidget from './share/Share'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import ActionCreators from '../../actions/creators'
-// import moment from 'moment'
+import CustomScroll from 'react-custom-scroll'
 import MomentCreate from './MomentCreate'
 
 class VerseAction extends Component {
@@ -31,6 +31,7 @@ class VerseAction extends Component {
 				momentContainerOpen: !this.state.momentContainerOpen,
 				momentKind: e.value,
 			})
+			this.closeMe()
 		} else {
 			switch (e.value) {
 				case 'note':
@@ -42,6 +43,8 @@ class VerseAction extends Component {
 						local_abbreviation: local_abbreviation
 					}))
 					this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
+					// hide the modal on moment create
+					this.closeMe()
 					return
 			}
 		}
@@ -79,6 +82,7 @@ class VerseAction extends Component {
 		// log in, if they aren't already
 		if (!auth.isLoggedIn) {
 			this.setState({ momentKind: 'highlight', momentContainerOpen: !this.state.momentContainerOpen })
+			this.closeMe()
 		} else {
 			dispatch(ActionCreators.momentsCreate(true, {
 				kind: 'highlight',
@@ -136,19 +140,6 @@ class VerseAction extends Component {
 			return false
 		} else {
 			return true
-		}
-	}
-
-	componentDidUpdate(prevState, prevProps) {
-		const { momentContainerOpen } = this.state
-		if (momentContainerOpen !== prevState.momentContainerOpen) {
-			let body = document.getElementsByTagName("body")[0]
-			// stop the body from scrolling behind the moment create
-			if (momentContainerOpen) {
-				body.style.overflow = 'hidden'
-			} else {
-				body.style.overflow = 'initial'
-			}
 		}
 	}
 

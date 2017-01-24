@@ -76,6 +76,7 @@ const ActionCreators = {
 												local_abbreviation: version.local_abbreviation.toUpperCase(),
 												local_title: version.local_title,
 												id: version.id,
+												copyright_short: version.copyright_short,
 											},
 										}
 

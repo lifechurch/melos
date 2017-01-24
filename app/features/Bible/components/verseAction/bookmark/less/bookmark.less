@@ -58,26 +58,35 @@
 }
 
 
-
+@media @small-only {
+	.labels-modal {
+		width: 320px;
+	}
+	.labels {
+		input {
+			width: 100%;
+		}
+	}
+	.color-trigger-button {
+		font-size: 13px;
+	}
+}
+@media @medium-up {
+	.labels-modal {
+		width: 500px;
+	}
+}
 .labels-modal {
-	width: 500px;
 	z-index: 10;
 	background-color: white;
 	border: @thin-grey-border;
 	max-height: 350px;
 
 	.yv-drop-shadow;
-	.yv-scroll-bar;
 
-
-	.label-list:hover {
-		overflow-y: overlay;
-	}
 	.label-list {
 		padding: 15px 20px 15px 20px;
-		overflow-y: hidden;
 		max-height: 260px;
-
 	}
 
 	.group-heading {
