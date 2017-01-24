@@ -386,6 +386,8 @@
 	"Reader.read reference": "Đọc {reference}",
 	"Reader.read chapter": "Đọc cả đoạn",
 	"Reader.plan title": "Các kế hoạch đọc và tĩnh nguyện miễn phí",
+	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
+	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
 	"Reader.meta.mobile.title": "App Kinh Thánh",
 	"Reader.meta.site.title": "Bible.com/vi",
 	"Reader.header.parallel": "Đọc hai bản cùng lúc",

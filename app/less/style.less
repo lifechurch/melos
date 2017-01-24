@@ -2295,11 +2295,13 @@ body.c_references.a_show {
 	}
 }
 @media @small-only, @medium-only {
-	// center all the modals horizontally when small or medium viewport
 	html, body {
 		height: 100%;
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
 	}
 
+	// center all the modals horizontally when small or medium viewport
 	.modal {
 		margin: 0 !important;
 		.absolute-horizontal-center;
@@ -2309,17 +2311,17 @@ body.c_references.a_show {
 			.absolute-horizontal-center !important;
 		}
 	}
-	#current-ui-view.modal-open {
-		// background-color: @background-grey;
-	}
-	#current-ui-view {
-		background-color: transparent;
-    -webkit-transition: background 0.5s ease-in-out;
-    -moz-transition: background 0.5s ease-in-out;
-    -ms-transition: background 0.5s ease-in-out;
-    -o-transition: background 0.5s ease-in-out;
-    transition: background 0.5s ease-in-out;
-	}
+	// #current-ui-view.modal-open {
+	// 	background-color: @background-grey;
+	// }
+	// #current-ui-view {
+	// 	background-color: transparent;
+ //    -webkit-transition: background 0.5s ease-in-out;
+ //    -moz-transition: background 0.5s ease-in-out;
+ //    -ms-transition: background 0.5s ease-in-out;
+ //    -o-transition: background 0.5s ease-in-out;
+ //    transition: background 0.5s ease-in-out;
+	// }
 }
 
 

@@ -25,7 +25,6 @@
 .chapter-picker-modal {
 
 	background-color: white;
-
 	display: inline-flex;
 	border-radius: @default-radius @default-radius 0px 0px;
 	border: @thin-grey-border;
@@ -35,8 +34,6 @@
 		background-color: @light-grey;
 		border-bottom: @thin-grey-border;
 		max-height: 30px;
-
-
 
 		.prev {
 			display: none;
@@ -83,31 +80,6 @@
 				}
 			}
 
-
-
-		}
-	}
-
-	@media @medium-up {
-		.book-list, .chapter-list {
-			// max height for mobile is handled by the bible component with viewport utils
-			max-height: 460px;
-		}
-	}
-
-	.book-container, .chapter-container {
-
-		@media @medium-up {
-			li:hover {
-				.yv-hover;
-			}
-			.focus {
-				.yv-hover;
-			}
-		}
-
-		.active {
-			.yv-active;
 		}
 	}
 
@@ -186,6 +158,25 @@
 
 }
 
+@media @medium-up {
+	.book-list, .chapter-list {
+		// max height for mobile is handled by the bible component with viewport utils
+		max-height: 460px;
+
+		li:hover {
+			.yv-hover !important;
+		}
+		.focus {
+			.yv-hover !important;
+		}
+	}
+}
+
+.book-list, .chapter-list {
+	.active {
+		.yv-active !important;
+	}
+}
 
 
 // label

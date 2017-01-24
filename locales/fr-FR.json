@@ -390,6 +390,8 @@
 	"Reader.read reference": "Lire {reference}",
 	"Reader.read chapter": "Lire le chapitre entier",
 	"Reader.plan title": "Plans de lecture et dévotions gratuits",
+	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
+	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
 	"Reader.meta.mobile.title": "La Bible App",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "En parallèle",

@@ -398,6 +398,8 @@
 	"Reader.read reference": "Čitaj {reference}",
 	"Reader.read chapter": "Čitaj cijelo poglavlje",
 	"Reader.plan title": "Besplatni planovi čitanja i nadahnuti sadržaji",
+	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
+	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
 	"Reader.meta.mobile.title": "Aplikacija Biblija",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Paralelno",
