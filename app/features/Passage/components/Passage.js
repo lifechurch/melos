@@ -107,10 +107,17 @@ class Passage extends Component {
 
 		let plansDiv = null
 		if (items.length > 0) {
-			// values={{ reference: passage.verses.title }}
 			plansDiv = (
 				<div className='related-plans collections-view'>
-					<h2 id='related-plans' className='heading'><FormattedMessage id='Reader.plan title' /></h2>
+					<h2 id='related-plans' className='heading'>
+						<div className='plans-title'>
+							<FormattedMessage id='Reader.plan title ref' values={{ reference: passage.verses.title }} />
+						</div>
+						<br />
+						<div className='plans-subtitle'>
+							<FormattedMessage id='Reader.plan subtitle' />
+						</div>
+					</h2>
 					<div className='row collection-items small-12'>
 						<ul className='list'>
 							{ items }

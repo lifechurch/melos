@@ -390,6 +390,8 @@
 	"Reader.read reference": "Şunu Oku: {reference}",
 	"Reader.read chapter": "Tüm bölümü okuyun",
 	"Reader.plan title": "Ücretsiz Okuma Planları ",
+	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
+	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
 	"Reader.meta.mobile.title": "Kutsal Kitap Uygulaması",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Karşılaştır",

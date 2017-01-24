@@ -162,7 +162,6 @@
 		  position: absolute;
 		  z-index: -1;
 		  width: 100%;
-		  /*height: 100%;*/
 			top: 0;
 			left: 0;
 		  opacity: 0;
@@ -190,6 +189,33 @@
 		.heading {
 			width: 100%;
 			text-align: center;
+
+			.plans-title {
+				@media @medium-up {
+					width: 75%;
+				}
+				@media @small-only {
+					width: 95%;
+				}
+				margin: auto;
+			}
+			.plans-subtitle {
+				@media @medium-up {
+					width: 40%;
+				}
+				@media @small-only {
+					width: 75%;
+				}
+				margin: auto;
+				padding-top: 10px;
+				letter-spacing: 1;
+				font-weight: normal;
+				text-transform: initial;
+		    font-size: 13px;
+		    color: #000000;
+		    line-height: 20px;
+		    font-family: inherit;
+			}
 		}
 		li {
 			padding: 15px;

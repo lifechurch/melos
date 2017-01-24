@@ -31,6 +31,7 @@ class VerseAction extends Component {
 				momentContainerOpen: !this.state.momentContainerOpen,
 				momentKind: e.value,
 			})
+			this.closeMe()
 		} else {
 			switch (e.value) {
 				case 'note':
@@ -81,6 +82,7 @@ class VerseAction extends Component {
 		// log in, if they aren't already
 		if (!auth.isLoggedIn) {
 			this.setState({ momentKind: 'highlight', momentContainerOpen: !this.state.momentContainerOpen })
+			this.closeMe()
 		} else {
 			dispatch(ActionCreators.momentsCreate(true, {
 				kind: 'highlight',

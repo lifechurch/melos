@@ -406,6 +406,8 @@
 	"Reader.read reference": "Darllen {reference}",
 	"Reader.read chapter": "Darllen y bennod",
 	"Reader.plan title": "Cynlluniau Darllen a Defosiynol am Ddim",
+	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
+	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
 	"Reader.meta.mobile.title": "Ap Beibl",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Cyfosod",

@@ -75,7 +75,7 @@
 	"plans.month": "Календар",
 	"plans.publisher": "Видавець",
 	"plans.success widget title": "Візьміть якнайбільше від вашого Плану Читання",
-	"plans.success blurb": "Плани читання - найкращий спосіб зробити Слово Боже частиною вашого щоденного життя. Але м��йже всі час від часу відстають від плану. Важливо почути, що Бог бажає сказати нам кожного дня, отже ми об'єднали декілька нагадувань, щоб допомогти вам.",
+	"plans.success blurb": "Плани читання - найкращий спосіб зробити Слово Боже частиною вашого щоденного життя. Але майже всі час від часу відстають від плану. Важливо почути, що Бог бажає сказати нам кожного дня, отже ми об'єднали декілька нагадувань, щоб допомогти вам.",
 	"plans.success blog link title": "Прочитайте блог",
 	"plans.a users plans": "Плани {username}",
 	"plans.you have no plans": "На даний час ви не підписані на жоден план читання.",
@@ -94,7 +94,7 @@
 	"plans.which reading": "{current} з {total}",
 	"plans.done reading": "Виконано",
 	"plans.no verses": "Нема віршів на сьогодні",
-	"plans.no content": "В цьому плані немає читання на сьогодні, тому ден�� був відзначений завершеним.",
+	"plans.no content": "В цьому плані немає читання на сьогодні, тому день був відзначений завершеним.",
 	"plans.read today": "Читання на сьогодні",
 	"plans.devotional": "Роздуми",
 	"plans.completion status _ below percentage": "Завершено",
@@ -356,7 +356,7 @@
 	"features.EventEdit.features.preview.components.PreviewFeed.discoverable.desc": "Ваша подія буде видима у програмі Біблія в розділі подій та у результатах пошуку за 5 днів до часу початку події.",
 	"features.EventEdit.features.preview.components.PreviewFeed.status.title": "Без статусу:",
 	"features.EventEdit.features.preview.components.PreviewFeed.status.desc": "Червоний значок LIVE буде відображатися, коли настане час початку події.",
-	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "Вид��лення: ",
+	"features.EventEdit.features.preview.components.PreviewFeed.remove.title": "Видалення: ",
 	"features.EventEdit.features.preview.components.PreviewFeed.remove.desc": "Ваша подія більше не буде відображатися після її закінчення. Відвідувачі, які натиснули “Зберегти подію” коли вона була доступна матимуть доступ до її архівованої версії після її кінця. Ця подія також буде доступна через прямі посилання.",
 	"features.EventEdit.features.preview.components.PreviewTypeAnnouncement.expand": "Розширити",
 	"features.EventEdit.features.preview.components.PreviewTypePlan.read": "Читати",
@@ -398,6 +398,8 @@
 	"Reader.read reference": "Прочитайте {reference}",
 	"Reader.read chapter": "Читати весь розділ",
 	"Reader.plan title": "Безкоштовні плани для читання та молитви",
+	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
+	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
 	"Reader.meta.mobile.title": "Програма Біблія",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Паралельне читання",
@@ -446,5 +448,5 @@
 	"Reader.verse action.alphabetical": "Алфавітний",
 	"Reader.verse action.count": "Лічильник",
 	"Reader.verse action.add color": "Додати колір",
-	"Reader.verse action.labels private": "Позначки завжди залишаються приватними"
+	"Reader.verse action.labels private": "Позначки завжди залишаються приватн��ми"
 }
