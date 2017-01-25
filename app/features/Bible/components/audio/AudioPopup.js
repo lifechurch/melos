@@ -51,7 +51,7 @@ class AudioPopup extends Component {
 		// <a onClick={this.openInNewWindow}><FormattedMessage id="Reader.header.audio label" /></a>
 		return (
 			<div className='audio-popup'>
-				<TriggerButton isOpen={isOpen} enabled={enabled} image={<AudioTriggerImage percentComplete={percentComplete} width={40} height={40} />} onClick={this.triggerClick} />
+				<TriggerButton isOpen={isOpen} enabled={enabled} image={<AudioTriggerImage percentComplete={percentComplete} width={35} height={35} />} onClick={this.triggerClick} />
 				<DropdownTransition show={isOpen} classes={'audio-popup-modal'} onOutsideClick={this.closeDropdown} exemptClass='audio-popup'>
 					<div className="header vertical-center horizontal-center"><FormattedMessage id="Reader.header.audio label" /></div>
 					<div className="body">

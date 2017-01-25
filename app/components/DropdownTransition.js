@@ -80,14 +80,13 @@ class DropdownTransition extends Component {
 	}
 
 	render() {
-		const { classes, hideDir, show } = this.props
+		const { classes, hideDir, show, transition } = this.props
 		let transitionDir = hideDir || 'up'
-
-
+		let showTransition = transition || false
 
 		return (
-			<div className={`modal ${show ? '' : 'hide-modal'}` } onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} >
-				<div className={`element-to-translate ${classes ? classes : ''} ${transitionDir}`}>
+			<div className={`modal ${show ? '' : 'hide-modal'} ${showTransition ? 'dropdown-transform' : ''}` } onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} >
+				<div className={`element-to-translate ${classes ? classes : ''} ${showTransition ? 'dropdown-transform': ''} ${transitionDir}`}>
 					{this.props.children}
 				</div>
 			</div>
@@ -98,11 +97,13 @@ class DropdownTransition extends Component {
 
 /**
  * @show       	{bool}    		show modal or hide modal
+ * @transition	{bool}				show we transition through the dropdown? or just make it show instantly
  * @classes 		{string}			additional classes to add to child
  * 														(usually component specific modal)
  */
 DropdownTransition.propTypes = {
 	show: React.PropTypes.bool,
+	transition: React.PropTypes.bool,
 	classes: React.PropTypes.string,
 	hideDir: React.PropTypes.oneOf(['down', 'up', 'left', 'right']),
 	onOutsideClick: React.PropTypes.func,

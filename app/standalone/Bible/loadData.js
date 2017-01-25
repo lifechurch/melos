@@ -40,7 +40,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			}
 
 			if (BIBLE.test(params.url)) {
-			 resolve()
+				// this is never called because rails hijacks it
+				resolve()
 
 			} else if (CHAPTER_NOTV.test(params.url)
 			 || CHAPTER.test(params.url)

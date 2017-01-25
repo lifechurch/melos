@@ -191,7 +191,12 @@
 	}
 }
 .verse-action-create {
-	padding: 25px 0 150px 0;
+	@media @medium-up {
+		padding: 25px 0 150px 0;
+	}
+	@media @small-only {
+		padding: 25px 0 100px 0;
+	}
 	background-color: @light-grey;
 	height: 100%;
 	width: 100%;
