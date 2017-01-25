@@ -10,6 +10,10 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isRecommended = new RegExp("^\/recommended-plans-collection\/[0-9]+")
 			const isPlan = new RegExp("^\/reading-plans\/[0-9]+")
 
+			const isSubscribedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans")
+			const isSavedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/saved-reading-plans")
+			const isCompletedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/completed-reading-plans")
+
 			let auth = false
 
 			if (sessionData.email && sessionData.password) {
@@ -24,6 +28,18 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				})
 			} else if (isSaved.test(params.url)) {
 				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => {
+					resolve()
+				})
+			} else if (isSubscribedPlans.test(params.url)) {
+				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then((d) => {
+					resolve()
+				})
+			} else if (isSavedPlans.test(params.url)) {
+				store.dispatch(ActionCreator.savedItems({ page: 1 }, auth)).then((d) => {
+					resolve()
+				})
+			} else if (isCompletedPlans.test(params.url)) {
+				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then((d) => {
 					resolve()
 				})
 			} else if (params.hasOwnProperty("id")) {

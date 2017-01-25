@@ -20,6 +20,7 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 import getRoutes from './app/routes.js'
 import createLogger from 'redux-node-logger'
 import planLocales from './locales/config/planLocales.json'
+import moment from 'moment'
 
 const urlencodedParser = bodyParser.json()
 const router = express.Router()
@@ -199,6 +200,7 @@ function getLocale(languageTag) {
 	var localeData = require('react-intl/locale-data/' + final.locale2);
 	final.data = localeData;
 
+	moment.locale(final.momentLocale)
 	return final;
 }
 
@@ -225,7 +227,7 @@ router.post('/', urlencodedParser, function(req, res) {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
-	console.log(params)
+
 	reactCookie.plugToRequest(req, res)
 
 	let verifiedAuth = null
