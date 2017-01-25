@@ -214,10 +214,7 @@
     font-size: 1em;
     line-height: $reader_line_height;
   }
-  .ior {
-    font-style: italic;
-  }
-  .iqt, .bk, .sls, .tl, .r {
+  .ior, .iqt, .bk, .sls, .tl, .r, .sp {
     font-style: italic;
   }
   .mr {
@@ -227,9 +224,6 @@
   .sr, .r, .sr .heading, .r .heading, .rq {
     font-style: italic;
     font-size: 0.8em;
-  }
-  .sp {
-    font-style: italic;
   }
   .pmr {
     text-align: right;
@@ -325,7 +319,7 @@
   .em, .bd {
     font-weight: bold;
   }
-  .it, .cd {
+  .it, .cd, .add, .qt, .fq, .tl, .qt {
     font-style: italic;
   }
   .bdit {
@@ -418,9 +412,6 @@
   /* Bulgarian Orthodox Bible 2006 */
   .vid1558 .sls {
     font-style: normal;
-  }
-  .vid1558 .add {
-    font-style: italic;
   }
 
   // hide cross references in
