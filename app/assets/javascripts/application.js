@@ -130,12 +130,7 @@ function inPathNotFirst(segment, path) {
 }
 
 function init() {
-
-    if (isReader || isReadingPlanSample || isReaderPlanUser) {
-        parseReaderVars();
-    }
-
-    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage) {
+    if (isEvents || isResetPassword || isPlanIndex || isPlanCollection || isSignUp || isSignIn || isReader || isPassage || isUserReadingPlan) {
         angular.bootstrap(document.getElementById('fixed-page-header'), ['yv']);
     } else {
         angular.bootstrap(document, ['yv']);
@@ -169,5 +164,6 @@ var isBookmarksFeed		= isFirst("users") && inPathNotFirst("bookmarks");
 var isHighlightsFeed	= isFirst("users") && inPathNotFirst("highlights");
 var isImagesFeed		= isFirst("users") && inPathNotFirst("images");
 var isBadgesFeed		= isFirst("users") && inPathNotFirst("badges");
-var isReaderPlanUser	= isFirst("users") && inPathNotFirst("reading-plans") && inPathNotFirst("ref");
+
+var isUserReadingPlan   = isFirst("users") && (inPathNotFirst("reading-plans") || inPathNotFirst("saved-reading-plans") || inPathNotFirst("completed-reading-plans"));
 var isUserProfile 		= isFirst("users") && !isNotesFeed && !isHighlightsFeed && !isBookmarksFeed && !isImagesFeed && !isBadgesFeed && !isFriendsFeed;
