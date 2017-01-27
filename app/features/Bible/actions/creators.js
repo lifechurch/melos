@@ -5,7 +5,7 @@ import Filter from '../../../lib/filter'
 const ActionCreators = {
 
 
-	handleInvalidReference(auth) {
+	handleInvalidReference() {
 		let newParams = {
 		 	isInitialLoad: true,
 		 	hasVersionChanged: false,
@@ -15,7 +15,7 @@ const ActionCreators = {
 			reference: 'JHN.1',
 			showError: true,
 		}
-		return ActionCreators.readerLoad(newParams, auth)
+		return ActionCreators.readerLoad(newParams, false)
 	},
 
 	/**
