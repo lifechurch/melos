@@ -14,6 +14,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isSavedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/saved-reading-plans")
 			const isCompletedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/completed-reading-plans")
 
+			const isReadingPlanDevo = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/devo")
+
 			let auth = false
 
 			if (sessionData.email && sessionData.password) {
