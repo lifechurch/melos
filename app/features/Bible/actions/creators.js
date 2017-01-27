@@ -7,9 +7,9 @@ const ActionCreators = {
 
 	handleInvalidReference() {
 		let newParams = {
-		 	isInitialLoad: true,
-		 	hasVersionChanged: false,
-		 	hasChapterChanged: false,
+		 	isInitialLoad: false,
+		 	hasVersionChanged: true,
+		 	hasChapterChanged: true,
 		 	language_tag: 'en',
 			version: '1',
 			reference: 'JHN.1',

@@ -32,9 +32,10 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					resolve()
 				}, (err) => {
 					console.log('handle initial error')
-					resolve(
-							store.dispatch(BibleActionCreator.handleInvalidReference(auth))
-						)
+					store.dispatch(BibleActionCreator.handleInvalidReference()).then(() => {
+						console.log('initial load error successs')
+						resolve()
+					})
 				})
 			}
 

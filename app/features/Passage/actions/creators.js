@@ -67,33 +67,37 @@ const ActionCreators = {
 
 									// for each verse, pass the text content and make the same call for
 									// html content
-									verses.verses.forEach((verse, index) => {
-										// build extra info for the verses
-										let text = {
-											text: verse.content,
-											usfm: versesArray,
-											versionInfo: {
-												local_abbreviation: version.local_abbreviation.toUpperCase(),
-												local_title: version.local_title,
-												id: version.id,
-												copyright_short: version.copyright_short,
-											},
-										}
+									if (verses && verses.verses) {
+										verses.verses.forEach((verse, index) => {
+											// build extra info for the verses
+											let text = {
+												text: verse.content,
+												usfm: versesArray,
+												versionInfo: {
+													local_abbreviation: version.local_abbreviation.toUpperCase(),
+													local_title: version.local_title,
+													id: version.id,
+													copyright_short: version.copyright_short,
+												},
+											}
 
-										// get the html content now
-										dispatch(ActionCreators.bibleVerses({
-											id: id,
-											references: versesArray,
-										}))
+											// get the html content now
+											dispatch(ActionCreators.bibleVerses({
+												id: id,
+												references: versesArray,
+											}))
 
-										// resolve the promise with both text info and html result to build the data object for
-										// the verse card in the reducer
-										.then((html) => resolve(Immutable.fromJS(html).merge(text).toJS()))
+											// resolve the promise with both text info and html result to build the data object for
+											// the verse card in the reducer
+											.then((html) => resolve(Immutable.fromJS(html).merge(text).toJS()))
 
-									})
+										})
+									} else {
+										reject('verses error')
+									}
 								})
 							})
-						}, (reason) => console.log(reason))
+						}, (reason) => reject(reason))
 					)
 				})
 			}

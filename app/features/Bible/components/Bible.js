@@ -39,11 +39,13 @@ class Bible extends Component {
 		const { bible } = props
 
 		this.chapterError = bible.chapter.showError
-		this.selectedBook = bible.chapter.reference.usfm.split('.')[0]
-		this.selectedChapter = bible.chapter.reference.usfm
-		this.selectedVersion = bible.chapter.reference.version_id
-		this.inputValue = bible.chapter.reference.human
-		this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
+		if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm) {
+			this.selectedBook = bible.chapter.reference.usfm.split('.')[0]
+			this.selectedChapter = bible.chapter.reference.usfm
+			this.selectedVersion = bible.chapter.reference.version_id
+			this.inputValue = bible.chapter.reference.human
+			this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
+		}
 
 		const showFootnoes = LocalStore.getIn("reader.settings.showFootnotes")
 		const showVerseNumbers = LocalStore.getIn("reader.settings.showVerseNumbers")
@@ -269,14 +271,6 @@ class Bible extends Component {
 		this.viewportUtils = new ViewportUtils()
 		this.updateMobileStyling()
 		this.viewportUtils.registerListener('resize', this.updateMobileStyling)
-
-		// if we render an error from the server (bad url)
-		// then we need to render the header for the pickers to get a ref for the
-		// error message buttons
-		if (chapterError) {
-			console.log('uodated')
-			// this.forceUpdate()
-		}
 	}
 
 

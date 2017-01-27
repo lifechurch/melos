@@ -103,8 +103,7 @@ function requireChapterData(nextState, replace, callback) {
 			(error) => {
 				console.log('main error')
 				store.dispatch(BibleActionCreator.handleInvalidReference(isLoggedIn)).then(() => {
-					callback()
-				}, (err) => {
+					console.log('CALLL IT BACK')
 					callback()
 				})
 			}

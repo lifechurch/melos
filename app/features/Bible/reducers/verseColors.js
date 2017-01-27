@@ -16,9 +16,11 @@ export default function reducer(state = [], action) {
 			if (color && references && references.length > 0) {
 				references.forEach((ref) => {
 					if (typeof color === 'string' && Array.isArray(ref.usfm) && ref.usfm.length > 0) {
-						ref.usfm.forEach((usfm) => {
-							verseColors.push([ usfm, color ])
-						})
+						if (ref && ref.usfm && ref.usfm.length > 0) {
+							ref.usfm.forEach((usfm) => {
+								verseColors.push([ usfm, color ])
+							})
+						}
 					}
 				})
 				return Immutable.fromJS(state).concat(verseColors).toJS()
