@@ -32,6 +32,6 @@ module.exports = {
 			"object-curly-spacing": [2, "always"],
 			"indent": [2, "tab"],
 			"no-unused-vars": 1,
-			"no-multiple-empty-lines": ["error", "never"]
+			"no-multiple-empty-lines": 0
 		}
 };
