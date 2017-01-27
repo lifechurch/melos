@@ -1,7 +1,22 @@
 import type from './constants'
 import Filter from '../../../lib/filter'
 
+
 const ActionCreators = {
+
+
+	handleInvalidReference(auth) {
+		let newParams = {
+		 	isInitialLoad: true,
+		 	hasVersionChanged: false,
+		 	hasChapterChanged: false,
+		 	language_tag: 'en',
+			version: '1',
+			reference: 'JHN.1',
+			showError: true,
+		}
+		return ActionCreators.readerLoad(newParams, auth)
+	},
 
 	/**
 	 * @version: VERSION_ID
@@ -11,6 +26,7 @@ const ActionCreators = {
 	readerLoad(params, auth) {
 		return dispatch => {
 			const { isInitialLoad, hasVersionChanged, hasChapterChanged, version, reference, language_tag } = params
+			const showError = params.showError || false
 			let promises = []
 
 			if (isInitialLoad) {
@@ -24,9 +40,13 @@ const ActionCreators = {
 				promises.push(
 					new Promise((resolve, reject) => {
 						dispatch(ActionCreators.bibleVersion({ id: version })).then((version) => {
-							resolve (
-								dispatch(ActionCreators.bibleVersions({ language_tag: version.language.language_tag, type: 'all' }))
-							)
+							if ('errors' in version) {
+								reject(version.errors)
+							} else {
+								resolve (
+									dispatch(ActionCreators.bibleVersions({ language_tag: version.language.language_tag, type: 'all' }))
+								)
+							}
 						})
 					})
 				)
@@ -34,7 +54,15 @@ const ActionCreators = {
 
 			if (isInitialLoad || hasChapterChanged) {
 				promises.push(
-					dispatch(ActionCreators.bibleChapter({ id: version, reference: reference.toUpperCase(), format: 'html', language_tag: language_tag })),
+					new Promise((resolve, reject) => {
+						dispatch(ActionCreators.bibleChapter({ id: version, reference: reference.toUpperCase(), format: 'html', language_tag: language_tag, showError })).then((data) => {
+							if ('errors' in data) {
+								reject(data.errors)
+							} else {
+								resolve()
+							}
+						})
+					}),
 					dispatch(ActionCreators.bibleVerses({ id: version, references: [`${reference.toUpperCase()}.1+${reference.toUpperCase()}.2`], format: 'text' }))
 				)
 			}

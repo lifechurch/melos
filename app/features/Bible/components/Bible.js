@@ -38,24 +38,12 @@ class Bible extends Component {
 
 		const { bible } = props
 
-		// if we get a bad chapter call, let's grab the first
-		//  valid book and chapter for the selected version
-		if (!bible.chapter.reference) {
-			let chap = bible.books.all[0].chapters[Object.keys(bible.books.all[0].chapters)[0]]
-			this.chapterError = true
-			this.selectedBook = bible.books.all[0].usfm
-			this.selectedChapter = chap.usfm
-			this.selectedVersion = bible.version.id
-			this.inputValue = `${bible.books.all[0].human} ${chap.human}`
-			this.chapters = bible.books.all[0].chapters
-		} else {
-			this.chapterError = false
-			this.selectedBook = bible.chapter.reference.usfm.split('.')[0]
-			this.selectedChapter = bible.chapter.reference.usfm
-			this.selectedVersion = bible.chapter.reference.version_id
-			this.inputValue = bible.chapter.reference.human
-			this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
-		}
+		this.chapterError = bible.chapter.showError
+		this.selectedBook = bible.chapter.reference.usfm.split('.')[0]
+		this.selectedChapter = bible.chapter.reference.usfm
+		this.selectedVersion = bible.chapter.reference.version_id
+		this.inputValue = bible.chapter.reference.human
+		this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
 
 		const showFootnoes = LocalStore.getIn("reader.settings.showFootnotes")
 		const showVerseNumbers = LocalStore.getIn("reader.settings.showVerseNumbers")
@@ -82,22 +70,14 @@ class Bible extends Component {
 			deletableColors: []
 		}
 
-		// Filter.build("BooksStore", [ "human", "usfm" ])
-		// Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
-		// Filter.build("LangStore", [ "name", "local_name" ])
-
 		this.header = null
 		this.content = null
 		this.extraStyle = null
 		this.chapterPicker = null
 		this.versionPicker = null
-
-		this.handleSettingsChange = ::this.handleSettingsChange
-		this.handleVerseSelectionClear = ::this.handleVerseSelectionClear
-		this.handleVerseSelect = ::this.handleVerseSelect
 	}
 
-	getVersions(languageTag) {
+	getVersions = (languageTag) => {
 		const { dispatch } = this.props
 		const comp = this
 
@@ -109,7 +89,7 @@ class Bible extends Component {
 		})
 	}
 
-	handleVerseSelect(verseSelection) {
+	handleVerseSelect = (verseSelection) => {
 		const { hosts, bible: { version: { id, local_abbreviation }, chapter: { reference: { human, usfm } }, verseColors }, dispatch } = this.props
 		const refUrl = `${hosts.railsHost}/${id}/${usfm}.${verseSelection.human}`
 
@@ -157,7 +137,7 @@ class Bible extends Component {
 		}
 	}
 
-	handleVerseSelectionClear() {
+	handleVerseSelectionClear = () => {
 		if (typeof this.chapter !== 'undefined' && this.chapter) {
 			this.chapter.clearSelection()
 		}
@@ -212,7 +192,7 @@ class Bible extends Component {
 		})
 	}
 
-	handleSettingsChange(key, value) {
+	handleSettingsChange = (key, value) => {
 		LocalStore.setIn(key, value)
 		const stateKey = key.split('.').pop()
 		this.setState({ [stateKey]: value })
@@ -238,7 +218,7 @@ class Bible extends Component {
 
 			// the modal is the absolute positioned element that shows the dropdowns
 			let modalPos = this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
-			// the header on mobile becomes fixed at the bottom, so we need the mobile to fill until that
+			// the header on mobile becomes fixed at the bottom, so we need the modal to fill until that
 			let footerModal = this.viewportUtils.getElement(document.getElementById('fixed-page-header'))
 
 			// how much offset is there from modalPos.top and bookList.top?
@@ -276,6 +256,7 @@ class Bible extends Component {
 
 	componentDidMount() {
 		const { dispatch, bible, auth } = this.props
+		const { chapterError } = this.state
 
 		this.recentVersions = new RecentVersions()
 
@@ -288,6 +269,14 @@ class Bible extends Component {
 		this.viewportUtils = new ViewportUtils()
 		this.updateMobileStyling()
 		this.viewportUtils.registerListener('resize', this.updateMobileStyling)
+
+		// if we render an error from the server (bad url)
+		// then we need to render the header for the pickers to get a ref for the
+		// error message buttons
+		if (chapterError) {
+			console.log('uodated')
+			// this.forceUpdate()
+		}
 	}
 
 
@@ -325,7 +314,7 @@ class Bible extends Component {
 						languageMap={bible.languages.map}
 						selectedChapter={this.state.selectedChapter}
 						alert={this.state.chapterError}
-						getVersions={::this.getVersions}
+						getVersions={this.getVersions}
 						cancelDropDown={this.state.versionDropDownCancel}
 						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
 					/>
@@ -348,10 +337,10 @@ class Bible extends Component {
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
 					<div className='row buttons'>
-						<div className='solid-button' onClick={this.chapterPickerInstance.handleDropDownClick}>
+						<div className='solid-button' onClick={this.chapterPickerInstance ? this.chapterPickerInstance.handleDropDownClick : () => {}}>
 							<FormattedMessage id="Reader.chapterpicker.chapter label" />
 						</div>
-						<div className='solid-button' onClick={this.versionPickerInstance.handleDropDownClick}>
+						<div className='solid-button' onClick={this.versionPickerInstance ? this.versionPickerInstance.handleDropDownClick : () => {}}>
 							<FormattedMessage id="Reader.versionpicker.version label" />
 						</div>
 					</div>
@@ -390,7 +379,7 @@ class Bible extends Component {
 		}
 
 		return (
-			<div className="">
+			<div>
 				<Helmet
 					title={metaTitle}
 					meta={[

@@ -1,7 +1,6 @@
 import BibleActionCreator from '../../features/Bible/actions/creators'
 import PassageActionCreator from '../../features/Passage/actions/creators'
 import cookie from 'react-cookie';
-import defaultVersions from '../../../locales/config/defaultVersions'
 
 export default function loadData(params, startingState, sessionData, store, Locale) {
 	return new Promise((resolve, reject) => {
@@ -18,7 +17,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 
 			let language_tag = Locale.locale3
 			let version = params.version || cookie.load('version') || '1'
-			let reference = params.ref.toUpperCase() || cookie.load('last_read').toUpperCase() || 'JHN.1'
+			let reference = params.ref || cookie.load('last_read') || 'JHN.1'
+			reference = reference.toUpperCase()
 
 			let auth = false
 			if (sessionData.email && sessionData.password) {
@@ -28,9 +28,18 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			}
 
 			const loadChapter = (finalParams) => {
-				store.dispatch(BibleActionCreator.readerLoad(finalParams, auth)).then((data) => {
+				store.dispatch(BibleActionCreator.readerLoad(finalParams, auth)).then(() => {
 					resolve()
-			 	})
+				}, (err) => {
+					console.log('handle initial error')
+					store.dispatch(BibleActionCreator.handleInvalidReference(auth)).then(() => {
+						console.log('error handled')
+						resolve()
+					}, (err) => {
+						console.log('errorception :(')
+						resolve()
+					})
+				})
 			}
 
 			const loadVerse = (finalParams) => {
@@ -40,15 +49,20 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			}
 
 			if (BIBLE.test(params.url)) {
-				// this is never called because rails hijacks it
-				resolve()
-
+				loadChapter({ isInitialLoad: true, hasVersionChanged: true, hasChapterChanged: true, language_tag, version, reference })
 			} else if (CHAPTER_NOTV.test(params.url)
 			 || CHAPTER.test(params.url)
 			 || CHAPTER_NOTV_CV.test(params.url)
 			 || CHAPTER_CV.test(params.url)) {
 			 reference = reference.split('.').slice(0,2).join('.')
-			 loadChapter({ isInitialLoad: true, hasVersionChanged: true, hasChapterChanged: true, language_tag, version, reference })
+			 loadChapter({
+			 	isInitialLoad: true,
+			 	hasVersionChanged: true,
+			 	hasChapterChanged: true,
+			 	language_tag,
+			 	version,
+			 	reference
+			 })
 
 			} else if (VERSE_NOTV.test(params.url)
 			 || VERSE.test(params.url)
