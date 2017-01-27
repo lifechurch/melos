@@ -1,25 +1,39 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
+import PlanComponent from '../features/PlanDiscovery/components/Plan'
 
 class Plan extends Component {
+	localizedLink(link) {
+		const { params, serverLanguageTag } = this.props
+		const languageTag = serverLanguageTag || params.lang || 'en'
+
+		if (['en', 'en-US'].indexOf(languageTag) > -1) {
+			return link
+		} else {
+			return `/${languageTag}${link}`
+		}
+	}
+
+	isRtl() {
+		const { params, serverLanguageTag } = this.props
+		const languageTag = params.lang || serverLanguageTag || 'en'
+		return rtlDetect.isRtlLang(languageTag)
+	}
+
 	render() {
 		return (
-			<div>
-				<p>Plan View</p><br/>
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/edit'}>Settings</Link><br/>
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/calendar'}>Calendar</Link><br/>
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/devo'}>Devo</Link><br/>
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/ref'}>Ref</Link><br/>
-				{this.props.children}
-			</div>
+			<PlanComponent {...this.props} localizedLink={::this.localizedLink} isRtl={::this.isRtl} >
+				{this.props.children && React.cloneElement(this.props.children, { localizedLink: ::this.localizedLink, isRtl: ::this.isRtl })}
+			</PlanComponent>
 		)
 	}
 }
 
 function mapStateToProps(state) {
 	return {
-		discover: state.plansDiscovery
+		auth: state.auth,
+		serverLanguageTag: state.serverLanguageTag,
+		plan: state.readingPlans.fullPlans._SELECTED
 	}
 }
 

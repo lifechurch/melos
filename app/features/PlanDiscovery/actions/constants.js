@@ -36,13 +36,23 @@ const constants = {
 	configurationSuccess: 'READING_PLANS_CONFIGURATION_SUCCESS',
 	configurationFailure: 'READING_PLANS_CONFIGURATION_FAILURE',
 
+	calendarRequest: 'READING_PLANS_CALENDAR_REQUEST',
+	calendarSuccess: 'READING_PLANS_CALENDAR_SUCCESS',
+	calendarFailure: 'READING_PLANS_CALENDAR_FAILURE',
+
+	referencesRequest: 'READING_PLANS_CALENDAR_REQUEST',
+	referencesSuccess: 'READING_PLANS_CALENDAR_SUCCESS',
+	referencesFailure: 'READING_PLANS_CALENDAR_FAILURE',
+
 	itemsRequest: 'READING_PLANS_ITEMS_REQUEST',
 	itemsSuccess: 'READING_PLANS_ITEMS_SUCCESS',
 	itemsFailure: 'READING_PLANS_ITEMS_FAILURE',
 
 	completedRequest: 'READING_PLANS_COMPLETED_REQUEST',
 	completedSuccess: 'READING_PLANS_COMPLETED_SUCCESS',
-	completedFailure: 'READING_PLANS_COMPLETED_FAILURE'
+	completedFailure: 'READING_PLANS_COMPLETED_FAILURE',
+
+	planSelect: 'READING_PLAN_SELECT'
 }
 
 export default function (key) {
