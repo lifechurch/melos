@@ -25,12 +25,12 @@ module.exports = {
 			"unicodeCodePointEscapes": true,
 			"globalReturn": true,
 			"jsx": true,
-			"jsx-uses-vars": true,
 			"experimentalObjectRestSpread": true
 		},
 		"rules": {
 			"semi": 0,
 			"object-curly-spacing": [2, "always"],
+			"jsx-uses-vars": 1,
 			"indent": [2, "tab"],
 			"no-unused-vars": 1,
 			"no-multiple-empty-lines": 0
