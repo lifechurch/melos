@@ -13,7 +13,7 @@ const ActionCreators = {
 						var hasSaved = false;				// for saved plans carousel
 
 						if (data && data.items) {
-							data.items.forEach((item, index) => {
+							data.items.forEach((item) => {
 								if (item.type === 'collection') {
 									collectionIds.push(item.id);
 								} else if (item.type === 'recommended') {
@@ -31,7 +31,7 @@ const ActionCreators = {
 
 						// if we have saved plans, let's get 'em
 						if (hasSaved === true) {
-							promises.push(dispatch(ActionCreators.savedItems({ id: 'saved'}, auth)))
+							promises.push(dispatch(ActionCreators.savedItems({ id: 'saved' }, auth)))
 						}
 
 						// if we have recommendations, let's get recommended
@@ -64,7 +64,7 @@ const ActionCreators = {
 						// if we have a collection inside a collection, the reducer is going to populate the collection with it's items based on the flag
 						var ids = []
 
-						collectionItems.collections[0].items.map((item) => {
+						collectionItems.collections[0].items.forEach((item) => {
 							if (item.type === 'collection') {
 								ids.push(item.id)
 							}
@@ -104,7 +104,7 @@ const ActionCreators = {
 
 	readingplanInfo(params, auth) {
 		return dispatch => {
-			params.id = parseInt(params.id.toString().split('-')[0])
+			params.id = parseInt(params.id.toString().split('-')[0], 10)
 			// tell the reducer to populate the recommendations in state.collection.plans.related
 			const planParams = Object.assign({}, params, { readingplanInfo: true })
 			// now check if requested reading plan view is a saved plan for the user
