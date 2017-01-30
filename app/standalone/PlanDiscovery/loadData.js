@@ -25,6 +25,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isCompletedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/completed-reading-plans")
 
 			const isReadingPlanDevo = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/devo")
+			const isSubscription = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+")
 
 			let auth = false
 
@@ -40,6 +41,10 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				})
 			} else if (isSaved.test(params.url)) {
 				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => {
+					resolve()
+				})
+			} else if (isSubscription.test(params.url)) {
+				store.dispatch(ActionCreator.subscriptionAll({ id: params.id, language_tag: Locale.planLocale, user_id: sessionData.userid, day: 1 }, auth)).then((d) => {
 					resolve()
 				})
 			} else if (isSubscribedPlans.test(params.url)) {

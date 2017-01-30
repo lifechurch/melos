@@ -288,9 +288,11 @@ router.post('/', urlencodedParser, function(req, res) {
 				}
 
 			}, (error) => {
+				console.log(404, error)
 				res.status(404).send(error)
 			})
 		} catch(ex) {
+			console.log(500, ex)
 			res.status(500).send({error: 2, message: 'Could not render ' + feature + ' view', ex })
 		}
 	}, (authError) => {

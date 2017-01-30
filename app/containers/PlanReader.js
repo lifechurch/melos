@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import PlanComponent from '../features/PlanDiscovery/components/Plan'
 
-class Plan extends Component {
+class PlanReader extends Component {
 	localizedLink(link) {
 		const { params, serverLanguageTag } = this.props
 		const languageTag = serverLanguageTag || params.lang || 'en'
@@ -22,19 +21,18 @@ class Plan extends Component {
 
 	render() {
 		return (
-			<PlanComponent {...this.props} localizedLink={::this.localizedLink} isRtl={::this.isRtl} >
+			<div>
+				<p>Plan Reader</p>
 				{this.props.children && React.cloneElement(this.props.children, { localizedLink: ::this.localizedLink, isRtl: ::this.isRtl })}
-			</PlanComponent>
+			</div>
 		)
 	}
 }
 
 function mapStateToProps(state) {
 	return {
-		auth: state.auth,
-		serverLanguageTag: state.serverLanguageTag,
-		plan: state.readingPlans.fullPlans._SELECTED
+		discover: state.plansDiscovery
 	}
 }
 
-export default connect(mapStateToProps, null)(Plan)
+export default connect(mapStateToProps, null)(PlanReader)

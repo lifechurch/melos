@@ -82,6 +82,29 @@ const ActionCreators = {
 		}
 	},
 
+	subscriptionAll(params, auth) {
+		return dispatch => {
+			let promises = []
+			promises.push(
+				new Promise((resolve, reject) => {
+					dispatch(ActionCreators.readingplanView({ id: params.id, language_tag: params.language_tag, user_id: params.user_id }, auth)).then((d) => {
+						console.log('inside')
+						resolve(dispatch(ActionCreators.planSelect({ id: params.id })))
+					})
+				}),
+				dispatch(ActionCreators.calendar({ id: params.id, language_tag: params.language_tag, user_id: params.user_id }))
+			)
+			return Promise.all(promises)
+		}
+	},
+
+	planSelect(params) {
+		return {
+			type: type('planSelect'),
+			id: params.id
+		}
+	},
+
 	recommendedPlansInfo(params, auth) {
 		return dispatch => {
 			const recommendedParams = Object.assign({}, params, { dynamicCollection: true })
@@ -138,6 +161,36 @@ const ActionCreators = {
 				params: params,
 				http_method: 'get',
 				types: [ type('discoverRequest'), type('discoverSuccess'), type('discoverFailure') ]
+			}
+		}
+	},
+
+	references(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'references',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('referencesRequest'), type('referencesSuccess'), type('referencesFailure') ]
+			}
+		}
+	},
+
+	calendar(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'calendar',
+				version: '3.1',
+				auth: auth,
+				params: params,
+				http_method: 'get',
+				types: [ type('calendarRequest'), type('calendarSuccess'), type('calendarFailure') ]
 			}
 		}
 	},
