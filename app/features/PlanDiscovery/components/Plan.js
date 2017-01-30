@@ -1,20 +1,18 @@
 import React, { Component, PropTypes } from 'react'
-import ActionCreators from '../actions/creators'
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import Image from '../../../components/Carousel/Image'
-import moment from 'moment'
 import PlanDaySlider from './PlanDaySlider'
+import PlanDayStatus from './PlanDayStatus'
 
 class Plan extends Component {
 	render() {
 		const { plan, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
-		const day = location.query.day || 1
+		const day = parseInt(location.query.day, 10) || 1
 		const dayData = plan.calendar[day - 1]
-console.log("plan", plan)
 		const references = dayData.references.map((r) => {
 			return <li key={r} className="li-right">{r}</li>
 		})
@@ -46,22 +44,18 @@ console.log("plan", plan)
 						<div className="columns large-8 medium-8 medium-centered">
 							<PlanDaySlider day={day} plan={plan} link={subscriptionLink} />
 						</div>
- 					</div>
- 					<div className="row">
- 						<div className="columns large-8 medium-8 medium-centered">
- 							<div className="start-reading">
- 								<Link to={`/bob`} className="solid-button green"><FormattedMessage id="plans.widget.start reading" /></Link>
- 							</div>
-							<p>
-								<FormattedHTMLMessage id="plans.which day in plan" values={{ day: day, total: plan.total_days }} />
-								&nbsp;&bull;&nbsp;
-								<FormattedMessage id="plans.status.missed days.one" values={{ count: 1 }} />
-							</p>
+					</div>
+					<div className="row">
+						<div className="columns large-8 medium-8 medium-centered">
+							<div className="start-reading">
+								<Link to={`/bob`} className="solid-button green"><FormattedMessage id="plans.widget.start reading" /></Link>
+							</div>
+							<PlanDayStatus day={day} plan={plan} />
 							<ul className="no-bullets plan-pieces">
 								{references}
 							</ul>
- 						</div>
- 					</div>
+						</div>
+					</div>
 				</div>
 
 				<Helmet
@@ -87,7 +81,13 @@ console.log("plan", plan)
 }
 
 Plan.propTypes = {
-
+	plan: PropTypes.object,
+	params: PropTypes.object,
+	children: PropTypes.object,
+	auth: PropTypes.object,
+	location: PropTypes.object,
+	localizedLink: PropTypes.func,
+	serverLanguageTag: PropTypes.string
 }
 
 Plan.defaultProps = {

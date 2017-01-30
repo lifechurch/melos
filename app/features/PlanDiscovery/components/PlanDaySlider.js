@@ -27,14 +27,14 @@ class PlanDaySlider extends Component {
 						slidesToShow: 5,
 						slidesToScroll: 5
 					}
-				},{
+				}, {
 					breakpoint: 376,
 					settings: {
 						arrows: false,
 						slidesToShow: 4,
 						slidesToScroll: 4
 					}
-				},{
+				}, {
 					breakpoint: 321,
 					settings: {
 						arrows: false,
@@ -47,10 +47,10 @@ class PlanDaySlider extends Component {
 
 		const slides = plan.calendar.map((d, i) => {
 			const date = moment(d.date).format('l')
-			const active = (d.day == day) ? 'active' : ''
+			const active = (d.day === day) ? 'active' : ''
 			return (
 				<Link key={d.day} to={{ pathname: link, query: { day: d.day } }}>
-					<div className={`day ${active}`}>
+					<div className={`day ${active}`} style={{ backgroundColor: 'white' }}>
 						<div className="day-top" />
 						<div className="day-bottom">
 							<h1>{d.day}</h1>
@@ -62,7 +62,7 @@ class PlanDaySlider extends Component {
 		})
 
 		return (
-			<div style={{ overflowY: 'hidden' }} >
+			<div>
 				<Slider {...this.settings}>{slides}</Slider>
 			</div>
 		)
@@ -70,7 +70,9 @@ class PlanDaySlider extends Component {
 }
 
 PlanDaySlider.propTypes = {
-	plan: PropTypes.object.isRequired
+	plan: PropTypes.object.isRequired,
+	link: PropTypes.string.isRequired,
+	day: PropTypes.number.isRequired
 }
 
 PlanDaySlider.defaultProps = {
