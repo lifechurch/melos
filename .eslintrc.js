@@ -47,6 +47,9 @@ module.exports = {
 			"padded-blocks": 0,
 			"eol-last": 0,
 			"array-bracket-spacing": 0,
+			"no-useless-escape": 0,
+			"operator-linebreak": 0,
+			"no-control-regex": 0,
 			// jsx rules
 			"jsx-quotes" : 0,
 			"react/display-name": 0,

@@ -1,5 +1,15 @@
 import ActionCreator from '../../features/PlanDiscovery/actions/creators'
 
+/**
+ * Loads a data.
+ *
+ * @param      {object}   params         The parameters
+ * @param      {object}   startingState  The starting state
+ * @param      {object}   sessionData    The session data
+ * @param      {object}   store          The store
+ * @param      {object}   Locale         The locale
+ * @return     {Promise}  { description_of_the_return_value }
+ */
 export default function loadData(params, startingState, sessionData, store, Locale) {
 
 	return new Promise((resolve, reject) => {
@@ -44,6 +54,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then((d) => {
 					resolve()
 				})
+			} else if (isReadingPlanDevo.test(params.url)) {
+				console.log('gon load devo!')
 			} else if (params.hasOwnProperty("id")) {
 				if (isCollection.test(params.url)) {
 					store.dispatch(ActionCreator.collectionAll({ id: params.id })).then(() => {
