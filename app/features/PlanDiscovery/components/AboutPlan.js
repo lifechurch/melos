@@ -1,14 +1,12 @@
 import React, { Component, PropTypes } from 'react'
-import ActionCreators from '../actions/creators'
 import CarouselStandard from '../../../components/Carousel/CarouselStandard'
 import Image from '../../../components/Carousel/Image'
 import { Link } from 'react-router'
 import PlanActionButtons from './PlanActionButtons'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import AvatarList from '../../../components/AvatarList'
 import ShareWidget from './ShareWidget'
 import Helmet from 'react-helmet'
-import { injectIntl } from 'react-intl'
 import imageUtil from '../../../lib/imageUtil'
 
 class AboutPlan extends Component {
@@ -31,18 +29,18 @@ class AboutPlan extends Component {
 			)
 		}
 
-		var friendsReading, friendsCompleted, completions, readingList, completedList, relatedCarousel = null
+		var friendsReading, friendsCompleted, readingList, completedList, relatedCarousel = null
 		var publisherLink = (readingPlan.publisher_url) ? <a className='publisher' href={readingPlan.publisher_url}><FormattedMessage id='plans.about publisher'/></a> : null
-		var language_tag = params.lang || auth.userData.language_tag || 'en'
+		var languageTag = params.lang || auth.userData.language_tag || 'en'
 
 		if (readingPlan.related) relatedCarousel = (
-				<div className='row collapse'>
-					<CarouselStandard carouselContent={readingPlan.related} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
-				</div>
-			)
+			<div className='row collapse'>
+				<CarouselStandard carouselContent={readingPlan.related} context="recommended" imageConfig={imageConfig} localizedLink={localizedLink} isRtl={isRtl} />
+			</div>
+		)
 
-		if ( (readingPlan.stats.friends != null) && (readingList = readingPlan.stats.friends.subscribed) ) {
-			var readingText = (readingList.length == 1) ? <FormattedMessage id='plans.stats.friends reading.one' values={{ count: readingPlan.stats.friends.subscribed.length }} /> : <FormattedMessage id='plans.stats.friends reading.other' values={{ count: readingPlan.stats.friends.subscribed.length }} />
+		if ((readingPlan.stats.friends !== null) && (readingList = readingPlan.stats.friends.subscribed)) {
+			var readingText = (readingList.length === 1) ? <FormattedMessage id='plans.stats.friends reading.one' values={{ count: readingPlan.stats.friends.subscribed.length }} /> : <FormattedMessage id='plans.stats.friends reading.other' values={{ count: readingPlan.stats.friends.subscribed.length }} />
 			friendsReading = (
 				<div>
 					<p className='friends_completed'>{ readingText }</p>
@@ -51,8 +49,8 @@ class AboutPlan extends Component {
 			)
 		}
 
-		if ( (readingPlan.stats.friends != null) && (completedList = readingPlan.stats.friends.completed) ) {
-			var completedText = (completedList.length == 1) ? <FormattedMessage id='plans.stats.friends completed.one' values={{ count: readingPlan.stats.friends.completed.length }} /> : <FormattedMessage id='plans.stats.friends completed.other' values={{ count: readingPlan.stats.friends.completed.length }} />
+		if ((readingPlan.stats.friends !== null) && (completedList = readingPlan.stats.friends.completed)) {
+			var completedText = (completedList.length === 1) ? <FormattedMessage id='plans.stats.friends completed.one' values={{ count: readingPlan.stats.friends.completed.length }} /> : <FormattedMessage id='plans.stats.friends completed.other' values={{ count: readingPlan.stats.friends.completed.length }} />
 			friendsCompleted = (
 				<div>
 					<p className='friends_completed'>{ completedText }</p>
@@ -65,14 +63,14 @@ class AboutPlan extends Component {
 		let completedMilestone = 0
 
 		milestones.forEach((milestone) => {
-			if (readingPlan.stats.total_completed > milestone &&  milestone > completedMilestone) {
+			if (readingPlan.stats.total_completed > milestone && milestone > completedMilestone) {
 				completedMilestone = milestone
 			}
 		})
 
 
 		const readingPlansStats = (completedMilestone !== 0) ?
-			<p className='friends_completed'><FormattedMessage id='plans.stats.total completions' values={{count: completedMilestone}} /></p> :
+			<p className='friends_completed'><FormattedMessage id='plans.stats.total completions' values={{ count: completedMilestone }} /></p> :
 			null
 
 		const selectedImage = imageUtil(360, 640, false, 'about_plan', readingPlan, false)
@@ -81,18 +79,18 @@ class AboutPlan extends Component {
 		return (
 			<div className='row collapse about-plan horizontal-center'>
 				<Helmet
-					title={`${readingPlan.name[language_tag] || readingPlan.name.default} - ${readingPlan.about.text[language_tag] || readingPlan.about.text.default}`}
+					title={`${readingPlan.name[languageTag] || readingPlan.name.default} - ${readingPlan.about.text[languageTag] || readingPlan.about.text.default}`}
 					meta={[
-						{ name: 'description', content: readingPlan.about.text[language_tag] || readingPlan.about.text.default },
+						{ name: 'description', content: readingPlan.about.text[languageTag] || readingPlan.about.text.default },
 						{ name: 'og:image', content: `https:${selectedImage.url}` },
-						{ name: 'og:title', content: `${readingPlan.name[language_tag] || readingPlan.name.default}` },
+						{ name: 'og:title', content: `${readingPlan.name[languageTag] || readingPlan.name.default}` },
 						{ name: 'og:url', content: url },
-						{ name: 'og:description', content: `${readingPlan.about.text[language_tag] || readingPlan.about.text.default}` },
+						{ name: 'og:description', content: `${readingPlan.about.text[languageTag] || readingPlan.about.text.default}` },
 						{ name: 'twitter:image', content: `https:${selectedImage.url}` },
 						{ name: 'twitter:card', content: 'summary' },
 						{ name: 'twitter:url', content: url },
-						{ name: 'twitter:title', content: `${readingPlan.name[language_tag] || readingPlan.name.default}` },
-						{ name: 'twitter:description', content: `${readingPlan.about.text[language_tag] || readingPlan.about.text.default}` },
+						{ name: 'twitter:title', content: `${readingPlan.name[languageTag] || readingPlan.name.default}` },
+						{ name: 'twitter:description', content: `${readingPlan.about.text[languageTag] || readingPlan.about.text.default}` },
 						{ name: 'twitter:site', content: '@YouVersion' },
 						{ name: 'og:image:width', content: selectedImage.width },
 						{ name: 'og:image:height', content: selectedImage.height }
@@ -111,11 +109,11 @@ class AboutPlan extends Component {
 						</div>
 						<div className='row collapse'>
 							<div className='columns large-8 medium-8'>
-								<h1>{ readingPlan.name[language_tag] || readingPlan.name.default }</h1>
-								<p className='plan_length'>{ readingPlan.formatted_length[language_tag] || readingPlan.formatted_length.default}</p>
-								<p className='plan_about'>{ readingPlan.about.text[language_tag] || readingPlan.about.text.default }</p>
+								<h1>{ readingPlan.name[languageTag] || readingPlan.name.default }</h1>
+								<p className='plan_length'>{ readingPlan.formatted_length[languageTag] || readingPlan.formatted_length.default}</p>
+								<p className='plan_about'>{ readingPlan.about.text[languageTag] || readingPlan.about.text.default }</p>
 								<h3 className='publisher'><FormattedMessage id='plans.publisher'/></h3>
-								<p className='publisher'>{ readingPlan.copyright.text[language_tag] || readingPlan.copyright.text.default }</p>
+								<p className='publisher'>{ readingPlan.copyright.text[languageTag] || readingPlan.copyright.text.default }</p>
 								{ publisherLink }
 							</div>
 							<div className='columns large-4 medium-4'>
@@ -137,6 +135,15 @@ class AboutPlan extends Component {
 			</div>
 		)
 	}
+}
+
+AboutPlan.propTypes = {
+	readingPlan: PropTypes.object,
+	imageConfig: PropTypes.object,
+	auth: PropTypes.object,
+	localizedLink: PropTypes.func,
+	isRtl: PropTypes.func,
+	params: PropTypes.object,
 }
 
 export default injectIntl(AboutPlan)
