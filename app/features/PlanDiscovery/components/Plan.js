@@ -10,13 +10,13 @@ class Plan extends Component {
 	render() {
 		const { plan, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
+		console.log("plan render", Object.keys(plan))
 		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
 		const day = parseInt(location.query.day, 10) || 1
 		const dayData = plan.calendar[day - 1]
 		const references = dayData.references.map((r) => {
 			return <li key={r} className="li-right">{r}</li>
 		})
-
 		return (
 			<div className="subscription-show">
 				<div className="plan-overview">
