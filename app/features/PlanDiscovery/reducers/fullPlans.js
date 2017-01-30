@@ -9,6 +9,7 @@ export default function reducer(state = {}, action) {
 			return state
 
 		case type("planInfoFailure"):
+		console.log('faliure plan ifno')
 			return state
 
 		case type("planInfoSuccess"):
@@ -25,6 +26,7 @@ export default function reducer(state = {}, action) {
 			return state
 
 		case type("calendarFailure"):
+		console.log('faliure calendar')
 			return state
 
 		case type("calendarSuccess"):

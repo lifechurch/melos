@@ -18,6 +18,20 @@ import PlanReader from '../../containers/PlanReaderView'
 import PlanDayDevo from '../../containers/PlanDayDevo'
 import PlanDayRef from '../../containers/PlanDayRef'
 
+/**
+ * get the routes for reading plans
+ *
+ * @param      {function}  requirePlanDiscoveryData    The require plan discovery data
+ * @param      {function}  requirePlanCollectionData   The require plan collection data
+ * @param      {function}  requirePlanData             The require plan data
+ * @param      {function}  requireSavedPlanData        The require saved plan data
+ * @param      {function}  requireRecommendedPlanData  The require recommended plan data
+ * @param      {function}  requireSubscribedPlans      The require subscribed plans
+ * @param      {function}  requireSavedPlans           The require saved plans
+ * @param      {function}  requireCompletedPlans       The require completed plans
+ * @param      {function}  requirePlanDay              The require plan day
+ * @return     {Node}  { description_of_the_return_value }
+ */
 export default function(
 		requirePlanDiscoveryData,
 		requirePlanCollectionData,
@@ -27,8 +41,7 @@ export default function(
 		requireSubscribedPlans,
 		requireSavedPlans,
 		requireCompletedPlans,
-		requirePlanDevo,
-		requirePlanRefs,
+		requirePlanDay
 	) {
 	return (
 		<Route path="/">
@@ -56,8 +69,8 @@ export default function(
 				<Route path="calendar" component={PlanCalendar} />
 			</Route>
 			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={PlanReader}>
-				<Route path="devo" component={PlanDayDevo} onEnter={requirePlanDevo} />
-				<Route path="ref" component={PlanDayRef} onEnter={requirePlanRefs} />
+				<Route path="devo" component={PlanDayDevo} />
+				<Route path="ref" component={PlanDayRef} />
 			</Route>
 		</Route>
 	)

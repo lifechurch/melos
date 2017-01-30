@@ -24,6 +24,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isSavedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/saved-reading-plans")
 			const isCompletedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/completed-reading-plans")
 
+			const isReadingPlanRef = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/ref")
 			const isReadingPlanDevo = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/devo")
 			const isSubscription = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+")
 
@@ -43,7 +44,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => {
 					resolve()
 				})
-			} else if (isSubscription.test(params.url)) {
+			} else if (isReadingPlanDevo.test(params.url) || isReadingPlanRef.test(params.url) || isSubscription.test(params.url)) {
 				store.dispatch(ActionCreator.subscriptionAll({ id: params.id, language_tag: Locale.planLocale, user_id: sessionData.userid, day: 1 }, auth)).then((d) => {
 					resolve()
 				})
@@ -59,8 +60,6 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then((d) => {
 					resolve()
 				})
-			} else if (isReadingPlanDevo.test(params.url)) {
-				console.log('gon load devo!')
 			} else if (params.hasOwnProperty("id")) {
 				if (isCollection.test(params.url)) {
 					store.dispatch(ActionCreator.collectionAll({ id: params.id })).then(() => {

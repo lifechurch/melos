@@ -27,6 +27,11 @@ module.exports = {
 			"experimentalObjectRestSpread": true,
 			"experimentalClassProperties": true
 		},
+		"env": {
+		  "browser": true,
+		  "node": true,
+		  "jasmine": true
+		},
 		"plugins": [
 			"react",
 		],

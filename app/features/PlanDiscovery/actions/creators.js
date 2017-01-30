@@ -87,17 +87,19 @@ const ActionCreators = {
 			let promises = []
 			promises.push(
 				dispatch(ActionCreators.readingplanView({ id: params.id, language_tag: params.language_tag, user_id: params.user_id }, auth)).then((d) => {
-					console.log('plan/view')
+					console.log('plan/view', d)
 				}),
-				dispatch(ActionCreators.calendar({ id: params.id, language_tag: params.language_tag, user_id: params.user_id })).then((c) => {
-					console.log("cal")
+				dispatch(ActionCreators.calendar({ id: params.id, language_tag: params.language_tag, user_id: params.user_id }, auth)).then((c) => {
+					console.log("cal", c)
 				})
 			)
 
 			return new Promise((resolve, reject) => {
 				Promise.all(promises).then((d) => {
 					console.log("promise all", d)
-					resolve(dispatch(ActionCreators.planSelect({ id: params.id })))
+					dispatch(ActionCreators.planSelect({ id: params.id })).then(() => {
+						resolve(d)
+					})
 				})
 			})
 		}

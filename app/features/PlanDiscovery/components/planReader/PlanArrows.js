@@ -2,9 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import ActionCreators from '../../actions/creators'
 import { FormattedMessage } from 'react-intl'
 import PlanNavigation from './PlanNavigation'
-import PlanArrows from './PlanArrows'
 
-class PlanReader extends Component {
+class PlanArrows extends Component {
 
 	constructor(props) {
 		super(props)
@@ -14,20 +13,18 @@ class PlanReader extends Component {
 	render() {
 		return (
 			<div>
-				<PlanNavigation />
-				Plan reader
-				<PlanArrows />
+				left arrow ruight arros
 			</div>
 		)
 	}
 }
 
-PlanReader.propTypes = {
+PlanArrows.propTypes = {
 
 }
 
-PlanReader.defaultProps = {
+PlanArrows.defaultProps = {
 
 }
 
-export default PlanReader
+export default PlanArrows
