@@ -12,10 +12,10 @@ class Plan extends Component {
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
 		const day = parseInt(location.query.day, 10) || 1
-		console.log('calll', plan.calendar)
 		const dayData = plan.calendar[day - 1]
-		const references = dayData.references.map((r) => {
-			return <li key={r} className="li-right">{r}</li>
+		const references = dayData.references.map((r, i) => {
+			const verse = dayData.reference_content[i].reference.human
+			return <li key={r} className="li-right">{verse}</li>
 		})
 		return (
 			<div className="subscription-show">
