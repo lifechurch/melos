@@ -15,8 +15,8 @@ import PlanSettings from '../../containers/PlanSettings'
 import PlanCalendar from '../../containers/PlanCalendar'
 
 import PlanReader from '../../containers/PlanReaderView'
-import PlanDayDevo from '../../containers/PlanDayDevo'
-import PlanDayRef from '../../containers/PlanDayRef'
+import PlanDevo from '../../features/PlanDiscovery/components/planReader/PlanDevo'
+import PlanRef from '../../features/PlanDiscovery/components/planReader/PlanRef'
 
 /**
  * get the routes for reading plans
@@ -69,8 +69,8 @@ export default function(
 				<Route path="calendar" component={PlanCalendar} />
 			</Route>
 			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={PlanReader}>
-				<Route path="devo" component={PlanDayDevo} />
-				<Route path="ref" component={PlanDayRef} />
+				<Route path="devo" component={PlanDevo} />
+				<Route path="ref" component={PlanRef} />
 			</Route>
 		</Route>
 	)

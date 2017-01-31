@@ -41,10 +41,8 @@ export default function reducer(state = {}, action) {
 		// SELECT
 		case type("planSelect"):
 			return (function() {
-				console.log("planSelect success")
 				const inStatePlan = state[action.id] || { id: action.id }
 				const plan = Immutable.fromJS(inStatePlan).toJS()
-				console.log("planSelect", Object.keys(plan))
 				return Immutable.fromJS(state).set("_SELECTED", plan).toJS()
 			})()
 
