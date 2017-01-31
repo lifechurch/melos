@@ -78,6 +78,7 @@ class SubscriptionsController < ApplicationController
         "languageTag" => I18n.locale.to_s,
         "url" => request.fullpath,
         "id" => params[:id].split("-")[0],
+        "day" => params[:day],
         "cache_for" => YV::Caching::a_very_long_time
     }
 
