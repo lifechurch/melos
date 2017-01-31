@@ -44,8 +44,18 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => {
 					resolve()
 				})
-			} else if (isReadingPlanDevo.test(params.url) || isReadingPlanRef.test(params.url) || isSubscription.test(params.url)) {
-				store.dispatch(ActionCreator.subscriptionAll({ id: params.id, language_tag: Locale.planLocale, user_id: sessionData.userid, day: 1 }, auth)).then((d) => {
+			} else if (isReadingPlanRef.test(params.url) || isSubscription.test(params.url)) {
+				store.dispatch(ActionCreator.subscriptionAll({
+					id: params.id,
+					language_tag: Locale.planLocale,
+					user_id: sessionData.userid,
+					day: params.day ? parseInt(params.day, 10) : null,
+					content: params.content ? parseInt(params.content, 10) : null
+				}, auth)).then((d) => {
+					resolve()
+				})
+			} else if (isReadingPlanDevo.test(params.url)) {
+				store.dispatch(ActionCreator.subscriptionAll({ id: params.id, language_tag: Locale.planLocale, user_id: sessionData.userid }, auth)).then((d) => {
 					resolve()
 				})
 			} else if (isSubscribedPlans.test(params.url)) {

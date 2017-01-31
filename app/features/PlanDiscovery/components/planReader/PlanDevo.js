@@ -2,13 +2,11 @@ import React, { Component, PropTypes } from 'react'
 
 class PlanDevo extends Component {
 	render() {
-		const { plan, day } = this.props
+		const { devoContent } = this.props
 
-		console.log(day)
-		console.log(plan)
-		if (!plan || !day) {
+		if (!devoContent) {
 			return (
-				<div></div>
+				<div>no content :(</div>
 			)
 		}
 		return (
@@ -16,7 +14,7 @@ class PlanDevo extends Component {
 				<p>Plan Day Devo</p>
 				<div
 					className='devotional'
-					dangerouslySetInnerHTML={{ __html: plan.calendar[day - 1].additional_content.html.default }}
+					dangerouslySetInnerHTML={{ __html: devoContent }}
 				/>
 			</div>
 		)

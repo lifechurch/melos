@@ -40,7 +40,7 @@ module.exports = {
 			"semi": 0,
 			"max-len": 0,
 			"object-curly-spacing": [2, "always"],
-			"indent": [2, "tab"],
+			"indent": [2, "tab", { "SwitchCase": 1 }],
 			"no-unused-vars": 1,
 			"one-var": 0,
 			"one-var-declaration-per-line": 0,

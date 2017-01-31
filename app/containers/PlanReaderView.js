@@ -23,6 +23,7 @@ class PlanReaderView extends Component {
 
 	render() {
 		const { plan } = this.props
+		console.log(this.props.location)
 
 		return (
 			<div>
