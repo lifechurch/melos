@@ -157,7 +157,26 @@ function requireCompletedPlans(nextState, replace, callback) {
 	}
 }
 
-const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireSavedPlanData, requireRecommendedPlanData, requireSubscribedPlans, requireSavedPlans, requireCompletedPlans)
+function requireSubscribedPlan(nextState, replace, callback) {
+	const currentState = store.getState()
+	const { params } = nextState
+	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
+	const id = parseInt(params.id.toString().split("-")[0])
+
+	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined') {
+		console.log('skipping plan call', fullPlans)
+		store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
+		callback()
+	} else {
+		console.log('making plan call', fullPlans)
+		store.dispatch(PlanDiscoveryActionCreators.subscriptionAll({ id: id, language_tag: window.__LOCALE__.planLocale, user_id: userid }, true)).then((d) => {
+			console.log('plan call done')
+			callback()
+		})
+	}
+}
+
+const routes = getRoutes(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireSavedPlanData, requireRecommendedPlanData, requireSubscribedPlans, requireSavedPlans, requireCompletedPlans, requireSubscribedPlan)
 
 render(
 	<IntlProvider locale={window.__LOCALE__.locale2 == "mn" ? window.__LOCALE__.locale2 : window.__LOCALE__.locale} messages={window.__LOCALE__.messages}>

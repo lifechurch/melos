@@ -1,4 +1,5 @@
 import type from './constants'
+import BibleActionCreator from '../../Bible/actions/creators'
 
 const ActionCreators = {
 
@@ -84,20 +85,38 @@ const ActionCreators = {
 
 	subscriptionAll(params, auth) {
 		return dispatch => {
+			const { id, language_tag, user_id, day, version } = params
+
 			let promises = []
 			promises.push(
-				dispatch(ActionCreators.readingplanView({ id: params.id, language_tag: params.language_tag, user_id: params.user_id }, auth)).then((d) => {
-					console.log('plan/view')
-				}),
-				dispatch(ActionCreators.calendar({ id: params.id, language_tag: params.language_tag, user_id: params.user_id })).then((c) => {
-					console.log("cal")
-				})
+				dispatch(ActionCreators.readingplanView({ id: id, language_tag: language_tag, user_id: user_id }, auth)),
+				dispatch(ActionCreators.calendar({ id: id, language_tag: language_tag, user_id: user_id }, auth))
 			)
 
 			return new Promise((resolve, reject) => {
 				Promise.all(promises).then((d) => {
-					console.log("promise all", d)
-					resolve(dispatch(ActionCreators.planSelect({ id: params.id })))
+					let promises = []
+
+					if (day) {
+						const [ , { calendar } ] = d
+						const dayData = calendar[day - 1]
+
+						dayData.references.forEach((ref, i) => {
+							promises.push(dispatch(BibleActionCreator.bibleVerses({ references: [ref], id: version, format: 'html', plan_id: id, plan_day: day, plan_content: i })))
+						})
+					}
+
+					const selectPlan = () => {
+						resolve(dispatch(ActionCreators.planSelect({ id: id })))
+					}
+
+					if (promises.length > 0) {
+						console.log("with promises")
+						resolve(Promise.all(promises).then(selectPlan))
+					} else {
+						console.log('without promises')
+						selectPlan()
+					}
 				})
 			})
 		}

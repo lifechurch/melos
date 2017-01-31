@@ -1,4 +1,5 @@
 import ActionCreator from '../../features/PlanDiscovery/actions/creators'
+import cookie from 'react-cookie';
 
 export default function loadData(params, startingState, sessionData, store, Locale) {
 
@@ -33,7 +34,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					resolve()
 				})
 			} else if (isSubscription.test(params.url)) {
-				store.dispatch(ActionCreator.subscriptionAll({ id: params.id, language_tag: Locale.planLocale, user_id: sessionData.userid, day: 1 }, auth)).then((d) => {
+				const version = params.version || cookie.load('version') || '1'
+				store.dispatch(ActionCreator.subscriptionAll({ id: params.id, language_tag: Locale.planLocale, user_id: sessionData.userid, version, day: params.day }, auth)).then((d) => {
 					resolve()
 				})
 			} else if (isSubscribedPlans.test(params.url)) {

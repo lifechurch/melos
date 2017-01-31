@@ -18,7 +18,7 @@ import PlanReader from '../../containers/PlanReader'
 import PlanDayDevo from '../../containers/PlanDayDevo'
 import PlanDayRef from '../../containers/PlanDayRef'
 
-export default function(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireSavedPlanData, requireRecommendedPlanData, requireSubscribedPlans, requireSavedPlans, requireCompletedPlans) {
+export default function(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireSavedPlanData, requireRecommendedPlanData, requireSubscribedPlans, requireSavedPlans, requireCompletedPlans, requireSubscribedPlan) {
 	return (
 		<Route path="/">
 			<Route path="(:lang/)reading-plans" component={PlansView}>
@@ -39,7 +39,7 @@ export default function(requirePlanDiscoveryData, requirePlanCollectionData, req
 				<Route path="completed-reading-plans" component={MyCompletedPlans} onEnter={requireCompletedPlans} />
 				<Route path="reading-plans" component={MySubscribedPlans} onEnter={requireSubscribedPlans} />
 			</Route>
-			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan}>
+			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan} onEnter={requireSubscribedPlan}>
 				<IndexRoute component={PlanDay} />
 				<Route path="edit" component={PlanSettings} />
 				<Route path="calendar" component={PlanCalendar} />

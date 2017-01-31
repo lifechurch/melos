@@ -1,18 +1,18 @@
 import React, { Component, PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import Image from '../../../components/Carousel/Image'
 import PlanDaySlider from './PlanDaySlider'
 import PlanDayStatus from './PlanDayStatus'
+import PlanDayStartButton from './PlanDayStartButton'
 
 class Plan extends Component {
 	render() {
 		const { plan, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
-		console.log("plan render", Object.keys(plan))
 		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
 		const day = parseInt(location.query.day, 10) || 1
+		console.log('calll', plan.calendar)
 		const dayData = plan.calendar[day - 1]
 		const references = dayData.references.map((r) => {
 			return <li key={r} className="li-right">{r}</li>
@@ -23,7 +23,7 @@ class Plan extends Component {
 					<div className="row">
 						<div className="header columns large-8 medium-8 medium-centered">
 							<div className="back">
-								back
+								<Link to={`/users/${auth.userData.username}/reading-plans`}>back</Link>
 							</div>
 							<div className="settings">
 								settings
@@ -48,7 +48,7 @@ class Plan extends Component {
 					<div className="row">
 						<div className="columns large-8 medium-8 medium-centered">
 							<div className="start-reading">
-								<Link to={`/bob`} className="solid-button green"><FormattedMessage id="plans.widget.start reading" /></Link>
+								<PlanDayStartButton dayData={dayData} link={subscriptionLink} />
 							</div>
 							<PlanDayStatus day={day} plan={plan} />
 							<ul className="no-bullets plan-pieces">
