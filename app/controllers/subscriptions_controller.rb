@@ -99,6 +99,7 @@ class SubscriptionsController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.fullpath,
+        "id" => params[:id].split("-")[0],
         "cache_for" => YV::Caching::a_very_long_time
     }
 
@@ -120,6 +121,7 @@ class SubscriptionsController < ApplicationController
         "strings" => {},
         "languageTag" => I18n.locale.to_s,
         "url" => request.fullpath,
+        "id" => params[:id].split("-")[0],
         "cache_for" => YV::Caching::a_very_long_time
     }
 

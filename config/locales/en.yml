@@ -1427,6 +1427,7 @@ en:
       discover:                                 "Discover"
       my_plans:                                 "My Plans"
       day_completed:                              "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+      which reading:                              "%{current} of %{total}"
       status:
         on track:                                 "On Track!"
         days ahead:
