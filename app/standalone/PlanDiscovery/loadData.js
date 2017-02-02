@@ -1,5 +1,6 @@
+import cookie from 'react-cookie'
+
 import ActionCreator from '../../features/PlanDiscovery/actions/creators'
-import cookie from 'react-cookie';
 
 /**
  * Loads a data.
@@ -13,21 +14,21 @@ import cookie from 'react-cookie';
  */
 export default function loadData(params, startingState, sessionData, store, Locale) {
 
-	return new Promise((resolve, reject) => {
-		if (typeof store !== 'undefined' && params.hasOwnProperty('url') && params.hasOwnProperty('languageTag')) {
-			const isCollection = new RegExp("^\/reading-plans-collection\/[0-9]+")
-			const isIndex = new RegExp("^\/reading-plans$")
-			const isSaved = new RegExp("^\/saved-plans-collection$")
-			const isRecommended = new RegExp("^\/recommended-plans-collection\/[0-9]+")
-			const isPlan = new RegExp("^\/reading-plans\/[0-9]+")
+	return new Promise((resolve) => {
+		if (typeof store !== 'undefined' && params.url && params.languageTag) {
+			const isCollection = new RegExp('^\/reading-plans-collection\/[0-9]+')
+			const isIndex = new RegExp('^\/reading-plans$')
+			const isSaved = new RegExp('^\/saved-plans-collection$')
+			const isRecommended = new RegExp('^\/recommended-plans-collection\/[0-9]+')
+			const isPlan = new RegExp('^\/reading-plans\/[0-9]+')
 
-			const isSubscribedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans")
-			const isSavedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/saved-reading-plans")
-			const isCompletedPlans = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/completed-reading-plans")
+			const isSubscribedPlans = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans')
+			const isSavedPlans = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/saved-reading-plans')
+			const isCompletedPlans = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/completed-reading-plans')
 
-			const isReadingPlanRef = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/ref")
-			const isReadingPlanDevo = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/devo")
-			const isSubscription = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+")
+			const isReadingPlanRef = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/ref')
+			const isReadingPlanDevo = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/devo')
+			const isSubscription = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+')
 
 			let auth = false
 			console.log('aljkdfhkjaehrbvkjhasdbfjkawhsebfiajwehfbajkwrehg')
@@ -38,13 +39,11 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			}
 
 			if (isIndex.test(params.url)) {
-				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.planLocale }, auth)).then(() => {
-					resolve()
-				})
+				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.planLocale }, auth)).then(resolve)
+
 			} else if (isSaved.test(params.url)) {
-				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => {
-					resolve()
-				})
+				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(resolve)
+
 			} else if (isReadingPlanRef.test(params.url) || isReadingPlanDevo.test(params.url)) {
 				const version = params.version || cookie.load('version') || '1'
 				const content = params.content ? parseInt(params.content, 10) : null
@@ -56,9 +55,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					day: params.day ? parseInt(params.day, 10) : null,
 					version,
 					content
-				}, auth)).then((d) => {
-					resolve()
-				})
+				}, auth)).then(resolve)
+
 			} else if (isSubscription.test(params.url)) {
 				console.log('why?')
 				const version = params.version || cookie.load('version') || '1'
@@ -66,39 +64,30 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					id: params.id,
 					language_tag: Locale.planLocale,
 					user_id: sessionData.userid,
-					day: params.day
+					day: params.day,
 					version,
-				}, auth)).then((d) => {
-					resolve()
-				})
+				}, auth)).then(resolve)
+
 			} else if (isSubscribedPlans.test(params.url)) {
-				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then((d) => {
-					resolve()
-				})
+				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(resolve)
+
 			} else if (isSavedPlans.test(params.url)) {
-				store.dispatch(ActionCreator.savedItems({ page: 1 }, auth)).then((d) => {
-					resolve()
-				})
+				store.dispatch(ActionCreator.savedItems({ page: 1 }, auth)).then(resolve)
+
 			} else if (isCompletedPlans.test(params.url)) {
-				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then((d) => {
-					resolve()
-				})
-			} else if (params.hasOwnProperty("id")) {
+				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then(resolve)
+
+			} else if (params.id) {
 				if (isCollection.test(params.url)) {
-					store.dispatch(ActionCreator.collectionAll({ id: params.id })).then(() => {
-						resolve()
-					})
+					store.dispatch(ActionCreator.collectionAll({ id: params.id })).then(resolve)
 				} else if (isPlan.test(params.url)) {
-					store.dispatch(ActionCreator.readingplanInfo({ id: params.id, language_tag: Locale.planLocale }, auth)).then(() => {
-						resolve()
-					})
+					store.dispatch(ActionCreator.readingplanInfo({ id: params.id, language_tag: Locale.planLocale }, auth)).then(resolve)
 				} else if (isRecommended.test(params.url)) {
-					store.dispatch(ActionCreator.recommendedPlansInfo({ context: 'recommended', id: params.id, language_tag: Locale.planLocale }, auth)).then(() => {
-						resolve()
-					})
+					store.dispatch(ActionCreator.recommendedPlansInfo({ context: 'recommended', id: params.id, language_tag: Locale.planLocale }, auth)).then(resolve)
 				} else {
 					resolve()
 				}
+
 			} else {
 				resolve()
 			}

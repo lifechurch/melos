@@ -61,7 +61,7 @@ function checkAuth(auth) {
 					}
 				})
 			} catch(err) {
-				reject({error: 1, message: 'Invalid or Expired Token'})
+				reject({ error: 1, message: 'Invalid or Expired Token' })
 			}
 
 		} else if (typeof auth === 'object' && (typeof auth.password === 'string' || typeof auth.tp_token === 'string')) {
@@ -165,7 +165,7 @@ function getConfig(feature) {
 }
 
 function loadData(feature, params, startingState, sessionData, store, Locale) {
-	return new Promise((resolve, reject) => {
+	return new Promise((resolve) => {
 		let fn = null
 		try {
 			fn = require('./app/standalone/' + feature + '/loadData').default
@@ -218,6 +218,7 @@ function getRenderProps(feature, url) {
 				}
 			})
 		} catch(ex) {
+			console.log("Rendering Error:", ex)
 			resolve({})
 		}
 	})
@@ -244,7 +245,6 @@ router.post('/', urlencodedParser, function(req, res) {
 			const store = getStore(feature, startingState, history, null)
 			loadData(feature, params, startingState, sessionData, store, Locale).then((action) => {
 				if (typeof action === 'function') {
-
 					store.dispatch(action).then(() => {
 						finish()
 					}, (err) => {
@@ -257,6 +257,8 @@ router.post('/', urlencodedParser, function(req, res) {
 					finish()
 				}
 
+				console.log(store.getState())
+
 				function finish() {
 					const RootComponent = getRootComponent(feature)
 
@@ -265,7 +267,7 @@ router.post('/', urlencodedParser, function(req, res) {
 						try {
 							 html = renderToString(<IntlProvider locale={ (Locale.locale2 == "mn") ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch(ex) {
-							return res.status(500).send({error: 3, message: 'Could Not Render ' + feature + ' view', ex, stack: ex.stack })
+							return res.status(500).send({ error: 3, message: 'Could Not Render ' + feature + ' view', ex, stack: ex.stack })
 						}
 
 						const initialState = Object.assign({}, startingState, store.getState(), { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost }})

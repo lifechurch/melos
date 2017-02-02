@@ -1,3 +1,6 @@
+import Immutable from 'immutable'
+import moment from 'moment'
+
 import type from './constants'
 import BibleActionCreator from '../../Bible/actions/creators'
 
@@ -9,9 +12,10 @@ const ActionCreators = {
 				dispatch(ActionCreators.configuration()),
 				new Promise((resolve, reject) => {
 					dispatch(ActionCreators.discover(params, auth)).then((data) => {
-						var collectionIds = [];			// for collections carousels
-						var recommendationIds = [];	// for recommendation carousels
-						var hasSaved = false;				// for saved plans carousel
+						const collectionIds = [];			// for collections carousels
+						const recommendationIds = [];	// for recommendation carousels
+						const promises = []
+						let hasSaved = false;				// for saved plans carousel
 
 						if (data && data.items) {
 							data.items.forEach((item) => {
@@ -25,8 +29,6 @@ const ActionCreators = {
 							})
 						}
 
-						var promises = []
-
 						// get all the regular carousels items
 						promises.push(dispatch(ActionCreators.collectionsItems({ ids: collectionIds })))
 
@@ -38,8 +40,8 @@ const ActionCreators = {
 						// if we have recommendations, let's get recommended
 						if (recommendationIds.length > 0) {
 							promises.concat(recommendationIds.map((id) => {
-								return new Promise((resolve, reject) => {
-									dispatch(ActionCreators.recommendations({ language_tag: params.language_tag, id })).then(resolve, resolve)
+								return new Promise((innerResolve) => {
+									dispatch(ActionCreators.recommendations({ language_tag: params.language_tag, id })).then(innerResolve, innerResolve)
 								})
 							}))
 						}
@@ -63,7 +65,7 @@ const ActionCreators = {
 					dispatch(ActionCreators.collectionsItems(itemsParams)).then((collectionItems) => {
 
 						// if we have a collection inside a collection, the reducer is going to populate the collection with it's items based on the flag
-						var ids = []
+						const ids = []
 
 						collectionItems.collections[0].items.forEach((item) => {
 							if (item.type === 'collection') {
@@ -72,7 +74,7 @@ const ActionCreators = {
 						})
 
 						if (ids.length > 0) {
-							resolve(dispatch(ActionCreators.collectionsItems({ ids: ids, collectInception: true })))
+							resolve(dispatch(ActionCreators.collectionsItems({ ids, collectInception: true })))
 						} else {
 							resolve()
 						}
@@ -86,36 +88,50 @@ const ActionCreators = {
 	subscriptionAll(params, auth) {
 		return dispatch => {
 			const { id, language_tag, user_id, day, version } = params
+			console.log('XXX', id, language_tag, user_id, day, version)
+			const promises = [
+				dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth)),
+				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth))
+			]
 
-			let promises = []
-			promises.push(
-				dispatch(ActionCreators.readingplanView({ id: id, language_tag: language_tag, user_id: user_id }, auth)),
-				dispatch(ActionCreators.calendar({ id: id, language_tag: language_tag, user_id: user_id }, auth))
-			)
-			console.log('ajsnfkhsf')
-			return new Promise((resolve, reject) => {
+			return new Promise((resolve) => {
 				Promise.all(promises).then((d) => {
-					let promises = []
+					const [ plan, { calendar } ] = d
+					const currentDay = day || moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
+					const dayData = calendar[currentDay - 1]
+					const innerPromises = []
 
-					if (day) {
-						const [ , { calendar } ] = d
-						const dayData = calendar[day - 1]
-						if (dayData.references && dayData.references.length > 0) {
-							dayData.references.forEach((ref, i) => {
-								promises.push(dispatch(BibleActionCreator.bibleVerses({ references: [ref], id: version, format: 'html', plan_id: id, plan_day: day, plan_content: i })))
-							})
+					dayData.references.forEach((ref, i) => {
+						const isFullChapter = ref.split('.').length === 2
+						if (isFullChapter) {
+							innerPromises.push(dispatch(BibleActionCreator.bibleChapter({
+								reference: ref,
+								id: version,
+								format: 'html',
+								plan_id: id,
+								plan_day: currentDay,
+								plan_content: i
+							})))
+						} else {
+							innerPromises.push(dispatch(BibleActionCreator.bibleVerses({
+								references: [ref],
+								id: version,
+								format: 'html',
+								plan_id: id,
+								plan_day: currentDay,
+								plan_content: i
+							})))
 						}
-					}
+					})
 
 					const selectPlan = () => {
-						resolve(dispatch(ActionCreators.planSelect({ id: id })))
+						console.log('selectPlan')
+						resolve(dispatch(ActionCreators.planSelect({ id })))
 					}
 
-					if (promises.length > 0) {
-						console.log("with promises")
-						resolve(Promise.all(promises).then(selectPlan))
+					if (innerPromises.length > 0) {
+						Promise.all(innerPromises).then(selectPlan)
 					} else {
-						console.log('without promises')
 						selectPlan()
 					}
 				})
@@ -130,7 +146,7 @@ const ActionCreators = {
 		}
 	},
 
-	recommendedPlansInfo(params, auth) {
+	recommendedPlansInfo(params) {
 		return dispatch => {
 			const recommendedParams = Object.assign({}, params, { dynamicCollection: true })
 			return Promise.all([
@@ -152,16 +168,16 @@ const ActionCreators = {
 
 	readingplanInfo(params, auth) {
 		return dispatch => {
-			params.id = parseInt(params.id.toString().split('-')[0], 10)
+			const p = Immutable.fromJS(params).set('id', parseInt(params.id.toString().split('-')[0], 10)).toJS()
 			// tell the reducer to populate the recommendations in state.collection.plans.related
-			const planParams = Object.assign({}, params, { readingplanInfo: true })
+			const planParams = Object.assign({}, p, { readingplanInfo: true })
 			// now check if requested reading plan view is a saved plan for the user
-			const savedplanParams = Object.assign({}, params, { savedplanCheck: true })
+			const savedplanParams = Object.assign({}, p, { savedplanCheck: true })
 
-			let promises = [
+			const promises = [
 				dispatch(ActionCreators.configuration()),
 				dispatch(ActionCreators.readingplanView(params, auth)),
-				new Promise((resolve, reject) => {
+				new Promise((resolve) => {
 					dispatch(ActionCreators.recommendations(planParams)).then(resolve, resolve)
 				}),
 				dispatch(ActionCreators.readingplanStats(params, auth))
@@ -205,8 +221,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'discover',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('discoverRequest'), type('discoverSuccess'), type('discoverFailure') ]
 			}
@@ -220,8 +236,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'references',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('referencesRequest'), type('referencesSuccess'), type('referencesFailure') ]
 			}
@@ -235,8 +251,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'calendar',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('calendarRequest'), type('calendarSuccess'), type('calendarFailure') ]
 			}
@@ -250,8 +266,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'collections_view',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('collectionRequest'), type('collectionSuccess'), type('collectionFailure') ]
 			}
@@ -266,7 +282,7 @@ const ActionCreators = {
 				method: 'collections_items',
 				version: '3.1',
 				auth: false,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ type('collectionsItemsRequest'), type('collectionsItemsSuccess'), type('collectionsItemsFailure') ]
 			}
@@ -281,7 +297,7 @@ const ActionCreators = {
 				method: 'recommendations',
 				version: '3.1',
 				auth: false,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ type('recommendationsItemsRequest'), type('recommendationsItemsSuccess'), type('recommendationsItemsFailure') ]
 			}
@@ -295,8 +311,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'queue_items',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('savedItemsRequest'), type('savedItemsSuccess'), type('savedItemsFailure') ]
 			}
@@ -310,8 +326,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'view',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('planInfoRequest'), type('planInfoSuccess'), type('planInfoFailure') ]
 			}
@@ -325,8 +341,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'stats',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('planStatsRequest'), type('planStatsSuccess'), type('planStatsFailure') ]
 			}
@@ -340,8 +356,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'subscribe_user',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'post',
 				types: [ type('planSubscribeRequest'), type('planSubscribeSuccess'), type('planSubscribeFailure') ]
 			}
@@ -355,8 +371,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'add_to_queue',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'post',
 				types: [ type('planSaveforlaterRequest'), type('planSaveforlaterSuccess'), type('planSaveforlaterFailure') ]
 			}
@@ -370,8 +386,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'remove_from_queue',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'post',
 				types: [ type('planRemoveSaveRequest'), type('planRemoveSaveSuccess'), type('planRemoveSaveFailure') ]
 			}
@@ -399,8 +415,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'items',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('itemsRequest'), type('itemsSuccess'), type('itemsFailure') ]
 			}
@@ -414,8 +430,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'completed',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('completedRequest'), type('completedSuccess'), type('completedFailure') ]
 			}
