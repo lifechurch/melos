@@ -48,6 +48,7 @@ module.exports = {
 			"no-multiple-empty-lines": 0,
 			"no-negated-condition": 0,
 			"arrow-parens": 0,
+			"arrow-body-style": [ 1, "always" ],
 			"comma-dangle": 0,
 			"camelcase": 0,
 			"padded-blocks": 0,

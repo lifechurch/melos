@@ -1,24 +1,32 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
+import moment from 'moment'
+
 import Image from '../../../components/Carousel/Image'
 import PlanDaySlider from './PlanDaySlider'
 import PlanDayStatus from './PlanDayStatus'
 import PlanDayStartButton from './PlanDayStartButton'
-import moment from 'moment'
+import PlanReferences from './PlanReferences'
 
 class Plan extends Component {
 	render() {
 		const { plan, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
-		const day = parseInt(location.query.day, 10) || moment().diff(moment(plan.start_dt, "YYYY-MM-DD"), 'days') + 1
+		const day = parseInt(location.query.day, 10) || moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
 		const dayData = plan.calendar[day - 1]
+		const hasDevo = (
+			(typeof dayData.additional_content.html !== 'undefined' && dayData.additional_content.html !== null) ||
+			(typeof dayData.additional_content.text !== 'undefined' && dayData.additional_content.text !== null)
+		)
 
-		const references = dayData.references.map((r, i) => {
-			const verse = dayData.reference_content[i].reference.human
-			return <li key={r} className="li-right">{verse}</li>
-		})
+		let startLink
+		if (hasDevo) {
+			startLink = { pathname: `${subscriptionLink}/devo`, query: { day } }
+		} else {
+			startLink = { pathname: `${subscriptionLink}/ref`, query: { day, content: 0 } }
+		}
 
 		return (
 			<div className="subscription-show">
@@ -45,18 +53,16 @@ class Plan extends Component {
 					</div>
 					<div className="row days-container collapse">
 						<div className="columns large-8 medium-8 medium-centered">
-							<PlanDaySlider day={day} plan={plan} link={subscriptionLink} />
+							<PlanDaySlider day={day} calendar={plan.calendar} link={subscriptionLink} />
 						</div>
 					</div>
 					<div className="row">
 						<div className="columns large-8 medium-8 medium-centered">
 							<div className="start-reading">
-								<PlanDayStartButton dayData={dayData} link={subscriptionLink} />
+								<PlanDayStartButton dayData={dayData} link={startLink} />
 							</div>
-							<PlanDayStatus day={day} plan={plan} />
-							<ul className="no-bullets plan-pieces">
-								{references}
-							</ul>
+							<PlanDayStatus day={day} calendar={plan.calendar} total={plan.total_days} />
+							<PlanReferences day={day} references={dayData.reference_content} link={subscriptionLink} />
 						</div>
 					</div>
 				</div>
@@ -68,12 +74,11 @@ class Plan extends Component {
 					]}
 				/>
 
-
-				<p>Plan View</p><br/>
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/edit'}>Settings</Link><br/>
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/calendar'}>Calendar</Link><br/>
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/devo?day=2'}>Devo</Link><br/>
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/ref?content=0&day=2'}>Ref</Link><br/>
+				<p>Plan View</p><br />
+				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/edit'}>Settings</Link><br />
+				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/calendar'}>Calendar</Link><br />
+				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/devo?day=2'}>Devo</Link><br />
+				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/ref?content=0&day=2'}>Ref</Link><br />
 
 				<div>
 					{children}
@@ -94,7 +99,13 @@ Plan.propTypes = {
 }
 
 Plan.defaultProps = {
-
+	plan: {},
+	params: {},
+	children: {},
+	auth: {},
+	location: {},
+	localizedLink: () => {},
+	serverLanguageTag: ''
 }
 
 export default Plan
