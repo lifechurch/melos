@@ -4,8 +4,8 @@ class PlanRef extends Component {
 	render() {
 		const { plan, reference } = this.props
 
-		console.log(ref)
-		if (!plan || !ref) {
+		console.log(reference)
+		if (!plan || !reference) {
 			return (
 				<div></div>
 			)
@@ -13,6 +13,7 @@ class PlanRef extends Component {
 		return (
 			<div>
 				<p>Plan Day Ref</p>
+				{ reference }
 			</div>
 		)
 	}

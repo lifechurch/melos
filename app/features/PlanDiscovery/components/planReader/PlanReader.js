@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import ActionCreators from '../../actions/creators'
 import { FormattedMessage } from 'react-intl'
+import ActionCreators from '../../actions/creators'
 import PlanNavigation from './PlanNavigation'
 import isFinalReadingContent from '../../../../lib/readingPlanUtils'
 
@@ -10,9 +10,13 @@ class PlanReader extends Component {
 
 	constructor(props) {
 		super(props)
+
+		this.state = {
+
+		}
 	}
 
-	onComplete = () => {
+	handleComplete = () => {
 		// make api call
 	}
 
@@ -25,16 +29,16 @@ class PlanReader extends Component {
 			)
 		}
 
-		let dayNum = parseInt(day, 10)
-		let contentNum = parseInt(content, 10)
-		let dayObj = plan.calendar[day]
-		let numRefs = dayObj.references.length
-		let ref = dayObj.references[contentNum]
-		console.log(typeof contentNum)
+		const dayNum = parseInt(day, 10)
+		const contentNum = parseInt(content, 10)
+		const dayObj = plan.calendar[day]
+		const numRefs = dayObj.references.length
+		const ref = dayObj.references[contentNum]
 		// if no content was passed in the url, we know that devo is being rendered
-		let isCheckingDevo = isNaN(contentNum)
-		let isFinalContent = isFinalReadingContent(dayObj, ref, isCheckingDevo)
-
+		const isCheckingDevo = isNaN(contentNum)
+		const isFinalContent = isFinalReadingContent(dayObj, ref, isCheckingDevo)
+		const basePath = `${pathname.replace('/devo', '').replace('/ref', '')}`
+		console.log(isFinalContent)
 		let previous, next = null
 		// figure out nav links for previous
 		if (isCheckingDevo) {
@@ -42,45 +46,49 @@ class PlanReader extends Component {
 			previous = null
 		} else if (contentNum === 0) {
 			// if on first ref, then devo is previous
-			previous = `/${pathname.replace('ref', 'devo')}?day=${dayNum}`
+			previous = `/${basePath}/devo?day=${dayNum}`
 		} else {
 			// previous content
-			previous = `/${pathname}?day=${dayNum}&content=${contentNum - 1}`
+			previous = `/${basePath}/ref?day=${dayNum}&content=${contentNum - 1}`
 		}
 		// figure out nav links for next
 		if (isFinalContent) {
 			// day complete
-			next = `/${pathname}?day=${dayNum}&complete=true`
+			next = `/${basePath}?day=${dayNum}&complete=true`
 		} else if (contentNum + 1 === numRefs) {
 			// overview page if not last remaining ref, and is last ref in order
-			next = `/${pathname.replace('/ref', '')}`
+			next = `/${basePath}`
 		} else if (isCheckingDevo) {
 			// if on devo, next is content 0
-			next = `/${pathname}?day=${dayNum}&content=0`
+			next = `/${basePath}/ref?day=${dayNum}&content=0`
 		} else {
 			// next content
-			next = `/${pathname}?day=${dayNum}&content=${contentNum + 1}`
+			next = `/${basePath}/ref?day=${dayNum}&content=${contentNum + 1}`
 		}
 
-		let devoContent = dayObj.additional_content.html.default
+		const devoContent = dayObj.additional_content.html.default
+		const reference = dayObj.references[contentNum]
 		// we'll have the references in state for the day, keyed by usfm string,
 		// so we can grab the actual reference html from there with the following key
 		// references = props.references[plan.calendar[day].references[content] .... ]
 		return (
 			<div>
 				<PlanNavigation
+					localizedLink={this.props.localizedLink}
 					plan={plan}
 					day={dayNum}
 					previous={previous}
 					next={next}
 					isFinalContent={isFinalContent}
-					onComplete={this.onComplete}
+					handleComplete={this.handleComplete}
 				/>
 				{
 					// render the devo or ref component (child of PlanReaderView based on route)
 					// with the params from the url
 					React.cloneElement(this.props.children, {
 						devoContent,
+						reference,
+						plan,
 					})
 				}
 			</div>

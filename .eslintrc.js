@@ -35,7 +35,8 @@ module.exports = {
 		"plugins": [
 			"react",
 		],
-		"extends": "google",
+		"parser": "babel-eslint",
+		"extends": "airbnb",
 		"rules": {
 			"semi": 0,
 			"max-len": 0,
@@ -53,10 +54,14 @@ module.exports = {
 			"eol-last": 0,
 			"array-bracket-spacing": 0,
 			"no-useless-escape": 0,
+			"no-tabs": 0,
 			"operator-linebreak": 0,
 			"no-control-regex": 0,
+			"no-else-return": 0,
+			"no-plusplus": 0,
 			// jsx rules
 			"jsx-quotes" : 0,
+			"react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }],
 			"react/display-name": 0,
 			"react/forbid-prop-types": 0,
 			"react/jsx-boolean-value": 1,

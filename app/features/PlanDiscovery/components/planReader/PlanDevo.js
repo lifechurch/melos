@@ -10,12 +10,14 @@ class PlanDevo extends Component {
 			)
 		}
 		return (
-			<div>
+			<div className='row devo-content'>
 				<p>Plan Day Devo</p>
-				<div
-					className='devotional'
-					dangerouslySetInnerHTML={{ __html: devoContent }}
-				/>
+				<div className='columns large-8 medium-8 medium-centered'>
+					<div
+						className='devotional'
+						dangerouslySetInnerHTML={{ __html: devoContent }}
+					/>
+				</div>
 			</div>
 		)
 	}

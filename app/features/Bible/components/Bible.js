@@ -7,7 +7,7 @@ import Filter from '../../../lib/filter'
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 // import cookie from 'react-cookie';
 import Chapter from './content/Chapter'
-import ReaderArrows from './content/ReaderArrows'
+import NavArrows from './content/NavArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 // import LabelList from './verseAction/bookmark/LabelList'
@@ -372,10 +372,10 @@ class Bible extends Component {
 						showVerseNumbers={showVerseNumbers}
 						ref={(chapter) => { this.chapter = chapter }}
 					/>
-					<ReaderArrows
+					<NavArrows
 						{...this.props}
-						previousChapterURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
-						nextChapterURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
+						previousURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
+						nextURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
 					/>
 				</div>
 			)
