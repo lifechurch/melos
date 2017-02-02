@@ -30,7 +30,7 @@ module.exports = {
 		"plugins": [
 			"react",
 		],
-		"extends": "google",
+		"extends": "airbnb",
 		"rules": {
 			"semi": 0,
 			"max-len": 0,

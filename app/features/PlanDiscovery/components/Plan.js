@@ -5,18 +5,21 @@ import Image from '../../../components/Carousel/Image'
 import PlanDaySlider from './PlanDaySlider'
 import PlanDayStatus from './PlanDayStatus'
 import PlanDayStartButton from './PlanDayStartButton'
+import moment from 'moment'
 
 class Plan extends Component {
 	render() {
 		const { plan, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
-		const day = parseInt(location.query.day, 10) || 1
+		const day = parseInt(location.query.day, 10) || moment().diff(moment(plan.start_dt, "YYYY-MM-DD"), 'days') + 1
 		const dayData = plan.calendar[day - 1]
+
 		const references = dayData.references.map((r, i) => {
 			const verse = dayData.reference_content[i].reference.human
 			return <li key={r} className="li-right">{verse}</li>
 		})
+
 		return (
 			<div className="subscription-show">
 				<div className="plan-overview">
