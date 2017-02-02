@@ -30,7 +30,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isSubscription = new RegExp("^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+")
 
 			let auth = false
-
+			console.log('aljkdfhkjaehrbvkjhasdbfjkawhsebfiajwehfbajkwrehg')
 			if (sessionData.email && sessionData.password) {
 				auth = { username: sessionData.email, password: sessionData.password }
 			} else if (sessionData.tp_token) {
@@ -48,6 +48,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			} else if (isReadingPlanRef.test(params.url) || isReadingPlanDevo.test(params.url)) {
 				const version = params.version || cookie.load('version') || '1'
 				const content = params.content ? parseInt(params.content, 10) : null
+				console.log('less doit')
 				store.dispatch(ActionCreator.subscriptionAll({
 					id: params.id,
 					language_tag: Locale.planLocale,
@@ -59,6 +60,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					resolve()
 				})
 			} else if (isSubscription.test(params.url)) {
+				console.log('why?')
 				const version = params.version || cookie.load('version') || '1'
 				store.dispatch(ActionCreator.subscriptionAll({
 					id: params.id,

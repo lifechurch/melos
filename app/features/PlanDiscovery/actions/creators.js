@@ -92,7 +92,7 @@ const ActionCreators = {
 				dispatch(ActionCreators.readingplanView({ id: id, language_tag: language_tag, user_id: user_id }, auth)),
 				dispatch(ActionCreators.calendar({ id: id, language_tag: language_tag, user_id: user_id }, auth))
 			)
-
+			console.log('ajsnfkhsf')
 			return new Promise((resolve, reject) => {
 				Promise.all(promises).then((d) => {
 					let promises = []
@@ -100,10 +100,11 @@ const ActionCreators = {
 					if (day) {
 						const [ , { calendar } ] = d
 						const dayData = calendar[day - 1]
-
-						dayData.references.forEach((ref, i) => {
-							promises.push(dispatch(BibleActionCreator.bibleVerses({ references: [ref], id: version, format: 'html', plan_id: id, plan_day: day, plan_content: i })))
-						})
+						if (dayData.references && dayData.references.length > 0) {
+							dayData.references.forEach((ref, i) => {
+								promises.push(dispatch(BibleActionCreator.bibleVerses({ references: [ref], id: version, format: 'html', plan_id: id, plan_day: day, plan_content: i })))
+							})
+						}
 					}
 
 					const selectPlan = () => {

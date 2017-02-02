@@ -29,8 +29,8 @@ class PlanReader extends Component {
 
 	render() {
 		const { plan, location: { query: { day, content }, pathname } } = this.props
-
-		if (!plan || !day) {
+		console.log(plan)
+		if (Object.keys(plan).length === 0 || !day) {
 			return (
 				<div></div>
 			)
@@ -88,6 +88,7 @@ class PlanReader extends Component {
 		}
 
 		const devoContent = dayObj.additional_content.html.default
+		console.log(plan)
 		// we'll have the references in state for the day, keyed by usfm string,
 		// so we can grab the actual reference html from there with the following key
 		// references = props.references[plan.calendar[day].references[content] .... ]

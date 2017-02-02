@@ -5,10 +5,15 @@ import Immutable from 'immutable'
 
 export default function reducer(state = {}, action) {
 	switch (action.type) {
+		case type("planInfoFailure"):
+			console.log(action)
+			return state
+
 		case type("planInfoSuccess"):
 			return (function() {
 				const inStatePlan = state[action.params.id] || { id: action.params.id }
 				const fromApiPlan = action.response
+				console.log('fromapi',fromApiPlan)
 				const plan = Immutable.fromJS(inStatePlan).mergeDeep(fromApiPlan).toJS()
 				return Immutable.fromJS(state).set(plan.id, plan).toJS()
 			})()
@@ -37,6 +42,10 @@ export default function reducer(state = {}, action) {
 				const plan = Immutable.fromJS(inStatePlan).toJS()
 				return Immutable.fromJS(state).set("_SELECTED", plan).toJS()
 			})()
+
+		case type("updateCompletionSuccess"):
+			console.log(action.response)
+			return state
 
 		default:
 			return state

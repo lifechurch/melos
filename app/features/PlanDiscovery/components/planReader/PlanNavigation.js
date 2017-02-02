@@ -25,7 +25,11 @@ class PlanNavigation extends Component {
 		} = this.props
 		console.log(this.props)
 
-		const dayObj = plan.calendar[day - 1]
+		if (!plan) {
+			return (
+				<div />
+			)
+		}
 
 		let customNext = null
 		if (isFinalContent) {
