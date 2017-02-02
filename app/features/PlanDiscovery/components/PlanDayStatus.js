@@ -12,11 +12,11 @@ class PlanDayStatus extends Component {
 		plan.calendar.forEach((d) => {
 			const curDate = moment(d.date)
 
-			if (d.completed && (curDate < today)) {
+			if (!d.completed && (curDate.isBefore(today, 'day'))) {
 				missedDays++
 			}
 
-			if (d.completed && (curDate > today)) {
+			if (d.completed && (curDate.isAfter(today, 'day'))) {
 				aheadDays++
 			}
 		})

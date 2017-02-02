@@ -1,4 +1,5 @@
 import ActionCreator from '../../features/PlanDiscovery/actions/creators'
+import cookie from 'react-cookie';
 
 /**
  * Loads a data.
@@ -44,18 +45,28 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => {
 					resolve()
 				})
-			} else if (isReadingPlanRef.test(params.url) || isSubscription.test(params.url)) {
+			} else if (isReadingPlanRef.test(params.url) || isReadingPlanDevo.test(params.url)) {
+				const version = params.version || cookie.load('version') || '1'
+				const content = params.content ? parseInt(params.content, 10) : null
 				store.dispatch(ActionCreator.subscriptionAll({
 					id: params.id,
 					language_tag: Locale.planLocale,
 					user_id: sessionData.userid,
 					day: params.day ? parseInt(params.day, 10) : null,
-					content: params.content ? parseInt(params.content, 10) : null
+					version,
+					content
 				}, auth)).then((d) => {
 					resolve()
 				})
-			} else if (isReadingPlanDevo.test(params.url)) {
-				store.dispatch(ActionCreator.subscriptionAll({ id: params.id, language_tag: Locale.planLocale, user_id: sessionData.userid }, auth)).then((d) => {
+			} else if (isSubscription.test(params.url)) {
+				const version = params.version || cookie.load('version') || '1'
+				store.dispatch(ActionCreator.subscriptionAll({
+					id: params.id,
+					language_tag: Locale.planLocale,
+					user_id: sessionData.userid,
+					day: params.day
+					version,
+				}, auth)).then((d) => {
 					resolve()
 				})
 			} else if (isSubscribedPlans.test(params.url)) {

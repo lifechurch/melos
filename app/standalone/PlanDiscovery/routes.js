@@ -29,7 +29,7 @@ import PlanRef from '../../features/PlanDiscovery/components/planReader/PlanRef'
  * @param      {function}  requireSubscribedPlans      The require subscribed plans
  * @param      {function}  requireSavedPlans           The require saved plans
  * @param      {function}  requireCompletedPlans       The require completed plans
- * @param      {function}  requirePlanDay              The require plan day
+ * @param      {function}  requireSubscribedPlan       The require subscribed plan
  * @return     {Node}  { description_of_the_return_value }
  */
 export default function(
@@ -41,7 +41,7 @@ export default function(
 		requireSubscribedPlans,
 		requireSavedPlans,
 		requireCompletedPlans,
-		requirePlanDay
+		requireSubscribedPlan
 	) {
 	return (
 		<Route path="/">
@@ -63,7 +63,7 @@ export default function(
 				<Route path="completed-reading-plans" component={MyCompletedPlans} onEnter={requireCompletedPlans} />
 				<Route path="reading-plans" component={MySubscribedPlans} onEnter={requireSubscribedPlans} />
 			</Route>
-			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan}>
+			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan} onEnter={requireSubscribedPlan}>
 				<IndexRoute component={PlanDay} />
 				<Route path="edit" component={PlanSettings} />
 				<Route path="calendar" component={PlanCalendar} />
