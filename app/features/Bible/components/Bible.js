@@ -301,7 +301,7 @@ class Bible extends Component {
 
 		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
 			this.header = (
-				<Header sticky={true} >
+				<Header sticky={true} classes={'reader-header horizontal-center'}>
 					<ChapterPicker
 						{...this.props}
 						chapter={bible.chapter}

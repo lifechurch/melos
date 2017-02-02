@@ -17,11 +17,18 @@ class PlanReader extends Component {
 	}
 
 	handleComplete = () => {
+		const { dispatch, plan } = this.props
 		// make api call
+		dispatch(ActionCreators.updateCompletion({
+			id: plan.id,
+			day: this.dayNum,
+			references: this.references,
+			devotional: plan.calendar[this.dayNum].additional_content.completed,
+		}))
 	}
 
 	render() {
-		const { plan, location: { query: { day, content, id }, pathname } } = this.props
+		const { plan, location: { query: { day, content }, pathname } } = this.props
 
 		if (!plan || !day) {
 			return (
@@ -29,45 +36,58 @@ class PlanReader extends Component {
 			)
 		}
 
-		const dayNum = parseInt(day, 10)
-		const contentNum = parseInt(content, 10)
+		this.dayNum = parseInt(day, 10)
+		const contentIndex = parseInt(content, 10)
 		const dayObj = plan.calendar[day]
 		const numRefs = dayObj.references.length
-		const ref = dayObj.references[contentNum]
+		const totalContentsNum = dayObj.additional_content.completed !== null ? (numRefs + 1) : numRefs
+		this.reference = dayObj.references[contentIndex]
+
 		// if no content was passed in the url, we know that devo is being rendered
-		const isCheckingDevo = isNaN(contentNum)
-		const isFinalContent = isFinalReadingContent(dayObj, ref, isCheckingDevo)
+		const hasDevo = (dayObj.additional_content.completed !== null)
+		const isCheckingDevo = isNaN(contentIndex) && hasDevo
+		const isFinalContent = isFinalReadingContent(dayObj, this.reference, isCheckingDevo)
 		const basePath = `${pathname.replace('/devo', '').replace('/ref', '')}`
-		console.log(isFinalContent)
+		// figure out number to display for which content the user is currently on
+		let whichContent
+		if (hasDevo) {
+			if (isCheckingDevo) {
+				whichContent = 1
+			} else {
+				whichContent = contentIndex + 2
+			}
+		} else {
+			whichContent = contentIndex + 1
+		}
+
 		let previous, next = null
 		// figure out nav links for previous
 		if (isCheckingDevo) {
 			// nothing previous if on devo
 			previous = null
-		} else if (contentNum === 0) {
+		} else if (contentIndex === 0) {
 			// if on first ref, then devo is previous
-			previous = `/${basePath}/devo?day=${dayNum}`
+			previous = `/${basePath}/devo?day=${this.dayNum}`
 		} else {
 			// previous content
-			previous = `/${basePath}/ref?day=${dayNum}&content=${contentNum - 1}`
+			previous = `/${basePath}/ref?day=${this.dayNum}&content=${contentIndex - 1}`
 		}
 		// figure out nav links for next
 		if (isFinalContent) {
 			// day complete
-			next = `/${basePath}?day=${dayNum}&complete=true`
-		} else if (contentNum + 1 === numRefs) {
+			next = `/${basePath}?day=${this.dayNum}&complete=true`
+		} else if (contentIndex + 1 > numRefs) {
 			// overview page if not last remaining ref, and is last ref in order
 			next = `/${basePath}`
 		} else if (isCheckingDevo) {
 			// if on devo, next is content 0
-			next = `/${basePath}/ref?day=${dayNum}&content=0`
+			next = `/${basePath}/ref?day=${this.dayNum}&content=0`
 		} else {
 			// next content
-			next = `/${basePath}/ref?day=${dayNum}&content=${contentNum + 1}`
+			next = `/${basePath}/ref?day=${this.dayNum}&content=${contentIndex + 1}`
 		}
 
 		const devoContent = dayObj.additional_content.html.default
-		const reference = dayObj.references[contentNum]
 		// we'll have the references in state for the day, keyed by usfm string,
 		// so we can grab the actual reference html from there with the following key
 		// references = props.references[plan.calendar[day].references[content] .... ]
@@ -76,9 +96,11 @@ class PlanReader extends Component {
 				<PlanNavigation
 					localizedLink={this.props.localizedLink}
 					plan={plan}
-					day={dayNum}
+					day={this.dayNum}
 					previous={previous}
 					next={next}
+					whichContent={whichContent}
+					totalContentsNum={totalContentsNum}
 					isFinalContent={isFinalContent}
 					handleComplete={this.handleComplete}
 				/>
@@ -87,7 +109,6 @@ class PlanReader extends Component {
 					// with the params from the url
 					React.cloneElement(this.props.children, {
 						devoContent,
-						reference,
 						plan,
 					})
 				}

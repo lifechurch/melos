@@ -157,6 +157,29 @@ const ActionCreators = {
 		}
 	},
 
+	/**
+	 *
+	 * @param      {number} 	id  				reading plan id
+	 * @param      {number}  	day   			Day number to update, within the Reading Plan
+	 * @param      {string} 	updated_dt 	A valid ISO 8601 date; e.g., date('c') or 2013-10-25T10:01:27+00:00
+	 * @param      {array} 		references 	List of references (must be valid for that day of reading) to mark as completed
+	 * @param      {bool} 		devotional 	Boolean flag to signify that the devotional content for that day has been completed
+	 */
+	updateCompletion(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'update_completion',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('updateCompletionRequest'), type('updateCompletionSuccess'), type('updateCompletionFailure') ]
+			}
+		}
+	},
+
 	discover(params, auth) {
 		return {
 			params,
