@@ -1,5 +1,4 @@
 import type from './constants'
-import Filter from '../../../lib/filter'
 
 const ActionCreators = {
 
@@ -7,6 +6,8 @@ const ActionCreators = {
 	 * @version: VERSION_ID
    * @reference: USFM
    * @lang: locale
+	 * @auth: auth
+	 * @return Promise
 	 */
 	readerLoad(params, auth) {
 		return dispatch => {
@@ -71,24 +72,6 @@ const ActionCreators = {
 		}
 	},
 
-	// /**
-	//  * @version: VERSION_ID
- //   * @reference: USFM
- //   * @lang: locale
-	//  */
-	// verseLoad(params, auth) {
-	// 	return dispatch => {
-	// 		const { verse, versions, language_tag } = params
-	// 		let promises = []
-	// 		versions.forEach((version) => {
-	// 			promises.push(dispatch(ActionCreators.bibleVerses({ id: version, reference: verse })))
-	// 		})
-	// 		// then make related reading plans call for the verse
-	// 		//
-	// 		//
-	// 		return Promise.all(promises)
-	// 	}
-	// },
 
 	/**
 	 * @language_tag

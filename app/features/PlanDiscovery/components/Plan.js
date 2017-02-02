@@ -72,8 +72,8 @@ class Plan extends Component {
 				<p>Plan View</p><br/>
 				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/edit'}>Settings</Link><br/>
 				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/calendar'}>Calendar</Link><br/>
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/devo'}>Devo</Link><br/>
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/ref'}>Ref</Link><br/>
+				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/devo?day=2'}>Devo</Link><br/>
+				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/ref?content=0&day=2'}>Ref</Link><br/>
 
 				<div>
 					{children}

@@ -31,6 +31,7 @@ class AboutPlan extends Component {
 
 		var friendsReading, friendsCompleted, readingList, completedList, relatedCarousel = null
 		var publisherLink = (readingPlan.publisher_url) ? <a className='publisher' href={readingPlan.publisher_url}><FormattedMessage id='plans.about publisher'/></a> : null
+
 		var languageTag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 
 		if (readingPlan.related) relatedCarousel = (

@@ -1,13 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router } from 'react-router'
+import { Router, useRouterHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import configureStore from './store'
 import defaultState from './defaultState'
 import createLogger from 'redux-logger'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import moment from 'moment'
-import { useRouterHistory } from 'react-router'
 import { createHistory } from 'history'
 import getRoutes from './routes'
 import PlanDiscoveryActionCreators from '../../features/PlanDiscovery/actions/creators'
@@ -33,6 +32,14 @@ const store = configureStore(initialState, null, logger)
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 
+
+/**
+ * { function_description }
+ *
+ * @param      {<type>}    nextState  The next state
+ * @param      {<type>}    replace    The replace
+ * @param      {Function}  callback   The callback
+ */
 function requirePlanDiscoveryData(nextState, replace, callback) {
 	const currentState = store.getState()
 
@@ -47,6 +54,13 @@ function requirePlanDiscoveryData(nextState, replace, callback) {
 	}
 }
 
+/**
+ * { function_description }
+ *
+ * @param      {<type>}    nextState  The next state
+ * @param      {<type>}    replace    The replace
+ * @param      {Function}  callback   The callback
+ */
 function requirePlanCollectionData(nextState, replace, callback) {
 	const { params } = nextState
 	var idNum = parseInt(params.id.toString().split("-")[0])
@@ -66,6 +80,13 @@ function requirePlanCollectionData(nextState, replace, callback) {
 	}
 }
 
+/**
+ * { function_description }
+ *
+ * @param      {<type>}    nextState  The next state
+ * @param      {<type>}    replace    The replace
+ * @param      {Function}  callback   The callback
+ */
 function requireSavedPlanData(nextState, replace, callback) {
 	const { params } = nextState
 	const currentState = store.getState()
@@ -82,6 +103,13 @@ function requireSavedPlanData(nextState, replace, callback) {
 	}
 }
 
+/**
+ * { function_description }
+ *
+ * @param      {<type>}    nextState  The next state
+ * @param      {<type>}    replace    The replace
+ * @param      {Function}  callback   The callback
+ */
 function requireRecommendedPlanData(nextState, replace, callback) {
 	const { params } = nextState
 	const currentState = store.getState()
@@ -101,6 +129,13 @@ function requireRecommendedPlanData(nextState, replace, callback) {
 	}
 }
 
+/**
+ * { function_description }
+ *
+ * @param      {<type>}    nextState  The next state
+ * @param      {<type>}    replace    The replace
+ * @param      {Function}  callback   The callback
+ */
 function requirePlanData(nextState, replace, callback) {
 	const { params } = nextState
 	var idNum = parseInt(params.id.toString().split("-")[0])
@@ -118,6 +153,13 @@ function requirePlanData(nextState, replace, callback) {
 	}
 }
 
+/**
+ * { function_description }
+ *
+ * @param      {<type>}    nextState  The next state
+ * @param      {<type>}    replace    The replace
+ * @param      {Function}  callback   The callback
+ */
 function requireSubscribedPlans(nextState, replace, callback) {
 	const currentState = store.getState()
 	const { auth: { userData: { userid } }, readingPlans: { subscribedPlans: { items } } } = currentState
@@ -131,6 +173,13 @@ function requireSubscribedPlans(nextState, replace, callback) {
 	}
 }
 
+/**
+ * { function_description }
+ *
+ * @param      {<type>}    nextState  The next state
+ * @param      {<type>}    replace    The replace
+ * @param      {Function}  callback   The callback
+ */
 function requireSavedPlans(nextState, replace, callback) {
 	const currentState = store.getState()
 	const { readingPlans: { savedPlans: { items } } } = currentState
@@ -144,6 +193,13 @@ function requireSavedPlans(nextState, replace, callback) {
 	}
 }
 
+/**
+ * { function_description }
+ *
+ * @param      {<type>}    nextState  The next state
+ * @param      {<type>}    replace    The replace
+ * @param      {Function}  callback   The callback
+ */
 function requireCompletedPlans(nextState, replace, callback) {
 	const currentState = store.getState()
 	const { auth: { userData: { userid } }, readingPlans: { completedPlans: { items } } } = currentState

@@ -1,5 +1,5 @@
 /**
- * determine if user is using a touchscreen
+ *
  *
  */
 export default class viewportUtils {

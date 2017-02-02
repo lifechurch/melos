@@ -14,11 +14,35 @@ import PlanDay from '../../containers/PlanDay'
 import PlanSettings from '../../containers/PlanSettings'
 import PlanCalendar from '../../containers/PlanCalendar'
 
-import PlanReader from '../../containers/PlanReader'
-import PlanDayDevo from '../../containers/PlanDayDevo'
-import PlanDayRef from '../../containers/PlanDayRef'
+import PlanReader from '../../containers/PlanReaderView'
+import PlanDevo from '../../features/PlanDiscovery/components/planReader/PlanDevo'
+import PlanRef from '../../features/PlanDiscovery/components/planReader/PlanRef'
 
-export default function(requirePlanDiscoveryData, requirePlanCollectionData, requirePlanData, requireSavedPlanData, requireRecommendedPlanData, requireSubscribedPlans, requireSavedPlans, requireCompletedPlans, requireSubscribedPlan) {
+/**
+ * get the routes for reading plans
+ *
+ * @param      {function}  requirePlanDiscoveryData    The require plan discovery data
+ * @param      {function}  requirePlanCollectionData   The require plan collection data
+ * @param      {function}  requirePlanData             The require plan data
+ * @param      {function}  requireSavedPlanData        The require saved plan data
+ * @param      {function}  requireRecommendedPlanData  The require recommended plan data
+ * @param      {function}  requireSubscribedPlans      The require subscribed plans
+ * @param      {function}  requireSavedPlans           The require saved plans
+ * @param      {function}  requireCompletedPlans       The require completed plans
+ * @param      {function}  requireSubscribedPlan       The require subscribed plan
+ * @return     {Node}  { description_of_the_return_value }
+ */
+export default function(
+		requirePlanDiscoveryData,
+		requirePlanCollectionData,
+		requirePlanData,
+		requireSavedPlanData,
+		requireRecommendedPlanData,
+		requireSubscribedPlans,
+		requireSavedPlans,
+		requireCompletedPlans,
+		requireSubscribedPlan
+	) {
 	return (
 		<Route path="/">
 			<Route path="(:lang/)reading-plans" component={PlansView}>
@@ -45,8 +69,8 @@ export default function(requirePlanDiscoveryData, requirePlanCollectionData, req
 				<Route path="calendar" component={PlanCalendar} />
 			</Route>
 			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={PlanReader}>
-				<Route path="devo" component={PlanDayDevo} />
-				<Route path="ref" component={PlanDayRef} />
+				<Route path="devo" component={PlanDevo} />
+				<Route path="ref" component={PlanRef} />
 			</Route>
 		</Route>
 	)
