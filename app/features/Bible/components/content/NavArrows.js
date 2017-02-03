@@ -9,12 +9,14 @@ function NavArrows(props) {
 		nextURL,
 		customPrevious,
 		customNext,
+		onNextClick,
+		onPrevClick,
 		leftClass,
 		rightClass,
 		localizedLink,
 	} = props
 
-	if (!previousURL && !nextURL) return (<div></div>)
+	if (!previousURL && !nextURL) return (<div />)
 
 
 	let left, right = null
@@ -53,7 +55,11 @@ function NavArrows(props) {
 
 	if (previousURL) {
 		left = (
-			<Link to={localizedLink(`${previousURL}`)}>
+			<Link
+				to={localizedLink(`${previousURL}`)}
+				onClick={onPrevClick}
+				className={leftClass}
+			>
 				{ previousIcon }
 			</Link>
 		)
@@ -61,7 +67,11 @@ function NavArrows(props) {
 
 	if (nextURL) {
 		right = (
-			<Link to={localizedLink(`${nextURL}`)}>
+			<Link
+				to={localizedLink(`${nextURL}`)}
+				onClick={onNextClick}
+				className={rightClass}
+			>
 				{ nextIcon }
 			</Link>
 		)
@@ -87,6 +97,10 @@ NavArrows.propTypes = {
 	nextURL: PropTypes.string,
 	customPrevious: PropTypes.node,
 	customNext: PropTypes.node,
+	onNextClick: PropTypes.func,
+	onPrevClick: PropTypes.func,
+	leftClass: PropTypes.string,
+	rightClass: PropTypes.string,
 }
 
 NavArrows.defaultProps = {
@@ -94,6 +108,10 @@ NavArrows.defaultProps = {
 	nextURL: null,
 	customPrevious: null,
 	customNext: null,
+	onNextClick: null,
+	onPrevClick: null,
+	leftClass: null,
+	rightClass: null,
 }
 
 export default NavArrows

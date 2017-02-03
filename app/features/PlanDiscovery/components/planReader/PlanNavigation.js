@@ -21,6 +21,7 @@ class PlanNavigation extends Component {
 			totalContentsNum,
 			previous,
 			isFinalContent,
+			onHandleComplete,
 			localizedLink
 		} = this.props
 		console.log(this.props)
@@ -55,7 +56,13 @@ class PlanNavigation extends Component {
 						</div>
 					</div>
 				</Header>
-				<NavArrows localizedLink={localizedLink} nextURL={next} previousURL={previous} customNext={customNext} />
+				<NavArrows
+					localizedLink={localizedLink}
+					nextURL={next}
+					previousURL={previous}
+					customNext={customNext}
+					onNextClick={onHandleComplete}
+				/>
 			</div>
 		)
 	}

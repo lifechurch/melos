@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 class PlanRef extends Component {
 	render() {
-		const { plan, reference } = this.props
+		const { plan, refContent } = this.props
 
-		console.log(reference)
-		if (!plan || !reference) {
+		console.log(refContent)
+		if (!plan || !refContent) {
 			return (
 				<div></div>
 			)
@@ -13,14 +13,9 @@ class PlanRef extends Component {
 		return (
 			<div>
 				<p>Plan Day Ref</p>
-				{ reference }
 			</div>
 		)
 	}
-				// <div
-				// 	className='devotional'
-				// 	dangerouslySetInnerHTML={{ __html: plan.calendar[day - 1].additional_content.html.default }}
-				// />
 }
 
 PlanRef.propTypes = {

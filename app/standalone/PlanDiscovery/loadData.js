@@ -55,7 +55,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					day: params.day ? parseInt(params.day, 10) : null,
 					version,
 					content
-				}, auth)).then(resolve)
+				}, auth)).then(() => { resolve() })
 
 			} else if (isSubscription.test(params.url)) {
 				console.log('why?')
@@ -66,10 +66,12 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					user_id: sessionData.userid,
 					day: params.day,
 					version,
-				}, auth)).then(resolve)
+				}, auth)).then(() => { resolve() })
 
 			} else if (isSubscribedPlans.test(params.url)) {
-				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(resolve)
+				console.log('in subcsss');
+				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth))
+				.then(() => { resolve() })
 
 			} else if (isSavedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.savedItems({ page: 1 }, auth)).then(resolve)

@@ -14,7 +14,6 @@ export default function reducer(state = {}, action) {
 			return (function planInfoSuccess() {
 				const inStatePlan = state[action.params.id] || { id: action.params.id }
 				const fromApiPlan = action.response
-				console.log('fromapi',fromApiPlan)
 				const plan = Immutable.fromJS(inStatePlan).mergeDeep(fromApiPlan).toJS()
 				return Immutable.fromJS(state).set(plan.id, plan).toJS()
 			}())
@@ -60,7 +59,30 @@ export default function reducer(state = {}, action) {
 			}())
 
 		case type('updateCompletionSuccess'):
-			console.log(action.response)
+			const { params: { day, devotional, id, references }, response } = action
+			if (['string', 'number'].indexOf(typeof id) > -1 && state[id]) {
+				let dayObj = Immutable.fromJS(state[id].calendar[day - 1])
+				if (typeof references !== 'undefined') {
+					// delete ref from remainingRefs array where the ref is equal to the
+					// ref passed to updateCompletion
+					dayObj = dayObj.deleteIn(['references_remaining'],
+						dayObj.get('references_remaining').findIndex((ref) => {
+							return (ref.toString() === references[0].toString())
+						})
+					)
+					// push the new ref into references_completed
+					dayObj = dayObj.setIn(['references_completed'], dayObj.get('references_remaining').push(references))
+				}
+				if (typeof devotional !== 'undefined') {
+					if (dayObj.getIn('additional_content', 'completed') !== null) {
+						dayObj = dayObj.setIn(['additional_content', 'completed'], devotional)
+					}
+				}
+				return Immutable.fromJS(state).setIn(
+					['_SELECTED', 'calendar', day - 1], dayObj.toJS()
+				).toJS()
+			}
+
 			return state
 
 		default:

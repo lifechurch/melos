@@ -18,21 +18,27 @@ class PlanReader extends Component {
 
 	handleComplete = () => {
 		const { dispatch, plan } = this.props
+		let completeDevo = null
+		if (this.hasDevo) {
+			completeDevo =
+				this.isCheckingDevo ||
+				plan.calendar[this.dayNum].additional_content.completed
+		}
 		// make api call
 		dispatch(ActionCreators.updateCompletion({
 			id: plan.id,
 			day: this.dayNum,
-			references: this.references,
-			devotional: plan.calendar[this.dayNum].additional_content.completed,
-		}))
+			references: this.reference,
+			devotional: completeDevo,
+		}, true))
 	}
 
 	render() {
 		const { plan, location: { query: { day, content }, pathname } } = this.props
-		console.log(plan)
+
 		if (Object.keys(plan).length === 0 || !day) {
 			return (
-				<div></div>
+				<div />
 			)
 		}
 
@@ -44,14 +50,15 @@ class PlanReader extends Component {
 		this.reference = dayObj.references[contentIndex]
 
 		// if no content was passed in the url, we know that devo is being rendered
-		const hasDevo = (dayObj.additional_content.completed !== null)
-		const isCheckingDevo = isNaN(contentIndex) && hasDevo
-		const isFinalContent = isFinalReadingContent(dayObj, this.reference, isCheckingDevo)
+		this.hasDevo = (dayObj.additional_content.html || dayObj.additional_content.text)
+		console.log(dayObj.additional_content, dayObj.additional_content.completed)
+		this.isCheckingDevo = isNaN(contentIndex) && this.hasDevo
+		const isFinalContent = isFinalReadingContent(dayObj, this.reference, this.isCheckingDevo)
 		const basePath = `${pathname.replace('/devo', '').replace('/ref', '')}`
 		// figure out number to display for which content the user is currently on
 		let whichContent
-		if (hasDevo) {
-			if (isCheckingDevo) {
+		if (this.hasDevo) {
+			if (this.isCheckingDevo) {
 				whichContent = 1
 			} else {
 				whichContent = contentIndex + 2
@@ -62,7 +69,7 @@ class PlanReader extends Component {
 
 		let previous, next = null
 		// figure out nav links for previous
-		if (isCheckingDevo) {
+		if (this.isCheckingDevo) {
 			// nothing previous if on devo
 			previous = null
 		} else if (contentIndex === 0) {
@@ -79,7 +86,7 @@ class PlanReader extends Component {
 		} else if (contentIndex + 1 > numRefs) {
 			// overview page if not last remaining ref, and is last ref in order
 			next = `/${basePath}`
-		} else if (isCheckingDevo) {
+		} else if (this.isCheckingDevo) {
 			// if on devo, next is content 0
 			next = `/${basePath}/ref?day=${this.dayNum}&content=0`
 		} else {
@@ -87,8 +94,16 @@ class PlanReader extends Component {
 			next = `/${basePath}/ref?day=${this.dayNum}&content=${contentIndex + 1}`
 		}
 
-		const devoContent = dayObj.additional_content.html.default
+		let devoContent = null
+		if (this.hasDevo) {
+			if (dayObj.additional_content.html) {
+				devoContent = dayObj.additional_content.html.default
+			} else {
+				devoContent = dayObj.additional_content.text.default
+			}
+		}
 		console.log(plan)
+		const refContent = dayObj.referenceContent
 		// we'll have the references in state for the day, keyed by usfm string,
 		// so we can grab the actual reference html from there with the following key
 		// references = props.references[plan.calendar[day].references[content] .... ]
@@ -103,7 +118,7 @@ class PlanReader extends Component {
 					whichContent={whichContent}
 					totalContentsNum={totalContentsNum}
 					isFinalContent={isFinalContent}
-					handleComplete={this.handleComplete}
+					onHandleComplete={this.handleComplete}
 				/>
 				{
 					// render the devo or ref component (child of PlanReaderView based on route)
@@ -111,6 +126,7 @@ class PlanReader extends Component {
 					React.cloneElement(this.props.children, {
 						devoContent,
 						plan,
+						refContent,
 					})
 				}
 			</div>

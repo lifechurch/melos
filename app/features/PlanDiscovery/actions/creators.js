@@ -88,7 +88,6 @@ const ActionCreators = {
 	subscriptionAll(params, auth) {
 		return dispatch => {
 			const { id, language_tag, user_id, day, version } = params
-			console.log('XXX', id, language_tag, user_id, day, version)
 			const promises = [
 				dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth)),
 				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth))
@@ -100,29 +99,30 @@ const ActionCreators = {
 					const currentDay = day || moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
 					const dayData = calendar[currentDay - 1]
 					const innerPromises = []
-
-					dayData.references.forEach((ref, i) => {
-						const isFullChapter = ref.split('.').length === 2
-						if (isFullChapter) {
-							innerPromises.push(dispatch(BibleActionCreator.bibleChapter({
-								reference: ref,
-								id: version,
-								format: 'html',
-								plan_id: id,
-								plan_day: currentDay,
-								plan_content: i
-							})))
-						} else {
-							innerPromises.push(dispatch(BibleActionCreator.bibleVerses({
-								references: [ref],
-								id: version,
-								format: 'html',
-								plan_id: id,
-								plan_day: currentDay,
-								plan_content: i
-							})))
-						}
-					})
+					if (dayData.references) {
+						dayData.references.forEach((ref, i) => {
+							const isFullChapter = ref.split('.').length === 2
+							if (isFullChapter) {
+								innerPromises.push(dispatch(BibleActionCreator.bibleChapter({
+									reference: ref,
+									id: version,
+									format: 'html',
+									plan_id: id,
+									plan_day: currentDay,
+									plan_content: i
+								})))
+							} else {
+								innerPromises.push(dispatch(BibleActionCreator.bibleVerses({
+									references: [ref],
+									id: version,
+									format: 'html',
+									plan_id: id,
+									plan_day: currentDay,
+									plan_content: i
+								})))
+							}
+						})
+					}
 
 					const selectPlan = () => {
 						console.log('selectPlan')
@@ -409,6 +409,7 @@ const ActionCreators = {
 	},
 
 	items(params, auth) {
+		console.log(params)
 		return {
 			params,
 			api_call: {
