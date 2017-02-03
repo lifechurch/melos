@@ -14,8 +14,17 @@ class Plan extends Component {
 		const { plan, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
-		const day = parseInt(location.query.day, 10) || moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
+		let day = parseInt(location.query.day, 10)
+		if (!day || isNaN(day)) {
+			const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
+			if (calculatedDay > plan.total_days) {
+				day = plan.total_days
+			} else {
+				day = calculatedDay
+			}
+		}
 		const dayData = plan.calendar[day - 1]
+		const devoCompleted = dayData.additional_content.completed === true
 		const hasDevo = (
 			(typeof dayData.additional_content.html !== 'undefined' && dayData.additional_content.html !== null) ||
 			(typeof dayData.additional_content.text !== 'undefined' && dayData.additional_content.text !== null)
@@ -62,7 +71,7 @@ class Plan extends Component {
 								<PlanDayStartButton dayData={dayData} link={startLink} />
 							</div>
 							<PlanDayStatus day={day} calendar={plan.calendar} total={plan.total_days} />
-							<PlanReferences day={day} references={dayData.reference_content} link={subscriptionLink} />
+							<PlanReferences day={day} devoCompleted={devoCompleted} completedRefs={dayData.references_completed} references={dayData.reference_content} link={subscriptionLink} hasDevo={hasDevo} />
 						</div>
 					</div>
 				</div>

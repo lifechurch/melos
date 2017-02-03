@@ -39,10 +39,10 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			}
 
 			if (isIndex.test(params.url)) {
-				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.planLocale }, auth)).then(resolve)
+				store.dispatch(ActionCreator.discoverAll({ language_tag: Locale.planLocale }, auth)).then(() => { resolve() })
 
 			} else if (isSaved.test(params.url)) {
-				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(resolve)
+				store.dispatch(ActionCreator.savedPlanInfo({ context: 'saved' }, auth)).then(() => { resolve() })
 
 			} else if (isReadingPlanRef.test(params.url) || isReadingPlanDevo.test(params.url)) {
 				const version = params.version || cookie.load('version') || '1'
@@ -54,7 +54,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					day: params.day ? parseInt(params.day, 10) : null,
 					version,
 					content
-				}, auth)).then(resolve)
+				}, auth)).then(() => { resolve() })
 
 			} else if (isSubscription.test(params.url)) {
 				const version = params.version || cookie.load('version') || '1'
@@ -64,24 +64,24 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					user_id: sessionData.userid,
 					day: params.day,
 					version,
-				}, auth)).then(resolve)
+				}, auth)).then(() => { resolve() })
 
 			} else if (isSubscribedPlans.test(params.url)) {
-				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(resolve)
+				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
 
 			} else if (isSavedPlans.test(params.url)) {
-				store.dispatch(ActionCreator.savedItems({ page: 1 }, auth)).then(resolve)
+				store.dispatch(ActionCreator.savedItems({ page: 1 }, auth)).then(() => { resolve() })
 
 			} else if (isCompletedPlans.test(params.url)) {
-				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then(resolve)
+				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
 
 			} else if (params.id) {
 				if (isCollection.test(params.url)) {
-					store.dispatch(ActionCreator.collectionAll({ id: params.id })).then(resolve)
+					store.dispatch(ActionCreator.collectionAll({ id: params.id })).then(() => { resolve() })
 				} else if (isPlan.test(params.url)) {
-					store.dispatch(ActionCreator.readingplanInfo({ id: params.id, language_tag: Locale.planLocale }, auth)).then(resolve)
+					store.dispatch(ActionCreator.readingplanInfo({ id: params.id, language_tag: Locale.planLocale }, auth)).then(() => { resolve() })
 				} else if (isRecommended.test(params.url)) {
-					store.dispatch(ActionCreator.recommendedPlansInfo({ context: 'recommended', id: params.id, language_tag: Locale.planLocale }, auth)).then(resolve)
+					store.dispatch(ActionCreator.recommendedPlansInfo({ context: 'recommended', id: params.id, language_tag: Locale.planLocale }, auth)).then(() => { resolve() })
 				} else {
 					resolve()
 				}
