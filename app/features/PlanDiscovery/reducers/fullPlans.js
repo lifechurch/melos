@@ -59,25 +59,43 @@ export default function reducer(state = {}, action) {
 			}())
 
 		case type('updateCompletionSuccess'):
-			const { params: { day, devotional, id, references }, response } = action
+			const { params: { day, id }, response: { references, additional_content } } = action
 			if (['string', 'number'].indexOf(typeof id) > -1 && state[id]) {
 				let dayObj = Immutable.fromJS(state[id].calendar[day - 1])
-				if (typeof references !== 'undefined') {
-					// delete ref from remainingRefs array where the ref is equal to the
-					// ref passed to updateCompletion
-					dayObj = dayObj.deleteIn(['references_remaining'],
-						dayObj.get('references_remaining').findIndex((ref) => {
-							return (ref.toString() === references[0].toString())
-						})
-					)
-					// push the new ref into references_completed
-					dayObj = dayObj.setIn(['references_completed'], dayObj.get('references_remaining').push(references))
-				}
-				if (typeof devotional !== 'undefined') {
-					if (dayObj.getIn('additional_content', 'completed') !== null) {
-						dayObj = dayObj.setIn(['additional_content', 'completed'], devotional)
+
+				if (references !== 'undefined' && references.length > 0) {
+					// build completed and remaining refs from api response
+					const completedRefs = []
+					const remainingRefs = []
+					references.forEach((ref) => {
+						if (ref.completed) {
+							completedRefs.push(ref.reference)
+						} else {
+							remainingRefs.push(ref.reference)
+						}
+					})
+					dayObj = dayObj
+										.set('references_completed', completedRefs)
+										.set('references_remaining', remainingRefs)
+
+					// now check if all refs are completed
+					if (completedRefs.length === references.length) {
+						// if devo and all refs are completed, then the day is complete
+						// or there is no devo, but it still defaults to complete
+						if (additional_content.completed) {
+							dayObj = dayObj.set('completed', true)
+						}
+						dayObj = dayObj.set('refs_completed', true)
 					}
+				} else {
+					// if there are no refs then if the devo is complete, than so is the day
+					dayObj = dayObj.set('completed', additional_content.completed)
 				}
+
+				// whether or not we have refs, we'll match the devo content with the
+				// api response (default is true even if there is no devo content)
+				dayObj = dayObj.setIn(['additional_content', 'completed'], additional_content.completed)
+
 				return Immutable.fromJS(state).setIn(
 					['_SELECTED', 'calendar', day - 1], dayObj.toJS()
 				).toJS()
