@@ -299,7 +299,7 @@ class Bible extends Component {
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 		let metaContent = ''
 
-		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
+		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation) {
 			this.header = (
 				<Header sticky={true} classes={'reader-header horizontal-center'}>
 					<ChapterPicker
@@ -372,11 +372,15 @@ class Bible extends Component {
 						showVerseNumbers={showVerseNumbers}
 						ref={(chapter) => { this.chapter = chapter }}
 					/>
-					<NavArrows
-						{...this.props}
-						previousURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
-						nextURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
-					/>
+					{
+						this.props.hideNavArrows ?
+						null :
+						<NavArrows
+							{...this.props}
+							previousURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
+							nextURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
+						/>
+					}
 				</div>
 			)
 
@@ -432,7 +436,12 @@ class Bible extends Component {
 
 Bible.propTypes = {
 	bible: PropTypes.object.isRequired,
-	hosts: PropTypes.object.isRequired
+	hosts: PropTypes.object.isRequired,
+	hideNavArrows: PropTypes.bool,
+}
+
+Bible.defaultProps = {
+	hideNavArrows: false,
 }
 
 export default injectIntl(Bible)

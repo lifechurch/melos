@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import ActionCreators from '../../actions/creators'
+import CheckMark from '../../../../components/CheckMark'
 import NavArrows from '../../../Bible/components/content/NavArrows'
 import Header from '../../../Bible/components/header/Header'
 
@@ -35,7 +36,7 @@ class PlanNavigation extends Component {
 		let customNext = null
 		if (isFinalContent) {
 			customNext = (
-				<div>chekmark</div>
+				<CheckMark />
 			)
 		}
 

@@ -12,7 +12,7 @@ const ActionCreators = {
 	readerLoad(params, auth) {
 		return dispatch => {
 			const { isInitialLoad, hasVersionChanged, hasChapterChanged, version, reference, language_tag } = params
-			let promises = []
+			const promises = []
 
 			if (isInitialLoad) {
 				promises.push(
@@ -24,9 +24,9 @@ const ActionCreators = {
 			if (isInitialLoad || hasVersionChanged) {
 				promises.push(
 					new Promise((resolve, reject) => {
-						dispatch(ActionCreators.bibleVersion({ id: version })).then((version) => {
-							resolve (
-								dispatch(ActionCreators.bibleVersions({ language_tag: version.language.language_tag, type: 'all' }))
+						dispatch(ActionCreators.bibleVersion({ id: version })).then((versionObj) => {
+							resolve(
+								dispatch(ActionCreators.bibleVersions({ language_tag: versionObj.language.language_tag, type: 'all' }))
 							)
 						})
 					})
@@ -85,7 +85,7 @@ const ActionCreators = {
 				method: 'versions',
 				version: '3.1',
 				auth: false,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ type('bibleVersionsRequest'), type('bibleVersionsSuccess'), type('bibleVersionsFailure') ]
 			}
@@ -103,7 +103,7 @@ const ActionCreators = {
 				method: 'version',
 				version: '3.1',
 				auth: false,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ type('bibleVersionRequest'), type('bibleVersionSuccess'), type('bibleVersionFailure') ]
 			}
@@ -119,7 +119,7 @@ const ActionCreators = {
 				method: 'configuration',
 				version: '3.1',
 				auth: false,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ type('bibleConfigurationRequest'), type('bibleConfigurationSuccess'), type('bibleConfigurationFailure') ]
 			}
@@ -139,7 +139,7 @@ const ActionCreators = {
 				method: 'chapter',
 				version: '3.1',
 				auth: false,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ type('bibleChapterRequest'), type('bibleChapterSuccess'), type('bibleChapterFailure') ]
 			}
@@ -159,7 +159,7 @@ const ActionCreators = {
 				method: 'verses',
 				version: '3.1',
 				auth: false,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ type('bibleVersesRequest'), type('bibleVersesSuccess'), type('bibleVersesFailure') ]
 			}
@@ -174,8 +174,8 @@ const ActionCreators = {
 				endpoint: 'moments',
 				method: 'colors',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('momentsColorsRequest'), type('momentsColorsSuccess'), type('momentsColorsFailure') ]
 			}
@@ -189,8 +189,8 @@ const ActionCreators = {
 				endpoint: 'users',
 				method: 'view_settings',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('usersViewSettingsRequest'), type('usersViewSettingsSuccess'), type('usersViewSettingsFailure') ]
 			}
@@ -204,8 +204,8 @@ const ActionCreators = {
 				endpoint: 'users',
 				method: 'update_settings',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'post',
 				types: [ type('usersUpdateSettingsRequest'), type('usersUpdateSettingsSuccess'), type('usersUpdateSettingsFailure') ]
 			}
@@ -232,8 +232,8 @@ const ActionCreators = {
 				endpoint: 'moments',
 				method: 'create',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'post',
 				types: [ type('momentsCreateRequest'), type('momentsCreateSuccess'), type('momentsCreateFailure') ]
 			}
@@ -248,8 +248,8 @@ const ActionCreators = {
 				endpoint: 'moments',
 				method: 'labels',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('momentsLabelsRequest'), type('momentsLabelsSuccess'), type('momentsLabelsFailure') ]
 			}
@@ -267,8 +267,8 @@ const ActionCreators = {
 				endpoint: 'moments',
 				method: 'verse_colors',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('momentsVerseColorsRequest'), type('momentsVerseColorsSuccess'), type('momentsVerseColorsFailure') ]
 			}
@@ -286,8 +286,8 @@ const ActionCreators = {
 				endpoint: 'moments',
 				method: 'hide_verse_colors',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'post',
 				types: [ type('hideVerseColorsRequest'), type('hideVerseColorsSuccess'), type('hideVerseColorsFailure') ]
 			}

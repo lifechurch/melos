@@ -15,7 +15,7 @@ const ActionCreators = {
 						const collectionIds = [];			// for collections carousels
 						const recommendationIds = [];	// for recommendation carousels
 						const promises = []
-						let hasSaved = false;				// for saved plans carousel
+						let hasSaved = false;					// for saved plans carousel
 
 						if (data && data.items) {
 							data.items.forEach((item) => {
