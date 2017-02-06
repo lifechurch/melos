@@ -46,10 +46,11 @@ function PlanDaySlider(props) {
 	const slides = calendar.map((d) => {
 		const date = moment(d.date).format('l')
 		const active = (d.day === day) ? 'active' : ''
+		const completed = d.completed ? 'check-background' : ''
 		return (
 			<Link key={d.day} to={{ pathname: link, query: { day: d.day } }}>
 				<div className={`day ${active}`} style={{ backgroundColor: 'white' }}>
-					<div className="day-top" />
+					<div className={`day-top ${completed}`} />
 					<div className="day-bottom">
 						<h1>{d.day}</h1>
 						<h4>{date}</h4>

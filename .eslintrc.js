@@ -43,6 +43,7 @@ module.exports = {
 			"object-curly-spacing": [2, "always"],
 			"indent": [2, "tab", { "SwitchCase": 1 }],
 			"no-unused-vars": 1,
+			"no-underscore-dangle": 0,
 			"one-var": 0,
 			"one-var-declaration-per-line": 0,
 			"no-multiple-empty-lines": 0,

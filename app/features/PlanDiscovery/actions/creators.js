@@ -96,45 +96,65 @@ const ActionCreators = {
 			return new Promise((resolve) => {
 				Promise.all(promises).then((d) => {
 					const [ plan, { calendar } ] = d
-					const currentDay = day || moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
+
+					let currentDay = day
+					if (!day) {
+						const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
+						if (calculatedDay > plan.total_days) {
+							currentDay = plan.total_days
+						} else {
+							currentDay = calculatedDay
+						}
+					}
+
 					const dayData = calendar[currentDay - 1]
-					const innerPromises = []
-					if (dayData.references) {
-						dayData.references.forEach((ref, i) => {
-							const isFullChapter = ref.split('.').length === 2
-							if (isFullChapter) {
-								innerPromises.push(dispatch(BibleActionCreator.bibleChapter({
-									reference: ref,
-									id: version,
-									format: 'html',
-									plan_id: id,
-									plan_day: currentDay,
-									plan_content: i
-								})))
-							} else {
-								innerPromises.push(dispatch(BibleActionCreator.bibleVerses({
-									references: [ref],
-									id: version,
-									format: 'html',
-									plan_id: id,
-									plan_day: currentDay,
-									plan_content: i
-								})))
-							}
-						})
-					}
-
-					const selectPlan = () => {
-						console.log('selectPlan')
+					dispatch(ActionCreators.planReferences({
+						references: dayData.references,
+						version,
+						id,
+						currentDay
+					})).then(() => {
 						resolve(dispatch(ActionCreators.planSelect({ id })))
-					}
+					})
+				})
+			})
+		}
+	},
 
-					if (innerPromises.length > 0) {
-						Promise.all(innerPromises).then(selectPlan)
+	planReferences(params) {
+		return dispatch => {
+			return new Promise((resolve) => {
+				const { references, version, id, currentDay } = params
+				const innerPromises = []
+
+				references.forEach((ref, i) => {
+					const isFullChapter = ref.split('.').length === 2
+					if (isFullChapter) {
+						innerPromises.push(dispatch(BibleActionCreator.bibleChapter({
+							reference: ref,
+							id: version,
+							format: 'html',
+							plan_id: id,
+							plan_day: currentDay,
+							plan_content: i
+						})))
 					} else {
-						selectPlan()
+						innerPromises.push(dispatch(BibleActionCreator.bibleVerses({
+							references: [ref],
+							id: version,
+							format: 'html',
+							plan_id: id,
+							plan_day: currentDay,
+							plan_content: i
+						})))
 					}
 				})
+
+				if (innerPromises.length > 0) {
+					Promise.all(innerPromises).then(() => { resolve() })
+				} else {
+					resolve()
+				}
 			})
 		}
 	},

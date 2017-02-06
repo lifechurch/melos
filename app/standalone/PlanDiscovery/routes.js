@@ -41,7 +41,8 @@ export default function(
 		requireSubscribedPlans,
 		requireSavedPlans,
 		requireCompletedPlans,
-		requireSubscribedPlan
+		requireSubscribedPlan,
+		requirePlanReferences
 	) {
 	return (
 		<Route path="/">
@@ -64,7 +65,7 @@ export default function(
 				<Route path="reading-plans" component={MySubscribedPlans} onEnter={requireSubscribedPlans} />
 			</Route>
 			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan} onEnter={requireSubscribedPlan}>
-				<IndexRoute component={PlanDay} />
+				<IndexRoute component={PlanDay} onChange={requirePlanReferences} />
 				<Route path="edit" component={PlanSettings} />
 				<Route path="calendar" component={PlanCalendar} />
 			</Route>
