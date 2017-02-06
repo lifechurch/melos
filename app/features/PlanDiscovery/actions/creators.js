@@ -159,6 +159,16 @@ const ActionCreators = {
 		}
 	},
 
+	resetSubscriptionAll(params, auth) {
+		return dispatch => {
+			return new Promise((resolve) => {
+				dispatch(ActionCreators.resetSubscription({ id: params.id }, auth)).then(() => {
+					dispatch(ActionCreators.subscriptionAll(params, auth)).then(() => { resolve() })
+				})
+			})
+		}
+	},
+
 	planSelect(params) {
 		return {
 			type: type('planSelect'),
@@ -208,6 +218,21 @@ const ActionCreators = {
 			}
 
 			return Promise.all(promises)
+		}
+	},
+
+	resetSubscription(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'reset_subscription',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('resetSubscriptionRequest'), type('resetSubscriptionSuccess'), type('resetSubscriptionFailure') ]
+			}
 		}
 	},
 

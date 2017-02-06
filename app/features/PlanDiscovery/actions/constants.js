@@ -48,6 +48,10 @@ const constants = {
 	itemsSuccess: 'READING_PLANS_ITEMS_SUCCESS',
 	itemsFailure: 'READING_PLANS_ITEMS_FAILURE',
 
+	resetSubscriptionRequest: 'READING_PLANS_RESET_SUBSCRIPTION_REQUEST',
+	resetSubscriptionSuccess: 'READING_PLANS_RESET_SUBSCRIPTION_SUCCESS',
+	resetSubscriptionFailure: 'READING_PLANS_RESET_SUBSCRIPTION_FAILURE',
+
 	completedRequest: 'READING_PLANS_COMPLETED_REQUEST',
 	completedSuccess: 'READING_PLANS_COMPLETED_SUCCESS',
 	completedFailure: 'READING_PLANS_COMPLETED_FAILURE',
