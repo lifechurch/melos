@@ -115,7 +115,7 @@ class Bible extends Component {
 
 		// get the verses that are both selected and already have a highlight
 		// color associated with them, so we can allow the user to delete them
-		let deletableColors = []
+		const deletableColors = []
 		verseSelection.verses.forEach((selectedVerse) => {
 			verseColors.forEach((colorVerse) => {
 				if (selectedVerse == colorVerse[0]) {
@@ -219,15 +219,14 @@ class Bible extends Component {
 	}
 
 	/**
-	 * this function is called on component mount, every screen resize, and when the versionpicker
-	 * is toggled (because when one of the lists are display:none, the calcs don't work for max-height)
+	 * this function is called on component mount, every screen resize
 	 *
 	 * figures out the viewport size and styles the modals to fill the screen
 	 * if the user is on a mobile (small: <= 599 px) screen
 	 *
 	 */
 	updateMobileStyling = () => {
-		if (typeof window == 'undefined') {
+		if (typeof window === 'undefined') {
 			return
 		}
 
@@ -293,7 +292,7 @@ class Bible extends Component {
 
 
 	render() {
-		const { bible, settings, verseAction, hosts, params, intl } = this.props
+		const { bible, settings, hosts, params, intl } = this.props
 		const { results, versions, fontSize, fontFamily, showFootnotes, showVerseNumbers, verseSelection } = this.state
 
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
@@ -372,15 +371,11 @@ class Bible extends Component {
 						showVerseNumbers={showVerseNumbers}
 						ref={(chapter) => { this.chapter = chapter }}
 					/>
-					{
-						this.props.hideNavArrows ?
-						null :
-						<NavArrows
-							{...this.props}
-							previousURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
-							nextURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
-						/>
-					}
+					<NavArrows
+						{...this.props}
+						previousURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
+						nextURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
+					/>
 				</div>
 			)
 
@@ -419,12 +414,14 @@ class Bible extends Component {
 				</div>
 				<VerseAction
 					{...this.props}
-					verseAction={verseAction}
 					selection={verseSelection}
-					colors={bible.highlightColors}
 					onClose={this.handleVerseSelectionClear}
 					deletableColors={this.state.deletableColors}
 					verseColors={bible.verseColors}
+					verses={bible.verses.verses}
+					references={bible.verses.references}
+					highlightColors={bible.highlightColors}
+					momentsLabels={bible.momentsLabels}
 				/>
 				<style>
 					{ this.state.extraStyle }
@@ -437,11 +434,10 @@ class Bible extends Component {
 Bible.propTypes = {
 	bible: PropTypes.object.isRequired,
 	hosts: PropTypes.object.isRequired,
-	hideNavArrows: PropTypes.bool,
 }
 
 Bible.defaultProps = {
-	hideNavArrows: false,
+
 }
 
 export default injectIntl(Bible)

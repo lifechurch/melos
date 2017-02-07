@@ -4,8 +4,6 @@ import ActionCreators from '../../actions/creators'
 import PlanNavigation from './PlanNavigation'
 import isFinalReadingContent from '../../../../lib/readingPlanUtils'
 
-
-
 class PlanReader extends Component {
 
 	buildNavLinks() {
@@ -86,9 +84,16 @@ class PlanReader extends Component {
 		}, true))
 	}
 
+	getVerseColors = () => {
+
+	}
+
+	getMomentsLabels = () => {
+
+	}
 
 	render() {
-		const { plan, location: { query: { day, content } } } = this.props
+		const { plan, location: { query: { day, content } }, bible, hosts } = this.props
 
 		if (Object.keys(plan).length === 0 || !day) {
 			return (
@@ -141,10 +146,16 @@ class PlanReader extends Component {
 				/>
 				{
 					// render the devo or ref component (child of PlanReaderView based on route)
-					// with the params from the url
 					React.cloneElement(this.props.children, {
 						devoContent,
-						plan,
+						referenceContent: this.dayObj.reference_content,
+						references: this.dayObj.references,
+						verses: this.dayObj.reference_content,
+						version: bible.version,
+						verseColors: bible.verseColors,
+						highlightColors: bible.highlightColors,
+						momentsLabels: bible.momentsLabels,
+						hosts
 					})
 				}
 			</div>

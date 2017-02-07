@@ -23,7 +23,7 @@ class VerseAction extends Component {
 	}
 
 	handleActionClick(e) {
-		const { colors, dispatch, auth, selection: { verses }, bible: { version: { id, local_abbreviation } } } = this.props
+		const { dispatch, auth, selection: { verses }, bible: { version: { id, local_abbreviation } } } = this.props
 
 		// if we're not logged in and try to make an auth'd moment
 		if (!auth.isLoggedIn && (e.value == 'note' || e.value == 'bookmark')) {
@@ -37,10 +37,10 @@ class VerseAction extends Component {
 				case 'note':
 				case 'bookmark':
 					dispatch(ActionCreators.bibleVerses({
-						id: id,
+						id,
 						references: verses,
 						format: 'html',
-						local_abbreviation: local_abbreviation
+						local_abbreviation
 					}))
 					this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
 					// hide the modal on moment create
@@ -51,7 +51,7 @@ class VerseAction extends Component {
 
 	}
 
-	handleMomentContainerClose(closeVerseAction=false) {
+	handleMomentContainerClose(closeVerseAction = false) {
 		this.setState({ momentContainerOpen: false })
 		if (closeVerseAction) {
 			this.handleClose()
@@ -74,7 +74,7 @@ class VerseAction extends Component {
 		}
 	}
 
-	handleHighlight(color, deleteHighlight=false) {
+	handleHighlight(color, deleteHighlight = false) {
 		const { selection: { verses, version }, dispatch, auth } = this.props
 		const references = [{ usfm: verses, version_id: version }]
 
@@ -144,7 +144,17 @@ class VerseAction extends Component {
 	}
 
 	render() {
-		const { selection: { chapter, human, text, url, verses: selectedReferences }, colors, deletableColors, intl, bible, auth } = this.props
+		const {
+			selection: { chapter, human, text, url, verses: selectedReferences },
+			deletableColors,
+			intl,
+			bible,
+			verses,
+			references,
+			momentsLabels,
+			highlightColors,
+			auth
+		} = this.props
 		const { copied, momentContainerOpen, momentKind } = this.state
 
 		const copyAction = (
@@ -174,7 +184,7 @@ class VerseAction extends Component {
 		if (Array.isArray(colors)) {
 			colorList = (
 				<ColorList
-					list={colors}
+					list={highlightColors}
 					onClick={this.handleHighlight}
 					deletableColors={deletableColors}
 					deleteColor={this.deleteColor}
@@ -196,12 +206,12 @@ class VerseAction extends Component {
 						// changing the key will cause a rerender for all children
 						// resetting all local state
 						key={momentContainerOpen}
-						kind={momentKind}
-						verses={bible.verses.verses}
-						references={bible.verses.references}
-						labels={bible.momentsLabels}
 						isLoggedIn={auth.isLoggedIn}
-						colors={bible.highlightColors}
+						kind={momentKind}
+						verses={verses}
+						references={references}
+						labels={momentsLabels}
+						colors={highlightColors}
 						onClose={this.handleMomentContainerClose}
 					/>
 				</DropdownTransition>
@@ -213,7 +223,8 @@ class VerseAction extends Component {
 VerseAction.propTypes = {
 	selection: PropTypes.any,
 	colors: PropTypes.array.isRequired,
-	onClose: PropTypes.func.isRequired
+	onClose: PropTypes.func.isRequired,
+	bible: PropTypes.object,
 }
 
 export default injectIntl(VerseAction)

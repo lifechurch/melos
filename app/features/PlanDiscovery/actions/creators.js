@@ -90,7 +90,8 @@ const ActionCreators = {
 			const { id, language_tag, user_id, day, version } = params
 			const promises = [
 				dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth)),
-				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth))
+				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth)),
+				dispatch(BibleActionCreator.bibleVersion({ id: version }))
 			]
 
 			return new Promise((resolve) => {
@@ -149,6 +150,11 @@ const ActionCreators = {
 						})))
 					}
 				})
+
+				innerPromises.push(dispatch(BibleActionCreator.momentsVerseColors({
+					usfm: references[0].split('.').slice(0, 1).join('.'),
+					version_id: version,
+				}, true)))
 
 				if (innerPromises.length > 0) {
 					Promise.all(innerPromises).then(() => { resolve() })
