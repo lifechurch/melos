@@ -430,9 +430,12 @@ ul.plan-results {
 /* !Plan Overview */
 
 .a_show,
+.c_subscriptions.a_index,
+.c_subscriptions.a_completed,
+.c_subscriptions.a_saved,
 .c_plans.a_sample {
 
-  div[plan-more-menu] {
+  div#plan-more-menu {
     display: inline-block;
     margin-left: 10px;
 
@@ -1761,7 +1764,7 @@ html[dir='rtl'] {
     }
   }
 
-  div[plan-more-menu] {
+  div#plan-more-menu {
     margin-right: 10px;
     margin-left: 0;
 
