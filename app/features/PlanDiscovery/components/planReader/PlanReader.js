@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import ActionCreators from '../../actions/creators'
+import BibleActionCreator from '../../../Bible/actions/creators'
 import PlanNavigation from './PlanNavigation'
 import isFinalReadingContent from '../../../../lib/readingPlanUtils'
 
@@ -41,7 +42,7 @@ class PlanReader extends Component {
 			next = `/${basePath}/ref?day=${this.dayNum}&content=${this.contentIndex + 1}`
 		}
 
-		return { previous, next }
+		return { previous, next, dayBasePath: `/${basePath}?day=${this.dayNum}` }
 	}
 
 	getWhichContentNum() {
@@ -76,7 +77,7 @@ class PlanReader extends Component {
 			references.push(this.reference)
 		}
 		// make api call
-		dispatch(ActionCreators.updateCompletion({
+		dispatch(ActionCreators.updatePlanDay({
 			id: plan.id,
 			day: this.dayNum,
 			references,
@@ -84,16 +85,9 @@ class PlanReader extends Component {
 		}, true))
 	}
 
-	getVerseColors = () => {
-
-	}
-
-	getMomentsLabels = () => {
-
-	}
 
 	render() {
-		const { plan, location: { query: { day, content } }, bible, hosts } = this.props
+		const { plan, location: { query: { day, content } }, bible, hosts, auth, dispatch } = this.props
 
 		if (Object.keys(plan).length === 0 || !day) {
 			return (
@@ -108,8 +102,8 @@ class PlanReader extends Component {
 		this.reference = this.dayObj.references[this.contentIndex]
 
 		// if no content was passed in the url, we know that devo is being rendered
-		this.hasDevo = 	this.dayObj.additional_content.html ||
-										this.dayObj.additional_content.text
+		this.hasDevo = 	(!!this.dayObj.additional_content.html) ||
+										(!!this.dayObj.additional_content.text)
 		this.totalContentsNum = this.hasDevo ? (this.numRefs + 1) : this.numRefs
 		this.isCheckingDevo = isNaN(this.contentIndex) && this.hasDevo
 		this.isFinalContent = isFinalReadingContent(
@@ -129,8 +123,6 @@ class PlanReader extends Component {
 			}
 		}
 
-		console.log(this.dayObj)
-
 		return (
 			<div>
 				<PlanNavigation
@@ -139,25 +131,30 @@ class PlanReader extends Component {
 					day={this.dayNum}
 					previous={this.navLinks.previous}
 					next={this.navLinks.next}
+					dayBasePath={this.navLinks.dayBasePath}
 					whichContent={this.whichContent}
 					totalContentsNum={this.totalContentsNum}
 					isFinalContent={this.isFinalContent}
 					onHandleComplete={this.handleComplete}
 				/>
-				{
-					// render the devo or ref component (child of PlanReaderView based on route)
-					React.cloneElement(this.props.children, {
-						devoContent,
-						referenceContent: this.dayObj.reference_content,
-						references: this.dayObj.references,
-						verses: this.dayObj.reference_content,
-						version: bible.version,
-						verseColors: bible.verseColors,
-						highlightColors: bible.highlightColors,
-						momentsLabels: bible.momentsLabels,
-						hosts
-					})
-				}
+				<div className='plan-reader-content'>
+					{
+						// render the devo or ref component (child of PlanReaderView based on route)
+						React.cloneElement(this.props.children, {
+							devoContent,
+							bibleReferences: bible.verses.references,
+							bibleVerses: bible.verses.verses,
+							content: this.dayObj.reference_content[this.contentIndex].content,
+							version: bible.version,
+							verseColors: bible.verseColors,
+							highlightColors: bible.highlightColors,
+							momentsLabels: bible.momentsLabels,
+							auth,
+							hosts,
+							dispatch
+						})
+					}
+				</div>
 			</div>
 		)
 	}

@@ -63,10 +63,11 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					user_id: sessionData.userid,
 					day: params.day,
 					version,
-				}, auth)).then(() => { resolve() })
+				}, auth)).then((d) => { resolve() })
 
 			} else if (isSubscribedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
+
 			} else if (isSavedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.savedItems({ page: 1 }, auth)).then(() => { resolve() })
 

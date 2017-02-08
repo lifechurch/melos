@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import { Link } from 'react-router'
 import ActionCreators from '../../actions/creators'
 import CheckMark from '../../../../components/CheckMark'
 import NavArrows from '../../../Bible/components/content/NavArrows'
@@ -18,16 +19,16 @@ class PlanNavigation extends Component {
 			plan,
 			day,
 			next,
+			previous,
+			dayBasePath,
 			whichContent,
 			totalContentsNum,
-			previous,
 			isFinalContent,
 			onHandleComplete,
 			localizedLink
 		} = this.props
-		console.log(this.props)
 
-		if (!plan) {
+		if (Object.keys(plan).length < 1) {
 			return (
 				<div />
 			)
@@ -36,7 +37,9 @@ class PlanNavigation extends Component {
 		let customNext = null
 		if (isFinalContent) {
 			customNext = (
-				<CheckMark />
+				<div className='next-arrow checkmark vertical-center horizontal-center'>
+					<CheckMark fill='white' width={27} height={26} classes='reader-arrow' />
+				</div>
 			)
 		}
 
@@ -44,9 +47,13 @@ class PlanNavigation extends Component {
 			<div className=''>
 				<Header sticky={true} classes={'plan-nav-header'}>
 					<div className='nav-content columns large-8 medium-8 medium-centered'>
-						<img className='nav-img img-left' src={plan.images[2].url} />
+						<Link to={dayBasePath}>
+							<img alt='reading plan' className='nav-img img-left' src={plan.images[2].url} />
+						</Link>
 						<div className='plan-info'>
-							<div className='nav-title'>{ plan.name[plan.language_tag] || plan.name.default }</div>
+							<Link to={dayBasePath}>
+								<div className='nav-title'>{ plan.name[plan.language_tag] || plan.name.default }</div>
+							</Link>
 							<div className='nav-length'>
 								<FormattedMessage id="plans.day number" values={{ day }} />
 								&nbsp;

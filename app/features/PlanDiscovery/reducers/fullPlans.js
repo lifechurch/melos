@@ -28,6 +28,7 @@ export default function reducer(state = {}, action) {
 
 		case bibleType('bibleVersesSuccess'):
 			return (function bibleVersesSuccess() {
+				console.log(action.params);
 				const { params: { plan_id, plan_content, plan_day }, response: verse } = action
 				if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id]) {
 					const plan = Immutable.fromJS(state[plan_id]).setIn(['calendar', plan_day - 1, 'reference_content', plan_content], verse.verses[0]).toJS()
@@ -38,9 +39,9 @@ export default function reducer(state = {}, action) {
 
 		case bibleType('bibleChapterSuccess'):
 			return (function bibleVersesSuccess() {
-				const { params: { plan_id, plan_content, plan_day }, response: verse } = action
+				const { params: { plan_id, plan_content, plan_day, id }, response: verse } = action
 				if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id]) {
-					const plan = Immutable.fromJS(state[plan_id]).setIn(['calendar', plan_day - 1, 'reference_content', plan_content], verse).toJS()
+					const plan = Immutable.fromJS(state[plan_id]).setIn(['calendar', plan_day - 1, 'reference_content', plan_content], verse, id).toJS()
 					return Immutable.fromJS(state).set(plan.id, plan).toJS()
 				}
 				return state
@@ -48,7 +49,7 @@ export default function reducer(state = {}, action) {
 
 		case bibleType('bibleVersesFailure'):
 		case bibleType('bibleChapterFailure'):
-			console.log("fail whale", action)
+			console.log('fail whale', action)
 			return state
 
 		case type('planSelect'):
@@ -95,13 +96,11 @@ export default function reducer(state = {}, action) {
 				// whether or not we have refs, we'll match the devo content with the
 				// api response (default is true even if there is no devo content)
 				dayObj = dayObj.setIn(['additional_content', 'completed'], additional_content.completed)
-
-				return Immutable.fromJS(state).setIn(
-					['_SELECTED', 'calendar', day - 1], dayObj.toJS()
-				).toJS()
+				const plan = Immutable.fromJS(state[id]).setIn(['calendar', day - 1], dayObj.toJS()).toJS()
+				return Immutable.fromJS(state).set(plan.id, plan).toJS()
+			} else {
+				return state
 			}
-
-			return state
 
 		default:
 			return state

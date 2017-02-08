@@ -1,26 +1,20 @@
 import React, { Component, PropTypes } from 'react'
-import VerseAction from './verseAction/VerseAction'
-// import { connect } from 'react-redux'
 import { injectIntl, FormattedMessage } from 'react-intl'
+import Immutable from 'immutable'
+import Helmet from 'react-helmet'
+import VerseAction from './verseAction/VerseAction'
 import ActionCreators from '../actions/creators'
 import Filter from '../../../lib/filter'
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-// import cookie from 'react-cookie';
 import Chapter from './content/Chapter'
 import NavArrows from './content/NavArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
-// import LabelList from './verseAction/bookmark/LabelList'
 import LocalStore from '../../../lib/localStore'
 import ViewportUtils from '../../../lib/viewportUtils'
 import RecentVersions from '../lib/RecentVersions'
-// import LabelSelector from './verseAction/bookmark/LabelSelector'
 import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
-// import DropdownTransition from '../../../components/DropdownTransition'
-import Immutable from 'immutable'
-import Helmet from 'react-helmet'
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -41,7 +35,7 @@ class Bible extends Component {
 		// if we get a bad chapter call, let's grab the first
 		//  valid book and chapter for the selected version
 		if (!bible.chapter.reference) {
-			let chap = bible.books.all[0].chapters[Object.keys(bible.books.all[0].chapters)[0]]
+			const chap = bible.books.all[0].chapters[Object.keys(bible.books.all[0].chapters)[0]]
 			this.chapterError = true
 			this.selectedBook = bible.books.all[0].usfm
 			this.selectedChapter = chap.usfm
@@ -57,8 +51,8 @@ class Bible extends Component {
 			this.chapters = bible.books.all[bible.books.map[bible.chapter.reference.usfm.split('.')[0]]].chapters
 		}
 
-		const showFootnoes = LocalStore.getIn("reader.settings.showFootnotes")
-		const showVerseNumbers = LocalStore.getIn("reader.settings.showVerseNumbers")
+		const showFootnoes = LocalStore.getIn('reader.settings.showFootnotes')
+		const showVerseNumbers = LocalStore.getIn('reader.settings.showVerseNumbers')
 
 		this.state = {
 			selectedBook: this.selectedBook,
@@ -74,10 +68,10 @@ class Bible extends Component {
 			results: [],
 			versions: [],
 			extraStyle: '',
-			fontSize: LocalStore.getIn("reader.settings.fontSize") || DEFAULT_READER_SETTINGS.fontSize,
-			fontFamily: LocalStore.getIn("reader.settings.fontFamily") || DEFAULT_READER_SETTINGS.fontFamily,
-			showFootnotes: typeof showFootnoes === "boolean" ? showFootnoes : DEFAULT_READER_SETTINGS.showFootnotes,
-			showVerseNumbers: typeof showVerseNumbers === "boolean" ? showVerseNumbers : DEFAULT_READER_SETTINGS.showVerseNumbers,
+			fontSize: LocalStore.getIn('reader.settings.fontSize') || DEFAULT_READER_SETTINGS.fontSize,
+			fontFamily: LocalStore.getIn('reader.settings.fontFamily') || DEFAULT_READER_SETTINGS.fontFamily,
+			showFootnotes: typeof showFootnoes === 'boolean' ? showFootnoes : DEFAULT_READER_SETTINGS.showFootnotes,
+			showVerseNumbers: typeof showVerseNumbers === 'boolean' ? showVerseNumbers : DEFAULT_READER_SETTINGS.showVerseNumbers,
 			verseSelection: {},
 			deletableColors: []
 		}
@@ -104,8 +98,8 @@ class Bible extends Component {
 		this.setState({ selectedLanguage: languageTag })
 
 		dispatch(ActionCreators.bibleVersions({ language_tag: languageTag, type: 'all' })).then((versions) => {
-			Filter.clear("VersionStore")
-			Filter.add("VersionStore", versions.versions)
+			Filter.clear('VersionStore')
+			Filter.add('VersionStore', versions.versions)
 		})
 	}
 
@@ -136,17 +130,17 @@ class Bible extends Component {
 		// we're setting state with all the other verseAction before so this api call doesn't slow anything down
 		if (verseSelection.verses && verseSelection.verses.length > 0) {
 			dispatch(ActionCreators.bibleVerses({
-				id: id,
+				id,
 				references: verseSelection.verses,
 				format: 'text',
-				local_abbreviation: local_abbreviation
+				local_abbreviation
 			})).then((response) => {
 				this.setState({
 					verseSelection: Immutable.fromJS(this.state.verseSelection).merge({
 						text: response.verses.reduce((acc, curr, index) => {
 							// don't put a space in front of the first string
 							if (index !== 0) {
-								return acc + ' ' + curr.content
+								return `${acc} ${curr.content}`
 							} else {
 								return acc + curr.content
 							}
@@ -172,17 +166,15 @@ class Bible extends Component {
 		if (bible.chapter && prevProps.bible.chapter && bible.chapter.reference.usfm !== prevProps.bible.chapter.reference.usfm) {
 			if (bible.chapter.errors) {
 				this.setState({ chapterError: true })
-			} else {
-				if (bible.chapter.reference && bible.chapter.reference.usfm) {
-					this.setState({
-						chapterError: false,
-						selectedChapter: bible.chapter.reference.usfm,
-						selectedVersion: bible.chapter.reference.version_id,
-					})
+			} else if (bible.chapter.reference && bible.chapter.reference.usfm) {
+				this.setState({
+					chapterError: false,
+					selectedChapter: bible.chapter.reference.usfm,
+					selectedVersion: bible.chapter.reference.version_id,
+				})
 
-					LocalStore.set('last_read', bible.chapter.reference.usfm)
-					this.handleVerseSelectionClear()
-				}
+				LocalStore.set('last_read', bible.chapter.reference.usfm)
+				this.handleVerseSelectionClear()
 			}
 		}
 
@@ -194,8 +186,8 @@ class Bible extends Component {
 				selectedVersion: bible.version.id,
 			})
 			this.updateRecentVersions()
-			Filter.clear("BooksStore")
-			Filter.add("BooksStore", bible.books.all)
+			Filter.clear('BooksStore')
+			Filter.add('BooksStore', bible.books.all)
 			LocalStore.set('version', bible.version.id)
 		}
 
@@ -203,7 +195,7 @@ class Bible extends Component {
 
 	updateRecentVersions = () => {
 		const { bible } = this.props
-		let versionList = Object.keys(bible.versions.byLang).reduce((acc, curr) => {
+		const versionList = Object.keys(bible.versions.byLang).reduce((acc, curr) => {
 			return Object.assign(acc, bible.versions.byLang[curr].versions)
 		}, {})
 
@@ -230,25 +222,25 @@ class Bible extends Component {
 			return
 		}
 
-		let viewport = this.viewportUtils.getViewport()
+		const viewport = this.viewportUtils.getViewport()
 		// if we're actually going to use this style, let's do the calculations and set it
 		// i.e. we're on a mobile screen
 		if (parseInt(viewport.width) <= 599) {
 
 			// the modal is the absolute positioned element that shows the dropdowns
-			let modalPos = this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
+			const modalPos = this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
 			// the header on mobile becomes fixed at the bottom, so we need the mobile to fill until that
-			let footerModal = this.viewportUtils.getElement(document.getElementById('fixed-page-header'))
+			const footerModal = this.viewportUtils.getElement(document.getElementById('fixed-page-header'))
 
 			// how much offset is there from modalPos.top and bookList.top?
 			// we need to bring that into the calculations so we don't set the height too high for the viewport
-			let bookList = document.getElementsByClassName('book-list')[0]
-			let bookContainer = document.getElementsByClassName('book-container')[0]
-			let bookOffset = Math.abs(this.viewportUtils.getElement(bookContainer).top - this.viewportUtils.getElement(bookList).top)
+			const bookList = document.getElementsByClassName('book-list')[0]
+			const bookContainer = document.getElementsByClassName('book-container')[0]
+			const bookOffset = Math.abs(this.viewportUtils.getElement(bookContainer).top - this.viewportUtils.getElement(bookList).top)
 
-			let versionList = document.getElementsByClassName('version-list')[0]
-			let versionContainer = document.getElementsByClassName('version-container')[0]
-			let versionOffset = Math.abs(this.viewportUtils.getElement(versionContainer).top - this.viewportUtils.getElement(versionList).top)
+			const versionList = document.getElementsByClassName('version-list')[0]
+			const versionContainer = document.getElementsByClassName('version-container')[0]
+			const versionOffset = Math.abs(this.viewportUtils.getElement(versionContainer).top - this.viewportUtils.getElement(versionList).top)
 
 			this.setState({
 				extraStyle: `
@@ -361,7 +353,9 @@ class Bible extends Component {
 				<div>
 					<Chapter
 						{...this.props}
-						chapter={bible.chapter}
+						content={bible.chapter.content}
+						versionID={bible.chapter.reference.version_id}
+						copyright={bible.chapter.copyright}
 						verseColors={bible.verseColors}
 						fontSize={fontSize}
 						fontFamily={fontFamily}

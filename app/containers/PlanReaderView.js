@@ -40,6 +40,8 @@ function mapStateToProps(state) {
 	return {
 		plan: state.readingPlans && state.readingPlans.fullPlans && state.readingPlans.fullPlans._SELECTED ? state.readingPlans.fullPlans._SELECTED : {},
 		bible: state.bibleReader,
+		auth: state.auth,
+		hosts: state.hosts,
 	}
 }
 

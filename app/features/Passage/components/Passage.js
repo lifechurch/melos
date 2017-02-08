@@ -153,7 +153,7 @@ class Passage extends Component {
 		}
 
 		return (
-			<div className='passage'>
+			<div className='passage reader'>
 				<Helmet
 					title={`${metaTitle}`}
 					meta={[ { name: 'description', content: `${metaContent}` } ]}

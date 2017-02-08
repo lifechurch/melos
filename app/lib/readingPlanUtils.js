@@ -22,14 +22,13 @@ export default function isFinalReadingContent(planDay, currentRef, isCheckingDev
 	// is the last remaining to be completed
 	if (planDay.refs_completed) {
 		isFinalRef = true
-	}
-
-	for (let i = 0; i < planDay.references_remaining.length; i++) {
-		const ref = planDay.references_remaining[i]
-		console.log('dees is da strings', ref.toString(), currentRef.toString())
-		// if the current ref is the only ref remaining
-		if (ref.toString() === currentRef.toString() && planDay.references_remaining.length === 1) {
-			isFinalRef = true
+	} else if (currentRef) {
+		for (let i = 0; i < planDay.references_remaining.length; i++) {
+			const ref = planDay.references_remaining[i]
+			// if the current ref is the only ref remaining
+			if (ref.toString() === currentRef.toString() && planDay.references_remaining.length === 1) {
+				isFinalRef = true
+			}
 		}
 	}
 

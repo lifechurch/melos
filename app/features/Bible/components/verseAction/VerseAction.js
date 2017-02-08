@@ -45,7 +45,7 @@ class VerseAction extends Component {
 					this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
 					// hide the modal on moment create
 					this.closeMe()
-					return
+
 			}
 		}
 
@@ -86,9 +86,9 @@ class VerseAction extends Component {
 		} else {
 			dispatch(ActionCreators.momentsCreate(true, {
 				kind: 'highlight',
-				references: references,
+				references,
 				color: color.replace('#', ''),
-				created_dt: new Date().toISOString().split('.')[0] + "+00:00"
+				created_dt: `${new Date().toISOString().split('.')[0]}+00:00`
 			}))
 			this.handleClose({})
 		}
@@ -96,7 +96,7 @@ class VerseAction extends Component {
 
 	deleteColor = (color) => {
 		const { selection: { verses, version }, dispatch, verseColors } = this.props
-		let versesToDelete = []
+		const versesToDelete = []
 		// don't delete colors from every verse selected,
 		// only the verses that match the color x that was clicked
 		verses.forEach((selectedVerse) => {
@@ -111,7 +111,7 @@ class VerseAction extends Component {
 			usfm: versesToDelete,
 			version_id: version,
 		})).then(() => {
-			dispatch(ActionCreators.momentsVerseColors(true, { usfm: verses[0].split('.').slice(0,2).join('.'), version_id: version })).then((newVerseColors) => {
+			dispatch(ActionCreators.momentsVerseColors(true, { usfm: verses[0].split('.').slice(0, 2).join('.'), version_id: version })).then((newVerseColors) => {
 				this.handleClose()
 			})
 
@@ -165,7 +165,8 @@ class VerseAction extends Component {
 					setTimeout(() => {
 						this.setState({ copied: false })
 					}, 10000)
-				}}>
+				}}
+			>
 				<span className="yv-green-link">{copied ?
 					intl.formatMessage({ id: 'features.EventView.components.EventViewContent.copied' }) :
 					intl.formatMessage({ id: 'Reader.verse action.copy' }) }
@@ -176,12 +177,12 @@ class VerseAction extends Component {
 		const actions = [
 			{ value: 'share', label: <ShareWidget label={`${chapter}:${human}`} url={url} text={text} /> },
 			{ value: 'copy', label: copyAction },
-			{ value: 'bookmark', label: <span className="yv-green-link">{intl.formatMessage( { id: 'Reader.verse action.bookmark' })}</span> },
-			{ value: 'note', label: <span className="yv-green-link">{intl.formatMessage( { id: 'Reader.verse action.note' })}</span> }
+			{ value: 'bookmark', label: <span className="yv-green-link">{intl.formatMessage({ id: 'Reader.verse action.bookmark' })}</span> },
+			{ value: 'note', label: <span className="yv-green-link">{intl.formatMessage({ id: 'Reader.verse action.note' })}</span> }
 		]
 
 		let colorList
-		if (Array.isArray(colors)) {
+		if (Array.isArray(highlightColors)) {
 			colorList = (
 				<ColorList
 					list={highlightColors}
@@ -194,9 +195,9 @@ class VerseAction extends Component {
 
 		return (
 			<div className='verse-action'>
-				<div className={`verse-action-footer`} ref={(c) => { this.container = c }}>
+				<div className={'verse-action-footer'} ref={(c) => { this.container = c }}>
 					<a onClick={this.handleClose} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
-					<span className="verse-selection" style={{opacity: (chapter && chapter.length && human && human.length) ? 1 : 0 }}>{chapter}:{human}</span>
+					<span className="verse-selection" style={{ opacity: (chapter && chapter.length && human && human.length) ? 1 : 0 }}>{chapter}:{human}</span>
 					<ButtonBar items={actions} onClick={this.handleActionClick} />
 					{ colorList }
 				</div>
@@ -222,9 +223,8 @@ class VerseAction extends Component {
 
 VerseAction.propTypes = {
 	selection: PropTypes.any,
-	colors: PropTypes.array.isRequired,
+	highlightColors: PropTypes.array.isRequired,
 	onClose: PropTypes.func.isRequired,
-	bible: PropTypes.object,
 }
 
 export default injectIntl(VerseAction)

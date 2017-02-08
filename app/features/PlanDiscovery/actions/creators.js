@@ -97,7 +97,6 @@ const ActionCreators = {
 			return new Promise((resolve) => {
 				Promise.all(promises).then((d) => {
 					const [ plan, { calendar } ] = d
-
 					let currentDay = day
 					if (!day) {
 						const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
@@ -114,7 +113,7 @@ const ActionCreators = {
 						version,
 						id,
 						currentDay
-					})).then(() => {
+					}, auth)).then(() => {
 						resolve(dispatch(ActionCreators.planSelect({ id })))
 					})
 				})
@@ -122,7 +121,7 @@ const ActionCreators = {
 		}
 	},
 
-	planReferences(params) {
+	planReferences(params, auth) {
 		return dispatch => {
 			return new Promise((resolve) => {
 				const { references, version, id, currentDay } = params
@@ -130,6 +129,13 @@ const ActionCreators = {
 
 				references.forEach((ref, i) => {
 					const isFullChapter = ref.split('.').length === 2
+					// call for verse colors for the chapter
+					if (i === 0) {
+						innerPromises.push(dispatch(BibleActionCreator.momentsVerseColors(auth, {
+							usfm: ref.split('.').slice(0, 2).join('.'),
+							version_id: version
+						})))
+					}
 					if (isFullChapter) {
 						innerPromises.push(dispatch(BibleActionCreator.bibleChapter({
 							reference: ref,
@@ -151,16 +157,21 @@ const ActionCreators = {
 					}
 				})
 
-				innerPromises.push(dispatch(BibleActionCreator.momentsVerseColors({
-					usfm: references[0].split('.').slice(0, 1).join('.'),
-					version_id: version,
-				}, true)))
-
 				if (innerPromises.length > 0) {
 					Promise.all(innerPromises).then(() => { resolve() })
 				} else {
 					resolve()
 				}
+			})
+		}
+	},
+
+	updatePlanDay(params, auth) {
+		return dispatch => {
+			return new Promise((resolve, reject) => {
+				dispatch(ActionCreators.updateCompletion(params, auth)).then(() => {
+					resolve(dispatch(ActionCreators.planSelect({ id: params.id })))
+				})
 			})
 		}
 	},

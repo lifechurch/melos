@@ -63,7 +63,7 @@ export function handleVerseSelect(
 					text: response.verses.reduce((acc, curr, index) => {
 						// don't put a space in front of the first string
 						if (index !== 0) {
-							return acc + ' ' + curr.content
+							return `${acc} ${curr.content}`
 						} else {
 							return acc + curr.content
 						}
