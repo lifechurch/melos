@@ -35,7 +35,7 @@ const ActionCreators = {
 
 			if (isInitialLoad || hasChapterChanged) {
 				promises.push(
-					dispatch(ActionCreators.bibleChapter({ id: version, reference: reference.toUpperCase(), format: 'html', language_tag: language_tag })),
+					dispatch(ActionCreators.bibleChapter({ id: version, reference: reference.toUpperCase(), format: 'html', language_tag })),
 					dispatch(ActionCreators.bibleVerses({ id: version, references: [`${reference.toUpperCase()}.1+${reference.toUpperCase()}.2`], format: 'text' }))
 				)
 			}
@@ -147,6 +147,25 @@ const ActionCreators = {
 	},
 
 	/**
+	 * @version_id: VERSION_ID
+   * @reference: USFM
+	 */
+	bibleAudioChapter(params) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'audio-bible',
+				method: 'chapter',
+				version: '3.1',
+				auth: false,
+				params,
+				http_method: 'get',
+				types: [ type('audiobibleChapterRequest'), type('audiobibleChapterSuccess'), type('audiobibleChapterFailure') ]
+			}
+		}
+	},
+
+	/**
 	 * @id 						id of bible version
 	 * @references		verse, or range of verses to get
 	 * @format				html by default, or text
@@ -241,7 +260,7 @@ const ActionCreators = {
 	},
 
 	/* no params */
-	momentsLabels(auth, params={}) {
+	momentsLabels(auth, params = {}) {
 		return {
 			params,
 			api_call: {

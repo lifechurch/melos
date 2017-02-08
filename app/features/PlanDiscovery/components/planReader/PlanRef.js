@@ -1,7 +1,11 @@
 import React, { Component, PropTypes } from 'react'
+import { FormattedMessage } from 'react-intl'
 import ActionCreators from '../../actions/creators'
+import Select from '../../../../components/Select'
 import BibleActionCreator from '../../../Bible/actions/creators'
 import Chapter from '../../../Bible/components/content/Chapter'
+import ChapterCopyright from '../../../Bible/components/content/ChapterCopyright'
+import AudioPopup from '../../../Bible/components/audio/AudioPopup'
 import VerseAction from '../../../Bible/components/verseAction/VerseAction'
 import {
 	handleVerseSelect,
@@ -37,7 +41,9 @@ class PlanRef extends Component {
 			dispatch
 		} = this.props
 
-		const refUrl = `${hosts.railsHost}/${id}/${verses[0].reference.usfm[0].split('.').slice(0, 1).join('.')}.${verseSelection.human}`
+		const bibleVerse = bibleVerses[Object.keys(bibleVerses)[0]]
+
+		const refUrl = `${hosts.railsHost}/${id}/${bibleVerse.usfm[0].split('.').slice(0, 1).join('.')}.${verseSelection.human}`
 		// if we don't have highlight colors yet, populate them
 		if (!Array.isArray(highlightColors)) {
 			dispatch(BibleActionCreator.momentsColors(true))
@@ -53,7 +59,7 @@ class PlanRef extends Component {
 			refUrl,
 			id,
 			local_abbreviation,
-			verses[0].reference.human,
+			bibleVerse.human,
 			verseColors,
 			dispatch,
 		)
@@ -65,6 +71,13 @@ class PlanRef extends Component {
 		handleVerseSelectionClear(this.refToThis, refToChapter)
 	}
 
+	getChapter = () => {
+		const { getChapter } = this.props
+		if (typeof getChapter === 'function') {
+			getChapter()
+		}
+	}
+
 	render() {
 		const {
 			verseColors,
@@ -72,9 +85,13 @@ class PlanRef extends Component {
 			momentsLabels,
 			content,
 			version,
+			refHeading,
 			bibleReferences,
 			bibleVerses,
 			textDirection,
+			showChapterButton,
+			audio,
+			hosts,
 			auth
 		} = this.props
 
@@ -85,12 +102,26 @@ class PlanRef extends Component {
 			deletableColors,
 		} = this.state
 
+		console.log(audio);
+		// TODO: add 'change' string to rails and format it here
+		const planRefHeading = (
+			<div className='plan-reader-heading'>
+				<div className='ref-heading'>
+					{`${refHeading} ${version.local_abbreviation.toUpperCase()}`}
+					<Select
+						list={[]}
+						dropdownTrigger={
+							<div className='pill-heading'>Change</div>
+						}
+					/>
+				</div>
+				<AudioPopup audio={audio} hosts={hosts} enabled={typeof audio.id !== 'undefined'} />
+			</div>
+		)
 		const chapterContent = (
 			<Chapter
 				{...this.props}
 				content={content}
-				versionID={version.id}
-				copyright={version.copyright_short}
 				verseColors={verseColors}
 				fontSize={USER_READER_SETTINGS.fontSize}
 				fontFamily={USER_READER_SETTINGS.fontFamily}
@@ -105,6 +136,7 @@ class PlanRef extends Component {
 			<VerseAction
 				// props
 				{...this.props}
+				version={version}
 				highlightColors={highlightColors}
 				verseColors={verseColors}
 				momentsLabels={momentsLabels}
@@ -116,16 +148,23 @@ class PlanRef extends Component {
 				onClose={this.handleOnVerseClear}
 			/>
 		)
-		console.log(this.state.verseSelection);
-// TODO: pass param to verses call for parallel verses or not. parallel will
-// be equivalent to the single verse page
-// not parallel will be for the reading plans refs and we'll build the
-// ref data in a similar struture, except it won't be in an object with the
-// versionID-USFM being the key, rather, an array of separate verses objects ?
+		let fullChapButton = null
+		if (showChapterButton) {
+			fullChapButton = (
+				<div className='buttons'>
+					<a className='chapter-button solid-button' onClick={this.getChapter}>
+						<FormattedMessage id='Reader.read chapter' />
+					</a>
+				</div>
+			)
+		}
+
 		return (
-			<div className='columns large-6 medium-10 medium-centered'>
-				<p>Plan Day Ref</p>
+			<div className='plan-ref columns large-6 medium-8 medium-centered'>
+				{ planRefHeading }
 				{ chapterContent }
+				<ChapterCopyright copyright={version.copyright_short} versionId={version.id} />
+				{ fullChapButton }
 				{ verseActionDiv }
 			</div>
 		)
@@ -133,7 +172,7 @@ class PlanRef extends Component {
 }
 
 PlanRef.propTypes = {
-
+	getChapter: PropTypes.func,
 }
 
 export default PlanRef

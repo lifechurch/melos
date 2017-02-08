@@ -85,6 +85,14 @@ class PlanReader extends Component {
 		}, true))
 	}
 
+	getChapter = () => {
+		const { dispatch, bible: { version: { id } } } = this.props
+		dispatch(BibleActionCreator.bibleChapter({
+			id,
+			reference: this.reference.split('.').splice(0, 2).join('.'),
+			format: 'html'
+		}))
+	}
 
 	render() {
 		const { plan, location: { query: { day, content } }, bible, hosts, auth, dispatch } = this.props
@@ -122,7 +130,23 @@ class PlanReader extends Component {
 				devoContent = this.dayObj.additional_content.text.default
 			}
 		}
-
+		let referenceContent, refHeading, showChapterButton, audio
+		if (!isNaN(this.contentIndex)) {
+			// render the full chapter content if the user clicked the button for read full
+			// chapter. this checks to make sure the chapter matches the rendered ref
+			if ('content' in bible.chapter && bible.chapter.reference.usfm === this.reference.split('.').splice(0, 2).join('.')) {
+				referenceContent = bible.chapter.content
+				refHeading = bible.chapter.reference.human
+				audio = bible.audio
+				showChapterButton = false
+			} else {
+				referenceContent = this.dayObj.reference_content[this.contentIndex].content
+				refHeading = this.dayObj.reference_content[this.contentIndex].reference.human
+				// TODO: completed audio-bible chapter call to grab timing for verse audio
+				audio = null
+				showChapterButton = true
+			}
+		}
 		return (
 			<div>
 				<PlanNavigation
@@ -144,11 +168,15 @@ class PlanReader extends Component {
 							devoContent,
 							bibleReferences: bible.verses.references,
 							bibleVerses: bible.verses.verses,
-							content: this.dayObj.reference_content[this.contentIndex].content,
+							content: referenceContent,
+							refHeading,
+							showChapterButton,
 							version: bible.version,
 							verseColors: bible.verseColors,
 							highlightColors: bible.highlightColors,
 							momentsLabels: bible.momentsLabels,
+							getChapter: this.getChapter,
+							audio: bible.audio,
 							auth,
 							hosts,
 							dispatch

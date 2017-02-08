@@ -15,6 +15,7 @@ import RecentVersions from '../lib/RecentVersions'
 import Header from './header/Header'
 import Settings from './settings/Settings'
 import AudioPopup from './audio/AudioPopup'
+import ChapterCopyright from './content/ChapterCopyright'
 
 
 const DEFAULT_READER_SETTINGS = {
@@ -354,8 +355,6 @@ class Bible extends Component {
 					<Chapter
 						{...this.props}
 						content={bible.chapter.content}
-						versionID={bible.chapter.reference.version_id}
-						copyright={bible.chapter.copyright}
 						verseColors={bible.verseColors}
 						fontSize={fontSize}
 						fontFamily={fontFamily}
@@ -364,6 +363,10 @@ class Bible extends Component {
 						showFootnotes={showFootnotes}
 						showVerseNumbers={showVerseNumbers}
 						ref={(chapter) => { this.chapter = chapter }}
+					/>
+					<ChapterCopyright
+						copyright={bible.copyright}
+						versionId={bible.chapter.reference.version_id}
 					/>
 					<NavArrows
 						{...this.props}
@@ -411,6 +414,7 @@ class Bible extends Component {
 					selection={verseSelection}
 					onClose={this.handleVerseSelectionClear}
 					deletableColors={this.state.deletableColors}
+					version={bible.version}
 					verseColors={bible.verseColors}
 					verses={bible.verses.verses}
 					references={bible.verses.references}

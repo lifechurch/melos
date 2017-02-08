@@ -91,7 +91,7 @@ const ActionCreators = {
 			const promises = [
 				dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth)),
 				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth)),
-				dispatch(BibleActionCreator.bibleVersion({ id: version }))
+				dispatch(BibleActionCreator.bibleVersion({ id: version })),
 			]
 
 			return new Promise((resolve) => {
@@ -154,6 +154,11 @@ const ActionCreators = {
 							plan_day: currentDay,
 							plan_content: i
 						})))
+
+						// innerPromises.push(dispatch(BibleActionCreator.bibleAudioChapter({
+						// 	reference: ref.split('.').slice(0, 2).join('.'),
+						// 	version_id: version,
+						// })))
 					}
 				})
 

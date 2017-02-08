@@ -31,27 +31,27 @@
     },
     {
       "name": "BiblePlan",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "BibelPlan",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "BibliaTerv",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "Bijbelplan",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "Bibelleseplan",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "PlanoBiblico",
-      "hidden": false
+      "hidden": true
     }
   ],
   "marked": {

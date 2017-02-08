@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import audio from './audio'
+import audioChapter from './audioChapter'
 import books from './books'
 import chapter from './chapter'
 import chapters from './chapters'
@@ -15,6 +16,7 @@ import verseColors from './verseColors'
 
 const bibleReaderReducer = combineReducers({
 	audio,
+	audioChapter,
 	books,
 	chapter,
 	chapters,

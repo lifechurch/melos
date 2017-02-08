@@ -913,7 +913,7 @@ form.locationForm {
 	}
 
 	.content-type {
-		// TODO: Refactor; React generates spans all over the place.
+		// TODO:10 Refactor; React generates spans all over the place.
 		// Some of these styles should only apply to specific elements.
 		margin-top:30px;
 		font-size: 12px;
@@ -2325,7 +2325,16 @@ body.c_references.a_show {
  //    transition: background 0.5s ease-in-out;
 	// }
 }
-
-
-
-
+.buttons {
+	display: inline-flex;
+	flex-wrap: wrap;
+	margin-top: 30px;
+	.chapter-button {
+		border: @thin-grey-border;
+		background-color: white;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		color: @font-grey;
+		margin-right: 15px;
+	}
+}

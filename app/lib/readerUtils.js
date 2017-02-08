@@ -48,7 +48,6 @@ export function handleVerseSelect(
 			version: id
 		}).toJS()
 	})
-
 	// now merge in the text for the verses for actions like copy and share
 	// we're setting state with all the other verseAction before so this api call doesn't slow anything down
 	if (verseSelection.verses && verseSelection.verses.length > 0) {
@@ -59,7 +58,7 @@ export function handleVerseSelect(
 			local_abbreviation
 		})).then((response) => {
 			refToThis.setState({
-				verseSelection: Immutable.fromJS(verseSelection).merge({
+				verseSelection: Immutable.fromJS(refToThis.state.verseSelection).merge({
 					text: response.verses.reduce((acc, curr, index) => {
 						// don't put a space in front of the first string
 						if (index !== 0) {

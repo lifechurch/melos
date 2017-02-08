@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import { getSelectionString, getSelectionText } from '../../../../lib/usfmUtils'
-import ChapterCopyright from './ChapterCopyright'
 
 const DEFAULT_STATE = { selection: null, selectedClasses: null, selectedText: null }
 
@@ -100,8 +99,6 @@ class Chapter extends Component {
 		let { selectedClasses } = this.state
 		const {
 			content,
-			copyright,
-			versionID,
 			fontSize,
 			fontFamily,
 			textDirection,
@@ -114,8 +111,6 @@ class Chapter extends Component {
 		if (selectedClasses === null) {
 			selectedClasses = {}
 		}
-
-		// const { content, copyright, } = chapter
 
 		const innerContent = { __html: content }
 
@@ -167,9 +162,6 @@ class Chapter extends Component {
 					dangerouslySetInnerHTML={innerContent}
 					style={style}
 				/>
-
-				<ChapterCopyright copyright={copyright} versionId={versionID} />
-
 			</div>
 		)
 	}
@@ -177,8 +169,6 @@ class Chapter extends Component {
 
 Chapter.propTypes = {
 	content: PropTypes.string,
-	versionID: PropTypes.number,
-	copyright: PropTypes.object,
 	onSelect: PropTypes.func,
 	textDirection: PropTypes.string,
 	fontSize: PropTypes.number,

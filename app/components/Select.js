@@ -7,7 +7,7 @@ class Select extends Component {
 
 	constructor(props) {
 		super(props)
-
+		if ()
 		this.state = {
 			selectedValue: props.initialValue || props.list[Object.keys(props.list)[0]],
 			dropdown: false,
@@ -25,15 +25,15 @@ class Select extends Component {
 		}
 	}
 
-	selectOption(key) {
-		const { list, onChange } = this.props
+	selectOption(value) {
+		const { onChange } = this.props
 		this.setState({
-			selectedValue: list[key],
+			selectedValue: value,
 			dropdown: false,
 		})
 
-		if (typeof onChange == 'function') {
-			onChange(key)
+		if (typeof onChange === 'function') {
+			onChange(value)
 		}
 	}
 
@@ -43,36 +43,53 @@ class Select extends Component {
 	}
 
 	render() {
-		const { list } = this.props
+		const { list, dropdownTrigger } = this.props
 		const { selectedValue, dropdown } = this.state
 
-		let optionList = []
-		if (list && typeof list == 'object') {
-			Object.keys(list).forEach((key) => {
-				let val = list[key]
-				// leave the selected value out of the list
-				if (selectedValue !== val) {
-					optionList.push (
-						<li key={val} onClick={this.selectOption.bind(this, key)}>{val}</li>
-					)
-				}
-			})
+		const optionList = []
+		if (list) {
+			if (typeof list === 'object') {
+				Object.keys(list).forEach((key) => {
+					const val = list[key]
+					// leave the selected value out of the list
+					if (selectedValue !== val) {
+						optionList.push(
+							<li key={val} onClick={this.selectOption.bind(this, val)}>{val}</li>
+						)
+					}
+				})
+			} else if (Array.isArray(list)) {
+				list.forEach((item, index) => {
+					if (selectedValue !== index) {
+						optionList.push(
+							<li key={item} onClick={this.selectOption.bind(this, item)}>{item}</li>
+						)
+					}
+				})
+			}
+		}
+		let clickDiv = (
+			<div className='select-heading'>
+				<div className='selected'>{ selectedValue }</div>
+				<div className='dropdown-arrow-container' onClick={this.handleClick} >
+					<DropDownArrow dir={dropdown ? 'up' : 'down'} height={6} width={12} />
+				</div>
+			</div>
+		)
+		if (dropdownTrigger) {
+			clickDiv = (
+				{ dropdownTrigger }
+			)
 		}
 
 		return (
 			<div className='select-field'>
-				<div className='select-heading'>
-					<div className='selected'>{ selectedValue }</div>
-					<div className='dropdown-arrow-container' onClick={this.handleClick} >
-						<DropDownArrow dir={dropdown ? 'up' : 'down'} height={6} width={12} />
-					</div>
-				</div>
+				{ clickDiv }
 				<DropdownTransition show={dropdown} >
 					<ul className='select-list'>
 						{ optionList }
 					</ul>
 				</DropdownTransition>
-
 			</div>
 		)
 	}
@@ -81,10 +98,12 @@ class Select extends Component {
 
 
 Select.propTypes = {
-	list: React.PropTypes.object.isRequired,
+	list: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+	selectedValue: PropTypes.string,
+	dropdownTrigger: PropTypes.node,
 	onChange: PropTypes.func,
 	value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
-	initialValue: React.PropTypes.string,
+	initialValue: PropTypes.string,
 }
 
 export default Select

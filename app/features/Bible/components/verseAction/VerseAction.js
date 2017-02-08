@@ -23,7 +23,7 @@ class VerseAction extends Component {
 	}
 
 	handleActionClick(e) {
-		const { dispatch, auth, selection: { verses }, bible: { version: { id, local_abbreviation } } } = this.props
+		const { dispatch, auth, selection: { verses }, version: { id, local_abbreviation } } = this.props
 
 		// if we're not logged in and try to make an auth'd moment
 		if (!auth.isLoggedIn && (e.value == 'note' || e.value == 'bookmark')) {

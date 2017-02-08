@@ -39,6 +39,7 @@ class MomentCreate extends Component {
 	componentWillReceiveProps(nextProps) {
 		const { verses, references } = this.props
 		const { localVerses, localRefs } = this.state
+
 		// merge in new verses
 		if (nextProps.verses && nextProps.references) {
 			if (verses !== nextProps.verses) {
@@ -155,7 +156,7 @@ class MomentCreate extends Component {
 	save = () => {
 		const { dispatch, isLoggedIn, kind, onClose } = this.props
 		const { localRefs, addedLabels, content, user_status, selectedColor } = this.state
-		console.log(localRefs);
+
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
 			kind,
 			references: (Array.isArray(localRefs) && localRefs.length > 0) ? localRefs : [],
@@ -165,13 +166,13 @@ class MomentCreate extends Component {
 			user_status,
 			color: selectedColor ? selectedColor.replace('#', '') : null,
 		}))
-		.then(data => {
-			if (typeof onClose === 'function') {
-				onClose(true)
-			}
-		}, error => {
+			.then(data => {
+				if (typeof onClose === 'function') {
+					onClose(true)
+				}
+			}, error => {
 
-		}
+			}
 		)
 	}
 
@@ -265,26 +266,25 @@ class MomentCreate extends Component {
 			}
 		}
 
-		console.log(this.state.localRefs);
 		return (
 			<div className='verse-action-create'>
-				<div className='row large-6'>
-					<div className='heading vertical-center'>
-						<div className='columns medium-4 cancel'><XMark onClick={this.handleClose} width={18} height={18} /></div>
-						<div className='columns medium-4 title'>{ createHeader }</div>
-						<div className='columns medium-4 save'>
-							{
+				<CustomScroll allowOutsideScroll={false}>
+					<div className='row large-6'>
+						<div className='heading vertical-center'>
+							<div className='columns medium-4 cancel'><XMark onClick={this.handleClose} width={18} height={18} /></div>
+							<div className='columns medium-4 title'>{ createHeader }</div>
+							<div className='columns medium-4 save'>
+								{
 									isLoggedIn ?
 										<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: 'Reader.verse action.save' }) }</div>
 									:
 									null
 								}
+							</div>
 						</div>
-					</div>
-					<CustomScroll allowOutsideScroll={false}>
 						{ contentDiv }
-					</CustomScroll>
-				</div>
+					</div>
+				</CustomScroll>
 			</div>
 		)
 	}

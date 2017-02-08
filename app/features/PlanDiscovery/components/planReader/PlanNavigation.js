@@ -46,7 +46,7 @@ class PlanNavigation extends Component {
 		return (
 			<div className=''>
 				<Header sticky={true} classes={'plan-nav-header'}>
-					<div className='nav-content columns large-8 medium-8 medium-centered'>
+					<div className='nav-content columns large-6 medium-8 medium-centered'>
 						<Link to={dayBasePath}>
 							<img alt='reading plan' className='nav-img img-left' src={plan.images[2].url} />
 						</Link>
