@@ -11,7 +11,7 @@ class SavedPlans extends Component {
 
 	loadMore(page) {
 		const { dispatch } = this.props
-		dispatch(ActionCreators.savedItems({ page: page }, true))
+		dispatch(ActionCreators.savedItems({ page }, true))
 	}
 
 	render() {

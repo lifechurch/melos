@@ -11,7 +11,7 @@ class SubscribedPlanListItem extends Component {
 				</div>
 				<br />
 				<div className="plan-length">
-					<FormattedMessage id="plans.which day in plan" values={{ day: day, total: plan.total_days }} />
+					<FormattedMessage id="plans.which day in plan" values={{ day, total: plan.total_days }} />
 				</div>
 			</div>
 		)

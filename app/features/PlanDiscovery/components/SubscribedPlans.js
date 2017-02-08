@@ -11,7 +11,7 @@ class SubscribedPlans extends Component {
 
 	loadMore(page) {
 		const { dispatch, auth: { userData: { userid } } } = this.props
-		dispatch(ActionCreators.items({ page: page, user_id: userid }, true))
+		dispatch(ActionCreators.items({ page, user_id: userid }, true))
 	}
 
 	render() {

@@ -15,7 +15,7 @@ const ActionCreators = {
 						const collectionIds = [];			// for collections carousels
 						const recommendationIds = [];	// for recommendation carousels
 						const promises = []
-						let hasSaved = false;				// for saved plans carousel
+						let hasSaved = false;					// for saved plans carousel
 
 						if (data && data.items) {
 							data.items.forEach((item) => {
@@ -96,6 +96,7 @@ const ActionCreators = {
 			return new Promise((resolve) => {
 				Promise.all(promises).then((d) => {
 					const [ plan, { calendar } ] = d
+
 					let currentDay = day
 					if (!day) {
 						const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
@@ -107,7 +108,6 @@ const ActionCreators = {
 					}
 
 					const dayData = calendar[currentDay - 1]
-
 					dispatch(ActionCreators.planReferences({
 						references: dayData.references,
 						version,
@@ -221,6 +221,12 @@ const ActionCreators = {
 		}
 	},
 
+	/**
+	 * Reset User Plan Subscription
+	 *
+	 * @param      {object}	params  The parameters
+	 * @param      {bool}  	auth    The auth
+	 */
 	resetSubscription(params, auth) {
 		return {
 			params,
@@ -232,6 +238,29 @@ const ActionCreators = {
 				params,
 				http_method: 'post',
 				types: [ type('resetSubscriptionRequest'), type('resetSubscriptionSuccess'), type('resetSubscriptionFailure') ]
+			}
+		}
+	},
+
+	/**
+	 *
+	 * @param      {number} 	id  				reading plan id
+	 * @param      {number}  	day   			Day number to update, within the Reading Plan
+	 * @param      {string} 	updated_dt 	A valid ISO 8601 date; e.g., date('c') or 2013-10-25T10:01:27+00:00
+	 * @param      {array} 		references 	List of references (must be valid for that day of reading) to mark as completed
+	 * @param      {bool} 		devotional 	Boolean flag to signify that the devotional content for that day has been completed
+	 */
+	updateCompletion(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'update_completion',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('updateCompletionRequest'), type('updateCompletionSuccess'), type('updateCompletionFailure') ]
 			}
 		}
 	},

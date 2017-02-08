@@ -46,7 +46,7 @@ function checkAuth(auth) {
 				const sessionData = tokenAuth.decryptToken(tokenData.token)
 
 				resolve({
-					token: token,
+					token,
 					isLoggedIn: true,
 					isWorking: false,
 					userData: sessionData,
@@ -60,7 +60,7 @@ function checkAuth(auth) {
 						}
 					}
 				})
-			} catch(err) {
+			} catch (err) {
 				reject({ error: 1, message: 'Invalid or Expired Token' })
 			}
 
@@ -69,7 +69,7 @@ function checkAuth(auth) {
 			const sessionData = auth
 			const token = tokenAuth.token(sessionData)
 			resolve({
-				token: token,
+				token,
 				isLoggedIn: true,
 				isWorking: false,
 				userData: sessionData,
@@ -119,8 +119,8 @@ function getNodeHost(req) {
 function getDefaultState(feature) {
 	let defaultState = {}
 	try {
-		defaultState = require('./app/standalone/' + feature + '/defaultState').default
-	} catch(ex) {
+		defaultState = require(`./app/standalone/${feature}/defaultState`).default
+	} catch (ex) {
 		defaultState = require('./app/defaultState').default
 	}
 	return defaultState
@@ -129,8 +129,8 @@ function getDefaultState(feature) {
 function getStore(feature, startingState, history, logger) {
 	let configureStore = {}
 	try {
-		configureStore =  require('./app/standalone/' + feature + '/store').default
-	} catch(ex) {
+		configureStore = require(`./app/standalone/${feature}/store`).default
+	} catch (ex) {
 		configureStore = require('./app/store/configureStore').default
 	}
 	return configureStore(startingState, history, logger)
@@ -139,8 +139,8 @@ function getStore(feature, startingState, history, logger) {
 function getRootComponent(feature) {
 	let rootComponent = {}
 	try {
-		rootComponent = require('./app/standalone/' + feature + '/rootComponent').default
-	} catch(ex) {
+		rootComponent = require(`./app/standalone/${feature}/rootComponent`).default
+	} catch (ex) {
 		throw new Error('No root component defined')
 	}
 	return rootComponent
@@ -148,9 +148,9 @@ function getRootComponent(feature) {
 
 function mapStateToParams(feature, state, params) {
 	try {
-		const fn = require ('./app/standalone/' + feature + '/mapParamsToState').default
+		const fn = require(`./app/standalone/${feature}/mapParamsToState`).default
 		return fn(state, params)
-	} catch(ex) {
+	} catch (ex) {
 	 	return state
 	}
 }
@@ -159,8 +159,8 @@ function getConfig(feature) {
 	const defaultConfig = { linkCss: true }
 	let config = {}
 	try {
-		config = require('./app/standalone/' + feature + '/config').default
-	} catch(ex) { }
+		config = require(`./app/standalone/${feature}/config`).default
+	} catch (ex) { }
 	return Object.assign({}, defaultConfig, config)
 }
 
@@ -168,9 +168,9 @@ function loadData(feature, params, startingState, sessionData, store, Locale) {
 	return new Promise((resolve) => {
 		let fn = null
 		try {
-			fn = require('./app/standalone/' + feature + '/loadData').default
+			fn = require(`./app/standalone/${feature}/loadData`).default
 			resolve(fn(params, startingState, sessionData, store, Locale))
-		} catch(ex) {
+		} catch (ex) {
 			resolve()
 		}
 	})
@@ -186,7 +186,7 @@ function getLocale(languageTag) {
 	}
 
 	// Get the appropriate set of localized strings for this locale
-	final.messages = require('./locales/' + final.locale + '.json');
+	final.messages = require(`./locales/${final.locale}.json`);
 
 	for (const lc of localeList) {
 		if (lc.locale === final.locale) {
@@ -197,7 +197,7 @@ function getLocale(languageTag) {
 		}
 	}
 	// Get the appropriate react-intl locale data for this locale
-	var localeData = require('react-intl/locale-data/' + final.locale2);
+	const localeData = require(`react-intl/locale-data/${final.locale2}`);
 	final.data = localeData;
 
 	moment.locale(final.momentLocale)
@@ -208,7 +208,7 @@ function getRenderProps(feature, url) {
 	return new Promise((resolve, reject) => {
 		let getRoutes = null
 		try {
-			getRoutes = require('./app/standalone/' + feature + '/routes.js').default
+			getRoutes = require(`./app/standalone/${feature}/routes.js`).default
 			const routes = getRoutes(null)
 			match({ routes, location: url }, (error, redirectLocation, renderProps) => {
 				if (!error && !redirectLocation && renderProps) {
@@ -217,14 +217,14 @@ function getRenderProps(feature, url) {
 					resolve({})
 				}
 			})
-		} catch(ex) {
-			console.log("Rendering Error:", ex)
+		} catch (ex) {
+			console.log('Rendering Error:', ex)
 			resolve({})
 		}
 	})
 }
 
-router.post('/', urlencodedParser, function(req, res) {
+router.post('/', urlencodedParser, (req, res) => {
 	const { feature, params, auth } = req.body
 	const assetPrefix = getAssetPrefix(req)
 	const Locale = getLocale(params.languageTag)
@@ -257,20 +257,18 @@ router.post('/', urlencodedParser, function(req, res) {
 					finish()
 				}
 
-				console.log(store.getState())
-
 				function finish() {
 					const RootComponent = getRootComponent(feature)
 
 					getRenderProps(feature, params.url).then((renderProps) => {
 						let html = null
 						try {
-							 html = renderToString(<IntlProvider locale={ (Locale.locale2 == "mn") ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
-						} catch(ex) {
-							return res.status(500).send({ error: 3, message: 'Could Not Render ' + feature + ' view', ex, stack: ex.stack })
+							 html = renderToString(<IntlProvider locale={ (Locale.locale2 == 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
+						} catch (ex) {
+							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
 
-						const initialState = Object.assign({}, startingState, store.getState(), { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost }})
+						const initialState = Object.assign({}, startingState, store.getState(), { hosts: { nodeHost: getNodeHost(req), railsHost: params.railsHost } })
 
 						let head = Helmet.rewind()
 
@@ -283,8 +281,8 @@ router.post('/', urlencodedParser, function(req, res) {
 						}
 
 						res.setHeader('Cache-Control', 'public')
-						res.render('standalone', {appString: html, initialState: initialState, environment: process.env.NODE_ENV, getAssetPath: getAssetPath, assetPrefix: assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost }, function(err, html) {
-							res.send({ html, head, token: initialState.auth.token, js: assetPrefix + '/javascripts/' + getAssetPath(feature + '.js') })
+						res.render('standalone', { appString: html, initialState, environment: process.env.NODE_ENV, getAssetPath, assetPrefix, config: getConfig(feature), locale: Locale, nodeHost: getNodeHost(req), railsHost: params.railsHost }, (err, html) => {
+							res.send({ html, head, token: initialState.auth.token, js: `${assetPrefix}/javascripts/${getAssetPath(`${feature}.js`)}` })
 						})
 					})
 				}
@@ -293,9 +291,9 @@ router.post('/', urlencodedParser, function(req, res) {
 				console.log(404, error)
 				res.status(404).send(error)
 			})
-		} catch(ex) {
+		} catch (ex) {
 			console.log(500, ex)
-			res.status(500).send({error: 2, message: 'Could not render ' + feature + ' view', ex })
+			res.status(500).send({ error: 2, message: `Could not render ${feature} view`, ex })
 		}
 	}, (authError) => {
 		return res.status(403).send(authError)

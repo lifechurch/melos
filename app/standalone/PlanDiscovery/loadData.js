@@ -31,7 +31,6 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isSubscription = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+')
 
 			let auth = false
-
 			if (sessionData.email && sessionData.password) {
 				auth = { username: sessionData.email, password: sessionData.password }
 			} else if (sessionData.tp_token) {
@@ -68,7 +67,6 @@ export default function loadData(params, startingState, sessionData, store, Loca
 
 			} else if (isSubscribedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
-
 			} else if (isSavedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.savedItems({ page: 1 }, auth)).then(() => { resolve() })
 

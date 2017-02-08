@@ -35,7 +35,7 @@ class SubscribeUserAction extends Component {
 		} else {
 			var button = (
 				<div className='solid-button green padded' onClick={::this.handleClick}>
-					<FormattedMessage id="plans.start"/>
+					<FormattedMessage id="plans.start" />
 				</div>
 			)
 		}

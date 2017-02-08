@@ -6,7 +6,7 @@ import PlanDayStartButton from './PlanDayStartButton'
 import PlanReferences from './PlanReferences'
 
 function PlanDay(props) {
-	const { day, dayData, calendar, totalDays, subscriptionLink, startLink, devoCompleted, hasDevo } = props
+	const { day, dayData, calendar, totalDays, subscriptionLink, startLink, devoCompleted, hasDevo, handleCompleteRef } = props
 	return (
 		<div>
 			<div className="row days-container collapse">
@@ -20,7 +20,15 @@ function PlanDay(props) {
 						<PlanDayStartButton dayData={dayData} link={startLink} />
 					</div>
 					<PlanDayStatus day={day} calendar={calendar} total={totalDays} />
-					<PlanReferences day={day} devoCompleted={devoCompleted} completedRefs={dayData.references_completed} references={dayData.reference_content} link={subscriptionLink} hasDevo={hasDevo} />
+					<PlanReferences
+						day={day}
+						devoCompleted={devoCompleted}
+						completedRefs={dayData.references_completed}
+						references={dayData.reference_content}
+						link={subscriptionLink}
+						hasDevo={hasDevo}
+						handleCompleteRef={handleCompleteRef}
+					/>
 				</div>
 			</div>
 		</div>
@@ -35,7 +43,8 @@ PlanDay.propTypes = {
 	subscriptionLink: PropTypes.string.isRequired,
 	startLink: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
 	devoCompleted: PropTypes.bool,
-	hasDevo: PropTypes.bool
+	hasDevo: PropTypes.bool,
+	handleCompleteRef: PropTypes.func.isRequired
 }
 
 PlanDay.defaultProps = {

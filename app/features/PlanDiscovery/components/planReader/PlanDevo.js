@@ -1,30 +1,27 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 
-class PlanDevo extends Component {
-	render() {
-		const { devoContent } = this.props
+function PlanDevo(props) {
+	const { devoContent } = props
 
-		if (!devoContent) {
-			return (
-				<div>no content :(</div>
-			)
-		}
+	if (!devoContent) {
 		return (
-			<div className='row devo-content'>
-				<p>Plan Day Devo</p>
-				<div className='columns large-8 medium-8 medium-centered'>
-					<div
-						className='devotional'
-						dangerouslySetInnerHTML={{ __html: devoContent }}
-					/>
-				</div>
-			</div>
+			<div />
 		)
 	}
+	return (
+		<div className='row devo-content'>
+			<div className='columns large-8 medium-8 medium-centered'>
+				<div
+					className='devotional'
+					dangerouslySetInnerHTML={{ __html: devoContent }}
+				/>
+			</div>
+		</div>
+	)
 }
 
 PlanDevo.propTypes = {
-
+	devoContent: PropTypes.string.isRequired,
 }
 
 export default PlanDevo

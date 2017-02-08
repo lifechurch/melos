@@ -4,17 +4,24 @@ import Helmet from 'react-helmet'
 import moment from 'moment'
 import { FormattedHTMLMessage } from 'react-intl'
 import cookie from 'react-cookie'
+import Immutable from 'immutable'
 
 import Image from '../../../components/Carousel/Image'
 import PlanMenu from './PlanMenu'
 import ShareWidget from './ShareWidget'
 import ActionCreators from '../actions/creators'
 
+function dayHasDevo(devoContent) {
+	return (typeof devoContent.html !== 'undefined' && devoContent.html !== null) ||
+		(typeof devoContent.text !== 'undefined' && devoContent.text !== null)
+}
+
 class Plan extends Component {
 	constructor(props) {
 		super(props)
 
 		this.handleCatchUp = this.handleCatchUp.bind(this)
+		this.handleCompleteRef = this.handleCompleteRef.bind(this)
 	}
 
 	handleCatchUp() {
@@ -45,6 +52,40 @@ class Plan extends Component {
 		}
 	}
 
+	handleCompleteRef(day, ref, complete) {
+		const { dispatch, plan: { calendar, id } } = this.props
+		const dayData = calendar[day - 1]
+		const references = Immutable.fromJS(dayData.references_completed).toJS()
+		const hasDevo = dayHasDevo(dayData.additional_content)
+
+		// devotional is true by default if there is no devotional
+		// otherwise this will overwrite with the correct value
+		let completeDevo = true
+		if (ref === 'devo') {
+			completeDevo = complete
+		} else if (hasDevo) {
+			completeDevo = dayData.additional_content.completed
+		}
+
+		// if we have a reference, that we're reading through,
+		// add it to the list of completedRefs
+		if (ref && ref !== 'devo') {
+			if (complete === true) {
+				references.push(ref)
+			} else {
+				references.splice(references.indexOf(ref), 1)
+			}
+		}
+
+		// make api call
+		dispatch(ActionCreators.updateCompletion({
+			id,
+			day,
+			references,
+			devotional: completeDevo,
+		}, true))
+	}
+
 	render() {
 		const { plan, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
@@ -61,10 +102,7 @@ class Plan extends Component {
 		}
 		const dayData = plan.calendar[day - 1]
 		const devoCompleted = dayData.additional_content.completed === true
-		const hasDevo = (
-			(typeof dayData.additional_content.html !== 'undefined' && dayData.additional_content.html !== null) ||
-			(typeof dayData.additional_content.text !== 'undefined' && dayData.additional_content.text !== null)
-		)
+		const hasDevo = dayHasDevo(dayData.additional_content)
 
 		let startLink
 		if (hasDevo) {
@@ -105,7 +143,7 @@ class Plan extends Component {
 							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
 						</div>
 					</div>
-					{children && React.cloneElement(children, { day, dayData, calendar: plan.calendar, totalDays: plan.total_days, subscriptionLink, startLink, devoCompleted, hasDevo })}
+					{children && React.cloneElement(children, { day, dayData, calendar: plan.calendar, totalDays: plan.total_days, subscriptionLink, startLink, devoCompleted, hasDevo, handleCompleteRef: this.handleCompleteRef })}
 				</div>
 			</div>
 		)

@@ -56,7 +56,11 @@ const constants = {
 	completedSuccess: 'READING_PLANS_COMPLETED_SUCCESS',
 	completedFailure: 'READING_PLANS_COMPLETED_FAILURE',
 
-	planSelect: 'READING_PLAN_SELECT'
+	planSelect: 'READING_PLAN_SELECT',
+
+	updateCompletionRequest: 'READING_PLANS_UPDATE_COMPLETION_REQUEST',
+	updateCompletionSuccess: 'READING_PLANS_UPDATE_COMPLETION_SUCCESS',
+	updateCompletionFailure: 'READING_PLANS_UPDATE_COMPLETION_FAILURE',
 }
 
 export default function (key) {
