@@ -7,9 +7,15 @@ class Select extends Component {
 
 	constructor(props) {
 		super(props)
-		if ()
+		const { list } = props
+		let selectedVal
+		if (Array.isArray(list)) {
+			selectedVal = list[0]
+		} else if (typeof list === 'object') {
+			selectedVal = list[Object.keys(list)[0]]
+		}
 		this.state = {
-			selectedValue: props.initialValue || props.list[Object.keys(props.list)[0]],
+			selectedValue: props.initialValue || selectedVal,
 			dropdown: false,
 		}
 
@@ -78,7 +84,9 @@ class Select extends Component {
 		)
 		if (dropdownTrigger) {
 			clickDiv = (
-				{ dropdownTrigger }
+				<div className='select-heading' onClick={this.handleClick}>
+					{ dropdownTrigger }
+				</div>
 			)
 		}
 

@@ -108,12 +108,7 @@ class PlanRef extends Component {
 			<div className='plan-reader-heading'>
 				<div className='ref-heading'>
 					{`${refHeading} ${version.local_abbreviation.toUpperCase()}`}
-					<Select
-						list={[]}
-						dropdownTrigger={
-							<div className='pill-heading'>Change</div>
-						}
-					/>
+					<div className='pill-heading'>Change</div>
 				</div>
 				<AudioPopup audio={audio} hosts={hosts} enabled={typeof audio.id !== 'undefined'} />
 			</div>
