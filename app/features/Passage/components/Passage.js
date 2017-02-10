@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import VerseCard from '../../Bible/components/verseAction/bookmark/VerseCard'
-import ReaderArrows from '../../Bible/components/content/ReaderArrows'
+import NavArrows from '../../Bible/components/content/NavArrows'
 import Share from '../../Bible/components/verseAction/share/Share'
 import Helmet from 'react-helmet'
 import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'

@@ -14,6 +14,12 @@ function PlanReferences(props) {
 		cursor: 'pointer'
 	}
 
+	if (!(references && Object.keys(references).length > 0)) {
+		return (
+			<div />
+		)
+	}
+
 	const referenceLinks = Object.keys(references).map((refIndex) => {
 		const reference = references[refIndex].reference
 		return <PlanReferenceItem {...props} content={refIndex} reference={reference} key={refIndex} iconStyle={iconStyle} />

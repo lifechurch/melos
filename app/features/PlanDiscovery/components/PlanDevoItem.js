@@ -20,7 +20,7 @@ class PlanDevoItem extends Component {
 
 	render() {
 		const { link, day, devoCompleted, iconStyle } = this.props
-		const itemLink = { pathname: `${link}/ref`, query: { day } }
+		const itemLink = { pathname: `${link}/devo`, query: { day } }
 
 		let icon
 		if (devoCompleted) {

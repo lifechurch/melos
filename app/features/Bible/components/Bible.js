@@ -104,6 +104,7 @@ class Bible extends Component {
 		})
 	}
 
+// TODO: use readerUtils for this
 	handleVerseSelect(verseSelection) {
 		const { hosts, bible: { version: { id, local_abbreviation }, chapter: { reference: { human, usfm } }, verseColors }, dispatch } = this.props
 		const refUrl = `${hosts.railsHost}/${id}/${usfm}.${verseSelection.human}`
@@ -268,6 +269,13 @@ class Bible extends Component {
 
 	componentDidMount() {
 		const { dispatch, bible, auth } = this.props
+
+		// check for cookie written from reading plans telling
+		// bible to open with the chapterpicker modal open
+		if (LocalStore.get('showPickerOnLoad')) {
+			this.chapterPickerInstance.openDropdown()
+			LocalStore.delete('showPickerOnLoad')
+		}
 
 		this.recentVersions = new RecentVersions()
 

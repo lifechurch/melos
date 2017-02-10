@@ -40,7 +40,7 @@ class AudioPlayer extends Component {
 			this.state = {
 				standaloneWindow: null,
 				initialized: false,
-				playing: false,
+				playing: props.playing || false,
 				buffering: false,
 				paused: false,
 				hasError: false,
@@ -58,6 +58,7 @@ class AudioPlayer extends Component {
 		this.handlePlayerError = ::this.handlePlayerError
 		this.handlePlayerPlayRequest = ::this.handlePlayerPlayRequest
 		this.handlePlayerPauseRequest = ::this.handlePlayerPauseRequest
+		this.handlePlayerPlaying = ::this.handlePlayerPlaying
 		this.handlePlayerPlaying = ::this.handlePlayerPlaying
 		this.handlePlayerPause = ::this.handlePlayerPause
 		this.handlePlayerSeekRequest = ::this.handlePlayerSeekRequest
@@ -80,18 +81,37 @@ class AudioPlayer extends Component {
 		if (nextProps.hasStandalone === true && !hasStandalone) {
 			this.handleYieldToStandalone()
 		}
-
 	}
 
-	componentWillUpdate(prevProps, prevState) {
-		const { startTime, stopTime } = this.props
+	componentDidUpdate(prevProps, prevState) {
+		const { audio, startTime, stopTime } = this.props
+		const { playing } = this.state
 
+		const prevaudioRef = 	prevProps.audio && 'download_urls' in prevProps.audio ?
+													prevProps.audio.download_urls[Object.keys(prevProps.audio.download_urls)[0]]
+													: null
+		const audioRef = 	audio && 'download_urls' in audio ?
+											audio.download_urls[Object.keys(audio.download_urls)[0]]
+											: null
+
+		if (audioRef !== prevaudioRef) {
+			this.handlePlayerSrcLoad(audioRef, playing)
+		}
 		if (startTime && stopTime && startTime !== prevProps.startTime) {
 			this.player.currentTime = startTime
 			this.setState({
 				currentTime: startTime,
 				stopTime,
 			})
+		}
+	}
+
+	handlePlayerSrcLoad(src, playAfterLoad) {
+		this.player.querySelector('source').src = src
+		this.player.pause()
+		this.player.load()
+		if (playAfterLoad) {
+			this.player.oncanplaythrough = this.player.play()
 		}
 	}
 
@@ -283,7 +303,6 @@ class AudioPlayer extends Component {
 		if (typeof audio === 'undefined' || typeof audio.download_urls !== 'object') {
 			return null
 		}	else {
-
 			const audioSources = Object.keys(audio.download_urls).map((fileType) => {
 				return (<source key={fileType} src={audio.download_urls[fileType]} />)
 			})

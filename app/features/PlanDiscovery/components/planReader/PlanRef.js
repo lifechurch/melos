@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import LocalStore from '../../../../lib/localStore'
 import ActionCreators from '../../actions/creators'
 import PopupMenu from '../../../../components/PopupMenu'
 import BibleActionCreator from '../../../Bible/actions/creators'
@@ -78,6 +79,13 @@ class PlanRef extends Component {
 		}
 	}
 
+	changeReader = () => {
+		// this will tell the bible component to render
+		// with the chapter picker open, because the user
+		// clicked change reference/version
+		LocalStore.set('showPickerOnLoad', true)
+	}
+
 	render() {
 		const {
 			verseColors,
@@ -86,6 +94,7 @@ class PlanRef extends Component {
 			content,
 			version,
 			refHeading,
+			bibleChapterLink,
 			bibleReferences,
 			bibleVerses,
 			textDirection,
@@ -94,6 +103,7 @@ class PlanRef extends Component {
 			onAudioComplete,
 			audioStart,
 			audioStop,
+			audioPlaying,
 			hosts,
 			auth
 		} = this.props
@@ -110,57 +120,26 @@ class PlanRef extends Component {
 			<div className='plan-reader-heading'>
 				<div className='ref-heading'>
 					{`${refHeading} ${version.local_abbreviation.toUpperCase()}`}
-					<PopupMenu
-						triggerButton={
-							<div className='pill-heading'>Change</div>
-						}
+					<a
+						href={bibleChapterLink}
+						className='pill-heading'
+						onClick={this.changeReader}
 					>
-						<ul>
-							<li>hi</li>
-							<li>hissss</li>
-						</ul>
-					</PopupMenu>
+						Change
+					</a>
 				</div>
 				<AudioPopup
 					audio={audio}
 					hosts={hosts}
-					enabled={typeof audio.id !== 'undefined'}
+					enabled={audio && 'id' in audio}
 					onAudioComplete={onAudioComplete}
 					startTime={audioStart}
 					stopTime={audioStop}
+					playing={audioPlaying}
 				/>
 			</div>
 		)
-		const chapterContent = (
-			<Chapter
-				{...this.props}
-				content={content}
-				verseColors={verseColors}
-				fontSize={USER_READER_SETTINGS.fontSize}
-				fontFamily={USER_READER_SETTINGS.fontFamily}
-				onSelect={this.handleOnVerseSelect}
-				showFootnotes={USER_READER_SETTINGS.showFootnotes}
-				showVerseNumbers={USER_READER_SETTINGS.showVerseNumbers}
-				textDirection={textDirection}
-				ref={(chapter) => { this.chapterInstance = chapter }}
-			/>
-		)
-		const verseActionDiv = (
-			<VerseAction
-				// props
-				{...this.props}
-				version={version}
-				highlightColors={highlightColors}
-				verseColors={verseColors}
-				momentsLabels={momentsLabels}
-				verses={bibleVerses}
-				references={bibleReferences}
-				// state
-				selection={verseSelection}
-				deletableColors={deletableColors}
-				onClose={this.handleOnVerseClear}
-			/>
-		)
+
 		let fullChapButton = null
 		if (showChapterButton) {
 			fullChapButton = (
@@ -175,10 +154,34 @@ class PlanRef extends Component {
 		return (
 			<div className='plan-ref columns large-6 medium-8 medium-centered'>
 				{ planRefHeading }
-				{ chapterContent }
+				<Chapter
+					{...this.props}
+					content={content}
+					verseColors={verseColors}
+					fontSize={USER_READER_SETTINGS.fontSize}
+					fontFamily={USER_READER_SETTINGS.fontFamily}
+					onSelect={this.handleOnVerseSelect}
+					showFootnotes={USER_READER_SETTINGS.showFootnotes}
+					showVerseNumbers={USER_READER_SETTINGS.showVerseNumbers}
+					textDirection={textDirection}
+					ref={(chapter) => { this.chapterInstance = chapter }}
+				/>
 				<ChapterCopyright copyright={version.copyright_short} versionId={version.id} />
 				{ fullChapButton }
-				{ verseActionDiv }
+				<VerseAction
+					// props
+					{...this.props}
+					version={version}
+					highlightColors={highlightColors}
+					verseColors={verseColors}
+					momentsLabels={momentsLabels}
+					verses={bibleVerses}
+					references={bibleReferences}
+					// state
+					selection={verseSelection}
+					deletableColors={deletableColors}
+					onClose={this.handleOnVerseClear}
+				/>
 			</div>
 		)
 	}
@@ -186,6 +189,11 @@ class PlanRef extends Component {
 
 PlanRef.propTypes = {
 	getChapter: PropTypes.func,
+	audio: PropTypes.object,
+}
+
+PlanRef.defaultProps = {
+	audio: null,
 }
 
 export default PlanRef
