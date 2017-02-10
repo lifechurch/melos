@@ -150,7 +150,7 @@ const ActionCreators = {
 	 * @version_id: VERSION_ID
    * @reference: USFM
 	 */
-	bibleAudioChapter(params) {
+	audioBibleChapter(params) {
 		return {
 			params,
 			api_call: {

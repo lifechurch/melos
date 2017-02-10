@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import { routeActions } from 'react-router-redux'
 import ActionCreators from '../../actions/creators'
 import BibleActionCreator from '../../../Bible/actions/creators'
 import PlanNavigation from './PlanNavigation'
 import isFinalReadingContent from '../../../../lib/readingPlanUtils'
+import { getVerseAudioTiming } from '../../../../lib/readerUtils'
 
 class PlanReader extends Component {
 
@@ -69,7 +71,7 @@ class PlanReader extends Component {
 		if (this.hasDevo) {
 			completeDevo =
 				this.isCheckingDevo ||
-				plan.calendar[this.dayNum].additional_content.completed
+				plan.calendar[this.dayNum - 1].additional_content.completed
 		}
 		// if we have a reference, that we're reading through,
 		// add it to the list of completedRefs
@@ -89,9 +91,18 @@ class PlanReader extends Component {
 		const { dispatch, bible: { version: { id } } } = this.props
 		dispatch(BibleActionCreator.bibleChapter({
 			id,
-			reference: this.reference.split('.').splice(0, 2).join('.'),
+			reference: this.chapReference,
 			format: 'html'
 		}))
+	}
+
+	onAudioComplete = () => {
+		const { dispatch } = this.props
+
+		this.handleComplete()
+		dispatch(routeActions.push(
+			`${window.location.origin}${this.navLinks.next}`
+		))
 	}
 
 	render() {
@@ -108,7 +119,7 @@ class PlanReader extends Component {
 		this.dayObj = plan.calendar[this.dayNum - 1]
 		this.numRefs = this.dayObj.references.length
 		this.reference = this.dayObj.references[this.contentIndex]
-
+		this.chapReference = this.reference.split('.').splice(0, 2).join('.')
 		// if no content was passed in the url, we know that devo is being rendered
 		this.hasDevo = 	(!!this.dayObj.additional_content.html) ||
 										(!!this.dayObj.additional_content.text)
@@ -130,7 +141,8 @@ class PlanReader extends Component {
 				devoContent = this.dayObj.additional_content.text.default
 			}
 		}
-		let referenceContent, refHeading, showChapterButton, audio
+
+		let referenceContent, refHeading, showChapterButton, audio, audioTiming
 		if (!isNaN(this.contentIndex)) {
 			// render the full chapter content if the user clicked the button for read full
 			// chapter. this checks to make sure the chapter matches the rendered ref
@@ -143,10 +155,14 @@ class PlanReader extends Component {
 				referenceContent = this.dayObj.reference_content[this.contentIndex].content
 				refHeading = this.dayObj.reference_content[this.contentIndex].reference.human
 				// TODO: completed audio-bible chapter call to grab timing for verse audio
-				audio = null
+				audio = bible.audioChapter[this.chapReference]
+				const startRef = this.reference.split('+')[0]
+				const endRef = this.reference.split('+').pop()
+				audioTiming = getVerseAudioTiming(startRef, endRef, audio.timing)
 				showChapterButton = true
 			}
 		}
+		console.log(audioTiming);
 		return (
 			<div>
 				<PlanNavigation
@@ -171,12 +187,15 @@ class PlanReader extends Component {
 							content: referenceContent,
 							refHeading,
 							showChapterButton,
+							audio,
+							audioStart: audioTiming ? audioTiming.startTime : null,
+							audioStop: audioTiming ? audioTiming.endTime : null,
+							onAudioComplete: this.onAudioComplete,
 							version: bible.version,
 							verseColors: bible.verseColors,
 							highlightColors: bible.highlightColors,
 							momentsLabels: bible.momentsLabels,
 							getChapter: this.getChapter,
-							audio: bible.audio,
 							auth,
 							hosts,
 							dispatch

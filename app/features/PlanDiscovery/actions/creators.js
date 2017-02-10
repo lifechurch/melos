@@ -155,10 +155,10 @@ const ActionCreators = {
 							plan_content: i
 						})))
 
-						// innerPromises.push(dispatch(BibleActionCreator.bibleAudioChapter({
-						// 	reference: ref.split('.').slice(0, 2).join('.'),
-						// 	version_id: version,
-						// })))
+						innerPromises.push(dispatch(BibleActionCreator.audioBibleChapter({
+							reference: ref.split('.').slice(0, 2).join('.'),
+							version_id: version,
+						})))
 					}
 				})
 
@@ -176,6 +176,16 @@ const ActionCreators = {
 			return new Promise((resolve, reject) => {
 				dispatch(ActionCreators.updateCompletion(params, auth)).then(() => {
 					resolve(dispatch(ActionCreators.planSelect({ id: params.id })))
+				})
+			})
+		}
+	},
+
+	resetSubscriptionAll(params, auth) {
+		return dispatch => {
+			return new Promise((resolve) => {
+				dispatch(ActionCreators.resetSubscription({ id: params.id }, auth)).then(() => {
+					dispatch(ActionCreators.subscriptionAll(params, auth)).then(() => { resolve() })
 				})
 			})
 		}
@@ -230,6 +240,27 @@ const ActionCreators = {
 			}
 
 			return Promise.all(promises)
+		}
+	},
+
+	/**
+	 * Reset User Plan Subscription
+	 *
+	 * @param      {object}	params  The parameters
+	 * @param      {bool}  	auth    The auth
+	 */
+	resetSubscription(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'reset_subscription',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('resetSubscriptionRequest'), type('resetSubscriptionSuccess'), type('resetSubscriptionFailure') ]
+			}
 		}
 	},
 
@@ -451,7 +482,6 @@ const ActionCreators = {
 	},
 
 	items(params, auth) {
-		console.log(params)
 		return {
 			params,
 			api_call: {

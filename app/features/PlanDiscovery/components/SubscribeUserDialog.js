@@ -7,10 +7,10 @@ class SubscribeUserDialog extends Component {
 
 	subscribeUser(privacy) {
 		const { dispatch, readingPlan, auth } = this.props
-		if (!auth.isLoggedIn) window.location.replace(`/sign-in`)
+		if (!auth.isLoggedIn) window.location.replace('/sign-in')
 		// if user isn't subscribed, then subscribe!
 		if (!readingPlan.subscription_id) {
-			dispatch(ActionCreators.readingplanSubscribeUser({ id: readingPlan.id , private: privacy }, auth.isLoggedIn)).then(() => {
+			dispatch(ActionCreators.readingplanSubscribeUser({ id: readingPlan.id, private: privacy }, auth.isLoggedIn)).then(() => {
 				// redirect to plan
 				this.goToPlan()
 			})
@@ -33,7 +33,7 @@ class SubscribeUserDialog extends Component {
 			<div className='plan-privacy-buttons text-center'>
 				<p className='detail-text'><FormattedMessage id="plans.privacy.visible to friends?" /></p>
 				<div className='yes-no-buttons'>
-					<a className='yes solid-button green' onClick={this.subscribeUser.bind(this, false)}><FormattedMessage id="ui.yes button"/></a>
+					<a className='yes solid-button green' onClick={this.subscribeUser.bind(this, false)}><FormattedMessage id="ui.yes button" /></a>
 					<a className='no solid-button gray' onClick={this.subscribeUser.bind(this, true)}><FormattedMessage id="ui.no button" /></a>
 				</div>
 			</div>

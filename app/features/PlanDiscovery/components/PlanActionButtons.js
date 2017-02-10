@@ -13,9 +13,9 @@ class PlanActionButtons extends Component {
 
 		return (
 			<div className='rp-subscription-info'>
-				<SubscribeUserAction readingPlan={readingPlan} isButton={true} auth={auth} dispatch={dispatch}/>
+				<SubscribeUserAction readingPlan={readingPlan} isButton={true} auth={auth} dispatch={dispatch} />
 				<div className='text-center'>
-					<SaveForLaterAction readingPlan={readingPlan} auth={auth} dispatch={dispatch}/>
+					<SaveForLaterAction readingPlan={readingPlan} auth={auth} dispatch={dispatch} />
 					&bull;
 					<a href={`/reading-plans/${readingPlan.id}-${readingPlan.slug}/day/1`}> <FormattedMessage id="plans.sample" /></a>
 				</div>

@@ -2,18 +2,95 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import moment from 'moment'
+import { FormattedHTMLMessage } from 'react-intl'
+import cookie from 'react-cookie'
+import Immutable from 'immutable'
 
 import Image from '../../../components/Carousel/Image'
-import PlanDaySlider from './PlanDaySlider'
-import PlanDayStatus from './PlanDayStatus'
-import PlanDayStartButton from './PlanDayStartButton'
-import PlanReferences from './PlanReferences'
+import PlanMenu from './PlanMenu'
+import ShareWidget from './ShareWidget'
+import ActionCreators from '../actions/creators'
+
+function dayHasDevo(devoContent) {
+	return (typeof devoContent.html !== 'undefined' && devoContent.html !== null) ||
+		(typeof devoContent.text !== 'undefined' && devoContent.text !== null)
+}
 
 class Plan extends Component {
+	constructor(props) {
+		super(props)
+
+		this.handleCatchUp = this.handleCatchUp.bind(this)
+		this.handleCompleteRef = this.handleCompleteRef.bind(this)
+	}
+
+	handleCatchUp() {
+		const {
+			dispatch,
+			params,
+			plan: {
+				id
+			},
+			serverLanguageTag,
+			auth: {
+				userData: {
+					userid: user_id,
+					language_tag: userLanguageTag
+				}
+			},
+			location: {
+				query
+			}
+		} = this.props
+
+		const day = parseInt(query.day, 10)
+		const language_tag = serverLanguageTag || params.lang || userLanguageTag || 'en'
+		const version = cookie.load('version') || '1'
+
+		if (id) {
+			dispatch(ActionCreators.resetSubscriptionAll({ id, language_tag, user_id, day, version }, true))
+		}
+	}
+
+	handleCompleteRef(day, ref, complete) {
+		const { dispatch, plan: { calendar, id } } = this.props
+		const dayData = calendar[day - 1]
+		const references = Immutable.fromJS(dayData.references_completed).toJS()
+		const hasDevo = dayHasDevo(dayData.additional_content)
+
+		// devotional is true by default if there is no devotional
+		// otherwise this will overwrite with the correct value
+		let completeDevo = true
+		if (ref === 'devo') {
+			completeDevo = complete
+		} else if (hasDevo) {
+			completeDevo = dayData.additional_content.completed
+		}
+
+		// if we have a reference, that we're reading through,
+		// add it to the list of completedRefs
+		if (ref && ref !== 'devo') {
+			if (complete === true) {
+				references.push(ref)
+			} else {
+				references.splice(references.indexOf(ref), 1)
+			}
+		}
+
+		// make api call
+		dispatch(ActionCreators.updateCompletion({
+			id,
+			day,
+			references,
+			devotional: completeDevo,
+		}, true))
+	}
+
 	render() {
 		const { plan, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
+		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
 		let day = parseInt(location.query.day, 10)
 		if (!day || isNaN(day)) {
 			const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
@@ -25,10 +102,7 @@ class Plan extends Component {
 		}
 		const dayData = plan.calendar[day - 1]
 		const devoCompleted = dayData.additional_content.completed === true
-		const hasDevo = (
-			(typeof dayData.additional_content.html !== 'undefined' && dayData.additional_content.html !== null) ||
-			(typeof dayData.additional_content.text !== 'undefined' && dayData.additional_content.text !== null)
-		)
+		const hasDevo = dayHasDevo(dayData.additional_content)
 
 		let startLink
 		if (hasDevo) {
@@ -39,14 +113,23 @@ class Plan extends Component {
 
 		return (
 			<div className="subscription-show">
+				<Helmet
+					title={`${plan.name[language_tag] || plan.name.default} - ${plan.about.text[language_tag] || plan.about.text.default}`}
+					meta={[
+						{ name: 'description', content: plan.about.text[language_tag] || plan.about.text.default }
+					]}
+				/>
 				<div className="plan-overview">
 					<div className="row">
 						<div className="header columns large-8 medium-8 medium-centered">
 							<div className="back">
-								<Link to={`/users/${auth.userData.username}/reading-plans`}>back</Link>
+								<Link to={`/users/${auth.userData.username}/reading-plans`}>
+									<FormattedHTMLMessage id="plans.plans back" />
+								</Link>
 							</div>
 							<div className="settings">
-								settings
+								<div style={{ float: 'left' }}><ShareWidget /></div>
+								<PlanMenu subscriptionLink={subscriptionLink} aboutLink={aboutLink} onCatchUp={this.handleCatchUp} />
 							</div>
 						</div>
 					</div>
@@ -60,37 +143,7 @@ class Plan extends Component {
 							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
 						</div>
 					</div>
-					<div className="row days-container collapse">
-						<div className="columns large-8 medium-8 medium-centered">
-							<PlanDaySlider day={day} calendar={plan.calendar} link={subscriptionLink} />
-						</div>
-					</div>
-					<div className="row">
-						<div className="columns large-8 medium-8 medium-centered">
-							<div className="start-reading">
-								<PlanDayStartButton dayData={dayData} link={startLink} />
-							</div>
-							<PlanDayStatus day={day} calendar={plan.calendar} total={plan.total_days} />
-							<PlanReferences day={day} devoCompleted={devoCompleted} completedRefs={dayData.references_completed} references={dayData.reference_content} link={subscriptionLink} hasDevo={hasDevo} />
-						</div>
-					</div>
-				</div>
-
-				<Helmet
-					title={`${plan.name[language_tag] || plan.name.default} - ${plan.about.text[language_tag] || plan.about.text.default}`}
-					meta={[
-						{ name: 'description', content: plan.about.text[language_tag] || plan.about.text.default }
-					]}
-				/>
-
-				<p>Plan View</p><br />
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/edit'}>Settings</Link><br />
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/calendar'}>Calendar</Link><br />
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/devo?day=2'}>Devo</Link><br />
-				<Link to={'/users/WebsterFancypants/reading-plans/3405-Awakening/ref?content=0&day=2'}>Ref</Link><br />
-
-				<div>
-					{children}
+					{children && React.cloneElement(children, { day, dayData, calendar: plan.calendar, totalDays: plan.total_days, subscriptionLink, startLink, devoCompleted, hasDevo, handleCompleteRef: this.handleCompleteRef })}
 				</div>
 			</div>
 		)
@@ -98,6 +151,7 @@ class Plan extends Component {
 }
 
 Plan.propTypes = {
+	dispatch: PropTypes.func.isRequired,
 	plan: PropTypes.object,
 	params: PropTypes.object,
 	children: PropTypes.object,

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import ActionCreators from '../../actions/creators'
-import Select from '../../../../components/Select'
+import PopupMenu from '../../../../components/PopupMenu'
 import BibleActionCreator from '../../../Bible/actions/creators'
 import Chapter from '../../../Bible/components/content/Chapter'
 import ChapterCopyright from '../../../Bible/components/content/ChapterCopyright'
@@ -91,6 +91,9 @@ class PlanRef extends Component {
 			textDirection,
 			showChapterButton,
 			audio,
+			onAudioComplete,
+			audioStart,
+			audioStop,
 			hosts,
 			auth
 		} = this.props
@@ -102,15 +105,30 @@ class PlanRef extends Component {
 			deletableColors,
 		} = this.state
 
-		console.log(audio);
 		// TODO: add 'change' string to rails and format it here
 		const planRefHeading = (
 			<div className='plan-reader-heading'>
 				<div className='ref-heading'>
 					{`${refHeading} ${version.local_abbreviation.toUpperCase()}`}
-					<div className='pill-heading'>Change</div>
+					<PopupMenu
+						triggerButton={
+							<div className='pill-heading'>Change</div>
+						}
+					>
+						<ul>
+							<li>hi</li>
+							<li>hissss</li>
+						</ul>
+					</PopupMenu>
 				</div>
-				<AudioPopup audio={audio} hosts={hosts} enabled={typeof audio.id !== 'undefined'} />
+				<AudioPopup
+					audio={audio}
+					hosts={hosts}
+					enabled={typeof audio.id !== 'undefined'}
+					onAudioComplete={onAudioComplete}
+					startTime={audioStart}
+					stopTime={audioStop}
+				/>
 			</div>
 		)
 		const chapterContent = (

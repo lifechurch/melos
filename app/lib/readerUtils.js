@@ -79,3 +79,29 @@ export function handleVerseSelectionClear(refToThis, refToChapter) {
 	}
 	refToThis.setState({ verseSelection: {}, deletableColors: [] })
 }
+
+export function getVerseAudioTiming(startRef, endRef, timing) {
+	let startTime = null
+	let endTime = null
+
+	if (!Array.isArray(timing)) {
+		console.log('invalid param: timing must be an array')
+		return null
+	}
+
+	for (let i = 0; i < timing.length; i++) {
+		const ref = timing[i]
+		if (startRef.toString() === ref.usfm.toString()) {
+			startTime = ref.start
+		}
+		if (endRef.toString() === ref.usfm.toString()) {
+			endTime = ref.end
+		}
+
+		if (startTime && endTime) {
+			return { startTime, endTime }
+		}
+	}
+
+	return { startTime, endTime }
+}

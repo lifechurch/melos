@@ -2,7 +2,7 @@ import { getClient } from '@youversion/js-api'
 import ActionCreators from '../features/Auth/actions/creators'
 import { routeActions } from 'react-router-redux'
 
-const endpoints = [ 'events', 'search', 'users', 'bible', 'reading-plans', 'moments' ]
+const endpoints = [ 'events', 'search', 'users', 'bible', 'reading-plans', 'moments', 'audio-bible' ]
 const versions = [ '3.2', '3.1' ]
 const envs = [ 'staging', 'production' ]
 const http_methods = [ 'get', 'post' ]
@@ -28,100 +28,104 @@ function getSuccessAction(type, action, response) {
 	return finalAction
 }
 
-export default store => next => action => {
-	const api_call = action['api_call']
+export default store => {
+	return next => {
+		return action => {
+			const api_call = action.api_call
 
-	if (typeof api_call === 'undefined') {
-		return next(action)
-	}
+			if (typeof api_call === 'undefined') {
+				return next(action)
+			}
 
-	const endpoint = api_call.endpoint
-	if (typeof endpoint !== 'string' || endpoints.indexOf(endpoint) == -1) {
-		throw new Error('Invalid API Endpoint [' + endpoint + ']')
-	}
+			const endpoint = api_call.endpoint
+			if (typeof endpoint !== 'string' || endpoints.indexOf(endpoint) == -1) {
+				throw new Error(`Invalid API Endpoint [${endpoint}]`)
+			}
 
-	const method = api_call.method
-	if (typeof method !== 'string') {
-		throw new Error('API method must be string')
-	}
+			const method = api_call.method
+			if (typeof method !== 'string') {
+				throw new Error('API method must be string')
+			}
 
-	const version = api_call.version
-	if (typeof version !== 'string' || versions.indexOf(version) == -1) {
-		throw new Error('Invalid API Version [' + version + ']')
-	}
+			const version = api_call.version
+			if (typeof version !== 'string' || versions.indexOf(version) == -1) {
+				throw new Error(`Invalid API Version [${version}]`)
+			}
 
-	let env = api_call.env
-	if (typeof env !== 'string' || envs.indexOf(env) == -1) {
-		env = envs[0]
-	}
+			let env = api_call.env
+			if (typeof env !== 'string' || envs.indexOf(env) == -1) {
+				env = envs[0]
+			}
 
-	const params = api_call.params
-	if (typeof params !== 'object') {
-		throw new Error('Invalid API params')
-	}
+			const params = api_call.params
+			if (typeof params !== 'object') {
+				throw new Error('Invalid API params')
+			}
 
-	const http_method = api_call.http_method
-	if (typeof http_method !== 'string' || http_methods.indexOf(http_method) == -1) {
-		throw new Error('Invalid API HTTP Method')
-	}
+			const http_method = api_call.http_method
+			if (typeof http_method !== 'string' || http_methods.indexOf(http_method) == -1) {
+				throw new Error('Invalid API HTTP Method')
+			}
 
-	const types = api_call.types
-	if (!Array.isArray(types) || types.length !== 3) {
-		throw new Error('Invalid API types')
-	}
-	const [ requestType, successType, failureType ] = types
+			const types = api_call.types
+			if (!Array.isArray(types) || types.length !== 3) {
+				throw new Error('Invalid API types')
+			}
+			const [ requestType, successType, failureType ] = types
 
-	next(getRequestAction(requestType, action))
+			next(getRequestAction(requestType, action))
 
-	const client = getClient(endpoint)
+			const client = getClient(endpoint)
 		.call(method)
 		.setVersion(version)
 		.params(params)
 
-	if (process && process.env && process.env.NODE_ENV) {
-		client.setEnvironment(process.env.NODE_ENV);
-	}
-
-	const auth = api_call.auth
-	if (auth === true) {
-		client.auth()
-	}
-
-	if (typeof auth === 'object') {
-		if (typeof auth.username !== 'undefined') {
-			const { username, password } = auth
-			client.auth(username, password)
-		} else if (typeof auth.tp_token !== 'undefined') {
-			const { tp_token } = auth
-			client.auth(tp_token)
-		}
-	}
-
-	const apiPromise = client[http_method]();
-	apiPromise.then((response) => {
-		const errors = response.errors
-		if (Array.isArray(errors) && errors.length > 0) {
-			next(getFailureAction(failureType, action, errors))
-		} else {
-			if (typeof window !== 'undefined' && typeof window.__GA__ !== 'undefined') {
-				window.__GA__.event({
-					category: endpoint,
-					action: endpoint + '/' + method,
-					label: typeof params.type !== 'undefined' ? params.type : null
-				})
+			if (process && process.env && process.env.NODE_ENV) {
+				client.setEnvironment(process.env.NODE_ENV);
 			}
-			next(getSuccessAction(successType, action, response))
-		}
-		return response
-	}, (error) => {
-		if (error.status === 401) {
-			next(ActionCreators.authenticationFailed())
-			next(routeActions.push('/' + window.__LOCALE__.locale + '/login'))
-		} else {
-			next(getFailureAction(failureType, action, [ error ]))
-		}
-		return error
-	})
 
-	return apiPromise
+			const auth = api_call.auth
+			if (auth === true) {
+				client.auth()
+			}
+
+			if (typeof auth === 'object') {
+				if (typeof auth.username !== 'undefined') {
+					const { username, password } = auth
+					client.auth(username, password)
+				} else if (typeof auth.tp_token !== 'undefined') {
+				const { tp_token } = auth
+				client.auth(tp_token)
+			}
+			}
+
+			const apiPromise = client[http_method]();
+			apiPromise.then((response) => {
+				const errors = response.errors
+				if (Array.isArray(errors) && errors.length > 0) {
+					next(getFailureAction(failureType, action, errors))
+				} else {
+					if (typeof window !== 'undefined' && typeof window.__GA__ !== 'undefined') {
+					window.__GA__.event({
+						category: endpoint,
+						action: `${endpoint}/${method}`,
+						label: typeof params.type !== 'undefined' ? params.type : null
+					})
+				}
+					next(getSuccessAction(successType, action, response))
+				}
+				return response
+			}, (error) => {
+				if (error.status === 401) {
+					next(ActionCreators.authenticationFailed())
+					next(routeActions.push(`/${window.__LOCALE__.locale}/login`))
+				} else {
+					next(getFailureAction(failureType, action, [ error ]))
+				}
+				return error
+			})
+
+			return apiPromise
+		}
+	}
 }

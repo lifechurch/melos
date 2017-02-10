@@ -7,7 +7,6 @@ import bibleType from '../../Bible/actions/constants'
 export default function reducer(state = {}, action) {
 	switch (action.type) {
 		case type('planInfoFailure'):
-			console.log(action)
 			return state
 
 		case type('planInfoSuccess'):
@@ -49,7 +48,6 @@ export default function reducer(state = {}, action) {
 
 		case bibleType('bibleVersesFailure'):
 		case bibleType('bibleChapterFailure'):
-			console.log('fail whale', action)
 			return state
 
 		case type('planSelect'):
