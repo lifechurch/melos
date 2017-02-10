@@ -201,7 +201,7 @@ class VerseAction extends Component {
 					<ButtonBar items={actions} onClick={this.handleActionClick} />
 					{ colorList }
 				</div>
-				<DropdownTransition classes='va-moment-container' show={momentContainerOpen} hideDir='down'>
+				<DropdownTransition classes='va-moment-container' show={momentContainerOpen} hideDir='down' transition={true}>
 					<MomentCreate
 						{...this.props}
 						// changing the key will cause a rerender for all children

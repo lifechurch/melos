@@ -134,50 +134,69 @@
 	-ms-transition:    -ms-transform .7s cubic-bezier(0.42,1,.16,.93);
 	transition:        transform .7s cubic-bezier(0.42,1,.16,.93);
 }
+.dropdown-opacity-transform {
+	transition: opacity .15s ease-in-out;
+	-moz-transition: opacity .15s ease-in-out;
+	-webkit-transition: opacity .15s ease-in-out;
+	-ms-transition: opacity .15s ease-in-out;
+}
 
-.dropdown-transform-show {
-	.dropdown-transform;
+.dropdown-opacity-show {
+	.dropdown-opacity-transform;
+	opacity: 1;
+}
 
+.dropdown-show {
   -webkit-transform: translate(0, 0%);
      -moz-transform: translate(0, 0%);
       -ms-transform: translate(0, 0%);
           transform: translate(0, 0%);
 }
-
-.dropdown-transform-hide-up {
-	.dropdown-transform;
-
+.dropdown-hide-up {
   -webkit-transform: translate(0, -125%) !important;
      -moz-transform: translate(0, -125%) !important;
       -ms-transform: translate(0, -125%) !important;
           transform: translate(0, -125%) !important;
 }
-
-.dropdown-transform-hide-down {
-	.dropdown-transform;
-
+.dropdown-hide-down {
   -webkit-transform: translate(0, 125%) !important;
      -moz-transform: translate(0, 125%) !important;
       -ms-transform: translate(0, 125%) !important;
           transform: translate(0, 125%) !important;
 }
-
-.dropdown-transform-hide-right {
-	.dropdown-transform;
-
+.dropdown-hide-right {
   -webkit-transform: translate(125%, 0) !important;
      -moz-transform: translate(125%, 0) !important;
       -ms-transform: translate(125%, 0) !important;
           transform: translate(125%, 0) !important;
 }
-
-.dropdown-transform-hide-left {
-	.dropdown-transform;
-
+.dropdown-hide-left {
   -webkit-transform: translate(-125%, 0) !important;
      -moz-transform: translate(-125%, 0) !important;
       -ms-transform: translate(-125%, 0) !important;
           transform: translate(-125%, 0) !important;
+}
+
+
+.dropdown-transform-show {
+	.dropdown-transform;
+	.dropdown-show;
+}
+.dropdown-transform-hide-up {
+	.dropdown-transform;
+  .dropdown-hide-up;
+}
+.dropdown-transform-hide-down {
+	.dropdown-transform;
+  .dropdown-hide-down;
+}
+.dropdown-transform-hide-right {
+	.dropdown-transform;
+  .dropdown-hide-right;
+}
+.dropdown-transform-hide-left {
+	.dropdown-transform;
+	.dropdown-hide-left;
 }
 
 //  **************************************************************************

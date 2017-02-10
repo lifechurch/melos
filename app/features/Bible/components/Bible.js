@@ -33,18 +33,8 @@ class Bible extends Component {
 
 		const { bible } = props
 
-		// if we get a bad chapter call, let's grab the first
-		//  valid book and chapter for the selected version
-		if (!bible.chapter.reference) {
-			const chap = bible.books.all[0].chapters[Object.keys(bible.books.all[0].chapters)[0]]
-			this.chapterError = true
-			this.selectedBook = bible.books.all[0].usfm
-			this.selectedChapter = chap.usfm
-			this.selectedVersion = bible.version.id
-			this.inputValue = `${bible.books.all[0].human} ${chap.human}`
-			this.chapters = bible.books.all[0].chapters
-		} else {
-			this.chapterError = false
+		this.chapterError = bible.chapter.showError
+		if (bible.chapter && bible.chapter.reference && bible.chapter.reference.usfm) {
 			this.selectedBook = bible.chapter.reference.usfm.split('.')[0]
 			this.selectedChapter = bible.chapter.reference.usfm
 			this.selectedVersion = bible.chapter.reference.version_id
@@ -77,22 +67,14 @@ class Bible extends Component {
 			deletableColors: []
 		}
 
-		// Filter.build("BooksStore", [ "human", "usfm" ])
-		// Filter.build("VersionStore", [ "title", "local_title", "abbreviation" ])
-		// Filter.build("LangStore", [ "name", "local_name" ])
-
 		this.header = null
 		this.content = null
 		this.extraStyle = null
 		this.chapterPicker = null
 		this.versionPicker = null
-
-		this.handleSettingsChange = ::this.handleSettingsChange
-		this.handleVerseSelectionClear = ::this.handleVerseSelectionClear
-		this.handleVerseSelect = ::this.handleVerseSelect
 	}
 
-	getVersions(languageTag) {
+	getVersions = (languageTag) => {
 		const { dispatch } = this.props
 		const comp = this
 
@@ -153,7 +135,7 @@ class Bible extends Component {
 		}
 	}
 
-	handleVerseSelectionClear() {
+	handleVerseSelectionClear = () => {
 		if (typeof this.chapter !== 'undefined' && this.chapter) {
 			this.chapter.clearSelection()
 		}
@@ -206,7 +188,7 @@ class Bible extends Component {
 		})
 	}
 
-	handleSettingsChange(key, value) {
+	handleSettingsChange = (key, value) => {
 		LocalStore.setIn(key, value)
 		const stateKey = key.split('.').pop()
 		this.setState({ [stateKey]: value })
@@ -269,6 +251,7 @@ class Bible extends Component {
 
 	componentDidMount() {
 		const { dispatch, bible, auth } = this.props
+		const { chapterError } = this.state
 
 		// check for cookie written from reading plans telling
 		// bible to open with the chapterpicker modal open
@@ -325,7 +308,7 @@ class Bible extends Component {
 						languageMap={bible.languages.map}
 						selectedChapter={this.state.selectedChapter}
 						alert={this.state.chapterError}
-						getVersions={::this.getVersions}
+						getVersions={this.getVersions}
 						cancelDropDown={this.state.versionDropDownCancel}
 						ref={(vpicker) => { this.versionPickerInstance = vpicker }}
 					/>
@@ -348,10 +331,10 @@ class Bible extends Component {
 						<FormattedMessage id="Reader.chapterpicker.chapter unavailable" />
 					</div>
 					<div className='row buttons'>
-						<div className='solid-button' onClick={this.chapterPickerInstance.handleDropDownClick}>
+						<div className='solid-button' onClick={this.chapterPickerInstance ? this.chapterPickerInstance.handleDropDownClick : () => {}}>
 							<FormattedMessage id="Reader.chapterpicker.chapter label" />
 						</div>
-						<div className='solid-button' onClick={this.versionPickerInstance.handleDropDownClick}>
+						<div className='solid-button' onClick={this.versionPickerInstance ? this.versionPickerInstance.handleDropDownClick : () => {}}>
 							<FormattedMessage id="Reader.versionpicker.version label" />
 						</div>
 					</div>
@@ -394,7 +377,7 @@ class Bible extends Component {
 		}
 
 		return (
-			<div className="">
+			<div>
 				<Helmet
 					title={metaTitle}
 					meta={[
