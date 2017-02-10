@@ -43,7 +43,7 @@ export function handleVerseSelect(
 	refToThis.setState({
 		deletableColors,
 		verseSelection: Immutable.fromJS(verseSelection).merge({
-			chapter: human,
+			chapter: human.split(':')[0],
 			url: refUrl,
 			version: id
 		}).toJS()

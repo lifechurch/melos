@@ -34,7 +34,7 @@ class DropdownTransition extends Component {
 		// then we pass the exempt class here
 		if (exemptClass && typeof window !== 'undefined') {
 			e = e || window.event
-			let target = e.target || e.srcElement
+			const target = e.target || e.srcElement
 			// loop through all nodes with the exempt class, and check if
 			// the element that was clicked on, is a child of the exempt class
 			Array.prototype.forEach.call(document.getElementsByClassName(exemptClass), (exemptNode) => {
@@ -44,7 +44,7 @@ class DropdownTransition extends Component {
 		// or we can pass a selector instead of a class
 		} else if (exemptSelector && typeof window !== 'undefined') {
 			e = e || window.event
-			let target = e.target || e.srcElement
+			const target = e.target || e.srcElement
 			// loop through all nodes with the exempt class, and check if
 			// the element that was clicked on, is a child of the exempt class
 			Array.prototype.forEach.call(document.querySelectorAll(exemptSelector), (exemptNode) => {
@@ -53,7 +53,7 @@ class DropdownTransition extends Component {
 		}
 		// only call close if we've found the click event is not exempt
 		if (!exempt) {
-			if (typeof onOutsideClick == 'function') {
+			if (typeof onOutsideClick === 'function') {
 				onOutsideClick()
 			}
 		}
@@ -64,9 +64,9 @@ class DropdownTransition extends Component {
 
 		if (typeof window !== 'undefined' && show !== prevProps.show) {
 			if (show) {
-				document.getElementById('current-ui-view').classList.add('modal-open')
+				document.getElementsByTagName('body')[0].classList.add('modal-open')
 			} else {
-				document.getElementById('current-ui-view').classList.remove('modal-open')
+				document.getElementsByTagName('body')[0].classList.remove('modal-open')
 			}
 		}
 	}
@@ -81,12 +81,12 @@ class DropdownTransition extends Component {
 
 	render() {
 		const { classes, hideDir, show, transition } = this.props
-		let transitionDir = hideDir || 'up'
-		let showTransition = transition || false
+		const transitionDir = hideDir || 'up'
+		const showTransition = transition || false
 
 		return (
 			<div className={`modal ${show ? '' : 'hide-modal'} ${showTransition ? 'dropdown-transform' : ''}` } onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} >
-				<div className={`element-to-translate ${classes ? classes : ''} ${showTransition ? 'dropdown-transform': ''} ${transitionDir}`}>
+				<div className={`element-to-translate ${classes || ''} ${showTransition ? 'dropdown-transform' : ''} ${transitionDir}`}>
 					{this.props.children}
 				</div>
 			</div>

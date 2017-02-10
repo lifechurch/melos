@@ -73,6 +73,9 @@ export default function(
 				<Route path="devo" component={PlanDevo} />
 				<Route path="ref" component={PlanRef} />
 			</Route>
+			<Route path="(:lang/)/reading-plans/:id/day/:day/completed" component={}>
+
+			</Route>
 		</Route>
 	)
 }

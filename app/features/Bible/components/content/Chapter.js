@@ -50,8 +50,6 @@ class Chapter extends Component {
 		// Build Selected Verses Array of USFMs
 		if (typeof verseNode.getAttribute('data-usfm') === 'string') {
 			const selectedVerses = verseNode.getAttribute('data-usfm').split('+')
-			let lastUsfm
-
 			selectedVerses.forEach((selectedVerse) => {
 				if (typeof selection[selectedVerse] === 'undefined') {
 					const isUSFM = new RegExp('^[0-9A-Za-z]{3}\.[0-9]+\.[0-9]+$')
@@ -61,7 +59,6 @@ class Chapter extends Component {
 				} else {
 					delete selection[selectedVerse]
 				}
-				lastUsfm = selectedVerse
 			})
 			this.setState({ selection, selectedClasses })
 		}

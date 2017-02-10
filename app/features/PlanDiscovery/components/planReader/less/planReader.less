@@ -64,6 +64,8 @@
 	.ref-heading {
 		color: @font-grey;
 		font-weight: bolder;
+		display: inline-flex;
+		align-items: center;
 	}
 
 	.pill-heading {
@@ -71,8 +73,30 @@
 		font-size: 11px;
 		font-weight: normal;
 		color: @font-grey;
+		padding: 0px 8px 0px 8px;
 	}
 	.trigger-button {
 		z-index: 0;
+		position: absolute;
+		top: -4px;
+		right: 50px;
 	}
+	.modal {
+		.absolute-horizontal-center;
+		margin-left: 0 !important;
+		z-index: 7;
+		top: -30px !important;
+	}
+
+}
+body.modal-open {
+	background-color: @background-grey;
+}
+body {
+	background-color: transparent;
+   -webkit-transition: background 0.1s ease-in-out;
+   -moz-transition: background 0.1s ease-in-out;
+   -ms-transition: background 0.1s ease-in-out;
+   -o-transition: background 0.1s ease-in-out;
+   transition: background 0.1s ease-in-out;
 }
