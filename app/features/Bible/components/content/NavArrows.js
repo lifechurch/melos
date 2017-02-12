@@ -30,7 +30,7 @@ function NavArrows(props) {
 				key='left'
 				dir='left'
 				fill='#888888'
-				containerClass='prev-arrow'
+				containerClass='prev-arrow circle-buttons'
 				arrowClass='reader-arrow'
 				width={18}
 				height={35}
@@ -45,7 +45,7 @@ function NavArrows(props) {
 				key='right'
 				dir='right'
 				fill='#888888'
-				containerClass='next-arrow'
+				containerClass='next-arrow circle-buttons'
 				arrowClass='reader-arrow'
 				width={18}
 				height={35}

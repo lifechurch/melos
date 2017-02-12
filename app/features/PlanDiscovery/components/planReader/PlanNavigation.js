@@ -37,7 +37,7 @@ class PlanNavigation extends Component {
 		let customNext = null
 		if (isFinalContent) {
 			customNext = (
-				<div className='next-arrow checkmark vertical-center horizontal-center'>
+				<div className='next-arrow checkmark circle-buttons vertical-center horizontal-center'>
 					<CheckMark fill='white' width={27} height={26} classes='reader-arrow' />
 				</div>
 			)

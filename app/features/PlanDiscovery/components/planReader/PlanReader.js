@@ -19,17 +19,18 @@ class PlanReader extends Component {
 	buildNavLinks() {
 		const { location: { pathname } } = this.props
 		const basePath = `${pathname.replace('/devo', '').replace('/ref', '')}`
+		const dayBasePath = `/${basePath}?day=${this.dayNum}`
 		let previous, next = null
 		// figure out nav links for previous
 		if (this.isCheckingDevo) {
 			// nothing previous if on devo
-			previous = null
+			previous = dayBasePath
 		} else if (this.contentIndex === 0) {
 			// if on first ref, then devo is previous
 			if (this.hasDevo) {
 				previous = `/${basePath}/devo?day=${this.dayNum}`
 			} else {
-				previous = null
+				previous = dayBasePath
 			}
 		} else {
 			// previous content
@@ -39,7 +40,7 @@ class PlanReader extends Component {
 		// figure out nav links for next
 		if (this.isFinalContent) {
 			// day complete
-			next = `/${basePath}?day=${this.dayNum}&complete=true`
+			next = `/${basePath}/day/${this.dayNum}/completed`
 		} else if (this.contentIndex + 1 === this.numRefs) {
 			// overview page if not last remaining ref, and is last ref in order
 			next = `/${basePath}?day=${this.dayNum}`
@@ -51,7 +52,7 @@ class PlanReader extends Component {
 			next = `/${basePath}/ref?day=${this.dayNum}&content=${this.contentIndex + 1}`
 		}
 
-		return { previous, next, dayBasePath: `/${basePath}?day=${this.dayNum}` }
+		return { previous, next, dayBasePath }
 	}
 
 	getWhichContentNum() {
@@ -109,9 +110,7 @@ class PlanReader extends Component {
 		this.handleComplete()
 		dispatch(routeActions.push(this.navLinks.next))
 		// if audio has completed a ref then keep it playing for the next one
-		this.setState({
-			audioPlaying: true,
-		})
+		this.setState({ audioPlaying: true })
 	}
 
 	render() {
