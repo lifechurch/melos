@@ -40,8 +40,8 @@ class Share extends Component {
 			window.addEventListener('mousedown', this.handleOutsideClick, false);
 
 			// Initialize AddThis, if Necessary
-			var interval = setInterval(function() {
-				if (typeof window != 'undefined'
+			var interval = setInterval(() => {
+				if (typeof window !== 'undefined'
 						&& window.addthis
 						&& window.addthis.layers
 						&& window.addthis.layers.refresh
@@ -68,7 +68,7 @@ class Share extends Component {
 		const { isOpen } = this.state
 
 		if (
-			typeof window !== undefined &&
+			typeof window !== 'undefined' &&
 			(
 				label !== nextLabel ||
 				text !== nextText ||
@@ -93,8 +93,8 @@ class Share extends Component {
 	}
 
 	render() {
+		const { button, label } = this.props
 		const { isOpen } = this.state
-		const { button, label, url, text } = this.props
 		const classes = isOpen ? 'va-share-open' : 'va-share-closed'
 		const buttonLabel = isOpen ? <FormattedMessage id='plans.stats.close' /> : <FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
 
@@ -119,7 +119,7 @@ class Share extends Component {
 				<div className='va-share-panel-wrapper'>
 					<div className={`va-share-panel ${classes}`}>
 						<div className='va-share-header'>{label}</div>
-						<div className='addthis_inline_share_toolbox_a0vl'></div>
+						<div className='addthis_inline_share_toolbox_a0vl' />
 					</div>
 				</div>
 			</div>
@@ -130,13 +130,15 @@ class Share extends Component {
 Share.propTypes = {
 	label: PropTypes.string.isRequired,
 	text: PropTypes.string.isRequired,
-	url: PropTypes.string.isRequired
+	url: PropTypes.string.isRequired,
+	button: PropTypes.node,
 }
 
 Share.defaultProps = {
-	label: "",
-	text: "",
-	url: ""
+	label: '',
+	text: '',
+	url: '',
+	button: null,
 }
 
 export default Share

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import { FormattedMessage } from 'react-intl'
 import StackedContainer from '../components/StackedContainer'
 import CheckMark from '../components/CheckMark'
 import ProgressBar from '../components/ProgressBar'
-import PlanReader from '../features/PlanDiscovery/components/planReader/PlanReader'
+import Share from '../features/PlanDiscovery/components/ShareWidget'
 
 class DayCompleteView extends Component {
 
@@ -42,24 +43,42 @@ class DayCompleteView extends Component {
 			<div className='rp-completed-view'>
 				<div className='completed-header'>
 					Day Completed
+
 				</div>
-				<StackedContainer width={'100%'} height={'360px'}>
+				<StackedContainer width={'100%'} height={'380px'}>
 					<div className='parallax-back-img' style={backImgStyle} />
-					<div className='columns large-8 medium-8 medium-centered text-center'>
-						{
-							auth.isLoggedIn ?
-								<Link to={'/'} className='circle-buttons vertical-center horizontal-center'>
-									<CheckMark fill='#6ab750' width={27} height={26} />
-								</Link> :
-								<div className='circle-buttons vertical-center horizontal-center'>
-									<CheckMark fill='#6ab750' width={27} height={26} />
-								</div>
-						}
-						<img alt='reading plan' src={plan.images[7].url} height={160} width={360} />
-						<ProgressBar percentComplete={plan.completion_percentage} />
+					<div className='content columns large-8 medium-8 horizontal-center'>
+						<div className='row horizontal-center vertical-center'>
+							{
+								auth.isLoggedIn ?
+									<Link to={'/'} className='circle-buttons vertical-center horizontal-center'>
+										<CheckMark fill='#6ab750' width={27} height={26} />
+									</Link> :
+									<div className='circle-buttons vertical-center horizontal-center'>
+										<CheckMark fill='#6ab750' width={27} height={26} />
+									</div>
+							}
+						</div>
+						<div className='row horizontal-center vertical-center'>
+							<img alt='reading plan' src={plan.images[7].url} height={160} width={310} />
+						</div>
+						<div className='row horizontal-center vertical-center'>
+							<ProgressBar percentComplete={plan.completion_percentage} width={'250px'} height={'9px'} />
+						</div>
 					</div>
 				</StackedContainer>
-				<div>some stuff!</div>
+				<div className='row horizontal-center vertical-center'>
+					<Share
+						button={
+							<button className='solid-button share-button'>
+								<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
+							</button>
+						}
+					/>
+				</div>
+				<div className='row horizontal-center vertical-center'>
+					kjnlk
+				</div>
 			</div>
 		)
 	}
