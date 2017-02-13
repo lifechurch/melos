@@ -4,7 +4,7 @@ import { routeActions } from 'react-router-redux'
 import ActionCreators from '../../actions/creators'
 import BibleActionCreator from '../../../Bible/actions/creators'
 import PlanNavigation from './PlanNavigation'
-import isFinalReadingContent from '../../../../lib/readingPlanUtils'
+import isFinalReadingForDay, { isFinalPlanDay } from '../../../../lib/readingPlanUtils'
 import { getVerseAudioTiming } from '../../../../lib/readerUtils'
 
 class PlanReader extends Component {
@@ -38,9 +38,14 @@ class PlanReader extends Component {
 		}
 
 		// figure out nav links for next
-		if (this.isFinalContent) {
-			// day complete
-			next = `/${basePath}/day/${this.dayNum}/completed`
+		if (this.isFinalReadingForDay) {
+			if (this.isFinalPlanDay) {
+				// plan complete
+				next = `/${basePath}/completed`
+			} else {
+				// day complete
+				next = `/${basePath}/day/${this.dayNum}/completed`
+			}
 		} else if (this.contentIndex + 1 === this.numRefs) {
 			// overview page if not last remaining ref, and is last ref in order
 			next = `/${basePath}?day=${this.dayNum}`
@@ -133,10 +138,16 @@ class PlanReader extends Component {
 										(!!this.dayObj.additional_content.text)
 		this.totalContentsNum = this.hasDevo ? (this.numRefs + 1) : this.numRefs
 		this.isCheckingDevo = isNaN(this.contentIndex) && this.hasDevo
-		this.isFinalContent = isFinalReadingContent(
+		this.isFinalReadingForDay = isFinalReadingForDay(
 			this.dayObj,
 			this.reference,
 			this.isCheckingDevo
+		)
+		this.isFinalPlanDay = isFinalPlanDay(
+			this.dayNum,
+			plan.calendar,
+			plan.completion_percentage,
+			plan.total_days
 		)
 		this.navLinks = this.buildNavLinks()
 		this.whichContent = this.getWhichContentNum()
@@ -185,7 +196,7 @@ class PlanReader extends Component {
 					dayBasePath={this.navLinks.dayBasePath}
 					whichContent={this.whichContent}
 					totalContentsNum={this.totalContentsNum}
-					isFinalContent={this.isFinalContent}
+					isFinalContent={this.isFinalReadingForDay}
 					onHandleComplete={this.handleComplete}
 				/>
 				<div className='plan-reader-content'>

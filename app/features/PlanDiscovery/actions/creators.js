@@ -218,6 +218,38 @@ const ActionCreators = {
 		}
 	},
 
+	planComplete(params, auth) {
+		return dispatch => {
+			const {
+				getPlanView,
+				getRecommendedPlans,
+				getSavedPlans,
+				id,
+				language_tag,
+				user_id
+			} = params
+
+			const promises = []
+
+			if (getPlanView) {
+				promises.push(
+					dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth))
+				)
+			}
+			if (getRecommendedPlans) {
+				promises.push(
+					dispatch(ActionCreators.recommendedPlansInfo({ id, language_tag }))
+				)
+			}
+			if (getSavedPlans) {
+				promises.push(
+					dispatch(ActionCreators.savedItems({ id: 'saved' }, auth))
+				)
+			}
+			return Promise.all(promises)
+		}
+	},
+
 	readingplanInfo(params, auth) {
 		return dispatch => {
 			const p = Immutable.fromJS(params).set('id', parseInt(params.id.toString().split('-')[0], 10)).toJS()

@@ -7,7 +7,7 @@ import CheckMark from '../components/CheckMark'
 import ProgressBar from '../components/ProgressBar'
 import Share from '../features/PlanDiscovery/components/ShareWidget'
 
-class DayCompleteView extends Component {
+class PlanCompleteView extends Component {
 
 	localizedLink = (link) => {
 		const { params, serverLanguageTag } = this.props
@@ -121,4 +121,4 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, null)(DayCompleteView)
+export default connect(mapStateToProps, null)(PlanCompleteView)

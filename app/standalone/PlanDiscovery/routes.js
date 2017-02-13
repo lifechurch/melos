@@ -19,6 +19,7 @@ import PlanDevo from '../../features/PlanDiscovery/components/planReader/PlanDev
 import PlanRef from '../../features/PlanDiscovery/components/planReader/PlanRef'
 
 import DayCompleteView from '../../containers/DayCompleteView'
+import PlanCompleteView from '../../containers/PlanCompleteView'
 
 /**
  * get the routes for reading plans
@@ -44,7 +45,9 @@ export default function (
 		requireSavedPlans,
 		requireCompletedPlans,
 		requireSubscribedPlan,
-		requirePlanReferences
+		requirePlanReferences,
+		requirePlanCompleteData,
+		requireSharedDayComplete
 	) {
 	return (
 		<Route path="/">
@@ -77,10 +80,8 @@ export default function (
 			</Route>
 			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} onEnter={requirePlanData} />
 			{/* this is also day complete, but an unauthed page with the plan id and user id in the url as params */}
-			<Route path="(:lang/)/reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} />
-
-			<Route path="(:lang/)/reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} />
-			<Route path="(:lang/)/reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} />
+			<Route path="(:lang/)/reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} onEnter={requireSharedDayComplete} />
+			<Route path="(:lang/)/reading-plans/:id(:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
 		</Route>
 	)
 }

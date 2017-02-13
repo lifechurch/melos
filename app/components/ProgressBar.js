@@ -17,7 +17,7 @@ class ProgressBar extends Component {
 			this.setState({
 				percentComplete,
 			})
-		}, 500)
+		}, 600)
 	}
 
 	render() {
@@ -51,9 +51,7 @@ class ProgressBar extends Component {
 				<div
 					className={'progress'}
 					style={progressStyle}
-				>
-					&nbsp;
-				</div>
+				/>
 			</div>
 		)
 	}

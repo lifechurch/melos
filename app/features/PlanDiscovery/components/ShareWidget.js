@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import Immutable from 'immutable'
 
 class ShareWidget extends Component {
 
@@ -14,7 +15,7 @@ class ShareWidget extends Component {
 
 
 	render() {
-		const { collapsible, button } = this.props
+		const { collapsible, button, url } = this.props
 
 		let shareText = null
 		let classes = 'share-panel'
@@ -35,11 +36,15 @@ class ShareWidget extends Component {
 		}
 
 		if (typeof window !== 'undefined') {
-			var interval = setInterval(() => {
+			const interval = setInterval(() => {
 				if (typeof window !== 'undefined' && window.addthis
 					&& window.addthis.layers && window.addthis.layers.refresh) {
 					clearInterval(interval);
 					window.addthis.layers.refresh()
+
+					if (url) {
+						window.addthis_share = Immutable.fromJS(window.addthis_share).set('url', url)
+					}
 				}
 			}, 100);
 		}
@@ -56,11 +61,13 @@ class ShareWidget extends Component {
 }
 
 ShareWidget.propTypes = {
-	collapsible: PropTypes.boolean,
+	collapsible: PropTypes.bool,
 	button: PropTypes.node,
+	url: PropTypes.string,
 }
 ShareWidget.defaultProps = {
 	collapsible: true,
 	button: null,
+	url: null,
 }
 export default ShareWidget

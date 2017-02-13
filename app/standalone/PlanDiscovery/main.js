@@ -257,6 +257,66 @@ function requirePlanReferences(prevState, nextState, replace, callback) {
 	}
 }
 
+function requirePlanCompleteData(nextState, replace, callback) {
+	const currentState = store.getState()
+	const { params } = nextState
+	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
+	const id = parseInt(params.id.toString().split('-')[0], 10)
+
+	let getPlanView = true
+	let getSavedPlans = true
+	let getRecommendedPlans = true
+
+	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined') {
+		getPlanView = false
+	}
+	// TODO: figure out where these are in state
+	if (false) {
+		getSavedPlans = false
+		getRecommendedPlans = false
+	}
+
+	store.dispatch(PlanDiscoveryActionCreators.planComplete({
+		id,
+		language_tag: window.__LOCALE__.planLocale,
+		user_id: userid,
+		getPlanView,
+		getSavedPlans,
+		getRecommendedPlans,
+	}))
+	callback()
+}
+
+function requireSharedDayComplete(nextState, replace, callback) {
+	const currentState = store.getState()
+	const { params } = nextState
+	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
+	const id = parseInt(params.id.toString().split('-')[0], 10)
+
+	let getPlanView = true
+	let getSavedPlans = true
+	let getRecommendedPlans = true
+
+	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined') {
+		getPlanView = false
+	}
+	// TODO: figure out where these are in state
+	if (false) {
+		getSavedPlans = false
+		getRecommendedPlans = false
+	}
+
+	store.dispatch(PlanDiscoveryActionCreators.planComplete({
+		id,
+		language_tag: window.__LOCALE__.planLocale,
+		user_id: userid,
+		getPlanView,
+		getSavedPlans,
+		getRecommendedPlans,
+	}))
+	callback()
+}
+
 const routes = getRoutes(
 	requirePlanDiscoveryData,
 	requirePlanCollectionData,
@@ -267,7 +327,9 @@ const routes = getRoutes(
 	requireSavedPlans,
 	requireCompletedPlans,
 	requireSubscribedPlan,
-	requirePlanReferences
+	requirePlanReferences,
+	requirePlanCompleteData,
+	requireSharedDayComplete
 )
 
 render(
