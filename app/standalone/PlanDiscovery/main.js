@@ -313,7 +313,7 @@ function requireSharedDayComplete(nextState, replace, callback) {
 		getPlanView,
 		getSavedPlans,
 		getRecommendedPlans,
-	}))
+	}, true))
 	callback()
 }
 

@@ -59,11 +59,15 @@ class VerseAction extends Component {
 	}
 
 	closeMe() {
-		this.container.classList.remove('open')
+		if (this.container) {
+			this.container.classList.remove('open')
+		}
 	}
 
 	openMe() {
-		this.container.classList.add('open')
+		if (this.container) {
+			this.container.classList.add('open')
+		}
 	}
 
 	handleClose() {

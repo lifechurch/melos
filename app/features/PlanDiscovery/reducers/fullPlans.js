@@ -59,6 +59,11 @@ export default function reducer(state = {}, action) {
 
 		case type('updateCompletionSuccess'):
 			const { params: { day, id }, response: { references, additional_content } } = action
+			// the api just comes back with the id if we've completed the plan
+			if (!('references' in action.response) && !('additional_content' in action.response)) {
+				return state
+			}
+
 			if (['string', 'number'].indexOf(typeof id) > -1 && state[id]) {
 				let dayObj = Immutable.fromJS(state[id].calendar[day - 1])
 

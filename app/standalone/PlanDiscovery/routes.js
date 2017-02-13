@@ -80,8 +80,8 @@ export default function (
 			</Route>
 			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} onEnter={requirePlanData} />
 			{/* this is also day complete, but an unauthed page with the plan id and user id in the url as params */}
-			<Route path="(:lang/)/reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} onEnter={requireSharedDayComplete} />
-			<Route path="(:lang/)/reading-plans/:id(:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
+			<Route path="(:lang/)reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} onEnter={requireSharedDayComplete} />
+			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
 		</Route>
 	)
 }

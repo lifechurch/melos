@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import LocalStore from '../../../../lib/localStore'
-import ActionCreators from '../../actions/creators'
-import PopupMenu from '../../../../components/PopupMenu'
 import BibleActionCreator from '../../../Bible/actions/creators'
 import Chapter from '../../../Bible/components/content/Chapter'
 import ChapterCopyright from '../../../Bible/components/content/ChapterCopyright'

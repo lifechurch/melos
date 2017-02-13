@@ -243,7 +243,7 @@ const ActionCreators = {
 			}
 			if (getSavedPlans) {
 				promises.push(
-					dispatch(ActionCreators.savedItems({ id: 'saved' }, auth))
+					dispatch(ActionCreators.savedPlanInfo({ id: 'saved' }, auth))
 				)
 			}
 			return Promise.all(promises)

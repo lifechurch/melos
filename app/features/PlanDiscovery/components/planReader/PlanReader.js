@@ -146,7 +146,6 @@ class PlanReader extends Component {
 		this.isFinalPlanDay = isFinalPlanDay(
 			this.dayNum,
 			plan.calendar,
-			plan.completion_percentage,
 			plan.total_days
 		)
 		this.navLinks = this.buildNavLinks()
@@ -180,7 +179,9 @@ class PlanReader extends Component {
 				audio = bible.audioChapter[this.chapReference]
 				const startRef = this.reference.split('+')[0]
 				const endRef = this.reference.split('+').pop()
-				audioTiming = getVerseAudioTiming(startRef, endRef, audio.timing)
+				if (audio) {
+					audioTiming = getVerseAudioTiming(startRef, endRef, audio.timing)
+				}
 				showChapterButton = true
 			}
 		}

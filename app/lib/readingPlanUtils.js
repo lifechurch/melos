@@ -37,10 +37,9 @@ export default function isFinalReadingForDay(planDay, currentRef, isCheckingDevo
 	return (isDevoCompleted && isFinalRef)
 }
 
-export function isFinalPlanDay(day, calendar, completion_percentage, total_days) {
+export function isFinalPlanDay(day, calendar, total_days) {
 	const dayNum = parseInt(day, 10)
 	const planDay = calendar[dayNum - 1]
-	const completionPercentage = parseInt(completion_percentage, 10)
 	const totalDays = parseInt(total_days, 10)
 
 	// if the day we're on is already completed, and the plan isn't completed yet
@@ -49,22 +48,14 @@ export function isFinalPlanDay(day, calendar, completion_percentage, total_days)
 		return false
 	}
 
-	// if this day isn't completed yet, let's check the completion percentage in relation
-	// to the total_days of the plan
-	// this will shortcut a lot of longer plans so we don't have to loop through checking
-	// each day
-	if (completionPercentage < 95 && totalDays > 20) {
-		return false
-	} else {
-		// if total days is 20 or less or completion is 95 or greater, then let's
-		// loop through and check if every day is complete apart from the current
-		for (let i = totalDays - 1; i >= 0; i--) {
-			const dayObj = calendar[i]
+	// start at the end of the calendar and check for an uncomplete day that's not
+	// the current one
+	for (let i = totalDays - 1; i >= 0; i--) {
+		const dayObj = calendar[i]
 			// if we find a day that is not complete, and it's not the day that we're currently
 			// on, then we have more days to go
-			if (dayObj.day !== dayNum && !dayObj.completed) {
-				return false
-			}
+		if (dayObj.day !== dayNum && !dayObj.completed) {
+			return false
 		}
 	}
 
