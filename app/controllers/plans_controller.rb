@@ -132,29 +132,48 @@ class PlansController < ApplicationController
   end
 
   def sample
-    respond_to do |format|
-      format.json { return render nothing: true }
-      format.any {
-        @plan = Plan.find(params[:id])
-        @referrer = request.referrer
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "day" => params[:day],
+        "id" => params[:id].split("-")[0],
+        "cache_for" => YV::Caching::a_very_long_time
+    }
 
-        # render 404 unless day param is a valid day for the plan
-        return handle_404 if @plan.errors.present?
-        return handle_404 unless (1..@plan.total_days).include?(params[:day].to_i)
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
 
-        # always defer to version_id of plan, if specified, when rendering sample view
-        params[:initial] = true
-
-        if current_auth && current_user.subscribed_to?(@plan)
-          redirect_to subscription_path(user_id: current_user.to_param,id: @plan.to_param) and return
-        end
-
-        @presenter = Presenter::Subscription.new( @plan , params, self)
-        self.sidebar_presenter = Presenter::Sidebar::PlanSample.new(@plan,params,self)
-
-        return render
-      }
+    if (fromNode['error'].present?)
+      return render_404
     end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
+    # respond_to do |format|
+    #   format.json { return render nothing: true }
+    #   format.any {
+    #     @plan = Plan.find(params[:id])
+    #     @referrer = request.referrer
+    #
+    #     # render 404 unless day param is a valid day for the plan
+    #     return handle_404 if @plan.errors.present?
+    #     return handle_404 unless (1..@plan.total_days).include?(params[:day].to_i)
+    #
+    #     # always defer to version_id of plan, if specified, when rendering sample view
+    #     params[:initial] = true
+    #
+    #     if current_auth && current_user.subscribed_to?(@plan)
+    #       redirect_to subscription_path(user_id: current_user.to_param,id: @plan.to_param) and return
+    #     end
+    #
+    #     @presenter = Presenter::Subscription.new( @plan , params, self)
+    #     self.sidebar_presenter = Presenter::Sidebar::PlanSample.new(@plan,params,self)
+    #
+    #     return render
+    #   }
+    # end
   end
 
   def day_complete
