@@ -13,7 +13,6 @@ import ActionCreator from '../../features/PlanDiscovery/actions/creators'
  * @return     {Promise}  { description_of_the_return_value }
  */
 export default function loadData(params, startingState, sessionData, store, Locale) {
-
 	return new Promise((resolve) => {
 		if (typeof store !== 'undefined' && params.url && params.languageTag) {
 			const isCollection = new RegExp('^\/reading-plans-collection\/[0-9]+')
@@ -30,8 +29,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isReadingPlanDevo = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/devo')
 			const isSubscription = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+')
 
-			const isDayComplete = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+/day/[0-9]+/completed')
-			const isSharedDayComplete = new RegExp('^\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+/day/[0-9]+/completed')
+			const isDayComplete = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
+			const isSharedDayComplete = new RegExp('^\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
 
 			let auth = false
 			if (sessionData.email && sessionData.password) {
@@ -58,18 +57,8 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					content
 				}, auth)).then(() => { resolve() })
 
-			} else if (isSubscription.test(params.url)) {
-				const version = params.version || cookie.load('version') || '1'
-				store.dispatch(ActionCreator.subscriptionAll({
-					id: params.id,
-					language_tag: Locale.planLocale,
-					user_id: sessionData.userid,
-					day: params.day,
-					version,
-				}, auth)).then((d) => { resolve() })
-
 			} else if (isDayComplete.test(params.url)) {
-				store.dispatch(ActionCreator.readingplanInfo({
+				store.dispatch(ActionCreator.readingplanView({
 					id: params.id,
 					language_tag: Locale.planLocale,
 				}, auth)).then((d) => { resolve() })
@@ -79,6 +68,17 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				store.dispatch(ActionCreator.sharedDayComplete({
 					id: params.id,
 					language_tag: Locale.planLocale,
+					user_id: params.user_id,
+				}, false)).then((d) => { resolve() })
+
+			} else if (isSubscription.test(params.url)) {
+				const version = params.version || cookie.load('version') || '1'
+				store.dispatch(ActionCreator.subscriptionAll({
+					id: params.id,
+					language_tag: Locale.planLocale,
+					user_id: sessionData.userid,
+					day: params.day,
+					version,
 				}, auth)).then((d) => { resolve() })
 
 			} else if (isSubscribedPlans.test(params.url)) {

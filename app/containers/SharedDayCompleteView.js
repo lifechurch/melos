@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import StackedContainer from '../components/StackedContainer'
 import CheckMark from '../components/CheckMark'
 import ProgressBar from '../components/ProgressBar'
 import Share from '../features/Bible/components/verseAction/share/Share'
 
-class PlanCompleteView extends Component {
+class SharedDayCompleteView extends Component {
 
 	localizedLink = (link) => {
 		const { params, serverLanguageTag } = this.props
@@ -27,11 +27,19 @@ class PlanCompleteView extends Component {
 	}
 
 	render() {
-		const { params: { id, day }, plans, auth } = this.props
+		const { params: { id, day }, plans, users } = this.props
 		let plan = null
+		let userData = null
+
 		try {
 			plan = plans[id.split('-')[0]]
+			userData = users[Object.keys(users)[0]]
+			if (!plan || !userData) {
+				return <div />
+			}
+			console.log(plan, userData)
 		} catch (e) {
+			console.log(e)
 			return <div />
 		}
 
@@ -43,31 +51,31 @@ class PlanCompleteView extends Component {
 			<div className='rp-completed-view'>
 				<div className='completed-header'>
 					<h6 className='horizontal-center'>
-						<FormattedMessage id="plans.complete" />
+						<FormattedHTMLMessage id="plans.day_completed" values={{ username: userData.name, day, plan_title: plan.name.default }} />
 					</h6>
 					<div className='plan-length-header horizontal-center'>
-						<FormattedMessage id="plans.congratulations" />
+						<FormattedMessage id="plans.which day in plan" values={{ day, total: plan.total_days }} />
 					</div>
 				</div>
 				<StackedContainer width={'100%'} height={'380px'}>
 					<div className='parallax-back-img' style={backImgStyle} />
 					<div className='content columns large-8 medium-8 horizontal-center'>
 						<div className='row horizontal-center vertical-center'>
-							<Link to={this.localizedLink(`/users/${auth.userData.username}/reading-plans`)} className='circle-buttons vertical-center horizontal-center'>
+							<div className='circle-buttons vertical-center horizontal-center'>
 								<CheckMark fill='#6ab750' width={27} height={26} />
-							</Link>
+							</div>
 						</div>
 						<div className='row horizontal-center vertical-center'>
 							<img alt='reading plan' src={plan.images[7].url} height={160} width={310} />
 						</div>
 						<div className='row horizontal-center vertical-center'>
-							<ProgressBar percentComplete={100} width={'250px'} height={'10px'} />
+							<ProgressBar percentComplete={plan.completion_percentage} width={'250px'} height={'10px'} />
 						</div>
 					</div>
 				</StackedContainer>
 				<div className='row horizontal-center vertical-center'>
 					<Share
-						url={this.localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)}
+						url={`/reading-plans/${plan.id}-${plan.slug}/day/${day}/completed`}
 						button={
 							<button className='solid-button share-button'>
 								<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
@@ -75,12 +83,6 @@ class PlanCompleteView extends Component {
 						}
 					/>
 				</div>
-				<div className='row horizontal-center vertical-center'>
-					<Link to={this.localizedLink(`/users/${auth.userData.username}/reading-plans`)} className='small-font'>
-						<FormattedMessage id="plans.widget.view my plans" />
-					</Link>
-				</div>
-				<div className='row carousels horizontal-center' />
 			</div>
 		)
 	}
@@ -89,10 +91,10 @@ class PlanCompleteView extends Component {
 function mapStateToProps(state) {
 	return {
 		plans: state.readingPlans && state.readingPlans.fullPlans && state.readingPlans.fullPlans ? state.readingPlans.fullPlans : null,
-		auth: state.auth,
+		users: state.users && state.users.view ? state.users.view : null,
 		hosts: state.hosts,
 		serverLanguageTag: state.serverLanguageTag
 	}
 }
 
-export default connect(mapStateToProps, null)(PlanCompleteView)
+export default connect(mapStateToProps, null)(SharedDayCompleteView)

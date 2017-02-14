@@ -283,38 +283,46 @@ function requirePlanCompleteData(nextState, replace, callback) {
 		getPlanView,
 		getSavedPlans,
 		getRecommendedPlans,
-	}))
-	callback()
+	}, true)).then(() => {
+		callback()
+	})
 }
 
-function requireSharedDayComplete(nextState, replace, callback) {
+function requirePlanView(nextState, replace, callback) {
 	const currentState = store.getState()
 	const { params } = nextState
 	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
 	const id = parseInt(params.id.toString().split('-')[0], 10)
 
-	let getPlanView = true
-	let getSavedPlans = true
-	let getRecommendedPlans = true
-
-	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined') {
-		getPlanView = false
+	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined' && 'subscription_id' in fullPlans[id]) {
+		callback()
+	} else {
+		store.dispatch(PlanDiscoveryActionCreators.readingplanView({
+			id,
+			language_tag: window.__LOCALE__.planLocale,
+			user_id: userid
+		}, true)).then(() => {
+			callback()
+		})
 	}
-	// TODO: figure out where these are in state
-	if (false) {
-		getSavedPlans = false
-		getRecommendedPlans = false
-	}
-
-	store.dispatch(PlanDiscoveryActionCreators.planComplete({
-		id,
-		language_tag: window.__LOCALE__.planLocale,
-		user_id: userid,
-		getPlanView,
-		getSavedPlans,
-		getRecommendedPlans,
-	}, true))
+}
+// need to get the user's name from the user id passed in the url
+// TODO: Do we even need a client side function for this?
+function requireSharedDayComplete(nextState, replace, callback) {
+	const currentState = store.getState()
+	const { params } = nextState
+	const { readingPlans: { fullPlans }, routing: { location: query } } = currentState
+	const id = parseInt(params.id.toString().split('-')[0], 10)
+	const user_id = query.user_id
+	console.log(params, query)
 	callback()
+	// store.dispatch(PlanDiscoveryActionCreators.sharedDayComplete({
+	// 	id,
+	// 	language_tag: window.__LOCALE__.planLocale,
+	// 	user_id,
+	// }, false)).then(() => {
+	// 	callback()
+	// })
 }
 
 const routes = getRoutes(
@@ -329,7 +337,8 @@ const routes = getRoutes(
 	requireSubscribedPlan,
 	requirePlanReferences,
 	requirePlanCompleteData,
-	requireSharedDayComplete
+	requireSharedDayComplete,
+	requirePlanView
 )
 
 render(

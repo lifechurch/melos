@@ -36,22 +36,22 @@ class ShareWidget extends Component {
 		}
 
 		if (typeof window !== 'undefined') {
-			// const interval = setInterval(() => {
-			// 	if (typeof window !== 'undefined' && window.addthis
-			// 		&& window.addthis.layers && window.addthis.layers.refresh) {
-			// 		clearInterval(interval);
-			// 		window.addthis.layers.refresh()
-			// 	}
-			// }, 100);
+			const interval = setInterval(() => {
+				if (typeof window !== 'undefined' && window.addthis
+					&& window.addthis.layers && window.addthis.layers.refresh) {
+					clearInterval(interval);
+					window.addthis.layers.refresh()
+				}
+			}, 100);
 
-			if (url) {
-				// window.addthis.update('share', 'url', url)
-				window.addthis_share = Immutable.fromJS(window.addthis_share)
-					.set('url', url)
-					.toJS()
-			} else {
-				window.addthis_share.layers.refresh()
-			}
+			// if (url) {
+			// 	// window.addthis.update('share', 'url', url)
+			// 	window.addthis_share = Immutable.fromJS(window.addthis_share)
+			// 		.set('url', url)
+			// 		.toJS()
+			// } else {
+			// 	window.addthis_share.layers.refresh()
+			// }
 		}
 
 		return (

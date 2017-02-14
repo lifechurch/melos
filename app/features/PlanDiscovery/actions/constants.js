@@ -61,12 +61,16 @@ const constants = {
 	updateCompletionRequest: 'READING_PLANS_UPDATE_COMPLETION_REQUEST',
 	updateCompletionSuccess: 'READING_PLANS_UPDATE_COMPLETION_SUCCESS',
 	updateCompletionFailure: 'READING_PLANS_UPDATE_COMPLETION_FAILURE',
+
+	planCompleteRequest: 'PLAN_COMPLETE_REQUEST',
+	planCompleteSuccess: 'PLAN_COMPLETE_SUCCESS',
+	planCompleteFailure: 'PLAN_COMPLETE_FAILURE',
 }
 
 export default function (key) {
 	if (typeof key === 'string' && constants.hasOwnProperty(key)) {
 		return constants[key];
 	} else {
-		throw new Error('Invalid Plan Discovery Action: ' + key)
+		throw new Error(`Invalid Plan Discovery Action: ${key}`)
 	}
 }

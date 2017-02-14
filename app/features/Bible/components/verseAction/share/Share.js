@@ -93,7 +93,7 @@ class Share extends Component {
 	}
 
 	render() {
-		const { button, label } = this.props
+		const { button, label, classOverride } = this.props
 		const { isOpen } = this.state
 		const classes = isOpen ? 'va-share-open' : 'va-share-closed'
 		const buttonLabel = isOpen ? <FormattedMessage id='plans.stats.close' /> : <FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
@@ -114,7 +114,7 @@ class Share extends Component {
 		}
 
 		return (
-			<div className="va-share" onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp}>
+			<div className={classOverride || 'va-share'} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp}>
 				{ buttonDiv }
 				<div className='va-share-panel-wrapper'>
 					<div className={`va-share-panel ${classes}`}>
@@ -131,6 +131,7 @@ Share.propTypes = {
 	label: PropTypes.string.isRequired,
 	text: PropTypes.string.isRequired,
 	url: PropTypes.string.isRequired,
+	classOverride: PropTypes.string,
 	button: PropTypes.node,
 }
 
@@ -138,6 +139,7 @@ Share.defaultProps = {
 	label: '',
 	text: '',
 	url: '',
+	classOverride: '',
 	button: null,
 }
 

@@ -3,6 +3,7 @@ import moment from 'moment'
 
 import type from './constants'
 import BibleActionCreator from '../../Bible/actions/creators'
+import UsersActionCreator from '../../Users/actions/creators'
 
 const ActionCreators = {
 
@@ -243,7 +244,7 @@ const ActionCreators = {
 			}
 			if (getSavedPlans) {
 				promises.push(
-					dispatch(ActionCreators.savedPlanInfo({ id: 'saved' }, auth))
+					dispatch(ActionCreators.savedPlanInfo({ id: 'saved', page: 1 }, auth))
 				)
 			}
 			return Promise.all(promises)
@@ -251,7 +252,19 @@ const ActionCreators = {
 	},
 
 	sharedDayComplete(params, auth) {
-
+		return dispatch => {
+			const {
+				id,
+				language_tag,
+				user_id,
+			} = params
+			console.log(params)
+			const planID = parseInt(id, 10)
+			return Promise.all([
+				dispatch(UsersActionCreator.usersView({ id: user_id }, false)),
+				dispatch(ActionCreators.readingplanView({ id: planID, language_tag, user_id }, false))
+			])
+		}
 	},
 
 	readingplanInfo(params, auth) {
