@@ -30,6 +30,9 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isReadingPlanDevo = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/devo')
 			const isSubscription = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+')
 
+			const isDayComplete = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+/day/[0-9]+/completed')
+			const isSharedDayComplete = new RegExp('^\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+/day/[0-9]+/completed')
+
 			let auth = false
 			if (sessionData.email && sessionData.password) {
 				auth = { username: sessionData.email, password: sessionData.password }
@@ -63,6 +66,19 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					user_id: sessionData.userid,
 					day: params.day,
 					version,
+				}, auth)).then((d) => { resolve() })
+
+			} else if (isDayComplete.test(params.url)) {
+				store.dispatch(ActionCreator.readingplanInfo({
+					id: params.id,
+					language_tag: Locale.planLocale,
+				}, auth)).then((d) => { resolve() })
+
+			} else if (isSharedDayComplete.test(params.url)) {
+				// pass user id to get user info for page
+				store.dispatch(ActionCreator.sharedDayComplete({
+					id: params.id,
+					language_tag: Locale.planLocale,
 				}, auth)).then((d) => { resolve() })
 
 			} else if (isSubscribedPlans.test(params.url)) {

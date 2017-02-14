@@ -250,6 +250,10 @@ const ActionCreators = {
 		}
 	},
 
+	sharedDayComplete(params, auth) {
+
+	},
+
 	readingplanInfo(params, auth) {
 		return dispatch => {
 			const p = Immutable.fromJS(params).set('id', parseInt(params.id.toString().split('-')[0], 10)).toJS()

@@ -99,6 +99,7 @@ class DayCompleteView extends Component {
 				</StackedContainer>
 				<div className='row horizontal-center vertical-center'>
 					<Share
+						url={`/reading-plans/${plan.id}-${plan.slug}/day/${day}/completed`}
 						button={
 							<button className='solid-button share-button'>
 								<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
