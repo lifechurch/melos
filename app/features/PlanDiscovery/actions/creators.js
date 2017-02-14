@@ -90,13 +90,13 @@ const ActionCreators = {
 			const { id, language_tag, user_id, day, version } = params
 			const promises = [
 				dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth)),
-				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth))
+				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth)),
+				dispatch(ActionCreators.allQueueItems(auth))
 			]
 
 			return new Promise((resolve) => {
 				Promise.all(promises).then((d) => {
 					const [ plan, { calendar } ] = d
-
 					let currentDay = day
 					if (!day) {
 						const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
@@ -107,6 +107,32 @@ const ActionCreators = {
 						}
 					}
 
+					const dayData = calendar[currentDay - 1]
+					dispatch(ActionCreators.planReferences({
+						references: dayData.references,
+						version,
+						id,
+						currentDay
+					})).then(() => {
+						resolve(dispatch(ActionCreators.planSelect({ id })))
+					})
+				})
+			})
+		}
+	},
+
+	sampleAll(params, auth) {
+		return dispatch => {
+			const { id, language_tag, day: currentDay, version } = params
+			const promises = [
+				dispatch(ActionCreators.readingplanView({ id, language_tag })),
+				dispatch(ActionCreators.calendar({ id, language_tag })),
+				dispatch(ActionCreators.allQueueItems(auth))
+			]
+
+			return new Promise((resolve) => {
+				Promise.all(promises).then((d) => {
+					const [ , { calendar }, ] = d
 					const dayData = calendar[currentDay - 1]
 					dispatch(ActionCreators.planReferences({
 						references: dayData.references,
@@ -381,6 +407,20 @@ const ActionCreators = {
 				params,
 				http_method: 'get',
 				types: [ type('planInfoRequest'), type('planInfoSuccess'), type('planInfoFailure') ]
+			}
+		}
+	},
+
+	allQueueItems(auth) {
+		return {
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'all_queue_items',
+				version: '3.1',
+				auth,
+				params: {},
+				http_method: 'get',
+				types: [ type('allQueueItemsRequest'), type('allQueueItemsSuccess'), type('allQueueItemsFailure') ]
 			}
 		}
 	},

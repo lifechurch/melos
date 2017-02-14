@@ -28,7 +28,7 @@ class PlansView extends Component {
 		let isMyPlans = false
 		try {
 			 isMyPlans = (['MySubscribedPlans', 'MyCompletedPlans', 'MySavedPlans'].indexOf(children.type.WrappedComponent.name) > -1)
-		} catch(e) {}
+		} catch (e) {}
 
 		const myPlansLink = auth.isLoggedIn && auth.userData && auth.userData.username ?
 			(<Link className='solid-button green' to={`/users/${auth.userData.username}/reading-plans`}><FormattedMessage id="plans.my_plans" /></Link>) :

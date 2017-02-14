@@ -31,7 +31,7 @@ if (typeof window !== 'undefined' && typeof window.__ENV__ !== 'undefined' && wi
 	logger = createLogger()
 }
 
-const store = configureStore(initialState, null, logger)
+const store = configureStore(initialState, browserHistory, logger)
 addLocaleData(window.__LOCALE__.data)
 moment.locale(window.__LOCALE__.locale)
 
@@ -222,11 +222,38 @@ function requireSubscribedPlan(nextState, replace, callback) {
 	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
 	const id = parseInt(params.id.toString().split('-')[0], 10)
 
-	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined') {
+	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined' && fullPlans[id].dirtySubscription !== true) {
 		store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
 		callback()
 	} else {
 		store.dispatch(PlanDiscoveryActionCreators.subscriptionAll({ id, language_tag: window.__LOCALE__.planLocale, user_id: userid, version }, true)).then(() => {
+			callback()
+		})
+	}
+}
+
+function requireSamplePlan(nextState, replace, callback) {
+	const currentState = store.getState()
+	const version = cookie.load('version') || '1'
+	const { auth: { isLoggedIn }, readingPlans: { fullPlans } } = currentState
+	const imFullPlans = Immutable.fromJS(fullPlans)
+	let { params: { id, day } } = nextState
+
+	id = id.toString().split('-')[0]
+	day = parseInt(day.toString(), 10)
+
+	if (typeof fullPlans === 'object'
+		&& imFullPlans.hasIn([id, 'calendar', day - 1, 'hasReferences'])) {
+		store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
+		callback()
+	} else if (imFullPlans.hasIn([id, 'calendar', day - 1, 'references'])) {
+		const references = imFullPlans.getIn([id, 'calendar', day - 1, 'references' ]).toJS()
+		store.dispatch(PlanDiscoveryActionCreators.planReferences({ references, version, id, currentDay: day })).then(() => {
+			store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
+			callback()
+		})
+	} else {
+		store.dispatch(PlanDiscoveryActionCreators.sampleAll({ id, language_tag: window.__LOCALE__.planLocale, version, day }, isLoggedIn)).then(() => {
 			callback()
 		})
 	}
@@ -267,7 +294,8 @@ const routes = getRoutes(
 	requireSavedPlans,
 	requireCompletedPlans,
 	requireSubscribedPlan,
-	requirePlanReferences
+	requirePlanReferences,
+	requireSamplePlan
 )
 
 render(

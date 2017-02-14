@@ -1,0 +1,87 @@
+.plan-day-slider {
+  @media @medium-up {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  text-align: center;
+  height: 82px;
+
+  .day {
+    border: solid 1px @light-grey;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 0px;
+
+    &.active {
+      border: solid 2px @green;
+      border-radius: 0px;
+    }
+
+    h1, h4 {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 18px;
+      font-family: Arial;
+    }
+
+    h4 {
+      font-size: 11px;
+      color: @dark_grey;
+    }
+  }
+
+  button.slick-prev.slick-arrow,
+  button.slick-next.slick-arrow {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 32px;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0.85;
+    padding: 0;
+    z-index: 100;
+    background-color: transparent;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid black;
+  }
+
+  .slick-prev {
+    left: 0;
+    transform: rotate(-180deg);
+  }
+
+  .slick-next {
+    right: 0;
+  }
+
+  .slick-list {
+    @media @medium-up {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+    border: solid 1px @light-grey;
+  }
+
+  .slick-disabled {
+    opacity: 0.25 !important;
+  }
+
+  .day-top {
+    height: 25%;
+    width: 100%;
+  }
+
+  .day-bottom {
+    height: 75%;
+    width: 100%;
+  }
+}

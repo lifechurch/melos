@@ -16,6 +16,10 @@ const constants = {
 	savedItemsSuccess: 'READING_PLANS_SAVED_ITEMS_SUCCESS',
 	savedItemsFailure: 'READING_PLANS_SAVED_ITEMS_FAILURE',
 
+	allQueueItemsRequest: 'READING_PLANS_ALL_QUEUE_ITEMS_REQUEST',
+	allQueueItemsSuccess: 'READING_PLANS_ALL_QUEUE_ITEMS_SUCCESS',
+	allQueueItemsFailure: 'READING_PLANS_ALL_QUEUE_ITEMS_FAILURE',
+
 	planInfoRequest: 'READING_PLANS_PLAN_INFO_REQUEST',
 	planInfoSuccess: 'READING_PLANS_PLAN_INFO_SUCCESS',
 	planInfoFailure: 'READING_PLANS_PLAN_INFO_FAILURE',
@@ -67,6 +71,6 @@ export default function (key) {
 	if (typeof key === 'string' && constants.hasOwnProperty(key)) {
 		return constants[key];
 	} else {
-		throw new Error('Invalid Plan Discovery Action: ' + key)
+		throw new Error(`Invalid Plan Discovery Action: ${key}`)
 	}
 }

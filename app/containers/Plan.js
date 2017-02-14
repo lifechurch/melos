@@ -23,7 +23,7 @@ class Plan extends Component {
 	render() {
 		return (
 			<PlanComponent {...this.props} localizedLink={::this.localizedLink} isRtl={::this.isRtl} >
-				{this.props.children && React.cloneElement(this.props.children, { localizedLink: ::this.localizedLink, isRtl: ::this.isRtl })}
+				{!!this.props.children && React.cloneElement(this.props.children, { localizedLink: ::this.localizedLink, isRtl: ::this.isRtl })}
 			</PlanComponent>
 		)
 	}
@@ -33,7 +33,8 @@ function mapStateToProps(state) {
 	return {
 		auth: state.auth,
 		serverLanguageTag: state.serverLanguageTag,
-		plan: state.readingPlans.fullPlans._SELECTED
+		plan: state.readingPlans.fullPlans._SELECTED,
+		hosts: state.hosts
 	}
 }
 
