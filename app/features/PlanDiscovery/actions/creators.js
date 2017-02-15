@@ -232,6 +232,12 @@ const ActionCreators = {
 
 			const promises = []
 
+			if (getSavedPlans || getRecommendedPlans) {
+				promises.push(
+					dispatch(ActionCreators.configuration())
+				)
+			}
+
 			if (getPlanView) {
 				promises.push(
 					dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth))

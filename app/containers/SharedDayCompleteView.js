@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import rtlDetect from 'rtl-detect'
 import StackedContainer from '../components/StackedContainer'
 import CheckMark from '../components/CheckMark'
 import ProgressBar from '../components/ProgressBar'
@@ -31,15 +32,9 @@ class SharedDayCompleteView extends Component {
 		let plan = null
 		let userData = null
 
-		try {
-			plan = plans[id.split('-')[0]]
-			userData = users[Object.keys(users)[0]]
-			if (!plan || !userData) {
-				return <div />
-			}
-			console.log(plan, userData)
-		} catch (e) {
-			console.log(e)
+		plan = plans[id.split('-')[0]]
+		userData = users[Object.keys(users)[0]]
+		if (!plan || !userData) {
 			return <div />
 		}
 
@@ -74,14 +69,18 @@ class SharedDayCompleteView extends Component {
 					</div>
 				</StackedContainer>
 				<div className='row horizontal-center vertical-center'>
-					<Share
-						url={`/reading-plans/${plan.id}-${plan.slug}/day/${day}/completed`}
-						button={
-							<button className='solid-button share-button'>
-								<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
-							</button>
-						}
-					/>
+					{
+						typeof window !== 'undefined' ?
+							<Share
+								text={plan.name.default}
+								button={
+									<button className='solid-button share-button'>
+										<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
+									</button>
+							}
+							/> :
+						null
+					}
 				</div>
 			</div>
 		)

@@ -306,24 +306,7 @@ function requirePlanView(nextState, replace, callback) {
 		})
 	}
 }
-// need to get the user's name from the user id passed in the url
-// TODO: Do we even need a client side function for this?
-function requireSharedDayComplete(nextState, replace, callback) {
-	const currentState = store.getState()
-	const { params } = nextState
-	const { readingPlans: { fullPlans }, routing: { location: query } } = currentState
-	const id = parseInt(params.id.toString().split('-')[0], 10)
-	const user_id = query.user_id
-	console.log(params, query)
-	callback()
-	// store.dispatch(PlanDiscoveryActionCreators.sharedDayComplete({
-	// 	id,
-	// 	language_tag: window.__LOCALE__.planLocale,
-	// 	user_id,
-	// }, false)).then(() => {
-	// 	callback()
-	// })
-}
+
 
 const routes = getRoutes(
 	requirePlanDiscoveryData,
@@ -337,7 +320,6 @@ const routes = getRoutes(
 	requireSubscribedPlan,
 	requirePlanReferences,
 	requirePlanCompleteData,
-	requireSharedDayComplete,
 	requirePlanView
 )
 

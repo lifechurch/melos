@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
+import rtlDetect from 'rtl-detect'
 import StackedContainer from '../components/StackedContainer'
 import CheckMark from '../components/CheckMark'
 import ProgressBar from '../components/ProgressBar'
+import CarouselStandard from '../components/Carousel/CarouselStandard'
 import Share from '../features/Bible/components/verseAction/share/Share'
 
 class PlanCompleteView extends Component {
@@ -27,14 +29,33 @@ class PlanCompleteView extends Component {
 	}
 
 	render() {
-		const { params: { id, day }, plans, auth } = this.props
-		let plan = null
-		try {
-			plan = plans[id.split('-')[0]]
-		} catch (e) {
-			return <div />
-		}
+		const {
+			params: { id, day },
+			plans,
+			recommendedPlans,
+			savedPlans,
+			auth,
+			imageConfig,
+			intl
+		} = this.props
 
+		const plan = plans[id.split('-')[0]]
+		if (!plan) return <div />
+
+		let savedDiv = null
+		let recommendedDiv = null
+		if (savedPlans && savedPlans.items && savedPlans.items.length > 0) {
+			savedPlans.title = intl.formatMessage({ id: 'plans.saved plans' })
+			savedDiv = (
+				<CarouselStandard carouselContent={savedPlans} context='saved' imageConfig={imageConfig} localizedLink={this.localizedLink} isRtl={this.isRtl} />
+			)
+		}
+		if (recommendedPlans && recommendedPlans.items && recommendedPlans.items.length > 0) {
+			recommendedPlans.id = plan.id
+			recommendedDiv = (
+				<CarouselStandard carouselContent={recommendedPlans} context='recommended' imageConfig={imageConfig} localizedLink={this.localizedLink} isRtl={this.isRtl} />
+			)
+		}
 		const backImgStyle = {
 			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${plan.images[4].url})`
 		}
@@ -66,21 +87,30 @@ class PlanCompleteView extends Component {
 					</div>
 				</StackedContainer>
 				<div className='row horizontal-center vertical-center'>
-					<Share
-						url={this.localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)}
-						button={
-							<button className='solid-button share-button'>
-								<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
-							</button>
-						}
-					/>
+					{
+						typeof window !== 'undefined' ?
+							<Share
+								text={plan.name.default}
+								url={this.localizedLink(`${window.location.origin}/reading-plans/${plan.id}-${plan.slug}`)}
+								button={
+									<button className='solid-button share-button'>
+										<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
+									</button>
+							}
+							/> :
+						null
+					}
 				</div>
 				<div className='row horizontal-center vertical-center'>
 					<Link to={this.localizedLink(`/users/${auth.userData.username}/reading-plans`)} className='small-font'>
 						<FormattedMessage id="plans.widget.view my plans" />
 					</Link>
 				</div>
-				<div className='row carousels horizontal-center' />
+				<div className='row carousels horizontal-center'>
+					{ savedDiv }
+					{ recommendedDiv }
+				</div>
+
 			</div>
 		)
 	}
@@ -89,10 +119,13 @@ class PlanCompleteView extends Component {
 function mapStateToProps(state) {
 	return {
 		plans: state.readingPlans && state.readingPlans.fullPlans && state.readingPlans.fullPlans ? state.readingPlans.fullPlans : null,
+		recommendedPlans: state.readingPlans && state.readingPlans.recommendedPlans && state.readingPlans.recommendedPlans ? state.readingPlans.recommendedPlans : null,
+		savedPlans: state.readingPlans && state.readingPlans.savedPlans && state.readingPlans.savedPlans ? state.readingPlans.savedPlans : null,
+		imageConfig: (state.plansDiscovery && state.plansDiscovery.configuration && state.plansDiscovery.configuration.images) ? state.plansDiscovery.configuration.images : {},
 		auth: state.auth,
 		hosts: state.hosts,
 		serverLanguageTag: state.serverLanguageTag
 	}
 }
 
-export default connect(mapStateToProps, null)(PlanCompleteView)
+export default connect(mapStateToProps, null)(injectIntl(PlanCompleteView))

@@ -80,11 +80,15 @@ class Share extends Component {
 				window.addthis_share = {}
 			}
 
-			window.addthis_share = Immutable.fromJS(window.addthis_share)
-				.set('url', nextUrl)
-				.set('title', `${nextText} ${nextLabel}`)
-				.set('description', nextText)
-				.toJS()
+			// window.addthis_share = Immutable.fromJS(window.addthis_share)
+			// 	.set('url', nextUrl)
+			// 	.set('title', `${nextText} ${nextLabel}`)
+			// 	.set('description', nextText)
+			// 	.toJS()
+
+			window.addthis.update('share', 'url', nextUrl)
+			window.addthis.update('share', 'title', `${nextText} ${nextLabel}`)
+			window.addthis.update('share', 'description', nextText)
 
 			return true
 		}

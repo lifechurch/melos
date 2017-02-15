@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { FormattedMessage } from 'react-intl'
+import rtlDetect from 'rtl-detect'
 import StackedContainer from '../components/StackedContainer'
 import CheckMark from '../components/CheckMark'
 import ProgressBar from '../components/ProgressBar'
@@ -28,12 +29,8 @@ class DayCompleteView extends Component {
 
 	render() {
 		const { params: { id, day }, plans, auth } = this.props
-		let plan = null
-		try {
-			plan = plans[id.split('-')[0]]
-		} catch (e) {
-			return <div />
-		}
+		const plan = plans[id.split('-')[0]]
+		if (!plan) return <div />
 
 		const backImgStyle = {
 			backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${plan.images[4].url})`
@@ -69,14 +66,19 @@ class DayCompleteView extends Component {
 					</div>
 				</StackedContainer>
 				<div className='row horizontal-center vertical-center'>
-					<Share
-						url={`/reading-plans/${plan.id}-${plan.slug}/day/${day}/completed`}
-						button={
-							<button className='solid-button share-button'>
-								<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
-							</button>
-						}
-					/>
+					{
+						typeof window !== 'undefined' ?
+							<Share
+								text={plan.name.default}
+								url={this.localizedLink(`${window.location.origin}/reading-plans/${plan.id}-${plan.slug}/day/${day}/completed?user_id=${auth.userData.userid}`)}
+								button={
+									<button className='solid-button share-button'>
+										<FormattedMessage id='features.EventEdit.components.EventEditNav.share' />
+									</button>
+							}
+							/> :
+						null
+					}
 				</div>
 				<div className='row horizontal-center vertical-center'>
 					<Link to={this.localizedLink(`/users/${auth.userData.username}/reading-plans`)} className='small-font'>
