@@ -158,10 +158,29 @@ class PlansController < ApplicationController
   end
 
   def day_complete
-    @plan = Plan.find(params[:id])
-    @user = User.find(params[:user_id])
-    @day = params[:day]
-    render 'subscriptions/day_complete'
+    # @plan = Plan.find(params[:id])
+    # @user = User.find(params[:user_id])
+    # @day = params[:day]
+    # render 'subscriptions/day_complete'
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "id" => params[:id].split("-")[0],
+        "user_id" => params[:user_id],
+        "cache_for" => YV::Caching::a_very_long_time
+    }
+
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
   end
 
   def ref_not_found

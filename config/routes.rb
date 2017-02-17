@@ -206,6 +206,7 @@ YouversionWeb::Application.routes.draw do
   resources :plans, :only => [:index, :show], :path => 'reading-plans'
   match '/reading-plans/:id/day/:day' => 'plans#sample', as: "sample_plan", via: :get
   match '/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
+  match '/users/:username/reading-plans/:id/day/:day/completed' => 'plans#day_complete', as: "day_complete_plan", via: :get
 
   get '/reading-plans-collection/:id' => 'plans#plan_collection'
   get '/recommended-plans-collection/:id' => 'plans#plan_collection'

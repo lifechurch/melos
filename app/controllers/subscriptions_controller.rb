@@ -6,7 +6,8 @@ class SubscriptionsController < ApplicationController
   before_filter :force_login
   before_filter :find_subscription,     only: [:show,:ref,:devo,:destroy,:edit,:update,:calendar,:mark_complete]
   before_filter :setup_presenter, only: [:show,:devo,:ref,:mark_complete]
-  before_filter :get_plan_counts, only: [:index,:completed,:saved]
+  before_filter :get_plan_counts, only: [:index,:saved]
+
 
 
   rescue_from NotAChapterError, with: :ref_not_found
