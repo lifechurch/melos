@@ -213,6 +213,10 @@ YouversionWeb::Application.routes.draw do
   get '/saved-plans-collection' => 'plans#plan_collection'
 
 
+  # LOOKINSIDE READING PLAN LANDING PAGES
+  get '/lookinside/:id' => 'plans#lookinside_view'
+  get '/lookinside/:id/read' => 'plans#lookinside_sample'
+
 
   # Reading Plans
   # Legacy links that need to be supported

@@ -203,6 +203,50 @@ class PlansController < ApplicationController
     end
   end
 
+
+  # ABS LOOKINSIDE
+  def lookinside_view
+    # what plans are we allowing for this view?
+    whitelist = [2614, 2217, 3400]
+
+    p = {
+        "strings" => {},
+        "languageTag" => I18n.locale.to_s,
+        "url" => request.path,
+        "id" => params[:id].split("-")[0],
+        "cache_for" => YV::Caching::a_very_long_time
+    }
+
+    # check to make sure we allow the plan
+    # otherwise redirect to plan discovery page
+    redirect = true
+    for planid in whitelist
+      if (p["id"].to_s == planid.to_s)
+        redirect = false
+      end
+    end
+
+    if (redirect)
+      redirect_to plans_path() and return
+    end
+
+    fromNode = YV::Nodestack::Fetcher.get('PlanDiscovery', p, cookies, current_auth, current_user, request)
+
+    if (fromNode['error'].present?)
+      return render_404
+    end
+
+    @title_tag = fromNode['head']['title']
+    @node_meta_tags = fromNode['head']['meta']
+
+    render 'index', locals: { html: fromNode['html'], js: fromNode['js'] }
+  end
+  def lookinside_sample
+    return lookinside_view
+  end
+
+
+
   # Actions needed to capture legacy links sent via email to our users. DO NOT remove
   # ---------------------------------------------------------------------------------
   # See routes.rb: "Community emails send this link"
