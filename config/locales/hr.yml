@@ -1953,6 +1953,8 @@ hr:
             read reference: "Čitaj %{reference}"
             read chapter: "Čitaj cijelo poglavlje"
             plan title: "Besplatni planovi čitanja i nadahnuti sadržaji"
+            plan title ref: "Besplatni planovi za čitanje i nadahnuti sadržaji povezani s temom %{reference}"
+            plan subtitle: "Biblijski planovi razlamaju čitanje iz Pisma na lakše dnevne dijelove. Planovi često uključuju podržavajuće odabire nadahnutih tekstova, zvuka ili videozapisa. Zoveš li ih biblijskim planovima, planovima za čitanje ili nadahnutim tekstovima, oni su dokazani način s pomoću kojega možeš Bibliju učiniti prirodnim dijelom svakodnevnog života."
             meta: 
                 mobile: 
                     title: "Aplikacija Biblija"

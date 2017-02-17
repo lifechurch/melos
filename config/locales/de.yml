@@ -302,7 +302,7 @@ de:
     bible: "Bibel"
     audio bible: "Hörbibel"
     audio bible app: "Hörbibel App"
-    audio bibles title: "Höre die Bibel"
+    audio bibles title: "Höre dir die Bibel an!"
     audio bible meta: "Höre gratis online oder lade die YouVersion Bibel App herunter und höre dir mit der beliebtesten Bibel App die Bibel auf deinem Telefon an."
     language: "Sprache"
     translation: "Übersetzung"
@@ -1915,6 +1915,8 @@ de:
             read reference: "%{reference} lesen"
             read chapter: "Das ganze Kapitel lesen"
             plan title: "Kostenlose Lesepläne und Andachten"
+            plan title ref: "Kostenlose Lesepläne und Andachten zum Thema %{reference}"
+            plan subtitle: "Bibellesepläne teilen deine Bibellese in überschaubare Abschnitte für jeden Tag. Lesepläne enthalten oft Andachten, Audioaufnahmen oder Videos, die die Tageslesung vertiefen. Egal, ob du sie Bibellesepläne, Lesepläne oder Andachten nennst, solche Pläne sind eine bewährte Möglichkeit, mit deren Hilfe du die Bibel zu einem natürlichen Teil deines Alltags machen kannst."
             meta: 
                 mobile: 
                     title: "Die Bibel App"

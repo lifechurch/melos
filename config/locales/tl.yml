@@ -1915,6 +1915,8 @@ tl:
             read reference: "Basahin %{reference}"
             read chapter: "Basahin ang buong kabanata"
             plan title: "Libreng Babasahin at Devotionals"
+            plan title ref: "Libreng mga Babasahin at Debosyonal na may kaugnayan sa %{reference}"
+            plan subtitle: "Pinadadali ng mga Bible Plan ang pagbabasa mo ng Banal na Kasulatan sa pamamagitan ng paghahati-hati nito sa maliliit na bahagi. Ang mga babasahin ay kalimitang may kasamang  debosyonal, audio, o piling video. Tawagin mo man itong Bible Plans, mga Babasahing Gabay, o Debosyonal, ang mga Babasahin ay subok na mabisang paraan upang maging bahagi ng iyong pang-araw-araw na buhay ang Biblia."
             meta: 
                 mobile: 
                     title: "Ang Bible App"

@@ -1915,6 +1915,8 @@ nl:
             read reference: "%{reference} lezen"
             read chapter: "Lees het hele hoofdstuk"
             plan title: "Gratis leesplannen en overdenkingen"
+            plan title ref: "Gratis leesplannen en overdenkingen die te maken hebben met %{reference}"
+            plan subtitle: "Leesplannen verdelen je bijbellezingen in beheersbare dagelijkse porties. De plannen bevatten vaak ondersteunende toelichting, geluidsbestanden of video's. Hoe je ze ook noemt, leesplannen zijn een beproefde methode om de Bijbel een vanzelfsprekend onderdeel van je dagelijks leven te maken."
             meta: 
                 mobile: 
                     title: "De Bijbel app"

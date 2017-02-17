@@ -1896,6 +1896,8 @@ id:
             read reference: "Baca %{reference}"
             read chapter: "Baca seluruh pasal"
             plan title: "Rencana Bacaan dan Renungan Gratis"
+            plan title ref: "Rencana Bacaan dan Renungan gratis terkait dengan %{reference}"
+            plan subtitle: "Rencana-rencana Alkitab membagi bacaan Alkitab Anda ke dalam porsi harian yang bisa diatur. Rencana-rencana sering termasuk renungan, audio, ataupun video pilihan yang mendukung. Entah Anda menyebutnya Rencana Alkitab, Rencana Bacaan, atau Renungan, Rencana adalah suatu cara yang sudah terbukti dapat menjadikan Alkitab sebagai bagian yang alami dalam kehidupan sehari-hari Anda."
             meta: 
                 mobile: 
                     title: "Aplikasi Alkitab"

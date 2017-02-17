@@ -1915,6 +1915,8 @@ tr:
             read reference: "Şunu Oku: %{reference}"
             read chapter: "Tüm bölümü okuyun"
             plan title: "Ücretsiz Okuma Planları "
+            plan title ref: "Ücretsiz Okuma Planları %{reference}"
+            plan subtitle: "İncil okuma planları, daha kullanışlı bir şekilde Kutsal Kitap'ı okuyabilmeniz için gündelik bölümlere ayırır. Genellikle Okuma Planları ses ya da görüntü seçenekleri içerir. İster onları Kutsal Kitap Planları, Okuma Planları ya da ister İbadet Zamanları olarak adlandırın, bu planlar, Kutsal Kitap'ı hayatınızın bir parçası yapmaya yarayan ispatlanmış yollardır."
             meta: 
                 mobile: 
                     title: "Kutsal Kitap Uygulaması"

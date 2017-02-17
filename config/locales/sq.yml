@@ -1915,6 +1915,8 @@ sq:
             read reference: "Lexo %{reference}"
             read chapter: "Lexo të gjithë kapitullin"
             plan title: "Devocione dhe Plane Leximi falas"
+            plan title ref: "Devocione dhe Plane Leximi falas për %{reference}"
+            plan subtitle: "Planet e Biblës e ndajnë leximin tuaj të Shkrimit në pjesë të arritshme të përditshme. Zakonisht Planet përfshijnë devocione, audio ose video. Qoftë nëse i quani ato Plane të Biblës, Plane Leximi apo Devocione, Planet janë një mënyrë e provuar për ta bërë Biblën një pjesë natyrale të jetës tënde të përditshme."
             meta: 
                 mobile: 
                     title: "Programi i Biblës"

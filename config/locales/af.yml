@@ -1915,6 +1915,8 @@ af:
             read reference: "Lees %{reference}"
             read chapter: "Lees die hele hoofstuk"
             plan title: "Gratis Leesplanne en Oordenkings"
+            plan title ref: "Gratis Leesplanne en Oordenkings oor %{reference}"
+            plan subtitle: "Bybelleesplanne breek jou daaglikse Skriflees program op in kort stukkies. Planne sluit dikwels 'n ondersteunende oordenking in, of klank- en videogreepseleksies. Dit maak nie saak of jy dit 'n Bybelplan, Leesplan of Oordenking noem nie. Dit is 'n beproefde manier om Bybellees 'n deel van jou daaglikse roetine te maak."
             meta: 
                 mobile: 
                     title: "Die Bybel Toep"

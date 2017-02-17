@@ -1915,6 +1915,8 @@ fi:
             read reference: "Lue %{reference}"
             read chapter: "Lue koko kappale"
             plan title: "Ilmaisia lukusuunnitelmia ja hartauksia"
+            plan title ref: "Ilmaiset lukusuunnitelmat ja hartaudet jotka liittyvät %{reference} "
+            plan subtitle: "Raamatun lukusuunnitelmat jakavat raamatunlukemisen sopiviin päivittäisiin osiin.  Lukuohjelmissa on usein mukana luettua tukevia valikoituja hartaustekstejä, ääntä tai videoita.  Kutsutpa niitä raamatunlukusuunnitelmiksi, lukusuunnitelmiksi tai hartauksiksi, lukusuunnitelmilla voit todistetusti tehdä raamatusta luonnollisen osan päivittäistä elämääsi. "
             meta: 
                 mobile: 
                     title: "Raamattusovellus"

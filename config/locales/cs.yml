@@ -1934,6 +1934,8 @@ cs:
             read reference: "Číst %{reference}"
             read chapter: "Číst celou kapitolu"
             plan title: "Bezplatné plány čtení a výkladové poznámky"
+            plan title ref: "Bezplatné plány čtení Bible a zamyšlení souvísející s %{reference}"
+            plan subtitle: "Plány čtení Bible dělí vaše čtení Písma na části, které lze za den zvládnout. Plány čtení často obsahují výběr povzbuzujících výkladů, nahrávek nebo videí. Jakkoliv je nazýváte: plány čtení, biblické plány, zamyšlení, vždy se jedná o prověřenou cestu jak zajistit, aby Bible byla přirozenou součástí vašeho každého dne."
             meta: 
                 mobile: 
                     title: "Aplikace Bible"

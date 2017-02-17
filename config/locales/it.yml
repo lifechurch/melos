@@ -1915,6 +1915,8 @@ it:
             read reference: "Leggi %{reference}"
             read chapter: "Leggi l'intero capitolo"
             plan title: "Piani di Lettura e Devozionali Gratuiti"
+            plan title ref: "Piani di Lettura e Devozionali Gratuiti relativi a %{reference}"
+            plan subtitle: "I Piani di Lettura dividono la tua lettura della Bibbia in porzioni quotidiane gestibili. I Piani spesso comprendono selezioni devozionali, audio o video a corredo. Che tu li chiami Piani della Bibbia, Piani di Lettura o Devozionali, i Piani sono un mezzo affidabile per aiutarti a fare della Bibbia parte naturale della tua vita quotidiana."
             meta: 
                 mobile: 
                     title: "L'App Bibbia"

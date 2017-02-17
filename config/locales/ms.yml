@@ -1896,6 +1896,8 @@ ms:
             read reference: "Baca %{reference}"
             read chapter: "Membaca seluruh bab"
             plan title: "Pelan Bacaan dan Bahan Renungan Percuma"
+            plan title ref: "Pelan Bacaan dan Renungan yang percuma berkaitan dengan %{reference}"
+            plan subtitle: "Pelan Alkitab memecahkan pembacaan Kitab kepada bahagian harian yang terurus. Pelan biasanya termasuk renungan, audio, atau pilihan video. Sama ada anda memanggilnya Pelan Alkitab, Pelan Bacaan, atau Renungan, Pelan tersebut terbukti bahawa anda boleh menjadikan Alkitab sebagai sebahagian daripada kehidupan anda setiap hari."
             meta: 
                 mobile: 
                     title: "App Alkitab"

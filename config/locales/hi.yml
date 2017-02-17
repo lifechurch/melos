@@ -1915,6 +1915,8 @@ hi:
             read reference: "%{reference} पढ़िए"
             read chapter: "पूरा अध्याय पढ़े "
             plan title: "निःशुल्क रीडिंग प्लान और भक्ति संगीत"
+            plan title ref: "निःशुल्क रीडिंग प्लान और मनन %{reference} के बारे मे"
+            plan subtitle: "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life."
             meta: 
                 mobile: 
                     title: "बाइबिल एप्प"

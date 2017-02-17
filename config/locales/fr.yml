@@ -1915,6 +1915,8 @@ fr:
             read reference: "Lire %{reference}"
             read chapter: "Lire le chapitre entier"
             plan title: "Plans de lecture et dévotions gratuits"
+            plan title ref: "Plans de lecture et de méditation gratuits en rapport avec %{reference}"
+            plan subtitle: "Les plans de lecture bibliques découpent les Écritures en portions adaptées à une lecture quotidienne. Les plans s'accompagnent souvent d'une méditation, ainsi que de clips audios ou vidéos. Que vous les appeliez plans bibliques, plans de lecture ou méditations, les plans sont un outil qui a fait ses preuves pour vous aider à faire de la Bible un élément naturel de votre vie quotidienne."
             meta: 
                 mobile: 
                     title: "La Bible App"

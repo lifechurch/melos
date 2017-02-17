@@ -1934,6 +1934,8 @@ ro:
             read reference: "Citește %{reference}"
             read chapter: "Citește întreg capitolul"
             plan title: "Planuri de citire și Devoționale Gratuite"
+            plan title ref: "Planuri de citire și Devoționale gratuite în legătură cu %{reference}"
+            plan subtitle: "Planurile Biblice despart citirea Scripturii în fragmente zilnice realizabile. Planurile includ deseori devotionale ajutătoare, sau selecții audio ori video. Fie că le numești Planuri Biblice, Planuri de citire sau Devoționale, Planurile sunt o metodă dovedită că poți să faci din Biblie o parte normală a vieții tale zilnice. "
             meta: 
                 mobile: 
                     title: "Aplicația Biblia"

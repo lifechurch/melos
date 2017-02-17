@@ -1991,6 +1991,8 @@ cy:
             read reference: "Darllen %{reference}"
             read chapter: "Darllen y bennod"
             plan title: "Cynlluniau Darllen a Defosiynol am Ddim"
+            plan title ref: "Cynlluniau Darllen am ddim a Defosiynau yn ymwneud â %{reference}"
+            plan subtitle: "Mae Cynlluniau Beibl yn rhannu eich darlleniadau yn ddarnau dyddiol hylaw. Yn aml, mae cynlluniau yn cynnwys detholiad o ddefosiynau, sain neu fideo, fel cymorth. Os gelwir nhw'n Gynlluniau Beibl, Cynlluniau Darllen, neu Ddefosiynau, mae wedi'i brofi eu bod yn ffordd o wneud y Beibl yn rhan naturiol o'ch bywyd bob dydd."
             meta: 
                 mobile: 
                     title: "Ap Beibl"

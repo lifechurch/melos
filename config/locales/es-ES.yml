@@ -1915,6 +1915,8 @@ es-ES:
             read reference: "Lee %{reference}"
             read chapter: "Lee el capítulo entero"
             plan title: "Planes de Lectura y Devocionales Gratis"
+            plan title ref: "Planes de lectura y devocionales gratis relacionados con %{reference}"
+            plan subtitle: "Los planes bíblicos reparten la lectura de las Escrituras en prácticas secciones diarias. Los planes suelen incluir selecciones devocionales o audiovisuales de apoyo. Ya sea que los llames planes bíblicos, planes de lectura o devocionales, estos planes son una manera eficaz de hacer que la Biblia forme parte de tu vida cotidiana."
             meta: 
                 mobile: 
                     title: "La Biblia App"

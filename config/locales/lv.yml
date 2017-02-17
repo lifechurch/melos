@@ -1934,6 +1934,8 @@ lv:
             read reference: "Lasi %{reference}"
             read chapter: "Lasīt visu nodaļu"
             plan title: "Bezmaksas Lasīšanas plāni un Garīgas pārdomas"
+            plan title ref: "Bezmaksas lasīšanas plāni un pārdomas par tēmu %{reference}"
+            plan subtitle: "Bībeles lasīšanas plānā Rakstu lasījumi ir sadalīti nelielās daļās, kuras var lasīt katru dienu. Šajos plānos bieži vien ir ietvertas arī pārdomas par šo tēmu, kā arī audio vai video materiāli. Tie var būt gan Bībeles lasīšanas plāni, gan Lasīšanas plāni, gan Pārdomas, bet jebkurā gadījumā tas ir lielisks veids, kā padarīt Bībeli par dabīgu ikdienas daļu."
             meta: 
                 mobile: 
                     title: "Bībeles aplikācija"

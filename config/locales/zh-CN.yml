@@ -1896,6 +1896,8 @@ zh-CN:
             read reference: "阅读 %{reference}"
             read chapter: "阅读整章"
             plan title: "免费的【读经计划】与灵修短文"
+            plan title ref: "与%{reference}相关的免费读经计划与灵修短文"
+            plan subtitle: "读经计划将你的圣经阅读以每日容易完成的定量来分配。计划通常包括有辅助性的灵修短文、音频或视频选择。无论你如何称呼它，读经计划确实是一种行之有效的途径，能帮助你将圣经融入你日常生活的一部分。"
             meta: 
                 mobile: 
                     title: "圣经软件"

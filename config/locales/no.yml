@@ -1915,6 +1915,8 @@
             read reference: "Les %{reference}"
             read chapter: "Les hele kapittelet"
             plan title: "Gratis leseplaner og andakter"
+            plan title ref: "Gratis leseplaner og andakter relatert til %{reference}"
+            plan subtitle: "Leseplaner deler bibellesingen din inn i overkommelige daglige porsjoner. Planer kan inneholde andakt, lyd eller korte filmklipp. Om du kaller dem bibelplaner, leseplaner eller andakter, så er planer en sikker måte å gjøre Bibelen til en naturlig del av ditt dagligliv."
             meta: 
                 mobile: 
                     title: "Bibel-appen"

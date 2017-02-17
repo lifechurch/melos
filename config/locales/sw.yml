@@ -1915,6 +1915,8 @@ sw:
             read reference: "Soma %{reference}"
             read chapter: "Soma sura nzima"
             plan title: "Mipango ya usomaji bure na Ibada"
+            plan title ref: "Mipango ya Masomo na ibada za bure zinazohusiana na %{reference}"
+            plan subtitle: "Mipango za Biblia zinagawanisha usomaji wako wa maandiko katika sehemu zinazoweza kudhibitiwa kila siku. Mipango mara nyingi hushirikisha ibada, redio au video saidizi. Iwapo utaziita Mipango za Biblia, Mipango za Kusoma au Ibada, Mipango zimedhibitishwa kuwa njia ya kufanya Biblia kuwa sehemu asilia ya maisha yako ya kila siku."
             meta: 
                 mobile: 
                     title: "Programu ya Biblia"

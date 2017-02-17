@@ -1934,6 +1934,8 @@ sk:
             read reference: "Čítať %{reference}"
             read chapter: "Prečítajte si celú kapitolu"
             plan title: "Plány čítania a texty zadarmo"
+            plan title ref: "Bezplatné Plány čítania a Stíšenia týkajúce sa %{reference}"
+            plan subtitle: "Biblické plány rozdeľujú vaše čítanie písma do denne zvládnuteľných častí. Plány často zahŕňajú podporné stíšenia, nahrávky alebo videá. Či ich už nazývate Biblické plány alebo Plány na čítanie, či Stíšenia, plány vám umožnia, aby sa Biblia stala samozrejmou súčastouť vášho každodenného života."
             meta: 
                 mobile: 
                     title: "Aplikácia Biblia"

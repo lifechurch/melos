@@ -1915,6 +1915,8 @@ ca:
             read reference: "Llegeix %{reference}"
             read chapter: "Llegeix el capítol sencer"
             plan title: "Plans de lectura i devocionals gratuïts"
+            plan title ref: "Plans de lectura i devocionals gratuïts relacionats amb %{reference}"
+            plan subtitle: "Els Plans de la Bíblia fraccionen la teva lectura de les Escriptures en porcions diàries manejables. Els plans sovint ofereixen seleccions d'ajuda devocionals, d'àudio o de vídeo.  Tant si els anomenes plans de la Bíblia, plans de lectura o devocionals, els plans són una manera comprovada de fer de la Bíblia una part natural de la teva vida quotidiana."
             meta: 
                 mobile: 
                     title: "L'Aplicació de la Bíblia"

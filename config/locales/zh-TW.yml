@@ -1896,6 +1896,8 @@ zh-TW:
             read reference: "閱讀 %{reference}"
             read chapter: "閱讀整章"
             plan title: "免費的讀經計劃及靈修內容"
+            plan title ref: "與 %{reference} 相關的免費讀經計劃與靈修短文"
+            plan subtitle: "讀經計劃定量分配讀經內容，使你每日都能閱讀聖經。【計劃】通常包含了輔助性的靈修短文、音訊或視訊精選。無論你怎麼稱呼他們，【計劃】是經過證實、能讓聖經自然而然融入你日常生活的最佳途徑。"
             meta: 
                 mobile: 
                     title: "聖經軟體"

@@ -1915,6 +1915,8 @@ hu:
             read reference: "%{reference} olvasása"
             read chapter: "Egész fejezet elolvasása"
             plan title: "Ingyenes olvasási tervek és áhítatok"
+            plan title ref: "Ingyenes olvasási tervek és áhítatok ezzel kapcsolatban: %{reference}"
+            plan subtitle: "Az olvasási tervek kezelhető napi részekre bontják a Szentírás olvasásod. Az olvasási tervek gyakran magukba foglalnak segítő áhítatot, audió- vagy videó részeket. Akárhogy hívjuk őket, Biblia tervek, olvasási tervek vagy áhítatok, ezek a tervek bizonyított módszerek arra, hogy a Bibliát természetes részeddé tedd a mindennapi életben."
             meta: 
                 mobile: 
                     title: "A Biblia alkalmazás"

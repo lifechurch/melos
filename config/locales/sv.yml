@@ -1915,6 +1915,8 @@ sv:
             read reference: "Läs %{reference}"
             read chapter: "Läs helt kapitel"
             plan title: "Gratis läsplaner och andakter"
+            plan title ref: "Gratis Läsplaner och Andakter relaterade till %{reference}"
+            plan subtitle: "Läsplaner delar upp din Bibelläsning i hanterbara dagliga delar. Planer inkluderar ofta understödjande andakts-, ljud- och video-material. Oavsett om du kallar dem Bibelplaner, Läsplaner eller Andakter så är Läsplaner ett beprövat sätt att göra Bibeln till en naturlig del av ditt vardagsliv."
             meta: 
                 mobile: 
                     title: "Bibelappen"

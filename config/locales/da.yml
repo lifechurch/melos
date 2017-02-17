@@ -1915,6 +1915,8 @@ da:
             read reference: "Læs %{reference}"
             read chapter: "Læs hele kapitlet"
             plan title: "Gratis bibellæseplaner og andagter"
+            plan title ref: "Gratis Læseplaner og andagter relateret til %{reference}"
+            plan subtitle: "Bibel Læseplaner bryder din Skrifts læsning ned i mindre daglige portioner. Planer indeholder ofte støttende lyd andagter eller video afsnit. Hvad enten du kalder Bibel Planer, Læseplaner eller Andagter, Planer er bevist måde som du kan gøre Bibelen til en naturlig del af dit hverdagsliv."
             meta: 
                 mobile: 
                     title: "Bibel App´en"
