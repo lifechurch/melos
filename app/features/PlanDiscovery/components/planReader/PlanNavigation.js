@@ -52,7 +52,8 @@ class PlanNavigation extends Component {
 
 	render() {
 		const {
-			plan,
+			planImgUrl,
+			planName,
 			day,
 			next,
 			previous,
@@ -64,12 +65,6 @@ class PlanNavigation extends Component {
 			localizedLink
 		} = this.props
 		const { bottomPos } = this.state
-
-		if (Object.keys(plan).length < 1) {
-			return (
-				<div />
-			)
-		}
 
 		let customNext = null
 		if (isFinalContent) {
@@ -85,11 +80,11 @@ class PlanNavigation extends Component {
 				<Header sticky={true} classes={'plan-nav-header'}>
 					<div className='nav-content columns large-6 medium-8 medium-centered'>
 						<Link to={dayBasePath}>
-							<img alt='reading plan' className='nav-img img-left' src={plan.images[2].url} />
+							<img alt='reading plan' className='nav-img img-left' src={planImgUrl} />
 						</Link>
 						<div className='plan-info'>
 							<Link to={dayBasePath}>
-								<div className='nav-title'>{ plan.name[plan.language_tag] || plan.name.default }</div>
+								<div className='nav-title'>{ planName }</div>
 							</Link>
 							<div className='nav-length'>
 								<FormattedMessage id="plans.day number" values={{ day }} />
@@ -115,7 +110,18 @@ class PlanNavigation extends Component {
 }
 
 PlanNavigation.propTypes = {
-
+	planImgUrl: PropTypes.string,
+	planName: PropTypes.string,
+	day: PropTypes.oneOfType(['string', 'number']),
+	next: PropTypes.string,
+	previous: PropTypes.string,
+	dayBasePath: PropTypes.string,
+	whichContent: PropTypes.number,
+	totalContentsNum: PropTypes.number,
+	isFinalContent: PropTypes.bool,
+	onHandleComplete: PropTypes.func,
+	localizedLink: PropTypes.func,
+	updateStyle: PropTypes.bool,
 }
 
 PlanNavigation.defaultProps = {

@@ -190,6 +190,24 @@ class PlanRef extends Component {
 PlanRef.propTypes = {
 	getChapter: PropTypes.func,
 	audio: PropTypes.object,
+	verseColors: PropTypes.array,
+	highlightColors: PropTypes.array,
+	momentsLabels: PropTypes.array,
+	content: PropTypes.string,
+	version: PropTypes.object,
+	refHeading: PropTypes.string,
+	bibleChapterLink: PropTypes.string,
+	bibleReferences: PropTypes.array,
+	bibleVerses: PropTypes.object,
+	textDirection: PropTypes.string,
+	showChapterButton: PropTypes.bool,
+	audio: PropTypes.object,
+	onAudioComplete: PropTypes.func,
+	audioStart: PropTypes.number,
+	audioStop: PropTypes.number,
+	audioPlaying: PropTypes.bool,
+	hosts: PropTypes.object,
+	auth: object,
 }
 
 PlanRef.defaultProps = {
