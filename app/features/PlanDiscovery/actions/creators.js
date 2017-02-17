@@ -96,7 +96,8 @@ const ActionCreators = {
 
 			return new Promise((resolve) => {
 				Promise.all(promises).then((d) => {
-					const [ plan, { calendar } ] = d
+					const [ plan, { calendar }, ] = d
+
 					let currentDay = day
 					if (!day) {
 						const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
@@ -269,6 +270,49 @@ const ActionCreators = {
 	},
 
 	/**
+	 * Restart User Plan Subscription
+	 *
+	 * @param      {object}	params  The parameters
+	 * @param      {bool}  	auth    The auth
+	 */
+	restartSubscription(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'restart_subscription',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('restartSubscriptionRequest'), type('restartSubscriptionSuccess'), type('restartSubscriptionFailure') ]
+			}
+		}
+	},
+
+	/**
+	 * unsubscribeUser - description
+	 *
+	 * @param  {type} params description
+	 * @param  {type} auth   description
+	 * @return {type}        description
+	 */
+	unsubscribeUser(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'unsubscribe_user',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('unsubscribeUserRequest'), type('unsubscribeUserSuccess'), type('unsubscribeUserFailure') ]
+			}
+		}
+	},
+
+	/**
 	 *
 	 * @param      {number} 	id  				reading plan id
 	 * @param      {number}  	day   			Day number to update, within the Reading Plan
@@ -287,6 +331,29 @@ const ActionCreators = {
 				params,
 				http_method: 'post',
 				types: [ type('updateCompletionRequest'), type('updateCompletionSuccess'), type('updateCompletionFailure') ]
+			}
+		}
+	},
+
+
+	/**
+	 * updateSubscribeUser - description
+	 *
+	 * @param  {type} params description
+	 * @param  {type} auth   description
+	 * @return {type}        description
+	 */
+	updateSubscribeUser(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'update_subscribe_user',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('updateSubscribeUserRequest'), type('updateSubscribeUserSuccess'), type('updateSubscribeUserFailure') ]
 			}
 		}
 	},

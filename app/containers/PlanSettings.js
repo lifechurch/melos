@@ -1,17 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-class PlanSettings extends Component {
-	render() {
-		return (
-			<p>Plan Settings</p>
-		)
-	}
+import PlanSettingsComponent from '../features/PlanDiscovery/components/PlanSettings'
+
+function PlanSettings(props) {
+	return (
+		<PlanSettingsComponent {...props} />
+	)
 }
 
 function mapStateToProps(state) {
 	return {
-		discover: state.plansDiscovery
+		serverLanguageTag: state.serverLanguageTag,
+		auth: state.auth
 	}
 }
 

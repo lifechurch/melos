@@ -26,7 +26,6 @@ export default function isFinalReadingContent(planDay, currentRef, isCheckingDev
 
 	for (let i = 0; i < planDay.references_remaining.length; i++) {
 		const ref = planDay.references_remaining[i]
-		console.log('dees is da strings', ref.toString(), currentRef.toString())
 		// if the current ref is the only ref remaining
 		if (ref.toString() === currentRef.toString() && planDay.references_remaining.length === 1) {
 			isFinalRef = true

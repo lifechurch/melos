@@ -25,7 +25,6 @@ class PlanNavigation extends Component {
 			onHandleComplete,
 			localizedLink
 		} = this.props
-		console.log(this.props)
 
 		if (!plan) {
 			return (

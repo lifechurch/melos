@@ -124,8 +124,6 @@ class PlanReader extends Component {
 			}
 		}
 
-		console.log(this.dayObj)
-
 		return (
 			<div>
 				<PlanNavigation

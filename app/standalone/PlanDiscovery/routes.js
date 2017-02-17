@@ -71,8 +71,8 @@ export default function (
 				<Route path="completed-reading-plans" component={MyCompletedPlans} onEnter={requireCompletedPlans} />
 				<Route path="reading-plans" component={MySubscribedPlans} onEnter={requireSubscribedPlans} />
 			</Route>
-			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan} onEnter={requireSubscribedPlan}>
-				<IndexRoute component={PlanDay} onChange={requirePlanReferences} />
+			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan} onChange={requireSubscribedPlan} onEnter={requireSubscribedPlan}>
+				<IndexRoute component={PlanDay} />
 				<Route path="edit" component={PlanSettings} />
 				<Route path="calendar" component={PlanCalendar} />
 			</Route>
