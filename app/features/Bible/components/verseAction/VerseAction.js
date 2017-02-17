@@ -51,7 +51,6 @@ class VerseAction extends Component {
 	}
 
 	handleMomentContainerClose = (closeVerseAction = false) => {
-		console.log('wrgbekrjhgberjhgb')
 		this.setState({ momentContainerOpen: false })
 		if (closeVerseAction) {
 			this.handleClose()

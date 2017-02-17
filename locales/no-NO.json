@@ -1,4 +1,5 @@
 {
+	"change": "Change",
 	"ui.yes button": "Ja",
 	"ui.no button": "Nei",
 	"plans.plans": "Leseplaner",
@@ -390,8 +391,8 @@
 	"Reader.read reference": "Les {reference}",
 	"Reader.read chapter": "Les hele kapittelet",
 	"Reader.plan title": "Gratis leseplaner og andakter",
-	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
-	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
+	"Reader.plan title ref": "Gratis leseplaner og andakter relatert til {reference}",
+	"Reader.plan subtitle": "Leseplaner deler bibellesingen din inn i overkommelige daglige porsjoner. Planer kan inneholde andakt, lyd eller korte filmklipp. Om du kaller dem bibelplaner, leseplaner eller andakter, så er planer en sikker måte å gjøre Bibelen til en naturlig del av ditt dagligliv.",
 	"Reader.meta.mobile.title": "Bibel-appen",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Parallell",

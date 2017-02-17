@@ -1,4 +1,5 @@
 {
+	"change": "Change",
 	"ui.yes button": "Si",
 	"ui.no button": "No",
 	"plans.plans": "Planes",
@@ -390,8 +391,8 @@
 	"Reader.read reference": "Lea {reference}",
 	"Reader.read chapter": "Leer el capítulo completo",
 	"Reader.plan title": "PLANES DE LECTURA Y DEVOCIONALES GRATIS",
-	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
-	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
+	"Reader.plan title ref": "Planes de Lectura y Devocionales Gratis relacionados con {reference}",
+	"Reader.plan subtitle": "Los Planes Bíblicos dividen tu lectura de la Escritura en razonables porciones diarias.  Los Planes a menudo incluyen selecciones de devocionales con audio o video.  Ya sea que los llames Planes Bíblicos, Planes de Lectura, o Devocionales, los Planes son una manera probada de empezar a hacer de la Biblia una parte natural de tu vida diaria. ",
 	"Reader.meta.mobile.title": "La Biblia App",
 	"Reader.meta.site.title": "Bible.com/es",
 	"Reader.header.parallel": "Biblias en Paralelo",

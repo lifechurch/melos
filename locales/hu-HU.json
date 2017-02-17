@@ -1,4 +1,5 @@
 {
+	"change": "Change",
 	"ui.yes button": "Igen",
 	"ui.no button": "Nem",
 	"plans.plans": "Tervek",
@@ -390,8 +391,8 @@
 	"Reader.read reference": "{reference} olvasása",
 	"Reader.read chapter": "Egész fejezet elolvasása",
 	"Reader.plan title": "Ingyenes olvasási tervek és áhítatok",
-	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
-	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
+	"Reader.plan title ref": "Ingyenes olvasási tervek és áhítatok ezzel kapcsolatban: {reference}",
+	"Reader.plan subtitle": "Az olvasási tervek kezelhető napi részekre bontják a Szentírás olvasásod. Az olvasási tervek gyakran magukba foglalnak segítő áhítatot, audió- vagy videó részeket. Akárhogy hívjuk őket, Biblia tervek, olvasási tervek vagy áhítatok, ezek a tervek bizonyított módszerek arra, hogy a Bibliát természetes részeddé tedd a mindennapi életben.",
 	"Reader.meta.mobile.title": "A Biblia alkalmazás",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Párhuzamos",

@@ -1,4 +1,5 @@
 {
+	"change": "Change",
 	"ui.yes button": "Yes",
 	"ui.no button": "No",
 	"plans.plans": "Plans",
@@ -391,7 +392,7 @@
 	"Reader.read chapter": "Read full chapter",
 	"Reader.plan title": "Free Reading plans and Devotionals",
 	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
-	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
+	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, plans are a proven way that you can make the Bible a natural part of your everyday life.",
 	"Reader.meta.mobile.title": "The Bible App",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Parallel",

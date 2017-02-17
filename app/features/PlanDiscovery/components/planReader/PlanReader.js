@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
 import { routeActions } from 'react-router-redux'
 import ActionCreators from '../../actions/creators'
 import BibleActionCreator from '../../../Bible/actions/creators'
@@ -14,6 +13,64 @@ class PlanReader extends Component {
 		this.state = {
 			audioPlaying: false,
 		}
+	}
+
+	onAudioComplete = () => {
+		const { dispatch } = this.props
+
+		this.handleComplete()
+		dispatch(routeActions.push(this.navLinks.next))
+		// if audio has completed a ref then keep it playing for the next one
+		this.setState({ audioPlaying: true })
+	}
+
+	getChapter = () => {
+		const { dispatch, bible: { version: { id } } } = this.props
+		dispatch(BibleActionCreator.bibleChapter({
+			id,
+			reference: this.chapReference,
+			format: 'html'
+		}))
+	}
+
+	getWhichContentNum() {
+		// figure out number to display for which content the user is currently on
+		let whichContent
+		if (this.hasDevo) {
+			if (this.isCheckingDevo) {
+				whichContent = 1
+			} else {
+				whichContent = this.contentIndex + 2
+			}
+		} else {
+			whichContent = this.contentIndex + 1
+		}
+		return whichContent
+	}
+
+	handleComplete = () => {
+		const { dispatch, plan } = this.props
+		let completeDevo = true
+		const references = this.dayObj.references_completed
+		// devotional is true by default if there is no devotional
+		// otherwise this will overwrite with the correct value
+		if (this.hasDevo) {
+			completeDevo =
+				this.isCheckingDevo ||
+				plan.calendar[this.dayNum - 1].additional_content.completed
+		}
+		// if we have a reference, that we're reading through,
+		// add it to the list of completedRefs
+		if (this.reference) {
+			references.push(this.reference)
+		}
+		// make api call
+		dispatch(ActionCreators.updatePlanDay({
+			id: plan.id,
+			day: this.dayNum,
+			references,
+			devotional: completeDevo,
+		}, true))
 	}
 
 	buildNavLinks() {
@@ -60,63 +117,6 @@ class PlanReader extends Component {
 		return { previous, next, dayBasePath }
 	}
 
-	getWhichContentNum() {
-		// figure out number to display for which content the user is currently on
-		let whichContent
-		if (this.hasDevo) {
-			if (this.isCheckingDevo) {
-				whichContent = 1
-			} else {
-				whichContent = this.contentIndex + 2
-			}
-		} else {
-			whichContent = this.contentIndex + 1
-		}
-		return whichContent
-	}
-
-	handleComplete = () => {
-		const { dispatch, plan } = this.props
-		let completeDevo = true
-		const references = this.dayObj.references_completed
-		// devotional is true by default if there is no devotional
-		// otherwise this will overwrite with the correct value
-		if (this.hasDevo) {
-			completeDevo =
-				this.isCheckingDevo ||
-				plan.calendar[this.dayNum - 1].additional_content.completed
-		}
-		// if we have a reference, that we're reading through,
-		// add it to the list of completedRefs
-		if (this.reference) {
-			references.push(this.reference)
-		}
-		// make api call
-		dispatch(ActionCreators.updatePlanDay({
-			id: plan.id,
-			day: this.dayNum,
-			references,
-			devotional: completeDevo,
-		}, true))
-	}
-
-	getChapter = () => {
-		const { dispatch, bible: { version: { id } } } = this.props
-		dispatch(BibleActionCreator.bibleChapter({
-			id,
-			reference: this.chapReference,
-			format: 'html'
-		}))
-	}
-
-	onAudioComplete = () => {
-		const { dispatch } = this.props
-
-		this.handleComplete()
-		dispatch(routeActions.push(this.navLinks.next))
-		// if audio has completed a ref then keep it playing for the next one
-		this.setState({ audioPlaying: true })
-	}
 
 	render() {
 		const { plan, location: { query: { day, content } }, bible, hosts, auth, dispatch } = this.props
@@ -200,6 +200,8 @@ class PlanReader extends Component {
 					totalContentsNum={this.totalContentsNum}
 					isFinalContent={this.isFinalReadingForDay}
 					onHandleComplete={this.handleComplete}
+					// if we're rendering the full chapter from button click, let's
+					// update the arrow positioning
 					updateStyle={!showChapterButton}
 				/>
 				<div className='plan-reader-content'>
@@ -235,7 +237,14 @@ class PlanReader extends Component {
 }
 
 PlanReader.propTypes = {
-
+	plan: PropTypes.object.isRequired,
+	bible: PropTypes.object.isRequired,
+	location: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
+	hosts: PropTypes.object.isRequired,
+	auth: PropTypes.object.isRequired,
+	children: PropTypes.node.isRequired,
+	localizedLink: PropTypes.func.isRequired,
 }
 
 PlanReader.defaultProps = {

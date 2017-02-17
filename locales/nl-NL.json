@@ -1,4 +1,5 @@
 {
+	"change": "Change",
 	"ui.yes button": "Ja",
 	"ui.no button": "Nee",
 	"plans.plans": "Leesplannen",
@@ -390,8 +391,8 @@
 	"Reader.read reference": "{reference} lezen",
 	"Reader.read chapter": "Lees het hele hoofdstuk",
 	"Reader.plan title": "Gratis leesplannen en overdenkingen",
-	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
-	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
+	"Reader.plan title ref": "Gratis leesplannen en overdenkingen die te maken hebben met {reference}",
+	"Reader.plan subtitle": "Leesplannen verdelen je bijbellezingen in beheersbare dagelijkse porties. De plannen bevatten vaak ondersteunende toelichting, geluidsbestanden of video's. Hoe je ze ook noemt, leesplannen zijn een beproefde methode om de Bijbel een vanzelfsprekend onderdeel van je dagelijks leven te maken.",
 	"Reader.meta.mobile.title": "De Bijbel app",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Parallel",

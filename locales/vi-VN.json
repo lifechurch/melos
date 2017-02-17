@@ -1,4 +1,5 @@
 {
+	"change": "Change",
 	"ui.yes button": "Có",
 	"ui.no button": "Không",
 	"plans.plans": "Kế hoạch",
@@ -386,8 +387,8 @@
 	"Reader.read reference": "Đọc {reference}",
 	"Reader.read chapter": "Đọc cả đoạn",
 	"Reader.plan title": "Các kế hoạch đọc và tĩnh nguyện miễn phí",
-	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
-	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
+	"Reader.plan title ref": "Các kế hoạch đọc và tĩnh nguyện miễn phí liên quan đến{reference}",
+	"Reader.plan subtitle": "Các Kế Hoạch Kinh Thánh làm cho thuần thục việc đọc Kinh Thánh của bạn vào phần quản lý hàng ngày. Kế hoạch thường bao gồm sự hỗ trợ tĩnh nguyện, audio, hoặc lựa chọn video. Cho dù bạn gọi các kế hoạch đó là Kế Hoạch đọc Kinh Thánh, Kế hoạch đọc hoặc tĩnh nguyện, các kế hoạch là một sự chứng minh rằng bạn có thể làm cho Kinh Thánh trở thành một phần tự nhiên trong cuộc sống hàng ngày của bạn. ",
 	"Reader.meta.mobile.title": "App Kinh Thánh",
 	"Reader.meta.site.title": "Bible.com/vi",
 	"Reader.header.parallel": "Đọc hai bản cùng lúc",

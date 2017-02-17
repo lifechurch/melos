@@ -24,6 +24,13 @@ class PlanRef extends Component {
 		this.refToThis = this
 	}
 
+	handleGetChapter = () => {
+		const { getChapter } = this.props
+		if (typeof getChapter === 'function') {
+			getChapter()
+		}
+	}
+
 	/**
 	 * this updates this.state.verseSelection and this.state.deletableColors
 	 * for the VerseAction component, and also populates app state with the required
@@ -70,14 +77,7 @@ class PlanRef extends Component {
 		handleVerseSelectionClear(this.refToThis, refToChapter)
 	}
 
-	getChapter = () => {
-		const { getChapter } = this.props
-		if (typeof getChapter === 'function') {
-			getChapter()
-		}
-	}
-
-	changeReader = () => {
+	handleChangeReader = () => {
 		// this will tell the bible component to render
 		// with the chapter picker open, because the user
 		// clicked change reference/version
@@ -103,7 +103,6 @@ class PlanRef extends Component {
 			audioStop,
 			audioPlaying,
 			hosts,
-			auth
 		} = this.props
 
 		// these state variables are set and maintained by the
@@ -121,9 +120,9 @@ class PlanRef extends Component {
 					<a
 						href={bibleChapterLink}
 						className='pill-heading'
-						onClick={this.changeReader}
+						onClick={this.handleChangeReader}
 					>
-						Change
+						<FormattedMessage id='change' />
 					</a>
 				</div>
 				<AudioPopup
@@ -144,9 +143,9 @@ class PlanRef extends Component {
 		if (showChapterButton) {
 			fullChapButton = (
 				<div className='buttons'>
-					<a className='chapter-button solid-button' onClick={this.getChapter}>
+					<button className='chapter-button solid-button' onClick={this.handleGetChapter}>
 						<FormattedMessage id='Reader.read chapter' />
-					</a>
+					</button>
 				</div>
 			)
 		}
@@ -194,24 +193,39 @@ PlanRef.propTypes = {
 	highlightColors: PropTypes.array,
 	momentsLabels: PropTypes.array,
 	content: PropTypes.string,
-	version: PropTypes.object,
+	version: PropTypes.object.isRequired,
 	refHeading: PropTypes.string,
 	bibleChapterLink: PropTypes.string,
 	bibleReferences: PropTypes.array,
 	bibleVerses: PropTypes.object,
 	textDirection: PropTypes.string,
 	showChapterButton: PropTypes.bool,
-	audio: PropTypes.object,
 	onAudioComplete: PropTypes.func,
 	audioStart: PropTypes.number,
 	audioStop: PropTypes.number,
 	audioPlaying: PropTypes.bool,
 	hosts: PropTypes.object,
-	auth: object,
+	dispatch: PropTypes.func.isRequired,
 }
 
 PlanRef.defaultProps = {
+	getChapter: () => {},
 	audio: null,
+	verseColors: [],
+	highlightColors: [],
+	momentsLabels: [],
+	content: '',
+	refHeading: '',
+	bibleChapterLink: '',
+	bibleReferences: [],
+	bibleVerses: null,
+	textDirection: 'ltr',
+	showChapterButton: true,
+	onAudioComplete: () => {},
+	audioStart: 0,
+	audioStop: null,
+	audioPlaying: false,
+	hosts: null,
 }
 
 export default PlanRef

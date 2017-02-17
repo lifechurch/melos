@@ -1,4 +1,5 @@
 {
+	"change": "Change",
 	"ui.yes button": "Ano",
 	"ui.no button": "Ne",
 	"plans.plans": "Plány",
@@ -394,8 +395,8 @@
 	"Reader.read reference": "Číst {reference}",
 	"Reader.read chapter": "Číst celou kapitolu",
 	"Reader.plan title": "Bezplatné plány čtení a výkladové poznámky",
-	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
-	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
+	"Reader.plan title ref": "Bezplatné plány čtení Bible a zamyšlení souvísející s {reference}",
+	"Reader.plan subtitle": "Plány čtení Bible dělí vaše čtení Písma na části, které lze za den zvládnout. Plány čtení často obsahují výběr povzbuzujících výkladů, nahrávek nebo videí. Jakkoliv je nazýváte: plány čtení, biblické plány, zamyšlení, vždy se jedná o prověřenou cestu jak zajistit, aby Bible byla přirozenou součástí vašeho každého dne.",
 	"Reader.meta.mobile.title": "Aplikace Bible",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Paralelní",

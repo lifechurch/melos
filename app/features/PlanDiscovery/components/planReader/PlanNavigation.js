@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router'
 import Viewport from '../../../../lib/viewportUtils'
-import ActionCreators from '../../actions/creators'
 import CheckMark from '../../../../components/CheckMark'
 import NavArrows from '../../../Bible/components/content/NavArrows'
 import Header from '../../../Bible/components/header/Header'
@@ -23,7 +22,7 @@ class PlanNavigation extends Component {
 		this.viewport.registerListener('resize', this.styleArrows)
 	}
 
-	componentDidUpdate(prevProps, prevState) {
+	componentDidUpdate(prevProps) {
 		const { whichContent, updateStyle } = this.props
 		if (whichContent !== prevProps.whichContent || (updateStyle && updateStyle !== prevProps.updateStyle)) {
 			this.styleArrows()
@@ -110,22 +109,26 @@ class PlanNavigation extends Component {
 }
 
 PlanNavigation.propTypes = {
-	planImgUrl: PropTypes.string,
-	planName: PropTypes.string,
-	day: PropTypes.oneOfType(['string', 'number']),
+	planImgUrl: PropTypes.string.isRequired,
+	planName: PropTypes.string.isRequired,
+	day: PropTypes.oneOfType(['string', 'number']).isRequired,
 	next: PropTypes.string,
 	previous: PropTypes.string,
 	dayBasePath: PropTypes.string,
-	whichContent: PropTypes.number,
-	totalContentsNum: PropTypes.number,
-	isFinalContent: PropTypes.bool,
+	whichContent: PropTypes.number.isRequired,
+	totalContentsNum: PropTypes.number.isRequired,
+	isFinalContent: PropTypes.bool.isRequired,
 	onHandleComplete: PropTypes.func,
-	localizedLink: PropTypes.func,
+	localizedLink: PropTypes.func.isRequired,
 	updateStyle: PropTypes.bool,
 }
 
 PlanNavigation.defaultProps = {
-
+	next: null,
+	previous: null,
+	dayBasePath: '',
+	onHandleComplete: () => {},
+	updateStyle: false,
 }
 
 export default PlanNavigation
