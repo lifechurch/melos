@@ -32,6 +32,9 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isDayComplete = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
 			const isSharedDayComplete = new RegExp('^\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
 
+			const isLookinside = new RegExp('^\/lookinside\/[0-9]+-[^\r\n\t\f\/ ]+')
+			const isLookinsideSample = new RegExp('^\/lookinside\/[0-9]+-[^\r\n\t\f\/ ]+\/read')
+
 			let auth = false
 			if (sessionData.email && sessionData.password) {
 				auth = { username: sessionData.email, password: sessionData.password }
@@ -89,6 +92,17 @@ export default function loadData(params, startingState, sessionData, store, Loca
 
 			} else if (isCompletedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
+
+			} else if (isLookinsideSample.test(params.url)) {
+				console.log('walkebhfwkjghberjghbwairng')
+				resolve()
+			} else if (isLookinside.test(params.url)) {
+				console.log('LOOKINSIDE', params)
+				store.dispatch(ActionCreator.readingplanView({
+					id: params.id,
+					language_tag: Locale.planLocale,
+				}, auth)).then((d) => { resolve() })
+
 
 			} else if (params.id) {
 				if (isCollection.test(params.url)) {

@@ -22,6 +22,9 @@ import DayCompleteView from '../../containers/DayCompleteView'
 import SharedDayCompleteView from '../../containers/SharedDayCompleteView'
 import PlanCompleteView from '../../containers/PlanCompleteView'
 
+import LookinsideView from '../../containers/LookinsideView'
+import LookinsideSample from '../../containers/LookinsideSample'
+
 /**
  * get the routes for reading plans
  *
@@ -84,6 +87,11 @@ export default function (
 			{/* this is also day complete, but an unauthed page with the user id in the url as params */}
 			<Route path="(:lang/)reading-plans/:id(:slug)/day/:day/completed" component={SharedDayCompleteView} onEnter={requireSharedDayComplete} />
 			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
+
+			{/* ABS LOOKINSIDE */}
+			<Route path="lookinside/:id(:slug)" component={LookinsideView} onEnter={requirePlanView}>
+				<Route path="read" component={LookinsideSample} />
+			</Route>
 		</Route>
 	)
 }
