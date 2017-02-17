@@ -131,8 +131,10 @@ class PlanRef extends Component {
 					hosts={hosts}
 					enabled={audio && 'id' in audio}
 					onAudioComplete={onAudioComplete}
-					startTime={audioStart}
-					stopTime={audioStop}
+					// if we're not rendering the entire chapter, the audio should start
+					// at the verse start, otherwise, it starts at the beginning of the chapter
+					startTime={showChapterButton ? audioStart : 0}
+					stopTime={showChapterButton ? audioStop : null}
 					playing={audioPlaying}
 				/>
 			</div>

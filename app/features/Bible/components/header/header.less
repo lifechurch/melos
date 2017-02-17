@@ -27,6 +27,8 @@
 }
 .react-header.fixed, .react-header.fixed::after {
 	position: fixed !important;
+	// the rails css tries to set .fixed class to bottom 0
+	bottom: initial;
 }
 
 .show-fixed {
@@ -80,6 +82,9 @@
 
 
 
+
+
+// BIBLE HEADER
 @media @large-up {
 	.version-picker-container, .chapter-picker-container {
 		margin-right: 45px;

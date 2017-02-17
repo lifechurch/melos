@@ -87,7 +87,7 @@
 	}
 	@media @large-up {
 		.next-arrow, .prev-arrow {
-			top: 50%;
+			bottom: 45%;
 		}
 		.next-arrow {
 			right: 17%;
@@ -98,7 +98,7 @@
 	}
 	@media @medium-only {
 		.next-arrow, .prev-arrow {
-			top: 50%;
+			bottom: 45%;
 		}
 		.next-arrow {
 			right: 15px;
@@ -109,7 +109,7 @@
 	}
 	@media @small-only {
 		.next-arrow, .prev-arrow {
-			bottom: 60px;
+			bottom: 60px !important;
 		}
 		.next-arrow {
 			right: 10px;
@@ -121,6 +121,7 @@
 	.next-arrow, .prev-arrow {
 		position: fixed;
 		padding-bottom: 2px;
+		z-index: 1;
 	}
 
 	.next-arrow {
@@ -131,14 +132,16 @@
 	}
 
 }
-.circle-buttons.checkmark {
-	background-color: @green !important;
-	padding-top: 2px;
-}
-.circle-buttons.next-arrow {
-	background-color: @green !important;
-	polygon {
-		fill: white !important;
+.plan-nav {
+	.circle-buttons.checkmark {
+		background-color: @green !important;
+		padding-top: 2px;
+	}
+	.circle-buttons.next-arrow {
+		background-color: @green !important;
+		polygon {
+			fill: white !important;
+		}
 	}
 }
 .circle-buttons {
@@ -151,9 +154,9 @@
 	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.23);
 }
 .circle-buttons:active {
-	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
-	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
 	background: whitesmoke;
 	border: solid 1px whitesmoke;
 }

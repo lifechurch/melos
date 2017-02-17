@@ -9,6 +9,7 @@ function NavArrows(props) {
 		nextURL,
 		customPrevious,
 		customNext,
+		bottomPos,
 		onNextClick,
 		onPrevClick,
 		leftClass,
@@ -21,6 +22,13 @@ function NavArrows(props) {
 
 	let left, right = null
 	let previousIcon, nextIcon = null
+	let style = {}
+
+	if (bottomPos) {
+		style = {
+			bottom: bottomPos
+		}
+	}
 
 	if (customPrevious) {
 		previousIcon = customPrevious
@@ -30,7 +38,7 @@ function NavArrows(props) {
 				key='left'
 				dir='left'
 				fill='#888888'
-				containerClass='prev-arrow circle-buttons'
+				containerClass='circle-buttons'
 				arrowClass='reader-arrow'
 				width={18}
 				height={35}
@@ -45,7 +53,7 @@ function NavArrows(props) {
 				key='right'
 				dir='right'
 				fill='#888888'
-				containerClass='next-arrow circle-buttons'
+				containerClass='circle-buttons'
 				arrowClass='reader-arrow'
 				width={18}
 				height={35}
@@ -79,8 +87,8 @@ function NavArrows(props) {
 
 	return (
 		<div className='reader-arrows'>
-			{ left }
-			{ right }
+			<div className='prev-arrow' style={style}>{ left }</div>
+			<div className='next-arrow' style={style}>{ right }</div>
 		</div>
 	)
 }
@@ -101,6 +109,7 @@ NavArrows.propTypes = {
 	onPrevClick: PropTypes.func,
 	leftClass: PropTypes.string,
 	rightClass: PropTypes.string,
+	bottomPos: PropTypes.string,
 }
 
 NavArrows.defaultProps = {
@@ -112,6 +121,7 @@ NavArrows.defaultProps = {
 	onPrevClick: null,
 	leftClass: null,
 	rightClass: null,
+	bottomPos: null,
 }
 
 export default NavArrows

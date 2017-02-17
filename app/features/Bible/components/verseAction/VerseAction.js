@@ -19,7 +19,6 @@ class VerseAction extends Component {
 		this.handleHighlight = ::this.handleHighlight
 		this.openMe = ::this.openMe
 		this.closeMe = ::this.closeMe
-		this.handleMomentContainerClose = ::this.handleMomentContainerClose
 	}
 
 	handleActionClick(e) {
@@ -51,7 +50,8 @@ class VerseAction extends Component {
 
 	}
 
-	handleMomentContainerClose(closeVerseAction = false) {
+	handleMomentContainerClose = (closeVerseAction = false) => {
+		console.log('wrgbekrjhgberjhgb')
 		this.setState({ momentContainerOpen: false })
 		if (closeVerseAction) {
 			this.handleClose()

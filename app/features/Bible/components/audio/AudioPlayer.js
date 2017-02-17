@@ -86,7 +86,6 @@ class AudioPlayer extends Component {
 	componentDidUpdate(prevProps, prevState) {
 		const { audio, startTime, stopTime } = this.props
 		const { playing } = this.state
-
 		const prevaudioRef = 	prevProps.audio && 'download_urls' in prevProps.audio ?
 													prevProps.audio.download_urls[Object.keys(prevProps.audio.download_urls)[0]]
 													: null
@@ -97,7 +96,7 @@ class AudioPlayer extends Component {
 		if (audioRef !== prevaudioRef) {
 			this.handlePlayerSrcLoad(audioRef, playing)
 		}
-		if (startTime && stopTime && startTime !== prevProps.startTime) {
+		if (startTime !== prevProps.startTime) {
 			this.player.currentTime = startTime
 			this.setState({
 				currentTime: startTime,

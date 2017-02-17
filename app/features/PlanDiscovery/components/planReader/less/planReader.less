@@ -38,11 +38,15 @@
 	}
 }
 
-.devo-content {
-	margin-top: 65px;
-}
-.plan-ref {
-	margin-top: 30px;
+.plan-reader-content {
+	margin-top: 60px;
+
+	@media @small-only {
+		.buttons {
+			width: 100%;
+			justify-content: center;
+		}
+	}
 }
 
 .pill-heading {
@@ -78,14 +82,18 @@
 	.trigger-button {
 		z-index: 0;
 		position: absolute;
-		top: -4px;
+		top: -6px;
 		right: 50px;
+	}
+	.open {
+		border: none;
+		background-color: initial;
 	}
 	.modal {
 		.absolute-horizontal-center;
 		margin-left: 0 !important;
 		z-index: 7;
-		top: -30px !important;
+		top: -61px !important;
 	}
 
 }

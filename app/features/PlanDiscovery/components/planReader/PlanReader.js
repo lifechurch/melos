@@ -199,6 +199,7 @@ class PlanReader extends Component {
 					totalContentsNum={this.totalContentsNum}
 					isFinalContent={this.isFinalReadingForDay}
 					onHandleComplete={this.handleComplete}
+					updateStyle={!showChapterButton}
 				/>
 				<div className='plan-reader-content'>
 					{

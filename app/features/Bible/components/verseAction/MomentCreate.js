@@ -269,9 +269,9 @@ class MomentCreate extends Component {
 		return (
 			<div className='verse-action-create'>
 				<CustomScroll allowOutsideScroll={false}>
-					<div className='row large-6'>
+					<div className='content row large-6'>
 						<div className='heading vertical-center'>
-							<div className='columns medium-4 cancel'><XMark onClick={this.handleClose} width={18} height={18} /></div>
+							<div className='columns medium-4 cancel' onClick={this.handleClose}><XMark width={18} height={18} /></div>
 							<div className='columns medium-4 title'>{ createHeader }</div>
 							<div className='columns medium-4 save'>
 								{

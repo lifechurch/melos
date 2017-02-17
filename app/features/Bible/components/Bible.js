@@ -87,7 +87,7 @@ class Bible extends Component {
 	}
 
 // TODO: use readerUtils for this
-	handleVerseSelect(verseSelection) {
+	handleVerseSelect = (verseSelection) => {
 		const { hosts, bible: { version: { id, local_abbreviation }, chapter: { reference: { human, usfm } }, verseColors }, dispatch } = this.props
 		const refUrl = `${hosts.railsHost}/${id}/${usfm}.${verseSelection.human}`
 
@@ -209,7 +209,7 @@ class Bible extends Component {
 		const viewport = this.viewportUtils.getViewport()
 		// if we're actually going to use this style, let's do the calculations and set it
 		// i.e. we're on a mobile screen
-		if (parseInt(viewport.width) <= 599) {
+		if (parseInt(viewport.width, 10) <= 599) {
 
 			// the modal is the absolute positioned element that shows the dropdowns
 			const modalPos = this.viewportUtils.getElement(document.getElementsByClassName('modal')[0])
