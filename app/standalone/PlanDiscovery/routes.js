@@ -34,6 +34,7 @@ import PlanCompleteView from '../../containers/PlanCompleteView'
  * @param      {function}  requireSavedPlans           The require saved plans
  * @param      {function}  requireCompletedPlans       The require completed plans
  * @param      {function}  requireSubscribedPlan       The require subscribed plan
+ * @param			 {function}  requireSamplePlan					 The require sample plan
  * @return     {Node}  { description_of_the_return_value }
  */
 export default function (
@@ -48,14 +49,19 @@ export default function (
 		requireSubscribedPlan,
 		requirePlanReferences,
 		requirePlanCompleteData,
-		requireSharedDayComplete,
-		requirePlanView
+		requirePlanView,
+		requireSamplePlan
 	) {
 	return (
 		<Route path="/">
 			<Route path="(:lang/)reading-plans" component={PlansView}>
 				<IndexRoute component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
-				<Route path=":id(-:slug)" component={AboutPlanView} onEnter={requirePlanData} />
+				<Route path=":id(-:slug)">
+					<IndexRoute component={AboutPlanView} onEnter={requirePlanData} />
+					<Route path="day/:day" component={Plan} onEnter={requireSamplePlan} >
+						<IndexRoute component={PlanDay} />
+					</Route>
+				</Route>
 			</Route>
 			<Route path="(:lang/)reading-plans-collection" component={PlansView}>
 				<Route path=":id(-:slug)" component={PlanCollectionView} onEnter={requirePlanCollectionData} />
@@ -71,8 +77,8 @@ export default function (
 				<Route path="completed-reading-plans" component={MyCompletedPlans} onEnter={requireCompletedPlans} />
 				<Route path="reading-plans" component={MySubscribedPlans} onEnter={requireSubscribedPlans} />
 			</Route>
-			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan} onEnter={requireSubscribedPlan}>
-				<IndexRoute component={PlanDay} onChange={requirePlanReferences} />
+			<Route path="(:lang/)users/:username/reading-plans/:id(-:slug)" component={Plan} onChange={requireSubscribedPlan} onEnter={requireSubscribedPlan}>
+				<IndexRoute component={PlanDay} />
 				<Route path="edit" component={PlanSettings} />
 				<Route path="calendar" component={PlanCalendar} />
 			</Route>
@@ -82,7 +88,7 @@ export default function (
 			</Route>
 			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/day/:day/completed" component={DayCompleteView} onEnter={requirePlanView} />
 			{/* this is also day complete, but an unauthed page with the user id in the url as params */}
-			<Route path="(:lang/)reading-plans/:id(:slug)/day/:day/completed" component={SharedDayCompleteView} onEnter={requireSharedDayComplete} />
+			<Route path="(:lang/)reading-plans/:id(:slug)/day/:day/completed" component={SharedDayCompleteView} />
 			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
 		</Route>
 	)

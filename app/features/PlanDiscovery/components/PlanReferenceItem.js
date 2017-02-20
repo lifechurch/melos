@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 
 import Circle from '../../../components/Circle'
 import CheckMark from '../../../components/CheckMark'
+import { getSelectionString } from '../../../lib/usfmUtils'
 
 class PlanReferenceItem extends Component {
 	constructor(props) {
@@ -21,11 +22,22 @@ class PlanReferenceItem extends Component {
 	}
 
 	render() {
-		const { reference, day, content, link, completedRefs, iconStyle } = this.props
-		const itemLink = { pathname: `${link}/ref`, query: { day, content } }
+		const { reference, day, link, bibleLink, completedRefs, iconStyle, mode } = this.props
 		const { usfm, human } = reference
 		const refString = usfm.join('+')
 		const isComplete = completedRefs.indexOf(refString) !== -1
+		const itemLink = { pathname: `${link}/ref`, query: { day } }
+
+		let itemBibleLink
+		if (mode === 'sample') {
+			if (usfm[0].split('.').length === 2) {
+				// Two pieces indicates full chapter
+				itemBibleLink = usfm[0]
+			} else {
+				// Three pieces indicates verses
+				itemBibleLink = `${bibleLink}/${usfm[0].split('.').slice(0, 2).join('.')}.${getSelectionString(usfm)}`
+			}
+		}
 
 		let icon
 		if (isComplete) {
@@ -36,10 +48,15 @@ class PlanReferenceItem extends Component {
 
 		return (
 			<li className="li-right">
-				<a tabIndex={0} onClick={this.handleRefComplete}>
-					{icon}
-				</a>
-				<Link to={itemLink}>{human}</Link>
+				{mode === 'subscription' &&
+					<a tabIndex={0} onClick={this.handleRefComplete}>
+						{icon}
+					</a>
+				}
+				{ mode === 'subscription'
+					? <Link to={itemLink}>{human}</Link>
+					: <a tabIndex={0} href={itemBibleLink}>{human}</a>
+				}
 			</li>
 		)
 	}
@@ -47,12 +64,14 @@ class PlanReferenceItem extends Component {
 
 PlanReferenceItem.propTypes = {
 	link: PropTypes.string.isRequired,
+	bibleLink: PropTypes.string.isRequired,
 	reference: PropTypes.object.isRequired,
 	day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	content: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	handleCompleteRef: PropTypes.func.isRequired,
 	completedRefs: PropTypes.array.isRequired,
-	iconStyle: PropTypes.object.isRequired
+	iconStyle: PropTypes.object.isRequired,
+	mode: PropTypes.oneOf(['sample', 'subscription', 'about']).isRequired
 }
 
 PlanReferenceItem.defaultProps = {

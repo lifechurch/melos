@@ -1,6 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
 import Immutable from 'immutable'
+import { Link } from 'react-router'
+import ActionCreators from '../actions/creators'
+import Carousel from '../../../components/Carousel/Carousel'
+import Image from '../../../components/Carousel/Image'
 
 class ShareWidget extends Component {
 
