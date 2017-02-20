@@ -91,6 +91,7 @@ class Plan extends Component {
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const version = cookie.load('version') || '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
+		const myPlansLink = localizedLink(`/users/${auth.userData.username}/reading-plans`)
 		const bibleLink = localizedLink(`/bible/${version}`)
 		const isSaved = !!plan.saved === true
 
@@ -110,7 +111,7 @@ class Plan extends Component {
 		} else {
 			// Got Here via Plan Subscription
 			mode = 'subscription'
-			subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
+			subscriptionLink = localizedLink(`${myPlansLink}/${plan.id}-${plan.slug}`)
 			day = parseInt(location.query.day, 10)
 
 			// if day is not valid, calculate based on start_dt
@@ -187,6 +188,7 @@ class Plan extends Component {
 						</div>
 					</div>
 					{children && React.cloneElement(children, {
+						id: plan.id,
 						plan,
 						dispatch,
 						auth,
@@ -199,9 +201,13 @@ class Plan extends Component {
 						aboutLink,
 						startLink,
 						bibleLink,
+						myPlansLink,
 						devoCompleted,
 						hasDevo,
 						isSaved,
+						isPrivate: plan.private,
+						isEmailDeliveryOn: (typeof plan.email_delivery === 'string'),
+						emailDelivery: plan.email_delivery,
 						handleCompleteRef: this.handleCompleteRef
 					})}
 				</div>

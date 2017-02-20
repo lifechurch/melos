@@ -259,11 +259,10 @@ router.post('/', urlencodedParser, (req, res) => {
 
 				function finish() {
 					const RootComponent = getRootComponent(feature)
-
 					getRenderProps(feature, params.url).then((renderProps) => {
 						let html = null
 						try {
-							 html = renderToString(<IntlProvider locale={ (Locale.locale2 == 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
+							html = renderToString(<IntlProvider locale={ (Locale.locale2 == 'mn') ? Locale.locale2 : Locale.locale} messages={Locale.messages}><Provider store={store}><RootComponent {...renderProps} /></Provider></IntlProvider>)
 						} catch (ex) {
 							return res.status(500).send({ error: 3, message: `Could Not Render ${feature} view`, ex, stack: ex.stack })
 						}
