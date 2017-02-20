@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import Helmet from 'react-helmet'
 import moment from 'moment'
-import { FormattedHTMLMessage } from 'react-intl'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import cookie from 'react-cookie'
 import Immutable from 'immutable'
 
@@ -87,49 +87,92 @@ class Plan extends Component {
 	}
 
 	render() {
-		const { plan, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
+		const { plan, dispatch, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
-		const subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
+		const version = cookie.load('version') || '1'
 		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
-		let day = parseInt(location.query.day, 10)
-		if (!day || isNaN(day)) {
-			const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
-			if (calculatedDay > plan.total_days) {
-				day = plan.total_days
-			} else {
-				day = calculatedDay
+		const bibleLink = localizedLink(`/bible/${version}`)
+		const isSaved = !!plan.saved === true
+
+		// This component can be reached two ways, Plan Subscription and Plan Sample
+		//  Depending on how we get here, we need to parse the initial variable values
+		//  differently.
+		let day, mode, metaTitle, metaDesc, subscriptionLink
+
+		if ('day' in params) {
+			// Got Here via Plan Sample
+			mode = 'sample'
+			metaTitle = `${plan.name[language_tag] || plan.name.default} - ${plan.about.text[language_tag] || plan.about.text.default}`
+			metaDesc = `${plan.about.text[language_tag] || plan.about.text.default}`
+			day = parseInt(params.day.toString(), 10)
+			subscriptionLink = aboutLink
+
+		} else {
+			// Got Here via Plan Subscription
+			mode = 'subscription'
+			subscriptionLink = localizedLink(`/users/${auth.userData.username}/reading-plans/${plan.id}-${plan.slug}`)
+			day = parseInt(location.query.day, 10)
+
+			// if day is not valid, calculate based on start_dt
+			if (!day || isNaN(day)) {
+				const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
+				if (isNaN(calculatedDay)) {
+					day = 1
+				} else if (calculatedDay > plan.total_days) {
+					day = plan.total_days
+				} else {
+					day = calculatedDay
+				}
 			}
 		}
+
 		const dayData = plan.calendar[day - 1]
-		const devoCompleted = dayData.additional_content.completed === true
+		const devoCompleted = (mode === 'subscription') ? dayData.additional_content.completed === true : false
 		const hasDevo = dayHasDevo(dayData.additional_content)
 
-		let startLink
-		if (hasDevo) {
-			startLink = { pathname: `${subscriptionLink}/devo`, query: { day } }
-		} else {
-			startLink = { pathname: `${subscriptionLink}/ref`, query: { day, content: 0 } }
+		let startLink = ''
+		if (mode === 'subscription') {
+			if (hasDevo) {
+				startLink = { pathname: `${subscriptionLink}/devo`, query: { day } }
+			} else {
+				startLink = { pathname: `${subscriptionLink}/ref`, query: { day, content: 0 } }
+			}
 		}
 
 		return (
 			<div className="subscription-show">
 				<Helmet
-					title={`${plan.name[language_tag] || plan.name.default} - ${plan.about.text[language_tag] || plan.about.text.default}`}
+					title={metaTitle}
 					meta={[
-						{ name: 'description', content: plan.about.text[language_tag] || plan.about.text.default }
+						{ name: 'description', content: metaDesc }
 					]}
 				/>
 				<div className="plan-overview">
 					<div className="row">
 						<div className="header columns large-8 medium-8 medium-centered">
-							<div className="back">
-								<Link to={`/users/${auth.userData.username}/reading-plans`}>
-									<FormattedHTMLMessage id="plans.plans back" />
-								</Link>
-							</div>
-							<div className="settings">
-								<div style={{ float: 'left' }}><ShareWidget /></div>
-								<PlanMenu subscriptionLink={subscriptionLink} aboutLink={aboutLink} onCatchUp={this.handleCatchUp} />
+							<div className="row">
+								<div className="columns medium-4">
+									<Link to={`/users/${auth.userData.username}/reading-plans`}>
+										<FormattedHTMLMessage id="plans.plans back" />
+									</Link>
+								</div>
+
+								<div className="columns medium-4 text-center" style={{ fontSize: 11 }}>
+									{mode === 'sample'
+										? <FormattedMessage id="plans.sample" />
+										: <span>&nbsp;</span>
+									}
+								</div>
+								<div className="columns medium-4 text-right">
+									<div><ShareWidget /></div>
+									{(mode === 'subscription') &&
+										<PlanMenu
+											subscriptionLink={subscriptionLink}
+											aboutLink={aboutLink}
+											onCatchUp={this.handleCatchUp}
+										/>
+									}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -143,7 +186,24 @@ class Plan extends Component {
 							<h3 className="plan-title">{ plan.name[language_tag] || plan.name.default }</h3>
 						</div>
 					</div>
-					{children && React.cloneElement(children, { day, dayData, calendar: plan.calendar, totalDays: plan.total_days, subscriptionLink, startLink, devoCompleted, hasDevo, handleCompleteRef: this.handleCompleteRef })}
+					{children && React.cloneElement(children, {
+						plan,
+						dispatch,
+						auth,
+						mode,
+						day,
+						dayData,
+						calendar: plan.calendar,
+						totalDays: plan.total_days,
+						subscriptionLink,
+						aboutLink,
+						startLink,
+						bibleLink,
+						devoCompleted,
+						hasDevo,
+						isSaved,
+						handleCompleteRef: this.handleCompleteRef
+					})}
 				</div>
 			</div>
 		)

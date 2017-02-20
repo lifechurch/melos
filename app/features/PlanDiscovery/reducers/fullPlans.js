@@ -29,7 +29,11 @@ export default function reducer(state = {}, action) {
 			return (function bibleVersesSuccess() {
 				const { params: { plan_id, plan_content, plan_day }, response: verse } = action
 				if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id]) {
-					const plan = Immutable.fromJS(state[plan_id]).setIn(['calendar', plan_day - 1, 'reference_content', plan_content], verse.verses[0]).toJS()
+					const plan = Immutable
+						.fromJS(state[plan_id])
+						.setIn(['calendar', plan_day - 1, 'reference_content', plan_content], verse.verses[0])
+						.setIn(['calendar', plan_day - 1, 'hasReferences'], true)
+						.toJS()
 					return Immutable.fromJS(state).set(plan.id, plan).toJS()
 				}
 				return state
@@ -100,6 +104,32 @@ export default function reducer(state = {}, action) {
 			}
 
 			return state
+
+		case type('planSubscribeSuccess'):
+			return (function planSubscribeSuccess() {
+				const inStatePlan = state[action.params.id] || { id: action.params.id }
+				const plan = Immutable.fromJS(inStatePlan).set('dirtySubscription', true).toJS()
+				return Immutable.fromJS(state).set(action.params.id, plan).toJS()
+			}())
+
+		case type('allQueueItemsSuccess'):
+			return (function allQueueItemsSuccess() {
+				let fullPlans = Immutable.fromJS(state)
+				action.response.reading_plans.forEach((planId) => {
+					fullPlans = fullPlans.mergeDeep({ [planId]: { saved: true } })
+				})
+				return fullPlans.toJS()
+			}())
+
+		case type('planSaveforlaterSuccess'):
+			return (function planSaveforlaterSuccess() {
+				return Immutable.fromJS(state).mergeDeep({ [action.params.id]: { saved: true } }).toJS()
+			}())
+
+		case type('planRemoveSaveSuccess'):
+			return (function planRemoveSaveSuccess() {
+				return Immutable.fromJS(state).mergeDeep({ [action.params.id]: { saved: false } }).toJS()
+			}())
 
 		default:
 			return state

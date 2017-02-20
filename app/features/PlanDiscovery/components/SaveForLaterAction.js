@@ -1,48 +1,67 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
+import { connect } from 'react-redux'
+
 import ActionCreators from '../actions/creators'
-import { Link } from 'react-router'
 import CheckMark from '../../../components/CheckMark'
 
 class SaveForLaterAction extends Component {
+	constructor(props) {
+		super(props)
+		this.handleSaveForLater = this.handleSaveForLater.bind(this)
+	}
 
-	saveForLater(id) {
-		const { dispatch, auth } = this.props
+	handleSaveForLater() {
+		const { dispatch, isLoggedIn, isSaved, id } = this.props
+		const planSelect = () => {
+			dispatch(ActionCreators.planSelect({ id }))
+		}
 
-		if (!auth.isLoggedIn) window.location.replace(`/sign-in`)
-		if (this.props.readingPlan.saved) {
-			dispatch(ActionCreators.readingplanRemoveSave({ id: id }, auth.isLoggedIn))
+		if (!isLoggedIn) window.location.replace('/sign-in')
+		if (isSaved) {
+			dispatch(ActionCreators.readingplanRemoveSave({ id }, isLoggedIn)).then(planSelect)
 		} else {
-			dispatch(ActionCreators.readingplanSaveforlater({ id: id }, auth.isLoggedIn))
+			dispatch(ActionCreators.readingplanSaveforlater({ id }, isLoggedIn)).then(planSelect)
 		}
 	}
 
 	render() {
-		const { readingPlan } = this.props
-
-		var button = this.props.button || false
-
-		if (readingPlan.saved) {
-			if (button) {
-				var saveforlater = <a className='save-for-later button' onClick={this.saveForLater.bind(this, readingPlan.id)}><CheckMark /><FormattedMessage id="plans.saved for later" /> </a>
-			} else {
-				var saveforlater = <a className='save-for-later' onClick={this.saveForLater.bind(this, readingPlan.id)}><CheckMark /><FormattedMessage id="plans.saved for later" /> </a>
-			}
-		} else {
-			if (button) {
-				var saveforlater = <a className='save-for-later button' onClick={this.saveForLater.bind(this, readingPlan.id)}><FormattedMessage id="plans.save for later" /> </a>
-			} else {
-				var saveforlater = <a className='save-for-later' onClick={this.saveForLater.bind(this, readingPlan.id)}><FormattedMessage id="plans.save for later" /> </a>
-			}
-		}
-
+		const { isSaved, isButton } = this.props
 		return (
 			<div className='checkmark-container'>
-				{ saveforlater }
+				<a
+					tabIndex={0}
+					className={`save-for-later ${isButton && 'button'}`}
+					onClick={this.handleSaveForLater}
+				>
+					{isSaved && <CheckMark />}
+					{isSaved
+						? <FormattedMessage id="plans.saved for later" />
+						: <FormattedMessage id="plans.save for later" />
+					}
+				</a>
 				&nbsp;
 			</div>
 		)
 	}
 }
 
-export default SaveForLaterAction
+SaveForLaterAction.propTypes = {
+	dispatch: PropTypes.func.isRequired,
+	isLoggedIn: PropTypes.bool.isRequired,
+	isSaved: PropTypes.bool.isRequired,
+	isButton: PropTypes.bool,
+	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+}
+
+SaveForLaterAction.defaultProps = {
+	isButton: false
+}
+
+function mapStateToProps(state) {
+	return {
+		isLoggedIn: state.auth.isLoggedIn
+	}
+}
+
+export default connect(mapStateToProps)(SaveForLaterAction)

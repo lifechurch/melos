@@ -4,7 +4,7 @@ import PlanReferenceItem from './PlanReferenceItem'
 import PlanDevoItem from './PlanDevoItem'
 
 function PlanReferences(props) {
-	const { references, hasDevo } = props
+	const { references, hasDevo, mode } = props
 
 	const iconStyle = {
 		padding: '1px 2px 3px 0',
@@ -19,7 +19,7 @@ function PlanReferences(props) {
 		return <PlanReferenceItem {...props} reference={reference} key={refIndex} iconStyle={iconStyle} />
 	})
 
-	if (hasDevo) {
+	if (hasDevo && mode === 'subscription') {
 		referenceLinks.unshift(<PlanDevoItem key="devo" {...props} iconStyle={iconStyle} />)
 	}
 
@@ -33,10 +33,11 @@ function PlanReferences(props) {
 PlanReferences.propTypes = {
 	references: PropTypes.object.isRequired,
 	hasDevo: PropTypes.bool,
+	mode: PropTypes.oneOf(['sample', 'subscription', 'about']).isRequired
 }
 
 PlanReferences.defaultProps = {
-	hasDevo: true,
+	hasDevo: true
 }
 
 export default PlanReferences

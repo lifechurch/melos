@@ -28,6 +28,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 
 			const isReadingPlanRef = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/ref')
 			const isReadingPlanDevo = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9a-zA-Z-]+\/devo')
+			const isReadingPlanSample = new RegExp('^\/reading-plans\/[0-9a-zA-Z-]+-[^\r\n\t\f\/ ]+\/day/[0-9]+')
 			const isSubscription = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+')
 
 			let auth = false
@@ -53,6 +54,15 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					day: params.day ? parseInt(params.day, 10) : null,
 					version,
 					content
+				}, auth)).then(() => { resolve() })
+
+			} else if (isReadingPlanSample.test(params.url)) {
+				const version = params.version || cookie.load('version') || '1'
+				store.dispatch(ActionCreator.sampleAll({
+					id: params.id,
+					language_tag: Locale.planLocale,
+					day: params.day,
+					version,
 				}, auth)).then(() => { resolve() })
 
 			} else if (isSubscription.test(params.url)) {

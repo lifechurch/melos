@@ -30,9 +30,10 @@ import PlanRef from '../../features/PlanDiscovery/components/planReader/PlanRef'
  * @param      {function}  requireSavedPlans           The require saved plans
  * @param      {function}  requireCompletedPlans       The require completed plans
  * @param      {function}  requireSubscribedPlan       The require subscribed plan
+ * @param			 {function}  requireSamplePlan					 The require sample plan
  * @return     {Node}  { description_of_the_return_value }
  */
-export default function(
+export default function (
 		requirePlanDiscoveryData,
 		requirePlanCollectionData,
 		requirePlanData,
@@ -42,13 +43,19 @@ export default function(
 		requireSavedPlans,
 		requireCompletedPlans,
 		requireSubscribedPlan,
-		requirePlanReferences
+		requirePlanReferences,
+		requireSamplePlan
 	) {
 	return (
 		<Route path="/">
 			<Route path="(:lang/)reading-plans" component={PlansView}>
 				<IndexRoute component={PlanDiscoveryView} onEnter={requirePlanDiscoveryData} />
-				<Route path=":id(-:slug)" component={AboutPlanView} onEnter={requirePlanData} />
+				<Route path=":id(-:slug)">
+					<IndexRoute component={AboutPlanView} onEnter={requirePlanData} />
+					<Route path="day/:day" component={Plan} onEnter={requireSamplePlan} >
+						<IndexRoute component={PlanDay} />
+					</Route>
+				</Route>
 			</Route>
 			<Route path="(:lang/)reading-plans-collection" component={PlansView}>
 				<Route path=":id(-:slug)" component={PlanCollectionView} onEnter={requirePlanCollectionData} />

@@ -3,7 +3,6 @@ import ActionCreators from '../actions/creators'
 import Carousel from '../../../components/Carousel/Carousel'
 import Image from '../../../components/Carousel/Image'
 import { Link } from 'react-router'
-import PlanActionButtons from '../components/PlanActionButtons'
 import { FormattedMessage } from 'react-intl'
 import AvatarList from '../../../components/AvatarList'
 
@@ -22,11 +21,11 @@ class ShareWidget extends Component {
 	render() {
 		const collapsible = this.props.collapsible || true
 
-		var shareText = null
-		var classes = 'share-panel'
+		let shareText = null
+		let classes = 'share-panel'
 
 		if (collapsible) {
-			shareText = <a onClick={::this.handleClick}><FormattedMessage id='features.EventEdit.components.EventEditNav.share'/></a>
+			shareText = <a onClick={::this.handleClick}><FormattedMessage id='features.EventEdit.components.EventEditNav.share' /></a>
 			if (!this.state.dialogOpen) {
 				// hide the widget
 				classes = 'share-panel ng-hide'
@@ -34,8 +33,8 @@ class ShareWidget extends Component {
 		}
 
 		if (typeof window !== 'undefined') {
-			var interval = setInterval(function() {
-				if (typeof window != 'undefined' && window.addthis
+			var interval = setInterval(() => {
+				if (typeof window !== 'undefined' && window.addthis
 					&& window.addthis.layers && window.addthis.layers.refresh) {
 					clearInterval(interval);
 					window.addthis.layers.refresh()
@@ -47,7 +46,7 @@ class ShareWidget extends Component {
 			<div>
 				{ shareText }
 				<div className={classes}>
-					<div className='video addthis_sharing_toolbox'></div>
+					<div className='video addthis_sharing_toolbox' />
 				</div>
 			</div>
 		)
