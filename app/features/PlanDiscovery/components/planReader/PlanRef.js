@@ -41,37 +41,32 @@ class PlanRef extends Component {
 			hosts,
 			version: { id, local_abbreviation },
 			highlightColors,
+			refHeading,
 			momentsLabels,
-			bibleVerses,
 			verseColors,
 			dispatch
 		} = this.props
-		console.log(bibleVerses, verseSelection)
-		if (bibleVerses) {
-			const bibleVerse = bibleVerses[Object.keys(bibleVerses)[0]]
 
-			const refUrl = `${hosts.railsHost}/${id}/${bibleVerse.usfm[0].split('.').slice(0, 1).join('.')}.${verseSelection.human}`
-			// if we don't have highlight colors yet, populate them
-			if (!Array.isArray(highlightColors)) {
-				dispatch(BibleActionCreator.momentsColors(true))
-			}
-			// if we don't have labels for bookmarks yet, let's populate them
-			console.log(momentsLabels)
-			if (!Array.isArray(momentsLabels)) {
-				dispatch(BibleActionCreator.momentsLabels(true))
-			}
+		const refUrl = `${hosts.railsHost}/${id}/${verseSelection.verses[0]}`
+		// if we don't have highlight colors yet, populate them
+		if (!Array.isArray(highlightColors)) {
+			dispatch(BibleActionCreator.momentsColors(true))
+		}
+		// if we don't have labels for bookmarks yet, let's populate them
+		if (!Array.isArray(momentsLabels)) {
+			dispatch(BibleActionCreator.momentsLabels(true))
+		}
 
-			handleVerseSelect(
+		handleVerseSelect(
 				this.refToThis,
 				verseSelection,
 				refUrl,
 				id,
 				local_abbreviation,
-				bibleVerse.human,
+				refHeading,
 				verseColors,
 				dispatch,
 			)
-		}
 
 	}
 
