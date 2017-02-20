@@ -21,10 +21,12 @@
 
 @import "../components/less/ButtonBar.less";
 @import "../components/less/Toggle.less";
+@import "../components/less/PopupMenu.less";
 @import "../components/less/TriggerButton.less";
 @import "../components/less/card.less";
 @import "../components/less/DropdownTransition.less";
 @import "../components/less/Select.less";
+@import "../components/less/stackedContainer.less";
 
 @import "../features/Bible/components/settings/less/Settings.less";
 @import "../features/Bible/components/audio/less/Audio.less";
@@ -915,7 +917,7 @@ form.locationForm {
 	}
 
 	.content-type {
-		// TODO: Refactor; React generates spans all over the place.
+		// TODO:10 Refactor; React generates spans all over the place.
 		// Some of these styles should only apply to specific elements.
 		margin-top:30px;
 		font-size: 12px;
@@ -2326,4 +2328,17 @@ body.c_references.a_show {
  //    -o-transition: background 0.5s ease-in-out;
  //    transition: background 0.5s ease-in-out;
 	// }
+}
+.buttons {
+	display: inline-flex;
+	flex-wrap: wrap;
+	margin-top: 30px;
+	.chapter-button {
+		border: @thin-grey-border;
+		background-color: white;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		color: @font-grey;
+		margin-right: 15px;
+	}
 }

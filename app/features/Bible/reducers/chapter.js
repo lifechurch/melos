@@ -19,7 +19,7 @@ export default function reducer(state = {}, action) {
 				chapter.next.usfm = chapter.next.usfm[0]
 			}
 			chapter.errors = false
-			return Immutable.fromJS(chapter).toJS()
+			return Immutable.fromJS(chapter).set('showError', action.params.showError || false).toJS()
 
 		default:
 			return state

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import VerseCard from '../../Bible/components/verseAction/bookmark/VerseCard'
-import ReaderArrows from '../../Bible/components/content/ReaderArrows'
+import NavArrows from '../../Bible/components/content/NavArrows'
 import Share from '../../Bible/components/verseAction/share/Share'
 import Helmet from 'react-helmet'
 import CarouselSlideImage from '../../../components/Carousel/CarouselSlideImage'
@@ -18,15 +18,15 @@ class Passage extends Component {
 		let mainVerse, versesCarousel, plansCarousel, metaContent, metaTitle, chapterLink, relatedPlansLink = null
 
 		// main verse and verse cards
-		let verses = []
+		const verses = []
 		if (passage && passage.verses && passage.verses.verses) {
-			let mainVersionID = passage.verses.primaryVersion //this.getMainVersion(passage.verses.verses)
+			const mainVersionID = passage.verses.primaryVersion
 			Object.keys(passage.verses.verses).forEach((key, index) => {
-				let verse = passage.verses.verses[key]
+				const verse = passage.verses.verses[key]
 
 				// if we've found a main version, then let's set the maine verse
 				// to that, otherwise, the main verse is just the first one
-				if (mainVersionID ? verse.versionInfo.id == mainVersionID : index == 0) {
+				if (mainVersionID ? verse.versionInfo.id === mainVersionID : index === 0) {
 					mainVerse = (
 						<div key={key} className='verse'>
 							<a href={`/versions/${verse.versionInfo.id}`}>
@@ -37,7 +37,7 @@ class Passage extends Component {
 							</a>
 							<Link
 								to={`/bible/${verse.versionInfo.id}/${verse.usfm}.${verse.versionInfo.local_abbreviation}`}
-								title={`${intl.formatMessage({ id: "Reader.read reference" }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
+								title={`${intl.formatMessage({ id: 'Reader.read reference' }, { reference: `${verse.human}` })} ${verse.versionInfo.local_abbreviation}`}
 								className='verse-content'
 								dangerouslySetInnerHTML={{ __html: verse.content }}
 							/>
@@ -49,7 +49,7 @@ class Passage extends Component {
 					chapterLink = `/bible/${verse.versionInfo.id}/${verse.chapUsfm}.${verse.versionInfo.local_abbreviation.toLowerCase()}`
 					relatedPlansLink = `/bible/${verse.versionInfo.id}/${verse.usfm}.${params.vabbr}#related-plans`
 				} else {
-					let heading = (
+					const heading = (
 						<a href={`/versions/${verse.versionInfo.id}`}>
 							<h2>
 								<div className='heading'>{ verse.versionInfo.local_abbreviation }</div>
@@ -67,42 +67,42 @@ class Passage extends Component {
 		}
 
 		// reading plans
-		let items = []
+		const items = []
 		if (passage && passage.readingPlans && passage.readingPlans.items) {
 			passage.readingPlans.items.forEach((item) => {
-					let slide = null
+				let slide = null
 
-					if (item.type == 'reading_plan') {
-						let slideLink = localizedLink(`/reading-plans/${item.id}-${item.slug}`)
-						if (item.image_id) {
-							slide = (
-								<div className='radius-5' >
-									<CarouselSlideImage title={item.title}>
-										<Image width={720} height={405} thumbnail={false} imageId={item.image_id} type={item.type} config={passage.configuration.images} />
-									</CarouselSlideImage>
-								</div>
+				if (item.type === 'reading_plan') {
+					const slideLink = localizedLink(`/reading-plans/${item.id}-${item.slug}`)
+					if (item.image_id) {
+						slide = (
+							<div className='radius-5' >
+								<CarouselSlideImage title={item.title}>
+									<Image width={720} height={405} thumbnail={false} imageId={item.image_id} type={item.type} config={passage.configuration.images} />
+								</CarouselSlideImage>
+							</div>
 							)
-						} else {
-							slide = (
-								<div className='radius-5' >
-									<CarouselSlideImage title={item.title}>
-										<Image width={720} height={405} thumbnail={false} imageId='default' type={item.type} config={passage.configuration.images} />
-									</CarouselSlideImage>
-								</div>
+					} else {
+						slide = (
+							<div className='radius-5' >
+								<CarouselSlideImage title={item.title}>
+									<Image width={720} height={405} thumbnail={false} imageId='default' type={item.type} config={passage.configuration.images} />
+								</CarouselSlideImage>
+							</div>
 							)
-						}
-						items.push (
-							<li className="collection-item" key={`item-${item.id}`}>
-								<a
-									href={slideLink}
-									title={`${intl.formatMessage({ id: "plans.about this plan" })}: ${item.title }`}
-								>
-									{slide}
-								</a>
-							</li>
-						)
 					}
-				})
+					items.push(
+						<li className="collection-item" key={`item-${item.id}`}>
+							<a
+								href={slideLink}
+								title={`${intl.formatMessage({ id: 'plans.about this plan' })}: ${item.title}`}
+							>
+								{slide}
+							</a>
+						</li>
+						)
+				}
+			})
 		}
 
 		let plansDiv = null
@@ -134,9 +134,9 @@ class Passage extends Component {
 			prevArrow = (
 				<Link
 					to={`/bible/${params.version}/${passage.verses.previous_verse}.${params.vabbr.toLowerCase()}`}
-					title={``}
+					title={''}
 				>
-					<CarouselArrow width={23} height={23} dir='left' fill='gray'/>
+					<CarouselArrow width={23} height={23} dir='left' fill='gray' />
 				</Link>
 			)
 		}
@@ -145,15 +145,15 @@ class Passage extends Component {
 			nextArrow = (
 				<Link
 					to={`/bible/${params.version}/${passage.verses.next_verse}.${params.vabbr.toLowerCase()}`}
-					title={``}
+					title={''}
 				>
-					<CarouselArrow width={23} height={23} dir='right' fill='gray'/>
+					<CarouselArrow width={23} height={23} dir='right' fill='gray' />
 				</Link>
 			)
 		}
 
 		return (
-			<div className='passage'>
+			<div className='passage reader'>
 				<Helmet
 					title={`${metaTitle}`}
 					meta={[ { name: 'description', content: `${metaContent}` } ]}
@@ -172,9 +172,11 @@ class Passage extends Component {
 					<div className='buttons'>
 						<Link to={chapterLink} className='chapter-button solid-button'><FormattedMessage id='Reader.read chapter' /></Link>
 						<a href={relatedPlansLink} className='chapter-button solid-button'><FormattedMessage id='plans.related plans' /></a>
-						<Share button={
-							<a className='chapter-button solid-button'><FormattedMessage id='features.EventEdit.components.EventEditNav.share' /></a>
-						}/>
+						<Share
+							button={
+								<a className='chapter-button solid-button'><FormattedMessage id='features.EventEdit.components.EventEditNav.share' /></a>
+							}
+						/>
 					</div>
 				</div>
 				<div className='row verses small-12'>

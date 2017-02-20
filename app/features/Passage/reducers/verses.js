@@ -12,6 +12,9 @@ export default function reducer(state = {}, action) {
 			// this represents every promise from the passageLoad function
 			// including some of the plans calls, so we will let the plans reducers handle
 			// those and just handle the verse ones here
+			if (typeof action.data === 'undefined') {
+				return state
+			}
 			action.data.forEach((promise) => {
 				// bible verses call
 				if ('verses' in promise && 'text' in promise) {

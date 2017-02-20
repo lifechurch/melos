@@ -1,5 +1,5 @@
-import type from '../actions/constants'
 import Immutable from 'immutable'
+import type from '../actions/constants'
 
 export default function plansDiscovery(state = {}, action) {
 	switch (action.type) {

@@ -19,19 +19,19 @@ class AudioPlayer extends Component {
 	constructor(props) {
 		super(props)
 
-		this.POST_MESSAGE_URL_ORIGIN = props.hosts.nodeHost || "http://localhost:3000"
-		this.POST_MESSAGE_URL_STANDALONE = props.hosts.railsHost || "http://localhost:8001"
+		this.POST_MESSAGE_URL_ORIGIN = props.hosts.nodeHost || 'http://localhost:3000'
+		this.POST_MESSAGE_URL_STANDALONE = props.hosts.railsHost || 'http://localhost:8001'
 		this.ALLOWED_ORIGINS = [ this.POST_MESSAGE_URL_STANDALONE, this.POST_MESSAGE_URL_ORIGIN ]
 
 		this.playbackSpeeds = [
-			{ value: 0.75, label: "0.75x" },
-			{ value: 1, label: "1x" },
-			{ value: 1.5, label: "1.5x" },
-			{ value: 2, label: "2x" }
+			{ value: 0.75, label: '0.75x' },
+			{ value: 1, label: '1x' },
+			{ value: 1.5, label: '1.5x' },
+			{ value: 2, label: '2x' }
 		]
 
 		if (IS_STANDALONE) {
-			this.state = Object.assign({}, LocalStore.get("standaloneAudioPlayerState"), {
+			this.state = Object.assign({}, LocalStore.get('standaloneAudioPlayerState'), {
 				initialized: false,
 				hasStandalone: false,
 				standaloneWindow: null
@@ -40,14 +40,15 @@ class AudioPlayer extends Component {
 			this.state = {
 				standaloneWindow: null,
 				initialized: false,
-				playing: false,
+				playing: props.playing || false,
 				buffering: false,
 				paused: false,
 				hasError: false,
-				currentTime: 0,
+				currentTime: props.startTime || 0,
+				stopTime: props.stopTime || null,
 				duration: 0,
 				percentComplete: 0,
-				playbackRate: LocalStore.getIn("audio.player.playbackRate") || 1,
+				playbackRate: LocalStore.getIn('audio.player.playbackRate') || 1,
 				hasStandalone: props.hasStandalone || false
 			}
 		}
@@ -57,6 +58,7 @@ class AudioPlayer extends Component {
 		this.handlePlayerError = ::this.handlePlayerError
 		this.handlePlayerPlayRequest = ::this.handlePlayerPlayRequest
 		this.handlePlayerPauseRequest = ::this.handlePlayerPauseRequest
+		this.handlePlayerPlaying = ::this.handlePlayerPlaying
 		this.handlePlayerPlaying = ::this.handlePlayerPlaying
 		this.handlePlayerPause = ::this.handlePlayerPause
 		this.handlePlayerSeekRequest = ::this.handlePlayerSeekRequest
@@ -70,11 +72,53 @@ class AudioPlayer extends Component {
 		this.handleYieldToOrigin = ::this.handleYieldToOrigin
 	}
 
+	componentDidMount() {
+		this.listenForPostMessages()
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { hasStandalone } = this.state
+		if (nextProps.hasStandalone === true && !hasStandalone) {
+			this.handleYieldToStandalone()
+		}
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		const { audio, startTime, stopTime } = this.props
+		const { playing } = this.state
+		const prevaudioRef = 	prevProps.audio && 'download_urls' in prevProps.audio ?
+													prevProps.audio.download_urls[Object.keys(prevProps.audio.download_urls)[0]]
+													: null
+		const audioRef = 	audio && 'download_urls' in audio ?
+											audio.download_urls[Object.keys(audio.download_urls)[0]]
+											: null
+
+		if (audioRef !== prevaudioRef) {
+			this.handlePlayerSrcLoad(audioRef, playing)
+		}
+		if (startTime !== prevProps.startTime) {
+			this.player.currentTime = startTime
+			this.setState({
+				currentTime: startTime,
+				stopTime,
+			})
+		}
+	}
+
+	handlePlayerSrcLoad(src, playAfterLoad) {
+		this.player.querySelector('source').src = src
+		this.player.pause()
+		this.player.load()
+		if (playAfterLoad) {
+			this.player.oncanplaythrough = this.player.play()
+		}
+	}
+
 	handleSpeedChangeRequest(s) {
 		if (typeof s === 'object' && typeof s.value !== 'undefined') {
 			this.player.playbackRate = s.value
-			this.setState({playbackRate: s.value})
-			LocalStore.setIn("audio.player.playbackRate", s.value)
+			this.setState({ playbackRate: s.value })
+			LocalStore.setIn('audio.player.playbackRate', s.value)
 			if (IS_STANDALONE) {
 				window.opener.postMessage({ name: POST_MESSAGE_EVENTS.STANDALONE_SPEED_CHANGE, value: s }, this.POST_MESSAGE_URL_STANDALONE)
 			}
@@ -126,17 +170,32 @@ class AudioPlayer extends Component {
 		this.player.currentTime = this.player.currentTime + increment
 	}
 
+	handleAudioCompleted() {
+		const { onAudioComplete } = this.props
+		if (typeof onAudioComplete === 'function') {
+			onAudioComplete()
+		}
+	}
+
 	handlePlayerTimeUpdate() {
 		const { onTimeChange } = this.props
+		const { stopTime } = this.state
 		let percentComplete = 0
+
+		// if we have a stop time, let's stop when we reach it!
+		if (stopTime && this.player.currentTime >= stopTime) {
+			this.handlePlayerPauseRequest()
+			this.handleAudioCompleted()
+		}
+
 		if (this.player.duration) {
-			percentComplete = (this.player.currentTime / this.player.duration)*100
+			percentComplete = (this.player.currentTime / this.player.duration) * 100
 		}
 
 		if (typeof onTimeChange === 'function') {
 			onTimeChange({
 				currentTime: this.player.currentTime,
-				percentComplete: percentComplete
+				percentComplete
 			})
 		}
 
@@ -146,18 +205,18 @@ class AudioPlayer extends Component {
 
 		this.setState({
 			currentTime: Math.floor(this.player.currentTime),
-			percentComplete: percentComplete
+			percentComplete
 		})
 	}
 
 	handlePlayerDurationChange() {
 		let percentComplete = 0
 		if (this.player.duration) {
-			percentComplete = (this.player.currentTime / this.player.duration)*100
+			percentComplete = (this.player.currentTime / this.player.duration) * 100
 		}
 		this.setState({
 			duration: Math.floor(this.player.duration),
-			percentComplete: percentComplete
+			percentComplete
 		})
 	}
 
@@ -169,22 +228,22 @@ class AudioPlayer extends Component {
 
 	listenForPostMessages() {
 		if (IS_CLIENT) {
-			window.addEventListener("message", this.handlePostMessage, false)
+			window.addEventListener('message', this.handlePostMessage, false)
 		}
 	}
 
 	handlePostMessage(e) {
 		if (this.ALLOWED_ORIGINS.indexOf(e.origin) !== -1 && typeof e !== 'undefined' && typeof e.data === 'object') {
 			if (IS_STANDALONE) {
-				switch(e.data.name) {
+				switch (e.data.name) {
 					case POST_MESSAGE_EVENTS.STANDALONE_YIELD_TO_ORIGIN:
 						return this.handleYieldToOrigin()
 
 					default:
-						return
+
 				}
 			} else {
-				switch(e.data.name) {
+				switch (e.data.name) {
 					case POST_MESSAGE_EVENTS.STANDALONE_TIME_UPDATE:
 						if (typeof e.data.value === 'number' && typeof this.player !== 'undefined') {
 							this.handlePlayerSeekToRequest(e.data.value)
@@ -195,10 +254,10 @@ class AudioPlayer extends Component {
 						if (typeof e.data.value === 'object' && typeof this.player !== 'undefined') {
 							this.handleSpeedChangeRequest(e.data.value)
 						}
-						return
+
 
 					default:
-						return
+
 				}
 			}
 		}
@@ -206,11 +265,11 @@ class AudioPlayer extends Component {
 
 	handleYieldToStandalone() {
 		const { audio, hosts } = this.props
-		LocalStore.set("standaloneAudioPlayerState", Object.assign({}, this.state, { standaloneWindow: null }))
-		LocalStore.set("standaloneAudioPlayerAudio", audio)
+		LocalStore.set('standaloneAudioPlayerState', Object.assign({}, this.state, { standaloneWindow: null }))
+		LocalStore.set('standaloneAudioPlayerAudio', audio)
 		this.handlePlayerPauseRequest()
-		let standaloneWindow = window.open(`${hosts.nodeHost}/en-US/bible-audio-player`, '_blank')
-		this.setState({ hasStandalone: true, standaloneWindow: standaloneWindow })
+		const standaloneWindow = window.open(`${hosts.nodeHost}/en-US/bible-audio-player`, '_blank')
+		this.setState({ hasStandalone: true, standaloneWindow })
 	}
 
 	handleYieldToOrigin() {
@@ -235,16 +294,6 @@ class AudioPlayer extends Component {
 		this.handlePlayerPlayRequest()
 	}
 
-	componentDidMount() {
-		this.listenForPostMessages()
-	}
-
-	componentWillReceiveProps(nextProps) {
-		const { hasStandalone } = this.state
-		if (nextProps.hasStandalone === true && !hasStandalone) {
-			this.handleYieldToStandalone()
-		}
-	}
 
 	render() {
 		const { audio } = this.props
@@ -253,7 +302,6 @@ class AudioPlayer extends Component {
 		if (typeof audio === 'undefined' || typeof audio.download_urls !== 'object') {
 			return null
 		}	else {
-
 			const audioSources = Object.keys(audio.download_urls).map((fileType) => {
 				return (<source key={fileType} src={audio.download_urls[fileType]} />)
 			})
@@ -269,8 +317,8 @@ class AudioPlayer extends Component {
 
 			return (
 				<div className='audio-player'>
-					<h3>{audio.title}</h3>
-					<p>{audio.copyright.text}</p>
+					<h3>{audio.title ? audio.title : null}</h3>
+					<p>{audio.copyright ? audio.copyright.text : null}</p>
 					<div className="audio-buttons">
 						<SeekButton increment={-30} height={29} width={25} color="#89847D" onClick={this.handlePlayerSeekRequest} />
 						{button}
@@ -280,7 +328,8 @@ class AudioPlayer extends Component {
 					<audio
 						preload="none"
 						playbackRate={playbackRate}
-						ref={this.handlePlayerLoaded} >
+						ref={this.handlePlayerLoaded}
+					>
 						{audioSources}
 					</audio>
 					<ButtonBar initialValue={playbackRate} items={this.playbackSpeeds} onClick={this.handleSpeedChangeRequest} />
@@ -293,6 +342,8 @@ class AudioPlayer extends Component {
 
 AudioPlayer.propTypes = {
 	audio: React.PropTypes.object.isRequired,
+	startTime: PropTypes.number,
+	stopTime: PropTypes.number,
 	onTimeChange: React.PropTypes.func,
 	hasStandalone: React.PropTypes.bool,
 	onResumeFromStandalone: React.PropTypes.func,

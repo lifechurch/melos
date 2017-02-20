@@ -28,10 +28,10 @@ class MomentCreate extends Component {
 		}
 
 		this.USER_STATUS = {
-			'private': props.intl.formatMessage({ id: 'Reader.verse action.private' }),
-			'public': props.intl.formatMessage({ id: 'Reader.verse action.public' }),
-			'friends': props.intl.formatMessage({ id: 'Reader.verse action.friends' }),
-			'draft': props.intl.formatMessage({ id: 'Reader.verse action.draft' }),
+			private: props.intl.formatMessage({ id: 'Reader.verse action.private' }),
+			public: props.intl.formatMessage({ id: 'Reader.verse action.public' }),
+			friends: props.intl.formatMessage({ id: 'Reader.verse action.friends' }),
+			draft: props.intl.formatMessage({ id: 'Reader.verse action.draft' }),
 		}
 
 	}
@@ -39,6 +39,7 @@ class MomentCreate extends Component {
 	componentWillReceiveProps(nextProps) {
 		const { verses, references } = this.props
 		const { localVerses, localRefs } = this.state
+
 		// merge in new verses
 		if (nextProps.verses && nextProps.references) {
 			if (verses !== nextProps.verses) {
@@ -108,7 +109,7 @@ class MomentCreate extends Component {
 	 */
 	onNoteKeyPress = (content) => {
 		this.setState({
-			content: content,
+			content,
 		})
 	}
 
@@ -157,15 +158,15 @@ class MomentCreate extends Component {
 		const { localRefs, addedLabels, content, user_status, selectedColor } = this.state
 
 		dispatch(ActionCreators.momentsCreate(isLoggedIn, {
-			kind: kind,
+			kind,
 			references: (Array.isArray(localRefs) && localRefs.length > 0) ? localRefs : [],
 			labels: (Array.isArray(addedLabels) && addedLabels.length > 0) ? addedLabels : [],
-			created_dt: new Date().toISOString().split('.')[0] + "+00:00",
-			content: content,
-			user_status: user_status,
+			created_dt: `${new Date().toISOString().split('.')[0]}+00:00`,
+			content,
+			user_status,
 			color: selectedColor ? selectedColor.replace('#', '') : null,
 		}))
-		.then(data => {
+			.then(data => {
 				if (typeof onClose === 'function') {
 					onClose(true)
 				}
@@ -205,16 +206,16 @@ class MomentCreate extends Component {
 				</div>
 			)
 		} else {
-			if (colors) {
+			if (Array.isArray(colors)) {
 				colorsDiv = (
 					<div className='colors-div'>
 						<div onClick={this.handleDropdownOpen} className='color-trigger-button'>
 							{
 								selectedColor
 								?
-								<Color color={selectedColor} />
+									<Color color={selectedColor} />
 								:
-								<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
+									<div className='yv-gray-link'><FormattedMessage id='Reader.verse action.add color' /></div>
 							}
 						</div>
 						<DropdownTransition show={dropdown} hideDir='up' onOutsideClick={this.handleDropdownClose} exemptClass='color-trigger-button'>
@@ -233,17 +234,17 @@ class MomentCreate extends Component {
 				contentDiv = (
 					<div className='bookmark-create'>
 						<VerseCard verseContent={localVerses}>
-								<div className='small-10'>
-									<LabelSelector
-										byAlphabetical={labels.byAlphabetical}
-										byCount={labels.byCount}
-										updateLabels={this.updateLabels}
-										intl={intl}
-									/>
-								</div>
-								<div className='small-2'>
-									{ colorsDiv }
-								</div>
+							<div className='small-10'>
+								<LabelSelector
+									byAlphabetical={labels.byAlphabetical}
+									byCount={labels.byCount}
+									updateLabels={this.updateLabels}
+									intl={intl}
+								/>
+							</div>
+							<div className='small-2'>
+								{ colorsDiv }
+							</div>
 						</VerseCard>
 					</div>
 				)
@@ -265,26 +266,25 @@ class MomentCreate extends Component {
 			}
 		}
 
-
 		return (
 			<div className='verse-action-create'>
-					<div className='row large-6'>
+				<CustomScroll allowOutsideScroll={false}>
+					<div className='content row large-6'>
 						<div className='heading vertical-center'>
-							<div className='columns medium-4 cancel'><XMark onClick={this.handleClose} width={18} height={18} /></div>
+							<div className='columns medium-4 cancel' onClick={this.handleClose}><XMark width={18} height={18} /></div>
 							<div className='columns medium-4 title'>{ createHeader }</div>
 							<div className='columns medium-4 save'>
 								{
 									isLoggedIn ?
-									<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: "Reader.verse action.save"}) }</div>
+										<div onClick={this.save} className='solid-button green'>{ intl.formatMessage({ id: 'Reader.verse action.save' }) }</div>
 									:
 									null
 								}
 							</div>
 						</div>
-						<CustomScroll allowOutsideScroll={false}>
-							{ contentDiv }
-						</CustomScroll>
+						{ contentDiv }
 					</div>
+				</CustomScroll>
 			</div>
 		)
 	}

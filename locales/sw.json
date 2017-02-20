@@ -1,4 +1,5 @@
 {
+	"change": "Change",
 	"ui.yes button": "Ndio",
 	"ui.no button": "Apana",
 	"plans.plans": "Mipango ya bibilia",
@@ -390,8 +391,8 @@
 	"Reader.read reference": "Soma {reference}",
 	"Reader.read chapter": "Soma sura nzima",
 	"Reader.plan title": "Mipango ya usomaji bure na Ibada",
-	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
-	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
+	"Reader.plan title ref": "Mipango ya Masomo na ibada za bure zinazohusiana na {reference}",
+	"Reader.plan subtitle": "Mipango za Biblia zinagawanisha usomaji wako wa maandiko katika sehemu zinazoweza kudhibitiwa kila siku. Mipango mara nyingi hushirikisha ibada, redio au video saidizi. Iwapo utaziita Mipango za Biblia, Mipango za Kusoma au Ibada, Mipango zimedhibitishwa kuwa njia ya kufanya Biblia kuwa sehemu asilia ya maisha yako ya kila siku.",
 	"Reader.meta.mobile.title": "Programu ya Biblia",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "sambamba na",

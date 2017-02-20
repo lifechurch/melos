@@ -13,7 +13,6 @@ import ActionCreator from '../../features/PlanDiscovery/actions/creators'
  * @return     {Promise}  { description_of_the_return_value }
  */
 export default function loadData(params, startingState, sessionData, store, Locale) {
-
 	return new Promise((resolve) => {
 		if (typeof store !== 'undefined' && params.url && params.languageTag) {
 			const isCollection = new RegExp('^\/reading-plans-collection\/[0-9]+')
@@ -31,6 +30,9 @@ export default function loadData(params, startingState, sessionData, store, Loca
 			const isReadingPlanSample = new RegExp('^\/reading-plans\/[0-9a-zA-Z-]+-[^\r\n\t\f\/ ]+\/day/[0-9]+')
 			const isReadingPlanSettings = new RegExp('^\/reading-plans\/[0-9a-zA-Z-]+-[^\r\n\t\f\/ ]+\/edit')
 			const isSubscription = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+')
+
+			const isDayComplete = new RegExp('^\/users\/[^\r\n\t\f\/ ]+\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
+			const isSharedDayComplete = new RegExp('^\/reading-plans\/[0-9]+-[^\r\n\t\f\/ ]+\/day\/[0-9]+\/completed')
 
 			let auth = false
 			if (sessionData.email && sessionData.password) {
@@ -57,6 +59,19 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					content
 				}, auth)).then(() => { resolve() })
 
+			} else if (isDayComplete.test(params.url)) {
+				store.dispatch(ActionCreator.readingplanView({
+					id: params.id,
+					language_tag: Locale.planLocale,
+				}, auth)).then((d) => { resolve() })
+
+			} else if (isSharedDayComplete.test(params.url)) {
+				// pass user id to get user info for page
+				store.dispatch(ActionCreator.sharedDayComplete({
+					id: params.id,
+					language_tag: Locale.planLocale,
+					user_id: params.user_id,
+				}, false)).then((d) => { resolve() })
 			} else if (isReadingPlanSample.test(params.url)) {
 				const version = params.version || cookie.load('version') || '1'
 				store.dispatch(ActionCreator.sampleAll({
@@ -83,10 +98,11 @@ export default function loadData(params, startingState, sessionData, store, Loca
 					user_id: sessionData.userid,
 					day: params.day,
 					version,
-				}, auth)).then(() => { resolve() })
+				}, auth)).then((d) => { resolve() })
 
 			} else if (isSubscribedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.items({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
+
 			} else if (isSavedPlans.test(params.url)) {
 				store.dispatch(ActionCreator.savedItems({ page: 1 }, auth)).then(() => { resolve() })
 

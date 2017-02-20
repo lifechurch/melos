@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { FormattedMessage } from 'react-intl'
-import ActionCreators from '../../actions/creators'
+import { Link } from 'react-router'
+import Viewport from '../../../../lib/viewportUtils'
 import CheckMark from '../../../../components/CheckMark'
 import NavArrows from '../../../Bible/components/content/NavArrows'
 import Header from '../../../Bible/components/header/Header'
@@ -10,42 +11,82 @@ class PlanNavigation extends Component {
 
 	constructor(props) {
 		super(props)
+		this.state = {
+			bottomPos: '45%'
+		}
+	}
+
+	componentDidMount() {
+		this.viewport = new Viewport()
+		this.styleArrows()
+		this.viewport.registerListener('resize', this.styleArrows)
+	}
+
+	componentDidUpdate(prevProps) {
+		const { whichContent, updateStyle } = this.props
+		if (whichContent !== prevProps.whichContent || (updateStyle && updateStyle !== prevProps.updateStyle)) {
+			this.styleArrows()
+		}
+	}
+
+	styleArrows = () => {
+		if (document && typeof window !== 'undefined') {
+			const content = document.getElementsByClassName('plan-reader-content')[0]
+			if (content) {
+				const contentPos = this.viewport.getElement(content)
+				const viewport = this.viewport.getViewport()
+				// if the content is shorter than the viewport
+				// let's set the arrows in the middle of the content div
+				if (contentPos.bottom < viewport.height) {
+					this.setState({
+						bottomPos: `${(viewport.height - contentPos.bottom) + ((contentPos.height) / 2)}px`
+					})
+				} else {
+					this.setState({
+						bottomPos: '45%'
+					})
+				}
+			}
+		}
 	}
 
 
 	render() {
 		const {
-			plan,
+			planImgUrl,
+			planName,
 			day,
 			next,
+			previous,
+			dayBasePath,
 			whichContent,
 			totalContentsNum,
-			previous,
 			isFinalContent,
 			onHandleComplete,
 			localizedLink
 		} = this.props
-
-		if (!plan) {
-			return (
-				<div />
-			)
-		}
+		const { bottomPos } = this.state
 
 		let customNext = null
 		if (isFinalContent) {
 			customNext = (
-				<CheckMark />
+				<div className='checkmark circle-buttons vertical-center horizontal-center'>
+					<CheckMark fill='white' width={27} height={26} classes='reader-arrow' />
+				</div>
 			)
 		}
 
 		return (
-			<div className=''>
+			<div className='plan-nav'>
 				<Header sticky={true} classes={'plan-nav-header'}>
-					<div className='nav-content columns large-8 medium-8 medium-centered'>
-						<img className='nav-img img-left' src={plan.images[2].url} />
+					<div className='nav-content columns large-6 medium-8 medium-centered'>
+						<Link to={dayBasePath}>
+							<img alt='reading plan' className='nav-img img-left' src={planImgUrl} />
+						</Link>
 						<div className='plan-info'>
-							<div className='nav-title'>{ plan.name[plan.language_tag] || plan.name.default }</div>
+							<Link to={dayBasePath}>
+								<div className='nav-title'>{ planName }</div>
+							</Link>
 							<div className='nav-length'>
 								<FormattedMessage id="plans.day number" values={{ day }} />
 								&nbsp;
@@ -62,6 +103,7 @@ class PlanNavigation extends Component {
 					previousURL={previous}
 					customNext={customNext}
 					onNextClick={onHandleComplete}
+					bottomPos={bottomPos}
 				/>
 			</div>
 		)
@@ -69,11 +111,26 @@ class PlanNavigation extends Component {
 }
 
 PlanNavigation.propTypes = {
-
+	planImgUrl: PropTypes.string.isRequired,
+	planName: PropTypes.string.isRequired,
+	day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	next: PropTypes.string,
+	previous: PropTypes.string,
+	dayBasePath: PropTypes.string,
+	whichContent: PropTypes.number.isRequired,
+	totalContentsNum: PropTypes.number.isRequired,
+	isFinalContent: PropTypes.bool.isRequired,
+	onHandleComplete: PropTypes.func,
+	localizedLink: PropTypes.func.isRequired,
+	updateStyle: PropTypes.bool,
 }
 
 PlanNavigation.defaultProps = {
-
+	next: null,
+	previous: null,
+	dayBasePath: '',
+	onHandleComplete: () => {},
+	updateStyle: false,
 }
 
 export default PlanNavigation

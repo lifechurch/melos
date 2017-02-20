@@ -1,6 +1,21 @@
 import type from './constants'
 
+
 const ActionCreators = {
+
+
+	handleInvalidReference() {
+		const newParams = {
+		 	isInitialLoad: false,
+		 	hasVersionChanged: true,
+		 	hasChapterChanged: true,
+		 	language_tag: 'en',
+			version: '1',
+			reference: 'JHN.1',
+			showError: true,
+		}
+		return ActionCreators.readerLoad(newParams, false)
+	},
 
 	/**
 	 * @version: VERSION_ID
@@ -12,6 +27,7 @@ const ActionCreators = {
 	readerLoad(params, auth) {
 		return dispatch => {
 			const { isInitialLoad, hasVersionChanged, hasChapterChanged, version, reference, language_tag } = params
+			const showError = params.showError || false
 			const promises = []
 
 			if (isInitialLoad) {
@@ -24,10 +40,14 @@ const ActionCreators = {
 			if (isInitialLoad || hasVersionChanged) {
 				promises.push(
 					new Promise((resolve, reject) => {
-						dispatch(ActionCreators.bibleVersion({ id: version })).then((versionObj) => {
-							resolve(
-								dispatch(ActionCreators.bibleVersions({ language_tag: versionObj.language.language_tag, type: 'all' }))
-							)
+						dispatch(ActionCreators.bibleVersion({ id: version })).then((version) => {
+							if ('errors' in version) {
+								reject(version.errors)
+							} else {
+								resolve(
+									dispatch(ActionCreators.bibleVersions({ language_tag: version.language.language_tag, type: 'all' }))
+								)
+							}
 						})
 					})
 				)
@@ -35,7 +55,15 @@ const ActionCreators = {
 
 			if (isInitialLoad || hasChapterChanged) {
 				promises.push(
-					dispatch(ActionCreators.bibleChapter({ id: version, reference: reference.toUpperCase(), format: 'html', language_tag: language_tag })),
+					new Promise((resolve, reject) => {
+						dispatch(ActionCreators.bibleChapter({ id: version, reference: reference.toUpperCase(), format: 'html', language_tag, showError })).then((data) => {
+							if ('errors' in data) {
+								reject(data.errors)
+							} else {
+								resolve()
+							}
+						})
+					}),
 					dispatch(ActionCreators.bibleVerses({ id: version, references: [`${reference.toUpperCase()}.1+${reference.toUpperCase()}.2`], format: 'text' }))
 				)
 			}
@@ -147,6 +175,25 @@ const ActionCreators = {
 	},
 
 	/**
+	 * @version_id: VERSION_ID
+   * @reference: USFM
+	 */
+	audioBibleChapter(params) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'audio-bible',
+				method: 'chapter',
+				version: '3.1',
+				auth: false,
+				params,
+				http_method: 'get',
+				types: [ type('audiobibleChapterRequest'), type('audiobibleChapterSuccess'), type('audiobibleChapterFailure') ]
+			}
+		}
+	},
+
+	/**
 	 * @id 						id of bible version
 	 * @references		verse, or range of verses to get
 	 * @format				html by default, or text
@@ -241,7 +288,7 @@ const ActionCreators = {
 	},
 
 	/* no params */
-	momentsLabels(auth, params={}) {
+	momentsLabels(auth, params = {}) {
 		return {
 			params,
 			api_call: {

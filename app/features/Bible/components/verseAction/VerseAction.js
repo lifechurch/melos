@@ -19,11 +19,10 @@ class VerseAction extends Component {
 		this.handleHighlight = ::this.handleHighlight
 		this.openMe = ::this.openMe
 		this.closeMe = ::this.closeMe
-		this.handleMomentContainerClose = ::this.handleMomentContainerClose
 	}
 
 	handleActionClick(e) {
-		const { colors, dispatch, auth, selection: { verses }, bible: { version: { id, local_abbreviation } } } = this.props
+		const { dispatch, auth, selection: { verses }, version: { id, local_abbreviation } } = this.props
 
 		// if we're not logged in and try to make an auth'd moment
 		if (!auth.isLoggedIn && (e.value == 'note' || e.value == 'bookmark')) {
@@ -37,21 +36,21 @@ class VerseAction extends Component {
 				case 'note':
 				case 'bookmark':
 					dispatch(ActionCreators.bibleVerses({
-						id: id,
+						id,
 						references: verses,
 						format: 'html',
-						local_abbreviation: local_abbreviation
+						local_abbreviation
 					}))
 					this.setState({ momentKind: e.value, momentContainerOpen: !this.state.momentContainerOpen })
 					// hide the modal on moment create
 					this.closeMe()
-					return
+
 			}
 		}
 
 	}
 
-	handleMomentContainerClose(closeVerseAction=false) {
+	handleMomentContainerClose = (closeVerseAction = false) => {
 		this.setState({ momentContainerOpen: false })
 		if (closeVerseAction) {
 			this.handleClose()
@@ -59,11 +58,15 @@ class VerseAction extends Component {
 	}
 
 	closeMe() {
-		this.container.classList.remove('open')
+		if (this.container) {
+			this.container.classList.remove('open')
+		}
 	}
 
 	openMe() {
-		this.container.classList.add('open')
+		if (this.container) {
+			this.container.classList.add('open')
+		}
 	}
 
 	handleClose() {
@@ -74,7 +77,7 @@ class VerseAction extends Component {
 		}
 	}
 
-	handleHighlight(color, deleteHighlight=false) {
+	handleHighlight(color, deleteHighlight = false) {
 		const { selection: { verses, version }, dispatch, auth } = this.props
 		const references = [{ usfm: verses, version_id: version }]
 
@@ -86,9 +89,9 @@ class VerseAction extends Component {
 		} else {
 			dispatch(ActionCreators.momentsCreate(true, {
 				kind: 'highlight',
-				references: references,
+				references,
 				color: color.replace('#', ''),
-				created_dt: new Date().toISOString().split('.')[0] + "+00:00"
+				created_dt: `${new Date().toISOString().split('.')[0]}+00:00`
 			}))
 			this.handleClose({})
 		}
@@ -96,7 +99,7 @@ class VerseAction extends Component {
 
 	deleteColor = (color) => {
 		const { selection: { verses, version }, dispatch, verseColors } = this.props
-		let versesToDelete = []
+		const versesToDelete = []
 		// don't delete colors from every verse selected,
 		// only the verses that match the color x that was clicked
 		verses.forEach((selectedVerse) => {
@@ -111,7 +114,7 @@ class VerseAction extends Component {
 			usfm: versesToDelete,
 			version_id: version,
 		})).then(() => {
-			dispatch(ActionCreators.momentsVerseColors(true, { usfm: verses[0].split('.').slice(0,2).join('.'), version_id: version })).then((newVerseColors) => {
+			dispatch(ActionCreators.momentsVerseColors(true, { usfm: verses[0].split('.').slice(0, 2).join('.'), version_id: version })).then((newVerseColors) => {
 				this.handleClose()
 			})
 
@@ -144,7 +147,17 @@ class VerseAction extends Component {
 	}
 
 	render() {
-		const { selection: { chapter, human, text, url, verses: selectedReferences }, colors, deletableColors, intl, bible, auth } = this.props
+		const {
+			selection: { chapter, human, text, url, verses: selectedReferences },
+			deletableColors,
+			intl,
+			bible,
+			verses,
+			references,
+			momentsLabels,
+			highlightColors,
+			auth
+		} = this.props
 		const { copied, momentContainerOpen, momentKind } = this.state
 
 		const copyAction = (
@@ -155,7 +168,8 @@ class VerseAction extends Component {
 					setTimeout(() => {
 						this.setState({ copied: false })
 					}, 10000)
-				}}>
+				}}
+			>
 				<span className="yv-green-link">{copied ?
 					intl.formatMessage({ id: 'features.EventView.components.EventViewContent.copied' }) :
 					intl.formatMessage({ id: 'Reader.verse action.copy' }) }
@@ -166,15 +180,15 @@ class VerseAction extends Component {
 		const actions = [
 			{ value: 'share', label: <ShareWidget label={`${chapter}:${human}`} url={url} text={text} /> },
 			{ value: 'copy', label: copyAction },
-			{ value: 'bookmark', label: <span className="yv-green-link">{intl.formatMessage( { id: 'Reader.verse action.bookmark' })}</span> },
-			{ value: 'note', label: <span className="yv-green-link">{intl.formatMessage( { id: 'Reader.verse action.note' })}</span> }
+			{ value: 'bookmark', label: <span className="yv-green-link">{intl.formatMessage({ id: 'Reader.verse action.bookmark' })}</span> },
+			{ value: 'note', label: <span className="yv-green-link">{intl.formatMessage({ id: 'Reader.verse action.note' })}</span> }
 		]
 
 		let colorList
-		if (Array.isArray(colors)) {
+		if (Array.isArray(highlightColors)) {
 			colorList = (
 				<ColorList
-					list={colors}
+					list={highlightColors}
 					onClick={this.handleHighlight}
 					deletableColors={deletableColors}
 					deleteColor={this.deleteColor}
@@ -184,24 +198,24 @@ class VerseAction extends Component {
 
 		return (
 			<div className='verse-action'>
-				<div className={`verse-action-footer`} ref={(c) => { this.container = c }}>
+				<div className={'verse-action-footer'} ref={(c) => { this.container = c }}>
 					<a onClick={this.handleClose} className="close-button yv-gray-link"><FormattedMessage id="plans.stats.close" /></a>
-					<span className="verse-selection" style={{opacity: (chapter && chapter.length && human && human.length) ? 1 : 0 }}>{chapter}:{human}</span>
+					<span className="verse-selection" style={{ opacity: (chapter && chapter.length && human && human.length) ? 1 : 0 }}>{chapter}:{human}</span>
 					<ButtonBar items={actions} onClick={this.handleActionClick} />
 					{ colorList }
 				</div>
-				<DropdownTransition classes='va-moment-container' show={momentContainerOpen} hideDir='down'>
+				<DropdownTransition classes='va-moment-container' show={momentContainerOpen} hideDir='down' transition={true}>
 					<MomentCreate
 						{...this.props}
 						// changing the key will cause a rerender for all children
 						// resetting all local state
 						key={momentContainerOpen}
-						kind={momentKind}
-						verses={bible.verses.verses}
-						references={bible.verses.references}
-						labels={bible.momentsLabels}
 						isLoggedIn={auth.isLoggedIn}
-						colors={bible.highlightColors}
+						kind={momentKind}
+						verses={verses}
+						references={references}
+						labels={momentsLabels}
+						colors={highlightColors}
 						onClose={this.handleMomentContainerClose}
 					/>
 				</DropdownTransition>
@@ -212,8 +226,8 @@ class VerseAction extends Component {
 
 VerseAction.propTypes = {
 	selection: PropTypes.any,
-	colors: PropTypes.array.isRequired,
-	onClose: PropTypes.func.isRequired
+	highlightColors: PropTypes.array.isRequired,
+	onClose: PropTypes.func.isRequired,
 }
 
 export default injectIntl(VerseAction)

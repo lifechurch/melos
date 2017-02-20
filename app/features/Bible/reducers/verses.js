@@ -12,6 +12,9 @@ export default function reducer(state = {}, action) {
 		case type('bibleVersesSuccess'):
 			let content = {}
 			let references = []
+			if (typeof action.response.verses === 'undefined') {
+				return state
+			}
 			Immutable.fromJS(action.response.verses).toJS().forEach((verse) => {
 				content[`${action.params.id}-${verse.reference.usfm}`] = {
 					heading: `${verse.reference.human} ${action.params.local_abbreviation ? action.params.local_abbreviation.toUpperCase() : ''}`,

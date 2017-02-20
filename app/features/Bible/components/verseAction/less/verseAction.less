@@ -191,11 +191,14 @@
 	}
 }
 .verse-action-create {
-	padding: 25px 0 150px 0;
+	padding: 25px 0 100px 0;
 	background-color: @light-grey;
 	height: 100%;
 	width: 100%;
 
+	.content {
+		height: 100%;
+	}
 	.custom-scrollbar {
 		right: -10px;
 	}
@@ -313,6 +316,10 @@
 
 .note-create, .bookmark-create, .sign-in-required {
 	height: 100%;
+	margin-bottom: 150px;
+	.verse {
+		background-color: initial !important;
+	}
 }
 
 
@@ -328,6 +335,7 @@
 	width: 100%;
 	top: 70px;
 	bottom: 0;
+	left: 0;
 	margin: 0;
 	padding: 0;
 }

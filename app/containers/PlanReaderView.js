@@ -22,7 +22,6 @@ class PlanReaderView extends Component {
 	}
 
 	render() {
-		const { plan } = this.props
 		return (
 			<div>
 				<PlanReader
@@ -31,7 +30,6 @@ class PlanReaderView extends Component {
 					{...this.props}
 					localizedLink={this.localizedLink}
 					isRtl={this.isRtl}
-					plan={plan}
 				/>
 			</div>
 		)
@@ -40,7 +38,10 @@ class PlanReaderView extends Component {
 
 function mapStateToProps(state) {
 	return {
-		plan: state.readingPlans && state.readingPlans.fullPlans && state.readingPlans.fullPlans._SELECTED ? state.readingPlans.fullPlans._SELECTED : {}
+		plan: state.readingPlans && state.readingPlans.fullPlans && state.readingPlans.fullPlans._SELECTED ? state.readingPlans.fullPlans._SELECTED : {},
+		bible: state.bibleReader,
+		auth: state.auth,
+		hosts: state.hosts,
 	}
 }
 

@@ -1,49 +1,36 @@
 import React, { Component, PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
+import { routeActions } from 'react-router-redux'
 import ActionCreators from '../../actions/creators'
+import BibleActionCreator from '../../../Bible/actions/creators'
 import PlanNavigation from './PlanNavigation'
-import isFinalReadingContent from '../../../../lib/readingPlanUtils'
-
-
+import isFinalReadingForDay, { isFinalPlanDay } from '../../../../lib/readingPlanUtils'
+import { getVerseAudioTiming } from '../../../../lib/readerUtils'
 
 class PlanReader extends Component {
 
-	buildNavLinks() {
-		const { location: { pathname } } = this.props
-		const basePath = `${pathname.replace('/devo', '').replace('/ref', '')}`
-		let previous, next = null
-		// figure out nav links for previous
-		if (this.isCheckingDevo) {
-			// nothing previous if on devo
-			previous = null
-		} else if (this.contentIndex === 0) {
-			// if on first ref, then devo is previous
-			if (this.hasDevo) {
-				previous = `/${basePath}/devo?day=${this.dayNum}`
-			} else {
-				previous = null
-			}
-		} else {
-			// previous content
-			previous = `/${basePath}/ref?day=${this.dayNum}&content=${this.contentIndex - 1}`
+	constructor(props) {
+		super(props)
+		this.state = {
+			audioPlaying: false,
 		}
+	}
 
-		// figure out nav links for next
-		if (this.isFinalContent) {
-			// day complete
-			next = `/${basePath}?day=${this.dayNum}&complete=true`
-		} else if (this.contentIndex + 1 === this.numRefs) {
-			// overview page if not last remaining ref, and is last ref in order
-			next = `/${basePath}?day=${this.dayNum}`
-		} else if (this.isCheckingDevo) {
-			// if on devo, next is content 0
-			next = `/${basePath}/ref?day=${this.dayNum}&content=0`
-		} else {
-			// next content
-			next = `/${basePath}/ref?day=${this.dayNum}&content=${this.contentIndex + 1}`
-		}
+	onAudioComplete = () => {
+		const { dispatch } = this.props
 
-		return { previous, next }
+		this.handleComplete()
+		dispatch(routeActions.push(this.navLinks.next))
+		// if audio has completed a ref then keep it playing for the next one
+		this.setState({ audioPlaying: true })
+	}
+
+	getChapter = () => {
+		const { dispatch, bible: { version: { id } } } = this.props
+		dispatch(BibleActionCreator.bibleChapter({
+			id,
+			reference: this.chapReference,
+			format: 'html'
+		}))
 	}
 
 	getWhichContentNum() {
@@ -70,7 +57,7 @@ class PlanReader extends Component {
 		if (this.hasDevo) {
 			completeDevo =
 				this.isCheckingDevo ||
-				plan.calendar[this.dayNum].additional_content.completed
+				plan.calendar[this.dayNum - 1].additional_content.completed
 		}
 		// if we have a reference, that we're reading through,
 		// add it to the list of completedRefs
@@ -78,7 +65,7 @@ class PlanReader extends Component {
 			references.push(this.reference)
 		}
 		// make api call
-		dispatch(ActionCreators.updateCompletion({
+		dispatch(ActionCreators.updatePlanDay({
 			id: plan.id,
 			day: this.dayNum,
 			references,
@@ -86,9 +73,54 @@ class PlanReader extends Component {
 		}, true))
 	}
 
+	buildNavLinks() {
+		const { location: { pathname } } = this.props
+		const basePath = `${pathname.replace('/devo', '').replace('/ref', '')}`
+		const dayBasePath = `/${basePath}?day=${this.dayNum}`
+		let previous, next = null
+		// figure out nav links for previous
+		if (this.isCheckingDevo) {
+			// nothing previous if on devo
+			previous = dayBasePath
+		} else if (this.contentIndex === 0) {
+			// if on first ref, then devo is previous
+			if (this.hasDevo) {
+				previous = `/${basePath}/devo?day=${this.dayNum}`
+			} else {
+				previous = dayBasePath
+			}
+		} else {
+			// previous content
+			previous = `/${basePath}/ref?day=${this.dayNum}&content=${this.contentIndex - 1}`
+		}
+
+		// figure out nav links for next
+		if (this.isFinalReadingForDay) {
+			if (this.isFinalPlanDay) {
+				// plan complete
+				next = `/${basePath}/completed`
+			} else {
+				// day complete
+				next = `/${basePath}/day/${this.dayNum}/completed`
+			}
+		} else if (this.contentIndex + 1 === this.numRefs) {
+			// overview page if not last remaining ref, and is last ref in order
+			next = `/${basePath}?day=${this.dayNum}`
+		} else if (this.isCheckingDevo) {
+			// if on devo, next is content 0
+			next = `/${basePath}/ref?day=${this.dayNum}&content=0`
+		} else {
+			// next content
+			next = `/${basePath}/ref?day=${this.dayNum}&content=${this.contentIndex + 1}`
+		}
+
+		return { previous, next, dayBasePath }
+	}
+
 
 	render() {
-		const { plan, location: { query: { day, content } } } = this.props
+		const { plan, location: { query: { day, content } }, bible, hosts, auth, dispatch } = this.props
+		const { audioPlaying } = this.state
 
 		if (Object.keys(plan).length === 0 || !day) {
 			return (
@@ -101,16 +133,20 @@ class PlanReader extends Component {
 		this.dayObj = plan.calendar[this.dayNum - 1]
 		this.numRefs = this.dayObj.references.length
 		this.reference = this.dayObj.references[this.contentIndex]
-
 		// if no content was passed in the url, we know that devo is being rendered
-		this.hasDevo = 	this.dayObj.additional_content.html ||
-										this.dayObj.additional_content.text
+		this.hasDevo = 	(!!this.dayObj.additional_content.html) ||
+										(!!this.dayObj.additional_content.text)
 		this.totalContentsNum = this.hasDevo ? (this.numRefs + 1) : this.numRefs
 		this.isCheckingDevo = isNaN(this.contentIndex) && this.hasDevo
-		this.isFinalContent = isFinalReadingContent(
+		this.isFinalReadingForDay = isFinalReadingForDay(
 			this.dayObj,
 			this.reference,
 			this.isCheckingDevo
+		)
+		this.isFinalPlanDay = isFinalPlanDay(
+			this.dayNum,
+			plan.calendar,
+			plan.total_days
 		)
 		this.navLinks = this.buildNavLinks()
 		this.whichContent = this.getWhichContentNum()
@@ -124,34 +160,91 @@ class PlanReader extends Component {
 			}
 		}
 
+		let referenceContent, refHeading, showChapterButton, audio, audioTiming, bibleChapterLink
+		if (!isNaN(this.contentIndex)) {
+			this.chapReference = this.reference.split('.').splice(0, 2).join('.')
+			if (typeof window !== 'undefined') {
+				bibleChapterLink = `${window.location.origin}/bible/${bible.version.id}/${this.chapReference}`
+			}
+			// render the full chapter content if the user clicked the button for read full
+			// chapter. this checks to make sure the chapter matches the rendered ref
+			if ('content' in bible.chapter && bible.chapter.reference.usfm === this.reference.split('.').splice(0, 2).join('.')) {
+				referenceContent = bible.chapter.content
+				refHeading = bible.chapter.reference.human
+				audio = bible.audio
+				showChapterButton = false
+			} else {
+				referenceContent = this.dayObj.reference_content[this.contentIndex].content
+				refHeading = this.dayObj.reference_content[this.contentIndex].reference.human
+				audio = bible.audioChapter[this.chapReference]
+				const startRef = this.reference.split('+')[0]
+				const endRef = this.reference.split('+').pop()
+				if (audio) {
+					audioTiming = getVerseAudioTiming(startRef, endRef, audio.timing)
+				}
+				showChapterButton = true
+			}
+		}
+
 		return (
 			<div>
 				<PlanNavigation
 					localizedLink={this.props.localizedLink}
-					plan={plan}
+					planName={plan.name.default}
+					planImgUrl={plan.images[2].url}
 					day={this.dayNum}
 					previous={this.navLinks.previous}
 					next={this.navLinks.next}
+					dayBasePath={this.navLinks.dayBasePath}
 					whichContent={this.whichContent}
 					totalContentsNum={this.totalContentsNum}
-					isFinalContent={this.isFinalContent}
+					isFinalContent={this.isFinalReadingForDay}
 					onHandleComplete={this.handleComplete}
+					// if we're rendering the full chapter from button click, let's
+					// update the arrow positioning
+					updateStyle={!showChapterButton}
 				/>
-				{
-					// render the devo or ref component (child of PlanReaderView based on route)
-					// with the params from the url
-					React.cloneElement(this.props.children, {
-						devoContent,
-						plan,
-					})
-				}
+				<div className='plan-reader-content'>
+					{
+						// render the devo or ref component (child of PlanReaderView based on route)
+						React.cloneElement(this.props.children, {
+							devoContent,
+							bibleReferences: bible.verses.references,
+							bibleVerses: bible.verses.verses,
+							bibleChapterLink,
+							content: referenceContent,
+							refHeading,
+							showChapterButton,
+							audio,
+							audioStart: audioTiming ? audioTiming.startTime : null,
+							audioStop: audioTiming ? audioTiming.endTime : null,
+							audioPlaying,
+							onAudioComplete: this.onAudioComplete,
+							version: bible.version,
+							verseColors: bible.verseColors,
+							highlightColors: bible.highlightColors,
+							momentsLabels: bible.momentsLabels,
+							getChapter: this.getChapter,
+							auth,
+							hosts,
+							dispatch
+						})
+					}
+				</div>
 			</div>
 		)
 	}
 }
 
 PlanReader.propTypes = {
-
+	plan: PropTypes.object.isRequired,
+	bible: PropTypes.object.isRequired,
+	location: PropTypes.object.isRequired,
+	dispatch: PropTypes.func.isRequired,
+	hosts: PropTypes.object.isRequired,
+	auth: PropTypes.object.isRequired,
+	children: PropTypes.node.isRequired,
+	localizedLink: PropTypes.func.isRequired,
 }
 
 PlanReader.defaultProps = {

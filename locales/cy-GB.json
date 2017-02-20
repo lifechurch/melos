@@ -1,4 +1,5 @@
 {
+	"change": "Change",
 	"ui.yes button": "Ie",
 	"ui.no button": "Na",
 	"plans.plans": "Cynlluniau",
@@ -406,8 +407,8 @@
 	"Reader.read reference": "Darllen {reference}",
 	"Reader.read chapter": "Darllen y bennod",
 	"Reader.plan title": "Cynlluniau Darllen a Defosiynol am Ddim",
-	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
-	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
+	"Reader.plan title ref": "Cynlluniau Darllen am ddim a Defosiynau yn ymwneud â {reference}",
+	"Reader.plan subtitle": "Mae Cynlluniau Beibl yn rhannu eich darlleniadau yn ddarnau dyddiol hylaw. Yn aml, mae cynlluniau yn cynnwys detholiad o ddefosiynau, sain neu fideo, fel cymorth. Os gelwir nhw'n Gynlluniau Beibl, Cynlluniau Darllen, neu Ddefosiynau, mae wedi'i brofi eu bod yn ffordd o wneud y Beibl yn rhan naturiol o'ch bywyd bob dydd.",
 	"Reader.meta.mobile.title": "Ap Beibl",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Cyfosod",

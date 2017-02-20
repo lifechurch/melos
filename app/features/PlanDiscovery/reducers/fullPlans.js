@@ -40,8 +40,8 @@ export default function reducer(state = {}, action) {
 			}())
 
 		case bibleType('bibleChapterSuccess'):
-			return (function bibleVersesSuccess() {
-				const { params: { plan_id, plan_content, plan_day }, response: verse } = action
+			return (function bibleChapterSuccess() {
+				const { params: { plan_id, plan_content, plan_day, id }, response: verse } = action
 				if (['string', 'number'].indexOf(typeof plan_id) > -1 && state[plan_id]) {
 					const plan = Immutable
 						.fromJS(state[plan_id])
@@ -63,6 +63,11 @@ export default function reducer(state = {}, action) {
 		case type('updateCompletionSuccess'):
 			return (function updateCompletionSuccess() {
 				const { params: { day, id }, response: { references, additional_content } } = action
+				// the api just comes back with the id if we've completed the plan
+				if (!('references' in action.response) && !('additional_content' in action.response)) {
+					return state
+				}
+
 				if (['string', 'number'].indexOf(typeof id) > -1 && state[id]) {
 					let dayObj = Immutable.fromJS(state[id].calendar[day - 1])
 
@@ -78,8 +83,8 @@ export default function reducer(state = {}, action) {
 							}
 						})
 						dayObj = dayObj
-											.set('references_completed', completedRefs)
-											.set('references_remaining', remainingRefs)
+							.set('references_completed', completedRefs)
+							.set('references_remaining', remainingRefs)
 
 						// now check if all refs are completed
 						if (completedRefs.length === references.length) {
@@ -88,50 +93,20 @@ export default function reducer(state = {}, action) {
 							if (additional_content.completed) {
 								dayObj = dayObj.set('completed', true)
 							}
-							dayObj = dayObj.set('refs_completed', true)
 						}
 					} else {
-						// if there are no refs then if the devo is complete, than so is the day
+					// if there are no refs then if the devo is complete, than so is the day
 						dayObj = dayObj.set('completed', additional_content.completed)
 					}
 
 					// whether or not we have refs, we'll match the devo content with the
 					// api response (default is true even if there is no devo content)
 					dayObj = dayObj.setIn(['additional_content', 'completed'], additional_content.completed)
-
-					return Immutable.fromJS(state).setIn(
-						['_SELECTED', 'calendar', day - 1], dayObj.toJS()
-					).toJS()
+					const plan = Immutable.fromJS(state[id]).setIn(['calendar', day - 1], dayObj.toJS()).toJS()
+					return Immutable.fromJS(state).set(plan.id, plan).toJS()
 				}
 
 				return state
-			}())
-
-		case type('planSubscribeSuccess'):
-			return (function planSubscribeSuccess() {
-				const inStatePlan = state[action.params.id] || { id: action.params.id }
-				const plan = Immutable.fromJS(inStatePlan).set('dirtySubscription', true).toJS()
-				return Immutable.fromJS(state).mergeDeep({ [action.params.id]: plan }).toJS()
-			}())
-
-		case type('allQueueItemsSuccess'):
-			return (function allQueueItemsSuccess() {
-				const saved = {}
-				action.response.reading_plans.forEach((id) => {
-					saved[id] = { id, saved: true }
-				})
-				const fullPlans = Immutable.fromJS(state).mergeDeep(saved).toJS()
-				return fullPlans
-			}())
-
-		case type('planSaveforlaterSuccess'):
-			return (function planSaveforlaterSuccess() {
-				return Immutable.fromJS(state).mergeDeep({ [action.params.id]: { saved: true } }).toJS()
-			}())
-
-		case type('planRemoveSaveSuccess'):
-			return (function planRemoveSaveSuccess() {
-				return Immutable.fromJS(state).mergeDeep({ [action.params.id]: { saved: false } }).toJS()
 			}())
 
 		default:

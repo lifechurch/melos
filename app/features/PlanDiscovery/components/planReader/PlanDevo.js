@@ -10,7 +10,7 @@ function PlanDevo(props) {
 	}
 	return (
 		<div className='row devo-content'>
-			<div className='columns large-8 medium-8 medium-centered'>
+			<div className='columns large-6 medium-8 medium-centered'>
 				<div
 					className='devotional'
 					dangerouslySetInnerHTML={{ __html: devoContent }}

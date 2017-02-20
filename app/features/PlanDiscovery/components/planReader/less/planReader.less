@@ -28,6 +28,7 @@
 		}
 		.nav-title {
 			width: 100%;
+			color: initial;
 	    font-size: 0.78571rem;
 	    white-space: nowrap;
 	    overflow: hidden;
@@ -36,3 +37,137 @@
 		}
 	}
 }
+
+.plan-reader-content {
+	margin-top: 60px;
+
+	@media @small-only {
+		.buttons {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+}
+
+.pill-heading {
+	border: @thin-grey-border;
+	border-radius: @default-radius;
+	padding: 4px 10px 4px 10px;
+	min-width: 0;
+	margin: 0;
+	display: inline;
+}
+.plan-reader-heading {
+	z-index: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin: 0px 0 25px 0;
+
+	.ref-heading {
+		color: @font-grey;
+		font-weight: bolder;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.pill-heading {
+		margin-left: 10px;
+		font-size: 10px;
+		font-weight: normal;
+		color: @font-grey;
+		padding: 0px 8px 0px 8px;
+	}
+	.trigger-button {
+		z-index: 0;
+		position: absolute;
+		top: -6px;
+		right: 50px;
+	}
+	.open {
+		border: none;
+		background-color: initial;
+	}
+	.modal {
+		.absolute-horizontal-center;
+		margin-left: 0 !important;
+		z-index: 7;
+		position: fixed;
+
+		@media @small-only {
+			top: 69px !important;
+		}
+		@media @medium-only {
+			top: 113px !important;
+		}
+		@media @large-up {
+			top: 139px !important;
+		}
+	}
+
+}
+
+
+
+.rp-completed-view {
+	.completed-header {
+		flex-wrap: wrap;
+		margin-bottom: 15px;
+		.plan-length-header {
+			color: @font-grey;
+			width: 100%;
+	    font-size: 0.813em;
+		}
+	}
+	.stacked-container {
+		margin-bottom: 50px;
+	}
+	.content {
+		flex-wrap: wrap;
+
+		.checkmark-container {
+			padding: 1px 0 0 1px;
+			.checkmark-right {
+				padding: 0 !important;
+			}
+		}
+		img {
+			margin: -45px 0 -40px 0;
+		}
+	}
+	button {
+		width: 10.71429rem;
+	}
+
+	.carousels {
+		margin-top: 50px;
+		flex-wrap: wrap;
+	}
+
+	.va-share-panel-wrapper {
+		bottom: 75px !important;
+	}
+	.va-share-panel {
+		padding: 5px !important;
+		border: none !important;
+		background: none !important;
+		transition: none !important;
+		.va-share-header {
+			display: none !important;
+		}
+	}
+}
+
+
+// body.modal-open {
+// 	background-color: @background-grey;
+// }
+// body {
+// 	background-color: transparent;
+//    -webkit-transition: background 0.1s ease-in-out;
+//    -moz-transition: background 0.1s ease-in-out;
+//    -ms-transition: background 0.1s ease-in-out;
+//    -o-transition: background 0.1s ease-in-out;
+//    transition: background 0.1s ease-in-out;
+// }

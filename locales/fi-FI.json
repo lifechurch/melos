@@ -1,4 +1,5 @@
 {
+	"change": "Change",
 	"ui.yes button": "Kyllä",
 	"ui.no button": "Ei",
 	"plans.plans": "Suunnitelmat",
@@ -390,8 +391,8 @@
 	"Reader.read reference": "Lue {reference}",
 	"Reader.read chapter": "Lue koko kappale",
 	"Reader.plan title": "Ilmaisia lukusuunnitelmia ja hartauksia",
-	"Reader.plan title ref": "Free Reading Plans and Devotionals related to {reference}",
-	"Reader.plan subtitle": "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life.",
+	"Reader.plan title ref": "Ilmaiset lukusuunnitelmat ja hartaudet jotka liittyvät {reference} ",
+	"Reader.plan subtitle": "Raamatun lukusuunnitelmat jakavat raamatunlukemisen sopiviin päivittäisiin osiin.  Lukuohjelmissa on usein mukana luettua tukevia valikoituja hartaustekstejä, ääntä tai videoita.  Kutsutpa niitä raamatunlukusuunnitelmiksi, lukusuunnitelmiksi tai hartauksiksi, lukusuunnitelmilla voit todistetusti tehdä raamatusta luonnollisen osan päivittäistä elämääsi. ",
 	"Reader.meta.mobile.title": "Raamattusovellus",
 	"Reader.meta.site.title": "Bible.com",
 	"Reader.header.parallel": "Vertailunäkymä",

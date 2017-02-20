@@ -3,6 +3,7 @@ import moment from 'moment'
 
 import type from './constants'
 import BibleActionCreator from '../../Bible/actions/creators'
+import UsersActionCreator from '../../Users/actions/creators'
 
 const ActionCreators = {
 
@@ -91,13 +92,13 @@ const ActionCreators = {
 			const promises = [
 				dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth)),
 				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth)),
+				dispatch(BibleActionCreator.bibleVersion({ id: version })),
 				dispatch(ActionCreators.allQueueItems(auth))
 			]
 
 			return new Promise((resolve) => {
 				Promise.all(promises).then((d) => {
-					const [ plan, { calendar }, ] = d
-
+					const [ plan, { calendar } ] = d
 					let currentDay = day
 					if (!day) {
 						const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
@@ -114,7 +115,7 @@ const ActionCreators = {
 						version,
 						id,
 						currentDay
-					})).then(() => {
+					}, auth)).then(() => {
 						resolve(dispatch(ActionCreators.planSelect({ id })))
 					})
 				})
@@ -128,6 +129,7 @@ const ActionCreators = {
 			const promises = [
 				dispatch(ActionCreators.readingplanView({ id, language_tag })),
 				dispatch(ActionCreators.calendar({ id, language_tag })),
+				dispatch(BibleActionCreator.bibleVersion({ id: version })),
 				dispatch(ActionCreators.allQueueItems(auth))
 			]
 
@@ -148,7 +150,7 @@ const ActionCreators = {
 		}
 	},
 
-	planReferences(params) {
+	planReferences(params, auth) {
 		return dispatch => {
 			return new Promise((resolve) => {
 				const { references, version, id, currentDay } = params
@@ -156,6 +158,13 @@ const ActionCreators = {
 
 				references.forEach((ref, i) => {
 					const isFullChapter = ref.split('.').length === 2
+					// call for verse colors for the chapter
+					if (i === 0) {
+						innerPromises.push(dispatch(BibleActionCreator.momentsVerseColors(auth, {
+							usfm: ref.split('.').slice(0, 2).join('.'),
+							version_id: version
+						})))
+					}
 					if (isFullChapter) {
 						innerPromises.push(dispatch(BibleActionCreator.bibleChapter({
 							reference: ref,
@@ -174,6 +183,11 @@ const ActionCreators = {
 							plan_day: currentDay,
 							plan_content: i
 						})))
+
+						innerPromises.push(dispatch(BibleActionCreator.audioBibleChapter({
+							reference: ref.split('.').slice(0, 2).join('.'),
+							version_id: version,
+						})))
 					}
 				})
 
@@ -182,6 +196,16 @@ const ActionCreators = {
 				} else {
 					resolve()
 				}
+			})
+		}
+	},
+
+	updatePlanDay(params, auth) {
+		return dispatch => {
+			return new Promise((resolve, reject) => {
+				dispatch(ActionCreators.updateCompletion(params, auth)).then(() => {
+					resolve(dispatch(ActionCreators.planSelect({ id: params.id })))
+				})
 			})
 		}
 	},
@@ -219,6 +243,60 @@ const ActionCreators = {
 			return Promise.all([
 				dispatch(ActionCreators.configuration()),
 				dispatch(ActionCreators.savedItems(saveParams, auth))
+			])
+		}
+	},
+
+	planComplete(params, auth) {
+		return dispatch => {
+			const {
+				getPlanView,
+				getRecommendedPlans,
+				getSavedPlans,
+				id,
+				language_tag,
+				user_id
+			} = params
+
+			const promises = []
+
+			if (getSavedPlans || getRecommendedPlans) {
+				promises.push(
+					dispatch(ActionCreators.configuration())
+				)
+			}
+
+			if (getPlanView) {
+				promises.push(
+					dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth))
+				)
+			}
+			if (getRecommendedPlans) {
+				promises.push(
+					dispatch(ActionCreators.recommendedPlansInfo({ id, language_tag }))
+				)
+			}
+			if (getSavedPlans) {
+				promises.push(
+					dispatch(ActionCreators.savedPlanInfo({ id: 'saved', page: 1 }, auth))
+				)
+			}
+			return Promise.all(promises)
+		}
+	},
+
+	sharedDayComplete(params, auth) {
+		return dispatch => {
+			const {
+				id,
+				language_tag,
+				user_id,
+			} = params
+			console.log(params)
+			const planID = parseInt(id, 10)
+			return Promise.all([
+				dispatch(UsersActionCreator.usersView({ id: user_id }, false)),
+				dispatch(ActionCreators.readingplanView({ id: planID, language_tag, user_id }, false))
 			])
 		}
 	},
