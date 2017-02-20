@@ -7,6 +7,7 @@ class LookinsideSample extends Component {
 
 	render() {
 		const { plan } = this.props
+		console.log('oahwegkbwrjghbawjkhdshja IN K+SMOAKE')
 		// console.log(plan)
 		// if (!plan) {
 		// 	return (

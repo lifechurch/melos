@@ -94,7 +94,7 @@ export default function loadData(params, startingState, sessionData, store, Loca
 				store.dispatch(ActionCreator.completed({ page: 1, user_id: sessionData.userid }, auth)).then(() => { resolve() })
 
 			} else if (isLookinsideSample.test(params.url)) {
-				console.log('walkebhfwkjghberjghbwairng')
+				console.log('SAMPLELOOKINSIE')
 				resolve()
 			} else if (isLookinside.test(params.url)) {
 				console.log('LOOKINSIDE', params)

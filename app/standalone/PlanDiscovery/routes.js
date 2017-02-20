@@ -89,7 +89,8 @@ export default function (
 			<Route path="(:lang/)users/:username/reading-plans/:id(:slug)/completed" component={PlanCompleteView} onEnter={requirePlanCompleteData} />
 
 			{/* ABS LOOKINSIDE */}
-			<Route path="lookinside/:id(:slug)" component={LookinsideView} onEnter={requirePlanView}>
+			<Route path="lookinside/:id(:slug)">
+				<IndexRoute component={LookinsideView} onEnter={requirePlanView} />
 				<Route path="read" component={LookinsideSample} />
 			</Route>
 		</Route>
