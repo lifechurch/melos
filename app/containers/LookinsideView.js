@@ -7,7 +7,7 @@ class Lookinside extends Component {
 
 	render() {
 		const { plan } = this.props
-		console.log(plan)
+
 		if (!plan) {
 			return (
 				<div />
@@ -40,7 +40,7 @@ class Lookinside extends Component {
 										BROWSE ALL PLANS
 									</button>
 								</Link>
-								<Link to={`/lookinside/${plan.id}-${plan.slug}/read`}>
+								<Link to={`/lookinside/${plan.id}-${plan.slug}/read?day=1`}>
 									<button className='read'>
 										READ THIS PLAN
 									</button>

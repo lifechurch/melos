@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react'
-import { FormattedMessage } from 'react-intl'
 
 import PlanDayStatus from './PlanDayStatus'
 import PlanDaySlider from './PlanDaySlider'
 import PlanDayStartButton from './PlanDayStartButton'
 import PlanReferences from './PlanReferences'
 import PlanActionButtons from './PlanActionButtons'
+import PlanDevo from './planReader/PlanDevo'
 
 function PlanDay(props) {
 	const {
@@ -16,6 +16,7 @@ function PlanDay(props) {
 		calendar,
 		totalDays,
 		aboutLink,
+		actionsNode,
 		subscriptionLink,
 		startLink,
 		bibleLink,
@@ -25,29 +26,28 @@ function PlanDay(props) {
 		handleCompleteRef,
 	} = props
 
-	const style = `
-	.devotional p,
-	.devotional blockquote,
-	.devotional h1,
-	.devotional h2,
-	.devotional .video-container {
-	    margin-bottom: 20px;
-			font-size: 16px;
+
+	// let parent overwrite the actions being rendered for the plan (start this plan button, etc.)
+	let actionsDiv = (
+		<PlanActionButtons
+			id={plan.id}
+			aboutLink={aboutLink}
+			subscriptionLink={subscriptionLink}
+			mode={mode}
+			isSubscribed={'subscription_id' in plan}
+			isSaved={isSaved}
+		/>
+	)
+	if (actionsNode) {
+		actionsDiv = actionsNode
 	}
-	`
+
 	return (
 		<div>
 			{(mode === 'sample') &&
 				<div className="row">
 					<div className="columns medium-8 large-8 medium-centered text-center">
-						<PlanActionButtons
-							id={plan.id}
-							aboutLink={aboutLink}
-							subscriptionLink={subscriptionLink}
-							mode={mode}
-							isSubscribed={'subscription_id' in plan}
-							isSaved={isSaved}
-						/>
+						{ actionsDiv }
 					</div>
 				</div>
 			}
@@ -92,15 +92,11 @@ function PlanDay(props) {
 				</div>
 			</div>
 			{(mode === 'sample' && hasDevo) &&
-				<div className="row devo-content">
-					<style dangerouslySetInnerHTML={{ __html: style }} />
-					<div className="columns large-8 medium-8 medium-centered">
-						<div className="devo-header">
-							<FormattedMessage id="plans.devotional" />
-						</div>
-						<div className="devotional" dangerouslySetInnerHTML={{ __html: dayData.additional_content.html.default || dayData.additional_content.text.default }} />
-					</div>
-				</div>
+				<PlanDevo
+					devoContent={dayData.additional_content.html ?
+						dayData.additional_content.html.default :
+						dayData.additional_content.text.default}
+				/>
 			}
 		</div>
 	)
@@ -118,13 +114,16 @@ PlanDay.propTypes = {
 	devoCompleted: PropTypes.bool.isRequired,
 	hasDevo: PropTypes.bool.isRequired,
 	isSaved: PropTypes.bool.isRequired,
-	handleCompleteRef: PropTypes.func.isRequired,
+	handleCompleteRef: PropTypes.func,
 	plan: PropTypes.object.isRequired,
-	mode: PropTypes.oneOf(['sample', 'subscription', 'about']).isRequired
+	mode: PropTypes.oneOf(['sample', 'subscription', 'about']).isRequired,
+	actionsNode: PropTypes.node,
 }
 
 PlanDay.defaultProps = {
-	mode: 'subscription'
+	mode: 'subscription',
+	actionsNode: null,
+	handleCompleteRef: () => {},
 }
 
 export default PlanDay

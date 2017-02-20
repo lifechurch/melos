@@ -87,10 +87,10 @@ class Plan extends Component {
 	}
 
 	render() {
-		const { plan, dispatch, children, params, auth, location, localizedLink, serverLanguageTag } = this.props
+		const { plan, dispatch, children, dayBaseLink, params, auth, location, localizedLink, serverLanguageTag } = this.props
 		const language_tag = serverLanguageTag || params.lang || auth.userData.language_tag || 'en'
 		const version = cookie.load('version') || '1'
-		const aboutLink = localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
+		const aboutLink = dayBaseLink || localizedLink(`/reading-plans/${plan.id}-${plan.slug}`)
 		const myPlansLink = localizedLink(`/users/${auth.userData.username}/reading-plans`)
 		const bibleLink = localizedLink(`/bible/${version}`)
 		const isSaved = !!plan.saved === true
@@ -233,7 +233,7 @@ Plan.defaultProps = {
 	children: {},
 	auth: {},
 	location: {},
-	localizedLink: () => {},
+	localizedLink: (param) => { return param },
 	serverLanguageTag: ''
 }
 

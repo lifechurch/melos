@@ -97,7 +97,7 @@ export default function (
 			{/* ABS LOOKINSIDE */}
 			<Route path="lookinside/:id(:slug)">
 				<IndexRoute component={LookinsideView} onEnter={requirePlanView} />
-				<Route path="read" component={LookinsideSample} />
+				<Route path="read/day/:day" component={LookinsideSample} onEnter={requireSamplePlan} />
 			</Route>
 		</Route>
 	)

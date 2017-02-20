@@ -142,6 +142,7 @@ function requirePlanData(nextState, replace, callback) {
 	const { params } = nextState
 	const idNum = parseInt(params.id.toString().split('-')[0], 10)
 	const currentState = store.getState()
+
 	if (currentState && currentState.plansDiscovery && currentState.plansDiscovery.plans && currentState.plansDiscovery.plans.id === idNum) {
 		callback()
 	} else if (idNum > 0) {
@@ -290,8 +291,8 @@ function requireSamplePlan(nextState, replace, callback) {
 	let { params: { id, day } } = nextState
 
 	id = id.toString().split('-')[0]
-	day = parseInt(day.toString(), 10)
-
+	day = day ? parseInt(day.toString(), 10) : 1
+	console.log(nextState.params)
 	if (typeof fullPlans === 'object'
 		&& imFullPlans.hasIn([id, 'calendar', day - 1, 'hasReferences'])) {
 		store.dispatch(PlanDiscoveryActionCreators.planSelect({ id }))
@@ -384,8 +385,8 @@ function requirePlanView(nextState, replace, callback) {
 	const { params } = nextState
 	const { auth: { userData: { userid } }, readingPlans: { fullPlans } } = currentState
 	const id = parseInt(params.id.toString().split('-')[0], 10)
-
-	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined' && 'subscription_id' in fullPlans[id]) {
+// && 'subscription_id' in fullPlans[id]
+	if (typeof fullPlans === 'object' && typeof fullPlans[id] !== 'undefined') {
 		callback()
 	} else {
 		store.dispatch(PlanDiscoveryActionCreators.readingplanView({
