@@ -93,6 +93,7 @@ const ActionCreators = {
 				dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth)),
 				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth)),
 				dispatch(BibleActionCreator.bibleVersion({ id: version })),
+				dispatch(ActionCreators.allQueueItems(auth))
 			]
 
 			return new Promise((resolve) => {
@@ -115,6 +116,33 @@ const ActionCreators = {
 						id,
 						currentDay
 					}, auth)).then(() => {
+						resolve(dispatch(ActionCreators.planSelect({ id })))
+					})
+				})
+			})
+		}
+	},
+
+	sampleAll(params, auth) {
+		return dispatch => {
+			const { id, language_tag, day: currentDay, version } = params
+			const promises = [
+				dispatch(ActionCreators.readingplanView({ id, language_tag })),
+				dispatch(ActionCreators.calendar({ id, language_tag })),
+				dispatch(BibleActionCreator.bibleVersion({ id: version })),
+				dispatch(ActionCreators.allQueueItems(auth))
+			]
+
+			return new Promise((resolve) => {
+				Promise.all(promises).then((d) => {
+					const [ , { calendar }, ] = d
+					const dayData = calendar[currentDay - 1]
+					dispatch(ActionCreators.planReferences({
+						references: dayData.references,
+						version,
+						id,
+						currentDay
+					})).then(() => {
 						resolve(dispatch(ActionCreators.planSelect({ id })))
 					})
 				})
@@ -320,6 +348,49 @@ const ActionCreators = {
 	},
 
 	/**
+	 * Restart User Plan Subscription
+	 *
+	 * @param      {object}	params  The parameters
+	 * @param      {bool}  	auth    The auth
+	 */
+	restartSubscription(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'restart_subscription',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('restartSubscriptionRequest'), type('restartSubscriptionSuccess'), type('restartSubscriptionFailure') ]
+			}
+		}
+	},
+
+	/**
+	 * unsubscribeUser - description
+	 *
+	 * @param  {type} params description
+	 * @param  {type} auth   description
+	 * @return {type}        description
+	 */
+	unsubscribeUser(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'unsubscribe_user',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('unsubscribeUserRequest'), type('unsubscribeUserSuccess'), type('unsubscribeUserFailure') ]
+			}
+		}
+	},
+
+	/**
 	 *
 	 * @param      {number} 	id  				reading plan id
 	 * @param      {number}  	day   			Day number to update, within the Reading Plan
@@ -338,6 +409,29 @@ const ActionCreators = {
 				params,
 				http_method: 'post',
 				types: [ type('updateCompletionRequest'), type('updateCompletionSuccess'), type('updateCompletionFailure') ]
+			}
+		}
+	},
+
+
+	/**
+	 * updateSubscribeUser - description
+	 *
+	 * @param  {type} params description
+	 * @param  {type} auth   description
+	 * @return {type}        description
+	 */
+	updateSubscribeUser(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'update_subscribe_user',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('updateSubscribeUserRequest'), type('updateSubscribeUserSuccess'), type('updateSubscribeUserFailure') ]
 			}
 		}
 	},
@@ -458,6 +552,20 @@ const ActionCreators = {
 				params,
 				http_method: 'get',
 				types: [ type('planInfoRequest'), type('planInfoSuccess'), type('planInfoFailure') ]
+			}
+		}
+	},
+
+	allQueueItems(auth) {
+		return {
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'all_queue_items',
+				version: '3.1',
+				auth,
+				params: {},
+				http_method: 'get',
+				types: [ type('allQueueItemsRequest'), type('allQueueItemsSuccess'), type('allQueueItemsFailure') ]
 			}
 		}
 	},

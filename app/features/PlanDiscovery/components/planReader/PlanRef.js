@@ -41,34 +41,32 @@ class PlanRef extends Component {
 			hosts,
 			version: { id, local_abbreviation },
 			highlightColors,
+			refHeading,
 			momentsLabels,
-			bibleVerses,
 			verseColors,
 			dispatch
 		} = this.props
 
-		const bibleVerse = bibleVerses[Object.keys(bibleVerses)[0]]
-
-		const refUrl = `${hosts.railsHost}/${id}/${bibleVerse.usfm[0].split('.').slice(0, 1).join('.')}.${verseSelection.human}`
+		const refUrl = `${hosts.railsHost}/${id}/${verseSelection.verses[0]}`
 		// if we don't have highlight colors yet, populate them
 		if (!Array.isArray(highlightColors)) {
 			dispatch(BibleActionCreator.momentsColors(true))
 		}
 		// if we don't have labels for bookmarks yet, let's populate them
-		if (Object.keys(momentsLabels).length === 0) {
+		if (!Array.isArray(momentsLabels)) {
 			dispatch(BibleActionCreator.momentsLabels(true))
 		}
 
 		handleVerseSelect(
-			this.refToThis,
-			verseSelection,
-			refUrl,
-			id,
-			local_abbreviation,
-			bibleVerse.human,
-			verseColors,
-			dispatch,
-		)
+				this.refToThis,
+				verseSelection,
+				refUrl,
+				id,
+				local_abbreviation,
+				refHeading,
+				verseColors,
+				dispatch,
+			)
 
 	}
 
@@ -112,7 +110,6 @@ class PlanRef extends Component {
 			deletableColors,
 		} = this.state
 
-		// TODO: add 'change' string to rails and format it here
 		const planRefHeading = (
 			<div className='plan-reader-heading'>
 				<div className='ref-heading'>

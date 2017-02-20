@@ -3,7 +3,7 @@ import { FormattedHTMLMessage, FormattedMessage } from 'react-intl'
 import moment from 'moment'
 
 function PlanDayStatus(props) {
-	const { calendar, total, day } = props
+	const { calendar, total, day, mode } = props
 	const today = moment()
 	let missedDays = 0
 	let aheadDays = 0
@@ -21,7 +21,9 @@ function PlanDayStatus(props) {
 	})
 
 	let onTrackStatus
-	if (missedDays === 1) {
+	if (mode === 'sample') {
+		onTrackStatus = <FormattedMessage id="plans.read today" />
+	} else if (missedDays === 1) {
 		onTrackStatus = <FormattedMessage id="plans.status.missed days.one" values={{ count: missedDays }} />
 	} else if (missedDays > 0) {
 		onTrackStatus = <FormattedMessage id="plans.status.missed days.other" values={{ count: missedDays }} />
@@ -45,7 +47,8 @@ function PlanDayStatus(props) {
 PlanDayStatus.propTypes = {
 	day: PropTypes.number.isRequired,
 	calendar: PropTypes.array.isRequired,
-	total: PropTypes.number.isRequired
+	total: PropTypes.number.isRequired,
+	mode: PropTypes.oneOf(['sample', 'subscription', 'about']).isRequired
 }
 
 export default PlanDayStatus

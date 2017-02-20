@@ -160,7 +160,20 @@ export default function plansDiscovery(state = {}, action) {
 			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { saved: !state.plans.saved } }).toJS()
 
 		case type('planInfoSuccess'):
-			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: action.response }).toJS()
+			return (function () {
+				let newState
+				if ('plans' in state && state.plans.id === action.response.id) {
+					newState = Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: action.response }).toJS()
+				} else {
+					newState = Immutable
+						.fromJS(state)
+						.set('plans', action.response)
+						.set('hasErrors', false)
+						.set('errors', [])
+						.toJS()
+				}
+				return newState
+			}())
 
 		case type('planStatsSuccess'):
 			return Immutable.fromJS(state).mergeDeep({ hasErrors: false, errors: [], plans: { stats: action.response } }).toJS()

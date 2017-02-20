@@ -190,7 +190,7 @@ class PlanReader extends Component {
 			<div>
 				<PlanNavigation
 					localizedLink={this.props.localizedLink}
-					planName={plan.name[plan.language_tag] || plan.name.default}
+					planName={plan.name.default}
 					planImgUrl={plan.images[2].url}
 					day={this.dayNum}
 					previous={this.navLinks.previous}

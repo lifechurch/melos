@@ -32,18 +32,20 @@ class PlanNavigation extends Component {
 	styleArrows = () => {
 		if (document && typeof window !== 'undefined') {
 			const content = document.getElementsByClassName('plan-reader-content')[0]
-			const contentPos = this.viewport.getElement(content)
-			const viewport = this.viewport.getViewport()
-			// if the content is shorter than the viewport
-			// let's set the arrows in the middle of the content div
-			if (contentPos.bottom < viewport.height) {
-				this.setState({
-					bottomPos: `${(viewport.height - contentPos.bottom) + ((contentPos.height) / 2)}px`
-				})
-			} else {
-				this.setState({
-					bottomPos: '45%'
-				})
+			if (content) {
+				const contentPos = this.viewport.getElement(content)
+				const viewport = this.viewport.getViewport()
+				// if the content is shorter than the viewport
+				// let's set the arrows in the middle of the content div
+				if (contentPos.bottom < viewport.height) {
+					this.setState({
+						bottomPos: `${(viewport.height - contentPos.bottom) + ((contentPos.height) / 2)}px`
+					})
+				} else {
+					this.setState({
+						bottomPos: '45%'
+					})
+				}
 			}
 		}
 	}
@@ -111,7 +113,7 @@ class PlanNavigation extends Component {
 PlanNavigation.propTypes = {
 	planImgUrl: PropTypes.string.isRequired,
 	planName: PropTypes.string.isRequired,
-	day: PropTypes.oneOfType(['string', 'number']).isRequired,
+	day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	next: PropTypes.string,
 	previous: PropTypes.string,
 	dayBasePath: PropTypes.string,
