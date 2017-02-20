@@ -12,7 +12,7 @@ const ActionCreators = {
 				method: 'publish',
 				version: '3.2',
 				auth: true,
-				params: params,
+				params,
 				http_method: 'post',
 				types: [ detailsType('publishEventRequest'), detailsType('publishEventSuccess'), detailsType('publishEventFailure') ]
 			}
@@ -29,7 +29,7 @@ const ActionCreators = {
 				method: 'unpublish',
 				version: '3.2',
 				auth: true,
-				params: params,
+				params,
 				http_method: 'post',
 				types: [ detailsType('unpublishEventRequest'), detailsType('unpublishEventSuccess'), detailsType('unpublishEventFailure') ]
 			}

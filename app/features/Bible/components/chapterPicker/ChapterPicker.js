@@ -76,9 +76,9 @@ class ChapterPicker extends Component {
 			chapters,
 		} = this.state
 
-		let focusElement = document.getElementsByClassName('focus')[0]
-		let activeElements = document.getElementsByClassName('active')
-		let containerElement = document.getElementsByClassName('modal')[0]
+		const focusElement = document.getElementsByClassName('focus')[0]
+		const activeElements = document.getElementsByClassName('active')
+		const containerElement = document.getElementsByClassName('modal')[0]
 		let listElement = null
 
 		// let's check if any selection index has changed, and then scroll to the correct
@@ -114,12 +114,12 @@ class ChapterPicker extends Component {
 		}
 
 		// update the picker if new chapter call
-		if (chapter.reference.usfm != prevProps.chapter.reference.usfm) {
+		if (chapter.reference.usfm !== prevProps.chapter.reference.usfm) {
 			if (chapter.errors) {
 				this.setState({ listErrorAlert: true })
 			} else {
 				// force the input to lose focus after successful load
-				if (document.activeElement != document.body) document.activeElement.blur();
+				if (document.activeElement !== document.body) document.activeElement.blur();
 
 				if (chapter.reference && chapter.reference.usfm) {
 					this.setState({
@@ -136,7 +136,7 @@ class ChapterPicker extends Component {
 		}
 
 		// update books and chapters for a new version
-		if (chapter.reference.version_id != prevProps.chapter.reference.version_id) {
+		if (chapter.reference.version_id !== prevProps.chapter.reference.version_id) {
 			if (chapter.errors) {
 				this.setState({ listErrorAlert: true })
 			} else {

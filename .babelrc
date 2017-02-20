@@ -1,10 +1,18 @@
 {
+	"presets": [
+		"es2015",
+		"stage-0",
+		"react"
+	],
   "plugins": [
     [
 	    "react-intl", {
 	        "messagesDir": "./locales",
 	        "enforceDescriptions": true
 	    },
+			"transform-object-rest-spread",
+			"transform-function-bind",
+			"transform-object-assign"
     ]
   ]
 }

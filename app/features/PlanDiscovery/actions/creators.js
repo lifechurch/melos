@@ -1,4 +1,8 @@
+import Immutable from 'immutable'
+import moment from 'moment'
+
 import type from './constants'
+import BibleActionCreator from '../../Bible/actions/creators'
 
 const ActionCreators = {
 
@@ -8,12 +12,13 @@ const ActionCreators = {
 				dispatch(ActionCreators.configuration()),
 				new Promise((resolve, reject) => {
 					dispatch(ActionCreators.discover(params, auth)).then((data) => {
-						var collectionIds = [];			// for collections carousels
-						var recommendationIds = [];	// for recommendation carousels
-						var hasSaved = false;				// for saved plans carousel
+						const collectionIds = [];			// for collections carousels
+						const recommendationIds = [];	// for recommendation carousels
+						const promises = []
+						let hasSaved = false;					// for saved plans carousel
 
 						if (data && data.items) {
-							data.items.forEach((item, index) => {
+							data.items.forEach((item) => {
 								if (item.type === 'collection') {
 									collectionIds.push(item.id);
 								} else if (item.type === 'recommended') {
@@ -24,21 +29,19 @@ const ActionCreators = {
 							})
 						}
 
-						var promises = []
-
 						// get all the regular carousels items
 						promises.push(dispatch(ActionCreators.collectionsItems({ ids: collectionIds })))
 
 						// if we have saved plans, let's get 'em
 						if (hasSaved === true) {
-							promises.push(dispatch(ActionCreators.savedItems({ id: 'saved'}, auth)))
+							promises.push(dispatch(ActionCreators.savedItems({ id: 'saved' }, auth)))
 						}
 
 						// if we have recommendations, let's get recommended
 						if (recommendationIds.length > 0) {
 							promises.concat(recommendationIds.map((id) => {
-								return new Promise((resolve, reject) => {
-									dispatch(ActionCreators.recommendations({ language_tag: params.language_tag, id })).then(resolve, resolve)
+								return new Promise((innerResolve) => {
+									dispatch(ActionCreators.recommendations({ language_tag: params.language_tag, id })).then(innerResolve, innerResolve)
 								})
 							}))
 						}
@@ -62,16 +65,16 @@ const ActionCreators = {
 					dispatch(ActionCreators.collectionsItems(itemsParams)).then((collectionItems) => {
 
 						// if we have a collection inside a collection, the reducer is going to populate the collection with it's items based on the flag
-						var ids = []
+						const ids = []
 
-						collectionItems.collections[0].items.map((item) => {
+						collectionItems.collections[0].items.forEach((item) => {
 							if (item.type === 'collection') {
 								ids.push(item.id)
 							}
 						})
 
 						if (ids.length > 0) {
-							resolve(dispatch(ActionCreators.collectionsItems({ ids: ids, collectInception: true })))
+							resolve(dispatch(ActionCreators.collectionsItems({ ids, collectInception: true })))
 						} else {
 							resolve()
 						}
@@ -82,7 +85,98 @@ const ActionCreators = {
 		}
 	},
 
-	recommendedPlansInfo(params, auth) {
+	subscriptionAll(params, auth) {
+		return dispatch => {
+			const { id, language_tag, user_id, day, version } = params
+			const promises = [
+				dispatch(ActionCreators.readingplanView({ id, language_tag, user_id }, auth)),
+				dispatch(ActionCreators.calendar({ id, language_tag, user_id }, auth))
+			]
+
+			return new Promise((resolve) => {
+				Promise.all(promises).then((d) => {
+					const [ plan, { calendar } ] = d
+
+					let currentDay = day
+					if (!day) {
+						const calculatedDay = moment().diff(moment(plan.start_dt, 'YYYY-MM-DD'), 'days') + 1
+						if (calculatedDay > plan.total_days) {
+							currentDay = plan.total_days
+						} else {
+							currentDay = calculatedDay
+						}
+					}
+
+					const dayData = calendar[currentDay - 1]
+					dispatch(ActionCreators.planReferences({
+						references: dayData.references,
+						version,
+						id,
+						currentDay
+					})).then(() => {
+						resolve(dispatch(ActionCreators.planSelect({ id })))
+					})
+				})
+			})
+		}
+	},
+
+	planReferences(params) {
+		return dispatch => {
+			return new Promise((resolve) => {
+				const { references, version, id, currentDay } = params
+				const innerPromises = []
+
+				references.forEach((ref, i) => {
+					const isFullChapter = ref.split('.').length === 2
+					if (isFullChapter) {
+						innerPromises.push(dispatch(BibleActionCreator.bibleChapter({
+							reference: ref,
+							id: version,
+							format: 'html',
+							plan_id: id,
+							plan_day: currentDay,
+							plan_content: i
+						})))
+					} else {
+						innerPromises.push(dispatch(BibleActionCreator.bibleVerses({
+							references: [ref],
+							id: version,
+							format: 'html',
+							plan_id: id,
+							plan_day: currentDay,
+							plan_content: i
+						})))
+					}
+				})
+
+				if (innerPromises.length > 0) {
+					Promise.all(innerPromises).then(() => { resolve() })
+				} else {
+					resolve()
+				}
+			})
+		}
+	},
+
+	resetSubscriptionAll(params, auth) {
+		return dispatch => {
+			return new Promise((resolve) => {
+				dispatch(ActionCreators.resetSubscription({ id: params.id }, auth)).then(() => {
+					dispatch(ActionCreators.subscriptionAll(params, auth)).then(() => { resolve() })
+				})
+			})
+		}
+	},
+
+	planSelect(params) {
+		return {
+			type: type('planSelect'),
+			id: params.id
+		}
+	},
+
+	recommendedPlansInfo(params) {
 		return dispatch => {
 			const recommendedParams = Object.assign({}, params, { dynamicCollection: true })
 			return Promise.all([
@@ -104,16 +198,16 @@ const ActionCreators = {
 
 	readingplanInfo(params, auth) {
 		return dispatch => {
-			params.id = parseInt(params.id.toString().split('-')[0])
+			const p = Immutable.fromJS(params).set('id', parseInt(params.id.toString().split('-')[0], 10)).toJS()
 			// tell the reducer to populate the recommendations in state.collection.plans.related
-			const planParams = Object.assign({}, params, { readingplanInfo: true })
+			const planParams = Object.assign({}, p, { readingplanInfo: true })
 			// now check if requested reading plan view is a saved plan for the user
-			const savedplanParams = Object.assign({}, params, { savedplanCheck: true })
+			const savedplanParams = Object.assign({}, p, { savedplanCheck: true })
 
-			let promises = [
+			const promises = [
 				dispatch(ActionCreators.configuration()),
 				dispatch(ActionCreators.readingplanView(params, auth)),
-				new Promise((resolve, reject) => {
+				new Promise((resolve) => {
 					dispatch(ActionCreators.recommendations(planParams)).then(resolve, resolve)
 				}),
 				dispatch(ActionCreators.readingplanStats(params, auth))
@@ -127,6 +221,50 @@ const ActionCreators = {
 		}
 	},
 
+	/**
+	 * Reset User Plan Subscription
+	 *
+	 * @param      {object}	params  The parameters
+	 * @param      {bool}  	auth    The auth
+	 */
+	resetSubscription(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'reset_subscription',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('resetSubscriptionRequest'), type('resetSubscriptionSuccess'), type('resetSubscriptionFailure') ]
+			}
+		}
+	},
+
+	/**
+	 *
+	 * @param      {number} 	id  				reading plan id
+	 * @param      {number}  	day   			Day number to update, within the Reading Plan
+	 * @param      {string} 	updated_dt 	A valid ISO 8601 date; e.g., date('c') or 2013-10-25T10:01:27+00:00
+	 * @param      {array} 		references 	List of references (must be valid for that day of reading) to mark as completed
+	 * @param      {bool} 		devotional 	Boolean flag to signify that the devotional content for that day has been completed
+	 */
+	updateCompletion(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'update_completion',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'post',
+				types: [ type('updateCompletionRequest'), type('updateCompletionSuccess'), type('updateCompletionFailure') ]
+			}
+		}
+	},
+
 	discover(params, auth) {
 		return {
 			params,
@@ -134,10 +272,40 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'discover',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('discoverRequest'), type('discoverSuccess'), type('discoverFailure') ]
+			}
+		}
+	},
+
+	references(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'references',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'get',
+				types: [ type('referencesRequest'), type('referencesSuccess'), type('referencesFailure') ]
+			}
+		}
+	},
+
+	calendar(params, auth) {
+		return {
+			params,
+			api_call: {
+				endpoint: 'reading-plans',
+				method: 'calendar',
+				version: '3.1',
+				auth,
+				params,
+				http_method: 'get',
+				types: [ type('calendarRequest'), type('calendarSuccess'), type('calendarFailure') ]
 			}
 		}
 	},
@@ -149,8 +317,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'collections_view',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('collectionRequest'), type('collectionSuccess'), type('collectionFailure') ]
 			}
@@ -165,7 +333,7 @@ const ActionCreators = {
 				method: 'collections_items',
 				version: '3.1',
 				auth: false,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ type('collectionsItemsRequest'), type('collectionsItemsSuccess'), type('collectionsItemsFailure') ]
 			}
@@ -180,7 +348,7 @@ const ActionCreators = {
 				method: 'recommendations',
 				version: '3.1',
 				auth: false,
-				params: params,
+				params,
 				http_method: 'get',
 				types: [ type('recommendationsItemsRequest'), type('recommendationsItemsSuccess'), type('recommendationsItemsFailure') ]
 			}
@@ -194,8 +362,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'queue_items',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('savedItemsRequest'), type('savedItemsSuccess'), type('savedItemsFailure') ]
 			}
@@ -209,8 +377,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'view',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('planInfoRequest'), type('planInfoSuccess'), type('planInfoFailure') ]
 			}
@@ -224,8 +392,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'stats',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('planStatsRequest'), type('planStatsSuccess'), type('planStatsFailure') ]
 			}
@@ -239,8 +407,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'subscribe_user',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'post',
 				types: [ type('planSubscribeRequest'), type('planSubscribeSuccess'), type('planSubscribeFailure') ]
 			}
@@ -254,8 +422,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'add_to_queue',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'post',
 				types: [ type('planSaveforlaterRequest'), type('planSaveforlaterSuccess'), type('planSaveforlaterFailure') ]
 			}
@@ -269,8 +437,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'remove_from_queue',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'post',
 				types: [ type('planRemoveSaveRequest'), type('planRemoveSaveSuccess'), type('planRemoveSaveFailure') ]
 			}
@@ -298,8 +466,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'items',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('itemsRequest'), type('itemsSuccess'), type('itemsFailure') ]
 			}
@@ -313,8 +481,8 @@ const ActionCreators = {
 				endpoint: 'reading-plans',
 				method: 'completed',
 				version: '3.1',
-				auth: auth,
-				params: params,
+				auth,
+				params,
 				http_method: 'get',
 				types: [ type('completedRequest'), type('completedSuccess'), type('completedFailure') ]
 			}

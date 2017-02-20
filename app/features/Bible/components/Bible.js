@@ -7,7 +7,7 @@ import Filter from '../../../lib/filter'
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 // import cookie from 'react-cookie';
 import Chapter from './content/Chapter'
-import ReaderArrows from './content/ReaderArrows'
+import NavArrows from './content/NavArrows'
 import ChapterPicker from './chapterPicker/ChapterPicker'
 import VersionPicker from './versionPicker/VersionPicker'
 // import LabelList from './verseAction/bookmark/LabelList'
@@ -299,9 +299,9 @@ class Bible extends Component {
 		let metaTitle = `${intl.formatMessage({ id: 'Reader.meta.mobile.title' })} | ${intl.formatMessage({ id: 'Reader.meta.site.title' })}`
 		let metaContent = ''
 
-		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation ) {
+		if (Array.isArray(bible.books.all) && bible.books.map && bible.chapter && Array.isArray(bible.languages.all) && bible.languages.map && bible.version.abbreviation) {
 			this.header = (
-				<Header sticky={true} >
+				<Header sticky={true} classes={'reader-header horizontal-center'}>
 					<ChapterPicker
 						{...this.props}
 						chapter={bible.chapter}
@@ -372,11 +372,15 @@ class Bible extends Component {
 						showVerseNumbers={showVerseNumbers}
 						ref={(chapter) => { this.chapter = chapter }}
 					/>
-					<ReaderArrows
-						{...this.props}
-						previousChapterURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
-						nextChapterURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
-					/>
+					{
+						this.props.hideNavArrows ?
+						null :
+						<NavArrows
+							{...this.props}
+							previousURL={bible.chapter.previous ? `/bible/${this.state.selectedVersion}/${bible.chapter.previous.usfm}.${params.vabbr}` : null}
+							nextURL={bible.chapter.next ? `/bible/${this.state.selectedVersion}/${bible.chapter.next.usfm}.${params.vabbr}` : null}
+						/>
+					}
 				</div>
 			)
 
@@ -432,7 +436,12 @@ class Bible extends Component {
 
 Bible.propTypes = {
 	bible: PropTypes.object.isRequired,
-	hosts: PropTypes.object.isRequired
+	hosts: PropTypes.object.isRequired,
+	hideNavArrows: PropTypes.bool,
+}
+
+Bible.defaultProps = {
+	hideNavArrows: false,
 }
 
 export default injectIntl(Bible)

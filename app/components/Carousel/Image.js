@@ -1,14 +1,10 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import imageUtil from '../../lib/imageUtil'
 
-class Image extends Component {
-	render() {
-		const { height, width, imageId, type, config, thumbnail, className } = this.props
-		let actualWidth = width
-		let actualHeight = height
-		const selectedImage = imageUtil(height, width, imageId, type, config, thumbnail)
-		return (<img className={className || ''} src={selectedImage.url} width={selectedImage.width} height={selectedImage.height} />)
-	}
+function Image(props) {
+	const { height, width, imageId, type, config, thumbnail, className, alt } = props
+	const selectedImage = imageUtil(height, width, imageId, type, config, thumbnail)
+	return (<img alt={alt} className={className || ''} src={selectedImage.url} width={selectedImage.width} height={selectedImage.height} />)
 }
 
 Image.propTypes = {
@@ -17,7 +13,15 @@ Image.propTypes = {
 	imageId: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]).isRequired,
 	type: PropTypes.string.isRequired,
 	config: PropTypes.object.isRequired,
-	thumbnail: PropTypes.bool.isRequired
+	thumbnail: PropTypes.bool,
+	className: PropTypes.string,
+	alt: PropTypes.string
+}
+
+Image.defaultProps = {
+	thumbnail: true,
+	className: '',
+	alt: ''
 }
 
 export default Image

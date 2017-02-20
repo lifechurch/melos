@@ -15,28 +15,28 @@ class EventEditNav extends Component {
 	render() {
 		const { params, routing, event } = this.props
 
-		if (!params.hasOwnProperty("id")) {
+		if (!params.hasOwnProperty('id')) {
 			params.id = null
 		}
 
 		function locationsClassname() {
-			return (routing.location.pathname === '/' + params.locale + '/event/edit/' + params.id + '/locations_and_times') ? 'active small button' : 'small button'
+			return (routing.location.pathname === `/${params.locale}/event/edit/${params.id}/locations_and_times`) ? 'active small button' : 'small button'
 		}
 
 		function detailsClassname() {
-			return (routing.location.pathname === '/' + params.locale + '/event/edit/' + params.id) ? 'active small button' : 'small button'
+			return (routing.location.pathname === `/${params.locale}/event/edit/${params.id}`) ? 'active small button' : 'small button'
 		}
 
 		function contentClassname() {
-			return (routing.location.pathname === '/' + params.locale + '/event/edit/' + params.id + '/content') ? 'active small button' : 'small button'
+			return (routing.location.pathname === `/${params.locale}/event/edit/${params.id}/content`) ? 'active small button' : 'small button'
 		}
 
 		function previewClassname() {
-			return (routing.location.pathname === '/' + params.locale + '/event/edit/' + params.id + '/preview') ? 'active small button' : 'small button'
+			return (routing.location.pathname === `/${params.locale}/event/edit/${params.id}/preview`) ? 'active small button' : 'small button'
 		}
 
 		function shareClassname() {
-			return (routing.location.pathname === '/' + params.locale + '/event/edit/' + params.id + '/share') ? 'active small button' : 'small button'
+			return (routing.location.pathname === `/${params.locale}/event/edit/${params.id}/share`) ? 'active small button' : 'small button'
 		}
 
 		return (

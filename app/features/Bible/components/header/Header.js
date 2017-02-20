@@ -1,33 +1,44 @@
 import React, { Component, PropTypes } from 'react'
 import Waypoint from 'react-waypoint'
 
-
 class Header extends Component {
 
 	constructor(props) {
 		super(props)
 		this.state = {
-			fixed: false
+			showFixed: false
 		}
 	}
 
+	fixHeader = () => {
+		this.setState({
+			showFixed: true
+		})
+	}
+
+	unfixHeader = () => {
+		this.setState({
+			showFixed: false
+		})
+	}
+
 	render() {
-		const { sticky } = this.props
-		const { fixed } = this.state
+		const { sticky, classes } = this.props
+		const { showFixed } = this.state
 
 		let way = null
 		if (sticky) {
 			way = (
 				<div className='waypoint'>
-					<Waypoint onEnter={() => this.setState({ fixed: false })} onLeave={() => this.setState({ fixed: true })} />
+					<Waypoint onEnter={this.unfixHeader} onLeave={this.fixHeader} />
 				</div>
 			)
 		}
 
 		return (
-			<div className={`${fixed ? 'show-fixed' : ''}`}>
+			<div className={`${showFixed ? 'show-fixed' : ''}`}>
 				{ way }
-				<div className={`reader-header horizontal-center`}>
+				<div className={`${classes} react-header ${sticky ? 'fixed' : ''}`}>
 					{ this.props.children }
 				</div>
 			</div>
@@ -35,8 +46,13 @@ class Header extends Component {
 	}
 }
 
+/**
+ * @param      {bool} sticky {do we want the header to become fixed when it scrolls away?}
+ * @param      {string} classes {classes to attach to header div}
+ */
 Header.propTypes = {
-
+	sticky: PropTypes.bool,
+	classes: PropTypes.string,
 }
 
 export default Header
