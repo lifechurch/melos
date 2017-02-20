@@ -699,58 +699,58 @@ ul.plan-results {
 
 .c_subscriptions {
   
-  .nav-bar {
-    height: 70px;
-
-    .nav-elements {
-      padding: 15px;
-      width: 350px;
-
-      @media #{$small-only} {
-        width: 100%;
-      }
-    }
-
-    .nav-icon {
-      //z-index: 3;
-    }
-
-    .nav-content {
-      width: 70%;
-      padding-left: 10px;
-      padding-right: 10px;
-      display: block;
-      margin: 0 auto;
-
-      .nav-img {
-        width: 40px;
-        height: 40px;
-        float: $default-float;
-      }
-      .nav-img.img-right {
-        margin-left: 10px;
-      }
-      .nav-img.img-left {
-        margin-right: 10px;
-      }
-
-      .nav-title {
-        font-size: rem-calc(11);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-align: $default-float;
-      }
-      
-      .nav-length {
-        font-size: rem-calc(10);
-        color: $gray_medium;
-        text-align: $default-float;
-      }
-
-    }
-    
-  }
+  //.nav-bar {
+  //  height: 70px;
+  //
+  //  .nav-elements {
+  //    padding: 15px;
+  //    width: 350px;
+  //
+  //    @media #{$small-only} {
+  //      width: 100%;
+  //    }
+  //  }
+  //
+  //  .nav-icon {
+  //    //z-index: 3;
+  //  }
+  //
+  //  .nav-content {
+  //    width: 70%;
+  //    padding-left: 10px;
+  //    padding-right: 10px;
+  //    display: block;
+  //    margin: 0 auto;
+  //
+  //    .nav-img {
+  //      width: 40px;
+  //      height: 40px;
+  //      float: $default-float;
+  //    }
+  //    .nav-img.img-right {
+  //      margin-left: 10px;
+  //    }
+  //    .nav-img.img-left {
+  //      margin-right: 10px;
+  //    }
+  //
+  //    .nav-title {
+  //      font-size: rem-calc(11);
+  //      white-space: nowrap;
+  //      overflow: hidden;
+  //      text-overflow: ellipsis;
+  //      text-align: $default-float;
+  //    }
+  //
+  //    .nav-length {
+  //      font-size: rem-calc(10);
+  //      color: $gray_medium;
+  //      text-align: $default-float;
+  //    }
+  //
+  //  }
+  //
+  //}
   
 }
 
@@ -759,13 +759,13 @@ ul.plan-results {
 /* Plan Devo View */
 .c_subscriptions.a_devo {
 
-  .devo-header {
-    margin-bottom: 15px;
-  }
-
-  .devo-content {
-    margin-top: 65px;
-  }
+  //.devo-header {
+  //  margin-bottom: 15px;
+  //}
+  //
+  //.devo-content {
+  //  margin-top: 65px;
+  //}
 
 }
 
@@ -773,40 +773,40 @@ ul.plan-results {
 
 .c_subscriptions.a_ref {
 
-  .nav-header {
-    z-index: 3;
-  }
-
-  .nav-bar {
-
-    .nav-elements {
-      left: 1.5%;
-      transform: translateX(-1.5%);
-    }
-
-
-    @media #{$large-up} {
-      width: 100%;
-      margin-top: 37px;
-    }
-
-    @media #{$medium-only} {
-      width: 100%;
-      margin-top: 45px;
-    }
-
-    @media #{$small-only} {
-      margin-top: 45px;
-    }
-
-    bottom: auto !important;
-    top: 0 !important;
-  }
-
-  .ref-content {
-    margin-top: 70px;
-
-  }
+  //.nav-header {
+  //  z-index: 3;
+  //}
+  //
+  //.nav-bar {
+  //
+  //  .nav-elements {
+  //    left: 1.5%;
+  //    transform: translateX(-1.5%);
+  //  }
+  //
+  //
+  //  @media #{$large-up} {
+  //    width: 100%;
+  //    margin-top: 37px;
+  //  }
+  //
+  //  @media #{$medium-only} {
+  //    width: 100%;
+  //    margin-top: 45px;
+  //  }
+  //
+  //  @media #{$small-only} {
+  //    margin-top: 45px;
+  //  }
+  //
+  //  bottom: auto !important;
+  //  top: 0 !important;
+  //}
+  //
+  //.ref-content {
+  //  margin-top: 70px;
+  //
+  //}
 }
 
 /* !Plan detail view */
@@ -911,161 +911,161 @@ ul.plan-results {
 .c_subscriptions.a_day_complete,
 .c_subscriptions.a_plan_complete,
 .c_subscriptions.a_mark_complete {
-
-  @media #{$small-only} {
-    .plans-container {
-      padding: 0;
-
-      .plans-carousel {
-        border-left: none;
-        border-right: none;
-        border-bottom: none;
-        border-radius: 0;
-      }
-    }
-  }
-
-  .stacked-container {
-    margin-top: 15px;
-    position: relative;
-    height: 360px;
-    overflow: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-box-shadow: inset 0 0 300px #000000;
-    -moz-box-shadow: inset 0 0 300px #000000;
-    -o-box-shadow: inset 0 0 300px #000000;
-    box-shadow: inset 0 0 300px #000000;
-
-    .back-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      height: 360px;
-      width: 100%;
-
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: cover;
-      background-attachment: fixed;
-      -webkit-filter: blur(12px);
-      -moz-filter: blur(12px);
-      -o-filter: blur(12px);
-      -ms-filter: blur(12px);
-      filter: blur(12px);
-
-    }
-
-    .back-content {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left:0;
-      top: 0;
-      z-index: 10;
-    }
-
-    .plan-img {
-      height: 160px;
-      width: 310px
-    }
-
-  }
-
-  .plan-length-head {
-    color: $gray;
-    font-size: 0.813em;
-    display: block;
-  }
-
-  .check-logo {
-    height: 50px;
-    margin: 35px 0px 20px 0px;
-  }
-
-  .progress_wrap {
-    border: solid 1px $white;
-    border-radius: 10px;
-    height: 9px;
-    width: 220px;
-    margin-top:38px;
-
-    .progress_counter {
-      background-color: $white;
-      height: 100%;
-      width: 0%;
-    }
-  }
-
-  .share-button {
-    margin-top: 40px;
-    width: rem-calc(150);
-  }
-
-  .small-font {
-    font-size: rem-calc(12);
-  }
-
-  // rounded edges
-  .radius {
-    border-radius: 12px;
-    /* Safari 3-4, iOS 1-3.2, Android 1.6- */
-    -webkit-border-radius: 12px;
-    /* Firefox 1-3.6 */
-    -moz-border-radius: 12px;
-    /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
-  }
-
-  .plans-carousel {
-    width: 100%;
-    margin-bottom: 50px;
-    border: 1px solid $lightGray;
-
-    .carousel-header {
-      height: 20px;
-      margin-top: 10px;
-      margin-left: 25px;
-      margin-bottom: 15px;
-      text-align: left;
-      font-size: rem-calc(16);
-    }
-    
-    .plan-content {
-      display: inline-block;
-      vertical-align: top;
-      width: 270px;
-
-      .subscription_thumbnail {
-        width: 250px;
-        height: 140px;
-      }
-
-      .subscription-info {
-        width: 250px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-bottom: 5px;
-        text-align: left;
-
-        .plan-title {
-          font-size: rem-calc(12);
-          /* These are technically the same, but use both */
-          overflow-wrap: break-word;
-          word-wrap: break-word;
-          white-space: normal;
-        }
-
-        .plan-length-carousel {
-          color: $gray;
-          font-size: 0.713em;
-          //display: block;
-        }
-
-      }
-
-    }
-
-  }
+  //
+  //@media #{$small-only} {
+  //  .plans-container {
+  //    padding: 0;
+  //
+  //    .plans-carousel {
+  //      border-left: none;
+  //      border-right: none;
+  //      border-bottom: none;
+  //      border-radius: 0;
+  //    }
+  //  }
+  //}
+  //
+  //.stacked-container {
+  //  margin-top: 15px;
+  //  position: relative;
+  //  height: 360px;
+  //  overflow: hidden;
+  //  -webkit-transform: translate3d(0, 0, 0);
+  //  -webkit-box-shadow: inset 0 0 300px #000000;
+  //  -moz-box-shadow: inset 0 0 300px #000000;
+  //  -o-box-shadow: inset 0 0 300px #000000;
+  //  box-shadow: inset 0 0 300px #000000;
+  //
+  //  .back-img {
+  //    position: absolute;
+  //    top: 0;
+  //    left: 0;
+  //
+  //    height: 360px;
+  //    width: 100%;
+  //
+  //    background-repeat: no-repeat;
+  //    background-position: 50% 50%;
+  //    background-size: cover;
+  //    background-attachment: fixed;
+  //    -webkit-filter: blur(12px);
+  //    -moz-filter: blur(12px);
+  //    -o-filter: blur(12px);
+  //    -ms-filter: blur(12px);
+  //    filter: blur(12px);
+  //
+  //  }
+  //
+  //  .back-content {
+  //    width: 100%;
+  //    height: 100%;
+  //    position: absolute;
+  //    left:0;
+  //    top: 0;
+  //    z-index: 10;
+  //  }
+  //
+  //  .plan-img {
+  //    height: 160px;
+  //    width: 310px
+  //  }
+  //
+  //}
+  //
+  //.plan-length-head {
+  //  color: $gray;
+  //  font-size: 0.813em;
+  //  display: block;
+  //}
+  //
+  //.check-logo {
+  //  height: 50px;
+  //  margin: 35px 0px 20px 0px;
+  //}
+  //
+  //.progress_wrap {
+  //  border: solid 1px $white;
+  //  border-radius: 10px;
+  //  height: 9px;
+  //  width: 220px;
+  //  margin-top:38px;
+  //
+  //  .progress_counter {
+  //    background-color: $white;
+  //    height: 100%;
+  //    width: 0%;
+  //  }
+  //}
+  //
+  //.share-button {
+  //  margin-top: 40px;
+  //  width: rem-calc(150);
+  //}
+  //
+  //.small-font {
+  //  font-size: rem-calc(12);
+  //}
+  //
+  //// rounded edges
+  //.radius {
+  //  border-radius: 12px;
+  //  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  //  -webkit-border-radius: 12px;
+  //  /* Firefox 1-3.6 */
+  //  -moz-border-radius: 12px;
+  //  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  //}
+  //
+  //.plans-carousel {
+  //  width: 100%;
+  //  margin-bottom: 50px;
+  //  border: 1px solid $lightGray;
+  //
+  //  .carousel-header {
+  //    height: 20px;
+  //    margin-top: 10px;
+  //    margin-left: 25px;
+  //    margin-bottom: 15px;
+  //    text-align: left;
+  //    font-size: rem-calc(16);
+  //  }
+  //
+  //  .plan-content {
+  //    display: inline-block;
+  //    vertical-align: top;
+  //    width: 270px;
+  //
+  //    .subscription_thumbnail {
+  //      width: 250px;
+  //      height: 140px;
+  //    }
+  //
+  //    .subscription-info {
+  //      width: 250px;
+  //      padding-left: 10px;
+  //      padding-right: 10px;
+  //      margin-bottom: 5px;
+  //      text-align: left;
+  //
+  //      .plan-title {
+  //        font-size: rem-calc(12);
+  //        /* These are technically the same, but use both */
+  //        overflow-wrap: break-word;
+  //        word-wrap: break-word;
+  //        white-space: normal;
+  //      }
+  //
+  //      .plan-length-carousel {
+  //        color: $gray;
+  //        font-size: 0.713em;
+  //        //display: block;
+  //      }
+  //
+  //    }
+  //
+  //  }
+  //
+  //}
 
 }
 
@@ -1458,13 +1458,13 @@ ul.plan-results {
 .c_subscriptions.a_show,
 .c_plans.a_sample {
 
-  #current-ui-view {
-    padding-top: 90px;
-
-    @media #{$small-only} {
-      padding-top: 10px;
-    }
-  }
+  //#current-ui-view {
+  //  padding-top: 90px;
+  //
+  //  @media #{$small-only} {
+  //    padding-top: 10px;
+  //  }
+  //}
 }
 
 .c_plans.a_sample {
