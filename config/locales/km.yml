@@ -1404,7 +1404,7 @@ km:
             no button: "ទេ"
         plans: 
             plans: "គំរោង​ច្រើន"
-            plans back: "← Plans"
+            plans back: "← គំរោង​ច្រើន"
             related plans: "គម្រោងដែលពាក់ព័ន្ធ"
             see all: "មើល​ទាំង​អស់"
             discover: "រុក​រក"
@@ -1558,62 +1558,62 @@ km:
             loading sidebar content: "កំពុងផ្ទុកមាតិការបារចំហៀង..."
         components: 
             ErrorMessage: 
-                genericError: "An error occurred"
+                genericError: "មាន​កំហុស​កើតឡើង"
                 announcement: 
                     events: 
                         title: 
-                            required: "Announcement title is required."
+                            required: "តម្រូវ​អោយ​មានចំណង​ជើង​ព័ត៌មាន"
                 default: 
                     bible: 
                         reference: 
-                            not_found: "Bible reference not valid."
+                            not_found: "អំណះអំណាងព្រះគម្ពីរ​មិន​ត្រឹម​ត្រូវ"
                     events: 
                         google_place_id: 
-                            required: "You must choose a location from the map."
+                            required: "អ្នកត្រូវជ្រើស​រើសទីតាំង​ពី​ផែន​ទី។"
                         latitude: 
-                            required: "You must choose a location from the map."
+                            required: "អ្នក​ត្រូ​វតែជ្រើស​រើសទីតាំង​ពីផែន​ទី"
                         times: 
                             start_dt: 
-                                must_be_a_future_date: "Start Time cannot be in the past."
+                                must_be_a_future_date: "ម៉ោង​ចាប់​ផ្ដើមមិន​អាចនៅ​អតីតកាល"
                         timezone: 
-                            required: "Timezone is required."
+                            required: "ហ្សូន​ម៉ោង​តម្រូវ​អោយ​មាន"
                 reference: 
                     events: 
                         usfm: 
-                            invalid: "Bible reference not valid."
+                            invalid: "អំណះអំណាងព្រះ​គម្ពីរមិន​ត្រឹម​ត្រូវ"
                 url: 
                     events: 
                         url: 
-                            required: "URL is required."
+                            required: "ត្រូវ​ការ​មាន​URL"
                         title: 
-                            required: "URL Label is required."
+                            required: "តម្រូវ​អោយ​មាន​ផ្លាក​URL "
             EventHeader: 
                 status: 
-                    published: "Published"
+                    published: "បាន​ផ្សាយ"
                     draft: "សេចក្ដី​ព្រាង"
                     live: "បន្ត​ផ្ទាល់"
-                    archived: "Archived"
+                    archived: "បណ្ណសារ"
                 unpublish: "មិន​បាន​ផ្សព្វផ្សាយ"
-                saving: "Saving..."
+                saving: "រក្សា​ទុក"
                 saveAsDraft: "រក្សា​ទុក​ជា​សេចក្ដី​ព្រាង"
                 myEvents: "ព្រឹត្តិការណ៍របស់​ខ្ញុំ"
                 eventBuilder: "ឧបករណ៍បង្កើត​ព្រឹត្តិការណ៍"
                 signOut: "ចាក​ចេញ"
-                createAccount: "Create Account"
+                createAccount: "បង្កើត​គណនី"
             HtmlEditor: 
                 text: "អត្ថបទ"
-                bold: "Bold"
-                italic: "Italic"
+                bold: "ក្រាស់"
+                italic: "ទ្រេត"
         containers: 
             Auth: 
                 title: "ចុះ​ឈ្មោះ​ចូល​ក្នុង​ព្រឹត្តិការណ៍"
                 signIn: "ចុះ​ឈ្មោះ​ចូល"
-                subHead1: "If you are a Bible App user and you already have a YouVersion account, you can sign in using your same credentials.<br/><br/>Don’t have a YouVersion account yet? <br/><a href='%{url}'>Sign up now at Bible.com</a> to start creating Events."
+                subHead1: "ប្រសិន​បើ​លោក​អ្នក​ជាំ​អ្នក​ប្រើ​ប្រាស់កម្មវិធីព្រះគម្ពីរ ហើយ​លោក​អ្នក​មាន​គណនីYouVersionរួច​ហើយ លោក​អ្នក​អាច​ចុះ​ឈ្មោះ ចូល​ប្រើ​ប្រាស់​នូវ​ឈ្មោះ​ពីមុន​របស់​អ្នក។<br/><br/>លោក​អ្នក​មិន​ទាន់​មាន​គណនីYouVersion​នៅ​ឡើយ​ទេ?<br/><a href='%{url}'>ចុះ​ឈ្មោះ​ចូល​នៅ Bible.com ដើម្បីដើម្បី​ចាប់​ផ្ដើម​បង្កើត​ព្រឹត្តិការណ៍ច្រើន។</a>"
                 email: "អ៊ីម៉ែល"
                 password: "ពាក្យ​សម្ងាត់"
                 forgotPassword: "ភ្លេច​ពាក្យ​សម្ងាត់"
             EventEdit: 
-                event: "Event"
+                event: "ព្រឹត្តិការណ៍"
             EventEditContentContainer: 
                 choose: "ជ្រើសរើស​ខ្លឹម​សារ​ខ្លះ​ដើម្បី​ចាប់​ផ្ដើម។"
                 needHelp: "តើ​លោក​អ្នក​ត្រូវ​ការ​ជំនួយ​ឬ?"
@@ -1630,44 +1630,44 @@ km:
                 title: "មើល​សេចក្ដីព្រៀង​ព្រឹត្តិការណ៍"
                 previous: "←មុន៖ ខ្លឹម​សារ"
             EventEditShare: 
-                title: "Event Share"
-                subTitle: "Your Event is Now Published:"
-                edit: "Edit Event"
-                go: "Go to My Events"
-                share: "Share your event:"
+                title: "ចែក​រំលែកព្រឹត្តិការណ៍"
+                subTitle: "ព្រឹត្តិការណ៍របស់​អ្នក​កំពុងតែ​​បោះផ្សាយ"
+                edit: "កែរ​សម្រួលព្រឹត្តិការណ៍"
+                go: "ទៅកាន់​ព្រឹត្តិការណ៍របស់​ខ្ញុំ"
+                share: "ចែក​រំលែកព្រឹត្តិការណ៍របស់​អ្នក"
                 copy: "ចម្លង"
-                copied: "The shortlink was copied to your clipboard"
-                previous: "← Previous: Preview"
+                copied: "តំណរ​ភ្ជាប់ខ្លី​បាន​ចម្លង​ទៅកាន់​ក្លីបបត​"
+                previous: "← ពីមុន: មើល"
             EventFeedDiscover: 
-                title: "Discover Events"
+                title: "រុក​រកព្រឹត្តិការណ៍ច្រើន"
                 discover: "រុក​រក"
             EventFeedMine: 
                 title: "ព្រឹត្តិការណ៍របស់​ខ្ញុំ"
-                previous: "← Previous"
-                next: "Next →"
+                previous: "← ពី​មុន"
+                next: "បន្ទាប់→"
                 my: "ព្រឹត្តិការណ៍របស់​ខ្ញុំ"
-                new: "Create New Event"
-                subTitle: "EVENTS CREATED BY ME"
+                new: "ព្រឹត្តិការណ៍ថ្មី​ច្រើន"
+                subTitle: "ព្រឹត្តិការណ៍ច្រើនបានបង្កើតដោយ​ខ្ញុំ"
                 newFirst: "បង្កើត​ព្រឹត្តិការណ៍ដំបូង​របស់​លោក​អ្នក"
                 learn: "រៀន​បង្កើត​ព្រឹត្តិការណ៍អស្ចារ្យ"
             EventFeedSaved: 
                 title: "ព្រឹត្តិការណ៍ដែលបានរក្សាទុក"
             EventView: 
-                title: "YouVersion Event"
+                title: "ព្រឹត្តិការណ៍YouVersion"
             SelectLanguage: 
                 choose: "Choose Your Language"
         features: 
             Auth: 
                 errors: 
-                    sessionExpired: "Your session expired. Please login again."
+                    sessionExpired: "ថេរវេលា​អស់​សុពលភាព​ហើយ សូម​ចុះ​ឈ្មោះ​ចូល​ម្ដង​ទៀត"
                     invalidEmail: "អ៊ី​ម៉េល​ ឬ ពាក្យ​សំងាត់​មិន​ត្រឹម​ត្រូវ"
             EventEdit: 
                 errors: 
-                    locationMustHaveTime: "All locations must have at least one time."
-                    locationRequired: "You cannot publish an Event with no locations."
+                    locationMustHaveTime: "ទីតាំងទាំងអស់​ត្រូវ​មាន​យ៉ាង​ហោច​ណាស់​ម្ដង។"
+                    locationRequired: "អ្នកមិន​អាចផ្សាយ​ព្រឹត្តិការណ៍ដោយ​គ្មានទីតាំង​បាន​ទេ។"
                     contentRequired: "លោក​អ្នក​មិន​អាច​ផ្សព្វ​ផ្សាយ​ព្រឹត្តិ​ការណ៍​ដែល​មិន​មាន​ខ្លឹមសារ​ជាប់​ជាមួយ​បាន​ឡើយ។"
-                    planSearchFailed: "Search did not match any documents"
-                    noMatchingPlans: "No matching Plans"
+                    planSearchFailed: "មិន​មាន​ការ​ស្វែង​រកដូច​នឹង​ឯកសារណា​មួយទេ។"
+                    noMatchingPlans: "មិន​មាន​គំរោងដែល​ស្វែង​រក"
                 components: 
                     EventEditNav: 
                         details: "សេចក្ដី​ពិស្ដារ"
@@ -1679,8 +1679,8 @@ km:
                     content: 
                         components: 
                             ContentFeed: 
-                                reorder: "Reorder Content"
-                                doneReordering: "Done Reordering"
+                                reorder: "ជាវ​មាតិការ​ឡើងវិញ"
+                                doneReordering: "បញ្ចប់ការ​ថត"
                             ContentHeader: 
                                 text: "អត្ថបទ"
                                 reference: "អត្ថបទ​យោង​ព្រះ​គម្ពីរ"
@@ -1691,13 +1691,13 @@ km:
                                 announcement: "សេចក្ដី​ជូនដំណឹង"
                             ContentHelpModal: 
                                 types: "ប្រភេទខ្លឹមសារ"
-                                learn: "Learn how to make <br>a great Event"
+                                learn: "រៀន​ពីរបៀប​បង្កើត<br>ព្រឹត្តិការណ៍អស្ចារ្យ​មួយ។"
                                 text: 
                                     title: "អត្ថបទ"
                                     desc: "បង្ហាញ ចំនុច​គន្លឺះ ការ​ពីភាក្សារ សំនួរផ្សេងៗ… ចែក​រំលែក​នូវ​ខ្លឺម​សារ​ជា​អត្ថបទទូទៅ ដែល​ជួយ​អ្នក​ចូល​រួម​ក្នុង​ព្រឹត្តិការណ៍​របស់​លោក​អ្នក​តាម​រយៈសារ និង អ្វី​ដែល​កំពុង​កើត​មាន​ឡើង។ អត្ថបទ​របស់​លោក​អ្នក​អាច​មាន​ប៉ុន្មាន​តួ​អក្សរ​ក៏​បាន ហើយ​ថែម​ទាំង​អាចតុប​តែង​លំអរ​បានទៀត​ផង។"
                                 reference: 
                                     title: "ខគម្ពីរ​យោង"
-                                    desc: "Select any Bible verse or passage, linked directly to any of YouVersion’s 1,200+ versions, in 900+ languages. People viewing your Event can tap your reference to see it in their Bible App reader, where they can Bookmark it, Highlight it, and more."
+                                    desc: "ជ្រើស​រើស​ខ​គម្ពីរ ឬ​អត្ថ​បទណា​មួយ ដែល​ភ្ជាប់​ដោយ​ផ្ទាល់ទៅកាន់​ជំនាន់YouVersion 1200+ នៅ​ក្នុង 900​ភាសា។ មនុស្ស​មើល​ព្រឹត្តិការណ៍​របស់​អ្នក​អាច​ប៉ះ​អំណះអំណាងដើម្បី មើល​កម្មវិធី​អានកម្មវិធីព្រះគម្ពីរ ដែល​គេអា​កំណត់​ចំណាំ គូស​ពណ៌ និង​ច្រើន​ថែម​ទៀត។"
                                 plan: 
                                     title: "ផែន​ការ"
                                     desc: "តំណរ​​ទៅ​កាន់​គំរោង​អាន​ព្រះ​គម្ពីរ​និង ការ​ចំណាយ​ពេល​ជា​មួយ​នឹង​ព្រះ​ជា​ម្ចាស់ ទាក់​ទងនឹង​ចំនុច​បង្រៀន​របស់​លោក​អ្នក ថែម​ទាំង​ជួយ​អោយ​អ្នក​ចូល​រួម​បន្ត​មាន​ទំនាក់​ទំនង​ដោយ​ផ្ទាល់​ជាមួយ​នឹង​ព្រះ​បន្ទូល​របស់​ព្រះ​ជា​ម្ចាស់ក្នុង​កំឡុង​ពេល​នៃ​សប្ដាហ៍។"
@@ -1706,52 +1706,52 @@ km:
                                     desc: "ធ្វើ​អោយ​ព្រឹត្តិការណ៍​របស់​លោកអ្នក​មានជីវិត​ដែល​អាច​ប្រើប្រាស់​បាន​ជាមួយ​នឹង​ក្រាហ្វិក​គ្រប់​ទំរង់៖ គំនូ រូបថត រូបខគម្ពីរ ។ល។ អ្នក​ចូលរួម​នឹង​អាច​ចែក​រំលែក​នូវ​រូបភាព​ព្រឹត្តិការណ៍​របស់​អ្នក​ទៅកាន់​បណ្ដាញ​សង្គម ធ្វើ​អោយ​សារ​របស់​អ្នក​ផ្ទុះ​តែ​ម្ដង។"
                                 link: 
                                     title: "គំរូ​តំណរ​ខាង​ក្រៅ"
-                                    desc: "Creates a button inside your Event that links to any external website. Put your audience just one tap away from online giving, volunteer signup, or church home pages."
+                                    desc: "បង្កើតប៊ូតុង​នៅ​ក្នុង​ព្រឹត្តិការណ៍របស់​អ្នក​ដែលតំណរ​ភ្ជាប់ទៅ​កាន់វែប​សាយខាងក្រៅ។ អោយ​ទស្សនិកជន​របស់អ្នក​គ្រាន់​តែ​ប៉ះ​បន្តិច​នោះ​គេ​អាចឧបត្ថម្ភ​លើបណ្ដាញ ចុះ​ឈ្មោះ​ស្ម័គ្រចិត្ត ឬ​ទំព័រ​របស់​ក្រុម​ជំនុំ។"
                                 announcement: 
-                                    title: "Announcement Module"
+                                    title: "គំរូ​ដំណឹង"
                                     desc: "ព៌តមាន​ក្រុម​ជំនុំ ប្រក្រតិទិន ព្រឹត្តិការណ៍ កម្មវិធី​ផ្សេងៗ ថ្នាក់​រៀន អ្នក​ស្ម័គ្រចិត្ត និង ឱកាស​បេសកកម្ម​ផ្សេងៗ​... សេចក្ដី​ជូន​ដំណឹងជាវេទិការ​ដ៏​ប្រពៃ​បំផុត​សំរាប់​ចែក​ចាយ​ព៌តមានទាន់​ហេតុការណ៍សំខាន់ៗ ប៉ុន្តែ​មិន​ត្រូវ​អោយ​ព៌តមាន​ទាំង​នេះ​រំខាន​សារចម្បង​ឡើយ។ សេចក្ដី​ជូន​ដំណឹងនឹង​លេច​ឡើង​នៅលើទំព័រ​របស់​វាដែល​ស្ថិត​​នៅ​ក្នុង​ព្រឹត្តិការណ៍​របស់​លោក​អ្នក ហើយថែម​ទាំង​មាន​ទំរង់​ដែល​អាច​តុប​តែង​បាន (ដូច​ជាការ​ធ្វើ​ជា​អក្សរ​ដិត និង ទ្រេត​ជាដើម)។"
                             ContentInsertionPoint: 
-                                title: "Insert next module here"
+                                title: "បញ្ចូល​គំូរ​បន្ទាប់នៅទីនេះ"
                             ContentTypeAnnouncement: 
                                 title: "ចំណង​ជើង"
                                 prompt: "សូម​សរសេរ​អ្វី​មួយ​នៅ​ទី​នេះ..."
-                                caption: "In your Event, only your Title (above) will be visible. When a user taps on your Title, the Body (below) displays on a separate screen."
+                                caption: "នៅ​ក្នុង​ព្រឹត្តិការណ៍របស់​អ្នក​ មាន​តែ​ចំណង​ជើង (ខាងលើ) នឹង​មើល​ឃើញ។ ពេល​អ្នកប៉ះលើ​ចំណង​ជើង អត្ថបទ(ខាងក្រោម)​បង្ហាញ​លើ​អេក្រង់​ដោយ​ឡែក​មួយ​ទៀត។"
                             ContentTypeContainer: 
-                                dirty: "Content will automatically save a few seconds after you stop typing."
-                                failed: "Unable to save."
-                                tryAgain: "Try again."
-                                lastSaved: "Last saved %{when}"
+                                dirty: "មាតិការ​នឹង​រក្សា​ទុកដោយ​ស្វ័យ​ប្រវត្តិ​ពីរបីវិនាទីបន្ទាប់ពីអ្នកឈប់​វាយ។"
+                                failed: "មិន​អាចរក្សា​ទុក"
+                                tryAgain: "ព្យាយាមម្ដងទៀត"
+                                lastSaved: "បានរក្សា​ទុកចុង​ក្រោយ%{when}"
                             ContentTypeImage: 
                                 errors: 
                                     wrongSize: "រូបភាព​ត្រូវ​តែ​មាន​ទំ​ហំ %{requiredWidth} x %{requiredHeight}។ រូបភាព​របស់​លោក​អ្នក​មាន​ទំហំ %{yourWidth} x %{yourHeight}។"
                                     wrongType: "ប្រភេទ​ឯកសារ​មិន​ត្រឹម​ត្រូវ ឯកសារ​ត្រូវ​តែ​ជា​ប្រភេទ JPG។"
-                                caption: "Add caption"
+                                caption: "បន្ថែមចំណង​ជើង"
                                 prompt: "សូមទាញនិង​ព្រលែងរូប​ភាព​ ១"
                                 onlyJpg: "[មាន​តែរូបភាព​ប្រភេទ JPG មួយគត់]"
                                 sizePrompt: "ទទឹង​ទំហំ%{requiredWidth} ភិកសែល x កំពស់ %{requiredHeight} ភិកសែល"
                                 select: "ជ្រើស​រើស​រូប​ភាព"
                             ContentTypeLink: 
                                 kindrid: "ប្រសិន​លោក​អ្នក​កំពុង​ស្វែង​រកវេទិការ​ដែល​វ័យឆ្លាត និង ងាយ​ស្រួល​ សូម​លោក​អ្នក​សាក​ល្បង Kindrid។ <a href='%{url}'></a>"
-                                label: "Link Label"
+                                label: "ផ្លាក​តំណរ​ភ្ជាប់"
                                 prompt: "សូម​សរសេរ​អ្វី​មួយ​នៅ​ទី​នេះ..."
                                 url: "URL"
                             ContentTypePlan: 
-                                replace: "Replace"
-                                search: "Search for a Reading Plan"
+                                replace: "ជំនួស"
+                                search: "ស្វែង​រកសំរាប់គំរោង​អានគម្ពីរ"
                             ContentTypeReference: 
                                 language: "ភាសា"
                                 version: "ជំនាន់"
                                 book: "សៀវភៅ"
-                                chapterVerse: "Chapter:Verse"
+                                chapterVerse: "ជំពូកៈខគម្ពីរ"
                             ContentTypeText: 
                                 prompt: "សូម​សរសេរ​អ្វី​មួយ​នៅ​ទី​នេះ..."
                             LiveWarningModal: 
-                                title: "Cannot Delete While Event is Live"
-                                desc: "Once an Event has gone live, you cannot delete Text, Bible Reference, and Image modules from it because users may have already added their private notes to them. You can, however, edit these modules."
+                                title: "មិន​អាចលុបព្រឹត្តិការណ៍ក្នុងកំឡុង​ពេលផ្សាយ​ផ្ទាល់"
+                                desc: "នៅ​ពេល​ដែលព្រឹត្តិការណ៍​បញ្ចប់​ការ​ផ្សាយ​ផ្ទាល់ អ្នក​មិនអាច​លុប​អក្សរ អំណះអំណាងព្រះ​គម្ពីរ និង​គំរូ​រូប​ភាព​ពី​វា​បាន​ឡើង​ដោយ​ព្រោះ​អ្នក​ប្រើ​ប្រាស់​អាច​បន្ថែម​រួច​ហើយទៅ​លើ​កំណត់​ត្រា​ឯក​ជន​របស់​ពួក​គេ។ យ៉ាង​ណា​ម៉ិញ អ្នក​អាច​កែរ​សំរួល​នូវ​គំរូ​ទាំង​នេះ។"
                                 ok: "អូឃេ"
                     details: 
                         errors: 
-                            generic: "There was a problem while publishing your Event."
+                            generic: "មាន​បញ្ហា​ក្នុងកំឡុង​ពេល​ផ្សាយ​នូវ​ព្រឹត្តិការណ៍របស់​អ្នក។"
                             invalidTimes: "សេវាកម្ម​មួយ​មិន​អាច​មាន​រយៈពេល​លើ​សពី​ ១២ ម៉ោងឡើយ ចំណែករយៈពេល​ចាប់​ផ្ដើម​ដំបូង​បំផុត​រហូត​ដល់​ចុង​បញ្ចប់​នៃ​ព្រឹត្តិការណ៍មួយ មិនត្រូវ​អោយ​លើស​ពី ៨ថ្ងៃ​ឡើយ។ សូម​កែ​តម្រូវ​ពេល​វេលា​ព្រឹត្តិការណ៍​របស់​លោក​អ្នក ហើយ​សាក​ល្បង​ម្ដង​ទៀត។"
                         components: 
                             DetailsEdit: 
@@ -1772,10 +1772,10 @@ km:
                     location: 
                         components: 
                             Location: 
-                                oneRequired: "Add at least one time."
-                                use: "USE THIS LOCATION"
-                                edit: "Edit Location"
-                                delete: "Delete Location"
+                                oneRequired: "បន្ថែមយ៉ាងហោច​ណាស់​ម្ដង"
+                                use: "ប្រើ​ប្រាស់​ទីតាំង​នេះ"
+                                edit: "កែរ​សម្រួលទី​តាំង"
+                                delete: "លុបទី​តាំង"
                             LocationAddButtons: 
                                 addPhysical: "បន្ថែម​ទី​កន្លែង​ជាក់​ស្ដែង​"
                                 promptPhysical: "លោក​អ្នក​អាច​បន្ថែម​ពហុ​ទី​កន្លែង​។"
@@ -1787,12 +1787,12 @@ km:
                                 days: "ថ្ងៃ"
                             LocationDeleteModal: 
                                 sure: "តើ​អ្នក​ប្រាកដ​ទេ?"
-                                selected: "You have selected the following location to be deleted:"
-                                warn: "This will remove the location from all past and present events. You will not be able to re-use this location for future events."
+                                selected: "អ្នក​បាន​ជ្រើស​រើស​នូវ​ទាំតាំង​ខាង​ក្រោម​ដើម្បី​លុប។"
+                                warn: "នេះ​នឹង​ដក​ចេញ​នូវ​ទី​តាំង​ពី​ព្រឹត្តិការណ៍​ពី​អតីតកាល និងបច្ចុប្បន្ន​កន្លង​មក។ អ្នក​នឹង​មិន​អាច​ប្រើ​ប្រាស់​ឡើង​វិញ​នូវ​ទីតាំង​នេះ​សំរាប់ព្រឹត្តិការណ៍ខាង​មុខ​ទេ។"
                                 cancel: "បោះ​បង់"
                                 delete: "លុប"
                             LocationEdit: 
-                                prompt: "Enter the Location address..."
+                                prompt: "បញ្ចូលអាស័យដ្ឋាន​ទី​តាំង"
                                 country: "ប្រទេស"
                                 timezone: "ហ្សូន​ម៉ោង"
                                 namePrompt: "ក្រុម​ជំនុំ​បាបទីស្ទខាង​ជើង"
@@ -1801,26 +1801,26 @@ km:
                                 addAnother: "បន្ថែម​ពេល​វេលា​មួយទៀត"
                                 cancel: "បោះ​បង់"
                                 save: "រក្សា​ទុក​ទីកន្លែង​នេះ"
-                                virtualPrompt: "Enter a city to set a timezone..."
+                                virtualPrompt: "បញ្ចូលទី​ក្រុង​ដើម្បី​កំណត់​ហ្សូន​ពេលវេលា..."
                             LocationTimeShifter: 
-                                shift: "Shift start dates"
-                                forward: "forward"
-                                backward: "backward"
+                                shift: "ចាប់​ផ្ដើមប្ដូរកាល​បរិច្ឆេទ​"
+                                forward: "ទៅ​មុខ"
+                                backward: "ទៅ​ក្រោយ"
                                 by: "ក្នុង​រយៈពេល"
-                                week: "week"
-                                weeks: "weeks"
+                                week: "សប្ដាហ៍"
+                                weeks: "សប្ដាហ៍ច្រើន"
                                 month: "ប្រក្រតិទិន"
-                                months: "months"
+                                months: "ច្រើន​ខែ"
                                 day: "ថ្ងៃ"
                                 days: "ថ្ងៃ"
-                                hour: "hour"
+                                hour: "ម៉ោង"
                                 hours: "ម៉ោង"
                                 update: "អាប់ឌែត"
                                 shiftButton: "ប្ដូរ​កាល​បរិច្ឆេទ​និង ពេលវេលាក្នុងពេល​តែមួយ"
                             UnpublishModal: 
                                 cancel: "បោះ​បង់"
-                                title: "Unpublish to Make Changes"
-                                desc: "To add, edit, or delete the Locations and Times, temporarily unpublish the event. During this time, your event will not be visible in search results. Don’t forget to publish your event again."
+                                title: "មិន​បាន​ផ្សាយដើម្បី​ធ្វើការ​ប្ដូរ"
+                                desc: "ដើម្បី​បន្ថែម​ កែរ​សម្រួល ឬ​លុបនូវ​ទីតាំង និង​ពេល​វេលា ព្រឹត្តិការណ៍មិន​បាន​ផ្សាយជា​បណ្ដោះ​អាសន្ន។ ក្នុងកំឡុង​ពេល​នេះ ព្រឹត្តិការណ៍របស់​អ្នក​នឹង​មិន​លេច​ចេញ​នៅ​លើលទ្ធ​ផល​ស្វែង​រក​ទេ។ កុំ​ភ្លេច​ផ្សាយនូវ​ព្រឹត្តិការណ៍របស់​អ្នក​ម្ដង​ទៀត។"
                                 unpublish: "មិន​បាន​ផ្សព្វផ្សាយ"
                     preview: 
                         notes: 
@@ -1866,7 +1866,7 @@ km:
                         copied: "ចម្លងទុក"
                         share: "ចែក​រំលែក"
                         read: "អាន"
-                        readPlan: "Read Plan"
+                        readPlan: "គំរោងអាន"
                     EventViewContentAnnouncement: 
                         expand: "ពង្រីក"
                         collapse: "បិទ"
@@ -1874,8 +1874,8 @@ km:
                         expand: "ពង្រីក"
                         collapse: "បិទ"
                         save: "រក្សាទុក​ព្រឹត្តិការណ៍"
-                        signIn: "Sign In to Save Event"
-                        saved: "Event Saved"
+                        signIn: "ចុះ​ឈ្មោះ​ចូល​ដើម្បី​រក្សា​ទុកព្រឹត្តិការណ៍"
+                        saved: "ព្រឹត្តិការណ៍បានរក្សា​ទុក"
         Auth: 
             sign up: "ចុះ​ឈ្មោះ"
             sign in: "ចុះ​ឈ្មោះ​ចូល"

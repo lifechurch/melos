@@ -1427,6 +1427,7 @@ en:
       discover:                                 "Discover"
       my_plans:                                 "My Plans"
       day_completed:                              "<b>%{username}</b> completed <b>Day %{day}</b> of the Bible Plan: <b>%{plan_title}</b>"
+      which reading:                              "%{current} of %{total}"
       status:
         on track:                                 "On Track!"
         days ahead:
@@ -1918,6 +1919,8 @@ en:
       read reference:                           "Read %{reference}"
       read chapter:                             "Read full chapter"
       plan title:                               "Free Reading Plans and Devotionals"
+      plan title ref:                           "Free Reading Plans and Devotionals related to %{reference}"
+      plan subtitle:                            "Bible Plans break your Scripture reading into manageable daily portions. Plans often include supporting devotional, audio, or video selections. Whether you call them Bible Plans, Reading Plans, or Devotionals, Plans are a proven way that you can make the Bible a natural part of your everyday life."
       meta:
         mobile:
           title:                                "The Bible App"
